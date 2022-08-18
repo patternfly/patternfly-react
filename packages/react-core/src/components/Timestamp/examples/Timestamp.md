@@ -21,7 +21,7 @@ The following example shows one way to build an ISO 8601 string with the current
 
 The format of the displayed content can be customized by passing in the `dateFormat` and/or `timeFormat` props. Passing in only one of the props will display only the date or time, depending on which prop is passed in. The possible options are "full", "long", "medium", and "short".
 
-You can also pass in the `timeZoneSuffix` prop to display a custom timezone suffix at the end of the displayed content. This will not override a timezone that is already displayed from a `timeFormat` value of "full" or "long".
+You can also pass in the `displaySuffix` prop to display a custom suffix at the end of the displayed content. This will not override a timezone that is already displayed from the applied time format.
 
 ```ts file="./TimestampBasicFormats.tsx"
 ```
@@ -33,27 +33,27 @@ The format of the displayed content can be further customized by passing in the 
 ```ts file="./TimestampCustomFormat.tsx"
 ```
 
-### UTC tooltip
+### Default tooltip
 
-To render a tooltip that displays the timestamp content as a UTC time, you can pass in the `hasUTCTooltip` prop. The format of the tooltip content will match the format of the timestamp content.
+To render a tooltip that displays the timestamp content as a UTC time, you can pass in the `tooltip` prop with a variant of "default". The format of the tooltip content will match the format of the timestamp content.
 
-You can customize the suffix of the UTC tooltip by passing in the `utcSuffix` prop.
+You can customize the suffix of this default tooltip variant by passing in `suffix` to the `tooltip` prop.
 
-```ts file="./TimestampUTCTooltip.tsx"
+```ts file="./TimestampDefaultTooltip.tsx"
 ```
 
 ### Custom content
 
 To display custom content, such as a relative time or prefacing text, you can pass in content to the `children` prop.
 
-When also passing in the `hasUTCTooltip` prop, you can pass in the `dateFormat` and/or `timeFormat` props to customize the tooltip content without affecting the custom timestamp content.
+When also rendering a default tooltip with the `tooltip` prop, you can pass in the `dateFormat` and/or `timeFormat` props to customize the tooltip content without affecting the custom timestamp content.
 
 ```ts file="TimestampCustomContent.tsx"
 ```
 
 ### Custom tooltip
 
-By passing in the `tooltipContent` prop, you can display custom content within the timestamp's tooltip.
+By passing in `variant="custom"` and `content` to the `tooltip` prop, you can display custom content within the timestamp's tooltip.
 
 ```ts file="TimestampCustomTooltip.tsx"
 ```

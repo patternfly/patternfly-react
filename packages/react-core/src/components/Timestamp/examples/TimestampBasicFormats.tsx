@@ -1,5 +1,5 @@
 import React from 'react';
-import { Timestamp, TimestampFormats } from '@patternfly/react-core';
+import { Timestamp, TimestampFormat } from '@patternfly/react-core';
 
 export const TimestampBasicFormats: React.FunctionComponent = () => {
   const currentDate = new Date();
@@ -10,23 +10,23 @@ export const TimestampBasicFormats: React.FunctionComponent = () => {
       <Timestamp
         datetime={dateAsISO}
         date={currentDate}
-        dateFormat={TimestampFormats.full}
-        timeFormat={TimestampFormats.full}
+        dateFormat={TimestampFormat.full}
+        timeFormat={TimestampFormat.full}
       />
       <br />
       <br />
-      <Timestamp datetime={dateAsISO} date={currentDate} dateFormat={TimestampFormats.full} />
+      <Timestamp datetime={dateAsISO} date={currentDate} dateFormat={TimestampFormat.full} />
       <br />
       <br />
-      <Timestamp datetime={dateAsISO} date={currentDate} timeFormat={TimestampFormats.full} />
+      <Timestamp datetime={dateAsISO} date={currentDate} timeFormat={TimestampFormat.full} />
       <br />
       <br />
       <Timestamp
         datetime={dateAsISO}
         date={currentDate}
-        dateFormat={TimestampFormats.medium}
-        timeFormat={TimestampFormats.short}
-        timeZoneSuffix="US Eastern"
+        dateFormat={TimestampFormat.medium}
+        timeFormat={TimestampFormat.short}
+        displaySuffix="US Eastern"
       />
     </>
   );

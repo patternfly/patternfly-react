@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Timestamp, TimestampFormats } from '../Timestamp';
+import { Timestamp, TimestampFormat, TimestampTooltipVariant } from '../Timestamp';
 
 jest.mock('../../Tooltip', () => ({
   Tooltip: ({ content, children, ...props }) => (
@@ -35,8 +35,8 @@ test('Renders with custom formatting when dateFormat and timeFormat are passed i
     <Timestamp
       datetime={new Date(2022, 0, 1).toISOString()}
       date={new Date(2022, 0, 1)}
-      dateFormat="full"
-      timeFormat="short"
+      dateFormat={TimestampFormat.full}
+      timeFormat={TimestampFormat.short}
     />
   );
 
@@ -44,13 +44,25 @@ test('Renders with custom formatting when dateFormat and timeFormat are passed i
 });
 
 test('Renders with only date when dateFormat is passed in', () => {
-  render(<Timestamp datetime={new Date(2022, 0, 1).toISOString()} date={new Date(2022, 0, 1)} dateFormat="full" />);
+  render(
+    <Timestamp
+      datetime={new Date(2022, 0, 1).toISOString()}
+      date={new Date(2022, 0, 1)}
+      dateFormat={TimestampFormat.full}
+    />
+  );
 
   expect(screen.getByText('Saturday, January 1, 2022')).toBeInTheDocument();
 });
 
 test('Renders with only time when timeFormat is passed in', () => {
-  render(<Timestamp datetime={new Date(2022, 0, 1).toISOString()} date={new Date(2022, 0, 1)} timeFormat="short" />);
+  render(
+    <Timestamp
+      datetime={new Date(2022, 0, 1).toISOString()}
+      date={new Date(2022, 0, 1)}
+      timeFormat={TimestampFormat.short}
+    />
+  );
 
   expect(screen.getByText('12:00 AM')).toBeInTheDocument();
 });
@@ -77,9 +89,9 @@ test('Renders with custom content', () => {
   expect(screen.getByText('2 days ago')).toBeInTheDocument();
 });
 
-test('Renders with a custom suffix when timeZoneSuffix is passed in', () => {
+test('Renders with a custom suffix when displaySuffix is passed in', () => {
   render(
-    <Timestamp datetime={new Date(2022, 0, 1).toISOString()} date={new Date(2022, 0, 1)} timeZoneSuffix="US Eastern" />
+    <Timestamp datetime={new Date(2022, 0, 1).toISOString()} date={new Date(2022, 0, 1)} displaySuffix="US Eastern" />
   );
 
   expect(screen.getByText('1/1/2022, 12:00:00 AM US Eastern')).toBeInTheDocument();
@@ -123,43 +135,48 @@ test('Renders with custom class names', () => {
   expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('custom-time-class');
 });
 
-test('Renders with pf-m-help-text class when hasUTCTooltip is passed in', () => {
-  render(<Timestamp datetime={new Date(2022, 0, 1).toISOString()} date={new Date(2022, 0, 1)} hasUTCTooltip />);
-
-  expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-m-help-text');
-});
-
-test('Renders with pf-m-help-text class when tooltipProps is passed in', () => {
+test('Renders with pf-m-help-text class when tooltip is passed in with default variant', () => {
   render(
     <Timestamp
       datetime={new Date(2022, 0, 1).toISOString()}
       date={new Date(2022, 0, 1)}
-      tooltipProps={{ content: 'Custom content' }}
+      tooltip={{ variant: TimestampTooltipVariant.default }}
     />
   );
 
   expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-m-help-text');
 });
 
-test('Renders with default UTC tooltip content', () => {
+test('Renders with pf-m-help-text class when tooltip is passed in with custom variant', () => {
+  render(
+    <Timestamp
+      datetime={new Date(2022, 0, 1).toISOString()}
+      date={new Date(2022, 0, 1)}
+      tooltip={{ variant: TimestampTooltipVariant.custom }}
+    />
+  );
+
+  expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-m-help-text');
+});
+
+test('Renders with default tooltip content for default variant', () => {
   render(
     <Timestamp
       datetime={new Date('1 Jan 2022 00:00:00 EST').toISOString()}
       date={new Date('1 Jan 2022 00:00:00 EST')}
-      hasUTCTooltip
+      tooltip={{ variant: TimestampTooltipVariant.default }}
     />
   );
 
   expect(screen.getByText('1/1/2022, 5:00:00 AM UTC')).toBeInTheDocument();
 });
 
-test('Renders with custom UTC suffix', () => {
+test('Renders with custom tooltip suffix for default variant', () => {
   render(
     <Timestamp
       datetime={new Date('1 Jan 2022 00:00:00 EST').toISOString()}
       date={new Date('1 Jan 2022 00:00:00 EST')}
-      hasUTCTooltip
-      utcSuffix="Coordinated Universal Time"
+      tooltip={{ variant: TimestampTooltipVariant.default, suffix: 'Coordinated Universal Time' }}
     />
   );
 
@@ -171,7 +188,7 @@ test('Renders with custom tooltip content', () => {
     <Timestamp
       datetime={new Date(2022, 0, 1).toISOString()}
       date={new Date(2022, 0, 1)}
-      tooltipProps={{ content: 'Custom tooltip content' }}
+      tooltip={{ variant: TimestampTooltipVariant.custom, content: 'Custom tooltip content' }}
     />
   );
 
