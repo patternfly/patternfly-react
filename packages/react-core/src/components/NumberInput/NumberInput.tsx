@@ -5,7 +5,7 @@ import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import { InputGroup } from '../InputGroup';
 import { Button, ButtonProps } from '../Button';
-import { KEY_CODES } from '../../helpers';
+import { KEY_CODES, ValidatedOptions } from '../../helpers';
 import { TextInput } from '../TextInput';
 
 export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
@@ -22,7 +22,7 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
    * If set to success, input will be modified to indicate valid state.
    * If set to error,  input will be modified to indicate error state.
    */
-  validated?: 'success' | 'warning' | 'default' | 'error';
+  validated?: 'default' | 'error' | 'warning' | 'success' | ValidatedOptions;
   /** Callback for the minus button */
   onMinus?: (event: React.MouseEvent, name?: string) => void;
   /** Callback for the text input changing */
@@ -73,7 +73,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   className,
   widthChars,
   isDisabled = false,
-  validated = 'default' as 'success' | 'warning' | 'default' | 'error',
+  validated = ValidatedOptions.default,
   onMinus = () => {},
   onChange,
   onBlur,
