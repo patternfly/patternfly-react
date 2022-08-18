@@ -30,6 +30,10 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclam
 ```ts file='./LoginPageShowHidePassword.tsx' isFullscreen
 ```
 
-### With language selector
+### Customizing the header utilities
+
+`headerUtilities` is a prop that can be customized to allow components to be placed into the header of the login page, likely for the user to take an action. The following example demonstrates the use of a Select component to display a list a languages.
+
+### With header utilities
 ```ts file='./LoginPageLanguageSelect.tsx' isFullscreen
 ```
