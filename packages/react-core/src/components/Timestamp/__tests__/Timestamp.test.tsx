@@ -12,7 +12,7 @@ jest.mock('../../Tooltip', () => ({
 }));
 
 test('Matches snapshot', () => {
-  const { asFragment } = render(<Timestamp date={new Date('1 Jan 2022 00:00:00 EST')} />);
+  const { asFragment } = render(<Timestamp date={new Date(2022, 0, 1)} />);
 
   expect(asFragment()).toMatchSnapshot();
 });
@@ -30,18 +30,14 @@ test('Renders with current date by default with default formatting', () => {
 });
 
 test('Renders passed in date with default formatting', () => {
-  render(<Timestamp date={new Date('1 Jan 2022 00:00:00 EST')} />);
+  render(<Timestamp date={new Date(2022, 0, 1)} />);
 
   expect(screen.getByText('1/1/2022, 12:00:00 AM')).toBeInTheDocument();
 });
 
 test('Renders with custom formatting when dateFormat and timeFormat are passed in', () => {
   render(
-    <Timestamp
-      date={new Date('1 Jan 2022 00:00:00 EST')}
-      dateFormat={TimestampFormat.full}
-      timeFormat={TimestampFormat.short}
-    />
+    <Timestamp date={new Date(2022, 0, 1)} dateFormat={TimestampFormat.full} timeFormat={TimestampFormat.short} />
   );
 
   expect(screen.getByText('Saturday, January 1, 2022 at 12:00 AM')).toBeInTheDocument();
@@ -54,7 +50,7 @@ test('Renders with only date when dateFormat is passed in', () => {
 });
 
 test('Renders with only time when timeFormat is passed in', () => {
-  render(<Timestamp date={new Date('1 Jan 2022 00:00:00 EST')} timeFormat={TimestampFormat.short} />);
+  render(<Timestamp date={new Date(2022, 0, 1)} timeFormat={TimestampFormat.short} />);
 
   expect(screen.getByText('12:00 AM')).toBeInTheDocument();
 });
@@ -62,7 +58,7 @@ test('Renders with only time when timeFormat is passed in', () => {
 test('Renders with custom formatting when customFormat is passed in', () => {
   render(
     <Timestamp
-      date={new Date('1 Jan 2022 00:00:00 EST')}
+      date={new Date(2022, 0, 1)}
       customFormat={{ year: '2-digit', month: 'short', weekday: 'short', day: 'numeric', hour: 'numeric' }}
     />
   );
@@ -77,7 +73,7 @@ test('Renders with custom content', () => {
 });
 
 test('Renders with a custom suffix when displaySuffix is passed in', () => {
-  render(<Timestamp date={new Date('1 Jan 2022 00:00:00 EST')} displaySuffix="US Eastern" />);
+  render(<Timestamp date={new Date(2022, 0, 1)} displaySuffix="US Eastern" />);
 
   expect(screen.getByText('1/1/2022, 12:00:00 AM US Eastern')).toBeInTheDocument();
 });
@@ -119,30 +115,26 @@ test('Renders with 12 hour time for a 24 hour locale when is12Hour is passed', (
 });
 
 test('Renders with default class names', () => {
-  render(<Timestamp date={new Date('1 Jan 2022 00:00:00 EST')} />);
+  render(<Timestamp date={new Date(2022, 0, 1)} />);
 
   expect(screen.getByText('1/1/2022, 12:00:00 AM')).toHaveClass('pf-c-timestamp__text');
   expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-c-timestamp');
 });
 
 test('Renders with custom class names', () => {
-  render(<Timestamp date={new Date('1 Jan 2022 00:00:00 EST')} className="custom-time-class" />);
+  render(<Timestamp date={new Date(2022, 0, 1)} className="custom-time-class" />);
 
   expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('custom-time-class');
 });
 
 test('Renders with pf-m-help-text class when tooltip is passed in with default variant', () => {
-  render(
-    <Timestamp date={new Date('1 Jan 2022 00:00:00 EST')} tooltip={{ variant: TimestampTooltipVariant.default }} />
-  );
+  render(<Timestamp date={new Date(2022, 0, 1)} tooltip={{ variant: TimestampTooltipVariant.default }} />);
 
   expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-m-help-text');
 });
 
 test('Renders with pf-m-help-text class when tooltip is passed in with custom variant', () => {
-  render(
-    <Timestamp date={new Date('1 Jan 2022 00:00:00 EST')} tooltip={{ variant: TimestampTooltipVariant.custom }} />
-  );
+  render(<Timestamp date={new Date(2022, 0, 1)} tooltip={{ variant: TimestampTooltipVariant.custom }} />);
 
   expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-m-help-text');
 });

@@ -3,17 +3,12 @@ import { Timestamp, TimestampFormat, TimestampTooltipVariant } from '@patternfly
 
 export const TimestampCustomContent: React.FunctionComponent = () => (
   <>
-    <Timestamp
-      datetime="2022-08-09T14:57:00"
-      date={new Date(2022, 7, 9, 14, 57, 0)}
-      tooltip={{ variant: TimestampTooltipVariant.default }}
-    >
+    <Timestamp date={new Date(2022, 7, 9, 14, 57, 0)} tooltip={{ variant: TimestampTooltipVariant.default }}>
       1 hour ago
     </Timestamp>
     <br />
     <br />
     <Timestamp
-      datetime="2022-08-09T14:57:00"
       date={new Date(2022, 7, 9, 14, 57, 0)}
       dateFormat={TimestampFormat.medium}
       timeFormat={TimestampFormat.short}

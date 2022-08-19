@@ -12,8 +12,6 @@ beta: true
 
 By default, a timestamp will display the current date and time based on the current locale if the `date` prop is not passed in.
 
-The following example shows one way to build an ISO 8601 string with the current local date and time, which gets passed into the `datetime` prop. Alternatively, the current UTC date and time could be passed in using the `toISOString` method.
-
 ```ts file="./TimestampDefault.tsx"
 ```
 
@@ -35,7 +33,7 @@ The format of the displayed content can be further customized by passing in the 
 
 ### Default tooltip
 
-To render a tooltip that displays the timestamp content as a UTC time, you can pass in the `tooltip` prop with a variant of "default". The format of the tooltip content will match the format of the timestamp content.
+To render a tooltip that displays the timestamp content as a UTC time, you can pass in the `tooltip` prop with a variant of "default". The format of the default tooltip content will match the format of the timestamp content.
 
 You can customize the suffix of this default tooltip variant by passing in `suffix` to the `tooltip` prop.
 
