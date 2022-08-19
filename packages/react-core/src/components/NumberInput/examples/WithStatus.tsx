@@ -38,7 +38,8 @@ export const WithStatus: React.FunctionComponent = () => {
   };
   return (
     <>
-In the following example, the validated status will update based on the value of the number input and how far from the number 5 it is.
+      In the following example, the validated status will update based on the value of the number input and how far from
+      the number 5 it is.
       <br />
       <NumberInput
         validated={validated}
