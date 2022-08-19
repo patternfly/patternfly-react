@@ -164,14 +164,6 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     [isVisible, triggerElement, refElement, popperElement, onDocumentClick]
   );
 
-  const handlePopper = React.useCallback(node => {
-    setPopperElement(node?.firstElementChild as HTMLElement);
-  }, []);
-
-  const handleTrigger = React.useCallback(node => {
-    setTriggerElement(node?.firstElementChild as HTMLElement);
-  }, []);
-
   React.useEffect(() => {
     setReady(true);
   }, []);
@@ -341,7 +333,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       <FindRefWrapper onFoundRef={(foundRef: any) => setPopperElement(foundRef)}>{menuWithPopper}</FindRefWrapper>
     );
   } else if (typeof popper !== 'function' && removeFindDomNode) {
-    popperPortal = <div ref={handlePopper}>{menuWithPopper}</div>;
+    popperPortal = <div ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>{menuWithPopper}</div>;
   } else {
     popperPortal = popper(popperElement, setPopperElement, options);
   }
@@ -352,7 +344,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         <FindRefWrapper onFoundRef={(foundRef: any) => setTriggerElement(foundRef)}>{trigger}</FindRefWrapper>
       )}
       {!reference && trigger && typeof trigger === 'object' && removeFindDomNode && (
-        <div ref={handleTrigger}>{trigger}</div>
+        <div ref={node => setTriggerElement(node?.firstElementChild as HTMLElement)}>{trigger}</div>
       )}
       {!reference && trigger && typeof trigger === 'function' && trigger(setTriggerElement)}
       {ready && isVisible && ReactDOM.createPortal(popperPortal, getTarget())}
