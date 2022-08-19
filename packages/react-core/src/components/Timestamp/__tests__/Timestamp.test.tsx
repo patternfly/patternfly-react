@@ -12,7 +12,10 @@ jest.mock('../../Tooltip', () => ({
 }));
 
 test('Matches snapshot', () => {
-  const { asFragment } = render(<Timestamp date={new Date(2022, 0, 1)} />);
+  /** Due to how the datetime attribute is contstructed internally, dateTime must be
+   * manually passed for this snapshot to pass on GitHub.
+   */
+  const { asFragment } = render(<Timestamp dateTime="2022-01-01T00:00:00.000Z" date={new Date(2022, 0, 1)} />);
 
   expect(asFragment()).toMatchSnapshot();
 });
