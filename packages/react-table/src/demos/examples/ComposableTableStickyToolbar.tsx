@@ -246,22 +246,6 @@ export const ComposableTableStickyColumnsAndHeader: React.FunctionComponent = ()
             </InnerScrollContainer>
           </OuterScrollContainer>
         </div>
-        <br />
-        Other content
-        <br />
-        Other content
-        <br />
-        Other content
-        <br />
-        Other content
-        <br />
-        Other content
-        <br />
-        Other content
-        <br />
-        Other content
-        <br />
-        Other content
       </PageSection>
     </Page>
   );
