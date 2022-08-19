@@ -2,7 +2,7 @@
 id: Wizard
 section: components
 cssPrefix: pf-c-wizard
-propComponents: ['Wizard', 'WizardFooter', 'WizardToggle', 'WizardStep', 'WizardBody']
+propComponents: ['Wizard', 'WizardStep', 'WizardFooter', 'WizardToggle', 'WizardStep', 'WizardBody', 'WizardContextProps', 'Step', 'SubStep']
 beta: true
 ---
 
@@ -34,25 +34,7 @@ import {
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
-PatternFly has two implementations of a `Wizard`.
-
-This newer `Wizard` takes a more explicit and declarative approach compared to the older implementation, which can be found under the [React](/components/wizard/react) tab.
-
-## Composable structure
-
-The standard sub-component relationships are arranged as follows:
-
-```noLive
-<Wizard>
-  <WizardStep />
-  <WizardStep
-    steps={[
-      <WizardStep />,
-      <WizardStep />
-    ]}
-  />
-</Wizard>
-```
+PatternFly has two implementations of a `Wizard`. This newer `Wizard` takes a more explicit and declarative approach compared to the older implementation, which can be found under the [React](/components/wizard/react) tab.
 
 ## Examples
 
@@ -61,14 +43,42 @@ The standard sub-component relationships are arranged as follows:
 ```ts file="./WizardBasic.tsx"
 ```
 
-### Custom Nav
+### Custom navigation
 
 ```ts file="./WizardCustomNav.tsx"
 ```
 
-### Kitchen Sink
+### Kitchen sink
 
 Includes a header, custom footer, sub-steps, step content with a drawer, custom nav item, and nav prevention until step visitation.
 
 ```ts file="./WizardKitchenSink.tsx"
+```
+
+## Hooks
+
+### useWizardFooter
+
+Used to set a unique footer for the wizard on any given step. See step 3 of [Kitchen sink](#kitchen-sink) for a live example.
+
+```noLive
+import { useWizardFooter } from '@patternfly/react-core/next';
+
+const StepContent = () => {
+  useWizardFooter(<>Some footer</>);
+  return <>Step content</>;
+}
+```
+
+### useWizardContext
+
+Used to access any property of [WizardContext](#wizardcontextprops):
+
+```noLive
+import { useWizardContext } from '@patternfly/react-core/next';
+
+const StepContent = () => {
+  const { activeStep } = useWizardContext();
+  return <>This is the active step: {activeStep}</>;
+}
 ```

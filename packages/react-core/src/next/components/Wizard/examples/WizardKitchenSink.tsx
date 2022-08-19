@@ -123,7 +123,7 @@ const StepWithCustomFooter = () => {
   return <>Step 3 content w/ custom async footer</>;
 };
 
-const CustomStepFour = (props: WizardStepProps) => <div {...props} />;
+const CustomStepFour = (props: WizardStepProps) => <div {...props} id={props.id.toString()} />;
 
 export const WizardKitchenSink: React.FunctionComponent = () => (
   <Wizard

@@ -3,15 +3,25 @@ import { Step, SubStep } from './types';
 import { getActiveStep } from './utils';
 
 export interface WizardContextProps {
+  /** List of steps */
   steps: (Step | SubStep)[];
+  /** Active step */
   activeStep: Step | SubStep;
+  /** Footer element */
   footer: React.ReactElement;
+  /** Navigate to the next step */
   onNext(): void;
+  /** Navigate to the previous step */
   onBack(): void;
+  /** Close the wizard */
   onClose(): void;
+  /** Navigate to step by ID */
   goToStepById(id: number | string): void;
+  /** Navigate to step by name */
   goToStepByName(name: string): void;
+  /** Navigate to step by index */
   goToStepByIndex(index: number): void;
+  /** Update the footer with any react element */
   setFooter(footer: React.ReactElement): void;
 }
 
@@ -91,5 +101,4 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   );
 };
 
-export const WizardContextConsumer = WizardContext.Consumer;
 export const useWizardContext = () => React.useContext(WizardContext);

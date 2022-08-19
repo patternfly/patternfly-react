@@ -1,6 +1,6 @@
 import React from 'react';
 import { WizardNav, WizardNavItem } from '@patternfly/react-core';
-import { Step, SubStep, Wizard, WizardStep } from '@patternfly/react-core/next';
+import { Wizard, WizardStep, Step, SubStep } from '@patternfly/react-core/next';
 
 export const WizardCustomNav: React.FunctionComponent = () => {
   const nav = (

@@ -19,7 +19,7 @@ import { WizardToggle } from './WizardToggle';
 
 /**
  * Wrapper for all steps and hosts state, including navigation helpers, within context.
- * The WizardContext provided by default gives any child of Wizard access to those resources.
+ * The WizardContext provided by default gives any child of wizard access to those resources.
  */
 
 export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
@@ -33,7 +33,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   nav?: DefaultWizardNavProps | CustomWizardNavFunction;
   /** The initial index the wizard is to start on (1 or higher). Defaults to 1. */
   startIndex?: number;
-  /** Additional classes spread to the Wizard */
+  /** Additional classes spread to the wizard */
   className?: string;
   /** Custom width of the wizard */
   width?: number | string;
@@ -41,9 +41,9 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   height?: number | string;
   /** Callback function when a step in the nav is clicked */
   onNavByIndex?: WizardNavStepFunction;
-  /** Callback function after Next button is clicked */
+  /** Callback function after next button is clicked */
   onNext?: WizardNavStepFunction;
-  /** Callback function after Back button is clicked */
+  /** Callback function after back button is clicked */
   onBack?: WizardNavStepFunction;
   /** Callback function to save at the end of the wizard, if not specified uses onClose */
   onSave?(): void;
@@ -80,20 +80,20 @@ export const Wizard = (props: WizardProps) => {
       }
 
       return onClose?.();
-    } else {
-      let currStep = steps[currentStepIndex];
-      let newStepIndex = currentStepIndex + 1;
-      const prevStep = steps[currentStepIndex - 1];
-
-      // Skip parent step and focus on the first sub-step if they exist
-      if (isWizardParentStep(currStep)) {
-        newStepIndex += 1;
-        currStep = steps[currentStepIndex + 1];
-      }
-
-      setCurrentStepIndex(newStepIndex);
-      return onNext?.(normalizeNavStep(currStep), normalizeNavStep(prevStep));
     }
+
+    let currStep = steps[currentStepIndex];
+    let newStepIndex = currentStepIndex + 1;
+    const prevStep = steps[currentStepIndex - 1];
+
+    // Skip parent step and focus on the first sub-step if they exist
+    if (isWizardParentStep(currStep)) {
+      newStepIndex += 1;
+      currStep = steps[currentStepIndex + 1];
+    }
+
+    setCurrentStepIndex(newStepIndex);
+    return onNext?.(normalizeNavStep(currStep), normalizeNavStep(prevStep));
   };
 
   const goToPrevStep = () => {

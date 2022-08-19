@@ -1,11 +1,13 @@
 import React from 'react';
 import { WizardNavItemProps, WizardNavProps } from '../../../components/Wizard';
 
+/** Initially inferred from WizardStep components, these properties represent what is controllable from within WizardContext for a given step. */
+
 export interface Step {
   /** Name of the step's nav item */
   name: React.ReactNode;
   /** Unique identifier */
-  id: string;
+  id: string | number;
   /** Flag to disable the step's nav item */
   isDisabled?: boolean;
   /** Flag to represent whether the step has been visited (navigated to) */
@@ -25,6 +27,8 @@ export interface Step {
   /** (Unused if footer is controlled) True to hide the Back button */
   hideBackButton?: boolean;
 }
+
+/** With the same purpose as Step, SubStep inherits all properties of Step with the exception of subStepIds. */
 
 export interface SubStep extends Omit<Step, 'subStepIds'> {
   /** Unique identifier of the parent step */
