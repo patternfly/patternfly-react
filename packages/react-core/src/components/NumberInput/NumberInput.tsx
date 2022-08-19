@@ -17,10 +17,8 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   widthChars?: number;
   /** Indicates the whole number input should be disabled */
   isDisabled?: boolean;
-  /** Value to indicate if the input is modified to show that validation state.
-   * If set to warning, input will be modified to indicate warning state.
-   * If set to success, input will be modified to indicate valid state.
-   * If set to error,  input will be modified to indicate error state.
+  /** Value to indicate if the input is modified to show that validation state
+   * @beta
    */
   validated?: 'default' | 'error' | 'warning' | 'success' | ValidatedOptions;
   /** Callback for the minus button */
@@ -107,7 +105,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
 
   return (
     <div
-      className={css(styles.numberInput, className, validated !== 'default' && styles.modifiers.status)}
+      className={css(styles.numberInput, validated !== 'default' && styles.modifiers.status, className)}
       {...(widthChars && {
         style: {
           '--pf-c-number-input--c-form-control--width-chars': widthChars,
@@ -135,7 +133,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           name={inputName}
           aria-label={inputAriaLabel}
           {...(isDisabled && { isDisabled })}
-          {...(onChange && { onChange: (v, e) => onChange(e) })}
+          {...(onChange && { onChange: (value, event) => onChange(event) })}
           onBlur={handleBlur}
           {...(!onChange && { isReadOnly: true })}
           onKeyDown={keyDownHandler}
