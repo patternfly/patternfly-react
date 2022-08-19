@@ -346,7 +346,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       {!reference && trigger && typeof trigger === 'object' && removeFindDomNode && (
         <div ref={node => setTriggerElement(node?.firstElementChild as HTMLElement)}>{trigger}</div>
       )}
-      {!reference && trigger && typeof trigger === 'function' && trigger(setTriggerElement)}
+      {!reference && trigger && typeof trigger === 'function' && trigger(triggerElement, setTriggerElement)}
       {ready && isVisible && ReactDOM.createPortal(popperPortal, getTarget())}
     </>
   );
