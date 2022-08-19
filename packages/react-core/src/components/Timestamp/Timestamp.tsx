@@ -40,7 +40,9 @@ export interface TimestampProps extends React.HTMLProps<HTMLSpanElement> {
    * override the dateFormat and timeFormat props.
    */
   customFormat?: { [key: string]: string };
-  /** Determines the default content that is displayed inside the timestamp. */
+  /** Determines the default content that is displayed inside the timestamp. If a dateTime prop is
+   * not manually passed in, this prop will also construct an ISO 8601 string for the inner time element's
+   * datetime attribute. */
   date?: Date;
   /** Determines the format of the displayed date in the timestamp and UTC tooltip. Examples:
    * "Full" => Tuesday, August 9, 2022;
@@ -49,13 +51,6 @@ export interface TimestampProps extends React.HTMLProps<HTMLSpanElement> {
    * "Short" => 8/9/22
    */
   dateFormat?: 'full' | 'long' | 'medium' | 'short';
-  /** An ISO 8601 formatted date string to apply to the inner time element's datetime attribute.
-   * This can either be a UTC datetime string, or a local datetime string.
-   *
-   * For more information about the time element's datetime attribute:
-   * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
-   */
-  datetime: string;
   /** Applies a custom suffix to the displayed content, usually after the time, such as a
    * custom time zone.
    */
@@ -86,10 +81,9 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   customFormat,
   date: dateProp = new Date(),
   dateFormat,
-  datetime,
   displaySuffix = '',
   is12Hour,
-  locale = undefined,
+  locale,
   timeFormat,
   tooltip,
   ...props
@@ -121,7 +115,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
       {...(tooltip && { tabIndex: 0 })}
       {...props}
     >
-      <time className="pf-c-timestamp__text" dateTime={datetime}>
+      <time className="pf-c-timestamp__text" dateTime={props.dateTime || new Date(dateProp).toISOString()}>
         {!children ? defaultDisplay : children}
       </time>
     </span>
