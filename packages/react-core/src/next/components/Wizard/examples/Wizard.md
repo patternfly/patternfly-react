@@ -28,10 +28,7 @@ import {
   WizardToggle,
   WizardStep,
   WizardBody,
-  Step,
-  SubStep,
   useWizardFooter,
-  WizardStepProps,
   useWizardContext
 } from '@patternfly/react-core/next';
 import { css } from '@patternfly/react-styles';
