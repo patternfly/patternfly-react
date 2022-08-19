@@ -270,6 +270,11 @@ class DisabledNumberInput extends React.Component {
     );
   }
 }
+
+```
+### With status
+
+```ts file="./WithStatus.tsx"
 ```
 
 ### Varying sizes
