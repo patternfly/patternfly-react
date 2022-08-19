@@ -38,7 +38,7 @@ export const WithStatus: React.FunctionComponent = () => {
   };
   return (
     <>
-      Status will change to warning/error depending on how far from 5.
+In the following example, the validated status will update based on the value of the number input and how far from the number 5 it is.
       <br />
       <NumberInput
         validated={validated}
