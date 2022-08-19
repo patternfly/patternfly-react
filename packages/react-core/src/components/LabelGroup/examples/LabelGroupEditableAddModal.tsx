@@ -27,17 +27,17 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   const [labelType, setLabelType] = React.useState<string>('filled');
   const [isClosable, setIsCloseable] = React.useState<boolean>(false);
   const [isEditable, setIsEditable] = React.useState<boolean>(false);
-  const labelInputRef = React.useRef();
+  const labelInputRef = React.useRef(null);
 
   const [isColorOpen, setIsColorOpen] = React.useState<boolean>(false);
-  const colorMenuRef = React.useRef<HTMLDivElement>();
-  const colorContainerRef = React.useRef<HTMLDivElement>();
-  const colorToggleRef = React.useRef<HTMLButtonElement>();
+  const colorMenuRef = React.useRef<HTMLDivElement>(null);
+  const colorContainerRef = React.useRef<HTMLDivElement>(null);
+  const colorToggleRef = React.useRef<HTMLButtonElement>(null);
 
   const [isIconOpen, setIsIconOpen] = React.useState<boolean>(false);
-  const iconMenuRef = React.useRef<HTMLDivElement>();
-  const iconContainerRef = React.useRef<HTMLDivElement>();
-  const iconToggleRef = React.useRef<HTMLButtonElement>();
+  const iconMenuRef = React.useRef<HTMLDivElement>(null);
+  const iconContainerRef = React.useRef<HTMLDivElement>(null);
+  const iconToggleRef = React.useRef<HTMLButtonElement>(null);
 
   const [labels, setLabels] = React.useState<any>([
     { name: 'Label 1', id: 0 },
@@ -65,7 +65,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   };
 
   const onAdd = () => {
-    let labelIcon = null;
+    let labelIcon: any;
     if (icon === 'Info circle icon') {
       labelIcon = <InfoCircleIcon />;
     }
@@ -92,7 +92,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
     setModalOpen(!isModalOpen);
     setIdIndex(idIndex + 1);
     setLabelText('');
-    setColor(null);
+    setColor('');
     setIcon(null);
     setLabelType('filled');
     setIsCloseable(false);
@@ -110,25 +110,25 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   }, [isModalOpen]);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
-    if (isColorOpen && colorMenuRef.current.contains(event.target as Node)) {
+    if (isColorOpen && colorMenuRef?.current?.contains(event.target as Node)) {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsColorOpen(!isColorOpen);
-        colorToggleRef.current.focus();
+        colorToggleRef?.current?.focus();
       }
     }
-    if (isIconOpen && iconMenuRef.current.contains(event.target as Node)) {
+    if (isIconOpen && iconMenuRef?.current?.contains(event.target as Node)) {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsIconOpen(!isIconOpen);
-        iconToggleRef.current.focus();
+        iconToggleRef?.current?.focus();
       }
     }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (isColorOpen && !colorMenuRef.current.contains(event.target as Node)) {
+    if (isColorOpen && !colorMenuRef?.current?.contains(event.target as Node)) {
       setIsColorOpen(false);
     }
-    if (isIconOpen && !iconMenuRef.current.contains(event.target as Node)) {
+    if (isIconOpen && !iconMenuRef?.current?.contains(event.target as Node)) {
       setIsIconOpen(false);
     }
   };
@@ -164,7 +164,8 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
       ref={colorMenuRef}
       activeItemId={color}
       onSelect={(_ev, itemId) => {
-        setColor(itemId.toString());
+        setColor(itemId?.toString());
+        colorToggleRef?.current?.focus();
         setIsColorOpen(false);
       }}
       selected={color}
@@ -205,7 +206,8 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
       ref={iconMenuRef}
       activeItemId={icon}
       onSelect={(_ev, itemId) => {
-        setIcon(itemId.toString());
+        setIcon(itemId?.toString());
+        iconToggleRef?.current?.focus();
         setIsIconOpen(false);
       }}
       selected={icon}
@@ -234,9 +236,9 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
           </Label>
         }
       >
-        {labels.map((label, index) => (
+        {labels.map((label: { name: string; id: string; props: any }, index: number) => (
           <Label
-            key={`${label.name}-${index}`}
+            key={label.id}
             id={`${label.name}-${index}`}
             color="blue"
             onClose={() => onClose(label.id)}
@@ -278,7 +280,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
               <Popper
                 trigger={colorToggle}
                 popper={colorMenu}
-                appendTo={colorContainerRef.current}
+                appendTo={colorContainerRef.current as HTMLElement}
                 isVisible={isColorOpen}
                 popperMatchesTriggerWidth={false}
               />
@@ -289,7 +291,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
               <Popper
                 trigger={iconToggle}
                 popper={iconMenu}
-                appendTo={iconContainerRef.current}
+                appendTo={iconContainerRef.current as HTMLElement}
                 isVisible={isIconOpen}
                 popperMatchesTriggerWidth={false}
               />

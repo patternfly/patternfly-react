@@ -58,7 +58,7 @@ export const LabelGroupEditableAdd: React.FunctionComponent = () => {
     >
       {labels.map((label, index) => (
         <Label
-          key={`${label.name}-${index}`}
+          key={label.id}
           id={`${label.name}-${index}`}
           color="blue"
           onClose={() => onClose(label.id)}

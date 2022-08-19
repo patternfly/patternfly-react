@@ -104,7 +104,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   render,
   ...props
 }: LabelProps) => {
-  const [isEditableActive, setIsEditableActive] = useState(false);
+  const [isEditableActive, setIsEditableActive] = useState<boolean>(false);
   const [currValue, setCurrValue] = useState(children);
   const editableButtonRef = React.useRef<HTMLButtonElement>();
   const editableInputRef = React.useRef<HTMLInputElement>();
@@ -151,6 +151,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         onEditComplete && onEditComplete(editableInputRef.current.value);
       }
       setIsEditableActive(false);
+      editableButtonRef?.current?.focus();
     }
     if (isEditableActive && key === 'Escape') {
       event.preventDefault();
@@ -161,6 +162,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         onEditCancel && onEditCancel(children as string);
       }
       setIsEditableActive(false);
+      editableButtonRef?.current?.focus();
     }
     if (!isEditableActive && key === 'Enter') {
       event.preventDefault();
