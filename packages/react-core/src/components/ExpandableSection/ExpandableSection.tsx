@@ -39,9 +39,10 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   isWidthLimited?: boolean;
   /** Flag to indicate if the content is indented */
   isIndented?: boolean;
-  /** Determines the variant of the expandable section. */
+  /** @beta Determines the variant of the expandable section. */
   variant?: 'default' | 'truncate';
-  /** @beta Truncates the expandable content to the specified number of lines. */
+  /** @beta Truncates the expandable content to the specified number of lines when using the
+   * "truncate" variant. */
   truncateMaxLines?: number;
 }
 
@@ -81,7 +82,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     isWidthLimited: false,
     isIndented: false,
     contentId: '',
-    variant: 'default'
+    variant: 'default',
+    truncateMaxLines: 3
   };
 
   private calculateToggleText(
@@ -134,6 +136,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       isIndented,
       contentId,
       variant,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      truncateMaxLines,
       ...props
     } = this.props;
     let onToggle = onToggleProp;
@@ -159,7 +163,6 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
         className={css(styles.expandableSectionToggle)}
         type="button"
         aria-expanded={propOrStateIsExpanded}
-        {...(variant === ExpandableSectionVariant.truncate && { 'aria-hidden': true })}
         onClick={() => onToggle(!propOrStateIsExpanded)}
       >
         {variant !== ExpandableSectionVariant.truncate && (
@@ -190,7 +193,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
         <div
           ref={this.expandableContentRef}
           className={css(styles.expandableSectionContent)}
-          hidden={!propOrStateIsExpanded}
+          hidden={variant !== ExpandableSectionVariant.truncate && !propOrStateIsExpanded}
           id={contentId}
         >
           {children}

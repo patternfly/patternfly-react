@@ -45,7 +45,6 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
       type="button"
       aria-expanded={isExpanded}
       aria-controls={contentId}
-      {...(hasTruncatedContent && { 'aria-hidden': true })}
       onClick={() => onToggle(!isExpanded)}
     >
       {!hasTruncatedContent && (

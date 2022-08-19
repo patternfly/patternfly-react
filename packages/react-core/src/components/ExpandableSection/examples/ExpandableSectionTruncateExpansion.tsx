@@ -11,7 +11,6 @@ export const ExpandableSectionTruncateExpansion: React.FunctionComponent = () =>
   return (
     <ExpandableSection
       variant={ExpandableSectionVariant.truncate}
-      truncateMaxLines={3}
       toggleText={isExpanded ? 'Show less' : 'Show more'}
       onToggle={onToggle}
       isExpanded={isExpanded}
