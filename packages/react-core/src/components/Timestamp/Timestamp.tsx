@@ -40,9 +40,8 @@ export interface TimestampProps extends React.HTMLProps<HTMLSpanElement> {
    * override the dateFormat and timeFormat props.
    */
   customFormat?: { [key: string]: string };
-  /** Determines the default content that is displayed inside the timestamp. If a dateTime prop is
-   * not manually passed in, this prop will also construct an ISO 8601 string for the inner time element's
-   * datetime attribute. */
+  /** Determines the default content that is displayed inside the timestamp and the value of
+   * the inner time element's datetime attribute. */
   date?: Date;
   /** Determines the format of the displayed date in the timestamp and UTC tooltip. Examples:
    * "Full" => Tuesday, August 9, 2022;

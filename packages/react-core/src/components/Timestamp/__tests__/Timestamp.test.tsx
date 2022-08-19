@@ -21,9 +21,13 @@ test('Matches snapshot', () => {
 });
 
 test('Renders component', () => {
-  render(<Timestamp />);
+  render(
+    <div data-testid="timestamp-container">
+      <Timestamp />
+    </div>
+  );
 
-  expect(screen.getByText(new Date().toLocaleString()).parentElement).toBeVisible();
+  expect(screen.getByTestId('timestamp-container').firstChild).toBeVisible();
 });
 
 test('Renders with current date by default with default formatting', () => {
@@ -117,11 +121,16 @@ test('Renders with 12 hour time for a 24 hour locale when is12Hour is passed', (
   expect(screen.getByText('01/02/2022, 1:00:00 pm')).toBeInTheDocument();
 });
 
-test('Renders with default class names', () => {
+test('Renders with pf-c-timestamp by default', () => {
+  render(<Timestamp date={new Date(2022, 0, 1)} />);
+
+  expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-c-timestamp');
+});
+
+test('Renders with pf-c-timestamp__text by default', () => {
   render(<Timestamp date={new Date(2022, 0, 1)} />);
 
   expect(screen.getByText('1/1/2022, 12:00:00 AM')).toHaveClass('pf-c-timestamp__text');
-  expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-c-timestamp');
 });
 
 test('Renders with custom class names', () => {
