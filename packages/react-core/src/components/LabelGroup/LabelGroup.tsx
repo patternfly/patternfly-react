@@ -52,13 +52,13 @@ export interface LabelGroupProps extends React.HTMLProps<HTMLUListElement> {
     | 'right-end';
   /** Flag to implement a vertical layout */
   isVertical?: boolean;
-  /** @beta Flag indicating contained labels are editable. Allows spacing for a text input after the labels. */
+  /** Flag indicating contained labels are editable. Allows spacing for a text input after the labels. */
   isEditable?: boolean;
-  /** @beta Flag indicating the editable label group should be appended with a textarea. */
+  /** Flag indicating the editable label group should be appended with a textarea. */
   hasEditableTextArea?: boolean;
-  /** @beta Additional props passed to the editable textarea. */
+  /** Additional props passed to the editable textarea. */
   editableTextAreaProps?: any;
-  /** @beta Control for adding new labels */
+  /** Control for adding new labels */
   addLabelControl?: React.ReactNode;
 }
 
