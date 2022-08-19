@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.80.0 (2022-08-19)
+
+
+### Features
+
+* **ExpandableSection:** add truncated variant ([#7852](https://github.com/patternfly/patternfly-react/issues/7852)) ([f628cdf](https://github.com/patternfly/patternfly-react/commit/f628cdf571d71addfc04e69728be73895e261094))
+
+
+
+
+
 ## 4.79.13 (2022-08-19)
 
 **Note:** Version bump only for package @patternfly/react-topology
