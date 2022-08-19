@@ -39,7 +39,9 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   isWidthLimited?: boolean;
   /** Flag to indicate if the content is indented */
   isIndented?: boolean;
-  /** @beta Determines the variant of the expandable section. */
+  /** @beta Determines the variant of the expandable section. When passing in "truncate" as the
+   * variant, the expandable content will be truncated after 3 lines by default.
+   */
   variant?: 'default' | 'truncate';
   /** @beta Truncates the expandable content to the specified number of lines when using the
    * "truncate" variant. */
@@ -82,8 +84,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     isWidthLimited: false,
     isIndented: false,
     contentId: '',
-    variant: 'default',
-    truncateMaxLines: 3
+    variant: 'default'
   };
 
   private calculateToggleText(
@@ -102,7 +103,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
   }
 
   componentDidMount() {
-    if (this.props.variant === ExpandableSectionVariant.truncate) {
+    if (this.props.variant === ExpandableSectionVariant.truncate && this.props.truncateMaxLines) {
       const expandableContent = this.expandableContentRef.current;
       setLineClamp(this.props.truncateMaxLines, expandableContent);
     }

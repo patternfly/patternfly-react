@@ -83,7 +83,7 @@ test('Does not render with pf-m-truncate class when variant is not truncate', ()
 
 test('Renders with pf-m-truncate class when variant is truncate', () => {
   render(
-    <ExpandableSection variant={ExpandableSectionVariant.truncate} truncateMaxLines={1} {...props}>
+    <ExpandableSection variant={ExpandableSectionVariant.truncate} {...props}>
       test
     </ExpandableSection>
   );
