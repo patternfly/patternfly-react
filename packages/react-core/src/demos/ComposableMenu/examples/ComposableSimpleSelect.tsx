@@ -5,21 +5,21 @@ import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 export const ComposableSimpleSelect: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string>('Select a value');
-  const toggleRef = React.useRef<HTMLButtonElement>();
-  const menuRef = React.useRef<HTMLDivElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
+  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const menuRef = React.useRef<HTMLDivElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
-    if (isOpen && menuRef.current.contains(event.target as Node)) {
+    if (isOpen && menuRef.current?.contains(event.target as Node)) {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsOpen(!isOpen);
-        toggleRef.current.focus();
+        toggleRef.current?.focus();
       }
     }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current.contains(event.target as Node)) {
+    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
       setIsOpen(false);
     }
   };
@@ -58,8 +58,17 @@ export const ComposableSimpleSelect: React.FunctionComponent = () => {
       {selected}
     </MenuToggle>
   );
+
+  function onSelect(event?: React.MouseEvent, itemId?: string | number) {
+    if (typeof itemId === 'undefined') {
+      return;
+    }
+
+    setSelected(itemId.toString());
+  }
+
   const menu = (
-    <Menu ref={menuRef} id="select-menu" onSelect={(_ev, itemId) => setSelected(itemId.toString())} selected={selected}>
+    <Menu ref={menuRef} id="select-menu" onSelect={onSelect} selected={selected}>
       <MenuContent>
         <MenuList>
           <MenuItem itemId="Option 1">Option 1</MenuItem>
@@ -73,7 +82,7 @@ export const ComposableSimpleSelect: React.FunctionComponent = () => {
   );
   return (
     <div ref={containerRef}>
-      <Popper trigger={toggle} popper={menu} appendTo={containerRef.current} isVisible={isOpen} />
+      <Popper trigger={toggle} popper={menu} appendTo={containerRef.current || undefined} isVisible={isOpen} />
     </div>
   );
 };

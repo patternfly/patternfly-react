@@ -24,21 +24,21 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
   const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
   const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
   const [menuHeights, setMenuHeights] = React.useState<MenuHeightsType>({});
-  const toggleRef = React.useRef<HTMLButtonElement>();
-  const menuRef = React.useRef<HTMLDivElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
+  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const menuRef = React.useRef<HTMLDivElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
-    if (isOpen && menuRef.current.contains(event.target as Node)) {
+    if (isOpen && menuRef.current?.contains(event.target as Node)) {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsOpen(!isOpen);
-        toggleRef.current.focus();
+        toggleRef.current?.focus();
       }
     }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current.contains(event.target as Node)) {
+    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
       setIsOpen(false);
     }
   };
@@ -248,7 +248,7 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
       <Popper
         trigger={toggle}
         popper={menu}
-        appendTo={containerRef.current}
+        appendTo={containerRef.current || undefined}
         isVisible={isOpen}
         popperMatchesTriggerWidth={false}
       />

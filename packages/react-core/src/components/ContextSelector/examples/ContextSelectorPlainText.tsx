@@ -47,7 +47,7 @@ export const ContextSelectorPlainText: React.FunctionComponent = () => {
     setSearchValue(value);
   };
 
-  const onSearchButtonClick = (_event: React.SyntheticEvent<HTMLButtonElement>) => {
+  const onSearchButtonClick = () => {
     const filtered =
       searchValue === ''
         ? items
@@ -72,8 +72,8 @@ export const ContextSelectorPlainText: React.FunctionComponent = () => {
       isText
     >
       {filteredItems.map((item, index) => {
-        const [text, href = null, isDisabled = false] =
-          typeof item === 'string' ? [item, null, false] : [item.text, item.href, item.isDisabled];
+        const [text, href = undefined, isDisabled = false] =
+          typeof item === 'string' ? [item, undefined, false] : [item.text, item.href, item.isDisabled];
         return (
           <ContextSelectorItem key={index} href={href} isDisabled={isDisabled}>
             {text}

@@ -21,24 +21,24 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
   const [refFullOptions, setRefFullOptions] = React.useState<Element[]>();
   const [favorites, setFavorites] = React.useState<string[]>([]);
   const [filteredIds, setFilteredIds] = React.useState<string[]>(['*']);
-  const menuRef = React.useRef<HTMLDivElement>();
-  const toggleRef = React.useRef<HTMLButtonElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
+  const menuRef = React.useRef<HTMLDivElement>(null);
+  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
       return;
     }
-    if (menuRef.current.contains(event.target as Node) || toggleRef.current.contains(event.target as Node)) {
+    if (menuRef.current?.contains(event.target as Node) || toggleRef.current?.contains(event.target as Node)) {
       if (event.key === 'Escape') {
         setIsOpen(!isOpen);
-        toggleRef.current.focus();
+        toggleRef.current?.focus();
       }
     }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current.contains(event.target as Node)) {
+    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
       setIsOpen(false);
     }
   };
@@ -132,7 +132,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
   ];
 
   const createFavorites = (favIds: string[]) => {
-    const favorites = [];
+    const favorites: unknown[] = [];
 
     menuItems.forEach(item => {
       if (item.type === MenuList) {
@@ -219,9 +219,10 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
       return;
     }
 
-    const filteredIds = refFullOptions
-      .filter(item => (item as HTMLElement).innerText.toLowerCase().includes(textValue.toString().toLowerCase()))
-      .map(item => item.id);
+    const filteredIds =
+      refFullOptions
+        ?.filter(item => (item as HTMLElement).innerText.toLowerCase().includes(textValue.toString().toLowerCase()))
+        .map(item => item.id) || [];
     setFilteredIds(filteredIds);
   };
 
@@ -275,7 +276,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
         popper={menu}
         isVisible={isOpen}
         popperMatchesTriggerWidth={false}
-        appendTo={containerRef.current}
+        appendTo={containerRef.current || undefined}
       />
     </div>
   );
