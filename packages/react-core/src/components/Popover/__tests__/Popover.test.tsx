@@ -90,3 +90,26 @@ test('popover can close from content (uncontrolled)', () => {
   );
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('popover renders in strict mode', () => {
+  const { asFragment } = render(
+    <React.StrictMode>
+      <Popover
+        id="test"
+        position="top"
+        isVisible
+        hideOnOutsideClick
+        headerContent={<div>Popover Header</div>}
+        bodyContent={
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          </div>
+        }
+        removeFindDomNode
+      >
+        <div>Toggle Popover</div>
+      </Popover>
+    </React.StrictMode>
+  );
+  expect(asFragment()).toMatchSnapshot();
+});

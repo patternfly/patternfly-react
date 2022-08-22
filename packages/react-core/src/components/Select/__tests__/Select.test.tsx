@@ -81,6 +81,25 @@ describe('Select', () => {
       );
       expect(asFragment()).toMatchSnapshot();
     });
+
+    test('renders expanded in strict mode successfully', () => {
+      const { asFragment } = render(
+        <React.StrictMode>
+          <Select
+            removeFindDomNode
+            variant={SelectVariant.single}
+            onSelect={jest.fn()}
+            onToggle={jest.fn()}
+            isOpen
+            ouiaId="test-id"
+          >
+            {selectOptions}
+          </Select>
+        </React.StrictMode>
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
     test('renders expanded successfully with custom objects', () => {
       const { asFragment } = render(
         <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen ouiaId="test-id">
@@ -527,12 +546,7 @@ test('applies focus styling to the create option when reached via keyboard navig
   const user = userEvent.setup();
   
   render(
-    <Select
-      variant={SelectVariant.typeahead}
-      onToggle={() => {}}
-      isOpen
-      isCreatable
-    >
+    <Select variant={SelectVariant.typeahead} onToggle={() => {}} isOpen isCreatable>
       {selectOptions}
     </Select>
   );

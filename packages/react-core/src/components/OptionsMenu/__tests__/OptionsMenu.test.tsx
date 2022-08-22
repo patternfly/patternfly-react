@@ -31,6 +31,21 @@ describe('optionsMenu', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('renders in srtict mode', () => {
+    const { asFragment } = render(
+      <React.StrictMode>
+        <OptionsMenu
+          removeFindDomNode
+          id="regular"
+          menuItems={menuItems}
+          isOpen
+          toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
+        />
+      </React.StrictMode>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('right aligned', () => {
     const { asFragment } = render(
       <OptionsMenu

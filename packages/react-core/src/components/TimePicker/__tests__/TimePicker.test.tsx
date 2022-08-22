@@ -6,6 +6,21 @@ import userEvent from '@testing-library/user-event';
 import { TimePicker, TimePickerProps } from '../TimePicker';
 
 describe('TimePicker', () => {
+  test('Renders in strict mode', () => {
+    const validateTime = (_time: string) => {
+      return true;
+    };
+
+    const { asFragment } = render(
+      <React.StrictMode>
+        <TimePicker removeFindDomNode value={'00:00'} validateTime={validateTime} aria-label="time picker" />
+      </React.StrictMode>
+    );
+
+    expect(screen.getByLabelText('time picker')).not.toHaveClass('pf-m-error');
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   describe('test timepicker onChange method with valid values', () => {
     const testOnChange = async ({
       inputProps,

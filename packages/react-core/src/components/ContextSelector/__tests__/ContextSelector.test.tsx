@@ -21,7 +21,22 @@ describe('ContextSelector', () => {
   });
 
   test('Renders ContextSelector open', () => {
-    const { asFragment } = render(<ContextSelector isOpen id="render-open">{items}</ContextSelector>);
+    const { asFragment } = render(
+      <ContextSelector isOpen id="render-open">
+        {items}
+      </ContextSelector>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Renders in strict mode', () => {
+    const { asFragment } = render(
+      <React.StrictMode>
+        <ContextSelector removeFindDomNode isOpen id="render">
+          {items}
+        </ContextSelector>
+      </React.StrictMode>
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
