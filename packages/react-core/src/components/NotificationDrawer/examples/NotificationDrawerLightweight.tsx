@@ -55,7 +55,7 @@ export const NotificationDrawerLightweight: React.FunctionComponent = () => {
             title="First notification group"
             isExpanded={firstGroupExpanded}
             count={4}
-            isRead={false}
+            isRead={true}
             onExpand={toggleFirstDrawer}
           >
             <NotificationDrawerList isHidden={!firstGroupExpanded}>
@@ -106,7 +106,7 @@ export const NotificationDrawerLightweight: React.FunctionComponent = () => {
             title="Second notification group"
             isExpanded={secondGroupExpanded}
             count={4}
-            isRead={false}
+            isRead={true}
             onExpand={toggleSecondDrawer}
           >
             <NotificationDrawerList isHidden={!secondGroupExpanded}>
@@ -159,7 +159,7 @@ export const NotificationDrawerLightweight: React.FunctionComponent = () => {
             title="Third notification group"
             isExpanded={thirdGroupExpanded}
             count={0}
-            isRead={false}
+            isRead={true}
             onExpand={toggleThirdDrawer}
           >
             <NotificationDrawerList isHidden={!thirdGroupExpanded}>
