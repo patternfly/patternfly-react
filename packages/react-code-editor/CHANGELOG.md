@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.75.0 (2022-08-22)
+
+
+### Features
+
+* **Timestamp:** create component ([#7815](https://github.com/patternfly/patternfly-react/issues/7815)) ([98058b3](https://github.com/patternfly/patternfly-react/commit/98058b35c4b7d5e916abd7318e020e53783f73a6))
+
+
+
+
+
 ## 4.74.1 (2022-08-22)
 
 
