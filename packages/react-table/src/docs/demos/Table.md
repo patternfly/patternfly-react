@@ -5,6 +5,7 @@ section: components
 
 import {
 Checkbox,
+Label,
 PageSection,
 ToolbarExpandIconWrapper,
 ToolbarContent,
@@ -46,6 +47,7 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+import { rows, columns } from '../examples/Data.jsx';
 
 ## Demos
 
@@ -2796,6 +2798,7 @@ import {
   DropdownToggle,
   DropdownItem,
   KebabToggle,
+  Label,
   Nav,
   NavItem,
   NavList,
@@ -2817,6 +2820,7 @@ import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { rows, columns } from '../examples/Data.jsx';
 
 class PageLayoutDefaultNav extends React.Component {
   constructor(props) {
@@ -2824,8 +2828,7 @@ class PageLayoutDefaultNav extends React.Component {
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
-      activeItem: 0,
-      res: []
+      activeItem: 0
     };
     this.onDropdownToggle = isDropdownOpen => {
       this.setState({
@@ -2858,20 +2861,8 @@ class PageLayoutDefaultNav extends React.Component {
     };
   }
 
-  fetch(page, perPage) {
-    this.setState({ loading: true });
-    fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${perPage}`)
-      .then(resp => resp.json())
-      .then(resp => this.setState({ res: resp, perPage, page, total: 100 }))
-      .catch(err => this.setState({ error: err, perPage: 0, page: 0, total: 0 }));
-  }
-
-  componentDidMount() {
-    this.fetch(this.state.page || 1, this.state.perPage || 20);
-  }
-
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem, res } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
@@ -2980,6 +2971,19 @@ class PageLayoutDefaultNav extends React.Component {
       </Breadcrumb>
     );
 
+    const renderLabel = labelText => {
+      switch (labelText) {
+        case 'Running':
+          return <Label color="green">{labelText}</Label>;
+        case 'Stopped':
+          return <Label color="orange">{labelText}</Label>;
+        case 'Needs Maintenance':
+          return <Label color="blue">{labelText}</Label>;
+        case 'Down':
+          return <Label color="red">{labelText}</Label>;
+      }
+    };
+
     return (
       <React.Fragment>
         <Page
@@ -3001,8 +3005,26 @@ class PageLayoutDefaultNav extends React.Component {
           </PageSection>
           <PageSection>
             <Table
-              cells={['Title', 'Body']}
-              rows={res.map(post => [post.title, post.body])}
+              cells={[
+                { title: 'Servers', transforms: [cellWidth(10)] },
+                { title: 'Threads', transforms: [cellWidth(10)] },
+                { title: 'Applications', transforms: [cellWidth(10)] },
+                { title: 'Location', transforms: [cellWidth(10)] },
+                { title: 'Status', transforms: [cellWidth(10)] },
+                { title: 'Location', transforms: [cellWidth(10)] },
+                { title: 'Last Modified', transforms: [cellWidth(10)] },
+                { title: 'URL', transforms: [cellWidth(10)] }
+              ]}
+              rows={rows.map(row => [
+                row.name,
+                row.threads,
+                row.applications,
+                row.workspaces,
+                { title: renderLabel(row.status) },
+                row.location,
+                row.lastModified,
+                { title: <a href="#">{row.url}</a> }
+              ])}
               aria-label="Sticky Header Table Demo"
               isStickyHeader
             >
