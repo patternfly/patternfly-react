@@ -4,8 +4,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { WizardNav, WizardNavItem } from '../../../../components/Wizard';
-import { DefaultWizardNavProps, Step, SubStep } from '../types';
-import { DefaultWizardFooterProps, Wizard, WizardStep } from '..';
+import { DefaultWizardNavProps, WizardControlStep, DefaultWizardFooterProps } from '../types';
+import { Wizard, WizardStep } from '..';
 
 describe('Wizard', () => {
   it('renders step when child is of type WizardStep', () => {
@@ -123,8 +123,8 @@ describe('Wizard', () => {
   it('renders custom nav', () => {
     const nav = (
       isOpen: boolean,
-      steps: (Step | SubStep)[],
-      activeStep: Step | SubStep,
+      steps: WizardControlStep[],
+      activeStep: WizardControlStep,
       goToStepByIndex: (index: number) => void
     ) => (
       <WizardNav isOpen={isOpen}>

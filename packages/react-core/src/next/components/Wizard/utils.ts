@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Step, SubStep, WizardNavStepData } from './types';
+import { WizardControlStep, WizardNavStepData } from './types';
 import { WizardStep, WizardStepProps } from './WizardStep';
 
 function hasWizardStepProps(props: WizardStepProps | any): props is WizardStepProps {
@@ -10,10 +10,10 @@ function hasWizardStepProps(props: WizardStepProps | any): props is WizardStepPr
 /**
  * Accumulate list of step & sub-step props pulled from child components
  * @param children
- * @returns (Step | SubStep)[]
+ * @returns WizardControlStep[]
  */
 export const buildSteps = (children: React.ReactElement<WizardStepProps> | React.ReactElement<WizardStepProps>[]) =>
-  React.Children.toArray(children).reduce((acc: (Step | SubStep)[], child) => {
+  React.Children.toArray(children).reduce((acc: WizardControlStep[], child) => {
     if (React.isValidElement(child)) {
       if (child.type === WizardStep || hasWizardStepProps(child.props)) {
         // Omit "children" and use the whole "child" (WizardStep) for the component prop. Sub-steps will do the same.
@@ -43,5 +43,5 @@ export const buildSteps = (children: React.ReactElement<WizardStepProps> | React
   }, []);
 
 export const normalizeNavStep = ({ id, name }: WizardNavStepData) => ({ id, name });
-export const getActiveStep = (steps: (Step | SubStep)[], currentStepIndex: number) =>
+export const getActiveStep = (steps: WizardControlStep[], currentStepIndex: number) =>
   steps.find((_, index) => index + 1 === currentStepIndex);

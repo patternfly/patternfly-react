@@ -1,12 +1,12 @@
 import React from 'react';
-import { Step, SubStep } from './types';
+import { WizardControlStep } from './types';
 import { getActiveStep } from './utils';
 
 export interface WizardContextProps {
   /** List of steps */
-  steps: (Step | SubStep)[];
+  steps: WizardControlStep[];
   /** Active step */
-  activeStep: Step | SubStep;
+  activeStep: WizardControlStep;
   /** Footer element */
   footer: React.ReactElement;
   /** Navigate to the next step */
@@ -28,8 +28,8 @@ export interface WizardContextProps {
 export const WizardContext = React.createContext({} as WizardContextProps);
 
 interface WizardContextRenderProps {
-  steps: (Step | SubStep)[];
-  activeStep: Step | SubStep;
+  steps: WizardControlStep[];
+  activeStep: WizardControlStep;
   footer: React.ReactElement;
   onNext(): void;
   onBack(): void;
@@ -37,7 +37,7 @@ interface WizardContextRenderProps {
 }
 
 export interface WizardContextProviderProps {
-  steps: (Step | SubStep)[];
+  steps: WizardControlStep[];
   currentStepIndex: number;
   footer: React.ReactElement;
   children: React.ReactElement | ((props: WizardContextRenderProps) => React.ReactElement);

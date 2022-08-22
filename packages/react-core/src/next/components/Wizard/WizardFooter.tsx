@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 import { Button, ButtonVariant } from '../../../components/Button';
-import { Step, SubStep, WizardNavStepFunction } from './types';
+import { WizardControlStep, WizardNavStepFunction } from './types';
 
 /**
  * Hosts the standard structure of a footer with ties to the active step so that text for buttons can vary from step to step.
@@ -12,7 +12,7 @@ import { Step, SubStep, WizardNavStepFunction } from './types';
 
 export interface WizardFooterProps {
   /** The currently active WizardStep */
-  activeStep: Step | SubStep;
+  activeStep: WizardControlStep;
   /** Next button callback */
   onNext(): WizardNavStepFunction | void;
   /** Back button callback */

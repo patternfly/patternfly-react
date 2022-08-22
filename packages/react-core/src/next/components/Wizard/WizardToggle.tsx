@@ -8,14 +8,13 @@ import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-ico
 import { KeyTypes } from '../../../helpers/constants';
 import { WizardNav, WizardNavItem } from '../../../components/Wizard';
 import {
-  Step,
-  SubStep,
-  isWizardSubStep,
-  isCustomWizardNav,
+  WizardControlStep,
   CustomWizardNavFunction,
   DefaultWizardNavProps,
   isWizardBasicStep,
-  isWizardParentStep
+  isWizardParentStep,
+  isWizardSubStep,
+  isCustomWizardNav
 } from './types';
 
 /**
@@ -24,9 +23,9 @@ import {
 
 export interface WizardToggleProps {
   /** List of steps and/or sub-steps */
-  steps: (Step | SubStep)[];
+  steps: WizardControlStep[];
   /** The currently active WizardStep */
-  activeStep: Step | SubStep;
+  activeStep: WizardControlStep;
   /** The WizardFooter */
   footer: React.ReactElement;
   /** Custom WizardNav or callback used to create a default WizardNav */

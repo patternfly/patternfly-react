@@ -2,7 +2,7 @@
 id: Wizard
 section: components
 cssPrefix: pf-c-wizard
-propComponents: ['Wizard', 'WizardStep', 'WizardFooter', 'WizardToggle', 'WizardStep', 'WizardBody', 'WizardContextProps', 'Step', 'SubStep']
+propComponents: ['Wizard', 'WizardStep', 'WizardFooter', 'WizardToggle', 'WizardStep', 'WizardBody', 'WizardContextProps', 'WizardBasicStep', 'WizardParentStep', 'WizardSubStep', 'DefaultWizardNavProps', 'DefaultWizardFooterProps']
 beta: true
 ---
 

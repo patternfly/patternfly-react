@@ -1,9 +1,7 @@
 import React from 'react';
 import { WizardNavItemProps, WizardNavProps } from '../../../components/Wizard';
 
-/** Initially inferred from WizardStep components, these properties represent what is controllable from within WizardContext for a given step. */
-
-export interface Step {
+export interface WizardBasicStep {
   /** Name of the step's nav item */
   name: React.ReactNode;
   /** Unique identifier */
@@ -14,8 +12,6 @@ export interface Step {
   visited?: boolean;
   /** Content shown when the step's nav item is selected. When treated as a parent step, only sub-step content will be shown. */
   component?: React.ReactElement;
-  /** Nested step IDs */
-  subStepIds?: string[];
   /** (Unused if nav is controlled) Custom WizardNavItem */
   navItem?: React.ReactElement<WizardNavItemProps>;
   /** (Unused if footer is controlled) Can change the Next button text. If nextButtonText is also set for the Wizard, this step specific one overrides it. */
@@ -28,14 +24,18 @@ export interface Step {
   hideBackButton?: boolean;
 }
 
-/** With the same purpose as Step, SubStep inherits all properties of Step with the exception of subStepIds. */
-
-export interface SubStep extends Omit<Step, 'subStepIds'> {
-  /** Unique identifier of the parent step */
-  parentId?: string | number;
+export interface WizardParentStep extends WizardBasicStep {
+  /** Nested step IDs */
+  subStepIds: string[];
 }
 
-export type WizardNavStepData = Pick<Step | SubStep, 'id' | 'name'>;
+export interface WizardSubStep extends WizardBasicStep {
+  /** Unique identifier of the parent step */
+  parentId: string | number;
+}
+
+export type WizardControlStep = WizardBasicStep | WizardParentStep | WizardSubStep;
+export type WizardNavStepData = Pick<WizardControlStep, 'id' | 'name'>;
 export type WizardNavStepFunction = (currentStep: WizardNavStepData, previousStep: WizardNavStepData) => void;
 
 export interface DefaultWizardNavProps {
@@ -60,8 +60,8 @@ export interface DefaultWizardFooterProps {
 
 export type CustomWizardNavFunction = (
   isOpen: boolean,
-  steps: (Step | SubStep)[],
-  activeStep: Step | SubStep,
+  steps: WizardControlStep[],
+  activeStep: WizardControlStep,
   goToStepByIndex: (index: number) => void
 ) => React.ReactElement<WizardNavProps>;
 
@@ -77,14 +77,14 @@ export function isCustomWizardFooter(
   return React.isValidElement(footer);
 }
 
-export function isWizardBasicStep(step: Step | SubStep): step is Step {
-  return (step as Step)?.subStepIds === undefined && !isWizardSubStep(step);
+export function isWizardBasicStep(step: WizardControlStep): step is WizardBasicStep {
+  return (step as WizardParentStep)?.subStepIds === undefined && !isWizardSubStep(step);
 }
 
-export function isWizardSubStep(step: Step | SubStep): step is SubStep {
-  return (step as SubStep)?.parentId !== undefined;
+export function isWizardSubStep(step: WizardControlStep): step is WizardSubStep {
+  return (step as WizardSubStep)?.parentId !== undefined;
 }
 
-export function isWizardParentStep(step: Step | SubStep): step is Step {
-  return (step as Step)?.subStepIds !== undefined;
+export function isWizardParentStep(step: WizardControlStep): step is WizardParentStep {
+  return (step as WizardParentStep)?.subStepIds !== undefined;
 }

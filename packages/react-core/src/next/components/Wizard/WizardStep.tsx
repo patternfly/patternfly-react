@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Step } from './types';
+import { WizardControlStep } from './types';
 import { WizardBody, WizardBodyProps } from './WizardBody';
 
 /**
@@ -8,8 +8,8 @@ import { WizardBody, WizardBodyProps } from './WizardBody';
  * Also acts as a wrapper for content, with an optional inclusion of WizardBody.
  */
 
-export interface WizardStepProps extends Omit<Step, 'parentId' | 'subStepIds' | 'visited'> {
-  /** Optional for when the Step is used as a parent to sub-steps */
+export interface WizardStepProps extends Omit<WizardControlStep, 'parentId' | 'subStepIds' | 'visited'> {
+  /** Optional for when the step is used as a parent to sub-steps */
   children?: React.ReactNode;
   /** Props for WizardBody that wraps content by default. Can be set to null for exclusion of WizardBody. */
   body?: WizardBodyProps | null;

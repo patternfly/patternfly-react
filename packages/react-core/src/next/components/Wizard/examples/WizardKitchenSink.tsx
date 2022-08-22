@@ -16,13 +16,13 @@ import {
   WizardHeader
 } from '@patternfly/react-core';
 import {
-  Step,
   Wizard,
   WizardStep,
   WizardBody,
   WizardFooter,
-  useWizardFooter,
   WizardStepProps,
+  WizardControlStep,
+  useWizardFooter,
   useWizardContext
 } from '@patternfly/react-core/next';
 import { css } from '@patternfly/react-styles';
@@ -35,7 +35,7 @@ const CustomWizardFooter = () => {
 
 const CustomNavItem = () => {
   const { steps, activeStep, goToStepByIndex } = useWizardContext();
-  const step = (steps.find(step => step.id === 'third-step') || {}) as Step;
+  const step = (steps.find(step => step.id === 'third-step') || {}) as WizardControlStep;
 
   return (
     <WizardNavItem
