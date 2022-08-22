@@ -3026,7 +3026,7 @@ class PageLayoutDefaultNav extends React.Component {
 
 A toolbar may be added above a sticky table either inside or outside the `OuterScrollContainer`.
 
-```ts isFullscreen file="examples/ComposableTableStickyToolbar.tsx"
+```ts isFullscreen file="../examples/ComposableTableStickyToolbar.tsx"
 ```
 
 ## Empty states
