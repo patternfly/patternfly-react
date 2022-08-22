@@ -164,7 +164,7 @@ describe('Transformer functions', () => {
     });
   });
 
-  test('simpleCellActions', () => {
+  test('simpleCellActions', async () => {
     const actions: IActions = [
       {
         title: 'Some',

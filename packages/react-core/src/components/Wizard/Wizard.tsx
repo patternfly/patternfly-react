@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { Modal, ModalVariant } from '../Modal';
@@ -178,7 +178,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   }
 
   private handleKeyClicks = (event: KeyboardEvent): void => {
-    if (event.keyCode === KEY_CODES.ESCAPE_KEY) {
+    if (event.key === KeyTypes.Escape) {
       if (this.state.isNavOpen) {
         this.setState({ isNavOpen: !this.state.isNavOpen });
       } else if (this.props.isOpen) {

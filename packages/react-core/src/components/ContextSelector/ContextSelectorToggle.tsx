@@ -2,7 +2,7 @@ import * as React from 'react';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
-import { KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ContextSelectorToggleProps {
@@ -67,8 +67,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
 
   onEscPress = (event: any) => {
     const { isOpen, onToggle } = this.props;
-    const keyCode = event.keyCode || event.which;
-    if (isOpen && keyCode === KEY_CODES.ESCAPE_KEY) {
+    if (isOpen && event.key === KeyTypes.Escape) {
       onToggle(null, false);
       this.toggle.current.focus();
     }
@@ -76,16 +75,13 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
 
   onKeyDown = (event: any) => {
     const { isOpen, onToggle, onEnter } = this.props;
-    if ((event.keyCode === KEY_CODES.TAB && !isOpen) || event.key !== KEY_CODES.ENTER) {
+    if ((event.key === KeyTypes.Tab && !isOpen) || event.key !== KeyTypes.Enter) {
       return;
     }
     event.preventDefault();
-    if (
-      (event.keyCode === KEY_CODES.TAB || event.keyCode === KEY_CODES.ENTER || event.key !== KEY_CODES.SPACE) &&
-      isOpen
-    ) {
+    if ((event.key === KeyTypes.Tab || event.key === KeyTypes.Enter || event.key !== KeyTypes.Space) && isOpen) {
       onToggle(null, !isOpen);
-    } else if ((event.keyCode === KEY_CODES.ENTER || event.key === ' ') && !isOpen) {
+    } else if ((event.key === KeyTypes.Enter || event.key === ' ') && !isOpen) {
       onToggle(null, !isOpen);
       onEnter();
     }

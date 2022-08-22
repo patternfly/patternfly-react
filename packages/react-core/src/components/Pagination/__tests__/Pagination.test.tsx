@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Pagination, PaginationVariant } from '../index';
@@ -123,7 +123,7 @@ describe('Pagination', () => {
         render(<Pagination onSetPage={onSetPage} itemCount={40} page={2} />);
 
         await user.click(screen.getByRole('button', { name: 'Go to first page' }));
-        waitFor(() => expect(onSetPage).toHaveBeenCalled());
+        expect(onSetPage).toHaveBeenCalled();
       });
 
       test('should call previous', async () => {
@@ -132,7 +132,7 @@ describe('Pagination', () => {
         render(<Pagination onSetPage={onSetPage} itemCount={40} page={3} />);
 
         await user.click(screen.getByRole('button', { name: 'Go to previous page' }));
-        waitFor(() => expect(onSetPage).toHaveBeenCalled());
+        expect(onSetPage).toHaveBeenCalled();
       });
 
       test('should call next', async () => {
@@ -141,7 +141,7 @@ describe('Pagination', () => {
         render(<Pagination onSetPage={onSetPage} itemCount={40} />);
 
         await user.click(screen.getByRole('button', { name: 'Go to next page' }));
-        waitFor(() => expect(onSetPage).toHaveBeenCalled());
+        expect(onSetPage).toHaveBeenCalled();
       });
 
       test('should call last', async () => {
@@ -150,7 +150,7 @@ describe('Pagination', () => {
         render(<Pagination onSetPage={onSetPage} itemCount={40} />);
 
         await user.click(screen.getByRole('button', { name: 'Go to last page' }));
-        waitFor(() => expect(onSetPage).toHaveBeenCalled());
+        expect(onSetPage).toHaveBeenCalled();
       });
 
       test('should call input', async () => {
@@ -160,9 +160,9 @@ describe('Pagination', () => {
 
         const input = screen.getByLabelText('Current page');
         await user.type(input, '1');
-        await user.type(input, '{enter}');
+        await user.type(input, '{Enter}');
 
-        waitFor(() => expect(onSetPage).toHaveBeenCalled());
+        expect(onSetPage).toHaveBeenCalled();
       });
 
       test('should call input wrong value', async () => {
@@ -172,9 +172,9 @@ describe('Pagination', () => {
 
         const input = screen.getByLabelText('Current page');
         await user.type(input, 'a');
-        await user.type(input, '{enter}');
+        await user.type(input, '{Enter}');
 
-        waitFor(() => expect(onSetPage).toHaveBeenCalled());
+        expect(onSetPage).toHaveBeenCalled();
       });
 
       test('should call input huge page number', async () => {
@@ -184,9 +184,9 @@ describe('Pagination', () => {
 
         const input = screen.getByLabelText('Current page');
         await user.type(input, '10');
-        await user.type(input, '{enter}');
+        await user.type(input, '{Enter}');
 
-        waitFor(() => expect(onSetPage).toHaveBeenCalled());
+        expect(onSetPage).toHaveBeenCalled();
       });
 
       test('should call input small page number', async () => {
@@ -196,9 +196,9 @@ describe('Pagination', () => {
 
         const input = screen.getByLabelText('Current page');
         await user.type(input, '-10');
-        await user.type(input, '{enter}');
+        await user.type(input, '{Enter}');
 
-        waitFor(() => expect(onSetPage).toHaveBeenCalled());
+        expect(onSetPage).toHaveBeenCalled();
       });
 
       test('should NOT call', async () => {

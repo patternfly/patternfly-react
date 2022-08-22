@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Button } from '../Button';
 import { ActionGroup, Form, FormGroup } from '../Form';
 import { TextInput } from '../TextInput';
-import { GenerateId, KEY_CODES } from '../../helpers';
+import { GenerateId, KeyTypes } from '../../helpers';
 import { SearchAttribute } from './SearchInput';
 import { Panel, PanelMain, PanelMainBody } from '../Panel';
 import { css } from '@patternfly/react-styles';
@@ -107,10 +107,9 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   };
 
   const onEscPress = (event: KeyboardEvent) => {
-    const keyCode = event.keyCode || event.which;
     if (
       isSearchMenuOpen &&
-      keyCode === KEY_CODES.ESCAPE_KEY &&
+      event.key === KeyTypes.Escape &&
       parentRef &&
       parentRef.current.contains(event.target as Node)
     ) {

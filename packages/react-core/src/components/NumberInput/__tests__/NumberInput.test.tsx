@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { NumberInput } from '../NumberInput';
 import userEvent from '@testing-library/user-event';
 
@@ -145,11 +145,11 @@ describe('numberInput', () => {
 
     const input = screen.getByRole('spinbutton');
     await user.type(input, '{ArrowLeft}{ArrowLeft}0');
-    waitFor(() => expect(input).toHaveDisplayValue('010'));
+    expect(input).toHaveDisplayValue('010');
 
     await user.click(document.body);
 
-    waitFor(() => expect(input).toHaveDisplayValue('10'));
+    expect(input).toHaveDisplayValue('10');
   });
 
   test('removes leading zeros from a negative whole number', async () => {
@@ -159,11 +159,11 @@ describe('numberInput', () => {
 
     const input = screen.getByRole('spinbutton');
     await user.type(input, '{ArrowLeft}{ArrowLeft}0');
-    waitFor(() => expect(input).toHaveDisplayValue('-018'));
+    expect(input).toHaveDisplayValue('-018');
 
     await user.click(document.body);
 
-    waitFor(() => expect(input).toHaveDisplayValue('-18'));
+    expect(input).toHaveDisplayValue('-18');
   });
 
   test('removes leading zeros from a decimal number', async () => {
@@ -173,11 +173,11 @@ describe('numberInput', () => {
 
     const input = screen.getByRole('spinbutton');
     await user.type(input, '{ArrowLeft}{ArrowLeft}{ArrowLeft}{ArrowLeft}{ArrowLeft}0');
-    waitFor(() => expect(input).toHaveDisplayValue('047.01'));
+    expect(input).toHaveDisplayValue('047.01');
 
     await user.click(document.body);
 
-    waitFor(() => expect(input).toHaveDisplayValue('47.01'));
+    expect(input).toHaveDisplayValue('47.01');
   });
 
   test('renders 0 if no value passed', () => {

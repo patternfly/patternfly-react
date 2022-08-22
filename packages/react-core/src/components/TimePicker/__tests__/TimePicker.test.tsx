@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { TimePicker, TimePickerProps } from '../TimePicker';
@@ -20,48 +20,46 @@ describe('TimePicker', () => {
       render(<TimePicker onChange={onChange} {...inputProps} aria-label="time picker" />);
 
       await user.type(screen.getByLabelText('time picker'), String(inputProps.value));
-      waitFor(() =>
-        expect(onChange).toHaveBeenCalledWith(inputProps.value, expects.hour, expects.minutes, expects.seconds, true)
-      );
+      expect(onChange).toHaveBeenCalledWith(inputProps.value, expects.hour, expects.minutes, expects.seconds, true)
     };
 
-    test('should return the correct value using the AM/PM pattern - midnight', () => {
-      testOnChange({
+    test('should return the correct value using the AM/PM pattern - midnight', async () => {
+      await testOnChange({
         inputProps: { value: '12:00 AM', is24Hour: false },
         expects: { hour: 0, minutes: 0, seconds: null }
       });
     });
 
-    test('should return the correct value using the AM/PM pattern - midday', () => {
-      testOnChange({
+    test('should return the correct value using the AM/PM pattern - midday', async () => {
+      await testOnChange({
         inputProps: { value: '12:35 PM', is24Hour: false },
         expects: { hour: 12, minutes: 35, seconds: null }
       });
     });
 
-    test('should return the correct value using the AM/PM pattern - last minute of the day', () => {
-      testOnChange({
+    test('should return the correct value using the AM/PM pattern - last minute of the day', async () => {
+      await testOnChange({
         inputProps: { value: '11:59 PM', is24Hour: false },
         expects: { hour: 23, minutes: 59, seconds: null }
       });
     });
 
-    test('should return the correct value using the 24h pattern - midnight', () => {
-      testOnChange({
+    test('should return the correct value using the 24h pattern - midnight', async () => {
+      await testOnChange({
         inputProps: { value: '00:00:00', is24Hour: true, includeSeconds: true },
         expects: { hour: 0, minutes: 0, seconds: 0 }
       });
     });
 
-    test('should return the correct value using the 24h pattern - midday', () => {
-      testOnChange({
+    test('should return the correct value using the 24h pattern - midday', async () => {
+      await testOnChange({
         inputProps: { value: '12:35', is24Hour: false },
         expects: { hour: 12, minutes: 35, seconds: null }
       });
     });
 
-    test('should return the correct value using the 24h pattern - last minute of the day', () => {
-      testOnChange({
+    test('should return the correct value using the 24h pattern - last minute of the day', async () => {
+      await testOnChange({
         inputProps: { value: '23:59', is24Hour: true },
         expects: { hour: 23, minutes: 59, seconds: null }
       });

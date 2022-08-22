@@ -8,7 +8,7 @@ import { ContextSelectorContext } from './contextSelectorConstants';
 import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
 import { InputGroup } from '../InputGroup';
-import { KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 import { FocusTrap, getUniqueId } from '../../helpers';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { Popper } from '../../helpers/Popper/Popper';
@@ -102,7 +102,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
   popperRef: React.RefObject<HTMLDivElement> = React.createRef();
 
   onEnterPressed = (event: any) => {
-    if (event.charCode === KEY_CODES.ENTER) {
+    if (event.key === KeyTypes.Enter) {
       this.props.onSearchButtonClick();
     }
   };

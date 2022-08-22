@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
 import { TooltipArrow } from './TooltipArrow';
-import { KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/esm/c_tooltip_MaxWidth';
 import { ReactElement } from 'react';
 import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
@@ -209,13 +209,13 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
 
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (!triggerManually) {
-      if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
+      if (event.key === KeyTypes.Escape && visible) {
         hide();
       }
     }
   };
   const onTriggerEnter = (event: KeyboardEvent) => {
-    if (event.keyCode === KEY_CODES.ENTER) {
+    if (event.key === KeyTypes.Enter) {
       if (!visible) {
         show();
       } else {
