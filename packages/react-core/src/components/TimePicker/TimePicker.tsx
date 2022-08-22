@@ -518,6 +518,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
                   trigger={textInput}
                   popper={menuContainer}
                   isVisible={isTimeOptionsOpen}
+                  removeFindDomNode={removeFindDomNode}
                 />
               </div>
             </div>
