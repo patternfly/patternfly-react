@@ -73,6 +73,8 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isExpandable?: boolean;
   /** Adds accessible text to the alert Toggle */
   toggleAriaLabel?: string;
+  /** Uniquely identifies the alert */
+  uniqueId?: string;
 }
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
@@ -100,6 +102,8 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   toggleAriaLabel = `${capitalize(variant)} alert details`,
   onMouseEnter = () => {},
   onMouseLeave = () => {},
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  uniqueId,
   ...props
 }: AlertProps) => {
   const ouiaProps = useOUIAProps(Alert.displayName, ouiaId, ouiaSafe, variant);
