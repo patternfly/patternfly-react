@@ -3006,10 +3006,10 @@ class PageLayoutDefaultNav extends React.Component {
           <PageSection>
             <Table
               cells={[
-                { title: 'Servers', transforms: [cellWidth(10)] },
-                { title: 'Threads', transforms: [cellWidth(10)] },
-                { title: 'Applications', transforms: [cellWidth(10)] },
-                { title: 'Location', transforms: [cellWidth(10)] },
+                { title: 'Servers', transforms: [cellWidth(15)] },
+                { title: 'Threads' },
+                { title: 'Applications' },
+                { title: 'Workspaces', transforms: [cellWidth(10)] },
                 { title: 'Status', transforms: [cellWidth(10)] },
                 { title: 'Location', transforms: [cellWidth(10)] },
                 { title: 'Last Modified', transforms: [cellWidth(10)] },
