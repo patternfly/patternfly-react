@@ -60,7 +60,7 @@ export interface DropdownProps
    * appended inline, e.g. `menuAppendTo="parent"`
    */
   isFlipEnabled?: boolean;
-  /** Opt-in for updated popper that does not use findDOMNode. */
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
 }
 

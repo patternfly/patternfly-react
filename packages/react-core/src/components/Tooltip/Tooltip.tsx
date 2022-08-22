@@ -138,7 +138,7 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
   isAppLauncher?: boolean;
   /** @deprecated - no longer used */
   tippyProps?: Partial<TippyProps>;
-  /** Opt-in for updated popper that does not use findDOMNode. */
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
 }
 

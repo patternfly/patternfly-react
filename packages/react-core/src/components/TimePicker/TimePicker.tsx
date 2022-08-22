@@ -71,7 +71,7 @@ export interface TimePickerProps
   isOpen?: boolean;
   /** Handler invoked each time the open state of time picker updates */
   setIsOpen?: (isOpen?: boolean) => void;
-  /** Opt-in for updated popper that does not use findDOMNode. */
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
 }
 

@@ -90,7 +90,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
    * appendTo={document.getElementById('target')}
    */
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
-  /** Opt-in for updated popper that does not use findDOMNode. */
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
 }
 

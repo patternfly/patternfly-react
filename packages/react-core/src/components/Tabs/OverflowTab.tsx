@@ -19,7 +19,7 @@ export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   defaultTitleText?: string;
   /** The aria label applied to the button which toggles the tab overflow menu */
   toggleAriaLabel?: string;
-  /** Opt-in for updated popper that does not use findDOMNode. */
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
 }
 

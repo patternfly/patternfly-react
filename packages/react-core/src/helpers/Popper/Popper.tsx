@@ -34,7 +34,9 @@ export interface PopperProps {
    * The reference element to which the Popover is relatively placed to.
    * Use either trigger or reference, not both.
    */
-  trigger?: React.ReactNode;
+  trigger?:
+    | React.ReactNode
+    | ((triggerElement: HTMLElement, setTriggerElement: React.Dispatch<any>) => React.ReactNode);
   /**
    * The reference element to which the Popover is relatively placed to.
    * Use either trigger or reference, not both.
@@ -122,7 +124,7 @@ export interface PopperProps {
         | 'right-start'
         | 'right-end'
       )[];
-  /** Opt-in for updated popper that does not use findDOMNode. */
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
 }
 
@@ -328,22 +330,24 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   };
 
   let popperPortal;
-  if (typeof popper !== 'function' && !removeFindDomNode) {
-    popperPortal = (
-      <FindRefWrapper onFoundRef={(foundRef: any) => setPopperElement(foundRef)}>{menuWithPopper}</FindRefWrapper>
-    );
-  } else if (typeof popper !== 'function' && removeFindDomNode) {
-    popperPortal = <div ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>{menuWithPopper}</div>;
+  if (typeof popper !== 'function') {
+    if (removeFindDomNode) {
+      popperPortal = <div ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>{menuWithPopper}</div>;
+    } else {
+      popperPortal = (
+        <FindRefWrapper onFoundRef={(foundRef: any) => setPopperElement(foundRef)}>{menuWithPopper}</FindRefWrapper>
+      );
+    }
   } else {
     popperPortal = popper(popperElement, setPopperElement, options);
   }
 
   return (
     <>
-      {!reference && trigger && typeof trigger === 'object' && !removeFindDomNode && (
+      {!reference && trigger && React.isValidElement(trigger) && !removeFindDomNode && (
         <FindRefWrapper onFoundRef={(foundRef: any) => setTriggerElement(foundRef)}>{trigger}</FindRefWrapper>
       )}
-      {!reference && trigger && typeof trigger === 'object' && removeFindDomNode && (
+      {!reference && trigger && React.isValidElement(trigger) && removeFindDomNode && (
         <div ref={node => setTriggerElement(node?.firstElementChild as HTMLElement)}>{trigger}</div>
       )}
       {!reference && trigger && typeof trigger === 'function' && trigger(triggerElement, setTriggerElement)}

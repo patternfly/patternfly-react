@@ -66,7 +66,7 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
   isFlipEnabled?: boolean;
   /** Id of the context selector */
   id?: string;
-  /** Opt-in for updated popper that does not use findDOMNode. */
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
 }
 

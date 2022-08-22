@@ -61,7 +61,7 @@ export interface ApplicationLauncherProps
   favoritesLabel?: string;
   /** ID of toggle */
   toggleId?: string;
-  /** Opt-in for updated popper that does not use findDOMNode. */
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
 }
 

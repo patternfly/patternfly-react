@@ -47,7 +47,7 @@ export interface OptionsMenuProps
    * menuAppendTo={document.getElementById('target')}
    */
   menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
-  /** Opt-in for updated popper that does not use findDOMNode. */
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
 }
 

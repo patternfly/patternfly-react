@@ -32,7 +32,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   flyout?: React.ReactElement;
   /** Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
-  /** Opt-in for updated popper that does not use findDOMNode. */
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
 }
 
