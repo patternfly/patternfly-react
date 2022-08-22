@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.80.1 (2022-08-22)
+
+
+### Bug Fixes
+
+* **TimePicker:** clean up menuAppendTo feature ([#7865](https://github.com/patternfly/patternfly-react/issues/7865)) ([3aa73be](https://github.com/patternfly/patternfly-react/commit/3aa73beb4581c1695aa3c3886291d862bd82286e))
+
+
+
+
+
 # 4.80.0 (2022-08-19)
 
 
