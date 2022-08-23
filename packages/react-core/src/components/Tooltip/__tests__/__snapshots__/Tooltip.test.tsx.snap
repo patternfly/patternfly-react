@@ -8,22 +8,53 @@ exports[`tooltip arrow renders 1`] = `
 </DocumentFragment>
 `;
 
-exports[`tooltip content renders 1`] = `
-<DocumentFragment>
-  <div
-    class="pf-c-tooltip__content"
-  >
-    <div>
-      Test
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`tooltip renders 1`] = `
 <DocumentFragment>
-  <div>
-    Toggle tooltip
+  <div
+    data-testid="popper-mock"
+  >
+    <div
+      data-testid="trigger"
+    >
+      <div>
+        Toggle tooltip
+      </div>
+    </div>
+    <div
+      data-testid="content"
+    />
+    <div
+      data-testid="placement"
+    >
+      top
+    </div>
+    <div
+      data-testid="enableFlip"
+    />
+    <div
+      data-testid="distance"
+    >
+      15
+    </div>
+    <div
+      data-testid="flipBehavior"
+    >
+      toprightbottomlefttoprightbottom
+    </div>
+    <div
+      data-testid="appendTo"
+    />
+    <div
+      data-testid="zIndex"
+    >
+      9999
+    </div>
+    <p>
+      enableFlip: true
+    </p>
+    <p>
+      Append to class name: undefined
+    </p>
   </div>
 </DocumentFragment>
 `;

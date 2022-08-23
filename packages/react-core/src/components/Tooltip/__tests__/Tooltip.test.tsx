@@ -5,16 +5,22 @@ import { TooltipArrow } from "../TooltipArrow";
 import { TooltipContent } from "../TooltipContent";
 import userEvent from '@testing-library/user-event';
 
-jest.mock('../../../helpers', () => ({
-  Popper: ({ enableFlip, appendTo, distance, flipBehavior, ...props }) => (
-    <div data-testid="popper-mock" {...props}>
+jest.mock('../../../helpers/Popper/Popper', () => ({
+  Popper: ({ trigger, enableFlip, appendTo, distance, flipBehavior, isVisible, placement, popper, zIndex, ...props }) => (
+    <div data-testid="popper-mock">
+      <div data-testid="trigger">{trigger}</div>
+      <div data-testid="content">{isVisible && popper}</div>
+      <div data-testid="placement">{placement}</div>
       <div data-testid="enableFlip">{enableFlip}</div>
       <div data-testid="distance">{distance}</div>
       <div data-testid="flipBehavior">{flipBehavior}</div>
+      <div data-testid="appendTo">{appendTo}</div>
+      <div data-testid="zIndex">{zIndex}</div>
       <p>{`enableFlip: ${enableFlip}`}</p>
       <p>Append to class name: {appendTo && `${appendTo.className}`}</p>
     </div>
-  )
+  ),
+  getOpacityTransition: () => {}
 }));
 
 /** Testing tooltip content */
@@ -182,10 +188,11 @@ test('tooltip renders', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('renders tooltip content', async () => {
+test('renders tooltip content when isVisible', async () => {
   render(
     <Tooltip
       aria-label="test-label"
+      isVisible
       content={
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
@@ -195,19 +202,15 @@ test('renders tooltip content', async () => {
       <div>Toggle tooltip</div>
     </Tooltip>
   );
-
-  const user = screen.getByText("Toggle tooltip");
-  userEvent.hover(user);
 
   const tooltip = await screen.findByText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.");
 
   expect(tooltip).toBeVisible();
 });
 
-test('renders tooltip position', async () => {
+test('does not render tooltip content by default', () => {
   render(
     <Tooltip
-      position="top"
       aria-label="test-label"
       content={
         <div>
@@ -219,14 +222,51 @@ test('renders tooltip position', async () => {
     </Tooltip>
   );
 
-  const user = screen.getByText("Toggle tooltip");
-  userEvent.hover(user);
+  const tooltip = screen.queryByText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.");
 
-  const tooltip = await screen.findByLabelText("test-label");
-  expect(tooltip).toHaveClass("pf-m-top");
+  expect(tooltip).not.toBeInTheDocument();
 });
 
-test('renders tooltip on DOM without userEvent when isVisible prop passed', async () => {
+test('renders tooltip position when isVisible', () => {
+  render(
+    <Tooltip
+      position="top"
+      aria-label="test-label"
+      isVisible
+      content={
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        </div>
+      }
+    >
+      <div>Toggle tooltip</div>
+    </Tooltip>
+  );
+
+  const tooltip = screen.getByTestId("placement");
+  expect(tooltip).toHaveTextContent("top");
+});
+
+test('passes Popper enableFlip set to true', async () => {
+  render(
+    <Tooltip
+      enableFlip
+      content={
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        </div>
+      }
+    >
+      <div>Toggle tooltip</div>
+    </Tooltip>
+  );
+
+  const input = await screen.findByText('enableFlip: true');
+
+  expect(input).toBeVisible();
+});
+
+test('renders default classname pf-c-tooltip when isVisible', async () => {
   render(
     <Tooltip
       aria-label="test-label"
@@ -245,56 +285,12 @@ test('renders tooltip on DOM without userEvent when isVisible prop passed', asyn
   expect(tooltip).toHaveClass("pf-c-tooltip");
 });
 
-test('passes Popper enableFlip set to true', async () => {
-  render(
-    <Tooltip
-      enableFlip
-      content={
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-        </div>
-      }
-    >
-      <div>Toggle tooltip</div>
-    </Tooltip>
-  );
-
-  const user = screen.getByText("Toggle tooltip");
-  userEvent.hover(user);
-
-  // const scr = screen.getByTestId('enableFlip');
-  const input = await screen.findByText('enableFlip: true');
-
-  // expect(scr).toBeVisible();
-  expect(input).toBeVisible();
-});
-
-test('renders default classname pf-c-tooltip', async () => {
-  render(
-    <Tooltip
-      aria-label="test-label"
-      content={
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-        </div>
-      }
-    >
-      <div>Toggle tooltip</div>
-    </Tooltip>
-  );
-
-  const user = screen.getByText("Toggle tooltip");
-  userEvent.hover(user);
-
-  const tooltip = await screen.findByLabelText("test-label");
-  expect(tooltip).toHaveClass("pf-c-tooltip");
-});
-
-test('renders custom classname', async () => {
+test('renders custom classname when isVisible', async () => {
   render(
     <Tooltip
       aria-label="test-label"
       className="custom-class"
+      isVisible
       content={
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
@@ -304,18 +300,23 @@ test('renders custom classname', async () => {
       <div>Toggle tooltip</div>
     </Tooltip>
   );
-
-  const user = screen.getByText("Toggle tooltip");
-  userEvent.hover(user);
 
   const tooltip = await screen.findByLabelText("test-label");
   expect(tooltip).toHaveClass("custom-class");
 });
 
-test('renders zIndex styling', async () => {
+// entrydelay test
+
+// exitdelay test
+
+// appendto test
+
+
+test('renders zIndex styling when isVisible', () => {
   render(
     <Tooltip
       aria-label="test-label"
+      isVisible
       content={
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
@@ -326,13 +327,56 @@ test('renders zIndex styling', async () => {
     </Tooltip>
   );
 
-  const user = screen.getByText("Toggle tooltip");
-  userEvent.hover(user);
+  const input = screen.getByTestId('zIndex');
 
-  const tooltip = await screen.findByLabelText("test-label");
-  const style = window.getComputedStyle(tooltip);
-  expect(style.zIndex).toBe("9999");
+  expect(input).toHaveTextContent('9999');
 });
+
+// maxwidth
+
+test('renders default distance when isVisible', () => {
+  render(
+    <Tooltip
+      aria-label="test-label"
+      isVisible
+      content={
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        </div>
+      }
+    >
+      <div>Toggle tooltip</div>
+    </Tooltip>
+  );
+
+  const input = screen.getByTestId('distance');
+
+  expect(input).toHaveTextContent('15');
+});
+
+// aria
+
+test('renders default flipBehavior when isVisible', () => {
+  render(
+    <Tooltip
+      aria-label="test-label"
+      isVisible
+      content={
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        </div>
+      }
+    >
+      <div>Toggle tooltip</div>
+    </Tooltip>
+  );
+
+  const input = screen.getByTestId('flipBehavior');
+
+  expect(input).toHaveTextContent('toprightbottomlefttoprightbottom');
+});
+
+// id
 
 test('renders children', async () => {
   render(
@@ -352,38 +396,38 @@ test('renders children', async () => {
   expect(user).toBeVisible();
 });
 
-test('renders animationDuration styling', async () => {
-  render(
-    <Tooltip
-      aria-label="test-label"
-      content={
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-        </div>
-      }
-    >
-      <div>Toggle tooltip</div>
-    </Tooltip>
-  );
+// test('renders animationDuration styling', async () => {
+//   render(
+//     <Tooltip
+//       aria-label="test-label"
+//       content={
+//         <div>
+//           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+//         </div>
+//       }
+//     >
+//       <div>Toggle tooltip</div>
+//     </Tooltip>
+//   );
 
-  const user = screen.getByText("Toggle tooltip");
-  userEvent.hover(user);
+//   const user = screen.getByText("Toggle tooltip");
+//   userEvent.hover(user);
 
-  const tooltip = await screen.findByLabelText("test-label");
-  const style = window.getComputedStyle(tooltip);
-  expect(style.transition).toBe("opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11)");
-});
+//   const tooltip = await screen.findByLabelText("test-label");
+//   const style = window.getComputedStyle(tooltip);
+//   expect(style.transition).toBe("opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11)");
+// });
 
-// enable flip: mock out popper - test against props that popper is receiving and what it should receive like in truncate
-// just like when tooltip for truncate, you can set up popper mock to get the enableFlip
+// reference
 
-// appendTo is passed straight to popper -- same with distance
+// aria-live
+
+
+// appendTo is passed straight to popper
 
 // aria - has assertions against what the accessible name is
 // test against trigger prop for popper!!!
 // maybe just have popper render trigger with custom data test id and have assertions based on that and the accessible name
-
-// flipBehavior is straight to popper
 
 // id - same thing w aria prop AND make sure it's getting passed to the proper place
 // not rly a good rtl to test for IDs -> have it render what trigger returns and make assertions based on accessible name -> test aria prop and id prop
