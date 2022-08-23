@@ -2815,13 +2815,13 @@ class StickyHeaderTableDemo extends React.Component {
             <Table
               cells={[
                 { title: 'Servers', transforms: [cellWidth(15)] },
-                { title: 'Threads' },
-                { title: 'Applications' },
-                { title: 'Workspaces', transforms: [cellWidth(10)] },
+                { title: 'Threads',  transforms: [cellWidth(10)] },
+                { title: 'Applications', transforms: [cellWidth(15)] },
+                { title: 'Workspaces', transforms: [cellWidth(15)] },
                 { title: 'Status', transforms: [cellWidth(10)] },
                 { title: 'Location', transforms: [cellWidth(10)] },
-                { title: 'Last Modified', transforms: [cellWidth(10)] },
-                { title: 'URL', transforms: [cellWidth(10)] }
+                { title: 'Last Modified', transforms: [cellWidth(15)] },
+                { title: 'URL', transforms: [cellWidth(10)], cellTransforms: [truncate] }
               ]}
               rows={rows.map(row => [
                 row.name,
