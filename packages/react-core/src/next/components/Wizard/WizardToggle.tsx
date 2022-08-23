@@ -6,7 +6,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 import { KeyTypes } from '../../../helpers/constants';
-import { WizardNav, WizardNavItem } from '../../../components/Wizard';
+import { WizardNav, WizardNavItem } from '../Wizard';
 import {
   WizardControlStep,
   CustomWizardNavFunction,

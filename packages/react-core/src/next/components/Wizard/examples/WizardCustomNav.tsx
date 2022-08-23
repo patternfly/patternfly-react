@@ -1,9 +1,15 @@
 import React from 'react';
-import { WizardNav, WizardNavItem } from '@patternfly/react-core';
-import { Wizard, WizardStep, WizardControlStep } from '@patternfly/react-core/next';
+import {
+  Wizard,
+  WizardStep,
+  WizardControlStep,
+  CustomWizardNavFunction,
+  WizardNav,
+  WizardNavItem
+} from '@patternfly/react-core/next';
 
 export const WizardCustomNav: React.FunctionComponent = () => {
-  const nav = (
+  const nav: CustomWizardNavFunction = (
     isOpen: boolean,
     steps: WizardControlStep[],
     activeStep: WizardControlStep,

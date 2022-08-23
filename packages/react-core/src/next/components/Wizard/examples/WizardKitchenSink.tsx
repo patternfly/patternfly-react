@@ -11,9 +11,7 @@ import {
   DrawerColorVariant,
   DrawerHead,
   DrawerActions,
-  DrawerCloseButton,
-  WizardNavItem,
-  WizardHeader
+  DrawerCloseButton
 } from '@patternfly/react-core';
 import {
   Wizard,
@@ -23,7 +21,11 @@ import {
   WizardStepProps,
   WizardControlStep,
   useWizardFooter,
-  useWizardContext
+  useWizardContext,
+  WizardNavStepFunction,
+  WizardNavStepData,
+  WizardNavItem,
+  WizardHeader
 } from '@patternfly/react-core/next';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
@@ -125,36 +127,44 @@ const StepWithCustomFooter = () => {
 
 const CustomStepFour = (props: WizardStepProps) => <div {...props} id={props.id.toString()} />;
 
-export const WizardKitchenSink: React.FunctionComponent = () => (
-  <Wizard
-    height={400}
-    header={<WizardHeader title="You're a wizard, Harry" closeButtonAriaLabel="Close header" />}
-    footer={<CustomWizardFooter />}
-    nav={{ forceStepVisit: true, isExpandable: true }}
-  >
-    <WizardStep id="sink-first-step" name="First step" body={null}>
-      <StepContentWithDrawer />
-    </WizardStep>
-    <WizardStep
-      id="sink-second-step"
-      name="Second step"
-      steps={[
-        <WizardStep id="sink-sub-step-one" key="substep-one" name="Substep 1">
-          Substep 1 content
-        </WizardStep>,
-        <WizardStep id="sink-sub-step-two" key="substep-two" name="Substep 2">
-          Substep 2 content
-        </WizardStep>
-      ]}
-    />
-    <WizardStep id="sink-third-step" name="Third step" navItem={<CustomNavItem />}>
-      <StepWithCustomFooter />
-    </WizardStep>
-    <CustomStepFour id="sink-fourth-step" name="Fourth step">
-      <WizardBody>Step 4 content</WizardBody>
-    </CustomStepFour>
-    <WizardStep id="sink-review-step" name="Review" nextButtonText="Submit" disableNext>
-      Review step content
-    </WizardStep>
-  </Wizard>
-);
+export const WizardKitchenSink: React.FunctionComponent = () => {
+  const onNext: WizardNavStepFunction = (currentStep: WizardNavStepData, previousStep: WizardNavStepData) => {
+    // eslint-disable-next-line no-console
+    console.log('currentStep: ', currentStep, '\n previousStep: ', previousStep);
+  };
+
+  return (
+    <Wizard
+      height={400}
+      header={<WizardHeader title="You're a wizard, Harry" closeButtonAriaLabel="Close header" />}
+      footer={<CustomWizardFooter />}
+      nav={{ forceStepVisit: true, isExpandable: true }}
+      onNext={onNext}
+    >
+      <WizardStep id="sink-first-step" name="First step" body={null}>
+        <StepContentWithDrawer />
+      </WizardStep>
+      <WizardStep
+        id="sink-second-step"
+        name="Second step"
+        steps={[
+          <WizardStep id="sink-sub-step-one" key="substep-one" name="Substep 1">
+            Substep 1 content
+          </WizardStep>,
+          <WizardStep id="sink-sub-step-two" key="substep-two" name="Substep 2">
+            Substep 2 content
+          </WizardStep>
+        ]}
+      />
+      <WizardStep id="sink-third-step" name="Third step" navItem={<CustomNavItem />}>
+        <StepWithCustomFooter />
+      </WizardStep>
+      <CustomStepFour id="sink-fourth-step" name="Fourth step">
+        <WizardBody>Step 4 content</WizardBody>
+      </CustomStepFour>
+      <WizardStep id="sink-review-step" name="Review" nextButtonText="Submit">
+        Review step content
+      </WizardStep>
+    </Wizard>
+  );
+};

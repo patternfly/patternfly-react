@@ -3,9 +3,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { WizardNav, WizardNavItem } from '../../../../components/Wizard';
 import { DefaultWizardNavProps, WizardControlStep, DefaultWizardFooterProps } from '../types';
-import { Wizard, WizardStep } from '..';
+import { WizardNav, WizardNavItem, Wizard, WizardStep } from '../';
 
 describe('Wizard', () => {
   it('renders step when child is of type WizardStep', () => {

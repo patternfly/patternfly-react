@@ -2,34 +2,51 @@
 id: Wizard
 section: components
 cssPrefix: pf-c-wizard
-propComponents: ['Wizard', 'WizardStep', 'WizardFooter', 'WizardToggle', 'WizardStep', 'WizardBody', 'WizardContextProps', 'WizardBasicStep', 'WizardParentStep', 'WizardSubStep', 'DefaultWizardNavProps', 'DefaultWizardFooterProps']
+propComponents:
+  [
+    'WizardProps',
+    'WizardFooterProps',
+    'WizardToggleProps',
+    'WizardStepProps',
+    'WizardBodyProps',
+    'WizardHeaderProps',
+    'WizardNavProps',
+    'WizardNavItemProps',
+    'WizardContextProps',
+    'WizardBasicStep',
+    'WizardParentStep',
+    'WizardSubStep',
+    'WizardNavItemProps',
+    'DefaultWizardNavProps',
+    'DefaultWizardFooterProps',
+  ]
 beta: true
 ---
 
 import {
-  FormGroup,
-  TextInput,
-  Drawer,
-  DrawerContent,
-  Button,
-  Flex,
-  DrawerPanelContent,
-  DrawerColorVariant,
-  DrawerHead,
-  DrawerActions,
-  DrawerCloseButton,
-  WizardNavItem,
-  WizardNav,
-  WizardHeader
+FormGroup,
+TextInput,
+Drawer,
+DrawerContent,
+Button,
+Flex,
+DrawerPanelContent,
+DrawerColorVariant,
+DrawerHead,
+DrawerActions,
+DrawerCloseButton
 } from '@patternfly/react-core';
 import {
-  Wizard,
-  WizardFooter,
-  WizardToggle,
-  WizardStep,
-  WizardBody,
-  useWizardFooter,
-  useWizardContext
+Wizard,
+WizardFooter,
+WizardToggle,
+WizardStep,
+WizardBody,
+useWizardFooter,
+useWizardContext,
+WizardNavItem,
+WizardNav,
+WizardHeader
 } from '@patternfly/react-core/next';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
@@ -45,12 +62,37 @@ PatternFly has two implementations of a `Wizard`. This newer `Wizard` takes a mo
 
 ### Custom navigation
 
+The `Wizard`'s `nav` property can be used to build your own navigation.
+
+```
+/** Callback for the Wizard's 'nav' property. Returns element which replaces the Wizard's default navigation. */
+export type CustomWizardNavFunction = (
+  isOpen: boolean,
+  steps: WizardControlStep[],
+  activeStep: WizardControlStep,
+  goToStepByIndex: (index: number) => void
+) => React.ReactElement<WizardNavProps>;
+
+/** Encompasses all step type variants that are internally controlled by the Wizard */
+type WizardControlStep = WizardBasicStep | WizardParentStep | WizardSubStep;
+```
+
 ```ts file="./WizardCustomNav.tsx"
 ```
 
 ### Kitchen sink
 
 Includes a header, custom footer, sub-steps, step content with a drawer, custom nav item, and nav prevention until step visitation.
+
+When tapping into the `onNext`, `onBack` or `onNavByIndex` function props for `Wizard`, these callback functions will return the 'id' and 'name' of the currentStep (the currently focused step), and the previousStep (the previously focused step).
+
+```
+/** Callback for the Wizard's 'onNext', 'onBack', and 'onNavByIndex' properties */
+type WizardNavStepFunction = (currentStep: WizardNavStepData, previousStep: WizardNavStepData) => void;
+
+/** Data returned for either parameter of WizardNavStepFunction */
+type WizardNavStepData = Pick<WizardControlStep, 'id' | 'name'>;
+```
 
 ```ts file="./WizardKitchenSink.tsx"
 ```
