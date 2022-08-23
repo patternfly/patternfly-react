@@ -33,6 +33,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AlertGroupDemo
   },
   {
+    id: 'alert-group-timeout-from-bottom-demo',
+    name: 'Alert Group Timeout From Bottom Demo',
+    componentType: Examples.AlertGroupTimeoutFromBottomDemo
+  },
+  {
     id: 'alert-custom-timeout-demo',
     name: 'Alert Custom Timeout Demo',
     componentType: Examples.AlertCustomTimeoutDemo
