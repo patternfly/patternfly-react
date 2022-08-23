@@ -11,29 +11,29 @@ import EyeIcon from '@patternfly/react-icons/dist/esm/icons/eye-icon';
 export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   /** Flag to indicate if the first dropdown item should not gain initial focus */
   noAutoFocus?: boolean;
-  /** Additional classes added to the Login Main Body's Form */
+  /** Additional classes added to the login main body's form */
   className?: string;
-  /** Flag indicating the Helper Text is visible * */
+  /** Flag indicating the helper text is visible * */
   showHelperText?: boolean;
-  /** Content displayed in the Helper Text component * */
+  /** Content displayed in the helper text component * */
   helperText?: React.ReactNode;
-  /** Icon displayed to the left in the Helper Text */
+  /** Icon displayed to the left in the helper text */
   helperTextIcon?: React.ReactNode;
-  /** Label for the Username Input Field */
+  /** Label for the username input field */
   usernameLabel?: string;
-  /** Value for the Username */
+  /** Value for the username */
   usernameValue?: string;
-  /** Function that handles the onChange event for the Username */
+  /** Function that handles the onChange event for the username */
   onChangeUsername?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
-  /** Flag indicating if the Username is valid */
+  /** Flag indicating if the username is valid */
   isValidUsername?: boolean;
-  /** Label for the Password Input Field */
+  /** Label for the password input field */
   passwordLabel?: string;
-  /** Value for the Password */
+  /** Value for the password */
   passwordValue?: string;
-  /** Function that handles the onChange event for the Password */
+  /** Function that handles the onChange event for the password */
   onChangePassword?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
-  /** Flag indicating if the Password is valid */
+  /** Flag indicating if the password is valid */
   isValidPassword?: boolean;
   /** Flag indicating if the user can toggle hiding the password */
   isShowPasswordEnabled?: boolean;
@@ -41,17 +41,17 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   showPasswordAriaLabel?: string;
   /** Accessible label for the hide password button */
   hidePasswordAriaLabel?: string;
-  /** Label for the Log in Button Input */
+  /** Label for the log in button input */
   loginButtonLabel?: string;
-  /** Flag indicating if the Login Button is disabled */
+  /** Flag indicating if the login button is disabled */
   isLoginButtonDisabled?: boolean;
-  /** Function that is called when the Login button is clicked */
+  /** Function that is called when the login button is clicked */
   onLoginButtonClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  /** Label for the Remember Me Checkbox that indicates the user should be kept logged in.  If the label is not provided, the checkbox will not show. */
+  /** Label for the remember me checkbox that indicates the user should be kept logged in.  If the label is not provided, the checkbox will not show. */
   rememberMeLabel?: string;
-  /** Flag indicating if the remember me Checkbox is checked. */
+  /** Flag indicating if the remember me checkbox is checked. */
   isRememberMeChecked?: boolean;
-  /** Function that handles the onChange event for the Remember Me Checkbox */
+  /** Function that handles the onChange event for the remember me checkbox */
   onChangeRememberMe?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
 }
 

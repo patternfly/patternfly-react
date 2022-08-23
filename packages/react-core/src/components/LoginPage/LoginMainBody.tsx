@@ -3,9 +3,9 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Login/login';
 
 export interface LoginMainBodyProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered inside the Login Main Body */
+  /** Content rendered inside the login main body */
   children?: React.ReactNode;
-  /** Additional classes added to the Login Main Body */
+  /** Additional classes added to the login main body */
   className?: string;
 }
 

@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 export interface LoginFooterItemProps extends React.HTMLProps<HTMLAnchorElement> {
-  /** Content rendered inside the footer Link Item */
+  /** Content rendered inside the footer link item */
   children?: React.ReactNode;
-  /** Additional classes added to the Footer Link Item  */
+  /** Additional classes added to the footer link item  */
   className?: string;
-  /** The URL of the Footer Link Item */
+  /** The URL of the footer link item */
   href?: string;
   /** Specifies where to open the linked document */
   target?: string;

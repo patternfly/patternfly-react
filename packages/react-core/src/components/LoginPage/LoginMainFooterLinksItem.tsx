@@ -3,15 +3,15 @@ import styles from '@patternfly/react-styles/css/components/Login/login';
 import { css } from '@patternfly/react-styles';
 
 export interface LoginMainFooterLinksItemProps extends React.HTMLProps<HTMLLIElement> {
-  /** Content rendered inside the footer Link Item */
+  /** Content rendered inside the footer link item */
   children?: React.ReactNode;
-  /** HREF for Footer Link Item */
+  /** HREF for footer link item */
   href?: string;
-  /** Target for Footer Link Item */
+  /** Target for footer link item */
   target?: string;
-  /** Additional classes added to the Footer Link Item  */
+  /** Additional classes added to the footer link item  */
   className?: string;
-  /** Component used to render the Footer Link Item */
+  /** Component used to render the footer link item */
   linkComponent?: React.ReactNode;
   /** Props for the LinkComponent */
   linkComponentProps?: any;
