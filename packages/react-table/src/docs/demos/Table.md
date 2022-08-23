@@ -2819,7 +2819,7 @@ class StickyHeaderTableDemo extends React.Component {
                 { title: 'Applications', transforms: [cellWidth(15)] },
                 { title: 'Workspaces', transforms: [cellWidth(15)] },
                 { title: 'Status', transforms: [cellWidth(10)] },
-                { title: 'Location', transforms: [cellWidth(10)] },
+                { title: 'Location', transforms: [cellWidth(15)] },
                 { title: 'Last Modified', transforms: [cellWidth(15)] },
                 { title: 'URL', transforms: [cellWidth(10)], cellTransforms: [truncate] }
               ]}
