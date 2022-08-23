@@ -4,19 +4,18 @@ section: components
 cssPrefix: pf-c-wizard
 propComponents:
   [
-    'WizardProps',
-    'WizardFooterProps',
-    'WizardToggleProps',
-    'WizardStepProps',
-    'WizardBodyProps',
-    'WizardHeaderProps',
-    'WizardNavProps',
-    'WizardNavItemProps',
+    'Wizard',
+    'WizardFooter',
+    'WizardToggle',
+    'WizardStep',
+    'WizardBody',
+    'WizardHeader',
+    'WizardNav',
+    'WizardNavItem',
     'WizardContextProps',
     'WizardBasicStep',
     'WizardParentStep',
     'WizardSubStep',
-    'WizardNavItemProps',
     'DefaultWizardNavProps',
     'DefaultWizardFooterProps',
   ]

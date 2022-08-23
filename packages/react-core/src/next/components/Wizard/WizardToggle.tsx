@@ -31,7 +31,7 @@ export interface WizardToggleProps {
   /** Custom WizardNav or callback used to create a default WizardNav */
   nav: DefaultWizardNavProps | CustomWizardNavFunction;
   /** Navigate using the step index */
-  goToStepByIndex(index: number): void;
+  goToStepByIndex: (index: number) => void;
   /** The button's aria-label */
   'aria-label'?: string;
   /** Flag to unmount inactive steps instead of hiding. Defaults to true */

@@ -14,11 +14,11 @@ export interface WizardFooterProps {
   /** The currently active WizardStep */
   activeStep: WizardControlStep;
   /** Next button callback */
-  onNext(): WizardNavStepFunction | void;
+  onNext: () => WizardNavStepFunction | void;
   /** Back button callback */
-  onBack(): WizardNavStepFunction | void;
+  onBack: () => WizardNavStepFunction | void;
   /** Cancel link callback */
-  onClose(): void;
+  onClose: () => void;
   /** Custom text for the Next button. The activeStep's nextButtonText takes precedence. */
   nextButtonText?: React.ReactNode;
   /** Custom text for the Back button */

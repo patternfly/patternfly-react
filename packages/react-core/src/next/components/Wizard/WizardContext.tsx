@@ -10,19 +10,19 @@ export interface WizardContextProps {
   /** Footer element */
   footer: React.ReactElement;
   /** Navigate to the next step */
-  onNext(): void;
+  onNext: () => void;
   /** Navigate to the previous step */
-  onBack(): void;
+  onBack: () => void;
   /** Close the wizard */
-  onClose(): void;
+  onClose: () => void;
   /** Navigate to step by ID */
-  goToStepById(id: number | string): void;
+  goToStepById: (id: number | string) => void;
   /** Navigate to step by name */
-  goToStepByName(name: string): void;
+  goToStepByName: (name: string) => void;
   /** Navigate to step by index */
-  goToStepByIndex(index: number): void;
+  goToStepByIndex: (index: number) => void;
   /** Update the footer with any react element */
-  setFooter(footer: React.ReactElement): void;
+  setFooter: (footer: React.ReactElement) => void;
 }
 
 export const WizardContext = React.createContext({} as WizardContextProps);
