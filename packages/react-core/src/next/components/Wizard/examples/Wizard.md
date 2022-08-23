@@ -84,7 +84,7 @@ type WizardControlStep = WizardBasicStep | WizardParentStep | WizardSubStep;
 
 Includes a header, custom footer, sub-steps, step content with a drawer, custom nav item, and nav prevention until step visitation.
 
-When tapping into the `onNext`, `onBack` or `onNavByIndex` function props for `Wizard`, these callback functions will return the 'id' and 'name' of the currentStep (the currently focused step), and the previousStep (the previously focused step).
+Custom operations when navigating between steps can be achieved by utilizing `onNext`, `onBack` or `onNavByIndex` properties whose callback functions return the 'id' and 'name' of the currently focused step (currentStep), and the previously focused step (previousStep).
 
 ```
 /** Callback for the Wizard's 'onNext', 'onBack', and 'onNavByIndex' properties */
