@@ -58,6 +58,8 @@ export default class DashboardWrapper extends React.Component {
       sidebarNavOpen,
       onPageResize,
       hasNoBreadcrumb,
+      notificationDrawer,
+      isNotificationDrawerExpanded,
       hasPageTemplateTitle
     } = this.props;
 
@@ -103,6 +105,8 @@ export default class DashboardWrapper extends React.Component {
         skipToContent={PageSkipToContent}
         breadcrumb={renderedBreadcrumb}
         mainContainerId={mainContainerId ? mainContainerId : 'main-content-page-layout-default-nav'}
+        notificationDrawer={notificationDrawer}
+        isNotificationDrawerExpanded={isNotificationDrawerExpanded}
         onPageResize={onPageResize}
       >
         {hasPageTemplateTitle && PageTemplateTitle}
