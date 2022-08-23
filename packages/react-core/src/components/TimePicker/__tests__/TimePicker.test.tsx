@@ -18,7 +18,6 @@ describe('TimePicker', () => {
     );
 
     expect(screen.getByLabelText('time picker')).not.toHaveClass('pf-m-error');
-    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('test timepicker onChange method with valid values', () => {
