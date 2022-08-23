@@ -64,7 +64,7 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
   const maxDisplayedAlerts = 3;
   const minAlerts = 0;
   const maxAlerts = 100;
-  const alertTimeout = 4000;
+  const alertTimeout = 6000;
 
   const [isDropdownOpen, setDropdownOpen] = React.useState(false);
   const [isKebabDropdownOpen, setKebabDropdownOpen] = React.useState(false);
@@ -75,10 +75,13 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
   const [maxDisplayed, setMaxDisplayed] = React.useState(maxDisplayedAlerts);
   const [alerts, setAlerts] = React.useState<any[]>([]);
   const [notifications, setNotifications] = React.useState<NotificationProps[]>([]);
+  const [count, setCount] = React.useState(0);
+  const [timedOutCount, setTimedOutCount] = React.useState(0);
+
 
   useEffect(() => {
     setOverflowMessage(getOverflowMessageCount());
-  }, [maxDisplayed, notifications, alerts]);
+  }, [maxDisplayed, notifications, alerts, timedOutCount]);
 
   const addNotification = (
     title: string,
@@ -88,6 +91,7 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
     timestamp: string,
     description: string
   ) => {
+    title = `${title} no. ${count}`;
     setNotifications([
       { title, srTitle, variant, key, timestamp, description, isNotificationRead: false },
       ...notifications
@@ -98,18 +102,20 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
         <Alert
           variant={variant}
           title={title}
+          key={key}
           timeout={alertTimeout}
-          onTimeout={() => removeAlert(key)}
+          onTimeout={() => setTimedOutCount(timedOutCount + 1)}
+          isLiveRegion
           actionClose={
             <AlertActionCloseButton title={title} variantLabel={`${variant} alert`} onClose={() => removeAlert(key)} />
           }
-          key={key}
         >
           <p>{description}</p>
         </Alert>,
         ...alerts
       ]);
     }
+    setCount(count + 1);
   };
 
   const removeNotification = (key: React.Key) => {
@@ -169,7 +175,7 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
   };
 
   const getOverflowMessageCount = () => {
-    const overflow = alerts.length - maxDisplayed;
+    const overflow = alerts.length - maxDisplayed - timedOutCount;
     if (overflow > 0 && maxDisplayed > 0) {
       return `View ${overflow} more notifications in notification drawer`;
     }
@@ -536,10 +542,9 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
             isLiveRegion
             onOverflowClick={onAlertGroupOverflowClick}
             overflowMessage={overflowMessage}
-          >
-            {alerts.slice(0, maxDisplayed)}
-          </AlertGroup>
-        </PageSection>
+            children={alerts.slice(0, maxDisplayed)}
+          />        
+          </PageSection>
       </Page>
     </React.Fragment>
   );
