@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.73.0 (2022-08-23)
+
+
+### Features
+
+* **WizardComposable:** Created composable spinoff of wizard w/ enhancements ([#7703](https://github.com/patternfly/patternfly-react/issues/7703)) ([76eab29](https://github.com/patternfly/patternfly-react/commit/76eab29b640e2f71cd9bd5d42f58fa8dd0eba799))
+
+
+
+
+
 ## 4.72.4 (2022-08-23)
 
 **Note:** Version bump only for package transformer-cjs-imports
