@@ -19,8 +19,8 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
     className={css(styles.alertGroup, className, isToast ? styles.modifiers.toast : '')}
     {...rest}
   >
-    {React.Children.toArray(children).map(alert => (
-      <li key={(alert as React.ReactElement<AlertProps>).props.uniqueId}>{alert}</li>
+    {React.Children.toArray(children).map((alert, index) => (
+      <li key={(alert as React.ReactElement<AlertProps>).props?.uniqueId || index}>{alert}</li>
     ))}
     {overflowMessage && (
       <li>
