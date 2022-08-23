@@ -2787,40 +2787,11 @@ class ComplexPaginationTableDemo extends React.Component {
 ```js isFullscreen
 import React from 'react';
 import {
-  Avatar,
-  Brand,
-  Breadcrumb,
-  BreadcrumbItem,
-  Button,
-  ButtonVariant,
-  Dropdown,
-  DropdownGroup,
-  DropdownToggle,
-  DropdownItem,
-  KebabToggle,
   Label,
-  Nav,
-  NavItem,
-  NavList,
-  Page,
-  PageHeader,
   PageSection,
-  PageSectionVariants,
-  PageSidebar,
-  SkipToContent,
-  TextContent,
-  Text,
-  PageHeaderTools,
-  PageHeaderToolsGroup,
-  PageHeaderToolsItem
 } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { rows, columns } from '../examples/Data.jsx';
+import { rows } from '../examples/Data.jsx';
 
 class StickyHeaderTableDemo extends React.Component {
   render() {
