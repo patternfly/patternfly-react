@@ -2786,10 +2786,7 @@ class ComplexPaginationTableDemo extends React.Component {
 
 ```js isFullscreen
 import React from 'react';
-import {
-  Label,
-  PageSection,
-} from '@patternfly/react-core';
+import { Label, PageSection } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import { rows } from '../examples/Data.jsx';
 
@@ -2815,13 +2812,13 @@ class StickyHeaderTableDemo extends React.Component {
             <Table
               cells={[
                 { title: 'Servers', transforms: [cellWidth(15)] },
-                { title: 'Threads',  transforms: [cellWidth(10)] },
-                { title: 'Applications', transforms: [cellWidth(15)] },
-                { title: 'Workspaces', transforms: [cellWidth(15)] },
+                { title: 'Threads', transforms: [cellWidth(10)] },
+                { title: 'Applications', transforms: [cellWidth(10)] },
+                { title: 'Workspaces', transforms: [cellWidth(10)] },
                 { title: 'Status', transforms: [cellWidth(10)] },
                 { title: 'Location', transforms: [cellWidth(15)] },
                 { title: 'Last Modified', transforms: [cellWidth(15)] },
-                { title: 'URL', transforms: [cellWidth(10)], cellTransforms: [truncate] }
+                { title: 'URL', transforms: [cellWidth(10)] }
               ]}
               rows={rows.map(row => [
                 row.name,
@@ -2831,7 +2828,13 @@ class StickyHeaderTableDemo extends React.Component {
                 { title: renderLabel(row.status) },
                 row.location,
                 row.lastModified,
-                { title: <a href="#">{row.url}</a> }
+                {
+                  title: (
+                    <a href="#">
+                      <TableText wrapModifier="truncate">{row.url} </TableText>
+                    </a>
+                  )
+                }
               ])}
               aria-label="Sticky Header Table Demo"
               isStickyHeader
