@@ -173,7 +173,7 @@ export const rows = [
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
     status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '5 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node16'
   },
