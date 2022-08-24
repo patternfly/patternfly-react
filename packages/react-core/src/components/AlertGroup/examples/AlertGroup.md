@@ -66,7 +66,7 @@ Click the buttons in the example below to add dynamic alerts to a group.
 
 ### Dynamic alert group with overflow message
 
-In the following example, there can be a max of 4 alerts shown at once. 
+In the following example, there can be a maximum of 4 alerts shown at once. 
 
 ```ts file="AlertGroupSingularDynamicOverflow.tsx" isBeta
 ```
