@@ -37,7 +37,7 @@ section: developer-resources
 - **Page:**
   - Added aria label prop to page sub-components explicitly ([#7822](https://github.com/patternfly/patternfly-react/pull/7822))
   - Updated `onPageResize` default prop ([#7811](https://github.com/patternfly/patternfly-react/pull/7811))
- - **Popover:**
+- **Popover:**
   - Converted examples to TypeScript ([#7770](https://github.com/patternfly/patternfly-react/pull/7770))
 - **Progress:**
   - Converted examples to TypeScript ([#7837](https://github.com/patternfly/patternfly-react/pull/7837))
@@ -55,6 +55,9 @@ section: developer-resources
 - **Wizard:**
   - Created composable next version of the wizard with enhancements ([#7703](https://github.com/patternfly/patternfly-react/pull/7703))
 
+### Charts
+- Added id prop to fix docs a11y violations ([#7808](https://github.com/patternfly/patternfly-react/pull/7808))
+
 ### Table
 - Added sticky toolbar with table demo ([#7850](https://github.com/patternfly/patternfly-react/pull/7850))
 - Updated expandable table data ([#7838](https://github.com/patternfly/patternfly-react/pull/7838))
@@ -63,7 +66,6 @@ section: developer-resources
 
 ### Other
 - **Chore:**
-  - Added id prop to fix docs a11y violations ([#7808](https://github.com/patternfly/patternfly-react/pull/7808))
   - Allowed for 'next' and 'deprecated' react-core sub-paths ([#7824](https://github.com/patternfly/patternfly-react/pull/7824))
   - Corrected types for demo application ([#7827](https://github.com/patternfly/patternfly-react/pull/7827))
   - Corrected types for examples ([#7821](https://github.com/patternfly/patternfly-react/pull/7821))
