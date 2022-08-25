@@ -522,7 +522,9 @@ describe('select with placeholder', () => {
   });
 });
 
-test('applies focus styling to the create option when reached via keyboard navigation', () => {
+test('applies focus styling to the create option when reached via keyboard navigation', async () => {
+  const user = userEvent.setup();
+  
   render(
     <Select
       variant={SelectVariant.typeahead}
@@ -535,7 +537,7 @@ test('applies focus styling to the create option when reached via keyboard navig
   );
 
   const input = screen.getByRole('textbox');
-  userEvent.type(input, 'a{arrowdown}');
+  await user.type(input, 'a{arrowdown}');
 
   const createOption = screen.getByRole('option', { name: 'Create "a"' });
 
