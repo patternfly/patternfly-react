@@ -17,7 +17,15 @@ import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 
 ### Variant examples
 
-PatternFly supports several alert variants for different scenarios and applications. Each variant has an associated status icon, background, and alert title coded to communicate the severity of an alert. Use the `variant` property to apply the following styling options. 
+PatternFly supports several alert variants for different scenarios. Each variant has an associated status icon, background, and alert title coded to communicate the severity of an alert. Use the `variant` property to apply the following styling options. If no `variant` is specified, then the variant will be set to "default".
+
+| Variant | Description |
+|---|---|
+| Default | Use for generic messages with no associated severity |
+| Info | Use for general informational messages |
+| Success | Use to indicate that a task or process has been completed successfully |
+| Warning | Use to indicate that a non-critical error has occurred|
+| Danger | Use to indicate that a critical or blocking error has occurred |
 
 ```ts
 import React from 'react';
@@ -32,26 +40,17 @@ import { Alert } from '@patternfly/react-core';
 </React.Fragment>
 ```
 
-If no `variant` property is specified, then the variant will be set to "default". Otherwise, use the following variants:
-
-| Variant | Description |
-|---|---|
-| Default | Use for generic messages with no associated severity |
-| Info | Use for general informational messages |
-| Success | Use to indicate that a task or process has been completed successfully |
-| Warning | Use to indicate that a non-critical error has occurred|
-| Danger | Use to indicate that a critical or blocking error has occurred |
-
-
 ### Alert variations
 
 PatternFly supports several properties and variations that can be used to add extra content to an alert. 
 
-* Use the `actionLinks` property to add one or more `AlertActionLink` components that place links beneath the alert message. You must pass in `href` and `component="a"` properties to have an `AlertActionLink` act as a proper link, rather than as a button.
+* As demonstrated in the 1st variation below, use the `actionLinks` property to add one or more `AlertActionLink` components that place links beneath the alert message. You must pass in `href` and `component="a"` properties to have an `AlertActionLink` act as a proper link, rather than as a button.
 
-* Use a native HTML `<a>` element to add links within an alert message.
+* As demonstrated in the 2nd variation below, use a native HTML `<a>` element to add links within an alert message.
 
-* Use the `actionClose` property to add an `AlertActionCloseButton` component, which can be used to manage and customize alert dismissals.
+* As demonstrated in the 3rd and 4th variations below, use the `actionClose` property to add an `AlertActionCloseButton` component, which can be used to manage and customize alert dismissals. `actionClose` can be used with or without the presence of `actionLinks`.
+
+* As demonstrated in the 5th and 6th variations below, order headings by their level and avoid skipping heading levels when possible to avoid confusion. For example, a heading of an h2 level should not be followed directly by an h4.
 
 ```ts
 import React from 'react';
@@ -221,7 +220,7 @@ import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 
 ### Inline alerts variants
 
-Use inline alerts to display an alert in line with content. All alert variants may use the `isInline` property to place alerts in content-heavy areas, such as within forms, wizards, or drawers.
+Use inline alerts to display an alert inline with content. All alert variants may use the `isInline` property to position alerts in content-heavy areas, such as within forms, wizards, or drawers.
 
 ```ts
 import React from 'react';
@@ -317,17 +316,11 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
 </Alert>
 ```
 
-### Live region alert examples
-
-Accessible Rich Internet Applications (ARIA) is a set of roles and attributes specified by the [World Wide Web Consortium](https://www.w3.org/WAI/standards-guidelines/aria/). ARIA defines ways to make web content and web applications more accessible to people with disabilities.
-
-ARIA live regions allow you to expose dynamic content changes in a way that can be announced by assistive technologies.
-
-Use the `isLiveRegion` property to indicate that an alert is in a live region.
-
 ### Static live region alerts
 
-By default, live region alerts are static.
+Live region alerts allow you to expose dynamic content changes in a way that can be announced by assistive technologies.
+
+By default, `isLiveRegion`alerts are static.
 
 ```ts
 import React from 'react';
