@@ -7,9 +7,9 @@ describe('Card Demo Test', () => {
     cy.get('#selectableCard').focus();
     cy.focused().should('have.class', 'pf-m-selectable');
     cy.focused().should('not.have.class', 'pf-m-selected');
-    cy.focused().trigger('keydown', { key: 'Enter' });
+    cy.focused().type('{enter}');
     cy.focused().should('have.class', 'pf-m-selected');
-    cy.focused().trigger('keydown', { key: 'Enter' });
+    cy.focused().type('{enter}');
     cy.focused().should('not.have.class', 'pf-m-selected');
   });
 
@@ -17,9 +17,9 @@ describe('Card Demo Test', () => {
     cy.get('#selectableCardRaised').focus();
     cy.focused().should('have.class', 'pf-m-selectable-raised');
     cy.focused().should('not.have.class', 'pf-m-selected-raised');
-    cy.focused().trigger('keydown', { key: 'Enter' });
+    cy.focused().type('{enter}');
     cy.focused().should('have.class', 'pf-m-selected-raised');
-    cy.focused().trigger('keydown', { key: 'Enter' });
+    cy.focused().type('{enter}');
     cy.focused().should('not.have.class', 'pf-m-selected-raised');
   });
 

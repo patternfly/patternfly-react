@@ -31,7 +31,7 @@ describe('Data List Draggable Demo Test', () => {
     cy.get('#drag1').type('{downarrow}');
     cy.get('#data1').should('have.class', 'pf-m-ghost-row');
     cy.get('#drag1').type('{downarrow}');
-    cy.get('#drag1').trigger('keydown', { key: 'Enter' });
+    cy.get('#drag1').type('{enter}');
     cy.get('#data1').should('not.have.class', 'pf-m-ghost-row');
   });
 });

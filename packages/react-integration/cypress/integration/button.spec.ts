@@ -39,7 +39,7 @@ describe('Button Demo Test', () => {
 
       cy.get('.pf-c-button[id="aria-disabled-btn-1"]')
         .focus() // should not decrement to -1 since inoperableEvents={['onFocus']} is set
-        .trigger('keydown', { key: 'Enter' }) // should increment to 1 since this event is not prevented
+        .type('{enter}') // should increment to 1 since this event is not prevented
         .should('have.text', 'Aria-disabled link button with custom list of prevented events 1');
 
       cy.get('.pf-c-button[id="aria-disabled-btn-1"]')
