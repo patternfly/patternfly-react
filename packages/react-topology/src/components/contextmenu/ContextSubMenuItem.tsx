@@ -38,7 +38,7 @@ const ContextSubMenuItem: React.FunctionComponent<ContextSubMenuItemProps> = ({ 
             }}
             onKeyDown={e => {
               // open the sub menu on enter or right arrow
-              if (e.keyCode === 39 || e.keyCode === 13) {
+              if (e.key === 'ArrowRight' || e.key === 'Enter') {
                 setOpen(true);
                 e.stopPropagation();
               }
@@ -77,7 +77,7 @@ const ContextSubMenuItem: React.FunctionComponent<ContextSubMenuItemProps> = ({ 
           }}
           onKeyDown={e => {
             // close the sub menu on left arrow
-            if (e.keyCode === 37) {
+            if (e.key === 'ArrowLeft') {
               setOpen(false);
               e.stopPropagation();
             }

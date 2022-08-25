@@ -75,9 +75,9 @@ describe('Form Demo Test', () => {
   });
 
   it('Verify selecting the form label help icon with keypress launches popover', () => {
-    cy.get('#helper-text-target').type('{enter}');
+    cy.get('#helper-text-target').trigger('keydown', { key: 'Enter' });
     cy.get('.pf-c-popover').should('exist');
-    cy.get('[aria-label="Close"]').type('{enter}');
+    cy.get('[aria-label="Close"]').trigger('keydown', { key: 'Enter' });
   });
 
   it('Verify keypress can control the multi-select-typeahead', () => {

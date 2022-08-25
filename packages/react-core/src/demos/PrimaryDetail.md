@@ -1264,7 +1264,7 @@ class PrimaryDetailCardView extends React.Component {
         return;
       }
 
-      if ([13, 32].includes(event.keyCode)) {
+      if (['Enter', ' '].includes(event.key)) {
         if (event.currentTarget.id === this.state.activeCard) {
           this.setState({
             isDrawerExpanded: !this.state.isDrawerExpanded,

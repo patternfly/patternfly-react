@@ -89,7 +89,7 @@ describe('Notification Drawer Groups Demo Test', () => {
     // press Enter on toggle button, check whether the dropdown menu exsit and whether it focuses on the first item
     // then press Tab on toggle button, check whether the dropdown menu is closed
     cy.get('#toggle-id-0').then((toggleButton: JQuery<HTMLButtonElement>) => {
-      cy.wrap(toggleButton).type('{enter}');
+      cy.wrap(toggleButton).trigger('keydown', { key: 'Enter' });
       cy.get('#notification-0')
         .find('.pf-c-dropdown__menu.pf-m-align-right')
         .should('exist');
@@ -109,13 +109,13 @@ describe('Notification Drawer Groups Demo Test', () => {
       .should('have.class', 'pf-m-expanded');
     cy.get('.pf-c-notification-drawer__group-toggle')
       .first()
-      .type('{enter}');
+      .trigger('keydown', { key: 'Enter' });
     cy.get('.pf-c-notification-drawer__group')
       .first()
       .should('not.have.class', 'pf-m-expanded');
     // Verify the list item header toggle button keyboard interactivity opens/closes dropdown menu
     cy.get('#toggle-id-9').then((toggleButton: JQuery<HTMLButtonElement>) => {
-      cy.wrap(toggleButton).type('{enter}');
+      cy.wrap(toggleButton).trigger('keydown', { key: 'Enter' });
       cy.get('#notification-9')
         .find('.pf-c-dropdown__menu.pf-m-align-right')
         .should('exist');
