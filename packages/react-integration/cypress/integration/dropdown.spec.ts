@@ -215,6 +215,7 @@ describe('Action Dropdown Demo Test', () => {
   });
 
   it('Shift + Tab closes panel, focus stays on toggle', () => {
+    cy.get('#dropdown > button').click();
     cy.get('.pf-c-dropdown__menu-item')
       .last()
       .trigger('keydown', { shiftKey: true, key: 'Tab' });
@@ -329,6 +330,7 @@ describe('Cog Dropdown Demo Test', () => {
   });
 
   it('Shift + Tab closes panel, focus stays on toggle', () => {
+    cy.get('#dropdown > button').click();
     cy.get('.pf-c-dropdown__menu-item')
       .last()
       .trigger('keydown', { shiftKey: true, key: 'Tab' });
@@ -439,6 +441,7 @@ describe('Dropdown with menu on document body demo test', () => {
   });
 
   it('Shift + Tab closes panel, focus stays on toggle', () => {
+    cy.get('#dropdown > button').click();
     cy.get('.pf-c-dropdown__menu-item')
       .last()
       .trigger('keydown', { shiftKey: true, key: 'Tab' });
