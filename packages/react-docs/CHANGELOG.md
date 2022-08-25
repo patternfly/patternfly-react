@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.96.3 (2022-08-25)
+
+
+### Bug Fixes
+
+* react-core should export all contents of dist directory ([#7883](https://github.com/patternfly/patternfly-react/issues/7883)) ([f5088d0](https://github.com/patternfly/patternfly-react/commit/f5088d069916d7c37335503251d13b4b846f3f62))
+
+
+
+
+
 ## 5.96.2 (2022-08-24)
 
 **Note:** Version bump only for package @patternfly/react-docs
