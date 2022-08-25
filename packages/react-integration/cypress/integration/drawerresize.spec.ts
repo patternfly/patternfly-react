@@ -16,9 +16,9 @@ describe('Drawer Resize Demo Test', () => {
       .trigger('mouseup', { force: true });
     cy.get('.pf-c-drawer__panel').should('have.css', 'overflow-anchor', 'none');
     cy.get('.pf-c-drawer__splitter')
-      .trigger('keydown', { keyCode: 32, which: 32 })
-      .trigger('keydown', { keyCode: 40, which: 40 })
-      .trigger('keydown', { keyCode: 40, which: 40 })
-      .trigger('keydown', { keyCode: 40, which: 40 });
+      .trigger('keydown', { key: ' ' })
+      .type('{downArrow}')
+      .type('{downArrow}')
+      .type('{downArrow}');
   });
 });
