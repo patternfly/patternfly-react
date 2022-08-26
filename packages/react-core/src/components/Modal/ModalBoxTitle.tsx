@@ -38,7 +38,7 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
   ...props
 }: ModalBoxTitleProps) => {
   const [hasTooltip, setHasTooltip] = React.useState(false);
-  const h1 = React.useRef<HTMLHeadingElement>();
+  const h1 = React.useRef<HTMLHeadingElement>(null);
   const label = titleLabel || (isVariantIcon(titleIconVariant) ? `${capitalize(titleIconVariant)} alert:` : titleLabel);
   const variantIcons = {
     success: <CheckCircleIcon />,

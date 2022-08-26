@@ -40,7 +40,7 @@ export interface DropdownItemProps extends InternalDropdownItemProps, OUIAProps 
   /** Custom item rendering that receives the DropdownContext */
   customChild?: React.ReactNode;
   /** tabIndex to use, null to unset it */
-  tabIndex?: number | null;
+  tabIndex?: number;
   /** An image to display within the DropdownItem, appearing before any component children */
   icon?: React.ReactNode;
   /** Initial focus on the item when the menu is opened (Note: Only applicable to one of the items) */

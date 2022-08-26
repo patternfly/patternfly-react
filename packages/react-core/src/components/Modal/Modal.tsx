@@ -26,7 +26,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Optional title label text for screen readers */
   titleLabel?: string;
   /** Id to use for Modal Box label */
-  'aria-labelledby'?: string | null;
+  'aria-labelledby'?: string;
   /** Accessible descriptor of modal */
   'aria-label'?: string;
   /** Id to use for Modal Box descriptor */
@@ -143,7 +143,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     }
   };
 
-  isEmpty = (value: string | null) => value === null || value === undefined || value === '';
+  isEmpty = (value: string | null | undefined) => value === null || value === undefined || value === '';
 
   componentDidMount() {
     const {
