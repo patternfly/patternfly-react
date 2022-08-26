@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { NumberInput } from '../NumberInput';
 import userEvent from '@testing-library/user-event';
 
@@ -144,7 +144,11 @@ describe('numberInput', () => {
     render(<NumberInput value={10} onChange={() => {}} />);
 
     const input = screen.getByRole('spinbutton');
-    await user.type(input, '{ArrowLeft}{ArrowLeft}0');
+
+    await user.click(input);
+
+    // fireEvent is used here do to an issue with the current version userEvent
+    fireEvent.change(input, { target: { value: '010' } });
     expect(input).toHaveDisplayValue('010');
 
     await user.click(document.body);
@@ -158,7 +162,11 @@ describe('numberInput', () => {
     render(<NumberInput value={-18} onChange={() => {}} />);
 
     const input = screen.getByRole('spinbutton');
-    await user.type(input, '{ArrowLeft}{ArrowLeft}0');
+
+    await user.click(input);
+
+    // fireEvent is used here do to an issue with the current version userEvent
+    fireEvent.change(input, { target: { value: '-018' } });
     expect(input).toHaveDisplayValue('-018');
 
     await user.click(document.body);
@@ -172,7 +180,11 @@ describe('numberInput', () => {
     render(<NumberInput value={47.01} onChange={() => {}} />);
 
     const input = screen.getByRole('spinbutton');
-    await user.type(input, '{ArrowLeft}{ArrowLeft}{ArrowLeft}{ArrowLeft}{ArrowLeft}0');
+
+    await user.click(input);
+
+    // fireEvent is used here do to an issue with the current version userEvent
+    fireEvent.change(input, { target: { value: '047.01' } });
     expect(input).toHaveDisplayValue('047.01');
 
     await user.click(document.body);
