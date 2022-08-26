@@ -296,7 +296,9 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   labels?: string[] | number[] | ((data: any) => string | number | null);
   /**
-   * The name prop is used to reference a component instance when defining shared events.
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
    */
   name?: string;
   /**
@@ -474,6 +476,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   hasPatterns,
   invert = false,
   labels = [], // Don't show any tooltip labels by default, let consumer override if needed
+  name,
   padding,
   radius,
   standalone = true,
@@ -546,6 +549,10 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           data: childData,
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
+          ...(name &&
+            typeof (child as any).name !== undefined && {
+              name: `${name}-${(child as any).type.displayName}`
+            }),
           invert,
           isStatic: false,
           key: `pf-chart-donut-threshold-child-${index}`,

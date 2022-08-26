@@ -232,7 +232,9 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   minDomain?: number | { x?: number; y?: number };
   /**
-   * ChartAxis uses the standard name prop
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
    */
   name?: string;
   /**
@@ -447,6 +449,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
 
 export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   containerComponent = <ChartContainer />,
+  name,
   showGrid = false,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -464,6 +467,9 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
 
   const getTickLabelComponent = () =>
     React.cloneElement(tickLabelComponent, {
+      ...(name && {
+        id: (props: any) => `${name}-${(tickLabelComponent as any).type.displayName}-${props.index}`
+      }),
       ...tickLabelComponent.props
     });
 

@@ -73,6 +73,7 @@ export * from './TextArea';
 export * from './TextInput';
 export * from './Tile';
 export * from './TimePicker';
+export * from './Timestamp';
 export * from './Title';
 export * from './ToggleGroup';
 export * from './Toolbar';

@@ -3,6 +3,238 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.197.3 (2022-08-25)
+
+
+### Bug Fixes
+
+* react-core should export all contents of dist directory ([#7883](https://github.com/patternfly/patternfly-react/issues/7883)) ([f5088d0](https://github.com/patternfly/patternfly-react/commit/f5088d069916d7c37335503251d13b4b846f3f62))
+
+
+
+
+
+## 4.197.2 (2022-08-24)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.197.1 (2022-08-24)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# 4.197.0 (2022-08-23)
+
+
+### Features
+
+* **WizardComposable:** Created composable spinoff of wizard w/ enhancements ([#7703](https://github.com/patternfly/patternfly-react/issues/7703)) ([76eab29](https://github.com/patternfly/patternfly-react/commit/76eab29b640e2f71cd9bd5d42f58fa8dd0eba799))
+
+
+
+
+
+## 4.196.4 (2022-08-23)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.196.3 (2022-08-23)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.196.2 (2022-08-23)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.196.1 (2022-08-22)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# 4.196.0 (2022-08-22)
+
+
+### Features
+
+* **Timestamp:** create component ([#7815](https://github.com/patternfly/patternfly-react/issues/7815)) ([98058b3](https://github.com/patternfly/patternfly-react/commit/98058b35c4b7d5e916abd7318e020e53783f73a6))
+
+
+
+
+
+## 4.195.1 (2022-08-22)
+
+
+### Bug Fixes
+
+* **TimePicker:** clean up menuAppendTo feature ([#7865](https://github.com/patternfly/patternfly-react/issues/7865)) ([3aa73be](https://github.com/patternfly/patternfly-react/commit/3aa73beb4581c1695aa3c3886291d862bd82286e))
+
+
+
+
+
+# 4.195.0 (2022-08-19)
+
+
+### Features
+
+* **ExpandableSection:** add truncated variant ([#7852](https://github.com/patternfly/patternfly-react/issues/7852)) ([f628cdf](https://github.com/patternfly/patternfly-react/commit/f628cdf571d71addfc04e69728be73895e261094))
+
+
+
+
+
+## 4.194.13 (2022-08-19)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.194.12 (2022-08-19)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.194.11 (2022-08-18)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.194.10 (2022-08-18)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.194.9 (2022-08-18)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.194.8 (2022-08-18)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.194.7 (2022-08-18)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.194.6 (2022-08-17)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.194.5 (2022-08-17)
+
+
+### Bug Fixes
+
+* **charts:** add victory-cursor-container dependency ([#7803](https://github.com/patternfly/patternfly-react/issues/7803)) ([6f1f00d](https://github.com/patternfly/patternfly-react/commit/6f1f00d0d60d9f841a3204e9378ac93a4333c41b))
+
+
+
+
+
+## 4.194.4 (2022-08-17)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.194.3 (2022-08-16)
+
+
+### Bug Fixes
+
+* **Select:** apply aria-describedby to correct element ([#7790](https://github.com/patternfly/patternfly-react/issues/7790)) ([1795ff5](https://github.com/patternfly/patternfly-react/commit/1795ff5a939cfab5af03f11640737377b7c39441))
+
+
+
+
+
+## 4.194.2 (2022-08-16)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.194.1 (2022-08-16)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# 4.194.0 (2022-08-16)
+
+
+### Features
+
+* Allow for 'next' and 'deprecated' react-core subpaths ([#7824](https://github.com/patternfly/patternfly-react/issues/7824)) ([0e68bd3](https://github.com/patternfly/patternfly-react/commit/0e68bd349e9a8b4b08bb8b777358dcde41d5462f))
+
+
+
+
+
+## 4.193.9 (2022-08-15)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
 ## 4.193.8 (2022-08-11)
 
 **Note:** Version bump only for package @patternfly/react-integration

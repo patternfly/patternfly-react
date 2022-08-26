@@ -7,7 +7,7 @@ export interface LoginHeaderProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the login header */
   className?: string;
-  /** Header Brand component (e.g. <LoginHeader />) */
+  /** Header brand component (e.g. <LoginHeader />) */
   headerBrand?: React.ReactNode;
 }
 

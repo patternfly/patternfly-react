@@ -33,6 +33,7 @@ import { ChartPie } from '@patternfly/react-charts';
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
+    name="chart1"
     padding={{
       bottom: 20,
       left: 20,
@@ -60,6 +61,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
+    name="chart2"
     padding={{
       bottom: 20,
       left: 20,
@@ -87,6 +89,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendPosition="bottom"
+    name="chart3"
     padding={{
       bottom: 65,
       left: 20,

@@ -9,6 +9,21 @@ describe('numberInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('renders success validated', () => {
+    const { asFragment } = render(<NumberInput validated='success' />);
+    expect(asFragment()).toMatchSnapshot();
+  })
+
+  test('renders error validated', () => {
+    const { asFragment } = render(<NumberInput validated='error' />);
+    expect(asFragment()).toMatchSnapshot();
+  })
+
+  test('renders warning validated', () => {
+    const { asFragment } = render(<NumberInput validated='warning' />);
+    expect(asFragment()).toMatchSnapshot();
+  })
+
   test('renders value', () => {
     const { asFragment } = render(<NumberInput value={90} />);
     expect(asFragment()).toMatchSnapshot();
@@ -54,6 +69,7 @@ describe('numberInput', () => {
       <NumberInput
         value={5}
         onMinus={jest.fn()}
+        inputProps={{ 'aria-describedby': '' }}
         minusBtnProps={{ id: 'minus-id' }}
         onPlus={jest.fn()}
         plusBtnProps={{ id: 'plus-id' }}

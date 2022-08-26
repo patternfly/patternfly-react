@@ -8,19 +8,13 @@ import {
   DualListSelectorList,
   DualListSelectorListItem,
   DualListSelectorControlsWrapper,
-  DualListSelectorControl
+  DualListSelectorControl,
+  DraggableItemPosition
 } from '@patternfly/react-core';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-
-interface SourceType {
-  droppableId: string;
-  index: number;
-}
-
-interface DestinationType extends SourceType {}
 
 export const DualListSelectorComposableDragDrop: React.FunctionComponent = () => {
   const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = React.useState(false);
@@ -87,7 +81,7 @@ export const DualListSelectorComposableDragDrop: React.FunctionComponent = () =>
     }
   };
 
-  const onDrop = (source: SourceType, dest: DestinationType) => {
+  const onDrop = (source: DraggableItemPosition, dest?: DraggableItemPosition) => {
     if (dest) {
       const newList = [...chosenOptions];
       const [removed] = newList.splice(source.index, 1);

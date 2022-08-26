@@ -8,7 +8,7 @@ Library that provides CSS-in-JS capabilities
 import { css } from '@patternfly/react-styles';
 import styles from './Button.css';
 
-const Buttton = ({ isActive, isDisabled, children }) => (
+const Button = ({ isActive, isDisabled, children }) => (
   <button
     disabled={isDisabled}
     className={css(styles.button, isActive && styles.modifiers.active, isDisabled && styles.modifiers.disabled)}

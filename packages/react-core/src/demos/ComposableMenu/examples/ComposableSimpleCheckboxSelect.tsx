@@ -4,8 +4,8 @@ import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper, Badge } from
 export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
-  const toggleRef = React.useRef<HTMLButtonElement>();
-  const menuRef = React.useRef<HTMLDivElement>();
+  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const menuRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = React.useCallback(
     event => {
@@ -50,12 +50,15 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: number | string) => {
-    const item = itemId as number;
-    if (selectedItems.includes(item)) {
-      setSelectedItems(selectedItems.filter(id => id !== item));
+  const onSelect = (event?: React.MouseEvent, itemId?: string | number) => {
+    if (typeof itemId === 'string' || typeof itemId === 'undefined') {
+      return;
+    }
+
+    if (selectedItems.includes(itemId)) {
+      setSelectedItems(selectedItems.filter(id => id !== itemId));
     } else {
-      setSelectedItems([...selectedItems, item]);
+      setSelectedItems([...selectedItems, itemId]);
     }
   };
 
@@ -94,5 +97,5 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper appendTo={toggleRef.current} trigger={toggle} popper={menu} isVisible={isOpen} />;
+  return <Popper appendTo={toggleRef.current || undefined} trigger={toggle} popper={menu} isVisible={isOpen} />;
 };

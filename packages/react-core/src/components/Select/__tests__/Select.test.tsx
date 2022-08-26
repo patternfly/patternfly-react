@@ -516,3 +516,23 @@ describe('select with placeholder', () => {
     expect(screen.getByRole('button', { name: 'Options menu' })).not.toHaveClass('pf-m-placeholder');
   });
 });
+
+test('applies focus styling to the create option when reached via keyboard navigation', () => {
+  render(
+    <Select
+      variant={SelectVariant.typeahead}
+      onToggle={() => {}}
+      isOpen
+      isCreatable
+    >
+      {selectOptions}
+    </Select>
+  );
+
+  const input = screen.getByRole('textbox');
+  userEvent.type(input, 'a{arrowdown}');
+
+  const createOption = screen.getByRole('option', { name: 'Create "a"' });
+
+  expect(createOption.parentElement).toHaveClass('pf-m-focus');
+});

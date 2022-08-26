@@ -107,6 +107,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     inputProps: {},
     minTime: '',
     maxTime: '',
+    isOpen: false,
     setIsOpen: () => {}
   };
 
@@ -490,24 +491,31 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       />
     );
 
+    let calculatedAppendTo;
+    switch (menuAppendTo) {
+      case 'inline':
+        calculatedAppendTo = () => this.toggleRef.current;
+        break;
+      case 'parent':
+        calculatedAppendTo = getParentElement;
+        break;
+      default:
+        calculatedAppendTo = menuAppendTo as HTMLElement;
+    }
+
     return (
       <div ref={this.baseComponentRef} className={css(datePickerStyles.datePicker, className)}>
         <div className={css(datePickerStyles.datePickerInput)} style={style} {...props}>
           <InputGroup>
             <div id={randomId}>
               <div ref={this.toggleRef} style={{ paddingLeft: '0' }}>
-                {menuAppendTo !== 'inline' ? (
-                  <Popper
-                    appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
-                    trigger={textInput}
-                    popper={menuContainer}
-                    isVisible={isTimeOptionsOpen}
-                  />
-                ) : (
-                  textInput
-                )}
+                <Popper
+                  appendTo={calculatedAppendTo}
+                  trigger={textInput}
+                  popper={menuContainer}
+                  isVisible={isTimeOptionsOpen}
+                />
               </div>
-              {isTimeOptionsOpen && menuAppendTo === 'inline' && menuContainer}
             </div>
           </InputGroup>
           {isInvalid && (

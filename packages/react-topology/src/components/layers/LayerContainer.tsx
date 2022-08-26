@@ -8,7 +8,7 @@ interface LayerContainerProps {
   children: React.ReactNode;
 }
 
-const LayerContainer: React.RefForwardingComponent<SVGGElement, LayerContainerProps> = ({ children }, ref) => {
+const LayerContainer: React.ForwardRefRenderFunction<SVGGElement, LayerContainerProps> = ({ children }, ref) => {
   // accumulate parent positions
   const element = React.useContext(ElementContext);
   let p = element;

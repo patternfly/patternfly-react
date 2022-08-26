@@ -12,7 +12,7 @@ exports[`numberInput disables lower threshold 1`] = `
         aria-disabled="true"
         aria-label="Minus"
         class="pf-c-button pf-m-control pf-m-disabled"
-        data-ouia-component-id="OUIA-Generated-Button-control-7"
+        data-ouia-component-id="OUIA-Generated-Button-control-13"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         disabled=""
@@ -37,8 +37,12 @@ exports[`numberInput disables lower threshold 1`] = `
         </span>
       </button>
       <input
+        aria-invalid="false"
         aria-label="Input"
         class="pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-7"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         readonly=""
         type="number"
         value="0"
@@ -47,7 +51,7 @@ exports[`numberInput disables lower threshold 1`] = `
         aria-disabled="false"
         aria-label="Plus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-8"
+        data-ouia-component-id="OUIA-Generated-Button-control-14"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -87,7 +91,7 @@ exports[`numberInput disables upper threshold 1`] = `
         aria-disabled="false"
         aria-label="Minus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-9"
+        data-ouia-component-id="OUIA-Generated-Button-control-15"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -111,8 +115,12 @@ exports[`numberInput disables upper threshold 1`] = `
         </span>
       </button>
       <input
+        aria-invalid="false"
         aria-label="Input"
         class="pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-8"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         readonly=""
         type="number"
         value="100"
@@ -121,7 +129,7 @@ exports[`numberInput disables upper threshold 1`] = `
         aria-disabled="true"
         aria-label="Plus"
         class="pf-c-button pf-m-control pf-m-disabled"
-        data-ouia-component-id="OUIA-Generated-Button-control-10"
+        data-ouia-component-id="OUIA-Generated-Button-control-16"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         disabled=""
@@ -162,7 +170,7 @@ exports[`numberInput passes button props successfully 1`] = `
         aria-disabled="false"
         aria-label="Minus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-19"
+        data-ouia-component-id="OUIA-Generated-Button-control-25"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         id="minus-id"
@@ -187,8 +195,12 @@ exports[`numberInput passes button props successfully 1`] = `
         </span>
       </button>
       <input
+        aria-invalid="false"
         aria-label="Input"
         class="pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-13"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         readonly=""
         type="number"
         value="5"
@@ -197,7 +209,7 @@ exports[`numberInput passes button props successfully 1`] = `
         aria-disabled="false"
         aria-label="Plus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-20"
+        data-ouia-component-id="OUIA-Generated-Button-control-26"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         id="plus-id"
@@ -238,7 +250,7 @@ exports[`numberInput passes input props successfully 1`] = `
         aria-disabled="false"
         aria-label="Minus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-17"
+        data-ouia-component-id="OUIA-Generated-Button-control-23"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -262,8 +274,12 @@ exports[`numberInput passes input props successfully 1`] = `
         </span>
       </button>
       <input
+        aria-invalid="false"
         aria-label="Input"
         class="pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-12"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         name="test-name"
         type="number"
         value="5"
@@ -272,7 +288,7 @@ exports[`numberInput passes input props successfully 1`] = `
         aria-disabled="false"
         aria-label="Plus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-18"
+        data-ouia-component-id="OUIA-Generated-Button-control-24"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -313,7 +329,7 @@ exports[`numberInput renders custom width 1`] = `
         aria-disabled="false"
         aria-label="Minus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-15"
+        data-ouia-component-id="OUIA-Generated-Button-control-21"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -337,8 +353,12 @@ exports[`numberInput renders custom width 1`] = `
         </span>
       </button>
       <input
+        aria-invalid="false"
         aria-label="Input"
         class="pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-11"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         readonly=""
         type="number"
         value="5"
@@ -347,7 +367,7 @@ exports[`numberInput renders custom width 1`] = `
         aria-disabled="false"
         aria-label="Plus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-16"
+        data-ouia-component-id="OUIA-Generated-Button-control-22"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -412,8 +432,12 @@ exports[`numberInput renders defaults & extra props 1`] = `
         </span>
       </button>
       <input
+        aria-invalid="false"
         aria-label="Input"
         class="pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-1"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         readonly=""
         type="number"
         value="0"
@@ -462,7 +486,7 @@ exports[`numberInput renders disabled 1`] = `
         aria-disabled="true"
         aria-label="Minus"
         class="pf-c-button pf-m-control pf-m-disabled"
-        data-ouia-component-id="OUIA-Generated-Button-control-5"
+        data-ouia-component-id="OUIA-Generated-Button-control-11"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         disabled=""
@@ -487,8 +511,12 @@ exports[`numberInput renders disabled 1`] = `
         </span>
       </button>
       <input
+        aria-invalid="false"
         aria-label="Input"
         class="pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-6"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         disabled=""
         readonly=""
         type="number"
@@ -498,10 +526,166 @@ exports[`numberInput renders disabled 1`] = `
         aria-disabled="true"
         aria-label="Plus"
         class="pf-c-button pf-m-control pf-m-disabled"
-        data-ouia-component-id="OUIA-Generated-Button-control-6"
+        data-ouia-component-id="OUIA-Generated-Button-control-12"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         disabled=""
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`numberInput renders error validated 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input pf-m-status"
+  >
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-5"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-invalid="true"
+        aria-label="Input"
+        class="pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-3"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
+        readonly=""
+        type="number"
+        value="0"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-6"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`numberInput renders success validated 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input pf-m-status"
+  >
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-3"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-invalid="false"
+        aria-label="Input"
+        class="pf-c-form-control pf-m-success"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-2"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
+        readonly=""
+        type="number"
+        value="0"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-4"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
         type="button"
       >
         <span
@@ -544,7 +728,7 @@ exports[`numberInput renders unit & position 1`] = `
         aria-disabled="false"
         aria-label="Minus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-13"
+        data-ouia-component-id="OUIA-Generated-Button-control-19"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -568,8 +752,12 @@ exports[`numberInput renders unit & position 1`] = `
         </span>
       </button>
       <input
+        aria-invalid="false"
         aria-label="Input"
         class="pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-10"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         readonly=""
         type="number"
         value="5"
@@ -578,7 +766,7 @@ exports[`numberInput renders unit & position 1`] = `
         aria-disabled="false"
         aria-label="Plus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-14"
+        data-ouia-component-id="OUIA-Generated-Button-control-20"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -618,7 +806,7 @@ exports[`numberInput renders unit 1`] = `
         aria-disabled="false"
         aria-label="Minus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-11"
+        data-ouia-component-id="OUIA-Generated-Button-control-17"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -642,8 +830,12 @@ exports[`numberInput renders unit 1`] = `
         </span>
       </button>
       <input
+        aria-invalid="false"
         aria-label="Input"
         class="pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-9"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         readonly=""
         type="number"
         value="5"
@@ -652,7 +844,7 @@ exports[`numberInput renders unit 1`] = `
         aria-disabled="false"
         aria-label="Plus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-12"
+        data-ouia-component-id="OUIA-Generated-Button-control-18"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -697,7 +889,7 @@ exports[`numberInput renders value 1`] = `
         aria-disabled="false"
         aria-label="Minus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-3"
+        data-ouia-component-id="OUIA-Generated-Button-control-9"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -721,8 +913,12 @@ exports[`numberInput renders value 1`] = `
         </span>
       </button>
       <input
+        aria-invalid="false"
         aria-label="Input"
         class="pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-5"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         readonly=""
         type="number"
         value="90"
@@ -731,7 +927,85 @@ exports[`numberInput renders value 1`] = `
         aria-disabled="false"
         aria-label="Plus"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-4"
+        data-ouia-component-id="OUIA-Generated-Button-control-10"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`numberInput renders warning validated 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input pf-m-status"
+  >
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-7"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-invalid="false"
+        aria-label="Input"
+        class="pf-c-form-control pf-m-warning"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-4"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
+        readonly=""
+        type="number"
+        value="0"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-8"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"

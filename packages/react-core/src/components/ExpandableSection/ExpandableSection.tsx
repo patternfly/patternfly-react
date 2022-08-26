@@ -1,13 +1,19 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
 import { css } from '@patternfly/react-styles';
+import lineClamp from '@patternfly/react-tokens/dist/esm/c_expandable_section_m_truncate__content_LineClamp';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { PickOptional } from '../../helpers/typeUtils';
 
+export enum ExpandableSectionVariant {
+  default = 'default',
+  truncate = 'truncate'
+}
+
 export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered inside the Expandable Component */
+  /** Content rendered inside the expandable section. */
   children?: React.ReactNode;
-  /** Additional classes added to the Expandable Component */
+  /** Additional classes added to the expandable section. */
   className?: string;
   /** Flag to indicate if the content is expanded */
   isExpanded?: boolean;
@@ -19,7 +25,7 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   toggleTextCollapsed?: string;
   /** React node that appears in the attached toggle in place of toggle text */
   toggleContent?: React.ReactNode;
-  /** Callback function to toggle the expandable content. Detached expandable sections should use the onToggle property of ExpandableSectionToggle. */
+  /** Callback function to toggle the expandable section. Detached expandable sections should use the onToggle property of the expandable section toggle sub-component. */
   onToggle?: (isExpanded: boolean) => void;
   /** Forces active state */
   isActive?: boolean;
@@ -33,11 +39,26 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   isWidthLimited?: boolean;
   /** Flag to indicate if the content is indented */
   isIndented?: boolean;
+  /** @beta Determines the variant of the expandable section. When passing in "truncate" as the
+   * variant, the expandable content will be truncated after 3 lines by default.
+   */
+  variant?: 'default' | 'truncate';
+  /** @beta Truncates the expandable content to the specified number of lines when using the
+   * "truncate" variant. */
+  truncateMaxLines?: number;
 }
 
 interface ExpandableSectionState {
   isExpanded: boolean;
 }
+
+const setLineClamp = (lines: number, element: HTMLDivElement) => {
+  if (!element || lines < 1) {
+    return;
+  }
+
+  element.style.setProperty(lineClamp.name, lines.toString());
+};
 
 export class ExpandableSection extends React.Component<ExpandableSectionProps, ExpandableSectionState> {
   static displayName = 'ExpandableSection';
@@ -49,6 +70,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     };
   }
 
+  expandableContentRef = React.createRef<HTMLDivElement>();
   static defaultProps: PickOptional<ExpandableSectionProps> = {
     className: '',
     toggleText: '',
@@ -61,7 +83,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     displaySize: 'default',
     isWidthLimited: false,
     isIndented: false,
-    contentId: ''
+    contentId: '',
+    variant: 'default'
   };
 
   private calculateToggleText(
@@ -77,6 +100,23 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       return toggleTextCollapsed;
     }
     return toggleText;
+  }
+
+  componentDidMount() {
+    if (this.props.variant === ExpandableSectionVariant.truncate && this.props.truncateMaxLines) {
+      const expandableContent = this.expandableContentRef.current;
+      setLineClamp(this.props.truncateMaxLines, expandableContent);
+    }
+  }
+
+  componentDidUpdate(prevProps: ExpandableSectionProps) {
+    if (
+      this.props.variant === ExpandableSectionVariant.truncate &&
+      prevProps.truncateMaxLines !== this.props.truncateMaxLines
+    ) {
+      const expandableContent = this.expandableContentRef.current;
+      setLineClamp(this.props.truncateMaxLines, expandableContent);
+    }
   }
 
   render() {
@@ -96,6 +136,9 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       isWidthLimited,
       isIndented,
       contentId,
+      variant,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      truncateMaxLines,
       ...props
     } = this.props;
     let onToggle = onToggleProp;
@@ -116,9 +159,24 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       propOrStateIsExpanded
     );
 
+    const expandableToggle = !isDetached && (
+      <button
+        className={css(styles.expandableSectionToggle)}
+        type="button"
+        aria-expanded={propOrStateIsExpanded}
+        onClick={() => onToggle(!propOrStateIsExpanded)}
+      >
+        {variant !== ExpandableSectionVariant.truncate && (
+          <span className={css(styles.expandableSectionToggleIcon)}>
+            <AngleRightIcon aria-hidden />
+          </span>
+        )}
+        <span className={css(styles.expandableSectionToggleText)}>{toggleContent || computedToggleText}</span>
+      </button>
+    );
+
     return (
       <div
-        {...props}
         className={css(
           styles.expandableSection,
           propOrStateIsExpanded && styles.modifiers.expanded,
@@ -127,25 +185,21 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
           displaySize === 'large' && styles.modifiers.displayLg,
           isWidthLimited && styles.modifiers.limitWidth,
           isIndented && styles.modifiers.indented,
+          variant === ExpandableSectionVariant.truncate && styles.modifiers.truncate,
           className
         )}
+        {...props}
       >
-        {!isDetached && (
-          <button
-            className={css(styles.expandableSectionToggle)}
-            type="button"
-            aria-expanded={propOrStateIsExpanded}
-            onClick={() => onToggle(!propOrStateIsExpanded)}
-          >
-            <span className={css(styles.expandableSectionToggleIcon)}>
-              <AngleRightIcon aria-hidden />
-            </span>
-            <span className={css(styles.expandableSectionToggleText)}>{toggleContent || computedToggleText}</span>
-          </button>
-        )}
-        <div className={css(styles.expandableSectionContent)} hidden={!propOrStateIsExpanded} id={contentId}>
+        {variant === ExpandableSectionVariant.default && expandableToggle}
+        <div
+          ref={this.expandableContentRef}
+          className={css(styles.expandableSectionContent)}
+          hidden={variant !== ExpandableSectionVariant.truncate && !propOrStateIsExpanded}
+          id={contentId}
+        >
           {children}
         </div>
+        {variant === ExpandableSectionVariant.truncate && expandableToggle}
       </div>
     );
   }

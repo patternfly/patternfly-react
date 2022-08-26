@@ -91,6 +91,7 @@ export * from './TabsDemo/TabsDisabledDemo';
 export * from './TabsDemo/TabsExpandableDemo';
 export * from './TabsDemo/TabsStringEventKeyDemo';
 export * from './TabsDemo/TabsUncontrolledDemo';
+export * from './TabsDemo/TabsHorizontalOverflowDemo';
 export * from './TextAreaDemo/TextAreaDemo';
 export * from './TextInputDemo/TextInputDemo';
 export * from './ToggleGroupDemo/ToggleGroupDemo';

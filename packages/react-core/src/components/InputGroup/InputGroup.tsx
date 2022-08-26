@@ -31,9 +31,11 @@ export const InputGroup: React.FunctionComponent<InputGroupProps> = ({
     <div ref={inputGroupRef} className={css(styles.inputGroup, className)} {...props}>
       {idItem
         ? React.Children.map(children, (child: any) =>
-            formCtrls.includes(child.type.displayName)
-              ? React.cloneElement(child, { 'aria-describedby': idItem.props.id })
-              : child
+            !formCtrls.includes(child.type.displayName) || child.props['aria-describedby']
+              ? child
+              : React.cloneElement(child, {
+                  'aria-describedby': child.props['aria-describedby'] === '' ? undefined : idItem.props.id
+                })
           )
         : children}
     </div>

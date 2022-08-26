@@ -28,6 +28,8 @@ export interface PageBreadcrumbProps extends React.HTMLProps<HTMLElement> {
   hasShadowBottom?: boolean;
   /** Flag indicating if the PageBreadcrumb has a scrolling overflow */
   hasOverflowScroll?: boolean;
+  /** Adds an accessible name to the breadcrumb section. Required when the hasOverflowScroll prop is set to true. */
+  'aria-label'?: string;
 }
 
 export const PageBreadcrumb = ({
@@ -39,9 +41,17 @@ export const PageBreadcrumb = ({
   hasShadowTop = false,
   hasShadowBottom = false,
   hasOverflowScroll = false,
+  'aria-label': ariaLabel,
   ...props
 }: PageBreadcrumbProps) => {
   const { height, getVerticalBreakpoint } = React.useContext(PageContext);
+
+  React.useEffect(() => {
+    if (hasOverflowScroll && !ariaLabel) {
+      /* eslint-disable no-console */
+      console.warn('PageBreadcrumb: An accessible aria-label is required when hasOverflowScroll is set to true.');
+    }
+  }, [hasOverflowScroll, ariaLabel]);
 
   return (
     <section
@@ -57,6 +67,7 @@ export const PageBreadcrumb = ({
         className
       )}
       {...(hasOverflowScroll && { tabIndex: 0 })}
+      aria-label={ariaLabel}
       {...props}
     >
       {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}

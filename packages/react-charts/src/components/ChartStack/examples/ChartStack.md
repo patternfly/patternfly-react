@@ -50,6 +50,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@
     legendOrientation="vertical"
     legendPosition="right"
     height={250}
+    name="chart1"
     padding={{
       bottom: 50,
       left: 50,
@@ -84,6 +85,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiCo
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom"
     height={275}
+    name="chart2"
     padding={{
       bottom: 75, // Adjusted to accommodate legend
       left: 50,
@@ -121,6 +123,7 @@ import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip }
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom-left"
     height={275}
+    name="chart3"
     padding={{
       bottom: 75, // Adjusted to accommodate legend
       left: 50,
@@ -268,6 +271,7 @@ class MonthlyResponsiveStack extends React.Component {
             legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
             legendPosition="bottom"
             height={225}
+            name="chart4"
             padding={{
               bottom: 75, // Adjusted to accommodate legend
               left: 50,
@@ -349,6 +353,7 @@ class MultiColorChart extends React.Component {
             legendData={legendData}
             legendPosition="bottom-left"
             height={225}
+            name="chart5"
             padding={{
               bottom: 75, // Adjusted to accomodate legend
               left: 50,

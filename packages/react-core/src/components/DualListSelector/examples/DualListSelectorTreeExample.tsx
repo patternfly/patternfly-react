@@ -1,8 +1,8 @@
 import React from 'react';
-import { DualListSelector } from '@patternfly/react-core';
+import { DualListSelector, DualListSelectorTreeItemData } from '@patternfly/react-core';
 
 export const DualListSelectorTreeExample: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState<React.ReactNode[]>([
+  const [availableOptions, setAvailableOptions] = React.useState<DualListSelectorTreeItemData[]>([
     {
       id: 'F1',
       text: 'Folder 1',
@@ -38,7 +38,7 @@ export const DualListSelectorTreeExample: React.FunctionComponent = () => {
     }
   ]);
 
-  const [chosenOptions, setChosenOptions] = React.useState<React.ReactNode[]>([
+  const [chosenOptions, setChosenOptions] = React.useState<DualListSelectorTreeItemData[]>([
     {
       id: 'CF1',
       text: 'Chosen Folder 1',
@@ -73,7 +73,10 @@ export const DualListSelectorTreeExample: React.FunctionComponent = () => {
     }
   ]);
 
-  const onListChange = (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => {
+  const onListChange = (
+    newAvailableOptions: DualListSelectorTreeItemData[],
+    newChosenOptions: DualListSelectorTreeItemData[]
+  ) => {
     setAvailableOptions(newAvailableOptions.sort());
     setChosenOptions(newChosenOptions.sort());
   };
@@ -84,7 +87,7 @@ export const DualListSelectorTreeExample: React.FunctionComponent = () => {
       isTree
       availableOptions={availableOptions}
       chosenOptions={chosenOptions}
-      onListChange={onListChange}
+      onListChange={onListChange as any}
       id="dual-list-selector-tree"
     />
   );

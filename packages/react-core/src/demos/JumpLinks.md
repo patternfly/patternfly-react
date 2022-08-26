@@ -10,6 +10,7 @@ import DashboardWrapper from './examples/DashboardWrapper';
 JumpLinks has a scrollspy built-in to make your implementation easier. When implementing JumpLinks be sure to:
 
 1. Find the correct `scrollableSelector` for your page via [Firefox's debugging scrollable overflow](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Debug_Scrollable_Overflow) or by adding `hasOverflowScroll` to a [PageSection](/components/page#pagesection) or [PageGroup](/components/page#pagegroup).
+   - If you add `hasOverflowScroll` to a Page sub-component you should also add a relevant aria-label to that component as well.
 2. Provide `href`s to your JumpLinksItems which match the `id` of elements you want to spy on. If you wish to scroll to a different item than you're linking to use the `node` prop.
 
 ### Scrollspy with subsections

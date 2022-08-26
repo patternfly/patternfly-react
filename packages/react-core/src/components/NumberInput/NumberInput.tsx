@@ -5,7 +5,8 @@ import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import { InputGroup } from '../InputGroup';
 import { Button, ButtonProps } from '../Button';
-import { KEY_CODES } from '../../helpers';
+import { KEY_CODES, ValidatedOptions } from '../../helpers';
+import { TextInput } from '../TextInput';
 
 export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   /** Value of the number input */
@@ -16,6 +17,10 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   widthChars?: number;
   /** Indicates the whole number input should be disabled */
   isDisabled?: boolean;
+  /** Value to indicate if the input is modified to show that validation state
+   * @beta
+   */
+  validated?: 'default' | 'error' | 'warning' | 'success' | ValidatedOptions;
   /** Callback for the minus button */
   onMinus?: (event: React.MouseEvent, name?: string) => void;
   /** Callback for the text input changing */
@@ -66,6 +71,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   className,
   widthChars,
   isDisabled = false,
+  validated = ValidatedOptions.default,
   onMinus = () => {},
   onChange,
   onBlur,
@@ -99,7 +105,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
 
   return (
     <div
-      className={css(styles.numberInput, className)}
+      className={css(styles.numberInput, validated !== 'default' && styles.modifiers.status, className)}
       {...(widthChars && {
         style: {
           '--pf-c-number-input--c-form-control--width-chars': widthChars,
@@ -121,18 +127,18 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
             <MinusIcon aria-hidden="true" />
           </span>
         </Button>
-        <input
-          className={css(styles.formControl)}
+        <TextInput
           type="number"
           value={value}
           name={inputName}
           aria-label={inputAriaLabel}
-          {...(isDisabled && { disabled: isDisabled })}
-          {...(onChange && { onChange })}
+          {...(isDisabled && { isDisabled })}
+          {...(onChange && { onChange: (value, event) => onChange(event) })}
           onBlur={handleBlur}
-          {...(!onChange && { readOnly: true })}
-          {...inputProps}
+          {...(!onChange && { isReadOnly: true })}
           onKeyDown={keyDownHandler}
+          validated={validated}
+          {...inputProps}
         />
         <Button
           variant="control"

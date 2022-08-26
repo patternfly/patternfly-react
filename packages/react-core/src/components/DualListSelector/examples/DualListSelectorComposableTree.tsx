@@ -52,7 +52,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     if (!node.children || !node.children.length) {
       return [node.id];
     } else {
-      let childrenIds = [];
+      let childrenIds: string[] = [];
       node.children.forEach(child => {
         childrenIds = [...childrenIds, ...getDescendantLeafIds(child)];
       });
@@ -77,7 +77,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
   // Builds a map of child leaf nodes by node id - memoized so that it only rebuilds the list if the data changes.
   const { memoizedLeavesById, memoizedAllLeaves, memoizedNodeText } = React.useMemo(() => {
     let leavesById = {};
-    let allLeaves = [];
+    let allLeaves: string[] = [];
     let nodeTexts = {};
     data.forEach(foodNode => {
       nodeTexts = { ...nodeTexts, ...buildTextById(foodNode) };
@@ -129,7 +129,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
       return true;
     }
     if (areSomeDescendantsSelected(node, isChosen)) {
-      return null;
+      return false;
     }
     return false;
   };

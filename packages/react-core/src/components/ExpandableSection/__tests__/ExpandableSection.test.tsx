@@ -3,7 +3,7 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { ExpandableSection } from '../ExpandableSection';
+import { ExpandableSection, ExpandableSectionVariant } from '../ExpandableSection';
 import { ExpandableSectionToggle } from '../ExpandableSectionToggle';
 
 const props = {};
@@ -63,4 +63,30 @@ test('Renders ExpandableSection indented', () => {
     </ExpandableSection>
   );
   expect(asFragment()).toMatchSnapshot();
+});
+
+test('Does not render with pf-m-truncate class when variant is not passed', () => {
+  render(<ExpandableSection {...props}>test</ExpandableSection>);
+
+  expect(screen.getByText('test').parentElement).not.toHaveClass('pf-m-truncate');
+});
+
+test('Does not render with pf-m-truncate class when variant is not truncate', () => {
+  render(
+    <ExpandableSection variant={ExpandableSectionVariant.default} {...props}>
+      test
+    </ExpandableSection>
+  );
+
+  expect(screen.getByText('test').parentElement).not.toHaveClass('pf-m-truncate');
+});
+
+test('Renders with pf-m-truncate class when variant is truncate', () => {
+  render(
+    <ExpandableSection variant={ExpandableSectionVariant.truncate} {...props}>
+      test
+    </ExpandableSection>
+  );
+
+  expect(screen.getByText('test').parentElement).toHaveClass('pf-m-truncate');
 });

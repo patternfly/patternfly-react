@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 
 // eslint-disable-next-line no-console
-const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: string) => console.log('selected', itemId);
+const onSelect = (event?: React.MouseEvent, itemId?: string | number) => console.log('selected', itemId);
 
 interface FlyoutMenuProps {
   children?: React.ReactElement;
@@ -31,24 +31,24 @@ const FlyoutMenu: React.FunctionComponent<FlyoutMenuProps> = ({ depth, children 
 
 export const ComposableFlyout: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const menuRef = React.useRef<HTMLDivElement>();
-  const toggleRef = React.useRef<HTMLButtonElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
+  const menuRef = React.useRef<HTMLDivElement>(null);
+  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
       return;
     }
-    if (menuRef.current.contains(event.target as Node) || toggleRef.current.contains(event.target as Node)) {
+    if (menuRef.current?.contains(event.target as Node) || toggleRef.current?.contains(event.target as Node)) {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsOpen(!isOpen);
-        toggleRef.current.focus();
+        toggleRef.current?.focus();
       }
     }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current.contains(event.target as Node)) {
+    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
       setIsOpen(false);
     }
   };
@@ -105,7 +105,7 @@ export const ComposableFlyout: React.FunctionComponent = () => {
       <Popper
         trigger={toggle}
         popper={menu}
-        appendTo={containerRef.current}
+        appendTo={containerRef.current || undefined}
         isVisible={isOpen}
         popperMatchesTriggerWidth={false}
       />

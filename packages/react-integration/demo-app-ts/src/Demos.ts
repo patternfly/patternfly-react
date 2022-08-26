@@ -403,6 +403,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabsDisabledDemo
   },
   {
+    id: 'tabs-horizontal-overflow-demo',
+    name: 'Tabs Horizontal Overflow Demo',
+    componentType: Examples.TabsHorizontalOverflowDemo
+  },
+  {
     id: 'table-collapsible-demo',
     name: 'Table Collapsible Demo',
     componentType: Examples.TableCollapsibleDemo
