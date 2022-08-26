@@ -282,7 +282,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     ) {
       time = `${time}${new Date().getHours() > 11 ? pmSuffix : amSuffix}`;
     }
-    let scrollIndex = this.getOptions().findIndex(option => option.innerText === time);
+    let scrollIndex = this.getOptions().findIndex(option => option.textContent === time);
 
     // if we found an exact match, scroll to match and return index of match for focus
     if (scrollIndex !== -1) {
@@ -299,7 +299,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         }
       }
       time = `${splitTime[0]}${delimiter}00${amPm}`;
-      scrollIndex = this.getOptions().findIndex(option => option.innerText === time);
+      scrollIndex = this.getOptions().findIndex(option => option.textContent === time);
       if (scrollIndex !== -1) {
         this.scrollToIndex(scrollIndex);
       }
