@@ -65,6 +65,8 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
    * This prop should also be passed in if a heading is not being used to describe the content of the page section.
    */
   'aria-label'?: string;
+  /** Sets the base component to render. Defaults to section */
+  component?: keyof JSX.IntrinsicElements;
 }
 
 const variantType = {
@@ -98,6 +100,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   hasShadowBottom = false,
   hasOverflowScroll = false,
   'aria-label': ariaLabel,
+  component = 'section',
   ...props
 }: PageSectionProps) => {
   const { height, getVerticalBreakpoint } = React.useContext(PageContext);
@@ -109,8 +112,10 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
     }
   }, [hasOverflowScroll, ariaLabel]);
 
+  const Component = component as any;
+
   return (
-    <section
+    <Component
       {...props}
       className={css(
         variantType[type],
@@ -133,7 +138,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
     >
       {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
       {!isWidthLimited && children}
-    </section>
+    </Component>
   );
 };
 PageSection.displayName = 'PageSection';
