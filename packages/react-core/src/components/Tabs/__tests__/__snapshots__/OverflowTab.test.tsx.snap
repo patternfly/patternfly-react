@@ -17,6 +17,7 @@ exports[`Matches snapshot when expanded 1`] = `
           aria-haspopup="menu"
           class="pf-c-tabs__link pf-m-expanded"
           role="tab"
+          type="button"
         >
           <span
             class="pf-c-tabs__item-text"

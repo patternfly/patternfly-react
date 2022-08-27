@@ -88,6 +88,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
       {...props}
     >
       <button
+        type="button"
         className={css(styles.tabsLink, isExpanded && styles.modifiers.expanded)}
         onClick={() => toggleMenu()}
         aria-label={toggleAriaLabel}
