@@ -4,6 +4,9 @@ import {
   MenuContent,
   MenuList,
   MenuItem,
+  MenuItemProps,
+  MenuToggle,
+  MenuToggleElement,
   Popper,
   TextInputGroup,
   TextInputGroupMain,
@@ -13,153 +16,204 @@ import {
   Button
 } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+
+const intitalMenuItems = [
+  { itemId: 'Option 1', children: 'Option 1' },
+  { itemId: 'Option 2', children: 'Option 2' },
+  { itemId: 'Option 3', children: 'Option 3' }
+];
 
 export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [selected, setSelected] = React.useState<string[]>([]);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [inputValue, setInputValue] = React.useState<string>('');
-  const toggleRef = React.useRef<HTMLDivElement>();
-  const inputRef = React.useRef<HTMLInputElement>();
-  const menuRef = React.useRef<HTMLDivElement>();
+  const [menuItems, setMenuItems] = React.useState<MenuItemProps[]>(intitalMenuItems);
+  const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
+  const [selected, setSelected] = React.useState<string[]>([]);
   const containerRef = React.useRef<HTMLDivElement>();
-
-  const options = [
-    <MenuItem key={0} itemId="Option 1">
-      Option 1
-    </MenuItem>,
-    <MenuItem key={1} itemId="Option 2">
-      Option 2
-    </MenuItem>,
-    <MenuItem key={2} itemId="Option 3">
-      Option 3
-    </MenuItem>,
-    <MenuItem key={3} itemId="Option 4">
-      Option 4
-    </MenuItem>,
-    <MenuItem key={4} itemId="Option 5">
-      Option 5
-    </MenuItem>
-  ];
-  const visibleOptions = options.filter(opt => opt.props.itemId.toLowerCase().includes(inputValue.toLowerCase()));
-
-  const handleMenuKeys = (event: KeyboardEvent) => {
-    // If the menu is open and Escape or Tab is pressed from within the menu or toggle input
-    if (
-      isOpen &&
-      (menuRef?.current?.contains(event.target as Node) || toggleRef?.current?.contains(event.target as Node))
-    ) {
-      if (event.key === 'Tab') {
-        setIsOpen(false);
-        inputRef?.current?.focus();
-      }
-      if (event.key === 'Escape') {
-        inputRef?.current?.focus();
-      }
-    }
-
-    // If the menu is closed and Enter or Space is pressed from within the toggle input
-    if (!isOpen && toggleRef?.current?.contains(event.target as Node)) {
-      if (event.key === 'Enter') {
-        setIsOpen(true);
-      }
-    }
-
-    // If the menu is open and ArrowDown is pressed from within the toggle input
-    if (isOpen && toggleRef?.current?.contains(event.target as Node)) {
-      if (event.key === 'ArrowDown') {
-        const firstElement = menuRef?.current?.querySelector('li > button:not(:disabled)') as HTMLElement;
-        firstElement && (firstElement as HTMLElement).focus();
-      }
-    }
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef?.current?.contains(event.target as Node)) {
-      setIsOpen(false);
-    }
-  };
+  const menuToggleRef = React.useRef<MenuToggleElement>({} as MenuToggleElement);
+  const textInputRef = React.useRef<HTMLInputElement>();
+  const menuRef = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
-    window.addEventListener('keydown', handleMenuKeys);
-    window.addEventListener('click', handleClickOutside);
-    return () => {
-      window.removeEventListener('keydown', handleMenuKeys);
-      window.removeEventListener('click', handleClickOutside);
-    };
-  }, [isOpen, menuRef]);
+    let newMenuItems: MenuItemProps[] = intitalMenuItems;
 
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation(); // Stop handleClickOutside from handling
-    setIsOpen(!isOpen);
-  };
+    // Filter menu items based on the text input value when one exists
+    if (inputValue) {
+      newMenuItems = intitalMenuItems.filter(menuItem =>
+        String(menuItem.children)
+          .toLowerCase()
+          .includes(inputValue.toLowerCase())
+      );
 
-  const onChange = (nextValue: string, ev: React.FormEvent) => {
-    ev.stopPropagation();
-    if (!isOpen) {
-      setIsOpen(!isOpen);
-    }
-    setInputValue(nextValue);
-  };
-
-  const onSelect = (itemId: string) => {
-    setSelected(selected.includes(itemId) ? selected.filter(selection => selection !== itemId) : [...selected, itemId]);
-  };
-
-  const textInputToggle = (
-    <div
-      ref={toggleRef as React.Ref<HTMLDivElement>}
-      style={
-        {
-          width: '500px'
-        } as React.CSSProperties
+      // When no options are found after filtering, display 'No results found'
+      if (!newMenuItems.length) {
+        newMenuItems = [{ isDisabled: true, children: 'No results found' }];
       }
+    }
+
+    setMenuItems(newMenuItems);
+  }, [inputValue]);
+
+  const handleMenuArrowKeys = (key: string) => {
+    let indexToFocus;
+
+    if (isMenuOpen) {
+      if (key === 'ArrowUp') {
+        // When no index is set or at the first index, focus to the last, otherwise decrement focus index
+        if (focusedItemIndex === null || focusedItemIndex === 0) {
+          indexToFocus = menuItems.length - 1;
+        } else {
+          indexToFocus = focusedItemIndex - 1;
+        }
+      }
+
+      if (key === 'ArrowDown') {
+        // When no index is set or at the last index, focus to the first, otherwise increment focus index
+        if (focusedItemIndex === null || focusedItemIndex === menuItems.length - 1) {
+          indexToFocus = 0;
+        } else {
+          indexToFocus = focusedItemIndex + 1;
+        }
+      }
+
+      setFocusedItemIndex(indexToFocus);
+    }
+  };
+
+  const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const enabledMenuItems = menuItems.filter(menuItem => !menuItem.isDisabled);
+    const [firstMenuItem] = enabledMenuItems;
+    const focusedItem = focusedItemIndex ? enabledMenuItems[focusedItemIndex] : firstMenuItem;
+
+    switch (event.key) {
+      // Select the first available option
+      case 'Enter':
+        if (!isMenuOpen) {
+          setIsMenuOpen(prevIsOpen => !prevIsOpen);
+        } else {
+          onMenuSelect(focusedItem.itemId as string);
+        }
+        break;
+      case 'Tab':
+      case 'Escape':
+        setIsMenuOpen(false);
+        break;
+      case 'ArrowUp':
+      case 'ArrowDown':
+        handleMenuArrowKeys(event.key);
+        break;
+      default:
+        !isMenuOpen && setIsMenuOpen(true);
+    }
+  };
+
+  // Close the menu when a click occurs outside of the menu toggle content
+  const onDocumentClick = (event: MouseEvent) => {
+    if (
+      isMenuOpen &&
+      !menuToggleRef.current?.contains(event?.target as HTMLElement) &&
+      !menuRef?.current?.contains(event.target as Node)
+    ) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  const toggleMenuOpen = () => {
+    setIsMenuOpen(!isMenuOpen);
+    textInputRef.current?.focus();
+  };
+
+  const onTextInputChange = (value: string) => {
+    setInputValue(value);
+  };
+
+  const onMenuSelect = (itemId: string) => {
+    if (itemId) {
+      setSelected(
+        selected.includes(itemId) ? selected.filter(selection => selection !== itemId) : [...selected, itemId]
+      );
+    }
+  };
+
+  const toggle = (
+    <MenuToggle
+      variant="typeahead"
+      onClick={toggleMenuOpen}
+      innerRef={menuToggleRef}
+      isExpanded={isMenuOpen}
+      isFullWidth
     >
-      <TextInputGroup>
-        <TextInputGroupMain value={inputValue} onChange={onChange} onClick={onToggleClick} innerRef={inputRef}>
-          <ChipGroup>
-            {selected.map((selection, index) => (
-              <Chip
-                key={index}
-                onClick={ev => {
-                  ev.stopPropagation();
-                  onSelect(selection);
-                }}
-              >
-                {selection}
-              </Chip>
-            ))}
-          </ChipGroup>
-        </TextInputGroupMain>
+      <TextInputGroup isPlain>
+        <ChipGroup>
+          {selected.map((selection, index) => (
+            <Chip
+              key={index}
+              onClick={ev => {
+                ev.stopPropagation();
+                onMenuSelect(selection);
+              }}
+            >
+              {selection}
+            </Chip>
+          ))}
+        </ChipGroup>
+        <TextInputGroupMain
+          value={inputValue}
+          onClick={toggleMenuOpen}
+          onChange={onTextInputChange}
+          onKeyDown={onInputKeyDown}
+          id="typeahead-select-input"
+          autoComplete="off"
+          innerRef={textInputRef}
+        />
         <TextInputGroupUtilities>
-          {inputValue !== '' && (
-            <Button variant="plain" onClick={() => setInputValue('')} aria-label="Clear button and input">
-              <TimesIcon />
+          {selected.length > 0 && (
+            <Button
+              variant="plain"
+              onClick={() => {
+                setInputValue('');
+                setSelected([]);
+              }}
+              aria-label="Clear input value"
+            >
+              <TimesIcon aria-hidden />
             </Button>
           )}
-          <Button variant="plain" onClick={onToggleClick} aria-label="Clear button and input">
-            <CaretDownIcon />
-          </Button>
         </TextInputGroupUtilities>
       </TextInputGroup>
-    </div>
+    </MenuToggle>
   );
-
   const menu = (
     <Menu
       ref={menuRef as React.Ref<HTMLDivElement>}
-      id="select-menu"
-      onSelect={(_ev, itemId) => onSelect(itemId?.toString() as string)}
+      id="multiple-typeahead-select-menu"
+      onSelect={(_ev, itemId) => onMenuSelect(itemId?.toString() as string)}
       selected={selected}
     >
       <MenuContent>
-        <MenuList>{visibleOptions}</MenuList>
+        <MenuList>
+          {menuItems.map((itemProps, index) => (
+            <MenuItem
+              key={itemProps.itemId || itemProps.children}
+              isFocused={focusedItemIndex === index}
+              className={itemProps.className}
+              {...itemProps}
+              ref={null}
+            />
+          ))}
+        </MenuList>
       </MenuContent>
     </Menu>
   );
   return (
     <div ref={containerRef as React.Ref<HTMLDivElement>}>
-      <Popper trigger={textInputToggle} popper={menu} appendTo={containerRef.current} isVisible={isOpen} />
+      <Popper
+        trigger={toggle}
+        popper={menu}
+        appendTo={containerRef.current}
+        isVisible={isMenuOpen}
+        onDocumentClick={onDocumentClick}
+      />
     </div>
   );
 };
