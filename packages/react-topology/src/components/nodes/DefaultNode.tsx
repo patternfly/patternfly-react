@@ -16,10 +16,11 @@ import {
   WithSelectionProps
 } from '../../behavior';
 import Decorator from '../decorators/Decorator';
-import { createSvgIdUrl, StatusModifier, useCombineRefs, useHover } from '../../utils';
+import { createSvgIdUrl, getNodeScaleTranslation, StatusModifier, useCombineRefs, useHover } from '../../utils';
 import NodeLabel from './labels/NodeLabel';
 import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from './NodeShadows';
 import { DEFAULT_DECORATOR_RADIUS, getDefaultShapeDecoratorCenter, getShapeComponent, ShapeProps } from './shapes';
+import { useScaleNode } from '../../hooks';
 
 const StatusQuadrant = TopologyQuadrant.upperLeft;
 
@@ -130,7 +131,6 @@ const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
   const refs = useCombineRefs<SVGEllipseElement>(hoverRef, dragNodeRef);
   const { width, height } = element.getDimensions();
   const isHover = hover !== undefined ? hover : hovered;
-  const [nodeScale, setNodeScale] = React.useState<number>(1);
 
   const statusDecorator = React.useMemo(() => {
     if (!status || !showStatusDecorator) {
@@ -205,62 +205,11 @@ const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
   const nodeLabelPosition = labelPosition || element.getLabelPosition();
   const scale = element.getGraph().getScale();
 
-  const animationRef = React.useRef<number>();
-  const scaleGoal = React.useRef<number>(1);
-  const nodeScaled = React.useRef<boolean>(false);
-
-  React.useEffect(() => {
-    if (!scaleNode || scale >= 1) {
-      setNodeScale(1);
-      nodeScaled.current = false;
-      if (animationRef.current) {
-        window.cancelAnimationFrame(animationRef.current);
-        animationRef.current = 0;
-      }
-    } else {
-      scaleGoal.current = 1 / scale;
-      const scaleDelta = scaleGoal.current - scale;
-      const initTime = performance.now();
-
-      const bumpScale = (bumpTime: number) => {
-        const scalePercent = (bumpTime - initTime) / SCALE_UP_TIME;
-        const nextScale = Math.min(scale + scaleDelta * scalePercent, scaleGoal.current);
-        setNodeScale(nextScale);
-        if (nextScale < scaleGoal.current) {
-          animationRef.current = window.requestAnimationFrame(bumpScale);
-        } else {
-          nodeScaled.current = true;
-          animationRef.current = 0;
-        }
-      };
-
-      if (nodeScaled.current) {
-        setNodeScale(scaleGoal.current);
-      } else if (!animationRef.current) {
-        animationRef.current = window.requestAnimationFrame(bumpScale);
-      }
-    }
-    return () => {
-      if (animationRef.current) {
-        window.cancelAnimationFrame(animationRef.current);
-        animationRef.current = 0;
-      }
-    };
-  }, [scale, scaleNode]);
-
   const labelScale = scaleLabel && !scaleNode ? Math.max(1, 1 / scale) : 1;
   const labelPositionScale = scaleLabel && !scaleNode ? Math.min(1, scale) : 1;
 
-  const { translateX, translateY } = React.useMemo(() => {
-    if (!scaleNode) {
-      return { translateX: 0, translateY: 0 };
-    }
-    const bounds = element.getBounds();
-    const translateX = bounds.width / 2 - (bounds.width / 2) * nodeScale;
-    const translateY = bounds.height / 2 - (bounds.height / 2) * nodeScale;
-
-    return { translateX, translateY };
-  }, [element, nodeScale, scaleNode]);
+  const nodeScale = useScaleNode(scaleNode, scale, SCALE_UP_TIME);
+  const { translateX, translateY } = getNodeScaleTranslation(element, nodeScale, scaleNode);
 
   return (
     <g

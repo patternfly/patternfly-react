@@ -4,11 +4,11 @@ import styles from '@patternfly/react-styles/css/components/Topology/topology-pi
 import topologyStyles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import { Popover, PopoverProps, Tooltip } from '@patternfly/react-core';
 import { observer } from '../../../mobx-exports';
-import { AnchorEnd, Node } from '../../../types';
+import { AnchorEnd, Node, ScaleDetailsLevel } from '../../../types';
 import { RunStatus } from '../../types';
 import { useAnchor, WithContextMenuProps, WithSelectionProps } from '../../../behavior';
 import { truncateMiddle } from '../../../utils/truncate-middle';
-import { createSvgIdUrl, useHover, useSize } from '../../../utils';
+import { createSvgIdUrl, getNodeScaleTranslation, useHover, useSize } from '../../../utils';
 import { getRunStatusModifier, nonShadowModifiers } from '../../utils';
 import StatusIcon from '../../utils/StatusIcon';
 import { TaskNodeSourceAnchor, TaskNodeTargetAnchor } from '../anchors';
@@ -21,8 +21,11 @@ import NodeShadows, {
 } from '../../../components/nodes/NodeShadows';
 import LabelBadge from '../../../components/nodes/labels/LabelBadge';
 import LabelIcon from '../../../components/nodes/labels/LabelIcon';
+import useDetailsLevel from '../../../hooks/useDetailsLevel';
+import { useScaleNode } from '../../../hooks';
 
 const STATUS_ICON_SIZE = 16;
+const SCALE_UP_TIME = 200;
 
 export type TaskNodeProps = {
   children?: React.ReactNode;
@@ -34,6 +37,8 @@ export type TaskNodeProps = {
   status?: RunStatus;
   statusIconSize?: number;
   showStatusState?: boolean;
+  scaleNode?: boolean; // Whether or not to scale the node, best on hover when details are hidden
+  hideDetailsAtMedium?: boolean; // Whether or not to hide text details at medium scale
   badge?: string;
   badgeColor?: string;
   badgeTextColor?: string;
@@ -66,6 +71,8 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   status,
   statusIconSize = STATUS_ICON_SIZE,
   showStatusState = true,
+  scaleNode,
+  hideDetailsAtMedium,
   badge,
   badgeColor,
   badgeTextColor,
@@ -101,17 +108,18 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   const [badgeSize, badgeRef] = useSize([badge]);
   const [actionSize, actionRef] = useSize([actionIcon, paddingX]);
   const [contextSize, contextRef] = useSize([onContextMenu, paddingX]);
+  const detailsLevel = useDetailsLevel();
 
   const textWidth = textSize?.width ?? 0;
   const textHeight = textSize?.height ?? 0;
-
   useAnchor(TaskNodeSourceAnchor, AnchorEnd.source);
   useAnchor(
     React.useCallback((node: Node) => new TaskNodeTargetAnchor(node, hasWhenExpression ? 0 : whenSize + whenOffset), [
       hasWhenExpression,
       whenSize,
       whenOffset
-    ])
+    ]),
+    AnchorEnd.target
   );
 
   const {
@@ -199,7 +207,11 @@ const TaskNode: React.FC<TaskNodeProps> = ({
       const data = edge.getData();
       edge.setData({ ...(data || {}), indent: width - pillWidth });
     });
-  }, [element, pillWidth, width]);
+  }, [detailsLevel, element, pillWidth, width]);
+
+  const scale = element.getGraph().getScale();
+  const nodeScale = useScaleNode(scaleNode, scale, SCALE_UP_TIME);
+  const { translateX, translateY } = getNodeScaleTranslation(element, nodeScale, scaleNode);
 
   const nameLabel = (
     <text ref={textRef} className={css(styles.topologyPipelinesPillText)} dominantBaseline="middle">
@@ -214,7 +226,8 @@ const TaskNode: React.FC<TaskNodeProps> = ({
     isHover && styles.modifiers.hover,
     runStatusModifier,
     selected && styles.modifiers.selected,
-    onSelect && styles.modifiers.selectable
+    onSelect && styles.modifiers.selectable,
+    !scaleNode && hideDetailsAtMedium && detailsLevel !== ScaleDetailsLevel.high && styles.modifiers.detailsHidden
   );
 
   let filter;
@@ -345,13 +358,15 @@ const TaskNode: React.FC<TaskNodeProps> = ({
           />
         </>
       )}
-
       {children}
     </g>
   );
 
   return (
-    <g className={css('pf-topology__pipelines__task-node', className)}>
+    <g
+      className={css('pf-topology__pipelines__task-node', className)}
+      transform={`${scaleNode ? `translate(${translateX}, ${translateY})` : ''} scale(${nodeScale})`}
+    >
       {!toolTip || disableTooltip ? (
         taskPill
       ) : (
