@@ -10,7 +10,7 @@ import { TextInput } from '../TextInput';
 
 export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   /** Value of the number input */
-  value?: number;
+  value?: number | null;
   /** Additional classes added to the number input */
   className?: string;
   /** Sets the width of the number input to a number of characters */
