@@ -89,6 +89,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   plusBtnProps,
   ...props
 }: NumberInputProps) => {
+  value = value || 0;
   const numberInputUnit = <div className={css(styles.numberInputUnit)}>{unit}</div>;
   const keyDownHandler =
     inputProps && inputProps.onKeyDown ? inputProps.onKeyDown : defaultKeyDownHandler({ inputName, onMinus, onPlus });

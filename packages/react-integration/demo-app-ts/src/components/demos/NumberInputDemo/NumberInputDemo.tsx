@@ -3,21 +3,32 @@ import React, { Component } from 'react';
 
 export interface NumberInputDemoState {
   value: number;
+  value2: number | null;
 }
 
 export class NumberInputDemo extends Component<NumberInputDemoState> {
   static displayName = 'NumberInputDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.setState({
+      value2: null
+    });
   }
 
   state = {
-    value: 0
+    value: 0,
+    value2: 0
   };
 
   onMinus = () => {
     this.setState({
       value: this.state.value - 1
+    });
+  };
+
+  onMinus2 = () => {
+    this.setState({
+      value2: this.state.value2 - 1
     });
   };
 
@@ -27,14 +38,26 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
     });
   };
 
+  onChange2 = (event: React.FormEvent<HTMLInputElement>) => {
+    this.setState({
+      value2: Number((event.target as HTMLInputElement).value)
+    });
+  };
+
   onPlus = () => {
     this.setState({
       value: this.state.value + 1
     });
   };
 
+  onPlus2 = () => {
+    this.setState({
+      value2: this.state.value2 + 1
+    });
+  };
+
   render() {
-    const { value } = this.state;
+    const { value, value2 } = this.state;
     const minValue = 0;
     const maxValue = 3;
 
@@ -78,6 +101,26 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
           unit="$"
           unitPosition="before"
           isDisabled
+        />
+        <br />
+        <br />
+        <NumberInput
+          id="numberInput3"
+          value={value2}
+          min={minValue}
+          max={maxValue}
+          onMinus={this.onMinus2}
+          onChange={this.onChange2}
+          onPlus={this.onPlus2}
+          inputName="input 3"
+          inputAriaLabel="number input 3"
+          minusBtnAriaLabel="minus"
+          plusBtnAriaLabel="plus"
+          inputProps={{ id: 'input3' }}
+          minusBtnProps={{ id: 'minus-button3' }}
+          plusBtnProps={{ id: 'plus-button3' }}
+          unit="$"
+          unitPosition="before"
         />
       </React.Fragment>
     );
