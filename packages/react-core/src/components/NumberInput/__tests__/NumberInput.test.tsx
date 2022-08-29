@@ -171,19 +171,19 @@ describe('numberInput', () => {
   });
 
   test('renders 0 if no value passed', () => {
-    const { asFragment } = render(<NumberInput />);
+    render(<NumberInput />);
     const input = screen.getByRole('spinbutton');
     expect(input).toHaveDisplayValue('0');
   });
 
   test('renders 0 if undefined value passed', () => {
-    const { asFragment } = render(<NumberInput value={undefined} />);
+    render(<NumberInput value={undefined} />);
     const input = screen.getByRole('spinbutton');
     expect(input).toHaveDisplayValue('0');
   });
 
   test('renders 0 if null value passed', () => {
-    const { asFragment } = render(<NumberInput value={null} />);
+    render(<NumberInput value={null} />);
     const input = screen.getByRole('spinbutton');
     expect(input).toHaveDisplayValue('0');
   });
