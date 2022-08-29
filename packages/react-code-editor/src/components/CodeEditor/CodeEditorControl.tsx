@@ -7,19 +7,19 @@ import { CodeEditorContext } from './CodeEditorUtils';
  */
 
 export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
-  /** Accessible label for the code editor control. */
+  /** Accessible label for the code editor control */
   'aria-label'?: string;
   /** Additional classes added to the code editor control. */
   className?: string;
-  /** Delay in ms before the tooltip appears. */
+  /** @deprecated  Delay in ms before the tooltip appears. */
   entryDelay?: number;
-  /** Delay in ms before the tooltip disappears. */
+  /** @deprecated  Delay in ms before the tooltip disappears. */
   exitDelay?: number;
   /** Icon rendered inside the code editor control. */
   icon: React.ReactNode;
-  /** Maximum width of the tooltip (default 150px). */
+  /** @deprecated Maximum width of the tooltip (default 150px). */
   maxWidth?: string;
-  /** Copy button popover position. */
+  /** @deprecated Copy button popover position. */
   position?:
     | PopoverPosition
     | 'auto'
@@ -35,12 +35,14 @@ export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
     | 'left-end'
     | 'right-start'
     | 'right-end';
-  /** Text to display in the tooltip. */
-  toolTipText: React.ReactNode;
-  /** Event handler for the click of the button. */
+  /** @deprecated Text to display in the tooltip*/
+  toolTipText?: React.ReactNode;
+  /** Event handler for the click of the button */
   onClick: (code: string, event?: any) => void;
   /** Flag indicating that the button is visible above the code editor. */
   isVisible?: boolean;
+  /** Additional tooltip props forwarded to the Tooltip component */
+  tooltipProps?: any;
 }
 
 export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> = ({
@@ -48,12 +50,13 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
   className,
   'aria-label': ariaLabel,
   toolTipText,
-  exitDelay = 0,
-  entryDelay = 300,
-  maxWidth = '100px',
-  position = 'top',
+  exitDelay,
+  entryDelay,
+  maxWidth,
+  position,
   onClick = () => {},
   isVisible = true,
+  tooltipProps = {},
   ...props
 }: CodeEditorControlProps) => {
   const context = React.useContext(CodeEditorContext);
@@ -64,12 +67,12 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
 
   return isVisible ? (
     <Tooltip
-      trigger="mouseenter focus click"
       exitDelay={exitDelay}
       entryDelay={entryDelay}
       maxWidth={maxWidth}
       position={position}
       content={<div>{toolTipText}</div>}
+      {...tooltipProps}
     >
       <Button className={className} onClick={onCustomClick} variant="control" aria-label={ariaLabel} {...props}>
         {icon}

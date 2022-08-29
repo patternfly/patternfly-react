@@ -11,13 +11,7 @@ import { ClipboardCopyToggle } from './ClipboardCopyToggle';
 import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
 
 export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
-  const clipboard = event.currentTarget.parentElement;
-  const el = document.createElement('textarea');
-  el.value = text.toString();
-  clipboard.appendChild(el);
-  el.select();
-  document.execCommand('copy');
-  clipboard.removeChild(el);
+  navigator.clipboard.writeText(text.toString());
 };
 
 export enum ClipboardCopyVariant {

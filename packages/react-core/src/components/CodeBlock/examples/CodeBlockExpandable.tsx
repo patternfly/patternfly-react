@@ -19,13 +19,7 @@ export const ExpandableCodeBlock: React.FunctionComponent = () => {
   };
 
   const clipboardCopyFunc = (event, text) => {
-    const clipboard = event.currentTarget.parentElement;
-    const el = document.createElement('textarea');
-    el.value = text.toString();
-    clipboard.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    clipboard.removeChild(el);
+    navigator.clipboard.writeText(text.toString());
   };
 
   const onClick = (event, text) => {
