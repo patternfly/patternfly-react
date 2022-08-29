@@ -59,7 +59,7 @@ export const ComposableSimpleSelect: React.FunctionComponent = () => {
     </MenuToggle>
   );
 
-  function onSelect(event?: React.MouseEvent, itemId?: string | number) {
+  function onSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
     if (typeof itemId === 'undefined') {
       return;
     }

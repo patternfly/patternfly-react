@@ -55,7 +55,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
 
   const focusOnInput = () => menuToggleRef.current?.querySelector('input')?.focus();
 
-  const onMenuSelect = (event?: React.MouseEvent, itemId?: string | number) => {
+  const onMenuSelect = (event: React.MouseEvent | undefined, itemId: string | number | undefined) => {
     if (itemId) {
       setInputValue(itemId.toString());
       setIsSelected(true);
@@ -124,7 +124,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
   };
 
   // Close the menu when a click occurs outside of the menu toggle content
-  const onDocumentClick = (event?: MouseEvent) => {
+  const onDocumentClick = (event: MouseEvent | undefined) => {
     if (!menuToggleRef.current?.contains(event?.target as HTMLElement)) {
       setIsMenuOpen(false);
     }
