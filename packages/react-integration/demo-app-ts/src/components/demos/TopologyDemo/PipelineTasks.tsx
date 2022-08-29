@@ -33,7 +33,7 @@ export const PipelineTasks: React.FC = () => {
       type: 'finally-group',
       children: finallyNodes.map(n => n.id),
       group: true,
-      style: { padding: 17 }
+      style: { padding: 30 }
     };
     const model = {
       graph: {

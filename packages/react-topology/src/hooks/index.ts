@@ -5,3 +5,5 @@ export { default as useLayoutFactory } from './useLayoutFactory';
 export { default as useModel } from './useModel';
 export { default as useVisualizationController } from './useVisualizationController';
 export { default as useVisualizationState } from './useVisualizationState';
+export { default as useDetailsLevel } from './useDetailsLevel';
+export { default as useScaleNode } from './useScaleNode';
