@@ -10,14 +10,11 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
   static displayName = 'NumberInputDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.setState({
-      value2: null
-    });
   }
 
-  state = {
+  state: NumberInputDemoState = {
     value: 0,
-    value2: 0
+    value2: null
   };
 
   onMinus = () => {
