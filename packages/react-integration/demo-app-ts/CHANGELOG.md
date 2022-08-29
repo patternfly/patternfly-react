@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.195.5 (2022-08-29)
+
+
+### Bug Fixes
+
+* **NumberInput:** manage null value ([#7898](https://github.com/patternfly/patternfly-react/issues/7898)) ([b86371d](https://github.com/patternfly/patternfly-react/commit/b86371dfe703614c12f49b68c096b28a91b9debd))
+
+
+
+
+
 ## 4.195.4 (2022-08-29)
 
 
