@@ -4,18 +4,18 @@ section: developer-resources
 ---
 
 ## 2022.11 release notes (2022-08-25)
-- [@patternfly/react-catalog-view-extension@4.86.3](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.86.3)
-- [@patternfly/react-charts@6.88.3](https://www.npmjs.com/package/@patternfly/react-charts/v/6.88.3)
-- [@patternfly/react-code-editor@4.76.3](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.76.3)
-- [@patternfly/react-core@4.235.3](https://www.npmjs.com/package/@patternfly/react-core/v/4.235.3)
-- [@patternfly/react-icons@4.86.3](https://www.npmjs.com/package/@patternfly/react-icons/v/4.86.3)
-- [@patternfly/react-inline-edit-extension@4.80.3](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.80.3)
-- [@patternfly/react-log-viewer@4.80.3](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.80.3)
-- [@patternfly/react-styles@4.85.3](https://www.npmjs.com/package/@patternfly/react-styles/v/4.85.3)
-- [@patternfly/react-table@4.104.3](https://www.npmjs.com/package/@patternfly/react-table/v/4.104.3)
-- [@patternfly/react-tokens@4.87.3](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.87.3)
-- [@patternfly/react-topology@4.82.3](https://www.npmjs.com/package/@patternfly/react-topology/v/4.82.3)
-- [@patternfly/react-virtualized-extension@4.82.3](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.82.3)
+- [@patternfly/react-catalog-view-extension@4.86.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.86.5)
+- [@patternfly/react-charts@6.88.5](https://www.npmjs.com/package/@patternfly/react-charts/v/6.88.5)
+- [@patternfly/react-code-editor@4.76.5](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.76.5)
+- [@patternfly/react-core@4.235.5](https://www.npmjs.com/package/@patternfly/react-core/v/4.235.5)
+- [@patternfly/react-icons@4.86.5](https://www.npmjs.com/package/@patternfly/react-icons/v/4.86.5)
+- [@patternfly/react-inline-edit-extension@4.80.5](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.80.5)
+- [@patternfly/react-log-viewer@4.80.5](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.80.5)
+- [@patternfly/react-styles@4.85.5](https://www.npmjs.com/package/@patternfly/react-styles/v/4.85.5)
+- [@patternfly/react-table@4.104.5](https://www.npmjs.com/package/@patternfly/react-table/v/4.104.5)
+- [@patternfly/react-tokens@4.87.5](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.87.5)
+- [@patternfly/react-topology@4.82.5](https://www.npmjs.com/package/@patternfly/react-topology/v/4.82.5)
+- [@patternfly/react-virtualized-extension@4.82.5](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.82.5)
 
 ### Components
 - **Button:**
@@ -34,6 +34,7 @@ section: developer-resources
   - Converted examples to TypeScript ([#7656](https://github.com/patternfly/patternfly-react/pull/7656))
 - **Number input:**
   - Added status validated icons ([#7806](https://github.com/patternfly/patternfly-react/pull/7806))
+  - Fixed to manage null value ([#7898](https://github.com/patternfly/patternfly-react/pull/7898))
 - **Page:**
   - Added aria label prop to page sub-components explicitly ([#7822](https://github.com/patternfly/patternfly-react/pull/7822))
   - Updated `onPageResize` default prop ([#7811](https://github.com/patternfly/patternfly-react/pull/7811))
@@ -70,6 +71,7 @@ section: developer-resources
   - Corrected types for demo application ([#7827](https://github.com/patternfly/patternfly-react/pull/7827))
   - Corrected types for examples ([#7821](https://github.com/patternfly/patternfly-react/pull/7821))
   - Fixed react-core to export all contents of dist directory ([#7883](https://github.com/patternfly/patternfly-react/pull/7883))
+  - Fixed syntax errors on surge ([#7897](https://github.com/patternfly/patternfly-react/pull/7897))
 - **Dependencies:**
   - Reverted rollup dependency bump ([#7881](https://github.com/patternfly/patternfly-react/pull/7881))
   - Bumped rollup versions to latest ([#7853](https://github.com/patternfly/patternfly-react/pull/7853))
