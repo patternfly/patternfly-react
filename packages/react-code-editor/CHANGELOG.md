@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.76.4 (2022-08-29)
+
+
+### Bug Fixes
+
+* syntax errors on surge ([#7897](https://github.com/patternfly/patternfly-react/issues/7897)) ([a487abf](https://github.com/patternfly/patternfly-react/commit/a487abf770340555b2c5a451b5a5bfb0ea57fd45))
+
+
+
+
+
 ## 4.76.3 (2022-08-25)
 
 
