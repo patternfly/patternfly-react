@@ -10,19 +10,19 @@ describe('numberInput', () => {
   });
 
   test('renders success validated', () => {
-    const { asFragment } = render(<NumberInput validated='success' />);
+    const { asFragment } = render(<NumberInput validated="success" />);
     expect(asFragment()).toMatchSnapshot();
-  })
+  });
 
   test('renders error validated', () => {
-    const { asFragment } = render(<NumberInput validated='error' />);
+    const { asFragment } = render(<NumberInput validated="error" />);
     expect(asFragment()).toMatchSnapshot();
-  })
+  });
 
   test('renders warning validated', () => {
-    const { asFragment } = render(<NumberInput validated='warning' />);
+    const { asFragment } = render(<NumberInput validated="warning" />);
     expect(asFragment()).toMatchSnapshot();
-  })
+  });
 
   test('renders value', () => {
     const { asFragment } = render(<NumberInput value={90} />);
@@ -136,37 +136,37 @@ describe('numberInput', () => {
 
   test('removes leading zeros from a positive whole number', () => {
     render(<NumberInput value={10} onChange={() => {}} />);
-  
+
     const input = screen.getByRole('spinbutton');
     userEvent.type(input, '{arrowleft}{arrowleft}0');
     expect(input).toHaveDisplayValue('010');
-  
+
     userEvent.click(document.body);
-  
+
     expect(input).toHaveDisplayValue('10');
   });
 
   test('removes leading zeros from a negative whole number', () => {
     render(<NumberInput value={-18} onChange={() => {}} />);
-  
+
     const input = screen.getByRole('spinbutton');
     userEvent.type(input, '{arrowleft}{arrowleft}0');
     expect(input).toHaveDisplayValue('-018');
-  
+
     userEvent.click(document.body);
-  
+
     expect(input).toHaveDisplayValue('-18');
   });
 
   test('removes leading zeros from a decimal number', () => {
     render(<NumberInput value={47.01} onChange={() => {}} />);
-  
+
     const input = screen.getByRole('spinbutton');
     userEvent.type(input, '{arrowleft}{arrowleft}{arrowleft}{arrowleft}{arrowleft}0');
     expect(input).toHaveDisplayValue('047.01');
-  
+
     userEvent.click(document.body);
-  
+
     expect(input).toHaveDisplayValue('47.01');
   });
 
@@ -186,5 +186,24 @@ describe('numberInput', () => {
     render(<NumberInput value={null} />);
     const input = screen.getByRole('spinbutton');
     expect(input).toHaveDisplayValue('0');
+  });
+
+  test('does not throw an error if onChange is passed via inputProps as well as the onChange prop', () => {
+    const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    const NumberInputWrapper = () => {
+      const [value, setValue] = React.useState(0);
+      const onChange = event => setValue(event.currentTarget.value);
+      const inputProps = { onChange: onChange };
+
+      return <NumberInput value={value} onChange={onChange} inputProps={{ ...inputProps }} />;
+    };
+
+    render(<NumberInputWrapper />);
+
+    const input = screen.getByRole('spinbutton');
+    userEvent.type(input, '0');
+
+    expect(consoleSpy).not.toHaveBeenCalled();
   });
 });

@@ -129,6 +129,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           </span>
         </Button>
         <TextInput
+          {...inputProps}
           type="number"
           value={value}
           name={inputName}
@@ -139,7 +140,6 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           {...(!onChange && { isReadOnly: true })}
           onKeyDown={keyDownHandler}
           validated={validated}
-          {...inputProps}
         />
         <Button
           variant="control"
