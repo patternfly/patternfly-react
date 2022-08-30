@@ -1,89 +1,120 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { BackToTop } from '../BackToTop';
 import userEvent from '@testing-library/user-event';
-
-test('Renders with the default class', () => {
+test('Renders BackToTop', () => {
   render(
     <div data-testid="backtotop">
       <BackToTop />
     </div>
   );
 
-  expect(screen.getByTestId('backtotop').firstChild).toHaveClass('pf-c-back-to-top');
+  expect(screen.getByTestId('backtotop').firstChild).toBeTruthy();
+});
+
+test('Renders with the default class', () => {
+  render(<BackToTop />);
+
+  expect(screen.getByRole(`button`).parentElement).toHaveClass('pf-c-back-to-top');
 });
 
 test('BackToTop is not yet visible', () => {
-  render(
-    <div data-testid="backtotop">
-      <BackToTop />
-    </div>
-  );
+  render(<BackToTop />);
 
-  expect(screen.getByTestId('backtotop').firstChild).toHaveClass('pf-m-hidden');
+  expect(screen.getByRole(`button`).parentElement).toHaveClass('pf-m-hidden');
 });
 
 test('BackToTop is visible after scrolling', () => {
-  render(
-    <div data-testid="backtotop">
-      <BackToTop />
-    </div>
-  );
+  render(<BackToTop />);
 
   fireEvent.scroll(window, { target: { scrollY: 401 } });
-  expect(screen.getByTestId('backtotop').firstChild).not.toHaveClass('pf-m-hidden');
+  expect(screen.getByRole(`button`).parentElement).not.toHaveClass('pf-m-hidden');
 });
 
 test('ScrollTo event is fired after clicking BackToTop', () => {
-  render(
-    <div data-testid="backtotop">
-      <BackToTop />
-    </div>
-  );
+  render(<BackToTop />);
 
   fireEvent.scroll(window, { target: { scrollY: 401 } });
   global.scrollTo = jest.fn();
 
-  userEvent.click(screen.getByTestId('backtotop').firstChild as Element);
-  expect(global.scrollTo).toHaveBeenCalled();
+  userEvent.click(screen.getByRole(`button`).parentElement as Element);
+  expect(global.scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });
 });
 
-test('Renders backToTop when isAlwaysVisible prop is set', () => {
-  render(
-    <div data-testid="backtotop">
-      <BackToTop isAlwaysVisible />
-    </div>
-  );
+test('BackToTop gets hidden again after user scrolls back up', () => {
+  render(<BackToTop />);
 
-  expect(screen.getByTestId('backtotop').firstChild).toBeVisible();
-  expect(screen.getByTestId('backtotop').firstChild).not.toHaveClass('pf-m-hidden');
+  fireEvent.scroll(window, { target: { scrollY: 401 } });
+
+  fireEvent.scroll(window, { target: { scrollY: 0 } });
+  expect(screen.getByRole(`button`).parentElement).toHaveClass('pf-m-hidden');
+});
+
+test('Renders BackToTop when isAlwaysVisible prop is set', () => {
+  render(<BackToTop isAlwaysVisible />);
+
+  expect(screen.getByRole(`button`).parentElement).not.toHaveClass('pf-m-hidden');
 });
 
 test('Renders with custom className prop passed', () => {
-  render(
-    <div data-testid="backtotop">
-      <BackToTop className="test-class" />
-    </div>
-  );
-  expect(screen.getByTestId('backtotop').firstChild).toHaveClass('test-class');
+  render(<BackToTop className="test-class" />);
+  expect(screen.getByRole(`button`).parentElement).toHaveClass('test-class');
 });
 
 test('Renders with custom title prop passed', () => {
-  render(
-    <div data-testid="backtotop">
-      <BackToTop title="Back to the Future" />
-    </div>
-  );
-  expect(screen.getByTestId('backtotop').firstChild).toHaveTextContent('Back to the Future');
+  render(<BackToTop title="Back to the Future" />);
+  expect(screen.getByRole(`button`).parentElement).toHaveTextContent('Back to the Future');
 });
 
 test('Renders with passed aria-label', () => {
+  render(<BackToTop aria-label="Back to top test" />);
+  expect(screen.getByRole(`button`).parentElement).toHaveAccessibleName('Back to top test');
+});
+
+test('BackToTop can be accessed via passed innerRef', () => {
+  const testRef: RefObject<HTMLElement> = React.createRef();
+  render(<BackToTop innerRef={testRef} isAlwaysVisible />);
+  global.scrollTo = jest.fn();
+  testRef.current?.click();
+  expect(global.scrollTo).toBeCalledTimes(1);
+});
+
+test('BackToTop reacts to scrolling inside element passed via scrollableSelector', () => {
   render(
-    <div data-testid="backtotop">
-      <BackToTop aria-label="Back to top test" />
+    <div id="backToTopWrapper">
+      <BackToTop scrollableSelector="#backToTopWrapper" />
     </div>
   );
-  expect(screen.getByTestId('backtotop').firstChild).toHaveAccessibleName('Back to top test');
+  const wrapper = document.getElementById('backToTopWrapper');
+  fireEvent.scroll(wrapper as HTMLElement, { target: { scrollY: 401 } });
+
+  expect(screen.getByRole(`button`).parentElement).not.toHaveClass('pf-m-hidden');
+});
+
+test('BackToTop does not react to scrolling inside window when scrollableSelector passed', () => {
+  render(
+    <div id="backToTopWrapper">
+      <BackToTop scrollableSelector="#backToTopWrapper" />
+    </div>
+  );
+  fireEvent.scroll(window, { target: { scrollY: 401 } });
+
+  expect(screen.getByRole(`button`).parentElement).toHaveClass('pf-m-hidden');
+});
+
+test('Clicking backToTop scrolls back to top of the element passed via scrollableSelector', () => {
+  render(
+    <div id="backToTopWrapper">
+      <BackToTop scrollableSelector="#backToTopWrapper" />
+    </div>
+  );
+
+  const wrapper = document.getElementById('backToTopWrapper');
+  fireEvent.scroll(wrapper as HTMLElement, { target: { scrollY: 401 } });
+  wrapper!.scrollTo = jest.fn();
+  userEvent.click(screen.getByRole(`button`).parentElement as Element);
+
+  expect(wrapper?.scrollTo).toBeCalledTimes(1);
 });
 
 test('Matches the snapshot', () => {

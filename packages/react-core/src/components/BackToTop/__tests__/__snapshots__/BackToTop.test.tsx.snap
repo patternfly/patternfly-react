@@ -8,7 +8,7 @@ exports[`Matches the snapshot 1`] = `
     <button
       aria-disabled="false"
       class="pf-c-button pf-m-primary"
-      data-ouia-component-id="OUIA-Generated-Button-primary-9"
+      data-ouia-component-id="OUIA-Generated-Button-primary-15"
       data-ouia-component-type="PF4/Button"
       data-ouia-safe="true"
       type="button"
