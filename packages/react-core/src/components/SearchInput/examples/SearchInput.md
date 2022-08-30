@@ -35,6 +35,11 @@ import { ExternalLinkSquareAltIcon } from '@patternfly/react-icons';
 ```ts file='./SearchInputFocusSearch.tsx'
 ```
 
+### With expandable button
+
+```ts file='./SearchInputWithExpandable.tsx'
+```
+
 ### Advanced
 
 The search input component can be used to dynamically build a one to one attribute-value advanced search.
