@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.104.6 (2022-08-30)
+
+
+### Bug Fixes
+
+* **NumberInput:** prevent errors when onChange is passed via inputProps ([#7908](https://github.com/patternfly/patternfly-react/issues/7908)) ([9cabeed](https://github.com/patternfly/patternfly-react/commit/9cabeedacf98bd80214a7f7fe1e40c3a15be4490))
+
+
+
+
+
 ## 4.104.5 (2022-08-29)
 
 
