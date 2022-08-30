@@ -46,7 +46,7 @@ export const DropdownPrimaryToggle: React.FunctionComponent = () => {
     <Dropdown
       onSelect={onSelect}
       toggle={
-        <DropdownToggle id="toggle-primary" isPrimary onToggle={onToggle}>
+        <DropdownToggle id="toggle-primary" toggleVariant="primary" onToggle={onToggle}>
           Dropdown
         </DropdownToggle>
       }
