@@ -100,7 +100,8 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const [listKey, setListKey] = useState(1);
     const ansiUp = new AnsiUp();
 
-    const logViewerRef = innerRef || React.useRef<any>();
+    const ref = React.useRef<any>();
+    const logViewerRef = innerRef || ref;
     const containerRef = React.useRef<any>();
     let resizeTimer = null as any;
 

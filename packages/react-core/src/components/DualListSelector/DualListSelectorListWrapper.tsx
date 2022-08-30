@@ -42,7 +42,8 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
   ...props
 }: DualListSelectorListWrapperProps) => {
   const [focusedOption, setFocusedOption] = React.useState('');
-  const menuRef = innerRef || React.useRef(null);
+  const ref = React.useRef(null);
+  const menuRef = innerRef || ref;
   const { isTree } = React.useContext(DualListSelectorContext);
 
   // sets up keyboard focus handling for the dual list selector menu child of the pane. This keyboard

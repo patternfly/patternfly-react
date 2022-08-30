@@ -25,10 +25,6 @@ const ConnectorArrow: React.FunctionComponent<ConnectorArrowProps> = ({
   size = 14,
   dragRef
 }) => {
-  if (!startPoint || !endPoint) {
-    return null;
-  }
-
   const connectorStartPoint = getConnectorStartPoint(startPoint, endPoint, size);
   const angleDeg = getConnectorRotationAngle(startPoint, endPoint);
 

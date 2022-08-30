@@ -27,7 +27,8 @@ export const TextInputGroup: React.FunctionComponent<TextInputGroupProps> = ({
   innerRef,
   ...props
 }: TextInputGroupProps) => {
-  const textInputGroupRef = innerRef || React.useRef(null);
+  const ref = React.useRef(null);
+  const textInputGroupRef = innerRef || ref;
 
   return (
     <TextInputGroupContext.Provider value={{ isDisabled }}>

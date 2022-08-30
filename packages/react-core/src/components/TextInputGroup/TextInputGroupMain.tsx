@@ -57,7 +57,8 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   ...props
 }: TextInputGroupMainProps) => {
   const { isDisabled } = React.useContext(TextInputGroupContext);
-  const textInputGroupInputInputRef = innerRef || React.useRef(null);
+  const ref = React.useRef(null);
+  const textInputGroupInputInputRef = innerRef || ref;
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     onChange(event.currentTarget.value, event);

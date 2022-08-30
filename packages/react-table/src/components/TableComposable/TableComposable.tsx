@@ -95,7 +95,8 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   selectableRowCaptionText,
   ...props
 }: TableComposableProps) => {
-  const tableRef = innerRef || React.useRef(null);
+  const ref = React.useRef(null);
+  const tableRef = innerRef || ref;
 
   const [hasSelectableRows, setHasSelectableRows] = React.useState(false);
   const [tableCaption, setTableCaption] = React.useState<JSX.Element | undefined>();

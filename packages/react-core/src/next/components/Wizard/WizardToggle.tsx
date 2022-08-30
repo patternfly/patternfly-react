@@ -86,7 +86,7 @@ export const WizardToggle = ({
 
   const wizardNav = isCustomWizardNav(nav)
     ? nav(isNavOpen, steps, activeStep, goToStepByIndex)
-    : React.useMemo(() => {
+    : () => {
         const props = {
           isOpen: isNavOpen,
           'aria-label': nav?.ariaLabel || 'Wizard nav',
@@ -172,7 +172,7 @@ export const WizardToggle = ({
             })}
           </WizardNav>
         );
-      }, [activeStep?.id, goToStepByIndex, isNavOpen, nav, steps]);
+      };
 
   return (
     <>

@@ -47,7 +47,8 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
   draggableButtonAriaLabel = 'Reorder option',
   ...props
 }: DualListSelectorListItemProps) => {
-  const ref = innerRef || React.useRef<HTMLLIElement>(null);
+  const privateRef = React.useRef<HTMLLIElement>(null);
+  const ref = innerRef || privateRef;
   const { setFocusedOption } = React.useContext(DualListSelectorListContext);
 
   return (
