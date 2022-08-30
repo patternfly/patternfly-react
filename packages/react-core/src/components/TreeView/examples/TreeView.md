@@ -20,12 +20,15 @@ class DefaultTreeView extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { activeItems: {}, allExpanded: null };
+    this.state = { activeItems: [], allExpanded: null };
 
     this.onSelect = (evt, treeViewItem) => {
-      this.setState({
-        activeItems: [treeViewItem]
-      });
+      // Ignore folders for selection
+      if (treeViewItem && !treeViewItem.children) {
+        this.setState({
+          activeItems: [treeViewItem]
+        });
+      }
     };
 
     this.onToggle = evt => {
