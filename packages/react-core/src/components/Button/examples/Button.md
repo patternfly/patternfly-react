@@ -101,10 +101,11 @@ Buttons that are aria-disabled are similar to normal disabled buttons, except th
 
 ### Aria-disabled with tooltip
 
-Unlike normal disabled buttons, aria-disabled buttons can support tooltips.
+Unlike normal disabled buttons, aria-disabled buttons can support tooltips. Furthermore, aria-disabled buttons can operate as links, which also support tooltips.
 
 ```ts file="./ButtonAriaDisabledTooltip.tsx"
 ```
+<<<<<<< HEAD
 
 ### Aria-disabled link as button with tooltip
 
@@ -119,3 +120,5 @@ Buttons can display a `count` in the form of a badge to indicate some value or n
 
 ```ts file="./ButtonWithCount.tsx" isBeta
 ```
+=======
+>>>>>>> e49e903e5 (docs(Button): combined aria-disabled tooltip examples into single example)
