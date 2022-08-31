@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { Spinner, spinnerSize } from '../Spinner';
 import { useOUIAProps, OUIAProps } from '../../helpers';
+import { Badge } from '../Badge';
 
 export enum ButtonVariant {
   primary = 'primary',
@@ -67,6 +68,10 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   isDanger?: boolean;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Adds count number right of button */
+  count?: number;
+  /**  Adds styling to the badge to indicate it has been read */
+  isRead?: boolean;
 }
 
 const ButtonBase: React.FunctionComponent<ButtonProps> = ({
@@ -95,6 +100,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   ouiaSafe = true,
   tabIndex = null,
   innerRef,
+  count,
+  isRead = false,
   ...props
 }: ButtonProps) => {
   const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
@@ -167,6 +174,11 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       {children}
       {variant !== ButtonVariant.plain && icon && iconPosition === 'right' && (
         <span className={css(styles.buttonIcon, styles.modifiers.end)}>{icon}</span>
+      )}
+      {count && (
+        <span className={css(styles.buttonCount)}>
+          <Badge isRead={isRead}>{count}</Badge>
+        </span>
       )}
     </Component>
   );

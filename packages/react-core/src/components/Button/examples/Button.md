@@ -112,3 +112,10 @@ Aria-disabled buttons can operate as links, which also support tooltips.
 
 ```ts file="./ButtonAriaDisabledLinkTooltip.tsx"
 ```
+
+### Buttons with a count label
+
+Buttons can now display a `count` in the form of a badge to indicate some value or number.
+
+```ts file="./ButtonCount.tsx"
+```
