@@ -23,7 +23,8 @@ export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualLi
   'aria-label': ariaLabel = 'Controls for moving options between lists',
   ...props
 }: DualListSelectorControlsWrapperProps) => {
-  const wrapperRef = innerRef || React.useRef(null);
+  const ref = React.useRef(null);
+  const wrapperRef = innerRef || ref;
   // Adds keyboard navigation to the dynamically built dual list selector controls. Works when controls are dynamically built
   // as well as when they are passed in via children.
   const handleKeys = (event: KeyboardEvent) => {

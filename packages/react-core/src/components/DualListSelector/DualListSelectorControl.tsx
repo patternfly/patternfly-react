@@ -37,7 +37,8 @@ export const DualListSelectorControlBase: React.FunctionComponent<DualListSelect
   tooltipProps = {} as any,
   ...props
 }: DualListSelectorControlProps) => {
-  const ref = innerRef || React.useRef(null);
+  const privateRef = React.useRef(null);
+  const ref = innerRef || privateRef;
   return (
     <div className={css('pf-c-dual-list-selector__controls-item', className)} {...props}>
       <Button

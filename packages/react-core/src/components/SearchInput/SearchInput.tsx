@@ -125,7 +125,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const [isSearchMenuOpen, setIsSearchMenuOpen] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState(value);
   const searchInputRef = React.useRef(null);
-  const searchInputInputRef = innerRef || React.useRef(null);
+  const ref = React.useRef(null);
+  const searchInputInputRef = innerRef || ref;
 
   React.useEffect(() => {
     setSearchValue(value);
