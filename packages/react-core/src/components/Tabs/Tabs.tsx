@@ -463,6 +463,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           )}
           {!isOverflowHorizontal && (
             <button
+              type="button"
               className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={leftScrollAriaLabel}
               onClick={this.scrollLeft}
@@ -478,6 +479,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           </ul>
           {!isOverflowHorizontal && (
             <button
+              type="button"
               className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={rightScrollAriaLabel}
               onClick={this.scrollRight}
