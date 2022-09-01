@@ -12,6 +12,7 @@ import {
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { KeyTypes } from '../../../helpers';
 
 Object.values([
   { isExpanded: true, isInline: false, isStatic: false },
@@ -159,7 +160,7 @@ test('Resizeable DrawerPanelContent can be wrapped in a context without causing 
   );
 
   await user.tab();
-  await user.keyboard('{ArrowLeft}');
+  await user.keyboard(`{${KeyTypes.ArrowLeft}}`);
 
   expect(consoleError).not.toHaveBeenCalled();
 })

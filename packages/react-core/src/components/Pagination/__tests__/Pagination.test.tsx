@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Pagination, PaginationVariant } from '../index';
+import { KeyTypes } from '../../../helpers';
 
 describe('Pagination', () => {
   describe('component render', () => {
@@ -160,7 +161,7 @@ describe('Pagination', () => {
 
         const input = screen.getByLabelText('Current page');
         await user.type(input, '1');
-        await user.type(input, '{Enter}');
+        await user.type(input, `{${KeyTypes.Enter}}`);
 
         expect(onSetPage).toHaveBeenCalled();
       });
@@ -172,7 +173,7 @@ describe('Pagination', () => {
 
         const input = screen.getByLabelText('Current page');
         await user.type(input, 'a');
-        await user.type(input, '{Enter}');
+        await user.type(input, `{${KeyTypes.Enter}}`);
 
         expect(onSetPage).toHaveBeenCalled();
       });
@@ -184,7 +185,7 @@ describe('Pagination', () => {
 
         const input = screen.getByLabelText('Current page');
         await user.type(input, '10');
-        await user.type(input, '{Enter}');
+        await user.type(input, `{${KeyTypes.Enter}}`);
 
         expect(onSetPage).toHaveBeenCalled();
       });
@@ -196,7 +197,7 @@ describe('Pagination', () => {
 
         const input = screen.getByLabelText('Current page');
         await user.type(input, '-10');
-        await user.type(input, '{Enter}');
+        await user.type(input, `{${KeyTypes.Enter}}`);
 
         expect(onSetPage).toHaveBeenCalled();
       });

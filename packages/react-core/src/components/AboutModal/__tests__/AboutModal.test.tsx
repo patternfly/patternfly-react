@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { AboutModal, AboutModalProps } from '../AboutModal';
+import { KeyTypes } from '../../../helpers';
 
 const props: AboutModalProps = {
   onClose: jest.fn(),
@@ -20,7 +21,7 @@ describe('AboutModal', () => {
     
     render(<AboutModal {...props} isOpen />);
 
-    await user.type(screen.getByRole('dialog'), '{Escape}');
+    await user.type(screen.getByRole('dialog'), `{${KeyTypes.Escape}}`);
     expect(props.onClose).toHaveBeenCalled();
   });
 

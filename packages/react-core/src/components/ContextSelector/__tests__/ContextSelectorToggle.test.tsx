@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ContextSelectorToggle } from '../ContextSelectorToggle';
+import { KeyTypes } from '../../../helpers';
 
 describe('ContextSelectorToggle', () => {
   test('Renders ContextSelectorToggle', () => {
@@ -26,7 +27,7 @@ describe('ContextSelectorToggle', () => {
     
     const { asFragment } = render(<ContextSelectorToggle isOpen id="toggle-id" />);
 
-    await user.type(screen.getByRole('button'), '{Escape}');
+    await user.type(screen.getByRole('button'), `{${KeyTypes.Escape}}`);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -35,7 +36,7 @@ describe('ContextSelectorToggle', () => {
     
     const { asFragment } = render(<ContextSelectorToggle onToggle={jest.fn()} id="toggle-id" />);
 
-    await user.type(screen.getByRole('button'), '{Escape}');
+    await user.type(screen.getByRole('button'), `{${KeyTypes.Escape}}`);
     expect(asFragment()).toMatchSnapshot();
   });
 
