@@ -172,7 +172,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
   }
 }
 
-export const MenuToggle = React.forwardRef<MenuToggleElement, MenuToggleProps>((props, ref) => (
+export const MenuToggle = React.forwardRef((props: MenuToggleProps, ref: React.Ref<MenuToggleElement>) => (
   <MenuToggleBase innerRef={ref} {...props} />
 ));
 
