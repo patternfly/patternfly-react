@@ -34,9 +34,7 @@ export interface PopperProps {
    * The reference element to which the Popover is relatively placed to.
    * Use either trigger or reference, not both.
    */
-  trigger?:
-    | React.ReactNode
-    | ((triggerElement: HTMLElement, setTriggerElement: React.Dispatch<any>) => React.ReactNode);
+  trigger?: React.ReactNode;
   /**
    * The reference element to which the Popover is relatively placed to.
    * Use either trigger or reference, not both.
@@ -44,7 +42,7 @@ export interface PopperProps {
    */
   reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** The popper (menu/tooltip/popover) element */
-  popper: any;
+  popper: React.ReactElement;
   /** True to set the width of the popper element to the trigger element's width */
   popperMatchesTriggerWidth?: boolean;
   /** popper direction */
@@ -128,7 +126,7 @@ export interface PopperProps {
   /** @beta Bypasses the use of findDOMNode for both the popper and trigger in react strict mode. Without this flag, the trigger and popper will require passed references via the reference property (trigger) and popperRef property (popper) for strict mode. */
   removeFindDomNode?: boolean;
   /** @beta Reference to the popper (menu/tooltip/popover) element. Passing this property or the removeFindDomNode property, will bypass the use of findDOMNode for the popper in react strict mode. The popper property is still required. */
-  popperRef?: any;
+  popperRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
