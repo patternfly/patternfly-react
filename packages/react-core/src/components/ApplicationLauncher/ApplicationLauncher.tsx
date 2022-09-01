@@ -70,6 +70,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     isDisabled: false,
     direction: DropdownDirection.down,
     favorites: [] as string[],
+    items: [] as React.ReactNode[],
     isOpen: false,
     position: DropdownPosition.left,
     /* eslint-disable @typescript-eslint/no-unused-vars */
