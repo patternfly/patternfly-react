@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.89.0 (2022-09-01)
+
+
+### Features
+
+* **PageSection:** add ability to specify HTML element via prop ([#7891](https://github.com/patternfly/patternfly-react/issues/7891)) ([a9e20e4](https://github.com/patternfly/patternfly-react/commit/a9e20e4b6303fb673ed9222323a1114c3e68f8d6))
+
+
+
+
+
 ## 6.88.8 (2022-08-31)
 
 **Note:** Version bump only for package @patternfly/react-charts
