@@ -124,7 +124,13 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     };
 
     if (isTypeahead) {
-      return <div ref={innerRef as React.Ref<HTMLDivElement>} className={css(commonStyles)} {...componentProps} />;
+      return (
+        <div
+          ref={innerRef as React.Ref<HTMLDivElement>}
+          className={css(commonStyles, styles.modifiers.typeahead)}
+          {...componentProps}
+        />
+      );
     }
 
     if (splitButtonOptions) {
