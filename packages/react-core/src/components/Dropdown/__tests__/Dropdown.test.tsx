@@ -106,7 +106,7 @@ describe('Dropdown', () => {
       <Dropdown
         dropdownItems={dropdownItems}
         toggle={
-          <DropdownToggle id="Dropdown Toggle" isPrimary>
+          <DropdownToggle id="Dropdown Toggle" toggleVariant="primary">
             Dropdown
           </DropdownToggle>
         }
