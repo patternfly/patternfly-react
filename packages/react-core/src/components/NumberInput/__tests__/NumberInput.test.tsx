@@ -147,7 +147,8 @@ describe('numberInput', () => {
 
     await user.click(input);
 
-    // fireEvent is used here do to an issue with the current version userEvent
+    // fireEvent is used here due to an issue with the current version of userEvent where userEvent.type/.keyboard does
+    // not appear to cause the '0' to be properly added to the input's display value
     fireEvent.change(input, { target: { value: '010' } });
     expect(input).toHaveDisplayValue('010');
 
@@ -165,7 +166,8 @@ describe('numberInput', () => {
 
     await user.click(input);
 
-    // fireEvent is used here do to an issue with the current version userEvent
+    // fireEvent is used here due to an issue with the current version of userEvent where userEvent.type/.keyboard does
+    // not appear to cause the '0' to be properly added to the input's display value
     fireEvent.change(input, { target: { value: '-018' } });
     expect(input).toHaveDisplayValue('-018');
 
@@ -183,7 +185,8 @@ describe('numberInput', () => {
 
     await user.click(input);
 
-    // fireEvent is used here do to an issue with the current version userEvent
+    // fireEvent is used here due to an issue with the current version of userEvent where userEvent.type/.keyboard does
+    // not appear to cause the '0' to be properly added to the input's display value
     fireEvent.change(input, { target: { value: '047.01' } });
     expect(input).toHaveDisplayValue('047.01');
 
