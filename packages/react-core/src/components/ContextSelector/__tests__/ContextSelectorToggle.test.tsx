@@ -45,7 +45,7 @@ describe('ContextSelectorToggle', () => {
     
     const { asFragment } = render(<ContextSelectorToggle isOpen id="toggle-id" />);
 
-    await user.type(screen.getByRole('button'), '{tab}');
+    await user.type(screen.getByRole('button'), `{${KeyTypes.Tab}}`);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -54,7 +54,7 @@ describe('ContextSelectorToggle', () => {
     
     const { asFragment } = render(<ContextSelectorToggle onToggle={jest.fn()} onEnter={jest.fn()} id="toggle-id" />);
 
-    await user.type(screen.getByRole('button'), '{enter}');
+    await user.type(screen.getByRole('button'), `{${KeyTypes.Enter}}`);
     expect(asFragment()).toMatchSnapshot();
   });
 });

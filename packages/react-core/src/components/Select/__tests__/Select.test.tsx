@@ -7,6 +7,7 @@ import { Select } from '../Select';
 import { SelectOption, SelectOptionObject } from '../SelectOption';
 import { SelectGroup } from '../SelectGroup';
 import { SelectVariant, SelectDirection } from '../selectConstants';
+import { KeyTypes } from '../../../helpers';
 
 class User implements SelectOptionObject {
   private firstName: string;
@@ -346,7 +347,7 @@ describe('typeahead select', () => {
 
     const input = screen.getByTestId('test-id').querySelector('input');
     await user.type(input, 'Other');
-    await user.type(input, '{enter}');
+    await user.type(input, `{${KeyTypes.Enter}}`);
 
     expect(screen.getByText('Other')).toBeVisible();
   });
@@ -537,7 +538,7 @@ test('applies focus styling to the create option when reached via keyboard navig
   );
 
   const input = screen.getByRole('textbox');
-  await user.type(input, 'a{arrowdown}');
+  await user.type(input, `a{${KeyTypes.ArrowDown}}`);
 
   const createOption = screen.getByRole('option', { name: 'Create "a"' });
 
