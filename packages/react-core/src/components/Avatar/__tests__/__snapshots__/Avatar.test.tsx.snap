@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`simple avatar 1`] = `
+exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <img
     alt="avatar"
-    class="pf-c-avatar pf-m-light"
+    aria-label="Avatar test"
+    class="pf-c-avatar test-class"
     src="test.png"
   />
 </DocumentFragment>
