@@ -315,6 +315,8 @@ To make a row draggable:
 
 ## Sticky table modifiers
 
+To make certain columns and the header sticky, the table must be wrapped in a combination of `OuterScrollContainer` and `InnerScrollContainer`. For sticky columns, only `InnerScrollContainer` is required. For sticky headers, and sticky headers with sticky columns, both containers are required to ensure the sticky behavior behaves correctly.
+
 **Note:** Sticky table headers and columns have a higher `z-index` than the `z-index` used for menus (dropdown, select, etc). The intent is that the contents of a scrollable table will scroll under the sticky header/column, including any expanded menus. However, there may be use cases where a menu needs to appear on top of a sticky header/column, such as an expanded menu in a toolbar above a table with a sticky header.
 
 There are a few ways this can be handled:
@@ -339,7 +341,7 @@ To make multiple columns sticky, wrap `TableComposable` with `InnerScrollContain
 
 ### Composable: Sticky columns and header
 
-To maintain proper sticky behavior across sticky columns and header, `TableComposable` must be wrapped with `OuterScrollContainer` and `InnerScrollContainer` as shown in the example below.
+To maintain proper sticky behavior across sticky columns and header, `TableComposable` must be wrapped with `OuterScrollContainer` and `InnerScrollContainer`.
 
 ```ts file="ComposableTableStickyColumnsAndHeader.tsx"
 ```
