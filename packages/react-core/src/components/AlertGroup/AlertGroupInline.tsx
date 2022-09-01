@@ -20,7 +20,7 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
     {...rest}
   >
     {React.Children.toArray(children).map((alert, index) => (
-      <li key={(alert as React.ReactElement<AlertProps>).props?.uniqueId || index}>{alert}</li>
+      <li key={(alert as React.ReactElement<AlertProps>).props?.id || index}>{alert}</li>
     ))}
     {overflowMessage && (
       <li>

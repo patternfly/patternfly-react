@@ -1,4 +1,4 @@
-describe('Alert Group Demo Test', () => {
+describe('Alert Group Timeout From Bottom Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/alert-group-timeout-from-bottom-demo-nav-link');
   });

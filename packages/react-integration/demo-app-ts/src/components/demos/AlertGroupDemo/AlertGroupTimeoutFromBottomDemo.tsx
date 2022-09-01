@@ -17,7 +17,7 @@ export const AlertGroupTimeoutFromBottomDemo: React.FunctionComponent = () => {
           </React.Fragment>
         }
         key={`Alert no. ${count}`}
-        uniqueId={`Alert no. ${count}`}
+        id={`Alert no. ${count}`}
       >
         This alert will dismiss after {`${timeout / 1000} seconds`}
       </Alert>,
