@@ -33,13 +33,6 @@ Composable menus currently require consumer keyboard handling and use of our und
 ```ts file="./examples/ComposableSimpleDropdown.tsx"
 ```
 
-### Composable strict mode dropdown
-
-When using strict mode, the console warning about the depcrecated `findDOMNode` function may be resolved by passing trigger and popper functions to `Popper` (shown below), or by passing the `removeFindDomNode` flag to `Popper` while keeping the same code structure of the other examples. Note that passing in the `removeFindDomNode` flag will change the DOM structure slightly, adding wrapping `div` elements, and may require adjustments to tests for existing components.
-
-```ts file="./examples/ComposableStrictDropdown.tsx"
-```
-
 ### Composable actions menu
 
 ```ts file="./examples/ComposableActionsMenu.tsx"
