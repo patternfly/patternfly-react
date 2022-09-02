@@ -13,7 +13,6 @@ import {
   Popover,
   PopoverProps,
   Title,
-  Tooltip,
   TooltipPosition
 } from '@patternfly/react-core';
 import MonacoEditor, { ChangeHandler, EditorDidMount } from 'react-monaco-editor';
@@ -585,7 +584,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                       <CodeEditorControl
                         icon={<UploadIcon />}
                         aria-label={uploadButtonAriaLabel}
-                        tooltipProps={{content: <div>{uploadButtonToolTipText}</div>, ...tooltipProps}}
+                        tooltipProps={{ content: <div>{uploadButtonToolTipText}</div>, ...tooltipProps }}
                         onClick={open}
                       />
                     )}
@@ -593,7 +592,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                       <CodeEditorControl
                         icon={<DownloadIcon />}
                         aria-label={downloadButtonAriaLabel}
-                        tooltipProps={{content: <div>{downloadButtonToolTipText}</div>, ...tooltipProps}}
+                        tooltipProps={{ content: <div>{downloadButtonToolTipText}</div>, ...tooltipProps }}
                         onClick={this.download}
                       />
                     )}

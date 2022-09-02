@@ -36,7 +36,7 @@ export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
   ];
   const shortcutsPopoverProps = {
     bodyContent: (
-      <Grid span={6} hasGutter key='grid'>
+      <Grid span={6} hasGutter key="grid">
         {shortcuts.map((s, i) => (
           <React.Fragment key={i}>
             <GridItem style={{ textAlign: 'right', marginRight: '1em' }}>
@@ -50,7 +50,7 @@ export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
                   <>{[prev, ' + ', curr]}</>
                 ))}
             </GridItem>
-            <GridItem >{s.description}</GridItem>
+            <GridItem>{s.description}</GridItem>
           </React.Fragment>
         ))}
       </Grid>
