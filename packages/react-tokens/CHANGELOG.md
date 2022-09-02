@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.88.5 (2022-09-02)
+
+
+### Bug Fixes
+
+* **MenuToggle:** Fixed props not displaying in docs ([#7919](https://github.com/patternfly/patternfly-react/issues/7919)) ([8ca73e4](https://github.com/patternfly/patternfly-react/commit/8ca73e4dae9542646aff846511033bb7ae4fb2ef))
+
+
+
+
+
 ## 4.88.4 (2022-09-02)
 
 **Note:** Version bump only for package @patternfly/react-tokens
