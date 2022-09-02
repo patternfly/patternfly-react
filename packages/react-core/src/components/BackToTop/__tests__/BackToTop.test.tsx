@@ -43,13 +43,13 @@ test('BackToTop is visible after scrolling', () => {
   expect(screen.getByRole(`button`).parentElement).not.toHaveClass('pf-m-hidden');
 });
 
-test('ScrollTo event is fired after clicking BackToTop', () => {
+test('ScrollTo event is fired after clicking BackToTop', async () => {
   render(<BackToTop />);
-
+  const user = userEvent.setup();
   fireEvent.scroll(window, { target: { scrollY: 401 } });
   global.scrollTo = jest.fn();
 
-  userEvent.click(screen.getByRole(`button`).parentElement as Element);
+  await user.click(screen.getByRole(`button`).parentElement as Element);
   expect(global.scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });
 });
 
@@ -114,17 +114,17 @@ test('BackToTop does not react to scrolling inside window when scrollableSelecto
   expect(screen.getByRole(`button`).parentElement).toHaveClass('pf-m-hidden');
 });
 
-test('Clicking backToTop scrolls back to top of the element passed via scrollableSelector', () => {
+test('Clicking backToTop scrolls back to top of the element passed via scrollableSelector', async () => {
   render(
     <div id="backToTopWrapper">
       <BackToTop scrollableSelector="#backToTopWrapper" />
     </div>
   );
-
+  const user = userEvent.setup();
   const wrapper = document.getElementById('backToTopWrapper');
   fireEvent.scroll(wrapper as HTMLElement, { target: { scrollY: 401 } });
   wrapper!.scrollTo = jest.fn();
-  userEvent.click(screen.getByRole(`button`).parentElement as Element);
+  await user.click(screen.getByRole(`button`).parentElement as Element);
 
   expect(wrapper?.scrollTo).toBeCalledTimes(1);
 });
