@@ -2,6 +2,18 @@ import React, { RefObject } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { BackToTop } from '../BackToTop';
 import userEvent from '@testing-library/user-event';
+import { Button } from '../../Button';
+
+jest.mock('../../Button', () => ({
+  Button: ({ variant, iconPosition, children }) => (
+    <div>
+      <p>{`${variant}`}</p>
+      <p>{`${iconPosition}`}</p>
+      <button>{`${children}`}</button>
+    </div>
+  )
+}));
+
 test('Renders BackToTop', () => {
   render(
     <div data-testid="backtotop">
@@ -115,6 +127,24 @@ test('Clicking backToTop scrolls back to top of the element passed via scrollabl
   userEvent.click(screen.getByRole(`button`).parentElement as Element);
 
   expect(wrapper?.scrollTo).toBeCalledTimes(1);
+});
+
+test('Passes correct title to button child component', () => {
+  render(<BackToTop title="Back to the f" />);
+
+  expect(screen.getByText('Back to the f')).toBeVisible();
+});
+
+test('Passes correct variant to button child component', () => {
+  render(<BackToTop title="Back to the future" />);
+
+  expect(screen.getByText('primary')).toBeInTheDocument();
+});
+
+test('Passes correct iconPosition to button child component', () => {
+  render(<BackToTop title="Back to the future" />);
+
+  expect(screen.getByText('right')).toBeInTheDocument();
 });
 
 test('Matches the snapshot', () => {
