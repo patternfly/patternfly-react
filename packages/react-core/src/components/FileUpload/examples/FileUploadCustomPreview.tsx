@@ -3,20 +3,17 @@ import { FileUpload } from '@patternfly/react-core';
 import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-icon';
 
 export const CustomPreviewFileUpload: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState(null);
+  const [value, setValue] = React.useState<File>();
   const [filename, setFilename] = React.useState('');
 
-  const handleFileInputChange = (
-    _event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLElement>,
-    file: File
-  ) => {
+  const handleFileInputChange = (_, file: File) => {
     setValue(file);
     setFilename(file.name);
   };
 
   const handleClear = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setFilename('');
-    setValue('');
+    setValue(undefined);
   };
 
   return (

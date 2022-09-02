@@ -23,7 +23,7 @@ import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import Dropzone from 'react-dropzone';
+import Dropzone, { FileRejection } from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
 
 export interface Shortcut {
@@ -432,7 +432,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     }
   };
 
-  onDropRejected = (rejectedFiles: File[]) => {
+  onDropRejected = (rejectedFiles: FileRejection[]) => {
     if (rejectedFiles.length > 0) {
       // eslint-disable-next-line no-console
       console.error('There was an error accepting that dropped file'); // TODO

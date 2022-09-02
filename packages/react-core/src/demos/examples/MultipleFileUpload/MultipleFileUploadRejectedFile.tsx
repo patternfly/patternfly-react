@@ -1,4 +1,5 @@
 import React from 'react';
+import { FileRejection } from 'react-dropzone';
 import {
   MultipleFileUpload,
   MultipleFileUploadMain,
@@ -82,11 +83,14 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   };
 
   // dropzone prop that communicates to the user that files they've attempted to upload are not an appropriate type
-  const handleDropRejected = (files: File[], _event: React.DragEvent<HTMLElement>) => {
-    if (files.length === 1) {
-      setModalText(`${files[0].name} is not an accepted file type`);
+  const handleDropRejected = (fileRejections: FileRejection[]) => {
+    if (fileRejections.length === 1) {
+      setModalText(`${fileRejections[0].file.name} is not an accepted file type`);
     } else {
-      const rejectedMessages = files.reduce((acc, file) => (acc += `${file.name}, `), '');
+      const rejectedMessages = fileRejections.reduce(
+        (acc, fileRejection) => (acc += `${fileRejection.file.name}, `),
+        ''
+      );
       setModalText(`${rejectedMessages}are not accepted file types`);
     }
   };
@@ -98,7 +102,12 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
       <MultipleFileUpload
         onFileDrop={handleFileDrop}
         dropzoneProps={{
-          accept: 'image/jpeg, application/msword, application/pdf, image/png',
+          accept: {
+            'image/jpeg': ['.jpg', '.jpeg'],
+            'application/msword': ['.doc'],
+            'application/pdf': ['.pdf'],
+            'image/png': ['.png']
+          },
           onDropRejected: handleDropRejected
         }}
         isHorizontal={isHorizontal}
