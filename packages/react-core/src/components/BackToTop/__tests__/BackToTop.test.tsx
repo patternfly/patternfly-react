@@ -2,15 +2,15 @@ import React, { RefObject } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { BackToTop } from '../BackToTop';
 import userEvent from '@testing-library/user-event';
-import { Button } from '../../Button';
 
 jest.mock('../../Button', () => ({
-  Button: ({ variant, iconPosition, children }) => (
-    <div>
-      <p>{`${variant}`}</p>
-      <p>{`${iconPosition}`}</p>
-      <button>{`${children}`}</button>
-    </div>
+  Button: ({ variant, iconPosition, children, icon }) => (
+    <>
+      <button>{children}</button>
+      <p>{variant}</p>
+      <p>{iconPosition}</p>
+      <div data-testid="icon">{icon}</div>
+    </>
   )
 }));
 
@@ -129,22 +129,28 @@ test('Clicking backToTop scrolls back to top of the element passed via scrollabl
   expect(wrapper?.scrollTo).toBeCalledTimes(1);
 });
 
-test('Passes correct title to button child component', () => {
-  render(<BackToTop title="Back to the f" />);
+test('Passes correct text content to button child component', () => {
+  render(<BackToTop title="Back to the future" />);
 
-  expect(screen.getByText('Back to the f')).toBeVisible();
+  expect(screen.getByText('Back to the future')).toBeVisible();
 });
 
 test('Passes correct variant to button child component', () => {
   render(<BackToTop title="Back to the future" />);
 
-  expect(screen.getByText('primary')).toBeInTheDocument();
+  expect(screen.getByText('primary')).toBeVisible();
 });
 
 test('Passes correct iconPosition to button child component', () => {
-  render(<BackToTop title="Back to the future" />);
+  render(<BackToTop />);
 
-  expect(screen.getByText('right')).toBeInTheDocument();
+  expect(screen.getByText('right')).toBeVisible();
+});
+
+test('Passes correct icon to button child component', () => {
+  render(<BackToTop />);
+
+  expect(screen.getByTestId('icon').firstChild).toBeTruthy();
 });
 
 test('Matches the snapshot', () => {
