@@ -60,7 +60,8 @@ export default class DashboardWrapper extends React.Component {
       hasNoBreadcrumb,
       notificationDrawer,
       isNotificationDrawerExpanded,
-      hasPageTemplateTitle
+      hasPageTemplateTitle,
+      ...pageProps
     } = this.props;
 
     let renderedBreadcrumb;
@@ -108,6 +109,7 @@ export default class DashboardWrapper extends React.Component {
         notificationDrawer={notificationDrawer}
         isNotificationDrawerExpanded={isNotificationDrawerExpanded}
         onPageResize={onPageResize}
+        {...pageProps}
       >
         {hasPageTemplateTitle && PageTemplateTitle}
         {children}
