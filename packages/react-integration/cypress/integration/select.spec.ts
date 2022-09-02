@@ -103,8 +103,8 @@ describe('Select Test', () => {
     find('#typeahead-select-select-typeahead').should('have.value', '');
     find('input:nth-child(1)').type('Flo');
     find('#typeahead-select-select-typeahead').should('have.value', 'Flo');
-    find('#typeahead-select-select-typeahead').trigger('keydown', { keyCode: 40 });
-    find('#typeahead-select-select-typeahead').trigger('keydown', { keyCode: 13 });
+    find('#typeahead-select-select-typeahead').type('{downArrow}');
+    find('#typeahead-select-select-typeahead').trigger('keydown', { key: 'Enter' });
     find('#typeahead-select-select-typeahead').should('have.value', 'Florida');
     find('button.pf-c-select__toggle-clear:first').click();
     find('#typeahead-select-select-typeahead').should('have.value', '');

@@ -202,7 +202,8 @@ describe('Wizard', () => {
     expect(wizard).toHaveStyle('width: 500px');
   });
 
-  it('calls onNavByIndex on nav item click', () => {
+  it('calls onNavByIndex on nav item click', async () => {
+    const user = userEvent.setup();
     const onNavByIndex = jest.fn();
 
     render(
@@ -212,11 +213,12 @@ describe('Wizard', () => {
       </Wizard>
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'Test step 2' }));
+    await user.click(screen.getByRole('button', { name: 'Test step 2' }));
     expect(onNavByIndex).toHaveBeenCalled();
   });
 
-  it('calls onNext and not onSave on next button click when not on the last step', () => {
+  it('calls onNext and not onSave on next button click when not on the last step', async () => {
+    const user = userEvent.setup();
     const onNext = jest.fn();
     const onSave = jest.fn();
 
@@ -227,13 +229,14 @@ describe('Wizard', () => {
       </Wizard>
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'Next' }));
+    await user.click(screen.getByRole('button', { name: 'Next' }));
 
     expect(onNext).toHaveBeenCalled();
     expect(onSave).not.toHaveBeenCalled();
   });
 
-  it('calls onBack on back button click', () => {
+  it('calls onBack on back button click', async () => {
+    const user = userEvent.setup();
     const onBack = jest.fn();
 
     render(
@@ -243,13 +246,14 @@ describe('Wizard', () => {
       </Wizard>
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'Test step 2' }));
-    userEvent.click(screen.getByRole('button', { name: 'Back' }));
+    await user.click(screen.getByRole('button', { name: 'Test step 2' }));
+    await user.click(screen.getByRole('button', { name: 'Back' }));
 
     expect(onBack).toHaveBeenCalled();
   });
 
-  it('calls onSave and not onClose on next button click when on the last step', () => {
+  it('calls onSave and not onClose on next button click when on the last step', async () => {
+    const user = userEvent.setup();
     const onSave = jest.fn();
     const onClose = jest.fn();
 
@@ -260,14 +264,15 @@ describe('Wizard', () => {
       </Wizard>
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'Test step 2' }));
-    userEvent.click(screen.getByRole('button', { name: 'Next' }));
+    await user.click(screen.getByRole('button', { name: 'Test step 2' }));
+    await user.click(screen.getByRole('button', { name: 'Next' }));
 
     expect(onSave).toHaveBeenCalled();
     expect(onClose).not.toHaveBeenCalled();
   });
 
-  it('calls onClose when onSave is not specified on next button click when on the last step', () => {
+  it('calls onClose when onSave is not specified on next button click when on the last step', async () => {
+    const user = userEvent.setup();
     const onClose = jest.fn();
 
     render(
@@ -277,13 +282,14 @@ describe('Wizard', () => {
       </Wizard>
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'Test step 2' }));
-    userEvent.click(screen.getByRole('button', { name: 'Next' }));
+    await user.click(screen.getByRole('button', { name: 'Test step 2' }));
+    await user.click(screen.getByRole('button', { name: 'Next' }));
 
     expect(onClose).toHaveBeenCalled();
   });
 
-  it('calls onClose on cancel link click', () => {
+  it('calls onClose on cancel link click', async () => {
+    const user = userEvent.setup();
     const onClose = jest.fn();
 
     render(
@@ -292,7 +298,7 @@ describe('Wizard', () => {
       </Wizard>
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
+    await user.click(screen.getByRole('button', { name: 'Cancel' }));
     expect(onClose).toHaveBeenCalled();
   });
 });

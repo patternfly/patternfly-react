@@ -20,11 +20,12 @@ test('passing class', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('checkbox passes value and event to onClick handler', () => {
+test('checkbox passes value and event to onClick handler', async () => {
   const onClickMock = jest.fn();
+  const user = userEvent.setup();
 
   render(<DropdownToggleAction id="action" aria-label="acton" onClick={onClickMock} />);
 
-  userEvent.click(screen.getByRole('button'));
+  await user.click(screen.getByRole('button'));
   expect(onClickMock).toHaveBeenCalled();
 });

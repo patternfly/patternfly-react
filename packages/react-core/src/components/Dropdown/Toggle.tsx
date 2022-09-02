@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownContext } from './dropdownConstants';
 import { css } from '@patternfly/react-styles';
-import { KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ToggleProps {
@@ -95,13 +95,12 @@ export class Toggle extends React.Component<ToggleProps> {
 
   onEscPress = (event: KeyboardEvent) => {
     const { parentRef, getMenuRef } = this.props;
-    const keyCode = event.keyCode || event.which;
     const menuRef = getMenuRef && getMenuRef();
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target as Node);
     if (
       this.props.isOpen &&
-      (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
+      (event.key === KeyTypes.Escape || event.key === 'Tab') &&
       (escFromToggle || escFromWithinMenu)
     ) {
       this.props.onToggle(false, event);

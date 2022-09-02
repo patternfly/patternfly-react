@@ -84,11 +84,12 @@ test('Vertical Tabs renders restricted tabs properly', () => {
   expect(component.container).toMatchSnapshot();
 });
 
-test('Vertical Tabs Tab onActivate is called correctly', () => {
+test('Vertical Tabs Tab onActivate is called correctly', async () => {
   const onActivateMock = jest.fn();
+  const user = userEvent.setup();
 
   const component = render(<VerticalTabsTab id="text-click" title="Click Me" onActivate={onActivateMock} />);
-  userEvent.click(screen.getByText('Click Me'));
+  await user.click(screen.getByText('Click Me'));
 
   expect(component.container).toMatchSnapshot();
   expect(onActivateMock).toHaveBeenCalled();

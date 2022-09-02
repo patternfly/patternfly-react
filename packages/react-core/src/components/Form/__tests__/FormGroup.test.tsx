@@ -216,7 +216,8 @@ describe('FormGroup', () => {
     expect(screen.queryByRole('radiogroup')).not.toBeInTheDocument();
   });
 
-  test('input should receive focus when clicking text label', () => {
+  test('input should receive focus when clicking text label', async () => {
+    const user = userEvent.setup();
     render(
       <FormGroup label="label" fieldId="native-label-element">
         <input id="native-label-element" />
@@ -226,12 +227,13 @@ describe('FormGroup', () => {
     const labelElement = screen.getByText('label');
     const input = screen.getByRole('textbox');
 
-    userEvent.click(labelElement);
+    await user.click(labelElement);
     expect(input).toHaveFocus();
   });
 
   describe('With multiple inputs per group', () => {
-    test('inputs should not receive focus when clicking text label', () => {
+    test('inputs should not receive focus when clicking text label', async () => {
+      const user = userEvent.setup();
       render(
         <FormGroup label="label" fieldId="span-label-element" role="group">
           <input id="span-label-element" />
@@ -242,7 +244,7 @@ describe('FormGroup', () => {
       const labelElement = screen.getByText('label');
       const inputs = screen.getAllByRole('textbox');
 
-      userEvent.click(labelElement);
+      await user.click(labelElement);
       inputs.forEach(input => {
         expect(input).not.toHaveFocus();
       });

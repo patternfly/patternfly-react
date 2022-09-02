@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import {
@@ -30,7 +30,7 @@ import {
   ISeparator
 } from '../TableTypes';
 
-const testCellActions = ({
+const testCellActions = async ({
   actions,
   actionResolver,
   areActionsDisabled,
@@ -45,6 +45,7 @@ const testCellActions = ({
   extraData?: IExtraData;
   expectDisabled?: boolean;
 }) => {
+  const user = userEvent.setup();
   const returnedData = cellActions(
     actions,
     actionResolver,
@@ -70,14 +71,16 @@ const testCellActions = ({
     expect(returnedData.children).toBeUndefined();
   } else {
     const { container } = render(returnedData.children as React.ReactElement<any>);
-    userEvent.click(container.querySelectorAll('.pf-c-dropdown button')[0]);
-    expect(container.querySelectorAll('.pf-c-dropdown__menu li button')).toHaveLength(expectDisabled ? 0 : 1);
+    await user.click(screen.getAllByRole('button')[0]);
+    await waitFor(() =>
+      expect(container.querySelectorAll('.pf-c-dropdown__menu li button')).toHaveLength(expectDisabled ? 0 : 1)
+    );
   }
 };
 
 describe('Transformer functions', () => {
   describe('selectable', () => {
-    test('main select', () => {
+    test('main select', async () => {
       const onSelect = jest.fn((_event, selected, rowId) => ({ selected, rowId }));
       const column = {
         extraParams: { onSelect }
@@ -85,24 +88,27 @@ describe('Transformer functions', () => {
       const returnedData = selectable('', { column, rowData: {} } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
 
+      const user = userEvent.setup();
+
       render(returnedData.children as React.ReactElement<any>);
 
-      userEvent.type(screen.getByRole('textbox'), 'a');
+      await user.type(screen.getByRole('textbox'), 'a');
       expect(onSelect).toHaveBeenCalledTimes(1);
       expect(onSelect.mock.results[0].value).toMatchObject({ rowId: -1, selected: false });
     });
 
-    test('selected', () => {
+    test('selected', async () => {
       const onSelect = jest.fn((_event, selected, rowId) => ({ selected, rowId }));
       const column = {
         extraParams: { onSelect }
       };
       const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: true } } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
+      const user = userEvent.setup();
 
       render(returnedData.children as React.ReactElement<any>);
 
-      userEvent.type(screen.getByRole('textbox'), 'a');
+      await user.type(screen.getByRole('textbox'), 'a');
       expect(onSelect).toHaveBeenCalledTimes(1);
       expect(onSelect.mock.results[0].value).toMatchObject({ rowId: 0, selected: false });
     });
@@ -118,41 +124,47 @@ describe('Transformer functions', () => {
   });
 
   describe('sortable', () => {
-    test('unsorted', () => {
+    test('unsorted', async () => {
       const onSort = jest.fn();
       const column = { extraParams: { sortBy: {}, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 });
       expect(returnedData).toMatchObject({ className: 'pf-c-table__sort' });
 
+      const user = userEvent.setup();
+
       render(returnedData.children as React.ReactElement<any>);
-      userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
       expect(onSort.mock.calls).toHaveLength(1);
     });
 
-    test('asc', () => {
+    test('asc', async () => {
       const onSort = jest.fn();
       const column = { extraParams: { sortBy: { index: 0, direction: 'asc' }, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 } as IExtra);
       expect(returnedData).toMatchSnapshot();
 
+      const user = userEvent.setup();
+
       render(returnedData.children as React.ReactElement<any>);
-      userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
       expect(onSort.mock.calls).toHaveLength(1);
     });
 
-    test('desc', () => {
+    test('desc', async () => {
       const onSort = jest.fn();
       const column = { extraParams: { sortBy: { index: 0, direction: 'desc' }, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__sort pf-m-selected' });
 
+      const user = userEvent.setup();
+
       render(returnedData.children as React.ReactElement<any>);
-      userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
       expect(onSort.mock.calls).toHaveLength(1);
     });
   });
 
-  test('simpleCellActions', () => {
+  test('simpleCellActions', async () => {
     const actions: IActions = [
       {
         title: 'Some',
@@ -205,7 +217,7 @@ describe('Transformer functions', () => {
     );
   });
 
-  test('collapsible', () => {
+  test('collapsible', async () => {
     const onCollapse = jest.fn();
     const rowData = {
       isOpen: true
@@ -216,8 +228,10 @@ describe('Transformer functions', () => {
     const returnedData = collapsible('', { rowIndex: 0, rowData, column });
     expect(returnedData).toMatchObject({ className: 'pf-c-table__toggle' });
 
+    const user = userEvent.setup();
+
     render(returnedData.children as React.ReactElement<any>);
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(onCollapse.mock.calls).toHaveLength(1);
   });
 

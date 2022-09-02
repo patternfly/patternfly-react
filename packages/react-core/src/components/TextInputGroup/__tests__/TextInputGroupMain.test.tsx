@@ -241,13 +241,14 @@ describe('TextInputGroupMain', () => {
     expect(onChangeMock).not.toHaveBeenCalled();
   });
 
-  it('calls the onChange callback when the input changes', () => {
+  it('calls the onChange callback when the input changes', async () => {
     const onChangeMock = jest.fn();
+    const user = userEvent.setup();
 
     render(<TextInputGroupMain onChange={onChangeMock}>Test</TextInputGroupMain>);
 
     const input = screen.getByRole('textbox');
-    userEvent.type(input, 'Test');
+    await user.type(input, 'Test');
 
     expect(onChangeMock).toHaveBeenCalledTimes(4);
   });
@@ -260,36 +261,39 @@ describe('TextInputGroupMain', () => {
     expect(onFocusMock).not.toHaveBeenCalled();
   });
 
-  it('calls the onFocus callback when the input is focused', () => {
+  it('calls the onFocus callback when the input is focused', async () => {
     const onFocusMock = jest.fn();
+    const user = userEvent.setup();
 
     render(<TextInputGroupMain onFocus={onFocusMock}>Test</TextInputGroupMain>);
 
     const input = screen.getByRole('textbox');
-    userEvent.click(input);
+    await user.click(input);
 
     expect(onFocusMock).toHaveBeenCalledTimes(1);
   });
 
-  it('does not call onBlur callback when the input does not lose focus', () => {
+  it('does not call onBlur callback when the input does not lose focus', async () => {
     const onBlurMock = jest.fn();
+    const user = userEvent.setup();
 
     render(<TextInputGroupMain onBlur={onBlurMock}>Test</TextInputGroupMain>);
 
     const input = screen.getByRole('textbox');
-    userEvent.click(input);
+    await user.click(input);
 
     expect(onBlurMock).not.toHaveBeenCalled();
   });
 
-  it('calls the onBlur callback when the input loses focus', () => {
+  it('calls the onBlur callback when the input loses focus', async() => {
     const onBlurMock = jest.fn();
+    const user = userEvent.setup();
 
     render(<TextInputGroupMain onBlur={onBlurMock}>Test</TextInputGroupMain>);
 
     const input = screen.getByRole('textbox');
-    userEvent.click(input);
-    userEvent.click(document.body);
+    await user.click(input);
+    await user.click(document.body);
 
     expect(onBlurMock).toHaveBeenCalledTimes(1);
   });

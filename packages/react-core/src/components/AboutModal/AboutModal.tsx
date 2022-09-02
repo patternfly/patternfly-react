@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { canUseDOM } from '../../helpers';
-import { KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 import { AboutModalContainer } from './AboutModalContainer';
 import { PickOptional } from '../../helpers/typeUtils';
 
@@ -71,7 +71,7 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
   }
 
   handleEscKeyClick = (event: KeyboardEvent) => {
-    if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
+    if (event.key === KeyTypes.Escape && this.props.isOpen) {
       this.props.onClose();
     }
   };

@@ -5,7 +5,7 @@ import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import { InputGroup } from '../InputGroup';
 import { Button, ButtonProps } from '../Button';
-import { KEY_CODES, ValidatedOptions } from '../../helpers';
+import { KeyTypes, ValidatedOptions } from '../../helpers';
 import { TextInput } from '../TextInput';
 
 export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
@@ -56,11 +56,11 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
 type DefaultKeyDownHandlerArgs = Pick<NumberInputProps, 'inputName' | 'onMinus' | 'onPlus'>;
 
 const defaultKeyDownHandler = (args: DefaultKeyDownHandlerArgs) => (event: React.KeyboardEvent<HTMLInputElement>) => {
-  if (KEY_CODES.ARROW_UP === event.keyCode && args.onPlus) {
+  if (KeyTypes.ArrowUp === event.key && args.onPlus) {
     event.preventDefault();
     args.onPlus(null, args.inputName);
   }
-  if (KEY_CODES.ARROW_DOWN === event.keyCode && args.onMinus) {
+  if (KeyTypes.ArrowDown === event.key && args.onMinus) {
     event.preventDefault();
     args.onMinus(null, args.inputName);
   }

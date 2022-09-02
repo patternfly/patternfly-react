@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Pagination, PaginationVariant } from '../index';
+import { KeyTypes } from '../../../helpers';
 
 describe('Pagination', () => {
   describe('component render', () => {
@@ -117,166 +118,204 @@ describe('Pagination', () => {
     describe('onSetPage', () => {
       const onSetPage = jest.fn();
 
-      test('should call first', () => {
+      test('should call first', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination onSetPage={onSetPage} itemCount={40} page={2} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to first page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to first page' }));
         expect(onSetPage).toHaveBeenCalled();
       });
 
-      test('should call previous', () => {
+      test('should call previous', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination onSetPage={onSetPage} itemCount={40} page={3} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to previous page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to previous page' }));
         expect(onSetPage).toHaveBeenCalled();
       });
 
-      test('should call next', () => {
+      test('should call next', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination onSetPage={onSetPage} itemCount={40} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to next page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to next page' }));
         expect(onSetPage).toHaveBeenCalled();
       });
 
-      test('should call last', () => {
+      test('should call last', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination onSetPage={onSetPage} itemCount={40} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to last page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to last page' }));
         expect(onSetPage).toHaveBeenCalled();
       });
 
-      test('should call input', () => {
-        render(<Pagination onSetPage={onSetPage} itemCount={40} />);
-
-        const input = screen.getByLabelText('Current page');
-        userEvent.type(input, '1');
-        userEvent.type(input, '{enter}');
-
-        expect(onSetPage).toHaveBeenCalled();
-      });
-
-      test('should call input wrong value', () => {
+      test('should call input', async () => {
+        const user = userEvent.setup();
+        
         render(<Pagination onSetPage={onSetPage} itemCount={40} />);
 
         const input = screen.getByLabelText('Current page');
-        userEvent.type(input, 'a');
-        userEvent.type(input, '{enter}');
+        await user.type(input, '1');
+        await user.type(input, `{${KeyTypes.Enter}}`);
 
         expect(onSetPage).toHaveBeenCalled();
       });
 
-      test('should call input huge page number', () => {
+      test('should call input wrong value', async () => {
+        const user = userEvent.setup();
+        
         render(<Pagination onSetPage={onSetPage} itemCount={40} />);
 
         const input = screen.getByLabelText('Current page');
-        userEvent.type(input, '10');
-        userEvent.type(input, '{enter}');
+        await user.type(input, 'a');
+        await user.type(input, `{${KeyTypes.Enter}}`);
 
         expect(onSetPage).toHaveBeenCalled();
       });
 
-      test('should call input small page number', () => {
+      test('should call input huge page number', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination onSetPage={onSetPage} itemCount={40} />);
 
         const input = screen.getByLabelText('Current page');
-        userEvent.type(input, '-10');
-        userEvent.type(input, '{enter}');
+        await user.type(input, '10');
+        await user.type(input, `{${KeyTypes.Enter}}`);
 
         expect(onSetPage).toHaveBeenCalled();
       });
 
-      test('should NOT call', () => {
+      test('should call input small page number', async () => {
+        const user = userEvent.setup();
+
+        render(<Pagination onSetPage={onSetPage} itemCount={40} />);
+
+        const input = screen.getByLabelText('Current page');
+        await user.type(input, '-10');
+        await user.type(input, `{${KeyTypes.Enter}}`);
+
+        expect(onSetPage).toHaveBeenCalled();
+      });
+
+      test('should NOT call', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination itemCount={40} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to last page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to last page' }));
         expect(onSetPage).not.toHaveBeenCalled();
       });
     });
 
     describe('onFirst', () => {
       const onFirst = jest.fn();
-      test('should call', () => {
+      test('should call', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination onFirstClick={onFirst} itemCount={40} page={2} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to first page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to first page' }));
         expect(onFirst).toHaveBeenCalled();
       });
 
-      test('should NOT call', () => {
+      test('should NOT call', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination itemCount={40} page={2} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to first page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to first page' }));
         expect(onFirst).not.toHaveBeenCalled();
       });
     });
 
     describe('onLast', () => {
       const onLast = jest.fn();
-      test('should call', () => {
+      test('should call', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination onLastClick={onLast} itemCount={40} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to last page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to last page' }));
         expect(onLast).toHaveBeenCalled();
       });
 
-      test('should NOT call', () => {
+      test('should NOT call', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination itemCount={40} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to last page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to last page' }));
         expect(onLast).not.toHaveBeenCalled();
       });
     });
 
     describe('onPrevious', () => {
       const onPrevious = jest.fn();
-      test('should call', () => {
+      test('should call', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination onPreviousClick={onPrevious} itemCount={40} page={3} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to previous page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to previous page' }));
         expect(onPrevious).toHaveBeenCalled();
       });
 
-      test('should NOT call', () => {
+      test('should NOT call', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination itemCount={40} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to previous page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to previous page' }));
         expect(onPrevious).not.toHaveBeenCalled();
       });
     });
 
     describe('onNext', () => {
       const onNext = jest.fn();
-      test('should call', () => {
+      test('should call', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination onNextClick={onNext} itemCount={40} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to next page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to next page' }));
         expect(onNext).toHaveBeenCalled();
       });
 
-      test('should NOT call', () => {
+      test('should NOT call', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination itemCount={40} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Go to previous page' }));
+        await user.click(screen.getByRole('button', { name: 'Go to previous page' }));
         expect(onNext).not.toHaveBeenCalled();
       });
     });
 
     describe('onPerPage', () => {
       const onPerPage = jest.fn();
-      test('should call', () => {
+      test('should call', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination onPerPageSelect={onPerPage} itemCount={40} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Items per page' }));
-        userEvent.click(screen.getByText('20 per page'));
+        await user.click(screen.getByRole('button', { name: 'Items per page' }));
+        await user.click(screen.getByText('20 per page'));
 
         expect(onPerPage).toHaveBeenCalled();
       });
 
-      test('should NOT call', () => {
+      test('should NOT call', async () => {
+        const user = userEvent.setup();
+
         render(<Pagination itemCount={40} />);
 
-        userEvent.click(screen.getByRole('button', { name: 'Items per page' }));
-        userEvent.click(screen.getByText('20 per page'));
+        await user.click(screen.getByRole('button', { name: 'Items per page' }));
+        await user.click(screen.getByText('20 per page'));
 
         expect(onPerPage).not.toHaveBeenCalled();
       });

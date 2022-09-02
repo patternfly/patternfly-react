@@ -52,8 +52,9 @@ describe('Alert', () => {
         expect(asFragment()).toMatchSnapshot();
       });
 
-      test('Action Close Button', () => {
+      test('Action Close Button', async () => {
         const onClose = jest.fn();
+        const user = userEvent.setup();
 
         render(
           <Alert
@@ -65,7 +66,7 @@ describe('Alert', () => {
           </Alert>
         );
 
-        userEvent.click(screen.getByLabelText('Close'));
+        await user.click(screen.getByLabelText('Close'));
         expect(onClose).toHaveBeenCalled();
       });
 

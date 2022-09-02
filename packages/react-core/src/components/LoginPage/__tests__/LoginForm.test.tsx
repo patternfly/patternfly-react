@@ -11,30 +11,33 @@ describe('LoginForm', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('should call onChangeUsername callback', () => {
+  test('should call onChangeUsername callback', async () => {
     const mockFn = jest.fn();
+    const user = userEvent.setup();
 
     render(<LoginForm onChangeUsername={mockFn} rememberMeLabel="Remember me" />);
 
-    userEvent.type(screen.getByText('Username'), 'updatedUserName');
+    await user.type(screen.getByText('Username'), 'updatedUserName');
     expect(mockFn).toHaveBeenCalled();
   });
 
-  test('should call onChangePassword callback', () => {
+  test('should call onChangePassword callback', async () => {
     const mockFn = jest.fn();
+    const user = userEvent.setup();
 
     render(<LoginForm onChangePassword={mockFn} rememberMeLabel="Remember me" />);
 
-    userEvent.type(screen.getByText('Password'), 'updatedPassword');
+    await user.type(screen.getByText('Password'), 'updatedPassword');
     expect(mockFn).toHaveBeenCalled();
   });
 
-  test('should call onChangeRememberMe callback', () => {
+  test('should call onChangeRememberMe callback', async () => {
     const mockFn = jest.fn();
+    const user = userEvent.setup();
 
     render(<LoginForm onChangeRememberMe={mockFn} rememberMeLabel="Remember me" />);
 
-    userEvent.click(screen.getByLabelText('Remember me'));
+    await user.click(screen.getByLabelText('Remember me'));
     expect(mockFn).toHaveBeenCalled();
   });
 

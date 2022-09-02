@@ -23,15 +23,16 @@ test('Renders ContextSelectorItem disabled and hovered', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('Verify onClick is called ', () => {
+test('Verify onClick is called ', async () => {
   const mockfn = jest.fn();
+  const user = userEvent.setup();
 
   render(
     <ContextSelectorItem onClick={mockfn} sendRef={jest.fn()} index={0}>
       My Project
     </ContextSelectorItem>
   );
-  userEvent.click(screen.getByRole('button'));
+  await user.click(screen.getByRole('button'));
 
   expect(mockfn.mock.calls).toHaveLength(1);
 });

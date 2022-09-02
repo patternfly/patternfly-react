@@ -104,8 +104,9 @@ test('CatalogTile href renders properly', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('CatalogTile onClick behaves properly', () => {
+test('CatalogTile onClick behaves properly', async () => {
   const onClickMock = jest.fn();
+  const user = userEvent.setup();
 
   render(
     <CatalogTile
@@ -119,6 +120,6 @@ test('CatalogTile onClick behaves properly', () => {
     />
   );
 
-  userEvent.click(screen.getByText('Patternfly'));
+  await user.click(screen.getByText('Patternfly'));
   expect(onClickMock).toHaveBeenCalled();
 });

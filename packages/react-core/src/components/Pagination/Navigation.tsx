@@ -8,7 +8,7 @@ import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-d
 import { Button, ButtonVariant } from '../Button';
 import { OnSetPage } from './Pagination';
 import { pluralize, PickOptional } from '../../helpers';
-import { KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 
 export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes for the container */
@@ -113,7 +113,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     lastPage: number,
     onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void
   ): void {
-    if (event.keyCode === KEY_CODES.ENTER) {
+    if (event.key === KeyTypes.Enter) {
       const inputPage = Navigation.parseInteger(this.state.userInputPage, lastPage) as number;
       onPageInput(event, Number.isNaN(inputPage) ? (page as number) : inputPage);
       this.handleNewPage(event, Number.isNaN(inputPage) ? (page as number) : inputPage);
