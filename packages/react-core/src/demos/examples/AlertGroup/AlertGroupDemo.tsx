@@ -30,8 +30,8 @@ import {
 
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import DashboardWrapper from '../examples/DashboardWrapper';
-import DashboardHeader from '../examples/DashboardHeader';
+import DashboardWrapper from '../DashboardWrapper';
+import DashboardHeader from '../DashboardHeader';
 
 interface NotificationProps {
   title: string;
@@ -43,7 +43,7 @@ interface NotificationProps {
   isNotificationRead: boolean;
 }
 
-const AlertGroupDemo: React.FunctionComponent = () => {
+export const AlertGroupDemo: React.FunctionComponent = () => {
   const maxDisplayedAlerts = 3;
   const minAlerts = 0;
   const maxAlerts = 100;
@@ -55,11 +55,10 @@ const AlertGroupDemo: React.FunctionComponent = () => {
   const [maxDisplayed, setMaxDisplayed] = React.useState(maxDisplayedAlerts);
   const [alerts, setAlerts] = React.useState<React.ReactElement<AlertProps>[]>([]);
   const [notifications, setNotifications] = React.useState<NotificationProps[]>([]);
-  const [dismissed, setDismissed] = React.useState(0);
 
   useEffect(() => {
     setOverflowMessage(buildOverflowMessage());
-  }, [maxDisplayed, notifications, alerts, dismissed]);
+  }, [maxDisplayed, notifications, alerts]);
 
   const handleNewNotification = (
     title: string,
@@ -86,7 +85,7 @@ const AlertGroupDemo: React.FunctionComponent = () => {
             <AlertActionCloseButton title={title} variantLabel={`${variant} alert`} onClose={() => removeAlert(key)} />
           }
           key={key}
-          uniqueId={key.toString()}
+          id={key.toString()}
         >
           <p>{description}</p>
         </Alert>,
@@ -107,7 +106,7 @@ const AlertGroupDemo: React.FunctionComponent = () => {
     notifications.find(notification => notification.key === key)?.isNotificationRead === true;
 
   const markNotificationRead = (key: React.Key) => {
-    setNotifications(prevNotifications => 
+    setNotifications(prevNotifications =>
       prevNotifications.map(notification =>
         notification.key === key ? { ...notification, isNotificationRead: true } : notification
       )
@@ -115,7 +114,9 @@ const AlertGroupDemo: React.FunctionComponent = () => {
   };
 
   const markAllNotificationsRead = () => {
-    setNotifications(prevNotifications => prevNotifications.map(notification => ({ ...notification, isNotificationRead: true })));
+    setNotifications(prevNotifications =>
+      prevNotifications.map(notification => ({ ...notification, isNotificationRead: true }))
+    );
   };
 
   const getUnreadNotificationsNumber = () =>
@@ -139,7 +140,7 @@ const AlertGroupDemo: React.FunctionComponent = () => {
   };
 
   const buildOverflowMessage = () => {
-    const overflow = alerts.length - maxDisplayed - dismissed;
+    const overflow = alerts.length - maxDisplayed;
     if (overflow > 0 && maxDisplayed > 0) {
       return `View ${overflow} more notifications in notification drawer`;
     }
@@ -160,14 +161,7 @@ const AlertGroupDemo: React.FunctionComponent = () => {
   };
 
   const removeAlert = (key: React.Key) => {
-    // console.log(alerts.filter(alert => alert.props.uniqueId !== key.toString())[0].props.uniqueId);
-    setAlerts(prevAlerts => prevAlerts.filter(alert => alert.props.uniqueId !== key.toString()));
-  };
-
-  const updateAlerts = () => {
-    setDismissed(prevDismissed => prevDismissed + 1);
-    // setOverflowMessage(buildOverflowMessage());
-    console.log(dismissed);
+    setAlerts(prevAlerts => prevAlerts.filter(alert => alert.props.id !== key.toString()));
   };
 
   const removeAllAlerts = () => {
@@ -288,7 +282,12 @@ const AlertGroupDemo: React.FunctionComponent = () => {
       <NotificationDrawerHeader count={getUnreadNotificationsNumber()}>
         <Dropdown
           onSelect={onDropdownSelect}
-          toggle={<KebabToggle onToggle={isActive => onDropdownToggle('dropdown-toggle-id-0', isActive)} id="dropdown-toggle-id-0" />}
+          toggle={
+            <KebabToggle
+              onToggle={isActive => onDropdownToggle('dropdown-toggle-id-0', isActive)}
+              id="dropdown-toggle-id-0"
+            />
+          }
           isOpen={openDropdownKey === 'toggle-id-0'}
           isPlain
           dropdownItems={notificationDrawerActions}
@@ -349,21 +348,46 @@ const AlertGroupDemo: React.FunctionComponent = () => {
       </PageSection>
 
       <PageSection variant={PageSectionVariants.light}>
-        <button onClick={addSuccessAlertNotification} type="button" className={alertButtonClasses} style={alertButtonStyle}>
+        <button
+          onClick={addSuccessAlertNotification}
+          type="button"
+          className={alertButtonClasses}
+          style={alertButtonStyle}
+        >
           Add toast success alert
         </button>
-        <button onClick={addDangerAlertNotification} type="button" className={alertButtonClasses} style={alertButtonStyle}>
+        <button
+          onClick={addDangerAlertNotification}
+          type="button"
+          className={alertButtonClasses}
+          style={alertButtonStyle}
+        >
           Add toast danger alert
         </button>
-        <button onClick={addInfoAlertNotification} type="button" className={alertButtonClasses} style={alertButtonStyle}>
+        <button
+          onClick={addInfoAlertNotification}
+          type="button"
+          className={alertButtonClasses}
+          style={alertButtonStyle}
+        >
           Add toast info alert
         </button>
         <br />
         <br />
-        <button onClick={addWarningAlertNotification} type="button" className={alertButtonClasses} style={alertButtonStyle}>
+        <button
+          onClick={addWarningAlertNotification}
+          type="button"
+          className={alertButtonClasses}
+          style={alertButtonStyle}
+        >
           Add toast warning alert
         </button>
-        <button onClick={addDefaultAlertNotification} type="button" className={alertButtonClasses} style={alertButtonStyle}>
+        <button
+          onClick={addDefaultAlertNotification}
+          type="button"
+          className={alertButtonClasses}
+          style={alertButtonStyle}
+        >
           Add toast default alert
         </button>
       </PageSection>
@@ -397,7 +421,3 @@ const AlertGroupDemo: React.FunctionComponent = () => {
     </DashboardWrapper>
   );
 };
-
-AlertGroupDemo.displayName = 'AlertGroupDemo';
-
-export default AlertGroupDemo;
