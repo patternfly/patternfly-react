@@ -31,7 +31,7 @@ import {
   getPaddingForSide,
   getPatternDefs,
   getDefaultData,
-  getDefaultPatternProps
+  useDefaultPatternProps
 } from '../ChartUtils';
 
 /**
@@ -498,7 +498,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     top: getPaddingForSide('top', padding, theme.chart.padding)
   };
 
-  const { defaultColorScale, defaultPatternScale, isPatternDefs, patternId } = getDefaultPatternProps({
+  const { defaultColorScale, defaultPatternScale, isPatternDefs, patternId } = useDefaultPatternProps({
     colorScale,
     patternScale,
     hasPatterns,

@@ -319,7 +319,7 @@ export const getDefaultPatternScale = ({ colorScale, patternId, patternScale }: 
  * Helper function to return default pattern props
  * @private
  */
-export const getDefaultPatternProps = ({
+export const useDefaultPatternProps = ({
   colorScale,
   hasPatterns,
   patternScale,
@@ -328,13 +328,9 @@ export const getDefaultPatternProps = ({
   const defaultColorScale = getDefaultColorScale(colorScale, themeColorScale);
   let defaultPatternScale = patternScale;
   let isPatternDefs = !patternScale && hasPatterns !== undefined;
-  let patternId;
+  const patternId = React.useMemo(() => (isPatternDefs ? getPatternId() : undefined), [isPatternDefs]);
 
   if (isPatternDefs) {
-    // TODO: React hooks cannot be used in regular functions (https://reactjs.org/docs/hooks-rules.html#only-call-hooks-from-react-functions).
-    // This call to 'useMemo()` needs to be replaced with something else, or this function needs to be converted to a React component.
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    patternId = React.useMemo(() => getPatternId(), []);
     defaultPatternScale = getDefaultPatternScale({
       colorScale: defaultColorScale,
       patternId,

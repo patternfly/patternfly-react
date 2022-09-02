@@ -19,7 +19,7 @@ import {
 import { VictoryStack, VictoryStackProps, VictoryStackTTargetType } from 'victory-stack';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getClassName, getDefaultPatternProps, getTheme, renderChildrenWithPatterns } from '../ChartUtils';
+import { getClassName, useDefaultPatternProps, getTheme, renderChildrenWithPatterns } from '../ChartUtils';
 
 /**
  * ChartStack is a wrapper component that renders a given set of children in a stacked layout. Like other wrapper
@@ -435,7 +435,7 @@ export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
     className: getClassName({ className: containerComponent.props.className }) // Override VictoryContainer class name
   });
 
-  const { defaultPatternScale } = getDefaultPatternProps({
+  const { defaultPatternScale } = useDefaultPatternProps({
     colorScale,
     hasPatterns,
     patternScale,
