@@ -14,6 +14,7 @@ import {
 export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [width, setWidth] = React.useState(100);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const onToggle = (isOpen: boolean) => {
     setIsOpen(isOpen);
@@ -62,28 +63,34 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
           aria-labelledby="overflowMenu-hasBreakpointOnContainer-slider-label"
         />
       </div>
-      <OverflowMenu style={{ width: `${width}%`, border: '1px solid black' }} hasBreakpointOnContainer breakpoint="sm">
-        <OverflowMenuContent>
-          <OverflowMenuItem>Item 1</OverflowMenuItem>
-          <OverflowMenuItem>Item 2</OverflowMenuItem>
-          <OverflowMenuGroup>
-            <OverflowMenuItem>Item 3</OverflowMenuItem>
-            <OverflowMenuItem>Item 4</OverflowMenuItem>
-            <OverflowMenuItem>Item 5</OverflowMenuItem>
-          </OverflowMenuGroup>
-        </OverflowMenuContent>
-        <OverflowMenuControl>
-          <Dropdown
-            onSelect={onSelect}
-            toggle={<KebabToggle onToggle={onToggle} />}
-            isOpen={isOpen}
-            isPlain
-            dropdownItems={dropdownItems}
-            isFlipEnabled
-            menuAppendTo="parent"
-          />
-        </OverflowMenuControl>
-      </OverflowMenu>
+      <div
+        ref={containerRef}
+        id="breakpoint-reference-container"
+        style={{ width: `${width}%`, border: '1px solid black' }}
+      >
+        <OverflowMenu breakpointReference={containerRef} breakpoint="sm">
+          <OverflowMenuContent>
+            <OverflowMenuItem>Item 1</OverflowMenuItem>
+            <OverflowMenuItem>Item 2</OverflowMenuItem>
+            <OverflowMenuGroup>
+              <OverflowMenuItem>Item 3</OverflowMenuItem>
+              <OverflowMenuItem>Item 4</OverflowMenuItem>
+              <OverflowMenuItem>Item 5</OverflowMenuItem>
+            </OverflowMenuGroup>
+          </OverflowMenuContent>
+          <OverflowMenuControl>
+            <Dropdown
+              onSelect={onSelect}
+              toggle={<KebabToggle onToggle={onToggle} />}
+              isOpen={isOpen}
+              isPlain
+              dropdownItems={dropdownItems}
+              isFlipEnabled
+              menuAppendTo="parent"
+            />
+          </OverflowMenuControl>
+        </OverflowMenu>
+      </div>
     </>
   );
 };

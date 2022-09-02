@@ -402,7 +402,7 @@ class OverflowMenuPersist extends React.Component {
 
 ### Breakpoint on container
 
-By passing in the `hasBreakpointOnContainer` property, the overflow menu's breakpoint will be relative to its own container width rather than the viewport width.
+By passing in the `breakpointReference` property, the overflow menu's breakpoint will be relative to the width of the reference container rather than the viewport width.
 
 You can change the container width in this example by adjusting the slider. As the container width changes, the overflow menu will change between a horizontal menu and a vertical dropdown despite the viewport width not changing.
 

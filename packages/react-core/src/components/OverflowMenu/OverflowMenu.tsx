@@ -13,14 +13,13 @@ export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Indicates breakpoint at which to switch between horizontal menu and vertical dropdown */
   breakpoint: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-  /** Flag to indicate that the specified breakpoint should be relative to the overflow menu
-   * container width instead of the viewport width.
-   */
-  hasBreakpointOnContainer?: boolean;
+  /** A container reference to base the specified breakpoint on instead of the viewport width. */
+  breakpointReference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
 }
 
 export interface OverflowMenuState extends React.HTMLProps<HTMLDivElement> {
   isBelowBreakpoint: boolean;
+  breakpointRef: HTMLElement;
 }
 
 export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMenuState> {
@@ -28,18 +27,42 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
   constructor(props: OverflowMenuProps) {
     super(props);
     this.state = {
-      isBelowBreakpoint: false
+      isBelowBreakpoint: false,
+      breakpointRef: null
     };
   }
 
-  overflowMenuRef = React.createRef<HTMLDivElement>();
   observer: any = () => {};
 
-  componentDidMount() {
-    this.handleResize();
+  getBreakpointRef() {
+    const { breakpointReference } = this.props;
+    if (breakpointReference) {
+      if ((breakpointReference as React.RefObject<any>).current) {
+        return (breakpointReference as React.RefObject<any>).current;
+      } else if (typeof breakpointReference === 'function') {
+        return breakpointReference();
+      }
+    }
+  }
 
-    const containerToObserve = this.props.hasBreakpointOnContainer && this.overflowMenuRef.current;
-    this.observer = getResizeObserver(containerToObserve, this.handleResizeWithDelay);
+  componentDidMount() {
+    const reference = this.getBreakpointRef();
+
+    this.setState({ breakpointRef: reference });
+    this.observer = getResizeObserver(reference, this.handleResizeWithDelay);
+    this.handleResize();
+  }
+
+  componentDidUpdate(prevProps: Readonly<OverflowMenuProps>, prevState: Readonly<OverflowMenuState>): void {
+    const reference = this.getBreakpointRef();
+
+    if (prevState.breakpointRef !== reference) {
+      // To remove any previous observer/event listener from componentDidMount before adding a new one
+      this.observer();
+      this.setState({ breakpointRef: reference });
+      this.observer = getResizeObserver(reference, this.handleResizeWithDelay);
+      this.handleResize();
+    }
   }
 
   componentWillUnmount() {
@@ -47,7 +70,6 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
   }
 
   handleResize = () => {
-    const { hasBreakpointOnContainer } = this.props;
     const breakpointWidth = globalWidthBreakpoints[this.props.breakpoint];
     if (!breakpointWidth) {
       // eslint-disable-next-line no-console
@@ -55,7 +77,7 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
       return;
     }
 
-    const relativeWidth = hasBreakpointOnContainer ? this.overflowMenuRef.current.clientWidth : window.innerWidth;
+    const relativeWidth = this.state.breakpointRef ? this.state.breakpointRef.clientWidth : window.innerWidth;
     const isBelowBreakpoint = relativeWidth < breakpointWidth;
     if (this.state.isBelowBreakpoint !== isBelowBreakpoint) {
       this.setState({ isBelowBreakpoint });
@@ -66,10 +88,10 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { className, breakpoint, children, hasBreakpointOnContainer, ...props } = this.props;
+    const { className, breakpoint, children, breakpointReference, ...props } = this.props;
 
     return (
-      <div {...props} className={css(styles.overflowMenu, className)} ref={this.overflowMenuRef}>
+      <div {...props} className={css(styles.overflowMenu, className)}>
         <OverflowMenuContext.Provider value={{ isBelowBreakpoint: this.state.isBelowBreakpoint }}>
           {children}
         </OverflowMenuContext.Provider>
