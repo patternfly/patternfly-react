@@ -13,7 +13,7 @@ import {
 
 export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [width, setWidth] = React.useState(100);
+  const [containerWidth, setContainerWidth] = React.useState(100);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   const onToggle = (isOpen: boolean) => {
@@ -25,7 +25,14 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
   };
 
   const onChange = (value: number) => {
-    setWidth(value);
+    setContainerWidth(value);
+  };
+
+  const containerStyles = {
+    width: `${containerWidth}%`,
+    padding: '1rem',
+    borderWidth: '2px',
+    borderStyle: 'dashed'
   };
 
   const dropdownItems = [
@@ -50,10 +57,11 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
     <>
       <div style={{ width: '100%', maxWidth: '400px' }}>
         <div>
-          <span id="overflowMenu-hasBreakpointOnContainer-slider-label">Current container width</span>: {width}%
+          <span id="overflowMenu-hasBreakpointOnContainer-slider-label">Current container width</span>: {containerWidth}
+          %
         </div>
         <Slider
-          value={width}
+          value={containerWidth}
           onChange={onChange}
           max={100}
           min={20}
@@ -63,11 +71,7 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
           aria-labelledby="overflowMenu-hasBreakpointOnContainer-slider-label"
         />
       </div>
-      <div
-        ref={containerRef}
-        id="breakpoint-reference-container"
-        style={{ width: `${width}%`, border: '1px solid black' }}
-      >
+      <div ref={containerRef} id="breakpoint-reference-container" style={containerStyles}>
         <OverflowMenu breakpointReference={containerRef} breakpoint="sm">
           <OverflowMenuContent>
             <OverflowMenuItem>Item 1</OverflowMenuItem>
