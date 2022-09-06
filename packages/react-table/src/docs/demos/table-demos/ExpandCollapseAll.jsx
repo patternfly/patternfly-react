@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Label, PageSection, Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Card, Label, PageSection, Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import { TextVariants } from '@patternfly/react-core';
 
