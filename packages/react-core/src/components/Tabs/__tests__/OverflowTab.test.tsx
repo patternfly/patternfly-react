@@ -170,13 +170,16 @@ test('Renders tabs passed via overflowingTabs when expanded', async () => {
     />
   );
 
-  userEvent.click(screen.getByRole('tab', { name: 'More' }));
+  await user.click(screen.getByRole('tab', { name: 'More' }));
 
   expect(screen.getByText('Tab one')).toBeVisible();
   expect(screen.getByText('Tab two')).toBeVisible();
 });
 
-test('Renders tabs passed via overflowingTabs when expanded in strict mode', () => {
+test('Renders tabs passed via overflowingTabs when expanded in strict mode', async () => {
+  const user = userEvent.setup();
+
+  const consoleError = jest.spyOn(console, 'error');
   const { asFragment } = render(
     <React.StrictMode>
       <OverflowTab
@@ -189,14 +192,17 @@ test('Renders tabs passed via overflowingTabs when expanded in strict mode', () 
     </React.StrictMode>
   );
 
-  userEvent.click(screen.getByRole('tab', { name: 'More' }));
+  await user.click(screen.getByRole('tab', { name: 'More' }));
 
+  expect(consoleError).not.toHaveBeenCalled();
   expect(screen.getByText('Tab one')).toBeVisible();
   expect(screen.getByText('Tab two')).toBeVisible();
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('Closes the overflowing tabs menu when a tab is selected', () => {
+test('Closes the overflowing tabs menu when a tab is selected', async () => {
+  const user = userEvent.setup();
+
   render(
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 0 }}>
       <OverflowTab
@@ -208,10 +214,10 @@ test('Closes the overflowing tabs menu when a tab is selected', () => {
     </TabsContext.Provider>
   );
 
-  userEvent.click(screen.getByRole('tab', { name: 'More' }));
+  await user.click(screen.getByRole('tab', { name: 'More' }));
 
   // rather than actually clicking a menu item here we click the Select button provided via our Menu mock to keep the mocks simpler
-  userEvent.click(screen.getByRole('button', { name: 'Select' }));
+  await user.click(screen.getByRole('button', { name: 'Select' }));
 
   expect(screen.queryByText('Tab two')).not.toBeInTheDocument();
 });

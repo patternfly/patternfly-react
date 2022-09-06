@@ -83,6 +83,7 @@ describe('Select', () => {
     });
 
     test('renders expanded in strict mode successfully', () => {
+      const consoleError = jest.spyOn(console, 'error');
       const { asFragment } = render(
         <React.StrictMode>
           <Select
@@ -97,6 +98,7 @@ describe('Select', () => {
           </Select>
         </React.StrictMode>
       );
+      expect(consoleError).not.toHaveBeenCalled();
       expect(asFragment()).toMatchSnapshot();
     });
 
@@ -544,7 +546,7 @@ describe('select with placeholder', () => {
 
 test('applies focus styling to the create option when reached via keyboard navigation', async () => {
   const user = userEvent.setup();
-  
+
   render(
     <Select variant={SelectVariant.typeahead} onToggle={() => {}} isOpen isCreatable>
       {selectOptions}

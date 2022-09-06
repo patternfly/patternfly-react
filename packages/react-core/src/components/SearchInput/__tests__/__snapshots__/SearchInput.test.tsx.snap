@@ -49,7 +49,7 @@ exports[`SearchInput advanced search 1`] = `
             aria-disabled="false"
             aria-label="Reset"
             class="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-15"
+            data-ouia-component-id="OUIA-Generated-Button-plain-17"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe="true"
             type="button"
@@ -75,7 +75,7 @@ exports[`SearchInput advanced search 1`] = `
         aria-expanded="false"
         aria-label="Open advanced search"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-6"
+        data-ouia-component-id="OUIA-Generated-Button-control-10"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
@@ -98,7 +98,7 @@ exports[`SearchInput advanced search 1`] = `
         aria-disabled="false"
         aria-label="Search"
         class="pf-c-button pf-m-control"
-        data-ouia-component-id="OUIA-Generated-Button-control-7"
+        data-ouia-component-id="OUIA-Generated-Button-control-11"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="submit"
@@ -118,7 +118,6 @@ exports[`SearchInput advanced search 1`] = `
         </svg>
       </button>
     </div>
-  </div>
   </div>
 </DocumentFragment>
 `;
@@ -244,7 +243,10 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
     </div>
     <span
       class=""
-      style="position: absolute; left: 0px; top: 0px; z-index: 9999; width: 0px;"
+      data-popper-escaped="true"
+      data-popper-placement="bottom-start"
+      data-popper-reference-hidden="true"
+      style="position: absolute; top: 0px; left: 0px; transform: translate(0px, 0px); width: 0px; z-index: 9999;"
     >
       <div
         class="pf-c-panel pf-m-raised"
@@ -484,7 +486,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
               aria-disabled="false"
               aria-label="Reset"
               class="pf-c-button pf-m-plain"
-              data-ouia-component-id="OUIA-Generated-Button-plain-17"
+              data-ouia-component-id="OUIA-Generated-Button-plain-11"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe="true"
               type="button"
@@ -510,7 +512,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
           aria-expanded="false"
           aria-label="Open advanced search"
           class="pf-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-9"
+          data-ouia-component-id="OUIA-Generated-Button-control-5"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           type="button"
@@ -533,7 +535,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
           aria-disabled="false"
           aria-label="Search"
           class="pf-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-11"
+          data-ouia-component-id="OUIA-Generated-Button-control-7"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           type="submit"

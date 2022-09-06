@@ -42,6 +42,7 @@ describe('Nav', () => {
   });
 
   test('Renders nav list in strict mode', () => {
+    const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = renderNav(
       <React.StrictMode>
         <Nav className="test-nav-class">
@@ -55,6 +56,7 @@ describe('Nav', () => {
         </Nav>
       </React.StrictMode>
     );
+    expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
 

@@ -31,7 +31,8 @@ describe('optionsMenu', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('renders in srtict mode', () => {
+  test('renders in strict mode', () => {
+    const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = render(
       <React.StrictMode>
         <OptionsMenu
@@ -43,6 +44,7 @@ describe('optionsMenu', () => {
         />
       </React.StrictMode>
     );
+    expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
 

@@ -63,7 +63,9 @@ describe('ApplicationLauncher', () => {
   });
 
   test('Renders in strict mode', () => {
+    const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = render(<ApplicationLauncher removeFindDomNode isOpen items={dropdownItems} />);
+    expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
 });

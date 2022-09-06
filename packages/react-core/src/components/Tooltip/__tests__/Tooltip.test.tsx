@@ -19,6 +19,7 @@ test('tooltip renders', () => {
 });
 
 test('tooltip renders in strict mode', () => {
+  const consoleError = jest.spyOn(console, 'error');
   const { asFragment } = render(
     <React.StrictMode>
       <Tooltip
@@ -34,5 +35,6 @@ test('tooltip renders in strict mode', () => {
       </Tooltip>
     </React.StrictMode>
   );
+  expect(consoleError).not.toHaveBeenCalled();
   expect(asFragment()).toMatchSnapshot();
 });

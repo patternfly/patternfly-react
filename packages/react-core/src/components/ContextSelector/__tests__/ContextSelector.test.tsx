@@ -30,6 +30,7 @@ describe('ContextSelector', () => {
   });
 
   test('Renders in strict mode', () => {
+    const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = render(
       <React.StrictMode>
         <ContextSelector removeFindDomNode isOpen id="render">
@@ -37,6 +38,7 @@ describe('ContextSelector', () => {
         </ContextSelector>
       </React.StrictMode>
     );
+    expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
 

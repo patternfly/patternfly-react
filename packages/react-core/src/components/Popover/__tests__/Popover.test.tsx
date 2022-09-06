@@ -92,6 +92,7 @@ test('popover can close from content (uncontrolled)', () => {
 });
 
 test('popover renders in strict mode', () => {
+  const consoleError = jest.spyOn(console, 'error');
   const { asFragment } = render(
     <React.StrictMode>
       <Popover
@@ -111,5 +112,6 @@ test('popover renders in strict mode', () => {
       </Popover>
     </React.StrictMode>
   );
+  expect(consoleError).not.toHaveBeenCalled();
   expect(asFragment()).toMatchSnapshot();
 });

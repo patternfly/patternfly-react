@@ -358,7 +358,7 @@ exports[`optionsMenu regular 1`] = `
 </DocumentFragment>
 `;
 
-exports[`optionsMenu renders in srtict mode 1`] = `
+exports[`optionsMenu renders in strict mode 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-options-menu pf-m-expanded"

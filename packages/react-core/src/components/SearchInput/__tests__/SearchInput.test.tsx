@@ -33,6 +33,32 @@ describe('SearchInput', () => {
     expect(screen.getByTestId('test-id').querySelector('.pf-c-badge')).toBeInTheDocument();
   });
 
+  test('renders search input in strict mode', async () => {
+    const user = userEvent.setup();
+
+    const consoleError = jest.spyOn(console, 'error');
+    const { asFragment } = render(
+      <React.StrictMode>
+        <SearchInput
+          attributes={[
+            { attr: 'username', display: 'Username' },
+            { attr: 'firstname', display: 'First name' }
+          ]}
+          advancedSearchDelimiter=":"
+          value="username:player firstname:john"
+          onChange={props.onChange}
+          onSearch={props.onSearch}
+          onClear={props.onClear}
+          removeFindDomNode
+        />
+      </React.StrictMode>
+    );
+    await user.click(screen.getByRole('button', { name: 'Search' }));
+    expect(consoleError).not.toHaveBeenCalled();
+    expect(props.onSearch).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('navigable search results', async () => {
     const user = userEvent.setup();
 
@@ -82,36 +108,9 @@ describe('SearchInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-<<<<<<< HEAD
   test('advanced search with custom attributes', async () => {
     const user = userEvent.setup();
 
-=======
-  test('renders search input in strict mode', () => {
-    const { asFragment } = render(
-      <React.StrictMode>
-        <SearchInput
-          attributes={[
-            { attr: 'username', display: 'Username' },
-            { attr: 'firstname', display: 'First name' }
-          ]}
-          advancedSearchDelimiter=":"
-          value="username:player firstname:john"
-          onChange={props.onChange}
-          onSearch={props.onSearch}
-          onClear={props.onClear}
-          removeFindDomNode
-        />
-      </React.StrictMode>
-    );
-    userEvent.click(screen.getByRole('button', { name: 'Search' }));
-
-    expect(props.onSearch).toHaveBeenCalled();
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('advanced search with custom attributes', () => {
->>>>>>> add unit tests to components for new prop
     const { asFragment } = render(
       <SearchInput
         data-testid="test-id"
@@ -136,54 +135,33 @@ describe('SearchInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Search' }));
 
-<<<<<<< HEAD
     await user.click(screen.getByRole('button', { name: 'Open advanced search' }));
-    expect(screen.getByTestId('test-id')).toContainElement(screen.getByText('First name'))
-=======
-    userEvent.click(screen.getByRole('button', { name: 'Open advanced search' }));
     expect(screen.getByTestId('test-id')).toContainElement(screen.getByText('First name'));
->>>>>>> add unit tests to components for new prop
 
     expect(props.onSearch).toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
 
-<<<<<<< HEAD
   test('advanced search with custom attributes and appendTo="inline', async () => {
     const user = userEvent.setup();
 
-=======
-  test('advanced search with custom attributes and appendTo="inline', () => {
->>>>>>> add unit tests to components for new prop
     const { container } = render(
       <SearchInput data-testid="test-id" attributes={[{ attr: 'test', display: 'test' }]} appendTo="inline" />
     );
 
-<<<<<<< HEAD
     await user.click(screen.getByRole('button', { name: 'Open advanced search' }));
-=======
-    userEvent.click(screen.getByRole('button', { name: 'Open advanced search' }));
->>>>>>> add unit tests to components for new prop
 
     expect(screen.getByTestId('test-id')).toContainElement(screen.getByText('test'));
   });
 
-<<<<<<< HEAD
   test('advanced search with custom attributes and appendTo external DOM element', async () => {
     const user = userEvent.setup();
 
-=======
-  test('advanced search with custom attributes and appendTo external DOM element', () => {
->>>>>>> add unit tests to components for new prop
     const { container } = render(
       <SearchInput data-testid="test-id" attributes={[{ attr: 'test', display: 'test' }]} appendTo={document.body} />
     );
 
-<<<<<<< HEAD
     await user.click(screen.getByRole('button', { name: 'Open advanced search' }));
-=======
-    userEvent.click(screen.getByRole('button', { name: 'Open advanced search' }));
->>>>>>> add unit tests to components for new prop
 
     expect(screen.getByTestId('test-id')).not.toContainElement(screen.getByText('test'));
     expect(document.body).toContainElement(screen.getByText('test'));

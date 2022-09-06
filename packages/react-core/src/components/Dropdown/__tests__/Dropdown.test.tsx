@@ -125,6 +125,7 @@ describe('Dropdown', () => {
   });
 
   test('Renders in strict mode', () => {
+    const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = render(
       <React.StrictMode>
         <Dropdown
@@ -135,6 +136,7 @@ describe('Dropdown', () => {
         />
       </React.StrictMode>
     );
+    expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
 });
