@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.196.6 (2022-09-06)
+
+
+### Bug Fixes
+
+* **Page:** avoid unnecessary re-renders ([#7940](https://github.com/patternfly/patternfly-react/issues/7940)) ([3e23142](https://github.com/patternfly/patternfly-react/commit/3e23142c489ae5b77357345dbbeaa63cc175ea05))
+
+
+
+
+
 ## 4.196.5 (2022-09-02)
 
 
