@@ -10,7 +10,8 @@ import {
   Select,
   SelectVariant,
   SelectOption,
-  PageSection
+  PageSection,
+  Label
 } from '@patternfly/react-core';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { rows, columns } from '../../examples/Data.jsx';
@@ -46,24 +47,25 @@ export const StaticBottomPagination = () => {
       titles={{
         paginationTitle: `${variant} pagination`
       }}
+      isStatic
     />
   );
 
   const renderLabel = labelText => {
     switch (labelText) {
       case 'Running':
-        return <Label color="green">{labelText}</Label>;
+        return <span><Label color="green">{labelText}</Label></span>;
       case 'Stopped':
-        return <Label color="orange">{labelText}</Label>;
+        return <span><Label color="orange">{labelText}</Label></span>;
       case 'Needs Maintenance':
-        return <Label color="blue">{labelText}</Label>;
+        return <span><Label color="blue">{labelText}</Label></span>;
       case 'Down':
-        return <Label color="red">{labelText}</Label>;
+        return <span><Label color="red">{labelText}</Label></span>;
     }
   };
 
   const tableToolbar = (
-    <Toolbar usePageInsets id="compact-toolbar">
+    <Toolbar usePageInsets id="pagination-toolbar">
       <ToolbarContent>
         <ToolbarItem>
           <Select

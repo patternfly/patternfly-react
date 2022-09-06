@@ -2612,7 +2612,7 @@ class ComplexPaginationTableDemo extends React.Component {
 }
 ```
 
-### Static bottom pagination
+### Static bottom pagination on mobile
 
 ```js isFullscreen file="table-demos/StaticBottomPagination.jsx"
 ```
