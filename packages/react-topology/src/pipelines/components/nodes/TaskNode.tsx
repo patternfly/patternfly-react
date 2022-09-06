@@ -281,6 +281,7 @@ const TaskNode: React.FC<TaskNodeProps> = ({
           <circle
             className={css(
               styles.topologyPipelinesStatusIconBackground,
+              styles.topologyPipelinesPillStatus,
               runStatusModifier,
               selected && 'pf-m-selected'
             )}

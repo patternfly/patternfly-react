@@ -209,7 +209,7 @@
 }
 
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-skipped .pf-topology-pipelines__pill-background {
-  --pf-topology-pipelines__pill-background--Fill: var(--pf-topology-pipelines__pill-background--m-skipped--Fill);
+  --pf-topology-pipelines__pill-background--Fill: var(--pf-topology-pipelines__pill-background--m-selected--m-skipped--Fill);
   --pf-topology-pipelines__pill-background--Stroke: var(--pf-topology-pipelines__pill-background--m-skipped--Stroke);
 }
 

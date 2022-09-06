@@ -515,8 +515,7 @@ export const Demos: DemoInterface[] = [
   {
     id: 'topology-pipelines-demo',
     name: 'Topology Pipelines Demo',
-    componentType: Examples.TopologyPipelineDemo,
-    isDefault: true
+    componentType: Examples.TopologyPipelineDemo
   },
   {
     id: 'treeview-demo',
