@@ -47,8 +47,6 @@ WizardNavItem,
 WizardNav,
 WizardHeader
 } from '@patternfly/react-core/next';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 PatternFly has two implementations of a `Wizard`. This newer `Wizard` takes a more explicit and declarative approach compared to the older implementation, which can be found under the [React](/components/wizard/react) tab.
 

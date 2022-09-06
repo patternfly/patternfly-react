@@ -6,7 +6,6 @@ import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import {
   DefaultWizardFooterProps,
   DefaultWizardNavProps,
-  isCustomWizardFooter,
   isWizardParentStep,
   WizardNavStepFunction,
   CustomWizardNavFunction
@@ -14,7 +13,6 @@ import {
 import { buildSteps, normalizeNavStep } from './utils';
 import { useWizardContext, WizardContextProvider } from './WizardContext';
 import { WizardStepProps } from './WizardStep';
-import { WizardFooter } from './WizardFooter';
 import { WizardToggle } from './WizardToggle';
 
 /**
@@ -39,6 +37,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   width?: number | string;
   /** Custom height of the wizard */
   height?: number | string;
+  /** Flag to unmount inactive steps instead of hiding. Defaults to true */
+  unmountInactiveSteps?: boolean;
   /** Callback function when a step in the nav is clicked */
   onNavByIndex?: WizardNavStepFunction;
   /** Callback function after next button is clicked */
@@ -130,7 +130,7 @@ export const Wizard = (props: WizardProps) => {
     <WizardContextProvider
       steps={steps}
       currentStepIndex={currentStepIndex}
-      footer={isCustomWizardFooter(footer) && footer}
+      footer={footer}
       onNext={goToNextStep}
       onBack={goToPrevStep}
       onClose={onClose}
@@ -138,27 +138,14 @@ export const Wizard = (props: WizardProps) => {
       goToStepByName={goToStepByName}
       goToStepByIndex={goToStepByIndex}
     >
-      <WizardInternal {...internalProps} footer={footer}>
-        {children}
-      </WizardInternal>
+      <WizardInternal {...internalProps}>{children}</WizardInternal>
     </WizardContextProvider>
   );
 };
 
 // eslint-disable-next-line patternfly-react/no-anonymous-functions
-const WizardInternal = ({ height, width, className, header, footer, nav, ...divProps }: WizardProps) => {
-  const { activeStep, steps, footer: customFooter, onNext, onBack, onClose, goToStepByIndex } = useWizardContext();
-
-  const wizardFooter = customFooter || (
-    <WizardFooter
-      activeStep={activeStep}
-      onNext={onNext}
-      onBack={onBack}
-      onClose={onClose}
-      disableBackButton={activeStep?.id === steps[0]?.id}
-      {...footer}
-    />
-  );
+const WizardInternal = ({ height, width, className, header, nav, unmountInactiveSteps, ...divProps }: WizardProps) => {
+  const { activeStep, steps, footer, goToStepByIndex } = useWizardContext();
 
   return (
     <div
@@ -173,9 +160,10 @@ const WizardInternal = ({ height, width, className, header, footer, nav, ...divP
       <WizardToggle
         steps={steps}
         activeStep={activeStep}
-        footer={wizardFooter}
+        footer={footer}
         nav={nav}
         goToStepByIndex={goToStepByIndex}
+        unmountInactiveSteps={unmountInactiveSteps}
       />
     </div>
   );

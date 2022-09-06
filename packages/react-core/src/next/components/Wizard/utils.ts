@@ -4,7 +4,7 @@ import { WizardControlStep, WizardNavStepData } from './types';
 import { WizardStep, WizardStepProps } from './WizardStep';
 
 function hasWizardStepProps(props: WizardStepProps | any): props is WizardStepProps {
-  return props.name !== undefined && props.id !== undefined && props.children !== undefined;
+  return props.name !== undefined && props.id !== undefined;
 }
 
 /**
@@ -14,29 +14,31 @@ function hasWizardStepProps(props: WizardStepProps | any): props is WizardStepPr
  */
 export const buildSteps = (children: React.ReactElement<WizardStepProps> | React.ReactElement<WizardStepProps>[]) =>
   React.Children.toArray(children).reduce((acc: WizardControlStep[], child) => {
-    if (React.isValidElement(child)) {
-      if (child.type === WizardStep || hasWizardStepProps(child.props)) {
-        // Omit "children" and use the whole "child" (WizardStep) for the component prop. Sub-steps will do the same.
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const { steps: subSteps, id, children, ...stepProps } = child.props as WizardStepProps;
+    if (React.isValidElement(child) && (child.type === WizardStep || hasWizardStepProps(child.props))) {
+      // Omit "children" and use the whole "child" (WizardStep) for the component prop. Sub-steps will do the same.
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { steps: subSteps, id, children, ...stepProps } = child.props as WizardStepProps;
 
-        acc.push({
-          id,
-          component: child,
-          ...stepProps,
-          ...(subSteps && {
-            subStepIds: subSteps?.map(subStep => {
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              const { children, ...subStepProps } = subStep.props;
-              acc.push({ ...subStepProps, component: subStep, parentId: id });
+      acc.push({
+        id,
+        component: child,
+        ...stepProps,
+        ...(subSteps && {
+          subStepIds: subSteps?.map(subStep => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const { children, ...subStepProps } = subStep.props;
+            acc.push({
+              ...subStepProps,
+              component: subStep,
+              parentId: id
+            });
 
-              return subStep.props.id;
-            })
+            return subStep.props.id;
           })
-        });
-      } else {
-        throw new Error('Wizard only accepts children of type WizardStep');
-      }
+        })
+      });
+    } else {
+      throw new Error('Wizard only accepts children of type WizardStep');
     }
 
     return acc;

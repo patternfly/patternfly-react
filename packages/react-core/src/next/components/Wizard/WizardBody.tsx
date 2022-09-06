@@ -8,7 +8,7 @@ import { css } from '@patternfly/react-styles';
  */
 
 export interface WizardBodyProps {
-  children?: React.ReactNode | React.ReactNode[];
+  children: React.ReactNode | React.ReactNode[];
   /** Set to true to remove the default body padding */
   hasNoBodyPadding?: boolean;
   /** An aria-label to use for the wrapper element */

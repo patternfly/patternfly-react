@@ -27,8 +27,6 @@ import {
   WizardNavItem,
   WizardHeader
 } from '@patternfly/react-core/next';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 const CustomWizardFooter = () => {
   const { activeStep, onNext, onBack, onClose } = useWizardContext();
@@ -100,14 +98,8 @@ const StepWithCustomFooter = () => {
 
   const footer = React.useMemo(
     () => (
-      <div className={css(styles.wizardFooter)}>
-        <Button
-          variant="primary"
-          type="submit"
-          onClick={() => onNext(goToNextStep)}
-          isLoading={isLoading}
-          isDisabled={isLoading}
-        >
+      <>
+        <Button variant="primary" onClick={() => onNext(goToNextStep)} isLoading={isLoading} isDisabled={isLoading}>
           Async Next
         </Button>
         <Button variant="secondary" onClick={onBack}>
@@ -116,7 +108,7 @@ const StepWithCustomFooter = () => {
         <Button variant="link" onClick={onClose}>
           Cancel
         </Button>
-      </div>
+      </>
     ),
     [isLoading, onBack, onClose, goToNextStep]
   );

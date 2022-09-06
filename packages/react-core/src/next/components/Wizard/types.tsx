@@ -57,6 +57,12 @@ export interface DefaultWizardFooterProps {
   backButtonText?: React.ReactNode;
   /** The Cancel button text */
   cancelButtonText?: React.ReactNode;
+  /** Next button callback */
+  onNext?: () => WizardNavStepFunction | void;
+  /** Back button callback */
+  onBack?: () => WizardNavStepFunction | void;
+  /** Cancel link callback */
+  onClose?: () => void;
 }
 
 /** Encompasses all step type variants that are internally controlled by the Wizard. */

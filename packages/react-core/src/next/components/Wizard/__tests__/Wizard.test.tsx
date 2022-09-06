@@ -301,4 +301,44 @@ describe('Wizard', () => {
     await user.click(screen.getByRole('button', { name: 'Cancel' }));
     expect(onClose).toHaveBeenCalled();
   });
+
+  it('unmounts inactive steps by default', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Wizard>
+        <WizardStep id="step-1" name="Test step 1">
+          Step 1 content
+        </WizardStep>
+        <WizardStep id="step-2" name="Test step 2">
+          Step 2 content
+        </WizardStep>
+      </Wizard>
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Test step 2' }));
+
+    expect(screen.queryByText('Step 1 content')).toBeNull();
+    expect(screen.getByText('Step 2 content')).toBeVisible();
+  });
+
+  it('keeps inactive steps mounted when unmountInactiveSteps is enabled', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Wizard unmountInactiveSteps={false}>
+        <WizardStep id="step-1" name="Test step 1">
+          Step 1 content
+        </WizardStep>
+        <WizardStep id="step-2" name="Test step 2">
+          Step 2 content
+        </WizardStep>
+      </Wizard>
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Test step 2' }));
+
+    expect(screen.getByText('Step 1 content')).toBeInTheDocument();
+    expect(screen.getByText('Step 2 content')).toBeVisible();
+  });
 });

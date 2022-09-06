@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { DefaultWizardFooterProps } from '../types';
 import { useWizardContext } from '../WizardContext';
 
 /**
@@ -6,7 +8,7 @@ import { useWizardContext } from '../WizardContext';
  * @param footer
  * @param stepId
  */
-export const useWizardFooter = (footer: React.ReactElement, stepId?: string | number) => {
+export const useWizardFooter = (footer: DefaultWizardFooterProps | React.ReactElement, stepId?: string | number) => {
   const { activeStep, setFooter } = useWizardContext();
 
   React.useEffect(() => {

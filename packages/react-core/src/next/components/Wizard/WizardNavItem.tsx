@@ -73,7 +73,10 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
         {...rest}
         {...(navItemComponent === 'a' ? { ...linkProps } : { ...btnProps })}
         {...(id && { id: id.toString() })}
-        onClick={() => (isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onNavItemClick(step))}
+        onClick={e => {
+          e.preventDefault();
+          isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onNavItemClick(step);
+        }}
         className={css(
           styles.wizardNavLink,
           isCurrent && styles.modifiers.current,
