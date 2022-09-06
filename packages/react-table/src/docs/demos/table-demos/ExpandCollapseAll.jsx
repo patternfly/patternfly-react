@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card, Label, PageSection, Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
+import { Card, Label, PageSection, Table, TableHeader, TableBody } from '@patternfly/react-table';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import { TextVariants } from '@patternfly/react-core';
 
-const columns = [
+const expandableColumns = [
   {
     title: 'Servers',
     cellFormatters: [expandable]
@@ -202,7 +202,7 @@ class ExpandCollapseAllTableDemo extends React.Component {
                 aria-label="Collapsible table"
                 onCollapse={onCollapse}
                 rows={rows}
-                cells={columns}
+                cells={expandableColumns}
                 canCollapseAll={true}
                 collapseAllAriaLabel={collapseAllAriaLabel}
                 expandId="expand-collapse-all-demo"
