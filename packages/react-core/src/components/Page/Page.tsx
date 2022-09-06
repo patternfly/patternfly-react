@@ -197,8 +197,17 @@ export class Page extends React.Component<PageProps, PageState> {
     if (mobileView !== this.state.mobileView) {
       this.setState({ mobileView });
     }
-    this.pageRef.current &&
-      this.setState({ width: this.pageRef.current.clientWidth, height: this.pageRef.current.clientHeight });
+    if (this.pageRef?.current) {
+      const currentWidth = this.pageRef.current.clientWidth;
+      const currentHeight = this.pageRef.current.clientHeight;
+
+      if (this.state.width !== currentWidth) {
+        this.setState({ width: currentWidth });
+      }
+      if (this.state.height !== currentHeight) {
+        this.setState({ height: currentHeight });
+      }
+    }
   };
 
   handleResize = debounce(this.resize, 250);
