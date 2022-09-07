@@ -7,6 +7,7 @@ export const nonShadowModifiers: string[] = [
   styles.modifiers.danger,
   styles.modifiers.warning,
   styles.modifiers.success,
+  styles.modifiers.skipped,
   styles.modifiers.inProgress
 ];
 
@@ -18,8 +19,9 @@ export const getRunStatusModifier = (status: RunStatus): string => {
     case RunStatus.Succeeded:
       return styles.modifiers.success;
     case RunStatus.Cancelled:
-    case RunStatus.Skipped:
       return styles.modifiers.warning;
+    case RunStatus.Skipped:
+      return styles.modifiers.skipped;
     case RunStatus.Running:
       return styles.modifiers.running;
     case RunStatus.InProgress:

@@ -55,7 +55,7 @@ const getModel = (layout: string): Model => {
     type: 'finally-group',
     children: finallyNodes.map(n => n.id),
     group: true,
-    style: { padding: 17 }
+    style: { padding: [35, 17] }
   };
 
   const spacerNodes = getSpacerNodes([...tasks, ...finallyNodes]);
@@ -75,7 +75,7 @@ const getModel = (layout: string): Model => {
 };
 
 export const PipelineLayout = withTopologySetup(() => {
-  useLayoutFactory((type: string, graph: Graph): Layout | undefined => new PipelineDagreLayout(graph));
+  useLayoutFactory((type: string, graph: Graph): Layout | undefined => new PipelineDagreLayout(graph, { nodesep: 95 }));
   useComponentFactory(pipelineComponentFactory);
   // support pan zoom and drag
   useComponentFactory(
