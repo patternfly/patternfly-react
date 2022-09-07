@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import { Button, ButtonVariant } from '../../components/Button';
-import { PageContextConsumer, PageContextProps } from './Page';
+import { PageContextConsumer, PageContextProps } from './PageContext';
 
 export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the page header */

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { formatBreakpointMods } from '../../helpers/util';
-import { PageContext } from '../Page/Page';
+import { PageContext } from './PageContext';
 
 export interface PageBreadcrumbProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes to apply to the PageBreadcrumb */
