@@ -20,130 +20,109 @@ import avatarImg from '../../Avatar/examples/avatarImg.svg';
 
 ### Basic dropdowns
 
-Basic dropdowns present all selectable items in a [menu](/components/menu) upon clicking a dropdown toggle. The `isOpen` property is used to determine whether the menu is opened or not.
+Basic dropdowns present users with a menu of items upon clicking a dropdown toggle. The `isOpen` property is used to determine whether the menu is opened or not.
 
-All of the items in a dropdown list are created using the `DropdownItem` component. The following example shows a few different states of dropdown items. For each item, you may: 
+All of the items in a dropdown list are created as `<DropdownItem>` components. The following example shows a few different states of dropdown items. As shown in this example, dropdown items may: 
 - Use the `tooltip` property to enable tooltip support. 
-- Use the `isDisabled` property to disable certain menu items.
-- Use the `isAriaDisabled` property to make a menu item appear disabled, while still being able to receive keyboard focus and display a tooltip.
+- Use the `isDisabled` property to disable an item.
+- Use the `isAriaDisabled` property to style an item as disabled, while still allowing the item to receive keyboard focus and display a tooltip.
 
-This example also uses a `DropdownSeparator` to add a horizontal line to separate sections of the menu. 
+This example also uses a `<DropdownSeparator>`, which adds a horizontal line that splits the menu into 2 sections.
 
 ```ts file='./DropdownBasic.tsx'
 ```
 
 ### With initial focus
 
-Use the `autoFocus` property on a `DropdownItem` to have it automatically receive focus upon clicking the dropdown toggle. `autoFocus` cannot be applied to disabled dropdown items.
+A `<DropdownItem>` may use the  `autoFocus` property so that it automatically receives focus when the menu is expanded. `autoFocus` cannot be applied to disabled dropdown items.
 
 ```ts file="./DropdownInitialSelection.tsx"
 ```
 
-### With groups
+### With groups of items
 
-Use the `DropdownGroup` component to group sets of dropdown items together. This allows you to group related items together to help contextualize the options. Use the `isGrouped` property on the `Dropdown` component to indicate that the dropdown contains grouped items.
+Use the `<DropdownGroup>` component to group sets of related dropdown items together. Use the `isGrouped` property on the `Dropdown` component to indicate that a dropdown contains grouped items.
 
 ```ts file="./DropdownGroups.tsx"
 ```
 
-### Disabled toggles
+### With item descriptions
 
-Use the `isDisabled` property within the `DropdownToggle` component to disable the expansion of the entire dropdown menu.
-
-```ts file="./DropdownDisabled.tsx"
-```
-
-### With menu item descriptions
-
-Assign a `description` property and respective value to each `DropdownItem` that you wish you offer more context to. This description will appear in the menu itself, under the dropdown item it corresponds to.
+A `<DropdownItem>` may use the `description` property to provide users with more context. This description will appear in the menu below the dropdown item it corresponds to.
 
 ```ts file="./DropdownDescriptions.tsx"
 ```
 
-### With images
+### With basic panel menus
 
-Use the `icon` property to display an image in the `DropdownToggle`. Icons can be used alongside text, as shown in the following example.
-
-```ts file="./DropdownImageAndText.tsx"
-```
-
-###  Toggle styling
-
-You can adjust the styling of the `DropdownToggle` as needed. The following example uses  `toggleVariant="primary"` to apply primary button styling. 
-
-```ts file="./DropdownPrimaryToggle.tsx"
-```
-
-### Plain with text toggle
-
-The following example uses the `isText` and `isPlain`properties to plainly style the `Dropdown` menu.
-
-```ts file="./DropdownPlainTextToggle.tsx"
-```
-
-### With kebab
-
-You may use a kebab icon instead of a text label to condense the toggle size.
-
-```ts file="./DropdownKebab.tsx"
-```
-
-### With badge
-
-You may use a badge instead of a text label. A badge allows you to display the number of dropdown menu items.
-
-```ts file="./DropdownBadge.tsx"
-```
-
-### Icon only
-
-You may use an icon instead of a text label. Set `toggleIndicator={null}` to remove the dropdown toggle caret.
-
-```ts file="./DropdownIconOnly.tsx"
-```
-
-### Right aligned menu
-
-The following example demonstrates a dropdown menu that is right aligned, which may be useful depending on the placement of your dropdown toggle and menu.
-
-```ts file="./DropdownPositionRight.tsx"
-```
-
-### Alignments on different breakpoints
-
-The following example adjusts the alignment of the dropdown menu based on the size of the user's browser window.
-
-```ts file="./DropdownAlignmentOnBreakpoints.tsx"
-```
-
-### Upwards directional menu
-
-The following example changes the direction of the menu from the default of downwards to an upwards direction instead. This may be useful depending on the placement of your dropdown toggle and menu.
-
-```ts file="./DropdownDirectionUp.tsx"
-```
-
-### Basic panel
-
-You may attach a custom menu.
+You may create a custom menu for a dropdown.
 
 ```ts file="./DropdownBasicPanel.tsx"
 ```
 
-### Router link
+### With router link items
 
-Router links can be included as a `<DropdownItem>` using the `component` property.
+`<DropdownItem>` may use the `component` property to include router links.
 
 ```ts file="./DropdownRouterLink.tsx"
 ```
 
+### Toggle styling
+
+You can adjust the styling of a `<DropdownToggle>` using the `toggleVariant` property. `toggleVariant` may be set to 'primary', 'secondary', or 'default'.
+
+```ts file="./DropdownPrimaryToggle.tsx"
+```
+
+### Plain text toggle
+
+A toggle may be styled as plain text using the `isText` and `isPlain`properties. The following example applies these properties to a `<Dropdown>` component.
+
+```ts file="./DropdownPlainTextToggle.tsx"
+```
+
+### Disabled toggles
+
+A `<DropdownToggle>` may use the `isDisabled` property to disable the expansion of the dropdown menu.
+
+```ts file="./DropdownDisabled.tsx"
+```
+
+### Icon toggle
+
+`<DropdownToggle>` may use a recognizable icon instead of a text label if text would take up too much room. Set the `toggleIndicator` property to `{null}` to remove the default dropdown toggle caret.
+
+```ts file="./DropdownIconOnly.tsx"
+```
+
+### Kebab toggle
+
+Use `<KebabToggle>` to replace the default text label and caret with a kebab icon. A kebab toggle can be used to indicate that a dropdown connects to a menu.
+
+```ts file="./DropdownKebab.tsx"
+```
+
+### Toggle with image
+
+The `icon` property can be used to display an image in the `DropdownToggle` and can be used alongside a text label.
+
+```ts file="./DropdownImageAndText.tsx"
+```
+
+### Toggle with badge
+
+You may use a `<BadgeToggle>` to display the number of dropdown menu items.
+
+```ts file="./DropdownBadge.tsx"
+```
+
 ### Split button dropdown toggle
 
-To combine an action button or other control with a dropdown menu, use a split buttonn. Use the `splitButtonItems` property to render the dropdown toggle as a split button.
+Use a split button to combine an action button or other control with a dropdown menu. A `<DropdownToggle>` can be rendered as a split button by using the `splitButtonItems` property. Elements to be displayed before the toggle button must be included in `splitButtonItems`. 
 
 Split buttons can utilize some of the same properties available to [button](/components/button) components, such as `isDisabled` to disable the button.
 
-The following example shows a split button with a checkbox, which is primarily used for bulk select operations on large data sets. This example also includes a text label, which can be ommitted.
+The following example shows a split button with a `<DropdownToggleCheckbox>`, which is primarily used for bulk select operations on large data sets. This example also includes a text label, which may be omitted.
 
 ```ts file="./DropdownSplitButtonText.tsx"
 ```
@@ -152,25 +131,46 @@ The following example shows a split button with a checkbox, which is primarily u
 
 Use the `toggleVariant` and `splitButtonVariant` properties to adjust the styling of split button toggles. 
 
-The following example uses `toggleVariant="primary"` and `splitButtonVariant="action"` to applying primary visual styling, and include an action.
+The following example uses `toggleVariant="primary"` to apply primary visual styling and `splitButtonVariant="action"` to include an action.
 
 ```ts file="./DropdownSplitButtonActionPrimary.tsx"
 ```
 
-### Split button checbox indeterminate state
+### Split button indeterminate state
 
-You may set a split button checkbox to begin in an indeterminate state, which signals to users that a decision needs to be made regarding the checkbox.
+You may set a `<DropdownToggleCheckbox>` to begin in an indeterminate state, which signals to users that a decision needs to be made regarding the checkbox.
 
 ```ts file="./DropdownSplitButtonIndeterminate.tsx"
 ```
 
+### Dropdown alignment
+
+The alignment of a dropdown menu may be changed to better fit the size of a user's browser window. A `<Dropdown>` may use the `alignments` property to indicate how the menu will align at different screen sizes.
+
+```ts file="./DropdownAlignmentOnBreakpoints.tsx"
+```
+
+### Right-positioned menu
+
+The following example demonstrates a `<Dropdown>` with a `position` equal to 'right'. By default, a dropdown menu is left-positioned, but a right-positioned menu may work better depending on where your dropdown is placed on a page.
+
+```ts file="./DropdownPositionRight.tsx"
+```
+
+### Upwards directional menu
+
+The following example demonstrates a `<Dropdown>` with a  `direction` equal to 'up'. This will alter the default menu behavior so that the dropdown menu is displayed above the dropdown toggle.
+
+```ts file="./DropdownDirectionUp.tsx"
+```
+
 ### Using document parent element
 
-Avoid passing in `document.body` when passing a value to the `menuAppendTo` prop on the Dropdown component, as it can cause accessibility issues. These issues can include, but are not limited to, being unable to enter the contents of the Dropdown options via assistive technologies (like keyboards or screen readers).
+Avoid passing in `document.body` to a `<Dropdown>` `menuAppendTo` property. Doing so can cause accessibility issues, such as being unable to navigate `<Dropdown>` options using keyboards or screen readers. 
 
-Instead append to `"parent"` to achieve the same result without sacrificing accessibility.
+Instead, append to ‘parent’ to avoid sacrificing accessibility.
 
-In this example, while, after making a selection, both variants retain focus on their respective Dropdown component, the options for the `document.body` variant cannot be navigated to via Voice Over.
+The following example demonstrates both methods of appending. After making a selection, both dropdowns retain focus on their respective `<Dropdown>`, but the options for the `document.body` variant cannot be navigated via Voice Over.
 
 ```ts file="./DropdownAppendBodyVsParent.tsx"
 ```
