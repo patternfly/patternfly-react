@@ -13,7 +13,10 @@ Menu,
 MenuContent,
 MenuList,
 MenuItem,
-MenuToggle
+MenuToggle,
+ToolbarGroup,
+ToolbarFilter,
+Badge
 } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
@@ -26,4 +29,9 @@ import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-tab
 ### Filtering with a single select
 
 ```ts file="./examples/FilterSingleSelect.tsx"
+```
+
+### Filtering with a checkbox select
+
+```ts file="./examples/FilterCheckboxSelect.tsx"
 ```
