@@ -12,41 +12,35 @@ import {
   SelectOption,
   PageSection
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tr, Th, Tbody, Td, ActionsColumn } from '@patternfly/react-table';
+import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { rows, columns } from '../../examples/Data.jsx';
 
-export const ComposableTable = () => {
+export const CompactTable = () => {
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
+  const [page, setPage] = React.useState(1);
+  const [perPage, setPerPage] = React.useState(10);
+  const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
+  const handleSetPage = (_evt, newPage, perPage, startIdx, endIdx) => {
+    setPaginatedRows(rows.slice(startIdx, endIdx));
+    setPage(newPage);
+  };
+  handlePerPageSelect = (_evt, newPerPage, newPage, startIdx, endIdx) => {
+    setPaginatedRows(rows.slice(startIdx, endIdx));
+    setPage(newPage);
+    setPerPage(newPerPage);
+  };
 
-  const columns = ['Contributor', 'Position', 'Location', 'Last seen', 'Numbers', 'Icons'];
-  const rows = [
-    ['Sam Jones', 'CSS guru', 'Not too sure', 'May 9, 2018', '0556'],
-    ['Amy Miller', 'Visual design', 'Raleigh', 'May 9, 2018', '9492'],
-    ['Steve Wilson', 'Visual design lead', 'Westford', 'May 9, 2018', '9929'],
-    ['Emma Jackson', 'Interaction design', 'Westford', 'May 9, 2018', '2217']
-  ];
-
-  const defaultActions = () => [
-    {
-      title: 'Settings',
-      // eslint-disable-next-line no-console
-      onClick: () => console.log(`clicked on Settings`)
-    },
-    {
-      title: 'Help',
-      // eslint-disable-next-line no-console
-      onClick: () => console.log(`clicked on Help`)
-    }
-  ];
   const renderPagination = (variant, isCompact) => (
     <Pagination
       isCompact={isCompact}
-      itemCount={36}
-      page={1}
-      perPage={10}
+      itemCount={rows.length}
+      page={page}
+      perPage={perPage}
+      onSetPage={handleSetPage}
+      onPerPageSelect={handlePerPageSelect}
       variant={variant}
       titles={{
         paginationTitle: `${variant} pagination`
@@ -89,37 +83,54 @@ export const ComposableTable = () => {
     </Toolbar>
   );
 
+  const renderLabel = labelText => {
+    switch (labelText) {
+      case 'Running':
+        return <Label color="green">{labelText}</Label>;
+      case 'Stopped':
+        return <Label color="orange">{labelText}</Label>;
+      case 'Needs Maintenance':
+        return <Label color="blue">{labelText}</Label>;
+      case 'Down':
+        return <Label color="red">{labelText}</Label>;
+    }
+  };
   return (
     <React.Fragment>
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection isFilled>
           <Card>
             {tableToolbar}
-            <TableComposable variant="compact" aria-label="Sortable Table">
+            <TableComposable variant="compact" aria-label="Compact Table">
               <Thead>
                 <Tr>
-                  {columns.map((column, columnIndex) => (
-                    <Th key={columnIndex}>{column}</Th>
-                  ))}
+                  <Th key={0}>{columns[0]}</Th>
+                  <Th key={1}>{columns[1]}</Th>
+                  <Th key={2}>{columns[2]}</Th>
+                  <Th key={3}>{columns[3]}</Th>
+                  <Th key={4}>{columns[4]}</Th>
+                  <Th key={5}>{columns[5]}</Th>
+                  <Th key={6}>{columns[6]}</Th>
+                  <Th key={7} width={10}>
+                    {columns[7]}
+                  </Th>
                 </Tr>
               </Thead>
               <Tbody>
-                {rows.map((row, rowIndex) => (
+                {paginatedRows.map((row, rowIndex) => (
                   <Tr key={rowIndex}>
                     <>
-                      <Td dataLabel={columns[0]}>{row[0]}</Td>
-                      <Td dataLabel={columns[1]}>{row[1]}</Td>
-                      <Td dataLabel={columns[2]}>{row[2]}</Td>
-                      <Td dataLabel={columns[3]}>{row[3]}</Td>
-                      <Td dataLabel={columns[4]}>{row[4]}</Td>
-                      <Td dataLabel={columns[5]}>
-                        <CheckIcon key="icon" />
-                      </Td>
-                      <Td dataLabel={'Action'}>
-                        <a href="#">Action link</a>
-                      </Td>
-                      <Td isActionCell>
-                        <ActionsColumn items={defaultActions()} />
+                      <Td dataLabel={columns[0]}>{row.name}</Td>
+                      <Td dataLabel={columns[1]}>{row.threads}</Td>
+                      <Td dataLabel={columns[2]}>{row.applications}</Td>
+                      <Td dataLabel={columns[3]}>{row.workspaces}</Td>
+                      <Td dataLabel={columns[4]}>{renderLabel(row.status)}</Td>
+                      <Td dataLabel={columns[5]}>{row.location}</Td>
+                      <Td dataLabel={columns[6]}>{row.lastModified}</Td>
+                      <Td dataLabel={columns[7]} modifier="truncate">
+                        <TableText>
+                          <a href="#">{row.url}</a>
+                        </TableText>
                       </Td>
                     </>
                   </Tr>
