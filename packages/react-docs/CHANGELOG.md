@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.97.11 (2022-09-07)
+
+
+### Bug Fixes
+
+* **dashboardheader:** update brand image src to absolute import path for codesandbox functionality ([#7935](https://github.com/patternfly/patternfly-react/issues/7935)) ([6190a7f](https://github.com/patternfly/patternfly-react/commit/6190a7fd51a9606c9f1bf06aa0ebd46215fbd341))
+
+
+
+
+
 ## 5.97.10 (2022-09-07)
 
 **Note:** Version bump only for package @patternfly/react-docs
