@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { Divider } from '../Divider';
-import { PageContext } from '../Page/Page';
+import { PageContext } from '../Page/PageContext';
 
 export enum ToolbarItemVariant {
   separator = 'separator',
