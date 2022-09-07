@@ -113,9 +113,9 @@ Aria-disabled buttons can operate as links, which also support tooltips.
 ```ts file="./ButtonAriaDisabledLinkTooltip.tsx"
 ```
 
-### Buttons with a count label
+### Button with count
 
-Buttons can now display a `count` in the form of a badge to indicate some value or number.
+Buttons can display a `count` in the form of a badge to indicate some value or number by passing in the `badgeProps` prop as a `BadgeCountProps` object. The `BadgeCountProps` object will handle `count`, `isRead`, and `className` props for the badge.
 
 ```ts file="./ButtonCount.tsx"
 ```

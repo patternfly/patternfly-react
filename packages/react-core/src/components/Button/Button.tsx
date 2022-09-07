@@ -21,6 +21,16 @@ export enum ButtonType {
   submit = 'submit',
   reset = 'reset'
 }
+
+export interface BadgeCountProps {
+  /**  Adds styling to the badge to indicate it has been read */
+  isRead?: boolean;
+  /** Adds count number right of button */
+  count?: number;
+  /** Additional classes added to the Badge */
+  className?: string;
+}
+
 export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'ref'>, OUIAProps {
   /** Content rendered inside the button */
   children?: React.ReactNode;
@@ -68,10 +78,8 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   isDanger?: boolean;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
-  /** Adds count number right of button */
-  count?: number;
-  /**  Adds styling to the badge to indicate it has been read */
-  isRead?: boolean;
+  /** Adds count number to button */
+  badgeProps?: BadgeCountProps;
 }
 
 const ButtonBase: React.FunctionComponent<ButtonProps> = ({
@@ -100,8 +108,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   ouiaSafe = true,
   tabIndex = null,
   innerRef,
-  count,
-  isRead = false,
+  badgeProps,
   ...props
 }: ButtonProps) => {
   const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
@@ -175,9 +182,9 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       {variant !== ButtonVariant.plain && icon && iconPosition === 'right' && (
         <span className={css(styles.buttonIcon, styles.modifiers.end)}>{icon}</span>
       )}
-      {count && (
-        <span className={css(styles.buttonCount)}>
-          <Badge isRead={isRead}>{count}</Badge>
+      {badgeProps && (
+        <span className={css(styles.buttonCount, badgeProps.className)}>
+          <Badge isRead={badgeProps.isRead}>{badgeProps.count}</Badge>
         </span>
       )}
     </Component>
