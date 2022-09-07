@@ -54,6 +54,21 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
     'aria-label': null as string
   };
 
+  inputRef = React.createRef<HTMLTextAreaElement>();
+
+  private setAutoHeight = (field: HTMLTextAreaElement) => {
+    field.style.setProperty(heightToken.name, 'inherit');
+    const computed = window.getComputedStyle(field);
+    // Calculate the height
+    const height =
+      parseInt(computed.getPropertyValue('border-top-width')) +
+      parseInt(computed.getPropertyValue('padding-top')) +
+      field.scrollHeight +
+      parseInt(computed.getPropertyValue('padding-bottom')) +
+      parseInt(computed.getPropertyValue('border-bottom-width'));
+    field.style.setProperty(heightToken.name, `${height}px`);
+  };
+
   constructor(props: TextAreaProps) {
     super(props);
     if (!props.id && !props['aria-label']) {
@@ -62,20 +77,19 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
     }
   }
 
+  componentDidMount(): void {
+    const inputRef = this.props.innerRef || this.inputRef;
+    if (this.props.autoResize && canUseDOM) {
+      const field = inputRef.current;
+      this.setAutoHeight(field);
+    }
+  }
+
   private handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     // https://gomakethings.com/automatically-expand-a-textarea-as-the-user-types-using-vanilla-javascript/
     const field = event.currentTarget;
     if (this.props.autoResize && canUseDOM) {
-      field.style.setProperty(heightToken.name, 'inherit');
-      const computed = window.getComputedStyle(field);
-      // Calculate the height
-      const height =
-        parseInt(computed.getPropertyValue('border-top-width')) +
-        parseInt(computed.getPropertyValue('padding-top')) +
-        field.scrollHeight +
-        parseInt(computed.getPropertyValue('padding-bottom')) +
-        parseInt(computed.getPropertyValue('border-bottom-width'));
-      field.style.setProperty(heightToken.name, `${height}px`);
+      this.setAutoHeight(field);
     }
     if (this.props.onChange) {
       this.props.onChange(field.value, event);
@@ -118,14 +132,14 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
         required={isRequired}
         disabled={isDisabled || disabled}
         readOnly={isReadOnly || readOnly}
-        ref={innerRef}
+        ref={innerRef || this.inputRef}
         {...props}
       />
     );
   }
 }
 
-export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>((props, ref) => (
+export const TextArea = React.forwardRef((props: TextAreaProps, ref: React.Ref<HTMLTextAreaElement>) => (
   <TextAreaBase {...props} innerRef={ref as React.MutableRefObject<any>} />
 ));
 TextArea.displayName = 'TextArea';
