@@ -88,3 +88,92 @@ exports[`Matches snapshot when expanded 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Renders tabs passed via overflowingTabs when expanded in strict mode 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="popper-mock"
+  >
+    <div
+      data-testid="trigger"
+    >
+      <li
+        class="pf-c-tabs__item pf-m-overflow"
+        role="presentation"
+      >
+        <button
+          aria-expanded="true"
+          aria-haspopup="menu"
+          class="pf-c-tabs__link pf-m-expanded"
+          role="tab"
+          type="button"
+        >
+          <span
+            class="pf-c-tabs__item-text"
+          >
+            More
+          </span>
+          <span
+            class="pf-c-tabs__link-toggle-icon"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 256 512"
+              width="1em"
+            >
+              <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              />
+            </svg>
+          </span>
+        </button>
+      </li>
+    </div>
+    <div
+      data-testid="popper"
+    >
+      <div
+        data-testid="menu-mock"
+      >
+        <div
+          data-testid="menu-content-mock"
+        >
+          <ul
+            data-testid="menu-list-mock"
+          >
+            <li
+              id="1-menu-item-mock"
+            >
+              Tab one
+              <p>
+                Selected: false
+              </p>
+            </li>
+            <li
+              id="2-menu-item-mock"
+            >
+              Tab two
+              <p>
+                Selected: false
+              </p>
+            </li>
+          </ul>
+        </div>
+        <button>
+          Select
+        </button>
+      </div>
+    </div>
+    <p>
+      Popper matches trigger width: false
+    </p>
+    <p>
+      Append to class name: pf-c-tabs__item pf-m-overflow
+    </p>
+  </div>
+</DocumentFragment>
+`;

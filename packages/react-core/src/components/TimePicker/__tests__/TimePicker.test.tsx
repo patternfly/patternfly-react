@@ -6,6 +6,21 @@ import userEvent from '@testing-library/user-event';
 import { TimePicker, TimePickerProps } from '../TimePicker';
 
 describe('TimePicker', () => {
+  test('Renders in strict mode', () => {
+    const validateTime = (_time: string) => {
+      return true;
+    };
+
+    const consoleError = jest.spyOn(console, 'error');
+    const { asFragment } = render(
+      <React.StrictMode>
+        <TimePicker removeFindDomNode value={'00:00'} validateTime={validateTime} aria-label="time picker" />
+      </React.StrictMode>
+    );
+    expect(consoleError).not.toHaveBeenCalled();
+    expect(screen.getByLabelText('time picker')).not.toHaveClass('pf-m-error');
+  });
+
   describe('test timepicker onChange method with valid values', () => {
     const testOnChange = async ({
       inputProps,
@@ -20,7 +35,7 @@ describe('TimePicker', () => {
       render(<TimePicker onChange={onChange} {...inputProps} aria-label="time picker" />);
 
       await user.type(screen.getByLabelText('time picker'), String(inputProps.value));
-      expect(onChange).toHaveBeenCalledWith(inputProps.value, expects.hour, expects.minutes, expects.seconds, true)
+      expect(onChange).toHaveBeenCalledWith(inputProps.value, expects.hour, expects.minutes, expects.seconds, true);
     };
 
     test('should return the correct value using the AM/PM pattern - midnight', async () => {

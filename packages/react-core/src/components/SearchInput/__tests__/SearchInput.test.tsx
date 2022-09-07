@@ -33,6 +33,32 @@ describe('SearchInput', () => {
     expect(screen.getByTestId('test-id').querySelector('.pf-c-badge')).toBeInTheDocument();
   });
 
+  test('renders search input in strict mode', async () => {
+    const user = userEvent.setup();
+
+    const consoleError = jest.spyOn(console, 'error');
+    const { asFragment } = render(
+      <React.StrictMode>
+        <SearchInput
+          attributes={[
+            { attr: 'username', display: 'Username' },
+            { attr: 'firstname', display: 'First name' }
+          ]}
+          advancedSearchDelimiter=":"
+          value="username:player firstname:john"
+          onChange={props.onChange}
+          onSearch={props.onSearch}
+          onClear={props.onClear}
+          removeFindDomNode
+        />
+      </React.StrictMode>
+    );
+    await user.click(screen.getByRole('button', { name: 'Search' }));
+    expect(consoleError).not.toHaveBeenCalled();
+    expect(props.onSearch).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('navigable search results', async () => {
     const user = userEvent.setup();
 
@@ -110,7 +136,7 @@ describe('SearchInput', () => {
     await user.click(screen.getByRole('button', { name: 'Search' }));
 
     await user.click(screen.getByRole('button', { name: 'Open advanced search' }));
-    expect(screen.getByTestId('test-id')).toContainElement(screen.getByText('First name'))
+    expect(screen.getByTestId('test-id')).toContainElement(screen.getByText('First name'));
 
     expect(props.onSearch).toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();

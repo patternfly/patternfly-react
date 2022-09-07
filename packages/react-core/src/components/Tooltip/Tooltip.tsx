@@ -138,6 +138,8 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
   isAppLauncher?: boolean;
   /** @deprecated - no longer used */
   tippyProps?: Partial<TippyProps>;
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
 }
 
 // id for associating trigger with the content aria-describedby or aria-labelledby
@@ -168,6 +170,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   boundary,
   isAppLauncher,
   tippyProps,
+  removeFindDomNode = false,
   ...rest
 }: TooltipProps) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -331,6 +334,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       enableFlip={enableFlip}
       zIndex={zIndex}
       flipBehavior={flipBehavior}
+      removeFindDomNode={removeFindDomNode}
     />
   );
 };

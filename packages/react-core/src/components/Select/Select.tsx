@@ -180,6 +180,8 @@ export interface SelectProps
    * appended inline, e.g. `menuAppendTo="parent"`
    */
   isFlipEnabled?: boolean;
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
 }
 
 export interface SelectState {
@@ -254,7 +256,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isInputFilterPersisted: false,
     isCreateSelectOptionObject: false,
     shouldResetOnSelect: true,
-    isFlipEnabled: false
+    isFlipEnabled: false,
+    removeFindDomNode: false
   };
 
   state: SelectState = {
@@ -1005,6 +1008,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       isCreateSelectOptionObject,
       shouldResetOnSelect,
       isFlipEnabled,
+      removeFindDomNode,
       ...props
     } = this.props;
     const {
@@ -1448,6 +1452,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 direction={direction}
                 appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
                 isVisible={isOpen}
+                removeFindDomNode={removeFindDomNode}
               />
             )}
           </SelectContext.Provider>

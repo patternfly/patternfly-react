@@ -7,3 +7,13 @@ exports[`tooltip renders 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`tooltip renders in strict mode 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      Toggle tooltip
+    </div>
+  </div>
+</DocumentFragment>
+`;

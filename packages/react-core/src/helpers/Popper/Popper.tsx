@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { FindRefWrapper } from './FindRefWrapper';
 import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Placement, BasePlacement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
+import { FindRefWrapper } from './FindRefWrapper';
 import '@patternfly/react-styles/css/components/Popper/Popper.css';
 
 const hash = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
@@ -38,6 +38,7 @@ export interface PopperProps {
   /**
    * The reference element to which the Popover is relatively placed to.
    * Use either trigger or reference, not both.
+   * Passing this property or the removeFindDomNode property, will bypass the use of findDOMNode for the trigger in react strict mode.
    */
   reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** The popper (menu/tooltip/popover) element */
@@ -122,6 +123,10 @@ export interface PopperProps {
         | 'right-start'
         | 'right-end'
       )[];
+  /** @beta Bypasses the use of findDOMNode for both the popper and trigger in react strict mode. Without this flag, the trigger and popper will require passed references via the reference property (trigger) and popperRef property (popper) for strict mode. */
+  removeFindDomNode?: boolean;
+  /** @beta Reference to the popper (menu/tooltip/popover) element. Passing this property or the removeFindDomNode property, will bypass the use of findDOMNode for the popper in react strict mode. The popper property is still required. */
+  popperRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -149,11 +154,13 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   onDocumentKeyDown,
   enableFlip = true,
   flipBehavior = 'flip',
-  reference
+  reference,
+  removeFindDomNode = false,
+  popperRef
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [refElement, setRefElement] = React.useState<HTMLElement>(null);
-  const [popperElement, setPopperElement] = React.useState(null);
+  const [popperElement, setPopperElement] = React.useState<HTMLElement>(null);
   const [ready, setReady] = React.useState(false);
   const refOrTrigger = refElement || triggerElement;
   const onDocumentClickCallback = React.useCallback(
@@ -173,6 +180,16 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       }
     }
   }, [reference]);
+  React.useEffect(() => {
+    // When the popperRef is defined or the popper visiblity changes, ensure the popper element is up to date
+    if (popperRef) {
+      if ((popperRef as React.RefObject<any>).current) {
+        setPopperElement((popperRef as React.RefObject<any>).current);
+      } else if (typeof popperRef === 'function') {
+        setPopperElement(popperRef());
+      }
+    }
+  }, [isVisible, popperRef]);
   const addEventListener = (listener: any, element: Document | HTMLElement, event: string) => {
     if (listener && element) {
       element.addEventListener(event, listener);
@@ -305,7 +322,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     return positionModifiers.top;
   };
 
-  const menuWithPopper = React.cloneElement(popper, {
+  const options = {
     className: css(popper.props && popper.props.className, positionModifiers && modifierFromPopperPosition()),
     style: {
       ...((popper.props && popper.props.style) || {}),
@@ -313,7 +330,9 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       zIndex
     },
     ...attributes.popper
-  });
+  };
+
+  const menuWithPopper = React.cloneElement(popper, options);
 
   const getTarget: () => HTMLElement = () => {
     if (typeof appendTo === 'function') {
@@ -322,17 +341,40 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     return appendTo;
   };
 
+  /**
+   * To enable strict mode, the popper must either have its reference defined via the popperRef property,
+   * or the removeFindDomNode flag must be present. Even if the reference is passed in, unlike the trigger,
+   * the popper property must still be passed.
+   * The trigger must similarly have either its reference defined via the reference property, or the
+   * removeFindDomNode flag must be present. The trigger property is not required when the reference is passed.
+   *
+   * Strict mode may be enabled by passing both reference properties to Popper, or by passing the
+   * removeFindDomNode flag with either reference property, or by solely passing the removeFindDomNode
+   * flag.
+   */
+  let popperPortal;
+  if (removeFindDomNode) {
+    // If removeFindDomNode is passed, use the removeFindDomNode method of wrapping divs
+    popperPortal = <div ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>{menuWithPopper}</div>;
+  } else if (popperRef) {
+    // If removeFindDomNode is not passed and popperRef is passed, use the popperRef method
+    popperPortal = menuWithPopper;
+  } else {
+    // If neither removeFindDomNode and popperRef exist, use the old method of FindRefWrapper
+    popperPortal = (
+      <FindRefWrapper onFoundRef={(foundRef: any) => setPopperElement(foundRef)}>{menuWithPopper}</FindRefWrapper>
+    );
+  }
+
   return (
     <>
-      {!reference && trigger && (
+      {!reference && trigger && React.isValidElement(trigger) && !removeFindDomNode && (
         <FindRefWrapper onFoundRef={(foundRef: any) => setTriggerElement(foundRef)}>{trigger}</FindRefWrapper>
       )}
-      {ready &&
-        isVisible &&
-        ReactDOM.createPortal(
-          <FindRefWrapper onFoundRef={(foundRef: any) => setPopperElement(foundRef)}>{menuWithPopper}</FindRefWrapper>,
-          getTarget()
-        )}
+      {!reference && trigger && React.isValidElement(trigger) && removeFindDomNode && (
+        <div ref={node => setTriggerElement(node?.firstElementChild as HTMLElement)}>{trigger}</div>
+      )}
+      {ready && isVisible && ReactDOM.createPortal(popperPortal, getTarget())}
     </>
   );
 };

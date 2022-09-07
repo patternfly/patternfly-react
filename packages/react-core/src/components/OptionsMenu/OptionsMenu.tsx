@@ -47,6 +47,8 @@ export interface OptionsMenuProps
    * menuAppendTo={document.getElementById('target')}
    */
   menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
 }
 
 export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
@@ -61,6 +63,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
   menuAppendTo = 'inline',
   ouiaId,
   ouiaSafe = true,
+  removeFindDomNode = false,
   ...props
 }: OptionsMenuProps) => (
   <DropdownContext.Provider
@@ -88,6 +91,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
       isGrouped={isGrouped}
       toggle={toggle}
       menuAppendTo={menuAppendTo}
+      removeFindDomNode={removeFindDomNode}
       {...props}
     />
   </DropdownContext.Provider>

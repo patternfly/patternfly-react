@@ -61,6 +61,8 @@ export interface ApplicationLauncherProps
   favoritesLabel?: string;
   /** ID of toggle */
   toggleId?: string;
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
 }
 
 export class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
@@ -83,7 +85,8 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     searchPlaceholderText: 'Filter by name...',
     searchNoResultsText: 'No results found',
     favoritesLabel: 'Favorites',
-    menuAppendTo: 'inline'
+    menuAppendTo: 'inline',
+    removeFindDomNode: false
   };
 
   createSearchBox = () => {
@@ -129,6 +132,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       favoritesLabel,
       searchNoResultsText,
       menuAppendTo,
+      removeFindDomNode,
       ...props
     } = this.props;
     let renderableItems: React.ReactNode[] = [];
@@ -189,6 +193,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
             className={className}
             aria-label={ariaLabel}
             menuAppendTo={menuAppendTo}
+            removeFindDomNode={removeFindDomNode}
             toggle={
               <DropdownToggle
                 id={toggleId}

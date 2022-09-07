@@ -66,6 +66,8 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
   isFlipEnabled?: boolean;
   /** Id of the context selector */
   id?: string;
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
@@ -89,7 +91,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     footer: null as React.ReactNode,
     isPlain: false,
     isText: false,
-    isFlipEnabled: false
+    isFlipEnabled: false,
+    removeFindDomNode: false
   };
   constructor(props: ContextSelectorProps) {
     super(props);
@@ -131,6 +134,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       disableFocusTrap,
       isFlipEnabled,
       id,
+      removeFindDomNode,
       ...props
     } = this.props;
 
@@ -231,6 +235,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
         popper={popperContainer}
         appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
         isVisible={isOpen}
+        removeFindDomNode={removeFindDomNode}
       />
     );
   }

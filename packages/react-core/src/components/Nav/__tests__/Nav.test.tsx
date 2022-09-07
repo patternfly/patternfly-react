@@ -41,6 +41,25 @@ describe('Nav', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('Renders nav list in strict mode', () => {
+    const consoleError = jest.spyOn(console, 'error');
+    const { asFragment } = renderNav(
+      <React.StrictMode>
+        <Nav className="test-nav-class">
+          <NavList className="test-nav-list-class">
+            {props.items.map(item => (
+              <NavItem removeFindDomNode to={item.to} key={item.to} className="test-nav-item-class">
+                {item.label}
+              </NavItem>
+            ))}
+          </NavList>
+        </Nav>
+      </React.StrictMode>
+    );
+    expect(consoleError).not.toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('Dark Nav List', () => {
     const { asFragment } = renderNav(
       <Nav className="test=nav-class" theme="dark">

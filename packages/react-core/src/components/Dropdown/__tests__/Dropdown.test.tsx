@@ -123,6 +123,22 @@ describe('Dropdown', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('Renders in strict mode', () => {
+    const consoleError = jest.spyOn(console, 'error');
+    const { asFragment } = render(
+      <React.StrictMode>
+        <Dropdown
+          isOpen
+          dropdownItems={dropdownItems}
+          toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
+          removeFindDomNode
+        />
+      </React.StrictMode>
+    );
+    expect(consoleError).not.toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
 
 describe('KebabToggle', () => {

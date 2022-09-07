@@ -81,6 +81,27 @@ describe('Select', () => {
       );
       expect(asFragment()).toMatchSnapshot();
     });
+
+    test('renders expanded in strict mode successfully', () => {
+      const consoleError = jest.spyOn(console, 'error');
+      const { asFragment } = render(
+        <React.StrictMode>
+          <Select
+            removeFindDomNode
+            variant={SelectVariant.single}
+            onSelect={jest.fn()}
+            onToggle={jest.fn()}
+            isOpen
+            ouiaId="test-id"
+          >
+            {selectOptions}
+          </Select>
+        </React.StrictMode>
+      );
+      expect(consoleError).not.toHaveBeenCalled();
+      expect(asFragment()).toMatchSnapshot();
+    });
+
     test('renders expanded successfully with custom objects', () => {
       const { asFragment } = render(
         <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen ouiaId="test-id">
@@ -525,14 +546,9 @@ describe('select with placeholder', () => {
 
 test('applies focus styling to the create option when reached via keyboard navigation', async () => {
   const user = userEvent.setup();
-  
+
   render(
-    <Select
-      variant={SelectVariant.typeahead}
-      onToggle={() => {}}
-      isOpen
-      isCreatable
-    >
+    <Select variant={SelectVariant.typeahead} onToggle={() => {}} isOpen isCreatable>
       {selectOptions}
     </Select>
   );

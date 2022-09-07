@@ -73,6 +73,7 @@ describe('Tab Demo Test', () => {
   it('Allows overflow tab customization via HorizontalOverflowObject properties', () => {
     // verify that tab count can be shown and that the count updates on resize
     cy.get('#toggle-show-count-overflow').click();
+    cy.viewport(800, 792);
     cy.contains('.pf-c-tabs__link', 'More (5)').should('exist');
     cy.viewport(700, 792);
     cy.contains('.pf-c-tabs__link', 'More (6)').should('exist');

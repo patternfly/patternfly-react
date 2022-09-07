@@ -12,9 +12,9 @@ exports[`Select renders select groups successfully 1`] = `
       aria-expanded="true"
       aria-haspopup="listbox"
       aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-2"
+      aria-labelledby=" pf-select-toggle-id-4"
       class="pf-c-select__toggle"
-      id="pf-select-toggle-id-2"
+      id="pf-select-toggle-id-4"
       type="button"
     >
       <div
@@ -329,6 +329,112 @@ exports[`Select single select renders disabled successfully 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Select single select renders expanded in strict mode successfully 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-select pf-m-expanded"
+    data-ouia-component-id="test-id"
+    data-ouia-component-type="PF4/Select"
+    data-ouia-safe="true"
+  >
+    <button
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-label="Options menu"
+      aria-labelledby=" pf-select-toggle-id-1"
+      class="pf-c-select__toggle"
+      id="pf-select-toggle-id-1"
+      type="button"
+    >
+      <div
+        class="pf-c-select__toggle-wrapper"
+      >
+        <span
+          class="pf-c-select__toggle-text"
+        >
+          Mr
+        </span>
+      </div>
+      <span
+        class="pf-c-select__toggle-arrow"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          />
+        </svg>
+      </span>
+    </button>
+    <ul
+      aria-label=""
+      class="pf-c-select__menu"
+      role="listbox"
+    >
+      <li
+        class="pf-c-select__menu-wrapper"
+        id="option-1"
+        role="presentation"
+      >
+        <button
+          class="pf-c-select__menu-item"
+          role="option"
+          type="button"
+        >
+          Mr
+        </button>
+      </li>
+      <li
+        class="pf-c-select__menu-wrapper"
+        id="option-2"
+        role="presentation"
+      >
+        <button
+          class="pf-c-select__menu-item"
+          role="option"
+          type="button"
+        >
+          Mrs
+        </button>
+      </li>
+      <li
+        class="pf-c-select__menu-wrapper"
+        id="option-3"
+        role="presentation"
+      >
+        <button
+          class="pf-c-select__menu-item"
+          role="option"
+          type="button"
+        >
+          Ms
+        </button>
+      </li>
+      <li
+        class="pf-c-select__menu-wrapper"
+        id="option-4"
+        role="presentation"
+      >
+        <button
+          class="pf-c-select__menu-item"
+          role="option"
+          type="button"
+        >
+          Other
+        </button>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Select single select renders expanded successfully 1`] = `
 <DocumentFragment>
   <div
@@ -447,9 +553,9 @@ exports[`Select single select renders expanded successfully with custom objects 
       aria-expanded="true"
       aria-haspopup="listbox"
       aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-1"
+      aria-labelledby=" pf-select-toggle-id-3"
       class="pf-c-select__toggle"
-      id="pf-select-toggle-id-1"
+      id="pf-select-toggle-id-3"
       type="button"
     >
       <div
@@ -539,9 +645,9 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
     <button
       aria-expanded="true"
       aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-6"
+      aria-labelledby=" pf-select-toggle-id-8"
       class="pf-c-select__toggle"
-      id="pf-select-toggle-id-6"
+      id="pf-select-toggle-id-8"
       type="button"
     >
       <div
@@ -591,7 +697,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-14-Mr"
+              id="pf-random-id-16-Mr"
               type="checkbox"
             />
             <span
@@ -605,7 +711,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-14-Mrs"
+              id="pf-random-id-16-Mrs"
               type="checkbox"
             />
             <span
@@ -619,7 +725,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-14-Ms"
+              id="pf-random-id-16-Ms"
               type="checkbox"
             />
             <span
@@ -633,7 +739,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-14-Other"
+              id="pf-random-id-16-Other"
               type="checkbox"
             />
             <span
@@ -663,7 +769,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-14-Mr"
+              id="pf-random-id-16-Mr"
               type="checkbox"
             />
             <span
@@ -677,7 +783,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-14-Mrs"
+              id="pf-random-id-16-Mrs"
               type="checkbox"
             />
             <span
@@ -691,7 +797,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-14-Ms"
+              id="pf-random-id-16-Ms"
               type="checkbox"
             />
             <span
@@ -705,7 +811,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-14-Other"
+              id="pf-random-id-16-Other"
               type="checkbox"
             />
             <span
@@ -876,9 +982,9 @@ exports[`checkbox select renders expanded successfully 1`] = `
     <button
       aria-expanded="true"
       aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-4"
+      aria-labelledby=" pf-select-toggle-id-6"
       class="pf-c-select__toggle"
-      id="pf-select-toggle-id-4"
+      id="pf-select-toggle-id-6"
       type="button"
     >
       <div
@@ -916,7 +1022,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
       >
         <input
           class="pf-c-check__input"
-          id="pf-random-id-11-Mr"
+          id="pf-random-id-13-Mr"
           type="checkbox"
         />
         <span
@@ -930,7 +1036,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
       >
         <input
           class="pf-c-check__input"
-          id="pf-random-id-11-Mrs"
+          id="pf-random-id-13-Mrs"
           type="checkbox"
         />
         <span
@@ -944,7 +1050,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
       >
         <input
           class="pf-c-check__input"
-          id="pf-random-id-11-Ms"
+          id="pf-random-id-13-Ms"
           type="checkbox"
         />
         <span
@@ -958,7 +1064,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
       >
         <input
           class="pf-c-check__input"
-          id="pf-random-id-11-Other"
+          id="pf-random-id-13-Other"
           type="checkbox"
         />
         <span
@@ -983,9 +1089,9 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
     <button
       aria-expanded="true"
       aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-5"
+      aria-labelledby=" pf-select-toggle-id-7"
       class="pf-c-select__toggle"
-      id="pf-select-toggle-id-5"
+      id="pf-select-toggle-id-7"
       type="button"
     >
       <div
@@ -1023,7 +1129,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       >
         <input
           class="pf-c-check__input"
-          id="pf-random-id-13-Mr: User One"
+          id="pf-random-id-15-Mr: User One"
           type="checkbox"
         />
         <span
@@ -1037,7 +1143,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       >
         <input
           class="pf-c-check__input"
-          id="pf-random-id-13-Mrs: New User"
+          id="pf-random-id-15-Mrs: New User"
           type="checkbox"
         />
         <span
@@ -1051,7 +1157,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       >
         <input
           class="pf-c-check__input"
-          id="pf-random-id-13-Ms: Test Three"
+          id="pf-random-id-15-Ms: Test Three"
           type="checkbox"
         />
         <span
@@ -1131,7 +1237,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         >
           <input
             class="pf-c-check__input"
-            id="pf-random-id-12-Mr"
+            id="pf-random-id-14-Mr"
             type="checkbox"
           />
           <span
@@ -1145,7 +1251,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         >
           <input
             class="pf-c-check__input"
-            id="pf-random-id-12-Mrs"
+            id="pf-random-id-14-Mrs"
             type="checkbox"
           />
           <span
@@ -1159,7 +1265,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         >
           <input
             class="pf-c-check__input"
-            id="pf-random-id-12-Ms"
+            id="pf-random-id-14-Ms"
             type="checkbox"
           />
           <span
@@ -1173,7 +1279,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         >
           <input
             class="pf-c-check__input"
-            id="pf-random-id-12-Other"
+            id="pf-random-id-14-Other"
             type="checkbox"
           />
           <span
@@ -1200,9 +1306,9 @@ exports[`renders select with favorites successfully 1`] = `
       aria-expanded="true"
       aria-haspopup="listbox"
       aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-3"
+      aria-labelledby=" pf-select-toggle-id-5"
       class="pf-c-select__toggle"
-      id="pf-select-toggle-id-3"
+      id="pf-select-toggle-id-5"
       type="button"
     >
       <div
@@ -1622,7 +1728,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           aria-label=""
           autocomplete="off"
           class="pf-c-form-control pf-c-select__toggle-typeahead"
-          id="pf-select-toggle-id-17-select-multi-typeahead-typeahead"
+          id="pf-select-toggle-id-19-select-multi-typeahead-typeahead"
           placeholder=""
           type="text"
           value=""
@@ -1632,9 +1738,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         aria-expanded="true"
         aria-haspopup="listbox"
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-17"
+        aria-labelledby=" pf-select-toggle-id-19"
         class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-        id="pf-select-toggle-id-17"
+        id="pf-select-toggle-id-19"
         tabindex="-1"
         type="button"
       >
@@ -1756,19 +1862,19 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 >
                   <span
                     class="pf-c-chip__text"
-                    id="pf-random-id-23"
+                    id="pf-random-id-25"
                   >
                     Mr
                   </span>
                   <button
                     aria-disabled="false"
                     aria-label="Remove"
-                    aria-labelledby="remove_pf-random-id-23 pf-random-id-23"
+                    aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
                     class="pf-c-button pf-m-plain"
                     data-ouia-component-id="Remove"
                     data-ouia-component-type="PF4/Button"
                     data-ouia-safe="true"
-                    id="remove_pf-random-id-23"
+                    id="remove_pf-random-id-25"
                     type="button"
                   >
                     <svg
@@ -1798,19 +1904,19 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 >
                   <span
                     class="pf-c-chip__text"
-                    id="pf-random-id-24"
+                    id="pf-random-id-26"
                   >
                     Mrs
                   </span>
                   <button
                     aria-disabled="false"
                     aria-label="Remove"
-                    aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
+                    aria-labelledby="remove_pf-random-id-26 pf-random-id-26"
                     class="pf-c-button pf-m-plain"
                     data-ouia-component-id="Remove"
                     data-ouia-component-type="PF4/Button"
                     data-ouia-safe="true"
-                    id="remove_pf-random-id-24"
+                    id="remove_pf-random-id-26"
                     type="button"
                   >
                     <svg
@@ -2039,7 +2145,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
           aria-label=""
           autocomplete="off"
           class="pf-c-form-control pf-c-select__toggle-typeahead"
-          id="pf-select-toggle-id-7-select-typeahead"
+          id="pf-select-toggle-id-9-select-typeahead"
           placeholder=""
           type="text"
           value=""
@@ -2049,9 +2155,9 @@ exports[`typeahead select renders expanded successfully 1`] = `
         aria-expanded="true"
         aria-haspopup="listbox"
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-7"
+        aria-labelledby=" pf-select-toggle-id-9"
         class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-        id="pf-select-toggle-id-7"
+        id="pf-select-toggle-id-9"
         tabindex="-1"
         type="button"
       >
@@ -2151,7 +2257,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           aria-label=""
           autocomplete="off"
           class="pf-c-form-control pf-c-select__toggle-typeahead"
-          id="pf-select-toggle-id-8-select-typeahead"
+          id="pf-select-toggle-id-10-select-typeahead"
           placeholder=""
           type="text"
           value="Mr"
@@ -2161,9 +2267,9 @@ exports[`typeahead select renders selected successfully 1`] = `
         aria-expanded="true"
         aria-haspopup="listbox"
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-8"
+        aria-labelledby=" pf-select-toggle-id-10"
         class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-        id="pf-select-toggle-id-8"
+        id="pf-select-toggle-id-10"
         tabindex="-1"
         type="button"
       >

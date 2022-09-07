@@ -176,9 +176,33 @@ test('Renders tabs passed via overflowingTabs when expanded', async () => {
   expect(screen.getByText('Tab two')).toBeVisible();
 });
 
+test('Renders tabs passed via overflowingTabs when expanded in strict mode', async () => {
+  const user = userEvent.setup();
+
+  const consoleError = jest.spyOn(console, 'error');
+  const { asFragment } = render(
+    <React.StrictMode>
+      <OverflowTab
+        removeFindDomNode
+        overflowingTabs={[
+          { title: 'Tab one', eventKey: 1 },
+          { title: 'Tab two', eventKey: 2 }
+        ]}
+      />
+    </React.StrictMode>
+  );
+
+  await user.click(screen.getByRole('tab', { name: 'More' }));
+
+  expect(consoleError).not.toHaveBeenCalled();
+  expect(screen.getByText('Tab one')).toBeVisible();
+  expect(screen.getByText('Tab two')).toBeVisible();
+  expect(asFragment()).toMatchSnapshot();
+});
+
 test('Closes the overflowing tabs menu when a tab is selected', async () => {
   const user = userEvent.setup();
-  
+
   render(
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 0 }}>
       <OverflowTab
@@ -200,7 +224,7 @@ test('Closes the overflowing tabs menu when a tab is selected', async () => {
 
 test('Closes the overflowing tabs menu when the user clicks outside of the menu', async () => {
   const user = userEvent.setup();
-  
+
   render(
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 0 }}>
       <OverflowTab
@@ -336,7 +360,7 @@ test('Renders the tab with aria-expanded set to false by default', () => {
 
 test('Renders the tab with aria-expanded set to true when the menu is opened', async () => {
   const user = userEvent.setup();
-  
+
   render(<OverflowTab />);
 
   const overflowTab = screen.getByRole('tab');
@@ -355,7 +379,7 @@ test('Passes Popper popperMatchesTriggerWidth set to false', () => {
 
 test('Passes Popper an appendTo value of the presentation element', async () => {
   const user = userEvent.setup();
-  
+
   render(<OverflowTab />);
 
   await user.click(screen.getByRole('tab'));
@@ -366,7 +390,7 @@ test('Passes Popper an appendTo value of the presentation element', async () => 
 
 test('Does not render an overflowing tab as a selected menu item by default', async () => {
   const user = userEvent.setup();
-  
+
   render(
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 0 }}>
       <OverflowTab
@@ -385,7 +409,7 @@ test('Does not render an overflowing tab as a selected menu item by default', as
 
 test('Renders an overflowing tab as a selected menu item when its key matches the localActiveKey provided via context', async () => {
   const user = userEvent.setup();
-  
+
   render(
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 1 }}>
       <OverflowTab
@@ -404,7 +428,7 @@ test('Renders an overflowing tab as a selected menu item when its key matches th
 
 test('Matches snapshot when expanded', async () => {
   const user = userEvent.setup();
-  
+
   const { asFragment } = render(
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 1 }}>
       <OverflowTab
