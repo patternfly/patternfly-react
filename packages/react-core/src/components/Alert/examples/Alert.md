@@ -44,13 +44,13 @@ import { Alert } from '@patternfly/react-core';
 
 PatternFly supports several properties and variations that can be used to add extra content to an alert. 
 
-* As demonstrated in the 1st variation below, use the `actionLinks` property to add one or more `AlertActionLink` components that place links beneath the alert message. You must pass in `href` and `component="a"` properties to have an `AlertActionLink` act as a proper link, rather than as a button.
+* As demonstrated in the 1st variation below, use the `actionLinks` property to add one or more `<AlertActionLink>` components that place links beneath the alert message. You must pass in `href` and `component="a"` properties to have an `<AlertActionLink>` act as a proper link, rather than as a button.
 
 * As demonstrated in the 2nd variation below, use a native HTML `<a>` element to add links within an alert message.
 
-* As demonstrated in the 3rd and 4th variations below, use the `actionClose` property to add an `AlertActionCloseButton` component, which can be used to manage and customize alert dismissals. `actionClose` can be used with or without the presence of `actionLinks`.
+* As demonstrated in the 3rd and 4th variations below, use the `actionClose` property to add an `<AlertActionCloseButton>` component, which can be used to manage and customize alert dismissals. `actionClose` can be used with or without the presence of `actionLinks`.
 
-* As demonstrated in the 5th and 6th variations below, order headings by their level and avoid skipping heading levels when possible to avoid confusion. For example, a heading of an h2 level should not be followed directly by an h4.
+* As demonstrated in the 5th and 6th variations below, use the `titleHeadingLevel` property to set the heading level of an alert title. Headings should be ordered by their level and heading levels should not be skipped. For example, a heading of an `h2` level should not be followed directly by an `h4`.
 
 ```ts
 import React from 'react';
@@ -351,7 +351,7 @@ import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
 
 ### Dynamic live region alerts
 
-Alerts that are asynchronously appended into dynamic `AlertGroups` via the `isLiveRegion` property will be announced to assistive technology the moment the change happens, following the strategy used for `aria-atomic`, which defaults to false. This means only changes of type "addition" will be announced.
+Alerts that are asynchronously appended into dynamic [alert groups](/components/alert-group) via the `isLiveRegion` property will be announced to assistive technology the moment the change happens, following the strategy used for `aria-atomic`, which defaults to false. This means only changes of type "addition" will be announced.
 
 ```ts file="AlertDynamicLiveRegion.tsx"
 ```
