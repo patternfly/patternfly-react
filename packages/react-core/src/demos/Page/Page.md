@@ -480,7 +480,7 @@ class PageLayoutGrouped extends React.Component {
       </Nav>
     );
     const kebabDropdownItems = [
-      <DropdownItem  key="settings">
+      <DropdownItem key="settings">
         <CogIcon /> Settings
       </DropdownItem>,
       <DropdownItem  key="help">
