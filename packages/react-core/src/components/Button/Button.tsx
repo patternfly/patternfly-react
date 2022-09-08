@@ -22,7 +22,7 @@ export enum ButtonType {
   reset = 'reset'
 }
 
-export interface BadgeCountProps {
+export interface BadgeCountObject {
   /**  Adds styling to the badge to indicate it has been read */
   isRead?: boolean;
   /** Adds count number right of button */
@@ -79,7 +79,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Adds count number to button */
-  badgeProps?: BadgeCountProps;
+  badgeVariant?: BadgeCountObject;
 }
 
 const ButtonBase: React.FunctionComponent<ButtonProps> = ({
@@ -108,7 +108,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   ouiaSafe = true,
   tabIndex = null,
   innerRef,
-  badgeProps,
+  badgeVariant,
   ...props
 }: ButtonProps) => {
   const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
@@ -182,9 +182,9 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       {variant !== ButtonVariant.plain && icon && iconPosition === 'right' && (
         <span className={css(styles.buttonIcon, styles.modifiers.end)}>{icon}</span>
       )}
-      {badgeProps && (
-        <span className={css(styles.buttonCount, badgeProps.className)}>
-          <Badge isRead={badgeProps.isRead}>{badgeProps.count}</Badge>
+      {badgeVariant && (
+        <span className={css(styles.buttonCount, badgeVariant.className)}>
+          <Badge isRead={badgeVariant.isRead}>{badgeVariant.count}</Badge>
         </span>
       )}
     </Component>
