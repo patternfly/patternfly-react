@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.86.13 (2022-09-08)
+
+
+### Bug Fixes
+
+* **table:** fix bug in expandable demo ([#7945](https://github.com/patternfly/patternfly-react/issues/7945)) ([711b196](https://github.com/patternfly/patternfly-react/commit/711b19609dd8023b157a99f6988ff8618ccee35d))
+
+
+
+
+
 ## 4.86.12 (2022-09-07)
 
 **Note:** Version bump only for package @patternfly/react-styles
