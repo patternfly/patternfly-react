@@ -79,7 +79,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Adds count number to button */
-  badgeVariant?: BadgeCountObject;
+  countOptions?: BadgeCountObject;
 }
 
 const ButtonBase: React.FunctionComponent<ButtonProps> = ({
@@ -108,7 +108,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   ouiaSafe = true,
   tabIndex = null,
   innerRef,
-  badgeVariant,
+  countOptions,
   ...props
 }: ButtonProps) => {
   const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
@@ -182,9 +182,9 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       {variant !== ButtonVariant.plain && icon && iconPosition === 'right' && (
         <span className={css(styles.buttonIcon, styles.modifiers.end)}>{icon}</span>
       )}
-      {badgeVariant && (
-        <span className={css(styles.buttonCount, badgeVariant.className)}>
-          <Badge isRead={badgeVariant.isRead}>{badgeVariant.count}</Badge>
+      {countOptions && (
+        <span className={css(styles.buttonCount, countOptions.className)}>
+          <Badge isRead={countOptions.isRead}>{countOptions.count}</Badge>
         </span>
       )}
     </Component>

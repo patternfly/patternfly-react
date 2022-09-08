@@ -17,70 +17,70 @@ export const ButtonWithCount: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <p>unread:</p>
-      <Button variant="primary" badgeVariant={badgeCountObjectNotRead}>
+      <Button variant="primary" countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
-      <Button variant="secondary" badgeVariant={badgeCountObjectNotRead}>
+      <Button variant="secondary" countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
-      <Button variant="tertiary" badgeVariant={badgeCountObjectNotRead}>
+      <Button variant="tertiary" countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
-      <Button variant="control" badgeVariant={badgeCountObjectNotRead}>
+      <Button variant="control" countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
-      <Button variant="link" badgeVariant={badgeCountObjectNotRead}>
+      <Button variant="link" countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
       <br />
       <p>unread disabled:</p>
-      <Button variant="primary" isDisabled badgeVariant={badgeCountObjectNotRead}>
+      <Button variant="primary" isDisabled countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
-      <Button variant="secondary" isDisabled badgeVariant={badgeCountObjectNotRead}>
+      <Button variant="secondary" isDisabled countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
-      <Button variant="tertiary" isDisabled badgeVariant={badgeCountObjectNotRead}>
+      <Button variant="tertiary" isDisabled countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
-      <Button variant="control" isDisabled badgeVariant={badgeCountObjectNotRead}>
+      <Button variant="control" isDisabled countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
-      <Button variant="link" isDisabled badgeVariant={badgeCountObjectNotRead}>
+      <Button variant="link" isDisabled countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
       <br />
       <p>read:</p>
-      <Button variant="primary" badgeVariant={badgeCountObjectRead}>
+      <Button variant="primary" countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}
-      <Button variant="secondary" badgeVariant={badgeCountObjectRead}>
+      <Button variant="secondary" countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}
-      <Button variant="tertiary" badgeVariant={badgeCountObjectRead}>
+      <Button variant="tertiary" countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}
-      <Button variant="control" badgeVariant={badgeCountObjectRead}>
+      <Button variant="control" countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}
-      <Button variant="link" badgeVariant={badgeCountObjectRead}>
+      <Button variant="link" countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}
       <br />
       <p>read disabled:</p>
-      <Button variant="primary" isDisabled badgeVariant={badgeCountObjectRead}>
+      <Button variant="primary" isDisabled countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}
-      <Button variant="secondary" isDisabled badgeVariant={badgeCountObjectRead}>
+      <Button variant="secondary" isDisabled countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}
-      <Button variant="tertiary" isDisabled badgeVariant={badgeCountObjectRead}>
+      <Button variant="tertiary" isDisabled countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}
-      <Button variant="control" isDisabled badgeVariant={badgeCountObjectRead}>
+      <Button variant="control" isDisabled countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}
-      <Button variant="link" isDisabled badgeVariant={badgeCountObjectRead}>
+      <Button variant="link" isDisabled countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}
       <br />
