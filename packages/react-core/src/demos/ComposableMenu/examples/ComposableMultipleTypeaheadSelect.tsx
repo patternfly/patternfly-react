@@ -144,19 +144,6 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
       isFullWidth
     >
       <TextInputGroup isPlain>
-        <ChipGroup>
-          {selected.map((selection, index) => (
-            <Chip
-              key={index}
-              onClick={ev => {
-                ev.stopPropagation();
-                onMenuSelect(selection);
-              }}
-            >
-              {selection}
-            </Chip>
-          ))}
-        </ChipGroup>
         <TextInputGroupMain
           value={inputValue}
           onClick={toggleMenuOpen}
@@ -165,7 +152,21 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
           id="typeahead-select-input"
           autoComplete="off"
           innerRef={textInputRef}
-        />
+        >
+          <ChipGroup>
+            {selected.map((selection, index) => (
+              <Chip
+                key={index}
+                onClick={ev => {
+                  ev.stopPropagation();
+                  onMenuSelect(selection);
+                }}
+              >
+                {selection}
+              </Chip>
+            ))}
+          </ChipGroup>
+        </TextInputGroupMain>
         <TextInputGroupUtilities>
           {selected.length > 0 && (
             <Button
