@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.196.14 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Page:** Fixed page group props regression ([#7948](https://github.com/patternfly/patternfly-react/issues/7948)) ([044444e](https://github.com/patternfly/patternfly-react/commit/044444e11fb90d53dc8f783071d3e3dc517532a0))
+
+
+
+
+
 ## 4.196.13 (2022-09-08)
 
 
