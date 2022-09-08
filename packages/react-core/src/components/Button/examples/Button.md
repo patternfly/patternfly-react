@@ -2,7 +2,7 @@
 id: Button
 section: components
 cssPrefix: pf-c-button
-propComponents: ['Button']
+propComponents: ['Button', 'BadgeCountObject']
 ouia: true
 ---
 
@@ -117,5 +117,5 @@ Aria-disabled buttons can operate as links, which also support tooltips.
 
 Buttons can display a `count` in the form of a badge to indicate some value or number by passing in the `countOptions` prop as a `BadgeCountObject` object. The `BadgeCountObject` object will handle `count`, `isRead`, and `className` props for the badge.
 
-```ts file="./ButtonCount.tsx"
+```ts file="./ButtonWithCount.tsx"
 ```
