@@ -96,23 +96,14 @@ Router links can be used for in-app linking in React environments to prevent pag
 
 Buttons that are aria-disabled are similar to normal disabled buttons, except they can receive focus. Every button variant can be aria-disabled using the `isAriaDisabled` property.
 
-```ts file="./ButtonAriaDisabled.tsx"
-```
-
-### Aria-disabled with tooltip
-
 Unlike normal disabled buttons, aria-disabled buttons can support tooltips. Furthermore, aria-disabled buttons can operate as links, which also support tooltips.
 
-```ts file="./ButtonAriaDisabledTooltip.tsx"
+```ts file="./ButtonAriaDisabled.tsx"
 ```
 <<<<<<< HEAD
-
-### Aria-disabled link as button with tooltip
-
-Aria-disabled buttons can operate as links, which also support tooltips.
-
-```ts file="./ButtonAriaDisabledLinkTooltip.tsx"
-```
+<<<<<<< HEAD
+=======
+>>>>>>> 9c9fe3c08 (docs(Button): rebase 2)
 
 ### Button with count
 
@@ -120,5 +111,15 @@ Buttons can display a `count` in the form of a badge to indicate some value or n
 
 ```ts file="./ButtonWithCount.tsx" isBeta
 ```
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e49e903e5 (docs(Button): combined aria-disabled tooltip examples into single example)
+=======
+>>>>>>> 9c9fe3c08 (docs(Button): rebase 2)
+=======
+
+>>>>>>> 178e04bc8 (docs(Button): rebase 3)
+=======
+>>>>>>> 6345388be (docs(Button): merge 1)
