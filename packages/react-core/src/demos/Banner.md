@@ -3,7 +3,7 @@ id: Banner
 section: components
 ---
 
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ## Demos
 
@@ -23,7 +23,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class BannerDemo extends React.Component {
   render() {
@@ -87,7 +87,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import DashboardWrapper from '../examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class BannerDemo extends React.Component {
   render() {

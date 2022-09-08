@@ -5,7 +5,7 @@ section: components
 
 import imgBrand from './imgBrand.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import DashboardWrapper from '../examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ## Demos
 
@@ -26,7 +26,7 @@ import {
   Modal,
   ModalVariant
 } from '@patternfly/react-core';
-import DashboardWrapper from '../examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class BasicWizardDemo extends React.Component {
   constructor(props) {
@@ -568,7 +568,7 @@ import {
 } from '@patternfly/react-core';
 import imgBrand from './imgBrand.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import DashboardWrapper from '../examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class FullPageWizard extends React.Component {
   constructor(props) {

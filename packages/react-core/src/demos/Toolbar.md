@@ -3,7 +3,7 @@ id: Toolbar
 section: components
 ---
 
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
@@ -40,7 +40,7 @@ import {
   PageSectionVariants,
   Tooltip
 } from '@patternfly/react-core';
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
