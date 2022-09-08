@@ -16,7 +16,7 @@ export const ButtonWithCount: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <p>unread:</p>
+      <p>Unread:</p>
       <Button variant="primary" countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
@@ -33,7 +33,7 @@ export const ButtonWithCount: React.FunctionComponent = () => {
         View issues
       </Button>{' '}
       <br />
-      <p>unread disabled:</p>
+      <p>Unread disabled:</p>
       <Button variant="primary" isDisabled countOptions={badgeCountObjectNotRead}>
         View issues
       </Button>{' '}
@@ -50,7 +50,7 @@ export const ButtonWithCount: React.FunctionComponent = () => {
         View issues
       </Button>{' '}
       <br />
-      <p>read:</p>
+      <p>Read:</p>
       <Button variant="primary" countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}
@@ -67,7 +67,7 @@ export const ButtonWithCount: React.FunctionComponent = () => {
         View issues
       </Button>{' '}
       <br />
-      <p>read disabled:</p>
+      <p>Read disabled:</p>
       <Button variant="primary" isDisabled countOptions={badgeCountObjectRead}>
         View issues
       </Button>{' '}

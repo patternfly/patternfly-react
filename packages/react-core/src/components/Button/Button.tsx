@@ -27,7 +27,7 @@ export interface BadgeCountObject {
   isRead?: boolean;
   /** Adds count number right of button */
   count?: number;
-  /** Additional classes added to the Badge */
+  /** Additional classes added to the badge count */
   className?: string;
 }
 
