@@ -483,7 +483,7 @@ class PageLayoutGrouped extends React.Component {
       <DropdownItem key="settings">
         <CogIcon /> Settings
       </DropdownItem>,
-      <DropdownItem  key="help">
+      <DropdownItem key="help">
         <HelpIcon /> Help
       </DropdownItem>
     ];
