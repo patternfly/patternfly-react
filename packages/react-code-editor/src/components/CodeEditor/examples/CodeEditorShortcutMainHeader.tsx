@@ -37,20 +37,20 @@ export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
   const shortcutsPopoverProps = {
     bodyContent: (
       <Grid span={6} hasGutter key="grid">
-        {shortcuts.map((s, i) => (
-          <React.Fragment key={i}>
+        {shortcuts.map((shortcut, index) => (
+          <React.Fragment key={index}>
             <GridItem style={{ textAlign: 'right', marginRight: '1em' }}>
-              {s.keys
-                .map(k => (
-                  <Chip key={k} isReadOnly>
-                    {k}
+              {shortcut.keys
+                .map(key => (
+                  <Chip key={key} isReadOnly>
+                    {key}
                   </Chip>
                 ))
                 .reduce((prev, curr) => (
                   <>{[prev, ' + ', curr]}</>
                 ))}
             </GridItem>
-            <GridItem>{s.description}</GridItem>
+            <GridItem>{shortcut.description}</GridItem>
           </React.Fragment>
         ))}
       </Grid>
