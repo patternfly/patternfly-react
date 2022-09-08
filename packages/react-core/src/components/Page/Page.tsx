@@ -5,39 +5,15 @@ import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpo
 import { debounce, canUseDOM } from '../../helpers/util';
 import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
 import { PageBreadcrumbProps } from './PageBreadcrumb';
-import { PageGroupProps } from './PageGroup';
+import { PageGroup, PageGroupProps } from './PageGroup';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 import { formatBreakpointMods, getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
+import { PageContextProvider } from './PageContext';
 
 export enum PageLayouts {
   vertical = 'vertical',
   horizontal = 'horizontal'
 }
-
-export interface PageContextProps {
-  isManagedSidebar: boolean;
-  onNavToggle: () => void;
-  isNavOpen: boolean;
-  width: number;
-  height: number;
-  getBreakpoint: (width: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-  getVerticalBreakpoint: (height: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-}
-
-export const pageContextDefaults: PageContextProps = {
-  isManagedSidebar: false,
-  isNavOpen: false,
-  onNavToggle: () => null,
-  width: null,
-  height: null,
-  getBreakpoint,
-  getVerticalBreakpoint
-};
-export const PageContext = React.createContext<PageContextProps>(pageContextDefaults);
-
-export const PageContextProvider = PageContext.Provider;
-export const PageContextConsumer = PageContext.Consumer;
-
 export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the main section of the page layout (e.g. <PageSection />) */
   children?: React.ReactNode;
@@ -306,17 +282,11 @@ export class Page extends React.Component<PageProps, PageState> {
     const isGrouped = isTertiaryNavGrouped || isBreadcrumbGrouped || additionalGroupedContent;
 
     const group = isGrouped ? (
-      <div
-        className={css(
-          styles.pageMainGroup,
-          formatBreakpointMods(groupProps?.stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true)
-        )}
-        {...groupProps}
-      >
+      <PageGroup {...groupProps}>
         {isTertiaryNavGrouped && nav}
         {isBreadcrumbGrouped && crumb}
         {additionalGroupedContent}
-      </div>
+      </PageGroup>
     ) : null;
 
     const main = (

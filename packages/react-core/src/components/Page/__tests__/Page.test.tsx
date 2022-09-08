@@ -356,7 +356,7 @@ describe('Page', () => {
         tertiaryNav={nav}
         isBreadcrumbGrouped
         isTertiaryNavGrouped
-        groupProps={{ stickyOnBreakpoint: { default: 'bottom' }, hasShadowTop: true }}
+        groupProps={{ stickyOnBreakpoint: { default: 'bottom' }, hasShadowTop: true, 'aria-label': 'test' }}
       >
         <PageSection variant="default">Section with default background</PageSection>
         <PageSection variant="light">Section with light background</PageSection>
@@ -366,6 +366,7 @@ describe('Page', () => {
     );
 
     expect(screen.getByRole('main')).not.toHaveAttribute('id');
+    expect(screen.getByLabelText('test')).toHaveClass('pf-m-shadow-top');
     expect(asFragment()).toMatchSnapshot();
   });
 

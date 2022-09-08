@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import * as React from 'react';
 import { Button, ButtonProps, ButtonVariant } from '../../components/Button';
-import { PageContextConsumer, PageContextProps } from './Page';
+import { PageContextConsumer, PageContextProps } from './PageContext';
 
 export interface PageToggleButtonProps extends ButtonProps {
   /** Content of the page toggle button */
