@@ -2,17 +2,7 @@ import React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../../../components/Menu';
-import { MenuToggleProps } from '../../../components/MenuToggle';
 import { Popper } from '../../../helpers/Popper/Popper';
-
-export interface DropdownToggleProps extends MenuToggleProps {
-  /** Toggle text */
-  toggleText: React.ReactNode;
-  /** toggle variant*/
-  variant?: 'default' | 'plain' | 'primary' | 'plainText' | 'secondary' | 'typeahead';
-  /** Additional toggle props */
-  toggleProps?: any;
-}
 
 export interface DropdownProps extends MenuProps {
   /** Anything which can be rendered in a dropdown */
@@ -48,9 +38,6 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   isPlain,
   isScrollable,
   minWidth,
-  // ouiaId,
-  // ouiaSafe,
-  // alignments,
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
