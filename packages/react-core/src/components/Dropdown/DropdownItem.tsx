@@ -3,7 +3,7 @@ import { InternalDropdownItemProps, InternalDropdownItem } from './InternalDropd
 import { DropdownArrowContext } from './dropdownConstants';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface DropdownItemProps extends InternalDropdownItemProps, OUIAProps {
+export interface DropdownItemProps extends Omit<InternalDropdownItemProps, 'tabIndex'>, OUIAProps {
   /** Anything which can be rendered as dropdown item */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown item */
@@ -40,7 +40,7 @@ export interface DropdownItemProps extends InternalDropdownItemProps, OUIAProps 
   /** Custom item rendering that receives the DropdownContext */
   customChild?: React.ReactNode;
   /** tabIndex to use, null to unset it */
-  tabIndex?: number;
+  tabIndex?: number | null;
   /** An image to display within the DropdownItem, appearing before any component children */
   icon?: React.ReactNode;
   /** Initial focus on the item when the menu is opened (Note: Only applicable to one of the items) */
