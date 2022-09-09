@@ -1,5 +1,5 @@
 import React from 'react';
-import DashboardWrapper from '../DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import {
   PageSection,
   TextContent,

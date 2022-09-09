@@ -3,7 +3,7 @@ id: Card view
 section: demos
 ---
 
-import DashboardWrapper from '../examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
@@ -66,7 +66,7 @@ import {
   ToolbarFilter,
   ToolbarContent
 } from '@patternfly/react-core';
-import DashboardWrapper from '../examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';

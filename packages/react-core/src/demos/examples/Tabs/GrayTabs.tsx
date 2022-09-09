@@ -15,7 +15,7 @@ import {
   CardBody,
   CardHeader
 } from '@patternfly/react-core';
-import DashboardWrapper from '../DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const GrayTabsDemo: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
