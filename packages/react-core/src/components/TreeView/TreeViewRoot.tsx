@@ -26,16 +26,16 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
       window.addEventListener('keydown', this.props.hasChecks ? this.handleKeysCheckbox : this.handleKeys);
     }
     if (this.props.hasChecks) {
-      const firstToggle = this.treeRef.current.getElementsByClassName('pf-c-tree-view__node-toggle')[0] as HTMLElement;
+      const firstToggle = this.treeRef.current?.getElementsByClassName('pf-c-tree-view__node-toggle')[0] as HTMLElement;
       if (firstToggle) {
         firstToggle.tabIndex = 0;
       }
-      const firstInput = this.treeRef.current.getElementsByTagName('INPUT')[0] as HTMLElement;
+      const firstInput = this.treeRef.current?.getElementsByTagName('INPUT')[0] as HTMLElement;
       if (firstInput) {
         firstInput.tabIndex = 0;
       }
     } else {
-      (this.treeRef.current.getElementsByClassName('pf-c-tree-view__node')[0] as HTMLElement).tabIndex = 0;
+      (this.treeRef.current?.getElementsByClassName('pf-c-tree-view__node')[0] as HTMLElement).tabIndex = 0;
     }
   }
 
@@ -51,7 +51,7 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     }
     const activeElement = document.activeElement;
     const key = event.key;
-    const treeItems = Array.from(this.treeRef.current.getElementsByClassName('pf-c-tree-view__node')).filter(
+    const treeItems = Array.from(this.treeRef.current?.getElementsByClassName('pf-c-tree-view__node')).filter(
       el => !el.classList.contains('pf-m-disabled')
     );
 
@@ -72,20 +72,22 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     );
 
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
-      const isExpandable = activeElement.firstElementChild.firstElementChild.classList.contains(
+      const isExpandable = activeElement?.firstElementChild?.firstElementChild?.classList.contains(
         'pf-c-tree-view__node-toggle'
       );
-      const isExpanded = activeElement.closest('li').classList.contains('pf-m-expanded');
+      const isExpanded = activeElement?.closest('li')?.classList.contains('pf-m-expanded');
       if (key === 'ArrowLeft') {
         if (isExpandable && isExpanded) {
           (activeElement as HTMLElement).click();
         } else {
-          const parentList = activeElement.closest('ul').parentElement;
-          if (parentList.tagName !== 'DIV') {
-            const parentButton = parentList.querySelector('button');
+          const parentList = activeElement?.closest('ul')?.parentElement;
+          if (parentList?.tagName !== 'DIV') {
+            const parentButton = parentList?.querySelector('button');
             (activeElement as HTMLElement).tabIndex = -1;
-            parentButton.tabIndex = 0;
-            parentButton.focus();
+            if (parentButton) {
+              parentButton.tabIndex = 0;
+              parentButton.focus();
+            }
           }
         }
       } else {
@@ -93,11 +95,13 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
           (activeElement as HTMLElement).tabIndex = -1;
           (activeElement as HTMLElement).click();
           const childElement = activeElement
-            .closest('li')
-            .querySelector('ul > li')
-            .querySelector('button');
-          childElement.tabIndex = 0;
-          childElement.focus();
+            ?.closest('li')
+            ?.querySelector('ul > li')
+            ?.querySelector('button');
+          if (childElement) {
+            childElement.tabIndex = 0;
+            childElement.focus();
+          }
         }
       }
       event.preventDefault();
@@ -116,7 +120,7 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
       event.preventDefault();
     }
 
-    const treeNodes = Array.from(this.treeRef.current.getElementsByClassName('pf-c-tree-view__node'));
+    const treeNodes = Array.from(this.treeRef.current?.getElementsByClassName('pf-c-tree-view__node'));
 
     handleArrows(
       event,
@@ -131,21 +135,21 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
 
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
       if (key === 'ArrowLeft') {
-        if (activeElement.tagName === 'INPUT') {
-          activeElement.parentElement.previousSibling &&
+        if (activeElement?.tagName === 'INPUT') {
+          activeElement?.parentElement?.previousSibling &&
             (activeElement.parentElement.previousSibling as HTMLElement).focus();
-        } else if (activeElement.previousSibling) {
-          if (activeElement.previousElementSibling.tagName === 'SPAN') {
+        } else if (activeElement?.previousSibling) {
+          if (activeElement.previousElementSibling?.tagName === 'SPAN') {
             (activeElement.previousSibling.firstChild as HTMLElement).focus();
           } else {
             (activeElement.previousSibling as HTMLElement).focus();
           }
         }
       } else {
-        if (activeElement.tagName === 'INPUT') {
-          activeElement.parentElement.nextSibling && (activeElement.parentElement.nextSibling as HTMLElement).focus();
-        } else if (activeElement.nextSibling) {
-          if (activeElement.nextElementSibling.tagName === 'SPAN') {
+        if (activeElement?.tagName === 'INPUT') {
+          activeElement.parentElement?.nextSibling && (activeElement.parentElement.nextSibling as HTMLElement).focus();
+        } else if (activeElement?.nextSibling) {
+          if (activeElement.nextElementSibling?.tagName === 'SPAN') {
             (activeElement.nextSibling.firstChild as HTMLElement).focus();
           } else {
             (activeElement.nextSibling as HTMLElement).focus();

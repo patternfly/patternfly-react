@@ -3,7 +3,7 @@ import { InternalDropdownItemProps, InternalDropdownItem } from './InternalDropd
 import { DropdownArrowContext } from './dropdownConstants';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface DropdownItemProps extends InternalDropdownItemProps, OUIAProps {
+export interface DropdownItemProps extends Omit<InternalDropdownItemProps, 'tabIndex'>, OUIAProps {
   /** Anything which can be rendered as dropdown item */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown item */

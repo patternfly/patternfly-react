@@ -89,7 +89,7 @@ export class Toggle extends React.Component<ToggleProps> {
     const clickedOnToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const clickedWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target as Node);
     if (isOpen && !(clickedOnToggle || clickedWithinMenu)) {
-      onToggle(false, event);
+      onToggle?.(false, event);
     }
   };
 
@@ -103,8 +103,8 @@ export class Toggle extends React.Component<ToggleProps> {
       (event.key === KeyTypes.Escape || event.key === 'Tab') &&
       (escFromToggle || escFromWithinMenu)
     ) {
-      this.props.onToggle(false, event);
-      this.buttonRef.current.focus();
+      this.props.onToggle?.(false, event);
+      this.buttonRef.current?.focus();
     }
   };
 
@@ -118,15 +118,15 @@ export class Toggle extends React.Component<ToggleProps> {
       }
       event.preventDefault();
 
-      this.props.onToggle(!this.props.isOpen, event);
+      this.props.onToggle?.(!this.props.isOpen, event);
     } else if ((event.key === 'Enter' || event.key === ' ') && !this.props.isOpen) {
       if (!this.props.bubbleEvent) {
         event.stopPropagation();
       }
       event.preventDefault();
 
-      this.props.onToggle(!this.props.isOpen, event);
-      this.props.onEnter();
+      this.props.onToggle?.(!this.props.isOpen, event);
+      this.props.onEnter?.();
     }
   };
 
@@ -167,11 +167,11 @@ export class Toggle extends React.Component<ToggleProps> {
               isPlain && styles.modifiers.plain,
               isText && styles.modifiers.text,
               isPrimary && styles.modifiers.primary,
-              buttonVariantStyles[toggleVariant],
+              toggleVariant && buttonVariantStyles[toggleVariant],
               className
             )}
             type={type || 'button'}
-            onClick={event => onToggle(!isOpen, event)}
+            onClick={event => onToggle?.(!isOpen, event)}
             aria-expanded={isOpen}
             aria-haspopup={ariaHasPopup}
             onKeyDown={event => this.onKeyDown(event)}
