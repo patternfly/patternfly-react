@@ -14,9 +14,11 @@ MenuContent,
 MenuList,
 MenuItem,
 MenuToggle,
+MenuToggleCheckbox,
 ToolbarGroup,
 ToolbarFilter,
-Badge
+Badge,
+Pagination
 } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';

@@ -149,6 +149,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
             aria-expanded={isExpanded}
             aria-label={ariaLabel}
             disabled={isDisabled}
+            onClick={onClick}
             {...otherProps}
           >
             {toggleControls}

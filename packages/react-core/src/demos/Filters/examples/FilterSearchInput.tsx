@@ -1,5 +1,18 @@
 import React from 'react';
-import { SearchInput, Toolbar, ToolbarContent, ToolbarItem } from '@patternfly/react-core';
+import {
+  SearchInput,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem,
+  Menu,
+  MenuContent,
+  MenuList,
+  MenuItem,
+  MenuToggle,
+  MenuToggleCheckbox,
+  Popper,
+  Pagination
+} from '@patternfly/react-core';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 interface Repository {
@@ -92,6 +105,103 @@ export const FilterSearchInput: React.FunctionComponent = () => {
     };
   }, []);
 
+  const bulkSelectMenuRef = React.createRef<HTMLDivElement>();
+  const bulkSelectToggleRef = React.createRef<any>();
+  const containerRef = React.createRef<HTMLDivElement>();
+
+  const [isBulkSelectOpen, setIsBulkSelectOpen] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleBulkSelectMenuKeys);
+    window.addEventListener('click', handleBulkSelectClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleBulkSelectMenuKeys);
+      window.removeEventListener('click', handleBulkSelectClickOutside);
+    };
+  }, [isBulkSelectOpen, bulkSelectMenuRef]);
+
+  const handleBulkSelectClickOutside = (event: MouseEvent) => {
+    if (isBulkSelectOpen && !bulkSelectMenuRef.current?.contains(event.target as Node)) {
+      setIsBulkSelectOpen(false);
+    }
+  };
+
+  const handleBulkSelectMenuKeys = (event: KeyboardEvent) => {
+    if (!isBulkSelectOpen) {
+      return;
+    }
+    if (
+      bulkSelectMenuRef.current?.contains(event.target as Node) ||
+      bulkSelectToggleRef.current?.contains(event.target as Node)
+    ) {
+      if (event.key === 'Escape' || event.key === 'Tab') {
+        setIsBulkSelectOpen(!isBulkSelectOpen);
+        bulkSelectToggleRef.current?.focus();
+      }
+    }
+  };
+
+  const onBulkSelectToggleClick = (ev: React.MouseEvent) => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      if (bulkSelectMenuRef.current) {
+        const firstElement = bulkSelectMenuRef.current.querySelector('li > button:not(:disabled)');
+        firstElement && (firstElement as HTMLElement).focus();
+      }
+    }, 0);
+    setIsBulkSelectOpen(!isBulkSelectOpen);
+  };
+
+  const bulkSelectToggle = (
+    <MenuToggle
+      ref={bulkSelectToggleRef}
+      onClick={onBulkSelectToggleClick}
+      isExpanded={isBulkSelectOpen}
+      splitButtonOptions={{
+        items: [
+          <MenuToggleCheckbox
+            id="select-checkbox"
+            key="select-checkbox"
+            aria-label="Select all"
+            isChecked={areAllReposSelected}
+            onChange={(checked, _event) => selectAllRepos(checked)}
+          />
+        ]
+      }}
+      aria-label="Full table selection checkbox"
+    />
+  );
+
+  const bulkSelectMenu = (
+    // eslint-disable-next-line no-console
+    <Menu
+      ref={bulkSelectMenuRef}
+      onSelect={(_ev, itemId) => {
+        selectAllRepos(itemId === 0);
+        setIsBulkSelectOpen(!isBulkSelectOpen);
+      }}
+    >
+      <MenuContent>
+        <MenuList>
+          <MenuItem itemId={0}>Select all</MenuItem>
+          <MenuItem itemId={1}>Deselect all</MenuItem>
+        </MenuList>
+      </MenuContent>
+    </Menu>
+  );
+
+  const toolbarBulkSelect = (
+    <div ref={containerRef}>
+      <Popper
+        trigger={bulkSelectToggle}
+        popper={bulkSelectMenu}
+        appendTo={containerRef.current || undefined}
+        isVisible={isBulkSelectOpen}
+        popperMatchesTriggerWidth={false}
+      />
+    </div>
+  );
+
   const [searchValue, setSearchValue] = React.useState('');
 
   const onSearchChange = (value: string) => {
@@ -121,10 +231,22 @@ export const FilterSearchInput: React.FunctionComponent = () => {
     />
   );
 
+  const toolbarPagination = (
+    <Pagination
+      perPageComponent="button"
+      itemCount={repositories.length}
+      perPage={50}
+      page={1}
+      widgetId="table-mock-pagination"
+    />
+  );
+
   const toolbar = (
     <Toolbar id="toolbar-items">
       <ToolbarContent>
+        <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
         <ToolbarItem variant="search-filter">{searchInput}</ToolbarItem>
+        <ToolbarItem variant="pagination">{toolbarPagination}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
@@ -135,12 +257,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
       <TableComposable aria-label="Selectable table">
         <Thead>
           <Tr>
-            <Th
-              select={{
-                onSelect: (_event, isSelecting) => selectAllRepos(isSelecting),
-                isSelected: areAllReposSelected
-              }}
-            />
+            <Th />
             <Th>{columnNames.name}</Th>
             <Th>{columnNames.threads}</Th>
             <Th>{columnNames.apps}</Th>
