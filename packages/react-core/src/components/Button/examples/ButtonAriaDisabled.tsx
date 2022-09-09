@@ -5,7 +5,8 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-i
 
 export const ButtonAriaDisabled: React.FunctionComponent = () => (
   <React.Fragment>
-    <Button isAriaDisabled>Primary aria disabled</Button> <Button isAriaDisabled>Secondary aria disabled</Button>{' '}
+    <Button isAriaDisabled>Primary aria disabled</Button>{' '}
+    <Button isAriaDisabled>Secondary aria disabled</Button>{' '}
     <Button variant="secondary" isDanger isAriaDisabled>
       Danger secondary aria disabled
     </Button>{' '}
