@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.106.0 (2022-09-09)
+
+
+### Features
+
+* **Button:** new count number prop ([#7910](https://github.com/patternfly/patternfly-react/issues/7910)) ([a096b3c](https://github.com/patternfly/patternfly-react/commit/a096b3cba080b5bcd87777efe0e96e64c6da121f))
+
+
+
+
+
 ## 4.105.14 (2022-09-08)
 
 
