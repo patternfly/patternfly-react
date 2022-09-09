@@ -9,22 +9,20 @@ export interface DropdownProps extends MenuProps {
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown */
   className?: string;
-  /** The default toggle options */
-  // toggleProps?: DropdownToggleProps;
   /** Renderer for a custom dropdown toggle. Forwards a ref to the toggle. */
   toggleRender?: (toggleRef: React.RefObject<any>) => React.ReactNode;
   /** Flag to indicate if menu is opened.  If is open */
   isOpen?: boolean;
   /** Function callback called when user selects item */
   onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => void;
-  /* Callback to be called when the component changes the open state of the Component.
-   * E.g. The component closes the menu when there is a click outside of the menu. */
+  /** Callback to for when the component needs to change the open state of the menu.
+   * If this is not provided the component will not close the menu when tab or escape are clicked. */
   onIsOpenChange?: (isOpen: boolean) => void;
   /** Indicates if the menu should be without the outer box-shadow */
   isPlain?: boolean;
-  /** Indicates if the menu should be srollable */
+  /** Indicates if the menu should be scrollable */
   isScrollable?: boolean;
-  /* min width of the menu */
+  /** Min width of the menu */
   minWidth?: string;
 }
 
@@ -47,20 +45,29 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   const menuRef = (props.innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
   React.useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
-      // console.log('dropdown', toggleRef?.current?.contains(event.target as Node));
-      if (isOpen && menuRef?.current && toggleRef?.current?.contains(event.target as Node)) {
+      if (!isOpen && toggleRef.current?.contains(event.target as Node)) {
         // toggle was clicked open, focus on first menu item
-        if (document.activeElement !== toggleRef.current) {
+        if (event.key === 'Enter') {
           setTimeout(() => {
             const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
             firstElement && (firstElement as HTMLElement).focus();
           }, 0);
         }
       }
+      // Close the menu on tab or escape if onIsOpenChange is provided
+      if (
+        (isOpen && onIsOpenChange && menuRef.current?.contains(event.target as Node)) ||
+        toggleRef.current?.contains(event.target as Node)
+      ) {
+        if (event.key === 'Escape' || event.key === 'Tab') {
+          onIsOpenChange(!isOpen);
+          toggleRef.current?.focus();
+        }
+      }
     };
 
     const handleClickOutside = (event: MouseEvent) => {
-      // If the event is not on the toggle, close the menu
+      // If the event is not on the toggle and onIsOpenChange callback is provided, close the menu
       if (isOpen && onIsOpenChange && !toggleRef?.current?.contains(event.target as Node)) {
         if (isOpen && !menuRef.current?.contains(event.target as Node)) {
           onIsOpenChange(false);

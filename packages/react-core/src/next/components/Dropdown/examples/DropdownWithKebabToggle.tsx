@@ -8,13 +8,6 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
   const menuRef = React.useRef<HTMLDivElement>(null);
 
   const onToggleClick = () => {
-    // TODO: move the logic for focus into the component
-    setTimeout(() => {
-      if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
-        firstElement && (firstElement as HTMLElement).focus();
-      }
-    }, 0);
     setIsOpen(!isOpen);
   };
 
