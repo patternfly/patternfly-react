@@ -32,7 +32,13 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
       minWidth="150px"
       onIsOpenChange={isOpen => setIsOpen(isOpen)}
       toggleRender={toggleRef => (
-        <MenuToggle ref={toggleRef} variant="plain" onClick={onToggleClick} isExpanded={isOpen}>
+        <MenuToggle
+          ref={toggleRef}
+          aria-label="kebab dropdown toggle"
+          variant="plain"
+          onClick={onToggleClick}
+          isExpanded={isOpen}
+        >
           <EllipsisVIcon />
         </MenuToggle>
       )}
