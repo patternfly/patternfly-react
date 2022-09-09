@@ -5,24 +5,24 @@ import { Menu, MenuContent, MenuProps } from '../../../components/Menu';
 import { Popper } from '../../../helpers/Popper/Popper';
 
 export interface DropdownProps extends MenuProps {
-  /** Anything which can be rendered in a dropdown */
+  /** Anything which can be rendered in a dropdown. */
   children?: React.ReactNode;
-  /** Classes applied to root element of dropdown */
+  /** Classes applied to root element of dropdown. */
   className?: string;
   /** Renderer for a custom dropdown toggle. Forwards a ref to the toggle. */
-  toggleRender?: (toggleRef: React.RefObject<any>) => React.ReactNode;
-  /** Flag to indicate if menu is opened.  If is open */
+  toggle?: (toggleRef: React.RefObject<any>) => React.ReactNode;
+  /** Flag to indicate if menu is opened.*/
   isOpen?: boolean;
-  /** Function callback called when user selects item */
+  /** Function callback called when user selects item. */
   onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => void;
-  /** Callback to for when the component needs to change the open state of the menu.
+  /** Callback for when the component needs to change the open state of the menu.
    * If this is not provided the component will not close the menu when tab or escape are clicked. */
   onIsOpenChange?: (isOpen: boolean) => void;
-  /** Indicates if the menu should be without the outer box-shadow */
+  /** Indicates if the menu should be without the outer box-shadow. */
   isPlain?: boolean;
-  /** Indicates if the menu should be scrollable */
+  /** Indicates if the menu should be scrollable. */
   isScrollable?: boolean;
-  /** Min width of the menu */
+  /** Min width of the menu. */
   minWidth?: string;
 }
 
@@ -31,7 +31,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   className,
   onSelect,
   isOpen,
-  toggleRender,
+  toggle,
   onIsOpenChange,
   isPlain,
   isScrollable,
@@ -105,7 +105,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   return (
     <div ref={containerRef}>
       <Popper
-        trigger={toggleRender(toggleRef)}
+        trigger={toggle(toggleRef)}
         popper={menu}
         appendTo={containerRef.current || undefined}
         isVisible={isOpen}

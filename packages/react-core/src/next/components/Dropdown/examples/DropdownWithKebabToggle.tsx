@@ -24,7 +24,7 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
       onSelect={onSelect}
       minWidth="150px"
       onIsOpenChange={isOpen => setIsOpen(isOpen)}
-      toggleRender={toggleRef => (
+      toggle={toggleRef => (
         <MenuToggle
           ref={toggleRef}
           aria-label="kebab dropdown toggle"

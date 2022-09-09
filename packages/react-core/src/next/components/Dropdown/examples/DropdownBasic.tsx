@@ -39,7 +39,7 @@ export const DropdownBasic: React.FunctionComponent = () => {
         onSelect={onSelect}
         isPlain={isPlain}
         onIsOpenChange={isOpen => setIsOpen(isOpen)}
-        toggleRender={toggleRef => (
+        toggle={toggleRef => (
           <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
             Dropdown
           </MenuToggle>
