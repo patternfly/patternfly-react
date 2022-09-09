@@ -50,7 +50,7 @@ Composable menus currently require consumer keyboard handling and use of our und
 
 ### Composable typeahead select
 
-```ts file="./examples/ComposableTypeaheadSelect.tsx"
+```ts isBeta file="./examples/ComposableTypeaheadSelect.tsx"
 ```
 
 ### Composable multiple typeahead select
