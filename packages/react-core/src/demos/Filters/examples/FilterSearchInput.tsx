@@ -233,6 +233,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
 
   const toolbarPagination = (
     <Pagination
+      titles={{ paginationTitle: 'Search filter pagination' }}
       perPageComponent="button"
       itemCount={repositories.length}
       perPage={50}
@@ -242,7 +243,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
   );
 
   const toolbar = (
-    <Toolbar id="toolbar-items">
+    <Toolbar id="search-input-filter-toolbar">
       <ToolbarContent>
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
         <ToolbarItem variant="search-filter">{searchInput}</ToolbarItem>

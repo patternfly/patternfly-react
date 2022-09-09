@@ -322,6 +322,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
   // Set up pagination
   const toolbarPagination = (
     <Pagination
+      titles={{ paginationTitle: 'Single select filter pagination' }}
       perPageComponent="button"
       itemCount={repositories.length}
       perPage={50}
@@ -331,7 +332,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
   );
 
   const toolbar = (
-    <Toolbar id="toolbar-items">
+    <Toolbar id="single-select-filter-toolbar">
       <ToolbarContent>
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
         <ToolbarItem>{select}</ToolbarItem>

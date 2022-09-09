@@ -326,6 +326,7 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
   // Set up pagination
   const toolbarPagination = (
     <Pagination
+      titles={{ paginationTitle: 'Checkbox filter pagination' }}
       perPageComponent="button"
       itemCount={repositories.length}
       perPage={50}
@@ -335,7 +336,7 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
   );
 
   const toolbar = (
-    <Toolbar id="toolbar-items" clearAllFilters={() => setSelections([])}>
+    <Toolbar id="checkbox-filter-toolbar" clearAllFilters={() => setSelections([])}>
       <ToolbarContent>
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
         <ToolbarGroup variant="filter-group">

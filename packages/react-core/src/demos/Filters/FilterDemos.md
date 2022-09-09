@@ -23,6 +23,8 @@ Pagination
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
+## Demos
+
 ### Filtering with a search input
 
 ```ts file="./examples/FilterSearchInput.tsx"
