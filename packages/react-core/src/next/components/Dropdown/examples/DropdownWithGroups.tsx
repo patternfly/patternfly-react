@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, DropdownGroup, DropdownItem, DropdownList } from '@patternfly/react-core/next';
+import { Dropdown, DropdownGroup, DropdownItem, DropdownList, Divider } from '@patternfly/react-core/next';
 import { MenuToggle } from '@patternfly/react-core';
 
 export const DropdownWithGroups: React.FunctionComponent = () => {
@@ -38,6 +38,7 @@ export const DropdownWithGroups: React.FunctionComponent = () => {
           </DropdownItem>
         </DropdownList>
       </DropdownGroup>
+      <Divider />
       <DropdownGroup label="Group 2" labelHeadingLevel="h3">
         <DropdownList>
           <DropdownItem itemId={2} key="group2 link">
@@ -48,6 +49,7 @@ export const DropdownWithGroups: React.FunctionComponent = () => {
           </DropdownItem>
         </DropdownList>
       </DropdownGroup>
+      <Divider />
       <DropdownGroup label="Group 3" labelHeadingLevel="h3">
         <DropdownList>
           <DropdownItem itemId={4} key="group3 link">
