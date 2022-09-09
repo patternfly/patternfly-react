@@ -485,7 +485,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       downloadButtonAriaLabel,
       downloadButtonToolTipText,
       toolTipDelay,
-      toolTipCopyExitDelay: tooltipCopyExitDelay,
+      toolTipCopyExitDelay,
       toolTipMaxWidth,
       toolTipPosition,
       isLineNumbersVisible,
@@ -575,7 +575,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                           ...tooltipProps,
                           'aria-live': 'polite',
                           content: <div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>,
-                          exitDelay: copied ? tooltipCopyExitDelay : toolTipDelay
+                          exitDelay: copied ? toolTipCopyExitDelay : toolTipDelay
                         }}
                         onClick={this.copyCode}
                       />
