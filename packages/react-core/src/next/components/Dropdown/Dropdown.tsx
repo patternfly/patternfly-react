@@ -15,7 +15,7 @@ export interface DropdownProps extends MenuProps {
   isOpen?: boolean;
   /** Function callback called when user selects item. */
   onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => void;
-  /** Callback to allow the dropdown component change the open state of the menu that is set with the isOpen prop .
+  /** Callback to allow the dropdown component to change the open state of the menu that is set with the isOpen prop .
    * If this is not provided the component will not close the menu when tab or escape are clicked. */
   onIsOpenChange?: (isOpen: boolean) => void;
   /** Indicates if the menu should be without the outer box-shadow. */
