@@ -1,6 +1,6 @@
 import React from 'react';
-import { Dropdown, DropdownGroup, DropdownItem, DropdownList, Divider } from '@patternfly/react-core/next';
-import { MenuToggle } from '@patternfly/react-core';
+import { Dropdown, DropdownGroup, DropdownItem, DropdownList } from '@patternfly/react-core/next';
+import { MenuToggle, Divider } from '@patternfly/react-core';
 
 export const DropdownWithGroups: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);

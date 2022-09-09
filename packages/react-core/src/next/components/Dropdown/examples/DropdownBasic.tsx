@@ -41,7 +41,7 @@ export const DropdownBasic: React.FunctionComponent = () => {
         <DropdownItem itemId={3} isDisabled key="disabled action" to="#default-link4">
           Disabled action
         </DropdownItem>
-        <Divider key="separator" />,
+        <Divider key="separator" />
         <DropdownItem itemId={4} key="separated link">
           Separated link
         </DropdownItem>
