@@ -10,13 +10,13 @@ export interface DropdownProps extends MenuProps {
   /** Classes applied to root element of dropdown. */
   className?: string;
   /** Renderer for a custom dropdown toggle. Forwards a ref to the toggle. */
-  toggle?: (toggleRef: React.RefObject<any>) => React.ReactNode;
+  toggle: (toggleRef: React.RefObject<any>) => React.ReactNode;
   /** Flag to indicate if menu is opened.*/
   isOpen?: boolean;
   /** Function callback called when user selects item. */
   onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => void;
   /** Callback to allow the dropdown component to change the open state of the menu that is set with the isOpen prop .
-   * If this is not provided the component will not close the menu when tab or escape are clicked. */
+   * If this is not provided the component will not close the menu when tab or escape are pressed. */
   onIsOpenChange?: (isOpen: boolean) => void;
   /** Indicates if the menu should be without the outer box-shadow. */
   isPlain?: boolean;
@@ -85,7 +85,6 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   }, [isOpen, menuRef, onIsOpenChange]);
 
   const menu = (
-    // eslint-disable-next-line no-console
     <Menu
       className={css(styles.dropdownMenu, className)}
       ref={menuRef}
