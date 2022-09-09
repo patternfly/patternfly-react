@@ -100,10 +100,6 @@ Unlike normal disabled buttons, aria-disabled buttons can support tooltips. Furt
 
 ```ts file="./ButtonAriaDisabled.tsx"
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9c9fe3c08 (docs(Button): rebase 2)
 
 ### Button with count
 
@@ -111,15 +107,3 @@ Buttons can display a `count` in the form of a badge to indicate some value or n
 
 ```ts file="./ButtonWithCount.tsx" isBeta
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e49e903e5 (docs(Button): combined aria-disabled tooltip examples into single example)
-=======
->>>>>>> 9c9fe3c08 (docs(Button): rebase 2)
-=======
-
->>>>>>> 178e04bc8 (docs(Button): rebase 3)
-=======
->>>>>>> 6345388be (docs(Button): merge 1)
