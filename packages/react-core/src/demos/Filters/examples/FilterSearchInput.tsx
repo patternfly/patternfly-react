@@ -11,9 +11,16 @@ import {
   MenuToggle,
   MenuToggleCheckbox,
   Popper,
-  Pagination
+  Pagination,
+  EmptyState,
+  EmptyStateIcon,
+  Title,
+  EmptyStateBody,
+  EmptyStatePrimary,
+  Button
 } from '@patternfly/react-core';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 interface Repository {
   name: string;
@@ -63,6 +70,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
   const selectAllRepos = (isSelecting = true) =>
     setSelectedRepoNames(isSelecting ? selectableRepos.map(r => r.name) : []);
   const areAllReposSelected = selectedRepoNames.length === selectableRepos.length;
+  const areSomeReposSelected = selectedRepoNames.length > 0;
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
   // To allow shift+click to select/deselect multiple rows
@@ -152,6 +160,13 @@ export const FilterSearchInput: React.FunctionComponent = () => {
     setIsBulkSelectOpen(!isBulkSelectOpen);
   };
 
+  let menuToggleCheckmark: boolean | null = false;
+  if (areAllReposSelected) {
+    menuToggleCheckmark = true;
+  } else if (areSomeReposSelected) {
+    menuToggleCheckmark = null;
+  }
+
   const bulkSelectToggle = (
     <MenuToggle
       ref={bulkSelectToggleRef}
@@ -163,7 +178,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
             id="select-checkbox"
             key="select-checkbox"
             aria-label="Select all"
-            isChecked={areAllReposSelected}
+            isChecked={menuToggleCheckmark}
             onChange={(checked, _event) => selectAllRepos(checked)}
           />
         ]
@@ -177,14 +192,15 @@ export const FilterSearchInput: React.FunctionComponent = () => {
     <Menu
       ref={bulkSelectMenuRef}
       onSelect={(_ev, itemId) => {
-        selectAllRepos(itemId === 0);
+        selectAllRepos(itemId === 1 || itemId === 2);
         setIsBulkSelectOpen(!isBulkSelectOpen);
       }}
     >
       <MenuContent>
         <MenuList>
-          <MenuItem itemId={0}>Select all</MenuItem>
-          <MenuItem itemId={1}>Deselect all</MenuItem>
+          <MenuItem itemId={0}>Select none (0 items)</MenuItem>
+          <MenuItem itemId={1}>Select page ({repositories.length} items)</MenuItem>
+          <MenuItem itemId={2}>Select all ({repositories.length} items)</MenuItem>
         </MenuList>
       </MenuContent>
     </Menu>
@@ -236,9 +252,10 @@ export const FilterSearchInput: React.FunctionComponent = () => {
       titles={{ paginationTitle: 'Search filter pagination' }}
       perPageComponent="button"
       itemCount={repositories.length}
-      perPage={50}
+      perPage={10}
       page={1}
-      widgetId="table-mock-pagination"
+      widgetId="search-input-mock-pagination"
+      isCompact
     />
   );
 
@@ -250,6 +267,45 @@ export const FilterSearchInput: React.FunctionComponent = () => {
         <ToolbarItem variant="pagination">{toolbarPagination}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
+  );
+
+  const filteredRepos = repositories.filter(onFilter).map((repo, rowIndex) => (
+    <Tr key={repo.name}>
+      <Td
+        select={{
+          rowIndex,
+          onSelect: (_event, isSelecting) => onSelectRepo(repo, rowIndex, isSelecting),
+          isSelected: isRepoSelected(repo),
+          disable: !isRepoSelectable(repo)
+        }}
+      />
+      <Td dataLabel={columnNames.name}>{repo.name}</Td>
+      <Td dataLabel={columnNames.threads}>{repo.threads}</Td>
+      <Td dataLabel={columnNames.apps}>{repo.apps}</Td>
+      <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
+      <Td dataLabel={columnNames.status}>{repo.status}</Td>
+      <Td dataLabel={columnNames.location}>{repo.location}</Td>
+    </Tr>
+  ));
+
+  const emptyState = (
+    <EmptyState>
+      <EmptyStateIcon icon={SearchIcon} />
+      <Title size="lg" headingLevel="h4">
+        No results found
+      </Title>
+      <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
+      <EmptyStatePrimary>
+        <Button
+          variant="link"
+          onClick={() => {
+            setSearchValue('');
+          }}
+        >
+          Clear all filters
+        </Button>
+      </EmptyStatePrimary>
+    </EmptyState>
   );
 
   return (
@@ -267,27 +323,9 @@ export const FilterSearchInput: React.FunctionComponent = () => {
             <Th>{columnNames.location}</Th>
           </Tr>
         </Thead>
-        <Tbody>
-          {repositories.filter(onFilter).map((repo, rowIndex) => (
-            <Tr key={repo.name}>
-              <Td
-                select={{
-                  rowIndex,
-                  onSelect: (_event, isSelecting) => onSelectRepo(repo, rowIndex, isSelecting),
-                  isSelected: isRepoSelected(repo),
-                  disable: !isRepoSelectable(repo)
-                }}
-              />
-              <Td dataLabel={columnNames.name}>{repo.name}</Td>
-              <Td dataLabel={columnNames.threads}>{repo.threads}</Td>
-              <Td dataLabel={columnNames.apps}>{repo.apps}</Td>
-              <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
-              <Td dataLabel={columnNames.status}>{repo.status}</Td>
-              <Td dataLabel={columnNames.location}>{repo.location}</Td>
-            </Tr>
-          ))}
-        </Tbody>
+        <Tbody>{filteredRepos.length > 0 && filteredRepos}</Tbody>
       </TableComposable>
+      {filteredRepos.length === 0 && emptyState}
     </React.Fragment>
   );
 };
