@@ -6,7 +6,9 @@ propComponents: ['TextArea']
 ---
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
@@ -32,6 +34,7 @@ class SimpleTextArea extends React.Component {
 ```
 
 ### Invalid
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
@@ -42,7 +45,7 @@ class InvalidTextArea extends React.Component {
     this.state = {
       value: ''
     };
-    
+
     this.handleInvalidTextAreaChange = value => {
       this.setState({ value });
     };
@@ -65,6 +68,7 @@ class InvalidTextArea extends React.Component {
 ```
 
 ### Validated
+
 ```js
 import React from 'react';
 import { Form, FormGroup, TextArea } from '@patternfly/react-core';
@@ -78,28 +82,30 @@ class InvalidTextArea extends React.Component {
       validated: 'default',
       helperText: 'Share your thoughts.'
     };
-    
+
     this.simulateNetworkCall = callback => {
       setTimeout(callback, 2000);
-    }
-    
-    this.handleTextAreaChange = value => {
+    };
 
-      this.setState({
-        value,
-        validated: 'default',
-        helperText: 'Validating...',
-      },
+    this.handleTextAreaChange = value => {
+      this.setState(
+        {
+          value,
+          validated: 'default',
+          helperText: 'Validating...'
+        },
         this.simulateNetworkCall(() => {
           if (value && value.length > 0) {
             if (value.length >= 10) {
-              this.setState({validated: 'success', helperText: 'Thanks for your comments!'});
+              this.setState({ validated: 'success', helperText: 'Thanks for your comments!' });
             } else {
-              this.setState({validated: 'error', invalidText: 'Your being too brief, please enter at least 10 characters.'});
+              this.setState({
+                validated: 'error',
+                invalidText: 'Your being too brief, please enter at least 10 characters.'
+              });
             }
-          }
-          else {
-            this.setState({validated: 'warning', helperText: 'You must have something to say'});
+          } else {
+            this.setState({ validated: 'warning', helperText: 'You must have something to say' });
           }
         })
       );
@@ -134,6 +140,7 @@ class InvalidTextArea extends React.Component {
 ```
 
 ### Vertically resizable text area
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
@@ -153,12 +160,20 @@ class VerticalResizeTextArea extends React.Component {
   render() {
     const { value } = this.state;
 
-    return <TextArea value={value} onChange={this.handleTextAreaChange} resizeOrientation='vertical' aria-label="text vertical resize example" />;
+    return (
+      <TextArea
+        value={value}
+        onChange={this.handleTextAreaChange}
+        resizeOrientation="vertical"
+        aria-label="text vertical resize example"
+      />
+    );
   }
 }
 ```
 
 ### Horizontally resizable text area
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
@@ -178,33 +193,43 @@ class HorizontalResizeTextArea extends React.Component {
   render() {
     const { value } = this.state;
 
-    return <TextArea value={value} onChange={this.handleTextAreaChange} resizeOrientation='horizontal' aria-label="text horizontal resize example" />;
+    return (
+      <TextArea
+        value={value}
+        onChange={this.handleTextAreaChange}
+        resizeOrientation="horizontal"
+        aria-label="text horizontal resize example"
+      />
+    );
   }
 }
 ```
 
 ### Uncontrolled
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
-<TextArea defaultValue="default value" aria-label="uncontrolled text area example" />
+<TextArea defaultValue="default value" aria-label="uncontrolled text area example" />;
 ```
 
 ### Disabled
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
-<TextArea aria-label="disabled text area example" isDisabled />
+<TextArea aria-label="disabled text area example" isDisabled />;
 ```
 
 ### Auto resizing
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
-<TextArea aria-label="auto resizing text area example" autoResize />
+<TextArea aria-label="auto resizing text area example" autoResize />;
 ```
 
 ### Icon sprite variants
@@ -250,3 +275,4 @@ IconSpriteTextArea = () => {
     </>
   );
 };
+```
