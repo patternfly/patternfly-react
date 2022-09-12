@@ -72,9 +72,9 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** The number of search results returned. Either a total number of results,
    * or a string representing the current result over the total number of results. i.e. "1 / 5" */
   resultsCount?: number | string;
-  /** Flag to indicate if the content is expanded */
+  /** Flag to indicate if the search input is expanded */
   isExpanded?: boolean;
-  /** Callback function to toggle the expandable section */
+  /** Callback function to toggle the expandable search input */
   onToggleExpand?: (isExpanded: boolean, event: React.SyntheticEvent<HTMLButtonElement>) => void;
 
   /** Array of attribute values used for dynamically generated advanced search */
@@ -114,7 +114,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   onNextClick,
   onPreviousClick,
   innerRef,
-  isExpanded = undefined,
+  isExpanded,
   onToggleExpand,
   'aria-label': ariaLabel = 'Search input',
   resetButtonLabel = 'Reset',
