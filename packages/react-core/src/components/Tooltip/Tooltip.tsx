@@ -247,13 +247,13 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       setOpacity(1);
     }, entryDelay);
   };
-  const hide = () => {
+  const hide = React.useCallback(() => {
     clearTimeouts([showTimerRef, transitionTimerRef, hideTimerRef]);
     hideTimerRef.current = setTimeout(() => {
       setOpacity(0);
       transitionTimerRef.current = setTimeout(() => setVisible(false), animationDuration);
     }, exitDelay);
-  };
+  }, [exitDelay]);
   const positionModifiers = {
     top: styles.modifiers.top,
     bottom: styles.modifiers.bottom,
