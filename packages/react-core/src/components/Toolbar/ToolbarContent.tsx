@@ -34,7 +34,12 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Id of the parent Toolbar component */
   toolbarId?: string;
 }
-
+// TODO: do i have any toggle groups? do any of them lack a breakpoint prop? I need have ordered references to them.
+// I need to know how wide the toggle groups are when they are not collapsed
+// How wide are my children collectively? are they wider than me?
+// Collapse toggle groups in priority order, expand toggles in reverse priority order
+// ToolbarContents tells toggle groups which state they are in and toggle group needs pf-m-show if it's not collapsed.
+// BONUS: ToolbarGroups with visibility breakpoint mods could also have a priority order and be hidden when running out of space
 export class ToolbarContent extends React.Component<ToolbarContentProps> {
   static displayName = 'ToolbarContent';
   private expandableContentRef = React.createRef<HTMLDivElement>();
