@@ -315,12 +315,12 @@ export const FilterSearchInput: React.FunctionComponent = () => {
         <Thead>
           <Tr>
             <Th />
-            <Th>{columnNames.name}</Th>
-            <Th>{columnNames.threads}</Th>
-            <Th>{columnNames.apps}</Th>
-            <Th>{columnNames.workspaces}</Th>
-            <Th>{columnNames.status}</Th>
-            <Th>{columnNames.location}</Th>
+            <Th width={20}>{columnNames.name}</Th>
+            <Th width={20}>{columnNames.threads}</Th>
+            <Th width={20}>{columnNames.apps}</Th>
+            <Th width={20}>{columnNames.workspaces}</Th>
+            <Th width={20}>{columnNames.status}</Th>
+            <Th width={20}>{columnNames.location}</Th>
           </Tr>
         </Thead>
         <Tbody>{filteredRepos.length > 0 && filteredRepos}</Tbody>
