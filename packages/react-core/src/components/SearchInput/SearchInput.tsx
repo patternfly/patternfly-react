@@ -221,7 +221,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     onToggleExpand(isExpanded, event);
   };
 
-  const buildSearchTextInputGroup = ({ ...searchInputProps } = {}) => (
+  const buildTextInputGroup = ({ ...searchInputProps } = {}) => (
     <TextInputGroup isDisabled={isDisabled} {...searchInputProps}>
       <TextInputGroupMain
         hint={hint}
@@ -256,7 +256,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               </Button>
             </div>
           )}
-          {!!onClear && (
+          {!!onClear && !onToggleExpand && (
             <Button
               variant={ButtonVariant.plain}
               isDisabled={isDisabled}
@@ -271,9 +271,28 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     </TextInputGroup>
   );
 
+  const closeExpandableButton = (
+    <Button variant={ButtonVariant.plain} aria-label={expandedLabel()} icon={<TimesIcon />} onClick={onExpandHandler} />
+  );
+
+  const buildExpandableSearchInput = ({ ...searchInputProps } = {}) => (
+    <InputGroup {...searchInputProps}>
+      {buildTextInputGroup()}
+      {closeExpandableButton}
+    </InputGroup>
+  );
+
+  const buildSearchTextInputGroup = ({ ...searchInputProps } = {}) => {
+    if (onToggleExpand) {
+      return buildExpandableSearchInput({ ...searchInputProps });
+    }
+
+    return buildTextInputGroup({ ...searchInputProps });
+  };
+
   const buildSearchTextInputGroupWithExtraButtons = ({ ...searchInputProps } = {}) => (
     <InputGroup {...searchInputProps}>
-      {buildSearchTextInputGroup()}
+      {buildTextInputGroup()}
       {(attributes.length > 0 || onToggleAdvancedSearch) && (
         <Button
           className={isSearchMenuOpen && 'pf-m-expanded'}
@@ -297,30 +316,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
           <ArrowRightIcon />
         </Button>
       )}
-    </InputGroup>
-  );
-
-  const buildSearchTextInputGroupWithExpand = ({ ...searchInputProps } = {}) => (
-    <InputGroup {...searchInputProps}>
-      {buildSearchTextInputGroup()}
-      <Button
-        variant={ButtonVariant.plain}
-        aria-label={expandedLabel()}
-        icon={<TimesIcon />}
-        onClick={onExpandHandler}
-      ></Button>
-    </InputGroup>
-  );
-
-  const buildSearchTextInputGroupWithExtraButtonsAndExpand = ({ ...searchInputProps } = {}) => (
-    <InputGroup {...searchInputProps}>
-      {buildSearchTextInputGroupWithExtraButtons()}
-      <Button
-        variant={ButtonVariant.plain}
-        aria-label={expandedLabel()}
-        icon={<TimesIcon />}
-        onClick={onExpandHandler}
-      ></Button>
+      {onToggleExpand && closeExpandableButton}
     </InputGroup>
   );
 
@@ -330,56 +326,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     innerRef: searchInputRef
   };
 
-  if (!!onToggleExpand && isSearchInputExpanded) {
-    if (!!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch) {
-      if (attributes.length > 0) {
-        const AdvancedSearch = (
-          <span>
-            <AdvancedSearchMenu
-              value={value}
-              parentRef={searchInputRef}
-              parentInputRef={searchInputInputRef}
-              onSearch={onSearch}
-              onClear={onClear}
-              onChange={onChange}
-              onToggleAdvancedMenu={onToggle}
-              resetButtonLabel={resetButtonLabel}
-              submitSearchButtonLabel={submitSearchButtonLabel}
-              attributes={attributes}
-              formAdditionalItems={formAdditionalItems}
-              hasWordsAttrLabel={hasWordsAttrLabel}
-              advancedSearchDelimiter={advancedSearchDelimiter}
-              getAttrValueMap={getAttrValueMap}
-              isSearchMenuOpen={isSearchMenuOpen}
-            />
-          </span>
-        );
-
-        const AdvancedSearchWithPopper = (
-          <div className={css(className)} ref={searchInputRef} {...props}>
-            <Popper
-              trigger={buildSearchTextInputGroupWithExtraButtons()}
-              popper={AdvancedSearch}
-              isVisible={isSearchMenuOpen}
-              enableFlip={true}
-              appendTo={() => appendTo || searchInputRef.current}
-            />
-          </div>
-        );
-
-        const AdvancedSearchInline = (
-          <div className={css(className)} ref={searchInputRef} {...props}>
-            {buildSearchTextInputGroupWithExtraButtons()}
-            {AdvancedSearch}
-          </div>
-        );
-
-        return appendTo !== 'inline' ? AdvancedSearchWithPopper : AdvancedSearchInline;
-      }
-      buildSearchTextInputGroupWithExtraButtonsAndExpand({ ...searchInputProps });
-    }
-    return buildSearchTextInputGroupWithExpand({ ...searchInputProps });
-  } else if (!!onToggleExpand && !isSearchInputExpanded) {
+  if (!!onToggleExpand && !isSearchInputExpanded) {
     return (
       <InputGroup {...searchInputProps}>
         <Button
@@ -390,56 +337,56 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         ></Button>
       </InputGroup>
     );
-  } else {
-    if (!!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch) {
-      if (attributes.length > 0) {
-        const AdvancedSearch = (
-          <span>
-            <AdvancedSearchMenu
-              value={value}
-              parentRef={searchInputRef}
-              parentInputRef={searchInputInputRef}
-              onSearch={onSearch}
-              onClear={onClear}
-              onChange={onChange}
-              onToggleAdvancedMenu={onToggle}
-              resetButtonLabel={resetButtonLabel}
-              submitSearchButtonLabel={submitSearchButtonLabel}
-              attributes={attributes}
-              formAdditionalItems={formAdditionalItems}
-              hasWordsAttrLabel={hasWordsAttrLabel}
-              advancedSearchDelimiter={advancedSearchDelimiter}
-              getAttrValueMap={getAttrValueMap}
-              isSearchMenuOpen={isSearchMenuOpen}
-            />
-          </span>
-        );
-
-        const AdvancedSearchWithPopper = (
-          <div className={css(className)} ref={searchInputRef} {...props}>
-            <Popper
-              trigger={buildSearchTextInputGroupWithExtraButtons()}
-              popper={AdvancedSearch}
-              isVisible={isSearchMenuOpen}
-              enableFlip={true}
-              appendTo={() => appendTo || searchInputRef.current}
-            />
-          </div>
-        );
-
-        const AdvancedSearchInline = (
-          <div className={css(className)} ref={searchInputRef} {...props}>
-            {buildSearchTextInputGroupWithExtraButtons()}
-            {AdvancedSearch}
-          </div>
-        );
-
-        return appendTo !== 'inline' ? AdvancedSearchWithPopper : AdvancedSearchInline;
-      }
-      return buildSearchTextInputGroupWithExtraButtons({ ...searchInputProps });
-    }
-    return buildSearchTextInputGroup(searchInputProps);
   }
+
+  if (!!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch) {
+    if (attributes.length > 0) {
+      const AdvancedSearch = (
+        <span>
+          <AdvancedSearchMenu
+            value={value}
+            parentRef={searchInputRef}
+            parentInputRef={searchInputInputRef}
+            onSearch={onSearch}
+            onClear={onClear}
+            onChange={onChange}
+            onToggleAdvancedMenu={onToggle}
+            resetButtonLabel={resetButtonLabel}
+            submitSearchButtonLabel={submitSearchButtonLabel}
+            attributes={attributes}
+            formAdditionalItems={formAdditionalItems}
+            hasWordsAttrLabel={hasWordsAttrLabel}
+            advancedSearchDelimiter={advancedSearchDelimiter}
+            getAttrValueMap={getAttrValueMap}
+            isSearchMenuOpen={isSearchMenuOpen}
+          />
+        </span>
+      );
+
+      const AdvancedSearchWithPopper = (
+        <div className={css(className)} ref={searchInputRef} {...props}>
+          <Popper
+            trigger={buildSearchTextInputGroupWithExtraButtons()}
+            popper={AdvancedSearch}
+            isVisible={isSearchMenuOpen}
+            enableFlip={true}
+            appendTo={() => appendTo || searchInputRef.current}
+          />
+        </div>
+      );
+
+      const AdvancedSearchInline = (
+        <div className={css(className)} ref={searchInputRef} {...props}>
+          {buildSearchTextInputGroupWithExtraButtons()}
+          {AdvancedSearch}
+        </div>
+      );
+
+      return appendTo !== 'inline' ? AdvancedSearchWithPopper : AdvancedSearchInline;
+    }
+    return buildSearchTextInputGroupWithExtraButtons({ ...searchInputProps });
+  }
+  return buildSearchTextInputGroup(searchInputProps);
 };
 SearchInputBase.displayName = 'SearchInputBase';
 
