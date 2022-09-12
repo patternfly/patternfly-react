@@ -20,12 +20,15 @@ class DefaultTreeView extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { activeItems: {}, allExpanded: null };
+    this.state = { activeItems: [], allExpanded: null };
 
     this.onSelect = (evt, treeViewItem) => {
-      this.setState({
-        activeItems: [treeViewItem]
-      });
+      // Ignore folders for selection
+      if (treeViewItem && !treeViewItem.children) {
+        this.setState({
+          activeItems: [treeViewItem]
+        });
+      }
     };
 
     this.onToggle = evt => {
@@ -288,9 +291,12 @@ class SearchTreeView extends React.Component {
     this.state = { activeItems: {}, filteredItems: this.options, isFiltered: null };
 
     this.onSelect = (evt, treeViewItem) => {
-      this.setState({
-        activeItems: [treeViewItem]
-      });
+      // Ignore folders for selection
+      if (treeViewItem && !treeViewItem.children) {
+        this.setState({
+          activeItems: [treeViewItem]
+        });
+      }
     };
 
     this.onSearch = evt => {
@@ -575,9 +581,12 @@ class IconTreeView extends React.Component {
     this.state = { activeItems: {} };
 
     this.onSelect = (evt, treeViewItem) => {
-      this.setState({
-        activeItems: [treeViewItem]
-      });
+      // Ignore folders for selection
+      if (treeViewItem && !treeViewItem.children) {
+        this.setState({
+          activeItems: [treeViewItem]
+        });
+      }
     };
   }
 
@@ -668,9 +677,12 @@ class BadgesTreeView extends React.Component {
     this.state = { activeItems: {} };
 
     this.onSelect = (evt, treeViewItem) => {
-      this.setState({
-        activeItems: [treeViewItem]
-      });
+      // Ignore folders for selection
+      if (treeViewItem && !treeViewItem.children) {
+        this.setState({
+          activeItems: [treeViewItem]
+        });
+      }
     };
   }
 
@@ -753,9 +765,12 @@ class CustomBadgesTreeView extends React.Component {
     this.state = { activeItems: {} };
 
     this.onSelect = (evt, treeViewItem) => {
-      this.setState({
-        activeItems: [treeViewItem]
-      });
+      // Ignore folders for selection
+      if (treeViewItem && !treeViewItem.children) {
+        this.setState({
+          activeItems: [treeViewItem]
+        });
+      }
     };
   }
 
@@ -853,9 +868,12 @@ class IconTreeView extends React.Component {
     this.state = { activeItems: {}, isOpen: false };
 
     this.onSelect = (evt, treeViewItem) => {
-      this.setState({
-        activeItems: [treeViewItem]
-      });
+      // Ignore folders for selection
+      if (treeViewItem && !treeViewItem.children) {
+        this.setState({
+          activeItems: [treeViewItem]
+        });
+      }
     };
 
     this.onToggle = isOpen => {
