@@ -21,7 +21,7 @@ export const DropdownWithGroups: React.FunctionComponent = () => {
       innerRef={menuRef}
       isOpen={isOpen}
       onSelect={onSelect}
-      onIsOpenChange={isOpen => setIsOpen(isOpen)}
+      onOpenChange={isOpen => setIsOpen(isOpen)}
       toggle={toggleRef => (
         <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
           Dropdown

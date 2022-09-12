@@ -15,9 +15,9 @@ export interface DropdownProps extends MenuProps {
   isOpen?: boolean;
   /** Function callback called when user selects item. */
   onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => void;
-  /** Callback to allow the dropdown component to change the open state of the menu that is set with the isOpen prop .
-   * If this is not provided the component will not close the menu when tab or escape are pressed. */
-  onIsOpenChange?: (isOpen: boolean) => void;
+  /** Callback to allow the dropdown component to change the open state of the menu.
+   * Triggered by clicking outside of the menu, or by pressing either tab or escape. */
+  onOpenChange?: (isOpen: boolean) => void;
   /** Indicates if the menu should be without the outer box-shadow. */
   isPlain?: boolean;
   /** Indicates if the menu should be scrollable. */
@@ -32,7 +32,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   onSelect,
   isOpen,
   toggle,
-  onIsOpenChange,
+  onOpenChange,
   isPlain,
   isScrollable,
   minWidth,
@@ -54,23 +54,23 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
           }, 0);
         }
       }
-      // Close the menu on tab or escape if onIsOpenChange is provided
+      // Close the menu on tab or escape if onOpenChange is provided
       if (
-        (isOpen && onIsOpenChange && menuRef.current?.contains(event.target as Node)) ||
+        (isOpen && onOpenChange && menuRef.current?.contains(event.target as Node)) ||
         toggleRef.current?.contains(event.target as Node)
       ) {
         if (event.key === 'Escape' || event.key === 'Tab') {
-          onIsOpenChange(!isOpen);
+          onOpenChange(!isOpen);
           toggleRef.current?.focus();
         }
       }
     };
 
     const handleClickOutside = (event: MouseEvent) => {
-      // If the event is not on the toggle and onIsOpenChange callback is provided, close the menu
-      if (isOpen && onIsOpenChange && !toggleRef?.current?.contains(event.target as Node)) {
+      // If the event is not on the toggle and onOpenChange callback is provided, close the menu
+      if (isOpen && onOpenChange && !toggleRef?.current?.contains(event.target as Node)) {
         if (isOpen && !menuRef.current?.contains(event.target as Node)) {
-          onIsOpenChange(false);
+          onOpenChange(false);
         }
       }
     };
@@ -82,7 +82,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       window.removeEventListener('keydown', handleMenuKeys);
       window.removeEventListener('click', handleClickOutside);
     };
-  }, [isOpen, menuRef, onIsOpenChange]);
+  }, [isOpen, menuRef, onOpenChange]);
 
   const menu = (
     <Menu

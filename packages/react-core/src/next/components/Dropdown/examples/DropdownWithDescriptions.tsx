@@ -22,7 +22,7 @@ export const DropdownWithDescriptions: React.FunctionComponent = () => {
       isOpen={isOpen}
       onSelect={onSelect}
       minWidth="150px"
-      onIsOpenChange={isOpen => setIsOpen(isOpen)}
+      onOpenChange={isOpen => setIsOpen(isOpen)}
       toggle={toggleRef => (
         <MenuToggle ref={toggleRef} isFullWidth onClick={onToggleClick} isExpanded={isOpen}>
           Dropdown
