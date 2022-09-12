@@ -1,9 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import { MenuToggle } from '../MenuToggle';
+import { MenuToggleCheckbox } from '../MenuToggleCheckbox';
 import { Badge } from '../../Badge';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import userEvent from '@testing-library/user-event';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 describe('menu toggle', () => {
   test('renders successfully', () => {
@@ -53,5 +55,29 @@ describe('menu toggle', () => {
   test('shows badge', () => {
     const { asFragment } = render(<MenuToggle badge={<Badge>badge</Badge>}>Toggle</MenuToggle>);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('split toggle passes onClick', async () => {
+    const mockClick = jest.fn();
+    const user = userEvent.setup();
+
+    render(<MenuToggle
+      onClick={mockClick}
+      splitButtonOptions={{
+        items: [
+          <MenuToggleCheckbox
+            id="split-button-checkbox-with-text-disabled-example"
+            key="split-checkbox-with-text-disabled"
+            aria-label="Select all"
+          >
+            10 selected
+          </MenuToggleCheckbox>
+        ]
+      }}
+      aria-label="Menu toggle with checkbox split button and text"
+    />);
+
+    await user.click(screen.getByRole(`button`) as Element);
+    expect(mockClick).toHaveBeenCalled();
   });
 });
