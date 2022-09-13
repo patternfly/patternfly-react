@@ -43,11 +43,11 @@ interface NotificationProps {
   isNotificationRead: boolean;
 }
 
-export const AlertGroupDemo: React.FunctionComponent = () => {
+export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = () => {
   const maxDisplayedAlerts = 3;
   const minAlerts = 0;
   const maxAlerts = 100;
-  const alertTimeout = 7000;
+  const alertTimeout = 8000;
 
   const [isDrawerExpanded, setDrawerExpanded] = React.useState(false);
   const [openDropdownKey, setOpenDropdownKey] = React.useState<React.Key | null>(null);
@@ -60,14 +60,14 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
     setOverflowMessage(buildOverflowMessage());
   }, [maxDisplayed, notifications, alerts]);
 
-  const handleNewNotification = (
-    title: string,
-    srTitle: string,
-    variant: NotificationProps['variant'],
-    key: React.Key,
-    timestamp: string,
-    description: string
-  ) => {
+  const addNewNotification = (variant: NotificationProps['variant']) => {
+    const variantFormatted = variant.charAt(0).toUpperCase() + variant.slice(1);
+    const title = variantFormatted + ' alert notification';
+    const srTitle = variantFormatted + ' alert';
+    const description = variantFormatted + ' alert notification description';
+    const key = getUniqueId();
+    const timestamp = getTimeCreated();
+
     setNotifications(prevNotifications => [
       { title, srTitle, variant, key, timestamp, description, isNotificationRead: false },
       ...prevNotifications
@@ -103,7 +103,7 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
   };
 
   const isNotificationRead = (key: React.Key) =>
-    notifications.find(notification => notification.key === key)?.isNotificationRead === true;
+    notifications.find(notification => notification.key === key)?.isNotificationRead;
 
   const markNotificationRead = (key: React.Key) => {
     setNotifications(prevNotifications =>
@@ -128,11 +128,11 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
   };
 
   const onDropdownToggle = (id: React.Key, isActive: boolean) => {
-    if (!isActive) {
-      setOpenDropdownKey(null);
+    if (isActive) {
+      setOpenDropdownKey(id);
       return;
     }
-    setOpenDropdownKey(id);
+    setOpenDropdownKey(null);
   };
 
   const onDropdownSelect = () => {
@@ -142,7 +142,7 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
   const buildOverflowMessage = () => {
     const overflow = alerts.length - maxDisplayed;
     if (overflow > 0 && maxDisplayed > 0) {
-      return `View ${overflow} more notifications in notification drawer`;
+      return `View ${overflow} more notification(s) in notification drawer`;
     }
     return '';
   };
@@ -150,13 +150,13 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
   const getUniqueId = () => new Date().getTime();
 
   const getTimeCreated = () => {
-    const date = new Date();
+    const dateCreated = new Date();
     return (
-      date.toDateString() +
+      dateCreated.toDateString() +
       ' at ' +
-      ('00' + date.getHours().toString()).slice(-2) +
+      ('00' + dateCreated.getHours().toString()).slice(-2) +
       ':' +
-      ('00' + date.getMinutes().toString()).slice(-2)
+      ('00' + dateCreated.getMinutes().toString()).slice(-2)
     );
   };
 
@@ -166,61 +166,6 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
 
   const removeAllAlerts = () => {
     setAlerts([]);
-  };
-
-  const addSuccessAlertNotification = () => {
-    handleNewNotification(
-      'Success alert notification',
-      'Success alert',
-      'success',
-      getUniqueId(),
-      getTimeCreated(),
-      'Success alert notification description'
-    );
-  };
-
-  const addDangerAlertNotification = () => {
-    handleNewNotification(
-      'Danger alert notification',
-      'Danger alert',
-      'danger',
-      getUniqueId(),
-      getTimeCreated(),
-      'Danger alert notification description'
-    );
-  };
-
-  const addInfoAlertNotification = () => {
-    handleNewNotification(
-      'Info alert notification',
-      'Info alert',
-      'info',
-      getUniqueId(),
-      getTimeCreated(),
-      'Info alert notification description'
-    );
-  };
-
-  const addWarningAlertNotification = () => {
-    handleNewNotification(
-      'Warning alert notification',
-      'Warning alert',
-      'warning',
-      getUniqueId(),
-      getTimeCreated(),
-      'Warning alert notification description'
-    );
-  };
-
-  const addDefaultAlertNotification = () => {
-    handleNewNotification(
-      'Default alert notification',
-      'Default alert',
-      'default',
-      getUniqueId(),
-      getTimeCreated(),
-      'Default alert notification description'
-    );
   };
 
   const onAlertGroupOverflowClick = () => {
@@ -242,9 +187,9 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
 
   const normalizeAlertsNumber = (value: number) => Math.max(Math.min(value, maxAlerts), minAlerts);
 
-  const alertButtonClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
+  const alertButtonClasses = 'pf-c-button pf-m-secondary';
 
-  const alertButtonStyle = { marginRight: '8px' };
+  const alertButtonStyle = { marginRight: '8px', marginTop: '8px' };
 
   const notificationBadge = (
     <NotificationBadge
@@ -262,9 +207,6 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
     </DropdownItem>,
     <DropdownItem key="clearAll" onClick={removeAllNotifications} component="button">
       Clear all
-    </DropdownItem>,
-    <DropdownItem key="close" component="button" onClick={() => setDrawerExpanded(false)}>
-      Close
     </DropdownItem>
   ];
 
@@ -279,7 +221,7 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
 
   const notificationDrawer = (
     <NotificationDrawer>
-      <NotificationDrawerHeader count={getUnreadNotificationsNumber()}>
+      <NotificationDrawerHeader count={getUnreadNotificationsNumber()} onClose={() => setDrawerExpanded(false)}>
         <Dropdown
           onSelect={onDropdownSelect}
           toggle={
@@ -288,7 +230,7 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
               id="dropdown-toggle-id-0"
             />
           }
-          isOpen={openDropdownKey === 'toggle-id-0'}
+          isOpen={openDropdownKey === 'dropdown-toggle-id-0'}
           isPlain
           dropdownItems={notificationDrawerActions}
           id="notification-drawer-0"
@@ -340,16 +282,17 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
         <TextContent>
           <Text component="h1">Alert Group with Notification Drawer demo</Text>
           <Text component="p">
-            New alerts can be added with buttons below. By default, only 3 alerts are displayed. <br />
-            The rest can be accessed in the Notification Drawer after clicking on the bell icon in the header
-            <br /> or by clicking on the overflow message.
+            New alerts can be added with buttons below. Each alert has a timeout of 7 seconds, however, even after the
+            timeout expires, all alerts are still visible in the notification drawer. By default, only 3 alerts are
+            displayed. The rest can be accessed in the notification drawer after clicking on the bell icon in the header
+            or by clicking on the overflow message.
           </Text>
         </TextContent>
       </PageSection>
 
       <PageSection variant={PageSectionVariants.light}>
         <button
-          onClick={addSuccessAlertNotification}
+          onClick={() => addNewNotification('success')}
           type="button"
           className={alertButtonClasses}
           style={alertButtonStyle}
@@ -357,7 +300,7 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
           Add toast success alert
         </button>
         <button
-          onClick={addDangerAlertNotification}
+          onClick={() => addNewNotification('danger')}
           type="button"
           className={alertButtonClasses}
           style={alertButtonStyle}
@@ -365,7 +308,7 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
           Add toast danger alert
         </button>
         <button
-          onClick={addInfoAlertNotification}
+          onClick={() => addNewNotification('info')}
           type="button"
           className={alertButtonClasses}
           style={alertButtonStyle}
@@ -375,7 +318,7 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
         <br />
         <br />
         <button
-          onClick={addWarningAlertNotification}
+          onClick={() => addNewNotification('warning')}
           type="button"
           className={alertButtonClasses}
           style={alertButtonStyle}
@@ -383,7 +326,7 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
           Add toast warning alert
         </button>
         <button
-          onClick={addDefaultAlertNotification}
+          onClick={() => addNewNotification('default')}
           type="button"
           className={alertButtonClasses}
           style={alertButtonStyle}
@@ -395,8 +338,8 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
       <PageSection variant={PageSectionVariants.light}>
         <TextContent>
           <br />
-          <Text component="h3">Max displayed alerts</Text>
-          <Text component="p">The maximal number of displayed alerts can be set below.</Text>
+          <Text component="h2">Max displayed alerts</Text>
+          <Text component="p">The maximum number of displayed alerts can be set below.</Text>
         </TextContent>
         <NumberInput
           value={maxDisplayed}
@@ -412,7 +355,6 @@ export const AlertGroupDemo: React.FunctionComponent = () => {
           style={{ margin: '12px 0' }}
         />
       </PageSection>
-
       <PageSection variant={PageSectionVariants.light}>
         <AlertGroup isToast isLiveRegion onOverflowClick={onAlertGroupOverflowClick} overflowMessage={overflowMessage}>
           {alerts.slice(0, maxDisplayed)}

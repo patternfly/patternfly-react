@@ -1,6 +1,6 @@
 ---
-id: Alert Group
-section: demos
+id: Alert group
+section: components
 ---
 
 import { useEffect } from 'react';
@@ -12,9 +12,9 @@ import DashboardHeader from './examples/DashboardHeader';
 
 ## Demos
 
-This demonstrates how you can assemble a full page view that contains Alert Group Toast Notifications that are also displayed inside the Notification Drawer.
+This demonstrates how you can assemble a full page view including the use of alert group toast notifications with timeout that are also displayed inside the notification drawer.
 
-### Alert Group with Notification Drawer
+### Alert group toast with notification drawer
 
-```js file='./examples/AlertGroup/AlertGroupDemo.tsx' isFullscreen
+```js file='./examples/AlertGroup/AlertGroupToastWithNotificationDrawer.tsx' isFullscreen
 ```
