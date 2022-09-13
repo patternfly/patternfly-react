@@ -212,6 +212,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   };
 
   const onExpandHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
+    setSearchValue('');
     onToggleExpand(isExpanded, event);
   };
 
@@ -327,7 +328,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
           variant={ButtonVariant.plain}
           aria-label={expandedLabel()}
           icon={<SearchIcon />}
-          onClick={event => onToggleExpand(isExpanded, event)}
+          onClick={onExpandHandler}
         />
       </InputGroup>
     );
