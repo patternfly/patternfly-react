@@ -109,6 +109,8 @@ export enum Language {
   yaml = 'yaml'
 }
 
+/** The main code editor component. */
+
 export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** additional classes added to the code editor */
   className?: string;

@@ -34,6 +34,9 @@ export enum PopoverPosition {
   rightEnd = 'right-end'
 }
 
+/** The main popover component. The following properties can also be passed into another component
+ * that has a property specifically for passing in popover properties.
+ */
 export interface PopoverProps {
   /** Accessible label, required when header is not present */
   'aria-label'?: string;

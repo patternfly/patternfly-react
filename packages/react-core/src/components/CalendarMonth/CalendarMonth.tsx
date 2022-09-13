@@ -19,6 +19,10 @@ export enum Weekday {
   Saturday
 }
 
+/** Properties that allow customizing the calendar formatting and aria-labels. The following properties
+ * should be passed into the main component.
+ */
+
 export interface CalendarFormat {
   /** How to format months in Select */
   monthFormat?: (date: Date) => React.ReactNode;
@@ -106,6 +110,8 @@ const isSameDate = (d1: Date, d2: Date) =>
 export const isValidDate = (date: Date) => Boolean(date && !isNaN(date as any));
 
 const today = new Date();
+
+/** The main calendar month component. */
 
 export const CalendarMonth = ({
   date: dateProp,

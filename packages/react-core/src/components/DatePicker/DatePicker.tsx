@@ -10,6 +10,8 @@ import { CalendarMonth, CalendarFormat, isValidDate } from '../CalendarMonth';
 import { useImperativeHandle } from 'react';
 import { KeyTypes } from '../../helpers';
 
+/** The main date picker component. */
+
 export interface DatePickerProps
   extends CalendarFormat,
     Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
@@ -51,6 +53,10 @@ export interface DatePickerProps
   /** Additional props for input field */
   inputProps?: TextInputProps;
 }
+
+/** Allows finer control over the calendar's open state when a React ref is passed into the
+ * date picker component. Accessed via ref.current[property], e.g. ref.current.toggleCalendar().
+ */
 
 export interface DatePickerRef {
   /** Sets the calendar open status */

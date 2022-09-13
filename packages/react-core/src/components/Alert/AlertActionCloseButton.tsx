@@ -3,6 +3,10 @@ import { Button, ButtonVariant, ButtonProps } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { AlertContext } from './AlertContext';
 
+/** Renders a close button for a dismissable alert when this sub-component is passed into
+ * the alert's actionClose property.
+ */
+
 export interface AlertActionCloseButtonProps extends ButtonProps {
   /** Additional classes added to the AlertActionCloseButton */
   className?: string;

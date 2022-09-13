@@ -2,6 +2,10 @@ import * as React from 'react';
 import { Button, ButtonProps, PopoverPosition, Tooltip } from '@patternfly/react-core';
 import { CodeEditorContext } from './CodeEditorUtils';
 
+/** Allows customizing the code editor controls by passing this sub-component into the
+ * code editor's customControl property.
+ */
+
 export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
   /** icon rendered inside the code editor control */
   icon: React.ReactNode;
