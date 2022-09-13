@@ -3,7 +3,7 @@ import { SearchInput } from '@patternfly/react-core';
 
 export const SearchInputWithExpandable: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
-  const [isExpanded, setIsExpanded] = React.useState(true);
+  const [isExpanded, setIsExpanded] = React.useState(false);
 
   const onChange = (value: string) => {
     setValue(value);
