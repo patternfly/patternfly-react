@@ -211,6 +211,9 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     onToggleExpand(isExpanded, event);
   };
 
+  const renderUtilities =
+    value && (resultsCount || (!!onNextClick && !!onPreviousClick) || (!!onClear && !onToggleExpand));
+
   const buildTextInputGroup = ({ ...searchInputProps } = {}) => (
     <TextInputGroup isDisabled={isDisabled} {...searchInputProps}>
       <TextInputGroupMain
@@ -223,7 +226,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         onKeyDown={onEnter}
         onChange={onChangeHandler}
       />
-      {value && (
+      {renderUtilities && (
         <TextInputGroupUtilities>
           {resultsCount && <Badge isRead>{resultsCount}</Badge>}
           {!!onNextClick && !!onPreviousClick && (
