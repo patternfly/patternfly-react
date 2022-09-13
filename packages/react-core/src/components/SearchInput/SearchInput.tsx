@@ -21,6 +21,15 @@ export interface SearchAttribute {
   display: React.ReactNode;
 }
 
+export interface expandableProps {
+  /** Flag to indicate if the search input is expanded */
+  isExpanded: boolean;
+  /** Callback function to toggle the expandable search input */
+  onToggleExpand: (isExpanded: boolean, event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  /** An accessible label for the expandable search input toggle */
+  toggleAriaLabel?: string;
+}
+
 export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'results' | 'ref'> {
   /** Additional classes added to the banner */
   className?: string;
@@ -38,7 +47,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** A suggestion for autocompleting */
   hint?: string;
-
+  /** Object that makes the search input expandable/collapsible */
+  expandableProps?: expandableProps;
   /** A callback for when the search button clicked changes */
   onSearch?: (
     value: string,
@@ -72,12 +82,6 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** The number of search results returned. Either a total number of results,
    * or a string representing the current result over the total number of results. i.e. "1 / 5" */
   resultsCount?: number | string;
-  /** Flag to indicate if the search input is expanded */
-  isExpanded?: boolean;
-  /** Callback function to toggle the expandable search input */
-  onToggleExpand?: (isExpanded: boolean, event: React.SyntheticEvent<HTMLButtonElement>) => void;
-  /** An accessible label for the expandable search input toggle */
-  expandableSearchInputToggleLabel?: string;
   /** Array of attribute values used for dynamically generated advanced search */
   attributes?: string[] | SearchAttribute[];
   /* Additional elements added after the attributes in the form.
@@ -117,9 +121,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   onNextClick,
   onPreviousClick,
   innerRef,
-  isExpanded,
-  onToggleExpand,
-  expandableSearchInputToggleLabel,
+  expandableProps,
   'aria-label': ariaLabel = 'Search input',
   resetButtonLabel = 'Reset',
   openMenuButtonAriaLabel = 'Open advanced search',
@@ -151,6 +153,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       );
     }
   });
+
+  const { isExpanded, onToggleExpand, toggleAriaLabel } = expandableProps || {};
 
   React.useEffect(() => {
     setIsSearchMenuOpen(isAdvancedSearchOpen);
@@ -216,7 +220,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   };
 
   const renderUtilities =
-    value && (resultsCount || (!!onNextClick && !!onPreviousClick) || (!!onClear && !onToggleExpand));
+    value && (resultsCount || (!!onNextClick && !!onPreviousClick) || (!!onClear && !expandableProps));
 
   const buildTextInputGroup = ({ ...searchInputProps } = {}) => (
     <TextInputGroup isDisabled={isDisabled} {...searchInputProps}>
@@ -253,7 +257,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               </Button>
             </div>
           )}
-          {!!onClear && !onToggleExpand && (
+          {!!onClear && !expandableProps && (
             <Button
               variant={ButtonVariant.plain}
               isDisabled={isDisabled}
@@ -271,7 +275,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const expandableToggle = (
     <Button
       variant={ButtonVariant.plain}
-      aria-label={expandableSearchInputToggleLabel}
+      aria-label={toggleAriaLabel}
       aria-expanded={isExpanded}
       icon={isExpanded ? <TimesIcon /> : <SearchIcon />}
       onClick={onExpandHandler}
@@ -286,7 +290,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   );
 
   const buildSearchTextInputGroup = ({ ...searchInputProps } = {}) => {
-    if (onToggleExpand) {
+    if (expandableProps) {
       return buildExpandableSearchInput({ ...searchInputProps });
     }
 
@@ -319,7 +323,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
           <ArrowRightIcon />
         </Button>
       )}
-      {onToggleExpand && expandableToggle}
+      {expandableProps && expandableToggle}
     </InputGroup>
   );
 
@@ -329,7 +333,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     innerRef: searchInputRef
   };
 
-  if (!!onToggleExpand && !isExpanded) {
+  if (!!expandableProps && !isExpanded) {
     return <InputGroup {...searchInputProps}>{expandableToggle}</InputGroup>;
   }
 

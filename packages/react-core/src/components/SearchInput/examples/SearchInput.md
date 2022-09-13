@@ -2,7 +2,7 @@
 id: 'Search input'
 section: components
 cssPrefix: 'pf-c-search-input'
-propComponents: ['SearchInput', 'SearchAttribute']
+propComponents: ['SearchInput', 'SearchAttribute', 'expandableProps']
 beta: true
 ---
 

@@ -19,8 +19,7 @@ export const SearchInputWithExpandable: React.FunctionComponent = () => {
       value={value}
       onChange={onChange}
       onClear={() => onChange('')}
-      isExpanded={isExpanded}
-      onToggleExpand={onToggleExpand}
+      expandableProps={{ isExpanded, onToggleExpand }}
     />
   );
 };
