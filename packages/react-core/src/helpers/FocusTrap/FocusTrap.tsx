@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createFocusTrap, Options as FocusTrapOptions, FocusTrap as IFocusTrap } from 'focus-trap';
 
-interface FocusTrapProps extends React.HTMLProps<HTMLDivElement> {
+interface FocusTrapProps extends Omit<React.HTMLProps<HTMLDivElement>, 'ref'> {
   children: React.ReactNode;
   className?: string;
   active?: boolean;
@@ -9,13 +9,15 @@ interface FocusTrapProps extends React.HTMLProps<HTMLDivElement> {
   focusTrapOptions?: FocusTrapOptions;
   /** Prevent from scrolling to the previously focused element on deactivation */
   preventScrollOnDeactivate?: boolean;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<HTMLDivElement>;
 }
 
-export class FocusTrap extends React.Component<FocusTrapProps> {
+class FocusTrapBase extends React.Component<FocusTrapProps> {
   static displayName = 'FocusTrap';
   previouslyFocusedElement: HTMLElement;
   focusTrap: IFocusTrap;
-  divRef = React.createRef<HTMLDivElement>();
+  divRef = (this.props.innerRef as React.RefObject<HTMLDivElement>) || React.createRef<HTMLDivElement>();
 
   static defaultProps = {
     active: true,
@@ -76,8 +78,18 @@ export class FocusTrap extends React.Component<FocusTrapProps> {
   }
 
   render() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { children, className, focusTrapOptions, active, paused, preventScrollOnDeactivate, ...rest } = this.props;
+    const {
+      children,
+      className,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      focusTrapOptions,
+      active,
+      paused,
+      preventScrollOnDeactivate,
+      innerRef,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
+      ...rest
+    } = this.props;
     return (
       <div ref={this.divRef} className={className} {...rest}>
         {children}
@@ -85,3 +97,7 @@ export class FocusTrap extends React.Component<FocusTrapProps> {
     );
   }
 }
+
+export const FocusTrap = React.forwardRef((props: FocusTrapProps, ref: React.Ref<any>) => (
+  <FocusTrapBase innerRef={ref} {...props} />
+));

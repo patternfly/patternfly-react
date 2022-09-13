@@ -9,7 +9,7 @@ import {
 } from '@patternfly/react-topology';
 import { logos } from './logos';
 
-export const ROW_HEIGHT = 80;
+export const ROW_HEIGHT = 100;
 export const COLUMN_WIDTH = 250;
 
 export const DEFAULT_TASK_WIDTH = 170;

@@ -3,7 +3,7 @@ id: Jump links
 section: components
 ---
 
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ## Demos
 
@@ -33,7 +33,7 @@ import {
   TextContent,
   getResizeObserver
 } from '@patternfly/react-core';
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ScrollspyH2 = () => {
   const headings = [1, 2, 3, 4, 5];

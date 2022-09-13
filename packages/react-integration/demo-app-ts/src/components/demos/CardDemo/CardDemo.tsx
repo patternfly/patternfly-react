@@ -36,7 +36,7 @@ export class CardDemo extends React.Component {
     if (event.target !== event.currentTarget) {
       return;
     }
-    if ([13, 32].includes(event.keyCode)) {
+    if (['Enter', ' '].includes(event.key)) {
       const newSelected = event.currentTarget.id === this.state.selected ? null : event.currentTarget.id;
       this.setState({
         selected: newSelected

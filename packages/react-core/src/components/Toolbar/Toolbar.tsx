@@ -6,7 +6,7 @@ import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
 import { formatBreakpointMods, canUseDOM } from '../../helpers/util';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
-import { PageContext } from '../Page/Page';
+import { PageContext } from '../Page/PageContext';
 
 export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Optional callback for clearing all filters in the toolbar */

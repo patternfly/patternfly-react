@@ -28,23 +28,23 @@ describe('Dropdown Demo Test', () => {
   // When toggle is collapsed:
   it('Enter opens panel, places focus on first element in panel that can receive focus', () => {
     cy.clock();
-    cy.get('#dropdown > button').trigger('keydown', { keyCode: 13 });
+    cy.get('#dropdown > button').trigger('keydown', { key: 'Enter' });
     cy.get('#dropdown').should('have.class', 'pf-m-expanded');
     cy.tick(1);
     cy.focused().contains('Link');
     // When toggle is expanded, enter closes panel
-    cy.get('#toggle-id').trigger('keydown', { keyCode: 13 });
+    cy.get('#toggle-id').trigger('keydown', { key: 'Enter' });
     cy.get('#dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
   it('Space opens panel, places focus on first element in panel that can receive focus', () => {
-    cy.get('#dropdown > button').trigger('keydown', { keyCode: 32 });
+    cy.get('#dropdown > button').trigger('keydown', { key: ' ' });
     cy.get('#dropdown').should('have.class', 'pf-m-expanded');
     cy.focused().contains('Link');
     // When toggle is expanded, space closes panel and focus stays on the toggle
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 32 });
+      .trigger('keydown', { key: ' ' });
     cy.get('#dropdown').should('not.have.class', 'pf-m-expanded');
     cy.focused().contains('Dropdown');
   });
@@ -52,7 +52,7 @@ describe('Dropdown Demo Test', () => {
   // Panel - Escape User action
   it('Esc closes planel, places focus on the toggle', () => {
     cy.get('#dropdown > button').click();
-    cy.get('#toggle-id').trigger('keydown', { keyCode: 27 });
+    cy.get('#toggle-id').type('{esc}');
     cy.get('#dropdown').should('not.have.class', 'pf-m-expanded');
     cy.focused().contains('Dropdown');
   });
@@ -77,13 +77,13 @@ describe('Dropdown Demo Test', () => {
     cy.get('#dropdown > button').click();
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 13 });
+      .trigger('keydown', { key: 'Enter' });
     cy.get('#dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
   it('When focus is in panel, space places focus on toggle', () => {
     cy.get('#dropdown > button').click();
-    cy.get('.pf-c-dropdown__menu').trigger('keydown', { keyCode: 32 });
+    cy.get('.pf-c-dropdown__menu').trigger('keydown', { key: ' ' });
     cy.focused().should('have.class', 'pf-c-dropdown__toggle');
   });
 
@@ -91,7 +91,7 @@ describe('Dropdown Demo Test', () => {
   it('Tab closes panel, focus stays on toggle', () => {
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 9 });
+      .trigger('keydown', { key: 'Tab' });
     cy.get('.pf-c-dropdown__toggle')
       .last()
       .should('not.have.class', 'pf-m-expanded');
@@ -99,9 +99,10 @@ describe('Dropdown Demo Test', () => {
   });
 
   it('Shift + Tab closes panel, focus stays on toggle', () => {
+    cy.get('#dropdown > button').click();
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { shiftKey: true, keyCode: 9, which: 9 });
+      .trigger('keydown', { shiftKey: true, key: 'Tab' });
     cy.get('.pf-c-dropdown__toggle')
       .last()
       .should('not.have.class', 'pf-m-expanded');
@@ -134,25 +135,25 @@ describe('Action Dropdown Demo Test', () => {
     cy.clock();
     cy.get('#action-dropdown button')
       .last()
-      .trigger('keydown', { keyCode: 13 });
+      .trigger('keydown', { key: 'Enter' });
     cy.get('#action-dropdown').should('have.class', 'pf-m-expanded');
     cy.tick(1);
     cy.focused().contains('Action');
     // When toggle is expanded, enter closes panel
-    cy.get('#action-toggle-id').trigger('keydown', { keyCode: 13 });
+    cy.get('#action-toggle-id').trigger('keydown', { key: 'Enter' });
     cy.get('#action-dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
   it('Space opens panel, places focus on first element in panel that can receive focus', () => {
     cy.get('#action-dropdown button')
       .last()
-      .trigger('keydown', { keyCode: 32 });
+      .trigger('keydown', { key: ' ' });
     cy.get('#action-dropdown').should('have.class', 'pf-m-expanded');
     cy.focused().contains('Action');
     // When toggle is expanded, space closes panel and focus stays on the toggle
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 32 });
+      .trigger('keydown', { key: ' ' });
     cy.get('#action-dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
@@ -161,7 +162,7 @@ describe('Action Dropdown Demo Test', () => {
     cy.get('#action-dropdown button')
       .last()
       .click();
-    cy.get('#action-toggle-id').trigger('keydown', { keyCode: 27 });
+    cy.get('#action-toggle-id').type('{esc}');
     cy.get('#action-dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
@@ -191,7 +192,7 @@ describe('Action Dropdown Demo Test', () => {
       .click();
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 13 });
+      .trigger('keydown', { key: 'Enter' });
     cy.get('#action-dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
@@ -199,7 +200,7 @@ describe('Action Dropdown Demo Test', () => {
     cy.get('#action-dropdown button')
       .last()
       .click();
-    cy.get('.pf-c-dropdown__menu').trigger('keydown', { keyCode: 32 });
+    cy.get('.pf-c-dropdown__menu').trigger('keydown', { key: ' ' });
     cy.focused().should('have.class', 'pf-c-dropdown__toggle-button');
   });
 
@@ -207,16 +208,17 @@ describe('Action Dropdown Demo Test', () => {
   it('Tab closes panel, focus stays on toggle', () => {
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 9 });
+      .trigger('keydown', { key: 'Tab' });
     cy.get('.pf-c-dropdown__toggle')
       .last()
       .should('not.have.class', 'pf-m-expanded');
   });
 
   it('Shift + Tab closes panel, focus stays on toggle', () => {
+    cy.get('#dropdown > button').click();
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { shiftKey: true, keyCode: 9, which: 9 });
+      .trigger('keydown', { shiftKey: true, key: 'Tab' });
     cy.get('.pf-c-dropdown__toggle')
       .last()
       .should('not.have.class', 'pf-m-expanded');
@@ -248,25 +250,25 @@ describe('Cog Dropdown Demo Test', () => {
     cy.clock();
     cy.get('#cog-dropdown button')
       .last()
-      .trigger('keydown', { keyCode: 13 });
+      .trigger('keydown', { key: 'Enter' });
     cy.get('#cog-dropdown').should('have.class', 'pf-m-expanded');
     cy.tick(1);
     cy.focused().contains('Action');
     // When toggle is expanded, enter closes panel
-    cy.get('#cog-toggle-id').trigger('keydown', { keyCode: 13 });
+    cy.get('#cog-toggle-id').trigger('keydown', { key: 'Enter' });
     cy.get('#cog-dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
   it('Space opens panel, places focus on first element in panel that can receive focus', () => {
     cy.get('#cog-dropdown button')
       .last()
-      .trigger('keydown', { keyCode: 32 });
+      .trigger('keydown', { key: ' ' });
     cy.get('#cog-dropdown').should('have.class', 'pf-m-expanded');
     cy.focused().contains('Action');
     // When toggle is expanded, space closes panel and focus stays on the toggle
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 32 });
+      .trigger('keydown', { key: ' ' });
     cy.get('#cog-dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
@@ -275,7 +277,7 @@ describe('Cog Dropdown Demo Test', () => {
     cy.get('#cog-dropdown button')
       .last()
       .click();
-    cy.get('#cog-toggle-id').trigger('keydown', { keyCode: 27 });
+    cy.get('#cog-toggle-id').type('{esc}');
     cy.get('#cog-dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
@@ -305,7 +307,7 @@ describe('Cog Dropdown Demo Test', () => {
       .click();
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 13 });
+      .trigger('keydown', { key: 'Enter' });
     cy.get('#cog-dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
@@ -313,7 +315,7 @@ describe('Cog Dropdown Demo Test', () => {
     cy.get('#cog-dropdown button')
       .last()
       .click();
-    cy.get('.pf-c-dropdown__menu').trigger('keydown', { keyCode: 32 });
+    cy.get('.pf-c-dropdown__menu').trigger('keydown', { key: ' ' });
     cy.focused().should('have.class', 'pf-c-dropdown__toggle-button');
   });
 
@@ -321,16 +323,17 @@ describe('Cog Dropdown Demo Test', () => {
   it('Tab closes panel, focus stays on toggle', () => {
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 9 });
+      .trigger('keydown', { key: 'Tab' });
     cy.get('.pf-c-dropdown__toggle')
       .last()
       .should('not.have.class', 'pf-m-expanded');
   });
 
   it('Shift + Tab closes panel, focus stays on toggle', () => {
+    cy.get('#dropdown > button').click();
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { shiftKey: true, keyCode: 9, which: 9 });
+      .trigger('keydown', { shiftKey: true, key: 'Tab' });
     cy.get('.pf-c-dropdown__toggle')
       .last()
       .should('not.have.class', 'pf-m-expanded');
@@ -367,23 +370,23 @@ describe('Dropdown with menu on document body demo test', () => {
   // When toggle is collapsed:
   it('Enter opens panel, places focus on first element in panel that can receive focus', () => {
     cy.clock();
-    cy.get('#dropdown-document-body > button').trigger('keydown', { keyCode: 13 });
+    cy.get('#dropdown-document-body > button').trigger('keydown', { key: 'Enter' });
     cy.get('#dropdown-document-body').should('have.class', 'pf-m-expanded');
     cy.tick(1);
     cy.focused().contains('Link');
     // When toggle is expanded, enter closes panel
-    cy.get('#toggle-id-document-body').trigger('keydown', { keyCode: 13 });
+    cy.get('#toggle-id-document-body').trigger('keydown', { key: 'Enter' });
     cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
   });
 
   it('Space opens panel, places focus on first element in panel that can receive focus', () => {
-    cy.get('#dropdown-document-body > button').trigger('keydown', { keyCode: 32 });
+    cy.get('#dropdown-document-body > button').trigger('keydown', { key: ' ' });
     cy.get('#dropdown-document-body').should('have.class', 'pf-m-expanded');
     cy.focused().contains('Link');
     // When toggle is expanded, space closes panel and focus stays on the toggle
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 32 });
+      .trigger('keydown', { key: ' ' });
     cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
     cy.focused().contains('Dropdown');
   });
@@ -391,7 +394,7 @@ describe('Dropdown with menu on document body demo test', () => {
   // Panel - Escape User action
   it('Esc closes planel, places focus on the toggle', () => {
     cy.get('#dropdown-document-body > button').click();
-    cy.get('#toggle-id-document-body').trigger('keydown', { keyCode: 27 });
+    cy.get('#toggle-id-document-body').type('{esc}');
     cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
     cy.focused().contains('Dropdown');
   });
@@ -416,13 +419,13 @@ describe('Dropdown with menu on document body demo test', () => {
     cy.get('#dropdown-document-body > button').click();
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 13 });
+      .trigger('keydown', { key: 'Enter' });
     cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
   });
 
   it('When focus is in panel, space places focus on toggle', () => {
     cy.get('#dropdown-document-body > button').click();
-    cy.get('.pf-c-dropdown__menu').trigger('keydown', { keyCode: 32 });
+    cy.get('.pf-c-dropdown__menu').trigger('keydown', { key: ' ' });
     cy.focused().should('have.class', 'pf-c-dropdown__toggle');
   });
 
@@ -430,7 +433,7 @@ describe('Dropdown with menu on document body demo test', () => {
   it('Tab closes panel, focus stays on toggle', () => {
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { keyCode: 9 });
+      .trigger('keydown', { key: 'Tab' });
     cy.get('.pf-c-dropdown__toggle')
       .last()
       .should('not.have.class', 'pf-m-expanded');
@@ -438,9 +441,10 @@ describe('Dropdown with menu on document body demo test', () => {
   });
 
   it('Shift + Tab closes panel, focus stays on toggle', () => {
+    cy.get('#dropdown > button').click();
     cy.get('.pf-c-dropdown__menu-item')
       .last()
-      .trigger('keydown', { shiftKey: true, keyCode: 9, which: 9 });
+      .trigger('keydown', { shiftKey: true, key: 'Tab' });
     cy.get('.pf-c-dropdown__toggle')
       .last()
       .should('not.have.class', 'pf-m-expanded');

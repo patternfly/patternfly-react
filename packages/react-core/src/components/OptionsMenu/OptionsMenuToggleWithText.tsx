@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import { KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { DropdownContext } from '../Dropdown';
 
@@ -96,10 +96,9 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   };
 
   const onEscPress = (event: KeyboardEvent) => {
-    const keyCode = event.keyCode || event.which;
     if (
       isOpen &&
-      (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
+      (event.key === KeyTypes.Escape || event.key === 'Tab') &&
       parentRef &&
       parentRef.current &&
       parentRef.current.contains(event.target as Node)

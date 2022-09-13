@@ -1,9 +1,10 @@
 import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 
-// eslint-disable-next-line no-console
-const onSelect = (event?: React.MouseEvent, itemId?: string | number) => console.log('selected', itemId);
-
+/* eslint-disable no-console */
+const onSelect = (event: React.MouseEvent | undefined, itemId: string | number | undefined) =>
+  console.log('selected', itemId);
+/* eslint-enable no-console */
 interface FlyoutMenuProps {
   children?: React.ReactElement;
   depth: number;

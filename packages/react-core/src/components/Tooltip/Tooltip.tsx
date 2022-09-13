@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
 import { TooltipArrow } from './TooltipArrow';
-import { KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/esm/c_tooltip_MaxWidth';
 import { ReactElement } from 'react';
 import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
@@ -138,6 +138,8 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
   isAppLauncher?: boolean;
   /** @deprecated - no longer used */
   tippyProps?: Partial<TippyProps>;
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
 }
 
 // id for associating trigger with the content aria-describedby or aria-labelledby
@@ -168,6 +170,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   boundary,
   isAppLauncher,
   tippyProps,
+  removeFindDomNode = false,
   ...rest
 }: TooltipProps) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -209,13 +212,13 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
 
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (!triggerManually) {
-      if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
+      if (event.key === KeyTypes.Escape && visible) {
         hide();
       }
     }
   };
   const onTriggerEnter = (event: KeyboardEvent) => {
-    if (event.keyCode === KEY_CODES.ENTER) {
+    if (event.key === KeyTypes.Enter) {
       if (!visible) {
         show();
       } else {
@@ -331,6 +334,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       enableFlip={enableFlip}
       zIndex={zIndex}
       flipBehavior={flipBehavior}
+      removeFindDomNode={removeFindDomNode}
     />
   );
 };

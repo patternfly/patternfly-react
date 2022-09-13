@@ -10,7 +10,6 @@ import {
   DEFAULT_SPACER_NODE_TYPE,
   DEFAULT_EDGE_TYPE,
   DEFAULT_FINALLY_NODE_TYPE,
-  FinallyNode,
   ContextMenuSeparator,
   ContextMenuItem,
   withContextMenu,
@@ -20,6 +19,7 @@ import {
 } from '@patternfly/react-topology';
 import DemoTaskNode from './DemoTaskNode';
 import * as React from 'react';
+import DemoFinallyNode from './DemoFinallyNode';
 
 const contextMenuItem = (label: string, i: number): React.ReactElement => {
   if (label === '-') {
@@ -48,7 +48,7 @@ const pipelineComponentFactory: ComponentFactory = (
     case DEFAULT_TASK_NODE_TYPE:
       return withContextMenu(() => defaultMenu)(withSelection()(DemoTaskNode));
     case DEFAULT_FINALLY_NODE_TYPE:
-      return withContextMenu(() => defaultMenu)(withSelection()(FinallyNode));
+      return withContextMenu(() => defaultMenu)(withSelection()(DemoFinallyNode));
     case 'finally-group':
       return DefaultTaskGroup;
     case DEFAULT_SPACER_NODE_TYPE:

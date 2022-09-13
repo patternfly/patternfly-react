@@ -128,3 +128,15 @@ test('Logs a warning in the console when an aria-label is not included with hasO
 
   expect(consoleWarning).toHaveBeenCalled();
 });
+
+test('Renders as a section by default', () => {
+  render(<PageSection>test</PageSection>);
+
+  expect(screen.getByText('test')).toHaveProperty('nodeName', 'SECTION');
+});
+
+test('Renders as other elements when a different element type is passed using the component prop', () => {
+  render(<PageSection component="main">test</PageSection>);
+
+  expect(screen.getByRole('main')).toHaveTextContent('test');
+});

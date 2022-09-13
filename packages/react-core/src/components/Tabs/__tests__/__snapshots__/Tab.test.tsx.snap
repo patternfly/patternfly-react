@@ -14,6 +14,7 @@ exports[`should not render anything 1`] = `
       data-ouia-safe="true"
       id="pf-tab-0-"
       role="tab"
+      type="button"
     >
       <span
         class="pf-c-tabs__item-text"

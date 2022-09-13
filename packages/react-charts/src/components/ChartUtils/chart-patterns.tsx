@@ -319,7 +319,7 @@ export const getDefaultPatternScale = ({ colorScale, patternId, patternScale }: 
  * Helper function to return default pattern props
  * @private
  */
-export const getDefaultPatternProps = ({
+export const useDefaultPatternProps = ({
   colorScale,
   hasPatterns,
   patternScale,
@@ -328,10 +328,9 @@ export const getDefaultPatternProps = ({
   const defaultColorScale = getDefaultColorScale(colorScale, themeColorScale);
   let defaultPatternScale = patternScale;
   let isPatternDefs = !patternScale && hasPatterns !== undefined;
-  let patternId;
+  const patternId = React.useMemo(() => (isPatternDefs ? getPatternId() : undefined), [isPatternDefs]);
 
   if (isPatternDefs) {
-    patternId = React.useMemo(() => getPatternId(), []);
     defaultPatternScale = getDefaultPatternScale({
       colorScale: defaultColorScale,
       patternId,

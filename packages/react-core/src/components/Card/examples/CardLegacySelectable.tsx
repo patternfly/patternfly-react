@@ -19,7 +19,7 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
     if (event.target !== event.currentTarget) {
       return;
     }
-    if ([13, 32].includes(event.keyCode)) {
+    if (['Enter', ' '].includes(event.key)) {
       event.preventDefault();
       const newSelected = event.currentTarget.id === selected ? null : event.currentTarget.id;
       setSelected(newSelected);

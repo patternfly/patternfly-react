@@ -12,10 +12,12 @@ const props = {
 };
 
 describe('TextInput', () => {
-  test('input passes value and event to onChange handler', () => {
+  test('input passes value and event to onChange handler', async () => {
+    const user = userEvent.setup();
+
     render(<TextInputBase {...props} value="" aria-label="test input" />);
 
-    userEvent.type(screen.getByLabelText('test input'), 'a');
+    await user.type(screen.getByLabelText('test input'), 'a');
     expect(props.onChange).toHaveBeenCalledWith('a', expect.any(Object));
   });
 

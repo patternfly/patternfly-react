@@ -1,5 +1,151 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ApplicationLauncher Renders in strict mode 1`] = `
+<DocumentFragment>
+  <nav
+    aria-label="Application launcher"
+    class="pf-c-app-launcher pf-m-expanded"
+    data-ouia-component-type="PF4/ApplicationLauncher"
+    data-ouia-safe="true"
+  >
+    <button
+      aria-expanded="true"
+      aria-haspopup="true"
+      aria-label="Application launcher"
+      class="pf-c-app-launcher__toggle"
+      data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
+      data-ouia-component-type="PF4/DropdownToggle"
+      data-ouia-safe="true"
+      id="pf-dropdown-toggle-id-7"
+      type="button"
+    >
+      <span>
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 512 512"
+          width="1em"
+        >
+          <path
+            d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+          />
+        </svg>
+      </span>
+    </button>
+    <ul
+      aria-labelledby="pf-dropdown-toggle-id-7"
+      class="pf-c-app-launcher__menu"
+      role="menu"
+    >
+      <li
+        role="none"
+      >
+        <a
+          aria-disabled="false"
+          class="pf-c-app-launcher__menu-item"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-19"
+          data-ouia-component-type="PF4/DropdownItem"
+          data-ouia-safe="true"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Link
+        </a>
+      </li>
+      <li
+        role="none"
+      >
+        <button
+          aria-disabled="false"
+          class="pf-c-app-launcher__menu-item"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-20"
+          data-ouia-component-type="PF4/DropdownItem"
+          data-ouia-safe="true"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          Action
+        </button>
+      </li>
+      <li
+        role="none"
+      >
+        <a
+          aria-disabled="true"
+          class="pf-m-disabled pf-c-app-launcher__menu-item"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-21"
+          data-ouia-component-type="PF4/DropdownItem"
+          data-ouia-safe="true"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Disabled Link
+        </a>
+      </li>
+      <li
+        role="none"
+      >
+        <button
+          aria-disabled="true"
+          class="pf-m-disabled pf-c-app-launcher__menu-item"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-22"
+          data-ouia-component-type="PF4/DropdownItem"
+          data-ouia-safe="true"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          Disabled Action
+        </button>
+      </li>
+      <li
+        role="none"
+      >
+        <div
+          class="pf-c-divider"
+          role="separator"
+        />
+      </li>
+      <li
+        role="none"
+      >
+        <a
+          aria-disabled="false"
+          class="pf-c-app-launcher__menu-item"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-23"
+          data-ouia-component-type="PF4/DropdownItem"
+          data-ouia-safe="true"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Separated Link
+        </a>
+      </li>
+      <li
+        role="none"
+      >
+        <button
+          aria-disabled="false"
+          class="pf-c-app-launcher__menu-item"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-24"
+          data-ouia-component-type="PF4/DropdownItem"
+          data-ouia-safe="true"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          Separated Action
+        </button>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;
+
 exports[`ApplicationLauncher custom icon 1`] = `
 <DocumentFragment>
   <nav
@@ -13,7 +159,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       aria-haspopup="true"
       aria-label="Application launcher"
       class="pf-c-app-launcher__toggle"
-      data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
+      data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
       id="pf-dropdown-toggle-id-5"
@@ -47,7 +193,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         <a
           aria-disabled="false"
           class="pf-c-app-launcher__menu-item"
-          data-ouia-component-id="OUIA-Generated-DropdownItem-7"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-8"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
           role="menuitem"
@@ -62,7 +208,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         <button
           aria-disabled="false"
           class="pf-c-app-launcher__menu-item"
-          data-ouia-component-id="OUIA-Generated-DropdownItem-8"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-10"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
           role="menuitem"
@@ -78,7 +224,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         <a
           aria-disabled="true"
           class="pf-m-disabled pf-c-app-launcher__menu-item"
-          data-ouia-component-id="OUIA-Generated-DropdownItem-9"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-12"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
           role="menuitem"
@@ -93,7 +239,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         <button
           aria-disabled="true"
           class="pf-m-disabled pf-c-app-launcher__menu-item"
-          data-ouia-component-id="OUIA-Generated-DropdownItem-10"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-14"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
           role="menuitem"
@@ -117,7 +263,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         <a
           aria-disabled="false"
           class="pf-c-app-launcher__menu-item"
-          data-ouia-component-id="OUIA-Generated-DropdownItem-11"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-16"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
           role="menuitem"
@@ -132,7 +278,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         <button
           aria-disabled="false"
           class="pf-c-app-launcher__menu-item"
-          data-ouia-component-id="OUIA-Generated-DropdownItem-12"
+          data-ouia-component-id="OUIA-Generated-DropdownItem-18"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
           role="menuitem"

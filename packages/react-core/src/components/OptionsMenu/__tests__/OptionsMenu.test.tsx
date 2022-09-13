@@ -31,6 +31,23 @@ describe('optionsMenu', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('renders in strict mode', () => {
+    const consoleError = jest.spyOn(console, 'error');
+    const { asFragment } = render(
+      <React.StrictMode>
+        <OptionsMenu
+          removeFindDomNode
+          id="regular"
+          menuItems={menuItems}
+          isOpen
+          toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
+        />
+      </React.StrictMode>
+    );
+    expect(consoleError).not.toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('right aligned', () => {
     const { asFragment } = render(
       <OptionsMenu

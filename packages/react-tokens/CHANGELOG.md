@@ -3,6 +3,282 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.89.9 (2022-09-13)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.89.8 (2022-09-12)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.89.7 (2022-09-12)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.89.6 (2022-09-12)
+
+
+### Bug Fixes
+
+* **Treeview:** ignore folder selection in basic example ([#7906](https://github.com/patternfly/patternfly-react/issues/7906)) ([b16b224](https://github.com/patternfly/patternfly-react/commit/b16b2240d26cabcadec3de52627fb1d96ff45aef))
+
+
+
+
+
+## 4.89.5 (2022-09-09)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.89.4 (2022-09-09)
+
+
+### Bug Fixes
+
+* **Modal, Dropdown, TreeView:** updates to resolve strict TS errors ([#7890](https://github.com/patternfly/patternfly-react/issues/7890)) ([011215b](https://github.com/patternfly/patternfly-react/commit/011215be95dfff1408e437c0b1062835669ff041))
+
+
+
+
+
+## 4.89.3 (2022-09-09)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.89.2 (2022-09-09)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.89.1 (2022-09-09)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+# 4.89.0 (2022-09-09)
+
+
+### Features
+
+* **Button:** new count number prop ([#7910](https://github.com/patternfly/patternfly-react/issues/7910)) ([a096b3c](https://github.com/patternfly/patternfly-react/commit/a096b3cba080b5bcd87777efe0e96e64c6da121f))
+
+
+
+
+
+## 4.88.14 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Page:** Fixed page group props regression ([#7948](https://github.com/patternfly/patternfly-react/issues/7948)) ([044444e](https://github.com/patternfly/patternfly-react/commit/044444e11fb90d53dc8f783071d3e3dc517532a0))
+
+
+
+
+
+## 4.88.13 (2022-09-08)
+
+
+### Bug Fixes
+
+* **table:** fix bug in expandable demo ([#7945](https://github.com/patternfly/patternfly-react/issues/7945)) ([711b196](https://github.com/patternfly/patternfly-react/commit/711b19609dd8023b157a99f6988ff8618ccee35d))
+
+
+
+
+
+## 4.88.12 (2022-09-07)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.88.11 (2022-09-07)
+
+
+### Bug Fixes
+
+* **dashboardheader:** update brand image src to absolute import path for codesandbox functionality ([#7935](https://github.com/patternfly/patternfly-react/issues/7935)) ([6190a7f](https://github.com/patternfly/patternfly-react/commit/6190a7fd51a9606c9f1bf06aa0ebd46215fbd341))
+
+
+
+
+
+## 4.88.10 (2022-09-07)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.88.9 (2022-09-07)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.88.8 (2022-09-07)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.88.7 (2022-09-07)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.88.6 (2022-09-06)
+
+
+### Bug Fixes
+
+* **Page:** avoid unnecessary re-renders ([#7940](https://github.com/patternfly/patternfly-react/issues/7940)) ([3e23142](https://github.com/patternfly/patternfly-react/commit/3e23142c489ae5b77357345dbbeaa63cc175ea05))
+
+
+
+
+
+## 4.88.5 (2022-09-02)
+
+
+### Bug Fixes
+
+* **MenuToggle:** Fixed props not displaying in docs ([#7919](https://github.com/patternfly/patternfly-react/issues/7919)) ([8ca73e4](https://github.com/patternfly/patternfly-react/commit/8ca73e4dae9542646aff846511033bb7ae4fb2ef))
+
+
+
+
+
+## 4.88.4 (2022-09-02)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.88.3 (2022-09-01)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.88.2 (2022-09-01)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.88.1 (2022-09-01)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+# 4.88.0 (2022-09-01)
+
+
+### Features
+
+* **PageSection:** add ability to specify HTML element via prop ([#7891](https://github.com/patternfly/patternfly-react/issues/7891)) ([a9e20e4](https://github.com/patternfly/patternfly-react/commit/a9e20e4b6303fb673ed9222323a1114c3e68f8d6))
+
+
+
+
+
+## 4.87.8 (2022-08-31)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.87.7 (2022-08-31)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.87.6 (2022-08-30)
+
+
+### Bug Fixes
+
+* **NumberInput:** prevent errors when onChange is passed via inputProps ([#7908](https://github.com/patternfly/patternfly-react/issues/7908)) ([9cabeed](https://github.com/patternfly/patternfly-react/commit/9cabeedacf98bd80214a7f7fe1e40c3a15be4490))
+
+
+
+
+
+## 4.87.5 (2022-08-29)
+
+
+### Bug Fixes
+
+* **NumberInput:** manage null value ([#7898](https://github.com/patternfly/patternfly-react/issues/7898)) ([b86371d](https://github.com/patternfly/patternfly-react/commit/b86371dfe703614c12f49b68c096b28a91b9debd))
+
+
+
+
+
+## 4.87.4 (2022-08-29)
+
+
+### Bug Fixes
+
+* syntax errors on surge ([#7897](https://github.com/patternfly/patternfly-react/issues/7897)) ([a487abf](https://github.com/patternfly/patternfly-react/commit/a487abf770340555b2c5a451b5a5bfb0ea57fd45))
+
+
+
+
+
 ## 4.87.3 (2022-08-25)
 
 

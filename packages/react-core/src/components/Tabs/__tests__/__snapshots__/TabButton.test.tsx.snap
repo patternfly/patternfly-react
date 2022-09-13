@@ -5,6 +5,7 @@ exports[`should render tab button 1`] = `
   <button
     data-ouia-component-type="PF4/TabButton"
     data-ouia-safe="true"
+    type="button"
   >
     Tab button
   </button>

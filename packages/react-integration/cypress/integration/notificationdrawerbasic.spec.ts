@@ -79,7 +79,7 @@ describe('Notification Drawer Basic Demo Test', () => {
     // press Enter on toggle button, check whether the dropdown menu exsit and whether it focuses on the first item
     // then press Tab on toggle button, check whether the dropdown menu is closed
     cy.get('#toggle-id-0').then((toggleButton: JQuery<HTMLButtonElement>) => {
-      cy.wrap(toggleButton).trigger('keydown', { keyCode: 13 });
+      cy.wrap(toggleButton).trigger('keydown', { key: 'Enter' });
       cy.get('#notification-0')
         .find('.pf-c-dropdown__menu.pf-m-align-right')
         .should('exist');
@@ -87,7 +87,7 @@ describe('Notification Drawer Basic Demo Test', () => {
         .find('.pf-c-dropdown__menu-item')
         .first()
         .should('be.focused');
-      cy.wrap(toggleButton).trigger('keydown', { keyCode: 9 });
+      cy.wrap(toggleButton).trigger('keydown', { key: 'Tab' });
       cy.get('#notification-0')
         .find('.pf-c-dropdown__menu.pf-m-align-right')
         .should('not.exist');
@@ -95,7 +95,7 @@ describe('Notification Drawer Basic Demo Test', () => {
     // Verify the list item header toggle button keyboard interactivity opens/closes dropdown menu
     // the method is the same as above
     cy.get('#toggle-id-1').then((toggleButton: JQuery<HTMLButtonElement>) => {
-      cy.wrap(toggleButton).trigger('keydown', { keyCode: 13 });
+      cy.wrap(toggleButton).trigger('keydown', { key: 'Enter' });
       cy.get('#notification-1')
         .find('.pf-c-dropdown__menu.pf-m-align-right')
         .should('exist');
@@ -103,7 +103,7 @@ describe('Notification Drawer Basic Demo Test', () => {
         .find('.pf-c-dropdown__menu-item')
         .first()
         .should('be.focused');
-      cy.wrap(toggleButton).trigger('keydown', { keyCode: 9 });
+      cy.wrap(toggleButton).trigger('keydown', { key: 'Tab' });
       cy.get('#notification-1')
         .find('.pf-c-dropdown__menu.pf-m-align-right')
         .should('not.exist');

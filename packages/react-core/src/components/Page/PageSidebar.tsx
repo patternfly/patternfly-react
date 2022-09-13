@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import { PageContextConsumer } from './Page';
+import { PageContextConsumer } from './PageContext';
 
 export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the page sidebar */

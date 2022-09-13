@@ -2,7 +2,7 @@
 id: Menu
 section: components
 cssPrefix: pf-c-menu
-propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent', 'MenuInput']
+propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent', 'MenuInput', 'MenuGroup']
 ouia: true
 ---
 

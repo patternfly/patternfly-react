@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { formatBreakpointMods } from '../../helpers/util';
 import { ToolbarExpandableContent } from './ToolbarExpandableContent';
-import { PageContext } from '../Page/Page';
+import { PageContext } from '../Page/PageContext';
 
 export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */

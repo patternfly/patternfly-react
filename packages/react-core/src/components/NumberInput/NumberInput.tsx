@@ -5,12 +5,12 @@ import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import { InputGroup } from '../InputGroup';
 import { Button, ButtonProps } from '../Button';
-import { KEY_CODES, ValidatedOptions } from '../../helpers';
+import { KeyTypes, ValidatedOptions } from '../../helpers';
 import { TextInput } from '../TextInput';
 
 export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   /** Value of the number input */
-  value?: number;
+  value?: number | null;
   /** Additional classes added to the number input */
   className?: string;
   /** Sets the width of the number input to a number of characters */
@@ -56,11 +56,11 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
 type DefaultKeyDownHandlerArgs = Pick<NumberInputProps, 'inputName' | 'onMinus' | 'onPlus'>;
 
 const defaultKeyDownHandler = (args: DefaultKeyDownHandlerArgs) => (event: React.KeyboardEvent<HTMLInputElement>) => {
-  if (KEY_CODES.ARROW_UP === event.keyCode && args.onPlus) {
+  if (KeyTypes.ArrowUp === event.key && args.onPlus) {
     event.preventDefault();
     args.onPlus(null, args.inputName);
   }
-  if (KEY_CODES.ARROW_DOWN === event.keyCode && args.onMinus) {
+  if (KeyTypes.ArrowDown === event.key && args.onMinus) {
     event.preventDefault();
     args.onMinus(null, args.inputName);
   }
@@ -89,6 +89,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   plusBtnProps,
   ...props
 }: NumberInputProps) => {
+  value = value || 0;
   const numberInputUnit = <div className={css(styles.numberInputUnit)}>{unit}</div>;
   const keyDownHandler =
     inputProps && inputProps.onKeyDown ? inputProps.onKeyDown : defaultKeyDownHandler({ inputName, onMinus, onPlus });
@@ -128,6 +129,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           </span>
         </Button>
         <TextInput
+          {...inputProps}
           type="number"
           value={value}
           name={inputName}
@@ -138,7 +140,6 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           {...(!onChange && { isReadOnly: true })}
           onKeyDown={keyDownHandler}
           validated={validated}
-          {...inputProps}
         />
         <Button
           variant="control"

@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownContext } from './dropdownConstants';
 import { css } from '@patternfly/react-styles';
-import { KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ToggleProps {
@@ -89,23 +89,22 @@ export class Toggle extends React.Component<ToggleProps> {
     const clickedOnToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const clickedWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target as Node);
     if (isOpen && !(clickedOnToggle || clickedWithinMenu)) {
-      onToggle(false, event);
+      onToggle?.(false, event);
     }
   };
 
   onEscPress = (event: KeyboardEvent) => {
     const { parentRef, getMenuRef } = this.props;
-    const keyCode = event.keyCode || event.which;
     const menuRef = getMenuRef && getMenuRef();
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target as Node);
     if (
       this.props.isOpen &&
-      (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
+      (event.key === KeyTypes.Escape || event.key === 'Tab') &&
       (escFromToggle || escFromWithinMenu)
     ) {
-      this.props.onToggle(false, event);
-      this.buttonRef.current.focus();
+      this.props.onToggle?.(false, event);
+      this.buttonRef.current?.focus();
     }
   };
 
@@ -119,15 +118,15 @@ export class Toggle extends React.Component<ToggleProps> {
       }
       event.preventDefault();
 
-      this.props.onToggle(!this.props.isOpen, event);
+      this.props.onToggle?.(!this.props.isOpen, event);
     } else if ((event.key === 'Enter' || event.key === ' ') && !this.props.isOpen) {
       if (!this.props.bubbleEvent) {
         event.stopPropagation();
       }
       event.preventDefault();
 
-      this.props.onToggle(!this.props.isOpen, event);
-      this.props.onEnter();
+      this.props.onToggle?.(!this.props.isOpen, event);
+      this.props.onEnter?.();
     }
   };
 
@@ -168,11 +167,11 @@ export class Toggle extends React.Component<ToggleProps> {
               isPlain && styles.modifiers.plain,
               isText && styles.modifiers.text,
               isPrimary && styles.modifiers.primary,
-              buttonVariantStyles[toggleVariant],
+              toggleVariant && buttonVariantStyles[toggleVariant],
               className
             )}
             type={type || 'button'}
-            onClick={event => onToggle(!isOpen, event)}
+            onClick={event => onToggle?.(!isOpen, event)}
             aria-expanded={isOpen}
             aria-haspopup={ariaHasPopup}
             onKeyDown={event => this.onKeyDown(event)}

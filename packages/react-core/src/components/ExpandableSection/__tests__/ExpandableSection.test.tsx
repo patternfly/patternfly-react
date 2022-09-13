@@ -18,12 +18,13 @@ test('Renders ExpandableSection expanded', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('ExpandableSection onToggle called', () => {
+test('ExpandableSection onToggle called', async () => {
   const mockfn = jest.fn();
+  const user = userEvent.setup();
 
   render(<ExpandableSection onToggle={mockfn}> test </ExpandableSection>);
 
-  userEvent.click(screen.getByRole('button'));
+  await user.click(screen.getByRole('button'));
   expect(mockfn.mock.calls).toHaveLength(1);
 });
 

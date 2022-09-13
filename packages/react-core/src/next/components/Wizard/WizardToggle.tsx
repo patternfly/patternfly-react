@@ -84,95 +84,97 @@ export const WizardToggle = ({
         );
       });
 
-  const wizardNav = isCustomWizardNav(nav)
-    ? nav(isNavOpen, steps, activeStep, goToStepByIndex)
-    : React.useMemo(() => {
-        const props = {
-          isOpen: isNavOpen,
-          'aria-label': nav?.ariaLabel || 'Wizard nav',
-          ...(nav?.ariaLabelledBy && { 'aria-labelledby': nav?.ariaLabelledBy })
-        };
+  const wizardNav = React.useMemo(() => {
+    if (isCustomWizardNav(nav)) {
+      return nav(isNavOpen, steps, activeStep, goToStepByIndex);
+    }
 
-        return (
-          <WizardNav {...props}>
-            {steps.map((step, index) => {
-              const stepIndex = index + 1;
-              const stepNavItem = step.navItem && <React.Fragment key={step.id}>{step.navItem}</React.Fragment>;
+    const props = {
+      isOpen: isNavOpen,
+      'aria-label': nav?.ariaLabel || 'Wizard nav',
+      ...(nav?.ariaLabelledBy && { 'aria-labelledby': nav?.ariaLabelledBy })
+    };
 
-              if (isWizardParentStep(step)) {
-                let firstSubStepIndex;
-                let hasActiveChild = false;
+    return (
+      <WizardNav {...props}>
+        {steps.map((step, index) => {
+          const stepIndex = index + 1;
+          const stepNavItem = step.navItem && <React.Fragment key={step.id}>{step.navItem}</React.Fragment>;
 
-                const subNavItems = step.subStepIds?.map((subStepId, index) => {
-                  const subStep = steps.find(step => step.id === subStepId);
-                  const subStepIndex = steps.indexOf(subStep) + 1;
+          if (isWizardParentStep(step)) {
+            let firstSubStepIndex;
+            let hasActiveChild = false;
 
-                  if (index === 0) {
-                    firstSubStepIndex = subStepIndex;
-                  }
+            const subNavItems = step.subStepIds?.map((subStepId, index) => {
+              const subStep = steps.find(step => step.id === subStepId);
+              const subStepIndex = steps.indexOf(subStep) + 1;
 
-                  if (activeStep?.id === subStep.id) {
-                    hasActiveChild = true;
-                  }
-
-                  return subStep.navItem ? (
-                    <React.Fragment key={subStep.id}>{subStep.navItem}</React.Fragment>
-                  ) : (
-                    <WizardNavItem
-                      key={subStep.id}
-                      id={subStep.id}
-                      content={subStep.name}
-                      isCurrent={activeStep?.id === subStep.id}
-                      isDisabled={subStep.isDisabled || (nav?.forceStepVisit && !subStep.visited)}
-                      step={subStepIndex}
-                      onNavItemClick={goToStepByIndex}
-                    />
-                  );
-                });
-
-                const hasEnabledChildren = React.Children.toArray(subNavItems).some(
-                  child => React.isValidElement(child) && !child.props.isDisabled
-                );
-
-                return (
-                  stepNavItem || (
-                    <WizardNavItem
-                      key={step.id}
-                      id={step.id}
-                      content={step.name}
-                      isExpandable={nav?.isExpandable}
-                      isCurrent={hasActiveChild}
-                      isDisabled={!hasEnabledChildren}
-                      step={firstSubStepIndex}
-                      onNavItemClick={goToStepByIndex}
-                    >
-                      <WizardNav {...props} returnList>
-                        {subNavItems}
-                      </WizardNav>
-                    </WizardNavItem>
-                  )
-                );
+              if (index === 0) {
+                firstSubStepIndex = subStepIndex;
               }
 
-              if (isWizardBasicStep(step)) {
-                return (
-                  stepNavItem || (
-                    <WizardNavItem
-                      key={step.id}
-                      id={step.id}
-                      content={step.name}
-                      isCurrent={activeStep?.id === step.id}
-                      isDisabled={step.isDisabled || (nav?.forceStepVisit && !step.visited)}
-                      step={stepIndex}
-                      onNavItemClick={goToStepByIndex}
-                    />
-                  )
-                );
+              if (activeStep?.id === subStep.id) {
+                hasActiveChild = true;
               }
-            })}
-          </WizardNav>
-        );
-      }, [activeStep?.id, goToStepByIndex, isNavOpen, nav, steps]);
+
+              return subStep.navItem ? (
+                <React.Fragment key={subStep.id}>{subStep.navItem}</React.Fragment>
+              ) : (
+                <WizardNavItem
+                  key={subStep.id}
+                  id={subStep.id}
+                  content={subStep.name}
+                  isCurrent={activeStep?.id === subStep.id}
+                  isDisabled={subStep.isDisabled || (nav?.forceStepVisit && !subStep.visited)}
+                  step={subStepIndex}
+                  onNavItemClick={goToStepByIndex}
+                />
+              );
+            });
+
+            const hasEnabledChildren = React.Children.toArray(subNavItems).some(
+              child => React.isValidElement(child) && !child.props.isDisabled
+            );
+
+            return (
+              stepNavItem || (
+                <WizardNavItem
+                  key={step.id}
+                  id={step.id}
+                  content={step.name}
+                  isExpandable={nav?.isExpandable}
+                  isCurrent={hasActiveChild}
+                  isDisabled={!hasEnabledChildren}
+                  step={firstSubStepIndex}
+                  onNavItemClick={goToStepByIndex}
+                >
+                  <WizardNav {...props} returnList>
+                    {subNavItems}
+                  </WizardNav>
+                </WizardNavItem>
+              )
+            );
+          }
+
+          if (isWizardBasicStep(step)) {
+            return (
+              stepNavItem || (
+                <WizardNavItem
+                  key={step.id}
+                  id={step.id}
+                  content={step.name}
+                  isCurrent={activeStep?.id === step.id}
+                  isDisabled={step.isDisabled || (nav?.forceStepVisit && !step.visited)}
+                  step={stepIndex}
+                  onNavItemClick={goToStepByIndex}
+                />
+              )
+            );
+          }
+        })}
+      </WizardNav>
+    );
+  }, [activeStep?.id, goToStepByIndex, isNavOpen, nav, steps]);
 
   return (
     <>

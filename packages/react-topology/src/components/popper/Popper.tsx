@@ -126,7 +126,7 @@ const Popper: React.FunctionComponent<PopperProps> = ({
 
   const onKeyDown = React.useCallback(
     (e: KeyboardEvent) => {
-      if (e.keyCode === 27) {
+      if (e.key === 'Escape') {
         controlled ? onRequestCloseRef.current && onRequestCloseRef.current() : setOpen(false);
       }
     },

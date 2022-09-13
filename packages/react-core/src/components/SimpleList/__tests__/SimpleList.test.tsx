@@ -40,12 +40,13 @@ describe('SimpleList', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('onSelect is called when item is selected', () => {
+  test('onSelect is called when item is selected', async () => {
     const onSelect = jest.fn();
+    const user = userEvent.setup();
 
     render(<SimpleList onSelect={onSelect}>{items}</SimpleList>);
 
-    userEvent.click(screen.getByText('Item 1'));
+    await user.click(screen.getByText('Item 1'));
     expect(onSelect).toHaveBeenCalled();
   });
 
@@ -54,12 +55,13 @@ describe('SimpleList', () => {
     expect(screen.getAllByRole('link').length).toEqual(3);
   });
 
-  test('onSelect is called when anchor item is selected', () => {
+  test('onSelect is called when anchor item is selected', async () => {
     const onSelect = jest.fn();
+    const user = userEvent.setup();
 
     render(<SimpleList onSelect={onSelect}>{anchors}</SimpleList>);
 
-    userEvent.click(screen.getByText('Item 1'));
+    await user.click(screen.getByText('Item 1'));
     expect(onSelect).toHaveBeenCalled();
   });
 });

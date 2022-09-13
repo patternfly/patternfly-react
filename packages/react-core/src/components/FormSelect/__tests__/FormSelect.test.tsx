@@ -174,16 +174,16 @@ describe('FormSelect', () => {
     expect(screen.getByLabelText('required FormSelect')).toHaveAttribute('required');
   });
 
-  test('FormSelect passes value and event to onChange handler', () => {
+  test('FormSelect passes value and event to onChange handler', async () => {
     const myMock = jest.fn();
-
+    const user = userEvent.setup();
     render(
       <FormSelect onChange={myMock} aria-label="Some label">
         <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
       </FormSelect>
     );
 
-    userEvent.selectOptions(screen.getByLabelText('Some label'), 'Mr');
+    await user.selectOptions(screen.getByLabelText('Some label'), 'Mr');
 
     expect(myMock).toHaveBeenCalled();
     expect(myMock.mock.calls[0][0]).toEqual('mr');

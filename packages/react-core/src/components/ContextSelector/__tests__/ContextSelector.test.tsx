@@ -21,15 +21,34 @@ describe('ContextSelector', () => {
   });
 
   test('Renders ContextSelector open', () => {
-    const { asFragment } = render(<ContextSelector isOpen id="render-open">{items}</ContextSelector>);
+    const { asFragment } = render(
+      <ContextSelector isOpen id="render-open">
+        {items}
+      </ContextSelector>
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Verify onToggle is called ', () => {
+  test('Renders in strict mode', () => {
+    const consoleError = jest.spyOn(console, 'error');
+    const { asFragment } = render(
+      <React.StrictMode>
+        <ContextSelector removeFindDomNode isOpen id="render">
+          {items}
+        </ContextSelector>
+      </React.StrictMode>
+    );
+    expect(consoleError).not.toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Verify onToggle is called ', async () => {
     const mockfn = jest.fn();
+    const user = userEvent.setup();
+
     render(<ContextSelector onToggle={mockfn}>{items}</ContextSelector>);
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(mockfn.mock.calls).toHaveLength(1);
   });
 });

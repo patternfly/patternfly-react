@@ -75,10 +75,12 @@ describe('Switch', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('switch passes value and event to onChange handler', () => {
+  test('switch passes value and event to onChange handler', async () => {
+    const user = userEvent.setup();
+    
     render(<Switch id="onChange-switch" {...props} aria-label="Switch label" />);
 
-    userEvent.click(screen.getByLabelText('Switch label'));
+    await user.click(screen.getByLabelText('Switch label'));
     expect(props.onChange).toHaveBeenCalledWith(true, expect.any(Object));
   });
 

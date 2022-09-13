@@ -1,9 +1,15 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import {
+  DEFAULT_LAYER,
   DEFAULT_WHEN_OFFSET,
+  Layer,
   Node,
+  ScaleDetailsLevel,
   TaskNode,
+  TOP_LAYER,
+  useDetailsLevel,
+  useHover,
   WhenDecorator,
   WithContextMenuProps,
   WithSelectionProps
@@ -22,6 +28,8 @@ const DemoTaskNode: React.FunctionComponent<DemoTaskNodeProps> = ({
   ...rest
 }) => {
   const data = element.getData();
+  const [hover, hoverRef] = useHover();
+  const detailsLevel = useDetailsLevel();
 
   const passedData = React.useMemo(() => {
     const newData = { ...data };
@@ -49,16 +57,22 @@ const DemoTaskNode: React.FunctionComponent<DemoTaskNodeProps> = ({
     footerContent: 'Popover footer'
   };
   return (
-    <TaskNode
-      element={element}
-      onContextMenu={data.showContextMenu ? onContextMenu : undefined}
-      contextMenuOpen={contextMenuOpen}
-      {...passedData}
-      {...rest}
-      badgePopoverParams={badgePopoverParams}
-    >
-      {whenDecorator}
-    </TaskNode>
+    <Layer id={detailsLevel !== ScaleDetailsLevel.high && hover ? TOP_LAYER : DEFAULT_LAYER}>
+      <g ref={hoverRef}>
+        <TaskNode
+          element={element}
+          onContextMenu={data.showContextMenu ? onContextMenu : undefined}
+          contextMenuOpen={contextMenuOpen}
+          scaleNode={(hover || contextMenuOpen) && detailsLevel !== ScaleDetailsLevel.high}
+          hideDetailsAtMedium
+          {...passedData}
+          {...rest}
+          badgePopoverParams={badgePopoverParams}
+        >
+          {whenDecorator}
+        </TaskNode>
+      </g>
+    </Layer>
   );
 };
 

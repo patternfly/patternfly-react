@@ -37,7 +37,7 @@
     "@octokit/rest": "^16.43.2",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.5",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/user-event": "14.4.3",
     "@types/jest": "27.0.2",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
