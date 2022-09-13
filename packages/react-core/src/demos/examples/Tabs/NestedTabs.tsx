@@ -15,7 +15,7 @@ import {
   Flex,
   FlexItem
 } from '@patternfly/react-core';
-import DashboardWrapper from '../DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const NestedTabs: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);

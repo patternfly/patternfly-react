@@ -56,11 +56,22 @@ import { canUseDOM } from './util';
  *   );
  * }
  *
+ * Example 3 - With debounced method passed in:
+ *
+ * public componentDidMount() {
+ *   this.observer = getResizeObserver(this.inputRef.current, debounce(this.handleResize, 250), false);
+ * }
+ *
  * @param {Element} containerRefElement The container reference to observe
  * @param {Function} handleResize The function to call for resize events
+ * @param {boolean} useRequestAnimationFrame Whether to pass the handleResize function as a callback to requestAnimationFrame. Pass in false when the function passed in is debounced. Defaults to true.
  * @return {Function} The function used to unobserve resize events
  */
-export const getResizeObserver = (containerRefElement: Element, handleResize: () => void) => {
+export const getResizeObserver = (
+  containerRefElement: Element,
+  handleResize: () => void,
+  useRequestAnimationFrame: boolean = true
+) => {
   let unobserve: any;
 
   if (canUseDOM) {
@@ -69,11 +80,18 @@ export const getResizeObserver = (containerRefElement: Element, handleResize: ()
     if (containerRefElement && ResizeObserver) {
       const resizeObserver = new ResizeObserver((entries: any) => {
         // Wrap resize function in requestAnimationFrame to avoid "ResizeObserver loop limit exceeded" errors
-        window.requestAnimationFrame(() => {
+        if (useRequestAnimationFrame) {
+          window.requestAnimationFrame(() => {
+            if (Array.isArray(entries) && entries.length > 0) {
+              handleResize();
+            }
+          });
+          // Avoid wrapping function in requestAnimationFrame if the function is debounced
+        } else {
           if (Array.isArray(entries) && entries.length > 0) {
             handleResize();
           }
-        });
+        }
       });
       resizeObserver.observe(containerRefElement);
       unobserve = () => resizeObserver.unobserve(containerRefElement);

@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
-import { PageContext } from '../Page/Page';
+import { PageContext } from '../Page/PageContext';
 
 export enum ToolbarGroupVariant {
   'filter-group' = 'filter-group',

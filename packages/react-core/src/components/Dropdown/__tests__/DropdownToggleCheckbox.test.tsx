@@ -54,10 +54,12 @@ describe('DropdownToggleCheckbox', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('checkbox passes value and event to onChange handler', () => {
+  test('checkbox passes value and event to onChange handler', async () => {
+    const user = userEvent.setup();
+    
     render(<DropdownToggleCheckbox id="check" {...props} aria-label="check" />);
 
-    userEvent.click(screen.getByRole('checkbox'));
+    await user.click(screen.getByRole('checkbox'));
     expect(props.onChange).toHaveBeenCalledWith(true, expect.any(Object));
   });
 });

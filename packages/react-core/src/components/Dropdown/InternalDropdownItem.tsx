@@ -87,7 +87,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
   componentDidMount() {
     const { context, index, isDisabled, role, customChild, autoFocus } = this.props;
     const customRef = customChild ? this.getInnerNode(this.ref.current) : this.ref.current;
-    context.sendRef(
+    context?.sendRef?.(
       index,
       [customRef, customChild ? customRef : this.additionalRef.current],
       isDisabled,
@@ -99,7 +99,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
   componentDidUpdate() {
     const { context, index, isDisabled, role, customChild } = this.props;
     const customRef = customChild ? this.getInnerNode(this.ref.current) : this.ref.current;
-    context.sendRef(
+    context?.sendRef?.(
       index,
       [customRef, customChild ? customRef : this.additionalRef.current],
       isDisabled,
@@ -116,21 +116,21 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       event.preventDefault();
     }
     if (event.key === 'ArrowUp') {
-      this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.UP);
+      this.props.context?.keyHandler?.(this.props.index, innerIndex, KEYHANDLER_DIRECTION.UP);
       event.stopPropagation();
     } else if (event.key === 'ArrowDown') {
-      this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.DOWN);
+      this.props.context?.keyHandler?.(this.props.index, innerIndex, KEYHANDLER_DIRECTION.DOWN);
       event.stopPropagation();
     } else if (event.key === 'ArrowRight') {
-      this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.RIGHT);
+      this.props.context?.keyHandler?.(this.props.index, innerIndex, KEYHANDLER_DIRECTION.RIGHT);
       event.stopPropagation();
     } else if (event.key === 'ArrowLeft') {
-      this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.LEFT);
+      this.props.context?.keyHandler?.(this.props.index, innerIndex, KEYHANDLER_DIRECTION.LEFT);
       event.stopPropagation();
     } else if (event.key === 'Enter' || event.key === ' ') {
       event.target.click();
       this.props.enterTriggersArrowDown &&
-        this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.DOWN);
+        this.props.context?.keyHandler?.(this.props.index, innerIndex, KEYHANDLER_DIRECTION.DOWN);
     }
   };
 
@@ -264,13 +264,13 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
 
           return (
             <li
-              className={listItemClassName || null}
+              {...(listItemClassName && { className: listItemClassName })}
               role="none"
               onKeyDown={this.onKeyDown}
               onClick={(event: any) => {
                 if (!isDisabled && !isAriaDisabled) {
-                  onClick(event);
-                  onSelect(event);
+                  onClick?.(event);
+                  onSelect?.(event);
                 }
               }}
               id={id}

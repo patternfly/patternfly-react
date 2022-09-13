@@ -2,6 +2,7 @@ export * from './AboutModal/AboutModalDemo';
 export * from './AlertDemo/AlertDemo';
 export * from './AlertDemo/AlertTimeoutCloseButtonDemo';
 export * from './AlertGroupDemo/AlertGroupDemo';
+export * from './AlertGroupDemo/AlertGroupTimeoutFromBottomDemo';
 export * from './AlertDemo/AlertCustomTimeoutDemo';
 export * from './AlertDemo/AlertDefaultTimeoutDemo';
 export * from './ApplicationLauncherDemo/ApplicationLauncherFavoritesDemo';

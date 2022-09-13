@@ -25,7 +25,8 @@ export const InputGroup: React.FunctionComponent<InputGroupProps> = ({
     (child: any) => !formCtrls.includes(child.type.displayName) && child.props.id
   ) as React.ReactElement<{ id: string }>;
 
-  const inputGroupRef = innerRef || React.useRef(null);
+  const ref = React.useRef(null);
+  const inputGroupRef = innerRef || ref;
 
   return (
     <div ref={inputGroupRef} className={css(styles.inputGroup, className)} {...props}>

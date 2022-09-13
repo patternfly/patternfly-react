@@ -25,13 +25,6 @@ const ConnectorArrow: React.FunctionComponent<ConnectorArrowProps> = ({
   size = 14,
   dragRef
 }) => {
-  if (!startPoint || !endPoint) {
-    return null;
-  }
-
-  const connectorStartPoint = getConnectorStartPoint(startPoint, endPoint, size);
-  const angleDeg = getConnectorRotationAngle(startPoint, endPoint);
-
   const polygonPoints = React.useMemo(
     () =>
       pointsStringFromPoints([
@@ -41,10 +34,21 @@ const ConnectorArrow: React.FunctionComponent<ConnectorArrowProps> = ({
       ]),
     [size]
   );
-  const boundingPoints = React.useMemo(
-    () => pointsStringFromPoints(getConnectorBoundingBox(startPoint, endPoint, size)),
-    [endPoint, size, startPoint]
-  );
+
+  const boundingPoints = React.useMemo(() => {
+    if (startPoint || !endPoint) {
+      return null;
+    }
+    return pointsStringFromPoints(getConnectorBoundingBox(startPoint, endPoint, size));
+  }, [endPoint, size, startPoint]);
+
+  if (!startPoint || !endPoint) {
+    return null;
+  }
+
+  const connectorStartPoint = getConnectorStartPoint(startPoint, endPoint, size);
+  const angleDeg = getConnectorRotationAngle(startPoint, endPoint);
+
   const classNames = css(styles.topologyConnectorArrow, className, dragRef && 'pf-m-draggable');
 
   return (

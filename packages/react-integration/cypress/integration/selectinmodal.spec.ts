@@ -13,21 +13,21 @@ describe('Select in modal Test', () => {
             cy.get('#select-in-modal-select').then(selectToggle => {
               cy.wrap(selectToggle).click();
               cy.get('.pf-c-select .pf-c-select__menu').should('exist');
-              cy.get('body').trigger('keydown', { keyCode: 27, which: 27 });
+              cy.get('body').type('{esc}');
               cy.get('.pf-c-modal-box').should('exist');
               cy.get('.pf-c-select .pf-c-select__menu').should('not.exist');
             });
             cy.get('#select-in-modal-time-picker-input').then(timePicker => {
               cy.wrap(timePicker).click();
               cy.get('.pf-c-menu.pf-m-scrollable').should('exist');
-              cy.get('body').trigger('keydown', { keyCode: 27, which: 27 });
+              cy.get('body').type('{esc}');
               cy.get('.pf-c-modal-box').should('exist');
               cy.get('.pf-c-menu.pf-m-scrollable').should('not.exist');
             });
           })
           .then(() => {
             cy.get('.pf-c-modal-box').should('exist');
-            cy.get('body').trigger('keydown', { keyCode: 27, which: 27 });
+            cy.get('body').type('{esc}');
             cy.get('.pf-c-modal-box').should('not.exist');
           });
       });

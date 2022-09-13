@@ -106,7 +106,7 @@ describe('Dropdown', () => {
       <Dropdown
         dropdownItems={dropdownItems}
         toggle={
-          <DropdownToggle id="Dropdown Toggle" isPrimary>
+          <DropdownToggle id="Dropdown Toggle" toggleVariant="primary">
             Dropdown
           </DropdownToggle>
         }
@@ -121,6 +121,22 @@ describe('Dropdown', () => {
         <div>BASIC</div>
       </Dropdown>
     );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Renders in strict mode', () => {
+    const consoleError = jest.spyOn(console, 'error');
+    const { asFragment } = render(
+      <React.StrictMode>
+        <Dropdown
+          isOpen
+          dropdownItems={dropdownItems}
+          toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
+          removeFindDomNode
+        />
+      </React.StrictMode>
+    );
+    expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
 });
@@ -201,9 +217,10 @@ describe('KebabToggle', () => {
 });
 
 describe('API', () => {
-  test('click on item', () => {
+  test('click on item', async () => {
     const mockToggle = jest.fn();
     const mockSelect = jest.fn();
+    const user = userEvent.setup();
 
     render(
       <Dropdown
@@ -214,7 +231,7 @@ describe('API', () => {
       />
     );
 
-    userEvent.click(screen.getByText('Link')); // "Link" is the text of the first item
+    await user.click(screen.getByText('Link')); // "Link" is the text of the first item
     expect(mockToggle.mock.calls).toHaveLength(0);
     expect(mockSelect.mock.calls).toHaveLength(1);
   });

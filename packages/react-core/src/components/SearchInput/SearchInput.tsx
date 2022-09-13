@@ -95,6 +95,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
    * appendTo={document.getElementById('target')}
    */
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
 }
 
 const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
@@ -128,12 +130,14 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   submitSearchButtonLabel = 'Search',
   isDisabled = false,
   appendTo,
+  removeFindDomNode = false,
   ...props
 }: SearchInputProps) => {
   const [isSearchMenuOpen, setIsSearchMenuOpen] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState(value);
   const searchInputRef = React.useRef(null);
-  const searchInputInputRef = innerRef || React.useRef(null);
+  const ref = React.useRef(null);
+  const searchInputInputRef = innerRef || ref;
 
   React.useEffect(() => {
     setSearchValue(value);
@@ -361,6 +365,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             isVisible={isSearchMenuOpen}
             enableFlip={true}
             appendTo={() => appendTo || searchInputRef.current}
+            removeFindDomNode={removeFindDomNode}
           />
         </div>
       );

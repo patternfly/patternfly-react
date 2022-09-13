@@ -3,20 +3,23 @@ import styles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
+import { ASTERISK } from '../../helpers/htmlConstants';
 
 export interface CheckboxProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>,
     OUIAProps {
-  /** Additional classes added to the Checkbox. */
+  /** Additional classes added to the checkbox. */
   className?: string;
-  /** Flag to show if the Checkbox selection is valid or invalid. */
+  /** Flag to show if the checkbox selection is valid or invalid. */
   isValid?: boolean;
-  /** Flag to show if the Checkbox is disabled. */
+  /** Flag to show if the checkbox is disabled. */
   isDisabled?: boolean;
-  /** Flag to show if the Checkbox is checked. If null, the checkbox will be indeterminate (partially checked). */
+  /** Flag to show if the checkbox is required. */
+  isRequired?: boolean;
+  /** Flag to show if the checkbox is checked. If null, the checkbox will be indeterminate (partially checked). */
   isChecked?: boolean | null;
   checked?: boolean;
-  /** A callback for when the Checkbox selection changes. */
+  /** A callback for when the checkbox selection changes. */
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Label text of the checkbox. */
   label?: React.ReactNode;
@@ -45,6 +48,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     className: '',
     isValid: true,
     isDisabled: false,
+    isRequired: false,
     isChecked: false,
     onChange: defaultOnChange,
     ouiaSafe: true,
@@ -69,6 +73,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
       onChange,
       isValid,
       isDisabled,
+      isRequired,
       isChecked,
       label,
       checked,
@@ -106,6 +111,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
           aria-invalid={!isValid}
           aria-label={ariaLabel}
           disabled={isDisabled}
+          required={isRequired}
           ref={elem => elem && (elem.indeterminate = isChecked === null)}
           {...checkedProps}
           {...getOUIAProps(Checkbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
@@ -113,6 +119,11 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
         {label && (
           <label className={css(styles.checkLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
             {label}
+            {isRequired && (
+              <span className={css(styles.checkLabelRequired)} aria-hidden="true">
+                {ASTERISK}
+              </span>
+            )}
           </label>
         )}
         {description && <span className={css(styles.checkDescription)}>{description}</span>}

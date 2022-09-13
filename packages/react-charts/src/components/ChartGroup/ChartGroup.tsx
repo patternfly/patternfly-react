@@ -23,7 +23,7 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import {
   getClassName,
-  getDefaultPatternProps,
+  useDefaultPatternProps,
   getPatternDefs,
   getTheme,
   renderChildrenWithPatterns
@@ -508,7 +508,7 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
     className: getClassName({ className: containerComponent.props.className }) // Override VictoryContainer class name
   });
 
-  const { defaultColorScale, defaultPatternScale, isPatternDefs, patternId } = getDefaultPatternProps({
+  const { defaultColorScale, defaultPatternScale, isPatternDefs, patternId } = useDefaultPatternProps({
     colorScale,
     hasPatterns,
     patternScale,

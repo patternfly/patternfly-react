@@ -33,3 +33,13 @@ exports[`popover renders close-button, header and body 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`popover renders in strict mode 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      Toggle Popover
+    </div>
+  </div>
+</DocumentFragment>
+`;

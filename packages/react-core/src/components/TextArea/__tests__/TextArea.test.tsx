@@ -12,10 +12,12 @@ const props = {
 };
 
 describe('TextArea', () => {
-  test('textarea input passes value and event to onChange handler', () => {
+  test('textarea input passes value and event to onChange handler', async () => {
+    const user = userEvent.setup();
+
     render(<TextAreaBase {...props} value="" aria-label="test textarea" />);
 
-    userEvent.type(screen.getByLabelText('test textarea'), 'a');
+    await user.type(screen.getByLabelText('test textarea'), 'a');
     expect(props.onChange).toHaveBeenCalledWith('a', expect.any(Object));
   });
 

@@ -3,8 +3,6 @@ id: Page
 section: components
 ---
 
-import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -40,13 +38,11 @@ import {
   ButtonVariant,
   Card,
   CardBody,
-  Checkbox,
   Divider,
   Dropdown,
   DropdownGroup,
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
   Gallery,
   GalleryItem,
   KebabToggle,
@@ -78,8 +74,6 @@ import {
   DrawerActions,
   DrawerCloseButton,
 } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -181,10 +175,10 @@ class PageLayoutGrouped extends React.Component {
     );
 
     const kebabDropdownItems = [
-      <DropdownItem>
+      <DropdownItem key="settings">
         <CogIcon /> Settings
       </DropdownItem>,
-      <DropdownItem>
+      <DropdownItem key="help">
         <HelpIcon /> Help
       </DropdownItem>
     ];
@@ -357,7 +351,7 @@ class PageLayoutGrouped extends React.Component {
                 </PageSection>
               }
               groupProps={{
-                stickyOnBreakpoint: { default: 'top' },
+                stickyOnBreakpoint: { default: 'top' }
               }}
             >
               <PageSection>
@@ -399,7 +393,6 @@ import {
   DropdownGroup,
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
   Gallery,
   GalleryItem,
   KebabToggle,
@@ -410,7 +403,6 @@ import {
   PageHeader,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   SkipToContent,
   TextContent,
   Text,
@@ -418,8 +410,6 @@ import {
   PageHeaderToolsGroup,
   PageHeaderToolsItem
 } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -490,10 +480,10 @@ class PageLayoutGrouped extends React.Component {
       </Nav>
     );
     const kebabDropdownItems = [
-      <DropdownItem>
+      <DropdownItem key="settings">
         <CogIcon /> Settings
       </DropdownItem>,
-      <DropdownItem>
+      <DropdownItem key="help">
         <HelpIcon /> Help
       </DropdownItem>
     ];
@@ -641,7 +631,6 @@ import {
   DropdownGroup,
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
   Gallery,
   GalleryItem,
   KebabToggle,
@@ -652,7 +641,6 @@ import {
   PageHeader,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   PageGroup,
   PageBreadcrumb,
   PageNavigation,
@@ -663,8 +651,6 @@ import {
   PageHeaderToolsGroup,
   PageHeaderToolsItem
 } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -714,10 +700,10 @@ class PageLayoutGroupedAlt extends React.Component {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
 
     const kebabDropdownItems = [
-      <DropdownItem>
+      <DropdownItem key="settings">
         <CogIcon /> Settings
       </DropdownItem>,
-      <DropdownItem>
+      <DropdownItem key="help">
         <HelpIcon /> Help
       </DropdownItem>
     ];
@@ -863,13 +849,11 @@ import {
   ButtonVariant,
   Card,
   CardBody,
-  Checkbox,
   Divider,
   Dropdown,
   DropdownGroup,
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
   Gallery,
   GalleryItem,
   KebabToggle,
@@ -884,8 +868,8 @@ import {
   Page,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   PageToggleButton,
+  PageSidebar,
   SkipToContent,
   TextContent,
   Text,
@@ -901,8 +885,6 @@ import {
   DrawerActions,
   DrawerCloseButton,
 } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -1004,10 +986,10 @@ class PageLayoutGrouped extends React.Component {
     );
 
     const kebabDropdownItems = [
-      <DropdownItem>
+      <DropdownItem key="settings">
         <CogIcon /> Settings
       </DropdownItem>,
-      <DropdownItem>
+      <DropdownItem key="help">
         <HelpIcon /> Help
       </DropdownItem>
     ];

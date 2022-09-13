@@ -41,6 +41,25 @@ describe('Nav', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('Renders nav list in strict mode', () => {
+    const consoleError = jest.spyOn(console, 'error');
+    const { asFragment } = renderNav(
+      <React.StrictMode>
+        <Nav className="test-nav-class">
+          <NavList className="test-nav-list-class">
+            {props.items.map(item => (
+              <NavItem removeFindDomNode to={item.to} key={item.to} className="test-nav-item-class">
+                {item.label}
+              </NavItem>
+            ))}
+          </NavList>
+        </Nav>
+      </React.StrictMode>
+    );
+    expect(consoleError).not.toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('Dark Nav List', () => {
     const { asFragment } = renderNav(
       <Nav className="test=nav-class" theme="dark">
@@ -56,7 +75,9 @@ describe('Nav', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Default Nav List - Trigger item active update', () => {
+  test('Default Nav List - Trigger item active update', async () => {
+    const user = userEvent.setup();
+
     const { asFragment } = renderNav(
       <Nav>
         <NavList>
@@ -69,7 +90,7 @@ describe('Nav', () => {
       </Nav>
     );
 
-    userEvent.click(screen.getByText('Link 2'));
+    await user.click(screen.getByText('Link 2'));
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -90,8 +111,9 @@ describe('Nav', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Expandable Nav verify onExpand', () => {
+  test('Expandable Nav verify onExpand', async () => {
     const onExpand = jest.fn();
+    const user = userEvent.setup();
 
     renderNav(
       <Nav>
@@ -107,12 +129,13 @@ describe('Nav', () => {
       </Nav>
     );
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(onExpand).toHaveBeenCalled();
   });
 
-  test('Expandable Nav List - Trigger toggle', () => {
+  test('Expandable Nav List - Trigger toggle', async () => {
     window.location.hash = '#link2';
+    const user = userEvent.setup();
 
     const { asFragment } = renderNav(
       <Nav>
@@ -128,7 +151,7 @@ describe('Nav', () => {
       </Nav>
     );
 
-    userEvent.click(screen.getByText('Section 1'));
+    await user.click(screen.getByText('Section 1'));
     expect(asFragment()).toMatchSnapshot();
   });
 

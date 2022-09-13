@@ -40,12 +40,14 @@ describe('ToggleGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('item passes selection and event to onChange handler', () => {
+  test('item passes selection and event to onChange handler', async () => {
+    const user = userEvent.setup();
+    
     render(
       <ToggleGroupItem text="test" buttonId="toggleGroupItem" onChange={props.onChange} aria-label="onChange handler" />
     );
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(props.onChange).toHaveBeenCalledWith(true, expect.any(Object));
   });
 

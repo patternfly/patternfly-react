@@ -60,6 +60,8 @@ export interface DropdownProps
    * appended inline, e.g. `menuAppendTo="parent"`
    */
   isFlipEnabled?: boolean;
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
 }
 
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
@@ -72,6 +74,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   contextProps,
   menuAppendTo = 'inline',
   isFlipEnabled = false,
+  removeFindDomNode = false,
   ...props
 }: DropdownProps) => (
   <DropdownContext.Provider
@@ -97,7 +100,12 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       ...contextProps
     }}
   >
-    <DropdownWithContext menuAppendTo={menuAppendTo} isFlipEnabled={isFlipEnabled} {...props} />
+    <DropdownWithContext
+      menuAppendTo={menuAppendTo}
+      isFlipEnabled={isFlipEnabled}
+      removeFindDomNode={removeFindDomNode}
+      {...props}
+    />
   </DropdownContext.Provider>
 );
 Dropdown.displayName = 'Dropdown';

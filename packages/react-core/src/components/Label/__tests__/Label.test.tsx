@@ -91,7 +91,9 @@ describe('Label', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('editable label', () => {
+  test('editable label', async () => {
+    const user = userEvent.setup();
+
     const { asFragment } = render(
       <Label onClose={jest.fn()} onEditCancel={jest.fn()} onEditComplete={jest.fn()} isEditable>
         Something
@@ -103,7 +105,7 @@ describe('Label', () => {
     expect(button).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
 
-    userEvent.click(button);
+    await user.click(button);
     expect(screen.queryByRole('button', { name: 'Something' })).toBeNull();
     expect(asFragment()).toMatchSnapshot();
   });

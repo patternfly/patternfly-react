@@ -27,7 +27,7 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getComputedLegend, getDefaultPatternProps, getPaddingForSide, getPatternDefs, getTheme } from '../ChartUtils';
+import { getComputedLegend, useDefaultPatternProps, getPaddingForSide, getPatternDefs, getTheme } from '../ChartUtils';
 
 export enum ChartPieLabelPosition {
   centroid = 'centroid',
@@ -542,7 +542,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     top: getPaddingForSide('top', padding, theme.pie.padding)
   };
 
-  const { defaultColorScale, defaultPatternScale, isPatternDefs, patternId } = getDefaultPatternProps({
+  const { defaultColorScale, defaultPatternScale, isPatternDefs, patternId } = useDefaultPatternProps({
     colorScale,
     hasPatterns,
     patternScale,

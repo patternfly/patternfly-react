@@ -36,7 +36,7 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
     };
   }, [isOpen, menuRef]);
 
-  const onSelect = (event?: React.MouseEvent, itemId?: string | number) => {
+  const onSelect = (event: React.MouseEvent | undefined, itemId: string | number | undefined) => {
     if (typeof itemId === 'string' || typeof itemId === 'undefined') {
       return;
     }

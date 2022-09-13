@@ -50,7 +50,7 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (event?: React.MouseEvent, itemId?: string | number) => {
+  const onSelect = (event: React.MouseEvent | undefined, itemId: string | number | undefined) => {
     if (typeof itemId === 'string' || typeof itemId === 'undefined') {
       return;
     }

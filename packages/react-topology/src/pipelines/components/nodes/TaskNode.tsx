@@ -4,11 +4,11 @@ import styles from '@patternfly/react-styles/css/components/Topology/topology-pi
 import topologyStyles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import { Popover, PopoverProps, Tooltip } from '@patternfly/react-core';
 import { observer } from '../../../mobx-exports';
-import { AnchorEnd, Node } from '../../../types';
+import { AnchorEnd, Node, ScaleDetailsLevel } from '../../../types';
 import { RunStatus } from '../../types';
 import { useAnchor, WithContextMenuProps, WithSelectionProps } from '../../../behavior';
 import { truncateMiddle } from '../../../utils/truncate-middle';
-import { createSvgIdUrl, useHover, useSize } from '../../../utils';
+import { createSvgIdUrl, getNodeScaleTranslation, useHover, useSize } from '../../../utils';
 import { getRunStatusModifier, nonShadowModifiers } from '../../utils';
 import StatusIcon from '../../utils/StatusIcon';
 import { TaskNodeSourceAnchor, TaskNodeTargetAnchor } from '../anchors';
@@ -21,8 +21,11 @@ import NodeShadows, {
 } from '../../../components/nodes/NodeShadows';
 import LabelBadge from '../../../components/nodes/labels/LabelBadge';
 import LabelIcon from '../../../components/nodes/labels/LabelIcon';
+import useDetailsLevel from '../../../hooks/useDetailsLevel';
+import { useScaleNode } from '../../../hooks';
 
 const STATUS_ICON_SIZE = 16;
+const SCALE_UP_TIME = 200;
 
 export type TaskNodeProps = {
   children?: React.ReactNode;
@@ -34,6 +37,9 @@ export type TaskNodeProps = {
   status?: RunStatus;
   statusIconSize?: number;
   showStatusState?: boolean;
+  scaleNode?: boolean; // Whether or not to scale the node, best on hover when details are hidden
+  hideDetailsAtMedium?: boolean; // Whether or not to hide details at medium scale
+  hiddenDetailsShownStatuses?: RunStatus[]; // Statuses to show at when details are hidden
   badge?: string;
   badgeColor?: string;
   badgeTextColor?: string;
@@ -66,6 +72,9 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   status,
   statusIconSize = STATUS_ICON_SIZE,
   showStatusState = true,
+  scaleNode,
+  hideDetailsAtMedium,
+  hiddenDetailsShownStatuses = [RunStatus.Failed, RunStatus.FailedToStart, RunStatus.Cancelled],
   badge,
   badgeColor,
   badgeTextColor,
@@ -101,17 +110,25 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   const [badgeSize, badgeRef] = useSize([badge]);
   const [actionSize, actionRef] = useSize([actionIcon, paddingX]);
   const [contextSize, contextRef] = useSize([onContextMenu, paddingX]);
+  const detailsLevel = useDetailsLevel();
 
   const textWidth = textSize?.width ?? 0;
   const textHeight = textSize?.height ?? 0;
-
-  useAnchor(TaskNodeSourceAnchor, AnchorEnd.source);
+  useAnchor(
+    React.useCallback((node: Node) => new TaskNodeSourceAnchor(node, detailsLevel, statusIconSize + 4), [
+      detailsLevel,
+      statusIconSize,
+      scaleNode
+    ]),
+    AnchorEnd.source
+  );
   useAnchor(
     React.useCallback((node: Node) => new TaskNodeTargetAnchor(node, hasWhenExpression ? 0 : whenSize + whenOffset), [
       hasWhenExpression,
       whenSize,
       whenOffset
-    ])
+    ]),
+    AnchorEnd.target
   );
 
   const {
@@ -197,9 +214,13 @@ const TaskNode: React.FC<TaskNodeProps> = ({
     const sourceEdges = element.getSourceEdges();
     sourceEdges.forEach(edge => {
       const data = edge.getData();
-      edge.setData({ ...(data || {}), indent: width - pillWidth });
+      edge.setData({ ...(data || {}), indent: detailsLevel === ScaleDetailsLevel.high ? width - pillWidth : 0 });
     });
-  }, [element, pillWidth, width]);
+  }, [detailsLevel, element, pillWidth, width]);
+
+  const scale = element.getGraph().getScale();
+  const nodeScale = useScaleNode(scaleNode, scale, SCALE_UP_TIME);
+  const { translateX, translateY } = getNodeScaleTranslation(element, nodeScale, scaleNode);
 
   const nameLabel = (
     <text ref={textRef} className={css(styles.topologyPipelinesPillText)} dominantBaseline="middle">
@@ -217,7 +238,7 @@ const TaskNode: React.FC<TaskNodeProps> = ({
     onSelect && styles.modifiers.selectable
   );
 
-  let filter;
+  let filter: string;
   if (runStatusModifier === styles.modifiers.danger) {
     filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_DANGER);
   } else if (isHover && !nonShadowModifiers.includes(runStatusModifier)) {
@@ -249,114 +270,153 @@ const TaskNode: React.FC<TaskNodeProps> = ({
     />
   );
 
-  const taskPill = (
-    <g
-      className={pillClasses}
-      transform={`translate(${whenOffset + whenSize}, 0)`}
-      ref={hoverRef}
-      onClick={onSelect}
-      onContextMenu={onContextMenu}
-    >
-      <NodeShadows />
-      <rect
-        x={0}
-        y={0}
-        width={pillWidth}
-        height={height}
-        rx={height / 2}
-        className={css(styles.topologyPipelinesPillBackground)}
-        filter={filter}
-      />
-      <g transform={`translate(${textStartX}, ${paddingY + textHeight / 2 + 1})`}>
-        {element.getLabel() !== label && !disableTooltip ? (
-          <Tooltip content={element.getLabel()}>
-            <g>{nameLabel}</g>
-          </Tooltip>
-        ) : (
-          nameLabel
-        )}
-      </g>
-      {status && showStatusState && (
-        <g transform={`translate(${statusStartX + paddingX / 2}, ${(height - statusIconSize) / 2})`} ref={statusRef}>
-          <g
+  const renderTask = () => {
+    if (showStatusState && !scaleNode && hideDetailsAtMedium && detailsLevel !== ScaleDetailsLevel.high) {
+      const statusBackgroundRadius = statusIconSize / 2 + 4;
+      const height = element.getBounds().height;
+      const upScale = 1 / scale;
+
+      return (
+        <g transform={`translate(0, ${(height - statusBackgroundRadius * 2 * upScale) / 2}) scale(${upScale})`}>
+          <circle
             className={css(
+              styles.topologyPipelinesStatusIconBackground,
               styles.topologyPipelinesPillStatus,
               runStatusModifier,
-              selected && 'pf-m-selected',
-              (status === RunStatus.Running || status === RunStatus.InProgress) && styles.modifiers.spin
+              selected && 'pf-m-selected'
             )}
-          >
-            <StatusIcon status={status} />
-          </g>
+            cx={statusBackgroundRadius}
+            cy={statusBackgroundRadius}
+            r={statusBackgroundRadius}
+          />
+          {status && (!hiddenDetailsShownStatuses || hiddenDetailsShownStatuses.includes(status)) ? (
+            <g transform={`translate(4, 4)`}>
+              <g
+                className={css(
+                  styles.topologyPipelinesStatusIcon,
+                  runStatusModifier,
+                  selected && 'pf-m-selected',
+                  (status === RunStatus.Running || status === RunStatus.InProgress) && styles.modifiers.spin
+                )}
+              >
+                <StatusIcon status={status} />
+              </g>
+            </g>
+          ) : null}
         </g>
-      )}
-      {taskIconComponent &&
-        (taskIconTooltip ? <Tooltip content={taskIconTooltip}>{taskIconComponent}</Tooltip> : taskIconComponent)}
-      {badgeComponent &&
-        (badgePopoverParams ? (
-          <g onClick={e => e.stopPropagation()}>
-            <Popover {...badgePopoverParams}>{badgeComponent}</Popover>
+      );
+    }
+    return (
+      <g
+        className={pillClasses}
+        transform={`translate(${whenOffset + whenSize}, 0)`}
+        ref={hoverRef}
+        onClick={onSelect}
+        onContextMenu={onContextMenu}
+      >
+        <NodeShadows />
+        <rect
+          x={0}
+          y={0}
+          width={pillWidth}
+          height={height}
+          rx={height / 2}
+          className={css(styles.topologyPipelinesPillBackground)}
+          filter={filter}
+        />
+        <g transform={`translate(${textStartX}, ${paddingY + textHeight / 2 + 1})`}>
+          {element.getLabel() !== label && !disableTooltip ? (
+            <Tooltip content={element.getLabel()}>
+              <g>{nameLabel}</g>
+            </Tooltip>
+          ) : (
+            nameLabel
+          )}
+        </g>
+        {status && showStatusState && (
+          <g transform={`translate(${statusStartX + paddingX / 2}, ${(height - statusIconSize) / 2})`} ref={statusRef}>
+            <g
+              className={css(
+                styles.topologyPipelinesPillStatus,
+                runStatusModifier,
+                selected && 'pf-m-selected',
+                (status === RunStatus.Running || status === RunStatus.InProgress) && styles.modifiers.spin
+              )}
+            >
+              <StatusIcon status={status} />
+            </g>
           </g>
-        ) : (
-          badgeComponent
-        ))}
-      {actionIcon && (
-        <>
-          <line
-            className={css(topologyStyles.topologyNodeSeparator)}
-            x1={actionStartX}
-            y1={0}
-            x2={actionStartX}
-            y2={height}
-            shapeRendering="crispEdges"
-          />
-          <LabelActionIcon
-            ref={actionRef}
-            x={actionStartX}
-            y={0}
-            height={height}
-            paddingX={paddingX}
-            paddingY={0}
-            icon={actionIcon}
-            className={actionIconClassName}
-            onClick={onActionIconClick}
-          />
-        </>
-      )}
-      {textSize && onContextMenu && (
-        <>
-          <line
-            className={css(topologyStyles.topologyNodeSeparator)}
-            x1={contextStartX}
-            y1={0}
-            x2={contextStartX}
-            y2={height}
-            shapeRendering="crispEdges"
-          />
-          <LabelContextMenu
-            ref={contextRef}
-            x={contextStartX}
-            y={0}
-            height={height}
-            paddingX={paddingX}
-            paddingY={0}
-            onContextMenu={onContextMenu}
-            contextMenuOpen={contextMenuOpen}
-          />
-        </>
-      )}
-
-      {children}
-    </g>
-  );
+        )}
+        {taskIconComponent &&
+          (taskIconTooltip ? <Tooltip content={taskIconTooltip}>{taskIconComponent}</Tooltip> : taskIconComponent)}
+        {badgeComponent &&
+          (badgePopoverParams ? (
+            <g onClick={e => e.stopPropagation()}>
+              <Popover {...badgePopoverParams}>{badgeComponent}</Popover>
+            </g>
+          ) : (
+            badgeComponent
+          ))}
+        {actionIcon && (
+          <>
+            <line
+              className={css(topologyStyles.topologyNodeSeparator)}
+              x1={actionStartX}
+              y1={0}
+              x2={actionStartX}
+              y2={height}
+              shapeRendering="crispEdges"
+            />
+            <LabelActionIcon
+              ref={actionRef}
+              x={actionStartX}
+              y={0}
+              height={height}
+              paddingX={paddingX}
+              paddingY={0}
+              icon={actionIcon}
+              className={actionIconClassName}
+              onClick={onActionIconClick}
+            />
+          </>
+        )}
+        {textSize && onContextMenu && (
+          <>
+            <line
+              className={css(topologyStyles.topologyNodeSeparator)}
+              x1={contextStartX}
+              y1={0}
+              x2={contextStartX}
+              y2={height}
+              shapeRendering="crispEdges"
+            />
+            <LabelContextMenu
+              ref={contextRef}
+              x={contextStartX}
+              y={0}
+              height={height}
+              paddingX={paddingX}
+              paddingY={0}
+              onContextMenu={onContextMenu}
+              contextMenuOpen={contextMenuOpen}
+            />
+          </>
+        )}
+        {children}
+      </g>
+    );
+  };
 
   return (
-    <g className={css('pf-topology__pipelines__task-node', className)}>
+    <g
+      className={css('pf-topology__pipelines__task-node', className)}
+      transform={`${scaleNode ? `translate(${translateX}, ${translateY})` : ''} scale(${nodeScale})`}
+    >
       {!toolTip || disableTooltip ? (
-        taskPill
+        renderTask()
       ) : (
         <Tooltip position="bottom" enableFlip={false} content={toolTip}>
-          {taskPill}
+          {renderTask()}
         </Tooltip>
       )}
     </g>

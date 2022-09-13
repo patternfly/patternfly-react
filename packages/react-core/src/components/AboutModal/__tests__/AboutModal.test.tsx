@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { AboutModal, AboutModalProps } from '../AboutModal';
+import { KeyTypes } from '../../../helpers';
 
 const props: AboutModalProps = {
   onClose: jest.fn(),
@@ -15,10 +16,12 @@ const props: AboutModalProps = {
 };
 
 describe('AboutModal', () => {
-  test('closes with escape', () => {
+  test('closes with escape', async () => {
+    const user = userEvent.setup();
+    
     render(<AboutModal {...props} isOpen />);
 
-    userEvent.type(screen.getByRole('dialog'), '{esc}');
+    await user.type(screen.getByRole('dialog'), `{${KeyTypes.Escape}}`);
     expect(props.onClose).toHaveBeenCalled();
   });
 

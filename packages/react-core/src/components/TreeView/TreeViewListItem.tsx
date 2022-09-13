@@ -6,7 +6,7 @@ import { TreeViewDataItem } from './TreeView';
 import { Badge } from '../Badge';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
-export interface TreeViewCheckProps extends Partial<React.InputHTMLAttributes<HTMLInputElement>> {
+export interface TreeViewCheckProps extends Omit<Partial<React.InputHTMLAttributes<HTMLInputElement>>, 'checked'> {
   checked?: boolean | null;
 }
 

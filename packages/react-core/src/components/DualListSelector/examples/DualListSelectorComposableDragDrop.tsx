@@ -81,7 +81,7 @@ export const DualListSelectorComposableDragDrop: React.FunctionComponent = () =>
     }
   };
 
-  const onDrop = (source: DraggableItemPosition, dest?: DraggableItemPosition) => {
+  const onDrop = (source: DraggableItemPosition, dest: DraggableItemPosition | undefined) => {
     if (dest) {
       const newList = [...chosenOptions];
       const [removed] = newList.splice(source.index, 1);

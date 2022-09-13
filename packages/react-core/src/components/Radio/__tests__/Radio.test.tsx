@@ -73,10 +73,12 @@ describe('Radio', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Radio passes value and event to onChange handler', () => {
+  test('Radio passes value and event to onChange handler', async () => {
+    const user = userEvent.setup();
+
     render(<Radio id="check" {...props} aria-label="check" name="check" />);
 
-    userEvent.click(screen.getByRole('radio'));
+    await user.click(screen.getByRole('radio'));
     expect(props.onChange).toHaveBeenCalledWith(true, expect.any(Object));
   });
 

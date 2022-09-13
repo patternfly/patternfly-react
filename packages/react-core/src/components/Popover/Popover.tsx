@@ -203,6 +203,8 @@ export interface PopoverProps {
   boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
   /** @deprecated - no longer used */
   tippyProps?: Partial<TippyProps>;
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
 }
 
 const alertStyle = {
@@ -252,6 +254,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   reference,
   hasNoPadding = false,
   hasAutoWidth = false,
+  removeFindDomNode = false,
   ...rest
 }: PopoverProps) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -466,6 +469,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         enableFlip={enableFlip}
         zIndex={zIndex}
         flipBehavior={flipBehavior}
+        removeFindDomNode={removeFindDomNode}
       />
     </PopoverContext.Provider>
   );

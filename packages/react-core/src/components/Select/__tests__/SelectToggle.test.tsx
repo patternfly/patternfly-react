@@ -7,37 +7,23 @@ import { SelectToggle } from '../SelectToggle';
 
 describe('SelectToggle', () => {
   describe('API', () => {
-    test('click on closed', () => {
+    test('click on closed', async () => {
       const mockToggle = jest.fn();
+      const user = userEvent.setup();
+
       render(
         <SelectToggle id="Select Toggle" onToggle={mockToggle} parentRef={{ current: document.createElement('div') }}>
           Select
         </SelectToggle>
       );
 
-      userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
       expect(mockToggle).toHaveBeenCalledWith(true, expect.any(Object));
     });
 
-    test('click on opened', () => {
+    test('click on opened', async () => {
       const mockToggle = jest.fn();
-      render(
-        <SelectToggle
-          id="Select Toggle"
-          onToggle={mockToggle}
-          isOpen
-          parentRef={{ current: document.createElement('div') }}
-        >
-          Select
-        </SelectToggle>
-      );
-
-      userEvent.click(screen.getByRole('button'));
-      expect(mockToggle).toHaveBeenCalledWith(false, expect.any(MouseEvent));
-    });
-
-    test('click on document', () => {
-      const mockToggle = jest.fn();
+      const user = userEvent.setup();
 
       render(
         <SelectToggle
@@ -50,12 +36,32 @@ describe('SelectToggle', () => {
         </SelectToggle>
       );
 
-      userEvent.click(screen.getByText('Select').parentElement);
+      await user.click(screen.getByRole('button'));
       expect(mockToggle).toHaveBeenCalledWith(false, expect.any(MouseEvent));
     });
 
-    test('on click outside has been removed', () => {
+    test('click on document', async () => {
       const mockToggle = jest.fn();
+      const user = userEvent.setup();
+
+      render(
+        <SelectToggle
+          id="Select Toggle"
+          onToggle={mockToggle}
+          isOpen
+          parentRef={{ current: document.createElement('div') }}
+        >
+          Select
+        </SelectToggle>
+      );
+
+      await user.click(screen.getByText('Select').parentElement);
+      expect(mockToggle).toHaveBeenCalledWith(false, expect.any(MouseEvent));
+    });
+
+    test('on click outside has been removed', async () => {
+      const mockToggle = jest.fn();
+      const user = userEvent.setup();
 
       render(
         <SelectToggle
@@ -68,7 +74,7 @@ describe('SelectToggle', () => {
         </SelectToggle>
       );
 
-      userEvent.click(screen.getByText('Select').parentElement);
+      await user.click(screen.getByText('Select').parentElement);
       expect(mockToggle).not.toHaveBeenCalled();
     });
   });

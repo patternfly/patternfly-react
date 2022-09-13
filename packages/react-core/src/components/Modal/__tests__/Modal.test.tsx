@@ -7,6 +7,7 @@ import { css } from '../../../../../react-styles/dist/js';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 
 import { Modal } from '../Modal';
+import { KeyTypes } from '../../../helpers';
 
 jest.spyOn(document, 'createElement');
 jest.spyOn(document.body, 'addEventListener');
@@ -24,10 +25,12 @@ describe('Modal', () => {
     expect(document.createElement).toHaveBeenCalledWith('div');
   });
 
-  test('modal closes with escape', () => {
+  test('modal closes with escape', async () => {
+    const user = userEvent.setup();
+    
     render(<Modal {...props} isOpen appendTo={document.body} />);
 
-    userEvent.type(screen.getByText(props.title), '{esc}');
+    await user.type(screen.getByText(props.title), `{${KeyTypes.Escape}}`);
     expect(props.onClose).toHaveBeenCalled();
   });
 

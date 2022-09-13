@@ -34,7 +34,9 @@ describe('LabelGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('label group expanded', () => {
+  test('label group expanded', async () => {
+    const user = userEvent.setup();
+
     render(
       <LabelGroup>
         <Label>1</Label>
@@ -47,7 +49,7 @@ describe('LabelGroup', () => {
 
     expect(showMoreButton.textContent).toBe('1 more');
 
-    userEvent.click(showMoreButton);
+    await user.click(showMoreButton);
     expect(showMoreButton.textContent).toBe('Show Less');
   });
 

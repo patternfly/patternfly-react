@@ -48,7 +48,7 @@ describe('Login Page Demo Test', () => {
         cy.get('#options-menu-modified-example.pf-m-expanded').should('not.exist');
         // Accessibility Tests:
         // Press Enter to open the menu
-        cy.wrap(toggleButton).trigger('keydown', { keyCode: 13 });
+        cy.wrap(toggleButton).trigger('keydown', { key: 'Enter' });
         cy.get('#options-menu-modified-example.pf-m-expanded').should('exist');
         // Check whether on focus of the first item
         cy.get('.pf-c-options-menu__menu-item')

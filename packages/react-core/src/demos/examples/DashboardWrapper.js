@@ -12,7 +12,7 @@ import {
   Text,
   TextContent
 } from '@patternfly/react-core';
-import DashboardHeader from './DashboardHeader';
+import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 export const DashboardBreadcrumb = (
   <Breadcrumb>

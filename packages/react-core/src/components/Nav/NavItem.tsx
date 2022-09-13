@@ -32,6 +32,8 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   flyout?: React.ReactElement;
   /** Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
 }
 
 export const NavItem: React.FunctionComponent<NavItemProps> = ({
@@ -49,6 +51,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   onShowFlyout,
   ouiaId,
   ouiaSafe,
+  removeFindDomNode = false,
   ...props
 }: NavItemProps) => {
   const { flyoutRef, setFlyoutRef } = React.useContext(NavContext);
@@ -217,6 +220,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       placement="right-start"
       isVisible={flyoutVisible}
       onDocumentKeyDown={handleFlyout}
+      removeFindDomNode={removeFindDomNode}
     />
   );
 

@@ -124,7 +124,13 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     };
 
     if (isTypeahead) {
-      return <div ref={innerRef as React.Ref<HTMLDivElement>} className={css(commonStyles)} {...componentProps} />;
+      return (
+        <div
+          ref={innerRef as React.Ref<HTMLDivElement>}
+          className={css(commonStyles, styles.modifiers.typeahead)}
+          {...componentProps}
+        />
+      );
     }
 
     if (splitButtonOptions) {
@@ -143,6 +149,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
             aria-expanded={isExpanded}
             aria-label={ariaLabel}
             disabled={isDisabled}
+            onClick={onClick}
             {...otherProps}
           >
             {toggleControls}
@@ -166,7 +173,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
   }
 }
 
-export const MenuToggle = React.forwardRef<MenuToggleElement, MenuToggleProps>((props, ref) => (
+export const MenuToggle = React.forwardRef((props: MenuToggleProps, ref: React.Ref<MenuToggleElement>) => (
   <MenuToggleBase innerRef={ref} {...props} />
 ));
 

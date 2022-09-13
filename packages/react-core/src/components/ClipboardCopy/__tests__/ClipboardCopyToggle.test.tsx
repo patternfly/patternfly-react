@@ -22,11 +22,13 @@ describe('ClipboardCopyToggle', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('toggle button onClick', () => {
+  test('toggle button onClick', async () => {
     const onclick = jest.fn();
+    const user = userEvent.setup();
+
     render(<ClipboardCopyToggle {...props} onClick={onclick} />);
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(onclick).toHaveBeenCalled();
   });
 
