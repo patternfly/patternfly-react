@@ -132,7 +132,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const [searchValue, setSearchValue] = React.useState(value);
   const searchInputRef = React.useRef(null);
   const searchInputInputRef = innerRef || React.useRef(null);
-  const [isSearchInputExpanded, setIsSearchInputExpanded] = React.useState(true);
 
   React.useEffect(() => {
     setSearchValue(value);
@@ -150,10 +149,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   React.useEffect(() => {
     setIsSearchMenuOpen(isAdvancedSearchOpen);
   }, [isAdvancedSearchOpen]);
-
-  React.useEffect(() => {
-    setIsSearchInputExpanded(isExpanded);
-  }, [isExpanded]);
 
   const onChangeHandler = (value: string, event: React.FormEvent<HTMLInputElement>) => {
     if (onChange) {
@@ -217,7 +212,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   };
 
   const onExpandHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
-    setIsSearchInputExpanded(isExpanded);
     onToggleExpand(isExpanded, event);
   };
 
@@ -326,15 +320,15 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     innerRef: searchInputRef
   };
 
-  if (!!onToggleExpand && !isSearchInputExpanded) {
+  if (!!onToggleExpand && !isExpanded) {
     return (
       <InputGroup {...searchInputProps}>
         <Button
           variant={ButtonVariant.plain}
           aria-label={expandedLabel()}
           icon={<SearchIcon />}
-          onClick={onExpandHandler}
-        ></Button>
+          onClick={event => onToggleExpand(isExpanded, event)}
+        />
       </InputGroup>
     );
   }
