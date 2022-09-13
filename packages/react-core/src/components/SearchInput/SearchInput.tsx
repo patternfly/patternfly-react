@@ -27,7 +27,7 @@ export interface expandableProps {
   /** Callback function to toggle the expandable search input */
   onToggleExpand: (isExpanded: boolean, event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** An accessible label for the expandable search input toggle */
-  toggleAriaLabel?: string;
+  toggleAriaLabel: string;
 }
 
 export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'results' | 'ref'> {
@@ -140,6 +140,23 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const searchInputRef = React.useRef(null);
   const ref = React.useRef(null);
   const searchInputInputRef = innerRef || ref;
+  const searchInputExpandableToggleRef = React.useRef(null);
+  const [focusAfterExpandChange, setFocusAfterExpandChange] = React.useState(false);
+
+  const { isExpanded, onToggleExpand, toggleAriaLabel } = expandableProps || {};
+
+  React.useEffect(() => {
+    // this effect and the focusAfterExpandChange variable are needed to focus the input/toggle as needed when the
+    // expansion toggle is fired without focusing on mount
+    if (!focusAfterExpandChange) {
+      return;
+    } else if (isExpanded) {
+      searchInputInputRef?.current?.focus();
+    } else {
+      searchInputExpandableToggleRef?.current?.focus();
+    }
+    setFocusAfterExpandChange(false);
+  }, [focusAfterExpandChange, isExpanded, searchInputInputRef, searchInputExpandableToggleRef]);
 
   React.useEffect(() => {
     setSearchValue(value);
@@ -153,8 +170,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       );
     }
   });
-
-  const { isExpanded, onToggleExpand, toggleAriaLabel } = expandableProps || {};
 
   React.useEffect(() => {
     setIsSearchMenuOpen(isAdvancedSearchOpen);
@@ -217,6 +232,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const onExpandHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     setSearchValue('');
     onToggleExpand(isExpanded, event);
+    setFocusAfterExpandChange(true);
   };
 
   const renderUtilities =
@@ -279,6 +295,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       aria-expanded={isExpanded}
       icon={isExpanded ? <TimesIcon /> : <SearchIcon />}
       onClick={onExpandHandler}
+      ref={searchInputExpandableToggleRef}
     />
   );
 
