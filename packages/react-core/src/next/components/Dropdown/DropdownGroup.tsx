@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { MenuGroupProps, MenuGroup } from '../../../components/Menu';
 
@@ -19,12 +18,7 @@ export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({
   labelHeadingLevel = 'h1',
   ...props
 }: DropdownGroupProps) => (
-  <MenuGroup
-    className={css(styles.dropdownGroup, className)}
-    {...props}
-    label={label}
-    labelHeadingLevel={labelHeadingLevel}
-  >
+  <MenuGroup className={css(className)} label={label} labelHeadingLevel={labelHeadingLevel} {...props}>
     {children}
   </MenuGroup>
 );

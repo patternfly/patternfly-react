@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { MenuItemProps, MenuItem } from '../../../components/Menu';
 
@@ -18,7 +17,7 @@ export const DropdownItem: React.FunctionComponent<MenuItemProps> = ({
   description,
   ...props
 }: DropdownItemProps) => (
-  <MenuItem className={css(styles.dropdownMenuItem, className)} description={description} {...props}>
+  <MenuItem className={css(className)} description={description} {...props}>
     {children}
   </MenuItem>
 );

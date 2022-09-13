@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../../../components/Menu';
 import { Popper } from '../../../helpers/Popper/Popper';
@@ -86,7 +85,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
 
   const menu = (
     <Menu
-      className={css(styles.dropdownMenu, className)}
+      className={css(className)}
       ref={menuRef}
       onSelect={(event, itemId) => onSelect(event, itemId)}
       isPlain={isPlain}
