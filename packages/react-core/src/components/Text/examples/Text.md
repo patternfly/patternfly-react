@@ -125,7 +125,7 @@ import {
 </TextContent>;
 ```
 
-### Data list
+### Description list
 
 ```js
 import React from 'react';
