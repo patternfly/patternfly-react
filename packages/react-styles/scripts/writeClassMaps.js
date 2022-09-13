@@ -19,7 +19,7 @@ const writeESMExport = (file, classMap) =>
   outputFileSync(
     join(outDir, file.replace(/.css$/, '.mjs')),
     `
-import('./${basename(file, '.css.js')}');
+import './${basename(file, '.css.js')}';
 export default ${JSON.stringify(classMap, null, 2)};
 `.trim()
   );
