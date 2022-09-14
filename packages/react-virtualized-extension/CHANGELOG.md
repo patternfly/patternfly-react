@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.85.0 (2022-09-14)
+
+
+### Features
+
+* **SearchInput:** new expandable button for masthead variant ([#7903](https://github.com/patternfly/patternfly-react/issues/7903)) ([d2a6c47](https://github.com/patternfly/patternfly-react/commit/d2a6c471ea3440d0b751b752b44ca1e8e749c5b6))
+
+
+
+
+
 ## 4.84.11 (2022-09-13)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension
