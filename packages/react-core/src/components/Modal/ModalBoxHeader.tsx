@@ -3,11 +3,11 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 
 export interface ModalBoxHeaderProps {
-  /** Content rendered inside the Header */
+  /** Content rendered inside the modal box header. */
   children?: React.ReactNode;
-  /** Additional classes added to the button */
+  /** Additional classes added to the modal box header. */
   className?: string;
-  /** Optional help section for the Modal Header */
+  /** Optional help section for the modal box header. */
   help?: React.ReactNode;
 }
 
