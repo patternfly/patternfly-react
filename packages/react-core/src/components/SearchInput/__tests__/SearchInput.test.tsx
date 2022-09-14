@@ -176,7 +176,7 @@ test('expandable toggle does not render by default', () => {
 
 test('expandable toggle renders when a value is passed for expandableProps', () => {
   render(
-    <SearchInput expandableProps={{ isExpanded: false, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
+    <SearchInput expandableInput={{ isExpanded: false, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
   );
 
   expect(screen.getByRole('button')).toBeVisible();
@@ -184,7 +184,7 @@ test('expandable toggle renders when a value is passed for expandableProps', () 
 
 test('expandable toggle is not aria-expanded when isExpanded is not true', () => {
   render(
-    <SearchInput expandableProps={{ isExpanded: false, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
+    <SearchInput expandableInput={{ isExpanded: false, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
   );
 
   expect(screen.getByRole('button', { expanded: false })).toBeVisible();
@@ -192,7 +192,7 @@ test('expandable toggle is not aria-expanded when isExpanded is not true', () =>
 
 test('expandable toggle is aria-expanded when isExpanded is true', () => {
   render(
-    <SearchInput expandableProps={{ isExpanded: true, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
+    <SearchInput expandableInput={{ isExpanded: true, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
   );
 
   expect(screen.getByRole('button', { expanded: true })).toBeVisible();
@@ -200,7 +200,7 @@ test('expandable toggle is aria-expanded when isExpanded is true', () => {
 
 test('text input is not rendered when isExpanded is not true', () => {
   render(
-    <SearchInput expandableProps={{ isExpanded: false, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
+    <SearchInput expandableInput={{ isExpanded: false, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
   );
 
   expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
@@ -208,7 +208,7 @@ test('text input is not rendered when isExpanded is not true', () => {
 
 test('text input is rendered when isExpanded is true', () => {
   render(
-    <SearchInput expandableProps={{ isExpanded: true, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
+    <SearchInput expandableInput={{ isExpanded: true, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
   );
 
   expect(screen.getByRole('textbox')).toBeVisible();
@@ -219,7 +219,7 @@ test('onToggleExpand is not called if the expandable toggle is not clicked', () 
 
   render(
     <SearchInput
-      expandableProps={{ isExpanded: true, onToggleExpand: mockOnToggleExpand, toggleAriaLabel: 'Test label' }}
+      expandableInput={{ isExpanded: true, onToggleExpand: mockOnToggleExpand, toggleAriaLabel: 'Test label' }}
     />
   );
 
@@ -232,7 +232,7 @@ test('onToggleExpand is called if the expandable toggle is clicked', async () =>
 
   render(
     <SearchInput
-      expandableProps={{ isExpanded: true, onToggleExpand: mockOnToggleExpand, toggleAriaLabel: 'Test label' }}
+      expandableInput={{ isExpanded: true, onToggleExpand: mockOnToggleExpand, toggleAriaLabel: 'Test label' }}
     />
   );
 
@@ -244,7 +244,7 @@ test('onToggleExpand is called if the expandable toggle is clicked', async () =>
 
 test('toggleAriaLabel is applied to the expandable toggle', () => {
   render(
-    <SearchInput expandableProps={{ isExpanded: true, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
+    <SearchInput expandableInput={{ isExpanded: true, onToggleExpand: () => {}, toggleAriaLabel: 'Test label' }} />
   );
 
   expect(screen.getByRole('button')).toHaveAccessibleName('Test label');
