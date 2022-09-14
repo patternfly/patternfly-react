@@ -76,7 +76,7 @@ export type WizardNavStepData = Pick<WizardControlStep, 'id' | 'name'>;
 
 /** Callback for the Wizard's 'nav' property. Returns element which replaces the Wizard's default navigation. */
 export type CustomWizardNavFunction = (
-  isOpen: boolean,
+  isExpanded: boolean,
   steps: WizardControlStep[],
   activeStep: WizardControlStep,
   goToStepByIndex: (index: number) => void

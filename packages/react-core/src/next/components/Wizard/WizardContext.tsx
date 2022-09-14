@@ -35,7 +35,7 @@ export const WizardContext = React.createContext({} as WizardContextProps);
 interface WizardContextRenderProps {
   steps: WizardControlStep[];
   activeStep: WizardControlStep;
-  footer: DefaultWizardFooterProps | React.ReactElement;
+  footer: React.ReactElement;
   onNext(): void;
   onBack(): void;
   onClose(): void;
@@ -118,7 +118,9 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
         setFooter
       }}
     >
-      {typeof children === 'function' ? children({ activeStep, steps, footer, onNext, onBack, onClose }) : children}
+      {typeof children === 'function'
+        ? children({ activeStep, steps, footer: wizardFooter, onNext, onBack, onClose })
+        : children}
     </WizardContext.Provider>
   );
 };

@@ -5,7 +5,7 @@ import { buildSteps } from '../utils';
 import { WizardStep } from '../WizardStep';
 
 describe('buildSteps', () => {
-  it('throws error if child does not have required props or type of WizardStep', () => {
+  test('throws error if child does not have required props or type of WizardStep', () => {
     try {
       buildSteps(<div />);
     } catch (error) {
@@ -13,7 +13,7 @@ describe('buildSteps', () => {
     }
   });
 
-  it('throws error if no children are valid react elements', () => {
+  test('throws error if no children are valid react elements', () => {
     try {
       buildSteps('test' as any);
     } catch (error) {
@@ -21,7 +21,7 @@ describe('buildSteps', () => {
     }
   });
 
-  it('returns array of steps if children are of type WizardStep', () => {
+  test('returns array of steps if children are of type WizardStep', () => {
     const component = <WizardStep name="Step 1" id="step-1" />;
     const [step] = buildSteps(component);
 
@@ -30,7 +30,7 @@ describe('buildSteps', () => {
     expect(step.component?.props).toEqual(component.props);
   });
 
-  it('returns array of steps if children have required props', () => {
+  test('returns array of steps if children have required props', () => {
     const CustomStep = props => <div {...props} />;
     const component = (
       <CustomStep name="Step 1" id="step-1">
@@ -44,7 +44,7 @@ describe('buildSteps', () => {
     expect(step.component?.props).toEqual(component.props);
   });
 
-  it('returns flattened array of steps and sub-steps when sub-steps exist', () => {
+  test('returns flattened array of steps and sub-steps when sub-steps exist', () => {
     const CustomSubStep = props => <div {...props} />;
 
     const component = (
