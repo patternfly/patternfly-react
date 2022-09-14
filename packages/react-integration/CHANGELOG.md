@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.201.0 (2022-09-14)
+
+
+### Features
+
+* **Dropdown next:** Added the next version of the dropdown component ([#7955](https://github.com/patternfly/patternfly-react/issues/7955)) ([c092c7c](https://github.com/patternfly/patternfly-react/commit/c092c7cfaf877c5783c9ad9db0a8010b8ea023eb))
+
+
+
+
+
 # 4.200.0 (2022-09-14)
 
 
