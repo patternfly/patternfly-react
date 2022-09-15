@@ -23,6 +23,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TopologySimpleGraphClassDemo
   },
   {
+    id: 'topology-sidepanel-demo',
+    name: 'Topology Side Panel Demo',
+    componentType: Examples.TopologySidePanelDemo
+  },
+  {
     id: 'topology-simple-graph-hooks-demo',
     name: 'Topology Simple Graph Hooks Demo',
     componentType: Examples.TopologySimpleGraphHooksDemo
