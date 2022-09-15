@@ -120,7 +120,9 @@ const DatePickerBase = (
     setPristine(!value);
   }, [value]);
 
-  const setError = (date: Date) => setErrorText(validators.map(validator => validator(date)).join('\n') || '');
+  const setError = (date: Date) => {
+    setErrorText(validators.map(validator => validator(date)).join('\n') || '');
+  };
 
   const onTextInput = (value: string) => {
     setValue(value);
@@ -236,7 +238,7 @@ const DatePickerBase = (
               isDisabled={isDisabled}
               aria-label={ariaLabel}
               placeholder={placeholder}
-              validated={errorText ? 'error' : 'default'}
+              validated={errorText.trim() ? 'error' : 'default'}
               value={value}
               onChange={onTextInput}
               onBlur={onInputBlur}
