@@ -347,7 +347,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * is given directly to the lodash sortBy function to be executed on the
    * final dataset.
    */
-  sortKey?: string | string[] | Function;
+  sortKey?: DataGetterPropType;
   /**
    * The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
    *
