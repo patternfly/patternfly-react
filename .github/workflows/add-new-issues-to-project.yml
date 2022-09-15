@@ -13,7 +13,5 @@ jobs:
     steps:
       - uses: actions/add-to-project@v0.3.0
         with:
-          # URL of the project to add issues to
           project-url: https://github.com/orgs/patternfly/projects/7
-          # A GitHub personal access token with write access to the project
           github-token: ${{ secrets.GITHUB_TOKEN }}
