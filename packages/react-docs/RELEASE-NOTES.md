@@ -81,7 +81,7 @@ section: developer-resources
   - Updated dashboard header brand image source to absolute import path ([#7935](https://github.com/patternfly/patternfly-react/pull/7935))
   - Returned missing layout documentation ([#7937](https://github.com/patternfly/patternfly-react/pull/7937))
   - Allowed opting out of using `requestAnimationFrame` for resize observer ([#7941](https://github.com/patternfly/patternfly-react/pull/7941))
-  - Fixed .mjs component CSS imports ([#7971](https://github.com/patternfly/patternfly-react/pull/7971)
+  - Fixed .mjs component CSS imports ([#7971](https://github.com/patternfly/patternfly-react/pull/7971))
   - Fixed dashboard wrapper code sandbox export error ([#7954](https://github.com/patternfly/patternfly-react/pull/7954))
 - **Demos:**
   - Added filter demos ([#7949](https://github.com/patternfly/patternfly-react/pull/7949))
