@@ -518,6 +518,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TopologyDemo
   },
   {
+    id: 'topology-poc-demo',
+    name: 'Topology POC Demo',
+    componentType: Examples.TopologyPOCDemo
+  },
+  {
     id: 'topology-pipelines-demo',
     name: 'Topology Pipelines Demo',
     componentType: Examples.TopologyPipelineDemo
