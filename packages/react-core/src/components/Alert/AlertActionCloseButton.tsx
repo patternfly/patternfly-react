@@ -8,13 +8,13 @@ import { AlertContext } from './AlertContext';
  */
 
 export interface AlertActionCloseButtonProps extends ButtonProps {
-  /** Additional classes added to the AlertActionCloseButton */
-  className?: string;
-  /** A callback for when the close button is clicked */
-  onClose?: () => void;
-  /** Aria Label for the Close button */
+  /** Accessible label for the close button */
   'aria-label'?: string;
-  /** Variant Label for the Close button */
+  /** Additional classes added to the alert action close button. */
+  className?: string;
+  /** A callback for when the close button is clicked. */
+  onClose?: () => void;
+  /** Variant Label for the close button. */
   variantLabel?: string;
 }
 
