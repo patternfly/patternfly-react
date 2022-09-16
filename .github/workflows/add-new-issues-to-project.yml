@@ -9,9 +9,8 @@ jobs:
   add-to-project:
     name: Add issue to project
     runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/add-to-project@v0.3.0
         with:
           project-url: https://github.com/orgs/patternfly/projects/7
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.PF_ISSUES_PROJECT_SECRET }}
