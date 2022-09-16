@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.85.0 (2022-09-16)
+
+
+### Features
+
+* **charts:** Update Victory dependencies ([#7986](https://github.com/patternfly/patternfly-react/issues/7986)) ([bbee15f](https://github.com/patternfly/patternfly-react/commit/bbee15fd0e00288dfa72c88a79a685b5405a355e))
+
+
+
+
+
 ## 4.84.1 (2022-09-15)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer
