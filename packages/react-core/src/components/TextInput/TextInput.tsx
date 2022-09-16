@@ -27,7 +27,6 @@ export interface TextInputProps
   className?: string;
   /** Flag to show if the input is disabled. */
   isDisabled?: boolean;
-  /** Flag to show if the input is read only. */
   /** @deprecated Use readOnly instead. Flag to show if the TextArea is read only. */
   isReadOnly?: boolean;
   /** Read only variant. */
