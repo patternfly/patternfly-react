@@ -3,7 +3,7 @@ import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_glo
 
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { CallbackArgs, CoordinatesPropType, LineSegment, OriginType } from 'victory-core';
+import { LineSegment, OriginType, ValueOrAccessor, VictoryLabelProps } from 'victory-core';
 import {
   CursorCoordinatesPropType,
   VictoryCursorContainer,
@@ -59,7 +59,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * @propType Function
    * example: cursorLabel={(point) => point.x}
    */
-  cursorLabel?: (point: CoordinatesPropType, args: CallbackArgs) => any | void;
+  cursorLabel?: ValueOrAccessor<VictoryLabelProps['text']>;
   /**
    * The cursorLabelComponent prop takes a component instance which will be used to render a label for the cursor. The
    * new element created from the passed cursorLabelComponent will be supplied with the following props: x, y, active,
