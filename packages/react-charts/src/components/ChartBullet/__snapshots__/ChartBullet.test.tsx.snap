@@ -34,8 +34,8 @@ exports[`ChartBulletQualitativeRange 1`] = `
             shape-rendering="auto"
             style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
-            x1="50"
-            x2="50"
+            x1="225"
+            x2="225"
             y1="85"
             y2="90"
           />
@@ -43,7 +43,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
             direction="inherit"
             dx="0"
             id="test"
-            x="50"
+            x="225"
             y="111.97"
           >
             <tspan
@@ -51,7 +51,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
               dy="0"
               style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255); text-anchor: middle;"
               text-anchor="middle"
-              x="50"
+              x="225"
             >
               0
             </tspan>
@@ -119,8 +119,8 @@ exports[`ChartBulletQualitativeRange 2`] = `
             shape-rendering="auto"
             style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
-            x1="50"
-            x2="50"
+            x1="225"
+            x2="225"
             y1="85"
             y2="90"
           />
@@ -128,7 +128,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
             direction="inherit"
             dx="0"
             id="test"
-            x="50"
+            x="225"
             y="111.97"
           >
             <tspan
@@ -136,7 +136,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
               dy="0"
               style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255); text-anchor: middle;"
               text-anchor="middle"
-              x="50"
+              x="225"
             >
               0
             </tspan>
