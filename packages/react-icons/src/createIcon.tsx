@@ -36,6 +36,8 @@ export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'size' |
   size?: IconSize | keyof typeof IconSize;
   title?: string;
   noVerticalAlign?: boolean;
+  isSymbol?: boolean;
+  isSymbolRef?: boolean;
 }
 
 let currentId = 0;
@@ -56,35 +58,69 @@ export function createIcon({
     static defaultProps = {
       color: 'currentColor',
       size: IconSize.sm,
-      noVerticalAlign: false
+      noVerticalAlign: false,
+      isSymbol: false,
+      isSymbolRef: false
     };
 
     id = `icon-title-${currentId++}`;
 
     render() {
-      const { size, color, title, noVerticalAlign, ...props } = this.props;
+      const { size, color, title, noVerticalAlign, isSymbol, isSymbolRef, ...props } = this.props;
 
       const hasTitle = Boolean(title);
       const heightWidth = getSize(size);
       const baseAlign = -0.125 * Number.parseFloat(heightWidth);
       const style = noVerticalAlign ? null : { verticalAlign: `${baseAlign}em` };
       const viewBox = [xOffset, yOffset, width, height].join(' ');
+      const symbolID = 'ReactIcon' + name;
 
       return (
-        <svg
-          style={style}
-          fill={color}
-          height={heightWidth}
-          width={heightWidth}
-          viewBox={viewBox}
-          aria-labelledby={hasTitle ? this.id : null}
-          aria-hidden={hasTitle ? null : true}
-          role="img"
-          {...(props as Omit<React.SVGProps<SVGElement>, 'ref'>)} // Lie.
-        >
-          {hasTitle && <title id={this.id}>{title}</title>}
-          <path d={svgPath} />
-        </svg>
+        <>
+          {isSymbol && (
+            <>
+              <svg style={{ display: 'none' }}>
+                <symbol id={symbolID}>
+                  <path d={svgPath} />
+                </symbol>
+              </svg>
+            </>
+          )}
+          {isSymbolRef && (
+            <>
+              <svg
+                height={heightWidth}
+                width={heightWidth}
+                style={style}
+                fill={color}
+                viewBox={viewBox}
+                aria-labelledby={hasTitle ? this.id : null}
+                aria-hidden={hasTitle ? null : true}
+                role="img"
+                {...(props as Omit<React.SVGProps<SVGElement>, 'ref'>)} // Lie.
+              >
+                {hasTitle && <title id={this.id}>{title}</title>}
+                <use xlinkHref={'#' + symbolID}></use>
+              </svg>
+            </>
+          )}
+          {!isSymbol && !isSymbolRef && (
+            <svg
+              style={style}
+              fill={color}
+              height={heightWidth}
+              width={heightWidth}
+              viewBox={viewBox}
+              aria-labelledby={hasTitle ? this.id : null}
+              aria-hidden={hasTitle ? null : true}
+              role="img"
+              {...(props as Omit<React.SVGProps<SVGElement>, 'ref'>)} // Lie.
+            >
+              {hasTitle && <title id={this.id}>{title}</title>}
+              <path d={svgPath} />
+            </svg>
+          )}
+        </>
       );
     }
   };
