@@ -63,4 +63,10 @@ describe('Tab Demo Test', () => {
     cy.get('.custom-tab-1').should('have.length', 1);
     cy.get('.custom-tab-2').should('have.length', 1);
   });
+
+  it("Verify scroll buttons render when all tabs can't be displayed in the window", () => {
+    cy.viewport(300, 792);
+    cy.get('.pf-c-tabs__scroll-button').should('exist');
+    cy.viewport(1200, 792);
+  });
 });
