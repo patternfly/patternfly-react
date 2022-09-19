@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {
+  Button,
   Dropdown,
   DropdownItem,
   EmptyState,
@@ -7,6 +8,7 @@ import {
   EmptyStateIcon,
   KebabToggle,
   NotificationBadge,
+  NotificationBadgeVariant,
   NotificationDrawer,
   NotificationDrawerBody,
   NotificationDrawerHeader,
@@ -28,7 +30,6 @@ import {
   AlertActionCloseButton
 } from '@patternfly/react-core';
 
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import DashboardWrapper from '../DashboardWrapper';
 import DashboardHeader from '../DashboardHeader';
@@ -122,6 +123,20 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
   const getUnreadNotificationsNumber = () =>
     notifications.filter(notification => notification.isNotificationRead === false).length;
 
+  const containsUnreadAlertNotification = () =>
+    notifications.filter(notification => notification.isNotificationRead === false && notification.variant === 'danger')
+      .length > 0;
+
+  const getNotificationBadgeVariant = () => {
+    if (getUnreadNotificationsNumber() === 0) {
+      return NotificationBadgeVariant.read;
+    }
+    if (containsUnreadAlertNotification()) {
+      return NotificationBadgeVariant.attention;
+    }
+    return NotificationBadgeVariant.unread;
+  };
+
   const onNotificationBadgeClick = () => {
     removeAllAlerts();
     setDrawerExpanded(!isDrawerExpanded);
@@ -187,18 +202,14 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
 
   const normalizeAlertsNumber = (value: number) => Math.max(Math.min(value, maxAlerts), minAlerts);
 
-  const alertButtonClasses = 'pf-c-button pf-m-secondary';
-
   const alertButtonStyle = { marginRight: '8px', marginTop: '8px' };
 
   const notificationBadge = (
     <NotificationBadge
-      variant={getUnreadNotificationsNumber() === 0 ? 'read' : 'unread'}
+      variant={getNotificationBadgeVariant()}
       onClick={onNotificationBadgeClick}
       aria-label="Notifications"
-    >
-      <BellIcon />
-    </NotificationBadge>
+    ></NotificationBadge>
   );
 
   const notificationDrawerActions = [
@@ -291,48 +302,23 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
       </PageSection>
 
       <PageSection variant={PageSectionVariants.light}>
-        <button
-          onClick={() => addNewNotification('success')}
-          type="button"
-          className={alertButtonClasses}
-          style={alertButtonStyle}
-        >
+        <Button variant="secondary" onClick={() => addNewNotification('success')} style={alertButtonStyle}>
           Add toast success alert
-        </button>
-        <button
-          onClick={() => addNewNotification('danger')}
-          type="button"
-          className={alertButtonClasses}
-          style={alertButtonStyle}
-        >
+        </Button>
+        <Button variant="secondary" onClick={() => addNewNotification('danger')} style={alertButtonStyle}>
           Add toast danger alert
-        </button>
-        <button
-          onClick={() => addNewNotification('info')}
-          type="button"
-          className={alertButtonClasses}
-          style={alertButtonStyle}
-        >
+        </Button>
+        <Button variant="secondary" onClick={() => addNewNotification('info')} style={alertButtonStyle}>
           Add toast info alert
-        </button>
+        </Button>
         <br />
         <br />
-        <button
-          onClick={() => addNewNotification('warning')}
-          type="button"
-          className={alertButtonClasses}
-          style={alertButtonStyle}
-        >
+        <Button variant="secondary" onClick={() => addNewNotification('warning')} style={alertButtonStyle}>
           Add toast warning alert
-        </button>
-        <button
-          onClick={() => addNewNotification('default')}
-          type="button"
-          className={alertButtonClasses}
-          style={alertButtonStyle}
-        >
+        </Button>
+        <Button variant="secondary" onClick={() => addNewNotification('default')} style={alertButtonStyle}>
           Add toast default alert
-        </button>
+        </Button>
       </PageSection>
 
       <PageSection variant={PageSectionVariants.light}>
