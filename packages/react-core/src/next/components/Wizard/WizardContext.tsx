@@ -1,6 +1,11 @@
 import React from 'react';
-import { WizardControlStep } from './types';
+
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+
+import { DefaultWizardFooterProps, isCustomWizardFooter, WizardControlStep } from './types';
 import { getActiveStep } from './utils';
+import { WizardFooter } from './WizardFooter';
 
 export interface WizardContextProps {
   /** List of steps */
@@ -22,7 +27,7 @@ export interface WizardContextProps {
   /** Navigate to step by index */
   goToStepByIndex: (index: number) => void;
   /** Update the footer with any react element */
-  setFooter: (footer: React.ReactElement) => void;
+  setFooter: (footer: DefaultWizardFooterProps | React.ReactElement) => void;
 }
 
 export const WizardContext = React.createContext({} as WizardContextProps);
@@ -39,7 +44,7 @@ interface WizardContextRenderProps {
 export interface WizardContextProviderProps {
   steps: WizardControlStep[];
   currentStepIndex: number;
-  footer: React.ReactElement;
+  footer: DefaultWizardFooterProps | React.ReactElement;
   children: React.ReactElement | ((props: WizardContextRenderProps) => React.ReactElement);
   onNext(): void;
   onBack(): void;
@@ -66,6 +71,23 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   const [footer, setFooter] = React.useState(initialFooter);
   const activeStep = getActiveStep(steps, currentStepIndex);
 
+  const wizardFooter = React.useMemo(
+    () =>
+      isCustomWizardFooter(footer) ? (
+        <div className={css(styles.wizardFooter)}>{footer}</div>
+      ) : (
+        <WizardFooter
+          activeStep={activeStep}
+          onNext={onNext}
+          onBack={onBack}
+          onClose={onClose}
+          disableBackButton={activeStep?.id === steps[0]?.id}
+          {...footer}
+        />
+      ),
+    [activeStep, footer, onBack, onClose, onNext, steps]
+  );
+
   // When the active step changes and the newly active step isn't visited, set the visited flag to true.
   React.useEffect(() => {
     if (activeStep && !activeStep?.visited) {
@@ -86,7 +108,7 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
       value={{
         steps,
         activeStep,
-        footer,
+        footer: wizardFooter,
         onNext,
         onBack,
         onClose,
@@ -96,7 +118,9 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
         setFooter
       }}
     >
-      {typeof children === 'function' ? children({ activeStep, steps, footer, onNext, onBack, onClose }) : children}
+      {typeof children === 'function'
+        ? children({ activeStep, steps, footer: wizardFooter, onNext, onBack, onClose })
+        : children}
     </WizardContext.Provider>
   );
 };

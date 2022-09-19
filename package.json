@@ -35,6 +35,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.9.0",
     "@octokit/rest": "^16.43.2",
+    "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "14.4.3",
