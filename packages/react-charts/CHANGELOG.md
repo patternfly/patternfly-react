@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.94.1 (2022-09-20)
+
+
+### Bug Fixes
+
+* **OverflowMenu:** store resize listener reference ([#7975](https://github.com/patternfly/patternfly-react/issues/7975)) ([86b0193](https://github.com/patternfly/patternfly-react/commit/86b01936a3029886173654925eb5d11d9077fc56))
+
+
+
+
+
 # 6.94.0 (2022-09-19)
 
 
