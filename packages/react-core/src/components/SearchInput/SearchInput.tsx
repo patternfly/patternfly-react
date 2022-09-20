@@ -357,7 +357,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   if (!!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch) {
     if (attributes.length > 0) {
       const AdvancedSearch = (
-        <span>
+        <div>
           <AdvancedSearchMenu
             value={value}
             parentRef={searchInputRef}
@@ -375,7 +375,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             getAttrValueMap={getAttrValueMap}
             isSearchMenuOpen={isSearchMenuOpen}
           />
-        </span>
+        </div>
       );
 
       const AdvancedSearchWithPopper = (
