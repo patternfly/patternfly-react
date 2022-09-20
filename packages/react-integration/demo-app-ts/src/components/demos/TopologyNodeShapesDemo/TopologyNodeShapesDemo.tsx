@@ -1,13 +1,15 @@
 import React from 'react';
-import { useModel, useComponentFactory, Model, useLayoutFactory } from '@patternfly/react-topology';
+import { useModel, useComponentFactory, Model, useLayoutFactory, NodeShape } from '@patternfly/react-topology';
 
 import withTopologySetup from '../../../utils/withTopologySetup';
 import defaultComponentFactory from '../../../utils/defaultComponentFactory';
 import defaultLayoutFactory from '../../../utils/defaultLayoutFactory';
+import stylesComponentFactory from '../../../utils/stylesComponentFactory';
 
 export const TopologyNodeShapesDemo: React.FunctionComponent = withTopologySetup(() => {
   useComponentFactory(defaultComponentFactory);
   useLayoutFactory(defaultLayoutFactory);
+  useComponentFactory(stylesComponentFactory);
   useModel(
     React.useMemo(
       (): Model => ({
@@ -20,20 +22,23 @@ export const TopologyNodeShapesDemo: React.FunctionComponent = withTopologySetup
           {
             id: 'n1',
             type: 'node',
-            width: 20,
-            height: 20
+            shape: NodeShape.rect,
+            width: 100,
+            height: 100
           },
           {
             id: 'n2',
             type: 'node',
-            width: 20,
-            height: 20
+            shape: NodeShape.octagon,
+            width: 100,
+            height: 100
           },
           {
             id: 'n3',
             type: 'node',
-            width: 20,
-            height: 20
+            shape: NodeShape.ellipse,
+            width: 120,
+            height: 100
           }
         ],
         edges: [
