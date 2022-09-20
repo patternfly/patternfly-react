@@ -38,15 +38,15 @@ export const AlertGroupSingularDynamicOverflow: React.FunctionComponent = () => 
   const getUniqueId = () => new Date().getTime();
 
   const addSuccessAlert = () => {
-    addAlert('Toast success alert', 'success', getUniqueId());
+    addAlert('Success alert', 'success', getUniqueId());
   };
 
   const addDangerAlert = () => {
-    addAlert('Toast danger alert', 'danger', getUniqueId());
+    addAlert('Danger alert', 'danger', getUniqueId());
   };
 
   const addInfoAlert = () => {
-    addAlert('Toast info alert', 'info', getUniqueId());
+    addAlert('Info alert', 'info', getUniqueId());
   };
 
   const onOverflowClick = () => {
