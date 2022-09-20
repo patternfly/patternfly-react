@@ -40,13 +40,13 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
   componentDidMount() {
     this.handleResize();
     if (canUseDOM) {
-      window.addEventListener('resize', debounce(this.handleResize, 250));
+      window.addEventListener('resize', this.handleResizeWithDelay);
     }
   }
 
   componentWillUnmount() {
     if (canUseDOM) {
-      window.removeEventListener('resize', debounce(this.handleResize, 250));
+      window.removeEventListener('resize', this.handleResizeWithDelay);
     }
   }
 
@@ -61,6 +61,8 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
     const isBelowBreakpoint = window.innerWidth < breakpointWidth;
     this.setState({ isBelowBreakpoint });
   };
+
+  handleResizeWithDelay = debounce(this.handleResize, 250);
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
