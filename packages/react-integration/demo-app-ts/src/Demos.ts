@@ -41,6 +41,11 @@ export const Demos: DemoInterface[] = [
     id: 'topology-dashed-edges-demo',
     name: 'Topology Dashed Edges Demo',
     componentType: Examples.TopologyDashedEdgesDemo
+  },
+  {
+    id: 'topology-node-shapes-demo',
+    name: 'Topology Node Shapes Demo',
+    componentType: Examples.TopologyNodeShapesDemo
   }
 ];
 

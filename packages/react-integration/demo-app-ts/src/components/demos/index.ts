@@ -4,3 +4,4 @@ export * from './TopologyDemo/TopologySidePanelDemo';
 export * from './TopologySimpleGraphClassDemo/TopologySimpleGraphClassDemo';
 export * from './TopologySimpleGraphHooksDemo/TopologySimpleGraphHooksDemo';
 export * from './TopologyControlBarDemo/TopologyControlBarDemo';
+export * from './TopologyNodeShapesDemo/TopologyNodeShapesDemo';
