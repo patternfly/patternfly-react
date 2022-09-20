@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   EdgeStyle,
   Model,
-  SELECTION_EVENT,
-  TopologySideBar,
   TopologyView,
+  useComponentFactory,
+  useLayoutFactory,
   useVisualizationController,
-  Visualization,
   VisualizationProvider,
   VisualizationSurface
 } from '@patternfly/react-topology';
@@ -18,9 +17,11 @@ import defaultLayoutFactory from './layouts/defaultLayoutFactory';
 import defaultComponentFactory from './components/defaultComponentFactory';
 
 const TopologyComponent = () => {
-  const [selectedId, setSelectedId] = useState(null);
-
   const controller = useVisualizationController();
+
+  useLayoutFactory(defaultLayoutFactory);
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
 
   React.useEffect(() => {
     const model: Model = {
@@ -35,28 +36,14 @@ const TopologyComponent = () => {
           label: 'Node 0',
           type: 'node',
           width: 75,
-          height: 75,
-          data: {
-            id: 'node-0',
-            label: 'Node 0',
-            type: 'node',
-            width: 75,
-            height: 75
-          }
+          height: 75
         },
         {
           id: 'node-1',
           label: 'Node 1',
           type: 'node',
           width: 75,
-          height: 75,
-          data: {
-            id: 'node-1',
-            label: 'Node 1',
-            type: 'node',
-            width: 75,
-            height: 75
-          }
+          height: 75
         }
       ],
       edges: [
@@ -77,47 +64,22 @@ const TopologyComponent = () => {
       ]
     };
 
-    function onSelect(ids: string[]) {
-      const newSelectedId = ids?.[0] || null;
-      setSelectedId(newSelectedId);
-    }
-
     controller.fromModel(model, false);
-    controller.addEventListener(SELECTION_EVENT, onSelect);
-
-    return () => {
-      controller.removeEventListener(SELECTION_EVENT, onSelect);
-    };
   }, [controller]);
 
   return (
-    <TopologyView
-      sideBar={
-        <TopologySideBar show={!!selectedId} resizable onClose={() => setSelectedId(null)}>
-          <div style={{ height: '100%' }}>{selectedId}</div>
-        </TopologySideBar>
-      }
-      sideBarOpen={!!selectedId}
-      sideBarResizable
-    >
+    <TopologyView>
       <VisualizationSurface />
     </TopologyView>
   );
 };
 
-export const TopologyDashedEdgesDemo: React.FunctionComponent = React.memo(() => {
-  const controller = new Visualization();
-  controller.registerLayoutFactory(defaultLayoutFactory);
-  controller.registerComponentFactory(defaultComponentFactory);
-  controller.registerComponentFactory(stylesComponentFactory);
-
-  return (
-    <div className="pf-ri__topology-demo">
-      <VisualizationProvider controller={controller}>
-        <TopologyComponent />
-      </VisualizationProvider>
-    </div>
-  );
-});
+export const TopologyDashedEdgesDemo: React.FunctionComponent = React.memo(() => (
+  <div className="pf-ri__topology-demo">
+    <VisualizationProvider>
+      <TopologyComponent />
+    </VisualizationProvider>
+  </div>
+));
 
 TopologyDashedEdgesDemo.displayName = 'TopologyDashedEdgesDemo';
