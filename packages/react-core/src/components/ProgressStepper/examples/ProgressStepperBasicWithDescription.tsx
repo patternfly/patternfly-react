@@ -15,7 +15,13 @@ export const ProgressStepperBasicWithDescription: React.FunctionComponent = () =
     <ProgressStep
       variant="info"
       isCurrent
-      description="This is the second thing to happen"
+      description={
+        <>
+          This is the second thing to happen
+          <br />
+          In progress
+        </>
+      }
       id="basic-desc-step2"
       titleId="basic-desc-step2-title"
       aria-label="step with info"
