@@ -61,6 +61,11 @@ export const Demos: DemoInterface[] = [
     id: 'topology-label-svg-demo',
     name: 'Topology Label SVG Demo',
     componentType: Examples.TopologyLabelSVGDemo
+  },
+  {
+    id: 'topology-edge-terminal-demo',
+    name: 'Topology Edge Terminal Demo',
+    componentType: Examples.TopologyEdgeTerminalDemo
   }
 ];
 
