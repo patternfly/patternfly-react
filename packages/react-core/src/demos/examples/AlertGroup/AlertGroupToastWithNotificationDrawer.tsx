@@ -252,7 +252,12 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
         {notifications.length !== 0 && (
           <NotificationDrawerList>
             {notifications.map(({ key, variant, title, srTitle, description, timestamp }) => (
-              <NotificationDrawerListItem key={key} variant={variant} isRead={isNotificationRead(key)}>
+              <NotificationDrawerListItem
+                key={key}
+                variant={variant}
+                isRead={isNotificationRead(key)}
+                onClick={() => markNotificationRead(key)}
+              >
                 <NotificationDrawerListItemHeader variant={variant} title={title} srTitle={srTitle}>
                   <Dropdown
                     position={DropdownPosition.right}
