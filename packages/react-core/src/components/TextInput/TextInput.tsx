@@ -21,16 +21,16 @@ export enum TextInputTypes {
 }
 
 export interface TextInputProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'readOnly' | 'ref'>,
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>,
     OUIAProps {
   /** Additional classes added to the TextInput. */
   className?: string;
   /** Flag to show if the input is disabled. */
   isDisabled?: boolean;
-  /** @deprecated Use readOnly instead. Flag to show if the TextArea is read only. */
+  /** @deprecated Use readOnlyVariant instead. Flag to show if the TextArea is read only. */
   isReadOnly?: boolean;
   /** Read only variant. */
-  readOnly?: 'plain' | 'default';
+  readOnlyVariant?: 'plain' | 'default';
   isRequired?: boolean;
   /** Value to indicate if the input is modified to show that validation state.
    * If set to success, input will be modified to indicate valid state.
@@ -172,6 +172,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
       isLeftTruncated,
       isReadOnly,
       readOnly,
+      readOnlyVariant,
       isRequired,
       isDisabled,
       isIconSprite,
@@ -199,7 +200,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
         className={css(
           styles.formControl,
           isIconSprite && styles.modifiers.iconSprite,
-          readOnly === 'plain' && styles.modifiers.plain,
+          readOnlyVariant === 'plain' && styles.modifiers.plain,
           validated === ValidatedOptions.success && styles.modifiers.success,
           validated === ValidatedOptions.warning && styles.modifiers.warning,
           ((iconVariant && iconVariant !== 'search') || customIconUrl) && styles.modifiers.icon,
@@ -212,7 +213,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
         aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
         required={isRequired}
         disabled={isDisabled}
-        readOnly={!!readOnly || isReadOnly}
+        readOnly={!!readOnlyVariant || isReadOnly || readOnly}
         ref={innerRef || this.inputRef}
         {...((customIconUrl || customIconDimensions) && { style: customIconStyle })}
         {...getOUIAProps(TextInput.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}

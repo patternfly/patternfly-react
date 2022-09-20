@@ -91,7 +91,7 @@ const ReadOnlyTextArea = () => {
         <Checkbox
           id="isPlain"
           key="isPlain"
-          label="isPlain"
+          label="Plain read only variant"
           isChecked={isPlainChecked}
           onChange={checked => setIsPlainChecked(checked)}
         />
@@ -99,7 +99,7 @@ const ReadOnlyTextArea = () => {
       <TextInput
         aria-label="read only text input example"
         value="read only text input example"
-        readOnly={isPlainChecked ? 'plain' : 'default'}
+        readOnlyVariant={isPlainChecked ? 'plain' : 'default'}
       />
     </React.Fragment>
   );

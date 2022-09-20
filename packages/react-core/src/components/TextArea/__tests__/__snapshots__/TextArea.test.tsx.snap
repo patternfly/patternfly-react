@@ -39,12 +39,25 @@ exports[`TextArea horizontally resizable text area 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextArea read only text input using isReadOnly 1`] = `
+exports[`TextArea read only text input using default readOnlyVariant 1`] = `
 <DocumentFragment>
   <textarea
     aria-invalid="false"
-    aria-label="is read only textarea"
+    aria-label="is default read only textarea"
     class="pf-c-form-control"
+    readonly=""
+  >
+    test textarea
+  </textarea>
+</DocumentFragment>
+`;
+
+exports[`TextArea read only text input using plain readOnlyVariant 1`] = `
+<DocumentFragment>
+  <textarea
+    aria-invalid="false"
+    aria-label="is plain read only textarea"
+    class="pf-c-form-control pf-m-plain"
     readonly=""
   >
     test textarea

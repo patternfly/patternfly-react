@@ -36,8 +36,13 @@ describe('TextArea', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('read only text input using isReadOnly', () => {
-    const { asFragment } = render(<TextArea {...props} aria-label="is read only textarea" isReadOnly />);
+  test('read only text input using default readOnlyVariant', () => {
+    const { asFragment } = render(<TextArea {...props} aria-label="is default read only textarea" readOnlyVariant="default" />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('read only text input using plain readOnlyVariant', () => {
+    const { asFragment } = render(<TextArea {...props} aria-label="is plain read only textarea" readOnlyVariant="plain" />);
     expect(asFragment()).toMatchSnapshot();
   });
 

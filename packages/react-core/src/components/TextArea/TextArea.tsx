@@ -11,17 +11,17 @@ export enum TextAreResizeOrientation {
   both = 'both'
 }
 
-export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onChange' | 'ref' | 'readOnly'> {
+export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onChange' | 'ref'> {
   /** Additional classes added to the TextArea. */
   className?: string;
   /** Flag to show if the TextArea is required. */
   isRequired?: boolean;
   /** Flag to show if the TextArea is disabled. */
   isDisabled?: boolean;
-  /** @deprecated Use readOnly instead. Flag to show if the TextArea is read only. */
+  /** @deprecated Use readOnlyVariant instead. Flag to show if the TextArea is read only. */
   isReadOnly?: boolean;
   /** Read only variant. */
-  readOnly?: 'default' | 'plain';
+  readOnlyVariant?: 'default' | 'plain';
   /** Use the external file instead of a data URI */
   isIconSprite?: boolean;
   /** Flag to modify height based on contents. */
@@ -108,6 +108,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
       isIconSprite,
       isReadOnly,
       readOnly,
+      readOnlyVariant,
       resizeOrientation,
       innerRef,
       disabled,
@@ -123,7 +124,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
         className={css(
           styles.formControl,
           isIconSprite && styles.modifiers.iconSprite,
-          readOnly === 'plain' && styles.modifiers.plain,
+          readOnlyVariant === 'plain' && styles.modifiers.plain,
           className,
           resizeOrientation !== TextAreResizeOrientation.both && styles.modifiers[orientation],
           validated === ValidatedOptions.success && styles.modifiers.success,
@@ -134,7 +135,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
         aria-invalid={validated === ValidatedOptions.error}
         required={isRequired}
         disabled={isDisabled || disabled}
-        readOnly={!!readOnly || isReadOnly}
+        readOnly={!!readOnlyVariant || isReadOnly || readOnly}
         ref={innerRef || this.inputRef}
         {...props}
       />
