@@ -1,4 +1,5 @@
 export * from './TopologyDemo/TopologyDemo';
+export * from './TopologyDemo/TopologyDashedEdgesDemo';
 export * from './TopologyDemo/TopologySidePanelDemo';
 export * from './TopologySimpleGraphClassDemo/TopologySimpleGraphClassDemo';
 export * from './TopologySimpleGraphHooksDemo/TopologySimpleGraphHooksDemo';
