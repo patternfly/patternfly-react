@@ -461,7 +461,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               )}
             </GenerateId>
           )}
-          {!isOverflowHorizontal && (
+          {showScrollButtons && (
             <button
               type="button"
               className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
@@ -477,7 +477,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             {isOverflowHorizontal ? filteredChildrenWithoutOverflow : filteredChildren}
             {hasOverflowTab && <OverflowTab overflowingTabs={overflowingTabProps} {...overflowObjectProps} />}
           </ul>
-          {!isOverflowHorizontal && (
+          {showScrollButtons && (
             <button
               type="button"
               className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
