@@ -11,6 +11,11 @@ export enum TextAreResizeOrientation {
   both = 'both'
 }
 
+export enum TextAreaReadOnlyVariant {
+  default = 'default',
+  vertical = 'plain'
+}
+
 export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onChange' | 'ref'> {
   /** Additional classes added to the TextArea. */
   className?: string;

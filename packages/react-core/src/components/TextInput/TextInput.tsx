@@ -20,6 +20,11 @@ export enum TextInputTypes {
   url = 'url'
 }
 
+export enum TextInputReadOnlyVariant {
+  default = 'default',
+  vertical = 'plain'
+}
+
 export interface TextInputProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>,
     OUIAProps {
