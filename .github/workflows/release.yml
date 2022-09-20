@@ -11,6 +11,9 @@ jobs:
       GH_PR_NUM: ${{ github.event.number }}
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       # Yes, we really want to checkout the PR
       - run: |
           if [[ ! -z "${GH_PR_NUM}" ]]; then 
