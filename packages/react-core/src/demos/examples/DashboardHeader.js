@@ -92,6 +92,7 @@ export default class DashboardHeader extends React.Component {
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, isAppLauncherOpen } = this.state;
+    const { notificationBadge } = this.props;
 
     const kebabDropdownItems = [
       <DropdownItem key="kebab-1">
@@ -128,9 +129,18 @@ export default class DashboardHeader extends React.Component {
             alignment={{ default: 'alignRight' }}
             spacer={{ default: 'spacerNone', md: 'spacerMd' }}
           >
-            <ToolbarItem>
-              <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} />
-            </ToolbarItem>
+            {notificationBadge ? (
+              notificationBadge
+            ) : (
+              <ToolbarItem>
+                <Button
+                  aria-label="Notifications"
+                  variant={ButtonVariant.plain}
+                  icon={<BellIcon />}
+                  onClick={() => {}}
+                />
+              </ToolbarItem>
+            )}
             <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
               <ToolbarItem visibility={{ default: 'hidden', sm: 'hidden', lg: 'visible' }}>
                 <ApplicationLauncher
