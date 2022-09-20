@@ -9,32 +9,32 @@ propComponents: ['TextContent', 'Text', 'TextList', 'TextListItem']
 
 ### Headings
 
-```ts file="./HeadingsText.tsx"
+```ts file="./TextHeadings.tsx"
 ```
 
 ### Body
 
-```ts file="./BodyText.tsx"
+```ts file="./TextBody.tsx"
 ```
 
 Text components such as Text, TextList, TextListItem need to be placed within a TextContent
 
 ### Unordered list
 
-```ts file="./UnorderedListText.tsx"
+```ts file="./TextUnorderedList.tsx"
 ```
 
 ### Ordered list
 
-```ts file="./OrderedListText.tsx"
+```ts file="./TextOrderedList.tsx"
 ```
 
 ### Description list
 
-```ts file="./DescriptionListText.tsx"
+```ts file="./TextDescriptionList.tsx"
 ```
 
 ### Visited
 
-```ts file="./VisitedText.tsx"
+```ts file="./TextVisited.tsx"
 ```
