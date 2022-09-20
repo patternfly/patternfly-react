@@ -32,7 +32,8 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import { rows, columns } from '../../examples/Data.jsx';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper.js';
-import { toCamel } from '@patternfly/react-table/src/components/Table/utils/utils.js'
+import { toCamel } from '@patternfly/react-table/src/components/Table/utils/utils.js';
+import { update } from 'lodash';
 
 class ColumnManagementAction extends React.Component {
   constructor(props) {
@@ -95,21 +96,22 @@ class ColumnManagementAction extends React.Component {
     };
 
     function removePropFromObject(obj, prop) {
-        // console.log(prop)
-        const { [prop.toLowerCase()]: _, ...rest } = obj
-        return { ...rest }
-      }
+      // console.log(prop)
+      const { [prop.toLowerCase()]: _, ...rest } = obj;
+      return { ...rest };
+    }
 
     this.filterData = (checked, name) => {
+      console.log('name', name);
+      console.log(this.defaultColumns);
       const { managedRows, managedColumns, filters } = this.state;
       if (checked) {
         const updatedFilters = filters.filter(item => item !== name);
         const filteredColumns = this.defaultColumns.filter(column => !updatedFilters.includes(column));
-        const filteredRows = this.defaultRows.map((row) => {
-            let t = Object.keys(row).filter(r => !updatedFilters.includes(toCamel(name)));
-          console.log("is this it", rows);
-          return t;
-        });
+        const filteredRows = this.defaultRows.map(({ [name]: _, ...keep }) => keep);
+
+        console.log('filteredRows', filteredRows);
+
         this.setState({
           filters: updatedFilters,
           filteredColumns: filteredColumns,
@@ -117,12 +119,9 @@ class ColumnManagementAction extends React.Component {
         });
       } else {
         let updatedFilters = filters;
-        updatedFilters.push(name);
+        updatedFilters.push(toCamel(name));
         const filteredColumns = managedColumns.filter(column => !filters.includes(column));
-        const filteredRows = managedRows.map((row) => {
-           let t = Object.keys(row).filter(cell => !filters.includes(toCamel(name)));
-          return t;
-        });
+        const filteredRows = managedRows.map(({ [name]: _, ...keep }) => keep);
 
         this.setState({
           filters: updatedFilters,
@@ -141,6 +140,7 @@ class ColumnManagementAction extends React.Component {
     this.handleChange = (checked, event) => {
       const target = event.target;
       const value = target.type === 'checkbox' ? target.checked : target.value;
+      console.log('target', target);
       this.filterData(checked, this.matchCheckboxNameToColumn(target.name));
       this.setState({
         [target.name]: value
@@ -295,14 +295,14 @@ class ColumnManagementAction extends React.Component {
               <DataListCheck
                 aria-labelledby="table-column-management-item4"
                 checked={this.state.check5}
-                name="check4"
-                id="check4"
+                name="check5"
+                id="check5"
                 onChange={this.handleChange}
               />
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item4" key="table-column-management-item4">
-                    <label htmlFor="check4">{columns[4]}</label>
+                    <label htmlFor="check5">{columns[4]}</label>
                   </DataListCell>
                 ]}
               />
@@ -312,15 +312,15 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item5"
-                checked={this.state.check5}
-                name="check5"
-                id="check5"
+                checked={this.state.check6}
+                name="check6"
+                id="check6"
                 onChange={this.handleChange}
               />
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item5" key="table-column-management-item5">
-                    <label htmlFor="check5">{columns[5]}</label>
+                    <label htmlFor="check6">{columns[5]}</label>
                   </DataListCell>
                 ]}
               />
@@ -330,15 +330,15 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item6"
-                checked={this.state.check6}
-                name="check6"
-                id="check6"
+                checked={this.state.check7}
+                name="check7"
+                id="check7"
                 onChange={this.handleChange}
               />
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item6" key="table-column-management-item5">
-                    <label htmlFor="check6">{columns[6]}</label>
+                    <label htmlFor="check7">{columns[6]}</label>
                   </DataListCell>
                 ]}
               />
@@ -348,15 +348,15 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item5"
-                checked={this.state.check7}
-                name="check7"
-                id="check7"
+                checked={this.state.check8}
+                name="check8"
+                id="check8"
                 onChange={this.handleChange}
               />
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item7" key="table-column-management-item7">
-                    <label htmlFor="check7">{columns[7]}</label>
+                    <label htmlFor="check8">{columns[7]}</label>
                   </DataListCell>
                 ]}
               />
@@ -385,73 +385,77 @@ class ColumnManagementAction extends React.Component {
 
     const toolbarItems = (
       <React.Fragment>
-        <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>
-          Choose one
-        </span>
-        <ToolbarContent>
-          <ToolbarItem variant="overflow-menu">
-            <OverflowMenu breakpoint="md">
-              <OverflowMenuItem isPersistent>
-                <Select
-                  id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-                  variant={SelectVariant.single}
-                  aria-label="Select Input"
-                  aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-                  placeholderText={
-                    <>
-                      <FilterIcon /> Name
-                    </>
-                  }
-                />
-              </OverflowMenuItem>
-              <OverflowMenuItem>
-                <OptionsMenu
-                  id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
-                  isPlain
-                  menuItems={[]}
-                  toggle={
-                    <OptionsMenuToggle
-                      toggleTemplate={<SortAmountDownIcon aria-hidden="true" />}
-                      aria-label="Sort by"
-                      hideCaret
-                    />
-                  }
-                />
-              </OverflowMenuItem>
-              <OverflowMenuGroup groupType="button" isPersistent>
-                <OverflowMenuItem>
-                  <Button variant="primary">Action</Button>
+        <Toolbar id="page-layout-table-column-management-action-toolbar-top">
+          <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>
+            Choose one
+          </span>
+          <ToolbarContent>
+            <ToolbarItem variant="overflow-menu">
+              <OverflowMenu breakpoint="md">
+                <OverflowMenuItem isPersistent>
+                  <Select
+                    id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
+                    variant={SelectVariant.single}
+                    aria-label="Select Input"
+                    aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
+                    placeholderText={
+                      <>
+                        <FilterIcon /> Name
+                      </>
+                    }
+                  />
                 </OverflowMenuItem>
                 <OverflowMenuItem>
-                  <Button variant="link" onClick={this.handleModalToggle}>
-                    Manage columns
-                  </Button>
+                  <OptionsMenu
+                    id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
+                    isPlain
+                    menuItems={[]}
+                    toggle={
+                      <OptionsMenuToggle
+                        toggleTemplate={<SortAmountDownIcon aria-hidden="true" />}
+                        aria-label="Sort by"
+                        hideCaret
+                      />
+                    }
+                  />
                 </OverflowMenuItem>
-              </OverflowMenuGroup>
-            </OverflowMenu>
-          </ToolbarItem>
-          <ToolbarItem variant="pagination">
-            <Pagination
-              itemCount={37}
-              widgetId="pagination-options-menu"
-              page={1}
-              variant={PaginationVariant.top}
-              isCompact
-              titles={{
-                paginationTitle: `Column management top pagination`
-              }}
-            />
-          </ToolbarItem>
-        </ToolbarContent>
+                <OverflowMenuGroup groupType="button" isPersistent>
+                  <OverflowMenuItem>
+                    <Button variant="primary">Action</Button>
+                  </OverflowMenuItem>
+                  <OverflowMenuItem>
+                    <Button variant="link" onClick={this.handleModalToggle}>
+                      Manage columns
+                    </Button>
+                  </OverflowMenuItem>
+                </OverflowMenuGroup>
+              </OverflowMenu>
+            </ToolbarItem>
+            <ToolbarItem variant="pagination">
+              <Pagination
+                itemCount={37}
+                widgetId="pagination-options-menu"
+                page={1}
+                variant={PaginationVariant.top}
+                isCompact
+                titles={{
+                  paginationTitle: `Column management top pagination`
+                }}
+              />
+            </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
       </React.Fragment>
     );
+
+    // console.log("???", managedRows);
 
     return (
       <React.Fragment>
         <DashboardWrapper>
           <PageSection isFilled>
             <Card>
-              <Table
+              {/* <Table
                 gridBreakPoint="grid-xl"
                 header={
                   <React.Fragment>
@@ -462,7 +466,7 @@ class ColumnManagementAction extends React.Component {
                 id="page-layout-table-column-management-action-table"
                 //   onSelect={this.onSelect}
                 cells={managedColumns}
-                rows={managedRows.map(row => [
+                rows={rows.map(row => [
                     row.name,
                     row.threads,
                     row.applications,
@@ -471,19 +475,56 @@ class ColumnManagementAction extends React.Component {
                     row.location,
                     row.lastModified,
                     {
-                      title: (
+                    title: (
                         <a href="#">
-                          <TableText wrapModifier="truncate">{row.url} </TableText>
+                        <TableText wrapModifier="truncate">{row.url} </TableText>
                         </a>
-                      )
+                    )
                     }
-                  ])}
-                  actions={this.actions}
+                ])}       
+                       actions={this.actions}
                 //   canSelectAll={canSelectAll}
               >
                 <TableHeader />
                 <TableBody />
-              </Table>
+              </Table> */}
+              {toolbarItems}
+              <TableComposable variant="compact" aria-label="Compact Table">
+                <Thead>
+                  <Tr>
+                    <Th key={0}>{managedColumns[0]}</Th>
+                    <Th key={1}>{managedColumns[1]}</Th>
+                    <Th key={2}>{managedColumns[2]}</Th>
+                    <Th key={3}>{managedColumns[3]}</Th>
+                    <Th key={4}>{managedColumns[4]}</Th>
+                    <Th key={5}>{managedColumns[5]}</Th>
+                    <Th key={6}>{managedColumns[6]}</Th>
+                    <Th key={7} width={10}>
+                      {managedColumns[7]}
+                    </Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {managedRows.map((row, rowIndex) => (
+                    <Tr key={rowIndex}>
+                      <>
+                        <Td dataLabel={columns[0]}>{row.name}</Td>
+                        <Td dataLabel={columns[1]}>{row.threads}</Td>
+                        <Td dataLabel={columns[2]}>{row.applications}</Td>
+                        <Td dataLabel={columns[3]}>{row.workspaces}</Td>
+                        <Td dataLabel={columns[4]}>{renderLabel(row.status)}</Td>
+                        <Td dataLabel={columns[5]}>{row.location}</Td>
+                        <Td dataLabel={columns[6]}>{row.lastModified}</Td>
+                        <Td dataLabel={columns[7]} modifier="truncate">
+                          <TableText>
+                            <a href="#">{row.url}</a>
+                          </TableText>
+                        </Td>
+                      </>
+                    </Tr>
+                  ))}
+                </Tbody>
+              </TableComposable>
               <Pagination
                 isCompact
                 id="page-layout-table-column-management-action-toolbar-bottom"
