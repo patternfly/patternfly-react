@@ -294,8 +294,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GH_TOKEN_REDALLEN }} # needs to be an admin token to get around branch protection
-          fetch-depth: "0"
-      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
