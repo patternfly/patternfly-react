@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  SearchInput,
   Toolbar,
   ToolbarContent,
   ToolbarItem,
@@ -18,10 +17,12 @@ import {
   EmptyStateBody,
   EmptyStatePrimary,
   Button,
-  Bullseye
+  Bullseye,
+  ToolbarToggleGroup
 } from '@patternfly/react-core';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 interface Repository {
   name: string;
@@ -56,26 +57,22 @@ const columnNames = {
 };
 
 /* eslint-disable patternfly-react/no-anonymous-functions */
-export const FilterSearchInput: React.FunctionComponent = () => {
+export const FilterSameSelectGroup: React.FunctionComponent = () => {
   // Set up repo filtering
-  const [searchValue, setSearchValue] = React.useState('');
-
-  const onSearchChange = (value: string) => {
-    setSearchValue(value);
-  };
+  const [locationSelection, setLocationSelection] = React.useState('All locations');
+  const [statusSelection, setStatusSelection] = React.useState('All statuses');
 
   const onFilter = (repo: Repository) => {
-    if (searchValue === '') {
-      return true;
-    }
+    // Search status with status selection
+    const matchesStatusValue = repo.status.toLowerCase() === statusSelection.toLowerCase();
 
-    let input: RegExp;
-    try {
-      input = new RegExp(searchValue, 'i');
-    } catch (err) {
-      input = new RegExp(searchValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
-    }
-    return repo.name.search(input) >= 0;
+    // Search location with location selections
+    const matchesLocationValue = repo.location.toLowerCase() === locationSelection.toLowerCase();
+
+    return (
+      (statusSelection === 'All statuses' || matchesStatusValue) &&
+      (locationSelection === 'All locations' || matchesLocationValue)
+    );
   };
   const filteredRepos = repositories.filter(onFilter);
 
@@ -138,7 +135,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
   // Set up bulk selection menu
   const bulkSelectMenuRef = React.createRef<HTMLDivElement>();
   const bulkSelectToggleRef = React.createRef<any>();
-  const containerRef = React.createRef<HTMLDivElement>();
+  const bulkSelectContainerRef = React.createRef<HTMLDivElement>();
 
   const [isBulkSelectOpen, setIsBulkSelectOpen] = React.useState<boolean>(false);
 
@@ -198,8 +195,8 @@ export const FilterSearchInput: React.FunctionComponent = () => {
       splitButtonOptions={{
         items: [
           <MenuToggleCheckbox
-            id="search-input-bulk-select"
-            key="search-input-bulk-select"
+            id="same-select-group-input-bulk-select"
+            key="same-select-group-input-bulk-select"
             aria-label="Select all"
             isChecked={menuToggleCheckmark}
             onChange={(checked, _event) => selectAllRepos(checked)}
@@ -213,7 +210,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
   const bulkSelectMenu = (
     // eslint-disable-next-line no-console
     <Menu
-      id="search-input-bulk-select"
+      id="same-select-group-input-bulk-select"
       ref={bulkSelectMenuRef}
       onSelect={(_ev, itemId) => {
         selectAllRepos(itemId === 1 || itemId === 2);
@@ -231,43 +228,233 @@ export const FilterSearchInput: React.FunctionComponent = () => {
   );
 
   const toolbarBulkSelect = (
-    <div ref={containerRef}>
+    <div ref={bulkSelectContainerRef}>
       <Popper
         trigger={bulkSelectToggle}
         popper={bulkSelectMenu}
-        appendTo={containerRef.current || undefined}
+        appendTo={bulkSelectContainerRef.current || undefined}
         isVisible={isBulkSelectOpen}
         popperMatchesTriggerWidth={false}
       />
     </div>
   );
 
-  const searchInput = (
-    <SearchInput
-      placeholder="Filter by server name"
-      value={searchValue}
-      onChange={onSearchChange}
-      onClear={() => onSearchChange('')}
-    />
+  // Set up status single select
+  const [isStatusMenuOpen, setIsStatusMenuOpen] = React.useState<boolean>(false);
+  const statusToggleRef = React.useRef<HTMLButtonElement>(null);
+  const statusMenuRef = React.useRef<HTMLDivElement>(null);
+  const statusContainerRef = React.useRef<HTMLDivElement>(null);
+
+  const handleStatusMenuKeys = (event: KeyboardEvent) => {
+    if (isStatusMenuOpen && statusMenuRef.current?.contains(event.target as Node)) {
+      if (event.key === 'Escape' || event.key === 'Tab') {
+        setIsStatusMenuOpen(!isStatusMenuOpen);
+        statusToggleRef.current?.focus();
+      }
+    }
+  };
+
+  const handleStatusClickOutside = (event: MouseEvent) => {
+    if (isStatusMenuOpen && !statusMenuRef.current?.contains(event.target as Node)) {
+      setIsStatusMenuOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleStatusMenuKeys);
+    window.addEventListener('click', handleStatusClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleStatusMenuKeys);
+      window.removeEventListener('click', handleStatusClickOutside);
+    };
+  }, [isStatusMenuOpen, statusMenuRef]);
+
+  const onStatusToggleClick = (ev: React.MouseEvent) => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      if (statusMenuRef.current) {
+        const firstElement = statusMenuRef.current.querySelector('li > button:not(:disabled)');
+        firstElement && (firstElement as HTMLElement).focus();
+      }
+    }, 0);
+    setIsStatusMenuOpen(!isStatusMenuOpen);
+  };
+
+  function onStatusSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
+    if (typeof itemId === 'undefined') {
+      return;
+    }
+
+    setStatusSelection(itemId.toString());
+    setIsStatusMenuOpen(!isStatusMenuOpen);
+  }
+
+  const statusToggle = (
+    <MenuToggle
+      ref={statusToggleRef}
+      onClick={onStatusToggleClick}
+      isExpanded={isStatusMenuOpen}
+      icon={<FilterIcon />}
+      style={
+        {
+          width: '200px'
+        } as React.CSSProperties
+      }
+    >
+      {statusSelection}
+    </MenuToggle>
   );
 
+  const statusMenu = (
+    <Menu ref={statusMenuRef} id="same-select-group-status-menu" onSelect={onStatusSelect} selected={statusSelection}>
+      <MenuContent>
+        <MenuList>
+          <MenuItem itemId="All statuses">All statuses</MenuItem>
+          <MenuItem itemId="Degraded">Degraded</MenuItem>
+          <MenuItem itemId="Down">Down</MenuItem>
+          <MenuItem itemId="Needs maintenance">Needs maintenance</MenuItem>
+          <MenuItem itemId="Running">Running</MenuItem>
+          <MenuItem itemId="Stopped">Stopped</MenuItem>
+        </MenuList>
+      </MenuContent>
+    </Menu>
+  );
+
+  const statusSelect = (
+    <div ref={statusContainerRef}>
+      <Popper
+        trigger={statusToggle}
+        popper={statusMenu}
+        appendTo={statusContainerRef.current || undefined}
+        isVisible={isStatusMenuOpen}
+      />
+    </div>
+  );
+
+  // Set up location checkbox select
+  const [isLocationMenuOpen, setIsLocationMenuOpen] = React.useState<boolean>(false);
+  const locationToggleRef = React.useRef<HTMLButtonElement>(null);
+  const locationMenuRef = React.useRef<HTMLDivElement>(null);
+  const locationContainerRef = React.useRef<HTMLDivElement>(null);
+
+  const handleLocationMenuKeys = (event: KeyboardEvent) => {
+    if (isLocationMenuOpen && locationMenuRef.current?.contains(event.target as Node)) {
+      if (event.key === 'Escape' || event.key === 'Tab') {
+        setIsLocationMenuOpen(!isLocationMenuOpen);
+        locationToggleRef.current?.focus();
+      }
+    }
+  };
+
+  const handleLocationClickOutside = (event: MouseEvent) => {
+    if (isLocationMenuOpen && !locationMenuRef.current?.contains(event.target as Node)) {
+      setIsLocationMenuOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleLocationMenuKeys);
+    window.addEventListener('click', handleLocationClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleLocationMenuKeys);
+      window.removeEventListener('click', handleLocationClickOutside);
+    };
+  }, [isLocationMenuOpen, locationMenuRef]);
+
+  const onLocationMenuToggleClick = (ev: React.MouseEvent) => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      if (locationMenuRef.current) {
+        const firstElement = locationMenuRef.current.querySelector('li > button:not(:disabled)');
+        firstElement && (firstElement as HTMLElement).focus();
+      }
+    }, 0);
+    setIsLocationMenuOpen(!isLocationMenuOpen);
+  };
+
+  function onLocationMenuSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
+    if (typeof itemId === 'undefined') {
+      return;
+    }
+
+    setLocationSelection(itemId.toString());
+    setIsLocationMenuOpen(!isLocationMenuOpen);
+  }
+
+  const locationToggle = (
+    <MenuToggle
+      ref={locationToggleRef}
+      onClick={onLocationMenuToggleClick}
+      isExpanded={isLocationMenuOpen}
+      icon={<FilterIcon />}
+      style={
+        {
+          width: '200px'
+        } as React.CSSProperties
+      }
+    >
+      {locationSelection}
+    </MenuToggle>
+  );
+
+  const locationMenu = (
+    <Menu
+      ref={locationMenuRef}
+      id="same-select-group-location-menu"
+      onSelect={onLocationMenuSelect}
+      selected={locationSelection}
+    >
+      <MenuContent>
+        <MenuList>
+          <MenuItem itemId="All locations">All locations</MenuItem>
+          <MenuItem itemId="Bangalore">Bangalore</MenuItem>
+          <MenuItem itemId="Boston">Boston</MenuItem>
+          <MenuItem itemId="Brno">Brno</MenuItem>
+          <MenuItem itemId="Raleigh">Raleigh</MenuItem>
+          <MenuItem itemId="Westford">Westford</MenuItem>
+        </MenuList>
+      </MenuContent>
+    </Menu>
+  );
+
+  const locationSelect = (
+    <div ref={locationContainerRef}>
+      <Popper
+        trigger={locationToggle}
+        popper={locationMenu}
+        appendTo={locationContainerRef.current || undefined}
+        isVisible={isLocationMenuOpen}
+      />
+    </div>
+  );
+
+  // Set up pagination and toolbar
   const toolbarPagination = (
     <Pagination
-      titles={{ paginationTitle: 'Search filter pagination' }}
+      titles={{ paginationTitle: 'Same select group pagination' }}
       perPageComponent="button"
       itemCount={repositories.length}
       perPage={10}
       page={1}
-      widgetId="search-input-mock-pagination"
+      widgetId="same-select-group-mock-pagination"
       isCompact
     />
   );
 
   const toolbar = (
-    <Toolbar id="search-input-filter-toolbar">
+    <Toolbar
+      id="same-select-group-toolbar"
+      clearAllFilters={() => {
+        setStatusSelection('All statuses');
+        setLocationSelection('All locations');
+      }}
+    >
       <ToolbarContent>
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
-        <ToolbarItem variant="search-filter">{searchInput}</ToolbarItem>
+        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+          <ToolbarItem>{statusSelect}</ToolbarItem>
+          <ToolbarItem>{locationSelect}</ToolbarItem>
+        </ToolbarToggleGroup>
         <ToolbarItem variant="pagination">{toolbarPagination}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
@@ -284,7 +471,8 @@ export const FilterSearchInput: React.FunctionComponent = () => {
         <Button
           variant="link"
           onClick={() => {
-            setSearchValue('');
+            setStatusSelection('All statuses');
+            setLocationSelection('All locations');
           }}
         >
           Clear all filters
