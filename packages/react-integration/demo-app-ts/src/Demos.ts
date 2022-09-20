@@ -36,6 +36,11 @@ export const Demos: DemoInterface[] = [
     id: 'topology-control-bar-demo',
     name: 'Topology Control Bar Demo',
     componentType: Examples.TopologyControlBarDemo
+  },
+  {
+    id: 'topology-node-shapes-demo',
+    name: 'Topology Node Shapes Demo',
+    componentType: Examples.TopologyNodeShapesDemo
   }
 ];
 
