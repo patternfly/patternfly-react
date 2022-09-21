@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.242.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.241.4...@patternfly/react-core@4.242.0) (2022-09-21)
+
+
+### Features
+
+* **ProgressStepper:** updating description prop to ReactNode ([#8017](https://github.com/patternfly/patternfly-react/issues/8017)) ([30b1112](https://github.com/patternfly/patternfly-react/commit/30b1112216d6c8801b9d2bdcbf52c1cb9e9634cd))
+
+
+
+
+
 ## [4.241.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.241.3...@patternfly/react-core@4.241.4) (2022-09-20)
 
 **Note:** Version bump only for package @patternfly/react-core
