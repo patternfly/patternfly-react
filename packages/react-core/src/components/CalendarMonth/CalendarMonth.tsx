@@ -19,8 +19,8 @@ export enum Weekday {
   Saturday
 }
 
-/** Properties that allow customizing the calendar formatting and aria-labels. The following properties
- * should be passed into the main component.
+/** Additional properties that extend from and can be passed to the main component. These
+ * properties allow customizing the calendar formatting and aria-labels.
  */
 
 export interface CalendarFormat {

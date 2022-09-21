@@ -18,9 +18,7 @@ export enum AlertVariant {
   default = 'default'
 }
 
-/** Acts as the main component for an alert. Can also act as a wrapper around text
- * in order to provide a description for the alert.
- */
+/** The main alert component. */
 
 export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'>, OUIAProps {
   /** Close button; use the alert action close button component.  */
