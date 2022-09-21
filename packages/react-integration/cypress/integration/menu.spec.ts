@@ -26,7 +26,7 @@ describe('Menu Test', () => {
       .should('have.attr', 'id', 'cube-icon');
   });
 
-  it('Verify Flyout Menu', () => {
+  it.skip('Verify Flyout Menu', () => {
     cy.get('.pf-c-menu.pf-m-flyout').should('exist');
 
     cy.get('#edit').click();
