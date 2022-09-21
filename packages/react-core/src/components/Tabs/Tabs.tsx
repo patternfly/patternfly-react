@@ -114,8 +114,13 @@ const variantStyle = {
 };
 
 interface TabsState {
+  /** Used to signal if the scroll buttons should be used  */
   enableScrollButtons: boolean;
+  /** Used to control if the scroll buttons should be shown to the user via the pf-m-scrollable class */
   showScrollButtons: boolean;
+  /** Used to control if the scroll buttons should be rendered. Rendering must occur before the scroll buttons are
+   * shown and rendering must be stopped after they stop being shown to preserve CSS transitions.
+   */
   renderScrollButtons: boolean;
   disableLeftScrollButton: boolean;
   disableRightScrollButton: boolean;
