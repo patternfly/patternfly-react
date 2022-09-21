@@ -28,6 +28,8 @@ interface LogViewerProps {
   theme?: 'dark' | 'light';
   /** Row index to scroll to */
   scrollToRow?: number;
+  /** The width of index when the line numbers is shown, set by char numbers */
+  initialIndexWidth?: number;
   /** Number of rows to display in the log viewer */
   itemCount?: number;
   /** Flag indicating that log viewer is wrapping text or not */
@@ -86,18 +88,23 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     onScroll,
     innerRef,
     isTextWrapped = true,
+    initialIndexWidth,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
     const [rowInFocus, setRowInFocus] = useState<searchedKeyWordType | null>({ rowIndex: scrollToRow, matchIndex: 0 });
     const [searchedWordIndexes, setSearchedWordIndexes] = useState<searchedKeyWordType[] | null>([]);
     const [currentSearchedItemCount, setCurrentSearchedItemCount] = useState<number>(0);
-    const [parsedData, setParsedData] = useState<string[] | null>([]);
     const [lineHeight, setLineHeight] = useState<number>(0);
     const [charNumsPerLine, setCharNumsPerLine] = useState<number>(0);
+    const [indexWidth, setIndexWidth] = useState<number>(0);
     const [resizing, setResizing] = useState(false);
     const [loading, setLoading] = useState(true);
     const [listKey, setListKey] = useState(1);
+
+    /* Parse data every time it changes */
+    const parsedData = React.useMemo(() => parseConsoleOutput(data), [data]);
+
     const ansiUp = new AnsiUp();
 
     const ref = React.useRef<any>();
@@ -139,13 +146,8 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
         rowInFocus,
         searchedWordIndexes
       }),
-      [data, parsedData, logViewerRef, rowInFocus, searchedWordIndexes]
+      [parsedData, logViewerRef, rowInFocus, searchedWordIndexes]
     );
-
-    /* Parse data every time it changes */
-    useEffect(() => {
-      setParsedData(parseConsoleOutput(data));
-    }, [data]);
 
     useEffect(() => {
       if (logViewerRef && logViewerRef.current) {
@@ -166,12 +168,21 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     }, [parsedData, scrollToRow]);
 
     const createDummyElements = () => {
+      // create dummy elements
       const dummyIndex = document.createElement('span');
       dummyIndex.className = css(styles.logViewerIndex);
       const dummyText = document.createElement('span');
       dummyText.className = css(styles.logViewerText);
-      containerRef.current.appendChild(dummyIndex);
-      containerRef.current.appendChild(dummyText);
+      const dummyListItem = document.createElement('div');
+      dummyListItem.className = css(styles.logViewerListItem);
+      const dummyList = document.createElement('div');
+      dummyList.className = css(styles.logViewerList);
+      // append dummy elements
+      dummyListItem.appendChild(dummyIndex);
+      dummyListItem.appendChild(dummyText);
+      dummyList.appendChild(dummyListItem);
+      containerRef.current.appendChild(dummyList);
+      // compute styles
       const dummyIndexStyles = getComputedStyle(dummyIndex);
       const dummyTextStyles = getComputedStyle(dummyText);
       setLineHeight(parseFloat(dummyTextStyles.lineHeight));
@@ -187,8 +198,9 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
         `${dummyTextStyles.fontWeight} ${dummyTextStyles.fontSize} ${dummyTextStyles.fontFamily}`
       );
       setCharNumsPerLine(charNumsPerLine);
-      containerRef.current.removeChild(dummyIndex);
-      containerRef.current.removeChild(dummyText);
+      setIndexWidth(parseFloat(dummyIndexStyles.width));
+      // remove dummy elements from the DOM tree
+      containerRef.current.removeChild(dummyList);
       setListKey(listKey => listKey + 1);
     };
 
@@ -236,6 +248,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
         onScroll={onScroll}
         isTextWrapped={isTextWrapped}
         hasLineNumbers={hasLineNumbers}
+        indexWidth={indexWidth}
         ansiUp={ansiUp}
       >
         {LogViewerRow}
@@ -254,8 +267,14 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
             styles.logViewer,
             hasLineNumbers && styles.modifiers.lineNumbers,
             !isTextWrapped && styles.modifiers.nowrap,
+            initialIndexWidth && styles.modifiers.lineNumberChars,
             theme === 'dark' && styles.modifiers.dark
           )}
+          {...(initialIndexWidth && {
+            style: {
+              '--pf-c-log-viewer--line-number-chars': initialIndexWidth + 1
+            } as React.CSSProperties
+          })}
           {...props}
         >
           {toolbar && (
