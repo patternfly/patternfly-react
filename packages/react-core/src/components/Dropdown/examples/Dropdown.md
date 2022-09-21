@@ -32,7 +32,7 @@ This example also uses a `<DropdownSeparator>`, which adds a horizontal line tha
 ```ts file='./DropdownBasic.tsx'
 ```
 
-### With initial focus
+### Autofocus on dropdown expansion
 
 A `<DropdownItem>` may use the  `autoFocus` property so that it automatically receives focus when the menu is expanded. `autoFocus` cannot be applied to disabled dropdown items.
 
@@ -53,9 +53,9 @@ A `<DropdownItem>` may use the `description` property to provide users with more
 ```ts file="./DropdownDescriptions.tsx"
 ```
 
-### With basic panel menus
+### With custom content
 
-You may create a custom menu for a dropdown.
+You may replace standard dropdown items with custom content. If so, you must style the menu contents and manage focus within your custom implementation.
 
 ```ts file="./DropdownBasicPanel.tsx"
 ```
