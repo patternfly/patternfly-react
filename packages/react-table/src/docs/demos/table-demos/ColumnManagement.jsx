@@ -69,7 +69,10 @@ class ColumnManagementAction extends React.Component {
       check5: true,
       check6: true,
       check7: true,
-      check8: true
+      check8: true,
+      page: 1,
+      perPage: 10,
+      paginatedRows: this.defaultRows.slice(1, 10)
     };
     // this.onSelect = this.onSelect.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
@@ -94,42 +97,80 @@ class ColumnManagementAction extends React.Component {
           return 'URL';
       }
     };
-
-    function removePropFromObject(obj, prop) {
-      // console.log(prop)
-      const { [prop.toLowerCase()]: _, ...rest } = obj;
-      return { ...rest };
-    }
-
-    this.filterData = (checked, name) => {
-      console.log('name', name);
-      console.log(this.defaultColumns);
-      const { managedRows, managedColumns, filters } = this.state;
-      if (checked) {
-        const updatedFilters = filters.filter(item => item !== name);
-        const filteredColumns = this.defaultColumns.filter(column => !updatedFilters.includes(column));
-        const filteredRows = this.defaultRows.map(({ [name]: _, ...keep }) => keep);
-
-        console.log('filteredRows', filteredRows);
-
-        this.setState({
-          filters: updatedFilters,
-          filteredColumns: filteredColumns,
-          filteredRows: filteredRows
-        });
-      } else {
-        let updatedFilters = filters;
-        updatedFilters.push(toCamel(name));
-        const filteredColumns = managedColumns.filter(column => !filters.includes(column));
-        const filteredRows = managedRows.map(({ [name]: _, ...keep }) => keep);
-
-        this.setState({
-          filters: updatedFilters,
-          filteredColumns: filteredColumns,
-          filteredRows: filteredRows
-        });
+    this.matchSelectedColumnNameToAttr = name => {
+      switch (name) {
+        case 'Servers':
+          return 'name';
+        case 'Threads':
+          return 'threads';
+        case 'Applications':
+          return 'applications';
+        case 'Workspaces':
+          return 'workspaces';
+        case 'Status':
+          return 'status';
+        case 'Location':
+          return 'location';
+        case 'Last Modified':
+          return 'lastModified';
+        case 'URL':
+          return 'url';
       }
     };
+
+    // function removePropFromObject(obj, prop) {
+    //    return obj.map(({ [prop]: _, ...keep }) => keep)
+    // }
+
+    (this.removePropFromObject = (object, keys) =>
+      keys.reduce((obj, prop) => {
+        const { [prop]: _, ...keep } = obj;
+        return keep;
+      }, object)),
+      (this.filterData = (checked, name) => {
+        const selectedColumn = this.matchSelectedColumnNameToAttr(name);
+        console.log(this.defaultColumns);
+        const { managedRows, managedColumns, filters } = this.state;
+        const filteredRows = [];
+        if (checked) {
+          const updatedFilters = filters.filter(item => item !== selectedColumn);
+          const filteredColumns = this.defaultColumns.filter(
+            column => !updatedFilters.includes(this.matchSelectedColumnNameToAttr(column))
+          );
+
+          this.defaultRows.forEach(item => filteredRows.push(this.removePropFromObject(item, updatedFilters)));
+
+          console.log('filteredRows', filteredRows);
+          console.log('uf', updatedFilters);
+
+          this.setState({
+            filters: updatedFilters,
+            filteredColumns: filteredColumns,
+            filteredRows: filteredRows
+          });
+        } else {
+          let updatedFilters = filters;
+          updatedFilters.push(selectedColumn);
+          console.log(' uf', updatedFilters);
+
+          const filteredColumns = managedColumns.filter(
+            column => !filters.includes(this.matchSelectedColumnNameToAttr(column))
+          );
+
+          //    const filteredRows = this.removePropFromObject(managedRows, selectedColumn);
+          managedRows.forEach(item => filteredRows.push(this.removePropFromObject(item, updatedFilters)));
+
+          console.log('FC', filteredColumns);
+          console.log('FR', filteredRows);
+          // console.log("remove prop from obj", removePropFromObject(managedRows, selectedColumn))
+
+          this.setState({
+            filters: updatedFilters,
+            filteredColumns: filteredColumns,
+            filteredRows: filteredRows
+          });
+        }
+      });
     this.unfilterAllData = () => {
       this.setState({
         filters: [],
@@ -155,9 +196,25 @@ class ColumnManagementAction extends React.Component {
       this.setState(({ filteredColumns, filteredRows, isModalOpen }) => ({
         managedColumns: filteredColumns,
         managedRows: filteredRows,
+        paginatedRows: filteredRows,
         isModalOpen: !isModalOpen
       }));
     };
+
+    this.handleSetPage = (_evt, newPage, perPage, startIdx, endIdx) => {
+      this.setState({
+        paginatedRows: rows.slice(startIdx, endIdx),
+        page: newPage
+      });
+    };
+    this.handlePerPageSelect = (_evt, newPerPage, newPage, startIdx, endIdx) => {
+      this.setState({
+        paginatedRows: rows.slice(startIdx, endIdx),
+        page: newPage,
+        perPage: newPerPage
+      });
+    };
+
     this.selectAllColumns = () => {
       this.unfilterAllData();
       this.setState({
@@ -165,26 +222,13 @@ class ColumnManagementAction extends React.Component {
         check2: true,
         check3: true,
         check4: true,
-        check5: true
+        check5: true,
+        check6: true,
+        check7: true,
+        check8: true
       });
     };
   }
-
-  //   onSelect(event, isSelected, rowId) {
-  //     let rows;
-  //     if (rowId === -1) {
-  //       rows = this.state.rows.map(oneRow => {
-  //         oneRow.selected = isSelected;
-  //         return oneRow;
-  //       });
-  //     } else {
-  //       rows = [...this.state.rows];
-  //       rows[rowId] = { ...rows[rowId], selected: isSelected };
-  //     }
-  //     this.setState({
-  //       rows
-  //     });
-  //   }
 
   toggleSelect(checked) {
     this.setState({
@@ -192,8 +236,23 @@ class ColumnManagementAction extends React.Component {
     });
   }
 
+  renderPagination = (variant, isCompact) => (
+    <Pagination
+      isCompact={isCompact}
+      itemCount={rows.length}
+      page={this.state.page}
+      perPage={this.state.perPage}
+      onSetPage={this.handleSetPage}
+      onPerPageSelect={this.handlePerPageSelect}
+      variant={variant}
+      titles={{
+        paginationTitle: `${variant} pagination`
+      }}
+    />
+  );
+
   renderModal() {
-    const { isModalOpen } = this.state;
+    const { isModalOpen, managedColumns } = this.state;
     return (
       <Modal
         title="Manage columns"
@@ -368,7 +427,12 @@ class ColumnManagementAction extends React.Component {
   }
 
   render() {
-    const { canSelectAll, managedColumns, managedRows } = this.state;
+    const { canSelectAll, managedColumns, managedRows, paginatedRows } = this.state;
+
+    console.log(
+      'test',
+      managedRows.map((row, rowIndex) => Object.entries(row).map(([k, v]) => console.log('k', k, 'v', v)))
+    );
 
     const renderLabel = labelText => {
       switch (labelText) {
@@ -432,110 +496,48 @@ class ColumnManagementAction extends React.Component {
               </OverflowMenu>
             </ToolbarItem>
             <ToolbarItem variant="pagination">
-              <Pagination
-                itemCount={37}
-                widgetId="pagination-options-menu"
-                page={1}
-                variant={PaginationVariant.top}
-                isCompact
-                titles={{
-                  paginationTitle: `Column management top pagination`
-                }}
-              />
             </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
       </React.Fragment>
     );
 
-    // console.log("???", managedRows);
-
     return (
       <React.Fragment>
         <DashboardWrapper>
           <PageSection isFilled>
             <Card>
-              {/* <Table
-                gridBreakPoint="grid-xl"
-                header={
-                  <React.Fragment>
-                    <Toolbar id="page-layout-table-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
-                  </React.Fragment>
-                }
-                //   aria-label="This is a table with checkboxes"
-                id="page-layout-table-column-management-action-table"
-                //   onSelect={this.onSelect}
-                cells={managedColumns}
-                rows={rows.map(row => [
-                    row.name,
-                    row.threads,
-                    row.applications,
-                    row.workspaces,
-                    { title: renderLabel(row.status) },
-                    row.location,
-                    row.lastModified,
-                    {
-                    title: (
-                        <a href="#">
-                        <TableText wrapModifier="truncate">{row.url} </TableText>
-                        </a>
-                    )
-                    }
-                ])}       
-                       actions={this.actions}
-                //   canSelectAll={canSelectAll}
-              >
-                <TableHeader />
-                <TableBody />
-              </Table> */}
               {toolbarItems}
               <TableComposable variant="compact" aria-label="Compact Table">
                 <Thead>
                   <Tr>
-                    <Th key={0}>{managedColumns[0]}</Th>
-                    <Th key={1}>{managedColumns[1]}</Th>
-                    <Th key={2}>{managedColumns[2]}</Th>
-                    <Th key={3}>{managedColumns[3]}</Th>
-                    <Th key={4}>{managedColumns[4]}</Th>
-                    <Th key={5}>{managedColumns[5]}</Th>
-                    <Th key={6}>{managedColumns[6]}</Th>
-                    <Th key={7} width={10}>
-                      {managedColumns[7]}
-                    </Th>
+                    {managedColumns.map((col, idx) => (
+                      <Th key={idx}>{col}</Th>
+                    ))}
                   </Tr>
                 </Thead>
                 <Tbody>
                   {managedRows.map((row, rowIndex) => (
                     <Tr key={rowIndex}>
                       <>
-                        <Td dataLabel={columns[0]}>{row.name}</Td>
-                        <Td dataLabel={columns[1]}>{row.threads}</Td>
-                        <Td dataLabel={columns[2]}>{row.applications}</Td>
-                        <Td dataLabel={columns[3]}>{row.workspaces}</Td>
-                        <Td dataLabel={columns[4]}>{renderLabel(row.status)}</Td>
-                        <Td dataLabel={columns[5]}>{row.location}</Td>
-                        <Td dataLabel={columns[6]}>{row.lastModified}</Td>
-                        <Td dataLabel={columns[7]} modifier="truncate">
-                          <TableText>
-                            <a href="#">{row.url}</a>
-                          </TableText>
-                        </Td>
+                        {Object.entries(row).map(([key, value]) =>
+                          key === 'status' ? (
+                            <Td dataLabel={key}>{renderLabel(value)}</Td>
+                          ) : key === 'url' ? (
+                            <Td dataLabel={key} modifier="truncate">
+                              <TableText>
+                                <a href="#">{row.url}</a>
+                              </TableText>
+                            </Td>
+                          ) : (
+                            <Td dataLabel={key}>{value}</Td>
+                          )
+                        )}
                       </>
                     </Tr>
                   ))}
                 </Tbody>
               </TableComposable>
-              <Pagination
-                isCompact
-                id="page-layout-table-column-management-action-toolbar-bottom"
-                itemCount={37}
-                widgetId="pagination-options-menu-bottom"
-                page={1}
-                variant={PaginationVariant.bottom}
-                titles={{
-                  paginationTitle: `Column management bottom pagination`
-                }}
-              />
               {this.renderModal()}
             </Card>
           </PageSection>
