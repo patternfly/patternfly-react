@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.87.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.86.5...@patternfly/react-log-viewer@4.87.0) (2022-09-21)
+
+
+### Features
+
+* **log-viewer:** add prop initialIndexWidth to support for custom line number col size ([#7939](https://github.com/patternfly/patternfly-react/issues/7939)) ([71787ab](https://github.com/patternfly/patternfly-react/commit/71787abca8da00271e89edd86be7099b88cc974a))
+
+
+
+
+
 ## [4.86.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.86.4...@patternfly/react-log-viewer@4.86.5) (2022-09-21)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer
