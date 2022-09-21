@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ProgressStepper } from '../ProgressStepper';
 import { ProgressStep } from '../ProgressStep';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
@@ -109,4 +109,35 @@ describe('ProgressStep', () => {
     const { asFragment } = render(<ProgressStep description="This is a description">Title</ProgressStep>);
     expect(asFragment()).toMatchSnapshot();
   });
+});
+
+test('renders description class and text', () => {
+  render(
+    <ProgressStep
+      description="Test description"
+    >
+      Title
+    </ProgressStep>
+  );
+
+  expect(screen.getByText('Test description')).toBeVisible();
+  expect(screen.getByText('Test description')).toHaveClass('pf-c-progress-stepper__step-description');
+});
+
+test('renders description line break', () => {
+  render(
+    <ProgressStep
+      description={
+        <>
+          Testing description
+          <br />
+          Line break
+        </>
+      }
+      >
+        Title
+      </ProgressStep>
+  );
+
+  expect(screen.getByText("Testing descriptionLine break")).toBeVisible();
 });
