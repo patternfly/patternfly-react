@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.94.4 (2022-09-22)
+
+
+### Bug Fixes
+
+* **charts:** Interactive legend highlighting not working as expected ([#8035](https://github.com/patternfly/patternfly-react/issues/8035)) ([f51a776](https://github.com/patternfly/patternfly-react/commit/f51a776588e2304c64dc2bd2a2b4d1b0d0e7e452))
+
+
+
+
+
 ## 6.94.3 (2022-09-20)
 
 **Note:** Version bump only for package @patternfly/react-charts
