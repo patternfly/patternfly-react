@@ -1,14 +1,14 @@
 {
   "name": "demo-app-ts",
   "private": true,
-  "version": "4.201.6",
+  "version": "4.201.7",
   "scripts": {
     "build:demo-app": "webpack --mode production",
     "start:demo-app": "webpack-dev-server",
     "serve:demo-app": "node scripts/serve"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.242.1",
+    "@patternfly/react-core": "^4.242.2",
     "react": "^18",
     "react-dom": "^18",
     "react-router": "^5.3.3",

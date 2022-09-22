@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.242.2 (2022-09-22)
+
+
+### Bug Fixes
+
+* **search-input:** wrapped advanced search in div instead of span ([#8025](https://github.com/patternfly/patternfly-react/issues/8025)) ([d38b5d8](https://github.com/patternfly/patternfly-react/commit/d38b5d8398ed9a8bdd209bd90679dc05e091768c))
+
+
+
+
+
 ## 4.242.1 (2022-09-21)
 
 **Note:** Version bump only for package @patternfly/react-core
