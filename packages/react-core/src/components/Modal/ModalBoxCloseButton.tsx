@@ -8,6 +8,8 @@ export interface ModalBoxCloseButtonProps extends OUIAProps {
   className?: string;
   /** A callback for when the close button is clicked. */
   onClose?: () => void;
+  /** Value to set the data-ouia-component-id.*/
+  ouiaId?: number | string;
 }
 
 export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonProps> = ({

@@ -32,6 +32,10 @@ export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 's
   className?: string;
   /** The heading level to use */
   headingLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export const Title: React.FunctionComponent<TitleProps> = ({
