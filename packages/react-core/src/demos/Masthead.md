@@ -3,14 +3,18 @@ id: Masthead
 section: components
 ---
 
-import imgBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import DashboardWrapper from './examples/DashboardWrapper';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 ## Demos
 
-### Basic
+### Masthead with utilities and user dropdown menu
 
-```js file='./examples/Masthead/MastheadBasic.tsx' isFullscreen
+Many mastheads contain utilities which collapse into a dropdown at smaller view port widths. These utilities could include a notification badge to open and close a notification drawer, a link to app or user settings, a help icon which could launch quick starts or link to other resources, and many other utilities. In this demo, the notification badge does not collapse down into the mobile menu so that it is always visible even at narrower view port widths.
+
+```ts file='./examples/Masthead/MastheadWithUtilitiesAndUserDropdownMenu.tsx' isFullscreen
 ```
