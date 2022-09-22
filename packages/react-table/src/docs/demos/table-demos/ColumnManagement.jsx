@@ -30,6 +30,10 @@ import { rows, columns } from '../../examples/Data.jsx';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper.js';
 
 export const ColumnManagementAction = () => {
+
+  const defaultColumns = columns;
+  const defaultRows = rows;
+  
   const [filters, setFilters] = React.useState([]);
   const [filteredColumns, setFilteredColumns] = React.useState([]);
   const [filteredRows, setFilteredRows] = React.useState([]);
@@ -40,9 +44,6 @@ export const ColumnManagementAction = () => {
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(10);
   const [paginatedRows, setPaginatedRows] = React.useState(rows);
-
-  const defaultColumns = columns;
-  const defaultRows = rows;
 
   const matchCheckboxNameToColumn = name => {
     switch (name) {
