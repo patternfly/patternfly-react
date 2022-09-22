@@ -127,6 +127,10 @@ const DatePickerBase = (
 
   React.useEffect(() => {
     setPristine(!value);
+    const newValueDate = dateParse(value);
+    if (errorText && isValidDate(newValueDate)) {
+      setError(newValueDate);
+    }
   }, [value]);
 
   const setError = (date: Date) => {
