@@ -28,7 +28,7 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
     super(props);
     this.state = {
       isBelowBreakpoint: false,
-      breakpointRef: null
+      breakpointRef: undefined
     };
   }
 
@@ -36,17 +36,16 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
 
   getBreakpointRef() {
     const { breakpointReference } = this.props;
-    if (breakpointReference) {
-      if ((breakpointReference as React.RefObject<any>).current) {
-        return (breakpointReference as React.RefObject<any>).current;
-      } else if (typeof breakpointReference === 'function') {
-        return breakpointReference();
-      }
+
+    if ((breakpointReference as React.RefObject<any>).current) {
+      return (breakpointReference as React.RefObject<any>).current;
+    } else if (typeof breakpointReference === 'function') {
+      return breakpointReference();
     }
   }
 
   componentDidMount() {
-    const reference = this.getBreakpointRef();
+    const reference = this.props.breakpointReference ? this.getBreakpointRef() : undefined;
 
     this.setState({ breakpointRef: reference });
     this.observer = getResizeObserver(reference, this.handleResizeWithDelay);
@@ -54,7 +53,7 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
   }
 
   componentDidUpdate(prevProps: Readonly<OverflowMenuProps>, prevState: Readonly<OverflowMenuState>): void {
-    const reference = this.getBreakpointRef();
+    const reference = this.props.breakpointReference ? this.getBreakpointRef() : undefined;
 
     if (prevState.breakpointRef !== reference) {
       // To remove any previous observer/event listener from componentDidMount before adding a new one
