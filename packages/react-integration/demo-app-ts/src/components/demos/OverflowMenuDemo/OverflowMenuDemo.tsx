@@ -262,7 +262,7 @@ export class OverflowMenuDemo extends React.Component {
       </OverflowMenuDropdownItem>
     ];
     return (
-      <div ref={this.breakpointContainerRef} style={{ width: '50%' }}>
+      <div id="container-breakpoint-container" ref={this.breakpointContainerRef} style={{ width: '600px' }}>
         <OverflowMenu
           breakpointReference={this.breakpointContainerRef}
           breakpoint="sm"

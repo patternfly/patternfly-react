@@ -131,7 +131,8 @@ describe('OverflowMenu Demo Test', () => {
 
     context('Dropdown view', () => {
       beforeEach(() => {
-        cy.viewport(1151, 800);
+        cy.viewport(1200, 800);
+        cy.get('#container-breakpoint-container').invoke('attr', 'style', 'width: 575px');
       });
 
       it('displays OverflowMenuControl', () => {
