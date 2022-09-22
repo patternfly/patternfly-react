@@ -11,7 +11,7 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ## Examples
 
-Keyboard interaction patterns and a11y is implemented in the Tile demos, located in the [Demo section](/documentation/react/demos/tiledemo).
+Keyboard interaction patterns and a11y is implemented in the Tile demos, located in the [Demo section](/components/tile/react-demos).
 
 ### Basic
 
