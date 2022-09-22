@@ -241,7 +241,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
         </svg>
       </button>
     </div>
-    <span
+    <div
       class=""
       data-popper-escaped="true"
       data-popper-placement="bottom-start"
@@ -431,7 +431,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
           </div>
         </div>
       </div>
-    </span>
+    </div>
   </div>
 </DocumentFragment>
 `;
