@@ -49,7 +49,7 @@ describe('OverflowMenu', () => {
 
     render(<OverflowMenu breakpoint={'md'} />);
 
-    expect(resizeObserver.mock.calls[1][0]).toEqual(undefined);
+    expect(resizeObserver.mock.calls[1]).toEqual(undefined);
   });
 
   test('should call resizeObserver on selector ref containerRefElement', () => {
