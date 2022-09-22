@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   Button,
   DataList,
@@ -24,226 +24,153 @@ import {
   Select,
   SelectVariant
 } from '@patternfly/react-core';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import { rows, columns } from '../../examples/Data.jsx';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper.js';
-import { toCamel } from '@patternfly/react-table/src/components/Table/utils/utils.js';
-import { update } from 'lodash';
 
-class ColumnManagementAction extends React.Component {
-  constructor(props) {
-    super(props);
-    this.actions = [
-      {
-        title: <a href="#">Link</a>
-      },
-      {
-        title: 'Action'
-      },
-      {
-        isSeparator: true
-      },
-      {
-        title: <a href="#">Separated link</a>
-      }
-    ];
-    this.defaultColumns = columns;
-    this.defaultRows = rows;
-    this.state = {
-      filters: [],
-      filteredColumns: [],
-      filteredRows: [],
-      managedColumns: this.defaultColumns,
-      managedRows: this.defaultRows,
-      canSelectAll: true,
-      isModalOpen: false,
-      check1: true,
-      check2: true,
-      check3: true,
-      check4: true,
-      check5: true,
-      check6: true,
-      check7: true,
-      check8: true,
-      page: 1,
-      perPage: 10,
-      paginatedRows: this.defaultRows.slice(1, 10)
-    };
-    // this.onSelect = this.onSelect.bind(this);
-    this.toggleSelect = this.toggleSelect.bind(this);
-    this.renderModal = this.renderModal.bind(this);
-    this.matchCheckboxNameToColumn = name => {
-      switch (name) {
-        case 'check1':
-          return 'Servers';
-        case 'check2':
-          return 'Threads';
-        case 'check3':
-          return 'Applications';
-        case 'check4':
-          return 'Workspaces';
-        case 'check5':
-          return 'Status';
-        case 'check6':
-          return 'Location';
-        case 'check7':
-          return 'Last Modified';
-        case 'check8':
-          return 'URL';
-      }
-    };
-    this.matchSelectedColumnNameToAttr = name => {
-      switch (name) {
-        case 'Servers':
-          return 'name';
-        case 'Threads':
-          return 'threads';
-        case 'Applications':
-          return 'applications';
-        case 'Workspaces':
-          return 'workspaces';
-        case 'Status':
-          return 'status';
-        case 'Location':
-          return 'location';
-        case 'Last Modified':
-          return 'lastModified';
-        case 'URL':
-          return 'url';
-      }
-    };
+export const ColumnManagementAction = () => {
+  const [filters, setFilters] = React.useState([]);
+  const [filteredColumns, setFilteredColumns] = React.useState([]);
+  const [filteredRows, setFilteredRows] = React.useState([]);
+  const [managedColumns, setManagedColumns] = React.useState(defaultColumns);
+  const [managedRows, setManagedRows] = React.useState(defaultRows);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [checkedState, setCheckedState] = React.useState(Array(columns.length).fill(true));
+  const [page, setPage] = React.useState(1);
+  const [perPage, setPerPage] = React.useState(10);
+  const [paginatedRows, setPaginatedRows] = React.useState(rows);
 
-    // function removePropFromObject(obj, prop) {
-    //    return obj.map(({ [prop]: _, ...keep }) => keep)
-    // }
+  const defaultColumns = columns;
+  const defaultRows = rows;
 
-    (this.removePropFromObject = (object, keys) =>
-      keys.reduce((obj, prop) => {
-        const { [prop]: _, ...keep } = obj;
-        return keep;
-      }, object)),
-      (this.filterData = (checked, name) => {
-        const selectedColumn = this.matchSelectedColumnNameToAttr(name);
-        console.log(this.defaultColumns);
-        const { managedRows, managedColumns, filters } = this.state;
-        const filteredRows = [];
-        if (checked) {
-          const updatedFilters = filters.filter(item => item !== selectedColumn);
-          const filteredColumns = this.defaultColumns.filter(
-            column => !updatedFilters.includes(this.matchSelectedColumnNameToAttr(column))
-          );
+  const matchCheckboxNameToColumn = name => {
+    switch (name) {
+      case 'check1':
+        return 'Servers';
+      case 'check2':
+        return 'Threads';
+      case 'check3':
+        return 'Applications';
+      case 'check4':
+        return 'Workspaces';
+      case 'check5':
+        return 'Status';
+      case 'check6':
+        return 'Location';
+      case 'check7':
+        return 'Last Modified';
+      case 'check8':
+        return 'URL';
+    }
+  };
+  matchSelectedColumnNameToAttr = name => {
+    switch (name) {
+      case 'Servers':
+        return 'name';
+      case 'Threads':
+        return 'threads';
+      case 'Applications':
+        return 'applications';
+      case 'Workspaces':
+        return 'workspaces';
+      case 'Status':
+        return 'status';
+      case 'Location':
+        return 'location';
+      case 'Last Modified':
+        return 'lastModified';
+      case 'URL':
+        return 'url';
+    }
+  };
 
-          this.defaultRows.forEach(item => filteredRows.push(this.removePropFromObject(item, updatedFilters)));
+  const removePropFromObject = (object, keys) =>
+    keys.reduce((obj, prop) => {
+      const { [prop]: _, ...keep } = obj;
+      return keep;
+    }, object);
 
-          console.log('filteredRows', filteredRows);
-          console.log('uf', updatedFilters);
+  const filterData = (checked, name) => {
+    const selectedColumn = matchSelectedColumnNameToAttr(name);
 
-          this.setState({
-            filters: updatedFilters,
-            filteredColumns: filteredColumns,
-            filteredRows: filteredRows
-          });
-        } else {
-          let updatedFilters = filters;
-          updatedFilters.push(selectedColumn);
-          console.log(' uf', updatedFilters);
+    const filteredRows = [];
+    if (checked) {
+      const updatedFilters = filters.filter(item => item !== selectedColumn);
+      const filteredColumns = defaultColumns.filter(
+        column => !updatedFilters.includes(matchSelectedColumnNameToAttr(column))
+      );
 
-          const filteredColumns = managedColumns.filter(
-            column => !filters.includes(this.matchSelectedColumnNameToAttr(column))
-          );
+      defaultRows.forEach(item => filteredRows.push(removePropFromObject(item, updatedFilters)));
 
-          //    const filteredRows = this.removePropFromObject(managedRows, selectedColumn);
-          managedRows.forEach(item => filteredRows.push(this.removePropFromObject(item, updatedFilters)));
+      setFilters(updatedFilters);
+      setFilteredColumns(filteredColumns);
+      setFilteredRows(filteredRows);
+    } else {
+      let updatedFilters = filters;
+      updatedFilters.push(selectedColumn);
 
-          console.log('FC', filteredColumns);
-          console.log('FR', filteredRows);
-          // console.log("remove prop from obj", removePropFromObject(managedRows, selectedColumn))
+      const filteredColumns = managedColumns.filter(column => !filters.includes(matchSelectedColumnNameToAttr(column)));
 
-          this.setState({
-            filters: updatedFilters,
-            filteredColumns: filteredColumns,
-            filteredRows: filteredRows
-          });
-        }
-      });
-    this.unfilterAllData = () => {
-      this.setState({
-        filters: [],
-        filteredColumns: this.defaultColumns,
-        filteredRows: this.defaultRows
-      });
-    };
-    this.handleChange = (checked, event) => {
-      const target = event.target;
-      const value = target.type === 'checkbox' ? target.checked : target.value;
-      console.log('target', target);
-      this.filterData(checked, this.matchCheckboxNameToColumn(target.name));
-      this.setState({
-        [target.name]: value
-      });
-    };
-    this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-    this.onSave = () => {
-      this.setState(({ filteredColumns, filteredRows, isModalOpen }) => ({
-        managedColumns: filteredColumns,
-        managedRows: filteredRows,
-        paginatedRows: filteredRows,
-        isModalOpen: !isModalOpen
-      }));
-    };
+      managedRows.forEach(item => filteredRows.push(removePropFromObject(item, updatedFilters)));
 
-    this.handleSetPage = (_evt, newPage, perPage, startIdx, endIdx) => {
-      this.setState({
-        paginatedRows: rows.slice(startIdx, endIdx),
-        page: newPage
-      });
-    };
-    this.handlePerPageSelect = (_evt, newPerPage, newPage, startIdx, endIdx) => {
-      this.setState({
-        paginatedRows: rows.slice(startIdx, endIdx),
-        page: newPage,
-        perPage: newPerPage
-      });
-    };
+      setFilters(updatedFilters);
+      setFilteredColumns(filteredColumns);
+      setFilteredRows(filteredRows);
+    }
+  };
+  unfilterAllData = () => {
+    setFilters([]);
+    setFilteredColumns(defaultColumns);
+    setFilteredRows(defaultRows);
+  };
+  handleChange = (checked, event) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
 
-    this.selectAllColumns = () => {
-      this.unfilterAllData();
-      this.setState({
-        check1: true,
-        check2: true,
-        check3: true,
-        check4: true,
-        check5: true,
-        check6: true,
-        check7: true,
-        check8: true
-      });
-    };
-  }
+    filterData(checked, matchCheckboxNameToColumn(target.name));
+    const checkedIndex = columns.findIndex(element => element === matchCheckboxNameToColumn(target.name));
 
-  toggleSelect(checked) {
-    this.setState({
-      canSelectAll: checked
-    });
-  }
+    const updatedCheckedState = [...checkedState];
+    updatedCheckedState[checkedIndex] = value;
+    setCheckedState(updatedCheckedState);
+  };
+  const handleModalToggle = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
-  renderPagination = (variant, isCompact) => (
+  React.useEffect(() => {
+    setPaginatedRows(managedRows.slice((page - 1) * perPage, page * perPage - 1));
+  }, [managedRows, page, perPage]);
+
+  const onSave = () => {
+    setManagedColumns(filteredColumns);
+    setManagedRows(filteredRows);
+    setPaginatedRows(filteredRows);
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const handleSetPage = (_evt, newPage) => {
+    setPage(newPage);
+  };
+
+  const handlePerPageSelect = (_evt, newPerPage) => {
+    setPerPage(newPerPage);
+  };
+
+  const selectAllColumns = () => {
+    unfilterAllData();
+    setCheckedState(Array(columns.length).fill(true));
+  };
+
+  const renderPagination = (variant, isCompact) => (
     <Pagination
       isCompact={isCompact}
       itemCount={rows.length}
-      page={this.state.page}
-      perPage={this.state.perPage}
-      onSetPage={this.handleSetPage}
-      onPerPageSelect={this.handlePerPageSelect}
+      page={page}
+      perPage={perPage}
+      onSetPage={handleSetPage}
+      onPerPageSelect={handlePerPageSelect}
       variant={variant}
       titles={{
         paginationTitle: `${variant} pagination`
@@ -251,8 +178,7 @@ class ColumnManagementAction extends React.Component {
     />
   );
 
-  renderModal() {
-    const { isModalOpen, managedColumns } = this.state;
+  renderModal = () => {
     return (
       <Modal
         title="Manage columns"
@@ -261,17 +187,17 @@ class ColumnManagementAction extends React.Component {
         description={
           <TextContent>
             <Text component={TextVariants.p}>Selected categories will be displayed in the table.</Text>
-            <Button isInline onClick={this.selectAllColumns} variant="link">
+            <Button isInline onClick={selectAllColumns} variant="link">
               Select all
             </Button>
           </TextContent>
         }
-        onClose={this.handleModalToggle}
+        onClose={handleModalToggle}
         actions={[
-          <Button key="save" variant="primary" onClick={this.onSave}>
+          <Button key="save" variant="primary" onClick={onSave}>
             Save
           </Button>,
-          <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+          <Button key="cancel" variant="secondary" onClick={handleModalToggle}>
             Cancel
           </Button>
         ]}
@@ -281,10 +207,10 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item1"
-                checked={this.state.check1}
+                checked={checkedState[0]}
                 name="check1"
                 id="check1"
-                onChange={this.handleChange}
+                onChange={handleChange}
               />
               <DataListItemCells
                 dataListCells={[
@@ -299,10 +225,10 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item2"
-                checked={this.state.check2}
+                checked={checkedState[1]}
                 name="check2"
                 id="check2"
-                onChange={this.handleChange}
+                onChange={handleChange}
               />
               <DataListItemCells
                 dataListCells={[
@@ -317,10 +243,10 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item3"
-                checked={this.state.check3}
+                checked={checkedState[2]}
                 name="check3"
                 id="check3"
-                onChange={this.handleChange}
+                onChange={handleChange}
               />
               <DataListItemCells
                 dataListCells={[
@@ -335,10 +261,10 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item4"
-                checked={this.state.check4}
+                checked={checkedState[3]}
                 name="check4"
                 id="check4"
-                onChange={this.handleChange}
+                onChange={handleChange}
               />
               <DataListItemCells
                 dataListCells={[
@@ -353,10 +279,10 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item4"
-                checked={this.state.check5}
+                checked={checkedState[4]}
                 name="check5"
                 id="check5"
-                onChange={this.handleChange}
+                onChange={handleChange}
               />
               <DataListItemCells
                 dataListCells={[
@@ -371,10 +297,10 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item5"
-                checked={this.state.check6}
+                checked={checkedState[5]}
                 name="check6"
                 id="check6"
-                onChange={this.handleChange}
+                onChange={handleChange}
               />
               <DataListItemCells
                 dataListCells={[
@@ -389,10 +315,10 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item6"
-                checked={this.state.check7}
+                checked={checkedState[6]}
                 name="check7"
                 id="check7"
-                onChange={this.handleChange}
+                onChange={handleChange}
               />
               <DataListItemCells
                 dataListCells={[
@@ -407,10 +333,10 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item5"
-                checked={this.state.check8}
+                checked={checkedState[7]}
                 name="check8"
                 id="check8"
-                onChange={this.handleChange}
+                onChange={handleChange}
               />
               <DataListItemCells
                 dataListCells={[
@@ -424,125 +350,116 @@ class ColumnManagementAction extends React.Component {
         </DataList>
       </Modal>
     );
-  }
+  };
 
-  render() {
-    const { canSelectAll, managedColumns, managedRows, paginatedRows } = this.state;
+  const renderLabel = labelText => {
+    switch (labelText) {
+      case 'Running':
+        return <Label color="green">{labelText}</Label>;
+      case 'Stopped':
+        return <Label color="orange">{labelText}</Label>;
+      case 'Needs Maintenance':
+        return <Label color="blue">{labelText}</Label>;
+      case 'Down':
+        return <Label color="red">{labelText}</Label>;
+    }
+  };
 
-    console.log(
-      'test',
-      managedRows.map((row, rowIndex) => Object.entries(row).map(([k, v]) => console.log('k', k, 'v', v)))
-    );
-
-    const renderLabel = labelText => {
-      switch (labelText) {
-        case 'Running':
-          return <Label color="green">{labelText}</Label>;
-        case 'Stopped':
-          return <Label color="orange">{labelText}</Label>;
-        case 'Needs Maintenance':
-          return <Label color="blue">{labelText}</Label>;
-        case 'Down':
-          return <Label color="red">{labelText}</Label>;
-      }
-    };
-
-    const toolbarItems = (
-      <React.Fragment>
-        <Toolbar id="page-layout-table-column-management-action-toolbar-top">
-          <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>
-            Choose one
-          </span>
-          <ToolbarContent>
-            <ToolbarItem variant="overflow-menu">
-              <OverflowMenu breakpoint="md">
-                <OverflowMenuItem isPersistent>
-                  <Select
-                    id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-                    variant={SelectVariant.single}
-                    aria-label="Select Input"
-                    aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-                    placeholderText={
-                      <>
-                        <FilterIcon /> Name
-                      </>
-                    }
-                  />
+  const toolbarItems = (
+    <React.Fragment>
+      <Toolbar id="page-layout-table-column-management-action-toolbar-top">
+        <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>
+          Choose one
+        </span>
+        <ToolbarContent>
+          <ToolbarItem variant="overflow-menu">
+            <OverflowMenu breakpoint="md">
+              <OverflowMenuItem isPersistent>
+                <Select
+                  id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
+                  variant={SelectVariant.single}
+                  aria-label="Select Input"
+                  aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
+                  placeholderText={
+                    <>
+                      <FilterIcon /> Name
+                    </>
+                  }
+                />
+              </OverflowMenuItem>
+              <OverflowMenuItem>
+                <OptionsMenu
+                  id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
+                  isPlain
+                  menuItems={[]}
+                  toggle={
+                    <OptionsMenuToggle
+                      toggleTemplate={<SortAmountDownIcon aria-hidden="true" />}
+                      aria-label="Sort by"
+                      hideCaret
+                    />
+                  }
+                />
+              </OverflowMenuItem>
+              <OverflowMenuGroup groupType="button" isPersistent>
+                <OverflowMenuItem>
+                  <Button variant="primary">Action</Button>
                 </OverflowMenuItem>
                 <OverflowMenuItem>
-                  <OptionsMenu
-                    id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
-                    isPlain
-                    menuItems={[]}
-                    toggle={
-                      <OptionsMenuToggle
-                        toggleTemplate={<SortAmountDownIcon aria-hidden="true" />}
-                        aria-label="Sort by"
-                        hideCaret
-                      />
-                    }
-                  />
+                  <Button variant="link" onClick={handleModalToggle}>
+                    Manage columns
+                  </Button>
                 </OverflowMenuItem>
-                <OverflowMenuGroup groupType="button" isPersistent>
-                  <OverflowMenuItem>
-                    <Button variant="primary">Action</Button>
-                  </OverflowMenuItem>
-                  <OverflowMenuItem>
-                    <Button variant="link" onClick={this.handleModalToggle}>
-                      Manage columns
-                    </Button>
-                  </OverflowMenuItem>
-                </OverflowMenuGroup>
-              </OverflowMenu>
-            </ToolbarItem>
-            <ToolbarItem variant="pagination">
-            </ToolbarItem>
-          </ToolbarContent>
-        </Toolbar>
-      </React.Fragment>
-    );
+              </OverflowMenuGroup>
+            </OverflowMenu>
+          </ToolbarItem>
+          <ToolbarItem variant="pagination">{renderPagination()}</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    </React.Fragment>
+  );
 
-    return (
-      <React.Fragment>
-        <DashboardWrapper>
-          <PageSection isFilled>
-            <Card>
-              {toolbarItems}
-              <TableComposable variant="compact" aria-label="Compact Table">
-                <Thead>
-                  <Tr>
-                    {managedColumns.map((col, idx) => (
-                      <Th key={idx}>{col}</Th>
-                    ))}
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  {managedRows.map((row, rowIndex) => (
-                    <Tr key={rowIndex}>
-                      <>
-                        {Object.entries(row).map(([key, value]) =>
-                          key === 'status' ? (
-                            <Td dataLabel={key}>{renderLabel(value)}</Td>
-                          ) : key === 'url' ? (
-                            <Td dataLabel={key} modifier="truncate">
-                              <TableText>
-                                <a href="#">{row.url}</a>
-                              </TableText>
-                            </Td>
-                          ) : (
-                            <Td dataLabel={key}>{value}</Td>
-                          )
-                        )}
-                      </>
-                    </Tr>
+  return (
+    <React.Fragment>
+      <DashboardWrapper>
+        <PageSection isFilled>
+          <Card>
+            {toolbarItems}
+            <TableComposable variant="compact" aria-label="Compact Table">
+              <Thead>
+                <Tr>
+                  {managedColumns.map((col, idx) => (
+                    <Th key={idx}>{col}</Th>
                   ))}
-                </Tbody>
-              </TableComposable>
-              {this.renderModal()}
-            </Card>
-          </PageSection>
-        </DashboardWrapper>
-      </React.Fragment>
-    );
-  }
-}
+                </Tr>
+              </Thead>
+              <Tbody>
+                {paginatedRows.map((row, rowIndex) => (
+                  <Tr key={rowIndex}>
+                    <>
+                      {Object.entries(row).map(([key, value]) =>
+                        key === 'status' ? (
+                          <Td dataLabel={key}>{renderLabel(value)}</Td>
+                        ) : key === 'url' ? (
+                          <Td dataLabel={key} modifier="truncate">
+                            <TableText>
+                              <a href="#">{row.url}</a>
+                            </TableText>
+                          </Td>
+                        ) : (
+                          <Td dataLabel={key}>{value}</Td>
+                        )
+                      )}
+                    </>
+                  </Tr>
+                ))}
+              </Tbody>
+            </TableComposable>
+            {renderPagination()}
+            {renderModal()}
+          </Card>
+        </PageSection>
+      </DashboardWrapper>
+    </React.Fragment>
+  );
+};
