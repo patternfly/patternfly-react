@@ -70,6 +70,7 @@ import { Button } from '@patternfly/react-core';
 * [FormSelect](/components/form-select)
 * [Menu](/components/menu)
 * [Modal](/components/modal)
+* [ModalBoxCloseButton](/components/modal)
 * [ModalContent](/components/modal)
 * [Nav](/components/navigation)
 * [NavExpandable](/components/navigation)
