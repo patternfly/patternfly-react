@@ -112,7 +112,6 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
       isDisabled,
       isIconSprite,
       isReadOnly,
-      readOnly,
       readOnlyVariant,
       resizeOrientation,
       innerRef,
@@ -140,7 +139,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
         aria-invalid={validated === ValidatedOptions.error}
         required={isRequired}
         disabled={isDisabled || disabled}
-        readOnly={!!readOnlyVariant || isReadOnly || readOnly}
+        readOnly={!!readOnlyVariant || isReadOnly}
         ref={innerRef || this.inputRef}
         {...props}
       />

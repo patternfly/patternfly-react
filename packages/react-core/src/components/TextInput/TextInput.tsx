@@ -176,7 +176,6 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
       onBlur,
       isLeftTruncated,
       isReadOnly,
-      readOnly,
       readOnlyVariant,
       isRequired,
       isDisabled,
@@ -199,7 +198,6 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
 
     return (
       <input
-        {...props}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
         className={css(
@@ -218,10 +216,11 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
         aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
         required={isRequired}
         disabled={isDisabled}
-        readOnly={!!readOnlyVariant || isReadOnly || readOnly}
+        readOnly={!!readOnlyVariant || isReadOnly}
         ref={innerRef || this.inputRef}
         {...((customIconUrl || customIconDimensions) && { style: customIconStyle })}
         {...getOUIAProps(TextInput.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
+        {...props}
       />
     );
   }
