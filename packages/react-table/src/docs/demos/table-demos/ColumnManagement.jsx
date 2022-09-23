@@ -422,7 +422,7 @@ export const ColumnManagementAction = () => {
 
   return (
     <React.Fragment>
-      <DashboardWrapper>
+      <DashboardWrapper hasPageTemplateTitle>
         <PageSection isFilled>
           <Card>
             {toolbarItems}
