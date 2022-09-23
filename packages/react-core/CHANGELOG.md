@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.242.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.242.2...@patternfly/react-core@4.242.3) (2022-09-23)
+
+
+### Bug Fixes
+
+* **Tabs:** reenabled overflow scroll transition functionality ([#8022](https://github.com/patternfly/patternfly-react/issues/8022)) ([eb853b9](https://github.com/patternfly/patternfly-react/commit/eb853b9e6a5faa014df71ce9b3b903fc3223c09a))
+
+
+
+
+
 ## 4.242.2 (2022-09-22)
 
 
