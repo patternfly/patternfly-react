@@ -41,7 +41,6 @@ exports[`TextInput invalid text input 1`] = `
     data-ouia-component-id="OUIA-Generated-TextInputBase-7"
     data-ouia-component-type="PF4/TextInput"
     data-ouia-safe="true"
-    required=""
     type="text"
     value="test input"
   />
@@ -104,7 +103,6 @@ exports[`TextInput validated text input error 1`] = `
     data-ouia-component-id="OUIA-Generated-TextInputBase-10"
     data-ouia-component-type="PF4/TextInput"
     data-ouia-safe="true"
-    required=""
     type="text"
     value="test input"
   />
