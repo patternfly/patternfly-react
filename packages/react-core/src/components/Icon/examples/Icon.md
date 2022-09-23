@@ -1,0 +1,52 @@
+---
+id: Icon
+section: components
+cssPrefix: pf-c-icon
+propComponents: ['Icon']
+beta: true
+---
+
+import LongArrowAltDownIcon from '@patternfly/react-icons/dist/esm/icons/long-arrow-alt-down-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+
+## Examples
+
+### Basic
+
+```ts file="IconBasic.tsx"
+```
+
+### Sizes
+
+```ts file="IconSizes.tsx"
+```
+
+### Status colors
+
+```ts file="IconStatus.tsx"
+```
+
+### Sizing content within the icon container
+
+Providing both container and content size properties allow an icon to maintain a consistent size, even if the contents change in size.
+
+```ts file="IconContentSizes.tsx"
+```
+
+### Inline
+
+```ts file="IconInline.tsx"
+```
+
+### In progress
+
+```ts file="IconProgress.tsx"
+```
