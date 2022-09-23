@@ -114,7 +114,14 @@ const variantStyle = {
 };
 
 interface TabsState {
+  /** Used to signal if the scroll buttons should be used  */
+  enableScrollButtons: boolean;
+  /** Used to control if the scroll buttons should be shown to the user via the pf-m-scrollable class */
   showScrollButtons: boolean;
+  /** Used to control if the scroll buttons should be rendered. Rendering must occur before the scroll buttons are
+   * shown and rendering must be stopped after they stop being shown to preserve CSS transitions.
+   */
+  renderScrollButtons: boolean;
   disableLeftScrollButton: boolean;
   disableRightScrollButton: boolean;
   shownKeys: (string | number)[];
@@ -127,10 +134,13 @@ interface TabsState {
 export class Tabs extends React.Component<TabsProps, TabsState> {
   static displayName = 'Tabs';
   tabList = React.createRef<HTMLUListElement>();
+  leftScrollButtonRef = React.createRef<HTMLButtonElement>();
   constructor(props: TabsProps) {
     super(props);
     this.state = {
+      enableScrollButtons: false,
       showScrollButtons: false,
+      renderScrollButtons: false,
       disableLeftScrollButton: true,
       disableRightScrollButton: true,
       shownKeys: this.props.defaultActiveKey !== undefined ? [this.props.defaultActiveKey] : [this.props.activeKey], // only for mountOnEnter case
@@ -219,7 +229,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       const container = this.tabList.current;
       let disableLeftScrollButton = true;
       let disableRightScrollButton = true;
-      let showScrollButtons = false;
+      let enableScrollButtons = false;
       let overflowingTabCount = 0;
 
       if (container && !this.props.isVertical && !isOverflowHorizontal) {
@@ -229,7 +239,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         // get last element and check if it is in view
         const overflowOnRight = !isElementInView(container, container.lastChild as HTMLElement, false);
 
-        showScrollButtons = overflowOnLeft || overflowOnRight;
+        enableScrollButtons = overflowOnLeft || overflowOnRight;
 
         disableLeftScrollButton = !overflowOnLeft;
         disableRightScrollButton = !overflowOnRight;
@@ -240,7 +250,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       }
 
       this.setState({
-        showScrollButtons,
+        enableScrollButtons,
         disableLeftScrollButton,
         disableRightScrollButton,
         overflowingTabCount
@@ -287,6 +297,13 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     }
   };
 
+  hideScrollButtons = () => {
+    const { enableScrollButtons, renderScrollButtons, showScrollButtons } = this.state;
+    if (!enableScrollButtons && !showScrollButtons && renderScrollButtons) {
+      this.setState({ renderScrollButtons: false });
+    }
+  };
+
   componentDidMount() {
     if (!this.props.isVertical) {
       if (canUseDOM) {
@@ -304,11 +321,12 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       }
     }
     clearTimeout(this.scrollTimeout);
+    this.leftScrollButtonRef.current?.removeEventListener('transitionend', this.hideScrollButtons);
   }
 
-  componentDidUpdate(prevProps: TabsProps) {
+  componentDidUpdate(prevProps: TabsProps, prevState: TabsState) {
     const { activeKey, mountOnEnter, isOverflowHorizontal, children } = this.props;
-    const { shownKeys, overflowingTabCount } = this.state;
+    const { shownKeys, overflowingTabCount, enableScrollButtons } = this.state;
     if (prevProps.activeKey !== activeKey && mountOnEnter && shownKeys.indexOf(activeKey) < 0) {
       this.setState({
         shownKeys: shownKeys.concat(activeKey)
@@ -326,6 +344,16 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     const currentOverflowingTabCount = this.countOverflowingElements(this.tabList.current);
     if (isOverflowHorizontal && currentOverflowingTabCount) {
       this.setState({ overflowingTabCount: currentOverflowingTabCount + overflowingTabCount });
+    }
+
+    if (!prevState.enableScrollButtons && enableScrollButtons) {
+      this.setState({ renderScrollButtons: true });
+      setTimeout(() => {
+        this.leftScrollButtonRef.current?.addEventListener('transitionend', this.hideScrollButtons);
+        this.setState({ showScrollButtons: true });
+      }, 100);
+    } else if (prevState.enableScrollButtons && !enableScrollButtons) {
+      this.setState({ showScrollButtons: false });
     }
   }
 
@@ -367,6 +395,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     } = this.props;
     const {
       showScrollButtons,
+      renderScrollButtons,
       disableLeftScrollButton,
       disableRightScrollButton,
       shownKeys,
@@ -421,7 +450,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             isVertical && expandable && formatBreakpointMods(expandable, styles),
             isVertical && expandable && isExpandedLocal && styles.modifiers.expanded,
             isBox && styles.modifiers.box,
-            showScrollButtons && !isVertical && styles.modifiers.scrollable,
+            showScrollButtons && styles.modifiers.scrollable,
             usePageInsets && styles.modifiers.pageInsets,
             !hasBorderBottom && styles.modifiers.noBorderBottom,
             hasSecondaryBorderBottom && styles.modifiers.borderBottom,
@@ -461,7 +490,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               )}
             </GenerateId>
           )}
-          {showScrollButtons && (
+          {renderScrollButtons && (
             <button
               type="button"
               className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
@@ -469,6 +498,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               onClick={this.scrollLeft}
               disabled={disableLeftScrollButton}
               aria-hidden={disableLeftScrollButton}
+              ref={this.leftScrollButtonRef}
             >
               <AngleLeftIcon />
             </button>
@@ -477,7 +507,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             {isOverflowHorizontal ? filteredChildrenWithoutOverflow : filteredChildren}
             {hasOverflowTab && <OverflowTab overflowingTabs={overflowingTabProps} {...overflowObjectProps} />}
           </ul>
-          {showScrollButtons && (
+          {renderScrollButtons && (
             <button
               type="button"
               className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
