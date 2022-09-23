@@ -105,7 +105,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     variant: 'inline',
     position: PopoverPosition.top,
     maxWidth: '150px',
-    exitDelay: 1600,
+    exitDelay: 1500,
     entryDelay: 300,
     switchDelay: 2000,
     onCopy: clipboardCopyFunc,

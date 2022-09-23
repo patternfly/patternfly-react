@@ -234,7 +234,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     }
   }, [isVisible]);
   React.useEffect(() => {
-    clearTimeouts([transitionTimerRef, hideTimerRef]);
+    clearTimeouts([hideTimerRef]);
     hideTimerRef.current = setTimeout(() => {
       setOpacity(0);
       transitionTimerRef.current = setTimeout(() => setVisible(false), animationDuration);
@@ -248,7 +248,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     }, entryDelay);
   };
   const hide = React.useCallback(() => {
-    clearTimeouts([showTimerRef, transitionTimerRef, hideTimerRef]);
+    clearTimeouts([showTimerRef]);
     hideTimerRef.current = setTimeout(() => {
       setOpacity(0);
       transitionTimerRef.current = setTimeout(() => setVisible(false), animationDuration);
