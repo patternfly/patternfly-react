@@ -3,7 +3,7 @@ id: Dropdown
 section: components
 cssPrefix: pf-c-dropdown
 propComponents:
-  ['Dropdown', 'DropdownGroup', 'DropdownItem', 'DropdownToggle', 'DropdownToggleCheckbox', 'DropdownToggleAction']
+  ['Dropdown', 'DropdownGroup', 'DropdownItem', 'DropdownToggle', 'DropdownToggleCheckbox', 'DropdownToggleAction', DropdownSeparator]
 ouia: true
 ---
 

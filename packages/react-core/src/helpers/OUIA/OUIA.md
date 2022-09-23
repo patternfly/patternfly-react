@@ -65,6 +65,7 @@ import { Button } from '@patternfly/react-core';
 * [ContextSelector](/components/context-selector)
 * [Dropdown](/components/dropdown)
 * [DropdownItem](/components/dropdown)
+* [DropdownSeparator](/components/dropdown)
 * [DropdownToggle](/components/dropdown)
 * [DropdownToggleCheckbox](/components/dropdown)
 * [FormSelect](/components/form-select)
