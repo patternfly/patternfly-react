@@ -183,8 +183,8 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     </MergedComponent>
   );
 
-  const canDefault = tooltip === '' ? typeof children === 'string' : true;
-  return tooltip !== null && canDefault && showTooltip ? (
+  const canMakeDefaultTooltip = tooltip === '' ? typeof children === 'string' : true;
+  return tooltip !== null && canMakeDefaultTooltip && showTooltip ? (
     <Tooltip content={tooltip || (tooltip === '' && children)} isVisible>
       {cell}
     </Tooltip>

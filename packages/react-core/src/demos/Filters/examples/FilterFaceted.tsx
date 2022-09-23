@@ -135,9 +135,9 @@ export const FilterFaceted: React.FunctionComponent = () => {
   }, []);
 
   // Set up bulk selection menu
-  const bulkSelectMenuRef = React.createRef<HTMLDivElement>();
-  const bulkSelectToggleRef = React.createRef<any>();
-  const bulkSelectContainerRef = React.createRef<HTMLDivElement>();
+  const bulkSelectMenuRef = React.useRef<HTMLDivElement>(null);
+  const bulkSelectToggleRef = React.useRef<any>(null);
+  const bulkSelectContainerRef = React.useRef<HTMLDivElement>(null);
 
   const [isBulkSelectOpen, setIsBulkSelectOpen] = React.useState<boolean>(false);
 
@@ -157,7 +157,7 @@ export const FilterFaceted: React.FunctionComponent = () => {
     ) {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsBulkSelectOpen(!isBulkSelectOpen);
-        bulkSelectToggleRef.current?.focus();
+        bulkSelectToggleRef.current?.querySelector('button').focus();
       }
     }
   };
@@ -210,13 +210,13 @@ export const FilterFaceted: React.FunctionComponent = () => {
   );
 
   const bulkSelectMenu = (
-    // eslint-disable-next-line no-console
     <Menu
       id="filter-faceted-input-bulk-select"
       ref={bulkSelectMenuRef}
       onSelect={(_ev, itemId) => {
         selectAllRepos(itemId === 1 || itemId === 2);
         setIsBulkSelectOpen(!isBulkSelectOpen);
+        bulkSelectToggleRef.current?.querySelector('button').focus();
       }}
     >
       <MenuContent>
