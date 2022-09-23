@@ -38,14 +38,32 @@ export const TopologyNodeGroupDemo: React.FunctionComponent = withTopologySetup(
             height: 75
           },
           {
+            id: 'n4',
+            type: 'node',
+            width: 75,
+            height: 75
+          },
+          {
             id: 'Group 1',
             type: 'group',
-            children: ['n1', 'n2', 'n3'],
+            children: ['n1', 'n2'],
             group: true,
             label: 'Group 1',
             style: { padding: 15 },
             data: {
               collapsible: false,
+              showContextMenu: false
+            }
+          },
+          {
+            id: 'Group 2',
+            type: 'group',
+            children: ['n3', 'n4'],
+            group: true,
+            label: 'Group 2',
+            style: { padding: 15 },
+            data: {
+              collapsible: true,
               showContextMenu: false
             }
           }
