@@ -57,6 +57,8 @@ export interface DualListSelectorPaneProps {
   onSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** @hide A callback for when the search input value for changes.  To be used when isSearchable is true. */
   onSearchInputChanged?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  /** @hide Callback for search input clear button */
+  onSearchInputClear?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** @hide Filter function for custom filtering based on search string. To be used when isSearchable is true. */
   filterOption?: (option: React.ReactNode, input: string) => boolean;
   /** @hide Accessible label for the search input. To be used when isSearchable is true. */
@@ -81,6 +83,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   searchInputAriaLabel = '',
   onFilterUpdate,
   onSearchInputChanged,
+  onSearchInputClear,
   filterOption,
   id = getUniqueId('dual-list-selector-pane'),
   isDisabled = false,
@@ -161,6 +164,9 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
               ) : (
                 <SearchInput
                   onChange={isDisabled ? undefined : onChange}
+                  onClear={
+                    onSearchInputClear ? onSearchInputClear : e => onChange('', e as React.FormEvent<HTMLInputElement>)
+                  }
                   isDisabled={isDisabled}
                   aria-label={searchInputAriaLabel}
                   type="search"
