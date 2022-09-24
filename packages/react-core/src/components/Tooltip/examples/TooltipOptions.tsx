@@ -106,7 +106,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
           <Select
             onToggle={() => setPositionSelectOpen(!positionSelectOpen)}
             onSelect={(_event, selection) => {
-              setPosition(selection);
+              setPosition(selection.toString() as TooltipPosition);
               setPositionSelectOpen(false);
             }}
             isOpen={positionSelectOpen}
@@ -167,7 +167,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
           <Select
             onToggle={() => setFlipSelectOpen(!flipSelectOpen)}
             onSelect={(_event, selection) => {
-              setFlipBehavior(selection);
+              setFlipBehavior(selection.toString());
               setFlipSelectOpen(false);
             }}
             isOpen={flipSelectOpen}
