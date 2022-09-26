@@ -4,9 +4,11 @@ import { Badge } from '../Badge';
 
 test('Renders without children', () => {
   render(
-      <Badge data-testid="badge" />
+    <div data-testid="badge">
+      <Badge />
+    </div>
   );
-  expect(screen.getByTestId('badge')).toBeVisible();
+  expect(screen.getByTestId('badge').firstChild).toBeVisible();
 });
 
 test('Renders children', () => {
@@ -37,10 +39,9 @@ test('Renders with custom class name when className prop is provided', () => {
 test('Renders with inherited element props spread to the component', () => {
   render(<Badge aria-label="Test label">Test</Badge>);
   expect(screen.getByText('Test')).toHaveAccessibleName('Test label');
-})
+});
 
 test('Matches the snapshot', () => {
   const { asFragment } = render(<Badge>Test</Badge>);
   expect(asFragment()).toMatchSnapshot();
 });
-
