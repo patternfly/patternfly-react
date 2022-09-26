@@ -155,8 +155,10 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     const content = (
       <>
         {isCompact && title && <span className={css(styles.treeViewNodeTitle)}>{title}</span>}
-        {hasCheck ? (
-          <span className={css(styles.treeViewNodeText)}>{name}</span>
+        {isSelectable ? (
+          <button tabIndex={-1} className={css(styles.treeViewNodeText)}>
+            {name}
+          </button>
         ) : (
           <span className={css(styles.treeViewNodeText)}>{name}</span>
         )}
@@ -210,7 +212,6 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                   }
                 }
               }}
-              tabIndex={isSelectable ? 0 : -1}
               {...(hasCheck && { htmlFor: randomId })}
               {...((hasCheck || (isSelectable && children)) && { id: `label-${randomId}` })}
             >
