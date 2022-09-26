@@ -28,12 +28,12 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import { rows, columns } from '../../examples/Data.jsx';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper.js';
+import { capitalize } from '@patternfly/react-table/src/components/Table/utils/utils';
 
 export const ColumnManagementAction = () => {
-
   const defaultColumns = columns;
   const defaultRows = rows;
-  
+
   const [filters, setFilters] = React.useState([]);
   const [filteredColumns, setFilteredColumns] = React.useState([]);
   const [filteredRows, setFilteredRows] = React.useState([]);
@@ -86,82 +86,13 @@ export const ColumnManagementAction = () => {
     }
   };
 
-  const removePropFromObject = (object, keys) =>
-    keys.reduce((obj, prop) => {
-      const { [prop]: _, ...keep } = obj;
-      return keep;
-    }, object);
-
-  const filterData = (checked, name) => {
-    const selectedColumn = matchSelectedColumnNameToAttr(name);
-
-    const filteredRows = [];
-    if (checked) {
-      const updatedFilters = filters.filter(item => item !== selectedColumn);
-      const filteredColumns = defaultColumns.filter(
-        column => !updatedFilters.includes(matchSelectedColumnNameToAttr(column))
-      );
-
-      defaultRows.forEach(item => filteredRows.push(removePropFromObject(item, updatedFilters)));
-
-      setFilters(updatedFilters);
-      setFilteredColumns(filteredColumns);
-      setFilteredRows(filteredRows);
-    } else {
-      let updatedFilters = filters;
-      updatedFilters.push(selectedColumn);
-
-      const filteredColumns = managedColumns.filter(column => !filters.includes(matchSelectedColumnNameToAttr(column)));
-
-      managedRows.forEach(item => filteredRows.push(removePropFromObject(item, updatedFilters)));
-
-      setFilters(updatedFilters);
-      setFilteredColumns(filteredColumns);
-      setFilteredRows(filteredRows);
-    }
-  };
-  unfilterAllData = () => {
-    setFilters([]);
-    setFilteredColumns(defaultColumns);
-    setFilteredRows(defaultRows);
-  };
-  handleChange = (checked, event) => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-
-    filterData(checked, matchCheckboxNameToColumn(target.name));
-    const checkedIndex = columns.findIndex(element => element === matchCheckboxNameToColumn(target.name));
-
-    const updatedCheckedState = [...checkedState];
-    updatedCheckedState[checkedIndex] = value;
-    setCheckedState(updatedCheckedState);
-  };
-  const handleModalToggle = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
-  React.useEffect(() => {
-    setPaginatedRows(managedRows.slice((page - 1) * perPage, page * perPage - 1));
-  }, [managedRows, page, perPage]);
-
-  const onSave = () => {
-    setManagedColumns(filteredColumns);
-    setManagedRows(filteredRows);
-    setPaginatedRows(filteredRows);
-    setIsModalOpen(!isModalOpen);
-  };
-
+  // Pagination logic
   const handleSetPage = (_evt, newPage) => {
     setPage(newPage);
   };
 
   const handlePerPageSelect = (_evt, newPerPage) => {
     setPerPage(newPerPage);
-  };
-
-  const selectAllColumns = () => {
-    unfilterAllData();
-    setCheckedState(Array(columns.length).fill(true));
   };
 
   const renderPagination = (variant, isCompact) => (
@@ -178,6 +109,86 @@ export const ColumnManagementAction = () => {
       }}
     />
   );
+
+  React.useEffect(() => {
+    setPaginatedRows(managedRows.slice((page - 1) * perPage, page * perPage - 1));
+  }, [managedRows, page, perPage]);
+
+  // Removes attribute from each node object in Data.jsx
+  const removePropFromObject = (object, keys) =>
+    keys.reduce((obj, prop) => {
+      const { [prop]: _, ...keep } = obj;
+      return keep;
+    }, object);
+
+  // Filters columns out of table that are not selected in the column management modal
+  const filterData = (checked, name) => {
+    const selectedColumn = matchSelectedColumnNameToAttr(name);
+
+    const filteredRows = [];
+    if (checked) {
+      const updatedFilters = filters.filter(item => item !== selectedColumn);
+
+      // Only show the names of columns that were selected in the modal
+      const filteredColumns = defaultColumns.filter(
+        column => !updatedFilters.includes(matchSelectedColumnNameToAttr(column))
+      );
+
+      // Remove the attributes (i.e. "columns") that were not selected
+      defaultRows.forEach(item => filteredRows.push(removePropFromObject(item, updatedFilters)));
+
+      setFilters(updatedFilters);
+      setFilteredColumns(filteredColumns);
+      setFilteredRows(filteredRows);
+    } else {
+      let updatedFilters = filters;
+      updatedFilters.push(selectedColumn);
+
+      // Only show the names of columns that were selected in the modal
+      const filteredColumns = managedColumns.filter(column => !filters.includes(matchSelectedColumnNameToAttr(column)));
+
+      // Remove the attributes (i.e. "columns") that were not selected
+      managedRows.forEach(item => filteredRows.push(removePropFromObject(item, updatedFilters)));
+
+      setFilters(updatedFilters);
+      setFilteredColumns(filteredColumns);
+      setFilteredRows(filteredRows);
+    }
+  };
+  unfilterAllData = () => {
+    setFilters([]);
+    setFilteredColumns(defaultColumns);
+    setFilteredRows(defaultRows);
+  };
+
+  handleChange = (checked, event) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
+    // Remove any columns from the table that aren't checked
+    filterData(checked, matchCheckboxNameToColumn(target.name));
+    const checkedIndex = columns.findIndex(element => element === matchCheckboxNameToColumn(target.name));
+
+    const updatedCheckedState = [...checkedState];
+    updatedCheckedState[checkedIndex] = value;
+    setCheckedState(updatedCheckedState);
+  };
+
+  const handleModalToggle = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const onSave = () => {
+    setManagedColumns(filteredColumns);
+    setManagedRows(filteredRows);
+    setPaginatedRows(filteredRows);
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const selectAllColumns = () => {
+    unfilterAllData();
+    setCheckedState(Array(columns.length).fill(true));
+  };
 
   renderModal = () => {
     return (
@@ -375,7 +386,7 @@ export const ColumnManagementAction = () => {
         <ToolbarContent>
           <ToolbarItem variant="overflow-menu">
             <OverflowMenu breakpoint="md">
-              <OverflowMenuItem isPersistent>
+              <OverflowMenuItem>
                 <Select
                   id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
                   variant={SelectVariant.single}
@@ -406,7 +417,7 @@ export const ColumnManagementAction = () => {
                 <OverflowMenuItem>
                   <Button variant="primary">Action</Button>
                 </OverflowMenuItem>
-                <OverflowMenuItem>
+                <OverflowMenuItem breakpoint="md" isPersistent>
                   <Button variant="link" onClick={handleModalToggle}>
                     Manage columns
                   </Button>
@@ -426,11 +437,11 @@ export const ColumnManagementAction = () => {
         <PageSection isFilled>
           <Card>
             {toolbarItems}
-            <TableComposable variant="compact" aria-label="Compact Table">
+            <TableComposable variant="compact" aria-label="Column Management Table">
               <Thead>
                 <Tr>
-                  {managedColumns.map((col, idx) => (
-                    <Th key={idx}>{col}</Th>
+                  {managedColumns.map((column, columnIndex) => (
+                    <Th key={columnIndex}>{column}</Th>
                   ))}
                 </Tr>
               </Thead>
@@ -440,15 +451,24 @@ export const ColumnManagementAction = () => {
                     <>
                       {Object.entries(row).map(([key, value]) =>
                         key === 'status' ? (
-                          <Td dataLabel={key}>{renderLabel(value)}</Td>
+                          <Td width={15} dataLabel="Status">
+                            {renderLabel(value)}
+                          </Td>
                         ) : key === 'url' ? (
-                          <Td dataLabel={key} modifier="truncate">
+                          <Td width={10} dataLabel="URL" modifier="truncate">
                             <TableText>
                               <a href="#">{row.url}</a>
                             </TableText>
                           </Td>
                         ) : (
-                          <Td dataLabel={key}>{value}</Td>
+                          <Td
+                            width={key === 'name' ? 15 : 10}
+                            dataLabel={
+                              key === 'lastModified' ? 'Last modified' : capitalize(key)
+                            }
+                          >
+                            {value}
+                          </Td>
                         )
                       )}
                     </>
