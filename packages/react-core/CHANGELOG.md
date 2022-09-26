@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.242.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.242.5...@patternfly/react-core@4.242.6) (2022-09-26)
+
+
+### Bug Fixes
+
+* **DatePicker:** Changed  popoverProps type to partial ([#8002](https://github.com/patternfly/patternfly-react/issues/8002)) ([93ea413](https://github.com/patternfly/patternfly-react/commit/93ea413b5509424de7029e4ae334a1c9caaeb1b5))
+
+
+
+
+
 ## [4.242.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.242.4...@patternfly/react-core@4.242.5) (2022-09-26)
 
 **Note:** Version bump only for package @patternfly/react-core
