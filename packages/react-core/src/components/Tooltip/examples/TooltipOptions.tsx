@@ -34,9 +34,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
             label="trigger: mouseenter"
             isChecked={trigger.includes('mouseenter')}
             onChange={checked => {
-              let updatedTrigger: string[] = [];
-              checked && (updatedTrigger = trigger.concat('mouseenter'));
-              !checked && (updatedTrigger = trigger.filter(t => t !== 'mouseenter'));
+              const updatedTrigger = checked ? trigger.concat('mouseenter') : trigger.filter(t => t !== 'mouseenter');
               setIsVisible(false);
               setTrigger(updatedTrigger);
             }}
@@ -47,9 +45,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
             label="trigger: focus"
             isChecked={trigger.includes('focus')}
             onChange={checked => {
-              let updatedTrigger;
-              checked && (updatedTrigger = trigger.concat('focus'));
-              !checked && (updatedTrigger = trigger.filter(t => t !== 'focus'));
+              const updatedTrigger = checked ? trigger.concat('focus') : trigger.filter(t => t !== 'focus');
               setIsVisible(false);
               setTrigger(updatedTrigger);
             }}
@@ -60,9 +56,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
             label="trigger: click"
             isChecked={trigger.includes('click')}
             onChange={checked => {
-              let updatedTrigger;
-              checked && (updatedTrigger = trigger.concat('click'));
-              !checked && (updatedTrigger = trigger.filter(t => t !== 'click'));
+              const updatedTrigger = checked ? trigger.concat('click') : trigger.filter(t => t !== 'click');
               setIsVisible(false);
               setTimeout(() => setTrigger(updatedTrigger));
             }}
@@ -73,9 +67,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
             label="trigger: manual"
             isChecked={trigger.includes('manual')}
             onChange={checked => {
-              let updatedTrigger;
-              checked && (updatedTrigger = trigger.concat('manual'));
-              !checked && (updatedTrigger = trigger.filter(t => t !== 'manual'));
+              const updatedTrigger = checked ? trigger.concat('manual') : trigger.filter(t => t !== 'manual');
               setIsVisible(false);
               setTrigger(updatedTrigger);
             }}
