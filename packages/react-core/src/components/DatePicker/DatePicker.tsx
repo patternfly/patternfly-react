@@ -45,7 +45,7 @@ export interface DatePickerProps
    */
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'parent';
   /** Props to pass to the Popover */
-  popoverProps?: Omit<PopoverProps, 'appendTo'>;
+  popoverProps?: Partial<Omit<PopoverProps, 'appendTo'>>;
   /** Functions that returns an error message if a date is invalid */
   validators?: ((date: Date) => string)[];
   /** Additional props for input field */
