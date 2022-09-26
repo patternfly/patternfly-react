@@ -27,7 +27,7 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
         {React.Children.map(children, (child, index) => {
           const showDivider = index > 0;
           if (React.isValidElement(child)) {
-            return React.cloneElement(child, { showDivider });
+            return React.cloneElement(child as React.ReactElement<any>, { showDivider });
           }
 
           return child;
