@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.242.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.242.6...@patternfly/react-core@4.242.7) (2022-09-26)
+
+
+### Bug Fixes
+
+* **Breadcrumb:** Fixed type error ([#8038](https://github.com/patternfly/patternfly-react/issues/8038)) ([7ed2b46](https://github.com/patternfly/patternfly-react/commit/7ed2b46e1b349ce90ac4f3fe77595c38cea589ab))
+
+
+
+
+
 ## [4.242.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.242.5...@patternfly/react-core@4.242.6) (2022-09-26)
 
 
