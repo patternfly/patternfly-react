@@ -13,84 +13,40 @@ import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../
 import { InputGroup } from '../InputGroup';
 import { Popper } from '../../helpers';
 
+/** Properties for adding search attributes to an advanced search input. These properties must
+ * be passed in as an object within an array to the search input component's attribute properrty.
+ */
+
 export interface SearchAttribute {
   /** The search attribute's value to be provided in the search input's query string.
-   * It should have no spaces and be unique for every attribute */
+   * It should have no spaces and be unique for every attribute.
+   */
   attr: string;
-  /** The search attribute's display name. It is used to label the field in the advanced search menu */
+  /** The search attribute's display name. It is used to label the field in the advanced
+   * search menu.
+   */
   display: React.ReactNode;
 }
 
+/** Properties for creating an expandable search input. These properties should be passed into
+ * the search input component's expandableInput property.
+ */
+
 export interface ExpandableInput {
-  /** Flag to indicate if the search input is expanded */
+  /** Flag to indicate if the search input is expanded. */
   isExpanded: boolean;
-  /** Callback function to toggle the expandable search input */
+  /** Callback function to toggle the expandable search input. */
   onToggleExpand: (isExpanded: boolean, event: React.SyntheticEvent<HTMLButtonElement>) => void;
-  /** An accessible label for the expandable search input toggle */
+  /** An accessible label for the expandable search input toggle. */
   toggleAriaLabel: string;
 }
 
+/** The main search input component. */
+
 export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'results' | 'ref'> {
-  /** Additional classes added to the banner */
-  className?: string;
-  /** Value of the search input */
-  value?: string;
-  /** Flag indicating if search input is disabled */
-  isDisabled?: boolean;
-  /** An accessible label for the search input */
-  'aria-label'?: string;
-  /** placeholder text of the search input */
-  placeholder?: string;
-  /** @hide A reference object to attach to the input box */
-  innerRef?: React.RefObject<any>;
-  /** A callback for when the input value changes */
-  onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
-  /** A suggestion for autocompleting */
-  hint?: string;
-  /** Object that makes the search input expandable/collapsible */
-  expandableInput?: ExpandableInput;
-  /** A callback for when the search button clicked changes */
-  onSearch?: (
-    value: string,
-    event: React.SyntheticEvent<HTMLButtonElement>,
-    attrValueMap: { [key: string]: string }
-  ) => void;
-  /** A callback for when the user clicks the clear button */
-  onClear?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
-  /** Label for the buttons which reset the advanced search form and clear the search input */
-  resetButtonLabel?: string;
-  /** Label for the buttons which called the onSearch event handler */
-  submitSearchButtonLabel?: string;
-  /** A callback for when the open advanced search button is clicked */
-  onToggleAdvancedSearch?: (event: React.SyntheticEvent<HTMLButtonElement>, isOpen?: boolean) => void;
-  /** A flag for controlling the open state of a custom advanced search implementation */
-  isAdvancedSearchOpen?: boolean;
-  /** Label for the button which opens the advanced search form menu */
-  openMenuButtonAriaLabel?: string;
-  /** Label for the button to navigate to previous result  */
-  previousNavigationButtonAriaLabel?: string;
-  /** Flag indicating if the previous navigation button is disabled */
-  isPreviousNavigationButtonDisabled?: boolean;
-  /** Label for the button to navigate to next result */
-  nextNavigationButtonAriaLabel?: string;
-  /** Flag indicating if the next navigation button is disabled */
-  isNextNavigationButtonDisabled?: boolean;
-  /** Function called when user clicks to navigate to next result */
-  onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
-  /** Function called when user clicks to navigate to previous result */
-  onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
-  /** The number of search results returned. Either a total number of results,
-   * or a string representing the current result over the total number of results. i.e. "1 / 5" */
-  resultsCount?: number | string;
-  /** Array of attribute values used for dynamically generated advanced search */
-  attributes?: string[] | SearchAttribute[];
-  /* Additional elements added after the attributes in the form.
-   * The new form elements can be wrapped in a FormGroup component for automatic formatting */
-  formAdditionalItems?: React.ReactNode;
-  /** Attribute label for strings unassociated with one of the provided listed attributes */
-  hasWordsAttrLabel?: React.ReactNode;
   /** Delimiter in the query string for pairing attributes with search values.
-   * Required whenever attributes are passed as props */
+   * Required whenever attributes are passed as props.
+   */
   advancedSearchDelimiter?: string;
   /** The container to append the menu to.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
@@ -99,8 +55,66 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
    * appendTo={document.getElementById('target')}
    */
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
+  /** An accessible label for the search input. */
+  'aria-label'?: string;
+  /** Array of attribute values used for dynamically generated advanced search. */
+  attributes?: string[] | SearchAttribute[];
+  /** Additional classes added to the search input. */
+  className?: string;
+  /** Object that makes the search input expandable/collapsible. */
+  expandableInput?: ExpandableInput;
+  /* Additional elements added after the attributes in the form.
+   * The new form elements can be wrapped in a form group component for automatic formatting. */
+  formAdditionalItems?: React.ReactNode;
+  /** Attribute label for strings unassociated with one of the provided listed attributes. */
+  hasWordsAttrLabel?: React.ReactNode;
+  /** A suggestion for autocompleting. */
+  hint?: string;
+  /** @hide A reference object to attach to the input box. */
+  innerRef?: React.RefObject<any>;
+  /** A flag for controlling the open state of a custom advanced search implementation. */
+  isAdvancedSearchOpen?: boolean;
+  /** Flag indicating if search input is disabled. */
+  isDisabled?: boolean;
+  /** Flag indicating if the next navigation button is disabled. */
+  isNextNavigationButtonDisabled?: boolean;
+  /** Flag indicating if the previous navigation button is disabled. */
+  isPreviousNavigationButtonDisabled?: boolean;
+  /** Accessible label for the button to navigate to next result. */
+  nextNavigationButtonAriaLabel?: string;
+  /** A callback for when the input value changes. */
+  onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  /** A callback for when the user clicks the clear button. */
+  onClear?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  /** A callback for when the user clicks to navigate to next result. */
+  onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  /** A callback for when the user clicks to navigate to previous result. */
+  onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  /** A callback for when the search button is clicked. */
+  onSearch?: (
+    value: string,
+    event: React.SyntheticEvent<HTMLButtonElement>,
+    attrValueMap: { [key: string]: string }
+  ) => void;
+  /** A callback for when the open advanced search button is clicked. */
+  onToggleAdvancedSearch?: (event: React.SyntheticEvent<HTMLButtonElement>, isOpen?: boolean) => void;
+  /** Accessible label for the button which opens the advanced search form menu. */
+  openMenuButtonAriaLabel?: string;
+  /** Placeholder text of the search input. */
+  placeholder?: string;
+  /** Accessible label for the button to navigate to previous result. */
+  previousNavigationButtonAriaLabel?: string;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
+  /** Label for the button which resets the advanced search form and clears the search input. */
+  resetButtonLabel?: string;
+  /** The number of search results returned. Either a total number of results,
+   * or a string representing the current result over the total number of results. i.e. "1 / 5". */
+  resultsCount?: number | string;
+  /** Label for the button which calls the onSearch event handler. */
+  submitSearchButtonLabel?: string;
+  /** Value of the search input. */
+  value?: string;
 }
 
 const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({

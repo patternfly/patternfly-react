@@ -5,16 +5,16 @@ import { canUseDOM } from '../../helpers/util';
 import { handleArrows } from '../../helpers';
 
 export interface TreeViewRootProps {
-  /** Child nodes of the tree view */
+  /** Child nodes of the tree view. */
   children: React.ReactNode;
-  /** Flag indicating if the tree view has checkboxes */
+  /** Class to add to add if not passed a parentItem property. */
+  className?: string;
+  /** Flag indicating if the tree view has checkboxes. */
   hasChecks?: boolean;
   /** Flag indicating if tree view has guide lines. */
   hasGuides?: boolean;
   /** Variant presentation styles for the tree view. */
   variant?: 'default' | 'compact' | 'compactNoBackground';
-  /** Class to add to add if not passed a parentItem */
-  className?: string;
 }
 
 export class TreeViewRoot extends React.Component<TreeViewRootProps> {
