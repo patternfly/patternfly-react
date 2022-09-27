@@ -14,7 +14,7 @@ import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/ava
 
 ### Masthead with utilities and user dropdown menu
 
-Many mastheads contain utilities which collapse into a dropdown at smaller view port widths. These utilities could include a notification badge to open and close a notification drawer, a link to app or user settings, a help icon which could launch quick starts or link to other resources, and many other utilities. In this demo, the notification badge does not collapse down into the mobile menu so that it is always visible even at narrower view port widths.
+Many mastheads contain utilities which collapse into a dropdown at smaller viewport widths. These utilities could include a notification badge to open and close a notification drawer, a link to app or user settings, a help icon which could launch quick starts or link to other resources, and many other utilities. In this demo, the notification badge does not collapse down into the mobile menu so that it is always visible even at narrower viewport widths.
 
 ```ts file='./examples/Masthead/MastheadWithUtilitiesAndUserDropdownMenu.tsx' isFullscreen
 ```
