@@ -3,8 +3,6 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import topSpacer from '@patternfly/react-tokens/dist/esm/c_modal_box_m_align_top_spacer';
 
-/** Acts as a wrapper that contains only the modal content. */
-
 export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   /** Id to use for the modal box description. */
   'aria-describedby': string;

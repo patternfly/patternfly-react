@@ -3,8 +3,6 @@ import { Button } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { OUIAProps } from '../../helpers';
 
-/** Renders a close button in a modal. */
-
 export interface ModalBoxCloseButtonProps extends OUIAProps {
   /** Additional classes added to the close button. */
   className?: string;

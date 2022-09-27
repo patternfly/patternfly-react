@@ -2,8 +2,6 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 
-/** Renders a custom footer in a modal. */
-
 export interface ModalBoxFooterProps {
   /** Content rendered inside the modal box footer. */
   children?: React.ReactNode;

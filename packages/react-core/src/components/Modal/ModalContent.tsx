@@ -14,10 +14,6 @@ import { ModalBoxDescription } from './ModalBoxDescription';
 import { ModalBoxHeader } from './ModalBoxHeader';
 import { ModalBoxTitle, isVariantIcon } from './ModalBoxTitle';
 
-/** Acts as a wrapper that contains modal content, creates a back drop to prevent interaction
- * with anything beneath the modal, and handles the focus trap for keyboard navigation.
- */
-
 export interface ModalContentProps extends OUIAProps {
   /** Action buttons to add to the standard modal footer. Ignored if the footer property
    * is passed in.

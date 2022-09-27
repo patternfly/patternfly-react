@@ -6,8 +6,6 @@ import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { ModalContent } from './ModalContent';
 import { OUIAProps, getDefaultOUIAId } from '../../helpers';
 
-/** The main modal component. */
-
 export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Action buttons to add to the standard modal footer. Ignored if the footer property
    * is passed in.

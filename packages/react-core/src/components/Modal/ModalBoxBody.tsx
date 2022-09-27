@@ -2,8 +2,6 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 
-/** The main body content of a modal. Depending on the context, this sub-component may be optional. */
-
 export interface ModalBoxBodyProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the modal box body. */
   children?: React.ReactNode;
