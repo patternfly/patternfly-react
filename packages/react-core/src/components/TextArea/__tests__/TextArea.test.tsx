@@ -12,7 +12,7 @@ const props = {
 };
 
 describe('TextArea', () => {
-  test('textarea area passes value and event to onChange handler', async () => {
+  test('textarea passes value and event to onChange handler', async () => {
     const user = userEvent.setup();
 
     render(<TextAreaBase {...props} value="" aria-label="test textarea" />);

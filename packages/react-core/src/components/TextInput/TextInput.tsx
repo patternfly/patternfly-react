@@ -22,29 +22,29 @@ export enum TextInputTypes {
 
 export enum TextInputReadOnlyVariant {
   default = 'default',
-  vertical = 'plain'
+  plain = 'plain'
 }
 
 export interface TextInputProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>,
     OUIAProps {
-  /** Additional classes added to the TextInput. */
+  /** Additional classes added to the text input. */
   className?: string;
-  /** Flag to show if the input is disabled. */
+  /** Flag to show if the text input is disabled. */
   isDisabled?: boolean;
-  /** @deprecated Use readOnlyVariant instead. Flag to show if the TextArea is read only. */
+  /** @deprecated Use readOnlyVariant instead. Flag to show if the text input is read only. */
   isReadOnly?: boolean;
   /** Read only variant. */
   readOnlyVariant?: 'plain' | 'default';
   isRequired?: boolean;
-  /** Value to indicate if the input is modified to show that validation state.
-   * If set to success, input will be modified to indicate valid state.
-   * If set to error,  input will be modified to indicate error state.
+  /** Value to indicate if the text input is modified to show that validation state.
+   * If set to success, text input will be modified to indicate valid state.
+   * If set to error, text input will be modified to indicate error state.
    */
   validated?: 'success' | 'warning' | 'error' | 'default';
-  /** A callback for when the input value changes. */
+  /** A callback for when the text input value changes. */
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
-  /** Type that the input accepts. */
+  /** Type that the text input accepts. */
   type?:
     | 'text'
     | 'date'
@@ -57,25 +57,25 @@ export interface TextInputProps
     | 'tel'
     | 'time'
     | 'url';
-  /** Value of the input. */
+  /** Value of the text input. */
   value?: string | number;
-  /** Aria-label. The input requires an associated id or aria-label. */
+  /** Aria-label. The text input requires an associated id or aria-label. */
   'aria-label'?: string;
-  /** A reference object to attach to the input box. */
+  /** A reference object to attach to the text input box. */
   innerRef?: React.RefObject<any>;
   /** Trim text on left */
   isLeftTruncated?: boolean;
-  /** Callback function when input is focused */
+  /** Callback function when text input is focused */
   onFocus?: (event?: any) => void;
-  /** Callback function when input is blurred (focus leaves) */
+  /** Callback function when text input is blurred (focus leaves) */
   onBlur?: (event?: any) => void;
   /** icon variant */
   iconVariant?: 'calendar' | 'clock' | 'search';
   /** Use the external file instead of a data URI */
   isIconSprite?: boolean;
-  /** Custom icon url to set as the input's background-image */
+  /** Custom icon url to set as the text input's background-image */
   customIconUrl?: string;
-  /** Dimensions for the custom icon set as the input's background-size */
+  /** Dimensions for the custom icon set as the text input's background-size */
   customIconDimensions?: string;
 }
 

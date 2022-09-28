@@ -31,21 +31,21 @@ describe('TextInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('readonly text input using isReadOnly', () => {
-    const { asFragment } = render(<TextInput isReadOnly value="read only" aria-label="readonly text input" />);
+  test('read only text input using isReadOnly', () => {
+    const { asFragment } = render(<TextInput isReadOnly value="read only" aria-label="read only text input" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('default readonly text input', () => {
+  test('default read only text input', () => {
     const { asFragment } = render(
-      <TextInput readOnlyVariant="default" value="read only default" aria-label="default readonly text input" />
+      <TextInput readOnlyVariant="default" value="read only default" aria-label="default read only text input" />
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('plain readonly text input', () => {
+  test('plain read only text input', () => {
     const { asFragment } = render(
-      <TextInput readOnlyVariant="plain" value="read only plain" aria-label="plain readonly text input" />
+      <TextInput readOnlyVariant="plain" value="read only plain" aria-label="plain read only text input" />
     );
     expect(asFragment()).toMatchSnapshot();
   });
