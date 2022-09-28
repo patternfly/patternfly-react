@@ -101,7 +101,9 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     // Allow tabbing to first menu item
     const current = this.menuRef.current;
     if (current) {
-      const first = current.querySelector('ul button, ul a') as HTMLButtonElement | HTMLAnchorElement;
+      const first = current.querySelector('ul button:not(:disabled), ul a:not(:disabled)') as
+        | HTMLButtonElement
+        | HTMLAnchorElement;
       if (first) {
         first.tabIndex = 0;
       }
