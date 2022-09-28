@@ -58,20 +58,19 @@ const DemoTaskNode: React.FunctionComponent<DemoTaskNodeProps> = ({
   };
   return (
     <Layer id={detailsLevel !== ScaleDetailsLevel.high && hover ? TOP_LAYER : DEFAULT_LAYER}>
-      <g ref={hoverRef}>
-        <TaskNode
-          element={element}
-          onContextMenu={data.showContextMenu ? onContextMenu : undefined}
-          contextMenuOpen={contextMenuOpen}
-          scaleNode={(hover || contextMenuOpen) && detailsLevel !== ScaleDetailsLevel.high}
-          hideDetailsAtMedium
-          {...passedData}
-          {...rest}
-          badgePopoverParams={badgePopoverParams}
-        >
-          {whenDecorator}
-        </TaskNode>
-      </g>
+      <TaskNode
+        ref={hoverRef}
+        element={element}
+        onContextMenu={data.showContextMenu ? onContextMenu : undefined}
+        contextMenuOpen={contextMenuOpen}
+        scaleNode={(hover || contextMenuOpen) && detailsLevel !== ScaleDetailsLevel.high}
+        hideDetailsAtMedium
+        {...passedData}
+        {...rest}
+        badgePopoverParams={badgePopoverParams}
+      >
+        {whenDecorator}
+      </TaskNode>
     </Layer>
   );
 };
