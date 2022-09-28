@@ -51,6 +51,11 @@ export const Demos: DemoInterface[] = [
     id: 'topology-node-shapes-demo',
     name: 'Topology Node Shapes Demo',
     componentType: Examples.TopologyNodeShapesDemo
+  },
+  {
+    id: 'topology-node-svg-demo',
+    name: 'Topology Node SVG Demo',
+    componentType: Examples.TopologyNodeSVGDemo
   }
 ];
 
