@@ -32,8 +32,7 @@ test('Renders without children', () => {
   expect(screen.getByTestId('container').firstChild).toBeVisible();
 });
 
-// below tests fails because ariaLabel does not have a default value of ''
-test.skip('Renders with an aria label composed with the title and variantLabel provided via a context by default', () => {
+test('Renders with an aria label composed with the title and variantLabel provided via a context by default', () => {
   render(
     <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
       <AlertToggleExpandButton />
@@ -80,7 +79,6 @@ test('Calls the callback provided via onClose when clicked', async () => {
   expect(onCloseMock).toHaveBeenCalledTimes(1);
 });
 
-// I think we probably want to change component behavior here to set aria-expanded to false when it isn't true
 test('Does not render the button as aria-expanded by default', () => {
   render(
     <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
@@ -88,7 +86,7 @@ test('Does not render the button as aria-expanded by default', () => {
     </AlertContext.Provider>
   );
 
-  expect(screen.getByRole('button')).not.toHaveAttribute('aria-expanded');
+  expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'false');
 });
 
 test('Renders the button as aria-expanded when isExpanded = true', () => {
@@ -101,7 +99,15 @@ test('Renders the button as aria-expanded when isExpanded = true', () => {
   expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'true');
 });
 
-// Tests for the variableLabel prop should be added here, but that prop is currently broken and cannot be tested because of that
+test('Renders with an aria label composed with the title provided via a context and variantLabel provided via prop', () => {
+    render(
+      <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
+        <AlertToggleExpandButton variantLabel='variantLabelProp'/>
+      </AlertContext.Provider>
+    );
+  
+    expect(screen.getByRole('button')).toHaveAccessibleName('Toggle variantLabelProp alert: title');
+  });
 
 test('Renders a Button with variant: ButtonVariant.plain', () => {
   render(

@@ -28,8 +28,7 @@ test('Renders without children', () => {
   expect(screen.getByRole('button')).toBeVisible();
 });
 
-// this test currently fails because the custom class name isn't actually passed to the returned element
-test.skip('Renders with custom class names provided via prop', () => {
+test('Renders with custom class names provided via prop', () => {
   render(
     <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
       <AlertActionCloseButton className="custom-class" />

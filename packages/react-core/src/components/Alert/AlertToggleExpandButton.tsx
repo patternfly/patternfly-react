@@ -17,10 +17,10 @@ export interface AlertToggleExpandButtonProps extends ButtonProps {
 }
 
 export const AlertToggleExpandButton: React.FunctionComponent<AlertToggleExpandButtonProps> = ({
-  'aria-label': ariaLabel,
+  'aria-label': ariaLabel = '',
   variantLabel,
   onToggleExpand,
-  isExpanded,
+  isExpanded = false,
   ...props
 }: AlertToggleExpandButtonProps) => {
   const { title, variantLabel: alertVariantLabel } = React.useContext(AlertContext);
