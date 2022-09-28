@@ -283,7 +283,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     // Move focus to top of the menu if state.focusFirstOption was updated to true and the menu does not have custom content
     if (!prevState.focusFirstOption && this.state.focusFirstOption && !this.props.customContent) {
-      const firstRef = this.refCollection.find(ref => ref !== null);
+      const firstRef = this.refCollection.find(
+        ref =>
+          // If a select option is disabled then ref[0] will be undefined, so we want to return
+          // the first ref that both a) is not null and b) is not disabled.
+          ref !== null && ref[0]
+      );
+
       if (firstRef && firstRef[0]) {
         firstRef[0].focus();
       }
