@@ -14,9 +14,13 @@ jest.mock('../../Button', () => ({
 }));
 
 test('Renders without children', () => {
-  render(<AlertActionLink />);
+  render(
+    <div data-testid="container">
+      <AlertActionLink />
+    </div>
+  );
 
-  expect(screen.getByRole('button')).toBeVisible();
+  expect(screen.getByTestId('container').firstChild).toBeVisible();
 });
 
 test('Renders children', () => {
