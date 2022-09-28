@@ -24,7 +24,9 @@ export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
   count?: number;
   /** Icon to display in the notification badge. */
   icon?: React.ReactNode;
-  /** Flag for indicating whether the notification badge is expanded. */
+  /** Flag for applying expanded styling and setting the aria-expanded attribute on the
+   * notification badge.
+   */
   isExpanded?: boolean;
   /** @deprecated Use the variant prop instead - Adds styling to the notification badge to indicate it has been read. */
   isRead?: boolean;
