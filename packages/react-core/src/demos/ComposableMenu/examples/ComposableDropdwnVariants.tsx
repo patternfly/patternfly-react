@@ -58,7 +58,9 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled),a');
+        const firstElement = menuRef.current.querySelector(
+          'li > button:not(:disabled), li > a:not(:disabled), input:not(:disabled)'
+        );
         firstElement && (firstElement as HTMLElement).focus();
       }
     }, 0);
