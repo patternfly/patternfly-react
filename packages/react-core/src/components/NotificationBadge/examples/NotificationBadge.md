@@ -14,7 +14,11 @@ import './notificationBadge.css';
 
 The following example demonstrates the three variants of notification badge that are available: "read", "unread", and "attention".
 
-The `isExpanded` property is also passed in to indicate that the badge is expanded, for use-cases as seen in our [notification drawer react demos](/components/notification-drawer/react-demos).
+The `isExpanded` property is also passed in to:
+
+- set the `aria-expanded` attribute on the notification badge,
+- apply visual styling on the notification badge, and
+- to indiciate that a notification drawer is expanded, for use-cases as seen in our [notification drawer react demos](/components/notification-drawer/react-demos).
 
 ```ts file='./NotificationBadgeBasic.tsx'
 ```
