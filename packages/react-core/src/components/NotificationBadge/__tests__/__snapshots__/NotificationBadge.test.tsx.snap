@@ -4,6 +4,7 @@ exports[`NotificationBadge count 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
+    aria-expanded="false"
     class="pf-c-button pf-m-plain"
     data-ouia-component-id="OUIA-Generated-Button-plain-5"
     data-ouia-component-type="PF4/Button"
@@ -40,6 +41,7 @@ exports[`false NotificationBadge 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
+    aria-expanded="false"
     class="pf-c-button pf-m-plain"
     data-ouia-component-id="OUIA-Generated-Button-plain-2"
     data-ouia-component-type="PF4/Button"
@@ -71,6 +73,7 @@ exports[`false NotificationBadge needs attention 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
+    aria-expanded="false"
     class="pf-c-button pf-m-plain"
     data-ouia-component-id="OUIA-Generated-Button-plain-4"
     data-ouia-component-type="PF4/Button"
@@ -90,6 +93,7 @@ exports[`true NotificationBadge 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
+    aria-expanded="false"
     class="pf-c-button pf-m-plain"
     data-ouia-component-id="OUIA-Generated-Button-plain-1"
     data-ouia-component-type="PF4/Button"
@@ -121,6 +125,7 @@ exports[`true NotificationBadge needs attention 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
+    aria-expanded="false"
     class="pf-c-button pf-m-plain"
     data-ouia-component-id="OUIA-Generated-Button-plain-3"
     data-ouia-component-type="PF4/Button"
