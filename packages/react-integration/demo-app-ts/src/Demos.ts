@@ -38,16 +38,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AlertGroupTimeoutFromBottomDemo
   },
   {
-    id: 'alert-custom-timeout-demo',
-    name: 'Alert Custom Timeout Demo',
-    componentType: Examples.AlertCustomTimeoutDemo
-  },
-  {
-    id: 'alert-default-timeout-demo',
-    name: 'Alert Default Timeout Demo',
-    componentType: Examples.AlertDefaultTimeoutDemo
-  },
-  {
     id: 'application-launcher-favorites-demo',
     name: 'Application Launcher Favorites Demo',
     componentType: Examples.ApplicationLauncherFavoritesDemo

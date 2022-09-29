@@ -19,8 +19,7 @@ export interface AlertActionCloseButtonProps extends ButtonProps {
 }
 
 export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseButtonProps> = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  className = '',
+  className,
   onClose = () => undefined as any,
   'aria-label': ariaLabel = '',
   variantLabel,
@@ -32,6 +31,7 @@ export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseBut
         variant={ButtonVariant.plain}
         onClick={onClose}
         aria-label={ariaLabel === '' ? `Close ${variantLabel || alertVariantLabel} alert: ${title}` : ariaLabel}
+        className={className}
         {...props}
       >
         <TimesIcon />
