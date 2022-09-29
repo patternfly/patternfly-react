@@ -10,6 +10,7 @@ import {
   ButtonVariant,
   Card,
   CardBody,
+  Divider,
   Dropdown,
   DropdownGroup,
   DropdownItem,
@@ -48,6 +49,7 @@ interface NavOnSelectProps {
 export const PageStickySectionGroupUsingPageHeader: React.FunctionComponent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
   const [isAppLauncherOpen, setIsAppLauncherOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(1);
 
@@ -71,6 +73,14 @@ export const PageStickySectionGroupUsingPageHeader: React.FunctionComponent = ()
     setIsKebabDropdownOpen(!isKebabDropdownOpen);
   };
 
+  const onFullKebabDropdownToggle = (isOpen: boolean) => {
+    setIsFullKebabDropdownOpen(isOpen);
+  };
+
+  const onFullKebabDropdownSelect = () => {
+    setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen);
+  };
+
   const onAppLauncherToggle = (isOpen: boolean) => {
     setIsAppLauncherOpen(isOpen);
   };
@@ -91,6 +101,23 @@ export const PageStickySectionGroupUsingPageHeader: React.FunctionComponent = ()
   );
 
   const kebabDropdownItems = [
+    <DropdownItem key="settings">
+      <CogIcon /> Settings
+    </DropdownItem>,
+    <DropdownItem key="help">
+      <HelpIcon /> Help
+    </DropdownItem>
+  ];
+
+  const fullKebabDropdownItems = [
+    <DropdownGroup key="group 2">
+      <DropdownItem key="group 2 profile">My profile</DropdownItem>
+      <DropdownItem key="group 2 user" component="button">
+        User management
+      </DropdownItem>
+      <DropdownItem key="group 2 logout">Logout</DropdownItem>
+    </DropdownGroup>,
+    <Divider key="divider" />,
     <DropdownItem key="settings">
       <CogIcon /> Settings
     </DropdownItem>,
@@ -148,12 +175,7 @@ export const PageStickySectionGroupUsingPageHeader: React.FunctionComponent = ()
 
   const headerTools = (
     <PageHeaderTools>
-      <PageHeaderToolsGroup
-        visibility={{
-          default: 'hidden',
-          lg: 'visible'
-        }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
-      >
+      <PageHeaderToolsGroup>
         <PageHeaderToolsItem>
           <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} />
         </PageHeaderToolsItem>
@@ -173,7 +195,7 @@ export const PageStickySectionGroupUsingPageHeader: React.FunctionComponent = ()
             <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
-        <PageHeaderToolsItem visibility={{ lg: 'hidden' }}>
+        <PageHeaderToolsItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
           <Dropdown
             isPlain
             position="right"
@@ -181,6 +203,16 @@ export const PageStickySectionGroupUsingPageHeader: React.FunctionComponent = ()
             toggle={<KebabToggle onToggle={onKebabDropdownToggle} />}
             isOpen={isKebabDropdownOpen}
             dropdownItems={kebabDropdownItems}
+          />
+        </PageHeaderToolsItem>
+        <PageHeaderToolsItem visibility={{ md: 'hidden' }}>
+          <Dropdown
+            isPlain
+            position="right"
+            onSelect={onFullKebabDropdownSelect}
+            toggle={<KebabToggle onToggle={onFullKebabDropdownToggle} />}
+            isOpen={isFullKebabDropdownOpen}
+            dropdownItems={fullKebabDropdownItems}
           />
         </PageHeaderToolsItem>
       </PageHeaderToolsGroup>
