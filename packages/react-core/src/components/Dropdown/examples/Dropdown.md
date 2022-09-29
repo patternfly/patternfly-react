@@ -116,31 +116,29 @@ You may use a `<BadgeToggle>` to display the number of dropdown menu items.
 ```ts file="./DropdownBadge.tsx"
 ```
 
-### Split button dropdown toggle
+### Split button
 
-Use a split button to combine an action button or other control with a dropdown menu. A `<DropdownToggle>` can be rendered as a split button by using the `splitButtonItems` property. Elements to be displayed before the toggle button must be included in `splitButtonItems`. 
+To combine an action button or other control with a dropdown menu, use a split button. A `<DropdownToggle>` can be rendered as a split button by using the `splitButtonItems` property. Elements to be displayed before the toggle button must be included in `splitButtonItems`.
 
-Split buttons can utilize some of the same properties available to [button](/components/button) components, such as `isDisabled` to disable the button.
+The following example shows a split button with a `<DropdownToggleCheckbox>`, which is primarily used for bulk select operations on large data sets. 
 
-The following example shows a split button with a `<DropdownToggleCheckbox>`, which is primarily used for bulk select operations on large data sets. This example also includes a text label, which may be omitted.
+```ts file="./DropdownSplitButton.tsx"
+```
+
+### Split button text label
+
+Text labels may optionally be used alongside actions within split buttons.
 
 ```ts file="./DropdownSplitButtonText.tsx"
 ```
 
-### Split button and toggle variants
+### Split button toggle variants
 
 Use the `toggleVariant` and `splitButtonVariant` properties to adjust the styling of split button toggles. 
 
 The following example uses `toggleVariant="primary"` to apply primary visual styling and `splitButtonVariant="action"` to include an action.
 
 ```ts file="./DropdownSplitButtonActionPrimary.tsx"
-```
-
-### Split button indeterminate state
-
-You may set a `<DropdownToggleCheckbox>` to begin in an indeterminate state, which signals to users that a decision needs to be made regarding the checkbox.
-
-```ts file="./DropdownSplitButtonIndeterminate.tsx"
 ```
 
 ### Dropdown alignment
