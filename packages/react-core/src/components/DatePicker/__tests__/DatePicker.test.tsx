@@ -39,6 +39,7 @@ test('Error state can be cleared from outside', async () => {
 
   const { rerender } = render(<DatePicker value="2020-03-17" validators={[rangeValidator]} />);
 
+  await user.clear(screen.getByRole('textbox'));
   await user.type(screen.getByRole('textbox'), '2020-03-16');
 
   await user.click(document.body);
