@@ -52,31 +52,31 @@ test('Renders with the aria label provided via prop when one is provided', () =>
   expect(screen.getByRole('button')).toHaveAccessibleName('Aria label prop');
 });
 
-test('Does not call the callback provided via onClose when it is not clicked', () => {
-  const onCloseMock = jest.fn();
+test('Does not call the callback provided via onToggleExpand when it is not clicked', () => {
+  const onToggleExpandMock = jest.fn();
 
   render(
     <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
-      <AlertToggleExpandButton onToggleExpand={onCloseMock} />
+      <AlertToggleExpandButton onToggleExpand={onToggleExpandMock} />
     </AlertContext.Provider>
   );
 
-  expect(onCloseMock).not.toHaveBeenCalled();
+  expect(onToggleExpandMock).not.toHaveBeenCalled();
 });
 
-test('Calls the callback provided via onClose when clicked', async () => {
-  const onCloseMock = jest.fn();
+test('Calls the callback provided via onToggleExpand when clicked', async () => {
+  const onToggleExpandMock = jest.fn();
   const user = userEvent.setup();
 
   render(
     <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
-      <AlertToggleExpandButton onToggleExpand={onCloseMock} />
+      <AlertToggleExpandButton onToggleExpand={onToggleExpandMock} />
     </AlertContext.Provider>
   );
 
   await user.click(screen.getByRole('button'));
 
-  expect(onCloseMock).toHaveBeenCalledTimes(1);
+  expect(onToggleExpandMock).toHaveBeenCalledTimes(1);
 });
 
 test('Does not render the button as aria-expanded by default', () => {
