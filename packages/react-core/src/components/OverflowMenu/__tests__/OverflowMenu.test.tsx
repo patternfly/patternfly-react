@@ -49,7 +49,7 @@ describe('OverflowMenu', () => {
 
     render(<OverflowMenu breakpoint={'md'} />);
 
-    expect(resizeObserver.mock.calls[1]).toEqual(undefined);
+    expect(resizeObserver).toHaveBeenCalledWith(undefined, expect.any(Function));
   });
 
   test('should call resizeObserver on selector ref containerRefElement', () => {
@@ -65,7 +65,7 @@ describe('OverflowMenu', () => {
 
     const containerRef = screen.getByText('Selector ref test').parentElement?.parentElement;
 
-    expect(resizeObserver.mock.calls[1][0]).toEqual(containerRef);
+    expect(resizeObserver).toHaveBeenCalledWith(containerRef, expect.any(Function));
   });
 
   test('should call resizeObserver on React ref containerRefElement', () => {
@@ -78,6 +78,6 @@ describe('OverflowMenu', () => {
       </div>
     );
 
-    expect(resizeObserver.mock.calls[1][0]).toEqual(containerRef.current);
+    expect(resizeObserver).toHaveBeenCalledWith(containerRef.current, expect.any(Function));
   });
 });
