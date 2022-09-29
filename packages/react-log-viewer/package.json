@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-log-viewer",
-  "version": "4.87.8",
+  "version": "4.87.9",
   "description": "Terminal renderer",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -29,9 +29,9 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.242.8",
-    "@patternfly/react-icons": "^4.92.4",
-    "@patternfly/react-styles": "^4.91.4",
+    "@patternfly/react-core": "^4.243.0",
+    "@patternfly/react-icons": "^4.92.5",
+    "@patternfly/react-styles": "^4.91.5",
     "memoize-one": "^5.1.0",
     "resize-observer-polyfill": "^1.5.1"
   },

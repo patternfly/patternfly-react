@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.243.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.242.8...@patternfly/react-core@4.243.0) (2022-09-29)
+
+
+### Features
+
+* **TextArea+TextInput:** added plain read-only variant ([#7996](https://github.com/patternfly/patternfly-react/issues/7996)) ([685b2fe](https://github.com/patternfly/patternfly-react/commit/685b2fe6c95806b078b4f7169663494b94c58fcd))
+
+
+
+
+
 ## [4.242.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.242.7...@patternfly/react-core@4.242.8) (2022-09-28)
 
 **Note:** Version bump only for package @patternfly/react-core
