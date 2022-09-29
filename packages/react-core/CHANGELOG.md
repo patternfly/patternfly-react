@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.244.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.243.1...@patternfly/react-core@4.244.0) (2022-09-29)
+
+
+### Bug Fixes
+
+* **Topology:** Fix for multiple popovers occurring for pipeline badges ([#8110](https://github.com/patternfly/patternfly-react/issues/8110)) ([85f5899](https://github.com/patternfly/patternfly-react/commit/85f589931b2b3b9d0e5ae4a9e4d86bdb7aa0e594))
+
+
+### Features
+
+* **NotificationBadge:** added expanded state ([#8010](https://github.com/patternfly/patternfly-react/issues/8010)) ([8aa4bea](https://github.com/patternfly/patternfly-react/commit/8aa4beaf081b09bb808f2666c4b6021223d6dc16))
+
+
+
+
+
 ## [4.243.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.243.0...@patternfly/react-core@4.243.1) (2022-09-29)
 
 **Note:** Version bump only for package @patternfly/react-core
