@@ -143,6 +143,8 @@ export interface SelectProps
   maxHeight?: string | number;
   /** Icon element to render inside the select toggle */
   toggleIcon?: React.ReactElement;
+  /** Custom icon for the dropdown replacing the CaretDownIcon */
+  toggleIndicator?: React.ReactElement;
   /** Custom content to render in the select menu.  If this prop is defined, the variant prop will be ignored and the select will render with a single select toggle */
   customContent?: React.ReactNode;
   /** Flag indicating if select should have an inline text input for filtering */
@@ -239,6 +241,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     onClear: () => undefined as void,
     onCreateOption: () => undefined as void,
     toggleIcon: null as React.ReactElement,
+    toggleIndicator: null as React.ReactElement,
     onFilter: null,
     onTypeaheadInputChanged: null,
     customContent: null,
@@ -983,6 +986,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       width,
       maxHeight,
       toggleIcon,
+      toggleIndicator,
       ouiaId,
       ouiaSafe,
       hasInlineFilter,
@@ -1314,6 +1318,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           onClose={this.onClose}
           onBlur={onBlur}
           variant={variant}
+          toggleIndicator={toggleIndicator}
           aria-labelledby={`${ariaLabelledBy || ''} ${selectToggleId}`}
           aria-label={toggleAriaLabel}
           {...(ariaDescribedby && { 'aria-describedby': ariaDescribedby })}
