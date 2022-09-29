@@ -22,6 +22,8 @@ export interface RowWrapperProps extends OUIAProps {
     rowIndex: number;
     rowKey: string;
   };
+  /** Value to set the data-ouia-component-id.*/
+  ouiaId?: number | string;
 }
 
 export class RowWrapper extends React.Component<RowWrapperProps> {

@@ -41,6 +41,8 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
 
   /** Css property expressed in percentage or any css unit that overrides the default value of the max-width of the chip's text */
   textMaxWidth?: string;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
 }
 
 interface ChipState {

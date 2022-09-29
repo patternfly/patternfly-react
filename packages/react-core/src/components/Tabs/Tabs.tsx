@@ -106,6 +106,10 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   onToggle?: (isExpanded: boolean) => void;
   /** @beta Flag which places overflowing tabs into a menu triggered by the last tab. Additionally an object can be passed with custom settings for the overflow tab. */
   isOverflowHorizontal?: boolean | HorizontalOverflowObject;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 const variantStyle = {

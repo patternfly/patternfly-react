@@ -33,6 +33,10 @@ export interface FormSelectProps
   onChange?: (value: string, event: React.FormEvent<HTMLSelectElement>) => void;
   /** Custom flag to show that the FormSelect requires an associated id or aria-label. */
   'aria-label'?: string;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: string }> {

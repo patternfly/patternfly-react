@@ -77,6 +77,10 @@ export interface TextInputProps
   customIconUrl?: string;
   /** Dimensions for the custom icon set as the text input's background-size */
   customIconDimensions?: string;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 interface TextInputState {
