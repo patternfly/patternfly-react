@@ -149,6 +149,7 @@ export const SelectBasic: React.FunctionComponent = () => {
 
   return (
     <Select
+      id="typeahead-select"
       ref={menuRef}
       isOpen={isOpen}
       selected={selected}

@@ -43,6 +43,7 @@ export const SelectBasic: React.FunctionComponent = () => {
 
   return (
     <Select
+      id="single-select"
       ref={menuRef}
       isOpen={isOpen}
       selected={selected}

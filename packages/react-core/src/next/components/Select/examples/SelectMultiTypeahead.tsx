@@ -168,6 +168,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
 
   return (
     <Select
+      id="multi-typeahead-select"
       ref={menuRef}
       isOpen={isOpen}
       selected={selected}
