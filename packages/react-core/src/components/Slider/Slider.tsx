@@ -7,64 +7,70 @@ import { InputGroup, InputGroupText } from '../InputGroup';
 import { TextInput } from '../TextInput';
 import { Tooltip } from '../Tooltip';
 
+/** Properties for creating custom steps in a slider. These properties should be passed in as
+ * an object within an array to the slider component's customSteps property.
+ */
 export interface SliderStepObject {
-  /** Value of the step. This value is a percentage of the slider where the  tick is drawn. */
-  value: number;
-  /** The display label for the step value. This is also used for the aria-valuetext */
-  label: string;
-  /** Flag to hide the label */
+  /** Flag to hide the label. */
   isLabelHidden?: boolean;
+  /** The display label for the step value. This is also used for the aria-valuetext attribute. */
+  label: string;
+  /** Value of the step. This value is a percentage of the slider where the tick is drawn. */
+  value: number;
 }
 
+/** The main slider component. */
 export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
-  /** Additional classes added to the spinner. */
-  className?: string;
-  /** Current value  */
-  value?: number;
-  /** Flag indicating if the slider is is discrete for custom steps.  This will cause the slider to snap to the closest value. */
+  /** Flag indicating if the slider is discrete for custom steps. This will cause the slider
+   * to snap to the closest value.
+   */
   areCustomStepsContinuous?: boolean;
-  /** Adds disabled styling and disables the slider and the input component is present */
-  isDisabled?: boolean;
-  /** The step interval*/
-  step?: number;
-  /** Minimum permitted value */
-  min?: number;
-  /** The maximum permitted value */
-  max?: number;
-  /** Flag to indicate if boundaries should be shown for slider that does not have custom steps */
-  showBoundaries?: boolean;
-  /** Flag to indicate if ticks should be shown for slider that does not have custom steps  */
-  showTicks?: boolean;
+  /** One or more id's to use for the slider thumb's accessible description. */
+  'aria-describedby'?: string;
+  /** One or more id's to use for the slider thumb's accessible label. */
+  'aria-labelledby'?: string;
+  /** Additional classes added to the slider. */
+  className?: string;
   /** Array of custom slider step objects (value and label of each step) for the slider. */
   customSteps?: SliderStepObject[];
-  /** Flag to show value input field */
-  isInputVisible?: boolean;
-  /** Value displayed in the input field */
-  inputValue?: number;
-  /** Aria label for the input field */
-  inputAriaLabel?: string;
-  /* Aria label for the thumb */
-  thumbAriaLabel?: string;
-  /* Adds a tooltip over the thumb containing the current value */
+  /* Adds a tooltip over the slider thumb containing the current value. */
   hasTooltipOverThumb?: boolean;
-  /** Label that is place after the input field */
+  /** Accessible label for the input field. */
+  inputAriaLabel?: string;
+  /** Text label that is place after the input field. */
   inputLabel?: string | number;
-  /** Position of the input */
+  /** Position of the input. */
   inputPosition?: 'aboveThumb' | 'right';
-  /** Value change callback. This is called when the slider value changes */
+  /** Value displayed in the input field. */
+  inputValue?: number;
+  /** Adds disabled styling, and disables the slider and the input component if present. */
+  isDisabled?: boolean;
+  /** Flag to show value input field. */
+  isInputVisible?: boolean;
+  /** Actions placed to the left of the slider. */
+  leftActions?: React.ReactNode;
+  /** The maximum permitted value. */
+  max?: number;
+  /** The minimum permitted value. */
+  min?: number;
+  /** Value change callback. This is called when the slider value changes. */
   onChange?: (
     value: number,
     inputValue?: number,
     setLocalInputValue?: React.Dispatch<React.SetStateAction<number>>
   ) => void;
-  /** Actions placed to the left of the slider */
-  leftActions?: React.ReactNode;
-  /** Actions placed to the right of the slider */
+  /** Actions placed to the right of the slider. */
   rightActions?: React.ReactNode;
-  /** One or more id's to use for the slider thumb description */
-  'aria-describedby'?: string;
-  /** One or more id's to use for the slider thumb label */
-  'aria-labelledby'?: string;
+  /** Flag to indicate if boundaries should be shown for slider that does not have custom steps. */
+  showBoundaries?: boolean;
+  /** Flag to indicate if ticks should be shown for slider that does not have custom steps. */
+  showTicks?: boolean;
+  /** The step interval. */
+  step?: number;
+  /* Accessible label for the slider thumb. */
+  thumbAriaLabel?: string;
+  /** Current value of the slider.  */
+  value?: number;
 }
 
 const getPercentage = (current: number, max: number) => (100 * current) / max;
