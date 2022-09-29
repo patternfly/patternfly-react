@@ -7,3 +7,4 @@ export * from './TopologyControlBarDemo/TopologyControlBarDemo';
 export * from './TopologyNodeShapesDemo/TopologyNodeShapesDemo';
 export * from './TopologyNodeGroupDemo/TopologyNodeGroupDemo';
 export * from './TopologyNodeSVGDemo/TopologyNodeSVGDemo';
+export * from './TopologyLabelSVGDemo/TopologyLabelSVGDemo';
