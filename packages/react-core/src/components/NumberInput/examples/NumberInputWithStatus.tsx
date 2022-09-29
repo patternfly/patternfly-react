@@ -1,7 +1,7 @@
 import React from 'react';
 import { NumberInput, ValidatedOptions } from '@patternfly/react-core';
 
-export const WithStatus: React.FunctionComponent = () => {
+export const NumberInputWithStatus: React.FunctionComponent = () => {
   const max = 10;
   const min = 0;
 
@@ -20,8 +20,9 @@ export const WithStatus: React.FunctionComponent = () => {
     validate(newVal);
   };
 
-  const onChange = event => {
-    const newVal = isNaN(event.target.value) ? 5 : Number(event.target.value);
+  const onChange = (event: React.FormEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement;
+    const newVal = isNaN(+target.value) ? 5 : Number(target.value);
     setValue(newVal);
     validate(newVal);
   };
