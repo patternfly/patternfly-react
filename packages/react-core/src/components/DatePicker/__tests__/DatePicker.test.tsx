@@ -21,6 +21,8 @@ test('Date picker with multiple validators does not show invalid icon on valid i
 
   render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
 
+  await user.click(screen.getByRole('textbox'));
+
   await user.click(document.body);
 
   expect(screen.getByRole('textbox')).not.toBeInvalid();
