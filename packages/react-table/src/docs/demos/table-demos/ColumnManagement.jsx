@@ -65,7 +65,7 @@ export const ColumnManagementAction = () => {
         return 'URL';
     }
   };
-  matchSelectedColumnNameToAttr = name => {
+  const matchSelectedColumnNameToAttr = name => {
     switch (name) {
       case 'Servers':
         return 'name';
@@ -161,7 +161,7 @@ export const ColumnManagementAction = () => {
     setFilteredRows(defaultRows);
   };
 
-  handleChange = (checked, event) => {
+  const handleChange = (checked, event) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
@@ -190,7 +190,7 @@ export const ColumnManagementAction = () => {
     setCheckedState(Array(columns.length).fill(true));
   };
 
-  renderModal = () => {
+  const renderModal = () => {
     return (
       <Modal
         title="Manage columns"
