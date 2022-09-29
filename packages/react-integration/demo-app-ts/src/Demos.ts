@@ -128,6 +128,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DataListCompactDemo
   },
   {
+    id: 'date-picker-demo',
+    name: 'Date Picker Demo',
+    componentType: Examples.DatePickerDemo
+  },
+  {
     id: 'description-list-demo',
     name: 'Description List Demo',
     componentType: Examples.DescriptionListDemo

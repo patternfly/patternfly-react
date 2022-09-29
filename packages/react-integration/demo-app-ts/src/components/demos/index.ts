@@ -103,3 +103,4 @@ export * from './TopologyDemo/TopologyPipelineDemo';
 export * from './TreeViewDemo/TreeViewDemo';
 export * from './WizardDemo/WizardDemo';
 export * from './JumpLinksDemo/JumpLinksDemo';
+export * from './DatePickerDemo/DatePickerDemo';
