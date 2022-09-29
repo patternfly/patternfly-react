@@ -1,5 +1,9 @@
 import * as React from 'react';
 
+/** Allows more customization of the pagination dropdown toggle. The following properties
+ * should be passed into the pagination component's toggleTemplate property.
+ */
+
 export interface ToggleTemplateProps {
   /** The first index of the items being paginated */
   firstIndex?: number;

@@ -2,7 +2,7 @@
 id: Modal
 section: components
 cssPrefix: pf-c-modal-box
-propComponents: ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'ModalBoxFooter', 'ModalContent']
+propComponents: ['Modal']
 ouia: true
 ---
 
@@ -94,5 +94,3 @@ If the content that you're passing to the modal is likely to overflow the modal 
 
 ```ts file="ModalWithOverflowingContent.tsx"
 ```
-
-

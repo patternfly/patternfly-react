@@ -11,8 +11,8 @@ import widthChars from '@patternfly/react-tokens/dist/esm/c_pagination__nav_page
 import { PickOptional } from '../../helpers';
 
 export enum PaginationVariant {
-  top = 'top',
-  bottom = 'bottom'
+  bottom = 'bottom',
+  top = 'top'
 }
 
 const defaultPerPageOptions = [
@@ -34,40 +34,48 @@ const defaultPerPageOptions = [
   }
 ];
 
+/** Properties to customize the content and behavior of the pagination dropdown options. These
+ * properties should be passed into the pagination component's perPageOptions property.
+ */
+
 export interface PerPageOptions {
-  /** option title */
+  /** The text title of the option, which is rendered inside the pagination dropdown menu. */
   title?: string;
-  /** option value */
+  /** The value of the option, which determines how many items are displayed per page. */
   value?: number;
 }
 
+/** Properties to customize various pagination titles. The following properties should be
+ * passed into the pagination component's title property.
+ */
+
 export interface PaginationTitles {
-  /** The title of a page displayed beside the page number */
-  page?: string;
-  /** The title of a page displayed beside the page number (plural form) */
-  pages?: string;
-  /** The type or title of the items being paginated */
-  items?: string;
-  /** The title of the pagination options menu */
-  itemsPerPage?: string;
-  /** The suffix to be displayed after each option on the options menu dropdown */
-  perPageSuffix?: string;
-  /** Accessible label for the button which moves to the first page */
-  toFirstPage?: string;
-  /** Accessible label for the button which moves to the previous page */
-  toPreviousPage?: string;
-  /** Accessible label for the button which moves to the last page */
-  toLastPage?: string;
-  /** Accessible label for the button which moves to the next page */
-  toNextPage?: string;
-  /** Accessible label for the options toggle */
-  optionsToggle?: string;
-  /** Accessible label for the input displaying the current page */
+  /** Accessible label for the input displaying the current page. */
   currPage?: string;
-  /** Accessible label for the pagination component */
-  paginationTitle?: string;
-  /** Accessible label for the English word "of" */
+  /** The type or title of the items being paginated. */
+  items?: string;
+  /** The title of the pagination options menu. */
+  itemsPerPage?: string;
+  /** Label for the English word "of". */
   ofWord?: string;
+  /** Accessible label for the options toggle. */
+  optionsToggle?: string;
+  /** The title of a page displayed beside the page number. */
+  page?: string;
+  /** The title of a page displayed beside the page number (plural form). */
+  pages?: string;
+  /** Accessible label for the pagination component. */
+  paginationTitle?: string;
+  /** The suffix to be displayed after each option on the options menu dropdown. */
+  perPageSuffix?: string;
+  /** Accessible label for the button which moves to the first page. */
+  toFirstPage?: string;
+  /** Accessible label for the button which moves to the last page. */
+  toLastPage?: string;
+  /** Accessible label for the button which moves to the next page. */
+  toNextPage?: string;
+  /** Accessible label for the button which moves to the previous page. */
+  toPreviousPage?: string;
 }
 
 export type OnSetPage = (
@@ -86,65 +94,71 @@ export type OnPerPageSelect = (
   endIdx?: number
 ) => void;
 
+/** The main pagination component. */
+
 export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
-  /** What should be rendered inside */
+  /** What should be rendered inside the pagination. */
   children?: React.ReactNode;
-  /** Additional classes for the container. */
+  /** Additional classes for the pagination container. */
   className?: string;
-  /** Total number of items. */
-  itemCount?: number;
-  /** Position where pagination is rendered. */
-  variant?: 'top' | 'bottom' | PaginationVariant;
-  /** Flag indicating if pagination is disabled */
-  isDisabled?: boolean;
-  /** Flag indicating if pagination is compact */
-  isCompact?: boolean;
-  /** Flag indicating if pagination should not be sticky on mobile */
-  isStatic?: boolean;
-  /** Flag indicating if pagination should stick to its position (based on variant) */
-  isSticky?: boolean;
-  /** Number of items per page. */
-  perPage?: number;
-  /** Array of the number of items per page  options. */
-  perPageOptions?: PerPageOptions[];
-  /** Indicate whether to show last full page of results when user selects perPage value greater than remaining rows */
+  /** Indicate whether to show last full page of results when user selects perPage value
+   * greater than remaining rows.
+   */
   defaultToFullPage?: boolean;
-  /** Page we start at. */
-  firstPage?: number;
-  /** Current page number. */
-  page?: number;
-  /** Start index of rows to display, used in place of providing page */
-  offset?: number;
-  /** First index of items on current page. */
-  itemsStart?: number;
-  /** Last index of items on current page. */
-  itemsEnd?: number;
-  /** ID to ideintify widget on page. */
-  widgetId?: string;
   /** Direction of dropdown context menu. */
   dropDirection?: 'up' | 'down';
-  /** Object with titles to display in pagination. */
-  titles?: PaginationTitles;
-  /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle, ofWord props. */
-  toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
-  /** Function called when user sets page. */
-  onSetPage?: OnSetPage;
+  /** Page to start at. */
+  firstPage?: number;
+  /** Flag indicating if pagination is compact. */
+  isCompact?: boolean;
+  /** Flag indicating if pagination is disabled. */
+  isDisabled?: boolean;
+  /** Flag indicating if pagination should not be sticky on mobile. */
+  isStatic?: boolean;
+  /** Flag indicating if pagination should stick to its position (based on variant). */
+  isSticky?: boolean;
+  /** Total number of items. */
+  itemCount?: number;
+  /** Last index of items on current page. */
+  itemsEnd?: number;
+  /** First index of items on current page. */
+  itemsStart?: number;
+  /** Start index of rows to display, used in place of providing page. */
+  offset?: number;
+  /** Current page number. */
+  page?: number;
+  /** Number of items per page. */
+  perPage?: number;
+  /** Component to be used for wrapping the toggle contents. Use "button" when you want
+   * all of the toggle text to be clickable.
+   */
+  perPageComponent?: 'div' | 'button';
+  /** Array of the number of items per page options. */
+  perPageOptions?: PerPageOptions[];
   /** Function called when user clicks on navigate to first page. */
   onFirstClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
-  /** Function called when user clicks on navigate to previous page. */
-  onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
-  /** Function called when user clicks on navigate to next page. */
-  onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks on navigate to last page. */
   onLastClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  /** Function called when user clicks on navigate to next page. */
+  onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user inputs page number. */
   onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user selects number of items per page. */
   onPerPageSelect?: OnPerPageSelect;
-  /** Component to be used for wrapping the toggle contents. Use 'button' when you want
-   * all of the toggle text to be clickable.
+  /** Function called when user clicks on navigate to previous page. */
+  onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  /** Function called when user sets page. */
+  onSetPage?: OnSetPage;
+  /** Object with titles to display in pagination. */
+  titles?: PaginationTitles;
+  /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex,
+   * itemCount, itemsTitle, and/or ofWord props.
    */
-  perPageComponent?: 'div' | 'button';
+  toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
+  /** Position where pagination is rendered. */
+  variant?: 'top' | 'bottom' | PaginationVariant;
+  /** Id to ideintify widget on page. */
+  widgetId?: string;
 }
 
 const handleInputWidth = (lastPage: number, node: HTMLDivElement) => {
