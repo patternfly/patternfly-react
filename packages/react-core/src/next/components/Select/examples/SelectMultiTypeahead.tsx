@@ -130,7 +130,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
           onClick={onToggleClick}
           onChange={onTextInputChange}
           onKeyDown={onInputKeyDown}
-          id="typeahead-select-input"
+          id="multi-typeahead-select-input"
           autoComplete="off"
           innerRef={textInputRef}
         >
