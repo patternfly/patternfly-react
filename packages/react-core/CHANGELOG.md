@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.245.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.244.2...@patternfly/react-core@4.245.0) (2022-09-29)
+
+
+### Bug Fixes
+
+* **DashboardHeader:** display full kebab at mobile breakpoint ([#8120](https://github.com/patternfly/patternfly-react/issues/8120)) ([2ef58b0](https://github.com/patternfly/patternfly-react/commit/2ef58b07dd0716107c3c27bbf930e7ae3188c8c4))
+
+
+### Features
+
+* **OverflowMenu:** allow breakpoint on container width ([#7913](https://github.com/patternfly/patternfly-react/issues/7913)) ([a9d71bb](https://github.com/patternfly/patternfly-react/commit/a9d71bb9c42e13606d84ac8478d6ab5c717b9e9c))
+
+
+
+
+
 ## [4.244.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.244.1...@patternfly/react-core@4.244.2) (2022-09-29)
 
 **Note:** Version bump only for package @patternfly/react-core

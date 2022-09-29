@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.204.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.203.7...@patternfly/react-integration@4.204.0) (2022-09-29)
+
+
+### Features
+
+* **OverflowMenu:** allow breakpoint on container width ([#7913](https://github.com/patternfly/patternfly-react/issues/7913)) ([a9d71bb](https://github.com/patternfly/patternfly-react/commit/a9d71bb9c42e13606d84ac8478d6ab5c717b9e9c))
+
+
+
+
+
 ## [4.203.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.203.6...@patternfly/react-integration@4.203.7) (2022-09-29)
 
 **Note:** Version bump only for package @patternfly/react-integration
