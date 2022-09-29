@@ -155,7 +155,7 @@ export const ColumnManagementAction = () => {
       setFilteredRows(filteredRows);
     }
   };
-  unfilterAllData = () => {
+  const unfilterAllData = () => {
     setFilters([]);
     setFilteredColumns(defaultColumns);
     setFilteredRows(defaultRows);
