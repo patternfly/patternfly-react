@@ -11,116 +11,115 @@ const props = {
   value: 'test textarea'
 };
 
-describe('TextArea', () => {
-  test('textarea passes value and event to onChange handler', async () => {
-    const user = userEvent.setup();
+test('textarea input passes value and event to onChange handler', async () => {
+  render(<TextAreaBase {...props} value="" aria-label="test textarea" />);
 
-    render(<TextAreaBase {...props} value="" aria-label="test textarea" />);
+  const user = userEvent.setup();
+  await user.type(screen.getByLabelText('test textarea'), 'a');
 
-    await user.type(screen.getByLabelText('test textarea'), 'a');
-    expect(props.onChange).toHaveBeenCalledWith('a', expect.any(Object));
-  });
+  expect(props.onChange).toHaveBeenCalledWith('a', expect.any(Object));
+});
 
-  test('simple text area', () => {
-    const { asFragment } = render(<TextArea {...props} aria-label="simple textarea" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders simple text input', () => {
+  render(
+    <div data-testid="textarea">
+      <TextArea aria-label="simple textarea" />
+    </div>
+  );
+  expect(screen.getByTestId('textarea').firstChild).toBeVisible();
+});
 
-  test('disabled text area using isDisabled', () => {
-    const { asFragment } = render(<TextArea {...props} aria-label="is disabled textarea" isDisabled />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with custom class passed', () => {
+  render(<TextArea aria-label="custom class textarea" className="test-class" />);
 
-  test('disabled text area using disabled', () => {
-    const { asFragment } = render(<TextArea {...props} aria-label="disabled textarea" disabled />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByRole('textbox')).toHaveClass('test-class');
+});
 
-  test('read only text area using isReadOnly', () => {
-    const { asFragment } = render(<TextArea {...props} aria-label="is read only textarea" isReadOnly />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders text area with required attribute using isRequired', () => {
+  render(<TextArea aria-label="required textarea" isRequired />);
 
-  test('read only text area using default readOnlyVariant', () => {
-    const { asFragment } = render(
-      <TextArea {...props} aria-label="is default read only textarea" readOnlyVariant="default" />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByRole('textbox')).toBeRequired();
+});
 
-  test('read only text area using plain readOnlyVariant', () => {
-    const { asFragment } = render(
-      <TextArea {...props} aria-label="is plain read only textarea" readOnlyVariant="plain" />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders text area with required attribute using required', () => {
+  render(<TextArea aria-label="required textarea" required />);
 
-  test('read only text area using readOnly', () => {
-    const { asFragment } = render(<TextArea {...props} aria-label="read only textarea" readOnly />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByRole('textbox')).toBeRequired();
+});
 
-  test('validated text area success', () => {
-    render(<TextArea {...props} required validated={ValidatedOptions.success} aria-label="validated textarea" />);
-    expect(screen.getByLabelText('validated textarea')).toHaveClass('pf-m-success');
-  });
+test('Renders disabled text area using isDisabled', () => {
+  render(<TextArea aria-label="is disabled textarea" isDisabled />);
+  expect(screen.getByRole('textbox')).toBeDisabled();
+});
 
-  test('validated text area warning', () => {
-    render(<TextArea {...props} required validated={ValidatedOptions.warning} aria-label="validated textarea" />);
-    expect(screen.getByLabelText('validated textarea')).toHaveClass('pf-m-warning');
-  });
+test('Renders disabled text area using disabled', () => {
+  render(<TextArea aria-label="disabled textarea" disabled />);
+  expect(screen.getByRole('textbox')).toBeDisabled();
+});
 
-  test('validated text area error', () => {
-    const { asFragment } = render(
-      <TextArea {...props} required validated={ValidatedOptions.error} aria-label="validated textarea" />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders read only text area using isReadOnly', () => {
+  render(<TextArea aria-label="is read only textarea" isReadOnly />);
+  expect(screen.getByRole('textbox')).toHaveAttribute('readonly');
+});
 
-  test('vertically resizable text area', () => {
-    const { asFragment } = render(
-      <TextArea resizeOrientation="vertical" {...props} aria-label="vertical resize textarea" />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders read only text area using readOnly', () => {
+  render(<TextArea aria-label="read only textarea" readOnly />);
+  expect(screen.getByRole('textbox')).toHaveAttribute('readonly');
+});
 
-  test('horizontally resizable text area', () => {
-    const { asFragment } = render(
-      <TextArea
-        resizeOrientation="horizontal"
-        {...props}
-        required
-        validated={'error'}
-        aria-label="horizontal resize textarea"
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders validated text area with success className', () => {
+  render(<TextArea aria-label="validated textarea" validated={ValidatedOptions.success} />);
+  expect(screen.getByRole('textbox')).toHaveClass('pf-m-success');
+});
 
-  test('should throw console error when no aria-label or id is given', () => {
-    const myMock = jest.fn();
-    global.console = { ...global.console, error: myMock };
+test('Renders validated text area with warning className', () => {
+  render(<TextArea aria-label="validated textarea" validated={ValidatedOptions.warning} />);
+  expect(screen.getByRole('textbox')).toHaveClass('pf-m-warning');
+});
 
-    render(<TextArea {...props} />);
+test('Renders invalid text area', () => {
+  render(<TextArea aria-label="validated textarea" validated={ValidatedOptions.error} />);
+  expect(screen.getByRole('textbox')).toBeInvalid();
+});
 
-    expect(myMock).toHaveBeenCalled();
-  });
+test('Renders vertically resizable text area', () => {
+  render(<TextArea aria-label="vertical resize textarea" resizeOrientation="vertical" />);
+  expect(screen.getByRole('textbox')).toHaveClass('pf-m-resize-vertical');
+});
 
-  test('should not throw console error when id is given but no aria-label', () => {
-    const myMock = jest.fn();
-    global.console = { ...global.console, error: myMock };
+test('Renders horizontally resizable text area', () => {
+  render(<TextArea aria-label="horizontal resize textarea" resizeOrientation="horizontal" />);
+  expect(screen.getByRole('textbox')).toHaveClass('pf-m-resize-horizontal');
+});
 
-    render(<TextArea {...props} id="5" />);
+test('Throws console error when no aria-label or id is given', () => {
+  jest.spyOn(global.console, 'error');
 
-    expect(myMock).not.toHaveBeenCalled();
-  });
+  render(<TextArea />);
 
-  test('should not throw console error when aria-label is given but no id', () => {
-    const myMock = jest.fn();
-    global.console = { ...global.console, error: myMock };
+  expect(console.error).toHaveBeenCalled();
+});
 
-    render(<TextArea {...props} aria-label="test textarea" />);
+test('Does not throw console error when id is given but no aria-label', () => {
+  jest.spyOn(global.console, 'error');
 
-    expect(myMock).not.toHaveBeenCalled();
-  });
+  render(<TextArea id="5" />);
+
+  expect(console.error).not.toHaveBeenCalled();
+});
+
+test('Does not throw console error when aria-label is given but no id', () => {
+  jest.spyOn(global.console, 'error');
+
+  render(<TextArea aria-label="test textarea" />);
+
+  expect(console.error).not.toHaveBeenCalled();
+});
+
+test('Matches the snapshot', () => {
+  const { asFragment } = render(
+    <TextArea className="custom class" isRequired isDisabled autoResize aria-label="test textarea" />
+  );
+
+  expect(asFragment()).toMatchSnapshot();
 });
