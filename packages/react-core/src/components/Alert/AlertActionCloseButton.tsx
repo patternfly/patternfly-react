@@ -3,14 +3,18 @@ import { Button, ButtonVariant, ButtonProps } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { AlertContext } from './AlertContext';
 
+/** Renders a close button for a dismissable alert when this sub-component is passed into
+ * the alert's actionClose property.
+ */
+
 export interface AlertActionCloseButtonProps extends ButtonProps {
-  /** Additional classes added to the AlertActionCloseButton */
-  className?: string;
-  /** A callback for when the close button is clicked */
-  onClose?: () => void;
-  /** Aria Label for the Close button */
+  /** Accessible label for the close button */
   'aria-label'?: string;
-  /** Variant Label for the Close button */
+  /** Additional classes added to the alert action close button. */
+  className?: string;
+  /** A callback for when the close button is clicked. */
+  onClose?: () => void;
+  /** Variant Label for the close button. */
   variantLabel?: string;
 }
 
