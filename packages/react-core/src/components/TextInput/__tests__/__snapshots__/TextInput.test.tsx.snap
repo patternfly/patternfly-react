@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TextInput default read only text input 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    aria-label="default read only text input"
+    class="pf-c-form-control"
+    data-ouia-component-id="OUIA-Generated-TextInputBase-5"
+    data-ouia-component-type="PF4/TextInput"
+    data-ouia-safe="true"
+    readonly=""
+    type="text"
+    value="read only default"
+  />
+</DocumentFragment>
+`;
+
 exports[`TextInput disabled text input 1`] = `
 <DocumentFragment>
   <input
@@ -22,7 +38,7 @@ exports[`TextInput invalid text input 1`] = `
     aria-invalid="true"
     aria-label="invalid text input"
     class="pf-c-form-control"
-    data-ouia-component-id="OUIA-Generated-TextInputBase-5"
+    data-ouia-component-id="OUIA-Generated-TextInputBase-7"
     data-ouia-component-type="PF4/TextInput"
     data-ouia-safe="true"
     type="text"
@@ -31,11 +47,27 @@ exports[`TextInput invalid text input 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextInput readonly text input 1`] = `
+exports[`TextInput plain read only text input 1`] = `
 <DocumentFragment>
   <input
     aria-invalid="false"
-    aria-label="readonly text input"
+    aria-label="plain read only text input"
+    class="pf-c-form-control pf-m-plain"
+    data-ouia-component-id="OUIA-Generated-TextInputBase-6"
+    data-ouia-component-type="PF4/TextInput"
+    data-ouia-safe="true"
+    readonly=""
+    type="text"
+    value="read only plain"
+  />
+</DocumentFragment>
+`;
+
+exports[`TextInput read only text input using isReadOnly 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    aria-label="read only text input"
     class="pf-c-form-control"
     data-ouia-component-id="OUIA-Generated-TextInputBase-4"
     data-ouia-component-type="PF4/TextInput"
@@ -68,7 +100,7 @@ exports[`TextInput validated text input error 1`] = `
     aria-invalid="true"
     aria-label="validated text input"
     class="pf-c-form-control"
-    data-ouia-component-id="OUIA-Generated-TextInputBase-8"
+    data-ouia-component-id="OUIA-Generated-TextInputBase-10"
     data-ouia-component-type="PF4/TextInput"
     data-ouia-safe="true"
     type="text"
