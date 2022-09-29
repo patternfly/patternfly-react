@@ -18,8 +18,11 @@ export class OverflowMenuDemo extends React.Component {
   state = {
     isSimpleOpen: false,
     isAdditionalOptionsOpen: false,
-    isPersistOpen: false
+    isPersistOpen: false,
+    isContainerBreakpointOpen: false
   };
+
+  breakpointContainerRef = React.createRef<HTMLDivElement>();
 
   style = {
     display: 'flex',
@@ -225,12 +228,79 @@ export class OverflowMenuDemo extends React.Component {
     );
   }
 
+  onContainerBreakpointToggle = (isContainerBreakpointOpen: boolean) => {
+    this.setState({
+      isContainerBreakpointOpen
+    });
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onContainerBreakpointSelect = (_event?: React.SyntheticEvent<HTMLDivElement>) => {
+    this.setState({
+      isContainerBreakpointOpen: !this.state.isContainerBreakpointOpen
+    });
+  };
+
+  renderContainerBreakpointOverflowMenu() {
+    const { isContainerBreakpointOpen } = this.state;
+    const dropdownItems = [
+      <OverflowMenuDropdownItem key="action">Action</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item1" isShared>
+        Item 1
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item2" isShared>
+        Item 2
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item3" isShared>
+        Item 3
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item4" isShared>
+        Item 4
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item5" isShared>
+        Item 5
+      </OverflowMenuDropdownItem>
+    ];
+    return (
+      <div id="container-breakpoint-container" ref={this.breakpointContainerRef} style={{ width: '600px' }}>
+        <OverflowMenu
+          breakpointReference={this.breakpointContainerRef}
+          breakpoint="sm"
+          id="container-breakpoint-overflow-menu"
+          style={this.style}
+        >
+          <OverflowMenuContent>
+            <OverflowMenuItem>Item</OverflowMenuItem>
+            <OverflowMenuItem>Item</OverflowMenuItem>
+            <OverflowMenuGroup>
+              <OverflowMenuItem>Item</OverflowMenuItem>
+              <OverflowMenuItem>Item</OverflowMenuItem>
+              <OverflowMenuItem>Item</OverflowMenuItem>
+            </OverflowMenuGroup>
+          </OverflowMenuContent>
+          <OverflowMenuControl>
+            <Dropdown
+              onSelect={this.onContainerBreakpointSelect}
+              toggle={<KebabToggle onToggle={this.onContainerBreakpointToggle} />}
+              isOpen={isContainerBreakpointOpen}
+              isPlain
+              dropdownItems={dropdownItems}
+              isFlipEnabled
+              menuAppendTo="parent"
+            />
+          </OverflowMenuControl>
+        </OverflowMenu>
+      </div>
+    );
+  }
+
   render() {
     return (
       <React.Fragment>
         {this.renderSimpleOverflowMenu()}
         {this.renderOverflowMenuAdditionalOptions()}
         {this.renderOverflowMenuPersist()}
+        {this.renderContainerBreakpointOverflowMenu()}
       </React.Fragment>
     );
   }
