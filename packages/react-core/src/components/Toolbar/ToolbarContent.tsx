@@ -5,6 +5,7 @@ import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { formatBreakpointMods } from '../../helpers/util';
 import { ToolbarExpandableContent } from './ToolbarExpandableContent';
 import { PageContext } from '../Page/PageContext';
+import { debounce, canUseDOM } from '../../helpers/util';
 
 export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
@@ -51,6 +52,23 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
     isExpanded: false,
     showClearFiltersButton: false
   };
+
+  componentDidMount() {
+    // Initial check if should be shown
+    this.resize();
+  }
+
+  resize = () => {
+    if (this.contentRef?.current) {
+      const currentWidth = this.contentRef.current.clientWidth;
+
+      if (this.state.width !== currentWidth) {
+        this.setState({ width: currentWidth });
+      }
+    }
+  };
+
+  handleResize = debounce(this.resize, 250);
 
   render() {
     const {
