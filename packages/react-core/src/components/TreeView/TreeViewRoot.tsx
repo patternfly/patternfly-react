@@ -3,6 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import { canUseDOM } from '../../helpers/util';
 import { handleArrows } from '../../helpers';
+import { KeyTypes } from '../../helpers/constants';
 
 export interface TreeViewRootProps {
   /** Child nodes of the tree view */
@@ -73,7 +74,7 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
       el => !el.classList.contains('pf-m-disabled')
     );
 
-    if (key === ' ') {
+    if (key === KeyTypes.Space) {
       (activeElement as HTMLElement).click();
       event.preventDefault();
     }
@@ -134,7 +135,7 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     const activeElement = document.activeElement;
     const key = event.key;
 
-    if (key === ' ') {
+    if (key === KeyTypes.Space) {
       (activeElement as HTMLElement).click();
       event.preventDefault();
     }

@@ -213,7 +213,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                 }
               }}
               {...(hasCheck && { htmlFor: randomId })}
-              {...((hasCheck || (isSelectable && children)) && { id: `label-${randomId}` })}
+              {...((hasCheck || (isSelectable && children)) && { id: `label-${randomId}`, 'aria-selected': true })}
             >
               <span className={css(styles.treeViewNodeContainer)}>
                 {children && renderToggle(randomId)}
