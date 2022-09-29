@@ -24,6 +24,27 @@ test('Date picker with multiple validators does not show invalid icon on valid i
   await user.click(screen.getByRole('textbox'));
 
   await user.click(document.body);
+  expect(screen.getByRole('textbox')).not.toBeInvalid();
+});
+
+test('Error state can be cleared from outside', async () => {
+  const rangeValidator = (date: Date) => {
+    if (date < new Date('2020-03-17')) {
+      return 'error';
+    }
+    return '';
+  };
+
+  const user = userEvent.setup();
+
+  const { rerender } = render(<DatePicker value="2020-03-17" validators={[rangeValidator]} />);
+
+  await user.clear(screen.getByRole('textbox'));
+  await user.type(screen.getByRole('textbox'), '2020-03-16');
+
+  await user.click(document.body);
+
+  rerender(<DatePicker value="2020-03-18" validators={[rangeValidator]} />);
 
   expect(screen.getByRole('textbox')).not.toBeInvalid();
 });
