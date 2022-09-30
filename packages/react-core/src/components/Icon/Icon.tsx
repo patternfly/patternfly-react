@@ -6,7 +6,7 @@ import { Spinner } from '../Spinner';
 export interface IconComponentProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'size'> {
   /** Icon content when isInProgress is set to false */
   children?: React.ReactNode;
-  /** Icon content when isInProgress is set to true  */
+  /** Icon content when isInProgress is set to true. Defaults to a medium spinner with 1em diameter.  */
   progressIcon?: React.ReactNode;
   /** Additional classes applied to the icon container */
   className?: string;
@@ -20,31 +20,42 @@ export interface IconComponentProps extends Omit<React.HTMLProps<HTMLSpanElement
   isInline?: boolean;
   /** Indicates the icon is in progress. Setting this property to true will swap the icon content to the progressIcon. */
   isInProgress?: boolean;
+  /** Aria-label for the default progress icon */
+  defaultProgressArialabel?: string;
 }
 
 export const Icon: React.FunctionComponent<IconComponentProps> = ({
   children,
-  progressIcon = <Spinner size="md" diameter="1em" isSVG aria-label="Loading..." />,
   className,
+  progressIcon,
   size,
   iconSize,
   status,
   isInline = false,
   isInProgress = false,
+  defaultProgressArialabel = 'Loading...',
   ...props
-}: IconComponentProps) => (
-  <span
-    className={css(
-      styles.icon,
-      isInline && styles.modifiers.inline,
-      isInProgress && styles.modifiers.inProgress,
-      styles.modifiers[size],
-      className
-    )}
-    {...props}
-  >
-    <span className={css(styles.iconContent, styles.modifiers[iconSize], styles.modifiers[status])}>{children}</span>
-    {progressIcon && <span className={css(styles.iconProgress, className)}>{progressIcon}</span>}
-  </span>
-);
+}: IconComponentProps) => {
+  const _progressIcon = progressIcon ? (
+    progressIcon
+  ) : (
+    <Spinner size="md" diameter="1em" isSVG aria-label={defaultProgressArialabel} />
+  );
+
+  return (
+    <span
+      className={css(
+        styles.icon,
+        isInline && styles.modifiers.inline,
+        isInProgress && styles.modifiers.inProgress,
+        styles.modifiers[size],
+        className
+      )}
+      {...props}
+    >
+      <span className={css(styles.iconContent, styles.modifiers[iconSize], styles.modifiers[status])}>{children}</span>
+      {isInProgress && <span className={css(styles.iconProgress, className)}>{_progressIcon}</span>}
+    </span>
+  );
+};
 Icon.displayName = 'Icon';
