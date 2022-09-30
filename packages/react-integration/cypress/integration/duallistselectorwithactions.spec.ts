@@ -151,7 +151,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
       .eq(1)
       .find('li')
       .should('have.length', 4);
-    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+    cy.get('.pf-c-dual-list-selector__tools-filter input')
       .eq(1)
       .type('Option 1');
     cy.get('.pf-c-dual-list-selector__list')
@@ -161,7 +161,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
   });
 
   it('Verify removing all options', () => {
-    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+    cy.get('.pf-c-dual-list-selector__tools-filter input')
       .eq(1)
       .type('{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}');
     cy.get('.pf-c-dual-list-selector__controls-item')
@@ -182,7 +182,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
       .eq(0)
       .find('li')
       .should('have.length', 4);
-    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+    cy.get('.pf-c-dual-list-selector__tools-filter input')
       .eq(0)
       .type('Option 3');
     cy.get('.pf-c-dual-list-selector__list')
@@ -207,7 +207,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
       .eq(1)
       .find('li')
       .should('have.length', 1);
-    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+    cy.get('.pf-c-dual-list-selector__tools-filter input')
       .eq(0)
       .type('{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}');
     cy.get('.pf-c-dual-list-selector__list')
