@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.246.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.245.0...@patternfly/react-core@4.246.0) (2022-09-30)
+
+
+### Features
+
+* **TreeView:** update selectable keyboard interaction ([#8081](https://github.com/patternfly/patternfly-react/issues/8081)) ([bf8e693](https://github.com/patternfly/patternfly-react/commit/bf8e6936c6804244810aba3b7c8102099e1c233c))
+
+
+
+
+
 # [4.245.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.244.2...@patternfly/react-core@4.245.0) (2022-09-29)
 
 
