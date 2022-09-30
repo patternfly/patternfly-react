@@ -241,7 +241,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
   );
 
   const pageNav = (
-    <Nav onSelect={onNavSelect} aria-label="Nav">
+    <Nav onSelect={onNavSelect}>
       <NavList>
         <NavItem itemId={0} isActive={activeItem === 0} to="#system-panel">
           System panel
@@ -264,7 +264,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
 
   const sidebar = <PageSidebar nav={pageNav} />;
 
-  const mainContainerId = 'main-content-page-layout-tertiary-nav';
+  const mainContainerId = 'main-content';
 
   const pageSkipToContent = <SkipToContent href={`#${mainContainerId}`}>Skip to content</SkipToContent>;
 
@@ -276,18 +276,13 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
       skipToContent={pageSkipToContent}
       breadcrumb={dashboardBreadcrumb}
       mainContainerId={mainContainerId}
-      isTertiaryNavWidthLimited
       isBreadcrumbWidthLimited
-      isTertiaryNavGrouped
       isBreadcrumbGrouped
       additionalGroupedContent={
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection variant={PageSectionVariants.light} isWidthLimited>
           <TextContent>
             <Text component="h1">Main title</Text>
-            <Text component="p">
-              Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-              of its relative line height of 1.5.
-            </Text>
+            <Text component="p">This is a full page demo.</Text>
           </TextContent>
         </PageSection>
       }
