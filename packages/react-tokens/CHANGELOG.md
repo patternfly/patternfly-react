@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.93.5 (2022-09-29)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.93.4 (2022-09-23)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.93.3 (2022-09-20)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.93.2 (2022-09-20)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.93.1 (2022-09-20)
+
+
+### Bug Fixes
+
+* **OverflowMenu:** store resize listener reference ([#7975](https://github.com/patternfly/patternfly-react/issues/7975)) ([86b0193](https://github.com/patternfly/patternfly-react/commit/86b01936a3029886173654925eb5d11d9077fc56))
+
+
+
+
+
+# 4.93.0 (2022-09-19)
+
+
+### Features
+
+* **Wizard - next:** supporting component unit tests ([#7731](https://github.com/patternfly/patternfly-react/issues/7731)) ([2e4ec26](https://github.com/patternfly/patternfly-react/commit/2e4ec26d428b6be0ca4254b29e03c889eb5625bb))
+
+
+
+
+
 # 4.92.0 (2022-09-16)
 
 

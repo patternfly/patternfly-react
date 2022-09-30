@@ -27,10 +27,10 @@ const TileSingleSelect: React.FunctionComponent = () => {
 
   return (
     <div role="listbox" aria-label="Single selection tiles">
-      <Tile title="Tile 1" id="single-select-tile-1" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'tile-1'} />
-      <Tile title="Tile 2" id="single-select-tile-2" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'tile-2'} />
-      <Tile title="Tile 3" id="single-select-tile-3" isDisabled isSelected={selectedId === 'tile-3'} />
-      <Tile title="Tile 4" id="single-select-tile-4" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'tile-4'} />
+      <Tile title="Tile 1" id="single-select-tile-1" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'single-select-tile-1'} />
+      <Tile title="Tile 2" id="single-select-tile-2" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'single-select-tile-2'} />
+      <Tile title="Tile 3" id="single-select-tile-3" isDisabled isSelected={selectedId === 'single-select-tile-3'} />
+      <Tile title="Tile 4" id="single-select-tile-4" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'single-select-tile-4'} />
     </div>
   );
 };
@@ -71,14 +71,14 @@ const TileMultiSelect: React.FunctionComponent = () => {
         id="multiselect-tile-1"
         onClick={onSelect}
         onKeyDown={onKeyDown}
-        isSelected={selectedIds.includes('tile-1')}
+        isSelected={selectedIds.includes('multiselect-tile-1')}
       />
       <Tile
         title="Tile 2"
         id="multiselect-tile-2"
         onClick={onSelect}
         onKeyDown={onKeyDown}
-        isSelected={selectedIds.includes('tile-2')}
+        isSelected={selectedIds.includes('multiselect-tile-2')}
       />
       <Tile title="Tile 3" id="multiselect-tile-3" isDisabled />
       <Tile
@@ -86,7 +86,7 @@ const TileMultiSelect: React.FunctionComponent = () => {
         id="multiselect-tile-4"
         onClick={onSelect}
         onKeyDown={onKeyDown}
-        isSelected={selectedIds.includes('tile-4')}
+        isSelected={selectedIds.includes('multiselect-tile-4')}
       />
     </div>
   );

@@ -10,12 +10,12 @@ import {
 
 export const WizardCustomNav: React.FunctionComponent = () => {
   const nav: CustomWizardNavFunction = (
-    isOpen: boolean,
+    isExpanded: boolean,
     steps: WizardControlStep[],
     activeStep: WizardControlStep,
     goToStepByIndex: (index: number) => void
   ) => (
-    <WizardNav isOpen={isOpen}>
+    <WizardNav isExpanded={isExpanded}>
       {steps.map((step, index) => (
         <WizardNavItem
           key={step.id}

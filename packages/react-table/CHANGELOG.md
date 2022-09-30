@@ -3,6 +3,180 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.110.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.19...@patternfly/react-table@4.110.20) (2022-09-30)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.18...@patternfly/react-table@4.110.19) (2022-09-29)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.17...@patternfly/react-table@4.110.18) (2022-09-29)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.110.17 (2022-09-29)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.15...@patternfly/react-table@4.110.16) (2022-09-29)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.14...@patternfly/react-table@4.110.15) (2022-09-29)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.13...@patternfly/react-table@4.110.14) (2022-09-29)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.12...@patternfly/react-table@4.110.13) (2022-09-28)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.11...@patternfly/react-table@4.110.12) (2022-09-26)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.10...@patternfly/react-table@4.110.11) (2022-09-26)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.9...@patternfly/react-table@4.110.10) (2022-09-26)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.8...@patternfly/react-table@4.110.9) (2022-09-23)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.7...@patternfly/react-table@4.110.8) (2022-09-23)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.110.7 (2022-09-22)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.110.6 (2022-09-21)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.4...@patternfly/react-table@4.110.5) (2022-09-21)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.110.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.110.3...@patternfly/react-table@4.110.4) (2022-09-20)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.110.3 (2022-09-20)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.110.2 (2022-09-20)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.110.1 (2022-09-20)
+
+
+### Bug Fixes
+
+* **OverflowMenu:** store resize listener reference ([#7975](https://github.com/patternfly/patternfly-react/issues/7975)) ([86b0193](https://github.com/patternfly/patternfly-react/commit/86b01936a3029886173654925eb5d11d9077fc56))
+
+
+
+
+
+# 4.110.0 (2022-09-19)
+
+
+### Features
+
+* **Wizard - next:** supporting component unit tests ([#7731](https://github.com/patternfly/patternfly-react/issues/7731)) ([2e4ec26](https://github.com/patternfly/patternfly-react/commit/2e4ec26d428b6be0ca4254b29e03c889eb5625bb))
+
+
+
+
+
 # 4.109.0 (2022-09-16)
 
 

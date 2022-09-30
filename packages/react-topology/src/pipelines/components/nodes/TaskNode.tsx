@@ -8,7 +8,7 @@ import { AnchorEnd, Node, ScaleDetailsLevel } from '../../../types';
 import { RunStatus } from '../../types';
 import { useAnchor, WithContextMenuProps, WithSelectionProps } from '../../../behavior';
 import { truncateMiddle } from '../../../utils/truncate-middle';
-import { createSvgIdUrl, getNodeScaleTranslation, useHover, useSize } from '../../../utils';
+import { createSvgIdUrl, getNodeScaleTranslation, useCombineRefs, useHover, useSize } from '../../../utils';
 import { getRunStatusModifier, nonShadowModifiers } from '../../utils';
 import StatusIcon from '../../utils/StatusIcon';
 import { TaskNodeSourceAnchor, TaskNodeTargetAnchor } from '../anchors';
@@ -64,7 +64,8 @@ export type TaskNodeProps = {
 } & Partial<WithSelectionProps> &
   Partial<WithContextMenuProps>;
 
-const TaskNode: React.FC<TaskNodeProps> = ({
+const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> = ({
+  innerRef,
   element,
   className,
   paddingX = 8,
@@ -101,7 +102,8 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   onActionIconClick,
   children
 }) => {
-  const [hovered, hoverRef] = useHover();
+  const [hovered, innerHoverRef] = useHover();
+  const hoverRef = useCombineRefs(innerRef, innerHoverRef);
   const isHover = hover !== undefined ? hover : hovered;
   const { width } = element.getBounds();
   const label = truncateMiddle(element.getLabel(), { length: truncateLength, omission: '...' });
@@ -115,6 +117,8 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   const textWidth = textSize?.width ?? 0;
   const textHeight = textSize?.height ?? 0;
   useAnchor(
+    // Include scaleNode to cause an update when it changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     React.useCallback((node: Node) => new TaskNodeSourceAnchor(node, detailsLevel, statusIconSize + 4), [
       detailsLevel,
       statusIconSize,
@@ -310,7 +314,6 @@ const TaskNode: React.FC<TaskNodeProps> = ({
       <g
         className={pillClasses}
         transform={`translate(${whenOffset + whenSize}, 0)`}
-        ref={hoverRef}
         onClick={onSelect}
         onContextMenu={onContextMenu}
       >
@@ -411,6 +414,7 @@ const TaskNode: React.FC<TaskNodeProps> = ({
     <g
       className={css('pf-topology__pipelines__task-node', className)}
       transform={`${scaleNode ? `translate(${translateX}, ${translateY})` : ''} scale(${nodeScale})`}
+      ref={hoverRef}
     >
       {!toolTip || disableTooltip ? (
         renderTask()
@@ -423,4 +427,6 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   );
 };
 
-export default observer(TaskNode);
+export default observer(
+  React.forwardRef((props: TaskNodeProps, ref: React.Ref<SVGGElement>) => <TaskNode innerRef={ref} {...props} />)
+);

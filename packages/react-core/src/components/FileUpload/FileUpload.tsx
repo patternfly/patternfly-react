@@ -8,22 +8,48 @@ interface DropzoneInputPropsWithRef extends DropzoneInputProps {
   ref: React.RefCallback<HTMLInputElement>; // Working around an issue in react-dropzone 9.0.0's types. Should not be necessary in later versions.
 }
 
+/** The main file upload component with drag and drop functionality built in by default. */
+
 export interface FileUploadProps
   extends Omit<
     FileUploadFieldProps,
     'children' | 'onBrowseButtonClick' | 'onClearButtonClick' | 'isDragActive' | 'containerRef'
   > {
-  /** Unique id for the TextArea, also used to generate ids for accessible labels. */
-  id: string;
-  /** What type of file. Determines what is is passed to `onChange` and expected by `value`
-   * (a string for 'text' and 'dataURL', or a File object otherwise. */
-  type?: 'text' | 'dataURL';
-  /** Value of the file's contents
-   * (string if text file, File object otherwise) */
-  value?: string | File;
+  /** Flag to allow editing of a text file's contents after it is selected from disk. */
+  allowEditingUploadedText?: boolean;
+  /** Aria-label for the text area. */
+  'aria-label'?: string;
+  /** Text for the browse button. */
+  browseButtonText?: string;
+  /** Additional children to render after (or instead of) the file preview. */
+  children?: React.ReactNode;
+  /** Additional classes added to the file upload container element. */
+  className?: string;
+  /** Text for the clear button. */
+  clearButtonText?: string;
   /** Value to be shown in the read-only filename field. */
   filename?: string;
-  /** @deprecated A callback for when the file contents change. Please instead use onFileInputChange, onTextChange, onDataChange, onClearClick individually.  */
+  /** Aria-label for the read-only filename field. */
+  filenameAriaLabel?: string;
+  /** Placeholder string to display in the empty filename field. */
+  filenamePlaceholder?: string;
+  /** Flag to hide the built-in preview of the file (where available). If true, you can use
+   * the children property to render an alternate preview.
+   */
+  hideDefaultPreview?: boolean;
+  /** Unique id for the text area. Also used to generate ids for accessible labels. */
+  id: string;
+  /** Flag to show if the field is disabled. */
+  isDisabled?: boolean;
+  /** Flag to show if a file is being loaded. */
+  isLoading?: boolean;
+  /** Flag to show if the field is read only. */
+  isReadOnly?: boolean;
+  /** Flag to show if the field is required. */
+  isRequired?: boolean;
+  /** @deprecated A callback for when the file contents changes. Please instead use
+   * onFileInputChange, onTextChange, onDataChange, and onClearClick individually.
+   */
   onChange?: (
     value: string | File,
     filename: string,
@@ -32,61 +58,42 @@ export interface FileUploadProps
       | React.DragEvent<HTMLElement> // User dragged/dropped a file
       | React.ChangeEvent<HTMLElement> // User typed in the TextArea
   ) => void;
+  /** Callback for clicking on the file upload field text area. By default, prevents a click
+   * in the text area from opening file dialog.
+   */
+  onClick?: (event: React.MouseEvent) => void;
   /** Change event emitted from the hidden \<input type="file" \> field associated with the component  */
   onFileInputChange?: (event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLElement>, file: File) => void;
-  /** Callback for clicking on the FileUploadField text area. By default, prevents a click in the text area from opening file dialog. */
-  onClick?: (event: React.MouseEvent) => void;
-  /** Additional classes added to the FileUpload container element. */
-  className?: string;
-  /** Flag to show if the field is disabled. */
-  isDisabled?: boolean;
-  /** Flag to show if the field is read only. */
-  isReadOnly?: boolean;
-  /** Flag to show if a file is being loaded. */
-  isLoading?: boolean;
-  /** Aria-valuetext for the loading spinner */
+  /** Aria-valuetext for the loading spinner. */
   spinnerAriaValueText?: string;
-  /** Flag to show if the field is required. */
-  isRequired?: boolean;
+  /** What type of file. Determines what is passed to the onChange property and what is
+   * expected by the value property (a string for 'text' and 'dataURL', or a File object otherwise.
+   */
+  type?: 'text' | 'dataURL';
   /** Value to indicate if the field is modified to show that validation state.
    * If set to success, field will be modified to indicate valid state.
-   * If set to error,  field will be modified to indicate error state.
+   * If set to error, field will be modified to indicate error state.
    */
   validated?: 'success' | 'error' | 'default';
-  /** Aria-label for the TextArea. */
-  'aria-label'?: string;
-  /** Placeholder string to display in the empty filename field */
-  filenamePlaceholder?: string;
-  /** Aria-label for the read-only filename field */
-  filenameAriaLabel?: string;
-  /** Text for the Browse button */
-  browseButtonText?: string;
-  /** Text for the Clear button */
-  clearButtonText?: string;
-  /** Flag to hide the built-in preview of the file (where available).
-   * If true, you can use children to render an alternate preview. */
-  hideDefaultPreview?: boolean;
-  /** Flag to allow editing of a text file's contents after it is selected from disk */
-  allowEditingUploadedText?: boolean;
-  /** Additional children to render after (or instead of) the file preview. */
-  children?: React.ReactNode;
+  /** Value of the file's contents (string if text file, File object otherwise). */
+  value?: string | File;
 
   // Props available in FileUpload but not FileUploadField:
 
-  /** A callback for when a selected file starts loading */
-  onReadStarted?: (fileHandle: File) => void;
-  /** A callback for when a selected file finishes loading */
-  onReadFinished?: (fileHandle: File) => void;
-  /** A callback for when the FileReader API fails */
-  onReadFailed?: (error: DOMException, fileHandle: File) => void;
   /** Optional extra props to customize react-dropzone. */
   dropzoneProps?: DropzoneProps;
-  /** Clear button was clicked */
+  /** Clear button was clicked. */
   onClearClick?: React.MouseEventHandler<HTMLButtonElement>;
-  /** Text area text changed */
-  onTextChange?: (text: string) => void;
   /** On data changed - if type='text' or type='dataURL' and file was loaded it will call this method */
   onDataChange?: (data: string) => void;
+  /** A callback for when the FileReader API fails. */
+  onReadFailed?: (error: DOMException, fileHandle: File) => void;
+  /** A callback for when a selected file finishes loading. */
+  onReadFinished?: (fileHandle: File) => void;
+  /** A callback for when a selected file starts loading. */
+  onReadStarted?: (fileHandle: File) => void;
+  /** Text area text changed. */
+  onTextChange?: (text: string) => void;
 }
 
 export const FileUpload: React.FunctionComponent<FileUploadProps> = ({

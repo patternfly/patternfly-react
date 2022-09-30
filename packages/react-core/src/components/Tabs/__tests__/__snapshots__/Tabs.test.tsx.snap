@@ -10,27 +10,6 @@ exports[`should render accessible tabs 1`] = `
     data-ouia-safe="true"
     id="accessibleTabs"
   >
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -99,27 +78,6 @@ exports[`should render accessible tabs 1`] = `
         </a>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </nav>
   <section
     aria-labelledby="pf-tab-0-tab1"
@@ -168,27 +126,6 @@ exports[`should render box tabs 1`] = `
     data-ouia-safe="true"
     id="boxTabs"
   >
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -287,27 +224,6 @@ exports[`should render box tabs 1`] = `
         </button>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
@@ -368,27 +284,6 @@ exports[`should render box tabs of light variant 1`] = `
     data-ouia-safe="true"
     id="boxLightVariantTabs"
   >
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -457,27 +352,6 @@ exports[`should render box tabs of light variant 1`] = `
         </button>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
@@ -569,27 +443,6 @@ exports[`should render expandable vertical tabs 1`] = `
         </button>
       </div>
     </div>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -688,27 +541,6 @@ exports[`should render expandable vertical tabs 1`] = `
         </button>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
@@ -769,27 +601,6 @@ exports[`should render filled tabs 1`] = `
     data-ouia-safe="true"
     id="filledTabs"
   >
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -858,27 +669,6 @@ exports[`should render filled tabs 1`] = `
         </button>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
@@ -927,27 +717,6 @@ exports[`should render secondary tabs 1`] = `
     data-ouia-safe="true"
     id="primarieTabs"
   >
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -1016,27 +785,6 @@ exports[`should render secondary tabs 1`] = `
         </button>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </div>
   <section
     aria-labelledby="pf-tab-0-primarieTabs"
@@ -1054,27 +802,6 @@ exports[`should render secondary tabs 1`] = `
       data-ouia-safe="true"
       id="secondaryTabs"
     >
-      <button
-        aria-hidden="true"
-        aria-label="Scroll left"
-        class="pf-c-tabs__scroll-button pf-m-secondary"
-        disabled=""
-        type="button"
-      >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style="vertical-align: -0.125em;"
-          viewBox="0 0 256 512"
-          width="1em"
-        >
-          <path
-            d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-          />
-        </svg>
-      </button>
       <ul
         class="pf-c-tabs__list"
         role="tablist"
@@ -1143,27 +870,6 @@ exports[`should render secondary tabs 1`] = `
           </button>
         </li>
       </ul>
-      <button
-        aria-hidden="true"
-        aria-label="Scroll right"
-        class="pf-c-tabs__scroll-button pf-m-secondary"
-        disabled=""
-        type="button"
-      >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style="vertical-align: -0.125em;"
-          viewBox="0 0 256 512"
-          width="1em"
-        >
-          <path
-            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-          />
-        </svg>
-      </button>
     </div>
     <section
       aria-labelledby="pf-tab-10-secondary tab1"
@@ -1238,27 +944,6 @@ exports[`should render simple tabs 1`] = `
     data-ouia-safe="true"
     id="simpleTabs"
   >
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -1357,27 +1042,6 @@ exports[`should render simple tabs 1`] = `
         </button>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
@@ -1438,27 +1102,6 @@ exports[`should render tabs with eventKey Strings 1`] = `
     data-ouia-safe="true"
     id="eventKeyTabs"
   >
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -1527,27 +1170,6 @@ exports[`should render tabs with eventKey Strings 1`] = `
         </button>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </div>
   <section
     aria-labelledby="pf-tab-one-tab1"
@@ -1597,27 +1219,6 @@ exports[`should render tabs with no bottom border 1`] = `
     data-ouia-safe="true"
     id="noBottomBorderTabs"
   >
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -1686,27 +1287,6 @@ exports[`should render tabs with no bottom border 1`] = `
         </button>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
@@ -1755,27 +1335,6 @@ exports[`should render tabs with separate content 1`] = `
     data-ouia-safe="true"
     id="separateTabs"
   >
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -1844,27 +1403,6 @@ exports[`should render tabs with separate content 1`] = `
         </button>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </div>
   <div>
     <section
@@ -1922,27 +1460,6 @@ exports[`should render uncontrolled tabs 1`] = `
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
   >
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -2041,27 +1558,6 @@ exports[`should render uncontrolled tabs 1`] = `
         </button>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
@@ -2122,27 +1618,6 @@ exports[`should render vertical tabs 1`] = `
     data-ouia-safe="true"
     id="verticalTabs"
   >
-    <button
-      aria-hidden="true"
-      aria-label="Scroll left"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </svg>
-    </button>
     <ul
       class="pf-c-tabs__list"
       role="tablist"
@@ -2241,27 +1716,6 @@ exports[`should render vertical tabs 1`] = `
         </button>
       </li>
     </ul>
-    <button
-      aria-hidden="true"
-      aria-label="Scroll right"
-      class="pf-c-tabs__scroll-button"
-      disabled=""
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style="vertical-align: -0.125em;"
-        viewBox="0 0 256 512"
-        width="1em"
-      >
-        <path
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </svg>
-    </button>
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"

@@ -142,6 +142,7 @@ interface RowWrapperProps {
     rowKey: string;
   };
   children?: React.ReactNode;
+  ouiaId?: number | string;
 }
 ```
 

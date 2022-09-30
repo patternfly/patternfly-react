@@ -38,6 +38,23 @@ BasicLogViewer = () => {
 };
 ```
 
+### With line number chars specified
+
+```js
+import React from 'react';
+import { data } from './realTestData.js';
+import { LogViewer } from '@patternfly/react-log-viewer';
+
+LineNumberCharsSpecifiedLogViewer = () => {
+  return (
+    <LogViewer
+      data={data.data}
+      initialIndexWidth={7}
+    />
+  );
+};
+```
+
 ### With search
 
 ```js

@@ -62,6 +62,8 @@ export interface SelectDemoState {
   menuDocumentBodySelected: string[];
   lbltypeaheadSelected: string;
   lbltypeaheadisOpen: boolean;
+  disabledFirstItemIsOpen: boolean;
+  disabledFirstItemSelected: string;
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
@@ -116,7 +118,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     typeaheadInputValuePersisted: false,
     customContentisOpen: false,
     menuDocumentBodyisOpen: false,
-    menuDocumentBodySelected: ['']
+    menuDocumentBodySelected: [''],
+    disabledFirstItemIsOpen: false,
+    disabledFirstItemSelected: ''
   };
 
   singleOptions = [
@@ -159,6 +163,16 @@ export class SelectDemo extends Component<SelectDemoState> {
     <SelectOption key={9} value={new State('New Mexico', 'NM', 'Santa Fe', 1912)} />,
     <SelectOption key={10} value={new State('New York', 'NY', 'Albany', 1788)} />,
     <SelectOption key={11} value={new State('North Carolina', 'NC', 'Raleigh', 1789)} />
+  ];
+
+  disabledFirstItemOptions = [
+    { value: 'Choose', disabled: true, isPlaceholder: true, id: 'first-item-disabled-select-opt-1' },
+    { value: 'Mr', disabled: false, id: 'first-item-disabled-select-opt-2' },
+    { value: 'Miss', disabled: false, id: 'first-item-disabled-select-opt-3' },
+    { value: 'Mrs', disabled: false, id: 'first-item-disabled-select-opt-4' },
+    { value: 'Ms', disabled: false, id: 'first-item-disabled-select-opt-5' },
+    { value: 'Dr', disabled: false, id: 'first-item-disabled-select-opt-6' },
+    { value: 'Other', disabled: false, id: 'first-item-disabled-select-opt-7' }
   ];
 
   toggleDisabled = () => {
@@ -286,6 +300,12 @@ export class SelectDemo extends Component<SelectDemoState> {
   customContentOnToggle = (customContentisOpen: boolean) => {
     this.setState({
       customContentisOpen
+    });
+  };
+
+  disabledFirstItemOnToggle = (disabledFirstItemIsOpen: boolean) => {
+    this.setState({
+      disabledFirstItemIsOpen
     });
   };
 
@@ -549,6 +569,22 @@ export class SelectDemo extends Component<SelectDemoState> {
         }),
         () => console.log('selections: ', this.state.customTypeaheadMultiSelected)
       );
+    }
+  };
+
+  disabledFirstItemOnSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
+      this.setState({
+        disabledFirstItemSelected: selection,
+        disabledFirstItemIsOpen: false
+      });
+      console.log('selected:', selection.toString());
     }
   };
 
@@ -1293,6 +1329,43 @@ export class SelectDemo extends Component<SelectDemoState> {
     );
   }
 
+  renderDisabledFirstItemSelect() {
+    const { disabledFirstItemIsOpen, disabledFirstItemSelected } = this.state;
+    const titleId = 'disabled-first-item-title-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          First Item Disabled Select
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Title
+          </span>
+          <Select
+            toggleId="disabled-first-item-single-select"
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.disabledFirstItemOnToggle}
+            onSelect={this.disabledFirstItemOnSelect}
+            selections={disabledFirstItemSelected}
+            isOpen={disabledFirstItemIsOpen}
+            aria-labelledby={titleId}
+          >
+            {this.disabledFirstItemOptions.map((option, index) => (
+              <SelectOption
+                id={option.id}
+                isDisabled={option.disabled}
+                key={index}
+                value={option.value}
+                isPlaceholder={option.isPlaceholder}
+              />
+            ))}
+          </Select>
+        </div>
+      </StackItem>
+    );
+  }
+
   render() {
     return (
       <Stack hasGutter>
@@ -1313,6 +1386,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         {this.renderSelectWithDivider()}
         {this.renderLabelTypeaheadSelect()}
         {this.renderSingleSelectMenuAppendTo()}
+        {this.renderDisabledFirstItemSelect()}
       </Stack>
     );
   }

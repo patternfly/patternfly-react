@@ -246,6 +246,7 @@ class BasicNotificationDrawer extends React.Component {
                   variant={this.getNumberUnread() === 0 ? 'read' : 'unread'}
                   onClick={this.onCloseNotificationDrawer}
                   aria-label="Notifications"
+                  isExpanded={isDrawerExpanded}
                 >
                   <BellIcon />
                 </NotificationBadge>
@@ -812,6 +813,7 @@ class GroupedNotificationDrawer extends React.Component {
                   variant={this.getNumberUnread() === 0 ? 'read' : 'unread'}
                   onClick={this.onCloseNotificationDrawer}
                   aria-label="Notifications"
+                  isExpanded={isDrawerExpanded}
                 >
                   <BellIcon />
                 </NotificationBadge>

@@ -80,9 +80,30 @@ constructor(props) {
 
 ```js
 import React from 'react';
-import { TextInput } from '@patternfly/react-core';
+import { Checkbox, TextInput } from '@patternfly/react-core';
 
-<TextInput value="read only text input example" type="text" isReadOnly aria-label="readonly input example" />;
+const ReadOnlyTextArea = () => {
+  const [isPlainChecked, setIsPlainChecked] = React.useState(false);
+
+  return (
+    <React.Fragment>
+      <div style={{ marginBottom: '12px' }}>
+        <Checkbox
+          id="isPlain"
+          key="isPlain"
+          label="Plain read only variant"
+          isChecked={isPlainChecked}
+          onChange={checked => setIsPlainChecked(checked)}
+        />
+      </div>
+      <TextInput
+        aria-label="read only text input example"
+        value="read only text input example"
+        readOnlyVariant={isPlainChecked ? 'plain' : 'default'}
+      />
+    </React.Fragment>
+  );
+};
 ```
 
 ### Invalid

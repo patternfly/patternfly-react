@@ -26,6 +26,10 @@ export interface TextProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   className?: string;
   /** Flag to indicate the link has visited styles applied if the browser determines the link has been visited */
   isVisitedLink?: boolean;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export const Text: React.FunctionComponent<TextProps> = ({

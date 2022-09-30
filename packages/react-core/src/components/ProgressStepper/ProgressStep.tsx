@@ -19,7 +19,7 @@ export interface ProgressStepProps
   /** Custom icon of a progress step. Will override default icons provided by the variant. */
   icon?: React.ReactNode;
   /** Description text of a progress step. */
-  description?: string;
+  description?: React.ReactNode;
   /** ID of the title of the progress step. */
   titleId?: string;
   /** Accessible label for the progress step. Should communicate all information being communicated by the progress

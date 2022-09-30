@@ -50,6 +50,8 @@ export interface ChipGroupProps extends React.HTMLProps<HTMLUListElement>, OUIAP
     | 'left-end'
     | 'right-start'
     | 'right-end';
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
 }
 
 interface ChipGroupState {

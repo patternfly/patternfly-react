@@ -47,8 +47,8 @@ Install peer deps
 ```json
 "monaco-editor": "^0.21.3",
 "monaco-editor-webpack-plugin": "^2.1.0",
-"react": "^16.8.0 || ^17.0.0",
-"react-dom": "^16.8.0 || ^17.0.0",
+"react": "^16.8 || ^17 || ^18",
+"react-dom": "^16.8 || ^17 || ^18",
 "react-monaco-editor": "^0.41.2"
 ```
 

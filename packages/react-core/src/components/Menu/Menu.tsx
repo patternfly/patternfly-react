@@ -59,6 +59,10 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   isPlain?: boolean;
   /** Indicates if the menu should be srollable */
   isScrollable?: boolean;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export interface MenuState {
@@ -101,7 +105,9 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     // Allow tabbing to first menu item
     const current = this.menuRef.current;
     if (current) {
-      const first = current.querySelector('ul button, ul a') as HTMLButtonElement | HTMLAnchorElement;
+      const first = current.querySelector('ul button:not(:disabled), ul a:not(:disabled)') as
+        | HTMLButtonElement
+        | HTMLAnchorElement;
       if (first) {
         first.tabIndex = 0;
       }
