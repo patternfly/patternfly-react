@@ -4,6 +4,7 @@ section: components
 cssPrefix: pf-c-menu
 propComponents: ['Select', SelectGroup, 'SelectOption', 'SelectList']
 beta: true
+ouia: true
 ---
 
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
