@@ -31,6 +31,8 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ### Status colors
 
+The following example demonstrates the various status variants of an icon. Keep in mind that these icons are displayed out of a typical context, and that you should not rely on color alone to convey status to users.
+
 ```ts file="IconStatus.tsx"
 ```
 
@@ -47,6 +49,8 @@ Providing both container and content size properties allow an icon to maintain a
 ```
 
 ### In progress
+
+Passing the `isInProgress` property will swap the icon to a progress icon. By default this progress icon will be a `Spinner` but may be customized or overriden using the `progressIcon` property.
 
 ```ts file="IconProgress.tsx"
 ```

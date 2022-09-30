@@ -4,16 +4,16 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-i
 
 export const IconSizes: React.FunctionComponent = () => (
   <React.Fragment>
-    <Icon containerSize="sm">
+    <Icon size="sm">
       <PlusCircleIcon />
     </Icon>
-    <Icon containerSize="md">
+    <Icon size="md">
       <PlusCircleIcon />
     </Icon>
-    <Icon containerSize="lg">
+    <Icon size="lg">
       <PlusCircleIcon />
     </Icon>
-    <Icon containerSize="xl">
+    <Icon size="xl">
       <PlusCircleIcon />
     </Icon>
   </React.Fragment>

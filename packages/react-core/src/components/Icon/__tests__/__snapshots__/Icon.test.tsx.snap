@@ -22,6 +22,26 @@ exports[`Icon renders basic icon successfully 1`] = `
         />
       </svg>
     </span>
+    <span
+      class="pf-c-icon__progress"
+    >
+      <svg
+        aria-label="Loading..."
+        aria-valuetext="Loading..."
+        class="pf-c-spinner pf-m-md"
+        role="progressbar"
+        style="--pf-c-spinner--diameter: 1em;"
+        viewBox="0 0 100 100"
+      >
+        <circle
+          class="pf-c-spinner__path"
+          cx="50"
+          cy="50"
+          fill="none"
+          r="45"
+        />
+      </svg>
+    </span>
   </span>
 </DocumentFragment>
 `;

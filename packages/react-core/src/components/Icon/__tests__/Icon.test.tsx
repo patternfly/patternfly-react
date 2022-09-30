@@ -25,26 +25,26 @@ describe('Icon', () => {
   });
 
   Object.values(['sm', 'md', 'lg', 'xl']).forEach(size => {
-    test(`sets icon container size modifier successfully - ${size}`, () => {
+    test(`sets icon size modifier successfully - ${size}`, () => {
       render(
-        <Icon containerSize={size as 'sm' | 'md' | 'lg' | 'xl'} title={`${size}-icon`}>
+        <Icon iconSize={size as 'sm' | 'md' | 'lg' | 'xl'} title={`content-${size}-icon`}>
           <CheckIcon />
         </Icon>
       );
-      const iconContainer = screen.getByTitle(`${size}-icon`);
+      const iconContainer = screen.getByTitle(`content-${size}-icon`).querySelector('.pf-c-icon__content');
 
       expect(iconContainer).toHaveClass(`pf-m-${size}`);
     });
   });
 
   Object.values(['sm', 'md', 'lg', 'xl']).forEach(size => {
-    test(`sets icon content size modifier successfully - ${size}`, () => {
+    test(`sets size modifier successfully - ${size}`, () => {
       render(
-        <Icon contentSize={size as 'sm' | 'md' | 'lg' | 'xl'} title={`content-${size}-icon`}>
+        <Icon size={size as 'sm' | 'md' | 'lg' | 'xl'} title={`${size}-icon`}>
           <CheckIcon />
         </Icon>
       );
-      const iconContent = screen.getByTitle(`content-${size}-icon`).querySelector('.pf-c-icon__content');
+      const iconContent = screen.getByTitle(`${size}-icon`);
 
       expect(iconContent).toHaveClass(`pf-m-${size}`);
     });
