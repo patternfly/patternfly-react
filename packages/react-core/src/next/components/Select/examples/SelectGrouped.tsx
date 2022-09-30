@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, SelectOption, SelectList } from '@patternfly/react-core/next';
+import { Select, SelectOption, SelectList, SelectGroup } from '@patternfly/react-core/next';
 import { MenuToggle, MenuToggleElement } from '@patternfly/react-core';
 
 export const SelectBasic: React.FunctionComponent = () => {
@@ -45,9 +45,16 @@ export const SelectBasic: React.FunctionComponent = () => {
       toggle={toggle}
     >
       <SelectList>
-        <SelectOption itemId="Option 1">Option 1</SelectOption>
-        <SelectOption itemId="Option 2">Option 2</SelectOption>
-        <SelectOption itemId="Option 3">Option 3</SelectOption>
+        <SelectGroup label="Group 1">
+          <SelectOption itemId="Option 1">Option 1</SelectOption>
+          <SelectOption itemId="Option 2">Option 2</SelectOption>
+          <SelectOption itemId="Option 3">Option 3</SelectOption>
+        </SelectGroup>
+        <SelectGroup label="Group 2">
+          <SelectOption itemId="Option 4">Option 4</SelectOption>
+          <SelectOption itemId="Option 5">Option 5</SelectOption>
+          <SelectOption itemId="Option 6">Option 6</SelectOption>
+        </SelectGroup>
       </SelectList>
     </Select>
   );

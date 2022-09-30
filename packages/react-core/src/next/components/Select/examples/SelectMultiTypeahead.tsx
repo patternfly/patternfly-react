@@ -102,8 +102,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
     }
   };
 
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation();
+  const onToggleClick = () => {
     setIsOpen(!isOpen);
   };
 

@@ -46,8 +46,7 @@ export const SelectBasic: React.FunctionComponent = () => {
     setSelectOptions(newSelectOptions);
   }, [inputValue]);
 
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation();
+  const onToggleClick = () => {
     setIsOpen(!isOpen);
   };
 

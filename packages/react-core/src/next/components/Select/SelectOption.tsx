@@ -7,15 +7,15 @@ export interface SelectOptionProps extends Omit<MenuItemProps, 'ref'> {
   children?: React.ReactNode;
   /** Classes applied to root element of select option */
   className?: string;
-  /** Identifies the component in the Menu onSelect or onActionClick callback */
+  /** Identifies the component in the Select onSelect callback */
   itemId?: any;
-  /** Flag indicating the option has a checkbox */
+  /** Indicates the option has a checkbox */
   hasCheck?: boolean;
-  /** Render option as disabled */
+  /** Indicates the option is disabled */
   isDisabled?: boolean;
-  /** Flag indicating if the option is selected */
+  /** Indicates the option is selected */
   isSelected?: boolean;
-  /** Flag indicating the option is focused */
+  /** Indicates the option is focused */
   isFocused?: boolean;
 }
 

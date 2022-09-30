@@ -2,32 +2,33 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../../../components/Menu';
 import { Popper } from '../../../helpers/Popper/Popper';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../../helpers';
 
-export interface SelectProps extends MenuProps {
+export interface SelectProps extends MenuProps, OUIAProps {
   /** Anything which can be rendered in a select */
   children?: React.ReactNode;
   /** Classes applied to root element of select */
   className?: string;
   /** Flag to indicate if select is open */
   isOpen?: boolean;
-  /** Single itemId for single select menus, or array of itemIds for multi select. You can also specify isSelected on the MenuItem. */
+  /** Single itemId for single select menus, or array of itemIds for multi select. You can also specify isSelected on the SelectOption. */
   selected?: any | any[];
   /** Renderer for a custom select toggle. Forwards a ref to the toggle. */
   toggle: (toggleRef: React.RefObject<any>) => React.ReactNode;
-  /** Function callback called when user selects item. */
+  /** Function callback when user selects an option. */
   onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => void;
-  /** Callback to allow the dropdown component to change the open state of the menu.
+  /** Callback to allow the select component to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing either tab or escape. */
   onOpenChange?: (isOpen: boolean) => void;
   /** Indicates if the select should be without the outer box-shadow */
   isPlain?: boolean;
-  /** Min width of the select menu */
+  /** Minimum width of the select menu */
   minWidth?: string;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLDivElement>;
 }
 
-const SelectBase: React.FunctionComponent<SelectProps> = ({
+const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   children,
   className,
   onSelect,
@@ -39,7 +40,7 @@ const SelectBase: React.FunctionComponent<SelectProps> = ({
   minWidth,
   innerRef,
   ...props
-}: SelectProps) => {
+}: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
   const containerRef = React.useRef<HTMLDivElement>();
@@ -49,9 +50,9 @@ const SelectBase: React.FunctionComponent<SelectProps> = ({
     const handleMenuKeys = (event: KeyboardEvent) => {
       if (!isOpen && toggleRef.current?.contains(event.target as Node)) {
         // toggle was clicked open, focus on first menu item
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' || event.key === 'Space') {
           setTimeout(() => {
-            const firstElement = menuRef?.current?.querySelector('li > button:not(:disabled),li input:not(:disabled)');
+            const firstElement = menuRef?.current?.querySelector('li button:not(:disabled),li input:not(:disabled)');
             firstElement && (firstElement as HTMLElement).focus();
           }, 0);
         }
@@ -98,6 +99,11 @@ const SelectBase: React.FunctionComponent<SelectProps> = ({
           '--pf-c-menu--MinWidth': minWidth
         } as React.CSSProperties
       })}
+      {...getOUIAProps(
+        Select.displayName,
+        props.ouiaId !== undefined ? props.ouiaId : getDefaultOUIAId(Select.displayName),
+        props.ouiaSafe !== undefined ? props.ouiaSafe : true
+      )}
       {...props}
     >
       <MenuContent>{children}</MenuContent>
