@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.247.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.246.0...@patternfly/react-core@4.247.0) (2022-09-30)
+
+
+### Features
+
+* **DualListSelector, SearchInput:** use SearchInput in DLS, add type prop to SearchInput ([#8040](https://github.com/patternfly/patternfly-react/issues/8040)) ([24474d8](https://github.com/patternfly/patternfly-react/commit/24474d83bc7e234027873a3cd43c824bc1576adb))
+
+
+
+
+
 # [4.246.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.245.0...@patternfly/react-core@4.246.0) (2022-09-30)
 
 
