@@ -313,12 +313,14 @@ export const FilterFaceted: React.FunctionComponent = () => {
     }
   };
 
+  const areSelectionsPresent = locationSelections.length > 0 || statusSelections.length > 0;
+
   const toggle = (
     <MenuToggle
       ref={toggleRef}
       onClick={onToggleClick}
       isExpanded={isOpen}
-      {...((locationSelections.length > 0 || statusSelections.length > 0) && {
+      {...(areSelectionsPresent && {
         badge: <Badge isRead>{locationSelections.length + statusSelections.length}</Badge>
       })}
       icon={<FilterIcon />}
