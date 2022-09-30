@@ -168,7 +168,14 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
       {parentItem ? (
         treeViewList
       ) : (
-        <TreeViewRoot hasChecks={hasChecks} hasGuides={hasGuides} variant={variant} className={className} {...props}>
+        <TreeViewRoot
+          hasSelectableNodes={hasSelectableNodes}
+          hasChecks={hasChecks}
+          hasGuides={hasGuides}
+          variant={variant}
+          className={className}
+          {...props}
+        >
           {treeViewList}
         </TreeViewRoot>
       )}

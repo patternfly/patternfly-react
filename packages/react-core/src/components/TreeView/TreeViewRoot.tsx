@@ -3,18 +3,21 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import { canUseDOM } from '../../helpers/util';
 import { handleArrows } from '../../helpers';
+import { KeyTypes } from '../../helpers/constants';
 
 export interface TreeViewRootProps {
-  /** Child nodes of the tree view. */
+  /** Child nodes of the tree view */
   children: React.ReactNode;
-  /** Class to add to add if not passed a parentItem property. */
-  className?: string;
   /** Flag indicating if the tree view has checkboxes. */
   hasChecks?: boolean;
   /** Flag indicating if tree view has guide lines. */
   hasGuides?: boolean;
   /** Variant presentation styles for the tree view. */
   variant?: 'default' | 'compact' | 'compactNoBackground';
+  /** Class to add to add if not passed a parentItem */
+  className?: string;
+  /** Flag indicating that tree nodes should be independently selectable, even when having children */
+  hasSelectableNodes?: boolean;
 }
 
 export class TreeViewRoot extends React.Component<TreeViewRootProps> {
@@ -23,16 +26,29 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
 
   componentDidMount() {
     if (canUseDOM) {
-      window.addEventListener('keydown', this.props.hasChecks ? this.handleKeysCheckbox : this.handleKeys);
+      window.addEventListener(
+        'keydown',
+        this.props.hasChecks || this.props.hasSelectableNodes ? this.handleKeysCheckbox : this.handleKeys
+      );
     }
-    if (this.props.hasChecks) {
-      const firstToggle = this.treeRef.current?.getElementsByClassName('pf-c-tree-view__node-toggle')[0] as HTMLElement;
+    if (this.props.hasChecks || this.props.hasSelectableNodes) {
+      const firstToggle = this.treeRef.current.getElementsByClassName('pf-c-tree-view__node-toggle')[0] as HTMLElement;
       if (firstToggle) {
         firstToggle.tabIndex = 0;
       }
-      const firstInput = this.treeRef.current?.getElementsByTagName('INPUT')[0] as HTMLElement;
-      if (firstInput) {
-        firstInput.tabIndex = 0;
+      if (this.props.hasChecks) {
+        const firstInput = this.treeRef.current.getElementsByTagName('INPUT')[0] as HTMLElement;
+        if (firstInput) {
+          firstInput.tabIndex = 0;
+        }
+      }
+      if (this.props.hasSelectableNodes) {
+        const firstTextButton = this.treeRef.current.getElementsByClassName(
+          'pf-c-tree-view__node-text'
+        )[0] as HTMLElement;
+        if (firstTextButton) {
+          firstTextButton.tabIndex = 0;
+        }
       }
     } else {
       (this.treeRef.current?.getElementsByClassName('pf-c-tree-view__node')[0] as HTMLElement).tabIndex = 0;
@@ -41,12 +57,15 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
 
   componentWillUnmount() {
     if (canUseDOM) {
-      window.removeEventListener('keydown', this.props.hasChecks ? this.handleKeysCheckbox : this.handleKeys);
+      window.removeEventListener(
+        'keydown',
+        this.props.hasChecks || this.props.hasSelectableNodes ? this.handleKeysCheckbox : this.handleKeys
+      );
     }
   }
 
   handleKeys = (event: KeyboardEvent) => {
-    if (this.treeRef.current !== (event.target as HTMLElement).closest('.pf-c-tree-view')) {
+    if (!this.treeRef.current.contains(event.target as HTMLElement)) {
       return;
     }
     const activeElement = document.activeElement;
@@ -55,8 +74,8 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
       el => !el.classList.contains('pf-m-disabled')
     );
 
-    if (key === 'Space') {
-      (document.activeElement as HTMLElement).click();
+    if (key === KeyTypes.Space) {
+      (activeElement as HTMLElement).click();
       event.preventDefault();
     }
 
@@ -109,14 +128,15 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
   };
 
   handleKeysCheckbox = (event: KeyboardEvent) => {
-    if (this.treeRef.current !== (event.target as HTMLElement).closest('.pf-c-tree-view')) {
+    if (!this.treeRef.current.contains(event.target as HTMLElement)) {
       return;
     }
+
     const activeElement = document.activeElement;
     const key = event.key;
 
-    if (key === 'Space') {
-      (document.activeElement as HTMLElement).click();
+    if (key === KeyTypes.Space) {
+      (activeElement as HTMLElement).click();
       event.preventDefault();
     }
 
@@ -126,7 +146,7 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
       event,
       treeNodes as HTMLElement[],
       (element: Element) => element.contains(activeElement),
-      (element: Element) => element.querySelector('BUTTON,INPUT'),
+      (element: Element) => element.querySelector('button,input'),
       [],
       undefined,
       true,
@@ -168,7 +188,7 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { children, hasChecks, hasGuides, variant, className, ...props } = this.props;
+    const { children, hasChecks, hasGuides, variant, className, hasSelectableNodes, ...props } = this.props;
     return (
       <div
         className={css(
