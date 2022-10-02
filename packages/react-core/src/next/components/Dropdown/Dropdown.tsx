@@ -2,8 +2,9 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../../../components/Menu';
 import { Popper } from '../../../helpers/Popper/Popper';
+import { useOUIAProps, OUIAProps } from '../../../helpers';
 
-export interface DropdownProps extends MenuProps {
+export interface DropdownProps extends MenuProps, OUIAProps {
   /** Anything which can be rendered in a dropdown. */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown. */
@@ -25,6 +26,10 @@ export interface DropdownProps extends MenuProps {
   minWidth?: string;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({
@@ -38,11 +43,14 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   isScrollable,
   minWidth,
   innerRef,
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
   const containerRef = React.useRef<HTMLDivElement>();
+  const ouiaProps = useOUIAProps(Dropdown.displayName, ouiaId, ouiaSafe);
 
   const menuRef = (innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
   React.useEffect(() => {
@@ -104,7 +112,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
     </Menu>
   );
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} {...ouiaProps}>
       <Popper
         trigger={toggle(toggleRef)}
         removeFindDomNode
