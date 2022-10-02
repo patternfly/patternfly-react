@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-
 import { css } from '@patternfly/react-styles';
 
 import { fillTemplate } from '../../helpers';
-import { ToggleTemplateProps } from './ToggleTemplate';
+import { PaginationToggleTemplateProps } from './ToggleTemplate';
 import { DropdownToggle } from '../Dropdown';
 
 export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
@@ -39,7 +39,7 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   showToggle?: boolean;
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex,
    * itemCount, and/or itemsTitle props. */
-  toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
+  toggleTemplate?: ((props: PaginationToggleTemplateProps) => React.ReactElement) | string;
   /** Id added to the title of the pagination options menu. */
   widgetId?: string;
 }
