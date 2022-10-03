@@ -13,7 +13,7 @@ export const IconContentSizes: React.FunctionComponent = () => (
     <Icon size="xl" iconSize="lg">
       <PlusCircleIcon />
     </Icon>
-    <Icon size="xl" iconSize="xl">
+    <Icon size="xl">
       <PlusCircleIcon />
     </Icon>
   </React.Fragment>

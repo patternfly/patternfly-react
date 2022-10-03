@@ -11,15 +11,12 @@ export const IconProgress: React.FunctionComponent = () => {
           label="Toggle in progress state"
           isChecked={isInProgress}
           onChange={checked => setIsInProgress(checked)}
-          aria-label="set icon progress state"
+          aria-label="Set icon progress state"
           id="toggle-icon-progress-custom"
           name="toggle-icon-progress-custom"
         />
       </div>
-      <Icon
-        isInProgress={isInProgress}
-        progressIcon={<Spinner size="lg" diameter="2em" isSVG aria-label="Loading..." />}
-      >
+      <Icon isInProgress={isInProgress} progressIcon={<Spinner diameter="2em" isSVG aria-label="Loading..." />}>
         <CheckCircleIcon />
       </Icon>
     </React.Fragment>

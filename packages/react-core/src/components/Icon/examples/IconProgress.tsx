@@ -11,7 +11,7 @@ export const IconProgress: React.FunctionComponent = () => {
           label="Toggle in progress state"
           isChecked={isInProgress}
           onChange={checked => setIsInProgress(checked)}
-          aria-label="set icon progress state"
+          aria-label="Set icon progress state"
           id="toggle-icon-progress"
           name="toggle-icon-progress"
         />
