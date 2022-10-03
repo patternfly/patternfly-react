@@ -36,9 +36,9 @@ The following example demonstrates the various status variants of an icon. Keep 
 ```ts file="IconStatus.tsx"
 ```
 
-### Sizing content within the icon container
+### Sizing an icon within the icon container
 
-Providing both container and content size properties allow an icon to maintain a consistent size, even if the contents change in size.
+Providing both size and iconSize properties allows the icon container to maintain a consistent size, even if the icon changes in size.
 
 ```ts file="IconContentSizes.tsx"
 ```
@@ -53,4 +53,9 @@ Providing both container and content size properties allow an icon to maintain a
 Passing the `isInProgress` property will swap the icon to a progress icon. By default this progress icon will be a `Spinner` but may be customized or overriden using the `progressIcon` property.
 
 ```ts file="IconProgress.tsx"
+```
+
+### Custom in progress icon
+
+```ts file="IconCustomProgress.tsx"
 ```

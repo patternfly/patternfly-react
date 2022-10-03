@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Checkbox } from '@patternfly/react-core';
+import { Icon, Spinner, Checkbox } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
 export const IconProgress: React.FunctionComponent = () => {
@@ -12,11 +12,14 @@ export const IconProgress: React.FunctionComponent = () => {
           isChecked={isInProgress}
           onChange={checked => setIsInProgress(checked)}
           aria-label="set icon progress state"
-          id="toggle-icon-progress"
-          name="toggle-icon-progress"
+          id="toggle-icon-progress-custom"
+          name="toggle-icon-progress-custom"
         />
       </div>
-      <Icon isInProgress={isInProgress}>
+      <Icon
+        isInProgress={isInProgress}
+        progressIcon={<Spinner size="lg" diameter="2em" isSVG aria-label="Loading..." />}
+      >
         <CheckCircleIcon />
       </Icon>
     </React.Fragment>
