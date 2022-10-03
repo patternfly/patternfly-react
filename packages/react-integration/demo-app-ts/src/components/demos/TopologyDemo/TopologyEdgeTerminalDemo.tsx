@@ -10,14 +10,22 @@ import {
   EdgeTerminalType,
   NodeShape,
   NodeStatus,
-  useModel
+  useModel,
+  ComponentFactory,
+  ModelKind,
+  DefaultNode,
+  DefaultEdge
 } from '@patternfly/react-topology';
 
 import defaultLayoutFactory from './layouts/defaultLayoutFactory';
 import defaultComponentFactory from './components/defaultComponentFactory';
-import stylesComponentFactory from '../../../utils/stylesComponentFactory';
 
 import './TopologyDemo.css';
+
+const CustomEdge = props => {
+  const { tag, tagStatus } = props?.element?.data;
+  return <DefaultEdge {...props} tag={tag} tagStatus={tagStatus} />;
+};
 
 const model: Model = {
   graph: {
@@ -84,7 +92,17 @@ const model: Model = {
 const TopologyComponent = () => {
   useLayoutFactory(defaultLayoutFactory);
   useComponentFactory(defaultComponentFactory);
-  useComponentFactory(stylesComponentFactory);
+  useComponentFactory(
+    React.useCallback<ComponentFactory>((kind, type) => {
+      if (type === ModelKind.node) {
+        return DefaultNode;
+      }
+      if (type === ModelKind.edge) {
+        return CustomEdge;
+      }
+      return undefined;
+    }, [])
+  );
 
   useModel(model);
 
