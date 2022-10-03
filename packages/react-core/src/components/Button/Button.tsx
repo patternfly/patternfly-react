@@ -22,6 +22,12 @@ export enum ButtonType {
   reset = 'reset'
 }
 
+export enum ButtonSize {
+  default = 'default',
+  small = 'small',
+  large = 'large'
+}
+
 export interface BadgeCountObject {
   /**  Adds styling to the badge to indicate it has been read */
   isRead?: boolean;
@@ -70,10 +76,8 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   icon?: React.ReactNode | null;
   /** Sets the button tabindex. */
   tabIndex?: number;
-  /** Adds small styling to the button */
-  isSmall?: boolean;
-  /** Adds large styling to the button */
-  isLarge?: boolean;
+  /** Adds small or large styling to the button */
+  customSize?: 'default' | 'small' | 'large';
   /** Adds danger styling to secondary or link button variants */
   isDanger?: boolean;
   /** Forwarded ref */
@@ -99,8 +103,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   spinnerAriaValueText,
   spinnerAriaLabelledBy,
   spinnerAriaLabel,
-  isSmall = false,
-  isLarge = false,
+  customSize = ButtonSize.default,
   inoperableEvents = ['onClick', 'onKeyPress'],
   isInline = false,
   type = ButtonType.button,
@@ -157,8 +160,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
         isLoading !== null && children !== null && styles.modifiers.progress,
         isLoading && styles.modifiers.inProgress,
-        isSmall && styles.modifiers.small,
-        isLarge && styles.modifiers.displayLg,
+        customSize === 'small' && styles.modifiers.small,
+        customSize === 'large' && styles.modifiers.displayLg,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}

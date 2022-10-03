@@ -84,13 +84,13 @@ describe('Button', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('isSmall', () => {
-    const { asFragment } = render(<Button isSmall>Small Button</Button>);
+  test('customSize small', () => {
+    const { asFragment } = render(<Button customSize="small">Small Button</Button>);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('isLarge', () => {
-    const { asFragment } = render(<Button isLarge>Large Button</Button>);
+  test('customSize large', () => {
+    const { asFragment } = render(<Button customSize="large">Large Button</Button>);
     expect(asFragment()).toMatchSnapshot();
   });
 
