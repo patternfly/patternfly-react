@@ -68,5 +68,5 @@ module.exports = {
     jest: true
   },
   plugins: ['prettier', 'jest', 'react', 'react-hooks', 'patternfly-react'],
-  parser: 'babel-eslint'
+  parser: '@babel/eslint-parser'
 };
