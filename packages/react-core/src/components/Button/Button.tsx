@@ -160,8 +160,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
         isLoading !== null && children !== null && styles.modifiers.progress,
         isLoading && styles.modifiers.inProgress,
-        customSize === 'small' && styles.modifiers.small,
-        customSize === 'large' && styles.modifiers.displayLg,
+        customSize === ButtonSize.small && styles.modifiers.small,
+        customSize === ButtonSize.large && styles.modifiers.displayLg,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}
