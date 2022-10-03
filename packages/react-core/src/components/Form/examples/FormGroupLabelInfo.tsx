@@ -42,15 +42,15 @@ export const FormGroupLabelInfo: React.FunctionComponent = () => {
               </div>
             }
           >
-            <button
-              type="button"
+            <span
+              role="button"
               aria-label="More info for name field"
               onClick={e => e.preventDefault()}
               aria-describedby="form-group-label-info"
               className="pf-c-form__group-label-help"
             >
               <HelpIcon noVerticalAlign />
-            </button>
+            </span>
           </Popover>
         }
         isRequired

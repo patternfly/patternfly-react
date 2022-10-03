@@ -110,14 +110,14 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   const labelContent = (
     <React.Fragment>
       <LabelComponent className={css(styles.formLabel)} {...(!isGroupOrRadioGroup && { htmlFor: fieldId })}>
-        <span className={css(styles.formLabelText)}>{label}</span>
+        <span className={css(styles.formLabelText)}>{label}</span>&nbsp;
         {isRequired && (
           <span className={css(styles.formLabelRequired)} aria-hidden="true">
-            {' '}
             {ASTERISK}
           </span>
         )}
-      </LabelComponent>{' '}
+      </LabelComponent>
+      &nbsp;
       {React.isValidElement(labelIcon) && labelIcon}
     </React.Fragment>
   );

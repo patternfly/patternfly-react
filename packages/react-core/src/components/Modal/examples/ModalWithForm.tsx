@@ -74,15 +74,15 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   </div>
                 }
               >
-                <button
-                  type="button"
+                <span
+                  role="button"
                   aria-label="More info for name field"
                   onClick={e => e.preventDefault()}
                   aria-describedby="modal-with-form-form-name"
                   className="pf-c-form__group-label-help"
                 >
                   <HelpIcon noVerticalAlign />
-                </button>
+                </span>
               </Popover>
             }
             isRequired
@@ -123,7 +123,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   </div>
                 }
               >
-                <button
+                <span
                   type="button"
                   aria-label="More info for e-mail field"
                   onClick={e => e.preventDefault()}
@@ -131,7 +131,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   className="pf-c-form__group-label-help"
                 >
                   <HelpIcon noVerticalAlign />
-                </button>
+                </span>
               </Popover>
             }
             isRequired
@@ -171,15 +171,14 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   </div>
                 }
               >
-                <button
-                  type="button"
+                <span
                   aria-label="More info for address field"
                   onClick={e => e.preventDefault()}
                   aria-describedby="modal-with-form-form-address"
                   className="pf-c-form__group-label-help"
                 >
                   <HelpIcon noVerticalAlign />
-                </button>
+                </span>
               </Popover>
             }
             isRequired

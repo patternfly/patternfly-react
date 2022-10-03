@@ -116,7 +116,7 @@ export class FormDemo extends Component<FormProps, FormState> {
                 headerContent={<div>The age of a person</div>}
                 bodyContent={<div>Age is typically measured in years.</div>}
               >
-                <button
+                <span
                   id="helper-text-target"
                   aria-label="More info for name field"
                   onClick={e => e.preventDefault()}
@@ -124,7 +124,7 @@ export class FormDemo extends Component<FormProps, FormState> {
                   className="pf-c-form__group-label-help"
                 >
                   <HelpIcon noVerticalAlign />
-                </button>
+                </span>
               </Popover>
             }
             type="number"
