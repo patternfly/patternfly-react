@@ -24,14 +24,15 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
           >
             Username
           </span>
+           
           <span
             aria-hidden="true"
             class="pf-c-form__label-required"
           >
-             *
+            *
           </span>
         </label>
-         
+         
       </div>
       <div
         class="pf-c-form__group-control"
@@ -65,14 +66,15 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
           >
             Password
           </span>
+           
           <span
             aria-hidden="true"
             class="pf-c-form__label-required"
           >
-             *
+            *
           </span>
         </label>
-         
+         
       </div>
       <div
         class="pf-c-form__group-control"
@@ -168,14 +170,15 @@ exports[`LoginForm LoginForm with show password 1`] = `
           >
             Username
           </span>
+           
           <span
             aria-hidden="true"
             class="pf-c-form__label-required"
           >
-             *
+            *
           </span>
         </label>
-         
+         
       </div>
       <div
         class="pf-c-form__group-control"
@@ -209,14 +212,15 @@ exports[`LoginForm LoginForm with show password 1`] = `
           >
             Password
           </span>
+           
           <span
             aria-hidden="true"
             class="pf-c-form__label-required"
           >
-             *
+            *
           </span>
         </label>
-         
+         
       </div>
       <div
         class="pf-c-form__group-control"
@@ -312,14 +316,15 @@ exports[`LoginForm should render Login form 1`] = `
           >
             Username
           </span>
+           
           <span
             aria-hidden="true"
             class="pf-c-form__label-required"
           >
-             *
+            *
           </span>
         </label>
-         
+         
       </div>
       <div
         class="pf-c-form__group-control"
@@ -353,14 +358,15 @@ exports[`LoginForm should render Login form 1`] = `
           >
             Password
           </span>
+           
           <span
             aria-hidden="true"
             class="pf-c-form__label-required"
           >
-             *
+            *
           </span>
         </label>
-         
+         
       </div>
       <div
         class="pf-c-form__group-control"

@@ -19,8 +19,9 @@ exports[`FormGroup should render correctly when label is not a string with Child
             label
           </div>
         </span>
+         
       </label>
-       
+       
     </div>
     <div
       class="pf-c-form__group-control"
@@ -54,8 +55,9 @@ exports[`FormGroup should render default form group variant 1`] = `
         >
           label
         </span>
+         
       </label>
-       
+       
     </div>
     <div
       class="pf-c-form__group-control"
@@ -92,8 +94,9 @@ exports[`FormGroup should render form group invalid variant 1`] = `
         >
           label
         </span>
+         
       </label>
-       
+       
     </div>
     <div
       class="pf-c-form__group-control"
@@ -130,8 +133,9 @@ exports[`FormGroup should render form group validated error variant 1`] = `
         >
           label
         </span>
+         
       </label>
-       
+       
     </div>
     <div
       class="pf-c-form__group-control"
@@ -162,8 +166,9 @@ exports[`FormGroup should render form group validated success variant 1`] = `
         >
           label
         </span>
+         
       </label>
-       
+       
     </div>
     <div
       class="pf-c-form__group-control"
@@ -201,8 +206,9 @@ exports[`FormGroup should render form group validated warning variant 1`] = `
         >
           label
         </span>
+         
       </label>
-       
+       
     </div>
     <div
       class="pf-c-form__group-control"
@@ -241,8 +247,9 @@ exports[`FormGroup should render form group variant with node label 1`] = `
             Header
           </h1>
         </span>
+         
       </label>
-       
+       
     </div>
     <div
       class="pf-c-form__group-control"
@@ -272,14 +279,15 @@ exports[`FormGroup should render form group variant with required label 1`] = `
         >
           label
         </span>
+         
         <span
           aria-hidden="true"
           class="pf-c-form__label-required"
         >
-           *
+          *
         </span>
       </label>
-       
+       
     </div>
     <div
       class="pf-c-form__group-control"
@@ -330,8 +338,9 @@ exports[`FormGroup should render form group with additonal label info 1`] = `
               Header
             </h1>
           </span>
+           
         </label>
-         
+         
       </div>
       <div
         class="pf-c-form__group-label-info"
@@ -371,8 +380,9 @@ exports[`FormGroup should render helper text above input 1`] = `
           >
             label
           </span>
+           
         </label>
-         
+         
       </div>
       <div
         class="pf-c-form__group-control"
@@ -414,8 +424,9 @@ exports[`FormGroup should render horizontal form group variant 1`] = `
           >
             label
           </span>
+           
         </label>
-         
+         
       </div>
       <div
         class="pf-c-form__group-control"
@@ -457,8 +468,9 @@ exports[`FormGroup should render stacked horizontal form group variant 1`] = `
           >
             label
           </span>
+           
         </label>
-         
+         
       </div>
       <div
         class="pf-c-form__group-control pf-m-stack"
