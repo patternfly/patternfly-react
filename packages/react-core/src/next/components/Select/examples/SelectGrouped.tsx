@@ -44,18 +44,20 @@ export const SelectBasic: React.FunctionComponent = () => {
       onOpenChange={isOpen => setIsOpen(isOpen)}
       toggle={toggle}
     >
-      <SelectList>
-        <SelectGroup label="Group 1">
+      <SelectGroup label="Group 1">
+        <SelectList>
           <SelectOption itemId="Option 1">Option 1</SelectOption>
           <SelectOption itemId="Option 2">Option 2</SelectOption>
           <SelectOption itemId="Option 3">Option 3</SelectOption>
-        </SelectGroup>
-        <SelectGroup label="Group 2">
+        </SelectList>
+      </SelectGroup>
+      <SelectGroup label="Group 2">
+        <SelectList>
           <SelectOption itemId="Option 4">Option 4</SelectOption>
           <SelectOption itemId="Option 5">Option 5</SelectOption>
           <SelectOption itemId="Option 6">Option 6</SelectOption>
-        </SelectGroup>
-      </SelectList>
+        </SelectList>
+      </SelectGroup>
     </Select>
   );
 };

@@ -21,11 +21,6 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 ```ts file="./SelectGrouped.tsx"
 ```
 
-### Multiple single
-
-```ts file="./SelectMultiSingle.tsx"
-```
-
 ### Checkbox
 
 ```ts file="./SelectCheckbox.tsx"
