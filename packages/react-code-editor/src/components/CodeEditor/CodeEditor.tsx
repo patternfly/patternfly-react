@@ -440,17 +440,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   };
 
   copyCode = () => {
-    if (this.timer) {
-      window.clearTimeout(this.timer);
-      this.setState({ copied: false });
-    }
     navigator.clipboard.writeText(this.state.value);
-    this.setState({ copied: true }, () => {
-      this.timer = window.setTimeout(() => {
-        this.setState({ copied: false });
-        this.timer = null;
-      }, 2500);
-    });
+    this.setState({ copied: true });
   };
 
   download = () => {
@@ -559,7 +550,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
             exitDelay: toolTipDelay,
             entryDelay: toolTipDelay,
             maxWidth: toolTipMaxWidth,
-            trigger: 'mouseenter focus'
+            trigger: 'mouseenter focus',
           };
 
           const editorHeader = (
@@ -575,7 +566,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                           ...tooltipProps,
                           'aria-live': 'polite',
                           content: <div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>,
-                          exitDelay: copied ? toolTipCopyExitDelay : toolTipDelay
+                          exitDelay: copied ? toolTipCopyExitDelay : toolTipDelay,
+                          onTooltipHidden: () => this.setState({copied:false})
                         }}
                         onClick={this.copyCode}
                       />

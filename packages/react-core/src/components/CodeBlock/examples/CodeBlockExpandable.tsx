@@ -51,9 +51,10 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
           textId="code-content"
           aria-label="Copy to clipboard"
           onClick={e => onClick(e, copyBlock)}
-          exitDelay={600}
+          exitDelay={copied ? 1500 : 600}
           maxWidth="110px"
           variant="plain"
+          onTooltipHidden={() => setCopied(false)}
         >
           {copied ? 'Successfully copied to clipboard!' : 'Copy to clipboard'}
         </ClipboardCopyButton>

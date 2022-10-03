@@ -95,6 +95,8 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
       )[];
   /** Maximum width of the tooltip (default 18.75rem) */
   maxWidth?: string;
+  /** Callback when tooltip's hide transition has finished executing */
+  onTooltipHidden?: () => void;
   /**
    * Tooltip position. Note: With 'enableFlip' set to true,
    * it will change the position if there is not enough space for the starting position.
@@ -171,6 +173,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   isAppLauncher,
   tippyProps,
   removeFindDomNode = false,
+  onTooltipHidden = () => {},
   ...rest
 }: TooltipProps) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -193,6 +196,8 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
+
+  const prevExitDelayRef = React.useRef<number>();
 
   const clearTimeouts = (timeoutRefs: React.RefObject<any>[]) => {
     timeoutRefs.forEach(ref => {
@@ -233,13 +238,21 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       hide();
     }
   }, [isVisible]);
+
   React.useEffect(() => {
-    clearTimeouts([hideTimerRef]);
-    hideTimerRef.current = setTimeout(() => {
-      setOpacity(0);
-      transitionTimerRef.current = setTimeout(() => setVisible(false), animationDuration);
-    }, exitDelay);
+    if (prevExitDelayRef.current < exitDelay) {
+      clearTimeouts([transitionTimerRef, hideTimerRef]);
+      hideTimerRef.current = setTimeout(() => {
+        setOpacity(0);
+        transitionTimerRef.current = setTimeout(() => {
+          setVisible(false);
+          onTooltipHidden();
+        }, animationDuration);
+      }, exitDelay);
+    }
+    prevExitDelayRef.current = exitDelay;
   }, [exitDelay]);
+
   const show = () => {
     clearTimeouts([transitionTimerRef, hideTimerRef]);
     showTimerRef.current = setTimeout(() => {
@@ -247,13 +260,16 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       setOpacity(1);
     }, entryDelay);
   };
-  const hide = React.useCallback(() => {
+  const hide = () => {
     clearTimeouts([showTimerRef]);
     hideTimerRef.current = setTimeout(() => {
       setOpacity(0);
-      transitionTimerRef.current = setTimeout(() => setVisible(false), animationDuration);
+      transitionTimerRef.current = setTimeout(() => {
+        setVisible(false);
+        onTooltipHidden();
+      }, animationDuration);
     }, exitDelay);
-  }, [exitDelay]);
+  };
   const positionModifiers = {
     top: styles.modifiers.top,
     bottom: styles.modifiers.bottom,
