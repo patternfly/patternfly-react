@@ -49,10 +49,10 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   /** Applies pf-c-table__action to td */
   isActionCell?: boolean;
   /**
-   * Tooltip to show on the body cell
-   * Note: If the body cell is truncated and has simple string content, it will already attempt to display the cell text
-   * If you want to show a tooltip that differs from the cell text, you can set it here
-   * To disable it completely you can set it to null
+   * Tooltip to show on the body cell.
+   * Note: If the body cell is truncated and has simple string content, it will already attempt to display the cell text.
+   * If you want to show a tooltip that differs from the cell text, you can set it here.
+   * To disable it completely you can set it to null.
    */
   tooltip?: React.ReactNode;
   /** Callback on mouse enter */

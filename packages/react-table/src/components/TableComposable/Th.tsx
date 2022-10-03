@@ -30,10 +30,10 @@ export interface ThProps
   /** Formats the header so that its column will be sortable */
   sort?: ThSortType;
   /**
-   * Tooltip to show on the header cell
-   * Note: If the header cell is truncated and has simple string content, it will already attempt to display the header text
-   * If you want to show a tooltip that differs from the header text, you can set it here
-   * To disable it completely you can set it to null
+   * Tooltip to show on the header cell.
+   * Note: If the header cell is truncated and has simple string content, it will already attempt to display the header text.
+   * If you want to show a tooltip that differs from the header text, you can set it here.
+   * To disable it completely you can set it to null.
    */
   tooltip?: React.ReactNode;
   /** Callback on mouse enter */
