@@ -124,7 +124,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                 }
               >
                 <span
-                  type="button"
+                  role="button"
                   aria-label="More info for e-mail field"
                   onClick={e => e.preventDefault()}
                   aria-describedby="modal-with-form-form-email"
@@ -172,6 +172,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                 }
               >
                 <span
+                  role="button"
                   aria-label="More info for address field"
                   onClick={e => e.preventDefault()}
                   aria-describedby="modal-with-form-form-address"
