@@ -11,15 +11,19 @@ import {
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 const initialSelectOptions: SelectOptionProps[] = [
-  { itemId: 'Option 1', children: 'Option 1' },
-  { itemId: 'Option 2', children: 'Option 2' },
-  { itemId: 'Option 3', children: 'Option 3' }
+  { itemId: 'Alabama', children: 'Alabama' },
+  { itemId: 'Florida', children: 'Florida' },
+  { itemId: 'New Jersey', children: 'New Jersey' },
+  { itemId: 'New Mexico', children: 'New Mexico' },
+  { itemId: 'New York', children: 'New York' },
+  { itemId: 'North Carolina', children: 'North Carolina' }
 ];
 
 export const SelectBasic: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<string>('Select a value');
+  const [selected, setSelected] = React.useState<string>('');
   const [inputValue, setInputValue] = React.useState<string>('');
+  const [filterValue, setFilterValue] = React.useState<string>('');
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
 
@@ -30,11 +34,11 @@ export const SelectBasic: React.FunctionComponent = () => {
     let newSelectOptions: SelectOptionProps[] = initialSelectOptions;
 
     // Filter menu items based on the text input value when one exists
-    if (inputValue) {
+    if (filterValue) {
       newSelectOptions = initialSelectOptions.filter(menuItem =>
         String(menuItem.children)
           .toLowerCase()
-          .includes(inputValue.toLowerCase())
+          .includes(filterValue.toLowerCase())
       );
 
       // When no options are found after filtering, display 'No results found'
@@ -44,7 +48,7 @@ export const SelectBasic: React.FunctionComponent = () => {
     }
 
     setSelectOptions(newSelectOptions);
-  }, [inputValue]);
+  }, [filterValue]);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -56,6 +60,7 @@ export const SelectBasic: React.FunctionComponent = () => {
 
     if (itemId) {
       setInputValue(itemId as string);
+      setFilterValue(itemId as string);
       setSelected(itemId as string);
     }
     setIsOpen(false);
@@ -64,6 +69,7 @@ export const SelectBasic: React.FunctionComponent = () => {
 
   const onTextInputChange = (value: string) => {
     setInputValue(value);
+    setFilterValue(value);
   };
 
   const handleMenuArrowKeys = (key: string) => {
@@ -133,11 +139,20 @@ export const SelectBasic: React.FunctionComponent = () => {
           id="typeahead-select-input"
           autoComplete="off"
           innerRef={textInputRef}
+          placeholder="Select a state"
         />
 
         <TextInputGroupUtilities>
           {!!inputValue && (
-            <Button variant="plain" onClick={() => setInputValue('')} aria-label="Clear input value">
+            <Button
+              variant="plain"
+              onClick={() => {
+                setSelected('');
+                setInputValue('');
+                setFilterValue('');
+              }}
+              aria-label="Clear input value"
+            >
               <TimesIcon aria-hidden />
             </Button>
           )}
@@ -153,7 +168,10 @@ export const SelectBasic: React.FunctionComponent = () => {
       isOpen={isOpen}
       selected={selected}
       onSelect={onSelect}
-      onOpenChange={() => setIsOpen(false)}
+      onOpenChange={() => {
+        setIsOpen(false);
+        setFilterValue('');
+      }}
       toggle={toggle}
     >
       <SelectList>

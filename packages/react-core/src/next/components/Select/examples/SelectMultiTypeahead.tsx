@@ -13,9 +13,12 @@ import {
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 const initialSelectOptions: SelectOptionProps[] = [
-  { itemId: 'Option 1', children: 'Option 1' },
-  { itemId: 'Option 2', children: 'Option 2' },
-  { itemId: 'Option 3', children: 'Option 3' }
+  { itemId: 'Alabama', children: 'Alabama' },
+  { itemId: 'Florida', children: 'Florida' },
+  { itemId: 'New Jersey', children: 'New Jersey' },
+  { itemId: 'New Mexico', children: 'New Mexico' },
+  { itemId: 'New York', children: 'New York' },
+  { itemId: 'North Carolina', children: 'North Carolina' }
 ];
 
 export const SelectMultiTypeahead: React.FunctionComponent = () => {
@@ -132,6 +135,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
           id="multi-typeahead-select-input"
           autoComplete="off"
           innerRef={textInputRef}
+          placeholder="Select a state"
         >
           <ChipGroup>
             {selected.map((selection, index) => (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Select, SelectOption, SelectList } from '@patternfly/react-core/next';
-import { MenuToggle, MenuToggleElement } from '@patternfly/react-core';
+import { MenuToggle, MenuToggleElement, Badge } from '@patternfly/react-core';
 
 export const SelectCheckbox: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -34,6 +34,7 @@ export const SelectCheckbox: React.FunctionComponent = () => {
       }
     >
       Filter by status
+      {selectedItems.length > 0 && <Badge isRead>{selectedItems.length}</Badge>}
     </MenuToggle>
   );
 
