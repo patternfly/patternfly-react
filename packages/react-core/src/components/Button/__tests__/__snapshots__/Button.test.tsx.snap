@@ -31,6 +31,36 @@ exports[`Button control button 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Button customSize large 1`] = `
+<DocumentFragment>
+  <button
+    aria-disabled="false"
+    class="pf-c-button pf-m-primary pf-m-display-lg"
+    data-ouia-component-id="OUIA-Generated-Button-primary-8"
+    data-ouia-component-type="PF4/Button"
+    data-ouia-safe="true"
+    type="button"
+  >
+    Large Button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button customSize small 1`] = `
+<DocumentFragment>
+  <button
+    aria-disabled="false"
+    class="pf-c-button pf-m-primary pf-m-small"
+    data-ouia-component-id="OUIA-Generated-Button-primary-7"
+    data-ouia-component-type="PF4/Button"
+    data-ouia-safe="true"
+    type="button"
+  >
+    Small Button
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button danger button 1`] = `
 <DocumentFragment>
   <button
@@ -152,21 +182,6 @@ exports[`Button isInline 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button isLarge 1`] = `
-<DocumentFragment>
-  <button
-    aria-disabled="false"
-    class="pf-c-button pf-m-primary pf-m-display-lg"
-    data-ouia-component-id="OUIA-Generated-Button-primary-8"
-    data-ouia-component-type="PF4/Button"
-    data-ouia-safe="true"
-    type="button"
-  >
-    Large Button
-  </button>
-</DocumentFragment>
-`;
-
 exports[`Button isLoading 1`] = `
 <DocumentFragment>
   <button
@@ -236,21 +251,6 @@ exports[`Button isLoading icon only 1`] = `
     <div>
       ICON
     </div>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`Button isSmall 1`] = `
-<DocumentFragment>
-  <button
-    aria-disabled="false"
-    class="pf-c-button pf-m-primary pf-m-small"
-    data-ouia-component-id="OUIA-Generated-Button-primary-7"
-    data-ouia-component-type="PF4/Button"
-    data-ouia-safe="true"
-    type="button"
-  >
-    Small Button
   </button>
 </DocumentFragment>
 `;
