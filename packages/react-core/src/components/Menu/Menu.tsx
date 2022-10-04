@@ -212,13 +212,19 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   createNavigableElements = () => {
     const isDrilldown = this.props.containsDrilldown;
 
-    return isDrilldown
-      ? Array.from(this.activeMenu.getElementsByTagName('UL')[0].children).filter(
-          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
-        )
-      : Array.from(this.menuRef.current.getElementsByTagName('LI')).filter(
-          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
-        );
+    if (isDrilldown) {
+      return this.activeMenu
+        ? Array.from(this.activeMenu.getElementsByTagName('UL')[0].children).filter(
+            el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+          )
+        : [];
+    } else {
+      return this.menuRef.current
+        ? Array.from(this.menuRef.current.getElementsByTagName('LI')).filter(
+            el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+          )
+        : [];
+    }
   };
 
   render() {

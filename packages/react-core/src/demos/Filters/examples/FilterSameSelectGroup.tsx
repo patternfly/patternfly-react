@@ -1,5 +1,8 @@
 import React from 'react';
 import {
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem,
   Menu,
   MenuContent,
   MenuList,
@@ -7,15 +10,18 @@ import {
   MenuToggle,
   MenuToggleCheckbox,
   Popper,
-  Toolbar,
-  ToolbarContent,
-  ToolbarGroup,
-  ToolbarFilter,
-  ToolbarItem,
-  Badge,
-  Pagination
+  Pagination,
+  EmptyState,
+  EmptyStateIcon,
+  Title,
+  EmptyStateBody,
+  EmptyStatePrimary,
+  Button,
+  Bullseye,
+  ToolbarToggleGroup
 } from '@patternfly/react-core';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 interface Repository {
@@ -51,28 +57,26 @@ const columnNames = {
 };
 
 /* eslint-disable patternfly-react/no-anonymous-functions */
-export const FilterCheckboxSelect: React.FunctionComponent = () => {
+export const FilterSameSelectGroup: React.FunctionComponent = () => {
   // Set up repo filtering
-  const [selections, setSelections] = React.useState<string[]>([]);
+  const [locationSelection, setLocationSelection] = React.useState('All locations');
+  const [statusSelection, setStatusSelection] = React.useState('All statuses');
+
   const onFilter = (repo: Repository) => {
-    if (selections.length === 0) {
-      return true;
-    }
+    // Search status with status selection
+    const matchesStatusValue = repo.status.toLowerCase() === statusSelection.toLowerCase();
 
-    return selections.some(searchValue => {
-      let input: RegExp;
-      try {
-        input = new RegExp(searchValue, 'i');
-      } catch (err) {
-        input = new RegExp(searchValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
-      }
-      return repo.location.search(input) >= 0;
-    });
+    // Search location with location selections
+    const matchesLocationValue = repo.location.toLowerCase() === locationSelection.toLowerCase();
+
+    return (
+      (statusSelection === 'All statuses' || matchesStatusValue) &&
+      (locationSelection === 'All locations' || matchesLocationValue)
+    );
   };
-
   const filteredRepos = repositories.filter(onFilter);
 
-  // Set up table selection
+  // Set up table row selection
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
   const isRepoSelectable = (repo: Repository) => repo.name !== 'a'; // Arbitrary logic for this example
@@ -83,7 +87,7 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
       return isSelecting && isRepoSelectable(repo) ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
     });
   const selectAllRepos = (isSelecting = true) =>
-    setSelectedRepoNames(isSelecting ? filteredRepos.map(r => r.name) : []);
+    setSelectedRepoNames(isSelecting ? filteredRepos.map(r => r.name) : []); // Selecting all should only select all currently filtered rows
   const areAllReposSelected = selectedRepoNames.length === filteredRepos.length && filteredRepos.length > 0;
   const areSomeReposSelected = selectedRepoNames.length > 0;
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
@@ -191,8 +195,8 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
       splitButtonOptions={{
         items: [
           <MenuToggleCheckbox
-            id="checkbox-bulk-select"
-            key="checkbox-bulk-select"
+            id="same-select-group-input-bulk-select"
+            key="same-select-group-input-bulk-select"
             aria-label="Select all"
             isChecked={menuToggleCheckmark}
             onChange={(checked, _event) => selectAllRepos(checked)}
@@ -205,6 +209,7 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
 
   const bulkSelectMenu = (
     <Menu
+      id="same-select-group-input-bulk-select"
       ref={bulkSelectMenuRef}
       onSelect={(_ev, itemId) => {
         selectAllRepos(itemId === 1 || itemId === 2);
@@ -234,135 +239,246 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
     </div>
   );
 
-  // Set up checkbox select menu
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
+  // Set up status single select
+  const [isStatusMenuOpen, setIsStatusMenuOpen] = React.useState<boolean>(false);
+  const statusToggleRef = React.useRef<HTMLButtonElement>(null);
+  const statusMenuRef = React.useRef<HTMLDivElement>(null);
+  const statusContainerRef = React.useRef<HTMLDivElement>(null);
 
-  const handleMenuKeys = (event: KeyboardEvent) => {
-    if (isOpen && menuRef.current?.contains(event.target as Node)) {
+  const handleStatusMenuKeys = (event: KeyboardEvent) => {
+    if (isStatusMenuOpen && statusMenuRef.current?.contains(event.target as Node)) {
       if (event.key === 'Escape' || event.key === 'Tab') {
-        setIsOpen(!isOpen);
-        toggleRef.current?.focus();
+        setIsStatusMenuOpen(!isStatusMenuOpen);
+        statusToggleRef.current?.focus();
       }
     }
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
-      setIsOpen(false);
+  const handleStatusClickOutside = (event: MouseEvent) => {
+    if (isStatusMenuOpen && !statusMenuRef.current?.contains(event.target as Node)) {
+      setIsStatusMenuOpen(false);
     }
   };
 
   React.useEffect(() => {
-    window.addEventListener('keydown', handleMenuKeys);
-    window.addEventListener('click', handleClickOutside);
+    window.addEventListener('keydown', handleStatusMenuKeys);
+    window.addEventListener('click', handleStatusClickOutside);
     return () => {
-      window.removeEventListener('keydown', handleMenuKeys);
-      window.removeEventListener('click', handleClickOutside);
+      window.removeEventListener('keydown', handleStatusMenuKeys);
+      window.removeEventListener('click', handleStatusClickOutside);
     };
-  }, [isOpen, menuRef]);
+  }, [isStatusMenuOpen, statusMenuRef]);
 
-  const onToggleClick = (ev: React.MouseEvent) => {
+  const onStatusToggleClick = (ev: React.MouseEvent) => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
-      if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+      if (statusMenuRef.current) {
+        const firstElement = statusMenuRef.current.querySelector('li > button:not(:disabled)');
         firstElement && (firstElement as HTMLElement).focus();
       }
     }, 0);
-    setIsOpen(!isOpen);
+    setIsStatusMenuOpen(!isStatusMenuOpen);
   };
 
-  function onSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
+  function onStatusSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
     if (typeof itemId === 'undefined') {
       return;
     }
 
-    const itemStr = itemId.toString();
-    setSelections(
-      selections.includes(itemStr) ? selections.filter(selection => selection !== itemStr) : [itemStr, ...selections]
-    );
+    setStatusSelection(itemId.toString());
+    setIsStatusMenuOpen(!isStatusMenuOpen);
   }
 
-  const toggle = (
+  const statusToggle = (
     <MenuToggle
-      ref={toggleRef}
-      onClick={onToggleClick}
-      isExpanded={isOpen}
+      ref={statusToggleRef}
+      onClick={onStatusToggleClick}
+      isExpanded={isStatusMenuOpen}
       icon={<FilterIcon />}
-      {...(selections.length > 0 && { badge: <Badge isRead>{selections.length}</Badge> })}
       style={
         {
           width: '200px'
         } as React.CSSProperties
       }
     >
-      Location
+      {statusSelection}
     </MenuToggle>
   );
 
-  const menu = (
-    <Menu ref={menuRef} id="checkbox-select-menu" onSelect={onSelect} selected={selections}>
+  const statusMenu = (
+    <Menu ref={statusMenuRef} id="same-select-group-status-menu" onSelect={onStatusSelect} selected={statusSelection}>
       <MenuContent>
         <MenuList>
-          <MenuItem hasCheck isSelected={selections.includes('Bangalore')} itemId="Bangalore">
-            Bangalore
-          </MenuItem>
-          <MenuItem hasCheck isSelected={selections.includes('Boston')} itemId="Boston">
-            Boston
-          </MenuItem>
-          <MenuItem hasCheck isSelected={selections.includes('Brno')} itemId="Brno">
-            Brno
-          </MenuItem>
-          <MenuItem hasCheck isSelected={selections.includes('Raleigh')} itemId="Raleigh">
-            Raleigh
-          </MenuItem>
-          <MenuItem hasCheck isSelected={selections.includes('Westford')} itemId="Westford">
-            Westford
-          </MenuItem>
+          <MenuItem itemId="All statuses">All statuses</MenuItem>
+          <MenuItem itemId="Degraded">Degraded</MenuItem>
+          <MenuItem itemId="Down">Down</MenuItem>
+          <MenuItem itemId="Needs maintenance">Needs maintenance</MenuItem>
+          <MenuItem itemId="Running">Running</MenuItem>
+          <MenuItem itemId="Stopped">Stopped</MenuItem>
         </MenuList>
       </MenuContent>
     </Menu>
   );
 
-  const select = (
-    <div ref={containerRef}>
-      <Popper trigger={toggle} popper={menu} appendTo={containerRef.current || undefined} isVisible={isOpen} />
+  const statusSelect = (
+    <div ref={statusContainerRef}>
+      <Popper
+        trigger={statusToggle}
+        popper={statusMenu}
+        appendTo={statusContainerRef.current || undefined}
+        isVisible={isStatusMenuOpen}
+      />
     </div>
   );
 
-  // Set up pagination
+  // Set up location checkbox select
+  const [isLocationMenuOpen, setIsLocationMenuOpen] = React.useState<boolean>(false);
+  const locationToggleRef = React.useRef<HTMLButtonElement>(null);
+  const locationMenuRef = React.useRef<HTMLDivElement>(null);
+  const locationContainerRef = React.useRef<HTMLDivElement>(null);
+
+  const handleLocationMenuKeys = (event: KeyboardEvent) => {
+    if (isLocationMenuOpen && locationMenuRef.current?.contains(event.target as Node)) {
+      if (event.key === 'Escape' || event.key === 'Tab') {
+        setIsLocationMenuOpen(!isLocationMenuOpen);
+        locationToggleRef.current?.focus();
+      }
+    }
+  };
+
+  const handleLocationClickOutside = (event: MouseEvent) => {
+    if (isLocationMenuOpen && !locationMenuRef.current?.contains(event.target as Node)) {
+      setIsLocationMenuOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleLocationMenuKeys);
+    window.addEventListener('click', handleLocationClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleLocationMenuKeys);
+      window.removeEventListener('click', handleLocationClickOutside);
+    };
+  }, [isLocationMenuOpen, locationMenuRef]);
+
+  const onLocationMenuToggleClick = (ev: React.MouseEvent) => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      if (locationMenuRef.current) {
+        const firstElement = locationMenuRef.current.querySelector('li > button:not(:disabled)');
+        firstElement && (firstElement as HTMLElement).focus();
+      }
+    }, 0);
+    setIsLocationMenuOpen(!isLocationMenuOpen);
+  };
+
+  function onLocationMenuSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
+    if (typeof itemId === 'undefined') {
+      return;
+    }
+
+    setLocationSelection(itemId.toString());
+    setIsLocationMenuOpen(!isLocationMenuOpen);
+  }
+
+  const locationToggle = (
+    <MenuToggle
+      ref={locationToggleRef}
+      onClick={onLocationMenuToggleClick}
+      isExpanded={isLocationMenuOpen}
+      icon={<FilterIcon />}
+      style={
+        {
+          width: '200px'
+        } as React.CSSProperties
+      }
+    >
+      {locationSelection}
+    </MenuToggle>
+  );
+
+  const locationMenu = (
+    <Menu
+      ref={locationMenuRef}
+      id="same-select-group-location-menu"
+      onSelect={onLocationMenuSelect}
+      selected={locationSelection}
+    >
+      <MenuContent>
+        <MenuList>
+          <MenuItem itemId="All locations">All locations</MenuItem>
+          <MenuItem itemId="Bangalore">Bangalore</MenuItem>
+          <MenuItem itemId="Boston">Boston</MenuItem>
+          <MenuItem itemId="Brno">Brno</MenuItem>
+          <MenuItem itemId="Raleigh">Raleigh</MenuItem>
+          <MenuItem itemId="Westford">Westford</MenuItem>
+        </MenuList>
+      </MenuContent>
+    </Menu>
+  );
+
+  const locationSelect = (
+    <div ref={locationContainerRef}>
+      <Popper
+        trigger={locationToggle}
+        popper={locationMenu}
+        appendTo={locationContainerRef.current || undefined}
+        isVisible={isLocationMenuOpen}
+      />
+    </div>
+  );
+
+  // Set up pagination and toolbar
   const toolbarPagination = (
     <Pagination
-      titles={{ paginationTitle: 'Checkbox filter pagination' }}
+      titles={{ paginationTitle: 'Same select group pagination' }}
       perPageComponent="button"
       itemCount={repositories.length}
       perPage={10}
       page={1}
-      widgetId="checkbox-select-mock-pagination"
+      widgetId="same-select-group-mock-pagination"
       isCompact
     />
   );
 
   const toolbar = (
-    <Toolbar id="checkbox-filter-toolbar" clearAllFilters={() => setSelections([])}>
+    <Toolbar
+      id="same-select-group-toolbar"
+      clearAllFilters={() => {
+        setStatusSelection('All statuses');
+        setLocationSelection('All locations');
+      }}
+    >
       <ToolbarContent>
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
-        <ToolbarGroup variant="filter-group">
-          <ToolbarFilter
-            chips={selections}
-            deleteChip={(category, chip) => onSelect(undefined, chip as string)}
-            deleteChipGroup={() => setSelections([])}
-            categoryName="Location"
-          >
-            {select}
-          </ToolbarFilter>
-        </ToolbarGroup>
+        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+          <ToolbarItem>{statusSelect}</ToolbarItem>
+          <ToolbarItem>{locationSelect}</ToolbarItem>
+        </ToolbarToggleGroup>
         <ToolbarItem variant="pagination">{toolbarPagination}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
+  );
+
+  const emptyState = (
+    <EmptyState>
+      <EmptyStateIcon icon={SearchIcon} />
+      <Title size="lg" headingLevel="h4">
+        No results found
+      </Title>
+      <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
+      <EmptyStatePrimary>
+        <Button
+          variant="link"
+          onClick={() => {
+            setStatusSelection('All statuses');
+            setLocationSelection('All locations');
+          }}
+        >
+          Clear all filters
+        </Button>
+      </EmptyStatePrimary>
+    </EmptyState>
   );
 
   return (
@@ -381,36 +497,44 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {filteredRepos.map((repo, rowIndex) => (
-            <Tr key={repo.name}>
-              <Td
-                select={{
-                  rowIndex,
-                  onSelect: (_event, isSelecting) => onSelectRepo(repo, rowIndex, isSelecting),
-                  isSelected: isRepoSelected(repo),
-                  disable: !isRepoSelectable(repo)
-                }}
-              />
-              <Td dataLabel={columnNames.name} modifier="truncate">
-                {repo.name}
-              </Td>
-              <Td dataLabel={columnNames.threads} modifier="truncate">
-                {repo.threads}
-              </Td>
-              <Td dataLabel={columnNames.apps} modifier="truncate">
-                {repo.apps}
-              </Td>
-              <Td dataLabel={columnNames.workspaces} modifier="truncate">
-                {repo.workspaces}
-              </Td>
-              <Td dataLabel={columnNames.status} modifier="truncate">
-                {repo.status}
-              </Td>
-              <Td dataLabel={columnNames.location} modifier="truncate">
-                {repo.location}
+          {filteredRepos.length > 0 &&
+            filteredRepos.map((repo, rowIndex) => (
+              <Tr key={repo.name}>
+                <Td
+                  select={{
+                    rowIndex,
+                    onSelect: (_event, isSelecting) => onSelectRepo(repo, rowIndex, isSelecting),
+                    isSelected: isRepoSelected(repo),
+                    disable: !isRepoSelectable(repo)
+                  }}
+                />
+                <Td dataLabel={columnNames.name} modifier="truncate">
+                  {repo.name}
+                </Td>
+                <Td dataLabel={columnNames.threads} modifier="truncate">
+                  {repo.threads}
+                </Td>
+                <Td dataLabel={columnNames.apps} modifier="truncate">
+                  {repo.apps}
+                </Td>
+                <Td dataLabel={columnNames.workspaces} modifier="truncate">
+                  {repo.workspaces}
+                </Td>
+                <Td dataLabel={columnNames.status} modifier="truncate">
+                  {repo.status}
+                </Td>
+                <Td dataLabel={columnNames.location} modifier="truncate">
+                  {repo.location}
+                </Td>
+              </Tr>
+            ))}
+          {filteredRepos.length === 0 && (
+            <Tr>
+              <Td colSpan={8}>
+                <Bullseye>{emptyState}</Bullseye>
               </Td>
             </Tr>
-          ))}
+          )}
         </Tbody>
       </TableComposable>
     </React.Fragment>
