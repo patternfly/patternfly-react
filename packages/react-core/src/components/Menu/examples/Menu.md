@@ -23,8 +23,9 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 A menu may contain multiple variations of `<MenuItem>` components. The following example shows a few different states of menu items, where they may:
 
 - Use the `itemId` property to link to callbacks. In this example, the `onSelect` property logs information to the console when a menu item is selected. In practice, specific actions can be linked to `onSelect` callbacks.
-- Use the `onClick` and `to` properties to direct users to other resources or webpages after selecting a menu item.
+- Use the `to` property to direct users to other resources or webpages after selecting a menu item, and the `onClick` property to pass in a callback for specific menu items.
 - Use the `isDisabled` property to disable a menu item. 
+- Use the `isPlain` property to remove the outer box shadow and style the menu plainly instead. 
 
 ```ts file="MenuBasic.tsx"
 ```
@@ -36,9 +37,13 @@ Use the `icon` property to add a familiar icon before a `<MenuItem>` to accelera
 ```ts file="MenuWithIcons.tsx"
 ```
 
-### With actions
+### With action icon
 
-Add a `<MenuItemAction>` to a `<MenuItem>` to trigger an action when that item is selected. 
+To connect a menu item to an action icon, add a `<MenuItemAction>` to a `<MenuItem>`, and use the `icon` property to load an easily recognizable icon.  
+
+To execute a callback when any menu action icon is clicked, pass a callback to the `onActionClick` property of the `<Menu>`. The following example logs to the console any time any action icon is clicked. 
+
+To execute a callback when a specific item's action icon is clicked, pass in the `onClick` property to that `<MenuItemAction>`. The following example logs "clicked on code icon" to the console when the "code" icon is clicked. 
 
 ```ts file="MenuWithActions.tsx"
 ```
@@ -73,35 +78,35 @@ Add a `<MenuFooter>` that contains separate, but related actions at the bottom o
 
 ### Separated items
 
-Use a (divider)[/components/divider] to visually separate `<MenuContent>`. Use the `component` property to specify the type of divider component to use. 
+Use a [divider](/components/divider) to visually separate `<MenuContent>`. Use the `component` property to specify the type of divider component to use. 
 
 ```ts file="MenuWithSeparators.tsx"
 ```
 
 ### Titled groups of items
 
-Add a `<MenuGroup>` to organize `<MenuContent>` and use the `label` property to title a group of menu items. Use the `labelHeadingLevel` property to assign a heading level to the menu group. 
+Add a `<MenuGroup>` to organize `<MenuContent>` and use the `label` property to title a group of menu items. Use the `labelHeadingLevel` property to assign a heading level to the menu group label. 
 
 ```ts file="MenuWithTitledGroups.tsx"
 ```
 
 ### With favorites
 
-The following menu example allows users to favorite menu items, an action that duplicates a menu item and places it in a separated group at the top of the menu. The `isFavorited` property identifies items that have been favorited by a user.
+The following menu example allows users to favorite menu items, an action that duplicates a menu item and places it in a separated group at the top of the menu. The `isFavorited` property identifies items that a user has favorited.
 
 ```ts file="MenuWithFavorites.tsx"
 ```
 
 ### Filtering with text input
 
-A (text input)[components/text-input] component can be loaded within `<MenuInput>` to load a search input at the top of the menu that filters menu items as a user types.
+A [text input](components/text-input) component can be placed within `<MenuInput>` to render a search input at the top of the menu. In the following example, the `onChange` property of the text input is passed a callback that filters menu items as a user types.
 
 ```ts file="MenuFilteringWithTextInput.tsx"
 ```
 
 ### Option single select
 
-The following example demonstrates an option select menu that persists a selected menu item. Use the `selected` property to label a selected item with a checkmark. A `<MenuItem>` may use the `isSelected` property to indicate that it is selected.
+The following example demonstrates an option select menu that persists a selected menu item. Use the `selected` property on the `<Menu>` to label a selected item with a checkmark. You can also use the `isSelected` property on a `<MenuItem>` to indicate that it is selected.
 
 ```ts file="MenuOptionSingleSelect.tsx"
 ```
@@ -115,14 +120,21 @@ You may need to persist multiple selections that a user makes, as demonstrated b
 
 ### With drilldown
 
-Use a drilldown menu to contain different levels of menu items. When a parent menu item (an item that has a submenu of children) is selected, the menu is replaced with the children items. A header displays the name of the parent, with the option to go back one level.
+Use a drilldown menu to contain different levels of menu items. When a parent menu item (an item that has a submenu of children) is selected, the menu is replaced with the children items. 
+
+- To indicate that a menu contains a drilldown, use the `containsDrilldown` property.
+- To indicate the path of drilled-in menu item ids, use the `drilldownItemPath` property. 
+- Pass in an array of drilled-in menus with the `drilledInMenus` property.
+- Use the `onDrillIn` and `onDrillOut` properties to contain callbacks for drilling into and drilling out of a submenu, respectively. 
 
 ```ts file="./MenuWithDrilldown.tsx" isBeta
 ```
 
-### Initially drilled in menu
+### Initially drilled-in menu
 
-To render an initially drilled-in menu, the `menuDrilledIn`, `drilldownPath`, and `activeMenu` states must be set to an initial state. The `menuHeights` state must also be set, defining the height of the root menu. The `setHeight` function passed into the `onGetMenuHeight` property must also account for updating heights, other than the root menu, as menus drill in and out of view.
+To render an initially drilled-in menu, the `drilldownItemPath`, `drilledInMenus`, and `activeMenu` properties must be set to default values.
+
+When starting from a drilled-in state, the `onGetMenuHeight` property must define the height of the root menu. As shown in the following example, the value of `onGetMenuHeight` must also account for updating heights as menus drill in and out of view.
 
 ```ts file="./MenuWithDrilldownInitialState.tsx" isBeta
 ```
@@ -153,9 +165,11 @@ Adjust the visual size of a scrollable menu by using the `menuHeight` property w
 ```ts file="MenuScrollableCustomMenuHeight.tsx"
 ```
 
-### With view more
+### Expandable menu
 
-You may add a "view more" link at the bottom of a menu, which allows users to expand long menus. In this example, 3 additional menu items are revealed each time the "view more" option is selected. Once all items are visible, the "view more" link disappears.
+If you want to initially render only a certain number of menu items within a large menu, you can add a "view more" menu item with a callback passed into its `onClick` property that will render additional menu items.
+
+In this example, 3 additional menu items are revealed each time the "view more" option is selected, with a loading icon simulating a network call to fetch more items. Once all items are visible, the "view more" link disappears.
 
 ```ts file="MenuWithViewMore.tsx"
 ```
