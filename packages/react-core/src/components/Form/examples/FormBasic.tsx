@@ -57,6 +57,7 @@ export const FormBasic: React.FunctionComponent = () => {
               onClick={e => e.preventDefault()}
               aria-describedby="simple-form-name-01"
               className="pf-c-form__group-label-help"
+              tabIndex={0}
             >
               <HelpIcon noVerticalAlign />
             </span>

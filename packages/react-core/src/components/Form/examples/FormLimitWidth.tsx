@@ -57,6 +57,7 @@ export const FormLimitWidth: React.FunctionComponent = () => {
               onClick={e => e.preventDefault()}
               aria-describedby="simple-form-name-02"
               className="pf-c-form__group-label-help"
+              tabIndex={0}
             >
               <HelpIcon noVerticalAlign />
             </span>

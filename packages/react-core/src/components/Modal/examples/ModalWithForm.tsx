@@ -80,6 +80,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   onClick={e => e.preventDefault()}
                   aria-describedby="modal-with-form-form-name"
                   className="pf-c-form__group-label-help"
+                  tabIndex={0}
                 >
                   <HelpIcon noVerticalAlign />
                 </span>
@@ -129,6 +130,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   onClick={e => e.preventDefault()}
                   aria-describedby="modal-with-form-form-email"
                   className="pf-c-form__group-label-help"
+                  tabIndex={0}
                 >
                   <HelpIcon noVerticalAlign />
                 </span>
@@ -177,6 +179,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   onClick={e => e.preventDefault()}
                   aria-describedby="modal-with-form-form-address"
                   className="pf-c-form__group-label-help"
+                  tabIndex={0}
                 >
                   <HelpIcon noVerticalAlign />
                 </span>

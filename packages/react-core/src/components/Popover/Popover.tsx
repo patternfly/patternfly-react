@@ -349,7 +349,13 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const hasCustomMinWidth = minWidth !== popoverMinWidth.value;
   const hasCustomMaxWidth = maxWidth !== popoverMaxWidth.value;
   const onDocumentKeyDown = (event: KeyboardEvent) => {
-    if (event.key === KeyTypes.Escape && visible) {
+    if (event.key === KeyTypes.Enter) {
+      if (visible) {
+        hide();
+      } else {
+        show(true);
+      }
+    } else if (event.key === KeyTypes.Escape && visible) {
       if (triggerManually) {
         shouldClose(null, hide, event);
       } else {

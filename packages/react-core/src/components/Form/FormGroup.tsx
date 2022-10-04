@@ -109,8 +109,13 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
 
   const labelContent = (
     <React.Fragment>
-      <LabelComponent className={css(styles.formLabel)} {...(!isGroupOrRadioGroup && { htmlFor: fieldId })}>
-        <span className={css(styles.formLabelText)}>{label}</span>&nbsp;
+      <LabelComponent
+        style={{ display: 'inline' }}
+        className={css(styles.formLabel)}
+        {...(!isGroupOrRadioGroup && { htmlFor: fieldId })}
+      >
+        <span className={css(styles.formLabelText)}>{label}</span>
+        &nbsp;
         {isRequired && (
           <span className={css(styles.formLabelRequired)} aria-hidden="true">
             {ASTERISK}
