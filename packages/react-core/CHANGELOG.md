@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.249.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.248.0...@patternfly/react-core@4.249.0) (2022-10-04)
+
+
+### Features
+
+* **Icon:** add Icon component ([#8050](https://github.com/patternfly/patternfly-react/issues/8050)) ([f8e175c](https://github.com/patternfly/patternfly-react/commit/f8e175c8fefb73099db04475556a3414146295e8))
+
+
+
+
+
 # [4.248.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.247.1...@patternfly/react-core@4.248.0) (2022-10-04)
 
 
