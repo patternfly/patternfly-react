@@ -37,8 +37,8 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "^16.8 || ^17 || ^18",
-    "react-dom": "^16.8 || ^17 || ^18",
+    "react": "^16.8 || ^17",
+    "react-dom": "^16.8 || ^17",
     "react-monaco-editor": "^0.41.2"
   },
   "devDependencies": {

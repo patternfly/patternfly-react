@@ -36,8 +36,8 @@
     "@patternfly/react-table": "^4.110.22"
   },
   "peerDependencies": {
-    "react": "^16.8 || ^17 || ^18",
-    "react-dom": "^16.8 || ^17 || ^18"
+    "react": "^16.8 || ^17",
+    "react-dom": "^16.8 || ^17"
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
