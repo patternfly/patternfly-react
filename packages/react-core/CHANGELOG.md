@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.248.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.247.1...@patternfly/react-core@4.248.0) (2022-10-04)
+
+
+### Features
+
+* **Table): add tooltip for truncated Td, docs(Filter:** add filter demos ([#8024](https://github.com/patternfly/patternfly-react/issues/8024)) ([599639a](https://github.com/patternfly/patternfly-react/commit/599639afdd21e15a03550e5cb6f5fd3a891ddc6a))
+
+
+
+
+
 ## 4.247.1 (2022-09-30)
 
 **Note:** Version bump only for package @patternfly/react-core
