@@ -57,8 +57,8 @@ test('Renders disabled text area using disabled', () => {
   expect(screen.getByRole('textbox')).toBeDisabled();
 });
 
-test('Renders read only text area using isReadOnly', () => {
-  render(<TextArea aria-label="is read only textarea" isReadOnly />);
+test('Renders read only text area using readOnlyVariant', () => {
+  render(<TextArea aria-label="is read only textarea" readOnlyVariant={'default'} />);
   expect(screen.getByRole('textbox')).toHaveAttribute('readonly');
 });
 
@@ -116,10 +116,17 @@ test('Does not throw console error when aria-label is given but no id', () => {
   expect(console.error).not.toHaveBeenCalled();
 });
 
+test('TextArea can be accessed via passed ref', () => {
+  const testRef: React.RefObject<HTMLTextAreaElement> = React.createRef();
+  render(<TextArea ref={testRef} />);
+  global.scrollTo = jest.fn();
+  testRef.current?.focus();
+  expect(screen.getByRole('textbox')).toHaveFocus();
+});
+
 test('Matches the snapshot', () => {
   const { asFragment } = render(
     <TextArea className="custom class" isRequired isDisabled autoResize aria-label="test textarea" />
   );
-
   expect(asFragment()).toMatchSnapshot();
 });
