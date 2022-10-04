@@ -86,6 +86,36 @@ test('Renders with class name pf-m-4xl when "4xl" is passed as title size', () =
   expect(screen.getByRole('heading')).toHaveClass('pf-m-4xl');
 });
 
+test('Renders with tag name "h1" when "h1" is passed as heading level', () => {
+  render(<Title headingLevel='h1'>Test</Title>);
+  expect(screen.getByRole('heading', {level: 1})).toBeVisible();
+});
+
+test('Renders with tag name "h2" when "h2" is passed as heading level', () => {
+  render(<Title headingLevel='h2'>Test</Title>);
+  expect(screen.getByRole('heading', {level: 2})).toBeVisible();
+});
+
+test('Renders with tag name "h3" when "h3" is passed as heading level', () => {
+  render(<Title headingLevel='h3'>Test</Title>);
+  expect(screen.getByRole('heading', {level: 3})).toBeVisible();
+});
+
+test('Renders with tag name "h4" when "h4" is passed as heading level', () => {
+  render(<Title headingLevel='h4'>Test</Title>);
+  expect(screen.getByRole('heading', {level: 4})).toBeVisible();
+});
+
+test('Renders with tag name "h5" when "h5" is passed as heading level', () => {
+  render(<Title headingLevel='h5'>Test</Title>);
+  expect(screen.getByRole('heading', {level: 5})).toBeVisible();
+});
+
+test('Renders with tag name "h6" when "h6" is passed as heading level', () => {
+  render(<Title headingLevel='h6'>Test</Title>);
+  expect(screen.getByRole('heading', {level: 6})).toBeVisible();
+});
+
 test('Matches the snapshot', () => {
   const { asFragment } = render(<Title headingLevel='h1'>Test</Title>);
   expect(asFragment()).toMatchSnapshot();
