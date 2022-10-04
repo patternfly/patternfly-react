@@ -150,7 +150,7 @@ export const useDndDrag = <
                   return selected.select('[data-surface="true"]').node() as any;
                 }
               )
-              .on('start', function() {
+              .on('start', function () {
                 operation =
                   typeof specRef.current.operation === 'function'
                     ? specRef.current.operation(monitor, propsRef.current)
@@ -293,7 +293,7 @@ export const useDndDrag = <
 
   const collected = React.useMemo(
     () =>
-      computed(() => (spec.collect ? spec.collect(monitor, propsRef.current) : (({} as any) as CollectedProps)), {
+      computed(() => (spec.collect ? spec.collect(monitor, propsRef.current) : ({} as any as CollectedProps)), {
         equals: comparer.shallow
       }),
     [monitor, spec]
@@ -306,19 +306,21 @@ export interface WithDndDragProps {
   dndDragRef: ConnectDragSource;
 }
 
-export const withDndDrag = <
-  DragObject extends DragObjectWithType = DragObjectWithType,
-  DropResult = any,
-  CollectedProps extends {} = {},
-  Props extends {} = {}
->(
-  spec: DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>
-) => <P extends WithDndDragProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<Partial<P>>) => {
-  const Component: React.FunctionComponent<Omit<P, keyof WithDndDragProps & CollectedProps>> = props => {
-    // TODO fix cast to any
-    const [dndDragProps, dndDragRef] = useDndDrag(spec, props as any);
-    return <WrappedComponent {...(props as any)} {...dndDragProps} dndDragRef={dndDragRef} />;
+export const withDndDrag =
+  <
+    DragObject extends DragObjectWithType = DragObjectWithType,
+    DropResult = any,
+    CollectedProps extends {} = {},
+    Props extends {} = {}
+  >(
+    spec: DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>
+  ) =>
+  <P extends WithDndDragProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<Partial<P>>) => {
+    const Component: React.FunctionComponent<Omit<P, keyof WithDndDragProps & CollectedProps>> = props => {
+      // TODO fix cast to any
+      const [dndDragProps, dndDragRef] = useDndDrag(spec, props as any);
+      return <WrappedComponent {...(props as any)} {...dndDragProps} dndDragRef={dndDragRef} />;
+    };
+    Component.displayName = `withDndDrag(${WrappedComponent.displayName || WrappedComponent.name})`;
+    return observer(Component);
   };
-  Component.displayName = `withDndDrag(${WrappedComponent.displayName || WrappedComponent.name})`;
-  return observer(Component);
-};

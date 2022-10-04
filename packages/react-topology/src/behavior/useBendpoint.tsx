@@ -82,19 +82,27 @@ export interface WithBendpointProps {
   dragNodeRef: WithDndDragProps['dndDragRef'];
 }
 
-export const withBendpoint = <DropResult, CollectedProps, Props = {}>(
-  spec?: Omit<
-    DragSourceSpec<DragObjectWithType, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>,
-    'type'
-  >
-) => <P extends WithBendpointProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FunctionComponent<Omit<P, keyof WithBendpointProps> & HocProps> = props => {
-    const [dragProps, bendpointRef] = useBendpoint(props.point, spec as any, props);
-    return <WrappedComponent {...(props as any)} bendpointRef={bendpointRef} {...dragProps} />;
+export const withBendpoint =
+  <DropResult, CollectedProps, Props = {}>(
+    spec?: Omit<
+      DragSourceSpec<
+        DragObjectWithType,
+        DragSpecOperationType<DragOperationWithType>,
+        DropResult,
+        CollectedProps,
+        Props
+      >,
+      'type'
+    >
+  ) =>
+  <P extends WithBendpointProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
+    const Component: React.FunctionComponent<Omit<P, keyof WithBendpointProps> & HocProps> = props => {
+      const [dragProps, bendpointRef] = useBendpoint(props.point, spec as any, props);
+      return <WrappedComponent {...(props as any)} bendpointRef={bendpointRef} {...dragProps} />;
+    };
+    Component.displayName = `withBendpoint(${WrappedComponent.displayName || WrappedComponent.name})`;
+    return observer(Component);
   };
-  Component.displayName = `withBendpoint(${WrappedComponent.displayName || WrappedComponent.name})`;
-  return observer(Component);
-};
 
 /**
  * @deprecated Use withBendpoint instead

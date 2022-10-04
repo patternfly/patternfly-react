@@ -5,16 +5,9 @@ describe('Tab Demo Test', () => {
 
   it('Allows users to select a tab from the overflow menu', () => {
     // verify that the expected tabs are showing/not showing as expected based on screen size
-    [
-      'Tab item 1',
-      'Tab item 2',
-      'Tab item 3',
-      'Tab item 4',
-      'Tab item 5',
-      'Tab item 6',
-      'Tab item 7',
-      'More'
-    ].forEach(tab => cy.contains('.pf-c-tabs__link', tab).should('exist'));
+    ['Tab item 1', 'Tab item 2', 'Tab item 3', 'Tab item 4', 'Tab item 5', 'Tab item 6', 'Tab item 7', 'More'].forEach(
+      tab => cy.contains('.pf-c-tabs__link', tab).should('exist')
+    );
     ['Tab item 8', 'Tab item 9', 'Tab item 10', 'Tab item 11'].forEach(tab => cy.contains(tab).should('not.exist'));
 
     // open the overflow menu and verify that the overflowing tabs are now visible within it

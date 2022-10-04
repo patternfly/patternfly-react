@@ -25,17 +25,17 @@ export const useAnchor = (
   }, [anchorCallback, element, end, type]);
 };
 
-export const withAnchor = <P extends {} = {}>(anchor: Anchor, end?: AnchorEnd, type?: string) => (
-  WrappedComponent: React.ComponentType<P>
-) => {
-  const Component: React.FunctionComponent<P> = props => {
-    useAnchor(
-      React.useCallback(() => anchor, []),
-      end,
-      type
-    );
-    return <WrappedComponent {...props} />;
+export const withAnchor =
+  <P extends {} = {}>(anchor: Anchor, end?: AnchorEnd, type?: string) =>
+  (WrappedComponent: React.ComponentType<P>) => {
+    const Component: React.FunctionComponent<P> = props => {
+      useAnchor(
+        React.useCallback(() => anchor, []),
+        end,
+        type
+      );
+      return <WrappedComponent {...props} />;
+    };
+    Component.displayName = `withAnchor(${WrappedComponent.displayName || WrappedComponent.name})`;
+    return observer(Component);
   };
-  Component.displayName = `withAnchor(${WrappedComponent.displayName || WrappedComponent.name})`;
-  return observer(Component);
-};

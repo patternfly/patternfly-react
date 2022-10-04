@@ -138,16 +138,8 @@ export class SelectViewMoreGroupedDemo extends Component<SelectViewMoreGroupedDe
   };
 
   render() {
-    const {
-      isOpen,
-      isOpenCheck,
-      selected,
-      selectedCheck,
-      isLoading,
-      isLoadingCheck,
-      numOptions,
-      numOptionsCheck
-    } = this.state;
+    const { isOpen, isOpenCheck, selected, selectedCheck, isLoading, isLoadingCheck, numOptions, numOptionsCheck } =
+      this.state;
     const titleId = 'view-more-grouped-select-id';
     const titleIdCheck = 'view-more-grouped-check-select-id';
 

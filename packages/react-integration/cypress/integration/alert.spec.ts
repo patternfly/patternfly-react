@@ -13,10 +13,7 @@ describe('Alert Demo Test', () => {
     cy.get('#default-alert > .pf-c-alert__title')
       .should('have.class', 'pf-m-truncate')
       .then((noTooltipLink: JQuery<HTMLDivElement>) => {
-        cy.wrap(noTooltipLink)
-          .trigger('mouseenter')
-          .get('.pf-c-tooltip')
-          .should('not.exist');
+        cy.wrap(noTooltipLink).trigger('mouseenter').get('.pf-c-tooltip').should('not.exist');
         cy.wrap(noTooltipLink).trigger('mouseleave');
       });
   });
@@ -26,10 +23,7 @@ describe('Alert Demo Test', () => {
       .should('have.class', 'pf-m-truncate')
       .then((tooltipLink: JQuery<HTMLDivElement>) => {
         cy.get('.pf-c-tooltip').should('not.exist');
-        cy.wrap(tooltipLink)
-          .trigger('mouseenter')
-          .get('.pf-c-tooltip')
-          .should('exist');
+        cy.wrap(tooltipLink).trigger('mouseenter').get('.pf-c-tooltip').should('exist');
         cy.wrap(tooltipLink).trigger('mouseleave');
       });
   });

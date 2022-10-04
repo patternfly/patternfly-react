@@ -76,9 +76,7 @@ describe('Modal Test', () => {
     cy.get('#tabstop-test').focus();
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    cy.tab()
-      .tab()
-      .click(); // open second modal
+    cy.tab().tab().click(); // open second modal
 
     cy.get('.pf-c-modal-box').should('exist');
     // press escape key

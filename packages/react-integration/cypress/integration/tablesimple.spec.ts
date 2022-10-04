@@ -8,15 +8,11 @@ describe('Table Simple Test', () => {
   });
 
   it('Check number of rows', () => {
-    cy.get('.pf-c-table')
-      .find('tr')
-      .should('have.length', 4);
+    cy.get('.pf-c-table').find('tr').should('have.length', 4);
   });
 
   it('Check number of columns', () => {
-    cy.get('thead')
-      .find('th')
-      .should('have.length', 5);
+    cy.get('thead').find('th').should('have.length', 5);
   });
 
   it('Verify tooltip info', () => {
@@ -25,9 +21,7 @@ describe('Table Simple Test', () => {
     // tooltip shouldn't exist yet
     cy.get('.pf-c-tooltip').should('not.exist');
     // trigger tooltip
-    cy.get('.pf-c-table__column-help-action')
-      .first()
-      .click();
+    cy.get('.pf-c-table__column-help-action').first().click();
     cy.get('.pf-c-tooltip').should('exist');
   });
 
@@ -37,9 +31,7 @@ describe('Table Simple Test', () => {
     // popover shouldn't exist yet
     cy.get('.pf-c-popover').should('not.exist');
     // trigger popover
-    cy.get('.pf-c-table__column-help-action')
-      .eq(1)
-      .click();
+    cy.get('.pf-c-table__column-help-action').eq(1).click();
     cy.get('.pf-c-popover').should('exist');
   });
 });

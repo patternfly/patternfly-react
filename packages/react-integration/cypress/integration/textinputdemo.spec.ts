@@ -33,10 +33,7 @@ describe('Text Input Demo Test', () => {
       expect(textarea.attr('aria-invalid')).to.be.equal('true');
     });
     // Clear text input and type string longer than 5 Characters so it is valid
-    cy.get('#text-validated')
-      .clear()
-      .type('testing')
-      .should('have.value', 'testing');
+    cy.get('#text-validated').clear().type('testing').should('have.value', 'testing');
     cy.get('#text-validated.pf-m-success').should('exist');
     cy.get('#text-validated').then(textinput => {
       expect(textinput.attr('aria-invalid')).to.be.equal('false');

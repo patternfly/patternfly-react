@@ -40,8 +40,9 @@ export const WhenDecorator: React.FC<WhenDecoratorProps> = ({
   const { height: taskHeight } = element.getBounds();
   const y = taskHeight / 2 - height / 2;
   const startX = -width - leftOffset;
-  const points = `${startX + width / 2} ${y} ${startX + width} ${y + height / 2} ${startX + width / 2} ${y +
-    height} ${startX} ${y + height / 2}`;
+  const points = `${startX + width / 2} ${y} ${startX + width} ${y + height / 2} ${startX + width / 2} ${
+    y + height
+  } ${startX} ${y + height / 2}`;
   const diamondNode = (
     <g className={className}>
       <line

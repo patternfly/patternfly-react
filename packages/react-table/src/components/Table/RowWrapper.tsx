@@ -79,13 +79,13 @@ export class RowWrapper extends React.Component<RowWrapperProps> {
 
   handleScroll = (event: Event): void => {
     if (!this._unmounted) {
-      this.props.onScroll((event as unknown) as React.UIEvent<Element>);
+      this.props.onScroll(event as unknown as React.UIEvent<Element>);
     }
   };
 
   handleResize = (event: Event) => {
     if (!this._unmounted) {
-      this.props.onResize((event as unknown) as React.UIEvent<Element>);
+      this.props.onResize(event as unknown as React.UIEvent<Element>);
     }
   };
 

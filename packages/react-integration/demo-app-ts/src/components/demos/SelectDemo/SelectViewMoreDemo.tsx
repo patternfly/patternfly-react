@@ -122,16 +122,8 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
   };
 
   render() {
-    const {
-      isOpen,
-      isOpenCheck,
-      selected,
-      selectedCheck,
-      isLoading,
-      isLoadingCheck,
-      numOptions,
-      numOptionsCheck
-    } = this.state;
+    const { isOpen, isOpenCheck, selected, selectedCheck, isLoading, isLoadingCheck, numOptions, numOptionsCheck } =
+      this.state;
     const titleId = 'view-more-select-id';
     const titleIdCheck = 'view-more-check-select-id';
 

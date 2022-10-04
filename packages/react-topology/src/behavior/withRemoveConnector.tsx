@@ -24,25 +24,27 @@ const defaultRenderRemove: RemoveRenderer = (edge: Edge, onRemove: (e: Edge) => 
   );
 };
 
-export const withRemoveConnector = <P extends WithRemoveConnectorProps & ElementProps>(
-  onRemove: (edge: Edge) => void,
-  renderRemove: RemoveRenderer = defaultRenderRemove
-) => (WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FunctionComponent<Omit<P, keyof WithRemoveConnectorProps>> = props => {
-    const [show, setShow] = React.useState(false);
-    const onShowRemoveConnector = React.useCallback(() => setShow(true), []);
-    const onHideRemoveConnector = React.useCallback(() => setShow(false), []);
+export const withRemoveConnector =
+  <P extends WithRemoveConnectorProps & ElementProps>(
+    onRemove: (edge: Edge) => void,
+    renderRemove: RemoveRenderer = defaultRenderRemove
+  ) =>
+  (WrappedComponent: React.ComponentType<P>) => {
+    const Component: React.FunctionComponent<Omit<P, keyof WithRemoveConnectorProps>> = props => {
+      const [show, setShow] = React.useState(false);
+      const onShowRemoveConnector = React.useCallback(() => setShow(true), []);
+      const onHideRemoveConnector = React.useCallback(() => setShow(false), []);
 
-    return (
-      <WrappedComponent
-        {...(props as any)}
-        onShowRemoveConnector={onShowRemoveConnector}
-        onHideRemoveConnector={onHideRemoveConnector}
-      >
-        {show && renderRemove(props.element, onRemove)}
-      </WrappedComponent>
-    );
+      return (
+        <WrappedComponent
+          {...(props as any)}
+          onShowRemoveConnector={onShowRemoveConnector}
+          onHideRemoveConnector={onHideRemoveConnector}
+        >
+          {show && renderRemove(props.element, onRemove)}
+        </WrappedComponent>
+      );
+    };
+    Component.displayName = `withRemoveConnector(${WrappedComponent.displayName || WrappedComponent.name})`;
+    return observer(Component);
   };
-  Component.displayName = `withRemoveConnector(${WrappedComponent.displayName || WrappedComponent.name})`;
-  return observer(Component);
-};

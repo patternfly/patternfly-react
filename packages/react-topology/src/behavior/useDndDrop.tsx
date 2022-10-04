@@ -164,7 +164,7 @@ export const useDndDrop = <
 
   const collected = React.useMemo(
     () =>
-      computed(() => (spec.collect ? spec.collect(monitor, propsRef.current) : (({} as any) as CollectedProps)), {
+      computed(() => (spec.collect ? spec.collect(monitor, propsRef.current) : ({} as any as CollectedProps)), {
         equals: comparer.shallow
       }),
     [monitor, spec]
@@ -177,19 +177,16 @@ export interface WithDndDropProps {
   dndDropRef: ConnectDropTarget;
 }
 
-export const withDndDrop = <
-  DragObject,
-  DropResult = GraphElement,
-  CollectedProps extends {} = {},
-  Props extends {} = {}
->(
-  spec: DropTargetSpec<DragObject, DropResult, CollectedProps, Props>
-) => <P extends WithDndDropProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<Partial<P>>) => {
-  const Component: React.FunctionComponent<Omit<P, keyof WithDndDropProps & CollectedProps>> = props => {
-    // TODO fix cast to any
-    const [dndDropProps, dndDropRef] = useDndDrop(spec, props as any);
-    return <WrappedComponent {...(props as any)} {...dndDropProps} dndDropRef={dndDropRef} />;
+export const withDndDrop =
+  <DragObject, DropResult = GraphElement, CollectedProps extends {} = {}, Props extends {} = {}>(
+    spec: DropTargetSpec<DragObject, DropResult, CollectedProps, Props>
+  ) =>
+  <P extends WithDndDropProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<Partial<P>>) => {
+    const Component: React.FunctionComponent<Omit<P, keyof WithDndDropProps & CollectedProps>> = props => {
+      // TODO fix cast to any
+      const [dndDropProps, dndDropRef] = useDndDrop(spec, props as any);
+      return <WrappedComponent {...(props as any)} {...dndDropProps} dndDropRef={dndDropRef} />;
+    };
+    Component.displayName = `withDndDrop(${WrappedComponent.displayName || WrappedComponent.name})`;
+    return observer(Component);
   };
-  Component.displayName = `withDndDrop(${WrappedComponent.displayName || WrappedComponent.name})`;
-  return observer(Component);
-};

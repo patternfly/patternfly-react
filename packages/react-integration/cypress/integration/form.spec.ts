@@ -4,9 +4,7 @@ describe('Form Demo Test', () => {
   });
 
   it('Verify default value content', () => {
-    cy.get('#age')
-      .first()
-      .should('have.value', 'Five');
+    cy.get('#age').first().should('have.value', 'Five');
   });
 
   it('Verify labelInfo structure', () => {
@@ -16,18 +14,12 @@ describe('Form Demo Test', () => {
   });
 
   it('Verify form allows correct input', () => {
-    cy.get('#age')
-      .first()
-      .clear()
-      .type('5');
+    cy.get('#age').first().clear().type('5');
     cy.get('.pf-c-form__helper-text').contains('Please write your age');
   });
 
   it('Verify form identifies input error', () => {
-    cy.get('#age')
-      .first()
-      .clear()
-      .type('Something');
+    cy.get('#age').first().clear().type('Something');
     cy.get('.pf-c-form__helper-text').contains('Age has to be a number');
   });
 
@@ -47,10 +39,7 @@ describe('Form Demo Test', () => {
     cy.get('.pf-c-form__helper-text.pf-m-error').contains('Age must be a number');
     cy.get('#age2-helper.pf-m-error').should('exist');
     // Clear text input and enter valid number
-    cy.get('#age-validated')
-      .clear()
-      .type('34')
-      .should('have.value', '34');
+    cy.get('#age-validated').clear().type('34').should('have.value', '34');
     cy.get('#age2-helper.pf-m-success').should('exist');
     cy.get('#age-validated.pf-m-success').should('exist');
     cy.get('.pf-c-form__helper-text.pf-m-success').contains('Enter age');
@@ -82,9 +71,7 @@ describe('Form Demo Test', () => {
 
   it('Verify keypress can control the multi-select-typeahead', () => {
     cy.get('[id*="pf-select-toggle-id"][id*="select-multi-typeahead-typeahead"]').type('{downarrow}{downarrow}{enter}');
-    cy.get('.pf-c-chip__text')
-      .should('exist')
-      .and('have.text', 'Florida');
+    cy.get('.pf-c-chip__text').should('exist').and('have.text', 'Florida');
 
     cy.get('.pf-c-chip__text').then($chipText => {
       const idAttrValue = $chipText.attr('id');
@@ -93,13 +80,9 @@ describe('Form Demo Test', () => {
 
     cy.get('[id*="pf-select-toggle-id"][id*="select-multi-typeahead-typeahead"]').type('New J');
 
-    cy.get('.pf-c-select__menu-item')
-      .should('exist')
-      .and('have.text', 'New Jersey');
+    cy.get('.pf-c-select__menu-item').should('exist').and('have.text', 'New Jersey');
     cy.focused().type('{backspace}{backspace}{backspace}{backspace}orth');
-    cy.get('.pf-c-select__menu-item')
-      .should('exist')
-      .and('have.text', 'North Carolina');
+    cy.get('.pf-c-select__menu-item').should('exist').and('have.text', 'North Carolina');
     cy.focused().type('{backspace}{backspace}{backspace}{backspace}{backspace}');
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore

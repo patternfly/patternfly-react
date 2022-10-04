@@ -244,9 +244,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   scrollToIndex = (index: number) => {
-    this.getOptions()[index].closest(`.${menuStyles.menuContent}`).scrollTop = this.getOptions()[
-      this.getIndexToScroll(index)
-    ].offsetTop;
+    this.getOptions()[index].closest(`.${menuStyles.menuContent}`).scrollTop =
+      this.getOptions()[this.getIndexToScroll(index)].offsetTop;
   };
 
   focusSelection = (index: number) => {

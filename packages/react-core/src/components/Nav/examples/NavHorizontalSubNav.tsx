@@ -11,7 +11,7 @@ export const NavHorizontalSubNav: React.FunctionComponent = () => {
   return (
     <Nav onSelect={onSelect} variant="horizontal-subnav" aria-label="Horizontal subnav global nav">
       <NavList>
-        {Array.apply(0, Array(10)).map(function(_item, index: number) {
+        {Array.apply(0, Array(10)).map(function (_item, index: number) {
           const num = index + 1;
           return (
             <NavItem

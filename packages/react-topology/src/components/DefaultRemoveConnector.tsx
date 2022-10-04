@@ -33,8 +33,9 @@ const DefaultRemoveConnector: React.FunctionComponent<DefaultRemoveConnectorProp
 }) => (
   <Tooltip content="Delete Connector" position={computeTooltipPosition(startPoint, endPoint)}>
     <g
-      transform={`translate(${startPoint.x + (endPoint.x - startPoint.x) * 0.5}, ${startPoint.y +
-        (endPoint.y - startPoint.y) * 0.5})`}
+      transform={`translate(${startPoint.x + (endPoint.x - startPoint.x) * 0.5}, ${
+        startPoint.y + (endPoint.y - startPoint.y) * 0.5
+      })`}
       onClick={e => {
         e.stopPropagation();
         onRemove();

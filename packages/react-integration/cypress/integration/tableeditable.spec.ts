@@ -8,15 +8,11 @@ describe('Table Simple Test', () => {
   });
 
   it('Check number of rows', () => {
-    cy.get('.pf-c-table')
-      .find('tr')
-      .should('have.length', 3);
+    cy.get('.pf-c-table').find('tr').should('have.length', 3);
   });
 
   it('Check number of columns', () => {
-    cy.get('thead')
-      .find('th')
-      .should('have.length', 6);
+    cy.get('thead').find('th').should('have.length', 6);
   });
 
   it('Check edit', () => {

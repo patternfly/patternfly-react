@@ -261,11 +261,10 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     return convertedPlacement as Placement;
   };
   const getPlacementMemo = React.useMemo(getPlacement, [direction, position, placement]);
-  const getOppositePlacementMemo = React.useMemo(() => getOppositePlacement(getPlacement()), [
-    direction,
-    position,
-    placement
-  ]);
+  const getOppositePlacementMemo = React.useMemo(
+    () => getOppositePlacement(getPlacement()),
+    [direction, position, placement]
+  );
   const sameWidthMod: Modifier<'sameWidth', {}> = React.useMemo(
     () => ({
       name: 'sameWidth',
@@ -283,7 +282,11 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     [popperMatchesTriggerWidth]
   );
 
-  const { styles: popperStyles, attributes, update } = usePopper(refOrTrigger, popperElement, {
+  const {
+    styles: popperStyles,
+    attributes,
+    update
+  } = usePopper(refOrTrigger, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
       {

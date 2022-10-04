@@ -10,9 +10,7 @@ describe('Select Test', () => {
     cy.get('#option-1 > .pf-m-action').click();
     cy.get('.pf-c-select__menu-group-title').should('exist');
     cy.get('#option-1 > .pf-m-action').should('have.attr', 'aria-label', 'custom starred');
-    cy.get('#option-1 > .pf-m-action')
-      .first()
-      .click();
+    cy.get('#option-1 > .pf-m-action').first().click();
     cy.get('#Favorites').should('not.exist');
     // toggle closed
     cy.get('#favorites-select').click();
@@ -25,9 +23,7 @@ describe('Select Test', () => {
     cy.get('#option-grouped-1 > .pf-m-action').click();
     cy.get('#My-Favorites').should('exist');
     cy.get('#option-grouped-1 > .pf-m-action').should('have.attr', 'aria-label', 'starred');
-    cy.get('#option-grouped-1 > .pf-m-action')
-      .first()
-      .click();
+    cy.get('#option-grouped-1 > .pf-m-action').first().click();
     cy.get('#My-Favorites').should('not.exist');
     // toggle closed
     cy.get('#favorites-select-grouped').click();
@@ -50,9 +46,7 @@ describe('Select Test', () => {
     // Clear filter so Favorites shows again
     cy.get('#typeahead-select-select-typeahead').clear();
     cy.get('.pf-c-select__menu-group-title').should('exist');
-    cy.get('#running-option > .pf-m-action')
-      .first()
-      .click();
+    cy.get('#running-option > .pf-m-action').first().click();
     cy.get('#Favorites').should('not.exist');
     // toggle closed
     cy.get('#typeahead-select').click();
@@ -64,13 +58,9 @@ describe('Select Test', () => {
     cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').should('have.value', '');
     // Verify selections work
     cy.get('#grapes-option').click();
-    cy.get('.pf-c-chip')
-      .contains('grapes')
-      .should('exist');
+    cy.get('.pf-c-chip').contains('grapes').should('exist');
     cy.get('#pears-option').click();
-    cy.get('.pf-c-chip')
-      .contains('pears')
-      .should('exist');
+    cy.get('.pf-c-chip').contains('pears').should('exist');
     // click on apples so it is added to favorites
     cy.get('#apples-option > .pf-m-action').click();
     cy.get('.pf-c-select__menu-group-title').should('exist');
@@ -80,9 +70,7 @@ describe('Select Test', () => {
     // Clear filter so Favorites shows again
     cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').clear();
     cy.get('.pf-c-select__menu-group-title').should('exist');
-    cy.get('#apples-option > .pf-m-action')
-      .first()
-      .click();
+    cy.get('#apples-option > .pf-m-action').first().click();
     cy.get('.pf-c-select__menu-group-title').should('not.exist');
   });
 });

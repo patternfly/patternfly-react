@@ -39,9 +39,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
     // Filter menu items based on the text input value when one exists
     if (inputValue) {
       newMenuItems = intitalMenuItems.filter(menuItem =>
-        String(menuItem.children)
-          .toLowerCase()
-          .includes(inputValue.toLowerCase())
+        String(menuItem.children).toLowerCase().includes(inputValue.toLowerCase())
       );
 
       // When no options are found after filtering, display 'No results found'

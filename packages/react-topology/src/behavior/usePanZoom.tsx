@@ -109,11 +109,13 @@ export interface WithPanZoomProps {
   panZoomRef: PanZoomRef;
 }
 
-export const withPanZoom = () => <P extends WithPanZoomProps>(WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FunctionComponent<Omit<P, keyof WithPanZoomProps>> = props => {
-    const panZoomRef = usePanZoom();
-    return <WrappedComponent {...(props as any)} panZoomRef={panZoomRef} />;
+export const withPanZoom =
+  () =>
+  <P extends WithPanZoomProps>(WrappedComponent: React.ComponentType<P>) => {
+    const Component: React.FunctionComponent<Omit<P, keyof WithPanZoomProps>> = props => {
+      const panZoomRef = usePanZoom();
+      return <WrappedComponent {...(props as any)} panZoomRef={panZoomRef} />;
+    };
+    Component.displayName = `withPanZoom(${WrappedComponent.displayName || WrappedComponent.name})`;
+    return observer(Component);
   };
-  Component.displayName = `withPanZoom(${WrappedComponent.displayName || WrappedComponent.name})`;
-  return observer(Component);
-};

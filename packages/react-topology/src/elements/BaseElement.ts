@@ -15,8 +15,10 @@ import {
 import Stateful from '../utils/Stateful';
 import { Translatable } from '../geom/types';
 
-export default abstract class BaseElement<E extends ElementModel = ElementModel, D = any> extends Stateful
-  implements GraphElement<E, D> {
+export default abstract class BaseElement<E extends ElementModel = ElementModel, D = any>
+  extends Stateful
+  implements GraphElement<E, D>
+{
   private id: string = '';
 
   @observable

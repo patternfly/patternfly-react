@@ -76,14 +76,12 @@ export class TreeViewDemo extends Component {
 
   compactOptions: TreeViewDataItem[] = [
     {
-      name:
-        'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
+      name: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
       title: 'apiVersion',
       id: 'apiVersion'
     },
     {
-      name:
-        'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
+      name: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
       title: 'kind',
       id: 'kind'
     },
@@ -98,8 +96,7 @@ export class TreeViewDemo extends Component {
       id: 'spec',
       children: [
         {
-          name:
-            'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
+          name: 'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
           title: 'minReadySeconds',
           id: 'minReadySeconds'
         },
@@ -109,20 +106,17 @@ export class TreeViewDemo extends Component {
           id: 'paused'
         },
         {
-          name:
-            'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
+          name: 'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
           title: 'progressDeadlineSeconds',
           id: 'progressDeadlineSeconds',
           children: [
             {
-              name:
-                'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
+              name: 'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
               title: 'revisionHistoryLimit',
               id: 'revisionHistoryLimit',
               children: [
                 {
-                  name:
-                    'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
+                  name: 'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
                   title: 'matchLabels',
                   id: 'matchLabels'
                 }
@@ -166,12 +160,7 @@ export class TreeViewDemo extends Component {
   };
 
   filterItems = (item: TreeViewDataItem, input: string): boolean => {
-    if (
-      item.name
-        .toString()
-        .toLowerCase()
-        .includes(input.toLowerCase())
-    ) {
+    if (item.name.toString().toLowerCase().includes(input.toLowerCase())) {
       return true;
     }
 

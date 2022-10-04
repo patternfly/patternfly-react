@@ -20,57 +20,27 @@ describe('Notification Drawer Basic Demo Test', () => {
   });
 
   it('Verify list items are hoverable', () => {
-    cy.get('.pf-c-notification-drawer__list-item')
-      .first()
-      .should('have.class', 'pf-m-hoverable');
-    cy.get('.pf-c-notification-drawer__list-item')
-      .eq(1)
-      .should('have.class', 'pf-m-hoverable');
-    cy.get('.pf-c-notification-drawer__list-item')
-      .eq(2)
-      .should('have.class', 'pf-m-hoverable');
-    cy.get('.pf-c-notification-drawer__list-item')
-      .eq(3)
-      .should('have.class', 'pf-m-hoverable');
-    cy.get('.pf-c-notification-drawer__list-item')
-      .last()
-      .should('have.class', 'pf-m-hoverable');
+    cy.get('.pf-c-notification-drawer__list-item').first().should('have.class', 'pf-m-hoverable');
+    cy.get('.pf-c-notification-drawer__list-item').eq(1).should('have.class', 'pf-m-hoverable');
+    cy.get('.pf-c-notification-drawer__list-item').eq(2).should('have.class', 'pf-m-hoverable');
+    cy.get('.pf-c-notification-drawer__list-item').eq(3).should('have.class', 'pf-m-hoverable');
+    cy.get('.pf-c-notification-drawer__list-item').last().should('have.class', 'pf-m-hoverable');
   });
 
   it('Verify list items severities', () => {
-    cy.get('.pf-c-notification-drawer__list-item')
-      .first()
-      .should('have.class', 'pf-m-info');
-    cy.get('.pf-c-notification-drawer__list-item')
-      .eq(1)
-      .should('have.class', 'pf-m-danger');
-    cy.get('.pf-c-notification-drawer__list-item')
-      .eq(2)
-      .should('have.class', 'pf-m-warning');
-    cy.get('.pf-c-notification-drawer__list-item')
-      .eq(3)
-      .should('have.class', 'pf-m-success');
-    cy.get('.pf-c-notification-drawer__list-item')
-      .last()
-      .should('have.class', 'pf-m-default');
+    cy.get('.pf-c-notification-drawer__list-item').first().should('have.class', 'pf-m-info');
+    cy.get('.pf-c-notification-drawer__list-item').eq(1).should('have.class', 'pf-m-danger');
+    cy.get('.pf-c-notification-drawer__list-item').eq(2).should('have.class', 'pf-m-warning');
+    cy.get('.pf-c-notification-drawer__list-item').eq(3).should('have.class', 'pf-m-success');
+    cy.get('.pf-c-notification-drawer__list-item').last().should('have.class', 'pf-m-default');
   });
 
   it('Verify timestamp in list items', () => {
-    cy.get('.pf-c-notification-drawer__list-item-timestamp')
-      .first()
-      .contains('5 minutes ago');
-    cy.get('.pf-c-notification-drawer__list-item-timestamp')
-      .eq(1)
-      .contains('10 minutes ago');
-    cy.get('.pf-c-notification-drawer__list-item-timestamp')
-      .eq(2)
-      .contains('20 minutes ago');
-    cy.get('.pf-c-notification-drawer__list-item-timestamp')
-      .eq(3)
-      .contains('30 minutes ago');
-    cy.get('.pf-c-notification-drawer__list-item-timestamp')
-      .last()
-      .contains('35 minutes ago');
+    cy.get('.pf-c-notification-drawer__list-item-timestamp').first().contains('5 minutes ago');
+    cy.get('.pf-c-notification-drawer__list-item-timestamp').eq(1).contains('10 minutes ago');
+    cy.get('.pf-c-notification-drawer__list-item-timestamp').eq(2).contains('20 minutes ago');
+    cy.get('.pf-c-notification-drawer__list-item-timestamp').eq(3).contains('30 minutes ago');
+    cy.get('.pf-c-notification-drawer__list-item-timestamp').last().contains('35 minutes ago');
   });
 
   // Accessibility test
@@ -80,33 +50,19 @@ describe('Notification Drawer Basic Demo Test', () => {
     // then press Tab on toggle button, check whether the dropdown menu is closed
     cy.get('#toggle-id-0').then((toggleButton: JQuery<HTMLButtonElement>) => {
       cy.wrap(toggleButton).trigger('keydown', { key: 'Enter' });
-      cy.get('#notification-0')
-        .find('.pf-c-dropdown__menu.pf-m-align-right')
-        .should('exist');
-      cy.get('#notification-0')
-        .find('.pf-c-dropdown__menu-item')
-        .first()
-        .should('be.focused');
+      cy.get('#notification-0').find('.pf-c-dropdown__menu.pf-m-align-right').should('exist');
+      cy.get('#notification-0').find('.pf-c-dropdown__menu-item').first().should('be.focused');
       cy.wrap(toggleButton).trigger('keydown', { key: 'Tab' });
-      cy.get('#notification-0')
-        .find('.pf-c-dropdown__menu.pf-m-align-right')
-        .should('not.exist');
+      cy.get('#notification-0').find('.pf-c-dropdown__menu.pf-m-align-right').should('not.exist');
     });
     // Verify the list item header toggle button keyboard interactivity opens/closes dropdown menu
     // the method is the same as above
     cy.get('#toggle-id-1').then((toggleButton: JQuery<HTMLButtonElement>) => {
       cy.wrap(toggleButton).trigger('keydown', { key: 'Enter' });
-      cy.get('#notification-1')
-        .find('.pf-c-dropdown__menu.pf-m-align-right')
-        .should('exist');
-      cy.get('#notification-1')
-        .find('.pf-c-dropdown__menu-item')
-        .first()
-        .should('be.focused');
+      cy.get('#notification-1').find('.pf-c-dropdown__menu.pf-m-align-right').should('exist');
+      cy.get('#notification-1').find('.pf-c-dropdown__menu-item').first().should('be.focused');
       cy.wrap(toggleButton).trigger('keydown', { key: 'Tab' });
-      cy.get('#notification-1')
-        .find('.pf-c-dropdown__menu.pf-m-align-right')
-        .should('not.exist');
+      cy.get('#notification-1').find('.pf-c-dropdown__menu.pf-m-align-right').should('not.exist');
     });
   });
 
@@ -114,10 +70,7 @@ describe('Notification Drawer Basic Demo Test', () => {
     cy.get('#info-alert-item > .pf-c-notification-drawer__list-item-header-title')
       .should('have.class', 'pf-m-truncate')
       .then((noTooltipLink: JQuery<HTMLDivElement>) => {
-        cy.wrap(noTooltipLink)
-          .trigger('mouseenter')
-          .get('.pf-c-tooltip')
-          .should('not.exist');
+        cy.wrap(noTooltipLink).trigger('mouseenter').get('.pf-c-tooltip').should('not.exist');
         cy.wrap(noTooltipLink).trigger('mouseleave');
       });
   });
@@ -127,10 +80,7 @@ describe('Notification Drawer Basic Demo Test', () => {
       .should('have.class', 'pf-m-truncate')
       .then((tooltipLink: JQuery<HTMLDivElement>) => {
         cy.get('.pf-c-tooltip').should('not.exist');
-        cy.wrap(tooltipLink)
-          .trigger('mouseenter')
-          .get('.pf-c-tooltip')
-          .should('exist');
+        cy.wrap(tooltipLink).trigger('mouseenter').get('.pf-c-tooltip').should('exist');
         cy.wrap(tooltipLink).trigger('mouseleave');
       });
   });

@@ -95,14 +95,10 @@ let reportScript =
  * @param {string} str - String
  */
 function entity(str) {
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt')
-    .replace(/>/g, '&gt;')
-    .replace(/\\"/g, '"');
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt').replace(/>/g, '&gt;').replace(/\\"/g, '"');
 }
 
-const generateTDTable = function(reportXml) {
+const generateTDTable = function (reportXml) {
   let totalTests = 0;
   let totalFailures = 0;
   let totalSkips = 0;
@@ -169,7 +165,7 @@ const generateTDTable = function(reportXml) {
   return testDetailsTable;
 };
 
-const generateTSTable = function(testConfig) {
+const generateTSTable = function (testConfig) {
   let testSummaryTable = '<tr id="tr-ts-table"><th colspan=2><div id="div-ts-table">';
   const testReportTitle = testConfig.reportTitle === undefined ? 'Test Execution Report' : testConfig.reportTitle;
   testSummaryTable += testReportTitle + '</div></th></tr>';

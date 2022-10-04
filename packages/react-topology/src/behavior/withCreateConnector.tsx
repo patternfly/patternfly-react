@@ -241,38 +241,40 @@ export interface WithCreateConnectorProps {
   onHideCreateConnector: () => void;
 }
 
-export const withCreateConnector = <P extends WithCreateConnectorProps & ElementProps>(
-  onCreate: React.ComponentProps<typeof CreateConnectorWidget>['onCreate'],
-  ConnectorComponent: CreateConnectorRenderer = DefaultCreateConnector,
-  contextMenuClass?: string,
-  options?: CreateConnectorOptions
-) => (WrappedComponent: React.ComponentType<Partial<P>>) => {
-  const Component: React.FunctionComponent<Omit<P, keyof WithCreateConnectorProps>> = props => {
-    const [show, setShow] = React.useState(false);
-    const [alive, setKeepAlive] = React.useState(false);
-    const onShowCreateConnector = React.useCallback(() => setShow(true), []);
-    const onHideCreateConnector = React.useCallback(() => setShow(false), []);
-    const onKeepAlive = React.useCallback((isAlive: boolean) => setKeepAlive(isAlive), [setKeepAlive]);
-    return (
-      <>
-        <WrappedComponent
-          {...(props as any)}
-          onShowCreateConnector={onShowCreateConnector}
-          onHideCreateConnector={onHideCreateConnector}
-        />
-        {(show || alive) && (
-          <CreateConnectorWidget
-            {...options}
-            element={props.element}
-            onCreate={onCreate}
-            onKeepAlive={onKeepAlive}
-            ConnectorComponent={ConnectorComponent}
-            contextMenuClass={contextMenuClass}
+export const withCreateConnector =
+  <P extends WithCreateConnectorProps & ElementProps>(
+    onCreate: React.ComponentProps<typeof CreateConnectorWidget>['onCreate'],
+    ConnectorComponent: CreateConnectorRenderer = DefaultCreateConnector,
+    contextMenuClass?: string,
+    options?: CreateConnectorOptions
+  ) =>
+  (WrappedComponent: React.ComponentType<Partial<P>>) => {
+    const Component: React.FunctionComponent<Omit<P, keyof WithCreateConnectorProps>> = props => {
+      const [show, setShow] = React.useState(false);
+      const [alive, setKeepAlive] = React.useState(false);
+      const onShowCreateConnector = React.useCallback(() => setShow(true), []);
+      const onHideCreateConnector = React.useCallback(() => setShow(false), []);
+      const onKeepAlive = React.useCallback((isAlive: boolean) => setKeepAlive(isAlive), [setKeepAlive]);
+      return (
+        <>
+          <WrappedComponent
+            {...(props as any)}
+            onShowCreateConnector={onShowCreateConnector}
+            onHideCreateConnector={onHideCreateConnector}
           />
-        )}
-      </>
-    );
+          {(show || alive) && (
+            <CreateConnectorWidget
+              {...options}
+              element={props.element}
+              onCreate={onCreate}
+              onKeepAlive={onKeepAlive}
+              ConnectorComponent={ConnectorComponent}
+              contextMenuClass={contextMenuClass}
+            />
+          )}
+        </>
+      );
+    };
+    Component.displayName = `withCreateConnector(${WrappedComponent.displayName || WrappedComponent.name})`;
+    return observer(Component);
   };
-  Component.displayName = `withCreateConnector(${WrappedComponent.displayName || WrappedComponent.name})`;
-  return observer(Component);
-};

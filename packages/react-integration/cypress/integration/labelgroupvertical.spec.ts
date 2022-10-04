@@ -4,9 +4,7 @@ describe('Label Group Default Is Open Demo Test', () => {
   });
 
   it('Verify label default text', () => {
-    cy.get('.pf-c-label__content')
-      .first()
-      .contains('Lemons');
+    cy.get('.pf-c-label__content').first().contains('Lemons');
   });
 
   it('Verify labelgroup is vertical', () => {
@@ -15,10 +13,7 @@ describe('Label Group Default Is Open Demo Test', () => {
   });
 
   it('Verify one label shown', () => {
-    cy.get('.pf-c-label-group')
-      .find('.pf-c-label')
-      .not('.pf-m-overflow')
-      .should('have.length', 1);
+    cy.get('.pf-c-label-group').find('.pf-c-label').not('.pf-m-overflow').should('have.length', 1);
   });
 
   it('Verify custom overflow text', () => {

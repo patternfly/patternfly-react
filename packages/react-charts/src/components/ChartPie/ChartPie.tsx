@@ -527,9 +527,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   theme = getTheme(themeColor),
   labelComponent = allowTooltip ? (
     <ChartTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} />
-  ) : (
-    undefined
-  ),
+  ) : undefined,
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
   height = theme.pie.height,
   width = theme.pie.width,

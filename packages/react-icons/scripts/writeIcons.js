@@ -4,11 +4,7 @@ const { generateIcons } = require('./generateIcons');
 
 const outDir = join(__dirname, '../dist');
 
-const removeSnake = s =>
-  s
-    .toUpperCase()
-    .replace('-', '')
-    .replace('_', '');
+const removeSnake = s => s.toUpperCase().replace('-', '').replace('_', '');
 const toCamel = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][\w])/gi, removeSnake)}`;
 
 const writeCJSExport = (fname, jsName, icon) => {

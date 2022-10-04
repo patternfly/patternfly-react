@@ -17,9 +17,6 @@ export default abstract class AbstractAnchor<E extends Node = Node> implements A
   abstract getLocation(reference: Point): Point;
 
   getReferencePoint(): Point {
-    return this.owner
-      .getBounds()
-      .getCenter()
-      .translate(this.offset, this.offset);
+    return this.owner.getBounds().getCenter().translate(this.offset, this.offset);
   }
 }

@@ -118,17 +118,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   };
 
   handleGlobalKeys = (event: KeyboardEvent) => {
-    const {
-      parentRef,
-      menuRef,
-      hasFooter,
-      footerRef,
-      isOpen,
-      variant,
-      onToggle,
-      onClose,
-      moveFocusToLastMenuItem
-    } = this.props;
+    const { parentRef, menuRef, hasFooter, footerRef, isOpen, variant, onToggle, onClose, moveFocusToLastMenuItem } =
+      this.props;
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);

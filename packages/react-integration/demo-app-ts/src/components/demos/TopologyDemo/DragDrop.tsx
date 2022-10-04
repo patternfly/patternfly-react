@@ -50,12 +50,7 @@ export const Dnd = withTopologySetup(() => {
             return props.element;
           },
           drag: (event, monitor, props) => {
-            props.element.setPosition(
-              props.element
-                .getPosition()
-                .clone()
-                .translate(event.dx, event.dy)
-            );
+            props.element.setPosition(props.element.getPosition().clone().translate(event.dx, event.dy));
           },
           end: (dropResult, monitor, props) => {
             if (monitor.didDrop() && dropResult && props) {

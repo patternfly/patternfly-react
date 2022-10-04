@@ -31,32 +31,34 @@ const getModel = (layout: string): Model => {
   return model;
 };
 
-const layoutStory = (model: Model): React.FunctionComponent => () => {
-  useLayoutFactory(defaultLayoutFactory);
-  useComponentFactory(defaultComponentFactory);
-  useComponentFactory(stylesComponentFactory);
+const layoutStory =
+  (model: Model): React.FunctionComponent =>
+  () => {
+    useLayoutFactory(defaultLayoutFactory);
+    useComponentFactory(defaultComponentFactory);
+    useComponentFactory(stylesComponentFactory);
 
-  // support pan zoom and drag
-  useComponentFactory(
-    React.useCallback<ComponentFactory>((kind: string, type: string) => {
-      if (kind === ModelKind.graph) {
-        return withPanZoom()(GraphComponent);
-      }
-      if (type === 'group-hull') {
-        return withDragNode()(GroupHull);
-      }
-      if (type === 'group') {
-        return withDragNode()(Group);
-      }
-      if (kind === ModelKind.node) {
-        return withDragNode()(DemoDefaultNode);
-      }
-      return undefined;
-    }, [])
-  );
-  useModel(model);
-  return null;
-};
+    // support pan zoom and drag
+    useComponentFactory(
+      React.useCallback<ComponentFactory>((kind: string, type: string) => {
+        if (kind === ModelKind.graph) {
+          return withPanZoom()(GraphComponent);
+        }
+        if (type === 'group-hull') {
+          return withDragNode()(GroupHull);
+        }
+        if (type === 'group') {
+          return withDragNode()(Group);
+        }
+        if (kind === ModelKind.node) {
+          return withDragNode()(DemoDefaultNode);
+        }
+        return undefined;
+      }, [])
+    );
+    useModel(model);
+    return null;
+  };
 
 export const Force = withTopologySetup(layoutStory(getModel('Force')));
 export const Dagre = withTopologySetup(layoutStory(getModel('Dagre')));

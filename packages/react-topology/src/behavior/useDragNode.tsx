@@ -98,12 +98,7 @@ export const useDragNode = <
               }
             }
             if (moved) {
-              e.setPosition(
-                e
-                  .getPosition()
-                  .clone()
-                  .translate(dx, dy)
-              );
+              e.setPosition(e.getPosition().clone().translate(dx, dy));
             }
           }
 
@@ -155,24 +150,26 @@ export interface WithDragNodeProps {
   dragNodeRef?: WithDndDragProps['dndDragRef'];
 }
 
-export const withDragNode = <
-  DragObject extends DragObjectWithType = DragObjectWithType,
-  DropResult = any,
-  CollectedProps extends {} = {},
-  Props extends {} = {}
->(
-  spec?: Omit<
-    DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>,
-    'item'
-  > & {
-    item?: DragObject;
-  }
-) => <P extends WithDragNodeProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FunctionComponent<Omit<P, keyof WithDragNodeProps>> = props => {
-    // TODO fix cast to any
-    const [dragNodeProps, dragNodeRef] = useDragNode(spec, props as any);
-    return <WrappedComponent {...(props as any)} dragNodeRef={dragNodeRef} {...dragNodeProps} />;
+export const withDragNode =
+  <
+    DragObject extends DragObjectWithType = DragObjectWithType,
+    DropResult = any,
+    CollectedProps extends {} = {},
+    Props extends {} = {}
+  >(
+    spec?: Omit<
+      DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>,
+      'item'
+    > & {
+      item?: DragObject;
+    }
+  ) =>
+  <P extends WithDragNodeProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
+    const Component: React.FunctionComponent<Omit<P, keyof WithDragNodeProps>> = props => {
+      // TODO fix cast to any
+      const [dragNodeProps, dragNodeRef] = useDragNode(spec, props as any);
+      return <WrappedComponent {...(props as any)} dragNodeRef={dragNodeRef} {...dragNodeProps} />;
+    };
+    Component.displayName = `withDragNode(${WrappedComponent.displayName || WrappedComponent.name})`;
+    return observer(Component);
   };
-  Component.displayName = `withDragNode(${WrappedComponent.displayName || WrappedComponent.name})`;
-  return observer(Component);
-};

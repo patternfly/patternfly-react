@@ -9,9 +9,7 @@ describe('Context Selector Demo Test', () => {
   });
 
   it('Verify toggle text changes with selection', () => {
-    cy.get('.pf-c-context-selector__menu-list-item')
-      .last()
-      .click();
+    cy.get('.pf-c-context-selector__menu-list-item').last().click();
     cy.get('.pf-c-context-selector__toggle-text').contains('Azure 2');
   });
 });

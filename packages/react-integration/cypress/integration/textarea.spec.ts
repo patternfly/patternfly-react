@@ -84,10 +84,7 @@ describe('Text Area Demo Test', () => {
       expect(textarea.attr('aria-invalid')).to.be.equal('true');
     });
     // Clear text area and type string longer than 5 Characters so it is valid
-    cy.get('#textarea5')
-      .clear()
-      .type('testing')
-      .should('have.value', 'testing');
+    cy.get('#textarea5').clear().type('testing').should('have.value', 'testing');
     cy.get('#textarea5.pf-m-success').should('exist');
     cy.get('#textarea5').then(textarea => {
       expect(textarea.attr('aria-invalid')).to.be.equal('false');
@@ -122,9 +119,7 @@ describe('Text Area Demo Test', () => {
       .invoke('outerHeight')
       .then(startingHeight => {
         cy.get('#autoResize').type('0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n0');
-        cy.get('#autoResize')
-          .invoke('outerHeight')
-          .should('be.gt', startingHeight);
+        cy.get('#autoResize').invoke('outerHeight').should('be.gt', startingHeight);
       });
   });
 });

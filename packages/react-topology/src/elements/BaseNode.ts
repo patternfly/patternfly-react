@@ -25,8 +25,10 @@ import Point from '../geom/Point';
 
 const createAnchorKey = (end: AnchorEnd = AnchorEnd.both, type: string = ''): string => `${end}:${type}`;
 
-export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends BaseElement<E, D>
-  implements Node<E, D> {
+export default class BaseNode<E extends NodeModel = NodeModel, D = any>
+  extends BaseElement<E, D>
+  implements Node<E, D>
+{
   @observable.shallow
   private anchors: { [type: string]: Anchor } = {
     [createAnchorKey()]: new CenterAnchor(this)

@@ -50,8 +50,9 @@ const DefaultConnectorTag: React.FunctionComponent<DefaultConnectorTagProps> = (
   return (
     <g
       className={css(styles.topologyEdgeTag, className, StatusModifier[status])}
-      transform={`translate(${startPoint.x + (endPoint.x - startPoint.x) * 0.5}, ${startPoint.y +
-        (endPoint.y - startPoint.y) * 0.5})`}
+      transform={`translate(${startPoint.x + (endPoint.x - startPoint.x) * 0.5}, ${
+        startPoint.y + (endPoint.y - startPoint.y) * 0.5
+      })`}
     >
       {textSize && (
         <rect

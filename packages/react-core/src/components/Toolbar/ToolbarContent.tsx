@@ -100,8 +100,9 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
                 showClearFiltersButton: showClearFiltersButtonContext,
                 toolbarId: toolbarIdContext
               }) => {
-                const expandableContentId = `${toolbarId ||
-                  toolbarIdContext}-expandable-content-${ToolbarContent.currentId++}`;
+                const expandableContentId = `${
+                  toolbarId || toolbarIdContext
+                }-expandable-content-${ToolbarContent.currentId++}`;
                 return (
                   <ToolbarContentContext.Provider
                     value={{

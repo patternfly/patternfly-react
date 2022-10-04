@@ -12,12 +12,8 @@ describe('Page Managed Sidebar Closed Demo Test', () => {
         cy.get('.pf-c-page__sidebar.pf-m-collapsed').should('not.exist');
         cy.get('.pf-c-page__sidebar.pf-m-expanded').should('exist');
       });
-      cy.get('div[class="pf-c-page__header-brand-link"]')
-        .invoke('text')
-        .should('eq', "Logo that's a <div>");
-      cy.get('.pf-c-page__header-tools')
-        .invoke('text')
-        .should('contain', 'PageHeaderTools | Avatar');
+      cy.get('div[class="pf-c-page__header-brand-link"]').invoke('text').should('eq', "Logo that's a <div>");
+      cy.get('.pf-c-page__header-tools').invoke('text').should('contain', 'PageHeaderTools | Avatar');
       cy.get('.pf-c-page__main-section.pf-m-dark-100').should('exist');
       cy.get('.pf-c-page__main-section.pf-m-dark-200').should('exist');
       cy.get('.pf-c-page__main-section.pf-m-light').should('exist');

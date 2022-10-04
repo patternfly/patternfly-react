@@ -12,11 +12,7 @@ export function capitalize(input: string) {
  * @param {string} prefix - String to prefix ID with
  */
 export function getUniqueId(prefix = 'pf') {
-  const uid =
-    new Date().getTime() +
-    Math.random()
-      .toString(36)
-      .slice(2);
+  const uid = new Date().getTime() + Math.random().toString(36).slice(2);
   return `${prefix}-${uid}`;
 }
 
@@ -203,7 +199,7 @@ export function keyHandler(
  */
 export function findTabbableElements(containerRef: any, tababbleSelectors: string): any[] {
   const tabbable = containerRef.current.querySelectorAll(tababbleSelectors);
-  const list = Array.prototype.filter.call(tabbable, function(item) {
+  const list = Array.prototype.filter.call(tabbable, function (item) {
     return item.tabIndex >= '0';
   });
   return list;
@@ -386,11 +382,7 @@ export const getBreakpoint = (width: number): 'default' | 'sm' | 'md' | 'lg' | '
   return 'default';
 };
 
-const camelize = (s: string) =>
-  s
-    .toUpperCase()
-    .replace('-', '')
-    .replace('_', '');
+const camelize = (s: string) => s.toUpperCase().replace('-', '').replace('_', '');
 /**
  *
  * @param {string} s string to make camelCased

@@ -467,9 +467,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   React.isValidElement<React.ComponentProps<typeof SelectGroup>>(group) &&
                   group.type === SelectGroup
                 ) {
-                  const filteredGroupChildren = (React.Children.toArray(group.props.children) as React.ReactElement<
-                    SelectGroupProps
-                  >[]).filter(childFilter);
+                  const filteredGroupChildren = (
+                    React.Children.toArray(group.props.children) as React.ReactElement<SelectGroupProps>[]
+                  ).filter(childFilter);
                   if (filteredGroupChildren.length > 0) {
                     return React.cloneElement(group, {
                       titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
@@ -535,10 +535,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         const newOptionValue = isCreateSelectOptionObject
           ? ({
               toString: () => newValue,
-              compareTo: value =>
-                this.toString()
-                  .toLowerCase()
-                  .includes(value.toString().toLowerCase())
+              compareTo: value => this.toString().toLowerCase().includes(value.toString().toLowerCase())
             } as SelectOptionObject)
           : newValue;
 
@@ -654,8 +651,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     optionContainerRef: React.ReactNode,
     index: number
   ) => {
-    this.refCollection[index] = [(optionRef as unknown) as HTMLElement, (favoriteRef as unknown) as HTMLElement];
-    this.optionContainerRefCollection[index] = (optionContainerRef as unknown) as HTMLElement;
+    this.refCollection[index] = [optionRef as unknown as HTMLElement, favoriteRef as unknown as HTMLElement];
+    this.optionContainerRefCollection[index] = optionContainerRef as unknown as HTMLElement;
   };
 
   handleMenuKeys = (index: number, innerIndex: number, position: string) => {

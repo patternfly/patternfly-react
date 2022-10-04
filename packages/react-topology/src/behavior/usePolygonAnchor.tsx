@@ -25,16 +25,14 @@ export interface WithPolygonAnchorProps {
   setAnchorPoints: (points: PointTuple[]) => void;
 }
 
-export const withPolygonAnchor = <P extends {} = {}>(
-  getPoints: (element: Node) => PointTuple[],
-  end?: AnchorEnd,
-  type?: string
-) => (WrappedComponent: React.ComponentType<P>) => {
-  const element = React.useContext(ElementContext);
-  const Component: React.FunctionComponent<P> = props => {
-    usePolygonAnchor(getPoints(element as Node), end, type);
-    return <WrappedComponent {...props} />;
+export const withPolygonAnchor =
+  <P extends {} = {}>(getPoints: (element: Node) => PointTuple[], end?: AnchorEnd, type?: string) =>
+  (WrappedComponent: React.ComponentType<P>) => {
+    const element = React.useContext(ElementContext);
+    const Component: React.FunctionComponent<P> = props => {
+      usePolygonAnchor(getPoints(element as Node), end, type);
+      return <WrappedComponent {...props} />;
+    };
+    Component.displayName = `withPolygonAnchor(${WrappedComponent.displayName || WrappedComponent.name})`;
+    return Component;
   };
-  Component.displayName = `withPolygonAnchor(${WrappedComponent.displayName || WrappedComponent.name})`;
-  return Component;
-};

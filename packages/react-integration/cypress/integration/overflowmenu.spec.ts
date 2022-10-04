@@ -30,14 +30,10 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('Verify dropdown menu expanded', () => {
-        cy.get('#simple-overflow-menu button')
-          .last()
-          .click({ force: true });
+        cy.get('#simple-overflow-menu button').last().click({ force: true });
         cy.get('#simple-overflow-menu .pf-c-dropdown').should('have.class', 'pf-m-expanded');
         // close overflow menu again
-        cy.get('#simple-overflow-menu button')
-          .last()
-          .click({ force: true });
+        cy.get('#simple-overflow-menu button').last().click({ force: true });
       });
     });
   });
@@ -70,9 +66,7 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('Verify dropdown menu expanded', () => {
-        cy.get('#additional-options-overflow-menu button')
-          .last()
-          .click({ force: true });
+        cy.get('#additional-options-overflow-menu button').last().click({ force: true });
         cy.get('#additional-options-overflow-menu .pf-c-dropdown').should('have.class', 'pf-m-expanded');
       });
     });
@@ -109,9 +103,7 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('Verify dropdown menu expanded', () => {
-        cy.get('#persist-overflow-menu button')
-          .last()
-          .click({ force: true });
+        cy.get('#persist-overflow-menu button').last().click({ force: true });
         cy.get('#persist-overflow-menu .pf-c-dropdown').should('have.class', 'pf-m-expanded');
       });
     });
@@ -145,14 +137,10 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('Verify dropdown menu expanded', () => {
-        cy.get('#container-breakpoint-overflow-menu button')
-          .last()
-          .click({ force: true });
+        cy.get('#container-breakpoint-overflow-menu button').last().click({ force: true });
         cy.get('#container-breakpoint-overflow-menu .pf-c-dropdown').should('have.class', 'pf-m-expanded');
         // close overflow menu again
-        cy.get('#container-breakpoint-overflow-menu button')
-          .last()
-          .click({ force: true });
+        cy.get('#container-breakpoint-overflow-menu button').last().click({ force: true });
       });
     });
   });

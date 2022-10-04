@@ -60,9 +60,8 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const panel = React.useRef<HTMLDivElement>();
   const splitterRef = React.useRef<HTMLDivElement>();
   const [separatorValue, setSeparatorValue] = React.useState(0);
-  const { position, isExpanded, isStatic, onExpand, drawerRef, drawerContentRef, isInline } = React.useContext(
-    DrawerContext
-  );
+  const { position, isExpanded, isStatic, onExpand, drawerRef, drawerContentRef, isInline } =
+    React.useContext(DrawerContext);
   const hidden = isStatic ? false : !isExpanded;
   const [isExpandedInternal, setIsExpandedInternal] = React.useState(!hidden);
   let currWidth: number = 0;

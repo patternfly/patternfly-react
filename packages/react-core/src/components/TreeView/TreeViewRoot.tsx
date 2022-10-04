@@ -91,9 +91,8 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     );
 
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
-      const isExpandable = activeElement?.firstElementChild?.firstElementChild?.classList.contains(
-        'pf-c-tree-view__node-toggle'
-      );
+      const isExpandable =
+        activeElement?.firstElementChild?.firstElementChild?.classList.contains('pf-c-tree-view__node-toggle');
       const isExpanded = activeElement?.closest('li')?.classList.contains('pf-m-expanded');
       if (key === 'ArrowLeft') {
         if (isExpandable && isExpanded) {
@@ -113,10 +112,7 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
         if (isExpandable && !isExpanded) {
           (activeElement as HTMLElement).tabIndex = -1;
           (activeElement as HTMLElement).click();
-          const childElement = activeElement
-            ?.closest('li')
-            ?.querySelector('ul > li')
-            ?.querySelector('button');
+          const childElement = activeElement?.closest('li')?.querySelector('ul > li')?.querySelector('button');
           if (childElement) {
             childElement.tabIndex = 0;
             childElement.focus();

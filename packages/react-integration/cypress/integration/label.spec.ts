@@ -8,10 +8,7 @@ describe('Label Demo Test', () => {
       .last()
       .should('have.class', 'pf-c-label__text')
       .then((noTooltipLink: JQuery<HTMLDivElement>) => {
-        cy.wrap(noTooltipLink)
-          .trigger('mouseenter')
-          .get('.pf-c-tooltip')
-          .should('not.exist');
+        cy.wrap(noTooltipLink).trigger('mouseenter').get('.pf-c-tooltip').should('not.exist');
         cy.wrap(noTooltipLink).trigger('mouseleave');
       });
   });
@@ -22,10 +19,7 @@ describe('Label Demo Test', () => {
       .should('have.class', 'pf-c-label__text')
       .then((tooltipLink: JQuery<HTMLDivElement>) => {
         cy.get('.pf-c-tooltip').should('not.exist');
-        cy.wrap(tooltipLink)
-          .trigger('mouseenter')
-          .get('.pf-c-tooltip')
-          .should('exist');
+        cy.wrap(tooltipLink).trigger('mouseenter').get('.pf-c-tooltip').should('exist');
         cy.wrap(tooltipLink).trigger('mouseleave');
       });
   });
@@ -33,13 +27,8 @@ describe('Label Demo Test', () => {
   it('Verify router link label', () => {
     cy.get('#router-link > .pf-c-label__content').then((routerTooltipLink: JQuery<HTMLDivElement>) => {
       cy.get('.pf-c-tooltip').should('not.exist');
-      cy.wrap(routerTooltipLink)
-        .trigger('mouseenter')
-        .get('.pf-c-tooltip')
-        .should('exist');
+      cy.wrap(routerTooltipLink).trigger('mouseenter').get('.pf-c-tooltip').should('exist');
     });
-    cy.get('#router-link > a')
-      .invoke('attr', 'href')
-      .should('eq', '/');
+    cy.get('#router-link > a').invoke('attr', 'href').should('eq', '/');
   });
 });

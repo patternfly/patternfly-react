@@ -119,19 +119,17 @@ const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> =
   useAnchor(
     // Include scaleNode to cause an update when it changes
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    React.useCallback((node: Node) => new TaskNodeSourceAnchor(node, detailsLevel, statusIconSize + 4), [
-      detailsLevel,
-      statusIconSize,
-      scaleNode
-    ]),
+    React.useCallback(
+      (node: Node) => new TaskNodeSourceAnchor(node, detailsLevel, statusIconSize + 4),
+      [detailsLevel, statusIconSize, scaleNode]
+    ),
     AnchorEnd.source
   );
   useAnchor(
-    React.useCallback((node: Node) => new TaskNodeTargetAnchor(node, hasWhenExpression ? 0 : whenSize + whenOffset), [
-      hasWhenExpression,
-      whenSize,
-      whenOffset
-    ]),
+    React.useCallback(
+      (node: Node) => new TaskNodeTargetAnchor(node, hasWhenExpression ? 0 : whenSize + whenOffset),
+      [hasWhenExpression, whenSize, whenOffset]
+    ),
     AnchorEnd.target
   );
 

@@ -38,6 +38,8 @@ export const Visibility = visibilityModifiers
     return acc;
   }, {} as IVisibility);
 
-export const classNames = (...classes: string[]): ITransform => () => ({
-  className: css(...classes)
-});
+export const classNames =
+  (...classes: string[]): ITransform =>
+  () => ({
+    className: css(...classes)
+  });

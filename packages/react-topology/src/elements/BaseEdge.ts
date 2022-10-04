@@ -4,8 +4,10 @@ import { Anchor, AnchorEnd, Edge, EdgeAnimationSpeed, EdgeModel, EdgeStyle, Mode
 import { getTopCollapsedParent } from '../utils';
 import BaseElement from './BaseElement';
 
-export default class BaseEdge<E extends EdgeModel = EdgeModel, D = any> extends BaseElement<E, D>
-  implements Edge<E, D> {
+export default class BaseEdge<E extends EdgeModel = EdgeModel, D = any>
+  extends BaseElement<E, D>
+  implements Edge<E, D>
+{
   @observable.ref
   private source?: Node;
 

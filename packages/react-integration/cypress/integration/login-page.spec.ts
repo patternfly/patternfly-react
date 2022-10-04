@@ -31,9 +31,7 @@ describe('Login Page Demo Test', () => {
   it('Verify show/hide password toggles', () => {
     cy.get('[type="password"]').should('exist');
     cy.get('[aria-label="Test show password"]').should('exist');
-    cy.get('[type="password"]')
-      .clear()
-      .type('testing');
+    cy.get('[type="password"]').clear().type('testing');
     cy.get('[type="password"]').should('have.value', 'testing');
     cy.get('[aria-label="Test show password"]').click();
 

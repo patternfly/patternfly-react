@@ -20,8 +20,10 @@ import {
 } from '../types';
 import BaseElement from './BaseElement';
 
-export default class BaseGraph<E extends GraphModel = GraphModel, D = any> extends BaseElement<E, D>
-  implements Graph<E, D> {
+export default class BaseGraph<E extends GraphModel = GraphModel, D = any>
+  extends BaseElement<E, D>
+  implements Graph<E, D>
+{
   @observable.ref
   private layers = DEFAULT_LAYERS;
 
@@ -260,11 +262,7 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
       return;
     }
     const { x: viewX, y: viewY, width: viewWidth, height: viewHeight } = this.getBounds();
-    const boundingBox = nodeElement
-      .getBounds()
-      .clone()
-      .scale(this.scale)
-      .translate(viewX, viewY);
+    const boundingBox = nodeElement.getBounds().clone().scale(this.scale).translate(viewX, viewY);
     const { x, y, width, height } = boundingBox;
     let move = false;
     const panOffset = offset * this.scale;
@@ -300,11 +298,7 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   isNodeInView(element: Node<NodeModel, any>, { padding = 0 }): boolean {
     const graph = element.getGraph();
     const { x: viewX, y: viewY, width: viewWidth, height: viewHeight } = graph.getBounds();
-    const { x, y, width, height } = element
-      .getBounds()
-      .clone()
-      .scale(this.scale)
-      .translate(viewX, viewY);
+    const { x, y, width, height } = element.getBounds().clone().scale(this.scale).translate(viewX, viewY);
 
     return x + width > -padding && x < viewWidth + padding && y + height > -padding && y < viewHeight + padding;
   }

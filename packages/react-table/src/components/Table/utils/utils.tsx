@@ -119,11 +119,7 @@ export const applyCellEdits = (row: IRow, type: RowEditType) => {
   return row;
 };
 
-const camelize = (s: string) =>
-  s
-    .toUpperCase()
-    .replace('-', '')
-    .replace('_', '');
+const camelize = (s: string) => s.toUpperCase().replace('-', '').replace('_', '');
 export const toCamel = (s: string) => s.replace(/([-_][a-z])/gi, camelize);
 
 /**

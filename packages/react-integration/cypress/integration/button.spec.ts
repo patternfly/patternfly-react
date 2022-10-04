@@ -23,9 +23,7 @@ describe('Button Demo Test', () => {
 
   it('Verify isAriaDisabled button prevents default actions', () => {
     cy.get('.btn-demo-area').within(() => {
-      cy.get('.pf-c-button[id="normal-btn-11"]')
-        .focus()
-        .click();
+      cy.get('.pf-c-button[id="normal-btn-11"]').focus().click();
       cy.url().should('eq', 'http://localhost:3000/button-demo-nav-link'); // shouldn't have navigated anywhere
     });
   });
@@ -73,9 +71,7 @@ describe('Button Demo Test', () => {
 
   it('Verify isAriaDisabled link as button prevents default actions', () => {
     cy.get('.btn-demo-area').within(() => {
-      cy.get('.pf-c-button[id="link-as-btn-5"]')
-        .focus()
-        .click();
+      cy.get('.pf-c-button[id="link-as-btn-5"]').focus().click();
       cy.url().should('eq', 'http://localhost:3000/button-demo-nav-link'); // shouldn't have navigated anywhere
     });
   });
@@ -84,10 +80,7 @@ describe('Button Demo Test', () => {
     cy.get('#tabstop-test').focus();
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    cy.tab()
-      .tab()
-      .tab()
-      .tab();
+    cy.tab().tab().tab().tab();
     cy.focused().should('have.attr', 'id', 'tabstop-test-04');
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

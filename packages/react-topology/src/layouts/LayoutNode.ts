@@ -64,10 +64,7 @@ export class LayoutNode implements d3.SimulationNodeDatum {
     const { padding } = this.node.getStyle<NodeStyle>();
     // Currently non-group nodes do not include their padding in the bounds
     if (!this.node.isGroup() && padding) {
-      return this.node
-        .getBounds()
-        .clone()
-        .padding(padding);
+      return this.node.getBounds().clone().padding(padding);
     }
     return this.node.getBounds();
   }

@@ -212,12 +212,10 @@ export const CalendarMonth = ({
   const nextMonth = addMonth(1);
   const focusedYear = focusedDate.getFullYear();
   const focusedMonth = focusedDate.getMonth();
-  const calendar = React.useMemo(() => buildCalendar(focusedYear, focusedMonth, weekStart, validators), [
-    focusedYear,
-    focusedMonth,
-    weekStart,
-    validators
-  ]);
+  const calendar = React.useMemo(
+    () => buildCalendar(focusedYear, focusedMonth, weekStart, validators),
+    [focusedYear, focusedMonth, weekStart, validators]
+  );
   if (!focusedDateValidated) {
     const toFocus = calendar
       .reduce((acc, cur) => [...acc, ...cur], [])

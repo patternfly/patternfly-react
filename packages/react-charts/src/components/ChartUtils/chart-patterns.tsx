@@ -251,9 +251,13 @@ export const getPatternDefs = ({
     <React.Fragment key={`defs`}>
       <defs>
         {colorScale.map((color: string, index: number) => {
-          const { d, fill, stroke = color, strokeWidth, ...rest } = defaultPatterns[
-            (index + offset) % defaultPatterns.length
-          ];
+          const {
+            d,
+            fill,
+            stroke = color,
+            strokeWidth,
+            ...rest
+          } = defaultPatterns[(index + offset) % defaultPatterns.length];
           const id = getPatternDefsId(patternId, index);
           return (
             <pattern id={id} key={id} {...rest}>

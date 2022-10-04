@@ -17,15 +17,11 @@ describe('Select with Filtering Test', () => {
   it('Verify Checkbox Select with filtering chips', () => {
     cy.get('#filter-select').click();
     cy.get('#Running').click();
-    cy.get('.pf-c-select__toggle')
-      .contains('1')
-      .should('exist');
+    cy.get('.pf-c-select__toggle').contains('1').should('exist');
   });
   it('Verify Checkbox Select with filtering works', () => {
     checkFiltering();
-    cy.get('.pf-c-select__toggle')
-      .contains('2')
-      .should('exist');
+    cy.get('.pf-c-select__toggle').contains('2').should('exist');
   });
 
   it('Verify Single Select with filtering works', () => {
