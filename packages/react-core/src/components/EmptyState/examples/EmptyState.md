@@ -40,7 +40,7 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 ### No match found
 
-`EmptyStatePrimary` is a container for primary actions. It Can be used in lieu of using a primary button and will insure appropriate spacing of the buttons.
+`EmptyStatePrimary` is a container for primary actions. It can be used in lieu of using a primary button and will insure appropriate spacing of the buttons.
 
 ```ts file="EmptyStateNoMatchFound.tsx"
 ```
