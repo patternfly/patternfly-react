@@ -4,6 +4,18 @@ section: developer-resources
 ---
 
 ## 2022.13 release notes (2022-10-06)
+- [@patternfly/react-catalog-view-extension@4.92.26](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.92.26)
+- [@patternfly/react-charts@6.94.7](https://www.npmjs.com/package/@patternfly/react-charts/v/6.94.7)
+- [@patternfly/react-code-editor@4.82.26](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.82.26)
+- [@patternfly/react-core@4.250.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.250.1)
+- [@patternfly/react-icons@4.92.6](https://www.npmjs.com/package/@patternfly/react-icons/v/4.92.6)
+- [@patternfly/react-inline-edit-extension@4.86.27](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.86.27)
+- [@patternfly/react-log-viewer@4.87.21](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.87.21)
+- [@patternfly/react-styles@4.91.6](https://www.npmjs.com/package/@patternfly/react-styles/v/4.91.6)
+- [@patternfly/react-table@4.111.4](https://www.npmjs.com/package/@patternfly/react-table/v/4.111.4)
+- [@patternfly/react-tokens@4.93.6](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.93.6)
+- [@patternfly/react-topology@4.88.26](https://www.npmjs.com/package/@patternfly/react-topology/v/4.88.26)
+- [@patternfly/react-virtualized-extension@4.88.26](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.88.26)
 
 ### Components
 - **Alert:**
