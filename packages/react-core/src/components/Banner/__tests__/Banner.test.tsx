@@ -51,6 +51,11 @@ test('Renders with class name pf-m-info when "info" is passed to variant prop', 
   expect(screen.getByText('Test')).toHaveClass('pf-m-info');
 });
 
+test('Renders pf-u-screen-reader class by default for screenReaderText', () => {
+  render(<Banner>Test</Banner>);
+  expect(screen.getByText('default banner')).toHaveClass('pf-u-screen-reader', { exact: true });
+});
+
 test('Renders screenReaderText as "default banner" by default', () => {
   render(<Banner>Test</Banner>);
   expect(screen.getByText('default banner')).toBeInTheDocument();
