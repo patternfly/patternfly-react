@@ -18,46 +18,11 @@ export class DataListDraggableDemo extends React.Component {
     itemOrder: ['data1', 'data2', 'data3', 'data4']
   };
 
-  onDragStart = (id: string) => {
-    this.setState({
-      id,
-      liveText: `Dragging started for item id: ${id}.`
-    });
-  };
-
-  onDragMove = (_oldIndex: number, _newIndex: number) => {
-    const { id } = this.state;
-    this.setState({
-      liveText: `Dragging item ${id}.`
-    });
-  };
-
-  onDragCancel = () => {
-    this.setState({
-      liveText: `Dragging cancelled. List is unchanged.`
-    });
-  };
-
-  onDragFinish = (itemOrder: string[]) => {
-    this.setState({
-      liveText: `Dragging finished`,
-      itemOrder
-    });
-  };
-
   render() {
-    const { liveText, itemOrder } = this.state;
+    const { liveText } = this.state;
     return (
       <React.Fragment>
-        <DataList
-          aria-label="draggable data list example"
-          isCompact
-          onDragFinish={this.onDragFinish}
-          onDragStart={this.onDragStart}
-          onDragMove={this.onDragMove}
-          onDragCancel={this.onDragCancel}
-          itemOrder={itemOrder}
-        >
+        <DataList aria-label="draggable data list example" isCompact>
           <DataListItem aria-labelledby="simple-item1" id="data1" key="1">
             <DataListItemRow>
               <DataListControl>
