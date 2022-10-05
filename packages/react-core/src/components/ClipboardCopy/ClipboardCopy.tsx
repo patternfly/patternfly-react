@@ -145,6 +145,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       /* eslint-disable @typescript-eslint/no-unused-vars */
       isExpanded,
       onChange, // Don't pass to <div>
+      switchDelay,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       isReadOnly,
       isCode,
@@ -152,7 +153,6 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       exitDelay,
       maxWidth,
       entryDelay,
-      switchDelay,
       onCopy,
       hoverTip,
       clickTip,
@@ -207,7 +207,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                         onCopy(event, this.state.text);
                         this.setState({ copied: true });
                       }}
-                      onTooltipHidden={() => this.setState({copied: false})}
+                      onTooltipHidden={() => this.setState({ copied: false })}
                     >
                       {this.state.copied ? clickTip : hoverTip}
                     </ClipboardCopyButton>
@@ -252,7 +252,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                       onCopy(event, this.state.text);
                       this.setState({ copied: true });
                     }}
-                    onTooltipHidden={() => this.setState({copied: false})}
+                    onTooltipHidden={() => this.setState({ copied: false })}
                   >
                     {this.state.copied ? clickTip : hoverTip}
                   </ClipboardCopyButton>

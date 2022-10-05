@@ -550,7 +550,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
             exitDelay: toolTipDelay,
             entryDelay: toolTipDelay,
             maxWidth: toolTipMaxWidth,
-            trigger: 'mouseenter focus',
+            trigger: 'mouseenter focus'
           };
 
           const editorHeader = (
@@ -567,7 +567,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                           'aria-live': 'polite',
                           content: <div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>,
                           exitDelay: copied ? toolTipCopyExitDelay : toolTipDelay,
-                          onTooltipHidden: () => this.setState({copied:false})
+                          onTooltipHidden: () => this.setState({ copied: false })
                         }}
                         onClick={this.copyCode}
                       />
