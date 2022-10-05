@@ -25,7 +25,7 @@ export const PaginationNoItems: React.FunctionComponent = () => {
       perPage={perPage}
       page={page}
       onSetPage={onSetPage}
-      widgetId="pagination-options-menu-top"
+      widgetId="no-items-example"
       onPerPageSelect={onPerPageSelect}
     />
   );

@@ -177,7 +177,6 @@ const handleInputWidth = (lastPage: number, node: HTMLDivElement) => {
   }
 };
 
-let paginationId = 0;
 export class Pagination extends React.Component<PaginationProps, { ouiaStateId: string }> {
   static displayName = 'Pagination';
   paginationRef = React.createRef<HTMLDivElement>();
@@ -319,7 +318,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
           isSticky && styles.modifiers.sticky,
           className
         )}
-        id={`${widgetId}-${paginationId++}`}
+        id={`${widgetId}-pagination`}
         {...getOUIAProps(Pagination.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...props}
       >

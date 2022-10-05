@@ -30,7 +30,7 @@ export const PaginationIndeterminate: React.FunctionComponent = () => {
           <b>many</b>
         </React.Fragment>
       )}
-      widgetId="pagination-indeterminate"
+      widgetId="indeterminate-example"
       perPage={perPage}
       page={page}
       onSetPage={onSetPage}
