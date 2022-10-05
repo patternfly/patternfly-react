@@ -23,7 +23,7 @@ export interface DropdownProps extends MenuProps {
   isScrollable?: boolean;
   /** Min width of the menu. */
   minWidth?: string;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
 }
 

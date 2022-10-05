@@ -76,7 +76,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   isLarge?: boolean;
   /** Adds danger styling to secondary or link button variants */
   isDanger?: boolean;
-  /** @hide Forwarded ref */
+  /** Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Adds count number to button */
   countOptions?: BadgeCountObject;
