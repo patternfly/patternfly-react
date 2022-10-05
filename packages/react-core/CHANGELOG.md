@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.250.0 (2022-10-05)
+
+
+### Bug Fixes
+
+* **WizardFooterWrapper - next:** Add explicit props due to upgrade of react version ([#8171](https://github.com/patternfly/patternfly-react/issues/8171)) ([ae16b1a](https://github.com/patternfly/patternfly-react/commit/ae16b1ab57a50bd973905fe8a187341e2899d6fb))
+
+
+### Features
+
+* **Select:** add next version using menu components ([#8115](https://github.com/patternfly/patternfly-react/issues/8115)) ([a2e72a1](https://github.com/patternfly/patternfly-react/commit/a2e72a13f0670eddb7bdd91bc37414b938ffedc8))
+* **Wizard - next:** Enhancements & updated types ([#7915](https://github.com/patternfly/patternfly-react/issues/7915)) ([04f5004](https://github.com/patternfly/patternfly-react/commit/04f5004f3a6b4697ce75d0dc7ca4824e0ba579fd))
+
+
+
+
+
 # [4.249.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.248.0...@patternfly/react-core@4.249.0) (2022-10-04)
 
 
