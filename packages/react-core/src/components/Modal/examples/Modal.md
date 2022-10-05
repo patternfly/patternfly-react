@@ -113,7 +113,7 @@ To help simplify and explain complex models, add a help [popover](components/pop
 
 ### With form
 
-To collect user input within a modal, you can add a [form](/components/form). To open the form on a button click, set the button's `form` property equal to the form's id. 
+To collect user input within a modal, you can add a [form](/components/form). To open the form on a button click, set the button's `form` property equal to the form's id.
 
 ```ts file="ModalWithForm.tsx"
 ```
