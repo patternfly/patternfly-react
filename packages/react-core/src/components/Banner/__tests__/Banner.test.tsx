@@ -53,17 +53,17 @@ test('Renders with class name pf-m-info when "info" is passed to variant prop', 
 
 test('Renders screenReaderText as "default banner" by default', () => {
   render(<Banner>Test</Banner>);
-  expect(screen.getByText('default banner')).toHaveTextContent(/^default banner$/);
+  expect(screen.getByText('default banner')).toBeInTheDocument();
 });
 
 test('Renders screenReaderText as "success banner" when variant="success"', () => {
   render(<Banner variant="success">Test</Banner>);
-  expect(screen.getByText('success banner')).toHaveTextContent(/^success banner$/);
+  expect(screen.getByText('success banner')).toBeInTheDocument();
 });
 
 test('Renders custom screenReaderText passed via prop', () => {
   render(<Banner screenReaderText="Custom screen reader text">Test</Banner>);
-  expect(screen.getByText('Custom screen reader text')).toHaveTextContent(/^Custom screen reader text$/);
+  expect(screen.getByText('Custom screen reader text')).toBeInTheDocument();
 });
 
 test('Renders without pf-m-sticky by default', () => {
