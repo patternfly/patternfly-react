@@ -90,6 +90,13 @@ To add an icon before a modal’s title, use the `titleIconVariant`, which can b
 ```ts file="./ModalTitleIcon.tsx"
 ```
 
+### Custom title icon
+
+To add a custom icon before a modal’s title, set `titleIconVariant` to an imported custom icon. The following example uses imports and uses a bullhorn icon.
+
+```ts file="./ModalCustomTitleIcon.tsx"
+```
+
 ### With wizard
 
 To guide users through a series of steps in a modal, you can add a [wizard](/components/wizard) to a modal. To configure the `<Wizard>`, pass an array that contains a “name” and “component” value for each step into the `steps` property.
