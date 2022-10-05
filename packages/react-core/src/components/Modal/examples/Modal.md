@@ -36,7 +36,7 @@ To provide additional information about a modal, use the `description` property.
 
 ### Top aligned
 
-To override a modal's default center alignment, use the `position` property. In this example, `position` equals "top", which moves the modal to the top of the screen.
+To override a modal's default center alignment, use the `position` property. In this example, `position` is set to "top", which moves the modal to the top of the screen.
 
 ```ts file="./ModalTopAligned.tsx"
 ```
@@ -71,7 +71,7 @@ To choose a specific width for a modal, use the `width` property. This example h
 
 ### Custom header and footer
 
-To add a custom header and footer to a modal, set the `header` and `footer` properties equal to a custom implementation. The following example passes title components into both the header and the footer and also passes an icon to the footer.
+To add a custom header and footer to a modal, set the `header` and `footer` properties to a custom implementation. The following example passes title components into both the header and the footer and also passes an icon to the footer.
 
 ```ts file="./ModalCustomHeaderFooter.tsx"
 ```
@@ -85,14 +85,14 @@ To exclusively present information in a modal, remove the `header` and/or `foote
 
 ### Title icon
 
-To add an icon before a modal’s title, use the `titleIconVariant`, which can be equal to predefined variants, including "success", "danger", "warning", "info", and "default", or to an imported custom icon. The following example uses a "warning" variant.
+To add an icon before a modal’s title, use the `titleIconVariant`, which can be set equal one of the predefined variants -- "success", "danger", "warning", "info", and "default" -- or to an imported custom icon. The following example uses a "warning" variant.
 
 ```ts file="./ModalTitleIcon.tsx"
 ```
 
 ### With wizard
 
-To guide users through a series of steps in a modal, you can add a [wizard](/components/wizard) to a modal. To configure the `<Wizard>`, pass an object that contains a “name” and “component” value for each step into the `steps` property.
+To guide users through a series of steps in a modal, you can add a [wizard](/components/wizard) to a modal. To configure the `<Wizard>`, pass an array that contains a “name” and “component” value for each step into the `steps` property.
 
 ```ts file="./ModalWithWizard.tsx"
 ```
