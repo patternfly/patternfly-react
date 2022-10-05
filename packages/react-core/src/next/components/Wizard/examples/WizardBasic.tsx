@@ -13,9 +13,9 @@ export const WizardBasic: React.FunctionComponent = () => (
       <p>Step 3 content</p>
     </WizardStep>
     <WizardStep name="Fourth step" id="basic-fourth-step">
-      <p>Step 4 content</p>{' '}
+      <p>Step 4 content</p>
     </WizardStep>
-    <WizardStep name="Review" id="basic-review-step" nextButtonText="Finish">
+    <WizardStep name="Review" id="basic-review-step" footer={{ nextButtonText: 'Finish' }}>
       <p>Review step content</p>
     </WizardStep>
   </Wizard>

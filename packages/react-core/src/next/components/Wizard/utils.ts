@@ -3,32 +3,23 @@ import React from 'react';
 import { WizardControlStep, WizardNavStepData } from './types';
 import { WizardStep, WizardStepProps } from './WizardStep';
 
-function hasWizardStepProps(props: WizardStepProps | any): props is WizardStepProps {
-  return props.name !== undefined && props.id !== undefined;
-}
-
 /**
  * Accumulate list of step & sub-step props pulled from child components
  * @param children
  * @returns WizardControlStep[]
  */
 export const buildSteps = (children: React.ReactElement<WizardStepProps> | React.ReactElement<WizardStepProps>[]) =>
-  React.Children.toArray(children).reduce((acc: WizardControlStep[], child) => {
-    if (React.isValidElement(child) && (child.type === WizardStep || hasWizardStepProps(child.props))) {
-      // Omit "children" and use the whole "child" (WizardStep) for the component prop. Sub-steps will do the same.
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { steps: subSteps, id, children, ...stepProps } = child.props as WizardStepProps;
+  React.Children.toArray(children).reduce((acc: WizardControlStep[], child: React.ReactChild | React.ReactFragment) => {
+    if (isWizardStep(child)) {
+      const { steps: subSteps, id } = child.props;
 
       acc.push({
-        id,
         component: child,
-        ...stepProps,
+        ...normalizeStep(child.props),
         ...(subSteps && {
           subStepIds: subSteps?.map(subStep => {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const { children, ...subStepProps } = subStep.props;
             acc.push({
-              ...subStepProps,
+              ...normalizeStep(subStep.props),
               component: subStep,
               parentId: id
             });
@@ -44,6 +35,24 @@ export const buildSteps = (children: React.ReactElement<WizardStepProps> | React
     return acc;
   }, []);
 
-export const normalizeNavStep = ({ id, name }: WizardNavStepData) => ({ id, name });
-export const getActiveStep = (steps: WizardControlStep[], currentStepIndex: number) =>
+export function isWizardStep(
+  child: any | React.ReactElement<WizardStepProps>
+): child is React.ReactElement<WizardStepProps> {
+  return (
+    (React.isValidElement(child) && (child as React.ReactElement<WizardStepProps>).type === WizardStep) ||
+    (child.props?.name !== undefined && child.props?.id !== undefined)
+  );
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const normalizeStep = ({ children, steps, body, ...controlStep }: WizardStepProps): WizardControlStep =>
+  controlStep;
+
+export const normalizeNavStep = (navStep: WizardControlStep, steps: WizardControlStep[]): WizardNavStepData => ({
+  id: navStep.id,
+  name: navStep.name.toString(),
+  index: steps.indexOf(navStep) + 1
+});
+
+export const getCurrentStep = (steps: WizardControlStep[], currentStepIndex: number) =>
   steps.find((_, index) => index + 1 === currentStepIndex);

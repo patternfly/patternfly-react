@@ -5,14 +5,14 @@ import { css } from '@patternfly/react-styles';
 export interface WizardNavProps {
   /** children should be WizardNavItem components */
   children?: any;
-  /** Aria-label applied to the nav element */
+  /** Aria-label applied to the navigation element */
   'aria-label'?: string;
-  /** Sets the aria-labelledby attribute on the nav element */
+  /** Sets the aria-labelledby attribute on the navigation element */
   'aria-labelledby'?: string;
-  /** Whether the nav is expanded */
+  /** Whether the navigation is expanded */
   isExpanded?: boolean;
-  /** True to return the inner list without the wrapping nav element */
-  returnList?: boolean;
+  /** True to return the inner list without the wrapping navigation element */
+  isInnerList?: boolean;
 }
 
 export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
@@ -20,12 +20,10 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
   isExpanded = false,
-  returnList = false
+  isInnerList = false
 }: WizardNavProps) => {
-  const innerList = <ol className={css(styles.wizardNavList)}>{children}</ol>;
-
-  if (returnList) {
-    return innerList;
+  if (isInnerList) {
+    return <ol className={css(styles.wizardNavList)}>{children}</ol>;
   }
 
   return (
@@ -38,4 +36,5 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
     </nav>
   );
 };
+
 WizardNav.displayName = 'WizardNav';
