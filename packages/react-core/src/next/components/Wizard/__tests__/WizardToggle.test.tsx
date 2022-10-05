@@ -13,13 +13,13 @@ const steps = [
 
 const defaultProps: WizardToggleProps = {
   steps,
-  activeStep: steps[0],
+  currentStep: steps[0],
   footer: <div>Some footer</div>,
   nav: <div>Some nav</div>,
   'aria-label': 'Some label'
 };
 
-test('renders provided footer, nav, and active step content', () => {
+test('renders provided footer, nav, and current step content', () => {
   render(<WizardToggle {...defaultProps} />);
 
   expect(screen.getByText('Some footer')).toBeVisible();
@@ -58,8 +58,8 @@ test('renders only the active step content by default', async () => {
   expect(screen.queryByText('Second step content')).toBeNull;
 });
 
-test('renders all step content when unmountInactiveSteps is false', async () => {
-  render(<WizardToggle {...defaultProps} unmountInactiveSteps={false} />);
+test('renders all step content when hasUnmountedSteps is false', async () => {
+  render(<WizardToggle {...defaultProps} hasUnmountedSteps={false} />);
 
   expect(screen.getByText('First step content')).toBeInTheDocument();
   expect(screen.getByText('Second step content')).toBeInTheDocument();

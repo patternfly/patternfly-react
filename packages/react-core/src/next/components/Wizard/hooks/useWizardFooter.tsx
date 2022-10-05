@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { DefaultWizardFooterProps } from '../types';
 import { useWizardContext } from '../WizardContext';
+import { WizardFooterProps } from '../WizardFooter';
 
 /**
  * Set a unique footer for the wizard. stepId is only required if inactive steps are hidden instead of unmounted.
  * @param footer
  * @param stepId
  */
-export const useWizardFooter = (footer: DefaultWizardFooterProps | React.ReactElement, stepId?: string | number) => {
-  const { activeStep, setFooter } = useWizardContext();
+export const useWizardFooter = (footer: React.ReactElement | Partial<WizardFooterProps>, stepId?: string | number) => {
+  const { currentStep, setFooter } = useWizardContext();
 
   React.useEffect(() => {
-    if (!stepId || activeStep.id === stepId) {
+    if (footer && (!stepId || currentStep?.id === stepId)) {
       setFooter(footer);
 
       // Reset the footer on unmount.
@@ -20,5 +20,5 @@ export const useWizardFooter = (footer: DefaultWizardFooterProps | React.ReactEl
         setFooter(null);
       };
     }
-  }, [activeStep, footer, setFooter, stepId]);
+  }, [currentStep, footer, setFooter, stepId]);
 };

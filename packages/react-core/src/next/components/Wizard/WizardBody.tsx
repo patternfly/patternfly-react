@@ -16,7 +16,7 @@ export interface WizardBodyProps {
   /** Sets the aria-labelledby attribute for the wrapper element */
   'aria-labelledby'?: string;
   /** Component used as the wrapping content container */
-  wrapperElement?: React.ElementType;
+  component?: React.ElementType;
 }
 
 export const WizardBody = ({
@@ -24,11 +24,11 @@ export const WizardBody = ({
   hasNoBodyPadding = false,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
-  wrapperElement: Wrapper = 'div'
+  component: WrapperComponent = 'div'
 }: WizardBodyProps) => (
-  <Wrapper aria-label={ariaLabel} aria-labelledby={ariaLabelledBy} className={css(styles.wizardMain)}>
+  <WrapperComponent aria-label={ariaLabel} aria-labelledby={ariaLabelledBy} className={css(styles.wizardMain)}>
     <div className={css(styles.wizardMainBody, hasNoBodyPadding && styles.modifiers.noPadding)}>{children}</div>
-  </Wrapper>
+  </WrapperComponent>
 );
 
 WizardBody.displayName = 'WizardBody';

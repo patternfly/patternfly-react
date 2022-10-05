@@ -1,17 +1,16 @@
 import React from 'react';
 
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-
-import { DefaultWizardFooterProps, isCustomWizardFooter, WizardControlStep } from './types';
-import { getActiveStep } from './utils';
-import { WizardFooter } from './WizardFooter';
+import { isCustomWizardFooter, isWizardParentStep, WizardControlStep, WizardFooterType } from './types';
+import { getCurrentStep } from './utils';
+import { WizardFooter, WizardFooterProps } from './WizardFooter';
 
 export interface WizardContextProps {
   /** List of steps */
   steps: WizardControlStep[];
-  /** Active step */
-  activeStep: WizardControlStep;
+  /** Current step */
+  currentStep: WizardControlStep;
+  /** Current step index */
+  currentStepIndex: number;
   /** Footer element */
   footer: React.ReactElement;
   /** Navigate to the next step */
@@ -27,38 +26,36 @@ export interface WizardContextProps {
   /** Navigate to step by index */
   goToStepByIndex: (index: number) => void;
   /** Update the footer with any react element */
-  setFooter: (footer: DefaultWizardFooterProps | React.ReactElement) => void;
+  setFooter: (footer: React.ReactElement | Partial<WizardFooterProps>) => void;
+  /** Get step by ID */
+  getStep: (stepId: number | string) => WizardControlStep;
+  /** Set step by ID */
+  setStep: (step: Pick<WizardControlStep, 'id'> & Partial<WizardControlStep>) => void;
+  /** Toggle step visibility by ID */
+  toggleStep: (stepId: number | string, isHidden: boolean) => void;
 }
 
 export const WizardContext = React.createContext({} as WizardContextProps);
 
-interface WizardContextRenderProps {
-  steps: WizardControlStep[];
-  activeStep: WizardControlStep;
-  footer: React.ReactElement;
-  onNext(): void;
-  onBack(): void;
-  onClose(): void;
-}
-
 export interface WizardContextProviderProps {
   steps: WizardControlStep[];
   currentStepIndex: number;
-  footer: DefaultWizardFooterProps | React.ReactElement;
-  children: React.ReactElement | ((props: WizardContextRenderProps) => React.ReactElement);
-  onNext(): void;
-  onBack(): void;
+  footer: WizardFooterType;
+  isStepVisitRequired: boolean;
+  children: React.ReactElement;
+  onNext(steps: WizardControlStep[]): void;
+  onBack(steps: WizardControlStep[]): void;
   onClose(): void;
-  goToStepById(id: number | string): void;
-  goToStepByName(name: string): void;
-  goToStepByIndex(index: number): void;
+  goToStepById(steps: WizardControlStep[], id: number | string): void;
+  goToStepByName(steps: WizardControlStep[], name: string): void;
+  goToStepByIndex(steps: WizardControlStep[], index: number): void;
 }
 
-// eslint-disable-next-line patternfly-react/no-anonymous-functions
 export const WizardContextProvider: React.FunctionComponent<WizardContextProviderProps> = ({
   steps: initialSteps,
   footer: initialFooter,
   currentStepIndex,
+  isStepVisitRequired,
   children,
   onNext,
   onBack,
@@ -68,61 +65,116 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   goToStepByIndex
 }) => {
   const [steps, setSteps] = React.useState(initialSteps);
-  const [footer, setFooter] = React.useState(initialFooter);
-  const activeStep = getActiveStep(steps, currentStepIndex);
-
-  const wizardFooter = React.useMemo(
-    () =>
-      isCustomWizardFooter(footer) ? (
-        <div className={css(styles.wizardFooter)}>{footer}</div>
-      ) : (
-        <WizardFooter
-          activeStep={activeStep}
-          onNext={onNext}
-          onBack={onBack}
-          onClose={onClose}
-          disableBackButton={activeStep?.id === steps[0]?.id}
-          {...footer}
-        />
-      ),
-    [activeStep, footer, onBack, onClose, onNext, steps]
+  const [currentFooter, setCurrentFooter] = React.useState(
+    typeof initialFooter !== 'function' ? initialFooter : undefined
   );
+  const currentStep = getCurrentStep(steps, currentStepIndex);
 
-  // When the active step changes and the newly active step isn't visited, set the visited flag to true.
-  React.useEffect(() => {
-    if (activeStep && !activeStep?.visited) {
+  const goToNextStep = React.useCallback(() => onNext(steps), [onNext, steps]);
+  const goToPrevStep = React.useCallback(() => onBack(steps), [onBack, steps]);
+
+  const footer = React.useMemo(() => {
+    const wizardFooter = currentFooter || initialFooter;
+
+    if (isCustomWizardFooter(wizardFooter)) {
+      const customFooter = wizardFooter;
+
+      return typeof customFooter === 'function'
+        ? customFooter(currentStep, goToNextStep, goToPrevStep, onClose)
+        : customFooter;
+    }
+
+    return (
+      <WizardFooter
+        currentStep={currentStep}
+        onNext={goToNextStep}
+        onBack={goToPrevStep}
+        onClose={onClose}
+        isBackDisabled={currentStep?.id === steps[0]?.id}
+        {...wizardFooter}
+      />
+    );
+  }, [currentFooter, initialFooter, currentStep, goToNextStep, goToPrevStep, onClose, steps]);
+
+  const getStep = React.useCallback((stepId: string | number) => steps.find(step => step.id === stepId), [steps]);
+
+  const setStep = React.useCallback(
+    (step: Pick<WizardControlStep, 'id'> & Partial<WizardControlStep>) =>
       setSteps(prevSteps =>
-        prevSteps.map(step => {
-          if (step.id === activeStep.id) {
-            return { ...step, visited: true };
+        prevSteps.map(prevStep => {
+          if (prevStep.id === step.id) {
+            return { ...prevStep, ...step };
           }
 
-          return step;
+          return prevStep;
         })
-      );
-    }
-  }, [activeStep]);
+      ),
+    []
+  );
+
+  const toggleStep = React.useCallback(
+    (stepId: string | number, isHidden: boolean) =>
+      setSteps(prevSteps => {
+        let stepToHide: WizardControlStep;
+
+        return prevSteps.map(prevStep => {
+          if (prevStep.id === stepId) {
+            // Don't hide the currently active step or its parent (if a sub-step).
+            if (
+              isHidden &&
+              (currentStep.id === prevStep.id ||
+                (isWizardParentStep(prevStep) && prevStep.subStepIds.includes(currentStep.id)))
+            ) {
+              // eslint-disable-next-line no-console
+              console.error('Wizard: Unable to hide the current step or its parent.');
+              return prevStep;
+            }
+
+            stepToHide = { ...prevStep, isHidden };
+            return stepToHide;
+          }
+
+          // When isStepVisitRequired is enabled, if the step was previously hidden and not visited yet,
+          // when it is shown, all steps beyond it should be disabled to ensure it is visited.
+          if (
+            isStepVisitRequired &&
+            stepToHide?.isHidden === false &&
+            !stepToHide?.isVisited &&
+            prevSteps.indexOf(stepToHide) < prevSteps.indexOf(prevStep)
+          ) {
+            return { ...prevStep, isVisited: false };
+          }
+
+          return prevStep;
+        });
+      }),
+    [currentStep.id, isStepVisitRequired]
+  );
 
   return (
     <WizardContext.Provider
       value={{
         steps,
-        activeStep,
-        footer: wizardFooter,
-        onNext,
-        onBack,
+        currentStep,
+        currentStepIndex,
+        footer,
         onClose,
-        goToStepById,
-        goToStepByName,
-        goToStepByIndex,
-        setFooter
+        getStep,
+        setStep,
+        toggleStep,
+        setFooter: setCurrentFooter,
+        onNext: goToNextStep,
+        onBack: goToPrevStep,
+        goToStepById: React.useCallback(id => goToStepById(steps, id), [goToStepById, steps]),
+        goToStepByName: React.useCallback(name => goToStepByName(steps, name), [goToStepByName, steps]),
+        goToStepByIndex: React.useCallback(index => goToStepByIndex(steps, index), [goToStepByIndex, steps])
       }}
     >
-      {typeof children === 'function'
-        ? children({ activeStep, steps, footer: wizardFooter, onNext, onBack, onClose })
-        : children}
+      {children}
     </WizardContext.Provider>
   );
 };
+
+WizardContextProvider.displayName = 'WizardContextProvider';
 
 export const useWizardContext = () => React.useContext(WizardContext);

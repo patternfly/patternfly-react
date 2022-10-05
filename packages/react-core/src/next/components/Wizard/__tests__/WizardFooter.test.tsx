@@ -3,10 +3,10 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { WizardFooter } from '../WizardFooter';
+import { WizardFooter, WizardFooterProps } from '../WizardFooter';
 
-const defaultProps = {
-  activeStep: { name: 'Step name', id: 'some-id' },
+const defaultProps: WizardFooterProps = {
+  currentStep: { name: 'Step name', id: 'some-id' },
   onNext: jest.fn(),
   onBack: jest.fn(),
   onClose: jest.fn()
@@ -65,27 +65,24 @@ test('can have custom button names', () => {
   expect(screen.getByRole('button', { name: 'Get out!' })).toBeVisible();
 });
 
-test('has disabled back button when disableBackButton is enabled', () => {
-  render(<WizardFooter {...defaultProps} disableBackButton />);
+test('has disabled back button when isBackDisabled is enabled', () => {
+  render(<WizardFooter {...defaultProps} isBackDisabled />);
   expect(screen.getByRole('button', { name: 'Back' })).toHaveAttribute('disabled');
 });
 
-test('has no back button when activeStep has hideBackButton enabled', () => {
-  render(<WizardFooter {...defaultProps} activeStep={{ ...defaultProps.activeStep, hideBackButton: true }} />);
+test('uses currentStep footer properties when specified', () => {
+  render(
+    <WizardFooter {...defaultProps} currentStep={{ ...defaultProps.currentStep, footer: { isBackHidden: true } }} />
+  );
   expect(screen.queryByRole('button', { name: 'Back' })).toBeNull();
 });
 
-test('has no cancel button when activeStep has hideCancelButton enabled', () => {
-  render(<WizardFooter {...defaultProps} activeStep={{ ...defaultProps.activeStep, hideCancelButton: true }} />);
-  expect(screen.queryByRole('button', { name: 'Cancel' })).toBeNull();
-});
-
-test(`uses activeStep's nextButtonText when specified instead of nextButtonText of WizardFooter`, () => {
+test(`currentStep footer properties take precendence over WizardFooter's`, () => {
   render(
     <WizardFooter
       {...defaultProps}
       nextButtonText="Footer next"
-      activeStep={{ ...defaultProps.activeStep, nextButtonText: 'Active step next' }}
+      currentStep={{ ...defaultProps.currentStep, footer: { nextButtonText: 'Active step next' } }}
     />
   );
   expect(screen.queryByRole('button', { name: 'Footer next' })).toBeNull();
