@@ -35,7 +35,11 @@ export interface WizardFooterProps {
   isCancelHidden?: boolean;
 }
 
-export const WizardFooterWrapper: React.FunctionComponent = ({ children }) => (
+interface WizardFooterWrapperProps {
+  children: React.ReactNode;
+}
+
+export const WizardFooterWrapper = ({ children }: WizardFooterWrapperProps) => (
   <footer className={css(styles.wizardFooter)}>{children}</footer>
 );
 
