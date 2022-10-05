@@ -27,8 +27,6 @@ export interface DropdownItemProps extends Omit<InternalDropdownItemProps, 'tabI
   isAriaDisabled?: boolean;
   /** Render dropdown item as non-interactive item */
   isPlainText?: boolean;
-  /** @deprecated Forces display of the hover state of the element */
-  isHovered?: boolean;
   /** Default hyperlink location */
   href?: string;
   /** Tooltip to display when hovered over the item */

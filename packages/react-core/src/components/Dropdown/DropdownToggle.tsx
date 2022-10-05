@@ -29,8 +29,6 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>,
   isText?: boolean;
   /** Whether or not the <div> has a disabled state */
   isDisabled?: boolean;
-  /** @deprecated Use `toggleVariant` instead. Whether or not the dropdown toggle button should have primary button styling */
-  isPrimary?: boolean;
   /** Alternate styles for the dropdown toggle button */
   toggleVariant?: 'primary' | 'secondary' | 'default';
   /** An image to display within the dropdown toggle, appearing before any component children */
@@ -65,7 +63,6 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   isDisabled = false,
   isPlain = false,
   isText = false,
-  isPrimary = false,
   toggleVariant = 'default',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isActive = false,
@@ -97,7 +94,6 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           isDisabled={isDisabled}
           isPlain={isPlain}
           isText={isText}
-          isPrimary={isPrimary}
           toggleVariant={toggleVariant}
           onToggle={onToggle}
           aria-haspopup={ariaHasPopup}
@@ -123,7 +119,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           styles.dropdownToggle,
           styles.modifiers.splitButton,
           splitButtonVariant === 'action' && styles.modifiers.action,
-          (toggleVariant === 'primary' || isPrimary) && splitButtonVariant === 'action' && styles.modifiers.primary,
+          toggleVariant === 'primary' && splitButtonVariant === 'action' && styles.modifiers.primary,
           toggleVariant === 'secondary' && splitButtonVariant === 'action' && styles.modifiers.secondary,
           isDisabled && styles.modifiers.disabled
         )}
