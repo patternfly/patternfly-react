@@ -34,7 +34,7 @@ propComponents: ['TextInput']
 
 ### Select text using ref
 
-```ts file="./TextInputSelectAll.tsx"
+```ts file="./TextInputSelectUsingRef.tsx"
 ```
 
 ### Icon variants

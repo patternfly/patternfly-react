@@ -4,16 +4,40 @@ import { TextInput } from '@patternfly/react-core';
 export const TextInputIconSprite: React.FunctionComponent = () => {
   const [calendar, setCalendar] = React.useState('');
   const [clock, setClock] = React.useState('');
+  const [success, setSuccess] = React.useState('');
+  const [warning, setWarning] = React.useState('');
+  const [error, setError] = React.useState('');
 
   return (
     <>
-      <TextInput validated={'success'} isIconSprite type="text" aria-label="success icon sprite text input example" />
+      <TextInput
+        value={success}
+        validated={'success'}
+        isIconSprite
+        type="text"
+        onChange={value => setSuccess(value)}
+        aria-label="success icon sprite text input example"
+      />
       <br />
       <br />
-      <TextInput validated={'warning'} isIconSprite type="text" aria-label="warning icon sprite text input example" />
+      <TextInput
+        value={warning}
+        validated={'warning'}
+        isIconSprite
+        type="text"
+        onChange={value => setWarning(value)}
+        aria-label="warning icon sprite text input example"
+      />
       <br />
       <br />
-      <TextInput validated={'error'} isIconSprite type="text" aria-label="error icon sprite text input example" />
+      <TextInput
+        value={error}
+        validated={'error'}
+        isIconSprite
+        type="text"
+        onChange={value => setError(value)}
+        aria-label="error icon sprite text input example"
+      />
       <br />
       <br />
       <TextInput
