@@ -38,7 +38,7 @@ section: developer-resources
   - Fixed invalid input with multiple validators ([#7992](https://github.com/patternfly/patternfly-react/pull/7992))
   - Fixed clearing validation error from outside ([#8036](https://github.com/patternfly/patternfly-react/pull/8036))
 - **Dropdown:**
-  - Added content to dropdown examples. ([#7784](https://github.com/patternfly/patternfly-react/pull/7784))
+  - Added content to dropdown examples ([#7784](https://github.com/patternfly/patternfly-react/pull/7784))
 - **Dual list selector**
   - Updated to use SearchInput in dual list selector ([#8040](https://github.com/patternfly/patternfly-react/pull/8040))
 - **Expandable section:**
@@ -98,7 +98,7 @@ section: developer-resources
 - Updated Victory dependencies ([#7986](https://github.com/patternfly/patternfly-react/pull/7986))
 
 ### Log viewer
-Added prop `initialIndexWidth` to support custom line number column size ([#7939](https://github.com/patternfly/patternfly-react/pull/7939))
+- Added prop `initialIndexWidth` to support custom line number column size ([#7939](https://github.com/patternfly/patternfly-react/pull/7939))
 
 ### Table
 - Added tooltip for truncated `Td` ([#8024](https://github.com/patternfly/patternfly-react/pull/8024))
