@@ -4,8 +4,11 @@ import { SimpleList, SimpleListItem } from '@patternfly/react-core';
 export const SimpleListUncontrolledDemo: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState(0);
 
-  const onSelect = (selectedItem: any, selectedItemProps: any) => {
-    setActiveItem(selectedItemProps.itemId);
+  const onSelect = (
+    selectedItem: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
+    _selectedItemProps
+  ) => {
+    setActiveItem(_selectedItemProps.itemId);
   };
 
   const items = [
