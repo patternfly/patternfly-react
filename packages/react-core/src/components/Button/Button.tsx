@@ -24,7 +24,7 @@ export enum ButtonType {
 
 export enum ButtonSize {
   sm = 'sm',
-  md = 'md',
+  default = 'default',
   lg = 'lg'
 }
 
@@ -65,7 +65,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   /** Adds inline styling to a link button */
   isInline?: boolean;
   /** Adds small or large styling to the button */
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'default' | 'lg';
   /** Sets button type */
   type?: 'button' | 'submit' | 'reset';
   /** Adds button variant styles */
@@ -103,7 +103,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   spinnerAriaValueText,
   spinnerAriaLabelledBy,
   spinnerAriaLabel,
-  size = ButtonSize.md,
+  size = ButtonSize.default,
   inoperableEvents = ['onClick', 'onKeyPress'],
   isInline = false,
   type = ButtonType.button,
