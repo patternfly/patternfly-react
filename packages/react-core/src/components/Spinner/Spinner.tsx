@@ -31,7 +31,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   className = '',
   size = 'xl',
   'aria-valuetext': ariaValueText = 'Loading...',
-  isSVG = false,
+  isSVG = true,
   diameter,
   'aria-label': ariaLabel,
   'aria-labelledBy': ariaLabelledBy,
