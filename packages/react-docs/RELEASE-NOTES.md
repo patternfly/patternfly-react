@@ -111,7 +111,7 @@ Added prop `initialIndexWidth` to support custom line number column size ([#7939
 
 ### Other
 - **Chore:**
-  - Added support for version 18 of React ([#7146](https://github.com/patternfly/patternfly-react/pull/7146))
+  - Added experimental support for version 18 of React.  If you have any issue related to React 18 please open a GitHub issue. React 18 will be fully supported with our next major release. ([#7146](https://github.com/patternfly/patternfly-react/pull/7146))
   - Added github action for new issues ([#7983](https://github.com/patternfly/patternfly-react/pull/7983))
   - Fixed lerna creating incorrect version bumps ([#8019](https://github.com/patternfly/patternfly-react/pull/8019))
   - Fixed lerna creating incorrect version bumps ([#8020](https://github.com/patternfly/patternfly-react/pull/8020))
