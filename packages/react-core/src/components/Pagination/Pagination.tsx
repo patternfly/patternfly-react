@@ -210,7 +210,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
     itemsStart: null,
     itemsEnd: null,
     perPageOptions: defaultPerPageOptions,
-    widgetId: 'pagination-options-menu',
+    widgetId: 'options-menu',
     onSetPage: () => undefined,
     onPerPageSelect: () => undefined,
     onFirstClick: () => undefined,
@@ -318,7 +318,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
           isSticky && styles.modifiers.sticky,
           className
         )}
-        id={`${widgetId}-pagination`}
+        {...(widgetId && { id: `${widgetId}-${variant}-pagination` })}
         {...getOUIAProps(Pagination.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...props}
       >
@@ -355,7 +355,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
           lastPage={lastPage}
           onPerPageSelect={onPerPageSelect}
           dropDirection={dropDirection}
-          widgetId={widgetId}
+          widgetId={`${widgetId}-${variant}`}
           toggleTemplate={toggleTemplate}
           isDisabled={isDisabled}
           perPageComponent={perPageComponent}
