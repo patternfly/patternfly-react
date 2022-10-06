@@ -15,7 +15,7 @@ export const LabelGroupEditableLabels: React.FunctionComponent = () => {
         onEditComplete={newText => setLabel1(newText)}
         isEditable
         editableProps={{
-          'aria-label': 'Editable text',
+          'aria-label': `Editable label with text ${label1}`,
           id: 'editable-label-1'
         }}
       >
@@ -29,7 +29,7 @@ export const LabelGroupEditableLabels: React.FunctionComponent = () => {
         onEditComplete={newText => setLabel2(newText)}
         isEditable
         editableProps={{
-          'aria-label': 'Editable text 2',
+          'aria-label': `Editable label with text ${label2}`,
           id: 'editable-label-2'
         }}
       >
@@ -42,7 +42,7 @@ export const LabelGroupEditableLabels: React.FunctionComponent = () => {
         onEditComplete={newText => setLabel3(newText)}
         isEditable
         editableProps={{
-          'aria-label': 'Editable text 3',
+          'aria-label': `Editable label with text ${label3}`,
           id: 'editable-label-3'
         }}
       >
