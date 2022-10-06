@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, ButtonProps, Tooltip } from '@patternfly/react-core';
-import { ButtonSize } from '@patternfly/react-core/src/components/Button';
+import { Button, ButtonProps, ButtonSize, Tooltip } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import '@patternfly/react-styles/css/utilities/Spacing/spacing.css';
