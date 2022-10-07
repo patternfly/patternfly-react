@@ -23,7 +23,8 @@ exports[`page group Verify bottom shadow 1`] = `
 exports[`page group Verify bottom sticky 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__main-group pf-m-sticky-bottom"
+    class="pf-c-page__main-group"
+    sticky="bottom"
   >
     test
   </div>
@@ -54,7 +55,8 @@ exports[`page group Verify top shadow 1`] = `
 exports[`page group Verify top sticky 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__main-group pf-m-sticky-top"
+    class="pf-c-page__main-group"
+    sticky="top"
   >
     test
   </div>

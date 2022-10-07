@@ -23,7 +23,8 @@ exports[`page navigation Verify bottom shadow 1`] = `
 exports[`page navigation Verify bottom sticky 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__main-nav pf-m-sticky-bottom"
+    class="pf-c-page__main-nav"
+    sticky="bottom"
   >
     test
   </div>
@@ -68,7 +69,8 @@ exports[`page navigation Verify top shadow 1`] = `
 exports[`page navigation Verify top sticky 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__main-nav pf-m-sticky-top"
+    class="pf-c-page__main-nav"
+    sticky="top"
   >
     test
   </div>
