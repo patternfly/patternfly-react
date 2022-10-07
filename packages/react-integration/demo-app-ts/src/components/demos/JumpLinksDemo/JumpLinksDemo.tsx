@@ -6,7 +6,7 @@ export const JumpLinksDemo = () => {
 
   return (
     <React.Fragment>
-      <PageSection sticky="top">
+      <PageSection stickyOnBreakpoint={{ default: 'top' }}>
         <JumpLinks isCentered label="Jump to section" scrollableSelector="#scrollable-element">
           {headings.map(i => (
             <JumpLinksItem key={i} id={`#heading-${i}`} href={`#heading-${i}`}>
