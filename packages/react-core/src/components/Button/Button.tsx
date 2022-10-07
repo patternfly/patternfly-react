@@ -23,8 +23,8 @@ export enum ButtonType {
 }
 
 export enum ButtonSize {
-  sm = 'sm',
   default = 'default',
+  sm = 'sm',
   lg = 'lg'
 }
 
