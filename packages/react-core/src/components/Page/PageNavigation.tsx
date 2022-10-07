@@ -11,8 +11,6 @@ export interface PageNavigationProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Limits the width of the PageNavigation */
   isWidthLimited?: boolean;
-  /**  @deprecated Use the stickyOnBreakpoint prop instead - Modifier indicating if the PageBreadcrumb is sticky to the top or bottom */
-  sticky?: 'top' | 'bottom';
   /** Modifier indicating if the PageBreadcrumb is sticky to the top or bottom at various breakpoints */
   stickyOnBreakpoint?: {
     default?: 'top' | 'bottom';
@@ -36,7 +34,6 @@ export const PageNavigation = ({
   className = '',
   children,
   isWidthLimited,
-  sticky,
   stickyOnBreakpoint,
   hasShadowTop = false,
   hasShadowBottom = false,
@@ -59,8 +56,6 @@ export const PageNavigation = ({
         styles.pageMainNav,
         formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
         isWidthLimited && styles.modifiers.limitWidth,
-        sticky === 'top' && styles.modifiers.stickyTop,
-        sticky === 'bottom' && styles.modifiers.stickyBottom,
         hasShadowTop && styles.modifiers.shadowTop,
         hasShadowBottom && styles.modifiers.shadowBottom,
         hasOverflowScroll && styles.modifiers.overflowScroll,

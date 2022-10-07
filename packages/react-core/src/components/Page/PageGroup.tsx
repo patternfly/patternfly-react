@@ -8,8 +8,6 @@ export interface PageGroupProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Content rendered inside of the PageGroup */
   children?: React.ReactNode;
-  /**  @deprecated Use the stickyOnBreakpoint prop instead - Modifier indicating if the PageBreadcrumb is sticky to the top or bottom */
-  sticky?: 'top' | 'bottom';
   /** Modifier indicating if the PageBreadcrumb is sticky to the top or bottom at various breakpoints */
   stickyOnBreakpoint?: {
     default?: 'top' | 'bottom';
@@ -32,7 +30,6 @@ export interface PageGroupProps extends React.HTMLProps<HTMLDivElement> {
 export const PageGroup = ({
   className = '',
   children,
-  sticky,
   stickyOnBreakpoint,
   hasShadowTop = false,
   hasShadowBottom = false,
@@ -55,8 +52,6 @@ export const PageGroup = ({
       className={css(
         styles.pageMainGroup,
         formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
-        sticky === 'top' && styles.modifiers.stickyTop,
-        sticky === 'bottom' && styles.modifiers.stickyBottom,
         hasShadowTop && styles.modifiers.shadowTop,
         hasShadowBottom && styles.modifiers.shadowBottom,
         hasOverflowScroll && styles.modifiers.overflowScroll,
