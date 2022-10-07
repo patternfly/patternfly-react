@@ -18,8 +18,6 @@ export interface SimpleListItemProps {
   componentProps?: any;
   /** Indicates if the link is current/highlighted */
   isActive?: boolean;
-  /** @deprecated please use isActive instead */
-  isCurrent?: boolean;
   /** OnClick callback for the SimpleList item */
   onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
   /** Type of button SimpleList item */
@@ -35,7 +33,6 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
     children: null,
     className: '',
     isActive: false,
-    isCurrent: false,
     component: 'button',
     componentClassName: '',
     type: 'button',
@@ -46,7 +43,6 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
   render() {
     const {
       children,
-      isCurrent,
       isActive,
       className,
       component: Component,
@@ -64,7 +60,7 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
         {({ currentRef, updateCurrentRef, isControlled }) => {
           const isButton = Component === 'button';
           const isCurrentItem =
-            this.ref && currentRef && isControlled ? currentRef.current === this.ref.current : isActive || isCurrent;
+            this.ref && currentRef && isControlled ? currentRef.current === this.ref.current : isActive;
 
           const additionalComponentProps = isButton
             ? {
