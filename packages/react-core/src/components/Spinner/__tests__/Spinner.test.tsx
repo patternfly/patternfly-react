@@ -26,3 +26,9 @@ test('extra large spinner', () => {
   const { asFragment } = render(<Spinner size="xl" />);
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('non-SVG spinner', () => {
+  const { asFragment } = render(<Spinner isSVG={false} />)
+
+  expect(asFragment()).toMatchSnapshot();
+})

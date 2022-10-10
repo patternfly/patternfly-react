@@ -129,22 +129,21 @@ exports[`AccessConsoles with preselected SerialConsole 1`] = `
           <div
             class="pf-c-empty-state__icon"
           >
-            <span
+            <svg
               aria-label="Contents"
               aria-valuetext="Loading..."
               class="pf-c-spinner pf-m-xl"
               role="progressbar"
+              viewBox="0 0 100 100"
             >
-              <span
-                class="pf-c-spinner__clipper"
+              <circle
+                class="pf-c-spinner__path"
+                cx="50"
+                cy="50"
+                fill="none"
+                r="45"
               />
-              <span
-                class="pf-c-spinner__lead-ball"
-              />
-              <span
-                class="pf-c-spinner__tail-ball"
-              />
-            </span>
+            </svg>
           </div>
           <div
             class="pf-c-empty-state__body"
