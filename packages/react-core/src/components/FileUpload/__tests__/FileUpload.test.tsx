@@ -3,7 +3,6 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 
 test('simple fileupload', () => {
-  const changeHandler = jest.fn();
   const readStartedHandler = jest.fn();
   const readFinishedHandler = jest.fn();
 
@@ -13,7 +12,6 @@ test('simple fileupload', () => {
       type="text"
       value={''}
       filename={''}
-      onChange={changeHandler}
       onReadStarted={readStartedHandler}
       onReadFinished={readFinishedHandler}
       isLoading={false}
