@@ -11,14 +11,14 @@ const hash = {
   right: 'left',
   bottom: 'top',
   top: 'bottom',
-  'top-start': 'bottom-start',
-  'top-end': 'bottom-end',
-  'bottom-start': 'top-start',
-  'bottom-end': 'top-end',
-  'left-start': 'right-start',
-  'left-end': 'right-end',
-  'right-start': 'left-start',
-  'right-end': 'left-end'
+  'top-start': 'bottom-end',
+  'top-end': 'bottom-start',
+  'bottom-start': 'top-end',
+  'bottom-end': 'top-start',
+  'left-start': 'right-end',
+  'left-end': 'right-start',
+  'right-start': 'left-end',
+  'right-end': 'left-start'
 };
 
 const getOppositePlacement = (placement: Placement): any =>
