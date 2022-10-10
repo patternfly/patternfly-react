@@ -3,7 +3,6 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 
 test('simple fileuploadfield', () => {
-  const changeHandler = jest.fn();
   const browserBtnClickHandler = jest.fn();
   const clearBtnClickHandler = jest.fn();
 
@@ -13,7 +12,6 @@ test('simple fileuploadfield', () => {
       type="text"
       value={''}
       filename={''}
-      onChange={changeHandler}
       filenamePlaceholder="Do something custom with this!"
       onBrowseButtonClick={browserBtnClickHandler}
       onClearButtonClick={clearBtnClickHandler}

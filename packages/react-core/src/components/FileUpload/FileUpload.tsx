@@ -47,17 +47,6 @@ export interface FileUploadProps
   isReadOnly?: boolean;
   /** Flag to show if the field is required. */
   isRequired?: boolean;
-  /** @deprecated A callback for when the file contents changes. Please instead use
-   * onFileInputChange, onTextChange, onDataChange, and onClearClick individually.
-   */
-  onChange?: (
-    value: string | File,
-    filename: string,
-    event:
-      | React.MouseEvent<HTMLButtonElement, MouseEvent> // Clear button was clicked
-      | React.DragEvent<HTMLElement> // User dragged/dropped a file
-      | React.ChangeEvent<HTMLElement> // User typed in the TextArea
-  ) => void;
   /** Callback for clicking on the file upload field text area. By default, prevents a click
    * in the text area from opening file dialog.
    */
@@ -66,7 +55,7 @@ export interface FileUploadProps
   onFileInputChange?: (event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLElement>, file: File) => void;
   /** Aria-valuetext for the loading spinner. */
   spinnerAriaValueText?: string;
-  /** What type of file. Determines what is passed to the onChange property and what is
+  /** What type of file. Determines whether 'onDataChange` is called and what is
    * expected by the value property (a string for 'text' and 'dataURL', or a File object otherwise.
    */
   type?: 'text' | 'dataURL';
@@ -102,7 +91,6 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   value = type === fileReaderType.text || type === fileReaderType.dataURL ? '' : null,
   filename = '',
   children = null,
-  onChange = () => {},
   onFileInputChange = null,
   onReadStarted = () => {},
   onReadFinished = () => {},
@@ -121,31 +109,23 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
         onFileInputChange?.(event, fileHandle);
       }
       if (type === fileReaderType.text || type === fileReaderType.dataURL) {
-        onChange('', fileHandle.name, event); // Show the filename while reading
         onReadStarted(fileHandle);
         readFile(fileHandle, type as fileReaderType)
           .then(data => {
             onReadFinished(fileHandle);
-            onChange(data as string, fileHandle.name, event);
             onDataChange?.(data as string);
           })
           .catch((error: DOMException) => {
             onReadFailed(error, fileHandle);
             onReadFinished(fileHandle);
-            onChange('', '', event); // Clear the filename field on a failure
             onDataChange?.('');
           });
-      } else {
-        onChange(fileHandle, fileHandle.name, event);
       }
     }
     dropzoneProps.onDropAccepted && dropzoneProps.onDropAccepted(acceptedFiles, event);
   };
 
   const onDropRejected: DropFileEventHandler = (rejectedFiles, event) => {
-    if (rejectedFiles.length > 0) {
-      onChange('', rejectedFiles[0].name, event);
-    }
     dropzoneProps.onDropRejected && dropzoneProps.onDropRejected(rejectedFiles, event);
   };
 
@@ -155,7 +135,6 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   };
 
   const onClearButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    onChange('', '', event);
     onClearClick?.(event);
     setFileValue(null);
   };
@@ -187,7 +166,6 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
             type={type}
             filename={filename}
             value={value}
-            onChange={onChange}
             isDragActive={isDragActive}
             onBrowseButtonClick={open}
             onClearButtonClick={onClearButtonClick}
