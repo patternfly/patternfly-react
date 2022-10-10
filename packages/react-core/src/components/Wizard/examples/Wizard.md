@@ -4,6 +4,7 @@ section: components
 cssPrefix: pf-c-wizard
 propComponents:
   ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle', 'WizardStep']
+ouia: true
 ---
 
 import { Button, Drawer, DrawerActions, DrawerCloseButton, DrawerColorVariant,
@@ -812,10 +813,10 @@ class GetCurrentStepWizard extends React.Component {
       step: 1
     };
     this.onCurrentStepChanged = ({ id }) => {
-        this.setState({
-            step: id
-        });
-    }
+      this.setState({
+        step: id
+      });
+    };
     this.closeWizard = () => {
       console.log('close wizard');
     };

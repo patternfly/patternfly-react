@@ -6,6 +6,9 @@ exports[`WizardNav should match snapshot (auto-generated) 1`] = `
     aria-label="string"
     aria-labelledby="string"
     class="pf-c-wizard__nav"
+    data-ouia-component-id="OUIA-Generated-WizardNav-1"
+    data-ouia-component-type="PF4/WizardNav"
+    data-ouia-safe="true"
   >
     <ol
       class="pf-c-wizard__nav-list"

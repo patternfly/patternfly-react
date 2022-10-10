@@ -1,8 +1,9 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface WizardNavProps {
+export interface WizardNavProps extends OUIAProps {
   /** children should be WizardNavItem components */
   children?: any;
   /** Aria-label applied to the nav element */
@@ -20,8 +21,12 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
   isOpen = false,
-  returnList = false
+  returnList = false,
+  ouiaId,
+  ouiaSafe = true
 }: WizardNavProps) => {
+  const ouiaProps = useOUIAProps(WizardNav.displayName, ouiaId, ouiaSafe);
+
   const innerList = <ol className={css(styles.wizardNavList)}>{children}</ol>;
 
   if (returnList) {
@@ -33,6 +38,7 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
       className={css(styles.wizardNav, isOpen && styles.modifiers.expanded)}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
+      {...ouiaProps}
     >
       <ol className={css(styles.wizardNavList)}>{children}</ol>
     </nav>

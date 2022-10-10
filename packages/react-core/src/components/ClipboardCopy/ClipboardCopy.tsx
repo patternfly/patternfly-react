@@ -9,6 +9,7 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { ClipboardCopyButton } from './ClipboardCopyButton';
 import { ClipboardCopyToggle } from './ClipboardCopyToggle';
 import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
   const clipboard = event.currentTarget.parentElement;
@@ -32,7 +33,7 @@ export interface ClipboardCopyState {
   copied: boolean;
 }
 
-export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'>, OUIAProps {
   /** Additional classes added to the clipboard copy container. */
   className?: string;
   /** Tooltip message to display when hover the copy button */
@@ -118,7 +119,8 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     onChange: (): any => undefined,
     textAriaLabel: 'Copyable input',
     toggleAriaLabel: 'Show content',
-    additionalActions: null
+    additionalActions: null,
+    ouiaSafe: true
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -168,6 +170,8 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       position,
       className,
       additionalActions,
+      ouiaId,
+      ouiaSafe,
       ...divProps
     } = this.props;
     const textIdPrefix = 'text-input-';
@@ -183,6 +187,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
           className
         )}
         {...divProps}
+        {...getOUIAProps(ClipboardCopy.displayName, ouiaId, ouiaSafe)}
       >
         {variant === 'inline-compact' && (
           <GenerateId prefix="">
