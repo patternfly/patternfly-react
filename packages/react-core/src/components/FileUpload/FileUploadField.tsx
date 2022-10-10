@@ -12,7 +12,7 @@ import { fileReaderType } from '../../helpers/fileUtils';
  * functionality is not built in by default.
  */
 
-export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElement>, 'value' | 'onChange'> {
+export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElement>, 'value'> {
   /** Flag to allow editing of a text file's contents after it is selected from disk. */
   allowEditingUploadedText?: boolean;
   /** Aria-label for the text area. */
@@ -47,14 +47,6 @@ export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElemen
   isReadOnly?: boolean;
   /** Flag to show if the field is required. */
   isRequired?: boolean;
-  /** A callback for when the text area value changes. */
-  onChange?: (
-    value: string,
-    filename: string,
-    event:
-      | React.ChangeEvent<HTMLTextAreaElement> // User typed in the TextArea
-      | React.MouseEvent<HTMLButtonElement, MouseEvent> // User clicked Clear button
-  ) => void;
   /** Aria-valuetext for the loading spinner. */
   spinnerAriaValueText?: string;
   /** What type of file. Determines what is is expected by the value property (a string for
@@ -95,7 +87,6 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
   type,
   value = '',
   filename = '',
-  onChange = () => {},
   onBrowseButtonClick = () => {},
   onClearButtonClick = () => {},
   onTextAreaClick,
@@ -123,8 +114,7 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
 
   ...props
 }: FileUploadFieldProps) => {
-  const onTextAreaChange = (newValue: string, event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    onChange(newValue, filename, event);
+  const onTextAreaChange = (newValue: string) => {
     onTextChange?.(newValue);
   };
   return (
