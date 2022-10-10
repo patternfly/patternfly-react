@@ -2,52 +2,70 @@
 
 exports[`extra large spinner 1`] = `
 <DocumentFragment>
-  <span
+  <svg
     aria-label="Contents"
     aria-valuetext="Loading..."
     class="pf-c-spinner pf-m-xl"
     role="progressbar"
+    viewBox="0 0 100 100"
   >
-    <span
-      class="pf-c-spinner__clipper"
+    <circle
+      class="pf-c-spinner__path"
+      cx="50"
+      cy="50"
+      fill="none"
+      r="45"
     />
-    <span
-      class="pf-c-spinner__lead-ball"
-    />
-    <span
-      class="pf-c-spinner__tail-ball"
-    />
-  </span>
+  </svg>
 </DocumentFragment>
 `;
 
 exports[`large spinner 1`] = `
 <DocumentFragment>
-  <span
+  <svg
     aria-label="Contents"
     aria-valuetext="Loading..."
     class="pf-c-spinner pf-m-lg"
     role="progressbar"
+    viewBox="0 0 100 100"
   >
-    <span
-      class="pf-c-spinner__clipper"
+    <circle
+      class="pf-c-spinner__path"
+      cx="50"
+      cy="50"
+      fill="none"
+      r="45"
     />
-    <span
-      class="pf-c-spinner__lead-ball"
-    />
-    <span
-      class="pf-c-spinner__tail-ball"
-    />
-  </span>
+  </svg>
 </DocumentFragment>
 `;
 
 exports[`medium spinner 1`] = `
 <DocumentFragment>
-  <span
+  <svg
     aria-label="Contents"
     aria-valuetext="Loading..."
     class="pf-c-spinner pf-m-md"
+    role="progressbar"
+    viewBox="0 0 100 100"
+  >
+    <circle
+      class="pf-c-spinner__path"
+      cx="50"
+      cy="50"
+      fill="none"
+      r="45"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`non-SVG spinner 1`] = `
+<DocumentFragment>
+  <span
+    aria-label="Contents"
+    aria-valuetext="Loading..."
+    class="pf-c-spinner pf-m-xl"
     role="progressbar"
   >
     <span
@@ -65,42 +83,40 @@ exports[`medium spinner 1`] = `
 
 exports[`simple spinner 1`] = `
 <DocumentFragment>
-  <span
+  <svg
     aria-label="Contents"
     aria-valuetext="Loading..."
     class="pf-c-spinner pf-m-xl"
     role="progressbar"
+    viewBox="0 0 100 100"
   >
-    <span
-      class="pf-c-spinner__clipper"
+    <circle
+      class="pf-c-spinner__path"
+      cx="50"
+      cy="50"
+      fill="none"
+      r="45"
     />
-    <span
-      class="pf-c-spinner__lead-ball"
-    />
-    <span
-      class="pf-c-spinner__tail-ball"
-    />
-  </span>
+  </svg>
 </DocumentFragment>
 `;
 
 exports[`small spinner 1`] = `
 <DocumentFragment>
-  <span
+  <svg
     aria-label="Contents"
     aria-valuetext="Loading..."
     class="pf-c-spinner pf-m-sm"
     role="progressbar"
+    viewBox="0 0 100 100"
   >
-    <span
-      class="pf-c-spinner__clipper"
+    <circle
+      class="pf-c-spinner__path"
+      cx="50"
+      cy="50"
+      fill="none"
+      r="45"
     />
-    <span
-      class="pf-c-spinner__lead-ball"
-    />
-    <span
-      class="pf-c-spinner__tail-ball"
-    />
-  </span>
+  </svg>
 </DocumentFragment>
 `;

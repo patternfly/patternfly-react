@@ -180,22 +180,21 @@ exports[`Button isLoading 1`] = `
     <span
       class="pf-c-button__progress"
     >
-      <span
+      <svg
         aria-label="Contents"
         aria-valuetext="Loading"
         class="pf-c-spinner pf-m-md"
         role="progressbar"
+        viewBox="0 0 100 100"
       >
-        <span
-          class="pf-c-spinner__clipper"
+        <circle
+          class="pf-c-spinner__path"
+          cx="50"
+          cy="50"
+          fill="none"
+          r="45"
         />
-        <span
-          class="pf-c-spinner__lead-ball"
-        />
-        <span
-          class="pf-c-spinner__tail-ball"
-        />
-      </span>
+      </svg>
     </span>
     Loading Button
   </button>
@@ -216,22 +215,21 @@ exports[`Button isLoading icon only 1`] = `
     <span
       class="pf-c-button__progress"
     >
-      <span
+      <svg
         aria-label="Contents"
         aria-valuetext="Loading"
         class="pf-c-spinner pf-m-md"
         role="progressbar"
+        viewBox="0 0 100 100"
       >
-        <span
-          class="pf-c-spinner__clipper"
+        <circle
+          class="pf-c-spinner__path"
+          cx="50"
+          cy="50"
+          fill="none"
+          r="45"
         />
-        <span
-          class="pf-c-spinner__lead-ball"
-        />
-        <span
-          class="pf-c-spinner__tail-ball"
-        />
-      </span>
+      </svg>
     </span>
     <div>
       ICON
