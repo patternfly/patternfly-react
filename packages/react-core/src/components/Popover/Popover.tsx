@@ -282,7 +282,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   tippyProps,
   reference,
   hasNoPadding = false,
-  hasAutoWidth = true,
+  hasAutoWidth = false,
   removeFindDomNode = false,
   ...rest
 }: PopoverProps) => {
