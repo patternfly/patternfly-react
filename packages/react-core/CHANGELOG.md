@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.250.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.1...@patternfly/react-core@4.250.2) (2022-10-10)
+
+
+### Bug Fixes
+
+* **Menu:** fixed height issue with drilldown examples ([#8033](https://github.com/patternfly/patternfly-react/issues/8033)) ([c0583b5](https://github.com/patternfly/patternfly-react/commit/c0583b530310b3d89be222e58fe926ecc6dd8d99))
+
+
+
+
+
 ## [4.250.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.0...@patternfly/react-core@4.250.1) (2022-10-05)
 
 **Note:** Version bump only for package @patternfly/react-core
