@@ -26,7 +26,7 @@ export const MenuWithDrilldown: React.FunctionComponent = () => {
   };
 
   const setHeight = (menuId: string, height: number) => {
-    if (menuHeights[menuId] === undefined) {
+    if (menuHeights[menuId] === undefined || (menuId !== 'drilldown-rootMenu' && menuHeights[menuId] !== height)) {
       setMenuHeights({ ...menuHeights, [menuId]: height });
     }
   };
