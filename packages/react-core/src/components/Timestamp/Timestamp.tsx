@@ -127,13 +127,15 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   });
   const defaultTooltipContent = `${utcDateString}${tooltip?.suffix ? ' ' + tooltip.suffix : ' UTC'}`;
 
+  const { dateTime, ...propsWithoutDateTime } = props;
+
   const timestamp = (
     <span
       className={css(styles.timestamp, tooltip && styles.modifiers.helpText, className)}
       {...(tooltip && { tabIndex: 0 })}
-      {...props}
+      {...propsWithoutDateTime}
     >
-      <time className="pf-c-timestamp__text" dateTime={props.dateTime || new Date(date).toISOString()}>
+      <time className="pf-c-timestamp__text" dateTime={dateTime || new Date(date).toISOString()}>
         {!children ? defaultDisplay : children}
       </time>
     </span>
