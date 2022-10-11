@@ -5,7 +5,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import { PaginationOptionsMenu } from '../../PaginationOptionsMenu';
 // any missing imports can usually be resolved by adding them here
-import { ToggleTemplateProps } from '../..';
+import { PaginationToggleTemplateProps } from '../..';
 
 it('PaginationOptionsMenu should match snapshot (auto-generated)', () => {
   const { asFragment } = render(
@@ -26,7 +26,7 @@ it('PaginationOptionsMenu should match snapshot (auto-generated)', () => {
       defaultToFullPage={false}
       perPage={0}
       lastPage={42}
-      toggleTemplate={({ firstIndex, lastIndex, itemCount, itemsTitle }: ToggleTemplateProps) => (
+      toggleTemplate={({ firstIndex, lastIndex, itemCount, itemsTitle }: PaginationToggleTemplateProps) => (
         <React.Fragment>
           <b>
             {firstIndex} - {lastIndex}
