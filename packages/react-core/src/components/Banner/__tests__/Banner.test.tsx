@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Banner } from '../Banner';
-import React from 'react';
-import { render, screen } from '@testing-library/react';
 
 jest.mock('@patternfly/react-icons/dist/esm/icons/check-circle-icon', () => () => 'Check circle icon mock');
 jest.mock('@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon', () => () => 'Exclamation circle icon mock');
@@ -101,58 +99,20 @@ test('Matches the snapshot', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('Renders with the bell icon when variant is not passed and hasStatusIcon is passed', () => {
-  render(<Banner hasStatusIcon>Default banner</Banner>);
+test('Renders with screen reader text by default', () => {
+  render(<Banner>Banner text</Banner>);
 
-  expect(screen.getByText('Bell icon mock')).toBeVisible();
+  expect(screen.getByText('default banner')).toBeInTheDocument();
 });
 
-test('Renders with the bell icon when variant = "default" and hasStatusIcon is passed', () => {
-  render(
-    <Banner variant="default" hasStatusIcon>
-      Default banner
-    </Banner>
-  );
+test('Does not render with screen reader text when screenReaderText = null', () => {
+  render(<Banner screenReaderText={null}>Banner text</Banner>);
 
-  expect(screen.getByText('Bell icon mock')).toBeVisible();
+  expect(screen.queryByText('default banner')).not.toBeInTheDocument();
 });
 
-test('Renders with the info circle icon when variant = "info" and hasStatusIcon is passed', () => {
-  render(
-    <Banner variant="info" hasStatusIcon>
-      Info banner
-    </Banner>
-  );
+test('Renders with custom screen reader text when screenReaderText is passed', () => {
+  render(<Banner screenReaderText="Custom screen reader text">Banner text</Banner>);
 
-  expect(screen.getByText('Info circle icon mock')).toBeVisible();
-});
-
-test('Renders with the exclamation circle icon when variant = "danger" and hasStatusIcon is passed', () => {
-  render(
-    <Banner variant="danger" hasStatusIcon>
-      Danger banner
-    </Banner>
-  );
-
-  expect(screen.getByText('Exclamation circle icon mock')).toBeVisible();
-});
-
-test('Renders with the check circle icon when variant = "success" and hasStatusIcon is passed', () => {
-  render(
-    <Banner variant="success" hasStatusIcon>
-      Success banner
-    </Banner>
-  );
-
-  expect(screen.getByText('Check circle icon mock')).toBeVisible();
-});
-
-test('Renders with the exclamation triangle icon when variant = "warning" and hasStatusIcon is passed', () => {
-  render(
-    <Banner variant="warning" hasStatusIcon>
-      Warning banner
-    </Banner>
-  );
-
-  expect(screen.getByText('Exclamation triangle icon mock')).toBeVisible();
+  expect(screen.getByText('Custom screen reader text')).toBeInTheDocument();
 });
