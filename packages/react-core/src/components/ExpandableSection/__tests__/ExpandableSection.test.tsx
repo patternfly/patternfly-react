@@ -49,7 +49,7 @@ test('Detached ExpandableSection renders successfully', () => {
 
 test('Disclosure ExpandableSection', () => {
   const { asFragment } = render(
-    <ExpandableSection {...props} displaySize="large" isWidthLimited>
+    <ExpandableSection {...props} displaySize="lg" isWidthLimited>
       test{' '}
     </ExpandableSection>
   );

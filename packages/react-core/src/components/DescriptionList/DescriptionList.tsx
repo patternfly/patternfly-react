@@ -31,7 +31,7 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   /** Sets the the default placement of description list groups to fill from top to bottom. */
   isFillColumns?: boolean;
   /** Sets the display size of the descriptions in the description list.*/
-  displaySize?: 'lg' | '2xl';
+  displaySize?: 'default' | 'lg' | '2xl';
   /** Sets the number of columns on the description list at various breakpoints */
   columnModifier?: {
     default?: '1Col' | '2Col' | '3Col';
@@ -90,7 +90,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   isCompact,
   isFluid,
   isFillColumns,
-  displaySize,
+  displaySize = 'default',
   columnModifier,
   autoFitMinModifier,
   termWidth,

@@ -17,7 +17,7 @@ export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
   /** Flag to indicate the accordion had a border */
   isBordered?: boolean;
   /** Display size variant. */
-  displaySize?: 'default' | 'large';
+  displaySize?: 'default' | 'lg';
 }
 
 export const Accordion: React.FunctionComponent<AccordionProps> = ({
@@ -36,7 +36,7 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
       className={css(
         styles.accordion,
         isBordered && styles.modifiers.bordered,
-        displaySize === 'large' && styles.modifiers.displayLg,
+        displaySize === 'lg' && styles.modifiers.displayLg,
         className
       )}
       aria-label={ariaLabel}

@@ -21,8 +21,8 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
    * property's value should match the contenId property of the expandable section toggle sub-component.
    */
   contentId?: string;
-  /** Display size variant. Set to "large" for disclosure styling. */
-  displaySize?: 'default' | 'large';
+  /** Display size variant. Set to "lg" for disclosure styling. */
+  displaySize?: 'default' | 'lg';
   /** Forces active state. */
   isActive?: boolean;
   /** Indicates the expandable section has a detached toggle. */
@@ -193,7 +193,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
           propOrStateIsExpanded && styles.modifiers.expanded,
           isActive && styles.modifiers.active,
           isDetached && styles.modifiers.detached,
-          displaySize === 'large' && styles.modifiers.displayLg,
+          displaySize === 'lg' && styles.modifiers.displayLg,
           isWidthLimited && styles.modifiers.limitWidth,
           isIndented && styles.modifiers.indented,
           variant === ExpandableSectionVariant.truncate && styles.modifiers.truncate,

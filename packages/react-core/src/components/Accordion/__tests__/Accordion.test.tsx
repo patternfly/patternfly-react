@@ -129,7 +129,7 @@ test('Renders without pf-m-display-lg by default', () => {
 });
 
 test('Renders with pf-m-display-lg when displaySize=large', () => {
-  render(<Accordion displaySize="large">Test</Accordion>);
+  render(<Accordion displaySize="lg">Test</Accordion>);
 
   expect(screen.getByText('Test')).toHaveClass('pf-m-display-lg');
 });
