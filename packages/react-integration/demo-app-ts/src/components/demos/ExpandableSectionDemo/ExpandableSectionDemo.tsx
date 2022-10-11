@@ -76,7 +76,7 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
           onToggle={this.onToggleDisclosure}
           isExpanded={isDisclosureExpanded}
           id="disclosure-expandable-section"
-          displaySize="large"
+          displaySize="lg"
           isWidthLimited
         >
           This content is visible only when the component is expanded.
