@@ -4,16 +4,16 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-i
 
 export const ButtonCallToAction: React.FunctionComponent = () => (
   <React.Fragment>
-    <Button variant="primary" isLarge>
+    <Button variant="primary" size="lg">
       Call to action
     </Button>{' '}
-    <Button variant="secondary" isLarge>
+    <Button variant="secondary" size="lg">
       Call to action
     </Button>{' '}
-    <Button variant="tertiary" isLarge>
+    <Button variant="tertiary" size="lg">
       Call to action
     </Button>{' '}
-    <Button variant="link" isLarge>
+    <Button variant="link" size="lg">
       Call to action <ArrowRightIcon />
     </Button>
     <br />
