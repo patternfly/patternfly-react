@@ -22,6 +22,12 @@ export enum ButtonType {
   reset = 'reset'
 }
 
+export enum ButtonSize {
+  default = 'default',
+  sm = 'sm',
+  lg = 'lg'
+}
+
 export interface BadgeCountObject {
   /**  Adds styling to the badge to indicate it has been read */
   isRead?: boolean;
@@ -31,7 +37,7 @@ export interface BadgeCountObject {
   className?: string;
 }
 
-export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'ref'>, OUIAProps {
+export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'ref' | 'size'>, OUIAProps {
   /** Content rendered inside the button */
   children?: React.ReactNode;
   /** Additional classes added to the button */
@@ -58,6 +64,8 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   inoperableEvents?: string[];
   /** Adds inline styling to a link button */
   isInline?: boolean;
+  /** Adds styling which affects the size of the button */
+  size?: 'default' | 'sm' | 'lg';
   /** Sets button type */
   type?: 'button' | 'submit' | 'reset';
   /** Adds button variant styles */
@@ -70,10 +78,6 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   icon?: React.ReactNode | null;
   /** Sets the button tabindex. */
   tabIndex?: number;
-  /** Adds small styling to the button */
-  isSmall?: boolean;
-  /** Adds large styling to the button */
-  isLarge?: boolean;
   /** Adds danger styling to secondary or link button variants */
   isDanger?: boolean;
   /** Forwarded ref */
@@ -99,8 +103,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   spinnerAriaValueText,
   spinnerAriaLabelledBy,
   spinnerAriaLabel,
-  isSmall = false,
-  isLarge = false,
+  size = ButtonSize.default,
   inoperableEvents = ['onClick', 'onKeyPress'],
   isInline = false,
   type = ButtonType.button,
@@ -157,8 +160,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
         isLoading !== null && children !== null && styles.modifiers.progress,
         isLoading && styles.modifiers.inProgress,
-        isSmall && styles.modifiers.small,
-        isLarge && styles.modifiers.displayLg,
+        size === ButtonSize.sm && styles.modifiers.small,
+        size === ButtonSize.lg && styles.modifiers.displayLg,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}

@@ -98,7 +98,7 @@ export const AccordionBordered: React.FunctionComponent = () => {
               Proin dictum imperdiet nibh, quis dapibus nulla. Integer sed tincidunt lectus, sit amet auctor eros.
             </AccordionExpandedContentBody>
             <AccordionExpandedContentBody>
-              <Button variant="link" isLarge isInline>
+              <Button variant="link" size="lg" isInline>
                 Call to action <ArrowRightIcon />
               </Button>
             </AccordionExpandedContentBody>
