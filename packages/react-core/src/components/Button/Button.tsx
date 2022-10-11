@@ -64,8 +64,8 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   inoperableEvents?: string[];
   /** Adds inline styling to a link button */
   isInline?: boolean;
-  /** Adds small or large styling to the button */
-  size?: 'sm' | 'default' | 'lg';
+  /** Adds styling which affects the size of the button */
+  size?: 'default' | 'sm' | 'lg';
   /** Sets button type */
   type?: 'button' | 'submit' | 'reset';
   /** Adds button variant styles */
