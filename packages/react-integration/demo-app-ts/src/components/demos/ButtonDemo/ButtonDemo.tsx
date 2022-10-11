@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonProps, Tooltip } from '@patternfly/react-core';
+import { Button, ButtonProps, ButtonSize, Tooltip } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import '@patternfly/react-styles/css/utilities/Spacing/spacing.css';
@@ -121,10 +121,10 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
             Aria-disabled with tooltip
           </Button>
         </Tooltip>
-        <Button {...this.normalButton} id="normal-btn-12" isSmall>
+        <Button {...this.normalButton} id="normal-btn-12" size={ButtonSize.sm}>
           Small button
         </Button>
-        <Button {...this.normalButton} id="normal-btn-13" isLarge>
+        <Button {...this.normalButton} id="normal-btn-13" size={ButtonSize.lg}>
           Large button
         </Button>
         <Button {...this.normalButton} id="normal-btn-14" variant="warning">

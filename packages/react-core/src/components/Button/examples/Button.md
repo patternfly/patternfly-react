@@ -43,14 +43,14 @@ To indicate that an action is currently unavailable, all button variations can b
 
 ### Small buttons
 
-To fit into tight spaces, primary, secondary, tertiary, danger, and warning button variations can be made smaller using the `isSmall` property.
+To fit into tight spaces, primary, secondary, tertiary, danger, and warning button variations can be made smaller using the `"sm"` value for the `size` property.
 
 ```ts file="./ButtonSmall.tsx"
 ```
 
 ### Call to action (CTA) buttons
 
-CTA buttons and links direct users to complete an action. Primary, secondary, tertiary, and link button variants can be styled as CTAs using the `isLarge` property. 
+CTA buttons and links direct users to complete an action. Primary, secondary, tertiary, and link button variants can be styled as CTAs using the `"lg"` value for the `size` property. 
 
 ```ts file="./ButtonCallToAction.tsx"
 ```
