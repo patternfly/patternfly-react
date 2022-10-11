@@ -16,7 +16,7 @@ import { ReactElement } from 'react';
 import { FocusTrap } from '../../helpers';
 import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
 import { getUniqueId } from '../../helpers/util';
-import { Instance as TippyInstance, Props as TippyProps } from '../../helpers/Popper/DeprecatedTippyTypes';
+import { Instance as TippyInstance } from '../../helpers/Popper/DeprecatedTippyTypes';
 
 export enum PopoverPosition {
   auto = 'auto',
@@ -60,10 +60,6 @@ export interface PopoverProps {
    * bodyContent={hide => <Button onClick={() => hide()}>Close</Button>}
    */
   bodyContent: React.ReactNode | ((hide: () => void) => React.ReactNode);
-  /** @deprecated - no longer used. if you want to constrain the popper to a specific element
-   * use the appendTo prop instead.
-   */
-  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
   /**
    * The reference element to which the popover is relatively placed to. If you cannot wrap
    * the reference with the Popover, you can use the reference prop instead.
@@ -215,8 +211,6 @@ export interface PopoverProps {
   shouldOpen?: (showFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
   /** Flag indicating whether the close button should be shown. */
   showClose?: boolean;
-  /** @deprecated - no longer used. */
-  tippyProps?: Partial<TippyProps>;
   /** Whether to trap focus in the popover. */
   withFocusTrap?: boolean;
   /** The z-index of the popover. */
@@ -265,21 +259,12 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   animationDuration = 300,
   id,
   withFocusTrap: propWithFocusTrap,
-  boundary,
-  tippyProps,
   reference,
   hasNoPadding = false,
   hasAutoWidth = false,
   removeFindDomNode = false,
   ...rest
 }: PopoverProps) => {
-  if (process.env.NODE_ENV !== 'production') {
-    boundary !== undefined &&
-      console.warn(
-        'The Popover boundary prop has been deprecated. If you want to constrain the popper to a specific element use the appendTo prop instead.'
-      );
-    tippyProps !== undefined && console.warn('The Popover tippyProps prop has been deprecated and is no longer used.');
-  }
   // could make this a prop in the future (true | false | 'toggle')
   // const hideOnClick = true;
   const uniqueId = id || getUniqueId();
