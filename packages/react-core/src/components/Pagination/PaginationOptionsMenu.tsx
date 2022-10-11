@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { DropdownItem, DropdownDirection, DropdownWithContext, DropdownContext } from '../Dropdown';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import { OptionsToggle } from './OptionsToggle';
-import { ToggleTemplateProps, ToggleTemplate } from './ToggleTemplate';
+import { PaginationToggleTemplateProps, ToggleTemplate } from './ToggleTemplate';
 import { PerPageOptions, OnPerPageSelect } from './Pagination';
 
 export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivElement> {
@@ -45,7 +45,7 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex,
    * itemCount, and/or itemsTitle props.
    */
-  toggleTemplate: ((props: ToggleTemplateProps) => React.ReactElement) | string;
+  toggleTemplate: ((props: PaginationToggleTemplateProps) => React.ReactElement) | string;
   /** Function called when user selects number of items per page. */
   onPerPageSelect?: OnPerPageSelect;
   /** Label for the English word "of". */

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ToggleTemplate, ToggleTemplateProps } from './ToggleTemplate';
+import { ToggleTemplate, PaginationToggleTemplateProps } from './ToggleTemplate';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
 
@@ -154,7 +154,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex,
    * itemCount, itemsTitle, and/or ofWord props.
    */
-  toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
+  toggleTemplate?: ((props: PaginationToggleTemplateProps) => React.ReactElement) | string;
   /** Position where pagination is rendered. */
   variant?: 'top' | 'bottom' | PaginationVariant;
   /** Id to ideintify widget on page. */
@@ -306,7 +306,13 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       }
     }
 
-    const toggleTemplateProps = { firstIndex, lastIndex, itemCount, itemsTitle: titles.items, ofWord: titles.ofWord };
+    const PaginationToggleTemplateProps = {
+      firstIndex,
+      lastIndex,
+      itemCount,
+      itemsTitle: titles.items,
+      ofWord: titles.ofWord
+    };
 
     return (
       <div
@@ -325,10 +331,14 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       >
         {variant === PaginationVariant.top && (
           <div className={css(styles.paginationTotalItems)}>
-            {toggleTemplate && typeof toggleTemplate === 'string' && fillTemplate(toggleTemplate, toggleTemplateProps)}
+            {toggleTemplate &&
+              typeof toggleTemplate === 'string' &&
+              fillTemplate(toggleTemplate, PaginationToggleTemplateProps)}
             {toggleTemplate &&
               typeof toggleTemplate !== 'string' &&
-              (toggleTemplate as (props: ToggleTemplateProps) => React.ReactElement)(toggleTemplateProps)}
+              (toggleTemplate as (props: PaginationToggleTemplateProps) => React.ReactElement)(
+                PaginationToggleTemplateProps
+              )}
             {!toggleTemplate && (
               <ToggleTemplate
                 firstIndex={firstIndex}
