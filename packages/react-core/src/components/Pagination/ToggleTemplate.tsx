@@ -4,7 +4,7 @@ import * as React from 'react';
  * should be passed into the pagination component's toggleTemplate property.
  */
 
-export interface ToggleTemplateProps {
+export interface PaginationToggleTemplateProps {
   /** The first index of the items being paginated */
   firstIndex?: number;
   /** The last index of the items being paginated */
@@ -17,13 +17,13 @@ export interface ToggleTemplateProps {
   ofWord?: React.ReactNode;
 }
 
-export const ToggleTemplate: React.FunctionComponent<ToggleTemplateProps> = ({
+export const ToggleTemplate: React.FunctionComponent<PaginationToggleTemplateProps> = ({
   firstIndex = 0,
   lastIndex = 0,
   itemCount = 0,
   itemsTitle = 'items',
   ofWord = 'of'
-}: ToggleTemplateProps) => (
+}: PaginationToggleTemplateProps) => (
   <React.Fragment>
     <b>
       {firstIndex} - {lastIndex}
