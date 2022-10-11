@@ -3,19 +3,19 @@ import { Button } from '@patternfly/react-core';
 
 export const ButtonSmall: React.FunctionComponent = () => (
   <React.Fragment>
-    <Button variant="primary" isSmall>
+    <Button variant="primary" size="sm">
       Primary
     </Button>{' '}
-    <Button variant="secondary" isSmall>
+    <Button variant="secondary" size="sm">
       Secondary
     </Button>{' '}
-    <Button variant="tertiary" isSmall>
+    <Button variant="tertiary" size="sm">
       Tertiary
     </Button>{' '}
-    <Button variant="danger" isSmall>
+    <Button variant="danger" size="sm">
       Danger
     </Button>{' '}
-    <Button variant="warning" isSmall>
+    <Button variant="warning" size="sm">
       Warning
     </Button>
     <br />
