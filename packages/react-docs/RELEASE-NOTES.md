@@ -3,7 +3,7 @@ id: Release notes
 section: developer-resources
 ---
 
-## 2022.13 release notes (2022-10-06)
+## 2022.13 release notes (2022-10-11)
 - [@patternfly/react-catalog-view-extension@4.92.26](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.92.26)
 - [@patternfly/react-charts@6.94.7](https://www.npmjs.com/package/@patternfly/react-charts/v/6.94.7)
 - [@patternfly/react-code-editor@4.82.26](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.82.26)
@@ -49,6 +49,8 @@ section: developer-resources
   - Added support for `forwardRef` ([#7995](https://github.com/patternfly/patternfly-react/pull/7995))
 - **Icon:**
   - Added icon component ([#8050](https://github.com/patternfly/patternfly-react/pull/8050))
+- **Menu:**
+  - Fixed height issue with drilldown examples ([#8033](https://github.com/patternfly/patternfly-react/pull/8033))
 - **Modal:**
   - Added component descriptions ([#7979](https://github.com/patternfly/patternfly-react/pull/7979))
 - **Notification badge:**
@@ -130,8 +132,6 @@ section: developer-resources
   - Updated dependency @patternfly/documentation-framework to v1.2.34 ([#8128](https://github.com/patternfly/patternfly-react/pull/8128))
   - Updated deprecated babel-eslint to babel/eslint-parser ([#8139](https://github.com/patternfly/patternfly-react/pull/8139))
   
-
-
 ## 2022.12 release notes (2022-09-15)
 - [@patternfly/react-catalog-view-extension@4.90.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.90.0)
 - [@patternfly/react-charts@6.92.0](https://www.npmjs.com/package/@patternfly/react-charts/v/6.92.0)
