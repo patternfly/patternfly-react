@@ -37,11 +37,6 @@ describe('Card', () => {
     expect(screen.getByText('im a div')).toBeInTheDocument();
   });
 
-  test('card with isHoverable applied ', () => {
-    const { asFragment } = render(<Card isHoverable />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test('card with isCompact applied ', () => {
     const { asFragment } = render(<Card isCompact />);
     expect(asFragment()).toMatchSnapshot();
