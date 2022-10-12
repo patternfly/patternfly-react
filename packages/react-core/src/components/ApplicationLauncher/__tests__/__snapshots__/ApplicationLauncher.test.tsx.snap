@@ -37,7 +37,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
     </button>
     <ul
       aria-labelledby="pf-dropdown-toggle-id-7"
-      class="pf-c-app-launcher__menu"
+      class="pf-c-app-launcher__menu pf-m-static"
       role="menu"
     >
       <li
@@ -184,7 +184,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
     </button>
     <ul
       aria-labelledby="pf-dropdown-toggle-id-5"
-      class="pf-c-app-launcher__menu"
+      class="pf-c-app-launcher__menu pf-m-static"
       role="menu"
     >
       <li
@@ -408,7 +408,7 @@ exports[`ApplicationLauncher expanded 1`] = `
     </button>
     <ul
       aria-labelledby="pf-dropdown-toggle-id-4"
-      class="pf-c-app-launcher__menu"
+      class="pf-c-app-launcher__menu pf-m-static"
       role="menu"
     >
       <li

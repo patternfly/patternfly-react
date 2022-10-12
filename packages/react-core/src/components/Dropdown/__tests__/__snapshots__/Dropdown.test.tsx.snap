@@ -43,7 +43,7 @@ exports[`Dropdown Renders in strict mode 1`] = `
     </button>
     <ul
       aria-labelledby="Dropdown Toggle"
-      class="pf-c-dropdown__menu"
+      class="pf-c-dropdown__menu pf-m-static"
       role="menu"
     >
       <li
@@ -168,7 +168,7 @@ exports[`Dropdown alignment breakpoints 1`] = `
     </button>
     <ul
       aria-labelledby="Dropdown Toggle"
-      class="pf-c-dropdown__menu pf-m-align-left-on-sm pf-m-align-right-on-md pf-m-align-left-on-lg pf-m-align-right-on-xl pf-m-align-left-on-2xl"
+      class="pf-c-dropdown__menu pf-m-align-left-on-sm pf-m-align-right-on-md pf-m-align-left-on-lg pf-m-align-right-on-xl pf-m-align-left-on-2xl pf-m-static"
       role="menu"
     >
       <li
@@ -291,7 +291,7 @@ exports[`Dropdown basic 1`] = `
       </span>
     </button>
     <div
-      class="pf-c-dropdown__menu"
+      class="pf-c-dropdown__menu pf-m-static"
     >
       <div>
         BASIC
@@ -435,7 +435,7 @@ exports[`Dropdown expanded 1`] = `
     </button>
     <ul
       aria-labelledby="Dropdown Toggle"
-      class="pf-c-dropdown__menu"
+      class="pf-c-dropdown__menu pf-m-static"
       role="menu"
     >
       <li
@@ -682,7 +682,7 @@ exports[`KebabToggle basic 1`] = `
       </svg>
     </button>
     <div
-      class="pf-c-dropdown__menu"
+      class="pf-c-dropdown__menu pf-m-static"
     >
       <div>
         BASIC
@@ -793,7 +793,7 @@ exports[`KebabToggle expanded 1`] = `
     </button>
     <ul
       aria-labelledby="Dropdown Toggle"
-      class="pf-c-dropdown__menu"
+      class="pf-c-dropdown__menu pf-m-static"
       role="menu"
     >
       <li

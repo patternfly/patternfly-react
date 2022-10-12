@@ -43,7 +43,7 @@ exports[`Select renders select groups successfully 1`] = `
       </span>
     </button>
     <div
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
     >
       <div
         class="pf-c-select__menu-group"
@@ -375,7 +375,7 @@ exports[`Select single select renders expanded in strict mode successfully 1`] =
     </button>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
       role="listbox"
     >
       <li
@@ -481,7 +481,7 @@ exports[`Select single select renders expanded successfully 1`] = `
     </button>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
       role="listbox"
     >
       <li
@@ -587,7 +587,7 @@ exports[`Select single select renders expanded successfully with custom objects 
     </button>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
       role="listbox"
     >
       <li
@@ -676,7 +676,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       </span>
     </button>
     <div
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
     >
       <div
         class="pf-c-select__menu-group"
@@ -1014,7 +1014,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
     </button>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
       role="listbox"
     >
       <label
@@ -1121,7 +1121,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
     </button>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
       role="listbox"
     >
       <label
@@ -1214,7 +1214,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
       </button>
     </div>
     <div
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
     >
       <fieldset
         aria-label=""
@@ -1337,7 +1337,7 @@ exports[`renders select with favorites successfully 1`] = `
       </span>
     </button>
     <div
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
     >
       <div
         class="pf-c-select__menu-group"
@@ -1762,7 +1762,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
     </div>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
       role="listbox"
     >
       <li
@@ -1977,7 +1977,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
     </div>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
       role="listbox"
     >
       <li
@@ -2179,7 +2179,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
     </div>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
       role="listbox"
     >
       <li
@@ -2291,7 +2291,7 @@ exports[`typeahead select renders selected successfully 1`] = `
     </div>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-c-select__menu pf-m-static"
       role="listbox"
     >
       <li

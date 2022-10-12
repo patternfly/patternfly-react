@@ -43,7 +43,7 @@ exports[`optionsMenu expanded 1`] = `
     </button>
     <ul
       aria-labelledby="expanded-toggle"
-      class="pf-c-options-menu__menu"
+      class="pf-c-options-menu__menu pf-m-static"
       role="menu"
     >
       <section
@@ -401,7 +401,7 @@ exports[`optionsMenu renders in strict mode 1`] = `
     </button>
     <ul
       aria-labelledby="regular-toggle"
-      class="pf-c-options-menu__menu"
+      class="pf-c-options-menu__menu pf-m-static"
       role="menu"
     >
       <section

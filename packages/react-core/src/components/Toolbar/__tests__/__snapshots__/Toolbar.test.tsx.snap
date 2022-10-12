@@ -146,7 +146,7 @@ exports[`Toolbar should render with custom chip content 1`] = `
                 </button>
                 <ul
                   aria-label="Status"
-                  class="pf-c-select__menu"
+                  class="pf-c-select__menu pf-m-static"
                   role="listbox"
                 >
                   <label

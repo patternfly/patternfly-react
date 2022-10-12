@@ -77,7 +77,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
       </span>
     </button>
     <div
-      class="pf-c-context-selector__menu"
+      class="pf-c-context-selector__menu pf-m-static"
       id="render-open"
     >
       <div>
@@ -221,7 +221,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
       </span>
     </button>
     <div
-      class="pf-c-context-selector__menu"
+      class="pf-c-context-selector__menu pf-m-static"
       id="render"
     >
       <div>
