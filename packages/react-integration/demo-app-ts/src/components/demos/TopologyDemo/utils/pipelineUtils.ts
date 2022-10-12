@@ -46,6 +46,7 @@ export const createTask = (options: {
   showContextMenu?: boolean;
   showBadge?: boolean;
   showIcon?: boolean;
+  badgeTooltips?: boolean;
 }): PipelineNodeModel => {
   const width = options.width || DEFAULT_TASK_WIDTH;
   const height = options.height || DEFAULT_TASK_HEIGHT;
@@ -86,7 +87,8 @@ export const createStatusTasks = (
   noLocation?: boolean,
   showContextMenu?: boolean,
   showBadge?: boolean,
-  showIcon?: boolean
+  showIcon?: boolean,
+  badgeTooltips?: boolean
 ): PipelineNodeModel[] =>
   TASK_STATUSES.map((status, index) =>
     createTask({
@@ -100,6 +102,7 @@ export const createStatusTasks = (
       showContextMenu,
       showBadge,
       showIcon,
+      badgeTooltips,
       width: DEFAULT_TASK_WIDTH + (showContextMenu ? 10 : 0) + (showBadge ? 40 : 0)
     })
   );

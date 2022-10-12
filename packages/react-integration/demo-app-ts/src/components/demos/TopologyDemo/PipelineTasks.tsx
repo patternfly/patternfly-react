@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, FlexItem, Radio, ToolbarItem } from '@patternfly/react-core';
+import { Checkbox, Flex, FlexItem, Radio, ToolbarItem } from '@patternfly/react-core';
 import {
   TopologyView,
   Visualization,
@@ -21,11 +21,22 @@ export const PipelineTasks: React.FC = () => {
   const [showBadges, setShowBadges] = React.useState<boolean>(false);
   const [showIcons, setShowIcons] = React.useState<boolean>(false);
   const [selectedIds, setSelectedIds] = React.useState<string[]>();
+  const [badgeTooltips, setBadgeTooltips] = React.useState<boolean>(false);
 
   const controller = useVisualizationController();
 
   React.useEffect(() => {
-    const tasks = createStatusTasks('task', 4, undefined, false, false, showContext, showBadges, showIcons);
+    const tasks = createStatusTasks(
+      'task',
+      4,
+      undefined,
+      false,
+      false,
+      showContext,
+      showBadges,
+      showIcons,
+      badgeTooltips
+    );
     setWhenStatus(tasks);
     const finallyNodes = createFinallyTasks('finally', 2, tasks);
     const finallyGroup = {
@@ -45,7 +56,7 @@ export const PipelineTasks: React.FC = () => {
       nodes: [...tasks, ...finallyNodes, finallyGroup]
     };
     controller.fromModel(model, false);
-  }, [controller, showBadges, showContext, showIcons]);
+  }, [badgeTooltips, controller, showBadges, showContext, showIcons]);
 
   useEventListener<SelectionEventListener>(SELECTION_EVENT, ids => {
     setSelectedIds(ids);
@@ -124,6 +135,14 @@ export const PipelineTasks: React.FC = () => {
               name="hide-context"
               isChecked={!showContext}
               onChange={checked => checked && setShowContext(false)}
+            />
+          </FlexItem>
+          <FlexItem className="pf-u-ml-2xl">
+            <Checkbox
+              id="badge-tips-checkbox"
+              label="Use tooltips for badges"
+              isChecked={badgeTooltips}
+              onChange={setBadgeTooltips}
             />
           </FlexItem>
         </Flex>
