@@ -176,7 +176,6 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       component,
       isGrouped,
       setMenuComponentRef,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       alignments,
       ...props
     } = this.props;
