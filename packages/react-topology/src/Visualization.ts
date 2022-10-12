@@ -17,7 +17,9 @@ import {
   ModelKind,
   LayoutFactory,
   Layout,
-  ViewPaddingSettings
+  ViewPaddingSettings,
+  GRAPH_LAYOUT_END_EVENT,
+  GraphLayoutEndEventListener
 } from './types';
 import defaultElementFactory from './elements/defaultElementFactory';
 import Stateful from './utils/Stateful';
@@ -58,6 +60,8 @@ export class Visualization extends Stateful implements Controller {
   private elementFactories: ElementFactory[] = [defaultElementFactory];
 
   private eventListeners: { [type: string]: EventListener[] } = {};
+
+  private fitToScreenListener: GraphLayoutEndEventListener;
 
   @observable.shallow
   private readonly store = {};
@@ -251,6 +255,20 @@ export class Visualization extends Stateful implements Controller {
     // only update the view padding if given, this makes for ease of turning on/off w/o losing settings
     if (viewPadding !== undefined) {
       this.viewPaddingSettings = viewPadding;
+    }
+  }
+
+  setFitToScreenOnLayout(fitToScreen: boolean, padding: number = 80): void {
+    if (this.fitToScreenListener) {
+      this.removeEventListener(GRAPH_LAYOUT_END_EVENT, this.fitToScreenListener);
+    }
+
+    if (fitToScreen) {
+      this.fitToScreenListener = ({ graph }): void => {
+        graph.fit(padding);
+      };
+      this.addEventListener(GRAPH_LAYOUT_END_EVENT, this.fitToScreenListener);
+      return;
     }
   }
 

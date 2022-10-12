@@ -13,7 +13,8 @@ import {
   PipelineDagreLayout,
   PipelineNodeModel,
   getSpacerNodes,
-  getEdgesFromNodes
+  getEdgesFromNodes,
+  useVisualizationController
 } from '@patternfly/react-topology';
 import '@patternfly/react-styles/css/components/Topology/topology-components.css';
 import withTopologySetup from './utils/withTopologySetup';
@@ -77,6 +78,9 @@ const getModel = (layout: string): Model => {
 export const PipelineLayout = withTopologySetup(() => {
   useLayoutFactory((type: string, graph: Graph): Layout | undefined => new PipelineDagreLayout(graph, { nodesep: 95 }));
   useComponentFactory(pipelineComponentFactory);
+  const controller = useVisualizationController();
+  controller.setFitToScreenOnLayout(true);
+
   // support pan zoom and drag
   useComponentFactory(
     React.useCallback<ComponentFactory>(kind => {
