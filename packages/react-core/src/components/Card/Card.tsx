@@ -12,8 +12,6 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   className?: string;
   /** Sets the base component to render. defaults to article */
   component?: keyof JSX.IntrinsicElements;
-  /** @deprecated to make a card hoverable, use isSelectable or isSelectableRaised. */
-  isHoverable?: boolean;
   /** Modifies the card to include compact styling. Should not be used with isLarge. */
   isCompact?: boolean;
   /** Modifies the card to include selectable styling */
@@ -70,7 +68,6 @@ export const Card: React.FunctionComponent<CardProps> = ({
   id = '',
   className = '',
   component = 'article',
-  isHoverable = false,
   isCompact = false,
   isSelectable = false,
   isSelectableRaised = false,
@@ -107,7 +104,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
     if (isSelectableRaised) {
       return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
     }
-    if (isSelectable || isHoverable) {
+    if (isSelectable) {
       return css(styles.modifiers.selectable, isSelected && styles.modifiers.selected);
     }
     return '';
