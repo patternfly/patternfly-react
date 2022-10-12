@@ -101,7 +101,6 @@ export class Page extends React.Component<PageProps, PageState> {
     isManagedSidebar: false,
     isBreadcrumbWidthLimited: false,
     defaultManagedSidebarIsOpen: true,
-    onPageResize: (): void => null,
     mainTabIndex: -1,
     isNotificationDrawerExpanded: false,
     onNotificationDrawerExpand: () => null,
