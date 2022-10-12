@@ -266,7 +266,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isInputFilterPersisted: false,
     isCreateSelectOptionObject: false,
     shouldResetOnSelect: true,
-    isFlipEnabled: false,
+    isFlipEnabled: true,
     removeFindDomNode: false
   };
 
@@ -1260,9 +1260,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     const innerMenu = (
       <SelectMenu
-        // This removes the `position: absolute` styling from the `.pf-c-select__menu`
-        // allowing the menu to flip correctly
-        {...(isFlipEnabled && { style: { position: 'revert' } })}
+        className={css(isFlipEnabled && styles.modifiers.static)}
         {...props}
         isGrouped={isGrouped}
         selected={selections}

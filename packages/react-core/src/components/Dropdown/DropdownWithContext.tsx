@@ -30,7 +30,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     onSelect: (): void => undefined,
     autoFocus: true,
     menuAppendTo: 'inline',
-    isFlipEnabled: false
+    isFlipEnabled: true
   };
 
   constructor(props: DropdownProps & OUIAProps) {
@@ -99,9 +99,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
           const BaseComponent = baseComponent as any;
           const menuContainer = (
             <DropdownMenu
-              // This removes the `position: absolute` styling from the `.pf-c-dropdown__menu`
-              // allowing the menu to flip correctly
-              {...(isFlipEnabled && { style: { position: 'revert', minWidth: 'min-content' } })}
+              className={css(isFlipEnabled && styles.modifiers.static)}
               setMenuComponentRef={this.setMenuComponentRef}
               component={component}
               isOpen={isOpen}
