@@ -14,7 +14,7 @@ export const AccordionBordered: React.FunctionComponent = () => {
   const [expanded, setExpanded] = React.useState('bordered-toggle4');
   const [isDisplayLarge, setIsDisplayLarge] = React.useState(false);
 
-  const displaySize = isDisplayLarge ? 'large' : 'default';
+  const displaySize = isDisplayLarge ? 'lg' : 'default';
   const onToggle = (id: string) => {
     if (id === expanded) {
       setExpanded('');
@@ -124,7 +124,7 @@ export const AccordionBordered: React.FunctionComponent = () => {
           label="Display size large"
           isChecked={isDisplayLarge}
           onChange={setIsDisplayLarge}
-          aria-label="show displlay large variation checkbox"
+          aria-label="show display large variation checkbox"
           id="toggle-display-lg"
           name="toggle-display-lg"
         />
