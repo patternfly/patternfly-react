@@ -23,7 +23,6 @@ export * from './ToolbarDemo/ToolbarDemo';
 export * from './DescriptionListDemo/DescriptionListDemo';
 export * from './DescriptionListDemo/DescriptionListBreakpointsDemo';
 export * from './ToolbarDemo/ToolbarVisibilityDemo';
-export * from './ToolbarDemo/ToolbarVisiblityDemo';
 export * from './DrawerDemo/DrawerDemo';
 export * from './DrawerDemo/DrawerResizeDemo';
 export * from './DropdownDemo/DropdownDemo';
