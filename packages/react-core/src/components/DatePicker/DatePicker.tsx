@@ -6,9 +6,10 @@ import { TextInput, TextInputProps } from '../TextInput/TextInput';
 import { Popover, PopoverProps } from '../Popover/Popover';
 import { InputGroup } from '../InputGroup/InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
-import { CalendarMonth, CalendarFormat, isValidDate } from '../CalendarMonth';
+import { CalendarMonth, CalendarFormat } from '../CalendarMonth';
 import { useImperativeHandle } from 'react';
 import { KeyTypes } from '../../helpers';
+import { isValidDate } from '../../helpers/datetimeUtils';
 
 /** The main date picker component. */
 
