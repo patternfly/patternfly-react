@@ -4,7 +4,7 @@ exports[`Page Check dark page against snapshot 1`] = `
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
@@ -65,7 +65,7 @@ exports[`Page Check page horizontal layout example against snapshot 1`] = `
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
@@ -129,7 +129,7 @@ exports[`Page Check page to verify breadcrumb is created - PageBreadcrumb syntax
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
@@ -296,7 +296,7 @@ exports[`Page Check page to verify breadcrumb is created 1`] = `
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
@@ -463,7 +463,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
@@ -749,7 +749,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
@@ -1040,7 +1040,7 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
@@ -1219,7 +1219,7 @@ exports[`Page Check page to verify skip to content points to main content region
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     data-testid="page-test-id"
     id="PageId"
   >
@@ -1394,7 +1394,7 @@ exports[`Page Check page vertical layout example against snapshot 1`] = `
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
@@ -1455,7 +1455,7 @@ exports[`Page Sticky bottom breadcrumb on all height breakpoints - PageBreadcrum
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
@@ -1622,7 +1622,7 @@ exports[`Page Verify sticky bottom breadcrumb on all height breakpoints 1`] = `
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
@@ -1789,7 +1789,7 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints - PageBread
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
@@ -1956,7 +1956,7 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints 1`] = `
 <DocumentFragment>
   <div
     aria-label="Page layout"
-    class="pf-c-page pf-m-resize-observer pf-m-breakpoint-default pf-m-height-breakpoint-sm my-page-class"
+    class="pf-c-page my-page-class"
     id="PageId"
   >
     <header
