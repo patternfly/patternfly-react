@@ -560,3 +560,35 @@ test('applies focus styling to the create option when reached via keyboard navig
 
   expect(createOption.parentElement).toHaveClass('pf-m-focus');
 });
+
+test('appends create option to list of options', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <Select variant={SelectVariant.typeahead} onToggle={() => {}} isOpen isCreatable>
+      {selectOptions}
+    </Select>
+  );
+
+  const input = screen.getByRole('textbox');
+  await user.type(input, `m`);
+
+  const createOption = screen.getAllByRole('option')[3];
+  expect(createOption).toHaveTextContent('Create "m"');
+});
+
+test('prepends create option to list of options if isCreateOptionOnTop flag is set', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <Select variant={SelectVariant.typeahead} onToggle={() => {}} isOpen isCreateOptionOnTop isCreatable>
+      {selectOptions}
+    </Select>
+  );
+
+  const input = screen.getByRole('textbox');
+  await user.type(input, `m`);
+
+  const createOption = screen.getAllByRole('option')[0];
+  expect(createOption).toHaveTextContent('Create "m"');
+});
