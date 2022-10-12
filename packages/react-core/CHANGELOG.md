@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.250.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.4...@patternfly/react-core@4.250.5) (2022-10-12)
+
+
+### Bug Fixes
+
+* **Dropdown next:** Add support for forward ref and updated docs. ([#8142](https://github.com/patternfly/patternfly-react/issues/8142)) ([423dd67](https://github.com/patternfly/patternfly-react/commit/423dd67d0d81910e195722d07a3de3340eba4443))
+
+
+
+
+
 ## [4.250.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.3...@patternfly/react-core@4.250.4) (2022-10-12)
 
 **Note:** Version bump only for package @patternfly/react-core
