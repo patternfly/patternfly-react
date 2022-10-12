@@ -23,9 +23,11 @@ export interface DropdownProps extends MenuProps {
   isScrollable?: boolean;
   /** Min width of the menu. */
   minWidth?: string;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<any>;
 }
 
-export const Dropdown: React.FunctionComponent<DropdownProps> = ({
+const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   children,
   className,
   onSelect,
@@ -35,13 +37,14 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   isPlain,
   isScrollable,
   minWidth,
+  innerRef,
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
   const containerRef = React.useRef<HTMLDivElement>();
 
-  const menuRef = (props.innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
+  const menuRef = (innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
   React.useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       if (!isOpen && toggleRef.current?.contains(event.target as Node)) {
@@ -112,4 +115,8 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
     </div>
   );
 };
+
+export const Dropdown = React.forwardRef((props: DropdownProps, ref: React.Ref<any>) => (
+  <DropdownBase innerRef={ref} {...props} />
+));
 Dropdown.displayName = 'Dropdown';
