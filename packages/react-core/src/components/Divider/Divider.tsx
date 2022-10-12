@@ -14,8 +14,6 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
   className?: string;
   /** The component type to use */
   component?: 'hr' | 'li' | 'div';
-  /** @deprecated Use `orientation` instead. Flag to indicate the divider is vertical (must be in a flex layout) */
-  isVertical?: boolean;
   /** Insets at various breakpoints. */
   inset?: {
     default?: 'insetNone' | 'insetXs' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl' | 'inset3xl';
@@ -39,7 +37,6 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
 export const Divider: React.FunctionComponent<DividerProps> = ({
   className,
   component = DividerVariant.hr,
-  isVertical = false,
   inset,
   orientation,
   ...props
@@ -50,7 +47,6 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
     <Component
       className={css(
         styles.divider,
-        isVertical && styles.modifiers.vertical,
         formatBreakpointMods(inset, styles),
         formatBreakpointMods(orientation, styles),
         className
