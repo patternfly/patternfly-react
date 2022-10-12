@@ -47,7 +47,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
       props: {
         isEditable: true,
         editableProps: {
-          'aria-label': 'label editable text'
+          'aria-label': 'Editable label with text Label 3'
         }
       },
       id: 6

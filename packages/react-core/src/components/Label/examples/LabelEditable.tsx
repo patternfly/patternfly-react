@@ -46,7 +46,7 @@ export const LabelEditable: React.FunctionComponent = () => {
         onEditComplete={onCompactEditComplete}
         isEditable
         editableProps={{
-          'aria-label': `Editable compact label with text ${labelText}`,
+          'aria-label': `Editable compact label with text ${compactLabelText}`,
           id: 'compact-editable-label'
         }}
       >
