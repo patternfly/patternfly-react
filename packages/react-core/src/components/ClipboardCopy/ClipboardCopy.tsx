@@ -94,6 +94,14 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       expanded: this.props.isExpanded,
       copied: false
     };
+
+    if (this.props.switchDelay !== undefined) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'The ClipboardCopy switchDelay prop has been deprecated. ' +
+        'The tooltip message will switch back to the hover tip as soon as the tooltip is hidden.'
+      );
+    }
   }
 
   static defaultProps: PickOptional<ClipboardCopyProps> = {
@@ -107,7 +115,6 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     maxWidth: '150px',
     exitDelay: 1500,
     entryDelay: 300,
-    switchDelay: 2000,
     onCopy: clipboardCopyFunc,
     onChange: (): any => undefined,
     textAriaLabel: 'Copyable input',

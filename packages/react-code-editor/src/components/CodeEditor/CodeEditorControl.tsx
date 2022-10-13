@@ -61,6 +61,46 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
 }: CodeEditorControlProps) => {
   const context = React.useContext(CodeEditorContext);
 
+  if (entryDelay !== undefined) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'The CodeEditorControl entryDelay prop has been deprecated. ' +
+      'Pass the entryDelay via the tooltipProps prop instead.'
+    );
+  }
+
+  if (exitDelay !== undefined) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'The CodeEditorControl exitDelay prop has been deprecated. ' +
+      'Pass the exitDelay via the tooltipProps prop instead.'
+    );
+  }
+
+  if (maxWidth !== undefined) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'The CodeEditorControl maxWidth prop has been deprecated. ' +
+      'Pass the maxWidth via the tooltipProps prop instead.'
+    );
+  }
+
+  if (position !== undefined) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'The CodeEditorControl position prop has been deprecated. ' +
+      'Pass the position via the tooltipProps prop instead.'
+    );
+  }
+
+  if (toolTipText !== undefined) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'The CodeEditorControl toolTipText prop has been deprecated. ' +
+      'Pass the toolTipText by setting the content field in tooltipProps prop instead.'
+    );
+  }
+
   const onCustomClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     onClick(context.code, event);
   };
