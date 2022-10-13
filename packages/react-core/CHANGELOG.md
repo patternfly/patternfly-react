@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.250.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.7...@patternfly/react-core@4.250.8) (2022-10-13)
+
+
+### Bug Fixes
+
+* **Slider:** correct tab order when input is above thumb ([#8190](https://github.com/patternfly/patternfly-react/issues/8190)) ([3a8b500](https://github.com/patternfly/patternfly-react/commit/3a8b500ff1f68dab5b34721186afe01147c74637))
+
+
+
+
+
 ## [4.250.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.6...@patternfly/react-core@4.250.7) (2022-10-12)
 
 **Note:** Version bump only for package @patternfly/react-core
