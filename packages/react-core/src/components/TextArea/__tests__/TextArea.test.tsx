@@ -41,29 +41,13 @@ test('Renders text area with required attribute using isRequired', () => {
   expect(screen.getByRole('textbox')).toBeRequired();
 });
 
-test('Renders text area with required attribute using required', () => {
-  render(<TextArea aria-label="required textarea" required />);
-
-  expect(screen.getByRole('textbox')).toBeRequired();
-});
-
 test('Renders disabled text area using isDisabled', () => {
   render(<TextArea aria-label="is disabled textarea" isDisabled />);
   expect(screen.getByRole('textbox')).toBeDisabled();
 });
 
-test('Renders disabled text area using disabled', () => {
-  render(<TextArea aria-label="disabled textarea" disabled />);
-  expect(screen.getByRole('textbox')).toBeDisabled();
-});
-
 test('Renders read only text area using readOnlyVariant', () => {
   render(<TextArea aria-label="is read only textarea" readOnlyVariant={'default'} />);
-  expect(screen.getByRole('textbox')).toHaveAttribute('readonly');
-});
-
-test('Renders read only text area using readOnly', () => {
-  render(<TextArea aria-label="read only textarea" readOnly />);
   expect(screen.getByRole('textbox')).toHaveAttribute('readonly');
 });
 
