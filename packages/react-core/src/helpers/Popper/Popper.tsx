@@ -181,7 +181,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }
   }, [reference]);
   React.useEffect(() => {
-    // When the popperRef is defined or the popper visiblity changes, ensure the popper element is up to date
+    // When the popperRef is defined or the popper visibility changes, ensure the popper element is up to date
     if (popperRef) {
       if ((popperRef as React.RefObject<any>).current) {
         setPopperElement((popperRef as React.RefObject<any>).current);

@@ -22,14 +22,6 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** @deprecated prop misspelled */
-  visiblity?: {
-    default?: 'hidden' | 'visible';
-    md?: 'hidden' | 'visible';
-    lg?: 'hidden' | 'visible';
-    xl?: 'hidden' | 'visible';
-    '2xl'?: 'hidden' | 'visible';
-  };
   /** Alignment at various breakpoints. */
   alignment?: {
     default?: 'alignRight' | 'alignLeft';
@@ -69,7 +61,6 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
       toggleIcon,
       variant,
       visibility,
-      visiblity,
       breakpoint,
       alignment,
       spacer,
@@ -82,14 +73,6 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
     if (!breakpoint && !toggleIcon) {
       // eslint-disable-next-line no-console
       console.error('ToolbarToggleGroup will not be visible without a breakpoint or toggleIcon.');
-    }
-
-    if (visiblity !== undefined) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        'The ToolbarToggleGroup visiblity prop has been deprecated. ' +
-          'Please use the correctly spelled visibility prop instead.'
-      );
     }
 
     return (
@@ -123,7 +106,7 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                         variant &&
                           styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
                         formatBreakpointMods(breakpointMod, styles, '', getBreakpoint(width)),
-                        formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width)),
+                        formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
                         formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
                         formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
                         formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),

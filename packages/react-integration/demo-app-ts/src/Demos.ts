@@ -498,11 +498,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ToolbarVisibilityDemo
   },
   {
-    id: 'toolbar-visiblity-demo',
-    name: 'Toolbar Visiblity Demo (Deprecated)',
-    componentType: Examples.ToolbarVisiblityDemo
-  },
-  {
     id: 'tooltip-demo',
     name: 'Tooltip Demo',
     componentType: Examples.TooltipDemo
