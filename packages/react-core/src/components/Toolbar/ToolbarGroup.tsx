@@ -23,14 +23,6 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** @deprecated prop misspelled */
-  visiblity?: {
-    default?: 'hidden' | 'visible';
-    md?: 'hidden' | 'visible';
-    lg?: 'hidden' | 'visible';
-    xl?: 'hidden' | 'visible';
-    '2xl'?: 'hidden' | 'visible';
-  };
   /** Alignment at various breakpoints. */
   alignment?: {
     default?: 'alignRight' | 'alignLeft';
@@ -63,26 +55,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
 
 class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
   render() {
-    const {
-      visibility,
-      visiblity,
-      alignment,
-      spacer,
-      spaceItems,
-      className,
-      variant,
-      children,
-      innerRef,
-      ...props
-    } = this.props;
-
-    if (visiblity !== undefined) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        'The ToolbarGroup visiblity prop has been deprecated. ' +
-          'Please use the correctly spelled visibility prop instead.'
-      );
-    }
+    const { visibility, alignment, spacer, spaceItems, className, variant, children, innerRef, ...props } = this.props;
 
     return (
       <PageContext.Consumer>
@@ -91,7 +64,7 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
             className={css(
               styles.toolbarGroup,
               variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
-              formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
               formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
               formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
               formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
