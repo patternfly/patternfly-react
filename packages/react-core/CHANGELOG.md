@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.251.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.8...@patternfly/react-core@4.251.0) (2022-10-13)
+
+
+### Features
+
+* **label+labelGroup:** update aria-labels to include label text ([#8192](https://github.com/patternfly/patternfly-react/issues/8192)) ([f99a34d](https://github.com/patternfly/patternfly-react/commit/f99a34d503699d169cc2376841ec48fc9eb66bad))
+
+
+
+
+
 ## [4.250.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.7...@patternfly/react-core@4.250.8) (2022-10-13)
 
 
