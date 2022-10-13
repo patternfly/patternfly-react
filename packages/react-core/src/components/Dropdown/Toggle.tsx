@@ -35,8 +35,6 @@ export interface ToggleProps {
   isPlain?: boolean;
   /** Display the toggle in text only mode */
   isText?: boolean;
-  /** @deprecated Use `toggleVariant` instead. Display the toggle with a primary button style */
-  isPrimary?: boolean;
   /** Style the toggle as a child of a split button */
   isSplitButton?: boolean;
   /** Alternate styles for the dropdown toggle button */
@@ -64,7 +62,6 @@ export class Toggle extends React.Component<ToggleProps> {
     isDisabled: false,
     isPlain: false,
     isText: false,
-    isPrimary: false,
     isSplitButton: false,
     onToggle: () => {},
     onEnter: () => {},
@@ -138,7 +135,6 @@ export class Toggle extends React.Component<ToggleProps> {
       isDisabled,
       isPlain,
       isText,
-      isPrimary,
       isSplitButton,
       toggleVariant,
       onToggle,
@@ -166,7 +162,6 @@ export class Toggle extends React.Component<ToggleProps> {
               isActive && styles.modifiers.active,
               isPlain && styles.modifiers.plain,
               isText && styles.modifiers.text,
-              isPrimary && styles.modifiers.primary,
               toggleVariant && buttonVariantStyles[toggleVariant],
               className
             )}
