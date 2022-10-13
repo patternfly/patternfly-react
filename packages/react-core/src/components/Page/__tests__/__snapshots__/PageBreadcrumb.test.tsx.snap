@@ -23,8 +23,7 @@ exports[`page breadcrumb Verify bottom shadow 1`] = `
 exports[`page breadcrumb Verify bottom sticky 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-breadcrumb"
-    sticky="bottom"
+    class="pf-c-page__main-breadcrumb pf-m-sticky-bottom"
   >
     test
   </section>
@@ -69,8 +68,7 @@ exports[`page breadcrumb Verify top shadow 1`] = `
 exports[`page breadcrumb Verify top sticky 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-breadcrumb"
-    sticky="top"
+    class="pf-c-page__main-breadcrumb pf-m-sticky-top"
   >
     test
   </section>

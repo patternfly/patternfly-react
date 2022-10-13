@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Page/page';
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, Mods } from '../../helpers/util';
 import { PageContext } from './PageContext';
 
 export interface PageBreadcrumbProps extends React.HTMLProps<HTMLElement> {
@@ -54,7 +54,7 @@ export const PageBreadcrumb = ({
     <section
       className={css(
         styles.pageMainBreadcrumb,
-        formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
+        formatBreakpointMods(stickyOnBreakpoint as Mods, styles, 'sticky-', getVerticalBreakpoint(height), true),
         isWidthLimited && styles.modifiers.limitWidth,
         hasShadowTop && styles.modifiers.shadowTop,
         hasShadowBottom && styles.modifiers.shadowBottom,

@@ -12,11 +12,11 @@ describe('page navigation', () => {
     expect(asFragment()).toMatchSnapshot();
   });
   test('Verify top sticky', () => {
-    const { asFragment } = render(<PageNavigation sticky="top">test</PageNavigation>);
+    const { asFragment } = render(<PageNavigation stickyOnBreakpoint={{ default: 'top' }}>test</PageNavigation>);
     expect(asFragment()).toMatchSnapshot();
   });
   test('Verify bottom sticky', () => {
-    const { asFragment } = render(<PageNavigation sticky="bottom">test</PageNavigation>);
+    const { asFragment } = render(<PageNavigation stickyOnBreakpoint={{ default: 'bottom' }}>test</PageNavigation>);
     expect(asFragment()).toMatchSnapshot();
   });
   test('Verify top shadow', () => {

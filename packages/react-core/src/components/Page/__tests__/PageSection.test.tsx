@@ -65,12 +65,12 @@ test('Check page section with fill and no padding example against snapshot', () 
 });
 
 test('Verify page section top sticky', () => {
-  const { asFragment } = render(<PageSection sticky="top">test</PageSection>);
+  const { asFragment } = render(<PageSection stickyOnBreakpoint={{ default: 'top' }}>test</PageSection>);
   expect(asFragment()).toMatchSnapshot();
 });
 
 test('Verify page section bottom sticky', () => {
-  const { asFragment } = render(<PageSection sticky="bottom">test</PageSection>);
+  const { asFragment } = render(<PageSection stickyOnBreakpoint={{ default: 'bottom' }}>test</PageSection>);
   expect(asFragment()).toMatchSnapshot();
 });
 
