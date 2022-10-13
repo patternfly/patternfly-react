@@ -25,8 +25,6 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   navToggleId?: string;
   /** True if the side nav is shown  */
   isNavOpen?: boolean;
-  /** This prop is no longer managed through PageHeader but in the Page component. */
-  isManagedSidebar?: boolean;
   /** Sets the value for role on the <main> element */
   role?: string;
   /** Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */
@@ -43,7 +41,6 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   headerTools = null as React.ReactNode,
   topNav = null as React.ReactNode,
   isNavOpen = true,
-  isManagedSidebar: deprecatedIsManagedSidebar = undefined,
   role = undefined as string,
   showNavToggle = false,
   navToggleId = 'nav-toggle',
@@ -53,11 +50,6 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   ...props
 }: PageHeaderProps) => {
   const LogoComponent = logoComponent as any;
-  if ([false, true].includes(deprecatedIsManagedSidebar)) {
-    console.warn(
-      'isManagedSidebar is deprecated in the PageHeader component. To make the sidebar toggle uncontrolled, pass this prop in the Page component'
-    );
-  }
   return (
     <PageContextConsumer>
       {({ isManagedSidebar, onNavToggle: managedOnNavToggle, isNavOpen: managedIsNavOpen }: PageContextProps) => {

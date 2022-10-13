@@ -8,11 +8,11 @@ describe('page group', () => {
     expect(asFragment()).toMatchSnapshot();
   });
   test('Verify top sticky', () => {
-    const { asFragment } = render(<PageGroup sticky="top">test</PageGroup>);
+    const { asFragment } = render(<PageGroup stickyOnBreakpoint={{ default: 'top' }}>test</PageGroup>);
     expect(asFragment()).toMatchSnapshot();
   });
   test('Verify bottom sticky', () => {
-    const { asFragment } = render(<PageGroup sticky="bottom">test</PageGroup>);
+    const { asFragment } = render(<PageGroup stickyOnBreakpoint={{ default: 'bottom' }}>test</PageGroup>);
     expect(asFragment()).toMatchSnapshot();
   });
   test('Verify top shadow', () => {

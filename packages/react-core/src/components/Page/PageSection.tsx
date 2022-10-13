@@ -44,8 +44,6 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'padding' | 'noPadding';
     '2xl'?: 'padding' | 'noPadding';
   };
-  /**  @deprecated Use the stickyOnBreakpoint prop instead - Modifier indicating if the PageBreadcrumb is sticky to the top or bottom */
-  sticky?: 'top' | 'bottom';
   /** Modifier indicating if the PageBreadcrumb is sticky to the top or bottom at various breakpoints */
   stickyOnBreakpoint?: {
     default?: 'top' | 'bottom';
@@ -94,7 +92,6 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   isFilled,
   isWidthLimited = false,
   isCenterAligned = false,
-  sticky,
   stickyOnBreakpoint,
   hasShadowTop = false,
   hasShadowBottom = false,
@@ -126,8 +123,6 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
         isFilled === true && styles.modifiers.fill,
         isWidthLimited && styles.modifiers.limitWidth,
         isWidthLimited && isCenterAligned && type !== PageSectionTypes.subNav && styles.modifiers.alignCenter,
-        sticky === 'top' && styles.modifiers.stickyTop,
-        sticky === 'bottom' && styles.modifiers.stickyBottom,
         hasShadowTop && styles.modifiers.shadowTop,
         hasShadowBottom && styles.modifiers.shadowBottom,
         hasOverflowScroll && styles.modifiers.overflowScroll,
