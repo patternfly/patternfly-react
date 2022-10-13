@@ -26,5 +26,7 @@ The following example also passes in the `screenReaderText` property with a valu
 
 When a banner is used to convey status, it is advised to pass in an icon inside the banner to convey the status in a way besides just color.
 
+In the following example, a flex layout is used inside the banner content to show one possible way to create spacing between the icons and banner text.
+
 ```ts file="./BannerStatus.tsx"
 ```

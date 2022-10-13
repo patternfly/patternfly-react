@@ -1,5 +1,5 @@
 import React from 'react';
-import { Banner } from '@patternfly/react-core';
+import { Banner, Flex, FlexItem } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
@@ -9,23 +9,48 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 export const BannerStatus: React.FunctionComponent = () => (
   <>
     <Banner>
-      <BellIcon /> Default banner
+      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+        <FlexItem>
+          <BellIcon />
+        </FlexItem>
+        <FlexItem>Default banner</FlexItem>
+      </Flex>
     </Banner>
     <br />
     <Banner variant="info">
-      <InfoCircleIcon /> Info banner
+      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+        <FlexItem>
+          <InfoCircleIcon />
+        </FlexItem>
+        <FlexItem>Info banner</FlexItem>
+      </Flex>
     </Banner>
     <br />
     <Banner variant="danger">
-      <ExclamationCircleIcon /> Danger banner
+      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+        <FlexItem>
+          <ExclamationCircleIcon />
+        </FlexItem>
+        <FlexItem>Danger banner</FlexItem>
+      </Flex>
     </Banner>
     <br />
     <Banner variant="success">
-      <CheckCircleIcon /> Success banner
+      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+        <FlexItem>
+          <CheckCircleIcon />
+        </FlexItem>
+        <FlexItem>Success banner</FlexItem>
+      </Flex>
     </Banner>
     <br />
     <Banner variant="warning">
-      <ExclamationTriangleIcon /> Warning banner
+      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+        <FlexItem>
+          <ExclamationTriangleIcon />
+        </FlexItem>
+        <FlexItem>Warning banner</FlexItem>
+      </Flex>
     </Banner>
   </>
 );

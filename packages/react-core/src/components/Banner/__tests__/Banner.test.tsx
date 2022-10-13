@@ -2,14 +2,6 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Banner } from '../Banner';
 
-jest.mock('@patternfly/react-icons/dist/esm/icons/check-circle-icon', () => () => 'Check circle icon mock');
-jest.mock('@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon', () => () => 'Exclamation circle icon mock');
-jest.mock('@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon', () => () =>
-  'Exclamation triangle icon mock'
-);
-jest.mock('@patternfly/react-icons/dist/esm/icons/info-circle-icon', () => () => 'Info circle icon mock');
-jest.mock('@patternfly/react-icons/dist/esm/icons/bell-icon', () => () => 'Bell icon mock');
-
 test('Renders without children', () => {
   render(
     <div data-testid="banner">
@@ -79,6 +71,12 @@ test('Renders custom screenReaderText passed via prop', () => {
   expect(screen.getByText('Custom screen reader text')).toBeInTheDocument();
 });
 
+test('Does not render with screen reader text when screenReaderText = null', () => {
+  render(<Banner screenReaderText={null}>Banner text</Banner>);
+
+  expect(screen.queryByText('default banner')).not.toBeInTheDocument();
+});
+
 test('Renders without pf-m-sticky by default', () => {
   render(<Banner>Test</Banner>);
   expect(screen.getByText('Test')).not.toHaveClass('pf-m-sticky');
@@ -97,22 +95,4 @@ test('Renders with inherited element props spread to the component', () => {
 test('Matches the snapshot', () => {
   const { asFragment } = render(<Banner>Test</Banner>);
   expect(asFragment()).toMatchSnapshot();
-});
-
-test('Renders with screen reader text by default', () => {
-  render(<Banner>Banner text</Banner>);
-
-  expect(screen.getByText('default banner')).toBeInTheDocument();
-});
-
-test('Does not render with screen reader text when screenReaderText = null', () => {
-  render(<Banner screenReaderText={null}>Banner text</Banner>);
-
-  expect(screen.queryByText('default banner')).not.toBeInTheDocument();
-});
-
-test('Renders with custom screen reader text when screenReaderText is passed', () => {
-  render(<Banner screenReaderText="Custom screen reader text">Banner text</Banner>);
-
-  expect(screen.getByText('Custom screen reader text')).toBeInTheDocument();
 });
