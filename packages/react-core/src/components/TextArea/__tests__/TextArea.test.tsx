@@ -3,7 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { TextArea, TextAreaBase } from '../TextArea';
+import { TextArea } from '../TextArea';
 import { ValidatedOptions } from '../../../helpers/constants';
 
 const props = {
@@ -12,10 +12,10 @@ const props = {
 };
 
 test('textarea input passes value and event to onChange handler', async () => {
-  render(<TextAreaBase {...props} value="" aria-label="test textarea" />);
+  render(<TextArea {...props} value="" aria-label="test textarea" />);
 
   const user = userEvent.setup();
-  await user.type(screen.getByLabelText('test textarea'), 'a');
+  await user.type(screen.getByRole('textbox'), 'a');
 
   expect(props.onChange).toHaveBeenCalledWith('a', expect.any(Object));
 });
@@ -41,14 +41,35 @@ test('Renders text area with required attribute using isRequired', () => {
   expect(screen.getByRole('textbox')).toBeRequired();
 });
 
+test('Text area is not required by default', () => {
+  render(<TextArea aria-label="not required textarea" />);
+
+  expect(screen.getByRole('textbox')).not.toBeRequired();
+});
+
 test('Renders disabled text area using isDisabled', () => {
   render(<TextArea aria-label="is disabled textarea" isDisabled />);
   expect(screen.getByRole('textbox')).toBeDisabled();
 });
 
+test('Text area is not disabled by default', () => {
+  render(<TextArea aria-label="not disabled textarea" />);
+  expect(screen.getByRole('textbox')).not.toBeDisabled();
+});
+
 test('Renders read only text area using readOnlyVariant', () => {
   render(<TextArea aria-label="is read only textarea" readOnlyVariant={'default'} />);
   expect(screen.getByRole('textbox')).toHaveAttribute('readonly');
+});
+
+test('Text area is not read only by default', () => {
+  render(<TextArea aria-label="not read only textarea" />);
+  expect(screen.getByRole('textbox')).not.toHaveAttribute('readonly');
+});
+
+test('Renders text area with default class name only', () => {
+  render(<TextArea aria-label="validated textarea" />);
+  expect(screen.getByRole('textbox')).toHaveClass('pf-c-form-control', { exact: true });
 });
 
 test('Renders validated text area with success className', () => {
