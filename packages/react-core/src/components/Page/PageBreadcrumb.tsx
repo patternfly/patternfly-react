@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Page/page';
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, Mods } from '../../helpers/util';
 import { PageContext } from './PageContext';
 
 export interface PageBreadcrumbProps extends React.HTMLProps<HTMLElement> {
@@ -11,8 +11,6 @@ export interface PageBreadcrumbProps extends React.HTMLProps<HTMLElement> {
   children?: React.ReactNode;
   /** Limits the width of the breadcrumb */
   isWidthLimited?: boolean;
-  /**  @deprecated Use the stickyOnBreakpoint prop instead - Modifier indicating if the PageBreadcrumb is sticky to the top or bottom */
-  sticky?: 'top' | 'bottom';
   /** Modifier indicating if the PageBreadcrumb is sticky to the top or bottom at various breakpoints */
   stickyOnBreakpoint?: {
     default?: 'top' | 'bottom';
@@ -36,7 +34,6 @@ export const PageBreadcrumb = ({
   className = '',
   children,
   isWidthLimited,
-  sticky,
   stickyOnBreakpoint,
   hasShadowTop = false,
   hasShadowBottom = false,
@@ -57,10 +54,8 @@ export const PageBreadcrumb = ({
     <section
       className={css(
         styles.pageMainBreadcrumb,
-        formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
+        formatBreakpointMods(stickyOnBreakpoint as Mods, styles, 'sticky-', getVerticalBreakpoint(height), true),
         isWidthLimited && styles.modifiers.limitWidth,
-        sticky === 'top' && styles.modifiers.stickyTop,
-        sticky === 'bottom' && styles.modifiers.stickyBottom,
         hasShadowTop && styles.modifiers.shadowTop,
         hasShadowBottom && styles.modifiers.shadowBottom,
         hasOverflowScroll && styles.modifiers.overflowScroll,

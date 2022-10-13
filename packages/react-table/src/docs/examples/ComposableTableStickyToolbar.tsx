@@ -168,7 +168,7 @@ export const ComposableTableStickyColumnsAndHeader: React.FunctionComponent = ()
         </PageSection>
       }
       groupProps={{
-        sticky: 'top'
+        stickyOnBreakpoint: { default: 'top' }
       }}
     >
       <PageSection hasOverflowScroll>
