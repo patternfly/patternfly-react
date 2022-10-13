@@ -23,9 +23,9 @@
     {
       "datasources": ["npm"],
       "packageNames": [
-        "@patternfly/patternfly"
+        "@patternfly-five/patternfly"
       ],
-      "followTag": "prerelease"
+      "followTag": "alpha"
     }
   ]
 }
