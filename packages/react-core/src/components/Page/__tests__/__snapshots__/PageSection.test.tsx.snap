@@ -101,8 +101,7 @@ exports[`Verify page section bottom shadow 1`] = `
 exports[`Verify page section bottom sticky 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section"
-    sticky="bottom"
+    class="pf-c-page__main-section pf-m-sticky-bottom"
   >
     test
   </section>
@@ -133,8 +132,7 @@ exports[`Verify page section top shadow 1`] = `
 exports[`Verify page section top sticky 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section"
-    sticky="top"
+    class="pf-c-page__main-section pf-m-sticky-top"
   >
     test
   </section>
