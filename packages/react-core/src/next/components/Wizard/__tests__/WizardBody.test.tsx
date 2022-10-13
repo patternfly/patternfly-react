@@ -15,8 +15,8 @@ test('has no padding className when hasNoBodyPadding is not specified', () => {
   expect(screen.getByText('content')).not.toHaveClass('pf-m-no-padding');
 });
 
-test('has padding className when hasNoBodyPadding is specified', () => {
-  render(<WizardBody hasNoBodyPadding>content</WizardBody>);
+test('has padding className when hasNoPadding is specified', () => {
+  render(<WizardBody hasNoPadding>content</WizardBody>);
   expect(screen.getByText('content')).toHaveClass('pf-m-no-padding');
 });
 

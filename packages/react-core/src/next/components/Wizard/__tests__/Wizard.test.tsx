@@ -111,7 +111,7 @@ test('renders default nav with custom props', () => {
 
   expect(navElement).toBeVisible();
   expect(navElement).toHaveAttribute('aria-labelledby', 'wizard-id');
-  expect(screen.getByRole('button', { name: 'Test step 1' }).parentElement).toHaveClass('pf-m-expandable');
+  expect(screen.getByRole('button', { name: 'Test step 1, visited' }).parentElement).toHaveClass('pf-m-expandable');
   expect(screen.getByRole('button', { name: 'Test step 2' })).toHaveAttribute('disabled');
 });
 
@@ -295,25 +295,5 @@ test('unmounts inactive steps by default', async () => {
   await user.click(screen.getByRole('button', { name: 'Test step 2' }));
 
   expect(screen.queryByText('Step 1 content')).toBeNull();
-  expect(screen.getByText('Step 2 content')).toBeVisible();
-});
-
-test('keeps inactive steps mounted when hasUnmountedSteps is enabled', async () => {
-  const user = userEvent.setup();
-
-  render(
-    <Wizard hasUnmountedSteps={false}>
-      <WizardStep id="step-1" name="Test step 1">
-        Step 1 content
-      </WizardStep>
-      <WizardStep id="step-2" name="Test step 2">
-        Step 2 content
-      </WizardStep>
-    </Wizard>
-  );
-
-  await user.click(screen.getByRole('button', { name: 'Test step 2' }));
-
-  expect(screen.getByText('Step 1 content')).toBeInTheDocument();
   expect(screen.getByText('Step 2 content')).toBeVisible();
 });

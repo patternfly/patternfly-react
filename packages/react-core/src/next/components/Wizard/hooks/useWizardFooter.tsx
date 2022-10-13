@@ -9,10 +9,10 @@ import { WizardFooterProps } from '../WizardFooter';
  * @param stepId
  */
 export const useWizardFooter = (footer: React.ReactElement | Partial<WizardFooterProps>, stepId?: string | number) => {
-  const { currentStep, setFooter } = useWizardContext();
+  const { activeStep, setFooter } = useWizardContext();
 
   React.useEffect(() => {
-    if (footer && (!stepId || currentStep?.id === stepId)) {
+    if (footer && (!stepId || activeStep?.id === stepId)) {
       setFooter(footer);
 
       // Reset the footer on unmount.
@@ -20,5 +20,5 @@ export const useWizardFooter = (footer: React.ReactElement | Partial<WizardFoote
         setFooter(null);
       };
     }
-  }, [currentStep, footer, setFooter, stepId]);
+  }, [activeStep, footer, setFooter, stepId]);
 };

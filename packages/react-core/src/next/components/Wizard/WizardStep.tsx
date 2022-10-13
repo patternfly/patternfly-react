@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { WizardNavItemType } from './types';
-import { WizardBody, WizardBodyProps } from './WizardBody';
-import { useWizardFooter } from './hooks/useWizardFooter';
+import { WizardBodyProps } from './WizardBody';
 import { useWizardContext } from './WizardContext';
 import { WizardFooterProps } from './WizardFooter';
 
@@ -23,8 +22,6 @@ export interface WizardStepProps {
   steps?: React.ReactElement<WizardStepProps>[];
   /** Flag to disable the step's navigation item */
   isDisabled?: boolean;
-  /** Flag to represent whether the step has been visited (navigated to) */
-  isVisited?: boolean;
   /** Flag to determine whether the step is hidden */
   isHidden?: boolean;
   /** Replaces the step's navigation item or its properties. */
@@ -35,34 +32,49 @@ export interface WizardStepProps {
   status?: 'default' | 'error';
 }
 
-export const WizardStep = ({ children, body, id, footer, isHidden, isDisabled, navItem, status }: WizardStepProps) => {
-  const { currentStep, setStep, toggleStep } = useWizardContext();
+export const WizardStep = ({ children, steps: _subSteps, ...props }: WizardStepProps) => {
+  const { activeStep, steps, setStep, setSteps } = useWizardContext();
+  const { id, name, body, isDisabled, isHidden, navItem, footer, status } = props;
+  const isHiddenRef = React.useRef(isHidden);
 
-  useWizardFooter(footer, id);
-
-  // Update the controlled step when a change is detected with select properties
+  // Update step in context when props change or when the step is active has yet to be marked as visited.
   React.useEffect(() => {
-    if (currentStep?.id === id && (isDisabled || navItem || status || !currentStep?.isVisited)) {
-      setStep({
-        id,
-        ...(isDisabled && { isDisabled }),
-        ...(navItem && { navItem }),
-        ...(status && { status }),
-        // When the current step is active and isn't visited, set as isVisited
-        ...(!currentStep?.isVisited && { isVisited: true })
-      });
-    }
-  }, [id, setStep, currentStep?.id, isDisabled, navItem, status, currentStep?.isVisited]);
+    setStep({
+      id,
+      name,
+      ...(body && { body }),
+      ...(isDisabled && { isDisabled }),
+      ...(isHidden && { isHidden }),
+      ...(navItem && { navItem }),
+      ...(footer && { footer }),
+      ...(status && { status }),
+      ...(id === activeStep?.id && !activeStep?.isVisited && { isVisited: true })
+    });
+  }, [body, footer, id, isDisabled, isHidden, name, navItem, status, activeStep?.id, activeStep?.isVisited, setStep]);
 
-  // Toggle visibility when the isHidden flag updates.
-  // Wizard's hasUnmountedSteps prop must be set to false for visibility changes to take effect.
+  // If the step was previously hidden and not visited yet, when it is shown,
+  // all steps beyond it should be disabled to ensure it is visited.
   React.useEffect(() => {
-    if (isHidden !== undefined) {
-      toggleStep(id, isHidden);
-    }
-  }, [toggleStep, id, isHidden]);
+    if (isHiddenRef.current && !isHidden) {
+      const currentStep = steps.find(step => step.id === id);
 
-  return body || body === undefined ? <WizardBody {...body}>{children}</WizardBody> : <>{children}</>;
+      setSteps(prevSteps =>
+        prevSteps.map(prevStep => {
+          if (prevStep.index > currentStep.index && prevStep.isVisited && !currentStep.isVisited) {
+            return { ...prevStep, isVisited: false };
+          }
+
+          return prevStep;
+        })
+      );
+    }
+
+    if (isHiddenRef.current !== isHidden) {
+      isHiddenRef.current = isHidden;
+    }
+  }, [id, isHidden, setSteps, steps]);
+
+  return <>{children}</>;
 };
 
 WizardStep.displayName = 'WizardStep';
