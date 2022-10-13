@@ -12,8 +12,6 @@ export interface DropdownMenuProps {
   className?: string;
   /** Flag to indicate if menu is opened */
   isOpen?: boolean;
-  /** @deprecated - no longer used */
-  openedOnEnter?: boolean;
   /** Flag to indicate if the first dropdown item should gain initial focus, set false when adding
    * a specific auto-focus item (like a current selection) otherwise leave as true
    */
@@ -51,7 +49,6 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
   static defaultProps: DropdownMenuProps = {
     className: '',
     isOpen: true,
-    openedOnEnter: false,
     autoFocus: true,
     position: DropdownPosition.left,
     component: 'ul',
@@ -179,8 +176,6 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       component,
       isGrouped,
       setMenuComponentRef,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      openedOnEnter,
       alignments,
       ...props
     } = this.props;
