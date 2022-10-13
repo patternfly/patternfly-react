@@ -16,7 +16,7 @@ export const NavExpandableThirdLevel: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav onSelect={onSelect} onToggle={onToggle} aria-label="Expandable third level global nav">
+    <Nav onSelect={onSelect} onToggle={onToggle} aria-label="Expandable third level global">
       <NavList>
         <NavExpandable
           title="Expandable section title 1"

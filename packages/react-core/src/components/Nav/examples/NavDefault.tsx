@@ -9,7 +9,7 @@ export const NavDefault: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav onSelect={onSelect} aria-label="Default global nav">
+    <Nav onSelect={onSelect} aria-label="Default global">
       <NavList>
         <NavItem preventDefault id="nav-default-link1" to="#nav-default-link1" itemId={0} isActive={activeItem === 0}>
           Default Link 1

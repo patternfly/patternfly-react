@@ -9,7 +9,7 @@ export const NavGrouped: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav onSelect={onSelect} aria-label="Grouped global nav">
+    <Nav onSelect={onSelect} aria-label="Grouped global">
       <NavGroup title="Section title 1">
         <NavItem
           preventDefault
