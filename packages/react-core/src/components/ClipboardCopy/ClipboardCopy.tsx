@@ -52,7 +52,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   isBlock?: boolean;
   /** Adds Clipboard Copy variant styles. */
   variant?: typeof ClipboardCopyVariant | 'inline' | 'expansion' | 'inline-compact';
-  /** Copy button popover position. */
+  /** Copy button tooltip position. */
   position?:
     | TooltipPosition
     | 'auto'
