@@ -54,7 +54,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <DataList aria-label="Expandable data list example">
+      <DataList aria-label="Mixed expandable data list example">
         <DataListItem aria-labelledby="m-ex-item1" isExpanded={expanded.includes('m-ex-toggle1')}>
           <DataListItemRow>
             <DataListToggle
@@ -116,7 +116,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
             </p>
           </DataListContent>
         </DataListItem>
-        <DataListItem aria-labelledby="m-ex-item2">
+        <DataListItem>
           <DataListItemRow>
             <DataListToggle
               id="m-ex-toggle2"
@@ -132,7 +132,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
                   <CodeBranchIcon />
                 </DataListCell>,
                 <DataListCell key="secondary content">
-                  <div id="ex-item2">Secondary content</div>
+                  <div id="m-ex-item2">Secondary content</div>
                   <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                 </DataListCell>,
                 <DataListCell key="secondary content 2">
@@ -144,8 +144,8 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
               ]}
             />
             <DataListAction
-              aria-labelledby="mex-item2 mex-action2"
-              id="mex-action2"
+              aria-labelledby="m-ex-item2 mex-action2"
+              id="m-ex-action2"
               aria-label="Actions"
               isPlainButtonAction
             >
