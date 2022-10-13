@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
-import { PopoverPosition } from '../Popover';
 import { TooltipPosition } from '../Tooltip';
 import { TextInput } from '../TextInput';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
@@ -53,9 +52,8 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   isBlock?: boolean;
   /** Adds Clipboard Copy variant styles. */
   variant?: typeof ClipboardCopyVariant | 'inline' | 'expansion' | 'inline-compact';
-  /** Copy button popover position. */
+  /** Copy button tooltip position. */
   position?:
-    | PopoverPosition
     | TooltipPosition
     | 'auto'
     | 'top'
@@ -109,7 +107,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     isExpanded: false,
     isCode: false,
     variant: 'inline',
-    position: PopoverPosition.top,
+    position: TooltipPosition.top,
     maxWidth: '150px',
     exitDelay: 1600,
     entryDelay: 300,

@@ -2,7 +2,6 @@ import * as React from 'react';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import { Button } from '../Button';
 import { Tooltip, TooltipPosition } from '../Tooltip';
-import { PopoverPosition } from '../Popover';
 
 export interface ClipboardCopyButtonProps
   extends Omit<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'ref'> {
@@ -25,7 +24,6 @@ export interface ClipboardCopyButtonProps
   /** Position of the copy button tooltip */
   position?:
     | TooltipPosition
-    | PopoverPosition
     | 'auto'
     | 'top'
     | 'bottom'
