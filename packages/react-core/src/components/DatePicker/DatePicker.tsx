@@ -222,7 +222,7 @@ const DatePickerBase = (
         }
         showClose={false}
         isVisible={popoverOpen}
-        shouldClose={(_1, _2, event) => {
+        shouldClose={(_1, event) => {
           event = event as KeyboardEvent;
           if (event.key === KeyTypes.Escape && selectOpen) {
             event.stopPropagation();

@@ -16,7 +16,6 @@ import { ReactElement } from 'react';
 import { FocusTrap } from '../../helpers';
 import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
 import { getUniqueId } from '../../helpers/util';
-import { Instance as TippyInstance } from '../../helpers/Popper/DeprecatedTippyTypes';
 
 export enum PopoverPosition {
   auto = 'auto',
@@ -147,29 +146,24 @@ export interface PopoverProps {
   minWidth?: string;
   /**
    * Lifecycle function invoked when the popover has fully transitioned out.
-   * Note: The tip argument is no longer passed and has been deprecated.
    */
-  onHidden?: (tip?: TippyInstance) => void;
+  onHidden?: () => void;
   /**
    * Lifecycle function invoked when the popover begins to transition out.
-   * Note: The tip argument is no longer passed and has been deprecated.
    */
-  onHide?: (tip?: TippyInstance) => void;
+  onHide?: () => void;
   /**
    * Lifecycle function invoked when the popover has been mounted to the DOM.
-   * Note: The tip argument is no longer passed and has been deprecated.
    */
-  onMount?: (tip?: TippyInstance) => void;
+  onMount?: () => void;
   /**
    * Lifecycle function invoked when the popover begins to transition in.
-   * Note: The tip argument is no longer passed and has been deprecated.
    */
-  onShow?: (tip?: TippyInstance) => void;
+  onShow?: () => void;
   /**
    * Lifecycle function invoked when the popover has fully transitioned in.
-   * Note: The tip argument is no longer passed and has been deprecated.
    */
-  onShown?: (tip?: TippyInstance) => void;
+  onShown?: () => void;
   /**
    * Popover position. Note: With the enableFlip property set to true, it will change the
    * position if there is not enough space for the starting position. The behavior of where it
@@ -201,9 +195,8 @@ export interface PopoverProps {
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the
    * popover close button is clicked, the enter key was used on it, or the escape key is used.
-   * Note: The tip argument is no longer passed and has been deprecated.
    */
-  shouldClose?: (tip?: TippyInstance, hideFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
+  shouldClose?: (hideFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the
    * enter key is used on the focused trigger.
@@ -336,7 +329,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (event.key === KeyTypes.Escape && visible) {
       if (triggerManually) {
-        shouldClose(null, hide, event);
+        shouldClose(hide, event);
       } else {
         hide();
       }
@@ -351,7 +344,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         return;
       }
       if (triggerManually) {
-        shouldClose(null, hide, event);
+        shouldClose(hide, event);
       } else {
         hide();
       }
@@ -360,7 +353,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const onTriggerClick = (event: MouseEvent) => {
     if (triggerManually) {
       if (visible) {
-        shouldClose(null, hide, event);
+        shouldClose(hide, event);
       } else {
         shouldOpen(show, event);
       }
@@ -380,7 +373,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const closePopover = (event: any) => {
     event.stopPropagation();
     if (triggerManually) {
-      shouldClose(null, hide, event);
+      shouldClose(hide, event);
     } else {
       hide();
     }
