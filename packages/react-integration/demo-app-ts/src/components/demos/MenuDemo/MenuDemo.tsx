@@ -322,6 +322,12 @@ export class MenuDemo extends Component {
   renderMenuWithTitledGroups() {
     const { activeItem } = this.state;
 
+    const GroupMenuExampleCmp: React.FC<{ className: string }> = ({ className }) => (
+      <div>
+        <h1 className={`${className} my-awesome-style`}>Group 4</h1>
+      </div>
+    );
+
     return (
       <StackItem>
         <Title headingLevel="h2" size="2xl">
@@ -354,6 +360,23 @@ export class MenuDemo extends Component {
                 Link 2
               </MenuItem>
             </MenuList>
+          </MenuGroup>
+          <MenuGroup
+            id="group-3"
+            label={
+              <div>
+                <h1 className="pf-c-menu__group-title">Group 3</h1>
+              </div>
+            }
+          >
+            <MenuItem to="#" itemId={1}>
+              Link 1
+            </MenuItem>
+          </MenuGroup>
+          <MenuGroup id="group-4" label={GroupMenuExampleCmp}>
+            <MenuItem to="#" itemId={1}>
+              Link 1
+            </MenuItem>
           </MenuGroup>
         </Menu>
       </StackItem>
