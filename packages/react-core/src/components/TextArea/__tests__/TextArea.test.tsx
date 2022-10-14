@@ -11,10 +11,10 @@ const props = {
   value: 'test textarea'
 };
 
-test('textarea input passes value and event to onChange handler', async () => {
+test('Textarea input passes value and event to onChange handler', async () => {
+  const user = userEvent.setup();
   render(<TextArea {...props} value="" aria-label="test textarea" />);
 
-  const user = userEvent.setup();
   await user.type(screen.getByRole('textbox'), 'a');
 
   expect(props.onChange).toHaveBeenCalledWith('a', expect.any(Object));
@@ -85,6 +85,11 @@ test('Renders validated text area with warning className', () => {
 test('Renders invalid text area', () => {
   render(<TextArea aria-label="validated textarea" validated={ValidatedOptions.error} />);
   expect(screen.getByRole('textbox')).toBeInvalid();
+});
+
+test('Text area is not invalid by default', () => {
+  render(<TextArea aria-label="validated textarea" />);
+  expect(screen.getByRole('textbox')).not.toBeInvalid();
 });
 
 test('Renders vertically resizable text area', () => {
