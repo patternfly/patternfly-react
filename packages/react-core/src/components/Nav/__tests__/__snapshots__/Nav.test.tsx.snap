@@ -664,7 +664,7 @@ exports[`Nav Horizontal Nav List 1`] = `
 exports[`Nav Horizontal SubNav List 1`] = `
 <DocumentFragment>
   <nav
-    aria-label="Global"
+    aria-label="Local"
     class="pf-c-nav pf-m-horizontal-subnav"
     data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-1"
     data-ouia-component-type="PF4/Nav"

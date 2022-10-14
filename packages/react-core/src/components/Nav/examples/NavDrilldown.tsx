@@ -70,7 +70,7 @@ export const NavigationDrilldown: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav aria-label="Drilldown global nav">
+    <Nav aria-label="Drilldown global">
       <Menu
         id="nav-drilldown-rootMenu"
         containsDrilldown
