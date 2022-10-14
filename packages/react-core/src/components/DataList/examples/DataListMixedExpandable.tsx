@@ -116,7 +116,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
             </p>
           </DataListContent>
         </DataListItem>
-        <DataListItem>
+        <DataListItem aria-labelledby="m-ex-item2">
           <DataListItemRow>
             <DataListToggle
               id="m-ex-toggle2"
@@ -182,7 +182,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
                   <CodeBranchIcon />
                 </DataListCell>,
                 <DataListCell key="tertiary content">
-                  <div id="ex-item3">Tertiary content</div>
+                  <div id="m-ex-item3">Tertiary content</div>
                   <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                 </DataListCell>,
                 <DataListCell key="secondary content">
