@@ -7,10 +7,7 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isRejected, setIsRejected] = React.useState(false);
 
-  const handleFileInputChange = (
-    _event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLElement>,
-    file: File
-  ) => {
+  const handleFileInputChange = (_, file: File) => {
     setFilename(file.name);
   };
 
@@ -24,7 +21,7 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
     setIsRejected(false);
   };
 
-  const handleFileRejected = (_rejectedFiles: File[], _event: React.DragEvent<HTMLElement>) => {
+  const handleFileRejected = () => {
     setIsRejected(true);
   };
 
@@ -58,7 +55,7 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
           onClearClick={handleClear}
           isLoading={isLoading}
           dropzoneProps={{
-            accept: '.csv',
+            accept: { 'text/csv': ['.csv'] },
             maxSize: 1024,
             onDropRejected: handleFileRejected
           }}

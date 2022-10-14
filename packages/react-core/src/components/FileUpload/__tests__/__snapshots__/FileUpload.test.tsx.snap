@@ -4,6 +4,7 @@ exports[`simple fileupload 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-file-upload"
+    role="presentation"
   >
     <div
       class="pf-c-file-upload__file-select"
@@ -63,7 +64,6 @@ exports[`simple fileupload 1`] = `
       />
     </div>
     <input
-      autocomplete="off"
       style="display: none;"
       tabindex="-1"
       type="file"

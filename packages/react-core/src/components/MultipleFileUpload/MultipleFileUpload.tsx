@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Dropzone, { DropzoneProps, DropFileEventHandler } from 'react-dropzone';
+import { DropEvent, DropzoneOptions, useDropzone } from 'react-dropzone';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 
@@ -14,7 +14,7 @@ export interface MultipleFileUploadProps extends Omit<React.HTMLProps<HTMLDivEle
   /** Class to add to outer div */
   className?: string;
   /** Optional extra props to customize react-dropzone. */
-  dropzoneProps?: DropzoneProps;
+  dropzoneProps?: DropzoneOptions;
   /** Flag setting the component to horizontal styling mode */
   isHorizontal?: boolean;
   /** When files are dropped or uploaded this callback will be called with all accepted files */
@@ -33,47 +33,42 @@ export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps
   onFileDrop = () => {},
   ...props
 }: MultipleFileUploadProps) => {
-  const onDropAccepted: DropFileEventHandler = (acceptedFiles: File[], event) => {
+  const onDropAccepted = (acceptedFiles: File[], event: DropEvent) => {
     onFileDrop(acceptedFiles);
     // allow users to set a custom drop accepted handler rather than using on data change
     dropzoneProps.onDropAccepted && dropzoneProps.onDropAccepted(acceptedFiles, event);
   };
 
-  const onDropRejected: DropFileEventHandler = (rejectedFiles, event) => {
-    dropzoneProps.onDropRejected && dropzoneProps?.onDropRejected(rejectedFiles, event);
-  };
+  const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
+    multiple: true,
+    ...dropzoneProps,
+    onDropAccepted
+  });
+
+  const rootProps = getRootProps({
+    ...props,
+    onClick: event => event.preventDefault() // Prevents clicking TextArea from opening file dialog
+  });
 
   return (
-    <Dropzone multiple={true} {...dropzoneProps} onDropAccepted={onDropAccepted} onDropRejected={onDropRejected}>
-      {({ getRootProps, getInputProps, isDragActive, open }) => {
-        const rootProps = getRootProps({
-          ...props,
-          onClick: event => event.preventDefault() // Prevents clicking TextArea from opening file dialog
-        });
-        const inputProps = getInputProps();
-
-        return (
-          <MultipleFileUploadContext.Provider value={{ open }}>
-            <div
-              className={css(
-                styles.multipleFileUpload,
-                isDragActive && styles.modifiers.dragOver,
-                isHorizontal && styles.modifiers.horizontal,
-                className
-              )}
-              {...rootProps}
-              {...props}
-            >
-              <input
-                /* hidden, necessary for react-dropzone */
-                {...inputProps}
-              />
-              {children}
-            </div>
-          </MultipleFileUploadContext.Provider>
-        );
-      }}
-    </Dropzone>
+    <MultipleFileUploadContext.Provider value={{ open }}>
+      <div
+        className={css(
+          styles.multipleFileUpload,
+          isDragActive && styles.modifiers.dragOver,
+          isHorizontal && styles.modifiers.horizontal,
+          className
+        )}
+        {...rootProps}
+        {...props}
+      >
+        <input
+          /* hidden, necessary for react-dropzone */
+          {...getInputProps()}
+        />
+        {children}
+      </div>
+    </MultipleFileUploadContext.Provider>
   );
 };
 
