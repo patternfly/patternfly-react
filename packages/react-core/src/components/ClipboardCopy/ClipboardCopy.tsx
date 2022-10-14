@@ -99,7 +99,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       // eslint-disable-next-line no-console
       console.warn(
         'The ClipboardCopy switchDelay prop has been deprecated. ' +
-        'The tooltip message will switch back to the hover tip as soon as the tooltip is hidden.'
+          'The tooltip message will switch back to the hover tip as soon as the tooltip is hidden.'
       );
     }
   }

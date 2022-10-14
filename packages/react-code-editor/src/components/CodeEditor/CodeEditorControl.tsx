@@ -65,7 +65,7 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
     // eslint-disable-next-line no-console
     console.warn(
       'The CodeEditorControl entryDelay prop has been deprecated. ' +
-      'Pass the entryDelay via the tooltipProps prop instead.'
+        'Pass the entryDelay via the tooltipProps prop instead.'
     );
   }
 
@@ -73,7 +73,7 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
     // eslint-disable-next-line no-console
     console.warn(
       'The CodeEditorControl exitDelay prop has been deprecated. ' +
-      'Pass the exitDelay via the tooltipProps prop instead.'
+        'Pass the exitDelay via the tooltipProps prop instead.'
     );
   }
 
@@ -81,7 +81,7 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
     // eslint-disable-next-line no-console
     console.warn(
       'The CodeEditorControl maxWidth prop has been deprecated. ' +
-      'Pass the maxWidth via the tooltipProps prop instead.'
+        'Pass the maxWidth via the tooltipProps prop instead.'
     );
   }
 
@@ -89,7 +89,7 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
     // eslint-disable-next-line no-console
     console.warn(
       'The CodeEditorControl position prop has been deprecated. ' +
-      'Pass the position via the tooltipProps prop instead.'
+        'Pass the position via the tooltipProps prop instead.'
     );
   }
 
@@ -97,7 +97,7 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
     // eslint-disable-next-line no-console
     console.warn(
       'The CodeEditorControl toolTipText prop has been deprecated. ' +
-      'Pass the toolTipText by setting the content field in tooltipProps prop instead.'
+        'Pass the toolTipText by setting the content field in tooltipProps prop instead.'
     );
   }
 
