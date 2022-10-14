@@ -69,6 +69,8 @@ export interface SelectProps
   isDisabled?: boolean;
   /** Flag to indicate if the typeahead select allows new items */
   isCreatable?: boolean;
+  /** Flag to indicate if create option should be at top of typeahead */
+  isCreateOptionOnTop?: boolean;
   /** Flag indicating if placeholder styles should be applied */
   hasPlaceholderStyle?: boolean;
   /** @beta Flag indicating if the creatable option should set its value as a SelectOptionObject */
@@ -226,6 +228,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isDisabled: false,
     hasPlaceholderStyle: false,
     isCreatable: false,
+    isCreateOptionOnTop: false,
     validated: 'default',
     'aria-label': '',
     'aria-labelledby': '',
@@ -433,6 +436,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const {
       onFilter,
       isCreatable,
+      isCreateOptionOnTop,
       onCreateOption,
       createText,
       noResultsFoundText,
@@ -542,7 +546,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             } as SelectOptionObject)
           : newValue;
 
-        typeaheadFilteredChildren.push(
+        const createSelectOption = (
           <SelectOption
             key={`create ${newValue}`}
             value={newOptionValue}
@@ -551,6 +555,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             {createText} "{newValue}"
           </SelectOption>
         );
+
+        if (isCreateOptionOnTop) {
+          typeaheadFilteredChildren.unshift(createSelectOption);
+        } else {
+          typeaheadFilteredChildren.push(createSelectOption);
+        }
       }
     }
 
@@ -1020,6 +1030,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       footer,
       loadingVariant,
       isCreateSelectOptionObject,
+      isCreateOptionOnTop,
       shouldResetOnSelect,
       isFlipEnabled,
       removeFindDomNode,

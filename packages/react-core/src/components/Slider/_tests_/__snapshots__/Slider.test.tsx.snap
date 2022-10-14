@@ -476,17 +476,6 @@ exports[`slider renders slider with input above thumb 1`] = `
         </div>
       </div>
       <div
-        aria-disabled="false"
-        aria-label="Value"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="50"
-        aria-valuetext="50"
-        class="pf-c-slider__thumb"
-        role="slider"
-        tabindex="0"
-      />
-      <div
         class="pf-c-slider__value pf-m-floating"
       >
         <div
@@ -509,6 +498,17 @@ exports[`slider renders slider with input above thumb 1`] = `
           </span>
         </div>
       </div>
+      <div
+        aria-disabled="false"
+        aria-label="Value"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="50"
+        aria-valuetext="50"
+        class="pf-c-slider__thumb"
+        role="slider"
+        tabindex="0"
+      />
     </div>
   </div>
 </DocumentFragment>

@@ -4,7 +4,6 @@ import { Divider, MenuToggle } from '@patternfly/react-core';
 
 export const DropdownBasic: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const menuRef = React.useRef<HTMLDivElement>(null);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -18,7 +17,6 @@ export const DropdownBasic: React.FunctionComponent = () => {
 
   return (
     <Dropdown
-      innerRef={menuRef}
       isOpen={isOpen}
       onSelect={onSelect}
       onOpenChange={isOpen => setIsOpen(isOpen)}

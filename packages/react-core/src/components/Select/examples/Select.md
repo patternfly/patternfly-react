@@ -1209,6 +1209,7 @@ class TypeaheadSelectInput extends React.Component {
       selected: null,
       isDisabled: false,
       isCreatable: false,
+      isCreateOptionOnTop: false,
       isInputValuePersisted: false,
       isInputFilterPersisted: false,
       hasOnCreateOption: false,
@@ -1258,6 +1259,12 @@ class TypeaheadSelectInput extends React.Component {
       });
     };
 
+    this.toggleCreateOptionOnTop = checked => {
+      this.setState({
+        isCreateOptionOnTop: checked
+      });
+    };
+
     this.toggleCreateNew = checked => {
       this.setState({
         hasOnCreateOption: checked
@@ -1289,6 +1296,7 @@ class TypeaheadSelectInput extends React.Component {
       selected,
       isDisabled,
       isCreatable,
+      isCreateOptionOnTop,
       hasOnCreateOption,
       isInputValuePersisted,
       isInputFilterPersisted,
@@ -1315,6 +1323,7 @@ class TypeaheadSelectInput extends React.Component {
           placeholderText="Select a state"
           isDisabled={isDisabled}
           isCreatable={isCreatable}
+          isCreateOptionOnTop={isCreateOptionOnTop}
           onCreateOption={(hasOnCreateOption && this.onCreateOption) || undefined}
           shouldResetOnSelect={resetOnSelect}
         >
@@ -1342,6 +1351,14 @@ class TypeaheadSelectInput extends React.Component {
           aria-label="toggle creatable checkbox"
           id="toggle-creatable-typeahead"
           name="toggle-creatable-typeahead"
+        />
+        <Checkbox
+          label="isCreateOptionOnTop"
+          isChecked={this.state.isCreateOptionOnTop}
+          onChange={this.toggleCreateOptionOnTop}
+          aria-label="toggle createOptionOnTop checkbox"
+          id="toggle-create-option-on-top-typeahead"
+          name="toggle-create-option-on-top-typeahead"
         />
         <Checkbox
           label="onCreateOption"

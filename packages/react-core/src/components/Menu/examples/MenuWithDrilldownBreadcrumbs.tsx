@@ -55,11 +55,13 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
     setDrilldownPath(pathSansLast);
     setActiveMenu(toMenuId);
   };
+
   const setHeight = (menuId: string, height: number) => {
-    if (!menuHeights[menuId]) {
+    if (menuHeights[menuId] === undefined || (menuId !== 'breadcrumbs-rootMenu' && menuHeights[menuId] !== height)) {
       setMenuHeights({ ...menuHeights, [menuId]: height });
     }
   };
+
   const drillIn = (fromMenuId: string, toMenuId: string, pathId: string) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
     setDrilldownPath([...drilldownPath, pathId]);

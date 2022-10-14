@@ -3,6 +3,94 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.102.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.41...@patternfly/react-docs@5.102.42) (2022-10-13)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.102.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.40...@patternfly/react-docs@5.102.41) (2022-10-13)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.102.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.39...@patternfly/react-docs@5.102.40) (2022-10-13)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.102.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.38...@patternfly/react-docs@5.102.39) (2022-10-12)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.102.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.37...@patternfly/react-docs@5.102.38) (2022-10-12)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.102.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.36...@patternfly/react-docs@5.102.37) (2022-10-12)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.102.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.35...@patternfly/react-docs@5.102.36) (2022-10-12)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.102.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.34...@patternfly/react-docs@5.102.35) (2022-10-12)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.102.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.33...@patternfly/react-docs@5.102.34) (2022-10-11)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.102.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.32...@patternfly/react-docs@5.102.33) (2022-10-11)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.102.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.31...@patternfly/react-docs@5.102.32) (2022-10-10)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
 ## [5.102.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.30...@patternfly/react-docs@5.102.31) (2022-10-05)
 
 **Note:** Version bump only for package @patternfly/react-docs

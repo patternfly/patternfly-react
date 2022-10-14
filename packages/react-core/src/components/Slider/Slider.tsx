@@ -416,15 +416,15 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
             {buildSteps()}
           </div>
         )}
+        {isInputVisible && inputPosition === 'aboveThumb' && (
+          <div className={css(styles.sliderValue, styles.modifiers.floating)}>{displayInput()}</div>
+        )}
         {hasTooltipOverThumb ? (
           <Tooltip entryDelay={0} content={findAriaTextValue()}>
             {thumbComponent}
           </Tooltip>
         ) : (
           thumbComponent
-        )}
-        {isInputVisible && inputPosition === 'aboveThumb' && (
-          <div className={css(styles.sliderValue, styles.modifiers.floating)}>{displayInput()}</div>
         )}
       </div>
       {isInputVisible && inputPosition === 'right' && <div className={css(styles.sliderValue)}>{displayInput()}</div>}
