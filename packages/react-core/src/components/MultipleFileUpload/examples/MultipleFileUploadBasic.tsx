@@ -86,7 +86,12 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
       <MultipleFileUpload
         onFileDrop={handleFileDrop}
         dropzoneProps={{
-          accept: 'image/jpeg, application/msword, application/pdf, image/png'
+          accept: {
+            'image/jpeg': ['.jpg', '.jpeg'],
+            'application/msword': ['.doc'],
+            'application/pdf': ['.pdf'],
+            'image/png': ['.png']
+          }
         }}
         isHorizontal={isHorizontal}
       >

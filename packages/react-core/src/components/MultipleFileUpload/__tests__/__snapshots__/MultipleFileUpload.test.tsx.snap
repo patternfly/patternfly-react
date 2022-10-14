@@ -4,10 +4,10 @@ exports[`MultipleFileUpload renders custom class names 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-multiple-file-upload test"
+    role="presentation"
     tabindex="0"
   >
     <input
-      autocomplete="off"
       multiple=""
       style="display: none;"
       tabindex="-1"
@@ -22,10 +22,10 @@ exports[`MultipleFileUpload renders with expected class names when horizontal 1`
 <DocumentFragment>
   <div
     class="pf-c-multiple-file-upload pf-m-horizontal"
+    role="presentation"
     tabindex="0"
   >
     <input
-      autocomplete="off"
       multiple=""
       style="display: none;"
       tabindex="-1"
@@ -40,10 +40,10 @@ exports[`MultipleFileUpload renders with expected class names when not horizonta
 <DocumentFragment>
   <div
     class="pf-c-multiple-file-upload"
+    role="presentation"
     tabindex="0"
   >
     <input
-      autocomplete="off"
       multiple=""
       style="display: none;"
       tabindex="-1"

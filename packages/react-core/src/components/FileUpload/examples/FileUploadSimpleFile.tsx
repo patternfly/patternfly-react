@@ -2,13 +2,10 @@ import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
 
 export const SimpleFileUpload: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState(null);
+  const [value, setValue] = React.useState('');
   const [filename, setFilename] = React.useState('');
 
-  const handleFileInputChange = (
-    _event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLElement>,
-    file: File
-  ) => {
+  const handleFileInputChange = (_, file: File) => {
     setFilename(file.name);
   };
 

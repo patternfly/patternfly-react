@@ -6,10 +6,7 @@ export const TextFileWithEditsAllowed: React.FunctionComponent = () => {
   const [filename, setFilename] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(false);
 
-  const handleFileInputChange = (
-    _event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLElement>,
-    file: File
-  ) => {
+  const handleFileInputChange = (_, file: File) => {
     setFilename(file.name);
   };
 
