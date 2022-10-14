@@ -33,9 +33,8 @@ export interface WizardStepProps {
 }
 
 export const WizardStep = ({ children, steps: _subSteps, ...props }: WizardStepProps) => {
-  const { activeStep, steps, setStep, setSteps } = useWizardContext();
+  const { activeStep, setStep } = useWizardContext();
   const { id, name, body, isDisabled, isHidden, navItem, footer, status } = props;
-  const isHiddenRef = React.useRef(isHidden);
 
   // Update step in context when props change or when the step is active has yet to be marked as visited.
   React.useEffect(() => {
@@ -51,28 +50,6 @@ export const WizardStep = ({ children, steps: _subSteps, ...props }: WizardStepP
       ...(id === activeStep?.id && !activeStep?.isVisited && { isVisited: true })
     });
   }, [body, footer, id, isDisabled, isHidden, name, navItem, status, activeStep?.id, activeStep?.isVisited, setStep]);
-
-  // If the step was previously hidden and not visited yet, when it is shown,
-  // all steps beyond it should be disabled to ensure it is visited.
-  React.useEffect(() => {
-    if (isHiddenRef.current && !isHidden) {
-      const currentStep = steps.find(step => step.id === id);
-
-      setSteps(prevSteps =>
-        prevSteps.map(prevStep => {
-          if (prevStep.index > currentStep.index && prevStep.isVisited && !currentStep.isVisited) {
-            return { ...prevStep, isVisited: false };
-          }
-
-          return prevStep;
-        })
-      );
-    }
-
-    if (isHiddenRef.current !== isHidden) {
-      isHiddenRef.current = isHidden;
-    }
-  }, [id, isHidden, setSteps, steps]);
 
   return <>{children}</>;
 };

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { isCustomWizardFooter, WizardControlStep, WizardFooterType } from './types';
 import { getActiveStep } from './utils';
-import { useGetMergedSteps } from './hooks/useGetMergedSteps';
 import { WizardFooter, WizardFooterProps } from './WizardFooter';
 
 export interface WizardContextProps {
@@ -30,8 +29,6 @@ export interface WizardContextProps {
   getStep: (stepId: number | string) => WizardControlStep;
   /** Set step by ID */
   setStep: (step: Pick<WizardControlStep, 'id'> & Partial<WizardControlStep>) => void;
-  /** Set multiple steps */
-  setSteps: React.Dispatch<React.SetStateAction<WizardControlStep[]>>;
 }
 
 export const WizardContext = React.createContext({} as WizardContextProps);
@@ -65,7 +62,21 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   const [currentFooter, setCurrentFooter] = React.useState(
     typeof initialFooter !== 'function' ? initialFooter : undefined
   );
-  const mergedSteps = useGetMergedSteps(initialSteps, steps);
+
+  // Combined initial and current state steps
+  const mergedSteps = React.useMemo(
+    () =>
+      steps.map((currentStepProps, index) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { isVisited, ...initialStepProps } = initialSteps[index];
+
+        return {
+          ...currentStepProps,
+          ...initialStepProps
+        };
+      }),
+    [initialSteps, steps]
+  );
   const activeStep = getActiveStep(mergedSteps, activeStepIndex);
 
   const goToNextStep = React.useCallback(() => onNext(mergedSteps), [onNext, mergedSteps]);
@@ -121,7 +132,6 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
         onClose,
         getStep,
         setStep,
-        setSteps,
         setFooter: setCurrentFooter,
         onNext: goToNextStep,
         onBack: goToPrevStep,
