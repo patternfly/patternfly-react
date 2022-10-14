@@ -8,7 +8,6 @@ import { KeyTypes } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/esm/c_tooltip_MaxWidth';
 import { ReactElement } from 'react';
 import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
-import { Props as TippyProps } from '../../helpers/Popper/DeprecatedTippyTypes';
 
 export enum TooltipPosition {
   auto = 'auto',
@@ -132,12 +131,6 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
   id?: string;
   /** CSS fade transition animation duration */
   animationDuration?: number;
-  /** @deprecated - no longer used. if you want to constrain the popper to a specific element use the appendTo prop instead */
-  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
-  /** @deprecated - no longer used */
-  isAppLauncher?: boolean;
-  /** @deprecated - no longer used */
-  tippyProps?: Partial<TippyProps>;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
 }
@@ -167,21 +160,9 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   animationDuration = 300,
   reference,
   'aria-live': ariaLive = reference ? 'polite' : 'off',
-  boundary,
-  isAppLauncher,
-  tippyProps,
   removeFindDomNode = false,
   ...rest
 }: TooltipProps) => {
-  if (process.env.NODE_ENV !== 'production') {
-    boundary !== undefined &&
-      console.warn(
-        'The Tooltip boundary prop has been deprecated. If you want to constrain the popper to a specific element use the appendTo prop instead.'
-      );
-    isAppLauncher !== undefined &&
-      console.warn('The Tooltip isAppLauncher prop has been deprecated and is no longer used.');
-    tippyProps !== undefined && console.warn('The Tooltip tippyProps prop has been deprecated and is no longer used.');
-  }
   // could make this a prop in the future (true | false | 'toggle')
   const hideOnClick = true;
   const triggerOnMouseenter = trigger.includes('mouseenter');
