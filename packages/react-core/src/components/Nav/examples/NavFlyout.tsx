@@ -57,7 +57,7 @@ export const NavFlyout: React.FunctionComponent = () => {
   }
 
   return (
-    <Nav onSelect={onSelect} aria-label="Flyout global nav">
+    <Nav onSelect={onSelect} aria-label="Flyout global">
       <NavList>
         <NavItem
           preventDefault

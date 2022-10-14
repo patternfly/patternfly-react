@@ -25,7 +25,7 @@ export const NavExpandableExample: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav onSelect={onSelect} onToggle={onToggle} aria-label="Expandable global nav">
+    <Nav onSelect={onSelect} onToggle={onToggle} aria-label="Expandable global">
       <NavList>
         <NavExpandable
           title="Expandable Group 1"

@@ -11,7 +11,7 @@ export const NavMixed: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav onSelect={onSelect} aria-label="Mixed global nav">
+    <Nav onSelect={onSelect} aria-label="Mixed global">
       <NavList>
         <NavItem
           preventDefault
