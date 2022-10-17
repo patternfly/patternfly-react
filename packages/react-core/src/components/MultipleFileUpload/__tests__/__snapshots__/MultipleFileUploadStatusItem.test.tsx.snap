@@ -26,6 +26,12 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
       class="pf-c-multiple-file-upload__status-item-main"
     >
       <div
+        aria-live="polite"
+        class="pf-screen-reader"
+      >
+        Progress value is 0%.
+      </div>
+      <div
         class="pf-c-progress"
         id="test-progress-id"
       >
@@ -136,6 +142,12 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
       class="pf-c-multiple-file-upload__status-item-main"
     >
       <div
+        aria-live="polite"
+        class="pf-screen-reader"
+      >
+        Progress value is 0%.
+      </div>
+      <div
         class="pf-c-progress"
         id="test-progress-id"
       >
@@ -217,7 +229,7 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
 </DocumentFragment>
 `;
 
-exports[`MultipleFileUploadStatusItem renders custom file name/size/icon when passed 1`] = `
+exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/ariaLiveMessage when passed 1`] = `
 <DocumentFragment>
   <li
     class="pf-c-multiple-file-upload__status-item"
@@ -242,6 +254,12 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon when pa
     <div
       class="pf-c-multiple-file-upload__status-item-main"
     >
+      <div
+        aria-live="polite"
+        class="pf-screen-reader"
+      >
+        test message
+      </div>
       <div
         class="pf-c-progress"
         id="test-progress-id"
@@ -351,6 +369,12 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
     <div
       class="pf-c-multiple-file-upload__status-item-main"
     >
+      <div
+        aria-live="polite"
+        class="pf-screen-reader"
+      >
+        Progress value is 42%.
+      </div>
       <div
         class="pf-c-progress pf-m-warning"
         id="test-progress-id"
@@ -478,6 +502,12 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
       class="pf-c-multiple-file-upload__status-item-main"
     >
       <div
+        aria-live="polite"
+        class="pf-screen-reader"
+      >
+        Progress value is 0%.
+      </div>
+      <div
         class="pf-c-progress"
         id="test-progress-id"
       >
@@ -586,6 +616,12 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
     <div
       class="pf-c-multiple-file-upload__status-item-main"
     >
+      <div
+        aria-live="polite"
+        class="pf-screen-reader"
+      >
+        Progress value is 0%.
+      </div>
       <div
         class="pf-c-progress"
         id="test-progress-id"

@@ -23,7 +23,7 @@ describe('MultipleFileUploadStatusItem', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('renders custom file name/size/icon when passed', () => {
+  test('renders custom file name/size/icon/ariaLiveMessage when passed', () => {
     const testFile = new File(['foo'], 'testFile.txt');
     const { asFragment } = render(
       <MultipleFileUploadStatusItem
@@ -32,6 +32,7 @@ describe('MultipleFileUploadStatusItem', () => {
         fileName="testCustomFileName.txt"
         fileSize={42}
         progressId="test-progress-id"
+        progressAriaLiveMessage="test message"
       />
     );
 
