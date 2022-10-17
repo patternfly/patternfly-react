@@ -70,7 +70,7 @@ test('Renders with custom formatting when dateFormat and timeFormat are passed i
 });
 
 test('Renders with only date when dateFormat is passed in', () => {
-  render(<Timestamp date={new Date('1 Jan 2022 00:00:00 EST')} dateFormat={TimestampFormat.full} />);
+  render(<Timestamp date={new Date(2022, 0, 1)} dateFormat={TimestampFormat.full} />);
 
   expect(screen.getByText('Saturday, January 1, 2022')).toBeInTheDocument();
 });
@@ -171,9 +171,7 @@ test('Renders with pf-m-help-text class when tooltip is passed in with custom va
 });
 
 test('Renders with default tooltip content for default variant', () => {
-  render(
-    <Timestamp date={new Date('1 Jan 2022 00:00:00 EST')} tooltip={{ variant: TimestampTooltipVariant.default }} />
-  );
+  render(<Timestamp date={new Date(2022, 0, 1, 0, 0, 0)} tooltip={{ variant: TimestampTooltipVariant.default }} />);
 
   expect(screen.getByText('1/1/2022, 5:00:00 AM UTC')).toBeInTheDocument();
 });
@@ -181,7 +179,7 @@ test('Renders with default tooltip content for default variant', () => {
 test('Renders with custom tooltip suffix for default variant', () => {
   render(
     <Timestamp
-      date={new Date('1 Jan 2022 00:00:00 EST')}
+      date={new Date(2022, 0, 1, 0, 0, 0)}
       tooltip={{ variant: TimestampTooltipVariant.default, suffix: 'Coordinated Universal Time' }}
     />
   );
