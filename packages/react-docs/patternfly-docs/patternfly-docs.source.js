@@ -10,23 +10,23 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceMD(path.join(themePagesPath, '*.md'), 'pages-overview');
 
   // React props
-  const reactCorePath = require.resolve('@patternfly-five/react-core/package.json').replace('package.json', 'src');
-  const reactTablePath = require.resolve('@patternfly-five/react-table/package.json').replace('package.json', 'src');
-  const reactChartsPath = require.resolve('@patternfly-five/react-charts/package.json').replace('package.json', 'src');
+  const reactCorePath = require.resolve('@patternfly/react-core/package.json').replace('package.json', 'src');
+  const reactTablePath = require.resolve('@patternfly/react-table/package.json').replace('package.json', 'src');
+  const reactChartsPath = require.resolve('@patternfly/react-charts/package.json').replace('package.json', 'src');
   const reactCodeEditorPath = require
-    .resolve('@patternfly-five/react-code-editor/package.json')
+    .resolve('@patternfly/react-code-editor/package.json')
     .replace('package.json', 'src');
   const reactCatalogViewPath = require
-    .resolve('@patternfly-five/react-catalog-view-extension/package.json')
+    .resolve('@patternfly/react-catalog-view-extension/package.json')
     .replace('package.json', 'src');
   const reactVirtualizedPath = require
-    .resolve('@patternfly-five/react-virtualized-extension/package.json')
+    .resolve('@patternfly/react-virtualized-extension/package.json')
     .replace('package.json', 'src');
   const reactConsolePath = require
-    .resolve('@patternfly-five/react-console/package.json')
+    .resolve('@patternfly/react-console/package.json')
     .replace('package.json', 'src');
   const reactLogViewerPath = require
-    .resolve('@patternfly-five/react-log-viewer/package.json')
+    .resolve('@patternfly/react-log-viewer/package.json')
     .replace('package.json', 'src');
   const reactPropsIgnore = '**/*.test.tsx';
 
@@ -70,10 +70,10 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceMD(path.join(reactLogViewerPath, '/**/demos/*.md'), 'react-demos');
 
   // Release notes
-  sourceMD(require.resolve('@patternfly-five/react-docs/RELEASE-NOTES.md'), 'react');
+  sourceMD(require.resolve('@patternfly/react-docs/RELEASE-NOTES.md'), 'react');
 
   // Upgrade guide
-  sourceMD(require.resolve('@patternfly-five/react-docs/UPGRADE-GUIDE.md'), 'react');
+  sourceMD(require.resolve('@patternfly/react-docs/UPGRADE-GUIDE.md'), 'react');
 
   // OUIA MD
   sourceMD(path.join(reactCorePath, 'helpers/OUIA/OUIA.md'), 'react');
