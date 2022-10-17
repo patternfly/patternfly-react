@@ -93,13 +93,14 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       renderedContent = React.Children.toArray(children);
     }
     const openedOnEnter = this.openedOnEnter;
+    const isStatic = isFlipEnabled && direction === DropdownDirection.down;
     return (
       <DropdownContext.Consumer>
         {({ baseClass, baseComponent, id: contextId, ouiaId, ouiaComponentType, ouiaSafe, alignments }) => {
           const BaseComponent = baseComponent as any;
           const menuContainer = (
             <DropdownMenu
-              className={css(isFlipEnabled && styles.modifiers.static)}
+              className={css(isStatic && styles.modifiers.static)}
               setMenuComponentRef={this.setMenuComponentRef}
               component={component}
               isOpen={isOpen}

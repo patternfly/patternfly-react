@@ -1258,9 +1258,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
 
+    const isStatic = isFlipEnabled && direction === SelectDirection.down;
     const innerMenu = (
       <SelectMenu
-        className={css(isFlipEnabled && styles.modifiers.static)}
+        className={css(isStatic && styles.modifiers.static)}
         {...props}
         isGrouped={isGrouped}
         selected={selections}

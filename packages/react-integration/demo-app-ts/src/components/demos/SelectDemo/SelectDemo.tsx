@@ -1310,6 +1310,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             Checkbox Title
           </span>
           <Select
+            direction="up"
             toggleId="select-document-body-toggle"
             variant={SelectVariant.checkbox}
             aria-label="Select Input"
