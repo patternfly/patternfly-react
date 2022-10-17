@@ -71,7 +71,7 @@
     "build:cjs": "tsc --build --verbose packages/tsconfig.cjs.json",
     "build:esm": "tsc --build --verbose packages/tsconfig.json",
     "build:integration": "lerna run build:demo-app --stream",
-    "build:docs": "yarn workspace @patternfly/react-docs build:docs",
+    "build:docs": "yarn workspace @patternfly-five/react-docs build:docs",
     "build:generate": "lerna run generate --parallel --stream",
     "build:umd": "lerna run build:umd --parallel --stream",
     "clean": "yarn clean:build && lerna run clean --parallel",
@@ -83,17 +83,17 @@
     "lint:ts": "yarn lint packages",
     "lint:versions": "node scripts/verifyPatternflyVersions.js",
     "prepare": "ts-patch install -s",
-    "serve:docs": "yarn workspace @patternfly/react-docs serve",
+    "serve:docs": "yarn workspace @patternfly-five/react-docs serve",
     "serve:integration": "lerna run serve:demo-app",
-    "start": "yarn build && concurrently --kill-others \"yarn watch\" \"yarn workspace @patternfly/react-docs develop\"",
+    "start": "yarn build && concurrently --kill-others \"yarn watch\" \"yarn workspace @patternfly-five/react-docs develop\"",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",
     "test": "TZ=EST jest packages",
     "test:a11y": "lerna run test:a11y --stream",
-    "test:integration": "yarn workspace @patternfly/react-integration test:integration",
+    "test:integration": "yarn workspace @patternfly-five/react-integration test:integration",
     "uninstall": "find . -name node_modules -type d | xargs rm -rf",
     "watch": "yarn build:esm --watch",
-    "screenshots": "yarn workspace @patternfly/react-docs screenshots"
+    "screenshots": "yarn workspace @patternfly-five/react-docs screenshots"
   },
   "husky": {
     "hooks": {
