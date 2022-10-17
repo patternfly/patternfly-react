@@ -200,7 +200,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
   componentDidUpdate(prevProps: TimePickerProps, prevState: TimePickerState) {
     const { timeState, isTimeOptionsOpen, isInvalid, timeRegex } = this.state;
-    const { time, is24Hour, delimiter, includeSeconds, isOpen } = this.props;
+    const { time, is24Hour, delimiter, includeSeconds, isOpen, minTime, maxTime } = this.props;
     if (prevProps.isOpen !== isOpen) {
       this.onToggle(isOpen);
     }
@@ -219,6 +219,17 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       this.setState({
         timeState: parsedTime,
         isInvalid: !this.isValid(parsedTime)
+      });
+    }
+    if (minTime !== '' && minTime !== prevProps.minTime) {
+      this.setState({
+        minTimeState: parseTime(minTime, timeRegex, delimiter, !is24Hour, includeSeconds)
+      });
+    }
+
+    if (maxTime !== '' && maxTime !== prevProps.maxTime) {
+      this.setState({
+        maxTimeState: parseTime(maxTime, timeRegex, delimiter, !is24Hour, includeSeconds)
       });
     }
   }
