@@ -58,15 +58,15 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   goToStepByName,
   goToStepByIndex
 }) => {
-  const [steps, setSteps] = React.useState(initialSteps);
+  const [currentSteps, setCurrentSteps] = React.useState(initialSteps);
   const [currentFooter, setCurrentFooter] = React.useState(
     typeof initialFooter !== 'function' ? initialFooter : undefined
   );
 
   // Combined initial and current state steps
-  const mergedSteps = React.useMemo(
+  const steps = React.useMemo(
     () =>
-      steps.map((currentStepProps, index) => {
+      currentSteps.map((currentStepProps, index) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { isVisited, ...initialStepProps } = initialSteps[index];
 
@@ -75,12 +75,12 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
           ...initialStepProps
         };
       }),
-    [initialSteps, steps]
+    [initialSteps, currentSteps]
   );
-  const activeStep = getActiveStep(mergedSteps, activeStepIndex);
+  const activeStep = getActiveStep(steps, activeStepIndex);
 
-  const goToNextStep = React.useCallback(() => onNext(mergedSteps), [onNext, mergedSteps]);
-  const goToPrevStep = React.useCallback(() => onBack(mergedSteps), [onBack, mergedSteps]);
+  const goToNextStep = React.useCallback(() => onNext(steps), [onNext, steps]);
+  const goToPrevStep = React.useCallback(() => onBack(steps), [onBack, steps]);
 
   const footer = React.useMemo(() => {
     const wizardFooter = activeStep?.footer || currentFooter || initialFooter;
@@ -99,19 +99,17 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
         onNext={goToNextStep}
         onBack={goToPrevStep}
         onClose={onClose}
-        isBackDisabled={activeStep?.id === mergedSteps[0]?.id}
+        isBackDisabled={activeStep?.id === steps[0]?.id}
         {...wizardFooter}
       />
     );
-  }, [currentFooter, initialFooter, activeStep, goToNextStep, goToPrevStep, onClose, mergedSteps]);
+  }, [currentFooter, initialFooter, activeStep, goToNextStep, goToPrevStep, onClose, steps]);
 
-  const getStep = React.useCallback((stepId: string | number) => mergedSteps.find(step => step.id === stepId), [
-    mergedSteps
-  ]);
+  const getStep = React.useCallback((stepId: string | number) => steps.find(step => step.id === stepId), [steps]);
 
   const setStep = React.useCallback(
     (step: Pick<WizardControlStep, 'id'> & Partial<WizardControlStep>) =>
-      setSteps(prevSteps =>
+      setCurrentSteps(prevSteps =>
         prevSteps.map(prevStep => {
           if (prevStep.id === step.id) {
             return { ...prevStep, ...step };
@@ -126,7 +124,7 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   return (
     <WizardContext.Provider
       value={{
-        steps: mergedSteps,
+        steps,
         activeStep,
         footer,
         onClose,
@@ -135,9 +133,9 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
         setFooter: setCurrentFooter,
         onNext: goToNextStep,
         onBack: goToPrevStep,
-        goToStepById: React.useCallback(id => goToStepById(mergedSteps, id), [goToStepById, mergedSteps]),
-        goToStepByName: React.useCallback(name => goToStepByName(mergedSteps, name), [goToStepByName, mergedSteps]),
-        goToStepByIndex: React.useCallback(index => goToStepByIndex(mergedSteps, index), [goToStepByIndex, mergedSteps])
+        goToStepById: React.useCallback(id => goToStepById(steps, id), [goToStepById, steps]),
+        goToStepByName: React.useCallback(name => goToStepByName(steps, name), [goToStepByName, steps]),
+        goToStepByIndex: React.useCallback(index => goToStepByIndex(steps, index), [goToStepByIndex, steps])
       }}
     >
       {children}
