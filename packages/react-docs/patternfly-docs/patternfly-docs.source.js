@@ -5,7 +5,7 @@ module.exports = (baseSourceMD, sourceProps) => {
 
   // Theme pages
   const themePagesPath = require
-    .resolve('@patternfly-five/documentation-framework/package.json')
+    .resolve('@patternfly/documentation-framework/package.json')
     .replace('package.json', 'pages');
   sourceMD(path.join(themePagesPath, '*.md'), 'pages-overview');
 
@@ -22,7 +22,9 @@ module.exports = (baseSourceMD, sourceProps) => {
   const reactVirtualizedPath = require
     .resolve('@patternfly-five/react-virtualized-extension/package.json')
     .replace('package.json', 'src');
-  const reactConsolePath = require.resolve('@patternfly-five/react-console/package.json').replace('package.json', 'src');
+  const reactConsolePath = require
+    .resolve('@patternfly-five/react-console/package.json')
+    .replace('package.json', 'src');
   const reactLogViewerPath = require
     .resolve('@patternfly-five/react-log-viewer/package.json')
     .replace('package.json', 'src');
