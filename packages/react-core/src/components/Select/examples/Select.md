@@ -2613,7 +2613,7 @@ class SelectWithFooterCheckbox extends React.Component {
 
 ### View more
 
-```js isBeta
+```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -2708,7 +2708,7 @@ class SelectViewMore extends React.Component {
 
 ### View more with checkboxes
 
-```js isBeta
+```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 

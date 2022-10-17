@@ -3,7 +3,6 @@ id: Tree view
 section: components
 cssPrefix: pf-c-tree-view
 propComponents: ['TreeView', 'TreeViewDataItem', 'TreeViewSearch']
-beta: true
 ---
 
 import { FolderIcon, FolderOpenIcon, EllipsisVIcon, ClipboardIcon, HamburgerIcon } from '@patternfly/react-icons';
