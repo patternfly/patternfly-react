@@ -22,9 +22,7 @@ module.exports = (baseSourceMD, sourceProps) => {
   const reactVirtualizedPath = require
     .resolve('@patternfly/react-virtualized-extension/package.json')
     .replace('package.json', 'src');
-  const reactConsolePath = require
-    .resolve('@patternfly/react-console/package.json')
-    .replace('package.json', 'src');
+  const reactConsolePath = require.resolve('@patternfly/react-console/package.json').replace('package.json', 'src');
   const reactLogViewerPath = require
     .resolve('@patternfly/react-log-viewer/package.json')
     .replace('package.json', 'src');
