@@ -9,12 +9,9 @@ import { ApplicationLauncherGroup } from './ApplicationLauncherGroup';
 import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
 import { ApplicationLauncherItem } from './ApplicationLauncherItem';
 import { ApplicationLauncherContext } from './ApplicationLauncherContext';
-import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
 
-export interface ApplicationLauncherProps
-  extends Omit<ToggleMenuBaseProps, 'menuAppendTo'>,
-    React.HTMLProps<HTMLDivElement> {
+export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional element css classes */
   className?: string;
   /** Display menu above or below dropdown toggle */

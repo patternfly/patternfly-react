@@ -3,7 +3,6 @@ import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-
 import { DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 import { OUIAProps, useOUIAId } from '../../helpers';
-import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 
 export enum OptionsMenuPosition {
   right = 'right',
@@ -15,10 +14,7 @@ export enum OptionsMenuDirection {
   down = 'down'
 }
 
-export interface OptionsMenuProps
-  extends Omit<ToggleMenuBaseProps, 'menuAppendTo'>,
-    React.HTMLProps<HTMLDivElement>,
-    OUIAProps {
+export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Classes applied to root element of the options menu */
   className?: string;
   /** Id of the root element of the options menu */

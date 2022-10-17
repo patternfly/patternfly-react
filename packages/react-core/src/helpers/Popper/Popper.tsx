@@ -42,18 +42,6 @@ const getOppositePlacement = (placement: Placement): any =>
       ] as Placement
   );
 
-/** @deprecated Please use the menuAppendTo prop directly from within the PF component which uses it. */
-export interface ToggleMenuBaseProps {
-  /** The container to append the menu to. Defaults to 'inline'
-   * If your menu is being cut off you can append it to an element higher up the DOM tree.
-   * Some examples:
-   * menuAppendTo="parent"
-   * menuAppendTo={() => document.body}
-   * menuAppendTo={document.getElementById('target')}
-   */
-  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'parent' | 'inline';
-}
-
 export const getOpacityTransition = (animationDuration: number) =>
   `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`;
 

@@ -10,11 +10,10 @@ import { TextInput } from '../TextInput';
 import { InputGroup } from '../InputGroup';
 import { KeyTypes } from '../../helpers/constants';
 import { FocusTrap, getUniqueId } from '../../helpers';
-import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { Popper } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
-export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuAppendTo'>, OUIAProps {
+export interface ContextSelectorProps extends OUIAProps {
   /** content rendered inside the Context Selector */
   children?: React.ReactNode;
   /** Classes applied to root element of Context Selector */
