@@ -2,13 +2,9 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 import { DropdownWithContext } from './DropdownWithContext';
-import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { OUIAProps, useOUIAId } from '../../helpers';
 
-export interface DropdownProps
-  extends Omit<ToggleMenuBaseProps, 'menuAppendTo'>,
-    React.HTMLProps<HTMLDivElement>,
-    OUIAProps {
+export interface DropdownProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Anything which can be rendered in a dropdown */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown */
