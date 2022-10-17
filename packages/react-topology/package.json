@@ -1,5 +1,5 @@
 {
-  "name": "@patternfly-react/react-topology",
+  "name": "@patternfly-five/react-topology",
   "version": "1.0.0",
   "description": "This library provides a set of React topology view components for use with the PatternFly 4",
   "main": "dist/js/index.js",

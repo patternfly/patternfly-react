@@ -1,5 +1,5 @@
 {
-  "name": "@patternfly-react/react-log-viewer",
+  "name": "@patternfly-five/react-log-viewer",
   "version": "1.0.0",
   "description": "Terminal renderer",
   "main": "dist/js/index.js",
