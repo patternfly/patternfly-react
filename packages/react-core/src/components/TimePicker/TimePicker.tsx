@@ -143,6 +143,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
     document.addEventListener('keydown', this.handleGlobalKeys);
+
+    this.setState({ isInvalid: !this.isValid(this.state.timeState) });
   }
 
   componentWillUnmount() {
@@ -212,8 +214,11 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       });
     }
     if (time !== '' && time !== prevProps.time) {
+      const parsedTime = parseTime(time, timeRegex, delimiter, !is24Hour, includeSeconds);
+
       this.setState({
-        timeState: parseTime(time, timeRegex, delimiter, !is24Hour, includeSeconds)
+        timeState: parsedTime,
+        isInvalid: !this.isValid(parsedTime)
       });
     }
   }
