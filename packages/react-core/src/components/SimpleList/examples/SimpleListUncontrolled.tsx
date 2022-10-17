@@ -1,14 +1,14 @@
 import React from 'react';
-import { SimpleList, SimpleListItem } from '@patternfly/react-core';
+import { SimpleList, SimpleListItem, SimpleListItemProps } from '@patternfly/react-core';
 
-export const SimpleListUncontrolledDemo: React.FunctionComponent = () => {
+export const SimpleListUncontrolled: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState(0);
 
   const onSelect = (
     selectedItem: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
-    _selectedItemProps
+    selectedItemProps: SimpleListItemProps
   ) => {
-    setActiveItem(_selectedItemProps.itemId);
+    setActiveItem(selectedItemProps.itemId as number);
   };
 
   const items = [

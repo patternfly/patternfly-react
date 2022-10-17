@@ -1,7 +1,7 @@
 import React from 'react';
 import { SimpleList, SimpleListItem, SimpleListGroup } from '@patternfly/react-core';
 
-export const SimpleListGroupDemo: React.FunctionComponent = () => {
+export const SimpleListGrouped: React.FunctionComponent = () => {
   const group1Items = [
     <SimpleListItem key="item1" isActive>
       List item 1
@@ -23,7 +23,7 @@ export const SimpleListGroupDemo: React.FunctionComponent = () => {
   ];
 
   return (
-    <SimpleList aria-label="Grouped List Example">
+    <SimpleList aria-label="Grouped simple list example">
       <SimpleListGroup title="Group 1" id="group-1">
         {group1Items}
       </SimpleListGroup>
