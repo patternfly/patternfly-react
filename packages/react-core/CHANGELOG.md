@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.252.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.251.4...@patternfly/react-core@4.252.0) (2022-10-17)
+
+
+### Features
+
+* **DataList:** pass button props to toggle ([#8222](https://github.com/patternfly/patternfly-react/issues/8222)) ([2328018](https://github.com/patternfly/patternfly-react/commit/2328018d049fed835fa9837294967e5c8f007cab))
+
+
+
+
+
 ## [4.251.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.251.3...@patternfly/react-core@4.251.4) (2022-10-14)
 
 **Note:** Version bump only for package @patternfly/react-core
