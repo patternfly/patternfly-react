@@ -2,16 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { AlertActionLink } from '../AlertActionLink';
 
-jest.mock('../../Button', () => ({
-  Button: ({ children, variant, isInline, ...props }) => (
-    <>
-      <button {...props}>{children}</button>
-      <p>{`variant: ${variant}`}</p>
-      <p>{`isInline: ${isInline}`}</p>
-    </>
-  ),
-  ButtonVariant: { link: 'link' }
-}));
+jest.mock('../../Button');
 
 test('Renders without children', () => {
   render(
