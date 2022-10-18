@@ -6,16 +6,16 @@ export const TextAreaValidated: React.FunctionComponent = () => {
   const [invalidText, setInvalidText] = React.useState('You must have something to say');
   const [validated, setValidated] = React.useState<'default' | 'error' | 'warning' | 'success' | undefined>('default');
   const [helperText, setHelperText] = React.useState('Share your thoughts.');
-  const simulateNetworkCall = callback => {
+  const simulateNetworkCall = (callback: Function) => {
     setTimeout(callback, 2000);
   };
 
-  const handleTextAreaChange = value => {
+  const handleTextAreaChange = (value: string) => {
     setValue(value);
     setValidated('default');
     setHelperText('Validating...');
     simulateNetworkCall(() => {
-      if (value?.length > 0) {
+      if (value.length > 0) {
         if (value.length >= 10) {
           setValidated('success');
           setHelperText('Thanks for your comments!');

@@ -24,7 +24,7 @@ export const TextAreaIconSprite: React.FunctionComponent = () => {
         type="text"
         onChange={value => setWarning(value)}
         value={warning}
-        aria-label="warning icon sprite text input example"
+        aria-label="warning icon sprite text area example"
       />
       <br />
       <br />

@@ -8,7 +8,7 @@ export const VerticalResizeTextArea: React.FunctionComponent = () => {
       value={value}
       onChange={value => setValue(value)}
       resizeOrientation="vertical"
-      aria-label="text vertical resize example"
+      aria-label="text area vertical resize example"
     />
   );
 };

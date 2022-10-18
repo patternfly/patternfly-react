@@ -8,7 +8,7 @@ export const TextAreaHorizontallyResizable: React.FunctionComponent = () => {
       value={value}
       onChange={value => setValue(value)}
       resizeOrientation="horizontal"
-      aria-label="text horizontal resize example"
+      aria-label="text area horizontal resize example"
     />
   );
 };
