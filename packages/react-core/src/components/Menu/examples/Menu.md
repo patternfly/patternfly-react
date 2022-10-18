@@ -22,6 +22,12 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 
 ```ts file="MenuBasic.tsx"
 ```
+
+### Danger menu item
+
+```ts file="MenuDangerMenuItem.tsx"
+```
+
 ### With icons
 
 ```ts file="MenuWithIcons.tsx"
@@ -117,9 +123,4 @@ To render an initially drilled in menu, the `menuDrilledIn`, `drilldownPath`, an
 ### With view more
 
 ```ts file="MenuWithViewMore.tsx"
-```
-
-### Danger menu item
-
-```ts file="MenuDangerMenuItem.tsx"
 ```
