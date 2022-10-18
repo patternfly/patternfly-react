@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.252.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.252.1...@patternfly/react-core@4.252.2) (2022-10-18)
+
+
+### Bug Fixes
+
+* **Dropdown:** enabled right aligned dropdown with isFlipEnabled ([#8224](https://github.com/patternfly/patternfly-react/issues/8224)) ([3592599](https://github.com/patternfly/patternfly-react/commit/35925999fef096c54ce15d5c9dbebdbfae80153a))
+
+
+
+
+
 ## [4.252.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.252.0...@patternfly/react-core@4.252.1) (2022-10-18)
 
 **Note:** Version bump only for package @patternfly/react-core
