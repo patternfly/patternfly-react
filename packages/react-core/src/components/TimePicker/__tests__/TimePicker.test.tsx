@@ -107,22 +107,25 @@ describe('TimePicker', () => {
     });
 
     test('should be invalid after onBlur', async () => {
-      const validateTime = (_time: string) => {
-        return false;
-      };
       const user = userEvent.setup();
 
       render(
         <>
           <div>Other element</div>
-          <TimePicker value={'00:00'} validateTime={validateTime} aria-label="time picker" />
+          <TimePicker value={'00:00'} aria-label="time picker" />
         </>
       );
 
-      await user.type(screen.getByLabelText('time picker'), '01:00');
+      await user.type(screen.getByLabelText('time picker'), '14:00');
       expect(screen.queryByText('Invalid time format')).toBeNull();
 
       await user.click(screen.getByText('Other element'));
+      expect(screen.getByText('Invalid time format')).toBeInTheDocument();
+    });
+
+    test('should be invalid when invalid time prop is passed', () => {
+      render(<TimePicker time="00:00" aria-label="time picker" />);
+
       expect(screen.getByText('Invalid time format')).toBeInTheDocument();
     });
   });
