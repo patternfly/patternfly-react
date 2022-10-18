@@ -22,12 +22,12 @@ propComponents: ['TextArea']
 ```ts file="./TextAreaValidated.tsx"
 ```
 
-### Vertically resizable text area
+### Vertically resizable
 
 ```ts file="./TextAreaVerticallyResizable.tsx"
 ```
 
-### Horizontally resizable text area
+### Horizontally resizable
 
 ```ts file="./TextAreaHorizontallyResizable.tsx"
 ```
