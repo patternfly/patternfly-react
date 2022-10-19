@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.253.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.252.2...@patternfly/react-core@4.253.0) (2022-10-19)
+
+
+### Features
+
+* **Wizard,ClipboardCopy:** add OUIA props to WizardNav, WizardNavItem, ClipboardCopy ([#8193](https://github.com/patternfly/patternfly-react/issues/8193)) ([5d75355](https://github.com/patternfly/patternfly-react/commit/5d753554e3cf9a634f34e0b83a325d5d0b198a83))
+
+
+
+
+
 ## [4.252.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.252.1...@patternfly/react-core@4.252.2) (2022-10-18)
 
 
