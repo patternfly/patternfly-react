@@ -126,10 +126,10 @@ const CustomStepThreeFooter = () => {
       <Button variant="primary" onClick={() => onNext(goToNextStep)} isLoading={isLoading} isDisabled={isLoading}>
         Async Next
       </Button>
-      <Button variant="secondary" onClick={onBack}>
+      <Button variant="secondary" onClick={onBack} isDisabled={isLoading}>
         Back
       </Button>
-      <Button variant="link" onClick={onClose}>
+      <Button variant="link" onClick={onClose} isDisabled={isLoading}>
         Cancel
       </Button>
     </WizardFooterWrapper>
