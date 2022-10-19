@@ -9,6 +9,7 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { ClipboardCopyButton } from './ClipboardCopyButton';
 import { ClipboardCopyToggle } from './ClipboardCopyToggle';
 import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
   const clipboard = event.currentTarget.parentElement;
@@ -32,7 +33,7 @@ export interface ClipboardCopyState {
   copied: boolean;
 }
 
-export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'>, OUIAProps {
   /** Additional classes added to the clipboard copy container. */
   className?: string;
   /** Tooltip message to display when hover the copy button */
@@ -86,6 +87,10 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   children: React.ReactNode;
   /** Additional actions for inline clipboard copy. Should be wrapped with ClipboardCopyAction. */
   additionalActions?: React.ReactNode;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopyState> {
@@ -118,7 +123,8 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     onChange: (): any => undefined,
     textAriaLabel: 'Copyable input',
     toggleAriaLabel: 'Show content',
-    additionalActions: null
+    additionalActions: null,
+    ouiaSafe: true
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -168,6 +174,8 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       position,
       className,
       additionalActions,
+      ouiaId,
+      ouiaSafe,
       ...divProps
     } = this.props;
     const textIdPrefix = 'text-input-';
@@ -183,6 +191,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
           className
         )}
         {...divProps}
+        {...getOUIAProps(ClipboardCopy.displayName, ouiaId, ouiaSafe)}
       >
         {variant === 'inline-compact' && (
           <GenerateId prefix="">
