@@ -145,9 +145,9 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
         <div className="pf-screen-reader" aria-live="polite">
           {progressAriaLiveMessage &&
             typeof progressAriaLiveMessage === 'function' &&
-            progressAriaLiveMessage(loadPercentage)}
+            progressAriaLiveMessage(+loadPercentage.toFixed(2))}
           {progressAriaLiveMessage && typeof progressAriaLiveMessage === 'string' && progressAriaLiveMessage}
-          {!progressAriaLiveMessage && `Progress value is ${progressValue || loadPercentage}%.`}
+          {!progressAriaLiveMessage && `Progress value is ${progressValue || Math.floor(loadPercentage)}%.`}
         </div>
         <Progress
           title={title}
