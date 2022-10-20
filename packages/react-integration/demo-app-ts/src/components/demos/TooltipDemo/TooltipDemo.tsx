@@ -21,9 +21,6 @@ export class TooltipDemo extends Component {
     return (
       <div>
         <Tooltip content={this.myTooltipProps.content}>{this.myTooltipProps.children}</Tooltip>
-        <Tooltip content="test deprecated props">
-          <button>Trigger</button>
-        </Tooltip>
         <div>
           <button ref={this.tooltipRef} id="tooltip-ref">
             Tooltip attached via react ref
