@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.255.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.254.1...@patternfly/react-core@4.255.0) (2022-10-21)
+
+
+### Features
+
+* add ouia support to dropdown next ([#8135](https://github.com/patternfly/patternfly-react/issues/8135)) ([bc9ea4c](https://github.com/patternfly/patternfly-react/commit/bc9ea4c3c894d38d2fd1290bc32181964c11bc6b))
+
+
+
+
+
 ## [4.254.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.254.0...@patternfly/react-core@4.254.1) (2022-10-21)
 
 
