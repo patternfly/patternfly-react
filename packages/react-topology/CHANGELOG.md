@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.89.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.43...@patternfly/react-topology@4.89.0) (2022-10-21)
+
+
+### Features
+
+* **Topology:** Add option to fit layout to screen upon layout completion ([#8210](https://github.com/patternfly/patternfly-react/issues/8210)) ([01da036](https://github.com/patternfly/patternfly-react/commit/01da0368318e1b3e6eb3362202a3a207bea07625))
+
+
+
+
+
 ## [4.88.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.42...@patternfly/react-topology@4.88.43) (2022-10-20)
 
 **Note:** Version bump only for package @patternfly/react-topology

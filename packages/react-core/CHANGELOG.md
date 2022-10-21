@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.254.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.253.1...@patternfly/react-core@4.254.0) (2022-10-21)
+
+
+### Bug Fixes
+
+* **CodeEditor:** use codeEditorControls and clean up overall ([#7931](https://github.com/patternfly/patternfly-react/issues/7931)) ([69d5937](https://github.com/patternfly/patternfly-react/commit/69d5937fd5fa56ace7543a740ba253bdc851009e))
+
+
+### Features
+
+* **menu:** add optional danger state for menu items ([#8131](https://github.com/patternfly/patternfly-react/issues/8131)) ([960721e](https://github.com/patternfly/patternfly-react/commit/960721efe04fac236e4dd2d7793d3c461cdc0eb1))
+
+
+
+
+
 ## [4.253.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.253.0...@patternfly/react-core@4.253.1) (2022-10-20)
 
 **Note:** Version bump only for package @patternfly/react-core
