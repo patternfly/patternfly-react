@@ -13,7 +13,7 @@ export const ExpandableSectionDisclosure: React.FunctionComponent = () => {
       toggleText={isExpanded ? 'Show less' : 'Show more'}
       onToggle={onToggle}
       isExpanded={isExpanded}
-      displaySize="large"
+      displaySize="lg"
       isWidthLimited
     >
       This content is visible only when the component is expanded.

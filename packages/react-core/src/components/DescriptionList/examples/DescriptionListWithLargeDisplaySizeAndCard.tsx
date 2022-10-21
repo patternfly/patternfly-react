@@ -3,13 +3,13 @@ import {
   Button,
   DescriptionList,
   DescriptionListTerm,
-  DescriptionListGroup,
   DescriptionListDescription,
+  Card,
   Checkbox
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListWithDisplaySize: React.FunctionComponent = () => {
+export const DescriptionListWithLargeDisplaySizeAndCard: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
   const [displaySize, setDisplaySize] = React.useState<'lg' | '2xl'>('lg');
 
@@ -26,37 +26,37 @@ export const DescriptionListWithDisplaySize: React.FunctionComponent = () => {
           isChecked={isChecked}
           onChange={toggleDisplaySize}
           aria-label="set display size 2xl"
-          id="toggle-display-size"
-          name="toggle-display-size"
+          id="toggle-display-size-with-card"
+          name="toggle-display-size-with-card"
         />
       </div>
       <DescriptionList displaySize={displaySize} columnModifier={{ lg: '2Col' }}>
-        <DescriptionListGroup>
+        <Card component="div">
           <DescriptionListTerm>Name</DescriptionListTerm>
           <DescriptionListDescription>Example</DescriptionListDescription>
-        </DescriptionListGroup>
-        <DescriptionListGroup>
+        </Card>
+        <Card component="div">
           <DescriptionListTerm>Namespace</DescriptionListTerm>
           <DescriptionListDescription>
             <a href="#">mary-test</a>
           </DescriptionListDescription>
-        </DescriptionListGroup>
-        <DescriptionListGroup>
+        </Card>
+        <Card component="div">
           <DescriptionListTerm>Labels</DescriptionListTerm>
           <DescriptionListDescription>example</DescriptionListDescription>
-        </DescriptionListGroup>
-        <DescriptionListGroup>
+        </Card>
+        <Card component="div">
           <DescriptionListTerm>Pod selector</DescriptionListTerm>
           <DescriptionListDescription>
             <Button variant="link" isInline icon={<PlusCircleIcon />}>
               app=MyApp
             </Button>
           </DescriptionListDescription>
-        </DescriptionListGroup>
-        <DescriptionListGroup>
+        </Card>
+        <Card component="div">
           <DescriptionListTerm>Annotation</DescriptionListTerm>
           <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-        </DescriptionListGroup>
+        </Card>
       </DescriptionList>
     </>
   );
