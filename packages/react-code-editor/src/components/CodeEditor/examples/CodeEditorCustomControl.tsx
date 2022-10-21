@@ -18,7 +18,7 @@ export const CodeEditorCustomControl: React.FunctionComponent = () => {
     <CodeEditorControl
       icon={<PlayIcon />}
       aria-label="Execute code"
-      toolTipText="Execute code"
+      tooltipProps={{ content: 'Execute code' }}
       onClick={onExecuteCode}
       isVisible={code !== ''}
     />
