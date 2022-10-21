@@ -9,7 +9,7 @@ propComponents: ['Skeleton']
 
 ### Default
 
-```ts file="./SkeletonBasic.tsx"
+```ts file="./SkeletonDefault.tsx"
 ```
 
 ### Percentage widths
