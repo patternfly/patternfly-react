@@ -3525,10 +3525,10 @@
     acorn-static-class-features "^1.0.0"
     astring "^1.7.5"
 
-"@patternfly/documentation-framework@1.2.34":
-  version "1.2.34"
-  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-1.2.34.tgz#4d38f0dcd1b54d3c5b19f9f68ec37e3c1d23ceff"
-  integrity sha512-pqeSuiHH37dVm107BB4RhsTRwvqSxM7EwaS8/nWI3KSQRVjmZ7TboWpQ71xQaXat+6OVtxDHF2sqMdg0KZZJCg==
+"@patternfly/documentation-framework@1.2.46":
+  version "1.2.46"
+  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-1.2.46.tgz#78434cb2c27c9fa71f4c200f82b9c70f99c92afd"
+  integrity sha512-6BDSqwYkCZZi51Cv6pspCPf3vOwfPEZfXUCxaUAsJ1i8YfdjUUzWIO+0V8r1uksFFLKQvMdDR+GXCFAQ4fdgqQ==
   dependencies:
     "@babel/core" "7.18.2"
     "@babel/plugin-proposal-class-properties" "7.17.12"
@@ -3612,10 +3612,10 @@
     puppeteer-cluster "^0.23.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@4.217.1":
-  version "4.217.1"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.217.1.tgz#3583aa7216de9255b912fcc67a5af95ff8bd9cb3"
-  integrity sha512-uN7JgfQsyR16YHkuGRCTIcBcnyKIqKjGkB2SGk9x1XXH3yYGenL83kpAavX9Xtozqp17KppOlybJuzcKvZMrgw==
+"@patternfly/patternfly@4.219.0":
+  version "4.219.0"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.219.0.tgz#a61e0786de905fa750e99eee9ff417aa93bdd68d"
+  integrity sha512-V47JKwmEPfQEC2NZCWm5X1ojAUIsq4kMQEbox49AO6l9+mtCT/iZtBqZVwJwoDqEE825KeWTOAfTwAkBc7MYug==
 
 "@reach/router@1.3.4":
   version "1.3.4"

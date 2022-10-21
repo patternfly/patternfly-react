@@ -3,6 +3,148 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.90.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.90.0...@patternfly/react-topology@4.90.1) (2022-10-21)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+# [4.90.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.89.0...@patternfly/react-topology@4.90.0) (2022-10-21)
+
+
+### Features
+
+* **topology:** Allow tooltip usage on pipeline task node badges ([#8208](https://github.com/patternfly/patternfly-react/issues/8208)) ([f0a87ba](https://github.com/patternfly/patternfly-react/commit/f0a87ba7563c5194ea254c7e57b2b5e60be1eb58))
+
+
+
+
+
+# [4.89.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.43...@patternfly/react-topology@4.89.0) (2022-10-21)
+
+
+### Features
+
+* **Topology:** Add option to fit layout to screen upon layout completion ([#8210](https://github.com/patternfly/patternfly-react/issues/8210)) ([01da036](https://github.com/patternfly/patternfly-react/commit/01da0368318e1b3e6eb3362202a3a207bea07625))
+
+
+
+
+
+## [4.88.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.42...@patternfly/react-topology@4.88.43) (2022-10-20)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.41...@patternfly/react-topology@4.88.42) (2022-10-19)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.40...@patternfly/react-topology@4.88.41) (2022-10-18)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.39...@patternfly/react-topology@4.88.40) (2022-10-18)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.38...@patternfly/react-topology@4.88.39) (2022-10-17)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.37...@patternfly/react-topology@4.88.38) (2022-10-14)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.36...@patternfly/react-topology@4.88.37) (2022-10-14)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.35...@patternfly/react-topology@4.88.36) (2022-10-14)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.34...@patternfly/react-topology@4.88.35) (2022-10-13)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.33...@patternfly/react-topology@4.88.34) (2022-10-13)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.32...@patternfly/react-topology@4.88.33) (2022-10-13)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.31...@patternfly/react-topology@4.88.32) (2022-10-12)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.30...@patternfly/react-topology@4.88.31) (2022-10-12)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.88.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.29...@patternfly/react-topology@4.88.30) (2022-10-12)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
 ## [4.88.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.88.28...@patternfly/react-topology@4.88.29) (2022-10-12)
 
 **Note:** Version bump only for package @patternfly/react-topology

@@ -3,6 +3,177 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.255.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.254.1...@patternfly/react-core@4.255.0) (2022-10-21)
+
+
+### Features
+
+* add ouia support to dropdown next ([#8135](https://github.com/patternfly/patternfly-react/issues/8135)) ([bc9ea4c](https://github.com/patternfly/patternfly-react/commit/bc9ea4c3c894d38d2fd1290bc32181964c11bc6b))
+
+
+
+
+
+## [4.254.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.254.0...@patternfly/react-core@4.254.1) (2022-10-21)
+
+
+### Bug Fixes
+
+* **DualListSelector:** Add/remove button didn't work if search is used ([#8269](https://github.com/patternfly/patternfly-react/issues/8269)) ([a738bb9](https://github.com/patternfly/patternfly-react/commit/a738bb98a681d93b65d36a440118199f40941afe))
+
+
+
+
+
+# [4.254.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.253.1...@patternfly/react-core@4.254.0) (2022-10-21)
+
+
+### Bug Fixes
+
+* **CodeEditor:** use codeEditorControls and clean up overall ([#7931](https://github.com/patternfly/patternfly-react/issues/7931)) ([69d5937](https://github.com/patternfly/patternfly-react/commit/69d5937fd5fa56ace7543a740ba253bdc851009e))
+
+
+### Features
+
+* **menu:** add optional danger state for menu items ([#8131](https://github.com/patternfly/patternfly-react/issues/8131)) ([960721e](https://github.com/patternfly/patternfly-react/commit/960721efe04fac236e4dd2d7793d3c461cdc0eb1))
+
+
+
+
+
+## [4.253.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.253.0...@patternfly/react-core@4.253.1) (2022-10-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.253.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.252.2...@patternfly/react-core@4.253.0) (2022-10-19)
+
+
+### Features
+
+* **Wizard,ClipboardCopy:** add OUIA props to WizardNav, WizardNavItem, ClipboardCopy ([#8193](https://github.com/patternfly/patternfly-react/issues/8193)) ([5d75355](https://github.com/patternfly/patternfly-react/commit/5d753554e3cf9a634f34e0b83a325d5d0b198a83))
+
+
+
+
+
+## [4.252.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.252.1...@patternfly/react-core@4.252.2) (2022-10-18)
+
+
+### Bug Fixes
+
+* **Dropdown:** enabled right aligned dropdown with isFlipEnabled ([#8224](https://github.com/patternfly/patternfly-react/issues/8224)) ([3592599](https://github.com/patternfly/patternfly-react/commit/35925999fef096c54ce15d5c9dbebdbfae80153a))
+
+
+
+
+
+## [4.252.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.252.0...@patternfly/react-core@4.252.1) (2022-10-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.252.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.251.4...@patternfly/react-core@4.252.0) (2022-10-17)
+
+
+### Features
+
+* **DataList:** pass button props to toggle ([#8222](https://github.com/patternfly/patternfly-react/issues/8222)) ([2328018](https://github.com/patternfly/patternfly-react/commit/2328018d049fed835fa9837294967e5c8f007cab))
+
+
+
+
+
+## [4.251.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.251.3...@patternfly/react-core@4.251.4) (2022-10-14)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.251.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.251.2...@patternfly/react-core@4.251.3) (2022-10-14)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.251.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.251.1...@patternfly/react-core@4.251.2) (2022-10-14)
+
+
+### Bug Fixes
+
+* **JumpLinks:** clean up demo in a drawer ([#8182](https://github.com/patternfly/patternfly-react/issues/8182)) ([d8e5b91](https://github.com/patternfly/patternfly-react/commit/d8e5b91c74957bc0dc4825e519721191f9f0427e))
+
+
+
+
+
+## [4.251.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.251.0...@patternfly/react-core@4.251.1) (2022-10-13)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.251.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.8...@patternfly/react-core@4.251.0) (2022-10-13)
+
+
+### Features
+
+* **label+labelGroup:** update aria-labels to include label text ([#8192](https://github.com/patternfly/patternfly-react/issues/8192)) ([f99a34d](https://github.com/patternfly/patternfly-react/commit/f99a34d503699d169cc2376841ec48fc9eb66bad))
+
+
+
+
+
+## [4.250.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.7...@patternfly/react-core@4.250.8) (2022-10-13)
+
+
+### Bug Fixes
+
+* **Slider:** correct tab order when input is above thumb ([#8190](https://github.com/patternfly/patternfly-react/issues/8190)) ([3a8b500](https://github.com/patternfly/patternfly-react/commit/3a8b500ff1f68dab5b34721186afe01147c74637))
+
+
+
+
+
+## [4.250.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.6...@patternfly/react-core@4.250.7) (2022-10-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.250.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.5...@patternfly/react-core@4.250.6) (2022-10-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.250.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.4...@patternfly/react-core@4.250.5) (2022-10-12)
+
+
+### Bug Fixes
+
+* **Dropdown next:** Add support for forward ref and updated docs. ([#8142](https://github.com/patternfly/patternfly-react/issues/8142)) ([423dd67](https://github.com/patternfly/patternfly-react/commit/423dd67d0d81910e195722d07a3de3340eba4443))
+
+
+
+
+
 ## [4.250.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.3...@patternfly/react-core@4.250.4) (2022-10-12)
 
 **Note:** Version bump only for package @patternfly/react-core

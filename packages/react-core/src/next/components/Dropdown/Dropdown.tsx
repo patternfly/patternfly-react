@@ -2,8 +2,9 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../../../components/Menu';
 import { Popper } from '../../../helpers/Popper/Popper';
+import { useOUIAProps, OUIAProps } from '../../../helpers';
 
-export interface DropdownProps extends MenuProps {
+export interface DropdownProps extends MenuProps, OUIAProps {
   /** Anything which can be rendered in a dropdown. */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown. */
@@ -23,9 +24,15 @@ export interface DropdownProps extends MenuProps {
   isScrollable?: boolean;
   /** Min width of the menu. */
   minWidth?: string;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<any>;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
-export const Dropdown: React.FunctionComponent<DropdownProps> = ({
+const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   children,
   className,
   onSelect,
@@ -35,13 +42,17 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   isPlain,
   isScrollable,
   minWidth,
+  innerRef,
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
   const containerRef = React.useRef<HTMLDivElement>();
+  const ouiaProps = useOUIAProps(Dropdown.displayName, ouiaId, ouiaSafe);
 
-  const menuRef = (props.innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
+  const menuRef = (innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
   React.useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       if (!isOpen && toggleRef.current?.contains(event.target as Node)) {
@@ -101,7 +112,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
     </Menu>
   );
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} {...ouiaProps}>
       <Popper
         trigger={toggle(toggleRef)}
         removeFindDomNode
@@ -112,4 +123,8 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
     </div>
   );
 };
+
+export const Dropdown = React.forwardRef((props: DropdownProps, ref: React.Ref<any>) => (
+  <DropdownBase innerRef={ref} {...props} />
+));
 Dropdown.displayName = 'Dropdown';

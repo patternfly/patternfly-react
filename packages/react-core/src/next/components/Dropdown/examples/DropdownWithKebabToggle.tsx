@@ -5,7 +5,6 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 export const DropdownWithKebab: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const menuRef = React.useRef<HTMLDivElement>(null);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -19,7 +18,6 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
 
   return (
     <Dropdown
-      innerRef={menuRef}
       isOpen={isOpen}
       onSelect={onSelect}
       minWidth="150px"
