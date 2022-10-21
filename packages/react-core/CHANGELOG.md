@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.254.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.254.0...@patternfly/react-core@4.254.1) (2022-10-21)
+
+
+### Bug Fixes
+
+* **DualListSelector:** Add/remove button didn't work if search is used ([#8269](https://github.com/patternfly/patternfly-react/issues/8269)) ([a738bb9](https://github.com/patternfly/patternfly-react/commit/a738bb98a681d93b65d36a440118199f40941afe))
+
+
+
+
+
 # [4.254.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.253.1...@patternfly/react-core@4.254.0) (2022-10-21)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.204.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.203.0...demo-app-ts@4.204.0) (2022-10-21)
+
+
+### Features
+
+* **topology:** Allow tooltip usage on pipeline task node badges ([#8208](https://github.com/patternfly/patternfly-react/issues/8208)) ([f0a87ba](https://github.com/patternfly/patternfly-react/commit/f0a87ba7563c5194ea254c7e57b2b5e60be1eb58))
+
+
+
+
+
 # [4.203.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.202.24...demo-app-ts@4.203.0) (2022-10-21)
 
 
