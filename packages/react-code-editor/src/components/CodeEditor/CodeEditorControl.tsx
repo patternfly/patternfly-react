@@ -80,16 +80,14 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
   if (maxWidth !== undefined) {
     // eslint-disable-next-line no-console
     console.warn(
-      'CodeEditorControl: maxWidth prop has been deprecated. ' +
-        'Pass the maxWidth via the tooltipProps prop instead.'
+      'CodeEditorControl: maxWidth prop has been deprecated. ' + 'Pass the maxWidth via the tooltipProps prop instead.'
     );
   }
 
   if (position !== undefined) {
     // eslint-disable-next-line no-console
     console.warn(
-      'CodeEditorControl: position prop has been deprecated. ' +
-        'Pass the position via the tooltipProps prop instead.'
+      'CodeEditorControl: position prop has been deprecated. ' + 'Pass the position via the tooltipProps prop instead.'
     );
   }
 
