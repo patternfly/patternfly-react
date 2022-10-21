@@ -85,9 +85,9 @@ import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
 ```ts file='./DescriptionListColumnFill.tsx'
 ```
 
-### Display size
+### Large display size
 
-```ts file='./DescriptionListWithDisplaySize.tsx'
+```ts file='./DescriptionListWithLargeDisplaySize.tsx'
 ```
 
 ## Responsive column definitions
@@ -135,9 +135,9 @@ A [card component](/components/card) can be used in place of a description list 
 ```ts file='./DescriptionListWithCard.tsx'
 ```
 
-### Description list with display size and card
+### Description list with large display size and card
 
-```ts file='./DescriptionListDisplaySizeAndCard.tsx'
+```ts file='./DescriptionListWithLargeDisplaySizeAndCard.tsx'
 ```
 
 ### Display size with card, three column on large breakpoint
