@@ -29,9 +29,9 @@ export interface WizardToggleProps {
   mainAriaLabel?: string;
   /** If the wizard is in-page */
   isInPage?: boolean;
-  /** @beta Flag indicating the wizard has a drawer for at least one of the wizard steps */
+  /** Flag indicating the wizard has a drawer for at least one of the wizard steps */
   hasDrawer?: boolean;
-  /** @beta Flag indicating the wizard drawer is expanded */
+  /** Flag indicating the wizard drawer is expanded */
   isDrawerExpanded?: boolean;
 }
 
