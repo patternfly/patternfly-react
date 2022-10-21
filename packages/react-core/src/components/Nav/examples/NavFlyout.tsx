@@ -81,7 +81,6 @@ export const NavFlyout: React.FunctionComponent = () => {
           preventDefault
           flyout={curFlyout}
           id="nav-flyout-default-link-3"
-          to="#nav-flyout-default-link-3"
           itemId="nav-flyout-default-link-3"
           isActive={activeItem === 'nav-flyout-default-link-3'}
         >
