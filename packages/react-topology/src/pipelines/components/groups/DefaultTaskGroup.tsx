@@ -6,8 +6,8 @@ import CollapseIcon from '@patternfly/react-icons/dist/esm/icons/compress-alt-ic
 import NodeLabel from '../../../components/nodes/labels/NodeLabel';
 import { Layer } from '../../../components/layers';
 import { GROUPS_LAYER } from '../../../const';
-import { maxPadding, useCombineRefs, useHover } from '../../../utils';
-import { BadgeLocation, isGraph, Node, NodeStyle } from '../../../types';
+import { useCombineRefs, useHover } from '../../../utils';
+import { BadgeLocation, isGraph, Node } from '../../../types';
 import {
   useDragNode,
   WithContextMenuProps,
@@ -81,25 +81,16 @@ const DefaultTaskGroup: React.FunctionComponent<DefaultTaskGroupProps> = ({
     parent = parent.getParent();
   }
 
-  // cast to number and coerce
-  const padding = maxPadding(element.getStyle<NodeStyle>().padding ?? 17);
-
   const children = element.getNodes().filter(c => c.isVisible());
   if (children.length === 0) {
     return null;
   }
-  const { minX, minY, maxX, maxY } = children.reduce(
-    (acc, child) => {
-      const bounds = child.getBounds();
-      return {
-        minX: Math.min(acc.minX, bounds.x - padding),
-        minY: Math.min(acc.minY, bounds.y - padding),
-        maxX: Math.max(acc.maxX, bounds.x + bounds.width + padding),
-        maxY: Math.max(acc.maxY, bounds.y + bounds.height + padding)
-      };
-    },
-    { minX: Infinity, minY: Infinity, maxX: 0, maxY: 0 }
-  );
+
+  const bounds = element.getBounds();
+  const minX = bounds.x;
+  const minY = bounds.y;
+  const maxX = bounds.x + bounds.width;
+  const maxY = bounds.y + bounds.height;
 
   const groupClassName = css(
     styles.topologyGroup,

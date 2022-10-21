@@ -1,9 +1,9 @@
 import React from 'react';
 import { Tab, Tabs, TabTitleText } from '@patternfly/react-core';
 import { TASKS_TITLE, TopologyPipelineTasks } from './PipelineTasks';
+import { LAYOUT_TITLE, PipelineLayout } from './PipelineLayout';
 
 import './TopologyDemo.css';
-import { LAYOUT_TITLE, PipelineLayout } from './PipelineLayout';
 
 const TASKS = 0;
 const LAYOUT = 1;
