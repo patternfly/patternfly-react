@@ -50,7 +50,7 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   progressAriaLabel?: string;
   /** Associates the progress bar with it's label for accessibility purposes. Required when title not used */
   progressAriaLabelledBy?: string;
-  /** Adds an accessible aria live region to indicate updates to the progress bar. */
+  /** Modifies the text announced by assistive technologies when the progress bar updates. */
   progressAriaLiveMessage?: string | ((loadPercentage: number) => string);
   /** Unique identifier for progress. Generated if not specified. */
   progressId?: string;
