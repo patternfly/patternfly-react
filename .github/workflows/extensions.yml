@@ -7,7 +7,7 @@ on:
 
 jobs:
   add-to-extensions:
-    if: github.event.label.name == 'extensions'
+    if: github.event.label.name == 'extension'
     name: Add issue to extensions board
     runs-on: ubuntu-latest
     steps:
