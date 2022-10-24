@@ -9,27 +9,37 @@ import { WizardStep, WizardStepProps } from './WizardStep';
  * @returns WizardControlStep[]
  */
 export const buildSteps = (children: React.ReactElement<WizardStepProps> | React.ReactElement<WizardStepProps>[]) =>
-  React.Children.toArray(children).reduce((acc: WizardControlStep[], child: React.ReactChild | React.ReactFragment) => {
+  React.Children.toArray(children).reduce((acc: WizardControlStep[], child: React.ReactNode) => {
     if (isWizardStep(child)) {
-      const { steps: subSteps, id } = child.props;
+      const { steps: subSteps, id, isHidden, isDisabled } = child.props;
+      const subControlledSteps: WizardControlStep[] = [];
+      const stepIndex = acc.length + 1;
 
-      acc.push({
-        component: child,
-        ...normalizeStep(child.props),
-        ...(subSteps && {
-          subStepIds: subSteps?.map(subStep => {
-            acc.push({
-              ...normalizeStep(subStep.props),
-              component: subStep,
-              parentId: id
-            });
+      acc.push(
+        {
+          index: stepIndex,
+          component: child,
+          ...(stepIndex === 1 && { isVisited: true }),
+          ...(subSteps && {
+            subStepIds: subSteps?.map((subStep, subStepIndex) => {
+              subControlledSteps.push({
+                isHidden,
+                isDisabled,
+                component: subStep,
+                parentId: id,
+                index: stepIndex + subStepIndex + 1,
+                ...normalizeStep(subStep.props)
+              });
 
-            return subStep.props.id;
-          })
-        })
-      });
+              return subStep.props.id;
+            })
+          }),
+          ...normalizeStep(child.props)
+        },
+        ...subControlledSteps
+      );
     } else {
-      throw new Error('Wizard only accepts children of type WizardStep');
+      throw new Error('Wizard only accepts children with required WizardStepProps.');
     }
 
     return acc;
@@ -45,14 +55,14 @@ export function isWizardStep(
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const normalizeStep = ({ children, steps, body, ...controlStep }: WizardStepProps): WizardControlStep =>
+export const normalizeStep = ({ children, steps, ...controlStep }: WizardStepProps): Omit<WizardControlStep, 'index'> =>
   controlStep;
 
-export const normalizeNavStep = (navStep: WizardControlStep, steps: WizardControlStep[]): WizardNavStepData => ({
+export const normalizeNavStep = (navStep: WizardControlStep): WizardNavStepData => ({
   id: navStep.id,
-  name: navStep.name.toString(),
-  index: steps.indexOf(navStep) + 1
+  index: navStep.index,
+  name: navStep.name.toString()
 });
 
-export const getCurrentStep = (steps: WizardControlStep[], currentStepIndex: number) =>
-  steps.find((_, index) => index + 1 === currentStepIndex);
+export const getActiveStep = (steps: WizardControlStep[], activeStepIndex: number) =>
+  steps.find(step => step.index === activeStepIndex);

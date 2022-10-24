@@ -68,7 +68,7 @@ The `Wizard`'s `nav` property can be used to build your own navigation.
 export type CustomWizardNavFunction = (
   isExpanded: boolean,
   steps: WizardControlStep[],
-  currentStep: WizardControlStep,
+  activeStep: WizardControlStep,
   goToStepByIndex: (index: number) => void
 ) => React.ReactElement<WizardNavProps>;
 
@@ -110,7 +110,7 @@ The `WizardStep`'s `navItem` property can be used to build your own nav item for
 /** Callback for the Wizard's 'navItem' property. Returns element which replaces the WizardStep's default navItem. */
 export type CustomWizardNavItemFunction = (
   step: WizardControlStep,
-  currentStep: WizardControlStep,
+  activeStep: WizardControlStep,
   steps: WizardControlStep[],
   goToStepByIndex: (index: number) => void
 ) => React.ReactElement<WizardNavItemProps>;
@@ -129,8 +129,8 @@ Used to access any property of [WizardContext](#wizardcontextprops):
 import { useWizardContext } from '@patternfly/react-core/next';
 
 const StepContent = () => {
-  const { currentStep } = useWizardContext();
-  return <>This is the current step: {currentStep}</>;
+  const { activeStep } = useWizardContext();
+  return <>This is the current step: {activeStep}</>;
 }
 ```
 

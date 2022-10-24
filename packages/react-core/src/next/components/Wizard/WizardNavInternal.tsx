@@ -17,7 +17,7 @@ interface WizardNavInternalProps extends Pick<WizardProps, 'isStepVisitRequired'
 }
 
 export const WizardNavInternal = ({ nav, isStepVisitRequired, isNavExpanded }: WizardNavInternalProps) => {
-  const { currentStep, steps, goToStepByIndex } = useWizardContext();
+  const { activeStep, steps, goToStepByIndex } = useWizardContext();
 
   const wizardNavProps: WizardNavProps = {
     isExpanded: isNavExpanded,
@@ -29,27 +29,28 @@ export const WizardNavInternal = ({ nav, isStepVisitRequired, isNavExpanded }: W
 
   return (
     <WizardNav {...wizardNavProps}>
-      {steps.map((step, index) => {
-        const stepIndex = index + 1;
+      {steps.map((step, stepIndex) => {
+        const hasVisitedNextStep = steps.some(step => step.index > stepIndex + 1 && step.isVisited);
+        const isStepDisabled = step.isDisabled || (isStepVisitRequired && !step.isVisited && !hasVisitedNextStep);
         const customStepNavItem = isCustomWizardNavItem(step.navItem) && (
           <React.Fragment key={step.id}>
-            {typeof step.navItem === 'function'
-              ? step.navItem(step, currentStep, steps, goToStepByIndex)
-              : step.navItem}
+            {typeof step.navItem === 'function' ? step.navItem(step, activeStep, steps, goToStepByIndex) : step.navItem}
           </React.Fragment>
         );
 
         if (isWizardParentStep(step) && !step.isHidden) {
-          let firstSubStepIndex;
+          let firstSubStepIndex: number;
           let hasActiveChild = false;
 
           const subNavItems = step.subStepIds?.map((subStepId, subStepIndex) => {
             const subStep = steps.find(step => step.id === subStepId);
-            const subStepOrderIndex = steps.indexOf(subStep) + 1;
+            const hasVisitedNextStep = steps.some(step => step.index > subStep.index && step.isVisited);
+            const isSubStepDisabled =
+              subStep.isDisabled || (isStepVisitRequired && !subStep.isVisited && !hasVisitedNextStep);
             const customSubStepNavItem = isCustomWizardNavItem(subStep.navItem) && (
               <React.Fragment key={subStep.id}>
                 {typeof subStep.navItem === 'function'
-                  ? subStep.navItem(subStep, currentStep, steps, goToStepByIndex)
+                  ? subStep.navItem(subStep, activeStep, steps, goToStepByIndex)
                   : subStep.navItem}
               </React.Fragment>
             );
@@ -61,11 +62,11 @@ export const WizardNavInternal = ({ nav, isStepVisitRequired, isNavExpanded }: W
 
             // Store the first sub-step index so that when its parent is clicked, the first sub-step is focused
             if (subStepIndex === 0) {
-              firstSubStepIndex = subStepOrderIndex;
+              firstSubStepIndex = subStep.index;
             }
 
             // When a sub-step is active, use this flag to set the parent step as active (isCurrent)
-            if (currentStep?.id === subStep.id) {
+            if (activeStep?.id === subStep.id) {
               hasActiveChild = true;
             }
 
@@ -75,10 +76,10 @@ export const WizardNavInternal = ({ nav, isStepVisitRequired, isNavExpanded }: W
                   key={subStep.id}
                   id={subStep.id}
                   content={subStep.name}
-                  isCurrent={currentStep?.id === subStep.id}
-                  isDisabled={subStep.isDisabled || (isStepVisitRequired && !subStep.isVisited)}
+                  isCurrent={activeStep?.id === subStep.id}
+                  isDisabled={isSubStepDisabled}
                   isVisited={subStep.isVisited}
-                  stepIndex={subStepOrderIndex}
+                  stepIndex={subStep.index}
                   onNavItemClick={goToStepByIndex}
                   status={subStep.status}
                   {...subStep.navItem}
@@ -120,10 +121,10 @@ export const WizardNavInternal = ({ nav, isStepVisitRequired, isNavExpanded }: W
                 key={step.id}
                 id={step.id}
                 content={step.name}
-                isCurrent={currentStep?.id === step.id}
-                isDisabled={step.isDisabled || (isStepVisitRequired && !step.isVisited)}
+                isCurrent={activeStep?.id === step.id}
+                isDisabled={isStepDisabled}
                 isVisited={step.isVisited}
-                stepIndex={stepIndex}
+                stepIndex={step.index}
                 onNavItemClick={goToStepByIndex}
                 status={step.status}
                 {...step.navItem}
