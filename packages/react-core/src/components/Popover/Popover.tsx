@@ -260,7 +260,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   closeBtnAriaLabel = 'Close',
   showClose = true,
   distance = 25,
-  // For every initial starting position, there are 3 escape positions
   flipBehavior = [
     'top',
     'bottom',
