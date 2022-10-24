@@ -8,7 +8,7 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 export const BannerStatus: React.FunctionComponent = () => (
   <>
-    <Banner>
+    <Banner screenReaderText="Default banner">
       <Flex spaceItems={{ default: 'spaceItemsSm' }}>
         <FlexItem>
           <BellIcon />
@@ -17,7 +17,7 @@ export const BannerStatus: React.FunctionComponent = () => (
       </Flex>
     </Banner>
     <br />
-    <Banner variant="info">
+    <Banner screenReaderText="Info banner" variant="info">
       <Flex spaceItems={{ default: 'spaceItemsSm' }}>
         <FlexItem>
           <InfoCircleIcon />
@@ -26,7 +26,7 @@ export const BannerStatus: React.FunctionComponent = () => (
       </Flex>
     </Banner>
     <br />
-    <Banner variant="danger">
+    <Banner screenReaderText="Danger banner" variant="danger">
       <Flex spaceItems={{ default: 'spaceItemsSm' }}>
         <FlexItem>
           <ExclamationCircleIcon />
@@ -35,7 +35,7 @@ export const BannerStatus: React.FunctionComponent = () => (
       </Flex>
     </Banner>
     <br />
-    <Banner variant="success">
+    <Banner screenReaderText="Success banner" variant="success">
       <Flex spaceItems={{ default: 'spaceItemsSm' }}>
         <FlexItem>
           <CheckCircleIcon />
@@ -44,7 +44,7 @@ export const BannerStatus: React.FunctionComponent = () => (
       </Flex>
     </Banner>
     <br />
-    <Banner variant="warning">
+    <Banner screenReaderText="Warning banner" variant="warning">
       <Flex spaceItems={{ default: 'spaceItemsSm' }}>
         <FlexItem>
           <ExclamationTriangleIcon />

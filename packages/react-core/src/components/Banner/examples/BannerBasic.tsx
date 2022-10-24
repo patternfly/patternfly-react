@@ -3,22 +3,14 @@ import { Banner } from '@patternfly/react-core';
 
 export const BannerBasic: React.FunctionComponent = () => (
   <>
-    <Banner screenReaderText={null}>Default banner</Banner>
+    <Banner>Default banner</Banner>
     <br />
-    <Banner screenReaderText={null} variant="info">
-      Blue banner
-    </Banner>
+    <Banner variant="info">Blue banner</Banner>
     <br />
-    <Banner screenReaderText={null} variant="danger">
-      Red banner
-    </Banner>
+    <Banner variant="danger">Red banner</Banner>
     <br />
-    <Banner screenReaderText={null} variant="success">
-      Green banner
-    </Banner>
+    <Banner variant="success">Green banner</Banner>
     <br />
-    <Banner screenReaderText={null} variant="warning">
-      Gold banner
-    </Banner>
+    <Banner variant="warning">Gold banner</Banner>
   </>
 );

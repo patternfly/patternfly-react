@@ -9,12 +9,10 @@ export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** If set to true, the banner sticks to the top of its container */
   isSticky?: boolean;
-  /** Text announced by screen readers to indicate the type of banner. Defaults to "${variant} banner"
-   * if this property is not passed in.
-   *
-   * Pass in null to omit this text from the banner when the banner does not convey status/severity.
+  /** Text announced by screen readers to indicate the type of banner. This prop should only
+   * be passed in when the banner conveys status/severity.
    */
-  screenReaderText?: string | null;
+  screenReaderText?: string;
   /** Variant styles for the banner. */
   variant?: 'default' | 'info' | 'danger' | 'success' | 'warning';
 }
@@ -36,7 +34,7 @@ export const Banner: React.FunctionComponent<BannerProps> = ({
     )}
     {...props}
   >
-    {screenReaderText !== null && <span className="pf-u-screen-reader">{screenReaderText || `${variant} banner`}</span>}
+    {screenReaderText && <span className="pf-u-screen-reader">{screenReaderText}</span>}
     {children}
   </div>
 );

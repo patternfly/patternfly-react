@@ -51,30 +51,14 @@ test('Renders with class name pf-m-info when "info" is passed to variant prop', 
   expect(screen.getByText('Test')).toHaveClass('pf-m-info');
 });
 
-test('Renders pf-u-screen-reader class by default for screenReaderText', () => {
+test('Does not render pf-u-screen-reader class by default', () => {
   render(<Banner>Test</Banner>);
-  expect(screen.getByText('default banner')).toHaveClass('pf-u-screen-reader', { exact: true });
+  expect(screen.getByText('Test')).not.toContainHTML('<span class="pf-u-screen-reader"></span>');
 });
 
-test('Renders screenReaderText as "default banner" by default', () => {
-  render(<Banner>Test</Banner>);
-  expect(screen.getByText('default banner')).toBeInTheDocument();
-});
-
-test('Renders screenReaderText as "success banner" when variant="success"', () => {
-  render(<Banner variant="success">Test</Banner>);
-  expect(screen.getByText('success banner')).toBeInTheDocument();
-});
-
-test('Renders custom screenReaderText passed via prop', () => {
+test('Renders screenReaderText passed via prop', () => {
   render(<Banner screenReaderText="Custom screen reader text">Test</Banner>);
   expect(screen.getByText('Custom screen reader text')).toBeInTheDocument();
-});
-
-test('Does not render with screen reader text when screenReaderText = null', () => {
-  render(<Banner screenReaderText={null}>Banner text</Banner>);
-
-  expect(screen.queryByText('default banner')).not.toBeInTheDocument();
 });
 
 test('Renders without pf-m-sticky by default', () => {

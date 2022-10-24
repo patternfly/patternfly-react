@@ -5,11 +5,6 @@ exports[`Matches the snapshot 1`] = `
   <div
     class="pf-c-banner"
   >
-    <span
-      class="pf-u-screen-reader"
-    >
-      default banner
-    </span>
     Test
   </div>
 </DocumentFragment>
