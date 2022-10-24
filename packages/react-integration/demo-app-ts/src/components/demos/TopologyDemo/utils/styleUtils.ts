@@ -126,6 +126,7 @@ export const createNode = (options: {
     shape,
     status: options.status || NodeStatus.default,
     labelPosition: options.labelPosition,
+    // data items are used to pass to the component to show various option, demo purposes only
     data: {
       dataType: 'Default',
       ...options
@@ -166,6 +167,7 @@ export const createEdge = (
   target: targetId,
   edgeStyle: options.style,
   animationSpeed: options.animation,
+  // data items are used to pass to the component to show various option, demo purposes only
   data: {
     endTerminalType: options.terminalType,
     endTerminalStatus: options.terminalStatus,
