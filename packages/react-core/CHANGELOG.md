@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.257.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.257.0...@patternfly/react-core@4.257.1) (2022-10-24)
+
+
+### Bug Fixes
+
+* **Timestamp:** updated logic for rendering datetime attribute ([#8205](https://github.com/patternfly/patternfly-react/issues/8205)) ([c890770](https://github.com/patternfly/patternfly-react/commit/c8907704139a656111f2200e6041d6ec6b091dd1))
+
+
+
+
+
 # [4.257.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.256.0...@patternfly/react-core@4.257.0) (2022-10-24)
 
 
