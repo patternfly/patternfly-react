@@ -8,6 +8,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
 import { getUniqueId } from '../../helpers/util';
+import { isValidDate } from '../../helpers/datetimeUtils';
 
 export enum Weekday {
   Sunday = 0,
@@ -108,8 +109,6 @@ const buildCalendar = (year: number, month: number, weekStart: number, validator
 
 const isSameDate = (d1: Date, d2: Date) =>
   d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate();
-
-export const isValidDate = (date: Date) => Boolean(date && !isNaN(date as any));
 
 const today = new Date();
 
