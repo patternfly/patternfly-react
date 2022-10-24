@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.257.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.256.0...@patternfly/react-core@4.257.0) (2022-10-24)
+
+
+### Features
+
+* **Banner:** add support for status icons ([#8195](https://github.com/patternfly/patternfly-react/issues/8195)) ([6bd6c88](https://github.com/patternfly/patternfly-react/commit/6bd6c88d11dad080480f8227b26f1f34cf8d7766))
+
+
+
+
+
 # [4.256.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.255.2...@patternfly/react-core@4.256.0) (2022-10-24)
 
 
