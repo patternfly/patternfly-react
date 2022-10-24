@@ -4,7 +4,6 @@ section: components
 cssPrefix: pf-c-multiple-file-upload
 propComponents:
   ['MultipleFileUpload', 'MultipleFileUploadMain', 'MultipleFileUploadStatus', 'MultipleFileUploadStatusItem']
-beta: true
 ---
 
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';

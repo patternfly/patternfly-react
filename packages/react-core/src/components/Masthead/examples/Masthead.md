@@ -3,7 +3,6 @@ id: Masthead
 section: components
 cssPrefix: pf-c-masthead
 propComponents: ['Masthead', 'MastheadToggle', 'MastheadMain', 'MastheadBrand', 'MastheadContent']
-beta: true
 ---
 
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';

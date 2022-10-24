@@ -52,7 +52,7 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
   /** @deprecated Order of items in a draggable DataList */
   itemOrder?: string[];
-  /** @beta Object that causes the data list to render hidden inputs which improve selectable item a11y */
+  /** Object that causes the data list to render hidden inputs which improve selectable item a11y */
   selectableRow?: SelectableRowObject;
 }
 

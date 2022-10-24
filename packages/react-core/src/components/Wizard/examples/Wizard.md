@@ -901,7 +901,7 @@ class WizardInModal extends React.Component {
 
 ### Wizard with drawer
 
-```js isBeta
+```js
 import React from 'react';
 import {
   Button,

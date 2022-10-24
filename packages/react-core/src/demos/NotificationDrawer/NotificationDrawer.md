@@ -1,7 +1,6 @@
 ---
 id: Notification drawer
 section: components
-beta: true
 ---
 
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
