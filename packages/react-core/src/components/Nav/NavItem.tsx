@@ -170,8 +170,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   );
 
   const ariaFlyoutProps = {
-    'aria-haspopup': 'menu',
-    'aria-expanded': flyoutVisible
+    'aria-haspopup': 'menu'
   };
 
   const renderDefaultLink = (context: any): React.ReactNode => {
