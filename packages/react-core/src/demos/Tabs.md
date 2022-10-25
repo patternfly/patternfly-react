@@ -383,7 +383,6 @@ TabsOpenWithSecondaryTabsDemo = () => {
           <TabContentBody>
             <Tabs
               isSecondary
-              hasSecondaryBorderBottom
               activeKey={activeTabKeySecondary}
               onSelect={handleTabClickSecondary}
               usePageInsets
