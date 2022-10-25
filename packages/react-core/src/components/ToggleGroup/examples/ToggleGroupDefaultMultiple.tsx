@@ -2,20 +2,16 @@ import React from 'react';
 import { ToggleGroup, ToggleGroupItem, Button, Stack, StackItem } from '@patternfly/react-core';
 
 export const ToggleGroupDefaultMultiple: React.FunctionComponent = () => {
-  const [state, setState] = React.useState({
-    isSelected: {
-      first: false,
-      second: false
-    }
+  const [isSelected, setIsSelected] = React.useState({
+    'toggle-group-multiple-1': false,
+    'toggle-group-multiple-2': false
   });
   const [disableAll, setDisableAll] = React.useState(false);
-  const handleItemClick = (isSelected, event) => {
+  const handleItemClick = (isSelected: boolean, event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
     const id = event.currentTarget.id;
-    setState(prevState => {
-      prevState.isSelected[id] = isSelected;
-      return {
-        isSelected: prevState.isSelected
-      };
+    setIsSelected(prevIsSelected => {
+      prevIsSelected[id] = isSelected;
+      return { ...prevIsSelected };
     });
   };
   const disableAllClick = () => {
@@ -31,15 +27,15 @@ export const ToggleGroupDefaultMultiple: React.FunctionComponent = () => {
           <ToggleGroupItem
             text="Option 1"
             key={0}
-            buttonId="first"
-            isSelected={state.isSelected.first}
+            buttonId="toggle-group-multiple-1"
+            isSelected={isSelected['toggle-group-multiple-1']}
             onChange={handleItemClick}
           />
           <ToggleGroupItem
             text="Option 2"
             key={1}
-            buttonId="second"
-            isSelected={state.isSelected.second}
+            buttonId="toggle-group-multiple-2"
+            isSelected={isSelected['toggle-group-multiple-2']}
             onChange={handleItemClick}
           />
           <ToggleGroupItem text="Option 3" key={2} isDisabled />

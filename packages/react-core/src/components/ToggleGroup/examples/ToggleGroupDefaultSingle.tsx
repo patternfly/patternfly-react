@@ -3,7 +3,7 @@ import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 export const ToggleGroupDefaultSingle: React.FunctionComponent = () => {
   const [isSelected, setIsSelected] = React.useState('');
-  const handleItemClick = (isSelected, event) => {
+  const handleItemClick = (isSelected: boolean, event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
     const id = event.currentTarget.id;
     setIsSelected(id);
   };
@@ -11,20 +11,20 @@ export const ToggleGroupDefaultSingle: React.FunctionComponent = () => {
     <ToggleGroup aria-label="Default with single selectable">
       <ToggleGroupItem
         text="Option 1"
-        buttonId="firstRadio"
-        isSelected={isSelected === 'firstRadio'}
+        buttonId="toggle-group-single-1"
+        isSelected={isSelected === 'toggle-group-single-1'}
         onChange={handleItemClick}
       />
       <ToggleGroupItem
         text="Option 2"
-        buttonId="secondRadio"
-        isSelected={isSelected === 'secondRadio'}
+        buttonId="toggle-group-single-2"
+        isSelected={isSelected === 'toggle-group-single-2'}
         onChange={handleItemClick}
       />
       <ToggleGroupItem
         text="Option 3"
-        buttonId="thirdRadio"
-        isSelected={isSelected === 'thirdRadio'}
+        buttonId="toggle-group-single-3"
+        isSelected={isSelected === 'toggle-group-single-3'}
         onChange={handleItemClick}
       />
     </ToggleGroup>

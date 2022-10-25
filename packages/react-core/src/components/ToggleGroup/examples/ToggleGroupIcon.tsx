@@ -5,20 +5,16 @@ import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
 
 export const ToggleGroupIcon: React.FunctionComponent = () => {
-  const [state, setState] = React.useState({
-    isSelected: {
-      'icons-1': false,
-      'icons-2': false,
-      'icons-3': true
-    }
+  const [isSelected, setIsSelected] = React.useState({
+    'toggle-group-icons-1': false,
+    'toggle-group-icons-2': false,
+    'toggle-group-icons-3': true
   });
-  const handleItemClick = (isSelected, event) => {
+  const handleItemClick = (isSelected: boolean, event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
     const id = event.currentTarget.id;
-    setState(prevState => {
-      prevState.isSelected[id] = isSelected;
-      return {
-        isSelected: prevState.isSelected
-      };
+    setIsSelected(prevIsSelected => {
+      prevIsSelected[id] = isSelected;
+      return { ...prevIsSelected };
     });
   };
   return (
@@ -26,22 +22,22 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
       <ToggleGroupItem
         icon={<CopyIcon />}
         aria-label="copy icon button"
-        buttonId="icons-1"
-        isSelected={state.isSelected['icons-1']}
+        buttonId="toggle-group-icons-1"
+        isSelected={isSelected['toggle-group-icons-1']}
         onChange={handleItemClick}
       />
       <ToggleGroupItem
         icon={<UndoIcon />}
         aria-label="undo icon button"
-        buttonId="icons-2"
-        isSelected={state.isSelected['icons-2']}
+        buttonId="toggle-group-icons-2"
+        isSelected={isSelected['toggle-group-icons-2']}
         onChange={handleItemClick}
       />
       <ToggleGroupItem
         icon={<ShareSquareIcon />}
         aria-label="share square icon button"
-        buttonId="icons-3"
-        isSelected={state.isSelected['icons-3']}
+        buttonId="toggle-group-icons-3"
+        isSelected={isSelected['toggle-group-icons-3']}
         onChange={handleItemClick}
       />
     </ToggleGroup>

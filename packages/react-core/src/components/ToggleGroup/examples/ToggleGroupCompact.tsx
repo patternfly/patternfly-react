@@ -2,33 +2,29 @@ import React from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 export const ToggleGroupCompact: React.FunctionComponent = () => {
-  const [state, setState] = React.useState({
-    isSelected: {
-      'compact-1': false,
-      'compact-2': false
-    }
+  const [isSelected, setIsSelected] = React.useState({
+    'toggle-group-compact-1': false,
+    'toggle-group-compact-2': false
   });
-  const handleItemClick = (isSelected, event) => {
+  const handleItemClick = (isSelected: boolean, event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
     const id = event.currentTarget.id;
-    setState(prevState => {
-      prevState.isSelected[id] = isSelected;
-      return {
-        isSelected: prevState.isSelected
-      };
+    setIsSelected(prevIsSelected => {
+      prevIsSelected[id] = isSelected;
+      return { ...prevIsSelected };
     });
   };
   return (
     <ToggleGroup isCompact aria-label="Compact variant toggle group">
       <ToggleGroupItem
         text="Option 1"
-        buttonId="compact-1"
-        isSelected={state.isSelected['compact-1']}
+        buttonId="toggle-group-compact-1"
+        isSelected={isSelected['toggle-group-compact-1']}
         onChange={handleItemClick}
       />
       <ToggleGroupItem
         text="Option 2"
-        buttonId="compact-2"
-        isSelected={state.isSelected['compact-2']}
+        buttonId="toggle-group-compact-2"
+        isSelected={isSelected['toggle-group-compact-2']}
         onChange={handleItemClick}
       />
       <ToggleGroupItem text="Option 3" isDisabled />
