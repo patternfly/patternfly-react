@@ -114,7 +114,13 @@ export const ModalTabs: React.FunctionComponent = () => {
         <Modal variant={ModalVariant.small} title={selectedProduct.name} isOpen={isModalOpen} onClose={closeModal}>
           <Grid hasGutter>
             <GridItem>
-              <Tabs activeKey={activeTabKey} onSelect={onTabSelect} isSecondary>
+              <Tabs
+                activeKey={activeTabKey}
+                onSelect={onTabSelect}
+                isSecondary
+                // remove in v5 breaking change release; secondary variant will have border by default
+                hasSecondaryBorderBottom
+              >
                 <Tab eventKey={0} tabContentId="details-tab" title={<TabTitleText>Details</TabTitleText>} />
                 <Tab eventKey={1} tabContentId="doc-tab" title={<TabTitleText>Documentation</TabTitleText>} />
               </Tabs>

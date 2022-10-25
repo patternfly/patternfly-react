@@ -42,6 +42,8 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
         <Tabs
           activeKey={activeNestedTabKey}
           isSecondary
+          // remove in v5 breaking change release; secondary variant will have border by default
+          hasSecondaryBorderBottom
           onSelect={(_event, tabIndex) => handleNestedTabClick(Number(tabIndex))}
           id="nested-tabs-example-nested-tabs-list"
         >
