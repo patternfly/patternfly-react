@@ -47,8 +47,8 @@ const products: Product[] = [
 ];
 
 export const ModalTabs: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [selectedProduct, setSelectedProduct] = React.useState<Product>();
+  const [isModalOpen, setIsModalOpen] = React.useState(true);
+  const [selectedProduct, setSelectedProduct] = React.useState<Product>(products[0]);
   const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
 
   const onCardClick = React.useCallback(

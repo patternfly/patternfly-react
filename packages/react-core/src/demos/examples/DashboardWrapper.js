@@ -26,7 +26,7 @@ export const DashboardBreadcrumb = (
 );
 
 export const PageTemplateTitle = (
-  <PageSection variant="light">
+  <PageSection variant="light" isWidthLimited>
     <TextContent>
       <Text component="h1">Main title</Text>
       <Text component="p">This is a full page demo.</Text>
@@ -61,6 +61,7 @@ export default class DashboardWrapper extends React.Component {
       notificationDrawer,
       isNotificationDrawerExpanded,
       hasPageTemplateTitle,
+      isBreadcrumbWidthLimited,
       ...pageProps
     } = this.props;
 
@@ -103,6 +104,7 @@ export default class DashboardWrapper extends React.Component {
         header={header !== undefined ? header : <DashboardHeader />}
         sidebar={sidebar !== undefined ? sidebar : _sidebar}
         isManagedSidebar
+        isBreadcrumbWidthLimited={isBreadcrumbWidthLimited}
         skipToContent={PageSkipToContent}
         breadcrumb={renderedBreadcrumb}
         mainContainerId={mainContainerId ? mainContainerId : 'main-content-page-layout-default-nav'}

@@ -14,7 +14,8 @@ import {
   Title,
   Text,
   TextContent,
-  TitleSizes
+  TitleSizes,
+  CardTitle
 } from '@patternfly/react-core';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
@@ -32,7 +33,7 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
     <Grid hasGutter>
       <GridItem>
         <CardHeader>
-          <Title headingLevel="h1" size={TitleSizes['2xl']}>
+          <Title headingLevel="h1" size={TitleSizes.lg}>
             Get started with Red Hat Enterprise Linux
           </Title>
         </CardHeader>
@@ -68,42 +69,26 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
                 </TextContent>
               </GridItem>
               <Grid md={6} xl2={3} hasGutter>
-                <GridItem>
-                  <Card isFullHeight>
-                    <CardHeader>Check system requirements</CardHeader>
-                    <CardBody>
-                      Your physical or virtual machine should meet the <a href="#">system requirement</a>.
-                    </CardBody>
-                  </Card>
-                </GridItem>
-
-                <GridItem>
-                  <Card isFullHeight>
-                    <CardHeader>Download an installation ISO image</CardHeader>
-                    <CardBody>
-                      {' '}
-                      <a href="#">Download</a> the binary DVD ISO.
-                    </CardBody>
-                  </Card>
-                </GridItem>
-                <GridItem>
-                  <Card isFullHeight>
-                    <CardHeader>Create a bootable installation media</CardHeader>
-                    <CardBody>
-                      {' '}
-                      <a href="#">Create</a> a bootable installation media, for example a USB flash drive.
-                    </CardBody>
-                  </Card>
-                </GridItem>
-                <GridItem>
-                  <Card isFullHeight>
-                    <CardHeader>Install and register your system</CardHeader>
-                    <CardBody>
-                      Boot the installation, register your system, attach RHEL subscriptions, and install RHEL from the
-                      Red Hat Content Delivery Network (CDN) using the GUI.
-                    </CardBody>
-                  </Card>
-                </GridItem>
+                <Card isFlat component="div">
+                  <CardTitle>Check system requirements</CardTitle>
+                  <CardBody>
+                    Your physical or virtual machine should meet the <a href="#">system requirement</a>.
+                  </CardBody>
+                </Card>
+                <Card isFlat component="div">
+                  <CardTitle>Download an installation ISO image</CardTitle>
+                  <CardBody>
+                    {' '}
+                    <a href="#">Download</a> the binary DVD ISO.
+                  </CardBody>
+                </Card>
+                <Card isFlat component="div">
+                  <CardTitle>Create a bootable installation media</CardTitle>
+                  <CardBody>
+                    {' '}
+                    <a href="#">Create</a> a bootable installation media, for example a USB flash drive.
+                  </CardBody>
+                </Card>
               </Grid>
             </Grid>
           </TabContentBody>
@@ -143,7 +128,6 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
     <DashboardWrapper hasPageTemplateTitle>
       <PageSection type="tabs" isWidthLimited variant="light">
         <Tabs
-          isBox
           activeKey={activeTabKey}
           onSelect={(_event, tabIndex) => handleTabClick(Number(tabIndex))}
           usePageInsets
