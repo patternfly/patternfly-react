@@ -260,8 +260,20 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   closeBtnAriaLabel = 'Close',
   showClose = true,
   distance = 25,
-  // For every initial starting position, there are 3 escape positions
-  flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
+  flipBehavior = [
+    'top',
+    'bottom',
+    'left',
+    'right',
+    'top-start',
+    'top-end',
+    'bottom-start',
+    'bottom-end',
+    'left-start',
+    'left-end',
+    'right-start',
+    'right-end'
+  ],
   animationDuration = 300,
   id,
   withFocusTrap: propWithFocusTrap,
