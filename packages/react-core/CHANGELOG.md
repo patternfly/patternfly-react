@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.258.0 (2022-10-25)
+
+
+### Features
+
+* **Popover:** update default flip behavior and width ([#8191](https://github.com/patternfly/patternfly-react/issues/8191)) ([108503f](https://github.com/patternfly/patternfly-react/commit/108503f167b4cfabab88abf2a52bf4c6a8bd504b))
+
+
+
+
+
 ## [4.257.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.257.0...@patternfly/react-core@4.257.1) (2022-10-24)
 
 
