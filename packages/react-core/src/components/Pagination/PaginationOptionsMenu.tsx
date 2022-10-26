@@ -161,7 +161,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     return (
       <DropdownContext.Provider
         value={{
-          id: widgetId,
+          ...(widgetId && { id: widgetId }),
           onSelect: this.onSelect,
           toggleIndicatorClass:
             perPageComponent === 'div' ? styles.optionsMenuToggleButtonIcon : styles.optionsMenuToggleIcon,
