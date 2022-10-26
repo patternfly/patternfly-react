@@ -145,9 +145,10 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     const uniqueId = id || getUniqueId();
     const toggleId = `pf-context-selector-toggle-id-${uniqueId}`;
     const screenReaderLabelId = `pf-context-selector-label-id-${uniqueId}`;
+    const isStatic = isFlipEnabled && menuAppendTo !== 'inline';
 
     const menuContainer = (
-      <div className={css(styles.contextSelectorMenu, isFlipEnabled && styles.modifiers.static)} id={uniqueId}>
+      <div className={css(styles.contextSelectorMenu, isStatic && styles.modifiers.static)} id={uniqueId}>
         {isOpen && (
           <FocusTrap
             active={!disableFocusTrap}
