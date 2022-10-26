@@ -30,6 +30,7 @@ export interface ApplicationLauncherItemProps {
   ariaIsNotFavoriteLabel?: string;
   /** ID of the item. Required for tracking favorites. */
   id?: string;
+  /** Custom item rendering that receives the ApplicationLauncherContext */
   customChild?: React.ReactNode;
   /** Flag indicating if hitting enter triggers an arrow down key press. Automatically passed to favorites list items. */
   enterTriggersArrowDown?: boolean;
