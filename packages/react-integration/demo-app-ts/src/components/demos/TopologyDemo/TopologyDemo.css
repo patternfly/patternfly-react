@@ -22,10 +22,6 @@
 .pf-ri__topology-demo .pf-c-toolbar__item .pf-l-flex {
   --pf-l-flex--FlexWrap: no-wrap;
 }
-.pf-ri__topology-demo .pf-c-toolbar__item .pf-l-flex > * {
-  --pf-l-flex--spacer: 8px;
-}
-
 .pf-ri__topology-demo .pf-c-toolbar__item .pf-c-form-control {
   width: 85px;
 }

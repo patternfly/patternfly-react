@@ -25,7 +25,7 @@ export const PaginationDisabled: React.FunctionComponent = () => {
       perPage={perPage}
       page={page}
       onSetPage={onSetPage}
-      widgetId="pagination-options-menu-top"
+      widgetId="disabled-example"
       onPerPageSelect={onPerPageSelect}
       isDisabled
     />

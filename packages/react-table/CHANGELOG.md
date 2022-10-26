@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.111.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.111.31...@patternfly/react-table@4.111.32) (2022-10-26)
+
+
+### Bug Fixes
+
+* **Pagination:** prevented regenerating random id on each render ([#8175](https://github.com/patternfly/patternfly-react/issues/8175)) ([873cff7](https://github.com/patternfly/patternfly-react/commit/873cff7c4ec5443408dc66306cf168888f5e5580))
+
+
+
+
+
+## [4.111.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.111.30...@patternfly/react-table@4.111.31) (2022-10-26)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
 ## 4.111.30 (2022-10-25)
 
 **Note:** Version bump only for package @patternfly/react-table
