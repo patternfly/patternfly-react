@@ -1258,7 +1258,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
 
-    const isStatic = isFlipEnabled && direction === SelectDirection.down;
+    const isStatic = isFlipEnabled && menuAppendTo !== 'inline';
     const innerMenu = (
       <SelectMenu
         className={css(isStatic && styles.modifiers.static)}
