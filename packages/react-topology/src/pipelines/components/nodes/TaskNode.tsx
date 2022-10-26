@@ -12,7 +12,6 @@ import { createSvgIdUrl, getNodeScaleTranslation, useCombineRefs, useHover, useS
 import { getRunStatusModifier, nonShadowModifiers } from '../../utils';
 import StatusIcon from '../../utils/StatusIcon';
 import { TaskNodeSourceAnchor, TaskNodeTargetAnchor } from '../anchors';
-import { DEFAULT_WHEN_OFFSET, DEFAULT_WHEN_SIZE } from '../../decorators/WhenDecorator';
 import LabelActionIcon from '../../../components/nodes/labels/LabelActionIcon';
 import LabelContextMenu from '../../../components/nodes/labels/LabelContextMenu';
 import NodeShadows, {
@@ -97,8 +96,8 @@ const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> =
   selected,
   onSelect,
   hasWhenExpression = false,
-  whenSize = DEFAULT_WHEN_SIZE,
-  whenOffset = DEFAULT_WHEN_OFFSET,
+  whenSize = 0,
+  whenOffset = 0,
   onContextMenu,
   contextMenuOpen,
   actionIcon,

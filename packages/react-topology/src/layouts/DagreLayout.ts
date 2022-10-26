@@ -9,10 +9,10 @@ import { DagreNode } from './DagreNode';
 import { DagreGroup } from './DagreGroup';
 import { DagreLink } from './DagreLink';
 
-export type DagreLayoutOptions = LayoutOptions & dagre.GraphLabel;
+export type DagreLayoutOptions = LayoutOptions & dagre.GraphLabel & { ignoreGroups?: boolean };
 
 export class DagreLayout extends BaseLayout implements Layout {
-  private dagreOptions: DagreLayoutOptions;
+  protected dagreOptions: DagreLayoutOptions;
 
   constructor(graph: Graph, options?: Partial<DagreLayoutOptions>) {
     super(graph, options);
@@ -57,17 +57,21 @@ export class DagreLayout extends BaseLayout implements Layout {
       const dagreGraph = new dagre.graphlib.Graph({ compound: true });
       dagreGraph.setGraph(_.omit(this.dagreOptions, Object.keys(LAYOUT_DEFAULTS)));
 
-      _.forEach(this.groups, group => {
-        dagreGraph.setNode(group.id, group);
-        dagreGraph.setParent(group.id, group.element.getParent().getId());
-      });
+      if (!this.dagreOptions.ignoreGroups) {
+        _.forEach(this.groups, group => {
+          dagreGraph.setNode(group.id, group);
+          dagreGraph.setParent(group.id, group.element.getParent().getId());
+        });
+      }
 
       const updatedNodes: dagre.Node[] = [];
       _.forEach(this.nodes, node => {
         const updateNode = (node as DagreNode).getUpdatableNode();
         updatedNodes.push(updateNode);
         dagreGraph.setNode(node.id, updateNode);
-        dagreGraph.setParent(node.id, node.element.getParent().getId());
+        if (!this.dagreOptions.ignoreGroups) {
+          dagreGraph.setParent(node.id, node.element.getParent().getId());
+        }
       });
 
       _.forEach(this.edges, dagreEdge => {
