@@ -114,9 +114,11 @@ export const getSpacerNodes = (
 
 export const getEdgesFromNodes = (
   nodes: PipelineNodeModel[],
-  edgeType = DEFAULT_EDGE_TYPE,
   spacerNodeType = DEFAULT_SPACER_NODE_TYPE,
-  finallyNodeTypes: string[] = [DEFAULT_FINALLY_NODE_TYPE]
+  edgeType = DEFAULT_EDGE_TYPE,
+  spacerEdgeType = DEFAULT_EDGE_TYPE,
+  finallyNodeTypes: string[] = [DEFAULT_FINALLY_NODE_TYPE],
+  finallyEdgeType = DEFAULT_EDGE_TYPE
 ): EdgeModel[] => {
   const edges: EdgeModel[] = [];
 
@@ -135,7 +137,7 @@ export const getEdgesFromNodes = (
       if (node && !finallyNodes.includes(node)) {
         edges.push({
           id: `${sourceId}-${spacer.id}`,
-          type: edgeType,
+          type: spacerEdgeType,
           source: sourceId,
           target: spacer.id
         });
@@ -150,7 +152,7 @@ export const getEdgesFromNodes = (
       if (spacer) {
         edges.push({
           id: `${spacer.id}-${node.id}`,
-          type: edgeType,
+          type: spacerEdgeType,
           source: spacer.id,
           target: node.id
         });
@@ -172,7 +174,7 @@ export const getEdgesFromNodes = (
     finallyNodes.forEach(finallyNode => {
       edges.push({
         id: `${finallyId}-${finallyNode.id}`,
-        type: edgeType,
+        type: spacerEdgeType,
         source: finallyId,
         target: finallyNode.id
       });
@@ -180,7 +182,7 @@ export const getEdgesFromNodes = (
     lastTasks.forEach(lastTaskNode => {
       edges.push({
         id: `${lastTaskNode.id}-${finallyId}`,
-        type: edgeType,
+        type: spacerEdgeType,
         source: lastTaskNode.id,
         target: finallyId
       });
@@ -190,7 +192,7 @@ export const getEdgesFromNodes = (
     lastTasks.forEach(lastTaskNode => {
       edges.push({
         id: `finallyId-${lastTaskNode.id}-${finallyNodes[0].id}`,
-        type: edgeType,
+        type: finallyEdgeType,
         source: lastTaskNode.id,
         target: finallyNodes[0].id
       });
