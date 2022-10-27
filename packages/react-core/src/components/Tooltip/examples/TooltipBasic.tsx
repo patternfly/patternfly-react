@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip } from '@patternfly/react-core';
+import { Button, Tooltip } from '@patternfly/react-core';
 
 export const TooltipBasic: React.FunctionComponent = () => (
   <div style={{ margin: '100px' }}>
@@ -10,9 +10,7 @@ export const TooltipBasic: React.FunctionComponent = () => (
         </div>
       }
     >
-      <span tabIndex={0} style={{ border: '1px dashed' }}>
-        I have a tooltip!
-      </span>
+      <Button tabIndex={0}>I have a tooltip!</Button>
     </Tooltip>
   </div>
 );
