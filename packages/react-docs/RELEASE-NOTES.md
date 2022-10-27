@@ -14,7 +14,7 @@ section: developer-resources
 - [@patternfly/react-styles@4.91.10](https://www.npmjs.com/package/@patternfly/react-styles/v/4.91.10)
 - [@patternfly/react-table@4.111.33](https://www.npmjs.com/package/@patternfly/react-table/v/4.111.33)
 - [@patternfly/react-tokens@4.93.10](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.93.10)
-- [@patternfly/react-topology@4.90.10](https://www.npmjs.com/package/@patternfly/react-topology/v/4.90.10)
+- [@patternfly/react-topology@4.90.11](https://www.npmjs.com/package/@patternfly/react-topology/v/4.90.10)
 - [@patternfly/react-virtualized-extension@4.88.55](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.88.55)
 
 ### Components
