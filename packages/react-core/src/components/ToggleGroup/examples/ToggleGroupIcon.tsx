@@ -21,21 +21,21 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
     <ToggleGroup aria-label="Icon variant toggle group">
       <ToggleGroupItem
         icon={<CopyIcon />}
-        aria-label="copy icon button"
+        aria-label="copy"
         buttonId="toggle-group-icons-1"
         isSelected={isSelected['toggle-group-icons-1']}
         onChange={handleItemClick}
       />
       <ToggleGroupItem
         icon={<UndoIcon />}
-        aria-label="undo icon button"
+        aria-label="undo"
         buttonId="toggle-group-icons-2"
         isSelected={isSelected['toggle-group-icons-2']}
         onChange={handleItemClick}
       />
       <ToggleGroupItem
         icon={<ShareSquareIcon />}
-        aria-label="share square icon button"
+        aria-label="share square"
         buttonId="toggle-group-icons-3"
         isSelected={isSelected['toggle-group-icons-3']}
         onChange={handleItemClick}
