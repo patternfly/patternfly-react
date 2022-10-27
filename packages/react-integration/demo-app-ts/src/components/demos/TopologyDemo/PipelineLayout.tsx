@@ -15,7 +15,9 @@ import {
   GRAPH_LAYOUT_END_EVENT,
   getSpacerNodes,
   getEdgesFromNodes,
-  DEFAULT_EDGE_TYPE
+  DEFAULT_EDGE_TYPE,
+  DEFAULT_SPACER_NODE_TYPE,
+  DEFAULT_FINALLY_NODE_TYPE
 } from '@patternfly/react-topology';
 import '@patternfly/react-styles/css/components/Topology/topology-components.css';
 import pipelineComponentFactory, { GROUPED_EDGE_TYPE } from './components/pipelineComponentFactory';
@@ -49,9 +51,14 @@ const TopologyPipelineLayout: React.FC = () => {
   React.useEffect(() => {
     const spacerNodes = getSpacerNodes(pipelineNodes);
     const nodes = [...pipelineNodes, ...spacerNodes];
+    const edgeType = showGroups ? GROUPED_EDGE_TYPE : DEFAULT_EDGE_TYPE;
     const edges = getEdgesFromNodes(
       nodes.filter(n => !n.group),
-      showGroups ? GROUPED_EDGE_TYPE : DEFAULT_EDGE_TYPE
+      DEFAULT_SPACER_NODE_TYPE,
+      edgeType,
+      edgeType,
+      [DEFAULT_FINALLY_NODE_TYPE],
+      edgeType
     );
 
     controller.fromModel(
