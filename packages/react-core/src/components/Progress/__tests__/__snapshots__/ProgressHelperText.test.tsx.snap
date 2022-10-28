@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-progress__helper-text"
+  >
+    <div
+      data-testid="helper-text-children-container"
+    >
+      <div
+        data-testid="helper-text-item-children-container"
+      >
+        test
+      </div>
+      <p>
+        variant: undefined
+      </p>
+    </div>
+    <p>
+      isLiveRegion: true
+    </p>
+  </div>
+</DocumentFragment>
+`;

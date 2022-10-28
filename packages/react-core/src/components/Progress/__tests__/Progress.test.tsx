@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Progress, ProgressSize } from '../Progress';
 import { ProgressVariant, ProgressMeasureLocation } from '../ProgressContainer';
 
@@ -96,4 +96,16 @@ test('progress component generates console warning when no accessible name is pr
   global.console = { warn: consoleWarnMock } as any;
   render(<Progress value={33} />);
   expect(consoleWarnMock).toHaveBeenCalled();
+});
+
+test('Does not render helper text by default', () => {
+  render(<Progress/>);
+
+  expect(screen.queryByText('Test helper text')).not.toBeInTheDocument();
+})
+
+test('Renders passed helper text', () => {
+  render(<Progress helperText="Test helper text" />);
+
+  expect(screen.getByText('Test helper text')).toBeVisible();
 });
