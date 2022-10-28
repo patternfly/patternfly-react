@@ -24,8 +24,17 @@ export const NumberInputUnitThreshold: React.FunctionComponent = () => {
 
   const onChange = (event: React.FormEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement;
-    const newValue = normalizeBetween(isNaN(+target.value) ? 0 : Number(target.value), minValue, maxValue);
-    setValue(newValue);
+    setValue(+target.value);
+  };
+
+  const onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    const blurVal = +event.target.value;
+
+    if (blurVal < minValue) {
+      setValue(minValue);
+    } else if (blurVal > maxValue) {
+      setValue(maxValue);
+    }
   };
 
   const onPlus = () => {
@@ -43,6 +52,7 @@ export const NumberInputUnitThreshold: React.FunctionComponent = () => {
         max={maxValue}
         onMinus={onMinus}
         onChange={onChange}
+        onBlur={onBlur}
         onPlus={onPlus}
         inputName="input"
         inputAriaLabel="number input"
