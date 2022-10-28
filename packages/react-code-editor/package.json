@@ -33,7 +33,7 @@
     "@patternfly-five/react-core": "^1.0.0",
     "@patternfly-five/react-icons": "^1.0.0",
     "@patternfly-five/react-styles": "^1.0.0",
-    "react-dropzone": "9.0.0",
+    "react-dropzone": "^14.2.3",
     "tslib": "^2.0.0"
   },
   "peerDependencies": {

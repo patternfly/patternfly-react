@@ -1,4 +1,4 @@
-import { IRow } from '@patternfly/react-table';
+import { IRow } from '@patternfly-five/react-table';
 
 const requiredElements = ['INPUT', 'BUTTON'];
 let warningCompleted = false;

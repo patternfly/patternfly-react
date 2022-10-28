@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { TableContext } from '@patternfly/react-table';
-import { TableBody, IExtraRowData } from '@patternfly/react-table';
+import { TableContext, TableBody, IExtraRowData } from '@patternfly-five/react-table';
 import { Body } from '../Body';
 
 export interface IEditedCellData extends IExtraRowData {

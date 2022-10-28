@@ -7,7 +7,7 @@ import {
   TableBody,
   IRow,
   IComputedData
-} from '@patternfly/react-table';
+} from '@patternfly-five/react-table';
 import { showIdWarnings, TableEditConfirmation } from '../../utils';
 import { IEditedCellData } from '../InlineEdit/editableTableBody';
 

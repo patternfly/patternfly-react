@@ -16,7 +16,7 @@ import {
 import accessibilityOverscanIndicesGetter from './accessibilityOverscanIndicesGetter';
 import { VirtualGrid, VirtualGridProps } from './VirtualGrid';
 import { css } from '@patternfly/react-styles';
-import { TableComposable, Tbody } from '@patternfly/react-table';
+import { TableComposable, Tbody } from '@patternfly-five/react-table';
 
 /**
  * It is inefficient to create and manage a large list of DOM elements within a scrolling container

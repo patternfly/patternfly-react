@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { css } from '@patternfly/react-styles';
-import { RowWrapper, RowWrapperRow } from '@patternfly/react-table';
+import { RowWrapper, RowWrapperRow } from '@patternfly-five/react-table';
 import {
   shallowLeftSideEquals,
   getBoundingClientRect,
