@@ -14,7 +14,7 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
 
   state: NumberInputDemoState = {
     value: 0,
-    value2: null
+    value2: undefined
   };
 
   onMinus = () => {
