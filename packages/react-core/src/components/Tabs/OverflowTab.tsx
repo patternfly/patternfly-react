@@ -19,8 +19,6 @@ export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   defaultTitleText?: string;
   /** The aria label applied to the button which toggles the tab overflow menu */
   toggleAriaLabel?: string;
-  /** @beta Opt-in for updated popper that does not use findDOMNode. */
-  removeFindDomNode?: boolean;
 }
 
 export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
@@ -29,7 +27,6 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   showTabCount,
   defaultTitleText = 'More',
   toggleAriaLabel,
-  removeFindDomNode = false,
   ...props
 }: OverflowTabProps) => {
   const menuRef = React.useRef<HTMLDivElement>();
@@ -138,7 +135,6 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
       isVisible={isExpanded}
       popperMatchesTriggerWidth={false}
       appendTo={overflowLIRef.current}
-      removeFindDomNode={removeFindDomNode}
     />
   );
 };

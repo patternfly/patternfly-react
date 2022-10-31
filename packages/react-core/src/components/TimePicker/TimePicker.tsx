@@ -71,8 +71,6 @@ export interface TimePickerProps
   isOpen?: boolean;
   /** Handler invoked each time the open state of time picker updates */
   setIsOpen?: (isOpen?: boolean) => void;
-  /** @beta Opt-in for updated popper that does not use findDOMNode. */
-  removeFindDomNode?: boolean;
 }
 
 interface TimePickerState {
@@ -110,8 +108,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     minTime: '',
     maxTime: '',
     isOpen: false,
-    setIsOpen: () => {},
-    removeFindDomNode: false
+    setIsOpen: () => {}
   };
 
   constructor(props: TimePickerProps) {
@@ -444,7 +441,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       maxTime,
       includeSeconds,
       /* eslint-enable @typescript-eslint/no-unused-vars */
-      removeFindDomNode,
       ...props
     } = this.props;
     const { timeState, isTimeOptionsOpen, isInvalid, minTimeState, maxTimeState } = this.state;
@@ -518,7 +514,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
                   trigger={textInput}
                   popper={menuContainer}
                   isVisible={isTimeOptionsOpen}
-                  removeFindDomNode={removeFindDomNode}
                 />
               </div>
             </div>

@@ -133,8 +133,6 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
   id?: string;
   /** CSS fade transition animation duration */
   animationDuration?: number;
-  /** @beta Opt-in for updated popper that does not use findDOMNode. */
-  removeFindDomNode?: boolean;
 }
 
 // id for associating trigger with the content aria-describedby or aria-labelledby
@@ -162,7 +160,6 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   animationDuration = 300,
   reference,
   'aria-live': ariaLive = reference ? 'polite' : 'off',
-  removeFindDomNode = false,
   onTooltipHidden = () => {},
   ...rest
 }: TooltipProps) => {
@@ -338,7 +335,6 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       enableFlip={enableFlip}
       zIndex={zIndex}
       flipBehavior={flipBehavior}
-      removeFindDomNode={removeFindDomNode}
     />
   );
 };

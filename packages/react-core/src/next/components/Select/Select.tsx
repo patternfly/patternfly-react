@@ -113,7 +113,6 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
     <div ref={containerRef}>
       <Popper
         trigger={toggle(toggleRef)}
-        removeFindDomNode
         popper={menu}
         appendTo={containerRef.current || undefined}
         isVisible={isOpen}
