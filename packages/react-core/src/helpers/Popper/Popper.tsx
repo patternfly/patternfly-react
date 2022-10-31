@@ -383,7 +383,11 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   let popperPortal;
   if (removeFindDomNode) {
     // If removeFindDomNode is passed, use the removeFindDomNode method of wrapping divs
-    popperPortal = <div ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>{menuWithPopper}</div>;
+    popperPortal = (
+      <div style={{ display: 'contents' }} ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>
+        {menuWithPopper}
+      </div>
+    );
   } else if (popperRef) {
     // If removeFindDomNode is not passed and popperRef is passed, use the popperRef method
     popperPortal = menuWithPopper;
@@ -400,7 +404,9 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         <FindRefWrapper onFoundRef={(foundRef: any) => setTriggerElement(foundRef)}>{trigger}</FindRefWrapper>
       )}
       {!reference && trigger && React.isValidElement(trigger) && removeFindDomNode && (
-        <div ref={node => setTriggerElement(node?.firstElementChild as HTMLElement)}>{trigger}</div>
+        <div style={{ display: 'contents' }} ref={node => setTriggerElement(node?.firstElementChild as HTMLElement)}>
+          {trigger}
+        </div>
       )}
       {ready && isVisible && ReactDOM.createPortal(popperPortal, getTarget())}
     </>
