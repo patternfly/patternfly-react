@@ -28,14 +28,14 @@ section: developer-resources
 - **Clipboard copy:**
   - Added OUIA props to clipboard copy ([#8193](https://github.com/patternfly/patternfly-react/pull/8193))
 - **Code editor:**
-  - Used `codeEditorControls` and cleaned up[#7931](https://github.com/patternfly/patternfly-react/pull/7931))
+  - Used `codeEditorControls` and cleaned up ([#7931](https://github.com/patternfly/patternfly-react/pull/7931))
 - **Data list:**
   - Updated to pass button props to toggle ([#8222](https://github.com/patternfly/patternfly-react/pull/8222))
 - **Context selector:**
   - Updated isFlipEnabled to true by default ([#8215](https://github.com/patternfly/patternfly-react/pull/8215))
 - **Dropdown:**
   - Updated isFlipEnabled to true by default ([#8215](https://github.com/patternfly/patternfly-react/pull/8215))
-  - Add support for forward ref and updated documentation for dropdown next. ([#8142](https://github.com/patternfly/patternfly-react/pull/8142))
+  - Add support for forward ref and updated documentation for dropdown next ([#8142](https://github.com/patternfly/patternfly-react/pull/8142))
   - Enabled right aligned dropdown with isFlipEnabled ([#8224](https://github.com/patternfly/patternfly-react/pull/8224))
   - Added OUIA support to dropdown next ([#8135](https://github.com/patternfly/patternfly-react/pull/8135))
 - **Dual list selector:**
@@ -43,7 +43,7 @@ section: developer-resources
 - **Empty state:**
   - Added `EmptyStatePrimary` to documentation ([#8161](https://github.com/patternfly/patternfly-react/pull/8161))
 - **Label:**
- Update aria-labels to include label text ([#8192](https://github.com/patternfly/patternfly-react/pull/8192))
+  - Update aria-labels to include label text ([#8192](https://github.com/patternfly/patternfly-react/pull/8192))
 - **Label group:**
   - Updated aria-labels to include label text ([#8192](https://github.com/patternfly/patternfly-react/pull/8192))
 - **Menu:**
@@ -69,7 +69,7 @@ section: developer-resources
 - **Text area:**
   - Revamped unit tests ([#8150](https://github.com/patternfly/patternfly-react/pull/8150))
 - **Text input:**
-   Converted examples to TypeScript ([#8137](https://github.com/patternfly/patternfly-react/pull/8137))
+  - Converted examples to TypeScript ([#8137](https://github.com/patternfly/patternfly-react/pull/8137))
 - **Timestamp:**
   - Updated logic for rendering datetime attribute ([#8205](https://github.com/patternfly/patternfly-react/pull/8205))
 - **Title:**
@@ -84,7 +84,7 @@ section: developer-resources
 - Added pipeline groups ([#8278](https://github.com/patternfly/patternfly-react/pull/8278))
 
 ### Other
--  **Chore**
+- **Chore**
   - Promoted beta component candidates ([#8246](https://github.com/patternfly/patternfly-react/pull/8246))
   - Specified EST timezone for jest to run with ([#8151](https://github.com/patternfly/patternfly-react/pull/8151))
   - Created workflow for extensions issues ([#8281](https://github.com/patternfly/patternfly-react/pull/8281))
