@@ -49,7 +49,7 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
 
   onPlus2 = () => {
     this.setState({
-      value2: this.state.value2 + 1
+      value2: this.state.value2 + 1 || 1
     });
   };
 
