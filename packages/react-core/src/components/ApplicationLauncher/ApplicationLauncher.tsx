@@ -93,12 +93,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       <div key="search" className={css(styles.appLauncherMenuSearch)}>
         <ApplicationLauncherItem
           customChild={
-            <SearchInput
-              type="search"
-              placeholder={searchPlaceholderText}
-              onChange={value => onSearch(value)}
-              {...searchProps}
-            />
+            <SearchInput placeholder={searchPlaceholderText} onChange={value => onSearch(value)} {...searchProps} />
           }
         ></ApplicationLauncherItem>
       </div>
