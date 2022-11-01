@@ -86,14 +86,7 @@ describe('Select', () => {
       const consoleError = jest.spyOn(console, 'error');
       const { asFragment } = render(
         <React.StrictMode>
-          <Select
-            removeFindDomNode
-            variant={SelectVariant.single}
-            onSelect={jest.fn()}
-            onToggle={jest.fn()}
-            isOpen
-            ouiaId="test-id"
-          >
+          <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen ouiaId="test-id">
             {selectOptions}
           </Select>
         </React.StrictMode>

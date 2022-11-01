@@ -2,41 +2,59 @@
 
 exports[`popover can close from content (uncontrolled) 1`] = `
 <DocumentFragment>
-  <button
-    id="uncontrolled-toggle"
+  <div
+    style="display: contents;"
   >
-    Toggle Popover
-  </button>
+    <button
+      id="uncontrolled-toggle"
+    >
+      Toggle Popover
+    </button>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`popover can have a custom minimum width 1`] = `
 <DocumentFragment>
-  <div>
-    Toggle Popover
+  <div
+    style="display: contents;"
+  >
+    <div>
+      Toggle Popover
+    </div>
   </div>
 </DocumentFragment>
 `;
 
 exports[`popover can specify position as object value 1`] = `
 <DocumentFragment>
-  <div>
-    Toggle Popover
+  <div
+    style="display: contents;"
+  >
+    <div>
+      Toggle Popover
+    </div>
   </div>
 </DocumentFragment>
 `;
 
 exports[`popover renders close-button, header and body 1`] = `
 <DocumentFragment>
-  <div>
-    Toggle Popover
+  <div
+    style="display: contents;"
+  >
+    <div>
+      Toggle Popover
+    </div>
   </div>
 </DocumentFragment>
 `;
 
 exports[`popover renders in strict mode 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    style="display: contents;"
+  >
     <div>
       Toggle Popover
     </div>

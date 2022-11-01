@@ -33,7 +33,7 @@ describe('ContextSelector', () => {
     const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = render(
       <React.StrictMode>
-        <ContextSelector removeFindDomNode isOpen id="render">
+        <ContextSelector isOpen id="render">
           {items}
         </ContextSelector>
       </React.StrictMode>

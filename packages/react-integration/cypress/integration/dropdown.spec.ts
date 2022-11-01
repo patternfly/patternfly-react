@@ -357,9 +357,7 @@ describe('Dropdown with menu on document body demo test', () => {
   });
 
   it('Verify dropdown menu is on document.body', () => {
-    cy.get('body')
-      .children('.pf-c-dropdown')
-      .should('exist');
+    cy.get('body .pf-c-dropdown').should('exist');
   });
 
   it('Verify dropdown menu closed', () => {

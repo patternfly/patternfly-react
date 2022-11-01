@@ -14,7 +14,7 @@ describe('TimePicker', () => {
     const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = render(
       <React.StrictMode>
-        <TimePicker removeFindDomNode value={'00:00'} validateTime={validateTime} aria-label="time picker" />
+        <TimePicker value={'00:00'} validateTime={validateTime} aria-label="time picker" />
       </React.StrictMode>
     );
     expect(consoleError).not.toHaveBeenCalled();

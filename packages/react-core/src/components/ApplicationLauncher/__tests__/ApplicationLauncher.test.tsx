@@ -55,16 +55,18 @@ describe('ApplicationLauncher', () => {
 
   test('custom icon', () => {
     const { asFragment } = render(
-      <React.StrictMode>
-        <ApplicationLauncher items={dropdownItems} isOpen toggleIcon={<HelpIcon id="test-icon" />} />
-      </React.StrictMode>
+      <ApplicationLauncher items={dropdownItems} isOpen toggleIcon={<HelpIcon id="test-icon" />} />
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('Renders in strict mode', () => {
     const consoleError = jest.spyOn(console, 'error');
-    const { asFragment } = render(<ApplicationLauncher removeFindDomNode isOpen items={dropdownItems} />);
+    const { asFragment } = render(
+      <React.StrictMode>
+        <ApplicationLauncher isOpen items={dropdownItems} />{' '}
+      </React.StrictMode>
+    );
     expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });

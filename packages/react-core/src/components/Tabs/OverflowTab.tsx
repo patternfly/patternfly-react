@@ -129,13 +129,17 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   );
 
   return (
-    <Popper
-      trigger={overflowTab}
-      popper={overflowMenu}
-      isVisible={isExpanded}
-      popperMatchesTriggerWidth={false}
-      appendTo={overflowLIRef.current}
-    />
+    <React.Fragment>
+      {overflowTab}
+      <Popper
+        reference={overflowTabRef}
+        popper={overflowMenu}
+        popperRef={menuRef}
+        isVisible={isExpanded}
+        popperMatchesTriggerWidth={false}
+        appendTo={overflowLIRef.current}
+      />
+    </React.Fragment>
   );
 };
 

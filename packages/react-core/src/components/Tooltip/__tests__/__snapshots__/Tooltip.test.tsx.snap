@@ -2,15 +2,21 @@
 
 exports[`tooltip renders 1`] = `
 <DocumentFragment>
-  <div>
-    Toggle tooltip
+  <div
+    style="display: contents;"
+  >
+    <div>
+      Toggle tooltip
+    </div>
   </div>
 </DocumentFragment>
 `;
 
 exports[`tooltip renders in strict mode 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    style="display: contents;"
+  >
     <div>
       Toggle tooltip
     </div>

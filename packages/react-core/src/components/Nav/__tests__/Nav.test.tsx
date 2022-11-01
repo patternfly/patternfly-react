@@ -48,7 +48,7 @@ describe('Nav', () => {
         <Nav className="test-nav-class">
           <NavList className="test-nav-list-class">
             {props.items.map(item => (
-              <NavItem removeFindDomNode to={item.to} key={item.to} className="test-nav-item-class">
+              <NavItem to={item.to} key={item.to} className="test-nav-item-class">
                 {item.label}
               </NavItem>
             ))}

@@ -183,7 +183,6 @@ test('Renders tabs passed via overflowingTabs when expanded in strict mode', asy
   const { asFragment } = render(
     <React.StrictMode>
       <OverflowTab
-        removeFindDomNode
         overflowingTabs={[
           { title: 'Tab one', eventKey: 1 },
           { title: 'Tab two', eventKey: 2 }
