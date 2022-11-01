@@ -2,7 +2,7 @@ import React from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputUnitThreshold: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState<number | ''>(0);
   const minValue = 0;
   const maxValue = 10;
 
@@ -18,13 +18,13 @@ export const NumberInputUnitThreshold: React.FunctionComponent = () => {
   };
 
   const onMinus = () => {
-    const newValue = normalizeBetween(value - 1, minValue, maxValue);
+    const newValue = normalizeBetween((value as number) - 1, minValue, maxValue);
     setValue(newValue);
   };
 
   const onChange = (event: React.FormEvent<HTMLInputElement>) => {
-    const target = event.target as HTMLInputElement;
-    setValue(+target.value);
+    const value = (event.target as HTMLInputElement).value;
+    setValue(value === '' ? value : +value);
   };
 
   const onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
@@ -38,7 +38,7 @@ export const NumberInputUnitThreshold: React.FunctionComponent = () => {
   };
 
   const onPlus = () => {
-    const newValue = normalizeBetween(value + 1, minValue, maxValue);
+    const newValue = normalizeBetween((value as number) + 1, minValue, maxValue);
     setValue(newValue);
   };
 
