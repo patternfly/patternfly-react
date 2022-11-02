@@ -387,7 +387,6 @@ export const FilterFaceted: React.FunctionComponent = () => {
   const toolbarPagination = (
     <Pagination
       titles={{ paginationTitle: 'Faceted filter group pagination' }}
-      perPageComponent="button"
       itemCount={repositories.length}
       perPage={10}
       page={1}

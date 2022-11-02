@@ -331,7 +331,6 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
   const toolbarPagination = (
     <Pagination
       titles={{ paginationTitle: 'Single select filter pagination' }}
-      perPageComponent="button"
       itemCount={repositories.length}
       perPage={10}
       page={1}

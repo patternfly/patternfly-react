@@ -28,7 +28,6 @@ export const PaginationSticky: React.FunctionComponent = () => {
       {isTopSticky && (
         <React.Fragment>
           <Pagination
-            perPageComponent="button"
             itemCount={523}
             perPage={perPage}
             page={page}
@@ -62,7 +61,6 @@ export const PaginationSticky: React.FunctionComponent = () => {
             ))}
           </Gallery>
           <Pagination
-            perPageComponent="button"
             itemCount={523}
             perPage={perPage}
             page={page}

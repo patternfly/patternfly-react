@@ -445,7 +445,6 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
   const toolbarPagination = (
     <Pagination
       titles={{ paginationTitle: 'Mixed filter group pagination' }}
-      perPageComponent="button"
       itemCount={repositories.length}
       perPage={10}
       page={1}

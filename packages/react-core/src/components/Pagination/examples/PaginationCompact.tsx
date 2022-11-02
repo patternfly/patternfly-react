@@ -20,7 +20,6 @@ export const PaginationCompact: React.FunctionComponent = () => {
 
   return (
     <Pagination
-      perPageComponent="button"
       itemCount={523}
       perPage={perPage}
       page={page}
