@@ -4,7 +4,6 @@ exports[`TextListItem should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <li
     class="''"
-    data-pf-content="true"
   >
     ReactNode
   </li>

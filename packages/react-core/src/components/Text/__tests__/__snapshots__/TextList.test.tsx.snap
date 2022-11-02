@@ -4,7 +4,6 @@ exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <ul
     class=""
-    data-pf-content="true"
   >
     Test
   </ul>

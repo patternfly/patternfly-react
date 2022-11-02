@@ -25,7 +25,7 @@ export const TextList: React.FunctionComponent<TextListProps> = ({
   const Component: any = component;
 
   return (
-    <Component {...props} data-pf-content className={css(className)}>
+    <Component {...props} className={css(className)}>
       {children}
     </Component>
   );

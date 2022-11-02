@@ -21,11 +21,6 @@ test('Renders with custom class name when className prop is provided', () => {
   expect(screen.getByText('Test')).toHaveClass('custom-class');
 });
 
-test('Renders with data-pf-content prop by default', () => {
-  render(<TextList>Test</TextList>);
-  expect(screen.getByText('Test')).toHaveAttribute('data-pf-content');
-});
-
 test('Renders as "ul" element by default', () => {
   render(<TextList>Test</TextList>);
   expect(screen.getByText('Test')).toHaveProperty('nodeName', 'UL');
