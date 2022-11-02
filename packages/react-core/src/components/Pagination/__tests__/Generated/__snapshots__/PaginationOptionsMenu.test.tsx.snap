@@ -7,7 +7,6 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-label=""
         class="pf-c-menu-toggle pf-m-plain pf-m-text"
         id="''-toggle"
         type="button"
@@ -18,7 +17,7 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
           <b>
             0 - 0
           </b>
-           of
+           of 
           <b>
             0
           </b>

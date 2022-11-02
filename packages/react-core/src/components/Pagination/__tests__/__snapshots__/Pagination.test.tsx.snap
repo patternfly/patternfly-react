@@ -20,7 +20,6 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-top-toggle"
           type="button"
@@ -221,7 +220,6 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-top-toggle"
           type="button"
@@ -429,7 +427,6 @@ exports[`Pagination component render custom start end 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-top-toggle"
           type="button"
@@ -797,7 +794,6 @@ exports[`Pagination component render last page 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-top-toggle"
           type="button"
@@ -1005,7 +1001,6 @@ exports[`Pagination component render limited number of pages 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-top-toggle"
           type="button"
@@ -1204,7 +1199,6 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-bottom-toggle"
           type="button"
@@ -1400,7 +1394,6 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-bottom-toggle"
           type="button"
@@ -1608,7 +1601,6 @@ exports[`Pagination component render should render correctly compact 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-top-toggle"
           type="button"
@@ -1742,7 +1734,6 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text pf-m-disabled"
           disabled=""
           id="options-menu-top-toggle"
@@ -1954,7 +1945,6 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-top-toggle"
           type="button"
@@ -2162,7 +2152,6 @@ exports[`Pagination component render should render correctly top 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-top-toggle"
           type="button"
@@ -2370,7 +2359,6 @@ exports[`Pagination component render titles 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-top-toggle"
           type="button"
@@ -2578,7 +2566,6 @@ exports[`Pagination component render up drop direction 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-top-toggle"
           type="button"
@@ -2786,7 +2773,6 @@ exports[`Pagination component render zero results 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label=""
           class="pf-c-menu-toggle pf-m-plain pf-m-text"
           id="options-menu-top-toggle"
           type="button"
