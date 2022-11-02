@@ -1,10 +1,7 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
-import { css } from '@patternfly/react-styles';
-
 import { fillTemplate } from '../../helpers';
 import { PaginationToggleTemplateProps } from './ToggleTemplate';
-import { DropdownToggle } from '../Dropdown';
+import { MenuToggle } from '../MenuToggle';
 
 export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   /** The first index of the items being paginated. */
@@ -12,7 +9,7 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   /** Flag indicating if the options menu is disabled. */
   isDisabled?: boolean;
   /** Flag indicating if the options menu dropdown is open or not. */
-  isOpen?: boolean;
+  isExpanded?: boolean;
   /** The total number of items being paginated. */
   itemCount?: number;
   /** The title of the pagination options menu. */
@@ -23,18 +20,10 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   lastIndex?: number;
   /** Label for the English word "of". */
   ofWord?: string;
-  /** Callback for toggle open on keyboard entry. */
-  onEnter?: () => void;
   /** Event function that fires when user clicks the options menu toggle. */
-  onToggle?: (isOpen: boolean) => void;
-  /** Accessible label for the options toggle. */
-  optionsToggle?: string;
-  /** */
-  parentRef?: HTMLElement;
-  /** Component to be used for wrapping the toggle contents. Use "button" when you want
-   * all of the toggle text to be clickable.
-   */
-  perPageComponent?: 'div' | 'button';
+  onToggle?: () => void;
+  /** Accessible name for the options toggle. */
+  optionsToggleAriaLabel?: string;
   /** Flag for indicating whether the toggle should be shown. */
   showToggle?: boolean;
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex,
@@ -46,7 +35,7 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
 
 export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   itemsTitle = 'items',
-  optionsToggle,
+  optionsToggleAriaLabel,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   itemsPerPageTitle = 'Items per page',
   ofWord = 'of',
@@ -56,54 +45,35 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   widgetId = '',
   showToggle = true,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onToggle = (_isOpen: boolean) => undefined as any,
-  isOpen = false,
+  onToggle = () => undefined as any,
+  isExpanded = false,
   isDisabled = false,
-  parentRef = null,
-  toggleTemplate: ToggleTemplate,
-  onEnter = null,
-  perPageComponent = 'div'
-}: OptionsToggleProps) => {
-  const isDiv = perPageComponent === 'div';
-  const toggleClasses = css(
-    styles.optionsMenuToggle,
-    isDisabled && styles.modifiers.disabled,
-    styles.modifiers.plain,
-    styles.modifiers.text
-  );
-
-  const template =
-    typeof ToggleTemplate === 'string' ? (
-      fillTemplate(ToggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })
-    ) : (
-      <ToggleTemplate
-        firstIndex={firstIndex}
-        lastIndex={lastIndex}
-        ofWord={ofWord}
-        itemCount={itemCount}
-        itemsTitle={itemsTitle}
-      />
-    );
-
-  const dropdown = showToggle && (
-    <React.Fragment>
-      {isDiv && <span className={css(styles.optionsMenuToggleText)}>{template}</span>}
-      <DropdownToggle
-        onEnter={onEnter}
-        aria-label={isDiv ? optionsToggle || 'Items per page' : optionsToggle}
-        onToggle={onToggle}
+  toggleTemplate: ToggleTemplate
+}: OptionsToggleProps) => (
+  <React.Fragment>
+    {showToggle && (
+      <MenuToggle
+        onClick={onToggle}
+        aria-label={optionsToggleAriaLabel}
         isDisabled={isDisabled || (itemCount && itemCount <= 0)}
-        isOpen={isOpen}
+        isExpanded={isExpanded}
         {...(widgetId && { id: `${widgetId}-toggle` })}
-        className={isDiv ? styles.optionsMenuToggleButton : toggleClasses}
-        parentRef={parentRef}
+        variant="plainText"
         aria-haspopup="listbox"
       >
-        {!isDiv && template}
-      </DropdownToggle>
-    </React.Fragment>
-  );
-
-  return isDiv ? <div className={toggleClasses}>{dropdown}</div> : dropdown;
-};
+        {typeof ToggleTemplate === 'string' ? (
+          fillTemplate(ToggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })
+        ) : (
+          <ToggleTemplate
+            firstIndex={firstIndex}
+            lastIndex={lastIndex}
+            ofWord={ofWord}
+            itemCount={itemCount}
+            itemsTitle={itemsTitle}
+          />
+        )}
+      </MenuToggle>
+    )}
+  </React.Fragment>
+);
 OptionsToggle.displayName = 'OptionsToggle';

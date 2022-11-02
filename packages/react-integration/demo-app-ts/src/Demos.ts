@@ -283,11 +283,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PageManagedSidebarClosedDemo
   },
   {
-    id: 'pagination-button-variant-demo',
-    name: 'Pagination Button Variant Demo',
-    componentType: Examples.PaginationButtonVariantDemo
-  },
-  {
     id: 'pagination-demo',
     name: 'Pagination Demo',
     componentType: Examples.PaginationDemo

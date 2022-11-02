@@ -2,13 +2,11 @@ import * as React from 'react';
 import { ToggleTemplate, PaginationToggleTemplateProps } from './ToggleTemplate';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
-
-import { fillTemplate } from '../../helpers';
+import { fillTemplate, PickOptional } from '../../helpers';
 import { Navigation } from './Navigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import widthChars from '@patternfly/react-tokens/dist/esm/c_pagination__nav_page_select_c_form_control_width_chars';
-import { PickOptional } from '../../helpers';
 
 export enum PaginationVariant {
   bottom = 'bottom',
@@ -59,7 +57,7 @@ export interface PaginationTitles {
   /** Label for the English word "of". */
   ofWord?: string;
   /** Accessible label for the options toggle. */
-  optionsToggle?: string;
+  optionsToggleAriaLabel?: string;
   /** The title of a page displayed beside the page number. */
   page?: string;
   /** The title of a page displayed beside the page number (plural form). */
@@ -129,10 +127,6 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   page?: number;
   /** Number of items per page. */
   perPage?: number;
-  /** Component to be used for wrapping the toggle contents. Use "button" when you want
-   * all of the toggle text to be clickable.
-   */
-  perPageComponent?: 'div' | 'button';
   /** Array of the number of items per page options. */
   perPageOptions?: PerPageOptions[];
   /** Function called when user clicks on navigate to first page. */
@@ -198,7 +192,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       toPreviousPage: 'Go to previous page',
       toLastPage: 'Go to last page',
       toNextPage: 'Go to next page',
-      optionsToggle: '',
+      optionsToggleAriaLabel: '',
       currPage: 'Current page',
       paginationTitle: 'Pagination',
       ofWord: 'of'
@@ -218,8 +212,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
     onNextClick: () => undefined,
     onPageInput: () => undefined,
     onLastClick: () => undefined,
-    ouiaSafe: true,
-    perPageComponent: 'div'
+    ouiaSafe: true
   };
 
   state = {
@@ -274,7 +267,6 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       onLastClick,
       ouiaId,
       ouiaSafe,
-      perPageComponent,
       ...props
     } = this.props;
     const dropDirection = dropDirectionProp || (variant === 'bottom' && !isStatic ? 'up' : 'down');
@@ -349,27 +341,28 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
             )}
           </div>
         )}
-        <PaginationOptionsMenu
-          itemsPerPageTitle={titles.itemsPerPage}
-          perPageSuffix={titles.perPageSuffix}
-          itemsTitle={isCompact ? '' : titles.items}
-          optionsToggle={titles.optionsToggle}
-          perPageOptions={perPageOptions}
-          firstIndex={itemsStart !== null ? itemsStart : firstIndex}
-          lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
-          ofWord={titles.ofWord}
-          defaultToFullPage={defaultToFullPage}
-          itemCount={itemCount}
-          page={page}
-          perPage={perPage}
-          lastPage={lastPage}
-          onPerPageSelect={onPerPageSelect}
-          dropDirection={dropDirection}
-          widgetId={`${widgetId}-${variant}`}
-          toggleTemplate={toggleTemplate}
-          isDisabled={isDisabled}
-          perPageComponent={perPageComponent}
-        />
+        {perPageOptions && perPageOptions.length > 0 && (
+          <PaginationOptionsMenu
+            itemsPerPageTitle={titles.itemsPerPage}
+            perPageSuffix={titles.perPageSuffix}
+            itemsTitle={isCompact ? '' : titles.items}
+            optionsToggleAriaLabel={titles.optionsToggleAriaLabel}
+            perPageOptions={perPageOptions}
+            firstIndex={itemsStart !== null ? itemsStart : firstIndex}
+            lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
+            ofWord={titles.ofWord}
+            defaultToFullPage={defaultToFullPage}
+            itemCount={itemCount}
+            page={page}
+            perPage={perPage}
+            lastPage={lastPage}
+            onPerPageSelect={onPerPageSelect}
+            dropDirection={dropDirection}
+            widgetId={`${widgetId}-${variant}`}
+            toggleTemplate={toggleTemplate}
+            isDisabled={isDisabled}
+          />
+        )}
         <Navigation
           pagesTitle={titles.page}
           pagesTitlePlural={titles.pages}
