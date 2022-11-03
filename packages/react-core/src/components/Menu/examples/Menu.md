@@ -37,13 +37,13 @@ Use the `icon` property to add a familiar icon before a `<MenuItem>` to accelera
 ```ts file="MenuWithIcons.tsx"
 ```
 
-### With action icon
+### With actions
 
 To connect a menu item to an action icon, add a `<MenuItemAction>` to a `<MenuItem>`, and use the `icon` property to load an easily recognizable icon.  
 
-To execute a callback when any menu action icon is clicked, pass a callback to the `onActionClick` property of the `<Menu>`. The following example logs to the console any time any action icon is clicked. 
+To trigger an action when any menu action icon is clicked, pass a callback to the `onActionClick` property of the `<Menu>`. The following example logs to the console any time any action icon is clicked. 
 
-To execute a callback when a specific item's action icon is clicked, pass in the `onClick` property to that `<MenuItemAction>`. The following example logs "clicked on code icon" to the console when the "code" icon is clicked. 
+To trigger an action when a specific item's action icon is clicked, pass in the `onClick` property to that `<MenuItemAction>`. The following example logs "clicked on code icon" to the console when the "code" icon is clicked. 
 
 ```ts file="MenuWithActions.tsx"
 ```
@@ -126,6 +126,7 @@ Use a drilldown menu to contain different levels of menu items. When a parent me
 - To indicate the path of drilled-in menu item ids, use the `drilldownItemPath` property. 
 - Pass in an array of drilled-in menus with the `drilledInMenus` property.
 - Use the `onDrillIn` and `onDrillOut` properties to contain callbacks for drilling into and drilling out of a submenu, respectively. 
+- To account for updated heights as menus drill in and out of use, use the `onGetMenuHeight` property. When starting from a drilled-in state, the `onGetMenuHeight` property must define the height of the root menu.
 
 ```ts file="./MenuWithDrilldown.tsx" isBeta
 ```
@@ -134,19 +135,19 @@ Use a drilldown menu to contain different levels of menu items. When a parent me
 
 To render an initially drilled-in menu, the `drilldownItemPath`, `drilledInMenus`, and `activeMenu` properties must be set to default values.
 
-When starting from a drilled-in state, the `onGetMenuHeight` property must define the height of the root menu. As shown in the following example, the value of `onGetMenuHeight` must also account for updating heights as menus drill in and out of view.
-
 ```ts file="./MenuWithDrilldownInitialState.tsx" isBeta
 ```
 
 ### With drilldown - submenu functions
+
+For added flexibility with large menus, you may create a menu by passing a function to `drilldownMenu`. This approach allows you to create menu items dynamically, rather than creating everything up front.
 
 ```ts file="./MenuWithDrilldownSubmenuFunctions.tsx" isBeta
 ```
 
 ### With drilldown breadcrumbs
 
-Use breadcrumbs when a drilldown menu has more than 2 levels to offer users better navigation.
+Use [breadcrumbs](/components/breadcrumb) when a drilldown menu has more than 2 levels to offer users better navigation.
 
 ```ts file="MenuWithDrilldownBreadcrumbs.tsx" isBeta
 ```
@@ -165,7 +166,7 @@ Adjust the visual size of a scrollable menu by using the `menuHeight` property w
 ```ts file="MenuScrollableCustomMenuHeight.tsx"
 ```
 
-### Expandable menu
+### With view more
 
 If you want to initially render only a certain number of menu items within a large menu, you can add a "view more" menu item with a callback passed into its `onClick` property that will render additional menu items.
 
