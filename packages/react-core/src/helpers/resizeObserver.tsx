@@ -10,7 +10,7 @@ import { canUseDOM } from './util';
  * private observer: any = () => {};
  *
  * public componentDidMount() {
- *   this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
+ *   this.observer = getResizeObserver(this.containerRef.current, this.handleResize, true);
  * }
  *
  * public componentWillUnmount() {
@@ -37,7 +37,7 @@ import { canUseDOM } from './util';
  * private observer: any = () => {};
  *
  * public componentDidMount() {
- *   this.observer = getResizeObserver(this.inputRef.current, this.handleResize);
+ *   this.observer = getResizeObserver(this.inputRef.current, this.handleResize, true);
  * }
  *
  * public componentWillUnmount() {
@@ -59,7 +59,7 @@ import { canUseDOM } from './util';
  * Example 3 - With debounced method passed in:
  *
  * public componentDidMount() {
- *   this.observer = getResizeObserver(this.inputRef.current, debounce(this.handleResize, 250), false);
+ *   this.observer = getResizeObserver(this.inputRef.current, debounce(this.handleResize, 250));
  * }
  *
  * @param {Element} containerRefElement The container reference to observe
@@ -70,7 +70,7 @@ import { canUseDOM } from './util';
 export const getResizeObserver = (
   containerRefElement: Element,
   handleResize: () => void,
-  useRequestAnimationFrame: boolean = true
+  useRequestAnimationFrame?: boolean
 ) => {
   let unobserve: any;
 

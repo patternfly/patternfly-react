@@ -125,7 +125,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
   componentDidMount() {
     if (this.props.isLeftTruncated) {
       const inputRef = this.props.innerRef || this.inputRef;
-      this.observer = getResizeObserver(inputRef.current, this.handleResize);
+      this.observer = getResizeObserver(inputRef.current, this.handleResize, true);
       this.handleResize();
     }
   }
