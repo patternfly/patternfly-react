@@ -43,7 +43,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   /** Associates the ProgressBar with it's label for accessibility purposes. Required when title not used */
   'aria-labelledby'?: string;
   /** Text which can be used to convey additional information about the progress component. */
-  helperText?: string;
+  helperText?: React.ReactNode;
 }
 
 export class Progress extends React.Component<ProgressProps> {

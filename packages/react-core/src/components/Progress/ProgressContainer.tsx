@@ -55,7 +55,7 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
     | 'right-start'
     | 'right-end';
   /** Text which can be used to convey additional information about the progress component. */
-  helperText?: string;
+  helperText?: React.ReactNode;
 }
 
 const variantToIcon = {
