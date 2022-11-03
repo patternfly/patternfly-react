@@ -85,7 +85,7 @@ To exclusively present information in a modal, remove the `header` and/or `foote
 
 ### Title icon
 
-To add an icon before a modal’s title, use the `titleIconVariant`, which can be set equal one of the predefined variants -- "success", "danger", "warning", "info", and "default" -- or to an imported custom icon. The following example uses a "warning" variant.
+To add an icon before a modal’s title, use the `titleIconVariant`, which can be set to one of the predefined variants -- "success", "danger", "warning", "info", and "default" -- or to an imported custom icon. The following example uses a "warning" variant.
 
 ```ts file="./ModalTitleIcon.tsx"
 ```
@@ -106,14 +106,14 @@ To guide users through a series of steps in a modal, you can add a [wizard](/com
 
 ### With dropdown
 
-To present a menu of actions or links to a user you can add a [dropdown](/components/dropdown) to a modal. To allow the dropdown to visually break out of the modal container, set the `menuAppendTo` property to “parent”. Handle the modal’s closing behavior by listening to the `onEscapePress` callback on the `<Modal>` component. This allows the `esc` key to collapse the dropdown without closing the entire modal.
+To present a menu of actions or links to a user you can add a [dropdown](/components/dropdown) to a modal. To allow the dropdown to visually break out of the modal container, set the `menuAppendTo` property to “parent”. Handle the modal’s closing behavior by listening to the `onEscapePress` callback on the `<Modal>` component. This allows the "escape" key to collapse the dropdown without closing the entire modal.
 
 ```ts file="./ModalWithDropdown.tsx"
 ```
 
 ### With help
 
-To help simplify and explain complex models, add a help [popover](components/popover). Only place a help icon at the modal level if its information applies to all content in the modal. If the help popover is specific to a particular modal section, place the help icon beside that section instead.
+To help simplify and explain complex models, add a help [popover](/components/popover). Only place a help icon at the modal level if its information applies to all content in the modal. If the help popover is specific to a particular modal section, place the help icon beside that section instead.
 
 ```ts file="./ModalWithHelp.tsx"
 ```
