@@ -16,11 +16,11 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isCompact?: boolean;
   /** Modifies the card to include selectable styling */
   isSelectable?: boolean;
-  /** @beta Specifies the card is selectable, and applies the new raised styling on hover and select */
+  /** Specifies the card is selectable, and applies the new raised styling on hover and select */
   isSelectableRaised?: boolean;
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
-  /** @beta Modifies a raised selectable card to have disabled styling */
+  /** Modifies a raised selectable card to have disabled styling */
   isDisabledRaised?: boolean;
   /** Modifies the card to include flat styling */
   isFlat?: boolean;

@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.92.10 (2022-10-27)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## 4.92.9 (2022-10-26)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [4.92.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.92.7...@patternfly/react-icons@4.92.8) (2022-10-17)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## 4.92.7 (2022-10-14)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
 ## 4.92.6 (2022-10-05)
 
 **Note:** Version bump only for package @patternfly/react-icons

@@ -6,7 +6,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 import { KeyTypes } from '../../../helpers/constants';
-import { WizardNavProps } from '../Wizard';
+import { WizardNavProps, WizardBody, WizardStep, WizardStepProps } from '../Wizard';
 import { WizardControlStep, isWizardSubStep } from './types';
 
 /**
@@ -17,15 +17,13 @@ export interface WizardToggleProps {
   /** List of steps and/or sub-steps */
   steps: WizardControlStep[];
   /** The current step */
-  currentStep: WizardControlStep;
+  activeStep: WizardControlStep;
   /** Wizard footer */
   footer: React.ReactElement;
   /** Wizard navigation */
   nav: React.ReactElement<WizardNavProps>;
   /** The expandable dropdown button's aria-label */
   'aria-label'?: string;
-  /** Flag to unmount inactive steps instead of hiding. Defaults to true */
-  hasUnmountedSteps?: boolean;
   /** Flag to determine whether the dropdown navigation is expanded */
   isNavExpanded?: boolean;
   /** Callback to expand or collapse the dropdown navigation */
@@ -34,25 +32,24 @@ export interface WizardToggleProps {
 
 export const WizardToggle = ({
   steps,
-  currentStep,
+  activeStep,
   footer,
   nav,
   isNavExpanded,
   toggleNavExpanded,
-  hasUnmountedSteps = true,
   'aria-label': ariaLabel = 'Wizard toggle'
 }: WizardToggleProps) => {
-  const isActiveSubStep = isWizardSubStep(currentStep);
+  const isActiveSubStep = isWizardSubStep(activeStep);
   const nonSubSteps = steps.filter(step => !isWizardSubStep(step));
   const wizardToggleIndex =
     nonSubSteps.indexOf(
-      isWizardSubStep(currentStep) ? steps.find(step => step.id === currentStep.parentId) : currentStep
+      isWizardSubStep(activeStep) ? steps.find(step => step.id === activeStep.parentId) : activeStep
     ) + 1;
 
   const handleKeyClicks = React.useCallback(
     (event: KeyboardEvent): void => {
       if (isNavExpanded && event.key === KeyTypes.Escape) {
-        toggleNavExpanded();
+        toggleNavExpanded?.();
       }
     },
     [isNavExpanded, toggleNavExpanded]
@@ -68,20 +65,21 @@ export const WizardToggle = ({
     };
   }, [handleKeyClicks]);
 
-  // Only render the current step when hasUnmountedSteps is true
-  const bodyContent = hasUnmountedSteps
-    ? currentStep?.component
-    : steps.map(step => {
-        if (currentStep?.name === step.name) {
-          return step.component;
-        }
+  const bodyContent = steps.map(step => {
+    const props: WizardStepProps = step.component?.props || {};
+    const { children, body, ...propsWithoutChildren } = props;
 
-        return (
-          <div key={step.id} style={{ display: 'none' }}>
-            {step.component}
-          </div>
-        );
-      });
+    return (
+      <React.Fragment key={step.id}>
+        {activeStep?.name === step.name &&
+          (body || body === undefined ? <WizardBody {...body}>{children}</WizardBody> : children)}
+
+        <div key={step.id} style={{ display: 'none' }}>
+          <WizardStep {...propsWithoutChildren} />
+        </div>
+      </React.Fragment>
+    );
+  });
 
   return (
     <>
@@ -93,10 +91,10 @@ export const WizardToggle = ({
       >
         <span className={css(styles.wizardToggleList)}>
           <span className={css(styles.wizardToggleListItem)}>
-            <span className={css(styles.wizardToggleNum)}>{wizardToggleIndex}</span> {currentStep?.name}
+            <span className={css(styles.wizardToggleNum)}>{wizardToggleIndex}</span> {activeStep?.name}
             {isActiveSubStep && <AngleRightIcon className={css(styles.wizardToggleSeparator)} aria-hidden="true" />}
           </span>
-          {isActiveSubStep && <span className={css(styles.wizardToggleListItem)}>{currentStep?.name}</span>}
+          {isActiveSubStep && <span className={css(styles.wizardToggleListItem)}>{activeStep?.name}</span>}
         </span>
 
         <span className={css(styles.wizardToggleIcon)}>

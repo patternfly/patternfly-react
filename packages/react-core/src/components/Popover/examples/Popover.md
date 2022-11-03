@@ -58,10 +58,10 @@ Note: If you use the isVisible prop, either refer to the example above or if you
 
 ### Popover with icon in the title
 
-```ts file="./PopoverWithIconInTheTitle.tsx" isBeta 
+```ts file="./PopoverWithIconInTheTitle.tsx" 
 ```
 
 ### Alert popover
 
-```ts file="./PopoverAlert.tsx" isBeta 
+```ts file="./PopoverAlert.tsx" 
 ```

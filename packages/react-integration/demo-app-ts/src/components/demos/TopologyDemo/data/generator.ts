@@ -158,6 +158,7 @@ export const generateDataModel = (
       group: true,
       label: id,
       style: { padding: 15 },
+      // data items are used to pass to the component to show various option, demo purposes only
       data: {
         badge: nodeCreationOptions.nodeBadges ? 'GN' : undefined,
         badgeColor: '#F2F0FC',

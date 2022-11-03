@@ -7,7 +7,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-12"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-13"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -36,7 +36,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-12"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span
@@ -206,7 +206,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-8"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-9"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -249,7 +249,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-10"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-9"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span
@@ -419,7 +419,7 @@ exports[`Pagination component render custom start end 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-10"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-11"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -462,7 +462,7 @@ exports[`Pagination component render custom start end 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-11"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-10"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span
@@ -630,7 +630,7 @@ exports[`Pagination component render empty per page options 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-9"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-10"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -801,7 +801,7 @@ exports[`Pagination component render last page 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-7"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-8"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -844,7 +844,7 @@ exports[`Pagination component render last page 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-9"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-8"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span
@@ -1014,7 +1014,7 @@ exports[`Pagination component render limited number of pages 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-5"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-6"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -1057,7 +1057,7 @@ exports[`Pagination component render limited number of pages 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-6"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span
@@ -1230,7 +1230,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-bottom-1"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-1"
+    id="options-menu-bottom-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -1261,7 +1261,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-1"
+          id="options-menu-bottom-toggle"
           type="button"
         >
           <span
@@ -1431,7 +1431,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
     data-ouia-component-id="OUIA-Generated-Pagination-bottom-2"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-4"
+    id="options-menu-bottom-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -1462,7 +1462,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
           data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-4"
+          id="options-menu-bottom-toggle"
           type="button"
         >
           <span
@@ -1632,7 +1632,7 @@ exports[`Pagination component render should render correctly button variant 1`] 
     data-ouia-component-id="OUIA-Generated-Pagination-top-17"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-18"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -1660,7 +1660,7 @@ exports[`Pagination component render should render correctly button variant 1`] 
         data-ouia-component-id="OUIA-Generated-DropdownToggle-18"
         data-ouia-component-type="PF4/DropdownToggle"
         data-ouia-safe="true"
-        id="pagination-options-menu-toggle-17"
+        id="options-menu-top-toggle"
         type="button"
       >
         <span
@@ -1841,7 +1841,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-2"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-2"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -1884,7 +1884,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-2"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span
@@ -1980,7 +1980,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-4"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-5"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -2024,7 +2024,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
           disabled=""
-          id="pagination-options-menu-toggle-5"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span
@@ -2197,7 +2197,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-3"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-3"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -2240,7 +2240,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-3"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span
@@ -2410,7 +2410,7 @@ exports[`Pagination component render should render correctly top 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-1"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-0"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -2453,7 +2453,7 @@ exports[`Pagination component render should render correctly top 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-0"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span
@@ -2623,7 +2623,7 @@ exports[`Pagination component render titles 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-11"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-12"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -2666,7 +2666,7 @@ exports[`Pagination component render titles 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-12"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-11"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span
@@ -2836,7 +2836,7 @@ exports[`Pagination component render up drop direction 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-13"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-14"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -2879,7 +2879,7 @@ exports[`Pagination component render up drop direction 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-14"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-13"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span
@@ -3049,7 +3049,7 @@ exports[`Pagination component render zero results 1`] = `
     data-ouia-component-id="OUIA-Generated-Pagination-top-6"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-7"
+    id="options-menu-top-pagination"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -3092,7 +3092,7 @@ exports[`Pagination component render zero results 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-7"
+          id="options-menu-top-toggle"
           type="button"
         >
           <span

@@ -2,17 +2,15 @@ import React from 'react';
 import { Banner } from '@patternfly/react-core';
 
 export const BannerBasic: React.FunctionComponent = () => (
-  <React.Fragment>
-    <Banner screenReaderText="This is a default Banner">Default banner</Banner>
+  <>
+    <Banner>Default banner</Banner>
     <br />
-    <Banner variant="info" screenReaderText="This is an info Banner">
-      Info banner
-    </Banner>
+    <Banner variant="info">Blue banner</Banner>
     <br />
-    <Banner variant="danger">Danger banner</Banner>
+    <Banner variant="danger">Red banner</Banner>
     <br />
-    <Banner variant="success">Success banner</Banner>
+    <Banner variant="success">Green banner</Banner>
     <br />
-    <Banner variant="warning">Warning banner</Banner>
-  </React.Fragment>
+    <Banner variant="warning">Gold banner</Banner>
+  </>
 );

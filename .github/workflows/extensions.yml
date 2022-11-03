@@ -1,0 +1,17 @@
+name: Add relevant issues to extensions project board
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  add-to-extensions:
+    if: github.event.label.name == 'extension'
+    name: Add issue to extensions board
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.3.0
+        with:
+          project-url: https://github.com/orgs/patternfly/projects/12
+          github-token: ${{ secrets.GH_PROJECTS }}

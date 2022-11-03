@@ -22,7 +22,7 @@ export const PaginationBottom: React.FunctionComponent = () => {
     <Pagination
       perPageComponent="button"
       itemCount={333}
-      widgetId="pagination-options-menu-bottom"
+      widgetId="bottom-example"
       perPage={perPage}
       page={page}
       variant={PaginationVariant.bottom}

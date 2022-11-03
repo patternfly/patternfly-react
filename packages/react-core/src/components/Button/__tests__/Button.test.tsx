@@ -103,6 +103,22 @@ describe('Button', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('isLoading inline link', () => {
+    const { asFragment } = render(
+      <Button variant="link" isInline isLoading aria-label="Loading" spinnerAriaValueText="Loading">
+        Loading Button
+      </Button>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('isLoading icon only', () => {
+    const { asFragment } = render(
+      <Button variant="plain" isLoading aria-label="Upload" spinnerAriaValueText="Loading" icon={<div>ICON</div>} />
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('allows passing in a string as the component', () => {
     const component = 'a';
     render(<Button component={component}>anchor button</Button>);
@@ -129,12 +145,5 @@ describe('Button', () => {
   test('setting tab index through props', () => {
     render(<Button tabIndex={0}>TabIndex 0 Button</Button>);
     expect(screen.getByRole('button')).toHaveAttribute('tabindex', '0');
-  });
-
-  test('isLoading icon only', () => {
-    const { asFragment } = render(
-      <Button variant="plain" isLoading aria-label="Upload" spinnerAriaValueText="Loading" icon={<div>ICON</div>} />
-    );
-    expect(asFragment()).toMatchSnapshot();
   });
 });

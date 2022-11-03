@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Timestamp/timestamp';
 import { css } from '@patternfly/react-styles';
 import { Tooltip } from '../Tooltip';
+import { isValidDate } from '../../helpers/datetimeUtils';
 
 export enum TimestampFormat {
   full = 'full',
@@ -78,7 +79,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   children,
   className,
   customFormat,
-  date: dateProp = new Date(),
+  date: dateProp,
   dateFormat,
   displaySuffix = '',
   is12Hour,
@@ -87,6 +88,24 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   tooltip,
   ...props
 }: TimestampProps) => {
+  const [date, setDate] = React.useState(() => {
+    const initDate = new Date(dateProp);
+    if (isValidDate(initDate)) {
+      return initDate;
+    }
+
+    return new Date();
+  });
+
+  React.useEffect(() => {
+    const dateFromProp = new Date(dateProp);
+    if (isValidDate(dateFromProp) && dateFromProp.toString() !== new Date(date).toString()) {
+      setDate(dateFromProp);
+    } else if (!dateProp) {
+      setDate(new Date());
+    }
+  }, [dateProp]);
+
   const hasTimeFormat = timeFormat && !customFormat;
   const formatOptions = {
     ...(dateFormat && !customFormat && { dateStyle: dateFormat }),
@@ -94,7 +113,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
     ...(is12Hour !== undefined && { hour12: is12Hour })
   };
 
-  const dateAsLocaleString = new Date(dateProp).toLocaleString(locale, {
+  const dateAsLocaleString = new Date(date).toLocaleString(locale, {
     ...formatOptions,
     ...(hasTimeFormat && { timeStyle: timeFormat })
   });
@@ -102,19 +121,21 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
 
   const utcTimeFormat = timeFormat !== 'short' ? 'medium' : 'short';
   const convertToUTCString = (date: Date) => new Date(date).toUTCString().slice(0, -3);
-  const utcDateString = new Date(convertToUTCString(dateProp)).toLocaleString(locale, {
+  const utcDateString = new Date(convertToUTCString(date)).toLocaleString(locale, {
     ...formatOptions,
     ...(hasTimeFormat && { timeStyle: utcTimeFormat })
   });
   const defaultTooltipContent = `${utcDateString}${tooltip?.suffix ? ' ' + tooltip.suffix : ' UTC'}`;
 
+  const { dateTime, ...propsWithoutDateTime } = props;
+
   const timestamp = (
     <span
       className={css(styles.timestamp, tooltip && styles.modifiers.helpText, className)}
       {...(tooltip && { tabIndex: 0 })}
-      {...props}
+      {...propsWithoutDateTime}
     >
-      <time className="pf-c-timestamp__text" dateTime={props.dateTime || new Date(dateProp).toISOString()}>
+      <time className="pf-c-timestamp__text" dateTime={dateTime || new Date(date).toISOString()}>
         {!children ? defaultDisplay : children}
       </time>
     </span>

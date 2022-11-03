@@ -3,7 +3,6 @@ id: Slider
 section: components
 cssPrefix: pf-c-slider
 propComponents: ['Slider', 'SliderStepObject']
-beta: true
 ---
 
 import { Slider, Button, Text, TextVariants } from '@patternfly/react-core';

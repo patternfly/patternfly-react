@@ -425,7 +425,7 @@ export const ColumnManagementAction = () => {
               </OverflowMenuGroup>
             </OverflowMenu>
           </ToolbarItem>
-          <ToolbarItem variant="pagination">{renderPagination()}</ToolbarItem>
+          <ToolbarItem variant="pagination">{renderPagination(PaginationVariant.top)}</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
     </React.Fragment>
@@ -476,7 +476,7 @@ export const ColumnManagementAction = () => {
                 ))}
               </Tbody>
             </TableComposable>
-            {renderPagination()}
+            {renderPagination(PaginationVariant.bottom)}
             {renderModal()}
           </Card>
         </PageSection>

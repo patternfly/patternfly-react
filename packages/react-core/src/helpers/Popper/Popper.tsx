@@ -1,17 +1,45 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { usePopper } from './thirdparty/react-popper/usePopper';
-import { Placement, BasePlacement, Modifier } from './thirdparty/popper-core';
+import { Placement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
 import { FindRefWrapper } from './FindRefWrapper';
 import '@patternfly/react-styles/css/components/Popper/Popper.css';
 
-const hash = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
+const hash = {
+  left: 'right',
+  right: 'left',
+  bottom: 'top',
+  top: 'bottom',
+  'top-start': 'bottom-end',
+  'top-end': 'bottom-start',
+  'bottom-start': 'top-end',
+  'bottom-end': 'top-start',
+  'left-start': 'right-end',
+  'left-end': 'right-start',
+  'right-start': 'left-end',
+  'right-end': 'left-start'
+};
 
 const getOppositePlacement = (placement: Placement): any =>
   placement.replace(
-    /left|right|bottom|top/g,
-    (matched: string) => hash[matched as 'left' | 'right' | 'bottom' | 'top'] as BasePlacement
+    /left|right|bottom|top|top-start|top-end|bottom-start|bottom-end|right-start|right-end|left-start|left-end/g,
+    (matched: string) =>
+      hash[
+        matched as
+          | 'left'
+          | 'right'
+          | 'bottom'
+          | 'top'
+          | 'top-start'
+          | 'top-end'
+          | 'bottom-start'
+          | 'bottom-end'
+          | 'right-start'
+          | 'right-end'
+          | 'left-start'
+          | 'left-end'
+      ] as Placement
   );
 
 export const getOpacityTransition = (animationDuration: number) =>

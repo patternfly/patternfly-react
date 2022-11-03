@@ -26,9 +26,9 @@ export interface AlertIconProps extends React.HTMLProps<HTMLDivElement> {
 
 export const AlertIcon = ({ variant, customIcon, className = '', ...props }: AlertIconProps) => {
   const Icon = variantIcons[variant];
-  return (
+  return Icon ? (
     <div {...props} className={css(styles.alertIcon, className)}>
       {customIcon || <Icon />}
     </div>
-  );
+  ) : null;
 };

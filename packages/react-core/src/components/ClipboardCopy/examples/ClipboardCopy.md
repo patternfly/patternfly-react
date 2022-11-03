@@ -3,6 +3,7 @@ id: Clipboard copy
 section: components
 cssPrefix: pf-c-copyclipboard
 propComponents: ['ClipboardCopy', 'ClipboardCopyButton']
+ouia: true
 ---
 
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';

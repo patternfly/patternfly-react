@@ -2,8 +2,9 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface WizardNavItemProps {
+export interface WizardNavItemProps extends OUIAProps {
   /** Can nest a WizardNav component for substeps */
   children?: React.ReactNode;
   /** The content to display in the nav item */
@@ -37,8 +38,11 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   href = null,
   isExpandable = false,
   id,
+  ouiaId,
+  ouiaSafe = true,
   ...rest
 }: WizardNavItemProps) => {
+  const ouiaProps = useOUIAProps(WizardNavItem.displayName, ouiaId, ouiaSafe);
   const NavItemComponent = navItemComponent;
 
   const [isExpanded, setIsExpanded] = React.useState(false);
@@ -82,6 +86,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
         aria-disabled={isDisabled ? true : null}
         aria-current={isCurrent && !children ? 'step' : false}
         {...(isExpandable && { 'aria-expanded': isExpanded })}
+        {...ouiaProps}
       >
         {isExpandable ? (
           <>

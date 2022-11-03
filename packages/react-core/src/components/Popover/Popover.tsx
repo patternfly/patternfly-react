@@ -38,11 +38,11 @@ export enum PopoverPosition {
  */
 
 export interface PopoverProps {
-  /** @beta Text announced by screen reader when alert severity variant is set to indicate
+  /** Text announced by screen reader when alert severity variant is set to indicate
    * severity level.
    */
   alertSeverityScreenReaderText?: string;
-  /** @beta Severity variants for an alert popover. This modifies the color of the header to
+  /** Severity variants for an alert popover. This modifies the color of the header to
    * match the severity.
    */
   alertSeverityVariant?: 'default' | 'info' | 'warning' | 'success' | 'danger';
@@ -123,7 +123,7 @@ export interface PopoverProps {
    * popover, i.e. headerContent={hide => <Button onClick={() => hide()}>Close</Button>}
    */
   headerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
-  /** @beta Icon to be displayed in the popover header. **/
+  /** Icon to be displayed in the popover header. **/
   headerIcon?: React.ReactNode;
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled
    * by the user).
@@ -247,8 +247,20 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   closeBtnAriaLabel = 'Close',
   showClose = true,
   distance = 25,
-  // For every initial starting position, there are 3 escape positions
-  flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
+  flipBehavior = [
+    'top',
+    'bottom',
+    'left',
+    'right',
+    'top-start',
+    'top-end',
+    'bottom-start',
+    'bottom-end',
+    'left-start',
+    'left-end',
+    'right-start',
+    'right-end'
+  ],
   animationDuration = 300,
   id,
   withFocusTrap: propWithFocusTrap,

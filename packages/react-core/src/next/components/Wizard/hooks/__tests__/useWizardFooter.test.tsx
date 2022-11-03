@@ -16,15 +16,15 @@ test('sets the footer when one is provided without a stepId', () => {
   expect(setFooter).toHaveBeenCalledWith(customFooter);
 });
 
-test(`sets the footer when the provided stepId matches the currentStep's id`, () => {
-  useWizardContextSpy.mockReturnValueOnce({ setFooter, currentStep: { id: 'curr-step-id' } } as any);
+test(`sets the footer when the provided stepId matches the activeStep's id`, () => {
+  useWizardContextSpy.mockReturnValueOnce({ setFooter, activeStep: { id: 'curr-step-id' } } as any);
 
   renderHook(() => useWizardFooter(customFooter, 'curr-step-id'));
   expect(setFooter).toHaveBeenCalledWith(customFooter);
 });
 
-test(`does not set the footer when the provided stepId does not match the currentStep's id`, () => {
-  useWizardContextSpy.mockReturnValueOnce({ setFooter, currentStep: { id: 'curr-step-id' } } as any);
+test(`does not set the footer when the provided stepId does not match the activeStep's id`, () => {
+  useWizardContextSpy.mockReturnValueOnce({ setFooter, activeStep: { id: 'curr-step-id' } } as any);
 
   renderHook(() => useWizardFooter(customFooter, 'some-other-step-id'));
   expect(setFooter).not.toHaveBeenCalled();
