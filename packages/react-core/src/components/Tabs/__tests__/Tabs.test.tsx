@@ -412,6 +412,25 @@ test('should render tabs with secondary border bottom when passed hasSecondaryBo
   expect(tabsContainer).toHaveClass('pf-m-border-bottom');
 });
 
+test('should not render scroll buttons by default', () => {
+  render(
+    <Tabs>
+      <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
+        Tab 1 section
+      </Tab>
+      <Tab id="tab2" eventKey={1} title={<TabTitleText>"Tab item 2"</TabTitleText>}>
+        Tab 2 section
+      </Tab>
+      <Tab id="tab3" eventKey={2} title={<TabTitleText>"Tab item 3"</TabTitleText>}>
+        Tab 3 section
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.queryByLabelText('Scroll left')).not.toBeInTheDocument();
+  expect(screen.queryByLabelText('Scroll right')).not.toBeInTheDocument();
+})
+
 test('should not render scroll buttons when isVertical is true', () => {
   render(
     <Tabs isVertical>

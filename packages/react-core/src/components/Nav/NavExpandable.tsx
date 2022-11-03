@@ -32,6 +32,8 @@ export interface NavExpandableProps
   onExpand?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, val: boolean) => void;
   /** Additional props added to the NavExpandable <button> */
   buttonProps?: any;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
 }
 
 interface NavExpandableState {

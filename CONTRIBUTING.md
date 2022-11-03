@@ -22,9 +22,9 @@
   - [Code Consistency](#code-consistency)
   - [Code Contribution Guidelines](#code-contribution-guidelines)
 - [Becoming a Maintainer](#becoming-a-maintainer)
-  - [How do I become a maintainer?](how-do-i-become-a-maintainer?)
-  - [How do I lose maintainers status?](how-do-i-lose-maintainers-status?)
-  - [Quick Tips for New Maintainers](quick-tips-for-new-maintainers)
+  - [How do I become a maintainer?](#how-do-i-become-a-maintainer)
+  - [How do I lose maintainers status?](#how-do-i-lose-maintainers-status)
+  - [Quick Tips for New Maintainers](#quick-tips-for-new-maintainers)
 
 ## Code of Conduct
 

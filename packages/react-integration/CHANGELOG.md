@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.205.0 (2022-09-30)
+
+
+### Features
+
+* **DualListSelector, SearchInput:** use SearchInput in DLS, add type prop to SearchInput ([#8040](https://github.com/patternfly/patternfly-react/issues/8040)) ([24474d8](https://github.com/patternfly/patternfly-react/commit/24474d83bc7e234027873a3cd43c824bc1576adb))
+
+
+
+
+
+# [4.204.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.203.7...@patternfly/react-integration@4.204.0) (2022-09-29)
+
+
+### Features
+
+* **OverflowMenu:** allow breakpoint on container width ([#7913](https://github.com/patternfly/patternfly-react/issues/7913)) ([a9d71bb](https://github.com/patternfly/patternfly-react/commit/a9d71bb9c42e13606d84ac8478d6ab5c717b9e9c))
+
+
+
+
+
+## [4.203.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.203.6...@patternfly/react-integration@4.203.7) (2022-09-29)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.203.6 (2022-09-29)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.203.5 (2022-09-29)
+
+
+### Bug Fixes
+
+* **Topology:** Fix for multiple popovers occurring for pipeline badges ([#8110](https://github.com/patternfly/patternfly-react/issues/8110)) ([85f5899](https://github.com/patternfly/patternfly-react/commit/85f589931b2b3b9d0e5ae4a9e4d86bdb7aa0e594))
+
+
+
+
+
+## 4.203.4 (2022-09-28)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
 ## 4.203.3 (2022-09-20)
 
 **Note:** Version bump only for package @patternfly/react-integration

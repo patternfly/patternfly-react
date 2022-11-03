@@ -39,6 +39,8 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   closeButtonAriaLabel?: string;
   /** @beta Flag indicating the close button should be disabled */
   isCloseDisabled?: boolean;
+  /** Value to set the data-ouia-component-id for the tab button.*/
+  ouiaId?: number | string;
 }
 
 const TabBase: React.FunctionComponent<TabProps> = ({

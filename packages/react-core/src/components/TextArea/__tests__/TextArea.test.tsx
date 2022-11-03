@@ -12,7 +12,7 @@ const props = {
 };
 
 describe('TextArea', () => {
-  test('textarea input passes value and event to onChange handler', async () => {
+  test('textarea passes value and event to onChange handler', async () => {
     const user = userEvent.setup();
 
     render(<TextAreaBase {...props} value="" aria-label="test textarea" />);
@@ -21,27 +21,41 @@ describe('TextArea', () => {
     expect(props.onChange).toHaveBeenCalledWith('a', expect.any(Object));
   });
 
-  test('simple text input', () => {
+  test('simple text area', () => {
     const { asFragment } = render(<TextArea {...props} aria-label="simple textarea" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('disabled text input using isDisabled', () => {
+  test('disabled text area using isDisabled', () => {
     const { asFragment } = render(<TextArea {...props} aria-label="is disabled textarea" isDisabled />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('disabled text input using disabled', () => {
+  test('disabled text area using disabled', () => {
     const { asFragment } = render(<TextArea {...props} aria-label="disabled textarea" disabled />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('read only text input using isReadOnly', () => {
+  test('read only text area using isReadOnly', () => {
     const { asFragment } = render(<TextArea {...props} aria-label="is read only textarea" isReadOnly />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('read only text input using readOnly', () => {
+  test('read only text area using default readOnlyVariant', () => {
+    const { asFragment } = render(
+      <TextArea {...props} aria-label="is default read only textarea" readOnlyVariant="default" />
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('read only text area using plain readOnlyVariant', () => {
+    const { asFragment } = render(
+      <TextArea {...props} aria-label="is plain read only textarea" readOnlyVariant="plain" />
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('read only text area using readOnly', () => {
     const { asFragment } = render(<TextArea {...props} aria-label="read only textarea" readOnly />);
     expect(asFragment()).toMatchSnapshot();
   });

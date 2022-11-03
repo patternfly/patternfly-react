@@ -1,29 +1,42 @@
 import React from 'react';
 import { NotificationBadge, NotificationBadgeVariant } from '@patternfly/react-core';
 
-export const SimpleNotificationBadge: React.FunctionComponent = () => {
-  const [unreadVariant, setUnreadVariant] = React.useState(NotificationBadgeVariant.unread);
-  const [attentionVariant, setAttentionVariant] = React.useState(NotificationBadgeVariant.attention);
+export const NotificationBadgeBasic: React.FunctionComponent = () => {
+  const [readExpanded, setReadExpanded] = React.useState(false);
+  const [unreadExpanded, setUnreadExpanded] = React.useState(false);
+  const [attentionExpanded, setAttentionExpanded] = React.useState(false);
 
-  const onFirstClick = (value: NotificationBadgeVariant) => {
-    setUnreadVariant(value);
+  const onReadClick = () => {
+    setReadExpanded(!readExpanded);
   };
 
-  const onSecondClick = (value: NotificationBadgeVariant) => {
-    setAttentionVariant(value);
+  const onUnreadClick = () => {
+    setUnreadExpanded(!unreadExpanded);
+  };
+
+  const onAttentionClick = () => {
+    setAttentionExpanded(!attentionExpanded);
   };
 
   return (
     <div className="pf-t-dark">
       <NotificationBadge
-        variant={unreadVariant}
-        onClick={() => onFirstClick(NotificationBadgeVariant.read)}
-        aria-label="First notifications"
+        variant={NotificationBadgeVariant.read}
+        onClick={onReadClick}
+        aria-label="Basic notification badge with read variant"
+        isExpanded={readExpanded}
       />
       <NotificationBadge
-        variant={attentionVariant}
-        onClick={() => onSecondClick(NotificationBadgeVariant.read)}
-        aria-label="Second notifications"
+        variant={NotificationBadgeVariant.unread}
+        onClick={onUnreadClick}
+        aria-label="Basic notification badge with unread variant"
+        isExpanded={unreadExpanded}
+      />
+      <NotificationBadge
+        variant={NotificationBadgeVariant.attention}
+        onClick={onAttentionClick}
+        aria-label="Basic notification badge with attention variant"
+        isExpanded={attentionExpanded}
       />
     </div>
   );

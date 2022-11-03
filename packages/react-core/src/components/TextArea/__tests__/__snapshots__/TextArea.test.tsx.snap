@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextArea disabled text input using disabled 1`] = `
+exports[`TextArea disabled text area using disabled 1`] = `
 <DocumentFragment>
   <textarea
     aria-invalid="false"
@@ -13,7 +13,7 @@ exports[`TextArea disabled text input using disabled 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextArea disabled text input using isDisabled 1`] = `
+exports[`TextArea disabled text area using isDisabled 1`] = `
 <DocumentFragment>
   <textarea
     aria-invalid="false"
@@ -39,7 +39,20 @@ exports[`TextArea horizontally resizable text area 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextArea read only text input using isReadOnly 1`] = `
+exports[`TextArea read only text area using default readOnlyVariant 1`] = `
+<DocumentFragment>
+  <textarea
+    aria-invalid="false"
+    aria-label="is default read only textarea"
+    class="pf-c-form-control"
+    readonly=""
+  >
+    test textarea
+  </textarea>
+</DocumentFragment>
+`;
+
+exports[`TextArea read only text area using isReadOnly 1`] = `
 <DocumentFragment>
   <textarea
     aria-invalid="false"
@@ -52,7 +65,20 @@ exports[`TextArea read only text input using isReadOnly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextArea read only text input using readOnly 1`] = `
+exports[`TextArea read only text area using plain readOnlyVariant 1`] = `
+<DocumentFragment>
+  <textarea
+    aria-invalid="false"
+    aria-label="is plain read only textarea"
+    class="pf-c-form-control pf-m-plain"
+    readonly=""
+  >
+    test textarea
+  </textarea>
+</DocumentFragment>
+`;
+
+exports[`TextArea read only text area using readOnly 1`] = `
 <DocumentFragment>
   <textarea
     aria-invalid="false"
@@ -65,7 +91,7 @@ exports[`TextArea read only text input using readOnly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextArea simple text input 1`] = `
+exports[`TextArea simple text area 1`] = `
 <DocumentFragment>
   <textarea
     aria-invalid="false"

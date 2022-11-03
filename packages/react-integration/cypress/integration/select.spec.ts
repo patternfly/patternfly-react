@@ -287,4 +287,9 @@ describe('Select Test', () => {
       .contains('Miss')
       .should('exist');
   });
+
+  it('Verify focus is placed on first non-disabled option with keyboard', () => {
+    cy.get('#disabled-first-item-single-select').trigger('keydown', { key: 'Enter' });
+    cy.get('#first-item-disabled-select-opt-2 button').should('have.focus');
+  });
 });

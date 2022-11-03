@@ -6,21 +6,21 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 
 export interface AlertToggleExpandButtonProps extends ButtonProps {
-  /** Aria label for the toggle button */
+  /** Accessible label for the toggle button. */
   'aria-label'?: string;
-  /** A callback for when the toggle button is clicked */
-  onToggleExpand?: () => void;
-  /** Flag to indicate if the content is expanded */
+  /** Flag to indicate if the content is expanded. */
   isExpanded?: boolean;
-  /** Variant label for the toggle button */
+  /** A callback for when the toggle button is clicked. */
+  onToggleExpand?: () => void;
+  /** Variant label for the toggle button. */
   variantLabel?: string;
 }
 
 export const AlertToggleExpandButton: React.FunctionComponent<AlertToggleExpandButtonProps> = ({
-  'aria-label': ariaLabel,
+  'aria-label': ariaLabel = '',
   variantLabel,
   onToggleExpand,
-  isExpanded,
+  isExpanded = false,
   ...props
 }: AlertToggleExpandButtonProps) => {
   const { title, variantLabel: alertVariantLabel } = React.useContext(AlertContext);

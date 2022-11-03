@@ -31,6 +31,8 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   moveFocusToLastMenuItem?: () => void;
   /** Element which wraps toggle */
   parentRef: React.RefObject<HTMLDivElement>;
+  /** Custom icon for the dropdown replacing the CaretDownIcon */
+  toggleIndicator?: React.ReactElement;
   /** The menu element */
   menuRef?: React.RefObject<HTMLElement>;
   /** The menu footer element */
@@ -262,6 +264,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       'aria-label': ariaLabel,
       hasFooter,
       footerRef,
+      toggleIndicator,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -307,9 +310,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             disabled={isDisabled}
           >
             {children}
-            <span className={css(styles.selectToggleArrow)}>
-              <CaretDownIcon />
-            </span>
+            <span className={css(styles.selectToggleArrow)}>{toggleIndicator ?? <CaretDownIcon />}</span>
           </button>
         )}
         {isTypeahead && (
@@ -354,7 +355,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               })}
               disabled={isDisabled}
             >
-              <CaretDownIcon className={css(styles.selectToggleArrow)} />
+              {toggleIndicator ?? <CaretDownIcon className={css(styles.selectToggleArrow)} />}
             </button>
           </div>
         )}

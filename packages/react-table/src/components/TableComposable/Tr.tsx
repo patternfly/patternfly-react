@@ -34,6 +34,10 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   isSelectable?: boolean;
   /** Flag indicating the spacing offset of the first cell should be reset */
   resetOffset?: boolean;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 const TrBase: React.FunctionComponent<TrProps> = ({

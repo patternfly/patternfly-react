@@ -2,7 +2,7 @@
 id: Modal
 section: components
 cssPrefix: pf-c-modal-box
-propComponents: ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'ModalBoxFooter', 'ModalContent']
+propComponents: ['Modal']
 ouia: true
 ---
 
@@ -124,3 +124,4 @@ To collect user input within a modal, you can add a [form](/components/form). To
 
 ```ts file="ModalWithForm.tsx"
 ```
+

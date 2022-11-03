@@ -6,6 +6,7 @@ import {
   Brand,
   Button,
   ButtonVariant,
+  Divider,
   Dropdown,
   DropdownGroup,
   DropdownToggle,
@@ -91,17 +92,35 @@ export default class DashboardHeader extends React.Component {
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, isAppLauncherOpen } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen, isAppLauncherOpen } = this.state;
     const { notificationBadge } = this.props;
 
     const kebabDropdownItems = [
-      <DropdownItem key="kebab-1">
+      <DropdownItem key="settings">
         <CogIcon /> Settings
       </DropdownItem>,
-      <DropdownItem key="kebab-2">
+      <DropdownItem key="help">
         <HelpIcon /> Help
       </DropdownItem>
     ];
+
+    const fullKebabItems = [
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>,
+      <Divider key="divider" />,
+      <DropdownItem key="settings">
+        <CogIcon /> Settings
+      </DropdownItem>,
+      <DropdownItem key="help">
+        <HelpIcon /> Help
+      </DropdownItem>
+    ];
+
     const userDropdownItems = [
       <DropdownGroup key="group 2">
         <DropdownItem key="group 2 profile">My profile</DropdownItem>
@@ -142,7 +161,7 @@ export default class DashboardHeader extends React.Component {
               </ToolbarItem>
             )}
             <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
-              <ToolbarItem visibility={{ default: 'hidden', sm: 'hidden', lg: 'visible' }}>
+              <ToolbarItem>
                 <ApplicationLauncher
                   onSelect={this.onAppLauncherSelect}
                   onToggle={this.onAppLauncherToggle}
@@ -157,7 +176,7 @@ export default class DashboardHeader extends React.Component {
                 <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
               </ToolbarItem>
             </ToolbarGroup>
-            <ToolbarItem visibility={{ lg: 'hidden' }}>
+            <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
               <Dropdown
                 isPlain
                 position="right"
@@ -167,8 +186,18 @@ export default class DashboardHeader extends React.Component {
                 dropdownItems={kebabDropdownItems}
               />
             </ToolbarItem>
+            <ToolbarItem visibility={{ md: 'hidden' }}>
+              <Dropdown
+                isPlain
+                position="right"
+                onSelect={this.onFullKebabSelect}
+                toggle={<KebabToggle onToggle={this.onFullKebabToggle} />}
+                isOpen={isFullKebabDropdownOpen}
+                dropdownItems={fullKebabItems}
+              />
+            </ToolbarItem>
           </ToolbarGroup>
-          <ToolbarItem visibility={{ default: 'hidden', sm: 'visible' }}>
+          <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
             <Dropdown
               isFullHeight
               onSelect={this.onDropdownSelect}

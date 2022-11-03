@@ -190,14 +190,14 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       }
     }
   }, [isVisible, popperRef]);
-  const addEventListener = (listener: any, element: Document | HTMLElement, event: string) => {
+  const addEventListener = (listener: any, element: Document | HTMLElement, event: string, capture = false) => {
     if (listener && element) {
-      element.addEventListener(event, listener);
+      element.addEventListener(event, listener, { capture });
     }
   };
-  const removeEventListener = (listener: any, element: Document | HTMLElement, event: string) => {
+  const removeEventListener = (listener: any, element: Document | HTMLElement, event: string, capture = false) => {
     if (listener && element) {
-      element.removeEventListener(event, listener);
+      element.removeEventListener(event, listener, { capture });
     }
   };
 
@@ -211,8 +211,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     addEventListener(onPopperClick, popperElement, 'click');
     addEventListener(onPopperMouseEnter, popperElement, 'mouseenter');
     addEventListener(onPopperMouseLeave, popperElement, 'mouseleave');
-    onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click');
-    addEventListener(onDocumentKeyDown, document, 'keydown');
+    onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click', true);
+    addEventListener(onDocumentKeyDown, document, 'keydown', true);
 
     // Trigger a Popper update when content changes.
     const observer = new MutationObserver(() => {
@@ -230,8 +230,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       removeEventListener(onPopperClick, popperElement, 'click');
       removeEventListener(onPopperMouseEnter, popperElement, 'mouseenter');
       removeEventListener(onPopperMouseLeave, popperElement, 'mouseleave');
-      onDocumentClick && removeEventListener(onDocumentClickCallback, document, 'click');
-      removeEventListener(onDocumentKeyDown, document, 'keydown');
+      onDocumentClick && removeEventListener(onDocumentClickCallback, document, 'click', true);
+      removeEventListener(onDocumentKeyDown, document, 'keydown', true);
       observer.disconnect();
     };
   }, [

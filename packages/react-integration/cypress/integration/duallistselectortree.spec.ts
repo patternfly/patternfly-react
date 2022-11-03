@@ -29,14 +29,14 @@ describe('Dual List Selector TreeDemo Test', () => {
       .eq(0)
       .find('li')
       .should('have.length', 4);
-    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+    cy.get('.pf-c-dual-list-selector__tools-filter input')
       .eq(0)
       .type('Option 2');
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)
       .find('li')
       .should('have.length', 1);
-    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+    cy.get('.pf-c-dual-list-selector__tools-filter input')
       .eq(0)
       .type('{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}');
     cy.get('.pf-c-dual-list-selector__list-item .pf-c-dual-list-selector__item-toggle')
@@ -75,7 +75,7 @@ describe('Dual List Selector TreeDemo Test', () => {
       .eq(0)
       .find('li')
       .should('have.length', 3);
-    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+    cy.get('.pf-c-dual-list-selector__tools-filter input')
       .eq(0)
       .type('Option 1');
     cy.get('.pf-c-dual-list-selector__list')
@@ -89,7 +89,7 @@ describe('Dual List Selector TreeDemo Test', () => {
       .eq(1)
       .find('li')
       .should('have.length', 3);
-    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+    cy.get('.pf-c-dual-list-selector__tools-filter input')
       .eq(0)
       .type('{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}');
     cy.get('.pf-c-dual-list-selector__list')
@@ -103,7 +103,7 @@ describe('Dual List Selector TreeDemo Test', () => {
       .eq(1)
       .find('li')
       .should('have.length', 3);
-    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+    cy.get('.pf-c-dual-list-selector__tools-filter input')
       .eq(1)
       .type('Option 1');
     cy.get('.pf-c-dual-list-selector__list')
@@ -132,7 +132,7 @@ describe('Dual List Selector TreeDemo Test', () => {
       .eq(1)
       .find('li')
       .should('have.length', 0);
-    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+    cy.get('.pf-c-dual-list-selector__tools-filter input')
       .eq(1)
       .type('{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}');
     cy.get('.pf-c-dual-list-selector__list')

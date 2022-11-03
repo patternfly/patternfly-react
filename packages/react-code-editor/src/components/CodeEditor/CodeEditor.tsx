@@ -109,70 +109,93 @@ export enum Language {
   yaml = 'yaml'
 }
 
+/** The main code editor component. */
+
 export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
-  /** additional classes added to the code editor */
+  /** Additional classes added to the code editor. */
   className?: string;
-  /** code displayed in code editor */
+  /** Code displayed in code editor. */
   code?: string;
-  /** language displayed in the editor */
-  language?: Language;
-  /** Flag indicating the editor is styled using monaco's dark theme */
-  isDarkTheme?: boolean;
-  /** Width of code editor. Defaults to 100% */
-  width?: string;
-  /** Flag indicating the editor is displaying line numbers */
-  isLineNumbersVisible?: boolean;
-  /** Flag indicating the editor is read only */
-  isReadOnly?: boolean;
-  /** Height of code editor. Defaults to 100%. 'sizeToFit' will automatically change the height to the height of the content. */
-  height?: string | 'sizeToFit';
-  /** Function which fires each time the code changes in the code editor */
-  onCodeChange?: (value: string) => void;
-  /** Function which fires each time the content of the code editor is manually changed. Does not fire when a file is uploaded. */
-  onChange?: ChangeHandler;
-  /** The loading screen before the editor will be loaded. Defaults 'loading...' */
-  loading?: React.ReactNode;
-  /** Content to display in space of the code editor when there is no code to display */
-  emptyState?: React.ReactNode;
-  /** Override default empty state title text */
-  emptyStateTitle?: React.ReactNode;
-  /** Override default empty state body text */
-  emptyStateBody?: React.ReactNode;
-  /** Override default empty state title text */
-  emptyStateButton?: React.ReactNode;
-  /** Override default empty state body text */
-  emptyStateLink?: React.ReactNode;
-  /** Name of the file if user downloads code to local file */
-  downloadFileName?: string;
-  /** Flag to add upload button to code editor actions. Also makes the code editor accept a file using drag and drop */
-  isUploadEnabled?: boolean;
-  /** Flag to add download button to code editor actions */
-  isDownloadEnabled?: boolean;
-  /** Flag to add copy button to code editor actions */
-  isCopyEnabled?: boolean;
-  /** Flag to include a label indicating the currently configured editor language */
-  isLanguageLabelVisible?: boolean;
-  /** Accessible label for the copy button */
+  /** Accessible label for the copy button. */
   copyButtonAriaLabel?: string;
-  /** Text to display in the tooltip on the copy button before text is copied */
-  copyButtonToolTipText?: string;
-  /** Text to display in the tooltip on the copy button after code copied to clipboard */
+  /** Text to display in the tooltip on the copy button after code is copied to clipboard. */
   copyButtonSuccessTooltipText?: string;
-  /** Accessible label for the upload button */
-  uploadButtonAriaLabel?: string;
-  /** Text to display in the tooltip on the upload button */
-  uploadButtonToolTipText?: string;
-  /** Accessible label for the download button */
+  /** Text to display in the tooltip on the copy button before code is copied. */
+  copyButtonToolTipText?: string;
+  /** A single node or array of nodes - ideally the code editor controls component - to display
+   * above code editor.
+   */
+  customControls?: React.ReactNode | React.ReactNode[];
+  /** Accessible label for the download button. */
   downloadButtonAriaLabel?: string;
-  /** Text to display in the tooltip on the download button */
+  /** Text to display in the tooltip on the download button. */
   downloadButtonToolTipText?: string;
-  /** The delay before tooltip fades after code copied */
+  /** Name of the file if user downloads code to local file. */
+  downloadFileName?: string;
+  /** Content to display in space of the code editor when there is no code to display. */
+  emptyState?: React.ReactNode;
+  /** Override default empty state body text. */
+  emptyStateBody?: React.ReactNode;
+  /** Override default empty state button text. */
+  emptyStateButton?: React.ReactNode;
+  /** Override default empty state link text. */
+  emptyStateLink?: React.ReactNode;
+  /** Override default empty state title text. */
+  emptyStateTitle?: React.ReactNode;
+  /** Editor header main content title. */
+  headerMainContent?: string;
+  /** Height of code editor. Defaults to 100%. 'sizeToFit' will automatically change the height
+   * to the height of the content.
+   */
+  height?: string | 'sizeToFit';
+  /** Flag to add copy button to code editor actions. */
+  isCopyEnabled?: boolean;
+  /** Flag indicating the editor is styled using monaco's dark theme. */
+  isDarkTheme?: boolean;
+  /** Flag to add download button to code editor actions. */
+  isDownloadEnabled?: boolean;
+  /** Flag to include a label indicating the currently configured editor language. */
+  isLanguageLabelVisible?: boolean;
+  /** Flag indicating the editor is displaying line numbers. */
+  isLineNumbersVisible?: boolean;
+  /** Flag to add the minimap to the code editor. */
+  isMinimapVisible?: boolean;
+  /** Flag indicating the editor is read only. */
+  isReadOnly?: boolean;
+  /** Flag to add upload button to code editor actions. Also makes the code editor accept a
+   * file using drag and drop. */
+  isUploadEnabled?: boolean;
+  /** Language displayed in the editor. */
+  language?: Language;
+  /** The loading screen before the editor will be loaded. Defaults to 'loading...'. */
+  loading?: React.ReactNode;
+  /** Function which fires each time the content of the code editor is manually changed. Does
+   * not fire when a file is uploaded.
+   */
+  onChange?: ChangeHandler;
+  /** Function which fires each time the code changes in the code editor. */
+  onCodeChange?: (value: string) => void;
+  /** Callback which fires after the code editor is mounted containing a reference to the
+   * monaco editor and the monaco instance.
+   */
+  onEditorDidMount?: EditorDidMount;
+  /** Refer to Monaco interface {monaco.editor.IStandaloneEditorConstructionOptions}. */
+  options?: editor.IStandaloneEditorConstructionOptions;
+  /** Refer to Monaco interface {monaco.editor.IEditorOverrideServices}. */
+  overrideServices?: editor.IEditorOverrideServices;
+  /** Text to show in the button to open the shortcut popover. */
+  shortcutsPopoverButtonText: string;
+  /** Properties for the shortcut popover. */
+  shortcutsPopoverProps?: PopoverProps;
+  /** Flag to show the editor. */
+  showEditor?: boolean;
+  /** The delay before tooltip fades after code copied. */
   toolTipCopyExitDelay: number;
-  /** The entry and exit delay for all tooltips */
+  /** The entry and exit delay for all tooltips. */
   toolTipDelay: number;
-  /** The max width of the tooltips on all button */
+  /** The max width of the tooltips on all button. */
   toolTipMaxWidth: string;
-  /** The position of tooltips on all buttons */
+  /** The position of tooltips on all buttons. */
   toolTipPosition?:
     | TooltipPosition
     | 'auto'
@@ -188,29 +211,12 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
     | 'left-end'
     | 'right-start'
     | 'right-end';
-  /** A single node or array of nodes - ideally CodeEditorControls - to display above code editor */
-  customControls?: React.ReactNode | React.ReactNode[];
-  /** Callback which fires after the code editor is mounted containing
-   * a reference to the monaco editor and the monaco instance */
-  onEditorDidMount?: EditorDidMount;
-  /** Flag to add the minimap to the code editor */
-  isMinimapVisible?: boolean;
-  /** Editor header main content title */
-  headerMainContent?: string;
-  /** Text to show in the button to open the shortcut popover */
-  shortcutsPopoverButtonText: string;
-  /** Properties for the shortcut popover */
-  shortcutsPopoverProps?: PopoverProps;
-  /** Flag to show the editor */
-  showEditor?: boolean;
-  /**
-   * Refer to Monaco interface {monaco.editor.IStandaloneEditorConstructionOptions}.
-   */
-  options?: editor.IStandaloneEditorConstructionOptions;
-  /**
-   * Refer to Monaco interface {monaco.editor.IEditorOverrideServices}.
-   */
-  overrideServices?: editor.IEditorOverrideServices;
+  /** Accessible label for the upload button. */
+  uploadButtonAriaLabel?: string;
+  /** Text to display in the tooltip on the upload button. */
+  uploadButtonToolTipText?: string;
+  /** Width of code editor. Defaults to 100%. */
+  width?: string;
 }
 
 interface CodeEditorState {

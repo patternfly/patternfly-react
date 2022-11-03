@@ -143,6 +143,8 @@ export interface SelectProps
   maxHeight?: string | number;
   /** Icon element to render inside the select toggle */
   toggleIcon?: React.ReactElement;
+  /** Custom icon for the dropdown replacing the CaretDownIcon */
+  toggleIndicator?: React.ReactElement;
   /** Custom content to render in the select menu.  If this prop is defined, the variant prop will be ignored and the select will render with a single select toggle */
   customContent?: React.ReactNode;
   /** Flag indicating if select should have an inline text input for filtering */
@@ -182,6 +184,10 @@ export interface SelectProps
   isFlipEnabled?: boolean;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export interface SelectState {
@@ -239,6 +245,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     onClear: () => undefined as void,
     onCreateOption: () => undefined as void,
     toggleIcon: null as React.ReactElement,
+    toggleIndicator: null as React.ReactElement,
     onFilter: null,
     onTypeaheadInputChanged: null,
     customContent: null,
@@ -283,7 +290,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     // Move focus to top of the menu if state.focusFirstOption was updated to true and the menu does not have custom content
     if (!prevState.focusFirstOption && this.state.focusFirstOption && !this.props.customContent) {
-      const firstRef = this.refCollection.find(ref => ref !== null);
+      const firstRef = this.refCollection.find(
+        ref =>
+          // If a select option is disabled then ref[0] will be undefined, so we want to return
+          // the first ref that both a) is not null and b) is not disabled.
+          ref !== null && ref[0]
+      );
+
       if (firstRef && firstRef[0]) {
         firstRef[0].focus();
       }
@@ -977,6 +990,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       width,
       maxHeight,
       toggleIcon,
+      toggleIndicator,
       ouiaId,
       ouiaSafe,
       hasInlineFilter,
@@ -1308,6 +1322,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           onClose={this.onClose}
           onBlur={onBlur}
           variant={variant}
+          toggleIndicator={toggleIndicator}
           aria-labelledby={`${ariaLabelledBy || ''} ${selectToggleId}`}
           aria-label={toggleAriaLabel}
           {...(ariaDescribedby && { 'aria-describedby': ariaDescribedby })}

@@ -42,6 +42,18 @@ describe('Table', () => {
       expect(asFragment()).toMatchSnapshot();
     });
 
+    test('ouiaSafe can be set to false', () => {
+      render(
+        <Table aria-label="Table with ouiaSafe" ouiaSafe={false} cells={columns} rows={rows}>
+          <TableHeader />
+          <TableBody />
+        </Table>
+      );
+      const table = screen.getByLabelText('Table with ouiaSafe');
+      expect(table.getAttribute('data-ouia-safe')).toEqual("false");
+      
+    });
+
     test('header', () => {
       const { asFragment } = render(
         <Table header={<h4>Header title</h4>} cells={columns} rows={rows}>

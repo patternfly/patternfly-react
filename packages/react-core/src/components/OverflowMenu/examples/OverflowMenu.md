@@ -2,7 +2,15 @@
 id: Overflow menu
 section: components
 cssPrefix: pf-c-overflow-menu
-propComponents: ['OverflowMenu', 'OverflowMenuContent', 'OverflowMenuControl', 'OverflowMenuDropdownItem', 'OverflowMenuGroup', 'OverflowMenuItem']
+propComponents:
+  [
+    'OverflowMenu',
+    'OverflowMenuContent',
+    'OverflowMenuControl',
+    'OverflowMenuDropdownItem',
+    'OverflowMenuGroup',
+    'OverflowMenuItem',
+  ]
 ---
 
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
@@ -10,10 +18,19 @@ import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
 
 ## Examples
+
 ### Simple (responsive)
+
 ```js
 import React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
+import {
+  OverflowMenu,
+  OverflowMenuControl,
+  OverflowMenuContent,
+  OverflowMenuGroup,
+  OverflowMenuItem,
+  OverflowMenuDropdownItem
+} from '@patternfly/react-core';
 import { Dropdown, KebabToggle } from '@patternfly/react-core';
 
 class SimpleOverflowMenu extends React.Component {
@@ -37,12 +54,22 @@ class SimpleOverflowMenu extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="item1" isShared>Item 1</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item2" isShared>Item 2</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item3" isShared>Item 3</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item4" isShared>Item 4</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item5" isShared>Item 5</OverflowMenuDropdownItem>
-    ]
+      <OverflowMenuDropdownItem key="item1" isShared>
+        Item 1
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item2" isShared>
+        Item 2
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item3" isShared>
+        Item 3
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item4" isShared>
+        Item 4
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item5" isShared>
+        Item 5
+      </OverflowMenuDropdownItem>
+    ];
     return (
       <OverflowMenu breakpoint="lg">
         <OverflowMenuContent>
@@ -66,15 +93,23 @@ class SimpleOverflowMenu extends React.Component {
           />
         </OverflowMenuControl>
       </OverflowMenu>
-    )
+    );
   }
 }
 ```
 
 ### Group types
+
 ```js
 import React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
+import {
+  OverflowMenu,
+  OverflowMenuControl,
+  OverflowMenuContent,
+  OverflowMenuGroup,
+  OverflowMenuItem,
+  OverflowMenuDropdownItem
+} from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
@@ -101,15 +136,33 @@ class OverflowMenuGroupTypes extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="item1" isShared>Item 1</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item2" isShared>Item 2</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item3" isShared>Item 3</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="primary" isShared>Primary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="secondary" isShared>Secondary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="tertiary" isShared>Tertiary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="action1" isShared>Action 1</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="action2" isShared>Action 2</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="action3" isShared>Action 3</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item1" isShared>
+        Item 1
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item2" isShared>
+        Item 2
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item3" isShared>
+        Item 3
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="primary" isShared>
+        Primary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="secondary" isShared>
+        Secondary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="tertiary" isShared>
+        Tertiary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="action1" isShared>
+        Action 1
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="action2" isShared>
+        Action 2
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="action3" isShared>
+        Action 3
+      </OverflowMenuDropdownItem>
     ];
     return (
       <OverflowMenu breakpoint="lg">
@@ -160,16 +213,23 @@ class OverflowMenuGroupTypes extends React.Component {
           />
         </OverflowMenuControl>
       </OverflowMenu>
-    )
+    );
   }
 }
 ```
 
-
 ### Multiple groups
+
 ```js
 import React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
+import {
+  OverflowMenu,
+  OverflowMenuControl,
+  OverflowMenuContent,
+  OverflowMenuGroup,
+  OverflowMenuItem,
+  OverflowMenuDropdownItem
+} from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
@@ -196,13 +256,25 @@ class OverflowMenuAdditionalOptions extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="1" isShared>Primary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="2" isShared>Secondary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="3" isShared>Tertiary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="4" isShared>Action 4</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="5" isShared>Action 5</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="6" isShared>Action 6</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="7">Action 7</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="1" isShared>
+        Primary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="2" isShared>
+        Secondary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="3" isShared>
+        Tertiary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="4" isShared>
+        Action 4
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="5" isShared>
+        Action 5
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="6" isShared>
+        Action 6
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="7">Action 7</OverflowMenuDropdownItem>
     ];
     return (
       <OverflowMenu breakpoint="lg">
@@ -248,16 +320,23 @@ class OverflowMenuAdditionalOptions extends React.Component {
           />
         </OverflowMenuControl>
       </OverflowMenu>
-    )
+    );
   }
 }
 ```
 
-
 ### Persistent
+
 ```js
 import React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
+import {
+  OverflowMenu,
+  OverflowMenuControl,
+  OverflowMenuContent,
+  OverflowMenuGroup,
+  OverflowMenuItem,
+  OverflowMenuDropdownItem
+} from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 
 class OverflowMenuPersist extends React.Component {
@@ -281,8 +360,12 @@ class OverflowMenuPersist extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="secondary" isShared>Secondary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="tertiary" isShared>Tertiary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="secondary" isShared>
+        Secondary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="tertiary" isShared>
+        Tertiary
+      </OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="action">Action 4</OverflowMenuDropdownItem>
     ];
     return (
@@ -312,7 +395,16 @@ class OverflowMenuPersist extends React.Component {
           />
         </OverflowMenuControl>
       </OverflowMenu>
-    )
+    );
   }
 }
+```
+
+### Breakpoint on container
+
+By passing in the `breakpointReference` property, the overflow menu's breakpoint will be relative to the width of the reference container rather than the viewport width.
+
+You can change the container width in this example by adjusting the slider. As the container width changes, the overflow menu will change between a horizontal menu and a vertical dropdown despite the viewport width not changing.
+
+```ts file="./OverflowMenuBreakpointOnContainer.tsx"
 ```

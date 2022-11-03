@@ -1,10 +1,14 @@
 import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 
+/** Renders buttons styled as links beneath the alert title and description when this sub-component
+ * is passed into the alert's actionLinks property.
+ */
+
 export interface AlertActionLinkProps extends ButtonProps {
-  /** Content rendered inside the AlertLinkAction  */
+  /** Content rendered inside the alert action link.  */
   children?: string;
-  /** Additional classes added to the AlertActionLink  */
+  /** Additional classes added to the alert action link.  */
   className?: string;
 }
 

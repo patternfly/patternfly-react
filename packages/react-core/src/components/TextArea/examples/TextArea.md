@@ -223,6 +223,36 @@ import { TextArea } from '@patternfly/react-core';
 <TextArea aria-label="disabled text area example" isDisabled />;
 ```
 
+### Read only
+
+```js
+import React from 'react';
+import { Checkbox, TextArea } from '@patternfly/react-core';
+
+const ReadOnlyTextArea = () => {
+  const [isPlainChecked, setIsPlainChecked] = React.useState(false);
+
+  return (
+    <React.Fragment>
+      <div style={{ marginBottom: '12px' }}>
+        <Checkbox
+          id="isPlain"
+          key="isPlain"
+          label="Plain read only variant"
+          isChecked={isPlainChecked}
+          onChange={checked => setIsPlainChecked(checked)}
+        />
+      </div>
+      <TextArea
+        aria-label="read only text area example"
+        value="read only text area example"
+        readOnlyVariant={isPlainChecked ? 'plain' : 'default'}
+      />
+    </React.Fragment>
+  );
+};
+```
+
 ### Auto resizing
 
 ```js

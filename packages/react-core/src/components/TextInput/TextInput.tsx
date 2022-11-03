@@ -20,25 +20,31 @@ export enum TextInputTypes {
   url = 'url'
 }
 
+export enum TextInputReadOnlyVariant {
+  default = 'default',
+  plain = 'plain'
+}
+
 export interface TextInputProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>,
     OUIAProps {
-  /** Additional classes added to the TextInput. */
+  /** Additional classes added to the text input. */
   className?: string;
-  /** Flag to show if the input is disabled. */
+  /** Flag to show if the text input is disabled. */
   isDisabled?: boolean;
-  /** Flag to show if the input is read only. */
+  /** @deprecated Use readOnlyVariant instead. Flag to show if the text input is read only. */
   isReadOnly?: boolean;
-  /** Flag to show if the input is required. */
+  /** Read only variant. */
+  readOnlyVariant?: 'plain' | 'default';
   isRequired?: boolean;
-  /** Value to indicate if the input is modified to show that validation state.
-   * If set to success, input will be modified to indicate valid state.
-   * If set to error,  input will be modified to indicate error state.
+  /** Value to indicate if the text input is modified to show that validation state.
+   * If set to success, text input will be modified to indicate valid state.
+   * If set to error, text input will be modified to indicate error state.
    */
   validated?: 'success' | 'warning' | 'error' | 'default';
-  /** A callback for when the input value changes. */
+  /** A callback for when the text input value changes. */
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
-  /** Type that the input accepts. */
+  /** Type that the text input accepts. */
   type?:
     | 'text'
     | 'date'
@@ -51,26 +57,30 @@ export interface TextInputProps
     | 'tel'
     | 'time'
     | 'url';
-  /** Value of the input. */
+  /** Value of the text input. */
   value?: string | number;
-  /** Aria-label. The input requires an associated id or aria-label. */
+  /** Aria-label. The text input requires an associated id or aria-label. */
   'aria-label'?: string;
-  /** A reference object to attach to the input box. */
+  /** A reference object to attach to the text input box. */
   innerRef?: React.RefObject<any>;
   /** Trim text on left */
   isLeftTruncated?: boolean;
-  /** Callback function when input is focused */
+  /** Callback function when text input is focused */
   onFocus?: (event?: any) => void;
-  /** Callback function when input is blurred (focus leaves) */
+  /** Callback function when text input is blurred (focus leaves) */
   onBlur?: (event?: any) => void;
   /** icon variant */
   iconVariant?: 'calendar' | 'clock' | 'search';
   /** Use the external file instead of a data URI */
   isIconSprite?: boolean;
-  /** Custom icon url to set as the input's background-image */
+  /** Custom icon url to set as the text input's background-image */
   customIconUrl?: string;
-  /** Dimensions for the custom icon set as the input's background-size */
+  /** Dimensions for the custom icon set as the text input's background-size */
   customIconDimensions?: string;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 interface TextInputState {
@@ -169,8 +179,9 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
       onFocus,
       onBlur,
       isLeftTruncated,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
       isReadOnly,
+      readOnly,
+      readOnlyVariant,
       isRequired,
       isDisabled,
       isIconSprite,
@@ -198,6 +209,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
         className={css(
           styles.formControl,
           isIconSprite && styles.modifiers.iconSprite,
+          readOnlyVariant === 'plain' && styles.modifiers.plain,
           validated === ValidatedOptions.success && styles.modifiers.success,
           validated === ValidatedOptions.warning && styles.modifiers.warning,
           ((iconVariant && iconVariant !== 'search') || customIconUrl) && styles.modifiers.icon,
@@ -210,7 +222,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
         aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
         required={isRequired}
         disabled={isDisabled}
-        readOnly={isReadOnly}
+        readOnly={!!readOnlyVariant || isReadOnly || readOnly}
         ref={innerRef || this.inputRef}
         {...((customIconUrl || customIconDimensions) && { style: customIconStyle })}
         {...getOUIAProps(TextInput.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}

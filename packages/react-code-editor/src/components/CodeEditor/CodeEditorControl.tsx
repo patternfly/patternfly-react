@@ -2,15 +2,23 @@ import * as React from 'react';
 import { Button, ButtonProps, PopoverPosition, Tooltip } from '@patternfly/react-core';
 import { CodeEditorContext } from './CodeEditorUtils';
 
+/** Allows customizing the code editor controls by passing this sub-component into the
+ * code editor's customControl property.
+ */
+
 export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
-  /** icon rendered inside the code editor control */
-  icon: React.ReactNode;
-  /** additional classes added to the Code editor control */
-  className?: string;
-  /** accessible label for the code editor control */
+  /** Accessible label for the code editor control. */
   'aria-label'?: string;
-  /** Text to display in the tooltip*/
-  toolTipText: React.ReactNode;
+  /** Additional classes added to the code editor control. */
+  className?: string;
+  /** Delay in ms before the tooltip appears. */
+  entryDelay?: number;
+  /** Delay in ms before the tooltip disappears. */
+  exitDelay?: number;
+  /** Icon rendered inside the code editor control. */
+  icon: React.ReactNode;
+  /** Maximum width of the tooltip (default 150px). */
+  maxWidth?: string;
   /** Copy button popover position. */
   position?:
     | PopoverPosition
@@ -27,15 +35,11 @@ export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
     | 'left-end'
     | 'right-start'
     | 'right-end';
-  /** Maximum width of the tooltip (default 150px). */
-  maxWidth?: string;
-  /** Delay in ms before the tooltip disappears. */
-  exitDelay?: number;
-  /** Delay in ms before the tooltip appears. */
-  entryDelay?: number;
-  /** Event handler for the click of the button */
+  /** Text to display in the tooltip. */
+  toolTipText: React.ReactNode;
+  /** Event handler for the click of the button. */
   onClick: (code: string, event?: any) => void;
-  /** Flag indicating that the button is visible above the code editor */
+  /** Flag indicating that the button is visible above the code editor. */
   isVisible?: boolean;
 }
 

@@ -15,18 +15,17 @@ export const isVariantIcon = (icon: any): icon is string =>
   ['success', 'danger', 'warning', 'info', 'default'].includes(icon as string);
 
 export interface ModalBoxTitleProps {
-  /** Content rendered inside the modal box header title. */
-  title: React.ReactNode;
-  /** Optional alert icon (or other) to show before the title of the Modal Header
-   * When the predefined alert types are used the default styling
-   * will be automatically applied */
-  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
-  /** Optional title label text for screen readers */
-  titleLabel?: string;
-  /** Additional classes added to the modal box header title. */
+  /** Additional classes added to the modal box title. */
   className?: string;
-  /** id of the modal box header title. */
+  /** Id of the modal box title. */
   id: string;
+  /** Content rendered inside the modal box title. */
+  title: React.ReactNode;
+  /** Optional alert icon (or other) to show before the title. When the predefined alert types
+   * are used the default styling will be automatically applied. */
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
+  /** Optional title label text for screen readers. */
+  titleLabel?: string;
 }
 
 export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
