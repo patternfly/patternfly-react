@@ -12,7 +12,8 @@ export interface ProgressHelperTextProps extends React.HTMLProps<HTMLDivElement>
 
 export const ProgressHelperText: React.FunctionComponent<ProgressHelperTextProps> = ({
   children,
-  progressVariant
+  progressVariant,
+  ...props
 }: ProgressHelperTextProps) => {
   const helperTextVariantMapping: {
     [Property in ProgressProps['variant']]: HelperTextItemProps['variant'];
@@ -30,7 +31,11 @@ export const ProgressHelperText: React.FunctionComponent<ProgressHelperTextProps
     </HelperText>
   );
 
-  return <div className={progressStyle.progressHelperText}>{helperTextIsBasic ? basicHelperText : children}</div>;
+  return (
+    <div className={progressStyle.progressHelperText} {...props}>
+      {helperTextIsBasic ? basicHelperText : children}
+    </div>
+  );
 };
 
 ProgressHelperText.displayName = 'ProgressHelperText';
