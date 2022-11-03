@@ -19,7 +19,7 @@ propComponents: ['NumberInput']
 
 ### With unit and thresholds
 
-To support keyboard entry of the number input, allow the number input value be a number or an empty string. To enable the entered value to snap to the nearest threshold if the entered input is out of bounds, define the blur event handler.
+To enable a user entered value to snap to the nearest threshold if the entered input is out of bounds, define the blur event handler.
 
 ```ts file="./NumberInputUnitThreshold.tsx"
 ```
