@@ -119,7 +119,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   previousNavigationButtonAriaLabel?: string;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
-  /** z-index of the advanced search form */
+  /** z-index of the advanced search form when appendTo is not inline. */
   zIndex?: number;
   /** Label for the button which resets the advanced search form and clears the search input. */
   resetButtonLabel?: string;

@@ -63,7 +63,7 @@ export interface ApplicationLauncherProps
   toggleId?: string;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
-  /** z-index of the application launcher */
+  /** z-index of the application launcher when menuAppendTo is not inline. */
   zIndex?: number;
 }
 
