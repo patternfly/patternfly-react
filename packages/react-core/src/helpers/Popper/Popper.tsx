@@ -1,17 +1,45 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { usePopper } from './thirdparty/react-popper/usePopper';
-import { Placement, BasePlacement, Modifier } from './thirdparty/popper-core';
+import { Placement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
 import { FindRefWrapper } from './FindRefWrapper';
 import '@patternfly/react-styles/css/components/Popper/Popper.css';
 
-const hash = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
+const hash = {
+  left: 'right',
+  right: 'left',
+  bottom: 'top',
+  top: 'bottom',
+  'top-start': 'bottom-end',
+  'top-end': 'bottom-start',
+  'bottom-start': 'top-end',
+  'bottom-end': 'top-start',
+  'left-start': 'right-end',
+  'left-end': 'right-start',
+  'right-start': 'left-end',
+  'right-end': 'left-start'
+};
 
 const getOppositePlacement = (placement: Placement): any =>
   placement.replace(
-    /left|right|bottom|top/g,
-    (matched: string) => hash[matched as 'left' | 'right' | 'bottom' | 'top'] as BasePlacement
+    /left|right|bottom|top|top-start|top-end|bottom-start|bottom-end|right-start|right-end|left-start|left-end/g,
+    (matched: string) =>
+      hash[
+        matched as
+          | 'left'
+          | 'right'
+          | 'bottom'
+          | 'top'
+          | 'top-start'
+          | 'top-end'
+          | 'bottom-start'
+          | 'bottom-end'
+          | 'right-start'
+          | 'right-end'
+          | 'left-start'
+          | 'left-end'
+      ] as Placement
   );
 
 /** @deprecated Please use the menuAppendTo prop directly from within the PF component which uses it. */
@@ -190,14 +218,14 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       }
     }
   }, [isVisible, popperRef]);
-  const addEventListener = (listener: any, element: Document | HTMLElement, event: string) => {
+  const addEventListener = (listener: any, element: Document | HTMLElement, event: string, capture = false) => {
     if (listener && element) {
-      element.addEventListener(event, listener);
+      element.addEventListener(event, listener, { capture });
     }
   };
-  const removeEventListener = (listener: any, element: Document | HTMLElement, event: string) => {
+  const removeEventListener = (listener: any, element: Document | HTMLElement, event: string, capture = false) => {
     if (listener && element) {
-      element.removeEventListener(event, listener);
+      element.removeEventListener(event, listener, { capture });
     }
   };
 
@@ -211,8 +239,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     addEventListener(onPopperClick, popperElement, 'click');
     addEventListener(onPopperMouseEnter, popperElement, 'mouseenter');
     addEventListener(onPopperMouseLeave, popperElement, 'mouseleave');
-    onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click');
-    addEventListener(onDocumentKeyDown, document, 'keydown');
+    onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click', true);
+    addEventListener(onDocumentKeyDown, document, 'keydown', true);
 
     // Trigger a Popper update when content changes.
     const observer = new MutationObserver(() => {
@@ -230,8 +258,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       removeEventListener(onPopperClick, popperElement, 'click');
       removeEventListener(onPopperMouseEnter, popperElement, 'mouseenter');
       removeEventListener(onPopperMouseLeave, popperElement, 'mouseleave');
-      onDocumentClick && removeEventListener(onDocumentClickCallback, document, 'click');
-      removeEventListener(onDocumentKeyDown, document, 'keydown');
+      onDocumentClick && removeEventListener(onDocumentClickCallback, document, 'click', true);
+      removeEventListener(onDocumentKeyDown, document, 'keydown', true);
       observer.disconnect();
     };
   }, [

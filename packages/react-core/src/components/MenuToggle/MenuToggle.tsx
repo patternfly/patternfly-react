@@ -136,6 +136,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     if (splitButtonOptions) {
       return (
         <div
+          ref={innerRef as React.Ref<HTMLDivElement>}
           className={css(
             commonStyles,
             styles.modifiers.splitButton,
@@ -149,6 +150,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
             aria-expanded={isExpanded}
             aria-label={ariaLabel}
             disabled={isDisabled}
+            onClick={onClick}
             {...otherProps}
           >
             {toggleControls}

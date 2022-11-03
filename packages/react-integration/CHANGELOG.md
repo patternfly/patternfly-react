@@ -3,6 +3,307 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.207.2 (2022-10-27)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.207.1 (2022-10-26)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [4.207.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.206.0...@patternfly/react-integration@4.207.0) (2022-10-21)
+
+
+### Features
+
+* **topology:** Allow tooltip usage on pipeline task node badges ([#8208](https://github.com/patternfly/patternfly-react/issues/8208)) ([f0a87ba](https://github.com/patternfly/patternfly-react/commit/f0a87ba7563c5194ea254c7e57b2b5e60be1eb58))
+
+
+
+
+
+# 4.206.0 (2022-10-21)
+
+
+### Features
+
+* **Topology:** Add option to fit layout to screen upon layout completion ([#8210](https://github.com/patternfly/patternfly-react/issues/8210)) ([01da036](https://github.com/patternfly/patternfly-react/commit/01da0368318e1b3e6eb3362202a3a207bea07625))
+
+
+
+
+
+# 4.205.0 (2022-09-30)
+
+
+### Features
+
+* **DualListSelector, SearchInput:** use SearchInput in DLS, add type prop to SearchInput ([#8040](https://github.com/patternfly/patternfly-react/issues/8040)) ([24474d8](https://github.com/patternfly/patternfly-react/commit/24474d83bc7e234027873a3cd43c824bc1576adb))
+
+
+
+
+
+# [4.204.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.203.7...@patternfly/react-integration@4.204.0) (2022-09-29)
+
+
+### Features
+
+* **OverflowMenu:** allow breakpoint on container width ([#7913](https://github.com/patternfly/patternfly-react/issues/7913)) ([a9d71bb](https://github.com/patternfly/patternfly-react/commit/a9d71bb9c42e13606d84ac8478d6ab5c717b9e9c))
+
+
+
+
+
+## [4.203.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.203.6...@patternfly/react-integration@4.203.7) (2022-09-29)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.203.6 (2022-09-29)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.203.5 (2022-09-29)
+
+
+### Bug Fixes
+
+* **Topology:** Fix for multiple popovers occurring for pipeline badges ([#8110](https://github.com/patternfly/patternfly-react/issues/8110)) ([85f5899](https://github.com/patternfly/patternfly-react/commit/85f589931b2b3b9d0e5ae4a9e4d86bdb7aa0e594))
+
+
+
+
+
+## 4.203.4 (2022-09-28)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.203.3 (2022-09-20)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.203.2 (2022-09-20)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.203.1 (2022-09-20)
+
+
+### Bug Fixes
+
+* **OverflowMenu:** store resize listener reference ([#7975](https://github.com/patternfly/patternfly-react/issues/7975)) ([86b0193](https://github.com/patternfly/patternfly-react/commit/86b01936a3029886173654925eb5d11d9077fc56))
+
+
+
+
+
+# 4.203.0 (2022-09-19)
+
+
+### Features
+
+* **Wizard - next:** supporting component unit tests ([#7731](https://github.com/patternfly/patternfly-react/issues/7731)) ([2e4ec26](https://github.com/patternfly/patternfly-react/commit/2e4ec26d428b6be0ca4254b29e03c889eb5625bb))
+
+
+
+
+
+# 4.202.0 (2022-09-16)
+
+
+### Features
+
+* **charts:** Update Victory dependencies ([#7986](https://github.com/patternfly/patternfly-react/issues/7986)) ([bbee15f](https://github.com/patternfly/patternfly-react/commit/bbee15fd0e00288dfa72c88a79a685b5405a355e))
+
+
+
+
+
+## 4.201.1 (2022-09-15)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# 4.201.0 (2022-09-14)
+
+
+### Features
+
+* **Dropdown next:** Added the next version of the dropdown component ([#7955](https://github.com/patternfly/patternfly-react/issues/7955)) ([c092c7c](https://github.com/patternfly/patternfly-react/commit/c092c7cfaf877c5783c9ad9db0a8010b8ea023eb))
+
+
+
+
+
+# 4.200.0 (2022-09-14)
+
+
+### Features
+
+* **SearchInput:** new expandable button for masthead variant ([#7903](https://github.com/patternfly/patternfly-react/issues/7903)) ([d2a6c47](https://github.com/patternfly/patternfly-react/commit/d2a6c471ea3440d0b751b752b44ca1e8e749c5b6))
+
+
+
+
+
+## 4.199.11 (2022-09-13)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.199.10 (2022-09-13)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.199.9 (2022-09-13)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.199.8 (2022-09-12)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.199.7 (2022-09-12)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.199.6 (2022-09-12)
+
+
+### Bug Fixes
+
+* **Treeview:** ignore folder selection in basic example ([#7906](https://github.com/patternfly/patternfly-react/issues/7906)) ([b16b224](https://github.com/patternfly/patternfly-react/commit/b16b2240d26cabcadec3de52627fb1d96ff45aef))
+
+
+
+
+
+## 4.199.5 (2022-09-09)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.199.4 (2022-09-09)
+
+
+### Bug Fixes
+
+* **Modal, Dropdown, TreeView:** updates to resolve strict TS errors ([#7890](https://github.com/patternfly/patternfly-react/issues/7890)) ([011215b](https://github.com/patternfly/patternfly-react/commit/011215be95dfff1408e437c0b1062835669ff041))
+
+
+
+
+
+## 4.199.3 (2022-09-09)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.199.2 (2022-09-09)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.199.1 (2022-09-09)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# 4.199.0 (2022-09-09)
+
+
+### Features
+
+* **Button:** new count number prop ([#7910](https://github.com/patternfly/patternfly-react/issues/7910)) ([a096b3c](https://github.com/patternfly/patternfly-react/commit/a096b3cba080b5bcd87777efe0e96e64c6da121f))
+
+
+
+
+
+## 4.198.14 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Page:** Fixed page group props regression ([#7948](https://github.com/patternfly/patternfly-react/issues/7948)) ([044444e](https://github.com/patternfly/patternfly-react/commit/044444e11fb90d53dc8f783071d3e3dc517532a0))
+
+
+
+
+
+## 4.198.13 (2022-09-08)
+
+
+### Bug Fixes
+
+* **table:** fix bug in expandable demo ([#7945](https://github.com/patternfly/patternfly-react/issues/7945)) ([711b196](https://github.com/patternfly/patternfly-react/commit/711b19609dd8023b157a99f6988ff8618ccee35d))
+
+
+
+
+
 ## 4.198.12 (2022-09-07)
 
 **Note:** Version bump only for package @patternfly/react-integration

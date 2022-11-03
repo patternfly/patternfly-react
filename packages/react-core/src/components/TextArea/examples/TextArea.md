@@ -6,7 +6,9 @@ propComponents: ['TextArea']
 ---
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
@@ -32,6 +34,7 @@ class SimpleTextArea extends React.Component {
 ```
 
 ### Invalid
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
@@ -42,7 +45,7 @@ class InvalidTextArea extends React.Component {
     this.state = {
       value: ''
     };
-    
+
     this.handleInvalidTextAreaChange = value => {
       this.setState({ value });
     };
@@ -65,6 +68,7 @@ class InvalidTextArea extends React.Component {
 ```
 
 ### Validated
+
 ```js
 import React from 'react';
 import { Form, FormGroup, TextArea } from '@patternfly/react-core';
@@ -78,28 +82,30 @@ class InvalidTextArea extends React.Component {
       validated: 'default',
       helperText: 'Share your thoughts.'
     };
-    
+
     this.simulateNetworkCall = callback => {
       setTimeout(callback, 2000);
-    }
-    
-    this.handleTextAreaChange = value => {
+    };
 
-      this.setState({
-        value,
-        validated: 'default',
-        helperText: 'Validating...',
-      },
+    this.handleTextAreaChange = value => {
+      this.setState(
+        {
+          value,
+          validated: 'default',
+          helperText: 'Validating...'
+        },
         this.simulateNetworkCall(() => {
           if (value && value.length > 0) {
             if (value.length >= 10) {
-              this.setState({validated: 'success', helperText: 'Thanks for your comments!'});
+              this.setState({ validated: 'success', helperText: 'Thanks for your comments!' });
             } else {
-              this.setState({validated: 'error', invalidText: 'Your being too brief, please enter at least 10 characters.'});
+              this.setState({
+                validated: 'error',
+                invalidText: 'Your being too brief, please enter at least 10 characters.'
+              });
             }
-          }
-          else {
-            this.setState({validated: 'warning', helperText: 'You must have something to say'});
+          } else {
+            this.setState({ validated: 'warning', helperText: 'You must have something to say' });
           }
         })
       );
@@ -134,6 +140,7 @@ class InvalidTextArea extends React.Component {
 ```
 
 ### Vertically resizable text area
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
@@ -153,12 +160,20 @@ class VerticalResizeTextArea extends React.Component {
   render() {
     const { value } = this.state;
 
-    return <TextArea value={value} onChange={this.handleTextAreaChange} resizeOrientation='vertical' aria-label="text vertical resize example" />;
+    return (
+      <TextArea
+        value={value}
+        onChange={this.handleTextAreaChange}
+        resizeOrientation="vertical"
+        aria-label="text vertical resize example"
+      />
+    );
   }
 }
 ```
 
 ### Horizontally resizable text area
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
@@ -178,40 +193,80 @@ class HorizontalResizeTextArea extends React.Component {
   render() {
     const { value } = this.state;
 
-    return <TextArea value={value} onChange={this.handleTextAreaChange} resizeOrientation='horizontal' aria-label="text horizontal resize example" />;
+    return (
+      <TextArea
+        value={value}
+        onChange={this.handleTextAreaChange}
+        resizeOrientation="horizontal"
+        aria-label="text horizontal resize example"
+      />
+    );
   }
 }
 ```
 
 ### Uncontrolled
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
-<TextArea defaultValue="default value" aria-label="uncontrolled text area example" />
+<TextArea defaultValue="default value" aria-label="uncontrolled text area example" />;
 ```
 
 ### Disabled
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
-<TextArea aria-label="disabled text area example" isDisabled />
+<TextArea aria-label="disabled text area example" isDisabled />;
+```
+
+### Read only
+
+```js
+import React from 'react';
+import { Checkbox, TextArea } from '@patternfly/react-core';
+
+const ReadOnlyTextArea = () => {
+  const [isPlainChecked, setIsPlainChecked] = React.useState(false);
+
+  return (
+    <React.Fragment>
+      <div style={{ marginBottom: '12px' }}>
+        <Checkbox
+          id="isPlain"
+          key="isPlain"
+          label="Plain read only variant"
+          isChecked={isPlainChecked}
+          onChange={checked => setIsPlainChecked(checked)}
+        />
+      </div>
+      <TextArea
+        aria-label="read only text area example"
+        value="read only text area example"
+        readOnlyVariant={isPlainChecked ? 'plain' : 'default'}
+      />
+    </React.Fragment>
+  );
+};
 ```
 
 ### Auto resizing
+
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
-<TextArea aria-label="auto resizing text area example" autoResize />
+<TextArea aria-label="auto resizing text area example" autoResize />;
 ```
 
 ### Icon sprite variants
 
 **Note:** The icons for the success, invalid, calendar, etc. variations in form control elements are applied as background images to the form element. By default, the image URLs for these icons are data URIs. However, there may be cases where data URIs are not ideal, such as in an application with a content security policy that disallows data URIs for security reasons. The `isIconSprite` variation changes the icon source to an external SVG file that serves as a sprite for all of the supported icons.
 
-```js isBeta
+```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
@@ -250,3 +305,4 @@ IconSpriteTextArea = () => {
     </>
   );
 };
+```

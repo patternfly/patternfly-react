@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { formatBreakpointMods } from '../../helpers/util';
-import { PageContext } from '../Page/Page';
+import { PageContext } from './PageContext';
 
 export interface PageNavigationProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes to apply to the PageNavigation */

@@ -3,8 +3,8 @@ id: Navigation
 section: components
 ---
 
-import { DashboardBreadcrumb } from './examples/DashboardWrapper';
-import DashboardHeader from './examples/DashboardHeader';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -34,8 +34,8 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import { DashboardBreadcrumb } from './examples/DashboardWrapper';
-import DashboardHeader from './examples/DashboardHeader';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class PageLayoutDefaultNav extends React.Component {
   constructor(props) {
@@ -133,7 +133,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import DashboardHeader from './examples/DashboardHeader';
+import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class PageLayoutGroupsNav extends React.Component {
   constructor(props) {
@@ -242,8 +242,8 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import { DashboardBreadcrumb } from './examples/DashboardWrapper';
-import DashboardHeader from './examples/DashboardHeader';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class PageLayoutExpandableNav extends React.Component {
   constructor(props) {
@@ -380,7 +380,7 @@ import {
   PageHeaderToolsGroup,
   PageHeaderToolsItem
 } from '@patternfly/react-core';
-import { DashboardBreadcrumb } from './examples/DashboardWrapper';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -581,8 +581,8 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import { DashboardBreadcrumb } from './examples/DashboardWrapper';
-import DashboardHeader from './examples/DashboardHeader';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class VerticalNavWithSubnav extends React.Component {
   constructor(props) {
@@ -737,7 +737,7 @@ import {
   PageHeaderToolsGroup,
   PageHeaderToolsItem
 } from '@patternfly/react-core';
-import { DashboardBreadcrumb } from './examples/DashboardWrapper';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -984,8 +984,8 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import { DashboardBreadcrumb } from './examples/DashboardWrapper';
-import DashboardHeader from './examples/DashboardHeader';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class PageLayoutTertiaryNav extends React.Component {
   constructor(props) {
@@ -1087,7 +1087,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import DashboardHeader from './examples/DashboardHeader';
+import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class PageLayoutLightNav extends React.Component {
   constructor(props) {
@@ -1436,7 +1436,7 @@ import {
   MenuList,
   MenuItem
 } from '@patternfly/react-core';
-import DashboardHeader from './examples/DashboardHeader';
+import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class VerticalPage extends React.Component {
   constructor(props) {

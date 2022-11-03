@@ -13,7 +13,6 @@ propComponents:
     'DualListSelectorTree',
     'DualListSelectorTreeItemData',
   ]
-beta: true
 ---
 
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';

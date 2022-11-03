@@ -12,22 +12,26 @@ export enum NotificationBadgeVariant {
 }
 
 export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
-  /** @deprecated Use the variant prop instead - Adds styling to the notification badge to indicate it has been read */
-  isRead?: boolean;
-  /** Determines the variant of the notification badge */
-  variant?: NotificationBadgeVariant | 'read' | 'unread' | 'attention';
-  /** A number displayed in the badge alongside the icon */
-  count?: number;
-  /** content rendered inside the notification badge */
-  children?: React.ReactNode;
-  /** additional classes added to the notification badge */
-  className?: string;
-  /** Adds accessible text to the notification badge. */
+  /** Adds an accessible label to the notification badge. */
   'aria-label'?: string;
-  /** Icon to display for attention variant */
+  /** Icon to display for attention variant. */
   attentionIcon?: React.ReactNode;
-  /** Icon do display in notification badge */
+  /** Content rendered inside the notification badge. */
+  children?: React.ReactNode;
+  /** Additional classes added to the notification badge. */
+  className?: string;
+  /** A number displayed in the badge alongside the icon. */
+  count?: number;
+  /** Icon to display in the notification badge. */
   icon?: React.ReactNode;
+  /** Flag for applying expanded styling and setting the aria-expanded attribute on the
+   * notification badge.
+   */
+  isExpanded?: boolean;
+  /** @deprecated Use the variant prop instead - Adds styling to the notification badge to indicate it has been read. */
+  isRead?: boolean;
+  /** Determines the variant of the notification badge. */
+  variant?: NotificationBadgeVariant | 'read' | 'unread' | 'attention';
 }
 
 export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> = ({
@@ -38,6 +42,7 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
   attentionIcon = <AttentionBellIcon />,
   icon = <BellIcon />,
   className,
+  isExpanded = false,
   ...props
 }: NotificationBadgeProps) => {
   let notificationChild = icon;
@@ -47,8 +52,10 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
     notificationChild = attentionIcon;
   }
   return (
-    <Button variant={ButtonVariant.plain} className={className} {...props}>
-      <span className={css(styles.notificationBadge, styles.modifiers[variant])}>
+    <Button variant={ButtonVariant.plain} className={className} aria-expanded={isExpanded} {...props}>
+      <span
+        className={css(styles.notificationBadge, styles.modifiers[variant], isExpanded && styles.modifiers.expanded)}
+      >
         {notificationChild}
         {count > 0 && <span className={css(styles.notificationBadgeCount)}>{count}</span>}
       </span>

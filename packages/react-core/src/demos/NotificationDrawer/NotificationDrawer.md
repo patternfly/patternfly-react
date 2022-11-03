@@ -1,7 +1,6 @@
 ---
 id: Notification drawer
 section: components
-beta: true
 ---
 
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
@@ -246,6 +245,7 @@ class BasicNotificationDrawer extends React.Component {
                   variant={this.getNumberUnread() === 0 ? 'read' : 'unread'}
                   onClick={this.onCloseNotificationDrawer}
                   aria-label="Notifications"
+                  isExpanded={isDrawerExpanded}
                 >
                   <BellIcon />
                 </NotificationBadge>
@@ -812,6 +812,7 @@ class GroupedNotificationDrawer extends React.Component {
                   variant={this.getNumberUnread() === 0 ? 'read' : 'unread'}
                   onClick={this.onCloseNotificationDrawer}
                   aria-label="Notifications"
+                  isExpanded={isDrawerExpanded}
                 >
                   <BellIcon />
                 </NotificationBadge>

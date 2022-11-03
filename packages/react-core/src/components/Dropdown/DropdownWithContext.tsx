@@ -30,7 +30,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     onSelect: (): void => undefined,
     autoFocus: true,
     menuAppendTo: 'inline',
-    isFlipEnabled: false
+    isFlipEnabled: true
   };
 
   constructor(props: DropdownProps & OUIAProps) {
@@ -93,15 +93,14 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       renderedContent = React.Children.toArray(children);
     }
     const openedOnEnter = this.openedOnEnter;
+    const isStatic = isFlipEnabled && menuAppendTo !== 'inline';
     return (
       <DropdownContext.Consumer>
         {({ baseClass, baseComponent, id: contextId, ouiaId, ouiaComponentType, ouiaSafe, alignments }) => {
           const BaseComponent = baseComponent as any;
           const menuContainer = (
             <DropdownMenu
-              // This removes the `position: absolute` styling from the `.pf-c-dropdown__menu`
-              // allowing the menu to flip correctly
-              {...(isFlipEnabled && { style: { position: 'revert', minWidth: 'min-content' } })}
+              className={css(isStatic && styles.modifiers.static)}
               setMenuComponentRef={this.setMenuComponentRef}
               component={component}
               isOpen={isOpen}
@@ -176,6 +175,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
               isVisible={isOpen}
               removeFindDomNode={removeFindDomNode}
+              popperMatchesTriggerWidth={false}
             />
           );
         }}

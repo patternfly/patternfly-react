@@ -43,3 +43,8 @@ import './checkbox.css';
 
 ```ts file='./CheckboxStandaloneInput.tsx'
 ```
+
+### Required input
+
+```ts file='./CheckboxRequired.tsx'
+```

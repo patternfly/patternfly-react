@@ -47,7 +47,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
       props: {
         isEditable: true,
         editableProps: {
-          'aria-label': 'label editable text'
+          'aria-label': 'Editable label with text Label 3'
         }
       },
       id: 6
@@ -60,7 +60,12 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
 
   const onEdit = (nextText: string, index: number) => {
     const copy = [...labels];
-    copy[index] = { name: nextText, props: labels[index].props, id: labels[index].id };
+    const updatedProps = {
+      ...labels[index].props,
+      editableProps: { 'aria-label': `Editable label with text ${nextText}` }
+    };
+
+    copy[index] = { name: nextText, props: updatedProps, id: labels[index].id };
     setLabels(copy);
   };
 
@@ -81,7 +86,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
           isEditable: isEditable !== undefined ? isEditable : true,
           ...(isEditable && {
             editableProps: {
-              'aria-label': 'label editable text'
+              'aria-label': `Editable label with text ${labelText || 'New Label'}`
             }
           })
         },

@@ -51,6 +51,11 @@ import { css } from '@patternfly/react-styles';
 ```ts file="./DataListExpandable.tsx"
 ```
 
+### Mixed expandable
+
+```ts file="./DataListMixedExpandable.tsx"
+```
+
 ### Width modifiers
 
 ```ts file="./DataListWidthModifiers.tsx"

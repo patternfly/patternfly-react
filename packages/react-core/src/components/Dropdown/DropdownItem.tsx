@@ -3,7 +3,7 @@ import { InternalDropdownItemProps, InternalDropdownItem } from './InternalDropd
 import { DropdownArrowContext } from './dropdownConstants';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface DropdownItemProps extends InternalDropdownItemProps, OUIAProps {
+export interface DropdownItemProps extends Omit<InternalDropdownItemProps, 'tabIndex'>, OUIAProps {
   /** Anything which can be rendered as dropdown item */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown item */
@@ -47,6 +47,10 @@ export interface DropdownItemProps extends InternalDropdownItemProps, OUIAProps 
   autoFocus?: boolean;
   /** A short description of the dropdown item, displayed under the dropdown item content */
   description?: React.ReactNode;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({

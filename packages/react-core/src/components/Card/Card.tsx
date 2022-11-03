@@ -18,11 +18,11 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isCompact?: boolean;
   /** Modifies the card to include selectable styling */
   isSelectable?: boolean;
-  /** @beta Specifies the card is selectable, and applies the new raised styling on hover and select */
+  /** Specifies the card is selectable, and applies the new raised styling on hover and select */
   isSelectableRaised?: boolean;
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
-  /** @beta Modifies a raised selectable card to have disabled styling */
+  /** Modifies a raised selectable card to have disabled styling */
   isDisabledRaised?: boolean;
   /** Modifies the card to include flat styling */
   isFlat?: boolean;
@@ -42,6 +42,10 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   selectableInputAriaLabel?: string;
   /** Callback that executes when the selectable input is changed */
   onSelectableInputChange?: (labelledBy: string, event: React.FormEvent<HTMLInputElement>) => void;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 interface CardContextProps {

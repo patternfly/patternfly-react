@@ -2,7 +2,7 @@
 id: Button
 section: components
 cssPrefix: pf-c-button
-propComponents: ['Button']
+propComponents: ['Button', 'BadgeCountObject']
 ouia: true
 ---
 
@@ -96,19 +96,14 @@ Router links can be used for in-app linking in React environments to prevent pag
 
 Buttons that are aria-disabled are similar to normal disabled buttons, except they can receive focus. Every button variant can be aria-disabled using the `isAriaDisabled` property.
 
+Unlike normal disabled buttons, aria-disabled buttons can support tooltips. Furthermore, aria-disabled buttons can operate as links, which also support tooltips.
+
 ```ts file="./ButtonAriaDisabled.tsx"
 ```
 
-### Aria-disabled with tooltip
+### Button with count
 
-Unlike normal disabled buttons, aria-disabled buttons can support tooltips.
+Buttons can display a `count` in the form of a badge to indicate some value or number by passing in the `countOptions` prop as a `BadgeCountObject` object. The `BadgeCountObject` object will handle `count`, `isRead`, and `className` props for the badge count.
 
-```ts file="./ButtonAriaDisabledTooltip.tsx"
-```
-
-### Aria-disabled link as button with tooltip
-
-Aria-disabled buttons can operate as links, which also support tooltips.
-
-```ts file="./ButtonAriaDisabledLinkTooltip.tsx"
+```ts file="./ButtonWithCount.tsx" isBeta
 ```

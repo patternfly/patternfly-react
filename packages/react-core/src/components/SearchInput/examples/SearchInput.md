@@ -2,7 +2,7 @@
 id: 'Search input'
 section: components
 cssPrefix: 'pf-c-search-input'
-propComponents: ['SearchInput', 'SearchAttribute']
+propComponents: ['SearchInput', 'SearchAttribute', 'ExpandableInput']
 beta: true
 ---
 
@@ -33,6 +33,11 @@ import { ExternalLinkSquareAltIcon } from '@patternfly/react-icons';
 ### Focus search input using ref
 
 ```ts file='./SearchInputFocusSearch.tsx'
+```
+
+### With expandable button
+
+```ts file='./SearchInputWithExpandable.tsx'
 ```
 
 ### Advanced

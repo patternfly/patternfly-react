@@ -68,6 +68,10 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
   id?: string;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
@@ -91,7 +95,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     footer: null as React.ReactNode,
     isPlain: false,
     isText: false,
-    isFlipEnabled: false,
+    isFlipEnabled: true,
     removeFindDomNode: false
   };
   constructor(props: ContextSelectorProps) {
@@ -141,15 +145,10 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     const uniqueId = id || getUniqueId();
     const toggleId = `pf-context-selector-toggle-id-${uniqueId}`;
     const screenReaderLabelId = `pf-context-selector-label-id-${uniqueId}`;
+    const isStatic = isFlipEnabled && menuAppendTo !== 'inline';
 
     const menuContainer = (
-      <div
-        className={css(styles.contextSelectorMenu)}
-        // This removes the `position: absolute`styling from the `.pf-c-context-selector__menu`
-        // allowing the menu to flip correctly
-        {...(isFlipEnabled && { style: { position: 'revert' } })}
-        id={uniqueId}
-      >
+      <div className={css(styles.contextSelectorMenu, isStatic && styles.modifiers.static)} id={uniqueId}>
         {isOpen && (
           <FocusTrap
             active={!disableFocusTrap}

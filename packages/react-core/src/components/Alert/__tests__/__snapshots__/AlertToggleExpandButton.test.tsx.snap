@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-expanded="false"
+    aria-label="Toggle variantLabel alert: title"
+  >
+    <span
+      class="pf-c-alert__toggle-icon"
+    >
+      Icon mock
+    </span>
+  </button>
+  <p>
+    variant: plain
+  </p>
+  <p
+    id="labelling-id"
+  >
+    Test label
+  </p>
+</DocumentFragment>
+`;

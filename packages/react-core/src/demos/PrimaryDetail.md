@@ -3,7 +3,7 @@ id: Primary-detail
 section: demos
 ---
 
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -70,7 +70,7 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
@@ -530,7 +530,7 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
@@ -994,7 +994,7 @@ import {
   ToolbarContent,
   ToolbarFilter
 } from '@patternfly/react-core';
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
@@ -1603,7 +1603,7 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class PrimaryDetailSimpleListInCard extends React.Component {
   constructor(props) {
@@ -1764,7 +1764,7 @@ import {
   TextContent,
   Title
 } from '@patternfly/react-core';
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 class PrimaryDetailDataListInCard extends React.Component {
@@ -2016,7 +2016,7 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';

@@ -3,18 +3,18 @@ import styles from '@patternfly/react-styles/css/components/Slider/slider';
 import { css } from '@patternfly/react-styles';
 
 export interface SliderStepProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
-  /** Additional classes added to the slider steps. */
+  /** Additional classes added to the slider step. */
   className?: string;
-  /** Step value **/
-  value?: number;
-  /** Step label **/
-  label?: string;
-  /** Flag indicating that the tick should be hidden */
-  isTickHidden?: boolean;
-  /** Flag indicating that the label should be hidden */
-  isLabelHidden?: boolean;
-  /** Flag indicating the step is active */
+  /** Flag indicating the step is active. */
   isActive?: boolean;
+  /** Flag indicating that the label should be hidden. */
+  isLabelHidden?: boolean;
+  /** Flag indicating that the tick should be hidden. */
+  isTickHidden?: boolean;
+  /** Step label. **/
+  label?: string;
+  /** Step value. **/
+  value?: number;
 }
 
 export const SliderStep: React.FunctionComponent<SliderStepProps> = ({

@@ -4,6 +4,8 @@ exports[`ClipboardCopy should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-clipboard-copy string"
+    data-ouia-component-type="PF4/ClipboardCopy"
+    data-ouia-safe="true"
   >
     <div
       class="pf-c-clipboard-copy__group"

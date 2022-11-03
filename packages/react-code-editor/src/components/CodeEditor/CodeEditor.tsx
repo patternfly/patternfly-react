@@ -13,7 +13,6 @@ import {
   Popover,
   PopoverProps,
   Title,
-  Tooltip,
   TooltipPosition
 } from '@patternfly/react-core';
 import MonacoEditor, { ChangeHandler, EditorDidMount } from 'react-monaco-editor';
@@ -25,6 +24,7 @@ import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import Dropzone from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
+import { CodeEditorControl } from './CodeEditorControl';
 
 export interface Shortcut {
   description: string;
@@ -109,70 +109,93 @@ export enum Language {
   yaml = 'yaml'
 }
 
+/** The main code editor component. */
+
 export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
-  /** additional classes added to the code editor */
+  /** Additional classes added to the code editor. */
   className?: string;
-  /** code displayed in code editor */
+  /** Code displayed in code editor. */
   code?: string;
-  /** language displayed in the editor */
-  language?: Language;
-  /** Flag indicating the editor is styled using monaco's dark theme */
-  isDarkTheme?: boolean;
-  /** Width of code editor. Defaults to 100% */
-  width?: string;
-  /** Flag indicating the editor is displaying line numbers */
-  isLineNumbersVisible?: boolean;
-  /** Flag indicating the editor is read only */
-  isReadOnly?: boolean;
-  /** Height of code editor. Defaults to 100%. 'sizeToFit' will automatically change the height to the height of the content. */
-  height?: string | 'sizeToFit';
-  /** Function which fires each time the code changes in the code editor */
-  onCodeChange?: (value: string) => void;
-  /** Function which fires each time the content of the code editor is manually changed. Does not fire when a file is uploaded. */
-  onChange?: ChangeHandler;
-  /** The loading screen before the editor will be loaded. Defaults 'loading...' */
-  loading?: React.ReactNode;
-  /** Content to display in space of the code editor when there is no code to display */
-  emptyState?: React.ReactNode;
-  /** Override default empty state title text */
-  emptyStateTitle?: React.ReactNode;
-  /** Override default empty state body text */
-  emptyStateBody?: React.ReactNode;
-  /** Override default empty state title text */
-  emptyStateButton?: React.ReactNode;
-  /** Override default empty state body text */
-  emptyStateLink?: React.ReactNode;
-  /** Name of the file if user downloads code to local file */
-  downloadFileName?: string;
-  /** Flag to add upload button to code editor actions. Also makes the code editor accept a file using drag and drop */
-  isUploadEnabled?: boolean;
-  /** Flag to add download button to code editor actions */
-  isDownloadEnabled?: boolean;
-  /** Flag to add copy button to code editor actions */
-  isCopyEnabled?: boolean;
-  /** Flag to include a label indicating the currently configured editor language */
-  isLanguageLabelVisible?: boolean;
-  /** Accessible label for the copy button */
+  /** Accessible label for the copy button. */
   copyButtonAriaLabel?: string;
-  /** Text to display in the tooltip on the copy button before text is copied */
-  copyButtonToolTipText?: string;
-  /** Text to display in the tooltip on the copy button after code copied to clipboard */
+  /** Text to display in the tooltip on the copy button after code is copied to clipboard. */
   copyButtonSuccessTooltipText?: string;
-  /** Accessible label for the upload button */
-  uploadButtonAriaLabel?: string;
-  /** Text to display in the tooltip on the upload button */
-  uploadButtonToolTipText?: string;
-  /** Accessible label for the download button */
+  /** Text to display in the tooltip on the copy button before code is copied. */
+  copyButtonToolTipText?: string;
+  /** A single node or array of nodes - ideally the code editor controls component - to display
+   * above code editor.
+   */
+  customControls?: React.ReactNode | React.ReactNode[];
+  /** Accessible label for the download button. */
   downloadButtonAriaLabel?: string;
-  /** Text to display in the tooltip on the download button */
+  /** Text to display in the tooltip on the download button. */
   downloadButtonToolTipText?: string;
-  /** The delay before tooltip fades after code copied */
+  /** Name of the file if user downloads code to local file. */
+  downloadFileName?: string;
+  /** Content to display in space of the code editor when there is no code to display. */
+  emptyState?: React.ReactNode;
+  /** Override default empty state body text. */
+  emptyStateBody?: React.ReactNode;
+  /** Override default empty state button text. */
+  emptyStateButton?: React.ReactNode;
+  /** Override default empty state link text. */
+  emptyStateLink?: React.ReactNode;
+  /** Override default empty state title text. */
+  emptyStateTitle?: React.ReactNode;
+  /** Editor header main content title. */
+  headerMainContent?: string;
+  /** Height of code editor. Defaults to 100%. 'sizeToFit' will automatically change the height
+   * to the height of the content.
+   */
+  height?: string | 'sizeToFit';
+  /** Flag to add copy button to code editor actions. */
+  isCopyEnabled?: boolean;
+  /** Flag indicating the editor is styled using monaco's dark theme. */
+  isDarkTheme?: boolean;
+  /** Flag to add download button to code editor actions. */
+  isDownloadEnabled?: boolean;
+  /** Flag to include a label indicating the currently configured editor language. */
+  isLanguageLabelVisible?: boolean;
+  /** Flag indicating the editor is displaying line numbers. */
+  isLineNumbersVisible?: boolean;
+  /** Flag to add the minimap to the code editor. */
+  isMinimapVisible?: boolean;
+  /** Flag indicating the editor is read only. */
+  isReadOnly?: boolean;
+  /** Flag to add upload button to code editor actions. Also makes the code editor accept a
+   * file using drag and drop. */
+  isUploadEnabled?: boolean;
+  /** Language displayed in the editor. */
+  language?: Language;
+  /** The loading screen before the editor will be loaded. Defaults to 'loading...'. */
+  loading?: React.ReactNode;
+  /** Function which fires each time the content of the code editor is manually changed. Does
+   * not fire when a file is uploaded.
+   */
+  onChange?: ChangeHandler;
+  /** Function which fires each time the code changes in the code editor. */
+  onCodeChange?: (value: string) => void;
+  /** Callback which fires after the code editor is mounted containing a reference to the
+   * monaco editor and the monaco instance.
+   */
+  onEditorDidMount?: EditorDidMount;
+  /** Refer to Monaco interface {monaco.editor.IStandaloneEditorConstructionOptions}. */
+  options?: editor.IStandaloneEditorConstructionOptions;
+  /** Refer to Monaco interface {monaco.editor.IEditorOverrideServices}. */
+  overrideServices?: editor.IEditorOverrideServices;
+  /** Text to show in the button to open the shortcut popover. */
+  shortcutsPopoverButtonText: string;
+  /** Properties for the shortcut popover. */
+  shortcutsPopoverProps?: PopoverProps;
+  /** Flag to show the editor. */
+  showEditor?: boolean;
+  /** The delay before tooltip fades after code copied. */
   toolTipCopyExitDelay: number;
-  /** The entry and exit delay for all tooltips */
+  /** The entry and exit delay for all tooltips. */
   toolTipDelay: number;
-  /** The max width of the tooltips on all button */
+  /** The max width of the tooltips on all button. */
   toolTipMaxWidth: string;
-  /** The position of tooltips on all buttons */
+  /** The position of tooltips on all buttons. */
   toolTipPosition?:
     | TooltipPosition
     | 'auto'
@@ -188,29 +211,12 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
     | 'left-end'
     | 'right-start'
     | 'right-end';
-  /** A single node or array of nodes - ideally CodeEditorControls - to display above code editor */
-  customControls?: React.ReactNode | React.ReactNode[];
-  /** Callback which fires after the code editor is mounted containing
-   * a reference to the monaco editor and the monaco instance */
-  onEditorDidMount?: EditorDidMount;
-  /** Flag to add the minimap to the code editor */
-  isMinimapVisible?: boolean;
-  /** Editor header main content title */
-  headerMainContent?: string;
-  /** Text to show in the button to open the shortcut popover */
-  shortcutsPopoverButtonText: string;
-  /** Properties for the shortcut popover */
-  shortcutsPopoverProps?: PopoverProps;
-  /** Flag to show the editor */
-  showEditor?: boolean;
-  /**
-   * Refer to Monaco interface {monaco.editor.IStandaloneEditorConstructionOptions}.
-   */
-  options?: editor.IStandaloneEditorConstructionOptions;
-  /**
-   * Refer to Monaco interface {monaco.editor.IEditorOverrideServices}.
-   */
-  overrideServices?: editor.IEditorOverrideServices;
+  /** Accessible label for the upload button. */
+  uploadButtonAriaLabel?: string;
+  /** Text to display in the tooltip on the upload button. */
+  uploadButtonToolTipText?: string;
+  /** Width of code editor. Defaults to 100%. */
+  width?: string;
 }
 
 interface CodeEditorState {
@@ -434,18 +440,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   };
 
   copyCode = () => {
-    if (this.timer) {
-      window.clearTimeout(this.timer);
-      this.setState({ copied: false });
-    }
-    this.editor?.focus();
-    document.execCommand('copy');
-    this.setState({ copied: true }, () => {
-      this.timer = window.setTimeout(() => {
-        this.setState({ copied: false });
-        this.timer = null;
-      }, 2500);
-    });
+    navigator.clipboard.writeText(this.state.value);
+    this.setState({ copied: true });
   };
 
   download = () => {
@@ -549,55 +545,51 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               </EmptyState>
             ));
 
+          const tooltipProps = {
+            position: toolTipPosition,
+            exitDelay: toolTipDelay,
+            entryDelay: toolTipDelay,
+            maxWidth: toolTipMaxWidth,
+            trigger: 'mouseenter focus'
+          };
+
           const editorHeader = (
             <div className={css(styles.codeEditorHeader)}>
               {
                 <div className={css(styles.codeEditorControls)}>
-                  {isCopyEnabled && (!showEmptyState || !!value) && (
-                    <Tooltip
-                      trigger="mouseenter"
-                      content={<div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>}
-                      exitDelay={copied ? toolTipCopyExitDelay : toolTipDelay}
-                      entryDelay={toolTipDelay}
-                      maxWidth={toolTipMaxWidth}
-                      position={toolTipPosition}
-                    >
-                      <Button onClick={this.copyCode} variant="control" aria-label={copyButtonAriaLabel}>
-                        <CopyIcon />
-                      </Button>
-                    </Tooltip>
-                  )}
-                  {isUploadEnabled && (
-                    <Tooltip
-                      trigger="mouseenter focus click"
-                      content={<div>{uploadButtonToolTipText}</div>}
-                      entryDelay={toolTipDelay}
-                      exitDelay={toolTipDelay}
-                      maxWidth={toolTipMaxWidth}
-                      position={toolTipPosition}
-                    >
-                      <Button onClick={open} variant="control" aria-label={uploadButtonAriaLabel}>
-                        <UploadIcon />
-                      </Button>
-                    </Tooltip>
-                  )}
-                  {isDownloadEnabled && (!showEmptyState || !!value) && (
-                    <Tooltip
-                      trigger="mouseenter focus click"
-                      content={<div>{downloadButtonToolTipText}</div>}
-                      entryDelay={toolTipDelay}
-                      exitDelay={toolTipDelay}
-                      maxWidth={toolTipMaxWidth}
-                      position={toolTipPosition}
-                    >
-                      <Button onClick={this.download} variant="control" aria-label={downloadButtonAriaLabel}>
-                        <DownloadIcon />
-                      </Button>
-                    </Tooltip>
-                  )}
-                  {customControls && (
-                    <CodeEditorContext.Provider value={{ code: value }}>{customControls}</CodeEditorContext.Provider>
-                  )}
+                  <CodeEditorContext.Provider value={{ code: value }}>
+                    {isCopyEnabled && (!showEmptyState || !!value) && (
+                      <CodeEditorControl
+                        icon={<CopyIcon />}
+                        aria-label={copyButtonAriaLabel}
+                        tooltipProps={{
+                          ...tooltipProps,
+                          'aria-live': 'polite',
+                          content: <div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>,
+                          exitDelay: copied ? toolTipCopyExitDelay : toolTipDelay,
+                          onTooltipHidden: () => this.setState({ copied: false })
+                        }}
+                        onClick={this.copyCode}
+                      />
+                    )}
+                    {isUploadEnabled && (
+                      <CodeEditorControl
+                        icon={<UploadIcon />}
+                        aria-label={uploadButtonAriaLabel}
+                        tooltipProps={{ content: <div>{uploadButtonToolTipText}</div>, ...tooltipProps }}
+                        onClick={open}
+                      />
+                    )}
+                    {isDownloadEnabled && (!showEmptyState || !!value) && (
+                      <CodeEditorControl
+                        icon={<DownloadIcon />}
+                        aria-label={downloadButtonAriaLabel}
+                        tooltipProps={{ content: <div>{downloadButtonToolTipText}</div>, ...tooltipProps }}
+                        onClick={this.download}
+                      />
+                    )}
+                    {customControls && customControls}
+                  </CodeEditorContext.Provider>
                 </div>
               }
               {<div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}

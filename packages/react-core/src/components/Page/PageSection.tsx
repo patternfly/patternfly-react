@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
-import { PageContext } from '../Page/Page';
+import { PageContext } from './PageContext';
 
 export enum PageSectionVariants {
   default = 'default',

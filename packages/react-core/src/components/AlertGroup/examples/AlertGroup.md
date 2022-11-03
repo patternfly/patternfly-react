@@ -45,7 +45,7 @@ When an overflow message appears in an `AlertGroup` using the `isLiveRegion` pro
 
 Users navigating via keyboard or another assistive technology will need a way to navigate to and reveal hidden alerts before they disappear. Alternatively, there should be a place where notifications or alerts are collected to be viewed or read later. 
 
-```ts file="AlertGroupToastOverflowCapture.tsx" isBeta
+```ts file="AlertGroupToastOverflowCapture.tsx"
 ```
 
 ### Asynchronous alert groups
@@ -68,7 +68,7 @@ Click the buttons in the example below to add dynamic alerts to a group.
 
 In the following example, there can be a maximum of 4 alerts shown at once. 
 
-```ts file="AlertGroupSingularDynamicOverflow.tsx" isBeta
+```ts file="AlertGroupSingularDynamicOverflow.tsx"
 ```
 
 ### Multiple dynamic alert groups

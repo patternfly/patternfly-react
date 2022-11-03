@@ -3,7 +3,6 @@ id: Menu toggle
 section: components
 cssPrefix: pf-c-menu-toggle
 propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox', 'SplitButtonOptions']
-beta: true
 ---
 
 import './MenuToggle.css'

@@ -16,7 +16,7 @@ export interface DataListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 
   'aria-labelledby': string;
   /** Unique id for the DataList item */
   id?: string;
-  /** @beta Aria label to apply to the selectable input if one is rendered */
+  /** Aria label to apply to the selectable input if one is rendered */
   selectableInputAriaLabel?: string;
 }
 

@@ -38,7 +38,7 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+        const firstElement = menuRef.current.querySelector('li > button:not(:disabled), li > a:not(:disabled)');
         firstElement && (firstElement as HTMLElement).focus();
       }
     }, 0);

@@ -188,14 +188,14 @@ const getInteractiveLegendTargetEvents = ({
           },
           {
             // Restore all legend item symbols associated with this event
-            childName: 'legend',
+            childName: legendName,
             target: 'data',
             eventKey: legendItems,
             mutation: () => null as any
           },
           {
             // Restore all legend item labels associated with this event
-            childName: 'legend',
+            childName: legendName,
             target: 'labels',
             eventKey: legendItems,
             mutation: () => null as any

@@ -69,6 +69,8 @@ export interface SelectProps
   isDisabled?: boolean;
   /** Flag to indicate if the typeahead select allows new items */
   isCreatable?: boolean;
+  /** Flag to indicate if create option should be at top of typeahead */
+  isCreateOptionOnTop?: boolean;
   /** Flag indicating if placeholder styles should be applied */
   hasPlaceholderStyle?: boolean;
   /** @beta Flag indicating if the creatable option should set its value as a SelectOptionObject */
@@ -143,6 +145,8 @@ export interface SelectProps
   maxHeight?: string | number;
   /** Icon element to render inside the select toggle */
   toggleIcon?: React.ReactElement;
+  /** Custom icon for the dropdown replacing the CaretDownIcon */
+  toggleIndicator?: React.ReactElement;
   /** Custom content to render in the select menu.  If this prop is defined, the variant prop will be ignored and the select will render with a single select toggle */
   customContent?: React.ReactNode;
   /** Flag indicating if select should have an inline text input for filtering */
@@ -182,6 +186,10 @@ export interface SelectProps
   isFlipEnabled?: boolean;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export interface SelectState {
@@ -220,6 +228,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isDisabled: false,
     hasPlaceholderStyle: false,
     isCreatable: false,
+    isCreateOptionOnTop: false,
     validated: 'default',
     'aria-label': '',
     'aria-labelledby': '',
@@ -239,6 +248,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     onClear: () => undefined as void,
     onCreateOption: () => undefined as void,
     toggleIcon: null as React.ReactElement,
+    toggleIndicator: null as React.ReactElement,
     onFilter: null,
     onTypeaheadInputChanged: null,
     customContent: null,
@@ -256,7 +266,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isInputFilterPersisted: false,
     isCreateSelectOptionObject: false,
     shouldResetOnSelect: true,
-    isFlipEnabled: false,
+    isFlipEnabled: true,
     removeFindDomNode: false
   };
 
@@ -283,7 +293,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     // Move focus to top of the menu if state.focusFirstOption was updated to true and the menu does not have custom content
     if (!prevState.focusFirstOption && this.state.focusFirstOption && !this.props.customContent) {
-      const firstRef = this.refCollection.find(ref => ref !== null);
+      const firstRef = this.refCollection.find(
+        ref =>
+          // If a select option is disabled then ref[0] will be undefined, so we want to return
+          // the first ref that both a) is not null and b) is not disabled.
+          ref !== null && ref[0]
+      );
+
       if (firstRef && firstRef[0]) {
         firstRef[0].focus();
       }
@@ -420,6 +436,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const {
       onFilter,
       isCreatable,
+      isCreateOptionOnTop,
       onCreateOption,
       createText,
       noResultsFoundText,
@@ -529,7 +546,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             } as SelectOptionObject)
           : newValue;
 
-        typeaheadFilteredChildren.push(
+        const createSelectOption = (
           <SelectOption
             key={`create ${newValue}`}
             value={newOptionValue}
@@ -538,6 +555,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             {createText} "{newValue}"
           </SelectOption>
         );
+
+        if (isCreateOptionOnTop) {
+          typeaheadFilteredChildren.unshift(createSelectOption);
+        } else {
+          typeaheadFilteredChildren.push(createSelectOption);
+        }
       }
     }
 
@@ -977,6 +1000,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       width,
       maxHeight,
       toggleIcon,
+      toggleIndicator,
       ouiaId,
       ouiaSafe,
       hasInlineFilter,
@@ -1006,6 +1030,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       footer,
       loadingVariant,
       isCreateSelectOptionObject,
+      isCreateOptionOnTop,
       shouldResetOnSelect,
       isFlipEnabled,
       removeFindDomNode,
@@ -1233,11 +1258,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
 
+    const isStatic = isFlipEnabled && menuAppendTo !== 'inline';
     const innerMenu = (
       <SelectMenu
-        // This removes the `position: absolute` styling from the `.pf-c-select__menu`
-        // allowing the menu to flip correctly
-        {...(isFlipEnabled && { style: { position: 'revert' } })}
+        className={css(isStatic && styles.modifiers.static)}
         {...props}
         isGrouped={isGrouped}
         selected={selections}
@@ -1308,6 +1332,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           onClose={this.onClose}
           onBlur={onBlur}
           variant={variant}
+          toggleIndicator={toggleIndicator}
           aria-labelledby={`${ariaLabelledBy || ''} ${selectToggleId}`}
           aria-label={toggleAriaLabel}
           {...(ariaDescribedby && { 'aria-describedby': ariaDescribedby })}

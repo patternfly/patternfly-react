@@ -7,7 +7,7 @@ import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpoint_lg';
 import { formatBreakpointMods, toCamel, canUseDOM } from '../../helpers/util';
-import { PageContext } from '../Page/Page';
+import { PageContext } from '../Page/PageContext';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** An icon to be rendered when the toggle group has collapsed down */

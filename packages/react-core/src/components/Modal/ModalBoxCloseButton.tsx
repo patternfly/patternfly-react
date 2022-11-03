@@ -4,10 +4,12 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { OUIAProps } from '../../helpers';
 
 export interface ModalBoxCloseButtonProps extends OUIAProps {
-  /** Additional classes added to the close button */
+  /** Additional classes added to the close button. */
   className?: string;
-  /** A callback for when the close button is clicked */
+  /** A callback for when the close button is clicked. */
   onClose?: () => void;
+  /** Value to set the data-ouia-component-id.*/
+  ouiaId?: number | string;
 }
 
 export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonProps> = ({

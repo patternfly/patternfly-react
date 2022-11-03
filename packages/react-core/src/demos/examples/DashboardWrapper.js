@@ -12,7 +12,7 @@ import {
   Text,
   TextContent
 } from '@patternfly/react-core';
-import DashboardHeader from './DashboardHeader';
+import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 export const DashboardBreadcrumb = (
   <Breadcrumb>
@@ -58,7 +58,10 @@ export default class DashboardWrapper extends React.Component {
       sidebarNavOpen,
       onPageResize,
       hasNoBreadcrumb,
-      hasPageTemplateTitle
+      notificationDrawer,
+      isNotificationDrawerExpanded,
+      hasPageTemplateTitle,
+      ...pageProps
     } = this.props;
 
     let renderedBreadcrumb;
@@ -103,7 +106,10 @@ export default class DashboardWrapper extends React.Component {
         skipToContent={PageSkipToContent}
         breadcrumb={renderedBreadcrumb}
         mainContainerId={mainContainerId ? mainContainerId : 'main-content-page-layout-default-nav'}
+        notificationDrawer={notificationDrawer}
+        isNotificationDrawerExpanded={isNotificationDrawerExpanded}
         onPageResize={onPageResize}
+        {...pageProps}
       >
         {hasPageTemplateTitle && PageTemplateTitle}
         {children}

@@ -2,7 +2,7 @@
 id: Menu
 section: components
 cssPrefix: pf-c-menu
-propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent', 'MenuInput']
+propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent', 'MenuInput', 'MenuGroup']
 ouia: true
 ---
 
@@ -28,6 +28,11 @@ A menu may contain multiple variations of `<MenuItem>` components. The following
 - Use the `isPlain` property to remove the outer box shadow and style the menu plainly instead. 
 
 ```ts file="MenuBasic.tsx"
+```
+
+### Danger menu item
+
+```ts file="MenuDangerMenuItem.tsx"
 ```
 
 ### With icons

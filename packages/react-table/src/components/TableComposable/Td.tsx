@@ -13,6 +13,7 @@ import { draggable } from '../Table/utils/decorators/draggable';
 import { treeRow } from '../Table/utils/decorators/treeRow';
 import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
 import { IFormatterValueType, IExtra } from '../Table/TableTypes';
 import {
   TdActionsType,
@@ -47,6 +48,15 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   noPadding?: boolean;
   /** Applies pf-c-table__action to td */
   isActionCell?: boolean;
+  /**
+   * Tooltip to show on the body cell.
+   * Note: If the body cell is truncated and has simple string content, it will already attempt to display the cell text.
+   * If you want to show a tooltip that differs from the cell text, you can set it here.
+   * To disable it completely you can set it to null.
+   */
+  tooltip?: React.ReactNode;
+  /** Callback on mouse enter */
+  onMouseEnter?: (event: any) => void;
 }
 
 const TdBase: React.FunctionComponent<TdProps> = ({
@@ -68,8 +78,20 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   innerRef,
   favorites = null,
   draggableRow: draggableRowProp = null,
+  tooltip = '',
+  onMouseEnter: onMouseEnterProp = () => {},
   ...props
 }: TdProps) => {
+  const [showTooltip, setShowTooltip] = React.useState(false);
+  const onMouseEnter = (event: any) => {
+    if (event.target.offsetWidth < event.target.scrollWidth) {
+      !showTooltip && setShowTooltip(true);
+    } else {
+      showTooltip && setShowTooltip(false);
+    }
+    onMouseEnterProp(event);
+  };
+
   const selectParams = select
     ? selectable(children as IFormatterValueType, {
         rowIndex: select.rowIndex,
@@ -208,9 +230,10 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     (className && className.includes('pf-c-table__tree-view-title-cell')) ||
     (mergedClassName && mergedClassName.includes('pf-c-table__tree-view-title-cell'));
 
-  return (
+  const cell = (
     <MergedComponent
       {...(!treeTableTitleCell && { 'data-label': dataLabel })}
+      onMouseEnter={tooltip !== null ? onMouseEnter : onMouseEnterProp}
       className={css(
         className,
         isActionCell && styles.tableAction,
@@ -226,6 +249,15 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     >
       {mergedChildren || children}
     </MergedComponent>
+  );
+
+  const canMakeDefaultTooltip = tooltip === '' ? typeof children === 'string' : true;
+  return tooltip !== null && canMakeDefaultTooltip && showTooltip ? (
+    <Tooltip content={tooltip || (tooltip === '' && children)} isVisible>
+      {cell}
+    </Tooltip>
+  ) : (
+    cell
   );
 };
 
