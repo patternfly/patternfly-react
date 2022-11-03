@@ -13,4 +13,4 @@ jobs:
       - uses: actions/add-to-project@v0.3.0
         with:
           project-url: https://github.com/orgs/patternfly/projects/7
-          github-token: ${{ secrets.PF_ISSUES_PROJECT_SECRET }}
+          github-token: ${{ secrets.GH_PROJECTS }}

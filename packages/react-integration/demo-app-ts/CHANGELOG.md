@@ -3,6 +3,188 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.204.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.11...demo-app-ts@4.204.12) (2022-11-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.204.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.10...demo-app-ts@4.204.11) (2022-10-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.204.10](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.9...demo-app-ts@4.204.10) (2022-10-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.204.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.8...demo-app-ts@4.204.9) (2022-10-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.204.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.7...demo-app-ts@4.204.8) (2022-10-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## 4.204.7 (2022-10-25)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.204.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.5...demo-app-ts@4.204.6) (2022-10-24)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.204.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.4...demo-app-ts@4.204.5) (2022-10-24)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.204.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.3...demo-app-ts@4.204.4) (2022-10-24)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.204.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.2...demo-app-ts@4.204.3) (2022-10-24)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.204.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.1...demo-app-ts@4.204.2) (2022-10-22)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.204.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.0...demo-app-ts@4.204.1) (2022-10-21)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.204.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.203.0...demo-app-ts@4.204.0) (2022-10-21)
+
+
+### Features
+
+* **topology:** Allow tooltip usage on pipeline task node badges ([#8208](https://github.com/patternfly/patternfly-react/issues/8208)) ([f0a87ba](https://github.com/patternfly/patternfly-react/commit/f0a87ba7563c5194ea254c7e57b2b5e60be1eb58))
+
+
+
+
+
+# [4.203.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.202.24...demo-app-ts@4.203.0) (2022-10-21)
+
+
+### Features
+
+* **Topology:** Add option to fit layout to screen upon layout completion ([#8210](https://github.com/patternfly/patternfly-react/issues/8210)) ([01da036](https://github.com/patternfly/patternfly-react/commit/01da0368318e1b3e6eb3362202a3a207bea07625))
+
+
+
+
+
+## [4.202.24](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.202.23...demo-app-ts@4.202.24) (2022-10-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.202.23](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.202.22...demo-app-ts@4.202.23) (2022-10-19)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.202.22](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.202.21...demo-app-ts@4.202.22) (2022-10-18)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.202.21](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.202.20...demo-app-ts@4.202.21) (2022-10-18)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.202.20](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.202.19...demo-app-ts@4.202.20) (2022-10-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.202.19](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.202.18...demo-app-ts@4.202.19) (2022-10-14)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.202.18](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.202.17...demo-app-ts@4.202.18) (2022-10-14)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.202.17](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.202.16...demo-app-ts@4.202.17) (2022-10-14)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [4.202.16](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.202.15...demo-app-ts@4.202.16) (2022-10-13)
 
 **Note:** Version bump only for package demo-app-ts

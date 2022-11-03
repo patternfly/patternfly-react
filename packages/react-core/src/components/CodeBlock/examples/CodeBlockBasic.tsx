@@ -6,13 +6,7 @@ export const BasicCodeBlock: React.FunctionComponent = () => {
   const [copied, setCopied] = React.useState(false);
 
   const clipboardCopyFunc = (event, text) => {
-    const clipboard = event.currentTarget.parentElement;
-    const el = document.createElement('textarea');
-    el.value = text.toString();
-    clipboard.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    clipboard.removeChild(el);
+    navigator.clipboard.writeText(text.toString());
   };
 
   const onClick = (event, text) => {
@@ -36,9 +30,10 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
           textId="code-content"
           aria-label="Copy to clipboard"
           onClick={e => onClick(e, code)}
-          exitDelay={600}
+          exitDelay={copied ? 1500 : 600}
           maxWidth="110px"
           variant="plain"
+          onTooltipHidden={() => setCopied(false)}
         >
           {copied ? 'Successfully copied to clipboard!' : 'Copy to clipboard'}
         </ClipboardCopyButton>

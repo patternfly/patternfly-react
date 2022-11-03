@@ -8,15 +8,10 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { ClipboardCopyButton } from './ClipboardCopyButton';
 import { ClipboardCopyToggle } from './ClipboardCopyToggle';
 import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
-  const clipboard = event.currentTarget.parentElement;
-  const el = document.createElement('textarea');
-  el.value = text.toString();
-  clipboard.appendChild(el);
-  el.select();
-  document.execCommand('copy');
-  clipboard.removeChild(el);
+  navigator.clipboard.writeText(text.toString());
 };
 
 export enum ClipboardCopyVariant {
@@ -31,7 +26,7 @@ export interface ClipboardCopyState {
   copied: boolean;
 }
 
-export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'>, OUIAProps {
   /** Additional classes added to the clipboard copy container. */
   className?: string;
   /** Tooltip message to display when hover the copy button */
@@ -74,7 +69,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   exitDelay?: number;
   /** Delay in ms before the tooltip appears. */
   entryDelay?: number;
-  /** Delay in ms before the tooltip message switch to hover tip. */
+  /** @deprecated Delay in ms before the tooltip message switch to hover tip. */
   switchDelay?: number;
   /** A function that is triggered on clicking the copy button. */
   onCopy?: (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => void;
@@ -84,6 +79,10 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   children: React.ReactNode;
   /** Additional actions for inline clipboard copy. Should be wrapped with ClipboardCopyAction. */
   additionalActions?: React.ReactNode;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopyState> {
@@ -98,6 +97,14 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       expanded: this.props.isExpanded,
       copied: false
     };
+
+    if (this.props.switchDelay !== undefined) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'ClipboardCopy: switchDelay prop has been deprecated. ' +
+          'The tooltip message will switch back to the hover tip as soon as the tooltip is hidden.'
+      );
+    }
   }
 
   static defaultProps: PickOptional<ClipboardCopyProps> = {
@@ -109,14 +116,14 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     variant: 'inline',
     position: TooltipPosition.top,
     maxWidth: '150px',
-    exitDelay: 1600,
+    exitDelay: 1500,
     entryDelay: 300,
-    switchDelay: 2000,
     onCopy: clipboardCopyFunc,
     onChange: (): any => undefined,
     textAriaLabel: 'Copyable input',
     toggleAriaLabel: 'Show content',
-    additionalActions: null
+    additionalActions: null,
+    ouiaSafe: true
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -149,6 +156,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       /* eslint-disable @typescript-eslint/no-unused-vars */
       isExpanded,
       onChange, // Don't pass to <div>
+      switchDelay,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       isReadOnly,
       isCode,
@@ -156,7 +164,6 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       exitDelay,
       maxWidth,
       entryDelay,
-      switchDelay,
       onCopy,
       hoverTip,
       clickTip,
@@ -166,6 +173,8 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       position,
       className,
       additionalActions,
+      ouiaId,
+      ouiaSafe,
       ...divProps
     } = this.props;
     const textIdPrefix = 'text-input-';
@@ -181,6 +190,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
           className
         )}
         {...divProps}
+        {...getOUIAProps(ClipboardCopy.displayName, ouiaId, ouiaSafe)}
       >
         {variant === 'inline-compact' && (
           <GenerateId prefix="">
@@ -208,18 +218,10 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                       textId={`text-input-${id}`}
                       aria-label={hoverTip}
                       onClick={(event: any) => {
-                        if (this.timer) {
-                          window.clearTimeout(this.timer);
-                          this.setState({ copied: false });
-                        }
                         onCopy(event, this.state.text);
-                        this.setState({ copied: true }, () => {
-                          this.timer = window.setTimeout(() => {
-                            this.setState({ copied: false });
-                            this.timer = null;
-                          }, switchDelay);
-                        });
+                        this.setState({ copied: true });
                       }}
+                      onTooltipHidden={() => this.setState({ copied: false })}
                     >
                       {this.state.copied ? clickTip : hoverTip}
                     </ClipboardCopyButton>
@@ -261,18 +263,10 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                     textId={`text-input-${id}`}
                     aria-label={hoverTip}
                     onClick={(event: any) => {
-                      if (this.timer) {
-                        window.clearTimeout(this.timer);
-                        this.setState({ copied: false });
-                      }
                       onCopy(event, this.state.text);
-                      this.setState({ copied: true }, () => {
-                        this.timer = window.setTimeout(() => {
-                          this.setState({ copied: false });
-                          this.timer = null;
-                        }, switchDelay);
-                      });
+                      this.setState({ copied: true });
                     }}
+                    onTooltipHidden={() => this.setState({ copied: false })}
                   >
                     {this.state.copied ? clickTip : hoverTip}
                   </ClipboardCopyButton>

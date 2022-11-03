@@ -223,6 +223,41 @@ exports[`Button isLoading icon only 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Button isLoading inline link 1`] = `
+<DocumentFragment>
+  <button
+    aria-disabled="false"
+    aria-label="Loading"
+    class="pf-c-button pf-m-link pf-m-inline pf-m-progress pf-m-in-progress"
+    data-ouia-component-id="OUIA-Generated-Button-link-5"
+    data-ouia-component-type="PF4/Button"
+    data-ouia-safe="true"
+    type="button"
+  >
+    <span
+      class="pf-c-button__progress"
+    >
+      <svg
+        aria-label="Contents"
+        aria-valuetext="Loading"
+        class="pf-c-spinner pf-m-md"
+        role="progressbar"
+        viewBox="0 0 100 100"
+      >
+        <circle
+          class="pf-c-spinner__path"
+          cx="50"
+          cy="50"
+          fill="none"
+          r="45"
+        />
+      </svg>
+    </span>
+    Loading Button
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button link button 1`] = `
 <DocumentFragment>
   <button

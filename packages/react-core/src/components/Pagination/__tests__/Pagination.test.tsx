@@ -112,6 +112,13 @@ describe('Pagination', () => {
       const { asFragment } = render(<Pagination perPageComponent="button" itemCount={20} />);
       expect(asFragment()).toMatchSnapshot();
     });
+
+    test('should not update generated options menu id on rerenders', () => {
+      const { rerender } = render(<Pagination titles={{optionsToggle: "test label"}} perPageComponent="button" itemCount={20}/>);
+      const id = screen.getByLabelText("test label").getAttribute("id");
+      rerender(<Pagination titles={{optionsToggle: "test label"}}  perPageComponent="button" itemCount={20} />);
+      expect(screen.getByLabelText("test label")).toHaveAttribute("id", id);
+    });
   });
 
   describe('API', () => {

@@ -12,7 +12,6 @@ import { createSvgIdUrl, getNodeScaleTranslation, useCombineRefs, useHover, useS
 import { getRunStatusModifier, nonShadowModifiers } from '../../utils';
 import StatusIcon from '../../utils/StatusIcon';
 import { TaskNodeSourceAnchor, TaskNodeTargetAnchor } from '../anchors';
-import { DEFAULT_WHEN_OFFSET, DEFAULT_WHEN_SIZE } from '../../decorators/WhenDecorator';
 import LabelActionIcon from '../../../components/nodes/labels/LabelActionIcon';
 import LabelContextMenu from '../../../components/nodes/labels/LabelContextMenu';
 import NodeShadows, {
@@ -45,8 +44,10 @@ export type TaskNodeProps = {
   badgeTextColor?: string;
   badgeBorderColor?: string;
   badgeClassName?: string;
+  /** @deprecated Use badgePopoverParams instead */
   badgePopoverProps?: string;
-  badgePopoverParams?: PopoverProps;
+  badgeTooltip?: React.ReactNode; // Set to use a tooltip on the badge, takes precedence over the badgePopoverParams
+  badgePopoverParams?: PopoverProps; // Set to use a popover on the badge, ignored if the badgeTooltip parameter is set
   taskIconClass?: string; // Icon to show for the task
   taskIcon?: React.ReactNode;
   taskIconTooltip?: React.ReactNode;
@@ -81,6 +82,8 @@ const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> =
   badgeTextColor,
   badgeBorderColor,
   badgeClassName = styles.topologyPipelinesPillBadge,
+  badgeTooltip,
+  badgePopoverProps,
   badgePopoverParams,
   taskIconClass,
   taskIcon,
@@ -93,8 +96,8 @@ const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> =
   selected,
   onSelect,
   hasWhenExpression = false,
-  whenSize = DEFAULT_WHEN_SIZE,
-  whenOffset = DEFAULT_WHEN_OFFSET,
+  whenSize = 0,
+  whenOffset = 0,
   onContextMenu,
   contextMenuOpen,
   actionIcon,
@@ -113,6 +116,11 @@ const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> =
   const [actionSize, actionRef] = useSize([actionIcon, paddingX]);
   const [contextSize, contextRef] = useSize([onContextMenu, paddingX]);
   const detailsLevel = useDetailsLevel();
+
+  if (badgePopoverProps) {
+    // eslint-disable-next-line no-console
+    console.warn('badgePopoverProps is deprecated. Use badgePopoverParams instead.');
+  }
 
   const textWidth = textSize?.width ?? 0;
   const textHeight = textSize?.height ?? 0;
@@ -261,7 +269,7 @@ const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> =
     />
   );
 
-  const badgeComponent = badge && (
+  const badgeLabel = badge ? (
     <LabelBadge
       ref={badgeRef}
       x={badgeStartX}
@@ -272,7 +280,20 @@ const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> =
       badgeTextColor={badgeTextColor}
       badgeBorderColor={badgeBorderColor}
     />
-  );
+  ) : null;
+
+  let badgeComponent: React.ReactNode;
+  if (badgeLabel && badgeTooltip) {
+    badgeComponent = <Tooltip content={badgeTooltip}>{badgeLabel}</Tooltip>;
+  } else if (badgeLabel && badgePopoverParams) {
+    badgeComponent = (
+      <g onClick={e => e.stopPropagation()}>
+        <Popover {...badgePopoverParams}>{badgeLabel}</Popover>
+      </g>
+    );
+  } else {
+    badgeComponent = badgeLabel;
+  }
 
   const renderTask = () => {
     if (showStatusState && !scaleNode && hideDetailsAtMedium && detailsLevel !== ScaleDetailsLevel.high) {
@@ -352,14 +373,7 @@ const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> =
         )}
         {taskIconComponent &&
           (taskIconTooltip ? <Tooltip content={taskIconTooltip}>{taskIconComponent}</Tooltip> : taskIconComponent)}
-        {badgeComponent &&
-          (badgePopoverParams ? (
-            <g onClick={e => e.stopPropagation()}>
-              <Popover {...badgePopoverParams}>{badgeComponent}</Popover>
-            </g>
-          ) : (
-            badgeComponent
-          ))}
+        {badgeComponent}
         {actionIcon && (
           <>
             <line

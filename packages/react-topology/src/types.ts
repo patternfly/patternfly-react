@@ -313,6 +313,7 @@ export interface Controller extends WithState {
   getGraph(): Graph;
   setGraph(graph: Graph): void;
   getLayout(type: string | undefined): Layout | undefined;
+  setFitToScreenOnLayout(fitToScreen: boolean, padding?: number): void;
   getElementById(id: string): GraphElement | undefined;
   getNodeById(id: string): Node | undefined;
   getEdgeById(id: string): Edge | undefined;

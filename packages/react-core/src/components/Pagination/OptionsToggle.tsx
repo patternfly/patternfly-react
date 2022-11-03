@@ -44,7 +44,6 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   widgetId?: string;
 }
 
-let toggleId = 0;
 export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   itemsTitle = 'items',
   optionsToggle,
@@ -95,7 +94,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
         onToggle={onToggle}
         isDisabled={isDisabled || (itemCount && itemCount <= 0)}
         isOpen={isOpen}
-        id={`${widgetId}-toggle-${toggleId++}`}
+        {...(widgetId && { id: `${widgetId}-toggle` })}
         className={isDiv ? styles.optionsMenuToggleButton : toggleClasses}
         parentRef={parentRef}
         aria-haspopup="listbox"

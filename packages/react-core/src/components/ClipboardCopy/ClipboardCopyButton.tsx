@@ -41,6 +41,8 @@ export interface ClipboardCopyButtonProps
   'aria-label'?: string;
   /** Variant of the copy button */
   variant?: 'control' | 'plain';
+  /** Callback when tooltip's hide transition has finished executing */
+  onTooltipHidden?: () => void;
 }
 
 export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonProps> = ({
@@ -54,6 +56,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   textId,
   children,
   variant = 'control',
+  onTooltipHidden = () => {},
   ...props
 }: ClipboardCopyButtonProps) => (
   <Tooltip
@@ -65,6 +68,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
     aria-live="polite"
     aria="none"
     content={<div>{children}</div>}
+    onTooltipHidden={onTooltipHidden}
   >
     <Button
       type="button"

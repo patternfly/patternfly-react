@@ -7,6 +7,8 @@ export interface WizardBasicStep {
   name: React.ReactNode;
   /** Unique identifier */
   id: string | number;
+  /** Order index of step (starts at 1) */
+  index: number;
   /** Flag to disable the step's navigation item */
   isDisabled?: boolean;
   /** Flag to represent whether the step has been visited (navigated to) */
@@ -64,21 +66,21 @@ export type WizardNavItemType = Partial<WizardNavItemProps> | CustomWizardNavIte
 export type CustomWizardNavFunction = (
   isExpanded: boolean,
   steps: WizardControlStep[],
-  currentStep: WizardControlStep,
+  activeStep: WizardControlStep,
   goToStepByIndex: (index: number) => void
 ) => React.ReactElement<WizardNavProps>;
 
 /** Callback for the Wizard's 'navItem' property. Returns element which replaces the WizardStep's default navigation item. */
 export type CustomWizardNavItemFunction = (
   step: WizardControlStep,
-  currentStep: WizardControlStep,
+  activeStep: WizardControlStep,
   steps: WizardControlStep[],
   goToStepByIndex: (index: number) => void
 ) => React.ReactElement<WizardNavItemProps>;
 
 /** Callback for the Wizard's 'footer' property. Returns element which replaces the Wizard's default footer. */
 export type CustomWizardFooterFunction = (
-  currentStep: WizardControlStep,
+  activeStep: WizardControlStep,
   onNext: () => void,
   onBack: () => void,
   onClose: () => void

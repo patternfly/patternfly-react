@@ -23,7 +23,39 @@ describe('MultipleFileUploadStatusItem', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('renders custom file name/size/icon when passed', () => {
+  test('renders custom file name/size/icon/progressAriaLiveMessage when passed', () => {
+    const testFile = new File(['foo'], 'testFile.txt');
+    const { asFragment } = render(
+      <MultipleFileUploadStatusItem
+        file={testFile}
+        fileIcon={<FileImageIcon />}
+        fileName="testCustomFileName.txt"
+        fileSize={42}
+        progressId="test-progress-id"
+        progressAriaLiveMessage="test message"
+      />
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders custom function progressAriaLiveMessage when passed', () => {
+    const testFile = new File(['foo'], 'testFile.txt');
+    const { asFragment } = render(
+      <MultipleFileUploadStatusItem
+        file={testFile}
+        fileIcon={<FileImageIcon />}
+        fileName="testCustomFileName.txt"
+        fileSize={42}
+        progressId="test-progress-id"
+        progressAriaLiveMessage={loadPercentage => `test message ${loadPercentage}`}
+      />
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('rendersdefault progressAriaLiveMessage when nothing is passed', () => {
     const testFile = new File(['foo'], 'testFile.txt');
     const { asFragment } = render(
       <MultipleFileUploadStatusItem

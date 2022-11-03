@@ -94,7 +94,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     footer: null as React.ReactNode,
     isPlain: false,
     isText: false,
-    isFlipEnabled: false,
+    isFlipEnabled: true,
     removeFindDomNode: false
   };
   constructor(props: ContextSelectorProps) {
@@ -144,15 +144,10 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     const uniqueId = id || getUniqueId();
     const toggleId = `pf-context-selector-toggle-id-${uniqueId}`;
     const screenReaderLabelId = `pf-context-selector-label-id-${uniqueId}`;
+    const isStatic = isFlipEnabled && menuAppendTo !== 'inline';
 
     const menuContainer = (
-      <div
-        className={css(styles.contextSelectorMenu)}
-        // This removes the `position: absolute`styling from the `.pf-c-context-selector__menu`
-        // allowing the menu to flip correctly
-        {...(isFlipEnabled && { style: { position: 'revert' } })}
-        id={uniqueId}
-      >
+      <div className={css(styles.contextSelectorMenu, isStatic && styles.modifiers.static)} id={uniqueId}>
         {isOpen && (
           <FocusTrap
             active={!disableFocusTrap}
