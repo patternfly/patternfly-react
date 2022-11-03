@@ -29,7 +29,7 @@ export const ProgressHelperText: React.FunctionComponent<ProgressHelperTextProps
   const helperTextIsBasic = typeof children === 'string';
 
   const basicHelperText = (
-    <HelperText isLiveRegion>
+    <HelperText>
       <HelperTextItem variant={helperTextVariantMapping[progressVariant]}>{children}</HelperTextItem>
     </HelperText>
   );

@@ -25,12 +25,6 @@ test('Renders with class pf-c-progress__helper-text on the div containing the he
   expect(screen.getByTestId('helper-text-children-container').parentElement).toHaveClass('pf-c-progress__helper-text');
 });
 
-test('Renders the helper text with isLiveRegion set to true', () => {
-  render(<ProgressHelperText>Test</ProgressHelperText>);
-
-  expect(screen.getByText('isLiveRegion: true')).toBeVisible();
-});
-
 test('Passes a variant of undefined to the helper text item when a progressVariant is not passed', () => {
   render(<ProgressHelperText>Test</ProgressHelperText>);
 

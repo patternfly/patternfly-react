@@ -18,7 +18,7 @@ exports[`Matches the snapshot 1`] = `
       </p>
     </div>
     <p>
-      isLiveRegion: true
+      isLiveRegion: undefined
     </p>
   </div>
 </DocumentFragment>
