@@ -64,7 +64,7 @@ import { canUseDOM } from './util';
  *
  * @param {Element} containerRefElement The container reference to observe
  * @param {Function} handleResize The function to call for resize events
- * @param {boolean} useRequestAnimationFrame Whether to pass the handleResize function as a callback to requestAnimationFrame. Pass in false when the function passed in is debounced. Defaults to true.
+ * @param {boolean} useRequestAnimationFrame Whether to pass the handleResize function as a callback to requestAnimationFrame. Pass in true when the function passed in is not debounced.
  * @return {Function} The function used to unobserve resize events
  */
 export const getResizeObserver = (
