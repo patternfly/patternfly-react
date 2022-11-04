@@ -38,9 +38,9 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 ```ts file="./MenuWithCheckbox.tsx"
 ```
 
-### Filtering with text input
+### Filtering with search input
 
-```ts file="MenuFilteringWithTextInput.tsx"
+```ts file="MenuFilteringWithSearchInput.tsx"
 ```
 
 ### With links
