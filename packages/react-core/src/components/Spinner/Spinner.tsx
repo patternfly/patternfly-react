@@ -13,14 +13,14 @@ export interface SpinnerProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'si
   /** Additional classes added to the Spinner. */
   className?: string;
   /** Size variant of progress. */
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'inline';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   /** Text describing that current loading status or progress */
   'aria-valuetext'?: string;
   /** Whether to use an SVG (new) rather than a span (old) */
   isSVG?: boolean;
   /** Diameter of spinner set as CSS variable */
   diameter?: string;
-  /** @beta Indicates the spinner is inline and the size should inherit the text font size. */
+  /** @beta Indicates the spinner is inline and the size should inherit the text font size. This will override the size prop. */
   isInline?: boolean;
   /** Accessible label to describe what is loading */
   'aria-label'?: string;
