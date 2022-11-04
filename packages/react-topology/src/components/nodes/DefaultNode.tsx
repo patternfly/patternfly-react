@@ -151,7 +151,7 @@ const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
         x={x}
         y={y}
         radius={DEFAULT_DECORATOR_RADIUS}
-        showBackground={false}
+        showBackground
         onClick={e => onStatusDecoratorClick(e, element)}
         icon={<g className={css(styles.topologyNodeDecoratorStatus)}>{icon}</g>}
       />
