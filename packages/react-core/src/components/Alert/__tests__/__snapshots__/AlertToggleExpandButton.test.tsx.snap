@@ -20,5 +20,14 @@ exports[`Matches snapshot 1`] = `
   >
     Test label
   </p>
+  <p>
+    isInline: undefined
+  </p>
+  <p>
+    iconPosition: undefined
+  </p>
+  <div
+    data-testid="icon"
+  />
 </DocumentFragment>
 `;
