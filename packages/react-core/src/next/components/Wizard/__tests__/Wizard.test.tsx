@@ -3,8 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { DefaultWizardNavProps, DefaultWizardFooterProps } from '../types';
-import { Wizard, WizardStep } from '../';
+import { Wizard, WizardFooterProps, WizardStep, WizardNavProps } from '../';
 
 test('renders step when child is of type WizardStep', () => {
   render(
@@ -57,7 +56,7 @@ test('renders default footer without specifying the footer prop', () => {
 });
 
 test('renders default footer with custom props', () => {
-  const footer: DefaultWizardFooterProps = {
+  const footer: Partial<WizardFooterProps> = {
     nextButtonText: <>Proceed with caution</>,
     backButtonText: 'Turn back!',
     cancelButtonText: 'Leave now!'
@@ -96,15 +95,13 @@ test('renders default nav without specifying the nav prop', () => {
 });
 
 test('renders default nav with custom props', () => {
-  const nav: DefaultWizardNavProps = {
-    isExpandable: true,
-    ariaLabel: 'Some nav label',
-    ariaLabelledBy: 'wizard-id',
-    forceStepVisit: true
+  const nav: Partial<WizardNavProps> = {
+    'aria-label': 'Some nav label',
+    'aria-labelledby': 'wizard-id'
   };
 
   render(
-    <Wizard id="wizard-id" nav={nav}>
+    <Wizard id="wizard-id" nav={nav} isStepVisitRequired>
       <WizardStep id="step-1" name="Test step 1" steps={[<WizardStep id="nested-step" name="Nested step" />]} />
       <WizardStep id="step-2" name="Test step 2" />
     </Wizard>
@@ -114,12 +111,12 @@ test('renders default nav with custom props', () => {
 
   expect(navElement).toBeVisible();
   expect(navElement).toHaveAttribute('aria-labelledby', 'wizard-id');
-  expect(screen.getByRole('button', { name: 'Test step 1' }).parentElement).toHaveClass('pf-m-expandable');
+  expect(screen.getByRole('button', { name: 'Test step 1, visited' }).parentElement).toHaveClass('pf-m-expandable');
   expect(screen.getByRole('button', { name: 'Test step 2' })).toHaveAttribute('disabled');
 });
 
 test('renders custom nav', () => {
-  const customNav = <nav>Some custom nav</nav>;
+  const customNav = () => <nav>Some custom nav</nav>;
 
   render(
     <Wizard nav={customNav}>
@@ -130,7 +127,7 @@ test('renders custom nav', () => {
   expect(screen.getByRole('navigation')).toBeVisible();
 });
 
-test('starts at the first step as the active one by default', () => {
+test('starts with the first step as the current one by default', () => {
   render(
     <Wizard>
       <WizardStep id="step-1" name="Test step 1">
@@ -298,25 +295,5 @@ test('unmounts inactive steps by default', async () => {
   await user.click(screen.getByRole('button', { name: 'Test step 2' }));
 
   expect(screen.queryByText('Step 1 content')).toBeNull();
-  expect(screen.getByText('Step 2 content')).toBeVisible();
-});
-
-test('keeps inactive steps mounted when unmountInactiveSteps is enabled', async () => {
-  const user = userEvent.setup();
-
-  render(
-    <Wizard unmountInactiveSteps={false}>
-      <WizardStep id="step-1" name="Test step 1">
-        Step 1 content
-      </WizardStep>
-      <WizardStep id="step-2" name="Test step 2">
-        Step 2 content
-      </WizardStep>
-    </Wizard>
-  );
-
-  await user.click(screen.getByRole('button', { name: 'Test step 2' }));
-
-  expect(screen.getByText('Step 1 content')).toBeInTheDocument();
   expect(screen.getByText('Step 2 content')).toBeVisible();
 });

@@ -4,7 +4,6 @@ exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-timestamp"
-    datetime="2022-01-01T00:00:00.000Z"
   >
     <time
       class="pf-c-timestamp__text"

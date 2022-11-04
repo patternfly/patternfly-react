@@ -1,129 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextArea disabled text area using disabled 1`] = `
+exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <textarea
     aria-invalid="false"
-    aria-label="disabled textarea"
-    class="pf-c-form-control"
+    aria-label="test textarea"
+    class="pf-c-form-control custom class"
     disabled=""
-  >
-    test textarea
-  </textarea>
-</DocumentFragment>
-`;
-
-exports[`TextArea disabled text area using isDisabled 1`] = `
-<DocumentFragment>
-  <textarea
-    aria-invalid="false"
-    aria-label="is disabled textarea"
-    class="pf-c-form-control"
-    disabled=""
-  >
-    test textarea
-  </textarea>
-</DocumentFragment>
-`;
-
-exports[`TextArea horizontally resizable text area 1`] = `
-<DocumentFragment>
-  <textarea
-    aria-invalid="true"
-    aria-label="horizontal resize textarea"
-    class="pf-c-form-control pf-m-resize-horizontal"
     required=""
-  >
-    test textarea
-  </textarea>
-</DocumentFragment>
-`;
-
-exports[`TextArea read only text area using default readOnlyVariant 1`] = `
-<DocumentFragment>
-  <textarea
-    aria-invalid="false"
-    aria-label="is default read only textarea"
-    class="pf-c-form-control"
-    readonly=""
-  >
-    test textarea
-  </textarea>
-</DocumentFragment>
-`;
-
-exports[`TextArea read only text area using isReadOnly 1`] = `
-<DocumentFragment>
-  <textarea
-    aria-invalid="false"
-    aria-label="is read only textarea"
-    class="pf-c-form-control"
-    readonly=""
-  >
-    test textarea
-  </textarea>
-</DocumentFragment>
-`;
-
-exports[`TextArea read only text area using plain readOnlyVariant 1`] = `
-<DocumentFragment>
-  <textarea
-    aria-invalid="false"
-    aria-label="is plain read only textarea"
-    class="pf-c-form-control pf-m-plain"
-    readonly=""
-  >
-    test textarea
-  </textarea>
-</DocumentFragment>
-`;
-
-exports[`TextArea read only text area using readOnly 1`] = `
-<DocumentFragment>
-  <textarea
-    aria-invalid="false"
-    aria-label="read only textarea"
-    class="pf-c-form-control"
-    readonly=""
-  >
-    test textarea
-  </textarea>
-</DocumentFragment>
-`;
-
-exports[`TextArea simple text area 1`] = `
-<DocumentFragment>
-  <textarea
-    aria-invalid="false"
-    aria-label="simple textarea"
-    class="pf-c-form-control"
-  >
-    test textarea
-  </textarea>
-</DocumentFragment>
-`;
-
-exports[`TextArea validated text area error 1`] = `
-<DocumentFragment>
-  <textarea
-    aria-invalid="true"
-    aria-label="validated textarea"
-    class="pf-c-form-control"
-    required=""
-  >
-    test textarea
-  </textarea>
-</DocumentFragment>
-`;
-
-exports[`TextArea vertically resizable text area 1`] = `
-<DocumentFragment>
-  <textarea
-    aria-invalid="false"
-    aria-label="vertical resize textarea"
-    class="pf-c-form-control pf-m-resize-vertical"
-  >
-    test textarea
-  </textarea>
+    style="--pf-c-form-control--textarea--Height: 6px;"
+  />
 </DocumentFragment>
 `;

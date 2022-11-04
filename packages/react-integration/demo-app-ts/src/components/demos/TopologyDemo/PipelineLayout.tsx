@@ -1,92 +1,128 @@
 import React from 'react';
 import {
-  Model,
-  ModelKind,
-  withPanZoom,
-  GraphComponent,
-  useComponentFactory,
-  useModel,
-  ComponentFactory,
-  useLayoutFactory,
   Graph,
   Layout,
   PipelineDagreLayout,
-  PipelineNodeModel,
+  Visualization,
+  VisualizationProvider,
+  useEventListener,
+  SelectionEventListener,
+  SELECTION_EVENT,
+  TopologyView,
+  VisualizationSurface,
+  useVisualizationController,
+  NODE_SEPARATION_HORIZONTAL,
+  GRAPH_LAYOUT_END_EVENT,
   getSpacerNodes,
-  getEdgesFromNodes
+  getEdgesFromNodes,
+  DEFAULT_EDGE_TYPE,
+  DEFAULT_SPACER_NODE_TYPE,
+  DEFAULT_FINALLY_NODE_TYPE
 } from '@patternfly/react-topology';
 import '@patternfly/react-styles/css/components/Topology/topology-components.css';
-import withTopologySetup from './utils/withTopologySetup';
-import pipelineComponentFactory from './components/pipelineComponentFactory';
-import { createFinallyTasks, createParallelTasks, createStatusTasks, setWhenStatus } from './utils/pipelineUtils';
+import pipelineComponentFactory, { GROUPED_EDGE_TYPE } from './components/pipelineComponentFactory';
+import { usePipelineOptions } from './usePipelineOptions';
+import { useDemoPipelineNodes } from './useDemoPipelineNodes';
+import { GROUPED_PIPELINE_NODE_SEPARATION_HORIZONTAL } from './components/DemoTaskGroupEdge';
+
+export const PIPELINE_NODE_SEPARATION_VERTICAL = 65;
 
 export const LAYOUT_TITLE = 'Layout';
 
-const getModel = (layout: string): Model => {
-  const tasks: PipelineNodeModel[] = createStatusTasks('task', 4, undefined, false, true, true, true);
+const PIPELINE_LAYOUT = 'PipelineLayout';
+const GROUPED_PIPELINE_LAYOUT = 'GroupedPipelineLayout';
 
-  const whenTasks = tasks.reduce((acc, task, index) => {
-    if (index % (Math.floor(tasks.length / 3) + 1) !== 0) {
-      acc.push(task);
-    }
-    return acc;
-  }, []);
-  setWhenStatus(whenTasks);
+const TopologyPipelineLayout: React.FC = () => {
+  const [selectedIds, setSelectedIds] = React.useState<string[]>();
 
-  for (let i = 0; i < tasks.length; i++) {
-    tasks[i + 1].runAfterTasks.push(tasks[i].id);
-    i++;
-    if (i + 1 < tasks.length) {
-      tasks[i + 1].runAfterTasks.push(tasks[i].id);
-    }
-    i++;
-    if (i + 1 < tasks.length) {
-      tasks[i + 1].runAfterTasks.push(tasks[i].id);
-    }
-    i++;
-  }
-
-  const parallelTasks = createParallelTasks('parallelTasks', tasks[9].id, 3, 2, true, true);
-  tasks.push(...parallelTasks);
-
-  const finallyNodes = createFinallyTasks('finally', 2, tasks, true);
-  const finallyGroup = {
-    id: 'finally-group',
-    type: 'finally-group',
-    children: finallyNodes.map(n => n.id),
-    group: true,
-    style: { padding: [35, 17] }
-  };
-
-  const spacerNodes = getSpacerNodes([...tasks, ...finallyNodes]);
-  const edges = getEdgesFromNodes([...tasks, ...finallyNodes, ...spacerNodes]);
-
-  return {
-    graph: {
-      id: 'g1',
-      type: 'graph',
-      x: 25,
-      y: 25,
-      layout
-    },
-    nodes: [...tasks, ...finallyNodes, ...spacerNodes, finallyGroup],
-    edges
-  };
-};
-
-export const PipelineLayout = withTopologySetup(() => {
-  useLayoutFactory((type: string, graph: Graph): Layout | undefined => new PipelineDagreLayout(graph, { nodesep: 95 }));
-  useComponentFactory(pipelineComponentFactory);
-  // support pan zoom and drag
-  useComponentFactory(
-    React.useCallback<ComponentFactory>(kind => {
-      if (kind === ModelKind.graph) {
-        return withPanZoom()(GraphComponent);
-      }
-      return undefined;
-    }, [])
+  const controller = useVisualizationController();
+  const { contextToolbar, showContextMenu, showBadges, showIcons, showGroups, badgeTooltips } = usePipelineOptions(
+    true
+  );
+  const pipelineNodes = useDemoPipelineNodes(
+    showContextMenu,
+    showBadges,
+    showIcons,
+    badgeTooltips,
+    'PipelineDagreLayout',
+    showGroups
   );
 
-  useModel(getModel('PipelineDagreLayout'));
-  return null;
+  React.useEffect(() => {
+    const spacerNodes = getSpacerNodes(pipelineNodes);
+    const nodes = [...pipelineNodes, ...spacerNodes];
+    const edgeType = showGroups ? GROUPED_EDGE_TYPE : DEFAULT_EDGE_TYPE;
+    const edges = getEdgesFromNodes(
+      nodes.filter(n => !n.group),
+      DEFAULT_SPACER_NODE_TYPE,
+      edgeType,
+      edgeType,
+      [DEFAULT_FINALLY_NODE_TYPE],
+      edgeType
+    );
+
+    controller.fromModel(
+      {
+        graph: {
+          id: 'g1',
+          type: 'graph',
+          x: 25,
+          y: 25,
+          layout: showGroups ? GROUPED_PIPELINE_LAYOUT : PIPELINE_LAYOUT
+        },
+        nodes,
+        edges
+      },
+      true
+    );
+    controller.getGraph().layout();
+  }, [controller, pipelineNodes, showGroups]);
+
+  useEventListener<SelectionEventListener>(SELECTION_EVENT, ids => {
+    setSelectedIds(ids);
+  });
+
+  return (
+    <TopologyView contextToolbar={contextToolbar}>
+      <VisualizationSurface state={{ selectedIds }} />
+    </TopologyView>
+  );
+};
+
+TopologyPipelineLayout.displayName = 'TopologyPipelineLayout';
+
+export const PipelineLayout = React.memo(() => {
+  const controller = new Visualization();
+  controller.setFitToScreenOnLayout(true);
+  controller.registerComponentFactory(pipelineComponentFactory);
+  controller.registerLayoutFactory(
+    (type: string, graph: Graph): Layout | undefined =>
+      new PipelineDagreLayout(graph, {
+        nodesep: PIPELINE_NODE_SEPARATION_VERTICAL,
+        ranksep:
+          type === GROUPED_PIPELINE_LAYOUT ? GROUPED_PIPELINE_NODE_SEPARATION_HORIZONTAL : NODE_SEPARATION_HORIZONTAL,
+        ignoreGroups: true
+      })
+  );
+  controller.fromModel(
+    {
+      graph: {
+        id: 'g1',
+        type: 'graph',
+        x: 25,
+        y: 25,
+        layout: PIPELINE_LAYOUT
+      }
+    },
+    false
+  );
+  controller.addEventListener(GRAPH_LAYOUT_END_EVENT, () => {
+    controller.getGraph().fit(75);
+  });
+
+  return (
+    <VisualizationProvider controller={controller}>
+      <TopologyPipelineLayout />
+    </VisualizationProvider>
+  );
 });

@@ -11,40 +11,65 @@ import {
   DrawerColorVariant,
   DrawerHead,
   DrawerActions,
-  DrawerCloseButton
+  DrawerCloseButton,
+  Checkbox
 } from '@patternfly/react-core';
 import {
   Wizard,
   WizardStep,
   WizardBody,
   WizardFooter,
-  WizardStepProps,
-  WizardControlStep,
-  useWizardFooter,
   useWizardContext,
+  WizardHeader,
+  WizardFooterWrapper,
   WizardNavStepFunction,
-  WizardNavStepData,
-  WizardNavItem,
-  WizardHeader
+  WizardNavStepData
 } from '@patternfly/react-core/next';
+
+const StepId = {
+  StepOne: 'sink-step-1',
+  StepTwo: 'sink-step-2',
+  StepTwoSubOne: 'sink-step-2-1',
+  StepTwoSubTwo: 'sink-step-2-2',
+  StepThree: 'sink-step-3',
+  StepFour: 'sink-step-4',
+  ReviewStep: 'sink-review-step'
+};
+
+interface SomeContextProps {
+  isToggleStepChecked: boolean;
+  errorMessage: string | undefined;
+  setIsToggleStepChecked(isHidden: boolean): void;
+  setErrorMessage(error: string | undefined): void;
+}
+type SomeContextRenderProps = Pick<SomeContextProps, 'isToggleStepChecked' | 'errorMessage'>;
+interface SomeContextProviderProps {
+  children: (context: SomeContextRenderProps) => React.ReactElement;
+}
+
+const SomeContext = React.createContext({} as SomeContextProps);
+
+const SomeContextProvider = ({ children }: SomeContextProviderProps) => {
+  const [isToggleStepChecked, setIsToggleStepChecked] = React.useState(false);
+  const [errorMessage, setErrorMessage] = React.useState<string>();
+
+  return (
+    <SomeContext.Provider value={{ isToggleStepChecked, errorMessage, setIsToggleStepChecked, setErrorMessage }}>
+      {children({ isToggleStepChecked, errorMessage })}
+    </SomeContext.Provider>
+  );
+};
 
 const CustomWizardFooter = () => {
   const { activeStep, onNext, onBack, onClose } = useWizardContext();
-  return <WizardFooter activeStep={activeStep} onNext={onNext} onBack={onBack} onClose={onClose} />;
-};
-
-const CustomNavItem = () => {
-  const { steps, activeStep, goToStepByIndex } = useWizardContext();
-  const step = (steps.find(step => step.id === 'third-step') || {}) as WizardControlStep;
 
   return (
-    <WizardNavItem
-      id={step.id}
-      content={<span style={{ color: 'var(--pf-global--default-color--200)' }}>Custom item</span>}
-      isCurrent={activeStep.id === step.id}
-      step={steps.indexOf(step) + 1}
-      isDisabled={step.isDisabled || !step.visited}
-      onNavItemClick={goToStepByIndex}
+    <WizardFooter
+      activeStep={activeStep}
+      onNext={onNext}
+      onBack={onBack}
+      onClose={onClose}
+      isBackDisabled={activeStep.index === 1}
     />
   );
 };
@@ -84,7 +109,7 @@ const StepContentWithDrawer = () => {
   );
 };
 
-const StepWithCustomFooter = () => {
+const CustomStepThreeFooter = () => {
   const { onNext: goToNextStep, onBack, onClose } = useWizardContext();
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -96,67 +121,97 @@ const StepWithCustomFooter = () => {
     goToStep();
   }
 
-  const footer = React.useMemo(
-    () => (
-      <>
-        <Button variant="primary" onClick={() => onNext(goToNextStep)} isLoading={isLoading} isDisabled={isLoading}>
-          Async Next
-        </Button>
-        <Button variant="secondary" onClick={onBack}>
-          Back
-        </Button>
-        <Button variant="link" onClick={onClose}>
-          Cancel
-        </Button>
-      </>
-    ),
-    [isLoading, onBack, onClose, goToNextStep]
+  return (
+    <WizardFooterWrapper>
+      <Button variant="primary" onClick={() => onNext(goToNextStep)} isLoading={isLoading} isDisabled={isLoading}>
+        Async Next
+      </Button>
+      <Button variant="secondary" onClick={onBack} isDisabled={isLoading}>
+        Back
+      </Button>
+      <Button variant="link" onClick={onClose} isDisabled={isLoading}>
+        Cancel
+      </Button>
+    </WizardFooterWrapper>
   );
-  useWizardFooter(footer);
-
-  return <>Step 3 content w/ custom async footer</>;
 };
 
-const CustomStepFour = (props: WizardStepProps) => <div {...props} id={props.id.toString()} />;
-
-export const WizardKitchenSink: React.FunctionComponent = () => {
-  const onNext: WizardNavStepFunction = (currentStep: WizardNavStepData, previousStep: WizardNavStepData) => {
-    // eslint-disable-next-line no-console
-    console.log('currentStep: ', currentStep, '\n previousStep: ', previousStep);
-  };
+const StepContentWithActions = () => {
+  const { isToggleStepChecked, errorMessage, setIsToggleStepChecked, setErrorMessage } = React.useContext(SomeContext);
 
   return (
-    <Wizard
-      height={400}
-      header={<WizardHeader title="You're a wizard, Harry" closeButtonAriaLabel="Close header" />}
-      footer={<CustomWizardFooter />}
-      nav={{ forceStepVisit: true, isExpandable: true }}
-      onNext={onNext}
-    >
-      <WizardStep id="sink-first-step" name="First step" body={null}>
-        <StepContentWithDrawer />
-      </WizardStep>
-      <WizardStep
-        id="sink-second-step"
-        name="Second step"
-        steps={[
-          <WizardStep id="sink-sub-step-one" key="substep-one" name="Substep 1">
-            Substep 1 content
-          </WizardStep>,
-          <WizardStep id="sink-sub-step-two" key="substep-two" name="Substep 2">
-            Substep 2 content
-          </WizardStep>
-        ]}
+    <>
+      <Checkbox
+        label="Give this step an error status"
+        isChecked={!!errorMessage}
+        onChange={checked => setErrorMessage(checked ? 'Some error message' : undefined)}
+        id="toggle-error-checkbox"
+        name="Toggle Error Checkbox"
       />
-      <WizardStep id="sink-third-step" name="Third step" navItem={<CustomNavItem />}>
-        <StepWithCustomFooter />
-      </WizardStep>
-      <CustomStepFour id="sink-fourth-step" name="Fourth step">
-        <WizardBody>Step 4 content</WizardBody>
-      </CustomStepFour>
-      <WizardStep id="sink-review-step" name="Review" nextButtonText="Submit">
-        Review step content
-      </WizardStep>
-    </Wizard>
+      <Checkbox
+        label="Toggle visibility of the next step"
+        isChecked={isToggleStepChecked}
+        onChange={checked => setIsToggleStepChecked(checked)}
+        id="toggle-hide-step-checkbox"
+        name="Toggle Hide Step Checkbox"
+      />
+    </>
+  );
+};
+
+export const WizardKitchenSink: React.FunctionComponent = () => {
+  const onNext: WizardNavStepFunction = (_currentStep: WizardNavStepData, _previousStep: WizardNavStepData) => {};
+
+  return (
+    <SomeContextProvider>
+      {({ isToggleStepChecked, errorMessage }) => (
+        <Wizard
+          height={400}
+          header={<WizardHeader title="You're a wizard, Harry" closeButtonAriaLabel="Close header" />}
+          footer={<CustomWizardFooter />}
+          onNext={onNext}
+          isStepVisitRequired
+        >
+          <WizardStep id={StepId.StepOne} name="Step 1" body={null} status="error">
+            <StepContentWithDrawer />
+          </WizardStep>
+          <WizardStep
+            id={StepId.StepTwo}
+            name="Step 2"
+            steps={[
+              <WizardStep
+                status={errorMessage ? 'error' : 'default'}
+                id={StepId.StepTwoSubOne}
+                key={StepId.StepTwoSubOne}
+                name="Substep 1"
+              >
+                <StepContentWithActions />
+              </WizardStep>,
+              <WizardStep
+                id={StepId.StepTwoSubTwo}
+                key={StepId.StepTwoSubTwo}
+                name="Substep 2"
+                isHidden={isToggleStepChecked}
+              >
+                Substep 2 content
+              </WizardStep>
+            ]}
+          />
+          <WizardStep
+            id={StepId.StepThree}
+            name="Step 3"
+            navItem={{
+              content: <span style={{ color: 'var(--pf-global--default-color--200)' }}>Custom item</span>
+            }}
+            footer={<CustomStepThreeFooter />}
+          >
+            Step 3 content w/ custom async footer
+          </WizardStep>
+          <WizardStep id={StepId.ReviewStep} name="Review" footer={{ nextButtonText: 'Submit' }}>
+            Review step content
+          </WizardStep>
+        </Wizard>
+      )}
+    </SomeContextProvider>
   );
 };

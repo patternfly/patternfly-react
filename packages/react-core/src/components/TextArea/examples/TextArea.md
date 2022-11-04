@@ -266,7 +266,7 @@ import { TextArea } from '@patternfly/react-core';
 
 **Note:** The icons for the success, invalid, calendar, etc. variations in form control elements are applied as background images to the form element. By default, the image URLs for these icons are data URIs. However, there may be cases where data URIs are not ideal, such as in an application with a content security policy that disallows data URIs for security reasons. The `isIconSprite` variation changes the icon source to an external SVG file that serves as a sprite for all of the supported icons.
 
-```js isBeta
+```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 

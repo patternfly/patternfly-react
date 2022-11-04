@@ -1,6 +1,45 @@
 import React from 'react';
+
 import { render, screen } from '@testing-library/react';
-import { WizardStep } from '../WizardStep';
+
+import { WizardStep, WizardStepProps } from '../WizardStep';
+import * as WizardContext from '../WizardContext';
+import { WizardControlStep } from '..';
+
+const testStepProps: WizardStepProps = {
+  id: 'test-step',
+  name: 'Test step',
+  footer: <>Step footer</>
+};
+
+const testStep: WizardControlStep = {
+  ...testStepProps,
+  index: 1
+};
+
+const setStep = jest.fn();
+
+const wizardContext: WizardContext.WizardContextProps = {
+  setStep,
+  steps: [testStep],
+  activeStep: testStep,
+  footer: <>Wizard footer</>,
+  onNext: jest.fn(),
+  onBack: jest.fn(),
+  onClose: jest.fn(),
+  goToStepById: jest.fn(),
+  goToStepByName: jest.fn(),
+  goToStepByIndex: jest.fn(),
+  setFooter: jest.fn(),
+  getStep: jest.fn(),
+  setSteps: jest.fn()
+};
+
+const useWizardContextSpy = jest.spyOn(WizardContext, 'useWizardContext');
+
+beforeEach(() => {
+  useWizardContextSpy.mockReturnValue(wizardContext);
+});
 
 test('renders without children', () => {
   const { container } = render(<WizardStep id="test-step" name="Test step" />);
@@ -22,12 +61,19 @@ test('excludes WizardBody when body is set to null', () => {
   expect(screen.queryByRole('main')).toBeNull();
 });
 
-test('uses body props for WizardBody when passed', () => {
-  render(
-    <WizardStep id="test-step" name="Test step" body={{ 'aria-label': 'Some label' }}>
-      content
-    </WizardStep>
-  );
+test('updates "isDisabled" in context when the value changes', () => {
+  render(<WizardStep {...testStep} isDisabled />);
+  expect(setStep).toHaveBeenCalledWith({ ...testStepProps, isDisabled: true, isVisited: true });
+});
 
-  expect(screen.getByLabelText('Some label')).toBeVisible();
+test('updates "navItem" in context when the value changes', () => {
+  const testNavItem = <>Some nav item</>;
+  render(<WizardStep {...testStep} navItem={testNavItem} />);
+
+  expect(setStep).toHaveBeenCalledWith({ ...testStepProps, navItem: testNavItem, isVisited: true });
+});
+
+test('updates "status" in context when the value changes', () => {
+  render(<WizardStep {...testStep} status="error" />);
+  expect(setStep).toHaveBeenCalledWith({ ...testStepProps, status: 'error', isVisited: true });
 });

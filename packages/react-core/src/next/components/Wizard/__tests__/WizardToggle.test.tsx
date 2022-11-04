@@ -5,10 +5,11 @@ import userEvent from '@testing-library/user-event';
 
 import { KeyTypes } from '../../../../helpers';
 import { WizardToggle, WizardToggleProps } from '../WizardToggle';
+import { WizardControlStep } from '../types';
 
-const steps = [
-  { id: 'id-1', name: 'First step', component: <>First step content</> },
-  { id: 'id-2', name: 'Second step', component: <>Second step content</> }
+const steps: WizardControlStep[] = [
+  { id: 'id-1', name: 'First step', index: 1, component: <>First step content</> },
+  { id: 'id-2', name: 'Second step', index: 2, component: <>Second step content</> }
 ];
 
 const defaultProps: WizardToggleProps = {
@@ -19,7 +20,9 @@ const defaultProps: WizardToggleProps = {
   'aria-label': 'Some label'
 };
 
-test('renders provided footer, nav, and active step content', () => {
+jest.mock('../WizardStep', () => ({ WizardStep: () => <div>step stub</div> }));
+
+test('renders provided footer, nav, and current step content', () => {
   render(<WizardToggle {...defaultProps} />);
 
   expect(screen.getByText('Some footer')).toBeVisible();
@@ -56,13 +59,6 @@ test('renders only the active step content by default', async () => {
 
   expect(screen.getByText('First step content')).toBeInTheDocument();
   expect(screen.queryByText('Second step content')).toBeNull;
-});
-
-test('renders all step content when unmountInactiveSteps is false', async () => {
-  render(<WizardToggle {...defaultProps} unmountInactiveSteps={false} />);
-
-  expect(screen.getByText('First step content')).toBeInTheDocument();
-  expect(screen.getByText('Second step content')).toBeInTheDocument();
 });
 
 test('has expanded properties when the toggle dropdown button is clicked', async () => {

@@ -50,6 +50,8 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   progressAriaLabel?: string;
   /** Associates the progress bar with it's label for accessibility purposes. Required when title not used */
   progressAriaLabelledBy?: string;
+  /** Modifies the text announced by assistive technologies when the progress bar updates. */
+  progressAriaLiveMessage?: string | ((loadPercentage: number) => string);
   /** Unique identifier for progress. Generated if not specified. */
   progressId?: string;
 }
@@ -71,6 +73,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   progressAriaLabel,
   progressAriaLabelledBy,
   progressId,
+  progressAriaLiveMessage,
   buttonAriaLabel = 'Remove from list',
   ...props
 }: MultipleFileUploadStatusItemProps) => {
@@ -139,6 +142,13 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     <li className={css(styles.multipleFileUploadStatusItem, className)} {...props}>
       <div className={styles.multipleFileUploadStatusItemIcon}>{fileIcon || <FileIcon />}</div>
       <div className={styles.multipleFileUploadStatusItemMain}>
+        <div className="pf-screen-reader" aria-live="polite">
+          {progressAriaLiveMessage &&
+            typeof progressAriaLiveMessage === 'function' &&
+            progressAriaLiveMessage(+loadPercentage.toFixed(2))}
+          {progressAriaLiveMessage && typeof progressAriaLiveMessage === 'string' && progressAriaLiveMessage}
+          {!progressAriaLiveMessage && `Progress value is ${progressValue || Math.floor(loadPercentage)}%.`}
+        </div>
         <Progress
           title={title}
           value={progressValue || loadPercentage}

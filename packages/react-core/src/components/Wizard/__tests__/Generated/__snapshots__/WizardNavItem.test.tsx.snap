@@ -8,6 +8,9 @@ exports[`WizardNavItem should match snapshot (auto-generated) 1`] = `
     <button
       aria-current="false"
       class="pf-c-wizard__nav-link"
+      data-ouia-component-id="OUIA-Generated-WizardNavItem-1"
+      data-ouia-component-type="PF4/WizardNavItem"
+      data-ouia-safe="true"
     />
     ReactNode
   </li>

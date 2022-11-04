@@ -3,7 +3,6 @@ id: Panel
 section: components
 cssPrefix: pf-c-panel
 propComponents: [Panel, PanelMain, PanelMainBody, PanelHeader, PanelFooter]
-beta: true
 ---
 
 ## Examples

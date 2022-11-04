@@ -9,7 +9,7 @@ describe('buildSteps', () => {
     try {
       buildSteps(<div />);
     } catch (error) {
-      expect(error.message).toEqual('Wizard only accepts children of type WizardStep');
+      expect(error.message).toEqual('Wizard only accepts children with required WizardStepProps.');
     }
   });
 
@@ -17,7 +17,7 @@ describe('buildSteps', () => {
     try {
       buildSteps('test' as any);
     } catch (error) {
-      expect(error.message).toEqual('Wizard only accepts children of type WizardStep');
+      expect(error.message).toEqual('Wizard only accepts children with required WizardStepProps.');
     }
   });
 
@@ -57,7 +57,7 @@ describe('buildSteps', () => {
         ]}
       />
     );
-    const [subStep, customSubStep, parentStep] = buildSteps(component);
+    const [parentStep, subStep, customSubStep] = buildSteps(component);
 
     expect((subStep as WizardSubStep).parentId).toEqual('step-1');
     expect((customSubStep as WizardSubStep).parentId).toEqual('step-1');

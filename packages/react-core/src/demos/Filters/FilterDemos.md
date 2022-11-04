@@ -24,25 +24,47 @@ EmptyStateIcon,
 Title,
 EmptyStateBody,
 EmptyStatePrimary,
-Button
+Button,
+Bullseye,
+ToolbarToggleGroup
 } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
-## Demos
+## Filtering demos
 
-### Filtering with a search input
+### Search input
 
 ```ts file="./examples/FilterSearchInput.tsx"
 ```
 
-### Filtering with a single select
+### Single select
 
 ```ts file="./examples/FilterSingleSelect.tsx"
 ```
 
-### Filtering with a checkbox select
+### Checkbox select
 
 ```ts file="./examples/FilterCheckboxSelect.tsx"
+```
+
+### Attribute search
+
+```ts file="./examples/FilterAttributeSearch.tsx"
+```
+
+### Mixed select filter group
+
+```ts file="./examples/FilterMixedSelectGroup.tsx"
+```
+
+### Single select filter group
+
+```ts file="./examples/FilterSameSelectGroup.tsx"
+```
+
+### Faceted filter
+
+```ts file="./examples/FilterFaceted.tsx"
 ```

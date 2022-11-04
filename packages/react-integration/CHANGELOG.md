@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.207.2 (2022-10-27)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.207.1 (2022-10-26)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [4.207.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.206.0...@patternfly/react-integration@4.207.0) (2022-10-21)
+
+
+### Features
+
+* **topology:** Allow tooltip usage on pipeline task node badges ([#8208](https://github.com/patternfly/patternfly-react/issues/8208)) ([f0a87ba](https://github.com/patternfly/patternfly-react/commit/f0a87ba7563c5194ea254c7e57b2b5e60be1eb58))
+
+
+
+
+
+# 4.206.0 (2022-10-21)
+
+
+### Features
+
+* **Topology:** Add option to fit layout to screen upon layout completion ([#8210](https://github.com/patternfly/patternfly-react/issues/8210)) ([01da036](https://github.com/patternfly/patternfly-react/commit/01da0368318e1b3e6eb3362202a3a207bea07625))
+
+
+
+
+
+# 4.205.0 (2022-09-30)
+
+
+### Features
+
+* **DualListSelector, SearchInput:** use SearchInput in DLS, add type prop to SearchInput ([#8040](https://github.com/patternfly/patternfly-react/issues/8040)) ([24474d8](https://github.com/patternfly/patternfly-react/commit/24474d83bc7e234027873a3cd43c824bc1576adb))
+
+
+
+
+
 # [4.204.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.203.7...@patternfly/react-integration@4.204.0) (2022-09-29)
 
 

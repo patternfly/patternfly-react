@@ -7,7 +7,7 @@ import NodeLabel from '../../../components/nodes/labels/NodeLabel';
 import { Layer } from '../../../components/layers';
 import { GROUPS_LAYER } from '../../../const';
 import { maxPadding, useCombineRefs, useHover } from '../../../utils';
-import { BadgeLocation, isGraph, Node, NodeStyle } from '../../../types';
+import { BadgeLocation, isGraph, LabelPosition, Node, NodeStyle } from '../../../types';
 import {
   useDragNode,
   WithContextMenuProps,
@@ -35,6 +35,7 @@ type DefaultTaskGroupProps = {
   badgeBorderColor?: string;
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
+  labelOffset?: number; // Space between the label and the group
   labelIconClass?: string; // Icon to show in label
   labelIcon?: string;
   labelIconPadding?: number;
@@ -63,6 +64,7 @@ const DefaultTaskGroup: React.FunctionComponent<DefaultTaskGroupProps> = ({
   badgeBorderColor,
   badgeClassName,
   badgeLocation,
+  labelOffset = 17,
   labelIconClass,
   labelIcon,
   labelIconPadding,
@@ -73,6 +75,7 @@ const DefaultTaskGroup: React.FunctionComponent<DefaultTaskGroupProps> = ({
   const dragLabelRef = useDragNode()[1];
   const refs = useCombineRefs<SVGPathElement>(hoverRef, dragNodeRef);
   const isHover = hover !== undefined ? hover : hovered;
+  const labelPosition = element.getLabelPosition();
 
   let parent = element.getParent();
   let altGroup = false;
@@ -81,13 +84,11 @@ const DefaultTaskGroup: React.FunctionComponent<DefaultTaskGroupProps> = ({
     parent = parent.getParent();
   }
 
+  const children = element.getNodes().filter(c => c.isVisible());
+
   // cast to number and coerce
   const padding = maxPadding(element.getStyle<NodeStyle>().padding ?? 17);
 
-  const children = element.getNodes().filter(c => c.isVisible());
-  if (children.length === 0) {
-    return null;
-  }
   const { minX, minY, maxX, maxY } = children.reduce(
     (acc, child) => {
       const bounds = child.getBounds();
@@ -100,6 +101,23 @@ const DefaultTaskGroup: React.FunctionComponent<DefaultTaskGroupProps> = ({
     },
     { minX: Infinity, minY: Infinity, maxX: 0, maxY: 0 }
   );
+
+  const [labelX, labelY] = React.useMemo(() => {
+    if (!showLabel || !(label || element.getLabel())) {
+      return [0, 0];
+    }
+    switch (labelPosition) {
+      case LabelPosition.right:
+        return [maxX + labelOffset, minY + (maxY - minY) / 2];
+      case LabelPosition.bottom:
+      default:
+        return [minX + (maxX - minX) / 2, maxY + labelOffset];
+    }
+  }, [element, label, labelOffset, labelPosition, maxX, maxY, minX, minY, showLabel]);
+
+  if (children.length === 0) {
+    return null;
+  }
 
   const groupClassName = css(
     styles.topologyGroup,
@@ -130,8 +148,9 @@ const DefaultTaskGroup: React.FunctionComponent<DefaultTaskGroupProps> = ({
       {showLabel && (label || element.getLabel()) && (
         <NodeLabel
           className={styles.topologyGroupLabel}
-          x={(maxX - minX) / 2}
-          y={maxY + 17}
+          x={labelX}
+          y={labelY}
+          position={labelPosition}
           paddingX={8}
           paddingY={5}
           dragRef={dragNodeRef ? dragLabelRef : undefined}

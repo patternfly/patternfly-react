@@ -23,6 +23,11 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 ```ts file="MenuBasic.tsx"
 ```
 
+### Danger menu item
+
+```ts file="MenuDangerMenuItem.tsx"
+```
+
 ### With icons
 
 ```ts file="MenuWithIcons.tsx"
@@ -30,7 +35,7 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 
 ### With checkbox
 
-```ts file="./MenuWithCheckbox.tsx" isBeta
+```ts file="./MenuWithCheckbox.tsx"
 ```
 
 ### Filtering with text input

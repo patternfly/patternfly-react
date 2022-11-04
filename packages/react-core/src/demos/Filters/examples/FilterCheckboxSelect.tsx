@@ -32,7 +32,7 @@ const repositories: Repository[] = [
   { name: 'US-Node 1', threads: '5', apps: '25', workspaces: '5', status: 'Stopped', location: 'Raleigh' },
   { name: 'US-Node 2', threads: '5', apps: '30', workspaces: '2', status: 'Down', location: 'Westford' },
   { name: 'US-Node 3', threads: '13', apps: '35', workspaces: '12', status: 'Degraded', location: 'Boston' },
-  { name: 'US-Node 4', threads: '2', apps: '5', workspaces: '18', status: 'Needs Maintainence', location: 'Raleigh' },
+  { name: 'US-Node 4', threads: '2', apps: '5', workspaces: '18', status: 'Needs Maintenance', location: 'Raleigh' },
   { name: 'US-Node 5', threads: '7', apps: '30', workspaces: '5', status: 'Running', location: 'Boston' },
   { name: 'US-Node 6', threads: '5', apps: '20', workspaces: '15', status: 'Stopped', location: 'Raleigh' },
   { name: 'CZ-Node 1', threads: '12', apps: '48', workspaces: '13', status: 'Down', location: 'Brno' },
@@ -52,12 +52,30 @@ const columnNames = {
 
 /* eslint-disable patternfly-react/no-anonymous-functions */
 export const FilterCheckboxSelect: React.FunctionComponent = () => {
-  // Set up table selection
-  const isRepoSelectable = (repo: Repository) => repo.name !== 'a'; // Arbitrary logic for this example
-  const selectableRepos = repositories.filter(isRepoSelectable);
+  // Set up repo filtering
+  const [selections, setSelections] = React.useState<string[]>([]);
+  const onFilter = (repo: Repository) => {
+    if (selections.length === 0) {
+      return true;
+    }
 
+    return selections.some(searchValue => {
+      let input: RegExp;
+      try {
+        input = new RegExp(searchValue, 'i');
+      } catch (err) {
+        input = new RegExp(searchValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+      }
+      return repo.location.search(input) >= 0;
+    });
+  };
+
+  const filteredRepos = repositories.filter(onFilter);
+
+  // Set up table selection
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
+  const isRepoSelectable = (repo: Repository) => repo.name !== 'a'; // Arbitrary logic for this example
   const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
   const setRepoSelected = (repo: Repository, isSelecting = true) =>
     setSelectedRepoNames(prevSelected => {
@@ -65,8 +83,8 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
       return isSelecting && isRepoSelectable(repo) ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
     });
   const selectAllRepos = (isSelecting = true) =>
-    setSelectedRepoNames(isSelecting ? selectableRepos.map(r => r.name) : []);
-  const areAllReposSelected = selectedRepoNames.length === selectableRepos.length;
+    setSelectedRepoNames(isSelecting ? filteredRepos.map(r => r.name) : []);
+  const areAllReposSelected = selectedRepoNames.length === filteredRepos.length && filteredRepos.length > 0;
   const areSomeReposSelected = selectedRepoNames.length > 0;
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
@@ -111,20 +129,11 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
   }, []);
 
   // Set up bulk selection menu
-  const bulkSelectMenuRef = React.createRef<HTMLDivElement>();
-  const bulkSelectToggleRef = React.createRef<any>();
-  const bulkSelectcontainerRef = React.createRef<HTMLDivElement>();
+  const bulkSelectMenuRef = React.useRef<HTMLDivElement>(null);
+  const bulkSelectToggleRef = React.useRef<any>(null);
+  const bulkSelectContainerRef = React.useRef<HTMLDivElement>(null);
 
   const [isBulkSelectOpen, setIsBulkSelectOpen] = React.useState<boolean>(false);
-
-  React.useEffect(() => {
-    window.addEventListener('keydown', handleBulkSelectMenuKeys);
-    window.addEventListener('click', handleBulkSelectClickOutside);
-    return () => {
-      window.removeEventListener('keydown', handleBulkSelectMenuKeys);
-      window.removeEventListener('click', handleBulkSelectClickOutside);
-    };
-  }, [isBulkSelectOpen, bulkSelectMenuRef]);
 
   const handleBulkSelectClickOutside = (event: MouseEvent) => {
     if (isBulkSelectOpen && !bulkSelectMenuRef.current?.contains(event.target as Node)) {
@@ -142,10 +151,19 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
     ) {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsBulkSelectOpen(!isBulkSelectOpen);
-        bulkSelectToggleRef.current?.focus();
+        bulkSelectToggleRef.current?.querySelector('button').focus();
       }
     }
   };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleBulkSelectMenuKeys);
+    window.addEventListener('click', handleBulkSelectClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleBulkSelectMenuKeys);
+      window.removeEventListener('click', handleBulkSelectClickOutside);
+    };
+  }, [isBulkSelectOpen, bulkSelectMenuRef]);
 
   const onBulkSelectToggleClick = (ev: React.MouseEvent) => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
@@ -173,8 +191,8 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
       splitButtonOptions={{
         items: [
           <MenuToggleCheckbox
-            id="select-checkbox"
-            key="select-checkbox"
+            id="checkbox-bulk-select"
+            key="checkbox-bulk-select"
             aria-label="Select all"
             isChecked={menuToggleCheckmark}
             onChange={(checked, _event) => selectAllRepos(checked)}
@@ -186,12 +204,12 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
   );
 
   const bulkSelectMenu = (
-    // eslint-disable-next-line no-console
     <Menu
       ref={bulkSelectMenuRef}
       onSelect={(_ev, itemId) => {
         selectAllRepos(itemId === 1 || itemId === 2);
         setIsBulkSelectOpen(!isBulkSelectOpen);
+        bulkSelectToggleRef.current?.querySelector('button').focus();
       }}
     >
       <MenuContent>
@@ -205,39 +223,22 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
   );
 
   const toolbarBulkSelect = (
-    <div ref={bulkSelectcontainerRef}>
+    <div ref={bulkSelectContainerRef}>
       <Popper
         trigger={bulkSelectToggle}
         popper={bulkSelectMenu}
-        appendTo={bulkSelectcontainerRef.current || undefined}
+        appendTo={bulkSelectContainerRef.current || undefined}
         isVisible={isBulkSelectOpen}
         popperMatchesTriggerWidth={false}
       />
     </div>
   );
 
-  // Set up single select menu & state
+  // Set up checkbox select menu
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [selections, setSelections] = React.useState<string[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
   const menuRef = React.useRef<HTMLDivElement>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
-
-  const onFilter = (repo: Repository) => {
-    if (selections.length === 0) {
-      return true;
-    }
-
-    return selections.some(searchValue => {
-      let input: RegExp;
-      try {
-        input = new RegExp(searchValue, 'i');
-      } catch (err) {
-        input = new RegExp(searchValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
-      }
-      return repo.location.search(input) >= 0;
-    });
-  };
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (isOpen && menuRef.current?.contains(event.target as Node)) {
@@ -303,7 +304,7 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
   );
 
   const menu = (
-    <Menu ref={menuRef} id="select-menu" onSelect={onSelect} selected={selections}>
+    <Menu ref={menuRef} id="checkbox-select-menu" onSelect={onSelect} selected={selections}>
       <MenuContent>
         <MenuList>
           <MenuItem hasCheck isSelected={selections.includes('Bangalore')} itemId="Bangalore">
@@ -372,15 +373,15 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
           <Tr>
             <Th />
             <Th width={20}>{columnNames.name}</Th>
-            <Th width={20}>{columnNames.threads}</Th>
-            <Th width={20}>{columnNames.apps}</Th>
-            <Th width={20}>{columnNames.workspaces}</Th>
+            <Th width={10}>{columnNames.threads}</Th>
+            <Th width={10}>{columnNames.apps}</Th>
+            <Th width={10}>{columnNames.workspaces}</Th>
             <Th width={20}>{columnNames.status}</Th>
             <Th width={20}>{columnNames.location}</Th>
           </Tr>
         </Thead>
         <Tbody>
-          {repositories.filter(onFilter).map((repo, rowIndex) => (
+          {filteredRepos.map((repo, rowIndex) => (
             <Tr key={repo.name}>
               <Td
                 select={{
@@ -390,12 +391,24 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
                   disable: !isRepoSelectable(repo)
                 }}
               />
-              <Td dataLabel={columnNames.name}>{repo.name}</Td>
-              <Td dataLabel={columnNames.threads}>{repo.threads}</Td>
-              <Td dataLabel={columnNames.apps}>{repo.apps}</Td>
-              <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
-              <Td dataLabel={columnNames.status}>{repo.status}</Td>
-              <Td dataLabel={columnNames.location}>{repo.location}</Td>
+              <Td dataLabel={columnNames.name} modifier="truncate">
+                {repo.name}
+              </Td>
+              <Td dataLabel={columnNames.threads} modifier="truncate">
+                {repo.threads}
+              </Td>
+              <Td dataLabel={columnNames.apps} modifier="truncate">
+                {repo.apps}
+              </Td>
+              <Td dataLabel={columnNames.workspaces} modifier="truncate">
+                {repo.workspaces}
+              </Td>
+              <Td dataLabel={columnNames.status} modifier="truncate">
+                {repo.status}
+              </Td>
+              <Td dataLabel={columnNames.location} modifier="truncate">
+                {repo.location}
+              </Td>
             </Tr>
           ))}
         </Tbody>

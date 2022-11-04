@@ -791,7 +791,7 @@ Note: If this table is going to be tested using axe-core, the tests will flag th
 aria-posinset, and aria-setsize as violations. This is an intentional choice at this time so that
 the voice over technologies will recognize the flat table structure as a tree.
 
-```ts isBeta file="LegacyTableTree.tsx"
+```ts file="LegacyTableTree.tsx"
 ```
 
 ### Striped

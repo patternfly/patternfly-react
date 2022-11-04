@@ -15,8 +15,8 @@ test('has no padding className when hasNoBodyPadding is not specified', () => {
   expect(screen.getByText('content')).not.toHaveClass('pf-m-no-padding');
 });
 
-test('has padding className when hasNoBodyPadding is specified', () => {
-  render(<WizardBody hasNoBodyPadding>content</WizardBody>);
+test('has padding className when hasNoPadding is specified', () => {
+  render(<WizardBody hasNoPadding>content</WizardBody>);
   expect(screen.getByText('content')).toHaveClass('pf-m-no-padding');
 });
 
@@ -30,12 +30,12 @@ test('has aria-labelledby when one is specified', () => {
   expect(container.firstElementChild).toHaveAttribute('aria-labelledby', 'some-id');
 });
 
-test('wrapper element is of type div when wrapperElement is not specified', () => {
+test('wrapper element is of type div when component is not specified', () => {
   const { container } = render(<WizardBody aria-label="Wizard body">content</WizardBody>);
   expect(container.firstElementChild?.tagName).toEqual('DIV');
 });
 
-test('renders with custom wrapperElement', () => {
-  const { container } = render(<WizardBody wrapperElement="main">content</WizardBody>);
+test('renders with custom component', () => {
+  const { container } = render(<WizardBody component="main">content</WizardBody>);
   expect(container.firstElementChild?.tagName).toEqual('MAIN');
 });

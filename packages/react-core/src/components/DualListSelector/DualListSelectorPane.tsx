@@ -1,12 +1,12 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
-import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { DualListSelectorTree, DualListSelectorTreeItemData } from './DualListSelectorTree';
 import { getUniqueId } from '../../helpers';
 import { DualListSelectorListWrapper } from './DualListSelectorListWrapper';
 import { DualListSelectorContext, DualListSelectorPaneContext } from './DualListSelectorContext';
 import { DualListSelectorList } from './DualListSelectorList';
+import { SearchInput } from '../SearchInput';
 
 /** Acts as the container for a list of options that are either available or chosen,
  * depending on the pane type (available or chosen). A search input and other actions,
@@ -57,6 +57,8 @@ export interface DualListSelectorPaneProps {
   onSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** @hide A callback for when the search input value for changes.  To be used when isSearchable is true. */
   onSearchInputChanged?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  /** @hide Callback for search input clear button */
+  onSearchInputClear?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** @hide Filter function for custom filtering based on search string. To be used when isSearchable is true. */
   filterOption?: (option: React.ReactNode, input: string) => boolean;
   /** @hide Accessible label for the search input. To be used when isSearchable is true. */
@@ -81,6 +83,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   searchInputAriaLabel = '',
   onFilterUpdate,
   onSearchInputChanged,
+  onSearchInputClear,
   filterOption,
   id = getUniqueId('dual-list-selector-pane'),
   isDisabled = false,
@@ -90,8 +93,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   const { isTree } = React.useContext(DualListSelectorContext);
 
   // only called when search input is dynamically built
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value;
+  const onChange = (newValue: string, e: React.FormEvent<HTMLInputElement>) => {
     let filtered: React.ReactNode[];
     if (isTree) {
       filtered = options
@@ -160,12 +162,14 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
               {searchInput ? (
                 searchInput
               ) : (
-                <input
-                  className={css(formStyles.formControl, formStyles.modifiers.search)}
-                  type="search"
+                <SearchInput
                   onChange={isDisabled ? undefined : onChange}
+                  onClear={
+                    onSearchInputClear ? onSearchInputClear : e => onChange('', e as React.FormEvent<HTMLInputElement>)
+                  }
+                  isDisabled={isDisabled}
                   aria-label={searchInputAriaLabel}
-                  disabled={isDisabled}
+                  type="search"
                 />
               )}
             </div>

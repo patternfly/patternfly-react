@@ -279,7 +279,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
 
       return {
         chosenOptions: newChosen,
+        chosenFilteredOptions: newChosen,
         availableOptions: newAvailable,
+        availableFilteredOptions: newAvailable,
         chosenOptionsSelected: [],
         availableOptionsSelected: []
       };
@@ -339,7 +341,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
         chosenOptionsSelected: [],
         availableOptionsSelected: [],
         chosenOptions: newChosen,
-        availableOptions: newAvailable
+        chosenFilteredOptions: newChosen,
+        availableOptions: newAvailable,
+        availableFilteredOptions: newAvailable
       };
     });
   };
@@ -393,7 +397,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
 
       return {
         chosenOptions: newChosen,
+        chosenFilteredOptions: newChosen,
         availableOptions: newAvailable,
+        availableFilteredOptions: newAvailable,
         chosenOptionsSelected: [],
         availableOptionsSelected: []
       };
@@ -449,7 +455,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
         chosenOptionsSelected: [],
         availableOptionsSelected: [],
         chosenOptions: newChosen,
-        availableOptions: newAvailable
+        chosenFilteredOptions: newChosen,
+        availableOptions: newAvailable,
+        availableFilteredOptions: newAvailable
       };
     });
   };

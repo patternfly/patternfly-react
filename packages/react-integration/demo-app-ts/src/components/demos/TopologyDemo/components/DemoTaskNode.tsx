@@ -21,6 +21,9 @@ type DemoTaskNodeProps = {
 } & WithContextMenuProps &
   WithSelectionProps;
 
+const DEMO_TIP_TEXT =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.';
+
 const DemoTaskNode: React.FunctionComponent<DemoTaskNodeProps> = ({
   element,
   onContextMenu,
@@ -49,13 +52,14 @@ const DemoTaskNode: React.FunctionComponent<DemoTaskNodeProps> = ({
       leftOffset={hasTaskIcon ? DEFAULT_WHEN_OFFSET + (element.getBounds().height - 4) * 0.75 : DEFAULT_WHEN_OFFSET}
     />
   ) : null;
+
+  // Set the badgePopoverParams, but if the node has badgeTooltips, this will be ignored
   const badgePopoverParams: PopoverProps = {
-    headerContent: <div>Popover header</div>,
-    bodyContent: (
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    ),
+    headerContent: 'Popover header',
+    bodyContent: DEMO_TIP_TEXT,
     footerContent: 'Popover footer'
   };
+
   return (
     <Layer id={detailsLevel !== ScaleDetailsLevel.high && hover ? TOP_LAYER : DEFAULT_LAYER}>
       <TaskNode
@@ -68,6 +72,7 @@ const DemoTaskNode: React.FunctionComponent<DemoTaskNodeProps> = ({
         {...passedData}
         {...rest}
         badgePopoverParams={badgePopoverParams}
+        badgeTooltip={data.badgeTooltips && DEMO_TIP_TEXT}
       >
         {whenDecorator}
       </TaskNode>
