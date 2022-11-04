@@ -427,7 +427,7 @@ class CardViewBasic extends React.Component {
                 isChecked={areAllSelected}
                 onClick={this.splitCheckboxSelectAll.bind(this)}
               >
-                {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
+                {numSelected !== 0 && `${numSelected} selected`}
               </DropdownToggleCheckbox>
             ]}
             onToggle={this.onSplitButtonToggle}

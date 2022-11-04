@@ -1370,9 +1370,7 @@ class PrimaryDetailCardView extends React.Component {
                 isChecked={areAllSelected}
                 onClick={this.splitCheckboxSelectAll}
               >
-                {numSelected !== 0 && (
-                  <React.Fragment>{allSelected ? this.state.totalItemCount : numSelected} selected</React.Fragment>
-                )}
+                {numSelected !== 0 && `${numSelected} selected`}
               </DropdownToggleCheckbox>
             ]}
             onToggle={this.onSplitButtonToggle}

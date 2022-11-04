@@ -234,7 +234,7 @@ class BulkSelectTableDemo extends React.Component {
                   anySelected ? this.handleSelectClick('none') : this.handleSelectClick('all');
                 }}
               >
-                {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
+                {numSelected !== 0 && `${numSelected} selected`}
               </DropdownToggleCheckbox>
             ]}
             onToggle={this.onDropDownToggle}
