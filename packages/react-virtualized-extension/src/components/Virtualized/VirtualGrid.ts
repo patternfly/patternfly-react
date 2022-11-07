@@ -10,7 +10,7 @@ import defaultOverscanIndicesGetter, {
 import updateScrollIndexHelper from './utils/updateScrollIndexHelper';
 import defaultCellRangeRenderer from './defaultCellRangeRenderer';
 import { requestAnimationTimeout, cancelAnimationTimeout } from './utils/requestAnimationTimeout';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import {
   CellRenderer,
   CellRangeRenderer,

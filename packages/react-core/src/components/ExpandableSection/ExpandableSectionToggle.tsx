@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/ExpandableSection/expandable-section';
+import { css } from '@breakaway/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 /** Acts as the toggle sub-component when the main expandable section component has the isDetached

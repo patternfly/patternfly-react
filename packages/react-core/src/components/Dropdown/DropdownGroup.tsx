@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { DropdownContext } from './dropdownConstants';
 
 export interface DropdownGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {

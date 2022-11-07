@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@patternfly/react-icons": "^4.92.10",
-    "@patternfly/react-styles": "^4.91.10",
+    "@breakaway/react-styles": "^4.91.10",
     "@patternfly/react-tokens": "^4.93.10",
     "focus-trap": "6.9.2",
     "react-dropzone": "9.0.0",

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Menu/menu';
+import { css } from '@breakaway/react-styles';
 import topOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_top_offset';
 import rightOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_m_left_right_offset';
 import leftOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_left_offset';

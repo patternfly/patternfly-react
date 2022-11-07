@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Skeleton/skeleton';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Skeleton/skeleton';
+import { css } from '@breakaway/react-styles';
 
 export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Skeleton */

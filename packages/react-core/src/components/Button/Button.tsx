@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Button/button';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Button/button';
+import { css } from '@breakaway/react-styles';
 import { Spinner, spinnerSize } from '../Spinner';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 import { Badge } from '../Badge';

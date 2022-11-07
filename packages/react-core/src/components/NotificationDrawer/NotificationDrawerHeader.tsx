@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/NotificationDrawer/notification-drawer';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 import { Text, TextVariants } from '../Text';

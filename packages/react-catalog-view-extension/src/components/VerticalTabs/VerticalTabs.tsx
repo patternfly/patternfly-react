@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 
 export interface VerticalTabsProps extends React.HTMLProps<HTMLUListElement> {
   /** Children nodes */

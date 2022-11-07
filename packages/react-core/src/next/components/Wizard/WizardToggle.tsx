@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 

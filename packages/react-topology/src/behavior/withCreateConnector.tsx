@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Topology/topology-components';
 import { hullPath } from '../utils/svg-utils';
 import DefaultCreateConnector from '../components/DefaultCreateConnector';
 import Point from '../geom/Point';

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/EmptyState/empty-state';
 
 export interface EmptyStateBodyProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the EmptyState */

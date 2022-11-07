@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Button, ButtonProps, ButtonVariant } from '../Button';
 import { AlertContext } from './AlertContext';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Alert/alert';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Alert/alert';
 
 export interface AlertToggleExpandButtonProps extends ButtonProps {
   /** Accessible label for the toggle button. */

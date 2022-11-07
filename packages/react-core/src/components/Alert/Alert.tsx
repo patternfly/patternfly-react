@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Alert/alert';
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Alert/alert';
+import accessibleStyles from '@breakaway/react-styles/css/utilities/Accessibility/accessibility';
 import { AlertIcon } from './AlertIcon';
 import { capitalize, useOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';

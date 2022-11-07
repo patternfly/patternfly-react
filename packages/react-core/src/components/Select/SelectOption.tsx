@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Select/select';
-import checkStyles from '@patternfly/react-styles/css/components/Check/check';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Select/select';
+import checkStyles from '@breakaway/react-styles/css/components/Check/check';
+import { css } from '@breakaway/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import { SelectConsumer, SelectVariant } from './selectConstants';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Point from '../../geom/Point';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Topology/topology-components';
 import { StatusModifier, useSize } from '../../utils';
 import { NodeStatus } from '../../types';
 

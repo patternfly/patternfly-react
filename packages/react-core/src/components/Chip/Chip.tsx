@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { Button } from '../Button';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
-import styles from '@patternfly/react-styles/css/components/Chip/chip';
+import styles from '@breakaway/react-styles/css/components/Chip/chip';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Form/form';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Form/form';
+import { css } from '@breakaway/react-styles';
 
 export interface FormProps extends Omit<React.HTMLProps<HTMLFormElement>, 'ref'> {
   /** Anything that can be rendered as Form content. */

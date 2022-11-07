@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/Slider/slider';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Slider/slider';
+import { css } from '@breakaway/react-styles';
 import { SliderStep } from './SliderStep';
 import { InputGroup, InputGroupText } from '../InputGroup';
 import { TextInput } from '../TextInput';

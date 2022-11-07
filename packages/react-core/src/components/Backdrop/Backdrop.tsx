@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Backdrop/backdrop';
 
 export interface BackdropProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the backdrop */

@@ -5,15 +5,15 @@ import { action } from 'mobx';
 import 'mobx-react/batchingForReactDom';
 import { observer } from 'mobx-react';
 import ReactMeasure from 'react-measure';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Topology/topology-components';
 import { State } from '../types';
 import SVGDefsProvider from './defs/SVGDefsProvider';
 import ElementWrapper from './ElementWrapper';
 import Dimensions from '../geom/Dimensions';
 import useVisualizationController from '../hooks/useVisualizationController';
 
-import '@patternfly/react-styles/css/components/Topology/topology-components.css';
+import '@breakaway/react-styles/css/components/Topology/topology-components.css';
 
 interface VisualizationSurfaceProps {
   state?: State;

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/layouts/Stack/stack';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/layouts/Stack/stack';
+import { css } from '@breakaway/react-styles';
 
 export interface StackItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Flag indicating if this Stack Layout item should fill the available vertical space. */

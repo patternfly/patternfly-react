@@ -30,7 +30,7 @@
   "dependencies": {
     "@patternfly/react-core": "^4.258.7",
     "@patternfly/react-icons": "^4.92.10",
-    "@patternfly/react-styles": "^4.91.10",
+    "@breakaway/react-styles": "^4.91.10",
     "@types/d3": "^5.7.2",
     "@types/d3-force": "^1.2.1",
     "@types/dagre": "0.7.42",

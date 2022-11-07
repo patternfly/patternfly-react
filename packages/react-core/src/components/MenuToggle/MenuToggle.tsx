@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/MenuToggle/menu-toggle';
+import { css } from '@breakaway/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { BadgeProps } from '../Badge';
 

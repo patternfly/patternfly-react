@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Breadcrumb/breadcrumb';
+import { css } from '@breakaway/react-styles';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export interface BreadcrumbProps extends React.HTMLProps<HTMLElement>, OUIAProps {

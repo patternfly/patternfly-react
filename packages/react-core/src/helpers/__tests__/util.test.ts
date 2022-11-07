@@ -9,7 +9,7 @@ import {
   formatBreakpointMods
 } from '../util';
 import { SIDE } from '../constants';
-import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
+import styles from '@breakaway/react-styles/css/layouts/Flex/flex';
 
 const createMockHtmlElement = (bounds: Partial<DOMRect>) =>
   ({

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { DropdownMenu, DropdownContext } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
-import topologyStyles from '@patternfly/react-styles/css/components/Topology/topology-components';
-import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
+import { css } from '@breakaway/react-styles';
+import topologyStyles from '@breakaway/react-styles/css/components/Topology/topology-components';
+import styles from '@breakaway/react-styles/css/components/Dropdown/dropdown';
 // FIXME fully qualified due to the effect of long build times on storybook
 import Popper from '../popper/Popper';
 

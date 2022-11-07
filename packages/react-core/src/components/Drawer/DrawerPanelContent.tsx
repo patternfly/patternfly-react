@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Drawer/drawer';
+import { css } from '@breakaway/react-styles';
 import { DrawerColorVariant, DrawerContext } from './Drawer';
 import { formatBreakpointMods } from '../../helpers/util';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';

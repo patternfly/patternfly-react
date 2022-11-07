@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Card/card';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Card/card';
 import { CardContext } from './Card';
 
 export interface CardTitleProps extends React.HTMLProps<HTMLDivElement> {

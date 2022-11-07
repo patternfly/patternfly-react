@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, Spinner } from '@patternfly/react-core';
 
 import { XTerm, XTermProps } from './XTerm';
@@ -8,9 +8,9 @@ import { SerialConsoleActions } from './SerialConsoleActions';
 
 import { constants } from '../common/constants';
 
-import styles from '@patternfly/react-styles/css/components/Consoles/SerialConsole';
-import '@patternfly/react-styles/css/components/Consoles/xterm.css';
-import '@patternfly/react-styles/css/components/Consoles/SerialConsole.css';
+import styles from '@breakaway/react-styles/css/components/Consoles/SerialConsole';
+import '@breakaway/react-styles/css/components/Consoles/xterm.css';
+import '@breakaway/react-styles/css/components/Consoles/SerialConsole.css';
 
 const { CONNECTED, DISCONNECTED, LOADING } = constants;
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/DataList/data-list';
 
 export interface DataListContentProps extends React.HTMLProps<HTMLElement> {
   /** Content rendered inside the DataList item */

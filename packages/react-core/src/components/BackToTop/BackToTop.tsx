@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/BackToTop/back-to-top';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/BackToTop/back-to-top';
+import { css } from '@breakaway/react-styles';
 import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
 import { canUseDOM } from '../../helpers/util';
 import { Button } from '../Button';

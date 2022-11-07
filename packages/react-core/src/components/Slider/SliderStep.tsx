@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Slider/slider';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Slider/slider';
+import { css } from '@breakaway/react-styles';
 
 export interface SliderStepProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Additional classes added to the slider step. */

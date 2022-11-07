@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 
 interface Repository {
   name: string;

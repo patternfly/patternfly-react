@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Drawer/drawer';
+import { css } from '@breakaway/react-styles';
 
 export interface DrawerActionsProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer actions button. */

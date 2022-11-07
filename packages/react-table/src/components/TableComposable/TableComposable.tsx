@@ -1,8 +1,8 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Table/table';
+import stylesGrid from '@breakaway/react-styles/css/components/Table/table-grid';
+import stylesTreeView from '@breakaway/react-styles/css/components/Table/table-tree-view';
+import { css } from '@breakaway/react-styles';
 import { toCamel } from '../Table/utils/utils';
 import { IVisibility } from '../Table/utils/decorators/classNames';
 import { useOUIAProps, OUIAProps, handleArrows, setTabIndex } from '@patternfly/react-core';

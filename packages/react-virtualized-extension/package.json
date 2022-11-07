@@ -32,7 +32,7 @@
   "dependencies": {
     "@patternfly/react-core": "^4.258.7",
     "@patternfly/react-icons": "^4.92.10",
-    "@patternfly/react-styles": "^4.91.10",
+    "@breakaway/react-styles": "^4.91.10",
     "linear-layout-vector": "0.0.1",
     "react-virtualized": "^9.21.1",
     "tslib": "^2.0.0"

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
+import { css } from '@breakaway/react-styles';
 
 export interface MultipleFileUploadTitleTextProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside multiple file upload title text */

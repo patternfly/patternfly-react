@@ -1,7 +1,7 @@
 import * as React from 'react';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Table/table';
 import { Button, Tooltip, Popover, TooltipProps, PopoverProps } from '@patternfly/react-core';
 import { TableText } from './TableText';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Icon/icon';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Icon/icon';
+import { css } from '@breakaway/react-styles';
 import { Spinner } from '../Spinner';
 
 export interface IconComponentProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'size'> {

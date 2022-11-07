@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
-import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/TreeView/tree-view';
+import formStyles from '@breakaway/react-styles/css/components/FormControl/form-control';
 
 /** Renders a search input for the tree view. This sub-component should be passed into the
  * tree view component's toolbar property.

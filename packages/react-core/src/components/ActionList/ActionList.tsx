@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/ActionList/action-list';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/ActionList/action-list';
 
 export interface ActionListProps extends React.HTMLProps<HTMLDivElement> {
   /** Children of the action list */

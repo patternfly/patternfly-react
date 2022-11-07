@@ -11,8 +11,8 @@ import {
 } from '../../behavior';
 import { useHover } from '../../utils';
 import { Layer } from '../layers';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Topology/topology-components';
 import { getEdgeAnimationDuration, getEdgeStyleClassModifier } from '../../utils/style-utils';
 import DefaultConnectorTerminal from './terminals/DefaultConnectorTerminal';
 import { TOP_LAYER } from '../../const';

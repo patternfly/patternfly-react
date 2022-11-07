@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Tooltip } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 
 export interface CatalogTileBadgeProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Children (typically an Icon) */

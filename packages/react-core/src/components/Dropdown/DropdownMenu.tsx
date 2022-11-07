@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Dropdown/dropdown';
+import { css } from '@breakaway/react-styles';
 import { keyHandler, formatBreakpointMods } from '../../helpers/util';
 import { DropdownPosition, DropdownArrowContext, DropdownContext } from './dropdownConstants';
 

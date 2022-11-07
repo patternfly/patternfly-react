@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/layouts/Gallery/gallery';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/layouts/Gallery/gallery';
 
 export interface GalleryProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the Gallery layout */

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/layouts/Split/split';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/layouts/Split/split';
+import { css } from '@breakaway/react-styles';
 
 export interface SplitProps extends React.HTMLProps<HTMLDivElement> {
   /** Adds space between children. */

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 
 export interface FormAlertProps extends React.HTMLProps<HTMLDivElement> {
   /** An inline PatternFly Alert. */

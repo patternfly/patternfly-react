@@ -31,7 +31,7 @@
   "dependencies": {
     "@patternfly/react-core": "^4.258.7",
     "@patternfly/react-icons": "^4.92.10",
-    "@patternfly/react-styles": "^4.91.10",
+    "@breakaway/react-styles": "^4.91.10",
     "memoize-one": "^5.1.0",
     "resize-observer-polyfill": "^1.5.1"
   },

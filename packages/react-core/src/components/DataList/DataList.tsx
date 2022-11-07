@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import stylesGrid from '@patternfly/react-styles/css/components/DataList/data-list-grid';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/DataList/data-list';
+import stylesGrid from '@breakaway/react-styles/css/components/DataList/data-list-grid';
 import { PickOptional } from '../../helpers/typeUtils';
 
 const gridBreakpointClasses = {

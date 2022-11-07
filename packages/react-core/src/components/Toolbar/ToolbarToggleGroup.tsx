@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Toolbar/toolbar';
+import { css } from '@breakaway/react-styles';
 import { ToolbarGroupProps } from './ToolbarGroup';
 import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';

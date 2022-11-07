@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Table/table';
+import stylesTreeView from '@breakaway/react-styles/css/components/Table/table-tree-view';
 import { RowWrapperProps } from './RowWrapper';
 import { Tr } from '../TableComposable';
 

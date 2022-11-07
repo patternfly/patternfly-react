@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Dropzone, { DropzoneProps, DropFileEventHandler } from 'react-dropzone';
-import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
+import { css } from '@breakaway/react-styles';
 
 /** Acts as a container for all other MultipleFileUpload sub-components. This sub-component
  * also provides the functionality for file uploads, and access to the uploaded files via

@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { MenuItemProps, MenuItem } from '../../../components/Menu';
 
 export interface SelectOptionProps extends Omit<MenuItemProps, 'ref'> {

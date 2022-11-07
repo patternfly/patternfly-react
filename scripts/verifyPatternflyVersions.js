@@ -2,7 +2,7 @@
 const semver = require('semver');
 const Project = require('@lerna/project');
 
-// '@patternfly/patternfly': {'4.0.4': ['@patternfly/react-styles', ...]},
+// '@patternfly/patternfly': {'4.0.4': ['@breakaway/react-styles', ...]},
 // '@patternfly/react-core': {'^4.0.3': ['@patternfly/react-docs', ...]]
 const patternflyDeps = {};
 const otherDeps = ['typescript', 'tslib'];

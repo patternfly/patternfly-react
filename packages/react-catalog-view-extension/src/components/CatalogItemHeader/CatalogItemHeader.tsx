@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 
 export interface CatalogItemHeaderProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Additional css classes */

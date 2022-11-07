@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Backdrop/backdrop';
 import { canUseDOM } from '../../helpers';
 import { KeyTypes } from '../../helpers/constants';
 import { AboutModalContainer } from './AboutModalContainer';

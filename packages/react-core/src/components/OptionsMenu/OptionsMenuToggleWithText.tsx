@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { KeyTypes } from '../../helpers/constants';
-import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
+import styles from '@breakaway/react-styles/css/components/OptionsMenu/options-menu';
 import { DropdownContext } from '../Dropdown';
 
 export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivElement> {

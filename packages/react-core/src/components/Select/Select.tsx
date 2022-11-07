@@ -1,9 +1,9 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Select/select';
-import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
-import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Select/select';
+import badgeStyles from '@breakaway/react-styles/css/components/Badge/badge';
+import formStyles from '@breakaway/react-styles/css/components/FormControl/form-control';
+import buttonStyles from '@breakaway/react-styles/css/components/Button/button';
+import { css } from '@breakaway/react-styles';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';

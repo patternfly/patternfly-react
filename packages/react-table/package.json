@@ -33,7 +33,7 @@
   "dependencies": {
     "@patternfly/react-core": "^4.258.7",
     "@patternfly/react-icons": "^4.92.10",
-    "@patternfly/react-styles": "^4.91.10",
+    "@breakaway/react-styles": "^4.91.10",
     "@patternfly/react-tokens": "^4.93.10",
     "lodash": "^4.17.19",
     "tslib": "^2.0.0"

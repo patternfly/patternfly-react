@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { MenuListProps, MenuList } from '../../../components/Menu';
 
 export interface DropdownListProps extends MenuListProps {

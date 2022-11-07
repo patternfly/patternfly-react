@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, ButtonProps, Tooltip } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
-import '@patternfly/react-styles/css/utilities/Spacing/spacing.css';
+import '@breakaway/react-styles/css/utilities/Spacing/spacing.css';
 import { Link } from 'react-router-dom';
 
 const href = 'https://www.google.com';

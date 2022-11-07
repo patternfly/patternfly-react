@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Login/login';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Login/login';
+import { css } from '@breakaway/react-styles';
 
 export interface LoginProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the main section of the login layout */

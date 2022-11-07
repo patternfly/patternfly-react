@@ -1,4 +1,4 @@
-import styles from '@patternfly/react-styles/css/components/Topology/topology-pipelines';
+import styles from '@breakaway/react-styles/css/components/Topology/topology-pipelines';
 import { PipelineNodeModel, RunStatus, WhenStatus } from '../types';
 import { EdgeModel } from '../../types';
 import { DEFAULT_EDGE_TYPE, DEFAULT_FINALLY_NODE_TYPE, DEFAULT_SPACER_NODE_TYPE } from '../const';

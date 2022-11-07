@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Tabs/tabs';
+import { css } from '@breakaway/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { Popper } from '../../helpers';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';

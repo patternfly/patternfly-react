@@ -5,8 +5,8 @@ import { Select, SelectOption } from '../Select';
 import { InputGroup } from '../InputGroup';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/CalendarMonth/calendar-month';
 import { getUniqueId } from '../../helpers/util';
 import { isValidDate } from '../../helpers/datetimeUtils';
 

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Tooltip/tooltip';
+import { css } from '@breakaway/react-styles';
 import { TooltipContent } from './TooltipContent';
 import { TooltipArrow } from './TooltipArrow';
 import { KeyTypes } from '../../helpers/constants';

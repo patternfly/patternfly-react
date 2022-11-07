@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { Menu, MenuContent, MenuProps } from '../../../components/Menu';
 import { Popper } from '../../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../../helpers';

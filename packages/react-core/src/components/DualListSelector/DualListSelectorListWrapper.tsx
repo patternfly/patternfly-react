@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/DualListSelector/dual-list-selector';
+import { css } from '@breakaway/react-styles';
 import { getUniqueId, handleArrows } from '../../helpers';
 import { DualListSelectorList } from './DualListSelectorList';
 import { DualListSelectorContext, DualListSelectorListContext } from './DualListSelectorContext';

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/CodeBlock/code-block';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/CodeBlock/code-block';
+import { css } from '@breakaway/react-styles';
 
 export interface CodeBlockProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the code block */

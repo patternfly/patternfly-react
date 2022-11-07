@@ -1,7 +1,7 @@
 import * as React from 'react';
-import modalStyles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
-import { css } from '@patternfly/react-styles';
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
+import modalStyles from '@breakaway/react-styles/css/components/ModalBox/modal-box';
+import { css } from '@breakaway/react-styles';
+import accessibleStyles from '@breakaway/react-styles/css/utilities/Accessibility/accessibility';
 import { capitalize } from '../../helpers';
 import { Tooltip } from '../Tooltip';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Select/select';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Select/select';
+import buttonStyles from '@breakaway/react-styles/css/components/Button/button';
+import { css } from '@breakaway/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { SelectVariant, SelectFooterTabbableItems } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';

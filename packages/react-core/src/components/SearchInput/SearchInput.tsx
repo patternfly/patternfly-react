@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';

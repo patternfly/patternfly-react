@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { CancelButton } from '../CancelButton';
 import { ConfirmButton } from '../ConfirmButton';
-import '@patternfly/react-styles/css/components/Table/inline-edit.css';
+import '@breakaway/react-styles/css/components/Table/inline-edit.css';
 import { inlineEditStyles as styles } from '../InlineEdit/css/inline-edit-css';
 import { WindowDimensions, ClientBoundingRect } from '../../utils';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Menu/menu';
+import { css } from '@breakaway/react-styles';
 
 export interface MenuFooterProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the footer */

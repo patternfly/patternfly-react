@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 
 export interface VerticalTabsTabProps extends Omit<React.HTMLProps<HTMLLIElement>, 'title'> {
   /** Child tab nodes (VerticalTabsTab's) */

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/NumberInput/number-input';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/NumberInput/number-input';
+import { css } from '@breakaway/react-styles';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import { InputGroup } from '../InputGroup';

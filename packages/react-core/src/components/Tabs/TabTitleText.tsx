@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Tabs/tabs';
 
 export interface TabTitleTextProps extends React.HTMLProps<HTMLSpanElement> {
   /** Text to be rendered inside the tab button title. */

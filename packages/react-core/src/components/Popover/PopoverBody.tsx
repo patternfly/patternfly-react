@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Popover/popover';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Popover/popover';
+import { css } from '@breakaway/react-styles';
 
 export interface PopoverBodyProps extends React.HTMLProps<HTMLDivElement> {
   /** Popover body id */

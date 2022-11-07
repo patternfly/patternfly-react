@@ -15,7 +15,7 @@ import {
 
 import accessibilityOverscanIndicesGetter from './accessibilityOverscanIndicesGetter';
 import { VirtualGrid, VirtualGridProps } from './VirtualGrid';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { TableComposable, Tbody } from '@patternfly/react-table';
 
 /**

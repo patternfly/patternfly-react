@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/DualListSelector/dual-list-selector';
 import { DualListSelectorListItem } from './DualListSelectorListItem';
 import * as React from 'react';
 import { DualListSelectorListContext } from './DualListSelectorContext';

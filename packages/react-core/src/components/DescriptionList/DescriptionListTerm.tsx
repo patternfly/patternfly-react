@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/DescriptionList/description-list';
+import { css } from '@breakaway/react-styles';
 
 export interface DescriptionListTermProps extends React.HTMLProps<HTMLElement> {
   /** Anything that can be rendered inside of list term */

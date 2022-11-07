@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Wizard/wizard';
 
 export interface WizardFooterProps {
   /** Buttons in the footer */

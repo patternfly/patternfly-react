@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/ClipboardCopy/clipboard-copy';
+import { css } from '@breakaway/react-styles';
 
 export interface ClipboardCopyActionProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside the clipboard copy action. */

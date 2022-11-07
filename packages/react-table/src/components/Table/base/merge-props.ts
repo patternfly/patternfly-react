@@ -6,7 +6,7 @@
  */
 import * as React from 'react';
 import mergeWith from 'lodash/mergeWith';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 
 /**
  * @param {any} props - Props

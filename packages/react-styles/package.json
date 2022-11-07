@@ -1,5 +1,5 @@
 {
-  "name": "@patternfly/react-styles",
+  "name": "@breakaway/react-styles",
   "version": "4.91.10",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",

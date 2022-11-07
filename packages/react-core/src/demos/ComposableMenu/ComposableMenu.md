@@ -21,8 +21,8 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import avatarImg from './examples/avatarImg.svg';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Menu/menu';
 
 ## Demos
 

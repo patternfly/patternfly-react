@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ToggleTemplate, ToggleTemplateProps } from './ToggleTemplate';
-import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Pagination/pagination';
+import { css } from '@breakaway/react-styles';
 
 import { fillTemplate } from '../../helpers';
 import { Navigation } from './Navigation';

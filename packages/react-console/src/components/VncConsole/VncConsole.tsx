@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, Spinner } from '@patternfly/react-core';
 
 import { initLogging } from '@novnc/novnc/core/util/logging';
@@ -10,8 +10,8 @@ import RFB from '@novnc/novnc/core/rfb';
 import { VncActions } from './VncActions';
 import { constants } from '../common/constants';
 
-import styles from '@patternfly/react-styles/css/components/Consoles/VncConsole';
-import '@patternfly/react-styles/css/components/Consoles/VncConsole.css';
+import styles from '@breakaway/react-styles/css/components/Consoles/VncConsole';
+import '@breakaway/react-styles/css/components/Consoles/VncConsole.css';
 
 const { CONNECTED, CONNECTING, DISCONNECTED } = constants;
 

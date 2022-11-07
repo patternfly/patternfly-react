@@ -8,7 +8,7 @@ packages=(
   @patternfly/react-icons
   @patternfly/react-inline-edit-extension
   @patternfly/react-log-viewer
-  @patternfly/react-styles
+  @breakaway/react-styles
   @patternfly/react-table
   @patternfly/react-tokens
   @patternfly/react-topology

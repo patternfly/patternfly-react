@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/layouts/Grid/grid';
+import { css } from '@breakaway/react-styles';
 import { DeviceSizes } from '../../styles/sizes';
 import * as gridToken from '@patternfly/react-tokens/dist/esm/l_grid_item_Order';
 

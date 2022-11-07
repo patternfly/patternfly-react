@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Dropdown/dropdown';
 import { DropdownToggleProps } from './DropdownToggle';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { Toggle } from './Toggle';

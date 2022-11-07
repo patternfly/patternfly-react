@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 
 export interface NotificationDrawerListProps extends React.HTMLProps<HTMLUListElement> {
   /**  Content rendered inside the notification drawer list body */

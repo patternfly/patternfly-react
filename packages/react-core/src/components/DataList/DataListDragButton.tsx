@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/DataList/data-list';
 import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
 import { DataListContext } from './DataList';
 

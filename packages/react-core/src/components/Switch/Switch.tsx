@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Switch/switch';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Switch/switch';
+import { css } from '@breakaway/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import { getUniqueId } from '../../helpers/util';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';

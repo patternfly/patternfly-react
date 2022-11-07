@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Title/title';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Title/title';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export enum TitleSizes {

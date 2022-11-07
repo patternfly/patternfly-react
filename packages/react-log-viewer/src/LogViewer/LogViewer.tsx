@@ -1,10 +1,10 @@
 import React, { useState, useEffect, memo } from 'react';
 import { LogViewerContext, LogViewerToolbarContext } from './LogViewerContext';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { LogViewerRow } from './LogViewerRow';
 import { parseConsoleOutput, searchedKeyWordType, stripAnsi } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
-import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
+import styles from '@breakaway/react-styles/css/components/LogViewer/log-viewer';
 import AnsiUp from '../ansi_up/ansi_up';
 
 interface LogViewerProps {

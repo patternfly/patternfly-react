@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/NotificationDrawer/notification-drawer';
 import maxLines from '@patternfly/react-tokens/dist/esm/c_notification_drawer__group_toggle_title_max_lines';
 
 import { Badge } from '../Badge';

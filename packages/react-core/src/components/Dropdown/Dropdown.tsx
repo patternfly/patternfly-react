@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
+import styles from '@breakaway/react-styles/css/components/Dropdown/dropdown';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 import { DropdownWithContext } from './DropdownWithContext';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';

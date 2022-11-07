@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/ClipboardCopy/clipboard-copy';
+import { css } from '@breakaway/react-styles';
 import { ClipboardCopyProps } from './ClipboardCopy';
 import { PickOptional } from '../../helpers/typeUtils';
 

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { DropdownContext } from './dropdownConstants';
 import { KEYHANDLER_DIRECTION } from '../../helpers/constants';
 import { preventedEvents } from '../../helpers/util';
 import { Tooltip } from '../Tooltip';
-import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
+import styles from '@breakaway/react-styles/css/components/Dropdown/dropdown';
 
 export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorElement> {
   /** Anything which can be rendered as dropdown item */

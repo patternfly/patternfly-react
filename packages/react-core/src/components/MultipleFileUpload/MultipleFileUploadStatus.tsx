@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
+import { css } from '@breakaway/react-styles';
 import { ExpandableSection } from '../ExpandableSection';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';

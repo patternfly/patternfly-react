@@ -4,8 +4,8 @@ import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-ico
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { OnRowEdit } from './TableTypes';
-import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import { css } from '@patternfly/react-styles';
+import inlineStyles from '@breakaway/react-styles/css/components/InlineEdit/inline-edit';
+import { css } from '@breakaway/react-styles';
 
 export interface EditColumnProps {
   name?: string;

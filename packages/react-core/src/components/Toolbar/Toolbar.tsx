@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
+import styles from '@breakaway/react-styles/css/components/Toolbar/toolbar';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
 import { formatBreakpointMods, canUseDOM } from '../../helpers/util';

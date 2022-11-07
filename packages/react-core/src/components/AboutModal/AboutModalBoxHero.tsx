@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/AboutModalBox/about-modal-box';
 // eslint-disable-next-line camelcase
 import c_about_modal_box__hero_sm_BackgroundImage from '@patternfly/react-tokens/dist/esm/c_about_modal_box__hero_sm_BackgroundImage';
 

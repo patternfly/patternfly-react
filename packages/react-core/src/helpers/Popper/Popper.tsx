@@ -2,9 +2,9 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Placement, Modifier } from './thirdparty/popper-core';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { FindRefWrapper } from './FindRefWrapper';
-import '@patternfly/react-styles/css/components/Popper/Popper.css';
+import '@breakaway/react-styles/css/components/Popper/Popper.css';
 
 const hash = {
   left: 'right',

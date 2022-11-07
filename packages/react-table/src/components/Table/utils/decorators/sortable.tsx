@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
 import { SortColumn, SortByDirection } from '../../SortColumn';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';

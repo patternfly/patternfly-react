@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Menu/menu';
+import { css } from '@breakaway/react-styles';
 
 export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
   /** Anything that can be rendered inside of menu list */

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import datePickerStyles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
-import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
+import { css } from '@breakaway/react-styles';
+import datePickerStyles from '@breakaway/react-styles/css/components/DatePicker/date-picker';
+import formStyles from '@breakaway/react-styles/css/components/FormControl/form-control';
+import menuStyles from '@breakaway/react-styles/css/components/Menu/menu';
 import { getUniqueId } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';

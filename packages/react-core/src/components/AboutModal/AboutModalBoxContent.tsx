@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
-import contentStyles from '@patternfly/react-styles/css/components/Content/content';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/AboutModalBox/about-modal-box';
+import contentStyles from '@breakaway/react-styles/css/components/Content/content';
 
 export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the AboutModalBoxContent  */

@@ -12,7 +12,7 @@ import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
 import ExpandArrowsAltIcon from '@patternfly/react-icons/dist/esm/icons/expand-arrows-alt-icon';
 import SearchPlusIcon from '@patternfly/react-icons/dist/esm/icons/search-plus-icon';
 import SearchMinusIcon from '@patternfly/react-icons/dist/esm/icons/search-minus-icon';
-import '@patternfly/react-styles/css/components/Topology/topology-controlbar.css';
+import '@breakaway/react-styles/css/components/Topology/topology-controlbar.css';
 
 /* ID's for common control buttons */
 export const ZOOM_IN = 'zoom-in';

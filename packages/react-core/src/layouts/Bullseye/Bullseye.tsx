@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/layouts/Bullseye/bullseye';
 
 export interface BullseyeProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the Bullseye layout */

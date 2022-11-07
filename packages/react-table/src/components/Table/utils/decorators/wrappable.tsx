@@ -1,4 +1,4 @@
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import styles from '@breakaway/react-styles/css/components/Table/table';
 import { ITransform } from '../../TableTypes';
 
 export const breakWord: ITransform = () => ({

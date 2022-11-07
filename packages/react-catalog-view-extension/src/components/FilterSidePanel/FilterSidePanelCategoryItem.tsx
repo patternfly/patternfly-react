@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { Checkbox } from '@patternfly/react-core';
 
 import { getUniqueId } from '../../helpers/util';

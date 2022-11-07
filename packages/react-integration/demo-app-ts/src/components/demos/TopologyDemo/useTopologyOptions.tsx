@@ -16,7 +16,7 @@ import {
   ToolbarItem,
   Tooltip
 } from '@patternfly/react-core';
-import '@patternfly/react-styles/css/components/Topology/topology-components.css';
+import '@breakaway/react-styles/css/components/Topology/topology-components.css';
 import { DefaultEdgeOptions, DefaultNodeOptions, GeneratorEdgeOptions, GeneratorNodeOptions } from './data/generator';
 import {
   EDGE_ANIMATION_SPEEDS,

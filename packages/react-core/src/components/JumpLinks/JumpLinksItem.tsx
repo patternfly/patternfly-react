@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/JumpLinks/jump-links';
 import { JumpLinksList } from './JumpLinksList';
 
 export interface JumpLinksItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {

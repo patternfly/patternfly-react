@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/DescriptionList/description-list';
 import { formatBreakpointMods } from '../../helpers';
 
 export interface BreakpointModifiers {

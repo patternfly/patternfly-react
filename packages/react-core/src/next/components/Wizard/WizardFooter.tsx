@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Wizard/wizard';
 
 import { Button, ButtonVariant } from '../../../components/Button';
 import { isCustomWizardFooter, WizardControlStep, WizardNavStepFunction } from './types';

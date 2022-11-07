@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/SkipToContent/skip-to-content';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/SkipToContent/skip-to-content';
+import buttonStyles from '@breakaway/react-styles/css/components/Button/button';
+import { css } from '@breakaway/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 
 export interface SkipToContentProps extends React.HTMLProps<HTMLAnchorElement> {

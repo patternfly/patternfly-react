@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/ChipGroup/chip-group';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/ChipGroup/chip-group';
+import { css } from '@breakaway/react-styles';
 import { Button } from '../Button';
 import { Chip } from '../Chip';
 import { Tooltip, TooltipPosition } from '../Tooltip';

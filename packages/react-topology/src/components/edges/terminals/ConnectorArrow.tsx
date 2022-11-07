@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as _ from 'lodash';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Topology/topology-components';
 import Point from '../../../geom/Point';
 import { ConnectDragSource } from '../../../behavior/dnd-types';
 import { getConnectorStartPoint, getConnectorRotationAngle, getConnectorBoundingBox } from './terminalUtils';

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Masthead/masthead';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Masthead/masthead';
+import { css } from '@breakaway/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from '../Page/PageContext';
 

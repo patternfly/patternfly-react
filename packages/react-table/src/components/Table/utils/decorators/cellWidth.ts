@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Table/table';
 import { ITransform } from '../../TableTypes';
 import { capitalize } from '../utils';
 

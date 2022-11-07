@@ -1,7 +1,7 @@
 import React from 'react';
 
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Wizard/wizard';
+import { css } from '@breakaway/react-styles';
 
 /**
  * Used as a wrapper for WizardStep content, where the wrapping element is customizable.

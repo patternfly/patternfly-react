@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/HelperText/helper-text';
+import { css } from '@breakaway/react-styles';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';

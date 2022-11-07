@@ -1,8 +1,8 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { Button } from '@patternfly/react-core';
 
-import styles from '@patternfly/react-styles/css/components/Consoles/SerialConsole';
+import styles from '@breakaway/react-styles/css/components/Consoles/SerialConsole';
 
 export interface SerialConsoleActionsProps extends React.HTMLProps<HTMLDivElement> {
   onDisconnect: () => void;

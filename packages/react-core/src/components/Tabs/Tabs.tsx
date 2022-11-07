@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Tabs/tabs';
+import buttonStyles from '@breakaway/react-styles/css/components/Button/button';
+import { css } from '@breakaway/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';

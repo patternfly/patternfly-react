@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Select/select';
-import formStyles from '@patternfly/react-styles/css/components/Form/form';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Select/select';
+import formStyles from '@breakaway/react-styles/css/components/Form/form';
+import { css } from '@breakaway/react-styles';
 import { SelectOptionObject, SelectOption } from './SelectOption';
 import { SelectConsumer, SelectPosition, SelectVariant, SelectContextInterface } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';

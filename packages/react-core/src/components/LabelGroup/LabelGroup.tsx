@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/LabelGroup/label-group';
-import labelStyles from '@patternfly/react-styles/css/components/Label/label';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/LabelGroup/label-group';
+import labelStyles from '@breakaway/react-styles/css/components/Label/label';
+import { css } from '@breakaway/react-styles';
 import { Button } from '../Button';
 import { Label } from '../Label';
 import { Tooltip, TooltipPosition } from '../Tooltip';

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { FocusTrap } from '../../helpers';
-import modalStyles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
-import bullsEyeStyles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
-import { css } from '@patternfly/react-styles';
+import modalStyles from '@breakaway/react-styles/css/components/ModalBox/modal-box';
+import bullsEyeStyles from '@breakaway/react-styles/css/layouts/Bullseye/bullseye';
+import { css } from '@breakaway/react-styles';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
 import { Backdrop } from '../Backdrop/Backdrop';

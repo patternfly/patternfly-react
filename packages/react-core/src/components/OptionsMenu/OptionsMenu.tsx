@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
+import styles from '@breakaway/react-styles/css/components/OptionsMenu/options-menu';
 import { DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 import { OUIAProps, useOUIAId } from '../../helpers';

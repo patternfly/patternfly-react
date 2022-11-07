@@ -1,6 +1,6 @@
 import * as React from 'react';
-import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
-import { css } from '@patternfly/react-styles';
+import progressStyle from '@breakaway/react-styles/css/components/Progress/progress';
+import { css } from '@breakaway/react-styles';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';

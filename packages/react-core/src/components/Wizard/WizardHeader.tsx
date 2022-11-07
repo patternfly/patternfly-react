@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Wizard/wizard';
+import { css } from '@breakaway/react-styles';
 import { Button } from '../Button';
 import { Title } from '../Title';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';

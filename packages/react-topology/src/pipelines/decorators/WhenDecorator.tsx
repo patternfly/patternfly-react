@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Tooltip } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Topology/topology-pipelines';
-import topologyStyles from '@patternfly/react-styles/css/components/Topology/topology-components';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Topology/topology-pipelines';
+import topologyStyles from '@breakaway/react-styles/css/components/Topology/topology-components';
 import { observer } from '../../mobx-exports';
 import { Node } from '../../types';
 import { WhenStatus } from '../types';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { SpiceMainConn, sendCtrlAltDel } from '@spice-project/spice-html5';
 
 import { constants } from '../common/constants';

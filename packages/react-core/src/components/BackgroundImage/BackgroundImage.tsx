@@ -5,8 +5,8 @@ import cssVarNameSm from '@patternfly/react-tokens/dist/esm/c_background_image_B
 import cssVarNameSm2x from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage_sm_2x';
 import cssVarNameLg from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage_lg';
 import cssVarNameFilter from '@patternfly/react-tokens/dist/esm/c_background_image_Filter';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/BackgroundImage/background-image';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/BackgroundImage/background-image';
 
 export interface BackgroundImageSrcMap {
   xs: string;

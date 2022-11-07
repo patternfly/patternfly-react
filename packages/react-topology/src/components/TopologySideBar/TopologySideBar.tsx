@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Topology/topology-side-bar';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Topology/topology-side-bar';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { Button } from '@patternfly/react-core';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Badge/badge';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Badge/badge';
 
 export interface BadgeProps extends React.HTMLProps<HTMLSpanElement> {
   /**  Adds styling to the badge to indicate it has been read */

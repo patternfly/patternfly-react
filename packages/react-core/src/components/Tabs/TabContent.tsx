@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/TabContent/tab-content';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/TabContent/tab-content';
+import { css } from '@breakaway/react-styles';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { TabsContextConsumer, TabsContextProps } from './TabsContext';
 

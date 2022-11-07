@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Table, TableHeader, TableBody, RowWrapperProps, TableProps, ICell, IRow } from '@patternfly/react-table';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Table/table';
 
 interface ITableRowWrapperDemoState {
   rows: IRow[];

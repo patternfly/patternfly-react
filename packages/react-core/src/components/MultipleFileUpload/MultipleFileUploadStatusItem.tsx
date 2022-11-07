@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
+import { css } from '@breakaway/react-styles';
 import { Progress } from '../Progress';
 import { Button } from '../Button';
 import FileIcon from '@patternfly/react-icons/dist/esm/icons/file-icon';

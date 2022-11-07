@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createPortal } from 'react-dom';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { RowWrapper, RowWrapperRow } from '@patternfly/react-table';
 import {
   shallowLeftSideEquals,
@@ -12,7 +12,7 @@ import {
 import { inlineEditStyles as styles } from './css/inline-edit-css';
 import { ConfirmButtons } from '../ConfirmButtons';
 import { EditConfig } from '../Body';
-import '@patternfly/react-styles/css/components/Table/inline-edit.css';
+import '@breakaway/react-styles/css/components/Table/inline-edit.css';
 
 export interface EditableRowWrapperRow extends RowWrapperRow {
   isEditing?: boolean;

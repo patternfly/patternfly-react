@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/Label/label';
-import labelGrpStyles from '@patternfly/react-styles/css/components/LabelGroup/label-group';
+import styles from '@breakaway/react-styles/css/components/Label/label';
+import labelGrpStyles from '@breakaway/react-styles/css/components/LabelGroup/label-group';
 import { Button } from '../Button';
 import { Tooltip, TooltipPosition } from '../Tooltip';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { useIsomorphicLayoutEffect } from '../../helpers';
 

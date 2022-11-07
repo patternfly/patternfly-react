@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/ContextSelector/context-selector';
+import { css } from '@breakaway/react-styles';
 
 export interface ContextSelectorMenuListProps {
   /** Content rendered inside the Context Selector Menu */

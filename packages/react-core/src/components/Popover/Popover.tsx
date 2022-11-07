@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import * as React from 'react';
 import { KeyTypes } from '../../helpers/constants';
-import styles from '@patternfly/react-styles/css/components/Popover/popover';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Popover/popover';
+import { css } from '@breakaway/react-styles';
 import { PopoverContext } from './PopoverContext';
 import { PopoverContent } from './PopoverContent';
 import { PopoverBody } from './PopoverBody';

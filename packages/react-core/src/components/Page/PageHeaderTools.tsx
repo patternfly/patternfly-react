@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Page/page';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Page/page';
+import { css } from '@breakaway/react-styles';
 
 export interface PageHeaderToolsProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered in page header tools */

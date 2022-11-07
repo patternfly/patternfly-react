@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/DatePicker/date-picker';
+import buttonStyles from '@breakaway/react-styles/css/components/Button/button';
 import { TextInput, TextInputProps } from '../TextInput/TextInput';
 import { Popover, PopoverProps } from '../Popover/Popover';
 import { InputGroup } from '../InputGroup/InputGroup';

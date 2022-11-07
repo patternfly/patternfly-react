@@ -1,8 +1,8 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { Dropdown, DropdownItem, DropdownToggle, Button, ButtonVariant } from '@patternfly/react-core';
 
-import styles from '@patternfly/react-styles/css/components/Consoles/VncConsole';
+import styles from '@breakaway/react-styles/css/components/Consoles/VncConsole';
 
 export interface VncActionProps {
   onDisconnect: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

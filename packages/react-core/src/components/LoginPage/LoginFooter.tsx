@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Login/login';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Login/login';
+import { css } from '@breakaway/react-styles';
 
 export interface LoginFooterProps extends React.HTMLProps<HTMLElement> {
   /** Content rendered inside the footer of the login layout */

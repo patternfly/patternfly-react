@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/TextInputGroup/text-input-group';
+import { css } from '@breakaway/react-styles';
 
 export interface TextInputGroupUtilitiesProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the text input group utilities div */

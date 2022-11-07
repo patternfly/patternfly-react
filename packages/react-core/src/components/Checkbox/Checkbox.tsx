@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Check/check';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Check/check';
+import { css } from '@breakaway/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
 import { ASTERISK } from '../../helpers/htmlConstants';

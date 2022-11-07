@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { TextInput } from '@patternfly/react-core/dist/esm/components/TextInput';
-import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import formStyles from '@patternfly/react-styles/css/components/Form/form';
-import { css } from '@patternfly/react-styles';
+import inlineStyles from '@breakaway/react-styles/css/components/InlineEdit/inline-edit';
+import formStyles from '@breakaway/react-styles/css/components/Form/form';
+import { css } from '@breakaway/react-styles';
 import { EditableTextCellProps } from './base';
 
 export interface IEditableTextCell extends React.HTMLProps<HTMLDivElement> {

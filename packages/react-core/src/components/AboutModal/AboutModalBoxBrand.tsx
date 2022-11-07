@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/AboutModalBox/about-modal-box';
 
 export interface AboutModalBoxBrandProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the About Modal Brand  */

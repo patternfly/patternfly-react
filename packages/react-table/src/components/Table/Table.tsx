@@ -4,8 +4,8 @@ import {
   DropdownDirection,
   DropdownPosition
 } from '@patternfly/react-core/dist/esm/components/Dropdown/dropdownConstants';
-import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import { css } from '@patternfly/react-styles';
+import inlineStyles from '@breakaway/react-styles/css/components/InlineEdit/inline-edit';
+import { css } from '@breakaway/react-styles';
 import { Provider } from './base';
 import { BodyCell } from './BodyCell';
 import { HeaderCell } from './HeaderCell';

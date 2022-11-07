@@ -57,8 +57,8 @@ import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-i
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Table/table';
 
 ## TableComposable examples
 

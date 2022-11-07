@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { css } from '../../../../../react-styles/dist/js';
-import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
+import styles from '@breakaway/react-styles/css/components/Backdrop/backdrop';
 
 import { Modal } from '../Modal';
 import { KeyTypes } from '../../../helpers';

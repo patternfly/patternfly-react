@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/DragDrop/drag-drop';
 import { DroppableContext } from './DroppableContext';
 import { DragDropContext } from './DragDrop';
 

@@ -5,7 +5,7 @@ import { TextInput } from '../TextInput';
 import { GenerateId, KeyTypes } from '../../helpers';
 import { SearchAttribute } from './SearchInput';
 import { Panel, PanelMain, PanelMainBody } from '../Panel';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 
 export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Delimiter in the query string for pairing attributes with search values.

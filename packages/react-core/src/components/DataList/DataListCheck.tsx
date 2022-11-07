@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/DataList/data-list';
 
 export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'checked'> {
   /** Additional classes added to the DataList item checkbox */

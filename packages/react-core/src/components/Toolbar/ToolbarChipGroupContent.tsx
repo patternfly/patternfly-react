@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Toolbar/toolbar';
+import { css } from '@breakaway/react-styles';
 import { canUseDOM } from '../../helpers/util';
 
 import { RefObject } from 'react';

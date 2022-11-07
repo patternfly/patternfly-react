@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/AppLauncher/app-launcher';
 import { DropdownItem, DropdownItemProps } from '../Dropdown';
 import { ApplicationLauncherContent } from './ApplicationLauncherContent';
 import { ApplicationLauncherContext } from './ApplicationLauncherContext';

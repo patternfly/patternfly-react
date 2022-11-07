@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Sidebar/sidebar';
 
 export interface SidebarContentProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactNode;

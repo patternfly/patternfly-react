@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Dropdown/dropdown';
+import { css } from '@breakaway/react-styles';
 import { DropdownMenu } from './DropdownMenu';
 import { DropdownProps } from './Dropdown';
 import { DropdownContext, DropdownDirection, DropdownPosition } from './dropdownConstants';

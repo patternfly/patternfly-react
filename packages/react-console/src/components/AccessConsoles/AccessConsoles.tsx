@@ -1,11 +1,11 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core';
 
 import { constants } from '../common/constants';
 
-import styles from '@patternfly/react-styles/css/components/Consoles/AccessConsoles';
-import '@patternfly/react-styles/css/components/Consoles/AccessConsoles.css';
+import styles from '@breakaway/react-styles/css/components/Consoles/AccessConsoles';
+import '@breakaway/react-styles/css/components/Consoles/AccessConsoles.css';
 
 const { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE, DESKTOP_VIEWER_CONSOLE_TYPE } = constants;
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Form/form';
+import styles from '@breakaway/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 

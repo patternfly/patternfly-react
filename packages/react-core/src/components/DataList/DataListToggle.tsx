@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import styles from '@breakaway/react-styles/css/components/DataList/data-list';
 import { Button, ButtonProps, ButtonVariant } from '../Button';
 
 export interface DataListToggleProps extends React.HTMLProps<HTMLDivElement> {

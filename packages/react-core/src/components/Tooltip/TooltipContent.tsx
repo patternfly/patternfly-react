@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Tooltip/tooltip';
+import { css } from '@breakaway/react-styles';
 
 export interface TooltipContentProps extends React.HTMLProps<HTMLDivElement> {
   /** PopoverContent additional class */

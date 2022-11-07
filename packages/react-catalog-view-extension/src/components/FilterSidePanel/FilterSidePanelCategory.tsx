@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button } from '@patternfly/react-core';
-import formStyles from '@patternfly/react-styles/css/components/Form/form';
-import { css } from '@patternfly/react-styles';
+import formStyles from '@breakaway/react-styles/css/components/Form/form';
+import { css } from '@breakaway/react-styles';
 
 import { childrenToArray } from '../../helpers/util';
 

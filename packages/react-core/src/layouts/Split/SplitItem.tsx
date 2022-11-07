@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/layouts/Split/split';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/layouts/Split/split';
+import { css } from '@breakaway/react-styles';
 
 export interface SplitItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Flag indicating if this Split Layout item should fill the available horizontal space. */

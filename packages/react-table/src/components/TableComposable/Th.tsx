@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/Table/table';
+import scrollStyles from '@breakaway/react-styles/css/components/Table/table-scrollable';
 import { info } from '../Table/utils/decorators/info';
 import { sortable, sortableFavorites } from '../Table/utils/decorators/sortable';
 import { selectable } from '../Table/utils/decorators/selectable';

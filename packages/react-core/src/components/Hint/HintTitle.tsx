@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Hint/hint';
-import { css } from '@patternfly/react-styles';
+import styles from '@breakaway/react-styles/css/components/Hint/hint';
+import { css } from '@breakaway/react-styles';
 
 export interface HintTitleProps {
   /** Content rendered inside the hint title. */

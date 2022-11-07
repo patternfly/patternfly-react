@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
-import sidebarStyles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
+import { css } from '@breakaway/react-styles';
+import styles from '@breakaway/react-styles/css/components/JumpLinks/jump-links';
+import sidebarStyles from '@breakaway/react-styles/css/components/Sidebar/sidebar';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 import { JumpLinksList } from './JumpLinksList';
 import { formatBreakpointMods } from '../../helpers/util';

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { css } from '@patternfly/react-styles';
+import { css } from '@breakaway/react-styles';
 import { ManualConnection } from './ManualConnection';
 import { ConnectWithRemoteViewer, ConnectWithRemoteViewerProps } from './ConnectWithRemoteViewer';
 import { ConsoleDetailPropType } from './ConsoleDetailPropType';
 
-import styles from '@patternfly/react-styles/css/components/Consoles/DesktopViewer';
-import '@patternfly/react-styles/css/components/Consoles/DesktopViewer.css';
+import styles from '@breakaway/react-styles/css/components/Consoles/DesktopViewer';
+import '@breakaway/react-styles/css/components/Consoles/DesktopViewer.css';
 
 export interface DesktopViewerProps extends ConnectWithRemoteViewerProps {
   /** Custom content of more-info section  */
