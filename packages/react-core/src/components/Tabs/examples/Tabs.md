@@ -82,7 +82,7 @@ The tooltip should also have the `id` prop passed in. The value given to this pr
 
 ### Icons and text
 
-```ts file="./TabsIconandText.tsx"
+```ts file="./TabsIconAndText.tsx"
 ```
 
 ### Tabs with sub tabs
