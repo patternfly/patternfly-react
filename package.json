@@ -69,6 +69,7 @@
   "scripts": {
     "build": "yarn build:generate && yarn build:esm",
     "build:esm": "tsc --build --verbose packages/tsconfig.json",
+    "build:umd": "echo placeholder script",
     "build:integration": "lerna run build:demo-app --stream",
     "build:docs": "yarn workspace @patternfly/react-docs build:docs",
     "build:generate": "lerna run generate --parallel --stream",
