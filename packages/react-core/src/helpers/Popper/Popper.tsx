@@ -4,7 +4,7 @@ import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Placement, Modifier } from './thirdparty/popper-core';
 import { css } from '@breakaway/react-styles';
 import { FindRefWrapper } from './FindRefWrapper';
-import '@breakaway/react-styles/css/components/Popper/Popper.css';
+import '@breakaway/react-styles/css/components/Popper/Popper.module.css';
 
 const hash = {
   left: 'right',

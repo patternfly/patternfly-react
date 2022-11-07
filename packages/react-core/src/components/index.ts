@@ -16,6 +16,7 @@ export * from './Breadcrumb';
 export * from './Button';
 export * from './CalendarMonth';
 export * from './Card';
+export * from './Cat';
 export * from './Checkbox';
 export * from './Chip';
 export * from './ChipGroup';

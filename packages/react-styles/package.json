@@ -1,6 +1,6 @@
 {
   "name": "@breakaway/react-styles",
-  "version": "4.98.0",
+  "version": "5.0.0",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
