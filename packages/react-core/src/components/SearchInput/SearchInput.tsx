@@ -119,6 +119,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   previousNavigationButtonAriaLabel?: string;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
+  /** z-index of the advanced search form when appendTo is not inline. */
+  zIndex?: number;
   /** Label for the button which resets the advanced search form and clears the search input. */
   resetButtonLabel?: string;
   /** The number of search results returned. Either a total number of results,
@@ -160,6 +162,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   isDisabled = false,
   appendTo,
   removeFindDomNode = false,
+  zIndex = 9999,
   type = 'text',
   ...props
 }: SearchInputProps) => {
@@ -416,6 +419,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             enableFlip={true}
             appendTo={() => appendTo || searchInputRef.current}
             removeFindDomNode={removeFindDomNode}
+            zIndex={zIndex}
           />
         </div>
       );
