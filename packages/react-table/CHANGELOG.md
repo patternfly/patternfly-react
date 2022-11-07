@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.111.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.111.37...@patternfly/react-table@4.111.38) (2022-11-07)
+
+
+### Bug Fixes
+
+* **bulk-select:** fixed toggle spacing ([#8326](https://github.com/patternfly/patternfly-react/issues/8326)) ([fe40f19](https://github.com/patternfly/patternfly-react/commit/fe40f19058a383cfc12e3f7a07d07af8dc579d04))
+
+
+
+
+
 ## [4.111.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.111.36...@patternfly/react-table@4.111.37) (2022-11-07)
 
 **Note:** Version bump only for package @patternfly/react-table
