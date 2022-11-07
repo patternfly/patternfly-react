@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.259.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.8...@patternfly/react-core@4.259.0) (2022-11-07)
+
+
+### Features
+
+* **Popper, misc:** allow components to customize popper z-index ([#8310](https://github.com/patternfly/patternfly-react/issues/8310)) ([17dff4c](https://github.com/patternfly/patternfly-react/commit/17dff4c3bde667f426994a1e9073c9c58b9c598a))
+
+
+
+
+
 ## [4.258.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.7...@patternfly/react-core@4.258.8) (2022-11-07)
 
 
