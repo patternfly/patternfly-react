@@ -1,5 +1,5 @@
 import React from 'react';
-import { capitalize, Progress, ProgressProps, HelperText, HelperTextItem, Radio } from '@patternfly/react-core';
+import { Progress, ProgressProps, HelperText, HelperTextItem, Radio } from '@patternfly/react-core';
 
 export const ProgressHelperText: React.FunctionComponent = () => {
   type ProgressVariant = ProgressProps['variant'];
@@ -8,6 +8,7 @@ export const ProgressHelperText: React.FunctionComponent = () => {
 
   const progressVariants: ProgressVariant[] = [undefined, 'success', 'warning', 'danger'];
 
+  const capitalize = (input: string) => input[0].toUpperCase() + input.substring(1);
   const formatVariantName = (variant: ProgressVariant) => (variant ? capitalize(variant) : 'Default');
 
   const variantOptions = progressVariants.map(variant => (
