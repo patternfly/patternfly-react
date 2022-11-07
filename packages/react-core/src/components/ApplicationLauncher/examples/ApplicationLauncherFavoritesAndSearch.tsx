@@ -40,7 +40,10 @@ export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent = ()
   const [favorites, setFavorites] = React.useState<string[]>([]);
   const [filteredItems, setFilteredItems] = React.useState<React.ReactNode[]>(null);
 
-  const onToggle = (isOpen: boolean) => setIsOpen(isOpen);
+  const onToggle = (isOpen: boolean) => {
+    setIsOpen(isOpen);
+    setFilteredItems(null);
+  };
 
   const onFavorite = (itemId: string, isFavorite: boolean) => {
     let updatedFavorites: string[] = [...favorites, itemId];

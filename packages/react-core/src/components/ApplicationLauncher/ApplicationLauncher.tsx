@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
-import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import { DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
@@ -10,6 +9,7 @@ import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
 import { ApplicationLauncherItem } from './ApplicationLauncherItem';
 import { ApplicationLauncherContext } from './ApplicationLauncherContext';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
+import { SearchInput } from '../SearchInput';
 
 export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional element css classes */
@@ -93,13 +93,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       <div key="search" className={css(styles.appLauncherMenuSearch)}>
         <ApplicationLauncherItem
           customChild={
-            <input
-              type="search"
-              className={css(formStyles.formControl)}
-              placeholder={searchPlaceholderText}
-              onChange={e => onSearch(e.target.value)}
-              {...searchProps}
-            ></input>
+            <SearchInput placeholder={searchPlaceholderText} onChange={value => onSearch(value)} {...searchProps} />
           }
         ></ApplicationLauncherItem>
       </div>
