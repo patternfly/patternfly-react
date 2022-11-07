@@ -186,7 +186,7 @@ export interface SelectProps
   isFlipEnabled?: boolean;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
-  /** z-index of the select menu */
+  /** z-index of the select menu when menuAppendTo is not inline. */
   zIndex?: number;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
