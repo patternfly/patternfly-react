@@ -1,5 +1,8 @@
+// @ts-nocheck
 import * as React from 'react';
-import styles from '@breakaway/react-styles/css/components/Button/button';
+import styleKeys from '@breakaway/react-styles/css/components/Button/button.js';
+import variables from '@breakaway/react-styles/css/base/base.module.css';
+import styles from '@breakaway/react-styles/css/components/Button/button.module.css';
 import { css } from '@breakaway/react-styles';
 import { Spinner, spinnerSize } from '../Spinner';
 import { useOUIAProps, OUIAProps } from '../../helpers';
@@ -147,18 +150,19 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       aria-disabled={isDisabled || isAriaDisabled}
       aria-label={ariaLabel}
       className={css(
-        styles.button,
-        styles.modifiers[variant],
-        isBlock && styles.modifiers.block,
-        isDisabled && styles.modifiers.disabled,
-        isAriaDisabled && styles.modifiers.ariaDisabled,
-        isActive && styles.modifiers.active,
-        isInline && variant === ButtonVariant.link && styles.modifiers.inline,
-        isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
-        isLoading !== null && children !== null && styles.modifiers.progress,
-        isLoading && styles.modifiers.inProgress,
-        isSmall && styles.modifiers.small,
-        isLarge && styles.modifiers.displayLg,
+        variables.root,
+        styles[styleKeys.button],
+        styles[styleKeys.modifiers[variant]],
+        isBlock && styles[styleKeys.modifiers.block],
+        isDisabled && styles[styleKeys.modifiers.disabled],
+        isAriaDisabled && styles[styleKeys.modifiers.ariaDisabled],
+        isActive && styles[styleKeys.modifiers.active],
+        isInline && variant === ButtonVariant.link && styles[styleKeys.modifiers.inline],
+        isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles[styleKeys.modifiers.danger],
+        isLoading !== null && children !== null && styles[styleKeys.modifiers.progress],
+        isLoading && styles[styleKeys.modifiers.inProgress],
+        isSmall && styles[styleKeys.modifiers.small],
+        isLarge && styles[styleKeys.modifiers.displayLg],
         className
       )}
       disabled={isButtonElement ? isDisabled : null}
@@ -169,7 +173,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       {...ouiaProps}
     >
       {isLoading && (
-        <span className={css(styles.buttonProgress)}>
+        <span className={css(styles[styleKeys.buttonProgress])}>
           <Spinner
             size={spinnerSize.md}
             aria-valuetext={spinnerAriaValueText}
@@ -180,14 +184,14 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       )}
       {variant === ButtonVariant.plain && children === null && icon ? icon : null}
       {variant !== ButtonVariant.plain && icon && iconPosition === 'left' && (
-        <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>
+        <span className={css(styles[styleKeys.buttonIcon], styles[styleKeys.modifiers.start])}>{icon}</span>
       )}
       {children}
       {variant !== ButtonVariant.plain && icon && iconPosition === 'right' && (
-        <span className={css(styles.buttonIcon, styles.modifiers.end)}>{icon}</span>
+        <span className={css(styles[styleKeys.buttonIcon], styles[styleKeys.modifiers.end])}>{icon}</span>
       )}
       {countOptions && (
-        <span className={css(styles.buttonCount, countOptions.className)}>
+        <span className={css(styles[styleKeys.buttonCount], countOptions.className)}>
           <Badge isRead={countOptions.isRead}>{countOptions.count}</Badge>
         </span>
       )}

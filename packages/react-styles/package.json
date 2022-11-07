@@ -1,6 +1,6 @@
 {
   "name": "@breakaway/react-styles",
-  "version": "4.91.10",
+  "version": "4.98.0",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -12,10 +12,10 @@
   "author": "Red Hat",
   "publishConfig": {
     "access": "public",
-    "tag": "prerelease"
+    "tag": "latest"
   },
   "scripts": {
-    "generate": "rimraf css && node scripts/writeClassMaps.js && node scripts/copyStyles.js",
+    "generate": "rimraf css && node scripts/writeClassMaps.js && node scripts/copyStyles.js && node scripts/copyBaseStyles.js",
     "clean": "rimraf dist css"
   },
   "devDependencies": {

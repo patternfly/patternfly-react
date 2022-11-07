@@ -4,7 +4,7 @@ const { resolve, dirname, join } = require('path');
 const { parse: parseCSS, stringify: stringifyCSS } = require('css');
 /* eslint-enable @typescript-eslint/no-var-requires */
 
-const stylesDir = resolve(__dirname, '../dist/styles');
+const stylesDir = resolve(__dirname, '../css/base');
 const pfDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
 
 const unusedSelectorRegEx = /(\.fas?|\.sr-only)/;
@@ -23,9 +23,8 @@ copySync(join(pfDir, 'assets/fonts'), join(stylesDir, 'assets/fonts'), {
 
 // Copy css
 const baseCssFiles = {
-  // write out as a CSS module file
   'base.module.css': 'patternfly-base.css',
-  'base-no-reset.css': 'patternfly-base-no-reset.css'
+  'base-no-reset.module.css': 'patternfly-base-no-reset.css'
 };
 
 for (const [targetCss, baseCss] of Object.entries(baseCssFiles)) {
@@ -51,7 +50,10 @@ for (const [targetCss, baseCss] of Object.entries(baseCssFiles)) {
     }
   });
 
-  // writeFileSync(join(stylesDir, targetCss), stringifyCSS(ast));
-  // Don't want :root styles in CSS modules
-  writeFileSync(join(stylesDir, targetCss), stringifyCSS(ast).replaceAll(':root', '.root'));
+  writeFileSync(
+    join(stylesDir, targetCss),
+    stringifyCSS(ast)
+      .replaceAll(':root', '.root')
+      .match(/\.root {[\s\S]*?}/g)[0]
+  );
 }

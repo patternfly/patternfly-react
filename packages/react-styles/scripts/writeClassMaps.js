@@ -10,7 +10,7 @@ const writeCJSExport = (file, classMap) =>
     `
 "use strict";
 exports.__esModule = true;
-require('./${basename(file, '.css.js')}');
+require('./${basename(file, '.css')}.module.css');
 exports.default = ${JSON.stringify(classMap, null, 2)};
 `.trim()
   );
@@ -19,7 +19,7 @@ const writeESMExport = (file, classMap) =>
   outputFileSync(
     join(outDir, file.replace(/.css$/, '.mjs')),
     `
-import './${basename(file, '.css.js')}';
+    import './${basename(file, '.css')}.module.css';
 export default ${JSON.stringify(classMap, null, 2)};
 `.trim()
   );
@@ -28,7 +28,7 @@ const writeDTSExport = (file, classMap) =>
   outputFileSync(
     join(outDir, file.replace(/.css$/, '.d.ts')),
     `
-import './${basename(file, '.css.js')}';
+import './${basename(file, '.css')}.module.css';
 declare const _default: ${JSON.stringify(classMap, null, 2)};
 export default _default;
 `.trim()
@@ -42,11 +42,12 @@ function writeClassMaps(classMaps) {
 
   Object.entries(classMaps).forEach(([file, classMap]) => {
     const outPath = file.includes(pfStylesDir) ? relative(pfStylesDir, file) : relative('src/css', file);
+    const moduleOutPath = outPath.replace('.css', '.module.css');
 
     writeCJSExport(outPath, classMap);
     writeDTSExport(outPath, classMap);
     writeESMExport(outPath, classMap);
-    copyFileSync(file, join(outDir, outPath));
+    copyFileSync(file, join(outDir, moduleOutPath));
   });
 
   // eslint-disable-next-line no-console
