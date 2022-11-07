@@ -12,10 +12,7 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
   });
   const handleItemClick = (isSelected: boolean, event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
     const id = event.currentTarget.id;
-    setIsSelected(prevIsSelected => {
-      prevIsSelected[id] = isSelected;
-      return { ...prevIsSelected };
-    });
+    setIsSelected(prevIsSelected => ({ ...prevIsSelected, [id]: isSelected }));
   };
   return (
     <ToggleGroup aria-label="Text and icon toggle group">

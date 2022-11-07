@@ -9,10 +9,7 @@ export const ToggleGroupDefaultMultiple: React.FunctionComponent = () => {
   const [disableAll, setDisableAll] = React.useState(false);
   const handleItemClick = (isSelected: boolean, event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
     const id = event.currentTarget.id;
-    setIsSelected(prevIsSelected => {
-      prevIsSelected[id] = isSelected;
-      return { ...prevIsSelected };
-    });
+    setIsSelected(prevIsSelected => ({ ...prevIsSelected, [id]: isSelected }));
   };
   const disableAllClick = () => {
     setDisableAll(!disableAll);
