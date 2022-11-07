@@ -18,7 +18,7 @@ propComponents:
   ]
 ---
 
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import './page.css';
 
 ## Examples

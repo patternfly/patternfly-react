@@ -4,7 +4,7 @@ section: components
 ---
 
 import imgBrand from './imgBrand.svg';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ## Demos
@@ -567,7 +567,7 @@ import {
   Wizard
 } from '@patternfly/react-core';
 import imgBrand from './imgBrand.svg';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class FullPageWizard extends React.Component {
@@ -656,7 +656,7 @@ import {
   MastheadBrand
 } from '@patternfly/react-core';
 import imgBrand from './imgBrand.svg';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 class FullPageWizard extends React.Component {
   constructor(props) {
@@ -923,7 +923,7 @@ import {
   MastheadBrand
 } from '@patternfly/react-core';
 import imgBrand from './imgBrand.svg';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 class FullPageWizard extends React.Component {
   constructor(props) {

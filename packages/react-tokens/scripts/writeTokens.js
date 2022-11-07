@@ -13,17 +13,6 @@ export default ${tokenName};
 `.trim()
   );
 
-const writeCJSExport = (tokenName, tokenString) =>
-  outputFileSync(
-    join(outDir, 'js', `${tokenName}.js`),
-    `
-"use strict";
-exports.__esModule = true;
-exports.${tokenName} = ${tokenString};
-exports["default"] = exports.${tokenName};
-`.trim()
-  );
-
 const writeDTSExport = (tokenName, tokenString) => {
   const text = `
 export const ${tokenName}: ${tokenString};
@@ -56,7 +45,7 @@ ${index.map(file => `__export(require('./${file}'));`).join('\n')}
 };
 
 /**
- * Writes CJS and ESM tokens to `dist` directory
+ * Writes ESM tokens to `dist` directory
  *
  * @param {any} tokens tokens from generateTokens
  */
@@ -65,7 +54,6 @@ function writeTokens(tokens) {
     const tokenString = JSON.stringify(tokenValue, null, 2);
 
     writeESMExport(tokenName, tokenString);
-    writeCJSExport(tokenName, tokenString);
     writeDTSExport(tokenName, tokenString);
     allIndex[tokenName] = true;
     componentIndex.push(tokenName);
@@ -83,7 +71,6 @@ function writeTokens(tokens) {
         };
         const oldTokenString = JSON.stringify(oldToken, null, 2);
         writeESMExport(oldTokenName, oldTokenString);
-        writeCJSExport(oldTokenName, oldTokenString);
         writeDTSExport(oldTokenName, oldTokenString);
         allIndex[oldTokenName] = true;
       });

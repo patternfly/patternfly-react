@@ -6,7 +6,7 @@
     "rootDirs": [
       "src",
       "src/icons",
-      "dist/js/icons"
+      "dist/esm/icons"
     ]
   },
   "include": [

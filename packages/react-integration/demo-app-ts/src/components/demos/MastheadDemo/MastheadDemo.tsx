@@ -19,8 +19,8 @@ import {
   DropdownItem
 } from '@patternfly/react-core';
 import imgBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 export class MastheadDemo extends React.Component {
   displayName = 'MastheadDemo';

@@ -4,7 +4,7 @@ section: components
 ---
 
 import { useEffect } from 'react';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import DashboardWrapper from './examples/DashboardWrapper';
 import DashboardHeader from './examples/DashboardHeader';
 

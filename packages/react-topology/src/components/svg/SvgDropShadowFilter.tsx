@@ -1,6 +1,6 @@
 import * as React from 'react';
 // eslint-disable-next-line patternfly-react/import-tokens-icons
-import { global_palette_black_1000 as globalBlack1000 } from '@patternfly/react-tokens/dist/js/global_palette_black_1000';
+import { global_palette_black_1000 as globalBlack1000 } from '@patternfly/react-tokens/dist/esm/global_palette_black_1000';
 import { SVGDefs } from '../defs';
 
 interface SvgDropShadowFilterProps {

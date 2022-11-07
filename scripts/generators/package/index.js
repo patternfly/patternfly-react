@@ -39,25 +39,17 @@ function setPackageGenerators(plop) {
             ? join(packageBaseTemplate, 'src/index.ts')
             : join(packageBaseTemplate, 'lib/index.js')
         },
-        answers.buildsWithTypescript &&
-        {
+        answers.buildsWithTypescript && {
           type: 'add',
           path: join(packageBaseTemplate, `.npmignore`),
           templateFile: resolve(__dirname, './.npmignore')
         },
-        answers.buildsWithTypescript &&
-        {
+        answers.buildsWithTypescript && {
           type: 'add',
           path: join(packageBaseTemplate, `tsconfig.json`),
           templateFile: resolve(__dirname, './tsconfig.json')
         },
-        answers.buildsWithTypescript &&
-        {
-          type: 'add',
-          path: join(packageBaseTemplate, `tsconfig.cjs.json`),
-          templateFile: resolve(__dirname, './tsconfig.cjs.json')
-        },
-        {
+        answers.buildsWithTypescript && {
           type: 'add',
           template: '# {{name}}',
           path: join(packageBaseTemplate, 'README.md')

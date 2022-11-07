@@ -4,8 +4,8 @@ section: components
 ---
 
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
@@ -40,8 +40,8 @@ import {
   FlexItem
 } from '@patternfly/react-core';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 TabsOpenDemo = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
@@ -230,8 +230,8 @@ import {
   FlexItem
 } from '@patternfly/react-core';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 TabsOpenWithSecondaryTabsDemo = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);

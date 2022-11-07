@@ -13,7 +13,7 @@ import {
   TextInput
 } from '@patternfly/react-core';
 import { Link } from '@reach/router';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import pfIcon from 'pf-logo-small.svg';
 
 export const ComposableApplicationLauncher: React.FunctionComponent = () => {

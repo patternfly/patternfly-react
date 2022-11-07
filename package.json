@@ -67,13 +67,11 @@
     "typescript": "^4.0.0"
   },
   "scripts": {
-    "build": "yarn build:generate && yarn build:esm && yarn build:cjs",
-    "build:cjs": "tsc --build --verbose packages/tsconfig.cjs.json",
+    "build": "yarn build:generate && yarn build:esm",
     "build:esm": "tsc --build --verbose packages/tsconfig.json",
     "build:integration": "lerna run build:demo-app --stream",
     "build:docs": "yarn workspace @patternfly/react-docs build:docs",
     "build:generate": "lerna run generate --parallel --stream",
-    "build:umd": "lerna run build:umd --parallel --stream",
     "clean": "yarn clean:build && lerna run clean --parallel",
     "clean:build": "rimraf .cache .eslintcache coverage",
     "generate": "yarn plop",

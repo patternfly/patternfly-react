@@ -2,7 +2,7 @@
   "name": "@patternfly/react-console",
   "version": "4.92.56",
   "description": "This package provides VncConsole, SerialConsole and DesktopViewer React components to be used alongside patternfly-react to access virtual machine or server consoles.",
-  "main": "dist/js/index.js",
+  "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "patternfly:src": "src/",

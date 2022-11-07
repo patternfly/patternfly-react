@@ -4,20 +4,9 @@ const { generateClassMaps } = require('./generateClassMaps');
 
 const outDir = resolve(__dirname, '../css');
 
-const writeCJSExport = (file, classMap) =>
-  outputFileSync(
-    join(outDir, file.replace(/.css$/, '.js')),
-    `
-"use strict";
-exports.__esModule = true;
-require('./${basename(file, '.css.js')}');
-exports.default = ${JSON.stringify(classMap, null, 2)};
-`.trim()
-  );
-
 const writeESMExport = (file, classMap) =>
   outputFileSync(
-    join(outDir, file.replace(/.css$/, '.mjs')),
+    join(outDir, file.replace(/.css$/, '.js')),
     `
 import './${basename(file, '.css.js')}';
 export default ${JSON.stringify(classMap, null, 2)};
@@ -43,7 +32,6 @@ function writeClassMaps(classMaps) {
   Object.entries(classMaps).forEach(([file, classMap]) => {
     const outPath = file.includes(pfStylesDir) ? relative(pfStylesDir, file) : relative('src/css', file);
 
-    writeCJSExport(outPath, classMap);
     writeDTSExport(outPath, classMap);
     writeESMExport(outPath, classMap);
     copyFileSync(file, join(outDir, outPath));

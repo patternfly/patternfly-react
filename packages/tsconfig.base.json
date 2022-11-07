@@ -17,10 +17,7 @@
     "declarationMap": true,
     "strict": true,
     "strictNullChecks": false,
-    "isolatedModules": true,
-    "plugins": [
-      { "transform": "transformer-cjs-imports" }
-    ]
+    "isolatedModules": true
   },
   "exclude": [
     "**/**.test.tsx",

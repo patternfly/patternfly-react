@@ -5,8 +5,8 @@ cssPrefix: pf-c-action-list
 propComponents: ['ActionList', 'ActionListGroup', 'ActionListItem']
 ---
 
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 
 ## Examples
 

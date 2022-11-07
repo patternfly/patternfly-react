@@ -11,25 +11,6 @@ const removeSnake = s =>
     .replace('_', '');
 const toCamel = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][\w])/gi, removeSnake)}`;
 
-const writeCJSExport = (fname, jsName, icon) => {
-  outputFileSync(
-    join(outDir, 'js/icons', `${fname}.js`),
-    `"use strict"
-exports.__esModule = true;
-exports.${jsName}Config = {
-  name: '${jsName}',
-  height: ${icon.height},
-  width: ${icon.width},
-  svgPath: '${icon.svgPathData}',
-  yOffset: ${icon.yOffset || 0},
-  xOffset: ${icon.xOffset || 0},
-};
-exports.${jsName} = require('../createIcon').createIcon(exports.${jsName}Config);
-exports["default"] = exports.${jsName};
-    `.trim()
-  );
-};
-
 const writeESMExport = (fname, jsName, icon) => {
   outputFileSync(
     join(outDir, 'esm/icons', `${fname}.js`),
@@ -71,7 +52,7 @@ export default ${jsName};
 };
 
 /**
- * Writes CJS and ESM icons to `dist` directory
+ * Writes ESM icons to `dist` directory
  *
  * @param {any} icons icons from generateIcons
  */
@@ -81,7 +62,6 @@ function writeIcons(icons) {
     const fname = `${iconName}-icon`;
     const jsName = `${toCamel(iconName)}Icon`;
     writeESMExport(fname, jsName, icon);
-    writeCJSExport(fname, jsName, icon);
     writeDTSExport(fname, jsName, icon);
 
     index.push({ fname, jsName });

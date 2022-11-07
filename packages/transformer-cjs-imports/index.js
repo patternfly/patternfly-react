@@ -24,7 +24,7 @@ function transformerCJSImports(context) {
   function visit(node) {
     if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/esm/.test(node.moduleSpecifier.text)) {
       const newNode = ts.getMutableClone(node);
-      const newPath = node.moduleSpecifier.text.replace(/dist\/esm/, 'dist/js');
+      const newPath = node.moduleSpecifier.text.replace(/dist\/esm/, 'dist/esm');
       newNode.moduleSpecifier = ts.createStringLiteral(newPath, true);
       return newNode;
     }
