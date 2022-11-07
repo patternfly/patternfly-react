@@ -55,8 +55,7 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
     | 'right-start'
     | 'right-end';
   /** @beta Content which can be used to convey additional information about the progress component.
-   * Renders content inside of our helper text component with automatic helper text variant setting based on the
-   * variant of the progress component when a string is passed, otherwise renders the content directly.
+   * We recommend the helper text component as it was designed for this purpose.
    */
   helperText?: React.ReactNode;
 }
@@ -124,7 +123,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
       <ProgressBar role="progressbar" progressBarAriaProps={progressBarAriaProps} value={value}>
         {measureLocation === ProgressMeasureLocation.inside && `${value}%`}
       </ProgressBar>
-      {helperText && <ProgressHelperText progressVariant={variant}>{helperText}</ProgressHelperText>}
+      {helperText && <ProgressHelperText>{helperText}</ProgressHelperText>}
     </React.Fragment>
   );
 };

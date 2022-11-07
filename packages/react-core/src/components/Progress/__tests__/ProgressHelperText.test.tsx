@@ -2,8 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ProgressHelperText } from '../ProgressHelperText';
 
-jest.mock('../../HelperText');
-
 test('Renders without children', () => {
   render(
     <div data-testid="container">
@@ -22,31 +20,13 @@ test('Renders children', () => {
 test('Renders with class pf-c-progress__helper-text on the div containing the helper text component', () => {
   render(<ProgressHelperText>Test</ProgressHelperText>);
 
-  expect(screen.getByTestId('helper-text-children-container').parentElement).toHaveClass('pf-c-progress__helper-text');
+  expect(screen.getByText('Test')).toHaveClass('pf-c-progress__helper-text');
 });
 
-test('Passes a variant of undefined to the helper text item when a progressVariant is not passed', () => {
-  render(<ProgressHelperText>Test</ProgressHelperText>);
+test('Renders with inherited element props spread to the component', () => {
+  render(<ProgressHelperText aria-label="Test label">Test</ProgressHelperText>);
 
-  expect(screen.getByText('variant: undefined')).toBeVisible();
-});
-
-test('Passes a variant of "success" to the helper text item when the progressVariant is "success"', () => {
-  render(<ProgressHelperText progressVariant="success">Test</ProgressHelperText>);
-
-  expect(screen.getByText('variant: success')).toBeVisible();
-});
-
-test('Passes a variant of "warning" to the helper text item when the progressVariant is "warning"', () => {
-  render(<ProgressHelperText progressVariant="warning">Test</ProgressHelperText>);
-
-  expect(screen.getByText('variant: warning')).toBeVisible();
-});
-
-test('Passes a variant of "error" to the helper text item when the progressVariant is "danger"', () => {
-  render(<ProgressHelperText progressVariant="danger">Test</ProgressHelperText>);
-
-  expect(screen.getByText('variant: error')).toBeVisible();
+  expect(screen.getByText('Test')).toHaveAccessibleName('Test label');
 });
 
 test('Matches the snapshot', () => {

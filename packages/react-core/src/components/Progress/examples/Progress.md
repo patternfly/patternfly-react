@@ -78,7 +78,3 @@ propComponents: ['Progress']
 ### Helper text
 ```ts file="./ProgressHelperText.tsx" isBeta
 ```
-
-### Helper text with custom component
-```ts file="./ProgressHelperTextCustomComponent.tsx" isBeta
-```

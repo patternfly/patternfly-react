@@ -5,21 +5,7 @@ exports[`Matches the snapshot 1`] = `
   <div
     class="pf-c-progress__helper-text"
   >
-    <div
-      data-testid="helper-text-children-container"
-    >
-      <div
-        data-testid="helper-text-item-children-container"
-      >
-        test
-      </div>
-      <p>
-        variant: undefined
-      </p>
-    </div>
-    <p>
-      isLiveRegion: undefined
-    </p>
+    test
   </div>
 </DocumentFragment>
 `;
