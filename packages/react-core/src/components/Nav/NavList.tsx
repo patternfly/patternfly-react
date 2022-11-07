@@ -92,7 +92,7 @@ export class NavList extends React.Component<NavListProps> {
   };
 
   componentDidMount() {
-    this.observer = getResizeObserver(this.navList.current, this.handleScrollButtons);
+    this.observer = getResizeObserver(this.navList.current, this.handleScrollButtons, true);
     this.handleScrollButtons();
   }
 

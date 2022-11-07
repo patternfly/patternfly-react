@@ -32,9 +32,13 @@ export const JumpLinksWithDrawer = () => {
     const masthead = document.getElementsByClassName('pf-c-masthead')[0];
     const drawerToggleSection = document.getElementById('drawer-toggle');
 
-    getResizeObserver(masthead, () => {
-      setOffsetHeight(masthead.offsetHeight + drawerToggleSection.offsetHeight);
-    });
+    getResizeObserver(
+      masthead,
+      () => {
+        setOffsetHeight(masthead.offsetHeight + drawerToggleSection.offsetHeight);
+      },
+      true
+    );
   }, []);
 
   const onCloseClick = () => {

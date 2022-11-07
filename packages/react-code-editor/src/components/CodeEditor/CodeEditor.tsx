@@ -363,7 +363,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleGlobalKeys);
-    this.observer = getResizeObserver(this.ref.current, this.handleResize);
+    this.observer = getResizeObserver(this.ref.current, this.handleResize, true);
     this.handleResize();
   }
 

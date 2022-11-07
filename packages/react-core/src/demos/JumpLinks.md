@@ -46,15 +46,19 @@ ScrollspyH2 = () => {
     const masthead = document.getElementsByClassName('pf-c-masthead')[0];
     const offsetForPadding = 10;
 
-    getResizeObserver(masthead, () => {
-      if (isVertical) {
-        setOffsetHeight(masthead.offsetHeight + offsetForPadding);
-      } else {
-        // Append jump links nav height to the masthead height when value exists.
-        const jumpLinksHeaderHeight = document.getElementsByClassName('pf-m-sticky')[0].offsetHeight;
-        jumpLinksHeaderHeight && setOffsetHeight(masthead.offsetHeight + jumpLinksHeaderHeight + offsetForPadding);
-      }
-    });
+    getResizeObserver(
+      masthead,
+      () => {
+        if (isVertical) {
+          setOffsetHeight(masthead.offsetHeight + offsetForPadding);
+        } else {
+          // Append jump links nav height to the masthead height when value exists.
+          const jumpLinksHeaderHeight = document.getElementsByClassName('pf-m-sticky')[0].offsetHeight;
+          jumpLinksHeaderHeight && setOffsetHeight(masthead.offsetHeight + jumpLinksHeaderHeight + offsetForPadding);
+        }
+      },
+      true
+    );
   }, [isVertical]);
 
   return (
@@ -131,7 +135,6 @@ ScrollspyH2 = () => {
   );
 };
 ```
-
 
 ### With drawer
 
