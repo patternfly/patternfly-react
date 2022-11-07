@@ -7,5 +7,5 @@
       packages/react-styles/css
     key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
 - name: Build dist
-  run: yarn build && yarn build:umd
+  run: yarn build
   if: steps.dist.outputs.cache-hit != 'true'

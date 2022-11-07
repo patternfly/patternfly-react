@@ -38,7 +38,7 @@ jobs:
             packages/react-styles/css
           key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
-        run: yarn build && yarn build:umd
+        run: yarn build
         if: steps.dist.outputs.cache-hit != 'true'
   lint:
     runs-on: ubuntu-latest
@@ -117,7 +117,7 @@ jobs:
             packages/react-styles/css
           key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
-        run: yarn build && yarn build:umd
+        run: yarn build
         if: steps.dist.outputs.cache-hit != 'true'
       - name: PF4 Jest Tests
         run: yarn test --maxWorkers=2
@@ -161,7 +161,7 @@ jobs:
             packages/react-styles/css
           key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
-        run: yarn build && yarn build:umd
+        run: yarn build
         if: steps.dist.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
         id: docs-cache
@@ -216,7 +216,7 @@ jobs:
             packages/react-styles/css
           key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
-        run: yarn build && yarn build:umd
+        run: yarn build
         if: steps.dist.outputs.cache-hit != 'true'
       - name: Build demo app
         run: yarn build:integration
@@ -267,7 +267,7 @@ jobs:
             packages/react-styles/css
           key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
-        run: yarn build && yarn build:umd
+        run: yarn build
         if: steps.dist.outputs.cache-hit != 'true'
       - name: Download demo app
         uses: actions/download-artifact@v2
