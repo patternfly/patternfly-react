@@ -5,6 +5,13 @@
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": "./dist/esm/index.js",
+    "./dist/*": "./dist/*",
+    "./next": "./dist/esm/next",
+    "./deprecated": "./dist/esm/deprecated",
+    "./package.json": "./package.json"
+  },
   "typesVersions": {
     "*": {
       "next": [
@@ -55,7 +62,7 @@
   "devDependencies": {
     "@patternfly/patternfly": "4.219.2",
     "@rollup/plugin-commonjs": "^21.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^3.0.0",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
