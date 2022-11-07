@@ -10,8 +10,19 @@ exports[`Matches the snapshot 1`] = `
   <p>
     variant: link
   </p>
+  <p
+    id="labelling-id"
+  >
+    Test label
+  </p>
   <p>
     isInline: true
   </p>
+  <p>
+    iconPosition: undefined
+  </p>
+  <div
+    data-testid="icon"
+  />
 </DocumentFragment>
 `;

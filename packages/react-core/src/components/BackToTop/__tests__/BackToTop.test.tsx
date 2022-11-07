@@ -3,16 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { BackToTop } from '../BackToTop';
 import userEvent from '@testing-library/user-event';
 
-jest.mock('../../Button', () => ({
-  Button: ({ variant, iconPosition, children, icon }) => (
-    <>
-      <button>{children}</button>
-      <p>{variant}</p>
-      <p>{iconPosition}</p>
-      <div data-testid="icon">{icon}</div>
-    </>
-  )
-}));
+jest.mock('../../Button');
 
 test('Renders BackToTop', () => {
   render(
@@ -138,13 +129,13 @@ test('Passes correct text content to button child component', () => {
 test('Passes correct variant to button child component', () => {
   render(<BackToTop title="Back to the future" />);
 
-  expect(screen.getByText('primary')).toBeVisible();
+  expect(screen.getByText('variant: primary')).toBeVisible();
 });
 
 test('Passes correct iconPosition to button child component', () => {
   render(<BackToTop />);
 
-  expect(screen.getByText('right')).toBeVisible();
+  expect(screen.getByText('iconPosition: right')).toBeVisible();
 });
 
 test('Passes correct icon to button child component', () => {

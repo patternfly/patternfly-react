@@ -14,10 +14,10 @@ export const LabelCompact: React.FunctionComponent = () => (
     <Label isCompact icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
       Compact icon removable
     </Label>{' '}
-    <Label isCompact href="#outline">
+    <Label isCompact href="#compact">
       Compact link
     </Label>{' '}
-    <Label isCompact href="#outline" onClose={() => Function.prototype}>
+    <Label isCompact href="#compact" onClose={() => Function.prototype}>
       Compact link removable
     </Label>
     <Label isCompact icon={<InfoCircleIcon />} onClose={() => Function.prototype} isTruncated>
