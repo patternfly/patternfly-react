@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/m
 import { css } from '@patternfly/react-styles';
 import { Progress } from '../Progress';
 import { Button } from '../Button';
+import { HelperText, HelperTextItem } from '../HelperText';
 import FileIcon from '@patternfly/react-icons/dist/esm/icons/file-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
@@ -54,6 +55,8 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   progressAriaLiveMessage?: string | ((loadPercentage: number) => string);
   /** Unique identifier for progress. Generated if not specified. */
   progressId?: string;
+  /** @beta Additional content related to the status item, intended to be dynamically rendered content such as status messages. */
+  helperText?: React.ReactNode;
 }
 
 export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileUploadStatusItemProps> = ({
@@ -75,6 +78,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   progressId,
   progressAriaLiveMessage,
   buttonAriaLabel = 'Remove from list',
+  helperText,
   ...props
 }: MultipleFileUploadStatusItemProps) => {
   const [loadPercentage, setLoadPercentage] = React.useState(0);
@@ -129,6 +133,9 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     return `${Math.round(size)}${prefixes[prefixUnit]}B`;
   };
 
+  const value = progressValue || loadPercentage;
+  const variant = progressVariant || loadResult;
+
   const title = (
     <span className={styles.multipleFileUploadStatusItemProgress}>
       <span className={styles.multipleFileUploadStatusItemProgressText}>{fileName || file?.name || ''}</span>
@@ -136,6 +143,14 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
         {fileSize || getHumanReadableFileSize(file?.size || 0)}
       </span>
     </span>
+  );
+
+  const helperTextVariant = variant === 'danger' ? 'error' : variant;
+
+  const statusItemHelperText = helperText && (
+    <HelperText isLiveRegion>
+      <HelperTextItem variant={helperTextVariant}>{helperText}</HelperTextItem>
+    </HelperText>
   );
 
   return (
@@ -151,11 +166,12 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
         </div>
         <Progress
           title={title}
-          value={progressValue || loadPercentage}
-          variant={progressVariant || loadResult}
+          value={value}
+          variant={variant}
           aria-label={progressAriaLabel}
           aria-labelledby={progressAriaLabelledBy}
           id={progressId}
+          helperText={statusItemHelperText}
         />
       </div>
       <div className={styles.multipleFileUploadStatusItemClose}>

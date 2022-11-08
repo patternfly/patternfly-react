@@ -17,6 +17,7 @@ interface readFile {
 
 export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   const [isHorizontal, setIsHorizontal] = React.useState(false);
+  const [fileUploadShouldFail, setFileUploadShouldFail] = React.useState(false);
   const [currentFiles, setCurrentFiles] = React.useState<File[]>([]);
   const [readFileData, setReadFileData] = React.useState<readFile[]>([]);
   const [showStatus, setShowStatus] = React.useState(false);
@@ -53,6 +54,17 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     setReadFileData(newReadFiles);
   };
 
+  /** this function causes uploaded files to become corrupted if the corresponding option is selected in the example,
+   * only used in this example for demonstration purposes */
+  const updateCurrentFiles = (files: File[]) => {
+    if (fileUploadShouldFail) {
+      const corruptedFiles = files.map(file => ({ ...file, lastModified: ('foo' as unknown) as number }));
+      setCurrentFiles(prevFiles => [...prevFiles, ...corruptedFiles]);
+    } else {
+      setCurrentFiles(prevFiles => [...prevFiles, ...files]);
+    }
+  };
+
   // callback that will be called by the react dropzone with the newly dropped file objects
   const handleFileDrop = (droppedFiles: File[]) => {
     // identify what, if any, files are re-uploads of already uploaded files
@@ -63,7 +75,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
      * won't realize that the status items for the re-uploaded files needs to be re-rendered */
     Promise.resolve()
       .then(() => removeFiles(reUploads.map(file => file.name)))
-      .then(() => setCurrentFiles(prevFiles => [...prevFiles, ...droppedFiles]));
+      .then(() => updateCurrentFiles(droppedFiles));
   };
 
   // callback called by the status item when a file is successfully read with the built-in file reader
@@ -77,6 +89,14 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
       ...prevReadFiles,
       { loadError: error, fileName: file.name, loadResult: 'danger' }
     ]);
+  };
+
+  // add helper text to a status item showing any error encountered during the file reading process
+  const createHelperText = (file: File) => {
+    const fileResult = readFileData.find(readFile => readFile.fileName === file.name);
+    if (fileResult?.loadError) {
+      return fileResult.loadError.toString();
+    }
   };
 
   const successfullyReadFileCount = readFileData.filter(fileData => fileData.loadResult === 'success').length;
@@ -108,6 +128,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
                 onClearClick={() => removeFiles([file.name])}
                 onReadSuccess={handleReadSuccess}
                 onReadFail={handleReadFail}
+                helperText={createHelperText(file)}
               />
             ))}
           </MultipleFileUploadStatus>
@@ -118,6 +139,12 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
         label="Show as horizontal"
         isChecked={isHorizontal}
         onChange={() => setIsHorizontal(!isHorizontal)}
+      />
+      <Checkbox
+        id="upload-should-fail-checkbox"
+        label="Force uploads to fail"
+        isChecked={fileUploadShouldFail}
+        onChange={() => setFileUploadShouldFail(!fileUploadShouldFail)}
       />
     </>
   );
