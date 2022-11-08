@@ -3,7 +3,6 @@ import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/m
 import { css } from '@patternfly/react-styles';
 import { Progress } from '../Progress';
 import { Button } from '../Button';
-import { HelperText, HelperTextItem } from '../HelperText';
 import FileIcon from '@patternfly/react-icons/dist/esm/icons/file-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
@@ -55,7 +54,7 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   progressAriaLiveMessage?: string | ((loadPercentage: number) => string);
   /** Unique identifier for progress. Generated if not specified. */
   progressId?: string;
-  /** @beta Additional content related to the status item, intended to be dynamically rendered content such as status messages. */
+  /** @beta Additional content related to the status item. */
   progressHelperText?: React.ReactNode;
 }
 
@@ -145,14 +144,6 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     </span>
   );
 
-  const helperTextVariant = variant === 'danger' ? 'error' : variant;
-
-  const statusItemHelperText = progressHelperText && (
-    <HelperText isLiveRegion>
-      <HelperTextItem variant={helperTextVariant}>{progressHelperText}</HelperTextItem>
-    </HelperText>
-  );
-
   return (
     <li className={css(styles.multipleFileUploadStatusItem, className)} {...props}>
       <div className={styles.multipleFileUploadStatusItemIcon}>{fileIcon || <FileIcon />}</div>
@@ -171,7 +162,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
           aria-label={progressAriaLabel}
           aria-labelledby={progressAriaLabelledBy}
           id={progressId}
-          helperText={statusItemHelperText}
+          helperText={progressHelperText}
         />
       </div>
       <div className={styles.multipleFileUploadStatusItemClose}>

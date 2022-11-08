@@ -4,7 +4,9 @@ import {
   MultipleFileUploadMain,
   MultipleFileUploadStatus,
   MultipleFileUploadStatusItem,
-  Checkbox
+  Checkbox,
+  HelperText,
+  HelperTextItem
 } from '@patternfly/react-core';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
@@ -95,7 +97,11 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   const createHelperText = (file: File) => {
     const fileResult = readFileData.find(readFile => readFile.fileName === file.name);
     if (fileResult?.loadError) {
-      return fileResult.loadError.toString();
+      return (
+        <HelperText isLiveRegion>
+          <HelperTextItem variant={'error'}>{fileResult.loadError.toString()}</HelperTextItem>
+        </HelperText>
+      );
     }
   };
 
