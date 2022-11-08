@@ -6,6 +6,7 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import { AriaProps, ProgressBar } from './ProgressBar';
+import { ProgressHelperText } from './ProgressHelperText';
 
 export enum ProgressMeasureLocation {
   outside = 'outside',
@@ -53,6 +54,10 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
     | 'left-end'
     | 'right-start'
     | 'right-end';
+  /** @beta Content which can be used to convey additional information about the progress component.
+   * We recommend the helper text component as it was designed for this purpose.
+   */
+  helperText?: React.ReactNode;
 }
 
 const variantToIcon = {
@@ -70,7 +75,8 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   variant = null,
   measureLocation = ProgressMeasureLocation.top,
   isTitleTruncated = false,
-  tooltipPosition
+  tooltipPosition,
+  helperText
 }: ProgressContainerProps) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   const [tooltip, setTooltip] = React.useState('');
@@ -117,6 +123,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
       <ProgressBar role="progressbar" progressBarAriaProps={progressBarAriaProps} value={value}>
         {measureLocation === ProgressMeasureLocation.inside && `${value}%`}
       </ProgressBar>
+      {helperText && <ProgressHelperText>{helperText}</ProgressHelperText>}
     </React.Fragment>
   );
 };
