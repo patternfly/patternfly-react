@@ -54,7 +54,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     setReadFileData(newReadFiles);
   };
 
-  /** this function causes uploaded files to become corrupted if the corresponding option is selected in the example,
+  /** this function forces uploaded files to become corrupted if "Demonstrate error state with helper text" is selected in the example,
    * only used in this example for demonstration purposes */
   const updateCurrentFiles = (files: File[]) => {
     if (fileUploadShouldFail) {
@@ -142,7 +142,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
       />
       <Checkbox
         id="upload-should-fail-checkbox"
-        label="Force uploads to fail"
+        label="Demonstrate error state with helper text"
         isChecked={fileUploadShouldFail}
         onChange={() => setFileUploadShouldFail(!fileUploadShouldFail)}
       />
