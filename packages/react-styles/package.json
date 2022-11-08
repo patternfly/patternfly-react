@@ -1,6 +1,6 @@
 {
   "name": "@breakaway/react-styles",
-  "version": "5.0.0",
+  "version": "5.5.0",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -15,7 +15,7 @@
     "tag": "latest"
   },
   "scripts": {
-    "generate": "rimraf css && node scripts/writeClassMaps.js && node scripts/copyStyles.js && node scripts/copyBaseStyles.js",
+    "generate": "rimraf css && node scripts/writeClassMaps.js && node scripts/writeModulesClassMaps.js && node scripts/copyStyles.js && node scripts/copyBaseStyles.js",
     "clean": "rimraf dist css"
   },
   "devDependencies": {

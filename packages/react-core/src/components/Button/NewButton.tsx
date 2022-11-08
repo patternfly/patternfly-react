@@ -1,20 +1,14 @@
+// @ts-nocheck
 import * as React from 'react';
-import styles from '@breakaway/react-styles/css/components/Button/button';
+import styleKeys from '@breakaway/react-styles/css/components/Button/button.module.js';
+import variables from '@breakaway/react-styles/css/base/base.module.css';
+import styles from '@breakaway/react-styles/css/components/Button/button.module.css';
 import { css } from '@breakaway/react-styles';
 import { Spinner, spinnerSize } from '../Spinner';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 import { Badge } from '../Badge';
 
-/*
---pf-c-button--m-primary--BackgroundColor: purple;
---pf-c-button--m-primary--Color: yellow;
-
-Replace:
-`:where(.pf-theme-dark) `
-`.pf-theme-dark`
-*/
-
-export enum ButtonVariant {
+export enum NewButtonVariant {
   primary = 'primary',
   secondary = 'secondary',
   tertiary = 'tertiary',
@@ -25,13 +19,13 @@ export enum ButtonVariant {
   control = 'control'
 }
 
-export enum ButtonType {
+export enum NewButtonType {
   button = 'button',
   submit = 'submit',
   reset = 'reset'
 }
 
-export interface BadgeCountObject {
+export interface NewBadgeCountObject {
   /**  Adds styling to the badge to indicate it has been read */
   isRead?: boolean;
   /** Adds count number right of button */
@@ -40,7 +34,7 @@ export interface BadgeCountObject {
   className?: string;
 }
 
-export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'ref'>, OUIAProps {
+export interface NewButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'ref'>, OUIAProps {
   /** Content rendered inside the button */
   children?: React.ReactNode;
   /** Additional classes added to the button */
@@ -88,14 +82,15 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Adds count number to button */
-  countOptions?: BadgeCountObject;
+  countOptions?: NewBadgeCountObject;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  useDarkTheme?: boolean;
 }
 
-const ButtonBase: React.FunctionComponent<ButtonProps> = ({
+const ButtonBase: React.FunctionComponent<NewButtonProps> = ({
   children = null,
   className = '',
   component = 'button',
@@ -112,8 +107,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   isLarge = false,
   inoperableEvents = ['onClick', 'onKeyPress'],
   isInline = false,
-  type = ButtonType.button,
-  variant = ButtonVariant.primary,
+  type = NewButtonType.button,
+  variant = NewButtonVariant.primary,
   iconPosition = 'left',
   'aria-label': ariaLabel = null,
   icon = null,
@@ -122,9 +117,10 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   tabIndex = null,
   innerRef,
   countOptions,
+  useDarkTheme = false,
   ...props
-}: ButtonProps) => {
-  const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
+}: NewButtonProps) => {
+  const ouiaProps = useOUIAProps(NewButton.displayName, ouiaId, ouiaSafe, variant);
   const Component = component as any;
   const isButtonElement = Component === 'button';
   const isInlineSpan = isInline && Component === 'span';
@@ -156,18 +152,20 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       aria-disabled={isDisabled || isAriaDisabled}
       aria-label={ariaLabel}
       className={css(
-        styles.button,
-        styles.modifiers[variant],
-        isBlock && styles.modifiers.block,
-        isDisabled && styles.modifiers.disabled,
-        isAriaDisabled && styles.modifiers.ariaDisabled,
-        isActive && styles.modifiers.active,
-        isInline && variant === ButtonVariant.link && styles.modifiers.inline,
-        isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
-        isLoading !== null && children !== null && styles.modifiers.progress,
-        isLoading && styles.modifiers.inProgress,
-        isSmall && styles.modifiers.small,
-        isLarge && styles.modifiers.displayLg,
+        variables.root,
+        styles[styleKeys.button],
+        styles[styleKeys.modifiers[variant]],
+        isBlock && styles[styleKeys.modifiers.block],
+        isDisabled && styles[styleKeys.modifiers.disabled],
+        isAriaDisabled && styles[styleKeys.modifiers.ariaDisabled],
+        isActive && styles[styleKeys.modifiers.active],
+        isInline && variant === NewButtonVariant.link && styles[styleKeys.modifiers.inline],
+        isDanger && (variant === NewButtonVariant.secondary || variant === NewButtonVariant.link) && styles[styleKeys.modifiers.danger],
+        isLoading !== null && children !== null && styles[styleKeys.modifiers.progress],
+        isLoading && styles[styleKeys.modifiers.inProgress],
+        isSmall && styles[styleKeys.modifiers.small],
+        isLarge && styles[styleKeys.modifiers.displayLg],
+        useDarkTheme && styles[styleKeys.themeDark],
         className
       )}
       disabled={isButtonElement ? isDisabled : null}
@@ -178,7 +176,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       {...ouiaProps}
     >
       {isLoading && (
-        <span className={css(styles.buttonProgress)}>
+        <span className={css(styles[styleKeys.buttonProgress])}>
           <Spinner
             size={spinnerSize.md}
             aria-valuetext={spinnerAriaValueText}
@@ -187,16 +185,16 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
           />
         </span>
       )}
-      {variant === ButtonVariant.plain && children === null && icon ? icon : null}
-      {variant !== ButtonVariant.plain && icon && iconPosition === 'left' && (
-        <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>
+      {variant === NewButtonVariant.plain && children === null && icon ? icon : null}
+      {variant !== NewButtonVariant.plain && icon && iconPosition === 'left' && (
+        <span className={css(styles[styleKeys.buttonIcon], styles[styleKeys.modifiers.start])}>{icon}</span>
       )}
       {children}
-      {variant !== ButtonVariant.plain && icon && iconPosition === 'right' && (
-        <span className={css(styles.buttonIcon, styles.modifiers.end)}>{icon}</span>
+      {variant !== NewButtonVariant.plain && icon && iconPosition === 'right' && (
+        <span className={css(styles[styleKeys.buttonIcon], styles[styleKeys.modifiers.end])}>{icon}</span>
       )}
       {countOptions && (
-        <span className={css(styles.buttonCount, countOptions.className)}>
+        <span className={css(styles[styleKeys.buttonCount], countOptions.className)}>
           <Badge isRead={countOptions.isRead}>{countOptions.count}</Badge>
         </span>
       )}
@@ -204,8 +202,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   );
 };
 
-export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<any>) => (
+export const NewButton = React.forwardRef((props: NewButtonProps, ref: React.Ref<any>) => (
   <ButtonBase innerRef={ref} {...props} />
 ));
 
-Button.displayName = 'Button';
+NewButton.displayName = 'NewButton';

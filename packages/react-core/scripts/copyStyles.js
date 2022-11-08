@@ -23,8 +23,7 @@ copySync(join(pfDir, 'assets/fonts'), join(stylesDir, 'assets/fonts'), {
 
 // Copy css
 const baseCssFiles = {
-  // write out as a CSS module file
-  'base.module.css': 'patternfly-base.css',
+  'base.css': 'patternfly-base.css',
   'base-no-reset.css': 'patternfly-base-no-reset.css'
 };
 
@@ -51,7 +50,5 @@ for (const [targetCss, baseCss] of Object.entries(baseCssFiles)) {
     }
   });
 
-  // writeFileSync(join(stylesDir, targetCss), stringifyCSS(ast));
-  // Don't want :root styles in CSS modules
-  writeFileSync(join(stylesDir, targetCss), stringifyCSS(ast).replaceAll(':root', '.root'));
+  writeFileSync(join(stylesDir, targetCss), stringifyCSS(ast));
 }
