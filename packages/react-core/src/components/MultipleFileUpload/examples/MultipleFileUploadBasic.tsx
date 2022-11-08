@@ -142,7 +142,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
       />
       <Checkbox
         id="upload-should-fail-checkbox"
-        label="Demonstrate error state with helper text"
+        label="Demonstrate error reporting by forcing uploads to fail"
         isChecked={fileUploadShouldFail}
         onChange={() => setFileUploadShouldFail(!fileUploadShouldFail)}
       />
