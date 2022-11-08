@@ -12,7 +12,7 @@ export const TabsDefault: React.FunctionComponent = () => {
     setActiveTabKey(tabIndex);
   };
 
-  const toggleBox = checked => {
+  const toggleBox = (checked: boolean) => {
     setIsBox(checked);
   };
 
