@@ -1,6 +1,10 @@
 import React from 'react';
-import { Table, TableBody, TableHeader, TableVariant, TableProps, expandable, IRowCell } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
+import { TableBody } from "../Body";
+import { TableHeader } from "../Header";
+import { TableProps, Table } from "../Table";
+import { IRowCell, TableVariant } from "../TableTypes";
+import { expandable } from "../utils";
 
 interface Repository {
   name: string;

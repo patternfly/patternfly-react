@@ -11,18 +11,14 @@ import {
   ToolbarContent,
   ToolbarItem
 } from '@patternfly/react-core';
-import {
-  CustomActionsToggleProps,
-  fitContent,
-  headerCol,
-  TableProps,
-  IActions,
-  IActionsResolver,
-  Table,
-  TableBody,
-  TableHeader,
-  TableText
-} from '@patternfly/react-table';
+import { CustomActionsToggleProps } from "../ActionsColumn";
+import { TableBody } from "../Body";
+import { TableHeader } from "../Header";
+import { TableProps, Table } from "../Table";
+import { TableText } from "../TableText";
+import { IActions, IActionsResolver } from "../TableTypes";
+import { headerCol, fitContent } from "../utils";
+
 
 interface Repository {
   name: string;

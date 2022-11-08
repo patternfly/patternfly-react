@@ -25,7 +25,7 @@ import {
   EmptyStateActions,
   EmptyStateIcon
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
@@ -649,7 +649,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       {toolbar}
-      <TableComposable aria-label="Selectable table">
+      <Table aria-label="Selectable table">
         <Thead>
           <Tr>
             <Th />
@@ -701,7 +701,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
             </Tr>
           )}
         </Tbody>
-      </TableComposable>
+      </Table>
     </React.Fragment>
   );
 };

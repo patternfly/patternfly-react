@@ -1,6 +1,8 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table';
+import { Table, TableProps } from '../Table';
 import { ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@patternfly/react-core';
+import { TableBody } from '../Body';
+import { TableHeader } from '../Header';
 interface Repository {
   name: string;
   branches: string;

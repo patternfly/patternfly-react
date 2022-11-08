@@ -8,7 +8,7 @@ import {
   IRow,
   ICell,
   IRowCell
-} from '@patternfly/react-table';
+} from '@patternfly/react-table/src/deprecated/components/Table';
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';

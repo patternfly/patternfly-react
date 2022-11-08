@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  TableComposable,
+  Table,
   Thead,
   Tr,
   Th,
@@ -177,7 +177,7 @@ export const ComposableTableStickyColumnsAndHeader: React.FunctionComponent = ()
             {toolbar}
             <Divider />
             <InnerScrollContainer>
-              <TableComposable aria-label="Sticky columns and header table" gridBreakPoint="" isStickyHeader>
+              <Table aria-label="Sticky columns and header table" gridBreakPoint="" isStickyHeader>
                 <Thead>
                   <Tr>
                     <Th isStickyColumn modifier="truncate" sort={getSortParams(0)}>
@@ -242,7 +242,7 @@ export const ComposableTableStickyColumnsAndHeader: React.FunctionComponent = ()
                     </Tr>
                   ))}
                 </Tbody>
-              </TableComposable>
+              </Table>
             </InnerScrollContainer>
           </OuterScrollContainer>
         </div>

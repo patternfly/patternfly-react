@@ -10,7 +10,7 @@ import {
   IRow,
   ISortBy,
   TableProps
-} from '@patternfly/react-table';
+} from '@patternfly/react-table/src/deprecated/components/Table';
 
 export interface DemoSortableTableProps {
   firstColumnRows?: string[];

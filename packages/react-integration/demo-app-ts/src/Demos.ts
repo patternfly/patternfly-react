@@ -463,9 +463,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableFavoritesDemo
   },
   {
-    id: 'table-composable-demo',
-    name: 'Table Composable Demo',
-    componentType: Examples.TableComposableDemo
+    id: 'table-demo',
+    name: 'Table Demo',
+    componentType: Examples.TableDemo
   },
   {
     id: 'tab-string-event-key-demo',

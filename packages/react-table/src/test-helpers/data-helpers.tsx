@@ -1,4 +1,4 @@
-import { IRow } from '../components/Table/TableTypes';
+import { IRow } from '../deprecated/components/Table/TableTypes';
 
 export const buildExpandableRows = (relationships: any = {}, openIndexes: number[] = [], rowCount = 10) => {
   const rows: IRow[] = [];

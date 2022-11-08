@@ -8,7 +8,7 @@ import {
   ICell,
   IRow,
   RowSelectVariant
-} from '@patternfly/react-table';
+} from '@patternfly/react-table/src/deprecated/components/Table';
 import { Checkbox, Divider, Radio } from '@patternfly/react-core';
 import '@patternfly/patternfly/utilities/Spacing/spacing.css';
 

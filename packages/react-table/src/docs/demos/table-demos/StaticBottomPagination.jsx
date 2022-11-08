@@ -13,7 +13,7 @@ import {
   PageSection,
   Label
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { rows, columns } from '../../examples/Data.jsx';
 
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -120,7 +120,7 @@ export const StaticBottomPagination = () => {
         <PageSection isFilled>
           <Card>
             {tableToolbar}
-            <TableComposable variant="compact" aria-label="Paginated Table">
+            <Table variant="compact" aria-label="Paginated Table">
               <Thead>
                 <Tr>
                   {columns.map((column, columnIndex) => (
@@ -146,7 +146,7 @@ export const StaticBottomPagination = () => {
                   </Tr>
                 ))}
               </Tbody>
-            </TableComposable>
+            </Table>
             {renderPagination('bottom', false)}
           </Card>
         </PageSection>

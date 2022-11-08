@@ -21,7 +21,7 @@ import {
   EmptyStateIcon,
   EmptyStateActions
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 interface Repository {
@@ -296,7 +296,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       {toolbar}
-      <TableComposable aria-label="Selectable table">
+      <Table aria-label="Selectable table">
         <Thead>
           <Tr>
             <Th />
@@ -348,7 +348,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
             </Tr>
           )}
         </Tbody>
-      </TableComposable>
+      </Table>
     </React.Fragment>
   );
 };

@@ -1,17 +1,12 @@
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  treeRow,
-  IRow,
-  OnTreeRowCollapse,
-  OnCheckChange,
-  OnToggleRowDetails
-} from '@patternfly/react-table';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
+import { TableBody } from "../Body";
+import { TableHeader } from "../Header";
+import { Table } from "../Table";
+import { IRow, OnTreeRowCollapse, OnCheckChange, OnToggleRowDetails } from "../TableTypes";
+import { treeRow } from "../utils";
 
 interface RepositoriesTreeNode {
   name: string;

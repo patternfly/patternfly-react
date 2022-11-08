@@ -1,14 +1,9 @@
 import React from 'react';
-import {
-  TableProps,
-  sortable,
-  info,
-  cellWidth,
-  wrappable,
-  Table,
-  TableBody,
-  TableHeader
-} from '@patternfly/react-table';
+import { TableBody } from "../Body";
+import { TableHeader } from "../Header";
+import { TableProps, Table } from "../Table";
+import { sortable, info, wrappable, cellWidth } from "../utils";
+
 
 interface Repository {
   name: string;

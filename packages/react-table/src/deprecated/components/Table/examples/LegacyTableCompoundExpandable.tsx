@@ -1,9 +1,11 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, compoundExpand, TableProps } from '@patternfly/react-table';
-
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import { TableBody } from '../Body';
+import { TableHeader } from '../Header';
+import { TableProps, Table } from '../Table';
+import { compoundExpand } from '../utils';
 
 interface Repository {
   name: string;
@@ -161,7 +163,7 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
     <Table
       aria-label="Compound expandable table"
       onExpand={(_event, rowIndex, colIndex, isOpen) => {
-        if (reposByRowIndex[rowIndex]) {
+        if (reposByRowIndex?.[rowIndex]) {
           setCellExpanded(reposByRowIndex[rowIndex], columnKeys[colIndex], !isOpen);
         }
       }}

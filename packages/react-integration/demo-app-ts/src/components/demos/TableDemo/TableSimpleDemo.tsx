@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Table, TableHeader, TableBody, TableProps, textCenter, ICell, IRow } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps, textCenter, ICell, IRow } from '@patternfly/react-table/src/deprecated/components/Table';
 
 export class TableSimpleDemo extends React.Component<
   TableProps,

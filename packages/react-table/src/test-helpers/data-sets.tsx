@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import * as React from 'react';
-import { IRow, ICell, IActions, EditableTextCell } from '../components/Table';
+import { EditableTextCell, ICell, IRow } from '../deprecated/components/Table';
 
 export const columns: (ICell | string)[] = [
   { title: 'Header cell' },
@@ -192,26 +192,26 @@ export const editableRows: IRow[] = [
   }
 ];
 
-export const actions: IActions = [
+export const actions = [
   {
     title: 'Some action',
-    onClick: (event: React.MouseEvent, rowId: number) =>
+    onClick: (_event: React.MouseEvent, rowId: number) =>
       // tslint:disable-next-line:no-console
       console.log('clicked on Some action, on row: ', rowId)
   },
   {
     title: <div>Another action</div>,
-    onClick: (event: React.MouseEvent, rowId: number) =>
+    onClick: (_event: React.MouseEvent, rowId: number) =>
       // tslint:disable-next-line:no-console
       console.log('clicked on Another action, on row: ', rowId)
   },
   {
     isSeparator: true,
-    onClick: null
+    onClick: null as React.MouseEvent
   },
   {
     title: 'Third action',
-    onClick: (event: React.MouseEvent, rowId: number) =>
+    onClick: (_event: React.MouseEvent, rowId: number) =>
       // tslint:disable-next-line:no-console
       console.log('clicked on Third action, on row: ', rowId)
   }

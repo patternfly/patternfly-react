@@ -9,7 +9,7 @@ import {
   ICell,
   IRow,
   ISortBy
-} from '@patternfly/react-table';
+} from '@patternfly/react-table/src/deprecated/components/Table';
 
 export class TableSortableDemo extends React.Component<
   TableProps,

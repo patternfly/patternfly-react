@@ -439,7 +439,7 @@ export const ColumnManagementAction = () => {
         <PageSection isFilled>
           <Card>
             {toolbarItems}
-            <TableComposable variant="compact" aria-label="Column Management Table">
+            <Table variant="compact" aria-label="Column Management Table">
               <Thead>
                 <Tr>
                   {managedColumns.map((column, columnIndex) => (
@@ -475,7 +475,7 @@ export const ColumnManagementAction = () => {
                   </Tr>
                 ))}
               </Tbody>
-            </TableComposable>
+            </Table>
             {renderPagination(PaginationVariant.bottom)}
             {renderModal()}
           </Card>

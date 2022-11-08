@@ -41,15 +41,12 @@ import {
   ToolbarToggleGroup
 } from '@patternfly/react-core';
 import {
-  TableComposable,
+  Table,
   Thead,
   Tbody,
   Tr,
   Th,
-  Td,
-  IAction,
-  ActionsColumn,
-  CustomActionsToggleProps
+  Td
 } from '@patternfly/react-table';
 import { KebabToggle } from '@patternfly/react-core/deprecated';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
@@ -58,6 +55,8 @@ import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import { ActionsColumn, CustomActionsToggleProps } from "@patternfly/react-table/src/deprecated/components/Table/ActionsColumn";
+import { IAction } from "@patternfly/react-table/src/deprecated/components/Table/TableTypes";
 
 interface Repository {
   name: string;
@@ -209,8 +208,8 @@ export const TablesAndTabs = () => {
     </Toolbar>
   );
 
-  const tableComposable = (
-    <TableComposable aria-label="`Composable` table">
+  const table = (
+    <Table aria-label="table">
       <Thead noWrap>
         <Tr>
           <Th
@@ -284,7 +283,7 @@ export const TablesAndTabs = () => {
           </Tr>
         ))}
       </Tbody>
-    </TableComposable>
+    </Table>
   );
 
   const panelContent = (
@@ -375,7 +374,7 @@ export const TablesAndTabs = () => {
   const tabContent = (
     <Drawer isExpanded={isExpanded} isInline>
       <DrawerContent panelContent={panelContent}>
-        <DrawerContentBody>{tableComposable}</DrawerContentBody>
+        <DrawerContentBody>{table}</DrawerContentBody>
       </DrawerContent>
     </Drawer>
   );

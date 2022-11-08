@@ -4,7 +4,7 @@ import LongArrowAltDownIcon from '@patternfly/react-icons/dist/esm/icons/long-ar
 import ArrowsAltVIcon from '@patternfly/react-icons/dist/esm/icons/arrows-alt-v-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { TableText } from './TableText';
+import { TableText } from "src/deprecated/components/Table";
 
 export enum SortByDirection {
   asc = 'asc',

@@ -8,7 +8,7 @@ import {
   IComputedData,
   TableProps,
   ICell
-} from '@patternfly/react-table';
+} from '@patternfly/react-table/src/deprecated/components/Table';
 
 interface ITableRowClickDemoState {
   rows: IRow[];

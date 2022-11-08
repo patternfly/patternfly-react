@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableComposable, Thead, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternfly/react-table';
 import { Card, PageSection } from '@patternfly/react-core';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
@@ -116,7 +116,7 @@ export const StickyFirstColumn = () => {
       <PageSection isWidthLimited padding={{ default: 'noPadding', xl: 'padding' }}>
         <Card component="div">
           <InnerScrollContainer>
-            <TableComposable aria-label="Sticky column table" gridBreakPoint="">
+            <Table aria-label="Sticky column table" gridBreakPoint="">
               <Thead>
                 <Tr>
                   <Th
@@ -201,7 +201,7 @@ export const StickyFirstColumn = () => {
                   </Tr>
                 ))}
               </Tbody>
-            </TableComposable>
+            </Table>
           </InnerScrollContainer>
         </Card>
       </PageSection>

@@ -1,6 +1,8 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, classNames, cellWidth, Visibility, TableProps } from '@patternfly/react-table';
-
+import { TableBody } from '../Body';
+import { TableHeader } from '../Header';
+import { TableProps, Table } from '../Table';
+import { cellWidth, classNames, Visibility } from '../utils';
 interface Repository {
   name: string;
   branches: string;
