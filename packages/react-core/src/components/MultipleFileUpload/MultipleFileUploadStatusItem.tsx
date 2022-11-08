@@ -56,7 +56,7 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   /** Unique identifier for progress. Generated if not specified. */
   progressId?: string;
   /** @beta Additional content related to the status item, intended to be dynamically rendered content such as status messages. */
-  helperText?: React.ReactNode;
+  progressHelperText?: React.ReactNode;
 }
 
 export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileUploadStatusItemProps> = ({
@@ -78,7 +78,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   progressId,
   progressAriaLiveMessage,
   buttonAriaLabel = 'Remove from list',
-  helperText,
+  progressHelperText,
   ...props
 }: MultipleFileUploadStatusItemProps) => {
   const [loadPercentage, setLoadPercentage] = React.useState(0);
@@ -147,9 +147,9 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
 
   const helperTextVariant = variant === 'danger' ? 'error' : variant;
 
-  const statusItemHelperText = helperText && (
+  const statusItemHelperText = progressHelperText && (
     <HelperText isLiveRegion>
-      <HelperTextItem variant={helperTextVariant}>{helperText}</HelperTextItem>
+      <HelperTextItem variant={helperTextVariant}>{progressHelperText}</HelperTextItem>
     </HelperText>
   );
 

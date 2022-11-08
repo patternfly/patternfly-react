@@ -46,7 +46,7 @@ The below example demonstrates a typical application of file upload - multiple, 
 
 The "Show as horizontal" checkbox can be used to easily toggle the `isHorizontal` prop, showing our available styling variations.
 
-The "Demonstrate error state with helper text" checkbox shows how our `helperText` prop can be used to provide status messages to users, such as when a file fails to upload. While this checkbox is checked it will cause any file uploaded to automatically fail the file reading process, and helper text will be dynamically rendered which informs the user of that error.
+The "Demonstrate error state with helper text" checkbox shows how our `progressHelperText` prop can be used to provide status messages to users, such as when a file fails to upload. While this checkbox is checked it will cause any file uploaded to automatically fail the file reading process, and helper text will be dynamically rendered which informs the user of that error.
 
 ```ts file="./MultipleFileUploadBasic.tsx"
 ```

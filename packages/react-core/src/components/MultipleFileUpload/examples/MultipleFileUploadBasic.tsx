@@ -128,7 +128,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
                 onClearClick={() => removeFiles([file.name])}
                 onReadSuccess={handleReadSuccess}
                 onReadFail={handleReadFail}
-                helperText={createHelperText(file)}
+                progressHelperText={createHelperText(file)}
               />
             ))}
           </MultipleFileUploadStatus>

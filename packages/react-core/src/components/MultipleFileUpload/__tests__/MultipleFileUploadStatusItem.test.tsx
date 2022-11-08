@@ -128,7 +128,7 @@ test('renders helper text', () => {
       progressAriaLabel="progressAriaLabel"
       progressAriaLabelledBy="progressAriaLabelledBy"
       progressId="test-progress-id"
-      helperText="Test helper text"
+      progressHelperText="Test helper text"
     />
   );
 
@@ -146,7 +146,7 @@ test('renders the helper text inside of a HelperTextItem and HelperText componen
       progressAriaLabel="progressAriaLabel"
       progressAriaLabelledBy="progressAriaLabelledBy"
       progressId="test-progress-id"
-      helperText="Test helper text"
+      progressHelperText="Test helper text"
     />
   );
 
@@ -167,7 +167,7 @@ test('renders the helper text with a variant of undefined when the progress vari
       progressAriaLabel="progressAriaLabel"
       progressAriaLabelledBy="progressAriaLabelledBy"
       progressId="test-progress-id"
-      helperText="Test helper text"
+      progressHelperText="Test helper text"
     />
   );
 
@@ -184,7 +184,7 @@ test('renders the helper text with a variant of success when the progress varian
       progressAriaLabelledBy="progressAriaLabelledBy"
       progressId="test-progress-id"
       progressVariant="success"
-      helperText="Test helper text"
+      progressHelperText="Test helper text"
     />
   );
 
@@ -201,7 +201,7 @@ test('renders the helper text with a variant of warning when the progress varian
       progressAriaLabelledBy="progressAriaLabelledBy"
       progressId="test-progress-id"
       progressVariant="warning"
-      helperText="Test helper text"
+      progressHelperText="Test helper text"
     />
   );
 
@@ -218,7 +218,7 @@ test('renders the helper text with a variant of error when the progress variant 
       progressAriaLabelledBy="progressAriaLabelledBy"
       progressId="test-progress-id"
       progressVariant="danger"
-      helperText="Test helper text"
+      progressHelperText="Test helper text"
     />
   );
 
@@ -234,7 +234,7 @@ test('renders the helper text as a live region', () => {
       progressAriaLabel="progressAriaLabel"
       progressAriaLabelledBy="progressAriaLabelledBy"
       progressId="test-progress-id"
-      helperText="Test helper text"
+      progressHelperText="Test helper text"
     />
   );
 
