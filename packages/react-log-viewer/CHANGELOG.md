@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.87.59](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.58...@patternfly/react-log-viewer@4.87.59) (2022-11-09)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
 ## [4.87.58](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.57...@patternfly/react-log-viewer@4.87.58) (2022-11-09)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer

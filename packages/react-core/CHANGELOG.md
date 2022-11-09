@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.261.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.260.1...@patternfly/react-core@4.261.0) (2022-11-09)
+
+
+### Features
+
+* **MultipleFileUpload:** added support for helper text ([#8344](https://github.com/patternfly/patternfly-react/issues/8344)) ([f8faf8b](https://github.com/patternfly/patternfly-react/commit/f8faf8bf62b8ece44f5283922711730921fcd537))
+
+
+
+
+
 ## [4.260.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.260.0...@patternfly/react-core@4.260.1) (2022-11-09)
 
 **Note:** Version bump only for package @patternfly/react-core
