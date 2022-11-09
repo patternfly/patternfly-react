@@ -141,7 +141,7 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
           <Tab eventKey={3} title={<TabTitleText>Support</TabTitleText>} tabContentId={`tabContent${3}`} />
         </Tabs>
       </PageSection>
-      <PageSection variant="light">
+      <PageSection isWidthLimited variant="light">
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <TabContentBody>What's new panel</TabContentBody>
         </TabContent>

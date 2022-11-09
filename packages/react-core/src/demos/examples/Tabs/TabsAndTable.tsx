@@ -26,8 +26,6 @@ import {
   OverflowMenuItem,
   PageSection,
   PageSectionVariants,
-  Pagination,
-  PaginationVariant,
   Progress,
   ProgressSize,
   Select,
@@ -197,15 +195,6 @@ export const TablesAndTabs = () => {
             />
           </OverflowMenuControl>
         </OverflowMenu>
-        <ToolbarItem variant="pagination">
-          <Pagination
-            itemCount={36}
-            widgetId="pagination-options-menu-bottom"
-            page={1}
-            variant={PaginationVariant.top}
-            isCompact
-          />
-        </ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
@@ -376,16 +365,7 @@ export const TablesAndTabs = () => {
   const tabContent = (
     <Drawer isExpanded={isExpanded} isInline>
       <DrawerContent panelContent={panelContent}>
-        <DrawerContentBody>
-          {tableComposable}
-          <Pagination
-            id="page-layout-table-column-management-action-toolbar-bottom"
-            itemCount={36}
-            widgetId="pagination-options-menu-bottom"
-            page={1}
-            variant={PaginationVariant.bottom}
-          />
-        </DrawerContentBody>
+        <DrawerContentBody>{tableComposable}</DrawerContentBody>
       </DrawerContent>
     </Drawer>
   );
