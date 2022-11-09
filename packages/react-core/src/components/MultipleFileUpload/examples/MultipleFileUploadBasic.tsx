@@ -56,7 +56,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     setReadFileData(newReadFiles);
   };
 
-  /** this function forces uploaded files to become corrupted if "Demonstrate error state with helper text" is selected in the example,
+  /** Forces uploaded files to become corrupted if "Demonstrate error reporting by forcing uploads to fail" is selected in the example,
    * only used in this example for demonstration purposes */
   const updateCurrentFiles = (files: File[]) => {
     if (fileUploadShouldFail) {
