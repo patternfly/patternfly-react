@@ -8,7 +8,9 @@ import { Tooltip } from '../Tooltip';
 import { Button } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title'>, OUIAProps {
+export interface TabProps
+  extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title' | 'action'>,
+    OUIAProps {
   /** content rendered inside the Tab content area. */
   children?: React.ReactNode;
   /** additional classes added to the Tab */
@@ -39,6 +41,8 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   closeButtonAriaLabel?: string;
   /** @beta Flag indicating the close button should be disabled */
   isCloseDisabled?: boolean;
+  /** @beta Actions rendered beside the tab content */
+  action?: React.ReactNode;
   /** Value to set the data-ouia-component-id for the tab button.*/
   ouiaId?: number | string;
 }
@@ -59,6 +63,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   tooltip,
   closeButtonAriaLabel,
   isCloseDisabled = false,
+  action,
   ...props
 }: TabProps) => {
   const preventedEvents = inoperableEvents.reduce(
@@ -117,27 +122,28 @@ const TabBase: React.FunctionComponent<TabProps> = ({
       className={css(
         styles.tabsItem,
         eventKey === localActiveKey && styles.modifiers.current,
-        handleTabClose && styles.modifiers.action,
-        handleTabClose && (isDisabled || isAriaDisabled) && styles.modifiers.disabled,
+        (handleTabClose || action) && styles.modifiers.action,
+        (isDisabled || isAriaDisabled) && styles.modifiers.disabled,
         childClassName
       )}
       role="presentation"
     >
       {tooltip ? <Tooltip {...tooltip.props}>{tabButton}</Tooltip> : tabButton}
-      {handleTabClose !== undefined && (
-        <span className={css(styles.tabsItemClose)}>
+      {handleTabClose !== undefined && !action && (
+        <span className={css(styles.tabsItemAction)}>
           <Button
             variant="plain"
             aria-label={closeButtonAriaLabel || 'Close tab'}
             onClick={(event: any) => handleTabClose(event, eventKey, tabContentRef)}
             isDisabled={isCloseDisabled}
           >
-            <span className={css(styles.tabsItemCloseIcon)}>
+            <span className={css(styles.tabsItemActionIcon)}>
               <TimesIcon />
             </span>
           </Button>
         </span>
       )}
+      {action && action}
     </li>
   );
 };
