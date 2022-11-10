@@ -19,7 +19,7 @@ exports[`NotificationDrawerGroup drawer group with isExpanded applied  1`] = `
           class="pf-c-notification-drawer__group-toggle-count"
         >
           <span
-            class="pf-c-badge pf-m-unread"
+            class="pf-c-badge pf-m-unread pf-screen-reader"
           >
             2
           </span>
@@ -66,7 +66,7 @@ exports[`NotificationDrawerGroup drawer group with isRead applied  1`] = `
           class="pf-c-notification-drawer__group-toggle-count"
         >
           <span
-            class="pf-c-badge pf-m-read"
+            class="pf-c-badge pf-m-read pf-screen-reader"
           >
             2
           </span>
@@ -113,7 +113,7 @@ exports[`NotificationDrawerGroup renders correct heading level 1`] = `
           class="pf-c-notification-drawer__group-toggle-count"
         >
           <span
-            class="pf-c-badge pf-m-unread"
+            class="pf-c-badge pf-m-unread pf-screen-reader"
           >
             2
           </span>
@@ -160,7 +160,7 @@ exports[`NotificationDrawerGroup renders with PatternFly Core styles 1`] = `
           class="pf-c-notification-drawer__group-toggle-count"
         >
           <span
-            class="pf-c-badge pf-m-unread"
+            class="pf-c-badge pf-m-unread pf-screen-reader"
           >
             2
           </span>

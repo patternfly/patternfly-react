@@ -1293,7 +1293,7 @@ exports[`tree view renders badges successfully 1`] = `
                 class="pf-c-tree-view__node-count"
               >
                 <span
-                  class="pf-c-badge pf-m-read"
+                  class="pf-c-badge pf-m-read pf-screen-reader"
                 >
                   2
                 </span>
@@ -1351,7 +1351,7 @@ exports[`tree view renders badges successfully 1`] = `
                     class="pf-c-tree-view__node-count"
                   >
                     <span
-                      class="pf-c-badge pf-m-read"
+                      class="pf-c-badge pf-m-read pf-screen-reader"
                     >
                       2
                     </span>
@@ -1406,7 +1406,7 @@ exports[`tree view renders badges successfully 1`] = `
                     class="pf-c-tree-view__node-count"
                   >
                     <span
-                      class="pf-c-badge pf-m-read"
+                      class="pf-c-badge pf-m-read pf-screen-reader"
                     >
                       2
                     </span>
@@ -1463,7 +1463,7 @@ exports[`tree view renders badges successfully 1`] = `
                 class="pf-c-tree-view__node-count"
               >
                 <span
-                  class="pf-c-badge pf-m-read"
+                  class="pf-c-badge pf-m-read pf-screen-reader"
                 >
                   1
                 </span>
@@ -1518,7 +1518,7 @@ exports[`tree view renders badges successfully 1`] = `
                 class="pf-c-tree-view__node-count"
               >
                 <span
-                  class="pf-c-badge pf-m-read"
+                  class="pf-c-badge pf-m-read pf-screen-reader"
                 >
                   1
                 </span>
@@ -1573,7 +1573,7 @@ exports[`tree view renders badges successfully 1`] = `
                 class="pf-c-tree-view__node-count"
               >
                 <span
-                  class="pf-c-badge pf-m-read"
+                  class="pf-c-badge pf-m-read pf-screen-reader"
                 >
                   1
                 </span>
@@ -2832,7 +2832,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     class="pf-c-tree-view__node-count"
                   >
                     <span
-                      class="pf-c-badge pf-m-read"
+                      class="pf-c-badge pf-m-read pf-screen-reader"
                     >
                       2
                     </span>
@@ -2889,7 +2889,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 class="pf-c-tree-view__node-count"
               >
                 <span
-                  class="pf-c-badge pf-m-read"
+                  class="pf-c-badge pf-m-read pf-screen-reader"
                 >
                   1
                 </span>
