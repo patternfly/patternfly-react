@@ -77,8 +77,8 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   const ref = React.useRef<HTMLLIElement>();
   const flyoutVisible = ref === flyoutRef;
   const popperRef = React.useRef<HTMLDivElement>();
-  const Component = component as any;
   const hasFlyout = flyout !== undefined;
+  const Component = hasFlyout ? 'button' : (component as any);
 
   const showFlyout = (show: boolean, override?: boolean) => {
     if ((!flyoutVisible || override) && show) {
@@ -170,8 +170,11 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   );
 
   const ariaFlyoutProps = {
-    'aria-haspopup': 'menu'
+    'aria-haspopup': 'menu',
+    'aria-expanded': flyoutVisible
   };
+
+  const tabIndex = isNavOpen ? null : -1;
 
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
@@ -186,7 +189,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
           className
         )}
         aria-current={isActive ? 'page' : null}
-        tabIndex={isNavOpen ? null : '-1'}
+        tabIndex={tabIndex}
         {...(hasFlyout && { ...ariaFlyoutProps })}
         {...props}
       >
@@ -203,7 +206,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       ...(styleChildren && {
         className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className)
       }),
-      tabIndex: child.props.tabIndex || isNavOpen ? null : -1,
+      tabIndex: child.props.tabIndex || tabIndex,
       children: hasFlyout ? (
         <React.Fragment>
           {child.props.children}
