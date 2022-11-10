@@ -336,7 +336,7 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
   // Set up pagination
   const toolbarPagination = (
     <Pagination
-      titles={{ paginationTitle: 'Checkbox filter pagination' }}
+      titles={{ paginationAriaLabel: 'Checkbox filter pagination' }}
       itemCount={repositories.length}
       perPage={10}
       page={1}

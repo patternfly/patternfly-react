@@ -105,7 +105,7 @@ export const ColumnManagementAction = () => {
       onPerPageSelect={handlePerPageSelect}
       variant={variant}
       titles={{
-        paginationTitle: `${variant} pagination`
+        paginationAriaLabel: `${variant} pagination`
       }}
     />
   );

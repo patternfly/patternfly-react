@@ -49,7 +49,7 @@ export interface PerPageOptions {
 
 export interface PaginationTitles {
   /** Accessible label for the input displaying the current page. */
-  currPage?: string;
+  currPageAriaLabel?: string;
   /** The type or title of the items being paginated. */
   items?: string;
   /** The title of the pagination options menu. */
@@ -63,17 +63,17 @@ export interface PaginationTitles {
   /** The title of a page displayed beside the page number (plural form). */
   pages?: string;
   /** Accessible label for the pagination component. */
-  paginationTitle?: string;
+  paginationAriaLabel?: string;
   /** The suffix to be displayed after each option on the options menu dropdown. */
   perPageSuffix?: string;
   /** Accessible label for the button which moves to the first page. */
-  toFirstPage?: string;
+  toFirstPageAriaLabel?: string;
   /** Accessible label for the button which moves to the last page. */
-  toLastPage?: string;
+  toLastPageAriaLabel?: string;
   /** Accessible label for the button which moves to the next page. */
-  toNextPage?: string;
+  toNextPageAriaLabel?: string;
   /** Accessible label for the button which moves to the previous page. */
-  toPreviousPage?: string;
+  toPreviousPageAriaLabel?: string;
 }
 
 export type OnSetPage = (
@@ -188,13 +188,13 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
     pages: '',
     itemsPerPage: 'Items per page',
     perPageSuffix: 'per page',
-    toFirstPage: 'Go to first page',
-    toPreviousPage: 'Go to previous page',
-    toLastPage: 'Go to last page',
-    toNextPage: 'Go to next page',
+    toFirstPageAriaLabel: 'Go to first page',
+    toPreviousPageAriaLabel: 'Go to previous page',
+    toLastPageAriaLabel: 'Go to last page',
+    toNextPageAriaLabel: 'Go to next page',
     optionsToggleAriaLabel: '',
-    currPage: 'Current page',
-    paginationTitle: 'Pagination',
+    currPageAriaLabel: 'Current page',
+    paginationAriaLabel: 'Pagination',
     ofWord: 'of'
   },
   firstPage = 1,
@@ -325,12 +325,12 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
       <Navigation
         pagesTitle={titles.page}
         pagesTitlePlural={titles.pages}
-        toLastPage={titles.toLastPage}
-        toPreviousPage={titles.toPreviousPage}
-        toNextPage={titles.toNextPage}
-        toFirstPage={titles.toFirstPage}
-        currPage={titles.currPage}
-        paginationTitle={titles.paginationTitle}
+        toLastPageAriaLabel={titles.toLastPageAriaLabel}
+        toPreviousPageAriaLabel={titles.toPreviousPageAriaLabel}
+        toNextPageAriaLabel={titles.toNextPageAriaLabel}
+        toFirstPageAriaLabel={titles.toFirstPageAriaLabel}
+        currPageAriaLabel={titles.currPageAriaLabel}
+        paginationAriaLabel={titles.paginationAriaLabel}
         ofWord={titles.ofWord}
         page={itemCount && itemCount <= 0 ? 0 : page}
         perPage={perPage}

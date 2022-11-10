@@ -192,7 +192,7 @@ class BulkSelectTableDemo extends React.Component {
         }}
         variant={variant}
         titles={{
-          paginationTitle: `${variant} pagination`
+          paginationAriaLabel: `${variant} pagination`
         }}
       />
     );
@@ -1043,7 +1043,7 @@ class ColumnManagementAction extends React.Component {
               variant={PaginationVariant.top}
               isCompact
               titles={{
-                paginationTitle: `Draggable column management top pagination`
+                paginationAriaLabel: `Draggable column management top pagination`
               }}
             />
           </ToolbarItem>
@@ -1079,7 +1079,7 @@ class ColumnManagementAction extends React.Component {
           page={1}
           variant={PaginationVariant.bottom}
           titles={{
-            paginationTitle: `Draggable column management bottom pagination`
+            paginationAriaLabel: `Draggable column management bottom pagination`
           }}
         />
         {this.renderModal()}
@@ -1546,7 +1546,7 @@ class ComplexPaginationTableDemo extends React.Component {
           { title: '20', value: 20 }
         ]}
         titles={{
-          paginationTitle: `${variant} pagination`
+          paginationAriaLabel: `${variant} pagination`
         }}
       />
     );

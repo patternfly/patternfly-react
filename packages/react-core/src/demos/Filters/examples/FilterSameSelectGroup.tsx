@@ -431,7 +431,7 @@ export const FilterSameSelectGroup: React.FunctionComponent = () => {
   // Set up pagination and toolbar
   const toolbarPagination = (
     <Pagination
-      titles={{ paginationTitle: 'Same select group pagination' }}
+      titles={{ paginationAriaLabel: 'Same select group pagination' }}
       itemCount={repositories.length}
       perPage={10}
       page={1}
