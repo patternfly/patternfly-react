@@ -6,17 +6,18 @@ import {
   OverflowMenuGroup,
   OverflowMenuItem,
   OverflowMenuDropdownItem,
-  Dropdown,
-  KebabToggle,
+  MenuToggle,
   Slider
 } from '@patternfly/react-core';
+import { Dropdown } from '@patternfly/react-core/next';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [containerWidth, setContainerWidth] = React.useState(100);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  const onToggle = (_event: any, isOpen: boolean) => {
+  const onToggle = (_event: any) => {
     setIsOpen(isOpen);
   };
 
@@ -36,19 +37,19 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
   };
 
   const dropdownItems = [
-    <OverflowMenuDropdownItem key="item1" isShared>
+    <OverflowMenuDropdownItem itemId={0} key="item1" isShared>
       Item 1
     </OverflowMenuDropdownItem>,
-    <OverflowMenuDropdownItem key="item2" isShared>
+    <OverflowMenuDropdownItem itemId={1} key="item2" isShared>
       Item 2
     </OverflowMenuDropdownItem>,
-    <OverflowMenuDropdownItem key="item3" isShared>
+    <OverflowMenuDropdownItem itemId={2} key="item3" isShared>
       Item 3
     </OverflowMenuDropdownItem>,
-    <OverflowMenuDropdownItem key="item4" isShared>
+    <OverflowMenuDropdownItem itemId={3} key="item4" isShared>
       Item 4
     </OverflowMenuDropdownItem>,
-    <OverflowMenuDropdownItem key="item5" isShared>
+    <OverflowMenuDropdownItem itemId={4} key="item5" isShared>
       Item 5
     </OverflowMenuDropdownItem>
   ];
@@ -85,13 +86,21 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
           <OverflowMenuControl>
             <Dropdown
               onSelect={onSelect}
-              toggle={<KebabToggle onToggle={onToggle} />}
+              toggle={toggleRef => (
+                <MenuToggle
+                  ref={toggleRef}
+                  aria-label="kebab dropdown toggle"
+                  variant="plain"
+                  onClick={onToggle}
+                  isExpanded={isOpen}
+                >
+                  <EllipsisVIcon />
+                </MenuToggle>
+              )}
               isOpen={isOpen}
-              isPlain
-              dropdownItems={dropdownItems}
-              isFlipEnabled
-              menuAppendTo="parent"
-            />
+            >
+              {dropdownItems}
+            </Dropdown>
           </OverflowMenuControl>
         </OverflowMenu>
       </div>
