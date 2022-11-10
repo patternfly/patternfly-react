@@ -30,7 +30,7 @@ export const ComposableTableHoverable: React.FunctionComponent = () => {
   const [selectedRepoName, setSelectedRepoName] = React.useState('');
 
   return (
-    <TableComposable aria-label="Hoverable table" hasSelectableRowCaption>
+    <TableComposable aria-label="Hoverable table">
       <Thead>
         <Tr>
           <Th>{columnNames.name}</Th>
