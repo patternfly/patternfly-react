@@ -42,7 +42,7 @@ export interface TabProps
   /** @beta Flag indicating the close button should be disabled */
   isCloseDisabled?: boolean;
   /** @beta Actions rendered beside the tab content */
-  action?: React.ReactNode;
+  actions?: React.ReactNode;
   /** Value to set the data-ouia-component-id for the tab button.*/
   ouiaId?: number | string;
 }
@@ -63,7 +63,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   tooltip,
   closeButtonAriaLabel,
   isCloseDisabled = false,
-  action,
+  actions,
   ...props
 }: TabProps) => {
   const preventedEvents = inoperableEvents.reduce(
@@ -122,14 +122,14 @@ const TabBase: React.FunctionComponent<TabProps> = ({
       className={css(
         styles.tabsItem,
         eventKey === localActiveKey && styles.modifiers.current,
-        (handleTabClose || action) && styles.modifiers.action,
+        (handleTabClose || actions) && styles.modifiers.action,
         (isDisabled || isAriaDisabled) && styles.modifiers.disabled,
         childClassName
       )}
       role="presentation"
     >
       {tooltip ? <Tooltip {...tooltip.props}>{tabButton}</Tooltip> : tabButton}
-      {handleTabClose !== undefined && !action && (
+      {handleTabClose !== undefined && !actions && (
         <span className={css(styles.tabsItemAction)}>
           <Button
             variant="plain"
@@ -143,7 +143,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
           </Button>
         </span>
       )}
-      {action && action}
+      {actions && actions}
     </li>
   );
 };

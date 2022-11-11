@@ -15,7 +15,7 @@ test('should not render anything', () => {
 
 test('renders tab action', () => {
   const { asFragment } = render(
-    <Tab eventKey={1} title={<TabTitleText>"Tab item 2"</TabTitleText>} action={<TabAction>test</TabAction>}>
+    <Tab eventKey={1} title={<TabTitleText>"Tab item 2"</TabTitleText>} actions={<TabAction>test</TabAction>}>
       Tab 2 section
     </Tab>
   );

@@ -25,7 +25,6 @@ export const TabsHelpAndClose: React.FunctionComponent = () => {
 
   const helpPopover = (header: string, popoverRef: React.RefObject<any>) => (
     <Popover
-      aria-label="Popover with react reference example"
       headerContent={<div>{header}</div>}
       bodyContent={
         <div>
@@ -62,9 +61,9 @@ export const TabsHelpAndClose: React.FunctionComponent = () => {
           <Tab
             key={index}
             eventKey={index}
-            aria-label={`Dynamic ${tab}`}
+            aria-label={`Help action and closable content - ${tab}`}
             title={<TabTitleText>{tab}</TabTitleText>}
-            action={
+            actions={
               <>
                 <TabAction isHelpAction aria-label={`Help for ${tab}`} ref={ref}>
                   <HelpIcon />

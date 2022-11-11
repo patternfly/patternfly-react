@@ -15,7 +15,7 @@ export interface TabActionProps extends Omit<React.HTMLProps<HTMLButtonElement>,
   isHelpAction?: boolean;
   /** Flag indicating if the tab action is disabled */
   isDisabled?: boolean;
-  /** Tab action aria-label */
+  /** Accessible label for the tab action */
   'aria-label'?: string;
   /** @hide Callback for the section ref */
   innerRef?: React.Ref<any>;

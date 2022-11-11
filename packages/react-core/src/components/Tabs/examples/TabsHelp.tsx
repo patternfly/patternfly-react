@@ -4,24 +4,11 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 export const TabsHelp: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState<number>(0);
-  const tabComponentRef = React.useRef<any>();
-  const firstMount = React.useRef(true);
 
   const tabs = ['Users', 'Containers', 'Database', 'Disabled', 'ARIA disabled', 'Help disabled'];
 
-  React.useEffect(() => {
-    if (firstMount.current) {
-      firstMount.current = false;
-      return;
-    } else {
-      const first = tabComponentRef.current.tabList.current.childNodes[activeTabKey];
-      first && first.firstChild.focus();
-    }
-  }, [tabs]);
-
   const helpPopover = (header: string, popoverRef: React.RefObject<any>) => (
     <Popover
-      aria-label="Popover with react reference example"
       headerContent={<div>{header}</div>}
       bodyContent={
         <div>
@@ -37,10 +24,8 @@ export const TabsHelp: React.FunctionComponent = () => {
     <Tabs
       activeKey={activeTabKey}
       onSelect={(event: any, tabIndex: string | number) => setActiveTabKey(tabIndex as number)}
-      aria-label="Tabs in the addable/closeable example"
-      addButtonAriaLabel="Add new tab"
+      aria-label="Tabs in the help action example"
       role="region"
-      ref={tabComponentRef}
     >
       {tabs.map((tab, index) => {
         const ref = React.createRef<HTMLElement>();
@@ -49,11 +34,11 @@ export const TabsHelp: React.FunctionComponent = () => {
           <Tab
             key={index}
             eventKey={index}
-            aria-label={`Dynamic ${tab}`}
+            aria-label={`Help action content - ${tab}`}
             title={<TabTitleText>{tab}</TabTitleText>}
             {...(tab === 'Disabled' && { isDisabled: true })}
             {...(tab === 'ARIA disabled' && { isAriaDisabled: true })}
-            action={
+            actions={
               <>
                 <TabAction
                   aria-label={`Help action for ${tab}`}
