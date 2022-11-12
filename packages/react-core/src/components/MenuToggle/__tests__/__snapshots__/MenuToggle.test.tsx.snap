@@ -90,7 +90,7 @@ exports[`menu toggle shows badge 1`] = `
       class="pf-c-menu-toggle__count"
     >
       <span
-        class="pf-c-badge pf-m-unread pf-screen-reader"
+        class="pf-c-badge pf-m-unread"
       >
         badge
       </span>
