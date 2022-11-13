@@ -37,6 +37,6 @@ export const WizardWithNavAnchors: React.FunctionComponent = () => {
       stepNavItemProps: { navItemComponent: 'a', href: 'https://patternfly.slack.com/', target: '_blank' }
     }
   ];
-  const title = 'Anchor link wizard';
+  const title = 'Anchor link wizard example';
   return <Wizard navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} height={400} />;
 };

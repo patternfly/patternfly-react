@@ -6,7 +6,7 @@ interface PrevStepInfo {
   prevName: React.ReactNode;
 }
 
-export const ProgressiveWizard: React.FunctionComponent = () => {
+export const WizardProgressiveSteps: React.FunctionComponent = () => {
   const [showCreateStep, setShowCreateStep] = React.useState(false);
   const [showUpdateStep, setShowUpdateStep] = React.useState(false);
   const [showOptionsStep, setShowOptionsStep] = React.useState(false);
@@ -55,6 +55,8 @@ export const ProgressiveWizard: React.FunctionComponent = () => {
       callback();
     } else if (activeStep.name === 'Substep 3') {
       setShowReviewStep(true);
+      callback();
+    } else {
       callback();
     }
   };
@@ -185,11 +187,10 @@ export const ProgressiveWizard: React.FunctionComponent = () => {
     ...(showReviewStep ? [reviewStep] : [])
   ];
 
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   const CustomFooter = (
     <WizardFooter>
       <WizardContextConsumer>
-        {({ activeStep, goToStepByName, goToStepById, onNext, onBack, onClose }) => (
+        {({ activeStep, onNext, onBack, onClose }) => (
           <>
             <Button variant="primary" type="submit" onClick={() => getNextStep(activeStep, onNext)}>
               {activeStep.name === 'Review' ? 'Finish' : 'Next'}
@@ -197,7 +198,7 @@ export const ProgressiveWizard: React.FunctionComponent = () => {
             <Button
               variant="secondary"
               onClick={() => getPreviousStep(activeStep, onBack)}
-              className={activeStep.name === 'Get Started' ? 'pf-m-disabled' : ''}
+              isDisabled={activeStep.name === 'Get started'}
             >
               Back
             </Button>
@@ -209,9 +210,8 @@ export const ProgressiveWizard: React.FunctionComponent = () => {
       </WizardContextConsumer>
     </WizardFooter>
   );
-  /* eslint-enable @typescript-eslint/no-unused-vars */
 
-  const title = 'Progressive wizard';
+  const title = 'Progressive wizard example';
   return (
     <Wizard
       navAriaLabel={`${title} steps`}

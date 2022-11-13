@@ -7,13 +7,11 @@ interface PrevStepInfo {
   prevName: React.ReactNode;
 }
 
-export const ValidationWizard: React.FunctionComponent = () => {
+export const WizardFormValidation: React.FunctionComponent = () => {
   const [isFormValid, setIsFormValid] = React.useState(false);
   const [formValue, setFormValue] = React.useState('Thirty');
   const [allStepsValid, setAllStepsValid] = React.useState(false);
   const [stepIdReached, setStepIdReached] = React.useState(1);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isOpen, setIsOpen] = React.useState(true);
 
   const closeWizard = () => {
     // eslint-disable-next-line no-console
@@ -53,12 +51,6 @@ export const ValidationWizard: React.FunctionComponent = () => {
     console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
   };
 
-  const onSave = () => {
-    // eslint-disable-next-line no-console
-    console.log('Saved and closed the wizard');
-    setIsOpen(false);
-  };
-
   const steps = [
     { id: 'validated-1', name: 'Information', component: <p>Step 1 content</p> },
     {
@@ -85,17 +77,16 @@ export const ValidationWizard: React.FunctionComponent = () => {
       id: 'validated-5',
       name: 'Review',
       component: <p>Step 4 content</p>,
-      nextButtonText: 'Close',
+      nextButtonText: 'Finish',
       canJumpTo: stepIdReached >= 5
     }
   ];
-  const title = 'Enabled on form validation wizard';
+  const title = 'Wizard enabled on form validation example';
   return (
     <Wizard
       navAriaLabel={`${title} steps`}
       mainAriaLabel={`${title} content`}
       onClose={closeWizard}
-      onSave={onSave}
       steps={steps}
       onNext={onNext}
       onBack={onBack}

@@ -13,7 +13,7 @@ export const WizardInModal: React.FunctionComponent = () => {
     { name: 'Fourth step', component: <p>Step 4 content</p> },
     { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
   ];
-  const title = 'Wizard in modal';
+  const title = 'Wizard in modal example';
   return (
     <React.Fragment>
       <Button variant="primary" onClick={handleModalToggle}>

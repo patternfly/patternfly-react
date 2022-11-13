@@ -1,7 +1,7 @@
 import React from 'react';
 import { Wizard, WizardStep } from '@patternfly/react-core';
 
-export const IncrementallyEnabledStepsWizard: React.FunctionComponent = () => {
+export const WizardIncrementallyEnabledSteps: React.FunctionComponent = () => {
   const [stepIdReached, setStepIdReached] = React.useState(1);
 
   const onNext = ({ id }: WizardStep) => {
@@ -13,10 +13,6 @@ export const IncrementallyEnabledStepsWizard: React.FunctionComponent = () => {
       setStepIdReached(stepIdReached < id ? id : stepIdReached);
     }
   };
-
-  // const onNext = ({ id }: {id: number}) => {
-  //   setStepIdReached((stepIdReached < id ? id : stepIdReached) as number)
-  // };
 
   const closeWizard = () => {
     // eslint-disable-next-line no-console
@@ -51,7 +47,7 @@ export const IncrementallyEnabledStepsWizard: React.FunctionComponent = () => {
       canJumpTo: stepIdReached >= 5
     }
   ];
-  const title = 'Incrementally enabled wizard';
+  const title = 'Incrementally enabled wizard example';
   return (
     <Wizard
       navAriaLabel={`${title} steps`}

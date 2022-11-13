@@ -1,7 +1,7 @@
 import React from 'react';
 import { Wizard, WizardStep } from '@patternfly/react-core';
 
-export const GetCurrentStepWizard: React.FunctionComponent = () => {
+export const WizardGetCurrentStep: React.FunctionComponent = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [step, setStep] = React.useState(1);
   const onCurrentStepChanged = ({ id }: WizardStep) => {
@@ -21,7 +21,7 @@ export const GetCurrentStepWizard: React.FunctionComponent = () => {
     { id: 4, name: 'Fourth step', component: <p>Step 4 content</p> },
     { id: 5, name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
   ];
-  const title = 'Get current step wizard';
+  const title = 'Get current step wizard example';
   return (
     <Wizard
       navAriaLabel={`${title} steps`}

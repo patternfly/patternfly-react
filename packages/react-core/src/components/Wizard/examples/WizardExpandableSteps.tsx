@@ -1,7 +1,7 @@
 import React from 'react';
 import { Wizard } from '@patternfly/react-core';
 
-export const SimpleWizard: React.FunctionComponent = () => {
+export const WizardExpandableSteps: React.FunctionComponent = () => {
   const steps = [
     {
       name: 'First step',
@@ -21,7 +21,7 @@ export const SimpleWizard: React.FunctionComponent = () => {
     { name: 'Fourth step', component: <p>Step 4 content</p> },
     { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
   ];
-  const title = 'Expandable wizard';
+  const title = 'Expandable wizard example';
   return (
     <Wizard
       navAriaLabel={`${title} steps`}

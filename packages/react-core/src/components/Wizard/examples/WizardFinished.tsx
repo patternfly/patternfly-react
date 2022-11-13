@@ -2,7 +2,7 @@ import React from 'react';
 import { Wizard } from '@patternfly/react-core';
 import FinishedStep from './FinishedStep';
 
-export const FinishedStepWizard: React.FunctionComponent = () => {
+export const WizardFinished: React.FunctionComponent = () => {
   const closeWizard = () => {
     // eslint-disable-next-line no-console
     console.log('close wizard');
@@ -16,7 +16,7 @@ export const FinishedStepWizard: React.FunctionComponent = () => {
     { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' },
     { name: 'Finish', component: <FinishedStep onClose={closeWizard} />, isFinishedStep: true }
   ];
-  const title = 'Finished wizard';
+  const title = 'Finished wizard example';
   return (
     <Wizard
       navAriaLabel={`${title} steps`}

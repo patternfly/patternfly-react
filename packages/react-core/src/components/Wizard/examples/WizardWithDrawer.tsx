@@ -10,13 +10,7 @@ import {
 } from '@patternfly/react-core';
 
 export const WizardWithDrawer: React.FunctionComponent = () => {
-  /* eslint-disable @typescript-eslint/no-unused-vars */
-  const [isOpen, setIsOpen] = React.useState(false);
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
-  const [sectionGray, setSectionGray] = React.useState(false);
-  const [panelGray, setPanelGray] = React.useState(true);
-  const [contentGray, setContentGray] = React.useState(false);
-  /* eslint-enable @typescript-eslint/no-unused-vars */
 
   const drawerRef = React.useRef<HTMLSpanElement>(null);
 
@@ -121,7 +115,7 @@ export const WizardWithDrawer: React.FunctionComponent = () => {
     }
   ];
 
-  const title = 'Wizard with drawer';
+  const title = 'Wizard with drawer example';
 
   return (
     <React.Fragment>

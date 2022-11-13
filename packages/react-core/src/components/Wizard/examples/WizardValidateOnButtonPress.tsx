@@ -3,7 +3,7 @@ import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@pat
 import SampleForm from './SampleForm';
 import FinishedStep from './FinishedStep';
 
-export const ValidateButtonPressWizard: React.FunctionComponent = () => {
+export const WizardValidateButtonPress: React.FunctionComponent = () => {
   const [stepsValid, setStepsValid] = React.useState(0);
 
   const closeWizard = () => {
@@ -38,11 +38,10 @@ export const ValidateButtonPressWizard: React.FunctionComponent = () => {
     { name: 'Finish', component: <FinishedStep onClose={closeWizard} />, isFinishedStep: true }
   ];
 
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   const CustomFooter = (
     <WizardFooter>
       <WizardContextConsumer>
-        {({ activeStep, goToStepByName, goToStepById, onNext, onBack, onClose }) => {
+        {({ activeStep, goToStepByName, onNext, onBack, onClose }) => {
           if (activeStep.name !== 'Final Step') {
             return (
               <>
@@ -73,9 +72,8 @@ export const ValidateButtonPressWizard: React.FunctionComponent = () => {
       </WizardContextConsumer>
     </WizardFooter>
   );
-  /* eslint-enable @typescript-eslint/no-unused-vars */
 
-  const title = 'Validate on button press wizard';
+  const title = 'Validate on button press wizard example';
   return (
     <Wizard
       navAriaLabel={`${title} steps`}
