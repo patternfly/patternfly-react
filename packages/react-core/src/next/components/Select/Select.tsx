@@ -26,6 +26,8 @@ export interface SelectProps extends MenuProps, OUIAProps {
   minWidth?: string;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLDivElement>;
+  /** z-index of the select menu */
+  zIndex?: number;
 }
 
 const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
@@ -39,6 +41,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   isPlain,
   minWidth,
   innerRef,
+  zIndex = 9999,
   ...props
 }: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -117,6 +120,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
         popper={menu}
         appendTo={containerRef.current || undefined}
         isVisible={isOpen}
+        zIndex={zIndex}
       />
     </div>
   );

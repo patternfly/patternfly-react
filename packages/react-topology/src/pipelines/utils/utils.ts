@@ -103,7 +103,9 @@ export const getSpacerNodes = (
     const finallyId = getSpacerId(finallyNodes.map(n => n.id));
     spacerNodes.push({
       id: finallyId,
-      type: spacerNodeType
+      type: spacerNodeType,
+      width: 1,
+      height: 1
     });
   }
 
