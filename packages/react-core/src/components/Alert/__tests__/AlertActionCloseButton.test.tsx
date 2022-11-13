@@ -5,18 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { AlertActionCloseButton } from '../AlertActionCloseButton';
 import { AlertContext } from '../AlertContext';
 
-jest.mock('../../Button', () => ({
-  Button: ({ children, variant, isInline, onClick, ...props }) => (
-    <>
-      <button onClick={onClick} {...props}>
-        {children}
-      </button>
-      <p>{`variant: ${variant}`}</p>
-      <p id="labelling-id">Test label</p>
-    </>
-  ),
-  ButtonVariant: { plain: 'plain' }
-}));
+jest.mock('../../Button');
 
 test('Renders without children', () => {
   render(
@@ -98,7 +87,7 @@ test('Renders with an aria label composed with the title and variantLabel provid
 test('Renders with an aria label composed with the title provided via a context and variantLabel provided via prop', () => {
   render(
     <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
-      <AlertActionCloseButton variantLabel='variant label prop'/>
+      <AlertActionCloseButton variantLabel="variant label prop" />
     </AlertContext.Provider>
   );
 
@@ -106,14 +95,14 @@ test('Renders with an aria label composed with the title provided via a context 
 });
 
 test('Renders with the aria label provided via prop when one is provided', () => {
-    render(
-      <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
-        <AlertActionCloseButton aria-label='Aria label prop'/>
-      </AlertContext.Provider>
-    );
-  
-    expect(screen.getByRole('button')).toHaveAccessibleName('Aria label prop');
-  });
+  render(
+    <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
+      <AlertActionCloseButton aria-label="Aria label prop" />
+    </AlertContext.Provider>
+  );
+
+  expect(screen.getByRole('button')).toHaveAccessibleName('Aria label prop');
+});
 
 test('Matches the snapshot', () => {
   const { asFragment } = render(

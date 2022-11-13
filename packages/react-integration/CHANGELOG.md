@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.207.2 (2022-10-27)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
 ## 4.207.1 (2022-10-26)
 
 **Note:** Version bump only for package @patternfly/react-integration

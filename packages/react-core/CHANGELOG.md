@@ -3,6 +3,101 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.261.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.260.1...@patternfly/react-core@4.261.0) (2022-11-09)
+
+
+### Features
+
+* **MultipleFileUpload:** added support for helper text ([#8344](https://github.com/patternfly/patternfly-react/issues/8344)) ([f8faf8b](https://github.com/patternfly/patternfly-react/commit/f8faf8bf62b8ece44f5283922711730921fcd537))
+
+
+
+
+
+## [4.260.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.260.0...@patternfly/react-core@4.260.1) (2022-11-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.260.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.259.0...@patternfly/react-core@4.260.0) (2022-11-08)
+
+
+### Features
+
+* **Progress:** added helper text ([#8307](https://github.com/patternfly/patternfly-react/issues/8307)) ([7ad9398](https://github.com/patternfly/patternfly-react/commit/7ad9398588c8d7f0da5ec5c6a6bdeb58d2308d39))
+
+
+
+
+
+# [4.259.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.8...@patternfly/react-core@4.259.0) (2022-11-07)
+
+
+### Features
+
+* **Popper, misc:** allow components to customize popper z-index ([#8310](https://github.com/patternfly/patternfly-react/issues/8310)) ([17dff4c](https://github.com/patternfly/patternfly-react/commit/17dff4c3bde667f426994a1e9073c9c58b9c598a))
+
+
+
+
+
+## [4.258.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.7...@patternfly/react-core@4.258.8) (2022-11-07)
+
+
+### Bug Fixes
+
+* **bulk-select:** fixed toggle spacing ([#8326](https://github.com/patternfly/patternfly-react/issues/8326)) ([fe40f19](https://github.com/patternfly/patternfly-react/commit/fe40f19058a383cfc12e3f7a07d07af8dc579d04))
+
+
+
+
+
+## [4.258.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.6...@patternfly/react-core@4.258.7) (2022-11-07)
+
+
+### Bug Fixes
+
+* **TimePicker:** fixed bugs when updating time/minTime/maxTime props ([#8267](https://github.com/patternfly/patternfly-react/issues/8267)) ([f1408df](https://github.com/patternfly/patternfly-react/commit/f1408df627115592f95576f01c072e52a6c7d9e8))
+
+
+
+
+
+## [4.258.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.5...@patternfly/react-core@4.258.6) (2022-11-04)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## 4.258.5 (2022-11-04)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## 4.258.4 (2022-11-01)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.258.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.2...@patternfly/react-core@4.258.3) (2022-10-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [4.258.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.1...@patternfly/react-core@4.258.2) (2022-10-26)
 
 

@@ -156,7 +156,7 @@ export const useDemoPipelineNodes = (
           type: 'task-group',
           children: parallelTasks.map(t => t.id),
           group: true,
-          style: { padding: [15, 15] }
+          label: 'Parallel tasks'
         });
       }
     }
@@ -184,8 +184,7 @@ export const useDemoPipelineNodes = (
       id: 'finally-group',
       type: 'finally-group',
       children: finallyNodes.map(n => n.id),
-      group: true,
-      style: { padding: [15, 15] }
+      group: true
     };
 
     if (showGroups) {
@@ -197,7 +196,8 @@ export const useDemoPipelineNodes = (
               id: `group-${task.data.columnGroup}`,
               type: 'task-group',
               children: [],
-              group: true
+              group: true,
+              label: `Group ${task.data.columnGroup}`
             };
             acc.push(taskGroup);
           }
