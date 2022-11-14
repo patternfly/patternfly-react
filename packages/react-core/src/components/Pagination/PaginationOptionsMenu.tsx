@@ -205,7 +205,6 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
         direction={dropDirection}
         appendTo={containerRef.current || undefined}
         popperMatchesTriggerWidth={false}
-        removeFindDomNode
       />
     </div>
   );
