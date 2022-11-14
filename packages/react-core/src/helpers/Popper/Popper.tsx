@@ -311,7 +311,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     [popperMatchesTriggerWidth]
   );
 
-  const { styles: popperStyles, attributes, update } = usePopper(refOrTrigger, popperElement, {
+  const { styles: popperStyles, attributes, update, forceUpdate } = usePopper(refOrTrigger, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
       {
@@ -339,6 +339,10 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       sameWidthMod
     ]
   });
+
+  React.useEffect(() => {
+    forceUpdate && forceUpdate();
+  }, [popper]);
 
   // Returns the CSS modifier class in order to place the Popper's arrow properly
   // Depends on the position of the Popper relative to the reference element
