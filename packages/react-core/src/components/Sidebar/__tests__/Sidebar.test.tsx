@@ -17,76 +17,43 @@ test('Renders children', () => {
 });
 
 test('Renders with only class name pf-c-sidebar by default', () => {
-  render(<Sidebar data-testid="sidebar">Test</Sidebar>);
-  expect(screen.getByTestId('sidebar')).toHaveClass('pf-c-sidebar', { exact: true });
+  render(<Sidebar>Test</Sidebar>);
+  expect(screen.getByText('Test').parentElement).toHaveClass('pf-c-sidebar', { exact: true });
 });
 
 test('Renders with class name pf-c-sidebar', () => {
-  render(<Sidebar data-testid="sidebar">Test</Sidebar>);
-  expect(screen.getByTestId('sidebar')).toHaveClass('pf-c-sidebar');
+  render(<Sidebar>Test</Sidebar>);
+  expect(screen.getByText('Test').parentElement).toHaveClass('pf-c-sidebar');
 });
 
 test('Renders with custom class name when className prop is provided', () => {
-  render(
-    <Sidebar data-testid="sidebar" className="custom-class">
-      Test
-    </Sidebar>
-  );
-  expect(screen.getByTestId('sidebar')).toHaveClass('custom-class');
+  render(<Sidebar className="custom-class">Test</Sidebar>);
+  expect(screen.getByText('Test').parentElement).toHaveClass('custom-class');
 });
 
 test('Renders with class name pf-m-no-background when hasNoBackground prop is passed', () => {
-  render(
-    <Sidebar data-testid="sidebar" hasNoBackground>
-      Test
-    </Sidebar>
-  );
-  expect(screen.getByTestId('sidebar')).toHaveClass('pf-m-no-background');
+  render(<Sidebar hasNoBackground>Test</Sidebar>);
+  expect(screen.getByText('Test').parentElement).toHaveClass('pf-m-no-background');
 });
 
 test('Renders with class name pf-m-stack when "stack" is passed to orientation prop', () => {
-  render(
-    <Sidebar data-testid="sidebar" orientation="stack">
-      Test
-    </Sidebar>
-  );
-  expect(screen.getByTestId('sidebar')).toHaveClass('pf-m-stack');
+  render(<Sidebar orientation="stack">Test</Sidebar>);
+  expect(screen.getByText('Test').parentElement).toHaveClass('pf-m-stack');
 });
 
 test('Renders with class name pf-m-split when "split" is passed to orientation prop', () => {
-  render(
-    <Sidebar data-testid="sidebar" orientation="split">
-      Test
-    </Sidebar>
-  );
-  expect(screen.getByTestId('sidebar')).toHaveClass('pf-m-split');
+  render(<Sidebar orientation="split">Test</Sidebar>);
+  expect(screen.getByText('Test').parentElement).toHaveClass('pf-m-split');
 });
 
 test('Renders with class name pf-m-panel-right when isPanelRight prop is passed', () => {
-  render(
-    <Sidebar data-testid="sidebar" isPanelRight>
-      Test
-    </Sidebar>
-  );
-  expect(screen.getByTestId('sidebar')).toHaveClass('pf-m-panel-right');
-});
-
-test('Renders with class name pf-m-panel-right when isPanelRight prop is passed', () => {
-  render(
-    <Sidebar data-testid="sidebar" isPanelRight>
-      Test
-    </Sidebar>
-  );
-  expect(screen.getByTestId('sidebar')).toHaveClass('pf-m-panel-right');
+  render(<Sidebar isPanelRight>Test</Sidebar>);
+  expect(screen.getByText('Test').parentElement).toHaveClass('pf-m-panel-right');
 });
 
 test('Renders with class name pf-m-gutter when hasGutter prop is passed', () => {
-  render(
-    <Sidebar data-testid="sidebar" hasGutter>
-      Test
-    </Sidebar>
-  );
-  expect(screen.getByTestId('sidebar')).toHaveClass('pf-m-gutter');
+  render(<Sidebar hasGutter>Test</Sidebar>);
+  expect(screen.getByText('Test').parentElement).toHaveClass('pf-m-gutter');
 });
 
 test('Renders with class name pf-m-sidebar__main by default for child component', () => {
@@ -95,12 +62,8 @@ test('Renders with class name pf-m-sidebar__main by default for child component'
 });
 
 test('Renders with inherited element props spread to the component', () => {
-  render(
-    <Sidebar data-testid="sidebar" aria-label="Test label">
-      Test
-    </Sidebar>
-  );
-  expect(screen.getByTestId('sidebar')).toHaveAccessibleName('Test label');
+  render(<Sidebar aria-label="Test label">Test</Sidebar>);
+  expect(screen.getByText('Test').parentElement).toHaveAccessibleName('Test label');
 });
 
 test('Matches the snapshot', () => {
