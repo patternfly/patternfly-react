@@ -16,9 +16,14 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class name pf-c-sidebar', () => {
+test('Renders with only class name pf-c-sidebar by default', () => {
   render(<Sidebar data-testid="sidebar">Test</Sidebar>);
   expect(screen.getByTestId('sidebar')).toHaveClass('pf-c-sidebar', { exact: true });
+});
+
+test('Renders with class name pf-c-sidebar', () => {
+  render(<Sidebar data-testid="sidebar">Test</Sidebar>);
+  expect(screen.getByTestId('sidebar')).toHaveClass('pf-c-sidebar');
 });
 
 test('Renders with custom class name when className prop is provided', () => {
