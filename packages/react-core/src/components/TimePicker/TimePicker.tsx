@@ -426,16 +426,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
-    const { timeRegex } = this.state;
-    const { delimiter, is24Hour, includeSeconds } = this.props;
-    const time = parseTime(event.currentTarget.value, timeRegex, delimiter, !is24Hour, includeSeconds);
-
-    this.setState({
-      isInvalid: !this.isValid(time)
-    });
-  };
-
   render() {
     const {
       'aria-label': ariaLabel,
@@ -507,7 +497,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         iconVariant="clock"
         onClick={this.onInputClick}
         onChange={this.onInputChange}
-        onBlur={this.onBlur}
         autoComplete="off"
         isDisabled={isDisabled}
         ref={this.inputRef}
