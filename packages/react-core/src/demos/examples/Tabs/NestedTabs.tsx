@@ -113,14 +113,18 @@ export const NestedTabs: React.FunctionComponent = () => {
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>
-                <Title headingLevel="h3">Title of Card</Title>
+                <Title headingLevel="h2" size={TitleSizes.lg}>
+                  Title of card
+                </Title>
               </CardHeader>
             </Card>
           </FlexItem>
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>
-                <Title headingLevel="h3">Title of Card</Title>
+                <Title headingLevel="h2" size={TitleSizes.lg}>
+                  Title of card
+                </Title>
               </CardHeader>
             </Card>
           </FlexItem>
