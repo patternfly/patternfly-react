@@ -41,6 +41,8 @@ interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
     | 'left-end'
     | 'right-start'
     | 'right-end';
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
 }
 
 const sliceContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];
@@ -51,9 +53,10 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
   tooltipPosition = 'top',
   trailingNumChars = 7,
   content,
+  removeFindDomNode,
   ...props
 }: TruncateProps) => (
-  <Tooltip position={tooltipPosition} content={content}>
+  <Tooltip position={tooltipPosition} content={content} removeFindDomNode={removeFindDomNode}>
     <span className={css(styles.truncate, className)} {...props}>
       {(position === TruncatePosition.end || position === TruncatePosition.start) && (
         <span className={truncateStyles[position]}>

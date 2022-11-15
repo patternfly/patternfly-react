@@ -65,6 +65,8 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
     | 'left-end'
     | 'right-start'
     | 'right-end';
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
   /** Maximum width of the tooltip (default 150px). */
   maxWidth?: string;
   /** Delay in ms before the tooltip disappears. */
@@ -125,7 +127,8 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     textAriaLabel: 'Copyable input',
     toggleAriaLabel: 'Show content',
     additionalActions: null,
-    ouiaSafe: true
+    ouiaSafe: true,
+    removeFindDomNode: false
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -177,6 +180,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       additionalActions,
       ouiaId,
       ouiaSafe,
+      removeFindDomNode,
       ...divProps
     } = this.props;
     const textIdPrefix = 'text-input-';
@@ -269,6 +273,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                       this.setState({ copied: true });
                     }}
                     onTooltipHidden={() => this.setState({ copied: false })}
+                    removeFindDomNode={removeFindDomNode}
                   >
                     {this.state.copied ? clickTip : hoverTip}
                   </ClipboardCopyButton>
