@@ -10,7 +10,7 @@ import { TextInput } from '../TextInput';
 
 export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   /** Value of the number input */
-  value?: number | null;
+  value?: number | '';
   /** Additional classes added to the number input */
   className?: string;
   /** Sets the width of the number input to a number of characters */
@@ -89,7 +89,6 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   plusBtnProps,
   ...props
 }: NumberInputProps) => {
-  value = value || 0;
   const numberInputUnit = <div className={css(styles.numberInputUnit)}>{unit}</div>;
   const keyDownHandler =
     inputProps && inputProps.onKeyDown ? inputProps.onKeyDown : defaultKeyDownHandler({ inputName, onMinus, onPlus });
