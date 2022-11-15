@@ -5,8 +5,8 @@ import { TabButton } from './TabButton';
 import { TabsContext } from './TabsContext';
 import { css } from '@patternfly/react-styles';
 import { Tooltip } from '../Tooltip';
-import { Button } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import { TabAction } from './TabAction';
 
 export interface TabProps
   extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title' | 'action'>,
@@ -129,21 +129,16 @@ const TabBase: React.FunctionComponent<TabProps> = ({
       role="presentation"
     >
       {tooltip ? <Tooltip {...tooltip.props}>{tabButton}</Tooltip> : tabButton}
-      {handleTabClose !== undefined && !actions && (
-        <span className={css(styles.tabsItemAction)}>
-          <Button
-            variant="plain"
-            aria-label={closeButtonAriaLabel || 'Close tab'}
-            onClick={(event: any) => handleTabClose(event, eventKey, tabContentRef)}
-            isDisabled={isCloseDisabled}
-          >
-            <span className={css(styles.tabsItemActionIcon)}>
-              <TimesIcon />
-            </span>
-          </Button>
-        </span>
-      )}
       {actions && actions}
+      {handleTabClose !== undefined && (
+        <TabAction
+          aria-label={closeButtonAriaLabel || 'Close tab'}
+          onClick={(event: any) => handleTabClose(event, eventKey, tabContentRef)}
+          isDisabled={isCloseDisabled}
+        >
+          <TimesIcon />
+        </TabAction>
+      )}
     </li>
   );
 };
