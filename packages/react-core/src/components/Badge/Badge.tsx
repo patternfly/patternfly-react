@@ -24,8 +24,8 @@ export const Badge: React.FunctionComponent<BadgeProps> = ({
     {...props}
     className={css(styles.badge, (isRead ? styles.modifiers.read : styles.modifiers.unread) as any, className)}
   >
-    {screenReaderText && <span className="pf-screen-reader">{screenReaderText}</span>}
     {children}
+    {screenReaderText && <span className="pf-screen-reader">{screenReaderText}</span>}
   </span>
 );
 Badge.displayName = 'Badge';
