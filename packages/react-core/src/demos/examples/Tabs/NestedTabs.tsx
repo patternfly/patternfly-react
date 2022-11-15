@@ -12,6 +12,7 @@ import {
   TabContentBody,
   TabTitleText,
   Title,
+  TitleSizes,
   Flex,
   FlexItem
 } from '@patternfly/react-core';
@@ -32,7 +33,9 @@ export const NestedTabs: React.FunctionComponent = () => {
       <GridItem xl={8} md={6}>
         <Card>
           <CardHeader>
-            <Title headingLevel="h2">Status</Title>
+            <Title headingLevel="h2" size={TitleSizes.lg}>
+              Status
+            </Title>
           </CardHeader>
           <CardBody>
             <Flex direction={{ default: 'column' }}>
