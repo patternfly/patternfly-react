@@ -17,3 +17,7 @@ propComponents: ['Spinner']
 ### Custom size
 ```ts file="./SpinnerCustomSize.tsx"
 ```
+
+### Inline size
+```ts file="./SpinnerInline.tsx" isBeta
+```
