@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.208.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.208.0...@patternfly/react-integration@4.208.1) (2022-11-15)
+
+
+### Bug Fixes
+
+* **NumberInput:** allow user to back out number to type input ([#8304](https://github.com/patternfly/patternfly-react/issues/8304)) ([7dda7a9](https://github.com/patternfly/patternfly-react/commit/7dda7a9419f020df3f9ea2468ee35d2c28f16382))
+
+
+
+
+
 # 4.208.0 (2022-11-15)
 
 

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.263.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.262.0...@patternfly/react-core@4.263.0) (2022-11-15)
+
+
+### Bug Fixes
+
+* **NumberInput:** allow user to back out number to type input ([#8304](https://github.com/patternfly/patternfly-react/issues/8304)) ([7dda7a9](https://github.com/patternfly/patternfly-react/commit/7dda7a9419f020df3f9ea2468ee35d2c28f16382))
+* **Popper:** add display contents to wrapping divs ([#8317](https://github.com/patternfly/patternfly-react/issues/8317)) ([1851a2c](https://github.com/patternfly/patternfly-react/commit/1851a2cd33a7a032e63c156a9e6c52653862bd9b))
+
+
+### Features
+
+* **spinner:** added isInline, updated link button ([#8328](https://github.com/patternfly/patternfly-react/issues/8328)) ([29f76e1](https://github.com/patternfly/patternfly-react/commit/29f76e1b1f99df446a8d1c5719a0d3fa6790ac9a))
+
+
+
+
+
 # [4.262.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.261.0...@patternfly/react-core@4.262.0) (2022-11-15)
 
 
