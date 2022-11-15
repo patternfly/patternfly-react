@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.262.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.261.0...@patternfly/react-core@4.262.0) (2022-11-15)
+
+
+### Features
+
+* **MenuInput:** use SearchInput instead of TextInput ([#8329](https://github.com/patternfly/patternfly-react/issues/8329)) ([e00b995](https://github.com/patternfly/patternfly-react/commit/e00b995b927c76d4128d5584ff0ed0d97f672c9a))
+
+
+
+
+
 # [4.261.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.260.1...@patternfly/react-core@4.261.0) (2022-11-09)
 
 

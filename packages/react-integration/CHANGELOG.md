@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.208.0 (2022-11-15)
+
+
+### Features
+
+* **MenuInput:** use SearchInput instead of TextInput ([#8329](https://github.com/patternfly/patternfly-react/issues/8329)) ([e00b995](https://github.com/patternfly/patternfly-react/commit/e00b995b927c76d4128d5584ff0ed0d97f672c9a))
+
+
+
+
+
 ## 4.207.2 (2022-10-27)
 
 **Note:** Version bump only for package @patternfly/react-integration
