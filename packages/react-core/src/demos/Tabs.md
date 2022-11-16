@@ -383,7 +383,6 @@ TabsOpenWithSecondaryTabsDemo = () => {
           <TabContentBody>
             <Tabs
               isSecondary
-              // remove in v5 breaking change release; secondary variant will have border by default
               hasSecondaryBorderBottom
               activeKey={activeTabKeySecondary}
               onSelect={handleTabClickSecondary}
