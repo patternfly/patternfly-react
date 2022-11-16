@@ -23,6 +23,7 @@ export interface TabActionProps extends Omit<React.HTMLProps<HTMLButtonElement>,
 
 const TabActionBase: React.FunctionComponent<TabActionProps> = ({
   children,
+  className,
   onClick,
   isHelpAction,
   isDisabled,
@@ -33,7 +34,7 @@ const TabActionBase: React.FunctionComponent<TabActionProps> = ({
   ouiaSafe,
   ...props
 }: TabActionProps) => (
-  <span className={css(styles.tabsItemAction, isHelpAction && styles.modifiers.help)}>
+  <span className={css(styles.tabsItemAction, isHelpAction && styles.modifiers.help, className)}>
     <Button
       ref={innerRef}
       type="button"
