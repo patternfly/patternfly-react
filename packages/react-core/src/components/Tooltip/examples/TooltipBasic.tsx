@@ -10,7 +10,7 @@ export const TooltipBasic: React.FunctionComponent = () => (
         </div>
       }
     >
-      <Button tabIndex={0}>I have a tooltip!</Button>
+      <Button>I have a tooltip!</Button>
     </Tooltip>
   </div>
 );
