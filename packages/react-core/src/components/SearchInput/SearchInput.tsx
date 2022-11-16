@@ -229,13 +229,36 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     setIsSearchMenuOpen(false);
   };
 
+  const splitStringExceptInQuotes = (str: string) => {
+    let quoteType: string;
+
+    return str.match(/\\?.|^$/g).reduce(
+      (p: any, c: string) => {
+        if (c === "'" || c === '"') {
+          if (!quoteType) {
+            quoteType = c;
+          }
+          if (c === quoteType) {
+            p.quote = !p.quote;
+          }
+        } else if (!p.quote && c === ' ') {
+          p.a.push('');
+        } else {
+          p.a[p.a.length - 1] += c.replace(/\\(.)/, '$1');
+        }
+        return p;
+      },
+      { a: [''] }
+    ).a;
+  };
+
   const getAttrValueMap = () => {
     const attrValue: { [key: string]: string } = {};
-    const pairs = searchValue.split(' ');
-    pairs.map(pair => {
+    const pairs = splitStringExceptInQuotes(searchValue);
+    pairs.map((pair: string) => {
       const splitPair = pair.split(advancedSearchDelimiter);
       if (splitPair.length === 2) {
-        attrValue[splitPair[0]] = splitPair[1];
+        attrValue[splitPair[0]] = splitPair[1].replace(/(^'|'$)/g, '');
       } else if (splitPair.length === 1) {
         attrValue.haswords = attrValue.hasOwnProperty('haswords')
           ? `${attrValue.haswords} ${splitPair[0]}`

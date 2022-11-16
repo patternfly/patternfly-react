@@ -133,21 +133,24 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
 
   const handleValueChange = (attribute: string, newValue: string, event: React.FormEvent<HTMLInputElement>) => {
     const newMap = getAttrValueMap();
+
     newMap[attribute] = newValue;
     let updatedValue = '';
     Object.entries(newMap).forEach(([k, v]) => {
       if (v.trim() !== '') {
+        /* Wrap the value in quotes if it contains spaces */
+        const quoteWrappedValue = v.includes(' ') ? `'${v.replace(/(^'|'$)/g, '')}'` : v;
+
         if (k !== 'haswords') {
-          updatedValue = `${updatedValue} ${k}${advancedSearchDelimiter}${v}`;
+          updatedValue = `${updatedValue} ${k}${advancedSearchDelimiter}${quoteWrappedValue}`;
         } else {
-          updatedValue = `${updatedValue} ${v}`;
+          updatedValue = `${updatedValue} ${quoteWrappedValue}`;
         }
       }
     });
-    updatedValue = updatedValue.replace(/^\s+/g, '');
 
     if (onChange) {
-      onChange(updatedValue, event);
+      onChange(updatedValue.replace(/^\s+/g, ''), event);
     }
   };
 
