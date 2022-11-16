@@ -7,9 +7,14 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class name pf-c-sidebar__panel', () => {
+test('Renders with with only class name pf-c-sidebar__panel by default', () => {
   render(<SidebarPanel>Test</SidebarPanel>);
   expect(screen.getByText('Test')).toHaveClass('pf-c-sidebar__panel', { exact: true });
+});
+
+test('Renders with with class name pf-c-sidebar__panel', () => {
+  render(<SidebarPanel>Test</SidebarPanel>);
+  expect(screen.getByText('Test')).toHaveClass('pf-c-sidebar__panel');
 });
 
 test('Renders with custom class name when className prop is provided', () => {
@@ -31,16 +36,6 @@ test('Renders with class name pf-m-no-background when hasNoBackground prop is pa
   render(<SidebarPanel hasNoBackground>Test</SidebarPanel>);
   expect(screen.getByText('Test')).toHaveClass('pf-m-no-background');
 });
-
-//   test('Renders with default width class names when "default" is passed to each breakpoint of width prop', () => {
-//     render(<SidebarPanel width={{default: "default", sm: "default", md: "default", lg: "default", xl: "default", "2xl": "default", }}>Test</SidebarPanel>);
-//     expect(screen.getByText('Test')).toHaveClass('pf-m-width-default');
-//     expect(screen.getByText('Test')).toHaveClass('pf-m-width-default-on-sm');
-//     expect(screen.getByText('Test')).toHaveClass('pf-m-width-default-on-md');
-//     expect(screen.getByText('Test')).toHaveClass('pf-m-width-default-on-lg');
-//     expect(screen.getByText('Test')).toHaveClass('pf-m-width-default-on-xl');
-//     expect(screen.getByText('Test')).toHaveClass('pf-m-width-default-on-2xl');
-//   });
 
 test('Renders with appropriate width-25 class names when "width_25" is passed to each breakpoint of width prop', () => {
   render(
