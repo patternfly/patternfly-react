@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.103.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.76...@patternfly/react-docs@5.103.0) (2022-11-16)
+
+
+### Features
+
+* **Tabs:** add TabAction, update core ver ([#8348](https://github.com/patternfly/patternfly-react/issues/8348)) ([8c584b4](https://github.com/patternfly/patternfly-react/commit/8c584b48f8e545cf226f785b873ee11eda505724))
+
+
+
+
+
 ## [5.102.76](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.75...@patternfly/react-docs@5.102.76) (2022-11-15)
 
 **Note:** Version bump only for package @patternfly/react-docs
