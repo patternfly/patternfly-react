@@ -33,6 +33,7 @@ export const PageTemplateTitle = (
     </TextContent>
   </PageSection>
 );
+
 export default class DashboardWrapper extends React.Component {
   constructor(props) {
     super(props);
