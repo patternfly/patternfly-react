@@ -27,9 +27,8 @@ import './page.css';
 
 A page will typically contain the following components: 
 
-- A header [toolbar](/components/toolbar) with `<ToolbarContent>`, which often contains actions, icons, buttons, and/or dropdown menus.
-- A [masthead](/components/masthead) with a `<MastheadToggle>` that contains the `<PageToggleButton>`, a `<MastheadMain>`that contains the `<MastheadBrand>`, and `<MastheadContent>` that contains the page's header toolbar. 
-- A `<Page>` with, a `header` that often contains a masthead, a `<PageSidebar>`, and one or more `<PageSection>` components. 
+- A `<Page>` with a `header` that often contains a masthead, a `<PageSidebar>`, and one or more `<PageSection>` components. 
+-[Mastheads](/components/masthead) contain the `<PageToggleButton>`, a `<MastheadMain>` that contains a `<MastheadBrand>`, and the page's header toolbar within `<MastheadContent>`. 
 
 ### Vertical navigation
 
@@ -58,7 +57,7 @@ To add horizontal top navigation to a `<Page>`, each navigation item should be s
 
 To add a tertiary navigation component to a page, use the `tertiaryNav` property. The following example passes a string of ‘Navigation’ to `tertiaryNav`, but you can pass fully built-out components, such as navigation.
 
-In this example, `<Masthead>` sets the `display` property equal to "{{ default: 'stack' }}" to stack the masthead items and also passes in "inset={{ default: 'insetXs' }}" to adjust the inset padding.
+In this example, `<Masthead>` sets the `display` property equal to `"{{ default: 'stack' }}"` to stack the masthead items and also passes in `"inset={{ default: 'insetXs' }}"` to adjust the inset padding.
 
 ```ts file="./PageTertiaryNav.tsx"
 ```
