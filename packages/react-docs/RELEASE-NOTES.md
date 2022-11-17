@@ -23,14 +23,14 @@ section: developer-resources
 - **Label:**
   - Fixed hrefs in compact example ([#8312](https://github.com/patternfly/patternfly-react/pull/8312))
 - **Menu:**
-  - Used search input instead of text input in examples and demos. ([#8329](https://github.com/patternfly/patternfly-react/pull/8329))
+  - Used search input instead of text input in examples and demos ([#8329](https://github.com/patternfly/patternfly-react/pull/8329))
 - **Multiple file upload:**
   - Added support for helper text ([#8344](https://github.com/patternfly/patternfly-react/pull/8344))
 - **Number input:**
   - Fixed to allow user to back out number to type an input ([#8304](https://github.com/patternfly/patternfly-react/pull/8304))
 - **Popper:**
   - Allowed components to customize popper z-index ([#8310](https://github.com/patternfly/patternfly-react/pull/8310))
- - Added display contents to wrapping divs ([#8317](https://github.com/patternfly/patternfly-react/pull/8317))
+  - Added display contents to wrapping divs ([#8317](https://github.com/patternfly/patternfly-react/pull/8317))
 - **Progress:**
   - Added helper text ([#8307](https://github.com/patternfly/patternfly-react/pull/8307))
 - **Skeleton:**
