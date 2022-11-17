@@ -7,7 +7,7 @@ propComponents: ['CalendarMonth', 'CalendarFormat']
 
 ## Examples
 
-When used inline and not contained within a date picker, it's wise to wrap the calendar month component in an HTML 
+When used inline and not contained within a [date picker](/components/date-picker), it's wise to wrap the calendar month component in an HTML 
 `article` element and label it with a heading using an appropriate heading level. This ensures that the calendar month is 
 semantically scoped and accessibly labeled.
 

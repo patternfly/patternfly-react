@@ -7,8 +7,10 @@ export const CalendarMonthDateRange: React.FunctionComponent = () => {
   const disablePreStartDates = (date: Date) => date >= startDate;
 
   return (
-    <article>
-      <Title headingLevel="h4">Calendar month displaying a range</Title>
+    <article aria-labelledby="display-range">
+      <Title id="display-range" headingLevel="h4">
+        Calendar month displaying a range
+      </Title>
       <CalendarMonth validators={[disablePreStartDates]} date={endDate} rangeStart={startDate} />;
     </article>
   );

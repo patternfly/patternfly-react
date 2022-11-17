@@ -10,8 +10,10 @@ export const CalendarMonthSelectableDate: React.FunctionComponent = () => {
   };
 
   return (
-    <article>
-      <Title headingLevel="h4">Select your favorite date</Title>
+    <article aria-labelledby="favorite-date">
+      <Title headingLevel="h4" id="favorite-date">
+        Select your favorite date
+      </Title>
       <pre>Selected date: {date.toString()}</pre>
       <CalendarMonth date={date} onChange={setDate} onMonthChange={onMonthChange} />
     </article>
