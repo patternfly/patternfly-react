@@ -12,6 +12,8 @@ import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
 import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
 import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 import ProjectDiagramIcon from '@patternfly/react-icons/dist/esm/icons/project-diagram-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 Most tab variations are available as open (default) or box style tabs. Select the 'isBox' checkbox to preview an example with box styled tabs.
 The Tabs items background can be also toggled with 'Tab light variation' checkbox.
@@ -458,7 +460,15 @@ class VerticalTabs extends React.Component {
           aria-label="Tabs in the vertical example"
           role="region"
         >
-          <Tab eventKey={0} title={<TabTitleText aria-label="vertical" role="region">Users</TabTitleText>} aria-label="Vertical example content users">
+          <Tab
+            eventKey={0}
+            title={
+              <TabTitleText aria-label="vertical" role="region">
+                Users
+              </TabTitleText>
+            }
+            aria-label="Vertical example content users"
+          >
             Users
           </Tab>
           <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
@@ -591,7 +601,11 @@ class VerticalExpandableUncontrolledTabs extends React.Component {
         aria-label="Tabs in the vertical expandable uncontrolled example"
         role="region"
       >
-        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Vertical expandable uncontrolled content users">
+        <Tab
+          eventKey={0}
+          title={<TabTitleText>Users</TabTitleText>}
+          aria-label="Vertical expandable uncontrolled content users"
+        >
           Users
         </Tab>
         <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
@@ -1206,7 +1220,12 @@ class TabsNav extends React.Component {
         component={TabsComponent.nav}
         aria-label="Tabs in the nav element example"
       >
-        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#users"  aria-label="Nav element content users">
+        <Tab
+          eventKey={0}
+          title={<TabTitleText>Users</TabTitleText>}
+          href="#users"
+          aria-label="Nav element content users"
+        >
           Users
         </Tab>
         <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>} href="#containers">
@@ -1267,7 +1286,12 @@ class SecondaryTabsNav extends React.Component {
         component={TabsComponent.nav}
         aria-label="Tabs in the sub tabs with nav element example"
       >
-        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#" aria-label="Subtabs with nav content users">
+        <Tab
+          eventKey={0}
+          title={<TabTitleText>Users</TabTitleText>}
+          href="#"
+          aria-label="Subtabs with nav content users"
+        >
           <Tabs
             activeKey={this.state.activeTabKey2}
             isSecondary
@@ -1423,7 +1447,12 @@ const TabContentWithBody = () => {
 
   return (
     <React.Fragment>
-      <Tabs activeKey={activeTabKey} onSelect={handleTabClick} aria-label="Tabs in the body and padding example" role="region">
+      <Tabs
+        activeKey={activeTabKey}
+        onSelect={handleTabClick}
+        aria-label="Tabs in the body and padding example"
+        role="region"
+      >
         <Tab
           eventKey={0}
           title={<TabTitleText>Tab item 1</TabTitleText>}
@@ -1447,20 +1476,10 @@ const TabContentWithBody = () => {
         <TabContent eventKey={0} id="tab1SectionBodyPadding" ref={contentRef1}>
           <TabContentBody hasPadding> Tab 1 section with body and padding </TabContentBody>
         </TabContent>
-        <TabContent
-          eventKey={1}
-          id="tab2SectionBodyPadding"
-          ref={contentRef2}
-          hidden
-        >
+        <TabContent eventKey={1} id="tab2SectionBodyPadding" ref={contentRef2} hidden>
           <TabContentBody hasPadding> Tab 2 section with body and padding </TabContentBody>
         </TabContent>
-        <TabContent
-          eventKey={2}
-          id="tab3SectionBodyPadding"
-          ref={contentRef3}
-          hidden
-        >
+        <TabContent eventKey={2} id="tab3SectionBodyPadding" ref={contentRef3} hidden>
           <TabContentBody hasPadding> Tab 3 section with body and padding </TabContentBody>
         </TabContent>
       </div>
@@ -1597,11 +1616,26 @@ class ToggledSeparateContent extends React.Component {
           aria-label="Tabs in the toggled separate content example"
           role="region"
         >
-          <Tab eventKey={0} title="Tab item 1" tabContentId="tab1SectionSeparateContent" tabContentRef={this.contentRef1} />
+          <Tab
+            eventKey={0}
+            title="Tab item 1"
+            tabContentId="tab1SectionSeparateContent"
+            tabContentRef={this.contentRef1}
+          />
           {!isTab2Hidden && (
-            <Tab eventKey={1} title="Tab item 2" tabContentId="tab2SectionSeparateContent" tabContentRef={this.contentRef2} />
+            <Tab
+              eventKey={1}
+              title="Tab item 2"
+              tabContentId="tab2SectionSeparateContent"
+              tabContentRef={this.contentRef2}
+            />
           )}
-          <Tab eventKey={2} title="Tab item 3" tabContentId="tab3SectionSeparateContent" tabContentRef={this.contentRef3} />
+          <Tab
+            eventKey={2}
+            title="Tab item 3"
+            tabContentId="tab3SectionSeparateContent"
+            tabContentRef={this.contentRef3}
+          />
         </Tabs>
         <div>
           <TabContent
@@ -1644,4 +1678,14 @@ class ToggledSeparateContent extends React.Component {
 To enable closeable tabs, pass the `onClose` property to `Tabs`, and to enable the add button, pass the `onAdd` property to `Tabs`. Aria labels may be controlled manually by passing `closeButtonAriaLabel` to `Tab` and `addButtonAriaLabel` to `Tabs`.
 
 ```ts file="./TabsDynamic.tsx" isBeta
+```
+
+### Help action
+
+```ts file="./TabsHelp.tsx" isBeta
+```
+
+### Help and close actions
+
+```ts file="./TabsHelpAndClose.tsx" isBeta
 ```

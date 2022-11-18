@@ -37,7 +37,7 @@ describe('Menu Test', () => {
       .first()
       .should('have.class', 'pf-c-menu__search');
 
-    cy.get('.pf-c-form-control.pf-m-search').type('Action 1');
+    cy.get('.pf-c-text-input-group__text-input').type('Action 1');
 
     cy.get('#filtered-items.pf-c-menu__list-item')
       .last()

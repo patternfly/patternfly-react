@@ -186,6 +186,8 @@ export interface SelectProps
   isFlipEnabled?: boolean;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
+  /** z-index of the select menu when menuAppendTo is not inline. */
+  zIndex?: number;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -267,7 +269,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isCreateSelectOptionObject: false,
     shouldResetOnSelect: true,
     isFlipEnabled: true,
-    removeFindDomNode: false
+    removeFindDomNode: false,
+    zIndex: 9999
   };
 
   state: SelectState = {
@@ -1034,6 +1037,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       shouldResetOnSelect,
       isFlipEnabled,
       removeFindDomNode,
+      zIndex,
       ...props
     } = this.props;
     const {
@@ -1478,6 +1482,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
                 isVisible={isOpen}
                 removeFindDomNode={removeFindDomNode}
+                zIndex={zIndex}
               />
             )}
           </SelectContext.Provider>

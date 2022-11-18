@@ -49,6 +49,8 @@ export interface OptionsMenuProps
   menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
+  /** z-index of the options menu when menuAppendTo is not inline. */
+  zIndex?: number;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -68,6 +70,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
   ouiaId,
   ouiaSafe = true,
   removeFindDomNode = false,
+  zIndex = 9999,
   ...props
 }: OptionsMenuProps) => (
   <DropdownContext.Provider
@@ -96,6 +99,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
       toggle={toggle}
       menuAppendTo={menuAppendTo}
       removeFindDomNode={removeFindDomNode}
+      zIndex={zIndex}
       {...props}
     />
   </DropdownContext.Provider>

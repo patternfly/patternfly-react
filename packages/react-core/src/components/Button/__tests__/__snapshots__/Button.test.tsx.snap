@@ -257,7 +257,7 @@ exports[`Button isLoading inline link 1`] = `
       <span
         aria-label="Contents"
         aria-valuetext="Loading"
-        class="pf-c-spinner pf-m-md"
+        class="pf-c-spinner pf-m-inline"
         role="progressbar"
       >
         <span

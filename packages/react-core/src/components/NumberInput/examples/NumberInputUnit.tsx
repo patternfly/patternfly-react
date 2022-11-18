@@ -2,26 +2,26 @@ import React from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputUnit: React.FunctionComponent = () => {
-  const [value1, setValue1] = React.useState(90);
-  const [value2, setValue2] = React.useState(Number((1.0).toFixed(2)));
+  const [value1, setValue1] = React.useState<number | ''>(90);
+  const [value2, setValue2] = React.useState<number | ''>(Number((1.0).toFixed(2)));
 
-  const onMinus1 = () => setValue1(value1 - 1);
+  const onMinus1 = () => setValue1((value1 || 0) - 1);
   const onChange1 = (event: React.FormEvent<HTMLInputElement>) => {
-    const target = event.target as HTMLInputElement;
-    setValue1(Number(target.value));
+    const value = (event.target as HTMLInputElement).value;
+    setValue1(value === '' ? value : +value);
   };
-  const onPlus1 = () => setValue1(value1 + 1);
+  const onPlus1 = () => setValue1((value1 || 0) + 1);
 
   const onMinus2 = () => {
-    const newValue = Number((value2 - 0.01).toFixed(2));
+    const newValue = Number(((value2 || 0) - 0.01).toFixed(2));
     setValue2(newValue);
   };
   const onChange2 = (event: React.FormEvent<HTMLInputElement>) => {
-    const target = event.target as HTMLInputElement;
-    setValue2(Number(target.value));
+    const value = (event.target as HTMLInputElement).value;
+    setValue2(value === '' ? value : +value);
   };
   const onPlus2 = () => {
-    const newValue = Number((value2 + 0.01).toFixed(2));
+    const newValue = Number(((value2 || 0) + 0.01).toFixed(2));
     setValue2(newValue);
   };
 

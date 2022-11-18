@@ -42,6 +42,10 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   'aria-label'?: string;
   /** Associates the ProgressBar with it's label for accessibility purposes. Required when title not used */
   'aria-labelledby'?: string;
+  /** @beta Content which can be used to convey additional information about the progress component.
+   * We recommend the helper text component as it was designed for this purpose.
+   */
+  helperText?: React.ReactNode;
 }
 
 export class Progress extends React.Component<ProgressProps> {
@@ -85,6 +89,7 @@ export class Progress extends React.Component<ProgressProps> {
       tooltipPosition,
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
+      helperText,
       ...props
     } = this.props;
 
@@ -137,6 +142,7 @@ export class Progress extends React.Component<ProgressProps> {
           progressBarAriaProps={progressBarAriaProps}
           isTitleTruncated={isTitleTruncated}
           tooltipPosition={tooltipPosition}
+          helperText={helperText}
         />
       </div>
     );

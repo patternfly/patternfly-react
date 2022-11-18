@@ -102,12 +102,11 @@ The following menu example allows users to favorite menu items, an action that d
 ```ts file="MenuWithFavorites.tsx"
 ```
 
-### Filtering with text input
+### Filtering with search input
 
-A [text input](/components/text-input) component can be placed within `<MenuInput>` to render a search input at the top of the menu. In the following example, the `onChange` property of the text input is passed a callback that filters menu items as a user types.
+A [search input](/components/search-input) component can be placed within `<MenuInput>` to render a search input at the top of the menu. In the following example, the `onChange` property of the text input is passed a callback that filters menu items as a user types.
 
-```ts file="MenuFilteringWithTextInput.tsx"
-```
+```ts file="MenuFilteringWithSearchInput.tsx"
 
 ### Option single select
 

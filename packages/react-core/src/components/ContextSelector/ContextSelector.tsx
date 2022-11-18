@@ -68,6 +68,8 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
   id?: string;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
+  /** z-index of the context selector when menuAppendTo is not inline. */
+  zIndex?: number;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -96,7 +98,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     isPlain: false,
     isText: false,
     isFlipEnabled: true,
-    removeFindDomNode: false
+    removeFindDomNode: false,
+    zIndex: 9999
   };
   constructor(props: ContextSelectorProps) {
     super(props);
@@ -139,6 +142,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       isFlipEnabled,
       id,
       removeFindDomNode,
+      zIndex,
       ...props
     } = this.props;
 
@@ -235,6 +239,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
         appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
         isVisible={isOpen}
         removeFindDomNode={removeFindDomNode}
+        zIndex={zIndex}
       />
     );
   }

@@ -10,7 +10,9 @@ exports[`tooltip renders 1`] = `
 
 exports[`tooltip renders in strict mode 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    style="display: contents;"
+  >
     <div>
       Toggle tooltip
     </div>
