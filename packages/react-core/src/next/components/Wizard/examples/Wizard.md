@@ -96,7 +96,7 @@ Custom operations when navigating between steps can be achieved by utilizing `on
 
 ```noLive
 /** Callback for the Wizard's 'onNext', 'onBack', and 'onNavByIndex' properties */
-type WizardNavStepFunction = (currentStep: WizardNavStepData, previousStep: WizardNavStepData) => void;
+type WizardNavStepFunction = (currentStep: WizardNavStepData, previousStep: WizardNavStepData) => void | Promise<void>;
 
 /** Data returned for either parameter of WizardNavStepFunction */
 type WizardNavStepData = Pick<WizardControlStep, 'id' | 'name'>;
