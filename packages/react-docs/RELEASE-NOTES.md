@@ -4,7 +4,7 @@ section: developer-resources
 ---
 
 ## 2022.15 release notes (2022-11-17)
-- [@patternfly/react-catalog-view-extension@4.93.055](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.93.0)
+- [@patternfly/react-catalog-view-extension@4.93.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.93.0)
 - [@patternfly/react-charts@6.94.12](https://www.npmjs.com/package/@patternfly/react-charts/v/6.94.12)
 - [@patternfly/react-code-editor@4.82.67](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.82.67)
 - [@patternfly/react-core@4.264.0](https://www.npmjs.com/package/@patternfly/react-core/v/4.264.0)
@@ -33,8 +33,6 @@ section: developer-resources
   - Added display contents to wrapping divs ([#8317](https://github.com/patternfly/patternfly-react/pull/8317))
 - **Progress:**
   - Added helper text ([#8307](https://github.com/patternfly/patternfly-react/pull/8307))
-- **Skeleton:**
-  - Updated examples to TypeScript ([#8251](https://github.com/patternfly/patternfly-react/pull/8251))
 - **Spinner:**
   - Added `isInline`, updated link button ([#8328](https://github.com/patternfly/patternfly-react/pull/8328))
 - **Tabs:**
