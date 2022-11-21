@@ -5,6 +5,16 @@
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": "./dist/esm/index.js",
+    "./deprecated": "./dist/esm/deprecated/index.js",
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "deprecated": ["dist/esm/deprecated/index.d.ts"]
+    }
+  },
   "patternfly:src": "src/",
   "sideEffects": false,
   "publishConfig": {
