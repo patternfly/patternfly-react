@@ -1,1 +1,2 @@
-export * from './';
+export * from './Table';
+export * from './TableComposable';
