@@ -38,7 +38,7 @@ section: developer-resources
 - **Spinner:**
   - Added `isInline`, updated link button ([#8328](https://github.com/patternfly/patternfly-react/pull/8328))
 - **Tabs:**
-  - Added support or tab actions ([#8348](https://github.com/patternfly/patternfly-react/pull/8348))
+  - Added support for tab actions ([#8348](https://github.com/patternfly/patternfly-react/pull/8348))
   - Reworked tabs demos based on design/core updates ([#8286](https://github.com/patternfly/patternfly-react/pull/8286))
 - **Text:**
   - Updated tests to new React testing library standards ([#8280](https://github.com/patternfly/patternfly-react/pull/8280))
