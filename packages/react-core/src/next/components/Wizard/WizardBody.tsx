@@ -10,7 +10,7 @@ import { css } from '@patternfly/react-styles';
 export interface WizardBodyProps {
   children: React.ReactNode | React.ReactNode[];
   /** Set to true to remove the default body padding */
-  hasNoBodyPadding?: boolean;
+  hasNoPadding?: boolean;
   /** An aria-label to use for the wrapper element */
   'aria-label'?: string;
   /** Sets the aria-labelledby attribute for the wrapper element */
@@ -21,13 +21,13 @@ export interface WizardBodyProps {
 
 export const WizardBody = ({
   children,
-  hasNoBodyPadding = false,
+  hasNoPadding = false,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
   component: WrapperComponent = 'div'
 }: WizardBodyProps) => (
   <WrapperComponent aria-label={ariaLabel} aria-labelledby={ariaLabelledBy} className={css(styles.wizardMain)}>
-    <div className={css(styles.wizardMainBody, hasNoBodyPadding && styles.modifiers.noPadding)}>{children}</div>
+    <div className={css(styles.wizardMainBody, hasNoPadding && styles.modifiers.noPadding)}>{children}</div>
   </WrapperComponent>
 );
 

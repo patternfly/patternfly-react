@@ -12,6 +12,7 @@ import {
   TabContentBody,
   TabTitleText,
   Title,
+  TitleSizes,
   Flex,
   FlexItem
 } from '@patternfly/react-core';
@@ -32,7 +33,9 @@ export const NestedTabs: React.FunctionComponent = () => {
       <GridItem xl={8} md={6}>
         <Card>
           <CardHeader>
-            <Title headingLevel="h2">Status</Title>
+            <Title headingLevel="h2" size={TitleSizes.lg}>
+              Status
+            </Title>
           </CardHeader>
           <CardBody>
             <Flex direction={{ default: 'column' }}>
@@ -40,6 +43,7 @@ export const NestedTabs: React.FunctionComponent = () => {
                 <Tabs
                   activeKey={activeNestedTabKey}
                   isSecondary
+                  hasSecondaryBorderBottom
                   onSelect={(_event, tabIndex) => handleNestedTabClick(Number(tabIndex))}
                   id="nested-tabs-example-nested-tabs-list"
                 >
@@ -108,14 +112,18 @@ export const NestedTabs: React.FunctionComponent = () => {
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>
-                <Title headingLevel="h2">Title of Card</Title>
+                <Title headingLevel="h2" size={TitleSizes.lg}>
+                  Title of card
+                </Title>
               </CardHeader>
             </Card>
           </FlexItem>
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>
-                <Title headingLevel="h2">Title of Card</Title>
+                <Title headingLevel="h2" size={TitleSizes.lg}>
+                  Title of card
+                </Title>
               </CardHeader>
             </Card>
           </FlexItem>

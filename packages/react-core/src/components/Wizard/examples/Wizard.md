@@ -134,8 +134,10 @@ class IncrementallyEnabledStepsWizard extends React.Component {
       stepIdReached: 1
     };
     this.onNext = ({ id }) => {
+      const [, orderIndex] = id.split('-');
+
       this.setState({
-        stepIdReached: this.state.stepIdReached < id ? id : this.state.stepIdReached
+        stepIdReached: this.state.stepIdReached < orderIndex ? orderIndex : this.state.stepIdReached
       });
     };
     this.closeWizard = () => {
@@ -147,27 +149,27 @@ class IncrementallyEnabledStepsWizard extends React.Component {
     const { stepIdReached } = this.state;
 
     const steps = [
-      { id: 'incrementally-enabled-1', name: 'First step', component: <p>Step 1 content</p> },
+      { id: 'incrementallyEnabled-1', name: 'First step', component: <p>Step 1 content</p> },
       {
-        id: 'incrementally-enabled-2',
+        id: 'incrementallyEnabled-2',
         name: 'Second step',
         component: <p>Step 2 content</p>,
         canJumpTo: stepIdReached >= 2
       },
       {
-        id: 'incrementally-enabled-3',
+        id: 'incrementallyEnabled-3',
         name: 'Third step',
         component: <p>Step 3 content</p>,
         canJumpTo: stepIdReached >= 3
       },
       {
-        id: 'incrementally-enabled-4',
+        id: 'incrementallyEnabled-4',
         name: 'Fourth step',
         component: <p>Step 4 content</p>,
         canJumpTo: stepIdReached >= 4
       },
       {
-        id: 'incrementally-enabled-5',
+        id: 'incrementallyEnabled-5',
         name: 'Review',
         component: <p>Review step content</p>,
         nextButtonText: 'Finish',
@@ -312,8 +314,10 @@ class ValidationWizard extends React.Component {
 
     this.onNext = ({ id, name }, { prevId, prevName }) => {
       console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
+      const [, orderIndex] = id.split('-');
+
       this.setState({
-        stepIdReached: this.state.stepIdReached < id ? id : this.state.stepIdReached
+        stepIdReached: this.state.stepIdReached < orderIndex ? orderIndex : this.state.stepIdReached
       });
       this.areAllStepsValid();
     };
@@ -897,7 +901,7 @@ class WizardInModal extends React.Component {
 
 ### Wizard with drawer
 
-```js isBeta
+```js
 import React from 'react';
 import {
   Button,

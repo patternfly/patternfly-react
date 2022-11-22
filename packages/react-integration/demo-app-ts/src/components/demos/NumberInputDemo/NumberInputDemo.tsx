@@ -14,7 +14,7 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
 
   state: NumberInputDemoState = {
     value: 0,
-    value2: null
+    value2: undefined
   };
 
   onMinus = () => {
@@ -49,8 +49,18 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
 
   onPlus2 = () => {
     this.setState({
-      value2: this.state.value2 + 1
+      value2: (this.state.value2 || 0) + 1
     });
+  };
+
+  onBlur = () => {
+    if (this.state.value2 > 3) {
+      this.setState({
+        value2: 3
+      });
+    } else if (this.state.value2 < 0) {
+      this.setState({ value2: 0 });
+    }
   };
 
   render() {
@@ -109,6 +119,7 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
           onMinus={this.onMinus2}
           onChange={this.onChange2}
           onPlus={this.onPlus2}
+          onBlur={this.onBlur}
           inputName="input 3"
           inputAriaLabel="number input 3"
           minusBtnAriaLabel="minus"

@@ -19,14 +19,11 @@ import {
   WizardStep,
   WizardBody,
   WizardFooter,
-  WizardStepProps,
   useWizardContext,
-  WizardNavStepFunction,
-  WizardNavStepData,
-  WizardNavItem,
   WizardHeader,
   WizardFooterWrapper,
-  WizardNavItemType
+  WizardNavStepFunction,
+  WizardNavStepData
 } from '@patternfly/react-core/next';
 
 const StepId = {
@@ -45,30 +42,34 @@ interface SomeContextProps {
   setIsToggleStepChecked(isHidden: boolean): void;
   setErrorMessage(error: string | undefined): void;
 }
+type SomeContextRenderProps = Pick<SomeContextProps, 'isToggleStepChecked' | 'errorMessage'>;
+interface SomeContextProviderProps {
+  children: (context: SomeContextRenderProps) => React.ReactElement;
+}
 
 const SomeContext = React.createContext({} as SomeContextProps);
 
-const SomeContextProvider = ({ children }) => {
+const SomeContextProvider = ({ children }: SomeContextProviderProps) => {
   const [isToggleStepChecked, setIsToggleStepChecked] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState<string>();
 
   return (
     <SomeContext.Provider value={{ isToggleStepChecked, errorMessage, setIsToggleStepChecked, setErrorMessage }}>
-      {children}
+      {children({ isToggleStepChecked, errorMessage })}
     </SomeContext.Provider>
   );
 };
 
 const CustomWizardFooter = () => {
-  const { currentStep, currentStepIndex, onNext, onBack, onClose } = useWizardContext();
+  const { activeStep, onNext, onBack, onClose } = useWizardContext();
 
   return (
     <WizardFooter
-      currentStep={currentStep}
+      activeStep={activeStep}
       onNext={onNext}
       onBack={onBack}
       onClose={onClose}
-      isBackDisabled={currentStepIndex === 1}
+      isBackDisabled={activeStep.index === 1}
     />
   );
 };
@@ -108,7 +109,7 @@ const StepContentWithDrawer = () => {
   );
 };
 
-const StepWithCustomFooter = (props: WizardStepProps) => {
+const CustomStepThreeFooter = () => {
   const { onNext: goToNextStep, onBack, onClose } = useWizardContext();
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -120,51 +121,26 @@ const StepWithCustomFooter = (props: WizardStepProps) => {
     goToStep();
   }
 
-  const footer = React.useMemo(
-    () => (
-      <WizardFooterWrapper>
-        <Button variant="primary" onClick={() => onNext(goToNextStep)} isLoading={isLoading} isDisabled={isLoading}>
-          Async Next
-        </Button>
-        <Button variant="secondary" onClick={onBack}>
-          Back
-        </Button>
-        <Button variant="link" onClick={onClose}>
-          Cancel
-        </Button>
-      </WizardFooterWrapper>
-    ),
-    [goToNextStep, isLoading, onBack, onClose]
-  );
-
   return (
-    <WizardStep {...props} footer={footer}>
-      Step 3 content w/ custom async footer
-    </WizardStep>
+    <WizardFooterWrapper>
+      <Button variant="primary" onClick={() => onNext(goToNextStep)} isLoading={isLoading} isDisabled={isLoading}>
+        Async Next
+      </Button>
+      <Button variant="secondary" onClick={onBack} isDisabled={isLoading}>
+        Back
+      </Button>
+      <Button variant="link" onClick={onClose} isDisabled={isLoading}>
+        Cancel
+      </Button>
+    </WizardFooterWrapper>
   );
 };
 
-const StepWithContextActions = (props: WizardStepProps) => {
+const StepContentWithActions = () => {
   const { isToggleStepChecked, errorMessage, setIsToggleStepChecked, setErrorMessage } = React.useContext(SomeContext);
 
-  const navItem: WizardNavItemType = React.useCallback(
-    (step, currentStep, steps, goToStepByIndex) => (
-      <WizardNavItem
-        id={step.id}
-        content={step.name}
-        isCurrent={currentStep.id === step.id}
-        stepIndex={steps.indexOf(step) + 1}
-        isDisabled={step.isDisabled || !step.isVisited}
-        isVisited={step.isVisited}
-        onNavItemClick={goToStepByIndex}
-        status={errorMessage ? 'error' : 'default'}
-      />
-    ),
-    [errorMessage]
-  );
-
   return (
-    <WizardStep {...props} navItem={navItem}>
+    <>
       <Checkbox
         label="Give this step an error status"
         isChecked={!!errorMessage}
@@ -179,13 +155,8 @@ const StepWithContextActions = (props: WizardStepProps) => {
         id="toggle-hide-step-checkbox"
         name="Toggle Hide Step Checkbox"
       />
-    </WizardStep>
+    </>
   );
-};
-
-const StepToHide = (props: WizardStepProps) => {
-  const { isToggleStepChecked } = React.useContext(SomeContext);
-  return <WizardStep {...props} isHidden={isToggleStepChecked} />;
 };
 
 export const WizardKitchenSink: React.FunctionComponent = () => {
@@ -193,36 +164,54 @@ export const WizardKitchenSink: React.FunctionComponent = () => {
 
   return (
     <SomeContextProvider>
-      <Wizard
-        height={400}
-        header={<WizardHeader title="You're a wizard, Harry" closeButtonAriaLabel="Close header" />}
-        footer={<CustomWizardFooter />}
-        isStepVisitRequired
-        onNext={onNext}
-        hasUnmountedSteps={false}
-      >
-        <WizardStep id={StepId.StepOne} name="Step 1" body={null} status="error">
-          <StepContentWithDrawer />
-        </WizardStep>
-        <WizardStep
-          id={StepId.StepTwo}
-          name="Step 2"
-          steps={[
-            <StepWithContextActions id={StepId.StepTwoSubOne} key={StepId.StepTwoSubOne} name="Substep 1" />,
-            <StepToHide id={StepId.StepTwoSubTwo} key={StepId.StepTwoSubTwo} name="Substep 2">
-              Substep 2 content
-            </StepToHide>
-          ]}
-        />
-        <StepWithCustomFooter
-          id={StepId.StepThree}
-          name="Step 3"
-          navItem={{ content: <span style={{ color: 'var(--pf-global--default-color--200)' }}>Custom item</span> }}
-        />
-        <WizardStep id={StepId.ReviewStep} name="Review" footer={{ nextButtonText: 'Submit' }}>
-          Review step content
-        </WizardStep>
-      </Wizard>
+      {({ isToggleStepChecked, errorMessage }) => (
+        <Wizard
+          height={400}
+          header={<WizardHeader title="You're a wizard, Harry" closeButtonAriaLabel="Close header" />}
+          footer={<CustomWizardFooter />}
+          onNext={onNext}
+          isStepVisitRequired
+        >
+          <WizardStep id={StepId.StepOne} name="Step 1" body={null} status="error">
+            <StepContentWithDrawer />
+          </WizardStep>
+          <WizardStep
+            id={StepId.StepTwo}
+            name="Step 2"
+            steps={[
+              <WizardStep
+                status={errorMessage ? 'error' : 'default'}
+                id={StepId.StepTwoSubOne}
+                key={StepId.StepTwoSubOne}
+                name="Substep 1"
+              >
+                <StepContentWithActions />
+              </WizardStep>,
+              <WizardStep
+                id={StepId.StepTwoSubTwo}
+                key={StepId.StepTwoSubTwo}
+                name="Substep 2"
+                isHidden={isToggleStepChecked}
+              >
+                Substep 2 content
+              </WizardStep>
+            ]}
+          />
+          <WizardStep
+            id={StepId.StepThree}
+            name="Step 3"
+            navItem={{
+              content: <span style={{ color: 'var(--pf-global--default-color--200)' }}>Custom item</span>
+            }}
+            footer={<CustomStepThreeFooter />}
+          >
+            Step 3 content w/ custom async footer
+          </WizardStep>
+          <WizardStep id={StepId.ReviewStep} name="Review" footer={{ nextButtonText: 'Submit' }}>
+            Review step content
+          </WizardStep>
+        </Wizard>
+      )}
     </SomeContextProvider>
   );
 };

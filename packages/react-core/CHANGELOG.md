@@ -3,6 +3,211 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.264.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.263.0...@patternfly/react-core@4.264.0) (2022-11-16)
+
+
+### Features
+
+* **Tabs:** add TabAction, update core ver ([#8348](https://github.com/patternfly/patternfly-react/issues/8348)) ([8c584b4](https://github.com/patternfly/patternfly-react/commit/8c584b48f8e545cf226f785b873ee11eda505724))
+
+
+
+
+
+# [4.263.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.262.0...@patternfly/react-core@4.263.0) (2022-11-15)
+
+
+### Bug Fixes
+
+* **NumberInput:** allow user to back out number to type input ([#8304](https://github.com/patternfly/patternfly-react/issues/8304)) ([7dda7a9](https://github.com/patternfly/patternfly-react/commit/7dda7a9419f020df3f9ea2468ee35d2c28f16382))
+* **Popper:** add display contents to wrapping divs ([#8317](https://github.com/patternfly/patternfly-react/issues/8317)) ([1851a2c](https://github.com/patternfly/patternfly-react/commit/1851a2cd33a7a032e63c156a9e6c52653862bd9b))
+
+
+### Features
+
+* **spinner:** added isInline, updated link button ([#8328](https://github.com/patternfly/patternfly-react/issues/8328)) ([29f76e1](https://github.com/patternfly/patternfly-react/commit/29f76e1b1f99df446a8d1c5719a0d3fa6790ac9a))
+
+
+
+
+
+# [4.262.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.261.0...@patternfly/react-core@4.262.0) (2022-11-15)
+
+
+### Features
+
+* **MenuInput:** use SearchInput instead of TextInput ([#8329](https://github.com/patternfly/patternfly-react/issues/8329)) ([e00b995](https://github.com/patternfly/patternfly-react/commit/e00b995b927c76d4128d5584ff0ed0d97f672c9a))
+
+
+
+
+
+# [4.261.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.260.1...@patternfly/react-core@4.261.0) (2022-11-09)
+
+
+### Features
+
+* **MultipleFileUpload:** added support for helper text ([#8344](https://github.com/patternfly/patternfly-react/issues/8344)) ([f8faf8b](https://github.com/patternfly/patternfly-react/commit/f8faf8bf62b8ece44f5283922711730921fcd537))
+
+
+
+
+
+## [4.260.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.260.0...@patternfly/react-core@4.260.1) (2022-11-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.260.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.259.0...@patternfly/react-core@4.260.0) (2022-11-08)
+
+
+### Features
+
+* **Progress:** added helper text ([#8307](https://github.com/patternfly/patternfly-react/issues/8307)) ([7ad9398](https://github.com/patternfly/patternfly-react/commit/7ad9398588c8d7f0da5ec5c6a6bdeb58d2308d39))
+
+
+
+
+
+# [4.259.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.8...@patternfly/react-core@4.259.0) (2022-11-07)
+
+
+### Features
+
+* **Popper, misc:** allow components to customize popper z-index ([#8310](https://github.com/patternfly/patternfly-react/issues/8310)) ([17dff4c](https://github.com/patternfly/patternfly-react/commit/17dff4c3bde667f426994a1e9073c9c58b9c598a))
+
+
+
+
+
+## [4.258.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.7...@patternfly/react-core@4.258.8) (2022-11-07)
+
+
+### Bug Fixes
+
+* **bulk-select:** fixed toggle spacing ([#8326](https://github.com/patternfly/patternfly-react/issues/8326)) ([fe40f19](https://github.com/patternfly/patternfly-react/commit/fe40f19058a383cfc12e3f7a07d07af8dc579d04))
+
+
+
+
+
+## [4.258.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.6...@patternfly/react-core@4.258.7) (2022-11-07)
+
+
+### Bug Fixes
+
+* **TimePicker:** fixed bugs when updating time/minTime/maxTime props ([#8267](https://github.com/patternfly/patternfly-react/issues/8267)) ([f1408df](https://github.com/patternfly/patternfly-react/commit/f1408df627115592f95576f01c072e52a6c7d9e8))
+
+
+
+
+
+## [4.258.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.5...@patternfly/react-core@4.258.6) (2022-11-04)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## 4.258.5 (2022-11-04)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## 4.258.4 (2022-11-01)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.258.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.2...@patternfly/react-core@4.258.3) (2022-10-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.258.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.1...@patternfly/react-core@4.258.2) (2022-10-26)
+
+
+### Bug Fixes
+
+* **Pagination:** prevented regenerating random id on each render ([#8175](https://github.com/patternfly/patternfly-react/issues/8175)) ([873cff7](https://github.com/patternfly/patternfly-react/commit/873cff7c4ec5443408dc66306cf168888f5e5580))
+
+
+
+
+
+## [4.258.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.258.0...@patternfly/react-core@4.258.1) (2022-10-26)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# 4.258.0 (2022-10-25)
+
+
+### Features
+
+* **Popover:** update default flip behavior and width ([#8191](https://github.com/patternfly/patternfly-react/issues/8191)) ([108503f](https://github.com/patternfly/patternfly-react/commit/108503f167b4cfabab88abf2a52bf4c6a8bd504b))
+
+
+
+
+
+## [4.257.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.257.0...@patternfly/react-core@4.257.1) (2022-10-24)
+
+
+### Bug Fixes
+
+* **Timestamp:** updated logic for rendering datetime attribute ([#8205](https://github.com/patternfly/patternfly-react/issues/8205)) ([c890770](https://github.com/patternfly/patternfly-react/commit/c8907704139a656111f2200e6041d6ec6b091dd1))
+
+
+
+
+
+# [4.257.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.256.0...@patternfly/react-core@4.257.0) (2022-10-24)
+
+
+### Features
+
+* **Banner:** add support for status icons ([#8195](https://github.com/patternfly/patternfly-react/issues/8195)) ([6bd6c88](https://github.com/patternfly/patternfly-react/commit/6bd6c88d11dad080480f8227b26f1f34cf8d7766))
+
+
+
+
+
+# [4.256.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.255.2...@patternfly/react-core@4.256.0) (2022-10-24)
+
+
+### Features
+
+* **MultipleFileUpload:** add aria live region to internal Progress ([#8242](https://github.com/patternfly/patternfly-react/issues/8242)) ([dbeb72b](https://github.com/patternfly/patternfly-react/commit/dbeb72bbfe875f246767a78e4971ee6fb754a4cc))
+
+
+
+
+
+## [4.255.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.255.1...@patternfly/react-core@4.255.2) (2022-10-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [4.255.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.255.0...@patternfly/react-core@4.255.1) (2022-10-22)
 
 

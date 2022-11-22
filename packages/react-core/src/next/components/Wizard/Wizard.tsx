@@ -42,8 +42,6 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   height?: number | string;
   /** Disables navigation items that haven't been visited. Defaults to false */
   isStepVisitRequired?: boolean;
-  /** Flag to unmount inactive steps instead of hiding. Defaults to true */
-  hasUnmountedSteps?: boolean;
   /** Callback function when a step in the navigation is clicked */
   onNavByIndex?: WizardNavStepFunction;
   /** Callback function after next button is clicked */
@@ -66,7 +64,6 @@ export const Wizard = ({
   nav,
   startIndex = 1,
   isStepVisitRequired = false,
-  hasUnmountedSteps = true,
   onNavByIndex,
   onNext,
   onBack,
@@ -74,42 +71,37 @@ export const Wizard = ({
   onClose,
   ...wrapperProps
 }: WizardProps) => {
-  const [currentStepIndex, setCurrentStepIndex] = React.useState(startIndex);
+  const [activeStepIndex, setActiveStepIndex] = React.useState(startIndex);
   const initialSteps = buildSteps(children);
 
   const goToNextStep = (steps: WizardControlStep[] = initialSteps) => {
-    const newStepIndex =
-      steps.findIndex((step, index) => index + 1 > currentStepIndex && !step.isHidden && !isWizardParentStep(step)) + 1;
+    const newStepIndex = steps.find(step => step.index > activeStepIndex && !step.isHidden && !isWizardParentStep(step))
+      ?.index;
 
-    if (currentStepIndex >= steps.length || !newStepIndex) {
+    if (activeStepIndex >= steps.length || !newStepIndex) {
       return onSave ? onSave() : onClose?.();
     }
 
-    const currStep = isWizardParentStep(steps[currentStepIndex])
-      ? steps[currentStepIndex + 1]
-      : steps[currentStepIndex];
-    const prevStep = steps[currentStepIndex - 1];
+    const currStep = isWizardParentStep(steps[activeStepIndex]) ? steps[activeStepIndex + 1] : steps[activeStepIndex];
+    const prevStep = steps[activeStepIndex - 1];
 
-    setCurrentStepIndex(newStepIndex);
-
-    return onNext?.(normalizeNavStep(currStep, steps), normalizeNavStep(prevStep, steps));
+    setActiveStepIndex(newStepIndex);
+    return onNext?.(normalizeNavStep(currStep), normalizeNavStep(prevStep));
   };
 
   const goToPrevStep = (steps: WizardControlStep[] = initialSteps) => {
     const newStepIndex =
       findLastIndex(
         steps,
-        (step: WizardControlStep, index: number) =>
-          index + 1 < currentStepIndex && !step.isHidden && !isWizardParentStep(step)
+        (step: WizardControlStep) => step.index < activeStepIndex && !step.isHidden && !isWizardParentStep(step)
       ) + 1;
-    const currStep = isWizardParentStep(steps[currentStepIndex - 2])
-      ? steps[currentStepIndex - 3]
-      : steps[currentStepIndex - 2];
-    const prevStep = steps[currentStepIndex - 1];
+    const currStep = isWizardParentStep(steps[activeStepIndex - 2])
+      ? steps[activeStepIndex - 3]
+      : steps[activeStepIndex - 2];
+    const prevStep = steps[activeStepIndex - 1];
 
-    setCurrentStepIndex(newStepIndex);
-
-    return onBack?.(normalizeNavStep(currStep, steps), normalizeNavStep(prevStep, steps));
+    setActiveStepIndex(newStepIndex);
+    return onBack?.(normalizeNavStep(currStep), normalizeNavStep(prevStep));
   };
 
   const goToStepByIndex = (steps: WizardControlStep[] = initialSteps, index: number) => {
@@ -120,46 +112,40 @@ export const Wizard = ({
       index = 1;
     } else if (index > lastStepIndex) {
       index = lastStepIndex;
-    } else if (steps[index - 1].isHidden) {
-      // eslint-disable-next-line no-console
-      console.error('Wizard: Unable to navigate to hidden step.');
     }
 
     const currStep = steps[index - 1];
-    const prevStep = steps[currentStepIndex - 1];
-    setCurrentStepIndex(index);
+    const prevStep = steps[activeStepIndex - 1];
 
-    return onNavByIndex?.(normalizeNavStep(currStep, steps), normalizeNavStep(prevStep, steps));
+    setActiveStepIndex(index);
+    return onNavByIndex?.(normalizeNavStep(currStep), normalizeNavStep(prevStep));
   };
 
   const goToStepById = (steps: WizardControlStep[] = initialSteps, id: number | string) => {
-    const stepIndex = steps.findIndex(step => step.id === id) + 1;
+    const step = steps.find(step => step.id === id);
+    const stepIndex = step?.index;
+    const lastStepIndex = steps.length + 1;
 
-    if (stepIndex > 0 && stepIndex < steps.length + 1 && !steps[stepIndex].isHidden) {
-      setCurrentStepIndex(stepIndex);
-    } else {
-      // eslint-disable-next-line no-console
-      console.error(`Wizard: Unable to navigate to step with id: ${id}.`);
+    if (stepIndex > 0 && stepIndex < lastStepIndex && !step.isHidden) {
+      setActiveStepIndex(stepIndex);
     }
   };
 
   const goToStepByName = (steps: WizardControlStep[] = initialSteps, name: string) => {
-    const stepIndex = initialSteps.findIndex(step => step.name === name) + 1;
+    const step = steps.find(step => step.name === name);
+    const stepIndex = step?.index;
+    const lastStepIndex = steps.length + 1;
 
-    if (stepIndex > 0 && stepIndex < steps.length + 1 && !steps[stepIndex].isHidden) {
-      setCurrentStepIndex(stepIndex);
-    } else {
-      // eslint-disable-next-line no-console
-      console.error(`Wizard: Unable to navigate to step with name: ${name}.`);
+    if (stepIndex > 0 && stepIndex < lastStepIndex && !step.isHidden) {
+      setActiveStepIndex(stepIndex);
     }
   };
 
   return (
     <WizardContextProvider
       steps={initialSteps}
-      currentStepIndex={currentStepIndex}
+      activeStepIndex={activeStepIndex}
       footer={footer}
-      isStepVisitRequired={isStepVisitRequired}
       onNext={goToNextStep}
       onBack={goToPrevStep}
       onClose={onClose}
@@ -176,37 +162,32 @@ export const Wizard = ({
         {...wrapperProps}
       >
         {header}
-        <WizardInternal nav={nav} hasUnmountedSteps={hasUnmountedSteps} isStepVisitRequired={isStepVisitRequired} />
+        <WizardInternal nav={nav} isStepVisitRequired={isStepVisitRequired} />
       </div>
     </WizardContextProvider>
   );
 };
 
-const WizardInternal = ({
-  nav,
-  hasUnmountedSteps,
-  isStepVisitRequired
-}: Pick<WizardProps, 'nav' | 'hasUnmountedSteps' | 'isStepVisitRequired'>) => {
-  const { currentStep, steps, footer, goToStepByIndex } = useWizardContext();
+const WizardInternal = ({ nav, isStepVisitRequired }: Pick<WizardProps, 'nav' | 'isStepVisitRequired'>) => {
+  const { activeStep, steps, footer, goToStepByIndex } = useWizardContext();
   const [isNavExpanded, setIsNavExpanded] = React.useState(false);
 
   const wizardNav = React.useMemo(() => {
     if (isCustomWizardNav(nav)) {
-      return typeof nav === 'function' ? nav(isNavExpanded, steps, currentStep, goToStepByIndex) : nav;
+      return typeof nav === 'function' ? nav(isNavExpanded, steps, activeStep, goToStepByIndex) : nav;
     }
 
     return <WizardNavInternal nav={nav} isNavExpanded={isNavExpanded} isStepVisitRequired={isStepVisitRequired} />;
-  }, [currentStep, isStepVisitRequired, goToStepByIndex, isNavExpanded, nav, steps]);
+  }, [activeStep, isStepVisitRequired, goToStepByIndex, isNavExpanded, nav, steps]);
 
   return (
     <WizardToggle
       nav={wizardNav}
       footer={footer}
       steps={steps}
-      currentStep={currentStep}
+      activeStep={activeStep}
       isNavExpanded={isNavExpanded}
       toggleNavExpanded={() => setIsNavExpanded(prevIsExpanded => !prevIsExpanded)}
-      hasUnmountedSteps={hasUnmountedSteps}
     />
   );
 };

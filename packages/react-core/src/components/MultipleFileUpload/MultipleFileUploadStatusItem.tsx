@@ -50,8 +50,12 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   progressAriaLabel?: string;
   /** Associates the progress bar with it's label for accessibility purposes. Required when title not used */
   progressAriaLabelledBy?: string;
+  /** Modifies the text announced by assistive technologies when the progress bar updates. */
+  progressAriaLiveMessage?: string | ((loadPercentage: number) => string);
   /** Unique identifier for progress. Generated if not specified. */
   progressId?: string;
+  /** @beta Additional content related to the status item. */
+  progressHelperText?: React.ReactNode;
 }
 
 export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileUploadStatusItemProps> = ({
@@ -71,7 +75,9 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   progressAriaLabel,
   progressAriaLabelledBy,
   progressId,
+  progressAriaLiveMessage,
   buttonAriaLabel = 'Remove from list',
+  progressHelperText,
   ...props
 }: MultipleFileUploadStatusItemProps) => {
   const [loadPercentage, setLoadPercentage] = React.useState(0);
@@ -126,6 +132,9 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     return `${Math.round(size)}${prefixes[prefixUnit]}B`;
   };
 
+  const value = progressValue || loadPercentage;
+  const variant = progressVariant || loadResult;
+
   const title = (
     <span className={styles.multipleFileUploadStatusItemProgress}>
       <span className={styles.multipleFileUploadStatusItemProgressText}>{fileName || file?.name || ''}</span>
@@ -139,13 +148,21 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     <li className={css(styles.multipleFileUploadStatusItem, className)} {...props}>
       <div className={styles.multipleFileUploadStatusItemIcon}>{fileIcon || <FileIcon />}</div>
       <div className={styles.multipleFileUploadStatusItemMain}>
+        <div className="pf-screen-reader" aria-live="polite">
+          {progressAriaLiveMessage &&
+            typeof progressAriaLiveMessage === 'function' &&
+            progressAriaLiveMessage(+loadPercentage.toFixed(2))}
+          {progressAriaLiveMessage && typeof progressAriaLiveMessage === 'string' && progressAriaLiveMessage}
+          {!progressAriaLiveMessage && `Progress value is ${progressValue || Math.floor(loadPercentage)}%.`}
+        </div>
         <Progress
           title={title}
-          value={progressValue || loadPercentage}
-          variant={progressVariant || loadResult}
+          value={value}
+          variant={variant}
           aria-label={progressAriaLabel}
           aria-labelledby={progressAriaLabelledBy}
           id={progressId}
+          helperText={progressHelperText}
         />
       </div>
       <div className={styles.multipleFileUploadStatusItemClose}>

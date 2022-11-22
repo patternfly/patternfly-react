@@ -60,9 +60,16 @@ describe('NumberInput Demo Test', () => {
       .should('have.class', 'pf-c-input-group');
   });
 
-  it('initial null value can be increment with the plus button', () => {
+  it('initial undefined value can be increment with the plus button', () => {
     cy.get('#input3').should('have.value', 0);
     cy.get('#plus-button3').click();
     cy.get('#input3').should('have.value', 1);
+  });
+
+  it('out of bounds input value can be typed and snap to nearest threshold', () => {
+    cy.get('#input3').should('have.value', 1);
+    cy.get('#input3').type('5');
+    cy.get('body').click();
+    cy.get('#input3').should('have.value', 3);
   });
 });

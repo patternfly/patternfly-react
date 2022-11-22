@@ -36,7 +36,9 @@ exports[`popover renders close-button, header and body 1`] = `
 
 exports[`popover renders in strict mode 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    style="display: contents;"
+  >
     <div>
       Toggle Popover
     </div>

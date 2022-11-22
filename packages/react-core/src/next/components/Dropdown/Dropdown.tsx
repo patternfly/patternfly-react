@@ -30,6 +30,8 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** z-index of the dropdown menu */
+  zIndex?: number;
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({
@@ -45,6 +47,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   innerRef,
   ouiaId,
   ouiaSafe = true,
+  zIndex = 9999,
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -119,6 +122,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
         popper={menu}
         appendTo={containerRef.current || undefined}
         isVisible={isOpen}
+        zIndex={zIndex}
       />
     </div>
   );

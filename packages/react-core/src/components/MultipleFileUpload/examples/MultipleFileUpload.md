@@ -4,7 +4,6 @@ section: components
 cssPrefix: pf-c-multiple-file-upload
 propComponents:
   ['MultipleFileUpload', 'MultipleFileUploadMain', 'MultipleFileUploadStatus', 'MultipleFileUploadStatusItem']
-beta: true
 ---
 
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
@@ -42,6 +41,12 @@ File upload - multiple is designed in a composable manner to make customization 
 ## Examples
 
 ### Basic
+
+The below example demonstrates a typical application of file upload - multiple, with a few tweaks from that typical application to enhance the convenience of the example.
+
+The "Show as horizontal" checkbox can be used to easily toggle the `isHorizontal` prop, showing our available styling variations.
+
+The "Demonstrate error reporting by forcing uploads to fail" checkbox shows how our `progressHelperText` prop can be used to provide status messages to users, such as when a file fails to upload. While this checkbox is checked it will cause any file uploaded to automatically fail the file reading process, and helper text will be dynamically rendered which informs the user of that error.
 
 ```ts file="./MultipleFileUploadBasic.tsx"
 ```

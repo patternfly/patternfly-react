@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event';
 import { WizardFooter, WizardFooterProps } from '../WizardFooter';
 
 const defaultProps: WizardFooterProps = {
-  currentStep: { name: 'Step name', id: 'some-id' },
+  activeStep: { name: 'Step name', id: 'some-id', index: 1 },
   onNext: jest.fn(),
   onBack: jest.fn(),
   onClose: jest.fn()
@@ -70,19 +70,19 @@ test('has disabled back button when isBackDisabled is enabled', () => {
   expect(screen.getByRole('button', { name: 'Back' })).toHaveAttribute('disabled');
 });
 
-test('uses currentStep footer properties when specified', () => {
+test('uses activeStep footer properties when specified', () => {
   render(
-    <WizardFooter {...defaultProps} currentStep={{ ...defaultProps.currentStep, footer: { isBackHidden: true } }} />
+    <WizardFooter {...defaultProps} activeStep={{ ...defaultProps.activeStep, footer: { isBackHidden: true } }} />
   );
   expect(screen.queryByRole('button', { name: 'Back' })).toBeNull();
 });
 
-test(`currentStep footer properties take precendence over WizardFooter's`, () => {
+test(`activeStep footer properties take precendence over WizardFooter's`, () => {
   render(
     <WizardFooter
       {...defaultProps}
       nextButtonText="Footer next"
-      currentStep={{ ...defaultProps.currentStep, footer: { nextButtonText: 'Active step next' } }}
+      activeStep={{ ...defaultProps.activeStep, footer: { nextButtonText: 'Active step next' } }}
     />
   );
   expect(screen.queryByRole('button', { name: 'Footer next' })).toBeNull();

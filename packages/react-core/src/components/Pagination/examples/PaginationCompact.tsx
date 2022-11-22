@@ -25,7 +25,7 @@ export const PaginationCompact: React.FunctionComponent = () => {
       perPage={perPage}
       page={page}
       onSetPage={onSetPage}
-      widgetId="pagination-options-menu-top"
+      widgetId="compact-example"
       onPerPageSelect={onPerPageSelect}
       isCompact
     />

@@ -18,9 +18,9 @@ export interface WizardStep {
   name: React.ReactNode;
   /** The component to render in the main body */
   component?: any;
-  /** @beta The content to render in the drawer panel (use when hasDrawer prop is set on the wizard).   */
+  /** The content to render in the drawer panel (use when hasDrawer prop is set on the wizard).   */
   drawerPanelContent?: any;
-  /** @beta Custom drawer toggle button that opens the drawer. */
+  /** Custom drawer toggle button that opens the drawer. */
   drawerToggleButton?: React.ReactNode;
   /** Setting to true hides the side nav and footer */
   isFinishedStep?: boolean;
@@ -108,9 +108,9 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   isNavExpandable?: boolean;
   /** Callback function to signal the current step in the wizard */
   onCurrentStepChanged?: (step: WizardStep) => void;
-  /** @beta Flag indicating the wizard has a drawer for at least one of the wizard steps */
+  /** Flag indicating the wizard has a drawer for at least one of the wizard steps */
   hasDrawer?: boolean;
-  /** @beta Flag indicating the wizard drawer is expanded */
+  /** Flag indicating the wizard drawer is expanded */
   isDrawerExpanded?: boolean;
 }
 

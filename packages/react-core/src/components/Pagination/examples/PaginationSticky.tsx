@@ -33,7 +33,7 @@ export const PaginationSticky: React.FunctionComponent = () => {
             perPage={perPage}
             page={page}
             onSetPage={onSetPage}
-            widgetId="pagination-options-menu-top"
+            widgetId="sticky-example"
             onPerPageSelect={onPerPageSelect}
             isSticky
           >

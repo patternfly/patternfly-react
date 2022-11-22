@@ -21,6 +21,8 @@ export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   toggleAriaLabel?: string;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
+  /** z-index of the overflow tab */
+  zIndex?: number;
 }
 
 export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
@@ -30,6 +32,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   defaultTitleText = 'More',
   toggleAriaLabel,
   removeFindDomNode = false,
+  zIndex = 9999,
   ...props
 }: OverflowTabProps) => {
   const menuRef = React.useRef<HTMLDivElement>();
@@ -139,6 +142,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
       popperMatchesTriggerWidth={false}
       appendTo={overflowLIRef.current}
       removeFindDomNode={removeFindDomNode}
+      zIndex={zIndex}
     />
   );
 };

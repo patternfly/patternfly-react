@@ -11,8 +11,8 @@ import { isCustomWizardFooter, WizardControlStep, WizardNavStepFunction } from '
  */
 
 export interface WizardFooterProps {
-  /** The current step */
-  currentStep: WizardControlStep;
+  /** The active step */
+  activeStep: WizardControlStep;
   /** Next button callback */
   onNext: () => WizardNavStepFunction | void;
   /** Back button callback */
@@ -43,9 +43,9 @@ export const WizardFooterWrapper = ({ children }: WizardFooterWrapperProps) => (
   <footer className={css(styles.wizardFooter)}>{children}</footer>
 );
 
-export const WizardFooter = ({ currentStep, ...internalProps }: WizardFooterProps) => {
-  const currentStepFooter = !isCustomWizardFooter(currentStep.footer) && currentStep.footer;
-  return <InternalWizardFooter {...internalProps} {...currentStepFooter} />;
+export const WizardFooter = ({ activeStep, ...internalProps }: WizardFooterProps) => {
+  const activeStepFooter = !isCustomWizardFooter(activeStep.footer) && activeStep.footer;
+  return <InternalWizardFooter {...internalProps} {...activeStepFooter} />;
 };
 
 const InternalWizardFooter = ({
@@ -59,7 +59,7 @@ const InternalWizardFooter = ({
   nextButtonText = 'Next',
   backButtonText = 'Back',
   cancelButtonText = 'Cancel'
-}: Omit<WizardFooterProps, 'currentStep'>) => (
+}: Omit<WizardFooterProps, 'activeStep'>) => (
   <WizardFooterWrapper>
     <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={isNextDisabled}>
       {nextButtonText}

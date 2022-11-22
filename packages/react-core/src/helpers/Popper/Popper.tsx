@@ -1,17 +1,45 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { usePopper } from './thirdparty/react-popper/usePopper';
-import { Placement, BasePlacement, Modifier } from './thirdparty/popper-core';
+import { Placement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
 import { FindRefWrapper } from './FindRefWrapper';
 import '@patternfly/react-styles/css/components/Popper/Popper.css';
 
-const hash = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
+const hash = {
+  left: 'right',
+  right: 'left',
+  bottom: 'top',
+  top: 'bottom',
+  'top-start': 'bottom-end',
+  'top-end': 'bottom-start',
+  'bottom-start': 'top-end',
+  'bottom-end': 'top-start',
+  'left-start': 'right-end',
+  'left-end': 'right-start',
+  'right-start': 'left-end',
+  'right-end': 'left-start'
+};
 
 const getOppositePlacement = (placement: Placement): any =>
   placement.replace(
-    /left|right|bottom|top/g,
-    (matched: string) => hash[matched as 'left' | 'right' | 'bottom' | 'top'] as BasePlacement
+    /left|right|bottom|top|top-start|top-end|bottom-start|bottom-end|right-start|right-end|left-start|left-end/g,
+    (matched: string) =>
+      hash[
+        matched as
+          | 'left'
+          | 'right'
+          | 'bottom'
+          | 'top'
+          | 'top-start'
+          | 'top-end'
+          | 'bottom-start'
+          | 'bottom-end'
+          | 'right-start'
+          | 'right-end'
+          | 'left-start'
+          | 'left-end'
+      ] as Placement
   );
 
 /** @deprecated Please use the menuAppendTo prop directly from within the PF component which uses it. */
@@ -283,7 +311,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     [popperMatchesTriggerWidth]
   );
 
-  const { styles: popperStyles, attributes, update } = usePopper(refOrTrigger, popperElement, {
+  const { styles: popperStyles, attributes, update, forceUpdate } = usePopper(refOrTrigger, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
       {
@@ -311,6 +339,10 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       sameWidthMod
     ]
   });
+
+  React.useEffect(() => {
+    forceUpdate && forceUpdate();
+  }, [popper]);
 
   // Returns the CSS modifier class in order to place the Popper's arrow properly
   // Depends on the position of the Popper relative to the reference element
@@ -355,7 +387,11 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   let popperPortal;
   if (removeFindDomNode) {
     // If removeFindDomNode is passed, use the removeFindDomNode method of wrapping divs
-    popperPortal = <div ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>{menuWithPopper}</div>;
+    popperPortal = (
+      <div style={{ display: 'contents' }} ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>
+        {menuWithPopper}
+      </div>
+    );
   } else if (popperRef) {
     // If removeFindDomNode is not passed and popperRef is passed, use the popperRef method
     popperPortal = menuWithPopper;
@@ -372,7 +408,9 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         <FindRefWrapper onFoundRef={(foundRef: any) => setTriggerElement(foundRef)}>{trigger}</FindRefWrapper>
       )}
       {!reference && trigger && React.isValidElement(trigger) && removeFindDomNode && (
-        <div ref={node => setTriggerElement(node?.firstElementChild as HTMLElement)}>{trigger}</div>
+        <div style={{ display: 'contents' }} ref={node => setTriggerElement(node?.firstElementChild as HTMLElement)}>
+          {trigger}
+        </div>
       )}
       {ready && isVisible && ReactDOM.createPortal(popperPortal, getTarget())}
     </>

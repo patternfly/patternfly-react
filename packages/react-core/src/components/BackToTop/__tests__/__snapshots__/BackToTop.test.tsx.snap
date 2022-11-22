@@ -9,10 +9,18 @@ exports[`Matches the snapshot 1`] = `
       Back to top
     </button>
     <p>
-      primary
+      variant: primary
+    </p>
+    <p
+      id="labelling-id"
+    >
+      Test label
     </p>
     <p>
-      right
+      isInline: undefined
+    </p>
+    <p>
+      iconPosition: right
     </p>
     <div
       data-testid="icon"

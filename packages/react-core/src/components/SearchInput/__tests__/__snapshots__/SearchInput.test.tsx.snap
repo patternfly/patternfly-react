@@ -441,7 +441,9 @@ exports[`SearchInput renders search input in strict mode 1`] = `
   <div
     class=""
   >
-    <div>
+    <div
+      style="display: contents;"
+    >
       <div
         class="pf-c-input-group"
       >
