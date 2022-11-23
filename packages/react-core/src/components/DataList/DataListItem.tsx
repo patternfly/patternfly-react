@@ -3,7 +3,6 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { DataListContext } from './DataList';
 import { KeyTypes } from '../../helpers/constants';
-import { DataListDragButton, DataListDragButtonProps } from './DataListDragButton';
 
 export interface DataListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'children' | 'ref'> {
   /** Flag to show if the expanded content of the DataList item is visible */
@@ -23,25 +22,6 @@ export interface DataListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 
 export interface DataListItemChildProps {
   /** Id for the row */
   rowid: string;
-}
-
-function findDataListDragButton(node: React.ReactNode): React.ReactElement<DataListDragButtonProps> | null {
-  if (!React.isValidElement(node)) {
-    return null;
-  }
-  if (node.type === DataListDragButton) {
-    return node as React.ReactElement<DataListDragButtonProps>;
-  }
-  if (node.props.children) {
-    for (const child of React.Children.toArray(node.props.children)) {
-      const button = findDataListDragButton(child);
-      if (button) {
-        return button;
-      }
-    }
-  }
-
-  return null;
 }
 
 export class DataListItem extends React.Component<DataListItemProps> {
@@ -65,16 +45,7 @@ export class DataListItem extends React.Component<DataListItemProps> {
     } = this.props;
     return (
       <DataListContext.Consumer>
-        {({
-          isSelectable,
-          selectedDataListItemId,
-          updateSelectedDataListItem,
-          selectableRow,
-          isDraggable,
-          dragStart,
-          dragEnd,
-          drop
-        }) => {
+        {({ isSelectable, selectedDataListItemId, updateSelectedDataListItem, selectableRow }) => {
           const selectDataListItem = (event: React.MouseEvent) => {
             let target: any = event.target;
             while (event.currentTarget !== target) {
@@ -98,17 +69,6 @@ export class DataListItem extends React.Component<DataListItemProps> {
             }
           };
 
-          // We made the DataListDragButton determine if the entire item is draggable instead of
-          // DataListItem like we should have.
-          // Recursively search children for the DataListDragButton and see if it's disabled...
-          const dragButton = findDataListDragButton(children);
-          const dragProps = isDraggable && {
-            draggable: dragButton ? !dragButton.props.isDisabled : true,
-            onDrop: drop,
-            onDragEnd: dragEnd,
-            onDragStart: dragStart
-          };
-
           const isSelected = selectedDataListItemId === id;
 
           const selectableInputAriaProps = selectableInputAriaLabel
@@ -129,7 +89,6 @@ export class DataListItem extends React.Component<DataListItemProps> {
               {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown })}
               {...(isSelectable && isSelected && { 'aria-selected': true })}
               {...props}
-              {...dragProps}
             >
               {selectableRow && (
                 <input
