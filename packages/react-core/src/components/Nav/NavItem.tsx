@@ -122,7 +122,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       return;
     }
 
-    if (key === ' ' || key === 'ArrowRight') {
+    if (key === ' ' || key === 'Enter' || key === 'ArrowRight') {
       event.stopPropagation();
       event.preventDefault();
       if (!flyoutVisible) {
