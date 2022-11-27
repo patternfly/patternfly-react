@@ -5,18 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { AlertToggleExpandButton } from '../AlertToggleExpandButton';
 import { AlertContext } from '../AlertContext';
 
-jest.mock('../../Button', () => ({
-  Button: ({ children, variant, isInline, onClick, ...props }) => (
-    <>
-      <button onClick={onClick} {...props}>
-        {children}
-      </button>
-      <p>{`variant: ${variant}`}</p>
-      <p id="labelling-id">Test label</p>
-    </>
-  ),
-  ButtonVariant: { plain: 'plain' }
-}));
+jest.mock('../../Button');
 
 jest.mock('@patternfly/react-icons/dist/esm/icons/angle-right-icon', () => () => 'Icon mock');
 

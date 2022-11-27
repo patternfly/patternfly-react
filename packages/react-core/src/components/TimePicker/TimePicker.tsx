@@ -143,6 +143,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
     document.addEventListener('keydown', this.handleGlobalKeys);
+
+    this.setState({ isInvalid: !this.isValid(this.state.timeState) });
   }
 
   componentWillUnmount() {
@@ -198,7 +200,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
   componentDidUpdate(prevProps: TimePickerProps, prevState: TimePickerState) {
     const { timeState, isTimeOptionsOpen, isInvalid, timeRegex } = this.state;
-    const { time, is24Hour, delimiter, includeSeconds, isOpen } = this.props;
+    const { time, is24Hour, delimiter, includeSeconds, isOpen, minTime, maxTime } = this.props;
     if (prevProps.isOpen !== isOpen) {
       this.onToggle(isOpen);
     }
@@ -212,8 +214,22 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       });
     }
     if (time !== '' && time !== prevProps.time) {
+      const parsedTime = parseTime(time, timeRegex, delimiter, !is24Hour, includeSeconds);
+
       this.setState({
-        timeState: parseTime(time, timeRegex, delimiter, !is24Hour, includeSeconds)
+        timeState: parsedTime,
+        isInvalid: !this.isValid(parsedTime)
+      });
+    }
+    if (minTime !== '' && minTime !== prevProps.minTime) {
+      this.setState({
+        minTimeState: parseTime(minTime, timeRegex, delimiter, !is24Hour, includeSeconds)
+      });
+    }
+
+    if (maxTime !== '' && maxTime !== prevProps.maxTime) {
+      this.setState({
+        maxTimeState: parseTime(maxTime, timeRegex, delimiter, !is24Hour, includeSeconds)
       });
     }
   }
