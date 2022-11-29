@@ -20,7 +20,7 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with the pf-c-panel', () => {
+test('Renders with the class pf-c-panel', () => {
   render(<Panel>Test</Panel>);
   expect(screen.getByText('Test')).toHaveClass('pf-c-panel');
 });
@@ -45,7 +45,7 @@ test('Renders with class name pf-m-bordered when variant is bordered', () => {
   expect(screen.getByText('Test')).toHaveClass('pf-m-bordered');
 });
 
-test('Renders with class name pf-m-scrollable when scrollable is true', () => {
+test('Renders with class name pf-m-scrollable when isScrollable is true', () => {
   render(<Panel isScrollable>Test</Panel>);
   expect(screen.getByText('Test')).toHaveClass('pf-m-scrollable');
 });

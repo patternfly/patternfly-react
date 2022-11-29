@@ -16,7 +16,7 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with the pf-c-panel__main-body', () => {
+test('Renders with the class pf-c-panel__main-body', () => {
   render(<PanelMainBody>Test</PanelMainBody>);
   expect(screen.getByText('Test')).toHaveClass('pf-c-panel__main-body');
 });
