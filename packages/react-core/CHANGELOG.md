@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.264.1 (2022-11-30)
+
+
+### Bug Fixes
+
+* react-core subpaths for next/deprecated modules ([#8341](https://github.com/patternfly/patternfly-react/issues/8341)) ([ed002d2](https://github.com/patternfly/patternfly-react/commit/ed002d204d12f9e138a7373ce0e7318153fbe502))
+
+
+
+
+
 # [4.264.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.263.0...@patternfly/react-core@4.264.0) (2022-11-16)
 
 
