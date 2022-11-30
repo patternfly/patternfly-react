@@ -128,7 +128,7 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
           {percent === 100 ? 'Validation complete' : 'Validating credentials'}
         </Title>
         <EmptyStateBody>
-          <Progress value={percent} measureLocation="outside" />
+          <Progress value={percent} measureLocation="outside" aria-label="validation-progress" />
         </EmptyStateBody>
         <EmptyStateBody>
           Description can be used to further elaborate on the validation step, or give the user a better idea of how
@@ -176,7 +176,7 @@ const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormP
         <TextInput
           validated={validated}
           value={value}
-          id="age"
+          id="ageInput"
           aria-describedby="age-helper"
           onChange={handleTextInputChange}
         />

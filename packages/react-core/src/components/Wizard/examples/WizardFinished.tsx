@@ -65,7 +65,7 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
           {percent === 100 ? 'Validation complete' : 'Validating credentials'}
         </Title>
         <EmptyStateBody>
-          <Progress value={percent} measureLocation="outside" />
+          <Progress value={percent} measureLocation="outside" aria-label="validation-progress" />
         </EmptyStateBody>
         <EmptyStateBody>
           Description can be used to further elaborate on the validation step, or give the user a better idea of how

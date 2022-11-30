@@ -126,7 +126,7 @@ const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormP
         <TextInput
           validated={validated}
           value={value}
-          id="age"
+          id="ageInput"
           aria-describedby="age-helper"
           onChange={handleTextInputChange}
         />
