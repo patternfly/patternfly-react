@@ -1,7 +1,22 @@
-import React from 'react';
-import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
-import SampleForm from './SampleForm';
-import FinishedStep from './FinishedStep';
+import React, { useEffect } from 'react';
+import {
+  EmptyState,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions,
+  Title,
+  Form,
+  FormGroup,
+  TextInput,
+  Progress,
+  Button,
+  Wizard,
+  WizardFooter,
+  WizardContextConsumer,
+  Alert
+} from '@patternfly/react-core';
+// eslint-disable-next-line patternfly-react/import-tokens-icons
+import { CogsIcon } from '@patternfly/react-icons';
 
 export const WizardValidateButtonPress: React.FunctionComponent = () => {
   const [stepsValid, setStepsValid] = React.useState(0);
@@ -83,5 +98,89 @@ export const WizardValidateButtonPress: React.FunctionComponent = () => {
       steps={steps}
       height={400}
     />
+  );
+};
+
+interface finishedProps {
+  onClose: () => void;
+}
+
+const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedProps) => {
+  const [percent, setPercent] = React.useState(0);
+
+  const tick = () => {
+    if (percent < 100) {
+      setPercent(percent + 20);
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => tick(), 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="pf-l-bullseye">
+      <EmptyState variant="large">
+        <EmptyStateIcon icon={CogsIcon} />
+        <Title headingLevel="h4" size="lg">
+          {percent === 100 ? 'Validation complete' : 'Validating credentials'}
+        </Title>
+        <EmptyStateBody>
+          <Progress value={percent} measureLocation="outside" />
+        </EmptyStateBody>
+        <EmptyStateBody>
+          Description can be used to further elaborate on the validation step, or give the user a better idea of how
+          long the process will take.
+        </EmptyStateBody>
+        <EmptyStateSecondaryActions>
+          <Button isDisabled={percent !== 100} onClick={props.onClose}>
+            Log to console
+          </Button>
+        </EmptyStateSecondaryActions>
+      </EmptyState>
+    </div>
+  );
+};
+
+interface sampleFormProps {
+  formValue: string;
+  isFormValid: boolean;
+  onChange?: (isValid: boolean, value: string) => void;
+}
+
+const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormProps) => {
+  const [value, setValue] = React.useState(props.formValue);
+  const [isValid, setIsValid] = React.useState(props.isFormValid);
+
+  const handleTextInputChange = (value: string) => {
+    const valid = /^\d+$/.test(value);
+    setValue(value);
+    setIsValid(valid);
+    props.onChange && props.onChange(isValid, value);
+  };
+
+  const validated = isValid ? 'default' : 'error';
+
+  return (
+    <Form>
+      <FormGroup
+        label="Age:"
+        type="number"
+        helperText="Write your age in numbers."
+        helperTextInvalid="Age has to be a number"
+        fieldId="age"
+        validated={validated}
+      >
+        <TextInput
+          validated={validated}
+          value={value}
+          id="age"
+          aria-describedby="age-helper"
+          onChange={handleTextInputChange}
+        />
+      </FormGroup>
+    </Form>
   );
 };

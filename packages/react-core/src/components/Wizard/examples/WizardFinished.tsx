@@ -1,6 +1,16 @@
-import React from 'react';
-import { Wizard } from '@patternfly/react-core';
-import FinishedStep from './FinishedStep';
+import React, { useEffect } from 'react';
+import {
+  EmptyState,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions,
+  Title,
+  Progress,
+  Button,
+  Wizard
+} from '@patternfly/react-core';
+// eslint-disable-next-line patternfly-react/import-tokens-icons
+import { CogsIcon } from '@patternfly/react-icons';
 
 export const WizardFinished: React.FunctionComponent = () => {
   const closeWizard = () => {
@@ -25,5 +35,48 @@ export const WizardFinished: React.FunctionComponent = () => {
       steps={steps}
       height={400}
     />
+  );
+};
+
+interface finishedProps {
+  onClose: () => void;
+}
+
+const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedProps) => {
+  const [percent, setPercent] = React.useState(0);
+
+  const tick = () => {
+    if (percent < 100) {
+      setPercent(percent + 20);
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => tick(), 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="pf-l-bullseye">
+      <EmptyState variant="large">
+        <EmptyStateIcon icon={CogsIcon} />
+        <Title headingLevel="h4" size="lg">
+          {percent === 100 ? 'Validation complete' : 'Validating credentials'}
+        </Title>
+        <EmptyStateBody>
+          <Progress value={percent} measureLocation="outside" />
+        </EmptyStateBody>
+        <EmptyStateBody>
+          Description can be used to further elaborate on the validation step, or give the user a better idea of how
+          long the process will take.
+        </EmptyStateBody>
+        <EmptyStateSecondaryActions>
+          <Button isDisabled={percent !== 100} onClick={props.onClose}>
+            Log to console
+          </Button>
+        </EmptyStateSecondaryActions>
+      </EmptyState>
+    </div>
   );
 };

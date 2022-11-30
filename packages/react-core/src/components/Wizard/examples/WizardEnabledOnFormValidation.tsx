@@ -1,7 +1,5 @@
 import React from 'react';
-import { Wizard, WizardStep } from '@patternfly/react-core';
-import SampleForm from './SampleForm';
-
+import { Form, FormGroup, TextInput, Wizard, WizardStep } from '@patternfly/react-core';
 interface PrevStepInfo {
   prevId?: string | number;
   prevName: React.ReactNode;
@@ -93,5 +91,46 @@ export const WizardFormValidation: React.FunctionComponent = () => {
       onGoToStep={onGoToStep}
       height={400}
     />
+  );
+};
+
+interface sampleFormProps {
+  formValue: string;
+  isFormValid: boolean;
+  onChange?: (isValid: boolean, value: string) => void;
+}
+
+const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormProps) => {
+  const [value, setValue] = React.useState(props.formValue);
+  const [isValid, setIsValid] = React.useState(props.isFormValid);
+
+  const handleTextInputChange = (value: string) => {
+    const valid = /^\d+$/.test(value);
+    setValue(value);
+    setIsValid(valid);
+    props.onChange && props.onChange(isValid, value);
+  };
+
+  const validated = isValid ? 'default' : 'error';
+
+  return (
+    <Form>
+      <FormGroup
+        label="Age:"
+        type="number"
+        helperText="Write your age in numbers."
+        helperTextInvalid="Age has to be a number"
+        fieldId="age"
+        validated={validated}
+      >
+        <TextInput
+          validated={validated}
+          value={value}
+          id="age"
+          aria-describedby="age-helper"
+          onChange={handleTextInputChange}
+        />
+      </FormGroup>
+    </Form>
   );
 };
