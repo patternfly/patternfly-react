@@ -14,11 +14,6 @@ export const WizardWithDrawer: React.FunctionComponent = () => {
 
   const drawerRef = React.useRef<HTMLSpanElement>(null);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const onExpand = () => {
-    drawerRef.current && drawerRef.current.focus();
-  };
-
   const onOpenClick = () => {
     setIsDrawerExpanded(true);
   };
