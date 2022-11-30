@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { MenuItemProps, MenuItem } from '../../../components/Menu';
 
-export interface SelectOptionProps extends Omit<MenuItemProps, 'ref'> {
+interface CommonSelectOptionProps extends Omit<MenuItemProps, 'ref'> {
   /** Anything which can be rendered in a select option */
   children?: React.ReactNode;
   /** Classes applied to root element of select option */
@@ -18,6 +18,22 @@ export interface SelectOptionProps extends Omit<MenuItemProps, 'ref'> {
   /** Indicates the option is focused */
   isFocused?: boolean;
 }
+
+type ConditionalSelectOptionProps =
+  | {
+      /** Target navigation link */
+      to?: string;
+      /** Flyout menu. Disallowed if nav link is defined */
+      flyoutMenu?: never;
+    }
+  | {
+      /** Target navigation link. Disallowed if flyoutMenu is defined */
+      to?: never;
+      /** Flyout menu */
+      flyoutMenu?: React.ReactElement;
+    };
+
+export type SelectOptionProps = CommonSelectOptionProps & ConditionalSelectOptionProps;
 
 export const SelectOption: React.FunctionComponent<MenuItemProps> = ({
   children,
