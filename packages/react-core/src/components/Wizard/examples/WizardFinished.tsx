@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   EmptyState,
   EmptyStateIcon,
@@ -51,7 +51,7 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
     }
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     const interval = setInterval(() => tick(), 1000);
 
     return () => clearInterval(interval);
