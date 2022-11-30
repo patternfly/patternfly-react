@@ -11,6 +11,7 @@ import { Button, Drawer, DrawerActions, DrawerCloseButton, DrawerColorVariant,
 DrawerContent, DrawerContentBody, DrawerHead, DrawerPanelContent, DrawerSection, Wizard, WizardFooter, WizardContextConsumer, ModalVariant, Alert, EmptyState, EmptyStateIcon, EmptyStateBody, EmptyStateSecondaryActions, Title, Progress, Form, FormGroup, TextInput } from '@patternfly/react-core';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
+import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
 
 
 If you seek a wizard solution that allows for more composition, see the [React next](/components/wizard/react-next) tab.
