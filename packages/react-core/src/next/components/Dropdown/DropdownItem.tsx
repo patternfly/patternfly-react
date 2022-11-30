@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import { MenuItemProps, MenuItem } from '../../../components/Menu';
 import { useOUIAProps, OUIAProps } from '../../../helpers';
 
-export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps {
+interface CommonDropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps {
   /** Anything which can be rendered in a dropdown item */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown item */
@@ -15,6 +15,22 @@ export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
 }
+
+type ConditionalDropdownItemProps =
+  | {
+      /** Target navigation link */
+      to?: string;
+      /** Flyout menu. Disallowed if nav link is defined */
+      flyoutMenu?: never;
+    }
+  | {
+      /** Target navigation link. Disallowed if flyoutMenu is defined */
+      to?: never;
+      /** Flyout menu */
+      flyoutMenu?: React.ReactElement;
+    };
+
+export type DropdownItemProps = CommonDropdownItemProps & ConditionalDropdownItemProps;
 
 export const DropdownItem: React.FunctionComponent<MenuItemProps> = ({
   children,
