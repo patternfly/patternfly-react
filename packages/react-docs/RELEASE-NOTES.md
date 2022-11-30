@@ -3,6 +3,61 @@ id: Release notes
 section: developer-resources
 ---
 
+## 2022.15 release notes (2022-11-17)
+- [@patternfly/react-catalog-view-extension@4.93.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.93.0)
+- [@patternfly/react-charts@6.94.12](https://www.npmjs.com/package/@patternfly/react-charts/v/6.94.12)
+- [@patternfly/react-code-editor@4.82.67](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.82.67)
+- [@patternfly/react-core@4.264.0](https://www.npmjs.com/package/@patternfly/react-core/v/4.264.0)
+- [@patternfly/react-icons@4.93.0](https://www.npmjs.com/package/@patternfly/react-icons/v/4.93.0)
+- [@patternfly/react-inline-edit-extension@4.86.68](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.86.68)
+- [@patternfly/react-log-viewer@4.87.62](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.87.62)
+- [@patternfly/react-styles@4.92.0](https://www.npmjs.com/package/@patternfly/react-styles/v/4.92.0)
+- [@patternfly/react-table@4.111.45](https://www.npmjs.com/package/@patternfly/react-table/v/4.111.45)
+- [@patternfly/react-tokens@4.94.0](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.94.0)
+- [@patternfly/react-topology@4.90.23](https://www.npmjs.com/package/@patternfly/react-topology/v/4.90.23)
+- [@patternfly/react-virtualized-extension@4.88.67](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.88.67)
+
+### Components
+- **Backdrop:**
+  - Updated component unit tests to meet new RTL standards ([#8232](https://github.com/patternfly/patternfly-react/pull/8232))
+- **Label:**
+  - Fixed hrefs in compact example ([#8312](https://github.com/patternfly/patternfly-react/pull/8312))
+- **Menu:**
+  - Used search input instead of text input in examples and demos ([#8329](https://github.com/patternfly/patternfly-react/pull/8329))
+- **Multiple file upload:**
+  - Added support for helper text ([#8344](https://github.com/patternfly/patternfly-react/pull/8344))
+- **Number input:**
+  - Fixed to allow user to back out number to type an input ([#8304](https://github.com/patternfly/patternfly-react/pull/8304))
+- **Popper:**
+  - Allowed components to customize popper z-index ([#8310](https://github.com/patternfly/patternfly-react/pull/8310))
+  - Added display contents to wrapping divs ([#8317](https://github.com/patternfly/patternfly-react/pull/8317))
+- **Progress:**
+  - Added helper text ([#8307](https://github.com/patternfly/patternfly-react/pull/8307))
+- **Spinner:**
+  - Added `isInline`, updated link button ([#8328](https://github.com/patternfly/patternfly-react/pull/8328))
+- **Tabs:**
+  - Added support for tab actions ([#8348](https://github.com/patternfly/patternfly-react/pull/8348))
+  - Reworked tabs demos based on design/core updates ([#8286](https://github.com/patternfly/patternfly-react/pull/8286))
+- **Text:**
+  - Updated tests to new React testing library standards ([#8280](https://github.com/patternfly/patternfly-react/pull/8280))
+- **Text area:**
+  - Converted examples to TypeScript ([#8186](https://github.com/patternfly/patternfly-react/pull/8186))
+- **Time picker:**
+  - Fixed bugs when updating time/minTime/maxTime props ([#8267](https://github.com/patternfly/patternfly-react/pull/8267))
+- **Toggle group:**
+  - Converted examples to TypeScript ([#8266](https://github.com/patternfly/patternfly-react/pull/8266))
+
+### Topology
+- Set status decorators to be opaque in `DefaultNode`([#8335](https://github.com/patternfly/patternfly-react/pull/8335))
+
+### Other
+- **Chore**
+  - Created shareable button mock for testing ([#8244](https://github.com/patternfly/patternfly-react/pull/8244))
+- **Demos:**
+  - Fixed toggle spacing in bulk select demos([#8326](https://github.com/patternfly/patternfly-react/pull/8326))
+- **Documentation:**
+  - Updated README with create-react-app and YAML help ([#8188](https://github.com/patternfly/patternfly-react/pull/8188))
+
 ## 2022.14 release notes (2022-10-27)
 - [@patternfly/react-catalog-view-extension@4.92.55](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.92.55)
 - [@patternfly/react-charts@6.94.11](https://www.npmjs.com/package/@patternfly/react-charts/v/6.94.11)

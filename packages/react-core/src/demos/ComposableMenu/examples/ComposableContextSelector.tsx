@@ -9,10 +9,10 @@ import {
   MenuInput,
   Popper,
   Divider,
-  TextInput,
   InputGroup,
   Button,
-  ButtonVariant
+  ButtonVariant,
+  SearchInput
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
@@ -160,7 +160,7 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
     >
       <MenuInput>
         <InputGroup>
-          <TextInput
+          <SearchInput
             value={searchInputValue}
             type="search"
             placeholder="Search"

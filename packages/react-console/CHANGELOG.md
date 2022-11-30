@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.93.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.92.66...@patternfly/react-console@4.93.0) (2022-11-16)
+
+
+### Features
+
+* **Tabs:** add TabAction, update core ver ([#8348](https://github.com/patternfly/patternfly-react/issues/8348)) ([8c584b4](https://github.com/patternfly/patternfly-react/commit/8c584b48f8e545cf226f785b873ee11eda505724))
+
+
+
+
+
+## [4.92.66](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.92.65...@patternfly/react-console@4.92.66) (2022-11-15)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.92.65](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.92.64...@patternfly/react-console@4.92.65) (2022-11-15)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
 ## [4.92.64](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.92.63...@patternfly/react-console@4.92.64) (2022-11-09)
 
 **Note:** Version bump only for package @patternfly/react-console

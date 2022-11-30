@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.205.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.205.1...demo-app-ts@4.205.2) (2022-11-16)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.205.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.205.0...demo-app-ts@4.205.1) (2022-11-15)
+
+
+### Bug Fixes
+
+* **NumberInput:** allow user to back out number to type input ([#8304](https://github.com/patternfly/patternfly-react/issues/8304)) ([7dda7a9](https://github.com/patternfly/patternfly-react/commit/7dda7a9419f020df3f9ea2468ee35d2c28f16382))
+
+
+
+
+
+# [4.205.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.20...demo-app-ts@4.205.0) (2022-11-15)
+
+
+### Features
+
+* **MenuInput:** use SearchInput instead of TextInput ([#8329](https://github.com/patternfly/patternfly-react/issues/8329)) ([e00b995](https://github.com/patternfly/patternfly-react/commit/e00b995b927c76d4128d5584ff0ed0d97f672c9a))
+
+
+
+
+
 ## [4.204.20](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.204.19...demo-app-ts@4.204.20) (2022-11-09)
 
 **Note:** Version bump only for package demo-app-ts

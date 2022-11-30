@@ -195,22 +195,22 @@ describe('numberInput', () => {
     expect(input).toHaveDisplayValue('47.01');
   });
 
-  test('renders 0 if no value passed', () => {
+  test('renders 0 (default value) if no value passed', () => {
     render(<NumberInput />);
     const input = screen.getByRole('spinbutton');
     expect(input).toHaveDisplayValue('0');
   });
 
-  test('renders 0 if undefined value passed', () => {
+  test('renders 0 (default value) if undefined value passed', () => {
     render(<NumberInput value={undefined} />);
     const input = screen.getByRole('spinbutton');
     expect(input).toHaveDisplayValue('0');
   });
 
-  test('renders 0 if null value passed', () => {
+  test('renders nothing if null value passed', () => {
     render(<NumberInput value={null} />);
     const input = screen.getByRole('spinbutton');
-    expect(input).toHaveDisplayValue('0');
+    expect(input).toHaveDisplayValue('');
   });
 
   test('does not throw an error if onChange is passed via inputProps as well as the onChange prop', () => {

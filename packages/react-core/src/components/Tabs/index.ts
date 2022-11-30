@@ -1,4 +1,5 @@
 export * from './Tab';
+export * from './TabAction';
 export * from './Tabs';
 export * from './TabContent';
 export * from './TabContentBody';
