@@ -5,11 +5,56 @@ interface PrevStepInfo {
   prevName: React.ReactNode;
 }
 
+interface sampleFormProps {
+  formValue: string;
+  isFormValid: boolean;
+  onChange?: (isValid: boolean, value: string) => void;
+}
+
+const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormProps) => {
+  const [value, setValue] = React.useState(props.formValue);
+  const [isValid, setIsValid] = React.useState(props.isFormValid);
+
+  const handleTextInputChange = (value: string) => {
+    const valid = /^\d+$/.test(value);
+    setValue(value);
+    setIsValid(valid);
+    props.onChange && props.onChange(isValid, value);
+  };
+
+  const validated = isValid ? 'default' : 'error';
+
+  return (
+    <Form>
+      <FormGroup
+        label="Age:"
+        type="number"
+        helperText="Write your age in numbers."
+        helperTextInvalid="Age has to be a number"
+        fieldId="age"
+        validated={validated}
+      >
+        <TextInput
+          validated={validated}
+          value={value}
+          id="age-input"
+          aria-describedby="age-helper"
+          onChange={handleTextInputChange}
+        />
+      </FormGroup>
+    </Form>
+  );
+};
+
 export const WizardFormValidation: React.FunctionComponent = () => {
   const [isFormValid, setIsFormValid] = React.useState(false);
   const [formValue, setFormValue] = React.useState('Thirty');
   const [allStepsValid, setAllStepsValid] = React.useState(false);
   const [stepIdReached, setStepIdReached] = React.useState(1);
+
+  React.useEffect(() => {
+    setAllStepsValid(isFormValid);
+  }, [isFormValid, stepIdReached]);
 
   const closeWizard = () => {
     // eslint-disable-next-line no-console
@@ -19,7 +64,6 @@ export const WizardFormValidation: React.FunctionComponent = () => {
   const onFormChange = (isValid: boolean, value: string) => {
     setIsFormValid(isValid);
     setFormValue(value);
-    areAllStepsValid();
   };
 
   const areAllStepsValid = () => {
@@ -31,11 +75,11 @@ export const WizardFormValidation: React.FunctionComponent = () => {
     console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
     if (id) {
       if (typeof id === 'string') {
-        id = parseInt(id);
+        const [, orderIndex] = id.split('-');
+        id = parseInt(orderIndex);
       }
       setStepIdReached(stepIdReached < id ? id : stepIdReached);
     }
-    areAllStepsValid();
   };
 
   const onBack = ({ id, name }: WizardStep, { prevId, prevName }: PrevStepInfo) => {
@@ -91,46 +135,5 @@ export const WizardFormValidation: React.FunctionComponent = () => {
       onGoToStep={onGoToStep}
       height={400}
     />
-  );
-};
-
-interface sampleFormProps {
-  formValue: string;
-  isFormValid: boolean;
-  onChange?: (isValid: boolean, value: string) => void;
-}
-
-const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormProps) => {
-  const [value, setValue] = React.useState(props.formValue);
-  const [isValid, setIsValid] = React.useState(props.isFormValid);
-
-  const handleTextInputChange = (value: string) => {
-    const valid = /^\d+$/.test(value);
-    setValue(value);
-    setIsValid(valid);
-    props.onChange && props.onChange(isValid, value);
-  };
-
-  const validated = isValid ? 'default' : 'error';
-
-  return (
-    <Form>
-      <FormGroup
-        label="Age:"
-        type="number"
-        helperText="Write your age in numbers."
-        helperTextInvalid="Age has to be a number"
-        fieldId="age"
-        validated={validated}
-      >
-        <TextInput
-          validated={validated}
-          value={value}
-          id="ageInput"
-          aria-describedby="age-helper"
-          onChange={handleTextInputChange}
-        />
-      </FormGroup>
-    </Form>
   );
 };
