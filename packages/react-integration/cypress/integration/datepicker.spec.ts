@@ -8,6 +8,7 @@ it('Verify validation error can be cleared from outside', () => {
     .within(() => {
       cy.get('input');
     })
+    .children()
     .click();
   cy.focused()
     .clear()

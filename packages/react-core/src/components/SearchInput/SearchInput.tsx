@@ -117,8 +117,6 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   placeholder?: string;
   /** Accessible label for the button to navigate to previous result. */
   previousNavigationButtonAriaLabel?: string;
-  /** @beta Opt-in for updated popper that does not use findDOMNode. */
-  removeFindDomNode?: boolean;
   /** Label for the button which resets the advanced search form and clears the search input. */
   resetButtonLabel?: string;
   /** The number of search results returned. Either a total number of results,
@@ -159,7 +157,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   submitSearchButtonLabel = 'Search',
   isDisabled = false,
   appendTo,
-  removeFindDomNode = false,
   type = 'text',
   ...props
 }: SearchInputProps) => {
@@ -415,7 +412,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             isVisible={isSearchMenuOpen}
             enableFlip={true}
             appendTo={() => appendTo || searchInputRef.current}
-            removeFindDomNode={removeFindDomNode}
           />
         </div>
       );

@@ -49,7 +49,6 @@ describe('SearchInput', () => {
           onChange={props.onChange}
           onSearch={props.onSearch}
           onClear={props.onClear}
-          removeFindDomNode
         />
       </React.StrictMode>
     );

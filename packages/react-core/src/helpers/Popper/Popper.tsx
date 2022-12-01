@@ -3,7 +3,6 @@ import * as ReactDOM from 'react-dom';
 import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Placement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
-import { FindRefWrapper } from './FindRefWrapper';
 import '@patternfly/react-styles/css/components/Popper/Popper.css';
 
 const hash = {
@@ -54,7 +53,6 @@ export interface PopperProps {
   /**
    * The reference element to which the Popover is relatively placed to.
    * Use either trigger or reference, not both.
-   * Passing this property or the removeFindDomNode property, will bypass the use of findDOMNode for the trigger in react strict mode.
    */
   reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** The popper (menu/tooltip/popover) element */
@@ -139,9 +137,7 @@ export interface PopperProps {
         | 'right-start'
         | 'right-end'
       )[];
-  /** @beta Bypasses the use of findDOMNode for both the popper and trigger in react strict mode. Without this flag, the trigger and popper will require passed references via the reference property (trigger) and popperRef property (popper) for strict mode. */
-  removeFindDomNode?: boolean;
-  /** @beta Reference to the popper (menu/tooltip/popover) element. Passing this property or the removeFindDomNode property, will bypass the use of findDOMNode for the popper in react strict mode. The popper property is still required. */
+  /** @beta Reference to the popper (menu/tooltip/popover) element. */
   popperRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
 }
 
@@ -171,7 +167,6 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   enableFlip = true,
   flipBehavior = 'flip',
   reference,
-  removeFindDomNode = false,
   popperRef
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
@@ -299,7 +294,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     [popperMatchesTriggerWidth]
   );
 
-  const { styles: popperStyles, attributes, update } = usePopper(refOrTrigger, popperElement, {
+  const { styles: popperStyles, attributes, update, forceUpdate } = usePopper(refOrTrigger, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
       {
@@ -327,6 +322,10 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       sameWidthMod
     ]
   });
+
+  React.useEffect(() => {
+    forceUpdate && forceUpdate();
+  }, [popper]);
 
   // Returns the CSS modifier class in order to place the Popper's arrow properly
   // Depends on the position of the Popper relative to the reference element
@@ -357,40 +356,25 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     return appendTo;
   };
 
-  /**
-   * To enable strict mode, the popper must either have its reference defined via the popperRef property,
-   * or the removeFindDomNode flag must be present. Even if the reference is passed in, unlike the trigger,
-   * the popper property must still be passed.
-   * The trigger must similarly have either its reference defined via the reference property, or the
-   * removeFindDomNode flag must be present. The trigger property is not required when the reference is passed.
-   *
-   * Strict mode may be enabled by passing both reference properties to Popper, or by passing the
-   * removeFindDomNode flag with either reference property, or by solely passing the removeFindDomNode
-   * flag.
-   */
-  let popperPortal;
-  if (removeFindDomNode) {
-    // If removeFindDomNode is passed, use the removeFindDomNode method of wrapping divs
-    popperPortal = <div ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>{menuWithPopper}</div>;
-  } else if (popperRef) {
-    // If removeFindDomNode is not passed and popperRef is passed, use the popperRef method
-    popperPortal = menuWithPopper;
-  } else {
-    // If neither removeFindDomNode and popperRef exist, use the old method of FindRefWrapper
-    popperPortal = (
-      <FindRefWrapper onFoundRef={(foundRef: any) => setPopperElement(foundRef)}>{menuWithPopper}</FindRefWrapper>
-    );
-  }
-
   return (
     <>
-      {!reference && trigger && React.isValidElement(trigger) && !removeFindDomNode && (
-        <FindRefWrapper onFoundRef={(foundRef: any) => setTriggerElement(foundRef)}>{trigger}</FindRefWrapper>
+      {!reference && trigger && React.isValidElement(trigger) && (
+        <div style={{ display: 'contents' }} ref={node => setTriggerElement(node?.firstElementChild as HTMLElement)}>
+          {trigger}
+        </div>
       )}
-      {!reference && trigger && React.isValidElement(trigger) && removeFindDomNode && (
-        <div ref={node => setTriggerElement(node?.firstElementChild as HTMLElement)}>{trigger}</div>
-      )}
-      {ready && isVisible && ReactDOM.createPortal(popperPortal, getTarget())}
+      {ready &&
+        isVisible &&
+        ReactDOM.createPortal(
+          popperRef ? (
+            menuWithPopper
+          ) : (
+            <div style={{ display: 'contents' }} ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>
+              {menuWithPopper}
+            </div>
+          ),
+          getTarget()
+        )}
     </>
   );
 };

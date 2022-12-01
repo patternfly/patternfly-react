@@ -145,7 +145,7 @@ describe('Notification Drawer Groups Demo Test', () => {
 
   it('Verify truncateTitle group title and tooltip', () => {
     cy.get(
-      '#long-group-title > h1 > .pf-c-notification-drawer__group-toggle > .pf-c-notification-drawer__group-toggle-title'
+      '#long-group-title > h1 > .pf-c-notification-drawer__group-toggle .pf-c-notification-drawer__group-toggle-title'
     ).then((tooltipLink: JQuery<HTMLDivElement>) => {
       cy.get('.pf-c-tooltip').should('not.exist');
       cy.wrap(tooltipLink)
@@ -158,7 +158,7 @@ describe('Notification Drawer Groups Demo Test', () => {
 
   it('Verify truncated with no truncateTitle prop group title and tooltip on long title', () => {
     cy.get(
-      '#long-title-no-truncate-prop > h1 > .pf-c-notification-drawer__group-toggle > .pf-c-notification-drawer__group-toggle-title'
+      '#long-title-no-truncate-prop > h1 > .pf-c-notification-drawer__group-toggle .pf-c-notification-drawer__group-toggle-title'
     ).then((tooltipLink: JQuery<HTMLDivElement>) => {
       cy.get('.pf-c-tooltip').should('not.exist');
       cy.wrap(tooltipLink)

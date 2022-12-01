@@ -56,8 +56,6 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement>, OUIAProp
    * appended inline, e.g. `menuAppendTo="parent"`
    */
   isFlipEnabled?: boolean;
-  /** @beta Opt-in for updated popper that does not use findDOMNode. */
-  removeFindDomNode?: boolean;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -74,7 +72,6 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   contextProps,
   menuAppendTo = 'inline',
   isFlipEnabled = true,
-  removeFindDomNode = false,
   ...props
 }: DropdownProps) => (
   <DropdownContext.Provider
@@ -100,12 +97,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       ...contextProps
     }}
   >
-    <DropdownWithContext
-      menuAppendTo={menuAppendTo}
-      isFlipEnabled={isFlipEnabled}
-      removeFindDomNode={removeFindDomNode}
-      {...props}
-    />
+    <DropdownWithContext menuAppendTo={menuAppendTo} isFlipEnabled={isFlipEnabled} {...props} />
   </DropdownContext.Provider>
 );
 Dropdown.displayName = 'Dropdown';

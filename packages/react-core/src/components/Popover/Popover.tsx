@@ -190,8 +190,6 @@ export interface PopoverProps {
    * Usage: <Popover reference={() => document.getElementById('reference-element')} />
    */
   reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
-  /** @beta Opt-in for updated popper that does not use findDOMNode. */
-  removeFindDomNode?: boolean;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the
    * popover close button is clicked, the enter key was used on it, or the escape key is used.
@@ -267,7 +265,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   reference,
   hasNoPadding = false,
   hasAutoWidth = false,
-  removeFindDomNode = false,
   ...rest
 }: PopoverProps) => {
   // could make this a prop in the future (true | false | 'toggle')
@@ -475,7 +472,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         enableFlip={enableFlip}
         zIndex={zIndex}
         flipBehavior={flipBehavior}
-        removeFindDomNode={removeFindDomNode}
       />
     </PopoverContext.Provider>
   );

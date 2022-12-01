@@ -132,7 +132,6 @@ describe('Dropdown', () => {
           isOpen
           dropdownItems={dropdownItems}
           toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
-          removeFindDomNode
         />
       </React.StrictMode>
     );

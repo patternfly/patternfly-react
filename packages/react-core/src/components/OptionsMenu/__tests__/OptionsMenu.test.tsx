@@ -36,7 +36,6 @@ describe('optionsMenu', () => {
     const { asFragment } = render(
       <React.StrictMode>
         <OptionsMenu
-          removeFindDomNode
           id="regular"
           menuItems={menuItems}
           isOpen

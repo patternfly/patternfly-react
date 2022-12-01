@@ -115,7 +115,6 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
     <div ref={containerRef} {...ouiaProps}>
       <Popper
         trigger={toggle(toggleRef)}
-        removeFindDomNode
         popper={menu}
         appendTo={containerRef.current || undefined}
         isVisible={isOpen}
