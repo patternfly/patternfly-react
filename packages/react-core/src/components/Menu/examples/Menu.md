@@ -32,6 +32,8 @@ A menu may contain multiple variations of `<MenuItem>` components. The following
 
 ### Danger menu item
 
+To indicate that a `<MenuItem>` is connected to a potentially destructive action, use the `isDanger` property. The "Delete" item in the following example demonstrates how danger items look.
+
 ```ts file="MenuDangerMenuItem.tsx"
 ```
 
@@ -107,6 +109,7 @@ The following menu example allows users to favorite menu items, an action that d
 A [search input](/components/search-input) component can be placed within `<MenuInput>` to render a search input at the top of the menu. In the following example, the `onChange` property of the text input is passed a callback that filters menu items as a user types.
 
 ```ts file="MenuFilteringWithSearchInput.tsx"
+```
 
 ### Option single select
 
