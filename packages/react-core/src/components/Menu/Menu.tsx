@@ -45,6 +45,8 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   onDrillOut?: (toItemId: string, itemId: string) => void;
   /** @beta Callback for collecting menu heights */
   onGetMenuHeight?: (menuId: string, height: number) => void;
+  /** @beta Indicates that the menu should not focus the first option in a drilled in menu */
+  shouldFocusOnDrillIn?: boolean;
   /** @beta ID of parent menu for drilldown menus */
   parentMenu?: string;
   /** @beta ID of the currently active menu for the drilldown variant */
@@ -83,7 +85,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     ouiaSafe: true,
     isRootMenu: true,
     isPlain: false,
-    isScrollable: false
+    isScrollable: false,
+    shouldFocusOnDrillIn: true
   };
 
   constructor(props: MenuProps) {
@@ -153,11 +156,12 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     if (this.state.transitionMoveTarget) {
       this.state.transitionMoveTarget.focus();
       this.setState({ transitionMoveTarget: null });
-    } else {
+    } else if (this.props.shouldFocusOnDrillIn) {
       const nextMenu = current.querySelector('#' + this.props.activeMenu) || current || null;
       const nextTarget = Array.from(nextMenu.getElementsByTagName('UL')[0].children).filter(
         el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
       )[0].firstChild;
+
       (nextTarget as HTMLElement).focus();
       (nextTarget as HTMLElement).tabIndex = 0;
     }
@@ -255,6 +259,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       innerRef,
       isRootMenu,
       activeMenu,
+      shouldFocusOnDrillIn,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
@@ -284,12 +289,16 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             additionalKeyHandler={this.handleExtraKeys}
             createNavigableElements={this.createNavigableElements}
             isActiveElement={(element: Element) =>
-              document.activeElement.closest('li') === element ||
+              document.activeElement.closest('li') === element || // if element is a basic MenuItem
               document.activeElement.parentElement === element ||
+              document.activeElement.closest('.pf-c-menu__search') === element || // if element is a MenuInput
               (document.activeElement.closest('ol') && document.activeElement.closest('ol').firstChild === element)
             }
             getFocusableElement={(navigableElement: Element) =>
-              navigableElement.querySelector('input') || (navigableElement.firstChild as Element)
+              (navigableElement.tagName === 'DIV' && navigableElement.querySelector('input')) || // for MenuInput
+              ((navigableElement.firstChild as Element).tagName === 'LABEL' &&
+                navigableElement.querySelector('input')) || // for MenuItem checkboxes
+              (navigableElement.firstChild as Element)
             }
             noHorizontalArrowHandling={
               document.activeElement &&
