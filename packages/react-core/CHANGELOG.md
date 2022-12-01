@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.265.0 (2022-12-01)
+
+
+### Bug Fixes
+
+* **Dropdown next:** Added itemId to DropdownItem props ([#8356](https://github.com/patternfly/patternfly-react/issues/8356)) ([17f3c4b](https://github.com/patternfly/patternfly-react/commit/17f3c4b4f2c8cb4fc3914729a83dbe8cc5258744))
+* **Menu:** updated breadcrumb drilldown example ([#8385](https://github.com/patternfly/patternfly-react/issues/8385)) ([ca6e8d4](https://github.com/patternfly/patternfly-react/commit/ca6e8d4eaeec06e85dd11f639dab3f0c94882025))
+* **TimePicker:** removed redundant onBlur ([#8366](https://github.com/patternfly/patternfly-react/issues/8366)) ([4a5a202](https://github.com/patternfly/patternfly-react/commit/4a5a202f26b36e9b9d4555b3c9c49fdc9c07b3fa))
+
+
+### Features
+
+* add pf-screen-reader for screen reader text to Badge ([#8361](https://github.com/patternfly/patternfly-react/issues/8361)) ([91f6b4d](https://github.com/patternfly/patternfly-react/commit/91f6b4d034a179361f2ec24cac169c14aa8c5195)), closes [#8354](https://github.com/patternfly/patternfly-react/issues/8354)
+
+
+
+
+
 ## 4.264.1 (2022-11-30)
 
 
