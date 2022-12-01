@@ -25,7 +25,7 @@ export interface SwitchProps
    */
   defaultChecked?: boolean;
   /** Flag to show if the switch has a check icon. */
-  hasCheckIcon?: boolean;
+  hasCheckboxIcon?: boolean;
   /** Flag to show if the switch is disabled. */
   isDisabled?: boolean;
   /** A callback for when the switch selection changes. (isChecked, event) => {} */
@@ -74,7 +74,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
       labelOff,
       isChecked,
       defaultChecked,
-      hasCheckIcon,
+      hasCheckboxIcon,
       isDisabled,
       onChange,
       isReversed,
@@ -103,7 +103,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
         {label !== undefined ? (
           <React.Fragment>
             <span className={css(styles.switchToggle)}>
-              {hasCheckIcon && (
+              {hasCheckboxIcon && (
                 <span className={css(styles.switchToggleIcon)} aria-hidden="true">
                   <CheckIcon noVerticalAlign />
                 </span>

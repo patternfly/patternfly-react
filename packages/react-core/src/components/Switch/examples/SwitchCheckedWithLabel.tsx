@@ -15,7 +15,7 @@ export const SwitchCheckedWithLabel: React.FunctionComponent = () => {
       id="checked-with-label-switch-on"
       aria-label="Message when on"
       isChecked={isChecked}
-      hasCheckIcon
+      hasCheckboxIcon
       onChange={handleChange}
     />
   );

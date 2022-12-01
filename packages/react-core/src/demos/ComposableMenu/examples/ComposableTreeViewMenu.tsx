@@ -104,12 +104,12 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   };
 
   const mapTree = (item: TreeViewDataItem) => {
-    const hasCheck = areAllDescendantsChecked(item);
+    const hasCheckbox = areAllDescendantsChecked(item);
     item.checkProps = item.checkProps || {};
     // Reset checked properties to be updated
     item.checkProps.checked = false;
 
-    if (hasCheck) {
+    if (hasCheckbox) {
       item.checkProps.checked = true;
     } else {
       const hasPartialCheck = areSomeDescendantsChecked(item);
@@ -243,7 +243,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
             <TreeView
               data={statusMapped}
               hasBadges
-              hasChecks
+              hasCheckboxs
               onCheck={(event, item) => onCheck(event, item, 'status')}
             />
           </PanelMainBody>
@@ -255,7 +255,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
             </Title>
           </PanelMainBody>
           <PanelMainBody style={{ padding: 0 }}>
-            <TreeView data={roleMapped} hasBadges hasChecks onCheck={(event, item) => onCheck(event, item, 'role')} />
+            <TreeView data={roleMapped} hasBadges hasCheckboxs onCheck={(event, item) => onCheck(event, item, 'role')} />
           </PanelMainBody>
         </section>
       </PanelMain>

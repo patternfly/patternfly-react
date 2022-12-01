@@ -438,19 +438,19 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     >
       <MenuContent>
         <MenuList>
-          <MenuItem hasCheck isSelected={locationSelections.includes('Bangalore')} itemId="Bangalore">
+          <MenuItem hasCheckbox isSelected={locationSelections.includes('Bangalore')} itemId="Bangalore">
             Bangalore
           </MenuItem>
-          <MenuItem hasCheck isSelected={locationSelections.includes('Boston')} itemId="Boston">
+          <MenuItem hasCheckbox isSelected={locationSelections.includes('Boston')} itemId="Boston">
             Boston
           </MenuItem>
-          <MenuItem hasCheck isSelected={locationSelections.includes('Brno')} itemId="Brno">
+          <MenuItem hasCheckbox isSelected={locationSelections.includes('Brno')} itemId="Brno">
             Brno
           </MenuItem>
-          <MenuItem hasCheck isSelected={locationSelections.includes('Raleigh')} itemId="Raleigh">
+          <MenuItem hasCheckbox isSelected={locationSelections.includes('Raleigh')} itemId="Raleigh">
             Raleigh
           </MenuItem>
-          <MenuItem hasCheck isSelected={locationSelections.includes('Westford')} itemId="Westford">
+          <MenuItem hasCheckbox isSelected={locationSelections.includes('Westford')} itemId="Westford">
             Westford
           </MenuItem>
         </MenuList>

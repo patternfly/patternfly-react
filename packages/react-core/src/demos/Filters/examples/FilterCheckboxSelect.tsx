@@ -307,19 +307,19 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
     <Menu ref={menuRef} id="checkbox-select-menu" onSelect={onSelect} selected={selections}>
       <MenuContent>
         <MenuList>
-          <MenuItem hasCheck isSelected={selections.includes('Bangalore')} itemId="Bangalore">
+          <MenuItem hasCheckbox isSelected={selections.includes('Bangalore')} itemId="Bangalore">
             Bangalore
           </MenuItem>
-          <MenuItem hasCheck isSelected={selections.includes('Boston')} itemId="Boston">
+          <MenuItem hasCheckbox isSelected={selections.includes('Boston')} itemId="Boston">
             Boston
           </MenuItem>
-          <MenuItem hasCheck isSelected={selections.includes('Brno')} itemId="Brno">
+          <MenuItem hasCheckbox isSelected={selections.includes('Brno')} itemId="Brno">
             Brno
           </MenuItem>
-          <MenuItem hasCheck isSelected={selections.includes('Raleigh')} itemId="Raleigh">
+          <MenuItem hasCheckbox isSelected={selections.includes('Raleigh')} itemId="Raleigh">
             Raleigh
           </MenuItem>
-          <MenuItem hasCheck isSelected={selections.includes('Westford')} itemId="Westford">
+          <MenuItem hasCheckbox isSelected={selections.includes('Westford')} itemId="Westford">
             Westford
           </MenuItem>
         </MenuList>
