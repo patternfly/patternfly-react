@@ -19,7 +19,7 @@ const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormP
     const valid = /^\d+$/.test(value);
     setValue(value);
     setIsValid(valid);
-    props.onChange && props.onChange(isValid, value);
+    props.onChange && props.onChange(valid, value);
   };
 
   const validated = isValid ? 'default' : 'error';

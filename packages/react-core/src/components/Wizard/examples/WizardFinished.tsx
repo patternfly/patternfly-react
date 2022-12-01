@@ -20,16 +20,24 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
   const [percent, setPercent] = React.useState(0);
 
   const tick = () => {
-    if (percent < 100) {
-      setPercent(percent + 20);
-    }
+    setPercent(prevPercent => {
+      if (prevPercent < 100) {
+        return prevPercent + 20;
+      } else {
+        return prevPercent;
+      }
+    });
   };
 
   React.useEffect(() => {
     const interval = setInterval(() => tick(), 1000);
 
+    if (percent >= 100) {
+      clearInterval(interval);
+    }
+
     return () => clearInterval(interval);
-  }, []);
+  }, [percent]);
 
   return (
     <div className="pf-l-bullseye">
