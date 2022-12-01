@@ -122,6 +122,29 @@ You may need to persist multiple selections that a user makes, as demonstrated b
 ```ts file="MenuOptionMultiSelect.tsx"
 ```
 
+### Scrollable menus
+
+Use the `isScrollable` property to make a long `<Menu>` scrollable and visually condensed.
+
+```ts file="MenuScrollable.tsx"
+```
+
+### Scrollable menu with custom height
+
+Adjust the visual size of a scrollable menu by using the `menuHeight` property within `<MenuContent>`. This example adjusts the height to 200px.
+
+```ts file="MenuScrollableCustomMenuHeight.tsx"
+```
+
+### With view more
+
+If you want to initially render only a certain number of menu items within a large menu, you can add a "view more" menu item with a callback passed into its `onClick` property that will render additional menu items.
+
+In this example, 3 additional menu items are revealed each time the "view more" option is selected, with a loading icon simulating a network call to fetch more items. Once all items are visible, the "view more" link disappears.
+
+```ts file="MenuWithViewMore.tsx"
+```
+
 ### With drilldown
 
 Use a drilldown menu to contain different levels of menu items. When a parent menu item (an item that has a submenu of children) is selected, the menu is replaced with the children items. 
@@ -153,28 +176,7 @@ For added flexibility with large menus, you may create a menu by passing a funct
 
 Use [breadcrumbs](/components/breadcrumb) when a drilldown menu has more than 2 levels to offer users better navigation.
 
+To control the height of a menu, use the `maxMenuHeight` property. Selecting the "Set max menu height" checkbox in the following example sets the menu height to "100px" and makes the menu scrollable.
+
 ```ts file="MenuWithDrilldownBreadcrumbs.tsx" isBeta
-```
-
-### Scrollable menus
-
-Use the `isScrollable` property to make a long `<Menu>` scrollable and visually condensed.
-
-```ts file="MenuScrollable.tsx"
-```
-
-### Scrollable menu with custom height
-
-Adjust the visual size of a scrollable menu by using the `menuHeight` property within `<MenuContent>`. This example adjusts the height to 200px.
-
-```ts file="MenuScrollableCustomMenuHeight.tsx"
-```
-
-### With view more
-
-If you want to initially render only a certain number of menu items within a large menu, you can add a "view more" menu item with a callback passed into its `onClick` property that will render additional menu items.
-
-In this example, 3 additional menu items are revealed each time the "view more" option is selected, with a loading icon simulating a network call to fetch more items. Once all items are visible, the "view more" link disappears.
-
-```ts file="MenuWithViewMore.tsx"
 ```
