@@ -14,9 +14,9 @@ export interface WizardFooterProps {
   /** The active step */
   activeStep: WizardControlStep;
   /** Next button callback */
-  onNext: () => WizardNavStepFunction | void;
+  onNext: () => WizardNavStepFunction | void | Promise<void>;
   /** Back button callback */
-  onBack: () => WizardNavStepFunction | void;
+  onBack: () => WizardNavStepFunction | void | Promise<void>;
   /** Cancel link callback */
   onClose: () => void;
   /** Custom text for the Next button. The current step's nextButtonText takes precedence. */

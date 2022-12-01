@@ -12,6 +12,8 @@ import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
 import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
 import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 import ProjectDiagramIcon from '@patternfly/react-icons/dist/esm/icons/project-diagram-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 Most tab variations are available as open (default) or box style tabs. Select the 'isBox' checkbox to preview an example with box styled tabs.
 The Tabs items background can be also toggled with 'Tab light variation' checkbox.
@@ -140,4 +142,14 @@ The tooltip should also have the `id` prop passed in. The value given to this pr
 To enable closeable tabs, pass the `onClose` property to `Tabs`, and to enable the add button, pass the `onAdd` property to `Tabs`. Aria labels may be controlled manually by passing `closeButtonAriaLabel` to `Tab` and `addButtonAriaLabel` to `Tabs`.
 
 ```ts file="./TabsDynamic.tsx" isBeta
+```
+
+### Help action
+
+```ts file="./TabsHelp.tsx" isBeta
+```
+
+### Help and close actions
+
+```ts file="./TabsHelpAndClose.tsx" isBeta
 ```

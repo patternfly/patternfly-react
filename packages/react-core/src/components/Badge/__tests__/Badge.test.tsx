@@ -31,6 +31,16 @@ test('Renders with class name pf-m-read when isRead prop is true', () => {
   expect(screen.getByText('Test')).toHaveClass('pf-m-read');
 });
 
+test('Does not render pf-screen-reader class by default', () => {
+  render(<Badge>Test</Badge>);
+  expect(screen.getByText('Test')).not.toContainHTML('<span class="pf-screen-reader"></span>');
+});
+
+test('Renders screenReaderText passed via prop', () => {
+  render(<Badge screenReaderText="Custom screen reader text">Test</Badge>);
+  expect(screen.getByText('Custom screen reader text')).toBeInTheDocument();
+});
+
 test('Renders with custom class name when className prop is provided', () => {
   render(<Badge className="custom-class">Test</Badge>);
   expect(screen.getByText('Test')).toHaveClass('custom-class');

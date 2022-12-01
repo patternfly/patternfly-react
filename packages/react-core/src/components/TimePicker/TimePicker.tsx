@@ -73,6 +73,8 @@ export interface TimePickerProps
   setIsOpen?: (isOpen?: boolean) => void;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
   removeFindDomNode?: boolean;
+  /** z-index of the time picker */
+  zIndex?: number;
 }
 
 interface TimePickerState {
@@ -111,7 +113,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     maxTime: '',
     isOpen: false,
     setIsOpen: () => {},
-    removeFindDomNode: false
+    removeFindDomNode: false,
+    zIndex: 9999
   };
 
   constructor(props: TimePickerProps) {
@@ -423,16 +426,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
-    const { timeRegex } = this.state;
-    const { delimiter, is24Hour, includeSeconds } = this.props;
-    const time = parseTime(event.currentTarget.value, timeRegex, delimiter, !is24Hour, includeSeconds);
-
-    this.setState({
-      isInvalid: !this.isValid(time)
-    });
-  };
-
   render() {
     const {
       'aria-label': ariaLabel,
@@ -461,6 +454,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       includeSeconds,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       removeFindDomNode,
+      zIndex,
       ...props
     } = this.props;
     const { timeState, isTimeOptionsOpen, isInvalid, minTimeState, maxTimeState } = this.state;
@@ -503,7 +497,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         iconVariant="clock"
         onClick={this.onInputClick}
         onChange={this.onInputChange}
-        onBlur={this.onBlur}
         autoComplete="off"
         isDisabled={isDisabled}
         ref={this.inputRef}
@@ -535,6 +528,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
                   popper={menuContainer}
                   isVisible={isTimeOptionsOpen}
                   removeFindDomNode={removeFindDomNode}
+                  zIndex={zIndex}
                 />
               </div>
             </div>

@@ -65,7 +65,7 @@ export const ComposableTableMisc: React.FunctionComponent = () => {
         {repositories.map((repo, rowIndex) => {
           const isOddRow = (rowIndex + 1) % 2;
           const customStyle = {
-            borderLeft: '3px solid var(--pf-global--primary-color--100)'
+            backgroundColor: 'var(--pf-global--palette--blue-50)'
           };
           // Some arbitrary logic to demonstrate that cell styles can be based on anything
           const nameColSpan = repo.branches === null && repo.prs === null ? 3 : 1;

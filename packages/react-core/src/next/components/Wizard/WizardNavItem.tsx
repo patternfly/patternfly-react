@@ -109,7 +109,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
             <span className={css(styles.wizardNavLinkText)}>{content}</span>
             <span className={css(styles.wizardNavLinkToggle)}>
               <span className={css(styles.wizardNavLinkToggleIcon)}>
-                <AngleRightIcon />
+                <AngleRightIcon aria-label={`${isCurrent ? 'Collapse' : 'Expand'} step icon`} />
               </span>
             </span>
           </>

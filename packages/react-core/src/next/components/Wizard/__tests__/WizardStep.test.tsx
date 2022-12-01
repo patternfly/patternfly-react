@@ -31,8 +31,7 @@ const wizardContext: WizardContext.WizardContextProps = {
   goToStepByName: jest.fn(),
   goToStepByIndex: jest.fn(),
   setFooter: jest.fn(),
-  getStep: jest.fn(),
-  setSteps: jest.fn()
+  getStep: jest.fn()
 };
 
 const useWizardContextSpy = jest.spyOn(WizardContext, 'useWizardContext');

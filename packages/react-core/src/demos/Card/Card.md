@@ -426,11 +426,12 @@ class CardViewBasic extends React.Component {
                 aria-label={anySelected ? 'Deselect all' : 'Select all'}
                 isChecked={areAllSelected}
                 onClick={this.splitCheckboxSelectAll.bind(this)}
-              ></DropdownToggleCheckbox>
+              >
+                {numSelected !== 0 && `${numSelected} selected`}
+              </DropdownToggleCheckbox>
             ]}
             onToggle={this.onSplitButtonToggle}
           >
-            {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
           </DropdownToggle>
         }
         isOpen={splitButtonDropdownIsOpen}
