@@ -6,18 +6,6 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
     class="pf-c-wizard__footer"
   >
     <button
-      aria-disabled="false"
-      class="pf-c-button pf-m-primary"
-      data-ouia-component-id="OUIA-Generated-Button-primary-1"
-      data-ouia-component-type="PF4/Button"
-      data-ouia-safe="true"
-      type="submit"
-    >
-      <div>
-        ReactNode
-      </div>
-    </button>
-    <button
       aria-disabled="true"
       class="pf-c-button pf-m-secondary pf-m-disabled"
       data-ouia-component-id="OUIA-Generated-Button-secondary-1"
@@ -25,6 +13,18 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
       data-ouia-safe="true"
       disabled=""
       type="button"
+    >
+      <div>
+        ReactNode
+      </div>
+    </button>
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-primary"
+      data-ouia-component-id="OUIA-Generated-Button-primary-1"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="submit"
     >
       <div>
         ReactNode

@@ -228,16 +228,6 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
         class="pf-c-wizard__footer"
       >
         <button
-          aria-disabled="false"
-          class="pf-c-button pf-m-primary"
-          data-ouia-component-id="OUIA-Generated-Button-primary-2"
-          data-ouia-component-type="PF4/Button"
-          data-ouia-safe="true"
-          type="submit"
-        >
-          Next
-        </button>
-        <button
           aria-disabled="true"
           class="pf-c-button pf-m-secondary pf-m-disabled"
           data-ouia-component-id="OUIA-Generated-Button-secondary-2"
@@ -247,6 +237,16 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
           type="button"
         >
           Back
+        </button>
+        <button
+          aria-disabled="false"
+          class="pf-c-button pf-m-primary"
+          data-ouia-component-id="OUIA-Generated-Button-primary-2"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          type="submit"
+        >
+          Next
         </button>
         <div
           class="pf-c-wizard__footer-cancel"
@@ -476,16 +476,6 @@ exports[`Wizard Wizard should match snapshot 1`] = `
         class="pf-c-wizard__footer"
       >
         <button
-          aria-disabled="false"
-          class="pf-c-button pf-m-primary"
-          data-ouia-component-id="OUIA-Generated-Button-primary-1"
-          data-ouia-component-type="PF4/Button"
-          data-ouia-safe="true"
-          type="submit"
-        >
-          Next
-        </button>
-        <button
           aria-disabled="true"
           class="pf-c-button pf-m-secondary pf-m-disabled"
           data-ouia-component-id="OUIA-Generated-Button-secondary-1"
@@ -495,6 +485,16 @@ exports[`Wizard Wizard should match snapshot 1`] = `
           type="button"
         >
           Back
+        </button>
+        <button
+          aria-disabled="false"
+          class="pf-c-button pf-m-primary"
+          data-ouia-component-id="OUIA-Generated-Button-primary-1"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          type="submit"
+        >
+          Next
         </button>
         <div
           class="pf-c-wizard__footer-cancel"
@@ -605,16 +605,6 @@ exports[`Wizard bare wiz 1`] = `
         class="pf-c-wizard__footer"
       >
         <button
-          aria-disabled="false"
-          class="pf-c-button pf-m-primary"
-          data-ouia-component-id="OUIA-Generated-Button-primary-3"
-          data-ouia-component-type="PF4/Button"
-          data-ouia-safe="true"
-          type="submit"
-        >
-          Next
-        </button>
-        <button
           aria-disabled="true"
           class="pf-c-button pf-m-secondary pf-m-disabled"
           data-ouia-component-id="OUIA-Generated-Button-secondary-3"
@@ -624,6 +614,16 @@ exports[`Wizard bare wiz 1`] = `
           type="button"
         >
           Back
+        </button>
+        <button
+          aria-disabled="false"
+          class="pf-c-button pf-m-primary"
+          data-ouia-component-id="OUIA-Generated-Button-primary-3"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          type="submit"
+        >
+          Next
         </button>
         <div
           class="pf-c-wizard__footer-cancel"
