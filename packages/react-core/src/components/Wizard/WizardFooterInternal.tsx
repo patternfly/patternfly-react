@@ -28,14 +28,14 @@ export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalP
   cancelButtonText
 }: WizardFooterInternalProps) => (
   <footer className={css(styles.wizardFooter)}>
-    <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={!isValid}>
-      {nextButtonText}
-    </Button>
     {!activeStep.hideBackButton && (
       <Button variant={ButtonVariant.secondary} onClick={onBack} isDisabled={firstStep}>
         {backButtonText}
       </Button>
     )}
+    <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={!isValid}>
+      {nextButtonText}
+    </Button>
     {!activeStep.hideCancelButton && (
       <div className={styles.wizardFooterCancel}>
         <Button variant={ButtonVariant.link} onClick={onClose}>
