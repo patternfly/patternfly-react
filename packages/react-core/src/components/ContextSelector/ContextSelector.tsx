@@ -141,6 +141,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
           >
             <div className={css(styles.contextSelectorMenuSearch)}>
               <SearchInput
+                type="search"
                 submitSearchButtonLabel={searchButtonAriaLabel}
                 placeholder={searchInputPlaceholder}
                 onChange={onSearchInputChange}

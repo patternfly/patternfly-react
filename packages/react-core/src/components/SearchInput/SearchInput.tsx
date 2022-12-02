@@ -361,7 +361,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
           variant={ButtonVariant.control}
           aria-label={submitSearchButtonLabel}
           onClick={onSearchHandler}
-          isDisabled={isDisabled || !searchValue}
+          isDisabled={isDisabled}
         >
           <ArrowRightIcon />
         </Button>
