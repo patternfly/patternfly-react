@@ -2,7 +2,7 @@
 id: Select
 section: components
 cssPrefix: pf-c-menu
-propComponents: ['Select', SelectGroup, 'SelectOption', 'SelectList', 'MenuToggle']
+propComponents: ['Select', SelectGroup, 'SelectOption', 'SelectList'git, 'MenuToggle']
 beta: true
 ouia: true
 ---
