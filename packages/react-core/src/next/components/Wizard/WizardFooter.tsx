@@ -61,15 +61,15 @@ const InternalWizardFooter = ({
   cancelButtonText = 'Cancel'
 }: Omit<WizardFooterProps, 'activeStep'>) => (
   <WizardFooterWrapper>
-    <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={isNextDisabled}>
-      {nextButtonText}
-    </Button>
-
     {!isBackHidden && (
       <Button variant={ButtonVariant.secondary} onClick={onBack} isDisabled={isBackDisabled}>
         {backButtonText}
       </Button>
     )}
+
+    <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={isNextDisabled}>
+      {nextButtonText}
+    </Button>
 
     {!isCancelHidden && (
       <div className={styles.wizardFooterCancel}>
