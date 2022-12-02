@@ -117,20 +117,19 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
                     aria-label="Search input"
                     class="pf-c-text-input-group__text-input"
                     placeholder="Search"
-                    type="text"
+                    type="search"
                     value=""
                   />
                 </span>
               </div>
             </div>
             <button
-              aria-disabled="true"
+              aria-disabled="false"
               aria-label="Search menu items"
-              class="pf-c-button pf-m-control pf-m-disabled"
+              class="pf-c-button pf-m-control"
               data-ouia-component-id="OUIA-Generated-Button-control-1"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe="true"
-              disabled=""
               type="submit"
             >
               <svg
@@ -287,20 +286,19 @@ exports[`ContextSelector Renders in strict mode 1`] = `
                     aria-label="Search input"
                     class="pf-c-text-input-group__text-input"
                     placeholder="Search"
-                    type="text"
+                    type="search"
                     value=""
                   />
                 </span>
               </div>
             </div>
             <button
-              aria-disabled="true"
+              aria-disabled="false"
               aria-label="Search menu items"
-              class="pf-c-button pf-m-control pf-m-disabled"
+              class="pf-c-button pf-m-control"
               data-ouia-component-id="OUIA-Generated-Button-control-3"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe="true"
-              disabled=""
               type="submit"
             >
               <svg
