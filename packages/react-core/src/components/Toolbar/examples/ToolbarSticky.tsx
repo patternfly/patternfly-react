@@ -4,7 +4,7 @@ import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@pa
 export const ToolbarItems: React.FunctionComponent = () => {
   const [isSticky, setIsSticky] = React.useState(true);
   const [showEvenOnly, setShowEvenOnly] = React.useState(true);
-  const array = [...Array(30).keys()];
+  const array = Array.from(Array(30), (_, x) => x);
   const numbers = showEvenOnly ? array.filter(number => number % 2 === 0) : array;
 
   return (
