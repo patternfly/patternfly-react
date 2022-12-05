@@ -102,7 +102,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   /** Indicate whether to show last full page of results when user selects perPage value
    * greater than remaining rows.
    */
-  defaultToFullPage?: boolean;
+  isLastFullPageShown?: boolean;
   /** Direction of dropdown context menu. */
   dropDirection?: 'up' | 'down';
   /** Page to start at. */
@@ -200,7 +200,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   firstPage = 1,
   page: pageProp = 0,
   offset = 0,
-  defaultToFullPage = false,
+  isLastFullPageShown = false,
   itemsStart = null,
   itemsEnd = null,
   itemCount,
@@ -310,7 +310,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
           firstIndex={itemsStart !== null ? itemsStart : firstIndex}
           lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
           ofWord={titles.ofWord}
-          defaultToFullPage={defaultToFullPage}
+          isLastFullPageShown={isLastFullPageShown}
           itemCount={itemCount}
           page={page}
           perPage={perPage}

@@ -37,7 +37,7 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   /** Flag to indicate whether to show last full page of results when user selects perPage
    * value that is greater than remaining rows.
    */
-  defaultToFullPage?: boolean;
+  isLastFullPageShown?: boolean;
   /** The number of items to be displayed per page. */
   perPage?: number;
   /** The number of the last page. */
@@ -68,7 +68,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   perPage = 0,
   firstIndex = 0,
   lastIndex = 0,
-  defaultToFullPage = false,
+  isLastFullPageShown = false,
   itemsTitle = 'items',
   toggleTemplate,
   onPerPageSelect = () => null as any
@@ -94,7 +94,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
       newPage--;
     }
 
-    if (defaultToFullPage) {
+    if (isLastFullPageShown) {
       if (itemCount / newPerPage !== newPage) {
         while (newPage > 1 && itemCount - newPerPage * newPage < 0) {
           newPage--;
