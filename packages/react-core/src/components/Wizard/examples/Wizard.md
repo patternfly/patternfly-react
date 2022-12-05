@@ -465,15 +465,15 @@ class ValidateButtonPressWizard extends React.Component {
             if (activeStep.name !== 'Final Step') {
               return (
                 <>
-                  <Button variant="primary" type="submit" onClick={onNext}>
-                    Forward
-                  </Button>
                   <Button
                     variant="secondary"
                     onClick={onBack}
-                    className={activeStep.name === 'Step 1' ? 'pf-m-disabled' : ''}
+                    className={activeStep.name === 'First step' ? 'pf-m-disabled' : ''}
                   >
                     Backward
+                  </Button>
+                  <Button variant="primary" type="submit" onClick={onNext}>
+                    Forward
                   </Button>
                   <Button variant="link" onClick={onClose}>
                     Cancel
@@ -484,8 +484,10 @@ class ValidateButtonPressWizard extends React.Component {
             // Final step buttons
             return (
               <>
+                <Button variant="secondary" onClick={() => goToStepByName('First step')}>
+                  Go to Beginning
+                </Button>
                 <Button onClick={() => this.validateLastStep(onNext)}>Validate</Button>
-                <Button onClick={() => goToStepByName('Step 1')}>Go to Beginning</Button>
               </>
             );
           }}
@@ -769,15 +771,15 @@ class ProgressiveWizard extends React.Component {
           {({ activeStep, goToStepByName, goToStepById, onNext, onBack, onClose }) => {
             return (
               <>
-                <Button variant="primary" type="submit" onClick={() => this.getNextStep(activeStep, onNext)}>
-                  {activeStep.name === 'Review' ? 'Finish' : 'Next'}
-                </Button>
                 <Button
                   variant="secondary"
                   onClick={() => this.getPreviousStep(activeStep, onBack)}
-                  className={activeStep.name === 'Get Started' ? 'pf-m-disabled' : ''}
+                  className={activeStep.name === 'Get started' ? 'pf-m-disabled' : ''}
                 >
                   Back
+                </Button>
+                <Button variant="primary" type="submit" onClick={() => this.getNextStep(activeStep, onNext)}>
+                  {activeStep.name === 'Review' ? 'Finish' : 'Next'}
                 </Button>
                 <Button variant="link" onClick={onClose}>
                   Cancel
