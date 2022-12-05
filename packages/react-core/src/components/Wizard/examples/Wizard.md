@@ -484,8 +484,10 @@ class ValidateButtonPressWizard extends React.Component {
             // Final step buttons
             return (
               <>
+                <Button variant="secondary" onClick={() => goToStepByName('First step')}>
+                  Go to Beginning
+                </Button>
                 <Button onClick={() => this.validateLastStep(onNext)}>Validate</Button>
-                <Button onClick={() => goToStepByName('First step')}>Go to Beginning</Button>
               </>
             );
           }}
