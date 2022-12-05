@@ -25,7 +25,7 @@ export const PaginationInset: React.FunctionComponent = () => {
       perPage={perPage}
       page={page}
       onSetPage={onSetPage}
-      widgetId="top-example"
+      widgetId="inset-example"
       onPerPageSelect={onPerPageSelect}
       inset={{
         default: 'insetNone',
