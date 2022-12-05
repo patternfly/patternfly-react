@@ -55,3 +55,11 @@ test('Next year dates have correct year in aria label', () => {
   const nextYearDate = screen.getByRole('button', { name: '1 January 2025' });
   expect(nextYearDate).toBeVisible();
 });
+
+test('InlineProps render correct wrapper component and attributes', () => {
+  const { asFragment } = render(
+    <CalendarMonth inlineProps={{wrapperComponent: 'article', title: <div id="hi">Title</div>, ariaLabeledby: "hi"}} />
+  );
+
+  expect(asFragment()).toMatchSnapshot();
+});
