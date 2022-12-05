@@ -327,5 +327,21 @@ describe('Pagination', () => {
         expect(onPerPage).not.toHaveBeenCalled();
       });
     });
+
+    Object.values(['insetNone', 'insetSm', 'insetMd', 'insetLg', 'insetXl', 'inset2xl'] as [
+      'insetNone',
+      'insetSm',
+      'insetMd',
+      'insetLg',
+      'insetXl',
+      'inset2xl'
+    ]).forEach(inset => {
+      test(`verify ${inset} inset breakpoints`, () => {
+        const { asFragment } = render(
+          <Pagination inset={{ default: inset, sm: inset, md: inset, lg: inset, xl: inset, '2xl': inset }}>test</Pagination>
+        );
+        expect(asFragment()).toMatchSnapshot();
+      });
+    });
   });
 });
