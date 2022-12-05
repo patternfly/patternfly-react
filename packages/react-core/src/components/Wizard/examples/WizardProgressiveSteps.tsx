@@ -12,8 +12,8 @@ export const WizardProgressiveSteps: React.FunctionComponent = () => {
   const [showOptionsStep, setShowOptionsStep] = React.useState(false);
   const [showReviewStep, setShowReviewStep] = React.useState(false);
   const [getStartedStepRadio, setGetStartedStepRadio] = React.useState('Create');
-  const [createStepRadio] = React.useState('Quick');
-  const [updateStepRadio] = React.useState('Quick');
+  const [createStepRadio, setCreateStepRadio] = React.useState('Quick');
+  const [updateStepRadio, setUpdateStepRadio] = React.useState('Quick');
   const closeWizard = () => {
     // eslint-disable-next-line no-console
     console.log('close wizard');
@@ -110,7 +110,7 @@ export const WizardProgressiveSteps: React.FunctionComponent = () => {
         <Radio
           value="Quick"
           isChecked={createStepRadio === 'Quick'}
-          onChange={(_, event) => setGetStartedStepRadio(event.currentTarget.value)}
+          onChange={(_, event) => setCreateStepRadio(event.currentTarget.value)}
           label="Quick create"
           name="radio-step-create"
           id="radio-step-create-1"
@@ -118,7 +118,7 @@ export const WizardProgressiveSteps: React.FunctionComponent = () => {
         <Radio
           value="Custom"
           isChecked={createStepRadio === 'Custom'}
-          onChange={(_, event) => setGetStartedStepRadio(event.currentTarget.value)}
+          onChange={(_, event) => setCreateStepRadio(event.currentTarget.value)}
           label="Custom create"
           name="radio-step-create"
           id="radio-step-create-2"
@@ -134,7 +134,7 @@ export const WizardProgressiveSteps: React.FunctionComponent = () => {
         <Radio
           value="Quick"
           isChecked={updateStepRadio === 'Quick'}
-          onChange={(_, event) => setGetStartedStepRadio(event.currentTarget.value)}
+          onChange={(_, event) => setUpdateStepRadio(event.currentTarget.value)}
           label="Quick update"
           name="radio-step-update"
           id="radio-step-update-1"
@@ -142,7 +142,7 @@ export const WizardProgressiveSteps: React.FunctionComponent = () => {
         <Radio
           value="Custom"
           isChecked={updateStepRadio === 'Custom'}
-          onChange={(_, event) => setGetStartedStepRadio(event.currentTarget.value)}
+          onChange={(_, event) => setUpdateStepRadio(event.currentTarget.value)}
           label="Custom update"
           name="radio-step-update"
           id="radio-step-update-2"
