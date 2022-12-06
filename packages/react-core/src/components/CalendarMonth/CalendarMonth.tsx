@@ -403,7 +403,7 @@ export const CalendarMonth = ({
   if (inlineProps !== undefined) {
     const Component = (inlineProps.component ? inlineProps.component : 'article') as any;
     return (
-      <Component {...(inlineProps.ariaLabelledby && { 'aria-labeledby': inlineProps.ariaLabelledby })}>
+      <Component {...(inlineProps.ariaLabelledby && { 'aria-labelledby': inlineProps.ariaLabelledby })}>
         {inlineProps.title}
         {calendarToRender}
       </Component>
