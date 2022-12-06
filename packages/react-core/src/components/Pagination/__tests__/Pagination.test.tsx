@@ -119,6 +119,11 @@ describe('Pagination', () => {
       rerender(<Pagination titles={{optionsToggle: "test label"}}  perPageComponent="button" itemCount={20} />);
       expect(screen.getByLabelText("test label")).toHaveAttribute("id", id);
     });
+
+    test('page insets', () => {
+      render(<Pagination data-testid="pagination-insets" usePageInsets />);
+      expect(screen.getByTestId('pagination-insets')).toHaveClass('pf-m-page-insets');
+    });
   });
 
   describe('API', () => {
