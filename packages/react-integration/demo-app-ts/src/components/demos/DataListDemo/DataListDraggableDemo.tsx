@@ -4,146 +4,107 @@ import {
   DataListItem,
   DataListCell,
   DataListItemRow,
-  DataListCheck,
   DataListControl,
   DataListDragButton,
-  DataListItemCells
+  DataListItemCells,
+  DragDrop,
+  Draggable,
+  Droppable
 } from '@patternfly/react-core';
+
+interface ItemType {
+  id: string;
+  content: string;
+}
+
+const getItems = (count: number) =>
+  Array.from({ length: count }, (_, idx) => idx).map(idx => ({
+    id: `draggable-item-${idx}`,
+    content: `item ${idx} `
+  }));
+
+const reorder = (list: ItemType[], startIndex: number, endIndex: number) => {
+  const result = list;
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+  return result;
+};
 
 export class DataListDraggableDemo extends React.Component {
   static displayName = 'DataListDraggableDemo';
   state = {
     liveText: '',
-    id: '',
-    itemOrder: ['data1', 'data2', 'data3', 'data4']
+    items: getItems(5)
   };
 
-  onDragStart = (id: string) => {
+  onDrag = (source: any) => {
     this.setState({
-      id,
-      liveText: `Dragging started for item id: ${id}.`
+      liveText: `Started dragging ${this.state.items[source.index].content}`
     });
+    // Return true to allow drag
+    return true;
   };
 
-  onDragMove = (_oldIndex: number, _newIndex: number) => {
-    const { id } = this.state;
-    this.setState({
-      liveText: `Dragging item ${id}.`
-    });
+  onDragMove = (source: any, dest: any) => {
+    const { liveText, items } = this.state;
+    const newText = dest ? `Move ${items[source.index].content} to ${items[dest.index].content}` : 'Invalid drop zone';
+    if (newText !== liveText) {
+      this.setState({
+        liveText: newText
+      });
+    }
   };
 
-  onDragCancel = () => {
-    this.setState({
-      liveText: `Dragging cancelled. List is unchanged.`
-    });
-  };
-
-  onDragFinish = (itemOrder: string[]) => {
-    this.setState({
-      liveText: `Dragging finished`,
-      itemOrder
-    });
+  onDrop = (source: any, dest: any) => {
+    if (dest) {
+      const newItems = reorder(this.state.items, source.index, dest.index);
+      this.setState({
+        items: newItems,
+        liveText: 'Dragging finished.'
+      });
+      return true; // Signal that this is a valid drop and not to animate the item returning home.
+    } else {
+      this.setState({
+        liveText: 'Dragging cancelled. List unchanged.'
+      });
+    }
   };
 
   render() {
-    const { liveText, itemOrder } = this.state;
+    const { liveText, items } = this.state;
     return (
-      <React.Fragment>
-        <DataList
-          aria-label="draggable data list example"
-          isCompact
-          onDragFinish={this.onDragFinish}
-          onDragStart={this.onDragStart}
-          onDragMove={this.onDragMove}
-          onDragCancel={this.onDragCancel}
-          itemOrder={itemOrder}
-        >
-          <DataListItem aria-labelledby="simple-item1" id="data1" key="1">
-            <DataListItemRow>
-              <DataListControl>
-                <DataListDragButton
-                  id="drag1"
-                  aria-label="Reorder"
-                  aria-labelledby="simple-item1"
-                  aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                  aria-pressed="false"
-                />
-                <DataListCheck aria-labelledby="simple-item1" name="check1" otherControls />
-              </DataListControl>
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell key="item1">
-                    <span id="simple-item1">Item 1</span>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-          <DataListItem aria-labelledby="simple-item2" id="data2" key="2">
-            <DataListItemRow>
-              <DataListControl>
-                <DataListDragButton
-                  aria-label="Reorder"
-                  aria-labelledby="simple-item2"
-                  aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                  aria-pressed="false"
-                />
-                <DataListCheck aria-labelledby="simple-item2" name="check2" otherControls />
-              </DataListControl>
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell key="item2">
-                    <span id="simple-item2">Item 2</span>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-          <DataListItem aria-labelledby="simple-item3" id="data3" key="3">
-            <DataListItemRow>
-              <DataListControl>
-                <DataListDragButton
-                  aria-label="Reorder"
-                  aria-labelledby="simple-item3"
-                  aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                  aria-pressed="false"
-                />
-                <DataListCheck aria-labelledby="simple-item3" name="check3" otherControls />
-              </DataListControl>
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell key="item3">
-                    <span id="simple-item3">Item 3</span>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-          <DataListItem aria-labelledby="simple-item4" id="data4" key="4">
-            <DataListItemRow>
-              <DataListControl>
-                <DataListDragButton
-                  aria-label="Reorder"
-                  aria-labelledby="simple-item4"
-                  aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                  aria-pressed="false"
-                />
-                <DataListCheck aria-labelledby="simple-item4" name="check4" otherControls />
-              </DataListControl>
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell key="item4">
-                    <span id="simple-item4">Item 4</span>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-        </DataList>
+      <DragDrop onDrag={this.onDrag} onDragMove={this.onDragMove} onDrop={this.onDrop}>
+        <Droppable hasNoWrapper>
+          <DataList aria-label="draggable data list example" isCompact>
+            {items.map(({ id, content }) => (
+              <Draggable key={id} hasNoWrapper>
+                <DataListItem id={id} aria-labelledby={`${id}-content`}>
+                  <DataListItemRow>
+                    <DataListControl>
+                      <DataListDragButton
+                        aria-label="Reorder"
+                        aria-labelledby={`${id}-content`}
+                        aria-pressed="false"
+                        id={`${id}-drag-button`}
+                      />
+                    </DataListControl>
+                    <DataListItemCells
+                      dataListCells={[
+                        <DataListCell key={id}>
+                          <span id={`${id}-content`}>{content}</span>
+                        </DataListCell>
+                      ]}
+                    />
+                  </DataListItemRow>
+                </DataListItem>
+              </Draggable>
+            ))}
+          </DataList>
+        </Droppable>
         <div className="pf-screen-reader" aria-live="assertive">
           {liveText}
         </div>
-      </React.Fragment>
+      </DragDrop>
     );
   }
 }

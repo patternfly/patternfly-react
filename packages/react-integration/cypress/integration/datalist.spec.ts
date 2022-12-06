@@ -20,7 +20,8 @@ describe('Data List Demo Test', () => {
   });
 });
 
-describe('Data List Draggable Demo Test', () => {
+// Skip this test until a new drag and drop is implemented
+describe.skip('Data List Draggable Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/data-list-draggable-demo-nav-link');
   });
