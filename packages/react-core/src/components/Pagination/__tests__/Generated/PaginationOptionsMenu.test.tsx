@@ -19,11 +19,10 @@ it('PaginationOptionsMenu should match snapshot (auto-generated)', () => {
       page={42}
       perPageSuffix={"'per page'"}
       itemsTitle={"'items'"}
-      optionsToggle={"'Select'"}
       itemCount={0}
       firstIndex={0}
       lastIndex={0}
-      defaultToFullPage={false}
+      isLastFullPageShown={false}
       perPage={0}
       lastPage={42}
       toggleTemplate={({ firstIndex, lastIndex, itemCount, itemsTitle }: PaginationToggleTemplateProps) => (

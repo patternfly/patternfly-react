@@ -134,7 +134,7 @@ describe('Pagination Demo Test', () => {
       });
   });
 
-  it('Verify defaultToFullPage works correctly', () => {
+  it('Verify isLastFullPageShown works correctly', () => {
     cy.get('.pagination-options-menu-default-fullpage')
       .find('button[data-action="last"]')
       .then((button: JQuery<HTMLButtonElement>) => {
