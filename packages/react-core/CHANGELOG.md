@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.265.2 (2022-12-06)
+
+
+### Bug Fixes
+
+* **AdvancedSearchMenu:** allow spaces in search form field values ([#8372](https://github.com/patternfly/patternfly-react/issues/8372)) ([e026b8c](https://github.com/patternfly/patternfly-react/commit/e026b8c04fe25e94c5d7c4b697d774bab562eed8)), closes [#8369](https://github.com/patternfly/patternfly-react/issues/8369)
+
+
+
+
+
 ## [4.265.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.265.0...@patternfly/react-core@4.265.1) (2022-12-05)
 
 **Note:** Version bump only for package @patternfly/react-core
