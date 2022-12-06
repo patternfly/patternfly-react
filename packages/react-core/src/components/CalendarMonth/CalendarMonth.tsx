@@ -20,13 +20,13 @@ export enum Weekday {
   Saturday
 }
 
-export interface InlineCalendarProps {
+export interface CalendarMonthInlineProps {
   /** Component wrapping the calendar month when used inline. Recommended to be 'article'. */
-  wrapperComponent?: keyof JSX.IntrinsicElements;
+  component?: keyof JSX.IntrinsicElements;
   /** Title of the calendar rendered above the inline calendar month. Recommended to be a 'title' component. */
   title?: React.ReactNode;
   /** Id of the accessible label of the calendar month. Recommended to map to the title. */
-  ariaLabeledby?: string;
+  ariaLabelledby?: string;
 }
 
 /** Additional properties that extend from and can be passed to the main component. These
@@ -58,8 +58,8 @@ export interface CalendarFormat {
   weekStart?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | Weekday;
   /** Accessible label for the year input. */
   yearInputAriaLabel?: string;
-  /** */
-  inlineProps?: InlineCalendarProps;
+  /** Props used to ensure accessibility when displaying the calendar month inline. */
+  inlineProps?: CalendarMonthInlineProps;
 }
 
 export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
@@ -401,9 +401,9 @@ export const CalendarMonth = ({
   );
 
   if (inlineProps !== undefined) {
-    const Component = (inlineProps.wrapperComponent ? inlineProps.wrapperComponent : 'article') as any;
+    const Component = (inlineProps.component ? inlineProps.component : 'article') as any;
     return (
-      <Component {...(inlineProps.ariaLabeledby && { 'aria-labeledby': inlineProps.ariaLabeledby })}>
+      <Component {...(inlineProps.ariaLabelledby && { 'aria-labeledby': inlineProps.ariaLabelledby })}>
         {inlineProps.title}
         {calendarToRender}
       </Component>

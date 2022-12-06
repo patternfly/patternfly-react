@@ -58,7 +58,7 @@ test('Next year dates have correct year in aria label', () => {
 
 test('InlineProps render correct wrapper component and attributes', () => {
   const { asFragment } = render(
-    <CalendarMonth inlineProps={{wrapperComponent: 'article', title: <div id="hi">Title</div>, ariaLabeledby: "hi"}} />
+    <CalendarMonth inlineProps={{wrapperComponent: 'article', title: <div id="hi">Title</div>, ariaLabelledby: "hi"}} />
   );
 
   expect(asFragment()).toMatchSnapshot();
