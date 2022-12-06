@@ -69,3 +69,19 @@ Within each node in your `NODES` array, you can set `data` to include additional
 
 ```ts file='./TopologyCustomNodeDemo.tsx'
 ```
+
+### Edge Styles
+
+To add edge styles:
+
+1. import `EdgeStyle` into your file.
+1. Use the `edgeStyle` attribute on an edge object to specify one of the following styles:  
+    `EdgeStyle.dashed`  
+    `EdgeStyle.dashedMd`  
+    `EdgeStyle.dotted`  
+    `EdgeStyle.dashedLg`  
+    `EdgeStyle.dashedXl`  
+    `EdgeStyle.solid`  
+
+```ts file='./TopologyEdgeDemo.tsx'
+```
