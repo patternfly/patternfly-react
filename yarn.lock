@@ -7314,7 +7314,8 @@ d3@^5.16.0:
 
 dagre@0.8.2:
   version "0.8.2"
-  resolved "https://registry.npmjs.org/dagre/-/dagre-0.8.2.tgz"
+  resolved "https://registry.npmjs.org/dagre/-/dagre-0.8.2.tgz#755b79f4d5499d63cf74c3368fb08add93eceafe"
+  integrity sha512-TEOOGZOkCOgCG7AoUIq64sJ3d21SMv8tyoqteLpX+UsUsS9Qw8iap4hhogXY4oB3r0bbZuAjO0atAilgCmsE0Q==
   dependencies:
     graphlib "^2.1.5"
     lodash "^4.17.4"
@@ -9555,7 +9556,8 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
 
 graphlib@^2.1.5:
   version "2.1.8"
-  resolved "https://registry.npmjs.org/graphlib/-/graphlib-2.1.8.tgz"
+  resolved "https://registry.npmjs.org/graphlib/-/graphlib-2.1.8.tgz#5761d414737870084c92ec7b5dbcb0592c9d35da"
+  integrity sha512-jcLLfkpoVGmH7/InMC/1hIvOPSUh38oJtGhvrOFGzioE1DZ+0YW16RgmOJhHiuWTvGiJQ9Z1Ik43JvkRPRvE+A==
   dependencies:
     lodash "^4.17.15"
 
