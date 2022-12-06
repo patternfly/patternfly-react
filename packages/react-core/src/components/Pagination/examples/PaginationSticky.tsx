@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Pagination,
-  PaginationVariant,
-  Gallery,
-  GalleryItem,
-  Card,
-  CardBody,
-  Page,
-  PageSection
-} from '@patternfly/react-core';
+import { Pagination, PaginationVariant, Gallery, GalleryItem, Card, CardBody } from '@patternfly/react-core';
 
 export const PaginationSticky: React.FunctionComponent = () => {
   const [page, setPage] = React.useState(1);
@@ -45,45 +36,38 @@ export const PaginationSticky: React.FunctionComponent = () => {
     ));
   };
 
-  return (
-    <Page>
-      <PageSection>
-        {isTopSticky && (
-          <React.Fragment>
-            <Pagination
-              perPageComponent="button"
-              itemCount={itemCount}
-              perPage={perPage}
-              page={page}
-              onSetPage={onSetPage}
-              widgetId="pagination-options-menu-top"
-              onPerPageSelect={onPerPageSelect}
-              isSticky
-            >
-              <button onClick={onToggleSticky}>Toggle to bottom position</button>
-            </Pagination>
-            <Gallery hasGutter>{buildCards()}</Gallery>
-          </React.Fragment>
-        )}
-        {!isTopSticky && (
-          <React.Fragment>
-            <Gallery hasGutter>{buildCards()}</Gallery>
-            <Pagination
-              perPageComponent="button"
-              itemCount={itemCount}
-              perPage={perPage}
-              page={page}
-              onSetPage={onSetPage}
-              widgetId="pagination-options-menu-top"
-              onPerPageSelect={onPerPageSelect}
-              isSticky
-              variant={PaginationVariant.bottom}
-            >
-              <button onClick={onToggleSticky}>Toggle to top position</button>
-            </Pagination>
-          </React.Fragment>
-        )}
-      </PageSection>
-    </Page>
+  return isTopSticky ? (
+    <React.Fragment>
+      <Pagination
+        perPageComponent="button"
+        itemCount={itemCount}
+        perPage={perPage}
+        page={page}
+        onSetPage={onSetPage}
+        widgetId="pagination-options-menu-top"
+        onPerPageSelect={onPerPageSelect}
+        isSticky
+      >
+        <button onClick={onToggleSticky}>Toggle to bottom position</button>
+      </Pagination>
+      <Gallery hasGutter>{buildCards()}</Gallery>
+    </React.Fragment>
+  ) : (
+    <React.Fragment>
+      <Gallery hasGutter>{buildCards()}</Gallery>
+      <Pagination
+        perPageComponent="button"
+        itemCount={itemCount}
+        perPage={perPage}
+        page={page}
+        onSetPage={onSetPage}
+        widgetId="pagination-options-menu-top"
+        onPerPageSelect={onPerPageSelect}
+        isSticky
+        variant={PaginationVariant.bottom}
+      >
+        <button onClick={onToggleSticky}>Toggle to top position</button>
+      </Pagination>
+    </React.Fragment>
   );
 };
