@@ -41,16 +41,10 @@ export const MenuWithDrilldown: React.FunctionComponent = () => {
 
   const searchRef = React.createRef<HTMLInputElement>();
   const [startInput, setStartInput] = React.useState('');
-  const [shouldFocusOnDrillIn, setDrillFocusToggle] = React.useState<boolean>(true);
 
   const handleStartTextInputChange = (value: string) => {
     setStartInput(value);
     searchRef?.current?.focus();
-    setDrillFocusToggle(false);
-  };
-
-  const onBlur = () => {
-    setDrillFocusToggle(true);
   };
 
   const startDrillItems = [
@@ -91,7 +85,6 @@ export const MenuWithDrilldown: React.FunctionComponent = () => {
       onDrillIn={drillIn}
       onDrillOut={drillOut}
       onGetMenuHeight={setHeight}
-      shouldFocusOnDrillIn={shouldFocusOnDrillIn}
     >
       <MenuContent menuHeight={`${menuHeights[activeMenu]}px`}>
         <MenuList>
@@ -111,7 +104,6 @@ export const MenuWithDrilldown: React.FunctionComponent = () => {
                     aria-label="Filter menu items"
                     type="search"
                     onChange={value => handleStartTextInputChange(value)}
-                    onBlur={onBlur}
                   />
                 </MenuInput>
                 <Divider component="li" />

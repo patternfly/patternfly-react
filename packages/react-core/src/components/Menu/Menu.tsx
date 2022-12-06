@@ -45,8 +45,6 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   onDrillOut?: (toItemId: string, itemId: string) => void;
   /** @beta Callback for collecting menu heights */
   onGetMenuHeight?: (menuId: string, height: number) => void;
-  /** @beta Indicates that the menu should not focus the first option in a drilled in menu */
-  shouldFocusOnDrillIn?: boolean;
   /** @beta ID of parent menu for drilldown menus */
   parentMenu?: string;
   /** @beta ID of the currently active menu for the drilldown variant */
@@ -73,6 +71,7 @@ export interface MenuState {
   transitionMoveTarget: HTMLElement;
   flyoutRef: React.Ref<HTMLLIElement> | null;
   disableHover: boolean;
+  currentDrilldownMenuId: string;
 }
 
 class MenuBase extends React.Component<MenuProps, MenuState> {
@@ -85,8 +84,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     ouiaSafe: true,
     isRootMenu: true,
     isPlain: false,
-    isScrollable: false,
-    shouldFocusOnDrillIn: true
+    isScrollable: false
   };
 
   constructor(props: MenuProps) {
@@ -101,7 +99,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     searchInputValue: '',
     transitionMoveTarget: null,
     flyoutRef: null,
-    disableHover: false
+    disableHover: false,
+    currentDrilldownMenuId: this.props.id
   };
 
   allowTabFirstItem() {
@@ -156,9 +155,18 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     if (this.state.transitionMoveTarget) {
       this.state.transitionMoveTarget.focus();
       this.setState({ transitionMoveTarget: null });
-    } else if (this.props.shouldFocusOnDrillIn) {
+    } else {
       const nextMenu = current.querySelector('#' + this.props.activeMenu) || current || null;
-      const nextTarget = Array.from(nextMenu.getElementsByTagName('UL')[0].children).filter(
+      const nextMenuChildren = Array.from(nextMenu.getElementsByTagName('UL')[0].children);
+
+      if (!this.state.currentDrilldownMenuId || nextMenu.id !== this.state.currentDrilldownMenuId) {
+        this.setState({ currentDrilldownMenuId: nextMenu.id });
+      } else {
+        // if the drilldown transition ends on the same menu, do not focus the first item
+        return;
+      }
+
+      const nextTarget = nextMenuChildren.filter(
         el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
       )[0].firstChild;
 
@@ -259,7 +267,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       innerRef,
       isRootMenu,
       activeMenu,
-      shouldFocusOnDrillIn,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
