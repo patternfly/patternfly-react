@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.266.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.265.2...@patternfly/react-core@4.266.0) (2022-12-06)
+
+
+### Features
+
+* **ClipboardCopy, Truncate:** add removeFindDomNode ([#8371](https://github.com/patternfly/patternfly-react/issues/8371)) ([1cb5801](https://github.com/patternfly/patternfly-react/commit/1cb580101a2a4dcb1d29a8ba46ba96f9a9912de3))
+
+
+
+
+
 ## 4.265.2 (2022-12-06)
 
 
