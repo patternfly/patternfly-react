@@ -1,5 +1,12 @@
 .ws-react-e-topology-view {
   height: 600px;
+  border: 1px solid var(--pf-global--palette--black-900);
+  padding: 0;
+  margin: var(--pf-global--spacer--md);
+}
+
+.pf-theme-dark .ws-react-e-topology-view {
+  border: 1px solid var(--pf-global--palette--black-100);
 }
 
 .ws-react-c-topology .pf-l-stack {
