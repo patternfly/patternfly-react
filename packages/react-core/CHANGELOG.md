@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.266.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.266.1...@patternfly/react-core@4.266.2) (2022-12-06)
+
+
+### Bug Fixes
+
+* **Pagination:** Added support for insets ([#8412](https://github.com/patternfly/patternfly-react/issues/8412)) ([1053d53](https://github.com/patternfly/patternfly-react/commit/1053d530605c4f629eefdc7501b121a1906394a2))
+
+
+
+
+
 ## [4.266.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.266.0...@patternfly/react-core@4.266.1) (2022-12-06)
 
 **Note:** Version bump only for package @patternfly/react-core
