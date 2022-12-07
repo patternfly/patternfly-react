@@ -45,22 +45,12 @@ export interface WizardSubStep extends WizardBasicStep {
 }
 
 /** Encompasses all step type variants that are internally controlled by the Wizard. */
-export type WizardControlStep = WizardBasicStep | WizardParentStep | WizardSubStep;
+export type WizardStepType = WizardBasicStep | WizardParentStep | WizardSubStep;
 
-/** Callback for the Wizard's 'onNext', 'onBack', and 'onNavByIndex' properties. */
-export type WizardNavStepFunction = (
-  currentStep: WizardNavStepData,
-  previousStep: WizardNavStepData
-) => void | Promise<void>;
-
-/** Data returned for either parameter of WizardNavStepFunction. */
-export interface WizardNavStepData {
-  /** Unique identifier */
-  id: string | number;
-  /** Name of the step */
-  name: string;
-  /** Index of the step (starts at 1) */
-  index: number;
+export enum WizardStepChangeScope {
+  Next = 'next',
+  Back = 'back',
+  Nav = 'nav'
 }
 
 export type WizardFooterType = Partial<WizardFooterProps> | CustomWizardFooterFunction | React.ReactElement;
@@ -70,22 +60,22 @@ export type WizardNavItemType = Partial<WizardNavItemProps> | CustomWizardNavIte
 /** Callback for the Wizard's 'nav' property. Returns element which replaces the Wizard's default navigation. */
 export type CustomWizardNavFunction = (
   isExpanded: boolean,
-  steps: WizardControlStep[],
-  activeStep: WizardControlStep,
+  steps: WizardStepType[],
+  activeStep: WizardStepType,
   goToStepByIndex: (index: number) => void
 ) => React.ReactElement<WizardNavProps>;
 
 /** Callback for the Wizard's 'navItem' property. Returns element which replaces the WizardStep's default navigation item. */
 export type CustomWizardNavItemFunction = (
-  step: WizardControlStep,
-  activeStep: WizardControlStep,
-  steps: WizardControlStep[],
+  step: WizardStepType,
+  activeStep: WizardStepType,
+  steps: WizardStepType[],
   goToStepByIndex: (index: number) => void
 ) => React.ReactElement<WizardNavItemProps>;
 
 /** Callback for the Wizard's 'footer' property. Returns element which replaces the Wizard's default footer. */
 export type CustomWizardFooterFunction = (
-  activeStep: WizardControlStep,
+  activeStep: WizardStepType,
   onNext: () => void | Promise<void>,
   onBack: () => void | Promise<void>,
   onClose: () => void | Promise<void>
@@ -107,14 +97,14 @@ export function isCustomWizardFooter(
   return typeof footer === 'function' || React.isValidElement(footer);
 }
 
-export function isWizardBasicStep(step: WizardControlStep): step is WizardBasicStep {
+export function isWizardBasicStep(step: WizardStepType): step is WizardBasicStep {
   return (step as WizardParentStep)?.subStepIds === undefined && !isWizardSubStep(step);
 }
 
-export function isWizardSubStep(step: WizardControlStep): step is WizardSubStep {
+export function isWizardSubStep(step: WizardStepType): step is WizardSubStep {
   return (step as WizardSubStep)?.parentId !== undefined;
 }
 
-export function isWizardParentStep(step: WizardControlStep): step is WizardParentStep {
+export function isWizardParentStep(step: WizardStepType): step is WizardParentStep {
   return (step as WizardParentStep)?.subStepIds !== undefined;
 }

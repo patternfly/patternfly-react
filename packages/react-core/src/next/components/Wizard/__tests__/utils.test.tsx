@@ -5,11 +5,11 @@ import { buildSteps } from '../utils';
 import { WizardStep } from '../WizardStep';
 
 describe('buildSteps', () => {
-  test('throws error if child does not have required props or type of WizardStep', () => {
+  test('throws error if child is not of type WizardStep', () => {
     try {
       buildSteps(<div />);
     } catch (error) {
-      expect(error.message).toEqual('Wizard only accepts children with required WizardStepProps.');
+      expect(error.message).toEqual('Wizard only accepts children of type WizardStep.');
     }
   });
 
@@ -17,26 +17,12 @@ describe('buildSteps', () => {
     try {
       buildSteps('test' as any);
     } catch (error) {
-      expect(error.message).toEqual('Wizard only accepts children with required WizardStepProps.');
+      expect(error.message).toEqual('Wizard only accepts children of type WizardStep.');
     }
   });
 
   test('returns array of steps if children are of type WizardStep', () => {
     const component = <WizardStep name="Step 1" id="step-1" />;
-    const [step] = buildSteps(component);
-
-    expect(step.id).toEqual('step-1');
-    expect(step.name).toEqual('Step 1');
-    expect(step.component?.props).toEqual(component.props);
-  });
-
-  test('returns array of steps if children have required props', () => {
-    const CustomStep = props => <div {...props} />;
-    const component = (
-      <CustomStep name="Step 1" id="step-1">
-        Content
-      </CustomStep>
-    );
     const [step] = buildSteps(component);
 
     expect(step.id).toEqual('step-1');

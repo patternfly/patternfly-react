@@ -7,7 +7,7 @@ import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-ico
 
 import { KeyTypes } from '../../../helpers/constants';
 import { WizardNavProps, WizardBody, WizardStep, WizardStepProps } from '../Wizard';
-import { WizardControlStep, isWizardSubStep } from './types';
+import { WizardStepType, isWizardSubStep } from './types';
 
 /**
  * Used to toggle between step content, including the body and footer. This is also where the navigation and its expandability is controlled.
@@ -15,9 +15,9 @@ import { WizardControlStep, isWizardSubStep } from './types';
 
 export interface WizardToggleProps {
   /** List of steps and/or sub-steps */
-  steps: WizardControlStep[];
+  steps: WizardStepType[];
   /** The current step */
-  activeStep: WizardControlStep;
+  activeStep: WizardStepType;
   /** Wizard footer */
   footer: React.ReactElement;
   /** Wizard navigation */
