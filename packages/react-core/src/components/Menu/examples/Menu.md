@@ -105,6 +105,11 @@ To render an initially drilled in menu, the `menuDrilledIn`, `drilldownPath`, an
 ```ts file="MenuWithDrilldownBreadcrumbs.tsx" isBeta
 ```
 
+### With drilldown and inline filter
+
+```ts file="MenuFilterDrilldown.tsx"
+```
+
 ### Scrollable
 
 ```ts file="MenuScrollable.tsx"

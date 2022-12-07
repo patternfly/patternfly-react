@@ -71,6 +71,7 @@ export interface MenuState {
   transitionMoveTarget: HTMLElement;
   flyoutRef: React.Ref<HTMLLIElement> | null;
   disableHover: boolean;
+  currentDrilldownMenuId: string;
 }
 
 class MenuBase extends React.Component<MenuProps, MenuState> {
@@ -98,7 +99,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     searchInputValue: '',
     transitionMoveTarget: null,
     flyoutRef: null,
-    disableHover: false
+    disableHover: false,
+    currentDrilldownMenuId: this.props.id
   };
 
   allowTabFirstItem() {
@@ -155,9 +157,19 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       this.setState({ transitionMoveTarget: null });
     } else {
       const nextMenu = current.querySelector('#' + this.props.activeMenu) || current || null;
-      const nextTarget = Array.from(nextMenu.getElementsByTagName('UL')[0].children).filter(
+      const nextMenuChildren = Array.from(nextMenu.getElementsByTagName('UL')[0].children);
+
+      if (!this.state.currentDrilldownMenuId || nextMenu.id !== this.state.currentDrilldownMenuId) {
+        this.setState({ currentDrilldownMenuId: nextMenu.id });
+      } else {
+        // if the drilldown transition ends on the same menu, do not focus the first item
+        return;
+      }
+
+      const nextTarget = nextMenuChildren.filter(
         el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
       )[0].firstChild;
+
       (nextTarget as HTMLElement).focus();
       (nextTarget as HTMLElement).tabIndex = 0;
     }
@@ -284,12 +296,16 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             additionalKeyHandler={this.handleExtraKeys}
             createNavigableElements={this.createNavigableElements}
             isActiveElement={(element: Element) =>
-              document.activeElement.closest('li') === element ||
+              document.activeElement.closest('li') === element || // if element is a basic MenuItem
               document.activeElement.parentElement === element ||
+              document.activeElement.closest('.pf-c-menu__search') === element || // if element is a MenuInput
               (document.activeElement.closest('ol') && document.activeElement.closest('ol').firstChild === element)
             }
             getFocusableElement={(navigableElement: Element) =>
-              navigableElement.querySelector('input') || (navigableElement.firstChild as Element)
+              (navigableElement.tagName === 'DIV' && navigableElement.querySelector('input')) || // for MenuInput
+              ((navigableElement.firstChild as Element).tagName === 'LABEL' &&
+                navigableElement.querySelector('input')) || // for MenuItem checkboxes
+              (navigableElement.firstChild as Element)
             }
             noHorizontalArrowHandling={
               document.activeElement &&
