@@ -171,6 +171,10 @@ export interface ThSelectType {
   isSelected: boolean;
   /** Flag indicating the select checkbox in the th is disabled */
   isHeaderSelectDisabled?: boolean;
+  /** Whether to disable the selection */
+  isDisabled?: boolean;
+  /** Additional props forwarded to select rowData */
+  props?: any;
 }
 
 export interface ThExpandType {
