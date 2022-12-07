@@ -84,7 +84,7 @@ export const CompoundExpandable = () => {
       perPage={10}
       variant={variant}
       titles={{
-        paginationTitle: `${variant} pagination`
+        paginationAriaLabel: `${variant} pagination`
       }}
     />
   );

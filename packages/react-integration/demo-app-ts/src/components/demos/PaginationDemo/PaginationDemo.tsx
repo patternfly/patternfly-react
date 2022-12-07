@@ -87,7 +87,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
             variant={PaginationVariant.bottom}
             onSetPage={this.onSetDefaultPage}
             onPerPageSelect={this.onDefaultToFullPerPageSelect}
-            defaultToFullPage
+            isLastFullPageShown
           />
         </React.Fragment>
       </StackItem>

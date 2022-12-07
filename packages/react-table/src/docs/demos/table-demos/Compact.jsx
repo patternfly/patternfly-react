@@ -43,7 +43,7 @@ export const CompactTable = () => {
       onPerPageSelect={handlePerPageSelect}
       variant={variant}
       titles={{
-        paginationTitle: `${variant} pagination`
+        paginationAriaLabel: `${variant} pagination`
       }}
     />
   );

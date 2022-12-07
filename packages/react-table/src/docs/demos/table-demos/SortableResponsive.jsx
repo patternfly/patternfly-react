@@ -44,7 +44,7 @@ export const ComposableTableSortable = () => {
     return [...r].sort((a, b) => {
       let returnValue = 0;
       if (sortIndex === 0 || sortIndex === 7) {
-        returnValue = 1
+        returnValue = 1;
       } else if (typeof Object.values(a)[sortIndex] === 'number') {
         // numeric sort
         returnValue = Object.values(a)[sortIndex] - Object.values(b)[sortIndex];
@@ -56,15 +56,11 @@ export const ComposableTableSortable = () => {
         return returnValue * -1;
       }
       return returnValue;
-    })
+    });
   };
 
-const [sortedData, setSortedData] = React.useState([
-   ...sortRows(rows, 0, 'asc')
-  ]);
-const [sortedRows, setSortedRows] = React.useState([
-   ...sortedData
-  ]);
+  const [sortedData, setSortedData] = React.useState([...sortRows(rows, 0, 'asc')]);
+  const [sortedRows, setSortedRows] = React.useState([...sortedData]);
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(10);
 
@@ -85,50 +81,50 @@ const [sortedRows, setSortedRows] = React.useState([
   const kebabDropdownItems = [<OverflowMenuDropdownItem key="kebab-1">Some action</OverflowMenuDropdownItem>];
 
   React.useEffect(() => {
-    setSortedRows(sortedData.slice((page - 1) * perPage, page * perPage -1));
+    setSortedRows(sortedData.slice((page - 1) * perPage, page * perPage - 1));
   }, [sortedData, page, perPage]);
 
   const handleSetPage = (_evt, newPage) => {
     setPage(newPage);
-  }
+  };
 
   const handlePerPageSelect = (_evt, newPerPage) => {
     setPerPage(newPerPage);
-  }
+  };
 
-  renderPagination = (variant) => (
-      <Pagination
-        isCompact
-        itemCount={rows.length}
-        page={page}
-        perPage={perPage}
-        onSetPage={handleSetPage}
-        onPerPageSelect={handlePerPageSelect}
-        perPageOptions={[
-          { title: '10', value: 10 },
-          { title: '20', value: 20 },
-          { title: '50', value: 50 },
-          { title: '100', value: 100 }
-        ]}
-        variant={variant}
-        titles={{
-          paginationTitle: `${variant} pagination`
-        }}
-      />
-    );
+  renderPagination = variant => (
+    <Pagination
+      isCompact
+      itemCount={rows.length}
+      page={page}
+      perPage={perPage}
+      onSetPage={handleSetPage}
+      onPerPageSelect={handlePerPageSelect}
+      perPageOptions={[
+        { title: '10', value: 10 },
+        { title: '20', value: 20 },
+        { title: '50', value: 50 },
+        { title: '100', value: 100 }
+      ]}
+      variant={variant}
+      titles={{
+        paginationAriaLabel: `${variant} pagination`
+      }}
+    />
+  );
 
-    const renderLabel = labelText => {
-      switch (labelText) {
-        case 'Running':
-          return <Label color="green">{labelText}</Label>;
-        case 'Stopped':
-          return <Label color="orange">{labelText}</Label>;
-        case 'Needs Maintenance':
-          return <Label color="blue">{labelText}</Label>;
-        case 'Down':
-          return <Label color="red">{labelText}</Label>;
-      }
-    };
+  const renderLabel = labelText => {
+    switch (labelText) {
+      case 'Running':
+        return <Label color="green">{labelText}</Label>;
+      case 'Stopped':
+        return <Label color="orange">{labelText}</Label>;
+      case 'Needs Maintenance':
+        return <Label color="blue">{labelText}</Label>;
+      case 'Down':
+        return <Label color="red">{labelText}</Label>;
+    }
+  };
 
   const tableToolbar = (
     <Toolbar id="sortable-toolbar">
@@ -258,7 +254,7 @@ const [sortedRows, setSortedRows] = React.useState([
                       }
                     };
                     return (
-                      <Th modifier={columnIndex !== 6 ? "wrap" : undefined} key={columnIndex} {...sortParams}>
+                      <Th modifier={columnIndex !== 6 ? 'wrap' : undefined} key={columnIndex} {...sortParams}>
                         {column}
                       </Th>
                     );
@@ -269,7 +265,7 @@ const [sortedRows, setSortedRows] = React.useState([
                 {sortedRows.map((row, rowIndex) => (
                   <Tr key={rowIndex}>
                     <>
-                      <Td dataLabel={columns[0]} width={15} >
+                      <Td dataLabel={columns[0]} width={15}>
                         <div>{row.name}</div>
                       </Td>
                       <Td dataLabel={columns[1]} width={10}>
@@ -296,22 +292,24 @@ const [sortedRows, setSortedRows] = React.useState([
                           <FlexItem>{row.workspaces}</FlexItem>
                         </Flex>
                       </Td>
-                       <Td dataLabel={columns[4]} width={15}>
+                      <Td dataLabel={columns[4]} width={15}>
                         <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                           <FlexItem>{renderLabel(row.status)}</FlexItem>
                         </Flex>
                       </Td>
-                        <Td dataLabel={columns[5]} width={10}>
+                      <Td dataLabel={columns[5]} width={10}>
                         <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                           <FlexItem>{row.location}</FlexItem>
                         </Flex>
                       </Td>
-                        <Td dataLabel={columns[6]} width={10}>
+                      <Td dataLabel={columns[6]} width={10}>
                         <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                           <FlexItem>{row.lastModified[0]} days ago</FlexItem>
                         </Flex>
                       </Td>
-                      <Td dataLabel={columns[7]} modifier="truncate"><a href="#">{row.url}</a></Td>
+                      <Td dataLabel={columns[7]} modifier="truncate">
+                        <a href="#">{row.url}</a>
+                      </Td>
                     </>
                   </Tr>
                 ))}

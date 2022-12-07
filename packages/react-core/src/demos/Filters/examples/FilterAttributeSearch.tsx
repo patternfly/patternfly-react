@@ -560,8 +560,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
   // Set up pagination and toolbar
   const toolbarPagination = (
     <Pagination
-      titles={{ paginationTitle: 'Attribute search pagination' }}
-      perPageComponent="button"
+      titles={{ paginationAriaLabel: 'Attribute search pagination' }}
       itemCount={repositories.length}
       perPage={10}
       page={1}

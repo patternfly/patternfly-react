@@ -5,7 +5,7 @@ describe('Pagination Demo Test', () => {
 
   it('should be disabled when flag is present', () => {
     cy.get('.pagination-options-menu-disabled')
-      .find('.pf-c-options-menu__toggle-text')
+      .find('.pf-c-menu-toggle__text')
       .then(toggleText => expect(toggleText).to.have.text('1 - 20 of 523 '));
     cy.get('.pagination-options-menu-disabled')
       .find('button[data-action="first"]')
@@ -19,9 +19,7 @@ describe('Pagination Demo Test', () => {
     cy.get('.pagination-options-menu-disabled')
       .find('button[data-action="last"]')
       .then(button => expect(button).to.be.disabled);
-    cy.get('.pagination-options-menu-disabled > .pf-c-options-menu > .pf-c-options-menu__toggle')
-      .find('button')
-      .then(button => expect(button).to.be.disabled);
+    cy.get('.pagination-options-menu-disabled .pf-c-menu-toggle').then(button => expect(button).to.be.disabled);
   });
 
   it('should be sticky when flag is present', () => {
@@ -32,7 +30,7 @@ describe('Pagination Demo Test', () => {
     cy.get('.pf-c-pagination').should('have.length', 5);
     cy.get('.pagination-options-menu-bottom.pf-c-pagination.pf-m-bottom').should('exist');
     cy.get('.pagination-options-menu-top')
-      .find('.pf-c-options-menu__toggle-text')
+      .find('.pf-c-menu-toggle__text')
       .then(toggleText => expect(toggleText).to.have.text('1 - 20 of 523 '));
 
     cy.get('.pagination-options-menu-top')
@@ -58,22 +56,22 @@ describe('Pagination Demo Test', () => {
 
   it('Verify event handlers fire correctly', () => {
     cy.get('.pagination-options-menu-top')
-      .find('.pf-c-options-menu__toggle button')
+      .find('.pf-c-menu-toggle')
       .then((toggleButton: JQuery<HTMLButtonElement>) => {
         cy.wrap(toggleButton).click();
-        cy.get('.pf-c-options-menu.pf-m-expanded').should('exist');
-        cy.get('button[data-action="per-page-10"]').then((firstMenuItem: JQuery<HTMLButtonElement>) => {
+        cy.get('.pf-c-menu-toggle.pf-m-expanded').should('exist');
+        cy.get('li[data-action="per-page-10"]').then((firstMenuItem: JQuery<HTMLButtonElement>) => {
           cy.wrap(firstMenuItem).click();
-          cy.get('.pf-c-options-menu.pf-m-expanded').should('not.exist');
+          cy.get('.pf-c-menu-toggle.pf-m-expanded').should('not.exist');
           cy.get('.pagination-options-menu-top')
-            .find('.pf-c-options-menu__toggle-text')
+            .find('.pf-c-menu-toggle__text')
             .then(toggleText => expect(toggleText).to.have.text('1 - 10 of 523 '));
           cy.get('.pagination-options-menu-top')
             .find('.pf-c-pagination__nav-page-select')
             .then(navPageSelect => expect(navPageSelect).to.have.text('of 53'));
 
           cy.get('.pagination-options-menu-bottom')
-            .find('.pf-c-options-menu__toggle-text')
+            .find('.pf-c-menu-toggle__text')
             .then(toggleText => expect(toggleText).to.have.text('1 - 10 of 523 '));
           cy.get('.pagination-options-menu-bottom')
             .find('.pf-c-pagination__nav-page-select')
@@ -92,7 +90,7 @@ describe('Pagination Demo Test', () => {
           .find('button[data-action="previous"]')
           .then(previousButton => expect(previousButton).not.to.be.disabled);
         cy.get('.pagination-options-menu-top')
-          .find('.pf-c-options-menu__toggle-text')
+          .find('.pf-c-menu-toggle__text')
           .then(toggleText => expect(toggleText).to.have.text('11 - 20 of 523 '));
         cy.get('.pagination-options-menu-top')
           .find('.pf-c-pagination__nav-page-select input')
@@ -110,7 +108,7 @@ describe('Pagination Demo Test', () => {
           .find('button[data-action="previous"]')
           .then(previousButton => expect(previousButton).not.to.be.disabled);
         cy.get('.pagination-options-menu-bottom')
-          .find('.pf-c-options-menu__toggle-text')
+          .find('.pf-c-menu-toggle__text')
           .then(toggleText => expect(toggleText).to.have.text('11 - 20 of 523 '));
         cy.get('.pagination-options-menu-bottom')
           .find('.pf-c-pagination__nav-page-select input')
@@ -128,7 +126,7 @@ describe('Pagination Demo Test', () => {
           .find('button[data-action="previous"]')
           .then(previousButton => expect(previousButton).not.to.be.disabled);
         cy.get('.pagination-options-menu-default-fullpage')
-          .find('.pf-c-options-menu__toggle-text')
+          .find('.pf-c-menu-toggle__text')
           .then(toggleText => expect(toggleText).to.have.text('11 - 20 of 523 '));
         cy.get('.pagination-options-menu-default-fullpage')
           .find('.pf-c-pagination__nav-page-select input')
@@ -136,21 +134,21 @@ describe('Pagination Demo Test', () => {
       });
   });
 
-  it('Verify defaultToFullPage works correctly', () => {
+  it('Verify isLastFullPageShown works correctly', () => {
     cy.get('.pagination-options-menu-default-fullpage')
       .find('button[data-action="last"]')
       .then((button: JQuery<HTMLButtonElement>) => {
         cy.wrap(button).click();
         cy.get('.pagination-options-menu-default-fullpage')
-          .find('.pf-c-options-menu__toggle button')
+          .find('.pf-c-menu-toggle')
           .then((toggleButton: JQuery<HTMLButtonElement>) => {
             cy.wrap(toggleButton).click();
-            cy.get('.pf-c-options-menu.pf-m-expanded').should('exist');
-            cy.get('button[data-action="per-page-100"]').then((lastMenuItem: JQuery<HTMLButtonElement>) => {
+            cy.get('.pf-c-menu-toggle.pf-m-expanded').should('exist');
+            cy.get('li[data-action="per-page-100"]').then((lastMenuItem: JQuery<HTMLButtonElement>) => {
               cy.wrap(lastMenuItem).click();
-              cy.get('.pf-c-options-menu.pf-m-expanded').should('not.exist');
+              cy.get('.pf-c-menu-toggle.pf-m-expanded').should('not.exist');
               cy.get('.pagination-options-menu-default-fullpage')
-                .find('.pf-c-options-menu__toggle-text')
+                .find('.pf-c-menu-toggle__text')
                 .then(toggleText => expect(toggleText).to.have.text('401 - 500 of 523 '));
               cy.get('.pagination-options-menu-default-fullpage')
                 .find('.pf-c-form-control')

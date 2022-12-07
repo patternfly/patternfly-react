@@ -108,16 +108,11 @@ describe('Pagination', () => {
       expect(screen.getAllByText('I am a string')[0]).toBeInTheDocument();
     });
 
-    test('should render correctly button variant', () => {
-      const { asFragment } = render(<Pagination perPageComponent="button" itemCount={20} />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-
     test('should not update generated options menu id on rerenders', () => {
-      const { rerender } = render(<Pagination titles={{optionsToggle: "test label"}} perPageComponent="button" itemCount={20}/>);
-      const id = screen.getByLabelText("test label").getAttribute("id");
-      rerender(<Pagination titles={{optionsToggle: "test label"}}  perPageComponent="button" itemCount={20} />);
-      expect(screen.getByLabelText("test label")).toHaveAttribute("id", id);
+      const { rerender } = render(<Pagination titles={{ optionsToggleAriaLabel: 'test label' }} itemCount={20} />);
+      const id = screen.getByLabelText('test label').getAttribute('id');
+      rerender(<Pagination titles={{ optionsToggleAriaLabel: 'test label' }} itemCount={20} />);
+      expect(screen.getByLabelText('test label')).toHaveAttribute('id', id);
     });
   });
 
@@ -163,7 +158,7 @@ describe('Pagination', () => {
 
       test('should call input', async () => {
         const user = userEvent.setup();
-        
+
         render(<Pagination onSetPage={onSetPage} itemCount={40} />);
 
         const input = screen.getByLabelText('Current page');
@@ -175,7 +170,7 @@ describe('Pagination', () => {
 
       test('should call input wrong value', async () => {
         const user = userEvent.setup();
-        
+
         render(<Pagination onSetPage={onSetPage} itemCount={40} />);
 
         const input = screen.getByLabelText('Current page');
@@ -308,9 +303,9 @@ describe('Pagination', () => {
       test('should call', async () => {
         const user = userEvent.setup();
 
-        render(<Pagination onPerPageSelect={onPerPage} itemCount={40} />);
+        render(<Pagination page={1} onPerPageSelect={onPerPage} itemCount={40} />);
 
-        await user.click(screen.getByRole('button', { name: 'Items per page' }));
+        await user.click(screen.getByRole('button', { name: '1 - 10 of 40' }));
         await user.click(screen.getByText('20 per page'));
 
         expect(onPerPage).toHaveBeenCalled();
@@ -319,9 +314,9 @@ describe('Pagination', () => {
       test('should NOT call', async () => {
         const user = userEvent.setup();
 
-        render(<Pagination itemCount={40} />);
+        render(<Pagination page={1} itemCount={40} />);
 
-        await user.click(screen.getByRole('button', { name: 'Items per page' }));
+        await user.click(screen.getByRole('button', { name: '1 - 10 of 40' }));
         await user.click(screen.getByText('20 per page'));
 
         expect(onPerPage).not.toHaveBeenCalled();

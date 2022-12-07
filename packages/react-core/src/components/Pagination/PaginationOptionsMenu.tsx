@@ -1,11 +1,11 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { css } from '@patternfly/react-styles';
-import { DropdownItem, DropdownDirection, DropdownWithContext, DropdownContext } from '../Dropdown';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import { OptionsToggle } from './OptionsToggle';
+import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
+import { MenuToggle } from '../MenuToggle';
+import { Popper } from '../../helpers/Popper/Popper';
 import { PaginationToggleTemplateProps, ToggleTemplate } from './ToggleTemplate';
 import { PerPageOptions, OnPerPageSelect } from './Pagination';
+import { fillTemplate } from '../../helpers';
 
 export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Custom class name added to the pagination options menu. */
@@ -27,7 +27,7 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   /** The type or title of the items being paginated. */
   itemsTitle?: string;
   /** Accessible label for the options toggle. */
-  optionsToggle?: string;
+  optionsToggleAriaLabel?: string;
   /** The total number of items being paginated. */
   itemCount?: number;
   /** The first index of the items being paginated. */
@@ -37,7 +37,7 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   /** Flag to indicate whether to show last full page of results when user selects perPage
    * value that is greater than remaining rows.
    */
-  defaultToFullPage?: boolean;
+  isLastFullPageShown?: boolean;
   /** The number of items to be displayed per page. */
   perPage?: number;
   /** The number of the last page. */
@@ -50,63 +50,51 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   onPerPageSelect?: OnPerPageSelect;
   /** Label for the English word "of". */
   ofWord?: string;
-  /** Component to be used for wrapping the toggle contents. Use 'button' when you want
-   * all of the toggle text to be clickable.
-   */
-  perPageComponent?: 'div' | 'button';
 }
 
-interface PaginationOptionsMenuState {
-  isOpen: boolean;
-}
+export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMenuProps> = ({
+  className,
+  widgetId,
+  page: pageProp,
+  itemCount,
+  isDisabled = false,
+  dropDirection = 'down',
+  perPageOptions = [] as PerPageOptions[],
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  itemsPerPageTitle = 'Items per page',
+  perPageSuffix = 'per page',
+  optionsToggleAriaLabel,
+  ofWord = 'of',
+  perPage = 0,
+  firstIndex = 0,
+  lastIndex = 0,
+  isLastFullPageShown = false,
+  itemsTitle = 'items',
+  toggleTemplate,
+  onPerPageSelect = () => null as any
+}: PaginationOptionsMenuProps) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const menuRef = React.useRef<HTMLDivElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
-export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenuProps, PaginationOptionsMenuState> {
-  static displayName = 'PaginationOptionsMenu';
-  private parentRef = React.createRef<HTMLDivElement>();
-  static defaultProps: PaginationOptionsMenuProps = {
-    className: '',
-    widgetId: '',
-    isDisabled: false,
-    dropDirection: DropdownDirection.down,
-    perPageOptions: [] as PerPageOptions[],
-    itemsPerPageTitle: 'Items per page',
-    perPageSuffix: 'per page',
-    optionsToggle: '',
-    ofWord: 'of',
-    perPage: 0,
-    firstIndex: 0,
-    lastIndex: 0,
-    defaultToFullPage: false,
-    itemsTitle: 'items',
-    toggleTemplate: ToggleTemplate,
-    onPerPageSelect: () => null as any,
-    perPageComponent: 'div'
+  const onToggle = () => {
+    setIsOpen(prevState => !prevState);
   };
 
-  constructor(props: PaginationOptionsMenuProps) {
-    super(props);
-    this.state = {
-      isOpen: false
-    };
-  }
-
-  onToggle = (isOpen: boolean) => {
-    this.setState({ isOpen });
+  const onSelect = () => {
+    setIsOpen(prevState => !prevState);
+    toggleRef.current?.focus();
   };
 
-  onSelect = () => {
-    this.setState((prevState: PaginationOptionsMenuState) => ({ isOpen: !prevState.isOpen }));
-  };
-
-  handleNewPerPage = (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPerPage: number) => {
-    const { page, onPerPageSelect, itemCount, defaultToFullPage } = this.props;
-    let newPage = page;
+  const handleNewPerPage = (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPerPage: number) => {
+    let newPage = pageProp;
 
     while (Math.ceil(itemCount / newPerPage) < newPage) {
       newPage--;
     }
 
-    if (defaultToFullPage) {
+    if (isLastFullPageShown) {
       if (itemCount / newPerPage !== newPage) {
         while (newPage > 1 && itemCount - newPerPage * newPage < 0) {
           newPage--;
@@ -118,90 +106,108 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     return onPerPageSelect(_evt, newPerPage, newPage, startIdx, endIdx);
   };
 
-  renderItems = () => {
-    const { perPageOptions, perPage, perPageSuffix } = this.props;
+  React.useEffect(() => {
+    const handleMenuKeys = (event: KeyboardEvent) => {
+      // Close the menu on tab or escape
+      if (
+        (isOpen && menuRef.current?.contains(event.target as Node)) ||
+        toggleRef.current?.contains(event.target as Node)
+      ) {
+        if (event.key === 'Escape' || event.key === 'Tab') {
+          setIsOpen(false);
+          toggleRef.current?.focus();
+        }
+      }
+    };
 
-    return perPageOptions.map(({ value, title }) => (
-      <DropdownItem
+    const handleClick = (event: MouseEvent) => {
+      // If the event is on the toggle and was fired via keyboard 'click', focus the first
+      // non-disabled menu item
+      // https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail
+      if (event.detail === 0 && isOpen && toggleRef.current?.contains(event.target as Node)) {
+        setTimeout(() => {
+          const firstElement = menuRef?.current?.querySelector('li button:not(:disabled)');
+          firstElement && (firstElement as HTMLElement).focus();
+        }, 0);
+      }
+
+      // If the event is not on the toggle, close the menu
+      if (
+        isOpen &&
+        !toggleRef?.current?.contains(event.target as Node) &&
+        !menuRef.current?.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleMenuKeys);
+    window.addEventListener('click', handleClick);
+
+    return () => {
+      window.removeEventListener('keydown', handleMenuKeys);
+      window.removeEventListener('click', handleClick);
+    };
+  }, [isOpen, menuRef]);
+
+  const renderItems = () =>
+    perPageOptions.map(({ value, title }) => (
+      <MenuItem
         key={value}
-        component="button"
         data-action={`per-page-${value}`}
-        className={css(perPage === value && 'pf-m-selected')}
-        onClick={event => this.handleNewPerPage(event, value)}
+        isSelected={perPage === value}
+        onClick={event => handleNewPerPage(event, value)}
       >
         {title}
         {` ${perPageSuffix}`}
-        {perPage === value && (
-          <div className={css(styles.optionsMenuMenuItemIcon)}>
-            <CheckIcon />
-          </div>
-        )}
-      </DropdownItem>
+      </MenuItem>
     ));
-  };
 
-  render() {
-    const {
-      widgetId,
-      isDisabled,
-      itemsPerPageTitle,
-      dropDirection,
-      optionsToggle,
-      perPageOptions,
-      toggleTemplate,
-      firstIndex,
-      lastIndex,
-      itemCount,
-      itemsTitle,
-      ofWord,
-      perPageComponent
-    } = this.props;
-    const { isOpen } = this.state;
-
-    return (
-      <DropdownContext.Provider
-        value={{
-          ...(widgetId && { id: widgetId }),
-          onSelect: this.onSelect,
-          toggleIndicatorClass:
-            perPageComponent === 'div' ? styles.optionsMenuToggleButtonIcon : styles.optionsMenuToggleIcon,
-          toggleTextClass: styles.optionsMenuToggleText,
-          menuClass: styles.optionsMenuMenu,
-          itemClass: styles.optionsMenuMenuItem,
-          toggleClass: ' ',
-          baseClass: styles.optionsMenu,
-          disabledClass: styles.modifiers.disabled,
-          menuComponent: 'ul',
-          baseComponent: 'div',
-          ouiaComponentType: PaginationOptionsMenu.displayName
-        }}
-      >
-        <DropdownWithContext
-          direction={dropDirection}
-          isOpen={isOpen}
-          toggle={
-            <OptionsToggle
-              optionsToggle={optionsToggle}
-              itemsPerPageTitle={itemsPerPageTitle}
-              showToggle={perPageOptions && perPageOptions.length > 0}
-              onToggle={this.onToggle}
-              isOpen={isOpen}
-              widgetId={widgetId}
-              firstIndex={firstIndex}
-              lastIndex={lastIndex}
-              itemCount={itemCount}
-              itemsTitle={itemsTitle}
-              ofWord={ofWord}
-              toggleTemplate={toggleTemplate}
-              parentRef={this.parentRef.current}
-              isDisabled={isDisabled}
-              perPageComponent={perPageComponent}
-            />
-          }
-          dropdownItems={this.renderItems()}
-          isPlain
+  const toggle = (
+    <MenuToggle
+      ref={toggleRef}
+      onClick={onToggle}
+      {...(optionsToggleAriaLabel && { 'aria-label': optionsToggleAriaLabel })}
+      isDisabled={isDisabled || (itemCount && itemCount <= 0)}
+      isExpanded={isOpen}
+      {...(widgetId && { id: `${widgetId}-toggle` })}
+      variant="plainText"
+      aria-haspopup="listbox"
+    >
+      {typeof toggleTemplate === 'string' ? (
+        fillTemplate(toggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })
+      ) : (
+        <ToggleTemplate
+          firstIndex={firstIndex}
+          lastIndex={lastIndex}
+          ofWord={ofWord}
+          itemCount={itemCount}
+          itemsTitle={itemsTitle}
         />
-      </DropdownContext.Provider>
-    );
-  }
-}
+      )}
+    </MenuToggle>
+  );
+
+  const menu = (
+    <Menu className={css(className)} onSelect={onSelect} ref={menuRef}>
+      <MenuContent>
+        <MenuList>{renderItems()}</MenuList>
+      </MenuContent>
+    </Menu>
+  );
+
+  return (
+    <div ref={containerRef}>
+      <Popper
+        trigger={toggle}
+        popper={menu}
+        isVisible={isOpen}
+        direction={dropDirection}
+        appendTo={containerRef.current || undefined}
+        popperMatchesTriggerWidth={false}
+      />
+    </div>
+  );
+};
+
+PaginationOptionsMenu.displayName = 'PaginationOptionsMenu';

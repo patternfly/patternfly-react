@@ -3,15 +3,21 @@
 exports[`Navigation should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <nav
-    aria-label="'Pagination'"
+    aria-label="Pagination"
     class="pf-c-pagination__nav ''"
+    currpage="'Current page'"
+    paginationtitle="'Pagination'"
+    tofirstpage="'Go to first page'"
+    tolastpage="'Go to last page'"
+    tonextpage="'Go to next page'"
+    topreviouspage="'Go to previous page'"
   >
     <div
       class="pf-c-pagination__nav-control pf-m-first"
     >
       <button
         aria-disabled="false"
-        aria-label="'Go to first page'"
+        aria-label="Go to first page"
         class="pf-c-button pf-m-plain"
         data-action="first"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
@@ -39,7 +45,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     >
       <button
         aria-disabled="false"
-        aria-label="'Go to previous page'"
+        aria-label="Go to previous page"
         class="pf-c-button pf-m-plain"
         data-action="previous"
         data-ouia-component-id="OUIA-Generated-Button-plain-2"
@@ -66,7 +72,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       class="pf-c-pagination__nav-page-select"
     >
       <input
-        aria-label="'Current page'"
+        aria-label="Current page"
         class="pf-c-form-control"
         max="0"
         min="0"
@@ -79,7 +85,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     >
       <button
         aria-disabled="false"
-        aria-label="'Go to next page'"
+        aria-label="Go to next page"
         class="pf-c-button pf-m-plain"
         data-action="next"
         data-ouia-component-id="OUIA-Generated-Button-plain-3"
@@ -107,7 +113,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     >
       <button
         aria-disabled="false"
-        aria-label="'Go to last page'"
+        aria-label="Go to last page"
         class="pf-c-button pf-m-plain"
         data-action="last"
         data-ouia-component-id="OUIA-Generated-Button-plain-4"

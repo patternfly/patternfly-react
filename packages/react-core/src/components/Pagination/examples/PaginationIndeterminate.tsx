@@ -20,7 +20,6 @@ export const PaginationIndeterminate: React.FunctionComponent = () => {
 
   return (
     <Pagination
-      perPageComponent="button"
       toggleTemplate={({ firstIndex, lastIndex }) => (
         <React.Fragment>
           <b>

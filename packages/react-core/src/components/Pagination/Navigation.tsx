@@ -14,7 +14,7 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes for the pagination navigation container. */
   className?: string;
   /** Accessible label for the input displaying the current page. */
-  currPage?: string;
+  currPageAriaLabel?: string;
   /** The number of first page where pagination starts. */
   firstPage?: number;
   /** Flag indicating if the pagination is compact. */
@@ -34,17 +34,17 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   /** The title of a page displayed beside the page number (the plural form). */
   pagesTitlePlural?: string;
   /** Accessible label for the pagination component. */
-  paginationTitle?: string;
+  paginationAriaLabel?: string;
   /** Number of items per page. */
   perPage?: number;
   /** Accessible label for the button which moves to the first page. */
-  toFirstPage?: string;
+  toFirstPageAriaLabel?: string;
   /** Accessible label for the button which moves to the last page. */
-  toLastPage?: string;
+  toLastPageAriaLabel?: string;
   /** Accessible label for the button which moves to the next page. */
-  toNextPage?: string;
+  toNextPageAriaLabel?: string;
   /** Accessible label for the button which moves to the previous page. */
-  toPreviousPage?: string;
+  toPreviousPageAriaLabel?: string;
   /** Function called when user clicks to navigate to first page. */
   onFirstClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks to navigate to last page. */
@@ -78,12 +78,12 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     firstPage: 0,
     pagesTitle: '',
     pagesTitlePlural: '',
-    toLastPage: 'Go to last page',
-    toNextPage: 'Go to next page',
-    toFirstPage: 'Go to first page',
-    toPreviousPage: 'Go to previous page',
-    currPage: 'Current page',
-    paginationTitle: 'Pagination',
+    toLastPageAriaLabel: 'Go to last page',
+    toNextPageAriaLabel: 'Go to next page',
+    toFirstPageAriaLabel: 'Go to first page',
+    toPreviousPageAriaLabel: 'Go to previous page',
+    currPageAriaLabel: 'Current page',
+    paginationAriaLabel: 'Pagination',
     ofWord: 'of',
     onNextClick: () => undefined as any,
     onPreviousClick: () => undefined as any,
@@ -150,12 +150,12 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
       firstPage,
       pagesTitle,
       pagesTitlePlural,
-      toLastPage,
-      toNextPage,
-      toFirstPage,
-      toPreviousPage,
-      currPage,
-      paginationTitle,
+      toLastPageAriaLabel,
+      toNextPageAriaLabel,
+      toFirstPageAriaLabel,
+      toPreviousPageAriaLabel,
+      currPageAriaLabel,
+      paginationAriaLabel,
       ofWord,
       onNextClick,
       onPreviousClick,
@@ -168,13 +168,13 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     } = this.props;
     const { userInputPage } = this.state;
     return (
-      <nav className={css(styles.paginationNav, className)} aria-label={paginationTitle} {...props}>
+      <nav className={css(styles.paginationNav, className)} aria-label={paginationAriaLabel} {...props}>
         {!isCompact && (
           <div className={css(styles.paginationNavControl, styles.modifiers.first)}>
             <Button
               variant={ButtonVariant.plain}
               isDisabled={isDisabled || page === firstPage || page === 0}
-              aria-label={toFirstPage}
+              aria-label={toFirstPageAriaLabel}
               data-action="first"
               onClick={event => {
                 onFirstClick(event, 1);
@@ -197,7 +197,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
               this.handleNewPage(event, newPage);
               this.setState({ userInputPage: newPage });
             }}
-            aria-label={toPreviousPage}
+            aria-label={toPreviousPageAriaLabel}
           >
             <AngleLeftIcon />
           </Button>
@@ -206,7 +206,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
           <div className={styles.paginationNavPageSelect}>
             <input
               className={css(styles.formControl)}
-              aria-label={currPage}
+              aria-label={currPageAriaLabel}
               type="number"
               disabled={
                 isDisabled || (itemCount && page === firstPage && page === lastPage && itemCount >= 0) || page === 0
@@ -228,7 +228,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
           <Button
             variant={ButtonVariant.plain}
             isDisabled={isDisabled || page === lastPage}
-            aria-label={toNextPage}
+            aria-label={toNextPageAriaLabel}
             data-action="next"
             onClick={event => {
               const newPage = (page as number) + 1 <= lastPage ? (page as number) + 1 : lastPage;
@@ -245,7 +245,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             <Button
               variant={ButtonVariant.plain}
               isDisabled={isDisabled || page === lastPage}
-              aria-label={toLastPage}
+              aria-label={toLastPageAriaLabel}
               data-action="last"
               onClick={event => {
                 onLastClick(event, lastPage);

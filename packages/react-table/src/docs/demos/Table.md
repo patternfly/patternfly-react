@@ -192,7 +192,7 @@ class BulkSelectTableDemo extends React.Component {
         }}
         variant={variant}
         titles={{
-          paginationTitle: `${variant} pagination`
+          paginationAriaLabel: `${variant} pagination`
         }}
       />
     );
@@ -1043,7 +1043,7 @@ class ColumnManagementAction extends React.Component {
               variant={PaginationVariant.top}
               isCompact
               titles={{
-                paginationTitle: `Draggable column management top pagination`
+                paginationAriaLabel: `Draggable column management top pagination`
               }}
             />
           </ToolbarItem>
@@ -1079,7 +1079,7 @@ class ColumnManagementAction extends React.Component {
           page={1}
           variant={PaginationVariant.bottom}
           titles={{
-            paginationTitle: `Draggable column management bottom pagination`
+            paginationAriaLabel: `Draggable column management bottom pagination`
           }}
         />
         {this.renderModal()}
@@ -1471,14 +1471,14 @@ class FilterTableDemo extends React.Component {
 
 ### Automatic pagination
 
-The below example illustrates the `defaultToFullPage` prop, which makes the following changes when the user sets the number of items to display per page to an amount that exceeds the remaining amount of data:
+The below example illustrates the `isLastFullPageShown` prop, which makes the following changes when the user sets the number of items to display per page to an amount that exceeds the remaining amount of data:
 
 - The component automatically changes the page back to the last full page of results, rather than defaulting to the final page of results.
 
 To demonstrate this, navigate to the last page of data below using the `>>` navigation arrows, then use the dropdown selector to change the view to 5 per page.
 
 - The default behavior would show the last page of results, which would only contain the last two rows (rows 11 - 12).
-- The `defaultToFullPage` prop navigates you back to the previous page which does contain a full page of 5 rows (rows 6 - 10).
+- The `isLastFullPageShown` prop navigates you back to the previous page which does contain a full page of 5 rows (rows 6 - 10).
 
 ```js
 import React from 'react';
@@ -1536,7 +1536,7 @@ class ComplexPaginationTableDemo extends React.Component {
         itemCount={this.defaultRows.length}
         page={page}
         perPage={perPage}
-        defaultToFullPage
+        isLastFullPageShown
         onSetPage={this.handleSetPage}
         onPerPageSelect={this.handlePerPageSelect}
         perPageOptions={[
@@ -1546,7 +1546,7 @@ class ComplexPaginationTableDemo extends React.Component {
           { title: '20', value: 20 }
         ]}
         titles={{
-          paginationTitle: `${variant} pagination`
+          paginationAriaLabel: `${variant} pagination`
         }}
       />
     );

@@ -34,7 +34,6 @@ export const StaticBottomPagination = () => {
     setPerPage(newPerPage);
   };
 
-
   const renderPagination = (variant, isCompact) => (
     <Pagination
       isCompact={isCompact}
@@ -45,7 +44,7 @@ export const StaticBottomPagination = () => {
       onPerPageSelect={handlePerPageSelect}
       variant={variant}
       titles={{
-        paginationTitle: `${variant} pagination`
+        paginationAriaLabel: `${variant} pagination`
       }}
       isStatic
     />
@@ -54,13 +53,29 @@ export const StaticBottomPagination = () => {
   const renderLabel = labelText => {
     switch (labelText) {
       case 'Running':
-        return <span><Label color="green">{labelText}</Label></span>;
+        return (
+          <span>
+            <Label color="green">{labelText}</Label>
+          </span>
+        );
       case 'Stopped':
-        return <span><Label color="orange">{labelText}</Label></span>;
+        return (
+          <span>
+            <Label color="orange">{labelText}</Label>
+          </span>
+        );
       case 'Needs Maintenance':
-        return <span><Label color="blue">{labelText}</Label></span>;
+        return (
+          <span>
+            <Label color="blue">{labelText}</Label>
+          </span>
+        );
       case 'Down':
-        return <span><Label color="red">{labelText}</Label></span>;
+        return (
+          <span>
+            <Label color="red">{labelText}</Label>
+          </span>
+        );
     }
   };
 
@@ -116,18 +131,18 @@ export const StaticBottomPagination = () => {
               <Tbody>
                 {paginatedRows.map((row, rowIndex) => (
                   <Tr key={rowIndex}>
-                     <Td dataLabel={columns[0]}>{row.name}</Td>
-                      <Td dataLabel={columns[1]}>{row.threads}</Td>
-                      <Td dataLabel={columns[2]}>{row.applications}</Td>
-                      <Td dataLabel={columns[3]}>{row.workspaces}</Td>
-                      <Td dataLabel={columns[4]}>{renderLabel(row.status)}</Td>
-                      <Td dataLabel={columns[5]}>{row.location}</Td>
-                      <Td dataLabel={columns[6]}>{row.lastModified}</Td>
-                      <Td dataLabel={columns[7]} modifier="truncate">
-                        <TableText>
-                          <a href="#">{row.url}</a>
-                        </TableText>
-                      </Td>
+                    <Td dataLabel={columns[0]}>{row.name}</Td>
+                    <Td dataLabel={columns[1]}>{row.threads}</Td>
+                    <Td dataLabel={columns[2]}>{row.applications}</Td>
+                    <Td dataLabel={columns[3]}>{row.workspaces}</Td>
+                    <Td dataLabel={columns[4]}>{renderLabel(row.status)}</Td>
+                    <Td dataLabel={columns[5]}>{row.location}</Td>
+                    <Td dataLabel={columns[6]}>{row.lastModified}</Td>
+                    <Td dataLabel={columns[7]} modifier="truncate">
+                      <TableText>
+                        <a href="#">{row.url}</a>
+                      </TableText>
+                    </Td>
                   </Tr>
                 ))}
               </Tbody>

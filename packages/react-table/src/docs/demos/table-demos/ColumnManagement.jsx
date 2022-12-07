@@ -105,7 +105,7 @@ export const ColumnManagementAction = () => {
       onPerPageSelect={handlePerPageSelect}
       variant={variant}
       titles={{
-        paginationTitle: `${variant} pagination`
+        paginationAriaLabel: `${variant} pagination`
       }}
     />
   );
@@ -463,9 +463,7 @@ export const ColumnManagementAction = () => {
                         ) : (
                           <Td
                             width={key === 'name' ? 15 : 10}
-                            dataLabel={
-                              key === 'lastModified' ? 'Last modified' : capitalize(key)
-                            }
+                            dataLabel={key === 'lastModified' ? 'Last modified' : capitalize(key)}
                           >
                             {value}
                           </Td>
