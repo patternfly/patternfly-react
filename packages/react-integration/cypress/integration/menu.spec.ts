@@ -140,7 +140,7 @@ describe('Menu Test', () => {
   it('Verify Drilldown Menu', () => {
     cy.get('#drilldownMenuStart').should('not.be.visible');
     cy.get('#start').click();
-    cy.get('#drilldownMenuStart').should('be.visible');
+    cy.get('#drilldownMenuStart > :nth-child(1) > :nth-child(1)').should('be.visible');
     cy.get('#app-group-start').click();
   });
 });
