@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.112.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.111.55...@patternfly/react-table@4.112.0) (2022-12-07)
+
+
+### Features
+
+* **Table:** add sticky modifiers to Td ([#8391](https://github.com/patternfly/patternfly-react/issues/8391)) ([97583be](https://github.com/patternfly/patternfly-react/commit/97583bed04689a8488ecff6aa691a63363ccc3c3))
+
+
+
+
+
 ## [4.111.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.111.54...@patternfly/react-table@4.111.55) (2022-12-07)
 
 **Note:** Version bump only for package @patternfly/react-table
