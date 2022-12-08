@@ -202,6 +202,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
 
     if (key === ' ' || key === 'Enter' || key === 'ArrowRight' || type === 'click') {
       event.stopPropagation();
+      event.preventDefault();
       if (!flyoutVisible) {
         showFlyout(true);
         setFlyoutTarget(target as HTMLElement);

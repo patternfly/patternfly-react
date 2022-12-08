@@ -106,11 +106,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     const key = event.key;
     const target = event.target as HTMLElement;
 
-    if (!(popperRef?.current?.contains(target) || (hasFlyout && ref?.current?.contains(target)))) {
-      return;
-    }
-
-    if (key === ' ' || key === 'Enter' || key === 'ArrowRight') {
+    if ((key === ' ' || key === 'Enter' || key === 'ArrowRight') && hasFlyout && ref?.current?.contains(target)) {
       event.stopPropagation();
       event.preventDefault();
       if (!flyoutVisible) {
@@ -119,7 +115,9 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       }
     }
 
-    if (key === 'Escape' || key === 'ArrowLeft') {
+    // We only want the NavItem to handle closing a flyout menu if only the first level flyout is open.
+    // Otherwise, MenuItem should handle closing its flyouts
+    if ((key === 'Escape' || key === 'ArrowLeft') && popperRef?.current?.querySelectorAll('.pf-c-menu').length === 1) {
       if (flyoutVisible) {
         event.stopPropagation();
         event.preventDefault();
