@@ -27,19 +27,21 @@ import './page.css';
 
 A page will typically contain the following components: 
 
-- A `<Page>` with a `header` that often contains a masthead, a `<PageSidebar>`, and one or more `<PageSection>` components. 
--[Mastheads](/components/masthead) contain the `<PageToggleButton>`, a `<MastheadMain>` that contains a `<MastheadBrand>`, and the page's header toolbar within `<MastheadContent>`. 
+- A `<Page>` with a `header` that often contains a [masthead](/components/masthead)
+  - Mastheads contain the `<PageToggleButton>`, a `<MastheadMain>` that contains a `<MastheadBrand>`, and the page's header toolbar within `<MastheadContent>`. 
+- A `<PageSidebar>` for vertical navigation 
+- One or more `<PageSection>` components
 
 ### Vertical navigation
 
-To add vertical side navigation to a `<Page>`, pass a `<PageSidebar>` component into the `sidebar` property. To render navigation in the `<PageSidebar>`, use the `nav` property. 
+To add a vertical sidebar to a `<Page>`, pass a `<PageSidebar>` component into the `sidebar` property. To render navigation in the sidebar, use the `nav` property of the `<PageSidebar>`. 
 
 The `isNavOpen` property helps facilitate the opening and closing of the sidebar and should be 'true' when the navigation sidebar is visible. 
 
 ```ts file="./PageVerticalNav.tsx"
 ```
 
-### Legacy vertical navigation
+### Legacy page header
 
 This example shows the legacy implementation of a page's vertical navigation. Our updated recommendation advises you to use a masthead and toolbar to make headers, rather than `<PageHeader>` and `<PageHeaderTools>` as shown in the following example.
 
@@ -48,21 +50,21 @@ This example shows the legacy implementation of a page's vertical navigation. Ou
 
 ### Horizontal navigation
 
-To add horizontal top navigation to a `<Page>`, each navigation item should be set as a `<ToolbarItem>` in the `<Toolbar>` that is passed to the `<Masthead>`.
+To add horizontal top navigation to a `<Page>`, each navigation item should be set as a `<ToolbarItem>` in the `<Toolbar>` that is passed to the `<MastheadContent>` of the `<Masthead>`.
 
 ```ts file="./PageHorizontalNav.tsx"
 ```
 
-### Tertiary navigation
+### Legacy tertiary navigation
 
-To add a tertiary navigation component to a page, use the `tertiaryNav` property. The following example passes a string of ‘Navigation’ to `tertiaryNav`, but you can pass fully built-out components, such as navigation.
+Horizontal sub-navigation is now recommended instead of tertiary-level navigation. 
 
-In this example, `<Masthead>` sets the `display` property equal to `"{{ default: 'stack' }}"` to stack the masthead items and also passes in `"inset={{ default: 'insetXs' }}"` to adjust the inset padding.
+Tertiary navigation allows you to add an additional navigation menu alongside vertical or horizontal navigation. To create tertiary navigation, use the `tertiaryNav` property. The following example passes `tertiaryNav="Navigation"` into a `<Page>` component.
 
 ```ts file="./PageTertiaryNav.tsx"
 ```
 
-### Uncontrolled nav
+### Uncontrolled navigation
 
 When the `isManagedSidebar` property is true, it manages the sidebar open/close state, removing the need to pass both `isNavOpen` into the `<PageSidebar>` and `onNavToggle` into the `<PageHeader>`.
 
@@ -71,22 +73,24 @@ When the `isManagedSidebar` property is true, it manages the sidebar open/close 
 
 ### Filled page sections
 
-To make a `<PageSection>` fill the available vertical space of the page, set the `isFilled` property equal to true.
+By default, the last page section is "filled", meaning it fills the available vertifcal space of a page.
 
-By default, the last page section sets `isFilled` equal to true.
+To change the default behavior, use the `isFilled` property. To make other page sections "filled", set `isFilled` equal to "true". To disable the last page section from being "filled", set `isFilled` equal to "false".
 
 ```ts file="./PageWithOrWithoutFill.tsx"
 ```
 
 ### Main section padding
 
-To adjust the padding of a `<PageSection>`, you can pass in different values to the `padding` property. These value should be aligned to various breakpoints, including 'default', 'sm', 'md', 'lg', 'xl', '2xl'. 
+To adjust the padding of a `<PageSection>`, you can pass in different values to the `padding` property. These values should be aligned to a specific breakpoint: 'default', 'sm', 'md', 'lg', 'xl', and '2xl'. Each breakpoint passed into the property should be given a value of either ‘padding’ or ‘noPadding’. 
 
-To remove padding, pass 'noPadding' into `padding`. For example, the second section in this example passes in `padding={{ default: 'noPadding' }}`. Since no specific breakpoints are mentioned, every breakpoint will have 'noPadding'.
+As the page's viewport width increases, breakpoints inherit the padding behavior of the previous breakpoint. For example, padding that is set on 'lg' also applies to 'xl' and '2xl'. 
 
-To add padding on specific breakpoints, specify the value for those breakpoints. For example, the third section in this example passes in `padding={{ default: 'noPadding', md: 'padding', lg: 'padding' }}`. On 'md' and 'lg' breakpoints, the default value will be overwritten, and padding will be added.
+To remove padding entirely, pass 'noPadding' to the `default` breakpoint. For example, the second section in this example passes in `padding={{ default: 'noPadding' }}`. Since no specific breakpoints are mentioned, every breakpoint will have 'noPadding'.
 
-To remove padding at specific breakpoints, pass in 'noPadding' at those breakpoints. For example, the fourth section in this example passes in `padding={{ md: 'noPadding' }}`, which means that 'md' is the only breakpoint that will remove padding.
+To add padding at specific breakpoints, pass in "padding" at those breakpoints. For example, the third section in this example passes in `padding={{ default: 'noPadding', md: 'padding', lg: 'padding' }}`. At 'md', 'lg',  'xl' and '2xl' breakpoints, the default value will be overwritten, and padding will be added.
+
+To remove padding at specific breakpoints, pass in 'noPadding' at those breakpoints. For example, the fourth section in this example passes in `padding={{ md: 'noPadding' }}`, which means that 'md', ‘lg’  'xl' and '2xl' breakpoints will have ‘noPadding’.
 
 ```ts file="./PageMainSectionPadding.tsx"
 ```
@@ -95,16 +99,23 @@ To remove padding at specific breakpoints, pass in 'noPadding' at those breakpoi
 
 To group page content sections, add one or more `<PageGroup>` components to a `<Page>`. 
 
-The following example adds a group containing both the `<PageNavigation>` and a section of content.
+The following example adds a group containing `<PageNavigation>`, `<PageBreadcrumb>`, and `<PageSection>` components.
+
+To add additional components and information to a group, you may use the following properties: 
+
+- To indicate that a breadcrumb should be in a group, use `isBreadcrumbGrouped`. 
+- To indicate that tertiary navigation should be in a group, use `isTertiaryNavGrouped`.
+- To specify additional group content, use `additionalGroupedContent`. 
+
 
 ```ts file="./PageGroupSection.tsx"
 ```
 
 ### Centered section
 
-When a width-limited page section is wider than the value of --pf-c-page--section--m-limit-width--MaxWidth, the section will be centered in the main section.
+By default, a page section spans the width of the page. To reduce the width of a section, use the `isWidthLimited` property. To center align width-limited page sections, use the `isCenterAligned` property. When a width-limited page section is wider than the value of `--pf-c-page--section--m-limit-width--MaxWidth`, the section will automatically be centered.
 
-The content in this example is placed in a card to better illustrate how the section behaves when it is centered. A card is not required to center a page section.
+The content in this example is placed in a card to better illustrate how the section behaves when it is centered, but a card is not required to center a page section.
 
 ```ts file="./PageCenteredSection.tsx"
 ```
