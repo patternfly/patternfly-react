@@ -14,7 +14,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   styleChildren?: boolean;
   /** Additional classes added to the nav item */
   className?: string;
-  /** Target navigation link */
+  /** Target navigation link. Should not be used if the flyout prop is defined. */
   to?: string;
   /** Flag indicating whether the item is active */
   isActive?: boolean;
@@ -28,7 +28,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   onClick?: NavSelectClickHandler;
   /** Component used to render NavItems if  React.isValidElement(children) is false */
   component?: React.ReactNode;
-  /** Flyout of a nav item. This should be a Menu component. */
+  /** Flyout of a nav item. This should be a Menu component. Should not be used if the to prop is defined. */
   flyout?: React.ReactElement;
   /** Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
@@ -70,6 +70,12 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   const popperRef = React.useRef<HTMLDivElement>();
   const hasFlyout = flyout !== undefined;
   const Component = hasFlyout ? 'button' : (component as any);
+
+  // A NavItem should not be both a link and a flyout
+  if (to && hasFlyout) {
+    // eslint-disable-next-line no-console
+    console.error('NavItem cannot have both "to" and "flyout" props.');
+  }
 
   const showFlyout = (show: boolean, override?: boolean) => {
     if ((!flyoutVisible || override) && show) {
