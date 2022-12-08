@@ -1,17 +1,13 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import { ContextSelectorToggle } from './ContextSelectorToggle';
 import { ContextSelectorMenuList } from './ContextSelectorMenuList';
 import { ContextSelectorContext } from './contextSelectorConstants';
-import { Button, ButtonVariant } from '../Button';
-import { TextInput } from '../TextInput';
-import { InputGroup } from '../InputGroup';
-import { KeyTypes } from '../../helpers/constants';
 import { FocusTrap, getUniqueId } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { SearchInput } from '../SearchInput';
 
 export interface ContextSelectorProps extends OUIAProps {
   /** content rendered inside the Context Selector */
@@ -104,12 +100,6 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
   parentRef: React.RefObject<HTMLDivElement> = React.createRef();
   popperRef: React.RefObject<HTMLDivElement> = React.createRef();
 
-  onEnterPressed = (event: any) => {
-    if (event.key === KeyTypes.Enter) {
-      this.props.onSearchButtonClick();
-    }
-  };
-
   render() {
     const {
       children,
@@ -150,23 +140,16 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
             focusTrapOptions={{ clickOutsideDeactivates: true, tabbableOptions: { displayCheck: 'none' } }}
           >
             <div className={css(styles.contextSelectorMenuSearch)}>
-              <InputGroup>
-                <TextInput
-                  value={searchInputValue}
-                  type="search"
-                  placeholder={searchInputPlaceholder}
-                  onChange={onSearchInputChange}
-                  onKeyPress={this.onEnterPressed}
-                  aria-label={searchButtonAriaLabel}
-                />
-                <Button
-                  variant={ButtonVariant.control}
-                  aria-label={searchButtonAriaLabel}
-                  onClick={onSearchButtonClick}
-                >
-                  <SearchIcon aria-hidden="true" />
-                </Button>
-              </InputGroup>
+              <SearchInput
+                type="search"
+                submitSearchButtonLabel={searchButtonAriaLabel}
+                placeholder={searchInputPlaceholder}
+                onChange={onSearchInputChange}
+                onSearch={(value, event, _) => {
+                  onSearchButtonClick(event);
+                }}
+                value={searchInputValue}
+              />
             </div>
             <ContextSelectorContext.Provider value={{ onSelect }}>
               <ContextSelectorMenuList isOpen={isOpen}>{children}</ContextSelectorMenuList>

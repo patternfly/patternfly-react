@@ -87,17 +87,42 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
           <div
             class="pf-c-input-group"
           >
-            <input
-              aria-invalid="false"
-              aria-label="Search menu items"
-              class="pf-c-form-control"
-              data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-              data-ouia-component-type="PF4/TextInput"
-              data-ouia-safe="true"
-              placeholder="Search"
-              type="search"
-              value=""
-            />
+            <div
+              class="pf-c-text-input-group"
+            >
+              <div
+                class="pf-c-text-input-group__main pf-m-icon"
+              >
+                <span
+                  class="pf-c-text-input-group__text"
+                >
+                  <span
+                    class="pf-c-text-input-group__icon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    aria-label="Search input"
+                    class="pf-c-text-input-group__text-input"
+                    placeholder="Search"
+                    type="search"
+                    value=""
+                  />
+                </span>
+              </div>
+            </div>
             <button
               aria-disabled="false"
               aria-label="Search menu items"
@@ -105,7 +130,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
               data-ouia-component-id="OUIA-Generated-Button-control-1"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe="true"
-              type="button"
+              type="submit"
             >
               <svg
                 aria-hidden="true"
@@ -113,11 +138,11 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
                 height="1em"
                 role="img"
                 style="vertical-align: -0.125em;"
-                viewBox="0 0 512 512"
+                viewBox="0 0 448 512"
                 width="1em"
               >
                 <path
-                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                  d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
                 />
               </svg>
             </button>
@@ -231,17 +256,42 @@ exports[`ContextSelector Renders in strict mode 1`] = `
           <div
             class="pf-c-input-group"
           >
-            <input
-              aria-invalid="false"
-              aria-label="Search menu items"
-              class="pf-c-form-control"
-              data-ouia-component-id="OUIA-Generated-TextInputBase-3"
-              data-ouia-component-type="PF4/TextInput"
-              data-ouia-safe="true"
-              placeholder="Search"
-              type="search"
-              value=""
-            />
+            <div
+              class="pf-c-text-input-group"
+            >
+              <div
+                class="pf-c-text-input-group__main pf-m-icon"
+              >
+                <span
+                  class="pf-c-text-input-group__text"
+                >
+                  <span
+                    class="pf-c-text-input-group__icon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    aria-label="Search input"
+                    class="pf-c-text-input-group__text-input"
+                    placeholder="Search"
+                    type="search"
+                    value=""
+                  />
+                </span>
+              </div>
+            </div>
             <button
               aria-disabled="false"
               aria-label="Search menu items"
@@ -249,7 +299,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
               data-ouia-component-id="OUIA-Generated-Button-control-3"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe="true"
-              type="button"
+              type="submit"
             >
               <svg
                 aria-hidden="true"
@@ -257,11 +307,11 @@ exports[`ContextSelector Renders in strict mode 1`] = `
                 height="1em"
                 role="img"
                 style="vertical-align: -0.125em;"
-                viewBox="0 0 512 512"
+                viewBox="0 0 448 512"
                 width="1em"
               >
                 <path
-                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                  d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
                 />
               </svg>
             </button>
