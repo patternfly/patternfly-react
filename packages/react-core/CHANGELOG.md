@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.267.2 (2022-12-08)
+
+
+### Bug Fixes
+
+* **Menu:** removed li wrapper from breadcrumb example ([#8433](https://github.com/patternfly/patternfly-react/issues/8433)) ([1f41a71](https://github.com/patternfly/patternfly-react/commit/1f41a712fb8124a931277eb6611923746cd24496))
+
+
+
+
+
 ## 4.267.1 (2022-12-08)
 
 **Note:** Version bump only for package @patternfly/react-core
