@@ -247,7 +247,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
         {breadcrumb && (
           <>
             <MenuBreadcrumb>{breadcrumb}</MenuBreadcrumb>
-            <Divider component="li" />
+            <Divider />
           </>
         )}
         <MenuContent menuHeight={`${menuHeights[activeMenu]}px`} maxMenuHeight={withMaxMenuHeight ? '100px' : 'auto'}>
