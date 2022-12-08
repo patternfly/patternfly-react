@@ -78,8 +78,7 @@ interface WizardContext {
 ```js
 import React from 'react';
 import { Button, Radio, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
-import SampleForm from './examples/SampleForm';
-import FinishedStep from './examples/FinishedStep';
+
 class ProgressiveWizard extends React.Component {
   constructor(props) {
     super(props);
