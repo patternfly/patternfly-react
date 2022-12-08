@@ -2,12 +2,9 @@ import React from 'react';
 import { Wizard, WizardStep } from '@patternfly/react-core';
 
 export const WizardGetCurrentStep: React.FunctionComponent = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [step, setStep] = React.useState(1);
   const onCurrentStepChanged = ({ id }: WizardStep) => {
-    if (id) {
-      setStep(typeof id === 'string' ? parseInt(id) : id);
-    }
+    // eslint-disable-next-line no-console
+    console.log(id);
   };
   const closeWizard = () => {
     // eslint-disable-next-line no-console
