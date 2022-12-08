@@ -19,12 +19,7 @@ export const NavFlyout: React.FunctionComponent = () => {
     <Menu key={depth} containsFlyout isNavFlyout id={`nav-flyout-menu-${depth}`} onSelect={onMenuSelect}>
       <MenuContent>
         <MenuList>
-          <MenuItem
-            onClick={onMenuItemClick}
-            flyoutMenu={children}
-            itemId={`nav-flyout-next-menu-${depth}`}
-            to={`#next-menu-link-${depth}`}
-          >
+          <MenuItem onClick={onMenuItemClick} flyoutMenu={children} itemId={`nav-flyout-next-menu-${depth}`}>
             Next menu
           </MenuItem>
           {Array.apply(0, Array(numFlyouts - depth)).map((_item, index: number) => (
@@ -38,12 +33,7 @@ export const NavFlyout: React.FunctionComponent = () => {
               Menu {depth} item {index}
             </MenuItem>
           ))}
-          <MenuItem
-            onClick={onMenuItemClick}
-            flyoutMenu={children}
-            itemId={`nav-flyout-next-menu-2-${depth}`}
-            to={`#next-menu-2-link-${depth}`}
-          >
+          <MenuItem onClick={onMenuItemClick} flyoutMenu={children} itemId={`nav-flyout-next-menu-2-${depth}`}>
             Next menu
           </MenuItem>
         </MenuList>
@@ -81,7 +71,6 @@ export const NavFlyout: React.FunctionComponent = () => {
           preventDefault
           flyout={curFlyout}
           id="nav-flyout-default-link-3"
-          to="#nav-flyout-default-link-3"
           itemId="nav-flyout-default-link-3"
           isActive={activeItem === 'nav-flyout-default-link-3'}
         >
