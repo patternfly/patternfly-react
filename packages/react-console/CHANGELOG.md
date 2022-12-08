@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.93.10 (2022-12-08)
+
+
+### Bug Fixes
+
+* **VncConsole:** prevent running initialization code more than once ([#8373](https://github.com/patternfly/patternfly-react/issues/8373)) ([#8374](https://github.com/patternfly/patternfly-react/issues/8374)) ([285c5ff](https://github.com/patternfly/patternfly-react/commit/285c5ff54f165c43752f36107db2db7473cc338a))
+
+
+
+
+
 ## [4.93.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.93.8...@patternfly/react-console@4.93.9) (2022-12-07)
 
 **Note:** Version bump only for package @patternfly/react-console
