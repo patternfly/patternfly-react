@@ -15,6 +15,8 @@ export interface DropdownToggleCheckboxProps
   isDisabled?: boolean;
   /** Flag to show if the checkbox is checked */
   isChecked?: boolean | null;
+  /** Flag to show if the checkbox is in progress */
+  isInProgress?: boolean | null;
   /** Alternate Flag to show if the checkbox is checked */
   checked?: boolean | null;
   /** A callback for when the checkbox selection changes */
@@ -68,6 +70,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
       isValid,
       isDisabled,
       isChecked,
+      isInProgress,
       children,
       ouiaId,
       ouiaSafe,
@@ -83,7 +86,10 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
       </span>
     );
     return (
-      <label className={css(styles.dropdownToggleCheck, className)} htmlFor={props.id}>
+      <label
+        className={css(styles.dropdownToggleCheck, isInProgress && styles.modifiers.inProgress, className)}
+        htmlFor={props.id}
+      >
         <input
           {...props}
           {...(this.calculateChecked() !== undefined && { onChange: this.handleChange })}
