@@ -7,13 +7,15 @@ import { useOUIAProps, OUIAProps } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
-interface CommonNavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
+export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
   /** Content rendered inside the nav item. */
   children?: React.ReactNode;
   /** Whether to set className on children when React.isValidElement(children) */
   styleChildren?: boolean;
   /** Additional classes added to the nav item */
   className?: string;
+  /** Target navigation link */
+  to?: string;
   /** Flag indicating whether the item is active */
   isActive?: boolean;
   /** Group identifier, will be returned with the onToggle and onSelect callback passed to the Nav component */
@@ -26,6 +28,8 @@ interface CommonNavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'o
   onClick?: NavSelectClickHandler;
   /** Component used to render NavItems if  React.isValidElement(children) is false */
   component?: React.ReactNode;
+  /** Flyout of a nav item. This should be a Menu component. */
+  flyout?: React.ReactElement;
   /** Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
   /** @beta Opt-in for updated popper that does not use findDOMNode. */
@@ -37,22 +41,6 @@ interface CommonNavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'o
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
 }
-
-type ConditionalNavItemProps =
-  | {
-      /** Target navigation link */
-      to?: string;
-      /** Flyout of a nav item. Disallowed if nav link is defined */
-      flyout?: never;
-    }
-  | {
-      /** Target navigation link. Disallowed if flyout is defined */
-      to?: never;
-      /** Flyout of a nav item. This should be a Menu component. */
-      flyout?: React.ReactNode;
-    };
-
-export type NavItemProps = CommonNavItemProps & ConditionalNavItemProps;
 
 export const NavItem: React.FunctionComponent<NavItemProps> = ({
   children,

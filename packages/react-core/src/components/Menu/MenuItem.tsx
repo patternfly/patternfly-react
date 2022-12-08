@@ -15,13 +15,15 @@ import { canUseDOM } from '../../helpers/util';
 import { useIsomorphicLayoutEffect } from '../../helpers/useIsomorphicLayout';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
-interface CommonMenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
+export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Content rendered inside the menu list item. */
   children?: React.ReactNode;
   /** Additional classes added to the menu list item */
   className?: string;
   /** Identifies the component in the Menu onSelect or onActionClick callback */
   itemId?: any;
+  /** Target navigation link */
+  to?: string;
   /** @beta Flag indicating the item has a checkbox */
   hasCheck?: boolean;
   /** Flag indicating whether the item is active */
@@ -52,6 +54,8 @@ interface CommonMenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onCl
   isFocused?: boolean;
   /** Flag indicating the item is in danger state */
   isDanger?: boolean;
+  /** @beta Flyout menu */
+  flyoutMenu?: React.ReactElement;
   /** @beta Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
   /** @beta Drilldown menu of the item. Should be a Menu or DrilldownMenu type. */
@@ -65,22 +69,6 @@ interface CommonMenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onCl
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
 }
-
-type ConditionalMenuItemProps =
-  | {
-      /** Target navigation link */
-      to?: string;
-      /** @beta Flyout menu. Disallowed if nav link is defined */
-      flyoutMenu?: never;
-    }
-  | {
-      /** Target navigation link. Disallowed if flyoutMenu is defined */
-      to?: never;
-      /** @beta Flyout menu */
-      flyoutMenu?: React.ReactElement;
-    };
-
-export type MenuItemProps = CommonMenuItemProps & ConditionalMenuItemProps;
 
 const FlyoutContext = React.createContext({
   direction: 'right' as 'left' | 'right'
