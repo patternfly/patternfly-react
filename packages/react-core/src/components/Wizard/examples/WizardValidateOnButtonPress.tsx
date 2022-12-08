@@ -111,17 +111,27 @@ const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormP
 };
 
 export const WizardValidateButtonPress: React.FunctionComponent = () => {
+  const [isFormValid, setIsFormValid] = React.useState(false);
+  const [formValue, setFormValue] = React.useState('Validating on button press');
   const [stepsValid, setStepsValid] = React.useState(0);
+  const [errorText, setErrorText] = React.useState(false);
 
   const closeWizard = () => {
     // eslint-disable-next-line no-console
     console.log('close wizard');
   };
 
+  const onFormChange = (isValid: boolean, value: string) => {
+    setIsFormValid(isValid);
+    setFormValue(value);
+  };
+
   const validateLastStep: (onNext: () => void) => void = onNext => {
-    if (stepsValid !== 1) {
-      setStepsValid(1);
+    if (stepsValid !== 1 && !isFormValid) {
+      setErrorText(true);
     } else {
+      setStepsValid(1);
+      setErrorText(false);
       onNext();
     }
   };
@@ -133,12 +143,12 @@ export const WizardValidateButtonPress: React.FunctionComponent = () => {
       name: 'Final Step',
       component: (
         <>
-          {stepsValid === 1 && (
+          {errorText && (
             <div style={{ padding: '15px 0' }}>
               <Alert variant="warning" title="Validation failed, please try again" />
             </div>
           )}
-          <SampleForm formValue="Validating on button press" isFormValid={stepsValid !== 1} />
+          <SampleForm formValue={formValue} isFormValid={stepsValid !== 1} onChange={onFormChange} />
         </>
       )
     },
@@ -158,7 +168,7 @@ export const WizardValidateButtonPress: React.FunctionComponent = () => {
                 <Button
                   variant="secondary"
                   onClick={onBack}
-                  className={activeStep.name === 'Step 1' ? 'pf-m-disabled' : ''}
+                  className={activeStep.name === 'First step' ? 'pf-m-disabled' : ''}
                 >
                   Backward
                 </Button>
@@ -172,7 +182,7 @@ export const WizardValidateButtonPress: React.FunctionComponent = () => {
           return (
             <>
               <Button onClick={() => validateLastStep(onNext)}>Validate</Button>
-              <Button onClick={() => goToStepByName('Step 1')}>Go to Beginning</Button>
+              <Button onClick={() => goToStepByName('First step')}>Go to Beginning</Button>
             </>
           );
         }}
