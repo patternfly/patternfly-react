@@ -134,7 +134,7 @@ Text labels may optionally be used alongside actions within split buttons.
 
 ### Split button (progress checkbox)
 
-Text labels may optionally be used alongside actions within split buttons.
+The `isInProgress` property can be used to indicate a progress state by rendering a spinner in place of a checkbox.
 
 ```ts isBeta file="./DropdownSplitButtonProgressCheckbox.tsx"
 ```
