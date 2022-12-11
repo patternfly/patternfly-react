@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { MenuItemProps, MenuItem } from '../../../components/Menu';
-import { useOUIAProps, OUIAProps } from '../../../helpers';
+import { useOUIAProps, OUIAProps } from '../../../helpers/OUIA/ouia';
 
 export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps {
   /** Anything which can be rendered in a dropdown item */

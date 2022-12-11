@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="custom-class"
+    data-testid="menu-list-mock"
+  >
+    <div>
+      Dropdown List children
+    </div>
+  </div>
+</DocumentFragment>
+`;
