@@ -535,10 +535,10 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       : this.isChecked(treeItem, isChosen);
 
   mapChecked = (item: DualListSelectorTreeItemData, isChosen: boolean): DualListSelectorTreeItemData => {
-    const hasPartialCheck = this.areAllDescendantsChecked(item, isChosen);
+    const hasCheck = this.areAllDescendantsChecked(item, isChosen);
     item.isChecked = false;
 
-    if (hasPartialCheck) {
+    if (hasCheck) {
       item.isChecked = true;
     } else {
       const hasPartialCheck = this.areSomeDescendantsChecked(item, isChosen);
