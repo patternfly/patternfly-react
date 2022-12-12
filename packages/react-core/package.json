@@ -5,13 +5,6 @@
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
-  "exports": {
-    ".": "./dist/esm/index.js",
-    "./dist/*": "./dist/*",
-    "./next": "./dist/esm/next",
-    "./deprecated": "./dist/esm/deprecated",
-    "./package.json": "./package.json"
-  },
   "typesVersions": {
     "*": {
       "next": [
@@ -48,7 +41,8 @@
   "scripts": {
     "build:umd": "rollup -c --environment IS_PRODUCTION",
     "clean": "rimraf dist",
-    "generate": "node scripts/copyStyles.js"
+    "generate": "node scripts/copyStyles.js",
+    "subpaths": "node scripts/copySubpaths.js"
   },
   "dependencies": {
     "@patternfly/react-icons": "^4.93.3",
