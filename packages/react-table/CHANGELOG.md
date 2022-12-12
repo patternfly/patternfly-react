@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.112.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.112.5...@patternfly/react-table@4.112.6) (2022-12-12)
+
+
+### Bug Fixes
+
+* Remove package exports and replace subpaths script ([#8438](https://github.com/patternfly/patternfly-react/issues/8438)) ([75bea27](https://github.com/patternfly/patternfly-react/commit/75bea2790cffcfe2ffc9ca46d82748e3e85674fc))
+
+
+
+
+
 ## [4.112.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.112.4...@patternfly/react-table@4.112.5) (2022-12-09)
 
 **Note:** Version bump only for package @patternfly/react-table
