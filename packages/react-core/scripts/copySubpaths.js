@@ -4,7 +4,7 @@
 const { copySync } = require('fs-extra');
 const { resolve, dirname } = require('path');
 
-['next', 'deprecated'].forEach(subPathName => {
+['next', 'deprecated', 'components', 'layouts', 'helpers'].forEach(subPathName => {
   const source = dirname(require.resolve(`@patternfly/react-core/dist/esm/${subPathName}`));
   const destination = resolve(__dirname, `../${subPathName}`);
 

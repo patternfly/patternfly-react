@@ -4,7 +4,7 @@
 const { copySync } = require('fs-extra');
 const { resolve, dirname } = require('path');
 
-['deprecated'].forEach(subPathName => {
+['deprecated', 'components'].forEach(subPathName => {
   const source = dirname(require.resolve(`@patternfly/react-table/dist/esm/${subPathName}`));
   const destination = resolve(__dirname, `../${subPathName}`);
 

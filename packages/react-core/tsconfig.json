@@ -7,14 +7,11 @@
     "tsBuildInfoFile": "dist/esm.tsbuildinfo",
     "baseUrl": ".",
     "paths": {
-      "*/next": ["./src/next"],
-      "*/deprecated": ["./src/deprecated"],
+      "./next": ["./src/next"],
+      "./deprecated": ["./src/deprecated"]
     }
   },
-  "include": [
-    "./src/*",
-    "./src/**/*"
-  ],
+  "include": ["./src/*", "./src/**/*"],
   "references": [
     {
       "path": "../react-styles"
