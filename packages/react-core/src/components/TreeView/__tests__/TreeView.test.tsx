@@ -168,7 +168,7 @@ describe('tree view', () => {
   });
 
   test('renders checkboxes successfully', () => {
-    const { asFragment } = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasCheckboxs />);
+    const { asFragment } = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasCheckboxes />);
     expect(asFragment()).toMatchSnapshot();
   });
 

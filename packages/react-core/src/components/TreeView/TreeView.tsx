@@ -59,7 +59,7 @@ export interface TreeViewProps {
   /** Flag indicating if all nodes in the tree view should have badges. */
   hasBadges?: boolean;
   /** Flag indicating if all nodes in the tree view should have checkboxes. */
-  hasCheckboxs?: boolean;
+  hasCheckboxes?: boolean;
   /** Flag indicating if the tree view has guide lines. */
   hasGuides?: boolean;
   /** Flag indicating if the tree view is nested. */
@@ -92,7 +92,7 @@ export interface TreeViewProps {
 export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   data,
   isNested = false,
-  hasCheckboxs = false,
+  hasCheckboxes = false,
   hasBadges = false,
   hasGuides = false,
   hasSelectableNodes = false,
@@ -124,7 +124,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
           onSelect={onSelect}
           onCheck={onCheck}
-          hasCheckbox={item.hasCheckbox !== undefined ? item.hasCheckbox : hasCheckboxs}
+          hasCheckbox={item.hasCheckbox !== undefined ? item.hasCheckbox : hasCheckboxes}
           checkProps={item.checkProps}
           hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}
           customBadgeContent={item.customBadgeContent}
@@ -144,7 +144,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
                 data={item.children}
                 isNested
                 parentItem={item}
-                hasCheckboxs={hasCheckboxs}
+                hasCheckboxes={hasCheckboxes}
                 hasBadges={hasBadges}
                 hasGuides={hasGuides}
                 hasSelectableNodes={hasSelectableNodes}
@@ -170,7 +170,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
       ) : (
         <TreeViewRoot
           hasSelectableNodes={hasSelectableNodes}
-          hasCheckboxs={hasCheckboxs}
+          hasCheckboxes={hasCheckboxes}
           hasGuides={hasGuides}
           variant={variant}
           className={className}

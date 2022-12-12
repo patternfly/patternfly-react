@@ -521,11 +521,11 @@ class CheckboxTreeView extends React.Component {
     };
 
     this.mapTree = item => {
-      const hasCheckbox = areAllDescendantsChecked(item);
+      const hasCheck = areAllDescendantsChecked(item);
       // Reset checked properties to be updated
       item.checkProps.checked = false;
 
-      if (hasCheckbox) {
+      if (hasCheck) {
         item.checkProps.checked = true;
       } else {
         const hasPartialCheck = areSomeDescendantsChecked(item);
@@ -560,7 +560,7 @@ class CheckboxTreeView extends React.Component {
 
   render() {
     const mapped = this.options.map(item => this.mapTree(item));
-    return <TreeView data={mapped} onCheck={this.onCheck} hasCheckboxs />;
+    return <TreeView data={mapped} onCheck={this.onCheck} hasCheckboxes />;
   }
 }
 ```
