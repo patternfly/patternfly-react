@@ -4,6 +4,77 @@ section: developer-resources
 ---
 
 ## 2022.15 release notes (2022-11-17)
+- [@patternfly/react-catalog-view-extension@4.93.15](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.93.15)
+- [@patternfly/react-charts@6.94.15](https://www.npmjs.com/package/@patternfly/react-charts/v/6.94.15)
+- [@patternfly/react-code-editor@4.82.82](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.82.82)
+- [@patternfly/react-core@4.267.6](https://www.npmjs.com/package/@patternfly/react-core/v/4.267.6)
+- [@patternfly/react-icons@4.93.3](https://www.npmjs.com/package/@patternfly/react-icons/v/4.93.3)
+- [@patternfly/react-inline-edit-extension@4.86.85](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.86.85)
+- [@patternfly/react-log-viewer@4.87.77](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.87.77)
+- [@patternfly/react-styles@4.92.3](https://www.npmjs.com/package/@patternfly/react-styles/v/4.92.3)
+- [@patternfly/react-table@4.112.6](https://www.npmjs.com/package/@patternfly/react-table/v/4.112.6)
+- [@patternfly/react-tokens@4.94.3](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.94.3)
+- [@patternfly/react-topology@4.90.38](https://www.npmjs.com/package/@patternfly/react-topology/v/4.90.38)
+- [@patternfly/react-virtualized-extension@4.88.82](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.88.82)
+
+### Components
+- **Badge:**
+  - Added `pf-screen-reader` for screen reader text ([#8361](https://github.com/patternfly/patternfly-react/pull/8361))
+- **Calendar month:**
+  - Provided explicit guidance for labeling an inline calendar month ([#8375](https://github.com/patternfly/patternfly-react/pull/8375))
+- **Clipboard copy:**
+  - Added `removeFindDomNode` ([#8371](https://github.com/patternfly/patternfly-react/pull/8371))
+- **Dropdown:**
+  - Added `itemId` to `DropdownItem` props to the next version of the dropdown ([#8356](https://github.com/patternfly/patternfly-react/pull/8356))
+- **Menu:**
+  - Added drilldown filter demo, also added flag to support demo and fix some keyboard interaction ([#8405](https://github.com/patternfly/patternfly-react/pull/8405))
+  - Removed `li` wrapper from breadcrumb example ([#8433](https://github.com/patternfly/patternfly-react/pull/8433))
+  - Updated breadcrumb drilldown example ([#8385](https://github.com/patternfly/patternfly-react/pull/8385))
+- **Navigation:**
+  - Fixed navigation flyout accessibility ([#8279](https://github.com/patternfly/patternfly-react/pull/8279))
+- **Pagination:**
+  - Added support for insets ([#8412](https://github.com/patternfly/patternfly-react/pull/8412))
+  - Fixed filter not applying in sticky example ([#8133](https://github.com/patternfly/patternfly-react/pull/8133))
+- **Panel:**
+  - Updated component unit tests to meet new RTL standards ([#8346](https://github.com/patternfly/patternfly-react/pull/8346))
+- **Search input:**
+  - Updated advanced search menu to allow spaces in search form field values (#8369) ([#8372](https://github.com/patternfly/patternfly-react/pull/8372))
+- **Sidebar:**
+  - Updated tests to new react testing library standards ([#8342](https://github.com/patternfly/patternfly-react/pull/8342))
+- **Tabs:**
+ - Converted examples to TypeScript ([#8337](https://github.com/patternfly/patternfly-react/pull/8337))
+- **Time picker:**
+  - Removed redundant `onBlur` callback ([#8366](https://github.com/patternfly/patternfly-react/pull/8366))
+- **Tooltip:**
+  - Converted examples to TypeScript ([#8052](https://github.com/patternfly/patternfly-react/pull/8052))
+- **Truncate:**
+  - Added `removeFindDomNode` ([#8371](https://github.com/patternfly/patternfly-react/pull/8371))
+- **Navigation:**
+  - Fixed navigation flyout accessibility ([#8279](https://github.com/patternfly/patternfly-react/pull/8279))
+- **Wizard:**
+  - Allowed for async function types for navigation & `isCollapsible` wizard step prop for the next version of the wizard ([#8332](https://github.com/patternfly/patternfly-react/pull/8332))
+  - Converted examples to TypeScript ([#8287](https://github.com/patternfly/patternfly-react/pull/8287))
+
+### Access console extension
+- Prevented running initialization code more than once (#8373) ([#8374](https://github.com/patternfly/patternfly-react/pull/8374))
+
+### Table
+- Updated composable table custom row wrapper example ([#8365](https://github.com/patternfly/patternfly-react/pull/8365))
+- Added sticky modifiers to `Td` ([#8391](https://github.com/patternfly/patternfly-react/pull/8391))
+- Removed `hasSelectableRowCaption` prop ([#8352](https://github.com/patternfly/patternfly-react/pull/8352))
+- Create "deprecated" subpaths in `react-table` ([#8381](https://github.com/patternfly/patternfly-react/pull/8381))
+
+
+
+### Other
+- **Chore:**
+  - Stopped shipping mock files ([#8396](https://github.com/patternfly/patternfly-react/pull/8396))
+  - Removed package exports and replaced subpaths script ([#8438](https://github.com/patternfly/patternfly-react/pull/8438))
+  - Fixed react-core subpath exports ([#8341](https://github.com/patternfly/patternfly-react/pull/8341))
+- **Dependencies:**
+  - Update dependency @patternfly/documentation-framework to v1.2.70 ([#8427](https://github.com/patternfly/patternfly-react/pull/8427))
+
+## 2022.15 release notes (2022-11-17)
 - [@patternfly/react-catalog-view-extension@4.93.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.93.0)
 - [@patternfly/react-charts@6.94.12](https://www.npmjs.com/package/@patternfly/react-charts/v/6.94.12)
 - [@patternfly/react-code-editor@4.82.67](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.82.67)
