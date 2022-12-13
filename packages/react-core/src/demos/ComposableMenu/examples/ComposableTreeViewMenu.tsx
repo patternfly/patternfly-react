@@ -255,7 +255,12 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
             </Title>
           </PanelMainBody>
           <PanelMainBody style={{ padding: 0 }}>
-            <TreeView data={roleMapped} hasBadges hasCheckboxes onCheck={(event, item) => onCheck(event, item, 'role')} />
+            <TreeView 
+              data={roleMapped} 
+              hasBadges 
+              hasCheckboxes 
+              onCheck={(event, item) => onCheck(event, item, 'role')} 
+            />
           </PanelMainBody>
         </section>
       </PanelMain>

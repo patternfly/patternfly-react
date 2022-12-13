@@ -339,36 +339,76 @@ export const FilterFaceted: React.FunctionComponent = () => {
       <MenuContent>
         <MenuList>
           <MenuGroup label="Status">
-            <MenuItem hasCheckbox isSelected={statusSelections.includes('Degraded')} itemId="Degraded">
+            <MenuItem 
+              hasCheckbox 
+              isSelected={statusSelections.includes('Degraded')} 
+              itemId="Degraded"
+            >
               Degraded
             </MenuItem>
-            <MenuItem hasCheckbox isSelected={statusSelections.includes('Down')} itemId="Down">
+            <MenuItem 
+              hasCheckbox 
+              isSelected={statusSelections.includes('Down')} 
+              itemId="Down"
+            >
               Down
             </MenuItem>
-            <MenuItem hasCheckbox isSelected={statusSelections.includes('Needs Maintenance')} itemId="Needs Maintenance">
+            <MenuItem 
+              hasCheckbox 
+              isSelected={statusSelections.includes('Needs Maintenance')} 
+              itemId="Needs Maintenance"
+            >
               Needs Maintenance
             </MenuItem>
-            <MenuItem hasCheckbox isSelected={statusSelections.includes('Running')} itemId="Running">
+            <MenuItem 
+              hasCheckbox 
+              isSelected={statusSelections.includes('Running')} 
+              itemId="Running"
+            >
               Running
             </MenuItem>
-            <MenuItem hasCheckbox isSelected={statusSelections.includes('Stopped')} itemId="Stopped">
+            <MenuItem 
+              hasCheckbox 
+              isSelected={statusSelections.includes('Stopped')} 
+              itemId="Stopped"
+            >
               Stopped
             </MenuItem>
           </MenuGroup>
           <MenuGroup label="Location">
-            <MenuItem hasCheckbox isSelected={locationSelections.includes('Bangalore')} itemId="Bangalore">
+            <MenuItem 
+              hasCheckbox 
+              isSelected={locationSelections.includes('Bangalore')} 
+              itemId="Bangalore"
+            >
               Bangalore
             </MenuItem>
-            <MenuItem hasCheckbox isSelected={locationSelections.includes('Boston')} itemId="Boston">
+            <MenuItem 
+              hasCheckbox 
+              isSelected={locationSelections.includes('Boston')} 
+              itemId="Boston"
+            >
               Boston
             </MenuItem>
-            <MenuItem hasCheckbox isSelected={locationSelections.includes('Brno')} itemId="Brno">
+            <MenuItem 
+              hasCheckbox 
+              isSelected={locationSelections.includes('Brno')} 
+              itemId="Brno"
+            >
               Brno
             </MenuItem>
-            <MenuItem hasCheckbox isSelected={locationSelections.includes('Raleigh')} itemId="Raleigh">
+            <MenuItem 
+              hasCheckbox 
+              isSelected={locationSelections.includes('Raleigh')}
+              itemId="Raleigh"
+            >
               Raleigh
             </MenuItem>
-            <MenuItem hasCheckbox isSelected={locationSelections.includes('Westford')} itemId="Westford">
+            <MenuItem 
+              hasCheckbox 
+              isSelected={locationSelections.includes('Westford')} 
+              itemId="Westford"
+            >
               Westford
             </MenuItem>
           </MenuGroup>
