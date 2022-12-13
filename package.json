@@ -64,7 +64,7 @@
     "react-dom": "^18",
     "surge": "^0.23.1",
     "ts-patch": "^1.4.2",
-    "typescript": "^4.0.0"
+    "typescript": "^4.9.4"
   },
   "scripts": {
     "build": "yarn build:generate && yarn build:esm && yarn build:subpaths && yarn build:cjs",
