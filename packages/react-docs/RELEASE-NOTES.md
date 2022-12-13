@@ -3,7 +3,7 @@ id: Release notes
 section: developer-resources
 ---
 
-## 2022.15 release notes (2022-11-17)
+## 2022.16 release notes (2022-12-13)
 - [@patternfly/react-catalog-view-extension@4.93.15](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.93.15)
 - [@patternfly/react-charts@6.94.15](https://www.npmjs.com/package/@patternfly/react-charts/v/6.94.15)
 - [@patternfly/react-code-editor@4.82.82](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.82.82)
@@ -38,7 +38,7 @@ section: developer-resources
 - **Panel:**
   - Updated component unit tests to meet new RTL standards ([#8346](https://github.com/patternfly/patternfly-react/pull/8346))
 - **Search input:**
-  - Updated advanced search menu to allow spaces in search form field values (#8369) ([#8372](https://github.com/patternfly/patternfly-react/pull/8372))
+  - Updated advanced search menu to allow spaces in search form field values ([#8372](https://github.com/patternfly/patternfly-react/pull/8372))
 - **Sidebar:**
   - Updated tests to new react testing library standards ([#8342](https://github.com/patternfly/patternfly-react/pull/8342))
 - **Tabs:**
@@ -56,7 +56,7 @@ section: developer-resources
   - Converted examples to TypeScript ([#8287](https://github.com/patternfly/patternfly-react/pull/8287))
 
 ### Access console extension
-- Prevented running initialization code more than once (#8373) ([#8374](https://github.com/patternfly/patternfly-react/pull/8374))
+- Prevented running initialization code more than once ([#8374](https://github.com/patternfly/patternfly-react/pull/8374))
 
 ### Table
 - Updated composable table custom row wrapper example ([#8365](https://github.com/patternfly/patternfly-react/pull/8365))
