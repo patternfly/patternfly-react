@@ -27,6 +27,7 @@ export * from './ToolbarDemo/ToolbarVisiblityDemo';
 export * from './DrawerDemo/DrawerDemo';
 export * from './DrawerDemo/DrawerResizeDemo';
 export * from './DropdownDemo/DropdownDemo';
+export * from './DropdownNextDemo/DropdownNextDemo';
 export * from './DualListSelectorDemo/DualListSelectorBasicDemo';
 export * from './DualListSelectorDemo/DualListSelectorTreeDemo';
 export * from './DualListSelectorDemo/DualListSelectorWithActionsDemo';
