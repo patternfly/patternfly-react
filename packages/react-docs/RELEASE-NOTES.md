@@ -42,7 +42,7 @@ section: developer-resources
 - **Sidebar:**
   - Updated tests to new react testing library standards ([#8342](https://github.com/patternfly/patternfly-react/pull/8342))
 - **Tabs:**
- - Converted examples to TypeScript ([#8337](https://github.com/patternfly/patternfly-react/pull/8337))
+  - Converted examples to TypeScript ([#8337](https://github.com/patternfly/patternfly-react/pull/8337))
 - **Time picker:**
   - Removed redundant `onBlur` callback ([#8366](https://github.com/patternfly/patternfly-react/pull/8366))
 - **Tooltip:**
