@@ -88,6 +88,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     return (
       <Component
         onClick={onClick}
+        {...this.props}
         {...(this.props.textMaxWidth && {
           style: this.setChipStyle(),
           ...this.props.style
@@ -95,7 +96,6 @@ export class Chip extends React.Component<ChipProps, ChipState> {
         className={css(styles.chip, styles.modifiers.overflow, className)}
         {...(this.props.component === 'button' ? { type: 'button' } : {})}
         {...getOUIAProps('OverflowChip', ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
-        {...this.props}
       >
         <span className={css(styles.chipText)}>{children}</span>
       </Component>
@@ -107,13 +107,13 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     const Component = component as any;
     return (
       <Component
+        {...this.props}
         {...(this.props.textMaxWidth && {
           style: this.setChipStyle()
         })}
         className={css(styles.chip, className)}
         {...(this.state.isTooltipVisible && { tabIndex: 0 })}
         {...getOUIAProps(Chip.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
-        {...this.props}
       >
         <span ref={this.span} className={css(styles.chipText)} id={id}>
           {children}

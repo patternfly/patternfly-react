@@ -293,7 +293,7 @@ exports[`Toolbar should render with custom chip content 1`] = `
                   class="pf-c-chip-group__list-item"
                 >
                   <div
-                    class=""
+                    class="pf-c-chip"
                     closebtnarialabel="close"
                     component="div"
                     data-ouia-component-id="OUIA-Generated-Chip-1"
@@ -338,7 +338,7 @@ exports[`Toolbar should render with custom chip content 1`] = `
                   class="pf-c-chip-group__list-item"
                 >
                   <div
-                    class=""
+                    class="pf-c-chip"
                     closebtnarialabel="close"
                     component="div"
                     data-ouia-component-id="OUIA-Generated-Chip-2"

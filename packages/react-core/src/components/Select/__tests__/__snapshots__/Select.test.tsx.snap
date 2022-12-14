@@ -1855,7 +1855,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 class="pf-c-chip-group__list-item"
               >
                 <div
-                  class=""
+                  class="pf-c-chip"
                   closebtnarialabel="Remove"
                   component="div"
                   data-ouia-component-id="OUIA-Generated-Chip-1"
@@ -1900,7 +1900,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 class="pf-c-chip-group__list-item"
               >
                 <div
-                  class=""
+                  class="pf-c-chip"
                   closebtnarialabel="Remove"
                   component="div"
                   data-ouia-component-id="OUIA-Generated-Chip-2"
