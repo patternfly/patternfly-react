@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
+import { SelectOptionObject, Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
@@ -28,17 +28,17 @@ export const ToolbarGroups: React.FunctionComponent = () => {
   ];
 
   const [firstIsExpanded, setFirstIsExpanded] = React.useState(false);
-  const [firstSelected, setFirstSelected] = React.useState();
+  const [firstSelected, setFirstSelected] = React.useState<string | SelectOptionObject>();
   const [secondIsExpanded, setSecondIsExpanded] = React.useState(false);
-  const [secondSelected, setSecondSelected] = React.useState();
+  const [secondSelected, setSecondSelected] = React.useState<string | SelectOptionObject>();
   const [thirdIsExpanded, setThirdIsExpanded] = React.useState(false);
-  const [thirdSelected, setThirdSelected] = React.useState();
+  const [thirdSelected, setThirdSelected] = React.useState<string | SelectOptionObject>();
 
   const onFirstToggle = (isExpanded: boolean) => {
     setFirstIsExpanded(isExpanded);
   };
 
-  const onFirstSelect = (event, selection) => {
+  const onFirstSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     setFirstSelected(selection);
     setFirstIsExpanded(false);
   };
@@ -47,7 +47,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
     setSecondIsExpanded(isExpanded);
   };
 
-  const onSecondSelect = (event, selection) => {
+  const onSecondSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     setSecondSelected(selection);
     setSecondIsExpanded(false);
   };
@@ -56,7 +56,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
     setThirdIsExpanded(isExpanded);
   };
 
-  const onThirdSelect = (event, selection) => {
+  const onThirdSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     setThirdSelected(selection);
     setThirdIsExpanded(false);
   };

@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React from 'react';
 import {
   Button,
   ButtonVariant,
@@ -47,7 +47,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
   const [resourceIsExpanded, setResourceIsExpanded] = React.useState(false);
   const [resourceSelected, setResourceSelected] = React.useState<string | SelectOptionObject>();
   const [statusIsExpanded, setStatusIsExpanded] = React.useState(false);
-  const [statusSelected, setStatusSelected] = React.useState();
+  const [statusSelected, setStatusSelected] = React.useState<string | SelectOptionObject>();
   const [splitButtonDropdownIsOpen, setSplitButtonDropdownIsOpen] = React.useState(false);
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(20);
@@ -60,16 +60,12 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     setResourceIsExpanded(isExpanded);
   };
 
-  // TODO: Split function for dropdown and select
-  const onResourceSelect = (
-    event: React.MouseEvent<any> | React.ChangeEvent,
-    selection: string | SelectOptionObject
-  ) => {
+  const onResourceSelect = (_event: React.ChangeEvent | React.MouseEvent, selection: string | SelectOptionObject) => {
     setResourceSelected(selection);
     setResourceIsExpanded(false);
   };
 
-  const onResourceSelectDropdown = (event: SyntheticEvent<HTMLDivElement, Event> | undefined) => {
+  const onResourceSelectDropdown = (event: React.SyntheticEvent<HTMLDivElement, Event> | undefined) => {
     setResourceSelected(event?.target);
     setResourceIsExpanded(false);
   };
@@ -78,16 +74,20 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     setStatusIsExpanded(isExpanded);
   };
 
-  const onStatusSelect = (event, selection) => {
+  const onStatusSelect = (_event: React.ChangeEvent | React.MouseEvent, selection: string | SelectOptionObject) => {
     setStatusSelected(selection);
     setStatusIsExpanded(false);
   };
 
-  const onSetPage = (_event, pageNumber) => {
+  const onSetPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, pageNumber: number) => {
     setPage(pageNumber);
   };
 
-  const onPerPageSelect = (_event, perPage, page) => {
+  const onPerPageSelect = (
+    _event: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    perPage: number,
+    page: number
+  ) => {
     setPage(page);
     setPerPage(perPage);
   };

@@ -1,5 +1,12 @@
 import React from 'react';
-import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
+import {
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarToggleGroup,
+  ToolbarGroup,
+  SelectOptionObject
+} from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant, SearchInput } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
@@ -7,9 +14,9 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [inputValue, setInputValue] = React.useState('');
   const [statusIsExpanded, setStatusIsExpanded] = React.useState(false);
-  const [statusSelected, setStatusSelected] = React.useState();
+  const [statusSelected, setStatusSelected] = React.useState<string | SelectOptionObject>();
   const [riskIsExpanded, setRiskIsExpanded] = React.useState(false);
-  const [riskSelected, setRiskSelected] = React.useState();
+  const [riskSelected, setRiskSelected] = React.useState<string | SelectOptionObject>();
 
   const toggleIsExpanded = () => {
     setIsExpanded(!isExpanded);
@@ -30,7 +37,7 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
     { value: 'High', disabled: false }
   ];
 
-  const onInputChange = newValue => {
+  const onInputChange = (newValue: string) => {
     setInputValue(newValue);
   };
 
@@ -38,7 +45,11 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
     setStatusIsExpanded(isExpanded);
   };
 
-  const onStatusSelect = (event, selection, isPlaceholder: boolean | undefined) => {
+  const onStatusSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder: boolean | undefined
+  ) => {
     if (isPlaceholder) {
       clearStatusSelection();
     }
@@ -55,7 +66,11 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
     setRiskIsExpanded(isExpanded);
   };
 
-  const onRiskSelect = (event, selection, isPlaceholder: boolean | undefined) => {
+  const onRiskSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder: boolean | undefined
+  ) => {
     if (isPlaceholder) {
       clearRiskSelection();
     }
@@ -72,7 +87,7 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
     <React.Fragment>
       <ToolbarItem variant="search-filter">
         <SearchInput
-          aria-label="search input example"
+          aria-label="Consumer toggle groups example search input"
           onChange={onInputChange}
           value={inputValue}
           onClear={() => {

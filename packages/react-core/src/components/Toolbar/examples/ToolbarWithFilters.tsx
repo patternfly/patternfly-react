@@ -5,7 +5,8 @@ import {
   ToolbarContent,
   ToolbarFilter,
   ToolbarToggleGroup,
-  ToolbarGroup
+  ToolbarGroup,
+  SelectOptionObject
 } from '@patternfly/react-core';
 import {
   Button,
@@ -34,12 +35,16 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
   });
   const [kebabIsOpen, setKebabIsOpen] = React.useState(false);
 
-  const onInputChange = newValue => {
+  const onInputChange = (newValue: string) => {
     setInputValue(newValue);
   };
 
-  const onSelect = (type, event, selection) => {
-    const checked = event.target.checked;
+  const onSelect = (
+    type: string,
+    event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject
+  ) => {
+    const checked = (event.target as HTMLInputElement).checked;
     setFilters(prev => {
       const prevSelections = prev[type];
       return {
@@ -49,11 +54,11 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
     });
   };
 
-  const onStatusSelect = (event, selection) => {
+  const onStatusSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     onSelect('status', event, selection);
   };
 
-  const onRiskSelect = (event, selection) => {
+  const onRiskSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     onSelect('risk', event, selection);
   };
 
@@ -67,7 +72,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
     }
   };
 
-  const onDeleteGroup = type => {
+  const onDeleteGroup = (type: string) => {
     if (type === 'Risk') {
       setFilters({ risk: [], status: filters.status });
     } else if (type === 'Status') {
@@ -75,15 +80,15 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
     }
   };
 
-  const onStatusToggle = isExpanded => {
+  const onStatusToggle = (isExpanded: boolean) => {
     setStatusIsExpanded(isExpanded);
   };
 
-  const onRiskToggle = isExpanded => {
+  const onRiskToggle = (isExpanded: boolean) => {
     setRiskIsExpanded(isExpanded);
   };
 
-  const onKebabToggle = isOpen => {
+  const onKebabToggle = (isOpen: boolean) => {
     setKebabIsOpen(isOpen);
   };
 
@@ -104,7 +109,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
     <React.Fragment>
       <ToolbarItem variant="search-filter">
         <SearchInput
-          aria-label="search input example"
+          aria-label="With filters example search input"
           onChange={onInputChange}
           value={inputValue}
           onClear={() => {

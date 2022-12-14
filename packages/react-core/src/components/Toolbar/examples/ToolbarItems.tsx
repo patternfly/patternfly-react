@@ -6,7 +6,7 @@ export const ToolbarItems: React.FunctionComponent = () => {
   const items = (
     <React.Fragment>
       <ToolbarItem variant="search-filter">
-        <SearchInput aria-label="search input example" />
+        <SearchInput aria-label="Items example search input" />
       </ToolbarItem>
       <ToolbarItem>
         <Button variant="secondary">Action</Button>

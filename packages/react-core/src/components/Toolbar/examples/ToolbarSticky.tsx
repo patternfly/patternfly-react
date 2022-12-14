@@ -1,10 +1,10 @@
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@patternfly/react-core';
 
-export const ToolbarItems: React.FunctionComponent = () => {
+export const ToolbarSticky: React.FunctionComponent = () => {
   const [isSticky, setIsSticky] = React.useState(true);
   const [showEvenOnly, setShowEvenOnly] = React.useState(true);
-  const array = Array.from(Array(30), (_, x) => x);
+  const array = Array.from(Array(30), (_, x) => x); // create array of numbers from 1-30 for demo purposes
   const numbers = showEvenOnly ? array.filter(number => number % 2 === 0) : array;
 
   return (
@@ -13,14 +13,13 @@ export const ToolbarItems: React.FunctionComponent = () => {
         <Toolbar id="toolbar-sticky" inset={{ default: 'insetNone' }} isSticky={isSticky}>
           <ToolbarContent>
             <ToolbarItem>
-              <SearchInput aria-label="search input example" />
+              <SearchInput aria-label="Sticky example search input" />
             </ToolbarItem>
             <ToolbarItem>
               <Checkbox
                 label="Show only even number items"
                 isChecked={showEvenOnly}
                 onChange={setShowEvenOnly}
-                aria-label="checkbox for showing only even numbers"
                 id="showOnlyEvenCheckbox"
               />
             </ToolbarItem>
@@ -32,13 +31,7 @@ export const ToolbarItems: React.FunctionComponent = () => {
           ))}
         </ul>
       </div>
-      <Checkbox
-        label="Is toolbar sticky"
-        isChecked={isSticky}
-        onChange={setIsSticky}
-        aria-label="checkbox for is sticky"
-        id="isStickyCheckbox"
-      />
+      <Checkbox label="Is toolbar sticky" isChecked={isSticky} onChange={setIsSticky} id="isStickyCheckbox" />
     </React.Fragment>
   );
 };
