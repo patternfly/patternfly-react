@@ -23,7 +23,7 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
   };
 
   const onFocus = () => {
-    const element = document.getElementById('toggle-split-button-text');
+    const element = document.getElementById('toggle-split-button-progress-text');
     element.focus();
   };
 
