@@ -44,17 +44,15 @@ test('Renders with custom class name on the containing li element when className
     expect(screen.getByRole('listitem')).toHaveClass(`pf-m-${variant}`);
   });
 
-  if (variant !== 'pending') {
-    test(`Does not render with ${variant} variant icon by default`, () => {
-      render(<ProgressStep>Test</ProgressStep>);
-      expect(screen.queryByText(`${capitalize(variant)} icon mock`)).not.toBeInTheDocument();
-    });
+  test(`Does not render with ${variant} variant icon by default`, () => {
+    render(<ProgressStep>Test</ProgressStep>);
+    expect(screen.queryByText(`${capitalize(variant)} icon mock`)).not.toBeInTheDocument();
+  });
 
-    test(`Renders with ${variant} variant icon when variant = ${variant}`, () => {
-      render(<ProgressStep variant={`${variant as ProgressStepVariant}`}>Test</ProgressStep>);
-      expect(screen.getByText(`${capitalize(variant)} icon mock`)).toBeVisible();
-    });
-  }
+  test(`Renders with ${variant} variant icon when variant = ${variant}`, () => {
+    render(<ProgressStep variant={`${variant as ProgressStepVariant}`}>Test</ProgressStep>);
+    expect(screen.getByText(`${capitalize(variant)} icon mock`)).toBeVisible();
+  });
 });
 
 test('Renders the element passed via the icon prop', () => {
@@ -129,7 +127,7 @@ test('Renders with class pf-m-help-text when popoverRender is defined', () => {
 
 test('Does not renders with aria-labelledBy by default on Component element', () => {
   render(<ProgressStep>Test</ProgressStep>);
-  expect(screen.getByText('Test')).not.toHaveAttribute('aria-labelledby');
+  expect(screen.getByText('Test')).not.toHaveAccessibleName();
 });
 
 test('Renders with aria-labelledBy on Component element when id and titleId are defined', () => {
@@ -138,7 +136,7 @@ test('Renders with aria-labelledBy on Component element when id and titleId are 
       Test
     </ProgressStep>
   );
-  expect(screen.getByText('Test')).toHaveAttribute('aria-labelledby', 'test-id title-id');
+  expect(screen.getByText('Test')).toHaveAccessibleName('Test');
 });
 
 test('Renders with popoverRender element', () => {
