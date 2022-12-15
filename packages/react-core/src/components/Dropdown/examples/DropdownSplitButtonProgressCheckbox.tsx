@@ -81,7 +81,7 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
                 isChecked={isChecked1}
                 isInProgress={isChecked1}
                 isDisabled={isChecked1}
-                id="split-button-progress-checkbox"
+                id="split-button-progress-toggle-checkbox"
                 key="split-progress-checkbox"
                 aria-label="Select all"
               />
