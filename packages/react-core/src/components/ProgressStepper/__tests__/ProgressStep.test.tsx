@@ -102,11 +102,6 @@ test('Renders the description element inside div element with class pf-c-progres
   expect(screen.getByText('Description')).toHaveClass('pf-c-progress-stepper__step-description');
 });
 
-test('Does not render with aria-labelledby attribute by default', () => {
-  render(<ProgressStep>Test</ProgressStep>);
-  expect(screen.getByText('Test')).not.toHaveAttribute('aria-labelledby');
-});
-
 test('Renders children inside class pf-c-progress-stepper__step-title', () => {
   render(<ProgressStep>Test</ProgressStep>);
   expect(screen.getByText('Test')).toHaveClass('pf-c-progress-stepper__step-title');
