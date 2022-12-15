@@ -23,7 +23,7 @@ The `hasSelectableNodes` modifier will separate the expansion and selection beha
 
 ### With search
 
-```ts file="./TreeViewSearch.tsx"
+```ts file="./TreeViewWithSearch.tsx"
 ```
 
 ### With checkboxes
