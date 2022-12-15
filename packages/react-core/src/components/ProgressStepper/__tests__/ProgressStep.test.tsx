@@ -44,15 +44,17 @@ test('Renders with custom class name on the containing li element when className
     expect(screen.getByRole('listitem')).toHaveClass(`pf-m-${variant}`);
   });
 
-  test(`Does not render with ${variant} variant icon by default`, () => {
-    render(<ProgressStep>Test</ProgressStep>);
-    expect(screen.queryByText(`${capitalize(variant)} icon mock`)).not.toBeInTheDocument();
-  });
+  if (variant !== 'pending') {
+    test(`Does not render with ${variant} variant icon by default`, () => {
+      render(<ProgressStep>Test</ProgressStep>);
+      expect(screen.queryByText(`${capitalize(variant)} icon mock`)).not.toBeInTheDocument();
+    });
 
-  test(`Renders with ${variant} variant icon when variant = ${variant}`, () => {
-    render(<ProgressStep variant={`${variant as ProgressStepVariant}`}>Test</ProgressStep>);
-    expect(screen.getByText(`${capitalize(variant)} icon mock`)).toBeVisible();
-  });
+    test(`Renders with ${variant} variant icon when variant = ${variant}`, () => {
+      render(<ProgressStep variant={`${variant as ProgressStepVariant}`}>Test</ProgressStep>);
+      expect(screen.getByText(`${capitalize(variant)} icon mock`)).toBeVisible();
+    });
+  }
 });
 
 test('Renders the element passed via the icon prop', () => {
