@@ -99,3 +99,38 @@ describe('MultipleFileUploadStatusItem', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
+
+test('does not render helper text by default', () => {
+  const testFile = new File(['foo'], 'testFile.txt');
+  render(
+    <MultipleFileUploadStatusItem
+      file={testFile}
+      buttonAriaLabel="buttonAriaLabel"
+      progressAriaLabel="progressAriaLabel"
+      progressAriaLabelledBy="progressAriaLabelledBy"
+      progressId="test-progress-id"
+    />
+  );
+
+  const helperText = screen.queryByText('Test helper text');
+
+  expect(helperText).not.toBeInTheDocument();
+});
+
+test('renders helper text', () => {
+  const testFile = new File(['foo'], 'testFile.txt');
+  render(
+    <MultipleFileUploadStatusItem
+      file={testFile}
+      buttonAriaLabel="buttonAriaLabel"
+      progressAriaLabel="progressAriaLabel"
+      progressAriaLabelledBy="progressAriaLabelledBy"
+      progressId="test-progress-id"
+      progressHelperText="Test helper text"
+    />
+  );
+
+  const helperText = screen.getByText('Test helper text');
+
+  expect(helperText).toBeVisible();
+});

@@ -117,6 +117,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   placeholder?: string;
   /** Accessible label for the button to navigate to previous result. */
   previousNavigationButtonAriaLabel?: string;
+  /** z-index of the advanced search form when appendTo is not inline. */
+  zIndex?: number;
   /** Label for the button which resets the advanced search form and clears the search input. */
   resetButtonLabel?: string;
   /** The number of search results returned. Either a total number of results,
@@ -157,6 +159,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   submitSearchButtonLabel = 'Search',
   isDisabled = false,
   appendTo,
+  zIndex = 9999,
   type = 'text',
   ...props
 }: SearchInputProps) => {
@@ -223,13 +226,36 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     setIsSearchMenuOpen(false);
   };
 
+  const splitStringExceptInQuotes = (str: string) => {
+    let quoteType: string;
+
+    return str.match(/\\?.|^$/g).reduce(
+      (p: any, c: string) => {
+        if (c === "'" || c === '"') {
+          if (!quoteType) {
+            quoteType = c;
+          }
+          if (c === quoteType) {
+            p.quote = !p.quote;
+          }
+        } else if (!p.quote && c === ' ') {
+          p.a.push('');
+        } else {
+          p.a[p.a.length - 1] += c.replace(/\\(.)/, '$1');
+        }
+        return p;
+      },
+      { a: [''] }
+    ).a;
+  };
+
   const getAttrValueMap = () => {
     const attrValue: { [key: string]: string } = {};
-    const pairs = searchValue.split(' ');
-    pairs.map(pair => {
+    const pairs = splitStringExceptInQuotes(searchValue);
+    pairs.map((pair: string) => {
       const splitPair = pair.split(advancedSearchDelimiter);
       if (splitPair.length === 2) {
-        attrValue[splitPair[0]] = splitPair[1];
+        attrValue[splitPair[0]] = splitPair[1].replace(/(^'|'$)/g, '');
       } else if (splitPair.length === 1) {
         attrValue.haswords = attrValue.hasOwnProperty('haswords')
           ? `${attrValue.haswords} ${splitPair[0]}`
@@ -412,6 +438,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             isVisible={isSearchMenuOpen}
             enableFlip={true}
             appendTo={() => appendTo || searchInputRef.current}
+            zIndex={zIndex}
           />
         </div>
       );

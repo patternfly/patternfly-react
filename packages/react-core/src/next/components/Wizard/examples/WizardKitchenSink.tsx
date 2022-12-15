@@ -123,11 +123,11 @@ const CustomStepThreeFooter = () => {
 
   return (
     <WizardFooterWrapper>
-      <Button variant="secondary" onClick={onBack} isDisabled={isLoading}>
-        Back
-      </Button>
       <Button variant="primary" onClick={() => onNext(goToNextStep)} isLoading={isLoading} isDisabled={isLoading}>
         Async Next
+      </Button>
+      <Button variant="secondary" onClick={onBack} isDisabled={isLoading}>
+        Back
       </Button>
       <Button variant="link" onClick={onClose} isDisabled={isLoading}>
         Cancel
@@ -161,6 +161,16 @@ const StepContentWithActions = () => {
 
 export const WizardKitchenSink: React.FunctionComponent = () => {
   const onNext: WizardNavStepFunction = (_currentStep: WizardNavStepData, _previousStep: WizardNavStepData) => {};
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+
+  async function onSubmit(): Promise<void> {
+    setIsSubmitting(true);
+
+    await new Promise(resolve => setTimeout(resolve, 5000));
+
+    setIsSubmitting(false);
+    alert('50 points to Gryffindor!');
+  }
 
   return (
     <SomeContextProvider>
@@ -207,8 +217,17 @@ export const WizardKitchenSink: React.FunctionComponent = () => {
           >
             Step 3 content w/ custom async footer
           </WizardStep>
-          <WizardStep id={StepId.ReviewStep} name="Review" footer={{ nextButtonText: 'Submit' }}>
-            Review step content
+          <WizardStep
+            id={StepId.ReviewStep}
+            name="Review"
+            footer={{
+              nextButtonText: 'Submit',
+              onNext: onSubmit,
+              isNextDisabled: isSubmitting,
+              isBackDisabled: isSubmitting
+            }}
+          >
+            {isSubmitting ? 'Calculating wizard score...' : 'Review step content'}
           </WizardStep>
         </Wizard>
       )}

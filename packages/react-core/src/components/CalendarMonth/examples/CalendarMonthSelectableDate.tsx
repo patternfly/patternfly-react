@@ -1,5 +1,5 @@
 import React from 'react';
-import { CalendarMonth } from '@patternfly/react-core';
+import { CalendarMonth, Title, CalendarMonthInlineProps } from '@patternfly/react-core';
 
 export const CalendarMonthSelectableDate: React.FunctionComponent = () => {
   const [date, setDate] = React.useState(new Date(2020, 10, 24));
@@ -9,10 +9,20 @@ export const CalendarMonthSelectableDate: React.FunctionComponent = () => {
     console.log(`updated month: ${newDate.getMonth()}, updated year: ${newDate.getFullYear()}`);
   };
 
+  const inlineProps: CalendarMonthInlineProps = {
+    component: 'article',
+    title: (
+      <Title headingLevel="h4" id="favorite-date">
+        Select your favorite date
+      </Title>
+    ),
+    ariaLabelledby: 'favorite-date'
+  };
+
   return (
-    <React.Fragment>
+    <>
+      <CalendarMonth date={date} onChange={setDate} onMonthChange={onMonthChange} inlineProps={inlineProps} />
       <pre>Selected date: {date.toString()}</pre>
-      <CalendarMonth date={date} onChange={setDate} onMonthChange={onMonthChange} />
-    </React.Fragment>
+    </>
   );
 };

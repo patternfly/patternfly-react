@@ -49,3 +49,8 @@ By not passing `itemCount` and passing `toggleTemplate` you can customize the to
 
 ```ts isFullscreen file="./PaginationSticky.tsx"
 ```
+
+### Inset
+
+```ts file="./PaginationInset.tsx" isBeta
+```

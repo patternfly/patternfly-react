@@ -61,6 +61,8 @@ export interface ContextSelectorProps extends OUIAProps {
   isFlipEnabled?: boolean;
   /** Id of the context selector */
   id?: string;
+  /** z-index of the context selector when menuAppendTo is not inline. */
+  zIndex?: number;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -88,7 +90,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     footer: null as React.ReactNode,
     isPlain: false,
     isText: false,
-    isFlipEnabled: true
+    isFlipEnabled: true,
+    zIndex: 9999
   };
   constructor(props: ContextSelectorProps) {
     super(props);
@@ -124,6 +127,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       disableFocusTrap,
       isFlipEnabled,
       id,
+      zIndex,
       ...props
     } = this.props;
 
@@ -212,6 +216,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
         popper={popperContainer}
         appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
         isVisible={isOpen}
+        zIndex={zIndex}
       />
     );
   }

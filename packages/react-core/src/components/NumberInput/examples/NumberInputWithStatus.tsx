@@ -9,22 +9,21 @@ export const NumberInputWithStatus: React.FunctionComponent = () => {
   const [value, setValue] = React.useReducer((state, newVal) => Math.max(min, Math.min(max, Number(newVal))), 5);
 
   const onPlus = () => {
-    const newVal = value + 1;
+    const newVal = (value || 0) + 1;
     setValue(newVal);
     validate(newVal);
   };
 
   const onMinus = () => {
-    const newVal = value - 1;
+    const newVal = (value || 0) - 1;
     setValue(newVal);
     validate(newVal);
   };
 
   const onChange = (event: React.FormEvent<HTMLInputElement>) => {
-    const target = event.target as HTMLInputElement;
-    const newVal = isNaN(+target.value) ? 5 : Number(target.value);
-    setValue(newVal);
-    validate(newVal);
+    const value = (event.target as HTMLInputElement).value;
+    setValue(value === '' ? value : +value);
+    validate(value);
   };
 
   const validate = newVal => {

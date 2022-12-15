@@ -175,6 +175,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         <span className={css(styles.buttonProgress)}>
           <Spinner
             size={spinnerSize.md}
+            isInline={isInline}
             aria-valuetext={spinnerAriaValueText}
             aria-label={spinnerAriaLabel}
             aria-labelledby={spinnerAriaLabelledBy}

@@ -1369,14 +1369,12 @@ class PrimaryDetailCardView extends React.Component {
                 aria-label={anySelected ? 'Deselect all' : 'Select all'}
                 isChecked={areAllSelected}
                 onClick={this.splitCheckboxSelectAll}
-              ></DropdownToggleCheckbox>
+              >
+                {numSelected !== 0 && `${numSelected} selected`}
+              </DropdownToggleCheckbox>
             ]}
             onToggle={this.onSplitButtonToggle}
-          >
-            {numSelected !== 0 && (
-              <React.Fragment>{allSelected ? this.state.totalItemCount : numSelected} selected</React.Fragment>
-            )}
-          </DropdownToggle>
+          ></DropdownToggle>
         }
         isOpen={splitButtonDropdownIsOpen}
         dropdownItems={splitButtonDropdownItems}

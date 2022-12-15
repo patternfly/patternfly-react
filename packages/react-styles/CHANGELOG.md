@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.92.3 (2022-12-08)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.92.2 (2022-12-07)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.92.1 (2022-12-01)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# 4.92.0 (2022-11-16)
+
+
+### Features
+
+* **Tabs:** add TabAction, update core ver ([#8348](https://github.com/patternfly/patternfly-react/issues/8348)) ([8c584b4](https://github.com/patternfly/patternfly-react/commit/8c584b48f8e545cf226f785b873ee11eda505724))
+
+
+
+
+
 ## 4.91.10 (2022-10-27)
 
 **Note:** Version bump only for package @patternfly/react-styles

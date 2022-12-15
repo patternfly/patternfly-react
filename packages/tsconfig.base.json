@@ -25,6 +25,7 @@
   "exclude": [
     "**/**.test.tsx",
     "**/**.test.ts",
-    "**/examples/**"
+    "**/examples/**",
+    "**/__mocks__/**"
   ]
 }

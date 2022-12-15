@@ -10,7 +10,7 @@ import {
   Popper,
   Tooltip,
   Divider,
-  TextInput
+  SearchInput
 } from '@patternfly/react-core';
 import { Link } from '@reach/router';
 import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
@@ -250,12 +250,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
     // eslint-disable-next-line no-console
     <Menu ref={menuRef} onActionClick={onFavorite} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
       <MenuInput>
-        <TextInput
-          aria-label="Filter menu items"
-          iconVariant="search"
-          type="search"
-          onChange={value => onTextChange(value)}
-        />
+        <SearchInput aria-label="Filter menu items" type="search" onChange={value => onTextChange(value)} />
       </MenuInput>
       <Divider />
       <MenuContent>

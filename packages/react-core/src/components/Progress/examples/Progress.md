@@ -74,3 +74,7 @@ propComponents: ['Progress']
 ### Title outside of progress bar
 ```ts file="./ProgressTitleOutsideOfProgressBar.tsx"
 ```
+
+### Helper text
+```ts file="./ProgressHelperText.tsx" isBeta
+```
