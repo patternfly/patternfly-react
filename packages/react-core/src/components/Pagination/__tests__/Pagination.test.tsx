@@ -116,9 +116,9 @@ describe('Pagination', () => {
     });
 
     test('should not update generated options menu id on rerenders', () => {
-      const { rerender } = render(<Pagination titles={{optionsToggle: "test label"}} perPageComponent="button" itemCount={20}/>);
+      const { rerender } = render(<Pagination titles={{optionsToggleAriaLabel: "test label"}} itemCount={20}/>);
       const id = screen.getByLabelText("test label").getAttribute("id");
-      rerender(<Pagination titles={{optionsToggle: "test label"}}  perPageComponent="button" itemCount={20} />);
+      rerender(<Pagination titles={{optionsToggleAriaLabel: "test label"}} itemCount={20} />);
       expect(screen.getByLabelText("test label")).toHaveAttribute("id", id);
     });
 

@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { Button } from '../Button';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface TabActionProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'ref' | 'type'>, OUIAProps {
+export interface TabActionProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'ref' | 'type' | 'size'>, OUIAProps {
   /** Content rendered in the tab action */
   children?: React.ReactNode;
   /** Additional classes added to the tab action span */
