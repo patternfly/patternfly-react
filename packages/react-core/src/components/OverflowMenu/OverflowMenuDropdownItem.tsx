@@ -22,4 +22,4 @@ export const OverflowMenuDropdownItem: React.FunctionComponent<OverflowMenuDropd
     }
   </OverflowMenuContext.Consumer>
 );
-OverflowMenuDropdownItem.displayName = 'OverflowMenuItem';
+OverflowMenuDropdownItem.displayName = 'OverflowMenuDropdownItem';

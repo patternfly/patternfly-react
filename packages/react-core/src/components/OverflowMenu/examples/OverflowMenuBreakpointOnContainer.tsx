@@ -89,7 +89,7 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
               toggle={toggleRef => (
                 <MenuToggle
                   ref={toggleRef}
-                  aria-label="kebab dropdown toggle"
+                  aria-label="Breakpoint on container example overflow menu"
                   variant="plain"
                   onClick={onToggle}
                   isExpanded={isOpen}

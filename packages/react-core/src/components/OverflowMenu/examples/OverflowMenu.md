@@ -90,7 +90,7 @@ class SimpleOverflowMenu extends React.Component {
             toggle={toggleRef => (
               <MenuToggle
                 ref={toggleRef}
-                aria-label="kebab dropdown toggle"
+                aria-label="Simple example overflow menu"
                 variant="plain"
                 onClick={this.onToggle}
                 isExpanded={isOpen}
@@ -222,7 +222,7 @@ class OverflowMenuGroupTypes extends React.Component {
             toggle={toggleRef => (
               <MenuToggle
                 ref={toggleRef}
-                aria-label="kebab dropdown toggle"
+                aria-label="Group example overflow menu"
                 variant="plain"
                 onClick={this.onToggle}
                 isExpanded={isOpen}
@@ -341,7 +341,7 @@ class OverflowMenuAdditionalOptions extends React.Component {
             toggle={toggleRef => (
               <MenuToggle
                 ref={toggleRef}
-                aria-label="kebab dropdown toggle"
+                aria-label="Multiple group example overflow menu"
                 variant="plain"
                 onClick={this.onToggle}
                 isExpanded={isOpen}
@@ -428,7 +428,7 @@ class OverflowMenuPersist extends React.Component {
             toggle={toggleRef => (
               <MenuToggle
                 ref={toggleRef}
-                aria-label="kebab dropdown toggle"
+                aria-label="Persistent example overflow menu"
                 variant="plain"
                 onClick={this.onToggle}
                 isExpanded={isOpen}
