@@ -14,6 +14,9 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
   const [isChecked1, setIsChecked1] = React.useState(false);
   const [isChecked2, setIsChecked2] = React.useState(false);
 
+  const [isTimedOut1, setIsTimedOut1] = React.useState(false);
+  const [isTimedOut2, setIsTimedOut2] = React.useState(false);
+
   const onToggle1 = (isOpen: boolean) => {
     setIsOpen1(isOpen);
   };
@@ -29,10 +32,12 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
 
   const onChange1 = (checked: boolean) => {
     setIsChecked1(checked);
+    checked ? setTimeout(() => setIsTimedOut1(true), 3000) : setIsTimedOut1(false);
   };
 
   const onChange2 = (checked: boolean) => {
     setIsChecked2(checked);
+    checked ? setTimeout(() => setIsTimedOut2(true), 3000) : setIsTimedOut2(false);
   };
 
   const onSelect1 = () => {
@@ -79,8 +84,7 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
               <DropdownToggleCheckbox
                 onChange={onChange1}
                 isChecked={isChecked1}
-                isInProgress={isChecked1}
-                isDisabled={isChecked1}
+                isInProgress={isChecked1 && !isTimedOut1}
                 id="split-button-progress-toggle-checkbox"
                 key="split-progress-checkbox"
                 aria-label="Select all"
@@ -101,8 +105,7 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
               <DropdownToggleCheckbox
                 onChange={onChange2}
                 isChecked={isChecked2}
-                isInProgress={isChecked2}
-                isDisabled={isChecked2}
+                isInProgress={isChecked2 && !isTimedOut2}
                 id="split-button-progress-text-checkbox"
                 key="split-progress-checkbox"
                 aria-label="Select all"
