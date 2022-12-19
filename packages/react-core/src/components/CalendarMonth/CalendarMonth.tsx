@@ -20,6 +20,15 @@ export enum Weekday {
   Saturday
 }
 
+export interface CalendarMonthInlineProps {
+  /** Component wrapping the calendar month when used inline. Recommended to be 'article'. */
+  component?: keyof JSX.IntrinsicElements;
+  /** Title of the calendar rendered above the inline calendar month. Recommended to be a 'title' component. */
+  title?: React.ReactNode;
+  /** Id of the accessible label of the calendar month. Recommended to map to the title. */
+  ariaLabelledby?: string;
+}
+
 /** Additional properties that extend from and can be passed to the main component. These
  * properties allow customizing the calendar formatting and aria-labels.
  */
@@ -49,6 +58,8 @@ export interface CalendarFormat {
   weekStart?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | Weekday;
   /** Accessible label for the year input. */
   yearInputAriaLabel?: string;
+  /** Props used to ensure accessibility when displaying the calendar month inline. */
+  inlineProps?: CalendarMonthInlineProps;
 }
 
 export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
@@ -133,6 +144,7 @@ export const CalendarMonth = ({
   yearInputAriaLabel = 'Select year',
   cellAriaLabel,
   isDateFocused = false,
+  inlineProps,
   ...props
 }: CalendarProps) => {
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(monthNum => new Date(1990, monthNum)).map(monthFormat);
@@ -232,7 +244,8 @@ export const CalendarMonth = ({
   const isHoveredDateValid = isValidated(hoveredDate);
   const monthFormatted = monthFormat(focusedDate);
   const yearFormatted = yearFormat(focusedDate);
-  return (
+
+  const calendarToRender = (
     <div className={css(styles.calendarMonth, className)} {...props}>
       <div className={styles.calendarMonthHeader}>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.prevMonth)}>
@@ -386,4 +399,16 @@ export const CalendarMonth = ({
       </table>
     </div>
   );
+
+  if (inlineProps !== undefined) {
+    const Component = (inlineProps.component ? inlineProps.component : 'article') as any;
+    return (
+      <Component {...(inlineProps.ariaLabelledby && { 'aria-labelledby': inlineProps.ariaLabelledby })}>
+        {inlineProps.title}
+        {calendarToRender}
+      </Component>
+    );
+  }
+  return calendarToRender;
 };
+CalendarMonth.displayName = 'CalendarMonth';

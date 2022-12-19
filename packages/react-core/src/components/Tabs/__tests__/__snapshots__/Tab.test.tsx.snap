@@ -1,5 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders tab action 1`] = `
+<DocumentFragment>
+  <li
+    class="pf-c-tabs__item pf-m-action"
+    role="presentation"
+  >
+    <button
+      aria-controls="pf-tab-section-1-"
+      aria-selected="false"
+      class="pf-c-tabs__link"
+      data-ouia-component-type="PF4/TabButton"
+      data-ouia-safe="true"
+      id="pf-tab-1-"
+      role="tab"
+      type="button"
+    >
+      <span
+        class="pf-c-tabs__item-text"
+      >
+        "Tab item 2"
+      </span>
+    </button>
+    <span
+      class="pf-c-tabs__item-action"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Tab action"
+        class="pf-c-button pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Button-plain-1"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-tabs__item-action-icon"
+        >
+          test
+        </span>
+      </button>
+    </span>
+  </li>
+</DocumentFragment>
+`;
+
 exports[`should not render anything 1`] = `
 <DocumentFragment>
   <li

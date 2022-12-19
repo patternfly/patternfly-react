@@ -34,6 +34,8 @@ export enum WizardNavItemStatus {
 export interface WizardParentStep extends WizardBasicStep {
   /** Nested step IDs */
   subStepIds: (string | number)[];
+  /** Flag to determine whether sub-steps can collapse or not */
+  isCollapsible?: boolean;
 }
 
 /** Type used to define sub-steps. */
@@ -46,7 +48,10 @@ export interface WizardSubStep extends WizardBasicStep {
 export type WizardControlStep = WizardBasicStep | WizardParentStep | WizardSubStep;
 
 /** Callback for the Wizard's 'onNext', 'onBack', and 'onNavByIndex' properties. */
-export type WizardNavStepFunction = (currentStep: WizardNavStepData, previousStep: WizardNavStepData) => void;
+export type WizardNavStepFunction = (
+  currentStep: WizardNavStepData,
+  previousStep: WizardNavStepData
+) => void | Promise<void>;
 
 /** Data returned for either parameter of WizardNavStepFunction. */
 export interface WizardNavStepData {
@@ -81,9 +86,9 @@ export type CustomWizardNavItemFunction = (
 /** Callback for the Wizard's 'footer' property. Returns element which replaces the Wizard's default footer. */
 export type CustomWizardFooterFunction = (
   activeStep: WizardControlStep,
-  onNext: () => void,
-  onBack: () => void,
-  onClose: () => void
+  onNext: () => void | Promise<void>,
+  onBack: () => void | Promise<void>,
+  onClose: () => void | Promise<void>
 ) => React.ReactElement<WizardFooterProps>;
 
 export function isCustomWizardNav(nav: WizardNavType): nav is CustomWizardNavFunction | React.ReactElement {

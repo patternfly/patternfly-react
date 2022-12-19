@@ -38,9 +38,9 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 ```ts file="./MenuWithCheckbox.tsx"
 ```
 
-### Filtering with text input
+### Filtering with search input
 
-```ts file="MenuFilteringWithTextInput.tsx"
+```ts file="MenuFilteringWithSearchInput.tsx"
 ```
 
 ### With links
@@ -103,6 +103,11 @@ To render an initially drilled in menu, the `menuDrilledIn`, `drilldownPath`, an
 ### With drilldown breadcrumbs
 
 ```ts file="MenuWithDrilldownBreadcrumbs.tsx" isBeta
+```
+
+### With drilldown and inline filter
+
+```ts file="MenuFilterDrilldown.tsx"
 ```
 
 ### Scrollable

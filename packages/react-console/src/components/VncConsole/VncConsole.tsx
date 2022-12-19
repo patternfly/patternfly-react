@@ -92,28 +92,53 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
   textCtrlAltDel
 }) => {
   const rfb = React.useRef<any>();
-  let novncStaticComponent: React.ReactNode;
-  let novncElem: HTMLDivElement;
 
+  const novncElem = React.useRef<HTMLDivElement>(null);
   const [status, setStatus] = React.useState(CONNECTING);
 
-  const addEventListeners = () => {
+  const onConnected = () => {
+    setStatus(CONNECTED);
+  };
+
+  const _onDisconnected = React.useCallback(
+    (e: any) => {
+      setStatus(DISCONNECTED);
+      onDisconnected(e);
+    },
+    [onDisconnected]
+  );
+
+  const _onSecurityFailure = React.useCallback(
+    (e: any) => {
+      setStatus(DISCONNECTED);
+      onSecurityFailure(e);
+    },
+    [onSecurityFailure]
+  );
+
+  const onCtrlAltDel = () => {
+    if (rfb.current) {
+      rfb?.current?.sendCtrlAltDel();
+    }
+  };
+
+  const addEventListeners = React.useCallback(() => {
     if (rfb.current) {
       rfb.current?.addEventListener('connect', onConnected);
       rfb.current?.addEventListener('disconnect', _onDisconnected);
       rfb.current?.addEventListener('securityfailure', _onSecurityFailure);
     }
-  };
+  }, [rfb, _onDisconnected, _onSecurityFailure]);
 
-  const removeEventListeners = () => {
+  const removeEventListeners = React.useCallback(() => {
     if (rfb.current) {
       rfb.current.removeEventListener('connect', onConnected);
       rfb.current.removeEventListener('disconnect', _onDisconnected);
       rfb.current.removeEventListener('securityfailure', _onSecurityFailure);
     }
-  };
+  }, [rfb, _onDisconnected, _onSecurityFailure]);
 
-  const connect = () => {
+  const connect = React.useCallback(() => {
     const protocol = encrypt ? 'wss' : 'ws';
     const url = `${protocol}://${host}:${port}/${path}`;
 
@@ -122,12 +147,25 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
       shared,
       credentials
     };
-    rfb.current = new RFB(novncElem, url, options);
+    rfb.current = new RFB(novncElem.current, url, options);
     addEventListeners();
     rfb.current.viewOnly = viewOnly;
     rfb.current.scaleViewport = scaleViewport;
     rfb.current.resizeSession = resizeSession;
-  };
+  }, [
+    addEventListeners,
+    host,
+    path,
+    port,
+    resizeSession,
+    scaleViewport,
+    viewOnly,
+    encrypt,
+    rfb,
+    repeaterID,
+    shared,
+    credentials
+  ]);
 
   React.useEffect(() => {
     initLogging(vncLogging);
@@ -150,26 +188,6 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
       return;
     }
     rfb.current.disconnect();
-  };
-
-  const onConnected = () => {
-    setStatus(CONNECTED);
-  };
-
-  const _onDisconnected = (e: any) => {
-    setStatus(DISCONNECTED);
-    onDisconnected(e);
-  };
-
-  const _onSecurityFailure = (e: any) => {
-    setStatus(DISCONNECTED);
-    onSecurityFailure(e);
-  };
-
-  const onCtrlAltDel = () => {
-    if (rfb.current) {
-      rfb?.current?.sendCtrlAltDel();
-    }
   };
 
   let rightContent;
@@ -207,10 +225,6 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
       );
   }
 
-  if (!novncStaticComponent) {
-    novncStaticComponent = <div id={consoleContainerId} ref={e => (novncElem = e)} />;
-  }
-
   return (
     <>
       {rightContent}
@@ -219,7 +233,7 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
         <React.Fragment>
           <div>
             {emptyState}
-            {novncStaticComponent}
+            <div id={consoleContainerId} ref={novncElem} />
           </div>
         </React.Fragment>
       </div>

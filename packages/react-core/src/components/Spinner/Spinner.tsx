@@ -20,6 +20,8 @@ export interface SpinnerProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'si
   isSVG?: boolean;
   /** Diameter of spinner set as CSS variable */
   diameter?: string;
+  /** @beta Indicates the spinner is inline and the size should inherit the text font size. This will override the size prop. */
+  isInline?: boolean;
   /** Accessible label to describe what is loading */
   'aria-label'?: string;
   /** Id of element which describes what is being loaded */
@@ -33,6 +35,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   'aria-valuetext': ariaValueText = 'Loading...',
   isSVG = true,
   diameter,
+  isInline = false,
   'aria-label': ariaLabel,
   'aria-labelledBy': ariaLabelledBy,
   ...props
@@ -41,7 +44,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
 
   return (
     <Component
-      className={css(styles.spinner, styles.modifiers[size], className)}
+      className={css(styles.spinner, isInline ? styles.modifiers.inline : styles.modifiers[size], className)}
       role="progressbar"
       aria-valuetext={ariaValueText}
       {...(isSVG && { viewBox: '0 0 100 100' })}

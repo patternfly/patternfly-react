@@ -26,8 +26,6 @@ import {
   OverflowMenuItem,
   PageSection,
   PageSectionVariants,
-  Pagination,
-  PaginationVariant,
   Progress,
   ProgressSize,
   Select,
@@ -70,13 +68,6 @@ interface Repository {
 }
 
 export const TablesAndTabs = () => {
-  // tab properties
-  const [activeTabKey, setActiveTabKey] = React.useState<number>(0);
-  // Toggle currently active tab
-  const handleTabClick = (tabIndex: number) => {
-    setActiveTabKey(tabIndex);
-  };
-
   // secondary tab properties
   const [secondaryActiveTabKey, setSecondaryActiveTabKey] = React.useState<number>(10);
   const handleSecondaryTabClick = (tabIndex: number) => {
@@ -84,7 +75,7 @@ export const TablesAndTabs = () => {
   };
 
   // drawer properties
-  const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = React.useState<boolean>(true);
 
   // table properties
   // In real usage, this data would come from some external source like an API via props.
@@ -116,7 +107,7 @@ export const TablesAndTabs = () => {
   const allRowsSelected = selectedRepoNames.length === repositories.length;
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
-  const [rowClicked, setRowClicked] = React.useState<string>(null);
+  const [rowClicked, setRowClicked] = React.useState<string>('Node 1');
   const isRowClicked = (repo: Repository) => rowClicked === repo.name;
 
   const defaultActions: IAction[] = [
@@ -204,15 +195,6 @@ export const TablesAndTabs = () => {
             />
           </OverflowMenuControl>
         </OverflowMenu>
-        <ToolbarItem variant="pagination">
-          <Pagination
-            itemCount={36}
-            widgetId="pagination-options-menu-bottom"
-            page={1}
-            variant={PaginationVariant.top}
-            isCompact
-          />
-        </ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
@@ -239,8 +221,8 @@ export const TablesAndTabs = () => {
           <Tr
             key={repo.name}
             onRowClick={event => {
-              if ((event.target as HTMLInputElement).type !== 'checkbox') {
-                setRowClicked(rowClicked === repo.name ? null : repo.name);
+              if ((event?.target as HTMLInputElement).type !== 'checkbox') {
+                setRowClicked(rowClicked === repo.name ? '' : repo.name);
                 setIsExpanded(!isRowClicked(repo));
               }
             }}
@@ -301,7 +283,7 @@ export const TablesAndTabs = () => {
         <DrawerActions>
           <DrawerCloseButton
             onClick={() => {
-              setRowClicked(null);
+              setRowClicked('');
               setIsExpanded(false);
             }}
           />
@@ -383,18 +365,7 @@ export const TablesAndTabs = () => {
   const tabContent = (
     <Drawer isExpanded={isExpanded} isInline>
       <DrawerContent panelContent={panelContent}>
-        <DrawerContentBody>
-          {toolbar}
-          <Divider />
-          {tableComposable}
-          <Pagination
-            id="page-layout-table-column-management-action-toolbar-bottom"
-            itemCount={36}
-            widgetId="pagination-options-menu-bottom"
-            page={1}
-            variant={PaginationVariant.bottom}
-          />
-        </DrawerContentBody>
+        <DrawerContentBody>{tableComposable}</DrawerContentBody>
       </DrawerContent>
     </Drawer>
   );
@@ -407,24 +378,10 @@ export const TablesAndTabs = () => {
             Nodes
           </Title>
         </PageSection>
-        <PageSection type="tabs" variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
-          <Tabs
-            activeKey={activeTabKey}
-            onSelect={(_event, tabIndex) => handleTabClick(Number(tabIndex))}
-            usePageInsets
-            id="tabs-table-tabs-list"
-          >
-            <Tab eventKey={0} title={<TabTitleText>Nodes</TabTitleText>} tabContentId={`tabContent${0}`} />
-            <Tab eventKey={1} title={<TabTitleText>Node connectors</TabTitleText>} tabContentId={`tabContent${1}`} />
-          </Tabs>
-        </PageSection>
         <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
-          <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
-            <TabContentBody>{tabContent}</TabContentBody>
-          </TabContent>
-          <TabContent key={1} eventKey={1} id={`tabContent${1}`} activeKey={activeTabKey} hidden={1 !== activeTabKey}>
-            <TabContentBody>Node connectors panel</TabContentBody>
-          </TabContent>
+          {toolbar}
+          <Divider />
+          {tabContent}
         </PageSection>
       </React.Fragment>
     </DashboardWrapper>

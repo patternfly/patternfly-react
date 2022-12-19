@@ -14,7 +14,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   styleChildren?: boolean;
   /** Additional classes added to the nav item */
   className?: string;
-  /** Target navigation link */
+  /** Target navigation link. Should not be used if the flyout prop is defined. */
   to?: string;
   /** Flag indicating whether the item is active */
   isActive?: boolean;
@@ -28,10 +28,12 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   onClick?: NavSelectClickHandler;
   /** Component used to render NavItems if  React.isValidElement(children) is false */
   component?: React.ReactNode;
-  /** Flyout of a nav item. This should be a Menu component. */
+  /** Flyout of a nav item. This should be a Menu component. Should not be used if the to prop is defined. */
   flyout?: React.ReactElement;
   /** Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
+  /** z-index of the flyout nav item */
+  zIndex?: number;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -53,6 +55,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   onShowFlyout,
   ouiaId,
   ouiaSafe,
+  zIndex = 9999,
   ...props
 }: NavItemProps) => {
   const { flyoutRef, setFlyoutRef } = React.useContext(NavContext);
@@ -62,8 +65,14 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   const ref = React.useRef<HTMLLIElement>();
   const flyoutVisible = ref === flyoutRef;
   const popperRef = React.useRef<HTMLDivElement>();
-  const Component = component as any;
   const hasFlyout = flyout !== undefined;
+  const Component = hasFlyout ? 'button' : (component as any);
+
+  // A NavItem should not be both a link and a flyout
+  if (to && hasFlyout) {
+    // eslint-disable-next-line no-console
+    console.error('NavItem cannot have both "to" and "flyout" props.');
+  }
 
   const showFlyout = (show: boolean, override?: boolean) => {
     if ((!flyoutVisible || override) && show) {
@@ -100,11 +109,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     const key = event.key;
     const target = event.target as HTMLElement;
 
-    if (!(popperRef?.current?.contains(target) || (hasFlyout && ref?.current?.contains(target)))) {
-      return;
-    }
-
-    if (key === ' ' || key === 'ArrowRight') {
+    if ((key === ' ' || key === 'Enter' || key === 'ArrowRight') && hasFlyout && ref?.current?.contains(target)) {
       event.stopPropagation();
       event.preventDefault();
       if (!flyoutVisible) {
@@ -113,7 +118,9 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       }
     }
 
-    if (key === 'Escape' || key === 'ArrowLeft') {
+    // We only want the NavItem to handle closing a flyout menu if only the first level flyout is open.
+    // Otherwise, MenuItem should handle closing its flyouts
+    if ((key === 'Escape' || key === 'ArrowLeft') && popperRef?.current?.querySelectorAll('.pf-c-menu').length === 1) {
       if (flyoutVisible) {
         event.stopPropagation();
         event.preventDefault();
@@ -159,6 +166,8 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     'aria-expanded': flyoutVisible
   };
 
+  const tabIndex = isNavOpen ? null : -1;
+
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
@@ -172,7 +181,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
           className
         )}
         aria-current={isActive ? 'page' : null}
-        tabIndex={isNavOpen ? null : '-1'}
+        tabIndex={tabIndex}
         {...(hasFlyout && { ...ariaFlyoutProps })}
         {...props}
       >
@@ -189,7 +198,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       ...(styleChildren && {
         className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className)
       }),
-      tabIndex: child.props.tabIndex || isNavOpen ? null : -1,
+      tabIndex: child.props.tabIndex || tabIndex,
       children: hasFlyout ? (
         <React.Fragment>
           {child.props.children}
@@ -221,6 +230,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       placement="right-start"
       isVisible={flyoutVisible}
       onDocumentKeyDown={handleFlyout}
+      zIndex={zIndex}
     />
   );
 

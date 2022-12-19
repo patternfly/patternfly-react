@@ -1,7 +1,7 @@
 import React from 'react';
-import { Menu, MenuList, MenuItem, MenuContent, MenuInput, TextInput, Divider } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem, MenuContent, MenuInput, Divider, SearchInput } from '@patternfly/react-core';
 
-export const MenuFilteringWithTextInput: React.FunctionComponent = () => {
+export const MenuFilteringWithSearchInput: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState(0);
   const [input, setInput] = React.useState('');
 
@@ -35,10 +35,9 @@ export const MenuFilteringWithTextInput: React.FunctionComponent = () => {
   return (
     <Menu onSelect={onSelect} activeItemId={activeItem}>
       <MenuInput>
-        <TextInput
+        <SearchInput
           value={input}
           aria-label="Filter menu items"
-          iconVariant="search"
           type="search"
           onChange={value => handleTextInputChange(value)}
         />

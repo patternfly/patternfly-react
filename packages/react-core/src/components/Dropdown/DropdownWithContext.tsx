@@ -77,6 +77,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       autoFocus,
       menuAppendTo,
       isFlipEnabled,
+      zIndex,
       ...props
     } = this.props;
     const id = toggle.props.id || `pf-dropdown-toggle-id-${DropdownWithContext.currentId++}`;
@@ -173,6 +174,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               position={position}
               appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
               isVisible={isOpen}
+              zIndex={zIndex}
               popperMatchesTriggerWidth={false}
             />
           );

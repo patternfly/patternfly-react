@@ -2,25 +2,25 @@ import React from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputVaryingSizes: React.FunctionComponent = () => {
-  const [input1Value, setInput1Value] = React.useState(1);
-  const [input2Value, setInput2Value] = React.useState(1234567890);
-  const [input3Value, setInput3Value] = React.useState(5);
-  const [input4Value, setInput4Value] = React.useState(12345);
+  const [input1Value, setInput1Value] = React.useState<number | ''>(1);
+  const [input2Value, setInput2Value] = React.useState<number | ''>(1234567890);
+  const [input3Value, setInput3Value] = React.useState<number | ''>(5);
+  const [input4Value, setInput4Value] = React.useState<number | ''>(12345);
 
   const onChange = (
     event: React.FormEvent<HTMLInputElement>,
-    updateFunction: React.Dispatch<React.SetStateAction<number>>
+    updateFunction: React.Dispatch<React.SetStateAction<number | ''>>
   ) => {
-    const target = event.target as HTMLInputElement;
-    updateFunction(Number(target.value));
+    const value = (event.target as HTMLInputElement).value;
+    updateFunction(value === '' ? value : +value);
   };
 
-  const onMinus = (value, updateFunction: React.Dispatch<React.SetStateAction<number>>) => {
-    updateFunction(value - 1);
+  const onMinus = (value: number | '', updateFunction: React.Dispatch<React.SetStateAction<number | ''>>) => {
+    updateFunction((value || 0) - 1);
   };
 
-  const onPlus = (value, updateFunction: React.Dispatch<React.SetStateAction<number>>) => {
-    updateFunction(value + 1);
+  const onPlus = (value: number | '', updateFunction: React.Dispatch<React.SetStateAction<number | ''>>) => {
+    updateFunction((value || 0) + 1);
   };
 
   return (

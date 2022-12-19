@@ -3,8 +3,9 @@ import { Pagination, PaginationVariant, Gallery, GalleryItem, Card, CardBody } f
 
 export const PaginationSticky: React.FunctionComponent = () => {
   const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(20);
+  const [perPage, setPerPage] = React.useState(100);
   const [isTopSticky, setIsTopSticky] = React.useState(true);
+  const itemCount = 523;
 
   const onToggleSticky = () => {
     setIsTopSticky(prev => !prev);
@@ -23,57 +24,48 @@ export const PaginationSticky: React.FunctionComponent = () => {
     setPage(newPage);
   };
 
-  return (
-    <div>
-      {isTopSticky && (
-        <React.Fragment>
-          <Pagination
-            itemCount={523}
-            perPage={perPage}
-            page={page}
-            onSetPage={onSetPage}
-            widgetId="sticky-example"
-            onPerPageSelect={onPerPageSelect}
-            isSticky
-          >
-            <button onClick={onToggleSticky}>Toggle to bottom position</button>
-          </Pagination>
-          <Gallery hasGutter>
-            {Array.apply(0, Array(40)).map((x, i) => (
-              <GalleryItem key={i}>
-                <Card>
-                  <CardBody>This is a card</CardBody>
-                </Card>
-              </GalleryItem>
-            ))}
-          </Gallery>
-        </React.Fragment>
-      )}
-      {!isTopSticky && (
-        <React.Fragment>
-          <Gallery hasGutter>
-            {Array.apply(0, Array(40)).map((x, i) => (
-              <GalleryItem key={i}>
-                <Card>
-                  <CardBody>This is a card</CardBody>
-                </Card>
-              </GalleryItem>
-            ))}
-          </Gallery>
-          <Pagination
-            itemCount={523}
-            perPage={perPage}
-            page={page}
-            onSetPage={onSetPage}
-            widgetId="pagination-options-menu-top"
-            onPerPageSelect={onPerPageSelect}
-            isSticky
-            variant={PaginationVariant.bottom}
-          >
-            <button onClick={onToggleSticky}>Toggle to top position</button>
-          </Pagination>
-        </React.Fragment>
-      )}
-    </div>
+  const buildCards = () => {
+    const numberOfCards = (page - 1) * perPage + perPage - 1 >= itemCount ? itemCount - (page - 1) * perPage : perPage;
+
+    return Array.apply(0, Array(numberOfCards)).map((x, i) => (
+      <GalleryItem key={i}>
+        <Card>
+          <CardBody>This is a card</CardBody>
+        </Card>
+      </GalleryItem>
+    ));
+  };
+
+  return isTopSticky ? (
+    <React.Fragment>
+      <Pagination
+        itemCount={itemCount}
+        perPage={perPage}
+        page={page}
+        onSetPage={onSetPage}
+        widgetId="pagination-options-menu-top"
+        onPerPageSelect={onPerPageSelect}
+        isSticky
+      >
+        <button onClick={onToggleSticky}>Toggle to bottom position</button>
+      </Pagination>
+      <Gallery hasGutter>{buildCards()}</Gallery>
+    </React.Fragment>
+  ) : (
+    <React.Fragment>
+      <Gallery hasGutter>{buildCards()}</Gallery>
+      <Pagination
+        itemCount={itemCount}
+        perPage={perPage}
+        page={page}
+        onSetPage={onSetPage}
+        widgetId="pagination-options-menu-top"
+        onPerPageSelect={onPerPageSelect}
+        isSticky
+        variant={PaginationVariant.bottom}
+      >
+        <button onClick={onToggleSticky}>Toggle to top position</button>
+      </Pagination>
+    </React.Fragment>
   );
 };

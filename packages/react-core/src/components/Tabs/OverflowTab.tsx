@@ -19,6 +19,8 @@ export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   defaultTitleText?: string;
   /** The aria label applied to the button which toggles the tab overflow menu */
   toggleAriaLabel?: string;
+  /** z-index of the overflow tab */
+  zIndex?: number;
 }
 
 export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
@@ -27,6 +29,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   showTabCount,
   defaultTitleText = 'More',
   toggleAriaLabel,
+  zIndex = 9999,
   ...props
 }: OverflowTabProps) => {
   const menuRef = React.useRef<HTMLDivElement>();
@@ -138,6 +141,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
         isVisible={isExpanded}
         popperMatchesTriggerWidth={false}
         appendTo={overflowLIRef.current}
+        zIndex={zIndex}
       />
     </React.Fragment>
   );

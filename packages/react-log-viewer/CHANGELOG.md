@@ -3,6 +3,214 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.87.77](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.76...@patternfly/react-log-viewer@4.87.77) (2022-12-12)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.76](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.75...@patternfly/react-log-viewer@4.87.76) (2022-12-09)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.75](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.74...@patternfly/react-log-viewer@4.87.75) (2022-12-08)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.74](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.73...@patternfly/react-log-viewer@4.87.74) (2022-12-08)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.87.73 (2022-12-08)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.87.72 (2022-12-08)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.71](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.70...@patternfly/react-log-viewer@4.87.71) (2022-12-07)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.70](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.69...@patternfly/react-log-viewer@4.87.70) (2022-12-07)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.68...@patternfly/react-log-viewer@4.87.69) (2022-12-06)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.68](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.67...@patternfly/react-log-viewer@4.87.68) (2022-12-06)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.67](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.66...@patternfly/react-log-viewer@4.87.67) (2022-12-06)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.87.66 (2022-12-06)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.65](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.64...@patternfly/react-log-viewer@4.87.65) (2022-12-05)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.87.64 (2022-12-01)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.87.63 (2022-11-30)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.62](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.61...@patternfly/react-log-viewer@4.87.62) (2022-11-16)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.61](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.60...@patternfly/react-log-viewer@4.87.61) (2022-11-15)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.60](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.59...@patternfly/react-log-viewer@4.87.60) (2022-11-15)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.59](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.58...@patternfly/react-log-viewer@4.87.59) (2022-11-09)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.58](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.57...@patternfly/react-log-viewer@4.87.58) (2022-11-09)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.57](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.56...@patternfly/react-log-viewer@4.87.57) (2022-11-08)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.56](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.55...@patternfly/react-log-viewer@4.87.56) (2022-11-07)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.54...@patternfly/react-log-viewer@4.87.55) (2022-11-07)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.54](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.53...@patternfly/react-log-viewer@4.87.54) (2022-11-07)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.87.53](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.87.52...@patternfly/react-log-viewer@4.87.53) (2022-11-04)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.87.52 (2022-11-04)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
 ## 4.87.51 (2022-11-01)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer

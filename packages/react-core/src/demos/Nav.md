@@ -1463,7 +1463,7 @@ class VerticalPage extends React.Component {
       <Menu key={depth} containsFlyout isNavFlyout id={`menu-${depth}`} onSelect={this.onMenuSelect}>
         <MenuContent>
           <MenuList>
-            <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`} to={`#menu-link-${depth}`}>
+            <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`}>
               Additional settings
             </MenuItem>
             {[...Array(numFlyouts - depth).keys()].map(j => (
@@ -1471,7 +1471,7 @@ class VerticalPage extends React.Component {
                 Settings menu {depth} item {j}
               </MenuItem>
             ))}
-            <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`} to={`#second-menu-link-${depth}`}>
+            <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`}>
               Additional settings
             </MenuItem>
           </MenuList>

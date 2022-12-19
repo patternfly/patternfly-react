@@ -183,6 +183,8 @@ export interface SelectProps
    * appended inline, e.g. `menuAppendTo="parent"`
    */
   isFlipEnabled?: boolean;
+  /** z-index of the select menu when menuAppendTo is not inline. */
+  zIndex?: number;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -263,7 +265,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isInputFilterPersisted: false,
     isCreateSelectOptionObject: false,
     shouldResetOnSelect: true,
-    isFlipEnabled: true
+    isFlipEnabled: true,
+    zIndex: 9999
   };
 
   state: SelectState = {
@@ -1029,6 +1032,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       isCreateOptionOnTop,
       shouldResetOnSelect,
       isFlipEnabled,
+      zIndex,
       ...props
     } = this.props;
     const {
@@ -1472,6 +1476,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 direction={direction}
                 appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
                 isVisible={isOpen}
+                zIndex={zIndex}
               />
             )}
           </SelectContext.Provider>

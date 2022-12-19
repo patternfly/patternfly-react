@@ -49,7 +49,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** Callback function after back button is clicked */
   onBack?: WizardNavStepFunction;
   /** Callback function to save at the end of the wizard, if not specified uses onClose */
-  onSave?: () => void;
+  onSave?: () => void | Promise<void>;
   /** Callback function to close the wizard */
   onClose?: () => void;
 }

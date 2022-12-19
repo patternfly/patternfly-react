@@ -12,10 +12,10 @@ import {
   MenuItemAction,
   MenuContent,
   MenuInput,
-  TextInput,
   MenuFooter,
   Button,
-  Spinner
+  Spinner,
+  SearchInput
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
@@ -258,10 +258,9 @@ export class MenuDemo extends Component {
         </Title>
         <Menu onSelect={this.onSimpleSelect} activeItemId={activeItem} id="filterable-menu">
           <MenuInput>
-            <TextInput
+            <SearchInput
               value={input}
               aria-label="filterable-example-with-text-input"
-              iconVariant="search"
               type="search"
               onChange={value => this.handleTextInputChange(value, 'input')}
             />

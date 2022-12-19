@@ -384,13 +384,7 @@ export class NavDemo extends Component {
               <NavItem id="flyout-link2" to="#flyout-link2" itemId={1} isActive={flyoutActiveItem === 1}>
                 Link 2
               </NavItem>
-              <NavItem
-                flyout={curFlyout}
-                id="flyout-link3"
-                to="#flyout-link3"
-                itemId={2}
-                isActive={flyoutActiveItem === 2}
-              >
+              <NavItem flyout={curFlyout} id="flyout-link3" itemId={2} isActive={flyoutActiveItem === 2}>
                 Link 3
               </NavItem>
               <NavItem id="flyout-link4" to="#flyout-link4" itemId={3} isActive={flyoutActiveItem === 3}>

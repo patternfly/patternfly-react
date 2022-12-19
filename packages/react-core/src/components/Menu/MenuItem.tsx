@@ -22,7 +22,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   className?: string;
   /** Identifies the component in the Menu onSelect or onActionClick callback */
   itemId?: any;
-  /** Target navigation link */
+  /** Target navigation link. Should not be used if the flyout prop is defined. */
   to?: string;
   /** @beta Flag indicating the item has a checkbox */
   hasCheck?: boolean;
@@ -54,7 +54,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isFocused?: boolean;
   /** Flag indicating the item is in danger state */
   isDanger?: boolean;
-  /** @beta Flyout menu */
+  /** @beta Flyout menu. Should not be used if the to prop is defined. */
   flyoutMenu?: React.ReactElement;
   /** @beta Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
@@ -202,6 +202,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
 
     if (key === ' ' || key === 'Enter' || key === 'ArrowRight' || type === 'click') {
       event.stopPropagation();
+      event.preventDefault();
       if (!flyoutVisible) {
         showFlyout(true);
         setFlyoutTarget(target as HTMLElement);

@@ -47,8 +47,8 @@ const products: Product[] = [
 ];
 
 export const ModalTabs: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [selectedProduct, setSelectedProduct] = React.useState<Product>();
+  const [isModalOpen, setIsModalOpen] = React.useState(true);
+  const [selectedProduct, setSelectedProduct] = React.useState<Product>(products[0]);
   const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
 
   const onCardClick = React.useCallback(
@@ -114,7 +114,7 @@ export const ModalTabs: React.FunctionComponent = () => {
         <Modal variant={ModalVariant.small} title={selectedProduct.name} isOpen={isModalOpen} onClose={closeModal}>
           <Grid hasGutter>
             <GridItem>
-              <Tabs activeKey={activeTabKey} onSelect={onTabSelect} isSecondary>
+              <Tabs activeKey={activeTabKey} onSelect={onTabSelect} isSecondary hasSecondaryBorderBottom>
                 <Tab eventKey={0} tabContentId="details-tab" title={<TabTitleText>Details</TabTitleText>} />
                 <Tab eventKey={1} tabContentId="doc-tab" title={<TabTitleText>Documentation</TabTitleText>} />
               </Tabs>

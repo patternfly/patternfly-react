@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Matches the snapshot 1`] = `
+<DocumentFragment>
+  <p
+    class=""
+    data-ouia-component-id="ouia-id"
+    data-ouia-component-type="PF4/Text"
+    data-ouia-safe="true"
+    data-pf-content="true"
+  >
+    Test
+  </p>
+</DocumentFragment>
+`;

@@ -12,9 +12,9 @@ export interface WizardContextProps {
   /** Footer element */
   footer: React.ReactElement;
   /** Navigate to the next step */
-  onNext: () => void;
+  onNext: () => void | Promise<void>;
   /** Navigate to the previous step */
-  onBack: () => void;
+  onBack: () => void | Promise<void>;
   /** Close the wizard */
   onClose: () => void;
   /** Navigate to step by ID */

@@ -114,6 +114,18 @@ describe('Pagination', () => {
       rerender(<Pagination titles={{ optionsToggleAriaLabel: 'test label' }} itemCount={20} />);
       expect(screen.getByLabelText('test label')).toHaveAttribute('id', id);
     });
+
+    test('should not update generated options menu id on rerenders', () => {
+      const { rerender } = render(<Pagination titles={{optionsToggleAriaLabel: "test label"}} itemCount={20}/>);
+      const id = screen.getByLabelText("test label").getAttribute("id");
+      rerender(<Pagination titles={{optionsToggleAriaLabel: "test label"}} itemCount={20} />);
+      expect(screen.getByLabelText("test label")).toHaveAttribute("id", id);
+    });
+
+    test('page insets', () => {
+      render(<Pagination data-testid="pagination-insets" usePageInsets />);
+      expect(screen.getByTestId('pagination-insets')).toHaveClass('pf-m-page-insets');
+    });
   });
 
   describe('API', () => {
@@ -320,6 +332,22 @@ describe('Pagination', () => {
         await user.click(screen.getByText('20 per page'));
 
         expect(onPerPage).not.toHaveBeenCalled();
+      });
+    });
+
+    Object.values(['insetNone', 'insetSm', 'insetMd', 'insetLg', 'insetXl', 'inset2xl'] as [
+      'insetNone',
+      'insetSm',
+      'insetMd',
+      'insetLg',
+      'insetXl',
+      'inset2xl'
+    ]).forEach(inset => {
+      test(`verify ${inset} inset breakpoints`, () => {
+        const { asFragment } = render(
+          <Pagination inset={{ default: inset, sm: inset, md: inset, lg: inset, xl: inset, '2xl': inset }}>test</Pagination>
+        );
+        expect(asFragment()).toMatchSnapshot();
       });
     });
   });
