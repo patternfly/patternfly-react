@@ -15,67 +15,67 @@ test('Renders without children', () => {
 
 test('Renders children', () => {
   render(<List>Test</List>);
-  expect(screen.getByText('Test')).toBeVisible();
+  expect(screen.getByRole('list')).toBeVisible();
 });
 
 test('Renders with the class pf-c-list', () => {
   render(<List>Test</List>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-list');
+  expect(screen.getByRole('list')).toHaveClass('pf-c-list');
 });
 
 test('Renders with only the class pf-c-list by default', () => {
   render(<List>Test</List>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-list', { exact: true });
+  expect(screen.getByRole('list')).toHaveClass('pf-c-list', { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {
   render(<List className="test-class">Test</List>);
-  expect(screen.getByText('Test')).toHaveClass('test-class');
+  expect(screen.getByRole('list')).toHaveClass('test-class');
 });
 
 test('Renders List as a "ul" by default', () => {
   render(<List>Test</List>);
-  expect(screen.getByText('Test')).toHaveProperty('nodeName', 'UL');
+  expect(screen.getByRole('list')).toHaveProperty('nodeName', 'UL');
 });
 
 test('Renders List as a "ul" when component prop passed as "ul"', () => {
   render(<List component={ListComponent.ul}>Test</List>);
-  expect(screen.getByText('Test')).toHaveProperty('nodeName', 'UL');
+  expect(screen.getByRole('list')).toHaveProperty('nodeName', 'UL');
 });
 
 test('Renders List as a "ol" when component prop passed as "ol"', () => {
   render(<List component={ListComponent.ol}>Test</List>);
-  expect(screen.getByText('Test')).toHaveProperty('nodeName', 'OL');
+  expect(screen.getByRole('list')).toHaveProperty('nodeName', 'OL');
 });
 
 test('Renders with class name pf-m-icon-lg when iconSize is large', () => {
   render(<List iconSize="large">Test</List>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-icon-lg');
+  expect(screen.getByRole('list')).toHaveClass('pf-m-icon-lg');
 });
 
 test('Renders with only class name pf-c-list when iconSize is default', () => {
   render(<List iconSize="default">Test</List>);
-  expect(screen.getByText('Test')).not.toHaveClass('pf-m-icon-lg');
+  expect(screen.getByRole('list')).not.toHaveClass('pf-m-icon-lg');
 });
 
 test('Renders with class name pf-m-bordered when isBordered is true', () => {
   render(<List isBordered>Test</List>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-bordered');
+  expect(screen.getByRole('list')).toHaveClass('pf-m-bordered');
 });
 
 test('Renders without class name pf-m-bordered by default', () => {
   render(<List>Test</List>);
-  expect(screen.getByText('Test')).not.toHaveClass('pf-m-bordered');
+  expect(screen.getByRole('list')).not.toHaveClass('pf-m-bordered');
 });
 
 test('Renders with class name pf-m-plain when isPlain is true', () => {
   render(<List isPlain>Test</List>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-plain');
+  expect(screen.getByRole('list')).toHaveClass('pf-m-plain');
 });
 
 test('Renders without class name pf-m-plain by default', () => {
   render(<List>Test</List>);
-  expect(screen.getByText('Test')).not.toHaveClass('pf-m-plain');
+  expect(screen.getByRole('list')).not.toHaveClass('pf-m-plain');
 });
 
 test.skip('Renders with ref', async () => {
@@ -119,7 +119,7 @@ test('Renders List as a numbered when OrderType prop passed as number', () => {
       Test
     </List>
   );
-  expect(screen.getByText('Test')).toHaveProperty('type', '1');
+  expect(screen.getByRole('list')).toHaveProperty('type', '1');
 });
 
 test('Renders List as a lowercaseLetter when OrderType prop passed as lowercaseLetter', () => {
@@ -128,7 +128,7 @@ test('Renders List as a lowercaseLetter when OrderType prop passed as lowercaseL
       Test
     </List>
   );
-  expect(screen.getByText('Test')).toHaveProperty('type', 'a');
+  expect(screen.getByRole('list')).toHaveProperty('type', 'a');
 });
 
 test('Renders List as a uppercaseLetter when OrderType prop passed as uppercaseLetter', () => {
@@ -137,7 +137,7 @@ test('Renders List as a uppercaseLetter when OrderType prop passed as uppercaseL
       Test
     </List>
   );
-  expect(screen.getByText('Test')).toHaveProperty('type', 'A');
+  expect(screen.getByRole('list')).toHaveProperty('type', 'A');
 });
 
 test('Renders List as a lowercaseRomanNumber when OrderType prop passed as lowercaseRomanNumber', () => {
@@ -146,7 +146,7 @@ test('Renders List as a lowercaseRomanNumber when OrderType prop passed as lower
       Test
     </List>
   );
-  expect(screen.getByText('Test')).toHaveProperty('type', 'i');
+  expect(screen.getByRole('list')).toHaveProperty('type', 'i');
 });
 
 test('Renders List as a uppercaseRomanNumber when OrderType prop passed as uppercaseRomanNumber', () => {
@@ -155,17 +155,17 @@ test('Renders List as a uppercaseRomanNumber when OrderType prop passed as upper
       Test
     </List>
   );
-  expect(screen.getByText('Test')).toHaveProperty('type', 'I');
+  expect(screen.getByRole('list')).toHaveProperty('type', 'I');
 });
 
 test('Renders with class name pf-m-inline when variant is inline', () => {
   render(<List variant={ListVariant.inline}>Test</List>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-inline');
+  expect(screen.getByRole('list')).toHaveClass('pf-m-inline');
 });
 
 test('Renders without class name pf-m-inline when variant prop is not passed', () => {
   render(<List>Test</List>);
-  expect(screen.getByText('Test')).not.toHaveClass('pf-m-inline');
+  expect(screen.getByRole('list')).not.toHaveClass('pf-m-inline');
 });
 
 test('Matches the snapshot', () => {
