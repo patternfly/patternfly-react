@@ -147,7 +147,7 @@ test('Does not renders with aria-labelledBy by default on Component element', ()
   expect(screen.getByText('Test')).not.toHaveAccessibleName();
 });
 
-test('Renders with aria-labelledBy on Component element when id and titleId are defined', () => {
+test('Renders with an accessible name that matches children', () => {
   render(
     <ProgressStep id="test-id" titleId="title-id">
       Test
