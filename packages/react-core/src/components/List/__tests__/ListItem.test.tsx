@@ -13,7 +13,7 @@ test('Renders with no class pf-c-list by default', () => {
 });
 
 test('Renders with the class pf-c-list__item when icon prop is passed', () => {
-  render(<ListItem icon={"icon"}>Test</ListItem>);
+  render(<ListItem icon={'icon'}>Test</ListItem>);
   expect(screen.getByRole('listitem')).toHaveClass('pf-c-list__item');
 });
 
@@ -28,7 +28,7 @@ test('Renders with inherited element props spread to the component', () => {
 });
 
 test('Matches the snapshot with span when icon prop is passed', () => {
-  const { asFragment } = render(<ListItem icon={"icon"}>Test</ListItem>);
+  const { asFragment } = render(<ListItem icon={'icon'}>Test</ListItem>);
   expect(asFragment()).toMatchSnapshot();
 });
 

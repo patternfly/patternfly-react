@@ -35,9 +35,11 @@ export interface ListProps extends Omit<React.HTMLProps<HTMLUListElement | HTMLO
   /** Sets the way items are numbered if variant is set to ordered */
   type?: OrderType;
   component?: 'ol' | 'ul';
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<any>;
 }
 
-export const List: React.FunctionComponent<ListProps> = ({
+const ListBase: React.FunctionComponent<ListProps> = ({
   className = '',
   children = null,
   variant = null,
@@ -45,13 +47,13 @@ export const List: React.FunctionComponent<ListProps> = ({
   isPlain = false,
   iconSize = 'default',
   type = OrderType.number,
-  ref = null,
+  innerRef,
   component = ListComponent.ul,
   ...props
 }: ListProps) =>
   component === ListComponent.ol ? (
     <ol
-      ref={ref as React.LegacyRef<HTMLOListElement>}
+      ref={innerRef}
       type={type}
       {...props}
       className={css(
@@ -67,7 +69,7 @@ export const List: React.FunctionComponent<ListProps> = ({
     </ol>
   ) : (
     <ul
-      ref={ref as React.LegacyRef<HTMLUListElement>}
+      ref={innerRef}
       {...props}
       className={css(
         styles.list,
@@ -81,4 +83,7 @@ export const List: React.FunctionComponent<ListProps> = ({
       {children}
     </ul>
   );
+
+export const List = React.forwardRef((props: ListProps, ref: React.Ref<any>) => <ListBase innerRef={ref} {...props} />);
+
 List.displayName = 'List';

@@ -78,7 +78,7 @@ test('Renders without class name pf-m-plain by default', () => {
   expect(screen.getByRole('list')).not.toHaveClass('pf-m-plain');
 });
 
-test.skip('Renders with ref', async () => {
+test('Renders with ref', async () => {
   const user = userEvent.setup();
   const listRef: React.RefObject<HTMLUListElement> = React.createRef();
 
