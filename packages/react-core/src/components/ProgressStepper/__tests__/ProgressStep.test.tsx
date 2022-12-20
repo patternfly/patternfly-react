@@ -33,7 +33,14 @@ test('Renders with custom class name on the containing li element when className
   expect(screen.getByRole('listitem')).toHaveClass('custom-class');
 });
 
-['success', 'info', 'pending', 'warning', 'danger'].forEach(variant => {
+['default', undefined].forEach(variant => {
+  test(`Renders with no additional classes when variant=${variant} on containing li element`, () => {
+    render(<ProgressStep variant={`${variant as ProgressStepVariant}`}>Test</ProgressStep>);
+    expect(screen.getByRole('listitem')).toHaveClass('pf-c-progress-stepper__step', { exact: true });
+  });
+});
+
+['success', 'info', 'warning', 'danger'].forEach(variant => {
   test(`Does not render with class pf-m-${variant} by default on containing li element`, () => {
     render(<ProgressStep>Test</ProgressStep>);
     expect(screen.getByRole('listitem')).not.toHaveClass(`pf-m-${variant}`);
@@ -44,17 +51,25 @@ test('Renders with custom class name on the containing li element when className
     expect(screen.getByRole('listitem')).toHaveClass(`pf-m-${variant}`);
   });
 
-  if (variant !== 'pending') {
-    test(`Does not render with ${variant} variant icon by default`, () => {
-      render(<ProgressStep>Test</ProgressStep>);
-      expect(screen.queryByText(`${capitalize(variant)} icon mock`)).not.toBeInTheDocument();
-    });
+  test(`Does not render with ${variant} variant icon by default`, () => {
+    render(<ProgressStep>Test</ProgressStep>);
+    expect(screen.queryByText(`${capitalize(variant)} icon mock`)).not.toBeInTheDocument();
+  });
 
-    test(`Renders with ${variant} variant icon when variant = ${variant}`, () => {
-      render(<ProgressStep variant={`${variant as ProgressStepVariant}`}>Test</ProgressStep>);
-      expect(screen.getByText(`${capitalize(variant)} icon mock`)).toBeVisible();
-    });
-  }
+  test(`Renders with ${variant} variant icon when variant = ${variant}`, () => {
+    render(<ProgressStep variant={`${variant as ProgressStepVariant}`}>Test</ProgressStep>);
+    expect(screen.getByText(`${capitalize(variant)} icon mock`)).toBeVisible();
+  });
+});
+
+test('Does not render with class pf-m-pending by default on containing li element', () => {
+  render(<ProgressStep>Test</ProgressStep>);
+  expect(screen.getByRole('listitem')).not.toHaveClass('pf-m-pending');
+});
+
+test('Renders with class pf-m-pending when variant = pending on containing li element', () => {
+  render(<ProgressStep variant="pending">Test</ProgressStep>);
+  expect(screen.getByRole('listitem')).toHaveClass('pf-m-pending');
 });
 
 test('Renders the element passed via the icon prop', () => {
