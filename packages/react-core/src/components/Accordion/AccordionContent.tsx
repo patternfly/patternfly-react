@@ -41,7 +41,7 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
         <Container
           id={id}
           className={css(
-            styles.accordionExpandedContent,
+            styles.accordionExpandableContent,
             isFixed && styles.modifiers.fixed,
             !isHidden && styles.modifiers.expanded,
             className

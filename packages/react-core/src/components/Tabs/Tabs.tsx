@@ -460,7 +460,6 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             showScrollButtons && styles.modifiers.scrollable,
             usePageInsets && styles.modifiers.pageInsets,
             !hasBorderBottom && styles.modifiers.noBorderBottom,
-            hasSecondaryBorderBottom && styles.modifiers.borderBottom,
             formatBreakpointMods(inset, styles),
             variantStyle[variant],
             hasOverflowTab && styles.modifiers.overflow,
