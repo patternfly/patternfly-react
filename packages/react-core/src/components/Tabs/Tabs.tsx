@@ -376,6 +376,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       isVertical,
       isBox,
       hasBorderBottom,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       hasSecondaryBorderBottom,
       leftScrollAriaLabel,
       rightScrollAriaLabel,
