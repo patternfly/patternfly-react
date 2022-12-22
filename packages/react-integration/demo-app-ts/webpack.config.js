@@ -46,7 +46,19 @@ module.exports = (_env, argv) => {
         },
         {
           test: /\.css$/,
-          use: !isProd ? ['style-loader', 'css-loader'] : [MiniCssExtractPlugin.loader, 'css-loader']
+          use: !isProd
+            ? ['style-loader', 'css-loader']
+            : [
+                {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                    hmr: !isProd
+                  }
+                },
+                {
+                  loader: 'css-loader'
+                }
+              ]
         },
         {
           test: /\.(png|jpe?g|webp|gif|svg)$/,
@@ -103,7 +115,7 @@ module.exports = (_env, argv) => {
       new CopyPlugin({
         patterns: [{ from: staticDir, to: '' }]
       })
-    ],
+    ].filter(Boolean),
     stats: 'minimal'
   };
 };
