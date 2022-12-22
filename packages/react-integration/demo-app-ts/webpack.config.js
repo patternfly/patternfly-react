@@ -1,4 +1,6 @@
 const path = require('path');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ReactRefreshTypeScript = require('react-refresh-typescript');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -13,15 +15,17 @@ module.exports = (_env, argv) => {
     entry: path.resolve(__dirname, 'src/index.tsx'),
     output: {
       path: path.resolve('public'),
-      filename: '[name].[hash].bundle.js',
+      filename: '[name].[fullhash].bundle.js',
       pathinfo: false // https://webpack.js.org/guides/build-performance/#output-without-path-info,
     },
     devServer: {
       hot: true,
       historyApiFallback: true,
       port: 3000,
-      clientLogLevel: 'info',
-      stats: 'minimal'
+      open: true,
+      client: {
+        logging: 'info'
+      }
     },
     amd: false, // We don't use any AMD modules, helps performance
     mode: isProd ? 'production' : 'development',
@@ -30,22 +34,19 @@ module.exports = (_env, argv) => {
       rules: [
         {
           test: /\.[tj]sx?$/,
-          include: [path.join(__dirname, 'src')],
-          use: { loader: 'ts-loader' }
+          exclude: /node_modules/,
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+            getCustomTransformers: () => ({
+              before: [!isProd && ReactRefreshTypeScript()].filter(Boolean)
+            })
+          },
+          type: 'javascript/auto'
         },
         {
           test: /\.css$/,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: !isProd
-              }
-            },
-            {
-              loader: 'css-loader'
-            }
-          ]
+          use: !isProd ? ['style-loader', 'css-loader'] : [MiniCssExtractPlugin.loader, 'css-loader']
         },
         {
           test: /\.(png|jpe?g|webp|gif|svg)$/,
@@ -54,7 +55,7 @@ module.exports = (_env, argv) => {
             options: {
               limit: 1024,
               fallback: 'file-loader',
-              name: '[name].[contenthash].[ext]',
+              name: '[name].[fullhash].[ext]',
               outputPath: 'images/'
             }
           }
@@ -74,7 +75,16 @@ module.exports = (_env, argv) => {
       ]
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js']
+      extensions: ['.ts', '.tsx', '.js'],
+      alias: isProd
+        ? {}
+        : {
+            '@patternfly/react-core$': path.resolve(__dirname, '../../../packages/react-core/src/index'),
+            // '@patternfly/react-charts$': path.resolve(__dirname, '../../../packages/react-charts/src/index'),
+            '@patternfly/react-code-editor$': path.resolve(__dirname, '../../../packages/react-code-editor/src/index'),
+            '@patternfly/react-table$': path.resolve(__dirname, '../../../packages/react-table/src/index'),
+            '@patternfly/react-topology$': path.resolve(__dirname, '../../../packages/react-topology/src/index')
+          }
     },
     plugins: [
       new MiniCssExtractPlugin(
@@ -85,6 +95,7 @@ module.exports = (_env, argv) => {
               chunkFilename: '[name].[contenthash].css'
             }
       ),
+      !isProd && new ReactRefreshWebpackPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'src/index.html')
