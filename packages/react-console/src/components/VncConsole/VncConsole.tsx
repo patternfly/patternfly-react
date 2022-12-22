@@ -28,6 +28,10 @@ export interface VncConsoleProps extends React.HTMLProps<HTMLDivElement> {
   encrypt?: boolean;
   /** Is a boolean indicating if a request to resize the remote session should be sent whenever the container changes dimensions */
   resizeSession?: boolean;
+  /** Is a boolean indicating if the remote session should be clipped to its container */
+  clipViewport?: boolean;
+  /** Is a boolean indicating if mouse events should control the relative position of a clipped remote session.*/
+  dragViewport?: boolean;
   /** Is a boolean indicating if the remote session should be scaled locally so it fits its container */
   scaleViewport?: boolean;
   /** Is a boolean indicating if any events (e.g. key presses or mouse movement) should be prevented from being sent to the server */
@@ -73,6 +77,8 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
   path = '',
   encrypt = false,
   resizeSession = true,
+  clipViewport = false,
+  dragViewport = false,
   scaleViewport = false,
   viewOnly = false,
   shared = false,
@@ -150,6 +156,8 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
     rfb.current = new RFB(novncElem.current, url, options);
     addEventListeners();
     rfb.current.viewOnly = viewOnly;
+    rfb.current.clipViewport = clipViewport;
+    rfb.current.dragViewport = dragViewport;
     rfb.current.scaleViewport = scaleViewport;
     rfb.current.resizeSession = resizeSession;
   }, [
@@ -158,6 +166,8 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
     path,
     port,
     resizeSession,
+    clipViewport,
+    dragViewport,
     scaleViewport,
     viewOnly,
     encrypt,
