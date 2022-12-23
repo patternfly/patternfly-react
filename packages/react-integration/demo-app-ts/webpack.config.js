@@ -15,6 +15,7 @@ module.exports = (_env, argv) => {
     entry: path.resolve(__dirname, 'src/index.tsx'),
     output: {
       path: path.resolve('public'),
+      publicPath: '/',
       filename: '[name].[fullhash].bundle.js',
       pathinfo: false // https://webpack.js.org/guides/build-performance/#output-without-path-info,
     },
