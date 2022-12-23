@@ -157,7 +157,7 @@ const StyleNode: React.FunctionComponent<StyleNodeProps> = ({
       <g ref={hoverRef}>
         <DefaultNode
           element={element}
-          scaleLabel={detailsLevel !== ScaleDetailsLevel.high}
+          scaleLabel={true}
           scaleNode={hover && detailsLevel === ScaleDetailsLevel.low}
           {...rest}
           {...passedData}
