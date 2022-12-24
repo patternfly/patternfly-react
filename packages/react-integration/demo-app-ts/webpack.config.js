@@ -1,6 +1,7 @@
 const path = require('path');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const ReactRefreshTypeScript = require('react-refresh-typescript');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -38,6 +39,7 @@ module.exports = (_env, argv) => {
           exclude: /node_modules/,
           loader: 'ts-loader',
           options: {
+            // disable type checker - ForkTsCheckerWebpackPlugin will check
             transpileOnly: true,
             getCustomTransformers: () => ({
               before: [!isProd && ReactRefreshTypeScript()].filter(Boolean)
@@ -108,6 +110,11 @@ module.exports = (_env, argv) => {
               chunkFilename: '[name].[contenthash].css'
             }
       ),
+      new ForkTsCheckerWebpackPlugin({
+        eslint: {
+          files: './src/**/*.{ts,tsx,js,jsx}'
+        }
+      }),
       !isProd && new ReactRefreshWebpackPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
