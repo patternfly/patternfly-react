@@ -28,11 +28,7 @@ class VirtualReference implements PopperJSReference {
       height,
       left: x,
       right: x + width,
-      top: y,
-      x,
-      y,
-      toJSON: () => {},
-      width
+      top: y
     };
   }
 
