@@ -24,7 +24,6 @@ module.exports = (_env, argv) => {
       hot: true,
       historyApiFallback: true,
       port: 3000,
-      open: true,
       client: {
         logging: 'info'
       }
@@ -39,7 +38,6 @@ module.exports = (_env, argv) => {
           exclude: /node_modules/,
           loader: 'ts-loader',
           options: {
-            // disable type checker - ForkTsCheckerWebpackPlugin will check
             transpileOnly: true,
             getCustomTransformers: () => ({
               before: [!isProd && ReactRefreshTypeScript()].filter(Boolean)
@@ -95,7 +93,6 @@ module.exports = (_env, argv) => {
         ? {}
         : {
             '@patternfly/react-core$': path.resolve(__dirname, '../../../packages/react-core/src/index'),
-            // '@patternfly/react-charts$': path.resolve(__dirname, '../../../packages/react-charts/src/index'),
             '@patternfly/react-code-editor$': path.resolve(__dirname, '../../../packages/react-code-editor/src/index'),
             '@patternfly/react-table$': path.resolve(__dirname, '../../../packages/react-table/src/index'),
             '@patternfly/react-topology$': path.resolve(__dirname, '../../../packages/react-topology/src/index')
@@ -111,8 +108,25 @@ module.exports = (_env, argv) => {
             }
       ),
       new ForkTsCheckerWebpackPlugin({
+        async: false,
+        typescript: {
+          configFile: isProd ? 'tsconfig.json' : 'tsconfig.dev.json'
+        },
         eslint: {
-          files: './src/**/*.{ts,tsx,js,jsx}'
+          enabled: !isProd,
+          files: [
+            './src/**/*.{ts,tsx}',
+            '../../../packages/react-core/src/**/*.{ts,tsx}',
+            '../../../packages/react-code-editor/src/**/*.{ts,tsx}',
+            '../../../packages/react-table/src/**/*.{ts,tsx}',
+            '../../../packages/react-topology/src/**/*.{ts,tsx}'
+          ],
+          options: {
+            ignorePath: '../../../.eslintignore'
+          }
+        },
+        issue: {
+          exclude: [{ origin: 'eslint', severity: 'warning' }]
         }
       }),
       !isProd && new ReactRefreshWebpackPlugin(),
