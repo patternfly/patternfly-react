@@ -23,6 +23,8 @@ class VirtualReference implements PopperJSReference {
   private rect: ClientRect;
 
   constructor({ height = 0, width = 0, x, y }: ClientRectProp) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: Fixed in next pf topology
     this.rect = {
       bottom: y + height,
       height,
