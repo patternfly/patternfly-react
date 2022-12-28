@@ -90,9 +90,7 @@ export const withBendpoint = <DropResult, CollectedProps, Props = {}>(
 ) => <P extends WithBendpointProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
   const Component: React.FunctionComponent<Omit<P, keyof WithBendpointProps> & HocProps> = props => {
     const [dragProps, bendpointRef] = useBendpoint(props.point, spec as any, props);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore: Fixed in next pf topology
-    return <WrappedComponent {...(props as any)} bendpointRef={bendpointRef} {...dragProps} />;
+    return <WrappedComponent {...(props as any)} bendpointRef={bendpointRef} {...(dragProps as object)} />;
   };
   Component.displayName = `withBendpoint(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
