@@ -1,20 +1,8 @@
 import { DropdownItem } from '../../Dropdown';
-import { MenuItemProps } from '../../../../components/Menu';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-jest.mock('../../../../components/Menu', () => ({
-  MenuItem: ({ className, children, description }: MenuItemProps) => {
-    return (
-      <>
-        <div className={className} data-testid="menu-item-mock">
-          {children}
-        </div>
-        <p>{`description: ${description}`}</p>
-      </>
-    );
-  }
-}));
+jest.mock('../../../../components/Menu');
 
 const dropdownItemChildren = <div>Dropdown Item children</div>;
 

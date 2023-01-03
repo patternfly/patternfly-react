@@ -1,21 +1,8 @@
 import { DropdownGroup } from '../../Dropdown';
-import { MenuGroupProps } from '../../../../components/Menu';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-jest.mock('../../../../components/Menu', () => ({
-  MenuGroup: ({ className, children, label, labelHeadingLevel }: MenuGroupProps) => {
-    return (
-      <>
-        <div className={className} data-testid="menu-group-mock">
-          {children}
-        </div>
-        <p>{`label: ${label}`}</p>
-        <p>{`labelHeadingLevel: ${labelHeadingLevel}`}</p>
-      </>
-    );
-  }
-}));
+jest.mock('../../../../components/Menu');
 
 const dropdownGroupChildren = <div>Dropdown Group children</div>;
 

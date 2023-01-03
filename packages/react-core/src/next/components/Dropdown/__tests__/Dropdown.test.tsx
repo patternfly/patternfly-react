@@ -1,35 +1,11 @@
-import React, { Children } from 'react';
-import { Dropdown, DropdownList, DropdownItem, DropdownProps } from '../../Dropdown';
-/* import { Popper } from '../../../../helpers/'; */
-import { findByRole, render, screen, waitFor } from '@testing-library/react';
+import React from 'react';
+import { Dropdown } from '../../Dropdown';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MenuProps } from '../../../../components/Menu';
 
-jest.mock('../../../../components/Menu', () => ({
-  MenuContent: ({ children }) => <div>{children}</div>,
-  Menu: ({ className, isPlain, isScrollable, style, onSelect, ...props }: MenuProps) => {
-    return (
-      <>
-        <div className={className} data-testid="menu-mock" {...props}></div>
-        <div onClick={onSelect}>{'Mock item'}</div>
-        <p>{`isPlain: ${isPlain}`}</p>
-        <p>{`isScrollable: ${isScrollable}`}</p>
-        <p>{`minWidth: ${style?.['--pf-c-menu--MinWidth']}`}</p>
-      </>
-    );
-  }
-}));
+jest.mock('../../../../components/Menu');
 
-jest.mock('../../../../helpers/Popper/Popper', () => ({
-  Popper: ({ popper, zIndex, isVisible, trigger, ...props }) => (
-    <>
-      <div>{popper}</div>
-      <p>{`zIndex: ${zIndex}`}</p>
-      <p>{`isOpen: ${isVisible}`}</p>
-      <div>{trigger}</div>
-    </>
-  )
-}));
+jest.mock('../../../../helpers/Popper/Popper');
 
 const toggle = (ref: React.RefObject<any>) => <button ref={ref}>Dropdown</button>;
 
@@ -174,8 +150,8 @@ test('passes onSelect callback', async () => {
 });
 
 //throws error because of bug in dropdown
-//uncomment when bug gets fixed
-/* test('onOpenChange is not called when not passed', async () => {
+//should fail until issue gets resolved
+test('onOpenChange is not called when not passed', async () => {
   const user = userEvent.setup();
   const onOpenChange = jest.fn();
 
@@ -196,7 +172,7 @@ test('passes onSelect callback', async () => {
   await user.keyboard('{Escape}');
 
   expect(onOpenChange).not.toBeCalled();
-}); */
+});
 
 test('onOpenChange is not called without user interaction', async () => {
   const user = userEvent.setup();
