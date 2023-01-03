@@ -13,9 +13,7 @@ import {
   EmptyState,
   EmptyStateVariant,
   EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStatePrimary,
-  EmptyStateSecondaryActions
+  EmptyStateBody
 } from '@patternfly/react-core';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
