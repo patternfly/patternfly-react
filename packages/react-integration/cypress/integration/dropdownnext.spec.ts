@@ -38,9 +38,8 @@ describe('Dropdown demo test', () => {
     cy.get('[data-cy="toggle"]').should('not.have.class', 'pf-m-expanded');
   });
 
-  // throws error
-  /*  it('opens dropdown menu when enter key pressed', () => {
-    cy.get('[data-cy="toggle"]').trigger('keydown', { key: 'Enter' });
-    cy.get('[data-cy="toggle"]').should('have.class', 'pf-m-expanded');
-  }); */
+  /* 
+    pressing enter key on a button calls a click event internally
+    so testing for a button click should be suficitient
+  */
 });
