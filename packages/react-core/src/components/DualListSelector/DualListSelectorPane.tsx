@@ -65,8 +65,8 @@ export interface DualListSelectorPaneProps extends Omit<React.HTMLProps<HTMLDivE
   searchInputAriaLabel?: string;
   /** @hide Callback for updating the filtered options in DualListSelector. To be used when isSearchable is true. */
   onFilterUpdate?: (newFilteredOptions: React.ReactNode[], paneType: string, isSearchReset: boolean) => void;
-  /** Height of the list of options rendered in the pane. **/
-  listHeight?: string;
+  /** Minimum height of the list of options rendered in the pane. **/
+  listMinHeight?: string;
 }
 
 export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneProps> = ({
@@ -89,7 +89,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   filterOption,
   id = getUniqueId('dual-list-selector-pane'),
   isDisabled = false,
-  listHeight,
+  listMinHeight,
   ...props
 }: DualListSelectorPaneProps) => {
   const [input, setInput] = React.useState('');
@@ -201,8 +201,8 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
             displayOption={displayOption}
             id={`${id}-list`}
             isDisabled={isDisabled}
-            {...(listHeight && {
-              style: { '--pf-c-dual-list-selector__menu--MinHeight': listHeight } as React.CSSProperties
+            {...(listMinHeight && {
+              style: { '--pf-c-dual-list-selector__menu--MinHeight': listMinHeight } as React.CSSProperties
             })}
           >
             {children}
@@ -212,8 +212,8 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
           <DualListSelectorListWrapper
             aria-labelledby={`${id}-status`}
             id={`${id}-list`}
-            {...(listHeight && {
-              style: { '--pf-c-dual-list-selector__menu--MinHeight': listHeight } as React.CSSProperties
+            {...(listMinHeight && {
+              style: { '--pf-c-dual-list-selector__menu--MinHeight': listMinHeight } as React.CSSProperties
             })}
           >
             {options.length > 0 ? (

@@ -136,6 +136,19 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
     );
   };
 
+  const buildEmptyState = (isAvailable: boolean) => (
+    <EmptyState variant={EmptyStateVariant.small}>
+      <EmptyStateIcon icon={SearchIcon} />
+      <Title headingLevel="h4" size="md">
+        No results found
+      </Title>
+      <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
+      <Button variant="link" onClick={() => onFilterChange('', isAvailable)}>
+        Clear all filters
+      </Button>
+    </EmptyState>
+  );
+
   return (
     <DualListSelector>
       <DualListSelectorPane
@@ -145,19 +158,10 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
         } options selected`}
         searchInput={buildSearchInput(true)}
         actions={[buildSort(true)]}
-        listHeight="270px"
+        listMinHeight="270px"
       >
         {availableFilter !== '' && availableOptions.filter(option => option.isVisible).length === 0 && (
-          <EmptyState variant={EmptyStateVariant.small}>
-            <EmptyStateIcon icon={SearchIcon} />
-            <Title headingLevel="h4" size="md">
-              No results found
-            </Title>
-            <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
-            <Button variant="link" onClick={() => onFilterChange('', true)}>
-              Clear all filters
-            </Button>
-          </EmptyState>
+          buildEmptyState(true)
         )}
         {availableOptions.filter(option => option.isVisible).length > 0 && (
           <DualListSelectorList>
@@ -218,19 +222,10 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
         searchInput={buildSearchInput(false)}
         actions={[buildSort(false)]}
         isChosen
-        listHeight="270px"
+        listMinHeight="270px"
       >
         {chosenFilter !== '' && chosenOptions.filter(option => option.isVisible).length === 0 && (
-          <EmptyState variant={EmptyStateVariant.small}>
-            <EmptyStateIcon icon={SearchIcon} />
-            <Title headingLevel="h4" size="md">
-              No results found
-            </Title>
-            <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
-            <Button variant="link" onClick={() => onFilterChange('', false)}>
-              Clear all filters
-            </Button>
-          </EmptyState>
+          buildEmptyState(false)
         )}
         {chosenOptions.filter(option => option.isVisible).length > 0 && (
           <DualListSelectorList>

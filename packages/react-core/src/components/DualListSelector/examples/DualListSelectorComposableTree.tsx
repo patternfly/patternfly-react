@@ -249,7 +249,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
         status={status}
         searchInput={buildSearchInput(isChosen)}
         isChosen={isChosen}
-        listHeight="270px"
+        listMinHeight="270px"
       >
         {filterApplied && options.length === 0 && (
           <EmptyState variant={EmptyStateVariant.small}>
