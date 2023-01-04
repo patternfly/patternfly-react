@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.267.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.267.8...@patternfly/react-core@4.267.9) (2023-01-04)
+
+
+### Bug Fixes
+
+* **Slider:** updated input text styling ([#8392](https://github.com/patternfly/patternfly-react/issues/8392)) ([0c315b7](https://github.com/patternfly/patternfly-react/commit/0c315b7d6a3ecf5a18062544ef944493d2eb91f0))
+
+
+
+
+
 ## 4.267.8 (2023-01-04)
 
 **Note:** Version bump only for package @patternfly/react-core
