@@ -28,7 +28,7 @@ export interface DropdownToggleCheckboxProps
   id: string;
   /** Aria-label of the checkbox */
   'aria-label': string;
-  /** Text describing that current loading status or progress */
+  /** Text describing current loading status or progress */
   defaultProgressAriaValueText?: string;
   /** Aria-label for the default progress icon */
   defaultProgressAriaLabel?: string;
