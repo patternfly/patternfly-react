@@ -19,10 +19,10 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class name pf-c-accordion__expanded-content-body', () => {
+test('Renders with class name pf-c-accordion__expandable-content-body', () => {
   render(<AccordionExpandedContentBody>Test</AccordionExpandedContentBody>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-c-accordion__expanded-content-body');
+  expect(screen.getByText('Test')).toHaveClass('pf-c-accordion__expandable-content-body');
 });
 
 test('Matches the snapshot', () => {

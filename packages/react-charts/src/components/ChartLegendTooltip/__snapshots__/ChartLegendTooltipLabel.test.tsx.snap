@@ -16,7 +16,7 @@ exports[`renders component text 1`] = `
     <tspan
       dx="0"
       dy="0"
-      style="fill: var(--pf-chart-voronoi--labels--Fill, #f0f0f0); text-anchor: start; font-family: var(--pf-chart-global--FontFamily, \\"RedHatText\\", \\"Overpass\\", overpass, helvetica, arial, sans-serif); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing, normal); stroke: transparent;"
+      style="fill: var(--pf-chart-voronoi--labels--Fill, #f0f0f0); text-anchor: start; font-family: var(--pf-chart-global--FontFamily, \\"RedHatText\\", helvetica, arial, sans-serif); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing, normal); stroke: transparent;"
       text-anchor="start"
       x="0"
     >
@@ -33,7 +33,7 @@ exports[`renders component text 1`] = `
     <tspan
       dx="0"
       dy="0"
-      style="fill: var(--pf-chart-voronoi--labels--Fill, #f0f0f0); text-anchor: end; font-family: var(--pf-chart-global--FontFamily, \\"RedHatText\\", \\"Overpass\\", overpass, helvetica, arial, sans-serif); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing, normal); stroke: transparent;"
+      style="fill: var(--pf-chart-voronoi--labels--Fill, #f0f0f0); text-anchor: end; font-family: var(--pf-chart-global--FontFamily, \\"RedHatText\\", helvetica, arial, sans-serif); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing, normal); stroke: transparent;"
       text-anchor="end"
       x="NaN"
     >

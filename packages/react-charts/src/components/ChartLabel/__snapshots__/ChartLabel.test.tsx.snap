@@ -16,7 +16,7 @@ exports[`renders component text 1`] = `
     <tspan
       dx="0"
       dy="0"
-      style="fill: var(--pf-chart-global--label--Fill, #151515); font-family: var(--pf-chart-global--FontFamily, \\"RedHatText\\", \\"Overpass\\", overpass, helvetica, arial, sans-serif); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing, normal); stroke: transparent;"
+      style="fill: var(--pf-chart-global--label--Fill, #151515); font-family: var(--pf-chart-global--FontFamily, \\"RedHatText\\", helvetica, arial, sans-serif); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing, normal); stroke: transparent;"
       text-anchor="start"
       x="0"
     >

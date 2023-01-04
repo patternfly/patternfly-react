@@ -491,7 +491,7 @@ A 0 0 0 0 1, 246.5, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="80"
             >
@@ -522,7 +522,7 @@ A 0 0 0 0 1, 246.5, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="128.33333333333331"
             >
@@ -553,7 +553,7 @@ A 0 0 0 0 1, 246.5, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="176.66666666666666"
             >
@@ -584,7 +584,7 @@ A 0 0 0 0 1, 246.5, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="224.99999999999997"
             >
@@ -629,7 +629,7 @@ A 0 0 0 0 1, 246.5, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -660,7 +660,7 @@ A 0 0 0 0 1, 246.5, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -691,7 +691,7 @@ A 0 0 0 0 1, 246.5, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -722,7 +722,7 @@ A 0 0 0 0 1, 246.5, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >

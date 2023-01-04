@@ -9,5 +9,5 @@ export interface AccordionExpandedContentBodyProps {
 
 export const AccordionExpandedContentBody: React.FunctionComponent<AccordionExpandedContentBodyProps> = ({
   children = null
-}: AccordionExpandedContentBodyProps) => <div className={css(styles.accordionExpandedContentBody)}>{children}</div>;
+}: AccordionExpandedContentBodyProps) => <div className={css(styles.accordionExpandableContentBody)}>{children}</div>;
 AccordionExpandedContentBody.displayName = 'AccordionExpandedContentBody';

@@ -54,7 +54,7 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "4.222.4",
+    "@patternfly/patternfly": "5.0.0-alpha.3",
     "@rollup/plugin-commonjs": "^21.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^3.0.0",

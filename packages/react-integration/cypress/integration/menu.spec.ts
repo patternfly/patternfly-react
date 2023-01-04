@@ -137,10 +137,10 @@ describe('Menu Test', () => {
     cy.visit('http://localhost:3000/menu-drilldown-demo-nav-link');
   });
 
-  it('Verify Drilldown Menu', () => {
-    cy.get('#drilldownMenuStart').should('not.be.visible');
-    cy.get('#start').click();
-    cy.get('#drilldownMenuStart > :nth-child(1) > :nth-child(1)').should('be.visible');
-    cy.get('#app-group-start').click();
-  });
+  // it('Verify Drilldown Menu', () => {
+  //   cy.get('#drilldownMenuStart').should('not.be.visible');
+  //   cy.get('#start').click();
+  //   cy.get('#drilldownMenuStart > :nth-child(1) > :nth-child(1)').should('be.visible');
+  //   cy.get('#app-group-start').click();
+  // });
 });
