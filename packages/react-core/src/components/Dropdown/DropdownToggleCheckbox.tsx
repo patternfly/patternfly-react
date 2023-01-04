@@ -16,7 +16,7 @@ export interface DropdownToggleCheckboxProps
   isDisabled?: boolean;
   /** Flag to show if the checkbox is checked */
   isChecked?: boolean | null;
-  /** Flag to show if the checkbox is in progress */
+  /** @beta Flag to show if the checkbox is in progress */
   isInProgress?: boolean | null;
   /** Alternate Flag to show if the checkbox is checked */
   checked?: boolean | null;
@@ -28,6 +28,8 @@ export interface DropdownToggleCheckboxProps
   id: string;
   /** Aria-label of the checkbox */
   'aria-label': string;
+  /** Text describing that current loading status or progress */
+  defaultProgressAriaValueText?: string;
   /** Aria-label for the default progress icon */
   defaultProgressAriaLabel?: string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -74,7 +76,8 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
       isDisabled,
       isChecked,
       isInProgress = false,
-      defaultProgressAriaLabel = 'Loading...',
+      defaultProgressAriaLabel = 'Loading content',
+      defaultProgressAriaValueText = 'Loading...',
       children,
       ouiaId,
       ouiaSafe,
@@ -85,7 +88,14 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
       ...props
     } = this.props;
 
-    const spinner = <Spinner diameter="1em" isSVG aria-label={defaultProgressAriaLabel} />;
+    const spinner = (
+      <Spinner
+        diameter="1em"
+        isSVG
+        aria-valuetext={defaultProgressAriaValueText}
+        aria-label={defaultProgressAriaLabel}
+      />
+    );
 
     const text = children && (
       <span className={css(styles.dropdownToggleText, className)} aria-hidden="true" id={`${props.id}-text`}>
