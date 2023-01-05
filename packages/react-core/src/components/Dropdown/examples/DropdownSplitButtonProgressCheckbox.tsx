@@ -35,7 +35,12 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
     setTimeout(() => setIsTimedOut2(true), 3000);
   };
 
-  const onFocus = () => {
+  const onFocus1 = () => {
+    const element = document.getElementById('toggle-split-button-progress');
+    element.focus();
+  };
+
+  const onFocus2 = () => {
     const element = document.getElementById('toggle-split-button-progress-text');
     element.focus();
   };
@@ -52,12 +57,12 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
 
   const onSelect1 = () => {
     setIsOpen1(false);
-    onFocus();
+    onFocus1();
   };
 
   const onSelect2 = () => {
     setIsOpen2(false);
-    onFocus();
+    onFocus2();
   };
 
   const dropdownItems = [

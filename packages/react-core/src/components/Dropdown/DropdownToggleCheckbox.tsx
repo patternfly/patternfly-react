@@ -28,9 +28,9 @@ export interface DropdownToggleCheckboxProps
   id: string;
   /** Aria-label of the checkbox */
   'aria-label': string;
-  /** Text describing current loading status or progress */
+  /** @beta Text describing current loading status or progress */
   defaultProgressAriaValueText?: string;
-  /** Aria-label for the default progress icon */
+  /** @beta Aria-label for the default progress icon to describe what is loading */
   defaultProgressAriaLabel?: string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
@@ -76,7 +76,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
       isDisabled,
       isChecked,
       isInProgress = false,
-      defaultProgressAriaLabel = 'Loading content',
+      defaultProgressAriaLabel,
       defaultProgressAriaValueText = 'Loading...',
       children,
       ouiaId,
@@ -93,6 +93,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
         diameter="1em"
         isSVG
         aria-valuetext={defaultProgressAriaValueText}
+        aria-live="polite"
         aria-label={defaultProgressAriaLabel}
       />
     );
