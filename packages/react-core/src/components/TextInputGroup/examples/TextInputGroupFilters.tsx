@@ -27,7 +27,7 @@ export const TextInputGroupFilters: React.FunctionComponent = () => {
   const showSearchIcon = !currentChips.length;
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
-  const handleInputChange = (value: string, _event: React.FormEvent<HTMLInputElement>) => {
+  const handleInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
   };
 
