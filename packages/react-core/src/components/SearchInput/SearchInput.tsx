@@ -206,7 +206,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     setIsSearchMenuOpen(isAdvancedSearchOpen);
   }, [isAdvancedSearchOpen]);
 
-  const onChangeHandler = (value: string, event: React.FormEvent<HTMLInputElement>) => {
+  const onChangeHandler = (event: React.FormEvent<HTMLInputElement>, value: string) => {
     if (onChange) {
       onChange(value, event);
     }
