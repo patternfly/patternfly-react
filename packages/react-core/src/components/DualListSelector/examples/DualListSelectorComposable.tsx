@@ -160,9 +160,9 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
         actions={[buildSort(true)]}
         listMinHeight="270px"
       >
-        {availableFilter !== '' && availableOptions.filter(option => option.isVisible).length === 0 && (
-          buildEmptyState(true)
-        )}
+        {availableFilter !== '' &&
+          availableOptions.filter(option => option.isVisible).length === 0 &&
+          buildEmptyState(true)}
         {availableOptions.filter(option => option.isVisible).length > 0 && (
           <DualListSelectorList>
             {availableOptions.map((option, index) =>
@@ -224,9 +224,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
         isChosen
         listMinHeight="270px"
       >
-        {chosenFilter !== '' && chosenOptions.filter(option => option.isVisible).length === 0 && (
-          buildEmptyState(false)
-        )}
+        {chosenFilter !== '' && chosenOptions.filter(option => option.isVisible).length === 0 && buildEmptyState(false)}
         {chosenOptions.filter(option => option.isVisible).length > 0 && (
           <DualListSelectorList>
             {chosenOptions.map((option, index) =>
