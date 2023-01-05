@@ -6,6 +6,15 @@ import ResourcesFullIcon from '@patternfly/react-icons/dist/esm/icons/resources-
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
+export enum ProgressStepVariant {
+  default = 'default',
+  pending = 'pending',
+  success = 'success',
+  info = 'info',
+  danger = 'danger',
+  warning = 'warning'
+}
+
 export interface ProgressStepProps
   extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
   /** Content rendered inside the progress step. */
