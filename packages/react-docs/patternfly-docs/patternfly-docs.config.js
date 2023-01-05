@@ -11,7 +11,6 @@ module.exports = {
     { section: 'charts' },
     { section: 'components' },
     { section: 'demos' },
-    { section: 'extensions' },
     { section: 'layouts' }
   ],
   topNavItems: [{ text: 'Icons', path: '/icons' }],
