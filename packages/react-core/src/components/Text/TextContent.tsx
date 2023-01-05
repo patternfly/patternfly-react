@@ -12,7 +12,7 @@ export interface TextContentProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const TextContent: React.FunctionComponent<TextContentProps> = ({
-  children = null,
+  children,
   className = '',
   isVisited = false,
   ...props
@@ -21,4 +21,5 @@ export const TextContent: React.FunctionComponent<TextContentProps> = ({
     {children}
   </div>
 );
+
 TextContent.displayName = 'TextContent';
