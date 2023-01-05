@@ -137,7 +137,7 @@ export interface DragSourceSpec<
 }
 
 export interface DropTargetSpec<DragObject, DropResult, CollectedProps extends {} = {}, Props extends {} = {}> {
-  accept: TargetType;
+  accept?: TargetType;
   dropHint?: string | ((item: DragObject, monitor: DropTargetMonitor, props: Props) => string | undefined);
   hitTest?: (x: number, y: number, props: Props) => boolean;
   drop?: (item: DragObject, monitor: DropTargetMonitor, props: Props) => DropResult | undefined;

@@ -16,12 +16,14 @@ type CustomPolygonNodeProps = {
   element: Node;
   droppable?: boolean;
   canDrop?: boolean;
-} & WithSelectionProps &
-  WithDragNodeProps &
-  WithDndDragProps &
-  WithDndDropProps &
-  WithCreateConnectorProps &
-  WithContextMenuProps;
+} & Partial<
+  WithSelectionProps &
+    WithDragNodeProps &
+    WithDndDragProps &
+    WithDndDropProps &
+    WithCreateConnectorProps &
+    WithContextMenuProps
+>;
 
 const CustomPolygonNode: React.FunctionComponent<CustomPolygonNodeProps> = props => (
   <DemoDefaultNode getCustomShape={() => Polygon} {...props} />

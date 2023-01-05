@@ -108,14 +108,14 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
     });
   };
 
-  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     this.setState({
       selected: selection,
       isOpen: false
     });
   };
 
-  onSelectGrouped = (event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  onSelectGrouped = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     this.setState({
       selectedGrouped: selection,
       isOpenGrouped: false

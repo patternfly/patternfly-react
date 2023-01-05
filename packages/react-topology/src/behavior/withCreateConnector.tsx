@@ -237,16 +237,16 @@ interface ElementProps {
 }
 
 export interface WithCreateConnectorProps {
-  onShowCreateConnector: () => void;
-  onHideCreateConnector: () => void;
+  onShowCreateConnector?: () => void;
+  onHideCreateConnector?: () => void;
 }
 
 export const withCreateConnector = <P extends WithCreateConnectorProps & ElementProps>(
-  onCreate: React.ComponentProps<typeof CreateConnectorWidget>['onCreate'],
+  onCreate?: React.ComponentProps<typeof CreateConnectorWidget>['onCreate'],
   ConnectorComponent: CreateConnectorRenderer = DefaultCreateConnector,
   contextMenuClass?: string,
   options?: CreateConnectorOptions
-) => (WrappedComponent: React.ComponentType<Partial<P>>) => {
+) => (WrappedComponent: React.ComponentType<P>) => {
   const Component: React.FunctionComponent<Omit<P, keyof WithCreateConnectorProps>> = props => {
     const [show, setShow] = React.useState(false);
     const [alive, setKeepAlive] = React.useState(false);

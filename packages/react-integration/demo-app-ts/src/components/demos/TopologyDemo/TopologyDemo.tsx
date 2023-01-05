@@ -54,22 +54,25 @@ const COMPLEX_GROUP = 10;
 const COLLAPSIBLE_GROUPS = 11;
 
 export const TopologyDemo: React.FunctionComponent = () => {
-  const [activeKey, setActiveKey] = React.useState<number>(STYLES);
-  const [activeSecondaryKey, setActiveSecondaryKey] = React.useState<number>(0);
-  const [activeTertiaryKey, setActiveTertiaryKey] = React.useState<number>(0);
+  const [activeKey, setActiveKey] = React.useState<string | number>(STYLES);
+  const [activeSecondaryKey, setActiveSecondaryKey] = React.useState<string | number>(0);
+  const [activeTertiaryKey, setActiveTertiaryKey] = React.useState<string | number>(0);
 
-  const handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number) => {
+  const handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => {
     setActiveKey(tabIndex);
     setActiveSecondaryKey(0);
     setActiveTertiaryKey(0);
   };
 
-  const handleSecondaryTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number) => {
+  const handleSecondaryTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => {
     setActiveSecondaryKey(tabIndex);
     setActiveTertiaryKey(0);
   };
 
-  const handleTertiaryTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number) => {
+  const handleTertiaryTabClick = (
+    _event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
+    tabIndex: string | number
+  ) => {
     setActiveTertiaryKey(tabIndex);
   };
 

@@ -64,7 +64,7 @@ export class MastheadDemo extends React.Component {
     });
   };
 
-  onSelect = (event: any, value: string) => {
+  onSelect = (event: any, value: React.ReactNode) => {
     this.setState({
       selected: value,
       isOpen: !this.state.isOpen

@@ -44,10 +44,7 @@ type StyleNodeProps = {
   showStatusDecorator?: boolean; // Defaults to false
   regrouping?: boolean;
   dragging?: boolean;
-} & WithContextMenuProps &
-  WithCreateConnectorProps &
-  WithDragNodeProps &
-  WithSelectionProps;
+} & Partial<WithContextMenuProps & WithCreateConnectorProps & WithDragNodeProps & WithSelectionProps>;
 
 const getTypeIcon = (dataType?: DataTypes): any => {
   switch (dataType) {
