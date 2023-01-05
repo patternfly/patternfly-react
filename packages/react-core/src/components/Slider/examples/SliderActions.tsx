@@ -53,8 +53,8 @@ export const SliderActions: React.FunctionComponent = () => {
   };
 
   const buildAction = (isDisabled: boolean) => (
-    <Button variant="plain" aria-label={isDisabled ? "Lock" : "Unlock"} onClick={() => setIsDisabled(!isDisabled)}>
-      <LockIcon />
+    <Button variant="plain" aria-label={isDisabled ? 'Lock' : 'Unlock'} onClick={() => setIsDisabled(!isDisabled)}>
+      {isDisabled ? <LockIcon /> : <LockOpenIcon />}
     </Button>
   );
 

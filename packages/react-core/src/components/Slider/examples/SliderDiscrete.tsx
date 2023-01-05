@@ -50,14 +50,14 @@ export const SliderDiscrete: React.FunctionComponent = () => {
 
   return (
     <>
-      <Text component={TextVariants.h3}>Slider value is: {numValue}</Text>
+      <Text component={TextVariants.h3}>Slider value is: {numValue.value1}</Text>
       <Slider
         value={initialValues.value1}
         onChange={(value: number) => handleChange(value, 'value1')}
         customSteps={steps}
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {initialValues.value2}</Text>
+      <Text component={TextVariants.h3}>Slider value is: {numValue.value2}</Text>
       <Text component={TextVariants.small}>(min = 0, max = 200, step = 50) </Text>
       <Slider
         value={initialValues.value2}
@@ -67,7 +67,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         showTicks
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {Math.floor(initialValues.value3)}</Text>
+      <Text component={TextVariants.h3}>Slider value is: {Math.floor(numValue.value3)}</Text>
       <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries not shown) </Text>
       <Slider
         value={initialValues.value3}
@@ -79,7 +79,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         showBoundaries={false}
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {Math.floor(initialValues.value4)}</Text>
+      <Text component={TextVariants.h3}>Slider value is: {Math.floor(numValue.value4)}</Text>
       <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries shown) </Text>
       <Slider
         value={initialValues.value4}
@@ -90,7 +90,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         showTicks
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {Math.floor(initialValues.value5)}</Text>
+      <Text component={TextVariants.h3}>Slider value is: {Math.floor(numValue.value5)}</Text>
       <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries shown, ticks not shown) </Text>
       <Slider
         value={initialValues.value5}
@@ -100,7 +100,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         step={10}
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {Math.floor(initialValues.value6)}</Text>
+      <Text component={TextVariants.h3}>Slider value is: {Math.floor(numValue.value6)}</Text>
       <Text component={TextVariants.small}>(max = 5, custom steps) </Text>
       <Slider
         value={initialValues.value6}
@@ -110,7 +110,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         onChange={(value: number) => handleChange(value, 'value6')}
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {Math.floor(initialValues.value7)}</Text>
+      <Text component={TextVariants.h3}>Slider value is: {Math.floor(numValue.value7)}</Text>
       <Text component={TextVariants.small}>(min = 12, max = 86, custom steps with non linear data) </Text>
       <Slider
         value={initialValues.value7}
