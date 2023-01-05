@@ -1,7 +1,7 @@
 import React from 'react';
 import { Checkbox, Slider, Text, TextVariants } from '@patternfly/react-core';
 
-export const ContinuousInput: React.FunctionComponent = () => {
+export const SliderContinuous: React.FunctionComponent = () => {
   const [hasTooltipOverThumb, setHasTooltipOverThumb] = React.useState(false);
   const [value, setValue] = React.useState(50);
   const [valueCustom, setValueCustom] = React.useState(50);

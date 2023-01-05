@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slider, Text, TextVariants } from '@patternfly/react-core';
 
-export const DiscreteInput: React.FunctionComponent = () => {
+export const SliderDiscrete: React.FunctionComponent = () => {
   const initialValues = {
     value1: 50,
     value2: 50,
@@ -50,9 +50,8 @@ export const DiscreteInput: React.FunctionComponent = () => {
 
   return (
     <>
-      <Text component={TextVariants.h3}>Slider value is: {initialValues.value1}</Text>
+      <Text component={TextVariants.h3}>Slider value is: {numValue}</Text>
       <Slider
-        name="value1"
         value={initialValues.value1}
         onChange={(value: number) => handleChange(value, 'value1')}
         customSteps={steps}

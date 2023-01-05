@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slider, Text, TextVariants } from '@patternfly/react-core';
 
-export const SliderActions: React.FunctionComponent = () => {
+export const SliderDisabled: React.FunctionComponent = () => {
   const [value, setValue] = React.useState(50);
   const steps = [
     { value: 0, label: '0' },
