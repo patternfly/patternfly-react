@@ -67,7 +67,7 @@ const flagOptions = [
   {
     name: 'ApplicationLauncher',
     id: 'AppLaunch',
-    hasCheck: true,
+    hasCheckbox: true,
     icon: <FolderIcon />,
     expandedIcon: <FolderOpenIcon />,
     children: [
@@ -84,7 +84,7 @@ const flagOptions = [
         id: 'App2',
         hasBadge: true,
         children: [
-          { name: 'Settings', id: 'App2Settings', hasCheck: true },
+          { name: 'Settings', id: 'App2Settings', hasCheckbox: true },
           {
             name: 'Loader',
             id: 'App2Loader',
@@ -168,7 +168,7 @@ describe('tree view', () => {
   });
 
   test('renders checkboxes successfully', () => {
-    const { asFragment } = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasChecks />);
+    const { asFragment } = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasCheckboxes />);
     expect(asFragment()).toMatchSnapshot();
   });
 

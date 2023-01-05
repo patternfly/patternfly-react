@@ -81,16 +81,16 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
     <Menu ref={menuRef} id="select-menu" onSelect={onSelect} selected={selectedItems}>
       <MenuContent>
         <MenuList>
-          <MenuItem hasCheck itemId={0} isSelected={selectedItems.includes(0)}>
+          <MenuItem hasCheckbox itemId={0} isSelected={selectedItems.includes(0)}>
             Debug
           </MenuItem>
-          <MenuItem hasCheck itemId={1} isSelected={selectedItems.includes(1)}>
+          <MenuItem hasCheckbox itemId={1} isSelected={selectedItems.includes(1)}>
             Info
           </MenuItem>
-          <MenuItem hasCheck itemId={2} isSelected={selectedItems.includes(2)}>
+          <MenuItem hasCheckbox itemId={2} isSelected={selectedItems.includes(2)}>
             Warn
           </MenuItem>
-          <MenuItem hasCheck isDisabled itemId={4} isSelected={selectedItems.includes(4)}>
+          <MenuItem hasCheckbox isDisabled itemId={4} isSelected={selectedItems.includes(4)}>
             Error
           </MenuItem>
         </MenuList>

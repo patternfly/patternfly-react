@@ -49,16 +49,16 @@ export const SelectCheckbox: React.FunctionComponent = () => {
       toggle={toggle}
     >
       <SelectList>
-        <SelectOption hasCheck itemId={0} isSelected={selectedItems.includes(0)}>
+        <SelectOption hasCheckbox itemId={0} isSelected={selectedItems.includes(0)}>
           Debug
         </SelectOption>
-        <SelectOption hasCheck itemId={1} isSelected={selectedItems.includes(1)}>
+        <SelectOption hasCheckbox itemId={1} isSelected={selectedItems.includes(1)}>
           Info
         </SelectOption>
-        <SelectOption hasCheck itemId={2} isSelected={selectedItems.includes(2)}>
+        <SelectOption hasCheckbox itemId={2} isSelected={selectedItems.includes(2)}>
           Warn
         </SelectOption>
-        <SelectOption hasCheck isDisabled itemId={4} isSelected={selectedItems.includes(4)}>
+        <SelectOption hasCheckbox isDisabled itemId={4} isSelected={selectedItems.includes(4)}>
           Error
         </SelectOption>
       </SelectList>

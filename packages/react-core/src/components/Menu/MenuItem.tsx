@@ -25,7 +25,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Target navigation link. Should not be used if the flyout prop is defined. */
   to?: string;
   /** @beta Flag indicating the item has a checkbox */
-  hasCheck?: boolean;
+  hasCheckbox?: boolean;
   /** Flag indicating whether the item is active */
   isActive?: boolean;
   /** Flag indicating if the item is favorited */
@@ -79,7 +79,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   className,
   itemId = null,
   to,
-  hasCheck = false,
+  hasCheckbox = false,
   isActive = null,
   isFavorited = null,
   isLoadButton = false,
@@ -117,7 +117,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     disableHover
   } = React.useContext(MenuContext);
   let Component = (to ? 'a' : component) as any;
-  if (hasCheck && !to) {
+  if (hasCheckbox && !to) {
     Component = 'label' as any;
   }
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
@@ -305,26 +305,26 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       onMouseOver={onMouseOver}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       ref={ref}
-      role={!hasCheck ? 'none' : 'menuitem'}
+      role={!hasCheckbox ? 'none' : 'menuitem'}
       {...props}
     >
       <GenerateId>
         {randomId => (
           <Component
             tabIndex={-1}
-            className={css(styles.menuItem, getIsSelected() && !hasCheck && styles.modifiers.selected, className)}
+            className={css(styles.menuItem, getIsSelected() && !hasCheckbox && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
-            {...(!hasCheck && { disabled: isDisabled })}
-            {...(!hasCheck && !flyoutMenu && { role: 'menuitem' })}
+            {...(!hasCheckbox && { disabled: isDisabled })}
+            {...(!hasCheckbox && !flyoutMenu && { role: 'menuitem' })}
             ref={innerRef}
-            {...(!hasCheck && {
+            {...(!hasCheckbox && {
               onClick: (event: any) => {
                 onItemSelect(event, onSelect);
                 _drill && _drill();
                 flyoutMenu && handleFlyout(event);
               }
             })}
-            {...(hasCheck && { htmlFor: randomId })}
+            {...(hasCheckbox && { htmlFor: randomId })}
             {...additionalProps}
           >
             <span className={css(styles.menuItemMain)}>
@@ -334,7 +334,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
                 </span>
               )}
               {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
-              {hasCheck && (
+              {hasCheckbox && (
                 <span className={css('pf-c-menu__item-check')}>
                   <Checkbox
                     id={randomId}

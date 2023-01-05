@@ -18,13 +18,13 @@ export const MenuWithCheckbox: React.FunctionComponent = () => {
     <Menu onSelect={onSelect} selected={selectedItems}>
       <MenuContent>
         <MenuList>
-          <MenuItem hasCheck itemId={0} isSelected={selectedItems.includes(0)}>
+          <MenuItem hasCheckbox itemId={0} isSelected={selectedItems.includes(0)}>
             Checkbox 1
           </MenuItem>
-          <MenuItem hasCheck itemId={1} isSelected={selectedItems.includes(1)}>
+          <MenuItem hasCheckbox itemId={1} isSelected={selectedItems.includes(1)}>
             Checkbox 2
           </MenuItem>
-          <MenuItem hasCheck itemId={2} isDisabled>
+          <MenuItem hasCheckbox itemId={2} isDisabled>
             Checkbox 3
           </MenuItem>
         </MenuList>

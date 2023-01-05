@@ -10,7 +10,7 @@ export interface SelectOptionProps extends Omit<MenuItemProps, 'ref'> {
   /** Identifies the component in the Select onSelect callback */
   itemId?: any;
   /** Indicates the option has a checkbox */
-  hasCheck?: boolean;
+  hasCheckbox?: boolean;
   /** Indicates the option is disabled */
   isDisabled?: boolean;
   /** Indicates the option is selected */

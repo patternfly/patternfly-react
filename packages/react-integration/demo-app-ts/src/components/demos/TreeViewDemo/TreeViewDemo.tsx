@@ -197,7 +197,7 @@ export class TreeViewDemo extends Component {
       {
         name: 'ApplicationLauncher',
         id: 'FAppLaunch',
-        hasCheck: true,
+        hasCheckbox: true,
         icon: <FolderIcon />,
         expandedIcon: <FolderOpenIcon />,
         children: [
@@ -214,7 +214,7 @@ export class TreeViewDemo extends Component {
             id: 'FApp2',
             hasBadge: true,
             children: [
-              { name: 'Settings', id: 'FApp2Settings', hasCheck: true },
+              { name: 'Settings', id: 'FApp2Settings', hasCheckbox: true },
               {
                 name: 'Loader',
                 id: 'FApp2Loader',

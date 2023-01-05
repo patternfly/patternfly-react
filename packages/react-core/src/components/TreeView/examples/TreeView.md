@@ -560,7 +560,7 @@ class CheckboxTreeView extends React.Component {
 
   render() {
     const mapped = this.options.map(item => this.mapTree(item));
-    return <TreeView data={mapped} onCheck={this.onCheck} hasChecks />;
+    return <TreeView data={mapped} onCheck={this.onCheck} hasCheckboxes />;
   }
 }
 ```

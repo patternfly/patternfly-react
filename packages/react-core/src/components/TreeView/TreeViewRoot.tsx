@@ -9,7 +9,7 @@ export interface TreeViewRootProps {
   /** Child nodes of the tree view */
   children: React.ReactNode;
   /** Flag indicating if the tree view has checkboxes. */
-  hasChecks?: boolean;
+  hasCheckboxes?: boolean;
   /** Flag indicating if tree view has guide lines. */
   hasGuides?: boolean;
   /** Variant presentation styles for the tree view. */
@@ -28,15 +28,15 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     if (canUseDOM) {
       window.addEventListener(
         'keydown',
-        this.props.hasChecks || this.props.hasSelectableNodes ? this.handleKeysCheckbox : this.handleKeys
+        this.props.hasCheckboxes || this.props.hasSelectableNodes ? this.handleKeysCheckbox : this.handleKeys
       );
     }
-    if (this.props.hasChecks || this.props.hasSelectableNodes) {
+    if (this.props.hasCheckboxes || this.props.hasSelectableNodes) {
       const firstToggle = this.treeRef.current.getElementsByClassName('pf-c-tree-view__node-toggle')[0] as HTMLElement;
       if (firstToggle) {
         firstToggle.tabIndex = 0;
       }
-      if (this.props.hasChecks) {
+      if (this.props.hasCheckboxes) {
         const firstInput = this.treeRef.current.getElementsByTagName('INPUT')[0] as HTMLElement;
         if (firstInput) {
           firstInput.tabIndex = 0;
@@ -59,7 +59,7 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     if (canUseDOM) {
       window.removeEventListener(
         'keydown',
-        this.props.hasChecks || this.props.hasSelectableNodes ? this.handleKeysCheckbox : this.handleKeys
+        this.props.hasCheckboxes || this.props.hasSelectableNodes ? this.handleKeysCheckbox : this.handleKeys
       );
     }
   }
@@ -188,7 +188,7 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { children, hasChecks, hasGuides, variant, className, hasSelectableNodes, ...props } = this.props;
+    const { children, hasCheckboxes, hasGuides, variant, className, hasSelectableNodes, ...props } = this.props;
     return (
       <div
         className={css(

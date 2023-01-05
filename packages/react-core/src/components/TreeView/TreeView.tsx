@@ -26,7 +26,7 @@ export interface TreeViewDataItem {
   /** Flag indicating if a tree view item has a badge. */
   hasBadge?: boolean;
   /** Flag indicating if a tree view item has a checkbox. */
-  hasCheck?: boolean;
+  hasCheckbox?: boolean;
   /** Default icon of a tree view item. */
   icon?: React.ReactNode;
   /** ID of a tree view item. */
@@ -59,7 +59,7 @@ export interface TreeViewProps {
   /** Flag indicating if all nodes in the tree view should have badges. */
   hasBadges?: boolean;
   /** Flag indicating if all nodes in the tree view should have checkboxes. */
-  hasChecks?: boolean;
+  hasCheckboxes?: boolean;
   /** Flag indicating if the tree view has guide lines. */
   hasGuides?: boolean;
   /** Flag indicating if the tree view is nested. */
@@ -92,7 +92,7 @@ export interface TreeViewProps {
 export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   data,
   isNested = false,
-  hasChecks = false,
+  hasCheckboxes = false,
   hasBadges = false,
   hasGuides = false,
   hasSelectableNodes = false,
@@ -124,7 +124,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
           onSelect={onSelect}
           onCheck={onCheck}
-          hasCheck={item.hasCheck !== undefined ? item.hasCheck : hasChecks}
+          hasCheckbox={item.hasCheckbox !== undefined ? item.hasCheckbox : hasCheckboxes}
           checkProps={item.checkProps}
           hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}
           customBadgeContent={item.customBadgeContent}
@@ -144,7 +144,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
                 data={item.children}
                 isNested
                 parentItem={item}
-                hasChecks={hasChecks}
+                hasCheckboxes={hasCheckboxes}
                 hasBadges={hasBadges}
                 hasGuides={hasGuides}
                 hasSelectableNodes={hasSelectableNodes}
@@ -170,7 +170,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
       ) : (
         <TreeViewRoot
           hasSelectableNodes={hasSelectableNodes}
-          hasChecks={hasChecks}
+          hasCheckboxes={hasCheckboxes}
           hasGuides={hasGuides}
           variant={variant}
           className={className}
