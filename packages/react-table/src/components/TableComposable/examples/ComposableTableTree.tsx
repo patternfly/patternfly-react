@@ -98,7 +98,8 @@ export const ComposableTableTree: React.FunctionComponent = () => {
       });
       return children;
     }
-  }
+  };
+
   const areAllDescendantsSelected = (node: RepositoriesTreeNode) =>
     getDescendants(node).every(n => selectedNodeNames.includes(n.name));
   const areSomeDescendantsSelected = (node: RepositoriesTreeNode) =>
@@ -154,7 +155,6 @@ export const ComposableTableTree: React.FunctionComponent = () => {
         }),
       onCheckChange: (_event, isChecking) => {
         const nodeNamesToCheck = getDescendants(node).map(n => n.name);
-        console.log(nodeNamesToCheck);
         setSelectedNodeNames(prevSelected => {
           const otherSelectedNodeNames = prevSelected.filter(name => !nodeNamesToCheck.includes(name));
           return !isChecking ? otherSelectedNodeNames : [...otherSelectedNodeNames, ...nodeNamesToCheck];
