@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.206.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.205.23...demo-app-ts@4.206.0) (2023-01-06)
+
+
+### Features
+
+* **Topology:** Counter scale labels ([#8477](https://github.com/patternfly/patternfly-react/issues/8477)) ([56581e9](https://github.com/patternfly/patternfly-react/commit/56581e976a6df5e10a658c9c3c000094838768e2))
+
+
+
+
+
 ## [4.205.23](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.205.22...demo-app-ts@4.205.23) (2023-01-06)
 
 **Note:** Version bump only for package demo-app-ts
