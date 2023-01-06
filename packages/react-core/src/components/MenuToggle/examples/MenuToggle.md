@@ -165,7 +165,7 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ### Split button toggle with checkbox
 
-To add an action button or other control to a menu toggle, use a split button. A <MenuToggle> can be rendered as a split button by adding a `splitButtonOptions` object. Elements to be displayed before the toggle button must be included in the `items` property of `splitButtonOptions`.
+To add an action button or other control to a menu toggle, use a split button. A `<MenuToggle>` can be rendered as a split button by adding a `splitButtonOptions` object. Elements to be displayed before the toggle button must be included in the `items` property of `splitButtonOptions`.
 
 The following example shows a split button with a <MenuToggleCheckbox>.
 
