@@ -90,7 +90,6 @@ export class MenuDemo extends Component {
   onSimpleSelect = (event: React.MouseEvent, itemId: number | string | undefined) => {
     this.setState({ activeItem: itemId });
   };
-  // const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
   onActionSelect = (event: any, itemId: string | number) => {
     if (this.state.selectedItems.indexOf(Number(itemId)) !== -1) {
       this.setState({
