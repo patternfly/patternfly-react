@@ -30,7 +30,7 @@ A page will typically contain the following components:
 - A `<Page>` with a `header` that often contains a [masthead](/components/masthead)
   - Mastheads contain the `<PageToggleButton>`, a `<MastheadMain>` that contains a `<MastheadBrand>`, and the page's header toolbar within `<MastheadContent>`. 
 - A `<PageSidebar>` for vertical navigation 
-- One or more `<PageSection>` components
+- 1 or more `<PageSection>` components
 
 ### Vertical navigation
 
