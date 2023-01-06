@@ -97,7 +97,7 @@ To remove padding at specific breakpoints, pass in 'noPadding' at those breakpoi
 
 ### Group section
 
-To group page content sections, add one or more `<PageGroup>` components to a `<Page>`. 
+To group page content sections, add 1 or more `<PageGroup>` components to a `<Page>`. 
 
 The following example adds a group containing `<PageNavigation>`, `<PageBreadcrumb>`, and `<PageSection>` components.
 
