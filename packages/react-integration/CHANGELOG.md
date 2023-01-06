@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.209.1 (2023-01-06)
+
+
+### Bug Fixes
+
+* **MenuGroup:** Add option to use React component and Node in groupMenu ([#8219](https://github.com/patternfly/patternfly-react/issues/8219)) ([9c8fef8](https://github.com/patternfly/patternfly-react/commit/9c8fef8e3329f476a34974357b6f2df16c92e37d))
+
+
+
+
+
 # 4.209.0 (2023-01-06)
 
 
