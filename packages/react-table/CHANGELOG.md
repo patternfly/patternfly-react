@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.112.13 (2023-01-06)
+
+
+### Bug Fixes
+
+* **TableComposable:** Fixed parent checkbox behavior ([#8490](https://github.com/patternfly/patternfly-react/issues/8490)) ([0be8ea8](https://github.com/patternfly/patternfly-react/commit/0be8ea8ce5c718f28ced02f32940404aff58d180))
+
+
+
+
+
 ## [4.112.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.112.11...@patternfly/react-table@4.112.12) (2023-01-06)
 
 **Note:** Version bump only for package @patternfly/react-table
