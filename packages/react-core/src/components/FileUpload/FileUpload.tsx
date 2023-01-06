@@ -81,7 +81,7 @@ export interface FileUploadProps
   // Props available in FileUpload but not FileUploadField:
 
   /** Optional extra props to customize react-dropzone. */
-  dropzoneProps?: DropzoneProps;
+  dropzoneProps?: Partial<DropzoneProps>;
   /** Clear button was clicked. */
   onClearClick?: React.MouseEventHandler<HTMLButtonElement>;
   /** On data changed - if type='text' or type='dataURL' and file was loaded it will call this method */
