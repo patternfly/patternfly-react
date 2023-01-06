@@ -13,7 +13,9 @@ import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/ava
 
 ## Examples
 
-### Collapsed
+### Collapsed toggle
+
+A toggle is collapsed until it is selected by a user. 
 
 ```ts
 import React from 'react';
@@ -23,7 +25,9 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ```
 
-### Expanded
+### Expanded toggle
+
+When a user selects a toggle, it becomes expanded and is styled with a blue underline. To flag expanded toggles, and apply expanded styling, use the `isExpanded` property . 
 
 ```ts
 import React from 'react';
@@ -33,7 +37,9 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ```
 
-### Disabled
+### Disabled toggle
+
+To disable the selection and expansion of a toggle, use the `isDisabled` property. 
 
 ```ts
 import React from 'react';
@@ -43,7 +49,9 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ```
 
-### Count
+### With a badge
+
+To display a count of selected items in a toggle, add a `badge`.
 
 ```ts
 import React from 'react';
@@ -53,7 +61,42 @@ import { MenuToggle, Badge } from '@patternfly/react-core';
 
 ```
 
-### Primary
+### With icons
+
+Add recognizable icons to a menu toggle using the `icon` property.
+
+```ts
+import React from 'react';
+import { MenuToggle, Avatar } from '@patternfly/react-core';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+
+<React.Fragment>
+  <MenuToggle icon={<CogIcon />} variant="secondary">Icon</MenuToggle>{' '}
+  <MenuToggle icon={<CogIcon />} variant="secondary" isDisabled>Icon</MenuToggle>
+</React.Fragment>
+```
+
+### With avatar and text
+
+To add an avatar to a toggle, pass an `<Avatar>` component into the toggle's `icon` property. 
+
+This can be used alongside a text label to display a user's login profile, as shown in the following example.
+
+```ts
+import React from 'react';
+import { MenuToggle, Avatar } from '@patternfly/react-core';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+
+<React.Fragment>
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />}>Ned Username</MenuToggle>{' '}
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isExpanded>Ned Username</MenuToggle>{' '}
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isDisabled>Ned Username</MenuToggle>
+</React.Fragment>
+```
+
+### Variant styles
+
+Variant styling can be applied to menu toggles. In the following example, the toggle uses primary styling by passing `variant="primary"` into the `<MenuToggle>` component. Additional variant options include “default”, “plain”, “plainText”, “secondary”, and “typeahead”.
 
 ```ts
 import React from 'react';
@@ -75,29 +118,11 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 ```
 
-### Secondary
+### Plain toggle with icon
 
-```ts
-import React from 'react';
-import { MenuToggle } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+To apply plain styling to a menu toggle, pass in `variant="plain"`. You may pass in an `icon` to serve at the menu toggle. The following example passes in an `<EllipsisVIcon />` icon. 
 
-<React.Fragment>
-  <MenuToggle variant="secondary">Collapsed</MenuToggle>{' '}
-    <MenuToggle variant="secondary" icon={<CogIcon />}>
-    Icon
-  </MenuToggle>{' '}
-  <MenuToggle variant="secondary" isExpanded>
-    Expanded
-  </MenuToggle>{' '}
-  <MenuToggle variant="secondary" isDisabled>
-    Disabled
-  </MenuToggle>
-</React.Fragment>
-
-```
-
-### Plain
+To include an aria label, use the `aria-label` property. 
 
 ```ts
 import React from 'react';
@@ -116,7 +141,9 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
   </MenuToggle>
 </React.Fragment>
 ```
-### Plain with text
+### Plain toggle with text label
+
+To apply plain styling to a menu toggle with a text label, pass in `variant="plainText"`. Unlike the “plain” variant, “plainText” adds a caret pointing down in the toggle.
 
 ```ts
 import React from 'react';
@@ -136,69 +163,43 @@ import { MenuToggle } from '@patternfly/react-core';
 </React.Fragment>
 ```
 
-### Split button (checkbox)
-    
+### Split button toggle with checkbox
+
+To add an action button or other control to a menu toggle, use a split button. A <MenuToggle> can be rendered as a split button by adding a `splitButtonOptions` object. Elements to be displayed before the toggle button must be included in the `items` property of `splitButtonOptions`.
+
+The following example shows a split button with a <MenuToggleCheckbox>.
+
 ```ts file='MenuToggleSplitButtonCheckbox.tsx'
 ```
 
-### Split button (checkbox with toggle text)
+### Split button toggle with text label
     
+To display text in a menu toggle, add a label to the `items` property of `splitButtonOptions`.     
+
 ```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
 ```
 
-### Split button (checkbox, primary)
-    
+### Split button toggle with variant styling 
+
+Variant styling can be applied to split button toggles to adjust their appearance for different scenarios. The following example applies “primary” styling to the toggles shown.
+
 ```ts file='MenuToggleSplitButtonCheckboxPrimary.tsx'
 ```
 
-### Split button (checkbox, secondary)
-    
-```ts file='MenuToggleSplitButtonCheckboxSecondary.tsx'
-```
+### Split button toggle with action
 
-### Split button (action)
+To add an action to a split button, pass `variant='action'` into `splitButtonOptions` and add a `<MenuToggleAction>` to the `items` property of `splitButtonOptions`. 
+
+Actions may be used with primary and secondary toggle variants.
     
 ```ts file='MenuToggleSplitButtonAction.tsx'
 ```
 
-### Split button (action, primary)
-    
-```ts file='MenuToggleSplitButtonActionPrimary.tsx'
-```
+### Full height toggle
 
-### Split button (action, secondary)
-    
-```ts file='MenuToggleSplitButtonActionSecondary.tsx'
-```
+A full height toggle fills the height of its parent. To flag a full height toggle, use the `isFullHeight` property. 
 
-### With icon/image and text
-
-```ts
-import React from 'react';
-import { MenuToggle, Avatar } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-
-<React.Fragment>
-  <MenuToggle icon={<CogIcon />} variant="secondary">Icon</MenuToggle>{' '}
-  <MenuToggle icon={<CogIcon />} variant="secondary" isDisabled>Icon</MenuToggle>
-</React.Fragment>
-```
-
-### With avatar and text
-
-```ts
-import React from 'react';
-import { MenuToggle, Avatar } from '@patternfly/react-core';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
-
-<React.Fragment>
-  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />}>Ned Username</MenuToggle>{' '}
-  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isExpanded>Ned Username</MenuToggle>{' '}
-  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isDisabled>Ned Username</MenuToggle>
-</React.Fragment>
-```
-
-### Full height
+In the following example, the toggle fills the size of the "80px" `<div>` element that it is within.
 
 ```ts
 import React from 'react';
@@ -211,7 +212,11 @@ import { MenuToggle } from '@patternfly/react-core';
 </div>
 ```
 
-### Full width
+### Full width toggle
+
+A full width toggle fills the width of its parent. To flag a full width toggle, use the `isFullWidth` property. 
+
+In the following example, the toggle fills the width of its parent as the window size changes.
 
 ```ts
 import React from 'react';
