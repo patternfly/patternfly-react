@@ -59,6 +59,7 @@ export const NumberInputUnitThreshold: React.FunctionComponent = () => {
         minusBtnAriaLabel="minus"
         plusBtnAriaLabel="plus"
         unit="%"
+        allowEmptyInput
       />
     </React.Fragment>
   );
