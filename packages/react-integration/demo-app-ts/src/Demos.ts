@@ -93,11 +93,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.CodeEditorDemo
   },
   {
-    id: 'consoles-demo',
-    name: 'Consoles Demo',
-    componentType: Examples.ConsolesDemo
-  },
-  {
     id: 'context-selector-demo',
     name: 'ContextSelector Demo',
     componentType: Examples.ContextSelectorDemo
@@ -496,16 +491,6 @@ export const Demos: DemoInterface[] = [
     id: 'tooltip-demo',
     name: 'Tooltip Demo',
     componentType: Examples.TooltipDemo
-  },
-  {
-    id: 'topology-demo',
-    name: 'Topology Demo',
-    componentType: Examples.TopologyDemo
-  },
-  {
-    id: 'topology-pipelines-demo',
-    name: 'Topology Pipelines Demo',
-    componentType: Examples.TopologyPipelineDemo
   },
   {
     id: 'treeview-demo',

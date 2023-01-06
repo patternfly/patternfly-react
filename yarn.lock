@@ -2103,17 +2103,18 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.4.5", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.4.5":
   version "7.11.2"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.11.2.tgz"
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.7.2":
-  version "7.7.2"
-  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.7.2.tgz"
+"@babel/runtime@^7.7.2", "@babel/runtime@^7.8.7":
+  version "7.20.7"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.7.tgz#fcb41a5a70550e04a7b708037c7c32f7f356d8fd"
+  integrity sha512-UF0tvkUtxwAgZ5W/KrkHf0Rn0fdnLDU9ScxBrEVNUprE/MzirjK4MJUX1/BVDv00Sv8cljtukVK1aky++X1SjQ==
   dependencies:
-    regenerator-runtime "^0.13.2"
+    regenerator-runtime "^0.13.11"
 
 "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4":
   version "7.8.4"
@@ -3405,10 +3406,6 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@novnc/novnc@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@novnc/novnc/-/novnc-1.2.0.tgz"
-
 "@npmcli/move-file@^1.0.1":
   version "1.0.1"
   resolved "https://registry.npmjs.org/@npmcli/move-file/-/move-file-1.0.1.tgz"
@@ -3612,10 +3609,46 @@
     puppeteer-cluster "^0.23.0"
     xmldoc "^1.1.2"
 
+"@patternfly/patternfly@4.222.4":
+  version "4.222.4"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.222.4.tgz#5d988779c50df3dafc989d6e807d16971e34d228"
+  integrity sha512-+0fk4dzxEbWn+hgaOnR0BjfeUdEeVVrqfH7+GFeFc+RKjEMjIR/BZbWWN8YQDezmDv6A32gHmEKaY3Uwbt06Lw==
+
 "@patternfly/patternfly@5.0.0-alpha.3":
   version "5.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.0.0-alpha.3.tgz#ed5cddefd2d351252849ec2fab296ca26d6d5658"
   integrity sha512-cOufww4vza7TyqWWXss43VER6AS3r+tYqk0XhDNGi8cKV0XMJJrmmGCpELHW276gCaCRKnITUPK416cIDv/TtA==
+
+"@patternfly/react-catalog-view-extension@^4.93.15":
+  version "4.93.15"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-catalog-view-extension/-/react-catalog-view-extension-4.93.15.tgz#4a4177b4120e78b56f6e76db79e5a33d3b9a02f6"
+  integrity sha512-FH5wv7c+Rpc8JTkHudaXPiRt6OvyBWbOrF8fbF946e92K8M6fzuP8hhM/SqWUFez0gcDKyLNQqGPZPhw6WKtnA==
+  dependencies:
+    "@patternfly/patternfly" "4.222.4"
+    "@patternfly/react-core" "^4.267.6"
+    "@patternfly/react-styles" "^4.92.3"
+
+"@patternfly/react-inline-edit-extension@^4.86.85":
+  version "4.86.85"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-inline-edit-extension/-/react-inline-edit-extension-4.86.85.tgz#d815c791a324548f51dfb18d977e3c4bd5fab7b0"
+  integrity sha512-u+46FjhNKR+8a7MgPZGVtXysSvYAFRUOvcdIhrvfXZDFteAnM1dz+/C0/ft+uHMcAmwIe6jg1W3pl5yJMLkNNQ==
+  dependencies:
+    "@patternfly/react-core" "^4.267.6"
+    "@patternfly/react-icons" "^4.93.3"
+    "@patternfly/react-styles" "^4.92.3"
+    "@patternfly/react-table" "^4.112.6"
+
+"@patternfly/react-virtualized-extension@^4.88.82":
+  version "4.88.82"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-virtualized-extension/-/react-virtualized-extension-4.88.82.tgz#59e0e731d502f3f3c4aa497cad65c8a422da2558"
+  integrity sha512-Q/SNl8v5oBPaILKfqN/JqGiH+licqLUAu78G+4FWyC3uIJctMnmua9fUv1utUInlZ9QNkqqctfAzIq0/2geEgw==
+  dependencies:
+    "@patternfly/react-core" "^4.267.6"
+    "@patternfly/react-icons" "^4.93.3"
+    "@patternfly/react-styles" "^4.92.3"
+    linear-layout-vector "0.0.1"
+    react-virtualized "^9.21.1"
+    tslib "^2.0.0"
 
 "@reach/router@1.3.4":
   version "1.3.4"
@@ -3691,10 +3724,6 @@
   integrity sha512-AU7kwFxreVd6OAXcAFlKSmZquiRUU0FvYm44k1Y1QbK7Co4m0aqfGMhjykIeQp/H6rcl+nFmj0zfdUcGVs9Dew==
   dependencies:
     "@sinonjs/commons" "^1.7.0"
-
-"@spice-project/spice-html5@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/@spice-project/spice-html5/-/spice-html5-0.2.1.tgz"
 
 "@testim/chrome-version@^1.1.2":
   version "1.1.2"
@@ -4040,10 +4069,6 @@
   version "0.7.42"
   resolved "https://registry.npmjs.org/@types/dagre/-/dagre-0.7.42.tgz"
 
-"@types/dom-helpers@^3.4.1":
-  version "3.4.1"
-  resolved "https://registry.npmjs.org/@types/dom-helpers/-/dom-helpers-3.4.1.tgz"
-
 "@types/estree@*":
   version "0.0.45"
   resolved "https://registry.npmjs.org/@types/estree/-/estree-0.0.45.tgz"
@@ -4060,10 +4085,6 @@
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.npmjs.org/@types/events/-/events-3.0.0.tgz"
-
-"@types/file-saver@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/@types/file-saver/-/file-saver-2.0.1.tgz"
 
 "@types/fined@*":
   version "1.1.2"
@@ -4242,13 +4263,6 @@
   integrity sha512-YYknwy0D0iOwKQgz9v8nOzt2J6l4gouBmDnWqUUznltOTaon+r8US8ky8HvN0tXvc38U9m6z/t2RsVsnd1zM0g==
   dependencies:
     "@types/history" "^4.7.11"
-    "@types/react" "*"
-
-"@types/react-virtualized@^9.21.5":
-  version "9.21.10"
-  resolved "https://registry.npmjs.org/@types/react-virtualized/-/react-virtualized-9.21.10.tgz"
-  dependencies:
-    "@types/prop-types" "*"
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^18":
@@ -6039,21 +6053,6 @@ chokidar@3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
-"chokidar@>=3.0.0 <4.0.0":
-  version "3.5.2"
-  resolved "https://registry.npmjs.org/chokidar/-/chokidar-3.5.2.tgz"
-  integrity sha512-ekGhOnNVPgT77r4K/U3GDhu+FQ2S8TnK/s2KbIGXi0SZWuwkZ2QNyfWdZW+TVfn84DpEP7rLeCt2UI6bJ8GwbQ==
-  dependencies:
-    anymatch "~3.1.2"
-    braces "~3.0.2"
-    glob-parent "~5.1.2"
-    is-binary-path "~2.1.0"
-    is-glob "~4.0.1"
-    normalize-path "~3.0.0"
-    readdirp "~3.6.0"
-  optionalDependencies:
-    fsevents "~2.3.2"
-
 chokidar@^2.1.8:
   version "2.1.8"
   resolved "https://registry.npmjs.org/chokidar/-/chokidar-2.1.8.tgz"
@@ -6263,8 +6262,9 @@ clone@^1.0.2:
   resolved "https://registry.npmjs.org/clone/-/clone-1.0.4.tgz"
 
 clsx@^1.0.4:
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/clsx/-/clsx-1.1.1.tgz"
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
+  integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
 
 co-body@^6.0.0:
   version "6.0.0"
@@ -7723,8 +7723,9 @@ dom-converter@^0.2:
     utila "~0.4"
 
 dom-helpers@^5.1.3:
-  version "5.2.0"
-  resolved "https://registry.npmjs.org/dom-helpers/-/dom-helpers-5.2.0.tgz"
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-5.2.1.tgz#d9400536b2bf8225ad98fe052e029451ac40e902"
+  integrity sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==
   dependencies:
     "@babel/runtime" "^7.8.7"
     csstype "^3.0.2"
@@ -8775,7 +8776,7 @@ file-name@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/file-name/-/file-name-0.1.0.tgz"
 
-file-saver@1.3.8, file-saver@^1.3.8:
+file-saver@1.3.8:
   version "1.3.8"
   resolved "https://registry.npmjs.org/file-saver/-/file-saver-1.3.8.tgz"
 
@@ -11640,7 +11641,8 @@ liftoff@^2.5.0:
 
 linear-layout-vector@0.0.1:
   version "0.0.1"
-  resolved "https://registry.npmjs.org/linear-layout-vector/-/linear-layout-vector-0.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/linear-layout-vector/-/linear-layout-vector-0.0.1.tgz#398114d7303b6ecc7fd6b273af7b8401d8ba9c70"
+  integrity sha512-w+nr1ZOVFGyMhwr8JKo0YzqDc8C2Z7pc9UbTuJA4VG/ezlSFEx+7kNrfCYvq7JQ/jHKR+FWy6reNrkVVzm0hSA==
 
 lines-and-columns@^1.1.6:
   version "1.1.6"
@@ -12250,7 +12252,7 @@ media-typer@0.3.0:
 
 memoize-one@^5.1.0:
   version "5.2.1"
-  resolved "https://registry.npmjs.org/memoize-one/-/memoize-one-5.2.1.tgz"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.2.1.tgz#8337aa3c4335581839ec01c3d594090cebe8f00e"
   integrity sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
 
 memory-fs@^0.4.1:
@@ -14459,8 +14461,9 @@ react-ssr-prepass@1.2.1:
     object-is "^1.1.2"
 
 react-virtualized@^9.21.1:
-  version "9.22.2"
-  resolved "https://registry.npmjs.org/react-virtualized/-/react-virtualized-9.22.2.tgz"
+  version "9.22.3"
+  resolved "https://registry.yarnpkg.com/react-virtualized/-/react-virtualized-9.22.3.tgz#f430f16beb0a42db420dbd4d340403c0de334421"
+  integrity sha512-MKovKMxWTcwPSxE1kK1HcheQTWfuCxAuBoSTf2gwyMM21NdX/PXUhnoP8Uc5dRKd+nKm8v41R36OellhdCpkrw==
   dependencies:
     "@babel/runtime" "^7.7.2"
     clsx "^1.0.4"
@@ -14687,6 +14690,11 @@ regenerate@^1.4.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.2.tgz#b9346d8827e8f5a32f7ba29637d398b69014848a"
   integrity sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==
+
+regenerator-runtime@^0.13.11:
+  version "0.13.11"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
+  integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
 
 regenerator-runtime@^0.13.2:
   version "0.13.3"
@@ -15223,13 +15231,6 @@ safe-regex@^1.1.0:
 "safer-buffer@>= 2.1.2 < 3", "safer-buffer@>= 2.1.2 < 3.0.0", safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
   version "2.1.2"
   resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
-
-sass@^1.42.1:
-  version "1.42.1"
-  resolved "https://registry.npmjs.org/sass/-/sass-1.42.1.tgz"
-  integrity sha512-/zvGoN8B7dspKc5mC6HlaygyCBRvnyzzgD5khiaCfglWztY99cYoiTUksVx11NlnemrcfH5CEaCpsUKoW0cQqg==
-  dependencies:
-    chokidar ">=3.0.0 <4.0.0"
 
 sax@^1.2.1:
   version "1.2.4"
@@ -18085,14 +18086,6 @@ xregexp@^4.3.0:
 xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
   version "4.0.2"
   resolved "https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz"
-
-xterm-addon-fit@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/xterm-addon-fit/-/xterm-addon-fit-0.2.1.tgz"
-
-xterm@^4.8.1:
-  version "4.9.0"
-  resolved "https://registry.npmjs.org/xterm/-/xterm-4.9.0.tgz"
 
 y18n@^3.2.1:
   version "3.2.1"
