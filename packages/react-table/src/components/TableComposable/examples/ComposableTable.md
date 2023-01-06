@@ -233,8 +233,6 @@ export type OnExpand = (
 ```ts file="ComposableTableControllingText.tsx"
 ```
 
-#### TODO: distinguish between the use cases for modifier on Td vs on TableText?
-
 ### Composable: Modifiers with table text
 
 ```ts file="ComposableTableTextModifiers.tsx"
