@@ -21,7 +21,7 @@ exports[`ChipGroup chip group default 1`] = `
           class="pf-c-chip-group__list-item"
         >
           <div
-            class="pf-c-chip"
+            class=""
             closebtnarialabel="close"
             component="div"
             data-ouia-component-id="OUIA-Generated-Chip-1"
@@ -95,7 +95,7 @@ exports[`ChipGroup chip group with category 1`] = `
           class="pf-c-chip-group__list-item"
         >
           <div
-            class="pf-c-chip"
+            class=""
             closebtnarialabel="close"
             component="div"
             data-ouia-component-id="OUIA-Generated-Chip-2"
@@ -169,7 +169,7 @@ exports[`ChipGroup chip group with category and tooltip 1`] = `
           class="pf-c-chip-group__list-item"
         >
           <div
-            class="pf-c-chip"
+            class=""
             closebtnarialabel="close"
             component="div"
             data-ouia-component-id="OUIA-Generated-Chip-9"
@@ -243,7 +243,7 @@ exports[`ChipGroup chip group with closable category 1`] = `
           class="pf-c-chip-group__list-item"
         >
           <div
-            class="pf-c-chip"
+            class=""
             closebtnarialabel="close"
             component="div"
             data-ouia-component-id="OUIA-Generated-Chip-3"
