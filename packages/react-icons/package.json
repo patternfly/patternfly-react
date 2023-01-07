@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-icons",
-  "version": "4.93.3",
+  "version": "5.0.0-alpha.0",
   "description": "PatternFly 4 Icons as React Components",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -8,7 +8,7 @@
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
-    "tag": "prerelease"
+    "tag": "alpha"
   },
   "repository": {
     "type": "git",
