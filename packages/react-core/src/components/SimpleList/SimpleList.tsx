@@ -74,7 +74,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
       >
         <div className={css(styles.simpleList, className)} {...props}>
           {isGrouped && children}
-          {!isGrouped && <ul>{children}</ul>}
+          {!isGrouped && <ul aria-label={props['aria-label']}>{children}</ul>}
         </div>
       </SimpleListContext.Provider>
     );
