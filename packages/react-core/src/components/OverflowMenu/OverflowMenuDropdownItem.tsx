@@ -6,7 +6,7 @@ export interface OverflowMenuDropdownItemProps extends Omit<DropdownItemProps, '
   /** Indicates when a dropdown item shows and hides the corresponding list item */
   isShared?: boolean;
   /** Identifies the component in the dropdown onSelect callback */
-  itemId?: string;
+  itemId?: string | number;
 }
 
 export const OverflowMenuDropdownItem: React.FunctionComponent<OverflowMenuDropdownItemProps> = ({
