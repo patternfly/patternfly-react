@@ -17,6 +17,8 @@ export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   isFixed?: boolean;
   /** Adds accessible text to the Accordion content */
   'aria-label'?: string;
+  /** Id of the controlling accordion toggle to label the content. */
+  'aria-labelledby'?: string;
   /** Component to use as content container */
   component?: React.ElementType;
   /** Flag indicating content is custom. Expanded content Body wrapper will be removed from children.  This allows multiple bodies to be rendered as content. */
@@ -31,6 +33,7 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
   isFixed = false,
   isCustomContent = false,
   'aria-label': ariaLabel = '',
+  'aria-labelledby': ariaLabelledby,
   component,
   ...props
 }: AccordionContentProps) => {
@@ -61,6 +64,7 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
             )}
             hidden={isHidden}
             aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledby}
             tabIndex={hasScrollbar ? 0 : null}
             {...(hasScrollbar && Container === 'div' && { role: 'region' })}
             {...props}
