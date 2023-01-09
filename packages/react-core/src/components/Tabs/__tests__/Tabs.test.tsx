@@ -389,12 +389,12 @@ test('should render secondary tabs with no bottom border when passed hasNoBorder
 
   const tabsContainer = screen.queryByLabelText('Secondary bottom border');
 
-  expect(tabsContainer).not.toHaveClass('pf-m-border-bottom');
+  expect(tabsContainer).toHaveClass('pf-m-no-border-bottom');
 });
 
 test('should render secondary tabs with border bottom', () => {
   render(
-    <Tabs isSecondary id="noBottomBorderTabs" aria-label="Secondary bottom border">
+    <Tabs isSecondary id="bottomBorderTabs" aria-label="Secondary bottom border">
       <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
         Tab 1 section
       </Tab>
@@ -409,7 +409,7 @@ test('should render secondary tabs with border bottom', () => {
 
   const tabsContainer = screen.queryByLabelText('Secondary bottom border');
 
-  expect(tabsContainer).toHaveClass('pf-m-border-bottom');
+  expect(tabsContainer).not.toHaveClass('pf-m-no-border-bottom');
 });
 
 test('should not render scroll buttons by default', () => {
