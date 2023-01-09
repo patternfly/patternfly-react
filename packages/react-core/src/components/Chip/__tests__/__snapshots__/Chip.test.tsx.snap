@@ -3,9 +3,7 @@
 exports[`Chip closable 1`] = `
 <DocumentFragment>
   <div
-    class="my-chp-cls"
-    closebtnarialabel="close"
-    component="div"
+    class="pf-c-chip my-chp-cls"
     data-ouia-component-id="OUIA-Generated-Chip-2"
     data-ouia-component-type="PF4/Chip"
     data-ouia-safe="true"
@@ -50,9 +48,7 @@ exports[`Chip closable 1`] = `
 exports[`Chip closable with tooltip 1`] = `
 <DocumentFragment>
   <div
-    class="my-chp-cls"
-    closebtnarialabel="close"
-    component="div"
+    class="pf-c-chip my-chp-cls"
     data-ouia-component-id="OUIA-Generated-Chip-3"
     data-ouia-component-type="PF4/Chip"
     data-ouia-safe="true"
@@ -97,9 +93,7 @@ exports[`Chip closable with tooltip 1`] = `
 exports[`Chip custom max-width text 1`] = `
 <DocumentFragment>
   <div
-    class="my-chp-cls"
-    closebtnarialabel="close"
-    component="div"
+    class="pf-c-chip my-chp-cls"
     data-ouia-component-id="OUIA-Generated-Chip-5"
     data-ouia-component-type="PF4/Chip"
     data-ouia-safe="true"
@@ -145,7 +139,7 @@ exports[`Chip custom max-width text 1`] = `
 exports[`Chip overflow 1`] = `
 <DocumentFragment>
   <div
-    class="my-chp-cls"
+    class="pf-c-chip pf-m-overflow my-chp-cls"
     closebtnarialabel="close"
     component="div"
     data-ouia-component-id="OUIA-Generated-Chip-1"
@@ -165,9 +159,7 @@ exports[`Chip overflow 1`] = `
 exports[`Chip readonly 1`] = `
 <DocumentFragment>
   <div
-    class="my-chp-cls"
-    closebtnarialabel="close"
-    component="div"
+    class="pf-c-chip my-chp-cls"
     data-ouia-component-id="OUIA-Generated-Chip-4"
     data-ouia-component-type="PF4/Chip"
     data-ouia-safe="true"
@@ -186,9 +178,7 @@ exports[`Chip readonly 1`] = `
 exports[`Chip with role='gridcell' 1`] = `
 <DocumentFragment>
   <div
-    class="my-chp-cls"
-    closebtnarialabel="close"
-    component="div"
+    class="pf-c-chip my-chp-cls"
     data-ouia-component-id="OUIA-Generated-Chip-6"
     data-ouia-component-type="PF4/Chip"
     data-ouia-safe="true"
