@@ -3638,6 +3638,41 @@
     "@patternfly/react-styles" "^4.92.3"
     "@patternfly/react-table" "^4.112.6"
 
+"@patternfly/react-log-viewer@^4.87.77":
+  version "4.87.77"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-log-viewer/-/react-log-viewer-4.87.77.tgz#5fe685f31b5434a1e78ab867d574327ae63bd9a7"
+  integrity sha512-nYZDktXGpUrzOSWC9qh1RlAa9DKbEwwIy9Vgu2wTDw5SXl9SLX9AP6k+5A1Kdblq6KnKhRB4QUFavYbIbc14jA==
+  dependencies:
+    "@patternfly/react-core" "^4.267.6"
+    "@patternfly/react-icons" "^4.93.3"
+    "@patternfly/react-styles" "^4.92.3"
+    memoize-one "^5.1.0"
+    resize-observer-polyfill "^1.5.1"
+
+"@patternfly/react-topology@^4.90.38":
+  version "4.90.38"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-topology/-/react-topology-4.90.38.tgz#abd379b01c2cf7ce7c86c6ef752f3b34580419c7"
+  integrity sha512-O8zs8sjGlaKL8E5FW5oM4/stHwJ5yKVQGsM6ILoToFj9t/gnrGRBT7lkYftO5EBlch4aWRZhca5WRTVrseh/ng==
+  dependencies:
+    "@patternfly/react-core" "^4.267.6"
+    "@patternfly/react-icons" "^4.93.3"
+    "@patternfly/react-styles" "^4.92.3"
+    "@types/d3" "^5.7.2"
+    "@types/d3-force" "^1.2.1"
+    "@types/dagre" "0.7.42"
+    "@types/react-measure" "^2.0.6"
+    "@types/webcola" "3.2.0"
+    d3 "^5.16.0"
+    dagre "0.8.2"
+    lodash "^4.17.19"
+    mobx "^5.15.4"
+    mobx-react "^6.2.0"
+    point-in-svg-path "^1.0.1"
+    popper.js "^1.16.1"
+    react-measure "^2.3.0"
+    tslib "^2.0.0"
+    webcola "3.4.0"
+
 "@patternfly/react-virtualized-extension@^4.88.82":
   version "4.88.82"
   resolved "https://registry.yarnpkg.com/@patternfly/react-virtualized-extension/-/react-virtualized-extension-4.88.82.tgz#59e0e731d502f3f3c4aa497cad65c8a422da2558"
