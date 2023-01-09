@@ -38,8 +38,8 @@ export const SearchInputAdvanced: React.FunctionComponent = () => {
         ]}
         advancedSearchDelimiter={useEqualsAsDelimiter ? '=' : ':'}
         value={value}
-        onChange={setValue}
-        onSearch={setValue}
+        onChange={(_event, value) => setValue(value)}
+        onSearch={(_event, value) => setValue(value)}
         onClear={() => setValue('')}
         formAdditionalItems={
           useCustomFooter ? (

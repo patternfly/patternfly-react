@@ -83,7 +83,7 @@ export const ToolbarComponentManagedToggleGroup: React.FunctionComponent = () =>
       <ToolbarItem variant="search-filter">
         <SearchInput
           aria-label="Component toggle groups example search input"
-          onChange={onInputChange}
+          onChange={(_event, value) => onInputChange(value)}
           value={inputValue}
           onClear={() => {
             onInputChange('');

@@ -110,7 +110,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
       <ToolbarItem variant="search-filter">
         <SearchInput
           aria-label="With filters example search input"
-          onChange={onInputChange}
+          onChange={(_event, value) => onInputChange(value)}
           value={inputValue}
           onClear={() => {
             onInputChange('');

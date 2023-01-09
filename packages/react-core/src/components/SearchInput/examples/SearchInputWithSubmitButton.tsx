@@ -8,8 +8,8 @@ export const SearchInputWithSubmitButton: React.FunctionComponent = () => {
     <SearchInput
       placeholder="Find by name"
       value={value}
-      onChange={setValue}
-      onSearch={setValue}
+      onChange={(_event, value) => setValue(value)}
+      onSearch={(_event, value) => setValue(value)}
       onClear={() => setValue('')}
     />
   );
