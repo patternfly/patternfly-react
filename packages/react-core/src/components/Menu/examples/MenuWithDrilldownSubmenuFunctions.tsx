@@ -11,13 +11,13 @@ export const MenuWithDrilldownSubmenuFunctions: React.FunctionComponent = () => 
   const [menuHeights, setMenuHeights] = React.useState<any>({});
   const [activeMenu, setActiveMenu] = React.useState<string>('functions-rootMenu');
 
-  const drillIn = (fromMenuId: string, toMenuId: string, pathId: string) => {
+  const drillIn = (_event: any, fromMenuId: string, toMenuId: string, pathId: string) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
     setDrilldownPath([...drilldownPath, pathId]);
     setActiveMenu(toMenuId);
   };
 
-  const drillOut = (toMenuId: string) => {
+  const drillOut = (_event: any, toMenuId: string) => {
     const menuDrilledInSansLast = menuDrilledIn.slice(0, menuDrilledIn.length - 1);
     const pathSansLast = drilldownPath.slice(0, drilldownPath.length - 1);
     setMenuDrilledIn(menuDrilledInSansLast);

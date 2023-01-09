@@ -224,12 +224,13 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     onClick && onClick(event);
   };
   const _isOnPath = (isOnPath && isOnPath) || (drilldownItemPath && drilldownItemPath.includes(itemId)) || false;
-  let _drill: () => void;
+  let drill: (event: any) => void;
   if (direction) {
     if (direction === 'down') {
-      _drill = () =>
+      drill = (event: any) =>
         onDrillIn &&
         onDrillIn(
+          event,
           menuId,
           typeof drilldownMenu === 'function'
             ? (drilldownMenu() as any).props.id
@@ -237,7 +238,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           itemId
         );
     } else {
-      _drill = () => onDrillOut && onDrillOut(parentMenu, itemId);
+      drill = (event: any) => onDrillOut && onDrillOut(event, parentMenu, itemId);
     }
   }
   let additionalProps = {} as any;
@@ -320,7 +321,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             {...(!hasCheck && {
               onClick: (event: any) => {
                 onItemSelect(event, onSelect);
-                _drill && _drill();
+                drill && drill(event);
                 flyoutMenu && handleFlyout(event);
               }
             })}

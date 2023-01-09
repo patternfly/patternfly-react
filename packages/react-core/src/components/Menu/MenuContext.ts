@@ -9,8 +9,8 @@ export const MenuContext = React.createContext<{
   selected?: any | any[];
   drilldownItemPath?: string[];
   drilledInMenus?: string[];
-  onDrillIn?: (fromItemId: string, toItemId: string, itemId: string) => void;
-  onDrillOut?: (toItemId: string, itemId: string) => void;
+  onDrillIn?: (event: any, fromItemId: string, toItemId: string, itemId: string) => void;
+  onDrillOut?: (event: any, toItemId: string, itemId: string) => void;
   onGetMenuHeight?: (menuId: string, height: number) => void;
   flyoutRef?: React.Ref<HTMLLIElement>;
   setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
