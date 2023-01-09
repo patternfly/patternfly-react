@@ -57,8 +57,10 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   timeoutAnimation?: number;
   /** Title of the alert.  */
   title: React.ReactNode;
-  /** Sets the heading level to use for the alert title. Default is h4. */
+  /** @deprecated Sets the heading level to use for the alert title. Default is h4. */
   titleHeadingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /** Sets the element to use as the alert title. Default is h4. */
+  component?: keyof JSX.IntrinsicElements;
   /** Adds accessible text to the alert toggle. */
   toggleAriaLabel?: string;
   /** Position of the tooltip which is displayed if text is truncated. */
@@ -99,7 +101,8 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   actionClose,
   actionLinks,
   title,
-  titleHeadingLevel: TitleHeadingLevel = 'h4',
+  titleHeadingLevel,
+  component = 'h4',
   children = '',
   className = '',
   ouiaId,
@@ -126,6 +129,12 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   );
 
   const titleRef = React.useRef(null);
+  const TitleComponent = (titleHeadingLevel || component) as any;
+  if (!!titleHeadingLevel) {
+    // eslint-disable-next-line no-console
+    console.warn('Alert: titleHeadingLevel is deprecated, please use the newer component prop instead to set the alert title element.');
+  }
+
   const divRef = React.useRef<HTMLDivElement>();
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   React.useEffect(() => {
@@ -197,13 +206,13 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     return null;
   }
   const Title = (
-    <TitleHeadingLevel
+    <TitleComponent
       {...(isTooltipVisible && { tabIndex: 0 })}
       ref={titleRef}
       className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}
     >
       {getHeadingContent}
-    </TitleHeadingLevel>
+    </TitleComponent>
   );
 
   return (
