@@ -92,7 +92,7 @@ To add an icon before a modal’s title, use the `titleIconVariant`, which can b
 
 ### Custom title icon
 
-To add a custom icon before a modal’s title, set `titleIconVariant` to an imported custom icon. The following example uses imports and uses a bullhorn icon.
+To add a custom icon before a modal’s title, set `titleIconVariant` to an imported custom icon. The following example imports and uses a bullhorn icon.
 
 ```ts file="./ModalCustomTitleIcon.tsx"
 ```
