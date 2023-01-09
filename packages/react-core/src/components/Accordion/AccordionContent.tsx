@@ -33,27 +33,43 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
   'aria-label': ariaLabel = '',
   component,
   ...props
-}: AccordionContentProps) => (
-  <AccordionContext.Consumer>
-    {({ ContentContainer }) => {
-      const Container = component || ContentContainer;
-      return (
-        <Container
-          id={id}
-          className={css(
-            styles.accordionExpandedContent,
-            isFixed && styles.modifiers.fixed,
-            !isHidden && styles.modifiers.expanded,
-            className
-          )}
-          hidden={isHidden}
-          aria-label={ariaLabel}
-          {...props}
-        >
-          {isCustomContent ? children : <AccordionExpandedContentBody>{children}</AccordionExpandedContentBody>}
-        </Container>
-      );
-    }}
-  </AccordionContext.Consumer>
-);
+}: AccordionContentProps) => {
+  const [hasScrollbar, setHasScrollbar] = React.useState(false);
+  const containerRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (containerRef?.current && isFixed && !isHidden) {
+      const { offsetHeight, scrollHeight } = containerRef.current;
+
+      setHasScrollbar(offsetHeight < scrollHeight);
+    }
+  }, [containerRef, isHidden]);
+
+  return (
+    <AccordionContext.Consumer>
+      {({ ContentContainer }) => {
+        const Container = component || ContentContainer;
+        return (
+          <Container
+            ref={containerRef}
+            id={id}
+            className={css(
+              styles.accordionExpandedContent,
+              isFixed && styles.modifiers.fixed,
+              !isHidden && styles.modifiers.expanded,
+              className
+            )}
+            hidden={isHidden}
+            aria-label={ariaLabel}
+            tabIndex={hasScrollbar ? 0 : null}
+            {...(hasScrollbar && Container === 'div' && { role: 'region' })}
+            {...props}
+          >
+            {isCustomContent ? children : <AccordionExpandedContentBody>{children}</AccordionExpandedContentBody>}
+          </Container>
+        );
+      }}
+    </AccordionContext.Consumer>
+  );
+};
 AccordionContent.displayName = 'AccordionContent';
