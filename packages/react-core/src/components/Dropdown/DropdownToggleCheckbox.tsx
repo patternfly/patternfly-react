@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { Spinner } from '../Spinner';
 
 export interface DropdownToggleCheckboxProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>,
@@ -15,6 +16,8 @@ export interface DropdownToggleCheckboxProps
   isDisabled?: boolean;
   /** Flag to show if the checkbox is checked */
   isChecked?: boolean | null;
+  /** @beta Flag to show if the checkbox is in progress */
+  isInProgress?: boolean | null;
   /** Alternate Flag to show if the checkbox is checked */
   checked?: boolean | null;
   /** A callback for when the checkbox selection changes */
@@ -25,6 +28,10 @@ export interface DropdownToggleCheckboxProps
   id: string;
   /** Aria-label of the checkbox */
   'aria-label': string;
+  /** @beta Text describing current loading status or progress */
+  defaultProgressAriaValueText?: string;
+  /** @beta Aria-label for the default progress icon to describe what is loading */
+  defaultProgressAriaLabel?: string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -68,6 +75,9 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
       isValid,
       isDisabled,
       isChecked,
+      isInProgress = false,
+      defaultProgressAriaLabel,
+      defaultProgressAriaValueText = 'Loading...',
       children,
       ouiaId,
       ouiaSafe,
@@ -77,13 +87,27 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
+
+    const spinner = (
+      <Spinner
+        diameter="1em"
+        isSVG
+        aria-valuetext={defaultProgressAriaValueText}
+        aria-live="polite"
+        aria-label={defaultProgressAriaLabel}
+      />
+    );
+
     const text = children && (
       <span className={css(styles.dropdownToggleText, className)} aria-hidden="true" id={`${props.id}-text`}>
         {children}
       </span>
     );
     return (
-      <label className={css(styles.dropdownToggleCheck, className)} htmlFor={props.id}>
+      <label
+        className={css(styles.dropdownToggleCheck, isInProgress && styles.modifiers.inProgress, className)}
+        htmlFor={props.id}
+      >
         <input
           {...props}
           {...(this.calculateChecked() !== undefined && { onChange: this.handleChange })}
@@ -98,6 +122,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
             ouiaSafe
           )}
         />
+        {isInProgress && <span className={css(styles.dropdownToggleProgress, className)}>{spinner}</span>}
         {text}
       </label>
     );
