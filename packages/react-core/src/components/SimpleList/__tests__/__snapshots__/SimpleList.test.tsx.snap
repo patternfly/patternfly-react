@@ -3,7 +3,6 @@
 exports[`SimpleList renders aria-labelled content 1`] = `
 <DocumentFragment>
   <div
-    aria-label="This is a simple list"
     class="pf-c-simple-list"
   >
     <ul
