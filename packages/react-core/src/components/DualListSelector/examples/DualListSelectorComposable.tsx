@@ -13,7 +13,8 @@ import {
   EmptyState,
   EmptyStateVariant,
   EmptyStateIcon,
-  EmptyStateBody
+  EmptyStateBody,
+  EmptyStatePrimary
 } from '@patternfly/react-core';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
@@ -143,9 +144,11 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
         No results found
       </Title>
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
-      <Button variant="link" onClick={() => onFilterChange('', isAvailable)}>
-        Clear all filters
-      </Button>
+      <EmptyStatePrimary>
+        <Button variant="link" onClick={() => onFilterChange('', isAvailable)}>
+          Clear all filters
+        </Button>
+      </EmptyStatePrimary>
     </EmptyState>
   );
 
@@ -158,7 +161,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
         } options selected`}
         searchInput={buildSearchInput(true)}
         actions={[buildSort(true)]}
-        listMinHeight="270px"
+        listMinHeight="300px"
       >
         {availableFilter !== '' &&
           availableOptions.filter(option => option.isVisible).length === 0 &&
@@ -222,7 +225,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
         searchInput={buildSearchInput(false)}
         actions={[buildSort(false)]}
         isChosen
-        listMinHeight="270px"
+        listMinHeight="300px"
       >
         {chosenFilter !== '' && chosenOptions.filter(option => option.isVisible).length === 0 && buildEmptyState(false)}
         {chosenOptions.filter(option => option.isVisible).length > 0 && (

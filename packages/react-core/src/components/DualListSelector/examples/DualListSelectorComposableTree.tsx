@@ -13,7 +13,8 @@ import {
   EmptyState,
   EmptyStateVariant,
   EmptyStateIcon,
-  EmptyStateBody
+  EmptyStateBody,
+  EmptyStatePrimary
 } from '@patternfly/react-core';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
@@ -249,7 +250,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
         status={status}
         searchInput={buildSearchInput(isChosen)}
         isChosen={isChosen}
-        listMinHeight="270px"
+        listMinHeight="300px"
       >
         {filterApplied && options.length === 0 && (
           <EmptyState variant={EmptyStateVariant.small}>
@@ -258,9 +259,11 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
               No results found
             </Title>
             <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
-            <Button variant="link" onClick={() => (isChosen ? setChosenFilter('') : setAvailableFilter(''))}>
-              Clear all filters
-            </Button>
+            <EmptyStatePrimary>
+              <Button variant="link" onClick={() => (isChosen ? setChosenFilter('') : setAvailableFilter(''))}>
+                Clear all filters
+              </Button>
+            </EmptyStatePrimary>
           </EmptyState>
         )}
         {options.length > 0 && (
