@@ -48,9 +48,9 @@ Use the `icon` property to add a familiar icon before a `<MenuItem>` to accelera
 
 To connect a menu item to an action icon, add a `<MenuItemAction>` to a `<MenuItem>`, and use the `icon` property to load an easily recognizable icon.  
 
-To trigger an action when any menu action icon is clicked, pass a callback to the `onActionClick` property of the `<Menu>`. The following example logs to the console any time any action icon is clicked. 
+To trigger an action when any menu action icon is selected, pass a callback to the `onActionClick` property of the `<Menu>`. The following example logs to the console any time any action icon is selected. 
 
-To trigger an action when a specific item's action icon is clicked, pass in the `onClick` property to that `<MenuItemAction>`. The following example logs "clicked on code icon" to the console when the "code" icon is clicked. 
+To trigger an action when a specific item's action icon is selected, pass in the `onClick` property to that `<MenuItemAction>`. The following example logs "clicked on code icon" to the console when the "code" icon is selected. 
 
 ```ts file="MenuWithActions.tsx"
 ```
@@ -99,7 +99,7 @@ Add a `<MenuGroup>` to organize `<MenuContent>` and use the `label` property to 
 
 ### With favorites
 
-The following menu example allows users to favorite menu items, an action that duplicates a menu item and places it in a separated group at the top of the menu. The `isFavorited` property identifies items that a user has favorited.
+The following menu example allows users to favorite menu items, an action that duplicates a menu item and places it in a separate group at the top of the menu. The `isFavorited` property identifies items that a user has favorited.
 
 ```ts file="MenuWithFavorites.tsx"
 ```
@@ -111,16 +111,16 @@ A [search input](/components/search-input) component can be placed within `<Menu
 ```ts file="MenuFilteringWithSearchInput.tsx"
 ```
 
-### Option single select
+### Option single select menu
 
-The following example demonstrates an option select menu that persists a selected menu item. Use the `selected` property on the `<Menu>` to label a selected item with a checkmark. You can also use the `isSelected` property on a `<MenuItem>` to indicate that it is selected.
+The following example demonstrates a single option select menu that persists a selected menu item. Use the `selected` property on the `<Menu>` to label a selected item with a checkmark. You can also use the `isSelected` property on a `<MenuItem>` to indicate that it is selected.
 
 ```ts file="MenuOptionSingleSelect.tsx"
 ```
 
-### Option multi select
+### Option multi select menu
 
-You may need to persist multiple selections that a user makes, as demonstrated below.
+To persist multiple selections that a user makes, use a multiple option select menu. To enable multi select, pass an array containing each selected `itemId` to the `selected` property.
 
 ```ts file="MenuOptionMultiSelect.tsx"
 ```
@@ -143,7 +143,7 @@ Adjust the visual size of a scrollable menu by using the `menuHeight` property w
 
 If you want to initially render only a certain number of menu items within a large menu, you can add a "view more" menu item with a callback passed into its `onClick` property that will render additional menu items.
 
-In this example, 3 additional menu items are revealed each time the "view more" option is selected, with a loading icon simulating a network call to fetch more items. Once all items are visible, the "view more" link disappears.
+In this example, 3 additional menu items are revealed each time the "view more" option is selected, with a loading icon simulating a network call to fetch more items. After all items are visible, the "view more" link disappears.
 
 ```ts file="MenuWithViewMore.tsx"
 ```
