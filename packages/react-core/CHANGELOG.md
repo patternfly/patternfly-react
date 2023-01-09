@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.268.0 (2023-01-09)
+
+
+### Features
+
+* **Dropdown:** support inProgress variation ([#8436](https://github.com/patternfly/patternfly-react/issues/8436)) ([28e1a7a](https://github.com/patternfly/patternfly-react/commit/28e1a7afa7422639afb3a694db552427bcabe6dc))
+
+
+
+
+
 ## [4.267.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.267.13...@patternfly/react-core@4.267.14) (2023-01-06)
 
 **Note:** Version bump only for package @patternfly/react-core
