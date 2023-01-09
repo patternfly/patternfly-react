@@ -5,17 +5,20 @@ import { OverflowMenuContext } from './OverflowMenuContext';
 export interface OverflowMenuDropdownItemProps extends Omit<DropdownItemProps, 'ref'> {
   /** Indicates when a dropdown item shows and hides the corresponding list item */
   isShared?: boolean;
+  /** Identifies the component in the dropdown onSelect callback */
+  itemId?: string;
 }
 
 export const OverflowMenuDropdownItem: React.FunctionComponent<OverflowMenuDropdownItemProps> = ({
   children,
   isShared = false,
+  itemId,
   ...additionalProps
 }: OverflowMenuDropdownItemProps) => (
   <OverflowMenuContext.Consumer>
     {value =>
       (!isShared || value.isBelowBreakpoint) && (
-        <DropdownItem component="button" {...additionalProps}>
+        <DropdownItem component="button" itemId={itemId} {...additionalProps}>
           {children}
         </DropdownItem>
       )
