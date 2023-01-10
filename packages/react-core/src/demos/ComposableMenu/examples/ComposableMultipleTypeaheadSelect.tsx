@@ -149,7 +149,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
           onClick={toggleMenuOpen}
           onChange={onTextInputChange}
           onKeyDown={onInputKeyDown}
-          id="typeahead-select-input"
+          id="multi-typeahead-select-input"
           autoComplete="off"
           innerRef={textInputRef}
         >

@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styles",
-  "version": "4.92.3",
+  "version": "5.0.0-alpha.0",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -12,7 +12,7 @@
   "author": "Red Hat",
   "publishConfig": {
     "access": "public",
-    "tag": "prerelease"
+    "tag": "alpha"
   },
   "scripts": {
     "generate": "rimraf css && node scripts/writeClassMaps.js && node scripts/copyStyles.js",

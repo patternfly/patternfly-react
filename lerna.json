@@ -25,5 +25,6 @@
     }
   },
   "version": "independent",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "allowBranch": true
 }

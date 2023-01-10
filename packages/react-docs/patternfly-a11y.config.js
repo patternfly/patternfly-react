@@ -10,7 +10,18 @@ async function waitFor(page) {
 }
 
 const urls = Object.keys(fullscreenRoutes)
-  .map(key => (fullscreenRoutes[key].isFullscreenOnly ? key : fullscreenRoutes[key].path.replace(/\/react$/, '')))
+  .map(key => {
+    if (fullscreenRoutes[key].isFullscreenOnly) {
+      return key;
+    } else {
+      const path = fullscreenRoutes[key].path;
+      if (path.match(/\/demos\/.*\/react-demos$/g)) {
+        return path.replace(/\/react-demos$/, '');
+      } else {
+        return path.replace(/\/react$/, '');
+      }
+    }
+  })
   .reduce((result, item) => (result.includes(item) ? result : [...result, item]), []);
 
 module.exports = {
