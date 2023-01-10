@@ -130,9 +130,11 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
 
   const titleRef = React.useRef(null);
   const TitleComponent = (titleHeadingLevel || component) as any;
-  if (!!titleHeadingLevel) {
+  if (titleHeadingLevel !== undefined) {
     // eslint-disable-next-line no-console
-    console.warn('Alert: titleHeadingLevel is deprecated, please use the newer component prop instead to set the alert title element.');
+    console.warn(
+      'Alert: titleHeadingLevel is deprecated, please use the newer component prop instead to set the alert title element.'
+    );
   }
 
   const divRef = React.useRef<HTMLDivElement>();
