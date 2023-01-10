@@ -52,9 +52,7 @@ import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 3. To create your topology view component, add a `VisualizationProvider`, which is a useful context provider. It allows access to the created Controller and is required when using the `VisualizationSurface` component.
 
-4. Use `VizualizationProvider` to wrap `VizualizationSurface` which can accept `state` as a parameter. The state is application specific. It can be any data the application wants to store/retrieve from the controller. Adding state to the surface allows hooks to update when state changes. The state is useful to keep graph state such as selected elements.
-
-5. Use a controller to wrap your topology view component. In the example below, this is done via the `VisualizationProvider` which consumes the `Controller` via context.
+4. You can use the provided `VisualizationSurface` to provide the SVG component required for the topology components. The `VisualizationSurface` can take a state parameter that will allow you to pass your state settings along to the Controller.
 
 ```ts file='./TopologyBaselineDemo.tsx'
 ```
