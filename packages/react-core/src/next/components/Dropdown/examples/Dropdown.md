@@ -26,13 +26,13 @@ This example also uses a `<Divider>` which passes in `key=”separator”` to sp
 
 ### With kebab toggle
 
-To style a dropdown menu's toggle with a kebab icon, pass a "plain" `<MenuToggle>` to the `toggle` property. When there isn't enough space for a labeled button, a kebab icon can indicate to users that a dropdown connects to a menu.
+To style a dropdown menu's toggle with a kebab icon, pass a "plain" `<MenuToggle>` to the `toggle` property. When there isn't enough space for a labeled button, a kebab icon can be used to toggle the dropdown menu open or closed.
 
 ```ts file="./DropdownWithKebabToggle.tsx"
 ```
 
 ### With groups of items
-To group sets of related dropdown items together, use a `<DropdownGroup>`. When more than one `<DropdownGroup>` is created in a menu, use the `label` and `labelHeadingLevel` properties to assign a name and heading level to each group. 
+To group sets of related dropdown items together, use a `<DropdownGroup>`. When more than 1 `<DropdownGroup>` is created in a menu, use the `label` and `labelHeadingLevel` properties to assign a name and heading level to each group. 
 
 ```ts file="./DropdownWithGroups.tsx"
 ```
