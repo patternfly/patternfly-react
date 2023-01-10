@@ -154,6 +154,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
           extraParams: {
             dropdownPosition: actions?.dropdownPosition,
             dropdownDirection: actions?.dropdownDirection,
+            menuAppendTo: actions?.menuAppendTo,
             actionsToggle: actions?.actionsToggle
           }
         }
