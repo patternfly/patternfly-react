@@ -76,7 +76,16 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
 
   render() {
     const { isOpen } = this.state;
-    const { items, children, dropdownPosition, dropdownDirection, menuAppendTo, isDisabled, rowData, actionsToggle } = this.props;
+    const {
+      items,
+      children,
+      dropdownPosition,
+      dropdownDirection,
+      menuAppendTo,
+      isDisabled,
+      rowData,
+      actionsToggle
+    } = this.props;
 
     const actionsToggleClone = actionsToggle ? (
       actionsToggle({ onToggle: this.onToggle, isOpen, isDisabled })
