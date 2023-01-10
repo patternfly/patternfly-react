@@ -59,6 +59,19 @@ test('Renders with the passed aria label', () => {
   expect(screen.getByRole('heading')).toHaveAccessibleName('Accordion content');
 });
 
+test('Renders with the passed aria-labelledby', () => {
+  render(
+    <>
+      <div id="accordion-label1">Accordion content</div>
+      <AccordionContext.Provider value={{ ContentContainer: 'h3' }}>
+        <AccordionContent aria-labelledby="accordion-label1">Test</AccordionContent>
+      </AccordionContext.Provider>
+    </>
+  );
+
+  expect(screen.getByRole('heading')).toHaveAccessibleName('Accordion content');
+});
+
 test('Renders with inherited element props spread to the component', () => {
   render(
     <>
@@ -151,7 +164,7 @@ test('Renders unhidden and with pf-m-expanded by default', () => {
     </AccordionContext.Provider>
   );
 
-  const contentContainer = screen.getByRole('heading')
+  const contentContainer = screen.getByRole('heading');
 
   expect(contentContainer).not.toHaveAttribute('hidden');
   expect(contentContainer).toHaveClass('pf-m-expanded');
@@ -164,7 +177,7 @@ test('Renders aria-hidden and without pf-m-expanded when isHidden is true', () =
     </AccordionContext.Provider>
   );
 
-  const contentContainer = screen.getByRole('heading', { hidden: true })
+  const contentContainer = screen.getByRole('heading', { hidden: true });
 
   expect(contentContainer).toHaveAttribute('hidden');
   expect(contentContainer).not.toHaveClass('pf-m-expanded');
