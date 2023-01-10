@@ -17,7 +17,7 @@ import { Popper } from '../../helpers';
  * be passed in as an object within an array to the search input component's attribute properrty.
  */
 
-export interface SearchAttribute {
+export interface SearchInputSearchAttribute {
   /** The search attribute's value to be provided in the search input's query string.
    * It should have no spaces and be unique for every attribute.
    */
@@ -32,11 +32,11 @@ export interface SearchAttribute {
  * the search input component's expandableInput property.
  */
 
-export interface ExpandableInput {
+export interface SearchInputExpandable {
   /** Flag to indicate if the search input is expanded. */
   isExpanded: boolean;
   /** Callback function to toggle the expandable search input. */
-  onToggleExpand: (isExpanded: boolean, event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  onToggleExpand: (event: React.SyntheticEvent<HTMLButtonElement>, isExpanded: boolean) => void;
   /** An accessible label for the expandable search input toggle. */
   toggleAriaLabel: string;
 }
@@ -58,11 +58,11 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** An accessible label for the search input. */
   'aria-label'?: string;
   /** Array of attribute values used for dynamically generated advanced search. */
-  attributes?: string[] | SearchAttribute[];
+  attributes?: string[] | SearchInputSearchAttribute[];
   /** Additional classes added to the search input. */
   className?: string;
   /** Object that makes the search input expandable/collapsible. */
-  expandableInput?: ExpandableInput;
+  expandableInput?: SearchInputExpandable;
   /* Additional elements added after the attributes in the form.
    * The new form elements can be wrapped in a form group component for automatic formatting. */
   formAdditionalItems?: React.ReactNode;
@@ -285,7 +285,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
   const onExpandHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     setSearchValue('');
-    onToggleExpand(isExpanded, event);
+    onToggleExpand(event, isExpanded);
     setFocusAfterExpandChange(true);
   };
 
