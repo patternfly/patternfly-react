@@ -33,25 +33,28 @@ import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 ### Baseline Topology
 
-1. Declare a controller, which can be initialized via the `useVisualizationController()` method.
+1. Create a new Controller which can be done using the default `Visualization` class.
 
-1. The `fromModel` method must be called on the controller to create the nodes. `fromModel` will take your data model as a parameter. Your data model should include a `graph` object, on which you will need to set `id` , `type` and `layout`.
+  It is important to note that three `register` methods are accessed by the controller.
 
-1. Create your topology view component, you can use `TopologyView` to Wrap `<VisualizationSurface>` which can accept `state` as a parameter. The state is application specific. It can be any data the application wants to store/retrieve from the controller. Adding state to the surface allows hooks to update when state changes. The state is useful to keep graph state such as selected elements.
+  The following two must be declared explicitly:
 
-1. Use a controller to wrap your topology view component. In the example below, this is done via the `VisualizationProvider` which consumes the `Controller` via context.
+    - `registerLayoutFactory`: This method sets the layout of your topology view (e.g. Force, Dagre, Cola, etc.). If your application supports all layouts, use `defaultLayoutFactory` as a parameter. If you only want to support a subset of the available layout options, update `defaultLayout` to a custom implementation .
 
-It is important to note that three `register` methods are accessed by the controller.
+    - `registerComponentFactory`: This method lets you customize the components in your topology view (e.g. nodes, groups, and edges). You can use `defaultComponentFactory` as a parameter.
 
-The following two must be declared explicitly:
+  The register method below is initialized in `Visualization.ts`. It doesn't need to be declared unless you support a custom implementation which modifies the types.
 
-- `registerLayoutFactory`: This method sets the layout of your topology view (e.g. Force, Dagre, Cola, etc.). You can use `defaultLayoutFactory` as a parameter if your application supports all layouts. You can also update `defaultLayout` to a custom implementation if you only want to support a subset of the available layout options.
+    - `registerElementFactory`: This method sets the types of the elements being used (e.g. graphs, nodes, edges). `defaultElementFactory` uses types from `ModelKind` and is exported in `index.ts`.
 
-- `registerComponentFactory`: This method lets you customize the components in your topology view (e.g. nodes, groups, and edges). You can use `defaultComponentFactory` as a parameter.
 
-The register method below is initialized in `Visualization.ts`, therefore it doesn't need to be declared unless you want to support a custom implementation which modifies the types.
+2. The `fromModel` method must be called on the controller to create the nodes. `fromModel` will take your data model as a parameter. Your data model should include a `graph` object, on which you will need to set `id` , `type` and `layout`.
 
-- `registerElementFactory`: This method sets the types of the elements being used (e.g. graphs, nodes, edges). `defaultElementFactory` uses types from `ModelKind` and is exported in `index.ts`.
+3. To create your topology view component, add a `VisualizationProvider`, which is a useful context provider. It allows access to the created Controller and is required when using the `VisualizationSurface` component.
+
+4. Use `VizualizationProvider` to wrap `VizualizationSurface` which can accept `state` as a parameter. The state is application specific. It can be any data the application wants to store/retrieve from the controller. Adding state to the surface allows hooks to update when state changes. The state is useful to keep graph state such as selected elements.
+
+5. Use a controller to wrap your topology view component. In the example below, this is done via the `VisualizationProvider` which consumes the `Controller` via context.
 
 ```ts file='./TopologyBaselineDemo.tsx'
 ```
@@ -62,8 +65,7 @@ To create a demo with custom node styling, you will need to create a custom node
 
 To do this, you will need:
 
-1. A `CustomNodeProps` interface with an `element` of type `Node`.
-2. A `CustomNode` component, with `CustomNodeProps` as the generic type, and the destructured `element` as the parameter. The code in the example shows how you can get data from `element` and apply it to the attributes of `DefaultNode`.
+- A `CustomNode` component, with `CustomNodeProps` as the generic type, and the destructured `element` as the parameter. The code in the example shows how you can get data from `element` and apply it to the attributes of `DefaultNode`.
 
 Within each node in your `NODES` array, you can set `data` to include additional custom attributes.
 
