@@ -2,10 +2,10 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import { AccordionExpandedContentBody } from '../AccordionExpandedContentBody';
+import { AccordionExpandableContentBody } from '../AccordionExpandableContentBody';
 
 test('Renders without children', () => {
-    const { asFragment } = render(<AccordionExpandedContentBody />);
+    const { asFragment } = render(<AccordionExpandableContentBody />);
 
     /* a snapshot test is used here because this component isn't selectable via better screen queries without children 
     as it doesn't spread other props to its container
@@ -14,20 +14,20 @@ test('Renders without children', () => {
 });
 
 test('Renders children', () => {
-  render(<AccordionExpandedContentBody>Test</AccordionExpandedContentBody>);
+  render(<AccordionExpandableContentBody>Test</AccordionExpandableContentBody>);
 
   expect(screen.getByText('Test')).toBeVisible();
 });
 
 test('Renders with class name pf-c-accordion__expandable-content-body', () => {
-  render(<AccordionExpandedContentBody>Test</AccordionExpandedContentBody>);
+  render(<AccordionExpandableContentBody>Test</AccordionExpandableContentBody>);
 
   expect(screen.getByText('Test')).toHaveClass('pf-c-accordion__expandable-content-body');
 });
 
 test('Matches the snapshot', () => {
   const { asFragment } = render(
-    <AccordionExpandedContentBody>Test</AccordionExpandedContentBody>
+    <AccordionExpandableContentBody>Test</AccordionExpandableContentBody>
   );
   expect(asFragment()).toMatchSnapshot();
 });

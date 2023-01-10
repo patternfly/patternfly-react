@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionContent,
   AccordionToggle,
-  AccordionExpandedContentBody,
+  AccordionExpandableContentBody,
   Button,
   Checkbox
 } from '@patternfly/react-core';
@@ -88,7 +88,7 @@ export const AccordionBordered: React.FunctionComponent = () => {
             Item four
           </AccordionToggle>
           <AccordionContent id="bordered-expand4" isHidden={expanded !== 'bordered-toggle4'} isCustomContent>
-            <AccordionExpandedContentBody>
+            <AccordionExpandableContentBody>
               Donec vel posuere orci. Phasellus quis tortor a ex hendrerit efficitur. Aliquam lacinia ligula pharetra,
               sagittis ex ut, pellentesque diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
               posuere cubilia Curae; Vestibulum ultricies nulla nibh. Etiam vel dui fermentum ligula ullamcorper
@@ -96,12 +96,12 @@ export const AccordionBordered: React.FunctionComponent = () => {
               parturient montes, nascetur ridiculus mus. Mauris et velit neque. Donec ultricies condimentum mauris,
               pellentesque imperdiet libero convallis convallis. Aliquam erat volutpat. Donec rutrum semper tempus.
               Proin dictum imperdiet nibh, quis dapibus nulla. Integer sed tincidunt lectus, sit amet auctor eros.
-            </AccordionExpandedContentBody>
-            <AccordionExpandedContentBody>
+            </AccordionExpandableContentBody>
+            <AccordionExpandableContentBody>
               <Button variant="link" size="lg" isInline>
                 Call to action <ArrowRightIcon />
               </Button>
-            </AccordionExpandedContentBody>
+            </AccordionExpandableContentBody>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem>
