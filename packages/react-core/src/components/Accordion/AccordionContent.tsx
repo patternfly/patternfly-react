@@ -45,8 +45,10 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
       const { offsetHeight, scrollHeight } = containerRef.current;
 
       setHasScrollbar(offsetHeight < scrollHeight);
+    } else if (!isFixed) {
+      setHasScrollbar(false);
     }
-  }, [containerRef, isHidden]);
+  }, [containerRef, isFixed, isHidden]);
 
   return (
     <AccordionContext.Consumer>
@@ -63,9 +65,9 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
               className
             )}
             hidden={isHidden}
-            aria-label={ariaLabel}
-            aria-labelledby={ariaLabelledby}
-            tabIndex={hasScrollbar ? 0 : null}
+            {...(ariaLabel && { 'aria-label': ariaLabel })}
+            {...(ariaLabelledby && { 'aria-labelledby': ariaLabelledby })}
+            {...(hasScrollbar && { tabIndex: 0 })}
             {...(hasScrollbar && Container === 'div' && { role: 'region' })}
             {...props}
           >
