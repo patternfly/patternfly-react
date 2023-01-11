@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.268.2 (2023-01-11)
+
+
+### Bug Fixes
+
+* **LabelGroup:** show the correct count of overflow labels ([#8505](https://github.com/patternfly/patternfly-react/issues/8505)) ([3dd3eda](https://github.com/patternfly/patternfly-react/commit/3dd3edabab58a77edcb3d2f173ca949851cc36fe))
+
+
+
+
+
 ## [4.268.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.268.0...@patternfly/react-core@4.268.1) (2023-01-11)
 
 
