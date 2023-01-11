@@ -21,9 +21,9 @@ import {
   ChartThemeColor,
   ChartTooltip,
   ChartVoronoiContainer,
-  createContainer,
-  getResizeObserver
+  createContainer
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -180,7 +180,8 @@ import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip }
 ### Monthly data with responsive container
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 class MonthlyResponsiveStack extends React.Component {
   constructor(props) {
@@ -301,7 +302,8 @@ This demonstrates monthly data with a bottom aligned legend and responsiveness f
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, createContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, createContainer } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 class MultiColorChart extends React.Component {
   constructor(props) {

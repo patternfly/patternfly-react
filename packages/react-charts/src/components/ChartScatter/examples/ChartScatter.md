@@ -22,8 +22,8 @@ ChartLine,
 ChartScatter,
 ChartThemeColor,
 ChartVoronoiContainer,
-getResizeObserver
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -74,7 +74,8 @@ This demonstrates how to add interactive data points to a line chart.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 class ScatterLineChart extends React.Component {
   constructor(props) {
@@ -211,7 +212,8 @@ This demonstrates how to add interactive data points to an area chart.
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
 class ScatterAreaChart extends React.Component {

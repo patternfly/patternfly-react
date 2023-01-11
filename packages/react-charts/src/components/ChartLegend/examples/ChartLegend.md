@@ -39,9 +39,9 @@ import {
   ChartVoronoiContainer,
   createContainer,
   getInteractiveLegendEvents,
-  getInteractiveLegendItemStyles,
-  getResizeObserver
+  getInteractiveLegendItemStyles
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
 import '@patternfly/patternfly/patternfly-charts.css';
 
@@ -122,7 +122,8 @@ This demonstrates a responsive legend which wraps when items are wider than its 
 
 ```js
 import React from 'react';
-import { ChartBullet, getResizeObserver } from '@patternfly/react-charts';
+import { ChartBullet } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 class BulletChart extends React.Component {
   constructor(props) {
@@ -281,8 +282,8 @@ import {
   createContainer, 
   getInteractiveLegendEvents, 
   getInteractiveLegendItemStyles,
-  getResizeObserver
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
 class InteractiveLegendChart extends React.Component {

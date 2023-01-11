@@ -9,7 +9,8 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { ChartAxis, ChartBullet, ChartContainer, ChartThemeColor, getResizeObserver } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartContainer, ChartThemeColor } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -82,7 +83,8 @@ This demonstrates a responsive legend which wraps when items are wider than its 
 
 ```js
 import React from 'react';
-import { ChartBullet, getResizeObserver } from '@patternfly/react-charts';
+import { ChartBullet } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 class BulletChart extends React.Component {
   constructor(props) {

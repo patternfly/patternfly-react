@@ -19,9 +19,9 @@ import {
   ChartLegend,
   ChartThreshold,
   ChartThemeColor,
-  ChartVoronoiContainer,
-  getResizeObserver
+  ChartVoronoiContainer
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
@@ -44,9 +44,9 @@ import {
   ChartGroup,
   ChartThreshold,
   ChartThemeColor,
-  ChartVoronoiContainer,
-  getResizeObserver
+  ChartVoronoiContainer
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
