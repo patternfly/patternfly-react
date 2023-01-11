@@ -8,7 +8,7 @@ import { PickOptional } from '../../helpers/typeUtils';
 import { findTabbableElements } from '../../helpers/util';
 import { KeyTypes } from '../../helpers/constants';
 
-export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
+export interface SelectToggleProps extends Omit<React.HTMLProps<HTMLElement>, 'ref'> {
   /** HTML ID of dropdown toggle */
   id: string;
   /** Anything which can be rendered as dropdown toggle */
@@ -59,9 +59,11 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   hasFooter?: boolean;
   /** @hide Internal callback for handling focus when typeahead toggle button clicked. */
   onClickTypeaheadToggleButton?: () => void;
+  /** @hide Internal ref for the select toggle */
+  innerRef?: React.Ref<any>;
 }
 
-export class SelectToggle extends React.Component<SelectToggleProps> {
+class SelectToggleBase extends React.Component<SelectToggleProps> {
   static displayName = 'SelectToggle';
   private toggle: React.RefObject<HTMLDivElement> | React.RefObject<HTMLButtonElement>;
 
@@ -88,7 +90,11 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     super(props);
     const { variant } = props;
     const isTypeahead = variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti;
-    this.toggle = isTypeahead ? React.createRef<HTMLDivElement>() : React.createRef<HTMLButtonElement>();
+    if (this.props.innerRef) {
+      this.toggle = this.props.innerRef as React.RefObject<HTMLButtonElement> | React.RefObject<HTMLDivElement>;
+    } else {
+      this.toggle = isTypeahead ? React.createRef<HTMLDivElement>() : React.createRef<HTMLButtonElement>();
+    }
   }
 
   componentDidMount() {
@@ -265,6 +271,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       hasFooter,
       footerRef,
       toggleIndicator,
+      innerRef,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -363,3 +370,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     );
   }
 }
+
+export const SelectToggle = React.forwardRef((props: SelectToggleProps, ref: React.Ref<any>) => (
+  <SelectToggleBase innerRef={ref} {...props} />
+));

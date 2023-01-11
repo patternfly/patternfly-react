@@ -95,6 +95,8 @@ export interface SelectProps
   isCheckboxSelectionBadgeHidden?: boolean;
   /** Id for select toggle element */
   toggleId?: string;
+  /** Ref for the select toggle element */
+  toggleRef?: React.Ref<HTMLButtonElement> | React.Ref<HTMLDivElement>;
   /** Adds accessible text to Select */
   'aria-label'?: string;
   /** Id of label for the Select aria-labelledby */
@@ -983,6 +985,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       onClear,
       onBlur,
       toggleId,
+      toggleRef,
       isOpen,
       isGrouped,
       isPlain,
@@ -1325,6 +1328,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           id={selectToggleId}
           parentRef={this.parentRef}
           menuRef={this.menuComponentRef}
+          ref={toggleRef}
           {...(footer && { footerRef: this.footerRef })}
           isOpen={isOpen}
           isPlain={isPlain}
