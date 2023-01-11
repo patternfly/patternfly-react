@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.268.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.268.0...@patternfly/react-core@4.268.1) (2023-01-11)
+
+
+### Bug Fixes
+
+* aria label added to ungrouped simple list ([#8507](https://github.com/patternfly/patternfly-react/issues/8507)) ([8254887](https://github.com/patternfly/patternfly-react/commit/8254887e2a68921b9c835953037ea1d94afe2e1e))
+
+
+
+
+
 # 4.268.0 (2023-01-09)
 
 
