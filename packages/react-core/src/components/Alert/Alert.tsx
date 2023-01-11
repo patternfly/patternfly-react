@@ -156,9 +156,9 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
   const dismissed = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
   React.useEffect(() => {
-    timeout = timeout === true ? 8000 : Number(timeout);
-    if (timeout > 0) {
-      const timer = setTimeout(() => setTimedOut(true), timeout);
+    const calculatedTimeout = timeout === true ? 8000 : Number(timeout);
+    if (calculatedTimeout > 0) {
+      const timer = setTimeout(() => setTimedOut(true), calculatedTimeout);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -186,7 +186,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   }, [containsFocus, isMouseOver]);
   React.useEffect(() => {
     dismissed && onTimeout();
-  }, [dismissed]);
+  }, [dismissed, timeoutAnimation]);
 
   const [isExpanded, setIsExpanded] = useState(false);
   const onToggleExpand = () => {
