@@ -52,8 +52,7 @@ PatternFly supports several properties and variations that can be used to add ex
 
 * As demonstrated in the 5th and 6th variations below, use the `component` property to set the element for an alert title. 
   * If there is no description below the alert title, then the `component` prop could be set to a non-heading element such as a `span` or `div`. 
-  * If the alert has a description, the alert title component should likely be a heading level element. Headings should be ordered by their level and heading levels should not be skipped. For example, a heading of an `h2` level should not be followed directly by an `h4`.
-
+  * If the `description` prop is not passed in, then the `component` prop should be set to a non-heading element such as a `span` or `div`.
 ```ts
 import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
