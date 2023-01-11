@@ -809,7 +809,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
 ### Note
-Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
+Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
 - For `ChartDonutThreshold` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)

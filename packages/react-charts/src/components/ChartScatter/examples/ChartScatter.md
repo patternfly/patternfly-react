@@ -330,7 +330,7 @@ class ScatterAreaChart extends React.Component {
 - For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
 
 ### Note
-Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the
+Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the
 components used in the examples above, Victory pass-thru props are also documented here:
 
 - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
