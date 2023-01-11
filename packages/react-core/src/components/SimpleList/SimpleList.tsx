@@ -16,6 +16,8 @@ export interface SimpleListProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   ) => void;
   /** Indicates whether component is controlled by its internal state */
   isControlled?: boolean;
+  /** aria-label for the <ul> element that wraps the SimpleList items. */
+  'aria-label'?: string;
 }
 
 export interface SimpleListState {
@@ -57,7 +59,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { children, className, onSelect, isControlled, ...props } = this.props;
+    const { children, className, onSelect, isControlled, 'aria-label': ariaLabel, ...props } = this.props;
 
     let isGrouped = false;
     if (children) {
@@ -74,7 +76,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
       >
         <div className={css(styles.simpleList, className)} {...props}>
           {isGrouped && children}
-          {!isGrouped && <ul>{children}</ul>}
+          {!isGrouped && <ul aria-label={ariaLabel}>{children}</ul>}
         </div>
       </SimpleListContext.Provider>
     );
