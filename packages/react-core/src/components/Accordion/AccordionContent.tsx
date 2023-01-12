@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 import { AccordionContext } from './AccordionContext';
-import { AccordionExpandedContentBody } from './AccordionExpandedContentBody';
+import { AccordionExpandableContentBody } from './AccordionExpandableContentBody';
 
 export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Accordion  */
@@ -50,7 +50,7 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
           aria-label={ariaLabel}
           {...props}
         >
-          {isCustomContent ? children : <AccordionExpandedContentBody>{children}</AccordionExpandedContentBody>}
+          {isCustomContent ? children : <AccordionExpandableContentBody>{children}</AccordionExpandableContentBody>}
         </Container>
       );
     }}

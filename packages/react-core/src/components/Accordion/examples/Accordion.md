@@ -2,7 +2,7 @@
 id: Accordion
 section: components
 cssPrefix: pf-c-accordion
-propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionToggle', AccordionExpandedContentBody]
+propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionToggle', AccordionExpandableContentBody]
 ---
 
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';

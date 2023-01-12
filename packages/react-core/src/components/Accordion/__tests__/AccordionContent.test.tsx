@@ -5,8 +5,8 @@ import { render, screen } from '@testing-library/react';
 import { AccordionContent } from '../AccordionContent';
 import { AccordionContext } from '../AccordionContext';
 
-jest.mock('../AccordionExpandedContentBody', () => ({
-  AccordionExpandedContentBody: ({ children }) => <div aria-label="Expanded content body mock">{children}</div>
+jest.mock('../AccordionExpandableContentBody', () => ({
+  AccordionExpandableContentBody: ({ children }) => <div aria-label="Expanded content body mock">{children}</div>
 }));
 
 test('Renders without children', () => {
@@ -29,7 +29,7 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with children wrapped in AccordionExpandedContentBody by default', () => {
+test('Renders with children wrapped in AccordionExpandableContentBody by default', () => {
   render(
     <AccordionContext.Provider value={{ ContentContainer: 'h3' }}>
       <AccordionContent>Test</AccordionContent>
@@ -39,7 +39,7 @@ test('Renders with children wrapped in AccordionExpandedContentBody by default',
   expect(screen.getByText('Test')).toHaveAccessibleName('Expanded content body mock');
 });
 
-test('Does not render children wrapped in AccordionExpandedContentBody when isCustomContent=true', () => {
+test('Does not render children wrapped in AccordionExpandableContentBody when isCustomContent=true', () => {
   render(
     <AccordionContext.Provider value={{ ContentContainer: 'h3' }}>
       <AccordionContent isCustomContent>Test</AccordionContent>
