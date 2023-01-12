@@ -33,7 +33,7 @@ import {
   OverflowMenuDropdownItem,
   MenuToggle
 } from '@patternfly/react-core';
-import { Dropdown } from '@patternfly/react-core/next';
+import { Dropdown, DropdownList } from '@patternfly/react-core/next';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class SimpleOverflowMenu extends React.Component {
@@ -100,7 +100,9 @@ class SimpleOverflowMenu extends React.Component {
             )}
             isOpen={isOpen}
           >
-            {dropdownItems}
+            <DropdownList>
+              {dropdownItems}
+            </DropdownList>
           </Dropdown>
         </OverflowMenuControl>
       </OverflowMenu>
@@ -124,7 +126,7 @@ import {
   Button,
   ButtonVariant
 } from '@patternfly/react-core';
-import { Dropdown } from '@patternfly/react-core/next';
+import { Dropdown, DropdownList } from '@patternfly/react-core/next';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
@@ -232,7 +234,9 @@ class OverflowMenuGroupTypes extends React.Component {
             )}
             isOpen={isOpen}
           >
-            {dropdownItems}
+            <DropdownList>
+              {dropdownItems}
+            </DropdownList>
           </Dropdown>
         </OverflowMenuControl>
       </OverflowMenu>
@@ -256,7 +260,7 @@ import {
   Button,
   ButtonVariant
 } from '@patternfly/react-core';
-import { Dropdown } from '@patternfly/react-core/next';
+import { Dropdown, DropdownList } from '@patternfly/react-core/next';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
@@ -351,7 +355,9 @@ class OverflowMenuAdditionalOptions extends React.Component {
             )}
             isOpen={isOpen}
           >
-            {dropdownItems}
+            <DropdownList>
+              {dropdownItems}
+            </DropdownList>
           </Dropdown>
         </OverflowMenuControl>
       </OverflowMenu>
@@ -375,7 +381,7 @@ import {
   Button,
   ButtonVariant
 } from '@patternfly/react-core';
-import { Dropdown } from '@patternfly/react-core/next';
+import { Dropdown, DropdownList } from '@patternfly/react-core/next';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class OverflowMenuPersist extends React.Component {
@@ -438,7 +444,9 @@ class OverflowMenuPersist extends React.Component {
             )}
             isOpen={isOpen}
           >
-            {dropdownItems}
+            <DropdownList>
+              {dropdownItems}
+            </DropdownList>
           </Dropdown>
         </OverflowMenuControl>
       </OverflowMenu>
