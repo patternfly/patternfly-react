@@ -161,7 +161,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       const timer = setTimeout(() => setTimedOut(true), calculatedTimeout);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [timeout]);
   React.useEffect(() => {
     const onDocumentFocus = () => {
       if (divRef.current) {
@@ -183,10 +183,10 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       const timer = setTimeout(() => setTimedOutAnimation(true), timeoutAnimation);
       return () => clearTimeout(timer);
     }
-  }, [containsFocus, isMouseOver]);
+  }, [containsFocus, isMouseOver, timeoutAnimation]);
   React.useEffect(() => {
     dismissed && onTimeout();
-  }, [dismissed, timeoutAnimation]);
+  }, [dismissed, onTimeout]);
 
   const [isExpanded, setIsExpanded] = useState(false);
   const onToggleExpand = () => {
