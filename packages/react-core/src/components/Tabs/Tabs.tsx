@@ -61,10 +61,8 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   isBox?: boolean;
   /** Enables vertical tab styling */
   isVertical?: boolean;
-  /** Enables border bottom tab styling on tabs. Defaults to true. To remove the bottom border, set this prop to false. */
-  hasBorderBottom?: boolean;
-  /** Enables border bottom styling for secondary tabs */
-  hasSecondaryBorderBottom?: boolean;
+  /** Disables border bottom tab styling on tabs. Defaults to false. To remove the bottom border, set this prop to true. */
+  hasNoBorderBottom?: boolean;
   /** Aria-label for the left scroll button */
   leftScrollAriaLabel?: string;
   /** Aria-label for the right scroll button */
@@ -177,7 +175,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     isSecondary: false,
     isVertical: false,
     isBox: false,
-    hasBorderBottom: true,
+    hasNoBorderBottom: false,
     leftScrollAriaLabel: 'Scroll left',
     rightScrollAriaLabel: 'Scroll right',
     component: TabsComponent.div,
@@ -375,9 +373,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       isSecondary,
       isVertical,
       isBox,
-      hasBorderBottom,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      hasSecondaryBorderBottom,
+      hasNoBorderBottom,
       leftScrollAriaLabel,
       rightScrollAriaLabel,
       'aria-label': ariaLabel,
@@ -460,7 +456,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             isBox && styles.modifiers.box,
             showScrollButtons && styles.modifiers.scrollable,
             usePageInsets && styles.modifiers.pageInsets,
-            !hasBorderBottom && styles.modifiers.noBorderBottom,
+            hasNoBorderBottom && styles.modifiers.noBorderBottom,
             formatBreakpointMods(inset, styles),
             variantStyle[variant],
             hasOverflowTab && styles.modifiers.overflow,
