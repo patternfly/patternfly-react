@@ -80,7 +80,7 @@ const StepContentWithDrawer = () => {
 
   const onWizardExpand = () => {
     drawerRef.current && drawerRef.current.focus();
-  }
+  };
 
   return (
     <Drawer isInline isExpanded={isDrawerExpanded} onExpand={onWizardExpand}>
@@ -88,7 +88,9 @@ const StepContentWithDrawer = () => {
         panelContent={
           <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
             <DrawerHead>
-              <span tabIndex={isDrawerExpanded ? 0 : -1} ref={drawerRef}>drawer content</span>
+              <span tabIndex={isDrawerExpanded ? 0 : -1} ref={drawerRef}>
+                drawer content
+              </span>
               <DrawerActions>
                 <DrawerCloseButton onClick={() => setIsDrawerExpanded(false)} />
               </DrawerActions>
