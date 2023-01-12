@@ -24,7 +24,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   itemId?: any;
   /** Target navigation link. Should not be used if the flyout prop is defined. */
   to?: string;
-  /** @beta Flag indicating the item has a checkbox */
+  /** Flag indicating the item has a checkbox */
   hasCheck?: boolean;
   /** Flag indicating whether the item is active */
   isActive?: boolean;
