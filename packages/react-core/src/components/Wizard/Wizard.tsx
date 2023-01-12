@@ -112,7 +112,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   hasDrawer?: boolean;
   /** Flag indicating the wizard drawer is expanded */
   isDrawerExpanded?: boolean;
-  /** Callback function for when the drawer is toggled */
+  /** Callback function for when the drawer is toggled. Can be used to set browser focus in the drawer. */
   onExpandDrawer?: () => void;
 }
 
