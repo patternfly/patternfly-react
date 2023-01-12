@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.269.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.268.2...@patternfly/react-core@4.269.0) (2023-01-12)
+
+
+### Bug Fixes
+
+* **NumberInput:** make allowEmptyInput an opt-in prop ([#8502](https://github.com/patternfly/patternfly-react/issues/8502)) ([5c97bff](https://github.com/patternfly/patternfly-react/commit/5c97bff75a44d603e8da066969204ea490770f3a))
+
+
+### Features
+
+* **Tabs:** added event to onAdd callback ([#8492](https://github.com/patternfly/patternfly-react/issues/8492)) ([1965838](https://github.com/patternfly/patternfly-react/commit/1965838a004f5c0d11e462daf7abce5891a64498))
+
+
+
+
+
 ## 4.268.2 (2023-01-11)
 
 

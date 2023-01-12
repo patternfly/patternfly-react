@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.209.2 (2023-01-12)
+
+
+### Bug Fixes
+
+* **NumberInput:** make allowEmptyInput an opt-in prop ([#8502](https://github.com/patternfly/patternfly-react/issues/8502)) ([5c97bff](https://github.com/patternfly/patternfly-react/commit/5c97bff75a44d603e8da066969204ea490770f3a))
+
+
+
+
+
 ## 4.209.1 (2023-01-06)
 
 
