@@ -51,7 +51,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   isInPage = true,
   hasDrawer,
   isDrawerExpanded,
-  onExpandDrawer,
+  onExpandDrawer
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
