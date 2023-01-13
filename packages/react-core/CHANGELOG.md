@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.271.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.270.0...@patternfly/react-core@4.271.0) (2023-01-13)
+
+
+### Features
+
+* **TextInputGroup:** reordered onChange parameters ([#8494](https://github.com/patternfly/patternfly-react/issues/8494)) ([58fc84a](https://github.com/patternfly/patternfly-react/commit/58fc84a6ee257f12139324814590f8c6d7a91fd2))
+
+
+
+
+
 # [4.270.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.269.0...@patternfly/react-core@4.270.0) (2023-01-13)
 
 
