@@ -68,6 +68,8 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** @beta The variant of a non-checkbox menu. Determines whether one or more items can be selected. */
+  selectVariant?: 'single' | 'multi';
 }
 
 export interface MenuState {
@@ -272,6 +274,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       innerRef,
       isRootMenu,
       activeMenu,
+      selectVariant,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
@@ -292,7 +295,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           onGetMenuHeight,
           flyoutRef: this.state.flyoutRef,
           setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
-          disableHover: this.state.disableHover
+          disableHover: this.state.disableHover,
+          selectVariant
         }}
       >
         {isRootMenu && (

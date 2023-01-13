@@ -173,6 +173,7 @@ export const SelectBasic: React.FunctionComponent = () => {
         setFilterValue('');
       }}
       toggle={toggle}
+      selectVariant="single"
     >
       <SelectList>
         {selectOptions.map((option, index) => (

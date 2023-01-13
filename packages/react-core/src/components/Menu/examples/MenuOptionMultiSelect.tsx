@@ -15,7 +15,7 @@ export const MenuOptionMultiSelect: React.FunctionComponent = () => {
   };
 
   return (
-    <Menu onSelect={onSelect} activeItemId={0} selected={selectedItems}>
+    <Menu selectVariant="multi" onSelect={onSelect} activeItemId={0} selected={selectedItems}>
       <MenuContent>
         <MenuList>
           <MenuItem itemId={0}>Option 1</MenuItem>

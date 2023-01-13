@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
+import { MenuContext } from './MenuContext';
 
 export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
   /** Anything that can be rendered inside of menu list */
@@ -13,9 +14,18 @@ export const MenuList: React.FunctionComponent<MenuListProps> = ({
   children = null,
   className,
   ...props
-}: MenuListProps) => (
-  <ul role="menu" className={css(styles.menuList, className)} {...props}>
-    {children}
-  </ul>
-);
+}: MenuListProps) => {
+  const { selectVariant } = React.useContext(MenuContext);
+
+  return (
+    <ul
+      role={selectVariant ? 'listbox' : 'menu'}
+      {...(selectVariant && { 'aria-multiselectable': selectVariant === 'multi' })}
+      className={css(styles.menuList, className)}
+      {...props}
+    >
+      {children}
+    </ul>
+  );
+};
 MenuList.displayName = 'MenuList';

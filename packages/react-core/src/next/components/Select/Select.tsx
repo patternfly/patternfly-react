@@ -28,6 +28,8 @@ export interface SelectProps extends MenuProps, OUIAProps {
   innerRef?: React.Ref<HTMLDivElement>;
   /** z-index of the select menu */
   zIndex?: number;
+  /** The variant of a non-checkbox select. Determines whether one or more items can be selected. */
+  selectVariant?: 'single' | 'multi';
 }
 
 const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
@@ -42,6 +44,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   minWidth,
   innerRef,
   zIndex = 9999,
+  selectVariant,
   ...props
 }: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -91,6 +94,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
 
   const menu = (
     <Menu
+      selectVariant={selectVariant}
       className={css(className)}
       ref={menuRef}
       onSelect={(event, itemId) => onSelect(event, itemId)}

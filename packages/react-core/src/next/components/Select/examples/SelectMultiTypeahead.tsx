@@ -178,6 +178,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       onSelect={(ev, selection) => onSelect(selection as string)}
       onOpenChange={() => setIsOpen(false)}
       toggle={toggle}
+      selectVariant="multi"
     >
       <SelectList>
         {selectOptions.map((option, index) => (

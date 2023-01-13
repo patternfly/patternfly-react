@@ -114,7 +114,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     onDrillOut,
     flyoutRef,
     setFlyoutRef,
-    disableHover
+    disableHover,
+    selectVariant
   } = React.useContext(MenuContext);
   let Component = (to ? 'a' : component) as any;
   if (hasCheck && !to) {
@@ -316,7 +317,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             className={css(styles.menuItem, getIsSelected() && !hasCheck && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
             {...(!hasCheck && { disabled: isDisabled })}
-            {...(!hasCheck && !flyoutMenu && { role: 'menuitem' })}
+            {...(!hasCheck && !flyoutMenu && { role: selectVariant ? 'option' : 'menuitem' })}
+            {...(!hasCheck && !flyoutMenu && selectVariant && { 'aria-selected': getIsSelected() })}
             ref={innerRef}
             {...(!hasCheck && {
               onClick: (event: React.KeyboardEvent | React.MouseEvent) => {
