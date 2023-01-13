@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.207.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.206.6...demo-app-ts@4.207.0) (2023-01-13)
+
+
+### Features
+
+* **Datepicker:** add event to callbacks ([#8529](https://github.com/patternfly/patternfly-react/issues/8529)) ([a863bf5](https://github.com/patternfly/patternfly-react/commit/a863bf58ab92f97cc729010b6fce963ffe7d37f1))
+
+
+
+
+
 ## [4.206.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.206.5...demo-app-ts@4.206.6) (2023-01-12)
 
 
