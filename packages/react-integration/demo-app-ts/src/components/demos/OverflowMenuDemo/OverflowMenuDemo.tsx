@@ -9,7 +9,7 @@ import {
   MenuToggle,
   Button
 } from '@patternfly/react-core';
-import { Dropdown, DropdownList } from '@patternfly/react-core/next';
+import { Dropdown, DropdownList } from '@patternfly/react-core/dist/esm/next/index';
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';

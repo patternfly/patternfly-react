@@ -9,7 +9,7 @@ import {
   MenuToggle,
   Slider
 } from '@patternfly/react-core';
-import { Dropdown, DropdownList } from '@patternfly/react-core/next';
+import { Dropdown, DropdownList } from '@patternfly/react-core/dist/esm/next/index';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => {

@@ -11,12 +11,12 @@ import {
   DrawerActions,
   DrawerCloseButton,
   DrawerPanelBody,
-  Dropdown,
   Flex,
   FlexItem,
   KebabToggle,
   Label,
   LabelGroup,
+  MenuToggle,
   OptionsMenu,
   OptionsMenuToggle,
   OverflowMenu,
@@ -52,6 +52,8 @@ import {
   ActionsColumn,
   CustomActionsToggleProps
 } from '@patternfly/react-table';
+import { Dropdown, DropdownList } from '@patternfly/react-core/dist/esm/next/index';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
@@ -188,11 +190,21 @@ export const TablesAndTabs = () => {
           <OverflowMenuControl hasAdditionalOptions>
             <Dropdown
               onSelect={() => {}}
-              toggle={<KebabToggle onToggle={() => {}} />}
+              toggle={toggleRef => (
+                <MenuToggle
+                  ref={toggleRef}
+                  aria-label="overflow menu"
+                  variant="plain"
+                  onClick={() => {}}
+                  isExpanded={false}
+                >
+                  <EllipsisVIcon />
+                </MenuToggle>
+              )}
               isOpen={false}
-              isPlain
-              dropdownItems={[]}
-            />
+            >
+              <DropdownList>{[]}</DropdownList>
+            </Dropdown>
           </OverflowMenuControl>
         </OverflowMenu>
       </ToolbarContent>

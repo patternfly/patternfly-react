@@ -33,7 +33,7 @@ import {
   OverflowMenuDropdownItem,
   MenuToggle
 } from '@patternfly/react-core';
-import { Dropdown, DropdownList } from '@patternfly/react-core/next';
+import { Dropdown, DropdownList } from '@patternfly/react-core/dist/esm/next/index';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class SimpleOverflowMenu extends React.Component {
@@ -126,7 +126,7 @@ import {
   Button,
   ButtonVariant
 } from '@patternfly/react-core';
-import { Dropdown, DropdownList } from '@patternfly/react-core/next';
+import { Dropdown, DropdownList } from '@patternfly/react-core/dist/esm/next/index';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
@@ -381,7 +381,7 @@ import {
   Button,
   ButtonVariant
 } from '@patternfly/react-core';
-import { Dropdown, DropdownList } from '@patternfly/react-core/next';
+import { Dropdown, DropdownList } from '@patternfly/react-core/dist/esm/next/index';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class OverflowMenuPersist extends React.Component {
