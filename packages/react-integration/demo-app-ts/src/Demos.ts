@@ -93,11 +93,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.CodeEditorDemo
   },
   {
-    id: 'consoles-demo',
-    name: 'Consoles Demo',
-    componentType: Examples.ConsolesDemo
-  },
-  {
     id: 'context-selector-demo',
     name: 'ContextSelector Demo',
     componentType: Examples.ContextSelectorDemo
