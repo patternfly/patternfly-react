@@ -51,7 +51,7 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ### With a badge
 
-To display a count of selected items in a toggle, add a `badge`.
+To display a count of selected items in a toggle, use the `badge` property.
 
 ```ts
 import React from 'react';
@@ -63,11 +63,11 @@ import { MenuToggle, Badge } from '@patternfly/react-core';
 
 ### With icons
 
-Add recognizable icons to a menu toggle using the `icon` property.
+To add a recognizable icon to a menu toggle, use the `icon` property. The following example adds a `CogIcon` to the  toggle.
 
 ```ts
 import React from 'react';
-import { MenuToggle, Avatar } from '@patternfly/react-core';
+import { MenuToggle } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 <React.Fragment>
@@ -78,9 +78,9 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 ### With avatar and text
 
-To add an avatar to a toggle, pass an `<Avatar>` component into the toggle's `icon` property. 
+You can also pass images into the `icon` property. The following example passes in an `<Avatar>` component with an `imgAvatar`. 
 
-This can be used alongside a text label to display a user's login profile, as shown in the following example.
+This can be used alongside a text label that provides more context for the image.
 
 ```ts
 import React from 'react';
@@ -120,9 +120,9 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 ### Plain toggle with icon
 
-To apply plain styling to a menu toggle, pass in `variant="plain"`. You may pass in an `icon` to serve at the menu toggle. The following example passes in an `<EllipsisVIcon />` icon. 
+To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`. This will remove the default bottom border and caret. You may pass in an `icon` to serve as the menu toggle. The following example passes in an `EllipsisVIcon`. 
 
-To include an aria label, use the `aria-label` property. 
+If the toggle does not have any visible text content, use the `aria-label` property to provide an accessible name. 
 
 ```ts
 import React from 'react';
@@ -173,15 +173,15 @@ The following example shows a split button with a <MenuToggleCheckbox>.
 ```
 
 ### Split button toggle with text label
-    
-To display text in a menu toggle, add a label to the `items` property of `splitButtonOptions`.     
+
+To display text in a split button menu toggle, add a label to the `items` property of `splitButtonOptions`.  
 
 ```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
 ```
 
 ### Split button toggle with variant styling 
 
-Variant styling can be applied to split button toggles to adjust their appearance for different scenarios. The following example applies “primary” styling to the toggles shown.
+Variant styling can be applied to split button toggles to adjust their appearance for different scenarios. Both "primary" and "secondary" variants can be used with split button toggles. The following example uses “primary” styling.
 
 ```ts file='MenuToggleSplitButtonCheckboxPrimary.tsx'
 ```
