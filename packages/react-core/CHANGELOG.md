@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.271.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.271.0...@patternfly/react-core@4.271.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* **DualListSelector:** added empty state to composable examples ([#8480](https://github.com/patternfly/patternfly-react/issues/8480)) ([94bed40](https://github.com/patternfly/patternfly-react/commit/94bed407b8104760f604a824d502727a4bda57df))
+
+
+
+
+
 # [4.271.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.270.0...@patternfly/react-core@4.271.0) (2023-01-13)
 
 
