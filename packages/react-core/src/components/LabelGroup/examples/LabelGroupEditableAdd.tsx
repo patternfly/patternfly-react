@@ -67,8 +67,8 @@ export const LabelGroupEditableAdd: React.FunctionComponent = () => {
           id={label.id}
           color="blue"
           onClose={() => onClose(label.id)}
-          onEditCancel={prevText => onEdit(prevText, index)}
-          onEditComplete={newText => onEdit(newText, index)}
+          onEditCancel={(_event, prevText) => onEdit(prevText, index)}
+          onEditComplete={(_event, newText) => onEdit(newText, index)}
           {...label.props}
         >
           {label.name}
