@@ -36,8 +36,8 @@ export class LabelGroupEditableDemo extends Component<{}, LabelState> {
         <Label
           color="blue"
           onClose={() => {}}
-          onEditCancel={prevText => this.onEditCancel(prevText, 'label1')}
-          onEditComplete={newText => this.onEditComplete(newText, 'label1')}
+          onEditCancel={(_event, prevText) => this.onEditCancel(prevText, 'label1')}
+          onEditComplete={(_event, newText) => this.onEditComplete(newText, 'label1')}
           isEditable
           editableProps={{
             'aria-label': 'Editable text',
