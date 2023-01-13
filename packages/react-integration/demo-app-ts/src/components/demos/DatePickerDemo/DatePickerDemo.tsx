@@ -13,7 +13,7 @@ export const DatePickerDemo = () => {
 
   return (
     <>
-      <DatePicker value={value} onChange={value => setValue(value)} validators={[rangeValidator]} />
+      <DatePicker value={value} onChange={(event, value) => setValue(value)} validators={[rangeValidator]} />
       <div>
         <button onClick={() => setValue('2020-03-18')}>Set date</button>
       </div>
