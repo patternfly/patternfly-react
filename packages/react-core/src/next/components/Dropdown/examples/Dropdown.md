@@ -2,7 +2,7 @@
 id: Dropdown
 section: components
 cssPrefix: pf-c-dropdown
-propComponents: ['Dropdown', DropdownGroup, 'DropdownItem', 'DropdownList', 'Menutoggle']
+propComponents: ['Dropdown', DropdownGroup, 'DropdownItem', 'DropdownList', 'MenuToggle']
 beta: true
 ---
 
