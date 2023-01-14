@@ -109,7 +109,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onTextInputChange = (value: string) => {
+  const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
   };
 

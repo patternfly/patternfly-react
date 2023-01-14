@@ -3,6 +3,126 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.82.97](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.82.96...@patternfly/react-code-editor@4.82.97) (2023-01-13)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## [4.82.96](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.82.95...@patternfly/react-code-editor@4.82.96) (2023-01-13)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## [4.82.95](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.82.94...@patternfly/react-code-editor@4.82.95) (2023-01-13)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## [4.82.94](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.82.93...@patternfly/react-code-editor@4.82.94) (2023-01-12)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## 4.82.93 (2023-01-11)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## [4.82.92](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.82.91...@patternfly/react-code-editor@4.82.92) (2023-01-11)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## 4.82.91 (2023-01-09)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## [4.82.90](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.82.89...@patternfly/react-code-editor@4.82.90) (2023-01-06)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## 4.82.89 (2023-01-06)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## [4.82.88](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.82.87...@patternfly/react-code-editor@4.82.88) (2023-01-06)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## [4.82.87](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.82.86...@patternfly/react-code-editor@4.82.87) (2023-01-05)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## [4.82.86](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.82.85...@patternfly/react-code-editor@4.82.86) (2023-01-05)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## [4.82.85](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.82.84...@patternfly/react-code-editor@4.82.85) (2023-01-04)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## 4.82.84 (2023-01-04)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## 4.82.83 (2022-12-19)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
 ## [4.82.82](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.82.81...@patternfly/react-code-editor@4.82.82) (2022-12-12)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

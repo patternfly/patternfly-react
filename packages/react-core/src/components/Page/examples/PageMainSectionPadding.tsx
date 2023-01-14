@@ -61,9 +61,7 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
       <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
         Section with no padding
       </PageSection>
-      <PageSection padding={{ default: 'noPadding', md: 'padding', lg: 'padding' }}>
-        Section with padding only on medium/large
-      </PageSection>
+      <PageSection padding={{ default: 'noPadding', md: 'padding' }}>Section with padding on medium</PageSection>
       <PageSection variant={PageSectionVariants.light} padding={{ md: 'noPadding' }}>
         Section with no padding on medium
       </PageSection>

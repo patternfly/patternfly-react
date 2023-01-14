@@ -2,9 +2,6 @@
   "files": [],
   "references": [
     {
-      "path": "./react-catalog-view-extension"
-    },
-    {
       "path": "./react-charts"
     },
     {
