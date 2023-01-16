@@ -154,6 +154,7 @@ const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
         showBackground
         onClick={e => onStatusDecoratorClick(e, element)}
         icon={<g className={css(styles.topologyNodeDecoratorStatus)}>{icon}</g>}
+        ariaLabel={status}
       />
     );
 
