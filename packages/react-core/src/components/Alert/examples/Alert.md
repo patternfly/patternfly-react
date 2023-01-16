@@ -50,9 +50,9 @@ PatternFly supports several properties and variations that can be used to add ex
 
 * As demonstrated in the 3rd and 4th variations below, use the `actionClose` property to add an `<AlertActionCloseButton>` component, which can be used to manage and customize alert dismissals. `actionClose` can be used with or without the presence of `actionLinks`.
 
-* As demonstrated in the 5th and 6th variations below, use the `component` property to set the element for an alert title. 
-  * If there is no description below the alert title, then the `component` prop could be set to a non-heading element such as a `span` or `div`. 
+* As demonstrated in the 5th and 6th variations below, use the `component` property to set the element for an alert title.  
   * If the `description` prop is not passed in, then the `component` prop should be set to a non-heading element such as a `span` or `div`.
+  * If the `description` prop is passed in, then the `component` prop should be a heading element. Headings should be ordered by their level and heading levels should not be skipped. For example, a heading of an `h2` level should not be followed directly by an `h4`.
 ```ts
 import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
