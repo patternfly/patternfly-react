@@ -431,6 +431,55 @@ class ColumnManagementAction extends React.Component {
           {
             title: (
               <React.Fragment>
+                <div>Node 2</div>
+                <a href="#">siemur/test-space</a>
+              </React.Fragment>
+            ),
+            props: { column: 'Repositories' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CodeBranchIcon key="icon" /> 8
+              </React.Fragment>
+            ),
+            props: { column: 'Branches' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CodeIcon key="icon" /> 30
+              </React.Fragment>
+            ),
+            props: { column: 'Pull requests' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CubeIcon key="icon" /> 2
+              </React.Fragment>
+            ),
+            props: { column: 'Workspaces' }
+          },
+          {
+            title: '2 days ago',
+            props: { column: 'Last commit' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <a href="#">Action link</a>
+              </React.Fragment>
+            ),
+            props: { column: '' }
+          }
+        ]
+      },
+      {
+        cells: [
+          {
+            title: (
+              <React.Fragment>
                 <div>Node 3</div>
                 <a href="#">siemur/test-space</a>
               </React.Fragment>
@@ -555,55 +604,6 @@ class ColumnManagementAction extends React.Component {
             title: (
               <React.Fragment>
                 <CubeIcon key="icon" /> 26
-              </React.Fragment>
-            ),
-            props: { column: 'Workspaces' }
-          },
-          {
-            title: '2 days ago',
-            props: { column: 'Last commit' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <a href="#">Action link</a>
-              </React.Fragment>
-            ),
-            props: { column: '' }
-          }
-        ]
-      },
-      {
-        cells: [
-          {
-            title: (
-              <React.Fragment>
-                <div>Node 2</div>
-                <a href="#">siemur/test-space</a>
-              </React.Fragment>
-            ),
-            props: { column: 'Repositories' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CodeBranchIcon key="icon" /> 8
-              </React.Fragment>
-            ),
-            props: { column: 'Branches' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CodeIcon key="icon" /> 30
-              </React.Fragment>
-            ),
-            props: { column: 'Pull requests' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CubeIcon key="icon" /> 2
               </React.Fragment>
             ),
             props: { column: 'Workspaces' }
