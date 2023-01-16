@@ -431,6 +431,153 @@ class ColumnManagementAction extends React.Component {
           {
             title: (
               <React.Fragment>
+                <div>Node 3</div>
+                <a href="#">siemur/test-space</a>
+              </React.Fragment>
+            ),
+            props: { column: 'Repositories' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CodeBranchIcon key="icon" /> 12
+              </React.Fragment>
+            ),
+            props: { column: 'Branches' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CodeIcon key="icon" /> 48
+              </React.Fragment>
+            ),
+            props: { column: 'Pull requests' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CubeIcon key="icon" /> 13
+              </React.Fragment>
+            ),
+            props: { column: 'Workspaces' }
+          },
+          {
+            title: '30 days ago',
+            props: { column: 'Last commit' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <a href="#">Action link</a>
+              </React.Fragment>
+            ),
+            props: { column: '' }
+          }
+        ]
+      },
+      {
+        cells: [
+          {
+            title: (
+              <React.Fragment>
+                <div>Node 4</div>
+                <a href="#">siemur/test-space</a>
+              </React.Fragment>
+            ),
+            props: { column: 'Repositories' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CodeBranchIcon key="icon" /> 3
+              </React.Fragment>
+            ),
+            props: { column: 'Branches' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CodeIcon key="icon" /> 8
+              </React.Fragment>
+            ),
+            props: { column: 'Pull requests' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CubeIcon key="icon" /> 20
+              </React.Fragment>
+            ),
+            props: { column: 'Workspaces' }
+          },
+          {
+            title: '8 days ago',
+            props: { column: 'Last commit' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <a href="#">Action link</a>
+              </React.Fragment>
+            ),
+            props: { column: '' }
+          }
+        ]
+      },
+      {
+        cells: [
+          {
+            title: (
+              <React.Fragment>
+                <div>Node 5</div>
+                <a href="#">siemur/test-space</a>
+              </React.Fragment>
+            ),
+            props: { column: 'Repositories' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CodeBranchIcon key="icon" /> 34
+              </React.Fragment>
+            ),
+            props: { column: 'Branches' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CodeIcon key="icon" /> 21
+              </React.Fragment>
+            ),
+            props: { column: 'Pull requests' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <CubeIcon key="icon" /> 26
+              </React.Fragment>
+            ),
+            props: { column: 'Workspaces' }
+          },
+          {
+            title: '2 days ago',
+            props: { column: 'Last commit' }
+          },
+          {
+            title: (
+              <React.Fragment>
+                <a href="#">Action link</a>
+              </React.Fragment>
+            ),
+            props: { column: '' }
+          }
+        ]
+      },
+      {
+        cells: [
+          {
+            title: (
+              <React.Fragment>
                 <div>Node 2</div>
                 <a href="#">siemur/test-space</a>
               </React.Fragment>
