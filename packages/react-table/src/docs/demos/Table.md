@@ -474,159 +474,11 @@ class ColumnManagementAction extends React.Component {
             props: { column: '' }
           }
         ]
-      },
-      {
-        cells: [
-          {
-            title: (
-              <React.Fragment>
-                <div>Node 3</div>
-                <a href="#">siemur/test-space</a>
-              </React.Fragment>
-            ),
-            props: { column: 'Repositories' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CodeBranchIcon key="icon" /> 12
-              </React.Fragment>
-            ),
-            props: { column: 'Branches' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CodeIcon key="icon" /> 48
-              </React.Fragment>
-            ),
-            props: { column: 'Pull requests' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CubeIcon key="icon" /> 13
-              </React.Fragment>
-            ),
-            props: { column: 'Workspaces' }
-          },
-          {
-            title: '30 days ago',
-            props: { column: 'Last commit' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <a href="#">Action link</a>
-              </React.Fragment>
-            ),
-            props: { column: '' }
-          }
-        ]
-      },
-      {
-        cells: [
-          {
-            title: (
-              <React.Fragment>
-                <div>Node 4</div>
-                <a href="#">siemur/test-space</a>
-              </React.Fragment>
-            ),
-            props: { column: 'Repositories' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CodeBranchIcon key="icon" /> 3
-              </React.Fragment>
-            ),
-            props: { column: 'Branches' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CodeIcon key="icon" /> 8
-              </React.Fragment>
-            ),
-            props: { column: 'Pull requests' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CubeIcon key="icon" /> 20
-              </React.Fragment>
-            ),
-            props: { column: 'Workspaces' }
-          },
-          {
-            title: '8 days ago',
-            props: { column: 'Last commit' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <a href="#">Action link</a>
-              </React.Fragment>
-            ),
-            props: { column: '' }
-          }
-        ]
-      },
-      {
-        cells: [
-          {
-            title: (
-              <React.Fragment>
-                <div>Node 5</div>
-                <a href="#">siemur/test-space</a>
-              </React.Fragment>
-            ),
-            props: { column: 'Repositories' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CodeBranchIcon key="icon" /> 34
-              </React.Fragment>
-            ),
-            props: { column: 'Branches' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CodeIcon key="icon" /> 21
-              </React.Fragment>
-            ),
-            props: { column: 'Pull requests' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <CubeIcon key="icon" /> 26
-              </React.Fragment>
-            ),
-            props: { column: 'Workspaces' }
-          },
-          {
-            title: '2 days ago',
-            props: { column: 'Last commit' }
-          },
-          {
-            title: (
-              <React.Fragment>
-                <a href="#">Action link</a>
-              </React.Fragment>
-            ),
-            props: { column: '' }
-          }
-        ]
       }
     ];
     this.state = {
       filters: [],
       filteredColumns: [],
-      filteredRows: [],
       columns: this.defaultColumns,
       rows: this.defaultRows,
       canSelectAll: true,
@@ -676,35 +528,24 @@ class ColumnManagementAction extends React.Component {
       if (checked) {
         const updatedFilters = filters.filter(item => item !== name);
         const filteredColumns = this.defaultColumns.filter(column => !updatedFilters.includes(column));
-        const filteredRows = this.defaultRows.map(({ ...row }) => {
-          row.cells = row.cells.filter(cell => !updatedFilters.includes(cell.props.column));
-          return row;
-        });
         this.setState({
           filters: updatedFilters,
-          filteredColumns: filteredColumns,
-          filteredRows: filteredRows
+          filteredColumns: filteredColumns
         });
       } else {
         let updatedFilters = filters;
         updatedFilters.push(name);
         const filteredColumns = columns.filter(column => !filters.includes(column));
-        const filteredRows = rows.map(({ ...row }) => {
-          row.cells = row.cells.filter(cell => !filters.includes(cell.props.column));
-          return row;
-        });
         this.setState({
           filters: updatedFilters,
-          filteredColumns: filteredColumns,
-          filteredRows: filteredRows
+          filteredColumns: filteredColumns
         });
       }
     };
     this.unfilterAllData = () => {
       this.setState({
         filters: [],
-        filteredColumns: this.defaultColumns,
-        filteredRows: this.defaultRows
+        filteredColumns: this.defaultColumns
       });
     };
     this.handleChange = (checked, event) => {
@@ -724,32 +565,35 @@ class ColumnManagementAction extends React.Component {
       const orderedColumns = this.state.itemOrder.map(item => this.matchDataListNameToColumn(item));
       // concat empty string at the end for actions column
       const filteredOrderedColumns = orderedColumns
-        .filter(col => this.state.filteredColumns.indexOf(col) > -1)
+        .filter(col => this.state.filteredColumns.length === 0 || this.state.filteredColumns.indexOf(col) > -1)
         .concat(['']);
       const orderedRows = [];
-      this.state.filteredRows.forEach(row => {
-        const updatedCells = row.cells.sort((cellA, cellB) => {
-          const indexA = filteredOrderedColumns.indexOf(cellA.props.column);
-          const indexB = filteredOrderedColumns.indexOf(cellB.props.column);
-          if (indexA < indexB) {
-            return -1;
-          }
-          if (indexA > indexB) {
-            return 1;
-          }
-          // a must be equal to b
-          return 0;
-        });
+      this.defaultRows.forEach(row => {
+        const updatedCells = row.cells
+          .filter(cell => filteredOrderedColumns.indexOf(cell.props.column) > -1)
+          .sort((cellA, cellB) => {
+            const indexA = filteredOrderedColumns.indexOf(cellA.props.column);
+            const indexB = filteredOrderedColumns.indexOf(cellB.props.column);
+            if (indexA < indexB) {
+              return -1;
+            }
+            if (indexA > indexB) {
+              return 1;
+            }
+            // a must be equal to b
+            return 0;
+          });
         orderedRows.push({
           cells: updatedCells
         });
       });
-      this.setState(({ filteredColumns, filteredRows, isModalOpen }) => ({
+      this.setState(({ isModalOpen }) => ({
         columns: filteredOrderedColumns,
         rows: orderedRows,
         isModalOpen: !isModalOpen
       }));
     };
+    
     this.selectAllColumns = () => {
       this.unfilterAllData();
       this.setState({
@@ -1001,6 +845,7 @@ class ColumnManagementAction extends React.Component {
                 <Select
                   id="page-layout-table-draggable-column-management-action-toolbar-top-select-checkbox-toggle"
                   variant={SelectVariant.single}
+                  onToggle={() => {}}
                   aria-label="Select Input"
                   aria-labelledby="page-layout-table-draggable-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
                   placeholderText={
