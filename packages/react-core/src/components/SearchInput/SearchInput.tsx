@@ -130,6 +130,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   submitSearchButtonLabel?: string;
   /** Value of the search input. */
   value?: string;
+  /** Name attribue for the search input */
+  name?: string;
 }
 
 const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
@@ -164,6 +166,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   removeFindDomNode = false,
   zIndex = 9999,
   type = 'text',
+  name,
   ...props
 }: SearchInputProps) => {
   const [isSearchMenuOpen, setIsSearchMenuOpen] = React.useState(false);
@@ -304,6 +307,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         onKeyDown={onEnter}
         onChange={onChangeHandler}
         type={type}
+        name={name}
       />
       {renderUtilities && (
         <TextInputGroupUtilities>
