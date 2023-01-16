@@ -19,7 +19,7 @@ import React from 'react';
 import { TimePicker } from '@patternfly/react-core';
 
 SimpleTimePicker = () => {
-  const onChange = (time, hour, minute, seconds, isValid) => {
+  const onChange = (_event, time, hour, minute, seconds, isValid) => {
     console.log('time', time);
     console.log('hour', hour);
     console.log('minute', minute);
