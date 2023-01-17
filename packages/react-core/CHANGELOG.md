@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.272.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.271.2...@patternfly/react-core@4.272.0) (2023-01-17)
+
+
+### Bug Fixes
+
+* **Wizard:** put focus in drawer when opened in wizard ([#8540](https://github.com/patternfly/patternfly-react/issues/8540)) ([dc75067](https://github.com/patternfly/patternfly-react/commit/dc75067d04014c33a91b27d17249b5a99725f1b0))
+
+
+### Features
+
+* **TimePicker:** added event to onChange callback ([#8493](https://github.com/patternfly/patternfly-react/issues/8493)) ([4a027f4](https://github.com/patternfly/patternfly-react/commit/4a027f43ee037514c134b0c870db43a9dadbd43d))
+
+
+
+
+
 ## [4.271.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.271.1...@patternfly/react-core@4.271.2) (2023-01-16)
 
 **Note:** Version bump only for package @patternfly/react-core
