@@ -5,19 +5,19 @@ export const LabelEditable: React.FunctionComponent = () => {
   const [labelText, setLabelText] = React.useState('Editable label');
   const [compactLabelText, setCompactLabelText] = React.useState('Compact editable label');
 
-  const onEditCancel = (prevText: string) => {
+  const onEditCancel = (_event: KeyboardEvent, prevText: string) => {
     setLabelText(prevText);
   };
 
-  const onEditComplete = (text: string) => {
+  const onEditComplete = (_event: MouseEvent | KeyboardEvent, text: string) => {
     setLabelText(text);
   };
 
-  const onCompactEditCancel = (prevText: string) => {
+  const onCompactEditCancel = (_event: KeyboardEvent, prevText: string) => {
     setCompactLabelText(prevText);
   };
 
-  const onCompactEditComplete = (text: string) => {
+  const onCompactEditComplete = (_event: MouseEvent | KeyboardEvent, text: string) => {
     setCompactLabelText(text);
   };
 
