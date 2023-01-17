@@ -3405,9 +3405,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@novnc/novnc@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@novnc/novnc/-/novnc-1.2.0.tgz"
+"@novnc/novnc@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.3.0.tgz#06db5ff55eae646a623d3717d8bffaf131ffb93a"
+  integrity sha512-tR87mY5ADtaELadmZfW937JO/p8fRdz3wkPoqwhqB/vY1XnTQeLSWwkp4yMlr4iIDY0iCficfzFYX5EHMh4MHw==
 
 "@npmcli/move-file@^1.0.1":
   version "1.0.1"
@@ -3525,10 +3526,10 @@
     acorn-static-class-features "^1.0.0"
     astring "^1.7.5"
 
-"@patternfly/documentation-framework@1.3.8":
-  version "1.3.8"
-  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-1.3.8.tgz#b01f32e4aac386f27b70dacce760309eb4fc3272"
-  integrity sha512-aMoV38tCTMwLjQuEk8/kG9GOfsGB4dDUVOLj6T6db3TxbBFF4BfLGsOyCfYrcpddJjTMibILnmmqTbZEOh76UA==
+"@patternfly/documentation-framework@1.3.12":
+  version "1.3.12"
+  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-1.3.12.tgz#e0b37c54fc71f1cd9caca764509b16926f2ffe02"
+  integrity sha512-CFljWSiDKjiU8OI3mX0xyeoDyxqr44wWZzQXnMgLzc2fhl25HoGnoNoHVn/W8Ehxk6fSkD5nDoSa9/8VwJCRYQ==
   dependencies:
     "@babel/core" "7.18.2"
     "@babel/plugin-proposal-class-properties" "7.17.12"
