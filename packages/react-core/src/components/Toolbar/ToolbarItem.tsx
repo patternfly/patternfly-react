@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
+import flexStyles from '@patternfly/react-styles/css/layouts/Flex/flex';
 import { css } from '@patternfly/react-styles';
 
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
@@ -39,14 +40,12 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** Alignment at various breakpoints. */
-  alignment?: {
-    default?: 'alignRight' | 'alignLeft';
-    md?: 'alignRight' | 'alignLeft';
-    lg?: 'alignRight' | 'alignLeft';
-    xl?: 'alignRight' | 'alignLeft';
-    '2xl'?: 'alignRight' | 'alignLeft';
-  };
+  /** applies to a child of a flex layout, and aligns that child (and any adjacent children on the other side of it) to one side of the main axis */
+  align?: 'right' | 'left' | 'default';
+  /** applies to a flex parent and vertically aligns its children */
+  alignItems?: 'center' | 'baseline' | 'default';
+  /** vertical alignment */
+  alignSelf?: 'center' | 'baseline' | 'default';
   /** Spacers at various breakpoints. */
   spacer?: {
     default?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
@@ -76,9 +75,11 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
   visibility,
-  alignment,
   spacer,
   widths,
+  align,
+  alignItems,
+  alignSelf,
   id,
   children,
   isAllExpanded,
@@ -114,8 +115,13 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
               ],
             isAllExpanded && styles.modifiers.expanded,
             formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
             formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
+            align === 'left' && styles.modifiers.alignLeft,
+            align === 'right' && styles.modifiers.alignRight,
+            alignItems === 'center' && flexStyles.modifiers.alignItemsCenter,
+            alignItems === 'baseline' && flexStyles.modifiers.alignItemsBaseline,
+            alignSelf === 'center' && flexStyles.modifiers.alignSelfCenter,
+            alignSelf === 'baseline' && flexStyles.modifiers.alignSelfBaseline,
             className
           )}
           {...(variant === 'label' && { 'aria-hidden': true })}
