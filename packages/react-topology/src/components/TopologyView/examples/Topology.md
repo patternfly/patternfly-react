@@ -11,18 +11,26 @@ To use React Topology out-of-the-box, you will first need to transform your back
 
 import {
 ColaLayout,
+CREATE_CONNECTOR_DROP_TYPE,
 DefaultEdge,
 DefaultGroup,
 DefaultNode,
 EdgeStyle,
 GraphComponent,
+groupDropTargetSpec,
 ModelKind,
+nodeDragSourceSpec,
+nodeDropTargetSpec,
 NodeShape,
 NodeStatus,
 SELECTION_EVENT,
 Visualization,
 VisualizationProvider,
-VisualizationSurface
+VisualizationSurface,
+withDndDrop,
+withDragNode,
+withPanZoom,
+withSelection,
 } from '@patternfly/react-topology';
 
 import './topology-example.css';
