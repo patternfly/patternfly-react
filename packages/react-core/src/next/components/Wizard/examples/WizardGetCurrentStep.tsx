@@ -34,7 +34,8 @@ const CurrentStepDescriptionList = ({ currentStep }: { currentStep: WizardStepTy
 export const GetCurrentStepWizard: React.FunctionComponent = () => {
   const [currentStep, setCurrentStep] = React.useState<WizardStepType>();
 
-  const onStepChange = (currentStep: WizardStepType) => setCurrentStep(currentStep);
+  const onStepChange = (event: React.MouseEvent<HTMLButtonElement>, currentStep: WizardStepType) =>
+    setCurrentStep(currentStep);
 
   return (
     <Wizard height={400} title="Get current step wizard" onStepChange={onStepChange}>

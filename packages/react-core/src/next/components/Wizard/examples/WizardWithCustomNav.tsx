@@ -24,7 +24,7 @@ export const WizardWithCustomNav: React.FunctionComponent = () => {
           isCurrent={activeStep.id === step.id}
           isDisabled={step.isDisabled}
           stepIndex={step.index}
-          onClick={goToStepByIndex}
+          onClick={() => goToStepByIndex(step.index)}
         />
       ))}
     </WizardNav>

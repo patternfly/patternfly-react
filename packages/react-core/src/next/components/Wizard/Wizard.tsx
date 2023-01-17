@@ -1,5 +1,4 @@
 import React from 'react';
-import findLast from 'lodash/findLast';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
@@ -45,14 +44,15 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   isProgressive?: boolean;
   /** Callback function when navigating between steps */
   onStepChange?: (
+    event: React.MouseEvent<HTMLButtonElement>,
     currentStep: WizardStepType,
     prevStep: WizardStepType,
     scope: WizardStepChangeScope
   ) => void | Promise<void>;
   /** Callback function to save at the end of the wizard, if not specified uses onClose */
-  onSave?: () => void | Promise<void>;
+  onSave?: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
   /** Callback function to close the wizard */
-  onClose?: () => void;
+  onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Wizard = ({
@@ -82,38 +82,43 @@ export const Wizard = ({
     }
   }, [startIndex]);
 
-  const goToNextStep = (steps: WizardStepType[] = initialSteps) => {
+  const goToNextStep = (event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
     const newStep = steps.find(
       step => step.index > activeStepIndex && !step.isHidden && !step.isDisabled && !isWizardParentStep(step)
     );
 
     if (activeStepIndex >= steps.length || !newStep?.index) {
-      return onSave ? onSave() : onClose?.();
+      return onSave ? onSave(event) : onClose?.(event);
     }
 
     const currStep = isWizardParentStep(steps[activeStepIndex]) ? steps[activeStepIndex + 1] : steps[activeStepIndex];
     const prevStep = steps[activeStepIndex - 1];
 
     setActiveStepIndex(newStep?.index);
-    onStepChange?.(currStep, prevStep, WizardStepChangeScope.Next);
+    onStepChange?.(event, currStep, prevStep, WizardStepChangeScope.Next);
   };
 
-  const goToPrevStep = (steps: WizardStepType[] = initialSteps) => {
-    const newStep = findLast(
-      steps,
-      (step: WizardStepType) =>
-        step.index < activeStepIndex && !step.isHidden && !step.isDisabled && !isWizardParentStep(step)
-    );
+  const goToPrevStep = (event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
+    const newStep = [...steps]
+      .reverse()
+      .find(
+        (step: WizardStepType) =>
+          step.index < activeStepIndex && !step.isHidden && !step.isDisabled && !isWizardParentStep(step)
+      );
     const currStep = isWizardParentStep(steps[activeStepIndex - 2])
       ? steps[activeStepIndex - 3]
       : steps[activeStepIndex - 2];
     const prevStep = steps[activeStepIndex - 1];
 
     setActiveStepIndex(newStep?.index);
-    onStepChange?.(currStep, prevStep, WizardStepChangeScope.Back);
+    onStepChange?.(event, currStep, prevStep, WizardStepChangeScope.Back);
   };
 
-  const goToStepByIndex = (steps: WizardStepType[] = initialSteps, index: number) => {
+  const goToStepByIndex = (
+    event: React.MouseEvent<HTMLButtonElement>,
+    steps: WizardStepType[] = initialSteps,
+    index: number
+  ) => {
     const lastStepIndex = steps.length + 1;
 
     // Handle index when out of bounds or hidden
@@ -127,7 +132,7 @@ export const Wizard = ({
     const prevStep = steps[activeStepIndex - 1];
 
     setActiveStepIndex(index);
-    onStepChange?.(currStep, prevStep, WizardStepChangeScope.Nav);
+    onStepChange?.(event, currStep, prevStep, WizardStepChangeScope.Nav);
   };
 
   const goToStepById = (steps: WizardStepType[] = initialSteps, id: number | string) => {

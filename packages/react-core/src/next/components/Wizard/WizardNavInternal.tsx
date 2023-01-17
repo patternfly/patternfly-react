@@ -81,7 +81,7 @@ export const WizardNavInternal = ({ nav, isVisitRequired, isProgressive, isNavEx
                     isDisabled={isSubStepDisabled}
                     isVisited={subStep.isVisited}
                     stepIndex={subStep.index}
-                    onClick={goToStepByIndex}
+                    onClick={() => goToStepByIndex(subStep.index)}
                     status={subStep.status}
                     {...subStep.navItem}
                   />
@@ -105,7 +105,7 @@ export const WizardNavInternal = ({ nav, isVisitRequired, isProgressive, isNavEx
                   isDisabled={!hasEnabledChildren}
                   isVisited={step.isVisited}
                   stepIndex={firstSubStepIndex}
-                  onClick={goToStepByIndex}
+                  onClick={() => goToStepByIndex(firstSubStepIndex)}
                   status={step.status}
                   {...step.navItem}
                 >
@@ -133,7 +133,7 @@ export const WizardNavInternal = ({ nav, isVisitRequired, isProgressive, isNavEx
                 isDisabled={isStepDisabled}
                 isVisited={step.isVisited}
                 stepIndex={step.index}
-                onClick={goToStepByIndex}
+                onClick={() => goToStepByIndex(step.index)}
                 status={step.status}
                 {...step.navItem}
               />

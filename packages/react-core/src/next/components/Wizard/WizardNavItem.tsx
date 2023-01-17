@@ -22,7 +22,7 @@ export interface WizardNavItemProps extends OUIAProps {
   /** The step index passed into the onNavItemClick callback */
   stepIndex: number;
   /** Callback for when the navigation item is clicked */
-  onClick?: (stepIndex: number) => any;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>, index: number) => any;
   /** Component used to render WizardNavItem */
   component?: 'button' | 'a';
   /** An optional url to use for when using an anchor component */
@@ -98,7 +98,7 @@ export const WizardNavItem = ({
         {...(id && { id: id.toString() })}
         onClick={e => {
           e.stopPropagation();
-          isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onClick?.(stepIndex);
+          isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onClick?.(e, stepIndex);
         }}
         className={css(
           styles.wizardNavLink,

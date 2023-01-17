@@ -21,17 +21,17 @@ const CustomStepTwoFooter = () => {
   const { goToNextStep, goToPrevStep, close } = useWizardContext();
   const [isLoading, setIsLoading] = React.useState(false);
 
-  async function onNext(goToStep: () => void) {
+  async function onNext() {
     setIsLoading(true);
     await new Promise(resolve => setTimeout(resolve, 2000));
     setIsLoading(false);
 
-    goToStep();
+    goToNextStep();
   }
 
   return (
     <WizardFooterWrapper>
-      <Button variant="primary" onClick={() => onNext(goToNextStep)} isLoading={isLoading} isDisabled={isLoading}>
+      <Button variant="primary" onClick={onNext} isLoading={isLoading} isDisabled={isLoading}>
         Async Next
       </Button>
       <Button variant="secondary" onClick={goToPrevStep} isDisabled={isLoading}>

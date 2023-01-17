@@ -14,11 +14,11 @@ export interface WizardFooterProps {
   /** The active step */
   activeStep: WizardStepType;
   /** Next button callback */
-  onNext: () => void | Promise<void>;
+  onNext: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
   /** Back button callback */
-  onBack: () => void | Promise<void>;
+  onBack: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
   /** Cancel link callback */
-  onClose: () => void;
+  onClose: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Custom text for the Next button. The current step's nextButtonText takes precedence. */
   nextButtonText?: React.ReactNode;
   /** Custom text for the Back button */

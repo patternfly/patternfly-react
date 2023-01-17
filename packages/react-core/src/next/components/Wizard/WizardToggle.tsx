@@ -27,7 +27,7 @@ export interface WizardToggleProps {
   /** Flag to determine whether the dropdown navigation is expanded */
   isNavExpanded?: boolean;
   /** Callback to expand or collapse the dropdown navigation */
-  toggleNavExpanded?: () => void;
+  toggleNavExpanded?: (event: React.MouseEvent<HTMLButtonElement> | KeyboardEvent) => void;
 }
 
 export const WizardToggle = ({
@@ -49,7 +49,7 @@ export const WizardToggle = ({
   const handleKeyClicks = React.useCallback(
     (event: KeyboardEvent): void => {
       if (isNavExpanded && event.key === KeyTypes.Escape) {
-        toggleNavExpanded?.();
+        toggleNavExpanded?.(event);
       }
     },
     [isNavExpanded, toggleNavExpanded]

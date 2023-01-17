@@ -16,14 +16,17 @@ import { useWizardContext, Wizard, WizardStep } from '@patternfly/react-core/nex
 const StepContentWithDrawer: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
   const { activeStep } = useWizardContext();
+  const drawerRef = React.useRef<HTMLSpanElement>(null);
+
+  const onWizardExpand = () => drawerRef.current && drawerRef.current.focus();
 
   return (
-    <Drawer isInline isExpanded={isDrawerExpanded}>
+    <Drawer isInline isExpanded={isDrawerExpanded} onExpand={onWizardExpand}>
       <DrawerContent
         panelContent={
           <DrawerPanelContent widths={{ default: 'width_50' }} colorVariant={DrawerColorVariant.light200}>
             <DrawerHead>
-              <span tabIndex={isDrawerExpanded ? 0 : -1}>
+              <span tabIndex={isDrawerExpanded ? 0 : -1} ref={drawerRef}>
                 Drawer content: <strong>{activeStep?.name}</strong>
               </span>
               <DrawerActions>

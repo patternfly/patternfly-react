@@ -76,9 +76,9 @@ export type CustomWizardNavItemFunction = (
 /** Callback for the Wizard's 'footer' property. Returns element which replaces the Wizard's default footer. */
 export type CustomWizardFooterFunction = (
   activeStep: WizardStepType,
-  onNext: () => void | Promise<void>,
-  onBack: () => void | Promise<void>,
-  onClose: () => void | Promise<void>
+  onNext: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>,
+  onBack: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>,
+  onClose: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>
 ) => React.ReactElement<WizardFooterProps>;
 
 export function isCustomWizardNav(nav: WizardNavType): nav is CustomWizardNavFunction | React.ReactElement {
