@@ -16,14 +16,16 @@ export class MenuDrilldownDemo extends Component {
     activeMenu: 'rootMenu'
   };
 
-  onSelect = (event: React.MouseEvent, itemId: string) => {
-    if (itemId.startsWith('group:')) {
-      console.log(`selected sub-menu: ${itemId.split('group:')[1]}`);
-    } else {
-      console.log(`selected: ${itemId}`);
-      this.setState({
-        activeItem: itemId
-      });
+  onSelect = (event: React.MouseEvent, itemId: string | number) => {
+    if (typeof itemId === 'string') {
+      if (itemId.startsWith('group:')) {
+        console.log(`selected sub-menu: ${itemId.split('group:')[1]}`);
+      } else {
+        console.log(`selected: ${itemId}`);
+        this.setState({
+          activeItem: itemId
+        });
+      }
     }
   };
   drillIn = (fromMenuId: string, toMenuId: string, pathId: string) => {

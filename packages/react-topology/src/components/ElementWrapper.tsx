@@ -2,7 +2,7 @@ import * as React from 'react';
 import { observer } from 'mobx-react';
 import { computed } from 'mobx';
 import ElementContext from '../utils/ElementContext';
-import { GraphElement, isGraph, isEdge, isNode, Node } from '../types';
+import { GraphElement, isGraph, isEdge, isNode, Node, Graph, Edge } from '../types';
 import { ATTR_DATA_ID, ATTR_DATA_KIND, ATTR_DATA_TYPE } from '../const';
 import ComputeElementDimensions from './ComputeElementDimensions';
 import { useDndManager } from '../behavior/useDndManager';
@@ -33,7 +33,7 @@ const ElementComponent: React.FunctionComponent<ElementWrapperProps> = observer(
 
   return (
     <ElementContext.Provider value={element}>
-      <Component {...element.getState()} element={element} />
+      <Component {...element.getState()} element={element as Graph & Edge & Node} />
     </ElementContext.Provider>
   );
 });

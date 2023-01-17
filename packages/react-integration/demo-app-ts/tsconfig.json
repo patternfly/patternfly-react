@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": false,
     "esModuleInterop": true,
@@ -19,11 +15,8 @@
     "strict": true,
     "strictPropertyInitialization": false,
     "strictNullChecks": false,
-    "strictFunctionTypes": false,
+    "strictFunctionTypes": true,
     "sourceMap": true
   },
-  "include": [
-    "./src/*",
-    "./src/**/*"
-  ]
+  "include": ["./src/*", "./src/**/*"]
 }

@@ -1,13 +1,9 @@
-import { ComponentType } from 'react';
-import { GraphElement, ComponentFactory, ModelKind } from '@patternfly/react-topology';
+import { ComponentFactory } from '@patternfly/react-topology';
 import DemoDefaultNode from './DemoDefaultNode';
 import CustomPathNode from './CustomPathNode';
 import CustomPolygonNode from './CustomPolygonNode';
 
-const shapesComponentFactory: ComponentFactory = (
-  kind: ModelKind,
-  type: string
-): ComponentType<{ element: GraphElement }> | undefined => {
+const shapesComponentFactory: ComponentFactory = (type: string) => {
   switch (type) {
     case 'node':
       return DemoDefaultNode;
