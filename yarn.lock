@@ -3405,9 +3405,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@novnc/novnc@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@novnc/novnc/-/novnc-1.2.0.tgz"
+"@novnc/novnc@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.3.0.tgz#06db5ff55eae646a623d3717d8bffaf131ffb93a"
+  integrity sha512-tR87mY5ADtaELadmZfW937JO/p8fRdz3wkPoqwhqB/vY1XnTQeLSWwkp4yMlr4iIDY0iCficfzFYX5EHMh4MHw==
 
 "@npmcli/move-file@^1.0.1":
   version "1.0.1"
@@ -3615,6 +3616,11 @@
   version "4.222.4"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.222.4.tgz#5d988779c50df3dafc989d6e807d16971e34d228"
   integrity sha512-+0fk4dzxEbWn+hgaOnR0BjfeUdEeVVrqfH7+GFeFc+RKjEMjIR/BZbWWN8YQDezmDv6A32gHmEKaY3Uwbt06Lw==
+
+"@patternfly/patternfly@4.223.2":
+  version "4.223.2"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.223.2.tgz#ab28763c8ab0aa6a46999810ac443904a1dfee6a"
+  integrity sha512-fPBheIpTUSukHkL7FiLGLqamQMvZHhjXi6gOyB/Pn+FDohQHJywvuWqwVDTtZoaTAFQMfzpaIfKfjQqESYKicw==
 
 "@patternfly/react-catalog-view-extension@^4.93.24":
   version "4.95.1"
