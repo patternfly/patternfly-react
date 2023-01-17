@@ -35,7 +35,14 @@ describe('TimePicker', () => {
       render(<TimePicker onChange={onChange} {...inputProps} aria-label="time picker" />);
 
       await user.type(screen.getByLabelText('time picker'), String(inputProps.value));
-      expect(onChange).toHaveBeenCalledWith(inputProps.value, expects.hour, expects.minutes, expects.seconds, true);
+      expect(onChange).toHaveBeenCalledWith(
+        expect.any(Object),
+        inputProps.value,
+        expects.hour,
+        expects.minutes,
+        expects.seconds,
+        true
+      );
     };
 
     test('should return the correct value using the AM/PM pattern - midnight', async () => {
