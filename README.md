@@ -27,7 +27,7 @@ Using PatternFly 3?  Take a look at the [PatternFly 3 React component informatio
 | &nbsp;&nbsp;[@patternfly/react-styles](./packages/react-styles/README.md) | PatternFly CSS styles |
 | &nbsp;&nbsp;[@patternfly/react-tokens](./packages/react-tokens/README.md) | PatternFly CSS variable tokens |
 | **:yellow_heart: Extension packages** *UXD supported* |
-| &nbsp;&nbsp;[@patternfly/react-log-viewer](./packages/react-log-viewer/README.md) | Virtualized log viewer component |
+| &nbsp;&nbsp;[@patternfly/react-log-viewer](https://github.com/patternfly/react-log-viewer/README.md) | Virtualized log viewer component |
 | **:open_file_folder: Supporting packages** |
 | &nbsp;&nbsp;[@patternfly/react-docs](./packages/react-docs/README.md) | Gatsby documentation site for components |
 | &nbsp;&nbsp;[@patternfly/react-integration](./packages/react-integration/README.md) | Cypress integration tests |

@@ -29,7 +29,6 @@
     "@patternfly/react-core": "^4.273.1",
     "@patternfly/react-icons": "^4.93.4",
     "@patternfly/react-inline-edit-extension": "^4.86.105",
-    "@patternfly/react-log-viewer": "^4.87.96",
     "@patternfly/react-styles": "^4.92.4",
     "@patternfly/react-table": "^4.112.26",
     "@patternfly/react-tokens": "^4.94.4",

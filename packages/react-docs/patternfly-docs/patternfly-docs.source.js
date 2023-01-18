@@ -24,9 +24,6 @@ module.exports = (baseSourceMD, sourceProps) => {
     .replace('package.json', 'src');
   const reactConsolePath = require.resolve('@patternfly/react-console/package.json').replace('package.json', 'src');
   const reactTopologyPath = require.resolve('@patternfly/react-topology/package.json').replace('package.json', 'src');
-  const reactLogViewerPath = require
-    .resolve('@patternfly/react-log-viewer/package.json')
-    .replace('package.json', 'src');
   const reactPropsIgnore = '**/*.test.tsx';
 
   sourceProps(path.join(reactCorePath, '/**/*.tsx'), reactPropsIgnore);
@@ -36,7 +33,6 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceProps(path.join(reactCatalogViewPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactVirtualizedPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactConsolePath, '/**/*.tsx'), reactPropsIgnore);
-  sourceProps(path.join(reactLogViewerPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactTopologyPath, '/**/*.tsx'), reactPropsIgnore);
 
   // React MD
@@ -67,10 +63,6 @@ module.exports = (baseSourceMD, sourceProps) => {
 
   // Code Editor MD
   sourceMD(path.join(reactCodeEditorPath, '/**/examples/*.md'), 'react');
-
-  // Log viewer MD
-  sourceMD(path.join(reactLogViewerPath, '/**/examples/*.md'), 'react');
-  sourceMD(path.join(reactLogViewerPath, '/**/demos/*.md'), 'react-demos');
 
   // Topology MD
   sourceMD(path.join(reactTopologyPath, '/**/examples/*.md'), 'react');
