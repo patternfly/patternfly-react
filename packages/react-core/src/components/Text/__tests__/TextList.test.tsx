@@ -43,7 +43,7 @@ test('Renders as "dl" element when component="dl"', () => {
 
 test('Renders with plain modifier class when isPlain is set to true', () => {
   render(<TextList isPlain>Test</TextList>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-plain');
+  expect(screen.getByRole('list')).toHaveClass('pf-m-plain');
 });
 
 test('Renders with inherited element props spread to the component', () => {
