@@ -31,8 +31,5 @@
     {
       "path": "./react-virtualized-extension/tsconfig.cjs.json"
     },
-    {
-      "path": "./react-log-viewer/tsconfig.cjs.json"
-    }
   ]
 }
