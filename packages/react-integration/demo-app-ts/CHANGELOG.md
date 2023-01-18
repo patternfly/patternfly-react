@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.208.0 (2023-01-18)
+
+
+### Features
+
+* **Label:** add event parameter ([#8544](https://github.com/patternfly/patternfly-react/issues/8544)) ([71491f5](https://github.com/patternfly/patternfly-react/commit/71491f5e8d48ba8b00f84e7472a142586a362f72))
+
+
+
+
+
 ## [4.207.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.207.3...demo-app-ts@4.207.4) (2023-01-17)
 
 **Note:** Version bump only for package demo-app-ts
