@@ -6,6 +6,7 @@ propComponents:
   [
     'Wizard',
     'WizardFooter',
+    'WizardFooterWrapper',
     'WizardToggle',
     'WizardStep',
     'WizardBody',

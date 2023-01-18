@@ -72,23 +72,25 @@ const LastStepFooter: React.FunctionComponent<LastStepFooterProps> = ({
   setIsSubmitted,
   setHasErrorOnSubmit
 }) => {
-  const { goToStepByName, goToNextStep } = useWizardContext();
+  const { goToNextStep, goToPrevStep } = useWizardContext();
 
-  const validateLastStep = (onNext: () => void) => {
+  const onValidate = () => {
     setIsSubmitted(true);
 
     if (!isValid) {
-      setHasErrorOnSubmit(true);
       setIsSubmitted(false);
+      setHasErrorOnSubmit(true);
     } else {
-      onNext();
+      goToNextStep();
     }
   };
 
   return (
     <WizardFooterWrapper>
-      <Button onClick={() => validateLastStep(goToNextStep)}>Validate</Button>
-      <Button onClick={() => goToStepByName('Step 1')}>Go to Beginning</Button>
+      <Button onClick={onValidate}>Validate</Button>
+      <Button variant="secondary" onClick={goToPrevStep}>
+        Back
+      </Button>
     </WizardFooterWrapper>
   );
 };
@@ -146,12 +148,7 @@ export const WizardValidateOnButtonPress: React.FunctionComponent = () => {
   }
 
   return (
-    <Wizard
-      title="Validate on button press wizard"
-      onClose={onClose}
-      footer={{ nextButtonText: 'Forward', backButtonText: 'Backward' }}
-      height={400}
-    >
+    <Wizard title="Validate on button press wizard" onClose={onClose} height={400}>
       <WizardStep name="Step 1" id="validate-btn-step-1">
         Step 1 content
       </WizardStep>
@@ -171,17 +168,13 @@ export const WizardValidateOnButtonPress: React.FunctionComponent = () => {
       >
         {hasErrorOnSubmit && (
           <div style={{ padding: '15px 0' }}>
-            <Alert variant="warning" title="Validation failed, please try again" />
+            <Alert isInline variant="danger" title="Validation failed, please try again." />
           </div>
         )}
-
         <SampleForm
           value={ageValue}
-          setValue={value => {
-            setAgeValue(value);
-            setHasErrorOnSubmit(false);
-          }}
-          isValid={isFirstStepValid}
+          setValue={value => setAgeValue(value)}
+          isValid={!hasErrorOnSubmit || isFirstStepValid}
           setIsValid={setIsFirstStepValid}
         />
       </WizardStep>
