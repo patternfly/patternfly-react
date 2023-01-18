@@ -3552,10 +3552,10 @@
     acorn-static-class-features "^1.0.0"
     astring "^1.7.5"
 
-"@patternfly/documentation-framework@1.3.12":
-  version "1.3.12"
-  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-1.3.12.tgz#e0b37c54fc71f1cd9caca764509b16926f2ffe02"
-  integrity sha512-CFljWSiDKjiU8OI3mX0xyeoDyxqr44wWZzQXnMgLzc2fhl25HoGnoNoHVn/W8Ehxk6fSkD5nDoSa9/8VwJCRYQ==
+"@patternfly/documentation-framework@1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-1.4.1.tgz#6ab7b8afc383e42629ef0701dde81e1f74b85557"
+  integrity sha512-T9mIGXUlH/UWJ9oZZKq5or1VD1VQMImWHMbDZ1IwiIERkopnLuLJDHepHDQbOfJmqUW2Mnlj00msFYApS4YLHQ==
   dependencies:
     "@babel/core" "7.18.2"
     "@babel/plugin-proposal-class-properties" "7.17.12"
