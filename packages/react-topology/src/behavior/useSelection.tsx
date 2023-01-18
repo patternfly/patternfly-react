@@ -76,12 +76,12 @@ export const useSelection = ({ multiSelect, controlled, raiseOnSelect = true }: 
 };
 
 export interface WithSelectionProps {
-  selected: boolean;
-  onSelect: OnSelect;
+  selected?: boolean;
+  onSelect?: OnSelect;
 }
 
 export const withSelection = (options?: Options) => <P extends WithSelectionProps>(
-  WrappedComponent: React.ComponentType<Partial<P>>
+  WrappedComponent: React.ComponentType<P>
 ) => {
   const Component: React.FunctionComponent<Omit<P, keyof WithSelectionProps>> = props => {
     const [selected, onSelect] = useSelection(options);

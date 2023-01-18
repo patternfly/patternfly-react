@@ -87,12 +87,11 @@ export class MenuDemo extends Component {
     });
   };
 
-  onSimpleSelect = (event: React.MouseEvent, itemId: string) => {
+  onSimpleSelect = (event: React.MouseEvent, itemId: number | string | undefined) => {
     this.setState({ activeItem: itemId });
   };
-
-  onActionSelect = (event: any, itemId: number) => {
-    if (this.state.selectedItems.indexOf(itemId) !== -1) {
+  onActionSelect = (event: any, itemId: string | number) => {
+    if (this.state.selectedItems.indexOf(Number(itemId)) !== -1) {
       this.setState({
         selectedItems: this.state.selectedItems.filter(id => id !== itemId)
       });
@@ -118,15 +117,15 @@ export class MenuDemo extends Component {
     }
   };
 
-  onSingleOptionSelect = (event: any, itemId: number) => {
+  onSingleOptionSelect = (event: any, itemId: string | number) => {
     this.setState({
       activeItem: itemId,
       selectedItem: itemId
     });
   };
 
-  onMultiOptionSelect = (event: any, itemId: number) => {
-    if (this.state.selectedItems.indexOf(itemId) !== -1) {
+  onMultiOptionSelect = (event: any, itemId: string | number) => {
+    if (this.state.selectedItems.indexOf(Number(itemId)) !== -1) {
       this.setState({
         selectedItems: this.state.selectedItems.filter(id => id !== itemId)
       });
@@ -322,6 +321,12 @@ export class MenuDemo extends Component {
   renderMenuWithTitledGroups() {
     const { activeItem } = this.state;
 
+    const GroupMenuExampleCmp: React.FC<{ className: string }> = ({ className }) => (
+      <div>
+        <h1 className={`${className} my-awesome-style`}>Group 4</h1>
+      </div>
+    );
+
     return (
       <StackItem>
         <Title headingLevel="h2" size="2xl">
@@ -354,6 +359,23 @@ export class MenuDemo extends Component {
                 Link 2
               </MenuItem>
             </MenuList>
+          </MenuGroup>
+          <MenuGroup
+            id="group-3"
+            label={
+              <div>
+                <h1 className="pf-c-menu__group-title">Group 3</h1>
+              </div>
+            }
+          >
+            <MenuItem to="#" itemId={1}>
+              Link 1
+            </MenuItem>
+          </MenuGroup>
+          <MenuGroup id="group-4" label={GroupMenuExampleCmp}>
+            <MenuItem to="#" itemId={1}>
+              Link 1
+            </MenuItem>
           </MenuGroup>
         </Menu>
       </StackItem>

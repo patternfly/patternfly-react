@@ -23,6 +23,7 @@ module.exports = (baseSourceMD, sourceProps) => {
     .resolve('@patternfly/react-virtualized-extension/package.json')
     .replace('package.json', 'src');
   const reactConsolePath = require.resolve('@patternfly/react-console/package.json').replace('package.json', 'src');
+  const reactTopologyPath = require.resolve('@patternfly/react-topology/package.json').replace('package.json', 'src');
   const reactLogViewerPath = require
     .resolve('@patternfly/react-log-viewer/package.json')
     .replace('package.json', 'src');
@@ -36,6 +37,7 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceProps(path.join(reactVirtualizedPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactConsolePath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactLogViewerPath, '/**/*.tsx'), reactPropsIgnore);
+  sourceProps(path.join(reactTopologyPath, '/**/*.tsx'), reactPropsIgnore);
 
   // React MD
   sourceMD(path.join(reactCorePath, '/components/**/examples/*.md'), 'react');
@@ -69,6 +71,9 @@ module.exports = (baseSourceMD, sourceProps) => {
   // Log viewer MD
   sourceMD(path.join(reactLogViewerPath, '/**/examples/*.md'), 'react');
   sourceMD(path.join(reactLogViewerPath, '/**/demos/*.md'), 'react-demos');
+
+  // Topology MD
+  sourceMD(path.join(reactTopologyPath, '/**/examples/*.md'), 'react');
 
   // Release notes
   sourceMD(require.resolve('@patternfly/react-docs/RELEASE-NOTES.md'), 'react');

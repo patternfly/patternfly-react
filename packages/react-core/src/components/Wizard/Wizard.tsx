@@ -112,6 +112,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   hasDrawer?: boolean;
   /** Flag indicating the wizard drawer is expanded */
   isDrawerExpanded?: boolean;
+  /** Callback function for when the drawer is toggled. Can be used to set browser focus in the drawer. */
+  onExpandDrawer?: () => void;
 }
 
 interface WizardState {
@@ -149,7 +151,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     isOpen: undefined,
     isNavExpandable: false,
     hasDrawer: false,
-    isDrawerExpanded: false
+    isDrawerExpanded: false,
+    onExpandDrawer: () => undefined as any
   };
   private titleId: string;
   private descriptionId: string;
@@ -408,6 +411,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       onCurrentStepChanged,
       hasDrawer,
       isDrawerExpanded,
+      onExpandDrawer,
       ...rest
       /* eslint-enable @typescript-eslint/no-unused-vars */
     } = this.props;
@@ -539,6 +543,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
           <WizardToggle
             hasDrawer={hasDrawer}
             isDrawerExpanded={isDrawerExpanded}
+            onExpandDrawer={onExpandDrawer}
             mainAriaLabel={mainAriaLabel}
             isInPage={isOpen === undefined}
             mainAriaLabelledBy={(title || mainAriaLabelledBy) && (mainAriaLabelledBy || this.titleId)}

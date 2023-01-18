@@ -7,16 +7,16 @@ import ContextMenu from '../components/contextmenu/ContextMenu';
 type Reference = React.ComponentProps<typeof ContextMenu>['reference'];
 
 export interface WithContextMenuProps {
-  onContextMenu: (e: React.MouseEvent) => void;
-  contextMenuOpen: boolean;
+  onContextMenu?: (e: React.MouseEvent) => void;
+  contextMenuOpen?: boolean;
 }
 
 export const withContextMenu = <E extends TopologyElement>(
-  actions: (element: E) => React.ReactElement[],
+  actions?: (element: E) => React.ReactElement[],
   container?: Element | null | undefined | (() => Element),
   className?: string,
   atPoint: boolean = true
-) => <P extends WithContextMenuProps>(WrappedComponent: React.ComponentType<Partial<P>>) => {
+) => <P extends WithContextMenuProps>(WrappedComponent: React.ComponentType<P>) => {
   const Component: React.FunctionComponent<Omit<P, keyof WithContextMenuProps>> = props => {
     const element = React.useContext(ElementContext);
     const [reference, setReference] = React.useState<Reference | null>(null);

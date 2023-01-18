@@ -76,14 +76,21 @@ const CustomWizardFooter = () => {
 
 const StepContentWithDrawer = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
+  const drawerRef = React.useRef<HTMLSpanElement>(null);
+
+  const onWizardExpand = () => {
+    drawerRef.current && drawerRef.current.focus();
+  };
 
   return (
-    <Drawer isInline isExpanded={isDrawerExpanded}>
+    <Drawer isInline isExpanded={isDrawerExpanded} onExpand={onWizardExpand}>
       <DrawerContent
         panelContent={
           <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
             <DrawerHead>
-              <span tabIndex={isDrawerExpanded ? 0 : -1}>drawer content</span>
+              <span tabIndex={isDrawerExpanded ? 0 : -1} ref={drawerRef}>
+                drawer content
+              </span>
               <DrawerActions>
                 <DrawerCloseButton onClick={() => setIsDrawerExpanded(false)} />
               </DrawerActions>

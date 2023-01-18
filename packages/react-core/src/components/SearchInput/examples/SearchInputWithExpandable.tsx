@@ -9,7 +9,7 @@ export const SearchInputWithExpandable: React.FunctionComponent = () => {
     setValue(value);
   };
 
-  const onToggleExpand = (isExpanded: boolean) => {
+  const onToggleExpand = (_event: React.SyntheticEvent<HTMLButtonElement>, isExpanded: boolean) => {
     setIsExpanded(!isExpanded);
   };
 

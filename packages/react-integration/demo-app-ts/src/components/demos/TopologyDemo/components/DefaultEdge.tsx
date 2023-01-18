@@ -15,9 +15,7 @@ import {
 type EdgeProps = {
   element: Edge;
   dragging?: boolean;
-} & WithSourceDragProps &
-  WithTargetDragProps &
-  WithRemoveConnectorProps;
+} & Partial<WithSourceDragProps & WithTargetDragProps & WithRemoveConnectorProps>;
 
 interface BendpointProps {
   point: Point;

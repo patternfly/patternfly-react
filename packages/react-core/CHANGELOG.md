@@ -3,6 +3,131 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.272.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.271.2...@patternfly/react-core@4.272.0) (2023-01-17)
+
+
+### Bug Fixes
+
+* **Wizard:** put focus in drawer when opened in wizard ([#8540](https://github.com/patternfly/patternfly-react/issues/8540)) ([dc75067](https://github.com/patternfly/patternfly-react/commit/dc75067d04014c33a91b27d17249b5a99725f1b0))
+
+
+### Features
+
+* **TimePicker:** added event to onChange callback ([#8493](https://github.com/patternfly/patternfly-react/issues/8493)) ([4a027f4](https://github.com/patternfly/patternfly-react/commit/4a027f43ee037514c134b0c870db43a9dadbd43d))
+
+
+
+
+
+## [4.271.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.271.1...@patternfly/react-core@4.271.2) (2023-01-16)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.271.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.271.0...@patternfly/react-core@4.271.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* **DualListSelector:** added empty state to composable examples ([#8480](https://github.com/patternfly/patternfly-react/issues/8480)) ([94bed40](https://github.com/patternfly/patternfly-react/commit/94bed407b8104760f604a824d502727a4bda57df))
+
+
+
+
+
+# [4.271.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.270.0...@patternfly/react-core@4.271.0) (2023-01-13)
+
+
+### Features
+
+* **TextInputGroup:** reordered onChange parameters ([#8494](https://github.com/patternfly/patternfly-react/issues/8494)) ([58fc84a](https://github.com/patternfly/patternfly-react/commit/58fc84a6ee257f12139324814590f8c6d7a91fd2))
+
+
+
+
+
+# [4.270.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.269.0...@patternfly/react-core@4.270.0) (2023-01-13)
+
+
+### Features
+
+* **Datepicker:** add event to callbacks ([#8529](https://github.com/patternfly/patternfly-react/issues/8529)) ([a863bf5](https://github.com/patternfly/patternfly-react/commit/a863bf58ab92f97cc729010b6fce963ffe7d37f1))
+
+
+
+
+
+# [4.269.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.268.2...@patternfly/react-core@4.269.0) (2023-01-12)
+
+
+### Bug Fixes
+
+* **NumberInput:** make allowEmptyInput an opt-in prop ([#8502](https://github.com/patternfly/patternfly-react/issues/8502)) ([5c97bff](https://github.com/patternfly/patternfly-react/commit/5c97bff75a44d603e8da066969204ea490770f3a))
+
+
+### Features
+
+* **Tabs:** added event to onAdd callback ([#8492](https://github.com/patternfly/patternfly-react/issues/8492)) ([1965838](https://github.com/patternfly/patternfly-react/commit/1965838a004f5c0d11e462daf7abce5891a64498))
+
+
+
+
+
+## 4.268.2 (2023-01-11)
+
+
+### Bug Fixes
+
+* **LabelGroup:** show the correct count of overflow labels ([#8505](https://github.com/patternfly/patternfly-react/issues/8505)) ([3dd3eda](https://github.com/patternfly/patternfly-react/commit/3dd3edabab58a77edcb3d2f173ca949851cc36fe))
+
+
+
+
+
+## [4.268.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.268.0...@patternfly/react-core@4.268.1) (2023-01-11)
+
+
+### Bug Fixes
+
+* aria label added to ungrouped simple list ([#8507](https://github.com/patternfly/patternfly-react/issues/8507)) ([8254887](https://github.com/patternfly/patternfly-react/commit/8254887e2a68921b9c835953037ea1d94afe2e1e))
+
+
+
+
+
+# 4.268.0 (2023-01-09)
+
+
+### Features
+
+* **Dropdown:** support inProgress variation ([#8436](https://github.com/patternfly/patternfly-react/issues/8436)) ([28e1a7a](https://github.com/patternfly/patternfly-react/commit/28e1a7afa7422639afb3a694db552427bcabe6dc))
+
+
+
+
+
+## [4.267.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.267.13...@patternfly/react-core@4.267.14) (2023-01-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## 4.267.13 (2023-01-06)
+
+
+### Bug Fixes
+
+* **MenuGroup:** Add option to use React component and Node in groupMenu ([#8219](https://github.com/patternfly/patternfly-react/issues/8219)) ([9c8fef8](https://github.com/patternfly/patternfly-react/commit/9c8fef8e3329f476a34974357b6f2df16c92e37d))
+
+
+
+
+
 ## [4.267.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.267.11...@patternfly/react-core@4.267.12) (2023-01-06)
 
 **Note:** Version bump only for package @patternfly/react-core

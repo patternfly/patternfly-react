@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.210.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.209.2...@patternfly/react-integration@4.210.0) (2023-01-13)
+
+
+### Features
+
+* **Datepicker:** add event to callbacks ([#8529](https://github.com/patternfly/patternfly-react/issues/8529)) ([a863bf5](https://github.com/patternfly/patternfly-react/commit/a863bf58ab92f97cc729010b6fce963ffe7d37f1))
+
+
+
+
+
+## 4.209.2 (2023-01-12)
+
+
+### Bug Fixes
+
+* **NumberInput:** make allowEmptyInput an opt-in prop ([#8502](https://github.com/patternfly/patternfly-react/issues/8502)) ([5c97bff](https://github.com/patternfly/patternfly-react/commit/5c97bff75a44d603e8da066969204ea490770f3a))
+
+
+
+
+
+## 4.209.1 (2023-01-06)
+
+
+### Bug Fixes
+
+* **MenuGroup:** Add option to use React component and Node in groupMenu ([#8219](https://github.com/patternfly/patternfly-react/issues/8219)) ([9c8fef8](https://github.com/patternfly/patternfly-react/commit/9c8fef8e3329f476a34974357b6f2df16c92e37d))
+
+
+
+
+
+# 4.209.0 (2023-01-06)
+
+
+### Features
+
+* **Topology:** Counter scale labels ([#8477](https://github.com/patternfly/patternfly-react/issues/8477)) ([56581e9](https://github.com/patternfly/patternfly-react/commit/56581e976a6df5e10a658c9c3c000094838768e2))
+
+
+
+
+
 ## 4.208.4 (2023-01-05)
 
 **Note:** Version bump only for package @patternfly/react-integration

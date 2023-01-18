@@ -3,7 +3,7 @@ import { Button } from '../Button';
 import { ActionGroup, Form, FormGroup } from '../Form';
 import { TextInput } from '../TextInput';
 import { GenerateId, KeyTypes } from '../../helpers';
-import { SearchAttribute } from './SearchInput';
+import { SearchInputSearchAttribute } from './SearchInput';
 import { Panel, PanelMain, PanelMainBody } from '../Panel';
 import { css } from '@patternfly/react-styles';
 
@@ -13,7 +13,7 @@ export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivEle
    */
   advancedSearchDelimiter?: string;
   /** Array of attribute values used for dynamically generated advanced search. */
-  attributes?: string[] | SearchAttribute[];
+  attributes?: string[] | SearchInputSearchAttribute[];
   /** Additional classes added to the advanced search menu. */
   className?: string;
   /* Additional elements added after the attributes in the form.
@@ -161,7 +161,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
 
   const buildFormGroups = () => {
     const formGroups = [] as React.ReactNode[];
-    attributes.forEach((attribute: string | SearchAttribute, index: number) => {
+    attributes.forEach((attribute: string | SearchInputSearchAttribute, index: number) => {
       const display = typeof attribute === 'string' ? attribute : attribute.display;
       const queryAttr = typeof attribute === 'string' ? attribute : attribute.attr;
       if (index === 0) {

@@ -481,7 +481,7 @@ export const TableComposableDemo = () => {
       ['5', '2', 'b', 'four', 'five']
     ];
     const [choice, setChoice] = React.useState('default');
-    const handleItemClick = (isSelected: boolean, event: React.MouseEvent) => {
+    const handleItemClick = (selected: boolean, event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
       const id = event.currentTarget.id;
       setChoice(id);
     };

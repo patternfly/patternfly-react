@@ -42,9 +42,9 @@ export interface DatePickerProps
   /** Error message to display when the text input cannot be parsed. */
   invalidFormatText?: string;
   /** Callback called every time the text input loses focus. */
-  onBlur?: (value: string, date?: Date) => void;
+  onBlur?: (event: any, value: string, date?: Date) => void;
   /** Callback called every time the text input value changes. */
-  onChange?: (value: string, date?: Date) => void;
+  onChange?: (event: React.FormEvent<HTMLInputElement>, value: string, date?: Date) => void;
   /** String to display in the empty text input as a hint for the expected date format. */
   placeholder?: string;
   /** Props to pass to the popover that contains the calendar month component. */
@@ -138,28 +138,28 @@ const DatePickerBase = (
     setErrorText(validators.map(validator => validator(date)).join('\n') || '');
   };
 
-  const onTextInput = (value: string) => {
+  const onTextInput = (value: string, event: React.FormEvent<HTMLInputElement>) => {
     setValue(value);
     setErrorText('');
     const newValueDate = dateParse(value);
     setValueDate(newValueDate);
     if (isValidDate(newValueDate)) {
-      onChange(value, new Date(newValueDate));
+      onChange(event, value, new Date(newValueDate));
     } else {
-      onChange(value);
+      onChange(event, value);
     }
   };
 
-  const onInputBlur = () => {
+  const onInputBlur = (event: any) => {
     if (pristine) {
       return;
     }
     const newValueDate = dateParse(value);
     if (isValidDate(newValueDate)) {
-      onBlur(value, new Date(newValueDate));
+      onBlur(event, value, new Date(newValueDate));
       setError(newValueDate);
     } else {
-      onBlur(value);
+      onBlur(event, value);
       setErrorText(invalidFormatText);
     }
   };
@@ -170,7 +170,7 @@ const DatePickerBase = (
     setValueDate(newValueDate);
     setError(newValueDate);
     setPopoverOpen(false);
-    onChange(newValue, new Date(newValueDate));
+    onChange(null, newValue, new Date(newValueDate));
   };
 
   const onKeyPress = (ev: React.KeyboardEvent<HTMLInputElement>) => {

@@ -159,7 +159,7 @@ export const Reconnect = withTopologySetup(() => {
 });
 
 type ColorChoice = ConnectorChoice & {
-  color: string;
+  color?: string;
 };
 
 export const CreateConnector = withTopologySetup(() => {

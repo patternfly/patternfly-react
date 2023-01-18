@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {
-  GraphElement,
   ComponentFactory,
   withContextMenu,
   ContextMenuSeparator,
@@ -53,10 +52,7 @@ const defaultMenu = createContextMenuItems(
   'Sub Menu-> Child1, Child2, Child3, -, Child4'
 );
 
-const actionsComponentFactory: ComponentFactory = (
-  kind: ModelKind,
-  type: string
-): React.ComponentType<{ element: GraphElement }> | undefined => {
+const actionsComponentFactory: ComponentFactory = (kind: ModelKind, type: string) => {
   if (kind === ModelKind.graph) {
     return withPanZoom()(GraphComponent);
   }

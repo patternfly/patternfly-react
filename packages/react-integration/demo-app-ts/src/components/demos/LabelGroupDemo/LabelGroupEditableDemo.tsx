@@ -36,8 +36,8 @@ export class LabelGroupEditableDemo extends Component<{}, LabelState> {
         <Label
           color="blue"
           onClose={() => {}}
-          onEditCancel={prevText => this.onEditCancel(prevText, 'label1')}
-          onEditComplete={newText => this.onEditComplete(newText, 'label1')}
+          onEditCancel={(_event, prevText) => this.onEditCancel(prevText, 'label1')}
+          onEditComplete={(_event, newText) => this.onEditComplete(newText, 'label1')}
           isEditable
           editableProps={{
             'aria-label': 'Editable text',
@@ -50,8 +50,8 @@ export class LabelGroupEditableDemo extends Component<{}, LabelState> {
         <Label
           color="blue"
           onClose={() => {}}
-          onEditCancel={prevText => this.onEditCancel(prevText, 'label2')}
-          onEditComplete={newText => this.onEditComplete(newText, 'label2')}
+          onEditCancel={(_event, prevText) => this.onEditCancel(prevText, 'label2')}
+          onEditComplete={(_event, newText) => this.onEditComplete(newText, 'label2')}
           isEditable
           editableProps={{
             'aria-label': 'Editable text 2',
@@ -63,8 +63,8 @@ export class LabelGroupEditableDemo extends Component<{}, LabelState> {
         <Label
           color="blue"
           onClose={() => {}}
-          onEditCancel={prevText => this.onEditCancel(prevText, 'label3')}
-          onEditComplete={newText => this.onEditComplete(newText, 'label3')}
+          onEditCancel={(_event, prevText) => this.onEditCancel(prevText, 'label3')}
+          onEditComplete={(_event, newText) => this.onEditComplete(newText, 'label3')}
           isEditable
           editableProps={{
             'aria-label': 'Editable text 3',

@@ -62,6 +62,8 @@ describe('Menu Test', () => {
   it('Verify Menu with Titled Groups', () => {
     cy.get('#group-1.pf-c-menu__group > h1').should('contain', 'Group 1');
     cy.get('#group-2.pf-c-menu__group > h1').should('contain', 'Group 2');
+    cy.get('#group-3.pf-c-menu__group > div > h1').should('contain', 'Group 3');
+    cy.get('#group-4.pf-c-menu__group > div > h1.my-awesome-style').should('contain', 'Group 4');
   });
 
   it('Verify Menu with Description', () => {

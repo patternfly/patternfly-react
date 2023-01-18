@@ -26,7 +26,7 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   /** Suggestion that will show up like a placeholder even with text in the input */
   hint?: string;
   /** Callback for when there is a change in the input field*/
-  onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** Callback for when the input field is focused*/
   onFocus?: (event?: any) => void;
   /** Callback for when focus is lost on the input field*/
@@ -39,6 +39,8 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   placeholder?: string;
   /** A reference object to attach to the input box */
   innerRef?: React.RefObject<any>;
+  /** Name for the input */
+  name?: string;
 }
 
 export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps> = ({
@@ -54,6 +56,7 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   value: inputValue,
   placeholder: inputPlaceHolder,
   innerRef,
+  name,
   ...props
 }: TextInputGroupMainProps) => {
   const { isDisabled } = React.useContext(TextInputGroupContext);
@@ -61,7 +64,7 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   const textInputGroupInputInputRef = innerRef || ref;
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-    onChange(event.currentTarget.value, event);
+    onChange(event, event.currentTarget.value);
   };
 
   return (
@@ -89,6 +92,7 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
           onBlur={onBlur}
           value={inputValue || ''}
           placeholder={inputPlaceHolder}
+          name={name}
         />
       </span>
     </div>

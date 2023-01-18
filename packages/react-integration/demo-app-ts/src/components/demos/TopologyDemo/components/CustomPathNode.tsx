@@ -16,12 +16,14 @@ type CustomPathNodeProps = {
   element: Node;
   droppable?: boolean;
   canDrop?: boolean;
-} & WithSelectionProps &
-  WithDragNodeProps &
-  WithDndDragProps &
-  WithDndDropProps &
-  WithCreateConnectorProps &
-  WithContextMenuProps;
+} & Partial<
+  WithSelectionProps &
+    WithDragNodeProps &
+    WithDndDragProps &
+    WithDndDropProps &
+    WithCreateConnectorProps &
+    WithContextMenuProps
+>;
 
 const CustomPathNode: React.FunctionComponent<CustomPathNodeProps> = props => (
   <DemoDefaultNode getCustomShape={() => Path} {...props} />
