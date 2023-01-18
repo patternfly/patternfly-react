@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.112.25 (2023-01-18)
+
+
+### Bug Fixes
+
+* **Table:** fixed draggable column management demo ([#8553](https://github.com/patternfly/patternfly-react/issues/8553)) ([7631ea5](https://github.com/patternfly/patternfly-react/commit/7631ea5280361db3644b8af07acb98c5283ec412))
+
+
+
+
+
 ## [4.112.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.112.23...@patternfly/react-table@4.112.24) (2023-01-17)
 
 **Note:** Version bump only for package @patternfly/react-table
