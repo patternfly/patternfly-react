@@ -305,7 +305,7 @@ To make a row draggable:
 1. The table needs a draggable column.
 2. Each draggable `Tr` needs to be passed `draggable`, `onDrop`, `onDragEnd`, and `onDragStart` props.
 3. The `Tbody` needs `onDragOver`, `onDrop`, and `onDragLeave` props.
-4. While the user is dragging a row, the `` class needs to be applied to `TableComposable`.
+4. While the user is dragging a row, the `pf-m-drag-over` class needs to be applied to `TableComposable`.
 5. The draggable `Td` in each row needs a `TdDraggableType` object passed to its `draggable` prop.
 
 ```ts isBeta file="ComposableTableDraggable.tsx"
