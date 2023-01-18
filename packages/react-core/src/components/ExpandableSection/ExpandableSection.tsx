@@ -154,8 +154,13 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
 
   checkToggleVisibility = () => {
     if (this.expandableContentRef?.current) {
+      const maxLines = this.props.truncateMaxLines || parseInt(lineClamp.value);
+      const totalLines =
+        this.expandableContentRef.current.scrollHeight /
+        parseInt(getComputedStyle(this.expandableContentRef.current).lineHeight);
+
       this.setState({
-        hasToggle: this.expandableContentRef.current.offsetHeight !== this.expandableContentRef.current.scrollHeight
+        hasToggle: totalLines > maxLines
       });
     }
   };

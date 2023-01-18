@@ -168,6 +168,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ExpandableSectionDemo
   },
   {
+    id: 'expandable-section-truncate-demo',
+    name: 'Expandable Section Truncate Demo',
+    componentType: Examples.ExpandableSectionTruncateDemo
+  },
+  {
     id: 'fileupload-demo',
     name: 'FileUpload Demo',
     componentType: Examples.FileUploadDemo
