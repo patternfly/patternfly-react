@@ -261,7 +261,7 @@ export class MenuDemo extends Component {
               value={input}
               aria-label="filterable-example-with-text-input"
               type="search"
-              onChange={value => this.handleTextInputChange(value, 'input')}
+              onChange={(_event, value) => this.handleTextInputChange(value, 'input')}
             />
           </MenuInput>
           <Divider />

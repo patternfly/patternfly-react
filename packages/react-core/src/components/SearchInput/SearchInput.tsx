@@ -96,7 +96,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** Accessible label for the button to navigate to next result. */
   nextNavigationButtonAriaLabel?: string;
   /** A callback for when the input value changes. */
-  onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** A callback for when the user clicks the clear button. */
   onClear?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** A callback for when the user clicks to navigate to next result. */
@@ -105,8 +105,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** A callback for when the search button is clicked. */
   onSearch?: (
-    value: string,
     event: React.SyntheticEvent<HTMLButtonElement>,
+    value: string,
     attrValueMap: { [key: string]: string }
   ) => void;
   /** A callback for when the open advanced search button is clicked. */
@@ -211,7 +211,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
   const onChangeHandler = (event: React.FormEvent<HTMLInputElement>, value: string) => {
     if (onChange) {
-      onChange(value, event);
+      onChange(event, value);
     }
     setSearchValue(value);
   };
@@ -227,7 +227,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const onSearchHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (onSearch) {
-      onSearch(value, event, getAttrValueMap());
+      onSearch(event, value, getAttrValueMap());
     }
     setIsSearchMenuOpen(false);
   };

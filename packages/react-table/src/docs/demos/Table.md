@@ -1330,7 +1330,7 @@ class FilterTableDemo extends React.Component {
           <SearchInput
             aria-label="name filter"
             placeholder="Filter by name..."
-            onChange={this.onInputChange}
+            onChange={(_event, value) => this.onInputChange(value)}
             value={inputValue}
             onClear={() => {
               this.onInputChange('');

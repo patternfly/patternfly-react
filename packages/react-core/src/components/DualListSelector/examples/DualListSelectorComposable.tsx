@@ -105,7 +105,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
   const buildSearchInput = (isAvailable: boolean) => (
     <SearchInput
       value={isAvailable ? availableFilter : chosenFilter}
-      onChange={value => onFilterChange(value, isAvailable)}
+      onChange={(_event, value) => onFilterChange(value, isAvailable)}
       onClear={() => onFilterChange('', isAvailable)}
     />
   );
