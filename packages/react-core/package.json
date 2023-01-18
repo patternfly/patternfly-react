@@ -55,16 +55,16 @@
   },
   "devDependencies": {
     "@patternfly/patternfly": "5.0.0-alpha.3",
-    "@rollup/plugin-commonjs": "^21.0.0",
+    "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-replace": "^3.0.0",
+    "@rollup/plugin-replace": "^5.0.2",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "rimraf": "^3.0.2",
-    "rollup": "^2.58.0",
-    "rollup-plugin-scss": "^3.0.0",
-    "rollup-plugin-terser": "^7.0.0",
+    "rollup": "^3.10.0",
+    "rollup-plugin-scss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
