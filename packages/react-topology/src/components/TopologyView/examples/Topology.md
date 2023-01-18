@@ -18,6 +18,7 @@ DefaultNode,
 EdgeStyle,
 GraphComponent,
 groupDropTargetSpec,
+graphDropTargetSpec,
 ModelKind,
 nodeDragSourceSpec,
 nodeDropTargetSpec,
@@ -79,6 +80,15 @@ Within each node in your `NODES` array, you can set `data` to include additional
 ```
 
 ### Drag and Drop
+
+TODO: add further clarification on these
+- withDragNode - calls useDragNode which is a hook
+- withDnDdrop
+- and the specs (groupDropTargetSpec, graphDropTargetSpec)
+
+To add drag and drop functionality, in your component factory:
+
+Use with `DndDrag` to allow a node to be dragged. Use `withDnDdrop` on groups and graphs to handle drop events.
 
 ```ts file='./TopologyDragDropDemo.tsx'
 ```

@@ -8,13 +8,13 @@ import { FolderOpenIcon as Icon2 } from '@patternfly/react-icons';
 import {
   ColaLayout,
   ComponentFactory,
-  CREATE_CONNECTOR_DROP_TYPE,
   DefaultEdge,
   DefaultGroup,
   DefaultNode,
   EdgeStyle,
   Graph,
   GraphComponent,
+  graphDropTargetSpec,
   groupDropTargetSpec,
   Layout,
   LayoutFactory,
@@ -22,7 +22,6 @@ import {
   ModelKind,
   Node,
   nodeDragSourceSpec,
-  nodeDropTargetSpec,
   NodeModel,
   NodeShape,
   NodeStatus,
@@ -64,7 +63,7 @@ const CustomNode: React.FC<CustomNodeProps & WithSelectionProps & WithDragNodePr
   ...rest
 }) => {
   const data = element.getData();
-  const Icon = data.alternate ? Icon2 : Icon1;
+  const Icon = data.icon;
   const badgeColors = BadgeColors.find(badgeColor => badgeColor.name === data.badge);
 
   return (
@@ -89,21 +88,16 @@ const CustomNode: React.FC<CustomNodeProps & WithSelectionProps & WithDragNodePr
 const customLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout | undefined =>
   new ColaLayout(graph, { layoutOnDrag: false });
 
-const CONNECTOR_SOURCE_DROP = 'connector-src-drop';
-const CONNECTOR_TARGET_DROP = 'connector-target-drop';
-
 const customComponentFactory: ComponentFactory = (kind: ModelKind, type: string): any => {
   switch (type) {
     case 'group':
       return withDndDrop(groupDropTargetSpec)(withDragNode(nodeDragSourceSpec('group'))(withSelection()(DefaultGroup)));
     case 'node':
-      return withDndDrop(
-        nodeDropTargetSpec([CONNECTOR_SOURCE_DROP, CONNECTOR_TARGET_DROP, CREATE_CONNECTOR_DROP_TYPE])
-      )(withDragNode(nodeDragSourceSpec('node', true, true))(withSelection()(CustomNode)));
+      return withDragNode(nodeDragSourceSpec('node', true, true))(withSelection()(CustomNode));
     default:
       switch (kind) {
         case ModelKind.graph:
-          return withPanZoom()(GraphComponent);
+          return withDndDrop(graphDropTargetSpec())(withPanZoom()(GraphComponent));
         case ModelKind.node:
           return CustomNode;
         case ModelKind.edge:
@@ -127,7 +121,7 @@ const NODES: NodeModel[] = [
     status: NodeStatus.danger,
     data: {
       badge: 'B',
-      isAlternate: false
+      icon: Icon1
     }
   },
   {
@@ -140,7 +134,7 @@ const NODES: NodeModel[] = [
     status: NodeStatus.warning,
     data: {
       badge: 'B',
-      isAlternate: false
+      icon: Icon1
     }
   },
   {
@@ -153,7 +147,7 @@ const NODES: NodeModel[] = [
     status: NodeStatus.success,
     data: {
       badge: 'A',
-      isAlternate: true
+      icon: Icon1
     }
   },
   {
@@ -166,7 +160,7 @@ const NODES: NodeModel[] = [
     status: NodeStatus.info,
     data: {
       badge: 'A',
-      isAlternate: false
+      icon: Icon1
     }
   },
   {
@@ -179,7 +173,7 @@ const NODES: NodeModel[] = [
     status: NodeStatus.default,
     data: {
       badge: 'C',
-      isAlternate: false
+      icon: Icon2
     }
   },
   {
@@ -191,7 +185,7 @@ const NODES: NodeModel[] = [
     shape: NodeShape.rect,
     data: {
       badge: 'C',
-      isAlternate: true
+      icon: Icon1
     }
   },
   {
