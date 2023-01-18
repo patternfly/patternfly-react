@@ -63,14 +63,12 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
 
 interface LastStepFooterProps {
   isValid: boolean;
-  hasErrorOnSubmit: boolean;
   setIsSubmitted(isSubmitted: boolean): void;
   setHasErrorOnSubmit(isSubmitted: boolean): void;
 }
 
 const LastStepFooter: React.FunctionComponent<LastStepFooterProps> = ({
   isValid,
-  hasErrorOnSubmit,
   setIsSubmitted,
   setHasErrorOnSubmit
 }) => {
@@ -88,14 +86,10 @@ const LastStepFooter: React.FunctionComponent<LastStepFooterProps> = ({
   };
 
   return (
-    <>
-      {hasErrorOnSubmit && <Alert isInline variant="danger" title="Validation failed. Go back to the Step 1." />}
-
-      <WizardFooterWrapper>
-        <Button onClick={() => validateLastStep(goToNextStep)}>Validate</Button>
-        <Button onClick={() => goToStepByName('Step 1')}>Go to Beginning</Button>
-      </WizardFooterWrapper>
-    </>
+    <WizardFooterWrapper>
+      <Button onClick={() => validateLastStep(goToNextStep)}>Validate</Button>
+      <Button onClick={() => goToStepByName('Step 1')}>Go to Beginning</Button>
+    </WizardFooterWrapper>
   );
 };
 
@@ -121,6 +115,7 @@ const SampleForm: React.FunctionComponent<SampleFormProps> = ({ value, isValid, 
       <FormGroup
         label="Age:"
         type="number"
+        helperText="Write your age in numbers."
         helperTextInvalid="Age has to be a number"
         fieldId="age"
         validated={validated}
@@ -157,16 +152,8 @@ export const WizardValidateOnButtonPress: React.FunctionComponent = () => {
       footer={{ nextButtonText: 'Forward', backButtonText: 'Backward' }}
       height={400}
     >
-      <WizardStep name="Step 1" id="validate-btn-step-1" status={hasErrorOnSubmit ? 'error' : 'default'}>
-        <SampleForm
-          value={ageValue}
-          setValue={value => {
-            setAgeValue(value);
-            setHasErrorOnSubmit(false);
-          }}
-          isValid={isFirstStepValid}
-          setIsValid={setIsFirstStepValid}
-        />
+      <WizardStep name="Step 1" id="validate-btn-step-1">
+        Step 1 content
       </WizardStep>
       <WizardStep name="Step 2" id="validate-btn-step-2">
         Step 2 content
@@ -178,12 +165,25 @@ export const WizardValidateOnButtonPress: React.FunctionComponent = () => {
           <LastStepFooter
             isValid={isFirstStepValid}
             setIsSubmitted={setIsSubmitted}
-            hasErrorOnSubmit={hasErrorOnSubmit}
             setHasErrorOnSubmit={setHasErrorOnSubmit}
           />
         }
       >
-        Your age: {ageValue}
+        {hasErrorOnSubmit && (
+          <div style={{ padding: '15px 0' }}>
+            <Alert variant="warning" title="Validation failed, please try again" />
+          </div>
+        )}
+
+        <SampleForm
+          value={ageValue}
+          setValue={value => {
+            setAgeValue(value);
+            setHasErrorOnSubmit(false);
+          }}
+          isValid={isFirstStepValid}
+          setIsValid={setIsFirstStepValid}
+        />
       </WizardStep>
     </Wizard>
   );

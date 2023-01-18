@@ -25,6 +25,7 @@ const SampleForm: React.FunctionComponent<SampleFormProps> = ({ value, isValid, 
       <FormGroup
         label="Age:"
         type="number"
+        helperText="Write your age in numbers."
         helperTextInvalid="Age has to be a number"
         fieldId="age"
         validated={validated}
