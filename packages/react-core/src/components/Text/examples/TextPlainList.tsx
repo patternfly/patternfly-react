@@ -7,13 +7,7 @@ export const TextPlainList: React.FunctionComponent = () => (
     <TextList isPlain>
       <TextListItem>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</TextListItem>
       <TextListItem>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</TextListItem>
-      <TextListItem>
-        Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.
-        <TextList>
-          <TextListItem>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</TextListItem>
-          <TextListItem>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</TextListItem>
-        </TextList>
-      </TextListItem>
+      <TextListItem>Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.</TextListItem>
       <TextListItem>Ut non enim metus.</TextListItem>
     </TextList>
     <Text component={TextVariants.h3}>Plain ordered list</Text>
