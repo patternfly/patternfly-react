@@ -12,7 +12,8 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -176,7 +177,8 @@ class BottomAlignedLegend extends React.Component {
 ### Multi-color (unordered) bottom-left aligned legend and responsive container
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 class MultiColorChart extends React.Component {
@@ -275,7 +277,7 @@ class MultiColorChart extends React.Component {
 - Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
 ### Note
-Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
+Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
 - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)

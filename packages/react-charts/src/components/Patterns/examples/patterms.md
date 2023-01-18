@@ -39,9 +39,9 @@ import {
   ChartVoronoiContainer,
   createContainer,
   getInteractiveLegendEvents,
-  getInteractiveLegendItemStyles,
-  getResizeObserver
+  getInteractiveLegendItemStyles
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
@@ -400,9 +400,9 @@ import {
   ChartThemeColor,
   createContainer, 
   getInteractiveLegendEvents, 
-  getInteractiveLegendItemStyles,
-  getResizeObserver
+  getInteractiveLegendItemStyles
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
 class InteractiveLegendChart extends React.Component {
@@ -777,7 +777,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
 ### Note
-Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
+Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
 - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)

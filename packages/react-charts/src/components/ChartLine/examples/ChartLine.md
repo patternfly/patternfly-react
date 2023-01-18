@@ -11,7 +11,8 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
 ## Introduction
@@ -196,7 +197,8 @@ This demonstrates zoom for the x axis only.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
 class MultiColorChart extends React.Component {
@@ -306,7 +308,7 @@ class MultiColorChart extends React.Component {
 - Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
 ### Note
-Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
+Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
 - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)

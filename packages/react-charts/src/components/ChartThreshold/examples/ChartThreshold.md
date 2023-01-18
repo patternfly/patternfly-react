@@ -19,9 +19,9 @@ import {
   ChartLegend,
   ChartThreshold,
   ChartThemeColor,
-  ChartVoronoiContainer,
-  getResizeObserver
+  ChartVoronoiContainer
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
@@ -44,9 +44,9 @@ import {
   ChartGroup,
   ChartThreshold,
   ChartThemeColor,
-  ChartVoronoiContainer,
-  getResizeObserver
+  ChartVoronoiContainer
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
@@ -183,7 +183,7 @@ class MultiColorChart extends React.Component {
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
 ### Note
-Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
+Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
  - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)

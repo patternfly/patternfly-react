@@ -22,8 +22,8 @@ ChartLine,
 ChartScatter,
 ChartThemeColor,
 ChartVoronoiContainer,
-getResizeObserver
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -74,7 +74,8 @@ This demonstrates how to add interactive data points to a line chart.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 class ScatterLineChart extends React.Component {
   constructor(props) {
@@ -211,7 +212,8 @@ This demonstrates how to add interactive data points to an area chart.
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
 class ScatterAreaChart extends React.Component {
@@ -330,7 +332,7 @@ class ScatterAreaChart extends React.Component {
 - For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
 
 ### Note
-Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the
+Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the
 components used in the examples above, Victory pass-thru props are also documented here:
 
 - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)

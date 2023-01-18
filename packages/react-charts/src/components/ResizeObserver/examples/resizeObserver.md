@@ -10,7 +10,6 @@ propComponents: [
   'ChartGroup',
   'ChartLegend',
   'ChartStack',
-  'ChartThemeColor',
   'ChartThreshold',
   'ChartTooltip',
   'ChartVoronoiContainer'
@@ -30,9 +29,9 @@ import {
   ChartThemeColor,
   ChartThreshold,
   ChartTooltip,
-  ChartVoronoiContainer,
-  getResizeObserver
+  ChartVoronoiContainer
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 import '@patternfly/patternfly/patternfly-charts.css';
@@ -54,7 +53,8 @@ This demonstrates how to use a `ResizeObserver` to update the chart's width, whi
 
 ```js
 import React from 'react';
-import { ChartBullet, getResizeObserver } from '@patternfly/react-charts';
+import { ChartBullet } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 class BulletChart extends React.Component {
   constructor(props) {
@@ -131,9 +131,9 @@ import {
   ChartGroup,
   ChartThreshold,
   ChartThemeColor,
-  ChartVoronoiContainer,
-  getResizeObserver
+  ChartVoronoiContainer
 } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
@@ -270,7 +270,8 @@ This demonstrates how to use a `ResizeObserver` to update the chart's width, whi
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfly/react-charts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 class MonthlyResponsiveStack extends React.Component {
   constructor(props) {
@@ -391,7 +392,7 @@ class MonthlyResponsiveStack extends React.Component {
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
 ### Note
-Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the
+Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the
 components used in the examples above, Victory pass-thru props are also documented here:
 
 - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
