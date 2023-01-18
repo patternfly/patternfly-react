@@ -11,7 +11,7 @@ const staticDir = path.join(process.cwd(), 'static/');
 
 module.exports = (_env, argv) => {
   const isProd = argv.mode === 'production';
-
+  const useTsChecker = argv.hot;
   return {
     entry: path.resolve(__dirname, 'src/index.tsx'),
     output: {
@@ -107,28 +107,29 @@ module.exports = (_env, argv) => {
               chunkFilename: '[name].[contenthash].css'
             }
       ),
-      new ForkTsCheckerWebpackPlugin({
-        async: false,
-        typescript: {
-          configFile: isProd ? 'tsconfig.json' : 'tsconfig.dev.json'
-        },
-        eslint: {
-          enabled: !isProd,
-          files: [
-            './src/**/*.{ts,tsx}',
-            '../../../packages/react-core/src/**/*.{ts,tsx}',
-            '../../../packages/react-code-editor/src/**/*.{ts,tsx}',
-            '../../../packages/react-table/src/**/*.{ts,tsx}',
-            '../../../packages/react-topology/src/**/*.{ts,tsx}'
-          ],
-          options: {
-            ignorePath: '../../../.eslintignore'
+      useTsChecker &&
+        new ForkTsCheckerWebpackPlugin({
+          async: false,
+          typescript: {
+            configFile: isProd ? 'tsconfig.json' : 'tsconfig.dev.json'
+          },
+          eslint: {
+            enabled: !isProd,
+            files: [
+              './src/**/*.{ts,tsx}',
+              '../../../packages/react-core/src/**/*.{ts,tsx}',
+              '../../../packages/react-code-editor/src/**/*.{ts,tsx}',
+              '../../../packages/react-table/src/**/*.{ts,tsx}',
+              '../../../packages/react-topology/src/**/*.{ts,tsx}'
+            ],
+            options: {
+              ignorePath: '../../../.eslintignore'
+            }
+          },
+          issue: {
+            exclude: [{ origin: 'eslint', severity: 'warning' }]
           }
-        },
-        issue: {
-          exclude: [{ origin: 'eslint', severity: 'warning' }]
-        }
-      }),
+        }),
       !isProd && new ReactRefreshWebpackPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({

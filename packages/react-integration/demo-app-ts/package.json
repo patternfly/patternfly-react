@@ -5,6 +5,7 @@
   "scripts": {
     "build:demo-app": "webpack --mode production",
     "start:demo-app": "webpack-dev-server",
+    "start:demo-app:hot": "webpack-dev-server --hot=true",
     "serve:demo-app": "node scripts/serve"
   },
   "dependencies": {
