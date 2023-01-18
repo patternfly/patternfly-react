@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.103.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.103.45...@patternfly/react-docs@5.103.46) (2023-01-18)
+
+
+### Bug Fixes
+
+* **Tabs:** Removed isHelpAction prop from TabsAction ([#8560](https://github.com/patternfly/patternfly-react/issues/8560)) ([05fa1b0](https://github.com/patternfly/patternfly-react/commit/05fa1b0acfe886f09c5bdf4ad9f8e27878ee817e))
+
+
+
+
+
 ## [5.103.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.103.44...@patternfly/react-docs@5.103.45) (2023-01-18)
 
 **Note:** Version bump only for package @patternfly/react-docs

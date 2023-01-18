@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.273.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.273.0...@patternfly/react-core@4.273.1) (2023-01-18)
+
+
+### Bug Fixes
+
+* **Tabs:** Removed isHelpAction prop from TabsAction ([#8560](https://github.com/patternfly/patternfly-react/issues/8560)) ([05fa1b0](https://github.com/patternfly/patternfly-react/commit/05fa1b0acfe886f09c5bdf4ad9f8e27878ee817e))
+
+
+
+
+
 # 4.273.0 (2023-01-18)
 
 
