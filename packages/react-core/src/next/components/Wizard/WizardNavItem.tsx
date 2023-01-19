@@ -5,9 +5,10 @@ import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
+import { OUIAProps, useOUIAProps } from '../../../helpers';
 import { WizardNavItemStatus } from './types';
 
-export interface WizardNavItemProps {
+export interface WizardNavItemProps extends OUIAProps {
   /** Can nest a WizardNav component for substeps */
   children?: React.ReactNode;
   /** The content to display in the navigation item */
@@ -21,11 +22,13 @@ export interface WizardNavItemProps {
   /** The step index passed into the onNavItemClick callback */
   stepIndex: number;
   /** Callback for when the navigation item is clicked */
-  onNavItemClick?: (stepIndex: number) => any;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>, index: number) => any;
   /** Component used to render WizardNavItem */
-  navItemComponent?: 'button' | 'a';
+  component?: 'button' | 'a';
   /** An optional url to use for when using an anchor component */
   href?: string;
+  /** Where to display the linked URL when using an anchor component */
+  target?: React.HTMLAttributeAnchorTarget;
   /** Flag indicating that this NavItem has child steps and is expandable */
   isExpandable?: boolean;
   /** The id for the navigation item */
@@ -34,29 +37,31 @@ export interface WizardNavItemProps {
   status?: 'default' | 'error';
 }
 
-export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
+export const WizardNavItem = ({
   children = null,
   content = '',
   isCurrent = false,
   isDisabled = false,
   isVisited = false,
   stepIndex,
-  onNavItemClick = () => undefined,
-  navItemComponent = 'button',
-  href = null,
+  onClick,
+  component: NavItemComponent = 'button',
+  href,
   isExpandable = false,
   id,
   status = 'default',
-  ...rest
+  target,
+  ouiaId,
+  ouiaSafe = true
 }: WizardNavItemProps) => {
-  const NavItemComponent = navItemComponent;
   const [isExpanded, setIsExpanded] = React.useState(false);
+  const ouiaProps = useOUIAProps(WizardNavItem.displayName, ouiaId, ouiaSafe);
 
   React.useEffect(() => {
     setIsExpanded(isCurrent);
   }, [isCurrent]);
 
-  if (navItemComponent === 'a' && !href && process.env.NODE_ENV !== 'production') {
+  if (NavItemComponent === 'a' && !href && process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line no-console
     console.error('WizardNavItem: When using an anchor, please provide an href');
   }
@@ -87,12 +92,13 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
       )}
     >
       <NavItemComponent
-        {...rest}
-        {...(navItemComponent === 'a' ? { tabIndex: isDisabled ? -1 : undefined, href } : { disabled: isDisabled })}
+        {...(NavItemComponent === 'a'
+          ? { tabIndex: isDisabled ? -1 : undefined, href, target }
+          : { disabled: isDisabled })}
         {...(id && { id: id.toString() })}
         onClick={e => {
-          e.preventDefault();
-          isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onNavItemClick(stepIndex);
+          e.stopPropagation();
+          isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onClick?.(e, stepIndex);
         }}
         className={css(
           styles.wizardNavLink,
@@ -103,6 +109,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
         aria-current={isCurrent && !children ? 'step' : false}
         {...(isExpandable && { 'aria-expanded': isExpanded })}
         {...(ariaLabel && { 'aria-label': ariaLabel })}
+        {...ouiaProps}
       >
         {isExpandable ? (
           <>

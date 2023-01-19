@@ -321,9 +321,9 @@ export class MenuDemo extends Component {
   renderMenuWithTitledGroups() {
     const { activeItem } = this.state;
 
-    const GroupMenuExampleCmp: React.FC<{ className: string }> = ({ className }) => (
+    const GroupMenuExampleCmp: React.FunctionComponent<{ className: string }> = ({ className }) => (
       <div>
-        <h1 className={`${className} my-awesome-style`}>Group 4</h1>
+        <h1 className={className}>Group 4</h1>
       </div>
     );
 
@@ -372,7 +372,7 @@ export class MenuDemo extends Component {
               Link 1
             </MenuItem>
           </MenuGroup>
-          <MenuGroup id="group-4" label={GroupMenuExampleCmp}>
+          <MenuGroup id="group-4" label={<GroupMenuExampleCmp className="my-awesome-style" />}>
             <MenuItem to="#" itemId={1}>
               Link 1
             </MenuItem>

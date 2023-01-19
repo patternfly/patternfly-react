@@ -2,17 +2,17 @@ import React from 'react';
 import {
   Wizard,
   WizardStep,
-  WizardControlStep,
+  WizardStepType,
   CustomWizardNavFunction,
   WizardNav,
   WizardNavItem
 } from '@patternfly/react-core/next';
 
-export const WizardCustomNav: React.FunctionComponent = () => {
+export const WizardWithCustomNav: React.FunctionComponent = () => {
   const nav: CustomWizardNavFunction = (
     isExpanded: boolean,
-    steps: WizardControlStep[],
-    activeStep: WizardControlStep,
+    steps: WizardStepType[],
+    activeStep: WizardStepType,
     goToStepByIndex: (index: number) => void
   ) => (
     <WizardNav isExpanded={isExpanded}>
@@ -24,7 +24,7 @@ export const WizardCustomNav: React.FunctionComponent = () => {
           isCurrent={activeStep.id === step.id}
           isDisabled={step.isDisabled}
           stepIndex={step.index}
-          onNavItemClick={goToStepByIndex}
+          onClick={() => goToStepByIndex(step.index)}
         />
       ))}
     </WizardNav>
@@ -32,14 +32,14 @@ export const WizardCustomNav: React.FunctionComponent = () => {
 
   return (
     <Wizard height={400} nav={nav}>
-      <WizardStep name="First step" id="cnav-first-step">
-        <p>Did you say...custom nav?</p>
+      <WizardStep name="Step 1" id="custom-nav-first-step">
+        Did you say...custom nav?
       </WizardStep>
-      <WizardStep name="Second step" id="cnav-second-step">
-        <p>Step 2 content</p>
+      <WizardStep name="Step 2" id="custom-nav-second-step">
+        Oh, you didn't?
       </WizardStep>
-      <WizardStep name="Review" id="cnav-review-step" footer={{ nextButtonText: 'Wrap it up' }}>
-        <p>Review step content</p>
+      <WizardStep name="Review" id="custom-nav-review-step" footer={{ nextButtonText: 'Wrap it up' }}>
+        Well, this is awkward.
       </WizardStep>
     </Wizard>
   );

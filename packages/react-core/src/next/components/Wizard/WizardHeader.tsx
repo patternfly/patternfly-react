@@ -7,7 +7,7 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export interface WizardHeaderProps {
   /** Callback function called when the X (Close) button is clicked */
-  onClose?: () => void;
+  onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Title of the wizard */
   title: string;
   /** Description of the wizard */
