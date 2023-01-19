@@ -12,7 +12,7 @@ export const WizardProgressiveSteps: React.FunctionComponent = () => (
     <WizardStep
       id="progressive-step-3"
       name="Quick options"
-      isCollapsible={false}
+      isExpandable={false}
       steps={[
         <WizardStep key="progressive-substep-1" id="progressive-substep-1" name="Substep 1">
           Substep 1 content

@@ -30,8 +30,8 @@ export interface WizardStepProps {
   footer?: React.ReactElement | Partial<WizardFooterProps>;
   /** Used to determine icon next to the step's navigation item */
   status?: 'default' | 'error';
-  /** Flag to determine whether sub-steps can collapse or not. Defaults to true. */
-  isCollapsible?: boolean;
+  /** Flag to determine whether parent steps can expand or not. Defaults to true. */
+  isExpandable?: boolean;
 }
 
 export const WizardStep = ({ children, steps: _subSteps, ...props }: WizardStepProps) => {

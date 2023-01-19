@@ -300,13 +300,13 @@ test('parent steps have collapsed sub-steps by default unless the step is active
   expect(screen.getByLabelText('Collapse step icon')).toBeVisible();
 });
 
-test('parent step can be non-collapsible by setting isCollapsible to false', () => {
+test('parent step can be non-collapsible by setting isExpandable to false', () => {
   render(
     <Wizard>
       <WizardStep
         id="step-1"
         name="Test step 1"
-        isCollapsible={false}
+        isExpandable={false}
         steps={[<WizardStep id="sub-step-1" name="Sub step 1" />]}
       />
     </Wizard>

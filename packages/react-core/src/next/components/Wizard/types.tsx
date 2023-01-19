@@ -34,8 +34,8 @@ export enum WizardNavItemStatus {
 export interface WizardParentStep extends WizardBasicStep {
   /** Nested step IDs */
   subStepIds: (string | number)[];
-  /** Flag to determine whether sub-steps can collapse or not */
-  isCollapsible?: boolean;
+  /** Flag to determine whether the step can expand or not. */
+  isExpandable?: boolean;
 }
 
 /** Type used to define sub-steps. */
