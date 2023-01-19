@@ -31,7 +31,8 @@ VisualizationProvider,
 VisualizationSurface,
 withDndDrop,
 withDragNode,
-withSelection
+withSelection,
+withPanZoom
 } from '@patternfly/react-topology';
 
 import './topology-example.css';
@@ -88,4 +89,17 @@ Edges can be styled using properties on `EdgeModel`:
 You can also customize your edges further by providing a custom Edge component. In the component you can specify a variety of parameters to pass to `DefaultEdge` or you can create the SVG elements to depict the edge.
 
 ```ts file='./TopologyEdgeDemo.tsx'
+```
+
+### Pan/Zoom
+
+To allow the user to pan and zoom on the graph, you can use the `withPanZoom` utility when returning the graph component in the componentFactory: `withPanZoom(GraphComponent)`
+
+The component should accept a `panZoomRef` property. This should be the ref on the surface element for the group, the element that will accept the drag or mouse wheel events.
+
+Alternatively, you can use the `usePanZoom` hook within the component to retrieve the `panZoomRef` property.
+
+If you are using the provided `GraphComponent`, this property is accepted and will be handled appropriately.
+
+```ts file='./TopologyPanZoomDemo.tsx'
 ```
