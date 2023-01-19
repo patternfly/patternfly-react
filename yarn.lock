@@ -3643,10 +3643,10 @@
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.222.4.tgz#5d988779c50df3dafc989d6e807d16971e34d228"
   integrity sha512-+0fk4dzxEbWn+hgaOnR0BjfeUdEeVVrqfH7+GFeFc+RKjEMjIR/BZbWWN8YQDezmDv6A32gHmEKaY3Uwbt06Lw==
 
-"@patternfly/patternfly@4.224.0":
-  version "4.224.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.224.0.tgz#7982840526da101f8f9a571651cce0cd2610deac"
-  integrity sha512-kSE9drpxRr0P8NuVc66QHwSpH90xJKmPGSXBGLntiabHNqR15Fql7wFZdgxT4REc/Y3AXYWs+g8kWtBVduXR5w==
+"@patternfly/patternfly@4.224.1":
+  version "4.224.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.224.1.tgz#67c74405ee2ddd2c74d758f21ad14e2cac485afc"
+  integrity sha512-ehUcWjBs2LMLw9DOQL7WgZ6dZmrszREQ0HIzQ76bjRpwL005oiJ7tRhxXX96BSGDGgm5mgGal8TgzVWbQJOUTw==
 
 "@patternfly/react-catalog-view-extension@^4.93.24":
   version "4.95.1"
@@ -13013,11 +13013,6 @@ memfs@^3.1.2, memfs@^3.4.3:
   dependencies:
     fs-monkey "^1.0.3"
 
-memoize-one@^5.1.0:
-  version "5.2.1"
-  resolved "https://registry.npmjs.org/memoize-one/-/memoize-one-5.2.1.tgz"
-  integrity sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
-
 memory-fs@^0.4.1:
   version "0.4.1"
   resolved "https://registry.npmjs.org/memory-fs/-/memory-fs-0.4.1.tgz"
@@ -15913,7 +15908,7 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz"
 
-resize-observer-polyfill@^1.5.0, resize-observer-polyfill@^1.5.1:
+resize-observer-polyfill@^1.5.0:
   version "1.5.1"
   resolved "https://registry.npmjs.org/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz"
 
