@@ -238,7 +238,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           itemId
         );
     } else {
-      drill = (event: any) => onDrillOut && onDrillOut(event, parentMenu, itemId);
+      drill = event => onDrillOut && onDrillOut(event, parentMenu, itemId);
     }
   }
   let additionalProps = {} as any;
