@@ -5,15 +5,24 @@ import { RegionsIcon as Icon1 } from '@patternfly/react-icons';
 
 import {
   ColaLayout,
+  ComponentFactory,
   CREATE_CONNECTOR_DROP_TYPE,
   DefaultEdge,
   DefaultGroup,
   DefaultNode,
+  Edge,
+  EdgeAnimationSpeed,
   EdgeModel,
   EdgeStyle,
+  EdgeTerminalType,
+  Graph,
   GraphComponent,
   LabelPosition,
+  Layout,
+  LayoutFactory,
+  Model,
   ModelKind,
+  Node,
   nodeDragSourceSpec,
   nodeDropTargetSpec,
   NodeModel,
@@ -28,25 +37,26 @@ import {
   withSelection,
   WithSelectionProps
 } from '@patternfly/react-topology';
-import { ComponentFactory, Graph, Layout, LayoutFactory, Model, Node } from '@patternfly/react-topology';
 
 interface CustomNodeProps {
   element: Node;
 }
 
-export const EDGE_STYLES = [
-  EdgeStyle.dashed,
-  EdgeStyle.dashedMd,
-  EdgeStyle.dotted,
-  EdgeStyle.dashedLg,
-  EdgeStyle.dashedXl,
-  EdgeStyle.solid
-];
-
-export const EDGE_STYLE_COUNT = EDGE_STYLES.length;
+interface DataEdgeProps {
+  element: Edge;
+}
 
 const CONNECTOR_SOURCE_DROP = 'connector-src-drop';
 const CONNECTOR_TARGET_DROP = 'connector-target-drop';
+
+const DataEdge: React.FC<DataEdgeProps> = ({ element, ...rest }) => (
+  <DefaultEdge
+    element={element}
+    startTerminalType={EdgeTerminalType.cross}
+    endTerminalType={EdgeTerminalType.directionalAlt}
+    {...rest}
+  />
+);
 
 const CustomNode: React.FC<CustomNodeProps & WithSelectionProps & WithDragNodeProps> = ({
   element,
@@ -83,6 +93,8 @@ const customComponentFactory: ComponentFactory = (kind: ModelKind, type: string)
       return withDndDrop(
         nodeDropTargetSpec([CONNECTOR_SOURCE_DROP, CONNECTOR_TARGET_DROP, CREATE_CONNECTOR_DROP_TYPE])
       )(withDragNode(nodeDragSourceSpec('node', true, true))(withSelection()(CustomNode)));
+    case 'data-edge':
+      return DataEdge;
     default:
       switch (kind) {
         case ModelKind.graph:
@@ -167,41 +179,33 @@ const NODES: NodeModel[] = [
     y: 150
   },
   {
-    id: 'node-6',
-    type: 'node',
-    label: 'Node 6',
-    labelPosition: LabelPosition.right,
-    width: NODE_DIAMETER,
-    height: NODE_DIAMETER,
-    shape: NodeShape.rect,
-    x: 350,
-    y: 250
+    id: 'Group-1',
+    children: ['node-0', 'node-1', 'node-2'],
+    type: 'group',
+    group: true,
+    label: 'Group-1',
+    style: {
+      padding: 40
+    }
   }
 ];
 
-const EDGES: EdgeModel[] = [];
-
-const middleNodeIndex = NODES.length - 1;
-NODES.forEach((item, index) => {
-  if (index === middleNodeIndex) {
-    return;
+const EDGES: EdgeModel[] = [
+  {
+    id: `edge-1`,
+    type: 'edge',
+    source: 'node-4',
+    target: 'node-5'
+  },
+  {
+    id: `edge-2`,
+    type: 'data-edge',
+    source: 'node-0',
+    target: 'node-1',
+    edgeStyle: EdgeStyle.dashedMd,
+    animationSpeed: EdgeAnimationSpeed.medium
   }
-  const endIndex = index < NODES.length - 2 ? index + 1 : 0;
-  EDGES.push({
-    id: `edge-${index}-${endIndex}`,
-    type: 'edge',
-    source: NODES[index].id,
-    target: NODES[endIndex].id,
-    edgeStyle: EDGE_STYLES[index % EDGE_STYLE_COUNT]
-  });
-  EDGES.push({
-    id: `edge-${middleNodeIndex}-${index}`,
-    type: 'edge',
-    source: NODES[middleNodeIndex].id,
-    target: NODES[index].id,
-    edgeStyle: EdgeStyle.default
-  });
-});
+];
 
 export const TopologyEdgeDemo: React.FC = () => {
   const [selectedIds, setSelectedIds] = React.useState<string[]>([]);

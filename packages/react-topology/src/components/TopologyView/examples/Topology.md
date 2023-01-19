@@ -15,7 +15,9 @@ CREATE_CONNECTOR_DROP_TYPE,
 DefaultEdge,
 DefaultGroup,
 DefaultNode,
+EdgeAnimationSpeed,
 EdgeStyle,
+EdgeTerminalType,
 GraphComponent,
 LabelPosition,
 ModelKind,
@@ -64,7 +66,7 @@ import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 ```ts file='./TopologyBaselineDemo.tsx'
 ```
 
-### Custom Topology
+### Custom Nodes
 
 To create a demo with custom node styling, you will need to create a custom node component, which your `customComponentFactory` will return.
 
@@ -77,18 +79,13 @@ Within each node in your `NODES` array, you can set `data` to include additional
 ```ts file='./TopologyCustomNodeDemo.tsx'
 ```
 
-### Edge Styles
+### Custom Edges
 
-To add edge styles:
+Edges can be styled using properties on `EdgeModel`:
+- edgeStyle: choose from the `EdgeStyle` enumeration providing solid, dashed, or dotted
+- animationSpeed: choose from the `EdgeAnimationSpeed` enumeration providing various speeds
 
-1. import `EdgeStyle` into your file.
-1. Use the `edgeStyle` attribute on an edge object to specify one of the following styles:  
-    `EdgeStyle.dashed`  
-    `EdgeStyle.dashedMd`  
-    `EdgeStyle.dotted`  
-    `EdgeStyle.dashedLg`  
-    `EdgeStyle.dashedXl`  
-    `EdgeStyle.solid`  
+You can also customize your edges further by providing a custom Edge component. In the component you can specify a variety of parameters to pass to `DefaultEdge` or you can create the SVG elements to depict the edge.
 
 ```ts file='./TopologyEdgeDemo.tsx'
 ```
