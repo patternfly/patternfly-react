@@ -16,6 +16,7 @@ propComponents:
     'TdSelectType',
     'ThSelectType',
     'TdTreeRowType',
+    'ActionsColumn',
     'IActions',
     'TdCompoundExpandType',
     'TdFavoritesType',
@@ -163,6 +164,8 @@ This selectable rows feature is intended for use when a table is used to present
 This example demonstrates adding actions as the last column. The header's last cell is an empty cell, and each body row's last cell is an action cell.
 
 To make a cell an action cell, render an `ActionsColumn` component inside a row's last `Td` and pass an array of `IAction` objects via the `items` prop of `ActionsColumn`.
+
+If actions menus are getting clipped by other items on the page, such as sticky columns or rows, the `ActionsColumn` can be passed a `menuAppendTo` prop to adjust where the actions menu is appended.
 
 ```ts file="ComposableTableActions.tsx"
 ```
