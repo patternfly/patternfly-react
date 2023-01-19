@@ -1859,6 +1859,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   data-ouia-component-id="OUIA-Generated-Chip-1"
                   data-ouia-component-type="PF4/Chip"
                   data-ouia-safe="true"
+                  tooltipposition="top"
                 >
                   <span
                     class="pf-c-chip__text"
@@ -1901,6 +1902,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   data-ouia-component-id="OUIA-Generated-Chip-2"
                   data-ouia-component-type="PF4/Chip"
                   data-ouia-safe="true"
+                  tooltipposition="top"
                 >
                   <span
                     class="pf-c-chip__text"

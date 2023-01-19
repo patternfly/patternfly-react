@@ -47,4 +47,13 @@ describe('Chip', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test("with role='gridcell'", () => {
+    const { asFragment } = render(
+      <Chip className="my-chp-cls" role="gridcell">
+        I'm a roled chip
+      </Chip>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
