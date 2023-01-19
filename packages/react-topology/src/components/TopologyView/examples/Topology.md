@@ -11,18 +11,27 @@ To use React Topology out-of-the-box, you will first need to transform your back
 
 import {
 ColaLayout,
+CREATE_CONNECTOR_DROP_TYPE,
 DefaultEdge,
 DefaultGroup,
 DefaultNode,
+EdgeAnimationSpeed,
 EdgeStyle,
+EdgeTerminalType,
 GraphComponent,
+LabelPosition,
 ModelKind,
 NodeShape,
 NodeStatus,
+nodeDragSourceSpec,
+nodeDropTargetSpec,
 SELECTION_EVENT,
 Visualization,
 VisualizationProvider,
-VisualizationSurface
+VisualizationSurface,
+withDndDrop,
+withDragNode,
+withSelection
 } from '@patternfly/react-topology';
 
 import './topology-example.css';
@@ -57,7 +66,7 @@ import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 ```ts file='./TopologyBaselineDemo.tsx'
 ```
 
-### Custom Topology
+### Custom Nodes
 
 To create a demo with custom node styling, you will need to create a custom node component, which your `customComponentFactory` will return.
 
@@ -68,4 +77,15 @@ To do this, you will need:
 Within each node in your `NODES` array, you can set `data` to include additional custom attributes.
 
 ```ts file='./TopologyCustomNodeDemo.tsx'
+```
+
+### Custom Edges
+
+Edges can be styled using properties on `EdgeModel`:
+- edgeStyle: choose from the `EdgeStyle` enumeration providing solid, dashed, or dotted
+- animationSpeed: choose from the `EdgeAnimationSpeed` enumeration providing various speeds
+
+You can also customize your edges further by providing a custom Edge component. In the component you can specify a variety of parameters to pass to `DefaultEdge` or you can create the SVG elements to depict the edge.
+
+```ts file='./TopologyEdgeDemo.tsx'
 ```
