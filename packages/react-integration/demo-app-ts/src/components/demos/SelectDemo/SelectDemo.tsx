@@ -27,6 +27,8 @@ export interface SelectDemoState {
   optionisDisabled?: boolean;
   singleisOpen: boolean;
   singleSelected: string;
+  singleRefisOpen: boolean;
+  singleRefSelected: string;
   singleAppendisOpen: boolean;
   singleAppendSelected: boolean;
   singleDescisOpen: boolean;
@@ -71,6 +73,8 @@ export class SelectDemo extends Component<SelectDemoState> {
     optionisDisabled: false,
     singleisOpen: false,
     singleSelected: '',
+    singleRefisOpen: false,
+    singleRefSelected: '',
     singleAppendisOpen: false,
     singleAppendSelected: '',
     singleDescisOpen: false,
@@ -215,6 +219,12 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
+  singleRefOnToggle = (singleRefisOpen: boolean) => {
+    this.setState({
+      singleRefisOpen
+    });
+  };
+
   singleAppendOnToggle = (singleAppendisOpen: boolean) => {
     this.setState({
       singleAppendisOpen
@@ -320,6 +330,22 @@ export class SelectDemo extends Component<SelectDemoState> {
       this.setState({
         singleSelected: selection,
         singleisOpen: false
+      });
+      console.log('selected:', selection.toString());
+    }
+  };
+
+  singleRefOnSelect = (
+    event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
+      this.setState({
+        singleRefSelected: selection,
+        singleRefisOpen: false
       });
       console.log('selected:', selection.toString());
     }
@@ -665,6 +691,47 @@ export class SelectDemo extends Component<SelectDemoState> {
           id="toggle-direction"
           name="toggle-direction"
         />
+      </StackItem>
+    );
+  }
+
+  renderCustomRefSingleSelect() {
+    const { singleRefisOpen, singleRefSelected } = this.state;
+    const titleId = 'title-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Single Custom Ref Select
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Title
+          </span>
+          <Select
+            id="single-ref-select-component"
+            toggleId="single-ref-select"
+            toggleRef={React.createRef() as React.RefObject<HTMLButtonElement>}
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.singleRefOnToggle}
+            onSelect={this.singleRefOnSelect}
+            selections={singleRefSelected}
+            isOpen={singleRefisOpen}
+            aria-labelledby={titleId}
+            direction={this.state.direction}
+            maxHeight={200}
+          >
+            {this.singleOptions.map((option, index) => (
+              <SelectOption
+                id={option.value}
+                isDisabled={option.disabled}
+                key={index}
+                value={option.value}
+                isPlaceholder={option.isPlaceholder}
+              />
+            ))}
+          </Select>
+        </div>
       </StackItem>
     );
   }
@@ -1370,6 +1437,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     return (
       <Stack hasGutter>
         {this.renderSingleSelect()}
+        {this.renderCustomRefSingleSelect()}
         {this.renderCustomSingleSelect()}
         {this.renderDisabledSingleSelect()}
         {this.renderCheckboxSelect()}
