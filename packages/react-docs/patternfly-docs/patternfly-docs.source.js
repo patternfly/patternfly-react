@@ -22,7 +22,6 @@ module.exports = (baseSourceMD, sourceProps) => {
   const reactVirtualizedPath = require
     .resolve('@patternfly/react-virtualized-extension/package.json')
     .replace('package.json', 'src');
-  const reactConsolePath = require.resolve('@patternfly/react-console/package.json').replace('package.json', 'src');
   const reactTopologyPath = require.resolve('@patternfly/react-topology/package.json').replace('package.json', 'src');
   const reactPropsIgnore = '**/*.test.tsx';
 
@@ -32,7 +31,6 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceProps(path.join(reactCodeEditorPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactCatalogViewPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactVirtualizedPath, '/**/*.tsx'), reactPropsIgnore);
-  sourceProps(path.join(reactConsolePath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactTopologyPath, '/**/*.tsx'), reactPropsIgnore);
 
   // React MD
@@ -57,9 +55,6 @@ module.exports = (baseSourceMD, sourceProps) => {
 
   // Virtualized MD
   sourceMD(path.join(reactVirtualizedPath, '/**/examples/*.md'), 'react');
-
-  // Consoles MD
-  sourceMD(path.join(reactConsolePath, '/**/examples/*.md'), 'react');
 
   // Code Editor MD
   sourceMD(path.join(reactCodeEditorPath, '/**/examples/*.md'), 'react');
