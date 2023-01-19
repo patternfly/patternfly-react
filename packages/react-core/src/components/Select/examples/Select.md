@@ -31,6 +31,8 @@ class SingleSelectInput extends React.Component {
       <SelectOption key={7} value="Other" />
     ];
 
+    this.toggleRef = React.createRef();
+
     this.state = {
       isToggleIcon: false,
       isOpen: false,
@@ -53,6 +55,7 @@ class SingleSelectInput extends React.Component {
           isOpen: false
         });
         console.log('selected:', selection);
+        this.toggleRef.current.focus();
       }
     };
 
@@ -97,6 +100,7 @@ class SingleSelectInput extends React.Component {
           Title
         </span>
         <Select
+          toggleRef={this.toggleRef}
           toggleIcon={isToggleIcon && <CubeIcon />}
           variant={SelectVariant.single}
           aria-label="Select Input"
@@ -158,6 +162,8 @@ class SingleSelectDescription extends React.Component {
       { value: 'Other', disabled: false }
     ];
 
+    this.toggleRef = React.createRef();
+
     this.state = {
       isOpen: false,
       selected: null,
@@ -178,6 +184,7 @@ class SingleSelectDescription extends React.Component {
           isOpen: false
         });
         console.log('selected:', selection);
+        this.toggleRef.current.focus();
       }
     };
 
@@ -202,6 +209,7 @@ class SingleSelectDescription extends React.Component {
           placeholderText="Select an option"
           aria-label="Select Input with descriptions"
           onToggle={this.onToggle}
+          toggleRef={this.toggleRef}
           onSelect={this.onSelect}
           selections={selected}
           isOpen={isOpen}
@@ -238,6 +246,8 @@ class GroupedSingleSelectInput extends React.Component {
       selected: null
     };
 
+    this.toggleRef = React.createRef();
+
     this.onToggle = isOpen => {
       this.setState({
         isOpen
@@ -249,6 +259,7 @@ class GroupedSingleSelectInput extends React.Component {
         selected: selection,
         isOpen: false
       });
+      this.toggleRef.current.focus();
     };
 
     this.clearSelection = () => {
@@ -284,6 +295,7 @@ class GroupedSingleSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.single}
+          toggleRef={this.toggleRef}
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
@@ -319,6 +331,8 @@ class ValidatedSelect extends React.Component {
       <SelectOption key={6} value="Other" />
     ];
 
+    this.toggleRef = React.createRef();
+
     this.state = {
       isOpen: false,
       selected: null,
@@ -352,6 +366,7 @@ class ValidatedSelect extends React.Component {
       this.setState({
         validated: validatedState
       });
+      this.toggleRef.current.focus();
     };
 
     this.clearSelection = () => {
@@ -372,6 +387,7 @@ class ValidatedSelect extends React.Component {
         </span>
         <Select
           variant={SelectVariant.single}
+          toggleRef={this.toggleRef}
           placeholderText="Select an option"
           aria-label="Select Input with validation"
           onToggle={this.onToggle}
@@ -728,6 +744,8 @@ class FilteringSingleSelectInput extends React.Component {
       isInputFilterPersisted: false
     };
 
+    this.toggleRef = React.createRef();
+
     this.options = [
       <SelectGroup label="Status" key="group1">
         <SelectOption key={0} value="Running" />
@@ -749,6 +767,7 @@ class FilteringSingleSelectInput extends React.Component {
 
     this.onSelect = (event, selection) => {
       this.setState({ selected: selection, isOpen: false }), console.log('selected: ', selection);
+      this.toggleRef.current.focus();
     };
 
     this.onFilter = (_, textInput) => {
@@ -805,6 +824,7 @@ class FilteringSingleSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.single}
+          toggleRef={this.toggleRef}
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
@@ -2460,6 +2480,8 @@ class SelectWithFooter extends React.Component {
       <SelectOption key={7} value="Other" />
     ];
 
+    this.toggleRef = React.createRef();
+
     this.state = {
       isToggleIcon: false,
       isOpen: false,
@@ -2482,6 +2504,7 @@ class SelectWithFooter extends React.Component {
           isOpen: false
         });
         console.log('selected:', selection);
+        this.toggleRef.current.focus();
       }
     };
 
@@ -2503,6 +2526,7 @@ class SelectWithFooter extends React.Component {
         </span>
         <Select
           toggleIcon={isToggleIcon && <CubeIcon />}
+          toggleRef={this.toggleRef}
           variant={SelectVariant.single}
           aria-label="Select Input"
           onToggle={this.onToggle}
@@ -2630,6 +2654,8 @@ class SelectViewMore extends React.Component {
       <SelectOption key={6} value="Other" />
     ];
 
+    this.toggleRef = React.createRef();
+
     this.state = {
       isOpen: false,
       selected: null,
@@ -2651,6 +2677,7 @@ class SelectViewMore extends React.Component {
           isOpen: false
         });
         console.log('selected:', selection);
+        this.toggleRef.current.focus();
       }
     };
 
@@ -2686,6 +2713,7 @@ class SelectViewMore extends React.Component {
         </span>
         <Select
           variant={SelectVariant.single}
+          toggleRef={this.toggleRef}
           aria-label="Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
