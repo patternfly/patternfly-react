@@ -52,7 +52,12 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
     setWithMaxMenuHeight(checked);
   };
 
-  const drillOut = (_event: any, toMenuId: string, fromPathId: string, breadcrumb: JSX.Element | null) => {
+  const drillOut = (
+    _event: React.KeyboardEvent<Element> | MouseEvent | React.MouseEvent<any, MouseEvent>,
+    toMenuId: string,
+    fromPathId: string,
+    breadcrumb: JSX.Element | null
+  ) => {
     setMenuDrilledIn(prevMenuDrilledIn => {
       const indexOfMenuId = prevMenuDrilledIn.indexOf(toMenuId);
       return prevMenuDrilledIn.slice(0, indexOfMenuId);
@@ -71,7 +76,12 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
     }
   };
 
-  const drillIn = (_event: any, fromMenuId: string, toMenuId: string, pathId: string) => {
+  const drillIn = (
+    _event: React.KeyboardEvent | React.MouseEvent,
+    fromMenuId: string,
+    toMenuId: string,
+    pathId: string
+  ) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
     setDrilldownPath([...drilldownPath, pathId]);
     setActiveMenu(toMenuId);

@@ -224,10 +224,10 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     onClick && onClick(event);
   };
   const _isOnPath = (isOnPath && isOnPath) || (drilldownItemPath && drilldownItemPath.includes(itemId)) || false;
-  let drill: (event: any) => void;
+  let drill: (event: React.KeyboardEvent | React.MouseEvent) => void;
   if (direction) {
     if (direction === 'down') {
-      drill = (event: any) =>
+      drill = event =>
         onDrillIn &&
         onDrillIn(
           event,
@@ -319,7 +319,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             {...(!hasCheck && !flyoutMenu && { role: 'menuitem' })}
             ref={innerRef}
             {...(!hasCheck && {
-              onClick: (event: any) => {
+              onClick: (event: React.KeyboardEvent | React.MouseEvent) => {
                 onItemSelect(event, onSelect);
                 drill && drill(event);
                 flyoutMenu && handleFlyout(event);
