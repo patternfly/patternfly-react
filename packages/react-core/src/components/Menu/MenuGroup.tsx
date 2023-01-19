@@ -8,7 +8,7 @@ export interface MenuGroupProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   /** Additional classes added to the MenuGroup */
   className?: string;
   /** Group label */
-  label?: React.ReactNode | React.FC;
+  label?: React.ReactNode;
   /** ID for title label */
   titleId?: string;
   /** Forwarded ref */
@@ -32,7 +32,7 @@ const MenuGroupBase: React.FunctionComponent<MenuGroupProps> = ({
       <>
         {['function', 'string'].includes(typeof label) ? (
           <Wrapper className={css(styles.menuGroupTitle)} id={titleId}>
-            {label as React.ReactNode}
+            {label}
           </Wrapper>
         ) : (
           label
