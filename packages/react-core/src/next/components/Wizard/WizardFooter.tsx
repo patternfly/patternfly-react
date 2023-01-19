@@ -35,6 +35,10 @@ export interface WizardFooterProps {
   isCancelHidden?: boolean;
 }
 
+/**
+ * Applies default wizard footer styling any number of child elements.
+ */
+
 interface WizardFooterWrapperProps {
   children: React.ReactNode;
 }

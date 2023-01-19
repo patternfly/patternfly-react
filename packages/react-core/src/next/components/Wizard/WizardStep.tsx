@@ -30,7 +30,7 @@ export interface WizardStepProps {
   footer?: React.ReactElement | Partial<WizardFooterProps>;
   /** Used to determine icon next to the step's navigation item */
   status?: 'default' | 'error';
-  /** Flag to determine whether parent steps can expand or not. Defaults to true. */
+  /** Flag to determine whether parent steps can expand or not. Defaults to false. */
   isExpandable?: boolean;
 }
 

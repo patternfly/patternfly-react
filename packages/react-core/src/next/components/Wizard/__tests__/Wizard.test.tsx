@@ -96,7 +96,6 @@ test('renders default nav with custom props', () => {
 
   expect(navElement).toBeVisible();
   expect(navElement).toHaveAttribute('aria-labelledby', 'wizard-id');
-  expect(screen.getByRole('button', { name: 'Test step 1' }).parentElement).toHaveClass('pf-m-expandable');
   expect(screen.getByRole('button', { name: 'Test step 2' })).toHaveAttribute('disabled');
 });
 
@@ -283,13 +282,18 @@ test('does not render inactive step content', async () => {
   expect(screen.getByText('Step 2 content')).toBeVisible();
 });
 
-test('parent steps have collapsed sub-steps by default unless the step is active', async () => {
+test('parent steps have collapsed sub-steps when isExpandable is true unless the step is active', async () => {
   const user = userEvent.setup();
 
   render(
     <Wizard>
       <WizardStep id="step-1" name="Test step 1" />
-      <WizardStep id="step-2" name="Test step 2" steps={[<WizardStep id="sub-step-1" name="Test sub step 1" />]} />
+      <WizardStep
+        id="step-2"
+        name="Test step 2"
+        isExpandable
+        steps={[<WizardStep id="sub-step-1" name="Test sub step 1" />]}
+      />
     </Wizard>
   );
 
@@ -300,19 +304,19 @@ test('parent steps have collapsed sub-steps by default unless the step is active
   expect(screen.getByLabelText('Collapse step icon')).toBeVisible();
 });
 
-test('parent step can be non-collapsible by setting isExpandable to false', () => {
+test('parent step can be expandable by setting isExpandable to true', () => {
   render(
     <Wizard>
       <WizardStep
         id="step-1"
         name="Test step 1"
-        isExpandable={false}
+        isExpandable
         steps={[<WizardStep id="sub-step-1" name="Sub step 1" />]}
       />
     </Wizard>
   );
 
-  expect(screen.queryByLabelText('step icon', { exact: false })).toBeNull();
+  expect(screen.queryByLabelText('step icon', { exact: false })).toBeVisible();
 });
 
 test('incrementally shows/hides steps based on the activeStep when isProgressive is enabled', async () => {

@@ -6,6 +6,7 @@ export const WizardExpandableSteps: React.FunctionComponent = () => (
     <WizardStep
       name="Step 1"
       id="expand-steps-1"
+      isExpandable
       steps={[
         <WizardStep name="Substep A" id="expand-steps-sub-a" key="expand-steps-sub-a">
           Substep A content
@@ -21,6 +22,7 @@ export const WizardExpandableSteps: React.FunctionComponent = () => (
     <WizardStep
       name="Step 3"
       id="expand-steps-3"
+      isExpandable
       steps={[
         <WizardStep name="Substep C" id="expand-steps-sub-c" key="expand-steps-sub-c">
           Substep C content

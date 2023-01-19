@@ -56,7 +56,6 @@ export const WizardEnabledOnFormValidation: React.FunctionComponent = () => {
       <WizardStep
         name="Configuration"
         id="form-valid-config"
-        isExpandable={false}
         steps={[
           <WizardStep
             name="Substep A with validation"
