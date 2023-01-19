@@ -31,7 +31,7 @@ VisualizationProvider,
 VisualizationSurface,
 withDndDrop,
 withDragNode,
-withSelection
+withSelection,
 withPanZoom
 } from '@patternfly/react-topology';
 
