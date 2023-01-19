@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.276.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.275.0...@patternfly/react-core@4.276.0) (2023-01-19)
+
+
+### Features
+
+* **Accordion:** made scrollable content focusable ([#8515](https://github.com/patternfly/patternfly-react/issues/8515)) ([859c4d4](https://github.com/patternfly/patternfly-react/commit/859c4d4400ce73e5efe317ebffa65f207ce981cb))
+* **Menu:** added event param to onDrillIn and onDrillOut callbacks ([#8514](https://github.com/patternfly/patternfly-react/issues/8514)) ([a0bdf70](https://github.com/patternfly/patternfly-react/commit/a0bdf702fbd9024b754b80b659688d95a6aa7d2e))
+
+
+
+
+
 # 4.275.0 (2023-01-19)
 
 
