@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.94.5 (2023-01-19)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.94.4 (2023-01-18)
+
+
+### Bug Fixes
+
+* **Tabs:** Removed isHelpAction prop from TabsAction ([#8560](https://github.com/patternfly/patternfly-react/issues/8560)) ([05fa1b0](https://github.com/patternfly/patternfly-react/commit/05fa1b0acfe886f09c5bdf4ad9f8e27878ee817e))
+
+
+
+
+
+## 4.94.3 (2022-12-08)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.94.2 (2022-12-07)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.94.1 (2022-12-01)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
 # 4.94.0 (2022-11-16)
 
 

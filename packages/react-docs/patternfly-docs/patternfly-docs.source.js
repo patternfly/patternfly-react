@@ -22,10 +22,7 @@ module.exports = (baseSourceMD, sourceProps) => {
   const reactVirtualizedPath = require
     .resolve('@patternfly/react-virtualized-extension/package.json')
     .replace('package.json', 'src');
-  const reactConsolePath = require.resolve('@patternfly/react-console/package.json').replace('package.json', 'src');
-  const reactLogViewerPath = require
-    .resolve('@patternfly/react-log-viewer/package.json')
-    .replace('package.json', 'src');
+  const reactTopologyPath = require.resolve('@patternfly/react-topology/package.json').replace('package.json', 'src');
   const reactPropsIgnore = '**/*.test.tsx';
 
   sourceProps(path.join(reactCorePath, '/**/*.tsx'), reactPropsIgnore);
@@ -34,8 +31,7 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceProps(path.join(reactCodeEditorPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactCatalogViewPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactVirtualizedPath, '/**/*.tsx'), reactPropsIgnore);
-  sourceProps(path.join(reactConsolePath, '/**/*.tsx'), reactPropsIgnore);
-  sourceProps(path.join(reactLogViewerPath, '/**/*.tsx'), reactPropsIgnore);
+  sourceProps(path.join(reactTopologyPath, '/**/*.tsx'), reactPropsIgnore);
 
   // React MD
   sourceMD(path.join(reactCorePath, '/components/**/examples/*.md'), 'react');
@@ -44,9 +40,12 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceMD(path.join(reactCorePath, '/**/demos/**/*.md'), 'react-demos');
 
   // React-table MD
-  sourceMD(path.join(reactTablePath, '/**/TableComposable/examples/*.md'), 'react-composable');
-  sourceMD(path.join(reactTablePath, '/**/demos/*.md'), 'react-demos');
+  sourceMD(path.join(reactTablePath, '/**/TableComposable/examples/*.md'), 'react');
   sourceMD(path.join(reactTablePath, '/**/Table/examples/*.md'), 'react-legacy');
+  // TODO: uncomment once https://github.com/patternfly/patternfly-org/pull/3291 is reviewed + merged
+  // sourceMD(path.join(reactTablePath,
+  // sourceMD(path.join(reactTablePath, '/deprecated/components/**/examples/*.md'), 'react-deprecated');
+  sourceMD(path.join(reactTablePath, '/**/demos/*.md'), 'react-demos');
 
   // Charts MD (no demos yet)
   sourceMD(path.join(reactChartsPath, '/**/examples/*.md'), 'react');
@@ -57,15 +56,11 @@ module.exports = (baseSourceMD, sourceProps) => {
   // Virtualized MD
   sourceMD(path.join(reactVirtualizedPath, '/**/examples/*.md'), 'react');
 
-  // Consoles MD
-  sourceMD(path.join(reactConsolePath, '/**/examples/*.md'), 'react');
-
   // Code Editor MD
   sourceMD(path.join(reactCodeEditorPath, '/**/examples/*.md'), 'react');
 
-  // Log viewer MD
-  sourceMD(path.join(reactLogViewerPath, '/**/examples/*.md'), 'react');
-  sourceMD(path.join(reactLogViewerPath, '/**/demos/*.md'), 'react-demos');
+  // Topology MD
+  sourceMD(path.join(reactTopologyPath, '/**/examples/*.md'), 'react');
 
   // Release notes
   sourceMD(require.resolve('@patternfly/react-docs/RELEASE-NOTES.md'), 'react');

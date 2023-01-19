@@ -2,16 +2,10 @@
   "files": [],
   "references": [
     {
-      "path": "./react-catalog-view-extension"
-    },
-    {
       "path": "./react-charts"
     },
     {
       "path": "./react-code-editor"
-    },
-    {
-      "path": "./react-console"
     },
     {
       "path": "./react-core"
@@ -21,9 +15,6 @@
     },
     {
       "path": "./react-inline-edit-extension"
-    },
-    {
-      "path": "./react-log-viewer"
     },
     {
       "path": "./react-styles"

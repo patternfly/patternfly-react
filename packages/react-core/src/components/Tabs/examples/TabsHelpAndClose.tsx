@@ -65,7 +65,7 @@ export const TabsHelpAndClose: React.FunctionComponent = () => {
             title={<TabTitleText>{tab}</TabTitleText>}
             actions={
               <>
-                <TabAction isHelpAction aria-label={`Help for ${tab}`} ref={ref}>
+                <TabAction aria-label={`Help for ${tab}`} ref={ref}>
                   <HelpIcon />
                 </TabAction>
                 <TabAction aria-label={`Close ${tab}`} onClick={e => onClose(e, index)} isDisabled={tabs.length === 1}>

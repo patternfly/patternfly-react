@@ -26,7 +26,14 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
   onListChange: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
   onToggle: (isOpen: boolean, pane: string) => void;
   filterOption: (option: React.ReactNode, input: string) => boolean;
-  onOptionSelect: (e: React.MouseEvent | React.ChangeEvent) => void;
+  onOptionSelect?: (
+    e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
+    index: number,
+    isChosen: boolean,
+    id: string,
+    itemData: any,
+    parentData: any
+  ) => void;
 
   constructor(props: DualListSelectorProps) {
     super(props);
@@ -106,7 +113,7 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
 
     this.filterOption = (option: any, input: string) => option.props.children.includes(input);
 
-    this.onOptionSelect = (e: React.MouseEvent | React.ChangeEvent) => {
+    this.onOptionSelect = (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent) => {
       // eslint-disable-next-line no-console
       console.log(e.currentTarget.children.toString());
     };

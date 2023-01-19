@@ -6,9 +6,9 @@ import { css } from '@patternfly/react-styles';
 import { fillTemplate } from '../../helpers';
 import { Navigation } from './Navigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId, PickOptional } from '../../helpers';
+import { formatBreakpointMods } from '../../helpers/util';
 import widthChars from '@patternfly/react-tokens/dist/esm/c_pagination__nav_page_select_c_form_control_width_chars';
-import { PickOptional } from '../../helpers';
 
 export enum PaginationVariant {
   bottom = 'bottom',
@@ -109,6 +109,17 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   dropDirection?: 'up' | 'down';
   /** Page to start at. */
   firstPage?: number;
+  /** @beta Flag indicating that pagination should use page insets. */
+  usePageInsets?: boolean;
+  /** @beta Insets at various breakpoints. */
+  inset?: {
+    default?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    sm?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    md?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    lg?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    xl?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    '2xl'?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+  };
   /** Flag indicating if pagination is compact. */
   isCompact?: boolean;
   /** Flag indicating if pagination is disabled. */
@@ -275,6 +286,8 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       ouiaId,
       ouiaSafe,
       perPageComponent,
+      usePageInsets,
+      inset,
       ...props
     } = this.props;
     const dropDirection = dropDirectionProp || (variant === 'bottom' && !isStatic ? 'up' : 'down');
@@ -313,6 +326,8 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
         className={css(
           styles.pagination,
           variant === PaginationVariant.bottom && styles.modifiers.bottom,
+          usePageInsets && styles.modifiers.pageInsets,
+          formatBreakpointMods(inset, styles),
           isCompact && styles.modifiers.compact,
           isStatic && styles.modifiers.static,
           isSticky && styles.modifiers.sticky,

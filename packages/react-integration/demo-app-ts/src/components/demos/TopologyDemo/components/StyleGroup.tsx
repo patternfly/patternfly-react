@@ -22,15 +22,13 @@ export enum DataTypes {
 
 type StyleGroupProps = {
   element: Node;
-  collapsible: boolean;
+  collapsible?: boolean;
   collapsedWidth?: number;
   collapsedHeight?: number;
   onCollapseChange?: (group: Node, collapsed: boolean) => void;
   getCollapsedShape?: (node: Node) => React.FunctionComponent<ShapeProps>;
   collapsedShadowOffset?: number; // defaults to 10
-} & WithContextMenuProps &
-  WithDragNodeProps &
-  WithSelectionProps;
+} & Partial<WithContextMenuProps & WithDragNodeProps & WithSelectionProps>;
 
 const StyleGroup: React.FunctionComponent<StyleGroupProps> = ({
   element,

@@ -167,7 +167,7 @@ const nodeDropTargetSpec = (
 ): DropTargetSpec<
   GraphElement,
   any,
-  { canDrop: boolean; dropTarget: boolean; edgeDragging: boolean },
+  { canDrop?: boolean; dropTarget?: boolean; edgeDragging?: boolean },
   NodeComponentProps
 > => ({
   accept: accept || [EDGE_DRAG_TYPE, CREATE_CONNECTOR_DROP_TYPE],
@@ -189,7 +189,7 @@ const nodeDropTargetSpec = (
 
 const graphDropTargetSpec = (
   accept?: TargetType
-): DropTargetSpec<DragNodeObject, any, { dragEditInProgress: boolean }, GraphComponentProps> => ({
+): DropTargetSpec<DragNodeObject, any, { dragEditInProgress?: boolean }, GraphComponentProps> => ({
   accept: accept || [NODE_DRAG_TYPE, EDGE_DRAG_TYPE, CREATE_CONNECTOR_DROP_TYPE],
   hitTest: () => true,
   canDrop: (item, monitor, props) =>
@@ -218,7 +218,7 @@ const graphDropTargetSpec = (
 const groupDropTargetSpec: DropTargetSpec<
   any,
   any,
-  { droppable: boolean; dropTarget: boolean; canDrop: boolean },
+  { droppable?: boolean; dropTarget?: boolean; canDrop?: boolean },
   any
 > = {
   accept: [NODE_DRAG_TYPE, EDGE_DRAG_TYPE, CREATE_CONNECTOR_DROP_TYPE],

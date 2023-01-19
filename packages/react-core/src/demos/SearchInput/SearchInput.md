@@ -305,7 +305,7 @@ AdvancedComposableSearchInput = () => {
   
   
   // This demo and its handling of 'date within' and a date picker is modeled after the gmail advanced search form.
-  const onSubmit = (value, event) => {
+  const onSubmit = (event, value) => {
     event.preventDefault();
     
     if (isValidDate(new Date(date)) && dateWithin) {
@@ -364,7 +364,7 @@ AdvancedComposableSearchInput = () => {
   const searchInput = (
     <SearchInput
       value={value}
-      onChange={onChange}
+      onChange={(_event, value) => onChange(value)}
       onToggleAdvancedSearch={(e, isOpen) => {
         e.stopPropagation();
         setIsAdvancedSearchOpen(isOpen)

@@ -301,7 +301,12 @@ export interface WithState {
 
 export type LayoutFactory = (type: string, graph: Graph) => Layout | undefined;
 
-export type ComponentFactory = (kind: ModelKind, type: string) => ComponentType<{ element: GraphElement }> | undefined;
+export type ComponentUnion =
+  | ComponentType<{ element: Graph }>
+  | ComponentType<{ element: Edge }>
+  | ComponentType<{ element: Node }>;
+
+export type ComponentFactory = (kind: ModelKind, type: string) => ComponentUnion | undefined;
 
 export type ElementFactory = (kind: ModelKind, type: string) => GraphElement | undefined;
 
@@ -319,7 +324,7 @@ export interface Controller extends WithState {
   getEdgeById(id: string): Edge | undefined;
   addElement(element: GraphElement): void;
   removeElement(element: GraphElement): void;
-  getComponent(kind: ModelKind, type: string): ComponentType<{ element: GraphElement }>;
+  getComponent(kind: ModelKind, type: string): ComponentUnion;
   registerLayoutFactory(factory: LayoutFactory): void;
   registerComponentFactory(factory: ComponentFactory): void;
   registerElementFactory(factory: ElementFactory): void;

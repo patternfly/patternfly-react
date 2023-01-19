@@ -26,7 +26,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
   const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
   const [menuHeights, setMenuHeights] = React.useState<any>({});
   const [activeMenu, setActiveMenu] = React.useState<string>('breadcrumbs-rootMenu');
-  const [breadcrumb, setBreadcrumb] = React.useState<JSX.Element>();
+  const [breadcrumb, setBreadcrumb] = React.useState<JSX.Element | null>();
   const [withMaxMenuHeight, setWithMaxMenuHeight] = React.useState(false);
 
   const onToggle = (isOpen: boolean, key: string) => {
@@ -37,6 +37,12 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
       case 'label':
         setBreadcrumb(labelsBreadcrumb(isOpen));
         break;
+      case 'pause-app':
+        setBreadcrumb(pauseRolloutsAppGrpBreadcrumb(isOpen));
+        break;
+      case 'pause-label':
+        setBreadcrumb(pauseRolloutsLabelsBreadcrumb(isOpen));
+        break;
       default:
         break;
     }
@@ -46,14 +52,17 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
     setWithMaxMenuHeight(checked);
   };
 
-  const drillOut = (toMenuId: string, fromPathId: string, _breadcrumb: JSX.Element | null) => {
-    const indexOfMenuId = menuDrilledIn.indexOf(toMenuId);
-    const menuDrilledInSansLast = menuDrilledIn.slice(0, indexOfMenuId);
-    const indexOfMenuIdPath = drilldownPath.indexOf(fromPathId);
-    const pathSansLast = drilldownPath.slice(0, indexOfMenuIdPath);
-    setMenuDrilledIn(menuDrilledInSansLast);
-    setDrilldownPath(pathSansLast);
+  const drillOut = (toMenuId: string, fromPathId: string, breadcrumb: JSX.Element | null) => {
+    setMenuDrilledIn(prevMenuDrilledIn => {
+      const indexOfMenuId = prevMenuDrilledIn.indexOf(toMenuId);
+      return prevMenuDrilledIn.slice(0, indexOfMenuId);
+    });
+    setDrilldownPath(prevDrilldownPath => {
+      const indexOfMenuIdPath = prevDrilldownPath.indexOf(fromPathId);
+      return prevDrilldownPath.slice(0, indexOfMenuIdPath);
+    });
     setActiveMenu(toMenuId);
+    setBreadcrumb(breadcrumb);
   };
 
   const setHeight = (menuId: string, height: number) => {
@@ -146,31 +155,59 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
     </Breadcrumb>
   );
 
-  const pauseRolloutsAppGrpBreadcrumb = (
+  const pauseRolloutsAppGrpBreadcrumb = (isOpen: boolean) => (
     <Breadcrumb>
       <BreadcrumbItem component="button" onClick={() => drillOut('breadcrumbs-rootMenu', 'group:pause_rollout', null)}>
         Root
       </BreadcrumbItem>
-      <BreadcrumbItem
-        component="button"
-        onClick={() => drillOut('breadcrumbs-drilldownMenuPause', 'group:app_grouping', pauseRolloutsBreadcrumb)}
-      >
-        Pause rollouts
+      <BreadcrumbItem isDropdown>
+        <Dropdown
+          toggle={
+            <BadgeToggle id="toggle-id" onToggle={open => onToggle(open, 'pause-app')}>
+              1
+            </BadgeToggle>
+          }
+          isOpen={isOpen}
+          dropdownItems={[
+            <DropdownItem
+              key="dropdown-pause"
+              component="button"
+              icon={<AngleLeftIcon />}
+              onClick={() => drillOut('breadcrumbs-drilldownMenuPause', 'group:app_grouping', pauseRolloutsBreadcrumb)}
+            >
+              Pause rollouts
+            </DropdownItem>
+          ]}
+        />
       </BreadcrumbItem>
       <BreadcrumbHeading component="button">Application Grouping</BreadcrumbHeading>
     </Breadcrumb>
   );
 
-  const pauseRolloutsLabelsBreadcrumb = (
+  const pauseRolloutsLabelsBreadcrumb = (isOpen: boolean) => (
     <Breadcrumb>
       <BreadcrumbItem component="button" onClick={() => drillOut('breadcrumbs-rootMenu', 'group:pause_rollout', null)}>
         Root
       </BreadcrumbItem>
-      <BreadcrumbItem
-        component="button"
-        onClick={() => drillOut('breadcrumbs-drilldownMenuPause', 'group:labels', pauseRolloutsBreadcrumb)}
-      >
-        Pause rollouts
+      <BreadcrumbItem isDropdown>
+        <Dropdown
+          toggle={
+            <BadgeToggle id="toggle-id" onToggle={open => onToggle(open, 'pause-label')}>
+              1
+            </BadgeToggle>
+          }
+          isOpen={isOpen}
+          dropdownItems={[
+            <DropdownItem
+              key="dropdown-pause"
+              component="button"
+              icon={<AngleLeftIcon />}
+              onClick={() => drillOut('breadcrumbs-drilldownMenuPause', 'group:labels', pauseRolloutsBreadcrumb)}
+            >
+              Pause rollouts
+            </DropdownItem>
+          ]}
+        />
       </BreadcrumbItem>
       <BreadcrumbHeading component="button">Labels</BreadcrumbHeading>
     </Breadcrumb>
@@ -205,11 +242,12 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
         onDrillIn={drillIn}
         onDrillOut={() => drillOut}
         onGetMenuHeight={setHeight}
+        isScrollable={withMaxMenuHeight}
       >
         {breadcrumb && (
           <>
             <MenuBreadcrumb>{breadcrumb}</MenuBreadcrumb>
-            <Divider component="li" />
+            <Divider />
           </>
         )}
         <MenuContent menuHeight={`${menuHeights[activeMenu]}px`} maxMenuHeight={withMaxMenuHeight ? '100px' : 'auto'}>
@@ -270,7 +308,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
                     itemId="group:app_grouping"
                     description="Groups A-C"
                     direction="down"
-                    onClick={() => setBreadcrumb(pauseRolloutsAppGrpBreadcrumb)}
+                    onClick={() => setBreadcrumb(pauseRolloutsAppGrpBreadcrumb(false))}
                     drilldownMenu={
                       <DrilldownMenu id="breadcrumbs-drilldownMenuGrouping">
                         <MenuItem itemId="group_a">Group A</MenuItem>
@@ -285,7 +323,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
                   <MenuItem
                     itemId="group:labels"
                     direction="down"
-                    onClick={() => setBreadcrumb(pauseRolloutsLabelsBreadcrumb)}
+                    onClick={() => setBreadcrumb(pauseRolloutsLabelsBreadcrumb(false))}
                     drilldownMenu={
                       <DrilldownMenu id="breadcrumbs-drilldownMenuLabels">
                         <MenuItem itemId="label_1">Label 1</MenuItem>

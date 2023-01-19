@@ -109,6 +109,11 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   }
   const selectParams = select
     ? selectable(children as IFormatterValueType, {
+        rowData: {
+          selected: select.isSelected,
+          disableSelection: select?.isDisabled,
+          props: select?.props
+        },
         column: {
           extraParams: {
             onSelect: select?.onSelect,

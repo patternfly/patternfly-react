@@ -250,7 +250,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
     // eslint-disable-next-line no-console
     <Menu ref={menuRef} onActionClick={onFavorite} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
       <MenuInput>
-        <SearchInput aria-label="Filter menu items" type="search" onChange={value => onTextChange(value)} />
+        <SearchInput aria-label="Filter menu items" type="search" onChange={(_event, value) => onTextChange(value)} />
       </MenuInput>
       <Divider />
       <MenuContent>

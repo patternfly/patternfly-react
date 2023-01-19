@@ -11,8 +11,6 @@ export interface TabActionProps extends Omit<React.HTMLProps<HTMLButtonElement>,
   className?: string;
   /** Click callback for tab action button */
   onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-  /** Flag indicating if the tab action is a help action */
-  isHelpAction?: boolean;
   /** Flag indicating if the tab action is disabled */
   isDisabled?: boolean;
   /** Accessible label for the tab action */
@@ -25,7 +23,6 @@ const TabActionBase: React.FunctionComponent<TabActionProps> = ({
   children,
   className,
   onClick,
-  isHelpAction,
   isDisabled,
   'aria-label': ariaLabel = 'Tab action',
   innerRef,
@@ -34,7 +31,7 @@ const TabActionBase: React.FunctionComponent<TabActionProps> = ({
   ouiaSafe,
   ...props
 }: TabActionProps) => (
-  <span className={css(styles.tabsItemAction, isHelpAction && styles.modifiers.help, className)}>
+  <span className={css(styles.tabsItemAction, className)}>
     <Button
       ref={innerRef}
       type="button"

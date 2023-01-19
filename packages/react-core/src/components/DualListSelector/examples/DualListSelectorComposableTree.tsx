@@ -7,12 +7,20 @@ import {
   DualListSelectorControl,
   DualListSelectorTree,
   DualListSelectorTreeItemData,
-  SearchInput
+  SearchInput,
+  Title,
+  Button,
+  EmptyState,
+  EmptyStateVariant,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStatePrimary
 } from '@patternfly/react-core';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 interface FoodNode {
   id: string;
@@ -161,7 +169,11 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     const onChange = value => (isChosen ? setChosenFilter(value) : setAvailableFilter(value));
 
     return (
-      <SearchInput value={isChosen ? chosenFilter : availableFilter} onChange={onChange} onClear={() => onChange('')} />
+      <SearchInput
+        value={isChosen ? chosenFilter : availableFilter}
+        onChange={(_event, value) => onChange(value)}
+        onClear={() => onChange('')}
+      />
     );
   };
 
@@ -235,19 +247,37 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
       isChosen ? chosenLeafIds.includes(id) : !chosenLeafIds.includes(id)
     ).length;
     const status = `${numSelected} of ${numOptions} options selected`;
+    const filterApplied = isChosen ? chosenFilter !== '' : availableFilter !== '';
     return (
       <DualListSelectorPane
         title={isChosen ? 'Chosen' : 'Available'}
         status={status}
         searchInput={buildSearchInput(isChosen)}
         isChosen={isChosen}
+        listMinHeight="300px"
       >
-        <DualListSelectorList>
-          <DualListSelectorTree
-            data={options}
-            onOptionCheck={(e, isChecked, itemData) => onOptionCheck(e, isChecked, itemData, isChosen)}
-          />
-        </DualListSelectorList>
+        {filterApplied && options.length === 0 && (
+          <EmptyState variant={EmptyStateVariant.small}>
+            <EmptyStateIcon icon={SearchIcon} />
+            <Title headingLevel="h4" size="md">
+              No results found
+            </Title>
+            <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
+            <EmptyStatePrimary>
+              <Button variant="link" onClick={() => (isChosen ? setChosenFilter('') : setAvailableFilter(''))}>
+                Clear all filters
+              </Button>
+            </EmptyStatePrimary>
+          </EmptyState>
+        )}
+        {options.length > 0 && (
+          <DualListSelectorList>
+            <DualListSelectorTree
+              data={options}
+              onOptionCheck={(e, isChecked, itemData) => onOptionCheck(e, isChecked, itemData, isChosen)}
+            />
+          </DualListSelectorList>
+        )}
       </DualListSelectorPane>
     );
   };

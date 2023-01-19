@@ -39,6 +39,8 @@ export interface ClipboardCopyButtonProps
     | 'left-end'
     | 'right-start'
     | 'right-end';
+  /** @beta Opt-in for updated popper that does not use findDOMNode. */
+  removeFindDomNode?: boolean;
   /** Aria-label for the copy button */
   'aria-label'?: string;
   /** Variant of the copy button */
@@ -59,6 +61,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   children,
   variant = 'control',
   onTooltipHidden = () => {},
+  removeFindDomNode = false,
   ...props
 }: ClipboardCopyButtonProps) => (
   <Tooltip
@@ -71,6 +74,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
     aria="none"
     content={<div>{children}</div>}
     onTooltipHidden={onTooltipHidden}
+    removeFindDomNode={removeFindDomNode}
   >
     <Button
       type="button"

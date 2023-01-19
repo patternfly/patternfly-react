@@ -44,10 +44,7 @@ type StyleNodeProps = {
   showStatusDecorator?: boolean; // Defaults to false
   regrouping?: boolean;
   dragging?: boolean;
-} & WithContextMenuProps &
-  WithCreateConnectorProps &
-  WithDragNodeProps &
-  WithSelectionProps;
+} & Partial<WithContextMenuProps & WithCreateConnectorProps & WithDragNodeProps & WithSelectionProps>;
 
 const getTypeIcon = (dataType?: DataTypes): any => {
   switch (dataType) {
@@ -157,13 +154,13 @@ const StyleNode: React.FunctionComponent<StyleNodeProps> = ({
       <g ref={hoverRef}>
         <DefaultNode
           element={element}
-          scaleLabel={detailsLevel !== ScaleDetailsLevel.high}
+          scaleLabel={detailsLevel !== ScaleDetailsLevel.low}
           scaleNode={hover && detailsLevel === ScaleDetailsLevel.low}
           {...rest}
           {...passedData}
           dragging={dragging}
           regrouping={regrouping}
-          showLabel={hover || (detailsLevel === ScaleDetailsLevel.high && showLabel)}
+          showLabel={hover || (detailsLevel !== ScaleDetailsLevel.low && showLabel)}
           showStatusBackground={!hover && detailsLevel === ScaleDetailsLevel.low}
           showStatusDecorator={detailsLevel === ScaleDetailsLevel.high && passedData.showStatusDecorator}
           onContextMenu={data.showContextMenu ? onContextMenu : undefined}

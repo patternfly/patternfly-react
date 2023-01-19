@@ -17,7 +17,7 @@ import {
   EditableTextCell,
   EditableSelectInputCell
 } from '@patternfly/react-table';
-import { SelectOption } from '@patternfly/react-core';
+import { SelectOption, SelectOptionObject } from '@patternfly/react-core';
 
 const rowLevelValidationRules: IValidatorDef[] = [
   {
@@ -343,10 +343,15 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     });
   };
 
-  onSelect = (newValue: string, evt: React.FormEvent, rowIndex: number, cellIndex: number, isPlaceholder?: boolean) => {
+  onSelect = (
+    newValue: string | SelectOptionObject,
+    evt: React.FormEvent,
+    rowIndex: number,
+    cellIndex: number,
+    isPlaceholder?: boolean
+  ) => {
     const newRows = Array.from(this.state.rows);
     const newCellProps = (newRows[rowIndex].cells[cellIndex] as IRowCell).props;
-
     if (isPlaceholder) {
       newCellProps.editableValue = [];
       newCellProps.selected = [];
@@ -359,15 +364,15 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
 
       switch (newCellProps.editableSelectProps.variant) {
         case 'checkbox': {
-          if (!newSelected.includes(newValue)) {
-            newSelected.push(newValue);
+          if (!newSelected.includes(newValue.toString())) {
+            newSelected.push(newValue.toString());
           } else {
             newSelected = newSelected.filter(el => el !== newValue);
           }
           break;
         }
         default: {
-          newSelected = [newValue];
+          newSelected = [newValue.toString()];
         }
       }
 

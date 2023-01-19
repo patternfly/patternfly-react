@@ -154,6 +154,7 @@ const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
         showBackground
         onClick={e => onStatusDecoratorClick(e, element)}
         icon={<g className={css(styles.topologyNodeDecoratorStatus)}>{icon}</g>}
+        ariaLabel={status}
       />
     );
 
@@ -248,8 +249,17 @@ const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
     };
   }, [scale, scaleNode]);
 
-  const labelScale = scaleLabel && !scaleNode ? Math.max(1, 1 / scale) : 1;
-  const labelPositionScale = scaleLabel && !scaleNode ? Math.min(1, scale) : 1;
+  // counter scale label
+  const counterScale = (scale: number, scaleMin: number, scaleMax: number, valueMin: number, valueMax: number) => {
+    if (scale >= scaleMax) {
+      return valueMin;
+    } else if (scale <= scaleMin) {
+      return valueMax;
+    }
+    return valueMin + (1 - (scale - scaleMin) / (scaleMax - scaleMin)) * (valueMax - valueMin);
+  };
+  const labelScale = scaleLabel ? counterScale(scale, 0.35, 0.85, 1, 1.6) : 1;
+  const labelPositionScale = scaleLabel ? Math.min(1, 1 / labelScale) : 1;
 
   const { translateX, translateY } = React.useMemo(() => {
     if (!scaleNode) {

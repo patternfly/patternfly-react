@@ -42,7 +42,14 @@ export interface TimePickerProps
   /** True if the time is 24 hour time. False if the time is 12 hour time */
   is24Hour?: boolean;
   /** Optional event handler called each time the value in the time picker input changes. */
-  onChange?: (time: string, hour?: number, minute?: number, seconds?: number, isValid?: boolean) => void;
+  onChange?: (
+    event: React.FormEvent<HTMLInputElement>,
+    time: string,
+    hour?: number,
+    minute?: number,
+    seconds?: number,
+    isValid?: boolean
+  ) => void;
   /** Optional validator can be provided to override the internal time validator. */
   validateTime?: (time: string) => boolean;
   /** Id of the time picker */
@@ -389,7 +396,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     const { delimiter, is24Hour, includeSeconds, setIsOpen } = this.props;
     const time = parseTime(e.target.textContent, timeRegex, delimiter, !is24Hour, includeSeconds);
     if (time !== timeState) {
-      this.onInputChange(time);
+      this.onInputChange(time, e);
     }
 
     this.inputRef.current.focus();
@@ -407,12 +414,13 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     e.stopPropagation();
   };
 
-  onInputChange = (newTime: string) => {
+  onInputChange = (newTime: string, event: React.FormEvent<HTMLInputElement>) => {
     const { onChange } = this.props;
     const { timeRegex } = this.state;
 
     if (onChange) {
       onChange(
+        event,
         newTime,
         getHours(newTime, timeRegex),
         getMinutes(newTime, timeRegex),
@@ -423,16 +431,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     this.scrollToSelection(newTime);
     this.setState({
       timeState: newTime
-    });
-  };
-
-  onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
-    const { timeRegex } = this.state;
-    const { delimiter, is24Hour, includeSeconds } = this.props;
-    const time = parseTime(event.currentTarget.value, timeRegex, delimiter, !is24Hour, includeSeconds);
-
-    this.setState({
-      isInvalid: !this.isValid(time)
     });
   };
 
@@ -507,7 +505,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         iconVariant="clock"
         onClick={this.onInputClick}
         onChange={this.onInputChange}
-        onBlur={this.onBlur}
         autoComplete="off"
         isDisabled={isDisabled}
         ref={this.inputRef}

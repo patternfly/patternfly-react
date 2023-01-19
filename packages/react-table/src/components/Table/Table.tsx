@@ -93,6 +93,14 @@ export interface TableProps extends OUIAProps {
   dropdownPosition?: 'right' | 'left';
   /** The desired direction to show the dropdown when clicking on the actions Kebab. Can only be used together with `actions` property */
   dropdownDirection?: 'up' | 'down';
+  /** The container to append the dropdown menu to. Defaults to 'inline'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * actionsMenuAppendTo="parent"
+   * actionsMenuAppendTo={() => document.body}
+   * actionsMenuAppendTo={document.getElementById('target')}
+   */
+  actionsMenuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
   /** The toggle of the actions menu dropdown. A KebabToggle or DropdownToggle component */
   actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
   /** Row data */
@@ -141,6 +149,7 @@ export class Table extends React.Component<TableProps, {}> {
     contentId: 'expanded-content',
     dropdownPosition: DropdownPosition.right,
     dropdownDirection: DropdownDirection.down,
+    actionsMenuAppendTo: 'inline',
     header: undefined as React.ReactNode,
     caption: undefined as React.ReactNode,
     'aria-label': undefined as string,
@@ -202,6 +211,7 @@ export class Table extends React.Component<TableProps, {}> {
       rowLabeledBy,
       dropdownPosition,
       dropdownDirection,
+      actionsMenuAppendTo: menuAppendTo,
       actionsToggle,
       contentId,
       expandId,
@@ -244,6 +254,7 @@ export class Table extends React.Component<TableProps, {}> {
       contentId,
       dropdownPosition,
       dropdownDirection,
+      menuAppendTo,
       actionsToggle,
       onFavorite,
       canSortFavorites,

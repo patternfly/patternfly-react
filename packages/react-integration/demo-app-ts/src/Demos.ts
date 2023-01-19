@@ -93,11 +93,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.CodeEditorDemo
   },
   {
-    id: 'consoles-demo',
-    name: 'Consoles Demo',
-    componentType: Examples.ConsolesDemo
-  },
-  {
     id: 'context-selector-demo',
     name: 'ContextSelector Demo',
     componentType: Examples.ContextSelectorDemo
@@ -296,11 +291,6 @@ export const Demos: DemoInterface[] = [
     id: 'popover-demo',
     name: 'Popover Demo',
     componentType: Examples.PopoverDemo
-  },
-  {
-    id: 'progress-stepper-demo',
-    name: 'Progress Stepper Demo',
-    componentType: Examples.ProgressStepperDemo
   },
   {
     id: 'radio-demo',

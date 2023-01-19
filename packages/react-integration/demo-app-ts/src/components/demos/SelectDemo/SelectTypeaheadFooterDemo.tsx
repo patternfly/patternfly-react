@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, SelectOption, SelectVariant, Button } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, Button, SelectOptionObject } from '@patternfly/react-core';
 
 /* eslint-disable no-console */
 export interface SelectTypeaheadFooterDemoState {
@@ -37,7 +37,11 @@ export class SelectTypeaheadFooterDemo extends React.Component<SelectTypeaheadFo
     });
   };
 
-  onSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
+  onSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder: boolean
+  ) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {

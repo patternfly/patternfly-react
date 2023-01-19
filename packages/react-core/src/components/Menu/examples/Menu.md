@@ -183,3 +183,8 @@ To control the height of a menu, use the `maxMenuHeight` property. Selecting the
 
 ```ts file="MenuWithDrilldownBreadcrumbs.tsx" isBeta
 ```
+
+### With drilldown and inline filter
+
+```ts file="MenuFilterDrilldown.tsx"
+```

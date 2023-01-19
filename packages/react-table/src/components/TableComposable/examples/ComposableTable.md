@@ -16,6 +16,7 @@ propComponents:
     'TdSelectType',
     'ThSelectType',
     'TdTreeRowType',
+    'ActionsColumn',
     'IActions',
     'TdCompoundExpandType',
     'TdFavoritesType',
@@ -164,6 +165,8 @@ This example demonstrates adding actions as the last column. The header's last c
 
 To make a cell an action cell, render an `ActionsColumn` component inside a row's last `Td` and pass an array of `IAction` objects via the `items` prop of `ActionsColumn`.
 
+If actions menus are getting clipped by other items on the page, such as sticky columns or rows, the `ActionsColumn` can be passed a `menuAppendTo` prop to adjust where the actions menu is appended.
+
 ```ts file="ComposableTableActions.tsx"
 ```
 
@@ -232,8 +235,6 @@ export type OnExpand = (
 
 ```ts file="ComposableTableControllingText.tsx"
 ```
-
-#### TODO: distinguish between the use cases for modifier on Td vs on TableText?
 
 ### Composable: Modifiers with table text
 
@@ -327,14 +328,14 @@ There are a few ways this can be handled:
 
 ### Composable: Sticky column
 
-To make a column sticky, wrap `TableComposable` with `InnerScrollContainer` and add the following properties to the `Th` that should be sticky: `isStickyColumn` and `hasRightBorder`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` should also have the `modifier="nowrap"` property. To set the minimum width of the sticky column, use the `stickyMinWidth` property.
+To make a column sticky, wrap `TableComposable` with `InnerScrollContainer` and add the following properties to the `Th` or `Td` that should be sticky: `isStickyColumn` and `hasRightBorder`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property. To set the minimum width of the sticky column, use the `stickyMinWidth` property.
 
 ```ts file="ComposableTableStickyColumn.tsx"
 ```
 
 ### Composable: Multiple sticky columns
 
-To make multiple columns sticky, wrap `TableComposable` with `InnerScrollContainer` and add `isStickyColumn` to all columns that should be sticky. The rightmost column should also have the `hasRightBorder` property, and each sticky column after the first must define a `stickyLeftOffset` property that equals the combined width of the previous sticky columns - set by `stickyMinWidth`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` should also have the `modifier="nowrap"` property.
+To make multiple columns sticky, wrap `TableComposable` with `InnerScrollContainer` and add `isStickyColumn` to all columns that should be sticky. The rightmost column should also have the `hasRightBorder` property, and each sticky column after the first must define a `stickyLeftOffset` property that equals the combined width of the previous sticky columns - set by `stickyMinWidth`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property.
 
 ```ts file="ComposableTableMultipleStickyColumns.tsx"
 ```

@@ -135,7 +135,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
     textInputRef.current?.focus();
   };
 
-  const onTextInputChange = (value: string) => {
+  const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
     setIsSelected(false);
   };

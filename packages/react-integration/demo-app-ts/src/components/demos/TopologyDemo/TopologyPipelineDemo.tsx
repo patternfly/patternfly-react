@@ -9,9 +9,9 @@ const TASKS = 0;
 const LAYOUT = 1;
 
 export const TopologyPipelineDemo: React.FunctionComponent = () => {
-  const [activeKey, setActiveKey] = React.useState<number>(TASKS);
+  const [activeKey, setActiveKey] = React.useState<string | number>(TASKS);
 
-  const handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number) => {
+  const handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => {
     setActiveKey(tabIndex);
   };
 

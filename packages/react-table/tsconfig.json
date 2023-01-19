@@ -3,7 +3,11 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist/esm",
-    "tsBuildInfoFile": "dist/esm.tsbuildinfo"
+    "tsBuildInfoFile": "dist/esm.tsbuildinfo",
+    "baseUrl": ".",
+    "paths": {
+      "*/deprecated": ["./src/deprecated"],
+    }
   },
   "include": [
     "./src/*",

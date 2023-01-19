@@ -3,6 +3,16 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
 import { formatBreakpointMods } from '../../helpers/util';
 
+export enum SidebarPanelWidthType {
+  default = 'default',
+  width25 = 'width_25',
+  width33 = 'width_33',
+  width50 = 'width_50',
+  width66 = 'width_66',
+  width75 = 'width_75',
+  width100 = 'width_100'
+}
+
 export interface SidebarPanelProps extends Omit<React.HTMLProps<HTMLDivElement>, 'width'> {
   children: React.ReactNode;
   /** Indicates whether the panel is positioned statically or sticky to the top. Default is sticky on small screens when the orientation is stack, and static on medium and above screens when the orientation is split. */

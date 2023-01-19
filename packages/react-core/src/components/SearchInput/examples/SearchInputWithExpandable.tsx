@@ -9,7 +9,7 @@ export const SearchInputWithExpandable: React.FunctionComponent = () => {
     setValue(value);
   };
 
-  const onToggleExpand = (isExpanded: boolean) => {
+  const onToggleExpand = (_event: React.SyntheticEvent<HTMLButtonElement>, isExpanded: boolean) => {
     setIsExpanded(!isExpanded);
   };
 
@@ -17,7 +17,7 @@ export const SearchInputWithExpandable: React.FunctionComponent = () => {
     <SearchInput
       placeholder="Find by name"
       value={value}
-      onChange={onChange}
+      onChange={(_event, value) => onChange(value)}
       onClear={() => onChange('')}
       expandableInput={{ isExpanded, onToggleExpand, toggleAriaLabel: 'Expandable search input toggle' }}
     />

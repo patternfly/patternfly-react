@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
+import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
 import { BaseCellProps } from './TableComposable';
 import { cellActions } from '../Table/utils/decorators/cellActions';
 import { selectable } from '../Table/utils/decorators/selectable';
@@ -32,7 +33,7 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   dataLabel?: string;
   /** Renders a checkbox or radio select */
   select?: TdSelectType;
-  /** Turns the cell into an actions cell */
+  /** Turns the cell into an actions cell. Recommended to use an ActionsColumn component as a child of the Td rather than this prop. */
   actions?: TdActionsType;
   /** Turns the cell into an expansion toggle and determines if the corresponding expansion row is open */
   expand?: TdExpandType;
@@ -57,6 +58,14 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   tooltip?: React.ReactNode;
   /** Callback on mouse enter */
   onMouseEnter?: (event: any) => void;
+  /** Indicates the column should be sticky */
+  isStickyColumn?: boolean;
+  /** Adds a border to the right side of the cell */
+  hasRightBorder?: boolean;
+  /** Minimum width for a sticky column */
+  stickyMinWidth?: string;
+  /** Left offset of a sticky column. This will typically be equal to the combined value set by stickyMinWidth of any sticky columns that precede the current sticky column. */
+  stickyLeftOffset?: string;
 }
 
 const TdBase: React.FunctionComponent<TdProps> = ({
@@ -80,6 +89,10 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   draggableRow: draggableRowProp = null,
   tooltip = '',
   onMouseEnter: onMouseEnterProp = () => {},
+  isStickyColumn = false,
+  hasRightBorder = false,
+  stickyMinWidth = '120px',
+  stickyLeftOffset,
   ...props
 }: TdProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -141,6 +154,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
           extraParams: {
             dropdownPosition: actions?.dropdownPosition,
             dropdownDirection: actions?.dropdownDirection,
+            menuAppendTo: actions?.menuAppendTo,
             actionsToggle: actions?.actionsToggle
           }
         }
@@ -239,6 +253,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         isActionCell && styles.tableAction,
         textCenter && styles.modifiers.center,
         noPadding && styles.modifiers.noPadding,
+        isStickyColumn && scrollStyles.tableStickyColumn,
+        hasRightBorder && scrollStyles.modifiers.borderRight,
         styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap' | undefined],
         draggableParams && styles.tableDraggable,
         mergedClassName
@@ -246,6 +262,13 @@ const TdBase: React.FunctionComponent<TdProps> = ({
       ref={innerRef}
       {...mergedProps}
       {...props}
+      {...(isStickyColumn && {
+        style: {
+          '--pf-c-table__sticky-column--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
+          '--pf-c-table__sticky-column--Left': stickyLeftOffset ? stickyLeftOffset : undefined,
+          ...props.style
+        } as React.CSSProperties
+      })}
     >
       {mergedChildren || children}
     </MergedComponent>

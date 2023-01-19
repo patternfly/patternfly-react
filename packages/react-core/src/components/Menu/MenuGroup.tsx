@@ -2,13 +2,13 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 
-export interface MenuGroupProps extends React.HTMLProps<HTMLElement> {
+export interface MenuGroupProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Items within group */
   children?: React.ReactNode;
   /** Additional classes added to the MenuGroup */
   className?: string;
   /** Group label */
-  label?: string;
+  label?: React.ReactNode;
   /** ID for title label */
   titleId?: string;
   /** Forwarded ref */
@@ -25,16 +25,23 @@ const MenuGroupBase: React.FunctionComponent<MenuGroupProps> = ({
   innerRef,
   labelHeadingLevel: HeadingLevel = 'h1',
   ...props
-}: MenuGroupProps) => (
-  <section {...props} className={css('pf-c-menu__group', className)} ref={innerRef}>
-    {label && (
-      <HeadingLevel className={css(styles.menuGroupTitle)} id={titleId}>
-        {label}
-      </HeadingLevel>
-    )}
-    {children}
-  </section>
-);
+}: MenuGroupProps) => {
+  const Wrapper = typeof label === 'function' ? label : HeadingLevel;
+  return (
+    <section {...props} className={css('pf-c-menu__group', className)} ref={innerRef}>
+      <>
+        {['function', 'string'].includes(typeof label) ? (
+          <Wrapper className={css(styles.menuGroupTitle)} id={titleId}>
+            {label}
+          </Wrapper>
+        ) : (
+          label
+        )}
+        {children}
+      </>
+    </section>
+  );
+};
 
 export const MenuGroup = React.forwardRef((props: MenuGroupProps, ref: React.Ref<HTMLElement>) => (
   <MenuGroupBase {...props} innerRef={ref} />
