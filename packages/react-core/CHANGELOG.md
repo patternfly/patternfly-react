@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.274.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.273.3...@patternfly/react-core@4.274.0) (2023-01-19)
+
+
+### Bug Fixes
+
+* forward given role to chip component ([#8383](https://github.com/patternfly/patternfly-react/issues/8383)) ([d550980](https://github.com/patternfly/patternfly-react/commit/d55098088e5e3cd08220e012fd465985a37d7dcd)), closes [#8353](https://github.com/patternfly/patternfly-react/issues/8353) [/github.com/patternfly/patternfly-react/pull/8383#issuecomment-1329742421](https://github.com//github.com/patternfly/patternfly-react/pull/8383/issues/issuecomment-1329742421)
+
+
+### Features
+
+* **TextList:** added isPlain prop ([#8562](https://github.com/patternfly/patternfly-react/issues/8562)) ([e76f4e8](https://github.com/patternfly/patternfly-react/commit/e76f4e845439b24f8275ef7036a2c36808455bf4))
+
+
+
+
+
 ## [4.273.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.273.2...@patternfly/react-core@4.273.3) (2023-01-19)
 
 **Note:** Version bump only for package @patternfly/react-core
