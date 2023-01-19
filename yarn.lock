@@ -3431,11 +3431,6 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@novnc/novnc@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.3.0.tgz#06db5ff55eae646a623d3717d8bffaf131ffb93a"
-  integrity sha512-tR87mY5ADtaELadmZfW937JO/p8fRdz3wkPoqwhqB/vY1XnTQeLSWwkp4yMlr4iIDY0iCficfzFYX5EHMh4MHw==
-
 "@npmcli/move-file@^1.0.1":
   version "1.0.1"
   resolved "https://registry.npmjs.org/@npmcli/move-file/-/move-file-1.0.1.tgz"
@@ -4181,10 +4176,6 @@
     "@types/express-serve-static-core" "^4.17.31"
     "@types/qs" "*"
     "@types/serve-static" "*"
-
-"@types/file-saver@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/@types/file-saver/-/file-saver-2.0.1.tgz"
 
 "@types/fined@*":
   version "1.1.2"
@@ -13392,7 +13383,7 @@ monaco-editor-webpack-plugin@2.1.0, monaco-editor-webpack-plugin@^2.1.0:
   dependencies:
     loader-utils "^2.0.0"
 
-monaco-editor@*, monaco-editor@0.21.3:
+monaco-editor@0.21.3:
   version "0.21.3"
   resolved "https://registry.npmjs.org/monaco-editor/-/monaco-editor-0.21.3.tgz"
 
@@ -15286,12 +15277,12 @@ react-monaco-editor@0.48.0:
   dependencies:
     prop-types "^15.8.1"
 
-react-monaco-editor@^0.41.2:
-  version "0.41.2"
-  resolved "https://registry.npmjs.org/react-monaco-editor/-/react-monaco-editor-0.41.2.tgz"
+react-monaco-editor@^0.51.0:
+  version "0.51.0"
+  resolved "https://registry.yarnpkg.com/react-monaco-editor/-/react-monaco-editor-0.51.0.tgz#68d6afc912f7fcb7782e57b39889a5fd75fc0ceb"
+  integrity sha512-6jx1V8p6gHVKJHFaTvicOtmlhFjOJhekobeNd92ZAo7F5UvAin1cF7bxWLCKgtxClYZ7CB3Ar284Kpbhj22FpQ==
   dependencies:
-    monaco-editor "*"
-    prop-types "^15.7.2"
+    prop-types "^15.8.1"
 
 react-refresh-typescript@2.0.7:
   version "2.0.7"
