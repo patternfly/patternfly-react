@@ -41,6 +41,11 @@ test('Renders as "dl" element when component="dl"', () => {
   expect(screen.getByText('Test')).toHaveProperty('nodeName', 'DL');
 });
 
+test('Renders with plain modifier class when isPlain is set to true', () => {
+  render(<TextList isPlain>Test</TextList>);
+  expect(screen.getByRole('list')).toHaveClass('pf-m-plain');
+});
+
 test('Renders with inherited element props spread to the component', () => {
   render(<TextList aria-label="Test label">Test</TextList>);
   expect(screen.getByText('Test')).toHaveAccessibleName('Test label');
