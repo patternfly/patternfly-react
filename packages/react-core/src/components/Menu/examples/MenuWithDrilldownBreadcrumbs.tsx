@@ -52,7 +52,12 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
     setWithMaxMenuHeight(checked);
   };
 
-  const drillOut = (toMenuId: string, fromPathId: string, breadcrumb: JSX.Element | null) => {
+  const drillOut = (
+    _event: React.KeyboardEvent<Element> | MouseEvent | React.MouseEvent<any, MouseEvent>,
+    toMenuId: string,
+    fromPathId: string,
+    breadcrumb: JSX.Element | null
+  ) => {
     setMenuDrilledIn(prevMenuDrilledIn => {
       const indexOfMenuId = prevMenuDrilledIn.indexOf(toMenuId);
       return prevMenuDrilledIn.slice(0, indexOfMenuId);
@@ -71,7 +76,12 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
     }
   };
 
-  const drillIn = (fromMenuId: string, toMenuId: string, pathId: string) => {
+  const drillIn = (
+    _event: React.KeyboardEvent | React.MouseEvent,
+    fromMenuId: string,
+    toMenuId: string,
+    pathId: string
+  ) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
     setDrilldownPath([...drilldownPath, pathId]);
     setActiveMenu(toMenuId);
@@ -79,7 +89,10 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
 
   const startRolloutBreadcrumb = (
     <Breadcrumb>
-      <BreadcrumbItem component="button" onClick={() => drillOut('breadcrumbs-rootMenu', 'group:start_rollout', null)}>
+      <BreadcrumbItem
+        component="button"
+        onClick={event => drillOut(event, 'breadcrumbs-rootMenu', 'group:start_rollout', null)}
+      >
         Root
       </BreadcrumbItem>
       <BreadcrumbHeading component="button">Start rollout</BreadcrumbHeading>
@@ -88,7 +101,10 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
 
   const appGroupingBreadcrumb = (isOpen: boolean) => (
     <Breadcrumb>
-      <BreadcrumbItem component="button" onClick={() => drillOut('breadcrumbs-rootMenu', 'group:start_rollout', null)}>
+      <BreadcrumbItem
+        component="button"
+        onClick={event => drillOut(event, 'breadcrumbs-rootMenu', 'group:start_rollout', null)}
+      >
         Root
       </BreadcrumbItem>
       <BreadcrumbItem isDropdown>
@@ -104,8 +120,8 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-start"
               component="button"
               icon={<AngleLeftIcon />}
-              onClick={() =>
-                drillOut('breadcrumbs-drilldownMenuStart', 'group:app_grouping_start', startRolloutBreadcrumb)
+              onClick={event =>
+                drillOut(event, 'breadcrumbs-drilldownMenuStart', 'group:app_grouping_start', startRolloutBreadcrumb)
               }
             >
               Start rollout
@@ -119,7 +135,10 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
 
   const labelsBreadcrumb = (isOpen: boolean) => (
     <Breadcrumb>
-      <BreadcrumbItem component="button" onClick={() => drillOut('breadcrumbs-rootMenu', 'group:start_rollout', null)}>
+      <BreadcrumbItem
+        component="button"
+        onClick={event => drillOut(event, 'breadcrumbs-rootMenu', 'group:start_rollout', null)}
+      >
         Root
       </BreadcrumbItem>
       <BreadcrumbItem isDropdown>
@@ -135,7 +154,9 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-start"
               component="button"
               icon={<AngleLeftIcon />}
-              onClick={() => drillOut('breadcrumbs-drilldownMenuStart', 'group:labels_start', startRolloutBreadcrumb)}
+              onClick={event =>
+                drillOut(event, 'breadcrumbs-drilldownMenuStart', 'group:labels_start', startRolloutBreadcrumb)
+              }
             >
               Start rollout
             </DropdownItem>
@@ -148,7 +169,10 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
 
   const pauseRolloutsBreadcrumb = (
     <Breadcrumb>
-      <BreadcrumbItem component="button" onClick={() => drillOut('breadcrumbs-rootMenu', 'group:pause_rollout', null)}>
+      <BreadcrumbItem
+        component="button"
+        onClick={event => drillOut(event, 'breadcrumbs-rootMenu', 'group:pause_rollout', null)}
+      >
         Root
       </BreadcrumbItem>
       <BreadcrumbHeading component="button">Pause rollouts</BreadcrumbHeading>
@@ -157,7 +181,10 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
 
   const pauseRolloutsAppGrpBreadcrumb = (isOpen: boolean) => (
     <Breadcrumb>
-      <BreadcrumbItem component="button" onClick={() => drillOut('breadcrumbs-rootMenu', 'group:pause_rollout', null)}>
+      <BreadcrumbItem
+        component="button"
+        onClick={event => drillOut(event, 'breadcrumbs-rootMenu', 'group:pause_rollout', null)}
+      >
         Root
       </BreadcrumbItem>
       <BreadcrumbItem isDropdown>
@@ -173,7 +200,9 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-pause"
               component="button"
               icon={<AngleLeftIcon />}
-              onClick={() => drillOut('breadcrumbs-drilldownMenuPause', 'group:app_grouping', pauseRolloutsBreadcrumb)}
+              onClick={event =>
+                drillOut(event, 'breadcrumbs-drilldownMenuPause', 'group:app_grouping', pauseRolloutsBreadcrumb)
+              }
             >
               Pause rollouts
             </DropdownItem>
@@ -186,7 +215,10 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
 
   const pauseRolloutsLabelsBreadcrumb = (isOpen: boolean) => (
     <Breadcrumb>
-      <BreadcrumbItem component="button" onClick={() => drillOut('breadcrumbs-rootMenu', 'group:pause_rollout', null)}>
+      <BreadcrumbItem
+        component="button"
+        onClick={event => drillOut(event, 'breadcrumbs-rootMenu', 'group:pause_rollout', null)}
+      >
         Root
       </BreadcrumbItem>
       <BreadcrumbItem isDropdown>
@@ -202,7 +234,9 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-pause"
               component="button"
               icon={<AngleLeftIcon />}
-              onClick={() => drillOut('breadcrumbs-drilldownMenuPause', 'group:labels', pauseRolloutsBreadcrumb)}
+              onClick={event =>
+                drillOut(event, 'breadcrumbs-drilldownMenuPause', 'group:labels', pauseRolloutsBreadcrumb)
+              }
             >
               Pause rollouts
             </DropdownItem>
@@ -215,7 +249,10 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
 
   const addStorageBreadcrumb = (
     <Breadcrumb>
-      <BreadcrumbItem component="button" onClick={() => drillOut('breadcrumbs-rootMenu', 'group:storage', null)}>
+      <BreadcrumbItem
+        component="button"
+        onClick={event => drillOut(event, 'breadcrumbs-rootMenu', 'group:storage', null)}
+      >
         Root
       </BreadcrumbItem>
       <BreadcrumbHeading component="button">Add storage</BreadcrumbHeading>
