@@ -20,6 +20,7 @@ export const MenuContext = React.createContext<{
   flyoutRef?: React.Ref<HTMLLIElement>;
   setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
   disableHover?: boolean;
+  role?: string;
 }>({
   menuId: null,
   parentMenu: null,
@@ -34,7 +35,8 @@ export const MenuContext = React.createContext<{
   onGetMenuHeight: () => null,
   flyoutRef: null,
   setFlyoutRef: () => null,
-  disableHover: false
+  disableHover: false,
+  role: 'menu'
 });
 
 export const MenuItemContext = React.createContext<{

@@ -15,9 +15,9 @@ export const MenuOptionMultiSelect: React.FunctionComponent = () => {
   };
 
   return (
-    <Menu onSelect={onSelect} activeItemId={0} selected={selectedItems}>
+    <Menu role="listbox" onSelect={onSelect} activeItemId={0} selected={selectedItems}>
       <MenuContent>
-        <MenuList>
+        <MenuList isAriaMultiselectable aria-label="Menu multi select example">
           <MenuItem itemId={0}>Option 1</MenuItem>
           <MenuItem itemId={1}>Option 2</MenuItem>
           <MenuItem icon={<TableIcon aria-hidden />} itemId={2}>
