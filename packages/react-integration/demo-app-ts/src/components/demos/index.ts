@@ -31,6 +31,7 @@ export * from './DualListSelectorDemo/DualListSelectorBasicDemo';
 export * from './DualListSelectorDemo/DualListSelectorTreeDemo';
 export * from './DualListSelectorDemo/DualListSelectorWithActionsDemo';
 export * from './ExpandableSectionDemo/ExpandableSectionDemo';
+export * from './ExpandableSectionDemo/ExpandableSectionTruncateDemo';
 export * from './FileUploadDemo/FileUploadDemo';
 export * from './FormDemo/FormDemo';
 export * from './InputGroupDemo/InputGroupDemo';
