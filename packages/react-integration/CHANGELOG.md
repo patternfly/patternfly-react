@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.213.1 (2023-01-20)
+
+
+### Bug Fixes
+
+* **ExpandableSection:** made toggle button conditional with truncate variant ([#8570](https://github.com/patternfly/patternfly-react/issues/8570)) ([2385b96](https://github.com/patternfly/patternfly-react/commit/2385b966afd8e909eaabccea1d72934797364472))
+
+
+
+
+
 # [4.213.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.212.0...@patternfly/react-integration@4.213.0) (2023-01-19)
 
 

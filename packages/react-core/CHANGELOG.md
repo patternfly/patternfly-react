@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.276.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.1...@patternfly/react-core@4.276.2) (2023-01-20)
+
+
+### Bug Fixes
+
+* **ExpandableSection:** made toggle button conditional with truncate variant ([#8570](https://github.com/patternfly/patternfly-react/issues/8570)) ([2385b96](https://github.com/patternfly/patternfly-react/commit/2385b966afd8e909eaabccea1d72934797364472))
+* **Select-next,Dropdown-next:** updated logic for keyboard interaction ([#8496](https://github.com/patternfly/patternfly-react/issues/8496)) ([0a343ce](https://github.com/patternfly/patternfly-react/commit/0a343ce2cb41e4e70cc3ee7b89a943537eb33224))
+
+
+
+
+
 ## [4.276.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.0...@patternfly/react-core@4.276.1) (2023-01-20)
 
 **Note:** Version bump only for package @patternfly/react-core

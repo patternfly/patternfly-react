@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.210.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.210.1...demo-app-ts@4.210.2) (2023-01-20)
+
+
+### Bug Fixes
+
+* **ExpandableSection:** made toggle button conditional with truncate variant ([#8570](https://github.com/patternfly/patternfly-react/issues/8570)) ([2385b96](https://github.com/patternfly/patternfly-react/commit/2385b966afd8e909eaabccea1d72934797364472))
+
+
+
+
+
 ## [4.210.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.210.0...demo-app-ts@4.210.1) (2023-01-20)
 
 **Note:** Version bump only for package demo-app-ts
