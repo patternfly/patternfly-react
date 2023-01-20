@@ -3638,10 +3638,10 @@
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.222.4.tgz#5d988779c50df3dafc989d6e807d16971e34d228"
   integrity sha512-+0fk4dzxEbWn+hgaOnR0BjfeUdEeVVrqfH7+GFeFc+RKjEMjIR/BZbWWN8YQDezmDv6A32gHmEKaY3Uwbt06Lw==
 
-"@patternfly/patternfly@4.224.1":
-  version "4.224.1"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.224.1.tgz#67c74405ee2ddd2c74d758f21ad14e2cac485afc"
-  integrity sha512-ehUcWjBs2LMLw9DOQL7WgZ6dZmrszREQ0HIzQ76bjRpwL005oiJ7tRhxXX96BSGDGgm5mgGal8TgzVWbQJOUTw==
+"@patternfly/patternfly@4.224.2":
+  version "4.224.2"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.224.2.tgz#9d1b000c3c43457ae47c3556a334412d164fad90"
+  integrity sha512-HGNV26uyHSIECuhjPg/WGn0mXbAotcs6ODfhAOkfYjIgGylddgiwElxUe1rpEHV5mQJJ2rMn4OdeJIIpzRX61g==
 
 "@patternfly/react-catalog-view-extension@^4.93.24":
   version "4.95.1"
