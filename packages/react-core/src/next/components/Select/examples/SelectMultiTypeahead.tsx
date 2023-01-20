@@ -180,7 +180,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       toggle={toggle}
       selectVariant="multi"
     >
-      <SelectList>
+      <SelectList aria-multiselectable={true}>
         {selectOptions.map((option, index) => (
           <SelectOption
             key={option.itemId || option.children}

@@ -12,7 +12,7 @@ export const MenuOptionSingleSelect: React.FunctionComponent = () => {
   };
 
   return (
-    <Menu selectVariant="single" onSelect={onSelect} activeItemId={activeItem} selected={selectedItem}>
+    <Menu role="listbox" onSelect={onSelect} activeItemId={activeItem} selected={selectedItem}>
       <MenuContent>
         <MenuList aria-label="Menu single select example">
           <MenuItem itemId={0}>Option 1</MenuItem>

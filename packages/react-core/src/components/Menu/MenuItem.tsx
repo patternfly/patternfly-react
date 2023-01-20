@@ -115,7 +115,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     flyoutRef,
     setFlyoutRef,
     disableHover,
-    selectVariant
+    role: menuRole
   } = React.useContext(MenuContext);
   let Component = (to ? 'a' : component) as any;
   if (hasCheck && !to) {
@@ -291,6 +291,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       setFlyoutRef(null);
     }
   };
+  const isSelectMenu = menuRole === 'listbox';
 
   return (
     <li
@@ -317,8 +318,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             className={css(styles.menuItem, getIsSelected() && !hasCheck && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
             {...(!hasCheck && { disabled: isDisabled })}
-            {...(!hasCheck && !flyoutMenu && { role: selectVariant ? 'option' : 'menuitem' })}
-            {...(!hasCheck && !flyoutMenu && selectVariant && { 'aria-selected': getIsSelected() })}
+            {...(!hasCheck && !flyoutMenu && { role: isSelectMenu ? 'option' : 'menuitem' })}
+            {...(!hasCheck && !flyoutMenu && isSelectMenu && { 'aria-selected': getIsSelected() })}
             ref={innerRef}
             {...(!hasCheck && {
               onClick: (event: React.KeyboardEvent | React.MouseEvent) => {
