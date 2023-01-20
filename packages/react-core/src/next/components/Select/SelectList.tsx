@@ -10,16 +10,16 @@ export interface SelectListProps extends MenuListProps {
   /** @beta Indicates to assistive technologies whether more than one item can be selected
    * for a non-checkbox select.
    */
-  'aria-multiselectable'?: boolean;
+  isAriaMultiselectable?: boolean;
 }
 
 export const SelectList: React.FunctionComponent<MenuListProps> = ({
   children,
   className,
-  'aria-multiselectable': ariaMultiselectable = false,
+  isAriaMultiselectable = false,
   ...props
 }: SelectListProps) => (
-  <MenuList aria-multiselectable={ariaMultiselectable} className={css(className)} {...props}>
+  <MenuList isAriaMultiselectable={isAriaMultiselectable} className={css(className)} {...props}>
     {children}
   </MenuList>
 );

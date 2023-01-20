@@ -11,13 +11,13 @@ export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
   /** @beta Indicates to assistive technologies whether more than one item can be selected
    * for a non-checkbox menu. Only applies when the menu's role is "listbox".
    */
-  'aria-multiselectable'?: boolean;
+  isAriaMultiselectable?: boolean;
 }
 
 export const MenuList: React.FunctionComponent<MenuListProps> = ({
   children = null,
   className,
-  'aria-multiselectable': ariaMultiselectable = false,
+  isAriaMultiselectable = false,
   ...props
 }: MenuListProps) => {
   const { role } = React.useContext(MenuContext);
@@ -25,7 +25,7 @@ export const MenuList: React.FunctionComponent<MenuListProps> = ({
   return (
     <ul
       role={role}
-      {...(role === 'listbox' && { 'aria-multiselectable': ariaMultiselectable })}
+      {...(role === 'listbox' && { 'aria-multiselectable': isAriaMultiselectable })}
       className={css(styles.menuList, className)}
       {...props}
     >
