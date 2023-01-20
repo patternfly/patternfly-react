@@ -43,7 +43,6 @@ export const SelectBasic: React.FunctionComponent = () => {
       onSelect={onSelect}
       onOpenChange={isOpen => setIsOpen(isOpen)}
       toggle={toggle}
-      selectVariant="single"
     >
       <SelectGroup label="Group 1">
         <SelectList>
