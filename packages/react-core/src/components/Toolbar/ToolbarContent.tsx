@@ -19,7 +19,7 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: 'hidden' | 'visible';
   };
   /** applies to a flex parent and vertically aligns its children */
-  alignItems?: 'center' | 'baseline' | 'default';
+  alignItems?: 'center' | 'default';
   /** Content to be rendered as children of the content row */
   children?: React.ReactNode;
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
@@ -90,8 +90,7 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
                     <div
                       className={css(
                         styles.toolbarContentSection,
-                        alignItems === 'center' && flexStyles.modifiers.alignItemsCenter,
-                        alignItems === 'baseline' && flexStyles.modifiers.alignItemsBaseline
+                        alignItems === 'center' && flexStyles.modifiers.alignItemsCenter
                       )}
                     >
                       {children}
