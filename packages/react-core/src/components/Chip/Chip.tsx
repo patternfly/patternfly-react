@@ -83,17 +83,34 @@ export class Chip extends React.Component<ChipProps, ChipState> {
   });
 
   renderOverflowChip = () => {
-    const { children, className, onClick, ouiaId, ...props } = this.props;
-    const Component = this.props.component as any;
+    const {
+      children,
+      className,
+      onClick,
+      ouiaId,
+      textMaxWidth,
+      style,
+      component,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      tooltipPosition,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      isOverflowChip,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      closeBtnAriaLabel,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      isReadOnly,
+      ...props
+    } = this.props;
+    const Component = component as any;
     return (
       <Component
         onClick={onClick}
-        {...(this.props.textMaxWidth && {
+        {...(textMaxWidth && {
           style: this.setChipStyle(),
-          ...this.props.style
+          ...style
         })}
         className={css(styles.chip, styles.modifiers.overflow, className)}
-        {...(this.props.component === 'button' ? { type: 'button' } : {})}
+        {...(component === 'button' ? { type: 'button' } : {})}
         {...getOUIAProps('OverflowChip', ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
         {...props}
       >
@@ -103,7 +120,20 @@ export class Chip extends React.Component<ChipProps, ChipState> {
   };
 
   renderInnerChip(id: string) {
-    const { children, className, onClick, closeBtnAriaLabel, isReadOnly, component, ouiaId, ...props } = this.props;
+    const {
+      children,
+      className,
+      onClick,
+      closeBtnAriaLabel,
+      isReadOnly,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      isOverflowChip,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      tooltipPosition,
+      component,
+      ouiaId,
+      ...props
+    } = this.props;
     const Component = component as any;
     return (
       <Component
