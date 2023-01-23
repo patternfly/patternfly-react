@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.210.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.210.4...demo-app-ts@4.210.5) (2023-01-23)
+
+
+### Reverts
+
+* Revert "fix patternfly for function subtyping (#8497)" (#8582) ([5d93972](https://github.com/patternfly/patternfly-react/commit/5d939722466fbb365b767c620c4be9fe8b49e13b)), closes [#8497](https://github.com/patternfly/patternfly-react/issues/8497) [#8582](https://github.com/patternfly/patternfly-react/issues/8582)
+
+
+
+
+
 ## [4.210.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.210.3...demo-app-ts@4.210.4) (2023-01-23)
 
 **Note:** Version bump only for package demo-app-ts

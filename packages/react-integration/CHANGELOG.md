@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.213.2 (2023-01-23)
+
+
+### Reverts
+
+* Revert "fix patternfly for function subtyping (#8497)" (#8582) ([5d93972](https://github.com/patternfly/patternfly-react/commit/5d939722466fbb365b767c620c4be9fe8b49e13b)), closes [#8497](https://github.com/patternfly/patternfly-react/issues/8497) [#8582](https://github.com/patternfly/patternfly-react/issues/8582)
+
+
+
+
+
 ## 4.213.1 (2023-01-20)
 
 
