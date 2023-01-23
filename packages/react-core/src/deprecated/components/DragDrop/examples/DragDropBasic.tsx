@@ -1,5 +1,5 @@
 import React from 'react';
-import { DragDrop, Draggable, Droppable } from '@patternfly/react-core';
+import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
 interface ItemType {
   id: string;
@@ -20,14 +20,14 @@ const getItems = (count: number) =>
   }));
 
 const reorder = (list: ItemType[], startIndex: number, endIndex: number) => {
-  const result = list;
+  const result = [...list];
   const [removed] = result.splice(startIndex, 1);
   result.splice(endIndex, 0, removed);
   return result;
 };
 
 export const DragDropBasic: React.FunctionComponent = () => {
-  const [items, setItems] = React.useState(getItems(10));
+  const [items, setItems] = React.useState<ItemType[]>(getItems(10));
 
   function onDrop(source: SourceType, dest: DestinationType) {
     if (dest) {
@@ -42,8 +42,8 @@ export const DragDropBasic: React.FunctionComponent = () => {
   return (
     <DragDrop onDrop={onDrop}>
       <Droppable>
-        {items.map(({ content }, i) => (
-          <Draggable key={i} style={{ padding: '8px' }}>
+        {items.map(({ id, content }) => (
+          <Draggable key={id} style={{ padding: '8px' }}>
             {content}
           </Draggable>
         ))}
