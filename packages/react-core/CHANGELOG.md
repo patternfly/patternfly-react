@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.276.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.3...@patternfly/react-core@4.276.4) (2023-01-23)
+
+
+### Bug Fixes
+
+* **Chip:** spread fewer props ([#8584](https://github.com/patternfly/patternfly-react/issues/8584)) ([b43a524](https://github.com/patternfly/patternfly-react/commit/b43a52426a6c4feffacfe2d02f4c8caeba8b8715))
+
+
+
+
+
 ## [4.276.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.2...@patternfly/react-core@4.276.3) (2023-01-23)
 
 **Note:** Version bump only for package @patternfly/react-core
