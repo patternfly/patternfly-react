@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
+import flexStyles from '@patternfly/react-styles/css/layouts/Flex/flex';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -17,8 +18,8 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** applies to a child of a flex layout, and aligns that child (and any adjacent children on the other side of it) to one side of the main axis */
-  align?: 'right' | 'left' | 'default';
+  /** applies to a flex parent and vertically aligns its children */
+  alignItems?: 'center' | 'baseline' | 'default';
   /** Content to be rendered as children of the content row */
   children?: React.ReactNode;
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
@@ -51,7 +52,7 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
       isExpanded,
       toolbarId,
       visibility,
-      align,
+      alignItems,
       clearAllFilters,
       showClearFiltersButton,
       clearFiltersButtonText,
@@ -89,8 +90,8 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
                     <div
                       className={css(
                         styles.toolbarContentSection,
-                        align === 'left' && styles.modifiers.alignLeft,
-                        align === 'right' && styles.modifiers.alignRight
+                        alignItems === 'center' && flexStyles.modifiers.alignItemsCenter,
+                        alignItems === 'baseline' && flexStyles.modifiers.alignItemsBaseline
                       )}
                     >
                       {children}
