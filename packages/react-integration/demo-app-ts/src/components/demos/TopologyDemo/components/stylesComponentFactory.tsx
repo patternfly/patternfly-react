@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+  GraphElement,
   ComponentFactory,
   withContextMenu,
   ContextMenuSeparator,
@@ -54,7 +55,10 @@ const createContextMenuItems = (...labels: string[]): React.ReactElement[] => la
 
 const defaultMenu = createContextMenuItems('First', 'Second', 'Third', '-', 'Fourth');
 
-const stylesComponentFactory: ComponentFactory = (kind: ModelKind, type: string) => {
+const stylesComponentFactory: ComponentFactory = (
+  kind: ModelKind,
+  type: string
+): React.ComponentType<{ element: GraphElement }> | undefined => {
   if (kind === ModelKind.graph) {
     return withDndDrop(graphDropTargetSpec([NODE_DRAG_TYPE]))(withPanZoom()(GraphComponent));
   }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+  GraphElement,
   ComponentFactory,
   ModelKind,
   SpacerNode,
@@ -38,7 +39,10 @@ const createContextMenuItems = (...labels: string[]): React.ReactElement[] => la
 
 const defaultMenu = createContextMenuItems('First', 'Second', 'Third', '-', 'Fourth');
 
-const pipelineComponentFactory: ComponentFactory = (kind: ModelKind, type: string) => {
+const pipelineComponentFactory: ComponentFactory = (
+  kind: ModelKind,
+  type: string
+): React.ComponentType<{ element: GraphElement }> | undefined => {
   if (kind === ModelKind.graph) {
     return withPanZoom()(GraphComponent);
   }

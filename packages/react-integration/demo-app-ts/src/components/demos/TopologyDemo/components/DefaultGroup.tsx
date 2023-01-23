@@ -19,7 +19,10 @@ type GroupProps = {
   droppable?: boolean;
   hover?: boolean;
   canDrop?: boolean;
-} & Partial<WithSelectionProps & WithDragNodeProps & WithDndDragProps & WithDndDropProps>;
+} & WithSelectionProps &
+  WithDragNodeProps &
+  WithDndDragProps &
+  WithDndDropProps;
 
 const DefaultGroup: React.FunctionComponent<GroupProps> = ({
   element,

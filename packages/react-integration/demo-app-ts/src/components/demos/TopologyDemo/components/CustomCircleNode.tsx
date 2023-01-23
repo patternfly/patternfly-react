@@ -20,14 +20,12 @@ type CustomCircleNodeProps = {
   element: Node;
   droppable?: boolean;
   canDrop?: boolean;
-} & Partial<
-  WithSelectionProps &
-    WithDragNodeProps &
-    WithDndDragProps &
-    WithDndDropProps &
-    WithCreateConnectorProps &
-    WithContextMenuProps
->;
+} & WithSelectionProps &
+  WithDragNodeProps &
+  WithDndDragProps &
+  WithDndDropProps &
+  WithCreateConnectorProps &
+  WithContextMenuProps;
 
 const CustomCircle: React.FunctionComponent<ShapeProps> = ({ element, className }) => {
   useAnchor(EllipseAnchor);

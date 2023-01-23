@@ -18,7 +18,8 @@ import { PopoverProps } from '@patternfly/react-core';
 
 type DemoTaskNodeProps = {
   element: Node;
-} & Partial<WithContextMenuProps & WithSelectionProps>;
+} & WithContextMenuProps &
+  WithSelectionProps;
 
 const DEMO_TIP_TEXT =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.';

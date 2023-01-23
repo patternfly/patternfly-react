@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Select,
-  SelectOption,
-  SelectVariant,
-  SelectGroup,
-  StackItem,
-  Title,
-  SelectOptionObject
-} from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectGroup, StackItem, Title } from '@patternfly/react-core';
 
 /* eslint-disable no-console */
 interface TypeAheadOption {
@@ -66,11 +58,7 @@ export class SelectViewMoreTypeaheadGroupedDemo extends React.Component<SelectVi
     });
   };
 
-  onSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
-    selection: string | SelectOptionObject,
-    isPlaceholder: boolean
-  ) => {
+  onSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {

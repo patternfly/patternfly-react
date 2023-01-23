@@ -75,11 +75,7 @@ export class SelectViewMoreGroupedDemo extends Component<SelectViewMoreGroupedDe
     });
   };
 
-  onSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
-    selection: string | SelectOptionObject,
-    isPlaceholder: boolean
-  ) => {
+  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {

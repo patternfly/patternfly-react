@@ -20,14 +20,12 @@ type DemoDefaultNodeProps = {
   droppable?: boolean;
   canDrop?: boolean;
   getCustomShape?: (node: Node) => React.FunctionComponent<ShapeProps>;
-} & Partial<
-  WithSelectionProps &
-    WithDragNodeProps &
-    WithDndDragProps &
-    WithDndDropProps &
-    WithCreateConnectorProps &
-    WithContextMenuProps
->;
+} & WithSelectionProps &
+  WithDragNodeProps &
+  WithDndDragProps &
+  WithDndDropProps &
+  WithCreateConnectorProps &
+  WithContextMenuProps;
 
 const DemoDefaultNode: React.FunctionComponent<DemoDefaultNodeProps> = ({
   element,
