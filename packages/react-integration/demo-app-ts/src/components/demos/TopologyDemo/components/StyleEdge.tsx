@@ -4,7 +4,8 @@ import { DefaultEdge, Edge, WithContextMenuProps, WithSelectionProps } from '@pa
 
 type StyleEdgeProps = {
   element: Edge;
-} & Partial<WithContextMenuProps & WithSelectionProps>;
+} & WithContextMenuProps &
+  WithSelectionProps;
 
 const StyleEdge: React.FunctionComponent<StyleEdgeProps> = ({ element, onContextMenu, contextMenuOpen, ...rest }) => {
   const data = element.getData();

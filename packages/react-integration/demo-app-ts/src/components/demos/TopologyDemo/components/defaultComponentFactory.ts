@@ -1,10 +1,14 @@
-import { ComponentFactory, ModelKind, GraphComponent, DefaultNode } from '@patternfly/react-topology';
+import { ComponentType } from 'react';
+import { GraphElement, ComponentFactory, ModelKind, GraphComponent, DefaultNode } from '@patternfly/react-topology';
 import Edge from './DefaultEdge';
 import MultiEdge from './MultiEdge';
 import Group from './DefaultGroup';
 import GroupHull from './GroupHull';
 
-const defaultComponentFactory: ComponentFactory = (kind: ModelKind, type: string) => {
+const defaultComponentFactory: ComponentFactory = (
+  kind: ModelKind,
+  type: string
+): ComponentType<{ element: GraphElement }> => {
   switch (type) {
     case 'multi-edge':
       return MultiEdge;

@@ -1,3 +1,4 @@
+import { ComponentType } from 'react';
 import { action, computed, observable } from 'mobx';
 import * as _ from 'lodash';
 import {
@@ -18,8 +19,7 @@ import {
   Layout,
   ViewPaddingSettings,
   GRAPH_LAYOUT_END_EVENT,
-  GraphLayoutEndEventListener,
-  ComponentUnion
+  GraphLayoutEndEventListener
 } from './types';
 import defaultElementFactory from './elements/defaultElementFactory';
 import Stateful from './utils/Stateful';
@@ -225,7 +225,7 @@ export class Visualization extends Stateful implements Controller {
     return undefined;
   }
 
-  getComponent(kind: ModelKind, type: string): ComponentUnion {
+  getComponent(kind: ModelKind, type: string): ComponentType<{ element: GraphElement }> {
     for (const factory of this.componentFactories) {
       const component = factory(kind, type);
       if (component) {

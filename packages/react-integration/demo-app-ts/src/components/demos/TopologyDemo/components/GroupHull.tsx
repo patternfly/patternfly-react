@@ -25,7 +25,10 @@ type GroupHullProps = {
   droppable?: boolean;
   hover?: boolean;
   canDrop?: boolean;
-} & Partial<WithSelectionProps & WithDragNodeProps & WithDndDragProps & WithDndDropProps>;
+} & WithSelectionProps &
+  WithDragNodeProps &
+  WithDndDragProps &
+  WithDndDropProps;
 
 type PointWithSize = PointTuple | [number, number, number];
 

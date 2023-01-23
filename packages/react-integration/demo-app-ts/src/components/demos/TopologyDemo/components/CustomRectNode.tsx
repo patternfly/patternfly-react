@@ -18,14 +18,12 @@ type CustomRectNodeProps = {
   element: Node;
   droppable?: boolean;
   canDrop?: boolean;
-} & Partial<
-  WithSelectionProps &
-    WithDragNodeProps &
-    WithDndDragProps &
-    WithDndDropProps &
-    WithCreateConnectorProps &
-    WithContextMenuProps
->;
+} & WithSelectionProps &
+  WithDragNodeProps &
+  WithDndDragProps &
+  WithDndDropProps &
+  WithCreateConnectorProps &
+  WithContextMenuProps;
 
 const CustomRect: React.FunctionComponent<ShapeProps> = observer(({ className }) => {
   useAnchor(RectAnchor);

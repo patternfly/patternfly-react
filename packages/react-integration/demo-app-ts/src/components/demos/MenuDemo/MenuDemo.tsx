@@ -87,11 +87,12 @@ export class MenuDemo extends Component {
     });
   };
 
-  onSimpleSelect = (event: React.MouseEvent, itemId: number | string | undefined) => {
+  onSimpleSelect = (event: React.MouseEvent, itemId: string) => {
     this.setState({ activeItem: itemId });
   };
-  onActionSelect = (event: any, itemId: string | number) => {
-    if (this.state.selectedItems.indexOf(Number(itemId)) !== -1) {
+
+  onActionSelect = (event: any, itemId: number) => {
+    if (this.state.selectedItems.indexOf(itemId) !== -1) {
       this.setState({
         selectedItems: this.state.selectedItems.filter(id => id !== itemId)
       });
@@ -117,15 +118,15 @@ export class MenuDemo extends Component {
     }
   };
 
-  onSingleOptionSelect = (event: any, itemId: string | number) => {
+  onSingleOptionSelect = (event: any, itemId: number) => {
     this.setState({
       activeItem: itemId,
       selectedItem: itemId
     });
   };
 
-  onMultiOptionSelect = (event: any, itemId: string | number) => {
-    if (this.state.selectedItems.indexOf(Number(itemId)) !== -1) {
+  onMultiOptionSelect = (event: any, itemId: number) => {
+    if (this.state.selectedItems.indexOf(itemId) !== -1) {
       this.setState({
         selectedItems: this.state.selectedItems.filter(id => id !== itemId)
       });

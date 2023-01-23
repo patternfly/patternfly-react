@@ -15,7 +15,8 @@ import {
 
 type DemoFinallyNodeProps = {
   element: Node;
-} & Partial<WithContextMenuProps & WithSelectionProps>;
+} & WithContextMenuProps &
+  WithSelectionProps;
 
 const DemoFinallyNode: React.FunctionComponent<DemoFinallyNodeProps> = ({ ...props }) => {
   const [hover, hoverRef] = useHover();

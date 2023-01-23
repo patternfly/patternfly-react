@@ -13,7 +13,10 @@ interface ElementProps {
 }
 
 type GraphComponentProps = ElementProps &
-  Partial<WithPanZoomProps & WithDndDropProps & WithSelectionProps & WithContextMenuProps>;
+  WithPanZoomProps &
+  WithDndDropProps &
+  WithSelectionProps &
+  WithContextMenuProps;
 
 // This inner Component will prevent the re-rendering of all children when the transform changes
 const ElementChildren: React.FunctionComponent<ElementProps> = observer(({ element }) => (
