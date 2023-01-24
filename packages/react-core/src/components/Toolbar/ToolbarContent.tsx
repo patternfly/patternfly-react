@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
-import flexStyles from '@patternfly/react-styles/css/layouts/Flex/flex';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -90,7 +89,7 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
                     <div
                       className={css(
                         styles.toolbarContentSection,
-                        alignItems === 'center' && flexStyles.modifiers.alignItemsCenter
+                        alignItems === 'center' && styles.modifiers.alignItemsCenter
                       )}
                     >
                       {children}

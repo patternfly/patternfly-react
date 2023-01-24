@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
-import flexStyles from '@patternfly/react-styles/css/layouts/Flex/flex';
 import { css } from '@patternfly/react-styles';
 
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
@@ -115,8 +114,8 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
             formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
             align === 'left' && styles.modifiers.alignLeft,
             align === 'right' && styles.modifiers.alignRight,
-            alignSelf === 'center' && flexStyles.modifiers.alignSelfCenter,
-            alignSelf === 'baseline' && flexStyles.modifiers.alignSelfBaseline,
+            alignSelf === 'center' && styles.modifiers.alignSelfCenter,
+            alignSelf === 'baseline' && styles.modifiers.alignSelfBaseline,
             className
           )}
           {...(variant === 'label' && { 'aria-hidden': true })}

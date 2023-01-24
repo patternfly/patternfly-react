@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
-import flexStyles from '@patternfly/react-styles/css/layouts/Flex/flex';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { PageContext } from '../Page/PageContext';
@@ -80,10 +79,10 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
               formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
               align === 'left' && styles.modifiers.alignLeft,
               align === 'right' && styles.modifiers.alignRight,
-              alignItems === 'center' && flexStyles.modifiers.alignItemsCenter,
-              alignItems === 'baseline' && flexStyles.modifiers.alignItemsBaseline,
-              alignSelf === 'center' && flexStyles.modifiers.alignSelfCenter,
-              alignSelf === 'baseline' && flexStyles.modifiers.alignSelfBaseline,
+              alignItems === 'center' && styles.modifiers.alignItemsCenter,
+              alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
+              alignSelf === 'center' && styles.modifiers.alignSelfCenter,
+              alignSelf === 'baseline' && styles.modifiers.alignSelfBaseline,
               className
             )}
             {...props}
