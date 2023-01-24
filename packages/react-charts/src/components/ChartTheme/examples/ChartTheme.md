@@ -18,7 +18,7 @@ import {
   ChartThreshold,
   ChartTooltip,
   ChartVoronoiContainer,
-  mergeTheme
+  getCustomTheme
 } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
@@ -393,7 +393,7 @@ This demonstrates custom theme properties, which may be applied across multiple 
 
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer, mergeTheme } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
 import chart_color_cyan_300 from '@patternfly/react-tokens/dist/esm/chart_color_cyan_300';
@@ -441,7 +441,7 @@ class MultiColorChart extends React.Component {
     };
 
     // Applies theme color and variant to base theme
-    this.myCustomTheme = mergeTheme(
+    this.myCustomTheme = getCustomTheme(
       ChartThemeColor.default,
       this.themeProps
     );

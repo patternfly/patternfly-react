@@ -416,14 +416,6 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * The title for the donut chart
    */
   title?: string;
@@ -482,8 +474,6 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   standalone = true,
   subTitlePosition = ChartDonutStyles.label.subTitlePosition as ChartDonutThresholdSubTitlePosition,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
   x,
   y,
 

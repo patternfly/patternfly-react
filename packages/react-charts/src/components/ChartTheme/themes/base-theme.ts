@@ -132,7 +132,10 @@ const LAYOUT_PROPS = {
 const STROKE_LINE_CAP = chart_global_stroke_line_cap.value;
 const STROKE_LINE_JOIN = chart_global_stroke_line_join.value;
 
-// Victory theme properties only
+/**
+ * Victory theme properties only
+ * @private
+ */
 export const BaseTheme = {
   area: {
     ...LAYOUT_PROPS,

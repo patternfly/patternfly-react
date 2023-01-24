@@ -516,14 +516,6 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * The title for the donut chart label
    */
   title?: string;
@@ -620,8 +612,6 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   padding,
   standalone = true,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
   thresholds,
   x,
   y,

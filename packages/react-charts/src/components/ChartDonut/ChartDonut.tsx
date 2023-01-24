@@ -17,7 +17,7 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { SliceProps, VictoryPie, VictorySliceLabelPositionType } from 'victory-pie';
-import { getDonutTheme } from '../ChartUtils/chart-theme';
+import { getDonutTheme } from '../ChartUtils/chart-theme-types';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartPie, ChartPieLegendPosition, ChartPieProps } from '../ChartPie';
@@ -486,14 +486,6 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * The title for the donut chart
    */
   title?: string;
@@ -599,8 +591,6 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   subTitleComponent,
   subTitlePosition = ChartDonutStyles.label.subTitlePosition,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
   title,
   titleComponent = <ChartLabel />,
 

@@ -95,14 +95,6 @@ export interface ChartBulletTitleProps {
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * The title to render for grouped bullets
    */
   title?: string;
@@ -135,8 +127,6 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
   standalone = true,
   subTitle,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
   title,
   titleComponent = <ChartLabel />,
   titlePosition,

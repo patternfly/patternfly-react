@@ -76,6 +76,10 @@ const COLOR_SCALE = [
   chart_theme_multi_color_unordered_ColorScale_3500.var
 ];
 
-export const LightMultiColorUnorderedTheme = ColorTheme({
+/**
+ * Multi-color unordered theme
+ * @private
+ */
+export const MultiColorUnorderedTheme = ColorTheme({
   COLOR_SCALE
 });

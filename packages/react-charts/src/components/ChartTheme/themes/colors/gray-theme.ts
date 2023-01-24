@@ -16,6 +16,10 @@ const COLOR_SCALE = [
   chart_theme_gray_ColorScale_500.var
 ];
 
-export const LightGrayColorTheme = ColorTheme({
+/**
+ * Gray color theme
+ * @private
+ */
+export const GrayColorTheme = ColorTheme({
   COLOR_SCALE
 });

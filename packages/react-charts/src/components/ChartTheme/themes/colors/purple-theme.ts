@@ -16,6 +16,10 @@ const COLOR_SCALE = [
   chart_theme_purple_ColorScale_500.var
 ];
 
-export const DarkPurpleColorTheme = ColorTheme({
+/**
+ * Purple ordered theme
+ * @private
+ */
+export const PurpleColorTheme = ColorTheme({
   COLOR_SCALE
 });

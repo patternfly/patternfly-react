@@ -4,7 +4,10 @@ import chart_donut_pie_angle_Padding from '@patternfly/react-tokens/dist/esm/cha
 import chart_donut_pie_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_pie_Padding';
 import chart_donut_pie_Width from '@patternfly/react-tokens/dist/esm/chart_donut_pie_Width';
 
-// Donut theme
+/**
+ * Donut theme
+ * @private
+ */
 export const DonutTheme = {
   pie: {
     height: chart_donut_pie_Height.value,

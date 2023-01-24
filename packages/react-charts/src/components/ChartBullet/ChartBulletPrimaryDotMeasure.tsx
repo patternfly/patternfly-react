@@ -144,14 +144,6 @@ export interface ChartBulletPrimaryDotMeasureProps {
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * The width props specifies the width of the svg viewBox of the chart container
    * This value should be given as a number of pixels
    */
@@ -195,8 +187,6 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
   size = ChartBulletStyles.primaryDotMeasureSize,
   standalone = true,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
   y,
   y0,
 

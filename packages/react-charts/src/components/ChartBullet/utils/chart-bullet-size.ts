@@ -54,7 +54,6 @@ interface ChartBulletSizeInterface {
   horizontal?: boolean; // Flag indicating chart is shown horizontally
   theme?: ChartThemeDefinition;
   themeColor?: string;
-  themeVariant?: string;
   width: number; // The chart width -- not SVG width
 }
 

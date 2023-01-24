@@ -16,6 +16,10 @@ const COLOR_SCALE = [
   chart_theme_blue_ColorScale_500.var
 ];
 
-export const LightBlueColorTheme = ColorTheme({
+/**
+ * Blue color theme
+ * @private
+ */
+export const BlueColorTheme = ColorTheme({
   COLOR_SCALE
 });

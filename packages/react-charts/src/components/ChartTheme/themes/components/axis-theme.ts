@@ -2,7 +2,10 @@
 import chart_axis_grid_stroke_Color from '@patternfly/react-tokens/dist/esm/chart_axis_grid_stroke_Color';
 import chart_axis_tick_stroke_Color from '@patternfly/react-tokens/dist/esm/chart_axis_tick_stroke_Color';
 
-// Axis theme
+/**
+ * Axis theme
+ * @private
+ */
 export const AxisTheme = {
   axis: {
     style: {

@@ -12,6 +12,10 @@ const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.var;
 const TYPOGRAPHY_LETTER_SPACING = chart_global_letter_spacing.var;
 const TYPOGRAPHY_FONT_SIZE = chart_global_FontSize_sm.value;
 
+/**
+ * Common styles
+ * @private
+ */
 export const CommonStyles = {
   label: {
     fontFamily: TYPOGRAPHY_FONT_FAMILY,

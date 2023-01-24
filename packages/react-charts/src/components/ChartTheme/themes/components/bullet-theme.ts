@@ -27,14 +27,20 @@ import chart_global_layout_Padding from '@patternfly/react-tokens/dist/esm/chart
 // See https://docs.google.com/document/d/1cw10pJFXWruB1SA8TQwituxn5Ss6KpxYPCOYGrH8qAY/edit#
 // See https://www.patternfly.org/v3/pattern-library/data-visualization/bullet-chart/#design
 
-// Bullet theme
+/**
+ * Bullet theme
+ * @private
+ */
 export const BulletTheme = {
   chart: {
     height: chart_bullet_Height.value
   }
 };
 
-// Bullet comparative measure error theme
+/**
+ * Bullet comparative error measure theme
+ * @private
+ */
 export const BulletComparativeErrorMeasureTheme = {
   bar: {
     height: chart_bullet_Height.value,
@@ -48,7 +54,10 @@ export const BulletComparativeErrorMeasureTheme = {
   }
 };
 
-// Bullet comparative measure theme
+/**
+ * Bullet comparative measure theme
+ * @private
+ */
 export const BulletComparativeMeasureTheme = {
   bar: {
     height: chart_bullet_Height.value,
@@ -62,7 +71,10 @@ export const BulletComparativeMeasureTheme = {
   }
 };
 
-// Bullet comparative measure warning theme
+/**
+ * Bullet comparative measure warning theme
+ * @private
+ */
 export const BulletComparativeWarningMeasureTheme = {
   bar: {
     height: chart_bullet_Height.value,
@@ -76,7 +88,10 @@ export const BulletComparativeWarningMeasureTheme = {
   }
 };
 
-// Bullet group title theme
+/**
+ * Bullet group title theme
+ * @private
+ */
 export const BulletGroupTitleTheme = {
   chart: {
     padding: {
@@ -97,14 +112,20 @@ export const BulletGroupTitleTheme = {
   }
 };
 
-// Bullet primary dot measure theme
+/**
+ * Bullet primary dot measure theme
+ * @private
+ */
 export const BulletPrimaryDotMeasureTheme = {
   group: {
     height: chart_bullet_Height.value
   }
 };
 
-// Bullet primary negative measure theme
+/**
+ * Bullet primary negative measure theme
+ * @private
+ */
 export const BulletPrimaryNegativeMeasureTheme = {
   group: {
     colorScale: [
@@ -118,14 +139,20 @@ export const BulletPrimaryNegativeMeasureTheme = {
   }
 };
 
-// Bullet primary segmented measure theme
+/**
+ * Bullet primary segmented measure theme
+ * @private
+ */
 export const BulletPrimarySegmentedMeasureTheme = {
   group: {
     height: chart_bullet_Height.value
   }
 };
 
-// Bullet qualitative range theme
+/**
+ * Bullet qualitative range theme
+ * @private
+ */
 export const BulletQualitativeRangeTheme = {
   group: {
     colorScale: [

@@ -202,14 +202,6 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * The voronoiBlacklist prop is used to specify a list of components to ignore when calculating a
    * shared voronoi diagram. Components with a name prop matching an element in the voronoiBlacklist
    * array will be ignored by ChartVoronoiContainer. Ignored components will never be flagged as
@@ -241,8 +233,6 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
   className,
   constrainToVisibleArea = false,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
 
   // destructure last
   theme = getTheme(themeColor),

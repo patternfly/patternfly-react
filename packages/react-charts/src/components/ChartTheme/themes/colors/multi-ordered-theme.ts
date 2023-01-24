@@ -56,6 +56,10 @@ const COLOR_SCALE = [
   chart_theme_multi_color_ordered_ColorScale_2500.var
 ];
 
-export const DarkMultiColorOrderedTheme = ColorTheme({
+/**
+ * Multi-color ordered theme
+ * @private
+ */
+export const MultiColorOrderedTheme = ColorTheme({
   COLOR_SCALE
 });

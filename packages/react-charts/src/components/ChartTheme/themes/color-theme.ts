@@ -2,7 +2,10 @@ interface ColorThemeInterface {
   COLOR_SCALE: string[];
 }
 
-// Victory theme properties only
+/**
+ * Victory theme properties only
+ * @private
+ */
 export const ColorTheme = (props: ColorThemeInterface) => {
   const { COLOR_SCALE } = props;
 

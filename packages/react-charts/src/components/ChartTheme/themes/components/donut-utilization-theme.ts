@@ -8,7 +8,10 @@ import chart_donut_utilization_dynamic_pie_Padding from '@patternfly/react-token
 import chart_donut_utilization_dynamic_pie_Width from '@patternfly/react-tokens/dist/esm/chart_donut_utilization_dynamic_pie_Width';
 import chart_donut_utilization_static_pie_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_utilization_static_pie_Padding';
 
-// Donut utilization dynamic theme
+/**
+ * Donut utilization dynamic theme
+ * @private
+ */
 export const DonutUtilizationDynamicTheme = {
   pie: {
     height: chart_donut_utilization_dynamic_pie_Height.value,
@@ -18,7 +21,10 @@ export const DonutUtilizationDynamicTheme = {
   }
 };
 
-// Donut utilization static theme
+/**
+ * Donut utilization static theme
+ * @private
+ */
 export const DonutUtilizationStaticTheme = {
   legend: {
     colorScale: [

@@ -389,14 +389,6 @@ export interface ChartLineProps extends VictoryLineProps {
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * The width props specifies the width of the svg viewBox of the chart container
    * This value should be given as a number of pixels
    */
@@ -441,8 +433,6 @@ export interface ChartLineProps extends VictoryLineProps {
 export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
   containerComponent = <ChartContainer />,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
 
   // destructure last
   theme = getTheme(themeColor),

@@ -8,4 +8,5 @@ export * from './chart-origin';
 export * from './chart-padding';
 export * from './chart-patterns';
 export * from './chart-theme';
+export * from './chart-theme-types';
 export * from './chart-tooltip';

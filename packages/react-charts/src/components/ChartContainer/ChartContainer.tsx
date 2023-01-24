@@ -126,14 +126,6 @@ export interface ChartContainerProps extends VictoryContainerProps {
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * The title prop specifies the title to be applied to the SVG to assist
    * accessibility for screen readers. The more descriptive this title is, the more
    * useful it will be. If no title prop is passed, it will default to Chart.
@@ -152,8 +144,6 @@ export interface ChartContainerProps extends VictoryContainerProps {
 export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
   className,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
 
   // destructure last
   theme = getTheme(themeColor),
