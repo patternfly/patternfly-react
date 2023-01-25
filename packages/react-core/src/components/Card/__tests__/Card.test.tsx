@@ -12,8 +12,8 @@ describe('Card', () => {
   });
 
   test('className is added to the root element', () => {
-    render(<Card className="extra-class" />);
-    expect(screen.getByRole('article')).toHaveClass('extra-class');
+    render(<Card className="extra-class">card</Card>);
+    expect(screen.getByText('card')).toHaveClass('extra-class');
   });
 
   test('extra props are spread to the root element', () => {
@@ -43,70 +43,70 @@ describe('Card', () => {
   });
 
   test('card with isSelectable applied ', () => {
-    render(<Card isSelectable />);
+    render(<Card isSelectable>selectable card</Card>);
 
-    const card = screen.getByRole('article');
+    const card = screen.getByText('selectable card');
     expect(card).toHaveClass('pf-m-selectable');
     expect(card).toHaveAttribute('tabindex', '0');
   });
 
   test('card with isSelectable and isSelected applied ', () => {
-    render(<Card isSelectable isSelected />);
+    render(<Card isSelectable isSelected>selected and selectable card</Card>);
 
-    const card = screen.getByRole('article');
+    const card = screen.getByText('selected and selectable card');
     expect(card).toHaveClass('pf-m-selectable');
     expect(card).toHaveClass('pf-m-selected');
     expect(card).toHaveAttribute('tabindex', '0');
   });
 
   test('card with only isSelected applied - not change', () => {
-    render(<Card isSelected />);
+    render(<Card isSelected>selected card</Card>);
 
-    const card = screen.getByRole('article');
+    const card = screen.getByText('selected card');
     expect(card).not.toHaveClass('pf-m-selected');
     expect(card.getAttribute('tabindex')).toBeNull();
   });
 
   test('card with isDisabledRaised applied', () => {
-    render(<Card isDisabledRaised />);
-    expect(screen.getByRole('article')).toHaveClass('pf-m-non-selectable-raised');
+    render(<Card isDisabledRaised>disabled raised card</Card>);
+    expect(screen.getByText('disabled raised card')).toHaveClass('pf-m-non-selectable-raised');
   });
 
   test('card with isSelectableRaised applied - not change', () => {
-    render(<Card isSelectableRaised />);
+    render(<Card isSelectableRaised>raised selectable card</Card>);
 
-    const card = screen.getByRole('article');
+    const card = screen.getByText('raised selectable card');
     expect(card).toHaveClass('pf-m-selectable-raised');
     expect(card).toHaveAttribute('tabindex', '0');
   });
 
   test('card with isSelectableRaised and isSelected applied ', () => {
-    render(<Card isSelected isSelectableRaised />);
+    render(<Card isSelected isSelectableRaised>raised selected card</Card>);
 
-    const card = screen.getByRole('article');
+    const card = screen.getByText('raised selected card');
     expect(card).toHaveClass('pf-m-selectable-raised');
     expect(card).toHaveClass('pf-m-selected-raised');
     expect(card).toHaveAttribute('tabindex', '0');
   });
 
   test('card with isFlat applied', () => {
-    render(<Card isFlat />);
-    expect(screen.getByRole('article')).toHaveClass('pf-m-flat');
+    render(<Card isFlat>flat card</Card>);
+    expect(screen.getByText('flat card')).toHaveClass('pf-m-flat');
   });
 
   test('card with isExpanded applied', () => {
-    render(<Card isExpanded />);
-    expect(screen.getByRole('article')).toHaveClass('pf-m-expanded');
+    render(<Card isExpanded>expanded card</Card>);
+    expect(screen.getByText('expanded card')).toHaveClass('pf-m-expanded');
   });
 
   test('card with isRounded applied', () => {
-    render(<Card isRounded />);
-    expect(screen.getByRole('article')).toHaveClass('pf-m-rounded');
+    render(<Card isRounded>rounded card</Card>);
+    expect(screen.getByText('rounded card')).toHaveClass('pf-m-rounded');
   });
 
   test('card with isLarge applied', () => {
-    render(<Card isLarge />);
-    expect(screen.getByRole('article')).toHaveClass('pf-m-display-lg');
+    render(<Card isLarge>large card</Card>);
+    expect(screen.getByText('large card')).toHaveClass('pf-m-display-lg');
   });
 
   test('card warns when isLarge and isCompact', () => {
