@@ -43,7 +43,7 @@ section: developer-resources
 - **Label group:**
   - Updated to show the correct count of overflow labels ([#8505](https://github.com/patternfly/patternfly-react/pull/8505))
 - **Menu:**
-  - Added event param to `onDrillIn` and `onDrillOut` beta callbacks ([#8514](https://github.com/patternfly/
+  - Added event param to `onDrillIn` and `onDrillOut` callbacks ([#8514](https://github.com/patternfly/patternfly-react/pull/8514))
   - Added option to use React component and node in `groupMenu` ([#8219](https://github.com/patternfly/patternfly-react/pull/8219))
   - Added content to menu examples ([#8018](https://github.com/patternfly/patternfly-react/pull/8018))
 - **Modal:**
@@ -64,7 +64,7 @@ section: developer-resources
 - **Select next:**
   - Updated logic for keyboard interaction ([#8496](https://github.com/patternfly/patternfly-react/pull/8496))
 - **Simple list:**
-  - Added aria label added to ungrouped simple list ([#8507](https://github.com/patternfly/patternfly-react/pull/8507))
+  - Added aria label to ungrouped simple list ([#8507](https://github.com/patternfly/patternfly-react/pull/8507))
 - **Slider:**
   - Converted examples to TypeScript ([#8164](https://github.com/patternfly/patternfly-react/pull/8164))
   - Updated input text styling ([#8392](https://github.com/patternfly/patternfly-react/pull/8392))
@@ -103,11 +103,11 @@ section: developer-resources
 - Fixed parent checkbox behavior in composable table ([#8490](https://github.com/patternfly/patternfly-react/pull/8490))
 
 ### Topology
-- Added edges demo ([#8558](https://github.com/patternfly/patternfly-react/pull/8558))
-- Added pan/zoom demo ([#8557](https://github.com/patternfly/patternfly-react/pull/8557))
-- Added selection demo ([#8512](https://github.com/patternfly/patternfly-react/pull/8512))
+- Added edges demo and documentation ([#8558](https://github.com/patternfly/patternfly-react/pull/8558))
+- Added pan/zoom demo and documentation ([#8557](https://github.com/patternfly/patternfly-react/pull/8557))
+- Added selection demo and documentation ([#8512](https://github.com/patternfly/patternfly-react/pull/8512))
 - Added counter scale labels ([#8477](https://github.com/patternfly/patternfly-react/pull/8477))
-- Added baseline and custom demo + docs ([#8508](https://github.com/patternfly/patternfly-react/pull/8508))
+- Added baseline and custom demo  and documentation ([#8508](https://github.com/patternfly/patternfly-react/pull/8508))
 
 ### Other
 - **Chore:**
