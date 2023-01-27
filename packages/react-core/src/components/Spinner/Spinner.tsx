@@ -9,7 +9,7 @@ export enum spinnerSize {
   xl = 'xl'
 }
 
-export interface SpinnerProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'size'> {
+export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {
   /** Additional classes added to the Spinner. */
   className?: string;
   /** Size variant of progress. */
@@ -37,7 +37,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   'aria-labelledBy': ariaLabelledBy,
   ...props
 }: SpinnerProps) => {
-  const Component = 'svg' as any;
+  const Component = 'svg';
 
   return (
     <Component
@@ -45,7 +45,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
       role="progressbar"
       aria-valuetext={ariaValueText}
       viewBox="0 0 100 100"
-      {...(diameter && { style: { '--pf-c-spinner--diameter': diameter } })}
+      {...(diameter && { style: { ['--pf-c-spinner--diameter' as any]: diameter } })}
       {...(ariaLabel && { 'aria-label': ariaLabel })}
       {...(ariaLabelledBy && { 'aria-labelledBy': ariaLabelledBy })}
       {...(!ariaLabel && !ariaLabelledBy && { 'aria-label': 'Contents' })}
