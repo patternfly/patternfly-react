@@ -20,7 +20,7 @@ const getItems = (count: number) =>
   }));
 
 const reorder = (list: ItemType[], startIndex: number, endIndex: number) => {
-  const result = list;
+  const result = [...list];
   const [removed] = result.splice(startIndex, 1);
   result.splice(endIndex, 0, removed);
   return result;
