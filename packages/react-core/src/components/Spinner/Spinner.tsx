@@ -16,8 +16,6 @@ export interface SpinnerProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'si
   size?: 'sm' | 'md' | 'lg' | 'xl';
   /** Text describing that current loading status or progress */
   'aria-valuetext'?: string;
-  /** Whether to use an SVG (new) rather than a span (old) */
-  isSVG?: boolean;
   /** Diameter of spinner set as CSS variable */
   diameter?: string;
   /** @beta Indicates the spinner is inline and the size should inherit the text font size. This will override the size prop. */
@@ -33,36 +31,27 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   className = '',
   size = 'xl',
   'aria-valuetext': ariaValueText = 'Loading...',
-  isSVG = true,
   diameter,
   isInline = false,
   'aria-label': ariaLabel,
   'aria-labelledBy': ariaLabelledBy,
   ...props
 }: SpinnerProps) => {
-  const Component = isSVG ? 'svg' : ('span' as any);
+  const Component = 'svg' as any;
 
   return (
     <Component
       className={css(styles.spinner, isInline ? styles.modifiers.inline : styles.modifiers[size], className)}
       role="progressbar"
       aria-valuetext={ariaValueText}
-      {...(isSVG && { viewBox: '0 0 100 100' })}
+      {...{ viewBox: '0 0 100 100' }}
       {...(diameter && { style: { '--pf-c-spinner--diameter': diameter } })}
       {...(ariaLabel && { 'aria-label': ariaLabel })}
       {...(ariaLabelledBy && { 'aria-labelledBy': ariaLabelledBy })}
       {...(!ariaLabel && !ariaLabelledBy && { 'aria-label': 'Contents' })}
       {...props}
     >
-      {isSVG ? (
-        <circle className={styles.spinnerPath} cx="50" cy="50" r="45" fill="none" />
-      ) : (
-        <React.Fragment>
-          <span className={css(styles.spinnerClipper)} />
-          <span className={css(styles.spinnerLeadBall)} />
-          <span className={css(styles.spinnerTailBall)} />
-        </React.Fragment>
-      )}
+      <circle className={styles.spinnerPath} cx="50" cy="50" r="45" fill="none" />
     </Component>
   );
 };

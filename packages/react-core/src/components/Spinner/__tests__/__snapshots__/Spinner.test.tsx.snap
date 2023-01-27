@@ -60,27 +60,6 @@ exports[`medium spinner 1`] = `
 </DocumentFragment>
 `;
 
-exports[`non-SVG spinner 1`] = `
-<DocumentFragment>
-  <span
-    aria-label="Contents"
-    aria-valuetext="Loading..."
-    class="pf-c-spinner pf-m-xl"
-    role="progressbar"
-  >
-    <span
-      class="pf-c-spinner__clipper"
-    />
-    <span
-      class="pf-c-spinner__lead-ball"
-    />
-    <span
-      class="pf-c-spinner__tail-ball"
-    />
-  </span>
-</DocumentFragment>
-`;
-
 exports[`simple spinner 1`] = `
 <DocumentFragment>
   <svg
