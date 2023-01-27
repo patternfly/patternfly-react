@@ -5,7 +5,7 @@ import brandImg from './brandImg.svg';
 export const AboutModalWithoutProductName: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  const toggleModal = () => {
+  const toggleModal = (_event: React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 
@@ -16,7 +16,7 @@ export const AboutModalWithoutProductName: React.FunctionComponent = () => {
       </Button>
       <AboutModal
         isOpen={isModalOpen}
-        onClose={toggleModal}
+        onClose={(event: any) => toggleModal(event)}
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"

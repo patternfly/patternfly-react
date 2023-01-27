@@ -8,14 +8,14 @@ export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivEl
   /** additional classes added to the About Modal Close button  */
   className?: string;
   /** A callback for when the close button is clicked  */
-  onClose?: () => void;
+  onClose?: (event: React.MouseEvent | MouseEvent | KeyboardEvent) => void;
   /** Set close button aria label */
   'aria-label'?: string;
 }
 
 export const AboutModalBoxCloseButton: React.FunctionComponent<AboutModalBoxCloseButtonProps> = ({
   className = '',
-  onClose = () => undefined as any,
+  onClose = _e => undefined as any,
   'aria-label': ariaLabel = 'Close Dialog',
   ...props
 }: AboutModalBoxCloseButtonProps) => (

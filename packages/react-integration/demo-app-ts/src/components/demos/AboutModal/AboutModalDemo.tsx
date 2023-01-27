@@ -15,7 +15,7 @@ export class AboutModalDemo extends React.Component<{}, AboutModalState> {
     };
   }
 
-  handleModalToggle = () => {
+  handleModalToggle = (_event: React.MouseEvent) => {
     this.setState(({ isModalOpen }) => ({
       isModalOpen: !isModalOpen
     }));
@@ -31,7 +31,7 @@ export class AboutModalDemo extends React.Component<{}, AboutModalState> {
         </Button>
         <AboutModal
           isOpen={isModalOpen}
-          onClose={this.handleModalToggle}
+          onClose={(event: any) => this.handleModalToggle(event)}
           trademark="Trademark and copyright information here"
           brandImageSrc={brandImg}
           brandImageAlt="Patternfly Logo"
