@@ -42,7 +42,7 @@ section: developer-resources
 - **Code editor:**
   - Upgrade `react-monaco-editor` to latest version ([#8577](https://github.com/patternfly/patternfly-react/pull/8577))
 - **Date picker:**
-  - Added event to callbacks ([#8529](https://github.com/patternfly/patternfly-react/pull/8529))
+  - Reordered parameters in `onChange` and `onBlur` callbacks to add event as first parameter ([#8529](https://github.com/patternfly/patternfly-react/pull/8529))
 - **Dropdown:**
   - Added support for in progress variation ([#8436](https://github.com/patternfly/patternfly-react/pull/8436))
 - **Dropdown next:**
@@ -55,11 +55,11 @@ section: developer-resources
 - **File upload:**
   - Updated `dropzoneProps` to be partial ([#8407](https://github.com/patternfly/patternfly-react/pull/8407))
 - **Label:**
-  - Added event parameter to beta callback props ([#8544](https://github.com/patternfly/patternfly-react/pull/8544))
+  - Added event as first parameter to `onEditComplete` and `onEditCancel` ([#8544](https://github.com/patternfly/patternfly-react/pull/8544))
 - **Label group:**
   - Updated to show the correct count of overflow labels ([#8505](https://github.com/patternfly/patternfly-react/pull/8505))
 - **Menu:**
-  - Added event param to `onDrillIn` and `onDrillOut` callbacks ([#8514](https://github.com/patternfly/patternfly-react/pull/8514))
+  - Reordered parameters in `onDrillIn` and `onDrillOut` callbacks to add event as first parameter ([#8514](https://github.com/patternfly/patternfly-react/pull/8514))
   - Added option to use React component and node in `groupMenu` ([#8219](https://github.com/patternfly/patternfly-react/pull/8219))
   - Added content to menu examples ([#8018](https://github.com/patternfly/patternfly-react/pull/8018))
 - **Modal:**
@@ -72,8 +72,9 @@ section: developer-resources
 - **Progress stepper:**
   - Updated tests to new React testing library standards ([#8437](https://github.com/patternfly/patternfly-react/pull/8437))
 - **Search input:**
-  - Edited `ExpandableInput` and `SearchAttribute` for consistency ([#8527](https://github.com/patternfly/patternfly-react/pull/8527))
-  - Reordered parameters in `onChange` and `onSearch` ([#8516](https://github.com/patternfly/patternfly-react/pull/8516))
+  - Renamed `ExpandableInput` to `SearchInputExpandable` ([#8527](https://github.com/patternfly/patternfly-react/pull/8527))
+  - Renamed `SearchAttribute` to `SearchInputSearchAttribute`   ([#8527](https://github.com/patternfly/patternfly-react/pull/8527))
+  - Reordered parameters in `onChange` and `onSearch` callbacks to add event as first parameter.  ([#8516](https://github.com/patternfly/patternfly-react/pull/8516))
   - Added a name prop to the input ([#8554](https://github.com/patternfly/patternfly-react/pull/8554))
 - **Select:**
   - Added toggle ref ([#8528](https://github.com/patternfly/patternfly-react/pull/8528))
@@ -90,11 +91,11 @@ section: developer-resources
 - **Text content:**
   - Fixed test file name extension ([#8491](https://github.com/patternfly/patternfly-react/pull/8491))
 - **Text input group:**
-  - Reordered `onChange` parameters ([#8494](https://github.com/patternfly/patternfly-react/pull/8494))
+  - Reordered `onChange` parameters so that event is first ([#8494](https://github.com/patternfly/patternfly-react/pull/8494))
 - **Text list:**
   - Added `isPlain` prop ([#8562](https://github.com/patternfly/patternfly-react/pull/8562))
 - **Time picker:**
-  - Added event to `onChange` callback ([#8493](https://github.com/patternfly/patternfly-react/pull/8493))
+  - Added event to `onChange` callback as the first parameter ([#8493](https://github.com/patternfly/patternfly-react/pull/8493))
 - **Toolbar:**
   - Converted examples to typescript ([#8404](https://github.com/patternfly/patternfly-react/pull/8404))
 - **Wizard:**
