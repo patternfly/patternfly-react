@@ -23,7 +23,6 @@ it('ClipboardCopy should match snapshot (auto-generated)', () => {
       maxWidth={"'150px'"}
       exitDelay={1600}
       entryDelay={100}
-      switchDelay={2000}
       onCopy={(event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
         const clipboard = event.currentTarget.parentElement;
         const el = document.createElement('input');
