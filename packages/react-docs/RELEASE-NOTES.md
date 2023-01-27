@@ -17,6 +17,22 @@ section: developer-resources
 - [@patternfly/react-topology@4.91.26](https://www.npmjs.com/package/@patternfly/react-topology/v/4.91.26)
 - [@patternfly/react-virtualized-extension@4.88.112](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.88.112)
 
+### Beta Component breaking changes
+- **Date picker:**
+  - Reordered parameters in `onChange` and `onBlur` callbacks to add event as first parameter ([#8529](https://github.com/patternfly/patternfly-react/pull/8529))
+- **Label:**
+  - Added event as first parameter to `onEditComplete` and `onEditCancel` ([#8544](https://github.com/patternfly/patternfly-react/pull/8544))
+- **Menu:**
+  - Reordered parameters in `onDrillIn` and `onDrillOut` callbacks to add event as first parameter ([#8514](https://github.com/patternfly/patternfly-react/pull/8514))
+- **Search input:**
+  - Renamed `ExpandableInput` to `SearchInputExpandable` ([#8527](https://github.com/patternfly/patternfly-react/pull/8527))
+  - Renamed `SearchAttribute` to `SearchInputSearchAttribute`   ([#8527](https://github.com/patternfly/patternfly-react/pull/8527))
+  - Reordered parameters in `onChange` and `onSearch` callbacks to add event as first parameter.  ([#8516](https://github.com/patternfly/patternfly-react/pull/8516))
+- **Text input group:**
+  - Reordered `onChange` parameters so that event is first ([#8494](https://github.com/patternfly/patternfly-react/pull/8494))
+- **Time picker:**
+  - Added event to `onChange` callback as the first parameter ([#8493](https://github.com/patternfly/patternfly-react/pull/8493))
+
 ### Components
 - **Accordion:**
   - Made scrollable content focusable ([#8515](https://github.com/patternfly/patternfly-react/pull/8515))
@@ -57,7 +73,7 @@ section: developer-resources
   - Updated tests to new React testing library standards ([#8437](https://github.com/patternfly/patternfly-react/pull/8437))
 - **Search input:**
   - Edited `ExpandableInput` and `SearchAttribute` for consistency ([#8527](https://github.com/patternfly/patternfly-react/pull/8527))
-  - Reordered props in onChange and onSearch ([#8516](https://github.com/patternfly/patternfly-react/pull/8516))
+  - Reordered parameters in `onChange` and `onSearch` ([#8516](https://github.com/patternfly/patternfly-react/pull/8516))
   - Added a name prop to the input ([#8554](https://github.com/patternfly/patternfly-react/pull/8554))
 - **Select:**
   - Added toggle ref ([#8528](https://github.com/patternfly/patternfly-react/pull/8528))
