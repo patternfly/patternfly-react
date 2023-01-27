@@ -37,11 +37,10 @@ export interface WizardStepProps {
 export const WizardStep = ({ children, steps: _subSteps, ...props }: WizardStepProps) => {
   const { activeStep, setStep } = useWizardContext();
   const { id, name, body, isDisabled, isHidden, navItem, footer, status } = props;
+  const isParentStep = isWizardParentStep(activeStep);
 
   // Update step in context when props change or when the step is active has yet to be marked as visited.
   React.useEffect(() => {
-    const shouldUpdateIsVisited = !isWizardParentStep(activeStep) && id === activeStep?.id && !activeStep?.isVisited;
-
     setStep({
       id,
       name,
@@ -51,9 +50,22 @@ export const WizardStep = ({ children, steps: _subSteps, ...props }: WizardStepP
       ...(navItem && { navItem }),
       ...(footer && { footer }),
       ...(status && { status }),
-      ...(shouldUpdateIsVisited && { isVisited: true })
+      ...(!isParentStep && id === activeStep?.id && !activeStep?.isVisited && { isVisited: true })
     });
-  }, [body, footer, id, isDisabled, isHidden, name, navItem, status, activeStep, setStep]);
+  }, [
+    body,
+    footer,
+    id,
+    isDisabled,
+    isHidden,
+    name,
+    navItem,
+    status,
+    isParentStep,
+    setStep,
+    activeStep?.id,
+    activeStep?.isVisited
+  ]);
 
   return <>{children}</>;
 };
