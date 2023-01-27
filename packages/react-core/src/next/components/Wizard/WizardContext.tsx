@@ -2,7 +2,6 @@ import React from 'react';
 
 import { isCustomWizardFooter, isWizardSubStep, WizardStepType, WizardFooterType } from './types';
 import { getActiveStep } from './utils';
-import { useGetMergedSteps } from './hooks';
 import { WizardFooter, WizardFooterProps } from './WizardFooter';
 
 export interface WizardContextProps {
@@ -41,7 +40,7 @@ export interface WizardContextProviderProps {
   children: React.ReactElement;
   onNext(event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[]): void;
   onBack(event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[]): void;
-  onClose(event: React.MouseEvent<HTMLButtonElement>): void;
+  onClose?(event: React.MouseEvent<HTMLButtonElement>): void;
   goToStepById(steps: WizardStepType[], id: number | string): void;
   goToStepByName(steps: WizardStepType[], name: string): void;
   goToStepByIndex(
@@ -67,10 +66,19 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   const [currentFooter, setCurrentFooter] = React.useState(
     typeof initialFooter !== 'function' ? initialFooter : undefined
   );
-  const steps = useGetMergedSteps(initialSteps, currentSteps);
+
+  // Combined initial and current state steps
+  const steps = React.useMemo(
+    () =>
+      currentSteps.map((currentStepProps, index) => ({
+        ...currentStepProps,
+        ...initialSteps[index]
+      })),
+    [initialSteps, currentSteps]
+  );
   const activeStep = React.useMemo(() => getActiveStep(steps, activeStepIndex), [activeStepIndex, steps]);
 
-  const close = React.useCallback(() => onClose(null), [onClose]);
+  const close = React.useCallback(() => onClose?.(null), [onClose]);
   const goToNextStep = React.useCallback(() => onNext(null, steps), [onNext, steps]);
   const goToPrevStep = React.useCallback(() => onBack(null, steps), [onBack, steps]);
 
