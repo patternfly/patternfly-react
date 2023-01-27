@@ -12,7 +12,7 @@ export interface MenuItemActionProps extends Omit<React.HTMLProps<HTMLButtonElem
   /** Callback on action click, can also specify onActionClick on the Menu instead */
   onClick?: (event?: any) => void;
   /** Accessibility label */
-  'aria-label'?: string;
+  'aria-label': string;
   /** Flag indicating if the item is favorited */
   isFavorited?: boolean;
   /** Disables action, can also be specified on the MenuItem instead */
