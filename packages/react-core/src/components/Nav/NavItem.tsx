@@ -58,7 +58,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   zIndex = 9999,
   ...props
 }: NavItemProps) => {
-  const { flyoutRef, setFlyoutRef } = React.useContext(NavContext);
+  const { flyoutRef, setFlyoutRef, navRef } = React.useContext(NavContext);
   const { isNavOpen } = React.useContext(PageSidebarContext);
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const [isHovered, setIsHovered] = React.useState(false);
@@ -231,6 +231,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       isVisible={flyoutVisible}
       onDocumentKeyDown={handleFlyout}
       zIndex={zIndex}
+      appendTo={navRef?.current}
     />
   );
 

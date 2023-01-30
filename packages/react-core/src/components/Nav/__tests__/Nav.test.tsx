@@ -255,4 +255,19 @@ describe('Nav', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('Nav List with flyout', async () => {
+    const { asFragment } = renderNav(
+      <Nav variant="tertiary">
+        <NavList>
+          <NavItem className="test-nav-item-class" flyout={<div>Flyout test</div>}>
+            <div className="my-custom-node">My custom node</div>
+          </NavItem>
+        </NavList>
+      </Nav>
+    );
+
+    await userEvent.hover(screen.getByText('My custom node'))
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
