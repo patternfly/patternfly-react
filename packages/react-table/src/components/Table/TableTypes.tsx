@@ -1,4 +1,4 @@
-import { DropdownItemProps } from '@patternfly/react-core/dist/esm/components/Dropdown/DropdownItem';
+import { DropdownItemProps } from '@patternfly/react-core/next';
 import { formatterValueType, ColumnType, RowType, RowKeyType, HeaderType } from './base';
 import { SortByDirection } from './SortColumn';
 import {
@@ -108,6 +108,7 @@ export interface IColumn {
     dropdownDirection?: DropdownDirection;
     menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
     actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
+    actionsPopperProps?: any;
     allRowsSelected?: boolean;
     allRowsExpanded?: boolean;
     isHeaderSelectDisabled?: boolean;
