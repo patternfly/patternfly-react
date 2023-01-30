@@ -49,7 +49,7 @@ export interface PopoverProps {
   /** The duration of the CSS fade transition animation. */
   animationDuration?: number;
   /** The element to append the popover to. Defaults to "document.body". */
-  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
+  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'inline';
   /** Accessible label for the popover, required when header is not present. */
   'aria-label'?: string;
   /**
@@ -232,7 +232,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   alertSeverityVariant,
   alertSeverityScreenReaderText,
   footerContent = null,
-  appendTo = () => document.body,
+  appendTo = 'inline',
   hideOnOutsideClick = true,
   onHide = (): void => null,
   onHidden = (): void => null,
@@ -277,6 +277,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     onMount();
@@ -454,25 +455,29 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     </FocusTrap>
   );
 
+  const popoverPopper = (
+    <Popper
+      trigger={children}
+      reference={reference}
+      popper={content}
+      popperMatchesTriggerWidth={false}
+      appendTo={appendTo === 'inline' ? containerRef.current || undefined : appendTo}
+      isVisible={visible}
+      positionModifiers={positionModifiers}
+      distance={distance}
+      placement={position}
+      onTriggerClick={onTriggerClick}
+      onDocumentClick={onDocumentClick}
+      onDocumentKeyDown={onDocumentKeyDown}
+      enableFlip={enableFlip}
+      zIndex={zIndex}
+      flipBehavior={flipBehavior}
+    />
+  );
+
   return (
     <PopoverContext.Provider value={{ headerComponent }}>
-      <Popper
-        trigger={children}
-        reference={reference}
-        popper={content}
-        popperMatchesTriggerWidth={false}
-        appendTo={appendTo}
-        isVisible={visible}
-        positionModifiers={positionModifiers}
-        distance={distance}
-        placement={position}
-        onTriggerClick={onTriggerClick}
-        onDocumentClick={onDocumentClick}
-        onDocumentKeyDown={onDocumentKeyDown}
-        enableFlip={enableFlip}
-        zIndex={zIndex}
-        flipBehavior={flipBehavior}
-      />
+      {appendTo === 'inline' ? <div ref={containerRef}>{popoverPopper}</div> : popoverPopper}
     </PopoverContext.Provider>
   );
 };
