@@ -118,7 +118,7 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
           <Popper
             trigger={toggle}
             popper={menu}
-            appendTo={containerRef.current}
+            appendTo={toggleRef.current}
             isVisible={isOpen}
             popperMatchesTriggerWidth={false}
           />
