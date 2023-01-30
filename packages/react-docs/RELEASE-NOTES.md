@@ -6,16 +6,16 @@ section: developer-resources
 ## 2023.01 release notes (2023-01-26)
 - [@patternfly/react-catalog-view-extension@4.95.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.95.1)
 - [@patternfly/react-charts@6.94.18](https://www.npmjs.com/package/@patternfly/react-charts/v/6.94.18)
-- [@patternfly/react-code-editor@4.82.112](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.82.112)
-- [@patternfly/react-core@4.276.5](https://www.npmjs.com/package/@patternfly/react-core/v/4.276.5)
+- [@patternfly/react-code-editor@4.82.113](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.82.113)
+- [@patternfly/react-core@4.276.6](https://www.npmjs.com/package/@patternfly/react-core/v/4.276.6)
 - [@patternfly/react-icons@4.93.6](https://www.npmjs.com/package/@patternfly/react-icons/v/4.93.6)
-- [@patternfly/react-inline-edit-extension@4.86.117](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.86.117)
-- [@patternfly/react-log-viewer@4.87.98](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.87.98)
+- [@patternfly/react-inline-edit-extension@4.86.118](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.86.118)
+- [@patternfly/react-log-viewer@4.87.100](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.87.100)
 - [@patternfly/react-styles@4.92.6](https://www.npmjs.com/package/@patternfly/react-styles/v/4.92.6)
-- [@patternfly/react-table@4.112.38](https://www.npmjs.com/package/@patternfly/react-table/v/4.112.38)
+- [@patternfly/react-table@4.112.39](https://www.npmjs.com/package/@patternfly/react-table/v/4.112.39)
 - [@patternfly/react-tokens@4.94.6](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.94.6)
-- [@patternfly/react-topology@4.91.26](https://www.npmjs.com/package/@patternfly/react-topology/v/4.91.26)
-- [@patternfly/react-virtualized-extension@4.88.112](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.88.112)
+- [@patternfly/react-topology@4.91.27](https://www.npmjs.com/package/@patternfly/react-topology/v/4.91.27)
+- [@patternfly/react-virtualized-extension@4.88.113](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.88.113)
 
 ### Beta Component breaking changes
 - **Date picker:**
@@ -102,6 +102,7 @@ section: developer-resources
   - Fixed to put focus in drawer when opened in wizard ([#8540](https://github.com/patternfly/patternfly-react/pull/8540))
 - **Wizard next:**
   - Recreated all legacy wizard examples ([#8422](https://github.com/patternfly/patternfly-react/pull/8422))
+  - Removing unnecessary useMergedSteps hook ([#8613](https://github.com/patternfly/patternfly-react/pull/8613))
 
 ### Access console extension
 - Introduced RFB clipViewport and dragViewport options ([#8470](https://github.com/patternfly/patternfly-react/pull/8470))
