@@ -68,16 +68,18 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
   }, [isOpen, menuRef]);
 
   const toggle = (
-    <MenuToggle
-      aria-label="Toggle"
-      ref={toggleRef}
-      variant="plain"
-      onClick={onToggleClick}
-      isExpanded={isOpen}
-      style={{ width: 'auto' }}
-    >
-      <ThIcon />
-    </MenuToggle>
+    <div ref={containerRef}>
+      <MenuToggle
+        aria-label="Toggle"
+        ref={toggleRef}
+        variant="plain"
+        onClick={onToggleClick}
+        isExpanded={isOpen}
+        style={{ width: 'auto' }}
+      >
+        <ThIcon />
+      </MenuToggle>
+    </div>
   );
 
   const menuItems = [
@@ -267,14 +269,12 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
     </Menu>
   );
   return (
-    <div ref={containerRef}>
-      <Popper
-        trigger={toggle}
-        popper={menu}
-        isVisible={isOpen}
-        popperMatchesTriggerWidth={false}
-        appendTo={containerRef.current || undefined}
-      />
-    </div>
+    <Popper
+      trigger={toggle}
+      popper={menu}
+      isVisible={isOpen}
+      popperMatchesTriggerWidth={false}
+      appendTo={containerRef.current || undefined}
+    />
   );
 };

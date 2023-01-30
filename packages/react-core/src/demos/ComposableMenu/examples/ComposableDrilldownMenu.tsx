@@ -93,9 +93,11 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
-      {isOpen ? 'Expanded' : 'Collapsed'}
-    </MenuToggle>
+    <div ref={containerRef}>
+      <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+        {isOpen ? 'Expanded' : 'Collapsed'}
+      </MenuToggle>
+    </div>
   );
   const menu = (
     <Menu
@@ -249,14 +251,12 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
     </Menu>
   );
   return (
-    <div ref={containerRef}>
-      <Popper
-        trigger={toggle}
-        popper={menu}
-        appendTo={containerRef.current || undefined}
-        isVisible={isOpen}
-        popperMatchesTriggerWidth={false}
-      />
-    </div>
+    <Popper
+      trigger={toggle}
+      popper={menu}
+      appendTo={containerRef.current || undefined}
+      isVisible={isOpen}
+      popperMatchesTriggerWidth={false}
+    />
   );
 };

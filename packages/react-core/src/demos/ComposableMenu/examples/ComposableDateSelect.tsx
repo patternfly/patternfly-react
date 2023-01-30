@@ -92,10 +92,12 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen} style={{ minWidth: '250px' }}>
-      <span style={{ verticalAlign: 'middle', marginRight: '8px' }}>{toggleText[selected]}</span>
-      {dateText[selected]}
-    </MenuToggle>
+    <div ref={containerRef}>
+      <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen} style={{ minWidth: '250px' }}>
+        <span style={{ verticalAlign: 'middle', marginRight: '8px' }}>{toggleText[selected]}</span>
+        {dateText[selected]}
+      </MenuToggle>
+    </div>
   );
   const menu = (
     // eslint-disable-next-line no-console
@@ -111,14 +113,12 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
     </Menu>
   );
   return (
-    <div ref={containerRef}>
-      <Popper
-        trigger={toggle}
-        popper={menu}
-        appendTo={containerRef.current}
-        isVisible={isOpen}
-        popperMatchesTriggerWidth={false}
-      />
-    </div>
+    <Popper
+      trigger={toggle}
+      popper={menu}
+      appendTo={containerRef.current}
+      isVisible={isOpen}
+      popperMatchesTriggerWidth={false}
+    />
   );
 };

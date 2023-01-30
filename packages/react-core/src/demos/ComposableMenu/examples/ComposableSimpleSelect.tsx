@@ -45,18 +45,20 @@ export const ComposableSimpleSelect: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <MenuToggle
-      ref={toggleRef}
-      onClick={onToggleClick}
-      isExpanded={isOpen}
-      style={
-        {
-          width: '200px'
-        } as React.CSSProperties
-      }
-    >
-      {selected}
-    </MenuToggle>
+    <div ref={containerRef}>
+      <MenuToggle
+        ref={toggleRef}
+        onClick={onToggleClick}
+        isExpanded={isOpen}
+        style={
+          {
+            width: '200px'
+          } as React.CSSProperties
+        }
+      >
+        {selected}
+      </MenuToggle>
+    </div>
   );
 
   function onSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
@@ -80,9 +82,5 @@ export const ComposableSimpleSelect: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return (
-    <div ref={containerRef}>
-      <Popper trigger={toggle} popper={menu} appendTo={containerRef.current || undefined} isVisible={isOpen} />
-    </div>
-  );
+  return <Popper trigger={toggle} popper={menu} appendTo={containerRef.current || undefined} isVisible={isOpen} />;
 };

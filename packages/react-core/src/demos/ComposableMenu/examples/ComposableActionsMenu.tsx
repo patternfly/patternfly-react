@@ -60,9 +60,11 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
-      {isOpen ? 'Expanded' : 'Collapsed'}
-    </MenuToggle>
+    <div ref={containerRef}>
+      <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+        {isOpen ? 'Expanded' : 'Collapsed'}
+      </MenuToggle>
+    </div>
   );
   const menu = (
     <Menu
@@ -124,14 +126,12 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
   );
 
   return (
-    <div ref={containerRef}>
-      <Popper
-        trigger={toggle}
-        popper={menu}
-        isVisible={isOpen}
-        appendTo={containerRef.current || undefined}
-        popperMatchesTriggerWidth={false}
-      />
-    </div>
+    <Popper
+      trigger={toggle}
+      popper={menu}
+      isVisible={isOpen}
+      appendTo={containerRef.current || undefined}
+      popperMatchesTriggerWidth={false}
+    />
   );
 };

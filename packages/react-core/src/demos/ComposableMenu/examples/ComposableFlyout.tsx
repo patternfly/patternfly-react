@@ -80,9 +80,11 @@ export const ComposableFlyout: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <MenuToggle onClick={onToggleClick} isExpanded={isOpen}>
-      {isOpen ? 'Expanded' : 'Collapsed'}
-    </MenuToggle>
+    <div ref={containerRef}>
+      <MenuToggle onClick={onToggleClick} isExpanded={isOpen}>
+        {isOpen ? 'Expanded' : 'Collapsed'}
+      </MenuToggle>
+    </div>
   );
 
   const menu = (
@@ -102,14 +104,12 @@ export const ComposableFlyout: React.FunctionComponent = () => {
   );
 
   return (
-    <div ref={containerRef}>
-      <Popper
-        trigger={toggle}
-        popper={menu}
-        appendTo={containerRef.current || undefined}
-        isVisible={isOpen}
-        popperMatchesTriggerWidth={false}
-      />
-    </div>
+    <Popper
+      trigger={toggle}
+      popper={menu}
+      appendTo={containerRef.current || undefined}
+      isVisible={isOpen}
+      popperMatchesTriggerWidth={false}
+    />
   );
 };
