@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../../../components/Menu';
-import { Popper } from '../../../helpers/Popper/Popper';
+import { Popper, PopperProps } from '../../../helpers/Popper/Popper';
 import { useOUIAProps, OUIAProps } from '../../../helpers';
 
 export interface DropdownProps extends MenuProps, OUIAProps {
@@ -32,6 +32,8 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   ouiaSafe?: boolean;
   /** z-index of the dropdown menu */
   zIndex?: number;
+  /** Additional properties to pass to the Popper */
+  popperProps?: PopperProps;
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({
@@ -48,6 +50,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   ouiaId,
   ouiaSafe = true,
   zIndex = 9999,
+  popperProps,
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -122,6 +125,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
         appendTo={containerRef.current || undefined}
         isVisible={isOpen}
         zIndex={zIndex}
+        {...popperProps}
       />
     </div>
   );
