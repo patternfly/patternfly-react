@@ -53,6 +53,8 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
     }
 
     setMenuItems(newMenuItems);
+    setActiveItem(null);
+    setFocusedItemIndex(null);
   }, [inputValue]);
 
   const focusOnInput = () => menuToggleRef.current?.querySelector('input')?.focus();
@@ -93,9 +95,8 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
       }
 
       setFocusedItemIndex(indexToFocus);
-      setActiveItem(
-        `composable-typeahead-${menuItems.filter(item => !item.isDisabled)[indexToFocus].itemId.replace(' ', '-')}`
-      );
+      const focusedItem = menuItems.filter(item => !item.isDisabled)[indexToFocus];
+      setActiveItem(`composable-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
     }
   };
 
@@ -126,6 +127,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
         break;
       case 'ArrowUp':
       case 'ArrowDown':
+        event.preventDefault();
         handleMenuArrowKeys(event.key);
         break;
       default:
