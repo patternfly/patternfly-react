@@ -46,9 +46,25 @@ test('passes custom description to MenuItem', () => {
   expect(screen.getByText('description: Test description')).toBeVisible();
 });
 
+test('passes no itemId by default', () => {
+  render(<DropdownItem description="Test description">{dropdownItemChildren}</DropdownItem>);
+
+  expect(screen.getByText('itemId: undefined'));
+});
+
+test('passes itemId to MenuItem', () => {
+  render(
+    <DropdownItem itemId="dropdown item" description="Test description">
+      {dropdownItemChildren}
+    </DropdownItem>
+  );
+
+  expect(screen.getByText('itemId: dropdown item'));
+});
+
 test('matches snapshot', () => {
   const { asFragment } = render(
-    <DropdownItem className="custom-class" description="Test description">
+    <DropdownItem ouiaId="dropdown item" className="custom-class" description="Test description">
       {dropdownItemChildren}
     </DropdownItem>
   );

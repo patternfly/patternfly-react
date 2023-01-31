@@ -13,5 +13,8 @@ exports[`matches snapshot 1`] = `
   <p>
     description: Test description
   </p>
+  <p>
+    itemId: undefined
+  </p>
 </DocumentFragment>
 `;

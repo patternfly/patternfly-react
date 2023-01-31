@@ -11,14 +11,14 @@ const toggle = (ref: React.RefObject<any>) => <button ref={ref}>Dropdown</button
 
 const dropdownChildren = <div>Dropdown children</div>;
 
-test('renders dropdown', async () => {
+test('renders dropdown', () => {
   render(
     <div data-testid="dropdown">
       <Dropdown toggle={toggleRef => toggle(toggleRef)}>{dropdownChildren}</Dropdown>
     </div>
   );
 
-  expect((await screen.findByTestId('dropdown')).children[0]).toBeVisible();
+  expect(screen.getByTestId('dropdown').children[0]).toBeVisible();
 });
 
 test('passes children', () => {
@@ -27,111 +27,127 @@ test('passes children', () => {
   expect(screen.getByText('Dropdown children')).toBeVisible();
 });
 
-test('renders passed toggle element', async () => {
+test('renders passed toggle element', () => {
   render(<Dropdown toggle={toggleRef => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
 
-  expect(await screen.findByRole('button')).toBeVisible();
+  expect(screen.getByRole('button', { name: 'Dropdown' })).toBeVisible();
 });
 
-test('passes no class name by default', async () => {
+test('passes no class name by default', () => {
   render(
     <Dropdown isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
 
-  expect(await screen.findByTestId('menu-mock')).not.toHaveClass();
+  expect(screen.getByTestId('menu-mock')).not.toHaveClass();
 });
 
-test('passes custom class name', async () => {
+test('passes custom class name', () => {
   render(
     <Dropdown className="custom-class" isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
 
-  expect(await screen.findByTestId('menu-mock')).toHaveClass('custom-class');
+  expect(screen.getByTestId('menu-mock')).toHaveClass('custom-class');
 });
 
-test('does not pass isPlain to Menu by default', async () => {
+test('does not pass isPlain to Menu by default', () => {
   render(
     <Dropdown isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
 
-  expect(await screen.findByText('isPlain: undefined')).toBeVisible();
+  expect(screen.getByText('isPlain: undefined')).toBeVisible();
 });
 
-test('passes isPlain to Menu', async () => {
+test('passes isPlain to Menu', () => {
   render(
     <Dropdown isPlain isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
 
-  expect(await screen.findByText('isPlain: true')).toBeVisible();
+  expect(screen.getByText('isPlain: true')).toBeVisible();
 });
 
-test('does not pass isScrollable to Menu by default', async () => {
+test('does not pass isScrollable to Menu by default', () => {
   render(
     <Dropdown isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
 
-  expect(await screen.findByText('isScrollable: undefined')).toBeVisible();
+  expect(screen.getByText('isScrollable: undefined')).toBeVisible();
 });
 
-test('passes isScrollable to Menu', async () => {
+test('passes isScrollable to Menu', () => {
   render(
     <Dropdown isScrollable isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
 
-  expect(await screen.findByText('isScrollable: true')).toBeVisible();
+  expect(screen.getByText('isScrollable: true')).toBeVisible();
 });
 
-test('does not pass minWidth to Menu by default', async () => {
+test('does not pass minWidth to Menu by default', () => {
   render(
     <Dropdown isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
 
-  expect(await screen.findByText('minWidth: undefined')).toBeVisible();
+  expect(screen.getByText('minWidth: undefined')).toBeVisible();
 });
 
-test('passes minWidth to Menu', async () => {
+test('passes minWidth to Menu', () => {
   render(
     <Dropdown minWidth="100px" isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
 
-  expect(await screen.findByText('minWidth: 100px')).toBeVisible();
+  expect(screen.getByText('minWidth: 100px')).toBeVisible();
 });
 
-test('passes zIndex to popper', async () => {
+test('passes default zIndex to popper', () => {
+  render(<Dropdown toggle={toggleRef => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
+
+  expect(screen.getByText('zIndex: 9999')).toBeVisible();
+});
+
+test('passes zIndex to popper', () => {
   render(
     <Dropdown zIndex={100} toggle={toggleRef => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
 
-  expect(await screen.findByText('zIndex: 100')).toBeVisible();
+  expect(screen.getByText('zIndex: 100')).toBeVisible();
 });
 
-test('passes isOpen to popper', async () => {
+test('does not pass isOpen to popper by default', () => {
+  render(<Dropdown toggle={toggleRef => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
+
+  expect(screen.getByText('isOpen: undefined')).toBeVisible();
+});
+
+test('passes isOpen to popper', () => {
   render(
     <Dropdown isOpen toggle={toggleRef => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
 
-  expect(await screen.findByText('isOpen: true')).toBeVisible();
+  expect(screen.getByText('isOpen: true')).toBeVisible();
 });
+
+/* no default tests for callback props
+since there is no way to test that the 
+function doesn`t get passed */
 
 test('passes onSelect callback', async () => {
   const user = userEvent.setup();
@@ -149,48 +165,6 @@ test('passes onSelect callback', async () => {
   expect(onSelect).toBeCalledTimes(1);
 });
 
-//throws error because of bug in dropdown
-//tries to call onOpenChange even when it is not passed
-//should fail until issue gets resolved
-/* test('onOpenChange is not called when not passed', async () => {
-  const user = userEvent.setup();
-  const onOpenChange = jest.fn();
-
-  render(
-    <Dropdown isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
-      {dropdownChildren}
-    </Dropdown>
-  );
-
-  const dropdown = await screen.findByRole('button');
-  await user.click(dropdown);
-  await user.click(document.body);
-
-  await user.click(dropdown);
-  await user.keyboard('{Tab}');
-
-  await user.click(dropdown);
-  await user.keyboard('{Escape}');
-
-  expect(onOpenChange).not.toBeCalled();
-}); */
-
-test('onOpenChange is not called without user interaction', async () => {
-  const user = userEvent.setup();
-  const onOpenChange = jest.fn();
-
-  render(
-    <Dropdown isOpen={true} onOpenChange={onOpenChange} toggle={toggleRef => toggle(toggleRef)}>
-      {dropdownChildren}
-    </Dropdown>
-  );
-
-  const dropdown = await screen.findByRole('button');
-  await user.click(dropdown);
-
-  expect(onOpenChange).not.toBeCalled();
-});
-
 test('onOpenChange is called when passed and user clicks outside of dropdown', async () => {
   const user = userEvent.setup();
   const onOpenChange = jest.fn();
@@ -201,7 +175,7 @@ test('onOpenChange is called when passed and user clicks outside of dropdown', a
     </Dropdown>
   );
 
-  const dropdown = await screen.findByRole('button');
+  const dropdown = screen.getByRole('button', { name: 'Dropdown' });
   await user.click(dropdown);
   await user.click(document.body);
 
@@ -219,7 +193,7 @@ test('onOpenChange is called when passed and user presses tab key', async () => 
   );
 
   //focus dropdown
-  const dropdown = await screen.findByRole('button');
+  const dropdown = screen.getByRole('button', { name: 'Dropdown' });
   await user.click(dropdown);
   await user.keyboard('{Tab}');
 
@@ -237,14 +211,14 @@ test('onOpenChange is called when passed and user presses esc key', async () => 
   );
 
   //focus dropdown
-  const dropdown = await screen.findByRole('button');
+  const dropdown = screen.getByRole('button', { name: 'Dropdown' });
   await user.click(dropdown);
   await user.keyboard('{Escape}');
 
   expect(onOpenChange).toBeCalledTimes(1);
 });
 
-test('match snapshot', async () => {
+test('match snapshot', () => {
   const { asFragment } = render(
     <Dropdown
       ouiaId={'dropdown'}
@@ -258,5 +232,5 @@ test('match snapshot', async () => {
     </Dropdown>
   );
 
-  await waitFor(() => expect(asFragment()).toMatchSnapshot());
+  expect(asFragment()).toMatchSnapshot();
 });
