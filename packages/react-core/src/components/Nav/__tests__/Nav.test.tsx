@@ -257,6 +257,8 @@ describe('Nav', () => {
   });
 
   test('Nav List with flyout', async () => {
+    const user = userEvent.setup();
+
     const { asFragment } = renderNav(
       <Nav variant="tertiary">
         <NavList>
@@ -267,7 +269,7 @@ describe('Nav', () => {
       </Nav>
     );
 
-    await userEvent.hover(screen.getByText('My custom node'))
+    await user.hover(screen.getByText('My custom node'))
     expect(asFragment()).toMatchSnapshot();
   });
 });
