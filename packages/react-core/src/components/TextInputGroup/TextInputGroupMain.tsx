@@ -41,6 +41,10 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   innerRef?: React.RefObject<any>;
   /** Name for the input */
   name?: string;
+  'aria-activedescendant'?: string;
+  role?: string;
+  isExpanded?: boolean;
+  'aria-controls'?: string;
 }
 
 export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps> = ({
@@ -57,6 +61,10 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   placeholder: inputPlaceHolder,
   innerRef,
   name,
+  'aria-activedescendant': ariaActivedescendant,
+  role,
+  isExpanded,
+  'aria-controls': ariaControls,
   ...props
 }: TextInputGroupMainProps) => {
   const { isDisabled } = React.useContext(TextInputGroupContext);
@@ -93,6 +101,10 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
           value={inputValue || ''}
           placeholder={inputPlaceHolder}
           name={name}
+          aria-activedescendant={ariaActivedescendant}
+          {...(role && { role })}
+          {...(isExpanded !== undefined && { 'aria-expanded': isExpanded })}
+          {...(ariaControls && { 'aria-controls': ariaControls })}
         />
       </span>
     </div>

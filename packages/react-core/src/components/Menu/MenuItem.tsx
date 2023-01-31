@@ -68,6 +68,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   'aria-label'?: string;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
+  id?: string;
 }
 
 const FlyoutContext = React.createContext({
@@ -100,6 +101,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   drilldownMenu,
   isOnPath,
   innerRef,
+  id,
   ...props
 }: MenuItemProps) => {
   const {
@@ -314,6 +316,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       <GenerateId>
         {randomId => (
           <Component
+            id={id}
             tabIndex={-1}
             className={css(styles.menuItem, getIsSelected() && !hasCheckbox && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
