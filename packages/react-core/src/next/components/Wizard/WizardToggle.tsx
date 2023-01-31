@@ -6,8 +6,10 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 import { KeyTypes } from '../../../helpers/constants';
-import { WizardNavProps, WizardBody, WizardStep, WizardStepProps } from '../Wizard';
 import { WizardStepType, isWizardSubStep } from './types';
+import { WizardNavProps } from './WizardNav';
+import { WizardStep, WizardStepProps } from './WizardStep';
+import { WizardBody } from './WizardBody';
 
 /**
  * Used to toggle between step content, including the body and footer. This is also where the navigation and its expandability is controlled.
