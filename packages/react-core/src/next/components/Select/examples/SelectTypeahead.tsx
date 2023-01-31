@@ -26,6 +26,7 @@ export const SelectBasic: React.FunctionComponent = () => {
   const [filterValue, setFilterValue] = React.useState<string>('');
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
+  const [activeItem, setActiveItem] = React.useState<string | null>(null);
 
   const menuRef = React.useRef<HTMLDivElement>(null);
   const textInputRef = React.useRef<HTMLInputElement>();
@@ -43,11 +44,15 @@ export const SelectBasic: React.FunctionComponent = () => {
 
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
-        newSelectOptions = [{ isDisabled: true, children: 'No results found' }];
+        newSelectOptions = [
+          { isDisabled: false, children: `No results found for "${filterValue}"`, itemId: 'no results' }
+        ];
       }
     }
 
     setSelectOptions(newSelectOptions);
+    setActiveItem(null);
+    setFocusedItemIndex(null);
   }, [filterValue]);
 
   const onToggleClick = () => {
@@ -58,13 +63,14 @@ export const SelectBasic: React.FunctionComponent = () => {
     // eslint-disable-next-line no-console
     console.log('selected', itemId);
 
-    if (itemId) {
+    if (itemId && itemId !== 'no results') {
       setInputValue(itemId as string);
       setFilterValue(itemId as string);
       setSelected(itemId as string);
     }
     setIsOpen(false);
     setFocusedItemIndex(null);
+    setActiveItem(null);
   };
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
@@ -95,32 +101,37 @@ export const SelectBasic: React.FunctionComponent = () => {
       }
 
       setFocusedItemIndex(indexToFocus);
+      const focusedItem = selectOptions.filter(option => !option.isDisabled)[indexToFocus];
+      setActiveItem(`select-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
     }
   };
 
   const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const enabledMenuItems = selectOptions.filter(menuItem => !menuItem.isDisabled);
+    const enabledMenuItems = selectOptions.filter(option => !option.isDisabled);
     const [firstMenuItem] = enabledMenuItems;
     const focusedItem = focusedItemIndex ? enabledMenuItems[focusedItemIndex] : firstMenuItem;
 
     switch (event.key) {
       // Select the first available option
       case 'Enter':
-        if (isOpen) {
+        if (isOpen && focusedItem.itemId !== 'no results') {
           setInputValue(String(focusedItem.children));
           setSelected(String(focusedItem.children));
         }
 
         setIsOpen(prevIsOpen => !prevIsOpen);
         setFocusedItemIndex(null);
+        setActiveItem(null);
 
         break;
       case 'Tab':
       case 'Escape':
         setIsOpen(false);
+        setActiveItem(null);
         break;
       case 'ArrowUp':
       case 'ArrowDown':
+        event.preventDefault();
         handleMenuArrowKeys(event.key);
         break;
       default:
@@ -140,6 +151,10 @@ export const SelectBasic: React.FunctionComponent = () => {
           autoComplete="off"
           innerRef={textInputRef}
           placeholder="Select a state"
+          {...(activeItem && { 'aria-activedescendant': activeItem })}
+          role="combobox"
+          isExpanded={isOpen}
+          aria-controls="select-typeahead-listbox"
         />
 
         <TextInputGroupUtilities>
@@ -150,6 +165,7 @@ export const SelectBasic: React.FunctionComponent = () => {
                 setSelected('');
                 setInputValue('');
                 setFilterValue('');
+                textInputRef?.current?.focus();
               }}
               aria-label="Clear input value"
             >
@@ -174,13 +190,14 @@ export const SelectBasic: React.FunctionComponent = () => {
       }}
       toggle={toggle}
     >
-      <SelectList>
+      <SelectList id="select-typeahead-listbox">
         {selectOptions.map((option, index) => (
           <SelectOption
             key={option.itemId || option.children}
             isFocused={focusedItemIndex === index}
             className={option.className}
             onClick={() => setSelected(option.itemId)}
+            id={`select-typeahead-${option.itemId.replace(' ', '-')}`}
             {...option}
             ref={null}
           />
