@@ -1,4 +1,4 @@
-describe('Dropdown demo test', () => {
+describe('Dropdown next demo test', () => {
   it('navigate to demo section', () => {
     cy.visit('http://localhost:3000/dropdown-next-demo-nav-link');
   });
@@ -39,7 +39,7 @@ describe('Dropdown demo test', () => {
   });
 
   /* 
-    pressing enter key on a button calls a click event internally
-    so testing for a button click should be suficitient
+    pressing enter or space key on a button calls a click event internally
+    so testing for a button click should be sufficient
   */
 });
