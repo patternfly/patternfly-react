@@ -183,7 +183,7 @@ export interface ThExpandType {
   /** Whether all are expanded */
   areAllExpanded: boolean;
   /** Alternative aria label */
-  collapseAllAriaLabel: '';
+  collapseAllAriaLabel: string;
 }
 
 // Rows Types
