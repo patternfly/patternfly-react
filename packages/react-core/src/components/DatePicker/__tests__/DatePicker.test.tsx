@@ -3,6 +3,8 @@ import { DatePicker } from '../DatePicker';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 
+jest.mock('../../../helpers/util.ts')
+
 test('disabled date picker', () => {
   const { asFragment } = render(<DatePicker value="2020-11-20" isDisabled aria-label="disabled date picker" />);
   expect(asFragment()).toMatchSnapshot();
@@ -48,3 +50,14 @@ test('Error state can be cleared from outside', async () => {
 
   expect(screen.getByRole('textbox')).not.toBeInvalid();
 });
+
+test('With popover opened', async () => {
+  const user = userEvent.setup();
+
+  const { asFragment } = render(<DatePicker />);
+
+  await user.click(screen.getByRole('button', { name: 'Toggle date picker' }));
+  await screen.findByRole('button', { name: 'Previous month' });
+
+  expect(asFragment()).toMatchSnapshot();
+})

@@ -22,7 +22,7 @@ export interface DatePickerProps
    * menuAppendTo={() => document.body};
    * menuAppendTo={document.getElementById('target')}
    */
-  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'parent';
+  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'inline';
   /** Accessible label for the date picker. */
   'aria-label'?: string;
   /** Accessible label for the button to open the date picker. */
@@ -95,7 +95,7 @@ const DatePickerBase = (
     onBlur = (): any => undefined,
     invalidFormatText = 'Invalid date',
     helperText,
-    appendTo = 'parent',
+    appendTo = 'inline',
     popoverProps,
     monthFormat,
     weekdayFormat,
@@ -120,6 +120,7 @@ const DatePickerBase = (
   const style = { '--pf-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
   const buttonRef = React.useRef<HTMLButtonElement>();
   const datePickerWrapperRef = React.useRef<HTMLDivElement>();
+  const inputGroupRef = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
     setValue(valueProp);
@@ -197,8 +198,7 @@ const DatePickerBase = (
     [setPopoverOpen, popoverOpen, selectOpen]
   );
 
-  const getParentElement = () =>
-    datePickerWrapperRef && datePickerWrapperRef.current ? datePickerWrapperRef.current : null;
+  const getInlineParentElement = () => inputGroupRef?.current;
 
   return (
     <div className={css(styles.datePicker, className)} ref={datePickerWrapperRef} style={style} {...props}>
@@ -243,11 +243,11 @@ const DatePickerBase = (
         withFocusTrap
         hasNoPadding
         hasAutoWidth
-        appendTo={appendTo === 'parent' ? getParentElement() : appendTo}
+        appendTo={appendTo === 'inline' ? getInlineParentElement() : appendTo}
         {...popoverProps}
       >
         <div className={styles.datePickerInput}>
-          <InputGroup>
+          <InputGroup innerRef={inputGroupRef}>
             <TextInput
               isDisabled={isDisabled}
               aria-label={ariaLabel}
