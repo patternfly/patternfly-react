@@ -90,7 +90,14 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
           actionsToggle ? (
             actionsToggle({ onToggle, isOpen, isDisabled, toggleRef })
           ) : (
-            <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen} isDisabled={isDisabled} variant="plain">
+            <MenuToggle
+              aria-label="Kebab toggle"
+              ref={toggleRef}
+              onClick={onToggle}
+              isExpanded={isOpen}
+              isDisabled={isDisabled}
+              variant="plain"
+            >
               <EllipsisVIcon />
             </MenuToggle>
           )
