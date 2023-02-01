@@ -57,7 +57,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
     setFocusedItemIndex(null);
   }, [inputValue]);
 
-  const focusOnInput = () => menuToggleRef.current?.querySelector('input')?.focus();
+  const focusOnInput = () => textInputRef.current?.focus();
 
   const onMenuSelect = (_event: React.MouseEvent | undefined, itemId: string | number | undefined) => {
     // Only allow selection if the item is a valid, selectable option
@@ -146,6 +146,18 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
     }
   };
 
+  // Close the menu when focus is on a menu item and Escape or Tab is pressed
+  const onDocumentKeydown = (event: KeyboardEvent | undefined) => {
+    if (isMenuOpen && menuRef?.current?.contains(event?.target as HTMLElement)) {
+      if (event?.key === 'Escape') {
+        setIsMenuOpen(false);
+        focusOnInput();
+      } else if (event?.key === 'Tab') {
+        setIsMenuOpen(false);
+      }
+    }
+  };
+
   const toggleMenuOpen = () => {
     setIsMenuOpen(prevIsOpen => !prevIsOpen);
     textInputRef.current?.focus();
@@ -213,6 +225,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
       }
       isVisible={isMenuOpen}
       onDocumentClick={onDocumentClick}
+      onDocumentKeyDown={onDocumentKeydown}
       appendTo={() => document.getElementById('temp-toggle-id')}
     />
   );

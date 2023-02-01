@@ -57,6 +57,8 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
     setFocusedItemIndex(null);
   }, [inputValue]);
 
+  const focusOnInput = () => textInputRef.current?.focus();
+
   const handleMenuArrowKeys = (key: string) => {
     let indexToFocus;
 
@@ -126,9 +128,21 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
     }
   };
 
+  // Close the menu when focus is on a menu item and Escape or Tab is pressed
+  const onDocumentKeydown = (event: KeyboardEvent | undefined) => {
+    if (isMenuOpen && menuRef?.current?.contains(event?.target as HTMLElement)) {
+      if (event?.key === 'Escape') {
+        setIsMenuOpen(false);
+        focusOnInput();
+      } else if (event?.key === 'Tab') {
+        setIsMenuOpen(false);
+      }
+    }
+  };
+
   const toggleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
-    textInputRef.current?.focus();
+    focusOnInput();
   };
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
@@ -143,7 +157,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
       );
     }
 
-    textInputRef.current?.focus();
+    focusOnInput();
   };
 
   const toggle = (
@@ -230,6 +244,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
         appendTo={containerRef.current}
         isVisible={isMenuOpen}
         onDocumentClick={onDocumentClick}
+        onDocumentKeyDown={onDocumentKeydown}
       />
     </div>
   );
