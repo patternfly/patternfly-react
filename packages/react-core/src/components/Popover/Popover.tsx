@@ -455,13 +455,25 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     </FocusTrap>
   );
 
+  const getInlineReference = () => {
+    if (reference) {
+      if ((reference as React.RefObject<any>)?.current) {
+        return (reference as React.RefObject<any>)?.current.parentElement;
+      } else if (typeof reference === 'function') {
+        return reference()?.parentElement;
+      }
+    }
+
+    return containerRef?.current;
+  };
+
   const popoverPopper = (
     <Popper
       trigger={children}
       reference={reference}
       popper={content}
       popperMatchesTriggerWidth={false}
-      appendTo={appendTo === 'inline' ? containerRef.current || undefined : appendTo}
+      appendTo={appendTo === 'inline' ? getInlineReference() || undefined : appendTo}
       isVisible={visible}
       positionModifiers={positionModifiers}
       distance={distance}
@@ -477,7 +489,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
 
   return (
     <PopoverContext.Provider value={{ headerComponent }}>
-      {appendTo === 'inline' ? <div ref={containerRef}>{popoverPopper}</div> : popoverPopper}
+      {appendTo === 'inline' && children ? <div ref={containerRef}>{popoverPopper}</div> : popoverPopper}
     </PopoverContext.Provider>
   );
 };

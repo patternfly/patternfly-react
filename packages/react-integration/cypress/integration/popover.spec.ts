@@ -21,7 +21,7 @@ describe('Popover Demo Test', () => {
   });
 
   it('Popover header has correct default size', () => {
-    cy.get('div[id="popoverTarget"]').then((popoverLink: JQuery<HTMLDivElement>) => {
+    cy.get('button[id="popoverTarget"]').then((popoverLink: JQuery<HTMLDivElement>) => {
       cy.wrap(popoverLink).click();
       cy.get('.pf-c-popover').should('exist');
       cy.get('h6').should('have.class', 'pf-m-md');

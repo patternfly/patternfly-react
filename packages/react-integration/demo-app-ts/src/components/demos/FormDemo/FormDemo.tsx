@@ -114,7 +114,12 @@ export class FormDemo extends Component<FormProps, FormState> {
             labelIcon={
               <Popover
                 headerContent={<div>The age of a person</div>}
-                bodyContent={<div>Age is typically measured in years.</div>}
+                bodyContent={
+                  <div>
+                    Age is typically measured in years. It is also common to measure age in months for newborns, e.g. 18
+                    months.
+                  </div>
+                }
               >
                 <button
                   id="helper-text-target"
