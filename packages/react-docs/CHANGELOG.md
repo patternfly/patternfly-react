@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.103.64](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.103.63...@patternfly/react-docs@5.103.64) (2023-02-01)
+
+
+### Bug Fixes
+
+* **react-docs:** remove dependency on react-catalog-view-extension ([#8559](https://github.com/patternfly/patternfly-react/issues/8559)) ([61598f1](https://github.com/patternfly/patternfly-react/commit/61598f159d899346b07f640fb61b46f76426d019))
+
+
+
+
+
 ## [5.103.63](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.103.62...@patternfly/react-docs@5.103.63) (2023-02-01)
 
 **Note:** Version bump only for package @patternfly/react-docs
