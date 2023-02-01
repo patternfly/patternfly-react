@@ -68,6 +68,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   'aria-label'?: string;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
+  /** Sets the id attribute on the menu item component. */
   id?: string;
 }
 
