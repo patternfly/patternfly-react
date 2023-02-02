@@ -473,7 +473,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       reference={reference}
       popper={content}
       popperMatchesTriggerWidth={false}
-      appendTo={appendTo === 'inline' ? getInlineReference() || undefined : appendTo}
+      appendTo={appendTo === 'inline' ? getInlineReference || undefined : appendTo}
       isVisible={visible}
       positionModifiers={positionModifiers}
       distance={distance}
