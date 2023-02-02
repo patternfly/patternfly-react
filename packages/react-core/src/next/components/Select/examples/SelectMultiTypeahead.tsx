@@ -49,6 +49,11 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
           { isDisabled: false, children: `No results found for "${inputValue}"`, itemId: 'no results' }
         ];
       }
+
+      // Open the menu when the input value changes and the new value is not empty
+      if (!isOpen) {
+        setIsOpen(true);
+      }
     }
 
     setSelectOptions(newSelectOptions);
@@ -108,8 +113,6 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
         event.preventDefault();
         handleMenuArrowKeys(event.key);
         break;
-      default:
-        !isOpen && setIsOpen(true);
     }
   };
 

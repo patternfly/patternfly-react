@@ -50,6 +50,11 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
       if (!newMenuItems.length) {
         newMenuItems = [{ isDisabled: false, children: `No results found for "${inputValue}"`, itemId: 'no results' }];
       }
+
+      // Open the menu when the input value changes and the new value is not empty
+      if (!isMenuOpen) {
+        setIsMenuOpen(true);
+      }
     }
 
     setMenuItems(newMenuItems);
@@ -130,8 +135,6 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
         event.preventDefault();
         handleMenuArrowKeys(event.key);
         break;
-      default:
-        !isMenuOpen && setIsMenuOpen(true);
     }
   };
 
