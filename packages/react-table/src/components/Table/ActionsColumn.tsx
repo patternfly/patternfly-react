@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core/next';
+import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core/dist/esm/next/components';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
 import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
