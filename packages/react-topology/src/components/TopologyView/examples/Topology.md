@@ -1,6 +1,6 @@
 ---
 id: Topology view
-section: extensions
+section: topology
 ---
 
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)

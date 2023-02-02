@@ -111,7 +111,7 @@ section: developer-resources
 ### Catalog view extension
 - Removed catalog view extension from patternfly-react repo ([#8474](https://github.com/patternfly/patternfly-react/pull/8474))
 
-### Log viewer:**
+### Log viewer
 - Removed log viewer as it has it's own repo ([#8571](https://github.com/patternfly/patternfly-react/pull/8571))
 
 ### Table
