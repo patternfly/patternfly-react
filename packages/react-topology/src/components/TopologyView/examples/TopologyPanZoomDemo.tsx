@@ -7,21 +7,27 @@ import { FolderOpenIcon as Icon2 } from '@patternfly/react-icons';
 
 import {
   ColaLayout,
+  ComponentFactory,
   DefaultEdge,
   DefaultGroup,
   DefaultNode,
   EdgeStyle,
+  Graph,
   GraphComponent,
+  Layout,
+  LayoutFactory,
+  Model,
   ModelKind,
+  Node,
   NodeModel,
   NodeShape,
+  NodeStatus,
   SELECTION_EVENT,
   Visualization,
   VisualizationProvider,
   VisualizationSurface,
   withPanZoom
 } from '@patternfly/react-topology';
-import { ComponentFactory, Graph, Layout, LayoutFactory, Model, Node, NodeStatus } from '@patternfly/react-topology';
 
 interface CustomNodeProps {
   element: Node;

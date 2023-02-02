@@ -207,7 +207,7 @@ const EDGES: EdgeModel[] = [
   }
 ];
 
-export const TopologyEdgeDemo: React.FC = () => {
+export const TopologyCustomEdgeDemo: React.FC = () => {
   const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
 
   const controller = React.useMemo(() => {
