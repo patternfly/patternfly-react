@@ -143,6 +143,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DropdownDemo
   },
   {
+    id: 'dropdown-next-demo',
+    name: 'Dropdown Next Demo',
+    componentType: Examples.DropdownNextDemo
+  },
+  {
     id: 'dual-list-selector-basic-demo',
     name: 'DualListSelector basic Demo',
     componentType: Examples.DualListSelectorBasicDemo
