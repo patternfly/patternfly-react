@@ -50,7 +50,6 @@
     "@patternfly/react-tokens": "^5.0.0-alpha.1",
     "focus-trap": "6.9.2",
     "react-dropzone": "^14.2.3",
-    "tippy.js": "5.1.2",
     "tslib": "^2.0.0"
   },
   "devDependencies": {

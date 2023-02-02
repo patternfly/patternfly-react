@@ -13871,10 +13871,6 @@ pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/pn/-/pn-1.1.0.tgz"
 
-popper.js@^1.16.0:
-  version "1.16.1"
-  resolved "https://registry.npmjs.org/popper.js/-/popper.js-1.16.1.tgz"
-
 portfinder@^1.0.26:
   version "1.0.28"
   resolved "https://registry.npmjs.org/portfinder/-/portfinder-1.0.28.tgz"
@@ -16520,12 +16516,6 @@ tiny-invariant@^1.0.2:
 tiny-warning@^1.0.0, tiny-warning@^1.0.3:
   version "1.0.3"
   resolved "https://registry.npmjs.org/tiny-warning/-/tiny-warning-1.0.3.tgz"
-
-tippy.js@5.1.2:
-  version "5.1.2"
-  resolved "https://registry.npmjs.org/tippy.js/-/tippy.js-5.1.2.tgz"
-  dependencies:
-    popper.js "^1.16.0"
 
 title-case@^2.1.0:
   version "2.1.1"
