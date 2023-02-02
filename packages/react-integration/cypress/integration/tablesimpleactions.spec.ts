@@ -20,14 +20,14 @@ describe('Table Simple Actions Test', () => {
   });
 
   it('Verify dropdown toggle', () => {
-    cy.get('td .pf-c-dropdown__toggle')
+    cy.get('td .pf-c-menu-toggle')
       .first()
       .should('exist');
-    cy.get('td .pf-c-dropdown__toggle')
+    cy.get('td .pf-c-menu-toggle')
       .first()
       .click();
-    cy.get('.pf-c-dropdown__menu').should('exist');
-    cy.get('.pf-c-dropdown__menu-item')
+    cy.get('.pf-c-menu').should('exist');
+    cy.get('.pf-c-menu__item')
       .first()
       .click();
   });

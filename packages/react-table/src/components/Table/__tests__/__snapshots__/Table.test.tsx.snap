@@ -157,6 +157,7 @@ exports[`Table Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -234,6 +235,7 @@ exports[`Table Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -311,6 +313,7 @@ exports[`Table Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -388,6 +391,7 @@ exports[`Table Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -465,6 +469,7 @@ exports[`Table Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -542,6 +547,7 @@ exports[`Table Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -619,6 +625,7 @@ exports[`Table Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -696,6 +703,7 @@ exports[`Table Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -773,6 +781,7 @@ exports[`Table Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -5383,6 +5392,7 @@ exports[`Table Simple Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -5460,6 +5470,7 @@ exports[`Table Simple Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -5537,6 +5548,7 @@ exports[`Table Simple Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -5614,6 +5626,7 @@ exports[`Table Simple Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -5691,6 +5704,7 @@ exports[`Table Simple Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -5768,6 +5782,7 @@ exports[`Table Simple Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -5845,6 +5860,7 @@ exports[`Table Simple Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -5922,6 +5938,7 @@ exports[`Table Simple Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -5999,6 +6016,7 @@ exports[`Table Simple Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain"
                 type="button"
               >
@@ -6076,6 +6094,7 @@ exports[`Table Simple Actions table 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Kebab toggle"
                 class="pf-c-menu-toggle pf-m-plain pf-m-disabled"
                 disabled=""
                 type="button"

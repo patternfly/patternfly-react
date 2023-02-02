@@ -97,7 +97,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       role={role}
       className={css(className)}
       ref={menuRef}
-      onSelect={(event, itemId) => onSelect(event, itemId)}
+      onSelect={(event, itemId) => onSelect && onSelect(event, itemId)}
       isPlain={isPlain}
       selected={selected}
       {...(minWidth && {

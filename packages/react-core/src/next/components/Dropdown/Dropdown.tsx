@@ -103,7 +103,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
     <Menu
       className={css(className)}
       ref={menuRef}
-      onSelect={(event, itemId) => onSelect(event, itemId)}
+      onSelect={(event, itemId) => onSelect && onSelect(event, itemId)}
       isPlain={isPlain}
       isScrollable={isScrollable}
       {...(minWidth && {
