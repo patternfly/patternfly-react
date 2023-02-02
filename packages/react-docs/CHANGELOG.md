@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.103.66](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.103.65...@patternfly/react-docs@5.103.66) (2023-02-02)
+
+
+### Bug Fixes
+
+* **docs:** update release notes date to bump docs version ([#8641](https://github.com/patternfly/patternfly-react/issues/8641)) ([91f26c7](https://github.com/patternfly/patternfly-react/commit/91f26c77c970c135028b60e647dfd0642cddeecd))
+
+
+
+
+
 ## [5.103.65](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.103.64...@patternfly/react-docs@5.103.65) (2023-02-01)
 
 **Note:** Version bump only for package @patternfly/react-docs
