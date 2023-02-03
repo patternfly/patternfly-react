@@ -3,18 +3,24 @@ import React from 'react';
 
 interface WizardDemoState {
   isOpen: boolean;
+  isOpenWithRole: boolean;
 }
 
 export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, WizardDemoState> {
   static displayName = 'WizardDemo';
   state = {
-    isOpen: false
+    isOpen: false,
+    isOpenWithRole: false
   };
 
   handleModalToggle = () => {
     this.setState(({ isOpen }) => ({
       isOpen: !isOpen
     }));
+  };
+
+  handleRoleWizardToggle = () => {
+    this.setState(({ isOpenWithRole }) => ({ isOpenWithRole: !isOpenWithRole }));
   };
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -59,6 +65,22 @@ export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>,
         stepNavItemProps: { navItemComponent: 'button', href: 'hhttps://www.patternfly.org/v4/' }
       }
     ];
+
+    const stepsOnOverflow: WizardStep[] = [
+      {
+        name: 'Step without overflow',
+        component: <p>Step 1</p>
+      },
+      {
+        name: 'Step with overflow',
+        component: (
+          <div style={{ height: '800px' }}>
+            <p>Step 2</p>
+            <button onClick={this.handleRoleWizardToggle}>Open wizard in modal</button>
+          </div>
+        )
+      }
+    ];
     return (
       <React.Fragment>
         <Button id="launchWiz" variant="primary" onClick={this.handleModalToggle}>
@@ -92,6 +114,26 @@ export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>,
           steps={stepsWithAnchorLinks}
           startAtStep={1}
           height={500}
+        />
+        <Wizard
+          title="Wizard with focusable content on overflow"
+          description="This wizard has content that is focusable only when the content causes an overflow"
+          id="wizard-focusable-overflow"
+          steps={stepsOnOverflow}
+          startAtStep={1}
+          height={500}
+          mainAriaLabel="Step content"
+        />
+        <Wizard
+          title="Wizard with role"
+          description="This wizard has a body that has a role of region only when content overflows and when the wizard is not in a modal."
+          id="wizard-correct-role"
+          steps={stepsOnOverflow}
+          startAtStep={1}
+          height={500}
+          mainAriaLabel="Step content"
+          onClose={this.handleRoleWizardToggle}
+          {...(this.state.isOpenWithRole && { isOpen: true })}
         />
       </React.Fragment>
     );

@@ -20,4 +20,28 @@ describe('Wizard Demo Test', () => {
   it('Verify in page wizard displays on page render', () => {
     cy.get('#inPageWizId.pf-c-wizard').should('exist');
   });
+
+  it('Verify wizard step content is focusable only if content overflows', () => {
+    cy.get('#wizard-focusable-overflow .pf-c-wizard__main').should('not.have.attr', 'tabindex');
+    cy.get('#wizard-focusable-overflow .pf-c-wizard__main').click();
+    cy.get('#wizard-focusable-overflow .pf-c-wizard__main').should('not.have.focus');
+    cy.get('#wizard-focusable-overflow button.pf-c-wizard__nav-link')
+      .last()
+      .click();
+    cy.get('#wizard-focusable-overflow .pf-c-wizard__main').should('have.attr', 'tabindex');
+    cy.get('#wizard-focusable-overflow .pf-c-wizard__main').click();
+    cy.get('#wizard-focusable-overflow .pf-c-wizard__main').should('have.focus');
+  });
+
+  it('Verify role attribute is applied correctly', () => {
+    cy.get('#wizard-correct-role .pf-c-wizard__main').should('not.have.attr', 'role');
+    cy.get('#wizard-correct-role button.pf-c-wizard__nav-link')
+      .last()
+      .click();
+    cy.get('#wizard-correct-role .pf-c-wizard__main').should('have.attr', 'role');
+    cy.get('#wizard-correct-role .pf-c-wizard__main button').click();
+    // Within a modal, wizard body uses the <main> element and should not have a role applied
+    cy.get('#wizard-correct-role .pf-c-wizard__main').should('not.have.attr', 'role');
+    cy.get('#wizard-correct-role .pf-c-wizard__close').click();
+  });
 });
