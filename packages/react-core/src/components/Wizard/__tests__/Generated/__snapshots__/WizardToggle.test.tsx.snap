@@ -44,8 +44,6 @@ exports[`WizardToggle should match snapshot (auto-generated) 1`] = `
       class="pf-c-wizard__inner-wrap"
     >
       <div
-        aria-label="null"
-        aria-labelledby="null"
         class="pf-c-wizard__main"
       >
         <div

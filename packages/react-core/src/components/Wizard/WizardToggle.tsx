@@ -23,9 +23,13 @@ export interface WizardToggleProps {
   onNavToggle: (isOpen: boolean) => void;
   /** The button's aria-label */
   'aria-label'?: string;
-  /** Sets aria-labelledby on the main element */
+  /** Adds an accessible name to the wizard body by passing the the id of one or more elements.
+   * The aria-labelledby will only be applied when the body content overflows and renders a scrollbar.
+   */
   mainAriaLabelledBy?: string;
-  /** The main's aria-label */
+  /** Adds an accessible name to the wizard body when the body content overflows and renders
+   * a scrollbar.
+   */
   mainAriaLabel?: string;
   /** If the wizard is in-page */
   isInPage?: boolean;

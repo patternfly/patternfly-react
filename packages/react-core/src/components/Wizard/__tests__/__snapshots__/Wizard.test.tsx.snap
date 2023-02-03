@@ -212,7 +212,6 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
           </ol>
         </nav>
         <div
-          aria-labelledby="pf-wizard-title-1"
           class="pf-c-wizard__main"
         >
           <div
@@ -460,7 +459,6 @@ exports[`Wizard Wizard should match snapshot 1`] = `
           </ol>
         </nav>
         <div
-          aria-labelledby="pf-wizard-title-0"
           class="pf-c-wizard__main"
         >
           <div
