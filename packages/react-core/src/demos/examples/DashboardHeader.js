@@ -143,11 +143,7 @@ export default class DashboardHeader extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar" isFullHeight isStatic>
         <ToolbarContent>
-          <ToolbarGroup
-            variant="icon-button-group"
-            aligh="right"
-            spacer={{ default: 'spacerNone', md: 'spacerMd' }}
-          >
+          <ToolbarGroup variant="icon-button-group" align="right" spacer={{ default: 'spacerNone', md: 'spacerMd' }}>
             {notificationBadge ? (
               notificationBadge
             ) : (
