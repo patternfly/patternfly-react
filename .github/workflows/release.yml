@@ -38,7 +38,12 @@ jobs:
         with:
           path: |
             packages/*/dist
+            packages/*/next
+            packages/*/deprecated
+            packages/*/components
             packages/react-styles/css
+            packages/react-core/layouts
+            packages/react-core/helpers
           key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build && yarn build:umd
@@ -117,7 +122,12 @@ jobs:
         with:
           path: |
             packages/*/dist
+            packages/*/next
+            packages/*/deprecated
+            packages/*/components
             packages/react-styles/css
+            packages/react-core/layouts
+            packages/react-core/helpers
           key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build && yarn build:umd
@@ -161,7 +171,12 @@ jobs:
         with:
           path: |
             packages/*/dist
+            packages/*/next
+            packages/*/deprecated
+            packages/*/components
             packages/react-styles/css
+            packages/react-core/layouts
+            packages/react-core/helpers
           key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build && yarn build:umd
@@ -216,7 +231,12 @@ jobs:
         with:
           path: |
             packages/*/dist
+            packages/*/next
+            packages/*/deprecated
+            packages/*/components
             packages/react-styles/css
+            packages/react-core/layouts
+            packages/react-core/helpers
           key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build && yarn build:umd
@@ -267,7 +287,12 @@ jobs:
         with:
           path: |
             packages/*/dist
+            packages/*/next
+            packages/*/deprecated
+            packages/*/components
             packages/react-styles/css
+            packages/react-core/layouts
+            packages/react-core/helpers
           key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build && yarn build:umd
@@ -316,7 +341,12 @@ jobs:
         with:
           path: |
             packages/*/dist
+            packages/*/next
+            packages/*/deprecated
+            packages/*/components
             packages/react-styles/css
+            packages/react-core/layouts
+            packages/react-core/helpers
           key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build && yarn build:umd

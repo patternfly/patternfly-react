@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 import { Button, ButtonVariant } from '../../../components/Button';
-import { isCustomWizardFooter, WizardControlStep, WizardNavStepFunction } from './types';
+import { isCustomWizardFooter, WizardStepType } from './types';
 
 /**
  * Hosts the standard structure of a footer with ties to the active step so that text for buttons can vary from step to step.
@@ -12,13 +12,13 @@ import { isCustomWizardFooter, WizardControlStep, WizardNavStepFunction } from '
 
 export interface WizardFooterProps {
   /** The active step */
-  activeStep: WizardControlStep;
+  activeStep: WizardStepType;
   /** Next button callback */
-  onNext: () => WizardNavStepFunction | void | Promise<void>;
+  onNext: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
   /** Back button callback */
-  onBack: () => WizardNavStepFunction | void | Promise<void>;
+  onBack: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
   /** Cancel link callback */
-  onClose: () => void;
+  onClose: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Custom text for the Next button. The current step's nextButtonText takes precedence. */
   nextButtonText?: React.ReactNode;
   /** Custom text for the Back button */
@@ -35,6 +35,10 @@ export interface WizardFooterProps {
   isCancelHidden?: boolean;
 }
 
+/**
+ * Applies default wizard footer styling any number of child elements.
+ */
+
 interface WizardFooterWrapperProps {
   children: React.ReactNode;
 }
@@ -44,7 +48,7 @@ export const WizardFooterWrapper = ({ children }: WizardFooterWrapperProps) => (
 );
 
 export const WizardFooter = ({ activeStep, ...internalProps }: WizardFooterProps) => {
-  const activeStepFooter = !isCustomWizardFooter(activeStep.footer) && activeStep.footer;
+  const activeStepFooter = !isCustomWizardFooter(activeStep?.footer) && activeStep?.footer;
   return <InternalWizardFooter {...internalProps} {...activeStepFooter} />;
 };
 

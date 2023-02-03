@@ -18,21 +18,6 @@ test('renders step when child is of type WizardStep', () => {
   expect(screen.getByText('Step content')).toBeVisible();
 });
 
-test('renders step when child has required props; name, id, children', () => {
-  const CustomStep = props => <div {...props} />;
-
-  render(
-    <Wizard>
-      <CustomStep id="test-step" name="Test step">
-        Custom step content
-      </CustomStep>
-    </Wizard>
-  );
-
-  expect(screen.getByRole('button', { name: 'Test step' })).toBeVisible();
-  expect(screen.getByText('Custom step content')).toBeVisible();
-});
-
 test('renders a header when specified', () => {
   render(
     <Wizard header="Some header">
@@ -101,7 +86,7 @@ test('renders default nav with custom props', () => {
   };
 
   render(
-    <Wizard id="wizard-id" nav={nav} isStepVisitRequired>
+    <Wizard id="wizard-id" nav={nav} isVisitRequired>
       <WizardStep id="step-1" name="Test step 1" steps={[<WizardStep id="nested-step" name="Nested step" />]} />
       <WizardStep id="step-2" name="Test step 2" />
     </Wizard>
@@ -111,7 +96,6 @@ test('renders default nav with custom props', () => {
 
   expect(navElement).toBeVisible();
   expect(navElement).toHaveAttribute('aria-labelledby', 'wizard-id');
-  expect(screen.getByRole('button', { name: 'Test step 1, visited' }).parentElement).toHaveClass('pf-m-expandable');
   expect(screen.getByRole('button', { name: 'Test step 2' })).toHaveAttribute('disabled');
 });
 
@@ -183,7 +167,7 @@ test('calls onNavByIndex on nav item click', async () => {
   const onNavByIndex = jest.fn();
 
   render(
-    <Wizard onNavByIndex={onNavByIndex}>
+    <Wizard onStepChange={onNavByIndex}>
       <WizardStep id="step-1" name="Test step 1" />
       <WizardStep id="step-2" name="Test step 2" />
     </Wizard>
@@ -199,7 +183,7 @@ test('calls onNext and not onSave on next button click when not on the last step
   const onSave = jest.fn();
 
   render(
-    <Wizard onNext={onNext} onSave={onSave}>
+    <Wizard onStepChange={onNext} onSave={onSave}>
       <WizardStep id="step-1" name="Test step 1" />
       <WizardStep id="step-2" name="Test step 2" />
     </Wizard>
@@ -216,7 +200,7 @@ test('calls onBack on back button click', async () => {
   const onBack = jest.fn();
 
   render(
-    <Wizard onBack={onBack}>
+    <Wizard onStepChange={onBack}>
       <WizardStep id="step-1" name="Test step 1" />
       <WizardStep id="step-2" name="Test step 2" />
     </Wizard>
@@ -298,13 +282,18 @@ test('does not render inactive step content', async () => {
   expect(screen.getByText('Step 2 content')).toBeVisible();
 });
 
-test('parent steps have collapsed sub-steps by default unless the step is active', async () => {
+test('parent steps have collapsed sub-steps when isExpandable is true unless the step is active', async () => {
   const user = userEvent.setup();
 
   render(
-    <Wizard startIndex={2}>
+    <Wizard>
       <WizardStep id="step-1" name="Test step 1" />
-      <WizardStep id="step-2" name="Test step 2" steps={[<WizardStep id="sub-step-1" name="Test sub step 1" />]} />
+      <WizardStep
+        id="step-2"
+        name="Test step 2"
+        isExpandable
+        steps={[<WizardStep id="sub-step-1" name="Test sub step 1" />]}
+      />
     </Wizard>
   );
 
@@ -313,6 +302,135 @@ test('parent steps have collapsed sub-steps by default unless the step is active
   await user.click(screen.getByRole('button', { name: 'Next' }));
 
   expect(screen.getByLabelText('Collapse step icon')).toBeVisible();
+});
+
+test('parent step can be expandable by setting isExpandable to true', () => {
+  render(
+    <Wizard>
+      <WizardStep
+        id="step-1"
+        name="Test step 1"
+        isExpandable
+        steps={[<WizardStep id="sub-step-1" name="Sub step 1" />]}
+      />
+    </Wizard>
+  );
+
+  expect(screen.queryByLabelText('step icon', { exact: false })).toBeVisible();
+});
+
+test('incrementally shows/hides steps based on the activeStep when isProgressive is enabled', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <Wizard isProgressive>
+      <WizardStep id="step-1" name="Test step 1">
+        Step 1 content
+      </WizardStep>
+      <WizardStep id="step-2" name="Test step 2">
+        Step 2 content
+      </WizardStep>
+      <WizardStep id="step-3" name="Test step 3">
+        Step 3 content
+      </WizardStep>
+    </Wizard>
+  );
+
+  const nextButton = screen.getByRole('button', {
+    name: 'Next'
+  });
+  const backButton = screen.getByRole('button', {
+    name: 'Back'
+  });
+
+  // Initially only the first nav item will be visible
+  expect(
+    screen.getByRole('button', {
+      name: 'Test step 1'
+    })
+  ).toBeVisible();
+  expect(
+    screen.queryByRole('button', {
+      name: 'Test step 2'
+    })
+  ).toBeNull();
+  expect(
+    screen.queryByRole('button', {
+      name: 'Test step 3'
+    })
+  ).toBeNull();
+
+  // Progressing to the next step will show steps 1 & 2
+  await user.click(nextButton);
+  expect(
+    screen.getByRole('button', {
+      name: 'Test step 1, visited'
+    })
+  ).toBeVisible();
+  expect(
+    screen.getByRole('button', {
+      name: 'Test step 2'
+    })
+  ).toBeVisible();
+  expect(
+    screen.queryByRole('button', {
+      name: 'Test step 3'
+    })
+  ).toBeNull();
+
+  // Progressing to the next step will show all steps
+  await user.click(nextButton);
+  expect(
+    screen.getByRole('button', {
+      name: 'Test step 1, visited'
+    })
+  ).toBeVisible();
+  expect(
+    screen.getByRole('button', {
+      name: 'Test step 2, visited'
+    })
+  ).toBeVisible();
+  expect(
+    screen.getByRole('button', {
+      name: 'Test step 3'
+    })
+  ).toBeVisible();
+
+  // Going back a step will hide step 3
+  await user.click(backButton);
+  expect(
+    screen.getByRole('button', {
+      name: 'Test step 1, visited'
+    })
+  ).toBeVisible();
+  expect(
+    screen.getByRole('button', {
+      name: 'Test step 2'
+    })
+  ).toBeVisible();
+  expect(
+    screen.queryByRole('button', {
+      name: 'Test step 3'
+    })
+  ).toBeNull();
+
+  // Going back a step will hide step 2 & 3
+  await user.click(backButton);
+  expect(
+    screen.getByRole('button', {
+      name: 'Test step 1'
+    })
+  ).toBeVisible();
+  expect(
+    screen.queryByRole('button', {
+      name: 'Test step 2'
+    })
+  ).toBeNull();
+  expect(
+    screen.queryByRole('button', {
+      name: 'Test step 3'
+    })
+  ).toBeNull();
 });
 
 test('parent step can be non-collapsible by setting isCollapsible to false', () => {

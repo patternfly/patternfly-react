@@ -63,7 +63,21 @@ export const AccordionFixedWithMultipleExpandBehavior: React.FunctionComponent =
         >
           Item four
         </AccordionToggle>
-        <AccordionContent id="ex2-expand4" isHidden={!expanded.includes('ex2-toggle4')} isFixed>
+        <AccordionContent
+          aria-labelledby="ex2-toggle4"
+          id="ex2-expand4"
+          isHidden={!expanded.includes('ex2-toggle4')}
+          isFixed
+        >
+          <p>
+            Donec vel posuere orci. Phasellus quis tortor a ex hendrerit efficitur. Aliquam lacinia ligula pharetra,
+            sagittis ex ut, pellentesque diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+            cubilia Curae; Vestibulum ultricies nulla nibh. Etiam vel dui fermentum ligula ullamcorper eleifend non quis
+            tortor. Morbi tempus ornare tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Mauris et velit neque. Donec ultricies condimentum mauris, pellentesque imperdiet libero
+            convallis convallis. Aliquam erat volutpat. Donec rutrum semper tempus. Proin dictum imperdiet nibh, quis
+            dapibus nulla. Integer sed tincidunt lectus, sit amet auctor eros.
+          </p>
           <p>
             Donec vel posuere orci. Phasellus quis tortor a ex hendrerit efficitur. Aliquam lacinia ligula pharetra,
             sagittis ex ut, pellentesque diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere

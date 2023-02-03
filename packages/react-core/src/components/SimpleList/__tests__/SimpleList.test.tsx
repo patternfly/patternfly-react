@@ -31,6 +31,11 @@ describe('SimpleList', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('renders aria-labelled content', () => {
+    const { asFragment } = render(<SimpleList aria-label="This is a simple list">{items}</SimpleList>);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('renders grouped content', () => {
     const { asFragment } = render(
       <SimpleList>

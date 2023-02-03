@@ -109,7 +109,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onTextInputChange = (value: string) => {
+  const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
   };
 
@@ -179,7 +179,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       onOpenChange={() => setIsOpen(false)}
       toggle={toggle}
     >
-      <SelectList>
+      <SelectList isAriaMultiselectable>
         {selectOptions.map((option, index) => (
           <SelectOption
             key={option.itemId || option.children}

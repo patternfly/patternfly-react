@@ -207,7 +207,7 @@ class ConsoleLogViewerToolbar extends React.Component {
       window.alert('Clear Logs!');
     };
 
-    this.onSearchChange = (value, event) => {
+    this.onSearchChange = (event, value) => {
       this.setState({
         searchValue: value,
         searchResultsCount: 3

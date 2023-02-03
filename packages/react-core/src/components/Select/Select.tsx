@@ -72,7 +72,7 @@ export interface SelectProps
   isCreateOptionOnTop?: boolean;
   /** Flag indicating if placeholder styles should be applied */
   hasPlaceholderStyle?: boolean;
-  /** @beta Flag indicating if the creatable option should set its value as a SelectOptionObject */
+  /** Flag indicating if the creatable option should set its value as a SelectOptionObject */
   isCreateSelectOptionObject?: boolean;
   /** Value to indicate if the select is modified to show that validation state.
    * If set to success, select will be modified to indicate valid state.
@@ -80,7 +80,7 @@ export interface SelectProps
    * If set to warning, select will be modified to indicate warning state.
    */
   validated?: 'success' | 'warning' | 'error' | 'default';
-  /** @beta Loading variant to display either the spinner or the view more text button */
+  /** Loading variant to display either the spinner or the view more text button */
   loadingVariant?: 'spinner' | SelectViewMoreObject;
   /** Text displayed in typeahead select to prompt the user to create an item */
   createText?: string;
@@ -94,6 +94,8 @@ export interface SelectProps
   isCheckboxSelectionBadgeHidden?: boolean;
   /** Id for select toggle element */
   toggleId?: string;
+  /** Ref for the select toggle element */
+  toggleRef?: React.Ref<HTMLButtonElement> | React.Ref<HTMLDivElement>;
   /** Adds accessible text to Select */
   'aria-label'?: string;
   /** Id of label for the Select aria-labelledby */
@@ -164,7 +166,7 @@ export interface SelectProps
   chipGroupComponent?: React.ReactNode;
   /** Flag for retaining keyboard-entered value in typeahead text field when focus leaves input away */
   isInputValuePersisted?: boolean;
-  /** @beta Flag for retaining filter results on blur from keyboard-entered typeahead text */
+  /** Flag for retaining filter results on blur from keyboard-entered typeahead text */
   isInputFilterPersisted?: boolean;
   /** Flag indicating the typeahead input value should reset upon selection */
   shouldResetOnSelect?: boolean;
@@ -979,6 +981,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       onClear,
       onBlur,
       toggleId,
+      toggleRef,
       isOpen,
       isGrouped,
       isPlain,
@@ -1320,6 +1323,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           id={selectToggleId}
           parentRef={this.parentRef}
           menuRef={this.menuComponentRef}
+          ref={toggleRef}
           {...(footer && { footerRef: this.footerRef })}
           isOpen={isOpen}
           isPlain={isPlain}

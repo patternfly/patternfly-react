@@ -53,7 +53,7 @@ exports[`EmptyState Main 1`] = `
         New HTTP Proxy
       </button>
       <div
-        class="pf-c-empty-state__secondary"
+        class=""
       >
         <button
           aria-disabled="false"

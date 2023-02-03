@@ -6,6 +6,6 @@ export * from './WizardStep';
 export * from './WizardNav';
 export * from './WizardNavItem';
 export * from './WizardHeader';
-export * from './hooks';
 export * from './types';
-export { useWizardContext } from './WizardContext';
+export { useWizardFooter } from './hooks';
+export { useWizardContext, WizardContext } from './WizardContext';

@@ -11,12 +11,12 @@ import { WizardNavItem } from './WizardNavItem';
  * This component is not exposed to consumers.
  */
 
-interface WizardNavInternalProps extends Pick<WizardProps, 'isStepVisitRequired'> {
+interface WizardNavInternalProps extends Pick<WizardProps, 'isVisitRequired' | 'isProgressive'> {
   nav: Partial<WizardNavProps>;
   isNavExpanded: boolean;
 }
 
-export const WizardNavInternal = ({ nav, isStepVisitRequired, isNavExpanded }: WizardNavInternalProps) => {
+export const WizardNavInternal = ({ nav, isVisitRequired, isProgressive, isNavExpanded }: WizardNavInternalProps) => {
   const { activeStep, steps, goToStepByIndex } = useWizardContext();
 
   const wizardNavProps: WizardNavProps = {
@@ -31,7 +31,7 @@ export const WizardNavInternal = ({ nav, isStepVisitRequired, isNavExpanded }: W
     <WizardNav {...wizardNavProps}>
       {steps.map((step, stepIndex) => {
         const hasVisitedNextStep = steps.some(step => step.index > stepIndex + 1 && step.isVisited);
-        const isStepDisabled = step.isDisabled || (isStepVisitRequired && !step.isVisited && !hasVisitedNextStep);
+        const isStepDisabled = step.isDisabled || (isVisitRequired && !step.isVisited && !hasVisitedNextStep);
         const customStepNavItem = isCustomWizardNavItem(step.navItem) && (
           <React.Fragment key={step.id}>
             {typeof step.navItem === 'function' ? step.navItem(step, activeStep, steps, goToStepByIndex) : step.navItem}
@@ -46,7 +46,7 @@ export const WizardNavInternal = ({ nav, isStepVisitRequired, isNavExpanded }: W
             const subStep = steps.find(step => step.id === subStepId);
             const hasVisitedNextStep = steps.some(step => step.index > subStep.index && step.isVisited);
             const isSubStepDisabled =
-              subStep.isDisabled || (isStepVisitRequired && !subStep.isVisited && !hasVisitedNextStep);
+              subStep.isDisabled || (isVisitRequired && !subStep.isVisited && !hasVisitedNextStep);
             const customSubStepNavItem = isCustomWizardNavItem(subStep.navItem) && (
               <React.Fragment key={subStep.id}>
                 {typeof subStep.navItem === 'function'
@@ -70,51 +70,59 @@ export const WizardNavInternal = ({ nav, isStepVisitRequired, isNavExpanded }: W
               hasActiveChild = true;
             }
 
-            return (
-              customSubStepNavItem || (
-                <WizardNavItem
-                  key={subStep.id}
-                  id={subStep.id}
-                  content={subStep.name}
-                  isCurrent={activeStep?.id === subStep.id}
-                  isDisabled={isSubStepDisabled}
-                  isVisited={subStep.isVisited}
-                  stepIndex={subStep.index}
-                  onNavItemClick={goToStepByIndex}
-                  status={subStep.status}
-                  {...subStep.navItem}
-                />
-              )
-            );
+            if (!isProgressive || (isProgressive && subStep.index <= activeStep.index)) {
+              return (
+                customSubStepNavItem || (
+                  <WizardNavItem
+                    key={subStep.id}
+                    id={subStep.id}
+                    content={subStep.name}
+                    isCurrent={activeStep?.id === subStep.id}
+                    isDisabled={isSubStepDisabled}
+                    isVisited={subStep.isVisited}
+                    stepIndex={subStep.index}
+                    onClick={() => goToStepByIndex(subStep.index)}
+                    status={subStep.status}
+                    {...subStep.navItem}
+                  />
+                )
+              );
+            }
           });
           const hasEnabledChildren = React.Children.toArray(subNavItems).some(
             child => React.isValidElement(child) && !child.props.isDisabled
           );
 
-          return (
-            customStepNavItem || (
-              <WizardNavItem
-                key={step.id}
-                id={step.id}
-                content={step.name}
-                isExpandable={step.isCollapsible ?? true}
-                isCurrent={hasActiveChild}
-                isDisabled={!hasEnabledChildren}
-                isVisited={step.isVisited}
-                stepIndex={firstSubStepIndex}
-                onNavItemClick={goToStepByIndex}
-                status={step.status}
-                {...step.navItem}
-              >
-                <WizardNav {...wizardNavProps} isInnerList>
-                  {subNavItems}
-                </WizardNav>
-              </WizardNavItem>
-            )
-          );
+          if (!isProgressive || (isProgressive && step.index <= activeStep.index)) {
+            return (
+              customStepNavItem || (
+                <WizardNavItem
+                  key={step.id}
+                  id={step.id}
+                  content={step.name}
+                  isExpandable={step.isExpandable}
+                  isCurrent={hasActiveChild}
+                  isDisabled={!hasEnabledChildren}
+                  isVisited={step.isVisited}
+                  stepIndex={firstSubStepIndex}
+                  onClick={() => goToStepByIndex(firstSubStepIndex)}
+                  status={step.status}
+                  {...step.navItem}
+                >
+                  <WizardNav {...wizardNavProps} isInnerList>
+                    {subNavItems}
+                  </WizardNav>
+                </WizardNavItem>
+              )
+            );
+          }
         }
 
-        if (isWizardBasicStep(step) && !step.isHidden) {
+        if (
+          isWizardBasicStep(step) &&
+          !step.isHidden &&
+          (!isProgressive || (isProgressive && step.index <= activeStep.index))
+        ) {
           return (
             customStepNavItem || (
               <WizardNavItem
@@ -125,7 +133,7 @@ export const WizardNavInternal = ({ nav, isStepVisitRequired, isNavExpanded }: W
                 isDisabled={isStepDisabled}
                 isVisited={step.isVisited}
                 stepIndex={step.index}
-                onNavItemClick={goToStepByIndex}
+                onClick={() => goToStepByIndex(step.index)}
                 status={step.status}
                 {...step.navItem}
               />

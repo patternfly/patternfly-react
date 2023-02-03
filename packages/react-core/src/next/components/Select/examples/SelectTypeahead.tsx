@@ -67,7 +67,7 @@ export const SelectBasic: React.FunctionComponent = () => {
     setFocusedItemIndex(null);
   };
 
-  const onTextInputChange = (value: string) => {
+  const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
     setFilterValue(value);
   };

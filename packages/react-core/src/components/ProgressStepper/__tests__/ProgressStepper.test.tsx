@@ -1,143 +1,57 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ProgressStepper } from '../ProgressStepper';
-import { ProgressStep } from '../ProgressStep';
-import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 
-describe('ProgressStepper', () => {
-  test('renders content', () => {
-    const { asFragment } = render(
-      <ProgressStepper>
-        <ProgressStep>First</ProgressStep>
-        <ProgressStep>Second</ProgressStep>
-        <ProgressStep>Third</ProgressStep>
-      </ProgressStepper>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('gets custom class and id', () => {
-    const { asFragment } = render(
-      <ProgressStepper className="custom-class" id="test-id">
-        <ProgressStep>First</ProgressStep>
-        <ProgressStep>Second</ProgressStep>
-        <ProgressStep>Third</ProgressStep>
-      </ProgressStepper>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders vertically', () => {
-    const { asFragment } = render(
-      <ProgressStepper isVertical>
-        <ProgressStep>First</ProgressStep>
-        <ProgressStep>Second</ProgressStep>
-        <ProgressStep>Third</ProgressStep>
-      </ProgressStepper>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders compact', () => {
-    const { asFragment } = render(
-      <ProgressStepper isCompact>
-        <ProgressStep>First</ProgressStep>
-        <ProgressStep>Second</ProgressStep>
-        <ProgressStep>Third</ProgressStep>
-      </ProgressStepper>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders center aligned', () => {
-    const { asFragment } = render(
-      <ProgressStepper isCenterAligned>
-        <ProgressStep>First</ProgressStep>
-        <ProgressStep>Second</ProgressStep>
-        <ProgressStep>Third</ProgressStep>
-      </ProgressStepper>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
-
-describe('ProgressStep', () => {
-  test('renders content', () => {
-    const { asFragment } = render(<ProgressStep>Title</ProgressStep>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  Object.values(['default', 'success', 'info', 'pending', 'warning', 'danger']).forEach(variant => {
-    test(`renders ${variant} variant`, () => {
-      const { asFragment } = render(
-        <ProgressStep
-          variant={variant as 'default' | 'success' | 'info' | 'pending' | 'warning' | 'danger'}
-          aria-label={variant}
-        >
-          {variant} step
-        </ProgressStep>
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
-
-  test('renders current', () => {
-    const { asFragment } = render(<ProgressStep isCurrent>Title</ProgressStep>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders help text styling', () => {
-    const { asFragment } = render(<ProgressStep popoverRender={() => <div></div>}>Title</ProgressStep>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders custom icon', () => {
-    const { asFragment } = render(<ProgressStep icon={<InProgressIcon />}>Title</ProgressStep>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders custom null icon - removing default from variant', () => {
-    const { asFragment } = render(
-      <ProgressStep icon={null} variant="success">
-        Title
-      </ProgressStep>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders description', () => {
-    const { asFragment } = render(<ProgressStep description="This is a description">Title</ProgressStep>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
-
-test('renders description class and text', () => {
+test('Renders without children', () => {
   render(
-    <ProgressStep
-      description="Test description"
-    >
-      Title
-    </ProgressStep>
+    <div data-testid="progress-stepper">
+      <ProgressStepper />
+    </div>
   );
-
-  expect(screen.getByText('Test description')).toBeVisible();
-  expect(screen.getByText('Test description')).toHaveClass('pf-c-progress-stepper__step-description');
+  expect(screen.getByTestId('progress-stepper').firstChild).toBeVisible();
 });
 
-test('renders description line break', () => {
-  render(
-    <ProgressStep
-      description={
-        <>
-          Testing description
-          <br />
-          Line break
-        </>
-      }
-      >
-        Title
-      </ProgressStep>
-  );
+test('Renders children', () => {
+  render(<ProgressStepper>Test</ProgressStepper>);
+  expect(screen.getByRole('list')).toBeVisible();
+});
 
-  expect(screen.getByText("Testing descriptionLine break")).toBeVisible();
+test('Renders with only class name pf-c-progress-stepper by default', () => {
+  render(<ProgressStepper>Test</ProgressStepper>);
+  expect(screen.getByRole('list')).toHaveClass('pf-c-progress-stepper', { exact: true });
+});
+
+test('Renders with class name pf-c-progress-stepper', () => {
+  render(<ProgressStepper>Test</ProgressStepper>);
+  expect(screen.getByRole('list')).toHaveClass('pf-c-progress-stepper');
+});
+
+test('Renders with custom class name when className prop is provided', () => {
+  render(<ProgressStepper className="custom-class">Test</ProgressStepper>);
+  expect(screen.getByRole('list')).toHaveClass('custom-class');
+});
+
+test('Renders with class name pf-m-center when isCenterAligned prop is passed', () => {
+  render(<ProgressStepper isCenterAligned>Test</ProgressStepper>);
+  expect(screen.getByRole('list')).toHaveClass('pf-m-center');
+});
+
+test('Renders with class name pf-m-vertical when isVertical prop is passed', () => {
+  render(<ProgressStepper isVertical>Test</ProgressStepper>);
+  expect(screen.getByRole('list')).toHaveClass('pf-m-vertical');
+});
+
+test('Renders with class name pf-m-compact when isCompact prop is passed', () => {
+  render(<ProgressStepper isCompact>Test</ProgressStepper>);
+  expect(screen.getByRole('list')).toHaveClass('pf-m-compact');
+});
+
+test('Renders with inherited element props spread to the component', () => {
+  render(<ProgressStepper aria-label="Test label">Test</ProgressStepper>);
+  expect(screen.getByRole('list')).toHaveAccessibleName('Test label');
+});
+
+test('Matches the snapshot', () => {
+  const { asFragment } = render(<ProgressStepper>Test</ProgressStepper>);
+  expect(asFragment()).toMatchSnapshot();
 });

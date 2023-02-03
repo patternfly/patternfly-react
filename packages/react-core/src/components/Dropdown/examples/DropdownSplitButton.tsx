@@ -54,7 +54,7 @@ export const DropdownSplitButton: React.FunctionComponent = () => {
       toggle={
         <DropdownToggle
           splitButtonItems={[
-            <DropdownToggleCheckbox id="split-button-checkbox" key="split-checkbox" aria-label="Select all" />
+            <DropdownToggleCheckbox id="split-button-toggle-checkbox" key="split-checkbox" aria-label="Select all" />
           ]}
           onToggle={onToggle}
           id="toggle-split-button"

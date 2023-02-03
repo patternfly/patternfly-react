@@ -29,6 +29,11 @@ Text components such as Text, TextList, TextListItem need to be placed within a 
 ```ts file="./TextOrderedList.tsx"
 ```
 
+### Plain list
+
+```ts file="./TextPlainList.tsx"
+```
+
 ### Description list
 
 ```ts file="./TextDescriptionList.tsx"

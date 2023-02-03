@@ -3,7 +3,101 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [5.0.0-alpha.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.92.6...@patternfly/react-icons@5.0.0-alpha.1) (2023-01-10)
+## 4.93.6 (2023-01-23)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## 4.93.5 (2023-01-19)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## 4.93.4 (2023-01-18)
+
+
+### Bug Fixes
+
+* **Tabs:** Removed isHelpAction prop from TabsAction ([#8560](https://github.com/patternfly/patternfly-react/issues/8560)) ([05fa1b0](https://github.com/patternfly/patternfly-react/commit/05fa1b0acfe886f09c5bdf4ad9f8e27878ee817e))
+
+
+
+
+
+## 4.93.3 (2022-12-08)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## 4.93.2 (2022-12-07)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## 4.93.1 (2022-12-01)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+# 4.93.0 (2022-11-16)
+
+
+### Features
+
+* **Tabs:** add TabAction, update core ver ([#8348](https://github.com/patternfly/patternfly-react/issues/8348)) ([8c584b4](https://github.com/patternfly/patternfly-react/commit/8c584b48f8e545cf226f785b873ee11eda505724))
+
+
+
+
+
+## 4.92.10 (2022-10-27)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## 4.92.9 (2022-10-26)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [4.92.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.92.7...@patternfly/react-icons@4.92.8) (2022-10-17)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## 4.92.7 (2022-10-14)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## 4.92.6 (2022-10-05)
 
 ### Bug Fixes
 

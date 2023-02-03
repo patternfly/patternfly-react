@@ -17,7 +17,7 @@ import { Popper } from '../../helpers';
  * be passed in as an object within an array to the search input component's attribute properrty.
  */
 
-export interface SearchAttribute {
+export interface SearchInputSearchAttribute {
   /** The search attribute's value to be provided in the search input's query string.
    * It should have no spaces and be unique for every attribute.
    */
@@ -32,11 +32,11 @@ export interface SearchAttribute {
  * the search input component's expandableInput property.
  */
 
-export interface ExpandableInput {
+export interface SearchInputExpandable {
   /** Flag to indicate if the search input is expanded. */
   isExpanded: boolean;
   /** Callback function to toggle the expandable search input. */
-  onToggleExpand: (isExpanded: boolean, event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  onToggleExpand: (event: React.SyntheticEvent<HTMLButtonElement>, isExpanded: boolean) => void;
   /** An accessible label for the expandable search input toggle. */
   toggleAriaLabel: string;
 }
@@ -58,11 +58,11 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** An accessible label for the search input. */
   'aria-label'?: string;
   /** Array of attribute values used for dynamically generated advanced search. */
-  attributes?: string[] | SearchAttribute[];
+  attributes?: string[] | SearchInputSearchAttribute[];
   /** Additional classes added to the search input. */
   className?: string;
   /** Object that makes the search input expandable/collapsible. */
-  expandableInput?: ExpandableInput;
+  expandableInput?: SearchInputExpandable;
   /* Additional elements added after the attributes in the form.
    * The new form elements can be wrapped in a form group component for automatic formatting. */
   formAdditionalItems?: React.ReactNode;
@@ -96,7 +96,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** Accessible label for the button to navigate to next result. */
   nextNavigationButtonAriaLabel?: string;
   /** A callback for when the input value changes. */
-  onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** A callback for when the user clicks the clear button. */
   onClear?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** A callback for when the user clicks to navigate to next result. */
@@ -105,8 +105,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** A callback for when the search button is clicked. */
   onSearch?: (
-    value: string,
     event: React.SyntheticEvent<HTMLButtonElement>,
+    value: string,
     attrValueMap: { [key: string]: string }
   ) => void;
   /** A callback for when the open advanced search button is clicked. */
@@ -128,6 +128,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   submitSearchButtonLabel?: string;
   /** Value of the search input. */
   value?: string;
+  /** Name attribue for the search input */
+  name?: string;
 }
 
 const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
@@ -161,6 +163,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   appendTo,
   zIndex = 9999,
   type = 'text',
+  name,
   ...props
 }: SearchInputProps) => {
   const [isSearchMenuOpen, setIsSearchMenuOpen] = React.useState(false);
@@ -203,9 +206,9 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     setIsSearchMenuOpen(isAdvancedSearchOpen);
   }, [isAdvancedSearchOpen]);
 
-  const onChangeHandler = (value: string, event: React.FormEvent<HTMLInputElement>) => {
+  const onChangeHandler = (event: React.FormEvent<HTMLInputElement>, value: string) => {
     if (onChange) {
-      onChange(value, event);
+      onChange(event, value);
     }
     setSearchValue(value);
   };
@@ -221,7 +224,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const onSearchHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (onSearch) {
-      onSearch(value, event, getAttrValueMap());
+      onSearch(event, value, getAttrValueMap());
     }
     setIsSearchMenuOpen(false);
   };
@@ -282,7 +285,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
   const onExpandHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     setSearchValue('');
-    onToggleExpand(isExpanded, event);
+    onToggleExpand(event, isExpanded);
     setFocusAfterExpandChange(true);
   };
 
@@ -301,6 +304,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         onKeyDown={onEnter}
         onChange={onChangeHandler}
         type={type}
+        name={name}
       />
       {renderUtilities && (
         <TextInputGroupUtilities>

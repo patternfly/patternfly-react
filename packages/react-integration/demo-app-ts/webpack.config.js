@@ -1,4 +1,7 @@
 const path = require('path');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ReactRefreshTypeScript = require('react-refresh-typescript');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,20 +11,22 @@ const staticDir = path.join(process.cwd(), 'static/');
 
 module.exports = (_env, argv) => {
   const isProd = argv.mode === 'production';
-
+  const useTsChecker = argv.hot;
   return {
     entry: path.resolve(__dirname, 'src/index.tsx'),
     output: {
       path: path.resolve('public'),
-      filename: '[name].[hash].bundle.js',
+      publicPath: '/',
+      filename: '[name].[fullhash].bundle.js',
       pathinfo: false // https://webpack.js.org/guides/build-performance/#output-without-path-info,
     },
     devServer: {
       hot: true,
       historyApiFallback: true,
       port: 3000,
-      clientLogLevel: 'info',
-      stats: 'minimal'
+      client: {
+        logging: 'info'
+      }
     },
     amd: false, // We don't use any AMD modules, helps performance
     mode: isProd ? 'production' : 'development',
@@ -30,22 +35,31 @@ module.exports = (_env, argv) => {
       rules: [
         {
           test: /\.[tj]sx?$/,
-          include: [path.join(__dirname, 'src')],
-          use: { loader: 'ts-loader' }
+          exclude: /node_modules/,
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+            getCustomTransformers: () => ({
+              before: [!isProd && ReactRefreshTypeScript()].filter(Boolean)
+            })
+          },
+          type: 'javascript/auto'
         },
         {
           test: /\.css$/,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: !isProd
-              }
-            },
-            {
-              loader: 'css-loader'
-            }
-          ]
+          use: !isProd
+            ? ['style-loader', 'css-loader']
+            : [
+                {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                    hmr: !isProd
+                  }
+                },
+                {
+                  loader: 'css-loader'
+                }
+              ]
         },
         {
           test: /\.(png|jpe?g|webp|gif|svg)$/,
@@ -54,7 +68,7 @@ module.exports = (_env, argv) => {
             options: {
               limit: 1024,
               fallback: 'file-loader',
-              name: '[name].[contenthash].[ext]',
+              name: '[name].[fullhash].[ext]',
               outputPath: 'images/'
             }
           }
@@ -74,7 +88,15 @@ module.exports = (_env, argv) => {
       ]
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js']
+      extensions: ['.ts', '.tsx', '.js'],
+      alias: isProd
+        ? {}
+        : {
+            '@patternfly/react-core$': path.resolve(__dirname, '../../../packages/react-core/src/index'),
+            '@patternfly/react-code-editor$': path.resolve(__dirname, '../../../packages/react-code-editor/src/index'),
+            '@patternfly/react-table$': path.resolve(__dirname, '../../../packages/react-table/src/index'),
+            '@patternfly/react-topology$': path.resolve(__dirname, '../../../packages/react-topology/src/index')
+          }
     },
     plugins: [
       new MiniCssExtractPlugin(
@@ -85,6 +107,30 @@ module.exports = (_env, argv) => {
               chunkFilename: '[name].[contenthash].css'
             }
       ),
+      useTsChecker &&
+        new ForkTsCheckerWebpackPlugin({
+          async: false,
+          typescript: {
+            configFile: isProd ? 'tsconfig.json' : 'tsconfig.dev.json'
+          },
+          eslint: {
+            enabled: !isProd,
+            files: [
+              './src/**/*.{ts,tsx}',
+              '../../../packages/react-core/src/**/*.{ts,tsx}',
+              '../../../packages/react-code-editor/src/**/*.{ts,tsx}',
+              '../../../packages/react-table/src/**/*.{ts,tsx}',
+              '../../../packages/react-topology/src/**/*.{ts,tsx}'
+            ],
+            options: {
+              ignorePath: '../../../.eslintignore'
+            }
+          },
+          issue: {
+            exclude: [{ origin: 'eslint', severity: 'warning' }]
+          }
+        }),
+      !isProd && new ReactRefreshWebpackPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'src/index.html')
@@ -92,7 +138,7 @@ module.exports = (_env, argv) => {
       new CopyPlugin({
         patterns: [{ from: staticDir, to: '' }]
       })
-    ],
+    ].filter(Boolean),
     stats: 'minimal'
   };
 };

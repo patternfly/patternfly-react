@@ -424,7 +424,7 @@ exports[`slider renders slider with input 1`] = `
           value="50"
         />
         <span
-          class="pf-c-input-group__text pf-m-plain"
+          class="pf-c-input-group__text"
         >
            %
         </span>
@@ -492,7 +492,7 @@ exports[`slider renders slider with input above thumb 1`] = `
             value="50"
           />
           <span
-            class="pf-c-input-group__text pf-m-plain"
+            class="pf-c-input-group__text"
           >
              %
           </span>

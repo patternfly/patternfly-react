@@ -41,7 +41,6 @@ export const TabsHelp: React.FunctionComponent = () => {
             actions={
               <>
                 <TabAction
-                  isHelpAction
                   aria-label={`Help action for ${tab}`}
                   ref={ref}
                   {...(tab === 'Help disabled' && { isDisabled: true })}

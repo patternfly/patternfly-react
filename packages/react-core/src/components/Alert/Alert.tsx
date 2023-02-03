@@ -57,8 +57,10 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   timeoutAnimation?: number;
   /** Title of the alert.  */
   title: React.ReactNode;
-  /** Sets the heading level to use for the alert title. Default is h4. */
+  /** @deprecated Sets the heading level to use for the alert title. Default is h4. */
   titleHeadingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /** Sets the element to use as the alert title. Default is h4. */
+  component?: keyof JSX.IntrinsicElements;
   /** Adds accessible text to the alert toggle. */
   toggleAriaLabel?: string;
   /** Position of the tooltip which is displayed if text is truncated. */
@@ -99,7 +101,8 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   actionClose,
   actionLinks,
   title,
-  titleHeadingLevel: TitleHeadingLevel = 'h4',
+  titleHeadingLevel,
+  component = 'h4',
   children = '',
   className = '',
   ouiaId,
@@ -126,6 +129,14 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   );
 
   const titleRef = React.useRef(null);
+  const TitleComponent = (titleHeadingLevel || component) as any;
+  if (titleHeadingLevel !== undefined) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'Alert: titleHeadingLevel is deprecated, please use the newer component prop instead to set the alert title element.'
+    );
+  }
+
   const divRef = React.useRef<HTMLDivElement>();
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   React.useEffect(() => {
@@ -145,12 +156,12 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
   const dismissed = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
   React.useEffect(() => {
-    timeout = timeout === true ? 8000 : Number(timeout);
-    if (timeout > 0) {
-      const timer = setTimeout(() => setTimedOut(true), timeout);
+    const calculatedTimeout = timeout === true ? 8000 : Number(timeout);
+    if (calculatedTimeout > 0) {
+      const timer = setTimeout(() => setTimedOut(true), calculatedTimeout);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [timeout]);
   React.useEffect(() => {
     const onDocumentFocus = () => {
       if (divRef.current) {
@@ -172,10 +183,10 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       const timer = setTimeout(() => setTimedOutAnimation(true), timeoutAnimation);
       return () => clearTimeout(timer);
     }
-  }, [containsFocus, isMouseOver]);
+  }, [containsFocus, isMouseOver, timeoutAnimation]);
   React.useEffect(() => {
     dismissed && onTimeout();
-  }, [dismissed]);
+  }, [dismissed, onTimeout]);
 
   const [isExpanded, setIsExpanded] = useState(false);
   const onToggleExpand = () => {
@@ -197,13 +208,13 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     return null;
   }
   const Title = (
-    <TitleHeadingLevel
+    <TitleComponent
       {...(isTooltipVisible && { tabIndex: 0 })}
       ref={titleRef}
       className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}
     >
       {getHeadingContent}
-    </TitleHeadingLevel>
+    </TitleComponent>
   );
 
   return (

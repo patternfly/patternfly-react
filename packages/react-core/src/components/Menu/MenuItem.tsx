@@ -114,7 +114,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     onDrillOut,
     flyoutRef,
     setFlyoutRef,
-    disableHover
+    disableHover,
+    role: menuRole
   } = React.useContext(MenuContext);
   let Component = (to ? 'a' : component) as any;
   if (hasCheckbox && !to) {
@@ -224,12 +225,13 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     onClick && onClick(event);
   };
   const _isOnPath = (isOnPath && isOnPath) || (drilldownItemPath && drilldownItemPath.includes(itemId)) || false;
-  let _drill: () => void;
+  let drill: (event: React.KeyboardEvent | React.MouseEvent) => void;
   if (direction) {
     if (direction === 'down') {
-      _drill = () =>
+      drill = event =>
         onDrillIn &&
         onDrillIn(
+          event,
           menuId,
           typeof drilldownMenu === 'function'
             ? (drilldownMenu() as any).props.id
@@ -237,7 +239,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           itemId
         );
     } else {
-      _drill = () => onDrillOut && onDrillOut(parentMenu, itemId);
+      drill = event => onDrillOut && onDrillOut(event, parentMenu, itemId);
     }
   }
   let additionalProps = {} as any;
@@ -289,6 +291,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       setFlyoutRef(null);
     }
   };
+  const isSelectMenu = menuRole === 'listbox';
 
   return (
     <li
@@ -315,12 +318,13 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             className={css(styles.menuItem, getIsSelected() && !hasCheckbox && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
             {...(!hasCheckbox && { disabled: isDisabled })}
-            {...(!hasCheckbox && !flyoutMenu && { role: 'menuitem' })}
+            {...(!hasCheckbox && !flyoutMenu && { role: isSelectMenu ? 'option' : 'menuitem' })}
+            {...(!hasCheckbox && !flyoutMenu && isSelectMenu && { 'aria-selected': getIsSelected() })}
             ref={innerRef}
             {...(!hasCheckbox && {
-              onClick: (event: any) => {
+              onClick: (event: React.KeyboardEvent | React.MouseEvent) => {
                 onItemSelect(event, onSelect);
-                _drill && _drill();
+                drill && drill(event);
                 flyoutMenu && handleFlyout(event);
               }
             })}

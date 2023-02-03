@@ -3,7 +3,7 @@ import { Button } from '../Button';
 import { ActionGroup, Form, FormGroup } from '../Form';
 import { TextInput } from '../TextInput';
 import { GenerateId, KeyTypes } from '../../helpers';
-import { SearchAttribute } from './SearchInput';
+import { SearchInputSearchAttribute } from './SearchInput';
 import { Panel, PanelMain, PanelMainBody } from '../Panel';
 import { css } from '@patternfly/react-styles';
 
@@ -13,7 +13,7 @@ export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivEle
    */
   advancedSearchDelimiter?: string;
   /** Array of attribute values used for dynamically generated advanced search. */
-  attributes?: string[] | SearchAttribute[];
+  attributes?: string[] | SearchInputSearchAttribute[];
   /** Additional classes added to the advanced search menu. */
   className?: string;
   /* Additional elements added after the attributes in the form.
@@ -26,13 +26,13 @@ export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivEle
   /** Flag for toggling the open/close state of the advanced search menu. */
   isSearchMenuOpen?: boolean;
   /** A callback for when the input value changes. */
-  onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** A callback for when the user clicks the clear button. */
   onClear?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** A callback for when the search button is clicked. */
   onSearch?: (
-    value: string,
     event: React.SyntheticEvent<HTMLButtonElement>,
+    value: string,
     attrValueMap: { [key: string]: string }
   ) => void;
   /** A callback for when the open advanced search button is clicked. */
@@ -124,7 +124,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   const onSearchHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (onSearch) {
-      onSearch(value, event, getAttrValueMap());
+      onSearch(event, value, getAttrValueMap());
     }
     if (isSearchMenuOpen) {
       onToggleAdvancedMenu(event as any);
@@ -150,7 +150,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
     });
 
     if (onChange) {
-      onChange(updatedValue.replace(/^\s+/g, ''), event);
+      onChange(event, updatedValue.replace(/^\s+/g, ''));
     }
   };
 
@@ -161,7 +161,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
 
   const buildFormGroups = () => {
     const formGroups = [] as React.ReactNode[];
-    attributes.forEach((attribute: string | SearchAttribute, index: number) => {
+    attributes.forEach((attribute: string | SearchInputSearchAttribute, index: number) => {
       const display = typeof attribute === 'string' ? attribute : attribute.display;
       const queryAttr = typeof attribute === 'string' ? attribute : attribute.attr;
       if (index === 0) {

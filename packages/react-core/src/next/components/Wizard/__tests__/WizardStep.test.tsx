@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 
 import { WizardStep, WizardStepProps } from '../WizardStep';
 import * as WizardContext from '../WizardContext';
-import { WizardControlStep } from '..';
+import { WizardStepType } from '..';
 
 const testStepProps: WizardStepProps = {
   id: 'test-step',
@@ -12,7 +12,7 @@ const testStepProps: WizardStepProps = {
   footer: <>Step footer</>
 };
 
-const testStep: WizardControlStep = {
+const testStep: WizardStepType = {
   ...testStepProps,
   index: 1
 };
@@ -24,9 +24,9 @@ const wizardContext: WizardContext.WizardContextProps = {
   steps: [testStep],
   activeStep: testStep,
   footer: <>Wizard footer</>,
-  onNext: jest.fn(),
-  onBack: jest.fn(),
-  onClose: jest.fn(),
+  goToNextStep: jest.fn(),
+  goToPrevStep: jest.fn(),
+  close: jest.fn(),
   goToStepById: jest.fn(),
   goToStepByName: jest.fn(),
   goToStepByIndex: jest.fn(),

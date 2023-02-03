@@ -33,7 +33,7 @@ export const cellActions = (
     rowIndex,
     columnIndex,
     column: {
-      extraParams: { dropdownPosition, dropdownDirection, actionsToggle }
+      extraParams: { dropdownPosition, dropdownDirection, actionsToggle, menuAppendTo }
     },
     property
   }: IExtra
@@ -60,6 +60,7 @@ export const cellActions = (
               items={resolvedActions}
               dropdownPosition={dropdownPosition}
               dropdownDirection={dropdownDirection}
+              menuAppendTo={menuAppendTo}
               isDisabled={resolvedIsDisabled}
               rowData={rowData}
               extraData={extraData}

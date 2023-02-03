@@ -79,5 +79,5 @@ module.exports = {
     'scrollable-region-focusable'
   ].join(','),
   ignoreIncomplete: true,
-  skip: '(mailto)|(/(extensions|developer-resources)/.+)'
+  skip: '(mailto)|(/(extensions|topology|developer-resources)/.+)'
 };

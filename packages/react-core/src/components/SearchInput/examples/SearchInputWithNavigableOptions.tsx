@@ -31,7 +31,7 @@ export const SearchInputWithNavigableOptions: React.FunctionComponent = () => {
     <SearchInput
       placeholder="Find by name"
       value={value}
-      onChange={onChange}
+      onChange={(_event, value) => onChange(value)}
       onClear={onClear}
       isNextNavigationButtonDisabled={currentResult === 3}
       isPreviousNavigationButtonDisabled={currentResult === 1}

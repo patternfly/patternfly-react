@@ -1,5 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SimpleList renders aria-labelled content 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-simple-list"
+  >
+    <ul
+      aria-label="This is a simple list"
+    >
+      <li
+        class=""
+      >
+        <button
+          class="pf-c-simple-list__item-link"
+          type="button"
+        >
+          Item 1
+        </button>
+      </li>
+      <li
+        class=""
+      >
+        <button
+          class="pf-c-simple-list__item-link"
+          type="button"
+        >
+          Item 2
+        </button>
+      </li>
+      <li
+        class=""
+      >
+        <button
+          class="pf-c-simple-list__item-link"
+          type="button"
+        >
+          Item 3
+        </button>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`SimpleList renders content 1`] = `
 <DocumentFragment>
   <div

@@ -26,14 +26,14 @@ export class MenuDrilldownDemo extends Component {
       });
     }
   };
-  drillIn = (fromMenuId: string, toMenuId: string, pathId: string) => {
+  drillIn = (_event: React.KeyboardEvent | React.MouseEvent, fromMenuId: string, toMenuId: string, pathId: string) => {
     this.setState({
       menuDrilledIn: [...this.state.menuDrilledIn, fromMenuId],
       drilldownPath: [...this.state.drilldownPath, pathId],
       activeMenu: toMenuId
     });
   };
-  drillOut = (toMenuId: string) => {
+  drillOut = (_event: React.KeyboardEvent | React.MouseEvent, toMenuId: string) => {
     const menuDrilledInSansLast = this.state.menuDrilledIn.slice(0, this.state.menuDrilledIn.length - 1);
     const pathSansLast = this.state.drilldownPath.slice(0, this.state.drilldownPath.length - 1);
     this.setState({

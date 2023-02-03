@@ -214,6 +214,8 @@ This selectable rows feature is intended for use when a table is used to present
 
 To use actions you can either specify an array of actions and pass that into the `Table`'s `actions` prop, or for more control you can use the `actionResolver` callback prop to add actions conditionally.
 
+If actions menus are getting clipped by other items on the page, such as sticky columns or rows, the `Table` can be passed a `actionsMenuAppendTo` prop to adjust where the actions menu is appended.
+
 ```ts file="LegacyTableActions.tsx"
 ```
 

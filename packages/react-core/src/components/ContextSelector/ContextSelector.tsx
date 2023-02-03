@@ -41,7 +41,7 @@ export interface ContextSelectorProps extends OUIAProps {
   /** Value in the Search field */
   searchInputValue?: string;
   /** Function callback called when user changes the Search Input */
-  onSearchInputChange?: (value: string) => void;
+  onSearchInputChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** Search Input placeholder */
   searchInputPlaceholder?: string;
   /** Function callback for when Search Button is clicked */
@@ -149,7 +149,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
                 submitSearchButtonLabel={searchButtonAriaLabel}
                 placeholder={searchInputPlaceholder}
                 onChange={onSearchInputChange}
-                onSearch={(value, event, _) => {
+                onSearch={(event, _value, _) => {
                   onSearchButtonClick(event);
                 }}
                 value={searchInputValue}

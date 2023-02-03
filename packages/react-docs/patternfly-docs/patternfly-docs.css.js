@@ -3,6 +3,8 @@ import '@patternfly/react-styles/src/css/components/Table/inline-edit.css'; // i
 import '@patternfly/react-styles/src/css/components/Topology/topology-controlbar.css';
 import '@patternfly/react-styles/src/css/components/Topology/topology-side-bar.css';
 import '@patternfly/react-styles/src/css/components/Topology/topology-view.css';
+import '@patternfly/react-styles/src/css/components/Topology/topology-components.css';
+import '@patternfly/react-styles/src/css/components/Topology/topology-pipelines.css';
 import '@patternfly/react-styles/src/css/layouts/Toolbar/toolbar.css';
 import '@patternfly/react-styles/src/css/components/Popper/Popper.css';
 

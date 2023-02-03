@@ -246,7 +246,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
     <SearchInput
       placeholder="Filter by server name"
       value={searchValue}
-      onChange={onSearchChange}
+      onChange={(_event, value) => onSearchChange(value)}
       onClear={() => onSearchChange('')}
     />
   );
