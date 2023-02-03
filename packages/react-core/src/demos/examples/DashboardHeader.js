@@ -145,7 +145,7 @@ export default class DashboardHeader extends React.Component {
         <ToolbarContent>
           <ToolbarGroup
             variant="icon-button-group"
-            alignment={{ default: 'alignRight' }}
+            aligh="right"
             spacer={{ default: 'spacerNone', md: 'spacerMd' }}
           >
             {notificationBadge ? (

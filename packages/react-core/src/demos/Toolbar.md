@@ -525,8 +525,8 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const items = (
       <React.Fragment>
-        <ToolbarGroup alignment={{ default: 'alignLeft' }}>{leftAlignedItems}</ToolbarGroup>
-        <ToolbarGroup alignment={{ default: 'alignRight' }}>{rightAlignedItems}</ToolbarGroup>
+        <ToolbarGroup align="left">{leftAlignedItems}</ToolbarGroup>
+        <ToolbarGroup align="right">{rightAlignedItems}</ToolbarGroup>
       </React.Fragment>
     );
 

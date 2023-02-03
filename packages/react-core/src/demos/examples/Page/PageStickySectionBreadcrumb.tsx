@@ -157,7 +157,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
       <ToolbarContent>
         <ToolbarGroup
           variant="icon-button-group"
-          alignment={{ default: 'alignRight' }}
+          align="right"
           spacer={{ default: 'spacerNone', md: 'spacerMd' }}
         >
           <ToolbarItem>

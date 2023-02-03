@@ -532,7 +532,7 @@ class CardViewBasic extends React.Component {
             </OverflowMenuControl>
           </OverflowMenu>
         </ToolbarItem>
-        <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>
+        <ToolbarItem variant="pagination" align="right">
           {this.renderPagination()}
         </ToolbarItem>
       </React.Fragment>

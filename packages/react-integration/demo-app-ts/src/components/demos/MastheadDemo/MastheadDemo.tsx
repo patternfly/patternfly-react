@@ -155,7 +155,7 @@ export class MastheadDemo extends React.Component {
                   ))}
                 </ContextSelector>
               </ToolbarItem>
-              <ToolbarGroup alignment={{ default: 'alignRight' }}>
+              <ToolbarGroup align="right">
                 <ToolbarItem visibility={{ default: 'hidden', lg: 'visible' }}>
                   <Dropdown
                     onSelect={this.onDropdownSelect}
