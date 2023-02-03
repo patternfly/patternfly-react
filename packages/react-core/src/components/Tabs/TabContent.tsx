@@ -15,7 +15,7 @@ export interface TabContentProps extends Omit<React.HTMLProps<HTMLElement>, 'ref
   activeKey?: number | string;
   /** uniquely identifies the controlling Tab if used outside Tabs component */
   eventKey?: number | string;
-  /** Callback for the section ref */
+  /** @hide Callback for the section ref */
   innerRef?: React.Ref<any>;
   /** id passed from parent to identify the content section */
   id: string;

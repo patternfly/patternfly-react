@@ -40,6 +40,7 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   keyHandler?: (index: number, innerIndex: number, position: string) => void;
   /** Flag indicating select has an inline text input for filtering */
   hasInlineFilter?: boolean;
+  /** @hide forwarded ref */
   innerRef?: any;
   /** Content rendered in the footer of the select menu */
   footer?: React.ReactNode;

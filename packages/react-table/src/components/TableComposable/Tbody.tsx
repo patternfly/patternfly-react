@@ -9,7 +9,7 @@ export interface TbodyProps extends React.HTMLProps<HTMLTableSectionElement> {
   className?: string;
   /** Modifies the body to allow for expandable rows */
   isExpanded?: boolean;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Flag indicating the <tbody> contains oddly striped rows. */
   isOddStriped?: boolean;

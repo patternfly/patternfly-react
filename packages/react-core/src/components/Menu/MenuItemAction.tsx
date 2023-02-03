@@ -19,7 +19,7 @@ export interface MenuItemActionProps extends Omit<React.HTMLProps<HTMLButtonElem
   isDisabled?: boolean;
   /** Identifies the action item in the onActionClick on the Menu */
   actionId?: any;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
 }
 

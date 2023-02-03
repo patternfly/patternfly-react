@@ -41,7 +41,7 @@ export interface MenuToggleProps
   icon?: React.ReactNode;
   /** Optional badge rendered inside the toggle, after the children content */
   badge?: BadgeProps | React.ReactNode;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<MenuToggleElement>;
 }
 

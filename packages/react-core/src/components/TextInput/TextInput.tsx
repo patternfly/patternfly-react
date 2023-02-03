@@ -61,7 +61,7 @@ export interface TextInputProps
   value?: string | number;
   /** Aria-label. The text input requires an associated id or aria-label. */
   'aria-label'?: string;
-  /** A reference object to attach to the text input box. */
+  /** @hide A reference object to attach to the text input box. */
   innerRef?: React.RefObject<any>;
   /** Trim text on left */
   isLeftTruncated?: boolean;

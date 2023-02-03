@@ -33,7 +33,7 @@ export interface TabProps
   isAriaDisabled?: boolean;
   /** Events to prevent when the button is in an aria-disabled state */
   inoperableEvents?: string[];
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Optional Tooltip rendered to a Tab. Should be <Tooltip> with appropriate props for proper rendering. */
   tooltip?: React.ReactElement<any>;

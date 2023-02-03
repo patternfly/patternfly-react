@@ -9,7 +9,7 @@ export interface TheadProps extends React.HTMLProps<HTMLTableSectionElement> {
   className?: string;
   /** Won't wrap the table head if true */
   noWrap?: boolean;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Indicates the <thead> contains a nested header */
   hasNestedHeader?: boolean;
