@@ -2,18 +2,26 @@
 
 exports[`Verify Skip To Content 1`] = `
 <DocumentFragment>
-  <a
-    class="pf-c-button pf-m-primary pf-c-skip-to-content"
-    href="#main-content"
-  />
+  <div
+    class="pf-c-skip-to-content"
+  >
+    <a
+      class="pf-c-button pf-m-primary"
+      href="#main-content"
+    />
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Verify Skip To Content if forced to display 1`] = `
 <DocumentFragment>
-  <a
-    class="pf-c-button pf-m-primary pf-c-skip-to-content"
-    href="#main-content"
-  />
+  <div
+    class="pf-c-skip-to-content"
+  >
+    <a
+      class="pf-c-button pf-m-primary"
+      href="#main-content"
+    />
+  </div>
 </DocumentFragment>
 `;

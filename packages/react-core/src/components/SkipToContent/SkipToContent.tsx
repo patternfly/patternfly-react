@@ -32,14 +32,16 @@ export class SkipToContent extends React.Component<SkipToContentProps> {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { children, className, href, show, type, ...rest } = this.props;
     return (
-      <a
-        {...rest}
-        className={css(buttonStyles.button, buttonStyles.modifiers.primary, styles.skipToContent, className)}
-        ref={this.componentRef}
-        href={href}
-      >
-        {children}
-      </a>
+      <div className={css(styles.skipToContent, className)}>
+        <a
+          {...rest}
+          className={css(buttonStyles.button, buttonStyles.modifiers.primary)}
+          ref={this.componentRef}
+          href={href}
+        >
+          {children}
+        </a>
+      </div>
     );
   }
 }
