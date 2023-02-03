@@ -27,9 +27,9 @@ function setDependency(dependencies, package, version) {
 }
 
 async function verifyPatternflyVersions() {
-  const packages = await new Project(__dirname).getPackages();
+  const packages = await Project.getPackages();
 
-  packages.forEach(package => {
+  packages.forEach((package) => {
     accumulateDependencies(package.name, { [package.name]: `^${package.version}` });
     accumulateDependencies(package.name, package.dependencies);
     accumulateDependencies(package.name, package.devDependencies);
@@ -52,13 +52,13 @@ async function verifyPatternflyVersions() {
         .sort((a, b) => semver.compare(a.replace(/^\^/, ''), b.replace(/^\^/, '')))
         .pop();
       Object.keys(versions)
-        .filter(version => version !== highestVersion)
-        .map(version => versions[version])
-        .forEach(mismatchedPackages => {
+        .filter((version) => version !== highestVersion)
+        .map((version) => versions[version])
+        .forEach((mismatchedPackages) => {
           console.log(`Writing ${dep}@${highestVersion}:`);
           mismatchedPackages
-            .map(package => packages.find(p => p.name === package))
-            .forEach(package => {
+            .map((package) => packages.find((p) => p.name === package))
+            .forEach((package) => {
               console.log(package.manifestLocation);
               setDependency(package.dependencies, dep, highestVersion);
               setDependency(package.devDependencies, dep, highestVersion);
