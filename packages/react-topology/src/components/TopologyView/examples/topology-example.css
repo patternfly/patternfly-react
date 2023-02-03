@@ -2,11 +2,16 @@
 .ws-react-t-custom-edges,
 .ws-react-t-custom-nodes,
 .ws-react-t-panzoom,
-.ws-react-t-selectable {
+.ws-react-t-selectable,
+.ws-react-t-with-sidebar {
   height: 600px;
   border: 1px solid var(--pf-global--palette--black-900);
   padding: 0;
   margin: var(--pf-global--spacer--md);
+}
+
+.ws-react-t-sidebar-demo .topology-example-sidebar {
+  max-width: 300px;
 }
 
 .pf-theme-dark .ws-react-t-topology-view {
