@@ -43,7 +43,7 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   name?: string;
 }
 
-export const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> = ({
+const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> = ({
   children,
   className,
   icon,
@@ -99,8 +99,10 @@ export const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainP
   );
 };
 
-export const TextInputGroupMain = React.forwardRef((props: TextInputGroupMainProps, ref: React.Ref<HTMLInputElement>) => (
-  <TextInputGroupMainBase innerRef={ref as React.MutableRefObject<any>} {...props} />
-));
+export const TextInputGroupMain = React.forwardRef(
+  (props: TextInputGroupMainProps, ref: React.Ref<HTMLInputElement>) => (
+    <TextInputGroupMainBase innerRef={ref as React.MutableRefObject<any>} {...props} />
+  )
+);
 
 TextInputGroupMain.displayName = 'TextInputGroupMain';
