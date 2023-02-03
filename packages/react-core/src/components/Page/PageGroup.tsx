@@ -23,7 +23,7 @@ export interface PageGroupProps extends React.HTMLProps<HTMLDivElement> {
   hasShadowBottom?: boolean;
   /** Flag indicating if the PageGroup has a scrolling overflow */
   hasOverflowScroll?: boolean;
-  /** Adds an accessible name to the page group. Required when the hasOverflowScroll prop is set to true. */
+  /** Adds an accessible name to the page group when the hasOverflowScroll prop is set to true. */
   'aria-label'?: string;
 }
 
@@ -57,8 +57,7 @@ export const PageGroup = ({
         hasOverflowScroll && styles.modifiers.overflowScroll,
         className
       )}
-      {...(hasOverflowScroll && { tabIndex: 0 })}
-      aria-label={ariaLabel}
+      {...(hasOverflowScroll && { tabIndex: 0, role: 'region', 'aria-label': ariaLabel })}
     >
       {children}
     </div>

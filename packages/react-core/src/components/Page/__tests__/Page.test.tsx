@@ -356,7 +356,12 @@ describe('Page', () => {
         tertiaryNav={nav}
         isBreadcrumbGrouped
         isTertiaryNavGrouped
-        groupProps={{ stickyOnBreakpoint: { default: 'bottom' }, hasShadowTop: true, 'aria-label': 'test' }}
+        groupProps={{
+          stickyOnBreakpoint: { default: 'bottom' },
+          hasShadowTop: true,
+          hasOverflowScroll: true,
+          'aria-label': 'test'
+        }}
       >
         <PageSection variant="default">Section with default background</PageSection>
         <PageSection variant="light">Section with light background</PageSection>

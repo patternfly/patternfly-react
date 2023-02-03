@@ -786,7 +786,9 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
     >
       <div
         aria-label="test"
-        class="pf-c-page__main-group pf-m-sticky-bottom pf-m-shadow-top"
+        class="pf-c-page__main-group pf-m-sticky-bottom pf-m-shadow-top pf-m-overflow-scroll"
+        role="region"
+        tabindex="0"
       >
         <div
           class="pf-c-page__main-nav"

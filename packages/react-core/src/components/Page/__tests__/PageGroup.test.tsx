@@ -35,7 +35,11 @@ describe('page group', () => {
   });
 
   test('Renders with the passed aria-label applied', () => {
-    render(<PageGroup aria-label="Test label">test</PageGroup>);
+    render(
+      <PageGroup aria-label="Test label" hasOverflowScroll>
+        test
+      </PageGroup>
+    );
 
     expect(screen.getByText('test')).toHaveAccessibleName('Test label');
   });

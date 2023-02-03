@@ -23,7 +23,7 @@ export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
 export const Accordion: React.FunctionComponent<AccordionProps> = ({
   children = null,
   className = '',
-  'aria-label': ariaLabel = '',
+  'aria-label': ariaLabel,
   headingLevel = 'h3',
   asDefinitionList = true,
   isBordered = false,
@@ -40,6 +40,7 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
         className
       )}
       aria-label={ariaLabel}
+      {...(!asDefinitionList && ariaLabel && { role: 'region' })}
       {...props}
     >
       <AccordionContext.Provider

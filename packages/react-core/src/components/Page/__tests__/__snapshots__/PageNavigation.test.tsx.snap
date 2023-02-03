@@ -48,6 +48,7 @@ exports[`page navigation Verify overflow scroll 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-page__main-nav pf-m-overflow-scroll"
+    role="region"
     tabindex="0"
   >
     test

@@ -25,8 +25,6 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
     event: React.FormEvent<HTMLInputElement> | React.SyntheticEvent<HTMLButtonElement>,
     value: string
   ) => void;
-  /** Accessibility label */
-  'aria-label'?: string;
   /** @beta Indicates if menu contains a flyout menu */
   containsFlyout?: boolean;
   /** @beta Indicating that the menu should have nav flyout styling */
@@ -250,7 +248,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
 
   render() {
     const {
-      'aria-label': ariaLabel,
       id,
       children,
       className,
@@ -339,7 +336,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             _isMenuDrilledIn && styles.modifiers.drilledIn,
             className
           )}
-          aria-label={ariaLabel}
           ref={this.menuRef}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}

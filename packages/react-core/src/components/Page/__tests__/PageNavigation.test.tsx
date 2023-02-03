@@ -39,7 +39,11 @@ describe('page navigation', () => {
   });
 
   test('Renders with the passed aria-label applied', () => {
-    render(<PageNavigation aria-label="Test label">test</PageNavigation>);
+    render(
+      <PageNavigation aria-label="Test label" hasOverflowScroll>
+        test
+      </PageNavigation>
+    );
 
     expect(screen.getByText('test')).toHaveAccessibleName('Test label');
   });

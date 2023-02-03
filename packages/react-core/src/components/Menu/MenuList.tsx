@@ -12,12 +12,15 @@ export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
    * for a non-checkbox menu. Only applies when the menu's role is "listbox".
    */
   isAriaMultiselectable?: boolean;
+  /** Adds an accessible name to the menu. */
+  'aria-label'?: string;
 }
 
 export const MenuList: React.FunctionComponent<MenuListProps> = ({
   children = null,
   className,
   isAriaMultiselectable = false,
+  'aria-label': ariaLabel,
   ...props
 }: MenuListProps) => {
   const { role } = React.useContext(MenuContext);
@@ -27,6 +30,7 @@ export const MenuList: React.FunctionComponent<MenuListProps> = ({
       role={role}
       {...(role === 'listbox' && { 'aria-multiselectable': isAriaMultiselectable })}
       className={css(styles.menuList, className)}
+      aria-label={ariaLabel}
       {...props}
     >
       {children}
