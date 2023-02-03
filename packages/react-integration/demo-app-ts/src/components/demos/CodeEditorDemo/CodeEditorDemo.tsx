@@ -76,7 +76,6 @@ export class CodeEditorDemo extends React.Component<CodeEditorProps, CodeEditorD
       <CodeEditorControl
         icon={<PlayIcon />}
         aria-label="Execute code"
-        toolTipText="Execute code"
         onClick={this.onExecuteCode}
         isVisible={code !== ''}
       />
