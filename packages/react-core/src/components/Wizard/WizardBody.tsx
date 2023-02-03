@@ -63,7 +63,7 @@ export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
     let observer = () => {};
 
     if (wizardBodyRef?.current) {
-      observer = getResizeObserver(wizardBodyRef.current, handleResizeWithDelay, false);
+      observer = getResizeObserver(wizardBodyRef.current, handleResizeWithDelay);
       const { offsetHeight, scrollHeight } = wizardBodyRef.current;
 
       setHasScrollbar(offsetHeight < scrollHeight);

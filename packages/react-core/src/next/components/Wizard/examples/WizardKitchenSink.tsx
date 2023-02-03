@@ -99,8 +99,8 @@ const StepContentWithDrawer = () => {
               </Button>
             )}
 
-            <FormGroup fieldId="some-text-input" label="Text input label">
-              <TextInput aria-label="Some Text Input Label" />
+            <FormGroup fieldId="kitchen-sink-step1-input" label="Text input label">
+              <TextInput id="kitchen-sink-step1-input" />
             </FormGroup>
           </Flex>
         </WizardBody>
