@@ -9,3 +9,37 @@ test('Check page vertical layout example against snapshot', () => {
   const { asFragment } = render(Header);
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('Test that passed logoComponent overrides default', () => {
+  const Header = (
+    <PageHeader logo="Logo" logoComponent="div" headerTools="PageHeaderTools | Avatar" onNavToggle={() => undefined} />
+  );
+  const { asFragment } = render(Header);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Test that logoComponent with href is an anchor', () => {
+  const Header = (
+    <PageHeader
+      logo="Logo"
+      logoProps={{ href: '#' }}
+      headerTools="PageHeaderTools | Avatar"
+      onNavToggle={() => undefined}
+    />
+  );
+  const { asFragment } = render(Header);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Test that logoComponent with onClick is a button', () => {
+  const Header = (
+    <PageHeader
+      logo="Logo"
+      logoProps={{ onClick: () => {} }}
+      headerTools="PageHeaderTools | Avatar"
+      onNavToggle={() => undefined}
+    />
+  );
+  const { asFragment } = render(Header);
+  expect(asFragment()).toMatchSnapshot();
+});
