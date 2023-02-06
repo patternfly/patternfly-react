@@ -146,16 +146,6 @@ To enable closeable tabs, pass the `onClose` property to `Tabs`, and to enable t
 
 ### Help action
 
-```ts file="./TabsHelp.tsx"
-```
-
-### Help and close actions
-
-```ts file="./TabsHelpAndClose.tsx"
-```
-
-### Help action
-
 ```ts file="./TabsHelp.tsx" isBeta
 ```
 
