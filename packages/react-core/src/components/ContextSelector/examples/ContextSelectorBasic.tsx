@@ -44,7 +44,7 @@ export const ContextSelectorBasic: React.FunctionComponent = () => {
     setOpen(!isOpen);
   };
 
-  const onSearchInputChange = (value: string) => {
+  const onSearchInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setSearchValue(value);
   };
 
