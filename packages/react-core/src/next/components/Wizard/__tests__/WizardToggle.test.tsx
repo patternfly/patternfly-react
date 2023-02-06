@@ -5,9 +5,9 @@ import userEvent from '@testing-library/user-event';
 
 import { KeyTypes } from '../../../../helpers';
 import { WizardToggle, WizardToggleProps } from '../WizardToggle';
-import { WizardControlStep } from '../types';
+import { WizardStepType } from '../types';
 
-const steps: WizardControlStep[] = [
+const steps: WizardStepType[] = [
   { id: 'id-1', name: 'First step', index: 1, component: <>First step content</> },
   { id: 'id-2', name: 'Second step', index: 2, component: <>Second step content</> }
 ];

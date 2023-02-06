@@ -33,7 +33,7 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   dataLabel?: string;
   /** Renders a checkbox or radio select */
   select?: TdSelectType;
-  /** Turns the cell into an actions cell */
+  /** Turns the cell into an actions cell. Recommended to use an ActionsColumn component as a child of the Td rather than this prop. */
   actions?: TdActionsType;
   /** Turns the cell into an expansion toggle and determines if the corresponding expansion row is open */
   expand?: TdExpandType;
@@ -154,6 +154,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
           extraParams: {
             dropdownPosition: actions?.dropdownPosition,
             dropdownDirection: actions?.dropdownDirection,
+            menuAppendTo: actions?.menuAppendTo,
             actionsToggle: actions?.actionsToggle
           }
         }

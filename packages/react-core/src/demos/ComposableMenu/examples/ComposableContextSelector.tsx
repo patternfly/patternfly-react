@@ -164,7 +164,7 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
             value={searchInputValue}
             type="search"
             placeholder="Search"
-            onChange={onSearchInputChange}
+            onChange={(_event, value) => onSearchInputChange(value)}
             onKeyPress={onEnterPressed}
             aria-labelledby="pf-context-selector-search-button-id-1"
           />

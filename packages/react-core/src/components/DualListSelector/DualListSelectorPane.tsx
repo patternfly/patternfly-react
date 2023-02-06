@@ -96,7 +96,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   const { isTree } = React.useContext(DualListSelectorContext);
 
   // only called when search input is dynamically built
-  const onChange = (newValue: string, e: React.FormEvent<HTMLInputElement>) => {
+  const onChange = (e: React.FormEvent<HTMLInputElement>, newValue: string) => {
     let filtered: React.ReactNode[];
     if (isTree) {
       filtered = options
@@ -168,7 +168,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
                 <SearchInput
                   onChange={isDisabled ? undefined : onChange}
                   onClear={
-                    onSearchInputClear ? onSearchInputClear : e => onChange('', e as React.FormEvent<HTMLInputElement>)
+                    onSearchInputClear ? onSearchInputClear : e => onChange(e as React.FormEvent<HTMLInputElement>, '')
                   }
                   isDisabled={isDisabled}
                   aria-label={searchInputAriaLabel}

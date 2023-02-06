@@ -66,13 +66,18 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
     setActiveMenu('rootMenu');
   };
 
-  const drillIn = (fromMenuId: string, toMenuId: string, pathId: string) => {
+  const drillIn = (
+    _event: React.KeyboardEvent | React.MouseEvent,
+    fromMenuId: string,
+    toMenuId: string,
+    pathId: string
+  ) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
     setDrilldownPath([...drilldownPath, pathId]);
     setActiveMenu(toMenuId);
   };
 
-  const drillOut = (toMenuId: string) => {
+  const drillOut = (_event: React.KeyboardEvent | React.MouseEvent, toMenuId: string) => {
     setMenuDrilledIn(menuDrilledIn.slice(0, menuDrilledIn.length - 1));
     setDrilldownPath(drilldownPath.slice(0, drilldownPath.length - 1));
     setActiveMenu(toMenuId);

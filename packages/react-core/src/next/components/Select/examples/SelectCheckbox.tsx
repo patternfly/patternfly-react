@@ -40,6 +40,7 @@ export const SelectCheckbox: React.FunctionComponent = () => {
 
   return (
     <Select
+      role="menu"
       id="checkbox-select"
       ref={menuRef}
       isOpen={isOpen}

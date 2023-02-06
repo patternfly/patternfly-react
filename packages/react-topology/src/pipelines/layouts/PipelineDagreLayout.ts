@@ -24,9 +24,9 @@ export class PipelineDagreLayout extends DagreLayout implements Layout {
     });
   }
   set nodesep(nodesep: number) {
-    super.dagreOptions.nodesep = nodesep;
+    this.dagreOptions.nodesep = nodesep;
   }
   set ranksep(ranksep: number) {
-    super.dagreOptions.ranksep = ranksep;
+    this.dagreOptions.ranksep = ranksep;
   }
 }

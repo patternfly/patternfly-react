@@ -28,6 +28,8 @@ export interface SelectProps extends MenuProps, OUIAProps {
   innerRef?: React.Ref<HTMLDivElement>;
   /** z-index of the select menu */
   zIndex?: number;
+  /** @beta Determines the accessible role of the select. For a checkbox select pass in "menu". */
+  role?: string;
 }
 
 const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
@@ -42,6 +44,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   minWidth,
   innerRef,
   zIndex = 9999,
+  role = 'listbox',
   ...props
 }: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -51,28 +54,27 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   const menuRef = (innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
   React.useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
-      if (!isOpen && toggleRef.current?.contains(event.target as Node)) {
-        // toggle was clicked open, focus on first menu item
-        if (event.key === 'Enter' || event.key === 'Space') {
-          setTimeout(() => {
-            const firstElement = menuRef?.current?.querySelector('li button:not(:disabled),li input:not(:disabled)');
-            firstElement && (firstElement as HTMLElement).focus();
-          }, 0);
-        }
-      }
       // Close the menu on tab or escape if onOpenChange is provided
       if (
         (isOpen && onOpenChange && menuRef.current?.contains(event.target as Node)) ||
         toggleRef.current?.contains(event.target as Node)
       ) {
         if (event.key === 'Escape' || event.key === 'Tab') {
-          onOpenChange(!isOpen);
+          onOpenChange(false);
           toggleRef.current?.focus();
         }
       }
     };
 
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClick = (event: MouseEvent) => {
+      // toggle was clicked open via keyboard, focus on first menu item
+      if (isOpen && toggleRef.current?.contains(event.target as Node) && event.detail === 0) {
+        setTimeout(() => {
+          const firstElement = menuRef?.current?.querySelector('li button:not(:disabled),li input:not(:disabled)');
+          firstElement && (firstElement as HTMLElement).focus();
+        }, 0);
+      }
+
       // If the event is not on the toggle and onOpenChange callback is provided, close the menu
       if (isOpen && onOpenChange && !toggleRef?.current?.contains(event.target as Node)) {
         if (isOpen && !menuRef.current?.contains(event.target as Node)) {
@@ -82,16 +84,17 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
     };
 
     window.addEventListener('keydown', handleMenuKeys);
-    window.addEventListener('click', handleClickOutside);
+    window.addEventListener('click', handleClick);
 
     return () => {
       window.removeEventListener('keydown', handleMenuKeys);
-      window.removeEventListener('click', handleClickOutside);
+      window.removeEventListener('click', handleClick);
     };
   }, [isOpen, menuRef, onOpenChange]);
 
   const menu = (
     <Menu
+      role={role}
       className={css(className)}
       ref={menuRef}
       onSelect={(event, itemId) => onSelect(event, itemId)}

@@ -3,6 +3,78 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.213.2 (2023-01-23)
+
+
+### Reverts
+
+* Revert "fix patternfly for function subtyping (#8497)" (#8582) ([5d93972](https://github.com/patternfly/patternfly-react/commit/5d939722466fbb365b767c620c4be9fe8b49e13b)), closes [#8497](https://github.com/patternfly/patternfly-react/issues/8497) [#8582](https://github.com/patternfly/patternfly-react/issues/8582)
+
+
+
+
+
+## 4.213.1 (2023-01-20)
+
+
+### Bug Fixes
+
+* **ExpandableSection:** made toggle button conditional with truncate variant ([#8570](https://github.com/patternfly/patternfly-react/issues/8570)) ([2385b96](https://github.com/patternfly/patternfly-react/commit/2385b966afd8e909eaabccea1d72934797364472))
+
+
+
+
+
+# [4.213.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.212.0...@patternfly/react-integration@4.213.0) (2023-01-19)
+
+
+### Features
+
+* **Accordion:** made scrollable content focusable ([#8515](https://github.com/patternfly/patternfly-react/issues/8515)) ([859c4d4](https://github.com/patternfly/patternfly-react/commit/859c4d4400ce73e5efe317ebffa65f207ce981cb))
+* **Menu:** added event param to onDrillIn and onDrillOut callbacks ([#8514](https://github.com/patternfly/patternfly-react/issues/8514)) ([a0bdf70](https://github.com/patternfly/patternfly-react/commit/a0bdf702fbd9024b754b80b659688d95a6aa7d2e))
+
+
+
+
+
+# 4.212.0 (2023-01-19)
+
+
+### Features
+
+* **Select:** add toggle ref ([#8528](https://github.com/patternfly/patternfly-react/issues/8528)) ([3b4dee7](https://github.com/patternfly/patternfly-react/commit/3b4dee77c8124fd42fbfcf974dd1f39cc1d2d246))
+
+
+
+
+
+## [4.211.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.211.1...@patternfly/react-integration@4.211.2) (2023-01-19)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.211.1 (2023-01-19)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# 4.211.0 (2023-01-18)
+
+
+### Features
+
+* **Label:** add event parameter ([#8544](https://github.com/patternfly/patternfly-react/issues/8544)) ([71491f5](https://github.com/patternfly/patternfly-react/commit/71491f5e8d48ba8b00f84e7472a142586a362f72))
+
+
+
+
+
 # [4.210.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.209.2...@patternfly/react-integration@4.210.0) (2023-01-13)
 
 

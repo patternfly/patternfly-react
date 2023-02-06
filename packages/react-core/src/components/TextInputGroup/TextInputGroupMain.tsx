@@ -39,6 +39,8 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   placeholder?: string;
   /** A reference object to attach to the input box */
   innerRef?: React.RefObject<any>;
+  /** Name for the input */
+  name?: string;
 }
 
 export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps> = ({
@@ -54,6 +56,7 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   value: inputValue,
   placeholder: inputPlaceHolder,
   innerRef,
+  name,
   ...props
 }: TextInputGroupMainProps) => {
   const { isDisabled } = React.useContext(TextInputGroupContext);
@@ -89,6 +92,7 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
           onBlur={onBlur}
           value={inputValue || ''}
           placeholder={inputPlaceHolder}
+          name={name}
         />
       </span>
     </div>

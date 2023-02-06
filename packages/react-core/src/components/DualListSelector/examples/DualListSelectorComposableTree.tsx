@@ -169,7 +169,11 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     const onChange = value => (isChosen ? setChosenFilter(value) : setAvailableFilter(value));
 
     return (
-      <SearchInput value={isChosen ? chosenFilter : availableFilter} onChange={onChange} onClear={() => onChange('')} />
+      <SearchInput
+        value={isChosen ? chosenFilter : availableFilter}
+        onChange={(_event, value) => onChange(value)}
+        onClear={() => onChange('')}
+      />
     );
   };
 

@@ -24,9 +24,9 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** @beta Additional props passed to the editable label text div. Optionally passing onInput and onBlur callbacks will allow finer custom text input control. */
   editableProps?: any;
   /** @beta Callback when an editable label completes an edit. */
-  onEditComplete?: (newText: string) => void;
+  onEditComplete?: (event: MouseEvent | KeyboardEvent, newText: string) => void;
   /** @beta Callback when an editable label cancels an edit. */
-  onEditCancel?: (previousText: string) => void;
+  onEditCancel?: (event: KeyboardEvent, previousText: string) => void;
   /** Flag indicating the label text should be truncated. */
   isTruncated?: boolean;
   /** Position of the tooltip which is displayed if text is truncated */
@@ -126,7 +126,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       !editableInputRef.current.contains(event.target as Node)
     ) {
       if (editableInputRef.current.value) {
-        onEditComplete && onEditComplete(editableInputRef.current.value);
+        onEditComplete && onEditComplete(event, editableInputRef.current.value);
       }
       setIsEditableActive(false);
     }
@@ -148,7 +148,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       event.preventDefault();
       event.stopImmediatePropagation();
       if (editableInputRef.current.value) {
-        onEditComplete && onEditComplete(editableInputRef.current.value);
+        onEditComplete && onEditComplete(event, editableInputRef.current.value);
       }
       setIsEditableActive(false);
       editableButtonRef?.current?.focus();
@@ -159,7 +159,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       // Reset div text to initial children prop - pre-edit
       if (editableInputRef.current.value) {
         editableInputRef.current.value = children as string;
-        onEditCancel && onEditCancel(children as string);
+        onEditCancel && onEditCancel(event, children as string);
       }
       setIsEditableActive(false);
       editableButtonRef?.current?.focus();

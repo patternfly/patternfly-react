@@ -14,6 +14,10 @@ export const WizardWithDrawer: React.FunctionComponent = () => {
 
   const drawerRef = React.useRef<HTMLSpanElement>(null);
 
+  const onExpandDrawer = () => {
+    drawerRef.current && drawerRef.current.focus();
+  };
+
   const onOpenClick = () => {
     setIsDrawerExpanded(true);
   };
@@ -117,6 +121,7 @@ export const WizardWithDrawer: React.FunctionComponent = () => {
       <Wizard
         height={400}
         isDrawerExpanded={isDrawerExpanded}
+        onExpandDrawer={onExpandDrawer}
         hasDrawer
         navAriaLabel={`${title} steps`}
         steps={steps}

@@ -42,6 +42,20 @@ describe('Select Test', () => {
       .should('exist');
   });
 
+  it('Verify Single Select closes on escape with internal ref', () => {
+    cy.get('#single-select')
+      .click()
+      .type('{esc}');
+    cy.focused().should('have.id', 'single-select');
+  });
+
+  it('Verify Single Select closes on escape with passed ref', () => {
+    cy.get('#single-ref-select')
+      .click()
+      .type('{esc}');
+    cy.focused().should('have.id', 'single-ref-select');
+  });
+
   it('Verify Description Select', () => {
     cy.get('#single-select-with-descriptions').click();
     cy.get('.pf-c-select__menu-footer').should('exist');

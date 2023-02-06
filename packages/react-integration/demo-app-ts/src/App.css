@@ -25,6 +25,16 @@
   color: #61dafb;
 }
 
+#webpack-dev-server-client-overlay,
+#react-refresh-overlay {
+  height: 75px !important;
+  min-height: 75px !important;
+  left: 50% !important;
+  top: 0px !important;
+  width: 400px !important;
+  position: absolute !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

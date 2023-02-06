@@ -24,7 +24,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   itemId?: any;
   /** Target navigation link. Should not be used if the flyout prop is defined. */
   to?: string;
-  /** @beta Flag indicating the item has a checkbox */
+  /** Flag indicating the item has a checkbox */
   hasCheck?: boolean;
   /** Flag indicating whether the item is active */
   isActive?: boolean;
@@ -114,7 +114,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     onDrillOut,
     flyoutRef,
     setFlyoutRef,
-    disableHover
+    disableHover,
+    role: menuRole
   } = React.useContext(MenuContext);
   let Component = (to ? 'a' : component) as any;
   if (hasCheck && !to) {
@@ -224,12 +225,13 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     onClick && onClick(event);
   };
   const _isOnPath = (isOnPath && isOnPath) || (drilldownItemPath && drilldownItemPath.includes(itemId)) || false;
-  let _drill: () => void;
+  let drill: (event: React.KeyboardEvent | React.MouseEvent) => void;
   if (direction) {
     if (direction === 'down') {
-      _drill = () =>
+      drill = event =>
         onDrillIn &&
         onDrillIn(
+          event,
           menuId,
           typeof drilldownMenu === 'function'
             ? (drilldownMenu() as any).props.id
@@ -237,7 +239,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           itemId
         );
     } else {
-      _drill = () => onDrillOut && onDrillOut(parentMenu, itemId);
+      drill = event => onDrillOut && onDrillOut(event, parentMenu, itemId);
     }
   }
   let additionalProps = {} as any;
@@ -289,6 +291,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       setFlyoutRef(null);
     }
   };
+  const isSelectMenu = menuRole === 'listbox';
 
   return (
     <li
@@ -315,12 +318,13 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             className={css(styles.menuItem, getIsSelected() && !hasCheck && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
             {...(!hasCheck && { disabled: isDisabled })}
-            {...(!hasCheck && !flyoutMenu && { role: 'menuitem' })}
+            {...(!hasCheck && !flyoutMenu && { role: isSelectMenu ? 'option' : 'menuitem' })}
+            {...(!hasCheck && !flyoutMenu && isSelectMenu && { 'aria-selected': getIsSelected() })}
             ref={innerRef}
             {...(!hasCheck && {
-              onClick: (event: any) => {
+              onClick: (event: React.KeyboardEvent | React.MouseEvent) => {
                 onItemSelect(event, onSelect);
-                _drill && _drill();
+                drill && drill(event);
                 flyoutMenu && handleFlyout(event);
               }
             })}

@@ -4,6 +4,8 @@ import { css } from '@patternfly/react-styles';
 import lineClamp from '@patternfly/react-tokens/dist/esm/c_expandable_section_m_truncate__content_LineClamp';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { PickOptional } from '../../helpers/typeUtils';
+import { debounce } from '../../helpers/util';
+import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export enum ExpandableSectionVariant {
   default = 'default',
@@ -61,6 +63,8 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
 
 interface ExpandableSectionState {
   isExpanded: boolean;
+  hasToggle: boolean;
+  previousWidth: number;
 }
 
 const setLineClamp = (lines: number, element: HTMLDivElement) => {
@@ -77,11 +81,15 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     super(props);
 
     this.state = {
-      isExpanded: props.isExpanded
+      isExpanded: props.isExpanded,
+      hasToggle: true,
+      previousWidth: undefined
     };
   }
 
   expandableContentRef = React.createRef<HTMLDivElement>();
+  observer: any = () => {};
+
   static defaultProps: PickOptional<ExpandableSectionProps> = {
     className: '',
     toggleText: '',
@@ -114,9 +122,16 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
   }
 
   componentDidMount() {
-    if (this.props.variant === ExpandableSectionVariant.truncate && this.props.truncateMaxLines) {
+    if (this.props.variant === ExpandableSectionVariant.truncate) {
       const expandableContent = this.expandableContentRef.current;
-      setLineClamp(this.props.truncateMaxLines, expandableContent);
+      this.setState({ previousWidth: expandableContent.offsetWidth });
+      this.observer = getResizeObserver(expandableContent, this.handleResize, false);
+
+      if (this.props.truncateMaxLines) {
+        setLineClamp(this.props.truncateMaxLines, expandableContent);
+      }
+
+      this.checkToggleVisibility();
     }
   }
 
@@ -127,8 +142,37 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     ) {
       const expandableContent = this.expandableContentRef.current;
       setLineClamp(this.props.truncateMaxLines, expandableContent);
+      this.checkToggleVisibility();
     }
   }
+
+  componentWillUnmount() {
+    if (this.props.variant === ExpandableSectionVariant.truncate) {
+      this.observer();
+    }
+  }
+
+  checkToggleVisibility = () => {
+    if (this.expandableContentRef?.current) {
+      const maxLines = this.props.truncateMaxLines || parseInt(lineClamp.value);
+      const totalLines =
+        this.expandableContentRef.current.scrollHeight /
+        parseInt(getComputedStyle(this.expandableContentRef.current).lineHeight);
+
+      this.setState({
+        hasToggle: totalLines > maxLines
+      });
+    }
+  };
+
+  resize = () => {
+    const { offsetWidth } = this.expandableContentRef.current;
+    if (this.state.previousWidth !== offsetWidth) {
+      this.setState({ previousWidth: offsetWidth });
+      this.checkToggleVisibility();
+    }
+  };
+  handleResize = debounce(this.resize, 250);
 
   render() {
     const {
@@ -210,7 +254,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
         >
           {children}
         </div>
-        {variant === ExpandableSectionVariant.truncate && expandableToggle}
+        {variant === ExpandableSectionVariant.truncate && this.state.hasToggle && expandableToggle}
       </div>
     );
   }

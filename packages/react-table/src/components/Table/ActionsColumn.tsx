@@ -22,6 +22,7 @@ export interface ActionsColumnProps {
   children?: React.ReactNode;
   items: IAction[];
   isDisabled?: boolean;
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
   dropdownPosition?: DropdownPosition;
   dropdownDirection?: DropdownDirection;
   rowData?: IRowData;
@@ -41,6 +42,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
     items: [] as IAction[],
     dropdownPosition: DropdownPosition.right,
     dropdownDirection: DropdownDirection.down,
+    menuAppendTo: 'inline',
     rowData: {} as IRowData,
     extraData: {} as IExtraData
   };
@@ -74,7 +76,16 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
 
   render() {
     const { isOpen } = this.state;
-    const { items, children, dropdownPosition, dropdownDirection, isDisabled, rowData, actionsToggle } = this.props;
+    const {
+      items,
+      children,
+      dropdownPosition,
+      dropdownDirection,
+      menuAppendTo,
+      isDisabled,
+      rowData,
+      actionsToggle
+    } = this.props;
 
     const actionsToggleClone = actionsToggle ? (
       actionsToggle({ onToggle: this.onToggle, isOpen, isDisabled })
@@ -106,6 +117,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
           toggle={actionsToggleClone}
           position={dropdownPosition}
           direction={dropdownDirection}
+          menuAppendTo={menuAppendTo}
           isOpen={isOpen}
           dropdownItems={items
             .filter(item => !item.isOutsideDropdown)

@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.94.18 (2023-01-23)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## 6.94.17 (2023-01-19)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## 6.94.16 (2023-01-18)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
 ## 6.94.15 (2022-12-08)
 
 **Note:** Version bump only for package @patternfly/react-charts

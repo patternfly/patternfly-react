@@ -22,6 +22,7 @@ export interface WizardBodyProps {
   /** Flag indicating the wizard drawer is expanded */
   isDrawerExpanded?: boolean;
   /** Callback function for when the drawer is toggled */
+  onExpandDrawer?: () => void;
 }
 
 export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
@@ -32,6 +33,7 @@ export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
   mainComponent = 'div',
   hasDrawer,
   isDrawerExpanded,
+  onExpandDrawer,
   activeStep
 }: WizardBodyProps) => {
   const MainComponent = mainComponent;
@@ -40,7 +42,7 @@ export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
       <WizardDrawerWrapper
         hasDrawer={hasDrawer && activeStep.drawerPanelContent}
         wrapper={(children: React.ReactNode) => (
-          <Drawer isInline isExpanded={isDrawerExpanded}>
+          <Drawer isInline isExpanded={isDrawerExpanded} onExpand={onExpandDrawer}>
             <DrawerContent panelContent={activeStep.drawerPanelContent}>{children}</DrawerContent>
           </Drawer>
         )}

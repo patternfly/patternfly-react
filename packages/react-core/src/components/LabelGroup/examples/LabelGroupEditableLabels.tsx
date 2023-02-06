@@ -11,8 +11,8 @@ export const LabelGroupEditableLabels: React.FunctionComponent = () => {
       <Label
         color="blue"
         onClose={() => Function.prototype}
-        onEditCancel={prevText => setLabel1(prevText)}
-        onEditComplete={newText => setLabel1(newText)}
+        onEditCancel={(_event, prevText) => setLabel1(prevText)}
+        onEditComplete={(_event, newText) => setLabel1(newText)}
         isEditable
         editableProps={{
           'aria-label': `Editable label with text ${label1}`,
@@ -25,8 +25,8 @@ export const LabelGroupEditableLabels: React.FunctionComponent = () => {
       <Label
         color="blue"
         onClose={() => Function.prototype}
-        onEditCancel={prevText => setLabel2(prevText)}
-        onEditComplete={newText => setLabel2(newText)}
+        onEditCancel={(_event, prevText) => setLabel2(prevText)}
+        onEditComplete={(_event, newText) => setLabel2(newText)}
         isEditable
         editableProps={{
           'aria-label': `Editable label with text ${label2}`,
@@ -38,8 +38,8 @@ export const LabelGroupEditableLabels: React.FunctionComponent = () => {
       <Label
         color="blue"
         onClose={() => Function.prototype}
-        onEditCancel={prevText => setLabel3(prevText)}
-        onEditComplete={newText => setLabel3(newText)}
+        onEditCancel={(_event, prevText) => setLabel3(prevText)}
+        onEditComplete={(_event, newText) => setLabel3(newText)}
         isEditable
         editableProps={{
           'aria-label': `Editable label with text ${label3}`,

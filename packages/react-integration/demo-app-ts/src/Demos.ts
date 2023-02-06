@@ -18,6 +18,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AboutModalDemo
   },
   {
+    id: 'accordion-demo',
+    name: 'Accordion Demo',
+    componentType: Examples.AccordionDemo
+  },
+  {
     id: 'alert-timeout-close-button-demo',
     name: 'Alert Timeout Close Button Demo',
     componentType: Examples.AlertTimeoutCloseButtonDemo
@@ -93,11 +98,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.CodeEditorDemo
   },
   {
-    id: 'consoles-demo',
-    name: 'Consoles Demo',
-    componentType: Examples.ConsolesDemo
-  },
-  {
     id: 'context-selector-demo',
     name: 'ContextSelector Demo',
     componentType: Examples.ContextSelectorDemo
@@ -166,6 +166,11 @@ export const Demos: DemoInterface[] = [
     id: 'expandable-section-demo',
     name: 'Expandable Section Demo',
     componentType: Examples.ExpandableSectionDemo
+  },
+  {
+    id: 'expandable-section-truncate-demo',
+    name: 'Expandable Section Truncate Demo',
+    componentType: Examples.ExpandableSectionTruncateDemo
   },
   {
     id: 'fileupload-demo',
