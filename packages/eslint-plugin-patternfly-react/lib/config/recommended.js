@@ -42,8 +42,6 @@ module.exports = {
       'error',
       { semi: true, singleQuote: true, tabWidth: 2, trailingComma: 'none', useTabs: false, printWidth: 120 }
     ],
-    'no-nonoctal-decimal-escape': 'off',
-    'no-unsafe-optional-chaining': 'off',
     'react/no-array-index-key': 'off',
     'react/forbid-prop-types': 'off',
     'react/jsx-filename-extension': 'off',
