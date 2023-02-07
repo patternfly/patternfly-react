@@ -36,23 +36,19 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   'aria-label': ariaLabel,
   'aria-labelledBy': ariaLabelledBy,
   ...props
-}: SpinnerProps) => {
-  const Component = 'svg';
-
-  return (
-    <Component
-      className={css(styles.spinner, isInline ? styles.modifiers.inline : styles.modifiers[size], className)}
-      role="progressbar"
-      aria-valuetext={ariaValueText}
-      viewBox="0 0 100 100"
-      {...(diameter && { style: { ['--pf-c-spinner--diameter' as any]: diameter } })}
-      {...(ariaLabel && { 'aria-label': ariaLabel })}
-      {...(ariaLabelledBy && { 'aria-labelledBy': ariaLabelledBy })}
-      {...(!ariaLabel && !ariaLabelledBy && { 'aria-label': 'Contents' })}
-      {...props}
-    >
-      <circle className={styles.spinnerPath} cx="50" cy="50" r="45" fill="none" />
-    </Component>
-  );
-};
+}: SpinnerProps) => (
+  <svg
+    className={css(styles.spinner, isInline ? styles.modifiers.inline : styles.modifiers[size], className)}
+    role="progressbar"
+    aria-valuetext={ariaValueText}
+    viewBox="0 0 100 100"
+    {...(diameter && { style: { ['--pf-c-spinner--diameter']: diameter } as React.CSSProperties })}
+    {...(ariaLabel && { 'aria-label': ariaLabel })}
+    {...(ariaLabelledBy && { 'aria-labelledBy': ariaLabelledBy })}
+    {...(!ariaLabel && !ariaLabelledBy && { 'aria-label': 'Contents' })}
+    {...props}
+  >
+    <circle className={styles.spinnerPath} cx="50" cy="50" r="45" fill="none" />
+  </svg>
+);
 Spinner.displayName = 'Spinner';
