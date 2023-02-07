@@ -222,9 +222,10 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
       id="multiple-typeahead-select-menu"
       onSelect={(_ev, itemId) => onMenuSelect(itemId?.toString() as string)}
       selected={selected}
+      role="listbox"
     >
       <MenuContent>
-        <MenuList id="composable-multi-typeahead-listbox">
+        <MenuList id="composable-multi-typeahead-listbox" isAriaMultiselectable>
           {menuItems.map((itemProps, index) => (
             <MenuItem
               id={`composable-multi-typeahead-${itemProps.itemId.replace(' ', '-')}`}

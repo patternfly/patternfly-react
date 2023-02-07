@@ -23,7 +23,6 @@ export const SelectBasic: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('');
   const [inputValue, setInputValue] = React.useState<string>('');
-  const [filterValue, setFilterValue] = React.useState<string>('');
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
@@ -35,17 +34,17 @@ export const SelectBasic: React.FunctionComponent = () => {
     let newSelectOptions: SelectOptionProps[] = initialSelectOptions;
 
     // Filter menu items based on the text input value when one exists
-    if (filterValue) {
+    if (inputValue) {
       newSelectOptions = initialSelectOptions.filter(menuItem =>
         String(menuItem.children)
           .toLowerCase()
-          .includes(filterValue.toLowerCase())
+          .includes(inputValue.toLowerCase())
       );
 
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
         newSelectOptions = [
-          { isDisabled: false, children: `No results found for "${filterValue}"`, itemId: 'no results' }
+          { isDisabled: false, children: `No results found for "${inputValue}"`, itemId: 'no results' }
         ];
       }
 
@@ -58,7 +57,7 @@ export const SelectBasic: React.FunctionComponent = () => {
     setSelectOptions(newSelectOptions);
     setActiveItem(null);
     setFocusedItemIndex(null);
-  }, [filterValue]);
+  }, [inputValue]);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -70,7 +69,6 @@ export const SelectBasic: React.FunctionComponent = () => {
 
     if (itemId && itemId !== 'no results') {
       setInputValue(itemId as string);
-      setFilterValue(itemId as string);
       setSelected(itemId as string);
     }
     setIsOpen(false);
@@ -80,7 +78,6 @@ export const SelectBasic: React.FunctionComponent = () => {
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
-    setFilterValue(value);
   };
 
   const handleMenuArrowKeys = (key: string) => {
@@ -167,7 +164,6 @@ export const SelectBasic: React.FunctionComponent = () => {
               onClick={() => {
                 setSelected('');
                 setInputValue('');
-                setFilterValue('');
                 textInputRef?.current?.focus();
               }}
               aria-label="Clear input value"
@@ -189,7 +185,6 @@ export const SelectBasic: React.FunctionComponent = () => {
       onSelect={onSelect}
       onOpenChange={() => {
         setIsOpen(false);
-        setFilterValue('');
       }}
       toggle={toggle}
     >

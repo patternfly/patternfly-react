@@ -209,7 +209,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
         </MenuToggle>
       }
       popper={
-        <Menu ref={menuRef} id="select-menu" onSelect={onMenuSelect} selected={isSelected && inputValue}>
+        <Menu role="listbox" ref={menuRef} id="select-menu" onSelect={onMenuSelect} selected={isSelected && inputValue}>
           <MenuContent>
             <MenuList id="composable-typeahead-listbox">
               {menuItems.map((itemProps, index) => (
