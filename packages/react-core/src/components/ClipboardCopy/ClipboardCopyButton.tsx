@@ -37,8 +37,6 @@ export interface ClipboardCopyButtonProps
     | 'left-end'
     | 'right-start'
     | 'right-end';
-  /** @beta Opt-in for updated popper that does not use findDOMNode. */
-  removeFindDomNode?: boolean;
   /** Aria-label for the copy button */
   'aria-label'?: string;
   /** Variant of the copy button */

@@ -63,8 +63,6 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
     | 'left-end'
     | 'right-start'
     | 'right-end';
-  /** @beta Opt-in for updated popper that does not use findDOMNode. */
-  removeFindDomNode?: boolean;
   /** Maximum width of the tooltip (default 150px). */
   maxWidth?: string;
   /** Delay in ms before the tooltip disappears. */
