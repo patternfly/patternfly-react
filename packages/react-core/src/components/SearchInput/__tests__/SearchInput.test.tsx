@@ -238,7 +238,7 @@ test('onToggleExpand is called if the expandable toggle is clicked', async () =>
   await user.click(screen.getByRole('button'));
 
   expect(mockOnToggleExpand).toHaveBeenCalledTimes(1);
-  expect(mockOnToggleExpand).toHaveBeenCalledWith(true, expect.objectContaining({ type: 'click' }));
+  expect(mockOnToggleExpand).toHaveBeenCalledWith(expect.objectContaining({ type: 'click' }), true);
 });
 
 test('toggleAriaLabel is applied to the expandable toggle', () => {

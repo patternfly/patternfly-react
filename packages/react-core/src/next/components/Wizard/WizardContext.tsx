@@ -1,22 +1,22 @@
 import React from 'react';
 
-import { isCustomWizardFooter, WizardControlStep, WizardFooterType } from './types';
+import { isCustomWizardFooter, isWizardSubStep, WizardStepType, WizardFooterType } from './types';
 import { getActiveStep } from './utils';
 import { WizardFooter, WizardFooterProps } from './WizardFooter';
 
 export interface WizardContextProps {
   /** List of steps */
-  steps: WizardControlStep[];
+  steps: WizardStepType[];
   /** Current step */
-  activeStep: WizardControlStep;
+  activeStep: WizardStepType;
   /** Footer element */
   footer: React.ReactElement;
-  /** Navigate to the next step */
-  onNext: () => void | Promise<void>;
-  /** Navigate to the previous step */
-  onBack: () => void | Promise<void>;
   /** Close the wizard */
-  onClose: () => void;
+  close: () => void;
+  /** Navigate to the next step */
+  goToNextStep: () => void | Promise<void>;
+  /** Navigate to the previous step */
+  goToPrevStep: () => void | Promise<void>;
   /** Navigate to step by ID */
   goToStepById: (id: number | string) => void;
   /** Navigate to step by name */
@@ -26,24 +26,28 @@ export interface WizardContextProps {
   /** Update the footer with any react element */
   setFooter: (footer: React.ReactElement | Partial<WizardFooterProps>) => void;
   /** Get step by ID */
-  getStep: (stepId: number | string) => WizardControlStep;
+  getStep: (stepId: number | string) => WizardStepType;
   /** Set step by ID */
-  setStep: (step: Pick<WizardControlStep, 'id'> & Partial<WizardControlStep>) => void;
+  setStep: (step: Pick<WizardStepType, 'id'> & Partial<WizardStepType>) => void;
 }
 
 export const WizardContext = React.createContext({} as WizardContextProps);
 
 export interface WizardContextProviderProps {
-  steps: WizardControlStep[];
+  steps: WizardStepType[];
   activeStepIndex: number;
   footer: WizardFooterType;
   children: React.ReactElement;
-  onNext(steps: WizardControlStep[]): void;
-  onBack(steps: WizardControlStep[]): void;
-  onClose(): void;
-  goToStepById(steps: WizardControlStep[], id: number | string): void;
-  goToStepByName(steps: WizardControlStep[], name: string): void;
-  goToStepByIndex(steps: WizardControlStep[], index: number): void;
+  onNext(event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[]): void;
+  onBack(event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[]): void;
+  onClose?(event: React.MouseEvent<HTMLButtonElement>): void;
+  goToStepById(steps: WizardStepType[], id: number | string): void;
+  goToStepByName(steps: WizardStepType[], name: string): void;
+  goToStepByIndex(
+    event: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>,
+    steps: WizardStepType[],
+    index: number
+  ): void;
 }
 
 export const WizardContextProvider: React.FunctionComponent<WizardContextProviderProps> = ({
@@ -66,21 +70,17 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   // Combined initial and current state steps
   const steps = React.useMemo(
     () =>
-      currentSteps.map((currentStepProps, index) => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const { isVisited, ...initialStepProps } = initialSteps[index];
-
-        return {
-          ...currentStepProps,
-          ...initialStepProps
-        };
-      }),
+      currentSteps.map((currentStepProps, index) => ({
+        ...currentStepProps,
+        ...initialSteps[index]
+      })),
     [initialSteps, currentSteps]
   );
-  const activeStep = getActiveStep(steps, activeStepIndex);
+  const activeStep = React.useMemo(() => getActiveStep(steps, activeStepIndex), [activeStepIndex, steps]);
 
-  const goToNextStep = React.useCallback(() => onNext(steps), [onNext, steps]);
-  const goToPrevStep = React.useCallback(() => onBack(steps), [onBack, steps]);
+  const close = React.useCallback(() => onClose?.(null), [onClose]);
+  const goToNextStep = React.useCallback(() => onNext(null, steps), [onNext, steps]);
+  const goToPrevStep = React.useCallback(() => onBack(null, steps), [onBack, steps]);
 
   const footer = React.useMemo(() => {
     const wizardFooter = activeStep?.footer || currentFooter || initialFooter;
@@ -89,7 +89,7 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
       const customFooter = wizardFooter;
 
       return typeof customFooter === 'function'
-        ? customFooter(activeStep, goToNextStep, goToPrevStep, onClose)
+        ? customFooter(activeStep, goToNextStep, goToPrevStep, close)
         : customFooter;
     }
 
@@ -98,17 +98,17 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
         activeStep={activeStep}
         onNext={goToNextStep}
         onBack={goToPrevStep}
-        onClose={onClose}
-        isBackDisabled={activeStep?.id === steps[0]?.id}
+        onClose={close}
+        isBackDisabled={activeStep?.index === 1 || (isWizardSubStep(activeStep) && activeStep?.index === 2)}
         {...wizardFooter}
       />
     );
-  }, [currentFooter, initialFooter, activeStep, goToNextStep, goToPrevStep, onClose, steps]);
+  }, [currentFooter, initialFooter, activeStep, goToNextStep, goToPrevStep, close]);
 
   const getStep = React.useCallback((stepId: string | number) => steps.find(step => step.id === stepId), [steps]);
 
   const setStep = React.useCallback(
-    (step: Pick<WizardControlStep, 'id'> & Partial<WizardControlStep>) =>
+    (step: Pick<WizardStepType, 'id'> & Partial<WizardStepType>) =>
       setCurrentSteps(prevSteps =>
         prevSteps.map(prevStep => {
           if (prevStep.id === step.id) {
@@ -127,15 +127,18 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
         steps,
         activeStep,
         footer,
-        onClose,
+        close,
         getStep,
         setStep,
+        goToNextStep,
+        goToPrevStep,
         setFooter: setCurrentFooter,
-        onNext: goToNextStep,
-        onBack: goToPrevStep,
         goToStepById: React.useCallback(id => goToStepById(steps, id), [goToStepById, steps]),
         goToStepByName: React.useCallback(name => goToStepByName(steps, name), [goToStepByName, steps]),
-        goToStepByIndex: React.useCallback(index => goToStepByIndex(steps, index), [goToStepByIndex, steps])
+        goToStepByIndex: React.useCallback((index: number) => goToStepByIndex(null, steps, index), [
+          goToStepByIndex,
+          steps
+        ])
       }}
     >
       {children}

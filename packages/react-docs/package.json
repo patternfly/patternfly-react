@@ -22,7 +22,7 @@
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
   "dependencies": {
-    "@patternfly/patternfly": "5.0.0-alpha.3",
+    "@patternfly/patternfly": "5.0.0-alpha.12",
     "@patternfly/react-charts": "^7.0.0-alpha.2",
     "@patternfly/react-code-editor": "^5.0.0-alpha.6",
     "@patternfly/react-core": "^5.0.0-alpha.6",
@@ -32,7 +32,7 @@
     "@patternfly/react-tokens": "^5.0.0-alpha.1"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "1.2.70",
+    "@patternfly/documentation-framework": "1.4.13",
     "@patternfly/patternfly-a11y": "4.3.1",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2"

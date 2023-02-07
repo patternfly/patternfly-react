@@ -18,6 +18,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AboutModalDemo
   },
   {
+    id: 'accordion-demo',
+    name: 'Accordion Demo',
+    componentType: Examples.AccordionDemo
+  },
+  {
     id: 'alert-timeout-close-button-demo',
     name: 'Alert Timeout Close Button Demo',
     componentType: Examples.AlertTimeoutCloseButtonDemo
@@ -168,6 +173,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ExpandableSectionDemo
   },
   {
+    id: 'expandable-section-truncate-demo',
+    name: 'Expandable Section Truncate Demo',
+    componentType: Examples.ExpandableSectionTruncateDemo
+  },
+  {
     id: 'fileupload-demo',
     name: 'FileUpload Demo',
     componentType: Examples.FileUploadDemo
@@ -291,11 +301,6 @@ export const Demos: DemoInterface[] = [
     id: 'popover-demo',
     name: 'Popover Demo',
     componentType: Examples.PopoverDemo
-  },
-  {
-    id: 'progress-stepper-demo',
-    name: 'Progress Stepper Demo',
-    componentType: Examples.ProgressStepperDemo
   },
   {
     id: 'radio-demo',

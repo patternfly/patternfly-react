@@ -35,9 +35,9 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.9.0",
     "@octokit/rest": "^19.0.5",
-    "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^13.4.0",
+    "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "14.4.3",
     "@types/jest": "27.0.2",
     "@types/react": "^18",
@@ -64,7 +64,7 @@
     "react-dom": "^18",
     "surge": "^0.23.1",
     "ts-patch": "^1.4.2",
-    "typescript": "^4.0.0"
+    "typescript": "^4.7.4"
   },
   "scripts": {
     "build": "yarn build:generate && yarn build:esm && yarn build:subpaths && yarn build:cjs",
@@ -89,6 +89,7 @@
     "start": "yarn build && concurrently --kill-others \"yarn watch\" \"yarn workspace @patternfly/react-docs develop\"",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",
+    "start:demo-app:hot": "lerna run start:demo-app:hot --stream",
     "test": "TZ=EST jest packages",
     "test:a11y": "lerna run test:a11y --stream",
     "test:integration": "yarn workspace @patternfly/react-integration test:integration",

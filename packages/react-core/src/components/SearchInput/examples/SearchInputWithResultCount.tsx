@@ -19,7 +19,7 @@ export const SearchInputWithResultCount: React.FunctionComponent = () => {
     <SearchInput
       placeholder="Find by name"
       value={value}
-      onChange={onChange}
+      onChange={(_event, value) => onChange(value)}
       onClear={onClear}
       resultsCount={resultsCount}
     />

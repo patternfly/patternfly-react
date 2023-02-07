@@ -78,6 +78,5 @@ module.exports = {
     'landmark-main-is-top-level',
     'scrollable-region-focusable'
   ].join(','),
-  ignoreIncomplete: true,
-  skip: '(mailto)|(/(extensions|developer-resources)/.+)'
+  ignoreIncomplete: true
 };

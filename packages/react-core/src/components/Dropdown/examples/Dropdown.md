@@ -116,7 +116,7 @@ You may use a `<BadgeToggle>` to display the number of dropdown menu items.
 ```ts file="./DropdownBadge.tsx"
 ```
 
-### Split button
+### Split button (checkbox)
 
 To combine an action button or other control with a dropdown menu, use a split button. A `<DropdownToggle>` can be rendered as a split button by using the `splitButtonItems` property. Elements to be displayed before the toggle button must be included in `splitButtonItems`.
 
@@ -125,11 +125,18 @@ The following example shows a split button with a `<DropdownToggleCheckbox>`, wh
 ```ts file="./DropdownSplitButton.tsx"
 ```
 
-### Split button text label
+### Split button (checkbox with toggle text)
 
 Text labels may optionally be used alongside actions within split buttons.
 
 ```ts file="./DropdownSplitButtonText.tsx"
+```
+
+### Split button (progress checkbox)
+
+The `isInProgress` property can be used to indicate a progress state by rendering a spinner in place of a checkbox.
+
+```ts isBeta file="./DropdownSplitButtonProgressCheckbox.tsx"
 ```
 
 ### Split button toggle variants

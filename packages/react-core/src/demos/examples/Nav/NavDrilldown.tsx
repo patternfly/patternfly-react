@@ -70,13 +70,18 @@ export const NavDrilldown: React.FunctionComponent = () => {
   const [activeMenuId, setActiveMenuId] = React.useState('rootMenu');
   const navLayer = getNavLayer(activeMenuId);
 
-  const onDrillIn = (fromItemId: string, toItemId: string, itemId: string) => {
+  const onDrillIn = (
+    _event: React.KeyboardEvent | React.MouseEvent,
+    fromItemId: string,
+    toItemId: string,
+    itemId: string
+  ) => {
     setMenuDrilledIn(prevMenuDrilledIn => [...prevMenuDrilledIn, fromItemId]);
     setDrilldownPath(prevDrilldownPath => [...prevDrilldownPath, itemId]);
     setActiveMenuId(toItemId);
   };
 
-  const onDrillOut = (toItemId: string, _itemId: string) => {
+  const onDrillOut = (_event: React.KeyboardEvent | React.MouseEvent, toItemId: string, _itemId: string) => {
     setMenuDrilledIn(prevMenuDrilledIn => prevMenuDrilledIn.slice(0, prevMenuDrilledIn.length - 1));
     setDrilldownPath(prevDrilldownPath => prevDrilldownPath.slice(0, prevDrilldownPath.length - 1));
     setActiveMenuId(toItemId);

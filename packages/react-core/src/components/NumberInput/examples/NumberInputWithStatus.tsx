@@ -53,6 +53,7 @@ export const NumberInputWithStatus: React.FunctionComponent = () => {
         inputAriaLabel="number input"
         minusBtnAriaLabel="minus"
         plusBtnAriaLabel="plus"
+        allowEmptyInput
       />
     </>
   );

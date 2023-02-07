@@ -13,7 +13,7 @@ import { SearchInput } from '../SearchInput';
  * such as sorting, can also be passed into this sub-component.
  */
 
-export interface DualListSelectorPaneProps {
+export interface DualListSelectorPaneProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
   /** Additional classes applied to the dual list selector pane. */
   className?: string;
   /** A dual list selector list or dual list selector tree to be rendered in the pane. */
@@ -65,6 +65,8 @@ export interface DualListSelectorPaneProps {
   searchInputAriaLabel?: string;
   /** @hide Callback for updating the filtered options in DualListSelector. To be used when isSearchable is true. */
   onFilterUpdate?: (newFilteredOptions: React.ReactNode[], paneType: string, isSearchReset: boolean) => void;
+  /** Minimum height of the list of options rendered in the pane. **/
+  listMinHeight?: string;
 }
 
 export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneProps> = ({
@@ -87,13 +89,14 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   filterOption,
   id = getUniqueId('dual-list-selector-pane'),
   isDisabled = false,
+  listMinHeight,
   ...props
 }: DualListSelectorPaneProps) => {
   const [input, setInput] = React.useState('');
   const { isTree } = React.useContext(DualListSelectorContext);
 
   // only called when search input is dynamically built
-  const onChange = (newValue: string, e: React.FormEvent<HTMLInputElement>) => {
+  const onChange = (e: React.FormEvent<HTMLInputElement>, newValue: string) => {
     let filtered: React.ReactNode[];
     if (isTree) {
       filtered = options
@@ -165,7 +168,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
                 <SearchInput
                   onChange={isDisabled ? undefined : onChange}
                   onClear={
-                    onSearchInputClear ? onSearchInputClear : e => onChange('', e as React.FormEvent<HTMLInputElement>)
+                    onSearchInputClear ? onSearchInputClear : e => onChange(e as React.FormEvent<HTMLInputElement>, '')
                   }
                   isDisabled={isDisabled}
                   aria-label={searchInputAriaLabel}
@@ -198,12 +201,21 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
             displayOption={displayOption}
             id={`${id}-list`}
             isDisabled={isDisabled}
+            {...(listMinHeight && {
+              style: { '--pf-c-dual-list-selector__menu--MinHeight': listMinHeight } as React.CSSProperties
+            })}
           >
             {children}
           </DualListSelectorListWrapper>
         )}
         {isTree && (
-          <DualListSelectorListWrapper aria-labelledby={`${id}-status`} id={`${id}-list`}>
+          <DualListSelectorListWrapper
+            aria-labelledby={`${id}-status`}
+            id={`${id}-list`}
+            {...(listMinHeight && {
+              style: { '--pf-c-dual-list-selector__menu--MinHeight': listMinHeight } as React.CSSProperties
+            })}
+          >
             {options.length > 0 ? (
               <DualListSelectorList>
                 <DualListSelectorTree

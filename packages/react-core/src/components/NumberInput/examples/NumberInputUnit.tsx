@@ -37,6 +37,7 @@ export const NumberInputUnit: React.FunctionComponent = () => {
         minusBtnAriaLabel="minus 1"
         plusBtnAriaLabel="plus 1"
         unit="%"
+        allowEmptyInput
       />
       <br />
       <br />
@@ -51,6 +52,7 @@ export const NumberInputUnit: React.FunctionComponent = () => {
         plusBtnAriaLabel="plus 0.01"
         unit="$"
         unitPosition="before"
+        allowEmptyInput
       />
     </React.Fragment>
   );

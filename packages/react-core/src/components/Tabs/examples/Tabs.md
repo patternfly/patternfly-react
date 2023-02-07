@@ -2,7 +2,7 @@
 id: Tabs
 section: components
 cssPrefix: pf-c-tabs
-propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon', 'horizontalOverflowObject']
+propComponents: ['Tabs', 'Tab', TabAction, 'TabContent', 'TabTitleText', 'TabTitleIcon', 'horizontalOverflowObject']
 ouia: true
 ---
 
@@ -141,7 +141,7 @@ The tooltip should also have the `id` prop passed in. The value given to this pr
 
 To enable closeable tabs, pass the `onClose` property to `Tabs`, and to enable the add button, pass the `onAdd` property to `Tabs`. Aria labels may be controlled manually by passing `closeButtonAriaLabel` to `Tab` and `addButtonAriaLabel` to `Tabs`.
 
-```ts file="./TabsDynamic.tsx" isBeta
+```ts file="./TabsDynamic.tsx" 
 ```
 
 ### Help action

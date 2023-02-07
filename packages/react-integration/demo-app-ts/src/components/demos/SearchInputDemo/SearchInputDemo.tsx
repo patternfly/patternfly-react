@@ -78,8 +78,8 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
           placeholder="Find by name"
           advancedSearchDelimiter=":"
           value={this.state.value}
-          onChange={this.onChange}
-          onSearch={this.onSearch}
+          onChange={(_event, value) => this.onChange(value)}
+          onSearch={(_event, value) => this.onSearch(value)}
           onClear={this.onClear}
           resultsCount={`${this.state.currentResult} / ${this.state.resultsCount}`}
           onNextClick={this.onNext}
@@ -96,8 +96,8 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
           ]}
           placeholder="Find by name"
           advancedSearchDelimiter=":"
-          onChange={this.onChange}
-          onSearch={this.onSearch}
+          onChange={(_event, value) => this.onChange(value)}
+          onSearch={(_event, value) => this.onSearch(value)}
           onClear={this.onClear}
           isDisabled
         />

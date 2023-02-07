@@ -156,15 +156,14 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
       ...rest
     } = this.props;
     const { isOpen } = this.state;
-    const numChildren = React.Children.count(children);
+    const renderedChildren = React.Children.toArray(children);
+    const numChildren = renderedChildren.length;
     const collapsedTextResult = fillTemplate(collapsedText as string, {
-      remaining: React.Children.count(children) - numLabels
+      remaining: numChildren - numLabels
     });
 
     const renderLabelGroup = (id: string) => {
-      const labelArray = !isOpen
-        ? React.Children.toArray(children).slice(0, numLabels)
-        : React.Children.toArray(children);
+      const labelArray = !isOpen ? renderedChildren.slice(0, numLabels) : renderedChildren;
 
       const content = (
         <React.Fragment>

@@ -123,7 +123,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
     textInputRef.current?.focus();
   };
 
-  const onTextInputChange = (value: string) => {
+  const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
   };
 

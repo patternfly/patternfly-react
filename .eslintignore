@@ -2,6 +2,7 @@
 node_modules
 dist
 __tests__
+thirdparty
 tsc_out
 .out
 .changelog

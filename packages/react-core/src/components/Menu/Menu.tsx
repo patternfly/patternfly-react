@@ -40,9 +40,14 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   /** @beta Array of menus that are drilled in */
   drilledInMenus?: string[];
   /** @beta Callback for drilling into a submenu */
-  onDrillIn?: (fromItemId: string, toItemId: string, itemId: string) => void;
+  onDrillIn?: (
+    event: React.KeyboardEvent | React.MouseEvent,
+    fromItemId: string,
+    toItemId: string,
+    itemId: string
+  ) => void;
   /** @beta Callback for drilling out of a submenu */
-  onDrillOut?: (toItemId: string, itemId: string) => void;
+  onDrillOut?: (event: React.KeyboardEvent | React.MouseEvent, toItemId: string, itemId: string) => void;
   /** @beta Callback for collecting menu heights */
   onGetMenuHeight?: (menuId: string, height: number) => void;
   /** @beta ID of parent menu for drilldown menus */
@@ -63,6 +68,9 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** @beta Determines the accessible role of the menu. For a non-checkbox menu that can have
+   * one or more items selected, pass in "listbox". */
+  role?: string;
 }
 
 export interface MenuState {
@@ -84,7 +92,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     ouiaSafe: true,
     isRootMenu: true,
     isPlain: false,
-    isScrollable: false
+    isScrollable: false,
+    role: 'menu'
   };
 
   constructor(props: MenuProps) {
@@ -267,6 +276,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       innerRef,
       isRootMenu,
       activeMenu,
+      role,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
@@ -287,7 +297,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           onGetMenuHeight,
           flyoutRef: this.state.flyoutRef,
           setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
-          disableHover: this.state.disableHover
+          disableHover: this.state.disableHover,
+          role
         }}
       >
         {isRootMenu && (

@@ -8,5 +8,12 @@ export const SearchInputBasic: React.FunctionComponent = () => {
     setValue(value);
   };
 
-  return <SearchInput placeholder="Find by name" value={value} onChange={onChange} onClear={() => onChange('')} />;
+  return (
+    <SearchInput
+      placeholder="Find by name"
+      value={value}
+      onChange={(_event, value) => onChange(value)}
+      onClear={() => onChange('')}
+    />
+  );
 };

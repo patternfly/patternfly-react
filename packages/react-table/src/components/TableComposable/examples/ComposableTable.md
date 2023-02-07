@@ -16,6 +16,7 @@ propComponents:
     'TdSelectType',
     'ThSelectType',
     'TdTreeRowType',
+    'ActionsColumn',
     'IActions',
     'TdCompoundExpandType',
     'TdFavoritesType',
@@ -164,6 +165,8 @@ This example demonstrates adding actions as the last column. The header's last c
 
 To make a cell an action cell, render an `ActionsColumn` component inside a row's last `Td` and pass an array of `IAction` objects via the `items` prop of `ActionsColumn`.
 
+If actions menus are getting clipped by other items on the page, such as sticky columns or rows, the `ActionsColumn` can be passed a `menuAppendTo` prop to adjust where the actions menu is appended.
+
 ```ts file="ComposableTableActions.tsx"
 ```
 
@@ -232,8 +235,6 @@ export type OnExpand = (
 
 ```ts file="ComposableTableControllingText.tsx"
 ```
-
-#### TODO: distinguish between the use cases for modifier on Td vs on TableText?
 
 ### Composable: Modifiers with table text
 
@@ -307,7 +308,7 @@ To make a row draggable:
 1. The table needs a draggable column.
 2. Each draggable `Tr` needs to be passed `draggable`, `onDrop`, `onDragEnd`, and `onDragStart` props.
 3. The `Tbody` needs `onDragOver`, `onDrop`, and `onDragLeave` props.
-4. While the user is dragging a row, the `` class needs to be applied to `TableComposable`.
+4. While the user is dragging a row, the `pf-m-drag-over` class needs to be applied to `TableComposable`.
 5. The draggable `Td` in each row needs a `TdDraggableType` object passed to its `draggable` prop.
 
 ```ts isBeta file="ComposableTableDraggable.tsx"

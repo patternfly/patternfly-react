@@ -17,6 +17,8 @@ export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   isFixed?: boolean;
   /** Adds accessible text to the Accordion content */
   'aria-label'?: string;
+  /** Id of the controlling accordion toggle to label the content. */
+  'aria-labelledby'?: string;
   /** Component to use as content container */
   component?: React.ElementType;
   /** Flag indicating content is custom. Expanded content Body wrapper will be removed from children.  This allows multiple bodies to be rendered as content. */
@@ -31,29 +33,49 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
   isFixed = false,
   isCustomContent = false,
   'aria-label': ariaLabel = '',
+  'aria-labelledby': ariaLabelledby,
   component,
   ...props
-}: AccordionContentProps) => (
-  <AccordionContext.Consumer>
-    {({ ContentContainer }) => {
-      const Container = component || ContentContainer;
-      return (
-        <Container
-          id={id}
-          className={css(
-            styles.accordionExpandableContent,
-            isFixed && styles.modifiers.fixed,
-            !isHidden && styles.modifiers.expanded,
-            className
-          )}
-          hidden={isHidden}
-          aria-label={ariaLabel}
-          {...props}
-        >
-          {isCustomContent ? children : <AccordionExpandableContentBody>{children}</AccordionExpandableContentBody>}
-        </Container>
-      );
-    }}
-  </AccordionContext.Consumer>
-);
+}: AccordionContentProps) => {
+  const [hasScrollbar, setHasScrollbar] = React.useState(false);
+  const containerRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (containerRef?.current && isFixed && !isHidden) {
+      const { offsetHeight, scrollHeight } = containerRef.current;
+
+      setHasScrollbar(offsetHeight < scrollHeight);
+    } else if (!isFixed) {
+      setHasScrollbar(false);
+    }
+  }, [containerRef, isFixed, isHidden]);
+
+  return (
+    <AccordionContext.Consumer>
+      {({ ContentContainer }) => {
+        const Container = component || ContentContainer;
+        return (
+          <Container
+            ref={containerRef}
+            id={id}
+            className={css(
+              styles.accordionExpandableContent,
+              isFixed && styles.modifiers.fixed,
+              !isHidden && styles.modifiers.expanded,
+              className
+            )}
+            hidden={isHidden}
+            {...(ariaLabel && { 'aria-label': ariaLabel })}
+            {...(ariaLabelledby && { 'aria-labelledby': ariaLabelledby })}
+            {...(hasScrollbar && { tabIndex: 0 })}
+            {...(hasScrollbar && Container === 'div' && { role: 'region' })}
+            {...props}
+          >
+            {isCustomContent ? children : <AccordionExpandableContentBody>{children}</AccordionExpandableContentBody>}
+          </Container>
+        );
+      }}
+    </AccordionContext.Consumer>
+  );
+};
 AccordionContent.displayName = 'AccordionContent';

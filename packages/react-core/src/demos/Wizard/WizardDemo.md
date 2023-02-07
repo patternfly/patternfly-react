@@ -289,6 +289,7 @@ class WizardModalWithDrawerDemo extends React.Component {
           navAriaLabel={`${title} steps`}
           hasDrawer
           isDrawerExpanded={isDrawerExpanded}
+          onExpandDrawer={this.onExpand}
           mainAriaLabel={`${title} content`}
           titleId="wiz-modal-demo-title"
           descriptionId="wiz-modal-demo-description"
@@ -539,6 +540,7 @@ class WizardModalWithDrawerDemo extends React.Component {
           navAriaLabel={`${title} steps`}
           hasDrawer
           isDrawerExpanded={isDrawerExpanded}
+          onExpandDrawer={this.onExpand}
           mainAriaLabel={`${title} content`}
           titleId="wiz-modal-demo-title"
           descriptionId="wiz-modal-demo-description"
@@ -877,6 +879,7 @@ class FullPageWizard extends React.Component {
             <Wizard
               hasDrawer
               isDrawerExpanded={isDrawerExpanded}
+              onExpandDrawer={this.onExpand}
               navAriaLabel={`${title} steps`}
               mainAriaLabel={`${title} content`}
               steps={steps}
@@ -1194,6 +1197,7 @@ class FullPageWizard extends React.Component {
             <Wizard
               hasDrawer
               isDrawerExpanded={isDrawerExpanded}
+              onExpandDrawer={this.onExpand}
               navAriaLabel={`${title} steps`}
               mainAriaLabel={`${title} content`}
               steps={steps}

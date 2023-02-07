@@ -115,11 +115,9 @@ describe('Pagination', () => {
       expect(screen.getByLabelText('test label')).toHaveAttribute('id', id);
     });
 
-    test('should not update generated options menu id on rerenders', () => {
-      const { rerender } = render(<Pagination titles={{optionsToggleAriaLabel: "test label"}} itemCount={20}/>);
-      const id = screen.getByLabelText("test label").getAttribute("id");
-      rerender(<Pagination titles={{optionsToggleAriaLabel: "test label"}} itemCount={20} />);
-      expect(screen.getByLabelText("test label")).toHaveAttribute("id", id);
+    test('page insets', () => {
+      render(<Pagination data-testid="pagination-insets" usePageInsets />);
+      expect(screen.getByTestId('pagination-insets')).toHaveClass('pf-m-page-insets');
     });
 
     test('page insets', () => {

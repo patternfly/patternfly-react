@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
-
 export interface EmptyStateSecondaryActionsProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the EmptyState */
   children?: React.ReactNode;
@@ -13,7 +11,7 @@ export const EmptyStateSecondaryActions: React.FunctionComponent<EmptyStateSecon
   className = '',
   ...props
 }: EmptyStateSecondaryActionsProps) => (
-  <div className={css(styles.emptyStateSecondary, className)} {...props}>
+  <div className={css(className)} {...props}>
     {children}
   </div>
 );

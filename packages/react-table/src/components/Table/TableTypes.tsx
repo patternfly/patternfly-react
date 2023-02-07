@@ -106,6 +106,7 @@ export interface IColumn {
     contentId?: string;
     dropdownPosition?: DropdownPosition;
     dropdownDirection?: DropdownDirection;
+    menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
     actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
     allRowsSelected?: boolean;
     allRowsExpanded?: boolean;

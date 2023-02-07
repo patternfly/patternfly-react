@@ -35,7 +35,7 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   loginTitle: string;
   /** Subtitle for the login main body header of the login page */
   loginSubtitle?: string;
-  /** @beta Header utilities for the login main body header of the login page */
+  /** Header utilities for the login main body header of the login page */
   headerUtilities?: React.ReactNode;
   /** Content rendered inside of login main footer band to display a sign up for account message */
   signUpForAccountMessage?: React.ReactNode;

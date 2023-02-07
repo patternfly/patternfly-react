@@ -80,7 +80,7 @@ DateTimeRangePicker = () => {
     }
   };
   
-  const onFromTimeChange = (time, hour, minute) => {
+  const onFromTimeChange = (_event, time, hour, minute) => {
     if (isValidDate(from)) {
       const updatedFromDate = new Date(from);
       updatedFromDate.setHours(hour);
@@ -99,7 +99,7 @@ DateTimeRangePicker = () => {
     }
   };
   
-  const onToTimeChange = (time, hour, minute) => {
+  const onToTimeChange = (_event, time, hour, minute) => {
     if (isValidDate(to)) {
       const updatedToDate = new Date(to);
       updatedToDate.setHours(hour);

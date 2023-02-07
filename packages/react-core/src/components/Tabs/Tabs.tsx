@@ -45,11 +45,11 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   defaultActiveKey?: number | string;
   /** Callback to handle tab selection */
   onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
-  /** @beta Callback to handle tab closing and adds a basic close button to all tabs. This is overridden by the tab actions property. */
+  /** Callback to handle tab closing and adds a basic close button to all tabs. This is overridden by the tab actions property. */
   onClose?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
-  /** @beta Callback for the add button. Passing this property inserts the add button */
-  onAdd?: () => void;
-  /** @beta Aria-label for the add button */
+  /** Callback for the add button. Passing this property inserts the add button */
+  onAdd?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  /** Aria-label for the add button */
   addButtonAriaLabel?: string;
   /** Uniquely identifies the tabs */
   id?: string;

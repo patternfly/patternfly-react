@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-integration",
   "private": true,
-  "version": "4.208.3",
+  "version": "4.213.2",
   "description": "Integration testing for PF4 using demo applications",
   "main": "lib/index.js",
   "sideEffects": false,
@@ -33,7 +33,7 @@
     "jasmine-xml2html-converter": "^0.0.2",
     "junit-merge": "^2.0.0",
     "monaco-editor-webpack-plugin": "^2.1.0",
-    "react-monaco-editor": "^0.41.2",
+    "react-monaco-editor": "^0.51.0",
     "ts-loader": "^8.3.0",
     "typescript": "^4.7.4",
     "webpack": "^4.43.0"
