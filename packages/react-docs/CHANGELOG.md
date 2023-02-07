@@ -913,6 +913,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [5.102.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.102.30...@patternfly/react-docs@5.102.31) (2022-10-05)
 
+# [6.0.0-alpha.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.6...@patternfly/react-docs@6.0.0-alpha.7) (2023-02-02)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.0.0-alpha.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.5...@patternfly/react-docs@6.0.0-alpha.6) (2023-02-02)
+
 **Note:** Version bump only for package @patternfly/react-docs
 
 # [6.0.0-alpha.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.4...@patternfly/react-docs@6.0.0-alpha.5) (2023-01-18)

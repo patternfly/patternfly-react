@@ -889,6 +889,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [4.250.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.250.0...@patternfly/react-core@4.250.1) (2022-10-05)
 
+# [5.0.0-alpha.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.5...@patternfly/react-core@5.0.0-alpha.6) (2023-02-02)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.0.0-alpha.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.4...@patternfly/react-core@5.0.0-alpha.5) (2023-02-02)
+
 **Note:** Version bump only for package @patternfly/react-core
 
 # 5.0.0-alpha.4 (2023-01-18)
