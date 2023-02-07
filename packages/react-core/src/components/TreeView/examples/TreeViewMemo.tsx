@@ -6,7 +6,7 @@ export const TreeViewMemo: React.FunctionComponent = () => {
   const [allExpanded, setAllExpanded] = React.useState(false);
 
   const onSelect = (_event: React.MouseEvent, treeViewItem: TreeViewDataItem) => {
-    const filtered = [];
+    const filtered: TreeViewDataItem[] = [];
     options.forEach(item => filterItems(item, treeViewItem.id, filtered));
     if (treeViewItem && !treeViewItem.children) {
       setActiveItems(filtered);
@@ -14,10 +14,10 @@ export const TreeViewMemo: React.FunctionComponent = () => {
   };
 
   const onToggle = (_event: React.MouseEvent) => {
-    setAllExpanded(allExpanded !== undefined ? !allExpanded : true);
+    setAllExpanded(prevAllExpanded => !prevAllExpanded);
   };
 
-  const filterItems = (item, input, list) => {
+  const filterItems = (item: TreeViewDataItem, input: string | undefined, list: TreeViewDataItem[]) => {
     if (item.children) {
       let childContained = false;
       item.children.forEach(child => {

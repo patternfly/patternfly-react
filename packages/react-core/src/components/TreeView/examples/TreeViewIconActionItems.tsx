@@ -19,7 +19,7 @@ export const TreeViewIconActionItems: React.FunctionComponent = () => {
   };
 
   const onAppLaunchSelect = (_event: React.SyntheticEvent<HTMLDivElement> | undefined) => {
-    setIsOpen(!isOpen);
+    setIsOpen(prevIsOpen => !prevIsOpen);
   };
 
   const dropdownItems = [

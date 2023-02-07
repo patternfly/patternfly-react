@@ -74,7 +74,5 @@ export const TreeViewSelectableNodes: React.FunctionComponent = () => {
       children: [{ name: 'Application 5', id: 'SelNodesTreeView-App5' }]
     }
   ];
-  return (
-    <TreeView hasSelectableNodes data={options} activeItems={activeItems} onSelect={onSelect} allExpanded={false} />
-  );
+  return <TreeView hasSelectableNodes data={options} activeItems={activeItems} onSelect={onSelect} />;
 };

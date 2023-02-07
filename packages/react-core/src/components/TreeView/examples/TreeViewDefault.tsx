@@ -13,7 +13,7 @@ export const TreeViewDefault: React.FunctionComponent = () => {
   };
 
   const onToggle = (_event: React.MouseEvent) => {
-    setAllExpanded(allExpanded !== undefined ? !allExpanded : true);
+    setAllExpanded(prevAllExpanded => !prevAllExpanded);
   };
 
   const options = [
