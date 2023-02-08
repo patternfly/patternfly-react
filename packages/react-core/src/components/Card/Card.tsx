@@ -10,7 +10,7 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   id?: string;
   /** Additional classes added to the Card */
   className?: string;
-  /** Sets the base component to render. defaults to article */
+  /** Sets the base component to render. defaults to div */
   component?: keyof JSX.IntrinsicElements;
   /** Modifies the card to include compact styling. Should not be used with isLarge. */
   isCompact?: boolean;
@@ -67,7 +67,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   children = null,
   id = '',
   className = '',
-  component = 'article',
+  component = 'div',
   isCompact = false,
   isSelectable = false,
   isSelectableRaised = false,

@@ -2,7 +2,7 @@
 
 exports[`Card card with isCompact applied  1`] = `
 <DocumentFragment>
-  <article
+  <div
     class="pf-c-card pf-m-compact"
     data-ouia-component-id="OUIA-Generated-Card-6"
     data-ouia-component-type="PF4/Card"
@@ -14,7 +14,7 @@ exports[`Card card with isCompact applied  1`] = `
 
 exports[`Card renders with PatternFly Core styles 1`] = `
 <DocumentFragment>
-  <article
+  <div
     class="pf-c-card"
     data-ouia-component-id="OUIA-Generated-Card-1"
     data-ouia-component-type="PF4/Card"
