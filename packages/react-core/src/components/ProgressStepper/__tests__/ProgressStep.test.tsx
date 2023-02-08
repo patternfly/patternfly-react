@@ -149,11 +149,11 @@ test('Does not renders with aria-labelledBy by default on Component element', ()
 
 test('Renders with an accessible name that matches children', () => {
   render(
-    <ProgressStep id="test-id" titleId="title-id">
+    <ProgressStep popoverRender={stepRef => <div>Popover content</div>} id="test-id" titleId="title-id">
       Test
     </ProgressStep>
   );
-  expect(screen.getByText('Test')).toHaveAccessibleName('Test');
+  expect(screen.getByText('Test')).toHaveAccessibleName('Test Popover content');
 });
 
 test('Renders with popoverRender element', () => {
