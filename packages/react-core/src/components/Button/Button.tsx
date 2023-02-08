@@ -80,7 +80,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   tabIndex?: number;
   /** Adds danger styling to secondary or link button variants */
   isDanger?: boolean;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Adds count number to button */
   countOptions?: BadgeCountObject;

@@ -23,7 +23,7 @@ export interface BaseCellProps {
   width?: 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100;
   /** Visibility breakpoint modifiers */
   visibility?: (keyof IVisibility)[];
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
 }
 
@@ -47,7 +47,7 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   role?: string;
   /** If set to true, the table header sticks to the top of its container */
   isStickyHeader?: boolean;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.RefObject<any>;
   /** Flag indicating table is a tree table */
   isTreeTable?: boolean;

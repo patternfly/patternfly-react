@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 export interface MenuInputProps extends React.HTMLProps<HTMLElement> {
   /** Items within input */
   children?: React.ReactNode;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
 }
 

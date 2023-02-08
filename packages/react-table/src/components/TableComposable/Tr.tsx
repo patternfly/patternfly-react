@@ -10,7 +10,7 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   children?: React.ReactNode;
   /** Additional classes added to the <tr> row  */
   className?: string;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Flag indicating the Tr is hidden */
   isHidden?: boolean;

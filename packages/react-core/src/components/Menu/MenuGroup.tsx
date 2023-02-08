@@ -11,7 +11,7 @@ export interface MenuGroupProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   label?: React.ReactNode;
   /** ID for title label */
   titleId?: string;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Group label heading level. Default is h1. */
   labelHeadingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

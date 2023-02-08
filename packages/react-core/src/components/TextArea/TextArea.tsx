@@ -44,7 +44,7 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   resizeOrientation?: 'horizontal' | 'vertical' | 'both';
   /** Custom flag to show that the text area requires an associated id or aria-label. */
   'aria-label'?: string;
-  /** A reference object to attach to the text area. */
+  /** @hide A reference object to attach to the text area. */
   innerRef?: React.RefObject<any>;
 }
 

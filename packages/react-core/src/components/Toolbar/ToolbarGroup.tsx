@@ -49,7 +49,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
   };
   /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
-  /** Reference to pass to this group if it has .pf-m-chip-container modifier */
+  /** @hide Reference to pass to this group if it has .pf-m-chip-container modifier */
   innerRef?: React.RefObject<any>;
 }
 

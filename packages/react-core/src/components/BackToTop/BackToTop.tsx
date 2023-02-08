@@ -10,7 +10,7 @@ interface BackToTopProps extends React.DetailedHTMLProps<React.HTMLProps<HTMLDiv
   className?: string;
   /** Title to appear in back to top button. */
   title?: string;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Selector for the scrollable element to spy on. Not passing a selector defaults to spying on window scroll events. */
   scrollableSelector?: string;
