@@ -3,7 +3,8 @@
 .ws-react-t-custom-nodes,
 .ws-react-t-panzoom,
 .ws-react-t-selectable,
-.ws-react-t-with-sidebar {
+.ws-react-t-with-sidebar,
+.ws-react-t-with-toolbar {
   height: 600px;
   border: 1px solid var(--pf-global--palette--black-900);
   padding: 0;

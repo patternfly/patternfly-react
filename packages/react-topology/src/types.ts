@@ -350,3 +350,16 @@ export const NODE_COLLAPSE_CHANGE_EVENT = 'node-collapse-change';
 export const NODE_POSITIONED_EVENT = 'node-positioned';
 export const GRAPH_LAYOUT_END_EVENT = 'graph-layout-end';
 export const GRAPH_POSITION_CHANGE_EVENT = 'graph-position-change';
+
+export interface GeneratorNodeOptions {
+  shapes?: NodeShape[];
+  statuses?: NodeStatus[];
+  statusDecorators?: boolean;
+  showDecorators?: boolean;
+  nodeLabels?: boolean;
+  nodeSecondaryLabels?: boolean;
+  nodeBadges?: boolean;
+  nodeIcons?: boolean;
+  smallNodes?: boolean;
+  contextMenus?: boolean;
+}
