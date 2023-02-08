@@ -16,7 +16,7 @@ export const IconProgress: React.FunctionComponent = () => {
           name="toggle-icon-progress-custom"
         />
       </div>
-      <Icon isInProgress={isInProgress} progressIcon={<Spinner diameter="2em" isSVG aria-label="Loading..." />}>
+      <Icon isInProgress={isInProgress} progressIcon={<Spinner diameter="2em" aria-label="Loading..." />}>
         <CheckCircleIcon />
       </Icon>
     </React.Fragment>

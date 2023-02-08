@@ -39,11 +39,7 @@ export const Icon: React.FunctionComponent<IconComponentProps> = ({
   defaultProgressArialabel = 'Loading...',
   ...props
 }: IconComponentProps) => {
-  const _progressIcon = progressIcon ? (
-    progressIcon
-  ) : (
-    <Spinner diameter="1em" isSVG aria-label={defaultProgressArialabel} />
-  );
+  const _progressIcon = progressIcon ?? <Spinner diameter="1em" aria-label={defaultProgressArialabel} />;
 
   return (
     <span
