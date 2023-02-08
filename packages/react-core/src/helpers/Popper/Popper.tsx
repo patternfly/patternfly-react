@@ -66,7 +66,7 @@ export interface PopperProps {
   /** Instead of direction and position can set the placement of the popper */
   placement?: Placement;
   /** The container to append the popper to. Defaults to 'document.body' */
-  appendTo?: HTMLElement | (() => HTMLElement);
+  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
   /** z-index of the popper element */
   zIndex?: number;
   /** True to make the popper visible */
@@ -347,13 +347,24 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     ...attributes.popper
   };
 
-  const menuWithPopper = React.cloneElement(popper, options);
+  const menuWithPopper = () => {
+    const localPopper = React.cloneElement(popper, options);
+    return popperRef ? (
+      localPopper
+    ) : (
+      <div style={{ display: 'contents' }} ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>
+        {localPopper}
+      </div>
+    );
+  };
 
   const getTarget: () => HTMLElement = () => {
-    if (typeof appendTo === 'function') {
-      return appendTo();
+    if (appendTo !== 'inline') {
+      if (typeof appendTo === 'function') {
+        return appendTo();
+      }
+      return appendTo;
     }
-    return appendTo;
   };
 
   return (
@@ -365,16 +376,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       )}
       {ready &&
         isVisible &&
-        ReactDOM.createPortal(
-          popperRef ? (
-            menuWithPopper
-          ) : (
-            <div style={{ display: 'contents' }} ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>
-              {menuWithPopper}
-            </div>
-          ),
-          getTarget()
-        )}
+        (appendTo !== 'inline' ? ReactDOM.createPortal(menuWithPopper(), getTarget()) : menuWithPopper())}
     </>
   );
 };
