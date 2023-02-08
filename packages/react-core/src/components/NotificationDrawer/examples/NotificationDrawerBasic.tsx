@@ -18,7 +18,7 @@ import {
 export const NotificationDrawerBasic: React.FunctionComponent = () => {
   const [isOpenMap, setIsOpenMap] = React.useState(new Array(7).fill(false));
 
-  const onToggle = (index: number) => (isOpen: boolean) => {
+  const onToggle = (index: number) => (_event: any, isOpen: boolean) => {
     const newState = [...isOpenMap.slice(0, index), isOpen, ...isOpenMap.slice(index + 1)];
     setIsOpenMap(newState);
   };

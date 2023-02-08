@@ -46,7 +46,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
     </ApplicationLauncherGroup>
   ];
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });

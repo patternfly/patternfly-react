@@ -100,7 +100,10 @@ export class GroupsNotificationDrawerDemo extends React.Component<
           <Dropdown
             onSelect={this.onSelect}
             toggle={
-              <KebabToggle onToggle={(isOpen: boolean) => this.onToggle('toggle-id-0', isOpen)} id="toggle-id-0" />
+              <KebabToggle
+                onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-0', isOpen)}
+                id="toggle-id-0"
+              />
             }
             isOpen={isOpenMap && isOpenMap['toggle-id-0']}
             isPlain
@@ -131,7 +134,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                       onSelect={this.onSelect}
                       toggle={
                         <KebabToggle
-                          onToggle={(isOpen: boolean) => this.onToggle('toggle-id-5', isOpen)}
+                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-5', isOpen)}
                           id="toggle-id-5"
                         />
                       }
@@ -156,7 +159,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                       onSelect={this.onSelect}
                       toggle={
                         <KebabToggle
-                          onToggle={(isOpen: boolean) => this.onToggle('toggle-id-6', isOpen)}
+                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-6', isOpen)}
                           id="toggle-id-6"
                         />
                       }
@@ -182,7 +185,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                       onSelect={this.onSelect}
                       toggle={
                         <KebabToggle
-                          onToggle={(isOpen: boolean) => this.onToggle('toggle-id-7', isOpen)}
+                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-7', isOpen)}
                           id="toggle-id-7"
                         />
                       }
@@ -208,7 +211,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                       onSelect={this.onSelect}
                       toggle={
                         <KebabToggle
-                          onToggle={(isOpen: boolean) => this.onToggle('toggle-id-8', isOpen)}
+                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-8', isOpen)}
                           id="toggle-id-8"
                         />
                       }
@@ -245,7 +248,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                       onSelect={this.onSelect}
                       toggle={
                         <KebabToggle
-                          onToggle={(isOpen: boolean) => this.onToggle('toggle-id-9', isOpen)}
+                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-9', isOpen)}
                           id="toggle-id-9"
                         />
                       }
@@ -270,7 +273,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                       onSelect={this.onSelect}
                       toggle={
                         <KebabToggle
-                          onToggle={(isOpen: boolean) => this.onToggle('toggle-id-10', isOpen)}
+                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-10', isOpen)}
                           id="toggle-id-10"
                         />
                       }
@@ -296,7 +299,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                       onSelect={this.onSelect}
                       toggle={
                         <KebabToggle
-                          onToggle={(isOpen: boolean) => this.onToggle('toggle-id-11', isOpen)}
+                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-11', isOpen)}
                           id="toggle-id-11"
                         />
                       }
@@ -322,7 +325,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                       onSelect={this.onSelect}
                       toggle={
                         <KebabToggle
-                          onToggle={(isOpen: boolean) => this.onToggle('toggle-id-12', isOpen)}
+                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-12', isOpen)}
                           id="toggle-id-12"
                         />
                       }

@@ -113,13 +113,13 @@ class CardViewBasic extends React.Component {
       return selected === total;
     };
 
-    this.onToolbarDropdownToggle = isLowerToolbarDropdownOpen => {
+    this.onToolbarDropdownToggle = (_event, isLowerToolbarDropdownOpen) => {
       this.setState(prevState => ({
         isLowerToolbarDropdownOpen
       }));
     };
 
-    this.onToolbarKebabDropdownToggle = isLowerToolbarKebabDropdownOpen => {
+    this.onToolbarKebabDropdownToggle = (_event, isLowerToolbarKebabDropdownOpen) => {
       this.setState({
         isLowerToolbarKebabDropdownOpen
       });
@@ -163,7 +163,7 @@ class CardViewBasic extends React.Component {
       });
     };
 
-    this.onSplitButtonToggle = isOpen => {
+    this.onSplitButtonToggle = (_event, isOpen) => {
       this.setState({
         splitButtonDropdownIsOpen: isOpen
       });
@@ -431,8 +431,7 @@ class CardViewBasic extends React.Component {
               </DropdownToggleCheckbox>
             ]}
             onToggle={this.onSplitButtonToggle}
-          >
-          </DropdownToggle>
+          ></DropdownToggle>
         }
         isOpen={splitButtonDropdownIsOpen}
         dropdownItems={splitButtonDropdownItems}
@@ -605,7 +604,7 @@ class CardViewBasic extends React.Component {
                         onSelect={e => this.onCardKebabDropdownSelect(key, e)}
                         toggle={
                           <KebabToggle
-                            onToggle={isCardKebabDropdownOpen =>
+                            onToggle={(_event, isCardKebabDropdownOpen) =>
                               this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
                             }
                           />

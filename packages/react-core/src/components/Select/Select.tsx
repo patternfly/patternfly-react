@@ -127,7 +127,7 @@ export interface SelectProps
     isPlaceholder?: boolean
   ) => void;
   /** Callback for toggle button behavior */
-  onToggle: (isExpanded: boolean, event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event) => void;
+  onToggle: (event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event, isExpanded: boolean) => void;
   /** Callback for toggle blur */
   onBlur?: (event?: any) => void;
   /** Callback for typeahead clear button */
@@ -385,7 +385,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     this.setState({ focusFirstOption: true });
   };
 
-  onToggle = (isExpanded: boolean, e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event) => {
+  onToggle = (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event, isExpanded: boolean) => {
     const { isInputValuePersisted, onSelect, onToggle, hasInlineFilter } = this.props;
     if (!isExpanded && isInputValuePersisted && onSelect) {
       onSelect(undefined, this.inputRef.current ? this.inputRef.current.value : '');
@@ -395,7 +395,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         focusFirstOption: true
       });
     }
-    onToggle(isExpanded, e);
+    onToggle(e, isExpanded);
   };
 
   onClose = () => {
@@ -415,7 +415,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.toString() !== '' && !this.props.isOpen) {
-      this.onToggle(true, e);
+      this.onToggle(e, true);
     }
 
     if (this.props.onTypeaheadInputChanged) {
@@ -572,7 +572,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
   onClick = (e: React.MouseEvent) => {
     if (!this.props.isOpen) {
-      this.onToggle(true, e);
+      this.onToggle(e, true);
     }
   };
 
@@ -836,7 +836,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         } else {
           // Close if there is no footer
           if (!this.props.footer) {
-            this.onToggle(false, null);
+            this.onToggle(null, false);
             this.onClose();
           } else {
             // has footer
@@ -845,14 +845,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             if (this.inputRef.current === document.activeElement) {
               if (shiftKey) {
                 // close toggle if shift key and tab on input
-                this.onToggle(false, null);
+                this.onToggle(null, false);
                 this.onClose();
               } else {
                 // tab to first tabbable item in footer
                 if (tabbableItems[0]) {
                   tabbableItems[0].focus();
                 } else {
-                  this.onToggle(false, null);
+                  this.onToggle(null, false);
                   this.onClose();
                 }
               }
@@ -872,7 +872,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   tabbableItems[currentElementIndex + 1].focus();
                 } else {
                   // no next item, close toggle
-                  this.onToggle(false, null);
+                  this.onToggle(null, false);
                   this.inputRef.current.focus();
                   this.onClose();
                 }
@@ -1174,7 +1174,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 } else if (event.key === KeyTypes.Tab && variant !== SelectVariant.checkbox && this.props.footer) {
                   // tab to footer or close menu if shift key
                   if (event.shiftKey) {
-                    this.onToggle(false, event);
+                    this.onToggle(event, false);
                   } else {
                     const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
                     if (tabbableItems.length > 0) {
@@ -1182,7 +1182,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                       event.stopPropagation();
                       event.preventDefault();
                     } else {
-                      this.onToggle(false, event);
+                      this.onToggle(event, false);
                     }
                   }
                 } else if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {

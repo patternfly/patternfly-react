@@ -110,7 +110,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
       <BreadcrumbItem isDropdown>
         <Dropdown
           toggle={
-            <BadgeToggle id="toggle-id" onToggle={open => onToggle(open, 'app')}>
+            <BadgeToggle id="toggle-id" onToggle={(_event: any, open: boolean) => onToggle(open, 'app')}>
               1
             </BadgeToggle>
           }
@@ -144,7 +144,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
       <BreadcrumbItem isDropdown>
         <Dropdown
           toggle={
-            <BadgeToggle id="toggle-id" onToggle={open => onToggle(open, 'label')}>
+            <BadgeToggle id="toggle-id" onToggle={(_event: any, open: boolean) => onToggle(open, 'label')}>
               1
             </BadgeToggle>
           }
@@ -190,7 +190,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
       <BreadcrumbItem isDropdown>
         <Dropdown
           toggle={
-            <BadgeToggle id="toggle-id" onToggle={open => onToggle(open, 'pause-app')}>
+            <BadgeToggle id="toggle-id" onToggle={(_event: any, open: boolean) => onToggle(open, 'pause-app')}>
               1
             </BadgeToggle>
           }
@@ -224,7 +224,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
       <BreadcrumbItem isDropdown>
         <Dropdown
           toggle={
-            <BadgeToggle id="toggle-id" onToggle={open => onToggle(open, 'pause-label')}>
+            <BadgeToggle id="toggle-id" onToggle={(_event: any, open: boolean) => onToggle(open, 'pause-label')}>
               1
             </BadgeToggle>
           }

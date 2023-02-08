@@ -5,13 +5,13 @@ import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 export const DropdownIconOnly: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onToggle = (isOpen: boolean) => {
+  const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);
   };
 
   const onFocus = () => {
     const element = document.getElementById('toggle-icon-only');
-    element.focus();
+    element?.focus();
   };
 
   const onSelect = () => {

@@ -47,13 +47,13 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
     <SelectOption key={9} value="Degraded " />
   ];
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });
   };
 
-  onToggleCheck = (isOpenCheck: boolean) => {
+  onToggleCheck = (_event: any, isOpenCheck: boolean) => {
     this.setState({
       isOpenCheck
     });

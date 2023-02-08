@@ -4,13 +4,13 @@ import { Dropdown, DropdownToggle, DropdownGroup, DropdownItem } from '@patternf
 export const DropdownGroups: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onToggle = (isOpen: boolean) => {
+  const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);
   };
 
   const onFocus = () => {
     const element = document.getElementById('toggle-groups');
-    element.focus();
+    element?.focus();
   };
 
   const onSelect = () => {

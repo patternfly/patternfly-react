@@ -396,7 +396,7 @@ class PageLayoutHorizontalNav extends React.Component {
       activeItem: 0
     };
 
-    this.onDropdownToggle = isDropdownOpen => {
+    this.onDropdownToggle = (_event, isDropdownOpen) => {
       this.setState({
         isDropdownOpen
       });
@@ -408,7 +408,7 @@ class PageLayoutHorizontalNav extends React.Component {
       });
     };
 
-    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+    this.onKebabDropdownToggle = (_event, isKebabDropdownOpen) => {
       this.setState({
         isKebabDropdownOpen
       });
@@ -754,7 +754,7 @@ class HorizontalNavWithSubnav extends React.Component {
       activeSubNavItem: 7
     };
 
-    this.onDropdownToggle = isDropdownOpen => {
+    this.onDropdownToggle = (_event, isDropdownOpen) => {
       this.setState({
         isDropdownOpen
       });
@@ -766,7 +766,7 @@ class HorizontalNavWithSubnav extends React.Component {
       });
     };
 
-    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+    this.onKebabDropdownToggle = (_event, isKebabDropdownOpen) => {
       this.setState({
         isKebabDropdownOpen
       });
@@ -1219,7 +1219,7 @@ class PageLayoutManualNav extends React.Component {
       isNavOpenMobile: false
     };
 
-    this.onDropdownToggle = isDropdownOpen => {
+    this.onDropdownToggle = (_event, isDropdownOpen) => {
       this.setState({
         isDropdownOpen
       });
@@ -1231,7 +1231,7 @@ class PageLayoutManualNav extends React.Component {
       });
     };
 
-    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+    this.onKebabDropdownToggle = (_event, isKebabDropdownOpen) => {
       this.setState({
         isKebabDropdownOpen
       });

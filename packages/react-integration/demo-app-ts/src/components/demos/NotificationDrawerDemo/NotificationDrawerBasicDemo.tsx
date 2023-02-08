@@ -38,7 +38,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
       isDrawerOpen: false
     });
   };
-  onToggle = (id: number) => (isOpen: boolean) => {
+  onToggle = (id: number) => (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen: [...this.state.isOpen.slice(0, id), isOpen, ...this.state.isOpen.slice(id + 1)]
     });

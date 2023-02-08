@@ -63,13 +63,13 @@ export class SelectViewMoreGroupedDemo extends Component<SelectViewMoreGroupedDe
     </SelectGroup>
   ];
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });
   };
 
-  onToggleCheck = (isOpenCheck: boolean) => {
+  onToggleCheck = (_event: any, isOpenCheck: boolean) => {
     this.setState({
       isOpenCheck
     });

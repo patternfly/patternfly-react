@@ -5,13 +5,13 @@ import { Link } from '@reach/router';
 export const DropdownRouterLink: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onToggle = (isOpen: boolean) => {
+  const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);
   };
 
   const onFocus = () => {
     const element = document.getElementById('toggle-router-link');
-    element.focus();
+    element?.focus();
   };
 
   const onSelect = () => {

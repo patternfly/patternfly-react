@@ -116,7 +116,7 @@ class PrimaryDetailFullPage extends React.Component {
       this.setState({ inputValue: newValue });
     };
 
-    this.onStatusToggle = isExpanded => {
+    this.onStatusToggle = (_event, isExpanded) => {
       this.setState({
         statusIsExpanded: isExpanded
       });
@@ -137,7 +137,7 @@ class PrimaryDetailFullPage extends React.Component {
       });
     };
 
-    this.onRiskToggle = isExpanded => {
+    this.onRiskToggle = (_event, isExpanded) => {
       this.setState({
         riskIsExpanded: isExpanded
       });
@@ -576,7 +576,7 @@ class PrimaryDetailContentPadding extends React.Component {
       this.setState({ inputValue: newValue });
     };
 
-    this.onStatusToggle = isExpanded => {
+    this.onStatusToggle = (_event, isExpanded) => {
       this.setState({
         statusIsExpanded: isExpanded
       });
@@ -597,7 +597,7 @@ class PrimaryDetailContentPadding extends React.Component {
       });
     };
 
-    this.onRiskToggle = isExpanded => {
+    this.onRiskToggle = (_event, isExpanded) => {
       this.setState({
         riskIsExpanded: isExpanded
       });
@@ -1033,7 +1033,7 @@ class PrimaryDetailCardView extends React.Component {
       activeItem: 0
     };
 
-    this.onToolbarDropdownToggle = isLowerToolbarDropdownOpen => {
+    this.onToolbarDropdownToggle = (_event, isLowerToolbarDropdownOpen) => {
       this.setState(prevState => ({
         isLowerToolbarDropdownOpen
       }));
@@ -1045,7 +1045,7 @@ class PrimaryDetailCardView extends React.Component {
       });
     };
 
-    this.onToolbarKebabDropdownToggle = isLowerToolbarKebabDropdownOpen => {
+    this.onToolbarKebabDropdownToggle = (_event, isLowerToolbarKebabDropdownOpen) => {
       this.setState({
         isLowerToolbarKebabDropdownOpen
       });
@@ -1227,7 +1227,7 @@ class PrimaryDetailCardView extends React.Component {
       }));
     };
 
-    this.onSplitButtonToggle = isOpen => {
+    this.onSplitButtonToggle = (_event, isOpen) => {
       this.setState({
         splitButtonDropdownIsOpen: isOpen
       });
@@ -1475,7 +1475,7 @@ class PrimaryDetailCardView extends React.Component {
                   onSelect={e => this.onCardKebabDropdownSelect(key, e)}
                   toggle={
                     <KebabToggle
-                      onToggle={(isCardKebabDropdownOpen, event) =>
+                      onToggle={(event, isCardKebabDropdownOpen) =>
                         this.onCardKebabDropdownToggle(event, key, isCardKebabDropdownOpen)
                       }
                     />
@@ -1777,7 +1777,7 @@ class PrimaryDetailDataListInCard extends React.Component {
       isExpanded: false
     };
 
-    this.onDropdownToggle = isOpen => {
+    this.onDropdownToggle = (_event, isOpen) => {
       this.setState({
         isDropdownOpen: isOpen
       });
@@ -2060,7 +2060,7 @@ class PrimaryDetailInlineModifier extends React.Component {
       this.setState({ inputValue: newValue });
     };
 
-    this.onStatusToggle = isExpanded => {
+    this.onStatusToggle = (_event, isExpanded) => {
       this.setState({
         statusIsExpanded: isExpanded
       });
@@ -2081,7 +2081,7 @@ class PrimaryDetailInlineModifier extends React.Component {
       });
     };
 
-    this.onRiskToggle = isExpanded => {
+    this.onRiskToggle = (_event, isExpanded) => {
       this.setState({
         riskIsExpanded: isExpanded
       });

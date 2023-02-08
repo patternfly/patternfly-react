@@ -20,7 +20,7 @@ export class BreadcrumbDemo extends React.Component {
     window.scrollTo(0, 0);
   }
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });

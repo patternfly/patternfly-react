@@ -237,7 +237,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
           onSelect={onDropdownSelect}
           toggle={
             <KebabToggle
-              onToggle={isActive => onDropdownToggle('dropdown-toggle-id-0', isActive)}
+              onToggle={(_event: any, isActive: boolean) => onDropdownToggle('dropdown-toggle-id-0', isActive)}
               id="dropdown-toggle-id-0"
             />
           }
@@ -262,7 +262,12 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
                   <Dropdown
                     position={DropdownPosition.right}
                     onSelect={onDropdownSelect}
-                    toggle={<KebabToggle onToggle={isActive => onDropdownToggle(key, isActive)} id={key.toString()} />}
+                    toggle={
+                      <KebabToggle
+                        onToggle={(_event: any, isActive: boolean) => onDropdownToggle(key, isActive)}
+                        id={key.toString()}
+                      />
+                    }
                     isOpen={openDropdownKey === key}
                     isPlain
                     dropdownItems={notificationDrawerDropdownItems(key)}

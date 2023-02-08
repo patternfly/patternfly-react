@@ -25,7 +25,7 @@ export class SelectValidatedDemo extends Component<SelectValidatedDemoState> {
     <SelectOption key={6} value="Other" id="Other" />
   ];
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });

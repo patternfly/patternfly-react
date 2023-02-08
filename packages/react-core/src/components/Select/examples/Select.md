@@ -41,7 +41,7 @@ class SingleSelectInput extends React.Component {
       direction: SelectDirection.down
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -170,7 +170,7 @@ class SingleSelectDescription extends React.Component {
       isDisabled: false
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -248,7 +248,7 @@ class GroupedSingleSelectInput extends React.Component {
 
     this.toggleRef = React.createRef();
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -340,7 +340,7 @@ class ValidatedSelect extends React.Component {
       validated: 'default'
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -426,7 +426,7 @@ class CheckboxSelectInput extends React.Component {
       selected: []
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -504,7 +504,7 @@ class CheckboxSelectWithCounts extends React.Component {
       selected: []
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -581,7 +581,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
       selected: []
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -657,7 +657,7 @@ class GroupedCheckboxSelectInput extends React.Component {
       selected: []
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -761,7 +761,7 @@ class FilteringSingleSelectInput extends React.Component {
       </SelectGroup>
     ];
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({ isOpen });
     };
 
@@ -900,7 +900,7 @@ class FilteringCheckboxSelectInput extends React.Component {
       </SelectGroup>
     ];
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -1005,7 +1005,7 @@ class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
       </SelectGroup>
     ];
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -1112,7 +1112,7 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
       </SelectGroup>
     ];
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -1236,7 +1236,7 @@ class TypeaheadSelectInput extends React.Component {
       resetOnSelect: true
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -1451,7 +1451,7 @@ class GroupedTypeaheadSelectInput extends React.Component {
       hasOnCreateOption: false
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -1570,7 +1570,7 @@ class TypeaheadSelectInput extends React.Component {
       selected: null
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -1665,7 +1665,7 @@ class MultiTypeaheadSelectInput extends React.Component {
       });
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -1814,7 +1814,7 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
       selected: []
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -1902,7 +1902,7 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
       selected: []
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -2024,7 +2024,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
       selected: []
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -2106,7 +2106,7 @@ class PlainSelectInput extends React.Component {
       selected: []
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -2182,7 +2182,7 @@ class SingleSelectInput extends React.Component {
       direction: SelectDirection.down
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -2291,13 +2291,13 @@ class SelectDocumentBodyVsParent extends React.Component {
       parentSelected: null
     };
 
-    this.onBodyToggle = isBodyOpen => {
+    this.onBodyToggle = (_event, isBodyOpen) => {
       this.setState({
         isBodyOpen
       });
     };
 
-    this.onParentToggle = isParentOpen => {
+    this.onParentToggle = (_event, isParentOpen) => {
       this.setState({
         isParentOpen
       });
@@ -2383,7 +2383,7 @@ class FavoritesSelect extends React.Component {
       favorites: []
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -2490,7 +2490,7 @@ class SelectWithFooter extends React.Component {
       direction: SelectDirection.down
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -2576,7 +2576,7 @@ class SelectWithFooterCheckbox extends React.Component {
       <SelectOption key={5} value="Restarted" />
     ];
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -2663,7 +2663,7 @@ class SelectViewMore extends React.Component {
       isLoading: false
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -2763,7 +2763,7 @@ class SelectViewMoreCheckbox extends React.Component {
       <SelectOption key={9} value="Degraded " />
     ];
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -2852,7 +2852,7 @@ function SelectWithPlaceholderStyle() {
     <SelectOption key={2} value="Paused" />
   ];
 
-  const onToggle = isOpen => setIsOpen(isOpen);
+  const onToggle = (_event, isOpen) => setIsOpen(isOpen);
 
   const onSelect = (event, selection, isPlaceholder) => {
     setSelected(selection);
@@ -2907,7 +2907,7 @@ function SelectWithPlaceholderStyle() {
     <SelectOption key={3} value="Paused" />
   ];
 
-  const onToggle = isOpen => setIsOpen(isOpen);
+  const onToggle = (_event, isOpen) => setIsOpen(isOpen);
 
   const onSelect = (event, selection, isPlaceholder) => {
     setSelected(selection);

@@ -18,7 +18,7 @@ import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_r
 
 ### Horizontal card grid
 
-The following demo shows how you may use a `<Grid>` within a card for scenarios that require multiple subsections. 
+The following demo shows how you may use a `<Grid>` within a card for scenarios that require multiple subsections.
 
 ```js
 import React from 'react';
@@ -56,7 +56,7 @@ class CardGridDemo extends React.Component {
       });
     };
 
-    this.onActionToggle = isDropdownOpen => {
+    this.onActionToggle = (_event, isDropdownOpen) => {
       this.setState({
         isDropdownOpen
       });
@@ -857,7 +857,11 @@ const StatusPlain: React.FunctionComponent = () => {
         >
           <NotificationDrawerList isHidden={!drawerExpanded}>
             <NotificationDrawerListItem variant="danger">
-              <NotificationDrawerListItemHeader variant="danger" headingLevel="h5" title="Critical alert regarding control plane" />
+              <NotificationDrawerListItemHeader
+                variant="danger"
+                headingLevel="h5"
+                title="Critical alert regarding control plane"
+              />
               <NotificationDrawerListItemBody>
                 This is a long description to show how the title will wrap if it is long and wraps to multiple lines.
               </NotificationDrawerListItemBody>
@@ -2541,7 +2545,9 @@ const TrendCard1: React.FunctionComponent = () => {
               <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
                 <FlexItem>
                   <CardTitle>
-                    <Title headingLevel="h4" size="lg">1,050,765 IOPS</Title>
+                    <Title headingLevel="h4" size="lg">
+                      1,050,765 IOPS
+                    </Title>
                   </CardTitle>
                 </FlexItem>
                 <FlexItem>
@@ -2701,7 +2707,7 @@ CardLogViewDemo = () => {
     setIsOpen(!isOpen);
   };
 
-  const onActionToggle = isOpen => {
+  const onActionToggle = (_event, isOpen) => {
     setIsOpen(isOpen);
   };
 
@@ -2821,7 +2827,7 @@ CardEventViewDemo = () => {
     setIsOpen(!isOpen);
   };
 
-  const onActionToggle = isOpen => {
+  const onActionToggle = (_event, isOpen) => {
     setIsOpen(isOpen);
   };
 

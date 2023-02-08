@@ -137,19 +137,19 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     }
   };
 
-  onStatusToggle = (isOpen: boolean) => {
+  onStatusToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       statusisOpen: isOpen
     });
   };
 
-  onRiskToggle = (isOpen: boolean) => {
+  onRiskToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       riskisOpen: isOpen
     });
   };
 
-  onKebabToggle = (isOpen: boolean) => {
+  onKebabToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       kebabIsOpen: isOpen
     });

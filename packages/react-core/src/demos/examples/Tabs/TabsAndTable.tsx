@@ -140,7 +140,7 @@ export const TablesAndTabs = () => {
   const customActionsToggle = (props: CustomActionsToggleProps) => (
     <KebabToggle
       isDisabled={props.isDisabled}
-      onToggle={(value, event) => {
+      onToggle={(event: any, value: boolean) => {
         props.onToggle(value);
         event.stopPropagation();
       }}

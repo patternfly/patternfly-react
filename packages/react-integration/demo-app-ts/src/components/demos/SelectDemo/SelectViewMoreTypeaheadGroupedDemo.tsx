@@ -45,7 +45,7 @@ export class SelectViewMoreTypeaheadGroupedDemo extends React.Component<SelectVi
     </SelectGroup>
   ];
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });

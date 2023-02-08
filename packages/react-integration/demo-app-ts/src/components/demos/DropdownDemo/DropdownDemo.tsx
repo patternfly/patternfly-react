@@ -28,19 +28,19 @@ interface DropdownState {
 
 export class DropdownDemo extends React.Component<{}, DropdownState> {
   static displayName = 'DropdownDemo';
-  onToggle: (isOpen: boolean) => void;
-  onBadgeToggle: (isBadgeOpen: boolean) => void;
+  onToggle: (event: any, isOpen: boolean) => void;
+  onBadgeToggle: (event: any, isBadgeOpen: boolean) => void;
   onSelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
   onFocus: () => void;
-  onActionToggle: (isOpen: boolean) => void;
+  onActionToggle: (event: any, isOpen: boolean) => void;
   onActionSelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
   onActionClick: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   onActionFocus: () => void;
-  onCogToggle: (isOpen: boolean) => void;
+  onCogToggle: (event: any, isOpen: boolean) => void;
   onCogSelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
   onCogClick: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   onCogFocus: () => void;
-  onMenuDocumentBodyToggle: (isOpen: boolean) => void;
+  onMenuDocumentBodyToggle: (event: any, isOpen: boolean) => void;
   onMenuDocumentBodySelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
   onMenuDocumentBodyFocus: () => void;
   incrementCounter: () => void;
@@ -55,7 +55,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
       isMenuOnDocumentBodyOpen: false,
       counter: 0
     };
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });
@@ -74,13 +74,13 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
       }
     };
 
-    this.onBadgeToggle = isBadgeOpen => {
+    this.onBadgeToggle = (_event, isBadgeOpen) => {
       this.setState({
         isBadgeOpen
       });
     };
 
-    this.onActionToggle = isActionOpen => {
+    this.onActionToggle = (_event, isActionOpen) => {
       this.setState({
         isActionOpen
       });
@@ -104,7 +104,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
       }
     };
 
-    this.onCogToggle = isCogOpen => {
+    this.onCogToggle = (_event, isCogOpen) => {
       this.setState({
         isCogOpen
       });
@@ -128,7 +128,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
       }
     };
 
-    this.onMenuDocumentBodyToggle = isMenuOnDocumentBodyOpen => {
+    this.onMenuDocumentBodyToggle = (_event, isMenuOnDocumentBodyOpen) => {
       this.setState({
         isMenuOnDocumentBodyOpen
       });

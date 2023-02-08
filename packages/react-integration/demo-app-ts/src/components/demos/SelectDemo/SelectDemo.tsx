@@ -213,107 +213,107 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
-  singleOnToggle = (singleisOpen: boolean) => {
+  singleOnToggle = (_event: any, singleisOpen: boolean) => {
     this.setState({
       singleisOpen
     });
   };
 
-  singleRefOnToggle = (singleRefisOpen: boolean) => {
+  singleRefOnToggle = (_event: any, singleRefisOpen: boolean) => {
     this.setState({
       singleRefisOpen
     });
   };
 
-  singleAppendOnToggle = (singleAppendisOpen: boolean) => {
+  singleAppendOnToggle = (_event: any, singleAppendisOpen: boolean) => {
     this.setState({
       singleAppendisOpen
     });
   };
 
-  singleDescOnToggle = (singleDescisOpen: boolean) => {
+  singleDescOnToggle = (_event: any, singleDescisOpen: boolean) => {
     this.setState({
       singleDescisOpen
     });
   };
 
-  dividerOnToggle = (dividerisOpen: boolean) => {
+  dividerOnToggle = (_event: any, dividerisOpen: boolean) => {
     this.setState({
       dividerisOpen
     });
   };
 
-  disabledSingleOnToggle = (disabledSingleisOpen: boolean) => {
+  disabledSingleOnToggle = (_event: any, disabledSingleisOpen: boolean) => {
     this.setState({
       disabledSingleisOpen
     });
   };
 
-  customSingleOnToggle = (customSingleisOpen: boolean) => {
+  customSingleOnToggle = (_event: any, customSingleisOpen: boolean) => {
     this.setState({
       customSingleisOpen
     });
   };
 
-  checkOnToggle = (checkisOpen: boolean) => {
+  checkOnToggle = (_event: any, checkisOpen: boolean) => {
     this.setState({
       checkisOpen
     });
   };
 
-  documentBodyOnToggle = (menuDocumentBodyisOpen: boolean) => {
+  documentBodyOnToggle = (_event: any, menuDocumentBodyisOpen: boolean) => {
     this.setState({
       menuDocumentBodyisOpen
     });
   };
 
-  noBadgeCheckOnToggle = (noBadgeCheckIsOpen: boolean) => {
+  noBadgeCheckOnToggle = (_event: any, noBadgeCheckIsOpen: boolean) => {
     this.setState({
       noBadgeCheckIsOpen
     });
   };
 
-  typeaheadOnToggle = (typeaheadisOpen: boolean) => {
+  typeaheadOnToggle = (_event: any, typeaheadisOpen: boolean) => {
     this.setState({
       typeaheadisOpen
     });
   };
 
-  typeaheadMultiOnToggle = (typeaheadMultiisOpen: boolean) => {
+  typeaheadMultiOnToggle = (_event: any, typeaheadMultiisOpen: boolean) => {
     this.setState({
       typeaheadMultiisOpen
     });
   };
 
-  cdtypeaheadMultiOnToggle = (cdtypeaheadMultiisOpen: boolean) => {
+  cdtypeaheadMultiOnToggle = (_event: any, cdtypeaheadMultiisOpen: boolean) => {
     this.setState({
       cdtypeaheadMultiisOpen
     });
   };
 
-  lbtypaheadToggle = (lbltypeaheadisOpen: boolean) => {
+  lbtypaheadToggle = (_event: any, lbltypeaheadisOpen: boolean) => {
     this.setState({ lbltypeaheadisOpen });
   };
 
-  plainTypeaheadMultiOnToggle = (plainTypeaheadMultiisOpen: boolean) => {
+  plainTypeaheadMultiOnToggle = (_event: any, plainTypeaheadMultiisOpen: boolean) => {
     this.setState({
       plainTypeaheadMultiisOpen
     });
   };
 
-  customTypeaheadMultiOnToggle = (customTypeaheadMultiisOpen: boolean) => {
+  customTypeaheadMultiOnToggle = (_event: any, customTypeaheadMultiisOpen: boolean) => {
     this.setState({
       customTypeaheadMultiisOpen
     });
   };
 
-  customContentOnToggle = (customContentisOpen: boolean) => {
+  customContentOnToggle = (_event: any, customContentisOpen: boolean) => {
     this.setState({
       customContentisOpen
     });
   };
 
-  disabledFirstItemOnToggle = (disabledFirstItemIsOpen: boolean) => {
+  disabledFirstItemOnToggle = (_event: any, disabledFirstItemIsOpen: boolean) => {
     this.setState({
       disabledFirstItemIsOpen
     });

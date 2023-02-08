@@ -70,15 +70,15 @@ class ExpandableDataList extends React.Component {
       );
     };
 
-    this.onToggle1 = isOpen1 => {
+    this.onToggle1 = (_event, isOpen1) => {
       this.setState({ isOpen1 });
     };
 
-    this.onToggle2 = isOpen2 => {
+    this.onToggle2 = (_event, isOpen2) => {
       this.setState({ isOpen2 });
     };
 
-    this.onToggle3 = isOpen3 => {
+    this.onToggle3 = (_event, isOpen3) => {
       this.setState({ isOpen3 });
     };
 

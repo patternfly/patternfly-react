@@ -20,7 +20,10 @@ export interface BadgeToggleProps extends DropdownToggleProps {
   /** Label Toggle button */
   'aria-label'?: string;
   /** Callback called when toggle is clicked */
-  onToggle?: (isOpen: boolean) => void;
+  onToggle?: (
+    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    isOpen: boolean
+  ) => void;
   /** Element which wraps toggle */
   parentRef?: any;
   /** The menu element */

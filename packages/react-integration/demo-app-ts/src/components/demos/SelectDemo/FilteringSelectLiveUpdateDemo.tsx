@@ -35,7 +35,7 @@ export class FilteringSelectLiveUpdateDemo extends Component<FilteringSelectLive
     }
   };
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });

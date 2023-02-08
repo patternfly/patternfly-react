@@ -12,13 +12,13 @@ import avatarImg from '../../Avatar/examples/avatarImg.svg';
 export const DropdownImageAndText: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onToggle = (isOpen: boolean) => {
+  const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);
   };
 
   const onFocus = () => {
     const element = document.getElementById('toggle-image-and-text');
-    element.focus();
+    element?.focus();
   };
 
   const onSelect = () => {

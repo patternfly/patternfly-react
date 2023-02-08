@@ -10,13 +10,13 @@ import {
 export const DropdownSplitButtonDisabled: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onToggle = (isOpen: boolean) => {
+  const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);
   };
 
   const onFocus = () => {
     const element = document.getElementById('toggle-split-button');
-    element.focus();
+    element?.focus();
   };
 
   const onSelect = () => {

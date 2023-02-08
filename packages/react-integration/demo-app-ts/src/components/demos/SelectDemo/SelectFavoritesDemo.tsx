@@ -84,25 +84,25 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
     <SelectOption id={'degraded-option'} key={3} value="Degraded" />
   ];
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });
   };
 
-  onToggleGrouped = (isOpenGrouped: boolean) => {
+  onToggleGrouped = (_event: any, isOpenGrouped: boolean) => {
     this.setState({
       isOpenGrouped
     });
   };
 
-  typeaheadOnToggle = (typeaheadisOpen: boolean) => {
+  typeaheadOnToggle = (_event: any, typeaheadisOpen: boolean) => {
     this.setState({
       typeaheadisOpen
     });
   };
 
-  typeaheadMultiOnToggle = (typeaheadMultiisOpen: boolean) => {
+  typeaheadMultiOnToggle = (_event: any, typeaheadMultiisOpen: boolean) => {
     this.setState({
       typeaheadMultiisOpen
     });

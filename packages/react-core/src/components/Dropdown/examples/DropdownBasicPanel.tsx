@@ -4,13 +4,13 @@ import { Dropdown, DropdownToggle } from '@patternfly/react-core';
 export const DropdownBasicPanel: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onToggle = (isOpen: boolean) => {
+  const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);
   };
 
   const onFocus = () => {
     const element = document.getElementById('toggle-panel');
-    element.focus();
+    element?.focus();
   };
 
   const onSelect = () => {

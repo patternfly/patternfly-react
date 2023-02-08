@@ -19,7 +19,7 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
   const [isOpen2, setIsOpen2] = React.useState(false);
   const [isOpen3, setIsOpen3] = React.useState(false);
 
-  const onToggle1 = isOpen1 => {
+  const onToggle1 = (_event: any, isOpen1: boolean) => {
     setIsOpen1(isOpen1);
   };
 
@@ -27,14 +27,14 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
     setIsOpen1(!isOpen1);
   };
 
-  const onToggle2 = isOpen2 => {
+  const onToggle2 = (_event: any, isOpen2: boolean) => {
     setIsOpen2(isOpen2);
   };
 
   const onSelect2 = () => {
     setIsOpen2(!isOpen2);
   };
-  const onToggle3 = isOpen3 => {
+  const onToggle3 = (_event: any, isOpen3: boolean) => {
     setIsOpen3(isOpen3);
   };
 
