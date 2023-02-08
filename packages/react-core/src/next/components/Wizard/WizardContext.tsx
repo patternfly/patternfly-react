@@ -62,10 +62,8 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   goToStepByName,
   goToStepByIndex
 }) => {
-  const [currentSteps, setCurrentSteps] = React.useState(initialSteps);
-  const [currentFooter, setCurrentFooter] = React.useState(
-    typeof initialFooter !== 'function' ? initialFooter : undefined
-  );
+  const [currentSteps, setCurrentSteps] = React.useState<WizardStepType[]>(initialSteps);
+  const [currentFooter, setCurrentFooter] = React.useState<WizardFooterType>();
 
   // Combined initial and current state steps
   const steps = React.useMemo(
