@@ -48,7 +48,7 @@ export interface PopoverProps {
   alertSeverityVariant?: 'default' | 'info' | 'warning' | 'success' | 'danger';
   /** The duration of the CSS fade transition animation. */
   animationDuration?: number;
-  /** The element to append the popover to. Defaults to "document.body". */
+  /** The element to append the popover to. Defaults to "inline". */
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'inline';
   /** Accessible label for the popover, required when header is not present. */
   'aria-label'?: string;
