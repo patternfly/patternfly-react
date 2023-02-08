@@ -7,20 +7,28 @@ import { FolderOpenIcon as Icon2 } from '@patternfly/react-icons';
 
 import {
   ColaLayout,
+  ComponentFactory,
   DefaultEdge,
   DefaultGroup,
   DefaultNode,
   EdgeStyle,
+  Graph,
   GraphComponent,
+  Layout,
+  LayoutFactory,
+  Model,
   ModelKind,
+  Node,
   NodeModel,
   NodeShape,
+  NodeStatus,
   SELECTION_EVENT,
   Visualization,
   VisualizationProvider,
-  VisualizationSurface
+  VisualizationSurface,
+  withSelection,
+  WithSelectionProps
 } from '@patternfly/react-topology';
-import { ComponentFactory, Graph, Layout, LayoutFactory, Model, Node, NodeStatus } from '@patternfly/react-topology';
 
 interface CustomNodeProps {
   element: Node;
@@ -41,7 +49,7 @@ const BadgeColors = [
   }
 ];
 
-const CustomNode: React.FC<CustomNodeProps> = ({ element }) => {
+const CustomNode: React.FC<CustomNodeProps & WithSelectionProps> = ({ element, onSelect, selected }) => {
   const data = element.getData();
   const Icon = data.alternate ? Icon2 : Icon1;
   const badgeColors = BadgeColors.find(badgeColor => badgeColor.name === data.badge);
@@ -54,6 +62,8 @@ const CustomNode: React.FC<CustomNodeProps> = ({ element }) => {
       badgeColor={badgeColors?.badgeColor}
       badgeTextColor={badgeColors?.badgeTextColor}
       badgeBorderColor={badgeColors?.badgeBorderColor}
+      onSelect={onSelect}
+      selected={selected}
     >
       <g transform={`translate(25, 25)`}>
         <Icon style={{ color: '#393F44' }} width={25} height={25} />
@@ -80,9 +90,9 @@ const customComponentFactory: ComponentFactory = (kind: ModelKind, type: string)
         case ModelKind.graph:
           return GraphComponent;
         case ModelKind.node:
-          return CustomNode;
+          return withSelection()(CustomNode);
         case ModelKind.edge:
-          return DefaultEdge;
+          return withSelection()(DefaultEdge);
         default:
           return undefined;
       }
@@ -198,7 +208,7 @@ const EDGES = [
   }
 ];
 
-export const TopologyCustomNodeDemo: React.FC = () => {
+export const TopologySelectableDemo: React.FC = () => {
   const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
 
   const controller = React.useMemo(() => {

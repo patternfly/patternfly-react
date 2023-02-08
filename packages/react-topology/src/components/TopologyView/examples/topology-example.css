@@ -1,4 +1,8 @@
-.ws-react-t-topology-view {
+.ws-react-t-baseline,
+.ws-react-t-custom-edges,
+.ws-react-t-custom-nodes,
+.ws-react-t-panzoom,
+.ws-react-t-selectable {
   height: 600px;
   border: 1px solid var(--pf-global--palette--black-900);
   padding: 0;
@@ -14,12 +18,12 @@
   width: calc(100% + 18px);
 }
 
-.ws-react-t-topology .pf-topology-view__project-toolbar .pf-c-dropdown > button {
+.ws-react-t-topology .pf-topology-view__project-toolbar .pf-c-dropdown>button {
   justify-content: space-between;
   width: 150px;
 }
 
-.ws-react-t-topology .topology-view-filter-dropdown > button {
+.ws-react-t-topology .topology-view-filter-dropdown>button {
   justify-content: space-between;
   width: 130px;
 }

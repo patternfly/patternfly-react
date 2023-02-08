@@ -2,78 +2,64 @@ import * as React from 'react';
 
 // eslint-disable-next-line patternfly-react/import-tokens-icons
 import { RegionsIcon as Icon1 } from '@patternfly/react-icons';
+// eslint-disable-next-line patternfly-react/import-tokens-icons
+import { FolderOpenIcon as Icon2 } from '@patternfly/react-icons';
 
 import {
   ColaLayout,
   ComponentFactory,
-  CREATE_CONNECTOR_DROP_TYPE,
   DefaultEdge,
   DefaultGroup,
   DefaultNode,
-  Edge,
-  EdgeAnimationSpeed,
-  EdgeModel,
   EdgeStyle,
-  EdgeTerminalType,
   Graph,
   GraphComponent,
-  LabelPosition,
   Layout,
   LayoutFactory,
   Model,
   ModelKind,
   Node,
-  nodeDragSourceSpec,
-  nodeDropTargetSpec,
   NodeModel,
   NodeShape,
+  NodeStatus,
   SELECTION_EVENT,
   Visualization,
   VisualizationProvider,
-  VisualizationSurface,
-  withDndDrop,
-  withDragNode,
-  WithDragNodeProps,
-  withSelection,
-  WithSelectionProps
+  VisualizationSurface
 } from '@patternfly/react-topology';
 
 interface CustomNodeProps {
   element: Node;
 }
 
-interface DataEdgeProps {
-  element: Edge;
-}
+const BadgeColors = [
+  {
+    name: 'A',
+    badgeColor: '#ace12e',
+    badgeTextColor: '#0f280d',
+    badgeBorderColor: '#486b00'
+  },
+  {
+    name: 'B',
+    badgeColor: '#F2F0FC',
+    badgeTextColor: '#5752d1',
+    badgeBorderColor: '#CBC1FF'
+  }
+];
 
-const CONNECTOR_SOURCE_DROP = 'connector-src-drop';
-const CONNECTOR_TARGET_DROP = 'connector-target-drop';
-
-const DataEdge: React.FC<DataEdgeProps> = ({ element, ...rest }) => (
-  <DefaultEdge
-    element={element}
-    startTerminalType={EdgeTerminalType.cross}
-    endTerminalType={EdgeTerminalType.directionalAlt}
-    {...rest}
-  />
-);
-
-const CustomNode: React.FC<CustomNodeProps & WithSelectionProps & WithDragNodeProps> = ({
-  element,
-  selected,
-  onSelect,
-  ...rest
-}) => {
-  const Icon = Icon1;
+const CustomNode: React.FC<CustomNodeProps> = ({ element }) => {
+  const data = element.getData();
+  const Icon = data.alternate ? Icon2 : Icon1;
+  const badgeColors = BadgeColors.find(badgeColor => badgeColor.name === data.badge);
 
   return (
     <DefaultNode
       element={element}
       showStatusDecorator
-      selected={selected}
-      onSelect={onSelect}
-      labelPosition={LabelPosition.right}
-      {...rest}
+      badge={data.badge}
+      badgeColor={badgeColors?.badgeColor}
+      badgeTextColor={badgeColors?.badgeTextColor}
+      badgeBorderColor={badgeColors?.badgeBorderColor}
     >
       <g transform={`translate(25, 25)`}>
         <Icon style={{ color: '#393F44' }} width={25} height={25} />
@@ -82,19 +68,19 @@ const CustomNode: React.FC<CustomNodeProps & WithSelectionProps & WithDragNodePr
   );
 };
 
-const customLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout | undefined =>
-  new ColaLayout(graph, { layoutOnDrag: false });
+const customLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout | undefined => {
+  switch (type) {
+    case 'Cola':
+      return new ColaLayout(graph);
+    default:
+      return new ColaLayout(graph, { layoutOnDrag: false });
+  }
+};
 
 const customComponentFactory: ComponentFactory = (kind: ModelKind, type: string) => {
   switch (type) {
     case 'group':
       return DefaultGroup;
-    case 'node':
-      return withDndDrop(
-        nodeDropTargetSpec([CONNECTOR_SOURCE_DROP, CONNECTOR_TARGET_DROP, CREATE_CONNECTOR_DROP_TYPE])
-      )(withDragNode(nodeDragSourceSpec('node', true, true))(withSelection()(CustomNode)));
-    case 'data-edge':
-      return DataEdge;
     default:
       switch (kind) {
         case ModelKind.graph:
@@ -116,67 +102,78 @@ const NODES: NodeModel[] = [
     id: 'node-0',
     type: 'node',
     label: 'Node 0',
-    labelPosition: LabelPosition.right,
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     shape: NodeShape.ellipse,
-    x: 350,
-    y: 50
+    status: NodeStatus.danger,
+    data: {
+      badge: 'B',
+      isAlternate: false
+    }
   },
   {
     id: 'node-1',
     type: 'node',
     label: 'Node 1',
-    labelPosition: LabelPosition.right,
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     shape: NodeShape.hexagon,
-    x: 150,
-    y: 150
+    status: NodeStatus.warning,
+    data: {
+      badge: 'B',
+      isAlternate: false
+    }
   },
   {
     id: 'node-2',
     type: 'node',
     label: 'Node 2',
-    labelPosition: LabelPosition.right,
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     shape: NodeShape.octagon,
-    x: 150,
-    y: 350
+    status: NodeStatus.success,
+    data: {
+      badge: 'A',
+      isAlternate: true
+    }
   },
   {
     id: 'node-3',
     type: 'node',
     label: 'Node 3',
-    labelPosition: LabelPosition.right,
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     shape: NodeShape.rhombus,
-    x: 350,
-    y: 450
+    status: NodeStatus.info,
+    data: {
+      badge: 'A',
+      isAlternate: false
+    }
   },
   {
     id: 'node-4',
     type: 'node',
     label: 'Node 4',
-    labelPosition: LabelPosition.right,
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     shape: NodeShape.hexagon,
-    x: 550,
-    y: 350
+    status: NodeStatus.default,
+    data: {
+      badge: 'C',
+      isAlternate: false
+    }
   },
   {
     id: 'node-5',
     type: 'node',
     label: 'Node 5',
-    labelPosition: LabelPosition.right,
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     shape: NodeShape.rect,
-    x: 550,
-    y: 150
+    data: {
+      badge: 'C',
+      isAlternate: true
+    }
   },
   {
     id: 'Group-1',
@@ -190,24 +187,24 @@ const NODES: NodeModel[] = [
   }
 ];
 
-const EDGES: EdgeModel[] = [
+const EDGES = [
   {
-    id: `edge-1`,
+    id: 'edge-node-4-node-5',
     type: 'edge',
     source: 'node-4',
-    target: 'node-5'
+    target: 'node-5',
+    edgeStyle: EdgeStyle.default
   },
   {
-    id: `edge-2`,
-    type: 'data-edge',
+    id: 'edge-node-0-node-2',
+    type: 'edge',
     source: 'node-0',
-    target: 'node-1',
-    edgeStyle: EdgeStyle.dashedMd,
-    animationSpeed: EdgeAnimationSpeed.medium
+    target: 'node-2',
+    edgeStyle: EdgeStyle.default
   }
 ];
 
-export const TopologyEdgeDemo: React.FC = () => {
+export const TopologyCustomNodeDemo: React.FC = () => {
   const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
 
   const controller = React.useMemo(() => {
