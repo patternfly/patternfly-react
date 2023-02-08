@@ -10,7 +10,7 @@
   margin: var(--pf-global--spacer--md);
 }
 
-.ws-react-t-sidebar-demo .topology-example-sidebar {
+.ws-react-t-with-sidebar .topology-example-sidebar {
   max-width: 300px;
 }
 
