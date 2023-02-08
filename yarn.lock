@@ -3787,11 +3787,6 @@
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.0.0-alpha.12.tgz#252cc43acefccac781c7820f2aedeb8edeb15e7e"
   integrity sha512-NIb6i3LVq0aHayLWh7wwliaPvH2oUYsrkiUYgomfOl6nuKDmpY1CAEIZFxcegfomUCmpSM44RsuPGFjMvHNoOA==
 
-"@patternfly/patternfly@5.0.0-alpha.6":
-  version "5.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.0.0-alpha.6.tgz#834a807758a0355e93b3bc62b880b175b29e0acd"
-  integrity sha512-Id1jr/0iKjqxxabCuXKkfQ3PKvjMsmBHBy4TJ6alO5eqK8C/Fm6ghosCAdyu/9iiqnR/TyqaKLc2xGe/9UJCwA==
-
 "@phenomnomnominal/tsquery@4.1.1":
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/@phenomnomnominal/tsquery/-/tsquery-4.1.1.tgz#42971b83590e9d853d024ddb04a18085a36518df"
