@@ -52,11 +52,11 @@ export const ToolbarStacked: React.FunctionComponent = () => {
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(20);
 
-  const onKebabToggle = (isOpen: boolean) => {
+  const onKebabToggle = (_event: any, isOpen: boolean) => {
     setKebabIsOpen(isOpen);
   };
 
-  const onResourceToggle = (isExpanded: boolean) => {
+  const onResourceToggle = (_event: any, isExpanded: boolean) => {
     setResourceIsExpanded(isExpanded);
   };
 
@@ -70,7 +70,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     setResourceIsExpanded(false);
   };
 
-  const onStatusToggle = (isExpanded: boolean) => {
+  const onStatusToggle = (_event: any, isExpanded: boolean) => {
     setStatusIsExpanded(isExpanded);
   };
 
@@ -92,7 +92,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     setPerPage(perPage);
   };
 
-  const onSplitButtonToggle = (isOpen: boolean) => {
+  const onSplitButtonToggle = (_event: any, isOpen: boolean) => {
     setSplitButtonDropdownIsOpen(isOpen);
   };
 

@@ -34,7 +34,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
   const [thirdIsExpanded, setThirdIsExpanded] = React.useState(false);
   const [thirdSelected, setThirdSelected] = React.useState<string | SelectOptionObject>();
 
-  const onFirstToggle = (isExpanded: boolean) => {
+  const onFirstToggle = (_event: any, isExpanded: boolean) => {
     setFirstIsExpanded(isExpanded);
   };
 
@@ -43,7 +43,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
     setFirstIsExpanded(false);
   };
 
-  const onSecondToggle = (isExpanded: boolean) => {
+  const onSecondToggle = (_event: any, isExpanded: boolean) => {
     setSecondIsExpanded(isExpanded);
   };
 
@@ -52,7 +52,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
     setSecondIsExpanded(false);
   };
 
-  const onThirdToggle = (isExpanded: boolean) => {
+  const onThirdToggle = (_event: any, isExpanded: boolean) => {
     setThirdIsExpanded(isExpanded);
   };
 
