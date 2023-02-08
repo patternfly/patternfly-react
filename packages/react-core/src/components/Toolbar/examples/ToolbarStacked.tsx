@@ -228,7 +228,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
               dropdownItems={splitButtonDropdownItems}
             />
           </ToolbarItem>
-          <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>
+          <ToolbarItem variant="pagination" align="right">
             <Pagination
               itemCount={37}
               perPage={perPage}
