@@ -17,11 +17,11 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
   const [isTimedOut1, setIsTimedOut1] = React.useState(true);
   const [isTimedOut2, setIsTimedOut2] = React.useState(true);
 
-  const onToggle1 = (isOpen: boolean) => {
+  const onToggle1 = (_event: any, isOpen: boolean) => {
     setIsOpen1(isOpen);
   };
 
-  const onToggle2 = (isOpen: boolean) => {
+  const onToggle2 = (_event: any, isOpen: boolean) => {
     setIsOpen2(isOpen);
   };
 
@@ -37,12 +37,12 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
 
   const onFocus1 = () => {
     const element = document.getElementById('toggle-split-button-progress');
-    element.focus();
+    element?.focus();
   };
 
   const onFocus2 = () => {
     const element = document.getElementById('toggle-split-button-progress-text');
-    element.focus();
+    element?.focus();
   };
 
   const onChange1 = (checked: boolean) => {
