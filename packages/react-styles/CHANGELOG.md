@@ -3,99 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## 4.92.6 (2023-01-23)
+# 5.0.0-alpha.2 (2023-02-08)
 
 **Note:** Version bump only for package @patternfly/react-styles
 
+## 4.92.6 (2023-01-23)
 
-
-
+**Note:** Version bump only for package @patternfly/react-styles
 
 ## 4.92.5 (2023-01-19)
 
 **Note:** Version bump only for package @patternfly/react-styles
 
-
-
-
-
 ## 4.92.4 (2023-01-18)
-
 
 ### Bug Fixes
 
-* **Tabs:** Removed isHelpAction prop from TabsAction ([#8560](https://github.com/patternfly/patternfly-react/issues/8560)) ([05fa1b0](https://github.com/patternfly/patternfly-react/commit/05fa1b0acfe886f09c5bdf4ad9f8e27878ee817e))
-
-
-
-
+- **Tabs:** Removed isHelpAction prop from TabsAction ([#8560](https://github.com/patternfly/patternfly-react/issues/8560)) ([05fa1b0](https://github.com/patternfly/patternfly-react/commit/05fa1b0acfe886f09c5bdf4ad9f8e27878ee817e))
 
 ## 4.92.3 (2022-12-08)
 
 **Note:** Version bump only for package @patternfly/react-styles
 
-
-
-
-
 ## 4.92.2 (2022-12-07)
 
 **Note:** Version bump only for package @patternfly/react-styles
-
-
-
-
 
 ## 4.92.1 (2022-12-01)
 
 **Note:** Version bump only for package @patternfly/react-styles
 
-
-
-
-
 # 4.92.0 (2022-11-16)
-
 
 ### Features
 
-* **Tabs:** add TabAction, update core ver ([#8348](https://github.com/patternfly/patternfly-react/issues/8348)) ([8c584b4](https://github.com/patternfly/patternfly-react/commit/8c584b48f8e545cf226f785b873ee11eda505724))
-
-
-
-
+- **Tabs:** add TabAction, update core ver ([#8348](https://github.com/patternfly/patternfly-react/issues/8348)) ([8c584b4](https://github.com/patternfly/patternfly-react/commit/8c584b48f8e545cf226f785b873ee11eda505724))
 
 ## 4.91.10 (2022-10-27)
 
 **Note:** Version bump only for package @patternfly/react-styles
 
-
-
-
-
 ## 4.91.9 (2022-10-26)
 
 **Note:** Version bump only for package @patternfly/react-styles
-
-
-
-
 
 ## [4.91.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.91.7...@patternfly/react-styles@4.91.8) (2022-10-17)
 
 **Note:** Version bump only for package @patternfly/react-styles
 
-
-
-
-
 ## 4.91.7 (2022-10-14)
 
 **Note:** Version bump only for package @patternfly/react-styles
-
-
-
-
 
 ## 4.91.6 (2022-10-05)
 
