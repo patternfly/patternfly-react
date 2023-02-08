@@ -16,6 +16,10 @@ const COLOR_SCALE = [
   chart_theme_green_ColorScale_500.var
 ];
 
-export const LightGreenColorTheme = ColorTheme({
+/**
+ * Green color theme
+ * @private
+ */
+export const GreenColorTheme = ColorTheme({
   COLOR_SCALE
 });

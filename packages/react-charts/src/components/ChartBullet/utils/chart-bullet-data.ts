@@ -16,7 +16,6 @@ interface ChartBulletDataInterface {
   negativeMeasureTheme?: ChartThemeDefinition;
   theme?: ChartThemeDefinition;
   themeColor?: string;
-  themeVariant?: string;
   y?: DataGetterPropType;
   y0?: DataGetterPropType;
 }

@@ -242,14 +242,6 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * This prop refers to the width of the svg that ChartCursorTooltip is rendered within. This prop is passed from
    * parents of ChartCursorTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the
    * width of the tooltip flyout. Please use flyoutWidth instead
@@ -277,8 +269,6 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
   showPointer = true,
   style,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
 
   // destructure last
   theme = getTheme(themeColor),

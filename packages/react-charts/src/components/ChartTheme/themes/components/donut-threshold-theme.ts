@@ -10,7 +10,10 @@ import chart_donut_threshold_static_pie_angle_Padding from '@patternfly/react-to
 import chart_donut_threshold_static_pie_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_static_pie_Padding';
 import chart_donut_threshold_static_pie_Width from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_static_pie_Width';
 
-// Donut threshold dynamic theme
+/**
+ * Donut threshold dynamic theme
+ * @private
+ */
 export const DonutThresholdDynamicTheme = {
   legend: {
     colorScale: [chart_donut_threshold_second_Color.var, chart_donut_threshold_third_Color.var]
@@ -22,7 +25,10 @@ export const DonutThresholdDynamicTheme = {
   }
 };
 
-// Donut threshold static theme
+/**
+ * Donut threshold static theme
+ * @private
+ */
 export const DonutThresholdStaticTheme = {
   pie: {
     colorScale: [

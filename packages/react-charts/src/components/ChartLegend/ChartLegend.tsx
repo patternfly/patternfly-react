@@ -277,14 +277,6 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * The title prop specifies a title to render with the legend.
    * This prop should be given as a string, or an array of strings for multi-line titles.
    */
@@ -336,8 +328,6 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   responsive = true,
   style,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
   titleComponent = <ChartLabel />,
 
   // destructure last

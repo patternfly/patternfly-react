@@ -16,6 +16,10 @@ const COLOR_SCALE = [
   chart_theme_orange_ColorScale_500.var
 ];
 
-export const LightOrangeColorTheme = ColorTheme({
+/**
+ * Orange color theme
+ * @private
+ */
+export const OrangeColorTheme = ColorTheme({
   COLOR_SCALE
 });

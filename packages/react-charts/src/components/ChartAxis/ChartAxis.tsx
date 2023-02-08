@@ -386,14 +386,6 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * The tickComponent prop takes in an entire component which will be used
    * to create tick lines. The new element created from the passed tickComponent
    * will be supplied with the following properties: x1, y1, x2, y2, tick, style and events.
@@ -452,8 +444,6 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   name,
   showGrid = false,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
   tickLabelComponent = <ChartLabel />,
   // destructure last
   theme = getTheme(themeColor),

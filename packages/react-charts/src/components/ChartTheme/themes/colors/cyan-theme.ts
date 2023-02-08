@@ -16,6 +16,10 @@ const COLOR_SCALE = [
   chart_theme_cyan_ColorScale_500.var
 ];
 
-export const LightCyanColorTheme = ColorTheme({
+/**
+ * Cyan color theme
+ * @private
+ */
+export const CyanColorTheme = ColorTheme({
   COLOR_SCALE
 });

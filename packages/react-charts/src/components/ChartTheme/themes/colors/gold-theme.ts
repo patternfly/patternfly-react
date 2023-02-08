@@ -16,6 +16,10 @@ const COLOR_SCALE = [
   chart_theme_gold_ColorScale_500.var
 ];
 
-export const DarkGoldColorTheme = ColorTheme({
+/**
+ * Gold color theme
+ * @private
+ */
+export const GoldColorTheme = ColorTheme({
   COLOR_SCALE
 });

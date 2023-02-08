@@ -5,7 +5,10 @@ import chart_donut_label_subtitle_Fill from '@patternfly/react-tokens/dist/esm/c
 import chart_donut_label_title_Fill from '@patternfly/react-tokens/dist/esm/chart_donut_label_title_Fill';
 import chart_donut_label_subtitle_position from '@patternfly/react-tokens/dist/esm/chart_donut_label_subtitle_position';
 
-// Donut styles
+/**
+ * Donut styles
+ * @private
+ */
 export const DonutStyles = {
   label: {
     subTitle: {

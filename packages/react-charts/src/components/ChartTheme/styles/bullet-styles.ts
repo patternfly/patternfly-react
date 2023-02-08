@@ -13,7 +13,10 @@ import chart_global_FontSize_2xl from '@patternfly/react-tokens/dist/esm/chart_g
 import chart_global_FontSize_sm from '@patternfly/react-tokens/dist/esm/chart_global_FontSize_sm';
 import chart_global_FontSize_lg from '@patternfly/react-tokens/dist/esm/chart_global_FontSize_lg';
 
-// Bullet styles
+/**
+ * Bullet styles
+ * @private
+ */
 export const BulletStyles = {
   axisTickCount: chart_bullet_axis_tick_count.value,
   comparativeMeasureErrorWidth: chart_bullet_comparative_measure_error_Width.value,

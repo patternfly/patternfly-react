@@ -242,14 +242,6 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   themeColor?: string;
   /**
-   * Specifies the theme variant. Valid values are 'dark' or 'light'
-   *
-   * Note: Not compatible with theme prop
-   *
-   * @deprecated Use PatternFly's pf-theme-dark CSS selector
-   */
-  themeVariant?: string;
-  /**
    * This prop refers to the width of the svg that ChartTooltip is rendered within. This prop is passed from parents
    * of ChartTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the width of the
    * tooltip flyout. Please use flyoutWidth instead
@@ -275,8 +267,6 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
   labelComponent = <ChartLabel />, // Note that Victory provides its own label component here
   labelTextAnchor,
   themeColor,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  themeVariant,
 
   // destructure last
   theme = getTheme(themeColor),
