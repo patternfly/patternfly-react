@@ -98,7 +98,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
                       }
                       toggle={
                         <KebabToggle
-                          onToggle={open =>
+                          onToggle={(_event, open) =>
                             setRepos(repos.map(r => (r.name !== repo.name ? r : { ...r, isMenuOpen: open })))
                           }
                         />

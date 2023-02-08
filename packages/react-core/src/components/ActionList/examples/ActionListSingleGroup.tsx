@@ -13,8 +13,8 @@ export const ActionListSingleGroup: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (
-    isOpen: boolean,
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>
+    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    isOpen: boolean
   ) => {
     event.stopPropagation();
     setIsOpen(isOpen);
