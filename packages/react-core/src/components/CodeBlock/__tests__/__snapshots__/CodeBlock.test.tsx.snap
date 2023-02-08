@@ -6,13 +6,6 @@ exports[`CodeBlock renders successfully 1`] = `
     class="pf-c-code-block"
   >
     <div
-      class="pf-c-code-block__header"
-    >
-      <div
-        class="pf-c-code-block__actions"
-      />
-    </div>
-    <div
       class="pf-c-code-block__content"
     >
       test text

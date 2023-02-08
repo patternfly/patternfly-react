@@ -18,9 +18,11 @@ export const CodeBlock: React.FunctionComponent<CodeBlockProps> = ({
   ...props
 }: CodeBlockProps) => (
   <div className={css(styles.codeBlock, className)} {...props}>
-    <div className={css(styles.codeBlockHeader)}>
-      <div className={css(styles.codeBlockActions)}>{actions && actions}</div>
-    </div>
+    {actions && (
+      <div className={css(styles.codeBlockHeader)}>
+        <div className={css(styles.codeBlockActions)}>{actions}</div>
+      </div>
+    )}
     <div className={css(styles.codeBlockContent)}>{children}</div>
   </div>
 );
