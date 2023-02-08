@@ -1,5 +1,5 @@
 ---
-id: Selection Demo
+id: Selectable
 section: topology
 ---
 
@@ -7,19 +7,12 @@ Note: Topology lives in its own package at [`@patternfly/react-topology`](https:
 
 import {
   ColaLayout,
-  ComponentFactory,
   DefaultEdge,
   DefaultGroup,
   DefaultNode,
   EdgeStyle,
-  Graph,
   GraphComponent,
-  Layout,
-  LayoutFactory,
-  Model,
   ModelKind,
-  Node,
-  NodeModel,
   NodeShape,
   NodeStatus,
   SELECTION_EVENT,
@@ -27,7 +20,6 @@ import {
   VisualizationProvider,
   VisualizationSurface,
   withSelection,
-  WithSelectionProps
 } from '@patternfly/react-topology';
 
 import './topology-example.css';
@@ -50,5 +42,5 @@ By default, the application must control selection state. This can be done by ad
 
 Alternatively, you can pass `{ controlled: true }` to the `withSelection` utility or to the `useSelection` hook.
 
-```ts file='./TopologySelectionDemo.tsx'
+```ts file='./TopologySelectableDemo.tsx'
 ```

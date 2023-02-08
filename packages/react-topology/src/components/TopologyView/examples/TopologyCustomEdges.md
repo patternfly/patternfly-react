@@ -1,5 +1,5 @@
 ---
-id: Custom Edge Demo
+id: Custom Edges
 section: topology
 ---
 
@@ -7,27 +7,18 @@ Note: Topology lives in its own package at [`@patternfly/react-topology`](https:
 
 import {
   ColaLayout,
-  ComponentFactory,
   CREATE_CONNECTOR_DROP_TYPE,
   DefaultEdge,
   DefaultGroup,
   DefaultNode,
-  Edge,
   EdgeAnimationSpeed,
-  EdgeModel,
   EdgeStyle,
   EdgeTerminalType,
-  Graph,
   GraphComponent,
   LabelPosition,
-  Layout,
-  LayoutFactory,
-  Model,
   ModelKind,
-  Node,
   nodeDragSourceSpec,
   nodeDropTargetSpec,
-  NodeModel,
   NodeShape,
   SELECTION_EVENT,
   Visualization,
@@ -35,9 +26,7 @@ import {
   VisualizationSurface,
   withDndDrop,
   withDragNode,
-  WithDragNodeProps,
-  withSelection,
-  WithSelectionProps
+  withSelection
 } from '@patternfly/react-topology';
 
 import './topology-example.css';
@@ -52,5 +41,5 @@ Edges can be styled using properties on `EdgeModel`:
 
 You can also customize your edges further by providing a custom Edge component. In the component you can specify a variety of parameters to pass to `DefaultEdge` or you can create the SVG elements to depict the edge.
 
-```ts file='./TopologyCustomEdgeDemo.tsx'
+```ts file='./TopologyCustomEdgesDemo.tsx'
 ```

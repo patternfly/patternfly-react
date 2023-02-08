@@ -1,5 +1,5 @@
 ---
-id: Pan/Zoom Demo
+id: Pan/Zoom
 section: topology
 ---
 
@@ -7,19 +7,12 @@ Note: Topology lives in its own package at [`@patternfly/react-topology`](https:
 
 import {
   ColaLayout,
-  ComponentFactory,
   DefaultEdge,
   DefaultGroup,
   DefaultNode,
   EdgeStyle,
-  Graph,
   GraphComponent,
-  Layout,
-  LayoutFactory,
-  Model,
   ModelKind,
-  Node,
-  NodeModel,
   NodeShape,
   NodeStatus,
   SELECTION_EVENT,

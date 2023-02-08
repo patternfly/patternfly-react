@@ -1,5 +1,5 @@
 ---
-id: Custom Node Demo
+id: Custom Nodes
 section: topology
 ---
 
@@ -7,19 +7,12 @@ Note: Topology lives in its own package at [`@patternfly/react-topology`](https:
 
 import {
   ColaLayout,
-  ComponentFactory,
   DefaultEdge,
   DefaultGroup,
   DefaultNode,
   EdgeStyle,
-  Graph,
   GraphComponent,
-  Layout,
-  LayoutFactory,
-  Model,
   ModelKind,
-  Node,
-  NodeModel,
   NodeShape,
   NodeStatus,
   SELECTION_EVENT,
@@ -42,5 +35,5 @@ To do this, you will need:
 
 Within each node in your `NODES` array, you can set `data` to include additional custom attributes.
 
-```ts file='./TopologyCustomNodeDemo.tsx'
+```ts file='./TopologyCustomNodesDemo.tsx'
 ```

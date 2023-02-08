@@ -1,5 +1,5 @@
 ---
-id: Baseline Demo
+id: Baseline
 section: topology
 ---
 
@@ -11,16 +11,11 @@ To use React Topology out-of-the-box, you will first need to transform your back
 
 import {
   ColaLayout,
-  ComponentFactory,
   DefaultEdge,
   DefaultGroup,
   DefaultNode,
   EdgeStyle,
-  Graph,
   GraphComponent,
-  Layout,
-  LayoutFactory,
-  Model,
   ModelKind,
   NodeShape,
   SELECTION_EVENT,

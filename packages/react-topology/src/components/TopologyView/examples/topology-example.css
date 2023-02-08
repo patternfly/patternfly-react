@@ -1,8 +1,8 @@
-.ws-react-t-baseline-demo,
-.ws-react-t-custom-edge-demo,
-.ws-react-t-custom-node-demo,
-.ws-react-t-panzoom-demo,
-.ws-react-t-selection-demo {
+.ws-react-t-baseline,
+.ws-react-t-custom-edges,
+.ws-react-t-custom-nodes,
+.ws-react-t-panzoom,
+.ws-react-t-selectable {
   height: 600px;
   border: 1px solid var(--pf-global--palette--black-900);
   padding: 0;
