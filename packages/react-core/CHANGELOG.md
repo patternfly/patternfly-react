@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.7...@patternfly/react-core@5.0.0-alpha.8) (2023-02-08)
+
+### Bug Fixes
+
+- **Card:** set default component to "div" to match core ([#8601](https://github.com/patternfly/patternfly-react/issues/8601)) ([5bdb551](https://github.com/patternfly/patternfly-react/commit/5bdb551c97982153cf0ff9a3224d37df8c4083d5))
+
+### Features
+
+- **ClipboardCopy:** remove deprecated switchDelay ([#8619](https://github.com/patternfly/patternfly-react/issues/8619)) ([8487692](https://github.com/patternfly/patternfly-react/commit/8487692798d965d77de42cda5825bd4e2720a8c2))
+
 # [5.0.0-alpha.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.6...@patternfly/react-core@5.0.0-alpha.7) (2023-02-08)
 
 ### Bug Fixes

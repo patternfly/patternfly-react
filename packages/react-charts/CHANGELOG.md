@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0-alpha.3...@patternfly/react-charts@7.0.0-alpha.4) (2023-02-08)
+
+### Features
+
+- **charts:** update Victory dependencies for v5 ([#8606](https://github.com/patternfly/patternfly-react/issues/8606)) ([19a5e93](https://github.com/patternfly/patternfly-react/commit/19a5e939c417a4ad31b4e2a5fae24b1d7698a025))
+
 # 7.0.0-alpha.3 (2023-02-08)
 
 **Note:** Version bump only for package @patternfly/react-charts

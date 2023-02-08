@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.7...@patternfly/react-table@5.0.0-alpha.8) (2023-02-08)
+
+### Bug Fixes
+
+- **Table:** fix ThExpandType label type ([#8634](https://github.com/patternfly/patternfly-react/issues/8634)) ([43d47f3](https://github.com/patternfly/patternfly-react/commit/43d47f38dc638c3ff552c7c594e4b135169e5bbc))
+
 # [5.0.0-alpha.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.6...@patternfly/react-table@5.0.0-alpha.7) (2023-02-08)
 
 **Note:** Version bump only for package @patternfly/react-table
