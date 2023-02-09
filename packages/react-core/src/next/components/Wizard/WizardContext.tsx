@@ -76,7 +76,7 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
     [initialSteps, currentSteps]
   );
 
-  const activeStep =  React.useMemo(() => steps.find(step => step.index === activeStepIndex);
+  const activeStep = React.useMemo(() => steps.find(step => step.index === activeStepIndex), [activeStepIndex, steps]);
 
   const close = React.useCallback(() => onClose?.(null), [onClose]);
   const goToNextStep = React.useCallback(() => onNext(null, steps), [onNext, steps]);
