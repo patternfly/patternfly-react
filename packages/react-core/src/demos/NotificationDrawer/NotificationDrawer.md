@@ -238,7 +238,7 @@ class BasicNotificationDrawer extends React.Component {
     const headerToolbar = (
       <Toolbar>
         <ToolbarContent>
-          <ToolbarGroup spaceItems={{ default: 'spacerNone' }} align="right">
+          <ToolbarGroup spaceItems={{ default: 'spacerNone' }} align={{ default: 'alignRight' }}>
             <ToolbarGroup variant="icon-button-group">
               <ToolbarItem visibility={{ default: 'visible' }} isSelected={isDrawerExpanded}>
                 <NotificationBadge
@@ -805,7 +805,7 @@ class GroupedNotificationDrawer extends React.Component {
     const headerToolbar = (
       <Toolbar>
         <ToolbarContent>
-          <ToolbarGroup spaceItems={{ default: 'spacerNone' }} align="right">
+          <ToolbarGroup spaceItems={{ default: 'spacerNone' }} align={{ default: 'alignRight' }}>
             <ToolbarGroup variant="icon-button-group">
               <ToolbarItem visibility={{ default: 'visible' }} isSelected={isDrawerExpanded}>
                 <NotificationBadge

@@ -17,7 +17,7 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** applies to a flex parent and vertically aligns its children */
+  /** Vertical alignment of children */
   alignItems?: 'center' | 'default';
   /** Content to be rendered as children of the content row */
   children?: React.ReactNode;

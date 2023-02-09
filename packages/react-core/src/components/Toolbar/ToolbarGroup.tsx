@@ -23,11 +23,17 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** applies to a child of a flex layout, and aligns that child (and any adjacent children on the other side of it) to one side of the main axis */
-  align?: 'right' | 'left' | 'default';
-  /** applies to a flex parent and vertically aligns its children */
+  /** Applies to a child of a flex layout, and aligns that child (and any adjacent children on the other side of it) to one side of the main axis */
+  align?: {
+    default?: 'alignRight' | 'alignLeft';
+    md?: 'alignRight' | 'alignLeft';
+    lg?: 'alignRight' | 'alignLeft';
+    xl?: 'alignRight' | 'alignLeft';
+    '2xl'?: 'alignRight' | 'alignLeft';
+  };
+  /** Vertical alignment of children */
   alignItems?: 'center' | 'baseline' | 'default';
-  /** vertical alignment */
+  /** Vertical alignment */
   alignSelf?: 'center' | 'baseline' | 'default';
   /** Spacers at various breakpoints. */
   spacer?: {
@@ -75,10 +81,9 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
               styles.toolbarGroup,
               variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(align, styles, '', getBreakpoint(width)),
               formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
               formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
-              align === 'left' && styles.modifiers.alignLeft,
-              align === 'right' && styles.modifiers.alignRight,
               alignItems === 'center' && styles.modifiers.alignItemsCenter,
               alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
               alignSelf === 'center' && styles.modifiers.alignSelfCenter,

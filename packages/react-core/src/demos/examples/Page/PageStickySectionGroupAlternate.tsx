@@ -146,7 +146,11 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
   const headerToolbar = (
     <Toolbar id="toolbar" isFullHeight isStatic>
       <ToolbarContent>
-        <ToolbarGroup variant="icon-button-group" align="right" spacer={{ default: 'spacerNone', md: 'spacerMd' }}>
+        <ToolbarGroup
+          variant="icon-button-group"
+          align={{ default: 'alignRight' }}
+          spacer={{ default: 'spacerNone', md: 'spacerMd' }}
+        >
           <ToolbarItem>
             <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} />
           </ToolbarItem>
