@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.8...@patternfly/react-core@5.0.0-alpha.9) (2023-02-09)
+
+### Bug Fixes
+
+- **Code block:** Fixed to only render the header when actions are defined ([#8622](https://github.com/patternfly/patternfly-react/issues/8622)) ([ed631f7](https://github.com/patternfly/patternfly-react/commit/ed631f78fc6b5ebde082ffee583b538da9c56043))
+- **innerRefs:** hid innerRef props from various component docs ([#8648](https://github.com/patternfly/patternfly-react/issues/8648)) ([18b1ef4](https://github.com/patternfly/patternfly-react/commit/18b1ef428a7ff4f378d96ded993400bd8829a253))
+
+### Features
+
+- **Spinner:** remove legacy variant and svg prop ([#8616](https://github.com/patternfly/patternfly-react/issues/8616)) ([d811140](https://github.com/patternfly/patternfly-react/commit/d811140ae4828a9e7d9cc32da2dd38b3444ba63e))
+
 # [5.0.0-alpha.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.7...@patternfly/react-core@5.0.0-alpha.8) (2023-02-08)
 
 ### Bug Fixes

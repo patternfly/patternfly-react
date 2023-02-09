@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0-alpha.4...@patternfly/react-charts@7.0.0-alpha.5) (2023-02-09)
+
+### Features
+
+- **charts:** remove deprecated theme variant code ([#8590](https://github.com/patternfly/patternfly-react/issues/8590)) ([12e1c47](https://github.com/patternfly/patternfly-react/commit/12e1c472f1260d161f178e170782de8a7fc63b80))
+
 # [7.0.0-alpha.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0-alpha.3...@patternfly/react-charts@7.0.0-alpha.4) (2023-02-08)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.8...@patternfly/react-table@5.0.0-alpha.9) (2023-02-09)
+
+### Bug Fixes
+
+- **innerRefs:** hid innerRef props from various component docs ([#8648](https://github.com/patternfly/patternfly-react/issues/8648)) ([18b1ef4](https://github.com/patternfly/patternfly-react/commit/18b1ef428a7ff4f378d96ded993400bd8829a253))
+
 # [5.0.0-alpha.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.7...@patternfly/react-table@5.0.0-alpha.8) (2023-02-08)
 
 ### Bug Fixes
