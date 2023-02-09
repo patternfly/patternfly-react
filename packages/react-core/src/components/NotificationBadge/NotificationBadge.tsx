@@ -34,7 +34,7 @@ export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
 
 export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> = ({
   children,
-  variant,
+  variant = NotificationBadgeVariant.read,
   count = 0,
   attentionIcon = <AttentionBellIcon />,
   icon = <BellIcon />,
