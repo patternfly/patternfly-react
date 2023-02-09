@@ -2,13 +2,6 @@ import { NotificationBadge } from '../NotificationBadge';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-Object.values([true, false]).forEach(isRead => {
-  test(`${isRead} NotificationBadge`, () => {
-    const { asFragment } = render(<NotificationBadge isRead={isRead} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
-
 Object.values([true, false]).forEach(attentionVariant => {
   test(`${attentionVariant} NotificationBadge needs attention`, () => {
     const { asFragment } = render(

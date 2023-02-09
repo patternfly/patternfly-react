@@ -28,16 +28,13 @@ export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
    * notification badge.
    */
   isExpanded?: boolean;
-  /** @deprecated Use the variant prop instead - Adds styling to the notification badge to indicate it has been read. */
-  isRead?: boolean;
   /** Determines the variant of the notification badge. */
   variant?: NotificationBadgeVariant | 'read' | 'unread' | 'attention';
 }
 
 export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> = ({
-  isRead,
   children,
-  variant = isRead ? 'read' : 'unread',
+  variant = NotificationBadgeVariant.read,
   count = 0,
   attentionIcon = <AttentionBellIcon />,
   icon = <BellIcon />,

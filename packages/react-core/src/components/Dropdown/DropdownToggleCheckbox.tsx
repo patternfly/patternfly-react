@@ -91,7 +91,6 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
     const spinner = (
       <Spinner
         diameter="1em"
-        isSVG
         aria-valuetext={defaultProgressAriaValueText}
         aria-live="polite"
         aria-label={defaultProgressAriaLabel}
