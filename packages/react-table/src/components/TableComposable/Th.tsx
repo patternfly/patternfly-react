@@ -79,7 +79,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   ...props
 }: ThProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
-  const cellRef = innerRef ? innerRef : React.createRef();
+  const cellRef = innerRef || React.createRef();
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       !showTooltip && setShowTooltip(true);
