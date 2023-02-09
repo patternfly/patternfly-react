@@ -11,11 +11,11 @@ export interface ContextSelectorItemProps {
   /** Render Context  Selector item as disabled */
   isDisabled?: boolean;
   /** Callback for click event */
-  onClick: (event: React.MouseEvent) => void;
+  onClick?: (event: React.MouseEvent) => void;
   /** @hide internal index of the item */
-  index: number;
+  index?: number;
   /** Internal callback for ref tracking */
-  sendRef: (index: number, current: any) => void;
+  sendRef?: (index: number, current: any) => void;
   /** Link href, indicates item should render as anchor tag */
   href?: string;
 }
