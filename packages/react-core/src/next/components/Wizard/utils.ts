@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { WizardControlStep, WizardNavStepData } from './types';
+import { WizardStepType } from './types';
 import { WizardStep, WizardStepProps } from './WizardStep';
 
 /**
@@ -57,9 +57,3 @@ export const normalizeStepProps = ({
   steps: _steps,
   ...controlStep
 }: WizardStepProps): Omit<WizardStepType, 'index'> => controlStep;
-
-export const normalizeNavStep = (navStep: WizardControlStep): WizardNavStepData => ({
-  id: navStep.id,
-  index: navStep.index,
-  name: navStep.name.toString()
-});
