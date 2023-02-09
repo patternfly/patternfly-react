@@ -30,16 +30,3 @@ test('Test that logoComponent with href is an anchor', () => {
   const { asFragment } = render(Header);
   expect(asFragment()).toMatchSnapshot();
 });
-
-test('Test that logoComponent with onClick is a button', () => {
-  const Header = (
-    <PageHeader
-      logo="Logo"
-      logoProps={{ onClick: () => {} }}
-      headerTools="PageHeaderTools | Avatar"
-      onNavToggle={() => undefined}
-    />
-  );
-  const { asFragment } = render(Header);
-  expect(asFragment()).toMatchSnapshot();
-});

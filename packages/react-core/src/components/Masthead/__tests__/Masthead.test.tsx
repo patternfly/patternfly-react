@@ -102,12 +102,6 @@ describe('MastheadBrand', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
-
-  test('verify button component with onClick', () => {
-    const { asFragment } = render(<MastheadBrand onClick={() => {}}>test</MastheadBrand>);
-
-    expect(asFragment()).toMatchSnapshot();
-  });
 });
 
 describe('MastheadContent', () => {

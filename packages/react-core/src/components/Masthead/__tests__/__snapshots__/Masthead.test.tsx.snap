@@ -35,7 +35,6 @@ exports[`Masthead verify full structure 1`] = `
     >
       <span
         class="pf-c-masthead__brand"
-        tabindex="0"
       >
         Logo
       </span>
@@ -167,21 +166,9 @@ exports[`MastheadBrand verify basic 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-masthead__brand"
-    tabindex="0"
   >
     test
   </span>
-</DocumentFragment>
-`;
-
-exports[`MastheadBrand verify button component with onClick 1`] = `
-<DocumentFragment>
-  <button
-    class="pf-c-masthead__brand"
-    tabindex="0"
-  >
-    test
-  </button>
 </DocumentFragment>
 `;
 
@@ -189,7 +176,6 @@ exports[`MastheadBrand verify custom class 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-masthead__brand custom-css"
-    tabindex="0"
   >
     test
   </span>
@@ -200,7 +186,6 @@ exports[`MastheadBrand verify custom component 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-masthead__brand"
-    tabindex="0"
   >
     test
   </div>
@@ -211,7 +196,6 @@ exports[`MastheadBrand verify default component 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-masthead__brand"
-    tabindex="0"
   >
     test
   </span>

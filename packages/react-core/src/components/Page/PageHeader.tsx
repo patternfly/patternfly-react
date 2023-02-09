@@ -53,8 +53,6 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   if (!logoComponent) {
     if (logoProps?.href !== undefined) {
       LogoComponent = 'a';
-    } else if (logoProps?.onClick !== undefined) {
-      LogoComponent = 'button';
     } else {
       LogoComponent = 'span';
     }

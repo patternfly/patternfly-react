@@ -22,14 +22,12 @@ export const MastheadBrand: React.FunctionComponent<MastheadBrandProps> = ({
   if (!component) {
     if (props?.href !== undefined) {
       Component = 'a';
-    } else if (props?.onClick !== undefined) {
-      Component = 'button';
     } else {
       Component = 'span';
     }
   }
   return (
-    <Component className={css(styles.mastheadBrand, className)} tabIndex={0} {...props}>
+    <Component className={css(styles.mastheadBrand, className)} {...(Component === 'a' && { tabIndex: 0 })} {...props}>
       {children}
     </Component>
   );

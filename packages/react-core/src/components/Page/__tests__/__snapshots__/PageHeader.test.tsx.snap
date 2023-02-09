@@ -39,25 +39,6 @@ exports[`Test that logoComponent with href is an anchor 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Test that logoComponent with onClick is a button 1`] = `
-<DocumentFragment>
-  <header
-    class="pf-c-page__header"
-  >
-    <div
-      class="pf-c-page__header-brand"
-    >
-      <button
-        class="pf-c-page__header-brand-link"
-      >
-        Logo
-      </button>
-    </div>
-    PageHeaderTools | Avatar
-  </header>
-</DocumentFragment>
-`;
-
 exports[`Test that passed logoComponent overrides default 1`] = `
 <DocumentFragment>
   <header
