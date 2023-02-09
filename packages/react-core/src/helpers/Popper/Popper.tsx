@@ -358,12 +358,12 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     );
   };
 
-  const getTarget: () => HTMLElement = () => {
-    if (appendTo !== 'inline') {
-      if (typeof appendTo === 'function') {
-        return appendTo();
-      }
-      return appendTo;
+  const getPopper = () => {
+    if (appendTo === 'inline') {
+      return getMenuWithPopper();
+    } else {
+      const target = typeof appendTo === 'function' ? appendTo() : appendTo;
+      return ReactDOM.createPortal(getMenuWithPopper(), target);
     }
   };
 
@@ -374,9 +374,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
           {trigger}
         </div>
       )}
-      {ready &&
-        isVisible &&
-        (appendTo !== 'inline' ? ReactDOM.createPortal(getMenuWithPopper(), getTarget()) : getMenuWithPopper())}
+      {ready && isVisible && getPopper()}
     </>
   );
 };
