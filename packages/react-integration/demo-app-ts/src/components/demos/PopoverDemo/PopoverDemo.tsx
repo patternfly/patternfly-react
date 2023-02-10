@@ -6,8 +6,7 @@ export class PopoverDemo extends Component {
   myPopoverProps = {
     headerContent: <div>Popover Header</div>,
     bodyContent: <div>Popover Body</div>,
-    footerContent: 'Popover Footer',
-    children: <div id="popoverTarget">Hello</div>
+    footerContent: 'Popover Footer'
   };
 
   constructor(props: any) {
@@ -20,21 +19,18 @@ export class PopoverDemo extends Component {
   }
 
   render() {
+    const { headerContent, bodyContent, footerContent } = this.myPopoverProps;
     return (
       <>
-        <Popover
-          headerContent={this.myPopoverProps.headerContent}
-          bodyContent={this.myPopoverProps.bodyContent}
-          footerContent={this.myPopoverProps.footerContent}
-        >
-          {this.myPopoverProps.children}
+        <Popover headerContent={headerContent} bodyContent={bodyContent} footerContent={footerContent}>
+          <button id="popoverTarget">Popover attached to children</button>
         </Popover>
         <div>
           <button id="popover-selector">Popover attached via selector ref</button>
           <Popover
-            headerContent={this.myPopoverProps.headerContent}
-            bodyContent={this.myPopoverProps.bodyContent}
-            footerContent={this.myPopoverProps.footerContent}
+            headerContent={headerContent}
+            bodyContent={bodyContent}
+            footerContent={footerContent}
             reference={() => document.getElementById('popover-selector')}
           />
         </div>
@@ -43,9 +39,10 @@ export class PopoverDemo extends Component {
             Popover attached via react ref
           </button>
           <Popover
-            headerContent={this.myPopoverProps.headerContent}
-            bodyContent={this.myPopoverProps.bodyContent}
-            footerContent={this.myPopoverProps.footerContent}
+            position="right-start"
+            headerContent={headerContent}
+            bodyContent={bodyContent}
+            footerContent={footerContent}
             reference={this.popoverRef}
           />
         </div>
@@ -53,6 +50,7 @@ export class PopoverDemo extends Component {
           id="popover-content-close"
           aria-label="Popover with button in the body that can close it"
           headerContent={<div>Popover header</div>}
+          position="right-start"
           bodyContent={hide => (
             <div>
               <div>
@@ -88,6 +86,7 @@ export class PopoverDemo extends Component {
           bodyContent="I have a custom heading level."
           footerContent="Popover footer"
           headerComponent="h1"
+          position="auto"
         >
           <button id="popover-heading-level-toggle">Toggle Popover</button>
         </Popover>
@@ -95,3 +94,5 @@ export class PopoverDemo extends Component {
     );
   }
 }
+
+export default PopoverDemo;

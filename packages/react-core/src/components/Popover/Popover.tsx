@@ -48,8 +48,8 @@ export interface PopoverProps {
   alertSeverityVariant?: 'default' | 'info' | 'warning' | 'success' | 'danger';
   /** The duration of the CSS fade transition animation. */
   animationDuration?: number;
-  /** The element to append the popover to. Defaults to "document.body". */
-  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
+  /** The element to append the popover to. Defaults to "inline". */
+  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'inline';
   /** Accessible label for the popover, required when header is not present. */
   'aria-label'?: string;
   /**
@@ -232,7 +232,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   alertSeverityVariant,
   alertSeverityScreenReaderText,
   footerContent = null,
-  appendTo = () => document.body,
+  appendTo = 'inline',
   hideOnOutsideClick = true,
   onHide = (): void => null,
   onHidden = (): void => null,
