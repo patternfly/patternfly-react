@@ -148,33 +148,34 @@ exports[`Table Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-11"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-10"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -225,33 +226,34 @@ exports[`Table Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-12"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-11"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -302,33 +304,34 @@ exports[`Table Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-13"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-12"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -379,33 +382,34 @@ exports[`Table Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-14"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-13"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -456,33 +460,34 @@ exports[`Table Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-15"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-14"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -533,33 +538,34 @@ exports[`Table Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-16"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-15"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -610,33 +616,34 @@ exports[`Table Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-17"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-16"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -687,33 +694,34 @@ exports[`Table Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-18"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-17"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -764,33 +772,34 @@ exports[`Table Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-19"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-18"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -5374,33 +5383,34 @@ exports[`Table Simple Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-1"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-0"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -5451,33 +5461,34 @@ exports[`Table Simple Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-2"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-1"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -5528,33 +5539,34 @@ exports[`Table Simple Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-3"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-2"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -5605,33 +5617,34 @@ exports[`Table Simple Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-4"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-3"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -5682,33 +5695,34 @@ exports[`Table Simple Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-5"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-4"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -5759,33 +5773,34 @@ exports[`Table Simple Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-6"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-5"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -5836,33 +5851,34 @@ exports[`Table Simple Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-7"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-6"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -5913,33 +5929,34 @@ exports[`Table Simple Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-8"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-7"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -5990,33 +6007,34 @@ exports[`Table Simple Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-9"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              id="pf-dropdown-toggle-id-8"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain"
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
@@ -6067,34 +6085,35 @@ exports[`Table Simple Actions table 1`] = `
           style="padding-right: 0px;"
         >
           <div
-            class="pf-c-dropdown pf-m-align-right"
             data-ouia-component-id="OUIA-Generated-Dropdown-10"
             data-ouia-component-type="PF4/Dropdown"
             data-ouia-safe="true"
           >
-            <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-label="Actions"
-              class="pf-c-dropdown__toggle pf-m-plain"
-              disabled=""
-              id="pf-dropdown-toggle-id-9"
-              type="button"
+            <div
+              style="display: contents;"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 192 512"
-                width="1em"
+              <button
+                aria-expanded="false"
+                aria-label="Kebab toggle"
+                class="pf-c-menu-toggle pf-m-plain pf-m-disabled"
+                disabled=""
+                type="button"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </td>
       </tr>

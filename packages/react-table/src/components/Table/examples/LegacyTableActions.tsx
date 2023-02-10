@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Button,
   Checkbox,
-  DropdownToggle,
+  MenuToggle,
   ToggleGroup,
   ToggleGroupItem,
   ToggleGroupItemProps,
@@ -62,9 +62,9 @@ export const LegacyTableActions: React.FunctionComponent = () => {
   const [useCustomToggle, setUseCustomToggle] = React.useState(false);
 
   const customActionsToggle = (props: CustomActionsToggleProps) => (
-    <DropdownToggle onToggle={props.onToggle} isDisabled={props.isDisabled}>
+    <MenuToggle ref={props.toggleRef} onClick={props.onToggle} isDisabled={props.isDisabled}>
       Actions
-    </DropdownToggle>
+    </MenuToggle>
   );
 
   const columns: TableProps['cells'] = [
@@ -77,7 +77,7 @@ export const LegacyTableActions: React.FunctionComponent = () => {
   ];
 
   const rows: TableProps['rows'] = repositories.map(repo => {
-    let singleActionButton = null;
+    let singleActionButton: React.ReactNode = null;
     if (repo.singleAction !== '') {
       singleActionButton = (
         <TableText>

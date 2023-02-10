@@ -33,7 +33,7 @@ export const cellActions = (
     rowIndex,
     columnIndex,
     column: {
-      extraParams: { dropdownPosition, dropdownDirection, actionsToggle, menuAppendTo }
+      extraParams: { actionsToggle, actionsPopperProps }
     },
     property
   }: IExtra
@@ -58,13 +58,11 @@ export const cellActions = (
           children: (
             <ActionsColumn
               items={resolvedActions}
-              dropdownPosition={dropdownPosition}
-              dropdownDirection={dropdownDirection}
-              menuAppendTo={menuAppendTo}
               isDisabled={resolvedIsDisabled}
               rowData={rowData}
               extraData={extraData}
               actionsToggle={actionsToggle}
+              popperProps={actionsPopperProps}
             >
               {label as React.ReactNode}
             </ActionsColumn>

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-import { Button, DropdownToggle, ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@patternfly/react-core';
+import { Button, MenuToggle, ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@patternfly/react-core';
 import {
   TableComposable,
   TableText,
@@ -52,9 +52,9 @@ export const ComposableTableActions: React.FunctionComponent = () => {
   };
 
   const customActionsToggle = (props: CustomActionsToggleProps) => (
-    <DropdownToggle onToggle={props.onToggle} isDisabled={props.isDisabled}>
+    <MenuToggle ref={props.toggleRef} onClick={props.onToggle} isDisabled={props.isDisabled}>
       Actions
-    </DropdownToggle>
+    </MenuToggle>
   );
 
   const defaultActions = (repo: Repository): IAction[] => [
@@ -130,7 +130,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
             if (repo.name === '5') {
               rowActions = lastRowActions(repo);
             }
-            let singleActionButton = null;
+            let singleActionButton: React.ReactNode = null;
             if (repo.singleAction !== '') {
               singleActionButton = (
                 <TableText>

@@ -57,6 +57,3 @@ export const normalizeStepProps = ({
   steps: _steps,
   ...controlStep
 }: WizardStepProps): Omit<WizardStepType, 'index'> => controlStep;
-
-export const getActiveStep = (steps: WizardStepType[], activeStepIndex: number) =>
-  steps.find(step => step.index === activeStepIndex);

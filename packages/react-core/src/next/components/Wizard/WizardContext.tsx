@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { isCustomWizardFooter, isWizardSubStep, WizardStepType, WizardFooterType } from './types';
-import { getActiveStep } from './utils';
 import { WizardFooter, WizardFooterProps } from './WizardFooter';
 
 export interface WizardContextProps {
@@ -74,7 +73,8 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
       })),
     [initialSteps, currentSteps]
   );
-  const activeStep = React.useMemo(() => getActiveStep(steps, activeStepIndex), [activeStepIndex, steps]);
+
+  const activeStep = React.useMemo(() => steps.find(step => step.index === activeStepIndex), [activeStepIndex, steps]);
 
   const close = React.useCallback(() => onClose?.(null), [onClose]);
   const goToNextStep = React.useCallback(() => onNext(null, steps), [onNext, steps]);
