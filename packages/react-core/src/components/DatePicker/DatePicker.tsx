@@ -120,7 +120,6 @@ const DatePickerBase = (
   const style = { '--pf-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
   const buttonRef = React.useRef<HTMLButtonElement>();
   const datePickerWrapperRef = React.useRef<HTMLDivElement>();
-  const inputGroupRef = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
     setValue(valueProp);
@@ -198,8 +197,6 @@ const DatePickerBase = (
     [setPopoverOpen, popoverOpen, selectOpen]
   );
 
-  const getInlineParentElement = () => inputGroupRef?.current;
-
   return (
     <div className={css(styles.datePicker, className)} ref={datePickerWrapperRef} style={style} {...props}>
       <Popover
@@ -243,11 +240,11 @@ const DatePickerBase = (
         withFocusTrap
         hasNoPadding
         hasAutoWidth
-        appendTo={appendTo === 'inline' ? getInlineParentElement() : appendTo}
+        appendTo={appendTo}
         {...popoverProps}
       >
         <div className={styles.datePickerInput}>
-          <InputGroup innerRef={inputGroupRef}>
+          <InputGroup>
             <TextInput
               isDisabled={isDisabled}
               aria-label={ariaLabel}
