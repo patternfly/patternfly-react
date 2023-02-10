@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.10...@patternfly/react-table@5.0.0-alpha.11) (2023-02-10)
+
+### Features
+
+- **misc:** update onToggle params ([#8667](https://github.com/patternfly/patternfly-react/issues/8667)) ([0f35904](https://github.com/patternfly/patternfly-react/commit/0f359040507b11ed048a6486cb66de4e2c8a48a4))
+
 # [5.0.0-alpha.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.9...@patternfly/react-table@5.0.0-alpha.10) (2023-02-10)
 
 ### Features

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.10...@patternfly/react-core@5.0.0-alpha.11) (2023-02-10)
+
+### Bug Fixes
+
+- **Popover:** updated appendTo to inline by default ([#8621](https://github.com/patternfly/patternfly-react/issues/8621)) ([f6522ca](https://github.com/patternfly/patternfly-react/commit/f6522ca6e30dcbcef9e2a4f86397a3457d1cb6fe))
+
+### Features
+
+- **misc:** update onToggle params ([#8667](https://github.com/patternfly/patternfly-react/issues/8667)) ([0f35904](https://github.com/patternfly/patternfly-react/commit/0f359040507b11ed048a6486cb66de4e2c8a48a4))
+- **Toolbar:** support for vertical alignments ([#8563](https://github.com/patternfly/patternfly-react/issues/8563)) ([2b0120a](https://github.com/patternfly/patternfly-react/commit/2b0120aeb43de7bea4ca54108a81b14e256ecb2d))
+
 # [5.0.0-alpha.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.9...@patternfly/react-core@5.0.0-alpha.10) (2023-02-10)
 
 ### Bug Fixes

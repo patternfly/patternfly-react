@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.0.0-alpha.6 (2023-02-10)
+
+### Bug Fixes
+
+- **charts:** fix broken tooltip examples due to Tooltip outputting a new div tag in the SVG ([#8592](https://github.com/patternfly/patternfly-react/issues/8592)) ([a7d2e12](https://github.com/patternfly/patternfly-react/commit/a7d2e12769c1208eedb88e5574d7ae7dd34e434c))
+
 # [7.0.0-alpha.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0-alpha.4...@patternfly/react-charts@7.0.0-alpha.5) (2023-02-09)
 
 ### Features
