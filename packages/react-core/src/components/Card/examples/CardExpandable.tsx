@@ -81,7 +81,7 @@ export const CardExpandable: React.FunctionComponent = () => {
           <CardActions>
             <Dropdown
               onSelect={onSelect}
-              toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(!isOpen)} />}
+              toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
               isOpen={isOpen}
               isPlain
               dropdownItems={dropdownItems}
