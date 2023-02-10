@@ -6,7 +6,6 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
   const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
   const menuRef = React.useRef<HTMLDivElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = React.useCallback(
     event => {
@@ -64,21 +63,19 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <div ref={containerRef}>
-      <MenuToggle
-        ref={toggleRef}
-        {...(selectedItems.length > 0 && { badge: <Badge isRead>{selectedItems.length}</Badge> })}
-        onClick={onToggleClick}
-        isExpanded={isOpen}
-        style={
-          {
-            width: '220px'
-          } as React.CSSProperties
-        }
-      >
-        Filter by status
-      </MenuToggle>
-    </div>
+    <MenuToggle
+      ref={toggleRef}
+      {...(selectedItems.length > 0 && { badge: <Badge isRead>{selectedItems.length}</Badge> })}
+      onClick={onToggleClick}
+      isExpanded={isOpen}
+      style={
+        {
+          width: '220px'
+        } as React.CSSProperties
+      }
+    >
+      Filter by status
+    </MenuToggle>
   );
   const menu = (
     <Menu ref={menuRef} id="select-menu" onSelect={onSelect} selected={selectedItems}>
@@ -100,5 +97,5 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper appendTo={containerRef.current || undefined} trigger={toggle} popper={menu} isVisible={isOpen} />;
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 };

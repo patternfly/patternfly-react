@@ -14,7 +14,6 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [checkedItems, setCheckedItems] = React.useState<TreeViewDataItem[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
   const menuRef = React.useRef<HTMLDivElement>();
 
   const statusOptions: TreeViewDataItem[] = [
@@ -218,11 +217,9 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <div ref={containerRef}>
-      <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
-        {isOpen ? 'Expanded' : 'Collapsed'}
-      </MenuToggle>
-    </div>
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+      {isOpen ? 'Expanded' : 'Collapsed'}
+    </MenuToggle>
   );
   const statusMapped = statusOptions.map(mapTree);
   const roleMapped = roleOptions.map(mapTree);
@@ -268,13 +265,5 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
       </PanelMain>
     </Panel>
   );
-  return (
-    <Popper
-      trigger={toggle}
-      popper={menu}
-      isVisible={isOpen}
-      appendTo={containerRef.current || undefined}
-      popperMatchesTriggerWidth={false}
-    />
-  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
 };

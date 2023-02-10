@@ -7,7 +7,6 @@ export const ComposableSimpleSelect: React.FunctionComponent = () => {
   const [selected, setSelected] = React.useState<string>('Select a value');
   const toggleRef = React.useRef<HTMLButtonElement>(null);
   const menuRef = React.useRef<HTMLDivElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (isOpen && menuRef.current?.contains(event.target as Node)) {
@@ -45,20 +44,18 @@ export const ComposableSimpleSelect: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <div ref={containerRef}>
-      <MenuToggle
-        ref={toggleRef}
-        onClick={onToggleClick}
-        isExpanded={isOpen}
-        style={
-          {
-            width: '200px'
-          } as React.CSSProperties
-        }
-      >
-        {selected}
-      </MenuToggle>
-    </div>
+    <MenuToggle
+      ref={toggleRef}
+      onClick={onToggleClick}
+      isExpanded={isOpen}
+      style={
+        {
+          width: '200px'
+        } as React.CSSProperties
+      }
+    >
+      {selected}
+    </MenuToggle>
   );
 
   function onSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
@@ -82,5 +79,5 @@ export const ComposableSimpleSelect: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} appendTo={containerRef.current || undefined} isVisible={isOpen} />;
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 };

@@ -6,19 +6,18 @@ export const ComposableOptionsMenuVariants: React.FunctionComponent = () => {
   const [selected, setSelected] = React.useState<string>('');
   const menuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
 
   const handleMenuKeys = (event: KeyboardEvent) => {
-    if (isOpen && menuRef.current.contains(event.target as Node)) {
+    if (isOpen && menuRef?.current?.contains(event.target as Node)) {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsOpen(!isOpen);
-        toggleRef.current.focus();
+        toggleRef?.current?.focus();
       }
     }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current.contains(event.target as Node)) {
+    if (isOpen && !menuRef?.current?.contains(event.target as Node)) {
       setIsOpen(false);
     }
   };
@@ -47,11 +46,9 @@ export const ComposableOptionsMenuVariants: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <div ref={containerRef}>
-      <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
-        Options menu
-      </MenuToggle>
-    </div>
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+      Options menu
+    </MenuToggle>
   );
 
   const menu = (
@@ -95,5 +92,5 @@ export const ComposableOptionsMenuVariants: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} appendTo={containerRef.current} isVisible={isOpen} />;
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 };

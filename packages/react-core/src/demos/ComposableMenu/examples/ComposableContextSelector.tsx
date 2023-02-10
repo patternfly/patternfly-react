@@ -60,7 +60,6 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
   const menuRef = React.useRef<HTMLDivElement>(null);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
   const menuFooterBtnRef = React.useRef<HTMLButtonElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
@@ -113,11 +112,9 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <div ref={containerRef}>
-      <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
-        {selected}
-      </MenuToggle>
-    </div>
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+      {selected}
+    </MenuToggle>
   );
 
   const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: string) => {
@@ -201,13 +198,5 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
       </MenuFooter>
     </Menu>
   );
-  return (
-    <Popper
-      trigger={toggle}
-      popper={menu}
-      appendTo={containerRef.current}
-      isVisible={isOpen}
-      popperMatchesTriggerWidth={false}
-    />
-  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
 };

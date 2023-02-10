@@ -34,7 +34,6 @@ export const ComposableFlyout: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
@@ -80,11 +79,9 @@ export const ComposableFlyout: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <div ref={containerRef}>
-      <MenuToggle onClick={onToggleClick} isExpanded={isOpen}>
-        {isOpen ? 'Expanded' : 'Collapsed'}
-      </MenuToggle>
-    </div>
+    <MenuToggle onClick={onToggleClick} isExpanded={isOpen}>
+      {isOpen ? 'Expanded' : 'Collapsed'}
+    </MenuToggle>
   );
 
   const menu = (
@@ -103,13 +100,5 @@ export const ComposableFlyout: React.FunctionComponent = () => {
     </Menu>
   );
 
-  return (
-    <Popper
-      trigger={toggle}
-      popper={menu}
-      appendTo={containerRef.current || undefined}
-      isVisible={isOpen}
-      popperMatchesTriggerWidth={false}
-    />
-  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
 };

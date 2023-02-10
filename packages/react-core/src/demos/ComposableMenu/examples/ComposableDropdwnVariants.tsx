@@ -23,7 +23,6 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
   const [toggleSelected, setToggleSelected] = React.useState<string>('basic');
   const menuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
 
   const handleToggleSwitch = (selected: boolean, e: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
     setToggleSelected(e.currentTarget.id);
@@ -33,7 +32,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
     if (isOpen && menuRef && menuRef.current && menuRef.current.contains(event.target as Node)) {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsOpen(!isOpen);
-        toggleRef.current.focus();
+        toggleRef?.current?.focus();
       }
     }
   };
@@ -228,9 +227,8 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
       </ToggleGroup>
       <br />
       <Popper
-        trigger={<div ref={containerRef}>{buildToggle()}</div>}
+        trigger={buildToggle()}
         popper={menu}
-        appendTo={containerRef.current}
         isVisible={isOpen}
         popperMatchesTriggerWidth={['image', 'checkbox'].includes(toggleSelected)}
       />

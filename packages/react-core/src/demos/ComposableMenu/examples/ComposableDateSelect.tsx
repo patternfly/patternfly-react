@@ -6,22 +6,21 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
   const [selected, setSelected] = React.useState<number>(0);
   const toggleRef = React.useRef<HTMLButtonElement>();
   const menuRef = React.useRef<HTMLDivElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
       return;
     }
-    if (menuRef.current.contains(event.target as Node) || toggleRef.current.contains(event.target as Node)) {
+    if (menuRef?.current?.contains(event.target as Node) || toggleRef?.current?.contains(event.target as Node)) {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsOpen(!isOpen);
-        toggleRef.current.focus();
+        toggleRef?.current?.focus();
       }
     }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current.contains(event.target as Node)) {
+    if (isOpen && !menuRef?.current?.contains(event.target as Node)) {
       setIsOpen(false);
     }
   };
@@ -92,12 +91,10 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <div ref={containerRef}>
-      <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen} style={{ minWidth: '250px' }}>
-        <span style={{ verticalAlign: 'middle', marginRight: '8px' }}>{toggleText[selected]}</span>
-        {dateText[selected]}
-      </MenuToggle>
-    </div>
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen} style={{ minWidth: '250px' }}>
+      <span style={{ verticalAlign: 'middle', marginRight: '8px' }}>{toggleText[selected]}</span>
+      {dateText[selected]}
+    </MenuToggle>
   );
   const menu = (
     // eslint-disable-next-line no-console
@@ -112,13 +109,5 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return (
-    <Popper
-      trigger={toggle}
-      popper={menu}
-      appendTo={containerRef.current}
-      isVisible={isOpen}
-      popperMatchesTriggerWidth={false}
-    />
-  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
 };

@@ -23,7 +23,6 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
   const [filteredIds, setFilteredIds] = React.useState<string[]>(['*']);
   const menuRef = React.useRef<HTMLDivElement>(null);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
@@ -68,18 +67,16 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
   }, [isOpen, menuRef]);
 
   const toggle = (
-    <div ref={containerRef}>
-      <MenuToggle
-        aria-label="Toggle"
-        ref={toggleRef}
-        variant="plain"
-        onClick={onToggleClick}
-        isExpanded={isOpen}
-        style={{ width: 'auto' }}
-      >
-        <ThIcon />
-      </MenuToggle>
-    </div>
+    <MenuToggle
+      aria-label="Toggle"
+      ref={toggleRef}
+      variant="plain"
+      onClick={onToggleClick}
+      isExpanded={isOpen}
+      style={{ width: 'auto' }}
+    >
+      <ThIcon />
+    </MenuToggle>
   );
 
   const menuItems = [
@@ -268,13 +265,5 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return (
-    <Popper
-      trigger={toggle}
-      popper={menu}
-      isVisible={isOpen}
-      popperMatchesTriggerWidth={false}
-      appendTo={containerRef.current || undefined}
-    />
-  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
 };

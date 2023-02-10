@@ -30,7 +30,6 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
   const [selected, setSelected] = React.useState<string[]>([]);
-  const containerRef = React.useRef<HTMLDivElement>();
   const menuToggleRef = React.useRef<MenuToggleElement>({} as MenuToggleElement);
   const textInputRef = React.useRef<HTMLInputElement>();
   const menuRef = React.useRef<HTMLDivElement>();
@@ -241,15 +240,12 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
     </Menu>
   );
   return (
-    <div ref={containerRef as React.Ref<HTMLDivElement>}>
-      <Popper
-        trigger={toggle}
-        popper={menu}
-        appendTo={containerRef.current}
-        isVisible={isMenuOpen}
-        onDocumentClick={onDocumentClick}
-        onDocumentKeyDown={onDocumentKeydown}
-      />
-    </div>
+    <Popper
+      trigger={toggle}
+      popper={menu}
+      isVisible={isMenuOpen}
+      onDocumentClick={onDocumentClick}
+      onDocumentKeyDown={onDocumentKeydown}
+    />
   );
 };
