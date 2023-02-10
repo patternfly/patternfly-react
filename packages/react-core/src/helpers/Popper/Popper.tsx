@@ -65,8 +65,8 @@ export interface PopperProps {
   position?: 'right' | 'left' | 'center';
   /** Instead of direction and position can set the placement of the popper */
   placement?: Placement;
-  /** The container to append the popper to. Defaults to 'document.body' */
-  appendTo?: HTMLElement | (() => HTMLElement);
+  /** The container to append the popper to. Defaults to 'inline'. */
+  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
   /** z-index of the popper element */
   zIndex?: number;
   /** True to make the popper visible */
@@ -148,7 +148,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   direction = 'down',
   position = 'left',
   placement,
-  appendTo = () => document.body,
+  appendTo = 'inline',
   zIndex = 9999,
   isVisible = true,
   positionModifiers,
@@ -347,13 +347,24 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     ...attributes.popper
   };
 
-  const menuWithPopper = React.cloneElement(popper, options);
+  const getMenuWithPopper = () => {
+    const localPopper = React.cloneElement(popper, options);
+    return popperRef ? (
+      localPopper
+    ) : (
+      <div style={{ display: 'contents' }} ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>
+        {localPopper}
+      </div>
+    );
+  };
 
-  const getTarget: () => HTMLElement = () => {
-    if (typeof appendTo === 'function') {
-      return appendTo();
+  const getPopper = () => {
+    if (appendTo === 'inline') {
+      return getMenuWithPopper();
+    } else {
+      const target = typeof appendTo === 'function' ? appendTo() : appendTo;
+      return ReactDOM.createPortal(getMenuWithPopper(), target);
     }
-    return appendTo;
   };
 
   return (
@@ -363,18 +374,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
           {trigger}
         </div>
       )}
-      {ready &&
-        isVisible &&
-        ReactDOM.createPortal(
-          popperRef ? (
-            menuWithPopper
-          ) : (
-            <div style={{ display: 'contents' }} ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>
-              {menuWithPopper}
-            </div>
-          ),
-          getTarget()
-        )}
+      {ready && isVisible && getPopper()}
     </>
   );
 };
