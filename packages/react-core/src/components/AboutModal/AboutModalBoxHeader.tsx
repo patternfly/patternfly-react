@@ -13,7 +13,7 @@ export interface AboutModalBoxHeaderProps extends React.HTMLProps<HTMLDivElement
 }
 
 export const AboutModalBoxHeader: React.FunctionComponent<AboutModalBoxHeaderProps> = ({
-  className = '',
+  className,
   productName = '',
   id,
   ...props

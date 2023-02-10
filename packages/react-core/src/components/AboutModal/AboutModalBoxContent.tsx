@@ -8,8 +8,6 @@ export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElemen
   children: React.ReactNode;
   /** additional classes added to the AboutModalBoxContent  */
   className?: string;
-  /** id to use for About Modal Box aria described by  */
-  id: string;
   /** The Trademark info for the product  */
   trademark: string;
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts */
@@ -18,13 +16,12 @@ export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElemen
 
 export const AboutModalBoxContent: React.FunctionComponent<AboutModalBoxContentProps> = ({
   children,
-  className = '',
+  className,
   trademark,
-  id,
   noAboutModalBoxContentContainer = false,
   ...props
 }: AboutModalBoxContentProps) => (
-  <div className={css(styles.aboutModalBoxContent, className)} id={id} {...props}>
+  <div className={css(styles.aboutModalBoxContent, className)} {...props}>
     <div className={css('pf-c-about-modal-box__body')}>
       {noAboutModalBoxContentContainer ? children : <div className={css(contentStyles.content)}>{children}</div>}
     </div>

@@ -12,7 +12,7 @@ export interface AboutModalBoxBrandProps extends React.HTMLProps<HTMLDivElement>
 }
 
 export const AboutModalBoxBrand: React.FunctionComponent<AboutModalBoxBrandProps> = ({
-  className = '',
+  className,
   src = '',
   alt,
   ...props

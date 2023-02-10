@@ -11,10 +11,10 @@ export interface AboutModalBoxProps extends React.HTMLProps<HTMLDivElement> {
 
 export const AboutModalBox: React.FunctionComponent<AboutModalBoxProps> = ({
   children,
-  className = '',
+  className,
   ...props
 }: AboutModalBoxProps) => (
-  <div role="dialog" aria-modal="true" className={css(styles.aboutModalBox, className)} {...props}>
+  <div className={css(styles.aboutModalBox, className)} {...props}>
     {children}
   </div>
 );
