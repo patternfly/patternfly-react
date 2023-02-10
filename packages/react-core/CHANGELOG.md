@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.9...@patternfly/react-core@5.0.0-alpha.10) (2023-02-10)
+
+### Bug Fixes
+
+- **composable typeahead select:** updated accessibility ([#8633](https://github.com/patternfly/patternfly-react/issues/8633)) ([2be8ac0](https://github.com/patternfly/patternfly-react/commit/2be8ac035251bed35d785838b35b14be8a7302ac))
+- **Wizard - next:** Show parent name instead of child step name as first label when Wizard is in collapsed mode ([#8663](https://github.com/patternfly/patternfly-react/issues/8663)) ([9f2586c](https://github.com/patternfly/patternfly-react/commit/9f2586cc675e81f3cc87e2f3dae112aa635ce31c))
+- **WizardContext - next:** Don't initialize 'currentFooter' to make sure we always have the latest parent Wizard footer props ([#8647](https://github.com/patternfly/patternfly-react/issues/8647)) ([4219d12](https://github.com/patternfly/patternfly-react/commit/4219d120a48a55c4ef5430868cc0306e9b7bdb03))
+
+### Features
+
+- **Masthead, PageHeader:** update component logic ([#8655](https://github.com/patternfly/patternfly-react/issues/8655)) ([c78e980](https://github.com/patternfly/patternfly-react/commit/c78e980221a076ec3466221c3ec5044f29b9250a))
+- **Popper:** made inline logic internal to Popper ([#8669](https://github.com/patternfly/patternfly-react/issues/8669)) ([8824534](https://github.com/patternfly/patternfly-react/commit/8824534486356c799a537a3d4f705190c7fe3127))
+- **Table:** update ActionsColumn to use Dropdown next ([#8629](https://github.com/patternfly/patternfly-react/issues/8629)) ([43601af](https://github.com/patternfly/patternfly-react/commit/43601afa128593792317bf265d9165bb8f52d552))
+
 # [5.0.0-alpha.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.8...@patternfly/react-core@5.0.0-alpha.9) (2023-02-09)
 
 ### Bug Fixes

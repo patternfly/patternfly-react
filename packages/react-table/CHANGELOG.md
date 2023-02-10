@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.9...@patternfly/react-table@5.0.0-alpha.10) (2023-02-10)
+
+### Features
+
+- **Table:** update ActionsColumn to use Dropdown next ([#8629](https://github.com/patternfly/patternfly-react/issues/8629)) ([43601af](https://github.com/patternfly/patternfly-react/commit/43601afa128593792317bf265d9165bb8f52d552))
+
 # [5.0.0-alpha.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.8...@patternfly/react-table@5.0.0-alpha.9) (2023-02-09)
 
 ### Bug Fixes
