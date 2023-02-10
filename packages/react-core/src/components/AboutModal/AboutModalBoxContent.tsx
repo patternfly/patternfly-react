@@ -4,11 +4,11 @@ import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-
 import contentStyles from '@patternfly/react-styles/css/components/Content/content';
 
 export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElement> {
-  /** content rendered inside the AboutModalBoxContent  */
+  /** Content rendered inside the about modal box content */
   children: React.ReactNode;
-  /** additional classes added to the AboutModalBoxContent  */
+  /** additional classes added to the about modal box content */
   className?: string;
-  /** The Trademark info for the product  */
+  /** The trademark info for the product  */
   trademark: string;
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts */
   noAboutModalBoxContentContainer?: boolean;

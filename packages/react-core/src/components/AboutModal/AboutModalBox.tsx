@@ -5,16 +5,13 @@ import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-
 export interface AboutModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the AboutModelBox. */
   children: React.ReactNode;
-  /** additional classes added to the AboutModalBox */
-  className?: string;
 }
 
 export const AboutModalBox: React.FunctionComponent<AboutModalBoxProps> = ({
   children,
-  className,
   ...props
 }: AboutModalBoxProps) => (
-  <div className={css(styles.aboutModalBox, className)} {...props}>
+  <div className={css(styles.aboutModalBox)} {...props}>
     {children}
   </div>
 );

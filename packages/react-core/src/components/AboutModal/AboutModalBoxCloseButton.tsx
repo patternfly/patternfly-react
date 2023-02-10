@@ -5,8 +5,6 @@ import { Button } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivElement> {
-  /** additional classes added to the About Modal Close button  */
-  className?: string;
   /** A callback for when the close button is clicked  */
   onClose?: (event: React.MouseEvent | MouseEvent | KeyboardEvent) => void;
   /** Set close button aria label */
@@ -14,12 +12,11 @@ export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivEl
 }
 
 export const AboutModalBoxCloseButton: React.FunctionComponent<AboutModalBoxCloseButtonProps> = ({
-  className = '',
   onClose = _e => undefined as any,
   'aria-label': ariaLabel = 'Close Dialog',
   ...props
 }: AboutModalBoxCloseButtonProps) => (
-  <div className={css(styles.aboutModalBoxClose, className)} {...props}>
+  <div className={css(styles.aboutModalBoxClose)} {...props}>
     <Button variant="plain" onClick={onClose} aria-label={ariaLabel}>
       <TimesIcon />
     </Button>

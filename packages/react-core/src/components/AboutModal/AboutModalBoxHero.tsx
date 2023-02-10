@@ -5,14 +5,11 @@ import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-
 import c_about_modal_box__hero_sm_BackgroundImage from '@patternfly/react-tokens/dist/esm/c_about_modal_box__hero_sm_BackgroundImage';
 
 export interface AboutModalBoxHeroProps extends React.HTMLProps<HTMLDivElement> {
-  /** additional classes added to the About Modal Hero  */
-  className?: string;
-  /** background image data or file path  */
+  /** Background image data or file path  */
   backgroundImageSrc?: string;
 }
 
 export const AboutModalBoxHero: React.FunctionComponent<AboutModalBoxHeroProps> = ({
-  className,
   backgroundImageSrc,
   ...props
 }: AboutModalBoxHeroProps) => (
@@ -24,7 +21,7 @@ export const AboutModalBoxHero: React.FunctionComponent<AboutModalBoxHeroProps> 
         : {}
       /* eslint-enable camelcase */
     }
-    className={css(styles.aboutModalBoxHero, className)}
+    className={css(styles.aboutModalBoxHero)}
     {...props}
   />
 );
