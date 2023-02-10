@@ -61,6 +61,7 @@ export interface NavContextProps {
   isHorizontal?: boolean;
   flyoutRef?: React.Ref<HTMLLIElement>;
   setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
+  navRef?: React.RefObject<HTMLElement>;
 }
 export const navContextDefaults = {};
 export const NavContext = React.createContext<NavContextProps>(navContextDefaults);
@@ -82,6 +83,8 @@ export class Nav extends React.Component<
     ouiaStateId: getDefaultOUIAId(Nav.displayName, this.props.variant),
     flyoutRef: null as React.Ref<HTMLLIElement>
   };
+
+  navRef = React.createRef<HTMLElement>();
 
   // Callback from NavItem
   onSelect(
@@ -150,7 +153,8 @@ export class Nav extends React.Component<
           updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
           isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant),
           flyoutRef: this.state.flyoutRef,
-          setFlyoutRef: flyoutRef => this.setState({ flyoutRef })
+          setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
+          navRef: this.navRef
         }}
       >
         <nav
@@ -164,6 +168,7 @@ export class Nav extends React.Component<
             className
           )}
           aria-label={ariaLabel || (['tertiary', 'horizontal-subnav'].includes(variant) ? 'Local' : 'Global')}
+          ref={this.navRef}
           {...getOUIAProps(Nav.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
         >
