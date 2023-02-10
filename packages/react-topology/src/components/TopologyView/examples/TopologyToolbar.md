@@ -38,9 +38,11 @@ To add a toolbar, wrap your `VisualizationProvider` with the `TopologyView` comp
 - `contextToolbar`: displayed at the top of the view, should contain components for changing context
 - `viewToolbar`: displayed below the context toolbar, should contain components for changing view contents
 
-Note: you can use state on the controller to track things like `viewOptions` as implemented in the demo below.
+**Note**: You can set the state on the controller to track values such as the `viewOptions`.
 
-To conditionally render view options, create an interface which includes an attribute for each view option. You can update the state of each view option in the toolbar, e.g. via a `setViewOptions` hook.
+The GraphElement components can retrieve state from the controller via:
+`element.getController().getState<ControllerState>();`
+and react to that state accordingly.
 
 You will need to pass in the corresponding props and the related `viewOptions` state values into your custom `DefaultNode` component for all the view options you want to track.
 
