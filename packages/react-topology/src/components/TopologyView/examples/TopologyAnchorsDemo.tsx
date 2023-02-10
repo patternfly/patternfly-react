@@ -2,21 +2,23 @@ import * as React from 'react';
 
 import {
   AnchorEnd,
-  ColaLayout,
+  //   ColaLayout,
   ComponentFactory,
   DefaultEdge,
-  Graph,
+  //   DefaultNode,
+  //   Graph,
   GraphComponent,
   graphDropTargetSpec,
   Layer,
-  Layout,
-  LayoutFactory,
+  //   Layout,
+  //   LayoutFactory,
   Model,
   ModelKind,
   Node,
-  nodeDragSourceSpec,
+  //   nodeDragSourceSpec,
   SELECTION_EVENT,
   useCombineRefs,
+  //   useComponentFactory,
   useSvgAnchor,
   Visualization,
   VisualizationProvider,
@@ -111,32 +113,40 @@ const CustomNode: React.FC<CustomNodeProps &
 
   return (
     <>
-      {/* <DefaultNode element={element} {...rest}> */}
-      <Layer id="bottom">
-        <NodeRect
-          element={element}
-          selected={selected}
-          onSelect={onSelect}
-          dndDragRef={dndDragRef}
-          dndDropRef={dndDropRef}
-          {...rest}
-        />
-      </Layer>
-      <circle ref={nodeRef} fill="lightgreen" r="5" cx={width * 0.25} cy={height * 0.25} />
-      <circle ref={targetRef} fill="red" r="5" cx={width * 0.75} cy={height * 0.75} />
-      {/* </DefaultNode> */}
+      <>
+        {/* <DefaultNode element={element} {...rest}> */}
+        <Layer id="bottom">
+          <NodeRect
+            element={element}
+            selected={selected}
+            onSelect={onSelect}
+            dndDragRef={dndDragRef}
+            dndDropRef={dndDropRef}
+            // attachments={
+            //   <>
+            //     <circle ref={nodeRef} fill="lightgreen" r="5" cx={width * 0.25} cy={height * 0.25} />
+            //     <circle ref={targetRef} fill="red" r="5" cx={width * 0.75} cy={height * 0.75} />
+            //   </>
+            // }
+            {...rest}
+          />
+          <circle ref={nodeRef} fill="lightgreen" r="5" cx={width * 0.25} cy={height * 0.25} />
+          <circle ref={targetRef} fill="red" r="5" cx={width * 0.75} cy={height * 0.75} />
+        </Layer>
+        {/* </DefaultNode> */}
+      </>
     </>
   );
 };
 
-const customLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout | undefined => {
-  switch (type) {
-    case 'Cola':
-      return new ColaLayout(graph);
-    default:
-      return new ColaLayout(graph, { layoutOnDrag: false });
-  }
-};
+// const customLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout | undefined => {
+//   switch (type) {
+//     case 'Cola':
+//       return new ColaLayout(graph);
+//     default:
+//       return new ColaLayout(graph);
+//   }
+// };
 
 // const customComponentFactory: ComponentFactory = (kind: ModelKind, type: string) => {
 //   switch (type) {
@@ -159,7 +169,7 @@ const customLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout 
 const customComponentFactory: ComponentFactory = (kind: ModelKind, type: string): any => {
   switch (type) {
     case 'node':
-      return withDragNode(nodeDragSourceSpec('node', true, true))(CustomNode);
+      return withDragNode()(CustomNode);
     default:
       switch (kind) {
         case ModelKind.graph:
@@ -334,13 +344,12 @@ export const TopologyCustomNodeDemo: React.FC = () => {
       edges: EDGES,
       graph: {
         id: 'g1',
-        type: 'graph',
-        layout: 'Cola'
+        type: 'graph'
       }
     };
 
     const newController = new Visualization();
-    newController.registerLayoutFactory(customLayoutFactory);
+    // newController.registerLayoutFactory(customLayoutFactory);
     newController.registerComponentFactory(customComponentFactory);
 
     newController.addEventListener(SELECTION_EVENT, setSelectedIds);
