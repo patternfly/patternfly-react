@@ -43,7 +43,7 @@ class SimpleOverflowMenu extends React.Component {
     this.state = {
       isOpen: false
     };
-    this.onToggle = (_event, isOpen) => {
+    this.onToggle = () => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -139,7 +139,7 @@ class OverflowMenuGroupTypes extends React.Component {
     this.state = {
       isOpen: false
     };
-    this.onToggle = (_event, isOpen) => {
+    this.onToggle = () => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -273,7 +273,7 @@ class OverflowMenuAdditionalOptions extends React.Component {
     this.state = {
       isOpen: false
     };
-    this.onToggle = (_event, isOpen) => {
+    this.onToggle = () => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -391,7 +391,7 @@ class OverflowMenuPersist extends React.Component {
     this.state = {
       isOpen: false
     };
-    this.onToggle = (_event, isOpen) => {
+    this.onToggle = () => {
       this.setState({
         isOpen: !this.state.isOpen
       });

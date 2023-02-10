@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Button,
   ButtonVariant,
-  KebabToggle,
   Select,
   SelectOption,
   SelectOptionObject,
@@ -13,8 +12,8 @@ import {
   DropdownToggle,
   DropdownToggleCheckbox,
   DropdownItem,
-  DropdownPosition,
   Divider,
+  MenuToggle,
   OverflowMenu,
   OverflowMenuContent,
   OverflowMenuControl,
@@ -25,7 +24,9 @@ import {
   ToolbarToggleGroup,
   ToolbarItem
 } from '@patternfly/react-core';
+import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/dist/esm/next/index';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const ToolbarStacked: React.FunctionComponent = () => {
   // toggle group - three option menus with labels, two icon buttons, Kebab menu - right aligned
@@ -192,14 +193,23 @@ export const ToolbarStacked: React.FunctionComponent = () => {
                 </OverflowMenuGroup>
               </OverflowMenuContent>
               <OverflowMenuControl hasAdditionalOptions>
-                <Dropdown
-                  onSelect={onResourceSelectDropdown}
-                  toggle={<KebabToggle onToggle={onKebabToggle} />}
-                  isOpen={kebabIsOpen}
-                  isPlain
-                  dropdownItems={dropdownItems}
-                  position={DropdownPosition.right}
-                />
+              <DropdownNext
+                   onSelect={onResourceSelectDropdown}
+                   toggle={toggleRef => (
+                     <MenuToggle
+                       ref={toggleRef}
+                       aria-label="Kebab overflow menu"
+                       variant="plain"
+                       onClick={onKebabToggle}
+                       isExpanded={kebabIsOpen}
+                     >
+                       <EllipsisVIcon />
+                     </MenuToggle>
+                   )}
+                   isOpen={kebabIsOpen}
+                 >
+                   <DropdownList>{dropdownItems}</DropdownList>
+                 </DropdownNext>
               </OverflowMenuControl>
             </OverflowMenu>
           </ToolbarItem>

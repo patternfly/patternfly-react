@@ -17,8 +17,8 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
   const [containerWidth, setContainerWidth] = React.useState(100);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  const onToggle = (_event: any) => {
-    setIsOpen(isOpen);
+  const onToggle = () => {
+    setIsOpen(!isOpen);
   };
 
   const onSelect = () => {
