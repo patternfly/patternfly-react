@@ -86,6 +86,7 @@ export class PopoverDemo extends Component {
           bodyContent="I have a custom heading level."
           footerContent="Popover footer"
           headerComponent="h1"
+          position="auto"
         >
           <button id="popover-heading-level-toggle">Toggle Popover</button>
         </Popover>

@@ -277,7 +277,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     onMount();
@@ -455,41 +454,25 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     </FocusTrap>
   );
 
-  const getInlineReference = () => {
-    if (reference) {
-      if ((reference as React.RefObject<any>)?.current) {
-        return (reference as React.RefObject<any>)?.current.parentElement;
-      } else if (typeof reference === 'function') {
-        return reference()?.parentElement;
-      }
-    }
-
-    return containerRef?.current;
-  };
-
-  const popoverPopper = (
-    <Popper
-      trigger={children}
-      reference={reference}
-      popper={content}
-      popperMatchesTriggerWidth={false}
-      appendTo={appendTo === 'inline' ? getInlineReference || undefined : appendTo}
-      isVisible={visible}
-      positionModifiers={positionModifiers}
-      distance={distance}
-      placement={position}
-      onTriggerClick={onTriggerClick}
-      onDocumentClick={onDocumentClick}
-      onDocumentKeyDown={onDocumentKeyDown}
-      enableFlip={enableFlip}
-      zIndex={zIndex}
-      flipBehavior={flipBehavior}
-    />
-  );
-
   return (
     <PopoverContext.Provider value={{ headerComponent }}>
-      {appendTo === 'inline' && children ? <div ref={containerRef}>{popoverPopper}</div> : popoverPopper}
+      <Popper
+        trigger={children}
+        reference={reference}
+        popper={content}
+        popperMatchesTriggerWidth={false}
+        appendTo={appendTo}
+        isVisible={visible}
+        positionModifiers={positionModifiers}
+        distance={distance}
+        placement={position}
+        onTriggerClick={onTriggerClick}
+        onDocumentClick={onDocumentClick}
+        onDocumentKeyDown={onDocumentKeyDown}
+        enableFlip={enableFlip}
+        zIndex={zIndex}
+        flipBehavior={flipBehavior}
+      />
     </PopoverContext.Provider>
   );
 };
