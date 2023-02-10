@@ -35,7 +35,7 @@ export class SelectFooterFilteringDemo extends Component<SelectFooterFilteringDe
     </SelectGroup>
   ];
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });

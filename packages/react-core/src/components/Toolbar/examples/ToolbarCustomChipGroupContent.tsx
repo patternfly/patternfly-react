@@ -82,7 +82,7 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
           <Select
             variant={SelectVariant.checkbox}
             aria-label="Status"
-            onToggle={(isExpanded: boolean) => setStatusIsExpanded(isExpanded)}
+            onToggle={(_event: any, isExpanded: boolean) => setStatusIsExpanded(isExpanded)}
             onSelect={(event, selection) => onSelect('Status', event, selection as string)}
             selections={filters.status}
             isOpen={statusIsExpanded}
@@ -100,7 +100,7 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
           <Select
             variant={SelectVariant.checkbox}
             aria-label="Risk"
-            onToggle={(isExpanded: boolean) => setRiskIsExpanded(isExpanded)}
+            onToggle={(_event: any, isExpanded: boolean) => setRiskIsExpanded(isExpanded)}
             onSelect={(event, selection) => onSelect('Risk', event, selection as string)}
             selections={filters.risk}
             isOpen={riskIsExpanded}

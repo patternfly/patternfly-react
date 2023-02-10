@@ -18,7 +18,7 @@ describe('SelectToggle', () => {
       );
 
       await user.click(screen.getByRole('button'));
-      expect(mockToggle).toHaveBeenCalledWith(true, expect.any(Object));
+      expect(mockToggle).toHaveBeenCalledWith(expect.any(Object), true);
     });
 
     test('click on opened', async () => {
@@ -37,7 +37,7 @@ describe('SelectToggle', () => {
       );
 
       await user.click(screen.getByRole('button'));
-      expect(mockToggle).toHaveBeenCalledWith(false, expect.any(MouseEvent));
+      expect(mockToggle).toHaveBeenCalledWith(expect.any(MouseEvent), false);
     });
 
     test('click on document', async () => {
@@ -56,7 +56,7 @@ describe('SelectToggle', () => {
       );
 
       await user.click(screen.getByText('Select').parentElement);
-      expect(mockToggle).toHaveBeenCalledWith(false, expect.any(MouseEvent));
+      expect(mockToggle).toHaveBeenCalledWith(expect.any(MouseEvent), false);
     });
 
     test('on click outside has been removed', async () => {

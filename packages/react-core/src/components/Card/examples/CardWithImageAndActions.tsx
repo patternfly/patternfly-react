@@ -59,7 +59,7 @@ export const CardWithImageAndActions: React.FunctionComponent = () => {
           <CardActions hasNoOffset={hasNoOffset}>
             <Dropdown
               onSelect={onSelect}
-              toggle={<KebabToggle onToggle={setIsOpen} />}
+              toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
               isOpen={isOpen}
               isPlain
               dropdownItems={dropdownItems}

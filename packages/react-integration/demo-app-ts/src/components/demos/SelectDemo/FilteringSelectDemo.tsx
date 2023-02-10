@@ -27,7 +27,7 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
     </SelectGroup>
   ];
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });

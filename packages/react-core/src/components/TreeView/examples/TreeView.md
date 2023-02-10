@@ -875,7 +875,7 @@ class IconTreeView extends React.Component {
       }
     };
 
-    this.onToggle = isOpen => {
+    this.onToggle = (_event, isOpen) => {
       this.setState({
         isOpen
       });

@@ -11,7 +11,7 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
     setIsDropdownOpen(false);
   };
 
-  const handleDropdownToggle = (isDropdownOpen: boolean) => {
+  const handleDropdownToggle = (_event: any, isDropdownOpen: boolean) => {
     setIsDropdownOpen(isDropdownOpen);
   };
 

@@ -54,7 +54,7 @@ export class CardDemo extends React.Component {
     });
   };
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });

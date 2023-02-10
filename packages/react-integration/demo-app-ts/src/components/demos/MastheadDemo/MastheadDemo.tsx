@@ -52,13 +52,13 @@ export class MastheadDemo extends React.Component {
     });
   };
 
-  onDropdownToggle = (isDropdownOpen: boolean) => {
+  onDropdownToggle = (_event: any, isDropdownOpen: boolean) => {
     this.setState({
       isDropdownOpen
     });
   };
 
-  onKebabToggle = (isKebabOpen: boolean) => {
+  onKebabToggle = (_event: any, isKebabOpen: boolean) => {
     this.setState({
       isKebabOpen
     });

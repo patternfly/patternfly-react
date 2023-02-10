@@ -16,7 +16,10 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>,
   /** Flag to indicate if menu is opened */
   isOpen?: boolean;
   /** Callback called when toggle is clicked */
-  onToggle?: (value: boolean, event: any) => void;
+  onToggle?: (
+    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    isOpen: boolean
+  ) => void;
   /** Element which wraps toggle */
   parentRef?: HTMLElement;
   /** The menu element */
@@ -67,7 +70,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isActive = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onToggle = (_isOpen: boolean) => undefined as any,
+  onToggle = (_evt: any, _isOpen: boolean) => undefined as any,
   icon = null,
   toggleIndicator: ToggleIndicator = CaretDownIcon,
   splitButtonItems,

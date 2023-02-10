@@ -54,7 +54,7 @@ export class FormDemo extends Component<FormProps, FormState> {
     }
     this.setState({ validatedValue: value, validated });
   };
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });

@@ -41,7 +41,7 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
     setInputValue(newValue);
   };
 
-  const onStatusToggle = (isExpanded: boolean) => {
+  const onStatusToggle = (_event: any, isExpanded: boolean) => {
     setStatusIsExpanded(isExpanded);
   };
 
@@ -62,7 +62,7 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
     setStatusIsExpanded(false);
   };
 
-  const onRiskToggle = (isExpanded: boolean) => {
+  const onRiskToggle = (_event: any, isExpanded: boolean) => {
     setRiskIsExpanded(isExpanded);
   };
 

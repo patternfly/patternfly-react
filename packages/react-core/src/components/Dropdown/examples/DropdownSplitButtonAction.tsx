@@ -8,10 +8,10 @@ export const DropdownSplitButtonAction: React.FunctionComponent = () => {
   const [isActionOpen, setIsActionOpen] = React.useState(false);
   const [isCogOpen, setIsCogOpen] = React.useState(false);
 
-  const onActionToggle = (isActionOpen: boolean) => {
+  const onActionToggle = (_event: any, isActionOpen: boolean) => {
     setIsActionOpen(isActionOpen);
   };
-  const onCogToggle = (isCogOpen: boolean) => {
+  const onCogToggle = (_event: any, isCogOpen: boolean) => {
     setIsCogOpen(isCogOpen);
   };
 
@@ -24,11 +24,11 @@ export const DropdownSplitButtonAction: React.FunctionComponent = () => {
 
   const onActionFocus = () => {
     const element = document.getElementById('toggle-split-button-action');
-    element.focus();
+    element?.focus();
   };
   const onCogFocus = () => {
     const element = document.getElementById('toggle-split-button-cog');
-    element.focus();
+    element?.focus();
   };
 
   const onActionSelect = () => {

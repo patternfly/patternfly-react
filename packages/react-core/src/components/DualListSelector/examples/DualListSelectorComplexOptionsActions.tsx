@@ -81,7 +81,7 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
       toggle={
         <KebabToggle
           isDisabled={isDisabled}
-          onToggle={isOpen => onToggle(isOpen, 'available')}
+          onToggle={(_event: any, isOpen: boolean) => onToggle(isOpen, 'available')}
           id="complex-available-toggle"
         />
       }
@@ -106,7 +106,7 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
       toggle={
         <KebabToggle
           isDisabled={isDisabled}
-          onToggle={isOpen => onToggle(isOpen, 'chosen')}
+          onToggle={(_event: any, isOpen: boolean) => onToggle(isOpen, 'chosen')}
           id="complex-chosen-toggle"
         />
       }

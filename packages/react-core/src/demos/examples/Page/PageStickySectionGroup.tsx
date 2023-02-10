@@ -64,7 +64,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
   };
 
-  const onDropdownToggle = (isOpen: boolean) => {
+  const onDropdownToggle = (_event: any, isOpen: boolean) => {
     setIsDropdownOpen(isOpen);
   };
 
@@ -72,7 +72,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const onKebabDropdownToggle = (isOpen: boolean) => {
+  const onKebabDropdownToggle = (_event: any, isOpen: boolean) => {
     setIsKebabDropdownOpen(isOpen);
   };
 
@@ -80,7 +80,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
     setIsKebabDropdownOpen(!isKebabDropdownOpen);
   };
 
-  const onFullKebabDropdownToggle = (isOpen: boolean) => {
+  const onFullKebabDropdownToggle = (_event: any, isOpen: boolean) => {
     setIsFullKebabDropdownOpen(isOpen);
   };
 
@@ -88,7 +88,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
     setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen);
   };
 
-  const onAppLauncherToggle = (isOpen: boolean) => {
+  const onAppLauncherToggle = (_event: any, isOpen: boolean) => {
     setIsAppLauncherOpen(isOpen);
   };
 

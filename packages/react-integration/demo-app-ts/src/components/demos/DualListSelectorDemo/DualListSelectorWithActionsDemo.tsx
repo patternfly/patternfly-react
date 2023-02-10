@@ -133,7 +133,7 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
         {this.state.availableDescending ? <PficonSortCommonDescIcon /> : <PficonSortCommonAscIcon />}
       </Button>,
       <Dropdown
-        toggle={<KebabToggle onToggle={isOpen => this.onToggle(isOpen, 'available')} id="toggle-id-6" />}
+        toggle={<KebabToggle onToggle={(_event: any, isOpen) => this.onToggle(isOpen, 'available')} id="toggle-id-6" />}
         isOpen={this.state.isAvailableKebabOpen}
         isPlain
         dropdownItems={dropdownItems}
@@ -151,7 +151,7 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
         {this.state.chosenDescending ? <PficonSortCommonDescIcon /> : <PficonSortCommonAscIcon />}
       </Button>,
       <Dropdown
-        toggle={<KebabToggle onToggle={isOpen => this.onToggle(isOpen, 'chosen')} id="toggle-id-6" />}
+        toggle={<KebabToggle onToggle={(_event: any, isOpen) => this.onToggle(isOpen, 'chosen')} id="toggle-id-6" />}
         isOpen={this.state.isChosenKebabOpen}
         isPlain
         dropdownItems={dropdownItems}

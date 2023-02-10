@@ -80,15 +80,15 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
     }
   };
 
-  const onStatusToggle = (isExpanded: boolean) => {
+  const onStatusToggle = (_event: any, isExpanded: boolean) => {
     setStatusIsExpanded(isExpanded);
   };
 
-  const onRiskToggle = (isExpanded: boolean) => {
+  const onRiskToggle = (_event: any, isExpanded: boolean) => {
     setRiskIsExpanded(isExpanded);
   };
 
-  const onKebabToggle = (isOpen: boolean) => {
+  const onKebabToggle = (_event: any, isOpen: boolean) => {
     setKebabIsOpen(isOpen);
   };
 

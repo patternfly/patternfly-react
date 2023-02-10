@@ -36,7 +36,7 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
     setSelected(newSelected);
   };
 
-  const onToggle = (isOpen: boolean, event: any) => {
+  const onToggle = (event: any, isOpen: boolean) => {
     event.stopPropagation();
     setIsKebabOpen(isOpen);
   };

@@ -17,7 +17,7 @@ export const DataListSelectableRows: React.FunctionComponent = () => {
   const [isOpen2, setIsOpen2] = React.useState(false);
   const [selectedDataListItemId, setSelectedDataListItemId] = React.useState('');
 
-  const onToggle1 = isOpen1 => {
+  const onToggle1 = (_event: any, isOpen1: boolean) => {
     setIsOpen1(isOpen1);
   };
 
@@ -25,7 +25,7 @@ export const DataListSelectableRows: React.FunctionComponent = () => {
     setIsOpen1(!isOpen1);
   };
 
-  const onToggle2 = isOpen2 => {
+  const onToggle2 = (_event: any, isOpen2: boolean) => {
     setIsOpen2(isOpen2);
   };
 

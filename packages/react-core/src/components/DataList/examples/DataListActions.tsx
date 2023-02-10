@@ -17,7 +17,7 @@ export const DataListActions: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isDeleted, setIsDeleted] = React.useState(false);
 
-  const onToggle = isOpen => {
+  const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);
   };
 

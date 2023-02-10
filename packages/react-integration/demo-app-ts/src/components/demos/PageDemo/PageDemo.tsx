@@ -36,7 +36,7 @@ export class PageDemo extends React.Component {
     });
   };
 
-  onDropdownToggle = (isDropdownOpen: boolean) => {
+  onDropdownToggle = (_event: any, isDropdownOpen: boolean) => {
     this.setState({
       isDropdownOpen
     });
@@ -48,7 +48,7 @@ export class PageDemo extends React.Component {
     });
   };
 
-  onKebabDropdownToggle = (isKebabDropdownOpen: boolean) => {
+  onKebabDropdownToggle = (_event: any, isKebabDropdownOpen: boolean) => {
     this.setState({
       isKebabDropdownOpen
     });

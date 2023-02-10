@@ -4,13 +4,13 @@ import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patt
 export const DropdownInitialSelection: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onToggle = (isOpen: boolean) => {
+  const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);
   };
 
   const onFocus = () => {
     const element = document.getElementById('toggle-initial-selection');
-    element.focus();
+    element?.focus();
   };
 
   const onSelect = () => {

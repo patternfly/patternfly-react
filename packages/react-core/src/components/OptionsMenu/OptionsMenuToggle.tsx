@@ -5,7 +5,10 @@ export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElemen
   /** Id of the parent options menu component */
   parentId?: string;
   /** Callback for when this options menu is toggled */
-  onToggle?: (isOpen: boolean) => void;
+  onToggle?: (
+    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    isOpen: boolean
+  ) => void;
   /** Flag to indicate if menu is open */
   isOpen?: boolean;
   /** Flag to indicate if the button is plain */

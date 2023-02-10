@@ -19,7 +19,7 @@ describe('DropdownToggle', () => {
       );
 
       await user.click(screen.getByRole('button'));
-      expect(mockToggle.mock.calls[0][0]).toBe(true);
+      expect(mockToggle.mock.calls[0][1]).toBe(true);
     });
 
     test('click on opened', async () => {
@@ -33,7 +33,7 @@ describe('DropdownToggle', () => {
       );
 
       await user.click(screen.getByRole('button'));
-      expect(mockToggle.mock.calls[0][0]).toBe(false);
+      expect(mockToggle.mock.calls[0][1]).toBe(false);
     });
 
     test('on click outside has been removed', () => {

@@ -42,7 +42,7 @@ export default class DashboardHeader extends React.Component {
       activeItem: 0
     };
 
-    this.onDropdownToggle = isDropdownOpen => {
+    this.onDropdownToggle = (_event, isDropdownOpen) => {
       this.setState({
         isDropdownOpen
       });
@@ -54,7 +54,7 @@ export default class DashboardHeader extends React.Component {
       });
     };
 
-    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+    this.onKebabDropdownToggle = (_event, isKebabDropdownOpen) => {
       this.setState({
         isKebabDropdownOpen
       });
@@ -66,7 +66,7 @@ export default class DashboardHeader extends React.Component {
       });
     };
 
-    this.onFullKebabToggle = isFullKebabDropdownOpen => {
+    this.onFullKebabToggle = (_event, isFullKebabDropdownOpen) => {
       this.setState({
         isFullKebabDropdownOpen
       });
@@ -78,7 +78,7 @@ export default class DashboardHeader extends React.Component {
       });
     };
 
-    this.onAppLauncherToggle = isAppLauncherOpen => {
+    this.onAppLauncherToggle = (_event, isAppLauncherOpen) => {
       this.setState({
         isAppLauncherOpen
       });

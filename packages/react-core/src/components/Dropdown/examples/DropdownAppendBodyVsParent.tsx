@@ -5,20 +5,20 @@ export const DropdownAppendBodyVsParent: React.FunctionComponent = () => {
   const [isBodyOpen, setIsBodyOpen] = React.useState(false);
   const [isParentOpen, setIsParentOpen] = React.useState(false);
 
-  const onBodyToggle = (isBodyOpen: boolean) => {
+  const onBodyToggle = (_event: any, isBodyOpen: boolean) => {
     setIsBodyOpen(isBodyOpen);
   };
-  const onParentToggle = (isParentOpen: boolean) => {
+  const onParentToggle = (_event: any, isParentOpen: boolean) => {
     setIsParentOpen(isParentOpen);
   };
 
   const onBodyFocus = () => {
     const element = document.getElementById('toggle-append-body');
-    element.focus();
+    element?.focus();
   };
   const onParentFocus = () => {
     const element = document.getElementById('toggle-append-parent');
-    element.focus();
+    element?.focus();
   };
 
   const onBodySelect = () => {

@@ -24,7 +24,7 @@ export class SelectTypeaheadFooterDemo extends React.Component<SelectTypeaheadFo
     <SelectOption key={6} value="Other" id="Other" />
   ];
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({
       isOpen
     });

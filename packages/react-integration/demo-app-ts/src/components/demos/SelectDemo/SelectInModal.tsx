@@ -38,7 +38,7 @@ export const SelectInModal = () => {
     { value: 'Other', disabled: false, isPlaceholder: false }
   ];
 
-  const onSelectToggle = (isOpen: boolean) => {
+  const onSelectToggle = (_event: any, isOpen: boolean) => {
     setIsSelectOpen(isOpen);
   };
 

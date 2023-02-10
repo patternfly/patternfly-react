@@ -74,7 +74,10 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
         <Dropdown
           onSelect={onSelect}
           toggle={
-            <KebabToggle onToggle={isOpen => onToggle('groups-kebab-toggle-1', isOpen)} id="groups-kebab-toggle-1" />
+            <KebabToggle
+              onToggle={(_event: any, isOpen: boolean) => onToggle('groups-kebab-toggle-1', isOpen)}
+              id="groups-kebab-toggle-1"
+            />
           }
           isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-1']}
           isPlain
@@ -103,7 +106,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     onSelect={onSelect}
                     toggle={
                       <KebabToggle
-                        onToggle={isOpen => onToggle('groups-kebab-toggle-2', isOpen)}
+                        onToggle={(_event: any, isOpen: boolean) => onToggle('groups-kebab-toggle-2', isOpen)}
                         id="groups-kebab-toggle-2"
                       />
                     }
@@ -128,7 +131,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     onSelect={onSelect}
                     toggle={
                       <KebabToggle
-                        onToggle={isOpen => onToggle('groups-kebab-toggle-3', isOpen)}
+                        onToggle={(_event: any, isOpen: boolean) => onToggle('groups-kebab-toggle-3', isOpen)}
                         id="groups-kebab-toggle-3"
                       />
                     }
@@ -154,7 +157,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     onSelect={onSelect}
                     toggle={
                       <KebabToggle
-                        onToggle={isOpen => onToggle('groups-kebab-toggle-4', isOpen)}
+                        onToggle={(_event: any, isOpen: boolean) => onToggle('groups-kebab-toggle-4', isOpen)}
                         id="groups-kebab-toggle-4"
                       />
                     }
@@ -180,7 +183,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     onSelect={onSelect}
                     toggle={
                       <KebabToggle
-                        onToggle={isOpen => onToggle('groups-kebab-toggle-5', isOpen)}
+                        onToggle={(_event: any, isOpen: boolean) => onToggle('groups-kebab-toggle-5', isOpen)}
                         id="groups-kebab-toggle-5"
                       />
                     }
@@ -214,7 +217,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     onSelect={onSelect}
                     toggle={
                       <KebabToggle
-                        onToggle={isOpen => onToggle('groups-kebab-toggle-6', isOpen)}
+                        onToggle={(_event: any, isOpen: boolean) => onToggle('groups-kebab-toggle-6', isOpen)}
                         id="groups-kebab-toggle-6"
                       />
                     }
@@ -239,7 +242,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     onSelect={onSelect}
                     toggle={
                       <KebabToggle
-                        onToggle={isOpen => onToggle('groups-kebab-toggle-7', isOpen)}
+                        onToggle={(_event: any, isOpen: boolean) => onToggle('groups-kebab-toggle-7', isOpen)}
                         id="groups-kebab-toggle-7"
                       />
                     }
@@ -265,7 +268,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     onSelect={onSelect}
                     toggle={
                       <KebabToggle
-                        onToggle={isOpen => onToggle('groups-kebab-toggle-8', isOpen)}
+                        onToggle={(_event: any, isOpen: boolean) => onToggle('groups-kebab-toggle-8', isOpen)}
                         id="groups-kebab-toggle-8"
                       />
                     }
@@ -291,7 +294,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     onSelect={onSelect}
                     toggle={
                       <KebabToggle
-                        onToggle={isOpen => onToggle('groups-kebab-toggle-9', isOpen)}
+                        onToggle={(_event: any, isOpen: boolean) => onToggle('groups-kebab-toggle-9', isOpen)}
                         id="groups-kebab-toggle-9"
                       />
                     }

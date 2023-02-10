@@ -158,7 +158,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   options={(updatedProps as any).options.map((option: any, index: number) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell5Option' + index} />
                   ))}
-                  onToggle={isOpen => {
+                  onToggle={(_event: any, isOpen: boolean) => {
                     this.onToggle(isOpen, rowIndex, cellIndex);
                   }}
                   selections={updatedProps.selected}
@@ -269,7 +269,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   options={(updatedProps as any).options.map((option: any, index: number) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell5Option' + index} />
                   ))}
-                  onToggle={(isOpen: boolean) => {
+                  onToggle={(_event: any, isOpen: boolean) => {
                     this.onToggle(isOpen, rowIndex, cellIndex);
                   }}
                   selections={updatedProps.selected}

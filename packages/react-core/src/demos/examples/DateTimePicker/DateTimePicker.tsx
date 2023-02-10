@@ -27,7 +27,7 @@ export const DateTimePicker: React.FunctionComponent = () => {
     setIsTimeOpen(false);
   };
 
-  const onToggleTime = (_value: boolean, _event: any) => {
+  const onToggleTime = (_event: any, _value: boolean) => {
     setIsTimeOpen(!isTimeOpen);
     setIsCalendarOpen(false);
   };

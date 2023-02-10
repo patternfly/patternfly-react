@@ -27,7 +27,10 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   /** Function callback called when user selects item */
   onSelect?: (event: any) => void;
   /** Callback called when application launcher toggle is clicked */
-  onToggle?: (value: boolean) => void;
+  onToggle?: (
+    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    isOpen: boolean
+  ) => void;
   /** Adds accessible text to the button. Required for plain buttons */
   'aria-label'?: string;
   /** Flag to indicate if application launcher has groups */
@@ -76,7 +79,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     position: DropdownPosition.left,
     /* eslint-disable @typescript-eslint/no-unused-vars */
     onSelect: (_event: any): any => undefined,
-    onToggle: (_value: boolean): any => undefined,
+    onToggle: (_event: any, _value: boolean): any => undefined,
     /* eslint-enable @typescript-eslint/no-unused-vars */
     'aria-label': 'Application launcher',
     isGrouped: false,

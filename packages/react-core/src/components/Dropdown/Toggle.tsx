@@ -18,8 +18,8 @@ export interface ToggleProps {
   isOpen?: boolean;
   /** Callback called when toggle is clicked */
   onToggle?: (
-    isOpen: boolean,
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>
+    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    isOpen: boolean
   ) => void;
   /** Callback called when the Enter key is pressed */
   onEnter?: () => void;
@@ -86,7 +86,7 @@ export class Toggle extends React.Component<ToggleProps> {
     const clickedOnToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const clickedWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target as Node);
     if (isOpen && !(clickedOnToggle || clickedWithinMenu)) {
-      onToggle?.(false, event);
+      onToggle?.(event, false);
     }
   };
 
@@ -100,7 +100,7 @@ export class Toggle extends React.Component<ToggleProps> {
       (event.key === KeyTypes.Escape || event.key === 'Tab') &&
       (escFromToggle || escFromWithinMenu)
     ) {
-      this.props.onToggle?.(false, event);
+      this.props.onToggle?.(event, false);
       this.buttonRef.current?.focus();
     }
   };
@@ -115,14 +115,14 @@ export class Toggle extends React.Component<ToggleProps> {
       }
       event.preventDefault();
 
-      this.props.onToggle?.(!this.props.isOpen, event);
+      this.props.onToggle?.(event, !this.props.isOpen);
     } else if ((event.key === 'Enter' || event.key === ' ') && !this.props.isOpen) {
       if (!this.props.bubbleEvent) {
         event.stopPropagation();
       }
       event.preventDefault();
 
-      this.props.onToggle?.(!this.props.isOpen, event);
+      this.props.onToggle?.(event, !this.props.isOpen);
       this.props.onEnter?.();
     }
   };
@@ -166,7 +166,7 @@ export class Toggle extends React.Component<ToggleProps> {
               className
             )}
             type={type || 'button'}
-            onClick={event => onToggle?.(!isOpen, event)}
+            onClick={event => onToggle?.(event, !isOpen)}
             aria-expanded={isOpen}
             aria-haspopup={ariaHasPopup}
             onKeyDown={event => this.onKeyDown(event)}

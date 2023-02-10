@@ -29,7 +29,7 @@ export class OverflowMenuDemo extends React.Component {
     marginBottom: '2rem'
   };
 
-  onSimpleToggle = (isSimpleOpen: boolean) => {
+  onSimpleToggle = (_event: any, isSimpleOpen: boolean) => {
     this.setState({
       isSimpleOpen
     });
@@ -88,7 +88,7 @@ export class OverflowMenuDemo extends React.Component {
     );
   }
 
-  onAdditionalOptionsToggle = (isAdditionalOptionsOpen: boolean) => {
+  onAdditionalOptionsToggle = (_event: any, isAdditionalOptionsOpen: boolean) => {
     this.setState({
       isAdditionalOptionsOpen
     });
@@ -171,7 +171,7 @@ export class OverflowMenuDemo extends React.Component {
     );
   }
 
-  onPersistToggle = (isPersistOpen: boolean) => {
+  onPersistToggle = (_event: any, isPersistOpen: boolean) => {
     this.setState({
       isPersistOpen
     });
@@ -228,7 +228,7 @@ export class OverflowMenuDemo extends React.Component {
     );
   }
 
-  onContainerBreakpointToggle = (isContainerBreakpointOpen: boolean) => {
+  onContainerBreakpointToggle = (_event: any, isContainerBreakpointOpen: boolean) => {
     this.setState({
       isContainerBreakpointOpen
     });

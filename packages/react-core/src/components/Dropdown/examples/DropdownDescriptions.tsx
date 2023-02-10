@@ -6,13 +6,13 @@ import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 export const DropdownDescriptions: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onToggle = (isOpen: boolean) => {
+  const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);
   };
 
   const onFocus = () => {
     const element = document.getElementById('toggle-descriptions');
-    element.focus();
+    element?.focus();
   };
 
   const onSelect = () => {

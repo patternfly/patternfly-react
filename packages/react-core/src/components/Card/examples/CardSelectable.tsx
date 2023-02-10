@@ -37,8 +37,8 @@ export const CardSelectable: React.FunctionComponent = () => {
   };
 
   const onToggle = (
-    isOpen: boolean,
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>
+    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    isOpen: boolean
   ) => {
     event.stopPropagation();
     setIsKebabOpen(isOpen);

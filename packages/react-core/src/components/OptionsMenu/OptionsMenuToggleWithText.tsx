@@ -16,7 +16,10 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   /** Classes to be added to the options menu toggle button */
   toggleButtonContentsClassName?: string;
   /** Callback for when this options menu is toggled */
-  onToggle?: (event: boolean) => void;
+  onToggle?: (
+    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    isOpen: boolean
+  ) => void;
   /** Inner function to indicate open on Enter */
   onEnter?: (event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<Element>) => void;
   /** Flag to indicate if menu is open */
@@ -77,7 +80,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
 
   const onDocClick = (event: MouseEvent | TouchEvent) => {
     if (isOpen && parentRef && parentRef.current && !parentRef.current.contains(event.target as Node)) {
-      onToggle(false);
+      onToggle(event, false);
       buttonRef.current.focus();
     }
   };
@@ -88,9 +91,9 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
     }
     event.preventDefault();
     if ((event.key === 'Enter' || event.key === ' ') && isOpen) {
-      onToggle(!isOpen);
+      onToggle(event, !isOpen);
     } else if ((event.key === 'Enter' || event.key === ' ') && !isOpen) {
-      onToggle(!isOpen);
+      onToggle(event, !isOpen);
       onEnter(event);
     }
   };
@@ -103,7 +106,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
       parentRef.current &&
       parentRef.current.contains(event.target as Node)
     ) {
-      onToggle(false);
+      onToggle(event, false);
       buttonRef.current.focus();
     }
   };
@@ -130,7 +133,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
             aria-expanded={isOpen}
             ref={buttonRef}
             disabled={isDisabled}
-            onClick={() => onToggle(!isOpen)}
+            onClick={event => onToggle(event, !isOpen)}
             onKeyDown={onKeyDown}
           >
             <span className={css(styles.optionsMenuToggleButtonIcon)}>{toggleButtonContents}</span>

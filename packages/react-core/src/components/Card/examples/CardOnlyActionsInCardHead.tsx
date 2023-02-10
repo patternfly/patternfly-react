@@ -46,7 +46,7 @@ export const CardOnlyActionsInCardHead: React.FunctionComponent = () => {
         <CardActions>
           <Dropdown
             onSelect={onSelect}
-            toggle={<KebabToggle onToggle={setIsOpen} />}
+            toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
             isOpen={isOpen}
             isPlain
             dropdownItems={dropdownItems}

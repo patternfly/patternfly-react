@@ -33,7 +33,7 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
     this.setState({ selectedDataListItemId: id });
   };
 
-  onToggle = (isOpen: boolean) => {
+  onToggle = (_event: any, isOpen: boolean) => {
     this.setState({ isOpen });
   };
 

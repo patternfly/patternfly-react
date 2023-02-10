@@ -45,7 +45,7 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
     <SelectOption key={6} value={i18n.Bengali} />
   ];
 
-  const onHeaderUtilsToggle = (isExpanded: boolean) => {
+  const onHeaderUtilsToggle = (_event: any, isExpanded: boolean) => {
     setIsHeaderUtilsOpen(isExpanded);
   };
 

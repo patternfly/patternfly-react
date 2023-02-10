@@ -80,13 +80,13 @@ class ConsoleLogViewerToolbar extends React.Component {
       mobileView: window.innerWidth >= 1450 ? false : true
     };
 
-    this.onContainerToggle = isExpanded => {
+    this.onContainerToggle = (_event, isExpanded) => {
       this.setState({
         containerExpanded: isExpanded
       });
     };
 
-    this.onContainerToggleMobile = isExpanded => {
+    this.onContainerToggleMobile = (_event, isExpanded) => {
       this.setState({
         containerExpandedMobile: isExpanded
       });
@@ -106,13 +106,13 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onOptionToggle = isExpanded => {
+    this.onOptionToggle = (_event, isExpanded) => {
       this.setState({
         optionExpanded: isExpanded
       });
     };
 
-    this.onOptionToggleMobile = isExpanded => {
+    this.onOptionToggleMobile = (_event, isExpanded) => {
       this.setState({
         optionExpandedMobile: isExpanded
       });
@@ -130,13 +130,13 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onExternalToggle = isExpanded => {
+    this.onExternalToggle = (_event, isExpanded) => {
       this.setState({
         externalExpanded: isExpanded
       });
     };
 
-    this.onExternalToggleMobile = isExpanded => {
+    this.onExternalToggleMobile = (_event, isExpanded) => {
       this.setState({
         externalExpandedMobile: isExpanded
       });
@@ -154,13 +154,13 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onDownloadToggle = isExpanded => {
+    this.onDownloadToggle = (_event, isExpanded) => {
       this.setState({
         downloadExpanded: isExpanded
       });
     };
 
-    this.onDownloadToggleMobile = isExpanded => {
+    this.onDownloadToggleMobile = (_event, isExpanded) => {
       this.setState({
         downloadExpandedMobile: isExpanded
       });
@@ -415,7 +415,12 @@ class ConsoleLogViewerToolbar extends React.Component {
           <Tooltip position="top" content={<div>Options</div>}>
             <Dropdown
               toggle={
-                <DropdownToggle aria-label="Options" id="option-toggle-mobile" onToggle={this.onOptionToggleMobile} icon={<CogIcon />} />
+                <DropdownToggle
+                  aria-label="Options"
+                  id="option-toggle-mobile"
+                  onToggle={this.onOptionToggleMobile}
+                  icon={<CogIcon />}
+                />
               }
               isOpen={optionExpandedMobile}
               dropdownItems={optionDropdownItems}
