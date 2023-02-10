@@ -164,7 +164,7 @@ const StepContent = () => {
 
 ### useWizardFooter
 
-Used to set a unique footer for the wizard on any given step. See step 3 of [Kitchen sink](#kitchen-sink) for a live example.
+Used to set a unique footer for the wizard on any given step.
 
 ```noLive
 import { useWizardFooter } from '@patternfly/react-core/next';
