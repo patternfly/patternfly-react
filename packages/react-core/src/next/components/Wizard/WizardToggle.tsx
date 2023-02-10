@@ -40,11 +40,9 @@ export const WizardToggle = ({
   'aria-label': ariaLabel = 'Wizard toggle'
 }: WizardToggleProps) => {
   const isActiveSubStep = isWizardSubStep(activeStep);
+  const parentStep = isActiveSubStep && steps.find(step => step.id === activeStep.parentId);
   const nonSubSteps = steps.filter(step => !isWizardSubStep(step));
-  const wizardToggleIndex =
-    nonSubSteps.indexOf(
-      isWizardSubStep(activeStep) ? steps.find(step => step.id === activeStep.parentId) : activeStep
-    ) + 1;
+  const wizardToggleIndex = nonSubSteps.indexOf(parentStep || activeStep) + 1;
 
   const handleKeyClicks = React.useCallback(
     (event: KeyboardEvent): void => {
@@ -91,7 +89,8 @@ export const WizardToggle = ({
       >
         <span className={css(styles.wizardToggleList)}>
           <span className={css(styles.wizardToggleListItem)}>
-            <span className={css(styles.wizardToggleNum)}>{wizardToggleIndex}</span> {activeStep?.name}
+            <span className={css(styles.wizardToggleNum)}>{wizardToggleIndex}</span>{' '}
+            {parentStep?.name || activeStep?.name}
             {isActiveSubStep && <AngleRightIcon className={css(styles.wizardToggleSeparator)} aria-hidden="true" />}
           </span>
           {isActiveSubStep && <span className={css(styles.wizardToggleListItem)}>{activeStep?.name}</span>}
