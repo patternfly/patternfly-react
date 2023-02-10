@@ -17,14 +17,8 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** Alignment at various breakpoints. */
-  alignment?: {
-    default?: 'alignRight' | 'alignLeft';
-    md?: 'alignRight' | 'alignLeft';
-    lg?: 'alignRight' | 'alignLeft';
-    xl?: 'alignRight' | 'alignLeft';
-    '2xl'?: 'alignRight' | 'alignLeft';
-  };
+  /** Vertical alignment of children */
+  alignItems?: 'center' | 'default';
   /** Content to be rendered as children of the content row */
   children?: React.ReactNode;
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
@@ -57,7 +51,7 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
       isExpanded,
       toolbarId,
       visibility,
-      alignment,
+      alignItems,
       clearAllFilters,
       showClearFiltersButton,
       clearFiltersButtonText,
@@ -71,7 +65,6 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
             className={css(
               styles.toolbarContent,
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
-              formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
               className
             )}
             {...props}
@@ -93,7 +86,14 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
                       chipContainerRef: this.chipContainerRef
                     }}
                   >
-                    <div className={css(styles.toolbarContentSection)}>{children}</div>
+                    <div
+                      className={css(
+                        styles.toolbarContentSection,
+                        alignItems === 'center' && styles.modifiers.alignItemsCenter
+                      )}
+                    >
+                      {children}
+                    </div>
                     <ToolbarExpandableContent
                       id={expandableContentId}
                       isExpanded={isExpanded}

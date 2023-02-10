@@ -23,14 +23,18 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** Alignment at various breakpoints. */
-  alignment?: {
+  /** Applies to a child of a flex layout, and aligns that child (and any adjacent children on the other side of it) to one side of the main axis */
+  align?: {
     default?: 'alignRight' | 'alignLeft';
     md?: 'alignRight' | 'alignLeft';
     lg?: 'alignRight' | 'alignLeft';
     xl?: 'alignRight' | 'alignLeft';
     '2xl'?: 'alignRight' | 'alignLeft';
   };
+  /** Vertical alignment of children */
+  alignItems?: 'center' | 'baseline' | 'default';
+  /** Vertical alignment */
+  alignSelf?: 'center' | 'baseline' | 'default';
   /** Spacers at various breakpoints. */
   spacer?: {
     default?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
@@ -55,7 +59,19 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
 
 class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
   render() {
-    const { visibility, alignment, spacer, spaceItems, className, variant, children, innerRef, ...props } = this.props;
+    const {
+      visibility,
+      align,
+      alignItems,
+      alignSelf,
+      spacer,
+      spaceItems,
+      className,
+      variant,
+      children,
+      innerRef,
+      ...props
+    } = this.props;
 
     return (
       <PageContext.Consumer>
@@ -65,9 +81,13 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
               styles.toolbarGroup,
               variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
-              formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(align, styles, '', getBreakpoint(width)),
               formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
               formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
+              alignItems === 'center' && styles.modifiers.alignItemsCenter,
+              alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
+              alignSelf === 'center' && styles.modifiers.alignSelfCenter,
+              alignSelf === 'baseline' && styles.modifiers.alignSelfBaseline,
               className
             )}
             {...props}

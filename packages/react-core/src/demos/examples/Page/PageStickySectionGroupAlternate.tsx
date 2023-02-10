@@ -148,7 +148,7 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
       <ToolbarContent>
         <ToolbarGroup
           variant="icon-button-group"
-          alignment={{ default: 'alignRight' }}
+          align={{ default: 'alignRight' }}
           spacer={{ default: 'spacerNone', md: 'spacerMd' }}
         >
           <ToolbarItem>

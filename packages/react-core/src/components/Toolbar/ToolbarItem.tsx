@@ -39,14 +39,16 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** Alignment at various breakpoints. */
-  alignment?: {
+  /** Applies to a child of a flex layout, and aligns that child (and any adjacent children on the other side of it) to one side of the main axis */
+  align?: {
     default?: 'alignRight' | 'alignLeft';
     md?: 'alignRight' | 'alignLeft';
     lg?: 'alignRight' | 'alignLeft';
     xl?: 'alignRight' | 'alignLeft';
     '2xl'?: 'alignRight' | 'alignLeft';
   };
+  /** Vertical alignment */
+  alignSelf?: 'center' | 'baseline' | 'default';
   /** Spacers at various breakpoints. */
   spacer?: {
     default?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
@@ -76,9 +78,10 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
   visibility,
-  alignment,
   spacer,
   widths,
+  align,
+  alignSelf,
   id,
   children,
   isAllExpanded,
@@ -114,8 +117,10 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
               ],
             isAllExpanded && styles.modifiers.expanded,
             formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(align, styles, '', getBreakpoint(width)),
             formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
+            alignSelf === 'center' && styles.modifiers.alignSelfCenter,
+            alignSelf === 'baseline' && styles.modifiers.alignSelfBaseline,
             className
           )}
           {...(variant === 'label' && { 'aria-hidden': true })}
