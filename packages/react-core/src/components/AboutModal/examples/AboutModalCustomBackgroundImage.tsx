@@ -6,7 +6,7 @@ import bgImg from './patternfly-orb.svg';
 export const AboutModalCustomBackgroundImage: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  const toggleModal = () => {
+  const toggleModal = (_event: React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 
@@ -17,7 +17,7 @@ export const AboutModalCustomBackgroundImage: React.FunctionComponent = () => {
       </Button>
       <AboutModal
         isOpen={isModalOpen}
-        onClose={toggleModal}
+        onClose={(event: any) => toggleModal(event)}
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"

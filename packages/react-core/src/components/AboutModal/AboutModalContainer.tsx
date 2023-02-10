@@ -19,7 +19,7 @@ export interface AboutModalContainerProps extends React.HTMLProps<HTMLDivElement
   /** Flag to show the About Modal  */
   isOpen?: boolean;
   /** A callback for when the close button is clicked  */
-  onClose?: () => void;
+  onClose?: (event: React.MouseEvent | MouseEvent | KeyboardEvent) => void;
   /** Product Name  */
   productName?: string;
   /** Trademark information  */
@@ -44,7 +44,7 @@ export const AboutModalContainer: React.FunctionComponent<AboutModalContainerPro
   children,
   className = '',
   isOpen = false,
-  onClose = () => undefined,
+  onClose = _e => undefined,
   productName = '',
   trademark,
   brandImageSrc,

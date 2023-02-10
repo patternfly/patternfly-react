@@ -15,7 +15,7 @@ export interface AboutModalProps {
   /** Flag to show the about modal  */
   isOpen?: boolean;
   /** A callback for when the close button is clicked  */
-  onClose?: () => void;
+  onClose?: (event: React.MouseEvent | MouseEvent | KeyboardEvent) => void;
   /** Product name  */
   productName?: string;
   /** Trademark information  */
@@ -50,7 +50,7 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
   static defaultProps: PickOptional<AboutModalProps> = {
     className: '',
     isOpen: false,
-    onClose: (): any => undefined,
+    onClose: (_e): any => undefined,
     productName: '',
     trademark: '',
     backgroundImageSrc: '',
@@ -72,7 +72,7 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
 
   handleEscKeyClick = (event: KeyboardEvent) => {
     if (event.key === KeyTypes.Escape && this.props.isOpen) {
-      this.props.onClose();
+      this.props.onClose?.(event);
     }
   };
 
