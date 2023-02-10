@@ -27,6 +27,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
   const [selected, setSelected] = React.useState<string[]>([]);
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
+  const [activeItem, setActiveItem] = React.useState<string | null>(null);
 
   const menuRef = React.useRef<HTMLDivElement>(null);
   const textInputRef = React.useRef<HTMLInputElement>();
@@ -44,12 +45,20 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
 
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
-        newSelectOptions = [{ isDisabled: true, children: 'No results found' }];
+        newSelectOptions = [
+          { isDisabled: false, children: `No results found for "${inputValue}"`, itemId: 'no results' }
+        ];
+      }
+
+      // Open the menu when the input value changes and the new value is not empty
+      if (!isOpen) {
+        setIsOpen(true);
       }
     }
 
     setSelectOptions(newSelectOptions);
-    setFocusedItemIndex(0);
+    setFocusedItemIndex(null);
+    setActiveItem(null);
   }, [inputValue]);
 
   const handleMenuArrowKeys = (key: string) => {
@@ -75,6 +84,8 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       }
 
       setFocusedItemIndex(indexToFocus);
+      const focusedItem = selectOptions.filter(option => !option.isDisabled)[indexToFocus];
+      setActiveItem(`select-multi-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
     }
   };
 
@@ -88,20 +99,20 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       case 'Enter':
         if (!isOpen) {
           setIsOpen(prevIsOpen => !prevIsOpen);
-        } else {
+        } else if (isOpen && focusedItem.itemId !== 'no results') {
           onSelect(focusedItem.itemId as string);
         }
         break;
       case 'Tab':
       case 'Escape':
         setIsOpen(false);
+        setActiveItem(null);
         break;
       case 'ArrowUp':
       case 'ArrowDown':
+        event.preventDefault();
         handleMenuArrowKeys(event.key);
         break;
-      default:
-        !isOpen && setIsOpen(true);
     }
   };
 
@@ -117,11 +128,13 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
     // eslint-disable-next-line no-console
     console.log('selected', itemId);
 
-    if (itemId) {
+    if (itemId && itemId !== 'no results') {
       setSelected(
         selected.includes(itemId) ? selected.filter(selection => selection !== itemId) : [...selected, itemId]
       );
     }
+
+    textInputRef.current?.focus();
   };
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
@@ -136,8 +149,12 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
           autoComplete="off"
           innerRef={textInputRef}
           placeholder="Select a state"
+          {...(activeItem && { 'aria-activedescendant': activeItem })}
+          role="combobox"
+          isExpanded={isOpen}
+          aria-controls="select-multi-typeahead-listbox"
         >
-          <ChipGroup>
+          <ChipGroup aria-label="Current selections">
             {selected.map((selection, index) => (
               <Chip
                 key={index}
@@ -158,6 +175,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
               onClick={() => {
                 setInputValue('');
                 setSelected([]);
+                textInputRef?.current?.focus();
               }}
               aria-label="Clear input value"
             >
@@ -179,12 +197,13 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       onOpenChange={() => setIsOpen(false)}
       toggle={toggle}
     >
-      <SelectList isAriaMultiselectable>
+      <SelectList isAriaMultiselectable id="select-multi-typeahead-listbox">
         {selectOptions.map((option, index) => (
           <SelectOption
             key={option.itemId || option.children}
             isFocused={focusedItemIndex === index}
             className={option.className}
+            id={`select-multi-typeahead-${option.itemId.replace(' ', '-')}`}
             {...option}
             ref={null}
           />

@@ -239,7 +239,7 @@ export class MenuDemo extends Component {
     const menuListItems = menuListItemsText
       .filter(item => !input || item.toLowerCase().includes(input.toLowerCase()))
       .map((currentValue, index) => (
-        <MenuItem id="filtered-items" key={currentValue} itemId={index}>
+        <MenuItem id={`filtered-items-${index}`} key={currentValue} itemId={index}>
           {currentValue}
         </MenuItem>
       ));

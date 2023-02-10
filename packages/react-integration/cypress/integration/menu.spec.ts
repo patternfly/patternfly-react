@@ -29,7 +29,7 @@ describe('Menu Test', () => {
   it('Verify Flyout Menu', () => {
     cy.get('.pf-c-menu.pf-m-flyout').should('exist');
 
-    cy.get('#edit.pf-c-menu__list-item > button').click();
+    cy.get('#edit').click();
   });
 
   it('Verify Filterable Menu', () => {
@@ -39,18 +39,18 @@ describe('Menu Test', () => {
 
     cy.get('.pf-c-text-input-group__text-input').type('Action 1');
 
-    cy.get('#filtered-items.pf-c-menu__list-item')
+    cy.get('#filtered-items-0')
       .last()
       .should('contain', 'Action 1');
-    cy.get('#filtered-items.pf-c-menu__list-item')
+    cy.get('#filtered-items-0')
       .children()
       .should('not.contain', 'Action 2');
   });
 
   it('Verify Menu with Links', () => {
-    cy.get('#links-menu-link-1.pf-c-menu__list-item > a').should('have.attr', 'href', '#default-link1');
-    cy.get('#links-menu-link-2.pf-c-menu__list-item > a').should('have.attr', 'href', '#default-link2');
-    cy.get('#links-menu-link-3.pf-c-menu__list-item > a').should('have.attr', 'href', '#default-link3');
+    cy.get('#links-menu-link-1').should('have.attr', 'href', '#default-link1');
+    cy.get('#links-menu-link-2').should('have.attr', 'href', '#default-link2');
+    cy.get('#links-menu-link-3').should('have.attr', 'href', '#default-link3');
   });
 
   it('Verify Menu with Separator', () => {
@@ -67,7 +67,7 @@ describe('Menu Test', () => {
   });
 
   it('Verify Menu with Description', () => {
-    cy.get('#description-item-1 > .pf-c-menu__item')
+    cy.get('#description-item-1')
       .last()
       .should('contain', 'Description');
   });
@@ -91,25 +91,25 @@ describe('Menu Test', () => {
   it('Verify Single Select Menu', () => {
     cy.get('#single-select-menu.pf-c-menu').should('exist');
 
-    cy.get('#single-select-item-2.pf-c-menu__list-item > button').click();
+    cy.get('#single-select-item-2').click();
 
-    cy.get('#single-select-item-3.pf-c-menu__list-item > button')
+    cy.get('#single-select-item-3')
       .click()
       .should('have.class', 'pf-m-selected');
 
-    cy.get('#single-select-item-1.pf-c-menu__list-item > button').should('not.have.class', 'pf-m-selected');
+    cy.get('#single-select-item-1').should('not.have.class', 'pf-m-selected');
   });
 
   it('Verify Multi Select Menu', () => {
     cy.get('#multi-select-menu.pf-c-menu').should('exist');
 
-    cy.get('#multi-select-item-1.pf-c-menu__list-item > button').should('have.class', 'pf-m-selected');
+    cy.get('#multi-select-item-1').should('have.class', 'pf-m-selected');
 
-    cy.get('#multi-select-item-2.pf-c-menu__list-item > button')
+    cy.get('#multi-select-item-2')
       .click()
       .should('have.class', 'pf-m-selected');
 
-    cy.get('#multi-select-item-3.pf-c-menu__list-item > button').should('have.class', 'pf-m-selected');
+    cy.get('#multi-select-item-3').should('have.class', 'pf-m-selected');
   });
 
   it('Verify Footer Menu', () => {

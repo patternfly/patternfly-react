@@ -28,6 +28,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
   const [inputValue, setInputValue] = React.useState<string>('');
   const [menuItems, setMenuItems] = React.useState<MenuItemProps[]>(intitalMenuItems);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
+  const [activeItem, setActiveItem] = React.useState<string | null>(null);
   const [selected, setSelected] = React.useState<string[]>([]);
   const containerRef = React.useRef<HTMLDivElement>();
   const menuToggleRef = React.useRef<MenuToggleElement>({} as MenuToggleElement);
@@ -45,14 +46,23 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
           .includes(inputValue.toLowerCase())
       );
 
-      // When no options are found after filtering, display 'No results found'
+      // When no options are found after filtering, display 'No results found'.
       if (!newMenuItems.length) {
-        newMenuItems = [{ isDisabled: true, children: 'No results found' }];
+        newMenuItems = [{ isDisabled: false, children: `No results found for "${inputValue}"`, itemId: 'no results' }];
+      }
+
+      // Open the menu when the input value changes and the new value is not empty
+      if (!isMenuOpen) {
+        setIsMenuOpen(true);
       }
     }
 
     setMenuItems(newMenuItems);
+    setActiveItem(null);
+    setFocusedItemIndex(null);
   }, [inputValue]);
+
+  const focusOnInput = () => textInputRef.current?.focus();
 
   const handleMenuArrowKeys = (key: string) => {
     let indexToFocus;
@@ -77,6 +87,8 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
       }
 
       setFocusedItemIndex(indexToFocus);
+      const focusedItem = menuItems.filter(item => !item.isDisabled)[indexToFocus];
+      setActiveItem(`composable-multi-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
     }
   };
 
@@ -90,37 +102,50 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
       case 'Enter':
         if (!isMenuOpen) {
           setIsMenuOpen(prevIsOpen => !prevIsOpen);
-        } else {
+          // Only allow selection if the first item is a valid, selectable option
+        } else if (isMenuOpen && focusedItem.itemId !== 'no results') {
           onMenuSelect(focusedItem.itemId as string);
         }
         break;
       case 'Tab':
       case 'Escape':
         setIsMenuOpen(false);
+        setActiveItem(null);
         break;
       case 'ArrowUp':
       case 'ArrowDown':
+        event.preventDefault();
         handleMenuArrowKeys(event.key);
         break;
-      default:
-        !isMenuOpen && setIsMenuOpen(true);
     }
   };
 
-  // Close the menu when a click occurs outside of the menu toggle content
-  const onDocumentClick = (event: MouseEvent) => {
-    if (
-      isMenuOpen &&
-      !menuToggleRef.current?.contains(event?.target as HTMLElement) &&
-      !menuRef?.current?.contains(event.target as Node)
-    ) {
+  // Close the menu when a click occurs outside of the menu, toggle, or input.
+  const onDocumentClick = (event: MouseEvent | undefined) => {
+    const isValidClick = [menuRef, menuToggleRef, textInputRef].some(ref =>
+      ref?.current?.contains(event?.target as HTMLElement)
+    );
+    if (isMenuOpen && !isValidClick) {
       setIsMenuOpen(false);
+      setActiveItem(null);
+    }
+  };
+
+  // Close the menu when focus is on a menu item and Escape or Tab is pressed
+  const onDocumentKeydown = (event: KeyboardEvent | undefined) => {
+    if (isMenuOpen && menuRef?.current?.contains(event?.target as HTMLElement)) {
+      if (event?.key === 'Escape') {
+        setIsMenuOpen(false);
+        focusOnInput();
+      } else if (event?.key === 'Tab') {
+        setIsMenuOpen(false);
+      }
     }
   };
 
   const toggleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
-    textInputRef.current?.focus();
+    focusOnInput();
   };
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
@@ -128,11 +153,14 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
   };
 
   const onMenuSelect = (itemId: string) => {
-    if (itemId) {
+    // Only allow selection if the item is a valid, selectable option
+    if (itemId && itemId !== 'no results') {
       setSelected(
         selected.includes(itemId) ? selected.filter(selection => selection !== itemId) : [...selected, itemId]
       );
     }
+
+    focusOnInput();
   };
 
   const toggle = (
@@ -152,8 +180,12 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
           id="multi-typeahead-select-input"
           autoComplete="off"
           innerRef={textInputRef}
+          {...(activeItem && { 'aria-activedescendant': activeItem })}
+          role="combobox"
+          isExpanded={isMenuOpen}
+          aria-controls="composable-multi-typeahead-listbox"
         >
-          <ChipGroup>
+          <ChipGroup aria-label="Current filters">
             {selected.map((selection, index) => (
               <Chip
                 key={index}
@@ -190,11 +222,13 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
       id="multiple-typeahead-select-menu"
       onSelect={(_ev, itemId) => onMenuSelect(itemId?.toString() as string)}
       selected={selected}
+      role="listbox"
     >
       <MenuContent>
-        <MenuList>
+        <MenuList id="composable-multi-typeahead-listbox" isAriaMultiselectable>
           {menuItems.map((itemProps, index) => (
             <MenuItem
+              id={`composable-multi-typeahead-${itemProps.itemId.replace(' ', '-')}`}
               key={itemProps.itemId || itemProps.children}
               isFocused={focusedItemIndex === index}
               className={itemProps.className}
@@ -214,6 +248,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
         appendTo={containerRef.current}
         isVisible={isMenuOpen}
         onDocumentClick={onDocumentClick}
+        onDocumentKeyDown={onDocumentKeydown}
       />
     </div>
   );
