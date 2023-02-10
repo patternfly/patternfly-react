@@ -16,13 +16,13 @@ import { isValidDate } from '../../helpers/datetimeUtils';
 export interface DatePickerProps
   extends CalendarFormat,
     Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
-  /** The container to append the menu to. Defaults to 'parent'.
+  /** The container to append the menu to. Defaults to 'inline'.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
    * Some examples:
    * menuAppendTo={() => document.body};
    * menuAppendTo={document.getElementById('target')}
    */
-  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'parent';
+  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'inline';
   /** Accessible label for the date picker. */
   'aria-label'?: string;
   /** Accessible label for the button to open the date picker. */
@@ -95,7 +95,7 @@ const DatePickerBase = (
     onBlur = (): any => undefined,
     invalidFormatText = 'Invalid date',
     helperText,
-    appendTo = 'parent',
+    appendTo = 'inline',
     popoverProps,
     monthFormat,
     weekdayFormat,
@@ -197,9 +197,6 @@ const DatePickerBase = (
     [setPopoverOpen, popoverOpen, selectOpen]
   );
 
-  const getParentElement = () =>
-    datePickerWrapperRef && datePickerWrapperRef.current ? datePickerWrapperRef.current : null;
-
   return (
     <div className={css(styles.datePicker, className)} ref={datePickerWrapperRef} style={style} {...props}>
       <Popover
@@ -243,7 +240,7 @@ const DatePickerBase = (
         withFocusTrap
         hasNoPadding
         hasAutoWidth
-        appendTo={appendTo === 'parent' ? getParentElement() : appendTo}
+        appendTo={appendTo}
         {...popoverProps}
       >
         <div className={styles.datePickerInput}>
