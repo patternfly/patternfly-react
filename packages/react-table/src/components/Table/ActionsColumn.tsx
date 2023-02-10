@@ -7,10 +7,7 @@ import { IAction, IExtraData, IRowData } from './TableTypes';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export interface CustomActionsToggleProps {
-  onToggle: (
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
-    isOpen: boolean
-  ) => void;
+  onToggle: (event: React.MouseEvent) => void;
   isOpen: boolean;
   isDisabled: boolean;
   toggleRef: React.Ref<any>;
