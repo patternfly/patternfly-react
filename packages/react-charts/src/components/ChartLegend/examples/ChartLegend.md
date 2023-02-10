@@ -606,11 +606,16 @@ class TooltipPieChart extends React.Component {
   constructor(props) {
     super(props);
 
-    // Custom legend label compoenent
-    this.LegendLabel = ({datum, ...rest}) => (
-      <Tooltip content={datum.name} enableFlip>
-        <ChartLabel {...rest} />
-      </Tooltip>
+    // Custom legend label component
+    // Note: Tooltip outputs a div tag, so we wrap that using a foreignObject
+    this.LegendLabel = ({datum, x, y, ...rest}) => (
+      <g>
+        <foreignObject height="100%" width="100%" x={x - 10} y={y - 12}>
+          <Tooltip content={datum.name} enableFlip >
+            <ChartLabel {...rest} />
+          </Tooltip>
+        </foreignObject>
+      </g>
     );
 
     // Custom legend component
