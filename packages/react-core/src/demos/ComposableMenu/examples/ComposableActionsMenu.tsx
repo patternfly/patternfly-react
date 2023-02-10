@@ -10,7 +10,6 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
   const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
   const menuRef = React.useRef<HTMLDivElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (isOpen && menuRef.current?.contains(event.target as Node)) {
@@ -123,15 +122,5 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
     </Menu>
   );
 
-  return (
-    <div ref={containerRef}>
-      <Popper
-        trigger={toggle}
-        popper={menu}
-        isVisible={isOpen}
-        appendTo={containerRef.current || undefined}
-        popperMatchesTriggerWidth={false}
-      />
-    </div>
-  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
 };

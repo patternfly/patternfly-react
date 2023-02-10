@@ -14,7 +14,6 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [checkedItems, setCheckedItems] = React.useState<TreeViewDataItem[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
   const menuRef = React.useRef<HTMLDivElement>();
 
   const statusOptions: TreeViewDataItem[] = [
@@ -266,15 +265,5 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
       </PanelMain>
     </Panel>
   );
-  return (
-    <div ref={containerRef}>
-      <Popper
-        trigger={toggle}
-        popper={menu}
-        isVisible={isOpen}
-        appendTo={containerRef.current || undefined}
-        popperMatchesTriggerWidth={false}
-      />
-    </div>
-  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
 };

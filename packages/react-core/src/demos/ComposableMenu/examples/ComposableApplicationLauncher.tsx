@@ -23,7 +23,6 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
   const [filteredIds, setFilteredIds] = React.useState<string[]>(['*']);
   const menuRef = React.useRef<HTMLDivElement>(null);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
@@ -266,15 +265,5 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return (
-    <div ref={containerRef}>
-      <Popper
-        trigger={toggle}
-        popper={menu}
-        isVisible={isOpen}
-        popperMatchesTriggerWidth={false}
-        appendTo={containerRef.current || undefined}
-      />
-    </div>
-  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
 };

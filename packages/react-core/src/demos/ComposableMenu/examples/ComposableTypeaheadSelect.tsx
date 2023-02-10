@@ -175,8 +175,6 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
     <Popper
       trigger={
         <MenuToggle
-          // Needed to append the menu closer to the toggle in DOM
-          id="temp-toggle-id"
           variant="typeahead"
           onClick={toggleMenuOpen}
           innerRef={menuToggleRef}
@@ -229,7 +227,6 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
       isVisible={isMenuOpen}
       onDocumentClick={onDocumentClick}
       onDocumentKeyDown={onDocumentKeydown}
-      appendTo={() => document.getElementById('temp-toggle-id')}
     />
   );
 };

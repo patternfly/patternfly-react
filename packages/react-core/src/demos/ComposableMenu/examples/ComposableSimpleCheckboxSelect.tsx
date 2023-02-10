@@ -97,5 +97,5 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper appendTo={toggleRef.current || undefined} trigger={toggle} popper={menu} isVisible={isOpen} />;
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 };
