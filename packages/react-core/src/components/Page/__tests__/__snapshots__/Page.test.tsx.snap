@@ -13,11 +13,11 @@ exports[`Page Check dark page against snapshot 1`] = `
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       PageHeaderTools | Avatar
     </header>
@@ -74,11 +74,11 @@ exports[`Page Check page horizontal layout example against snapshot 1`] = `
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       <div
         class="pf-c-page__header-nav"
@@ -138,11 +138,11 @@ exports[`Page Check page to verify breadcrumb is created - PageBreadcrumb syntax
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       <div
         class="pf-c-page__header-nav"
@@ -305,11 +305,11 @@ exports[`Page Check page to verify breadcrumb is created 1`] = `
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       <div
         class="pf-c-page__header-nav"
@@ -472,11 +472,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       <div
         class="pf-c-page__header-nav"
@@ -758,11 +758,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       <div
         class="pf-c-page__header-nav"
@@ -1049,11 +1049,11 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       <div
         class="pf-c-page__header-nav"
@@ -1235,11 +1235,11 @@ exports[`Page Check page to verify skip to content points to main content region
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       <div
         class="pf-c-page__header-nav"
@@ -1403,11 +1403,11 @@ exports[`Page Check page vertical layout example against snapshot 1`] = `
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       PageHeaderTools | Avatar
     </header>
@@ -1464,11 +1464,11 @@ exports[`Page Sticky bottom breadcrumb on all height breakpoints - PageBreadcrum
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       <div
         class="pf-c-page__header-nav"
@@ -1631,11 +1631,11 @@ exports[`Page Verify sticky bottom breadcrumb on all height breakpoints 1`] = `
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       <div
         class="pf-c-page__header-nav"
@@ -1798,11 +1798,11 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints - PageBread
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       <div
         class="pf-c-page__header-nav"
@@ -1965,11 +1965,11 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints 1`] = `
       <div
         class="pf-c-page__header-brand"
       >
-        <a
+        <span
           class="pf-c-page__header-brand-link"
         >
           Logo
-        </a>
+        </span>
       </div>
       <div
         class="pf-c-page__header-nav"

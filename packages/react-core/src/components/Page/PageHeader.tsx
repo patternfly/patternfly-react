@@ -12,7 +12,7 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Component to render the logo/brand, use <Brand /> */
   logo?: React.ReactNode;
   /** Additional props passed to the logo anchor container */
-  logoProps?: object;
+  logoProps?: any;
   /** Component to use to wrap the passed <logo> */
   logoComponent?: React.ReactNode;
   /** Component to render the header tools, use <PageHeaderTools />  */
@@ -36,8 +36,8 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
 export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   className = '',
   logo = null as React.ReactNode,
-  logoProps = null as object,
-  logoComponent = 'a',
+  logoProps = null as any,
+  logoComponent,
   headerTools = null as React.ReactNode,
   topNav = null as React.ReactNode,
   isNavOpen = true,
@@ -49,7 +49,14 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   'aria-controls': ariaControls = null,
   ...props
 }: PageHeaderProps) => {
-  const LogoComponent = logoComponent as any;
+  let LogoComponent = logoComponent as any;
+  if (!logoComponent) {
+    if (logoProps?.href !== undefined) {
+      LogoComponent = 'a';
+    } else {
+      LogoComponent = 'span';
+    }
+  }
   return (
     <PageContextConsumer>
       {({ isManagedSidebar, onNavToggle: managedOnNavToggle, isNavOpen: managedIsNavOpen }: PageContextProps) => {

@@ -85,8 +85,20 @@ describe('MastheadBrand', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('verify default component', () => {
+    const { asFragment } = render(<MastheadBrand>test</MastheadBrand>);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('verify custom component', () => {
     const { asFragment } = render(<MastheadBrand component="div">test</MastheadBrand>);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('verify anchor component with href', () => {
+    const { asFragment } = render(<MastheadBrand href="#">test</MastheadBrand>);
 
     expect(asFragment()).toMatchSnapshot();
   });

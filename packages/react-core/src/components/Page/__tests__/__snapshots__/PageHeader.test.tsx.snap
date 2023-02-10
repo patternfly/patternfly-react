@@ -8,11 +8,50 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     <div
       class="pf-c-page__header-brand"
     >
-      <a
+      <span
         class="pf-c-page__header-brand-link"
       >
         Logo
+      </span>
+    </div>
+    PageHeaderTools | Avatar
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Test that logoComponent with href is an anchor 1`] = `
+<DocumentFragment>
+  <header
+    class="pf-c-page__header"
+  >
+    <div
+      class="pf-c-page__header-brand"
+    >
+      <a
+        class="pf-c-page__header-brand-link"
+        href="#"
+      >
+        Logo
       </a>
+    </div>
+    PageHeaderTools | Avatar
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Test that passed logoComponent overrides default 1`] = `
+<DocumentFragment>
+  <header
+    class="pf-c-page__header"
+  >
+    <div
+      class="pf-c-page__header-brand"
+    >
+      <div
+        class="pf-c-page__header-brand-link"
+      >
+        Logo
+      </div>
     </div>
     PageHeaderTools | Avatar
   </header>

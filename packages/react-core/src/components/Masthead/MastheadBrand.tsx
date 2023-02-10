@@ -15,12 +15,19 @@ export interface MastheadBrandProps
 export const MastheadBrand: React.FunctionComponent<MastheadBrandProps> = ({
   children,
   className,
-  component = 'a',
+  component,
   ...props
 }: MastheadBrandProps) => {
-  const Component = component as any;
+  let Component = component as any;
+  if (!component) {
+    if (props?.href !== undefined) {
+      Component = 'a';
+    } else {
+      Component = 'span';
+    }
+  }
   return (
-    <Component className={css(styles.mastheadBrand, className)} tabIndex={0} {...props}>
+    <Component className={css(styles.mastheadBrand, className)} {...(Component === 'a' && { tabIndex: 0 })} {...props}>
       {children}
     </Component>
   );
