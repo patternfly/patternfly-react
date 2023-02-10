@@ -38,7 +38,7 @@ To add a toolbar, wrap your `VisualizationProvider` with the `TopologyView` comp
 - `contextToolbar`: displayed at the top of the view, should contain components for changing context
 - `viewToolbar`: displayed below the context toolbar, should contain components for changing view contents
 
-Note: you can use state on the controller to track view options as implemented in the demo below.
+Note: you can use state on the controller to track things like `viewOptions` as implemented in the demo below.
 
 To conditionally render view options, create an interface which includes an attribute for each view option. You can update the state of each view option in the toolbar, e.g. via a `setViewOptions` hook.
 
