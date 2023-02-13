@@ -7,28 +7,19 @@ Note: Topology lives in its own package at [`@patternfly/react-topology`](https:
 
 import {
   AnchorEnd,
-  ColaLayout,
   DefaultEdge,
-  DefaultGroup,
-  DefaultNode,
-  EdgeStyle,
   GraphComponent,
   graphDropTargetSpec,
-  groupDropTargetSpec,
   Layer,
   ModelKind,
-  nodeDragSourceSpec,
-  NodeShape,
-  NodeStatus,
   SELECTION_EVENT,
-  useSvgAnchor,
   useCombineRefs,
+  useSvgAnchor,
   Visualization,
   VisualizationProvider,
   VisualizationSurface,
   withDndDrop,
   withDragNode,
-  withSelection
 } from '@patternfly/react-topology';
 
 import './topology-example.css';
