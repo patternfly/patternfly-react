@@ -88,8 +88,8 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
     setRiskIsExpanded(isExpanded);
   };
 
-  const onKebabToggle = (_event: any, isOpen: boolean) => {
-    setKebabIsOpen(isOpen);
+  const onKebabToggle = () => {
+    setKebabIsOpen(!kebabIsOpen);
   };
 
   const statusMenuItems = [

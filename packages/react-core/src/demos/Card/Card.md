@@ -68,7 +68,7 @@ import {
   ToolbarFilter,
   ToolbarContent
 } from '@patternfly/react-core';
-import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/dist/esm/next/index';
+import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/next';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 

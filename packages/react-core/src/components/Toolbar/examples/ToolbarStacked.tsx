@@ -24,7 +24,7 @@ import {
   ToolbarToggleGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/dist/esm/next/index';
+import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/next';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -53,8 +53,8 @@ export const ToolbarStacked: React.FunctionComponent = () => {
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(20);
 
-  const onKebabToggle = (_event: any, isOpen: boolean) => {
-    setKebabIsOpen(isOpen);
+  const onKebabToggle = () => {
+    setKebabIsOpen(!kebabIsOpen);
   };
 
   const onResourceToggle = (_event: any, isExpanded: boolean) => {
@@ -66,7 +66,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     setResourceIsExpanded(false);
   };
 
-  const onResourceSelectDropdown = (event: React.SyntheticEvent<HTMLDivElement, Event> | undefined) => {
+  const onResourceSelectDropdown = (event: React.MouseEvent<Element, MouseEvent>| undefined) => {
     setResourceSelected(event?.target);
     setResourceIsExpanded(false);
   };
