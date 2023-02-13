@@ -75,14 +75,13 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
           disableFocusTrap={disableFocusTrap}
           hasNoBodyWrapper
         >
-          <AboutModalBox>
+          <AboutModalBox className={css(className)}>
             <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
             <AboutModalBoxCloseButton aria-label={closeButtonAriaLabel} onClose={onClose} />
             {productName && <AboutModalBoxHeader id={ariaLabelledBy} productName={productName} />}
             <AboutModalBoxContent
               trademark={trademark}
               noAboutModalBoxContentContainer={noAboutModalBoxContentContainer}
-              className={css(className)}
               {...props}
             >
               {children}
