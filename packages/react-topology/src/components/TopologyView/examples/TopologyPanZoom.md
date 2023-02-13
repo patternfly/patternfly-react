@@ -1,6 +1,7 @@
 ---
 id: Pan/Zoom
 section: topology
+sortValue: 22
 ---
 
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
@@ -21,11 +22,12 @@ import {
   VisualizationSurface,
   withPanZoom
 } from '@patternfly/react-topology';
-import './topology-example.css';
 import Icon1 from '@patternfly/react-icons/dist/esm/icons/regions-icon';
 import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
-### Pan/Zoom
+import './topology-example.css';
+
+### Providing pan and zoom on the graph
 
 To allow the user to pan and zoom on the graph, you can use the `withPanZoom` utility when returning the graph component in the componentFactory: `withPanZoom(GraphComponent)`
 

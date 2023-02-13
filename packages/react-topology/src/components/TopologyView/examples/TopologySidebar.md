@@ -1,10 +1,8 @@
 ---
-id: With Sidebar
+id: Sidebar
 section: topology
+sortValue: 33
 ---
-
-import Icon1 from '@patternfly/react-icons/dist/esm/icons/regions-icon';
-import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 import {
   ColaLayout,
@@ -24,9 +22,12 @@ import {
   VisualizationSurface,
   withSelection
 } from '@patternfly/react-topology';
+import Icon1 from '@patternfly/react-icons/dist/esm/icons/regions-icon';
+import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
+
 import './topology-example.css';
 
-### Topology Sidebar Demo
+### Topology with a side bar
 
 To add a sidebar, wrap your `VisualizationProvider` with the `TopologyView` component, which accepts `sideBar` as a prop.
 

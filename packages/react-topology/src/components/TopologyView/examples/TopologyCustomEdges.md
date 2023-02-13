@@ -1,6 +1,7 @@
 ---
 id: Custom Edges
 section: topology
+sortValue: 12
 ---
 
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
@@ -28,12 +29,12 @@ import {
   withDragNode,
   withSelection
 } from '@patternfly/react-topology';
-
-import './topology-example.css';
 import Icon1 from '@patternfly/react-icons/dist/esm/icons/regions-icon';
 import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
-### Custom Edges
+import './topology-example.css';
+
+### Using custom edges
 
 Edges can be styled using properties on `EdgeModel`:
 - edgeStyle: choose from the `EdgeStyle` enumeration providing solid, dashed, or dotted

@@ -1,6 +1,7 @@
 ---
 id: Custom Nodes
 section: topology
+sortValue: 11
 ---
 
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
@@ -20,14 +21,14 @@ import {
   VisualizationProvider,
   VisualizationSurface
 } from '@patternfly/react-topology';
-
-import './topology-example.css';
 import Icon1 from '@patternfly/react-icons/dist/esm/icons/regions-icon';
 import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
-### Custom Nodes
+import './topology-example.css';
 
-To create a demo with custom node styling, you will need to create a custom node component, which your `customComponentFactory` will return.
+### Using custom nodes
+
+To create nodes with custom styling, you will need to create a custom node component, which your `customComponentFactory` will return.
 
 To do this, you will need:
 

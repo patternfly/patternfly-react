@@ -1,22 +1,31 @@
-.ws-react-t-baseline,
 .ws-react-t-control-bar,
 .ws-react-t-custom-edges,
 .ws-react-t-custom-nodes,
+.ws-react-t-getting-started,
 .ws-react-t-panzoom,
-.ws-react-t-selectable,
-.ws-react-t-with-sidebar,
-.ws-react-t-with-toolbar {
+.ws-react-t-selection,
+.ws-react-t-sidebar,
+.ws-react-t-toolbar {
   height: 600px;
   border: 1px solid var(--pf-global--palette--black-900);
   padding: 0;
   margin: var(--pf-global--spacer--md);
 }
 
-.ws-react-t-with-sidebar .topology-example-sidebar {
-  max-width: 300px;
+@media (min-width: 768px) {
+  .topology-example-sidebar.pf-topology-side-bar.shown {
+    max-width: 300px;
+  }
 }
 
-.pf-theme-dark .ws-react-t-topology-view {
+.pf-theme-dark .ws-react-t-control-bar,
+.pf-theme-dark .ws-react-t-custom-edges,
+.pf-theme-dark .ws-react-t-custom-nodes,
+.pf-theme-dark .ws-react-t-getting-started,
+.pf-theme-dark .ws-react-t-panzoom,
+.pf-theme-dark .ws-react-t-selection,
+.pf-theme-dark .ws-react-t-sidebar,
+.pf-theme-dark .ws-react-t-toolbar {
   border: 1px solid var(--pf-global--palette--black-100);
 }
 
