@@ -6,8 +6,6 @@ import contentStyles from '@patternfly/react-styles/css/components/Content/conte
 export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the about modal box content */
   children: React.ReactNode;
-  /** additional classes added to the about modal box content */
-  className?: string;
   /** The trademark info for the product  */
   trademark: string;
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts */
@@ -16,12 +14,11 @@ export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElemen
 
 export const AboutModalBoxContent: React.FunctionComponent<AboutModalBoxContentProps> = ({
   children,
-  className,
   trademark,
   noAboutModalBoxContentContainer = false,
   ...props
 }: AboutModalBoxContentProps) => (
-  <div className={css(styles.aboutModalBoxContent, className)} {...props}>
+  <div className={css(styles.aboutModalBoxContent)} {...props}>
     <div className={css('pf-c-about-modal-box__body')}>
       {noAboutModalBoxContentContainer ? children : <div className={css(contentStyles.content)}>{children}</div>}
     </div>
