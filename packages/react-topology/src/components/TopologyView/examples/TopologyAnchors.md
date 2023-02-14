@@ -6,34 +6,46 @@ section: topology
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
 
 import {
+  AbstractAnchor,
   AnchorEnd,
+  ColaLayout,
   DefaultEdge,
+  DefaultNode,
   GraphComponent,
-  graphDropTargetSpec,
   Layer,
   ModelKind,
-  SELECTION_EVENT,
-  useCombineRefs,
+  NodeShape,
+  Point,
+  useAnchor,
   useSvgAnchor,
   Visualization,
   VisualizationProvider,
   VisualizationSurface,
-  withDndDrop,
   withDragNode,
 } from '@patternfly/react-topology';
 
 import './topology-example.css';
-import Icon1 from '@patternfly/react-icons/dist/esm/icons/regions-icon';
-import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
-### With Anchors
+### Using custom anchors
 
-Anchors differ from basic connectors in that they [insert description here]. To add anchors to your node, create a custom component to which the anchors will attach. Call `useSvgAnchor()` on your connector refs.
+By default, Nodes use a default anchor `CenterAnchor` which use the center of the bounds of the node. A variety of anchors are provided for different node shapes that will set the anchor locations to the edge of the node.
 
-`useSvgAnchor()` accepts two optional parameters:
+You can customize the start and end locations for edges on a node by specifying the anchors to use on the node.
 
- - `end`: the end target for the anchor
- - `type`: the edge type. Should be set to `edge-point` for the `targetRef` and for the edges that will include anchor points.
+Hooks are provided to enable you to specify the SVG element you wish to use for determining the edge locations: `usePolygonAnchor`, and `useSvgAnchor`
+These hooks accept parameters allowing you to customize when to use the anchor:
+- `points` (usePolygonAnchor only) to specify the points for the polygon
+- `AnchorEnd` to specify use for start, end or both
+- `type` to specify which edge types to use the anchor for (optional)
+
+The `useAnchor` hook allows you to specify your own custom anchor or provide a function to return a specific anchor (useful for adjusting the anchor based on the node being displayed).
+
+A custom anchor must extend the `AbstractAnchor` class. There are two methods used for anchors:
+
+- `getLocation(reference: Point): Point`
+  - Should return the location of the anchor based on the incoming reference point. Default anchors use the point on the node border closest to the reference point.
+- `getReferencePoint(): Point`
+  - Should return the location where outgoing edges would initiate from
 
 ```ts file="./TopologyAnchorsDemo.tsx"
 ```
