@@ -2,7 +2,7 @@ import React from 'react';
 import { ProgressStepper, ProgressStep, Popover } from '@patternfly/react-core';
 
 export const PopoverProgressStep = () => (
-  <ProgressStepper>
+  <ProgressStepper aria-label="Progress stepper with help popover">
     <ProgressStep
       variant="success"
       id="popover-step1"

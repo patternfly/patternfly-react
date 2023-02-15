@@ -27,7 +27,7 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   const ouiaProps = useOUIAProps(Breadcrumb.displayName, ouiaId, ouiaSafe);
   return (
     <nav {...props} aria-label={ariaLabel} className={css(styles.breadcrumb, className)} {...ouiaProps}>
-      <ol className={styles.breadcrumbList}>
+      <ol className={styles.breadcrumbList} role="list">
         {React.Children.map(children, (child, index) => {
           const showDivider = index > 0;
           if (React.isValidElement(child)) {

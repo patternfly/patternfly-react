@@ -125,6 +125,7 @@ export class NavList extends React.Component<NavListProps> {
                   ref={this.navList}
                   className={css(styles.navList, className)}
                   onScroll={this.handleScrollButtons}
+                  role="list"
                   {...props}
                 >
                   {children}

@@ -18,6 +18,8 @@ export interface HelperTextProps extends React.HTMLProps<HTMLDivElement | HTMLUL
    * expect or intend for any helper text items within the container to be dynamically updated.
    */
   isLiveRegion?: boolean;
+  /** Adds an accessible label to the helper text when component is a "ul". */
+  'aria-label'?: string;
 }
 
 export const HelperText: React.FunctionComponent<HelperTextProps> = ({
@@ -26,6 +28,7 @@ export const HelperText: React.FunctionComponent<HelperTextProps> = ({
   component = 'div',
   id,
   isLiveRegion = false,
+  'aria-label': ariaLabel,
   ...props
 }: HelperTextProps) => {
   const Component = component as any;
@@ -34,6 +37,7 @@ export const HelperText: React.FunctionComponent<HelperTextProps> = ({
       id={id}
       className={css(styles.helperText, className)}
       {...(isLiveRegion && { 'aria-live': 'polite' })}
+      {...(component === 'ul' && { role: 'list', 'aria-label': ariaLabel })}
       {...props}
     >
       {children}

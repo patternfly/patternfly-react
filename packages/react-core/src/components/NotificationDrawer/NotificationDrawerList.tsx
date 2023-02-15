@@ -9,15 +9,24 @@ export interface NotificationDrawerListProps extends React.HTMLProps<HTMLUListEl
   className?: string;
   /**  Adds styling to the notification drawer list to indicate expand/hide state */
   isHidden?: boolean;
+  /** Adds an accessible label to the notification drawer list. */
+  'aria-label'?: string;
 }
 
 export const NotificationDrawerList: React.FunctionComponent<NotificationDrawerListProps> = ({
   children,
   className = '',
   isHidden = false,
+  'aria-label': ariaLabel,
   ...props
 }: NotificationDrawerListProps) => (
-  <ul {...props} className={css('pf-c-notification-drawer__list', className)} hidden={isHidden}>
+  <ul
+    {...props}
+    className={css('pf-c-notification-drawer__list', className)}
+    hidden={isHidden}
+    role="list"
+    aria-label={ariaLabel}
+  >
     {children}
   </ul>
 );

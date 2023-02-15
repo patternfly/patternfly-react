@@ -4,7 +4,7 @@ import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-i
 import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
 
 export const ProgressStepperCustomIcons: React.FunctionComponent = () => (
-  <ProgressStepper>
+  <ProgressStepper aria-label="Progress stepper with custom icons">
     <ProgressStep
       variant="success"
       id="custom-step1"

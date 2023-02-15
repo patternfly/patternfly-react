@@ -24,7 +24,11 @@ export const ProgressStepperBasicWithAlignment: React.FunctionComponent = () => 
         name="toggle-center"
       />
       <br />
-      <ProgressStepper isVertical={isVertical} isCenterAligned={isCenterAligned}>
+      <ProgressStepper
+        isVertical={isVertical}
+        isCenterAligned={isCenterAligned}
+        aria-label="Basic progress stepper with alignment"
+      >
         <ProgressStep
           variant="success"
           description="This is the first thing to happen"

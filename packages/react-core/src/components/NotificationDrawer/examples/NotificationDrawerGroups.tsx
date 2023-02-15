@@ -94,7 +94,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
             count={2}
             onExpand={toggleFirstDrawer}
           >
-            <NotificationDrawerList isHidden={!firstGroupExpanded}>
+            <NotificationDrawerList isHidden={!firstGroupExpanded} aria-label="Notifications in the first group">
               <NotificationDrawerListItem variant="info">
                 <NotificationDrawerListItemHeader
                   variant="info"
@@ -205,7 +205,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
             count={2}
             onExpand={toggleSecondDrawer}
           >
-            <NotificationDrawerList isHidden={!secondGroupExpanded}>
+            <NotificationDrawerList isHidden={!secondGroupExpanded} aria-label="Notifications in the second group">
               <NotificationDrawerListItem variant="info">
                 <NotificationDrawerListItemHeader
                   variant="info"
@@ -317,7 +317,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
             onExpand={toggleThirdDrawer}
             truncateTitle={1}
           >
-            <NotificationDrawerList isHidden={!thirdGroupExpanded}>
+            <NotificationDrawerList isHidden={!thirdGroupExpanded} aria-label="Notifications in the third group">
               <EmptyState variant={EmptyStateVariant.full}>
                 <EmptyStateIcon icon={SearchIcon} />
                 <Title headingLevel="h2" size="lg">

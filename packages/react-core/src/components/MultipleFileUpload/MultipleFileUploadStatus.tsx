@@ -21,6 +21,8 @@ export interface MultipleFileUploadStatusProps extends React.HTMLProps<HTMLDivEl
   statusToggleText?: string;
   /** Icon to show in the status toggle */
   statusToggleIcon?: 'danger' | 'success' | 'inProgress' | React.ReactNode;
+  /** Adds an accessible label to the list of status items. */
+  'aria-label'?: string;
 }
 
 export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploadStatusProps> = ({
@@ -28,6 +30,7 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
   className,
   statusToggleText,
   statusToggleIcon,
+  'aria-label': ariaLabel,
   ...props
 }: MultipleFileUploadStatusProps) => {
   const [icon, setIcon] = React.useState<React.ReactNode>();
@@ -63,7 +66,9 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
   return (
     <div className={css(styles.multipleFileUploadStatus, className)} {...props}>
       <ExpandableSection toggleContent={toggle} isExpanded={isOpen} onToggle={toggleExpandableSection}>
-        <ul className="pf-c-multiple-file-upload__status-list">{children}</ul>
+        <ul className="pf-c-multiple-file-upload__status-list" role="list" aria-label={ariaLabel}>
+          {children}
+        </ul>
       </ExpandableSection>
     </div>
   );

@@ -34,7 +34,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   React.useEffect(() => {
     if (readFileData.length < currentFiles.length) {
       setStatusIcon('inProgress');
-    } else if (readFileData.every(file => file.loadResult === 'success')) {
+    } else if (readFileData.every((file) => file.loadResult === 'success')) {
       setStatusIcon('success');
     } else {
       setStatusIcon('danger');
@@ -44,13 +44,13 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   // remove files from both state arrays based on their name
   const removeFiles = (namesOfFilesToRemove: string[]) => {
     const newCurrentFiles = currentFiles.filter(
-      currentFile => !namesOfFilesToRemove.some(fileName => fileName === currentFile.name)
+      (currentFile) => !namesOfFilesToRemove.some((fileName) => fileName === currentFile.name)
     );
 
     setCurrentFiles(newCurrentFiles);
 
     const newReadFiles = readFileData.filter(
-      readFile => !namesOfFilesToRemove.some(fileName => fileName === readFile.fileName)
+      (readFile) => !namesOfFilesToRemove.some((fileName) => fileName === readFile.fileName)
     );
 
     setReadFileData(newReadFiles);
@@ -60,34 +60,34 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
    * only used in this example for demonstration purposes */
   const updateCurrentFiles = (files: File[]) => {
     if (fileUploadShouldFail) {
-      const corruptedFiles = files.map(file => ({ ...file, lastModified: ('foo' as unknown) as number }));
-      setCurrentFiles(prevFiles => [...prevFiles, ...corruptedFiles]);
+      const corruptedFiles = files.map((file) => ({ ...file, lastModified: 'foo' as unknown as number }));
+      setCurrentFiles((prevFiles) => [...prevFiles, ...corruptedFiles]);
     } else {
-      setCurrentFiles(prevFiles => [...prevFiles, ...files]);
+      setCurrentFiles((prevFiles) => [...prevFiles, ...files]);
     }
   };
 
   // callback that will be called by the react dropzone with the newly dropped file objects
   const handleFileDrop = (droppedFiles: File[]) => {
     // identify what, if any, files are re-uploads of already uploaded files
-    const currentFileNames = currentFiles.map(file => file.name);
-    const reUploads = droppedFiles.filter(droppedFile => currentFileNames.includes(droppedFile.name));
+    const currentFileNames = currentFiles.map((file) => file.name);
+    const reUploads = droppedFiles.filter((droppedFile) => currentFileNames.includes(droppedFile.name));
 
     /** this promise chain is needed because if the file removal is done at the same time as the file adding react
      * won't realize that the status items for the re-uploaded files needs to be re-rendered */
     Promise.resolve()
-      .then(() => removeFiles(reUploads.map(file => file.name)))
+      .then(() => removeFiles(reUploads.map((file) => file.name)))
       .then(() => updateCurrentFiles(droppedFiles));
   };
 
   // callback called by the status item when a file is successfully read with the built-in file reader
   const handleReadSuccess = (data: string, file: File) => {
-    setReadFileData(prevReadFiles => [...prevReadFiles, { data, fileName: file.name, loadResult: 'success' }]);
+    setReadFileData((prevReadFiles) => [...prevReadFiles, { data, fileName: file.name, loadResult: 'success' }]);
   };
 
   // callback called by the status item when a file encounters an error while being read with the built-in file reader
   const handleReadFail = (error: DOMException, file: File) => {
-    setReadFileData(prevReadFiles => [
+    setReadFileData((prevReadFiles) => [
       ...prevReadFiles,
       { loadError: error, fileName: file.name, loadResult: 'danger' }
     ]);
@@ -95,7 +95,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
 
   // add helper text to a status item showing any error encountered during the file reading process
   const createHelperText = (file: File) => {
-    const fileResult = readFileData.find(readFile => readFile.fileName === file.name);
+    const fileResult = readFileData.find((readFile) => readFile.fileName === file.name);
     if (fileResult?.loadError) {
       return (
         <HelperText isLiveRegion>
@@ -105,7 +105,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     }
   };
 
-  const successfullyReadFileCount = readFileData.filter(fileData => fileData.loadResult === 'success').length;
+  const successfullyReadFileCount = readFileData.filter((fileData) => fileData.loadResult === 'success').length;
 
   return (
     <>
@@ -131,8 +131,9 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
           <MultipleFileUploadStatus
             statusToggleText={`${successfullyReadFileCount} of ${currentFiles.length} files uploaded`}
             statusToggleIcon={statusIcon}
+            aria-label="Current uploads"
           >
-            {currentFiles.map(file => (
+            {currentFiles.map((file) => (
               <MultipleFileUploadStatusItem
                 file={file}
                 key={file.name}

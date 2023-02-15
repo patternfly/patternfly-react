@@ -32,9 +32,12 @@ export interface ListProps extends Omit<React.HTMLProps<HTMLUListElement | HTMLO
   isPlain?: boolean;
   /** Modifies the size of the icons in the list */
   iconSize?: 'default' | 'large';
-  /** Sets the way items are numbered if variant is set to ordered */
+  /** Sets the way items are numbered if component is set to "ol". */
   type?: OrderType;
+  /** Sets the type of the list component. */
   component?: 'ol' | 'ul';
+  /** Adds an accessible label to the list. */
+  'aria-label'?: string;
 }
 
 export const List: React.FunctionComponent<ListProps> = ({
@@ -47,12 +50,15 @@ export const List: React.FunctionComponent<ListProps> = ({
   type = OrderType.number,
   ref = null,
   component = ListComponent.ul,
+  'aria-label': ariaLabel,
   ...props
 }: ListProps) =>
   component === ListComponent.ol ? (
     <ol
       ref={ref as React.LegacyRef<HTMLOListElement>}
       type={type}
+      {...(isPlain && { role: 'list' })}
+      aria-label={ariaLabel}
       {...props}
       className={css(
         styles.list,
@@ -68,6 +74,8 @@ export const List: React.FunctionComponent<ListProps> = ({
   ) : (
     <ul
       ref={ref as React.LegacyRef<HTMLUListElement>}
+      {...(isPlain && { role: 'list' })}
+      {...(ariaLabel && { 'aria-label': ariaLabel })}
       {...props}
       className={css(
         styles.list,
