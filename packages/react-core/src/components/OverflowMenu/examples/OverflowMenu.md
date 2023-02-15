@@ -100,6 +100,7 @@ class SimpleOverflowMenu extends React.Component {
               </MenuToggle>
             )}
             isOpen={isOpen}
+            onOpenChange={isOpen => setIsOpen(isOpen)}
           >
             <DropdownList>
               {dropdownItems}
@@ -234,6 +235,7 @@ class OverflowMenuGroupTypes extends React.Component {
               </MenuToggle>
             )}
             isOpen={isOpen}
+            onOpenChange={isOpen => setIsOpen(isOpen)}
           >
             <DropdownList>
               {dropdownItems}
@@ -355,6 +357,7 @@ class OverflowMenuAdditionalOptions extends React.Component {
               </MenuToggle>
             )}
             isOpen={isOpen}
+            onOpenChange={isOpen => setIsOpen(isOpen)}
           >
             <DropdownList>
               {dropdownItems}
@@ -444,6 +447,7 @@ class OverflowMenuPersist extends React.Component {
               </MenuToggle>
             )}
             isOpen={isOpen}
+            onOpenChange={isOpen => setIsOpen(isOpen)}
           >
             <DropdownList>
               {dropdownItems}
