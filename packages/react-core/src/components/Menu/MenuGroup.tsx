@@ -21,7 +21,7 @@ const MenuGroupBase: React.FunctionComponent<MenuGroupProps> = ({
   children,
   className = '',
   label = '',
-  titleId = '',
+  titleId,
   innerRef,
   labelHeadingLevel: HeadingLevel = 'h1',
   ...props
