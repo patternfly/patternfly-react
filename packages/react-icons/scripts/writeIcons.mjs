@@ -1,6 +1,9 @@
-const { join } = require('path');
-const { outputFileSync } = require('fs-extra');
-const { generateIcons } = require('./generateIcons');
+import { join } from 'path';
+import { outputFileSync } from 'fs-extra/esm';
+import { generateIcons } from './generateIcons.mjs';
+
+import * as url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const outDir = join(__dirname, '../dist');
 

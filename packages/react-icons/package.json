@@ -25,15 +25,15 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "generate": "rimraf dist/esm/icons dist/js/icons && node scripts/writeIcons.js",
+    "generate": "rimraf dist/esm/icons dist/js/icons && node scripts/writeIcons.mjs",
     "clean": "rimraf dist src/icons src/index.js src/index.d.ts"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@patternfly/patternfly": "5.0.0-alpha.12",
-    "fs-extra": "^6.0.1",
+    "@patternfly/patternfly": "5.0.0-alpha.18",
+    "fs-extra": "^11.1.0",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2",
     "tslib": "^2.0.0",

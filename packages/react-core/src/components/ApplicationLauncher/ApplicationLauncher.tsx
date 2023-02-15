@@ -61,8 +61,6 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   favoritesLabel?: string;
   /** ID of toggle */
   toggleId?: string;
-  /** @beta Opt-in for updated popper that does not use findDOMNode. */
-  removeFindDomNode?: boolean;
   /** z-index of the application launcher when menuAppendTo is not inline. */
   zIndex?: number;
 }
@@ -131,7 +129,6 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       favoritesLabel,
       searchNoResultsText,
       menuAppendTo,
-      removeFindDomNode,
       zIndex = 9999,
       ...props
     } = this.props;
@@ -193,7 +190,6 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
             className={className}
             aria-label={ariaLabel}
             menuAppendTo={menuAppendTo}
-            removeFindDomNode={removeFindDomNode}
             zIndex={zIndex}
             toggle={
               <DropdownToggle

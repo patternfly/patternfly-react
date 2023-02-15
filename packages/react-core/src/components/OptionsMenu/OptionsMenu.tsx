@@ -43,8 +43,6 @@ export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement>, OUIAP
    * menuAppendTo={document.getElementById('target')}
    */
   menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
-  /** @beta Opt-in for updated popper that does not use findDOMNode. */
-  removeFindDomNode?: boolean;
   /** z-index of the options menu when menuAppendTo is not inline. */
   zIndex?: number;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -65,7 +63,6 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
   menuAppendTo = 'inline',
   ouiaId,
   ouiaSafe = true,
-  removeFindDomNode = false,
   zIndex = 9999,
   ...props
 }: OptionsMenuProps) => (
@@ -94,7 +91,6 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
       isGrouped={isGrouped}
       toggle={toggle}
       menuAppendTo={menuAppendTo}
-      removeFindDomNode={removeFindDomNode}
       zIndex={zIndex}
       {...props}
     />
