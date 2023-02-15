@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0-alpha.6...@patternfly/react-charts@7.0.0-alpha.7) (2023-02-15)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
 # 7.0.0-alpha.6 (2023-02-10)
 
 ### Bug Fixes
