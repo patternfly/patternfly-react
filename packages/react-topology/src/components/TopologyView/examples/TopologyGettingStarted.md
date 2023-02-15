@@ -2,6 +2,7 @@
 id: Getting started
 section: topology
 sortValue: 1
+sourceLink: https://github.com/patternfly/patternfly-react/blob/main/packages/react-topology/src/components/TopologyView/examples/TopologyGettingStartedDemo.tsx
 ---
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
 

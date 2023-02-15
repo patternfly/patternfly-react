@@ -2,6 +2,7 @@
 id: Sidebar
 section: topology
 sortValue: 33
+sourceLink: https://github.com/patternfly/patternfly-react/blob/main/packages/react-topology/src/components/TopologyView/examples/TopologySidebarDemo.tsx
 ---
 
 import {
