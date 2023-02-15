@@ -23,7 +23,6 @@ test('tooltip renders in strict mode', () => {
   const { asFragment } = render(
     <React.StrictMode>
       <Tooltip
-        removeFindDomNode
         position="top"
         content={
           <div>

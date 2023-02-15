@@ -106,7 +106,6 @@ test('popover renders in strict mode', () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
           </div>
         }
-        removeFindDomNode
       >
         <div>Toggle Popover</div>
       </Popover>
