@@ -1,6 +1,8 @@
 ---
-id: Selectable
+id: Selection
 section: topology
+sortValue: 21
+sourceLink: https://github.com/patternfly/patternfly-react/blob/main/packages/react-topology/src/components/TopologyView/examples/TopologySelectableDemo.tsx
 ---
 
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
@@ -21,12 +23,12 @@ import {
   VisualizationSurface,
   withSelection,
 } from '@patternfly/react-topology';
-
-import './topology-example.css';
 import Icon1 from '@patternfly/react-icons/dist/esm/icons/regions-icon';
 import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
-### Selectable Topology
+import './topology-example.css';
+
+### Using selection
 
 To allow nodes/edges to be selectable, you can use the `withSelection` utility when returning the component in the componentFactory, e.g.: `withSelection()(MyCustomNode)`.
 

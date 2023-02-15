@@ -127,7 +127,7 @@ const EDGES = [
   }
 ];
 
-export const TopologyBaselineDemo: React.FC = () => {
+export const TopologyGettingStartedDemo: React.FC = () => {
   const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
 
   const controller = React.useMemo(() => {

@@ -1,6 +1,8 @@
 ---
-id: With Toolbar
+id: Toolbar
 section: topology
+sortValue: 32
+sourceLink: https://github.com/patternfly/patternfly-react/blob/main/packages/react-topology/src/components/TopologyView/examples/TopologyToolbarDemo.tsx
 ---
 
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
@@ -24,16 +26,15 @@ import {
   VisualizationProvider,
   VisualizationSurface
 } from '@patternfly/react-topology';
-
 import { Select, SelectOption, SelectVariant, ToolbarItem } from '@patternfly/react-core';
-
-import './topology-example.css';
 import Icon1 from '@patternfly/react-icons/dist/esm/icons/regions-icon';
 import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
-### With Toolbar
+import './topology-example.css';
 
-To add a toolbar, wrap your `VisualizationProvider` with the `TopologyView` component, which will accept `viewToolbar` and/or `contextToolbar` as props.
+### Topology with a toolbar
+
+To add a toolbar to the topology view, wrap your `VisualizationProvider` with the `TopologyView` component, which will accept `viewToolbar` and/or `contextToolbar` as props.
 
 - `contextToolbar`: displayed at the top of the view, should contain components for changing context
 - `viewToolbar`: displayed below the context toolbar, should contain components for changing view contents

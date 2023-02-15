@@ -1,11 +1,10 @@
 ---
-id: Baseline
+id: Getting started
 section: topology
+sortValue: 1
+sourceLink: https://github.com/patternfly/patternfly-react/blob/main/packages/react-topology/src/components/TopologyView/examples/TopologyGettingStartedDemo.tsx
 ---
-
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
-
-## Basic Usage
 
 To use React Topology out-of-the-box, you will first need to transform your back-end data into a [Model](https://github.com/patternfly/patternfly-react/blob/main/packages/react-topology/src/types.ts#L16-L20). These model objects contain the information needed to display the nodes and edges. Each node and edge has a set of properties used by PF Topology as well as a data field which can be used to customize the nodes and edges by the application.
 
@@ -23,12 +22,12 @@ import {
   VisualizationProvider,
   VisualizationSurface
 } from '@patternfly/react-topology';
-
-import './topology-example.css';
 import Icon1 from '@patternfly/react-icons/dist/esm/icons/regions-icon';
 import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
-### Baseline Topology
+import './topology-example.css';
+
+### Getting started with react-topology
 
 1. Create a new Controller which can be done using the default `Visualization` class.
 
@@ -51,5 +50,5 @@ import Icon2 from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 4. You can use the provided `VisualizationSurface` to provide the SVG component required for the topology components. The `VisualizationSurface` can take a state parameter that will allow you to pass your state settings along to the Controller.
 
-```ts file='./TopologyBaselineDemo.tsx'
+```ts file='./TopologyGettingStartedDemo.tsx'
 ```
