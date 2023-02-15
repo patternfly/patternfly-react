@@ -91,6 +91,6 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
         </Modal>
       )}
     </GenerateId>
-  ) as React.ReactElement;
+  );
 };
 AboutModal.displayName = 'AboutModal';
