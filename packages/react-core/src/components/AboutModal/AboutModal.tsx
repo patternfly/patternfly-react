@@ -29,7 +29,7 @@ export interface AboutModalProps extends React.HTMLProps<HTMLDivElement> {
   /** The URL of the image for the background  */
   backgroundImageSrc?: string;
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts  */
-  noAboutModalBoxContentContainer?: boolean;
+  hasNoContentContainer?: boolean;
   /** The parent container to append the modal to. Defaults to document.body */
   appendTo?: HTMLElement | (() => HTMLElement);
   /** Set aria label to the close button */
@@ -43,12 +43,12 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
   className,
   isOpen = false,
   onClose = (_e): any => undefined,
-  productName = '',
-  trademark = '',
-  backgroundImageSrc = '',
+  productName,
+  trademark,
+  backgroundImageSrc,
   brandImageSrc,
   brandImageAlt,
-  noAboutModalBoxContentContainer = false,
+  hasNoContentContainer = false,
   appendTo,
   closeButtonAriaLabel,
   disableFocusTrap,
@@ -56,7 +56,7 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
 }: AboutModalProps) => {
   if (brandImageSrc && !brandImageAlt) {
     // eslint-disable-next-line no-console
-    console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified');
+    console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified, and should not be an empty string.');
   }
 
   if (!isOpen) {
@@ -68,7 +68,7 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
         <Modal
           isOpen={isOpen}
           variant={ModalVariant.large}
-          aria-labelledby={ariaLabelledBy}
+          {...(productName && {'aria-labelledby': ariaLabelledBy})}
           onEscapePress={onClose}
           showClose={false}
           appendTo={appendTo}
@@ -81,7 +81,7 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
             {productName && <AboutModalBoxHeader id={ariaLabelledBy} productName={productName} />}
             <AboutModalBoxContent
               trademark={trademark}
-              noAboutModalBoxContentContainer={noAboutModalBoxContentContainer}
+              hasNoContentContainer={hasNoContentContainer}
               {...props}
             >
               {children}

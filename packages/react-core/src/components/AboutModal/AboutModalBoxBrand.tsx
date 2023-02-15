@@ -3,14 +3,14 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
 
 export interface AboutModalBoxBrandProps extends React.HTMLProps<HTMLDivElement> {
-  /** the URL of the image for the brand.  */
-  src?: string;
-  /** the alternate text of the brand image.  */
+  /** The URL of the image for the brand.  */
+  src: string;
+  /** The alternate text of the brand image.  */
   alt: string;
 }
 
 export const AboutModalBoxBrand: React.FunctionComponent<AboutModalBoxBrandProps> = ({
-  src = '',
+  src,
   alt,
   ...props
 }: AboutModalBoxBrandProps) => (

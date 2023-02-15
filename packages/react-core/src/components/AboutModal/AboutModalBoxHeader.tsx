@@ -6,12 +6,12 @@ import { Title } from '../Title';
 export interface AboutModalBoxHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Name of the product  */
   productName?: string;
-  /** Id to used for about modal box header  */
+  /** Id to use for about modal box header  */
   id: string;
 }
 
 export const AboutModalBoxHeader: React.FunctionComponent<AboutModalBoxHeaderProps> = ({
-  productName = '',
+  productName,
   id,
   ...props
 }: AboutModalBoxHeaderProps) => (
