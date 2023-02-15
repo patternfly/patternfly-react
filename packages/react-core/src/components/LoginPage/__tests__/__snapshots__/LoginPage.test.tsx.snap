@@ -82,6 +82,7 @@ exports[`check loginpage example against snapshot 1`] = `
         >
           <ul
             class="pf-c-login__main-footer-links"
+            role="list"
           >
             Footer
           </ul>

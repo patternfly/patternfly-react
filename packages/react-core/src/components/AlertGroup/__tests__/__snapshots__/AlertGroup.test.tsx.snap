@@ -4,6 +4,7 @@ exports[`AlertGroup Alert Group renders without children 1`] = `
 <DocumentFragment>
   <ul
     class="pf-c-alert-group"
+    role="list"
   />
 </DocumentFragment>
 `;

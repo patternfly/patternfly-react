@@ -191,6 +191,7 @@ exports[`HelperText variant comonent helper text renders properly 1`] = `
 <DocumentFragment>
   <ul
     class="pf-c-helper-text"
+    role="list"
   >
     <li
       class="pf-c-helper-text__item"

@@ -13,6 +13,7 @@ exports[`SimpleListGroup should match snapshot (auto-generated) 1`] = `
     <ul
       aria-labelledby="''"
       class="''"
+      role="list"
     >
       ReactNode
     </ul>

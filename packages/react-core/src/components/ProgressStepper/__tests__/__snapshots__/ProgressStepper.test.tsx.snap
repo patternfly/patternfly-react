@@ -4,6 +4,7 @@ exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <ol
     class="pf-c-progress-stepper"
+    role="list"
   >
     Test
   </ol>

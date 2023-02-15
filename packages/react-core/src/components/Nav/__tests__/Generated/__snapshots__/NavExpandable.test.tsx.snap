@@ -48,6 +48,7 @@ exports[`NavExpandable should match snapshot (auto-generated) 1`] = `
       </h2>
       <ul
         class="pf-c-nav__list"
+        role="list"
       />
     </section>
   </li>

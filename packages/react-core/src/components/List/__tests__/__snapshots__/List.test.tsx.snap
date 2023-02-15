@@ -79,6 +79,7 @@ exports[`List icon list 1`] = `
 <DocumentFragment>
   <ul
     class="pf-c-list pf-m-plain"
+    role="list"
   >
     <li
       class="pf-c-list__item"

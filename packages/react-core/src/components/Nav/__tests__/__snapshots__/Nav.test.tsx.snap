@@ -11,6 +11,7 @@ exports[`Nav Dark Nav List 1`] = `
   >
     <ul
       class="pf-c-nav__list test-nav-list-class"
+      role="list"
     >
       <li
         class="pf-c-nav__item test-nav-item-class"
@@ -80,6 +81,7 @@ exports[`Nav Default Nav List - Trigger item active update 1`] = `
   >
     <ul
       class="pf-c-nav__list"
+      role="list"
     >
       <li
         class="pf-c-nav__item"
@@ -149,6 +151,7 @@ exports[`Nav Default Nav List 1`] = `
   >
     <ul
       class="pf-c-nav__list test-nav-list-class"
+      role="list"
     >
       <li
         class="pf-c-nav__item test-nav-item-class"
@@ -218,6 +221,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
   >
     <ul
       class="pf-c-nav__list"
+      role="list"
     >
       <li
         class="pf-c-nav__item pf-m-expandable expandable-group"
@@ -260,6 +264,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
         >
           <ul
             class="pf-c-nav__list"
+            role="list"
           >
             <li
               class="pf-c-nav__item"
@@ -332,6 +337,7 @@ exports[`Nav Expandable Nav List 1`] = `
   >
     <ul
       class="pf-c-nav__list"
+      role="list"
     >
       <li
         class="pf-c-nav__item pf-m-expandable"
@@ -374,6 +380,7 @@ exports[`Nav Expandable Nav List 1`] = `
         >
           <ul
             class="pf-c-nav__list"
+            role="list"
           >
             <li
               class="pf-c-nav__item"
@@ -446,6 +453,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
   >
     <ul
       class="pf-c-nav__list"
+      role="list"
     >
       <li
         class="pf-c-nav__item pf-m-expandable"
@@ -493,6 +501,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
           </h2>
           <ul
             class="pf-c-nav__list"
+            role="list"
           >
             <li
               class="pf-c-nav__item"
@@ -584,6 +593,7 @@ exports[`Nav Horizontal Nav List 1`] = `
     </button>
     <ul
       class="pf-c-nav__list"
+      role="list"
     >
       <li
         class="pf-c-nav__item"
@@ -691,6 +701,7 @@ exports[`Nav Horizontal SubNav List 1`] = `
     </button>
     <ul
       class="pf-c-nav__list"
+      role="list"
     >
       <li
         class="pf-c-nav__item"
@@ -789,9 +800,11 @@ exports[`Nav Nav Grouped List 1`] = `
       </h2>
       <ul
         class="pf-c-nav__list"
+        role="list"
       >
         <ul
           class="pf-c-nav__list"
+          role="list"
         >
           <li
             class="pf-c-nav__item"
@@ -860,9 +873,11 @@ exports[`Nav Nav Grouped List 1`] = `
       </h2>
       <ul
         class="pf-c-nav__list"
+        role="list"
       >
         <ul
           class="pf-c-nav__list"
+          role="list"
         >
           <li
             class="pf-c-nav__item"
@@ -953,6 +968,7 @@ exports[`Nav Nav List with custom item nodes 1`] = `
     </button>
     <ul
       class="pf-c-nav__list"
+      role="list"
     >
       <li
         class="pf-c-nav__item test-nav-item-class"
@@ -1020,6 +1036,7 @@ exports[`Nav Nav List with flyout 1`] = `
     </button>
     <ul
       class="pf-c-nav__list"
+      role="list"
     >
       <li
         class="pf-c-nav__item pf-m-flyout test-nav-item-class"
@@ -1100,6 +1117,7 @@ exports[`Nav Renders nav list in strict mode 1`] = `
   >
     <ul
       class="pf-c-nav__list test-nav-list-class"
+      role="list"
     >
       <li
         class="pf-c-nav__item test-nav-item-class"
@@ -1188,6 +1206,7 @@ exports[`Nav Tertiary Nav List 1`] = `
     </button>
     <ul
       class="pf-c-nav__list"
+      role="list"
     >
       <li
         class="pf-c-nav__item"

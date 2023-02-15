@@ -12,6 +12,7 @@ exports[`WizardNav should match snapshot (auto-generated) 1`] = `
   >
     <ol
       class="pf-c-wizard__nav-list"
+      role="list"
     >
       any
     </ol>

@@ -176,6 +176,7 @@ exports[`Page Check page to verify breadcrumb is created - PageBreadcrumb syntax
         >
           <ol
             class="pf-c-breadcrumb__list"
+            role="list"
           >
             <li
               class="pf-c-breadcrumb__item"
@@ -343,6 +344,7 @@ exports[`Page Check page to verify breadcrumb is created 1`] = `
         >
           <ol
             class="pf-c-breadcrumb__list"
+            role="list"
           >
             <li
               class="pf-c-breadcrumb__item"
@@ -513,6 +515,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
           >
             <ol
               class="pf-c-breadcrumb__list"
+              role="list"
             >
               <li
                 class="pf-c-breadcrumb__item"
@@ -635,6 +638,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
             </button>
             <ul
               class="pf-c-nav__list"
+              role="list"
             >
               <li
                 class="pf-c-nav__item"
@@ -821,6 +825,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
             </button>
             <ul
               class="pf-c-nav__list"
+              role="list"
             >
               <li
                 class="pf-c-nav__item"
@@ -920,6 +925,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
             >
               <ol
                 class="pf-c-breadcrumb__list"
+                role="list"
               >
                 <li
                   class="pf-c-breadcrumb__item"
@@ -1108,6 +1114,7 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
           </button>
           <ul
             class="pf-c-nav__list"
+            role="list"
           >
             <li
               class="pf-c-nav__item"
@@ -1284,6 +1291,7 @@ exports[`Page Check page to verify skip to content points to main content region
         >
           <ol
             class="pf-c-breadcrumb__list"
+            role="list"
           >
             <li
               class="pf-c-breadcrumb__item"
@@ -1512,6 +1520,7 @@ exports[`Page Sticky bottom breadcrumb on all height breakpoints - PageBreadcrum
         >
           <ol
             class="pf-c-breadcrumb__list"
+            role="list"
           >
             <li
               class="pf-c-breadcrumb__item"
@@ -1679,6 +1688,7 @@ exports[`Page Verify sticky bottom breadcrumb on all height breakpoints 1`] = `
         >
           <ol
             class="pf-c-breadcrumb__list"
+            role="list"
           >
             <li
               class="pf-c-breadcrumb__item"
@@ -1846,6 +1856,7 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints - PageBread
         >
           <ol
             class="pf-c-breadcrumb__list"
+            role="list"
           >
             <li
               class="pf-c-breadcrumb__item"
@@ -2013,6 +2024,7 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints 1`] = `
         >
           <ol
             class="pf-c-breadcrumb__list"
+            role="list"
           >
             <li
               class="pf-c-breadcrumb__item"
