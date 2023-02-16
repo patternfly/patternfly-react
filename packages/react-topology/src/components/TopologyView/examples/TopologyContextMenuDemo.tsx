@@ -75,11 +75,11 @@ const customComponentFactory: ComponentFactory = (kind: ModelKind, type: string)
     default:
       switch (kind) {
         case ModelKind.graph:
-          return GraphComponent;
+          return withContextMenu(() => contextMenu)(GraphComponent);
         case ModelKind.node:
           return withContextMenu(() => contextMenu)(CustomNode);
         case ModelKind.edge:
-          return DefaultEdge;
+          return withContextMenu(() => contextMenu)(DefaultEdge);
         default:
           return undefined;
       }
