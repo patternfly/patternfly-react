@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.12...@patternfly/react-core@5.0.0-alpha.13) (2023-02-16)
+
+### Bug Fixes
+
+- **MenuGroup:** do not set id when titleId prop isn't passed ([#8675](https://github.com/patternfly/patternfly-react/issues/8675)) ([73a72be](https://github.com/patternfly/patternfly-react/commit/73a72be6c929a66c485ee3cd71c07501fcf47d7d)), closes [#8162](https://github.com/patternfly/patternfly-react/issues/8162)
+
 # [5.0.0-alpha.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.11...@patternfly/react-core@5.0.0-alpha.12) (2023-02-15)
 
 ### Bug Fixes
