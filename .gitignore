@@ -9,6 +9,7 @@ coverage
 .cache
 .tmp
 .eslintcache
+package-lock.json
 
 # package managers
 yarn-error.log
