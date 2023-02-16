@@ -2,13 +2,7 @@ import * as React from 'react';
 import * as _ from 'lodash';
 import { observer } from 'mobx-react';
 import { Edge, EdgeTerminalType, NodeStatus } from '../../types';
-import {
-  WithContextMenuProps,
-  WithRemoveConnectorProps,
-  WithSelectionProps,
-  WithSourceDragProps,
-  WithTargetDragProps
-} from '../../behavior';
+import { ConnectDragSource, OnSelect } from '../../behavior';
 import { useHover } from '../../utils';
 import { Layer } from '../layers';
 import { css } from '@patternfly/react-styles';
@@ -20,28 +14,58 @@ import DefaultConnectorTag from './DefaultConnectorTag';
 import { Point } from '../../geom';
 import { getConnectorStartPoint } from './terminals/terminalUtils';
 
-type BaseEdgeProps = {
+interface DefaultEdgeProps {
+  /** Additional content added to the edge */
   children?: React.ReactNode;
-  element: Edge;
-  dragging?: boolean;
+  /** Additional classes added to the edge */
   className?: string;
+  /** The graph edge element to represent */
+  element: Edge;
+  /** Flag indicating if the user is dragging the edge */
+  dragging?: boolean;
+  /** The duration in seconds for the edge animation. Defaults to the animationSpeed set on the Edge's model */
   animationDuration?: number;
+  /** The terminal type to use for the edge start */
   startTerminalType?: EdgeTerminalType;
+  /** Additional classes added to the start terminal */
   startTerminalClass?: string;
+  /** The status to indicate on the start terminal */
   startTerminalStatus?: NodeStatus;
+  /** The size of the start terminal */
   startTerminalSize?: number;
+  /** The terminal type to use for the edge end */
   endTerminalType?: EdgeTerminalType;
+  /** Additional classes added to the end terminal */
   endTerminalClass?: string;
+  /** The status to indicate on the end terminal */
   endTerminalStatus?: NodeStatus;
+  /** The size of the end terminal */
   endTerminalSize?: number;
+  /** Tag to show for the terminal */
   tag?: string;
+  /** Additional classes added to the tag */
   tagClass?: string;
+  /** The status to indicate on the tag */
   tagStatus?: NodeStatus;
-} & Partial<
-  WithRemoveConnectorProps & WithSourceDragProps & WithTargetDragProps & WithSelectionProps & WithContextMenuProps
->;
+  /** Function to call for showing a remove indicator on the edge. Part of WithRemoveConnectorProps  */
+  onShowRemoveConnector?: () => void;
+  /** Function to call for removing the remove indicator on the edge. Part of WithRemoveConnectorProps  */
+  onHideRemoveConnector?: () => void;
+  /** Ref to use to start the drag of the start of the edge. Part of WithSourceDragProps */
+  sourceDragRef?: ConnectDragSource;
+  /** Ref to use to start the drag of the end of the edge. Part of WithTargetDragProps */
+  targetDragRef?: ConnectDragSource;
+  /** Flag indicating if the element is selected. Part of WithSelectionProps */
+  selected?: boolean;
+  /** Function to call when the element should become selected (or deselected). Part of WithSelectionProps */
+  onSelect?: OnSelect;
+  /** Function to call to show a context menu for the edge  */
+  onContextMenu?: (e: React.MouseEvent) => void;
+  /** Flag indicating that the context menu for the edge is currently open  */
+  contextMenuOpen?: boolean;
+}
 
-const BaseEdge: React.FunctionComponent<BaseEdgeProps> = ({
+const DefaultEdge: React.FunctionComponent<DefaultEdgeProps> = ({
   element,
   dragging,
   sourceDragRef,
@@ -65,7 +89,7 @@ const BaseEdge: React.FunctionComponent<BaseEdgeProps> = ({
   selected,
   onSelect,
   onContextMenu
-}) => {
+}: DefaultEdgeProps) => {
   const [hover, hoverRef] = useHover();
   const startPoint = element.getStartPoint();
   const endPoint = element.getEndPoint();
@@ -159,4 +183,4 @@ const BaseEdge: React.FunctionComponent<BaseEdgeProps> = ({
   );
 };
 
-export default observer(BaseEdge);
+export default observer(DefaultEdge);

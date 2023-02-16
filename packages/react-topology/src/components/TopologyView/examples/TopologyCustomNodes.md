@@ -3,6 +3,7 @@ id: Custom Nodes
 section: topology
 sortValue: 11
 sourceLink: https://github.com/patternfly/patternfly-react/blob/main/packages/react-topology/src/components/TopologyView/examples/TopologyCustomNodesDemo.tsx
+propComponents: ['DefaultNode']
 ---
 
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
