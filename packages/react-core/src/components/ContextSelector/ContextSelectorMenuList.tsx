@@ -3,12 +3,14 @@ import styles from '@patternfly/react-styles/css/components/ContextSelector/cont
 import { css } from '@patternfly/react-styles';
 
 export interface ContextSelectorMenuListProps {
-  /** Content rendered inside the Context Selector Menu */
+  /** Content rendered inside the context selector menu */
   children?: React.ReactNode;
-  /** Classess applied to root element of Context Selector menu */
+  /** Classess applied to root element of context selector menu */
   className?: string;
-  /** Flag to indicate if Context Selector menu is opened */
+  /** Flag to indicate if context selector menu is opened */
   isOpen?: boolean;
+  /** Adds an accessible label to the context selector menu. */
+  'aria-label'?: string;
 }
 
 export class ContextSelectorMenuList extends React.Component<ContextSelectorMenuListProps> {

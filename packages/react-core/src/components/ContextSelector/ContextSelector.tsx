@@ -67,6 +67,8 @@ export interface ContextSelectorProps extends OUIAProps {
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** Adds an accessible label to the context selector menu. */
+  menuAriaLabel?: string;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
@@ -128,6 +130,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       isFlipEnabled,
       id,
       zIndex,
+      menuAriaLabel,
       ...props
     } = this.props;
 
@@ -156,7 +159,9 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
               />
             </div>
             <ContextSelectorContext.Provider value={{ onSelect }}>
-              <ContextSelectorMenuList isOpen={isOpen}>{children}</ContextSelectorMenuList>
+              <ContextSelectorMenuList isOpen={isOpen} aria-label={menuAriaLabel}>
+                {children}
+              </ContextSelectorMenuList>
             </ContextSelectorContext.Provider>
             {footer}
           </FocusTrap>

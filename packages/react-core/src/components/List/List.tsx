@@ -50,7 +50,6 @@ export const List: React.FunctionComponent<ListProps> = ({
   type = OrderType.number,
   ref = null,
   component = ListComponent.ul,
-  'aria-label': ariaLabel,
   ...props
 }: ListProps) =>
   component === ListComponent.ol ? (
@@ -58,7 +57,6 @@ export const List: React.FunctionComponent<ListProps> = ({
       ref={ref as React.LegacyRef<HTMLOListElement>}
       type={type}
       {...(isPlain && { role: 'list' })}
-      aria-label={ariaLabel}
       {...props}
       className={css(
         styles.list,
@@ -75,7 +73,6 @@ export const List: React.FunctionComponent<ListProps> = ({
     <ul
       ref={ref as React.LegacyRef<HTMLUListElement>}
       {...(isPlain && { role: 'list' })}
-      {...(ariaLabel && { 'aria-label': ariaLabel })}
       {...props}
       className={css(
         styles.list,

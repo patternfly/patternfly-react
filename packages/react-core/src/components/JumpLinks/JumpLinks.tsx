@@ -19,7 +19,7 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   label?: React.ReactNode;
   /** Flag to always show the label when using `expandable` */
   alwaysShowLabel?: boolean;
-  /** Aria-label to add to nav element. Defaults to label. */
+  /** Adds an accessible label to the internal nav element. Defaults to the value of the label prop. */
   'aria-label'?: string;
   /** Selector for the scrollable element to spy on. Not passing a selector disables spying. */
   scrollableSelector?: string;
