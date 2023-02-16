@@ -4,6 +4,7 @@ exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <li
     class="pf-c-progress-stepper__step"
+    role="listitem"
   >
     <div
       class="pf-c-progress-stepper__step-connector"
