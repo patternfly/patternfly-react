@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import { Select, SelectOptionObject } from '@patternfly/react-core';
+import { Select, SelectOptionObject } from '@patternfly/react-core/dist/esm/components/Select';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import { EditableSelectInputProps } from './base';
