@@ -6,32 +6,37 @@ section: topology
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
 
 import {
-  PipelineDagreLayout,
+  TopologyView,
   Visualization,
   VisualizationProvider,
-  useEventListener,
-  SELECTION_EVENT,
-  TopologyView,
   VisualizationSurface,
   useVisualizationController,
-  NODE_SEPARATION_HORIZONTAL,
-  GRAPH_LAYOUT_END_EVENT,
-  getSpacerNodes,
-  getEdgesFromNodes,
+  DefaultTaskGroup,
   DEFAULT_EDGE_TYPE,
   DEFAULT_SPACER_NODE_TYPE,
+  GraphComponent,
+  ModelKind,
+  SpacerNode,
+  TaskEdge,
+  FinallyNode,
   DEFAULT_FINALLY_NODE_TYPE,
   DEFAULT_TASK_NODE_TYPE,
-  DEFAULT_WHEN_OFFSET,
   DEFAULT_WHEN_SIZE,
+  RunStatus,
   WhenStatus,
-  RunStatus
+  DEFAULT_LAYER,
+  DEFAULT_WHEN_OFFSET,
+  Layer,
+  ScaleDetailsLevel,
+  TaskNode,
+  TOP_LAYER,
+  useDetailsLevel,
+  useHover,
+  WhenDecorator,
 } from '@patternfly/react-topology';
 import '@patternfly/react-styles/css/components/Topology/topology-components.css';
 
 ### Pipelines
 
-☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎☺︎
-
-```ts file='./TopologyPipelinesDemo.tsx'
+```ts file='./TopologyPipelinesGettingStartedDemo.tsx'
 ```
