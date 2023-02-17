@@ -605,18 +605,18 @@ import { Tooltip } from '@patternfly/react-core';
 class TooltipPieChart extends React.Component {
   constructor(props) {
     super(props);
-
+    
     // Custom legend label component
-    // Note: Tooltip outputs a div tag, so we wrap that using a foreignObject
-    this.LegendLabel = ({datum, x, y, ...rest}) => (
-      <g>
-        <foreignObject height="100%" width="100%" x={x - 10} y={y - 12}>
-          <Tooltip content={datum.name} enableFlip >
-            <ChartLabel {...rest} />
-          </Tooltip>
-        </foreignObject>
-      </g>
-    );
+    // Note: Tooltip wraps children with a div tag, so we add a reference to ChartLabel instead
+    this.LegendLabel = ({datum, ...rest}) => {
+      const ref = React.createRef();
+      return (
+        <g ref={ref}>
+          <ChartLabel {...rest} />
+          <Tooltip content={datum.name} enableFlip reference={ref} />
+        </g>
+      );
+    }
 
     // Custom legend component
     this.getLegend = (legendData) => (
