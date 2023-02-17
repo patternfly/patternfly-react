@@ -36,7 +36,7 @@ import {
 } from '@patternfly/react-topology';
 import '@patternfly/react-styles/css/components/Topology/topology-components.css';
 
-### Pipelines
+### Getting Started with Topology Pipelines
 
 ```ts file='./TopologyPipelinesGettingStartedDemo.tsx'
 ```
