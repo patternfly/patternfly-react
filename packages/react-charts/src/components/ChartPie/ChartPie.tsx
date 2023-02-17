@@ -27,7 +27,15 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getComputedLegend, useDefaultPatternProps, getPaddingForSide, getPatternDefs, getTheme } from '../ChartUtils';
+import {
+  getComputedLegend,
+  useDefaultPatternProps,
+  getPaddingForSide,
+  getPatternDefs,
+  getTheme,
+  getLegendItemsExtraHeight
+} from "../ChartUtils";
+import { useEffect } from 'react';
 
 export enum ChartPieLabelPosition {
   centroid = 'centroid',
@@ -294,11 +302,22 @@ export interface ChartPieProps extends VictoryPieProps {
   labels?: string[] | number[] | ((data: any) => string | number | null);
   /**
    * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
-   * if its container is not wide enough.
+   * if the chart is not wide enough.
+   *
+   * Note that the chart's SVG height and width are 100% by default, so it can be responsive itself. However, if you
+   * define the height and width of the chart's parent container, you must accommodate for extra legend height due to
+   * legend items wrapping onto the next line. When the height of the chart's parent container is too small, some legend
+   * items may not be visible.
    *
    * Note: This is overridden by the legendItemsPerRow property
    */
   legendAllowWrap?: boolean;
+  /**
+   * If legendAllowWrap is true, this function will be called after the legend's itemsPerRow property has been
+   * calculated, based on available width. The value provided can be used to increase the chart's parent container
+   * height as legend items wrap onto the next line. If no adjustment is necessary, the value will be zero.
+   */
+  legendAllowWrapCallback?: (extraHeight: number) => void;
   /**
    * The legend component to render with chart.
    *
@@ -500,6 +519,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   containerComponent = <ChartContainer />,
   hasPatterns,
   legendAllowWrap = false,
+  legendAllowWrapCallback,
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
@@ -629,6 +649,20 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
         ]
       )
     : null;
+
+  // Callback to compliment legendAllowWrap
+  useEffect(() => {
+    if (legendAllowWrap && legendAllowWrapCallback) {
+      const computedLegend = getLegend();
+      const extraHeight = getLegendItemsExtraHeight({
+        legendData: computedLegend.props.data,
+        legendOrientation: computedLegend.props.orientation,
+        legendProps: computedLegend.props,
+        theme
+      });
+      legendAllowWrapCallback(extraHeight);
+    }
+  }, [width]);
 
   return standalone ? (
     <React.Fragment>{container}</React.Fragment>

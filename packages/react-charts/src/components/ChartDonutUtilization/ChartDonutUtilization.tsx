@@ -293,11 +293,22 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
   isStatic?: boolean;
   /**
    * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
-   * if its container is not wide enough.
+   * if the chart is not wide enough.
+   *
+   * Note that the chart's SVG height and width are 100% by default, so it can be responsive itself. However, if you
+   * define the height and width of the chart's parent container, you must accommodate for extra legend height due to
+   * legend items wrapping onto the next line. When the height of the chart's parent container is too small, some legend
+   * items may not be visible.
    *
    * Note: This is overridden by the legendItemsPerRow property
    */
   legendAllowWrap?: boolean;
+  /**
+   * If legendAllowWrap is true, this function will be called after the legend's itemsPerRow property has been
+   * calculated, based on available width. The value provided can be used to increase the chart's parent container
+   * height as legend items wrap onto the next line. If no adjustment is necessary, the value will be zero.
+   */
+  legendAllowWrapCallback?: (extraHeight: number) => void;
   /**
    * The labelComponent prop takes in an entire label component which will be used
    * to create a label for the area. The new element created from the passed labelComponent

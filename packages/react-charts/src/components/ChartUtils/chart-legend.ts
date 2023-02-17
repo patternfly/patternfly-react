@@ -73,7 +73,6 @@ export const getComputedLegend = ({
   const legendItemsProps = legendComponent.props ? legendComponent.props : {};
   const legendItemsPerRow = allowWrap
     ? getLegendItemsPerRow({
-        chartType,
         dx,
         height,
         legendData: legendItemsProps.data,
@@ -231,6 +230,38 @@ export const getLegendItemsPerRow = ({
     }
   }
   return itemsPerRow;
+};
+
+/**
+ * Returns the extra height required to accommodate wrapped legend items
+ * @private
+ */
+export const getLegendItemsExtraHeight = ({
+  legendData,
+  legendOrientation,
+  legendProps,
+  theme
+}: ChartLegendDimensionsInterface) => {
+  // Get legend dimensions
+  const legendDimensions = getLegendDimensions({
+    legendData,
+    legendOrientation,
+    legendProps,
+    theme
+  });
+
+  // Get legend dimensions without any wrapped items
+  const legendDimensionsNoWrap = getLegendDimensions({
+    legendData,
+    legendOrientation,
+    legendProps: {
+      ...legendProps,
+      itemsPerRow: undefined
+    },
+    theme
+  });
+
+  return Math.abs(legendDimensions.height - legendDimensionsNoWrap.height);
 };
 
 /**

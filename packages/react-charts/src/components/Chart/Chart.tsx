@@ -31,8 +31,10 @@ import {
   getPaddingForSide,
   getPatternDefs,
   getDefaultData,
-  useDefaultPatternProps
-} from '../ChartUtils';
+  getLegendItemsExtraHeight,
+  useDefaultPatternProps,
+} from "../ChartUtils";
+import { useEffect } from "react";
 
 /**
  * Chart is a wrapper component that reconciles the domain for all its children, controls the layout of the chart,
@@ -236,11 +238,22 @@ export interface ChartProps extends VictoryChartProps {
   innerRadius?: number;
   /**
    * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
-   * if its container is not wide enough.
+   * if the chart is not wide enough.
+   *
+   * Note that the chart's SVG height and width are 100% by default, so it can be responsive itself. However, if you
+   * define the height and width of the chart's parent container, you must accommodate for extra legend height due to
+   * legend items wrapping onto the next line. When the height of the chart's parent container is too small, some legend
+   * items may not be visible.
    *
    * Note: This is overridden by the legendItemsPerRow property
    */
   legendAllowWrap?: boolean;
+  /**
+   * If legendAllowWrap is true, this function will be called after the legend's itemsPerRow property has been
+   * calculated, based on available width. The value provided can be used to increase the chart's parent container
+   * height as legend items wrap onto the next line. If no adjustment is necessary, the value will be zero.
+   */
+  legendAllowWrapCallback?: (extraHeight: number) => void;
   /**
    * The legend component to render with chart.
    *
@@ -464,6 +477,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   colorScale,
   hasPatterns,
   legendAllowWrap = false,
+  legendAllowWrapCallback,
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
@@ -593,6 +607,20 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       }
       return child;
     });
+
+  // Callback to compliment legendAllowWrap
+  useEffect(() => {
+    if (legendAllowWrap && legendAllowWrapCallback) {
+      const computedLegend = getLegend();
+      const extraHeight = getLegendItemsExtraHeight({
+        legendData: computedLegend.props.data,
+        legendOrientation: computedLegend.props.orientation,
+        legendProps: computedLegend.props,
+        theme
+      });
+      legendAllowWrapCallback(extraHeight);
+    }
+  }, [width]);
 
   // Note: containerComponent is required for theme
   return (
