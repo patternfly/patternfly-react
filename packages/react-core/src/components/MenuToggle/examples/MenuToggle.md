@@ -176,14 +176,9 @@ The following example shows a split button with a `<MenuToggleCheckbox>`.
 
 To display text in a split button menu toggle, add a label to the `items` property of `splitButtonOptions`.  
 
+Variant styling can be applied to split button toggles to adjust their appearance for different scenarios. Both "primary" and "secondary" variants can be used with split button toggles.
+
 ```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
-```
-
-### Split button toggle with variant styling 
-
-Variant styling can be applied to split button toggles to adjust their appearance for different scenarios. Both "primary" and "secondary" variants can be used with split button toggles. The following example uses “primary” styling.
-
-```ts file='MenuToggleSplitButtonCheckboxPrimary.tsx'
 ```
 
 ### Split button toggle with action
