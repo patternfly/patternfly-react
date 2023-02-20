@@ -33,11 +33,11 @@ export const DataListSelectableRows: React.FunctionComponent = () => {
     setIsOpen2(!isOpen2);
   };
 
-  const onSelectDataListItem = id => {
+  const onSelectDataListItem = (_event: React.MouseEvent | React.KeyboardEvent, id: string) => {
     setSelectedDataListItemId(id);
   };
 
-  const handleInputChange = (id: string, _event: React.FormEvent<HTMLInputElement>) => {
+  const handleInputChange = (_event: React.FormEvent<HTMLInputElement>, id: string) => {
     setSelectedDataListItemId(id);
   };
 
