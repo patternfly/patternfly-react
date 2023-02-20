@@ -349,7 +349,6 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
           minusBtnAriaLabel="minus"
           plusBtnAriaLabel="plus"
           style={{ margin: '12px 0' }}
-          allowEmptyInput
         />
       </PageSection>
       <PageSection variant={PageSectionVariants.light}>

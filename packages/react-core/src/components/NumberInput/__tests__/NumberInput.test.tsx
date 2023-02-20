@@ -210,12 +210,6 @@ describe('numberInput', () => {
   test('renders 0 if null value passed', () => {
     render(<NumberInput value={null} />);
     const input = screen.getByRole('spinbutton');
-    expect(input).toHaveDisplayValue('0');
-  });
-
-  test('renders nothing if null value passed with allow empty', () => {
-    render(<NumberInput allowEmptyInput value={null} />);
-    const input = screen.getByRole('spinbutton');
     expect(input).toHaveDisplayValue('');
   });
 

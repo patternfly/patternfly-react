@@ -35,7 +35,6 @@ export const NumberInputDisabled: React.FunctionComponent = () => {
       plusBtnAriaLabel="plus"
       unit="%"
       isDisabled
-      allowEmptyInput
     />
   );
 };

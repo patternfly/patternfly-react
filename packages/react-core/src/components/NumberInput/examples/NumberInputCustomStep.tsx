@@ -24,7 +24,6 @@ export const NumberInputCustomStep: React.FunctionComponent = () => {
       inputAriaLabel="number input"
       minusBtnAriaLabel="minus"
       plusBtnAriaLabel="plus"
-      allowEmptyInput
     />
   );
 };
