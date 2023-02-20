@@ -32,6 +32,8 @@ export interface AboutModalProps extends React.HTMLProps<HTMLDivElement> {
   hasNoContentContainer?: boolean;
   /** The parent container to append the modal to. Defaults to document.body */
   appendTo?: HTMLElement | (() => HTMLElement);
+  /** Aria label for the about modal.  This should be used when no productName prop is provided */
+  'aria-label'?: string;
   /** Set aria label to the close button */
   closeButtonAriaLabel?: string;
   /** Flag to disable focus trap */
@@ -51,12 +53,18 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
   hasNoContentContainer = false,
   appendTo,
   closeButtonAriaLabel,
+  'aria-label': ariaLabel,
   disableFocusTrap,
   ...props
 }: AboutModalProps) => {
   if (brandImageSrc && !brandImageAlt) {
     // eslint-disable-next-line no-console
     console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified, and should not be an empty string.');
+  }
+
+  if (!productName && !ariaLabel) {
+    // eslint-disable-next-line no-console
+    console.error('AboutModal:', 'Either productName or ariaLabel is required for component to be accessible');
   }
 
   if (!isOpen) {
@@ -69,6 +77,7 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
           isOpen={isOpen}
           variant={ModalVariant.large}
           {...(productName && {'aria-labelledby': ariaLabelledBy})}
+          aria-label={ariaLabel}
           onEscapePress={onClose}
           showClose={false}
           appendTo={appendTo}

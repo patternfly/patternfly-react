@@ -45,4 +45,18 @@ describe('AboutModal', () => {
     render(<AboutModal {...noImgAltrops}>Test About Modal</AboutModal>);
     expect(myMock).toHaveBeenCalled();
   });
+
+  test('Console error is generated when the logoImageSrc is provided without logoImageAlt', () => {
+    const noProductNameProps = {
+      onClose: jest.fn(),
+      children: 'modal content',
+      trademark: 'Trademark and copyright information here'
+
+    } as any;
+    const myMock = jest.fn() as any;
+    global.console = { error: myMock } as any;
+
+    render(<AboutModal {...noProductNameProps}>Test About Modal</AboutModal>);
+    expect(myMock).toHaveBeenCalled();
+  });
 });
