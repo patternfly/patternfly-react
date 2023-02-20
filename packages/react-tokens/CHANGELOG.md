@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.3 (2023-02-15)
+
+### Bug Fixes
+
+- **deps:** updated to the latest core alpha ([#8688](https://github.com/patternfly/patternfly-react/issues/8688)) ([5f81928](https://github.com/patternfly/patternfly-react/commit/5f819288d7baaa3806b23c0da8fb26dd4ec12d6b))
+
 # 5.0.0-alpha.2 (2023-02-08)
 
 **Note:** Version bump only for package @patternfly/react-tokens

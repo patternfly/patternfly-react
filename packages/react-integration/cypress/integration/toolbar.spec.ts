@@ -39,7 +39,7 @@ describe('Data Toolbar Demo Test', () => {
   describe('Toggle group and filter chips are appropriately responsive', () => {
     context('wide viewport', () => {
       beforeEach(() => {
-        cy.viewport(1200, 800);
+        cy.viewport(1800, 800);
       });
 
       it('displays toggle group contents', () => {

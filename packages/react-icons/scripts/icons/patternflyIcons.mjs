@@ -1,4 +1,4 @@
-const pfIcons = require('@patternfly/patternfly/icons/pf-icons.json');
+import { pfIcons } from '@patternfly/patternfly/icons/pf-icons.mjs';
 
 const renaming = {
   save: 'save-alt',
@@ -18,7 +18,7 @@ const renaming = {
 /**
  * @param {object} icons Icons like { screen: { "width": 1024, "height": 1024, "svgPathData": "" } }
  */
-function convertIcons(icons) {
+export function convertIcons(icons) {
   delete icons.history;
 
   Object.entries(renaming).forEach(([oldKey, newKey]) => {
@@ -29,4 +29,3 @@ function convertIcons(icons) {
   return icons;
 }
 
-module.exports = convertIcons(pfIcons);
