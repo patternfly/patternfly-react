@@ -232,7 +232,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
         popper={menu}
         popperRef={menuRef}
         isVisible={isOpen}
-        popperMatchesTriggerWidth={['image', 'checkbox'].includes(toggleSelected)}
+        {...(['image', 'checkbox'].includes(toggleSelected) && { minWidth: 'auto' })}
       />
     </React.Fragment>
   );

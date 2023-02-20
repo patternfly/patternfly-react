@@ -38,7 +38,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   popperProps = {
     position: 'right',
     direction: 'down',
-    popperMatchesTriggerWidth: false
+    minWidth: 'auto'
   },
   ...props
 }: ActionsColumnProps) => {
@@ -65,12 +65,12 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   return (
     <React.Fragment>
       {items
-        .filter(item => item.isOutsideDropdown)
+        .filter((item) => item.isOutsideDropdown)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .map(({ title, itemKey, onClick, isOutsideDropdown, ...props }, key) =>
           typeof title === 'string' ? (
             <Button
-              onClick={event => onActionClick(event, onClick)}
+              onClick={(event) => onActionClick(event, onClick)}
               {...(props as any)}
               isDisabled={isDisabled}
               key={itemKey || `outside_dropdown_${key}`}
@@ -85,8 +85,8 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
 
       <Dropdown
         isOpen={isOpen}
-        onOpenChange={isOpen => setIsOpen(isOpen)}
-        toggle={toggleRef =>
+        onOpenChange={(isOpen) => setIsOpen(isOpen)}
+        toggle={(toggleRef) =>
           actionsToggle ? (
             actionsToggle({ onToggle, isOpen, isDisabled, toggleRef })
           ) : (
@@ -108,13 +108,13 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
       >
         <DropdownList>
           {items
-            .filter(item => !item.isOutsideDropdown)
+            .filter((item) => !item.isOutsideDropdown)
             .map(({ title, itemKey, onClick, isSeparator, ...props }, key) =>
               isSeparator ? (
                 <Divider key={itemKey || key} data-key={itemKey || key} />
               ) : (
                 <DropdownItem
-                  onClick={event => {
+                  onClick={(event) => {
                     onActionClick(event, onClick);
                     onToggle();
                   }}

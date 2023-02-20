@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../../../components/Menu';
-import { Popper } from '../../../helpers/Popper/Popper';
+import { Popper, PopperProps } from '../../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../../helpers';
 
 export interface SelectProps extends MenuProps, OUIAProps {
@@ -30,6 +30,8 @@ export interface SelectProps extends MenuProps, OUIAProps {
   zIndex?: number;
   /** @beta Determines the accessible role of the select. For a checkbox select pass in "menu". */
   role?: string;
+  /** Additional properties to pass to the Popper */
+  popperProps?: PopperProps;
 }
 
 const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
@@ -45,6 +47,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   innerRef,
   zIndex = 9999,
   role = 'listbox',
+  popperProps,
   ...props
 }: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -125,6 +128,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
         appendTo={containerRef.current || undefined}
         isVisible={isOpen}
         zIndex={zIndex}
+        {...popperProps}
       />
     </div>
   );

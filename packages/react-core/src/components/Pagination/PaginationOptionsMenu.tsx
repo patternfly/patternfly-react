@@ -206,7 +206,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
         isVisible={isOpen}
         direction={dropDirection}
         appendTo={containerRef.current || undefined}
-        popperMatchesTriggerWidth={false}
+        minWidth="auto"
       />
     </div>
   );

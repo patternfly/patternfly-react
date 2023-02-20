@@ -129,7 +129,7 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
       popper={menu}
       popperRef={menuRef}
       isVisible={isOpen}
-      popperMatchesTriggerWidth={false}
+      minWidth="auto"
     />
   );
 };
