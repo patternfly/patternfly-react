@@ -340,6 +340,13 @@ To make multiple columns sticky, wrap `TableComposable` with `InnerScrollContain
 ```ts file="ComposableTableMultipleStickyColumns.tsx"
 ```
 
+### Composable: Multiple right-aligned sticky columns
+
+To make multiple columns sticky, wrap `TableComposable` with `InnerScrollContainer` and add `isStickyColumn` to all columns that should be sticky. The leftmost sticky column should also have the `hasLeftBorder` property, and each sticky column left of the last column must define a `stickyRightOffset` property that equals the combined width of the previous sticky columns - set by `stickyMinWidth`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property.
+
+```ts file="ComposableTableRightStickyColumn.tsx"
+```
+
 ### Composable: Sticky columns and header
 
 To maintain proper sticky behavior across sticky columns and header, `TableComposable` must be wrapped with `OuterScrollContainer` and `InnerScrollContainer`.
