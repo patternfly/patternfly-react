@@ -206,7 +206,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
         isVisible={isOpen}
         direction={dropDirection}
         appendTo={containerRef.current || undefined}
-        minWidth="fit-content"
+        minWidth="revert"
       />
     </div>
   );

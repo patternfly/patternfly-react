@@ -116,7 +116,7 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
       popper={menu}
       popperRef={menuRef}
       isVisible={isOpen}
-      minWidth="fit-content"
+      minWidth="revert"
     />
   );
 };

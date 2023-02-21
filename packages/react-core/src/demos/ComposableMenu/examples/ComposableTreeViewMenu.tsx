@@ -274,7 +274,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
       popper={menu}
       popperRef={menuRef}
       isVisible={isOpen}
-      minWidth="fit-content"
+      minWidth="revert"
     />
   );
 };

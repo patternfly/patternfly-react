@@ -289,7 +289,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
                 popperRef={colorMenuRef}
                 appendTo={colorContainerRef.current as HTMLElement}
                 isVisible={isColorOpen}
-                minWidth="fit-content"
+                minWidth="revert"
               />
             </div>
           </FormGroup>
@@ -302,7 +302,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
                 popperRef={iconMenuRef}
                 appendTo={iconContainerRef.current as HTMLElement}
                 isVisible={isIconOpen}
-                minWidth="fit-content"
+                minWidth="revert"
               />
             </div>
           </FormGroup>

@@ -236,7 +236,7 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
         popperRef={bulkSelectMenuRef}
         appendTo={bulkSelectContainerRef.current || undefined}
         isVisible={isBulkSelectOpen}
-        minWidth="fit-content"
+        minWidth="revert"
       />
     </div>
   );
