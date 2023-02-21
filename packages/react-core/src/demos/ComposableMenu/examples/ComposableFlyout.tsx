@@ -17,7 +17,7 @@ const FlyoutMenu: React.FunctionComponent<FlyoutMenuProps> = ({ depth, children 
         <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`}>
           Next menu
         </MenuItem>
-        {Array.from(new Array(15 - depth), (x, i) => i + 1).map(j => (
+        {Array.from(new Array(15 - depth), (x, i) => i + 1).map((j) => (
           <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`}>
             Menu {depth} item {j}
           </MenuItem>
@@ -100,5 +100,14 @@ export const ComposableFlyout: React.FunctionComponent = () => {
     </Menu>
   );
 
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
+  return (
+    <Popper
+      trigger={toggle}
+      triggerRef={toggleRef}
+      popper={menu}
+      popperRef={menuRef}
+      isVisible={isOpen}
+      popperMatchesTriggerWidth={false}
+    />
+  );
 };

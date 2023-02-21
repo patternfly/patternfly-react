@@ -172,6 +172,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const ref = React.useRef(null);
   const searchInputInputRef = innerRef || ref;
   const searchInputExpandableToggleRef = React.useRef(null);
+  const triggerRef = React.useRef(null);
+  const popperRef = React.useRef(null);
   const [focusAfterExpandChange, setFocusAfterExpandChange] = React.useState(false);
 
   const { isExpanded, onToggleExpand, toggleAriaLabel } = expandableInput || {};
@@ -371,7 +373,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   };
 
   const buildSearchTextInputGroupWithExtraButtons = ({ ...searchInputProps } = {}) => (
-    <InputGroup {...searchInputProps}>
+    <InputGroup ref={triggerRef} {...searchInputProps}>
       {buildTextInputGroup()}
       {(attributes.length > 0 || onToggleAdvancedSearch) && (
         <Button
@@ -413,7 +415,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   if (!!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch) {
     if (attributes.length > 0) {
       const AdvancedSearch = (
-        <div>
+        <div ref={popperRef}>
           <AdvancedSearchMenu
             value={value}
             parentRef={searchInputRef}
@@ -438,7 +440,9 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         <div className={css(className)} ref={searchInputRef} {...props}>
           <Popper
             trigger={buildSearchTextInputGroupWithExtraButtons()}
+            triggerRef={triggerRef}
             popper={AdvancedSearch}
+            popperRef={popperRef}
             isVisible={isSearchMenuOpen}
             enableFlip={true}
             appendTo={() => appendTo || searchInputRef.current}

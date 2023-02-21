@@ -13,7 +13,7 @@ export const TooltipSelectorRef: React.FunctionComponent = () => (
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
         </div>
       }
-      reference={() => document.getElementById('tooltip-selector') as HTMLButtonElement}
+      triggerRef={() => document.getElementById('tooltip-selector') as HTMLButtonElement}
     />
   </div>
 );

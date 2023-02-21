@@ -284,7 +284,9 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
             <div ref={colorContainerRef}>
               <Popper
                 trigger={colorToggle}
+                triggerRef={colorToggleRef}
                 popper={colorMenu}
+                popperRef={colorMenuRef}
                 appendTo={colorContainerRef.current as HTMLElement}
                 isVisible={isColorOpen}
                 popperMatchesTriggerWidth={false}
@@ -295,7 +297,9 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
             <div ref={iconContainerRef}>
               <Popper
                 trigger={iconToggle}
+                triggerRef={iconToggleRef}
                 popper={iconMenu}
+                popperRef={iconMenuRef}
                 appendTo={iconContainerRef.current as HTMLElement}
                 isVisible={isIconOpen}
                 popperMatchesTriggerWidth={false}

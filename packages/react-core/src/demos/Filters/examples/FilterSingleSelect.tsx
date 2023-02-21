@@ -73,12 +73,12 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
   const isRepoSelectable = (repo: Repository) => repo.name !== 'a'; // Arbitrary logic for this example
   const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
   const setRepoSelected = (repo: Repository, isSelecting = true) =>
-    setSelectedRepoNames(prevSelected => {
-      const otherSelectedRepoNames = prevSelected.filter(r => r !== repo.name);
+    setSelectedRepoNames((prevSelected) => {
+      const otherSelectedRepoNames = prevSelected.filter((r) => r !== repo.name);
       return isSelecting && isRepoSelectable(repo) ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
     });
   const selectAllRepos = (isSelecting = true) =>
-    setSelectedRepoNames(isSelecting ? filteredRepos.map(r => r.name) : []);
+    setSelectedRepoNames(isSelecting ? filteredRepos.map((r) => r.name) : []);
   const areAllReposSelected = selectedRepoNames.length === filteredRepos.length && filteredRepos.length > 0;
   const areSomeReposSelected = selectedRepoNames.length > 0;
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
@@ -95,7 +95,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
         numberSelected > 0
           ? Array.from(new Array(numberSelected + 1), (_x, i) => i + recentSelectedRowIndex)
           : Array.from(new Array(Math.abs(numberSelected) + 1), (_x, i) => i + rowIndex);
-      intermediateIndexes.forEach(index => setRepoSelected(repositories[index], isSelecting));
+      intermediateIndexes.forEach((index) => setRepoSelected(repositories[index], isSelecting));
     } else {
       setRepoSelected(repo, isSelecting);
     }
@@ -221,7 +221,9 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
     <div ref={bulkSelectContainerRef}>
       <Popper
         trigger={bulkSelectToggle}
+        triggerRef={bulkSelectToggleRef}
         popper={bulkSelectMenu}
+        popperRef={bulkSelectMenuRef}
         appendTo={bulkSelectContainerRef.current || undefined}
         isVisible={isBulkSelectOpen}
         popperMatchesTriggerWidth={false}
@@ -323,7 +325,14 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
 
   const select = (
     <div ref={containerRef}>
-      <Popper trigger={toggle} popper={menu} appendTo={containerRef.current || undefined} isVisible={isOpen} />
+      <Popper
+        trigger={toggle}
+        triggerRef={toggleRef}
+        popper={menu}
+        popperRef={menuRef}
+        appendTo={containerRef.current || undefined}
+        isVisible={isOpen}
+      />
     </div>
   );
 

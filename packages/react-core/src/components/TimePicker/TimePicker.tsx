@@ -528,7 +528,9 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
                 <Popper
                   appendTo={calculatedAppendTo}
                   trigger={textInput}
+                  triggerRef={this.inputRef}
                   popper={menuContainer}
+                  popperRef={this.menuRef}
                   isVisible={isTimeOptionsOpen}
                   zIndex={zIndex}
                 />

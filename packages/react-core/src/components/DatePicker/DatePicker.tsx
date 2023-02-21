@@ -120,6 +120,7 @@ const DatePickerBase = (
   const style = { '--pf-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
   const buttonRef = React.useRef<HTMLButtonElement>();
   const datePickerWrapperRef = React.useRef<HTMLDivElement>();
+  const triggerRef = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
     setValue(valueProp);
@@ -135,7 +136,7 @@ const DatePickerBase = (
   }, [value]);
 
   const setError = (date: Date) => {
-    setErrorText(validators.map(validator => validator(date)).join('\n') || '');
+    setErrorText(validators.map((validator) => validator(date)).join('\n') || '');
   };
 
   const onTextInput = (value: string, event: React.FormEvent<HTMLInputElement>) => {
@@ -189,7 +190,7 @@ const DatePickerBase = (
       setCalendarOpen: (isOpen: boolean) => setPopoverOpen(isOpen),
       toggleCalendar: (setOpen?: boolean, eventKey?: string) => {
         if (eventKey === KeyTypes.Escape && popoverOpen && !selectOpen) {
-          setPopoverOpen(prev => (setOpen !== undefined ? setOpen : !prev));
+          setPopoverOpen((prev) => (setOpen !== undefined ? setOpen : !prev));
         }
       },
       isCalendarOpen: popoverOpen
@@ -207,8 +208,8 @@ const DatePickerBase = (
             onChange={onDateClick}
             locale={locale}
             // Use truthy values of strings
-            validators={validators.map(validator => (date: Date) => !validator(date))}
-            onSelectToggle={open => setSelectOpen(open)}
+            validators={validators.map((validator) => (date: Date) => !validator(date))}
+            onSelectToggle={(open) => setSelectOpen(open)}
             monthFormat={monthFormat}
             weekdayFormat={weekdayFormat}
             longWeekdayFormat={longWeekdayFormat}
@@ -241,9 +242,10 @@ const DatePickerBase = (
         hasNoPadding
         hasAutoWidth
         appendTo={appendTo}
+        triggerRef={triggerRef}
         {...popoverProps}
       >
-        <div className={styles.datePickerInput}>
+        <div className={styles.datePickerInput} ref={triggerRef}>
           <InputGroup>
             <TextInput
               isDisabled={isDisabled}

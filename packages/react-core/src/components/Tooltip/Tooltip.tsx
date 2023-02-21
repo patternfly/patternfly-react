@@ -51,7 +51,7 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
    * If you can wrap the reference with the Tooltip, you can use the children prop instead.
    * Usage: <Tooltip reference={() => document.getElementById('reference-element')} />
    */
-  reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
+  triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** Tooltip additional class */
   className?: string;
   /** Tooltip content */
@@ -158,8 +158,8 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   id = `pf-tooltip-${pfTooltipIdCounter++}`,
   children,
   animationDuration = 300,
-  reference,
-  'aria-live': ariaLive = reference ? 'polite' : 'off',
+  triggerRef,
+  'aria-live': ariaLive = triggerRef ? 'polite' : 'off',
   onTooltipHidden = () => {},
   ...rest
 }: TooltipProps) => {
@@ -174,11 +174,12 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
+  const popperRef = React.createRef<HTMLDivElement>();
 
   const prevExitDelayRef = React.useRef<number>();
 
   const clearTimeouts = (timeoutRefs: React.RefObject<any>[]) => {
-    timeoutRefs.forEach(ref => {
+    timeoutRefs.forEach((ref) => {
       if (ref.current) {
         clearTimeout(ref.current);
       }
@@ -274,6 +275,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
         opacity,
         transition: getOpacityTransition(animationDuration)
       }}
+      ref={popperRef}
       {...rest}
     >
       <TooltipArrow />
@@ -315,8 +317,9 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   return (
     <Popper
       trigger={aria !== 'none' && visible ? addAriaToTrigger() : children}
-      reference={reference}
+      triggerRef={triggerRef}
       popper={content}
+      popperRef={popperRef}
       popperMatchesTriggerWidth={false}
       appendTo={appendTo}
       isVisible={visible}

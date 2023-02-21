@@ -133,7 +133,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
             itemId={0}
             to="#default-link0"
             // just for demo so that navigation is not triggered
-            onClick={event => event.preventDefault()}
+            onClick={(event) => event.preventDefault()}
           >
             My profile
           </MenuItem>
@@ -141,7 +141,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
             itemId={1}
             to="#default-link1"
             // just for demo so that navigation is not triggered
-            onClick={event => event.preventDefault()}
+            onClick={(event) => event.preventDefault()}
           >
             User management
           </MenuItem>
@@ -149,7 +149,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
             itemId={2}
             to="#default-link2"
             // just for demo so that navigation is not triggered
-            onClick={event => event.preventDefault()}
+            onClick={(event) => event.preventDefault()}
           >
             Logout
           </MenuItem>
@@ -163,7 +163,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
               itemId={0}
               to="#default-link0"
               // just for demo so that navigation is not triggered
-              onClick={event => event.preventDefault()}
+              onClick={(event) => event.preventDefault()}
             >
               Link
             </MenuItem>
@@ -173,7 +173,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
               isDisabled
               to="#default-link2"
               // just for demo so that navigation is not triggered
-              onClick={event => event.preventDefault()}
+              onClick={(event) => event.preventDefault()}
             >
               Disabled link
             </MenuItem>
@@ -228,7 +228,9 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
       <br />
       <Popper
         trigger={buildToggle()}
+        triggerRef={toggleRef}
         popper={menu}
+        popperRef={menuRef}
         isVisible={isOpen}
         popperMatchesTriggerWidth={['image', 'checkbox'].includes(toggleSelected)}
       />

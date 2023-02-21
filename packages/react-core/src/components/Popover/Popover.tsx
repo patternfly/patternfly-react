@@ -189,7 +189,7 @@ export interface PopoverProps {
    * reference with the popover, you can use the children prop instead.
    * Usage: <Popover reference={() => document.getElementById('reference-element')} />
    */
-  reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
+  triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the
    * popover close button is clicked, the enter key was used on it, or the escape key is used.
@@ -262,7 +262,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   animationDuration = 300,
   id,
   withFocusTrap: propWithFocusTrap,
-  reference,
+  triggerRef,
   hasNoPadding = false,
   hasAutoWidth = false,
   ...rest
@@ -277,6 +277,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
+  const popoverRef = React.useRef(null);
 
   React.useEffect(() => {
     onMount();
@@ -389,6 +390,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   };
   const content = (
     <FocusTrap
+      ref={popoverRef}
       active={focusTrapActive}
       focusTrapOptions={{
         returnFocusOnDeactivate: true,
@@ -458,8 +460,9 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     <PopoverContext.Provider value={{ headerComponent }}>
       <Popper
         trigger={children}
-        reference={reference}
+        triggerRef={triggerRef}
         popper={content}
+        popperRef={popoverRef}
         popperMatchesTriggerWidth={false}
         appendTo={appendTo}
         isVisible={visible}

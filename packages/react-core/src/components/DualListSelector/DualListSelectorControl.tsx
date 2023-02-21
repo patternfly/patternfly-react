@@ -52,7 +52,7 @@ export const DualListSelectorControlBase: React.FunctionComponent<DualListSelect
       >
         {children}
       </Button>
-      {tooltipContent && <Tooltip content={tooltipContent} position="left" reference={ref} {...tooltipProps} />}
+      {tooltipContent && <Tooltip content={tooltipContent} position="left" triggerRef={ref} {...tooltipProps} />}
     </div>
   );
 };

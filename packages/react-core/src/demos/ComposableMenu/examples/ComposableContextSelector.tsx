@@ -130,7 +130,7 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
     const filtered =
       searchInputValue === ''
         ? items
-        : items.filter(item => {
+        : items.filter((item) => {
             const str = typeof item === 'string' ? item : item.text;
             return str.toLowerCase().indexOf(searchInputValue.toLowerCase()) !== -1;
           });
@@ -198,5 +198,14 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
       </MenuFooter>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
+  return (
+    <Popper
+      trigger={toggle}
+      triggerRef={toggleRef}
+      popper={menu}
+      popperRef={menuRef}
+      isVisible={isOpen}
+      popperMatchesTriggerWidth={false}
+    />
+  );
 };

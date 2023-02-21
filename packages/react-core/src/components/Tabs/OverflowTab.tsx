@@ -70,11 +70,11 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
     };
   }, [isExpanded, menuRef, overflowTabRef]);
 
-  const selectedTab = overflowingTabs.find(tab => tab.eventKey === localActiveKey);
+  const selectedTab = overflowingTabs.find((tab) => tab.eventKey === localActiveKey);
   const tabTitle = selectedTab?.title ? selectedTab.title : defaultTitleText;
 
   const toggleMenu = () => {
-    setIsExpanded(prevIsExpanded => !prevIsExpanded);
+    setIsExpanded((prevIsExpanded) => !prevIsExpanded);
     setTimeout(() => {
       if (menuRef?.current) {
         const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
@@ -111,7 +111,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
     </li>
   );
 
-  const tabs = overflowingTabs.map(tab => (
+  const tabs = overflowingTabs.map((tab) => (
     <MenuItem key={tab.eventKey} itemId={tab.eventKey} isSelected={localActiveKey === tab.eventKey}>
       {tab.title}
     </MenuItem>
@@ -119,7 +119,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
 
   const onTabSelect = (event: React.MouseEvent<HTMLElement, MouseEvent>, key: number | string) => {
     closeMenu();
-    const selectedTabRef = overflowingTabs.find(tab => tab.eventKey === key).tabContentRef;
+    const selectedTabRef = overflowingTabs.find((tab) => tab.eventKey === key).tabContentRef;
     handleTabClick(event, key, selectedTabRef);
   };
 
@@ -135,7 +135,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
     <React.Fragment>
       {overflowTab}
       <Popper
-        reference={overflowTabRef}
+        triggerRef={overflowTabRef}
         popper={overflowMenu}
         popperRef={menuRef}
         isVisible={isExpanded}

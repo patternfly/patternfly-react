@@ -145,7 +145,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       if (flyoutVisible) {
         const flyoutItems = Array.from(
           (popperRef.current as HTMLElement).getElementsByTagName('UL')[0].children
-        ).filter(el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider')));
+        ).filter((el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider')));
         (flyoutItems[0].firstChild as HTMLElement).focus();
       } else {
         flyoutTarget.focus();
@@ -221,12 +221,13 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
 
   const flyoutPopper = (
     <Popper
-      reference={ref}
+      triggerRef={ref}
       popper={
         <div ref={popperRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           {flyout}
         </div>
       }
+      popperRef={popperRef}
       placement="right-start"
       isVisible={flyoutVisible}
       onDocumentKeyDown={handleFlyout}
@@ -244,7 +245,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         {...ouiaProps}
       >
         <NavContext.Consumer>
-          {context =>
+          {(context) =>
             React.isValidElement(children)
               ? renderClonedChild(context, children as React.ReactElement)
               : renderDefaultLink(context)
