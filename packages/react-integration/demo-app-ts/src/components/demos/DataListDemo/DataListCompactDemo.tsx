@@ -21,7 +21,7 @@ export class DataListCompactDemo extends React.Component<DataListProps, DataList
     };
   }
 
-  onSelectDataListItem = (id: string) => {
+  onSelectDataListItem = (_event: React.MouseEvent | React.KeyboardEvent, id: string) => {
     this.setState({ selectedDataListItemId: id });
   };
 
