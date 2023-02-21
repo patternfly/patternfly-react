@@ -11,17 +11,20 @@ import {
 // eslint-disable-next-line patternfly-react/import-tokens-icons
 import { RegionsIcon as Icon1, FolderOpenIcon as Icon2 } from '@patternfly/react-icons';
 import {
+  action,
+  createTopologyControlButtons,
+  defaultControlButtonsOptions,
   DefaultEdge,
   DefaultGroup,
   DefaultNode,
-  EdgeStyle,
   GraphComponent,
+  GRAPH_LAYOUT_END_EVENT,
   ModelKind,
   NodeModel,
   NodeShape,
   observer,
-  SELECTION_EVENT,
   TopologyView,
+  TopologyControlBar,
   Visualization,
   VisualizationProvider,
   VisualizationSurface,
@@ -38,16 +41,11 @@ import {
   DagreLayout,
   GridLayout,
   BreadthFirstLayout,
-  ColaGroupsLayout
+  ColaGroupsLayout,
+  withDragNode,
+  WithDragNodeProps,
+  withPanZoom
 } from '@patternfly/react-topology';
-
-export const NODE_STATUSES = [
-  NodeStatus.danger,
-  NodeStatus.success,
-  NodeStatus.warning,
-  NodeStatus.info,
-  NodeStatus.default
-];
 
 const NODE_DIAMETER = 75;
 const NODE_SHAPE = NodeShape.ellipse;
@@ -60,9 +58,8 @@ const NODES: NodeModel[] = [
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     shape: NODE_SHAPE,
-    status: NODE_STATUSES[0],
+    status: NodeStatus.danger,
     data: {
-      badge: 'B',
       isAlternate: false
     }
   },
@@ -73,9 +70,8 @@ const NODES: NodeModel[] = [
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     shape: NODE_SHAPE,
-    status: NODE_STATUSES[1],
+    status: NodeStatus.success,
     data: {
-      badge: 'B',
       isAlternate: false
     }
   },
@@ -86,9 +82,8 @@ const NODES: NodeModel[] = [
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     shape: NODE_SHAPE,
-    status: NODE_STATUSES[2],
+    status: NodeStatus.warning,
     data: {
-      badge: 'A',
       isAlternate: true
     }
   },
@@ -99,9 +94,8 @@ const NODES: NodeModel[] = [
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     shape: NODE_SHAPE,
-    status: NODE_STATUSES[3],
+    status: NodeStatus.info,
     data: {
-      badge: 'A',
       isAlternate: false
     }
   },
@@ -112,10 +106,9 @@ const NODES: NodeModel[] = [
     width: NODE_DIAMETER,
     height: NODE_DIAMETER,
     shape: NODE_SHAPE,
-    status: NODE_STATUSES[4],
+    status: NodeStatus.default,
     data: {
-      badge: 'C',
-      isAlternate: false
+      isAlternate: true
     }
   },
   {
@@ -126,8 +119,7 @@ const NODES: NodeModel[] = [
     height: NODE_DIAMETER,
     shape: NODE_SHAPE,
     data: {
-      badge: 'C',
-      isAlternate: true
+      isAlternate: false
     }
   },
   {
@@ -147,15 +139,13 @@ const EDGES = [
     id: 'edge-node-4-node-5',
     type: 'edge',
     source: 'node-4',
-    target: 'node-5',
-    edgeStyle: EdgeStyle.default
+    target: 'node-5'
   },
   {
     id: 'edge-node-0-node-2',
     type: 'edge',
     source: 'node-0',
-    target: 'node-2',
-    edgeStyle: EdgeStyle.default
+    target: 'node-2'
   }
 ];
 
@@ -182,16 +172,16 @@ const customLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout 
   }
 };
 
-interface CustomNodeProps {
+type CustomNodeProps = {
   element: Node;
-}
+} & WithDragNodeProps;
 
-const CustomNode: React.FC<CustomNodeProps> = observer(({ element }) => {
+const CustomNode: React.FC<CustomNodeProps> = observer(({ element, ...rest }) => {
   const data = element.getData();
-  const Icon = data.alternate ? Icon2 : Icon1;
+  const Icon = data.isAlternate ? Icon2 : Icon1;
 
   return (
-    <DefaultNode element={element} showLabel>
+    <DefaultNode element={element} {...rest}>
       <g transform={`translate(25, 25)`}>
         <Icon style={{ color: '#393F44' }} width={25} height={25} />
       </g>
@@ -206,9 +196,9 @@ const customComponentFactory: ComponentFactory = (kind: ModelKind, type: string)
     default:
       switch (kind) {
         case ModelKind.graph:
-          return GraphComponent;
+          return withPanZoom()(GraphComponent);
         case ModelKind.node:
-          return CustomNode;
+          return withDragNode()(CustomNode);
         case ModelKind.edge:
           return DefaultEdge;
         default:
@@ -217,21 +207,7 @@ const customComponentFactory: ComponentFactory = (kind: ModelKind, type: string)
   }
 };
 
-interface ViewOptions {
-  showLabels: boolean;
-  showStatusBackground: boolean;
-  showDecorators: boolean;
-  showBadges: boolean;
-}
-
-export const DefaultViewOptions: ViewOptions = {
-  showLabels: false,
-  showStatusBackground: false,
-  showDecorators: false,
-  showBadges: false
-};
 export const LayoutsDemo: React.FC = () => {
-  const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
   const [layoutDropdownOpen, setLayoutDropdownOpen] = React.useState(false);
   const [layout, setLayout] = React.useState<string>('ColaNoForce');
 
@@ -242,7 +218,7 @@ export const LayoutsDemo: React.FC = () => {
       graph: {
         id: 'g1',
         type: 'graph',
-        layout
+        layout: 'ColaNoForce'
       }
     };
 
@@ -250,7 +226,9 @@ export const LayoutsDemo: React.FC = () => {
     newController.registerLayoutFactory(customLayoutFactory);
     newController.registerComponentFactory(customComponentFactory);
 
-    newController.addEventListener(SELECTION_EVENT, setSelectedIds);
+    newController.addEventListener(GRAPH_LAYOUT_END_EVENT, () => {
+      newController.getGraph().fit(80);
+    });
 
     newController.fromModel(model, false);
     return newController;
@@ -262,21 +240,20 @@ export const LayoutsDemo: React.FC = () => {
   };
 
   React.useEffect(() => {
-    const model: Model = {
-      nodes: NODES,
-      edges: EDGES,
-      graph: {
-        id: 'g1',
-        type: 'graph',
-        layout
-      }
-    };
+    if (controller && controller.getGraph().getLayout() !== layout) {
+      const model: Model = {
+        nodes: NODES,
+        edges: EDGES,
+        graph: {
+          id: 'g1',
+          type: 'graph',
+          layout
+        }
+      };
 
-    controller.fromModel(model, false);
-    controller.getGraph().fit(80);
-    // Don't update on option changes, its handled differently to not re-layout
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [layout]);
+      controller.fromModel(model, false);
+    }
+  }, [controller, layout]);
 
   const layoutDropdown = (
     <Split>
@@ -339,16 +316,33 @@ export const LayoutsDemo: React.FC = () => {
     </Split>
   );
 
-  const viewToolbar = (
-    <>
-      <ToolbarItem>{layoutDropdown}</ToolbarItem>
-    </>
-  );
-
   return (
-    <TopologyView viewToolbar={viewToolbar}>
+    <TopologyView
+      viewToolbar={<ToolbarItem>{layoutDropdown}</ToolbarItem>}
+      controlBar={
+        <TopologyControlBar
+          controlButtons={createTopologyControlButtons({
+            ...defaultControlButtonsOptions,
+            zoomInCallback: action(() => {
+              controller.getGraph().scaleBy(4 / 3);
+            }),
+            zoomOutCallback: action(() => {
+              controller.getGraph().scaleBy(0.75);
+            }),
+            fitToScreenCallback: action(() => {
+              controller.getGraph().fit(80);
+            }),
+            resetViewCallback: action(() => {
+              controller.getGraph().reset();
+              controller.getGraph().layout();
+            }),
+            legend: false
+          })}
+        />
+      }
+    >
       <VisualizationProvider controller={controller}>
-        <VisualizationSurface state={{ selectedIds }} />
+        <VisualizationSurface />
       </VisualizationProvider>
     </TopologyView>
   );
