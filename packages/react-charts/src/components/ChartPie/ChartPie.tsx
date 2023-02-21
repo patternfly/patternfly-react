@@ -651,9 +651,9 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     : null;
 
   // Callback to compliment legendAllowWrap
+  const computedLegend = getLegend();
   useEffect(() => {
     if (legendAllowWrap && legendAllowWrapCallback) {
-      const computedLegend = getLegend();
       const extraHeight = getLegendItemsExtraHeight({
         legendData: computedLegend.props.data,
         legendOrientation: computedLegend.props.orientation,
@@ -662,14 +662,14 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
       });
       legendAllowWrapCallback(extraHeight);
     }
-  }, [width]);
+  }, [computedLegend, legendAllowWrap, legendAllowWrapCallback, theme, width]);
 
   return standalone ? (
     <React.Fragment>{container}</React.Fragment>
   ) : (
     <React.Fragment>
       {chart}
-      {getLegend()}
+      {computedLegend}
       {isPatternDefs && getPatternDefs({ patternId, colorScale: defaultColorScale, patternUnshiftIndex })}
     </React.Fragment>
   );

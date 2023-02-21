@@ -839,6 +839,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     ...axisComponent.props
   });
 
+  const computedLegend = getLegend();
   const bulletChart = (
     <React.Fragment>
       {axis}
@@ -850,14 +851,13 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       {comparativeErrorMeasure}
       {comparativeWarningMeasure}
       {getComparativeZeroMeasure()}
-      {getLegend()}
+      {computedLegend}
     </React.Fragment>
   );
 
   // Callback to compliment legendAllowWrap
   useEffect(() => {
     if (legendAllowWrap && legendAllowWrapCallback) {
-      const computedLegend = getLegend();
       const extraHeight = getLegendItemsExtraHeight({
         legendData: computedLegend.props.data,
         legendOrientation: computedLegend.props.orientation,
@@ -866,7 +866,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       });
       legendAllowWrapCallback(extraHeight);
     }
-  }, [width]);
+  }, [computedLegend, legendAllowWrap, legendAllowWrapCallback, theme, width]);
 
   return standalone ? (
     <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} theme={theme} width={width}>

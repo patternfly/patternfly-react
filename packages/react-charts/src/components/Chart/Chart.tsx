@@ -609,9 +609,9 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     });
 
   // Callback to compliment legendAllowWrap
+  const computedLegend = getLegend();
   useEffect(() => {
     if (legendAllowWrap && legendAllowWrapCallback) {
-      const computedLegend = getLegend();
       const extraHeight = getLegendItemsExtraHeight({
         legendData: computedLegend.props.data,
         legendOrientation: computedLegend.props.orientation,
@@ -620,7 +620,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       });
       legendAllowWrapCallback(extraHeight);
     }
-  }, [width]);
+  }, [computedLegend, legendAllowWrap, legendAllowWrapCallback, theme, width]);
 
   // Note: containerComponent is required for theme
   return (
@@ -634,7 +634,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       {...rest}
     >
       {renderChildren()}
-      {getLegend()}
+      {computedLegend}
       {isPatternDefs && getPatternDefs({ patternId, colorScale: defaultColorScale })}
     </VictoryChart>
   );
