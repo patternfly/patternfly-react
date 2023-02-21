@@ -96,6 +96,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   ...props
 }: TdProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
+  const cellRef = innerRef ? innerRef : React.createRef();
+
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       !showTooltip && setShowTooltip(true);
@@ -259,7 +261,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         draggableParams && styles.tableDraggable,
         mergedClassName
       )}
-      ref={innerRef}
+      ref={cellRef}
       {...mergedProps}
       {...props}
       {...(isStickyColumn && {
@@ -276,7 +278,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
 
   const canMakeDefaultTooltip = tooltip === '' ? typeof children === 'string' : true;
   return tooltip !== null && canMakeDefaultTooltip && showTooltip ? (
-    <Tooltip content={tooltip || (tooltip === '' && children)} isVisible>
+    <Tooltip triggerRef={cellRef as React.RefObject<any>} content={tooltip || (tooltip === '' && children)} isVisible>
       {cell}
     </Tooltip>
   ) : (

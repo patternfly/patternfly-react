@@ -44,6 +44,7 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   ...props
 }: TableTextProps) => {
   const Component: TableTextVariant | 'span' | 'div' = variant;
+  const textRef = React.createRef<any>();
 
   const [tooltip, setTooltip] = React.useState('');
   const onMouseEnter = (event: any) => {
@@ -57,6 +58,7 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
 
   const text = (
     <Component
+      ref={textRef}
       onMouseEnter={onMouseEnter}
       className={css(className, wrapModifier && styles.modifiers[wrapModifier], styles.tableText)}
       {...props}
@@ -66,7 +68,7 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   );
 
   return tooltip !== '' ? (
-    <Tooltip content={tooltip} isVisible {...tooltipProps}>
+    <Tooltip triggerRef={textRef} content={tooltip} isVisible {...tooltipProps}>
       {text}
     </Tooltip>
   ) : (
