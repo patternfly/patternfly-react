@@ -220,7 +220,7 @@ export interface ChartBulletProps {
    */
   legendAllowWrap?: boolean;
   /**
-   * If legendAllowWrap is true, this function will be called after the legend's itemsPerRow property has been
+   * @beta If legendAllowWrap is true, this function will be called after the legend's itemsPerRow property has been
    * calculated, based on available width. The value provided can be used to increase the chart's parent container
    * height as legend items wrap onto the next line. If no adjustment is necessary, the value will be zero.
    */
