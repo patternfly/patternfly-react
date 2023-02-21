@@ -239,7 +239,7 @@ export const FilterFaceted: React.FunctionComponent = () => {
         popperRef={bulkSelectMenuRef}
         appendTo={bulkSelectContainerRef.current || undefined}
         isVisible={isBulkSelectOpen}
-        minWidth="auto"
+        minWidth="fit-content"
       />
     </div>
   );

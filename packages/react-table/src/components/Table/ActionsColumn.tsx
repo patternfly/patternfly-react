@@ -38,7 +38,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   popperProps = {
     position: 'right',
     direction: 'down',
-    minWidth: 'auto'
+    minWidth: 'fit-content'
   },
   ...props
 }: ActionsColumnProps) => {

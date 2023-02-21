@@ -240,7 +240,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
         popperRef={bulkSelectMenuRef}
         appendTo={bulkSelectContainerRef.current || undefined}
         isVisible={isBulkSelectOpen}
-        minWidth="auto"
+        minWidth="fit-content"
       />
     </div>
   );

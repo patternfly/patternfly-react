@@ -139,7 +139,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
         popper={overflowMenu}
         popperRef={menuRef}
         isVisible={isExpanded}
-        minWidth="auto"
+        minWidth="fit-content"
         appendTo={overflowLIRef.current}
         zIndex={zIndex}
       />

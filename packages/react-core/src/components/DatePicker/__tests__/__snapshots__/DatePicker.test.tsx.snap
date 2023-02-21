@@ -62,7 +62,7 @@ exports[`With popover opened 1`] = `
         aria-modal="true"
         class="pf-c-popover pf-m-no-padding pf-m-width-auto pf-m-top"
         role="dialog"
-        style="opacity: 1; transition: opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11); position: absolute; left: 0px; top: 0px; z-index: 9999; min-width: auto;"
+        style="opacity: 1; transition: opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11); position: absolute; left: 0px; top: 0px; z-index: 9999; min-width: fit-content;"
       >
         <div
           class="pf-c-popover__body"

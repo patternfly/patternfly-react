@@ -205,7 +205,7 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
       popper={menu}
       popperRef={menuRef}
       isVisible={isOpen}
-      minWidth="auto"
+      minWidth="fit-content"
     />
   );
 };
