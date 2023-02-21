@@ -767,7 +767,7 @@ This demonstrates an alternate way of applying tooltips using CSS overflow inste
 
 ```js
 import React from 'react';
-import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div className="ws-react-charts-tooltip-overflow">
   <div style={{ height: '100px', width: '400px' }}>
@@ -790,11 +790,9 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, Cha
           { name: 'Cats', x: '2018', y: 6 }
         ]}
       />
+      <ChartLabel text="CPU utilization" dy={120}/>
     </ChartGroup>
   </div>
-  <ChartContainer title="CPU utilization">
-    <ChartLabel text="CPU utilization" dy={15}/>
-  </ChartContainer>
 </div>
 ```
 
