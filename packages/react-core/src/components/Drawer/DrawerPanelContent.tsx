@@ -17,7 +17,7 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   /** Flag indicating that the drawer panel should be resizable. */
   isResizable?: boolean;
   /** Callback for resize end. */
-  onResize?: (width: number, id: string) => void;
+  onResize?: (event: MouseEvent | TouchEvent | React.KeyboardEvent, width: number, id: string) => void;
   /** The minimum size of a drawer, in either pixels or percentage. */
   minSize?: string;
   /** The starting size of a resizable drawer, in either pixels or percentage. */
@@ -60,9 +60,8 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const panel = React.useRef<HTMLDivElement>();
   const splitterRef = React.useRef<HTMLDivElement>();
   const [separatorValue, setSeparatorValue] = React.useState(0);
-  const { position, isExpanded, isStatic, onExpand, drawerRef, drawerContentRef, isInline } = React.useContext(
-    DrawerContext
-  );
+  const { position, isExpanded, isStatic, onExpand, drawerRef, drawerContentRef, isInline } =
+    React.useContext(DrawerContext);
   const hidden = isStatic ? false : !isExpanded;
   const [isExpandedInternal, setIsExpandedInternal] = React.useState(!hidden);
   let currWidth: number = 0;
@@ -169,13 +168,13 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     setSeparatorValue(calcValueNow());
   };
 
-  const handleMouseup = () => {
+  const handleMouseup = (e: MouseEvent) => {
     if (!isResizing) {
       return;
     }
     drawerRef.current.classList.remove(css(styles.modifiers.resizing));
     isResizing = false;
-    onResize && onResize(currWidth, id);
+    onResize && onResize(e, currWidth, id);
     setInitialVals = true;
     document.removeEventListener('mousemove', callbackMouseMove);
     document.removeEventListener('mouseup', callbackMouseUp);
@@ -187,7 +186,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       return;
     }
     isResizing = false;
-    onResize && onResize(currWidth, id);
+    onResize && onResize(e, currWidth, id);
     document.removeEventListener('touchmove', callbackTouchMove);
     document.removeEventListener('touchend', callbackTouchEnd);
   };
@@ -215,7 +214,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     e.preventDefault();
 
     if (key === 'Escape' || key === 'Enter') {
-      onResize && onResize(currWidth, id);
+      onResize && onResize(e, currWidth, id);
     }
     const panelRect = panel.current.getBoundingClientRect();
     newSize = position === 'bottom' ? panelRect.height : panelRect.width;
@@ -249,7 +248,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   }
   return (
     <GenerateId prefix="pf-drawer-panel-">
-      {panelId => (
+      {(panelId) => (
         <div
           id={id || panelId}
           className={css(
@@ -261,7 +260,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
             className
           )}
           ref={panel}
-          onTransitionEnd={ev => {
+          onTransitionEnd={(ev) => {
             if (!hidden && ev.nativeEvent.propertyName === 'transform') {
               onExpand();
             }

@@ -33,7 +33,7 @@ export class DrawerResizeDemo extends React.Component<DrawerProps, DrawerResizeD
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onResize = (newWidth: number, id: string) => {
+  onResize = (_event: MouseEvent | TouchEvent | React.KeyboardEvent, newWidth: number, id: string) => {
     this.setState(
       {
         panelWidth: newWidth
