@@ -51,8 +51,6 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   minusBtnProps?: ButtonProps;
   /** Additional properties added to the plus button */
   plusBtnProps?: ButtonProps;
-  /** Allow the user to clear out the input to an empty string (recommended) */
-  allowEmptyInput?: boolean;
 }
 
 type DefaultKeyDownHandlerArgs = Pick<NumberInputProps, 'inputName' | 'onMinus' | 'onPlus'>;
@@ -89,12 +87,8 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   inputProps,
   minusBtnProps,
   plusBtnProps,
-  allowEmptyInput = false,
   ...props
 }: NumberInputProps) => {
-  if (!allowEmptyInput) {
-    value = value || 0;
-  }
   const numberInputUnit = <div className={css(styles.numberInputUnit)}>{unit}</div>;
   const keyDownHandler =
     inputProps && inputProps.onKeyDown ? inputProps.onKeyDown : defaultKeyDownHandler({ inputName, onMinus, onPlus });

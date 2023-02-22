@@ -87,7 +87,6 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
           plusBtnProps={{ id: 'plus-button' }}
           unit="%"
           widthChars={5}
-          allowEmptyInput
         />
         <br />
         <br />
@@ -109,7 +108,6 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
           unit="$"
           unitPosition="before"
           isDisabled
-          allowEmptyInput
         />
         <br />
         <br />
@@ -131,7 +129,6 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
           plusBtnProps={{ id: 'plus-button3' }}
           unit="$"
           unitPosition="before"
-          allowEmptyInput
         />
       </React.Fragment>
     );

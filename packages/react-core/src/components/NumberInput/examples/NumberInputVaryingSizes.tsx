@@ -35,7 +35,6 @@ export const NumberInputVaryingSizes: React.FunctionComponent = () => {
         minusBtnAriaLabel="input 2 minus"
         plusBtnAriaLabel="input 2 plus"
         widthChars={1}
-        allowEmptyInput
       />
       <br />
       <br />
@@ -49,7 +48,6 @@ export const NumberInputVaryingSizes: React.FunctionComponent = () => {
         minusBtnAriaLabel="input 2 minus"
         plusBtnAriaLabel="input 2 plus"
         widthChars={10}
-        allowEmptyInput
       />
       <br />
       <br />
@@ -63,7 +61,6 @@ export const NumberInputVaryingSizes: React.FunctionComponent = () => {
         minusBtnAriaLabel="input 3 minus"
         plusBtnAriaLabel="input 3 plus"
         widthChars={5}
-        allowEmptyInput
       />
       <br />
       <br />
@@ -77,7 +74,6 @@ export const NumberInputVaryingSizes: React.FunctionComponent = () => {
         minusBtnAriaLabel="input 4 minus"
         plusBtnAriaLabel="input 4 plus"
         widthChars={5}
-        allowEmptyInput
       />
     </React.Fragment>
   );
