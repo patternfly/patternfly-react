@@ -64,7 +64,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   direction?: 'down' | 'up';
   /** @beta True if item is on current selection path */
   isOnPath?: boolean;
-  /** Accessibility label */
+  /** Adds an accessible name to the menu item. */
   'aria-label'?: string;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
@@ -103,6 +103,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   isOnPath,
   innerRef,
   id,
+  'aria-label': ariaLabel,
   ...props
 }: MenuItemProps) => {
   const {
@@ -312,6 +313,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       ref={ref}
       role={!hasCheckbox ? 'none' : 'menuitem'}
+      {...(hasCheckbox && { 'aria-label': ariaLabel })}
       {...props}
     >
       <GenerateId>
@@ -321,7 +323,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             tabIndex={-1}
             className={css(styles.menuItem, getIsSelected() && !hasCheckbox && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
-            {...(!hasCheckbox && { disabled: isDisabled })}
+            {...(!hasCheckbox && { disabled: isDisabled, 'aria-label': ariaLabel })}
             {...(!hasCheckbox && !flyoutMenu && { role: isSelectMenu ? 'option' : 'menuitem' })}
             {...(!hasCheckbox && !flyoutMenu && isSelectMenu && { 'aria-selected': getIsSelected() })}
             ref={innerRef}

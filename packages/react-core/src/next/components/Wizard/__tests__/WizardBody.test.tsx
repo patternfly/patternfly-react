@@ -20,16 +20,6 @@ test('has padding className when hasNoPadding is specified', () => {
   expect(screen.getByText('content')).toHaveClass('pf-m-no-padding');
 });
 
-test('has aria-label when one is specified', () => {
-  render(<WizardBody aria-label="Body label">content</WizardBody>);
-  expect(screen.getByLabelText('Body label')).toBeVisible();
-});
-
-test('has aria-labelledby when one is specified', () => {
-  const { container } = render(<WizardBody aria-labelledby="some-id">content</WizardBody>);
-  expect(container.firstElementChild).toHaveAttribute('aria-labelledby', 'some-id');
-});
-
 test('wrapper element is of type div when component is not specified', () => {
   const { container } = render(<WizardBody aria-label="Wizard body">content</WizardBody>);
   expect(container.firstElementChild?.tagName).toEqual('DIV');

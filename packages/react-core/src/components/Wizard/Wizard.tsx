@@ -78,9 +78,13 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   navAriaLabel?: string;
   /** Sets aria-labelledby on nav element */
   navAriaLabelledBy?: string;
-  /** Aria-label for the main element */
+  /** Adds an accessible name to the wizard body when the body content overflows and renders
+   * a scrollbar.
+   */
   mainAriaLabel?: string;
-  /** Sets aria-labelledby on the main element */
+  /** Adds an accessible name to the wizard body by passing the the id of one or more elements.
+   * The aria-labelledby will only be applied when the body content overflows and renders a scrollbar.
+   */
   mainAriaLabelledBy?: string;
   /** Can remove the default padding around the main body content by setting this to true */
   hasNoBodyPadding?: boolean;

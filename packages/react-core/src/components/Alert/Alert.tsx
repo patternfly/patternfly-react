@@ -27,8 +27,6 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
    * or React.Fragment.
    */
   actionLinks?: React.ReactNode;
-  /** Adds accessible text to the alert. */
-  'aria-label'?: string;
   /** Content rendered inside the alert. */
   children?: React.ReactNode;
   /** Additional classes to add to the alert.  */
@@ -97,7 +95,6 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   isPlain = false,
   isLiveRegion = false,
   variantLabel = `${capitalize(variant)} alert:`,
-  'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
   actionClose,
   actionLinks,
   title,
@@ -229,7 +226,6 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
         className
       )}
-      aria-label={ariaLabel}
       {...ouiaProps}
       {...(isLiveRegion && {
         'aria-live': 'polite',

@@ -48,13 +48,9 @@ test('Renders with class pf-c-alert__title on the div containing the title', () 
   expect(screen.getByRole('heading', { name: 'Default alert: Some title' })).toHaveClass('pf-c-alert__title');
 });
 
-test('Renders with a default aria label of Default Alert', () => {
-  render(
-    <Alert title="Some title" data-testid="Alert-test-id">
-      Some alert
-    </Alert>
-  );
-  expect(screen.getByTestId('Alert-test-id')).toHaveAccessibleName('Default Alert');
+test('Renders with default hidden text of "Default alert:"', () => {
+  render(<Alert title="Some title">Some alert</Alert>);
+  expect(screen.getByText('Default alert:')).toBeInTheDocument();
 });
 
 ['success', 'danger', 'warning', 'info'].forEach(variant => {
@@ -76,13 +72,13 @@ test('Renders with a default aria label of Default Alert', () => {
     expect(screen.getByTestId('Alert-test-id')).toHaveClass(`pf-m-${variant}`);
   });
 
-  test(`Renders with aria label ${capitalize(variant)} Alert when variant = ${variant}`, () => {
+  test(`Renders with hidden text "${capitalize(variant)} alert:" when variant = ${variant}`, () => {
     render(
       <Alert variant={`${variant as AlertVariant}`} title="Some title" data-testid="Alert-test-id">
         Some alert
       </Alert>
     );
-    expect(screen.getByTestId('Alert-test-id')).toHaveAccessibleName(`${capitalize(variant)} Alert`);
+    expect(screen.getByText(`${capitalize(variant)} alert:`)).toBeInTheDocument();
   });
 
   test(`Renders the title with an accessible name of '${capitalize(
@@ -136,31 +132,39 @@ test('Renders with a default aria label of Default Alert', () => {
 });
 
 test('Does not render with class pf-m-inline by default', () => {
-  render(<Alert title="Some title">Some alert</Alert>);
-  expect(screen.getByLabelText('Default Alert')).not.toHaveClass('pf-m-inline');
+  render(
+    <Alert title="Some title" data-testid="Alert-test-id">
+      Some alert
+    </Alert>
+  );
+  expect(screen.getByTestId('Alert-test-id')).not.toHaveClass('pf-m-inline');
 });
 
 test('Renders with class pf-m-inline when isInline = true', () => {
   render(
-    <Alert isInline title="Some title">
+    <Alert isInline title="Some title" data-testid="Alert-test-id">
       Some alert
     </Alert>
   );
-  expect(screen.getByLabelText('Default Alert')).toHaveClass('pf-m-inline');
+  expect(screen.getByTestId('Alert-test-id')).toHaveClass('pf-m-inline');
 });
 
 test('Does not render with class pf-m-plain by default', () => {
-  render(<Alert title="Some title">Some alert</Alert>);
-  expect(screen.getByLabelText('Default Alert')).not.toHaveClass('pf-m-plain');
+  render(
+    <Alert title="Some title" data-testid="Alert-test-id">
+      Some alert
+    </Alert>
+  );
+  expect(screen.getByTestId('Alert-test-id')).not.toHaveClass('pf-m-plain');
 });
 
 test('Renders with class pf-m-plain when isPlain = true', () => {
   render(
-    <Alert isPlain title="Some title">
+    <Alert isPlain title="Some title" data-testid="Alert-test-id">
       Some alert
     </Alert>
   );
-  expect(screen.getByLabelText('Default Alert')).toHaveClass('pf-m-plain');
+  expect(screen.getByTestId('Alert-test-id')).toHaveClass('pf-m-plain');
 });
 
 test('Renders the title', () => {
@@ -588,17 +592,21 @@ test('Passes customIcon value to AlertIcon', () => {
 });
 
 test('Does not render with class pf-m-expandable by default', () => {
-  render(<Alert title="Some title">Some alert</Alert>);
-  expect(screen.getByLabelText('Default Alert')).not.toHaveClass('pf-m-expandable');
+  render(
+    <Alert title="Some title" data-testid="Alert-test-id">
+      Some alert
+    </Alert>
+  );
+  expect(screen.getByTestId('Alert-test-id')).not.toHaveClass('pf-m-expandable');
 });
 
 test('Renders with class pf-m-expandable when isExpandable = true', () => {
   render(
-    <Alert isExpandable title="Some title">
+    <Alert isExpandable title="Some title" data-testid="Alert-test-id">
       Some alert
     </Alert>
   );
-  expect(screen.getByLabelText('Default Alert')).toHaveClass('pf-m-expandable');
+  expect(screen.getByTestId('Alert-test-id')).toHaveClass('pf-m-expandable');
 });
 
 test('Renders AlertToggleExpandButton inside pf-c-alert__toggle', () => {
@@ -613,26 +621,26 @@ test('Renders AlertToggleExpandButton inside pf-c-alert__toggle', () => {
 
 test('Does not render with class pf-m-expanded when AlertToggleExpandButton has not been clicked', () => {
   render(
-    <Alert isExpandable title="Some title">
+    <Alert isExpandable title="Some title" data-testid="Alert-test-id">
       Some alert
     </Alert>
   );
 
-  expect(screen.getByLabelText('Default Alert')).not.toHaveClass('pf-m-expanded');
+  expect(screen.getByTestId('Alert-test-id')).not.toHaveClass('pf-m-expanded');
 });
 
 test('Renders with class pf-m-expanded once the AlertToggleExpandButton is clicked', async () => {
   const user = userEvent.setup();
 
   render(
-    <Alert isExpandable title="Some title">
+    <Alert isExpandable title="Some title" data-testid="Alert-test-id">
       Some alert
     </Alert>
   );
 
   await user.click(screen.getByRole('button'));
 
-  expect(screen.getByLabelText('Default Alert')).toHaveClass('pf-m-expanded');
+  expect(screen.getByTestId('Alert-test-id')).toHaveClass('pf-m-expanded');
 });
 
 test('Does not render children when isExpandable = true and AlertToggleExpandButton has not been clicked', () => {

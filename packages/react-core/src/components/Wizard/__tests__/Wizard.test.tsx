@@ -130,37 +130,12 @@ describe('Wizard', () => {
     expect(nav).toHaveAttribute('aria-labelledby', 'pf-wizard-title-5');
   });
 
-  test('wiz with title, navAriaLabel, and mainAriaLabel combination', () => {
-    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
-    render(
-      <Wizard
-        title="Wizard"
-        navAriaLabel="nav aria-label"
-        mainAriaLabel="main aria-label"
-        description="This wizard has a title"
-        steps={steps}
-      />
-    );
-
-    expect(screen.getByRole('heading', { name: 'Wizard' })).toBeInTheDocument();
-    expect(screen.getByLabelText('nav aria-label')).toBeInTheDocument();
-    expect(screen.getByLabelText('main aria-label')).toBeInTheDocument();
-  });
-
   test('wiz with navAriaLabel and mainAriaLabel but without title', () => {
     const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
 
-    render(
-      <Wizard
-        navAriaLabel="nav aria-label"
-        mainAriaLabel="main aria-label"
-        description="This wizard has a title"
-        steps={steps}
-      />
-    );
+    render(<Wizard navAriaLabel="nav aria-label" description="This wizard has a title" steps={steps} />);
 
     expect(screen.getByLabelText('nav aria-label')).toBeInTheDocument();
-    expect(screen.getByLabelText('main aria-label')).toBeInTheDocument();
   });
 
   test('wiz with navAriaLabel and navAriaLabelledby and without title', () => {
@@ -170,7 +145,6 @@ describe('Wizard', () => {
       <Wizard
         navAriaLabelledBy="nav-aria-labelledby"
         navAriaLabel="nav aria-label"
-        mainAriaLabel="main aria-label"
         description="This wizard has a title"
         steps={steps}
       />
@@ -182,25 +156,7 @@ describe('Wizard', () => {
     expect(nav).toHaveAttribute('aria-labelledby', 'nav-aria-labelledby');
   });
 
-  test('wiz with navAriaLabel and navAriaLabelledby and without title', () => {
-    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
-    render(
-      <Wizard
-        navAriaLabel="nav aria-label"
-        mainAriaLabel="main aria-label"
-        mainAriaLabelledBy="main-aria-labelledby"
-        description="This wizard has a title"
-        steps={steps}
-      />
-    );
-
-    const main = screen.getByLabelText('main aria-label');
-
-    expect(main).toBeInTheDocument();
-    expect(main).toHaveAttribute('aria-labelledby', 'main-aria-labelledby');
-  });
-
-  test('wiz with title, navAriaLabelledBy, navAriaLabel, mainAriaLabel, and mainAriaLabelledby', () => {
+  test('wiz with title, navAriaLabelledBy, and navAriaLabel', () => {
     const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
     render(
       <Wizard
@@ -217,10 +173,24 @@ describe('Wizard', () => {
     const nav = screen.getByLabelText('nav aria-label');
     expect(nav).toBeInTheDocument();
     expect(nav).toHaveAttribute('aria-labelledby', 'nav-aria-labelledby');
+  });
 
-    const main = screen.getByLabelText('main aria-label');
-    expect(main).toBeInTheDocument();
-    expect(main).toHaveAttribute('aria-labelledby', 'main-aria-labelledby');
+  test('Does not render with mainAriaLabel or mainAriaLabelledby by default', () => {
+    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
+    render(
+      <Wizard
+        data-testid="wizard-test-id"
+        title="Wiz title"
+        mainAriaLabel="main aria-label"
+        mainAriaLabelledBy="main-aria-labelledby"
+        description="This wizard has a title"
+        steps={steps}
+      />
+    );
+
+    const main = screen.getByTestId('wizard-test-id');
+    expect(main).not.toHaveAttribute('aria-labelledby');
+    expect(main).not.toHaveAttribute('aria-label');
   });
 
   test('wiz with onCurrentStepChanged setter', async () => {
@@ -228,17 +198,11 @@ describe('Wizard', () => {
     const stepB = { name: 'B', component: <p>Step 2</p> };
     const stepC = { name: 'C', component: <p>Step 3</p> };
 
-    const steps: WizardStep[] = [ stepA, stepB, stepC ];
+    const steps: WizardStep[] = [stepA, stepB, stepC];
     const setter = jest.fn();
     const user = userEvent.setup();
 
-    render(
-        <Wizard
-            title="Wiz title"
-            onCurrentStepChanged={ setter }
-            steps={steps}
-        />
-    );
+    render(<Wizard title="Wiz title" onCurrentStepChanged={setter} steps={steps} />);
     expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepA));
     await user.click(screen.getByText(/next/i));
     expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepB));
@@ -253,98 +217,72 @@ describe('Wizard', () => {
   });
 });
 
-  test('wiz with disabled steps', () => {
-    const steps: WizardStep[] = [
-      { name: 'A', component: <p>Step 1</p>},
-      { name: 'B', component: <p>Step 2</p>, isDisabled: true },
-      { name: 'C', component: <p>Step 3</p>},
-      { name: 'E', component: <p>Step 4</p>, isDisabled: true },
-      { name: 'G', component: <p>Step 5</p> },
+test('wiz with disabled steps', () => {
+  const steps: WizardStep[] = [
+    { name: 'A', component: <p>Step 1</p> },
+    { name: 'B', component: <p>Step 2</p>, isDisabled: true },
+    { name: 'C', component: <p>Step 3</p> },
+    { name: 'E', component: <p>Step 4</p>, isDisabled: true },
+    { name: 'G', component: <p>Step 5</p> }
+  ];
 
-    ];
-    
-    render(
-      <Wizard
-        navAriaLabel="nav aria-label"
-        description="This wizard step is disabled"
-        steps={steps}
-      />
-    );
+  render(<Wizard navAriaLabel="nav aria-label" description="This wizard step is disabled" steps={steps} />);
 
-    expect(screen.getByRole('button',{ name: "B" })).toBeDisabled();
-    expect(screen.getByRole('button',{ name: "E" })).toBeDisabled();
-  });
+  expect(screen.getByRole('button', { name: 'B' })).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'E' })).toBeDisabled();
+});
 
-  test('wiz skip the step disabled when press the next/back button', async () => {
-    const steps: WizardStep[] = [
-      { name: 'A', component: <p>Step 1</p>},
-      { name: 'B', component: <p>Step 2</p>, isDisabled: true },
-      { name: 'C', component: <p>Step 3</p>},
+test('wiz skip the step disabled when press the next/back button', async () => {
+  const steps: WizardStep[] = [
+    { name: 'A', component: <p>Step 1</p> },
+    { name: 'B', component: <p>Step 2</p>, isDisabled: true },
+    { name: 'C', component: <p>Step 3</p> }
+  ];
+  const user = userEvent.setup();
 
-    ];
-    const user = userEvent.setup();
+  render(<Wizard navAriaLabel="nav aria-label" description="This wizard step is disabled" steps={steps} />);
 
-    render(
-      <Wizard
-        navAriaLabel="nav aria-label"
-        description="This wizard step is disabled"
-        steps={steps}
-      />
-    );
+  await user.click(screen.getByRole('button', { name: 'Next' }));
+  expect(screen.getByRole('button', { name: 'C' })).toHaveClass('pf-m-current');
 
-    await user.click(screen.getByRole('button', { name: 'Next' }));
-    expect(screen.getByRole('button',{ name: "C" })).toHaveClass('pf-m-current')
+  await user.click(screen.getByRole('button', { name: 'Back' }));
+  expect(screen.getByRole('button', { name: 'A' })).toHaveClass('pf-m-current');
+});
 
-    await user.click(screen.getByRole('button', { name: 'Back' }));
-    expect(screen.getByRole('button',{ name: "A" })).toHaveClass('pf-m-current')
-  });
-  
-  test('wiz skip the step when click on the nav item disabled', async () => {
-    const steps: WizardStep[] = [
-      { name: 'A', component: <p>Step 1</p>},
-      { name: 'B', component: <p>Step 2</p>, isDisabled: true },
-      { name: 'C', component: <p>Step 3</p>}
-    ];
-    const user = userEvent.setup();
-    
-    render(
-      <Wizard
-        navAriaLabel="nav aria-label"
-        description="This wizard step is disabled"
-        steps={steps}
-      />
-    );
+test('wiz skip the step when click on the nav item disabled', async () => {
+  const steps: WizardStep[] = [
+    { name: 'A', component: <p>Step 1</p> },
+    { name: 'B', component: <p>Step 2</p>, isDisabled: true },
+    { name: 'C', component: <p>Step 3</p> }
+  ];
+  const user = userEvent.setup();
 
-    const navItemButton = screen.getByRole('button',{ name: "B" })
-    const navItemButtonSelected = screen.getByRole('button',{ name: "A" })
-    
-    await user.click(navItemButton);
+  render(<Wizard navAriaLabel="nav aria-label" description="This wizard step is disabled" steps={steps} />);
 
-    expect(navItemButton).not.toHaveClass('pf-m-current')
-    expect(navItemButtonSelected).toHaveClass('pf-m-current')
-  });
+  const navItemButton = screen.getByRole('button', { name: 'B' });
+  const navItemButtonSelected = screen.getByRole('button', { name: 'A' });
 
-  test('wiz with disable sub step', () => {
-    const steps: WizardStep[] =   [
-      {
-        name: 'A',
-        steps: [
-          { name: 'A-1', component: <p>Substep A content</p> },
-          { name: 'A-2', component: <p>Substep B content</p>,  isDisabled: true }
-        ]
-      },
-    ];
-    
-    render(
-      <Wizard
-        navAriaLabel="nav aria-label"
-        description="This wizard step is disabled"
-        steps={steps}
-      />
-    );
+  await user.click(navItemButton);
 
-    expect(screen.getByRole('button',{ name: "A-2" })).toBeDisabled();
-  });
+  expect(navItemButton).not.toHaveClass('pf-m-current');
+  expect(navItemButtonSelected).toHaveClass('pf-m-current');
+});
+
+test('wiz with disable sub step', () => {
+  const steps: WizardStep[] = [
+    {
+      name: 'A',
+      steps: [
+        { name: 'A-1', component: <p>Substep A content</p> },
+        { name: 'A-2', component: <p>Substep B content</p>, isDisabled: true }
+      ]
+    }
+  ];
+
+  render(<Wizard navAriaLabel="nav aria-label" description="This wizard step is disabled" steps={steps} />);
+
+  expect(screen.getByRole('button', { name: 'A-2' })).toBeDisabled();
+});
 
 test('startAtStep can be used to externally control the current step of the wizard', async () => {
   const WizardTest = () => {
@@ -373,7 +311,7 @@ test('startAtStep can be used to externally control the current step of the wiza
 
   expect(screen.queryByText('Step 2')).not.toBeInTheDocument();
 
-  await user.click(screen.getByRole('button', { name: 'Increment step'}))
+  await user.click(screen.getByRole('button', { name: 'Increment step' }));
 
   expect(screen.getByText('Step 2')).toBeVisible();
 });
