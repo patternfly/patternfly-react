@@ -72,7 +72,7 @@ Next, replace all of the `react-script` references in your `package.json` `scrip
   }
 ```
 
-Next, create a `config-overries.js` file at the root of your project and add the following:
+Next, create a `config-overrides.js` file at the root of your project and add the following:
 
 ```javascript
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
