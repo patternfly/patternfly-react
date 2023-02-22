@@ -5,7 +5,7 @@ import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-
 import { css } from '@patternfly/react-styles';
 import { toCamel } from '../Table/utils/utils';
 import { IVisibility } from '../Table/utils/decorators/classNames';
-import { useOUIAProps, OUIAProps, handleArrows, setTabIndex } from '@patternfly/react-core';
+import { useOUIAProps, OUIAProps, handleArrows, setTabIndex } from '@patternfly/react-core/dist/esm/helpers';
 import { TableGridBreakpoint, TableVariant } from '../Table/TableTypes';
 
 export interface BaseCellProps {

@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
-import { Bullseye, EmptyState, SelectProps } from '@patternfly/react-core';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
+import { Bullseye } from '@patternfly/react-core/dist/esm/layouts/Bullseye';
+import { EmptyState } from '@patternfly/react-core/dist/esm/components/EmptyState';
+import { SelectProps } from '@patternfly/react-core/dist/esm/components/Select';
 import { Td } from '../TableComposable/Td';
 
 export interface BodyCellProps {

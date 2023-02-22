@@ -14,7 +14,7 @@ import { draggable } from '../Table/utils/decorators/draggable';
 import { treeRow } from '../Table/utils/decorators/treeRow';
 import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
-import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { IFormatterValueType, IExtra } from '../Table/TableTypes';
 import {
   TdActionsType,
