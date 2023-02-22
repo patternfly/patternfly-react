@@ -572,6 +572,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
       height={height}
       key="pf-chart-pie"
       labelComponent={labelComponent}
+      name={name}
       padding={padding}
       radius={chartRadius}
       standalone={false}

@@ -284,7 +284,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
   /**
    * The titleComponent prop takes a component instance which will be used to render
    * a title for the component. The new element created from the passed
-   * labelComponent will be supplied with the following properties: x, y, index, data,
+   * titleComponent will be supplied with the following properties: x, y, index, data,
    * datum, verticalAnchor, textAnchor, style, text, and events. Any of these props
    * may be overridden by passing in props to the supplied component, or modified
    * or ignored within the custom component itself. If labelComponent is omitted,
@@ -372,7 +372,9 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
 
   const getTitleComponent = () =>
     React.cloneElement(titleComponent, {
-      ...titleComponent.props
+      // Victory doesn't appear to call the id function here, but it's valid for label components
+      ...(name && { id: () => `${name}-${(titleComponent as any).type.displayName}` }),
+      ...titleComponent.props,
     });
 
   // Note: containerComponent is required for theme
@@ -382,6 +384,7 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
       containerComponent={container}
       dataComponent={dataComponent}
       labelComponent={getLabelComponent()}
+      name={name}
       style={getDefaultStyle()}
       theme={theme}
       titleComponent={getTitleComponent()}

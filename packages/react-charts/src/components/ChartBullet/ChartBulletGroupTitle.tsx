@@ -48,6 +48,12 @@ export interface ChartBulletGroupTitleProps {
    */
   height?: number;
   /**
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
+   */
+  name?: string;
+  /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
@@ -114,6 +120,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   ariaTitle,
   capHeight = 1.1,
   dividerComponent = <Line />,
+  name,
   padding,
   standalone = true,
   subTitle,
@@ -165,6 +172,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
     const showBoth = title && subTitle;
     return React.cloneElement(titleComponent, {
       ...(showBoth && { capHeight }),
+      ...(name && { id: () => `${name}-${(titleComponent as any).type.displayName}` }),
       style: [ChartBulletStyles.label.groupTitle, ChartBulletStyles.label.subTitle],
       text: showBoth ? [title, subTitle] : title,
       textAnchor: 'middle',
