@@ -551,7 +551,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           height,
           ...(name &&
             typeof (child as any).name !== undefined && {
-              name: `${name}-${(child as any).type.displayName}`
+              name: `${name}-${(child as any).type.displayName}-${index}`
             }),
           invert,
           isStatic: false,
@@ -580,6 +580,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
       hasPatterns={hasPatterns}
       key="pf-chart-donut-threshold"
       labels={labels}
+      name={name}
       padding={defaultPadding}
       standalone={false}
       theme={theme}

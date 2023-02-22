@@ -610,6 +610,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       colorScale={colorScale}
       containerComponent={container}
       height={height}
+      name={name}
       padding={defaultPadding}
       theme={theme}
       width={width}
