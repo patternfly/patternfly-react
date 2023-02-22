@@ -45,7 +45,7 @@ export const ColumnManagementAction = () => {
   const [perPage, setPerPage] = React.useState(10);
   const [paginatedRows, setPaginatedRows] = React.useState(rows);
 
-  const matchCheckboxNameToColumn = name => {
+  const matchCheckboxNameToColumn = (name) => {
     switch (name) {
       case 'check1':
         return 'Servers';
@@ -65,7 +65,7 @@ export const ColumnManagementAction = () => {
         return 'URL';
     }
   };
-  const matchSelectedColumnNameToAttr = name => {
+  const matchSelectedColumnNameToAttr = (name) => {
     switch (name) {
       case 'Servers':
         return 'name';
@@ -127,15 +127,15 @@ export const ColumnManagementAction = () => {
 
     const filteredRows = [];
     if (checked) {
-      const updatedFilters = filters.filter(item => item !== selectedColumn);
+      const updatedFilters = filters.filter((item) => item !== selectedColumn);
 
       // Only show the names of columns that were selected in the modal
       const filteredColumns = defaultColumns.filter(
-        column => !updatedFilters.includes(matchSelectedColumnNameToAttr(column))
+        (column) => !updatedFilters.includes(matchSelectedColumnNameToAttr(column))
       );
 
       // Remove the attributes (i.e. "columns") that were not selected
-      defaultRows.forEach(item => filteredRows.push(removePropFromObject(item, updatedFilters)));
+      defaultRows.forEach((item) => filteredRows.push(removePropFromObject(item, updatedFilters)));
 
       setFilters(updatedFilters);
       setFilteredColumns(filteredColumns);
@@ -145,10 +145,12 @@ export const ColumnManagementAction = () => {
       updatedFilters.push(selectedColumn);
 
       // Only show the names of columns that were selected in the modal
-      const filteredColumns = managedColumns.filter(column => !filters.includes(matchSelectedColumnNameToAttr(column)));
+      const filteredColumns = managedColumns.filter(
+        (column) => !filters.includes(matchSelectedColumnNameToAttr(column))
+      );
 
       // Remove the attributes (i.e. "columns") that were not selected
-      managedRows.forEach(item => filteredRows.push(removePropFromObject(item, updatedFilters)));
+      managedRows.forEach((item) => filteredRows.push(removePropFromObject(item, updatedFilters)));
 
       setFilters(updatedFilters);
       setFilteredColumns(filteredColumns);
@@ -161,13 +163,13 @@ export const ColumnManagementAction = () => {
     setFilteredRows(defaultRows);
   };
 
-  const handleChange = (checked, event) => {
+  const handleChange = (event, checked) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
     // Remove any columns from the table that aren't checked
     filterData(checked, matchCheckboxNameToColumn(target.name));
-    const checkedIndex = columns.findIndex(element => element === matchCheckboxNameToColumn(target.name));
+    const checkedIndex = columns.findIndex((element) => element === matchCheckboxNameToColumn(target.name));
 
     const updatedCheckedState = [...checkedState];
     updatedCheckedState[checkedIndex] = value;
@@ -364,7 +366,7 @@ export const ColumnManagementAction = () => {
     );
   };
 
-  const renderLabel = labelText => {
+  const renderLabel = (labelText) => {
     switch (labelText) {
       case 'Running':
         return <Label color="green">{labelText}</Label>;

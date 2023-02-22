@@ -98,14 +98,14 @@ class BulkSelectTableDemo extends React.Component {
           res: rows,
           selectedItems: isSelected
             ? [...prevState.selectedItems, id]
-            : prevState.selectedItems.filter(itemId => itemId !== id)
+            : prevState.selectedItems.filter((itemId) => itemId !== id)
         };
       });
     };
 
     this.updateSelected = () => {
       const { res, selectedItems } = this.state;
-      let rows = res.map(post => {
+      let rows = res.map((post) => {
         post.selected = selectedItems.includes(post.id);
         return post;
       });
@@ -115,7 +115,7 @@ class BulkSelectTableDemo extends React.Component {
       });
     };
 
-    this.handleSelectClick = newState => {
+    this.handleSelectClick = (newState) => {
       if (newState === 'none') {
         this.setState(
           {
@@ -125,7 +125,7 @@ class BulkSelectTableDemo extends React.Component {
         );
       } else if (newState === 'page') {
         let newRows = [];
-        let rows = this.state.res.map(post => {
+        let rows = this.state.res.map((post) => {
           const isSelected = post.selected;
           newRows = isSelected ? [...newRows] : [...newRows, post.id];
           post.selected = true;
@@ -150,13 +150,13 @@ class BulkSelectTableDemo extends React.Component {
       }
     };
 
-    this.onDropDownToggle = isOpen => {
+    this.onDropDownToggle = (isOpen) => {
       this.setState({
         isDropDownOpen: isOpen
       });
     };
 
-    this.onDropDownSelect = event => {
+    this.onDropDownSelect = (event) => {
       this.setState((prevState, props) => {
         return { isDropDownOpen: !prevState.isDropDownOpen };
       });
@@ -166,10 +166,10 @@ class BulkSelectTableDemo extends React.Component {
   fetch(page, perPage) {
     this.setState({ loading: true });
     fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${perPage}`)
-      .then(resp => resp.json())
-      .then(resp => this.setState({ res: resp, perPage, page, loading: false }))
+      .then((resp) => resp.json())
+      .then((resp) => this.setState({ res: resp, perPage, page, loading: false }))
       .then(() => this.updateSelected())
-      .catch(err => this.setState({ error: err, loading: false }));
+      .catch((err) => this.setState({ error: err, loading: false }));
   }
 
   componentDidMount() {
@@ -238,8 +238,7 @@ class BulkSelectTableDemo extends React.Component {
               </DropdownToggleCheckbox>
             ]}
             onToggle={this.onDropDownToggle}
-          >
-          </DropdownToggle>
+          ></DropdownToggle>
         }
         isOpen={isDropDownOpen}
         dropdownItems={items}
@@ -264,7 +263,7 @@ class BulkSelectTableDemo extends React.Component {
 
   render() {
     const { loading, res } = this.state;
-    const rows = res.map(post => ({
+    const rows = res.map((post) => ({
       cells: [post.title, post.body],
       selected: post.selected
     }));
@@ -304,21 +303,25 @@ class BulkSelectTableDemo extends React.Component {
 ### Expand/collapse all
 
 ```js isFullscreen file="./table-demos/ExpandCollapseAll.jsx"
+
 ```
 
 ### Compact
 
 ```js isFullscreen file="./table-demos/Compact.jsx"
+
 ```
 
 ### Compound expansion
 
 ```js isFullscreen file="./table-demos/CompoundExpansion.jsx"
+
 ```
 
 ### Column management
 
 ```js isFullscreen file="./table-demos/ColumnManagement.jsx"
+
 ```
 
 ### Column management with draggable
@@ -642,7 +645,7 @@ class ColumnManagementAction extends React.Component {
     this.onSelect = this.onSelect.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
     this.renderModal = this.renderModal.bind(this);
-    this.matchCheckboxNameToColumn = name => {
+    this.matchCheckboxNameToColumn = (name) => {
       switch (name) {
         case 'check1':
           return 'Repositories';
@@ -656,7 +659,7 @@ class ColumnManagementAction extends React.Component {
           return 'Last commit';
       }
     };
-    this.matchDataListNameToColumn = name => {
+    this.matchDataListNameToColumn = (name) => {
       switch (name) {
         case 'data1':
           return 'Repositories';
@@ -673,8 +676,8 @@ class ColumnManagementAction extends React.Component {
     this.filterData = (checked, name) => {
       const { rows, columns, filters } = this.state;
       if (checked) {
-        const updatedFilters = filters.filter(item => item !== name);
-        const filteredColumns = this.defaultColumns.filter(column => !updatedFilters.includes(column));
+        const updatedFilters = filters.filter((item) => item !== name);
+        const filteredColumns = this.defaultColumns.filter((column) => !updatedFilters.includes(column));
         this.setState({
           filters: updatedFilters,
           filteredColumns: filteredColumns
@@ -682,7 +685,7 @@ class ColumnManagementAction extends React.Component {
       } else {
         let updatedFilters = filters;
         updatedFilters.push(name);
-        const filteredColumns = columns.filter(column => !filters.includes(column));
+        const filteredColumns = columns.filter((column) => !filters.includes(column));
         this.setState({
           filters: updatedFilters,
           filteredColumns: filteredColumns
@@ -695,7 +698,7 @@ class ColumnManagementAction extends React.Component {
         filteredColumns: this.defaultColumns
       });
     };
-    this.handleChange = (checked, event) => {
+    this.handleChange = (event, checked) => {
       const target = event.target;
       const value = target.type === 'checkbox' ? target.checked : target.value;
       this.filterData(checked, this.matchCheckboxNameToColumn(target.name));
@@ -709,15 +712,15 @@ class ColumnManagementAction extends React.Component {
       }));
     };
     this.onSave = () => {
-      const orderedColumns = this.state.itemOrder.map(item => this.matchDataListNameToColumn(item));
+      const orderedColumns = this.state.itemOrder.map((item) => this.matchDataListNameToColumn(item));
       // concat empty string at the end for actions column
       const filteredOrderedColumns = orderedColumns
-        .filter(col => this.state.filteredColumns.length === 0 || this.state.filteredColumns.indexOf(col) > -1)
+        .filter((col) => this.state.filteredColumns.length === 0 || this.state.filteredColumns.indexOf(col) > -1)
         .concat(['']);
       const orderedRows = [];
-      this.defaultRows.forEach(row => {
+      this.defaultRows.forEach((row) => {
         const updatedCells = row.cells
-          .filter(cell => filteredOrderedColumns.indexOf(cell.props.column) > -1)
+          .filter((cell) => filteredOrderedColumns.indexOf(cell.props.column) > -1)
           .sort((cellA, cellB) => {
             const indexA = filteredOrderedColumns.indexOf(cellA.props.column);
             const indexB = filteredOrderedColumns.indexOf(cellB.props.column);
@@ -740,7 +743,7 @@ class ColumnManagementAction extends React.Component {
         isModalOpen: !isModalOpen
       }));
     };
-    
+
     this.selectAllColumns = () => {
       this.unfilterAllData();
       this.setState({
@@ -752,7 +755,7 @@ class ColumnManagementAction extends React.Component {
       });
     };
 
-    this.onDragStart = id => {
+    this.onDragStart = (id) => {
       this.setState({
         id: id,
         liveText: `Dragging started for item id: ${id}.`
@@ -772,7 +775,7 @@ class ColumnManagementAction extends React.Component {
       });
     };
 
-    this.onDragFinish = itemOrder => {
+    this.onDragFinish = (itemOrder) => {
       this.setState({
         liveText: `Dragging finished`,
         itemOrder
@@ -783,7 +786,7 @@ class ColumnManagementAction extends React.Component {
   onSelect(event, isSelected, rowId) {
     let rows;
     if (rowId === -1) {
-      rows = this.state.rows.map(oneRow => {
+      rows = this.state.rows.map((oneRow) => {
         oneRow.selected = isSelected;
         return oneRow;
       });
@@ -1151,8 +1154,8 @@ class FilterTableDemo extends React.Component {
 
     this.onDelete = (type = '', id = '') => {
       if (type) {
-        this.setState(prevState => {
-          prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter(s => s !== id);
+        this.setState((prevState) => {
+          prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter((s) => s !== id);
           return {
             filters: prevState.filters
           };
@@ -1168,39 +1171,39 @@ class FilterTableDemo extends React.Component {
       }
     };
 
-    this.onCategoryToggle = isOpen => {
+    this.onCategoryToggle = (isOpen) => {
       this.setState({
         isCategoryDropdownOpen: isOpen
       });
     };
 
-    this.onCategorySelect = event => {
+    this.onCategorySelect = (event) => {
       this.setState({
         currentCategory: event.target.innerText,
         isCategoryDropdownOpen: !this.state.isCategoryDropdownOpen
       });
     };
 
-    this.onFilterToggle = isOpen => {
+    this.onFilterToggle = (isOpen) => {
       this.setState({
         isFilterDropdownOpen: isOpen
       });
     };
 
-    this.onFilterSelect = event => {
+    this.onFilterSelect = (event) => {
       this.setState({
         isFilterDropdownOpen: !this.state.isFilterDropdownOpen
       });
     };
 
-    this.onInputChange = newValue => {
+    this.onInputChange = (newValue) => {
       this.setState({ inputValue: newValue });
     };
 
     this.onRowSelect = (event, isSelected, rowId) => {
       let rows;
       if (rowId === -1) {
-        rows = this.state.rows.map(oneRow => {
+        rows = this.state.rows.map((oneRow) => {
           oneRow.selected = isSelected;
           return oneRow;
         });
@@ -1215,24 +1218,24 @@ class FilterTableDemo extends React.Component {
 
     this.onStatusSelect = (event, selection) => {
       const checked = event.target.checked;
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const prevSelections = prevState.filters['status'];
         return {
           filters: {
             ...prevState.filters,
-            status: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
+            status: checked ? [...prevSelections, selection] : prevSelections.filter((value) => value !== selection)
           }
         };
       });
     };
 
-    this.onNameInput = event => {
+    this.onNameInput = (event) => {
       if (event.key && event.key !== 'Enter') {
         return;
       }
 
       const { inputValue } = this.state;
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const prevFilters = prevState.filters['name'];
         return {
           filters: {
@@ -1245,7 +1248,7 @@ class FilterTableDemo extends React.Component {
     };
 
     this.onLocationSelect = (event, selection) => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         return {
           filters: {
             ...prevState.filters,
@@ -1381,10 +1384,10 @@ class FilterTableDemo extends React.Component {
 
     const filteredRows =
       filters.name.length > 0 || filters.location.length > 0 || filters.status.length > 0
-        ? rows.filter(row => {
+        ? rows.filter((row) => {
             return (
               (filters.name.length === 0 ||
-                filters.name.some(name => row.cells[0].toLowerCase().includes(name.toLowerCase()))) &&
+                filters.name.some((name) => row.cells[0].toLowerCase().includes(name.toLowerCase()))) &&
               (filters.location.length === 0 || filters.location.includes(row.cells[5])) &&
               (filters.status.length === 0 || filters.status.includes(row.cells[4]))
             );
@@ -1460,6 +1463,7 @@ class FilterTableDemo extends React.Component {
 ### Sortable - responsive
 
 ```js isFullscreen file="./table-demos/SortableResponsive.jsx"
+
 ```
 
 ### Automatic pagination
@@ -1546,7 +1550,7 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 
   render() {
-    const rows = this.state.rows.map(row => ({ cells: row.cells }));
+    const rows = this.state.rows.map((row) => ({ cells: row.cells }));
     return (
       <React.Fragment>
         {this.renderPagination()}
@@ -1563,6 +1567,7 @@ class ComplexPaginationTableDemo extends React.Component {
 ### Static bottom pagination on mobile
 
 ```js isFullscreen file="table-demos/StaticBottomPagination.jsx"
+
 ```
 
 ### Sticky header
@@ -1575,7 +1580,7 @@ import { rows } from '../examples/Data.jsx';
 
 class StickyHeaderTableDemo extends React.Component {
   render() {
-    const renderLabel = labelText => {
+    const renderLabel = (labelText) => {
       switch (labelText) {
         case 'Running':
           return <Label color="green">{labelText}</Label>;
@@ -1603,7 +1608,7 @@ class StickyHeaderTableDemo extends React.Component {
                 { title: 'Last Modified', transforms: [cellWidth(15)] },
                 { title: 'URL', transforms: [cellWidth(10)] }
               ]}
-              rows={rows.map(row => [
+              rows={rows.map((row) => [
                 row.name,
                 row.threads,
                 row.applications,
@@ -1636,6 +1641,7 @@ class StickyHeaderTableDemo extends React.Component {
 ### Sticky first column
 
 ```js isFullscreen file="./table-demos/StickyFirstColumn.jsx"
+
 ```
 
 ### Sticky columns and header with toolbar
@@ -1643,6 +1649,7 @@ class StickyHeaderTableDemo extends React.Component {
 A toolbar may be added above a sticky table either inside or outside the `OuterScrollContainer`.
 
 ```ts isFullscreen file="../examples/ComposableTableStickyToolbar.tsx"
+
 ```
 
 ## Empty states
