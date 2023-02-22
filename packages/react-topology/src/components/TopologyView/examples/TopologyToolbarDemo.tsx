@@ -179,7 +179,7 @@ interface CustomNodeProps {
 
 const CustomNode: React.FC<CustomNodeProps> = observer(({ element }) => {
   const data = element.getData();
-  const Icon = data.alternate ? Icon2 : Icon1;
+  const Icon = data.isAlternate ? Icon2 : Icon1;
   const badgeColors = BadgeColors.find(badgeColor => badgeColor.name === data.badge);
   const { viewOptions } = element.getController().getState<ControllerState>();
 
