@@ -6,12 +6,15 @@ import { Edge } from '../../../types';
 import { integralShapePath } from '../../utils';
 
 interface TaskEdgeProps {
+  /** The graph edge element to represent */
   element: Edge;
+  /** Additional classes added to the edge */
   className?: string;
+  /** Offset for integral shape path */
   nodeSeparation?: number;
 }
 
-const TaskEdge: React.FunctionComponent<TaskEdgeProps> = ({ element, className, nodeSeparation }) => {
+const TaskEdge: React.FunctionComponent<TaskEdgeProps> = ({ element, className, nodeSeparation }: TaskEdgeProps) => {
   const startPoint = element.getStartPoint();
   const endPoint = element.getEndPoint();
   const groupClassName = css(styles.topologyEdge, className);

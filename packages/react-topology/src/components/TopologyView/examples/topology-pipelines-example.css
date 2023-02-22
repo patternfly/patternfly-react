@@ -1,0 +1,6 @@
+.ws-react-t-pipelines {
+  height: 300px;
+  border: 1px solid var(--pf-global--palette--black-900);
+  padding: 0;
+  margin: var(--pf-global--spacer--md);
+}

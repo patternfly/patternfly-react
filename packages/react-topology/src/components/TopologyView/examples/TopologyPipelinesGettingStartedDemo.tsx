@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   TopologyView,
   Visualization,
@@ -6,212 +6,93 @@ import {
   VisualizationSurface,
   useVisualizationController,
   DefaultTaskGroup,
-  DEFAULT_EDGE_TYPE,
-  DEFAULT_SPACER_NODE_TYPE,
   GraphComponent,
   ModelKind,
+  TaskNode,
   SpacerNode,
   TaskEdge,
   FinallyNode,
-  Edge,
   DEFAULT_FINALLY_NODE_TYPE,
   DEFAULT_TASK_NODE_TYPE,
-  DEFAULT_WHEN_SIZE,
-  PipelineNodeModel,
-  RunStatus,
-  WhenStatus,
-  DEFAULT_LAYER,
+  DEFAULT_EDGE_TYPE,
+  DEFAULT_SPACER_NODE_TYPE,
   DEFAULT_WHEN_OFFSET,
-  Layer,
   Node,
-  ScaleDetailsLevel,
-  TaskNode,
-  TOP_LAYER,
-  useDetailsLevel,
-  useHover,
   WhenDecorator,
-  WithContextMenuProps,
-  WithSelectionProps
+  RunStatus,
+  Graph,
+  Layout,
+  Model,
+  PipelineNodeModel,
+  getEdgesFromNodes,
+  getSpacerNodes,
+  PipelineDagreLayout
 } from '@patternfly/react-topology';
-import '@patternfly/react-styles/css/components/Topology/topology-components.css';
-import '@patternfly/react-styles/css/components/Topology/topology-components.css';
+import './topology-example.css';
 
-type DemoTaskNodeProps = {
+const TASK_NODES: PipelineNodeModel[] = [
+  {
+    id: 'task-undefined',
+    type: 'DEFAULT_TASK_NODE',
+    label: 'No status Task',
+    width: 180,
+    height: 32,
+    style: {
+      padding: [45, 15]
+    }
+  },
+  {
+    id: 'task-Succeeded',
+    type: 'DEFAULT_TASK_NODE',
+    label: 'Succeeded Task',
+    width: 180,
+    height: 32,
+    style: {
+      padding: [45, 15]
+    },
+    runAfterTasks: ['task-undefined'],
+    data: {
+      status: RunStatus.Succeeded
+    }
+  },
+  {
+    id: 'finally-0',
+    type: 'DEFAULT_FINALLY_NODE',
+    label: 'Finally task 0',
+    width: 156,
+    height: 32,
+    style: {
+      paddingLeft: 24
+    }
+  },
+  {
+    id: 'finally-1',
+    type: 'DEFAULT_FINALLY_NODE',
+    label: 'Finally task 1',
+    width: 156,
+    height: 32,
+    style: {
+      paddingLeft: 24
+    }
+  }
+];
+interface DemoTaskNodeProps {
   element: Node;
-} & WithContextMenuProps &
-  WithSelectionProps;
+}
 
-const DemoTaskNode: React.FunctionComponent<DemoTaskNodeProps> = ({ element, ...rest }) => {
+const DemoTaskNode: React.FunctionComponent<DemoTaskNodeProps> = ({ element }) => {
   const data = element.getData();
-  const [hover, hoverRef] = useHover();
-  const detailsLevel = useDetailsLevel();
 
-  const passedData = React.useMemo(() => {
-    const newData = { ...data };
-    Object.keys(newData).forEach(key => {
-      if (newData[key] === undefined) {
-        delete newData[key];
-      }
-    });
-    return newData;
-  }, [data]);
-
-  const whenDecorator = data.whenStatus ? (
+  const whenDecorator = data?.whenStatus ? (
     <WhenDecorator element={element} status={data.whenStatus} leftOffset={DEFAULT_WHEN_OFFSET} />
   ) : null;
 
   return (
-    <Layer id={detailsLevel !== ScaleDetailsLevel.high && hover ? TOP_LAYER : DEFAULT_LAYER}>
-      <TaskNode ref={hoverRef} element={element} {...passedData} {...rest}>
-        {whenDecorator}
-      </TaskNode>
-    </Layer>
+    <TaskNode element={element} status={data?.status}>
+      {whenDecorator}
+    </TaskNode>
   );
 };
-
-type DemoFinallyNodeProps = {
-  element: Node;
-} & WithContextMenuProps &
-  WithSelectionProps;
-
-const DemoFinallyNode: React.FunctionComponent<DemoFinallyNodeProps> = ({ ...props }) => {
-  const [hover, hoverRef] = useHover();
-  const detailsLevel = useDetailsLevel();
-
-  return (
-    <Layer id={detailsLevel !== ScaleDetailsLevel.high && hover ? TOP_LAYER : DEFAULT_LAYER}>
-      <g ref={hoverRef as React.LegacyRef<SVGGElement>}>
-        <FinallyNode scaleNode={hover && detailsLevel !== ScaleDetailsLevel.high} hideDetailsAtMedium {...props} />
-      </g>
-    </Layer>
-  );
-};
-
-export const GROUPED_PIPELINE_NODE_SEPARATION_HORIZONTAL = 200;
-
-interface DemoTaskEdgeProps {
-  element: Edge;
-}
-
-export const GROUPED_EDGE_TYPE = 'GROUPED_EDGE';
-
-const DemoTaskGroupEdge: React.FunctionComponent<DemoTaskEdgeProps> = props => (
-  <TaskEdge nodeSeparation={GROUPED_PIPELINE_NODE_SEPARATION_HORIZONTAL} {...props} />
-);
-
-export const NODE_PADDING_VERTICAL = 45;
-export const NODE_PADDING_HORIZONTAL = 15;
-
-export const ROW_HEIGHT = 100;
-export const COLUMN_WIDTH = 250;
-
-export const DEFAULT_TASK_WIDTH = 180;
-export const FINALLY_TASK_WIDTH = DEFAULT_TASK_WIDTH - DEFAULT_WHEN_OFFSET - DEFAULT_WHEN_SIZE;
-export const DEFAULT_TASK_HEIGHT = 32;
-
-export const TASK_STATUSES = [
-  undefined,
-  RunStatus.Succeeded,
-  RunStatus.Failed,
-  RunStatus.Running,
-  RunStatus.InProgress,
-  RunStatus.FailedToStart,
-  RunStatus.Skipped,
-  RunStatus.Cancelled,
-  RunStatus.Pending,
-  RunStatus.Idle
-];
-
-const STATUS_PER_ROW = 2;
-const GRAPH_MARGIN_TOP = 40;
-const FINALLY_TASKS_COUNT = 2;
-
-export const useDemoPipelineNodes = (): PipelineNodeModel[] =>
-  React.useMemo(() => {
-    // Create a task node for each task status
-    const tasks = TASK_STATUSES.map((status, index) => {
-      // Set all the standard fields
-      const task: PipelineNodeModel = {
-        id: `task-${status}`,
-        type: DEFAULT_TASK_NODE_TYPE,
-        label: `${status || 'No status'} Task`,
-        width: DEFAULT_TASK_WIDTH,
-        height: DEFAULT_TASK_HEIGHT,
-        style: {
-          padding: [NODE_PADDING_VERTICAL, NODE_PADDING_HORIZONTAL]
-        },
-        runAfterTasks: []
-      };
-
-      // put options in data, our DEMO task node will pass them along to the TaskNode
-      task.data = {
-        status,
-        columnGroup: index % STATUS_PER_ROW
-      };
-
-      // If not using a layout, manually place the node by setting the x,y location
-      const row = Math.ceil((index + 1) / STATUS_PER_ROW) - 1;
-      const column = index % STATUS_PER_ROW;
-      const columnWidth = COLUMN_WIDTH;
-      task.x = column * columnWidth;
-      task.y = GRAPH_MARGIN_TOP + row * ROW_HEIGHT;
-
-      return task;
-    });
-
-    // Add when tasks to the nodes that are not first in the row
-    const whenTasks = tasks.filter(
-      (_task, index) => index % (Math.floor(tasks.length / (STATUS_PER_ROW - 1)) + 1) !== 0
-    );
-    whenTasks.forEach((task, index) => {
-      task.data.whenStatus = index % 2 === 0 ? WhenStatus.Met : WhenStatus.Unmet;
-      task.data.whenOffset = DEFAULT_WHEN_OFFSET;
-      task.data.whenSize = DEFAULT_WHEN_SIZE;
-    });
-
-    // Connect the tasks in each row by setting the `runAfterTasks` value for each task
-    for (let i = 0; i < tasks.length; i++) {
-      tasks[i + 1].runAfterTasks?.push(tasks[i].id);
-      i++;
-      if (i + 1 < tasks.length) {
-        tasks[i + 1].runAfterTasks?.push(tasks[i].id);
-      }
-      i++;
-      if (i + 1 < tasks.length) {
-        tasks[i + 1].runAfterTasks?.push(tasks[i].id);
-      }
-      i++;
-    }
-
-    const finallyNodes: PipelineNodeModel[] = [];
-    for (let i = 0; i < FINALLY_TASKS_COUNT; i++) {
-      const finallyNode: PipelineNodeModel = {
-        id: `finally-${i}`,
-        type: DEFAULT_FINALLY_NODE_TYPE,
-        label: `Finally task ${i}`,
-        width: FINALLY_TASK_WIDTH,
-        height: DEFAULT_TASK_HEIGHT,
-        style: { paddingLeft: DEFAULT_WHEN_SIZE + DEFAULT_WHEN_OFFSET }
-      };
-
-      const columnWidth = COLUMN_WIDTH;
-      finallyNode.x = STATUS_PER_ROW * columnWidth;
-      finallyNode.y = GRAPH_MARGIN_TOP + ((3 - FINALLY_TASKS_COUNT) * ROW_HEIGHT) / 2 + ROW_HEIGHT * i;
-
-      finallyNodes.push(finallyNode);
-    }
-
-    const finallyGroup = {
-      id: 'finally-group',
-      type: 'finally-group',
-      children: finallyNodes.map(n => n.id),
-      group: true
-    };
-
-    return [...tasks, ...finallyNodes, finallyGroup];
-  }, []);
-
-export const TASKS_TITLE = 'Tasks';
 
 const pipelineComponentFactory = (kind: ModelKind, type: string) => {
   if (kind === ModelKind.graph) {
@@ -221,7 +102,7 @@ const pipelineComponentFactory = (kind: ModelKind, type: string) => {
     case DEFAULT_TASK_NODE_TYPE:
       return DemoTaskNode;
     case DEFAULT_FINALLY_NODE_TYPE:
-      return DemoFinallyNode;
+      return FinallyNode;
     case 'task-group':
       return DefaultTaskGroup;
     case 'finally-group':
@@ -231,8 +112,6 @@ const pipelineComponentFactory = (kind: ModelKind, type: string) => {
     case 'finally-spacer-edge':
     case DEFAULT_EDGE_TYPE:
       return TaskEdge;
-    case GROUPED_EDGE_TYPE:
-      return DemoTaskGroupEdge;
     default:
       return undefined;
   }
@@ -240,22 +119,18 @@ const pipelineComponentFactory = (kind: ModelKind, type: string) => {
 
 export const PipelineTasks: React.FC = () => {
   const controller = useVisualizationController();
-  const pipelineNodes = useDemoPipelineNodes();
-
   React.useEffect(() => {
     controller.fromModel(
       {
         graph: {
           id: 'g1',
-          type: 'graph',
-          x: 25,
-          y: 25
+          type: 'graph'
         },
-        nodes: pipelineNodes
+        nodes: TASK_NODES
       },
       false
     );
-  }, [controller, pipelineNodes]);
+  }, [controller]);
 
   return (
     <TopologyView>
@@ -266,12 +141,30 @@ export const PipelineTasks: React.FC = () => {
 
 PipelineTasks.displayName = 'PipelineTasks';
 
-export const TopologyPipelineTasks = React.memo(() => {
+export const TopologyPipelinesGettingStartedDemo: React.FC = () => {
   const controller = new Visualization();
-  controller.registerComponentFactory(pipelineComponentFactory as any);
+  controller.setFitToScreenOnLayout(true);
+  controller.registerComponentFactory(pipelineComponentFactory);
+  controller.registerLayoutFactory((type: string, graph: Graph): Layout | undefined => new PipelineDagreLayout(graph));
+  const spacerNodes = getSpacerNodes(TASK_NODES);
+  const nodes = [...TASK_NODES, ...spacerNodes];
+  const edges = getEdgesFromNodes(nodes);
+
+  const model: Model = {
+    nodes,
+    edges,
+    graph: {
+      id: 'g1',
+      type: 'graph',
+      layout: 'pipelineLayout'
+    }
+  };
+
+  controller.fromModel(model, false);
+
   return (
     <VisualizationProvider controller={controller}>
-      <PipelineTasks />
+      <VisualizationSurface />
     </VisualizationProvider>
   );
-});
+};
