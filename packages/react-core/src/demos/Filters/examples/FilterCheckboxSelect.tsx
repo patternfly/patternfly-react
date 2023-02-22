@@ -231,7 +231,6 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
         popperRef={bulkSelectMenuRef}
         appendTo={bulkSelectContainerRef.current || undefined}
         isVisible={isBulkSelectOpen}
-        minWidth="revert"
       />
     </div>
   );

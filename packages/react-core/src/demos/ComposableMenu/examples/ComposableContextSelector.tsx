@@ -198,14 +198,5 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
       </MenuFooter>
     </Menu>
   );
-  return (
-    <Popper
-      trigger={toggle}
-      triggerRef={toggleRef}
-      popper={menu}
-      popperRef={menuRef}
-      isVisible={isOpen}
-      minWidth="revert"
-    />
-  );
+  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
 };

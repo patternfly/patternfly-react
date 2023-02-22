@@ -31,6 +31,8 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement>, OUIAProp
   };
   /** Display menu above or below dropdown toggle */
   direction?: DropdownDirection | 'up' | 'down';
+  /** Minimum width of the dropdown menu. If set to "trigger", the minimum width will be set to the toggle width. */
+  minWidth?: string | 'trigger';
   /** The container to append the menu to. Defaults to 'inline'.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
    * Some examples:
@@ -72,6 +74,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   ouiaSafe,
   alignments,
   contextProps,
+  minWidth,
   menuAppendTo = 'inline',
   isFlipEnabled = true,
   zIndex = 9999,
@@ -79,7 +82,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
 }: DropdownProps) => (
   <DropdownContext.Provider
     value={{
-      onSelect: event => onSelect && onSelect(event),
+      onSelect: (event) => onSelect && onSelect(event),
       toggleTextClass: styles.dropdownToggleText,
       toggleIconClass: styles.dropdownToggleImage,
       toggleIndicatorClass: styles.dropdownToggleIcon,
@@ -104,6 +107,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       menuAppendTo={menuAppendTo}
       isFlipEnabled={isFlipEnabled}
       zIndex={zIndex}
+      minWidth={minWidth}
       {...props}
     />
   </DropdownContext.Provider>
