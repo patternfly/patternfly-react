@@ -28,7 +28,7 @@ export const TopologySideBar: React.FunctionComponent<TopologySideBarProps> = ({
   header,
   children = null,
   ...otherProps
-}) => {
+}: TopologySideBarProps) => {
   const [isIn, setIsIn] = React.useState<boolean>(false);
 
   React.useEffect(() => {
