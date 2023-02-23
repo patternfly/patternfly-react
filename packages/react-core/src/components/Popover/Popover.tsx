@@ -67,8 +67,8 @@ export interface PopoverProps {
   children?: ReactElement<any>;
   /**
    * The trigger reference element to which the popover is relatively placed to. If you can wrap the
-   * element with the popover, you can use the children prop instead, or both props together. If triggerRef
-   * is not defined, a <div> will be added interally wrapping the element.
+   * element with the popover, you can use the children prop instead, or both props together.
+   * When passed along with the trigger prop, the div element that wraps the trigger will be removed.
    * Usage: <Popover triggerRef={() => document.getElementById('reference-element')} />
    */
   triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;

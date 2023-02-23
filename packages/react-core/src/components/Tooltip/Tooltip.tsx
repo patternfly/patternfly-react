@@ -49,7 +49,7 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
   /**
    * The trigger reference element to which the Tooltip is relatively placed to.
    * If you can wrap the element with the Tooltip, you can use the children prop instead, or both props together.
-   * If triggerRef is not defined, a <div> will be added internally wrapping the element.
+   * When passed along with the trigger prop, the div element that wraps the trigger will be removed.
    * Usage: <Tooltip triggerRef={() => document.getElementById('reference-element')} />
    */
   triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
