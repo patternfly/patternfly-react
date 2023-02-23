@@ -40,13 +40,9 @@ ouia: true
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
 
-PatternFly has two implementations of a React table.
+The `TableComposable` component takes an explicit and declarative approach, and its implementation closely mirrors that of an HTML table.
 
-The first is the newer `TableComposable` component. It takes a more explicit and declarative approach, and its implementation more closely mirrors that of an HTML table. Generally, updates and new feature requests are implemented in the `TableComposable`.
-
-The second is the original `Table` component. It is configuration based and takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it. The documentation for the older table implementation can be found under the [React legacy](/components/table/react-legacy) tab.
-
-**For most common use cases, we recommend using `TableComposable`. Both implementations are supported and fully maintained.**
+The documentation for the deprecated table implementation can be found under the [React deprecated](/components/table/react-deprecated) tab. It is configuration based and takes a less declarative and more implicit approach to laying out the table structure, such as the rows and cells within it.
 
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
