@@ -8,14 +8,19 @@ exports[`EmptyState Full height 1`] = `
     <div
       class="pf-c-empty-state__content"
     >
-      <h3
-        class="pf-c-title pf-m-md"
-        data-ouia-component-id="OUIA-Generated-Title-5"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
+      <div
+        class="pf-c-empty-state__header"
       >
-        EmptyState large
-      </h3>
+        <div
+          class="pf-c-empty-state__title"
+        >
+          <h1
+            class="pf-c-empty-state__title-text"
+          >
+            EmptyState large
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -29,43 +34,56 @@ exports[`EmptyState Main 1`] = `
     <div
       class="pf-c-empty-state__content"
     >
-      <h5
-        class="pf-c-title pf-m-lg"
-        data-ouia-component-id="OUIA-Generated-Title-1"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
+      <div
+        class="pf-c-empty-state__header"
       >
-        HTTP Proxies
-      </h5>
+        <div
+          class="pf-c-empty-state__title"
+        >
+          <h1
+            class="pf-c-empty-state__title-text"
+          >
+            HTTP Proxies
+          </h1>
+        </div>
+      </div>
       <div
         class="pf-c-empty-state__body"
       >
         Defining HTTP Proxies that exist on your network allows you to perform various actions through those proxies.
       </div>
-      <button
-        aria-disabled="false"
-        class="pf-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-1"
-        data-ouia-component-type="PF4/Button"
-        data-ouia-safe="true"
-        type="button"
-      >
-        New HTTP Proxy
-      </button>
       <div
-        class=""
+        class="pf-c-empty-state__footer"
       >
-        <button
-          aria-disabled="false"
-          aria-label="learn more action"
-          class="pf-c-button pf-m-link"
-          data-ouia-component-id="OUIA-Generated-Button-link-1"
-          data-ouia-component-type="PF4/Button"
-          data-ouia-safe="true"
-          type="button"
+        <div
+          class="pf-c-empty-state__actions"
         >
-          Learn more about this in the documentation.
-        </button>
+          <button
+            aria-disabled="false"
+            class="pf-c-button pf-m-primary"
+            data-ouia-component-id="OUIA-Generated-Button-primary-1"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            New HTTP Proxy
+          </button>
+        </div>
+        <div
+          class="pf-c-empty-state__actions"
+        >
+          <button
+            aria-disabled="false"
+            aria-label="learn more action"
+            class="pf-c-button pf-m-link"
+            data-ouia-component-id="OUIA-Generated-Button-link-1"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            Learn more about this in the documentation.
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -80,14 +98,19 @@ exports[`EmptyState Main variant large 1`] = `
     <div
       class="pf-c-empty-state__content"
     >
-      <h3
-        class="pf-c-title pf-m-md"
-        data-ouia-component-id="OUIA-Generated-Title-2"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
+      <div
+        class="pf-c-empty-state__header"
       >
-        EmptyState large
-      </h3>
+        <div
+          class="pf-c-empty-state__title"
+        >
+          <h1
+            class="pf-c-empty-state__title-text"
+          >
+            EmptyState large
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -101,14 +124,19 @@ exports[`EmptyState Main variant small 1`] = `
     <div
       class="pf-c-empty-state__content"
     >
-      <h3
-        class="pf-c-title pf-m-md"
-        data-ouia-component-id="OUIA-Generated-Title-3"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
+      <div
+        class="pf-c-empty-state__header"
       >
-        EmptyState small
-      </h3>
+        <div
+          class="pf-c-empty-state__title"
+        >
+          <h1
+            class="pf-c-empty-state__title-text"
+          >
+            EmptyState small
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -122,14 +150,19 @@ exports[`EmptyState Main variant xs 1`] = `
     <div
       class="pf-c-empty-state__content"
     >
-      <h3
-        class="pf-c-title pf-m-md"
-        data-ouia-component-id="OUIA-Generated-Title-4"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
+      <div
+        class="pf-c-empty-state__header"
       >
-        EmptyState small
-      </h3>
+        <div
+          class="pf-c-empty-state__title"
+        >
+          <h1
+            class="pf-c-empty-state__title-text"
+          >
+            EmptyState small
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
