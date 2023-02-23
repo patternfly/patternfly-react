@@ -60,11 +60,18 @@ export interface PopoverProps {
    */
   bodyContent: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /**
-   * The reference element to which the popover is relatively placed to. If you cannot wrap
-   * the reference with the Popover, you can use the reference prop instead.
+   * The trigger reference element to which the popover is relatively placed to. If you cannot wrap
+   * the element with the Popover, you can use the triggerRef prop instead.
    * Usage: <Popover><Button>Reference</Button></Popover>
    */
   children?: ReactElement<any>;
+  /**
+   * The trigger reference element to which the popover is relatively placed to. If you can wrap the
+   * element with the popover, you can use the children prop instead, or both props together. If triggerRef
+   * is not defined, a <div> will be added interally wrapping the element.
+   * Usage: <Popover triggerRef={() => document.getElementById('reference-element')} />
+   */
+  triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** Additional classes added to the popover. */
   className?: string;
   /** Accessible label for the close button. */
@@ -184,12 +191,6 @@ export interface PopoverProps {
     | 'left-end'
     | 'right-start'
     | 'right-end';
-  /**
-   * The reference element to which the popover is relatively placed to. If you can wrap the
-   * reference with the popover, you can use the children prop instead.
-   * Usage: <Popover reference={() => document.getElementById('reference-element')} />
-   */
-  triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the
    * popover close button is clicked, the enter key was used on it, or the escape key is used.

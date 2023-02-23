@@ -46,13 +46,13 @@ export const getOpacityTransition = (animationDuration: number) =>
 
 export interface PopperProps {
   /**
-   * The reference element to which the Popover is relatively placed to.
-   * Use either trigger or reference, not both.
+   * Trigger reference element to which the popper is relatively placed to.
+   * Both trigger and triggerRef may be passed together.
    */
   trigger?: React.ReactNode;
   /**
-   * The reference element to which the Popover is relatively placed to.
-   * Use either trigger or reference, not both.
+   * Reference to the trigger reference element. Passing this property will remove a <div> wrapping the trigger.
+   * Both trigger and triggerRef may be passed together.
    */
   triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** The popper (menu/tooltip/popover) element */

@@ -35,21 +35,22 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
    */
   aria?: 'describedby' | 'labelledby' | 'none';
   /**
-   * Determines whether the tooltip is an aria-live region. If the reference prop is passed in the
+   * Determines whether the tooltip is an aria-live region. If the triggerRef prop is passed in the
    * default behavior is 'polite' in order to ensure the tooltip contents is announced to
    * assistive technologies. Otherwise the default behavior is 'off'.
    */
   'aria-live'?: 'off' | 'polite';
   /**
-   * The reference element to which the Tooltip is relatively placed to.
-   * If you cannot wrap the reference with the Tooltip, you can use the reference prop instead.
+   * The trigger reference element to which the Tooltip is relatively placed to.
+   * If you cannot wrap the element with the Tooltip, you can use the triggerRef prop instead.
    * Usage: <Tooltip><Button>Reference</Button></Tooltip>
    */
   children?: ReactElement<any>;
   /**
-   * The reference element to which the Tooltip is relatively placed to.
-   * If you can wrap the reference with the Tooltip, you can use the children prop instead.
-   * Usage: <Tooltip reference={() => document.getElementById('reference-element')} />
+   * The trigger reference element to which the Tooltip is relatively placed to.
+   * If you can wrap the element with the Tooltip, you can use the children prop instead, or both props together.
+   * If triggerRef is not defined, a <div> will be added internally wrapping the element.
+   * Usage: <Tooltip triggerRef={() => document.getElementById('reference-element')} />
    */
   triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** Tooltip additional class */
