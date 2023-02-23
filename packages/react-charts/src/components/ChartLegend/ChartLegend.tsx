@@ -283,8 +283,8 @@ export interface ChartLegendProps extends VictoryLegendProps {
   title?: string | string[];
   /**
    * The titleComponent prop takes a component instance which will be used to render
-   * a title for the component. The new element created from the passed
-   * titleComponent will be supplied with the following properties: x, y, index, data,
+   * a title for the component. The new element created from the passed label
+   * component will be supplied with the following properties: x, y, index, data,
    * datum, verticalAnchor, textAnchor, style, text, and events. Any of these props
    * may be overridden by passing in props to the supplied component, or modified
    * or ignored within the custom component itself. If labelComponent is omitted,
@@ -292,7 +292,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   titleComponent?: React.ReactElement<any>;
   /**
-   * The titleOrientation prop specifies where the a title should be rendered
+   * The titleOrientation prop specifies where the title should be rendered
    * in relation to the rest of the legend. Possible values
    * for this prop are “top”, “bottom”, “left”, and “right”.
    *
