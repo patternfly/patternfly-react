@@ -9,7 +9,7 @@ const columnNames = {
   wrap: 'Wrapping table header text. This th text will wrap instead of truncate.'
 };
 
-export const ComposableTableText: React.FunctionComponent = () => (
+export const TableTextModifiers: React.FunctionComponent = () => (
   <TableComposable aria-label="Table text">
     <Thead>
       <Tr>

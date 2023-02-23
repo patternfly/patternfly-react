@@ -9,7 +9,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const ComposableTableStripedTr: React.FunctionComponent = () => {
+export const TableStripedTr: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'Repository 1', branches: 10, prs: 25, workspaces: 5, lastCommit: '2 days ago' },

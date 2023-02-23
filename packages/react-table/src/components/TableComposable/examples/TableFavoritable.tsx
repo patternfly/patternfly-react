@@ -9,7 +9,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const ComposableTableFavoritable: React.FunctionComponent = () => {
+export const TableFavoritable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five' },
@@ -33,7 +33,7 @@ export const ComposableTableFavoritable: React.FunctionComponent = () => {
   // Sort direction of the currently sorted column
   const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
 
-  // Favorite state is similar to selection state, see Composable: Selectable with checkbox.
+  // Favorite state is similar to selection state, see Selectable with checkbox.
   const [favoriteRepoNames, setFavoriteRepoNames] = React.useState<string[]>([]);
   const setRepoFavorited = (repo: Repository, isFavoriting = true) =>
     setFavoriteRepoNames(prevFavorites => {
@@ -44,7 +44,7 @@ export const ComposableTableFavoritable: React.FunctionComponent = () => {
 
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   // In this example we only deal with booleans here because we only sort on the favorites column.
-  // For more complex sorting, see Composable: Sortable.
+  // For more complex sorting, see Sortable.
   // Note: We also memoize the sortable values with useCallback to prevent rows jumping around when you change
   // the favorites while sorting on that column. Only updating the sort state will reorder the rows.
   const getSortableRowValues = React.useCallback((repo: Repository): boolean[] => [isRepoFavorited(repo)], [

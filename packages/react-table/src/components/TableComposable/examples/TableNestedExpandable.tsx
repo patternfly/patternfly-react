@@ -22,7 +22,7 @@ interface Team {
   description: string;
 }
 
-export const ComposableTableNestedExpandable: React.FunctionComponent = () => {
+export const TableNestedExpandable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const teams: Team[] = [
     {

@@ -12,7 +12,7 @@ interface RepositoriesTreeNode {
   children?: RepositoriesTreeNode[];
 }
 
-export const ComposableTableTree: React.FunctionComponent = () => {
+export const TableTree: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const data: RepositoriesTreeNode[] = [
     {

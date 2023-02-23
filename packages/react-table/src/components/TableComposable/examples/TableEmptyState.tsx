@@ -16,7 +16,7 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 // This example has been simplified to focus on the empty state. In real usage,
 // you may want to derive your rows from typed underlying data and minimal state. See other examples.
 
-export const ComposableTableEmptyState: React.FunctionComponent = () => (
+export const TableEmptyState: React.FunctionComponent = () => (
   <TableComposable aria-label="Empty state table">
     <Thead>
       <Tr>

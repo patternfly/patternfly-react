@@ -71,7 +71,7 @@ const NestedReposTable: React.FunctionComponent = () => {
   );
 };
 
-export const ComposableTableExpandable: React.FunctionComponent = () => {
+export const TableExpandable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'Node 1', branches: '10', prs: '2', nestedComponent: <NestedReposTable />, link: <a>Link 1</a> },

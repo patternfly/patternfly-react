@@ -12,7 +12,7 @@ interface Repository {
 
 type ExampleType = 'default' | 'compact' | 'compactBorderless';
 
-export const ComposableTableBasic: React.FunctionComponent = () => {
+export const TableBasic: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
@@ -28,7 +28,7 @@ export const ComposableTableBasic: React.FunctionComponent = () => {
     lastCommit: 'Last commit'
   };
 
-  // This state is just for the ToggleGroup in this example and isn't necessary for TableComposable usage.
+  // This state is just for the ToggleGroup in this example and isn't necessary for Table usage.
   const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('default');
   const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (_isSelected, event) => {
     const id = event.currentTarget.id;
