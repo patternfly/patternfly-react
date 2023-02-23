@@ -89,14 +89,6 @@ module.exports = (_env, argv) => {
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js'],
-      alias: isProd
-        ? {}
-        : {
-            '@patternfly/react-core$': path.resolve(__dirname, '../../../packages/react-core/src/index'),
-            '@patternfly/react-code-editor$': path.resolve(__dirname, '../../../packages/react-code-editor/src/index'),
-            '@patternfly/react-table$': path.resolve(__dirname, '../../../packages/react-table/src/index'),
-            '@patternfly/react-topology$': path.resolve(__dirname, '../../../packages/react-topology/src/index')
-          }
     },
     plugins: [
       new MiniCssExtractPlugin(

@@ -17,6 +17,22 @@ import defaultComponentFactory from './components/defaultComponentFactory';
 import DemoDefaultNode from './components/DemoDefaultNode';
 import withTopologySetup from './utils/withTopologySetup';
 
+const contextMenuItem = (label: string, i: number): React.ReactElement => {
+  if (label === '-') {
+    return <ContextMenuSeparator key={`separator:${i.toString()}`} />;
+  }
+  return (
+    // eslint-disable-next-line no-alert
+    <ContextMenuItem key={label} onClick={() => alert(`Selected: ${label}`)}>
+      {label}
+    </ContextMenuItem>
+  );
+};
+
+const createContextMenuItems = (...labels: string[]): React.ReactElement[] => labels.map(contextMenuItem);
+
+const defaultMenu = createContextMenuItems('First', 'Second', 'Third', '-', 'Fourth');
+
 export const UncontrolledContextMenu = () => (
   <>
     <p>Dismiss the context menu by pressing `ESC` or clicking away.</p>
@@ -39,22 +55,6 @@ export const ControlledContextMenu = () => {
 };
 
 export const ContextMenuOnNode = withTopologySetup(() => {
-  const contextMenuItem = (label: string, i: number): React.ReactElement => {
-    if (label === '-') {
-      return <ContextMenuSeparator key={`separator:${i.toString()}`} />;
-    }
-    return (
-      // eslint-disable-next-line no-alert
-      <ContextMenuItem key={label} onClick={() => alert(`Selected: ${label}`)}>
-        {label}
-      </ContextMenuItem>
-    );
-  };
-
-  const createContextMenuItems = (...labels: string[]): React.ReactElement[] => labels.map(contextMenuItem);
-
-  const defaultMenu = createContextMenuItems('First', 'Second', 'Third', '-', 'Fourth');
-
   useComponentFactory(defaultComponentFactory);
   useComponentFactory(
     React.useCallback<ComponentFactory>(kind => {
