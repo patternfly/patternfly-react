@@ -293,32 +293,31 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       phase: 'beforeWrite',
       requires: ['computeStyles'],
       fn: ({ state }) => {
+        const triggerWidth = state.rects.reference.width;
         if (width) {
-          state.styles.popper.width = width === 'trigger' ? `${state.rects.reference.width}px` : width;
+          state.styles.popper.width = width === 'trigger' ? `${triggerWidth}px` : width;
         }
 
         if (minWidth) {
-          state.styles.popper.minWidth = minWidth === 'trigger' ? `${state.rects.reference.width}px` : minWidth;
+          state.styles.popper.minWidth = minWidth === 'trigger' ? `${triggerWidth}px` : minWidth;
         }
 
         if (maxWidth) {
-          state.styles.popper.maxWidth = maxWidth === 'trigger' ? `${state.rects.reference.width}px` : maxWidth;
+          state.styles.popper.maxWidth = maxWidth === 'trigger' ? `${triggerWidth}px` : maxWidth;
         }
       },
       effect: ({ state }) => {
+        const triggerWidth = (state.elements.reference as HTMLElement).offsetWidth;
         if (width) {
-          state.elements.popper.style.width =
-            width === 'trigger' ? `${(state.elements.reference as HTMLElement).offsetWidth}px` : width;
+          state.elements.popper.style.width = width === 'trigger' ? `${triggerWidth}px` : width;
         }
 
         if (minWidth) {
-          state.elements.popper.style.minWidth =
-            minWidth === 'trigger' ? `${(state.elements.reference as HTMLElement).offsetWidth}px` : minWidth;
+          state.elements.popper.style.minWidth = minWidth === 'trigger' ? `${triggerWidth}px` : minWidth;
         }
 
         if (maxWidth) {
-          state.elements.popper.style.maxWidth =
-            maxWidth === 'trigger' ? `${(state.elements.reference as HTMLElement).offsetWidth}px` : maxWidth;
+          state.elements.popper.style.maxWidth = maxWidth === 'trigger' ? `${triggerWidth}px` : maxWidth;
         }
         return () => {};
       }
