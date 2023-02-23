@@ -3,7 +3,7 @@ import {
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateSecondaryActions,
+  EmptyStateActions,
   Title,
   Form,
   FormGroup,
@@ -59,11 +59,11 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
           Description can be used to further elaborate on the validation step, or give the user a better idea of how
           long the process will take.
         </EmptyStateBody>
-        <EmptyStateSecondaryActions>
+        <EmptyStateActions>
           <Button isDisabled={percent !== 100} onClick={props.onClose}>
             Log to console
           </Button>
-        </EmptyStateSecondaryActions>
+        </EmptyStateActions>
       </EmptyState>
     </div>
   );

@@ -44,7 +44,7 @@ import {
   EmptyState,
   EmptyStateIcon,
   EmptyStateVariant,
-  EmptyStateSecondaryActions,
+  EmptyStateActions,
   Gallery,
   KebabToggle,
   OverflowMenu,
@@ -609,9 +609,9 @@ class CardViewBasic extends React.Component {
                     <Title headingLevel="h2" size="md">
                       Add a new card to your page
                     </Title>
-                    <EmptyStateSecondaryActions>
+                    <EmptyStateActions>
                       <Button variant="link">Add card</Button>
-                    </EmptyStateSecondaryActions>
+                    </EmptyStateActions>
                   </EmptyState>
                 </Bullseye>
               </Card>

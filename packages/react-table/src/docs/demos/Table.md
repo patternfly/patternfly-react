@@ -1110,7 +1110,7 @@ import {
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateSecondaryActions
+  EmptyStateActions
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -1412,7 +1412,7 @@ class FilterTableDemo extends React.Component {
                     <EmptyStateBody>
                       No results match this filter criteria. Remove all filters or clear all filters to show results.
                     </EmptyStateBody>
-                    <EmptyStateSecondaryActions>
+                    <EmptyStateActions>
                       <Button
                         variant="link"
                         onClick={() => {
@@ -1421,7 +1421,7 @@ class FilterTableDemo extends React.Component {
                       >
                         Clear all filters
                       </Button>
-                    </EmptyStateSecondaryActions>
+                    </EmptyStateActions>
                   </EmptyState>
                 </Bullseye>
               )
@@ -1666,7 +1666,7 @@ import {
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateSecondaryActions,
+  EmptyStateActions,
   PageSection,
   Title
 } from '@patternfly/react-core';
@@ -1697,11 +1697,11 @@ class EmptyStateDemo extends React.Component {
                   No results found
                 </Title>
                 <EmptyStateBody>No results match this filter criteria. Clear all filters and try again.</EmptyStateBody>
-                <EmptyStateSecondaryActions>
+                <EmptyStateActions>
                   <Button variant="link" onClick={() => {}}>
                     Clear all filters
                   </Button>
-                </EmptyStateSecondaryActions>
+                </EmptyStateActions>
               </EmptyState>
             )
           }

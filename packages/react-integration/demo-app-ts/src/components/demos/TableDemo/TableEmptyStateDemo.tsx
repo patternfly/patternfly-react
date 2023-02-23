@@ -4,7 +4,7 @@ import {
   EmptyState,
   EmptyStateBody,
   EmptyStateIcon,
-  EmptyStateSecondaryActions,
+  EmptyStateActions,
   Title,
   Button
 } from '@patternfly/react-core';
@@ -37,14 +37,14 @@ export class EmptyStateTable extends React.Component<TableProps, { columns: (ICe
                 flexible enough to meet a variety of needs.
               </EmptyStateBody>
               <Button variant="primary">Primary Action</Button>
-              <EmptyStateSecondaryActions>
+              <EmptyStateActions>
                 <Button variant="link">Multiple</Button>
                 <Button variant="link">Action Buttons</Button>
                 <Button variant="link">Can</Button>
                 <Button variant="link">Go here</Button>
                 <Button variant="link">In the secondary</Button>
                 <Button variant="link">Action area</Button>
-              </EmptyStateSecondaryActions>
+              </EmptyStateActions>
             </EmptyState>
           )
         }

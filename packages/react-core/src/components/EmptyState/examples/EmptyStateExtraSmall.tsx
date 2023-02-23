@@ -5,7 +5,7 @@ import {
   EmptyState,
   EmptyStateVariant,
   EmptyStateBody,
-  EmptyStateSecondaryActions
+  EmptyStateActions
 } from '@patternfly/react-core';
 
 export const EmptyStateExtraSmall: React.FunctionComponent = () => (
@@ -17,13 +17,13 @@ export const EmptyStateExtraSmall: React.FunctionComponent = () => (
       This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
       enough to meet a variety of needs.
     </EmptyStateBody>
-    <EmptyStateSecondaryActions>
+    <EmptyStateActions>
       <Button variant="link">Multiple</Button>
       <Button variant="link">Action Buttons</Button>
       <Button variant="link">Can</Button>
       <Button variant="link">Go here</Button>
       <Button variant="link">In the secondary</Button>
       <Button variant="link">Action area</Button>
-    </EmptyStateSecondaryActions>
+    </EmptyStateActions>
   </EmptyState>
 );

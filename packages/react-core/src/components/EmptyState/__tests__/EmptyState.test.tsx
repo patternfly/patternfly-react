@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import AddressBookIcon from '@patternfly/react-icons/dist/esm/icons/address-book-icon';
 import { EmptyState, EmptyStateVariant } from '../EmptyState';
 import { EmptyStateBody } from '../EmptyStateBody';
-import { EmptyStateSecondaryActions } from '../EmptyStateSecondaryActions';
+import { EmptyStateActions } from '../EmptyStateActions';
 import { EmptyStateIcon } from '../EmptyStateIcon';
 import { EmptyStatePrimary } from '../EmptyStatePrimary';
 import { Button } from '../../Button';
@@ -22,11 +22,11 @@ describe('EmptyState', () => {
           Defining HTTP Proxies that exist on your network allows you to perform various actions through those proxies.
         </EmptyStateBody>
         <Button variant="primary">New HTTP Proxy</Button>
-        <EmptyStateSecondaryActions>
+        <EmptyStateActions>
           <Button variant="link" aria-label="learn more action">
             Learn more about this in the documentation.
           </Button>
-        </EmptyStateSecondaryActions>
+        </EmptyStateActions>
       </EmptyState>
     );
     expect(asFragment()).toMatchSnapshot();
@@ -72,7 +72,7 @@ describe('EmptyState', () => {
 
   // TODO: update this with issue #8555
   xtest('Secondary Action', () => {
-    render(<EmptyStateSecondaryActions className="custom-empty-state-secondary" data-testid="actions-test-id" />);
+    render(<EmptyStateActions className="custom-empty-state-secondary" data-testid="actions-test-id" />);
     expect(screen.getByTestId('actions-test-id')).toHaveClass(
       'pf-c-empty-state__secondary'
     );

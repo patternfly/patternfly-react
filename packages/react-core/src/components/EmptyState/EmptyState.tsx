@@ -15,7 +15,7 @@ export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Content rendered inside the EmptyState */
   children: React.ReactNode;
-  /** Modifies EmptyState max-width */
+  /** Modifies EmptyState max-width and sizes of EmptyStateIcon, EmptyStateTitle and EmptyStateBody */
   variant?: 'xs' | 'small' | 'large' | 'xl' | 'full';
   /** Cause component to consume the available height of its container */
   isFullHeight?: boolean;

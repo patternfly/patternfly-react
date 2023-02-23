@@ -6,7 +6,7 @@ import {
   EmptyStateVariant,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateSecondaryActions
+  EmptyStateActions
 } from '@patternfly/react-core';
 import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
@@ -21,13 +21,13 @@ export const EmptyStateSmall: React.FunctionComponent = () => (
       enough to meet a variety of needs.
     </EmptyStateBody>
     <Button variant="primary">Primary action</Button>
-    <EmptyStateSecondaryActions>
+    <EmptyStateActions>
       <Button variant="link">Multiple</Button>
       <Button variant="link">Action Buttons</Button>
       <Button variant="link">Can</Button>
       <Button variant="link">Go here</Button>
       <Button variant="link">In the secondary</Button>
       <Button variant="link">Action area</Button>
-    </EmptyStateSecondaryActions>
+    </EmptyStateActions>
   </EmptyState>
 );

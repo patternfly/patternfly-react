@@ -3,7 +3,7 @@ import {
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateSecondaryActions,
+  EmptyStateActions,
   Title,
   Progress,
   Button
@@ -46,11 +46,11 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
           Description can be used to further elaborate on the validation step, or give the user a better idea of how
           long the process will take.
         </EmptyStateBody>
-        <EmptyStateSecondaryActions>
+        <EmptyStateActions>
           <Button isDisabled={percentValidated !== 100} onClick={onClose}>
             Log to console
           </Button>
-        </EmptyStateSecondaryActions>
+        </EmptyStateActions>
       </EmptyState>
     </div>
   );

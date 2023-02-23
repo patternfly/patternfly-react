@@ -7,7 +7,7 @@ import {
   EmptyState,
   EmptyStateBody,
   EmptyStateIcon,
-  EmptyStateSecondaryActions,
+  EmptyStateActions,
   EmptyStateVariant,
   getResizeObserver,
   Popover,
@@ -527,11 +527,11 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                 <Button variant="primary" onClick={open}>
                   {emptyStateButton}
                 </Button>
-                <EmptyStateSecondaryActions>
+                <EmptyStateActions>
                   <Button variant="link" onClick={this.toggleEmptyState}>
                     {emptyStateLink}
                   </Button>
-                </EmptyStateSecondaryActions>
+                </EmptyStateActions>
               </EmptyState>
             ) : (
               <EmptyState variant={EmptyStateVariant.small}>
