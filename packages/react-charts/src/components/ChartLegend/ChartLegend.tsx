@@ -374,7 +374,7 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
     React.cloneElement(titleComponent, {
       // Victory doesn't appear to call the id function here, but it's valid for label components
       ...(name && { id: () => `${name}-${(titleComponent as any).type.displayName}` }),
-      ...titleComponent.props,
+      ...titleComponent.props
     });
 
   // Note: containerComponent is required for theme
