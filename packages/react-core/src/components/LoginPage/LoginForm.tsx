@@ -142,7 +142,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
             id="pf-login-remember-me-id"
             label={rememberMeLabel}
             isChecked={isRememberMeChecked}
-            onChange={(event: React.FormEvent<HTMLInputElement>, checked: boolean) => onChangeRememberMe(checked, event)}
+            onChange={(event, checked) => onChangeRememberMe(checked, event)}
           />
         </FormGroup>
       )}

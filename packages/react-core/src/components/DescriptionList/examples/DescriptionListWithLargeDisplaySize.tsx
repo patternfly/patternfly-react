@@ -24,7 +24,7 @@ export const DescriptionListWithLargeDisplaySize: React.FunctionComponent = () =
         <Checkbox
           label="displaySize 2xl"
           isChecked={isChecked}
-          onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => toggleDisplaySize(checked)}
+          onChange={(_event, checked) => toggleDisplaySize(checked)}
           aria-label="set display size 2xl"
           id="toggle-display-size"
           name="toggle-display-size"

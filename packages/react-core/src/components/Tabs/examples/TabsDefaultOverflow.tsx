@@ -63,7 +63,7 @@ export const TabsDefaultOverflow: React.FunctionComponent = () => {
         <Checkbox
           label="isBox"
           isChecked={isBox}
-          onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => toggleBox(checked)}
+          onChange={(_event, checked) => toggleBox(checked)}
           aria-label="show box variation checkbox on overflow"
           id="toggle-box-overflow"
           name="toggle-box-overflow"

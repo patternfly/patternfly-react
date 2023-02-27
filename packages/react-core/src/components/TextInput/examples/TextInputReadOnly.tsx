@@ -11,7 +11,7 @@ export const TextInputReadOnly: React.FunctionComponent = () => {
           key="isPlain"
           label="Plain read only variant"
           isChecked={isPlainChecked}
-          onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => setIsPlainChecked(checked)}
+          onChange={(_event, checked) => setIsPlainChecked(checked)}
         />
       </div>
       <TextInput

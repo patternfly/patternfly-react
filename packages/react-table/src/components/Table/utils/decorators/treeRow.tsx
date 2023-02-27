@@ -68,7 +68,7 @@ export const treeRow = (
                   id={checkboxId || `checkbox_${rowIndex}`}
                   aria-label={checkAriaLabel || `Row ${rowIndex} checkbox`}
                   isChecked={isChecked}
-                  onChange={(event: React.FormEvent<HTMLInputElement>, checked: boolean) => onChange(checked, event)}
+                  onChange={(event, checked) => onChange(checked, event)}
                 />
               </label>
             </span>

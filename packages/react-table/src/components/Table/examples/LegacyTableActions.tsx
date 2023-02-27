@@ -180,7 +180,7 @@ export const LegacyTableActions: React.FunctionComponent = () => {
             <Checkbox
               label="Use custom actions toggle"
               isChecked={useCustomToggle}
-              onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => setUseCustomToggle(checked)}
+              onChange={(_event, checked) => setUseCustomToggle(checked)}
               aria-label="toggle use of custom actions toggle"
               id="toggle-custom-actions-toggle"
               name="toggle-custom-actions-toggle"

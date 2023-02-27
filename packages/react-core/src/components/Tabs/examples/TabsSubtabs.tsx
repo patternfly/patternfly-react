@@ -104,7 +104,7 @@ export const TabsSubtabs: React.FunctionComponent = () => {
         <Checkbox
           label="isBox"
           isChecked={isBox}
-          onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => toggleBox(checked)}
+          onChange={(_event, checked) => toggleBox(checked)}
           aria-label="show box variation checkbox with sub tabs"
           id="toggle-box-secondary"
           name="toggle-box-secondary"
