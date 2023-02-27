@@ -74,7 +74,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     const {
       'aria-label': ariaLabel,
       className,
-      onChange: onChange,
+      onChange,
       isValid,
       isDisabled,
       isRequired,
