@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.14...@patternfly/react-core@5.0.0-alpha.15) (2023-02-27)
+
+### Bug Fixes
+
+- **About modal:** Refactor about modal to reuse the modal component ([#8674](https://github.com/patternfly/patternfly-react/issues/8674)) ([d526d77](https://github.com/patternfly/patternfly-react/commit/d526d77ef63c407a7917657536c4d242822e956b))
+- **DataListItem:** made items selectable via space key ([#8729](https://github.com/patternfly/patternfly-react/issues/8729)) ([b55beb1](https://github.com/patternfly/patternfly-react/commit/b55beb1c277d52077c518578f7b30721a840a207))
+
+### Features
+
+- **DataList:** added event param to callback ([#8723](https://github.com/patternfly/patternfly-react/issues/8723)) ([f05eef9](https://github.com/patternfly/patternfly-react/commit/f05eef998116962211d81ba4586090dacbc0ef8f))
+
 # 5.0.0-alpha.14 (2023-02-22)
 
 **Note:** Version bump only for package @patternfly/react-core
