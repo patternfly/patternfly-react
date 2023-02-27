@@ -3,18 +3,18 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
 
 export interface AboutModalBoxProps extends React.HTMLProps<HTMLDivElement> {
-  /** content rendered inside the AboutModelBox. */
+  /** Content rendered inside the about modal box */
   children: React.ReactNode;
-  /** additional classes added to the AboutModalBox */
+  /** Additional classes added to the about modal box */
   className?: string;
 }
 
 export const AboutModalBox: React.FunctionComponent<AboutModalBoxProps> = ({
   children,
-  className = '',
+  className,
   ...props
 }: AboutModalBoxProps) => (
-  <div role="dialog" aria-modal="true" className={css(styles.aboutModalBox, className)} {...props}>
+  <div className={css(styles.aboutModalBox, className)} {...props}>
     {children}
   </div>
 );

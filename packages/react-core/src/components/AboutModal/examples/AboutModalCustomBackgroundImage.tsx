@@ -22,6 +22,7 @@ export const AboutModalCustomBackgroundImage: React.FunctionComponent = () => {
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"
         backgroundImageSrc={bgImg}
+        aria-label="Background image about modal"
       >
         <TextContent>
           <TextList component="dl">

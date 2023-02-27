@@ -3,11 +3,8 @@
 exports[`AboutModalBox Test 1`] = `
 <DocumentFragment>
   <div
-    aria-describedby="id2"
     aria-labelledby="id"
-    aria-modal="true"
     class="pf-c-about-modal-box"
-    role="dialog"
   >
     This is a AboutModalBox
   </div>

@@ -4,7 +4,7 @@ import { AboutModalBox } from '../AboutModalBox';
 
 test('AboutModalBox Test', () => {
   const { asFragment } = render(
-    <AboutModalBox aria-labelledby="id" aria-describedby="id2">
+    <AboutModalBox aria-labelledby="id">
       This is a AboutModalBox
     </AboutModalBox>
   );

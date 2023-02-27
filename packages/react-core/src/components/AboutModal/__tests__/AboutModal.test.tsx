@@ -30,14 +30,6 @@ describe('AboutModal', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
-  test('Each modal is given new aria-describedby and aria-labelledby', () => {
-    const first = new AboutModal(props);
-    const second = new AboutModal(props);
-
-    expect(first.ariaLabelledBy).not.toBe(second.ariaLabelledBy);
-    expect(first.ariaDescribedBy).not.toBe(second.ariaDescribedBy);
-  });
-
   test('Console error is generated when the logoImageSrc is provided without logoImageAlt', () => {
     const noImgAltrops = {
       onClose: jest.fn(),
@@ -51,6 +43,20 @@ describe('AboutModal', () => {
     global.console = { error: myMock } as any;
 
     render(<AboutModal {...noImgAltrops}>Test About Modal</AboutModal>);
+    expect(myMock).toHaveBeenCalled();
+  });
+
+  test('Console error is generated when the logoImageSrc is provided without logoImageAlt', () => {
+    const noProductNameProps = {
+      onClose: jest.fn(),
+      children: 'modal content',
+      trademark: 'Trademark and copyright information here'
+
+    } as any;
+    const myMock = jest.fn() as any;
+    global.console = { error: myMock } as any;
+
+    render(<AboutModal {...noProductNameProps}>Test About Modal</AboutModal>);
     expect(myMock).toHaveBeenCalled();
   });
 });

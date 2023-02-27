@@ -1,13 +1,15 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
-import { canUseDOM } from '../../helpers';
-import { KeyTypes } from '../../helpers/constants';
-import { AboutModalContainer } from './AboutModalContainer';
-import { PickOptional } from '../../helpers/typeUtils';
+import { AboutModalBoxContent } from './AboutModalBoxContent';
+import { AboutModalBoxHeader } from './AboutModalBoxHeader';
+import { AboutModalBoxHero } from './AboutModalBoxHero';
+import { AboutModalBoxBrand } from './AboutModalBoxBrand';
+import { AboutModalBoxCloseButton } from './AboutModalBoxCloseButton';
+import { AboutModalBox } from './AboutModalBox';
+import { Modal, ModalVariant } from '../Modal';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
-export interface AboutModalProps {
+export interface AboutModalProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the about modal */
   children: React.ReactNode;
   /** Additional classes added to the about modal */
@@ -27,123 +29,77 @@ export interface AboutModalProps {
   /** The URL of the image for the background  */
   backgroundImageSrc?: string;
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts  */
-  noAboutModalBoxContentContainer?: boolean;
+  hasNoContentContainer?: boolean;
   /** The parent container to append the modal to. Defaults to document.body */
   appendTo?: HTMLElement | (() => HTMLElement);
+  /** Aria label for the about modal.  This should be used when no productName prop is provided */
+  'aria-label'?: string;
   /** Set aria label to the close button */
   closeButtonAriaLabel?: string;
   /** Flag to disable focus trap */
   disableFocusTrap?: boolean;
 }
 
-interface ModalState {
-  container: HTMLElement;
-}
-
-export class AboutModal extends React.Component<AboutModalProps, ModalState> {
-  static displayName = 'AboutModal';
-  private static currentId = 0;
-  private id = AboutModal.currentId++;
-  ariaLabelledBy = `pf-about-modal-title-${this.id}`;
-  ariaDescribedBy = `pf-about-modal-content-${this.id}`;
-
-  static defaultProps: PickOptional<AboutModalProps> = {
-    className: '',
-    isOpen: false,
-    onClose: (_e): any => undefined,
-    productName: '',
-    trademark: '',
-    backgroundImageSrc: '',
-    noAboutModalBoxContentContainer: false,
-    appendTo: null as HTMLElement
-  };
-
-  constructor(props: AboutModalProps) {
-    super(props);
-
-    this.state = {
-      container: undefined
-    };
-    if (props.brandImageSrc && !props.brandImageAlt) {
-      // eslint-disable-next-line no-console
-      console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified');
-    }
+export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
+  children,
+  className,
+  isOpen = false,
+  onClose = (_e): any => undefined,
+  productName,
+  trademark,
+  backgroundImageSrc,
+  brandImageSrc,
+  brandImageAlt,
+  hasNoContentContainer = false,
+  appendTo,
+  closeButtonAriaLabel,
+  'aria-label': ariaLabel,
+  disableFocusTrap,
+  ...props
+}: AboutModalProps) => {
+  if (brandImageSrc && !brandImageAlt) {
+    // eslint-disable-next-line no-console
+    console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified, and should not be an empty string.');
   }
 
-  handleEscKeyClick = (event: KeyboardEvent) => {
-    if (event.key === KeyTypes.Escape && this.props.isOpen) {
-      this.props.onClose?.(event);
-    }
-  };
-
-  toggleSiblingsFromScreenReaders = (hide: boolean) => {
-    const { appendTo } = this.props;
-    const target: HTMLElement = this.getElement(appendTo);
-    const bodyChildren = target.children;
-    for (const child of Array.from(bodyChildren)) {
-      if (child !== this.state.container) {
-        hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
-      }
-    }
-  };
-
-  getElement = (appendTo: HTMLElement | (() => HTMLElement)) => {
-    if (typeof appendTo === 'function') {
-      return appendTo();
-    }
-    return appendTo || document.body;
-  };
-
-  componentDidMount() {
-    const container = document.createElement('div');
-    const target: HTMLElement = this.getElement(this.props.appendTo);
-    this.setState({ container });
-    target.appendChild(container);
-    target.addEventListener('keydown', this.handleEscKeyClick, false);
-
-    if (this.props.isOpen) {
-      target.classList.add(css(styles.backdropOpen));
-    } else {
-      target.classList.remove(css(styles.backdropOpen));
-    }
+  if (!productName && !ariaLabel) {
+    // eslint-disable-next-line no-console
+    console.error('AboutModal:', 'Either productName or ariaLabel is required for component to be accessible');
   }
 
-  componentDidUpdate() {
-    const target: HTMLElement = this.getElement(this.props.appendTo);
-    if (this.props.isOpen) {
-      target.classList.add(css(styles.backdropOpen));
-      this.toggleSiblingsFromScreenReaders(true);
-    } else {
-      target.classList.remove(css(styles.backdropOpen));
-      this.toggleSiblingsFromScreenReaders(false);
-    }
+  if (!isOpen) {
+    return null;
   }
-
-  componentWillUnmount() {
-    const target: HTMLElement = this.getElement(this.props.appendTo);
-    if (this.state.container) {
-      target.removeChild(this.state.container);
-    }
-    target.removeEventListener('keydown', this.handleEscKeyClick, false);
-    target.classList.remove(css(styles.backdropOpen));
-  }
-
-  render() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { appendTo, ...props } = this.props;
-    const { container } = this.state;
-
-    if (!canUseDOM || !container) {
-      return null;
-    }
-
-    return ReactDOM.createPortal(
-      <AboutModalContainer
-        aboutModalBoxHeaderId={this.ariaLabelledBy}
-        aboutModalBoxContentId={this.ariaDescribedBy}
-        {...props}
-      />,
-      container
-    ) as React.ReactElement;
-  }
-}
+  return (
+    <GenerateId prefix="pf-about-modal-title-">
+      {ariaLabelledBy => (
+        <Modal
+          isOpen={isOpen}
+          variant={ModalVariant.large}
+          {...(productName && {'aria-labelledby': ariaLabelledBy})}
+          aria-label={ariaLabel}
+          onEscapePress={onClose}
+          showClose={false}
+          appendTo={appendTo}
+          disableFocusTrap={disableFocusTrap}
+          hasNoBodyWrapper
+        >
+          <AboutModalBox className={css(className)}>
+            <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
+            <AboutModalBoxCloseButton aria-label={closeButtonAriaLabel} onClose={onClose} />
+            {productName && <AboutModalBoxHeader id={ariaLabelledBy} productName={productName} />}
+            <AboutModalBoxContent
+              trademark={trademark}
+              hasNoContentContainer={hasNoContentContainer}
+              {...props}
+            >
+              {children}
+            </AboutModalBoxContent>
+            <AboutModalBoxHero backgroundImageSrc={backgroundImageSrc} />
+          </AboutModalBox>
+        </Modal>
+      )}
+    </GenerateId>
+  );
+};
+AboutModal.displayName = 'AboutModal';

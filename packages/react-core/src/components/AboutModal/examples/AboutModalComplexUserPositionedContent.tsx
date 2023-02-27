@@ -20,7 +20,7 @@ export const AboutModalComplexUserPositionedContent: React.FunctionComponent = (
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"
-        noAboutModalBoxContentContainer={true}
+        hasNoContentContainer={true}
         productName="Product Name"
       >
         <TextContent id="test1" className="pf-u-py-xl">
