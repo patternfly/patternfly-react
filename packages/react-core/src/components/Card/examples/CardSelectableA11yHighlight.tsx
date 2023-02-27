@@ -20,7 +20,7 @@ export const CardSelectableA11yHighlight: React.FunctionComponent = () => {
     setSelected(newSelected);
   };
 
-  const onChange = (labelledById: string, _event: React.FormEvent<HTMLInputElement>) => {
+  const onChange = (_event: React.FormEvent<HTMLInputElement>, labelledById: string) => {
     const newSelected = labelledById === selected ? null : labelledById;
     setSelected(newSelected);
   };

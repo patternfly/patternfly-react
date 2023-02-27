@@ -1133,7 +1133,7 @@ class PrimaryDetailCardView extends React.Component {
       });
     };
 
-    this.onChange = (labelledById, _event) => {
+    this.onChange = (_event, labelledById) => {
       if (labelledById === this.state.activeCard) {
         return;
       }
