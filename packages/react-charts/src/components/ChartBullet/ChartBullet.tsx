@@ -582,6 +582,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   // Bullet group title
   const bulletGroupTitle = React.cloneElement(groupTitleComponent, {
     height,
+    ...(name && { name: `${name}-${(groupTitleComponent as any).type.displayName}` }),
     standalone: false,
     subTitle: groupSubTitle,
     title: groupTitle,
@@ -594,6 +595,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     height,
     horizontal,
     legendPosition,
+    ...(name && { name: `${name}-${(titleComponent as any).type.displayName}` }),
     padding,
     standalone: false,
     subTitle,

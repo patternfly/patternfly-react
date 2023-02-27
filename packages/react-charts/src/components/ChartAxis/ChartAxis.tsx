@@ -448,6 +448,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
 }
 
 export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
+  axisLabelComponent = <ChartLabel />,
   containerComponent = <ChartContainer />,
   name,
   showGrid = false,
@@ -465,6 +466,14 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
     ...containerComponent.props
   });
 
+  const getAxisLabelComponent = () =>
+    React.cloneElement(axisLabelComponent, {
+      ...(name && {
+        id: () => `${name}-${(axisLabelComponent as any).type.displayName}`
+      }),
+      ...axisLabelComponent.props
+    });
+
   const getTickLabelComponent = () =>
     React.cloneElement(tickLabelComponent, {
       ...(name && {
@@ -476,7 +485,9 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   // Note: containerComponent is required for theme
   return (
     <VictoryAxis
+      axisLabelComponent={getAxisLabelComponent()}
       containerComponent={container}
+      name={name}
       theme={showGrid ? getAxisTheme(themeColor) : theme}
       tickLabelComponent={getTickLabelComponent()}
       {...rest}
