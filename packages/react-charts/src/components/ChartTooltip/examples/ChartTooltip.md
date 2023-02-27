@@ -608,16 +608,16 @@ class TooltipPieChart extends React.Component {
     super(props);
 
     // Custom legend label component
-    // Note: Tooltip outputs a div tag, so we wrap that using a foreignObject
-    this.LegendLabel = ({datum, x, y, ...rest}) => (
-      <g>
-        <foreignObject height="100%" width="100%" x={x - 10} y={y - 12}>
-          <Tooltip content={datum.name} enableFlip >
-            <ChartLabel {...rest} />
-          </Tooltip>
-        </foreignObject>
-      </g>
-    );
+    // Note: Tooltip wraps children with a div tag, so we add a reference to ChartLabel instead
+    this.LegendLabel = ({datum, ...rest}) => {
+      const ref = React.createRef();
+      return (
+        <g ref={ref}>
+          <ChartLabel {...rest} />
+          <Tooltip content={datum.name} enableFlip reference={ref} />
+        </g>
+      );
+    }
 
     // Custom legend component
     this.getLegend = (legendData) => (
@@ -767,7 +767,7 @@ This demonstrates an alternate way of applying tooltips using CSS overflow inste
 
 ```js
 import React from 'react';
-import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div className="ws-react-charts-tooltip-overflow">
   <div style={{ height: '100px', width: '400px' }}>
@@ -790,11 +790,9 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, Cha
           { name: 'Cats', x: '2018', y: 6 }
         ]}
       />
+      <ChartLabel text="CPU utilization" dy={120}/>
     </ChartGroup>
   </div>
-  <ChartContainer title="CPU utilization">
-    <ChartLabel text="CPU utilization" dy={15}/>
-  </ChartContainer>
 </div>
 ```
 
