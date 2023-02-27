@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "5.103.74",
+  "version": "5.103.75",
   "publishConfig": {
     "access": "public",
     "tag": "prerelease-v4"
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "4.224.2",
-    "@patternfly/react-charts": "^6.94.18",
+    "@patternfly/react-charts": "^6.94.19",
     "@patternfly/react-code-editor": "^4.82.113",
     "@patternfly/react-core": "^4.276.6",
     "@patternfly/react-icons": "^4.93.6",
