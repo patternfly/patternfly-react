@@ -6,7 +6,7 @@ import { MenuContext } from './MenuContext';
 export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
   /** Items within group */
   children?: React.ReactNode;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Height of the menu content */
   menuHeight?: string;
