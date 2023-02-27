@@ -6,25 +6,40 @@ import topologyStyles from '@patternfly/react-styles/css/components/Topology/top
 import { observer } from '../../mobx-exports';
 import { Node } from '../../types';
 import { WhenStatus } from '../types';
-import { WithSelectionProps } from '../../behavior';
+import { OnSelect } from '../../behavior';
 import { getWhenStatusModifier } from '../utils';
 
 export const DEFAULT_WHEN_SIZE = 12;
 export const DEFAULT_WHEN_OFFSET = 12;
 
-type WhenDecoratorProps = {
-  element: Node;
+interface WhenDecoratorProps {
+  /** Additional classes added to the node */
   className?: string;
+  /** The graph node element to represent */
+  element: Node;
+  /** Offest distance from the start of the node area */
   leftOffset?: number;
+  /** Length of the edge between the when decorator and the node */
   edgeLength?: number;
+  /** Width of the when decorator */
   width?: number;
+  /** Height of the when decorator */
   height?: number;
+  /** Additional classes added to the label */
   nameLabelClass?: string;
+  /** WhenStatus to depict */
   status?: WhenStatus;
+  /** Flag indicating the status indicator */
   showStatusState?: boolean;
+  /** Flag if the tooltip is disabled */
   disableTooltip?: boolean;
+  /** Tooltip to show on decorator hover */
   toolTip?: React.ReactNode;
-} & Partial<WithSelectionProps>;
+  /** Flag if the element selected. Part of WithSelectionProps */
+  selected?: boolean;
+  /** Function to call when the element should become selected (or deselected). Part of WithSelectionProps */
+  onSelect?: OnSelect;
+}
 
 export const WhenDecorator: React.FC<WhenDecoratorProps> = ({
   element,
@@ -36,7 +51,7 @@ export const WhenDecorator: React.FC<WhenDecoratorProps> = ({
   edgeLength = DEFAULT_WHEN_OFFSET,
   toolTip,
   disableTooltip = false
-}) => {
+}: WhenDecoratorProps) => {
   const { height: taskHeight } = element.getBounds();
   const y = taskHeight / 2 - height / 2;
   const startX = -width - leftOffset;

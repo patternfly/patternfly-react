@@ -6,7 +6,7 @@ import { Popover, PopoverProps, Tooltip } from '@patternfly/react-core';
 import { observer } from '../../../mobx-exports';
 import { AnchorEnd, Node, ScaleDetailsLevel } from '../../../types';
 import { RunStatus } from '../../types';
-import { useAnchor, WithContextMenuProps, WithSelectionProps } from '../../../behavior';
+import { OnSelect, useAnchor } from '../../../behavior';
 import { truncateMiddle } from '../../../utils/truncate-middle';
 import { createSvgIdUrl, getNodeScaleTranslation, useCombineRefs, useHover, useSize } from '../../../utils';
 import { getRunStatusModifier, nonShadowModifiers } from '../../utils';
@@ -26,46 +26,88 @@ import { useScaleNode } from '../../../hooks';
 const STATUS_ICON_SIZE = 16;
 const SCALE_UP_TIME = 200;
 
-export type TaskNodeProps = {
+export interface TaskNodeProps {
+  /** Forwarded ref */
+  innerRef?: React.Ref<SVGGElement>;
+  /** Additional content added to the node */
   children?: React.ReactNode;
-  element: Node;
+  /** Additional classes added to the node */
   className?: string;
+  /** The graph node element to represent */
+  element: Node;
+  /** Padding to use before and after contents */
   paddingX?: number;
+  /** Padding to use above and below contents */
   paddingY?: number;
+  /** Additional classes added to the label */
   nameLabelClass?: string;
+  /** RunStatus to depict */
   status?: RunStatus;
+  /** Size of the status icon */
   statusIconSize?: number;
+  /** Flag indicating the status indicator */
   showStatusState?: boolean;
-  scaleNode?: boolean; // Whether or not to scale the node, best on hover when details are hidden
-  hideDetailsAtMedium?: boolean; // Whether or not to hide details at medium scale
-  hiddenDetailsShownStatuses?: RunStatus[]; // Statuses to show at when details are hidden
+  /** Flag indicating the node should be scaled, best on hover of the node at lowest scale level */
+  scaleNode?: boolean;
+  /** Flag to hide details at medium scale */
+  hideDetailsAtMedium?: boolean;
+  /** Statuses to show at when details are hidden */
+  hiddenDetailsShownStatuses?: RunStatus[];
+  /** Text for the label's badge */
   badge?: string;
+  /** Color to use for the label's badge background */
   badgeColor?: string;
+  /** Color to use for the label's badge text */
   badgeTextColor?: string;
+  /** Color to use for the label's badge border */
   badgeBorderColor?: string;
+  /** Additional classes to use for the label's badge */
   badgeClassName?: string;
   /** @deprecated Use badgePopoverParams instead */
   badgePopoverProps?: string;
-  badgeTooltip?: React.ReactNode; // Set to use a tooltip on the badge, takes precedence over the badgePopoverParams
-  badgePopoverParams?: PopoverProps; // Set to use a popover on the badge, ignored if the badgeTooltip parameter is set
-  taskIconClass?: string; // Icon to show for the task
+  /** Set to use a tooltip on the badge, takes precedence over the badgePopoverParams */
+  badgeTooltip?: React.ReactNode;
+  /** Set to use a popover on the badge, ignored if the badgeTooltip parameter is set */
+  badgePopoverParams?: PopoverProps;
+  /** Icon to show for the task */
+  taskIconClass?: string;
+  /** Element to show for the task icon */
   taskIcon?: React.ReactNode;
+  /** Set to use a tooltip on the task icon */
   taskIconTooltip?: React.ReactNode;
+  /** Padding to use around the task icon */
   taskIconPadding?: number;
+  /** Flag if the user is hovering on the node */
   hover?: boolean;
+  /** The maximum length of the label before truncation */
   truncateLength?: number;
+  /** Flag if the tooltip is disabled */
   disableTooltip?: boolean;
+  /** Tooltip to show on node hover */
   toolTip?: React.ReactNode;
+  /** Flag if the node has a 'when expression' */
   hasWhenExpression?: boolean;
+  /** Size of the when expression indicator */
   whenSize?: number;
+  /** Distance from the when expression indicator to the node */
   whenOffset?: number;
+  /** Icon to use for the action menu */
   actionIcon?: React.ReactElement;
+  /** Additional classes to use for the action icon */
   actionIconClassName?: string;
+  /** Callback when the action icon is clicked */
   onActionIconClick?: (e: React.MouseEvent) => void;
-} & Partial<WithSelectionProps> &
-  Partial<WithContextMenuProps>;
+  /** Flag if the element is selected. Part of WithSelectionProps */
+  selected?: boolean;
+  /** Function to call when the element should become selected (or deselected). Part of WithSelectionProps */
+  onSelect?: OnSelect;
+  /** Function to call to show a context menu for the node  */
+  onContextMenu?: (e: React.MouseEvent) => void;
+  /** Flag indicating that the context menu for the node is currently open  */
+  contextMenuOpen?: boolean;
+}
 
-const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> = ({
+export const TaskNode: React.FC<TaskNodeProps> = ({
   innerRef,
   element,
   className,
@@ -104,7 +146,7 @@ const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> =
   actionIconClassName,
   onActionIconClick,
   children
-}) => {
+}: TaskNodeProps & { innerRef?: React.Ref<SVGGElement> }) => {
   const [hovered, innerHoverRef] = useHover();
   const hoverRef = useCombineRefs(innerRef, innerHoverRef);
   const isHover = hover !== undefined ? hover : hovered;
@@ -440,6 +482,7 @@ const TaskNode: React.FC<TaskNodeProps & { innerRef: React.Ref<SVGGElement> }> =
     </g>
   );
 };
+TaskNode.displayName = 'TaskNode';
 
 export default observer(
   React.forwardRef((props: TaskNodeProps, ref: React.Ref<SVGGElement>) => <TaskNode innerRef={ref} {...props} />)
