@@ -12,7 +12,7 @@ export const SliderContinuous: React.FunctionComponent = () => {
         id="thumb-has-tooltip"
         label="hasTooltipOverThumb"
         isChecked={hasTooltipOverThumb}
-        onChange={setHasTooltipOverThumb}
+        onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => setHasTooltipOverThumb(checked)}
         style={{ marginBottom: 20 }}
       />
       <Text component={TextVariants.h3}>Slider Value is: {value}</Text>

@@ -12,7 +12,7 @@ export const TextAreaReadOnly: React.FunctionComponent = () => {
           key="isPlain"
           label="Plain read only variant"
           isChecked={isPlainChecked}
-          onChange={checked => setIsPlainChecked(checked)}
+          onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => setIsPlainChecked(checked)}
         />
       </div>
       <TextArea

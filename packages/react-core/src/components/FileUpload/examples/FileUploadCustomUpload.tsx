@@ -89,7 +89,7 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
           label={stateKey}
           aria-label={stateKey}
           isChecked={checkedState[index]}
-          onChange={checked => handleOnChange(checked, stateKey, index)}
+          onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => handleOnChange(checked, stateKey, index)}
         />
       ))}
       <br />

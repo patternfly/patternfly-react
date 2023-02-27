@@ -264,7 +264,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
       <Checkbox
         label="Set max menu height"
         isChecked={withMaxMenuHeight}
-        onChange={onToggleMaxMenuHeight}
+        onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => onToggleMaxMenuHeight(checked)}
         aria-label="Set max menu height checkbox"
         id="toggle-max-menu-height"
         name="toggle-max-menu-height"

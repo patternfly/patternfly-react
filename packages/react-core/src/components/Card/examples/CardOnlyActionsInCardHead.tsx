@@ -54,7 +54,7 @@ export const CardOnlyActionsInCardHead: React.FunctionComponent = () => {
           />
           <Checkbox
             isChecked={isChecked}
-            onChange={onClick}
+            onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => onClick(checked)}
             aria-label="card checkbox example"
             id="check-3"
             name="check3"

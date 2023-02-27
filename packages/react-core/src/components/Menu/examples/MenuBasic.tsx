@@ -40,7 +40,7 @@ export const MenuBasic: React.FunctionComponent = () => {
         <Checkbox
           label="Plain menu"
           isChecked={isPlain}
-          onChange={togglePlain}
+          onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => togglePlain(checked)}
           aria-label="plain menu checkbox"
           id="toggle-plain"
           name="toggle-plain"

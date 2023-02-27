@@ -117,7 +117,7 @@ class SingleSelectInput extends React.Component {
         <Checkbox
           label="isDisabled"
           isChecked={this.state.isDisabled}
-          onChange={this.toggleDisabled}
+          onChange={(_event, checked) => this.toggleDisabled(checked)} 
           aria-label="disabled checkbox"
           id="toggle-disabled"
           name="toggle-disabled"
@@ -133,7 +133,7 @@ class SingleSelectInput extends React.Component {
         <Checkbox
           label="Show icon"
           isChecked={isToggleIcon}
-          onChange={this.setIcon}
+          onChange={(_event, checked) => this.setIcon(checked)} 
           aria-label="show icon checkbox"
           id="toggle-icon"
           name="toggle-icon"
@@ -843,7 +843,7 @@ class FilteringSingleSelectInput extends React.Component {
         <Checkbox
           label="isInputValuePersisted"
           isChecked={isInputValuePersisted}
-          onChange={this.toggleInputValuePersisted}
+          onChange={(_event, checked) => this.toggleInputValuePersisted(checked)} 
           aria-label="toggle input value persisted"
           id="toggle-inline-filter-input-value-persisted"
           name="toggle-inline-filter-input-value-persisted"
@@ -851,7 +851,7 @@ class FilteringSingleSelectInput extends React.Component {
         <Checkbox
           label="isInputFilterPersisted"
           isChecked={isInputFilterPersisted}
-          onChange={this.toggleInputFilterPersisted}
+          onChange={(_event, checked) => this.toggleInputFilterPersisted(checked)} 
           aria-label="toggle input filter persisted"
           id="toggle-inline-filter-input-filter-persisted"
           name="toggle-inline-filter-input-filter-persisted"
@@ -859,7 +859,7 @@ class FilteringSingleSelectInput extends React.Component {
         <Checkbox
           label="isCreatable"
           isChecked={this.state.isCreatable}
-          onChange={this.toggleCreatable}
+          onChange={(_event, checked) => this.toggleCreatable(checked)} 
           aria-label="toggle creatable checkbox"
           id="toggle-inline-filter-creatable-typeahead"
           name="toggle-inline-filter-creatable-typeahead"
@@ -1359,7 +1359,7 @@ class TypeaheadSelectInput extends React.Component {
         <Checkbox
           label="isDisabled"
           isChecked={this.state.isDisabled}
-          onChange={this.toggleDisabled}
+          onChange={(_event, checked) => this.toggleDisabled(checked)} 
           aria-label="toggle disabled checkbox"
           id="toggle-disabled-typeahead"
           name="toggle-disabled-typeahead"
@@ -1367,7 +1367,7 @@ class TypeaheadSelectInput extends React.Component {
         <Checkbox
           label="isCreatable"
           isChecked={this.state.isCreatable}
-          onChange={this.toggleCreatable}
+          onChange={(_event, checked) => this.toggleCreatable(checked)} 
           aria-label="toggle creatable checkbox"
           id="toggle-creatable-typeahead"
           name="toggle-creatable-typeahead"
@@ -1375,7 +1375,7 @@ class TypeaheadSelectInput extends React.Component {
         <Checkbox
           label="isCreateOptionOnTop"
           isChecked={this.state.isCreateOptionOnTop}
-          onChange={this.toggleCreateOptionOnTop}
+          onChange={(_event, checked) => this.toggleCreateOptionOnTop(checked)} 
           aria-label="toggle createOptionOnTop checkbox"
           id="toggle-create-option-on-top-typeahead"
           name="toggle-create-option-on-top-typeahead"
@@ -1383,7 +1383,7 @@ class TypeaheadSelectInput extends React.Component {
         <Checkbox
           label="onCreateOption"
           isChecked={this.state.hasOnCreateOption}
-          onChange={this.toggleCreateNew}
+          onChange={(_event, checked) => this.toggleCreateNew(checked)} 
           aria-label="toggle new checkbox"
           id="toggle-new-typeahead"
           name="toggle-new-typeahead"
@@ -1391,7 +1391,7 @@ class TypeaheadSelectInput extends React.Component {
         <Checkbox
           label="isInputValuePersisted"
           isChecked={isInputValuePersisted}
-          onChange={this.toggleInputValuePersisted}
+          onChange={(_event, checked) => this.toggleInputValuePersisted(checked)} 
           aria-label="toggle input value persisted"
           id="toggle-input-value-persisted"
           name="toggle-input-value-persisted"
@@ -1399,7 +1399,7 @@ class TypeaheadSelectInput extends React.Component {
         <Checkbox
           label="isInputFilterPersisted"
           isChecked={isInputFilterPersisted}
-          onChange={this.toggleInputFilterPersisted}
+          onChange={(_event, checked) => this.toggleInputFilterPersisted(checked)} 
           aria-label="toggle input filter persisted"
           id="toggle-input-filter-persisted"
           name="toggle-input-filter-persisted"
@@ -1407,7 +1407,7 @@ class TypeaheadSelectInput extends React.Component {
         <Checkbox
           label="shouldResetOnSelect"
           isChecked={this.state.resetOnSelect}
-          onChange={this.toggleResetOnSelect}
+          onChange={(_event, checked) => this.toggleResetOnSelect(checked)} 
           aria-label="toggle reset checkbox"
           id="toggle-reset-typeahead"
           name="toggle-reset-typeahead"
@@ -1529,7 +1529,7 @@ class GroupedTypeaheadSelectInput extends React.Component {
         <Checkbox
           label="isCreatable"
           isChecked={this.state.isCreatable}
-          onChange={this.toggleCreatable}
+          onChange={(_event, checked) => this.toggleCreatable(checked)} 
           aria-label="toggle creatable checkbox"
           id="toggle-creatable-grouped-typeahead"
           name="toggle-creatable-grouped-typeahead"
@@ -1537,7 +1537,7 @@ class GroupedTypeaheadSelectInput extends React.Component {
         <Checkbox
           label="onCreateOption"
           isChecked={this.state.hasOnCreateOption}
-          onChange={this.toggleCreateNew}
+          onChange={(_event, checked) => this.toggleCreateNew(checked)} 
           aria-label="toggle new checkbox"
           id="toggle-new-grouped-typeahead"
           name="toggle-new-grouped-typeahead"
@@ -1756,7 +1756,7 @@ class MultiTypeaheadSelectInput extends React.Component {
         <Checkbox
           label="isCreatable"
           isChecked={this.state.isCreatable}
-          onChange={this.toggleCreatable}
+          onChange={(_event, checked) => this.toggleCreatable(checked)} 
           aria-label="toggle creatable checkbox"
           id="toggle-creatable-typeahead-multi"
           name="toggle-creatable-typeahead-multi"
@@ -1764,7 +1764,7 @@ class MultiTypeaheadSelectInput extends React.Component {
         <Checkbox
           label="onCreateOption"
           isChecked={this.state.hasOnCreateOption}
-          onChange={this.toggleCreateNew}
+          onChange={(_event, checked) => this.toggleCreateNew(checked)} 
           aria-label="toggle new checkbox"
           id="toggle-new-typeahead-multi"
           name="toggle-new-typeahead-multi"
@@ -1780,7 +1780,7 @@ class MultiTypeaheadSelectInput extends React.Component {
         <Checkbox
           label="shouldResetOnSelect"
           isChecked={this.state.resetOnSelect}
-          onChange={this.toggleResetOnSelect}
+          onChange={(_event, checked) => this.toggleResetOnSelect(checked)} 
           aria-label="toggle multi reset checkbox"
           id="toggle-reset-multi-typeahead"
           name="toggle-reset-multi-typeahead"
@@ -2228,7 +2228,7 @@ class SingleSelectInput extends React.Component {
         <Checkbox
           label="isDisabled"
           isChecked={this.state.isDisabled}
-          onChange={this.toggleDisabled}
+          onChange={(_event, checked) => this.toggleDisabled(checked)} 
           aria-label="disabled checkbox panel"
           id="toggle-disabled-panel"
           name="toggle-disabled-panel"

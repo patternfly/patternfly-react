@@ -19,7 +19,7 @@ export const ToolbarSticky: React.FunctionComponent = () => {
               <Checkbox
                 label="Show only even number items"
                 isChecked={showEvenOnly}
-                onChange={setShowEvenOnly}
+                onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => setShowEvenOnly(checked)}
                 id="showOnlyEvenCheckbox"
               />
             </ToolbarItem>
@@ -31,7 +31,7 @@ export const ToolbarSticky: React.FunctionComponent = () => {
           ))}
         </ul>
       </div>
-      <Checkbox label="Is toolbar sticky" isChecked={isSticky} onChange={setIsSticky} id="isStickyCheckbox" />
+      <Checkbox label="Is toolbar sticky" isChecked={isSticky} onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => setIsSticky(checked)} id="isStickyCheckbox" />
     </React.Fragment>
   );
 };

@@ -7,7 +7,7 @@ export const CheckboxControlled: React.FunctionComponent = () => {
   const [isChecked3, setIsChecked3] = React.useState<boolean>(false);
   const [isChecked4, setIsChecked4] = React.useState<boolean>(false);
 
-  const handleChange = (checked: boolean, event: React.FormEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     const target = event.currentTarget;
     const name = target.name;
 

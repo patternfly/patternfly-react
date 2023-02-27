@@ -51,7 +51,7 @@ export const TabsDefault: React.FunctionComponent = () => {
         <Checkbox
           label="isBox"
           isChecked={isBox}
-          onChange={toggleBox}
+          onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => toggleBox(checked)}
           aria-label="show box variation checkbox"
           id="toggle-box-default"
           name="toggle-box-default"

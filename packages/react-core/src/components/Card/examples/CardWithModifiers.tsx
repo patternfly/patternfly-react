@@ -14,7 +14,7 @@ export const CardWithModifiers: React.FunctionComponent = () => {
             key={mod}
             label={mod}
             isChecked={modifiers[mod]}
-            onChange={checked => {
+            onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) =>  {
               modifiers[mod] = checked;
               setModifiers({ ...modifiers });
             }}

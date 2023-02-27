@@ -192,11 +192,11 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.handleFirstSwitchChange = (firstSwitchChecked, event) => {
+    this.handleFirstSwitchChange = (event, firstSwitchChecked) => {
       this.setState({ firstSwitchChecked });
     };
 
-    this.handleSecondSwitchChange = (secondSwitchChecked, event) => {
+    this.handleSecondSwitchChange = (event, secondSwitchChecked) => {
       this.setState({ secondSwitchChecked });
     };
 
