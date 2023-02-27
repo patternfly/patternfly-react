@@ -265,7 +265,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                     isReadOnly={isReadOnly}
                     isCode={isCode}
                     id={`content-${id}`}
-                    onChange={this.updateText}
+                    onChange={(event, text) => this.updateText(text, event)}
                   >
                     {this.state.text}
                   </ClipboardCopyExpanded>
