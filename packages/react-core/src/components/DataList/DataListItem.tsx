@@ -60,13 +60,13 @@ export class DataListItem extends React.Component<DataListItemProps> {
                 target = target.parentNode;
               }
             }
-            updateSelectedDataListItem(id);
+            updateSelectedDataListItem(event, id);
           };
 
           const onKeyDown = (event: React.KeyboardEvent) => {
             if ([KeyTypes.Enter, KeyTypes.Space].includes(event.key)) {
               event.preventDefault();
-              updateSelectedDataListItem(id);
+              updateSelectedDataListItem(event, id);
             }
           };
 
@@ -96,7 +96,7 @@ export class DataListItem extends React.Component<DataListItemProps> {
                   className="pf-screen-reader"
                   type="radio"
                   checked={isSelected}
-                  onChange={(event) => selectableRow.onChange(id, event)}
+                  onChange={(event) => selectableRow.onChange(event, id)}
                   tabIndex={-1}
                   {...selectableInputAriaProps}
                 />

@@ -29,7 +29,7 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
     };
   }
 
-  onSelectDataListItem = (id: string) => {
+  onSelectDataListItem = (_event: React.MouseEvent | React.KeyboardEvent, id: string) => {
     this.setState({ selectedDataListItemId: id });
   };
 
@@ -38,7 +38,7 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
   };
 
   onSelect = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isOpen: !prevState.isOpen
     }));
   };

@@ -22,7 +22,7 @@ export enum DataListWrapModifier {
 
 export interface SelectableRowObject {
   /** Callback that executes when the screen reader accessible element receives a change event */
-  onChange: (id: string, event: React.FormEvent<HTMLInputElement>) => void;
+  onChange: (event: React.FormEvent<HTMLInputElement>, id: string) => void;
 }
 
 export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, 'ref'> {
@@ -33,7 +33,7 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   /** Adds accessible text to the DataList list */
   'aria-label': string;
   /** Optional callback to make DataList selectable, fired when DataListItem selected */
-  onSelectDataListItem?: (id: string) => void;
+  onSelectDataListItem?: (event: React.MouseEvent | React.KeyboardEvent, id: string) => void;
   /** Id of DataList item currently selected */
   selectedDataListItemId?: string;
   /** Flag indicating if DataList should have compact styling */
@@ -49,7 +49,7 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
 interface DataListContextProps {
   isSelectable: boolean;
   selectedDataListItemId: string;
-  updateSelectedDataListItem: (id: string) => void;
+  updateSelectedDataListItem: (event: React.MouseEvent | React.KeyboardEvent, id: string) => void;
   selectableRow?: SelectableRowObject;
 }
 
@@ -73,7 +73,7 @@ export class DataList extends React.Component<DataListProps> {
     super(props);
   }
 
-  getIndex = (id: string) => Array.from(this.ref.current.children).findIndex(item => item.id === id);
+  getIndex = (id: string) => Array.from(this.ref.current.children).findIndex((item) => item.id === id);
 
   render() {
     const {
@@ -89,8 +89,8 @@ export class DataList extends React.Component<DataListProps> {
     } = this.props;
     const isSelectable = onSelectDataListItem !== undefined;
 
-    const updateSelectedDataListItem = (id: string) => {
-      onSelectDataListItem(id);
+    const updateSelectedDataListItem = (event: React.MouseEvent | React.KeyboardEvent, id: string) => {
+      onSelectDataListItem(event, id);
     };
 
     return (
