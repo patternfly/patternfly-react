@@ -81,7 +81,7 @@
     "lint": "node --max-old-space-size=4096 node_modules/.bin/eslint --ext js,jsx,ts,tsx --cache",
     "lint:all": "yarn lint:md && yarn lint:versions && yarn lint:ts",
     "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache",
-    "lint:ts": "yarn lint packages",
+    "lint:ts": "yarn lint packages/*/src",
     "lint:versions": "node scripts/verifyPatternflyVersions.js",
     "prepare": "ts-patch install -s",
     "serve:docs": "yarn workspace @patternfly/react-docs serve",
