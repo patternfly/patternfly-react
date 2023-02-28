@@ -10,6 +10,7 @@ import './MenuToggle.css'
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 ## Examples
 
@@ -71,6 +72,7 @@ import { MenuToggle } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 <React.Fragment>
+  <MenuToggle icon={<CogIcon />} variant="primary">Icon</MenuToggle>{' '}
   <MenuToggle icon={<CogIcon />} variant="secondary">Icon</MenuToggle>{' '}
   <MenuToggle icon={<CogIcon />} variant="secondary" isDisabled>Icon</MenuToggle>
 </React.Fragment>
@@ -105,9 +107,6 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 <React.Fragment>
   <MenuToggle variant="primary">Collapsed</MenuToggle>{' '}
-  <MenuToggle variant="primary" icon={<CogIcon />}>
-    Icon
-  </MenuToggle>{' '}
   <MenuToggle variant="primary" isExpanded>
     Expanded
   </MenuToggle>{' '}
@@ -132,10 +131,10 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 <React.Fragment>
   <MenuToggle variant="plain" aria-label="plain kebab">
     <EllipsisVIcon />
-  </MenuToggle>
+  </MenuToggle>{' '}
   <MenuToggle variant="plain" isExpanded aria-label="plain expanded kebab">
     <EllipsisVIcon />
-  </MenuToggle>
+  </MenuToggle>{' '}
   <MenuToggle variant="plain" isDisabled aria-label="disabled kebab">
     <EllipsisVIcon />
   </MenuToggle>
@@ -152,11 +151,10 @@ import { MenuToggle } from '@patternfly/react-core';
 <React.Fragment>
   <MenuToggle variant="plainText" isDisabled aria-label="Disabled plain menu toggle">
     Disabled
-  </MenuToggle>
-  &nbsp;
+  </MenuToggle>{' '}
   <MenuToggle variant="plainText" aria-label="Plain menu toggle">
     Custom text
-  </MenuToggle>
+  </MenuToggle>{' '}
   <MenuToggle variant="plainText" isExpanded aria-label="Expanded plain menu toggle">
     Custom text (expanded)
   </MenuToggle>
@@ -169,14 +167,14 @@ To add an action button or other control to a menu toggle, use a split button. A
 
 The following example shows a split button with a `<MenuToggleCheckbox>`.
 
+Variant styling can be applied to split button toggles to adjust their appearance for different scenarios. Both "primary" and "secondary" variants can be used with split button toggles.
+
 ```ts file='MenuToggleSplitButtonCheckbox.tsx'
 ```
 
 ### Split button toggle with text label
 
 To display text in a split button menu toggle, add a label to the `items` property of `splitButtonOptions`.  
-
-Variant styling can be applied to split button toggles to adjust their appearance for different scenarios. Both "primary" and "secondary" variants can be used with split button toggles.
 
 ```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
 ```
@@ -224,4 +222,13 @@ const fullWidth: React.FunctionComponent = () => {
     </MenuToggle>
   );
 }
+```
+
+### Typeahead toggle
+
+To create a typeahead toggle, pass in `variant="typeahead"` to the `<MenuToggle>`. Then, pass a `<TextInputGroup>` component as a child of the `<MenuToggle>`.
+
+To create a multiple typeahead toggle, pass a `<TextInputGroup>` component implemented like the [text input group's filter example](/components/text-input-group#filters) as a child of `<MenuToggle>`.
+
+```ts file='MenuToggleTypeahead.tsx'
 ```
