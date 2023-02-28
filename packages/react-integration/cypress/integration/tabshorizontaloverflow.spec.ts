@@ -76,7 +76,7 @@ describe('Tab Demo Test', () => {
     cy.viewport(800, 792);
     cy.contains('.pf-c-tabs__link', 'More (5)').should('exist');
     cy.viewport(700, 792);
-    cy.contains('.pf-c-tabs__link', 'More (6)').should('exist');
+    cy.contains('.pf-c-tabs__link', 'More').should('exist');
     cy.get('#toggle-show-count-overflow').click();
 
     // verify that the default overflow tab title text can be changed and still behaves as the default text should

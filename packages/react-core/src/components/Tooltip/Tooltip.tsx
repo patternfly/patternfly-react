@@ -35,23 +35,24 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
    */
   aria?: 'describedby' | 'labelledby' | 'none';
   /**
-   * Determines whether the tooltip is an aria-live region. If the reference prop is passed in the
+   * Determines whether the tooltip is an aria-live region. If the triggerRef prop is passed in the
    * default behavior is 'polite' in order to ensure the tooltip contents is announced to
    * assistive technologies. Otherwise the default behavior is 'off'.
    */
   'aria-live'?: 'off' | 'polite';
   /**
-   * The reference element to which the Tooltip is relatively placed to.
-   * If you cannot wrap the reference with the Tooltip, you can use the reference prop instead.
+   * The trigger reference element to which the Tooltip is relatively placed to.
+   * If you cannot wrap the element with the Tooltip, you can use the triggerRef prop instead.
    * Usage: <Tooltip><Button>Reference</Button></Tooltip>
    */
   children?: ReactElement<any>;
   /**
-   * The reference element to which the Tooltip is relatively placed to.
-   * If you can wrap the reference with the Tooltip, you can use the children prop instead.
-   * Usage: <Tooltip reference={() => document.getElementById('reference-element')} />
+   * The trigger reference element to which the Tooltip is relatively placed to.
+   * If you can wrap the element with the Tooltip, you can use the children prop instead, or both props together.
+   * When passed along with the trigger prop, the div element that wraps the trigger will be removed.
+   * Usage: <Tooltip triggerRef={() => document.getElementById('reference-element')} />
    */
-  reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
+  triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** Tooltip additional class */
   className?: string;
   /** Tooltip content */
@@ -158,8 +159,8 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   id = `pf-tooltip-${pfTooltipIdCounter++}`,
   children,
   animationDuration = 300,
-  reference,
-  'aria-live': ariaLive = reference ? 'polite' : 'off',
+  triggerRef,
+  'aria-live': ariaLive = triggerRef ? 'polite' : 'off',
   onTooltipHidden = () => {},
   ...rest
 }: TooltipProps) => {
@@ -174,11 +175,12 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
+  const popperRef = React.createRef<HTMLDivElement>();
 
   const prevExitDelayRef = React.useRef<number>();
 
   const clearTimeouts = (timeoutRefs: React.RefObject<any>[]) => {
-    timeoutRefs.forEach(ref => {
+    timeoutRefs.forEach((ref) => {
       if (ref.current) {
         clearTimeout(ref.current);
       }
@@ -274,6 +276,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
         opacity,
         transition: getOpacityTransition(animationDuration)
       }}
+      ref={popperRef}
       {...rest}
     >
       <TooltipArrow />
@@ -315,8 +318,9 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   return (
     <Popper
       trigger={aria !== 'none' && visible ? addAriaToTrigger() : children}
-      reference={reference}
+      triggerRef={triggerRef}
       popper={content}
+      popperRef={popperRef}
       popperMatchesTriggerWidth={false}
       appendTo={appendTo}
       isVisible={visible}

@@ -33,16 +33,15 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
   const menuToggleRef = React.useRef<MenuToggleElement>({} as MenuToggleElement);
   const textInputRef = React.useRef<HTMLInputElement>();
   const menuRef = React.useRef<HTMLDivElement>();
+  const toggleRef = React.useRef<MenuToggleElement>(null);
 
   React.useEffect(() => {
     let newMenuItems: MenuItemProps[] = intitalMenuItems;
 
     // Filter menu items based on the text input value when one exists
     if (inputValue) {
-      newMenuItems = intitalMenuItems.filter(menuItem =>
-        String(menuItem.children)
-          .toLowerCase()
-          .includes(inputValue.toLowerCase())
+      newMenuItems = intitalMenuItems.filter((menuItem) =>
+        String(menuItem.children).toLowerCase().includes(inputValue.toLowerCase())
       );
 
       // When no options are found after filtering, display 'No results found'.
@@ -86,13 +85,13 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
       }
 
       setFocusedItemIndex(indexToFocus);
-      const focusedItem = menuItems.filter(item => !item.isDisabled)[indexToFocus];
+      const focusedItem = menuItems.filter((item) => !item.isDisabled)[indexToFocus];
       setActiveItem(`composable-multi-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
     }
   };
 
   const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const enabledMenuItems = menuItems.filter(menuItem => !menuItem.isDisabled);
+    const enabledMenuItems = menuItems.filter((menuItem) => !menuItem.isDisabled);
     const [firstMenuItem] = enabledMenuItems;
     const focusedItem = focusedItemIndex ? enabledMenuItems[focusedItemIndex] : firstMenuItem;
 
@@ -100,7 +99,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
       // Select the first available option
       case 'Enter':
         if (!isMenuOpen) {
-          setIsMenuOpen(prevIsOpen => !prevIsOpen);
+          setIsMenuOpen((prevIsOpen) => !prevIsOpen);
           // Only allow selection if the first item is a valid, selectable option
         } else if (isMenuOpen && focusedItem.itemId !== 'no results') {
           onMenuSelect(focusedItem.itemId as string);
@@ -121,7 +120,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
 
   // Close the menu when a click occurs outside of the menu, toggle, or input.
   const onDocumentClick = (event: MouseEvent | undefined) => {
-    const isValidClick = [menuRef, menuToggleRef, textInputRef].some(ref =>
+    const isValidClick = [menuRef, menuToggleRef, textInputRef].some((ref) =>
       ref?.current?.contains(event?.target as HTMLElement)
     );
     if (isMenuOpen && !isValidClick) {
@@ -155,7 +154,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
     // Only allow selection if the item is a valid, selectable option
     if (itemId && itemId !== 'no results') {
       setSelected(
-        selected.includes(itemId) ? selected.filter(selection => selection !== itemId) : [...selected, itemId]
+        selected.includes(itemId) ? selected.filter((selection) => selection !== itemId) : [...selected, itemId]
       );
     }
 
@@ -164,6 +163,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
 
   const toggle = (
     <MenuToggle
+      ref={toggleRef}
       variant="typeahead"
       onClick={toggleMenuOpen}
       innerRef={menuToggleRef}
@@ -188,7 +188,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
             {selected.map((selection, index) => (
               <Chip
                 key={index}
-                onClick={ev => {
+                onClick={(ev) => {
                   ev.stopPropagation();
                   onMenuSelect(selection);
                 }}
@@ -242,7 +242,9 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
   return (
     <Popper
       trigger={toggle}
+      triggerRef={toggleRef}
       popper={menu}
+      popperRef={menuRef}
       isVisible={isMenuOpen}
       onDocumentClick={onDocumentClick}
       onDocumentKeyDown={onDocumentKeydown}

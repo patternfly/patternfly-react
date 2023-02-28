@@ -34,16 +34,15 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
   const menuToggleRef = React.useRef<MenuToggleElement>({} as MenuToggleElement);
   const textInputRef = React.useRef<HTMLInputElement>();
   const menuRef = React.useRef<HTMLDivElement>(null);
+  const triggerRef = React.useRef<MenuToggleElement>(null);
 
   React.useEffect(() => {
     let newMenuItems: MenuItemProps[] = intitalMenuItems;
 
     // Filter menu items based on the text input value when one exists
     if (inputValue) {
-      newMenuItems = intitalMenuItems.filter(menuItem =>
-        String(menuItem.children)
-          .toLowerCase()
-          .includes(inputValue.toLowerCase())
+      newMenuItems = intitalMenuItems.filter((menuItem) =>
+        String(menuItem.children).toLowerCase().includes(inputValue.toLowerCase())
       );
 
       // When no options are found after filtering, display 'No results found'
@@ -100,13 +99,13 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
       }
 
       setFocusedItemIndex(indexToFocus);
-      const focusedItem = menuItems.filter(item => !item.isDisabled)[indexToFocus];
+      const focusedItem = menuItems.filter((item) => !item.isDisabled)[indexToFocus];
       setActiveItem(`composable-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
     }
   };
 
   const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const enabledMenuItems = menuItems.filter(menuItem => !menuItem.isDisabled);
+    const enabledMenuItems = menuItems.filter((menuItem) => !menuItem.isDisabled);
     const [firstMenuItem] = enabledMenuItems;
     const focusedItem = focusedItemIndex ? enabledMenuItems[focusedItemIndex] : firstMenuItem;
 
@@ -119,7 +118,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
           setIsSelected(true);
         }
 
-        setIsMenuOpen(prevIsOpen => !prevIsOpen);
+        setIsMenuOpen((prevIsOpen) => !prevIsOpen);
         setFocusedItemIndex(null);
         setActiveItem(null);
         focusOnInput();
@@ -140,7 +139,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
 
   // Close the menu when a click occurs outside of the menu, toggle, or input
   const onDocumentClick = (event: MouseEvent | undefined) => {
-    const isValidClick = [menuRef, menuToggleRef, textInputRef].some(ref =>
+    const isValidClick = [menuRef, menuToggleRef, textInputRef].some((ref) =>
       ref?.current?.contains(event?.target as HTMLElement)
     );
     if (isMenuOpen && !isValidClick) {
@@ -162,7 +161,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
   };
 
   const toggleMenuOpen = () => {
-    setIsMenuOpen(prevIsOpen => !prevIsOpen);
+    setIsMenuOpen((prevIsOpen) => !prevIsOpen);
     textInputRef.current?.focus();
   };
 
@@ -175,6 +174,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
     <Popper
       trigger={
         <MenuToggle
+          ref={triggerRef}
           variant="typeahead"
           onClick={toggleMenuOpen}
           innerRef={menuToggleRef}
@@ -206,6 +206,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
           </TextInputGroup>
         </MenuToggle>
       }
+      triggerRef={triggerRef}
       popper={
         <Menu role="listbox" ref={menuRef} id="select-menu" onSelect={onMenuSelect} selected={isSelected && inputValue}>
           <MenuContent>
@@ -224,6 +225,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
           </MenuContent>
         </Menu>
       }
+      popperRef={menuRef}
       isVisible={isMenuOpen}
       onDocumentClick={onDocumentClick}
       onDocumentKeyDown={onDocumentKeydown}

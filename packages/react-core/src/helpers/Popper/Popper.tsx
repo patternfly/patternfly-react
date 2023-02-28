@@ -46,17 +46,22 @@ export const getOpacityTransition = (animationDuration: number) =>
 
 export interface PopperProps {
   /**
-   * The reference element to which the Popover is relatively placed to.
-   * Use either trigger or reference, not both.
+   * Trigger reference element to which the popper is relatively placed to.
    */
   trigger?: React.ReactNode;
   /**
-   * The reference element to which the Popover is relatively placed to.
-   * Use either trigger or reference, not both.
+   * A reference to the trigger reference element that can be passed instead of or along
+   * with the trigger prop. When passed along with the trigger prop, the div element that
+   * wraps the trigger will be removed.
    */
-  reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
+  triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** The popper (menu/tooltip/popover) element */
   popper: React.ReactElement;
+  /**
+   * @beta Reference to the popper (menu/tooltip/popover) element.
+   * Passing this prop will remove the wrapper div element from the popper.
+   */
+  popperRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** True to set the width of the popper element to the trigger element's width */
   popperMatchesTriggerWidth?: boolean;
   /** popper direction */
@@ -137,8 +142,6 @@ export interface PopperProps {
         | 'right-start'
         | 'right-end'
       )[];
-  /** @beta Reference to the popper (menu/tooltip/popover) element. */
-  popperRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -166,7 +169,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   onDocumentKeyDown,
   enableFlip = true,
   flipBehavior = 'flip',
-  reference,
+  triggerRef,
   popperRef
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
@@ -183,14 +186,14 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     setReady(true);
   }, []);
   React.useEffect(() => {
-    if (reference) {
-      if ((reference as React.RefObject<any>).current) {
-        setRefElement((reference as React.RefObject<any>).current);
-      } else if (typeof reference === 'function') {
-        setRefElement(reference());
+    if (triggerRef) {
+      if ((triggerRef as React.RefObject<any>).current) {
+        setRefElement((triggerRef as React.RefObject<any>).current);
+      } else if (typeof triggerRef === 'function') {
+        setRefElement(triggerRef());
       }
     }
-  }, [reference]);
+  }, [triggerRef]);
   React.useEffect(() => {
     // When the popperRef is defined or the popper visibility changes, ensure the popper element is up to date
     if (popperRef) {
@@ -373,12 +376,16 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
 
   return (
     <>
+
       {!reference && trigger && React.isValidElement(trigger) && (
+
         <div style={{ display: 'contents' }} ref={(node) => setTriggerElement(node?.firstElementChild as HTMLElement)}>
           {trigger}
         </div>
       )}
+
       {reference && trigger && React.isValidElement(trigger) && trigger}
+
       {ready && isVisible && getPopper()}
     </>
   );

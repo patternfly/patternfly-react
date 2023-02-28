@@ -50,7 +50,7 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
 
   /** callback for removing a chip from the chip selections */
   const deleteChip = (chipToDelete: string) => {
-    const newChips = currentChips.filter(chip => !Object.is(chip, chipToDelete));
+    const newChips = currentChips.filter((chip) => !Object.is(chip, chipToDelete));
     setCurrentChips(newChips);
   };
 
@@ -71,7 +71,7 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
     /** in the menu only show items that include the text in the input */
     const filteredMenuItems = menuItemsText
       .filter(
-        item =>
+        (item) =>
           !inputValue ||
           item.toLowerCase().includes(
             inputValue
@@ -225,7 +225,7 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
           onKeyDown={handleTextInputKeyDown}
         >
           <ChipGroup>
-            {currentChips.map(currentChip => (
+            {currentChips.map((currentChip) => (
               <Chip key={currentChip} onClick={() => deleteChip(currentChip)}>
                 {currentChip}
               </Chip>
@@ -255,5 +255,14 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
     </div>
   );
 
-  return <Popper trigger={inputGroup} popper={menu} isVisible={menuIsOpen} onDocumentClick={handleClick} />;
+  return (
+    <Popper
+      trigger={inputGroup}
+      triggerRef={textInputGroupRef}
+      popper={menu}
+      popperRef={menuRef}
+      isVisible={menuIsOpen}
+      onDocumentClick={handleClick}
+    />
+  );
 };

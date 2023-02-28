@@ -82,12 +82,12 @@ export const FilterSameSelectGroup: React.FunctionComponent = () => {
   const isRepoSelectable = (repo: Repository) => repo.name !== 'a'; // Arbitrary logic for this example
   const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
   const setRepoSelected = (repo: Repository, isSelecting = true) =>
-    setSelectedRepoNames(prevSelected => {
-      const otherSelectedRepoNames = prevSelected.filter(r => r !== repo.name);
+    setSelectedRepoNames((prevSelected) => {
+      const otherSelectedRepoNames = prevSelected.filter((r) => r !== repo.name);
       return isSelecting && isRepoSelectable(repo) ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
     });
   const selectAllRepos = (isSelecting = true) =>
-    setSelectedRepoNames(isSelecting ? filteredRepos.map(r => r.name) : []); // Selecting all should only select all currently filtered rows
+    setSelectedRepoNames(isSelecting ? filteredRepos.map((r) => r.name) : []); // Selecting all should only select all currently filtered rows
   const areAllReposSelected = selectedRepoNames.length === filteredRepos.length && filteredRepos.length > 0;
   const areSomeReposSelected = selectedRepoNames.length > 0;
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
@@ -104,7 +104,7 @@ export const FilterSameSelectGroup: React.FunctionComponent = () => {
         numberSelected > 0
           ? Array.from(new Array(numberSelected + 1), (_x, i) => i + recentSelectedRowIndex)
           : Array.from(new Array(Math.abs(numberSelected) + 1), (_x, i) => i + rowIndex);
-      intermediateIndexes.forEach(index => setRepoSelected(repositories[index], isSelecting));
+      intermediateIndexes.forEach((index) => setRepoSelected(repositories[index], isSelecting));
     } else {
       setRepoSelected(repo, isSelecting);
     }
@@ -231,7 +231,9 @@ export const FilterSameSelectGroup: React.FunctionComponent = () => {
     <div ref={bulkSelectContainerRef}>
       <Popper
         trigger={bulkSelectToggle}
+        triggerRef={bulkSelectToggleRef}
         popper={bulkSelectMenu}
+        popperRef={bulkSelectMenuRef}
         appendTo={bulkSelectContainerRef.current || undefined}
         isVisible={isBulkSelectOpen}
         popperMatchesTriggerWidth={false}
@@ -324,7 +326,9 @@ export const FilterSameSelectGroup: React.FunctionComponent = () => {
     <div ref={statusContainerRef}>
       <Popper
         trigger={statusToggle}
+        triggerRef={statusToggleRef}
         popper={statusMenu}
+        popperRef={statusMenuRef}
         appendTo={statusContainerRef.current || undefined}
         isVisible={isStatusMenuOpen}
       />
@@ -421,7 +425,9 @@ export const FilterSameSelectGroup: React.FunctionComponent = () => {
     <div ref={locationContainerRef}>
       <Popper
         trigger={locationToggle}
+        triggerRef={locationToggleRef}
         popper={locationMenu}
+        popperRef={locationMenuRef}
         appendTo={locationContainerRef.current || undefined}
         isVisible={isLocationMenuOpen}
       />

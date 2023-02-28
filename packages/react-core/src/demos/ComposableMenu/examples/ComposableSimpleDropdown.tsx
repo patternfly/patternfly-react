@@ -55,7 +55,7 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
       <MenuContent>
         <MenuList>
           <MenuItem itemId={0}>Action</MenuItem>
-          <MenuItem itemId={1} to="#default-link2" onClick={ev => ev.preventDefault()}>
+          <MenuItem itemId={1} to="#default-link2" onClick={(ev) => ev.preventDefault()}>
             Link
           </MenuItem>
           <MenuItem isDisabled>Disabled Action</MenuItem>
@@ -66,5 +66,5 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
+  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
 };

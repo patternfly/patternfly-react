@@ -96,8 +96,11 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   ...props
 }: TdProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
+
   const [truncated, setTruncated] = React.useState(false);
   const cellRef = innerRef ? innerRef : React.createRef();
+
+
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       !showTooltip && setShowTooltip(true);
@@ -289,7 +292,9 @@ const TdBase: React.FunctionComponent<TdProps> = ({
 
   const canMakeDefaultTooltip = tooltip === '' ? typeof children === 'string' : true;
   return tooltip !== null && canMakeDefaultTooltip && showTooltip ? (
+
     <>
+
       {cell}
       <Tooltip
         reference={cellRef as React.RefObject<any>}

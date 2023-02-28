@@ -82,7 +82,9 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   ...props
 }: ThProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
+
   const [truncated, setTruncated] = React.useState(false);
+
   const cellRef = innerRef ? innerRef : React.createRef();
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
@@ -205,7 +207,9 @@ const ThBase: React.FunctionComponent<ThProps> = ({
 
   const canMakeDefaultTooltip = tooltip === '' ? typeof transformedChildren === 'string' : true;
   return tooltip !== null && canMakeDefaultTooltip && showTooltip ? (
+
     <>
+
       {cell}
       <Tooltip
         reference={cellRef as React.RefObject<any>}

@@ -37,7 +37,7 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
 
   /** callback for removing a chip from the chip selections */
   const deleteChip = (chipToDelete: string) => {
-    const newChips = currentChips.filter(chip => !Object.is(chip, chipToDelete));
+    const newChips = currentChips.filter((chip) => !Object.is(chip, chipToDelete));
     setCurrentChips(newChips);
   };
 
@@ -50,7 +50,7 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
   React.useEffect(() => {
     /** in the menu only show items that include the text in the input */
     const filteredMenuItems = suggestionItems
-      .filter(item => !inputValue || item.toLowerCase().includes(inputValue.toString().toLowerCase()))
+      .filter((item) => !inputValue || item.toLowerCase().includes(inputValue.toString().toLowerCase()))
       .map((currentValue, index) => (
         <MenuItem key={currentValue} itemId={index}>
           {currentValue}
@@ -219,7 +219,7 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
           aria-label="Search input"
         >
           <ChipGroup>
-            {currentChips.map(currentChip => (
+            {currentChips.map((currentChip) => (
               <Chip key={currentChip} onClick={() => deleteChip(currentChip)}>
                 {currentChip}
               </Chip>
@@ -252,7 +252,9 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
   return (
     <Popper
       trigger={inputGroup}
+      triggerRef={textInputGroupRef}
       popper={menu}
+      popperRef={menuRef}
       appendTo={() => textInputGroupRef.current}
       isVisible={menuIsOpen}
       onDocumentClick={handleClick}

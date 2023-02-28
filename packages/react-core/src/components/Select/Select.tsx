@@ -1285,6 +1285,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     const menuContainer = footer ? <div className={css(styles.selectMenu)}> {innerMenu} </div> : innerMenu;
 
+    const popperRef = React.createRef<HTMLDivElement>();
     const popperContainer = (
       <div
         className={css(
@@ -1296,6 +1297,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           direction === SelectDirection.up && styles.modifiers.top,
           className
         )}
+        ref={popperRef}
         {...(width && { style: { width } })}
         {...(validated !== ValidatedOptions.default && { 'aria-invalid': ariaInvalid })}
       >
@@ -1476,7 +1478,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             ) : (
               <Popper
                 trigger={mainContainer}
+                triggerRef={this.parentRef}
                 popper={popperContainer}
+                popperRef={popperRef}
                 direction={direction}
                 appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
                 isVisible={isOpen}

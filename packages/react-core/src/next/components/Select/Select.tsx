@@ -119,7 +119,9 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
     <div ref={containerRef}>
       <Popper
         trigger={toggle(toggleRef)}
+        triggerRef={toggleRef}
         popper={menu}
+        popperRef={menuRef}
         appendTo={containerRef.current || undefined}
         isVisible={isOpen}
         zIndex={zIndex}

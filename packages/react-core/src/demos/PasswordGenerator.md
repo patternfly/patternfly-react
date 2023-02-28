@@ -96,7 +96,9 @@ const PasswordGenerator: React.FunctionComponent = () => {
   };
 
   // The autocomplete menu should close if the user clicks outside the menu.
-  const handleClickOutside = (event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>) => {
+  const handleClickOutside = (
+    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>
+  ) => {
     if (
       isAutocompleteOpen &&
       autocompleteRef &&
@@ -146,7 +148,7 @@ const PasswordGenerator: React.FunctionComponent = () => {
             actions={
               <MenuItemAction
                 icon={<RedoIcon aria-hidden />}
-                onClick={e => {
+                onClick={(e) => {
                   setGeneratedPassword(generatePassword());
                 }}
                 actionId="redo"
@@ -164,7 +166,9 @@ const PasswordGenerator: React.FunctionComponent = () => {
   return (
     <Popper
       trigger={textInput}
+      triggerRef={searchInputRef}
       popper={autocomplete}
+      popperRef={autocompleteRef}
       isVisible={isAutocompleteOpen}
       enableFlip={false}
       // append the autocomplete menu to the search input in the DOM for the sake of the keyboard navigation experience

@@ -55,7 +55,7 @@ export const TabsTooltipReactRef: React.FunctionComponent = () => {
       <Tooltip
         id="tooltip-ref1"
         content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support."
-        reference={tooltipRef}
+        triggerRef={tooltipRef}
       />
       <div style={{ marginTop: '20px' }}>
         <Checkbox

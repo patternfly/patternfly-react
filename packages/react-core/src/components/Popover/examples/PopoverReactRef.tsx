@@ -16,7 +16,7 @@ export const PopoverReactRef: React.FunctionComponent = () => {
           </div>
         }
         footerContent="Popover footer"
-        reference={popoverRef}
+        triggerRef={popoverRef}
       />
     </div>
   );

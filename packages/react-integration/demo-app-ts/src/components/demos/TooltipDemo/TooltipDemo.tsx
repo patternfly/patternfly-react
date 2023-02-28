@@ -25,13 +25,13 @@ export class TooltipDemo extends Component {
           <button ref={this.tooltipRef} id="tooltip-ref">
             Tooltip attached via react ref
           </button>
-          <Tooltip content={<div>Tooltip attached via react ref</div>} reference={this.tooltipRef} />
+          <Tooltip content={<div>Tooltip attached via react ref</div>} triggerRef={this.tooltipRef} />
         </div>
         <div>
           <button id="tooltip-selector">Tooltip attached via selector ref</button>
           <Tooltip
             content={<div>Tooltip attached via selector ref</div>}
-            reference={() => document.getElementById('tooltip-selector')}
+            triggerRef={() => document.getElementById('tooltip-selector')}
           />
         </div>
       </div>

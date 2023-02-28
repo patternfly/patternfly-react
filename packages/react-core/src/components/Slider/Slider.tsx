@@ -152,7 +152,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
   const findAriaTextValue = () => {
     if (!areCustomStepsContinuous && customSteps) {
-      const matchingStep = customSteps.find(stepObj => stepObj.value === localValue);
+      const matchingStep = customSteps.find((stepObj) => stepObj.value === localValue);
       if (matchingStep) {
         return matchingStep.label;
       }
@@ -243,7 +243,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       if (customSteps[customSteps.length - 1].value !== 100) {
         percentage = (newPercentage * (max - min)) / 100 + min;
       }
-      const stepIndex = customSteps.findIndex(stepObj => stepObj.value >= percentage);
+      const stepIndex = customSteps.findIndex((stepObj) => stepObj.value >= percentage);
       if (customSteps[stepIndex].value === percentage) {
         snapValue = customSteps[stepIndex].value;
       } else {
@@ -278,7 +278,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     e.preventDefault();
     let newValue: number = localValue;
     if (!areCustomStepsContinuous && customSteps) {
-      const stepIndex = customSteps.findIndex(stepObj => stepObj.value === localValue);
+      const stepIndex = customSteps.findIndex((stepObj) => stepObj.value === localValue);
       if (key === 'ArrowRight') {
         if (stepIndex + 1 < customSteps.length) {
           {
@@ -397,7 +397,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
         </div>
         {customSteps && (
           <div className={css(styles.sliderSteps)} aria-hidden="true">
-            {customSteps.map(stepObj => {
+            {customSteps.map((stepObj) => {
               const minValue = customSteps[0].value;
               const maxValue = customSteps[customSteps.length - 1].value;
               const stepValue = getStepValue(stepObj.value, minValue, maxValue);
@@ -423,7 +423,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
           <div className={css(styles.sliderValue, styles.modifiers.floating)}>{displayInput()}</div>
         )}
         {hasTooltipOverThumb ? (
-          <Tooltip entryDelay={0} content={findAriaTextValue()}>
+          <Tooltip triggerRef={thumbRef} entryDelay={0} content={findAriaTextValue()}>
             {thumbComponent}
           </Tooltip>
         ) : (

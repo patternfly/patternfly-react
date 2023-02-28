@@ -120,7 +120,9 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
     <div ref={containerRef} {...ouiaProps}>
       <Popper
         trigger={toggle(toggleRef)}
+        triggerRef={toggleRef}
         popper={menu}
+        popperRef={menuRef}
         appendTo={containerRef.current || undefined}
         isVisible={isOpen}
         zIndex={zIndex}

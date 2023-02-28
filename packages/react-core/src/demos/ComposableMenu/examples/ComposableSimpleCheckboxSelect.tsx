@@ -8,7 +8,7 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
   const menuRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = React.useCallback(
-    event => {
+    (event) => {
       if (menuRef.current) {
         if (isOpen && menuRef.current.contains(event.target as Node)) {
           if (event.key === 'Escape' || event.key === 'Tab') {
@@ -22,7 +22,7 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
   );
 
   const handleClickOutside = React.useCallback(
-    event => {
+    (event) => {
       if (isOpen && !menuRef?.current?.contains(event.target as Node)) {
         setIsOpen(false);
       }
@@ -56,7 +56,7 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
     }
 
     if (selectedItems.includes(itemId)) {
-      setSelectedItems(selectedItems.filter(id => id !== itemId));
+      setSelectedItems(selectedItems.filter((id) => id !== itemId));
     } else {
       setSelectedItems([...selectedItems, itemId]);
     }
@@ -97,5 +97,5 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
+  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
 };
