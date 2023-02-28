@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.15...@patternfly/react-table@5.0.0-alpha.16) (2023-02-28)
+
+### Features
+
+- **Popper, misc:** update reference to triggerRef, components to use popperRef/triggerRef ([#8733](https://github.com/patternfly/patternfly-react/issues/8733)) ([c4c085c](https://github.com/patternfly/patternfly-react/commit/c4c085c2caeef76bdd1c4f2a4393a3b64bff55e0))
+
 # [5.0.0-alpha.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.14...@patternfly/react-table@5.0.0-alpha.15) (2023-02-27)
 
 **Note:** Version bump only for package @patternfly/react-table
