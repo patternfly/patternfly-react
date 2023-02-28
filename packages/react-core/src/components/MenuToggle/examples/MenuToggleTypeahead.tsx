@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuToggle, TextInputGroup, TextInputGroupMain, TextInputGroupUtilities, Button } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-const typeahead: React.FunctionComponent = () => {
+export const Typeahead: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = React.useState<string>('');
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
