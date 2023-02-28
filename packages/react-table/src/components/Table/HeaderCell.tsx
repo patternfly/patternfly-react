@@ -33,6 +33,7 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
     scope={scope}
     tooltip={tooltip}
     onMouseEnter={onMouseEnter}
+    focusable={false}
     textCenter={textCenter}
     component={component}
     className={className}

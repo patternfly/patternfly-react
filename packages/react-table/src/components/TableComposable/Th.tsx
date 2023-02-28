@@ -52,6 +52,8 @@ export interface ThProps
   stickyLeftOffset?: string;
   /** Indicates the <th> is part of a subheader of a nested header */
   isSubheader?: boolean;
+
+  focusable?: boolean;
 }
 
 const ThBase: React.FunctionComponent<ThProps> = ({
@@ -76,9 +78,12 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   stickyMinWidth = '120px',
   stickyLeftOffset,
   isSubheader = false,
+  focusable = true,
   ...props
 }: ThProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
+  const [truncated, setTruncated] = React.useState(false);
+  const cellRef = innerRef ? innerRef : React.createRef();
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       !showTooltip && setShowTooltip(true);
@@ -159,12 +164,22 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     ...mergedProps
   } = merged;
 
+  React.useEffect(() => {
+    setTruncated(
+      (cellRef as React.RefObject<HTMLElement>).current.offsetWidth <
+        (cellRef as React.RefObject<HTMLElement>).current.scrollWidth
+    );
+  }, [cellRef]);
+
   const cell = (
     <MergedComponent
+      tabIndex={sort || select || !focusable || !truncated ? -1 : 0}
+      onFocus={tooltip !== null ? onMouseEnter : onMouseEnterProp}
+      onBlur={() => setShowTooltip(false)}
       data-label={dataLabel}
       onMouseEnter={tooltip !== null ? onMouseEnter : onMouseEnterProp}
       scope={component === 'th' && children ? scope : null}
-      ref={innerRef}
+      ref={cellRef}
       className={css(
         className,
         textCenter && styles.modifiers.center,
@@ -190,9 +205,14 @@ const ThBase: React.FunctionComponent<ThProps> = ({
 
   const canMakeDefaultTooltip = tooltip === '' ? typeof transformedChildren === 'string' : true;
   return tooltip !== null && canMakeDefaultTooltip && showTooltip ? (
-    <Tooltip content={tooltip || (tooltip === '' && children)} isVisible>
+    <>
       {cell}
-    </Tooltip>
+      <Tooltip
+        reference={cellRef as React.RefObject<any>}
+        content={tooltip || (tooltip === '' && children)}
+        isVisible
+      />
+    </>
   ) : (
     cell
   );

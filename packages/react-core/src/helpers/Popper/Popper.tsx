@@ -272,11 +272,10 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     return convertedPlacement as Placement;
   };
   const getPlacementMemo = React.useMemo(getPlacement, [direction, position, placement]);
-  const getOppositePlacementMemo = React.useMemo(() => getOppositePlacement(getPlacement()), [
-    direction,
-    position,
-    placement
-  ]);
+  const getOppositePlacementMemo = React.useMemo(
+    () => getOppositePlacement(getPlacement()),
+    [direction, position, placement]
+  );
   const sameWidthMod: Modifier<'sameWidth', {}> = React.useMemo(
     () => ({
       name: 'sameWidth',
@@ -294,7 +293,12 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     [popperMatchesTriggerWidth]
   );
 
-  const { styles: popperStyles, attributes, update, forceUpdate } = usePopper(refOrTrigger, popperElement, {
+  const {
+    styles: popperStyles,
+    attributes,
+    update,
+    forceUpdate
+  } = usePopper(refOrTrigger, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
       {
@@ -352,7 +356,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     return popperRef ? (
       localPopper
     ) : (
-      <div style={{ display: 'contents' }} ref={node => setPopperElement(node?.firstElementChild as HTMLElement)}>
+      <div style={{ display: 'contents' }} ref={(node) => setPopperElement(node?.firstElementChild as HTMLElement)}>
         {localPopper}
       </div>
     );
@@ -370,10 +374,11 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   return (
     <>
       {!reference && trigger && React.isValidElement(trigger) && (
-        <div style={{ display: 'contents' }} ref={node => setTriggerElement(node?.firstElementChild as HTMLElement)}>
+        <div style={{ display: 'contents' }} ref={(node) => setTriggerElement(node?.firstElementChild as HTMLElement)}>
           {trigger}
         </div>
       )}
+      {reference && trigger && React.isValidElement(trigger) && trigger}
       {ready && isVisible && getPopper()}
     </>
   );

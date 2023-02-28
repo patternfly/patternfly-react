@@ -31,6 +31,8 @@ export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   tooltipProps?: Omit<TooltipProps, 'content'>;
   /** callback used to create the tooltip if text is truncated */
   onMouseEnter?: (event: any) => void;
+
+  focused?: boolean;
 }
 
 export const TableText: React.FunctionComponent<TableTextProps> = ({
@@ -41,9 +43,11 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   tooltip: tooltipProp = '',
   tooltipProps = {},
   onMouseEnter: onMouseEnterProp = () => {},
+  focused = false,
   ...props
 }: TableTextProps) => {
   const Component: TableTextVariant | 'span' | 'div' = variant;
+  const textRef = React.createRef<HTMLElement>();
 
   const [tooltip, setTooltip] = React.useState('');
   const onMouseEnter = (event: any) => {
@@ -55,9 +59,18 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
     onMouseEnterProp(event);
   };
 
+  const onFocus = (element: HTMLElement) => {
+    if (element.offsetWidth < element.scrollWidth) {
+      setTooltip(tooltipProp || element.innerText);
+    } else {
+      setTooltip('');
+    }
+  };
+
   const text = (
     <Component
-      onMouseEnter={onMouseEnter}
+      ref={textRef as React.Ref<any>}
+      onMouseEnter={(event) => onMouseEnter(event)}
       className={css(className, wrapModifier && styles.modifiers[wrapModifier], styles.tableText)}
       {...props}
     >
@@ -65,8 +78,16 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
     </Component>
   );
 
+  React.useEffect(() => {
+    if (focused) {
+      onFocus(textRef.current);
+    } else {
+      setTooltip('');
+    }
+  }, [focused]);
+
   return tooltip !== '' ? (
-    <Tooltip content={tooltip} isVisible {...tooltipProps}>
+    <Tooltip reference={textRef} content={tooltip} isVisible {...tooltipProps}>
       {text}
     </Tooltip>
   ) : (
