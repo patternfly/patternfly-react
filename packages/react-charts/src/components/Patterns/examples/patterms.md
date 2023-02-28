@@ -729,7 +729,7 @@ class PatternsPie extends React.Component {
         this.setState({ width: this.containerRef.current.clientWidth });
       }
     };
-    this.handleLegendAllowWrapCallback = (extraHeight) => {
+    this.handleLegendAllowWrap = (extraHeight) => {
       if (extraHeight !== this.state.extraHeight) {
         this.setState({ extraHeight });
       }
@@ -795,8 +795,7 @@ class PatternsPie extends React.Component {
             { name: 'Deer: 6' },
             { name: 'Bears: 6' },
           ]}
-          legendAllowWrap
-          legendAllowWrapCallback={this.handleLegendAllowWrapCallback}
+          legendAllowWrap={this.handleLegendAllowWrap}
           legendPosition="bottom"
           name="chart12"
           padding={{

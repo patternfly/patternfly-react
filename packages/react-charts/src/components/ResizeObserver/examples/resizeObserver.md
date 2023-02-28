@@ -70,7 +70,7 @@ class BulletChart extends React.Component {
         this.setState({ width: this.containerRef.current.clientWidth });
       }
     };
-    this.handleLegendAllowWrapCallback = (extraHeight) => {
+    this.handleLegendAllowWrap = (extraHeight) => {
       if (extraHeight !== this.state.extraHeight) {
         this.setState({ extraHeight });
       }
@@ -103,8 +103,7 @@ class BulletChart extends React.Component {
           constrainToVisibleArea
           height={height}
           labels={({ datum }) => `${datum.name}: ${datum.y}`}
-          legendAllowWrap
-          legendAllowWrapCallback={this.handleLegendAllowWrapCallback}
+          legendAllowWrap={this.handleLegendAllowWrap}
           legendPosition="bottom-left"
           maxDomain={{y: 100}}
           name="chart1"
