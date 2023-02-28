@@ -19,7 +19,7 @@ export const SkipToContent: React.FunctionComponent<SkipToContentProps> = ({
   ...props
 }: SkipToContentProps) => (
   <div className={css(styles.skipToContent, className)} {...props}>
-    <Button variant={ButtonVariant.primary} component='a' href={href}>
+    <Button variant={ButtonVariant.primary} component="a" href={href}>
       {children}
     </Button>
   </div>
