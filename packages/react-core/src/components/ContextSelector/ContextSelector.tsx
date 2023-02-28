@@ -213,7 +213,9 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     ) : (
       <Popper
         trigger={mainContainer}
+        triggerRef={this.parentRef}
         popper={popperContainer}
+        popperRef={this.popperRef}
         appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
         isVisible={isOpen}
         zIndex={zIndex}

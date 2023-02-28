@@ -86,14 +86,14 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
     }
   ];
   // Helper functions for tree
-  const isChecked = (dataItem: TreeViewDataItem) => checkedItems.some(item => item.id === dataItem.id);
+  const isChecked = (dataItem: TreeViewDataItem) => checkedItems.some((item) => item.id === dataItem.id);
   const areAllDescendantsChecked = (dataItem: TreeViewDataItem) =>
-    dataItem.children ? dataItem.children.every(child => areAllDescendantsChecked(child)) : isChecked(dataItem);
+    dataItem.children ? dataItem.children.every((child) => areAllDescendantsChecked(child)) : isChecked(dataItem);
   const areSomeDescendantsChecked = (dataItem: TreeViewDataItem) =>
-    dataItem.children ? dataItem.children.some(child => areSomeDescendantsChecked(child)) : isChecked(dataItem);
+    dataItem.children ? dataItem.children.some((child) => areSomeDescendantsChecked(child)) : isChecked(dataItem);
   const flattenTree = (tree: TreeViewDataItem[]) => {
     let result: TreeViewDataItem[] = [];
-    tree.forEach(item => {
+    tree.forEach((item) => {
       result.push(item);
       if (item.children) {
         result = result.concat(flattenTree(item.children));
@@ -134,8 +134,8 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
     if (item.children) {
       return (
         (item.children = item.children
-          .map(opt => Object.assign({}, opt))
-          .filter(child => filterItems(child, checkedItem))).length > 0
+          .map((opt) => Object.assign({}, opt))
+          .filter((child) => filterItems(child, checkedItem))).length > 0
       );
     }
   };
@@ -155,12 +155,14 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
         break;
     }
 
-    const checkedItemTree = options.map(opt => Object.assign({}, opt)).filter(item => filterItems(item, treeViewItem));
+    const checkedItemTree = options
+      .map((opt) => Object.assign({}, opt))
+      .filter((item) => filterItems(item, treeViewItem));
     const flatCheckedItems = flattenTree(checkedItemTree);
-    setCheckedItems(prevCheckedItems =>
+    setCheckedItems((prevCheckedItems) =>
       checked
-        ? prevCheckedItems.concat(flatCheckedItems.filter(item => !prevCheckedItems.some(i => i.id === item.id)))
-        : prevCheckedItems.filter(item => !flatCheckedItems.some(i => i.id === item.id))
+        ? prevCheckedItems.concat(flatCheckedItems.filter((item) => !prevCheckedItems.some((i) => i.id === item.id)))
+        : prevCheckedItems.filter((item) => !flatCheckedItems.some((i) => i.id === item.id))
     );
   };
 
@@ -265,5 +267,14 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
       </PanelMain>
     </Panel>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
+  return (
+    <Popper
+      trigger={toggle}
+      triggerRef={toggleRef}
+      popper={menu}
+      popperRef={menuRef}
+      isVisible={isOpen}
+      popperMatchesTriggerWidth={false}
+    />
+  );
 };

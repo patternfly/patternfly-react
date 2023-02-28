@@ -114,7 +114,16 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
         categoryName="Label group 1"
         numLabels={5}
         isEditable
-        addLabelControl={<Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />}
+        addLabelControl={
+          <Popper
+            trigger={toggle}
+            triggerRef={toggleRef}
+            popper={menu}
+            popperRef={menuRef}
+            isVisible={isOpen}
+            popperMatchesTriggerWidth={false}
+          />
+        }
       >
         {labels.map((label, index) => (
           <Label

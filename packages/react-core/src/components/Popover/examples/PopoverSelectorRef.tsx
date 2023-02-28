@@ -13,7 +13,7 @@ export const PopoverSelectorRef: React.FunctionComponent = () => (
         </div>
       }
       footerContent="Popover footer"
-      reference={() => document.getElementById('popover-selector') as HTMLButtonElement}
+      triggerRef={() => document.getElementById('popover-selector') as HTMLButtonElement}
     />
   </div>
 );

@@ -41,7 +41,7 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
     }
 
     if (selectedItems.includes(itemId)) {
-      setSelectedItems(selectedItems.filter(id => id !== itemId));
+      setSelectedItems(selectedItems.filter((id) => id !== itemId));
     } else {
       setSelectedItems([...selectedItems, itemId]);
     }
@@ -122,5 +122,14 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
     </Menu>
   );
 
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
+  return (
+    <Popper
+      trigger={toggle}
+      triggerRef={toggleRef}
+      popper={menu}
+      popperRef={menuRef}
+      isVisible={isOpen}
+      popperMatchesTriggerWidth={false}
+    />
+  );
 };

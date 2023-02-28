@@ -58,29 +58,35 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   variant = 'control',
   onTooltipHidden = () => {},
   ...props
-}: ClipboardCopyButtonProps) => (
-  <Tooltip
-    trigger="mouseenter focus click"
-    exitDelay={exitDelay}
-    entryDelay={entryDelay}
-    maxWidth={maxWidth}
-    position={position}
-    aria-live="polite"
-    aria="none"
-    content={<div>{children}</div>}
-    onTooltipHidden={onTooltipHidden}
-  >
-    <Button
-      type="button"
-      variant={variant}
-      onClick={onClick}
-      aria-label={ariaLabel}
-      id={id}
-      aria-labelledby={`${id} ${textId}`}
-      {...props}
+}: ClipboardCopyButtonProps) => {
+  const triggerRef = React.createRef<HTMLButtonElement>();
+
+  return (
+    <Tooltip
+      trigger="mouseenter focus click"
+      triggerRef={triggerRef}
+      exitDelay={exitDelay}
+      entryDelay={entryDelay}
+      maxWidth={maxWidth}
+      position={position}
+      aria-live="polite"
+      aria="none"
+      content={<div>{children}</div>}
+      onTooltipHidden={onTooltipHidden}
     >
-      <CopyIcon />
-    </Button>
-  </Tooltip>
-);
+      <Button
+        type="button"
+        variant={variant}
+        onClick={onClick}
+        aria-label={ariaLabel}
+        id={id}
+        aria-labelledby={`${id} ${textId}`}
+        {...props}
+        ref={triggerRef}
+      >
+        <CopyIcon />
+      </Button>
+    </Tooltip>
+  );
+};
 ClipboardCopyButton.displayName = 'ClipboardCopyButton';

@@ -32,7 +32,7 @@ export const TabsHelpAndClose: React.FunctionComponent = () => {
         </div>
       }
       footerContent="Popover footer"
-      reference={popoverRef}
+      triggerRef={popoverRef}
     />
   );
 
@@ -68,7 +68,11 @@ export const TabsHelpAndClose: React.FunctionComponent = () => {
                 <TabAction aria-label={`Help for ${tab}`} ref={ref}>
                   <HelpIcon />
                 </TabAction>
-                <TabAction aria-label={`Close ${tab}`} onClick={e => onClose(e, index)} isDisabled={tabs.length === 1}>
+                <TabAction
+                  aria-label={`Close ${tab}`}
+                  onClick={(e) => onClose(e, index)}
+                  isDisabled={tabs.length === 1}
+                >
                   <TimesIcon />
                 </TabAction>
                 {helpPopover(`Help popover for ${tab}`, ref)}

@@ -79,11 +79,11 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   const onToggle = () => {
-    setIsOpen(prevState => !prevState);
+    setIsOpen((prevState) => !prevState);
   };
 
   const onSelect = () => {
-    setIsOpen(prevState => !prevState);
+    setIsOpen((prevState) => !prevState);
     toggleRef.current?.focus();
   };
 
@@ -156,7 +156,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
         key={value}
         data-action={`per-page-${value}`}
         isSelected={perPage === value}
-        onClick={event => handleNewPerPage(event, value)}
+        onClick={(event) => handleNewPerPage(event, value)}
       >
         {title}
         {` ${perPageSuffix}`}
@@ -200,7 +200,9 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
     <div ref={containerRef}>
       <Popper
         trigger={toggle}
+        triggerRef={toggleRef}
         popper={menu}
+        popperRef={menuRef}
         isVisible={isOpen}
         direction={dropDirection}
         appendTo={containerRef.current || undefined}

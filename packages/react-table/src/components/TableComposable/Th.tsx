@@ -79,6 +79,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   ...props
 }: ThProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
+  const cellRef = innerRef ? innerRef : React.createRef();
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       !showTooltip && setShowTooltip(true);
@@ -164,7 +165,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
       data-label={dataLabel}
       onMouseEnter={tooltip !== null ? onMouseEnter : onMouseEnterProp}
       scope={component === 'th' && children ? scope : null}
-      ref={innerRef}
+      ref={cellRef}
       className={css(
         className,
         textCenter && styles.modifiers.center,
@@ -190,7 +191,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
 
   const canMakeDefaultTooltip = tooltip === '' ? typeof transformedChildren === 'string' : true;
   return tooltip !== null && canMakeDefaultTooltip && showTooltip ? (
-    <Tooltip content={tooltip || (tooltip === '' && children)} isVisible>
+    <Tooltip triggerRef={cellRef as React.RefObject<any>} content={tooltip || (tooltip === '' && children)} isVisible>
       {cell}
     </Tooltip>
   ) : (

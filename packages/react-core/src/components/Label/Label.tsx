@@ -254,7 +254,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   if (render) {
     labelComponentChild = (
       <React.Fragment>
-        {isTooltipVisible && <Tooltip reference={componentRef} content={children} position={tooltipPosition} />}
+        {isTooltipVisible && <Tooltip triggerRef={componentRef} content={children} position={tooltipPosition} />}
         {render({
           className: styles.labelContent,
           content,

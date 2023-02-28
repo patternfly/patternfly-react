@@ -31,7 +31,7 @@ export class PopoverDemo extends Component {
             headerContent={headerContent}
             bodyContent={bodyContent}
             footerContent={footerContent}
-            reference={() => document.getElementById('popover-selector')}
+            triggerRef={() => document.getElementById('popover-selector')}
           />
         </div>
         <div>
@@ -43,7 +43,7 @@ export class PopoverDemo extends Component {
             headerContent={headerContent}
             bodyContent={bodyContent}
             footerContent={footerContent}
-            reference={this.popoverRef}
+            triggerRef={this.popoverRef}
           />
         </div>
         <Popover
@@ -51,7 +51,7 @@ export class PopoverDemo extends Component {
           aria-label="Popover with button in the body that can close it"
           headerContent={<div>Popover header</div>}
           position="right-start"
-          bodyContent={hide => (
+          bodyContent={(hide) => (
             <div>
               <div>
                 All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover

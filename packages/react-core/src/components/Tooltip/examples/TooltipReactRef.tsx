@@ -15,7 +15,7 @@ export const TooltipReactRef: React.FunctionComponent = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
           </div>
         }
-        reference={tooltipRef}
+        triggerRef={tooltipRef}
       />
     </div>
   );

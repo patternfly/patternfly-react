@@ -90,7 +90,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
           id="1"
           isFavorited={favorites.includes('1')}
           to="#default-link2"
-          onClick={ev => ev.preventDefault()}
+          onClick={(ev) => ev.preventDefault()}
         >
           Application 2
         </MenuItem>
@@ -103,7 +103,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
           itemId="2"
           id="2"
           isFavorited={favorites.includes('2')}
-          component={props => <Link {...props} to="#router-link" />}
+          component={(props) => <Link {...props} to="#router-link" />}
         >
           @reach/router Link
         </MenuItem>
@@ -113,7 +113,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
           isFavorited={favorites.includes('3')}
           isExternalLink
           icon={<img src={pfIcon} />}
-          component={props => <Link {...props} to="#router-link2" />}
+          component={(props) => <Link {...props} to="#router-link2" />}
         >
           @reach/router Link with icon
         </MenuItem>
@@ -135,15 +135,15 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
   const createFavorites = (favIds: string[]) => {
     const favorites: unknown[] = [];
 
-    menuItems.forEach(item => {
+    menuItems.forEach((item) => {
       if (item.type === MenuList) {
-        item.props.children.filter(child => {
+        item.props.children.filter((child) => {
           if (favIds.includes(child.props.itemId)) {
             favorites.push(child);
           }
         });
       } else if (item.type === MenuGroup) {
-        item.props.children.props.children.filter(child => {
+        item.props.children.props.children.filter((child) => {
           if (favIds.includes(child.props.itemId)) {
             favorites.push(child);
           }
@@ -164,11 +164,11 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
     }
     let keepDivider = false;
     const filteredCopy = items
-      .map(group => {
+      .map((group) => {
         if (group.type === MenuGroup) {
           const filteredGroup = React.cloneElement(group, {
             children: React.cloneElement(group.props.children, {
-              children: group.props.children.props.children.filter(child => {
+              children: group.props.children.props.children.filter((child) => {
                 if (filteredIds.includes(child.props.itemId)) {
                   return child;
                 }
@@ -184,7 +184,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
           }
         } else if (group.type === MenuList) {
           const filteredGroup = React.cloneElement(group, {
-            children: group.props.children.filter(child => {
+            children: group.props.children.filter((child) => {
               if (filteredIds.includes(child.props.itemId)) {
                 return child;
               }
@@ -202,7 +202,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
           }
         }
       })
-      .filter(newGroup => newGroup);
+      .filter((newGroup) => newGroup);
 
     if (filteredCopy.length > 0) {
       const lastGroup = filteredCopy.pop();
@@ -222,8 +222,8 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
 
     const filteredIds =
       refFullOptions
-        ?.filter(item => (item as HTMLElement).innerText.toLowerCase().includes(textValue.toString().toLowerCase()))
-        .map(item => item.id) || [];
+        ?.filter((item) => (item as HTMLElement).innerText.toLowerCase().includes(textValue.toString().toLowerCase()))
+        .map((item) => item.id) || [];
     setFilteredIds(filteredIds);
   };
 
@@ -232,7 +232,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
     if (actionId === 'fav') {
       const isFavorite = favorites.includes(itemId);
       if (isFavorite) {
-        setFavorites(favorites.filter(fav => fav !== itemId));
+        setFavorites(favorites.filter((fav) => fav !== itemId));
       } else {
         setFavorites([...favorites, itemId]);
       }
@@ -265,5 +265,14 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
+  return (
+    <Popper
+      trigger={toggle}
+      triggerRef={toggleRef}
+      popper={menu}
+      popperRef={menuRef}
+      isVisible={isOpen}
+      popperMatchesTriggerWidth={false}
+    />
+  );
 };

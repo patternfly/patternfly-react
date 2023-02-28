@@ -173,7 +173,9 @@ SearchAutocomplete = () => {
   return (
     <Popper
       trigger={searchInput}
+      triggerRef={searchInputRef}
       popper={autocomplete}
+      popperRef={autocompleteRef}
       isVisible={isAutocompleteOpen}
       enableFlip={false}
       // append the autocomplete menu to the search input in the DOM for the sake of the keyboard navigation experience
@@ -445,7 +447,7 @@ AdvancedComposableSearchInput = () => {
               <Grid hasGutter md={6}>
                 <GridItem>
                   <FormGroup label='Date within' fieldId='date-within' key='date-within'>
-                    <Popper trigger={dateWithinToggle} popper={dateWithinOptions} isVisible={isDateWithinOpen} />
+                    <Popper trigger={dateWithinToggle} triggerRef={dateWithinToggleRef} popper={dateWithinOptions} popperRef={dateWithinMenuRef} isVisible={isDateWithinOpen} />
                   </FormGroup>
                 </GridItem>
                 <GridItem>
@@ -477,7 +479,9 @@ AdvancedComposableSearchInput = () => {
   return (
     <Popper
       trigger={searchInput}
+      triggerRef={searchInputRef}
       popper={advancedForm}
+      popperRef={advancedSearchPaneRef}
       isVisible={isAdvancedSearchOpen}
       enableFlip={false}
       appendTo={() => document.querySelector("#custom-advanced-search")}

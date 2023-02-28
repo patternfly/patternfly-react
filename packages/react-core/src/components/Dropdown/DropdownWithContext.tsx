@@ -92,6 +92,8 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       component = 'div';
       renderedContent = React.Children.toArray(children);
     }
+
+    const popperRef = React.createRef<HTMLDivElement>();
     const openedOnEnter = this.openedOnEnter;
     const isStatic = isFlipEnabled && menuAppendTo !== 'inline';
     return (
@@ -122,6 +124,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                 isOpen && styles.modifiers.expanded,
                 className
               )}
+              ref={popperRef}
             >
               {isOpen && menuContainer}
             </div>
@@ -140,7 +143,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               ref={this.baseComponentRef}
               {...getOUIAProps(ouiaComponentType, ouiaId, ouiaSafe)}
             >
-              {React.Children.map(toggle, oneToggle =>
+              {React.Children.map(toggle, (oneToggle) =>
                 React.cloneElement(oneToggle, {
                   parentRef: this.baseComponentRef,
                   getMenuRef: this.getMenuComponentRef,
@@ -169,7 +172,9 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
           ) : (
             <Popper
               trigger={mainContainer}
+              triggerRef={this.baseComponentRef}
               popper={popperContainer}
+              popperRef={popperRef}
               direction={direction}
               position={position}
               appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}

@@ -50,7 +50,7 @@ export class TabsDisabledDemo extends React.Component {
               Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support."
             </div>
           }
-          reference={tooltipRef}
+          triggerRef={tooltipRef}
         />
       </>
     );
