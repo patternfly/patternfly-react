@@ -5,7 +5,11 @@ exports[`CardHeader actions are rendered 1`] = `
   <div
     class="pf-c-card__header"
   >
-    test
+    <div
+      class="pf-c-card__actions"
+    >
+        
+    </div>
     <div
       class=""
     />
