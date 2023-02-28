@@ -64,7 +64,7 @@ export const CardContext = React.createContext<Partial<CardContextProps>>({
 });
 
 export const Card: React.FunctionComponent<CardProps> = ({
-  children = null,
+  children,
   id = '',
   className = '',
   component = 'div',

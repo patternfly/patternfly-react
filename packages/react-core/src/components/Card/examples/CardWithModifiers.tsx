@@ -23,7 +23,7 @@ export const CardWithModifiers: React.FunctionComponent = () => {
       </div>
       <div style={{ height: '15rem' }}>
         <Card {...modifiers}>
-          <CardTitle>Header</CardTitle>
+          <CardTitle>Title</CardTitle>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>

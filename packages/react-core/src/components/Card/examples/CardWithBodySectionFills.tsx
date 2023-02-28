@@ -3,7 +3,7 @@ import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 export const CardWithBodySectionFills: React.FunctionComponent = () => (
   <Card style={{ minHeight: '30em' }}>
-    <CardTitle>Header</CardTitle>
+    <CardTitle>Title</CardTitle>
     <CardBody isFilled={false}>Body pf-m-no-fill</CardBody>
     <CardBody isFilled={false}>Body pf-m-no-fill</CardBody>
     <CardBody>Body</CardBody>

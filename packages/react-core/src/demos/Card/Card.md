@@ -32,7 +32,6 @@ import {
   Button,
   Card,
   CardHeader,
-  CardActions,
   CardTitle,
   CardBody,
   Checkbox,
@@ -114,7 +113,7 @@ class CardViewBasic extends React.Component {
     };
 
     this.onToolbarDropdownToggle = (_event, isLowerToolbarDropdownOpen) => {
-      this.setState(prevState => ({
+      this.setState((prevState) => ({
         isLowerToolbarDropdownOpen
       }));
     };
@@ -125,7 +124,7 @@ class CardViewBasic extends React.Component {
       });
     };
 
-    this.onToolbarKebabDropdownSelect = event => {
+    this.onToolbarKebabDropdownSelect = (event) => {
       this.setState({
         isLowerToolbarKebabDropdownOpen: !this.state.isLowerToolbarKebabDropdownOpen
       });
@@ -143,11 +142,11 @@ class CardViewBasic extends React.Component {
       });
     };
 
-    this.deleteItem = item => event => {
-      const filter = getter => val => getter(val) !== item.id;
+    this.deleteItem = (item) => (event) => {
+      const filter = (getter) => (val) => getter(val) !== item.id;
       this.setState({
         res: this.state.res.filter(filter(({ id }) => id)),
-        selectedItems: this.state.selectedItems.filter(filter(id => id))
+        selectedItems: this.state.selectedItems.filter(filter((id) => id))
       });
     };
 
@@ -169,7 +168,7 @@ class CardViewBasic extends React.Component {
       });
     };
 
-    this.onSplitButtonSelect = event => {
+    this.onSplitButtonSelect = (event) => {
       this.setState((prevState, props) => {
         return { splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen };
       });
@@ -177,12 +176,14 @@ class CardViewBasic extends React.Component {
 
     this.onNameSelect = (event, selection) => {
       const checked = event.target.checked;
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const prevSelections = prevState.filters['products'];
         return {
           filters: {
             ...prevState.filters,
-            ['products']: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
+            ['products']: checked
+              ? [...prevSelections, selection]
+              : prevSelections.filter((value) => value !== selection)
           }
         };
       });
@@ -190,8 +191,8 @@ class CardViewBasic extends React.Component {
 
     this.onDelete = (type = '', id = '') => {
       if (type) {
-        this.setState(prevState => {
-          prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter(s => s !== id);
+        this.setState((prevState) => {
+          prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter((s) => s !== id);
           return {
             filters: prevState.filters
           };
@@ -212,10 +213,10 @@ class CardViewBasic extends React.Component {
       }
       if ([' ', 'Enter'].includes(event.key)) {
         event.preventDefault();
-        this.setState(prevState => {
+        this.setState((prevState) => {
           return prevState.selectedItems.includes(productId * 1)
             ? {
-                selectedItems: [...prevState.selectedItems.filter(id => productId * 1 != id)],
+                selectedItems: [...prevState.selectedItems.filter((id) => productId * 1 != id)],
                 areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
               }
             : {
@@ -226,11 +227,11 @@ class CardViewBasic extends React.Component {
       }
     };
 
-    this.onClick = productId => {
-      this.setState(prevState => {
+    this.onClick = (productId) => {
+      this.setState((prevState) => {
         return prevState.selectedItems.includes(productId * 1)
           ? {
-              selectedItems: [...prevState.selectedItems.filter(id => productId * 1 != id)],
+              selectedItems: [...prevState.selectedItems.filter((id) => productId * 1 != id)],
               areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
             }
           : {
@@ -248,7 +249,7 @@ class CardViewBasic extends React.Component {
     if (checked) {
       selectedItems = [...selectedItems, value];
     } else {
-      selectedItems = selectedItems.filter(el => el !== value);
+      selectedItems = selectedItems.filter((el) => el !== value);
       if (this.state.areAllSelected) {
         this.setState({
           areAllSelected: !this.state.areAllSelected
@@ -336,7 +337,7 @@ class CardViewBasic extends React.Component {
 
   updateSelected() {
     const { res, selectedItems } = this.state;
-    let rows = res.map(post => {
+    let rows = res.map((post) => {
       post.selected = selectedItems.includes(post.id);
       return post;
     });
@@ -348,10 +349,10 @@ class CardViewBasic extends React.Component {
 
   fetch(page, perPage) {
     fetch(`https://my-json-server.typicode.com/jenny-s51/cardviewdata/posts?_page=${page}&_limit=${perPage}`)
-      .then(resp => resp.json())
-      .then(resp => this.setState({ res: resp, perPage, page }))
+      .then((resp) => resp.json())
+      .then((resp) => this.setState({ res: resp, perPage, page }))
       .then(() => this.updateSelected())
-      .catch(err => this.setState({ error: err }));
+      .catch((err) => this.setState({ error: err }));
   }
 
   componentDidMount() {
@@ -539,7 +540,7 @@ class CardViewBasic extends React.Component {
 
     const filtered =
       filters.products.length > 0
-        ? res.filter(card => {
+        ? res.filter((card) => {
             return filters.products.length === 0 || filters.products.includes(card.name);
           })
         : res;
@@ -557,6 +558,36 @@ class CardViewBasic extends React.Component {
       swaggerIcon
     };
 
+    const headerActions = (
+      <>
+        <Dropdown
+          isPlain
+          position="right"
+          onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
+          toggle={
+            <KebabToggle
+              onToggle={(_event, isCardKebabDropdownOpen) =>
+                this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
+              }
+            />
+          }
+          isOpen={this.state[key]}
+          dropdownItems={[
+            <DropdownItem key="trash" onClick={this.deleteItem(product)} position="right">
+              <TrashIcon />
+              Delete
+            </DropdownItem>
+          ]}
+        />
+        <Checkbox
+          checked={isChecked}
+          value={product.id}
+          isChecked={selectedItems.includes(product.id)}
+          aria-label="card checkbox example"
+          id={`check-${product.id}`}
+        />
+      </>
+    );
     return (
       <React.Fragment>
         <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
@@ -590,41 +621,13 @@ class CardViewBasic extends React.Component {
                   isCompact
                   key={product.name}
                   id={product.name.replace(/ /g, '-')}
-                  onKeyDown={e => this.onKeyDown(e, product.id)}
+                  onKeyDown={(e) => this.onKeyDown(e, product.id)}
                   onClick={() => this.onClick(product.id)}
                   onSelectableInputChange={() => this.onClick(product.id)}
                   isSelected={selectedItems.includes(product.id)}
                 >
-                  <CardHeader>
+                  <CardHeader actions={{ actions: headerActions }}>
                     <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ maxWidth: '60px' }} />
-                    <CardActions>
-                      <Dropdown
-                        isPlain
-                        position="right"
-                        onSelect={e => this.onCardKebabDropdownSelect(key, e)}
-                        toggle={
-                          <KebabToggle
-                            onToggle={(_event, isCardKebabDropdownOpen) =>
-                              this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
-                            }
-                          />
-                        }
-                        isOpen={this.state[key]}
-                        dropdownItems={[
-                          <DropdownItem key="trash" onClick={this.deleteItem(product)} position="right">
-                            <TrashIcon />
-                            Delete
-                          </DropdownItem>
-                        ]}
-                      />
-                      <Checkbox
-                        checked={isChecked}
-                        value={product.id}
-                        isChecked={selectedItems.includes(product.id)}
-                        aria-label="card checkbox example"
-                        id={`check-${product.id}`}
-                      />
-                    </CardActions>
                   </CardHeader>
                   <CardTitle>{product.name}</CardTitle>
                   <CardBody>{product.description}</CardBody>

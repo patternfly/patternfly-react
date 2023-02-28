@@ -2,7 +2,7 @@
 id: Card
 section: components
 cssPrefix: pf-c-card
-propComponents: ['Card', 'CardActions', 'CardHeader', 'CardHeaderMain', 'CardTitle', 'CardBody', 'CardFooter', 'CardExpandableContent']
+propComponents: ['Card', 'CardHeader', 'CardHeaderActionsObject', 'CardTitle', 'CardBody', 'CardFooter', 'CardExpandableContent']
 ouia: true
 ---
 
@@ -40,11 +40,11 @@ Most modifiers can be used in combination with each other, except for `isCompact
 
 ### Header images and actions
 
-You can include header images within `<CardHeaderMain>` and header actions within `<CardActions>`. The following example includes an image using the [Brand](/components/brand) component, and also includes a kebab dropdown and a checkbox in `<CardActions>`.
+You can include header actions with the `actions` property of `<CardHeader>` . The following example includes an image using the [Brand](/components/brand) component, and also includes a kebab dropdown and a checkbox in `<CardHeader>` actions.
 
-`<CardActions>` includes the `hasNoOffset` property, which is `false` by default. When `hasNoOffset` is `false`, a negative margin is applied to help align default-sized card titles with `<CardActions>`. 
+The `actions` property for `<CardHeader>` includes the `hasNoOffset` property, which is `false` by default. When `hasNoOffset` is `false`, a negative margin is applied to help align default-sized card titles with card actions. 
 
-You may use `hasNoOffset` to remove this negative margin, which better aligns `<CardActions>` in implementations that use large card titles or tall header images, for example. 
+You may use `hasNoOffset` to remove this negative margin, which better aligns card actions in implementations that use large card titles or tall header images, for example. 
 
 Select the "actions hasNoOffset" checkbox in the example below to illustrate this behavior.
 
@@ -60,9 +60,9 @@ Moving `<CardTitle>` within the `<CardHeader>` will style it inline with any ima
 
 ### Card header without title
 
-`<CardActions>` can be placed in the card header even without a `<CardTitle>`.
+Card actions can be placed in the card header even without a `<CardTitle>`.
 
-Images can also be placed in the card header within `<CardHeaderMain>` without a `<CardTitle>`.
+Images can also be placed in the card header without a `<CardTitle>`.
 
 ```ts file='./CardOnlyActionsInCardHead.tsx'
 ```

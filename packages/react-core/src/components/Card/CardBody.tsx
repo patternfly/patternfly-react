@@ -14,7 +14,7 @@ export interface CardBodyProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const CardBody: React.FunctionComponent<CardBodyProps> = ({
-  children = null,
+  children,
   className = '',
   component = 'div',
   isFilled = true,

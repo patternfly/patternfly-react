@@ -12,7 +12,7 @@ export interface CardFooterProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const CardFooter: React.FunctionComponent<CardFooterProps> = ({
-  children = null,
+  children,
   className = '',
   component = 'div',
   ...props

@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Card,
   CardHeader,
-  CardActions,
   CardBody,
   CardFooter,
   CardExpandableContent,
@@ -51,9 +50,30 @@ export const CardExpandableWithIcon: React.FunctionComponent = () => {
     </DropdownItem>
   ];
 
+  const headerActions = (
+    <>
+      <Dropdown
+        onSelect={onSelect}
+        toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
+        isOpen={isOpen}
+        isPlain
+        dropdownItems={dropdownItems}
+        position={'right'}
+      />
+      <Checkbox
+        isChecked={isChecked}
+        onChange={(_event, checked) => onClick(checked)}
+        aria-label="card checkbox example"
+        id="check-5"
+        name="check5"
+      />
+    </>
+  );
+
   return (
     <Card id="expandable-card-icon" isExpanded={isExpanded}>
       <CardHeader
+        actions={{actions: headerActions}}
         onExpand={onExpand}
         toggleButtonProps={{
           id: 'toggle-button2',
@@ -62,23 +82,6 @@ export const CardExpandableWithIcon: React.FunctionComponent = () => {
         }}
       >
         <img src={pfLogoSmall} alt="PatternFly logo" width="27px" />
-        <CardActions>
-          <Dropdown
-            onSelect={onSelect}
-            toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
-            isOpen={isOpen}
-            isPlain
-            dropdownItems={dropdownItems}
-            position={'right'}
-          />
-          <Checkbox
-            isChecked={isChecked}
-            onChange={(_event, checked) => onClick(checked)}
-            aria-label="card checkbox example"
-            id="check-5"
-            name="check5"
-          />
-        </CardActions>
       </CardHeader>
       <CardExpandableContent>
         <CardBody>Body</CardBody>

@@ -8,7 +8,7 @@ export interface CardHeaderMainProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const CardHeaderMain: React.FunctionComponent<CardHeaderMainProps> = ({
-  children = null,
+  children,
   className = '',
   ...props
 }: CardHeaderMainProps) => (

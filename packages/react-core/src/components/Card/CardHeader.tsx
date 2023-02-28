@@ -2,14 +2,25 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { CardContext } from './Card';
+import { CardHeaderMain } from './CardHeaderMain';
+import { CardActions } from './CardActions';
 import { Button } from '../Button';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
+export interface CardHeaderActionsObject {
+  /** Actions of the card header */
+  actions: React.ReactNode;
+  /** Flag indicating that the actions have no offset */
+  hasNoOffset?: boolean;
+}
+
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered inside the CardHeader */
+  /** Content rendered inside the card header */
   children?: React.ReactNode;
-  /** Additional classes added to the CardHeader */
+  /** Additional classes added to the card header */
   className?: string;
+  /** Actions of the card header */
+  actions?: CardHeaderActionsObject;
   /** ID of the card header. */
   id?: string;
   /** Callback expandable card */
@@ -21,8 +32,9 @@ export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
-  children = null,
-  className = '',
+  children,
+  className,
+  actions,
   id,
   onExpand,
   toggleButtonProps,
@@ -55,7 +67,10 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           {...props}
         >
           {onExpand && !isToggleRightAligned && cardHeaderToggle}
-          {children}
+          {actions && <CardActions hasNoOffset={actions?.hasNoOffset}> {actions.actions} </CardActions>}
+          <CardHeaderMain>
+            {children}
+          </CardHeaderMain>
           {onExpand && isToggleRightAligned && cardHeaderToggle}
         </div>
       );

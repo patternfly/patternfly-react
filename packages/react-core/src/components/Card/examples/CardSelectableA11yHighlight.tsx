@@ -10,18 +10,18 @@ export const CardSelectableA11yHighlight: React.FunctionComponent = () => {
     }
     if ([' ', 'Enter'].includes(event.key)) {
       event.preventDefault();
-      const newSelected = event.currentTarget.id === selected ? null : event.currentTarget.id;
+      const newSelected = event.currentTarget.id === selected ? '' : event.currentTarget.id;
       setSelected(newSelected);
     }
   };
 
   const onClick = (event: React.MouseEvent) => {
-    const newSelected = event.currentTarget.id === selected ? null : event.currentTarget.id;
+    const newSelected = event.currentTarget.id === selected ? '' : event.currentTarget.id;
     setSelected(newSelected);
   };
 
   const onChange = (_event: React.FormEvent<HTMLInputElement>, labelledById: string) => {
-    const newSelected = labelledById === selected ? null : labelledById;
+    const newSelected = labelledById === selected ? '' : labelledById;
     setSelected(newSelected);
   };
 

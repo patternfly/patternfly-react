@@ -25,7 +25,6 @@ import React from 'react';
 import {
   Card,
   CardHeader,
-  CardActions,
   CardTitle,
   CardBody,
   CardExpandableContent,
@@ -62,7 +61,7 @@ class CardGridDemo extends React.Component {
       });
     };
 
-    this.onActionSelect = event => {
+    this.onActionSelect = (event) => {
       this.setState({
         isDropdownOpen: !this.state.isDropdownOpen
       });
@@ -85,9 +84,22 @@ class CardGridDemo extends React.Component {
         Action 4
       </DropdownItem>
     ];
+
+    const headerActions = (
+      <Dropdown
+        onSelect={this.onActionSelect}
+        toggle={<KebabToggle onToggle={this.onActionToggle} />}
+        isOpen={isDropdownOpen}
+        isPlain
+        dropdownItems={dropdownItems}
+        position="right"
+      />
+    );
+
     return (
       <Card id="horizontal card" isExpanded={isCardExpanded}>
         <CardHeader
+          actions={{ actions: headerActions }}
           onExpand={this.onCardExpand}
           toggleButtonProps={{
             id: 'toggle-button',
@@ -96,16 +108,6 @@ class CardGridDemo extends React.Component {
             'aria-expanded': isCardExpanded
           }}
         >
-          <CardActions>
-            <Dropdown
-              onSelect={this.onActionSelect}
-              toggle={<KebabToggle onToggle={this.onActionToggle} />}
-              isOpen={isDropdownOpen}
-              isPlain
-              dropdownItems={dropdownItems}
-              position="right"
-            />
-          </CardActions>
           {isCardExpanded && <CardTitle id="titleId">Getting Started</CardTitle>}
           {!isCardExpanded && (
             <Level hasGutter>
@@ -781,7 +783,7 @@ const StatusPlain: React.FunctionComponent = () => {
             </FlexItem>
             <FlexItem>
               <Popover headerContent="Control Panel Status" bodyContent={popoverBodyContent} minWidth="400px">
-                <a href="#" onClick={e => e.preventDefault()}>
+                <a href="#" onClick={(e) => e.preventDefault()}>
                   Control Panel
                 </a>
               </Popover>
@@ -1238,7 +1240,6 @@ import {
   Card,
   CardTitle,
   CardHeader,
-  CardActions,
   CardBody,
   CardFooter,
   Title,
@@ -1269,6 +1270,19 @@ const UtilizationCard3: React.FunctionComponent = () => {
     <SelectOption value="Last 7 days" key="option4" />
   ];
 
+  const headerActions = (
+    <Select
+      onSelect={() => setIsOpen(!isOpen)}
+      onToggle={() => setIsOpen(!isOpen)}
+      isOpen={isOpen}
+      placeholderText="Filter"
+      position="right"
+      isPlain
+    >
+      {selectItems}
+    </Select>
+  );
+
   return (
     <React.Fragment>
       <b>Note:</b> Custom CSS is used in this demo to align the card title and select toggle text to{' '}
@@ -1278,24 +1292,12 @@ const UtilizationCard3: React.FunctionComponent = () => {
       <Gallery hasGutter minWidths={{ default: '360px' }}>
         <GalleryItem>
           <Card id="utilization-card-3-card" component="div">
-            <CardHeader className="pf-u-align-items-flex-start">
+            <CardHeader className="pf-u-align-items-flex-start" actions={{ actions: headerActions, hasNoOffset: true }}>
               <CardTitle>
                 <Title headingLevel="h4" size="lg" style={{ paddingTop: '3px' }}>
                   Recommendations
                 </Title>
               </CardTitle>
-              <CardActions hasNoOffset>
-                <Select
-                  onSelect={() => setIsOpen(!isOpen)}
-                  onToggle={() => setIsOpen(!isOpen)}
-                  isOpen={isOpen}
-                  placeholderText="Filter"
-                  position="right"
-                  isPlain
-                >
-                  {selectItems}
-                </Select>
-              </CardActions>
             </CardHeader>
             <CardBody>
               <Flex direction={{ default: 'column' }}>
@@ -2511,7 +2513,6 @@ import {
   CardTitle,
   CardBody,
   CardHeader,
-  CardActions,
   Title,
   Gallery,
   GalleryItem,
@@ -2532,6 +2533,20 @@ const TrendCard1: React.FunctionComponent = () => {
     <SelectOption value="Last 24 hours" key="option3" />,
     <SelectOption value="Last 7 days" key="option4" />
   ];
+
+  const headerActions = (
+    <Select
+      onSelect={() => setIsOpen(!isOpen)}
+      onToggle={() => setIsOpen(!isOpen)}
+      placeholderText="Filter"
+      isOpen={isOpen}
+      position="right"
+      isPlain
+    >
+      {selectItems}
+    </Select>
+  );
+
   return (
     <React.Fragment>
       <b>Note:</b> Custom CSS is used in this demo to align the card title and select toggle text to{' '}
@@ -2541,7 +2556,7 @@ const TrendCard1: React.FunctionComponent = () => {
       <Gallery hasGutter minWidths={{ default: '360px' }}>
         <GalleryItem>
           <Card id="trend-card-1-card" component="div">
-            <CardHeader>
+            <CardHeader actions={{ actions: headerActions, hasNoOffset: true }}>
               <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
                 <FlexItem>
                   <CardTitle>
@@ -2554,18 +2569,6 @@ const TrendCard1: React.FunctionComponent = () => {
                   <span className="pf-u-color-200">Workload</span>
                 </FlexItem>
               </Flex>
-              <CardActions hasNoOffset style={{ paddingTop: '1px' }}>
-                <Select
-                  onSelect={() => setIsOpen(!isOpen)}
-                  onToggle={() => setIsOpen(!isOpen)}
-                  placeholderText="Filter"
-                  isOpen={isOpen}
-                  position="right"
-                  isPlain
-                >
-                  {selectItems}
-                </Select>
-              </CardActions>
             </CardHeader>
             <CardBody>
               <ChartGroup
@@ -2685,7 +2688,6 @@ import React from 'react';
 import {
   Card,
   CardHeader,
-  CardActions,
   CardTitle,
   CardBody,
   CardFooter,
@@ -2703,7 +2705,7 @@ import {
 CardLogViewDemo = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onActionSelect = event => {
+  const onActionSelect = (event) => {
     setIsOpen(!isOpen);
   };
 
@@ -2718,6 +2720,19 @@ CardLogViewDemo = () => {
     <SelectOption value="Last 7 days" key="option4" />
   ];
 
+  const headerActions = (
+    <Select
+      onSelect={onActionSelect}
+      onToggle={onActionToggle}
+      placeholderText="Most recent"
+      isOpen={isOpen}
+      position="right"
+      isPlain
+    >
+      {selectItems}
+    </Select>
+  );
+
   return (
     <React.Fragment>
       <b>Note:</b> Custom CSS is used in this demo to align the card title and select toggle text to{' '}
@@ -2726,19 +2741,7 @@ CardLogViewDemo = () => {
       <br />
       <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '360px' }}>
         <Card id="card-log-view-example">
-          <CardHeader className="pf-u-align-items-flex-start">
-            <CardActions hasNoOffset>
-              <Select
-                onSelect={onActionSelect}
-                onToggle={onActionToggle}
-                placeholderText="Most recent"
-                isOpen={isOpen}
-                position="right"
-                isPlain
-              >
-                {selectItems}
-              </Select>
-            </CardActions>
+          <CardHeader className="pf-u-align-items-flex-start" actions={{ actions: headerActions, hasNoOffset: true }}>
             <CardTitle>
               <Title headingLevel="h4" size="xl" style={{ paddingTop: '3px' }}>
                 Activity
@@ -2800,7 +2803,6 @@ import React from 'react';
 import {
   Card,
   CardHeader,
-  CardActions,
   CardTitle,
   CardBody,
   CardFooter,
@@ -2823,7 +2825,7 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 CardEventViewDemo = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onActionSelect = event => {
+  const onActionSelect = (event) => {
     setIsOpen(!isOpen);
   };
 
@@ -2837,6 +2839,18 @@ CardEventViewDemo = () => {
     <SelectOption value="Warning" key="option3" />
   ];
 
+  const headerActions = (
+    <Select
+      onSelect={onActionSelect}
+      onToggle={onActionToggle}
+      placeholderText="Status"
+      isOpen={isOpen}
+      position="right"
+      isPlain
+    >
+      {selectItems}
+    </Select>
+  );
   return (
     <React.Fragment>
       <b>Note:</b> Custom CSS is used in this demo to align the card title and select toggle text to{' '}
@@ -2845,19 +2859,7 @@ CardEventViewDemo = () => {
       <br />
       <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '360px' }}>
         <Card id="card-events-view-example">
-          <CardHeader className="pf-u-align-items-flex-start">
-            <CardActions hasNoOffset>
-              <Select
-                onSelect={onActionSelect}
-                onToggle={onActionToggle}
-                placeholderText="Status"
-                isOpen={isOpen}
-                position="right"
-                isPlain
-              >
-                {selectItems}
-              </Select>
-            </CardActions>
+          <CardHeader className="pf-u-align-items-flex-start" actions={{ actions: headerActions, hasNoOffset: true }}>
             <CardTitle>
               <Title headingLevel="h4" size="xl" style={{ paddingTop: '3px' }}>
                 Events
