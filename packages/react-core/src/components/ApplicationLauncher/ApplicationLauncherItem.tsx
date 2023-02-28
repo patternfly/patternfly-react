@@ -75,8 +75,8 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
               <button
                 className={css(styles.appLauncherMenuItem, styles.modifiers.action)}
                 aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
-                onClick={() => {
-                  onFavorite((id || getUniqueId('app-launcher-option')).replace('favorite-', ''), isFavorite);
+                onClick={(event) => {
+                  onFavorite(event, (id || getUniqueId('app-launcher-option')).replace('favorite-', ''), isFavorite);
                 }}
               >
                 <StarIcon />

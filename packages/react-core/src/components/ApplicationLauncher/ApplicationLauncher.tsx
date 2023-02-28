@@ -48,9 +48,9 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   /** ID list of favorited ApplicationLauncherItems */
   favorites?: string[];
   /** Enables favorites. Callback called when an ApplicationLauncherItem's favorite button is clicked */
-  onFavorite?: (itemId: string, isFavorite: boolean) => void;
+  onFavorite?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => void;
   /** Enables search. Callback called when text input is entered into search box */
-  onSearch?: (textInput: string) => void;
+  onSearch?: (event: React.FormEvent<HTMLInputElement>, textInput: string) => void;
   /** Placeholder text for search input */
   searchPlaceholderText?: string;
   /** Text for search input when no results are found */
@@ -97,7 +97,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
           customChild={
             <SearchInput
               placeholder={searchPlaceholderText}
-              onChange={(_event, value) => onSearch(value)}
+              onChange={onSearch}
               {...searchProps}
             />
           }
