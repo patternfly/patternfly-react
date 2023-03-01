@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.18...@patternfly/react-core@5.0.0-alpha.19) (2023-03-01)
+
+### Bug Fixes
+
+- **core:** whitespace change to test lerna ([ef75271](https://github.com/patternfly/patternfly-react/commit/ef75271fdf23308d2c9c32f1b94bdf731dbac9e7))
+
 # [5.0.0-alpha.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.17...@patternfly/react-core@5.0.0-alpha.18) (2023-03-01)
 
 ### Features
