@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.16...@patternfly/react-core@5.0.0-alpha.17) (2023-03-01)
+
+### Bug Fixes
+
+- **Drawer:** added event param to onResize callback ([#8736](https://github.com/patternfly/patternfly-react/issues/8736)) ([db183b2](https://github.com/patternfly/patternfly-react/commit/db183b29ebdf26ceaae975e3a0fbe58a5635ca21))
+- **Menu:** hid innerRef prop from docs ([#8746](https://github.com/patternfly/patternfly-react/issues/8746)) ([878b0cc](https://github.com/patternfly/patternfly-react/commit/878b0cc1be1c4cbbad4748f7cc41ccb3084b5ee8))
+- **SkipToContent:** Updated markup ([#8650](https://github.com/patternfly/patternfly-react/issues/8650)) ([0808215](https://github.com/patternfly/patternfly-react/commit/08082151987f571556169dae9fc1326c16807d61))
+
 # [5.0.0-alpha.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.15...@patternfly/react-core@5.0.0-alpha.16) (2023-02-28)
 
 ### Features
