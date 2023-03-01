@@ -18,34 +18,35 @@ DateRangePicker = () => {
   const [from, setFrom] = React.useState();
   const [to, setTo] = React.useState();
 
-  const toValidator = date => isValidDate(from) && date >= from ? '' : 'To date must be less than from date';
-  const onFromChange = (_str, date) => {
+  const toValidator = (date) =>
+    isValidDate(from) && date >= from ? '' : 'The "to" date must be after the "from" date';
+
+  const onFromChange = (_event, _value, date) => {
     setFrom(new Date(date));
     if (isValidDate(date)) {
       date.setDate(date.getDate() + 1);
       setTo(yyyyMMddFormat(date));
-    }
-    else {
+    } else {
       setTo('');
+    }
+  };
+
+  const onToChange = (_event, _value, date) => {
+    if (isValidDate(date)) {
+      setTo(yyyyMMddFormat(date));
     }
   };
 
   return (
     <Split>
       <SplitItem>
-        <DatePicker
-          onChange={onFromChange}
-          aria-label="Start date"
-          placeholder="YYYY-MM-DD"
-        />
+        <DatePicker onChange={onFromChange} aria-label="Start date" placeholder="YYYY-MM-DD" />
       </SplitItem>
-      <SplitItem style={{ padding: '6px 12px 0 12px' }}>
-        to
-      </SplitItem>
+      <SplitItem style={{ padding: '6px 12px 0 12px' }}>to</SplitItem>
       <SplitItem>
         <DatePicker
           value={to}
-          onChange={date => setTo(date)}
+          onChange={onToChange}
           isDisabled={!isValidDate(from)}
           rangeStart={from}
           validators={[toValidator]}
@@ -55,23 +56,34 @@ DateRangePicker = () => {
       </SplitItem>
     </Split>
   );
-}
+};
 ```
 
 ### Date and time range picker
 
 ```js
-import { Flex, FlexItem, InputGroup, DatePicker, isValidDate, TimePicker, yyyyMMddFormat, updateDateTime } from '@patternfly/react-core';
+import {
+  Flex,
+  FlexItem,
+  InputGroup,
+  DatePicker,
+  isValidDate,
+  TimePicker,
+  yyyyMMddFormat,
+  updateDateTime
+} from '@patternfly/react-core';
 
 DateTimeRangePicker = () => {
   const [from, setFrom] = React.useState();
   const [to, setTo] = React.useState();
 
-  const toValidator = date => {
-    return isValidDate(from) && yyyyMMddFormat(date) >= yyyyMMddFormat(from) ? '' : 'To date must after from date';
+  const toValidator = (date) => {
+    return isValidDate(from) && yyyyMMddFormat(date) >= yyyyMMddFormat(from)
+      ? ''
+      : 'The "to" date must be after the "from" date';
   };
-  
-  const onFromDateChange = (inputDate, newFromDate) => {
+
+  const onFromDateChange = (_event, inputDate, newFromDate) => {
     if (isValidDate(from) && isValidDate(newFromDate) && inputDate === yyyyMMddFormat(newFromDate)) {
       newFromDate.setHours(from.getHours());
       newFromDate.setMinutes(from.getMinutes());
@@ -80,7 +92,7 @@ DateTimeRangePicker = () => {
       setFrom(new Date(newFromDate));
     }
   };
-  
+
   const onFromTimeChange = (_event, time, hour, minute) => {
     if (isValidDate(from)) {
       const updatedFromDate = new Date(from);
@@ -90,16 +102,16 @@ DateTimeRangePicker = () => {
     }
   };
 
-  const onToDateChange = (inputDate, newToDate) => {
+  const onToDateChange = (_event, inputDate, newToDate) => {
     if (isValidDate(to) && isValidDate(newToDate) && inputDate === yyyyMMddFormat(newToDate)) {
       newToDate.setHours(to.getHours());
       newToDate.setMinutes(to.getMinutes());
     }
-    if (isValidDate(newToDate) && inputDate === yyyyMMddFormat(newToDate)){
+    if (isValidDate(newToDate) && inputDate === yyyyMMddFormat(newToDate)) {
       setTo(newToDate);
     }
   };
-  
+
   const onToTimeChange = (_event, time, hour, minute) => {
     if (isValidDate(to)) {
       const updatedToDate = new Date(to);
@@ -110,24 +122,14 @@ DateTimeRangePicker = () => {
   };
 
   return (
-    <Flex direction={{default: 'column', lg: 'row'}}>
+    <Flex direction={{ default: 'column', lg: 'row' }}>
       <FlexItem>
         <InputGroup>
-          <DatePicker
-            onChange={onFromDateChange}
-            aria-label="Start date"
-            placeholder="YYYY-MM-DD"
-          />
-          <TimePicker 
-            aria-label="Start time"
-            style={{width: '150px'}} 
-            onChange={onFromTimeChange} 
-          />
+          <DatePicker onChange={onFromDateChange} aria-label="Start date" placeholder="YYYY-MM-DD" />
+          <TimePicker aria-label="Start time" style={{ width: '150px' }} onChange={onFromTimeChange} />
         </InputGroup>
       </FlexItem>
-      <FlexItem>
-        to
-      </FlexItem>
+      <FlexItem>to</FlexItem>
       <FlexItem>
         <InputGroup>
           <DatePicker
@@ -139,19 +141,22 @@ DateTimeRangePicker = () => {
             aria-label="End date"
             placeholder="YYYY-MM-DD"
           />
-          <TimePicker style={{width: '150px'}} onChange={onToTimeChange} isDisabled={!isValidDate(from)}/>
+          <TimePicker style={{ width: '150px' }} onChange={onToTimeChange} isDisabled={!isValidDate(from)} />
         </InputGroup>
       </FlexItem>
     </Flex>
   );
-}
+};
 ```
 
-
 ### Date and time pickers in modal
+
 Modals trap focus and watch a few document level events. In order to place a date picker in a modal:
+
 - To avoid the modal's escape press event handler from overruling the date picker's escape press handlers, use the `DatePickerRef` to close the calendar when it is open and the escape key is pressed.
 - Append the calendar to the modal to keep it as close to the date picker in the DOM while maintaining correct layouts visually
   In order to place a time picker in the modal, its menu must be appended to the time picker's parent.
+
 ```ts file="./examples/DateTimePickerInModal.tsx"
+
 ```
