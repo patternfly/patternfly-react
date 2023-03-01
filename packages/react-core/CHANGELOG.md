@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.17...@patternfly/react-core@5.0.0-alpha.18) (2023-03-01)
+
+### Features
+
+- **ApplicationLauncher:** added event param to callbacks ([#8756](https://github.com/patternfly/patternfly-react/issues/8756)) ([125a002](https://github.com/patternfly/patternfly-react/commit/125a002ebd24be4550ae537d5f571b73ea0e3027))
+- **Checkbox:** changed order of onChange params ([#8750](https://github.com/patternfly/patternfly-react/issues/8750)) ([0a87f55](https://github.com/patternfly/patternfly-react/commit/0a87f554e4cf3abb99de8f2ccd53737f0cf489b1))
+- **ClipboardCopy:** added event to onChange prop ([#8747](https://github.com/patternfly/patternfly-react/issues/8747)) ([ed13078](https://github.com/patternfly/patternfly-react/commit/ed1307864df79c0ab76815e37dc6961c960143ea))
+
 # [5.0.0-alpha.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.16...@patternfly/react-core@5.0.0-alpha.17) (2023-03-01)
 
 ### Bug Fixes
