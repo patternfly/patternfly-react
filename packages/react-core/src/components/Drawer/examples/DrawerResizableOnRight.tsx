@@ -26,7 +26,7 @@ export const DrawerResizableOnRight: React.FunctionComponent = () => {
     setIsExpanded(false);
   };
 
-  const onResize = (newWidth: number, id: string) => {
+  const onResize = (_event: MouseEvent | TouchEvent | React.KeyboardEvent, newWidth: number, id: string) => {
     // eslint-disable-next-line no-console
     console.log(`${id} has new width of: ${newWidth}`);
   };
