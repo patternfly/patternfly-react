@@ -10,9 +10,6 @@ exports[`CardHeader actions are rendered 1`] = `
     >
         
     </div>
-    <div
-      class=""
-    />
   </div>
 </DocumentFragment>
 `;
@@ -52,9 +49,6 @@ exports[`CardHeader onExpand adds the toggle button 1`] = `
         </span>
       </button>
     </div>
-    <div
-      class=""
-    />
   </div>
 </DocumentFragment>
 `;
