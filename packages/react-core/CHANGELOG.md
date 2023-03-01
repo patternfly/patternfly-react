@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.276.7 (2023-03-01)
+
+
+### Bug Fixes
+
+* **DatePicker:** fixed errors in demos ([#8760](https://github.com/patternfly/patternfly-react/issues/8760)) ([9d24cf4](https://github.com/patternfly/patternfly-react/commit/9d24cf49fe6b0ed43c0687201af47c3ce919a2b7))
+
+
+
+
+
 ## [4.276.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.5...@patternfly/react-core@4.276.6) (2023-01-27)
 
 **Note:** Version bump only for package @patternfly/react-core
