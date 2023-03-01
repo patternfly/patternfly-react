@@ -131,12 +131,22 @@ class BulletChart extends React.Component {
     this.containerRef = React.createRef();
     this.observer = () => {};
     this.state = {
+      extraHeight: 0,
       width: 0
     };
     this.handleResize = () => {
-      if(this.containerRef.current && this.containerRef.current.clientWidth){
+      if (this.containerRef.current && this.containerRef.current.clientWidth) {
         this.setState({ width: this.containerRef.current.clientWidth });
       }
+    };
+    this.handleLegendAllowWrap = (extraHeight) => {
+      if (extraHeight !== this.state.extraHeight) {
+        this.setState({ extraHeight });
+      }
+    }
+    this.getHeight = (baseHeight) => {
+      const { extraHeight } = this.state;
+      return baseHeight + extraHeight;
     };
   }
 
@@ -151,37 +161,36 @@ class BulletChart extends React.Component {
 
   render() {
     const { width } = this.state;
+    const height = this.getHeight(200);
     return (
-      <div ref={this.containerRef}>
-        <div style={{ height: '250px' }}>
-          <ChartBullet
-            ariaDesc="Storage capacity"
-            ariaTitle="Bullet chart example"
-            comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
-            comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-            constrainToVisibleArea
-            height={250}
-            labels={({ datum }) => `${datum.name}: ${datum.y}`}
-            legendAllowWrap
-            legendPosition="bottom-left"
-            maxDomain={{y: 100}}
-            name="chart3"
-            padding={{
-              bottom: 50,
-              left: 50,
-              right: 50,
-              top: 100 // Adjusted to accommodate labels
-            }}
-            primarySegmentedMeasureData={[{ name: 'Measure', y: 25 }, { name: 'Measure', y: 60 }]}
-            primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
-            qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
-            qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-            subTitle="Measure details"
-            title="Text label"
-            titlePosition="top-left"
-            width={width}
-          />
-        </div>
+      <div ref={this.containerRef} style={{ height: height + "px" }}>
+        <ChartBullet
+          ariaDesc="Storage capacity"
+          ariaTitle="Bullet chart example"
+          comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
+          comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
+          constrainToVisibleArea
+          height={height}
+          labels={({ datum }) => `${datum.name}: ${datum.y}`}
+          legendAllowWrap={this.handleLegendAllowWrap}
+          legendPosition="bottom-left"
+          maxDomain={{y: 100}}
+          name="chart3"
+          padding={{
+            bottom: 50,
+            left: 50,
+            right: 50,
+            top: 100 // Adjusted to accommodate labels
+          }}
+          primarySegmentedMeasureData={[{ name: 'Measure', y: 25 }, { name: 'Measure', y: 60 }]}
+          primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
+          qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
+          qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
+          subTitle="Measure details"
+          title="Text label"
+          titlePosition="top-left"
+          width={width}
+        />
       </div>
     );
   }

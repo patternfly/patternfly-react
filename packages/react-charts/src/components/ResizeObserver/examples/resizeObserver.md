@@ -62,12 +62,22 @@ class BulletChart extends React.Component {
     this.containerRef = React.createRef();
     this.observer = () => {};
     this.state = {
+      extraHeight: 0,
       width: 0
     };
     this.handleResize = () => {
       if (this.containerRef.current && this.containerRef.current.clientWidth) {
         this.setState({ width: this.containerRef.current.clientWidth });
       }
+    };
+    this.handleLegendAllowWrap = (extraHeight) => {
+      if (extraHeight !== this.state.extraHeight) {
+        this.setState({ extraHeight });
+      }
+    }
+    this.getHeight = (baseHeight) => {
+      const { extraHeight } = this.state;
+      return baseHeight + extraHeight;
     };
   }
 
@@ -82,17 +92,18 @@ class BulletChart extends React.Component {
 
   render() {
     const { width } = this.state;
+    const height = this.getHeight(200);
     return (
-      <div ref={this.containerRef} style={{ height: '250px' }}>
+      <div ref={this.containerRef} style={{ height: height + "px" }}>
         <ChartBullet
           ariaDesc="Storage capacity"
           ariaTitle="Bullet chart example"
           comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
           comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
           constrainToVisibleArea
-          height={250}
+          height={height}
           labels={({ datum }) => `${datum.name}: ${datum.y}`}
-          legendAllowWrap
+          legendAllowWrap={this.handleLegendAllowWrap}
           legendPosition="bottom-left"
           maxDomain={{y: 100}}
           name="chart1"
