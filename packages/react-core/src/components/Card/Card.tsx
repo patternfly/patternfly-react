@@ -66,7 +66,7 @@ export const CardContext = React.createContext<Partial<CardContextProps>>({
 export const Card: React.FunctionComponent<CardProps> = ({
   children,
   id = '',
-  className = '',
+  className,
   component = 'div',
   isCompact = false,
   isSelectable = false,

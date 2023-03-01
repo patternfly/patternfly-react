@@ -12,6 +12,8 @@ export interface CardHeaderActionsObject {
   actions: React.ReactNode;
   /** Flag indicating that the actions have no offset */
   hasNoOffset?: boolean;
+  /** Additional classes added to the action */
+  className?: string;
 }
 
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
@@ -48,7 +50,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           <Button
             variant="plain"
             type="button"
-            onClick={evt => {
+            onClick={(evt) => {
               onExpand(evt, cardId);
             }}
             {...toggleButtonProps}
@@ -67,10 +69,8 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           {...props}
         >
           {onExpand && !isToggleRightAligned && cardHeaderToggle}
-          {actions && <CardActions hasNoOffset={actions?.hasNoOffset}> {actions.actions} </CardActions>}
-          <CardHeaderMain>
-            {children}
-          </CardHeaderMain>
+          {actions && <CardActions className={actions?.className} hasNoOffset={actions?.hasNoOffset}> {actions.actions} </CardActions>}
+          {children && <CardHeaderMain>{children}</CardHeaderMain>}
           {onExpand && isToggleRightAligned && cardHeaderToggle}
         </div>
       );

@@ -1414,7 +1414,7 @@ class PrimaryDetailCardView extends React.Component {
         <ToolbarItem>
           <Button variant="secondary">Action</Button>
         </ToolbarItem>
-        <ToolbarItem hasAdditionalOptions>
+        <ToolbarItem>
           <Dropdown
             onSelect={this.onToolbarKebabDropdownSelect}
             toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
@@ -1446,43 +1446,10 @@ class PrimaryDetailCardView extends React.Component {
       swaggerIcon
     };
 
-    const cardHeaderActions = (
-      <>
-        <Dropdown
-          isPlain
-          position="right"
-          onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
-          toggle={
-            <KebabToggle
-              onToggle={(event, isCardKebabDropdownOpen) =>
-                this.onCardKebabDropdownToggle(event, key, isCardKebabDropdownOpen)
-              }
-            />
-          }
-          isOpen={this.state[key]}
-          dropdownItems={[
-            <DropdownItem key="trash" onClick={(e) => this.deleteItem(e, product)} position="right">
-              <TrashIcon />
-              Delete
-            </DropdownItem>
-          ]}
-        />
-        <Checkbox
-          checked={isChecked}
-          onClick={(event) => this.onCheckboxClick(event, product.id)}
-          value={product.id}
-          isChecked={selectedItems.includes(product.id)}
-          aria-label="card checkbox example"
-          id={`check-${product.id}`}
-        />
-      </>
-    );
-
     const drawerContent = (
       <Gallery hasGutter role="region" aria-label="Selectable card container">
         {filtered.map((product, key) => (
           <Card
-            isHoverable
             key={product.name}
             id={'card-view-' + key}
             onKeyDown={this.onKeyDown}
@@ -1492,7 +1459,41 @@ class PrimaryDetailCardView extends React.Component {
             isSelected={activeCard === 'card-view-' + key}
             hasSelectableInput
           >
-            <CardHeader actions={{ actions: cardHeaderActions }}>
+            <CardHeader
+              actions={{
+                actions: (
+                  <>
+                    <Dropdown
+                      isPlain
+                      position="right"
+                      onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
+                      toggle={
+                        <KebabToggle
+                          onToggle={(event, isCardKebabDropdownOpen) =>
+                            this.onCardKebabDropdownToggle(event, key, isCardKebabDropdownOpen)
+                          }
+                        />
+                      }
+                      isOpen={this.state[key]}
+                      dropdownItems={[
+                        <DropdownItem key="trash" onClick={(e) => this.deleteItem(e, product)} position="right">
+                          <TrashIcon />
+                          Delete
+                        </DropdownItem>
+                      ]}
+                    />
+                    <Checkbox
+                      checked={isChecked}
+                      onClick={(event) => this.onCheckboxClick(event, product.id)}
+                      value={product.id}
+                      isChecked={selectedItems.includes(product.id)}
+                      aria-label="card checkbox example"
+                      id={`check-${product.id}`}
+                    />
+                  </>
+                )
+              }}
+            >
               <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
             </CardHeader>
             <CardTitle>{product.name}</CardTitle>

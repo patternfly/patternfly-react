@@ -13,7 +13,7 @@ export interface CardActionsProps extends React.HTMLProps<HTMLDivElement> {
 
 export const CardActions: React.FunctionComponent<CardActionsProps> = ({
   children,
-  className = '',
+  className,
   hasNoOffset = false,
   ...props
 }: CardActionsProps) => (
