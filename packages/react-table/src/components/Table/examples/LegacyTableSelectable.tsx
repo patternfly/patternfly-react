@@ -97,7 +97,7 @@ export const LegacyTableSelectable: React.FunctionComponent = () => {
         label="Can select all"
         className="pf-u-mb-lg"
         isChecked={canSelectAll}
-        onChange={checked => setCanSelectAll(checked)}
+        onChange={(_event, checked) => setCanSelectAll(checked)}
         aria-label="toggle select all checkbox"
         id="toggle-select-all"
         name="toggle-select-all"

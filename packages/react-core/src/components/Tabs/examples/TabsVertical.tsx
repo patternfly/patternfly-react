@@ -61,7 +61,7 @@ export const TabsVertical: React.FunctionComponent = () => {
         <Checkbox
           label="isBox"
           isChecked={isBox}
-          onChange={toggleBox}
+          onChange={(_event, checked) => toggleBox(checked)}
           aria-label="show box variation checkbox with vertical"
           id="toggle-box-vertical"
           name="toggle-box-vertical"

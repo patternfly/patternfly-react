@@ -1075,7 +1075,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         <Checkbox
           label="isCreatable"
           isChecked={this.state.typeaheadIsCreatable}
-          onChange={this.toggleCreatable}
+          onChange={(_event, checked) => this.toggleCreatable(checked)}
           aria-label="toggle creatable checkbox"
           id="toggle-creatable-typeahead"
           name="toggle-creatable-typeahead"
@@ -1083,7 +1083,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         <Checkbox
           label="onCreateOption"
           isChecked={this.state.typeaheadNewOptions}
-          onChange={this.toggleNew}
+          onChange={(_event, checked) => this.toggleNew(checked)}
           aria-label="toggle new checkbox"
           id="toggle-new-typeahead"
           name="toggle-new-typeahead"
@@ -1091,7 +1091,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         <Checkbox
           label="isInputValuePersisted"
           isChecked={this.state.typeaheadInputValuePersisted}
-          onChange={this.toggleInputValuePersisted}
+          onChange={(_event, checked) => this.toggleInputValuePersisted(checked)}
           aria-label="toggle input value persisted"
           id="toggle-input-value-persisted"
           name="toggle-input-value-persisted"

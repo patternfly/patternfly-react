@@ -86,7 +86,7 @@ export class FormDemo extends Component<FormProps, FormState> {
     window.scrollTo(0, 0);
   }
 
-  handleCheckboxChange(checked: boolean, event: any) {
+  handleCheckboxChange(event: any, _checked: boolean) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({ ['checkboxChecked']: value });

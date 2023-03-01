@@ -148,7 +148,7 @@ export const LegacyTableStripedExpandable: React.FunctionComponent = () => {
       <Checkbox
         label="Compact"
         isChecked={isExampleCompact}
-        onChange={checked => setIsExampleCompact(checked)}
+        onChange={(_event, checked) => setIsExampleCompact(checked)}
         aria-label="toggle striped compact variation"
         id="toggle-compact-striped"
         name="toggle-compact-striped"

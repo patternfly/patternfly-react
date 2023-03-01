@@ -123,7 +123,7 @@ export const AccordionBordered: React.FunctionComponent = () => {
         <Checkbox
           label="Display size large"
           isChecked={isDisplayLarge}
-          onChange={setIsDisplayLarge}
+          onChange={(_event, checked) => setIsDisplayLarge(checked)}
           aria-label="show display large variation checkbox"
           id="toggle-display-lg"
           name="toggle-display-lg"

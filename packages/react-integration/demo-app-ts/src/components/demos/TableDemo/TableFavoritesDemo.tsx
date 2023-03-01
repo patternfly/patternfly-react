@@ -130,7 +130,7 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
         <Checkbox
           label="Can sort favorites"
           isChecked={canSortFavorites}
-          onChange={this.toggleFavsSort}
+          onChange={(_event, checked) => this.toggleFavsSort(checked)}
           aria-label="toggle select all checkbox"
           id="toggle-select-all"
           name="toggle-select-all"

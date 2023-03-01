@@ -56,7 +56,7 @@ export const CardTitleInHeader: React.FunctionComponent = () => {
           />
           <Checkbox
             isChecked={isChecked}
-            onChange={onClick}
+            onChange={(_event, checked) => onClick(checked)}
             aria-label="card checkbox example"
             id="check-2"
             name="check2"

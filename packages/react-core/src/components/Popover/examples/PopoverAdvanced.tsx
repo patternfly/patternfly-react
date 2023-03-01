@@ -41,14 +41,14 @@ export const PopoverAdvanced: React.FunctionComponent = () => {
         <Checkbox
           label="Flip popover if the position falls outside the view"
           isChecked={keepInViewChecked}
-          onChange={handleKeepInViewChange}
+          onChange={(_event, checked) => handleKeepInViewChange(checked)}
           aria-label="Keep in view"
           id="popover-advanced-check-1"
         />
         <Checkbox
           label="Toggle popover from outside"
           isChecked={show}
-          onChange={handleProgrammaticChange}
+          onChange={(_event, checked) => handleProgrammaticChange(checked)}
           aria-label="Toggle popover from outside"
           id="popover-advanced-check-2"
         />

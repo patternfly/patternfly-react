@@ -86,7 +86,7 @@ export class CodeEditorDemo extends React.Component<CodeEditorProps, CodeEditorD
         <Checkbox
           label="Dark theme"
           isChecked={isDarkTheme}
-          onChange={this.toggleDarkTheme}
+          onChange={(_event, checked) => this.toggleDarkTheme(checked)}
           aria-label="dark theme checkbox"
           id="toggle-theme"
           name="toggle-theme"
@@ -94,7 +94,7 @@ export class CodeEditorDemo extends React.Component<CodeEditorProps, CodeEditorD
         <Checkbox
           label="Line numbers"
           isChecked={isLineNumbersVisible}
-          onChange={this.toggleLineNumbers}
+          onChange={(_event, checked) => this.toggleLineNumbers(checked)}
           aria-label="line numbers checkbox"
           id="toggle-line-numbers"
           name="toggle-line-numbers"
@@ -102,7 +102,7 @@ export class CodeEditorDemo extends React.Component<CodeEditorProps, CodeEditorD
         <Checkbox
           label="Read only"
           isChecked={isReadOnly}
-          onChange={this.toggleReadOnly}
+          onChange={(_event, checked) => this.toggleReadOnly(checked)}
           aria-label="read only checkbox"
           id="toggle-read-only"
           name="toggle-read-only"
@@ -110,7 +110,7 @@ export class CodeEditorDemo extends React.Component<CodeEditorProps, CodeEditorD
         <Checkbox
           label="Display Minimap"
           isChecked={isMinimapVisible}
-          onChange={this.toggleMinimap}
+          onChange={(_event, checked) => this.toggleMinimap(checked)}
           aria-label="display minimap checkbox"
           id="toggle-minimap"
           name="toggle-minimap"

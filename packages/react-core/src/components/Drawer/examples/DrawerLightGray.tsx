@@ -66,7 +66,7 @@ export const DrawerLightGray: React.FunctionComponent = () => {
       <Checkbox
         label="Gray panel"
         isChecked={panelGray}
-        onChange={togglePanelGray}
+        onChange={(_event, checked) => togglePanelGray(checked)}
         aria-label="Gray panel checkbox"
         id="toggle-gray-panel"
         name="toggle-gray-panel"
@@ -74,7 +74,7 @@ export const DrawerLightGray: React.FunctionComponent = () => {
       <Checkbox
         label="Gray content"
         isChecked={contentGray}
-        onChange={toggleContentGray}
+        onChange={(_event, checked) => toggleContentGray(checked)}
         aria-label="Gray content checkbox"
         id="toggle-gray-content"
         name="toggle-gray-content"
@@ -82,7 +82,7 @@ export const DrawerLightGray: React.FunctionComponent = () => {
       <Checkbox
         label="Gray section"
         isChecked={sectionGray}
-        onChange={toggleSectionGray}
+        onChange={(_event, checked) => toggleSectionGray(checked)}
         aria-label="Gray section checkbox"
         id="toggle-gray-section"
         name="toggle-gray-section"

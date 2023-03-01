@@ -115,7 +115,7 @@ export const LegacyTableFavoritable: React.FunctionComponent = () => {
       <Checkbox
         label="Can sort favorites"
         isChecked={canSortFavorites}
-        onChange={setCanSortFavorites}
+        onChange={(_event, checked) => setCanSortFavorites(checked)}
         aria-label="toggle can sort favorites checkbox"
         id="toggle-can-sort-favorites"
         name="toggle-can-sort-favorites"

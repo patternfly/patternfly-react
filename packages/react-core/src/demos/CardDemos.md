@@ -1484,7 +1484,7 @@ CardNestedDemo = () => {
           key="isToggleRightAligned"
           label="Align expand toggle on right"
           isChecked={isToggleOnRight}
-          onChange={checked => onCheckClick(!isToggleOnRight)}
+          onChange={(_event, checked) => onCheckClick(!isToggleOnRight)}
         />
       </div>
       <Card id="nested-cards-card">

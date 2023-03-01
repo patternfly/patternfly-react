@@ -49,7 +49,7 @@ export const TabsPageInsets: React.FunctionComponent = () => {
         <Checkbox
           label="isBox"
           isChecked={isBox}
-          onChange={toggleBox}
+          onChange={(_event, checked) => toggleBox(checked)}
           aria-label="show box variation checkbox with inset"
           id="toggle-box-page-inset"
           name="toggle-box-page-inset"

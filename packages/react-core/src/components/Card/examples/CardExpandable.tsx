@@ -89,7 +89,7 @@ export const CardExpandable: React.FunctionComponent = () => {
             />
             <Checkbox
               isChecked={isChecked}
-              onChange={onClick}
+              onChange={(_event, checked) => onClick(checked)}
               aria-label="card checkbox example"
               id="check-4"
               name="check4"

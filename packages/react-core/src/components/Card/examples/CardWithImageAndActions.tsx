@@ -67,7 +67,7 @@ export const CardWithImageAndActions: React.FunctionComponent = () => {
             />
             <Checkbox
               isChecked={isChecked}
-              onChange={onClick}
+              onChange={(_event, checked) => onClick(checked)}
               aria-label="card checkbox example"
               id="check-1"
               name="check1"
@@ -82,7 +82,7 @@ export const CardWithImageAndActions: React.FunctionComponent = () => {
         <Checkbox
           label="actions hasNoOffset"
           isChecked={hasNoOffset}
-          onChange={toggleOffset}
+          onChange={(_event, checked) => toggleOffset(checked)}
           aria-label="remove actions offset"
           id="toggle-actions-offset"
           name="toggle-actions-offset"

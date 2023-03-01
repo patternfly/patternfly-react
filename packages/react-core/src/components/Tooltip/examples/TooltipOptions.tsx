@@ -33,7 +33,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
           <Checkbox
             label="trigger: mouseenter"
             isChecked={trigger.includes('mouseenter')}
-            onChange={checked => {
+            onChange={(_event, checked) => {
               const updatedTrigger = checked ? trigger.concat('mouseenter') : trigger.filter(t => t !== 'mouseenter');
               setIsVisible(false);
               setTrigger(updatedTrigger);
@@ -44,7 +44,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
           <Checkbox
             label="trigger: focus"
             isChecked={trigger.includes('focus')}
-            onChange={checked => {
+            onChange={(_event, checked) => {
               const updatedTrigger = checked ? trigger.concat('focus') : trigger.filter(t => t !== 'focus');
               setIsVisible(false);
               setTrigger(updatedTrigger);
@@ -55,7 +55,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
           <Checkbox
             label="trigger: click"
             isChecked={trigger.includes('click')}
-            onChange={checked => {
+            onChange={(_event, checked) => {
               const updatedTrigger = checked ? trigger.concat('click') : trigger.filter(t => t !== 'click');
               setIsVisible(false);
               setTimeout(() => setTrigger(updatedTrigger));
@@ -66,7 +66,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
           <Checkbox
             label="trigger: manual"
             isChecked={trigger.includes('manual')}
-            onChange={checked => {
+            onChange={(_event, checked) => {
               const updatedTrigger = checked ? trigger.concat('manual') : trigger.filter(t => t !== 'manual');
               setIsVisible(false);
               setTrigger(updatedTrigger);
@@ -79,7 +79,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
           <Checkbox
             label="content left-aligned"
             isChecked={contentLeftAligned}
-            onChange={checked => setContentLeftAligned(checked)}
+            onChange={(_event, checked) => setContentLeftAligned(checked)}
             aria-label="content left-aligned"
             id="content_left_aligned"
           />
@@ -88,7 +88,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
           <Checkbox
             label="enableFlip"
             isChecked={enableFlip}
-            onChange={checked => setEnableFlip(checked)}
+            onChange={(_event, checked) => setEnableFlip(checked)}
             aria-label="enableFlip"
             id="enable_flip"
           />
@@ -124,7 +124,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
           <Checkbox
             label="isVisible (also set trigger to only manual to programmatically control it)"
             isChecked={isVisible}
-            onChange={checked => setIsVisible(checked)}
+            onChange={(_event, checked) => setIsVisible(checked)}
             aria-label="isVisible"
             id="is_visible"
           />

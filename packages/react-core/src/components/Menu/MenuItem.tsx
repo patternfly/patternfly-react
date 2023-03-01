@@ -350,7 +350,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
                     id={randomId}
                     component="span"
                     isChecked={isSelected || false}
-                    onChange={event => onItemSelect(event, onSelect)}
+                    onChange={(event) => onItemSelect(event, onSelect)}
                     isDisabled={isDisabled}
                   />
                 </span>

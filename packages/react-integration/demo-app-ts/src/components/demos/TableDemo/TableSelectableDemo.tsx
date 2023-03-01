@@ -97,7 +97,7 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
           label="Can select all"
           className="pf-u-mb-lg"
           isChecked={canSelectAll}
-          onChange={this.toggleSelect}
+          onChange={(_event, checked) => this.toggleSelect(checked)}
           aria-label="toggle select all checkbox"
           id="toggle-select-all"
           name="toggle-select-all"

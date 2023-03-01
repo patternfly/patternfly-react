@@ -40,7 +40,7 @@ export const CodeEditorBasic: React.FunctionComponent = () => {
       <Checkbox
         label="Dark theme"
         isChecked={isDarkTheme}
-        onChange={toggleDarkTheme}
+        onChange={(_event, checked) => toggleDarkTheme(checked)}
         aria-label="dark theme checkbox"
         id="toggle-theme"
         name="toggle-theme"
@@ -48,7 +48,7 @@ export const CodeEditorBasic: React.FunctionComponent = () => {
       <Checkbox
         label="Line numbers"
         isChecked={isLineNumbersVisible}
-        onChange={toggleLineNumbers}
+        onChange={(_event, checked) => toggleLineNumbers(checked)}
         aria-label="line numbers checkbox"
         id="toggle-line-numbers"
         name="toggle-line-numbers"
@@ -56,7 +56,7 @@ export const CodeEditorBasic: React.FunctionComponent = () => {
       <Checkbox
         label="Read only"
         isChecked={isReadOnly}
-        onChange={toggleReadOnly}
+        onChange={(_event, checked) => toggleReadOnly(checked)}
         aria-label="read only checkbox"
         id="toggle-read-only"
         name="toggle-read-only"
@@ -64,7 +64,7 @@ export const CodeEditorBasic: React.FunctionComponent = () => {
       <Checkbox
         label="Minimap"
         isChecked={isMinimapVisible}
-        onChange={toggleMinimap}
+        onChange={(_event, checked) => toggleMinimap(checked)}
         aria-label="display minimap checkbox"
         id="toggle-minimap"
         name="toggle-minimap"

@@ -17,7 +17,7 @@ export const SearchInputAdvanced: React.FunctionComponent = () => {
       <Checkbox
         label="Use equal sign as search attribute delimiter"
         isChecked={useEqualsAsDelimiter}
-        onChange={toggleDelimiter}
+        onChange={(_event, checked) => toggleDelimiter(checked)}
         aria-label="change delimiter checkbox"
         id="toggle-delimiter"
         name="toggle-delimiter"
@@ -25,7 +25,7 @@ export const SearchInputAdvanced: React.FunctionComponent = () => {
       <Checkbox
         label="Add custom footer element after the attributes in the menu"
         isChecked={useCustomFooter}
-        onChange={value => setUseCustomFooter(value)}
+        onChange={(_event, checked) => setUseCustomFooter(checked)}
         aria-label="change use custom footer checkbox"
         id="toggle-custom-footer"
         name="toggle-custom-footer"

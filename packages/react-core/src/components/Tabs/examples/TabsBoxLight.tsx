@@ -52,7 +52,7 @@ export const TabsBoxLight: React.FunctionComponent = () => {
         <Checkbox
           label="Tabs light variation"
           isChecked={isTabsLightScheme}
-          onChange={toggleScheme}
+          onChange={(_event, checked) => toggleScheme(checked)}
           aria-label="show light scheme variation checkbox"
           id="toggle-scheme"
           name="toggle-scheme"

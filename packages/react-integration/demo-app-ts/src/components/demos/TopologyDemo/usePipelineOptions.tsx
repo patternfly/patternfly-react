@@ -21,20 +21,20 @@ export const usePipelineOptions = (
   const contextToolbar = (
     <>
       <ToolbarItem>
-        <Checkbox id="icons-switch" isChecked={showIcons} onChange={setShowIcons} label="Show icons" />
+        <Checkbox id="icons-switch" isChecked={showIcons} onChange={(_event, checked) => setShowIcons(checked)} label="Show icons" />
       </ToolbarItem>
       <ToolbarItem>
-        <Checkbox id="badges-switch" isChecked={showBadges} onChange={setShowBadges} label="Show badges" />
+        <Checkbox id="badges-switch" isChecked={showBadges} onChange={(_event, checked) => setShowBadges(checked)} label="Show badges" />
       </ToolbarItem>
       <ToolbarItem>
-        <Checkbox id="tooltips-switch" isChecked={badgeTooltips} onChange={setBadgeTooltips} label="Badge tooltips" />
+        <Checkbox id="tooltips-switch" isChecked={badgeTooltips} onChange={(_event, checked) => setBadgeTooltips(checked)} label="Badge tooltips" />
       </ToolbarItem>
       <ToolbarItem>
-        <Checkbox id="menus-switch" isChecked={showContextMenu} onChange={setShowContextMenu} label="Context menus" />
+        <Checkbox id="menus-switch" isChecked={showContextMenu} onChange={(_event, checked) => setShowContextMenu(checked)} label="Context menus" />
       </ToolbarItem>
       {allowGroups ? (
         <ToolbarItem>
-          <Checkbox id="groups-switch" isChecked={showGroups} onChange={setShowGroups} label="Show groups" />
+          <Checkbox id="groups-switch" isChecked={showGroups} onChange={(_event, checked) => setShowGroups(checked)} label="Show groups" />
         </ToolbarItem>
       ) : null}
     </>

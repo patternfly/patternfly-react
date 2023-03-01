@@ -29,7 +29,7 @@ const StepContentWithAction = () => {
     <Checkbox
       label="Give step 1 an error status"
       isChecked={!!errorMessage}
-      onChange={checked => setErrorMessage(checked ? 'Some error message' : undefined)}
+      onChange={(_event, checked) => setErrorMessage(checked ? 'Some error message' : undefined)}
       id="toggle-error-checkbox"
       name="Toggle Error Checkbox"
     />

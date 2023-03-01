@@ -148,7 +148,7 @@ export const LegacyTableExpandable: React.FunctionComponent = () => {
       <Checkbox
         label="Compact"
         isChecked={isExampleCompact}
-        onChange={checked => setIsExampleCompact(checked)}
+        onChange={(_event, checked) => setIsExampleCompact(checked)}
         aria-label="toggle compact variation"
         id="toggle-compact"
         name="toggle-compact"

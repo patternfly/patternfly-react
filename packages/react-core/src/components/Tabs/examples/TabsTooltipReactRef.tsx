@@ -61,7 +61,7 @@ export const TabsTooltipReactRef: React.FunctionComponent = () => {
         <Checkbox
           label="isBox"
           isChecked={isBox}
-          onChange={toggleBox}
+          onChange={(_event, checked) => toggleBox(checked)}
           aria-label="show box variation checkbox"
           id="toggle-box-tooltip-ref"
           name="toggle-box-tooltip-ref"

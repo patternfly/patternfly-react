@@ -31,7 +31,7 @@ const StepContentWithAction: React.FunctionComponent = () => {
     <Checkbox
       label="Toggle visibility of the next step"
       isChecked={isToggleStepChecked}
-      onChange={checked => setIsToggleStepChecked(checked)}
+      onChange={(_event, checked) => setIsToggleStepChecked(checked)}
       id="toggle-hide-step-checkbox"
       name="Toggle Hide Step Checkbox"
     />

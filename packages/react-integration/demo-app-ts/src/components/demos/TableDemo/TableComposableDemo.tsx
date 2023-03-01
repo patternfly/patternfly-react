@@ -48,7 +48,7 @@ export const TableComposableDemo = () => {
                 id="has-first-column-header"
                 label="First column cell is header"
                 isChecked={hasFirstColumnHeader}
-                onChange={setHasFirstColumnHeader}
+                onChange={(_event, checked) => setHasFirstColumnHeader(checked)}
               />
             </ToolbarItem>
           </ToolbarContent>
@@ -603,7 +603,7 @@ export const TableComposableDemo = () => {
               <Checkbox
                 label="Compact"
                 isChecked={compact}
-                onChange={toggleCompact}
+                onChange={(_event, checked) => toggleCompact(checked)}
                 aria-label="toggle compact variation"
                 id="toggle-compact"
                 name="toggle-compact"

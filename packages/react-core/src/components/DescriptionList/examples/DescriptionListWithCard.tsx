@@ -23,7 +23,7 @@ export const DescriptionListWithCard: React.FunctionComponent = () => {
         <Checkbox
           label="isSelectable"
           isChecked={isChecked}
-          onChange={toggleSelectable}
+          onChange={(_event, checked) => toggleSelectable(checked)}
           aria-label="set isSelectable"
           id="toggle-isSelectable"
           name="toggle-isSelectable"

@@ -20,7 +20,7 @@ export interface CheckboxProps
   isChecked?: boolean | null;
   checked?: boolean;
   /** A callback for when the checkbox selection changes. */
-  onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
   /** Label text of the checkbox. */
   label?: React.ReactNode;
   /** Id of the checkbox. */
@@ -67,7 +67,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
   }
 
   private handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
-    this.props.onChange(event.currentTarget.checked, event);
+    this.props.onChange(event, event.currentTarget.checked);
   };
 
   render() {

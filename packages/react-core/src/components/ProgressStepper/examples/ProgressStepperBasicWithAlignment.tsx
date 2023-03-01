@@ -10,7 +10,7 @@ export const ProgressStepperBasicWithAlignment: React.FunctionComponent = () => 
       <Checkbox
         label="Vertical alignment"
         isChecked={isVertical}
-        onChange={setIsVertical}
+        onChange={(_event, checked) => setIsVertical(checked)}
         aria-label="Toggle vertical alignment"
         id="toggle-vertical"
         name="toggle-vertical"
@@ -18,7 +18,7 @@ export const ProgressStepperBasicWithAlignment: React.FunctionComponent = () => 
       <Checkbox
         label="Center alignment"
         isChecked={isCenterAligned}
-        onChange={setIsCenterAligned}
+        onChange={(_event, checked) => setIsCenterAligned(checked)}
         aria-label="Toggle center alignment"
         id="toggle-center"
         name="toggle-center"

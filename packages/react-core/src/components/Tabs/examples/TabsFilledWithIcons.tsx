@@ -74,7 +74,7 @@ export const TabsFilledWithIcons: React.FunctionComponent = () => {
         <Checkbox
           label="isBox"
           isChecked={isBox}
-          onChange={toggleBox}
+          onChange={(_event, checked) => toggleBox(checked)}
           aria-label="show box variation checkbox with filled icon tabs"
           id="toggle-box-filled-icon"
           name="toggle-box-filled-icon"

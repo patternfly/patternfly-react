@@ -66,7 +66,7 @@ export class CardDemo extends React.Component {
     });
   };
 
-  onClick = (checked: boolean, event: any) => {
+  onClick = (event: any, _checked: boolean) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
