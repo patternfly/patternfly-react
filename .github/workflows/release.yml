@@ -20,7 +20,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -64,7 +64,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -104,7 +104,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -153,7 +153,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -213,7 +213,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -269,7 +269,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -323,7 +323,7 @@ jobs:
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
