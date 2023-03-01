@@ -2,18 +2,17 @@
 
 exports[`Verify Skip To Content 1`] = `
 <DocumentFragment>
-  <a
-    class="pf-c-button pf-m-primary pf-c-skip-to-content"
-    href="#main-content"
-  />
-</DocumentFragment>
-`;
-
-exports[`Verify Skip To Content if forced to display 1`] = `
-<DocumentFragment>
-  <a
-    class="pf-c-button pf-m-primary pf-c-skip-to-content"
-    href="#main-content"
-  />
+  <div
+    class="pf-c-skip-to-content"
+  >
+    <a
+      aria-disabled="false"
+      class="pf-c-button pf-m-primary"
+      data-ouia-component-id="OUIA-Generated-Button-primary-1"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      href="#main-content"
+    />
+  </div>
 </DocumentFragment>
 `;

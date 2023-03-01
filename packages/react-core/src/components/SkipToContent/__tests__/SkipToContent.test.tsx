@@ -10,8 +10,3 @@ test('Verify Skip To Content', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('Verify Skip To Content if forced to display', () => {
-  const { asFragment } = render(<SkipToContent href="#main-content" {...props} show />);
-  // Add a useful assertion here.
-  expect(asFragment()).toMatchSnapshot();
-});
