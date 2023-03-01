@@ -72,7 +72,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** A function that is triggered on clicking the copy button. */
   onCopy?: (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => void;
   /** A function that is triggered on changing the text. */
-  onChange?: (text?: string | number) => void;
+  onChange?: (event: React.FormEvent, text?: string | number) => void;
   /** The text which is copied. */
   children: React.ReactNode;
   /** Additional actions for inline clipboard copy. Should be wrapped with ClipboardCopyAction. */
@@ -119,7 +119,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   componentDidUpdate = (prevProps: ClipboardCopyProps, prevState: ClipboardCopyState) => {
     if (prevProps.children !== this.props.children) {
-      this.updateText(this.props.children as string | number);
+      this.setState({ text: this.props.children as string | number });
     }
   };
 
@@ -136,9 +136,9 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     }));
   };
 
-  updateText = (text: string | number) => {
+  updateText = (text: string | number, event: React.FormEvent) => {
     this.setState({ text });
-    this.props.onChange(text);
+    this.props.onChange(event, text);
   };
 
   render = () => {
@@ -265,7 +265,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                     isReadOnly={isReadOnly}
                     isCode={isCode}
                     id={`content-${id}`}
-                    onChange={this.updateText}
+                    onChange={(event, text) => this.updateText(text, event)}
                   >
                     {this.state.text}
                   </ClipboardCopyExpanded>

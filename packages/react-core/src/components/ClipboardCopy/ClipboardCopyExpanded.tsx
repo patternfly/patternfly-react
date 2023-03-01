@@ -7,7 +7,7 @@ import { PickOptional } from '../../helpers/typeUtils';
 export interface ClipboardCopyExpandedProps extends Omit<ClipboardCopyProps, 'onChange'> {
   className?: string;
   children: React.ReactNode;
-  onChange?: (text: string, e: React.FormEvent<HTMLDivElement>) => void;
+  onChange?: (e: React.FormEvent<HTMLDivElement>, text: string) => void;
   isReadOnly?: boolean;
   isCode?: boolean;
 }
@@ -32,7 +32,7 @@ export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpanded
       <div
         suppressContentEditableWarning
         className={css(styles.clipboardCopyExpandableContent, className)}
-        onInput={(e: any) => onChange(e.target.innerText, e)}
+        onInput={(e: any) => onChange(e, e.target.innerText)}
         contentEditable={!isReadOnly}
         {...props}
       >
