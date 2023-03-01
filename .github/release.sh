@@ -17,7 +17,7 @@ echo "Doing a release..."
 LOG=$(git log --format="%s" -1 | grep -Poe "#\d+")
 PR_NUM=${LOG:1}
 
-yarn run lerna publish --conventional-commits --conventional-prerelease --create-release=github --no-verify-access --no-private --dist-tag=alpha --yes 2>&1 | tee lerna-output.txt
+yarn run lerna publish --conventional-commits --conventional-prerelease --create-release=github --no-verify-access --dist-tag=alpha --yes 2>&1 | tee lerna-output.txt
 
 if grep -i "Successfully published" lerna-output.txt; # Leave a Github comment
 then
