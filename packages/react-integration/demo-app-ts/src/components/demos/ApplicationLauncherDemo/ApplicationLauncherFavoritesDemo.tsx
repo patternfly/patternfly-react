@@ -57,7 +57,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
       isOpen: !this.state.isOpen
     });
   };
-  onFavorite = (itemId: string, isFavorite: boolean) => {
+  onFavorite = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
         favorites: this.state.favorites.filter(id => id !== itemId)
@@ -68,7 +68,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
       });
     }
   };
-  onSearch = (textInput: string) => {
+  onSearch = (_event: React.FormEvent<HTMLInputElement>, textInput: string) => {
     if (textInput === '') {
       this.setState({
         filteredItems: null

@@ -45,7 +45,7 @@ export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent = ()
     setFilteredItems(null);
   };
 
-  const onFavorite = (itemId: string, isFavorite: boolean) => {
+  const onFavorite = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => {
     let updatedFavorites: string[] = [...favorites, itemId];
 
     if (isFavorite) {
@@ -55,7 +55,7 @@ export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent = ()
     setFavorites(updatedFavorites);
   };
 
-  const onSearch = (textInput: string) => {
+  const onSearch = (_event: React.FormEvent<HTMLInputElement>, textInput: string) => {
     if (textInput === '') {
       setFilteredItems(null);
     } else {
