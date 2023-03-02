@@ -373,9 +373,22 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   onToggle = (isOpen: boolean) => {
     // on close, parse and validate input
     this.setState(prevState => {
-      const { timeRegex, isInvalid } = prevState;
-      const { delimiter, is24Hour, includeSeconds } = this.props;
-      const time = parseTime(prevState.timeState, timeRegex, delimiter, !is24Hour, includeSeconds);
+      const { timeRegex, isInvalid, timeState } = prevState;
+      const { delimiter, is24Hour, includeSeconds, onChange } = this.props;
+      const time = parseTime(timeState, timeRegex, delimiter, !is24Hour, includeSeconds);
+
+      // Call onChange when Enter is pressed in input and timeoption does not exist in menu
+      if (onChange && !isOpen && time !== timeState) {
+        onChange(
+          null,
+          time,
+          getHours(time, timeRegex),
+          getMinutes(time, timeRegex),
+          getSeconds(time, timeRegex),
+          this.isValid(time)
+        );
+      }
+
       return {
         isTimeOptionsOpen: isOpen,
         timeState: time,
@@ -414,7 +427,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   onInputChange = (newTime: string, event: React.FormEvent<HTMLInputElement>) => {
     const { onChange } = this.props;
     const { timeRegex } = this.state;
-
     if (onChange) {
       onChange(
         event,
