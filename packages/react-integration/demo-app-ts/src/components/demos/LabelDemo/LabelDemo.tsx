@@ -20,7 +20,7 @@ export class LabelDemo extends Component {
         <Label href="#" onClose={() => {}}>
           Grey link removeable
         </Label>
-        <Label id="truncated-no-tooltip" variant="outline" isTruncated>
+        <Label id="truncated-no-tooltip" variant="outline">
           Grey
         </Label>{' '}
         <Label variant="outline" icon={<InfoCircleIcon />}>

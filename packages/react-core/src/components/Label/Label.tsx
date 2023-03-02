@@ -27,7 +27,7 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   onEditComplete?: (event: MouseEvent | KeyboardEvent, newText: string) => void;
   /** @beta Callback when an editable label cancels an edit. */
   onEditCancel?: (event: KeyboardEvent, previousText: string) => void;
-  /** Flag indicating the label text should be truncated. */
+  /** Flag indicating the label text should be truncated. Default is true. */
   isTruncated?: boolean;
   /** Position of the tooltip which is displayed if text is truncated */
   tooltipPosition?:
@@ -90,7 +90,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   isCompact = false,
   isEditable = false,
   editableProps,
-  isTruncated = false,
+  isTruncated = true,
   tooltipPosition,
   icon,
   onClose,
