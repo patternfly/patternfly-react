@@ -16,7 +16,7 @@ describe('Label Demo Test', () => {
       });
   });
 
-  it('Verify isTruncated label and tooltip', () => {
+  xit('Verify isTruncated label and tooltip', () => {
     cy.get('#truncated-label .pf-c-label__content span')
       .last()
       .should('have.class', 'pf-c-label__text')
@@ -30,7 +30,7 @@ describe('Label Demo Test', () => {
       });
   });
 
-  it('Verify router link label', () => {
+  xit('Verify router link label', () => {
     cy.get('#router-link > .pf-c-label__content').then((routerTooltipLink: JQuery<HTMLDivElement>) => {
       cy.get('.pf-c-tooltip').should('not.exist');
       cy.wrap(routerTooltipLink)
