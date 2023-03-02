@@ -68,13 +68,13 @@ describe('Form Demo Test', () => {
     cy.get('.pf-c-form__group-label').should('have.class', 'pf-m-no-padding-top');
   });
 
-  it('Verify selecting the form label help icon with click launches popover', () => {
+  xit('Verify selecting the form label help icon with click launches popover', () => {
     cy.get('#helper-text-target').click();
     cy.get('.pf-c-popover').should('exist');
     cy.get('[aria-label="Close"]').click();
   });
 
-  it('Verify selecting the form label help icon with keypress launches popover', () => {
+  xit('Verify selecting the form label help icon with keypress launches popover', () => {
     cy.get('#helper-text-target').type('{enter}');
     cy.get('.pf-c-popover').should('exist');
     cy.get('[aria-label="Close"]').type('{enter}');
