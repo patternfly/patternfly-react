@@ -86,6 +86,17 @@ describe('TimePicker', () => {
         expects: { hour: 23, minutes: 59, seconds: null }
       });
     });
+
+    test('should call onChange when pressing Enter', async () => {
+      const onChange = jest.fn();
+      const user = userEvent.setup();
+
+      render(<TimePicker onChange={onChange} aria-label="time picker" />);
+
+      await user.type(screen.getByLabelText('time picker'), '11:11');
+      await user.keyboard('[Enter]');
+      expect(onChange).toHaveBeenCalled();
+    });
   });
 
   describe('test isInvalid', () => {
