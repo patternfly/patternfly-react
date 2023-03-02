@@ -1861,10 +1861,14 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   data-ouia-safe="true"
                 >
                   <span
-                    class="pf-c-chip__text"
-                    id="pf-random-id-25"
+                    class="pf-c-chip__content"
                   >
-                    Mr
+                    <span
+                      class="pf-c-chip__text"
+                      id="pf-random-id-25"
+                    >
+                      Mr
+                    </span>
                   </span>
                   <span
                     class="pf-c-chip__actions"
@@ -1907,10 +1911,14 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   data-ouia-safe="true"
                 >
                   <span
-                    class="pf-c-chip__text"
-                    id="pf-random-id-26"
+                    class="pf-c-chip__content"
                   >
-                    Mrs
+                    <span
+                      class="pf-c-chip__text"
+                      id="pf-random-id-26"
+                    >
+                      Mrs
+                    </span>
                   </span>
                   <span
                     class="pf-c-chip__actions"

@@ -299,10 +299,14 @@ exports[`Toolbar should render with custom chip content 1`] = `
                     data-ouia-safe="true"
                   >
                     <span
-                      class="pf-c-chip__text"
-                      id="pf-random-id-3"
+                      class="pf-c-chip__content"
                     >
-                      New
+                      <span
+                        class="pf-c-chip__text"
+                        id="pf-random-id-3"
+                      >
+                        New
+                      </span>
                     </span>
                     <span
                       class="pf-c-chip__actions"
@@ -345,10 +349,14 @@ exports[`Toolbar should render with custom chip content 1`] = `
                     data-ouia-safe="true"
                   >
                     <span
-                      class="pf-c-chip__text"
-                      id="pf-random-id-4"
+                      class="pf-c-chip__content"
                     >
-                      Pending
+                      <span
+                        class="pf-c-chip__text"
+                        id="pf-random-id-4"
+                      >
+                        Pending
+                      </span>
                     </span>
                     <span
                       class="pf-c-chip__actions"

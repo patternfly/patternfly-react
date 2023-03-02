@@ -10,10 +10,14 @@ exports[`Chip closable 1`] = `
     id="chip_one"
   >
     <span
-      class="pf-c-chip__text"
-      id="chip_one"
+      class="pf-c-chip__content"
     >
-      Chip
+      <span
+        class="pf-c-chip__text"
+        id="chip_one"
+      >
+        Chip
+      </span>
     </span>
     <span
       class="pf-c-chip__actions"
@@ -58,10 +62,14 @@ exports[`Chip closable with tooltip 1`] = `
     id="chip_one"
   >
     <span
-      class="pf-c-chip__text"
-      id="chip_one"
+      class="pf-c-chip__content"
     >
-      1234567890123456789
+      <span
+        class="pf-c-chip__text"
+        id="chip_one"
+      >
+        1234567890123456789
+      </span>
     </span>
     <span
       class="pf-c-chip__actions"
@@ -107,10 +115,14 @@ exports[`Chip custom max-width text 1`] = `
     textmaxwidth="100px"
   >
     <span
-      class="pf-c-chip__text"
-      id="pf-random-id-4"
+      class="pf-c-chip__content"
     >
-      4 more
+      <span
+        class="pf-c-chip__text"
+        id="pf-random-id-4"
+      >
+        4 more
+      </span>
     </span>
     <span
       class="pf-c-chip__actions"
@@ -171,10 +183,14 @@ exports[`Chip readonly 1`] = `
     data-ouia-safe="true"
   >
     <span
-      class="pf-c-chip__text"
-      id="pf-random-id-3"
+      class="pf-c-chip__content"
     >
-      4 more
+      <span
+        class="pf-c-chip__text"
+        id="pf-random-id-3"
+      >
+        4 more
+      </span>
     </span>
   </div>
 </DocumentFragment>
@@ -190,10 +206,14 @@ exports[`Chip with role='gridcell' 1`] = `
     role="gridcell"
   >
     <span
-      class="pf-c-chip__text"
-      id="pf-random-id-5"
+      class="pf-c-chip__content"
     >
-      I'm a roled chip
+      <span
+        class="pf-c-chip__text"
+        id="pf-random-id-5"
+      >
+        I'm a roled chip
+      </span>
     </span>
     <span
       class="pf-c-chip__actions"
