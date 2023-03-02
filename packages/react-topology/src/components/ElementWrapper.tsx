@@ -15,8 +15,11 @@ const NodeElementComponent: React.FunctionComponent<{ element: Node }> = observe
   const dndManager = useDndManager();
   const isDragging = dndManager.isDragging();
   const dragItem = dndManager.getItem();
-  const controller = element.getController();
-  const isVisible = React.useMemo(() => computed(() => controller.shouldRenderNode(element)), [element, controller]);
+  const controller = element.hasController() && element.getController();
+  const isVisible = React.useMemo(() => computed(() => controller && controller.shouldRenderNode(element)), [
+    element,
+    controller
+  ]);
   if (isVisible.get() || (isDragging && dragItem === element)) {
     return <ElementComponent element={element} />;
   }
@@ -27,15 +30,18 @@ const NodeElementComponent: React.FunctionComponent<{ element: Node }> = observe
 const ElementComponent: React.FunctionComponent<ElementWrapperProps> = observer(({ element }) => {
   const kind = element.getKind();
   const type = element.getType();
-  const controller = element.getController();
+  const controller = element.hasController() && element.getController();
 
-  const Component = React.useMemo(() => controller.getComponent(kind, type), [controller, kind, type]);
+  const Component = React.useMemo(() => controller && controller.getComponent(kind, type), [controller, kind, type]);
 
-  return (
-    <ElementContext.Provider value={element}>
-      <Component {...element.getState()} element={element} />
-    </ElementContext.Provider>
-  );
+  if (Component) {
+    return (
+      <ElementContext.Provider value={element}>
+        <Component {...element.getState()} element={element} />
+      </ElementContext.Provider>
+    );
+  }
+  return null;
 });
 
 const ElementChildren: React.FunctionComponent<ElementWrapperProps> = observer(({ element }) => (

@@ -67,6 +67,10 @@ export default abstract class BaseElement<E extends ElementModel = ElementModel,
     return this.ordering;
   }
 
+  hasController(): boolean {
+    return this.controller !== undefined;
+  }
+
   getController(): Controller {
     if (!this.controller) {
       throw new Error(`GraphElement with ID '${this.getId()}' has no controller.`);
