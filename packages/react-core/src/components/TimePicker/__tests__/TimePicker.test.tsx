@@ -93,9 +93,19 @@ describe('TimePicker', () => {
 
       render(<TimePicker onChange={onChange} aria-label="time picker" />);
 
-      await user.type(screen.getByLabelText('time picker'), '11:11');
+      // Take into account timezones when tests are ran
+      const isPM = new Date().getHours() > 12;
+
+      await user.type(screen.getByLabelText('time picker'), `11:11`);
       await user.keyboard('[Enter]');
-      expect(onChange).toHaveBeenCalled();
+      expect(onChange).toHaveBeenLastCalledWith(
+        expect.any(Object),
+        `11:11 ${isPM ? 'PM' : 'AM'}`,
+        isPM ? 23 : 11,
+        11,
+        null,
+        true
+      );
     });
   });
 
