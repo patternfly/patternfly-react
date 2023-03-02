@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.21...@patternfly/react-table@5.0.0-alpha.22) (2023-03-02)
+
+### Bug Fixes
+
+- **DataListCheck:** updated onChange param order ([#8735](https://github.com/patternfly/patternfly-react/issues/8735)) ([bf0c2ff](https://github.com/patternfly/patternfly-react/commit/bf0c2ff9a4854f1b879511522746d3d5d2fbb6f1))
+
 # [5.0.0-alpha.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.20...@patternfly/react-table@5.0.0-alpha.21) (2023-03-02)
 
 **Note:** Version bump only for package @patternfly/react-table
