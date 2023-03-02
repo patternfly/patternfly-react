@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.2 (2023-03-02)
+
+### Bug Fixes
+
+- **core:** update core to alpha.24 ([#8768](https://github.com/patternfly/patternfly-react/issues/8768)) ([6dd5e01](https://github.com/patternfly/patternfly-react/commit/6dd5e01e16bc94fe4b954b79ba67adaaab9c7135))
+
 # 5.0.0-alpha.1 (2023-03-01)
 
 ### Bug Fixes
