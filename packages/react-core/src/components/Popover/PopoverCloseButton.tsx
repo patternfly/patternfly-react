@@ -8,7 +8,6 @@ export const PopoverCloseButton: React.FunctionComponent<PopoverCloseButtonProps
   onClose = () => undefined as void,
   ...props
 }: PopoverCloseButtonProps) => (
-
   <div className={css(styles.popoverClose)}>
     <Button onClick={onClose} variant="plain" aria-label {...props} style={{ pointerEvents: 'auto' }}>
       <TimesIcon />
