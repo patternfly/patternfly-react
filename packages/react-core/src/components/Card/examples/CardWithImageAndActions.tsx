@@ -71,7 +71,7 @@ export const CardWithImageAndActions: React.FunctionComponent = () => {
     <>
       <Card>
         <CardHeader actions={{actions: headerActions, hasNoOffset}}>
-          <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }} />
+          <Brand src={pfLogo} alt="PatternFly logo" style={{ width: '300px' }} />
         </CardHeader>
         <CardTitle>Title</CardTitle>
         <CardBody>Body</CardBody>
