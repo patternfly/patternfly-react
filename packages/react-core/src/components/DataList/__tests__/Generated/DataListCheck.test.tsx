@@ -15,7 +15,7 @@ it('DataListCheck should match snapshot (auto-generated)', () => {
       isDisabled={false}
       isChecked={null}
       checked={null}
-      onChange={(checked: boolean, event: React.FormEvent<HTMLInputElement>) => {}}
+      onChange={(event: React.FormEvent<HTMLInputElement>, checked: boolean) => {}}
       aria-labelledby={'string'}
     />
   );

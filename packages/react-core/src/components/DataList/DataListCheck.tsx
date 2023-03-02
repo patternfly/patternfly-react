@@ -24,7 +24,7 @@ export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElemen
    */
   defaultChecked?: boolean;
   /** A callback for when the DataList checkbox selection changes */
-  onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
   /** Aria-labelledby of the DataList checkbox */
   'aria-labelledby': string;
   /** Flag to indicate if other controls are used in the DataListItem */
@@ -34,7 +34,7 @@ export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElemen
 export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
   className = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onChange = (checked: boolean, event: React.FormEvent<HTMLInputElement>) => {},
+  onChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {},
   isValid = true,
   isDisabled = false,
   isChecked = false,
@@ -48,7 +48,7 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
       <input
         {...props}
         type="checkbox"
-        onChange={event => onChange(event.currentTarget.checked, event)}
+        onChange={(event) => onChange(event, event.currentTarget.checked)}
         aria-invalid={!isValid}
         disabled={isDisabled}
         {...([true, false].includes(defaultChecked) && { defaultChecked })}
