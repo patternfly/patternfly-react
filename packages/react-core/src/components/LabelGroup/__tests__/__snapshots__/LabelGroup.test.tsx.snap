@@ -22,7 +22,11 @@ exports[`LabelGroup label group compact 1`] = `
             <span
               class="pf-c-label__content"
             >
-              1
+              <span
+                class="pf-c-label__text"
+              >
+                1
+              </span>
             </span>
           </span>
         </li>
@@ -35,7 +39,11 @@ exports[`LabelGroup label group compact 1`] = `
             <span
               class="pf-c-label__content"
             >
-              2
+              <span
+                class="pf-c-label__text"
+              >
+                2
+              </span>
             </span>
           </span>
         </li>
@@ -48,7 +56,11 @@ exports[`LabelGroup label group compact 1`] = `
             <span
               class="pf-c-label__content"
             >
-              3
+              <span
+                class="pf-c-label__text"
+              >
+                3
+              </span>
             </span>
           </span>
         </li>
@@ -61,7 +73,11 @@ exports[`LabelGroup label group compact 1`] = `
             <span
               class="pf-c-label__content"
             >
-              1 more
+              <span
+                class="pf-c-label__text"
+              >
+                1 more
+              </span>
             </span>
           </button>
         </li>
@@ -93,7 +109,11 @@ exports[`LabelGroup label group default 1`] = `
             <span
               class="pf-c-label__content"
             >
-              1.1
+              <span
+                class="pf-c-label__text"
+              >
+                1.1
+              </span>
             </span>
           </span>
         </li>
@@ -132,7 +152,11 @@ exports[`LabelGroup label group with category 1`] = `
             <span
               class="pf-c-label__content"
             >
-              1.1
+              <span
+                class="pf-c-label__text"
+              >
+                1.1
+              </span>
             </span>
           </span>
         </li>
@@ -171,7 +195,11 @@ exports[`LabelGroup label group with category and tooltip 1`] = `
             <span
               class="pf-c-label__content"
             >
-              1.1
+              <span
+                class="pf-c-label__text"
+              >
+                1.1
+              </span>
             </span>
           </span>
         </li>
@@ -210,7 +238,11 @@ exports[`LabelGroup label group with closable category 1`] = `
             <span
               class="pf-c-label__content"
             >
-              1.1
+              <span
+                class="pf-c-label__text"
+              >
+                1.1
+              </span>
             </span>
           </span>
         </li>
