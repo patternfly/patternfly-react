@@ -165,7 +165,7 @@ const DatePickerBase = (
     }
   };
 
-  const onDateClick = (newValueDate: Date) => {
+  const onDateClick = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>, newValueDate: Date) => {
     const newValue = dateFormat(newValueDate);
     setValue(newValue);
     setValueDate(newValueDate);

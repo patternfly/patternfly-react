@@ -32,7 +32,7 @@ export const DateTimePicker: React.FunctionComponent = () => {
     setIsCalendarOpen(false);
   };
 
-  const onSelectCalendar = (newValueDate: Date) => {
+  const onSelectCalendar = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>, newValueDate: Date) => {
     const newValue = dateFormat(newValueDate);
     setValueDate(newValue);
     setIsCalendarOpen(!isCalendarOpen);

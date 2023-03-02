@@ -70,11 +70,11 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
   /** Flag to set browser focus on the passed date. **/
   isDateFocused?: boolean;
   /** Callback when date is selected. */
-  onChange?: (date: Date) => void;
+  onChange?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, date: Date) => void;
   /** Callback when month or year is changed. */
   onMonthChange?: (
-    newDate?: Date,
-    event?: React.MouseEvent | React.ChangeEvent | React.FormEvent<HTMLInputElement>
+    event?: React.MouseEvent | React.ChangeEvent | React.FormEvent<HTMLInputElement>,
+    newDate?: Date
   ) => void;
   /** @hide Internal prop to allow pressing escape in select menu to not close popover. */
   onSelectToggle?: (open: boolean) => void;
@@ -187,11 +187,11 @@ export const CalendarMonth = ({
     }
   }, [focusedDate, isDateFocused, focusedDateValidated, focusRef]);
 
-  const onMonthClick = (newDate: Date, ev: React.MouseEvent) => {
+  const onMonthClick = (ev: React.MouseEvent, newDate: Date) => {
     setFocusedDate(newDate);
     setHoveredDate(newDate);
     setShouldFocus(false);
-    onMonthChange(newDate, ev);
+    onMonthChange(ev, newDate);
   };
 
   const onKeyDown = (ev: React.KeyboardEvent<HTMLTableSectionElement>) => {
@@ -252,7 +252,7 @@ export const CalendarMonth = ({
           <Button
             variant="plain"
             aria-label={prevMonthAriaLabel}
-            onClick={(ev: React.MouseEvent) => onMonthClick(prevMonth, ev)}
+            onClick={(ev: React.MouseEvent) => onMonthClick(ev, prevMonth)}
           >
             <AngleLeftIcon aria-hidden={true} />
           </Button>
@@ -282,7 +282,7 @@ export const CalendarMonth = ({
                   setFocusedDate(newDate);
                   setHoveredDate(newDate);
                   setShouldFocus(false);
-                  onMonthChange(newDate, ev);
+                  onMonthChange(ev, newDate);
                 }, 0);
               }}
               variant="single"
@@ -306,7 +306,7 @@ export const CalendarMonth = ({
                 setFocusedDate(newDate);
                 setHoveredDate(newDate);
                 setShouldFocus(false);
-                onMonthChange(newDate, ev);
+                onMonthChange(ev, newDate);
               }}
             />
           </div>
@@ -315,7 +315,7 @@ export const CalendarMonth = ({
           <Button
             variant="plain"
             aria-label={nextMonthAriaLabel}
-            onClick={(ev: React.MouseEvent) => onMonthClick(nextMonth, ev)}
+            onClick={(ev: React.MouseEvent) => onMonthClick(ev, nextMonth)}
           >
             <AngleRightIcon aria-hidden={true} />
           </Button>
@@ -377,7 +377,7 @@ export const CalendarMonth = ({
                         !isValid && styles.modifiers.disabled
                       )}
                       type="button"
-                      onClick={() => onChange(date)}
+                      onClick={(event) => onChange(event, date)}
                       onMouseOver={() => setHoveredDate(date)}
                       tabIndex={isFocused ? 0 : -1}
                       disabled={!isValid}
