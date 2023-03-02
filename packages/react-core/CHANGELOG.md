@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.20...@patternfly/react-core@5.0.0-alpha.21) (2023-03-02)
+
+### Features
+
+- **CalendarMonth:** event param updates ([#8753](https://github.com/patternfly/patternfly-react/issues/8753)) ([f269cc5](https://github.com/patternfly/patternfly-react/commit/f269cc55c3d9a03d2767ac3e420b2acb00798519))
+
 # 5.0.0-alpha.20 (2023-03-02)
 
 ### Bug Fixes
