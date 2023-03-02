@@ -185,15 +185,17 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const button = closeBtn ? (
     closeBtn
   ) : (
-    <Button
-      type="button"
-      variant="plain"
-      onClick={onClose}
-      aria-label={closeBtnAriaLabel || `Close ${children}`}
-      {...closeBtnProps}
-    >
-      <TimesIcon />
-    </Button>
+    <span className={css(styles.labelActions)}>
+      <Button
+        type="button"
+        variant="plain"
+        onClick={onClose}
+        aria-label={closeBtnAriaLabel || `Close ${children}`}
+        {...closeBtnProps}
+      >
+        <TimesIcon />
+      </Button>
+    </span>
   );
   const textRef = React.createRef<any>();
   // ref to apply tooltip when rendered is used

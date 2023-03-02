@@ -149,16 +149,18 @@ export class Chip extends React.Component<ChipProps, ChipState> {
           {children}
         </span>
         {!isReadOnly && (
-          <Button
-            onClick={onClick}
-            variant="plain"
-            aria-label={closeBtnAriaLabel}
-            id={`remove_${id}`}
-            aria-labelledby={`remove_${id} ${id}`}
-            ouiaId={ouiaId || closeBtnAriaLabel}
-          >
-            <TimesIcon aria-hidden="true" />
-          </Button>
+          <span className={css(styles.chipActions)}>
+            <Button
+              onClick={onClick}
+              variant="plain"
+              aria-label={closeBtnAriaLabel}  
+              id={`remove_${id}`}
+              aria-labelledby={`remove_${id} ${id}`}
+              ouiaId={ouiaId || closeBtnAriaLabel}
+            >
+              <TimesIcon aria-hidden="true" />
+            </Button>
+          </span>
         )}
       </Component>
     );
