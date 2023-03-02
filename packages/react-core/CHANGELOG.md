@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.276.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.7...@patternfly/react-core@4.276.8) (2023-03-02)
+
+
+### Bug Fixes
+
+* **TimePicker:** called onChange when pressing Enter ([#8765](https://github.com/patternfly/patternfly-react/issues/8765)) ([38510a3](https://github.com/patternfly/patternfly-react/commit/38510a3bf3be42e0d7dc1d0344ae81cb8864f9e8))
+
+
+
+
+
 ## 4.276.7 (2023-03-01)
 
 
