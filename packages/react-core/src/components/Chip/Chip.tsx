@@ -145,8 +145,10 @@ export class Chip extends React.Component<ChipProps, ChipState> {
         {...getOUIAProps(Chip.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
         {...props}
       >
-        <span ref={this.span} className={css(styles.chipText)} id={id}>
-          {children}
+        <span className={css(styles.chipContent)}>
+          <span ref={this.span} className={css(styles.chipText)} id={id}>
+            {children}
+          </span>
         </span>
         {!isReadOnly && (
           <span className={css(styles.chipActions)}>
