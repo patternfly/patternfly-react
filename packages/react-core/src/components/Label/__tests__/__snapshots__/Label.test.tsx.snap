@@ -370,6 +370,22 @@ exports[`Label label with href with outline variant 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Label label with isTruncated turned off 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-c-label class-1"
+    data-label-name="something"
+    id="label-1"
+  >
+    <span
+      class="pf-c-label__content"
+    >
+      Something that is pretty long and won't get truncated
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
 exports[`Label label with orange color 1`] = `
 <DocumentFragment>
   <span

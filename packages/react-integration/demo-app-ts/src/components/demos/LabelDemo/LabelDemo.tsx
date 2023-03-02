@@ -42,7 +42,7 @@ export class LabelDemo extends Component {
         <Label color="blue" icon={<InfoCircleIcon />}>
           Blue icon
         </Label>
-        <Label color="blue" id="truncated-label" isTruncated tooltipPosition="top" icon={<InfoCircleIcon />}>
+        <Label color="blue" id="truncated-label" tooltipPosition="top" icon={<InfoCircleIcon />}>
           Very very very very long label text that should be truncated
         </Label>
         <Label isCompact>Compact</Label>
@@ -53,7 +53,6 @@ export class LabelDemo extends Component {
           id="router-link"
           color="blue"
           icon={<InfoCircleIcon />}
-          isTruncated
           render={({ className, content, componentRef }) => (
             <Link to="/" className={className} innerRef={componentRef}>
               {content}

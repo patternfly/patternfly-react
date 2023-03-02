@@ -84,6 +84,15 @@ describe('Label', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('label with isTruncated turned off', () => {
+    const { asFragment } = render(
+      <Label className="class-1" id="label-1" data-label-name="something" isTruncated={false}>
+        Something that is pretty long and won't get truncated
+      </Label>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('label with truncation', () => {
     const { asFragment } = render(
       <Label>Something very very very very very long that should be truncated</Label>
