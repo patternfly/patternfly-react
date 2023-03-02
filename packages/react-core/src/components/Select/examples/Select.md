@@ -341,11 +341,7 @@ class FavoritesSelect extends React.Component {
       favorites: []
     };
 
-<<<<<<< HEAD
-    this.onToggle = isOpen => {
-=======
     this.onToggle =  (_event, isOpen) => {
->>>>>>> 01f61d09ca61e1471e24c8b61294fad4f6b6e2f2
       this.setState({
         isOpen
       });
@@ -544,11 +540,7 @@ function SelectWithPlaceholderStyle() {
     <SelectOption key={2} value="Paused" />
   ];
 
-<<<<<<< HEAD
-  const onToggle = isOpen => setIsOpen(isOpen);
-=======
   const onToggle = (_event, isOpen) => setIsOpen(isOpen);
->>>>>>> 01f61d09ca61e1471e24c8b61294fad4f6b6e2f2
 
   const onSelect = (event, selection, isPlaceholder) => {
     setSelected(selection);
@@ -606,11 +598,7 @@ function SelectWithPlaceholderStyle() {
     <SelectOption key={3} value="Paused" />
   ];
 
-<<<<<<< HEAD
-  const onToggle = isOpen => setIsOpen(isOpen);
-=======
   const onToggle = (_event, isOpen) => setIsOpen(isOpen);
->>>>>>> 01f61d09ca61e1471e24c8b61294fad4f6b6e2f2
 
   const onSelect = (event, selection, isPlaceholder) => {
     setSelected(selection);
@@ -670,11 +658,8 @@ class SelectWithFooter extends React.Component {
       <SelectOption key={7} value="Other" />
     ];
 
-<<<<<<< HEAD
-=======
     this.toggleRef = React.createRef();
 
->>>>>>> 01f61d09ca61e1471e24c8b61294fad4f6b6e2f2
     this.state = {
       isToggleIcon: false,
       isOpen: false,
@@ -683,11 +668,7 @@ class SelectWithFooter extends React.Component {
       direction: SelectDirection.down
     };
 
-<<<<<<< HEAD
-    this.onToggle = isOpen => {
-=======
     this.onToggle = (_event, isOpen) => {
->>>>>>> 01f61d09ca61e1471e24c8b61294fad4f6b6e2f2
       this.setState({
         isOpen
       });
@@ -701,10 +682,7 @@ class SelectWithFooter extends React.Component {
           isOpen: false
         });
         console.log('selected:', selection);
-<<<<<<< HEAD
-=======
         this.toggleRef.current.focus();
->>>>>>> 01f61d09ca61e1471e24c8b61294fad4f6b6e2f2
       }
     };
 
@@ -725,11 +703,8 @@ class SelectWithFooter extends React.Component {
           Title
         </span>
         <Select
-          toggleIcon={isToggleIcon && <CubeIcon />}
-<<<<<<< HEAD
-=======
           toggleRef={this.toggleRef}
->>>>>>> 01f61d09ca61e1471e24c8b61294fad4f6b6e2f2
+          toggleIcon={isToggleIcon && <CubeIcon />}
           variant={SelectVariant.single}
           aria-label="Select Input"
           onToggle={this.onToggle}
@@ -1071,11 +1046,7 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
       </SelectGroup>
     ];
 
-<<<<<<< HEAD
-    this.onToggle = isOpen => {
-=======
     this.onToggle = (_event, isOpen) => {
->>>>>>> 01f61d09ca61e1471e24c8b61294fad4f6b6e2f2
       this.setState({
         isOpen
       });
@@ -1185,11 +1156,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
       selected: []
     };
 
-<<<<<<< HEAD
-    this.onToggle = isOpen => {
-=======
     this.onToggle = (_event, isOpen) => {
->>>>>>> 01f61d09ca61e1471e24c8b61294fad4f6b6e2f2
       this.setState({
         isOpen
       });
@@ -1268,11 +1235,7 @@ class CheckboxSelectWithCounts extends React.Component {
       selected: []
     };
 
-<<<<<<< HEAD
-    this.onToggle = isOpen => {
-=======
     this.onToggle = (_event, isOpen) => {
->>>>>>> 01f61d09ca61e1471e24c8b61294fad4f6b6e2f2
       this.setState({
         isOpen
       });
