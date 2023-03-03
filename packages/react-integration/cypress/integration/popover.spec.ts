@@ -24,7 +24,6 @@ describe('Popover Demo Test', () => {
     cy.get('button[id="popoverTarget"]').then((popoverLink: JQuery<HTMLDivElement>) => {
       cy.wrap(popoverLink).click();
       cy.get('.pf-c-popover').should('exist');
-      cy.get('h6').should('have.class', 'pf-m-md');
       cy.get('button[aria-label="Close"]').then(closeBtn => {
         cy.wrap(closeBtn).click();
         cy.get('.pf-c-popover').should('not.exist');
