@@ -9,7 +9,7 @@ propComponents:
     'OverflowMenuControl',
     'OverflowMenuDropdownItem',
     'OverflowMenuGroup',
-    'OverflowMenuItem',
+    'OverflowMenuItem'
   ]
 ---
 
@@ -48,7 +48,7 @@ class SimpleOverflowMenu extends React.Component {
         isOpen: !this.state.isOpen
       });
     };
-    this.onSelect = event => {
+    this.onSelect = (event) => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -88,7 +88,7 @@ class SimpleOverflowMenu extends React.Component {
         <OverflowMenuControl>
           <DropdownNext
             onSelect={this.onSelect}
-            toggle={toggleRef => (
+            toggle={(toggleRef) => (
               <MenuToggle
                 ref={toggleRef}
                 aria-label="Simple example overflow menu"
@@ -100,12 +100,14 @@ class SimpleOverflowMenu extends React.Component {
               </MenuToggle>
             )}
             isOpen={isOpen}
-            onOpenChange={isOpen => setIsOpen(isOpen)}
+            onOpenChange={(isOpen) =>
+              this.setState({
+                isOpen
+              })
+            }
           >
-            <DropdownList>
-              {dropdownItems}
-            </DropdownList>
-           </DropdownNext>
+            <DropdownList>{dropdownItems}</DropdownList>
+          </DropdownNext>
         </OverflowMenuControl>
       </OverflowMenu>
     );
@@ -145,7 +147,7 @@ class OverflowMenuGroupTypes extends React.Component {
         isOpen: !this.state.isOpen
       });
     };
-    this.onSelect = event => {
+    this.onSelect = (event) => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -223,7 +225,7 @@ class OverflowMenuGroupTypes extends React.Component {
         <OverflowMenuControl>
           <DropdownNext
             onSelect={this.onSelect}
-            toggle={toggleRef => (
+            toggle={(toggleRef) => (
               <MenuToggle
                 ref={toggleRef}
                 aria-label="Group example overflow menu"
@@ -235,12 +237,14 @@ class OverflowMenuGroupTypes extends React.Component {
               </MenuToggle>
             )}
             isOpen={isOpen}
-            onOpenChange={isOpen => setIsOpen(isOpen)}
+            onOpenChange={(isOpen) =>
+              this.setState({
+                isOpen
+              })
+            }
           >
-            <DropdownList>
-              {dropdownItems}
-            </DropdownList>
-           </DropdownNext>
+            <DropdownList>{dropdownItems}</DropdownList>
+          </DropdownNext>
         </OverflowMenuControl>
       </OverflowMenu>
     );
@@ -280,7 +284,7 @@ class OverflowMenuAdditionalOptions extends React.Component {
         isOpen: !this.state.isOpen
       });
     };
-    this.onSelect = event => {
+    this.onSelect = (event) => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -308,7 +312,9 @@ class OverflowMenuAdditionalOptions extends React.Component {
       <OverflowMenuDropdownItem itemId={5} key="6" isShared>
         Action 6
       </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem itemId={6} key="7">Action 7</OverflowMenuDropdownItem>
+      <OverflowMenuDropdownItem itemId={6} key="7">
+        Action 7
+      </OverflowMenuDropdownItem>
     ];
     return (
       <OverflowMenu breakpoint="lg">
@@ -345,7 +351,7 @@ class OverflowMenuAdditionalOptions extends React.Component {
         <OverflowMenuControl hasAdditionalOptions>
           <DropdownNext
             onSelect={this.onSelect}
-            toggle={toggleRef => (
+            toggle={(toggleRef) => (
               <MenuToggle
                 ref={toggleRef}
                 aria-label="Multiple group example overflow menu"
@@ -357,12 +363,14 @@ class OverflowMenuAdditionalOptions extends React.Component {
               </MenuToggle>
             )}
             isOpen={isOpen}
-            onOpenChange={isOpen => setIsOpen(isOpen)}
+            onOpenChange={(isOpen) =>
+              this.setState({
+                isOpen
+              })
+            }
           >
-            <DropdownList>
-              {dropdownItems}
-            </DropdownList>
-           </DropdownNext>
+            <DropdownList>{dropdownItems}</DropdownList>
+          </DropdownNext>
         </OverflowMenuControl>
       </OverflowMenu>
     );
@@ -415,7 +423,9 @@ class OverflowMenuPersist extends React.Component {
       <OverflowMenuDropdownItem itemId={1} key="tertiary" isShared>
         Tertiary
       </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem itemId={2} key="action">Action 4</OverflowMenuDropdownItem>
+      <OverflowMenuDropdownItem itemId={2} key="action">
+        Action 4
+      </OverflowMenuDropdownItem>
     ];
     return (
       <OverflowMenu breakpoint="lg">
@@ -435,7 +445,7 @@ class OverflowMenuPersist extends React.Component {
         <OverflowMenuControl hasAdditionalOptions>
           <DropdownNext
             onSelect={this.onSelect}
-            toggle={toggleRef => (
+            toggle={(toggleRef) => (
               <MenuToggle
                 ref={toggleRef}
                 aria-label="Persistent example overflow menu"
@@ -447,12 +457,14 @@ class OverflowMenuPersist extends React.Component {
               </MenuToggle>
             )}
             isOpen={isOpen}
-            onOpenChange={isOpen => setIsOpen(isOpen)}
+            onOpenChange={(isOpen) =>
+              this.setState({
+                isOpen
+              })
+            }
           >
-            <DropdownList>
-              {dropdownItems}
-            </DropdownList>
-           </DropdownNext>
+            <DropdownList>{dropdownItems}</DropdownList>
+          </DropdownNext>
         </OverflowMenuControl>
       </OverflowMenu>
     );
@@ -467,4 +479,5 @@ By passing in the `breakpointReference` property, the overflow menu's breakpoint
 You can change the container width in this example by adjusting the slider. As the container width changes, the overflow menu will change between a horizontal menu and a vertical dropdown despite the viewport width not changing.
 
 ```ts file="./OverflowMenuBreakpointOnContainer.tsx"
+
 ```

@@ -98,6 +98,7 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
                 </MenuToggle>
               )}
               isOpen={isOpen}
+              onOpenChange={isOpen => setIsOpen(isOpen)}
             >
               <DropdownList>{dropdownItems}</DropdownList>
             </Dropdown>
