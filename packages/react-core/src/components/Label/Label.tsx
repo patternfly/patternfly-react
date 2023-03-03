@@ -183,7 +183,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
 
   const button = closeBtn ? (
-    <span className={css(styles.labelActions)}>closeBtn</span>
+    <span className={css(styles.labelActions)}>{closeBtn}</span>
   ) : (
     <span className={css(styles.labelActions)}>
       <Button
