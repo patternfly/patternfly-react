@@ -27,7 +27,7 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   onEditComplete?: (event: MouseEvent | KeyboardEvent, newText: string) => void;
   /** @beta Callback when an editable label cancels an edit. */
   onEditCancel?: (event: KeyboardEvent, previousText: string) => void;
-  /** Css property expressed in any valid length unit that is used to modify the label text's max-width, after which any additional text will be truncated */
+  /** The max width of the label before it is truncated. Can be any valid CSS unit, such as '100%', '100px', or '16ch'. */
   textMaxWidth?: string;
   /** Position of the tooltip which is displayed if text is truncated */
   tooltipPosition?:

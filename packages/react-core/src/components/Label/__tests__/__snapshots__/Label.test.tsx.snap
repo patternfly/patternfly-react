@@ -370,26 +370,6 @@ exports[`Label label with href with outline variant 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Label label with isTruncated turned off 1`] = `
-<DocumentFragment>
-  <span
-    class="pf-c-label class-1"
-    data-label-name="something"
-    id="label-1"
-  >
-    <span
-      class="pf-c-label__content"
-    >
-      <span
-        class="pf-c-label__text"
-      >
-        Something that is pretty long and won't get truncated
-      </span>
-    </span>
-  </span>
-</DocumentFragment>
-`;
-
 exports[`Label label with orange color 1`] = `
 <DocumentFragment>
   <span
@@ -508,8 +488,9 @@ exports[`Label label with truncation 1`] = `
     >
       <span
         class="pf-c-label__text"
+        style="--pf-c-label__text--MaxWidth: 16c;"
       >
-        Something very very very very very long that should be truncated
+        textMaxWidth set at 16h on this very long label that should be truncated
       </span>
     </span>
   </span>
