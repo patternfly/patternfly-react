@@ -114,7 +114,9 @@ export class Chip extends React.Component<ChipProps, ChipState> {
         {...getOUIAProps('OverflowChip', ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
         {...props}
       >
-        <span className={css(styles.chipText)}>{children}</span>
+        <span className={css(styles.chipContent)}>
+          <span className={css(styles.chipText)}>{children}</span>
+        </span>
       </Component>
     );
   };
