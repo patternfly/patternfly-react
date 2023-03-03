@@ -13,6 +13,7 @@ export const LabelRouterLink: React.FunctionComponent = () => (
         {content}
       </Link>
     )}
+    textMaxWidth="16ch"
   >
     Blue label router link with icon that overflows
   </Label>

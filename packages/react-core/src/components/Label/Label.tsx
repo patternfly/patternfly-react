@@ -27,8 +27,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   onEditComplete?: (event: MouseEvent | KeyboardEvent, newText: string) => void;
   /** @beta Callback when an editable label cancels an edit. */
   onEditCancel?: (event: KeyboardEvent, previousText: string) => void;
-  /** Flag indicating the label text should be truncated. Default is true. */
-  isTruncated?: boolean;
+  /** Css property expressed in any valid length unit that is used to modify the label text's max-width, after which any additional text will be truncated */
+  textMaxWidth?: string;
   /** Position of the tooltip which is displayed if text is truncated */
   tooltipPosition?:
     | TooltipPosition
@@ -90,7 +90,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   isCompact = false,
   isEditable = false,
   editableProps,
-  isTruncated = true,
+  textMaxWidth = '',
   tooltipPosition,
   icon,
   onClose,
@@ -212,12 +212,16 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const content = (
     <React.Fragment>
       {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
-      {isTruncated && (
-        <span ref={textRef} className={css(styles.labelText)}>
-          {children}
-        </span>
-      )}
-      {!isTruncated && children}
+      <span
+        ref={textRef}
+        className={css(styles.labelText)}
+        {...(textMaxWidth && {
+          style: {
+            '--pf-c-label__text--MaxWidth': textMaxWidth,
+          } as React.CSSProperties
+        })}>
+        {children}
+      </span>
     </React.Fragment>
   );
 

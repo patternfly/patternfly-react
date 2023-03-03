@@ -3,30 +3,47 @@ describe('Label Demo Test', () => {
     cy.visit('http://localhost:3000/label-demo-nav-link');
   });
 
-  it('Verify isTruncated label and no tooltip on short text', () => {
-    cy.get('#truncated-no-tooltip .pf-c-label__content span')
-      .last()
-      .should('have.class', 'pf-c-label__text')
-      .then((noTooltipLink: JQuery<HTMLDivElement>) => {
-        cy.wrap(noTooltipLink)
-          .trigger('mouseenter')
-          .get('.pf-c-tooltip')
-          .should('not.exist');
-        cy.wrap(noTooltipLink).trigger('mouseleave');
-      });
-  });
-
-  it('Verify isTruncated label and tooltip', () => {
-    cy.get('#truncated-label .pf-c-label__content span')
-      .last()
-      .should('have.class', 'pf-c-label__text')
-      .then((tooltipLink: JQuery<HTMLDivElement>) => {
-        cy.get('.pf-c-tooltip').should('not.exist');
+  it('Verify tooltip with long label text', () => {
+    cy.get('#tooltip')
+      .should((tooltipLink: JQuery<HTMLDivElement>) => {
         cy.wrap(tooltipLink)
           .trigger('mouseenter')
           .get('.pf-c-tooltip')
           .should('exist');
         cy.wrap(tooltipLink).trigger('mouseleave');
+      });
+  });
+
+  it('Verify no tooltip with short label text', () => {
+    cy.get('#no-tooltip')
+      .should((noTooltipLink: JQuery<HTMLDivElement>) => {
+        cy.wrap(noTooltipLink)
+          .trigger('mouseenter')
+          .get('.pf-c-tooltip')
+          .should('exist');
+        cy.wrap(noTooltipLink).trigger('mouseleave');
+      });
+  });
+
+  it('Verify tooltip with textMaxWidth', () => {
+    cy.get('#tooltip-max-width')
+      .should((tooltipLinkMaxWidth: JQuery<HTMLDivElement>) => {
+        cy.wrap(tooltipLinkMaxWidth)
+          .trigger('mouseenter')
+          .get('.pf-c-tooltip')
+          .should('exist');
+        cy.wrap(tooltipLinkMaxWidth).trigger('mouseleave');
+      });
+  });
+
+  it('Verify no tooltip with textMaxWidth', () => {
+    cy.get('#no-tooltip-max-width')
+      .should((noTooltipLinkMaxWidth: JQuery<HTMLDivElement>) => {
+        cy.wrap(noTooltipLinkMaxWidth)
+          .trigger('mouseenter')
+          .get('.pf-c-tooltip')
+          .should('not.exist');
+        cy.wrap(noTooltipLinkMaxWidth).trigger('mouseleave');
       });
   });
 
