@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.22...@patternfly/react-core@5.0.0-alpha.23) (2023-03-03)
+
+### Features
+
+- **Card:** changed order of onSelectableInputChange params ([#8752](https://github.com/patternfly/patternfly-react/issues/8752)) ([fdd797b](https://github.com/patternfly/patternfly-react/commit/fdd797b9974bb628508aea9b01e04c8c828569e1))
+
 # [5.0.0-alpha.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.21...@patternfly/react-core@5.0.0-alpha.22) (2023-03-02)
 
 ### Bug Fixes
