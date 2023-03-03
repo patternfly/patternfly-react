@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.23...@patternfly/react-core@5.0.0-alpha.24) (2023-03-03)
+
+### Bug Fixes
+
+- **Chip/Label:** update structure to work with core updates ([#8773](https://github.com/patternfly/patternfly-react/issues/8773)) ([b44e4e9](https://github.com/patternfly/patternfly-react/commit/b44e4e98a73442eebdacddee2bae38c42728bde5))
+
 # [5.0.0-alpha.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.22...@patternfly/react-core@5.0.0-alpha.23) (2023-03-03)
 
 ### Features
