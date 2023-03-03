@@ -9,21 +9,18 @@ export interface PopoverHeaderTextProps extends React.HTMLProps<HTMLDivElement> 
   className?: string;
   /** Heading level of the header title */
   headingLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  /** Id of the header */
-  id?: string;
 }
 
 export const PopoverHeaderText: React.FunctionComponent<PopoverHeaderTextProps> = ({
   children,
   className,
   headingLevel,
-  id,
   ...props
 }: PopoverHeaderTextProps) => {
   const HeadingLevel = headingLevel;
 
   return (
-  <HeadingLevel className={css(styles.popoverTitleText, className)} id={id} {...props}>
+  <HeadingLevel className={css(styles.popoverTitleText, className)} {...props}>
     {children}
   </HeadingLevel>);
 };
