@@ -380,7 +380,11 @@ exports[`Label label with isTruncated turned off 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something that is pretty long and won't get truncated
+      <span
+        class="pf-c-label__text"
+      >
+        Something that is pretty long and won't get truncated
+      </span>
     </span>
   </span>
 </DocumentFragment>
