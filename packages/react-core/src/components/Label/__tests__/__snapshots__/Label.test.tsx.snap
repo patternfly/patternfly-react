@@ -488,9 +488,9 @@ exports[`Label label with truncation 1`] = `
     >
       <span
         class="pf-c-label__text"
-        style="--pf-c-label__text--MaxWidth: 16c;"
+        style="--pf-c-label__text--MaxWidth: 16ch;"
       >
-        textMaxWidth set at 16h on this very long label that should be truncated
+        textMaxWidth set at 16ch on this very long label that should be truncated
       </span>
     </span>
   </span>
