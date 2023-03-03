@@ -167,7 +167,7 @@ export const LabelFilled: React.FunctionComponent = () => (
     <br />
     <div style={{width: "250px"}}>
       <Label>
-        Label that overflows it's parent, but has no textMaxWidth on it's own
+        Label that overflows its parent, but has no textMaxWidth on its own
       </Label>
     </div>
   </React.Fragment>
