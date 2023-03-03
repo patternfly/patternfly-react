@@ -1861,36 +1861,44 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   data-ouia-safe="true"
                 >
                   <span
-                    class="pf-c-chip__text"
-                    id="pf-random-id-25"
+                    class="pf-c-chip__content"
                   >
-                    Mr
-                  </span>
-                  <button
-                    aria-disabled="false"
-                    aria-label="Remove"
-                    aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
-                    class="pf-c-button pf-m-plain"
-                    data-ouia-component-id="Remove"
-                    data-ouia-component-type="PF4/Button"
-                    data-ouia-safe="true"
-                    id="remove_pf-random-id-25"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 352 512"
-                      width="1em"
+                    <span
+                      class="pf-c-chip__text"
+                      id="pf-random-id-25"
                     >
-                      <path
-                        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                      />
-                    </svg>
-                  </button>
+                      Mr
+                    </span>
+                  </span>
+                  <span
+                    class="pf-c-chip__actions"
+                  >
+                    <button
+                      aria-disabled="false"
+                      aria-label="Remove"
+                      aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
+                      class="pf-c-button pf-m-plain"
+                      data-ouia-component-id="Remove"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      id="remove_pf-random-id-25"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 352 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                        />
+                      </svg>
+                    </button>
+                  </span>
                 </div>
               </li>
               <li
@@ -1903,36 +1911,44 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   data-ouia-safe="true"
                 >
                   <span
-                    class="pf-c-chip__text"
-                    id="pf-random-id-26"
+                    class="pf-c-chip__content"
                   >
-                    Mrs
-                  </span>
-                  <button
-                    aria-disabled="false"
-                    aria-label="Remove"
-                    aria-labelledby="remove_pf-random-id-26 pf-random-id-26"
-                    class="pf-c-button pf-m-plain"
-                    data-ouia-component-id="Remove"
-                    data-ouia-component-type="PF4/Button"
-                    data-ouia-safe="true"
-                    id="remove_pf-random-id-26"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 352 512"
-                      width="1em"
+                    <span
+                      class="pf-c-chip__text"
+                      id="pf-random-id-26"
                     >
-                      <path
-                        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                      />
-                    </svg>
-                  </button>
+                      Mrs
+                    </span>
+                  </span>
+                  <span
+                    class="pf-c-chip__actions"
+                  >
+                    <button
+                      aria-disabled="false"
+                      aria-label="Remove"
+                      aria-labelledby="remove_pf-random-id-26 pf-random-id-26"
+                      class="pf-c-button pf-m-plain"
+                      data-ouia-component-id="Remove"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      id="remove_pf-random-id-26"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 352 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                        />
+                      </svg>
+                    </button>
+                  </span>
                 </div>
               </li>
             </ul>

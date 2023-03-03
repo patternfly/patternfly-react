@@ -182,18 +182,22 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 
   const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
 
-  const button = closeBtn ? (
-    closeBtn
-  ) : (
+  const defaultButton = (
     <Button
-      type="button"
-      variant="plain"
-      onClick={onClose}
-      aria-label={closeBtnAriaLabel || `Close ${children}`}
-      {...closeBtnProps}
-    >
-      <TimesIcon />
+        type="button"
+        variant="plain"
+        onClick={onClose}
+        aria-label={closeBtnAriaLabel || `Close ${children}`}
+        {...closeBtnProps}
+      >
+        <TimesIcon />
     </Button>
+  );
+
+  const button = (
+      <span className={css(styles.labelActions)}>
+          {closeBtn || defaultButton}
+      </span>
   );
   const textRef = React.createRef<any>();
   // ref to apply tooltip when rendered is used

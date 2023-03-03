@@ -114,7 +114,9 @@ export class Chip extends React.Component<ChipProps, ChipState> {
         {...getOUIAProps('OverflowChip', ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
         {...props}
       >
-        <span className={css(styles.chipText)}>{children}</span>
+        <span className={css(styles.chipContent)}>
+          <span className={css(styles.chipText)}>{children}</span>
+        </span>
       </Component>
     );
   };
@@ -145,20 +147,24 @@ export class Chip extends React.Component<ChipProps, ChipState> {
         {...getOUIAProps(Chip.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
         {...props}
       >
-        <span ref={this.span} className={css(styles.chipText)} id={id}>
-          {children}
+        <span className={css(styles.chipContent)}>
+          <span ref={this.span} className={css(styles.chipText)} id={id}>
+            {children}
+          </span>
         </span>
         {!isReadOnly && (
-          <Button
-            onClick={onClick}
-            variant="plain"
-            aria-label={closeBtnAriaLabel}
-            id={`remove_${id}`}
-            aria-labelledby={`remove_${id} ${id}`}
-            ouiaId={ouiaId || closeBtnAriaLabel}
-          >
-            <TimesIcon aria-hidden="true" />
-          </Button>
+          <span className={css(styles.chipActions)}>
+            <Button
+              onClick={onClick}
+              variant="plain"
+              aria-label={closeBtnAriaLabel}  
+              id={`remove_${id}`}
+              aria-labelledby={`remove_${id} ${id}`}
+              ouiaId={ouiaId || closeBtnAriaLabel}
+            >
+              <TimesIcon aria-hidden="true" />
+            </Button>
+          </span>
         )}
       </Component>
     );
