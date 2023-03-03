@@ -29,7 +29,7 @@ export const ComposableTableEmptyState: React.FunctionComponent = () => (
       <Tr>
         <Td colSpan={8}>
           <Bullseye>
-            <EmptyState variant={EmptyStateVariant.small}>
+            <EmptyState variant={EmptyStateVariant.sm}>
               <EmptyStateIcon icon={SearchIcon} />
               <Title headingLevel="h2" size="lg">
                 No results found

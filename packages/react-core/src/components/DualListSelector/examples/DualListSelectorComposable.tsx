@@ -138,7 +138,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
   };
 
   const buildEmptyState = (isAvailable: boolean) => (
-    <EmptyState variant={EmptyStateVariant.small}>
+    <EmptyState variant={EmptyStateVariant.sm}>
       <EmptyStateIcon icon={SearchIcon} />
       <Title headingLevel="h4" size="md">
         No results found

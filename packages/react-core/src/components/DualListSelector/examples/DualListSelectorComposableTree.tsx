@@ -257,7 +257,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
         listMinHeight="300px"
       >
         {filterApplied && options.length === 0 && (
-          <EmptyState variant={EmptyStateVariant.small}>
+          <EmptyState variant={EmptyStateVariant.sm}>
             <EmptyStateIcon icon={SearchIcon} />
             <Title headingLevel="h4" size="md">
               No results found

@@ -24,7 +24,7 @@ export const LegacyTableEmptyState: React.FunctionComponent = () => {
           props: { colSpan: 8 },
           title: (
             <Bullseye>
-              <EmptyState variant={EmptyStateVariant.small}>
+              <EmptyState variant={EmptyStateVariant.sm}>
                 <EmptyStateIcon icon={SearchIcon} />
                 <Title headingLevel="h2" size="lg">
                   No results found

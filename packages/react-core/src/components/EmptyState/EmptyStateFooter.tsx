@@ -3,15 +3,15 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
 export interface EmptyStateFooterProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered inside the EmptyStateFooter */
+  /** Content rendered inside the empty state footer */
   children?: React.ReactNode;
-  /** Additional classes added to the EmptyStateFooter */
+  /** Additional classes added to the empty state footer */
   className?: string;
 }
 
 export const EmptyStateFooter: React.FunctionComponent<EmptyStateFooterProps> = ({
   children,
-  className = '',
+  className,
   ...props
 }: EmptyStateFooterProps) => (
   <div className={css(styles.emptyStateFooter, className)} {...props}>

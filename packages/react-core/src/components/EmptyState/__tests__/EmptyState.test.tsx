@@ -36,7 +36,7 @@ describe('EmptyState', () => {
 
   test('Main variant large', () => {
     const { asFragment } = render(
-      <EmptyState variant={EmptyStateVariant.large}>
+      <EmptyState variant={EmptyStateVariant.lg}>
         <EmptyStateHeader titleText="EmptyState large" />
       </EmptyState>
     );
@@ -45,7 +45,7 @@ describe('EmptyState', () => {
 
   test('Main variant small', () => {
     const { asFragment } = render(
-      <EmptyState variant={EmptyStateVariant.small}>
+      <EmptyState variant={EmptyStateVariant.sm}>
         <EmptyStateHeader titleText="EmptyState small" />
       </EmptyState>
     );
@@ -66,7 +66,7 @@ describe('EmptyState', () => {
     expect(screen.getByTestId('body-test-id')).toHaveClass('custom-empty-state-body pf-c-empty-state__body');
   });
 
-  xtest('Actions', () => {
+  test('Actions', () => {
     render(<EmptyStateActions className="custom-empty-state-secondary" data-testid="actions-test-id" />);
     expect(screen.getByTestId('actions-test-id')).toHaveClass('pf-c-empty-state__actions');
   });
@@ -88,7 +88,7 @@ describe('EmptyState', () => {
 
   test('Full height', () => {
     const { asFragment } = render(
-      <EmptyState isFullHeight variant={EmptyStateVariant.large}>
+      <EmptyState isFullHeight variant={EmptyStateVariant.lg}>
         <EmptyStateHeader titleText="EmptyState large" />
       </EmptyState>
     );

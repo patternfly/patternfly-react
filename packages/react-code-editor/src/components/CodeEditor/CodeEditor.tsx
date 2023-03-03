@@ -9,6 +9,7 @@ import {
   EmptyStateIcon,
   EmptyStateActions,
   EmptyStateVariant,
+  EmptyStateFooter,
   getResizeObserver,
   Popover,
   PopoverProps,
@@ -518,23 +519,27 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
           const emptyState =
             providedEmptyState ||
             (isUploadEnabled ? (
-              <EmptyState variant={EmptyStateVariant.small}>
+              <EmptyState variant={EmptyStateVariant.sm}>
                 <EmptyStateIcon icon={CodeIcon} />
                 <Title headingLevel="h4" size="lg">
                   {emptyStateTitle}
                 </Title>
                 <EmptyStateBody>{emptyStateBody}</EmptyStateBody>
-                <Button variant="primary" onClick={open}>
-                  {emptyStateButton}
-                </Button>
-                <EmptyStateActions>
-                  <Button variant="link" onClick={this.toggleEmptyState}>
-                    {emptyStateLink}
-                  </Button>
-                </EmptyStateActions>
+                <EmptyStateFooter>
+                  <EmptyStateActions>
+                    <Button variant="primary" onClick={open}>
+                      {emptyStateButton}
+                    </Button>
+                  </EmptyStateActions>
+                  <EmptyStateActions>
+                    <Button variant="link" onClick={this.toggleEmptyState}>
+                      {emptyStateLink}
+                    </Button>
+                  </EmptyStateActions>
+                </EmptyStateFooter>
               </EmptyState>
             ) : (
-              <EmptyState variant={EmptyStateVariant.small}>
+              <EmptyState variant={EmptyStateVariant.sm}>
                 <EmptyStateIcon icon={CodeIcon} />
                 <Title headingLevel="h4" size="lg">
                   {emptyStateTitle}

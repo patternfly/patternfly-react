@@ -1812,7 +1812,7 @@ class ErrorStateDemo extends React.Component {
           {
             props: { colSpan: 8 },
             title: (
-              <EmptyState variant={EmptyStateVariant.small}>
+              <EmptyState variant={EmptyStateVariant.sm}>
                 <EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />
                 <Title headingLevel="h2" size="lg">
                   Unable to connect
