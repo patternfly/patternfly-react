@@ -182,11 +182,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 
   const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
 
-  const button = closeBtn ? (
-    <span className={css(styles.labelActions)}>{closeBtn}</span>
-  ) : (
-    <span className={css(styles.labelActions)}>
-      <Button
+  const defaultButton = (
+    <Button
         type="button"
         variant="plain"
         onClick={onClose}
@@ -194,8 +191,13 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         {...closeBtnProps}
       >
         <TimesIcon />
-      </Button>
-    </span>
+    </Button>
+  );
+
+  const button = (
+      <span className={css(styles.labelActions)}>
+          {closeBtn || defaultButton}
+      </span>
   );
   const textRef = React.createRef<any>();
   // ref to apply tooltip when rendered is used
