@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.113.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.112.42...@patternfly/react-table@4.113.0) (2023-03-03)
+
+
+### Features
+
+* **Table:** add right sticky column support ([#8714](https://github.com/patternfly/patternfly-react/issues/8714)) ([3cb6880](https://github.com/patternfly/patternfly-react/commit/3cb6880a9619e159b8bda268364d3159a13543d1))
+
+
+
+
+
 ## [4.112.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.112.41...@patternfly/react-table@4.112.42) (2023-03-02)
 
 **Note:** Version bump only for package @patternfly/react-table
