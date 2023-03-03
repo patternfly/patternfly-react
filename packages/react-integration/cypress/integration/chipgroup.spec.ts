@@ -19,10 +19,7 @@ describe('Chip Group Demo Test', () => {
   });
 
   it('Verify delete button on first chip', () => {
-    const chip = cy.get('.pf-c-chip')
-      .first()
-      .children('.pf-c-chip__content')
-      .children('.pf-c-chip__text');
+    const chip = cy.get('.pf-c-chip__content').children('#chip-Lemons');
     cy.get('#remove_chip-Lemons').click();
     chip.should('not.exist');
   });
