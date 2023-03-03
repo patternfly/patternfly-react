@@ -68,7 +68,7 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   stickyMinWidth?: string;
   /** Left offset of a sticky column. This will typically be equal to the combined value set by stickyMinWidth of any sticky columns that precede the current sticky column. */
   stickyLeftOffset?: string;
-  /** Right offset of a sticky column. This will typically be equal to the combined value set by stickyMinWidth of any sticky columns that precede the current sticky column. */
+  /** Right offset of a sticky column. This will typically be equal to the combined value set by stickyMinWidth of any sticky columns that come after the current sticky column. */
   stickyRightOffset?: string;
 }
 
