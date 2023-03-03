@@ -4,8 +4,8 @@ describe('Label Demo Test', () => {
   });
 
   it('Verify tooltip with long label text', () => {
-    cy.get('#tooltip')
-      .should((tooltipLink: JQuery<HTMLDivElement>) => {
+    cy.get('#tooltip .pf-c-label__text').last()
+      .then((tooltipLink: JQuery<HTMLDivElement>) => {
         cy.wrap(tooltipLink)
           .trigger('mouseenter')
           .get('.pf-c-tooltip')
@@ -15,19 +15,19 @@ describe('Label Demo Test', () => {
   });
 
   it('Verify no tooltip with short label text', () => {
-    cy.get('#no-tooltip')
-      .should((noTooltipLink: JQuery<HTMLDivElement>) => {
+    cy.get('#no-tooltip .pf-c-label__text').last()
+      .then((noTooltipLink: JQuery<HTMLDivElement>) => {
         cy.wrap(noTooltipLink)
           .trigger('mouseenter')
           .get('.pf-c-tooltip')
-          .should('exist');
+          .should('not.exist');
         cy.wrap(noTooltipLink).trigger('mouseleave');
       });
   });
 
   it('Verify tooltip with textMaxWidth', () => {
-    cy.get('#tooltip-max-width')
-      .should((tooltipLinkMaxWidth: JQuery<HTMLDivElement>) => {
+    cy.get('#tooltip-max-width .pf-c-label__text').last()
+      .then((tooltipLinkMaxWidth: JQuery<HTMLDivElement>) => {
         cy.wrap(tooltipLinkMaxWidth)
           .trigger('mouseenter')
           .get('.pf-c-tooltip')
@@ -38,7 +38,7 @@ describe('Label Demo Test', () => {
 
   it('Verify no tooltip with textMaxWidth', () => {
     cy.get('#no-tooltip-max-width')
-      .should((noTooltipLinkMaxWidth: JQuery<HTMLDivElement>) => {
+      .then((noTooltipLinkMaxWidth: JQuery<HTMLDivElement>) => {
         cy.wrap(noTooltipLinkMaxWidth)
           .trigger('mouseenter')
           .get('.pf-c-tooltip')
@@ -60,3 +60,4 @@ describe('Label Demo Test', () => {
       .should('eq', '/');
   });
 });
+

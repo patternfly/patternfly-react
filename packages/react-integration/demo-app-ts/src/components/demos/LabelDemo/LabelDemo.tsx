@@ -61,6 +61,7 @@ export class LabelDemo extends Component {
           id="router-link"
           color="blue"
           icon={<InfoCircleIcon />}
+          textMaxWidth="100px"
           render={({ className, content, componentRef }) => (
             <Link to="/" className={className} innerRef={componentRef}>
               {content}
