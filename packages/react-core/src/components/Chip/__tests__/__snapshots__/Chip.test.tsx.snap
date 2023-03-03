@@ -166,9 +166,13 @@ exports[`Chip overflow 1`] = `
     data-ouia-safe="true"
   >
     <span
-      class="pf-c-chip__text"
+      class="pf-c-chip__content"
     >
-      4 more
+      <span
+        class="pf-c-chip__text"
+      >
+        4 more
+      </span>
     </span>
   </div>
 </DocumentFragment>
