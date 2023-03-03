@@ -7,10 +7,10 @@ exports[`PopoverHeader should match snapshot (auto-generated) 1`] = `
   >
     <div
       class="pf-c-popover__title"
+      id="string"
     >
       <h6
         class="pf-c-popover__title-text"
-        id="string"
       >
         <div>
           ReactNode
