@@ -90,7 +90,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   isCompact = false,
   isEditable = false,
   editableProps,
-  textMaxWidth = '',
+  textMaxWidth,
   tooltipPosition,
   icon,
   onClose,
