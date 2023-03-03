@@ -32,7 +32,7 @@ export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
   ...props
 }: PopoverHeaderProps) => (
   <header className={css(styles.popoverHeader, className)} {...props}>
-    <div className={css(styles.popoverTitle)} id={id} >
+    <div className={css(styles.popoverTitle)} id={id}>
       {icon && <PopoverHeaderIcon>{icon}</PopoverHeaderIcon>}
       <PopoverHeaderText headingLevel={titleHeadingLevel}>
         {alertSeverityVariant && alertSeverityScreenReaderText && (
