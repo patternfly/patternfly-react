@@ -163,5 +163,12 @@ export const LabelFilled: React.FunctionComponent = () => (
     <Label color="gold" icon={<InfoCircleIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
       Gold label with icon that overflows
     </Label>
+    <br />
+    <br />
+    <div style={{width: "250px"}}>
+      <Label>
+        Label that overflows it's parent, but has no textMaxWidth on it's own
+      </Label>
+    </div>
   </React.Fragment>
 );
