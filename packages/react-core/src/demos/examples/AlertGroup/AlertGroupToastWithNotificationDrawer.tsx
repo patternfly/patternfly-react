@@ -5,7 +5,7 @@ import {
   DropdownItem,
   EmptyState,
   EmptyStateBody,
-  EmptyStateIcon,
+  EmptyStateHeader,
   KebabToggle,
   NotificationBadge,
   NotificationBadgeVariant,
@@ -281,10 +281,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
         )}
         {notifications.length === 0 && (
           <EmptyState variant={EmptyStateVariant.full}>
-            <EmptyStateIcon icon={SearchIcon} />
-            <Title headingLevel="h2" size="lg">
-              No notifications found
-            </Title>
+            <EmptyStateHeader headingLevel="h2" titleText="No notifications found" icon={SearchIcon} />
             <EmptyStateBody>There are currently no notifications.</EmptyStateBody>
           </EmptyState>
         )}

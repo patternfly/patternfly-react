@@ -8,8 +8,9 @@ import {
   DropdownSeparator,
   EmptyState,
   EmptyStateBody,
-  EmptyStateIcon,
+  EmptyStateHeader,
   EmptyStatePrimary,
+  EmptyStateFooter,
   KebabToggle,
   NotificationDrawer,
   NotificationDrawerBody,
@@ -319,17 +320,16 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
           >
             <NotificationDrawerList isHidden={!thirdGroupExpanded} aria-label="Notifications in the third group">
               <EmptyState variant={EmptyStateVariant.full}>
-                <EmptyStateIcon icon={SearchIcon} />
-                <Title headingLevel="h2" size="lg">
-                  No alerts found
-                </Title>
+                <EmptyStateHeader headingLevel="h2" titleText="No alerts found" icon={SearchIcon} />
                 <EmptyStateBody>
                   There are currently no critical alerts firing. There may be firing alerts of other severities or
                   silenced critical alerts however.
                 </EmptyStateBody>
-                <EmptyStatePrimary>
-                  <Button variant="link">Action</Button>
-                </EmptyStatePrimary>
+                <EmptyStateFooter>
+                  <EmptyStatePrimary>
+                    <Button variant="link">Action</Button>
+                  </EmptyStatePrimary>
+                </EmptyStateFooter>
               </EmptyState>
             </NotificationDrawerList>
           </NotificationDrawerGroup>

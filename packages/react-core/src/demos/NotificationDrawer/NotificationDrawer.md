@@ -39,7 +39,8 @@ import {
   DropdownSeparator,
   EmptyState,
   EmptyStateBody,
-  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStatePrimary,
   EmptyStateVariant,
   KebabToggle,
@@ -503,16 +504,15 @@ class BasicNotificationDrawer extends React.Component {
           )}
           {!showNotifications && (
             <EmptyState variant={EmptyStateVariant.full}>
-              <EmptyStateIcon icon={SearchIcon} />
-              <Title headingLevel="h2" size="lg">
-                No alerts found
-              </Title>
+              <EmptyStateHeader headingLevel="h2" titleText="No results found" icon={SearchIcon} />
               <EmptyStateBody>
                 There are currently no alerts. There may be silenced critical alerts however.
               </EmptyStateBody>
-              <EmptyStatePrimary>
-                <Button variant="link">Action</Button>
-              </EmptyStatePrimary>
+              <EmptyStateFooter>
+                <EmptyStatePrimary>
+                  <Button variant="link">Action</Button>
+                </EmptyStatePrimary>
+              </EmptyStateFooter>
             </EmptyState>
           )}
         </NotificationDrawerBody>
@@ -573,7 +573,8 @@ import {
   DropdownSeparator,
   EmptyState,
   EmptyStateBody,
-  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStatePrimary,
   EmptyStateVariant,
   KebabToggle,
@@ -1232,17 +1233,15 @@ class GroupedNotificationDrawer extends React.Component {
               >
                 <NotificationDrawerList isHidden={!thirdDrawerGroupExpanded}>
                   <EmptyState variant={EmptyStateVariant.full}>
-                    <EmptyStateIcon icon={SearchIcon} />
-                    <Title headingLevel="h2" size="lg">
-                      No alerts found
-                    </Title>
+                    <EmptyStateHeader headingLevel="h2" titleText="No alerts found" icon={SearchIcon} />
                     <EmptyStateBody>
-                      There are currently no critical alerts firing. There may be firing alerts of other severities or
-                      silenced critical alerts however.
+                      There are currently no critical alerts firing. There may be firing alerts of other severities or silenced critical alerts however.                    
                     </EmptyStateBody>
-                    <EmptyStatePrimary>
-                      <Button variant="link">Action</Button>
-                    </EmptyStatePrimary>
+                    <EmptyStateFooter>
+                      <EmptyStatePrimary>
+                        <Button variant="link">Action</Button>
+                      </EmptyStatePrimary>
+                    </EmptyStateFooter>
                   </EmptyState>
                 </NotificationDrawerList>
               </NotificationDrawerGroup>
@@ -1250,16 +1249,15 @@ class GroupedNotificationDrawer extends React.Component {
           )}
           {!showNotifications && (
             <EmptyState variant={EmptyStateVariant.full}>
-              <EmptyStateIcon icon={SearchIcon} />
-              <Title headingLevel="h2" size="lg">
-                No alerts found
-              </Title>
+              <EmptyStateHeader headingLevel="h2" titleText="No alerts found" icon={SearchIcon} />
               <EmptyStateBody>
                 There are currently no alerts. There may be silenced critical alerts however.
               </EmptyStateBody>
-              <EmptyStatePrimary>
-                <Button variant="link">Action</Button>
-              </EmptyStatePrimary>
+              <EmptyStateFooter>
+                <EmptyStatePrimary>
+                  <Button variant="link">Action</Button>
+                </EmptyStatePrimary>
+              </EmptyStateFooter>
             </EmptyState>
           )}
         </NotificationDrawerBody>

@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   EmptyState,
-  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateBody,
   EmptyStateActions,
   Title,
@@ -34,11 +35,8 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
 
   return (
     <div className="pf-l-bullseye">
-      <EmptyState variant="large">
-        <EmptyStateIcon icon={CogsIcon} />
-        <Title headingLevel="h4" size="lg">
-          {percentValidated === 100 ? 'Validation complete' : 'Validating credentials'}
-        </Title>
+      <EmptyState variant="lg">
+        <EmptyStateHeader headingLevel="h4" titleText={percentValidated === 100 ? 'Validation complete' : 'Validating credentials'} icon={CogsIcon} />
         <EmptyStateBody>
           <Progress value={percentValidated} measureLocation="outside" aria-label="Wizard validation progress" />
         </EmptyStateBody>
@@ -46,11 +44,13 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
           Description can be used to further elaborate on the validation step, or give the user a better idea of how
           long the process will take.
         </EmptyStateBody>
-        <EmptyStateActions>
-          <Button isDisabled={percentValidated !== 100} onClick={onClose}>
-            Log to console
-          </Button>
-        </EmptyStateActions>
+        <EmptyStateFooter>
+          <EmptyStateActions>
+            <Button isDisabled={percentValidated !== 100} onClick={onClose}>
+              Log to console
+            </Button>
+          </EmptyStateActions>
+        </EmptyStateFooter>
       </EmptyState>
     </div>
   );

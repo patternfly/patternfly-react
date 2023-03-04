@@ -5,7 +5,7 @@ import styles from '@patternfly/react-styles/css/components/EmptyState/empty-sta
 export enum EmptyStateVariant {
   'xs' = 'xs',
   sm = 'sm',
-  ls = 'lg',
+  lg = 'lg',
   'xl' = 'xl',
   full = 'full'
 }

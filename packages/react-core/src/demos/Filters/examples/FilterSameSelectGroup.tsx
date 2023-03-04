@@ -12,7 +12,8 @@ import {
   Popper,
   Pagination,
   EmptyState,
-  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
   Title,
   EmptyStateBody,
   EmptyStatePrimary,
@@ -467,22 +468,21 @@ export const FilterSameSelectGroup: React.FunctionComponent = () => {
 
   const emptyState = (
     <EmptyState>
-      <EmptyStateIcon icon={SearchIcon} />
-      <Title size="lg" headingLevel="h4">
-        No results found
-      </Title>
+      <EmptyStateHeader headingLevel="h4" titleText="No results found" icon={SearchIcon} />
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
-      <EmptyStatePrimary>
-        <Button
-          variant="link"
-          onClick={() => {
-            setStatusSelection('All statuses');
-            setLocationSelection('All locations');
-          }}
-        >
-          Clear all filters
-        </Button>
-      </EmptyStatePrimary>
+      <EmptyStateFooter>
+        <EmptyStatePrimary>
+          <Button
+            variant="link"
+            onClick={() => {
+              setStatusSelection('All statuses');
+              setLocationSelection('All locations');
+            }}
+          >
+            Clear all filters
+          </Button>
+        </EmptyStatePrimary>
+      </EmptyStateFooter>
     </EmptyState>
   );
 

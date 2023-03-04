@@ -12,7 +12,8 @@ import {
   Title,
   EmptyState,
   EmptyStateVariant,
-  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateBody,
   EmptyStatePrimary
 } from '@patternfly/react-core';
@@ -139,16 +140,15 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
 
   const buildEmptyState = (isAvailable: boolean) => (
     <EmptyState variant={EmptyStateVariant.sm}>
-      <EmptyStateIcon icon={SearchIcon} />
-      <Title headingLevel="h4" size="md">
-        No results found
-      </Title>
+      <EmptyStateHeader headingLevel="h4" titleText="No results found" icon={SearchIcon} />
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
-      <EmptyStatePrimary>
-        <Button variant="link" onClick={() => onFilterChange('', isAvailable)}>
-          Clear all filters
-        </Button>
-      </EmptyStatePrimary>
+      <EmptyStateFooter>
+        <EmptyStatePrimary>
+          <Button variant="link" onClick={() => onFilterChange('', isAvailable)}>
+            Clear all filters
+          </Button>
+        </EmptyStatePrimary>
+      </EmptyStateFooter>
     </EmptyState>
   );
 

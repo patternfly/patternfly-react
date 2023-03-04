@@ -42,7 +42,8 @@ import {
   DropdownPosition,
   DropdownToggleCheckbox,
   EmptyState,
-  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateVariant,
   EmptyStateActions,
   Gallery,
@@ -605,13 +606,12 @@ class CardViewBasic extends React.Component {
               <Card isCompact>
                 <Bullseye>
                   <EmptyState variant={EmptyStateVariant.xs}>
-                    <EmptyStateIcon icon={PlusCircleIcon} />
-                    <Title headingLevel="h2" size="md">
-                      Add a new card to your page
-                    </Title>
-                    <EmptyStateActions>
-                      <Button variant="link">Add card</Button>
-                    </EmptyStateActions>
+                    <EmptyStateHeader headingLevel="h2" titleText="Add a new card to your page" icon={PlusCircleIcon} />
+                    <EmptyStateFooter>
+                      <EmptyStateActions>
+                        <Button variant="link">Add card</Button>
+                      </EmptyStateActions>
+                    </EmptyStateFooter>
                   </EmptyState>
                 </Bullseye>
               </Card>

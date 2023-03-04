@@ -3,10 +3,10 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import AddressBookIcon from '@patternfly/react-icons/dist/esm/icons/address-book-icon';
+
 import { EmptyState, EmptyStateVariant } from '../EmptyState';
 import { EmptyStateBody } from '../EmptyStateBody';
 import { EmptyStateActions } from '../EmptyStateActions';
-import { EmptyStateIcon } from '../EmptyStateIcon';
 import { Button } from '../../Button';
 import { EmptyStateHeader } from '../EmptyStateHeader';
 import { EmptyStateFooter } from '../EmptyStateFooter';
@@ -71,21 +71,6 @@ describe('EmptyState', () => {
     expect(screen.getByTestId('actions-test-id')).toHaveClass('pf-c-empty-state__actions');
   });
 
-  test('Icon', () => {
-    render(<EmptyStateIcon icon={AddressBookIcon} data-testid="icon-test-id" />);
-    expect(screen.getByTestId)
-    expect(screen.getByTestId('icon-test-id').parentNode).toHaveClass('pf-c-empty-state__icon');
-  });
-
-  test('Wrap icon in a div', () => {
-    const { container } = render(
-      <EmptyStateIcon icon={AddressBookIcon} className="custom-empty-state-icon" id="empty-state-icon-id" />
-    );
-
-    expect(container.querySelector('div')).toHaveClass('pf-c-empty-state__icon custom-empty-state-icon');
-    expect(container.querySelector('svg')).toBeInTheDocument();
-  });
-
   test('Full height', () => {
     const { asFragment } = render(
       <EmptyState isFullHeight variant={EmptyStateVariant.lg}>
@@ -95,15 +80,38 @@ describe('EmptyState', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  // TODO rewrite tests for EmptyStateHeader -- icon and title to use React testing library
-  // https://github.com/patternfly/patternfly-react/wiki/React-Testing-Library-Basics,-Best-Practices,-and-Guidelines
-  test('Header', () => {
-    const { container } = render(<EmptyStateHeader titleText='Empty state' icon={AddressBookIcon} />);
-
-    expect(container.querySelector('h1')).toBeInTheDocument();
-    expect(container.querySelector('h1')?.textContent).toBe('Empty state');
-    expect(container.querySelector('svg')).toBeInTheDocument();
+  test('Header with icon', () => {
+    const { asFragment } = render(<EmptyStateHeader icon={AddressBookIcon}/>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  //TODO write tests for EmptyStateFooter
+  test('Header renders custom icon class passed via iconClassName', () => {
+    const { asFragment } = render(<EmptyStateHeader icon={AddressBookIcon} iconClassName="testIconClassName"/>);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Header with title text renders heading level 1 by default', () => {
+    render(<EmptyStateHeader titleText="Empty state"/>);
+    expect(screen.getByRole('heading', {level: 1, name: 'Empty state'})).toHaveClass('pf-c-empty-state__title-text');
+  });
+
+  test('Header renders custom class passed via titleClassName', () => {
+    render(<EmptyStateHeader titleText="Empty state" titleClassName={"testTitleClassName"}/>);
+    expect(screen.getByRole('heading', {level: 1, name: 'Empty state'})).toHaveClass('testTitleClassName');
+  });
+
+  test('Header renders the title as other heading levels when one is passed using headingLevel', () => {
+    render(<EmptyStateHeader titleText='Empty state' headingLevel="h3" />);
+    expect(screen.getByRole('heading', {level: 3, name: 'Empty state'})).toHaveClass('pf-c-empty-state__title-text');
+  });
+
+  test('Headers render children', () => {
+    render(<EmptyStateHeader>Title text</EmptyStateHeader>);
+    expect(screen.getByText('Title text')).toBeVisible();
+  });
+
+  test('Footer', () => {
+    render(<EmptyStateFooter className="custom-empty-state-footer" data-testid="actions-test-id" />);
+    expect(screen.getByTestId('actions-test-id')).toHaveClass('custom-empty-state-footer');
+  });
 });

@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   EmptyState,
-  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateBody,
   EmptyStateActions,
   Title,
@@ -41,11 +42,8 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
 
   return (
     <div className="pf-l-bullseye">
-      <EmptyState variant="large">
-        <EmptyStateIcon icon={CogsIcon} />
-        <Title headingLevel="h4" size="lg">
-          {percent === 100 ? 'Validation complete' : 'Validating credentials'}
-        </Title>
+      <EmptyState variant="lg">
+        <EmptyStateHeader headingLevel="h4" titleText={percent === 100 ? 'Validation complete' : 'Validating credentials'} icon={CogsIcon} />
         <EmptyStateBody>
           <Progress value={percent} measureLocation="outside" aria-label="validation-progress" />
         </EmptyStateBody>
@@ -53,11 +51,13 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
           Description can be used to further elaborate on the validation step, or give the user a better idea of how
           long the process will take.
         </EmptyStateBody>
-        <EmptyStateActions>
-          <Button isDisabled={percent !== 100} onClick={props.onClose}>
-            Log to console
-          </Button>
-        </EmptyStateActions>
+        <EmptyStateFooter>
+          <EmptyStateActions>
+            <Button isDisabled={percent !== 100} onClick={props.onClose}>
+              Log to console
+            </Button>
+          </EmptyStateActions>
+        </EmptyStateFooter>
       </EmptyState>
     </div>
   );
