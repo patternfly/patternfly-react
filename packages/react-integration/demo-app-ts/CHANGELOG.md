@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.7...demo-app-ts@5.0.0-alpha.8) (2023-03-04)
+
+### Features
+
+- **Label:** truncate by default ([#8771](https://github.com/patternfly/patternfly-react/issues/8771)) ([df52d2d](https://github.com/patternfly/patternfly-react/commit/df52d2d3c8eaee1dab13c25c6c021dafda84f76d))
+
 # [5.0.0-alpha.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.6...demo-app-ts@5.0.0-alpha.7) (2023-03-03)
 
 **Note:** Version bump only for package demo-app-ts
