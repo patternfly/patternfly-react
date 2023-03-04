@@ -8,12 +8,12 @@ export const LabelRouterLink: React.FunctionComponent = () => (
     color="blue"
     icon={<InfoCircleIcon />}
     onClose={() => Function.prototype}
-    isTruncated
     render={({ className, content, componentRef }) => (
       <Link to="/" className={className} innerRef={componentRef}>
         {content}
       </Link>
     )}
+    textMaxWidth="16ch"
   >
     Blue label router link with icon that overflows
   </Label>

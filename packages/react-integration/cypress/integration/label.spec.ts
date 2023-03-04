@@ -3,10 +3,19 @@ describe('Label Demo Test', () => {
     cy.visit('http://localhost:3000/label-demo-nav-link');
   });
 
-  it('Verify isTruncated label and no tooltip on short text', () => {
-    cy.get('#truncated-no-tooltip .pf-c-label__content span')
-      .last()
-      .should('have.class', 'pf-c-label__text')
+  it('Verify tooltip with long label text', () => {
+    cy.get('#tooltip .pf-c-label__text').last()
+      .then((tooltipLink: JQuery<HTMLDivElement>) => {
+        cy.wrap(tooltipLink)
+          .trigger('mouseenter')
+          .get('.pf-c-tooltip')
+          .should('exist');
+        cy.wrap(tooltipLink).trigger('mouseleave');
+      });
+  });
+
+  it('Verify no tooltip with short label text', () => {
+    cy.get('#no-tooltip .pf-c-label__text').last()
       .then((noTooltipLink: JQuery<HTMLDivElement>) => {
         cy.wrap(noTooltipLink)
           .trigger('mouseenter')
@@ -16,21 +25,29 @@ describe('Label Demo Test', () => {
       });
   });
 
-  xit('Verify isTruncated label and tooltip', () => {
-    cy.get('#truncated-label .pf-c-label__content span')
-      .last()
-      .should('have.class', 'pf-c-label__text')
-      .then((tooltipLink: JQuery<HTMLDivElement>) => {
-        cy.get('.pf-c-tooltip').should('not.exist');
-        cy.wrap(tooltipLink)
+  it('Verify tooltip with textMaxWidth', () => {
+    cy.get('#tooltip-max-width .pf-c-label__text').last()
+      .then((tooltipLinkMaxWidth: JQuery<HTMLDivElement>) => {
+        cy.wrap(tooltipLinkMaxWidth)
           .trigger('mouseenter')
           .get('.pf-c-tooltip')
           .should('exist');
-        cy.wrap(tooltipLink).trigger('mouseleave');
+        cy.wrap(tooltipLinkMaxWidth).trigger('mouseleave');
       });
   });
 
-  xit('Verify router link label', () => {
+  it('Verify no tooltip with textMaxWidth', () => {
+    cy.get('#no-tooltip-max-width')
+      .then((noTooltipLinkMaxWidth: JQuery<HTMLDivElement>) => {
+        cy.wrap(noTooltipLinkMaxWidth)
+          .trigger('mouseenter')
+          .get('.pf-c-tooltip')
+          .should('not.exist');
+        cy.wrap(noTooltipLinkMaxWidth).trigger('mouseleave');
+      });
+  });
+
+  it('Verify router link label', () => {
     cy.get('#router-link > .pf-c-label__content').then((routerTooltipLink: JQuery<HTMLDivElement>) => {
       cy.get('.pf-c-tooltip').should('not.exist');
       cy.wrap(routerTooltipLink)
@@ -43,3 +60,4 @@ describe('Label Demo Test', () => {
       .should('eq', '/');
   });
 });
+

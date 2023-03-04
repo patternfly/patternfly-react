@@ -11,7 +11,7 @@ export class LabelDemo extends Component {
   render() {
     return (
       <React.Fragment>
-        <Label>Grey</Label> <Label icon={<InfoCircleIcon />}>Grey icon</Label>{' '}
+        <Label id="no-tooltip">Grey</Label> <Label icon={<InfoCircleIcon />}>Grey icon</Label>{' '}
         <Label onClose={() => {}}>Grey removeable</Label>{' '}
         <Label icon={<InfoCircleIcon />} onClose={() => {}}>
           Grey icon removeable
@@ -20,7 +20,15 @@ export class LabelDemo extends Component {
         <Label href="#" onClose={() => {}}>
           Grey link removeable
         </Label>
-        <Label id="truncated-no-tooltip" variant="outline" isTruncated>
+        <span style={{ width: "150px", display: "inline-block"}}>
+          <Label id="tooltip" variant="outline">
+            Very very very very long label text that should be truncated without textMaxWidth
+          </Label>
+        </span>{' '}
+        <Label id="tooltip-max-width" variant="outline" textMaxWidth="150px">
+          Very very very very long label text that should be truncated with textMaxWidth
+        </Label>{' '}
+        <Label id="no-tooltip-max-width" variant="outline" textMaxWidth="150px">
           Grey
         </Label>{' '}
         <Label variant="outline" icon={<InfoCircleIcon />}>
@@ -42,7 +50,7 @@ export class LabelDemo extends Component {
         <Label color="blue" icon={<InfoCircleIcon />}>
           Blue icon
         </Label>
-        <Label color="blue" id="truncated-label" isTruncated tooltipPosition="top" icon={<InfoCircleIcon />}>
+        <Label color="blue" tooltipPosition="top" icon={<InfoCircleIcon />} textMaxWidth="150px">
           Very very very very long label text that should be truncated
         </Label>
         <Label isCompact>Compact</Label>
@@ -53,7 +61,7 @@ export class LabelDemo extends Component {
           id="router-link"
           color="blue"
           icon={<InfoCircleIcon />}
-          isTruncated
+          textMaxWidth="100px"
           render={({ className, content, componentRef }) => (
             <Link to="/" className={className} innerRef={componentRef}>
               {content}

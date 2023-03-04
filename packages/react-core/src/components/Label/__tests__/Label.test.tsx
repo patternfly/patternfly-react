@@ -86,7 +86,7 @@ describe('Label', () => {
 
   test('label with truncation', () => {
     const { asFragment } = render(
-      <Label isTruncated>Something very very very very very long that should be truncated</Label>
+      <Label textMaxWidth="16ch">textMaxWidth set at 16ch on this very long label that should be truncated</Label>
     );
     expect(asFragment()).toMatchSnapshot();
   });

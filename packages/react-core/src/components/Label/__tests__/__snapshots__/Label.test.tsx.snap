@@ -8,7 +8,11 @@ exports[`Label editable label 1`] = `
     <button
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </button>
     <span
       class="pf-c-label__actions"
@@ -64,7 +68,11 @@ exports[`Label label with additional class name 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -80,7 +88,11 @@ exports[`Label label with additional class name and props 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -94,7 +106,11 @@ exports[`Label label with blue color 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -108,7 +124,11 @@ exports[`Label label with blue color with outline variant 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -122,7 +142,11 @@ exports[`Label label with close button 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
     <span
       class="pf-c-label__actions"
@@ -163,7 +187,11 @@ exports[`Label label with close button and outline variant 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
     <span
       class="pf-c-label__actions"
@@ -204,7 +232,11 @@ exports[`Label label with cyan color 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -218,7 +250,11 @@ exports[`Label label with cyan color with outline variant 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -232,7 +268,11 @@ exports[`Label label with green color 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -246,7 +286,11 @@ exports[`Label label with green color with outline variant 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -260,7 +304,11 @@ exports[`Label label with grey color 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -274,7 +322,11 @@ exports[`Label label with grey color with outline variant 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -289,7 +341,11 @@ exports[`Label label with href 1`] = `
       class="pf-c-label__content"
       href="#"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </a>
   </span>
 </DocumentFragment>
@@ -304,7 +360,11 @@ exports[`Label label with href with outline variant 1`] = `
       class="pf-c-label__content"
       href="#"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </a>
   </span>
 </DocumentFragment>
@@ -318,7 +378,11 @@ exports[`Label label with orange color 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -332,7 +396,11 @@ exports[`Label label with orange color with outline variant 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -346,7 +414,11 @@ exports[`Label label with purple color 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -360,7 +432,11 @@ exports[`Label label with purple color with outline variant 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -374,7 +450,11 @@ exports[`Label label with red color 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -388,7 +468,11 @@ exports[`Label label with red color with outline variant 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -404,8 +488,9 @@ exports[`Label label with truncation 1`] = `
     >
       <span
         class="pf-c-label__text"
+        style="--pf-c-label__text--MaxWidth: 16ch;"
       >
-        Something very very very very very long that should be truncated
+        textMaxWidth set at 16ch on this very long label that should be truncated
       </span>
     </span>
   </span>
@@ -420,7 +505,11 @@ exports[`Label renders 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -434,7 +523,11 @@ exports[`Label renders with isCompact 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -448,7 +541,11 @@ exports[`Label renders with outline variant 1`] = `
     <span
       class="pf-c-label__content"
     >
-      Something
+      <span
+        class="pf-c-label__text"
+      >
+        Something
+      </span>
     </span>
   </span>
 </DocumentFragment>

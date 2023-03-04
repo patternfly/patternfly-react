@@ -20,7 +20,7 @@ export const LabelCompact: React.FunctionComponent = () => (
     <Label isCompact href="#compact" onClose={() => Function.prototype}>
       Compact link removable
     </Label>
-    <Label isCompact icon={<InfoCircleIcon />} onClose={() => Function.prototype} isTruncated>
+    <Label isCompact icon={<InfoCircleIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
       Compact label with icon that overflows
     </Label>
   </React.Fragment>
