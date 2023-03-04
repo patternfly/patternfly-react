@@ -9,7 +9,6 @@ import {
   DualListSelectorControlsWrapper,
   DualListSelectorControl,
   SearchInput,
-  Title,
   EmptyState,
   EmptyStateVariant,
   EmptyStateHeader,

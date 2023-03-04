@@ -20,7 +20,6 @@ import {
   PageSectionVariants,
   TextContent,
   Text,
-  Title,
   DropdownPosition,
   EmptyStateVariant,
   NumberInput,

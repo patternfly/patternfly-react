@@ -6,7 +6,6 @@ import {
   EmptyState,
   EmptyStateHeader,
   EmptyStateFooter,
-  Title,
   EmptyStateBody,
   Progress,
   EmptyStateActions,

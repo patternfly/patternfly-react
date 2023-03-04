@@ -8,7 +8,6 @@ import {
   DualListSelectorTree,
   DualListSelectorTreeItemData,
   SearchInput,
-  Title,
   Button,
   EmptyState,
   EmptyStateVariant,

@@ -5,7 +5,6 @@ import {
   EmptyStateFooter,
   EmptyStateBody,
   EmptyStateActions,
-  Title,
   Progress,
   Button
 } from '@patternfly/react-core';

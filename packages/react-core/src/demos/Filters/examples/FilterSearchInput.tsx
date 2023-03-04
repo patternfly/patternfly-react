@@ -15,7 +15,6 @@ import {
   EmptyState,
   EmptyStateHeader,
   EmptyStateFooter,
-  Title,
   EmptyStateBody,
   EmptyStatePrimary,
   Button,

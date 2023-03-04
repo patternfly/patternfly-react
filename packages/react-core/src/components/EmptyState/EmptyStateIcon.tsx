@@ -24,8 +24,8 @@ export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
   icon: IconComponent,
   color,
   ...props
-}: EmptyStateIconProps) => {
-  return isSpinner(<IconComponent />) ? (
+}: EmptyStateIconProps) => (
+  isSpinner(<IconComponent />) ? (
     <div className={css(styles.emptyStateIcon, className)}>
       <IconComponent
         aria-hidden="true"
@@ -38,6 +38,6 @@ export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
       {...(color && { style: { ['--pf-c-empty-state__icon--Color']: color } as React.CSSProperties })}
       {...props}
     />
-  );
-}
+  )
+);
 EmptyStateIcon.displayName = 'EmptyStateIcon';
