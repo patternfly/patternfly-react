@@ -366,7 +366,7 @@ export const useTopologyOptions = (
           />
           <Button
             variant="link"
-            isDisabled={numNodes === undefined || numNodes < 2 || numEdges === undefined || numGroups === undefined}
+            isDisabled={numNodes === undefined || numNodes < 1 || numEdges === undefined || numGroups === undefined}
             onClick={() => setCreationCounts({ numNodes, numEdges, numGroups })}
           >
             Apply

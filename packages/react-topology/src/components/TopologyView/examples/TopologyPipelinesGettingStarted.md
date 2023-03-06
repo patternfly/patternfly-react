@@ -67,7 +67,8 @@ import './topology-pipelines-example.css';
 ```ts file='./TopologyPipelinesGettingStartedDemo.tsx'
 ```
 
-#### getSpacerNodes
+## Functions
+### getSpacerNodes
 ```noLive
 /**
  * parameters:
@@ -86,7 +87,7 @@ const getSpacerNodes = (
 ): PipelineNodeModel[]
 ```
 
-#### getEdgesFromNodes
+### getEdgesFromNodes
 ```noLive
 /**
  * parameters:
