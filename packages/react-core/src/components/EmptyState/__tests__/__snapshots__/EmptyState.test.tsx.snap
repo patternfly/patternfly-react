@@ -33,7 +33,7 @@ exports[`EmptyState Header renders custom icon class passed via iconClassName 1`
   >
     <svg
       aria-hidden="true"
-      class="testIconClassName"
+      class="pf-c-empty-state__icon testIconClassName"
       fill="currentColor"
       height="1em"
       role="img"
@@ -56,7 +56,7 @@ exports[`EmptyState Header with icon 1`] = `
   >
     <svg
       aria-hidden="true"
-      class=""
+      class="pf-c-empty-state__icon"
       fill="currentColor"
       height="1em"
       role="img"

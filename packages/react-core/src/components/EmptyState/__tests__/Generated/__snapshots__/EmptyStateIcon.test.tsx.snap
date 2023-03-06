@@ -3,8 +3,9 @@
 exports[`EmptyStateIcon should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <svg
+    aria-hidden="true"
     aria-labelledby="icon-title-0"
-    class="''"
+    class="pf-c-empty-state__icon ''"
     fill="currentColor"
     height="1em"
     role="img"
@@ -30,7 +31,6 @@ exports[`EmptyStateIcon should match snapshot for variant container 1`] = `
     class="pf-c-empty-state__icon ''"
   >
     <svg
-      aria-hidden="true"
       aria-label="Contents"
       aria-valuetext="Loading..."
       class="pf-c-spinner pf-m-xl"
