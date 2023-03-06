@@ -11,9 +11,7 @@ export interface IconProps extends Omit<React.HTMLProps<SVGElement>, 'size'> {
 export interface EmptyStateIconProps extends IconProps {
   /** Additional classes added to the empty state icon */
   className?: string;
-  /** Icon component to be rendered inside the empty state on icon variant
-   * Usually a CheckCircleIcon, ExclamationCircleIcon, LockIcon, PlusCircleIcon, RocketIcon
-   * SearchIcon, or WrenchIcon. Can be a spinner component too.*/
+  /** Icon component to be rendered. Can also be a spinner component */
   icon: React.ComponentType<any>;
 }
 
@@ -24,20 +22,17 @@ export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
   icon: IconComponent,
   color,
   ...props
-}: EmptyStateIconProps) => (
+}: EmptyStateIconProps) =>
   isSpinner(<IconComponent />) ? (
     <div className={css(styles.emptyStateIcon, className)}>
-      <IconComponent
-        aria-hidden="true"
-        {...props}
-      />
+      <IconComponent {...props} />
     </div>
   ) : (
     <IconComponent
-      className={css(className)}
+      className={css(styles.emptyStateIcon, className)}
+      aria-hidden="true"
       {...(color && { style: { ['--pf-c-empty-state__icon--Color']: color } as React.CSSProperties })}
       {...props}
     />
-  )
-);
+  );
 EmptyStateIcon.displayName = 'EmptyStateIcon';
