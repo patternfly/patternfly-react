@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, getDefaultNormalizer } from '@testing-library/react';
 import { Timestamp, TimestampFormat, TimestampTooltipVariant } from '../Timestamp';
 
 jest.mock('../../Tooltip', () => ({
@@ -33,7 +33,9 @@ test('Renders component', () => {
 test('Renders with current date by default with default formatting', () => {
   render(<Timestamp />);
 
-  expect(screen.getByText(new Date().toLocaleString())).toBeInTheDocument();
+  expect(
+    screen.getByText(new Date().toLocaleString(), { normalizer: getDefaultNormalizer({ collapseWhitespace: false }) })
+  ).toBeInTheDocument();
 });
 
 test('Renders with correct datetime attribute with current date by default', () => {
@@ -42,7 +44,7 @@ test('Renders with correct datetime attribute with current date by default', () 
   // we want an ISO value without the ms to expect as the datetime value.
   const isoDateWithoutMS = new Date().toISOString().split('.')[0];
 
-  expect(screen.getByText(new Date().toLocaleString())).toHaveAttribute(
+  expect(screen.getByText(new Date().toLocaleString(), { normalizer: getDefaultNormalizer({ collapseWhitespace: false }) })).toHaveAttribute(
     'datetime',
     expect.stringMatching(isoDateWithoutMS)
   );
