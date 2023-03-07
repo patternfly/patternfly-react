@@ -21,7 +21,7 @@ export interface DropdownToggleCheckboxProps
   /** Alternate Flag to show if the checkbox is checked */
   checked?: boolean | null;
   /** A callback for when the checkbox selection changes */
-  onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
   /** Element to be rendered inside the <span> */
   children?: React.ReactNode;
   /** Id of the checkbox */
@@ -55,7 +55,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
   }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-    this.props.onChange?.((event.target as HTMLInputElement).checked, event);
+    this.props.onChange?.(event, (event.target as HTMLInputElement).checked);
   };
 
   calculateChecked = () => {
@@ -111,7 +111,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
           {...props}
           {...(this.calculateChecked() !== undefined && { onChange: this.handleChange })}
           type="checkbox"
-          ref={elem => elem && (elem.indeterminate = isChecked === null)}
+          ref={(elem) => elem && (elem.indeterminate = isChecked === null)}
           aria-invalid={!isValid}
           disabled={isDisabled}
           checked={this.calculateChecked()}
