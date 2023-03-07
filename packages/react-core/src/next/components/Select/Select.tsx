@@ -30,7 +30,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   zIndex?: number;
   /** @beta Determines the accessible role of the select. For a checkbox select pass in "menu". */
   role?: string;
-  /** Additional properties to pass to the Popper */
+  /** Additional properties to pass to the popper */
   popperProps?: PopperProps;
 }
 

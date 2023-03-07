@@ -37,8 +37,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   actionsToggle,
   popperProps = {
     position: 'right',
-    direction: 'down',
-    minWidth: 'fit-content'
+    direction: 'down'
   },
   ...props
 }: ActionsColumnProps) => {
