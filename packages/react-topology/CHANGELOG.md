@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.91.39 (2023-03-07)
+
+
+### Bug Fixes
+
+* **topology:** Allow tooltip customization on TaskNode ([#8782](https://github.com/patternfly/patternfly-react/issues/8782)) ([13bf93b](https://github.com/patternfly/patternfly-react/commit/13bf93b5bd219977c0f5660e4093da535946f7e7))
+
+
+
+
+
 ## [4.91.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.91.37...@patternfly/react-topology@4.91.38) (2023-03-02)
 
 **Note:** Version bump only for package @patternfly/react-topology
