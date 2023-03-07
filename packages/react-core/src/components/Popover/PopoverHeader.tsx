@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
-import { Title, TitleSizes } from '../Title';
 import { PopoverHeaderIcon } from './PopoverHeaderIcon';
 import { PopoverHeaderText } from './PopoverHeaderText';
 
@@ -31,23 +30,17 @@ export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
   id,
   alertSeverityScreenReaderText,
   ...props
-}: PopoverHeaderProps) => {
-  const HeadingLevel = titleHeadingLevel;
-
-  return icon || alertSeverityVariant ? (
-    <header className={css('pf-c-popover__header', className)} id={id} {...props}>
-      <HeadingLevel className={css(styles.popoverTitle)}>
-        {icon && <PopoverHeaderIcon>{icon}</PopoverHeaderIcon>}
+}: PopoverHeaderProps) => (
+  <header className={css(styles.popoverHeader, className)} {...props}>
+    <div className={css(styles.popoverTitle)} id={id}>
+      {icon && <PopoverHeaderIcon>{icon}</PopoverHeaderIcon>}
+      <PopoverHeaderText headingLevel={titleHeadingLevel}>
         {alertSeverityVariant && alertSeverityScreenReaderText && (
           <span className="pf-u-screen-reader">{alertSeverityScreenReaderText}</span>
         )}
-        <PopoverHeaderText>{children}</PopoverHeaderText>
-      </HeadingLevel>
-    </header>
-  ) : (
-    <Title headingLevel={titleHeadingLevel} size={TitleSizes.md} id={id} className={className} {...props}>
-      {children}
-    </Title>
-  );
-};
+        {children}
+      </PopoverHeaderText>
+    </div>
+  </header>
+);
 PopoverHeader.displayName = 'PopoverHeader';

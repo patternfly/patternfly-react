@@ -2,16 +2,21 @@
 
 exports[`PopoverHeader should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
-  <h6
-    class="pf-c-title pf-m-md"
-    data-ouia-component-id="OUIA-Generated-Title-1"
-    data-ouia-component-type="PF4/Title"
-    data-ouia-safe="true"
-    id="string"
+  <header
+    class="pf-c-popover__header"
   >
-    <div>
-      ReactNode
+    <div
+      class="pf-c-popover__title"
+      id="string"
+    >
+      <h6
+        class="pf-c-popover__title-text"
+      >
+        <div>
+          ReactNode
+        </div>
+      </h6>
     </div>
-  </h6>
+  </header>
 </DocumentFragment>
 `;
