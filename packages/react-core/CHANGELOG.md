@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.25...@patternfly/react-core@5.0.0-alpha.26) (2023-03-07)
+
+### Bug Fixes
+
+- **Popover:** Refactor popover header ([#8774](https://github.com/patternfly/patternfly-react/issues/8774)) ([aede226](https://github.com/patternfly/patternfly-react/commit/aede2260822575d150060b44469df2fa10ba1667))
+- **tests, scripts:** fixed dev server issues/tests related to node 18 ([#8788](https://github.com/patternfly/patternfly-react/issues/8788)) ([17c04f4](https://github.com/patternfly/patternfly-react/commit/17c04f4e5c9bf26f3eee04563935ad56855bf0c9))
+
 # [5.0.0-alpha.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.24...@patternfly/react-core@5.0.0-alpha.25) (2023-03-04)
 
 ### Features

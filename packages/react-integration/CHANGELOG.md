@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.4...@patternfly/react-integration@5.0.0-alpha.5) (2023-03-07)
+
+### Bug Fixes
+
+- **Popover:** Refactor popover header ([#8774](https://github.com/patternfly/patternfly-react/issues/8774)) ([aede226](https://github.com/patternfly/patternfly-react/commit/aede2260822575d150060b44469df2fa10ba1667))
+
 # [5.0.0-alpha.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.3...@patternfly/react-integration@5.0.0-alpha.4) (2023-03-04)
 
 ### Features

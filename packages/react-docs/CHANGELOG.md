@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.28...@patternfly/react-docs@6.0.0-alpha.29) (2023-03-07)
+
+### Bug Fixes
+
+- **tests, scripts:** fixed dev server issues/tests related to node 18 ([#8788](https://github.com/patternfly/patternfly-react/issues/8788)) ([17c04f4](https://github.com/patternfly/patternfly-react/commit/17c04f4e5c9bf26f3eee04563935ad56855bf0c9))
+
 # [6.0.0-alpha.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.27...@patternfly/react-docs@6.0.0-alpha.28) (2023-03-04)
 
 **Note:** Version bump only for package @patternfly/react-docs
