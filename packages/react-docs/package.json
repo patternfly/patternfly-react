@@ -16,7 +16,8 @@
     "analyze": "yarn build:docs --analyze",
     "build:docs": "pf-docs-framework build all --legacySSL",
     "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js",
-    "develop": "pf-docs-framework start",
+    "develop": "./startDevServer.sh",
+    "start": "pf-docs-framework start",
     "serve": "pf-docs-framework serve public",
     "screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
