@@ -36,7 +36,9 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
     >
-      <ol className={css(styles.wizardNavList)}>{children}</ol>
+      <ol className={css(styles.wizardNavList)} role="list">
+        {children}
+      </ol>
     </nav>
   );
 };
