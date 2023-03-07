@@ -90,7 +90,7 @@
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",
     "start:demo-app:hot": "lerna run start:demo-app:hot --stream",
-    "test": "TZ=EST LC_ALL=en_US.UTF8 jest packages",
+    "test": "TZ=EST jest packages",
     "test:a11y": "lerna run test:a11y --stream",
     "test:integration": "yarn workspace @patternfly/react-integration test:integration",
     "uninstall": "find . -name node_modules -type d | xargs rm -rf",
