@@ -43,6 +43,8 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   forgotCredentials?: React.ReactNode;
   /** Content rendered inside of social media login footer section */
   socialMediaLoginContent?: React.ReactNode;
+  /** Adds an accessible name to the social media login list. */
+  socialMediaLoginAriaLabel?: string;
 }
 
 export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
@@ -61,6 +63,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
   signUpForAccountMessage = null,
   forgotCredentials = null,
   socialMediaLoginContent = null,
+  socialMediaLoginAriaLabel,
   ...props
 }: LoginPageProps) => {
   const HeaderBrand = (
@@ -85,6 +88,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
         {(socialMediaLoginContent || forgotCredentials || signUpForAccountMessage) && (
           <LoginMainFooter
             socialMediaLoginContent={socialMediaLoginContent}
+            socialMediaLoginAriaLabel={socialMediaLoginAriaLabel}
             forgotCredentials={forgotCredentials}
             signUpForAccountMessage={signUpForAccountMessage}
           />

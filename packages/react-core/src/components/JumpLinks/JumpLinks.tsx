@@ -19,7 +19,7 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   label?: React.ReactNode;
   /** Flag to always show the label when using `expandable` */
   alwaysShowLabel?: boolean;
-  /** Aria-label to add to nav element. Defaults to label. */
+  /** Adds an accessible label to the internal nav element. Defaults to the value of the label prop. */
   'aria-label'?: string;
   /** Selector for the scrollable element to spy on. Not passing a selector disables spying. */
   scrollableSelector?: string;
@@ -72,12 +72,7 @@ const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
 
 function isResponsive(jumpLinks: HTMLElement) {
   // https://github.com/patternfly/patternfly/blob/main/src/patternfly/components/JumpLinks/jump-links.scss#L103
-  return (
-    jumpLinks &&
-    getComputedStyle(jumpLinks)
-      .getPropertyValue(cssToggleDisplayVar.name)
-      .includes('block')
-  );
+  return jumpLinks && getComputedStyle(jumpLinks).getPropertyValue(cssToggleDisplayVar.name).includes('block');
 }
 
 export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
@@ -245,7 +240,9 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
           )}
           {label && alwaysShowLabel && <div className={css(styles.jumpLinksLabel)}>{label}</div>}
         </div>
-        <ul className={styles.jumpLinksList}>{cloneChildren(children)}</ul>
+        <ul className={styles.jumpLinksList} role="list">
+          {cloneChildren(children)}
+        </ul>
       </div>
     </nav>
   );

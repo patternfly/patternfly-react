@@ -57,6 +57,7 @@ exports[`expandable vertical with subsection 1`] = `
       </div>
       <ul
         class="pf-c-jump-links__list"
+        role="list"
       >
         <li
           class="pf-c-jump-links__item"
@@ -85,6 +86,7 @@ exports[`expandable vertical with subsection 1`] = `
           </a>
           <ul
             class="pf-c-jump-links__list"
+            role="list"
           >
             <li
               aria-current="location"
@@ -173,6 +175,7 @@ exports[`jumplinks centered 1`] = `
       />
       <ul
         class="pf-c-jump-links__list"
+        role="list"
       >
         <li
           class="pf-c-jump-links__item"
@@ -240,6 +243,7 @@ exports[`jumplinks with label 1`] = `
       </div>
       <ul
         class="pf-c-jump-links__list"
+        role="list"
       >
         <li
           class="pf-c-jump-links__item"
@@ -300,6 +304,7 @@ exports[`simple jumplinks 1`] = `
       />
       <ul
         class="pf-c-jump-links__list"
+        role="list"
       >
         <li
           class="pf-c-jump-links__item"
@@ -367,6 +372,7 @@ exports[`vertical with label 1`] = `
       </div>
       <ul
         class="pf-c-jump-links__list"
+        role="list"
       >
         <li
           class="pf-c-jump-links__item"

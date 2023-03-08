@@ -57,7 +57,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
         />
       </NotificationDrawerHeader>
       <NotificationDrawerBody>
-        <NotificationDrawerList>
+        <NotificationDrawerList aria-label="Notifications in the basic example">
           <NotificationDrawerListItem variant="info">
             <NotificationDrawerListItemHeader
               variant="info"

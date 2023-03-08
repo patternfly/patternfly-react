@@ -6,7 +6,7 @@ export const ProgressStepperCompact: React.FunctionComponent = () => {
   const [isCenterAligned, setIsCenterAligned] = React.useState(false);
 
   return (
-    <React.Fragment>
+    <React.Fragment aria-label="Compact progress stepper">
       <Checkbox
         label="Vertical alignment"
         isChecked={isVertical}

@@ -100,6 +100,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
         >
           <ol
             class="pf-c-wizard__nav-list"
+            role="list"
           >
             <li
               class="pf-c-wizard__nav-item"
@@ -154,6 +155,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
               </button>
               <ol
                 class="pf-c-wizard__nav-list"
+                role="list"
               >
                 <li
                   class="pf-c-wizard__nav-item"
@@ -367,6 +369,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
         >
           <ol
             class="pf-c-wizard__nav-list"
+            role="list"
           >
             <li
               class="pf-c-wizard__nav-item"
@@ -397,6 +400,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
               </button>
               <ol
                 class="pf-c-wizard__nav-list"
+                role="list"
               >
                 <li
                   class="pf-c-wizard__nav-item"
@@ -571,6 +575,7 @@ exports[`Wizard bare wiz 1`] = `
         >
           <ol
             class="pf-c-wizard__nav-list"
+            role="list"
           >
             <li
               class="pf-c-wizard__nav-item"

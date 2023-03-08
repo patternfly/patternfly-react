@@ -23,7 +23,11 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
   isInnerList = false
 }: WizardNavProps) => {
   if (isInnerList) {
-    return <ol className={css(styles.wizardNavList)}>{children}</ol>;
+    return (
+      <ol className={css(styles.wizardNavList)} role="list">
+        {children}
+      </ol>
+    );
   }
 
   return (
@@ -32,7 +36,9 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
     >
-      <ol className={css(styles.wizardNavList)}>{children}</ol>
+      <ol className={css(styles.wizardNavList)} role="list">
+        {children}
+      </ol>
     </nav>
   );
 };

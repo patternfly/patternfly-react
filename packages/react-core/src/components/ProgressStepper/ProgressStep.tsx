@@ -88,6 +88,8 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
         className
       )}
       aria-label={ariaLabel}
+      // CSS style `display: contents` gives this li a generic role, we need to override that
+      role="listitem"
       {...(isCurrent && { 'aria-current': 'step' })}
       {...props}
     >

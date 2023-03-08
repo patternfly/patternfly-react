@@ -14,7 +14,7 @@ export const JumpLinksList: React.FunctionComponent<JumpLinksListProps> = ({
   className,
   ...props
 }: JumpLinksListProps) => (
-  <ul className={css(styles.jumpLinksList, className)} {...props}>
+  <ul className={css(styles.jumpLinksList, className)} role="list" {...props}>
     {children}
   </ul>
 );

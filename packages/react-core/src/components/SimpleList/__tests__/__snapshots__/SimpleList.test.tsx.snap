@@ -7,6 +7,7 @@ exports[`SimpleList renders aria-labelled content 1`] = `
   >
     <ul
       aria-label="This is a simple list"
+      role="list"
     >
       <li
         class=""
@@ -48,7 +49,9 @@ exports[`SimpleList renders content 1`] = `
   <div
     class="pf-c-simple-list"
   >
-    <ul>
+    <ul
+      role="list"
+    >
       <li
         class=""
       >
@@ -102,6 +105,7 @@ exports[`SimpleList renders grouped content 1`] = `
       <ul
         aria-labelledby=""
         class=""
+        role="list"
       >
         <li
           class=""

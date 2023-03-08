@@ -35,7 +35,9 @@ export const NavGroup: React.FunctionComponent<NavGroupProps> = ({
           {title}
         </h2>
       )}
-      <ul className={css(styles.navList, className)}>{children}</ul>
+      <ul className={css(styles.navList, className)} role="list">
+        {children}
+      </ul>
     </section>
   );
 };

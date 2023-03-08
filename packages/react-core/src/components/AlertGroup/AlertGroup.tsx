@@ -18,6 +18,8 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   onOverflowClick?: () => void;
   /** Custom text to show for the overflow message */
   overflowMessage?: string;
+  /** Adds an accessible label to the alert group. */
+  'aria-label'?: string;
 }
 
 interface AlertGroupState {
@@ -53,7 +55,16 @@ export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState
   }
 
   render() {
-    const { className, children, isToast, isLiveRegion, onOverflowClick, overflowMessage, ...props } = this.props;
+    const {
+      className,
+      children,
+      isToast,
+      isLiveRegion,
+      onOverflowClick,
+      overflowMessage,
+      'aria-label': ariaLabel,
+      ...props
+    } = this.props;
     const alertGroup = (
       <AlertGroupInline
         onOverflowClick={onOverflowClick}
@@ -61,6 +72,7 @@ export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState
         isToast={isToast}
         isLiveRegion={isLiveRegion}
         overflowMessage={overflowMessage}
+        aria-label={ariaLabel}
         {...props}
       >
         {children}

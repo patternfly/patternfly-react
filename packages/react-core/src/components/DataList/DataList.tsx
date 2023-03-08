@@ -111,6 +111,7 @@ export class DataList extends React.Component<DataListProps> {
             className
           )}
           style={props.style}
+          role="list"
           {...props}
           ref={this.ref}
         >

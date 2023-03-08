@@ -27,7 +27,11 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
 }: WizardNavProps) => {
   const ouiaProps = useOUIAProps(WizardNav.displayName, ouiaId, ouiaSafe);
 
-  const innerList = <ol className={css(styles.wizardNavList)}>{children}</ol>;
+  const innerList = (
+    <ol className={css(styles.wizardNavList)} role="list">
+      {children}
+    </ol>
+  );
 
   if (returnList) {
     return innerList;
@@ -40,7 +44,9 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
       aria-labelledby={ariaLabelledBy}
       {...ouiaProps}
     >
-      <ol className={css(styles.wizardNavList)}>{children}</ol>
+      <ol className={css(styles.wizardNavList)} role="list">
+        {children}
+      </ol>
     </nav>
   );
 };

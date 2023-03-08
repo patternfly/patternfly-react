@@ -14,6 +14,8 @@ export interface ProgressStepperProps
   isVertical?: boolean;
   /** Flag indicating the progress stepper should be rendered compactly. */
   isCompact?: boolean;
+  /** Adds an accessible label to the progress stepper. */
+  'aria-label'?: string;
 }
 
 export const ProgressStepper: React.FunctionComponent<ProgressStepperProps> = ({
@@ -22,6 +24,7 @@ export const ProgressStepper: React.FunctionComponent<ProgressStepperProps> = ({
   isCenterAligned,
   isVertical,
   isCompact,
+  'aria-label': ariaLabel,
   ...props
 }: ProgressStepperProps) => (
   <ol
@@ -32,6 +35,8 @@ export const ProgressStepper: React.FunctionComponent<ProgressStepperProps> = ({
       isCompact && styles.modifiers.compact,
       className
     )}
+    role="list"
+    aria-label={ariaLabel}
     {...props}
   >
     {children}

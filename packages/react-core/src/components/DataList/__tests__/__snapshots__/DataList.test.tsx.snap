@@ -36,6 +36,7 @@ exports[`DataList DataList variants Breakpoint - 2xl 1`] = `
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-2xl"
+    role="list"
   />
 </DocumentFragment>
 `;
@@ -45,6 +46,7 @@ exports[`DataList DataList variants Breakpoint - always 1`] = `
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid"
+    role="list"
   />
 </DocumentFragment>
 `;
@@ -54,6 +56,7 @@ exports[`DataList DataList variants Breakpoint - lg 1`] = `
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-lg"
+    role="list"
   />
 </DocumentFragment>
 `;
@@ -63,6 +66,7 @@ exports[`DataList DataList variants Breakpoint - md 1`] = `
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-md"
+    role="list"
   />
 </DocumentFragment>
 `;
@@ -72,6 +76,7 @@ exports[`DataList DataList variants Breakpoint - none 1`] = `
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-none"
+    role="list"
   />
 </DocumentFragment>
 `;
@@ -81,6 +86,7 @@ exports[`DataList DataList variants Breakpoint - sm 1`] = `
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-sm"
+    role="list"
   />
 </DocumentFragment>
 `;
@@ -90,6 +96,7 @@ exports[`DataList DataList variants Breakpoint - xl 1`] = `
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-xl"
+    role="list"
   />
 </DocumentFragment>
 `;
@@ -214,6 +221,7 @@ exports[`DataList List 1`] = `
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-md data-list-custom"
+    role="list"
   />
 </DocumentFragment>
 `;
@@ -223,6 +231,7 @@ exports[`DataList List compact 1`] = `
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-compact pf-m-grid-md"
+    role="list"
   />
 </DocumentFragment>
 `;
@@ -232,6 +241,7 @@ exports[`DataList List default 1`] = `
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-md"
+    role="list"
   />
 </DocumentFragment>
 `;
@@ -241,6 +251,7 @@ exports[`DataList List draggable 1`] = `
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-compact pf-m-grid-md"
+    role="list"
   />
 </DocumentFragment>
 `;

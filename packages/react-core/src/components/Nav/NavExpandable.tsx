@@ -82,7 +82,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     if (this.props.onExpand) {
       this.props.onExpand(e, !expandedState);
     } else {
-      this.setState(prevState => ({ expandedState: !prevState.expandedState }));
+      this.setState((prevState) => ({ expandedState: !prevState.expandedState }));
       const { groupId } = this.props;
       onToggle(e, groupId, !expandedState);
     }
@@ -112,7 +112,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
 
     return (
       <NavContext.Consumer>
-        {context => (
+        {(context) => (
           <li
             className={css(
               styles.navItem,
@@ -129,7 +129,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
                 <button
                   className={styles.navLink}
                   id={srText ? null : this.id}
-                  onClick={e => this.onExpand(e, context.onToggle)}
+                  onClick={(e) => this.onExpand(e, context.onToggle)}
                   aria-expanded={expandedState}
                   tabIndex={isNavOpen ? null : -1}
                   {...buttonProps}
@@ -149,7 +149,9 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
                   {srText}
                 </h2>
               )}
-              <ul className={css(styles.navList)}>{children}</ul>
+              <ul className={css(styles.navList)} role="list">
+                {children}
+              </ul>
             </section>
           </li>
         )}

@@ -135,6 +135,7 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
       loginTitle="Log in to your account"
       loginSubtitle="Enter your single sign-on LDAP credentials."
       socialMediaLoginContent={socialMediaLoginContent}
+      socialMediaLoginAriaLabel="Log in with social media"
       signUpForAccountMessage={signUpForAccountMessage}
       forgotCredentials={forgotCredentials}
     >

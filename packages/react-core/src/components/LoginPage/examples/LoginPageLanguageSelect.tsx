@@ -185,6 +185,7 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
       loginSubtitle="Enter your single sign-on LDAP credentials."
       headerUtilities={headerUtils}
       socialMediaLoginContent={socialMediaLoginContent}
+      socialMediaLoginAriaLabel="Log in with social media"
       signUpForAccountMessage={signUpForAccountMessage}
       forgotCredentials={forgotCredentials}
     >
