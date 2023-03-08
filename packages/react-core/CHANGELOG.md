@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.26...@patternfly/react-core@5.0.0-alpha.27) (2023-03-08)
+
+### Bug Fixes
+
+- **lists:** added role to list elements within components ([#8702](https://github.com/patternfly/patternfly-react/issues/8702)) ([516d4a1](https://github.com/patternfly/patternfly-react/commit/516d4a164b37b53c3973c749cd99d11bf693b073))
+
 # [5.0.0-alpha.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.25...@patternfly/react-core@5.0.0-alpha.26) (2023-03-07)
 
 ### Bug Fixes
