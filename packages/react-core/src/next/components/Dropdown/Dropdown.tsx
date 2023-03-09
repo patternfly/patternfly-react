@@ -22,8 +22,6 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   isPlain?: boolean;
   /** Indicates if the menu should be scrollable. */
   isScrollable?: boolean;
-  /** Min width of the menu. */
-  minWidth?: string;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -33,7 +31,7 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   /** z-index of the dropdown menu */
   zIndex?: number;
   /** Additional properties to pass to the Popper */
-  popperProps?: PopperProps;
+  popperProps?: Partial<PopperProps>;
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({
@@ -45,7 +43,6 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   onOpenChange,
   isPlain,
   isScrollable,
-  minWidth,
   innerRef,
   ouiaId,
   ouiaSafe = true,
@@ -106,11 +103,6 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
       onSelect={(event, itemId) => onSelect && onSelect(event, itemId)}
       isPlain={isPlain}
       isScrollable={isScrollable}
-      {...(minWidth && {
-        style: {
-          '--pf-c-menu--MinWidth': minWidth
-        } as React.CSSProperties
-      })}
       {...props}
     >
       <MenuContent>{children}</MenuContent>

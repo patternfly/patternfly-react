@@ -31,7 +31,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   /** @beta Determines the accessible role of the select. For a checkbox select pass in "menu". */
   role?: string;
   /** Additional properties to pass to the popper */
-  popperProps?: PopperProps;
+  popperProps?: Partial<PopperProps>;
 }
 
 const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
