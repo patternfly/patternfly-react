@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DropdownToggle, DropdownContext } from '../Dropdown';
+import { DropdownToggle, DropdownContext } from '../../../components/Dropdown';
 
 export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElement> {
   /** Id of the parent options menu component */

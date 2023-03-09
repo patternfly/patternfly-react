@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
-import { DropdownContext } from '../Dropdown';
-import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
-import { OUIAProps, useOUIAId } from '../../helpers';
+import { DropdownContext } from '../../../components/Dropdown';
+import { DropdownWithContext } from '../../../components/Dropdown/DropdownWithContext';
+import { OUIAProps, useOUIAId } from '../../../helpers';
 
 export enum OptionsMenuPosition {
   right = 'right',
