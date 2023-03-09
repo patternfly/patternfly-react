@@ -12,7 +12,7 @@ export interface CardHeaderActionsObject {
   actions: React.ReactNode;
   /** Flag indicating that the actions have no offset */
   hasNoOffset?: boolean;
-  /** Additional classes added to the action */
+  /** Additional classes added to the actions wrapper */
   className?: string;
 }
 
