@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Card,
   CardHeader,
-  CardActions,
   CardTitle,
   CardBody,
   CardFooter,
@@ -42,26 +41,29 @@ export const CardTitleInHeader: React.FunctionComponent = () => {
     </DropdownItem>
   ];
 
+  const headerActions = (
+    <>
+      <Dropdown
+        onSelect={onSelect}
+        toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
+        isOpen={isOpen}
+        isPlain
+        dropdownItems={dropdownItems}
+        position={'right'}
+      />
+      <Checkbox
+        isChecked={isChecked}
+        onChange={(_event, checked) => onClick(checked)}
+        aria-label="card checkbox example"
+        id="check-2"
+        name="check2"
+      />
+    </>
+  );
+
   return (
     <Card>
-      <CardHeader>
-        <CardActions>
-          <Dropdown
-            onSelect={onSelect}
-            toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
-            isOpen={isOpen}
-            isPlain
-            dropdownItems={dropdownItems}
-            position={'right'}
-          />
-          <Checkbox
-            isChecked={isChecked}
-            onChange={(_event, checked) => onClick(checked)}
-            aria-label="card checkbox example"
-            id="check-2"
-            name="check2"
-          />
-        </CardActions>
+      <CardHeader actions={{actions: headerActions}}>
         <CardTitle>
           This is a really really really really really really really really really really long header
         </CardTitle>

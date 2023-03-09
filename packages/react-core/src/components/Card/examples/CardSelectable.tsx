@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Card,
   CardHeader,
-  CardActions,
   CardTitle,
   CardBody,
   Dropdown,
@@ -21,18 +20,18 @@ export const CardSelectable: React.FunctionComponent = () => {
     }
     if ([' ', 'Enter'].includes(event.key)) {
       event.preventDefault();
-      const newSelected = event.currentTarget.id === selected ? null : event.currentTarget.id;
+      const newSelected = event.currentTarget.id === selected ? '' : event.currentTarget.id;
       setSelected(newSelected);
     }
   };
 
   const onClick = (event: React.MouseEvent) => {
-    const newSelected = event.currentTarget.id === selected ? null : event.currentTarget.id;
+    const newSelected = event.currentTarget.id === selected ? '' : event.currentTarget.id;
     setSelected(newSelected);
   };
 
   const onChange = (_event: React.FormEvent<HTMLInputElement>, labelledById: string) => {
-    const newSelected = labelledById === selected ? null : labelledById;
+    const newSelected = labelledById === selected ? '' : labelledById;
     setSelected(newSelected);
   };
 
@@ -44,8 +43,8 @@ export const CardSelectable: React.FunctionComponent = () => {
     setIsKebabOpen(isOpen);
   };
 
-  const onSelect = (event: React.SyntheticEvent<HTMLDivElement>) => {
-    event.stopPropagation();
+  const onSelect = (event: React.SyntheticEvent<HTMLDivElement> | undefined) => {
+    event?.stopPropagation();
     setIsKebabOpen(false);
   };
 
@@ -67,6 +66,19 @@ export const CardSelectable: React.FunctionComponent = () => {
     </DropdownItem>
   ];
 
+  const headerActions = (
+    <>
+      <Dropdown
+        onSelect={onSelect}
+        toggle={<KebabToggle onToggle={onToggle} />}
+        isOpen={isKebabOpen}
+        isPlain
+        dropdownItems={dropdownItems}
+        position={'right'}
+      />
+    </>
+  );
+
   return (
     <React.Fragment>
       <Card
@@ -78,18 +90,7 @@ export const CardSelectable: React.FunctionComponent = () => {
         isSelectableRaised
         isSelected={selected === 'selectable-first-card'}
       >
-        <CardHeader>
-          <CardActions>
-            <Dropdown
-              onSelect={onSelect}
-              toggle={<KebabToggle onToggle={onToggle} />}
-              isOpen={isKebabOpen}
-              isPlain
-              dropdownItems={dropdownItems}
-              position={'right'}
-            />
-          </CardActions>
-        </CardHeader>
+        <CardHeader actions={{actions: headerActions}}/>
         <CardTitle>First card</CardTitle>
         <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
       </Card>

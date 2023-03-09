@@ -3,8 +3,6 @@ import {
   Card,
   CardTitle,
   CardHeader,
-  CardHeaderMain,
-  CardActions,
   CardBody,
   CardFooter,
   CardExpandableContent,
@@ -90,6 +88,26 @@ export class CardDemo extends React.Component {
         Separated Action
       </DropdownItem>
     ];
+
+    const actions = (
+      <>
+        <Dropdown
+          onSelect={this.onSelect}
+          toggle={<KebabToggle onToggle={this.onToggle} />}
+          isOpen={this.state.isOpen}
+          isPlain
+          dropdownItems={dropdownItems}
+          position={'right'}
+        />
+        <Checkbox
+          isChecked={this.state.check1}
+          onChange={this.onClick}
+          aria-label="card checkbox example"
+          id="check-1"
+          name="check1"
+        />
+      </>
+    );
 
     return (
       <React.Fragment>
@@ -180,27 +198,8 @@ export class CardDemo extends React.Component {
         </Card>
         <br></br>
         <Card id="hasNoOffset-card">
-          <CardHeader>
-            <CardHeaderMain>
-              <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }} />
-            </CardHeaderMain>
-            <CardActions hasNoOffset>
-              <Dropdown
-                onSelect={this.onSelect}
-                toggle={<KebabToggle onToggle={this.onToggle} />}
-                isOpen={this.state.isOpen}
-                isPlain
-                dropdownItems={dropdownItems}
-                position={'right'}
-              />
-              <Checkbox
-                isChecked={this.state.check1}
-                onChange={this.onClick}
-                aria-label="card checkbox example"
-                id="check-1"
-                name="check1"
-              />
-            </CardActions>
+          <CardHeader actions={{actions, hasNoOffset: true}}>
+            <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }} />
           </CardHeader>
           <CardTitle>Header</CardTitle>
           <CardBody>Body</CardBody>

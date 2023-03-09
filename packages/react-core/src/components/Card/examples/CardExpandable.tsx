@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Card,
   CardHeader,
-  CardActions,
   CardTitle,
   CardBody,
   CardFooter,
@@ -56,6 +55,26 @@ export const CardExpandable: React.FunctionComponent = () => {
     </DropdownItem>
   ];
 
+  const headerActions = (
+    <>
+      <Dropdown
+        onSelect={onSelect}
+        toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
+        isOpen={isOpen}
+        isPlain
+        dropdownItems={dropdownItems}
+        position={'right'}
+      />
+      <Checkbox
+        isChecked={isChecked}
+        onChange={(_event, checked) => onClick(checked)}
+        aria-label="card checkbox example"
+        id="check-4"
+        name="check4"
+      />
+    </>
+  );
+
   return (
     <React.Fragment>
       <div style={{ marginBottom: '12px' }}>
@@ -69,6 +88,7 @@ export const CardExpandable: React.FunctionComponent = () => {
       </div>
       <Card id="expandable-card" isExpanded={isExpanded}>
         <CardHeader
+          actions={{actions: headerActions}}
           onExpand={onExpand}
           isToggleRightAligned={isToggleRightAligned}
           toggleButtonProps={{
@@ -78,24 +98,7 @@ export const CardExpandable: React.FunctionComponent = () => {
             'aria-expanded': isExpanded
           }}
         >
-          <CardActions>
-            <Dropdown
-              onSelect={onSelect}
-              toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
-              isOpen={isOpen}
-              isPlain
-              dropdownItems={dropdownItems}
-              position={'right'}
-            />
-            <Checkbox
-              isChecked={isChecked}
-              onChange={(_event, checked) => onClick(checked)}
-              aria-label="card checkbox example"
-              id="check-4"
-              name="check4"
-            />
-          </CardActions>
-          <CardTitle id="expandable-card-title">Header</CardTitle>
+          <CardTitle id="expandable-card-title">Title</CardTitle>
         </CardHeader>
         <CardExpandableContent>
           <CardBody>Body</CardBody>

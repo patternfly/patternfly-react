@@ -3,8 +3,6 @@ import {
   Brand,
   Card,
   CardHeader,
-  CardHeaderMain,
-  CardActions,
   CardTitle,
   CardBody,
   CardFooter,
@@ -49,32 +47,33 @@ export const CardWithImageAndActions: React.FunctionComponent = () => {
     </DropdownItem>
   ];
 
+  const headerActions = (
+    <>
+      <Dropdown
+        onSelect={onSelect}
+        toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
+        isOpen={isOpen}
+        isPlain
+        dropdownItems={dropdownItems}
+        position={'right'}
+      />
+      <Checkbox
+        isChecked={isChecked}
+        onChange={(_event, checked) => onClick(checked)}
+        aria-label="card checkbox example"
+        id="check-1"
+        name="check1"
+      />
+    </>
+  );
+
   return (
     <>
       <Card>
-        <CardHeader>
-          <CardHeaderMain>
-            <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }} />
-          </CardHeaderMain>
-          <CardActions hasNoOffset={hasNoOffset}>
-            <Dropdown
-              onSelect={onSelect}
-              toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
-              isOpen={isOpen}
-              isPlain
-              dropdownItems={dropdownItems}
-              position={'right'}
-            />
-            <Checkbox
-              isChecked={isChecked}
-              onChange={(_event, checked) => onClick(checked)}
-              aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
-            />
-          </CardActions>
+        <CardHeader actions={{actions: headerActions, hasNoOffset}}>
+          <Brand src={pfLogo} alt="PatternFly logo" style={{ width: '300px' }} />
         </CardHeader>
-        <CardTitle>Header</CardTitle>
+        <CardTitle>Title</CardTitle>
         <CardBody>Body</CardBody>
         <CardFooter>Footer</CardFooter>
       </Card>

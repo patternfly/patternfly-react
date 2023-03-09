@@ -7,4 +7,9 @@ describe('CardHeader', () => {
     const { asFragment } = render(<CardHeader onExpand={jest.fn()} />);
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('actions are rendered', () => {
+    const { asFragment } = render(<CardHeader actions="test" />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

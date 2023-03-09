@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Card/card';
 
 export interface CardHeaderMainProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Card Head Main */
@@ -8,11 +10,11 @@ export interface CardHeaderMainProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const CardHeaderMain: React.FunctionComponent<CardHeaderMainProps> = ({
-  children = null,
-  className = '',
+  children,
+  className,
   ...props
 }: CardHeaderMainProps) => (
-  <div className={className} {...props}>
+  <div className={css(styles.cardHeaderMain ,className)} {...props}>
     {children}
   </div>
 );

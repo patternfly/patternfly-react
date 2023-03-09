@@ -7,7 +7,6 @@ import {
   KebabToggle,
   Card,
   CardHeader,
-  CardActions,
   CardBody
 } from '@patternfly/react-core';
 
@@ -40,27 +39,29 @@ export const CardOnlyActionsInCardHead: React.FunctionComponent = () => {
     </DropdownItem>
   ];
 
+  const headerActions = (
+    <>
+      <Dropdown
+        onSelect={onSelect}
+        toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
+        isOpen={isOpen}
+        isPlain
+        dropdownItems={dropdownItems}
+        position={'right'}
+      />
+      <Checkbox
+        isChecked={isChecked}
+        onChange={(_event, checked) => onClick(checked)}
+        aria-label="card checkbox example"
+        id="check-3"
+        name="check3"
+      />
+    </>
+  );
+
   return (
     <Card>
-      <CardHeader>
-        <CardActions>
-          <Dropdown
-            onSelect={onSelect}
-            toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
-            isOpen={isOpen}
-            isPlain
-            dropdownItems={dropdownItems}
-            position={'right'}
-          />
-          <Checkbox
-            isChecked={isChecked}
-            onChange={(_event, checked) => onClick(checked)}
-            aria-label="card checkbox example"
-            id="check-3"
-            name="check3"
-          />
-        </CardActions>
-      </CardHeader>
+      <CardHeader actions={{actions: headerActions}}/>
       <CardBody>This is the card body. There are only actions in the card head.</CardBody>
     </Card>
   );

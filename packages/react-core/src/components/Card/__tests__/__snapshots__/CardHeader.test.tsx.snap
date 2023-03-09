@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CardHeader actions are rendered 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-card__header"
+  >
+    <div
+      class="pf-c-card__actions"
+    >
+        
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`CardHeader onExpand adds the toggle button 1`] = `
 <DocumentFragment>
   <div

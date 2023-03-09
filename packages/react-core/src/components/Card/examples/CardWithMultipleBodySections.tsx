@@ -3,7 +3,7 @@ import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 export const CardWithMultipleBodySections: React.FunctionComponent = () => (
   <Card>
-    <CardTitle>Header</CardTitle>
+    <CardTitle>Title</CardTitle>
     <CardBody>Body</CardBody>
     <CardBody>Body</CardBody>
     <CardBody>Body</CardBody>

@@ -13,8 +13,8 @@ export interface CardTitleProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
-  children = null,
-  className = '',
+  children,
+  className,
   component = 'div',
   ...props
 }: CardTitleProps) => {
