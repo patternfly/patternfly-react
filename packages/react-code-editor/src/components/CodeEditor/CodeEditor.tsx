@@ -13,7 +13,6 @@ import {
   getResizeObserver,
   Popover,
   PopoverProps,
-  Title,
   TooltipPosition,
   EmptyStateHeader
 } from '@patternfly/react-core';

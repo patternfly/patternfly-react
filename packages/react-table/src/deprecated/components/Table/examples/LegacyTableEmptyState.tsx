@@ -5,7 +5,6 @@ import {
   EmptyState,
   EmptyStateVariant,
   EmptyStateIcon,
-  Title,
   EmptyStateBody,
   Button,
   EmptyStateHeader,
