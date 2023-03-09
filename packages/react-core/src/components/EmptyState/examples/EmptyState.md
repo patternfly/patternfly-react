@@ -2,7 +2,7 @@
 id: Empty state
 section: components
 cssPrefix: pf-c-empty-state
-propComponents: ['EmptyState', 'EmptyStateHeader', 'EmptyStateBody', 'EmptyStateFooter', 'EmptyStateActions']
+propComponents: ['EmptyState', 'EmptyStateHeader', 'EmptyStateIcon', 'EmptyStateBody', 'EmptyStateFooter', 'EmptyStateActions']
 ---
 import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -41,4 +41,9 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 ### No match found
 
 ```ts file="EmptyStateNoMatchFound.tsx"
+```
+
+### Custom icon color
+
+```ts file="EmptyStateCustomIconColor.tsx"
 ```
