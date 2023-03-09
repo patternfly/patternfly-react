@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.6 (2023-03-09)
+
+### Features
+
+- **Card:** Refactor card header ([#8759](https://github.com/patternfly/patternfly-react/issues/8759)) ([387da19](https://github.com/patternfly/patternfly-react/commit/387da198847fb06c7583a8e2fc6eb808c2a02ba2))
+
 # [5.0.0-alpha.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.4...@patternfly/react-integration@5.0.0-alpha.5) (2023-03-07)
 
 ### Bug Fixes
