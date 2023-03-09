@@ -8,7 +8,7 @@
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "engines": {
-    "node": ">=14.0.0",
+    "node": ">=18.0.0",
     "yarn": ">=1.6.0"
   },
   "keywords": [
@@ -90,7 +90,7 @@
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",
     "start:demo-app:hot": "lerna run start:demo-app:hot --stream",
-    "test": "TZ=EST jest packages",
+    "test": "TZ=EST LC_ALL=en_US.UTF8 jest packages",
     "test:a11y": "lerna run test:a11y --stream",
     "test:integration": "yarn workspace @patternfly/react-integration test:integration",
     "uninstall": "find . -name node_modules -type d | xargs rm -rf",
