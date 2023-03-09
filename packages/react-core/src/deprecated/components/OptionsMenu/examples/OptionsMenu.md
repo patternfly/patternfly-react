@@ -9,7 +9,7 @@ import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-ico
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 ## Examples
-### Single option
+### Single optionsss
 ```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';

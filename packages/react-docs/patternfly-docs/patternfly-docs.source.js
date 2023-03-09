@@ -27,6 +27,7 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceMD(path.join(reactCorePath, '/components/**/examples/*.md'), 'react');
   sourceMD(path.join(reactCorePath, '/layouts/**/examples/*.md'), 'react');
   sourceMD(path.join(reactCorePath, '/next/components/**/examples/*.md'), 'react-next');
+  sourceMD(path.join(reactCorePath, '/deprecated/components/**/examples/*.md'), 'react-deprecated');
   sourceMD(path.join(reactCorePath, '/**/demos/**/*.md'), 'react-demos');
 
   // React-table MD

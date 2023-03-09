@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import { OptionsMenuItem } from '../../OptionsMenuItem';
-import { DropdownArrowContext } from '../../../Dropdown';
+import { DropdownArrowContext } from '../../../../../../components/Dropdown';
 
 describe('OptionsMenuItem', () => {
   it('should match snapshot', () => {
