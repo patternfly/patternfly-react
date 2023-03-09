@@ -10,7 +10,15 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 ## Examples
 
-### Single
+### Single select
+
+To let users select a single item from a list, use a single select list.
+
+A select list may use other properties for additional customization. Select each checkbox in the example below to visualize the following behavior:
+
+- To prevent a toggle click from opening a select list, use the `isDisabled` property.
+- To adjust the direction a select menu opens, use the `direction` property. The menu in the following example expands upwards. By default, select lists open upwards.
+- To add an icon to a select toggle, use the `toggleIcon` property.
 
 ```js
 import React from 'react';
@@ -144,7 +152,9 @@ class SingleSelectInput extends React.Component {
 }
 ```
 
-### Single with description
+### With item descriptions
+
+To give more context to a `<SelectOption>` in a list, use the `description` property.
 
 ```js
 import React from 'react';
@@ -232,7 +242,9 @@ class SingleSelectDescription extends React.Component {
 }
 ```
 
-### Grouped single
+### With grouped items
+
+To group related select options together, use 1 or more `<SelectGroup>` components and title each group using the `label` property.
 
 ```js
 import React from 'react';
@@ -312,7 +324,104 @@ class GroupedSingleSelectInput extends React.Component {
 }
 ```
 
-### Validated
+### Favoriting items
+
+To allow users to favorite items in a select list, use the `onFavorite` callback. When users click the favorite button, the item is duplicated and placed in a separated group at the top of the menu. To change the name of the group use the `favoritesLabel` property.
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
+
+class FavoritesSelect extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      selected: null,
+      favorites: []
+    };
+
+    this.onToggle =  (_event, isOpen) => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isOpen: false
+      });
+    };
+
+    this.onFavorite = (itemId, isFavorite) => {
+      if (isFavorite) {
+        this.setState({
+          favorites: this.state.favorites.filter(id => id !== itemId)
+        });
+      } else
+        this.setState({
+          favorites: [...this.state.favorites, itemId]
+        });
+    };
+
+    this.options = [
+      <SelectGroup label="Status" key="group1">
+        <SelectOption id={'option-1'} key={0} value="Running" description="This is a description." />
+        <SelectOption id={'option-2'} key={1} value="Stopped" />
+        <SelectOption id={'option-3'} key={2} value="Down (disabled)" isDisabled />
+        <SelectOption id={'option-4'} key={3} value="Degraded" />
+        <SelectOption id={'option-5'} key={4} value="Needs maintenance" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor names" key="group2">
+        <SelectOption id={'option-6'} key={5} value="Dell" />
+        <SelectOption id={'option-7'} key={6} value="Samsung" description="This is a description." />
+        <SelectOption id={'option-8'} key={7} value="Hewlett-Packard" />
+      </SelectGroup>
+    ];
+  }
+
+  render() {
+    const { isOpen, selected, favorites } = this.state;
+    const titleId = 'grouped-single-select-id';
+    return (
+      <Select
+        variant={SelectVariant.typeahead}
+        typeAheadAriaLabel="Select value"
+        onToggle={this.onToggle}
+        onSelect={this.onSelect}
+        selections={selected}
+        isOpen={isOpen}
+        placeholderText="Favorites"
+        aria-labelledby={titleId}
+        isGrouped
+        onFavorite={this.onFavorite}
+        favorites={favorites}
+        onClear={this.clearSelection}
+      >
+        {this.options}
+      </Select>
+    );
+  }
+}
+```
+
+### Validated selections
+
+To validate selections that users make, pass a validation state to the `validated` property. Validating selections can let users know if the selections they make would cause issues or errors.
+
+The example below passes an "error" state when you choose “select a title”, a "warning" state when you choose "other", and a "success" state for any other item selected from the menu.
 
 ```js
 import React from 'react';
@@ -411,7 +520,324 @@ class ValidatedSelect extends React.Component {
 }
 ```
 
-### Checkbox input
+### Styled placeholder text
+
+To add a toggle label to a select, use the `placeholderText` property. The following example displays "Filter by status" in the toggle before a selection is made.
+
+To fade the color of `placeholderText` to gray, use the `hasPlaceholderStyle` property.
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+function SelectWithPlaceholderStyle() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [selected, setSelected] = React.useState([]);
+
+  const options = [
+    <SelectOption key={0} value="Active" />,
+    <SelectOption key={1} value="Cancelled" />,
+    <SelectOption key={2} value="Paused" />
+  ];
+
+  const onToggle = (_event, isOpen) => setIsOpen(isOpen);
+
+  const onSelect = (event, selection, isPlaceholder) => {
+    setSelected(selection);
+    setIsOpen(false);
+  };
+
+  const clearSelection = () => {
+    setSelected(null);
+    setIsOpen(false);
+  };
+
+  const titleId = 'placeholder-style-select-id';
+
+  return (
+    <div>
+      <span id={titleId} hidden>
+        Placeholder styles
+      </span>
+      <Select
+        variant={SelectVariant.single}
+        hasPlaceholderStyle
+        aria-label="Select input"
+        onToggle={onToggle}
+        onSelect={onSelect}
+        onClear={clearSelection}
+        selections={selected}
+        isOpen={isOpen}
+        placeholderText="Filter by status"
+        aria-labelledby={titleId}
+      >
+        {options}
+      </Select>
+    </div>
+  );
+}
+```
+
+### Placeholder select options
+
+To set a `<SelectOption>` as a placeholder, use the `isPlaceholder` property. The following example sets the "Filter by status" as a placeholder so that it is pre-selected.
+
+```js
+
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+function SelectWithPlaceholderStyle() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [selected, setSelected] = React.useState([]);
+
+  const options = [
+    <SelectOption key={0} value="Filter by status" isPlaceholder />,
+    <SelectOption key={1} value="Active" />,
+    <SelectOption key={2} value="Cancelled" />,
+    <SelectOption key={3} value="Paused" />
+  ];
+
+  const onToggle = (_event, isOpen) => setIsOpen(isOpen);
+
+  const onSelect = (event, selection, isPlaceholder) => {
+    setSelected(selection);
+    setIsOpen(false);
+  };
+
+  const clearSelection = () => {
+    setSelected(null);
+    setIsOpen(false);
+  };
+
+  const titleId = 'placeholder-style-select-option-id';
+
+  return (
+    <div>
+      <span id={titleId} hidden>
+        Placeholder styles - select option
+      </span>
+      <Select
+        variant={SelectVariant.single}
+        hasPlaceholderStyle
+        aria-label="Select input"
+        onToggle={onToggle}
+        onSelect={onSelect}
+        onClear={clearSelection}
+        selections={selected}
+        isOpen={isOpen}
+        aria-labelledby={titleId}
+      >
+        {options}
+      </Select>
+    </div>
+  );
+}
+```
+
+### With a footer
+
+You can add a `footer` to a `<Select>` list to hold actions that users can take on menu items.
+
+```js
+import React from 'react';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import { Select, SelectOption, SelectVariant, SelectDirection, Divider, Button } from '@patternfly/react-core';
+
+class SelectWithFooter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.options = [
+      <SelectOption key={0} value="Select a title" isPlaceholder />,
+      <SelectOption key={1} value="Mr" />,
+      <SelectOption key={2} value="Miss" />,
+      <SelectOption key={3} value="Mrs" />,
+      <SelectOption key={4} value="Ms" />,
+      <Divider component="li" key={5} />,
+      <SelectOption key={6} value="Dr" />,
+      <SelectOption key={7} value="Other" />
+    ];
+
+    this.toggleRef = React.createRef();
+
+    this.state = {
+      isToggleIcon: false,
+      isOpen: false,
+      selected: null,
+      isDisabled: false,
+      direction: SelectDirection.down
+    };
+
+    this.onToggle = (_event, isOpen) => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+        this.toggleRef.current.focus();
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isOpen: false
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
+    const titleId = 'title-id-footer';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+          toggleIcon={isToggleIcon && <CubeIcon />}
+          toggleRef={this.toggleRef}
+          variant={SelectVariant.single}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
+          isDisabled={isDisabled}
+          direction={direction}
+          footer={
+            <>
+              <Button variant="link" isInline>
+                Action
+              </Button>
+            </>
+          }
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+### With view more
+
+To reduce the processing load for long select lists, replace overflow items with a "View more" link at the bottom of the select menu.
+
+Adjust the number of items shown above the "View more" link with the `numOptions` property. The following example passes 3 items into this property.
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+class SelectViewMore extends React.Component {
+  constructor(props) {
+    super(props);
+    this.options = [
+      <SelectOption key={0} value="Select a title" isPlaceholder />,
+      <SelectOption key={1} value="Mr" />,
+      <SelectOption key={2} value="Miss" />,
+      <SelectOption key={3} value="Mrs" />,
+      <SelectOption key={4} value="Ms" />,
+      <SelectOption key={5} value="Dr" />,
+      <SelectOption key={6} value="Other" />
+    ];
+
+    this.toggleRef = React.createRef();
+
+    this.state = {
+      isOpen: false,
+      selected: null,
+      numOptions: 3,
+      isLoading: false
+    };
+
+    this.onToggle = (_event, isOpen) => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+        this.toggleRef.current.focus();
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isOpen: false
+      });
+    };
+
+    this.simulateNetworkCall = callback => {
+      setTimeout(callback, 2000);
+    };
+
+    this.onViewMoreClick = () => {
+      // Set select loadingVariant to spinner then simulate network call before loading more options
+      this.setState({ isLoading: true });
+      this.simulateNetworkCall(() => {
+        const newLength =
+          this.state.numOptions + 3 <= this.options.length ? this.state.numOptions + 3 : this.options.length;
+        this.setState({ numOptions: newLength, isLoading: false });
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isToggleIcon, numOptions, loadingVariant, isLoading } = this.state;
+    const titleId = 'title-id-view-more';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+          variant={SelectVariant.single}
+          toggleRef={this.toggleRef}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
+          {...(!isLoading &&
+            numOptions < this.options.length && {
+              loadingVariant: { text: 'View more', onClick: this.onViewMoreClick }
+            })}
+          {...(isLoading && { loadingVariant: 'spinner' })}
+        >
+          {this.options.slice(0, numOptions)}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+### Checkbox select
+
+To let users select multiple list options via checkbox input, use a checkbox select. To create a checkbox select, pass `variant={SelectVariant.checkbox}` into the `<Select>` component.
+
+By default, a badge is displayed in the menu toggle that indicates the number of items a user has selected.
 
 ```js
 import React from 'react';
@@ -489,161 +915,9 @@ class CheckboxSelectInput extends React.Component {
 }
 ```
 
-### Checkbox input with counts
+### Checkbox select with grouped items
 
-```js
-import React from 'react';
-import { Select, SelectOption, SelectVariant, Divider } from '@patternfly/react-core';
-
-class CheckboxSelectWithCounts extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false,
-      selected: []
-    };
-
-    this.onToggle = (_event, isOpen) => {
-      this.setState({
-        isOpen
-      });
-    };
-
-    this.onSelect = (event, selection) => {
-      const { selected } = this.state;
-      if (selected.includes(selection)) {
-        this.setState(
-          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      } else {
-        this.setState(
-          prevState => ({ selected: [...prevState.selected, selection] }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      }
-    };
-
-    this.clearSelection = () => {
-      this.setState({
-        selected: []
-      });
-    };
-
-    this.options = [
-      <SelectOption key={0} value="Active" description="This is a description" itemCount={3} />,
-      <SelectOption key={1} value="Cancelled" itemCount={1} />,
-      <SelectOption key={2} value="Paused" itemCount={15} />,
-      <SelectOption key={3} value="Warning" itemCount={2} />,
-      <SelectOption key={4} value="Restarted" itemCount={8} />
-    ];
-  }
-
-  render() {
-    const { isOpen, selected } = this.state;
-    const titleId = 'checkbox-select-with-counts-id';
-    return (
-      <div>
-        <span id={titleId} hidden>
-          Checkbox With Counts Title
-        </span>
-        <Select
-          variant={SelectVariant.checkbox}
-          aria-label="Select Input"
-          onToggle={this.onToggle}
-          onSelect={this.onSelect}
-          selections={selected}
-          isOpen={isOpen}
-          placeholderText="Filter by status"
-          aria-labelledby={titleId}
-        >
-          {this.options}
-        </Select>
-      </div>
-    );
-  }
-}
-```
-
-### Checkbox input no badge
-
-```js
-import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
-
-class CheckboxSelectInputNoBadge extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false,
-      selected: []
-    };
-
-    this.onToggle = (_event, isOpen) => {
-      this.setState({
-        isOpen
-      });
-    };
-
-    this.onSelect = (event, selection) => {
-      const { selected } = this.state;
-      if (selected.includes(selection)) {
-        this.setState(
-          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      } else {
-        this.setState(
-          prevState => ({ selected: [...prevState.selected, selection] }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      }
-    };
-
-    this.clearSelection = () => {
-      this.setState({
-        selected: []
-      });
-    };
-
-    this.options = [
-      <SelectOption key={0} value="Debug" />,
-      <SelectOption key={1} value="Info" />,
-      <SelectOption key={2} value="Warn" />,
-      <SelectOption key={3} value="Error" />
-    ];
-  }
-
-  render() {
-    const { isOpen, selected } = this.state;
-    const titleId = 'checkbox-no-badge-select-id';
-    return (
-      <div>
-        <span id={titleId} hidden>
-          Checkbox Title
-        </span>
-        <Select
-          variant={SelectVariant.checkbox}
-          aria-label="Select Input"
-          onToggle={this.onToggle}
-          onSelect={this.onSelect}
-          selections={selected}
-          isCheckboxSelectionBadgeHidden
-          isOpen={isOpen}
-          placeholderText="Filter by status"
-          aria-labelledby={titleId}
-        >
-          {this.options}
-        </Select>
-      </div>
-    );
-  }
-}
-```
-
-### Grouped checkbox input
+You can use groups alongside checkbox input. The item count badge will display the number of items selected across all groups.
 
 ```js
 import React from 'react';
@@ -726,362 +1000,9 @@ class GroupedCheckboxSelectInput extends React.Component {
 }
 ```
 
-### Grouped single with filtering
+###  Checkbox select with custom badge
 
-```js
-import React from 'react';
-import { Select, SelectOption, SelectGroup, SelectVariant, Checkbox } from '@patternfly/react-core';
-
-class FilteringSingleSelectInput extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false,
-      selected: '',
-      isCreatable: false,
-      isInputValuePersisted: false,
-      isInputFilterPersisted: false
-    };
-
-    this.toggleRef = React.createRef();
-
-    this.options = [
-      <SelectGroup label="Status" key="group1">
-        <SelectOption key={0} value="Running" />
-        <SelectOption key={1} value="Stopped" />
-        <SelectOption key={2} value="Down" />
-        <SelectOption key={3} value="Degraded" />
-        <SelectOption key={4} value="Needs maintenance" />
-      </SelectGroup>,
-      <SelectGroup label="Vendor names" key="group2">
-        <SelectOption key={5} value="Dell" />
-        <SelectOption key={6} value="Samsung" isDisabled />
-        <SelectOption key={7} value="Hewlett-Packard" />
-      </SelectGroup>
-    ];
-
-    this.onToggle = (_event, isOpen) => {
-      this.setState({ isOpen });
-    };
-
-    this.onSelect = (event, selection) => {
-      this.setState({ selected: selection, isOpen: false }), console.log('selected: ', selection);
-      this.toggleRef.current.focus();
-    };
-
-    this.onFilter = (_, textInput) => {
-      if (textInput === '') {
-        return this.options;
-      } else {
-        let filteredGroups = this.options
-          .map(group => {
-            let filteredGroup = React.cloneElement(group, {
-              children: group.props.children.filter(item => {
-                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
-              })
-            });
-            if (filteredGroup.props.children.length > 0) return filteredGroup;
-          })
-          .filter(Boolean);
-        return filteredGroups;
-      }
-    };
-
-    this.toggleCreatable = checked => {
-      this.setState({
-        isCreatable: checked
-      });
-    };
-
-    this.toggleInputValuePersisted = checked => {
-      this.setState({
-        isInputValuePersisted: checked
-      });
-    };
-
-    this.toggleInputFilterPersisted = checked => {
-      this.setState({
-        isInputFilterPersisted: checked
-      });
-    };
-  }
-
-  render() {
-    const {
-      isOpen,
-      selected,
-      filteredOptions,
-      isInputValuePersisted,
-      isInputFilterPersisted,
-      isCreatable
-    } = this.state;
-    const titleId = 'single-filtering-select-id';
-    return (
-      <div>
-        <span id={titleId} hidden>
-          Single select with filter
-        </span>
-        <Select
-          variant={SelectVariant.single}
-          toggleRef={this.toggleRef}
-          onToggle={this.onToggle}
-          onSelect={this.onSelect}
-          selections={selected}
-          isOpen={isOpen}
-          placeholderText="Filter by status"
-          aria-labelledby={titleId}
-          onFilter={this.onFilter}
-          isGrouped
-          hasInlineFilter
-          isCreatable={isCreatable}
-          isInputValuePersisted={isInputValuePersisted}
-          isInputFilterPersisted={isInputFilterPersisted}
-        >
-          {this.options}
-        </Select>
-        <Checkbox
-          label="isInputValuePersisted"
-          isChecked={isInputValuePersisted}
-          onChange={(_event, checked) => this.toggleInputValuePersisted(checked)} 
-          aria-label="toggle input value persisted"
-          id="toggle-inline-filter-input-value-persisted"
-          name="toggle-inline-filter-input-value-persisted"
-        />
-        <Checkbox
-          label="isInputFilterPersisted"
-          isChecked={isInputFilterPersisted}
-          onChange={(_event, checked) => this.toggleInputFilterPersisted(checked)} 
-          aria-label="toggle input filter persisted"
-          id="toggle-inline-filter-input-filter-persisted"
-          name="toggle-inline-filter-input-filter-persisted"
-        />
-        <Checkbox
-          label="isCreatable"
-          isChecked={this.state.isCreatable}
-          onChange={(_event, checked) => this.toggleCreatable(checked)} 
-          aria-label="toggle creatable checkbox"
-          id="toggle-inline-filter-creatable-typeahead"
-          name="toggle-inline-filter-creatable-typeahead"
-        />
-      </div>
-    );
-  }
-}
-```
-
-### Grouped checkbox input with filtering
-
-```js
-import React from 'react';
-import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
-
-class FilteringCheckboxSelectInput extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false,
-      selected: []
-    };
-
-    this.options = [
-      <SelectGroup label="Status" key="group1">
-        <SelectOption key={0} value="Running" />
-        <SelectOption key={1} value="Stopped" />
-        <SelectOption key={2} value="Down" />
-        <SelectOption key={3} value="Degraded" />
-        <SelectOption key={4} value="Needs maintenance" />
-      </SelectGroup>,
-      <SelectGroup label="Vendor names" key="group2">
-        <SelectOption key={5} value="Dell" />
-        <SelectOption key={6} value="Samsung" isDisabled />
-        <SelectOption key={7} value="Hewlett-Packard" />
-      </SelectGroup>
-    ];
-
-    this.onToggle = (_event, isOpen) => {
-      this.setState({
-        isOpen
-      });
-    };
-
-    this.onSelect = (event, selection) => {
-      const { selected } = this.state;
-      if (selected.includes(selection)) {
-        this.setState(
-          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      } else {
-        this.setState(
-          prevState => ({ selected: [...prevState.selected, selection] }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      }
-    };
-
-    this.onFilter = (_, textInput) => {
-      if (textInput === '') {
-        return this.options;
-      } else {
-        let filteredGroups = this.options
-          .map(group => {
-            let filteredGroup = React.cloneElement(group, {
-              children: group.props.children.filter(item => {
-                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
-              })
-            });
-            if (filteredGroup.props.children.length > 0) return filteredGroup;
-          })
-          .filter(newGroup => newGroup);
-        return filteredGroups;
-      }
-    };
-
-    this.clearSelection = () => {
-      this.setState({
-        selected: []
-      });
-    };
-  }
-
-  render() {
-    const { isOpen, selected, filteredOptions } = this.state;
-    const titleId = 'grouped-checkbox-filtering-select-id';
-    return (
-      <div>
-        <span id={titleId} hidden>
-          Checkbox Title
-        </span>
-        <Select
-          variant={SelectVariant.checkbox}
-          onToggle={this.onToggle}
-          onSelect={this.onSelect}
-          selections={selected}
-          isOpen={isOpen}
-          placeholderText="Filter by status"
-          aria-labelledby={titleId}
-          onFilter={this.onFilter}
-          onClear={this.clearSelection}
-          isGrouped
-          hasInlineFilter
-        >
-          {this.options}
-        </Select>
-      </div>
-    );
-  }
-}
-```
-
-### Grouped checkbox input with filtering and placeholder text
-
-```js
-import React from 'react';
-import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
-
-class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false,
-      selected: []
-    };
-
-    this.options = [
-      <SelectGroup label="Status" key="group1">
-        <SelectOption key={0} value="Running" />
-        <SelectOption key={1} value="Stopped" />
-        <SelectOption key={2} value="Down" />
-        <SelectOption key={3} value="Degraded" />
-        <SelectOption key={4} value="Needs maintenance" />
-      </SelectGroup>,
-      <SelectGroup label="Vendor names" key="group2">
-        <SelectOption key={5} value="Dell" />
-        <SelectOption key={6} value="Samsung" isDisabled />
-        <SelectOption key={7} value="Hewlett-Packard" />
-      </SelectGroup>
-    ];
-
-    this.onToggle = (_event, isOpen) => {
-      this.setState({
-        isOpen
-      });
-    };
-
-    this.onSelect = (event, selection) => {
-      const { selected } = this.state;
-      if (selected.includes(selection)) {
-        this.setState(
-          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      } else {
-        this.setState(
-          prevState => ({ selected: [...prevState.selected, selection] }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      }
-    };
-
-    this.onFilter = (_, textInput) => {
-      if (textInput === '') {
-        return this.options;
-      } else {
-        let filteredGroups = this.options
-          .map(group => {
-            let filteredGroup = React.cloneElement(group, {
-              children: group.props.children.filter(item => {
-                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
-              })
-            });
-            if (filteredGroup.props.children.length > 0) return filteredGroup;
-          })
-          .filter(newGroup => newGroup);
-        return filteredGroups;
-      }
-    };
-
-    this.clearSelection = () => {
-      this.setState({
-        selected: []
-      });
-    };
-  }
-
-  render() {
-    const { isOpen, selected, filteredOptions } = this.state;
-    const titleId = 'checkbox-filtering-with-placeholder-select-id';
-    return (
-      <div>
-        <span id={titleId} hidden>
-          Checkbox Title
-        </span>
-        <Select
-          variant={SelectVariant.checkbox}
-          onToggle={this.onToggle}
-          onSelect={this.onSelect}
-          selections={selected}
-          isOpen={isOpen}
-          placeholderText="Filter by status"
-          aria-labelledby={titleId}
-          onFilter={this.onFilter}
-          onClear={this.clearSelection}
-          isGrouped
-          hasInlineFilter
-          inlineFilterPlaceholderText="Filter by status"
-        >
-          {this.options}
-        </Select>
-      </div>
-    );
-  }
-}
-```
-
-### Grouped checkbox input with filtering and custom badging
+To change the default badge text for a checkbox select, use the `customBadgeText` property. The following example uses `customBadgeText` to display "all" in the badge once all menu items are selected.
 
 ```js
 import React from 'react';
@@ -1205,7 +1126,621 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
 }
 ```
 
+### Checkbox select without selected count
+
+To remove the default item count badge, use the `isCheckboxSelectionBadgeHidden` property.
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+class CheckboxSelectInputNoBadge extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: []
+    };
+
+    this.onToggle = (_event, isOpen) => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+
+    this.options = [
+      <SelectOption key={0} value="Debug" />,
+      <SelectOption key={1} value="Info" />,
+      <SelectOption key={2} value="Warn" />,
+      <SelectOption key={3} value="Error" />
+    ];
+  }
+
+  render() {
+    const { isOpen, selected } = this.state;
+    const titleId = 'checkbox-no-badge-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox Title
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isCheckboxSelectionBadgeHidden
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+### Checkbox select with item counts
+
+To show users the number of items that a `<SelectOption>` would match, use the `itemCount` property. The numerical value you pass into `itemCount` is displayed to the right of each menu item.
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant, Divider } from '@patternfly/react-core';
+
+class CheckboxSelectWithCounts extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: []
+    };
+
+    this.onToggle = (_event, isOpen) => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+
+    this.options = [
+      <SelectOption key={0} value="Active" description="This is a description" itemCount={3} />,
+      <SelectOption key={1} value="Cancelled" itemCount={1} />,
+      <SelectOption key={2} value="Paused" itemCount={15} />,
+      <SelectOption key={3} value="Warning" itemCount={2} />,
+      <SelectOption key={4} value="Restarted" itemCount={8} />
+    ];
+  }
+
+  render() {
+    const { isOpen, selected } = this.state;
+    const titleId = 'checkbox-select-with-counts-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox With Counts Title
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+### Checkbox select with a footer
+
+You can combine a footer with checkbox input to allow users to apply an action to multiple items.
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant, Button } from '@patternfly/react-core';
+
+class SelectWithFooterCheckbox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      selected: [],
+      numOptions: 3,
+      isLoading: false
+    };
+
+    this.toggleRef = React.createRef();
+
+    this.options = [
+      <SelectOption key={0} value="Active" description="This is a description" />,
+      <SelectOption key={1} value="Cancelled" />,
+      <SelectOption key={2} value="Paused" />,
+      <SelectOption key={4} value="Warning" />,
+      <SelectOption key={5} value="Restarted" />
+    ];
+
+    this.onToggle = (_event, isOpen) => {
+      this.setState({ isOpen });
+    };
+
+    this.onSelect = (event, selection) => {
+      this.setState({ selected: selection, isOpen: false }), console.log('selected: ', selection);
+      this.toggleRef.current.focus();
+    };
+
+    this.onFilter = (_, textInput) => {
+      if (textInput === '') {
+        return this.options;
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
+    const titleId = 'title-id-footer-checkbox';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+          variant={SelectVariant.single}
+          toggleRef={this.toggleRef}
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+          footer={
+            <Button variant="link" isInline>
+              Action
+            </Button>
+          }
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+### Checkbox select with view more
+
+When a "view more" link is used alongside checkbox input, selections that users make prior to clicking "view more" are persisted after the click.
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+class SelectViewMoreCheckbox extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: [],
+      numOptions: 3,
+      isLoading: false
+    };
+
+    this.options = [
+      <SelectOption key={0} value="Active" description="This is a description" />,
+      <SelectOption key={1} value="Cancelled" />,
+      <SelectOption key={2} value="Paused" />,
+      <SelectOption key={4} value="Warning" />,
+      <SelectOption key={5} value="Restarted" />,
+      <SelectOption key={6} value="Down" />,
+      <SelectOption key={7} value="Disabled" />,
+      <SelectOption key={8} value="Needs maintenance " />,
+      <SelectOption key={9} value="Degraded " />
+    ];
+
+    this.onToggle = (_event, isOpen) => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+
+    this.simulateNetworkCall = callback => {
+      setTimeout(callback, 2000);
+    };
+
+    this.onViewMoreClick = () => {
+      // Set select loadingVariant to spinner then simulate network call before loading more options
+      this.setState({ isLoading: true });
+      this.simulateNetworkCall(() => {
+        const newLength =
+          this.state.numOptions + 3 <= this.options.length ? this.state.numOptions + 3 : this.options.length;
+        this.setState({ numOptions: newLength, isLoading: false });
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, numOptions, isLoading } = this.state;
+    const titleId = 'view-more-checkbox-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox View more check
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          aria-label="Select input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+          {...(!isLoading &&
+            numOptions < this.options.length && {
+              loadingVariant: { text: 'View more', onClick: this.onViewMoreClick }
+            })}
+          {...(isLoading && { loadingVariant: 'spinner' })}
+        >
+          {this.options.slice(0, numOptions)}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+### Filtering with placeholder text
+
+To preload a filter search bar with placeholder text, use the `inlineFilterPlaceholderText` property. The following example preloads the search bar with "Filter by status".
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
+
+class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: []
+    };
+
+    this.options = [
+      <SelectGroup label="Status" key="group1">
+        <SelectOption key={0} value="Running" />
+        <SelectOption key={1} value="Stopped" />
+        <SelectOption key={2} value="Down" />
+        <SelectOption key={3} value="Degraded" />
+        <SelectOption key={4} value="Needs maintenance" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor names" key="group2">
+        <SelectOption key={5} value="Dell" />
+        <SelectOption key={6} value="Samsung" isDisabled />
+        <SelectOption key={7} value="Hewlett-Packard" />
+      </SelectGroup>
+    ];
+
+    this.onToggle = (_event, isOpen) => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.onFilter = (_, textInput) => {
+      if (textInput === '') {
+        return this.options;
+      } else {
+        let filteredGroups = this.options
+          .map(group => {
+            let filteredGroup = React.cloneElement(group, {
+              children: group.props.children.filter(item => {
+                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
+              })
+            });
+            if (filteredGroup.props.children.length > 0) return filteredGroup;
+          })
+          .filter(newGroup => newGroup);
+        return filteredGroups;
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, filteredOptions } = this.state;
+    const titleId = 'checkbox-filtering-with-placeholder-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox Title
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+          onFilter={this.onFilter}
+          onClear={this.clearSelection}
+          isGrouped
+          hasInlineFilter
+          inlineFilterPlaceholderText="Filter by status"
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+### Inline filtering
+
+To allow users to filter select lists using text input, use the `hasInlineFilter` property. Filtering behavior can be further customized with other properties, as shown in the example below. Select each checkbox to visualize the following behavior:
+
+- To persist filter results on blur, use the `isInputValuePersisted` property.
+- To persist a filter that a user has searched, use the `isInputFilterPersisted` property.
+- To allow users to add new items to a select list, use the `isCreatable` property. When this property is applied and a user searches for an option that doesn't exist, they will be prompted to "create" the item.
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectGroup, SelectVariant, Checkbox } from '@patternfly/react-core';
+
+class FilteringSingleSelectInput extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: '',
+      isCreatable: false,
+      isInputValuePersisted: false,
+      isInputFilterPersisted: false
+    };
+
+    this.options = [
+      <SelectGroup label="Status" key="group1">
+        <SelectOption key={0} value="Running" />
+        <SelectOption key={1} value="Stopped" />
+        <SelectOption key={2} value="Down" />
+        <SelectOption key={3} value="Degraded" />
+        <SelectOption key={4} value="Needs maintenance" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor names" key="group2">
+        <SelectOption key={5} value="Dell" />
+        <SelectOption key={6} value="Samsung" isDisabled />
+        <SelectOption key={7} value="Hewlett-Packard" />
+      </SelectGroup>
+    ];
+
+    this.onToggle = (_event, isOpen) => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      this.setState({ selected: selection, isOpen: false }), console.log('selected: ', selection);
+    };
+
+    this.onFilter = (_, textInput) => {
+      if (textInput === '') {
+        return this.options;
+      } else {
+        let filteredGroups = this.options
+          .map(group => {
+            let filteredGroup = React.cloneElement(group, {
+              children: group.props.children.filter(item => {
+                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
+              })
+            });
+            if (filteredGroup.props.children.length > 0) return filteredGroup;
+          })
+          .filter(Boolean);
+        return filteredGroups;
+      }
+    };
+
+    this.toggleCreatable = (_, checked) => {
+      this.setState({
+        isCreatable: checked
+      });
+    };
+
+    this.toggleInputValuePersisted = (_, checked) => {
+      this.setState({
+        isInputValuePersisted: checked
+      });
+    };
+
+    this.toggleInputFilterPersisted = (_, checked) => {
+      this.setState({
+        isInputFilterPersisted: checked
+      });
+    };
+  }
+
+  render() {
+    const {
+      isOpen,
+      selected,
+      filteredOptions,
+      isInputValuePersisted,
+      isInputFilterPersisted,
+      isCreatable
+    } = this.state;
+    const titleId = 'single-filtering-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Single select with filter
+        </span>
+        <Select
+          variant={SelectVariant.single}
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+          onFilter={this.onFilter}
+          isGrouped
+          hasInlineFilter
+          isCreatable={isCreatable}
+          isInputValuePersisted={isInputValuePersisted}
+          isInputFilterPersisted={isInputFilterPersisted}
+        >
+          {this.options}
+        </Select>
+        <Checkbox
+          label="isInputValuePersisted"
+          isChecked={isInputValuePersisted}
+          onChange={this.toggleInputValuePersisted}
+          aria-label="toggle input value persisted"
+          id="toggle-inline-filter-input-value-persisted"
+          name="toggle-inline-filter-input-value-persisted"
+        />
+        <Checkbox
+          label="isInputFilterPersisted"
+          isChecked={isInputFilterPersisted}
+          onChange={this.toggleInputFilterPersisted}
+          aria-label="toggle input filter persisted"
+          id="toggle-inline-filter-input-filter-persisted"
+          name="toggle-inline-filter-input-filter-persisted"
+        />
+        <Checkbox
+          label="isCreatable"
+          isChecked={this.state.isCreatable}
+          onChange={this.toggleCreatable}
+          aria-label="toggle creatable checkbox"
+          id="toggle-inline-filter-creatable-typeahead"
+          name="toggle-inline-filter-creatable-typeahead"
+        />
+      </div>
+    );
+  }
+}
+```
+
 ### Typeahead
+
+Typeahead is a select variant that replaces the typical button toggle for opening the select menu with a text input and button toggle combo. As a user types in the text input, the select menu will provide suggestions by filtering the select options.
+
+To make a typeahead, pass `variant=typeahead` into the `<Select>` component. To specify a label for the input field, use the `typeAheadAriaLabel` property.
+
+A few additional customization options are shown in the example below. Select each checkbox to visualize the following behavior:
+
+- To place a created item at the top of a typeahead list use the `isCreateOptionOnTop` property.
+- To trigger a callback for newly created items, use the `onCreateOption` property.
+- To reset the typeahead value after a user makes a selection, use the `shouldResetOnSelect` property.
 
 ```js
 import React from 'react';
@@ -1420,6 +1955,8 @@ class TypeaheadSelectInput extends React.Component {
 
 ### Grouped typeahead
 
+Typeahead matches items with user input across groups.
+
 ```js
 import React from 'react';
 import { Checkbox, Select, SelectGroup, SelectOption, SelectVariant, Divider } from '@patternfly/react-core';
@@ -1548,7 +2085,9 @@ class GroupedTypeaheadSelectInput extends React.Component {
 }
 ```
 
-### Custom filtering
+### Typeahead with custom filtering
+
+You can add custom filtering to a select list to better fit needs that aren't covered by inline filtering. If you use custom filtering, use the `onFilter` property to trigger a callback with your custom filter implementation.
 
 ```js
 import React from 'react';
@@ -1632,7 +2171,11 @@ class TypeaheadSelectInput extends React.Component {
 }
 ```
 
-### Multiple
+### Multiple typeahead
+
+To create a multiple typeahead select variant, pass `variant={SelectVariant.typeaheadMulti}` into the `<Select>` component. Multiple typeaheads let users select multiple items from a select list. Selected items appear as chips in the select toggle.
+
+When many items are selected, you can hide overflowing items under a "more" button. The following example hides items after more than 3 are selected. To show hidden items, select the “more” button. Click "show less" to hide extra items again.
 
 ```js
 import React from 'react';
@@ -1791,7 +2334,9 @@ class MultiTypeaheadSelectInput extends React.Component {
 }
 ```
 
-### Multiple with Custom Chip Group Props
+### Multiple typeahead with custom chips
+
+To customize the appearance of chips, use the `chipGroupProps` property. The `numChips` property allows you to control the number of items shown, while the `expandedText` and `collapsedText` properties allow you to control the labels of the expansion and collapse chips.
 
 ```js
 import React from 'react';
@@ -1879,7 +2424,9 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
 }
 ```
 
-### Multiple with Render Custom Chip Group
+### Multiple typeahead with chip group
+
+To customize chips even more, render a [`<ChipGroup>`](/components/chip-group) component and pass it into the `chipGroupComponent` property of the `<Select>` component.
 
 ```js
 import React from 'react';
@@ -1984,7 +2531,9 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
 }
 ```
 
-### Multiple with custom objects
+### Multiple typeahead with custom objects
+
+A `<SelectOption>` can have an object passed into the `value` property in order to store additional data beyond just a string value. The object passed in must have a `toString` function that returns a string to display in the `SelectMenu`.
 
 ```js
 import React from 'react';
@@ -2084,6 +2633,8 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
 
 ### Plain multiple typeahead
 
+To plainly style a typeahead, use the `isPlain` property.
+
 ```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
@@ -2166,7 +2717,9 @@ class PlainSelectInput extends React.Component {
 }
 ```
 
-### Panel as a menu
+### Custom menu content
+
+To add custom menu content, use the `customContent` property.
 
 ```js
 import React from 'react';
@@ -2249,13 +2802,12 @@ class SingleSelectInput extends React.Component {
 
 ### Appending document body vs parent
 
-Avoid passing in `document.body` when passing a value to the `menuAppendTo` prop on the Select component, as it can cause accessibility issues. These issues can include, but are not limited to, being unable to enter the contents of the Select options via assistive technologies (like keyboards or screen readers).
+Avoid passing in `document.body` to the `menuAppendTo` property. Doing so can cause accessibility issues because this prevents users from being able to enter the contents of the select options via assistive technologies (like keyboards or screen readers). Instead, pass in `parent` to achieve the same result without sacrificing accessibility.
 
-Instead append to `"parent"` to achieve the same result without sacrificing accessibility.
+The following example demonstrates both methods. When the dropdown is opened, both select variants manage focus the same way, but behave differently when the tab key is pressed after an option is selected.
 
-In this example, while, when the dropdown is opened, both Select variants handle focus management within their dropdown contents the same way, you'll notice a difference when you try pressing the Tab key after selecting an option.
-
-For the `document.body` variant, the focus will be placed at the end of the page, since that is where the dropdown content is appended to in the DOM (rather than focus being placed on the second Select variant as one might expect). For the `"parent"` variant, however, the focus will be placed on the next tab-able element (the "Toggle JS code" button for the code editor in this case).
+- For the `document.body` variant, the focus will be placed at the end of the page, since that is where the dropdown content is appended to in the DOM (rather than focus being placed on the second Select variant as one might expect).
+- For the `parent` variant, however, the focus will be placed on the next tab-able element (the "Toggle JS code" button for the code editor in this case).
 
 ```js
 import React from 'react';
@@ -2365,581 +2917,5 @@ class SelectDocumentBodyVsParent extends React.Component {
       </Flex>
     );
   }
-}
-```
-
-### Favorites
-
-```js
-import React from 'react';
-import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
-
-class FavoritesSelect extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      selected: null,
-      favorites: []
-    };
-
-    this.onToggle = (_event, isOpen) => {
-      this.setState({
-        isOpen
-      });
-    };
-
-    this.onSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
-      else {
-        this.setState({
-          selected: selection,
-          isOpen: false
-        });
-        console.log('selected:', selection);
-      }
-    };
-
-    this.clearSelection = () => {
-      this.setState({
-        selected: null,
-        isOpen: false
-      });
-    };
-
-    this.onFavorite = (itemId, isFavorite) => {
-      if (isFavorite) {
-        this.setState({
-          favorites: this.state.favorites.filter(id => id !== itemId)
-        });
-      } else
-        this.setState({
-          favorites: [...this.state.favorites, itemId]
-        });
-    };
-
-    this.options = [
-      <SelectGroup label="Status" key="group1">
-        <SelectOption id={'option-1'} key={0} value="Running" description="This is a description." />
-        <SelectOption id={'option-2'} key={1} value="Stopped" />
-        <SelectOption id={'option-3'} key={2} value="Down (disabled)" isDisabled />
-        <SelectOption id={'option-4'} key={3} value="Degraded" />
-        <SelectOption id={'option-5'} key={4} value="Needs maintenance" />
-      </SelectGroup>,
-      <SelectGroup label="Vendor names" key="group2">
-        <SelectOption id={'option-6'} key={5} value="Dell" />
-        <SelectOption id={'option-7'} key={6} value="Samsung" description="This is a description." />
-        <SelectOption id={'option-8'} key={7} value="Hewlett-Packard" />
-      </SelectGroup>
-    ];
-  }
-
-  render() {
-    const { isOpen, selected, favorites } = this.state;
-    const titleId = 'grouped-single-select-id';
-    return (
-      <Select
-        variant={SelectVariant.typeahead}
-        typeAheadAriaLabel="Select value"
-        onToggle={this.onToggle}
-        onSelect={this.onSelect}
-        selections={selected}
-        isOpen={isOpen}
-        placeholderText="Favorites"
-        aria-labelledby={titleId}
-        isGrouped
-        onFavorite={this.onFavorite}
-        favorites={favorites}
-        onClear={this.clearSelection}
-      >
-        {this.options}
-      </Select>
-    );
-  }
-}
-```
-
-### Footer
-
-```js
-import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import { Select, SelectOption, SelectVariant, SelectDirection, Divider, Button } from '@patternfly/react-core';
-
-class SelectWithFooter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.options = [
-      <SelectOption key={0} value="Select a title" isPlaceholder />,
-      <SelectOption key={1} value="Mr" />,
-      <SelectOption key={2} value="Miss" />,
-      <SelectOption key={3} value="Mrs" />,
-      <SelectOption key={4} value="Ms" />,
-      <Divider component="li" key={5} />,
-      <SelectOption key={6} value="Dr" />,
-      <SelectOption key={7} value="Other" />
-    ];
-
-    this.toggleRef = React.createRef();
-
-    this.state = {
-      isToggleIcon: false,
-      isOpen: false,
-      selected: null,
-      isDisabled: false,
-      direction: SelectDirection.down
-    };
-
-    this.onToggle = (_event, isOpen) => {
-      this.setState({
-        isOpen
-      });
-    };
-
-    this.onSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
-      else {
-        this.setState({
-          selected: selection,
-          isOpen: false
-        });
-        console.log('selected:', selection);
-        this.toggleRef.current.focus();
-      }
-    };
-
-    this.clearSelection = () => {
-      this.setState({
-        selected: null,
-        isOpen: false
-      });
-    };
-  }
-
-  render() {
-    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
-    const titleId = 'title-id-footer';
-    return (
-      <div>
-        <span id={titleId} hidden>
-          Title
-        </span>
-        <Select
-          toggleIcon={isToggleIcon && <CubeIcon />}
-          toggleRef={this.toggleRef}
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={this.onToggle}
-          onSelect={this.onSelect}
-          selections={selected}
-          isOpen={isOpen}
-          aria-labelledby={titleId}
-          isDisabled={isDisabled}
-          direction={direction}
-          footer={
-            <>
-              <Button variant="link" isInline>
-                Action
-              </Button>
-            </>
-          }
-        >
-          {this.options}
-        </Select>
-      </div>
-    );
-  }
-}
-```
-
-### Footer with checkboxes
-
-```js
-import React from 'react';
-import { Select, SelectOption, SelectVariant, Button } from '@patternfly/react-core';
-
-class SelectWithFooterCheckbox extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      selected: [],
-      numOptions: 3,
-      isLoading: false
-    };
-
-    this.options = [
-      <SelectOption key={0} value="Active" description="This is a description" />,
-      <SelectOption key={1} value="Cancelled" />,
-      <SelectOption key={2} value="Paused" />,
-      <SelectOption key={4} value="Warning" />,
-      <SelectOption key={5} value="Restarted" />
-    ];
-
-    this.onToggle = (_event, isOpen) => {
-      this.setState({
-        isOpen
-      });
-    };
-
-    this.onSelect = (event, selection) => {
-      const { selected } = this.state;
-      if (selected.includes(selection)) {
-        this.setState(
-          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      } else {
-        this.setState(
-          prevState => ({ selected: [...prevState.selected, selection] }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      }
-    };
-
-    this.clearSelection = () => {
-      this.setState({
-        selected: []
-      });
-    };
-  }
-
-  render() {
-    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
-    const titleId = 'title-id-footer-checkbox';
-    return (
-      <div>
-        <span id={titleId} hidden>
-          Title
-        </span>
-        <Select
-          variant={SelectVariant.checkbox}
-          aria-label="Select input"
-          onToggle={this.onToggle}
-          onSelect={this.onSelect}
-          selections={selected}
-          isOpen={isOpen}
-          placeholderText="Filter by status"
-          aria-labelledby={titleId}
-          footer={
-            <Button variant="link" isInline>
-              Action
-            </Button>
-          }
-        >
-          {this.options}
-        </Select>
-      </div>
-    );
-  }
-}
-```
-
-### View more
-
-```js
-import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
-
-class SelectViewMore extends React.Component {
-  constructor(props) {
-    super(props);
-    this.options = [
-      <SelectOption key={0} value="Select a title" isPlaceholder />,
-      <SelectOption key={1} value="Mr" />,
-      <SelectOption key={2} value="Miss" />,
-      <SelectOption key={3} value="Mrs" />,
-      <SelectOption key={4} value="Ms" />,
-      <SelectOption key={5} value="Dr" />,
-      <SelectOption key={6} value="Other" />
-    ];
-
-    this.toggleRef = React.createRef();
-
-    this.state = {
-      isOpen: false,
-      selected: null,
-      numOptions: 3,
-      isLoading: false
-    };
-
-    this.onToggle = (_event, isOpen) => {
-      this.setState({
-        isOpen
-      });
-    };
-
-    this.onSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
-      else {
-        this.setState({
-          selected: selection,
-          isOpen: false
-        });
-        console.log('selected:', selection);
-        this.toggleRef.current.focus();
-      }
-    };
-
-    this.clearSelection = () => {
-      this.setState({
-        selected: null,
-        isOpen: false
-      });
-    };
-
-    this.simulateNetworkCall = callback => {
-      setTimeout(callback, 2000);
-    };
-
-    this.onViewMoreClick = () => {
-      // Set select loadingVariant to spinner then simulate network call before loading more options
-      this.setState({ isLoading: true });
-      this.simulateNetworkCall(() => {
-        const newLength =
-          this.state.numOptions + 3 <= this.options.length ? this.state.numOptions + 3 : this.options.length;
-        this.setState({ numOptions: newLength, isLoading: false });
-      });
-    };
-  }
-
-  render() {
-    const { isOpen, selected, isToggleIcon, numOptions, loadingVariant, isLoading } = this.state;
-    const titleId = 'title-id-view-more';
-    return (
-      <div>
-        <span id={titleId} hidden>
-          Title
-        </span>
-        <Select
-          variant={SelectVariant.single}
-          toggleRef={this.toggleRef}
-          aria-label="Select Input"
-          onToggle={this.onToggle}
-          onSelect={this.onSelect}
-          selections={selected}
-          isOpen={isOpen}
-          aria-labelledby={titleId}
-          {...(!isLoading &&
-            numOptions < this.options.length && {
-              loadingVariant: { text: 'View more', onClick: this.onViewMoreClick }
-            })}
-          {...(isLoading && { loadingVariant: 'spinner' })}
-        >
-          {this.options.slice(0, numOptions)}
-        </Select>
-      </div>
-    );
-  }
-}
-```
-
-### View more with checkboxes
-
-```js
-import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
-
-class SelectViewMoreCheckbox extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false,
-      selected: [],
-      numOptions: 3,
-      isLoading: false
-    };
-
-    this.options = [
-      <SelectOption key={0} value="Active" description="This is a description" />,
-      <SelectOption key={1} value="Cancelled" />,
-      <SelectOption key={2} value="Paused" />,
-      <SelectOption key={4} value="Warning" />,
-      <SelectOption key={5} value="Restarted" />,
-      <SelectOption key={6} value="Down" />,
-      <SelectOption key={7} value="Disabled" />,
-      <SelectOption key={8} value="Needs maintenance " />,
-      <SelectOption key={9} value="Degraded " />
-    ];
-
-    this.onToggle = (_event, isOpen) => {
-      this.setState({
-        isOpen
-      });
-    };
-
-    this.onSelect = (event, selection) => {
-      const { selected } = this.state;
-      if (selected.includes(selection)) {
-        this.setState(
-          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      } else {
-        this.setState(
-          prevState => ({ selected: [...prevState.selected, selection] }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      }
-    };
-
-    this.clearSelection = () => {
-      this.setState({
-        selected: []
-      });
-    };
-
-    this.simulateNetworkCall = callback => {
-      setTimeout(callback, 2000);
-    };
-
-    this.onViewMoreClick = () => {
-      // Set select loadingVariant to spinner then simulate network call before loading more options
-      this.setState({ isLoading: true });
-      this.simulateNetworkCall(() => {
-        const newLength =
-          this.state.numOptions + 3 <= this.options.length ? this.state.numOptions + 3 : this.options.length;
-        this.setState({ numOptions: newLength, isLoading: false });
-      });
-    };
-  }
-
-  render() {
-    const { isOpen, selected, numOptions, isLoading } = this.state;
-    const titleId = 'view-more-checkbox-select-id';
-    return (
-      <div>
-        <span id={titleId} hidden>
-          Checkbox View more check
-        </span>
-        <Select
-          variant={SelectVariant.checkbox}
-          aria-label="Select input"
-          onToggle={this.onToggle}
-          onSelect={this.onSelect}
-          selections={selected}
-          isOpen={isOpen}
-          placeholderText="Filter by status"
-          aria-labelledby={titleId}
-          {...(!isLoading &&
-            numOptions < this.options.length && {
-              loadingVariant: { text: 'View more', onClick: this.onViewMoreClick }
-            })}
-          {...(isLoading && { loadingVariant: 'spinner' })}
-        >
-          {this.options.slice(0, numOptions)}
-        </Select>
-      </div>
-    );
-  }
-}
-```
-
-### With a style applied to the placeholder text
-
-```js
-import React from 'react';
-import { Select, SelectOption } from '@patternfly/react-core';
-
-function SelectWithPlaceholderStyle() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState([]);
-
-  const options = [
-    <SelectOption key={0} value="Active" />,
-    <SelectOption key={1} value="Cancelled" />,
-    <SelectOption key={2} value="Paused" />
-  ];
-
-  const onToggle = (_event, isOpen) => setIsOpen(isOpen);
-
-  const onSelect = (event, selection, isPlaceholder) => {
-    setSelected(selection);
-    setIsOpen(false);
-  };
-
-  const clearSelection = () => {
-    setSelected(null);
-    setIsOpen(false);
-  };
-
-  const titleId = 'placeholder-style-select-id';
-
-  return (
-    <div>
-      <span id={titleId} hidden>
-        Placeholder styles
-      </span>
-      <Select
-        variant={SelectVariant.single}
-        hasPlaceholderStyle
-        aria-label="Select input"
-        onToggle={onToggle}
-        onSelect={onSelect}
-        onClear={clearSelection}
-        selections={selected}
-        isOpen={isOpen}
-        placeholderText="Filter by status"
-        aria-labelledby={titleId}
-      >
-        {options}
-      </Select>
-    </div>
-  );
-}
-```
-
-### With a style applied to the placeholder option
-
-```js
-import React from 'react';
-import { Select, SelectOption } from '@patternfly/react-core';
-
-function SelectWithPlaceholderStyle() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState([]);
-
-  const options = [
-    <SelectOption key={0} value="Filter by status" isPlaceholder />,
-    <SelectOption key={1} value="Active" />,
-    <SelectOption key={2} value="Cancelled" />,
-    <SelectOption key={3} value="Paused" />
-  ];
-
-  const onToggle = (_event, isOpen) => setIsOpen(isOpen);
-
-  const onSelect = (event, selection, isPlaceholder) => {
-    setSelected(selection);
-    setIsOpen(false);
-  };
-
-  const clearSelection = () => {
-    setSelected(null);
-    setIsOpen(false);
-  };
-
-  const titleId = 'placeholder-style-select-option-id';
-
-  return (
-    <div>
-      <span id={titleId} hidden>
-        Placeholder styles - select option
-      </span>
-      <Select
-        variant={SelectVariant.single}
-        hasPlaceholderStyle
-        aria-label="Select input"
-        onToggle={onToggle}
-        onSelect={onSelect}
-        onClear={clearSelection}
-        selections={selected}
-        isOpen={isOpen}
-        aria-labelledby={titleId}
-      >
-        {options}
-      </Select>
-    </div>
-  );
 }
 ```
