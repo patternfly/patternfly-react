@@ -10,6 +10,7 @@ import { EmptyStateActions } from '../EmptyStateActions';
 import { Button } from '../../Button';
 import { EmptyStateHeader } from '../EmptyStateHeader';
 import { EmptyStateFooter } from '../EmptyStateFooter';
+import { EmptyStateIcon } from '../../../../dist/esm';
 
 describe('EmptyState', () => {
   test('Main', () => {
@@ -55,7 +56,7 @@ describe('EmptyState', () => {
   test('Main variant xs', () => {
     const { asFragment } = render(
       <EmptyState variant={EmptyStateVariant.xs}>
-        <EmptyStateHeader titleText="EmptyState small" />
+        <EmptyStateHeader titleText="EmptyState extra small" />
       </EmptyState>
     );
     expect(asFragment()).toMatchSnapshot();
@@ -81,28 +82,23 @@ describe('EmptyState', () => {
   });
 
   test('Header with icon', () => {
-    const { asFragment } = render(<EmptyStateHeader icon={AddressBookIcon}/>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('Header renders custom icon class passed via iconClassName', () => {
-    const { asFragment } = render(<EmptyStateHeader icon={AddressBookIcon} iconClassName="testIconClassName"/>);
+    const { asFragment } = render(<EmptyStateHeader icon={<EmptyStateIcon icon={AddressBookIcon} />} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('Header with title text renders heading level 1 by default', () => {
-    render(<EmptyStateHeader titleText="Empty state"/>);
-    expect(screen.getByRole('heading', {level: 1, name: 'Empty state'})).toHaveClass('pf-c-empty-state__title-text');
+    render(<EmptyStateHeader titleText="Empty state" />);
+    expect(screen.getByRole('heading', { level: 1, name: 'Empty state' })).toHaveClass('pf-c-empty-state__title-text');
   });
 
   test('Header renders custom class passed via titleClassName', () => {
-    render(<EmptyStateHeader titleText="Empty state" titleClassName={"testTitleClassName"}/>);
-    expect(screen.getByRole('heading', {level: 1, name: 'Empty state'})).toHaveClass('testTitleClassName');
+    render(<EmptyStateHeader titleText="Empty state" titleClassName={'testTitleClassName'} />);
+    expect(screen.getByRole('heading', { level: 1, name: 'Empty state' })).toHaveClass('testTitleClassName');
   });
 
   test('Header renders the title as other heading levels when one is passed using headingLevel', () => {
-    render(<EmptyStateHeader titleText='Empty state' headingLevel="h3" />);
-    expect(screen.getByRole('heading', {level: 3, name: 'Empty state'})).toHaveClass('pf-c-empty-state__title-text');
+    render(<EmptyStateHeader titleText="Empty state" headingLevel="h3" />);
+    expect(screen.getByRole('heading', { level: 3, name: 'Empty state' })).toHaveClass('pf-c-empty-state__title-text');
   });
 
   test('Headers render children', () => {

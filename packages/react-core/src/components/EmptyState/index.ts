@@ -4,4 +4,3 @@ export * from './EmptyStateIcon';
 export * from './EmptyStateBody';
 export * from './EmptyStateFooter';
 export * from './EmptyStateActions';
-export * from './EmptyStatePrimary';

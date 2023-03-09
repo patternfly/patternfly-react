@@ -7,9 +7,9 @@ import {
   DropdownPosition,
   DropdownSeparator,
   EmptyState,
+  EmptyStateHeader,
   EmptyStateBody,
   EmptyStateIcon,
-  EmptyStatePrimary,
   EmptyStateVariant,
   KebabToggle,
   NotificationDrawer,
@@ -22,7 +22,9 @@ import {
   NotificationDrawerListItem,
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
-  Title
+  Title,
+  EmptyStateActions,
+  EmptyStateFooter
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
@@ -350,17 +352,20 @@ export class GroupsNotificationDrawerDemo extends React.Component<
             >
               <NotificationDrawerList isHidden={!thirdGroupExpanded}>
                 <EmptyState variant={EmptyStateVariant.full}>
-                  <EmptyStateIcon icon={SearchIcon} />
-                  <Title headingLevel="h2" size="lg">
-                    No alerts found
-                  </Title>
+                  <EmptyStateHeader
+                    titleText="No alerts found"
+                    headingLevel="h2"
+                    icon={<EmptyStateIcon icon={SearchIcon} />}
+                  />
                   <EmptyStateBody>
                     There are currently no critical alerts firing. There may be firing alerts of other severities or
                     silenced critical alerts however.
                   </EmptyStateBody>
-                  <EmptyStatePrimary>
-                    <Button variant="link">Action</Button>
-                  </EmptyStatePrimary>
+                  <EmptyStateFooter>
+                    <EmptyStateActions>
+                      <Button variant="link">Action</Button>
+                    </EmptyStateActions>
+                  </EmptyStateFooter>
                 </EmptyState>
               </NotificationDrawerList>
             </NotificationDrawerGroup>

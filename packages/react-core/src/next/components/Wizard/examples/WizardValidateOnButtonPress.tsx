@@ -7,8 +7,9 @@ import {
   EmptyStateHeader,
   EmptyStateFooter,
   EmptyStateBody,
-  Progress,
   EmptyStateActions,
+  EmptyStateIcon,
+  Progress,
   Form,
   FormGroup,
   TextInput
@@ -25,7 +26,7 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
 
   const tick = React.useCallback(() => {
     if (percentValidated < 100) {
-      setPercentValidated(prevValue => prevValue + 20);
+      setPercentValidated((prevValue) => prevValue + 20);
     }
   }, [percentValidated]);
 
@@ -40,7 +41,11 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
   return (
     <div className="pf-l-bullseye">
       <EmptyState variant="lg">
-        <EmptyStateHeader headingLevel="h4" titleText={percentValidated === 100 ? 'Validation complete' : 'Validating credentials'} icon={CogsIcon} />
+        <EmptyStateHeader
+          headingLevel="h4"
+          titleText={percentValidated === 100 ? 'Validation complete' : 'Validating credentials'}
+          icon={<EmptyStateIcon icon={CogsIcon} />}
+        />
         <EmptyStateBody>
           <Progress value={percentValidated} measureLocation="outside" aria-label="Wizard validation progress" />
         </EmptyStateBody>
@@ -172,7 +177,7 @@ export const WizardValidateOnButtonPress: React.FunctionComponent = () => {
         )}
         <SampleForm
           value={ageValue}
-          setValue={value => setAgeValue(value)}
+          setValue={(value) => setAgeValue(value)}
           isValid={!hasErrorOnSubmit || isFirstStepValid}
           setIsValid={setIsFirstStepValid}
         />

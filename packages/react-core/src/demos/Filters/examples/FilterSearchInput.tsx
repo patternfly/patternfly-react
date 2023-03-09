@@ -16,9 +16,10 @@ import {
   EmptyStateHeader,
   EmptyStateFooter,
   EmptyStateBody,
-  EmptyStatePrimary,
   Button,
-  Bullseye
+  Bullseye,
+  EmptyStateIcon,
+  EmptyStateActions
 } from '@patternfly/react-core';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -276,10 +277,10 @@ export const FilterSearchInput: React.FunctionComponent = () => {
 
   const emptyState = (
     <EmptyState>
-      <EmptyStateHeader headingLevel="h4" titleText="No results found" icon={SearchIcon} />
+      <EmptyStateHeader headingLevel="h4" titleText="No results found" icon={<EmptyStateIcon icon={SearchIcon} />} />
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
       <EmptyStateFooter>
-        <EmptyStatePrimary>
+        <EmptyStateActions>
           <Button
             variant="link"
             onClick={() => {
@@ -288,7 +289,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
           >
             Clear all filters
           </Button>
-        </EmptyStatePrimary>
+        </EmptyStateActions>
       </EmptyStateFooter>
     </EmptyState>
   );

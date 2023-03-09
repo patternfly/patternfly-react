@@ -11,7 +11,7 @@ import {
 
 export const EmptyStateExtraSmall: React.FunctionComponent = () => (
   <EmptyState variant={EmptyStateVariant.xs}>
-    <EmptyStateHeader titleText="Empty state" />
+    <EmptyStateHeader titleText="Empty state" headingLevel="h4" />
     <EmptyStateBody>
       This represents the empty state pattern in PatternFly. Hopefully it's simple enough to use but flexible enough to
       meet a variety of needs.

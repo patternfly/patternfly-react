@@ -13,7 +13,8 @@ import {
   Wizard,
   WizardFooter,
   WizardContextConsumer,
-  Alert
+  Alert,
+  EmptyStateIcon
 } from '@patternfly/react-core';
 // eslint-disable-next-line patternfly-react/import-tokens-icons
 import { CogsIcon } from '@patternfly/react-icons';
@@ -26,7 +27,7 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
   const [percent, setPercent] = React.useState(0);
 
   const tick = () => {
-    setPercent(prevPercent => {
+    setPercent((prevPercent) => {
       if (prevPercent < 100) {
         return prevPercent + 20;
       } else {
@@ -48,7 +49,11 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
   return (
     <div className="pf-l-bullseye">
       <EmptyState variant="lg">
-        <EmptyStateHeader headingLevel="h4" titleText={percent === 100 ? 'Validation complete' : 'Validating credentials'} icon={CogsIcon} />
+        <EmptyStateHeader
+          headingLevel="h4"
+          titleText={percent === 100 ? 'Validation complete' : 'Validating credentials'}
+          icon={<EmptyStateIcon icon={CogsIcon} />}
+        />
         <EmptyStateBody>
           <Progress value={percent} measureLocation="outside" aria-label="validation-progress" />
         </EmptyStateBody>
@@ -125,7 +130,7 @@ export const WizardValidateButtonPress: React.FunctionComponent = () => {
     setFormValue(value);
   };
 
-  const validateLastStep: (onNext: () => void) => void = onNext => {
+  const validateLastStep: (onNext: () => void) => void = (onNext) => {
     if (stepsValid !== 1 && !isFormValid) {
       setErrorText(true);
     } else {

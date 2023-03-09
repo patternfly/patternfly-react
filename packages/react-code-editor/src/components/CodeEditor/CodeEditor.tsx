@@ -14,7 +14,8 @@ import {
   Popover,
   PopoverProps,
   Title,
-  TooltipPosition
+  TooltipPosition,
+  EmptyStateHeader
 } from '@patternfly/react-core';
 import MonacoEditor, { ChangeHandler, EditorDidMount } from 'react-monaco-editor';
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
@@ -383,7 +384,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   editorDidMount: EditorDidMount = (editor, monaco) => {
     // eslint-disable-next-line no-bitwise
     editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Tab, () => this.wrapperRef.current.focus());
-    Array.from(document.getElementsByClassName('monaco-editor')).forEach(editorElement =>
+    Array.from(document.getElementsByClassName('monaco-editor')).forEach((editorElement) =>
       editorElement.removeAttribute('role')
     );
     this.props.onEditorDidMount(editor, monaco);
@@ -419,7 +420,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       this.handleFileChange('', fileHandle.name); // Show the filename while reading
       this.handleFileReadStarted();
       this.readFile(fileHandle)
-        .then(data => {
+        .then((data) => {
           this.handleFileReadFinished();
           this.toggleEmptyState();
           this.handleFileChange(data, fileHandle.name);
@@ -520,10 +521,11 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
             providedEmptyState ||
             (isUploadEnabled ? (
               <EmptyState variant={EmptyStateVariant.sm}>
-                <EmptyStateIcon icon={CodeIcon} />
-                <Title headingLevel="h4" size="lg">
-                  {emptyStateTitle}
-                </Title>
+                <EmptyStateHeader
+                  titleText={emptyStateTitle}
+                  icon={<EmptyStateIcon icon={CodeIcon} />}
+                  headingLevel="h4"
+                />
                 <EmptyStateBody>{emptyStateBody}</EmptyStateBody>
                 <EmptyStateFooter>
                   <EmptyStateActions>
@@ -540,13 +542,18 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               </EmptyState>
             ) : (
               <EmptyState variant={EmptyStateVariant.sm}>
-                <EmptyStateIcon icon={CodeIcon} />
-                <Title headingLevel="h4" size="lg">
-                  {emptyStateTitle}
-                </Title>
-                <Button variant="primary" onClick={this.toggleEmptyState}>
-                  {emptyStateLink}
-                </Button>
+                <EmptyStateHeader
+                  titleText={emptyStateTitle}
+                  icon={<EmptyStateIcon icon={CodeIcon} />}
+                  headingLevel="h4"
+                />
+                <EmptyStateFooter>
+                  <EmptyStateActions>
+                    <Button variant="primary" onClick={this.toggleEmptyState}>
+                      {emptyStateLink}
+                    </Button>
+                  </EmptyStateActions>
+                </EmptyStateFooter>
               </EmptyState>
             ));
 
@@ -639,7 +646,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               {isUploadEnabled || providedEmptyState ? (
                 <div
                   {...getRootProps({
-                    onClick: event => event.preventDefault() // Prevents clicking TextArea from opening file dialog
+                    onClick: (event) => event.preventDefault() // Prevents clicking TextArea from opening file dialog
                   })}
                   className={`pf-c-file-upload ${isDragActive && 'pf-m-drag-hover'} ${isLoading && 'pf-m-loading'}`}
                 >

@@ -7,7 +7,10 @@ import {
   EmptyStateIcon,
   Title,
   EmptyStateBody,
-  Button
+  Button,
+  EmptyStateHeader,
+  EmptyStateFooter,
+  EmptyStateActions
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
@@ -30,12 +33,17 @@ export const ComposableTableEmptyState: React.FunctionComponent = () => (
         <Td colSpan={8}>
           <Bullseye>
             <EmptyState variant={EmptyStateVariant.sm}>
-              <EmptyStateIcon icon={SearchIcon} />
-              <Title headingLevel="h2" size="lg">
-                No results found
-              </Title>
+              <EmptyStateHeader
+                icon={<EmptyStateIcon icon={SearchIcon} />}
+                titleText="No results found"
+                headingLevel="h2"
+              />
               <EmptyStateBody>Clear all filters and try again.</EmptyStateBody>
-              <Button variant="link">Clear all filters</Button>
+              <EmptyStateFooter>
+                <EmptyStateActions>
+                  <Button variant="link">Clear all filters</Button>
+                </EmptyStateActions>
+              </EmptyStateFooter>
             </EmptyState>
           </Bullseye>
         </Td>
