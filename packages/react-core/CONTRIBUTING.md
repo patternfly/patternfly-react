@@ -62,7 +62,18 @@ $ git checkout -b my-branch -t upstream/main
     ComponentName.md - Component Docs
   ```
 
-4.  Develop your component. After development is complete, ensure tests and lint standards pass.
+4. Develop your component. 
+
+While developing, you can run the patternfly-react workspace to view the component docs with live examples.
+
+**Note:** Be sure you are using node version >= 18.0.0
+
+```bash
+# Start up the workspace locally on port 8002
+ yarn install && yarn start
+```
+
+5. After development is complete, ensure tests and lint standards pass.
 
 ```text
 $ yarn test
