@@ -14,7 +14,7 @@ const dropdownChildren = <div>Dropdown children</div>;
 test('renders dropdown', () => {
   render(
     <div data-testid="dropdown">
-      <Dropdown toggle={toggleRef => toggle(toggleRef)}>{dropdownChildren}</Dropdown>
+      <Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>
     </div>
   );
 
@@ -22,20 +22,20 @@ test('renders dropdown', () => {
 });
 
 test('passes children', () => {
-  render(<Dropdown toggle={toggleRef => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
+  render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
 
   expect(screen.getByText('Dropdown children')).toBeVisible();
 });
 
 test('renders passed toggle element', () => {
-  render(<Dropdown toggle={toggleRef => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
+  render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
 
   expect(screen.getByRole('button', { name: 'Dropdown' })).toBeVisible();
 });
 
 test('passes no class name by default', () => {
   render(
-    <Dropdown isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -45,7 +45,7 @@ test('passes no class name by default', () => {
 
 test('passes custom class name', () => {
   render(
-    <Dropdown className="custom-class" isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown className="custom-class" isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -55,7 +55,7 @@ test('passes custom class name', () => {
 
 test('does not pass isPlain to Menu by default', () => {
   render(
-    <Dropdown isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -65,7 +65,7 @@ test('does not pass isPlain to Menu by default', () => {
 
 test('passes isPlain to Menu', () => {
   render(
-    <Dropdown isPlain isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown isPlain isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -75,7 +75,7 @@ test('passes isPlain to Menu', () => {
 
 test('does not pass isScrollable to Menu by default', () => {
   render(
-    <Dropdown isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -85,7 +85,7 @@ test('does not pass isScrollable to Menu by default', () => {
 
 test('passes isScrollable to Menu', () => {
   render(
-    <Dropdown isScrollable isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown isScrollable isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -93,35 +93,15 @@ test('passes isScrollable to Menu', () => {
   expect(screen.getByText('isScrollable: true')).toBeVisible();
 });
 
-test('does not pass minWidth to Menu by default', () => {
-  render(
-    <Dropdown isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
-      {dropdownChildren}
-    </Dropdown>
-  );
-
-  expect(screen.getByText('minWidth: undefined')).toBeVisible();
-});
-
-test('passes minWidth to Menu', () => {
-  render(
-    <Dropdown minWidth="100px" isOpen={true} toggle={toggleRef => toggle(toggleRef)}>
-      {dropdownChildren}
-    </Dropdown>
-  );
-
-  expect(screen.getByText('minWidth: 100px')).toBeVisible();
-});
-
 test('passes default zIndex to popper', () => {
-  render(<Dropdown toggle={toggleRef => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
+  render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
 
   expect(screen.getByText('zIndex: 9999')).toBeVisible();
 });
 
 test('passes zIndex to popper', () => {
   render(
-    <Dropdown zIndex={100} toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown zIndex={100} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -130,14 +110,14 @@ test('passes zIndex to popper', () => {
 });
 
 test('does not pass isOpen to popper by default', () => {
-  render(<Dropdown toggle={toggleRef => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
+  render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
 
   expect(screen.getByText('isOpen: undefined')).toBeVisible();
 });
 
 test('passes isOpen to popper', () => {
   render(
-    <Dropdown isOpen toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown isOpen toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -154,7 +134,7 @@ test('passes onSelect callback', async () => {
 
   const onSelect = jest.fn();
   render(
-    <Dropdown onSelect={onSelect} toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown onSelect={onSelect} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -170,7 +150,7 @@ test('onOpenChange is called when passed and user clicks outside of dropdown', a
   const onOpenChange = jest.fn();
 
   render(
-    <Dropdown isOpen={true} onOpenChange={onOpenChange} toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown isOpen={true} onOpenChange={onOpenChange} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -187,7 +167,7 @@ test('onOpenChange is called when passed and user presses tab key', async () => 
   const onOpenChange = jest.fn();
 
   render(
-    <Dropdown isOpen={true} onOpenChange={onOpenChange} toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown isOpen={true} onOpenChange={onOpenChange} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -205,7 +185,7 @@ test('onOpenChange is called when passed and user presses esc key', async () => 
   const onOpenChange = jest.fn();
 
   render(
-    <Dropdown isOpen={true} onOpenChange={onOpenChange} toggle={toggleRef => toggle(toggleRef)}>
+    <Dropdown isOpen={true} onOpenChange={onOpenChange} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
@@ -226,7 +206,7 @@ test('match snapshot', () => {
       isScrollable
       isPlain
       className={'customClass'}
-      toggle={toggleRef => toggle(toggleRef)}
+      toggle={(toggleRef) => toggle(toggleRef)}
     >
       {dropdownChildren}
     </Dropdown>
