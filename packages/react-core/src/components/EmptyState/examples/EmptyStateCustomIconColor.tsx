@@ -12,7 +12,7 @@ export const EmptyStateCustomIconColor: React.FunctionComponent = () => (
     <EmptyStateHeader
       titleText="Custom icon color"
       headingLevel="h4"
-      icon={<EmptyStateIcon icon={CubesIcon} color={'#3e8635'} />}
+      icon={<EmptyStateIcon icon={CubesIcon} color="#3e8635" />}
     />
     <EmptyStateBody>
       This represents the empty state pattern in PatternFly with a custom icon color. Hopefully it's simple enough to
