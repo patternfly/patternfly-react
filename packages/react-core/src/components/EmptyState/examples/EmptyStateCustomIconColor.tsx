@@ -1,18 +1,13 @@
 import React from 'react';
-import {
-  EmptyState,
-  EmptyStateBody,
-  EmptyStateHeader,
-  EmptyStateIcon
-} from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
+import { EmptyState, EmptyStateBody, EmptyStateHeader, EmptyStateIcon } from '@patternfly/react-core';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 
 export const EmptyStateCustomIconColor: React.FunctionComponent = () => (
   <EmptyState>
     <EmptyStateHeader
       titleText="Custom icon color"
       headingLevel="h4"
-      icon={<EmptyStateIcon icon={CubesIcon} color="#3e8635" />}
+      icon={<EmptyStateIcon icon={CheckIcon} color="var(--pf-global--success-color--100)" />}
     />
     <EmptyStateBody>
       This represents the empty state pattern in PatternFly with a custom icon color. Hopefully it's simple enough to
