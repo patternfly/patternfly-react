@@ -633,37 +633,6 @@ class CardViewBasic extends React.Component {
                 >
                   <CardHeader actions={{ actions: headerActions }}>
                     <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ maxWidth: '60px' }} />
-<<<<<<< HEAD
-=======
-                    <CardActions>
-                      <Dropdown
-                        isPlain
-                        position="right"
-                        onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
-                        toggle={
-                          <KebabToggle
-                            onToggle={(_event, isCardKebabDropdownOpen) =>
-                              this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
-                            }
-                          />
-                        }
-                        isOpen={this.state[key]}
-                        dropdownItems={[
-                          <DropdownItem key="trash" onClick={this.deleteItem(product)} position="right">
-                            <TrashIcon />
-                            Delete
-                          </DropdownItem>
-                        ]}
-                      />
-                      <Checkbox
-                        checked={isChecked}
-                        value={product.id}
-                        isChecked={selectedItems.includes(product.id)}
-                        aria-label="card checkbox example"
-                        id={`check-${product.id}`}
-                      />
-                    </CardActions>
->>>>>>> 26c0f2f96 (fix(EmptyState): cleanup of old EmptyState use cases in codebase)
                   </CardHeader>
                   <CardTitle>{product.name}</CardTitle>
                   <CardBody>{product.description}</CardBody>
