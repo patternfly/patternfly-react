@@ -179,9 +179,9 @@ test('Renders the title as an h4 by default', () => {
   expect(screen.getByRole('heading', { level: 4, name: 'Default alert: Some title' })).toBeVisible();
 });
 
-test('Renders the title as other heading levels when one is passed using titleHeadingLevel', () => {
+test('Renders the title as other heading levels when one is passed using component', () => {
   render(
-    <Alert title="Some title" titleHeadingLevel="h1">
+    <Alert title="Some title" component="h1">
       Some alert
     </Alert>
   );
