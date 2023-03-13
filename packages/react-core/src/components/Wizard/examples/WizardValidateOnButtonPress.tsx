@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   EmptyState,
-  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateBody,
-  EmptyStateSecondaryActions,
-  Title,
+  EmptyStateActions,
   Form,
   FormGroup,
   TextInput,
@@ -13,7 +13,8 @@ import {
   Wizard,
   WizardFooter,
   WizardContextConsumer,
-  Alert
+  Alert,
+  EmptyStateIcon
 } from '@patternfly/react-core';
 // eslint-disable-next-line patternfly-react/import-tokens-icons
 import { CogsIcon } from '@patternfly/react-icons';
@@ -26,7 +27,7 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
   const [percent, setPercent] = React.useState(0);
 
   const tick = () => {
-    setPercent(prevPercent => {
+    setPercent((prevPercent) => {
       if (prevPercent < 100) {
         return prevPercent + 20;
       } else {
@@ -47,11 +48,12 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
 
   return (
     <div className="pf-l-bullseye">
-      <EmptyState variant="large">
-        <EmptyStateIcon icon={CogsIcon} />
-        <Title headingLevel="h4" size="lg">
-          {percent === 100 ? 'Validation complete' : 'Validating credentials'}
-        </Title>
+      <EmptyState variant="lg">
+        <EmptyStateHeader
+          headingLevel="h4"
+          titleText={percent === 100 ? 'Validation complete' : 'Validating credentials'}
+          icon={<EmptyStateIcon icon={CogsIcon} />}
+        />
         <EmptyStateBody>
           <Progress value={percent} measureLocation="outside" aria-label="validation-progress" />
         </EmptyStateBody>
@@ -59,11 +61,13 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
           Description can be used to further elaborate on the validation step, or give the user a better idea of how
           long the process will take.
         </EmptyStateBody>
-        <EmptyStateSecondaryActions>
-          <Button isDisabled={percent !== 100} onClick={props.onClose}>
-            Log to console
-          </Button>
-        </EmptyStateSecondaryActions>
+        <EmptyStateFooter>
+          <EmptyStateActions>
+            <Button isDisabled={percent !== 100} onClick={props.onClose}>
+              Log to console
+            </Button>
+          </EmptyStateActions>
+        </EmptyStateFooter>
       </EmptyState>
     </div>
   );
@@ -126,7 +130,7 @@ export const WizardValidateButtonPress: React.FunctionComponent = () => {
     setFormValue(value);
   };
 
-  const validateLastStep: (onNext: () => void) => void = onNext => {
+  const validateLastStep: (onNext: () => void) => void = (onNext) => {
     if (stepsValid !== 1 && !isFormValid) {
       setErrorText(true);
     } else {

@@ -38,9 +38,11 @@ import {
   DropdownItem,
   DropdownSeparator,
   EmptyState,
+  EmptyStateActions,
   EmptyStateBody,
   EmptyStateIcon,
-  EmptyStatePrimary,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateVariant,
   KebabToggle,
   Nav,
@@ -104,7 +106,7 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
 
-    this.onDropdownSelect = event => {
+    this.onDropdownSelect = (event) => {
       this.setState({
         isDropdownOpen: !this.state.isDropdownOpen
       });
@@ -116,20 +118,20 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
 
-    this.onKebabDropdownSelect = event => {
+    this.onKebabDropdownSelect = (event) => {
       this.setState({
         isKebabDropdownOpen: !this.state.isKebabDropdownOpen
       });
     };
 
-    this.onNavSelect = result => {
+    this.onNavSelect = (result) => {
       this.setState({
         activeItem: result.itemId
       });
     };
 
     this.onCloseNotificationDrawer = () => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         return {
           isDrawerExpanded: !prevState.isDrawerExpanded
         };
@@ -142,14 +144,14 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
 
-    this.onSelect = event => {
+    this.onSelect = (event) => {
       this.setState({
         isActionsMenuOpen: null
       });
     };
 
-    this.onListItemClick = id => {
-      this.setState(prevState => {
+    this.onListItemClick = (id) => {
+      this.setState((prevState) => {
         if (!prevState.isUnreadMap) return;
         prevState.isUnreadMap[id] = false;
         return {
@@ -172,7 +174,7 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
 
-    this.showNotifications = showNotifications => {
+    this.showNotifications = (showNotifications) => {
       this.setState({
         isUnreadMap: null,
         showNotifications: showNotifications
@@ -503,16 +505,19 @@ class BasicNotificationDrawer extends React.Component {
           )}
           {!showNotifications && (
             <EmptyState variant={EmptyStateVariant.full}>
-              <EmptyStateIcon icon={SearchIcon} />
-              <Title headingLevel="h2" size="lg">
-                No alerts found
-              </Title>
+              <EmptyStateHeader
+                headingLevel="h2"
+                titleText="No results found"
+                icon={<EmptyStateIcon icon={SearchIcon} />}
+              />
               <EmptyStateBody>
                 There are currently no alerts. There may be silenced critical alerts however.
               </EmptyStateBody>
-              <EmptyStatePrimary>
-                <Button variant="link">Action</Button>
-              </EmptyStatePrimary>
+              <EmptyStateFooter>
+                <EmptyStateActions>
+                  <Button variant="link">Action</Button>
+                </EmptyStateActions>
+              </EmptyStateFooter>
             </EmptyState>
           )}
         </NotificationDrawerBody>
@@ -572,9 +577,11 @@ import {
   DropdownItem,
   DropdownSeparator,
   EmptyState,
+  EmptyStateActions,
   EmptyStateBody,
   EmptyStateIcon,
-  EmptyStatePrimary,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateVariant,
   KebabToggle,
   Nav,
@@ -650,7 +657,7 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
 
-    this.onDropdownSelect = event => {
+    this.onDropdownSelect = (event) => {
       this.setState({
         isDropdownOpen: !this.state.isDropdownOpen
       });
@@ -662,20 +669,20 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
 
-    this.onKebabDropdownSelect = event => {
+    this.onKebabDropdownSelect = (event) => {
       this.setState({
         isKebabDropdownOpen: !this.state.isKebabDropdownOpen
       });
     };
 
-    this.onNavSelect = result => {
+    this.onNavSelect = (result) => {
       this.setState({
         activeItem: result.itemId
       });
     };
 
     this.onCloseNotificationDrawer = () => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         return {
           isDrawerExpanded: !prevState.isDrawerExpanded
         };
@@ -688,14 +695,14 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
 
-    this.onSelect = event => {
+    this.onSelect = (event) => {
       this.setState({
         isActionsMenuOpen: null
       });
     };
 
     this.onListItemClick = (groupId, id) => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         if (!prevState.isUnreadMap || !prevState.isUnreadMap[groupId]) return;
         console.log(prevState.isUnreadMap);
         prevState.isUnreadMap[groupId][id] = false;
@@ -710,7 +717,7 @@ class GroupedNotificationDrawer extends React.Component {
       return isUnreadMap && isUnreadMap[groupId] && isUnreadMap[groupId][id];
     };
 
-    this.getNumberUnread = groupId => {
+    this.getNumberUnread = (groupId) => {
       const { isUnreadMap } = this.state;
       if (isUnreadMap === null) return 0;
 
@@ -737,7 +744,7 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
 
-    this.showNotifications = showNotifications => {
+    this.showNotifications = (showNotifications) => {
       this.setState({
         isUnreadMap: null,
         showNotifications: showNotifications
@@ -1232,17 +1239,20 @@ class GroupedNotificationDrawer extends React.Component {
               >
                 <NotificationDrawerList isHidden={!thirdDrawerGroupExpanded}>
                   <EmptyState variant={EmptyStateVariant.full}>
-                    <EmptyStateIcon icon={SearchIcon} />
-                    <Title headingLevel="h2" size="lg">
-                      No alerts found
-                    </Title>
+                    <EmptyStateHeader
+                      headingLevel="h2"
+                      titleText="No alerts found"
+                      icon={<EmptyStateIcon icon={SearchIcon} />}
+                    />
                     <EmptyStateBody>
                       There are currently no critical alerts firing. There may be firing alerts of other severities or
                       silenced critical alerts however.
                     </EmptyStateBody>
-                    <EmptyStatePrimary>
-                      <Button variant="link">Action</Button>
-                    </EmptyStatePrimary>
+                    <EmptyStateFooter>
+                      <EmptyStateActions>
+                        <Button variant="link">Action</Button>
+                      </EmptyStateActions>
+                    </EmptyStateFooter>
                   </EmptyState>
                 </NotificationDrawerList>
               </NotificationDrawerGroup>
@@ -1250,16 +1260,19 @@ class GroupedNotificationDrawer extends React.Component {
           )}
           {!showNotifications && (
             <EmptyState variant={EmptyStateVariant.full}>
-              <EmptyStateIcon icon={SearchIcon} />
-              <Title headingLevel="h2" size="lg">
-                No alerts found
-              </Title>
+              <EmptyStateHeader
+                headingLevel="h2"
+                titleText="No alerts found"
+                icon={<EmptyStateIcon icon={SearchIcon} />}
+              />
               <EmptyStateBody>
                 There are currently no alerts. There may be silenced critical alerts however.
               </EmptyStateBody>
-              <EmptyStatePrimary>
-                <Button variant="link">Action</Button>
-              </EmptyStatePrimary>
+              <EmptyStateFooter>
+                <EmptyStateActions>
+                  <Button variant="link">Action</Button>
+                </EmptyStateActions>
+              </EmptyStateFooter>
             </EmptyState>
           )}
         </NotificationDrawerBody>

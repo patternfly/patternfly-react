@@ -5,6 +5,7 @@ import {
   DropdownItem,
   EmptyState,
   EmptyStateBody,
+  EmptyStateHeader,
   EmptyStateIcon,
   KebabToggle,
   NotificationBadge,
@@ -20,7 +21,6 @@ import {
   PageSectionVariants,
   TextContent,
   Text,
-  Title,
   DropdownPosition,
   EmptyStateVariant,
   NumberInput,
@@ -69,13 +69,13 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
     const key = getUniqueId();
     const timestamp = getTimeCreated();
 
-    setNotifications(prevNotifications => [
+    setNotifications((prevNotifications) => [
       { title, srTitle, variant, key, timestamp, description, isNotificationRead: false },
       ...prevNotifications
     ]);
 
     if (!isDrawerExpanded) {
-      setAlerts(prevAlerts => [
+      setAlerts((prevAlerts) => [
         <Alert
           variant={variant}
           title={title}
@@ -96,7 +96,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
   };
 
   const removeNotification = (key: React.Key) => {
-    setNotifications(prevNotifications => prevNotifications.filter(notification => notification.key !== key));
+    setNotifications((prevNotifications) => prevNotifications.filter((notification) => notification.key !== key));
   };
 
   const removeAllNotifications = () => {
@@ -104,28 +104,29 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
   };
 
   const isNotificationRead = (key: React.Key) =>
-    notifications.find(notification => notification.key === key)?.isNotificationRead;
+    notifications.find((notification) => notification.key === key)?.isNotificationRead;
 
   const markNotificationRead = (key: React.Key) => {
-    setNotifications(prevNotifications =>
-      prevNotifications.map(notification =>
+    setNotifications((prevNotifications) =>
+      prevNotifications.map((notification) =>
         notification.key === key ? { ...notification, isNotificationRead: true } : notification
       )
     );
   };
 
   const markAllNotificationsRead = () => {
-    setNotifications(prevNotifications =>
-      prevNotifications.map(notification => ({ ...notification, isNotificationRead: true }))
+    setNotifications((prevNotifications) =>
+      prevNotifications.map((notification) => ({ ...notification, isNotificationRead: true }))
     );
   };
 
   const getUnreadNotificationsNumber = () =>
-    notifications.filter(notification => notification.isNotificationRead === false).length;
+    notifications.filter((notification) => notification.isNotificationRead === false).length;
 
   const containsUnreadAlertNotification = () =>
-    notifications.filter(notification => notification.isNotificationRead === false && notification.variant === 'danger')
-      .length > 0;
+    notifications.filter(
+      (notification) => notification.isNotificationRead === false && notification.variant === 'danger'
+    ).length > 0;
 
   const getNotificationBadgeVariant = () => {
     if (getUnreadNotificationsNumber() === 0) {
@@ -176,7 +177,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
   };
 
   const removeAlert = (key: React.Key) => {
-    setAlerts(prevAlerts => prevAlerts.filter(alert => alert.props.id !== key.toString()));
+    setAlerts((prevAlerts) => prevAlerts.filter((alert) => alert.props.id !== key.toString()));
   };
 
   const removeAllAlerts = () => {
@@ -281,10 +282,11 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
         )}
         {notifications.length === 0 && (
           <EmptyState variant={EmptyStateVariant.full}>
-            <EmptyStateIcon icon={SearchIcon} />
-            <Title headingLevel="h2" size="lg">
-              No notifications found
-            </Title>
+            <EmptyStateHeader
+              headingLevel="h2"
+              titleText="No notifications found"
+              icon={<EmptyStateIcon icon={SearchIcon} />}
+            />
             <EmptyStateBody>There are currently no notifications.</EmptyStateBody>
           </EmptyState>
         )}

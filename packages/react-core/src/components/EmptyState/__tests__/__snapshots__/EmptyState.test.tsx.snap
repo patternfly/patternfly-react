@@ -8,14 +8,45 @@ exports[`EmptyState Full height 1`] = `
     <div
       class="pf-c-empty-state__content"
     >
-      <h3
-        class="pf-c-title pf-m-md"
-        data-ouia-component-id="OUIA-Generated-Title-5"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
+      <div
+        class="pf-c-empty-state__header"
       >
-        EmptyState large
-      </h3>
+        <div
+          class="pf-c-empty-state__title"
+        >
+          <h1
+            class="pf-c-empty-state__title-text"
+          >
+            EmptyState large
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`EmptyState Header with icon 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-empty-state__header"
+  >
+    <div
+      class="pf-c-empty-state__icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 448 512"
+        width="1em"
+      >
+        <path
+          d="M436 160c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h320c26.5 0 48-21.5 48-48v-48h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20zm-228-32c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H118.4C106 384 96 375.4 96 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2z"
+        />
+      </svg>
     </div>
   </div>
 </DocumentFragment>
@@ -29,43 +60,56 @@ exports[`EmptyState Main 1`] = `
     <div
       class="pf-c-empty-state__content"
     >
-      <h5
-        class="pf-c-title pf-m-lg"
-        data-ouia-component-id="OUIA-Generated-Title-1"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
+      <div
+        class="pf-c-empty-state__header"
       >
-        HTTP Proxies
-      </h5>
+        <div
+          class="pf-c-empty-state__title"
+        >
+          <h1
+            class="pf-c-empty-state__title-text"
+          >
+            HTTP Proxies
+          </h1>
+        </div>
+      </div>
       <div
         class="pf-c-empty-state__body"
       >
         Defining HTTP Proxies that exist on your network allows you to perform various actions through those proxies.
       </div>
-      <button
-        aria-disabled="false"
-        class="pf-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-1"
-        data-ouia-component-type="PF4/Button"
-        data-ouia-safe="true"
-        type="button"
-      >
-        New HTTP Proxy
-      </button>
       <div
-        class=""
+        class="pf-c-empty-state__footer"
       >
-        <button
-          aria-disabled="false"
-          aria-label="learn more action"
-          class="pf-c-button pf-m-link"
-          data-ouia-component-id="OUIA-Generated-Button-link-1"
-          data-ouia-component-type="PF4/Button"
-          data-ouia-safe="true"
-          type="button"
+        <div
+          class="pf-c-empty-state__actions"
         >
-          Learn more about this in the documentation.
-        </button>
+          <button
+            aria-disabled="false"
+            class="pf-c-button pf-m-primary"
+            data-ouia-component-id="OUIA-Generated-Button-primary-1"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            New HTTP Proxy
+          </button>
+        </div>
+        <div
+          class="pf-c-empty-state__actions"
+        >
+          <button
+            aria-disabled="false"
+            aria-label="learn more action"
+            class="pf-c-button pf-m-link"
+            data-ouia-component-id="OUIA-Generated-Button-link-1"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            Learn more about this in the documentation.
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -80,14 +124,19 @@ exports[`EmptyState Main variant large 1`] = `
     <div
       class="pf-c-empty-state__content"
     >
-      <h3
-        class="pf-c-title pf-m-md"
-        data-ouia-component-id="OUIA-Generated-Title-2"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
+      <div
+        class="pf-c-empty-state__header"
       >
-        EmptyState large
-      </h3>
+        <div
+          class="pf-c-empty-state__title"
+        >
+          <h1
+            class="pf-c-empty-state__title-text"
+          >
+            EmptyState large
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -101,14 +150,19 @@ exports[`EmptyState Main variant small 1`] = `
     <div
       class="pf-c-empty-state__content"
     >
-      <h3
-        class="pf-c-title pf-m-md"
-        data-ouia-component-id="OUIA-Generated-Title-3"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
+      <div
+        class="pf-c-empty-state__header"
       >
-        EmptyState small
-      </h3>
+        <div
+          class="pf-c-empty-state__title"
+        >
+          <h1
+            class="pf-c-empty-state__title-text"
+          >
+            EmptyState small
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -122,14 +176,19 @@ exports[`EmptyState Main variant xs 1`] = `
     <div
       class="pf-c-empty-state__content"
     >
-      <h3
-        class="pf-c-title pf-m-md"
-        data-ouia-component-id="OUIA-Generated-Title-4"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
+      <div
+        class="pf-c-empty-state__header"
       >
-        EmptyState small
-      </h3>
+        <div
+          class="pf-c-empty-state__title"
+        >
+          <h1
+            class="pf-c-empty-state__title-text"
+          >
+            EmptyState extra small
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>

@@ -1108,9 +1108,11 @@ import {
   SelectVariant,
   SearchInput,
   EmptyState,
-  EmptyStateIcon,
+  EmptyStateActions,
   EmptyStateBody,
-  EmptyStateSecondaryActions
+  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -1405,23 +1407,26 @@ class FilterTableDemo extends React.Component {
               title: (
                 <Bullseye>
                   <EmptyState>
-                    <EmptyStateIcon icon={SearchIcon} />
-                    <Title headingLevel="h5" size="lg">
-                      Clear all filters and try again.
-                    </Title>
+                    <EmptyStateHeader
+                      titleText="Clear all filters and try again."
+                      headingLevel="h5"
+                      icon={<EmptyStateIcon icon={SearchIcon} />}
+                    />
                     <EmptyStateBody>
                       No results match this filter criteria. Remove all filters or clear all filters to show results.
                     </EmptyStateBody>
-                    <EmptyStateSecondaryActions>
-                      <Button
-                        variant="link"
-                        onClick={() => {
-                          this.onDelete(null);
-                        }}
-                      >
-                        Clear all filters
-                      </Button>
-                    </EmptyStateSecondaryActions>
+                    <EmptyStateFooter>
+                      <EmptyStateActions>
+                        <Button
+                          variant="link"
+                          onClick={() => {
+                            this.onDelete(null);
+                          }}
+                        >
+                          Clear all filters
+                        </Button>
+                      </EmptyStateActions>
+                    </EmptyStateFooter>
                   </EmptyState>
                 </Bullseye>
               )
@@ -1666,7 +1671,7 @@ import {
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateSecondaryActions,
+  EmptyStateActions,
   PageSection,
   Title
 } from '@patternfly/react-core';
@@ -1692,16 +1697,19 @@ class EmptyStateDemo extends React.Component {
             props: { colSpan: 8 },
             title: (
               <EmptyState>
-                <EmptyStateIcon icon={SearchIcon} />
-                <Title headingLevel="h2" size="lg">
-                  No results found
-                </Title>
+                <EmptyStateHeader
+                  titleText="No results found"
+                  headingLevel="h2"
+                  icon={<EmptyStateIcon icon={SearchIcon} />}
+                />
                 <EmptyStateBody>No results match this filter criteria. Clear all filters and try again.</EmptyStateBody>
-                <EmptyStateSecondaryActions>
-                  <Button variant="link" onClick={() => {}}>
-                    Clear all filters
-                  </Button>
-                </EmptyStateSecondaryActions>
+                <EmptyStateFooter>
+                  <EmptyStateActions>
+                    <Button variant="link" onClick={() => {}}>
+                      Clear all filters
+                    </Button>
+                  </EmptyStateActions>
+                </EmptyStateFooter>
               </EmptyState>
             )
           }
@@ -1751,10 +1759,11 @@ class LoadingStateDemo extends React.Component {
             title: (
               <Bullseye>
                 <EmptyState>
-                  <EmptyStateIcon variant="container" component={Spinner} />
-                  <Title size="lg" headingLevel="h2">
-                    Loading
-                  </Title>
+                  <EmptyStateHeader
+                    titleText="Loading"
+                    headingLevel="h2"
+                    icon={<EmptyStateIcon icon={Spinner} />}
+                  />
                 </EmptyState>
               </Bullseye>
             )
@@ -1789,6 +1798,7 @@ import {
   EmptyStateIcon,
   EmptyStateBody,
   EmptyStateVariant,
+  EmptyStateHeader,
   PageSection,
   Title
 } from '@patternfly/react-core';
@@ -1812,11 +1822,12 @@ class ErrorStateDemo extends React.Component {
           {
             props: { colSpan: 8 },
             title: (
-              <EmptyState variant={EmptyStateVariant.small}>
-                <EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />
-                <Title headingLevel="h2" size="lg">
-                  Unable to connect
-                </Title>
+              <EmptyState variant={EmptyStateVariant.sm}>
+                <EmptyStateHeader
+                  titleText="Unable to connect"
+                  icon={<EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />}
+                  headingLevel="h2"
+                />
                 <EmptyStateBody>
                   There was an error retrieving data. Check your connection and reload the page.
                 </EmptyStateBody>

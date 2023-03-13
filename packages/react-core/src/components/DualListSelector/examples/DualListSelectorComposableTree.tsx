@@ -8,13 +8,14 @@ import {
   DualListSelectorTree,
   DualListSelectorTreeItemData,
   SearchInput,
-  Title,
   Button,
   EmptyState,
   EmptyStateVariant,
-  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateBody,
-  EmptyStatePrimary
+  EmptyStateActions,
+  EmptyStateIcon
 } from '@patternfly/react-core';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
@@ -48,7 +49,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     }
     textById[node.id] = node.text;
     if (node.children) {
-      node.children.forEach(child => {
+      node.children.forEach((child) => {
         textById = { ...textById, ...buildTextById(child) };
       });
     }
@@ -61,7 +62,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
       return [node.id];
     } else {
       let childrenIds: string[] = [];
-      node.children.forEach(child => {
+      node.children.forEach((child) => {
         childrenIds = [...childrenIds, ...getDescendantLeafIds(child)];
       });
       return childrenIds;
@@ -74,7 +75,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     if (!node.children || !node.children.length) {
       leavesById[node.id] = [node.id];
     } else {
-      node.children.forEach(child => {
+      node.children.forEach((child) => {
         leavesById[node.id] = getDescendantLeafIds(node);
         leavesById = { ...leavesById, ...getLeavesById(child) };
       });
@@ -87,7 +88,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     let leavesById = {};
     let allLeaves: string[] = [];
     let nodeTexts = {};
-    data.forEach(foodNode => {
+    data.forEach((foodNode) => {
       nodeTexts = { ...nodeTexts, ...buildTextById(foodNode) };
       leavesById = { ...leavesById, ...getLeavesById(foodNode) };
       allLeaves = [...allLeaves, ...getDescendantLeafIds(foodNode)];
@@ -101,17 +102,17 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
 
   const moveChecked = (toChosen: boolean) => {
     setChosenLeafIds(
-      prevChosenIds =>
+      (prevChosenIds) =>
         toChosen
           ? [...prevChosenIds, ...checkedLeafIds] // add checked ids to chosen list
-          : [...prevChosenIds.filter(x => !checkedLeafIds.includes(x))] // remove checked ids from chosen list
+          : [...prevChosenIds.filter((x) => !checkedLeafIds.includes(x))] // remove checked ids from chosen list
     );
 
     // uncheck checked ids that just moved
-    setCheckedLeafIds(prevChecked =>
+    setCheckedLeafIds((prevChecked) =>
       toChosen
-        ? [...prevChecked.filter(x => chosenLeafIds.includes(x))]
-        : [...prevChecked.filter(x => !chosenLeafIds.includes(x))]
+        ? [...prevChecked.filter((x) => chosenLeafIds.includes(x))]
+        : [...prevChecked.filter((x) => !chosenLeafIds.includes(x))]
     );
   };
 
@@ -125,11 +126,11 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
 
   const areAllDescendantsSelected = (node: FoodNode, isChosen: boolean) =>
     memoizedLeavesById[node.id].every(
-      id => checkedLeafIds.includes(id) && (isChosen ? chosenLeafIds.includes(id) : !chosenLeafIds.includes(id))
+      (id) => checkedLeafIds.includes(id) && (isChosen ? chosenLeafIds.includes(id) : !chosenLeafIds.includes(id))
     );
   const areSomeDescendantsSelected = (node: FoodNode, isChosen: boolean) =>
     memoizedLeavesById[node.id].some(
-      id => checkedLeafIds.includes(id) && (isChosen ? chosenLeafIds.includes(id) : !chosenLeafIds.includes(id))
+      (id) => checkedLeafIds.includes(id) && (isChosen ? chosenLeafIds.includes(id) : !chosenLeafIds.includes(id))
     );
 
   const isNodeChecked = (node: FoodNode, isChosen: boolean) => {
@@ -148,7 +149,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     node: DualListSelectorTreeItemData,
     isChosen: boolean
   ) => {
-    const nodeIdsToCheck = memoizedLeavesById[node.id].filter(id =>
+    const nodeIdsToCheck = memoizedLeavesById[node.id].filter((id) =>
       isChosen
         ? chosenLeafIds.includes(id) && !hiddenChosen.includes(id)
         : !chosenLeafIds.includes(id) && !hiddenAvailable.includes(id)
@@ -158,15 +159,15 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     } else {
       hiddenAvailable = [];
     }
-    setCheckedLeafIds(prevChecked => {
-      const otherCheckedNodeNames = prevChecked.filter(id => !nodeIdsToCheck.includes(id));
+    setCheckedLeafIds((prevChecked) => {
+      const otherCheckedNodeNames = prevChecked.filter((id) => !nodeIdsToCheck.includes(id));
       return !isChecked ? otherCheckedNodeNames : [...otherCheckedNodeNames, ...nodeIdsToCheck];
     });
   };
 
   // builds a search input - used in each dual list selector pane
   const buildSearchInput = (isChosen: boolean) => {
-    const onChange = value => (isChosen ? setChosenFilter(value) : setAvailableFilter(value));
+    const onChange = (value) => (isChosen ? setChosenFilter(value) : setAvailableFilter(value));
 
     return (
       <SearchInput
@@ -192,11 +193,11 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     const filterValue = isChosen ? chosenFilter : availableFilter;
     const descendentLeafIds = memoizedLeavesById[node.id];
     const descendentsOnThisPane = isChosen
-      ? descendentLeafIds.filter(id => chosenLeafIds.includes(id))
-      : descendentLeafIds.filter(id => !chosenLeafIds.includes(id));
+      ? descendentLeafIds.filter((id) => chosenLeafIds.includes(id))
+      : descendentLeafIds.filter((id) => !chosenLeafIds.includes(id));
 
     const hasMatchingChildren =
-      filterValue && descendentsOnThisPane.some(id => memoizedNodeText[id].includes(filterValue));
+      filterValue && descendentsOnThisPane.some((id) => memoizedNodeText[id].includes(filterValue));
     const isFilterMatch = filterValue && node.text.includes(filterValue) && descendentsOnThisPane.length > 0;
 
     // A node is displayed if either of the following is true:
@@ -243,7 +244,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
   const buildPane = (isChosen: boolean): React.ReactNode => {
     const options: DualListSelectorTreeItemData[] = buildOptions(isChosen, data, false);
     const numOptions = isChosen ? chosenLeafIds.length : memoizedAllLeaves.length - chosenLeafIds.length;
-    const numSelected = checkedLeafIds.filter(id =>
+    const numSelected = checkedLeafIds.filter((id) =>
       isChosen ? chosenLeafIds.includes(id) : !chosenLeafIds.includes(id)
     ).length;
     const status = `${numSelected} of ${numOptions} options selected`;
@@ -257,17 +258,20 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
         listMinHeight="300px"
       >
         {filterApplied && options.length === 0 && (
-          <EmptyState variant={EmptyStateVariant.small}>
-            <EmptyStateIcon icon={SearchIcon} />
-            <Title headingLevel="h4" size="md">
-              No results found
-            </Title>
+          <EmptyState variant={EmptyStateVariant.sm}>
+            <EmptyStateHeader
+              headingLevel="h4"
+              titleText="No results found"
+              icon={<EmptyStateIcon icon={SearchIcon} />}
+            />
             <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
-            <EmptyStatePrimary>
-              <Button variant="link" onClick={() => (isChosen ? setChosenFilter('') : setAvailableFilter(''))}>
-                Clear all filters
-              </Button>
-            </EmptyStatePrimary>
+            <EmptyStateFooter>
+              <EmptyStateActions>
+                <Button variant="link" onClick={() => (isChosen ? setChosenFilter('') : setAvailableFilter(''))}>
+                  Clear all filters
+                </Button>
+              </EmptyStateActions>
+            </EmptyStateFooter>
           </EmptyState>
         )}
         {options.length > 0 && (
@@ -287,7 +291,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
       {buildPane(false)}
       <DualListSelectorControlsWrapper>
         <DualListSelectorControl
-          isDisabled={!checkedLeafIds.filter(x => !chosenLeafIds.includes(x)).length}
+          isDisabled={!checkedLeafIds.filter((x) => !chosenLeafIds.includes(x)).length}
           onClick={() => moveChecked(true)}
           aria-label="Add selected"
         >
@@ -309,7 +313,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
         </DualListSelectorControl>
         <DualListSelectorControl
           onClick={() => moveChecked(false)}
-          isDisabled={!checkedLeafIds.filter(x => !!chosenLeafIds.includes(x)).length}
+          isDisabled={!checkedLeafIds.filter((x) => !!chosenLeafIds.includes(x)).length}
           aria-label="Remove selected"
         >
           <AngleLeftIcon />
