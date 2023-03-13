@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.31...@patternfly/react-core@5.0.0-alpha.32) (2023-03-13)
+
+### Bug Fixes
+
+- **Alert:** remove deprecated titleHeadingLevel prop ([#8795](https://github.com/patternfly/patternfly-react/issues/8795)) ([ac77495](https://github.com/patternfly/patternfly-react/commit/ac774958351ae5c336082e9f4e70ebbee4784fc8))
+
 # [5.0.0-alpha.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.30...@patternfly/react-core@5.0.0-alpha.31) (2023-03-10)
 
 **Note:** Version bump only for package @patternfly/react-core
