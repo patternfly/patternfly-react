@@ -1,34 +1,42 @@
 import React from 'react';
-import { Wizard } from '@patternfly/react-core';
+import { Wizard, WizardStep } from '@patternfly/react-core';
 
-export const WizardExpandableSteps: React.FunctionComponent = () => {
-  const steps = [
-    {
-      name: 'First step',
-      steps: [
-        { name: 'Substep A', component: <p>Substep A content</p> },
-        { name: 'Substep B', component: <p>Substep B content</p> }
-      ]
-    },
-    { name: 'Second step', component: <p>Step 2 content</p> },
-    {
-      name: 'Third step',
-      steps: [
-        { name: 'Substep C', component: <p>Substep C content</p> },
-        { name: 'Substep D', component: <p>Substep D content</p> }
-      ]
-    },
-    { name: 'Fourth step', component: <p>Step 4 content</p> },
-    { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
-  ];
-  const title = 'Expandable wizard example';
-  return (
-    <Wizard
-      navAriaLabel={`${title} steps`}
-      mainAriaLabel={`${title} content`}
-      steps={steps}
-      height={400}
-      isNavExpandable
+export const WizardExpandableSteps: React.FunctionComponent = () => (
+  <Wizard height={400} title="Expandable steps wizard" nav={{ isExpanded: true }}>
+    <WizardStep
+      name="Step 1"
+      id="expand-steps-1"
+      isExpandable
+      steps={[
+        <WizardStep name="Substep A" id="expand-steps-sub-a" key="expand-steps-sub-a">
+          Substep A content
+        </WizardStep>,
+        <WizardStep name="Substep B" id="expand-steps-sub-b" key="expand-steps-sub-b">
+          Substep B content
+        </WizardStep>
+      ]}
     />
-  );
-};
+    <WizardStep name="Step 2" id="expand-steps-2">
+      Step 2 content
+    </WizardStep>
+    <WizardStep
+      name="Step 3"
+      id="expand-steps-3"
+      isExpandable
+      steps={[
+        <WizardStep name="Substep C" id="expand-steps-sub-c" key="expand-steps-sub-c">
+          Substep C content
+        </WizardStep>,
+        <WizardStep name="Substep D" id="expand-steps-sub-d" key="expand-steps-sub-d">
+          Substep D content
+        </WizardStep>
+      ]}
+    />
+    <WizardStep name="Step 4" id="expand-steps-4">
+      Step 4 content
+    </WizardStep>
+    <WizardStep name="Review" id="expand-steps-review" footer={{ nextButtonText: 'Finish' }}>
+      Review step content
+    </WizardStep>
+  </Wizard>
+);

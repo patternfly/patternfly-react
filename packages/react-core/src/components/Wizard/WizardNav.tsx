@@ -1,48 +1,40 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
-import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface WizardNavProps extends OUIAProps {
+export interface WizardNavProps {
   /** children should be WizardNavItem components */
   children?: any;
-  /** Aria-label applied to the nav element */
+  /** Aria-label applied to the navigation element */
   'aria-label'?: string;
-  /** Sets the aria-labelledby attribute on the nav element */
+  /** Sets the aria-labelledby attribute on the navigation element */
   'aria-labelledby'?: string;
-  /** Whether the nav is expanded */
-  isOpen?: boolean;
-  /** True to return the inner list without the wrapping nav element */
-  returnList?: boolean;
+  /** Whether the navigation is expanded */
+  isExpanded?: boolean;
+  /** True to return the inner list without the wrapping navigation element */
+  isInnerList?: boolean;
 }
 
 export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
   children,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
-  isOpen = false,
-  returnList = false,
-  ouiaId,
-  ouiaSafe = true
+  isExpanded = false,
+  isInnerList = false
 }: WizardNavProps) => {
-  const ouiaProps = useOUIAProps(WizardNav.displayName, ouiaId, ouiaSafe);
-
-  const innerList = (
-    <ol className={css(styles.wizardNavList)} role="list">
-      {children}
-    </ol>
-  );
-
-  if (returnList) {
-    return innerList;
+  if (isInnerList) {
+    return (
+      <ol className={css(styles.wizardNavList)} role="list">
+        {children}
+      </ol>
+    );
   }
 
   return (
     <nav
-      className={css(styles.wizardNav, isOpen && styles.modifiers.expanded)}
+      className={css(styles.wizardNav, isExpanded && styles.modifiers.expanded)}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
-      {...ouiaProps}
     >
       <ol className={css(styles.wizardNavList)} role="list">
         {children}
@@ -50,4 +42,5 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
     </nav>
   );
 };
+
 WizardNav.displayName = 'WizardNav';

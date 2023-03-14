@@ -1,20 +1,18 @@
 import React from 'react';
-import { Modal, ModalVariant, Button, Wizard } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
 
 export const ModalWithWizard: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const handleModalToggle = () => {
-    setIsModalOpen(!isModalOpen);
+    setIsModalOpen((prevIsModalOpen) => !prevIsModalOpen);
   };
 
-  const steps = [
-    { name: 'Step 1', component: <p>Step 1</p> },
-    { name: 'Step 2', component: <p>Step 2</p> },
-    { name: 'Step 3', component: <p>Step 3</p> },
-    { name: 'Step 4', component: <p>Step 4</p> },
-    { name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish' }
-  ];
+  const numberedSteps = [1, 2, 3, 4].map((stepNumber) => (
+    <WizardStep name={`Step ${stepNumber}`} key={`Step ${stepNumber}`} id={`with-wizard-step-${stepNumber}`}>
+      {`Step ${stepNumber}`}
+    </WizardStep>
+  ));
 
   return (
     <React.Fragment>
@@ -31,14 +29,27 @@ export const ModalWithWizard: React.FunctionComponent = () => {
         hasNoBodyWrapper
       >
         <Wizard
-          titleId="modal-wizard-label"
-          descriptionId="modal-wizard-description"
-          title="Wizard modal"
-          description="This is a wizard inside of a modal."
-          steps={steps}
-          onClose={handleModalToggle}
           height={400}
-        />
+          header={
+            <WizardHeader
+              title="Wizard modal"
+              titleId="modal-wizard-label"
+              description="This is a wizard inside of a modal."
+              onClose={handleModalToggle}
+              closeButtonAriaLabel="Close wizard"
+            />
+          }
+          onClose={handleModalToggle}
+        >
+          {numberedSteps}
+          <WizardStep
+            name="Review"
+            id="with-wizard-review-step"
+            footer={{ nextButtonText: 'Finish', onNext: handleModalToggle }}
+          >
+            Review step
+          </WizardStep>
+        </Wizard>
       </Modal>
     </React.Fragment>
   );
