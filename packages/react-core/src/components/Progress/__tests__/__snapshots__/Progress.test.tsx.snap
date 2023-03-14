@@ -8,11 +8,6 @@ exports[`Progress measure location inside 1`] = `
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__description"
-      id="inside-progress-description"
-    />
-    <div
-      aria-hidden="true"
       class="pf-c-progress__status"
     />
     <div
@@ -43,11 +38,6 @@ exports[`Progress measure location inside and small should render large 1`] = `
     class="pf-c-progress pf-m-inside pf-m-lg pf-m-singleline"
     id="large-progress"
   >
-    <div
-      aria-hidden="true"
-      class="pf-c-progress__description"
-      id="large-progress-description"
-    />
     <div
       aria-hidden="true"
       class="pf-c-progress__status"
@@ -81,15 +71,6 @@ exports[`Progress measure location none 1`] = `
     id="none-progress"
   >
     <div
-      aria-hidden="true"
-      class="pf-c-progress__description"
-      id="none-progress-description"
-    />
-    <div
-      aria-hidden="true"
-      class="pf-c-progress__status"
-    />
-    <div
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
@@ -115,11 +96,6 @@ exports[`Progress measure location outside 1`] = `
     class="pf-c-progress pf-m-outside pf-m-singleline"
     id="outside-progress"
   >
-    <div
-      aria-hidden="true"
-      class="pf-c-progress__description"
-      id="outside-progress-description"
-    />
     <div
       aria-hidden="true"
       class="pf-c-progress__status"
@@ -158,11 +134,6 @@ exports[`Progress measure location top 1`] = `
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__description"
-      id="top-progress-description"
-    />
-    <div
-      aria-hidden="true"
       class="pf-c-progress__status"
     >
       <span
@@ -197,11 +168,6 @@ exports[`Progress size lg 1`] = `
     class="pf-c-progress pf-m-lg pf-m-singleline"
     id="lg-progress"
   >
-    <div
-      aria-hidden="true"
-      class="pf-c-progress__description"
-      id="lg-progress-description"
-    />
     <div
       aria-hidden="true"
       class="pf-c-progress__status"
@@ -240,11 +206,6 @@ exports[`Progress size md 1`] = `
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__description"
-      id="md-progress-description"
-    />
-    <div
-      aria-hidden="true"
       class="pf-c-progress__status"
     >
       <span
@@ -281,11 +242,6 @@ exports[`Progress size sm 1`] = `
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__description"
-      id="sm-progress-description"
-    />
-    <div
-      aria-hidden="true"
       class="pf-c-progress__status"
     >
       <span
@@ -320,11 +276,6 @@ exports[`Progress variant danger 1`] = `
     class="pf-c-progress pf-m-danger pf-m-singleline"
     id="danger-progress"
   >
-    <div
-      aria-hidden="true"
-      class="pf-c-progress__description"
-      id="danger-progress-description"
-    />
     <div
       aria-hidden="true"
       class="pf-c-progress__status"
@@ -380,11 +331,6 @@ exports[`Progress variant success 1`] = `
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__description"
-      id="success-progress-description"
-    />
-    <div
-      aria-hidden="true"
       class="pf-c-progress__status"
     >
       <span
@@ -436,11 +382,6 @@ exports[`Progress variant warning 1`] = `
     class="pf-c-progress pf-m-warning pf-m-singleline"
     id="warning-progress"
   >
-    <div
-      aria-hidden="true"
-      class="pf-c-progress__description"
-      id="warning-progress-description"
-    />
     <div
       aria-hidden="true"
       class="pf-c-progress__status"
@@ -496,11 +437,6 @@ exports[`Progress with aria-valuetext 1`] = `
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__description"
-      id="progress-aria-valuetext-description"
-    />
-    <div
-      aria-hidden="true"
       class="pf-c-progress__status"
     >
       <span
@@ -536,11 +472,6 @@ exports[`Simple progress 1`] = `
     class="pf-c-progress pf-m-singleline"
     id="progress-simple-example"
   >
-    <div
-      aria-hidden="true"
-      class="pf-c-progress__description"
-      id="progress-simple-example-description"
-    />
     <div
       aria-hidden="true"
       class="pf-c-progress__status"
@@ -579,11 +510,6 @@ exports[`additional label 1`] = `
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__description"
-      id="additional-label-description"
-    />
-    <div
-      aria-hidden="true"
       class="pf-c-progress__status"
     >
       <span
@@ -618,11 +544,6 @@ exports[`no value specified 1`] = `
     class="pf-c-progress pf-m-singleline"
     id="no-value"
   >
-    <div
-      aria-hidden="true"
-      class="pf-c-progress__description"
-      id="no-value-description"
-    />
     <div
       aria-hidden="true"
       class="pf-c-progress__status"
@@ -661,11 +582,6 @@ exports[`value higher than maxValue 1`] = `
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__description"
-      id="higher-max-value-description"
-    />
-    <div
-      aria-hidden="true"
       class="pf-c-progress__status"
     >
       <span
@@ -700,11 +616,6 @@ exports[`value lower than minValue 1`] = `
     class="pf-c-progress pf-m-singleline"
     id="lower-min-value"
   >
-    <div
-      aria-hidden="true"
-      class="pf-c-progress__description"
-      id="lower-min-value-description"
-    />
     <div
       aria-hidden="true"
       class="pf-c-progress__status"
@@ -743,11 +654,6 @@ exports[`value scaled between minValue and maxValue 1`] = `
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__description"
-      id="scaled-range-value-description"
-    />
-    <div
-      aria-hidden="true"
       class="pf-c-progress__status"
     >
       <span
@@ -784,11 +690,6 @@ exports[`value scaled with maxValue 1`] = `
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__description"
-      id="scaled-max-value-description"
-    />
-    <div
-      aria-hidden="true"
       class="pf-c-progress__status"
     >
       <span
@@ -823,11 +724,6 @@ exports[`value scaled with minValue 1`] = `
     class="pf-c-progress pf-m-singleline"
     id="scaled-min-value"
   >
-    <div
-      aria-hidden="true"
-      class="pf-c-progress__description"
-      id="scaled-min-value-description"
-    />
     <div
       aria-hidden="true"
       class="pf-c-progress__status"
