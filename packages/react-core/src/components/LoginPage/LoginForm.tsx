@@ -99,12 +99,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
       <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText} icon={helperTextIcon}>
         {helperText}
       </FormHelperText>
-      <FormGroup
-        label={usernameLabel}
-        isRequired
-        validated={isValidUsername ? ValidatedOptions.default : ValidatedOptions.error}
-        fieldId="pf-login-username-id"
-      >
+      <FormGroup label={usernameLabel} isRequired fieldId="pf-login-username-id">
         <TextInput
           autoFocus={!noAutoFocus}
           id="pf-login-username-id"
@@ -116,12 +111,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
           onChange={onChangeUsername}
         />
       </FormGroup>
-      <FormGroup
-        label={passwordLabel}
-        isRequired
-        validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
-        fieldId="pf-login-password-id"
-      >
+      <FormGroup label={passwordLabel} isRequired fieldId="pf-login-password-id">
         {isShowPasswordEnabled && (
           <InputGroup>
             {passwordInput}

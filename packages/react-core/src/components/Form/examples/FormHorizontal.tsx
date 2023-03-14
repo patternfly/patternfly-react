@@ -9,7 +9,9 @@ import {
   Checkbox,
   ActionGroup,
   Button,
-  Radio
+  Radio,
+  HelperText,
+  HelperTextItem
 } from '@patternfly/react-core';
 
 export const FormHorizontal: React.FunctionComponent = () => {
@@ -46,12 +48,7 @@ export const FormHorizontal: React.FunctionComponent = () => {
 
   return (
     <Form isHorizontal>
-      <FormGroup
-        label="Full name"
-        isRequired
-        fieldId="horizontal-form-name"
-        helperText="Include your middle name if you have one."
-      >
+      <FormGroup label="Full name" isRequired fieldId="horizontal-form-name">
         <TextInput
           value={name}
           isRequired
@@ -61,6 +58,9 @@ export const FormHorizontal: React.FunctionComponent = () => {
           name="horizontal-form-name"
           onChange={handleNameChange}
         />
+        <HelperText>
+          <HelperTextItem>Include your middle name if you have one.</HelperTextItem>
+        </HelperText>
       </FormGroup>
       <FormGroup label="Email" isRequired fieldId="horizontal-form-email">
         <TextInput
