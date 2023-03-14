@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import { ApplicationLauncher, ApplicationLauncherItem, ApplicationLauncherContent } from '@patternfly/react-core';
+import { ApplicationLauncher, ApplicationLauncherItem, ApplicationLauncherContent } from '@patternfly/react-core/deprecated';
 import pfLogoSm from './pf-logo-small.svg';
 
 const icon: JSX.Element = <img src={pfLogoSm} />;

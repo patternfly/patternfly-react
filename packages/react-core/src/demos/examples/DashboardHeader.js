@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  ApplicationLauncher,
-  ApplicationLauncherItem,
   Avatar,
   Brand,
   Button,
@@ -16,7 +14,7 @@ import {
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem,
-  PageToggleButton
+  PageToggleButton,
 } from '@patternfly/react-core';
 import {
   Dropdown as DropdownDeprecated,
@@ -40,7 +38,6 @@ export default class DashboardHeader extends React.Component {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
       isFullKebabDropdownOpen: false,
-      isAppLauncherOpen: false,
       activeItem: 0
     };
 
@@ -79,22 +76,10 @@ export default class DashboardHeader extends React.Component {
         isFullKebabDropdownOpen: !this.state.isFullKebabDropdownOpen
       });
     };
-
-    this.onAppLauncherToggle = (_event, isAppLauncherOpen) => {
-      this.setState({
-        isAppLauncherOpen
-      });
-    };
-
-    this.onAppLauncherSelect = () => {
-      this.setState({
-        isAppLauncherOpen: !this.state.isAppLauncherOpen
-      });
-    };
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen, isAppLauncherOpen } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen } = this.state;
     const { notificationBadge } = this.props;
 
     const kebabDropdownItems = [
@@ -133,15 +118,6 @@ export default class DashboardHeader extends React.Component {
       </DropdownGroupDeprecated>
     ];
 
-    const appLauncherItems = [
-      <ApplicationLauncherItem key="application_1a" href="#">
-        Application 1 (anchor link)
-      </ApplicationLauncherItem>,
-      <ApplicationLauncherItem key="application_2a" component="button" onClick={() => alert('Clicked item 2')}>
-        Application 2 (button with onClick)
-      </ApplicationLauncherItem>
-    ];
-
     const headerToolbar = (
       <Toolbar id="toolbar" isFullHeight isStatic>
         <ToolbarContent>
@@ -163,15 +139,6 @@ export default class DashboardHeader extends React.Component {
               </ToolbarItem>
             )}
             <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
-              <ToolbarItem>
-                <ApplicationLauncher
-                  onSelect={this.onAppLauncherSelect}
-                  onToggle={this.onAppLauncherToggle}
-                  isOpen={isAppLauncherOpen}
-                  items={appLauncherItems}
-                  toggleId="dashboard-header-app-launcher"
-                />
-              </ToolbarItem>
               <ToolbarItem>
                 <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
               </ToolbarItem>

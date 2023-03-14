@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
-import { DropdownItem, DropdownItemProps } from '../../deprecated/components/Dropdown';
+import { DropdownItem, DropdownItemProps } from '../Dropdown';
 import { ApplicationLauncherContent } from './ApplicationLauncherContent';
 import { ApplicationLauncherContext } from './ApplicationLauncherContext';
 import { ApplicationLauncherItemContext } from './ApplicationLauncherItemContext';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
-import { getUniqueId } from '../../helpers/util';
+import { getUniqueId } from '../../../helpers/util';
 
 export interface ApplicationLauncherItemProps {
   /** Icon rendered before the text */

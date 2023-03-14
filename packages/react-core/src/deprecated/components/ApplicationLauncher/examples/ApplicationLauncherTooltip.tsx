@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
+import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core/deprecated';
 
 const appLauncherItems: React.ReactElement[] = [
   <ApplicationLauncherItem key="application_1b" href="#" tooltip={<div>Launch Application 1</div>}>

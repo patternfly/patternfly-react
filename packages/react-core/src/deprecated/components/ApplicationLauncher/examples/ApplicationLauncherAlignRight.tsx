@@ -1,6 +1,6 @@
 import React from 'react';
-import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import { DropdownPosition } from '@patternfly/react-core/deprecated'
+import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core/deprecated';
 
 const appLauncherItems: React.ReactElement[] = [
   <ApplicationLauncherItem key="application_1a" href="#">
@@ -14,11 +14,11 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherItem>
 ];
 
-export const ApplicationLauncherCustomIcon: React.FunctionComponent = () => {
+export const ApplicationLauncherAlignRight: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => setIsOpen(isOpen);
-  const onSelect = (_event: any) => setIsOpen(prevIsOpen => !prevIsOpen);
+  const onSelect = (_event: any) => setIsOpen((prevIsOpen) => !prevIsOpen);
 
   return (
     <ApplicationLauncher
@@ -26,7 +26,8 @@ export const ApplicationLauncherCustomIcon: React.FunctionComponent = () => {
       onToggle={onToggle}
       isOpen={isOpen}
       items={appLauncherItems}
-      toggleIcon={<HelpIcon />}
+      position={DropdownPosition.right}
+      style={{ marginLeft: 'calc(100% - 46px)' }}
     />
   );
 };

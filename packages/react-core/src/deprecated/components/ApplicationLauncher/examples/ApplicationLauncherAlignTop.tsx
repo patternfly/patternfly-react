@@ -1,6 +1,5 @@
 import React from 'react';
-import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
-import { DropdownDirection } from '@patternfly/react-core/deprecated';
+import { ApplicationLauncher, ApplicationLauncherItem, DropdownDirection } from '@patternfly/react-core/deprecated';
 
 const appLauncherItems: React.ReactElement[] = [
   <ApplicationLauncherItem key="application_1a" href="#">

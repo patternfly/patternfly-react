@@ -4,7 +4,7 @@ import {
   ApplicationLauncherItem,
   ApplicationLauncherGroup,
   ApplicationLauncherSeparator
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/deprecated';
 
 interface ApplicationLauncherFavoritesDemoState {
   isOpen: boolean;

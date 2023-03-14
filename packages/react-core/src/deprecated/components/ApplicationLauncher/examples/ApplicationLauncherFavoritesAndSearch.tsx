@@ -4,7 +4,7 @@ import {
   ApplicationLauncherItem,
   ApplicationLauncherGroup,
   ApplicationLauncherSeparator
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/deprecated';
 import pfLogoSm from './pf-logo-small.svg';
 
 const icon: JSX.Element = <img src={pfLogoSm} />;
