@@ -22,8 +22,6 @@ export interface SelectProps extends MenuProps, OUIAProps {
   onOpenChange?: (isOpen: boolean) => void;
   /** Indicates if the select should be without the outer box-shadow */
   isPlain?: boolean;
-  /** Minimum width of the select menu */
-  minWidth?: string;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLDivElement>;
   /** z-index of the select menu */
@@ -43,7 +41,6 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   toggle,
   onOpenChange,
   isPlain,
-  minWidth,
   innerRef,
   zIndex = 9999,
   role = 'listbox',
@@ -103,11 +100,6 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       onSelect={(event, itemId) => onSelect && onSelect(event, itemId)}
       isPlain={isPlain}
       selected={selected}
-      {...(minWidth && {
-        style: {
-          '--pf-c-menu--MinWidth': minWidth
-        } as React.CSSProperties
-      })}
       {...getOUIAProps(
         Select.displayName,
         props.ouiaId !== undefined ? props.ouiaId : getDefaultOUIAId(Select.displayName),
