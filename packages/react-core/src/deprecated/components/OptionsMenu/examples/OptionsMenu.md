@@ -12,7 +12,7 @@ import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amou
 ### Single option
 ```js
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 
 class SingleOption extends React.Component {
   constructor(props) {
@@ -61,7 +61,7 @@ class SingleOption extends React.Component {
 ### Disabled
 ```js
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 
 class DisabledOptionsMenu extends React.Component {
   constructor(props) {
@@ -97,7 +97,7 @@ class DisabledOptionsMenu extends React.Component {
 ### Multiple options
 ```js
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuSeparator, OptionsMenuItemGroup, OptionsMenuToggle} from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuSeparator, OptionsMenuItemGroup, OptionsMenuToggle} from '@patternfly/react-core/deprecated';
 
 class MultipleOptions extends React.Component {
   constructor(props) {
@@ -162,7 +162,7 @@ class MultipleOptions extends React.Component {
 ### Plain
 ```js
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 class Plain extends React.Component {
@@ -239,7 +239,7 @@ class Plain extends React.Component {
 ### Align top
 ```js
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuDirection, OptionsMenuToggle } from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuDirection, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 
 class Top extends React.Component {
   constructor(props) {
@@ -290,7 +290,7 @@ class Top extends React.Component {
 ### Align right
 ```js
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuPosition, OptionsMenuToggle } from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuPosition, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 
 class AlignRight extends React.Component {
   constructor(props) {
@@ -341,7 +341,7 @@ class AlignRight extends React.Component {
 ### Plain with text
 ```js
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core/deprecated';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 class PlainWithText extends React.Component {
@@ -401,7 +401,7 @@ class PlainWithText extends React.Component {
 ### Plain with text disabled
 ```js
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core/deprecated';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 class PlainWithText extends React.Component {
@@ -461,7 +461,7 @@ class PlainWithText extends React.Component {
 ### Grouped items with titles
 ```js
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle, OptionsMenuItemGroup } from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle, OptionsMenuItemGroup } from '@patternfly/react-core/deprecated';
 
 class GroupedItems extends React.Component {
   constructor(props) {
@@ -522,7 +522,7 @@ class GroupedItems extends React.Component {
 ### Single option with menu on document body
 ```js
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 
 class SingleOption extends React.Component {
   constructor(props) {

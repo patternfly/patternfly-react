@@ -4,12 +4,14 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarItem,
+} from '@patternfly/react-core';
+import {
   OptionsMenu,
   OptionsMenuItemGroup,
   OptionsMenuItem,
   OptionsMenuSeparator,
   OptionsMenuToggle
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/deprecated'
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 interface Repository {
