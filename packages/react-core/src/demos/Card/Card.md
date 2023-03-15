@@ -560,36 +560,6 @@ class CardViewBasic extends React.Component {
       swaggerIcon
     };
 
-    const headerActions = (
-      <>
-        <Dropdown
-          isPlain
-          position="right"
-          onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
-          toggle={
-            <KebabToggle
-              onToggle={(_event, isCardKebabDropdownOpen) =>
-                this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
-              }
-            />
-          }
-          isOpen={this.state[key]}
-          dropdownItems={[
-            <DropdownItem key="trash" onClick={this.deleteItem(product)} position="right">
-              <TrashIcon />
-              Delete
-            </DropdownItem>
-          ]}
-        />
-        <Checkbox
-          checked={isChecked}
-          value={product.id}
-          isChecked={selectedItems.includes(product.id)}
-          aria-label="card checkbox example"
-          id={`check-${product.id}`}
-        />
-      </>
-    );
     return (
       <React.Fragment>
         <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
@@ -631,7 +601,40 @@ class CardViewBasic extends React.Component {
                   onSelectableInputChange={() => this.onClick(product.id)}
                   isSelected={selectedItems.includes(product.id)}
                 >
-                  <CardHeader actions={{ actions: headerActions }}>
+                  <CardHeader
+                    actions={{
+                      actions: (
+                        <>
+                          <Dropdown
+                            isPlain
+                            position="right"
+                            onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
+                            toggle={
+                              <KebabToggle
+                                onToggle={(_event, isCardKebabDropdownOpen) =>
+                                  this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
+                                }
+                              />
+                            }
+                            isOpen={this.state[key]}
+                            dropdownItems={[
+                              <DropdownItem key="trash" onClick={this.deleteItem(product)} position="right">
+                                <TrashIcon />
+                                Delete
+                              </DropdownItem>
+                            ]}
+                          />
+                          <Checkbox
+                            checked={isChecked}
+                            value={product.id}
+                            isChecked={selectedItems.includes(product.id)}
+                            aria-label="card checkbox example"
+                            id={`check-${product.id}`}
+                          />
+                        </>
+                      )
+                    }}
+                  >
                     <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ maxWidth: '60px' }} />
                   </CardHeader>
                   <CardTitle>{product.name}</CardTitle>
