@@ -52,8 +52,8 @@
     "victory-zoom-container": "^36.6.8"
   },
   "peerDependencies": {
-    "react": "^16.8 || ^17 || ^18",
-    "react-dom": "^16.8 || ^17 || ^18"
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18"
   },
   "scripts": {
     "clean": "rimraf dist"
