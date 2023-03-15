@@ -146,17 +146,7 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
   };
 
   const menu = (
-    <Menu
-      ref={menuRef}
-      id="context-selector"
-      onSelect={onSelect}
-      isScrollable
-      style={
-        {
-          '--pf-c-menu--Width': '300px'
-        } as React.CSSProperties
-      }
-    >
+    <Menu ref={menuRef} id="context-selector" onSelect={onSelect} isScrollable>
       <MenuInput>
         <InputGroup>
           <SearchInput
@@ -198,14 +188,5 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
       </MenuFooter>
     </Menu>
   );
-  return (
-    <Popper
-      trigger={toggle}
-      triggerRef={toggleRef}
-      popper={menu}
-      popperRef={menuRef}
-      isVisible={isOpen}
-      popperMatchesTriggerWidth={false}
-    />
-  );
+  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
 };

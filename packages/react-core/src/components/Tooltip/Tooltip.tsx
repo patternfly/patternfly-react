@@ -93,6 +93,8 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
         | 'right-start'
         | 'right-end'
       )[];
+  /** Minimum width of the tooltip. If set to "trigger", the minimum width will be set to the reference element width. */
+  minWidth?: string | 'trigger';
   /** Maximum width of the tooltip (default 18.75rem) */
   maxWidth?: string;
   /** Callback when tooltip's hide transition has finished executing */
@@ -151,6 +153,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   exitDelay = 300,
   appendTo = () => document.body,
   zIndex = 9999,
+  minWidth,
   maxWidth = tooltipMaxWidth.value,
   distance = 15,
   aria = 'describedby',
@@ -321,7 +324,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       triggerRef={triggerRef}
       popper={content}
       popperRef={popperRef}
-      popperMatchesTriggerWidth={false}
+      minWidth={minWidth !== undefined ? minWidth : 'revert'}
       appendTo={appendTo}
       isVisible={visible}
       positionModifiers={positionModifiers}

@@ -6,11 +6,10 @@ import { OverflowTab } from '../OverflowTab';
 import { TabsContext } from '../TabsContext';
 
 jest.mock('../../../helpers', () => ({
-  Popper: ({ trigger, popper, isVisible, popperMatchesTriggerWidth, appendTo }) => (
+  Popper: ({ trigger, popper, isVisible, appendTo }) => (
     <div data-testid="popper-mock">
       <div data-testid="trigger">{trigger}</div>
       <div data-testid="popper">{isVisible && popper}</div>
-      <p>Popper matches trigger width: {`${popperMatchesTriggerWidth}`}</p>
       <p>Append to class name: {appendTo && `${appendTo.className}`}</p>
     </div>
   )
@@ -206,8 +205,8 @@ test('Closes the overflowing tabs menu when a tab is selected', async () => {
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 0 }}>
       <OverflowTab
         overflowingTabs={[
-          { title: 'Tab one', eventKey: 1, tabContentRef: ('fakeRef' as unknown) as React.RefObject<any> },
-          { title: 'Tab two', eventKey: 2, tabContentRef: ('fakeRef' as unknown) as React.RefObject<any> }
+          { title: 'Tab one', eventKey: 1, tabContentRef: 'fakeRef' as unknown as React.RefObject<any> },
+          { title: 'Tab two', eventKey: 2, tabContentRef: 'fakeRef' as unknown as React.RefObject<any> }
         ]}
       />
     </TabsContext.Provider>
@@ -228,8 +227,8 @@ test('Closes the overflowing tabs menu when the user clicks outside of the menu'
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 0 }}>
       <OverflowTab
         overflowingTabs={[
-          { title: 'Tab one', eventKey: 1, tabContentRef: ('fakeRef' as unknown) as React.RefObject<any> },
-          { title: 'Tab two', eventKey: 2, tabContentRef: ('fakeRef' as unknown) as React.RefObject<any> }
+          { title: 'Tab one', eventKey: 1, tabContentRef: 'fakeRef' as unknown as React.RefObject<any> },
+          { title: 'Tab two', eventKey: 2, tabContentRef: 'fakeRef' as unknown as React.RefObject<any> }
         ]}
       />
     </TabsContext.Provider>
@@ -250,7 +249,7 @@ test('Calls the onTabClick callback provided via context when a tab is clicked',
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, handleTabClick: mockHandleTabClick }}>
       <OverflowTab
         overflowingTabs={[
-          { title: 'Tab one', eventKey: 1, tabContentRef: ('fakeRef' as unknown) as React.RefObject<any> }
+          { title: 'Tab one', eventKey: 1, tabContentRef: 'fakeRef' as unknown as React.RefObject<any> }
         ]}
       />
     </TabsContext.Provider>
@@ -303,7 +302,7 @@ test('Uses the selected tab title as the overflow tab title rather than the defa
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 1 }}>
       <OverflowTab
         overflowingTabs={[
-          { title: 'Tab one', eventKey: 1, tabContentRef: ('fakeRef' as unknown) as React.RefObject<any> }
+          { title: 'Tab one', eventKey: 1, tabContentRef: 'fakeRef' as unknown as React.RefObject<any> }
         ]}
       />
     </TabsContext.Provider>
@@ -323,7 +322,7 @@ test('Uses the selected tab title as the overflow tab title rather than the defa
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 1 }}>
       <OverflowTab
         overflowingTabs={[
-          { title: 'Tab one', eventKey: 1, tabContentRef: ('fakeRef' as unknown) as React.RefObject<any> }
+          { title: 'Tab one', eventKey: 1, tabContentRef: 'fakeRef' as unknown as React.RefObject<any> }
         ]}
         defaultTitleText="Test"
       />
@@ -369,13 +368,6 @@ test('Renders the tab with aria-expanded set to true when the menu is opened', a
   expect(overflowTab).toHaveAttribute('aria-expanded', 'true');
 });
 
-test('Passes Popper popperMatchesTriggerWidth set to false', () => {
-  render(<OverflowTab />);
-
-  // This assertion relies on the structure of the Popper mock to verify the correct props are being sent to Popper
-  expect(screen.getByText('Popper matches trigger width: false')).toBeVisible();
-});
-
 test('Passes Popper an appendTo value of the presentation element', async () => {
   const user = userEvent.setup();
 
@@ -394,7 +386,7 @@ test('Does not render an overflowing tab as a selected menu item by default', as
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 0 }}>
       <OverflowTab
         overflowingTabs={[
-          { title: 'Tab one', eventKey: 1, tabContentRef: ('fakeRef' as unknown) as React.RefObject<any> }
+          { title: 'Tab one', eventKey: 1, tabContentRef: 'fakeRef' as unknown as React.RefObject<any> }
         ]}
       />
     </TabsContext.Provider>
@@ -413,7 +405,7 @@ test('Renders an overflowing tab as a selected menu item when its key matches th
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 1 }}>
       <OverflowTab
         overflowingTabs={[
-          { title: 'Tab one', eventKey: 1, tabContentRef: ('fakeRef' as unknown) as React.RefObject<any> }
+          { title: 'Tab one', eventKey: 1, tabContentRef: 'fakeRef' as unknown as React.RefObject<any> }
         ]}
       />
     </TabsContext.Provider>
@@ -432,8 +424,8 @@ test('Matches snapshot when expanded', async () => {
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 1 }}>
       <OverflowTab
         overflowingTabs={[
-          { title: 'Tab one', eventKey: 1, tabContentRef: ('fakeRef' as unknown) as React.RefObject<any> },
-          { title: 'Tab two', eventKey: 2, tabContentRef: ('fakeRef' as unknown) as React.RefObject<any> }
+          { title: 'Tab one', eventKey: 1, tabContentRef: 'fakeRef' as unknown as React.RefObject<any> },
+          { title: 'Tab two', eventKey: 2, tabContentRef: 'fakeRef' as unknown as React.RefObject<any> }
         ]}
       />
     </TabsContext.Provider>

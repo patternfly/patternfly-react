@@ -265,14 +265,5 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return (
-    <Popper
-      trigger={toggle}
-      triggerRef={toggleRef}
-      popper={menu}
-      popperRef={menuRef}
-      isVisible={isOpen}
-      popperMatchesTriggerWidth={false}
-    />
-  );
+  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
 };

@@ -75,6 +75,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       position,
       toggle,
       autoFocus,
+      minWidth,
       menuAppendTo,
       isFlipEnabled,
       zIndex,
@@ -180,7 +181,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
               isVisible={isOpen}
               zIndex={zIndex}
-              popperMatchesTriggerWidth={false}
+              minWidth={minWidth !== undefined ? minWidth : 'revert'}
             />
           );
         }}

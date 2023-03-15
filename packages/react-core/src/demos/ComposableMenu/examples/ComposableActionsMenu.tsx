@@ -69,11 +69,6 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
       // eslint-disable-next-line no-console
       onActionClick={(event, itemId, actionId) => console.log(`clicked on ${itemId} - ${actionId}`)}
       onSelect={onSelect}
-      style={
-        {
-          '--pf-c-menu--Width': '300px'
-        } as React.CSSProperties
-      }
     >
       <MenuGroup label="Actions">
         <MenuList>
@@ -122,14 +117,5 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
     </Menu>
   );
 
-  return (
-    <Popper
-      trigger={toggle}
-      triggerRef={toggleRef}
-      popper={menu}
-      popperRef={menuRef}
-      isVisible={isOpen}
-      popperMatchesTriggerWidth={false}
-    />
-  );
+  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
 };

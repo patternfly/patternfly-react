@@ -1096,7 +1096,7 @@ exports[`Nav Nav List with flyout 1`] = `
       data-popper-escaped="true"
       data-popper-placement="right-start"
       data-popper-reference-hidden="true"
-      style="position: absolute; left: 0px; top: 0px; z-index: 9999; width: 0px; transform: translate(0px, 0px);"
+      style="position: absolute; left: 0px; top: 0px; z-index: 9999; min-width: 0px; transform: translate(0px, 0px);"
     >
       <div>
         Flyout test

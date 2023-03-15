@@ -16,6 +16,8 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   isDisabled?: boolean;
   /** Menu will open up or open down from the options menu toggle. */
   dropDirection?: 'up' | 'down';
+  /** Minimum width of the pagination options menu. If set to "trigger", the minimum width will be set to the toggle width. */
+  minWidth?: string | 'trigger';
   /** Array of titles and values which will be the options on the options menu dropdown. */
   perPageOptions?: PerPageOptions[];
   /** The title of the pagination options menu. */
@@ -58,6 +60,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   page: pageProp,
   itemCount,
   isDisabled = false,
+  minWidth,
   dropDirection = 'down',
   perPageOptions = [] as PerPageOptions[],
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -206,7 +209,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
         isVisible={isOpen}
         direction={dropDirection}
         appendTo={containerRef.current || undefined}
-        popperMatchesTriggerWidth={false}
+        minWidth={minWidth !== undefined ? minWidth : 'revert'}
       />
     </div>
   );

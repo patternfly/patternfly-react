@@ -236,7 +236,6 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
         popperRef={bulkSelectMenuRef}
         appendTo={bulkSelectContainerRef.current || undefined}
         isVisible={isBulkSelectOpen}
-        popperMatchesTriggerWidth={false}
       />
     </div>
   );

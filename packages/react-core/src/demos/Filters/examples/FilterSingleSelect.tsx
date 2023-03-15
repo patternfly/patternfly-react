@@ -226,7 +226,6 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
         popperRef={bulkSelectMenuRef}
         appendTo={bulkSelectContainerRef.current || undefined}
         isVisible={isBulkSelectOpen}
-        popperMatchesTriggerWidth={false}
       />
     </div>
   );

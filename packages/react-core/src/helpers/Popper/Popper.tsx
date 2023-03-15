@@ -62,14 +62,18 @@ export interface PopperProps {
    * Passing this prop will remove the wrapper div element from the popper.
    */
   popperRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
-  /** True to set the width of the popper element to the trigger element's width */
-  popperMatchesTriggerWidth?: boolean;
   /** popper direction */
   direction?: 'up' | 'down';
   /** popper position */
   position?: 'right' | 'left' | 'center';
   /** Instead of direction and position can set the placement of the popper */
   placement?: Placement;
+  /** Custsom width of the popper. If the value is "trigger", it will set the width to the trigger element's width */
+  width?: string | 'trigger';
+  /** Minimum width of the popper. If the value is "trigger", it will set the min width to the trigger element's width */
+  minWidth?: string | 'trigger';
+  /** Maximum width of the popper. If the value is "trigger", it will set the max width to the trigger element's width */
+  maxWidth?: string | 'trigger';
   /** The container to append the popper to. Defaults to 'inline'. */
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
   /** z-index of the popper element */
@@ -147,10 +151,12 @@ export interface PopperProps {
 export const Popper: React.FunctionComponent<PopperProps> = ({
   trigger,
   popper,
-  popperMatchesTriggerWidth = true,
   direction = 'down',
   position = 'left',
   placement,
+  width,
+  minWidth = 'trigger',
+  maxWidth,
   appendTo = 'inline',
   zIndex = 9999,
   isVisible = true,
@@ -279,21 +285,44 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     () => getOppositePlacement(getPlacement()),
     [direction, position, placement]
   );
-  const sameWidthMod: Modifier<'sameWidth', {}> = React.useMemo(
+
+  const widthMods: Modifier<'widthMods', {}> = React.useMemo(
     () => ({
-      name: 'sameWidth',
-      enabled: popperMatchesTriggerWidth,
+      name: 'widthMods',
+      enabled: width !== undefined || minWidth !== undefined || maxWidth !== undefined,
       phase: 'beforeWrite',
       requires: ['computeStyles'],
       fn: ({ state }) => {
-        state.styles.popper.width = `${state.rects.reference.width}px`;
+        const triggerWidth = state.rects.reference.width;
+        if (width) {
+          state.styles.popper.width = width === 'trigger' ? `${triggerWidth}px` : width;
+        }
+
+        if (minWidth) {
+          state.styles.popper.minWidth = minWidth === 'trigger' ? `${triggerWidth}px` : minWidth;
+        }
+
+        if (maxWidth) {
+          state.styles.popper.maxWidth = maxWidth === 'trigger' ? `${triggerWidth}px` : maxWidth;
+        }
       },
       effect: ({ state }) => {
-        state.elements.popper.style.width = `${(state.elements.reference as HTMLElement).offsetWidth}px`;
+        const triggerWidth = (state.elements.reference as HTMLElement).offsetWidth;
+        if (width) {
+          state.elements.popper.style.width = width === 'trigger' ? `${triggerWidth}px` : width;
+        }
+
+        if (minWidth) {
+          state.elements.popper.style.minWidth = minWidth === 'trigger' ? `${triggerWidth}px` : minWidth;
+        }
+
+        if (maxWidth) {
+          state.elements.popper.style.maxWidth = maxWidth === 'trigger' ? `${triggerWidth}px` : maxWidth;
+        }
         return () => {};
       }
     }),
-    [popperMatchesTriggerWidth]
+    [width, minWidth, maxWidth]
   );
 
   const {
@@ -326,7 +355,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
           fallbackPlacements: flipBehavior === 'flip' ? [getOppositePlacementMemo] : flipBehavior
         }
       },
-      sameWidthMod
+      widthMods
     ]
   });
 

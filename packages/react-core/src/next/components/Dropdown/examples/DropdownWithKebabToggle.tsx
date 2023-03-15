@@ -20,9 +20,8 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
     <Dropdown
       isOpen={isOpen}
       onSelect={onSelect}
-      minWidth="150px"
-      onOpenChange={isOpen => setIsOpen(isOpen)}
-      toggle={toggleRef => (
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      toggle={(toggleRef) => (
         <MenuToggle
           ref={toggleRef}
           aria-label="kebab dropdown toggle"
@@ -38,7 +37,7 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
         <DropdownItem itemId={0} key="link">
           Link
         </DropdownItem>
-        <DropdownItem itemId={1} key="action" to="#default-link2" onClick={ev => ev.preventDefault()}>
+        <DropdownItem itemId={1} key="action" to="#default-link2" onClick={(ev) => ev.preventDefault()}>
           Action
         </DropdownItem>
         <DropdownItem itemId={2} isDisabled key="disabled link">

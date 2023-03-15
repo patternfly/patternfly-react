@@ -107,11 +107,6 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
       onDrillOut={drillOut}
       onGetMenuHeight={setHeight}
       ref={menuRef}
-      style={
-        {
-          '--pf-c-menu--Width': '300px'
-        } as React.CSSProperties
-      }
     >
       <MenuContent menuHeight={`${menuHeights[activeMenu]}px`}>
         <MenuList>
@@ -247,14 +242,5 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return (
-    <Popper
-      trigger={toggle}
-      triggerRef={toggleRef}
-      popper={menu}
-      popperRef={menuRef}
-      isVisible={isOpen}
-      popperMatchesTriggerWidth={false}
-    />
-  );
+  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
 };

@@ -19,9 +19,8 @@ export const DropdownWithDescriptions: React.FunctionComponent = () => {
     <Dropdown
       isOpen={isOpen}
       onSelect={onSelect}
-      minWidth="150px"
-      onOpenChange={isOpen => setIsOpen(isOpen)}
-      toggle={toggleRef => (
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      toggle={(toggleRef) => (
         <MenuToggle ref={toggleRef} isFullWidth onClick={onToggleClick} isExpanded={isOpen}>
           Dropdown
         </MenuToggle>
@@ -36,7 +35,7 @@ export const DropdownWithDescriptions: React.FunctionComponent = () => {
           key="action"
           description="This is a very long description that describes the menu item"
           to="#default-link2"
-          onClick={ev => ev.preventDefault()}
+          onClick={(ev) => ev.preventDefault()}
         >
           Action
         </DropdownItem>
