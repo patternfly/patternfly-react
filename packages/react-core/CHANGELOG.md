@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.34...@patternfly/react-core@5.0.0-alpha.35) (2023-03-15)
+
+### Bug Fixes
+
+- **Card:** fixed card view demo ([#8806](https://github.com/patternfly/patternfly-react/issues/8806)) ([0c37fc5](https://github.com/patternfly/patternfly-react/commit/0c37fc564897c4ca7c02e947216d8c63c72a6417))
+
 # [5.0.0-alpha.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.33...@patternfly/react-core@5.0.0-alpha.34) (2023-03-15)
 
 ### Features
