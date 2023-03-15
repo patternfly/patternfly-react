@@ -8,8 +8,6 @@ import {
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem,
-  OptionsMenu,
-  OptionsMenuToggle,
   Pagination,
   Text,
   TextContent,
@@ -26,6 +24,10 @@ import {
   OverflowMenuItem,
   PageSection
 } from '@patternfly/react-core';
+import {
+  OptionsMenu,
+  OptionsMenuToggle
+} from '@patternfly/react-core/deprecated';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { rows, columns } from '../../examples/Data.jsx';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
