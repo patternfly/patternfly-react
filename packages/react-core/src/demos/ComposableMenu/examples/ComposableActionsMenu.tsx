@@ -69,11 +69,6 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
       // eslint-disable-next-line no-console
       onActionClick={(event, itemId, actionId) => console.log(`clicked on ${itemId} - ${actionId}`)}
       onSelect={onSelect}
-      style={
-        {
-          '--pf-c-menu--Width': '300px'
-        } as React.CSSProperties
-      }
     >
       <MenuGroup label="Actions">
         <MenuList>

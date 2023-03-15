@@ -146,17 +146,7 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
   };
 
   const menu = (
-    <Menu
-      ref={menuRef}
-      id="context-selector"
-      onSelect={onSelect}
-      isScrollable
-      style={
-        {
-          '--pf-c-menu--Width': '300px'
-        } as React.CSSProperties
-      }
-    >
+    <Menu ref={menuRef} id="context-selector" onSelect={onSelect} isScrollable>
       <MenuInput>
         <InputGroup>
           <SearchInput

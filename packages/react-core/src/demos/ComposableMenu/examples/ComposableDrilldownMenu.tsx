@@ -107,11 +107,6 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
       onDrillOut={drillOut}
       onGetMenuHeight={setHeight}
       ref={menuRef}
-      style={
-        {
-          '--pf-c-menu--Width': '300px'
-        } as React.CSSProperties
-      }
     >
       <MenuContent menuHeight={`${menuHeights[activeMenu]}px`}>
         <MenuList>
