@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.33...@patternfly/react-core@5.0.0-alpha.34) (2023-03-15)
+
+### Features
+
+- **Popper:** add width props, remove popperMatchesTriggerWidth ([#8724](https://github.com/patternfly/patternfly-react/issues/8724)) ([ec65022](https://github.com/patternfly/patternfly-react/commit/ec6502256203bb756469fd693c73d03e2b9b7bff))
+
 # [5.0.0-alpha.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.32...@patternfly/react-core@5.0.0-alpha.33) (2023-03-13)
 
 - EmptyState component cleanup to match core implementation (#8737) ([40dd9ad](https://github.com/patternfly/patternfly-react/commit/40dd9ad4b2ab32887c2f72a10eb78f2c4ee5ac4b)), closes [#8737](https://github.com/patternfly/patternfly-react/issues/8737) [#8555](https://github.com/patternfly/patternfly-react/issues/8555)
