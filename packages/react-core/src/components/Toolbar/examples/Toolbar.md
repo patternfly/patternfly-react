@@ -11,7 +11,7 @@ import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/next';
+import { Dropdown as DropdownNext, DropdownItem as DropdownItemNext, DropdownList } from '@patternfly/react-core/next';
 
 ## Examples
 

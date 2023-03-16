@@ -8,7 +8,6 @@ import {
   SelectVariant,
   Pagination,
   Dropdown,
-  DropdownSeparator,
   DropdownToggle,
   DropdownToggleCheckbox,
   DropdownItem,
@@ -24,7 +23,7 @@ import {
   ToolbarToggleGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/next';
+import { Dropdown as DropdownNext, DropdownItem as DropdownItemNext, DropdownList } from '@patternfly/react-core/next';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -102,21 +101,21 @@ export const ToolbarStacked: React.FunctionComponent = () => {
   };
 
   const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
+    <DropdownItemNext key="link">Link</DropdownItemNext>,
+    <DropdownItemNext key="action" component="button">
       Action
-    </DropdownItem>,
-    <DropdownItem key="disabled link" isDisabled>
+    </DropdownItemNext>,
+    <DropdownItemNext key="disabled link" isDisabled>
       Disabled Link
-    </DropdownItem>,
-    <DropdownItem key="disabled action" isDisabled component="button">
+    </DropdownItemNext>,
+    <DropdownItemNext key="disabled action" isDisabled component="button">
       Disabled Action
-    </DropdownItem>,
-    <DropdownSeparator key="separator" />,
-    <DropdownItem key="separated link">Separated Link</DropdownItem>,
-    <DropdownItem key="separated action" component="button">
+    </DropdownItemNext>,
+    <Divider key="separator" />,
+    <DropdownItemNext key="separated link">Separated Link</DropdownItemNext>,
+    <DropdownItemNext key="separated action" component="button">
       Separated Action
-    </DropdownItem>
+    </DropdownItemNext>
   ];
 
   const splitButtonDropdownItems = [
