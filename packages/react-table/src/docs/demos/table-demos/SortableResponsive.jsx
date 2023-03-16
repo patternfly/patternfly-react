@@ -13,9 +13,6 @@ import {
   TextContent,
   Dropdown,
   KebabToggle,
-  OptionsMenuItem,
-  OptionsMenuSeparator,
-  OptionsMenuItemGroup,
   OverflowMenu,
   OverflowMenuContent,
   OverflowMenuControl,
@@ -24,13 +21,8 @@ import {
   OverflowMenuItem,
   PageSection
 } from '@patternfly/react-core';
-import {
-  OptionsMenu,
-  OptionsMenuToggle
-} from '@patternfly/react-core/deprecated';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { rows, columns } from '../../examples/Data.jsx';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';

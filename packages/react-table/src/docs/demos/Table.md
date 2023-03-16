@@ -352,10 +352,6 @@ import {
   Select,
   SelectVariant
 } from '@patternfly/react-core';
-import {
-  OptionsMenu,
-  OptionsMenuToggle,
-} from '@patternfly/react-core/deprecated';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';

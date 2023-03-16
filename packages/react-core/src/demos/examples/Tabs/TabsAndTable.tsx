@@ -39,10 +39,6 @@ import {
   ToolbarContent,
   ToolbarToggleGroup
 } from '@patternfly/react-core';
-// import {
-//   OptionsMenu,
-//   OptionsMenuToggle,
-// } from '@patternfly/react-core/deprecated'
 import {
   TableComposable,
   Thead,
