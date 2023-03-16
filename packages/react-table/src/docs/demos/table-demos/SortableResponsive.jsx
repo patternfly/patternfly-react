@@ -131,7 +131,7 @@ export const ComposableTableSortable = () => {
   const tableToolbar = (
     <Toolbar id="sortable-toolbar">
       <ToolbarContent>
-        <ToolbarItem visibility={{ md: 'hidden' }}>
+        {/* <ToolbarItem visibility={{ md: 'hidden' }}> TODO: replace with select after #8073
           <OptionsMenu
             id="options-menu-multiple-options-example"
             menuItems={[
@@ -181,7 +181,7 @@ export const ComposableTableSortable = () => {
             menuAppendTo="parent"
             isFlipEnabled
           />
-        </ToolbarItem>
+        </ToolbarItem> */}
         <OverflowMenu breakpoint="lg">
           <OverflowMenuContent isPersistent>
             <OverflowMenuGroup isPersistent groupType="button">
