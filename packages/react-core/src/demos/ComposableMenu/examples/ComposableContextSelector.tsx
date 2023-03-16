@@ -6,7 +6,8 @@ import {
   MenuFooter,
   MenuList,
   MenuItem,
-  MenuInput,
+  MenuSearch,
+  MenuSearchInput,
   Popper,
   Divider,
   InputGroup,
@@ -147,26 +148,28 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
 
   const menu = (
     <Menu ref={menuRef} id="context-selector" onSelect={onSelect} isScrollable>
-      <MenuInput>
-        <InputGroup>
-          <SearchInput
-            value={searchInputValue}
-            type="search"
-            placeholder="Search"
-            onChange={(_event, value) => onSearchInputChange(value)}
-            onKeyPress={onEnterPressed}
-            aria-labelledby="pf-context-selector-search-button-id-1"
-          />
-          <Button
-            variant={ButtonVariant.control}
-            aria-label="Search menu items"
-            id="pf-context-selector-search-button-id-1"
-            onClick={onSearchButtonClick}
-          >
-            <SearchIcon aria-hidden="true" />
-          </Button>
-        </InputGroup>
-      </MenuInput>
+      <MenuSearch>
+        <MenuSearchInput>
+          <InputGroup>
+            <SearchInput
+              value={searchInputValue}
+              type="search"
+              placeholder="Search"
+              onChange={(_event, value) => onSearchInputChange(value)}
+              onKeyPress={onEnterPressed}
+              aria-labelledby="pf-context-selector-search-button-id-1"
+            />
+            <Button
+              variant={ButtonVariant.control}
+              aria-label="Search menu items"
+              id="pf-context-selector-search-button-id-1"
+              onClick={onSearchButtonClick}
+            >
+              <SearchIcon aria-hidden="true" />
+            </Button>
+          </InputGroup>
+        </MenuSearchInput>
+      </MenuSearch>
       <Divider />
       <MenuContent maxMenuHeight="200px">
         <MenuList>

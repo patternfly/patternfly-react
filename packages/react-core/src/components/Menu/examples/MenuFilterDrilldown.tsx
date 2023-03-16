@@ -6,7 +6,8 @@ import {
   MenuItem,
   Divider,
   DrilldownMenu,
-  MenuInput,
+  MenuSearch,
+  MenuSearchInput,
   SearchInput
 } from '@patternfly/react-core';
 
@@ -66,7 +67,7 @@ export const MenuWithDrilldown: React.FunctionComponent = () => {
   ];
 
   const mapped = startDrillItems
-    .filter(opt => !startInput || opt.item.toLowerCase().includes(startInput.toString().toLowerCase()))
+    .filter((opt) => !startInput || opt.item.toLowerCase().includes(startInput.toString().toLowerCase()))
     .map((opt, index) => (
       <MenuItem key={opt.item} itemId={index} {...opt.rest}>
         {opt.item}
@@ -102,15 +103,17 @@ export const MenuWithDrilldown: React.FunctionComponent = () => {
                   Start rollout
                 </MenuItem>
                 <Divider component="li" />
-                <MenuInput>
-                  <SearchInput
-                    ref={searchRef}
-                    value={startInput}
-                    aria-label="Filter menu items"
-                    type="search"
-                    onChange={(_event, value) => handleStartTextInputChange(value)}
-                  />
-                </MenuInput>
+                <MenuSearch>
+                  <MenuSearchInput>
+                    <SearchInput
+                      ref={searchRef}
+                      value={startInput}
+                      aria-label="Filter menu items"
+                      type="search"
+                      onChange={(_event, value) => handleStartTextInputChange(value)}
+                    />
+                  </MenuSearchInput>
+                </MenuSearch>
                 <Divider component="li" />
                 {mapped}
               </DrilldownMenu>

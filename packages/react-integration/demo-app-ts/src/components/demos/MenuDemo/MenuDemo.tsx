@@ -11,7 +11,8 @@ import {
   Divider,
   MenuItemAction,
   MenuContent,
-  MenuInput,
+  MenuSearch,
+  MenuSearchInput,
   MenuFooter,
   Button,
   Spinner,
@@ -46,7 +47,7 @@ export class MenuDemo extends Component {
       itemId={1}
       to="#default-link2"
       // just for demo so that navigation is not triggered
-      onClick={event => event.preventDefault()}
+      onClick={(event) => event.preventDefault()}
     >
       Link
     </MenuItem>,
@@ -94,7 +95,7 @@ export class MenuDemo extends Component {
   onActionSelect = (event: any, itemId: number) => {
     if (this.state.selectedItems.indexOf(itemId) !== -1) {
       this.setState({
-        selectedItems: this.state.selectedItems.filter(id => id !== itemId)
+        selectedItems: this.state.selectedItems.filter((id) => id !== itemId)
       });
     } else {
       this.setState({
@@ -108,7 +109,7 @@ export class MenuDemo extends Component {
       const isFavorite = this.state.favorites.includes(itemId);
       if (isFavorite) {
         this.setState({
-          favorites: this.state.favorites.filter(fav => fav !== itemId)
+          favorites: this.state.favorites.filter((fav) => fav !== itemId)
         });
       } else {
         this.setState({
@@ -128,7 +129,7 @@ export class MenuDemo extends Component {
   onMultiOptionSelect = (event: any, itemId: number) => {
     if (this.state.selectedItems.indexOf(itemId) !== -1) {
       this.setState({
-        selectedItems: this.state.selectedItems.filter(id => id !== itemId)
+        selectedItems: this.state.selectedItems.filter((id) => id !== itemId)
       });
     } else {
       this.setState({
@@ -237,7 +238,7 @@ export class MenuDemo extends Component {
     const menuListItemsText = ['Action 1', 'Action 2', 'Action 3'];
 
     const menuListItems = menuListItemsText
-      .filter(item => !input || item.toLowerCase().includes(input.toLowerCase()))
+      .filter((item) => !input || item.toLowerCase().includes(input.toLowerCase()))
       .map((currentValue, index) => (
         <MenuItem id={`filtered-items-${index}`} key={currentValue} itemId={index}>
           {currentValue}
@@ -257,14 +258,16 @@ export class MenuDemo extends Component {
           Filterable Menu
         </Title>
         <Menu onSelect={this.onSimpleSelect} activeItemId={activeItem} id="filterable-menu">
-          <MenuInput>
-            <SearchInput
-              value={input}
-              aria-label="filterable-example-with-text-input"
-              type="search"
-              onChange={(_event, value) => this.handleTextInputChange(value, 'input')}
-            />
-          </MenuInput>
+          <MenuSearch>
+            <MenuSearchInput>
+              <SearchInput
+                value={input}
+                aria-label="filterable-example-with-text-input"
+                type="search"
+                onChange={(_event, value) => this.handleTextInputChange(value, 'input')}
+              />
+            </MenuSearchInput>
+          </MenuSearch>
           <Divider />
           <MenuContent>
             <MenuList>{menuListItems}</MenuList>
@@ -533,8 +536,8 @@ export class MenuDemo extends Component {
                 <MenuList>
                   {items
                     // map the items into the favorites group that have been favorited
-                    .filter(item => favorites.includes(item.itemId))
-                    .map(item => {
+                    .filter((item) => favorites.includes(item.itemId))
+                    .map((item) => {
                       const { text, description, itemId, action, actionId } = item;
                       return (
                         <MenuItem
@@ -555,7 +558,7 @@ export class MenuDemo extends Component {
           )}
           <MenuGroup label="All actions">
             <MenuList>
-              {items.map(item => {
+              {items.map((item) => {
                 const { text, description, itemId, action, actionId } = item;
                 const isFavorited = favorites.includes(item.itemId);
                 return (
