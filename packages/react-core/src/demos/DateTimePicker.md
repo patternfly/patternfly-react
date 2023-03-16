@@ -1,6 +1,7 @@
 ---
 id: Date and time picker
-section: demos
+section: components
+subsection: date-and-time
 beta: true
 ---
 

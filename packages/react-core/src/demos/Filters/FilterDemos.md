@@ -1,6 +1,6 @@
 ---
 id: Filters
-section: demos
+section: patterns
 ---
 
 import {

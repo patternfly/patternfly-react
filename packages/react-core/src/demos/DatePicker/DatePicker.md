@@ -1,6 +1,7 @@
 ---
-id: Date picker
+id: Date range picker
 section: components
+subsection: date-and-time
 beta: true
 ---
 

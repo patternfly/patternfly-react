@@ -7,11 +7,12 @@ module.exports = {
   hasDarkThemeSwitcher: true,
   hasDesignGuidelines: false,
   sideNavItems: [
-    { section: 'developer-resources' },
-    { section: 'charts' },
+    { section: 'get-started' },
+    { section: 'developer-resources' }, 
     { section: 'components' },
-    { section: 'demos' },
+    { section: 'patterns' },
     { section: 'extensions' },
+    { section: 'charts' },
     { section: 'topology' },
     { section: 'layouts' }
   ],
