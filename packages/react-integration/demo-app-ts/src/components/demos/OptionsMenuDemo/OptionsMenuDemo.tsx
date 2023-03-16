@@ -9,7 +9,7 @@ import {
   OptionsMenuDirection,
   OptionsMenuPosition,
   OptionsMenuToggleWithText
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/deprecated';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 interface OptionsMenuDemoState {
