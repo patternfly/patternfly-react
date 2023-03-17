@@ -345,8 +345,6 @@ import {
   OverflowMenu,
   OverflowMenuGroup,
   OverflowMenuItem,
-  OptionsMenu,
-  OptionsMenuToggle,
   Pagination,
   PaginationVariant,
   Text,
@@ -1005,7 +1003,7 @@ class ColumnManagementAction extends React.Component {
                   }
                 />
               </OverflowMenuItem>
-              <OverflowMenuItem>
+              {/*<OverflowMenuItem> TODO: replace with select after #8073
                 <OptionsMenu
                   id="page-layout-table-draggable-column-management-action-toolbar-top-options-menu-toggle"
                   isPlain
@@ -1018,7 +1016,7 @@ class ColumnManagementAction extends React.Component {
                     />
                   }
                 />
-              </OverflowMenuItem>
+              </OverflowMenuItem> */}
               <OverflowMenuGroup groupType="button" isPersistent>
                 <OverflowMenuItem>
                   <Button variant="primary">Action</Button>

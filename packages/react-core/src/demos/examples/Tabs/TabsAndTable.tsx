@@ -17,8 +17,6 @@ import {
   Label,
   LabelGroup,
   MenuToggle,
-  OptionsMenu,
-  OptionsMenuToggle,
   OverflowMenu,
   OverflowMenuContent,
   OverflowMenuControl,
@@ -39,7 +37,7 @@ import {
   Toolbar,
   ToolbarItem,
   ToolbarContent,
-  ToolbarToggleGroup
+  ToolbarToggleGroup,
 } from '@patternfly/react-core';
 import {
   TableComposable,
@@ -59,7 +57,6 @@ import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 interface Repository {
   name: string;
@@ -142,8 +139,8 @@ export const TablesAndTabs = () => {
   const customActionsToggle = (props: CustomActionsToggleProps) => (
     <KebabToggle
       isDisabled={props.isDisabled}
-      onToggle={(event: any, value: boolean) => {
-        props.onToggle(value);
+      onToggle={(event: any) => {
+        props.onToggle(event);
         event.stopPropagation();
       }}
     />
@@ -162,7 +159,7 @@ export const TablesAndTabs = () => {
             />
           </ToolbarItem>
         </ToolbarToggleGroup>
-        <ToolbarItem>
+        {/* <ToolbarItem> TODO: replace with select after #8073 goes in
           <OptionsMenu
             id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
             isPlain
@@ -175,7 +172,7 @@ export const TablesAndTabs = () => {
               />
             }
           />
-        </ToolbarItem>
+        </ToolbarItem> */}
         <OverflowMenu breakpoint="md">
           <OverflowMenuContent className="pf-u-display-none pf-u-display-block-on-lg">
             <OverflowMenuGroup groupType="button" isPersistent>

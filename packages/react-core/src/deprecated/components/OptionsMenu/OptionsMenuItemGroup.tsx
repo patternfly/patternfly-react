@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { css } from '@patternfly/react-styles';
-import { Divider } from '../Divider';
+import { Divider } from '../../../components/Divider';
 
 export interface OptionsMenuItemGroupProps extends React.HTMLProps<HTMLElement> {
   /** Content to be rendered in the options menu items component */

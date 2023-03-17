@@ -51,7 +51,6 @@ export * from './MultipleFileUpload';
 export * from './Nav';
 export * from './NotificationBadge';
 export * from './NotificationDrawer';
-export * from './OptionsMenu';
 export * from './OverflowMenu';
 export * from './Page';
 export * from './Pagination';
