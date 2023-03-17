@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.21](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.20...demo-app-ts@5.0.0-alpha.21) (2023-03-17)
+
+### Features
+
+- **OverflowMenu:** Use next dropdown and dropdownItems ([#8359](https://github.com/patternfly/patternfly-react/issues/8359)) ([d356f4a](https://github.com/patternfly/patternfly-react/commit/d356f4a3f5853313764bd77fd6e02163b81378d7))
+
 # [5.0.0-alpha.20](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.19...demo-app-ts@5.0.0-alpha.20) (2023-03-17)
 
 **Note:** Version bump only for package demo-app-ts
