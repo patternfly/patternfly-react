@@ -5,7 +5,6 @@ cssPrefix: pf-c-data-list
 propComponents:
   [
     'DataList',
-    'SelectableRowObject',
     'DataListAction',
     'DataListCell',
     'DataListCheck',

@@ -50,7 +50,7 @@ describe('DataList', () => {
 
   test('List renders with a hidden input to improve a11y when selectableRow is passed', () => {
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ onChange: () => {} }}>
+      <DataList aria-label="this is a simple list" onSelectableRowChange={  () => {} }>
         <DataListItem>
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
@@ -85,7 +85,7 @@ describe('DataList', () => {
     const user = userEvent.setup();
 
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ onChange: mock }} selectedDataListItemId=''>
+      <DataList aria-label="this is a simple list" onSelectableRowChange={ mock } selectedDataListItemId=''>
         <DataListItem id='item-test-id'>
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
@@ -104,7 +104,7 @@ describe('DataList', () => {
     const mock = jest.fn();
 
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ onChange: mock }} selectedDataListItemId=''>
+      <DataList aria-label="this is a simple list" onSelectableRowChange={ mock } selectedDataListItemId=''>
         <DataListItem id='item-test-id'>
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
@@ -118,7 +118,7 @@ describe('DataList', () => {
 
   test('Item applies selectableInputAriaLabel to the hidden input', () => {
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ onChange: () => {} }}>
+      <DataList aria-label="this is a simple list" onSelectableRowChange={ () => {} }>
         <DataListItem selectableInputAriaLabel="Data list item label test">
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
@@ -134,7 +134,7 @@ describe('DataList', () => {
 
   test('Item defaults to labelling its input using its aria-labelledby prop', () => {
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ onChange: () => {} }}>
+      <DataList aria-label="this is a simple list" onSelectableRowChange={  () => {} }>
         <DataListItem aria-labelledby="test-id">
           <p id="test-id">Test cell content</p>
         </DataListItem>
@@ -148,7 +148,7 @@ describe('DataList', () => {
 
   test('Item prioritizes selectableInputAriaLabel over aria-labelledby prop', () => {
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ onChange: () => {} }}>
+      <DataList aria-label="this is a simple list" onSelectableRowChange={  () => {} }>
         <DataListItem aria-labelledby="test-id" selectableInputAriaLabel="Data list item label test">
           <p id="test-id">Test cell content</p>
         </DataListItem>
