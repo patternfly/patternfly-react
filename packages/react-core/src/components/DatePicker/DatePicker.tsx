@@ -272,7 +272,7 @@ const DatePickerBase = (
         </div>
       </Popover>
       {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
-      {errorText.trim() && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{errorText}</div>}
+      {errorText.trim() && <div className={css(styles.datePickerHelperText)}>{errorText}</div>}
     </div>
   );
 };
