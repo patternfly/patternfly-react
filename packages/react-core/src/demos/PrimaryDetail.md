@@ -1,6 +1,6 @@
 ---
 id: Primary-detail
-section: demos
+section: patterns
 ---
 
 import {

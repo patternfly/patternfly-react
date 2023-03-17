@@ -7,10 +7,11 @@ module.exports = {
   hasDarkThemeSwitcher: true,
   hasDesignGuidelines: false,
   sideNavItems: [
+    { section: 'get-started' },
     { section: 'developer-resources' },
     { section: 'charts' },
     { section: 'components' },
-    { section: 'demos' },
+    { section: 'patterns' },
     { section: 'layouts' }
   ],
   topNavItems: [{ text: 'Icons', path: '/icons' }],

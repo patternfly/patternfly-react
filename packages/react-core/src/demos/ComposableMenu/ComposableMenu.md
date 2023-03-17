@@ -1,6 +1,7 @@
 ---
 id: Composable menu
-section: demos
+section: components
+subsection: menus
 ---
 
 import { Link } from '@reach/router';
