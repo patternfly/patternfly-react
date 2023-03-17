@@ -16,6 +16,7 @@ import {
   KebabToggle,
   Label,
   LabelGroup,
+  MenuToggle,
   OverflowMenu,
   OverflowMenuContent,
   OverflowMenuControl,
@@ -36,7 +37,7 @@ import {
   Toolbar,
   ToolbarItem,
   ToolbarContent,
-  ToolbarToggleGroup
+  ToolbarToggleGroup,
 } from '@patternfly/react-core';
 import {
   TableComposable,
