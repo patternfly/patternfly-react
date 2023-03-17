@@ -2,7 +2,7 @@ it('Navigate to demo section', () => {
   cy.visit('http://localhost:3000/date-picker-demo-nav-link');
 });
 
-// Reenable with issue  #8457
+// TODO: Reenable with issue  #8457
 xit('Verify validation error can be cleared from outside', () => {
   cy.get('.pf-c-date-picker')
     .children()

@@ -260,7 +260,7 @@ const DatePickerBase = (
             />
             <button
               ref={buttonRef}
-              // Removed style follow up work with issue #8457
+              // TODO: Removed style follow up work with issue #8457
               className={css(buttonStyles.button, buttonStyles.modifiers.control)}
               aria-label={buttonAriaLabel}
               type="button"
