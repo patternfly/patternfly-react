@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "5.0.0-alpha.36",
+  "version": "5.0.0-alpha.37",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -45,7 +45,7 @@
     "subpaths": "node scripts/copySubpaths.js"
   },
   "dependencies": {
-    "@patternfly/react-icons": "^5.0.0-alpha.4",
+    "@patternfly/react-icons": "^5.0.0-alpha.5",
     "@patternfly/react-styles": "^5.0.0-alpha.4",
     "@patternfly/react-tokens": "^5.0.0-alpha.4",
     "focus-trap": "6.9.2",

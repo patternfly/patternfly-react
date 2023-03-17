@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.36...@patternfly/react-core@5.0.0-alpha.37) (2023-03-17)
+
+### Bug Fixes
+
+- **Modal:** Add close button wrapper div ([#8800](https://github.com/patternfly/patternfly-react/issues/8800)) ([679f1ee](https://github.com/patternfly/patternfly-react/commit/679f1eebd3156e85bf50ded1e5c4578784a2093e))
+
 # [5.0.0-alpha.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.35...@patternfly/react-core@5.0.0-alpha.36) (2023-03-17)
 
 ### Bug Fixes
