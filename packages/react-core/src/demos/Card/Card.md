@@ -18,6 +18,9 @@ import sparkIcon from './camel-spark_200x150.png';
 import swaggerIcon from './camel-swagger-java_200x150.png';
 import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+
+import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/next';
 
 ## Demos
 
@@ -49,6 +52,7 @@ import {
   EmptyStateActions,
   Gallery,
   KebabToggle,
+  MenuToggle,
   OverflowMenu,
   OverflowMenuControl,
   OverflowMenuDropdownItem,
@@ -67,6 +71,8 @@ import {
   ToolbarFilter,
   ToolbarContent
 } from '@patternfly/react-core';
+import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/next';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -120,9 +126,9 @@ class CardViewBasic extends React.Component {
       }));
     };
 
-    this.onToolbarKebabDropdownToggle = (_event, isLowerToolbarKebabDropdownOpen) => {
+    this.onToolbarKebabDropdownToggle = () => {
       this.setState({
-        isLowerToolbarKebabDropdownOpen
+        isOpen: !this.state.isLowerToolbarKebabDropdownOpen
       });
     };
 
@@ -495,19 +501,19 @@ class CardViewBasic extends React.Component {
     } = this.state;
 
     const toolbarKebabDropdownItems = [
-      <OverflowMenuDropdownItem key="link">Link</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="action" component="button">
+      <OverflowMenuDropdownItem itemId={0} key="link">Link</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem itemId={1} key="action" component="button">
         Action
       </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="disabled link" isDisabled>
+      <OverflowMenuDropdownItem itemId={2} key="disabled link" isDisabled>
         Disabled Link
       </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="disabled action" isDisabled component="button">
+      <OverflowMenuDropdownItem itemId={3} key="disabled action" isDisabled component="button">
         Disabled Action
       </OverflowMenuDropdownItem>,
-      <DropdownSeparator key="separator" />,
-      <OverflowMenuDropdownItem key="separated link">Separated Link</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="separated action" component="button">
+      <DropdownSeparator itemId={4} key="separator" />,
+      <OverflowMenuDropdownItem itemId={5} key="separated link">Separated Link</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem itemId={6} key="separated action" component="button">
         Separated Action
       </OverflowMenuDropdownItem>
     ];
@@ -522,15 +528,23 @@ class CardViewBasic extends React.Component {
               <Button variant="primary">Create a project</Button>
             </OverflowMenuItem>
             <OverflowMenuControl hasAdditionalOptions>
-              <Dropdown
+              <DropdownNext
                 onSelect={this.onToolbarKebabDropdownSelect}
-                toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
+                toggle={toggleRef => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    aria-label="Toolbar kebab overflow menu"
+                    variant="plain"
+                    onClick={this.onToolbarKebabDropdownToggle}
+                    isExpanded={isLowerToolbarKebabDropdownOpen}
+                  >
+                    <EllipsisVIcon />
+                  </MenuToggle>
+                )}
                 isOpen={isLowerToolbarKebabDropdownOpen}
-                isPlain
-                dropdownItems={toolbarKebabDropdownItems}
-                isFlipEnabled
-                menuAppendTo="parent"
-              />
+              >
+                <DropdownList>{toolbarKebabDropdownItems}</DropdownList>
+              </DropdownNext>
             </OverflowMenuControl>
           </OverflowMenu>
         </ToolbarItem>

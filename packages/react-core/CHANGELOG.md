@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.37...@patternfly/react-core@5.0.0-alpha.38) (2023-03-17)
+
+### Features
+
+- **OverflowMenu:** Use next dropdown and dropdownItems ([#8359](https://github.com/patternfly/patternfly-react/issues/8359)) ([d356f4a](https://github.com/patternfly/patternfly-react/commit/d356f4a3f5853313764bd77fd6e02163b81378d7))
+
+# [5.0.0-alpha.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.36...@patternfly/react-core@5.0.0-alpha.37) (2023-03-17)
+
+### Bug Fixes
+
+- **Modal:** Add close button wrapper div ([#8800](https://github.com/patternfly/patternfly-react/issues/8800)) ([679f1ee](https://github.com/patternfly/patternfly-react/commit/679f1eebd3156e85bf50ded1e5c4578784a2093e))
+
+# [5.0.0-alpha.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.35...@patternfly/react-core@5.0.0-alpha.36) (2023-03-17)
+
+### Bug Fixes
+
+- **brand:** spread styles when there are no children ([#8811](https://github.com/patternfly/patternfly-react/issues/8811)) ([878f52c](https://github.com/patternfly/patternfly-react/commit/878f52cc8ea693aae79b8c09a606d6627353cc43))
+
 # [5.0.0-alpha.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.34...@patternfly/react-core@5.0.0-alpha.35) (2023-03-15)
 
 ### Bug Fixes
