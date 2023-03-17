@@ -8,10 +8,11 @@ import {
   OverflowMenuGroup,
   OverflowMenuItem,
   OverflowMenuDropdownItem,
-  Dropdown,
-  KebabToggle
+  MenuToggle
 } from '@patternfly/react-core';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/next';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 interface Repository {
   name: string;
@@ -43,13 +44,13 @@ export const ComposableTableActions: React.FunctionComponent = () => {
   };
 
   const dropdownItems = [
-    <OverflowMenuDropdownItem key="item1" isShared>
+    <OverflowMenuDropdownItem itemId={0} key="item1" isShared>
       Pimary
     </OverflowMenuDropdownItem>,
-    <OverflowMenuDropdownItem key="item2" isShared>
+    <OverflowMenuDropdownItem itemId={1} key="item2" isShared>
       Secondary
     </OverflowMenuDropdownItem>,
-    <OverflowMenuDropdownItem key="item3" isShared>
+    <OverflowMenuDropdownItem itemId={2} key="item3" isShared>
       Tertiary
     </OverflowMenuDropdownItem>
   ];
@@ -68,7 +69,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {repos.map(repo => (
+          {repos.map((repo) => (
             <Tr key={repo.name}>
               <Td dataLabel={columnNames.name}>{repo.name}</Td>
               <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
@@ -91,22 +92,30 @@ export const ComposableTableActions: React.FunctionComponent = () => {
                     </OverflowMenuGroup>
                   </OverflowMenuContent>
                   <OverflowMenuControl>
-                    <Dropdown
-                      position="right"
+                    <DropdownNext
                       onSelect={() =>
-                        setRepos(repos.map(r => (r.name !== repo.name ? r : { ...r, isMenuOpen: !r.isMenuOpen })))
+                        setRepos(repos.map((r) => (r.name !== repo.name ? r : { ...r, isMenuOpen: !r.isMenuOpen })))
                       }
-                      toggle={
-                        <KebabToggle
-                          onToggle={(_event, open) =>
-                            setRepos(repos.map(r => (r.name !== repo.name ? r : { ...r, isMenuOpen: open })))
+                      toggle={(toggleRef) => (
+                        <MenuToggle
+                          ref={toggleRef}
+                          variant="plain"
+                          aria-label="Table actions overflow menu"
+                          onClick={() =>
+                            setRepos(repos.map((r) => (r.name !== repo.name ? r : { ...r, isMenuOpen: !r.isMenuOpen })))
                           }
-                        />
-                      }
+                          isExpanded={repo.isMenuOpen}
+                        >
+                          <EllipsisVIcon />
+                        </MenuToggle>
+                      )}
                       isOpen={repo.isMenuOpen}
-                      isPlain
-                      dropdownItems={dropdownItems}
-                    />
+                      onOpenChange={(isOpen) =>
+                        setRepos(repos.map((r) => (r.name !== repo.name ? r : { ...r, isMenuOpen: isOpen })))
+                      }
+                    >
+                      <DropdownList>{dropdownItems}</DropdownList>
+                    </DropdownNext>
                   </OverflowMenuControl>
                 </OverflowMenu>
               </Td>
