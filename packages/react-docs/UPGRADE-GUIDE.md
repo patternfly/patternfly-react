@@ -13,7 +13,6 @@ This upgrade guide details **what** was broken and **how** to fix it. To learn *
 ## Global
 - We no longer support UMD builds for individual packages. Consider using our [react-core.umd.js bundle](https://unpkg.com/@patternfly/react-core@3/dist/umd/react-core.umd.js) instead. [(#4076)](https://github.com/patternfly/patternfly-react/pull/4076)
 - We no longer define `propTypes` for our components. Consider using our Typescript types under each package's `dist/js` folder instead. [(#4076)](https://github.com/patternfly/patternfly-react/pull/4076)
-- We have updated our React peer dependencies so that our packages now can possibly use hooks, which requires `react@^16.8.0` instead of `react@^16.4.0`. We recommend upgrading your version of React if it is below 16.8.0.
 
 ## React core
 - Major changes include removing the `Toolbar` layout in favor of a new `PageHeaderTools` component. `DataToolbar` has been renamed `Toolbar`. `Expandable` has been renamed `ExpandableSection`.
