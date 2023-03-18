@@ -255,7 +255,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         isActionCell && styles.tableAction,
         textCenter && styles.modifiers.center,
         noPadding && styles.modifiers.noPadding,
-        isStickyColumn && scrollStyles.tableStickyColumn,
+        isStickyColumn && scrollStyles.tableStickyCell,  // TODO: further updates will be made  with issue #8829
         hasRightBorder && scrollStyles.modifiers.borderRight,
         styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap' | undefined],
         draggableParams && styles.tableDraggable,
