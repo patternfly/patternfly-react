@@ -1,6 +1,7 @@
 ---
 id: Dropdown
 section: components
+subsection: menus
 cssPrefix: pf-c-menu
 propComponents: ['Dropdown', DropdownGroup, 'DropdownItem', 'DropdownList', 'MenuToggle']
 beta: true

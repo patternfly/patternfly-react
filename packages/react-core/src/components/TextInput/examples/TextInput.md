@@ -1,6 +1,7 @@
 ---
 id: Text input
 section: components
+subsection: forms
 cssPrefix: pf-c-form-control
 propComponents: ['TextInput']
 ---

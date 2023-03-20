@@ -1,6 +1,7 @@
 ---
-id: File upload - multiple
+id: Multiple file upload
 section: components
+subsection: file-upload
 cssPrefix: pf-c-multiple-file-upload
 propComponents:
   ['MultipleFileUpload', 'MultipleFileUploadMain', 'MultipleFileUploadStatus', 'MultipleFileUploadStatusItem']

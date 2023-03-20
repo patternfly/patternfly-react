@@ -1,8 +1,9 @@
 ---
-id: File upload
+id: Text file upload
 cssPrefix: pf-c-file-upload
 propComponents: ['FileUpload', 'FileUploadField']
 section: components
+subsection: file-upload
 ---
 
 import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-icon';
