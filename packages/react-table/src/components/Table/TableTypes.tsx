@@ -157,6 +157,10 @@ export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'>, P
   itemKey?: string;
   /** Content to display in the actions menu item */
   title?: string | React.ReactNode;
+  /** Tooltip to display when hovered over the item */
+  tooltip?: React.ReactNode;
+  /** Additional props forwarded to the tooltip component */
+  tooltipProps?: any;
   /** Click handler for the actions menu item */
   onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
   /** Flag indicating this action should be placed outside the actions menu, beside the toggle */
