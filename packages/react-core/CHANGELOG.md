@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.40...@patternfly/react-core@5.0.0-alpha.41) (2023-03-20)
+
+### Bug Fixes
+
+- **Drawer:** expand only onTransitionEnd of the drawer ([#8801](https://github.com/patternfly/patternfly-react/issues/8801)) ([ea884b5](https://github.com/patternfly/patternfly-react/commit/ea884b56c3478dacfaa84c1ddf20abc7ad669c25))
+
 # [5.0.0-alpha.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.39...@patternfly/react-core@5.0.0-alpha.40) (2023-03-18)
 
 **Note:** Version bump only for package @patternfly/react-core
