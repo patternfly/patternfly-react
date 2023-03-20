@@ -1,5 +1,10 @@
 import React from 'react';
-import { Modal, ModalVariant, Button, Dropdown, DropdownToggle, DropdownItem } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownToggle,
+  DropdownItem as DropdownItemDeprecated
+} from '@patternfly/react-core/deprecated';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 export const ModalWithDropdown: React.FunctionComponent = () => {
@@ -35,16 +40,16 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
   };
 
   const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
+    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="action" component="button">
       Action
-    </DropdownItem>,
-    <DropdownItem key="disabled link" isDisabled>
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled link" isDisabled>
       Disabled Link
-    </DropdownItem>,
-    <DropdownItem key="disabled action" isDisabled component="button">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
       Disabled Action
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   return (
@@ -75,7 +80,7 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
         </div>
         <br />
         <div>
-          <Dropdown
+          <DropdownDeprecated
             onSelect={onSelect}
             toggle={
               <DropdownToggle

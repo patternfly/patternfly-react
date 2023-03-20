@@ -3,6 +3,7 @@ id: Card
 section: components
 ---
 
+import { Dropdown as DropdownDeprecated, DropdownItem as DropdownItemDeprecated, KebabToggle } from '@patternfly/react-core/deprecated';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
@@ -31,15 +32,17 @@ import {
   Level,
   LabelGroup,
   Label,
-  Dropdown,
-  DropdownItem,
-  KebabToggle,
   Grid,
   Flex,
   List,
   ListItem,
   Button
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
@@ -71,22 +74,22 @@ class CardGridDemo extends React.Component {
   render() {
     const { isCardExpanded, isDropdownOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem key="action1" component="button">
+      <DropdownItemDeprecated key="action1" component="button">
         Action 1
-      </DropdownItem>,
-      <DropdownItem key="action2" component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action2" component="button">
         Action 2
-      </DropdownItem>,
-      <DropdownItem key="disabled action3" isDisabled component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="disabled action3" isDisabled component="button">
         Disabled Action 3
-      </DropdownItem>,
-      <DropdownItem key="action4" component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action4" component="button">
         Action 4
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const headerActions = (
-      <Dropdown
+      <DropdownDeprecated
         onSelect={this.onActionSelect}
         toggle={<KebabToggle onToggle={this.onActionToggle} />}
         isOpen={isDropdownOpen}

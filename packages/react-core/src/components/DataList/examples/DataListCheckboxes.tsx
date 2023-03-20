@@ -7,12 +7,14 @@ import {
   DataListItemRow,
   DataListCell,
   DataListCheck,
-  DataListAction,
-  Dropdown,
-  DropdownItem,
+  DataListAction
+} from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
   DropdownPosition,
   KebabToggle
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/deprecated';
 
 export const DataListCheckboxes: React.FunctionComponent = () => {
   const [isOpen1, setIsOpen1] = React.useState(false);
@@ -72,20 +74,20 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
             aria-label="Actions"
             isPlainButtonAction
           >
-            <Dropdown
+            <DropdownDeprecated
               isPlain
               position={DropdownPosition.right}
               isOpen={isOpen1}
               onSelect={onSelect1}
               toggle={<KebabToggle onToggle={onToggle1} />}
               dropdownItems={[
-                <DropdownItem key="link">Link</DropdownItem>,
-                <DropdownItem key="action" component="button">
+                <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+                <DropdownItemDeprecated key="action" component="button">
                   Action
-                </DropdownItem>,
-                <DropdownItem key="disabled link" isDisabled>
+                </DropdownItemDeprecated>,
+                <DropdownItemDeprecated key="disabled link" isDisabled>
                   Disabled Link
-                </DropdownItem>
+                </DropdownItemDeprecated>
               ]}
             />
           </DataListAction>
@@ -112,19 +114,19 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
             aria-label="Actions"
             isPlainButtonAction
           >
-            <Dropdown
+            <DropdownDeprecated
               isPlain
               position={DropdownPosition.right}
               isOpen={isOpen2}
               onSelect={onSelect2}
               toggle={<KebabToggle onToggle={onToggle2} />}
               dropdownItems={[
-                <DropdownItem key="pri-action2" component="button">
+                <DropdownItemDeprecated key="pri-action2" component="button">
                   Primary
-                </DropdownItem>,
-                <DropdownItem key="sec-action2" component="button">
+                </DropdownItemDeprecated>,
+                <DropdownItemDeprecated key="sec-action2" component="button">
                   Secondary
-                </DropdownItem>
+                </DropdownItemDeprecated>
               ]}
             />
           </DataListAction>
@@ -160,25 +162,25 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
             aria-label="Actions"
             isPlainButtonAction
           >
-            <Dropdown
+            <DropdownDeprecated
               isPlain
               position={DropdownPosition.right}
               isOpen={isOpen3}
               onSelect={onSelect3}
               toggle={<KebabToggle onToggle={onToggle3} />}
               dropdownItems={[
-                <DropdownItem key="pri-action3" component="button">
+                <DropdownItemDeprecated key="pri-action3" component="button">
                   Primary
-                </DropdownItem>,
-                <DropdownItem key="sec1-action3" component="button">
+                </DropdownItemDeprecated>,
+                <DropdownItemDeprecated key="sec1-action3" component="button">
                   Secondary
-                </DropdownItem>,
-                <DropdownItem key="sec2-action3" component="button">
+                </DropdownItemDeprecated>,
+                <DropdownItemDeprecated key="sec2-action3" component="button">
                   Secondary
-                </DropdownItem>,
-                <DropdownItem key="sec3-action3" component="button">
+                </DropdownItemDeprecated>,
+                <DropdownItemDeprecated key="sec3-action3" component="button">
                   Secondary
-                </DropdownItem>
+                </DropdownItemDeprecated>
               ]}
             />
           </DataListAction>

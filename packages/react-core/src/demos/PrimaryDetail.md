@@ -3,6 +3,15 @@ id: Primary-detail
 section: demos
 ---
 
+import {
+Dropdown as DropdownDeprecated,
+DropdownToggle,
+DropdownToggleCheckbox,
+DropdownItem as DropdownItemDeprecated,
+DropdownPosition,
+DropdownSeparator,
+KebabToggle
+} from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
@@ -960,12 +969,6 @@ import {
   CardTitle,
   Checkbox,
   Divider,
-  Dropdown,
-  DropdownToggle,
-  DropdownToggleCheckbox,
-  DropdownItem,
-  DropdownPosition,
-  DropdownSeparator,
   Drawer,
   DrawerActions,
   DrawerPanelBody,
@@ -977,7 +980,6 @@ import {
   Flex,
   FlexItem,
   Gallery,
-  KebabToggle,
   PageSection,
   PageSectionVariants,
   Pagination,
@@ -993,6 +995,15 @@ import {
   ToolbarContent,
   ToolbarFilter
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownToggle,
+  DropdownToggleCheckbox,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownPosition,
+  DropdownSeparator,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import pfIcon from './pf-logo-small.svg';
@@ -1346,19 +1357,19 @@ class PrimaryDetailCardView extends React.Component {
     const someChecked = anySelected ? null : false;
     const isChecked = allSelected ? true : someChecked;
     const splitButtonDropdownItems = [
-      <DropdownItem key="item-1" onClick={this.selectNone}>
+      <DropdownItemDeprecated key="item-1" onClick={this.selectNone}>
         Select none (0 items)
-      </DropdownItem>,
-      <DropdownItem key="item-2" onClick={this.selectPage}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-2" onClick={this.selectPage}>
         Select page ({this.state.res.length} items)
-      </DropdownItem>,
-      <DropdownItem key="item-3" onClick={this.selectAll}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-3" onClick={this.selectAll}>
         Select all ({this.state.totalItemCount} items)
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     return (
-      <Dropdown
+      <DropdownDeprecated
         position={DropdownPosition.left}
         onSelect={this.onSplitButtonSelect}
         toggle={
@@ -1388,21 +1399,21 @@ class PrimaryDetailCardView extends React.Component {
       this.state;
 
     const toolbarKebabDropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
+      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action" component="button">
         Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="disabled action" isDisabled component="button">
         Disabled Action
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
+      <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="separated action" component="button">
         Separated Action
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const toolbarItems = (
@@ -1415,7 +1426,7 @@ class PrimaryDetailCardView extends React.Component {
           <Button variant="secondary">Action</Button>
         </ToolbarItem>
         <ToolbarItem>
-          <Dropdown
+          <DropdownDeprecated
             onSelect={this.onToolbarKebabDropdownSelect}
             toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
             isOpen={isLowerToolbarKebabDropdownOpen}
@@ -1463,7 +1474,7 @@ class PrimaryDetailCardView extends React.Component {
               actions={{
                 actions: (
                   <>
-                    <Dropdown
+                    <DropdownDeprecated
                       isPlain
                       position="right"
                       onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
@@ -1476,10 +1487,14 @@ class PrimaryDetailCardView extends React.Component {
                       }
                       isOpen={this.state[key]}
                       dropdownItems={[
-                        <DropdownItem key="trash" onClick={(e) => this.deleteItem(e, product)} position="right">
+                        <DropdownItemDeprecated
+                          key="trash"
+                          onClick={(e) => this.deleteItem(e, product)}
+                          position="right"
+                        >
                           <TrashIcon />
                           Delete
-                        </DropdownItem>
+                        </DropdownItemDeprecated>
                       ]}
                     />
                     <Checkbox
@@ -1748,9 +1763,6 @@ import {
   DrawerHead,
   DrawerPanelBody,
   DrawerPanelContent,
-  Dropdown,
-  DropdownToggle,
-  DropdownItem,
   Flex,
   FlexItem,
   PageSection,
@@ -1760,6 +1772,11 @@ import {
   TextContent,
   Title
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownToggle,
+  DropdownItem as DropdownItemDeprecated
+} from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
@@ -1845,8 +1862,8 @@ class PrimaryDetailDataListInCard extends React.Component {
     );
 
     const dropdownItems = [
-      <DropdownItem key="option1">Option 1</DropdownItem>,
-      <DropdownItem key="option2">Option 2</DropdownItem>
+      <DropdownItemDeprecated key="option1">Option 1</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="option2">Option 2</DropdownItemDeprecated>
     ];
 
     const drawerContent = (
@@ -1854,7 +1871,7 @@ class PrimaryDetailDataListInCard extends React.Component {
         <Toolbar id="data-list-data-toolbar" usePageInsets>
           <ToolbarContent>
             <ToolbarItem>
-              <Dropdown
+              <DropdownDeprecated
                 onSelect={this.onDropdownSelect}
                 toggle={
                   <DropdownToggle

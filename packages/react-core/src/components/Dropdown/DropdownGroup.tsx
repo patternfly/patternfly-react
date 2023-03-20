@@ -1,36 +1,25 @@
-import * as React from 'react';
+import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { DropdownContext } from './dropdownConstants';
+import { MenuGroupProps, MenuGroup } from '../Menu';
 
-export interface DropdownGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
-  /** Checkboxes within group */
-  children?: React.ReactNode;
-  /** Additional classes added to the DropdownGroup control */
+export interface DropdownGroupProps extends Omit<MenuGroupProps, 'ref'> {
+  /** Anything which can be rendered in a dropdown group. */
+  children: React.ReactNode;
+  /** Classes applied to root element of dropdown group */
   className?: string;
-  /** Group label */
-  label?: React.ReactNode;
+  /** Label of the dropdown group */
+  label?: string;
 }
 
 export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({
-  children = null,
-  className = '',
-  label = '',
+  children,
+  className,
+  label,
+  labelHeadingLevel = 'h1',
   ...props
 }: DropdownGroupProps) => (
-  <DropdownContext.Consumer>
-    {({ sectionClass, sectionTitleClass, sectionComponent }) => {
-      const SectionComponent = sectionComponent as any;
-      return (
-        <SectionComponent className={css(sectionClass, className)} {...props}>
-          {label && (
-            <h1 className={css(sectionTitleClass)} aria-hidden>
-              {label}
-            </h1>
-          )}
-          <ul role="none">{children}</ul>
-        </SectionComponent>
-      );
-    }}
-  </DropdownContext.Consumer>
+  <MenuGroup className={css(className)} label={label} labelHeadingLevel={labelHeadingLevel} {...props}>
+    {children}
+  </MenuGroup>
 );
 DropdownGroup.displayName = 'DropdownGroup';

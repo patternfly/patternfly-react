@@ -1,5 +1,10 @@
 import React from 'react';
-import { Button, InputGroup, TextInput, Dropdown, DropdownToggle, DropdownItem } from '@patternfly/react-core';
+import { Button, InputGroup, TextInput } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownToggle,
+  DropdownItem as DropdownItemDeprecated
+} from '@patternfly/react-core/deprecated';
 
 export const InputGroupWithDropdown: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
@@ -13,21 +18,21 @@ export const InputGroupWithDropdown: React.FunctionComponent = () => {
   };
 
   const dropdownItems = [
-    <DropdownItem key="opt-1" value="Option 1" component="button">
+    <DropdownItemDeprecated key="opt-1" value="Option 1" component="button">
       Option 1
-    </DropdownItem>,
-    <DropdownItem key="opt-2" value="Option 2" component="button">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="opt-2" value="Option 2" component="button">
       Option 2
-    </DropdownItem>,
-    <DropdownItem key="opt-3" value="Option 3" component="button">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="opt-3" value="Option 3" component="button">
       Option 3
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   return (
     <React.Fragment>
       <InputGroup>
-        <Dropdown
+        <DropdownDeprecated
           onSelect={onSelect}
           toggle={<DropdownToggle onToggle={onToggle}>Dropdown</DropdownToggle>}
           isOpen={isOpen}

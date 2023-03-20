@@ -1,16 +1,11 @@
 import React from 'react';
+import { Card, CardHeader, CardBody, CardFooter, CardExpandableContent, Checkbox } from '@patternfly/react-core';
 import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  CardExpandableContent,
-  Checkbox,
-  Dropdown,
-  DropdownItem,
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
   DropdownSeparator,
   KebabToggle
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/deprecated';
 import pfLogoSmall from './pf-logo-small.svg';
 
 export const CardExpandableWithIcon: React.FunctionComponent = () => {
@@ -33,26 +28,26 @@ export const CardExpandableWithIcon: React.FunctionComponent = () => {
   };
 
   const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
+    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="action" component="button">
       Action
-    </DropdownItem>,
-    <DropdownItem key="disabled link" isDisabled>
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled link" isDisabled>
       Disabled Link
-    </DropdownItem>,
-    <DropdownItem key="disabled action" isDisabled component="button">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
       Disabled Action
-    </DropdownItem>,
+    </DropdownItemDeprecated>,
     <DropdownSeparator key="separator" />,
-    <DropdownItem key="separated link">Separated Link</DropdownItem>,
-    <DropdownItem key="separated action" component="button">
+    <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="separated action" component="button">
       Separated Action
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   const headerActions = (
     <>
-      <Dropdown
+      <DropdownDeprecated
         onSelect={onSelect}
         toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
         isOpen={isOpen}
@@ -73,7 +68,7 @@ export const CardExpandableWithIcon: React.FunctionComponent = () => {
   return (
     <Card id="expandable-card-icon" isExpanded={isExpanded}>
       <CardHeader
-        actions={{actions: headerActions}}
+        actions={{ actions: headerActions }}
         onExpand={onExpand}
         toggleButtonProps={{
           id: 'toggle-button2',

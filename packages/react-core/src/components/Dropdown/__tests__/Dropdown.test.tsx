@@ -1,278 +1,216 @@
 import React from 'react';
-
-import { render, screen } from '@testing-library/react';
+import { Dropdown } from '../../Dropdown';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Dropdown } from '../Dropdown';
-import { DropdownPosition, DropdownDirection } from '../dropdownConstants';
-import { InternalDropdownItem } from '../InternalDropdownItem';
-import { DropdownSeparator } from '../DropdownSeparator';
-import { DropdownToggle } from '../DropdownToggle';
-import { KebabToggle } from '../KebabToggle';
+jest.mock('../../Menu');
 
-const dropdownItems = [
-  <InternalDropdownItem key="link">Link</InternalDropdownItem>,
-  <InternalDropdownItem key="action" component="button">
-    Action
-  </InternalDropdownItem>,
-  <InternalDropdownItem key="disabled link" isDisabled>
-    Disabled Link
-  </InternalDropdownItem>,
-  <InternalDropdownItem key="disabled action" isDisabled component="button">
-    Disabled Action
-  </InternalDropdownItem>,
-  <DropdownSeparator key="separator" />,
-  <InternalDropdownItem key="separated link">Separated Link</InternalDropdownItem>,
-  <InternalDropdownItem key="separated action" component="button">
-    Separated Action
-  </InternalDropdownItem>
-];
+jest.mock('../../../helpers/Popper/Popper');
 
-describe('Dropdown', () => {
-  test('regular', () => {
-    const { asFragment } = render(
-      <Dropdown dropdownItems={dropdownItems} toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>} />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+const toggle = (ref: React.RefObject<any>) => <button ref={ref}>Dropdown</button>;
 
-  test('right aligned', () => {
-    const { asFragment } = render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        position={DropdownPosition.right}
-        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+const dropdownChildren = <div>Dropdown children</div>;
 
-  test('alignment breakpoints', () => {
-    const { asFragment } = render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        alignments={{
-          sm: 'left',
-          md: 'right',
-          lg: 'left',
-          xl: 'right',
-          '2xl': 'left'
-        }}
-        aria-label="Dropdown button"
-        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
-        isOpen
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('renders dropdown', () => {
+  render(
+    <div data-testid="dropdown">
+      <Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>
+    </div>
+  );
 
-  test('dropup', () => {
-    const { asFragment } = render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        direction={DropdownDirection.up}
-        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('dropup + right aligned', () => {
-    const { asFragment } = render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        direction={DropdownDirection.up}
-        position={DropdownPosition.right}
-        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('expanded', () => {
-    const { asFragment } = render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        isOpen
-        aria-label="Dropdown button"
-        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('primary', () => {
-    const { asFragment } = render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        toggle={
-          <DropdownToggle id="Dropdown Toggle" toggleVariant="primary">
-            Dropdown
-          </DropdownToggle>
-        }
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('basic', () => {
-    const { asFragment } = render(
-      <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
-        <div>BASIC</div>
-      </Dropdown>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('Renders in strict mode', () => {
-    const consoleError = jest.spyOn(console, 'error');
-    const { asFragment } = render(
-      <React.StrictMode>
-        <Dropdown
-          isOpen
-          dropdownItems={dropdownItems}
-          toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
-        />
-      </React.StrictMode>
-    );
-    expect(consoleError).not.toHaveBeenCalled();
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByTestId('dropdown').children[0]).toBeVisible();
 });
 
-describe('KebabToggle', () => {
-  test('regular', () => {
-    const { asFragment } = render(
-      <Dropdown
-        aria-label="Dropdown button"
-        dropdownItems={dropdownItems}
-        toggle={<KebabToggle id="Dropdown Toggle" />}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('passes children', () => {
+  render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
 
-  test('right aligned', () => {
-    const { asFragment } = render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        position={DropdownPosition.right}
-        toggle={<KebabToggle id="Dropdown Toggle" />}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('dropup', () => {
-    const { asFragment } = render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        direction={DropdownDirection.up}
-        toggle={<KebabToggle id="Dropdown Toggle" />}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('dropup + right aligned', () => {
-    const { asFragment } = render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        direction={DropdownDirection.up}
-        position={DropdownPosition.right}
-        toggle={<KebabToggle id="Dropdown Toggle" />}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('expanded', () => {
-    const { asFragment } = render(
-      <Dropdown
-        aria-label="Dropdown button"
-        dropdownItems={dropdownItems}
-        isOpen
-        toggle={<KebabToggle id="Dropdown Toggle" />}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('plain', () => {
-    const { asFragment } = render(
-      <Dropdown dropdownItems={dropdownItems} isPlain toggle={<KebabToggle id="Dropdown Toggle" />} />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('basic', () => {
-    const { asFragment } = render(
-      <Dropdown isOpen toggle={<KebabToggle id="Dropdown Toggle" />}>
-        <div>BASIC</div>
-      </Dropdown>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByText('Dropdown children')).toBeVisible();
 });
 
-describe('API', () => {
-  test('click on item', async () => {
-    const mockToggle = jest.fn();
-    const mockSelect = jest.fn();
-    const user = userEvent.setup();
+test('renders passed toggle element', () => {
+  render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
 
-    render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        onSelect={mockSelect}
-        isOpen
-        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
-      />
-    );
+  expect(screen.getByRole('button', { name: 'Dropdown' })).toBeVisible();
+});
 
-    await user.click(screen.getByText('Link')); // "Link" is the text of the first item
-    expect(mockToggle.mock.calls).toHaveLength(0);
-    expect(mockSelect.mock.calls).toHaveLength(1);
-  });
+test('passes no class name by default', () => {
+  render(
+    <Dropdown isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
 
-  test('dropdownItems and children console error ', () => {
-    const myMock = jest.fn();
-    global.console = { error: myMock } as any;
-    render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        isOpen
-        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
-      >
-        <div>Children items</div>
-      </Dropdown>
-    );
-    expect(myMock).toHaveBeenCalledWith(
-      'Children and dropdownItems props have been provided. Only the dropdownItems prop items will be rendered'
-    );
-  });
+  expect(screen.getByTestId('menu-mock')).not.toHaveClass();
+});
 
-  test('dropdownItems only, no console error ', () => {
-    const myMock = jest.fn();
-    global.console = { error: myMock } as any;
-    render(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        isOpen
-        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
-      />
-    );
-    expect(myMock).not.toHaveBeenCalled();
-  });
+test('passes custom class name', () => {
+  render(
+    <Dropdown className="custom-class" isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
 
-  test('children only, no console ', () => {
-    const myMock = jest.fn();
-    global.console = { error: myMock } as any;
-    render(
-      <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
-        <div>Children items</div>
-      </Dropdown>
-    );
-    expect(myMock).not.toHaveBeenCalled();
-  });
+  expect(screen.getByTestId('menu-mock')).toHaveClass('custom-class');
+});
+
+test('does not pass isPlain to Menu by default', () => {
+  render(
+    <Dropdown isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  expect(screen.getByText('isPlain: undefined')).toBeVisible();
+});
+
+test('passes isPlain to Menu', () => {
+  render(
+    <Dropdown isPlain isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  expect(screen.getByText('isPlain: true')).toBeVisible();
+});
+
+test('does not pass isScrollable to Menu by default', () => {
+  render(
+    <Dropdown isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  expect(screen.getByText('isScrollable: undefined')).toBeVisible();
+});
+
+test('passes isScrollable to Menu', () => {
+  render(
+    <Dropdown isScrollable isOpen={true} toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  expect(screen.getByText('isScrollable: true')).toBeVisible();
+});
+
+test('passes default zIndex to popper', () => {
+  render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
+
+  expect(screen.getByText('zIndex: 9999')).toBeVisible();
+});
+
+test('passes zIndex to popper', () => {
+  render(
+    <Dropdown zIndex={100} toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  expect(screen.getByText('zIndex: 100')).toBeVisible();
+});
+
+test('does not pass isOpen to popper by default', () => {
+  render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
+
+  expect(screen.getByText('isOpen: undefined')).toBeVisible();
+});
+
+test('passes isOpen to popper', () => {
+  render(
+    <Dropdown isOpen toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  expect(screen.getByText('isOpen: true')).toBeVisible();
+});
+
+/* no default tests for callback props
+since there is no way to test that the 
+function doesn`t get passed */
+
+test('passes onSelect callback', async () => {
+  const user = userEvent.setup();
+
+  const onSelect = jest.fn();
+  render(
+    <Dropdown onSelect={onSelect} toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  const trigger = await screen.findByText('Mock item');
+  await user.click(trigger);
+
+  expect(onSelect).toBeCalledTimes(1);
+});
+
+test('onOpenChange is called when passed and user clicks outside of dropdown', async () => {
+  const user = userEvent.setup();
+  const onOpenChange = jest.fn();
+
+  render(
+    <Dropdown isOpen={true} onOpenChange={onOpenChange} toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  const dropdown = screen.getByRole('button', { name: 'Dropdown' });
+  await user.click(dropdown);
+  await user.click(document.body);
+
+  expect(onOpenChange).toBeCalledTimes(1);
+});
+
+test('onOpenChange is called when passed and user presses tab key', async () => {
+  const user = userEvent.setup();
+  const onOpenChange = jest.fn();
+
+  render(
+    <Dropdown isOpen={true} onOpenChange={onOpenChange} toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  //focus dropdown
+  const dropdown = screen.getByRole('button', { name: 'Dropdown' });
+  await user.click(dropdown);
+  await user.keyboard('{Tab}');
+
+  expect(onOpenChange).toBeCalledTimes(1);
+});
+
+test('onOpenChange is called when passed and user presses esc key', async () => {
+  const user = userEvent.setup();
+  const onOpenChange = jest.fn();
+
+  render(
+    <Dropdown isOpen={true} onOpenChange={onOpenChange} toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  //focus dropdown
+  const dropdown = screen.getByRole('button', { name: 'Dropdown' });
+  await user.click(dropdown);
+  await user.keyboard('{Escape}');
+
+  expect(onOpenChange).toBeCalledTimes(1);
+});
+
+test('match snapshot', () => {
+  const { asFragment } = render(
+    <Dropdown
+      ouiaId={'dropdown'}
+      isOpen
+      isScrollable
+      isPlain
+      className={'customClass'}
+      toggle={(toggleRef) => toggle(toggleRef)}
+    >
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  expect(asFragment()).toMatchSnapshot();
 });

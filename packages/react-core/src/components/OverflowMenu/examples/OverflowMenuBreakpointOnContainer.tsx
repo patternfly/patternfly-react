@@ -7,9 +7,10 @@ import {
   OverflowMenuItem,
   OverflowMenuDropdownItem,
   MenuToggle,
-  Slider
+  Slider,
+  Dropdown,
+  DropdownList
 } from '@patternfly/react-core';
-import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/next';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => {
@@ -84,9 +85,9 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
             </OverflowMenuGroup>
           </OverflowMenuContent>
           <OverflowMenuControl>
-            <DropdownNext
+            <Dropdown
               onSelect={onSelect}
-              toggle={toggleRef => (
+              toggle={(toggleRef) => (
                 <MenuToggle
                   ref={toggleRef}
                   aria-label="Breakpoint on container example overflow menu"
@@ -98,10 +99,10 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
                 </MenuToggle>
               )}
               isOpen={isOpen}
-              onOpenChange={isOpen => setIsOpen(isOpen)}
+              onOpenChange={(isOpen) => setIsOpen(isOpen)}
             >
               <DropdownList>{dropdownItems}</DropdownList>
-            </DropdownNext>
+            </Dropdown>
           </OverflowMenuControl>
         </OverflowMenu>
       </div>

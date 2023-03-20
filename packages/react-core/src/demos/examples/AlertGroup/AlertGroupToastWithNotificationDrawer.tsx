@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
 import {
   Button,
-  Dropdown,
-  DropdownItem,
   EmptyState,
   EmptyStateBody,
   EmptyStateHeader,
   EmptyStateIcon,
-  KebabToggle,
   NotificationBadge,
   NotificationBadgeVariant,
   NotificationDrawer,
@@ -21,7 +18,6 @@ import {
   PageSectionVariants,
   TextContent,
   Text,
-  DropdownPosition,
   EmptyStateVariant,
   NumberInput,
   Alert,
@@ -29,6 +25,12 @@ import {
   AlertGroup,
   AlertActionCloseButton
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  KebabToggle,
+  DropdownPosition
+} from '@patternfly/react-core/deprecated';
 
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import DashboardWrapper from '../DashboardWrapper';
@@ -214,27 +216,27 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
   );
 
   const notificationDrawerActions = [
-    <DropdownItem key="markAllRead" onClick={markAllNotificationsRead} component="button">
+    <DropdownItemDeprecated key="markAllRead" onClick={markAllNotificationsRead} component="button">
       Mark all read
-    </DropdownItem>,
-    <DropdownItem key="clearAll" onClick={removeAllNotifications} component="button">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="clearAll" onClick={removeAllNotifications} component="button">
       Clear all
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   const notificationDrawerDropdownItems = (key: React.Key) => [
-    <DropdownItem key="markRead" component="button" onClick={() => markNotificationRead(key)}>
+    <DropdownItemDeprecated key="markRead" component="button" onClick={() => markNotificationRead(key)}>
       Mark as read
-    </DropdownItem>,
-    <DropdownItem key="action" component="button" onClick={() => removeNotification(key)}>
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="action" component="button" onClick={() => removeNotification(key)}>
       Clear
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   const notificationDrawer = (
     <NotificationDrawer>
       <NotificationDrawerHeader count={getUnreadNotificationsNumber()} onClose={() => setDrawerExpanded(false)}>
-        <Dropdown
+        <DropdownDeprecated
           onSelect={onDropdownSelect}
           toggle={
             <KebabToggle
@@ -260,7 +262,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
                 onClick={() => markNotificationRead(key)}
               >
                 <NotificationDrawerListItemHeader variant={variant} title={title} srTitle={srTitle}>
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     onSelect={onDropdownSelect}
                     toggle={

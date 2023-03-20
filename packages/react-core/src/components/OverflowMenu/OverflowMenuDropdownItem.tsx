@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DropdownItem, DropdownItemProps } from '../../next/components/Dropdown';
+import { DropdownItem, DropdownItemProps } from '../Dropdown';
 import { OverflowMenuContext } from './OverflowMenuContext';
 
 export interface OverflowMenuDropdownItemProps extends Omit<DropdownItemProps, 'ref'> {
@@ -16,7 +16,7 @@ export const OverflowMenuDropdownItem: React.FunctionComponent<OverflowMenuDropd
   ...additionalProps
 }: OverflowMenuDropdownItemProps) => (
   <OverflowMenuContext.Consumer>
-    {value =>
+    {(value) =>
       (!isShared || value.isBelowBreakpoint) && (
         <DropdownItem component="button" itemId={itemId} {...additionalProps}>
           {children}

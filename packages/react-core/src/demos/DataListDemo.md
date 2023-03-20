@@ -3,6 +3,12 @@ id: Data list
 section: components
 ---
 
+import {
+Dropdown as DropdownDeprecated,
+DropdownItem as DropdownItemDeprecated,
+DropdownPosition,
+KebabToggle
+} from '@patternfly/react-core/deprecated';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -25,10 +31,6 @@ import {
   DataListToggle,
   DataListContent,
   DataListItemCells,
-  Dropdown,
-  DropdownItem,
-  DropdownPosition,
-  KebabToggle,
   Toolbar,
   ToolbarGroup,
   ToolbarItem,
@@ -37,6 +39,12 @@ import {
   SearchInput,
   Tooltip
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownPosition,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
@@ -82,20 +90,20 @@ class ExpandableDataList extends React.Component {
       this.setState({ isOpen3 });
     };
 
-    this.onSelect1 = event => {
-      this.setState(prevState => ({
+    this.onSelect1 = (event) => {
+      this.setState((prevState) => ({
         isOpen1: !prevState.isOpen1
       }));
     };
 
-    this.onSelect2 = event => {
-      this.setState(prevState => ({
+    this.onSelect2 = (event) => {
+      this.setState((prevState) => ({
         isOpen2: !prevState.isOpen2
       }));
     };
 
-    this.onSelect3 = event => {
-      this.setState(prevState => ({
+    this.onSelect3 = (event) => {
+      this.setState((prevState) => ({
         isOpen3: !prevState.isOpen3
       }));
     };
@@ -146,7 +154,7 @@ class ExpandableDataList extends React.Component {
   }
 
   render() {
-    const toggle = id => {
+    const toggle = (id) => {
       const expanded = this.state.expanded;
       const index = expanded.indexOf(id);
       const newExpanded =
@@ -197,20 +205,20 @@ class ExpandableDataList extends React.Component {
                 aria-label="Actions"
                 isPlainButtonAction
               >
-                <Dropdown
+                <DropdownDeprecated
                   isPlain
                   position={DropdownPosition.right}
                   isOpen={this.state.isOpen1}
                   onSelect={this.onSelect1}
                   toggle={<KebabToggle onToggle={this.onToggle1} />}
                   dropdownItems={[
-                    <DropdownItem key="link">Link</DropdownItem>,
-                    <DropdownItem key="action" component="button">
+                    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+                    <DropdownItemDeprecated key="action" component="button">
                       Action
-                    </DropdownItem>,
-                    <DropdownItem key="disabled link" isDisabled>
+                    </DropdownItemDeprecated>,
+                    <DropdownItemDeprecated key="disabled link" isDisabled>
                       Disabled Link
-                    </DropdownItem>
+                    </DropdownItemDeprecated>
                   ]}
                 />
               </DataListAction>
@@ -257,20 +265,20 @@ class ExpandableDataList extends React.Component {
                 aria-label="Actions"
                 isPlainButtonAction
               >
-                <Dropdown
+                <DropdownDeprecated
                   isPlain
                   position={DropdownPosition.right}
                   isOpen={this.state.isOpen2}
                   onSelect={this.onSelect2}
                   toggle={<KebabToggle onToggle={this.onToggle2} />}
                   dropdownItems={[
-                    <DropdownItem key="link">Link</DropdownItem>,
-                    <DropdownItem key="action" component="button">
+                    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+                    <DropdownItemDeprecated key="action" component="button">
                       Action
-                    </DropdownItem>,
-                    <DropdownItem key="disabled link" isDisabled>
+                    </DropdownItemDeprecated>,
+                    <DropdownItemDeprecated key="disabled link" isDisabled>
                       Disabled Link
-                    </DropdownItem>
+                    </DropdownItemDeprecated>
                   ]}
                 />
               </DataListAction>
@@ -317,20 +325,20 @@ class ExpandableDataList extends React.Component {
                 aria-label="Actions"
                 isPlainButtonAction
               >
-                <Dropdown
+                <DropdownDeprecated
                   isPlain
                   position={DropdownPosition.right}
                   isOpen={this.state.isOpen3}
                   onSelect={this.onSelect3}
                   toggle={<KebabToggle onToggle={this.onToggle3} />}
                   dropdownItems={[
-                    <DropdownItem key="link">Link</DropdownItem>,
-                    <DropdownItem key="action" component="button">
+                    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+                    <DropdownItemDeprecated key="action" component="button">
                       Action
-                    </DropdownItem>,
-                    <DropdownItem key="disabled link" isDisabled>
+                    </DropdownItemDeprecated>,
+                    <DropdownItemDeprecated key="disabled link" isDisabled>
                       Disabled Link
-                    </DropdownItem>
+                    </DropdownItemDeprecated>
                   ]}
                 />
               </DataListAction>

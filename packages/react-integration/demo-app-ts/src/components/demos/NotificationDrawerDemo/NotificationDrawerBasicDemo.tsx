@@ -1,11 +1,5 @@
 import React from 'react';
 import {
-  Dropdown,
-  DropdownItem,
-  DropdownDirection,
-  DropdownPosition,
-  DropdownSeparator,
-  KebabToggle,
   NotificationDrawer,
   NotificationDrawerProps,
   NotificationDrawerBody,
@@ -15,6 +9,14 @@ import {
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownDirection,
+  DropdownPosition,
+  DropdownSeparator,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 
 interface BasicNotificationDrawerDemoState {
   isDrawerOpen: boolean;
@@ -50,19 +52,19 @@ export class BasicNotificationDrawerDemo extends React.Component<
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
+      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action" component="button">
         Action
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="disabled link" isDisabled>
+      <DropdownItemDeprecated key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
     return (
       <NotificationDrawer>
         <NotificationDrawerHeader count={2} onClose={this.onDrawerClose}>
-          <Dropdown
+          <DropdownDeprecated
             onSelect={this.onSelect}
             toggle={<KebabToggle onToggle={this.onToggle(0)} id="toggle-id-0" />}
             isOpen={isOpen[0]}
@@ -82,7 +84,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 srTitle="Info notification:"
                 truncateTitle={10}
               >
-                <Dropdown
+                <DropdownDeprecated
                   position={DropdownPosition.right}
                   onSelect={this.onSelect}
                   toggle={<KebabToggle onToggle={this.onToggle(1)} id="toggle-id-1" />}
@@ -102,7 +104,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
                 srTitle="Danger notification:"
               >
-                <Dropdown
+                <DropdownDeprecated
                   position={DropdownPosition.right}
                   onSelect={this.onSelect}
                   toggle={<KebabToggle onToggle={this.onToggle(2)} id="toggle-id-2" />}
@@ -123,7 +125,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 title="Read warning notification title"
                 srTitle="Warning notification:"
               >
-                <Dropdown
+                <DropdownDeprecated
                   position={DropdownPosition.right}
                   onSelect={this.onSelect}
                   toggle={<KebabToggle onToggle={this.onToggle(3)} id="toggle-id-3" />}
@@ -146,7 +148,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 truncateTitle={1}
                 tooltipPosition="bottom"
               >
-                <Dropdown
+                <DropdownDeprecated
                   position={DropdownPosition.right}
                   direction={DropdownDirection.up}
                   onSelect={this.onSelect}
@@ -163,7 +165,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
             </NotificationDrawerListItem>
             <NotificationDrawerListItem isRead>
               <NotificationDrawerListItemHeader title="Read default notification title" srTitle="Default notification:">
-                <Dropdown
+                <DropdownDeprecated
                   position={DropdownPosition.right}
                   direction={DropdownDirection.up}
                   onSelect={this.onSelect}

@@ -7,12 +7,14 @@ import {
   DataListItemCells,
   DataListCell,
   DataListAction,
-  DataListWrapModifier,
-  Dropdown,
-  DropdownItem,
+  DataListWrapModifier
+} from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
   DropdownPosition,
   KebabToggle
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/deprecated';
 
 interface DataListState {
   selectedDataListItemId: string;
@@ -68,20 +70,20 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
               aria-label="Actions"
               isPlainButtonAction
             >
-              <Dropdown
+              <DropdownDeprecated
                 isPlain
                 position={DropdownPosition.right}
                 isOpen={this.state.isOpen}
                 onSelect={this.onSelect}
                 toggle={<KebabToggle id="toggle-id" onToggle={this.onToggle} />}
                 dropdownItems={[
-                  <DropdownItem key="link">Link</DropdownItem>,
-                  <DropdownItem key="action" component="button">
+                  <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+                  <DropdownItemDeprecated key="action" component="button">
                     Action
-                  </DropdownItem>,
-                  <DropdownItem key="disabled link" isDisabled>
+                  </DropdownItemDeprecated>,
+                  <DropdownItemDeprecated key="disabled link" isDisabled>
                     Disabled Link
-                  </DropdownItem>
+                  </DropdownItemDeprecated>
                 ]}
                 id="dropdown"
               />

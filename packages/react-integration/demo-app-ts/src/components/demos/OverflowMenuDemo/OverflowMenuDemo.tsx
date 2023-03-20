@@ -7,9 +7,10 @@ import {
   OverflowMenuItem,
   OverflowMenuDropdownItem,
   MenuToggle,
-  Button
+  Button,
+  Dropdown,
+  DropdownList
 } from '@patternfly/react-core';
-import { Dropdown, DropdownList } from '@patternfly/react-core/dist/esm/next/index';
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
@@ -80,7 +81,7 @@ export class OverflowMenuDemo extends React.Component {
         <OverflowMenuControl>
           <Dropdown
             onSelect={this.onSimpleSelect}
-            toggle={toggleRef => (
+            toggle={(toggleRef) => (
               <MenuToggle
                 ref={toggleRef}
                 aria-label="Simple example overflow menu"
@@ -173,7 +174,7 @@ export class OverflowMenuDemo extends React.Component {
         <OverflowMenuControl hasAdditionalOptions>
           <Dropdown
             onSelect={this.onAdditionalOptionsSelect}
-            toggle={toggleRef => (
+            toggle={(toggleRef) => (
               <MenuToggle
                 ref={toggleRef}
                 aria-label="Simple example overflow menu"
@@ -240,7 +241,7 @@ export class OverflowMenuDemo extends React.Component {
         <OverflowMenuControl hasAdditionalOptions>
           <Dropdown
             onSelect={this.onPersistSelect}
-            toggle={toggleRef => (
+            toggle={(toggleRef) => (
               <MenuToggle
                 ref={toggleRef}
                 aria-label="Additional options overflow menu"
@@ -315,7 +316,7 @@ export class OverflowMenuDemo extends React.Component {
           <OverflowMenuControl>
             <Dropdown
               onSelect={this.onContainerBreakpointSelect}
-              toggle={toggleRef => (
+              toggle={(toggleRef) => (
                 <MenuToggle
                   ref={toggleRef}
                   aria-label="Additional options overflow menu"

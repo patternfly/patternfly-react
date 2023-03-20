@@ -1,14 +1,11 @@
 import React from 'react';
+import { Card, CardHeader, CardTitle, CardBody } from '@patternfly/react-core';
 import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardBody,
-  Dropdown,
-  DropdownItem,
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
   DropdownSeparator,
   KebabToggle
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/deprecated';
 
 export const CardLegacySelectable: React.FunctionComponent = () => {
   const [selected, setSelected] = React.useState<string>('');
@@ -46,26 +43,26 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
   };
 
   const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
+    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="action" component="button">
       Action
-    </DropdownItem>,
-    <DropdownItem key="disabled link" isDisabled>
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled link" isDisabled>
       Disabled Link
-    </DropdownItem>,
-    <DropdownItem key="disabled action" isDisabled component="button">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
       Disabled Action
-    </DropdownItem>,
+    </DropdownItemDeprecated>,
     <DropdownSeparator key="separator" />,
-    <DropdownItem key="separated link">Separated Link</DropdownItem>,
-    <DropdownItem key="separated action" component="button">
+    <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="separated action" component="button">
       Separated Action
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   const headerActions = (
     <>
-      <Dropdown
+      <DropdownDeprecated
         onSelect={onSelect}
         toggle={<KebabToggle onToggle={onToggle} />}
         isOpen={isKebabOpen}
@@ -87,7 +84,7 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
         isSelected={selected === 'legacy-first-card'}
         hasSelectableInput
       >
-        <CardHeader actions={{actions: headerActions}}/>
+        <CardHeader actions={{ actions: headerActions }} />
         <CardTitle>First legacy selectable card</CardTitle>
         <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
       </Card>

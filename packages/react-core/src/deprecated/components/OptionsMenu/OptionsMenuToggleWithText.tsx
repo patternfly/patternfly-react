@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { KeyTypes } from '../../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
-import { DropdownContext } from '../../../components/Dropdown';
+import { DropdownContext } from '../Dropdown';
 
 export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivElement> {
   /** Id of the parent options menu component */
@@ -133,7 +133,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
             aria-expanded={isOpen}
             ref={buttonRef}
             disabled={isDisabled}
-            onClick={event => onToggle(event, !isOpen)}
+            onClick={(event) => onToggle(event, !isOpen)}
             onKeyDown={onKeyDown}
           >
             <span className={css(styles.optionsMenuToggleButtonIcon)}>{toggleButtonContents}</span>

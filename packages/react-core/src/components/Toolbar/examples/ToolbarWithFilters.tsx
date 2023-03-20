@@ -8,18 +8,14 @@ import {
   ToolbarGroup,
   SelectOptionObject
 } from '@patternfly/react-core';
+import { Button, Select, SelectOption, SelectVariant, SearchInput } from '@patternfly/react-core';
 import {
-  Button,
-  Select,
-  SelectOption,
-  SelectVariant,
-  Dropdown,
-  DropdownItem,
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
   DropdownSeparator,
   DropdownPosition,
-  KebabToggle,
-  SearchInput
-} from '@patternfly/react-core';
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
@@ -45,11 +41,11 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
     selection: string | SelectOptionObject
   ) => {
     const checked = (event.target as HTMLInputElement).checked;
-    setFilters(prev => {
+    setFilters((prev) => {
       const prevSelections = prev[type];
       return {
         ...prev,
-        [type]: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
+        [type]: checked ? [...prevSelections, selection] : prevSelections.filter((value) => value !== selection)
       };
     });
   };
@@ -121,7 +117,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
         <ToolbarFilter
           chips={filters.status}
           deleteChip={(category, chip) => onDelete(category as string, chip as string)}
-          deleteChipGroup={category => onDeleteGroup(category as string)}
+          deleteChipGroup={(category) => onDeleteGroup(category as string)}
           categoryName="Status"
         >
           <Select
@@ -158,21 +154,21 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
   );
 
   const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
+    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="action" component="button">
       Action
-    </DropdownItem>,
-    <DropdownItem key="disabled link" isDisabled>
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled link" isDisabled>
       Disabled Link
-    </DropdownItem>,
-    <DropdownItem key="disabled action" isDisabled component="button">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
       Disabled Action
-    </DropdownItem>,
+    </DropdownItemDeprecated>,
     <DropdownSeparator key="separator" />,
-    <DropdownItem key="separated link">Separated Link</DropdownItem>,
-    <DropdownItem key="separated action" component="button">
+    <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="separated action" component="button">
       Separated Action
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   const toolbarItems = (
@@ -198,7 +194,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
         </ToolbarItem>
       </ToolbarGroup>
       <ToolbarItem>
-        <Dropdown
+        <DropdownDeprecated
           toggle={<KebabToggle onToggle={onKebabToggle} />}
           isOpen={kebabIsOpen}
           isPlain

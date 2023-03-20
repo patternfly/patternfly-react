@@ -6,12 +6,14 @@ import {
   CardBody,
   CardFooter,
   CardExpandableContent,
-  Dropdown,
-  DropdownItem,
-  KebabToggle,
   Checkbox,
   Brand
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 const pfLogo = './images/pfLogo.svg';
 interface CardDemoState {
   selected: string;
@@ -73,25 +75,25 @@ export class CardDemo extends React.Component {
 
   render() {
     const dropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
+      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action" component="button">
         Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="disabled action" isDisabled component="button">
         Disabled Action
-      </DropdownItem>,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="separated action" component="button">
         Separated Action
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const actions = (
       <>
-        <Dropdown
+        <DropdownDeprecated
           onSelect={this.onSelect}
           toggle={<KebabToggle onToggle={this.onToggle} />}
           isOpen={this.state.isOpen}
@@ -198,7 +200,7 @@ export class CardDemo extends React.Component {
         </Card>
         <br></br>
         <Card id="hasNoOffset-card">
-          <CardHeader actions={{actions, hasNoOffset: true}}>
+          <CardHeader actions={{ actions, hasNoOffset: true }}>
             <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }} />
           </CardHeader>
           <CardTitle>Header</CardTitle>

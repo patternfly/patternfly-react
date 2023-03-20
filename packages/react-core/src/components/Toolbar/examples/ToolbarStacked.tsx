@@ -8,9 +8,8 @@ import {
   SelectVariant,
   Pagination,
   Dropdown,
-  DropdownToggle,
-  DropdownToggleCheckbox,
   DropdownItem,
+  DropdownList,
   Divider,
   MenuToggle,
   OverflowMenu,
@@ -23,7 +22,12 @@ import {
   ToolbarToggleGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import { Dropdown as DropdownNext, DropdownItem as DropdownItemNext, DropdownList } from '@patternfly/react-core/next';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownToggle,
+  DropdownToggleCheckbox,
+  DropdownItem as DropdownItemDeprecated
+} from '@patternfly/react-core/deprecated';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -65,7 +69,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     setResourceIsExpanded(false);
   };
 
-  const onResourceSelectDropdown = (event: React.MouseEvent<Element, MouseEvent>| undefined) => {
+  const onResourceSelectDropdown = (event: React.MouseEvent<Element, MouseEvent> | undefined) => {
     setResourceSelected(event?.target);
     setResourceIsExpanded(false);
   };
@@ -101,24 +105,6 @@ export const ToolbarStacked: React.FunctionComponent = () => {
   };
 
   const dropdownItems = [
-    <DropdownItemNext key="link">Link</DropdownItemNext>,
-    <DropdownItemNext key="action" component="button">
-      Action
-    </DropdownItemNext>,
-    <DropdownItemNext key="disabled link" isDisabled>
-      Disabled Link
-    </DropdownItemNext>,
-    <DropdownItemNext key="disabled action" isDisabled component="button">
-      Disabled Action
-    </DropdownItemNext>,
-    <Divider key="separator" />,
-    <DropdownItemNext key="separated link">Separated Link</DropdownItemNext>,
-    <DropdownItemNext key="separated action" component="button">
-      Separated Action
-    </DropdownItemNext>
-  ];
-
-  const splitButtonDropdownItems = [
     <DropdownItem key="link">Link</DropdownItem>,
     <DropdownItem key="action" component="button">
       Action
@@ -128,7 +114,25 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     </DropdownItem>,
     <DropdownItem key="disabled action" isDisabled component="button">
       Disabled Action
+    </DropdownItem>,
+    <Divider key="separator" />,
+    <DropdownItem key="separated link">Separated Link</DropdownItem>,
+    <DropdownItem key="separated action" component="button">
+      Separated Action
     </DropdownItem>
+  ];
+
+  const splitButtonDropdownItems = [
+    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="action" component="button">
+      Action
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled link" isDisabled>
+      Disabled Link
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
+      Disabled Action
+    </DropdownItemDeprecated>
   ];
 
   const toggleGroupItems = (
@@ -192,23 +196,23 @@ export const ToolbarStacked: React.FunctionComponent = () => {
                 </OverflowMenuGroup>
               </OverflowMenuContent>
               <OverflowMenuControl hasAdditionalOptions>
-              <DropdownNext
-                   onSelect={onResourceSelectDropdown}
-                   toggle={toggleRef => (
-                     <MenuToggle
-                       ref={toggleRef}
-                       aria-label="Kebab overflow menu"
-                       variant="plain"
-                       onClick={onKebabToggle}
-                       isExpanded={kebabIsOpen}
-                     >
-                       <EllipsisVIcon />
-                     </MenuToggle>
-                   )}
-                   isOpen={kebabIsOpen}
-                 >
-                   <DropdownList>{dropdownItems}</DropdownList>
-                 </DropdownNext>
+                <Dropdown
+                  onSelect={onResourceSelectDropdown}
+                  toggle={(toggleRef) => (
+                    <MenuToggle
+                      ref={toggleRef}
+                      aria-label="Kebab overflow menu"
+                      variant="plain"
+                      onClick={onKebabToggle}
+                      isExpanded={kebabIsOpen}
+                    >
+                      <EllipsisVIcon />
+                    </MenuToggle>
+                  )}
+                  isOpen={kebabIsOpen}
+                >
+                  <DropdownList>{dropdownItems}</DropdownList>
+                </Dropdown>
               </OverflowMenuControl>
             </OverflowMenu>
           </ToolbarItem>
@@ -222,7 +226,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
       <Toolbar>
         <ToolbarContent>
           <ToolbarItem variant="bulk-select">
-            <Dropdown
+            <DropdownDeprecated
               onSelect={onSplitButtonSelect}
               toggle={
                 <DropdownToggle
