@@ -1,5 +1,5 @@
 ---
-id: Text file upload
+id: Simple file upload
 cssPrefix: pf-c-file-upload
 propComponents: ['FileUpload', 'FileUploadField']
 section: components
@@ -10,7 +10,7 @@ import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-i
 
 ## Examples
 
-The basic `FileUpload` component can accept a file via browse or drag-and-drop, and behaves like a standard form field with its `value` and `onFileInputChange` event that is similar to `<input onChange="...">` prop. The `type` prop determines how the `FileUpload` component behaves upon accepting a file, what type of value it passes to its `onDataChange` event.
+The `FileUpload` component can accept a file via browse or drag-and-drop, and behaves like a standard form field with its `value` and `onFileInputChange` event that is similar to `<input onChange="...">` prop. The `type` prop determines how the `FileUpload` component behaves upon accepting a file, what type of value it passes to its `onDataChange` event.
 
 ### Text files
 
