@@ -172,6 +172,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
                 onToggle={onAppLauncherToggle}
                 isOpen={isAppLauncherOpen}
                 items={appLauncherItems}
+                toggleId="dashboard-header-app-launcher"
               />
             </ToolbarItem>
             <ToolbarItem>

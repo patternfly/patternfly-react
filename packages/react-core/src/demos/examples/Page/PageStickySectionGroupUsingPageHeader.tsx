@@ -188,6 +188,7 @@ export const PageStickySectionGroupUsingPageHeader: React.FunctionComponent = ()
               onToggle={onAppLauncherToggle}
               isOpen={isAppLauncherOpen}
               items={appLauncherItems}
+              toggleId="dashboard-header-app-launcher"
             />
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
