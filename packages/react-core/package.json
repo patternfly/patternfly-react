@@ -40,6 +40,7 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
     "build:umd": "rollup -c --environment IS_PRODUCTION",
+    "build:fed:packages" : "node ../../scripts/build-single-packages.js --packageName @patternfly/react-core",
     "clean": "rimraf dist",
     "generate": "node scripts/copyStyles.js",
     "subpaths": "node scripts/createSubpaths.js"
