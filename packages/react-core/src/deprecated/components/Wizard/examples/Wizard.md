@@ -16,7 +16,7 @@ import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-ico
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
 
 
-If you seek a wizard solution that allows for more composition, see the [React next](/components/wizard/react-next) tab.
+If you seek a wizard solution that allows for more composition, see the [React](/components/wizard) tab.
 
 ## Examples
 
