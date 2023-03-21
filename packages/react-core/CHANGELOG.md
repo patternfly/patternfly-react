@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.42 (2023-03-21)
+
+### Features
+
+- **Banner:** updated variants to colors ([#8808](https://github.com/patternfly/patternfly-react/issues/8808)) ([6bf4d35](https://github.com/patternfly/patternfly-react/commit/6bf4d35fa6681a3c2b183ccf07f7a8a5df308430))
+
 # [5.0.0-alpha.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.40...@patternfly/react-core@5.0.0-alpha.41) (2023-03-20)
 
 ### Bug Fixes
