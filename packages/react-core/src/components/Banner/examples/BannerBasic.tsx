@@ -5,12 +5,12 @@ export const BannerBasic: React.FunctionComponent = () => (
   <>
     <Banner>Default banner</Banner>
     <br />
-    <Banner variant="info">Blue banner</Banner>
+    <Banner variant="blue">Blue banner</Banner>
     <br />
-    <Banner variant="danger">Red banner</Banner>
+    <Banner variant="red">Red banner</Banner>
     <br />
-    <Banner variant="success">Green banner</Banner>
+    <Banner variant="green">Green banner</Banner>
     <br />
-    <Banner variant="warning">Gold banner</Banner>
+    <Banner variant="gold">Gold banner</Banner>
   </>
 );
