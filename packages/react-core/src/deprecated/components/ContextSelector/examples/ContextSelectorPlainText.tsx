@@ -1,39 +1,39 @@
 import React from 'react';
-import { Button, ContextSelector, ContextSelectorItem, ContextSelectorFooter } from '@patternfly/react-core';
+import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core/deperecated';
 
-export const ContextSelectorWithFooter: React.FunctionComponent = () => {
-  const items = [
-    {
-      text: 'Link',
-      href: '#'
-    },
-    'Action',
-    {
-      text: 'Disabled link',
-      href: '#',
-      isDisabled: true
-    },
-    {
-      text: 'Disabled action',
-      isDisabled: true
-    },
-    'My project',
-    'OpenShift cluster',
-    'Production Ansible',
-    'AWS',
-    'Azure',
-    'My project 2',
-    'OpenShift cluster ',
-    'Production Ansible 2 ',
-    'AWS 2',
-    'Azure 2'
-  ];
+const items = [
+  {
+    text: 'Link',
+    href: '#'
+  },
+  'Action',
+  {
+    text: 'Disabled link',
+    href: '#',
+    isDisabled: true
+  },
+  {
+    text: 'Disabled action',
+    isDisabled: true
+  },
+  'My Project',
+  'OpenShift Cluster',
+  'Production Ansible',
+  'AWS',
+  'Azure',
+  'My Project 2',
+  'OpenShift Cluster ',
+  'Production Ansible 2 ',
+  'AWS 2',
+  'Azure 2'
+];
+
+export const ContextSelectorPlainText: React.FunctionComponent = () => {
   const firstItemText = typeof items[0] === 'string' ? items[0] : items[0].text;
   const [isOpen, setOpen] = React.useState(false);
   const [selected, setSelected] = React.useState(firstItemText);
   const [searchValue, setSearchValue] = React.useState('');
   const [filteredItems, setFilteredItems] = React.useState(items);
-
   const onToggle = (event: any, isOpen: boolean) => {
     setOpen(isOpen);
   };
@@ -58,7 +58,6 @@ export const ContextSelectorWithFooter: React.FunctionComponent = () => {
 
     setFilteredItems(filtered || []);
   };
-
   return (
     <ContextSelector
       toggleText={selected}
@@ -69,16 +68,11 @@ export const ContextSelectorWithFooter: React.FunctionComponent = () => {
       onSelect={onSelect}
       onSearchButtonClick={onSearchButtonClick}
       screenReaderLabel="Selected Project:"
-      footer={
-        <ContextSelectorFooter>
-          <Button variant="link" isInline>
-            Footer action
-          </Button>
-        </ContextSelectorFooter>
-      }
+      isPlain
+      isText
     >
       {filteredItems.map((item, index) => {
-        const [text = null, href = undefined, isDisabled] =
+        const [text, href = undefined, isDisabled = false] =
           typeof item === 'string' ? [item, undefined, false] : [item.text, item.href, item.isDisabled];
         return (
           <ContextSelectorItem key={index} href={href} isDisabled={isDisabled}>
