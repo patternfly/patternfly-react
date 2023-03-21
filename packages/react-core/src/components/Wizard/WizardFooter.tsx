@@ -29,9 +29,9 @@ export interface WizardFooterProps {
   isNextDisabled?: boolean;
   /** Flag to disable the back button */
   isBackDisabled?: boolean;
-  /** True to hide the Back button */
+  /** Flag to hide the back button */
   isBackHidden?: boolean;
-  /** True to hide the Cancel button */
+  /** Flag to hide the cancel button */
   isCancelHidden?: boolean;
 }
 
