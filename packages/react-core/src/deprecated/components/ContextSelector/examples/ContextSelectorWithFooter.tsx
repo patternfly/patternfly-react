@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { ContextSelector, ContextSelectorItem, ContextSelectorFooter } from '@patternfly/react-core/deperecated';
+import { ContextSelector, ContextSelectorItem, ContextSelectorFooter } from '@patternfly/react-core/deprecated';
 
 export const ContextSelectorWithFooter: React.FunctionComponent = () => {
   const items = [
