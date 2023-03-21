@@ -169,6 +169,7 @@ export default class DashboardHeader extends React.Component {
                   onToggle={this.onAppLauncherToggle}
                   isOpen={isAppLauncherOpen}
                   items={appLauncherItems}
+                  toggleId="dashboard-header-app-launcher"
                 />
               </ToolbarItem>
               <ToolbarItem>
