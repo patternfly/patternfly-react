@@ -11,6 +11,7 @@ import { getResizeObserver } from '../../helpers/resizeObserver';
  */
 
 export interface WizardBodyProps {
+  /** Anything that can be rendered in the Wizard body */
   children: React.ReactNode | React.ReactNode[];
   /** Flag to remove the default body padding */
   hasNoPadding?: boolean;
