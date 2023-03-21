@@ -12,7 +12,7 @@ import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export interface WizardBodyProps {
   children: React.ReactNode | React.ReactNode[];
-  /** Set to true to remove the default body padding */
+  /** Flag to remove the default body padding */
   hasNoPadding?: boolean;
   /** Adds an accessible name to the wrapper element when the content overflows and renders
    * a scrollbar.
