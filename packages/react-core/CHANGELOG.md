@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.42...@patternfly/react-core@5.0.0-alpha.43) (2023-03-22)
+
+### Bug Fixes
+
+- **DropdownToggleCheckbox:** updated onChange param order ([#8787](https://github.com/patternfly/patternfly-react/issues/8787)) ([dd07e4b](https://github.com/patternfly/patternfly-react/commit/dd07e4b0b1abbb954c05dbeddf5195af2eb8e843))
+
 # 5.0.0-alpha.42 (2023-03-21)
 
 ### Features
