@@ -33,7 +33,7 @@
     "@patternfly/react-tokens": "^5.0.0-alpha.5",
     "hoist-non-react-statics": "^3.3.0",
     "lodash": "^4.17.19",
-    "tslib": "^2.0.0",
+    "tslib": "^2.5.0",
     "victory-area": "^36.6.8",
     "victory-axis": "^36.6.8",
     "victory-bar": "^36.6.8",
