@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Form, FormGroup, HelperText, HelperTextItem, TextInput } from '@patternfly/react-core';
+import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextInput } from '@patternfly/react-core';
 import { Wizard, WizardStep } from '@patternfly/react-core/next';
 
 interface SampleFormProps {
@@ -30,11 +30,13 @@ const SampleForm: React.FunctionComponent<SampleFormProps> = ({ value, isValid, 
           aria-describedby="age-helper"
           onChange={handleTextInputChange}
         />
-        <HelperText>
-          <HelperTextItem variant={validated}>
-            {validated === 'error' ? 'Age has to be a number' : 'Write your age in numbers.'}
-          </HelperTextItem>
-        </HelperText>
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant={validated}>
+              {validated === 'error' ? 'Age has to be a number' : 'Write your age in numbers.'}
+            </HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
     </Form>
   );

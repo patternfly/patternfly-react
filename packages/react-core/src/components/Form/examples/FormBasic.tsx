@@ -9,7 +9,8 @@ import {
   Button,
   Radio,
   HelperText,
-  HelperTextItem
+  HelperTextItem,
+  FormHelperText
 } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
@@ -85,9 +86,11 @@ export const FormBasic: React.FunctionComponent = () => {
           value={name}
           onChange={handleNameChange}
         />
-        <HelperText>
-          <HelperTextItem>Include your middle name if you have one.</HelperTextItem>
-        </HelperText>
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem>Include your middle name if you have one.</HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
       <FormGroup label="Email" isRequired fieldId="simple-form-email-01">
         <TextInput

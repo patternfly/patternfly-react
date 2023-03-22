@@ -11,7 +11,8 @@ import {
   Button,
   Radio,
   HelperText,
-  HelperTextItem
+  HelperTextItem,
+  FormHelperText
 } from '@patternfly/react-core';
 
 export const FormHorizontal: React.FunctionComponent = () => {
@@ -58,9 +59,11 @@ export const FormHorizontal: React.FunctionComponent = () => {
           name="horizontal-form-name"
           onChange={handleNameChange}
         />
-        <HelperText>
-          <HelperTextItem>Include your middle name if you have one.</HelperTextItem>
-        </HelperText>
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem>Include your middle name if you have one.</HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
       <FormGroup label="Email" isRequired fieldId="horizontal-form-email">
         <TextInput

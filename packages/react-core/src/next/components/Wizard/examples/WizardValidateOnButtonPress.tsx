@@ -14,7 +14,8 @@ import {
   FormGroup,
   TextInput,
   HelperText,
-  HelperTextItem
+  HelperTextItem,
+  FormHelperText
 } from '@patternfly/react-core';
 import { Wizard, WizardStep, WizardFooterWrapper, useWizardContext } from '@patternfly/react-core/next';
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
@@ -128,11 +129,13 @@ const SampleForm: React.FunctionComponent<SampleFormProps> = ({ value, isValid, 
           aria-describedby="age-helper"
           onChange={handleTextInputChange}
         />
-        <HelperText>
-          <HelperTextItem variant={validated}>
-            {validated === 'error' ? 'Age has to be a number' : 'Write your age in numbers.'}
-          </HelperTextItem>
-        </HelperText>
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant={validated}>
+              {validated === 'error' ? 'Age has to be a number' : 'Write your age in numbers.'}
+            </HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
     </Form>
   );

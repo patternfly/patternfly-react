@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, HelperText, HelperTextItem, TextArea } from '@patternfly/react-core';
+import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextArea } from '@patternfly/react-core';
 
 export const TextAreaValidated: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
@@ -38,9 +38,11 @@ export const TextAreaValidated: React.FunctionComponent = () => {
           validated={validated}
           aria-label="invalid text area example"
         />
-        <HelperText>
-          <HelperTextItem variant={validated}>{helperText}</HelperTextItem>
-        </HelperText>
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant={validated}>{helperText}</HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
     </Form>
   );

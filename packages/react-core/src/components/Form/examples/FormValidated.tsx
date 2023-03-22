@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, HelperText, HelperTextItem, TextInput } from '@patternfly/react-core';
+import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextInput } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 export const FormValidated: React.FunctionComponent = () => {
@@ -45,11 +45,13 @@ export const FormValidated: React.FunctionComponent = () => {
           aria-describedby="age-3-helper"
           onChange={handleAgeChange}
         />
-        <HelperText>
-          <HelperTextItem variant={validated} {...(validated === 'error' && { icon: <ExclamationCircleIcon /> })}>
-            {helperText}
-          </HelperTextItem>
-        </HelperText>
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant={validated} {...(validated === 'error' && { icon: <ExclamationCircleIcon /> })}>
+              {helperText}
+            </HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
     </Form>
   );

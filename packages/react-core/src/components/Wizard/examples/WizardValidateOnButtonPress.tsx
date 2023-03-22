@@ -16,7 +16,8 @@ import {
   Alert,
   EmptyStateIcon,
   HelperText,
-  HelperTextItem
+  HelperTextItem,
+  FormHelperText
 } from '@patternfly/react-core';
 // eslint-disable-next-line patternfly-react/import-tokens-icons
 import { CogsIcon } from '@patternfly/react-icons';
@@ -104,11 +105,13 @@ const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormP
           aria-describedby="age-helper"
           onChange={handleTextInputChange}
         />
-        <HelperText>
-          <HelperTextItem variant={validated}>
-            {validated === 'error' ? 'Age has to be a number' : 'Write your age in numbers.'}
-          </HelperTextItem>
-        </HelperText>
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant={validated}>
+              {validated === 'error' ? 'Age has to be a number' : 'Write your age in numbers.'}
+            </HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
     </Form>
   );

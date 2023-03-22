@@ -1,5 +1,14 @@
 import React from 'react';
-import { Form, FormGroup, TextInput, Grid, GridItem, HelperText, HelperTextItem } from '@patternfly/react-core';
+import {
+  Form,
+  FormGroup,
+  TextInput,
+  Grid,
+  GridItem,
+  HelperText,
+  HelperTextItem,
+  FormHelperText
+} from '@patternfly/react-core';
 
 export const FormGrid: React.FunctionComponent = () => {
   const [name, setName] = React.useState('');
@@ -32,9 +41,11 @@ export const FormGrid: React.FunctionComponent = () => {
               value={name}
               onChange={handleNameChange}
             />
-            <HelperText>
-              <HelperTextItem>Include your middle name if you have one.</HelperTextItem>
-            </HelperText>
+            <FormHelperText>
+              <HelperText>
+                <HelperTextItem>Include your middle name if you have one.</HelperTextItem>
+              </HelperText>
+            </FormHelperText>
           </FormGroup>
         </GridItem>
         <FormGroup label="Email" isRequired fieldId="grid-form-email-01">

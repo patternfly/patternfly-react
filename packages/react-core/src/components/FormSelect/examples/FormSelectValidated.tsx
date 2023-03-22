@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Form,
   FormGroup,
+  FormHelperText,
   FormSelect,
   FormSelectOption,
   HelperText,
@@ -63,9 +64,11 @@ export const FormSelectValidated: React.FunctionComponent = () => {
             />
           ))}
         </FormSelect>
-        <HelperText>
-          <HelperTextItem variant={validated}>{helperText}</HelperTextItem>
-        </HelperText>
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant={validated}>{helperText}</HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
     </Form>
   );

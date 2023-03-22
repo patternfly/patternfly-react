@@ -14,7 +14,8 @@ import {
   SelectVariant,
   ValidatedOptions,
   HelperText,
-  HelperTextItem
+  HelperTextItem,
+  FormHelperText
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -187,11 +188,13 @@ export class FormDemo extends Component<FormProps, FormState> {
                 aria-describedby="age-helper-validated"
                 onChange={this.handleValidatedTextInputChange}
               />
-              <HelperText id="age2-helper">
-                <HelperTextItem variant={validated}>
-                  {validated === 'error' ? 'Age must be a number' : 'Enter age'}
-                </HelperTextItem>
-              </HelperText>
+              <FormHelperText>
+                <HelperText id="age2-helper">
+                  <HelperTextItem variant={validated}>
+                    {validated === 'error' ? 'Age must be a number' : 'Enter age'}
+                  </HelperTextItem>
+                </HelperText>
+              </FormHelperText>
             </FormGroup>
           </FormSection>
           <FormSection>

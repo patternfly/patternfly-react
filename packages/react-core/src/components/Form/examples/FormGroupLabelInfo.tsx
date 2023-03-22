@@ -1,5 +1,13 @@
 import React from 'react';
-import { Form, FormGroup, TextInput, Popover, HelperText, HelperTextItem } from '@patternfly/react-core';
+import {
+  Form,
+  FormGroup,
+  TextInput,
+  Popover,
+  HelperText,
+  HelperTextItem,
+  FormHelperText
+} from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 export const FormGroupLabelInfo: React.FunctionComponent = () => {
@@ -65,9 +73,11 @@ export const FormGroupLabelInfo: React.FunctionComponent = () => {
           value={name}
           onChange={handleNameChange}
         />
-        <HelperText>
-          <HelperTextItem>Include your middle name if you have one.</HelperTextItem>
-        </HelperText>
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem>Include your middle name if you have one.</HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
     </Form>
   );
