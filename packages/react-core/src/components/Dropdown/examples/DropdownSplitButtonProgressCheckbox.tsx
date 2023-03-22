@@ -97,7 +97,7 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
           <DropdownToggle
             splitButtonItems={[
               <DropdownToggleCheckbox
-                onChange={onChange1}
+                onChange={(_, checked) => onChange1(checked)}
                 isChecked={isChecked1}
                 isInProgress={!isTimedOut1}
                 id="split-button-progress-toggle-checkbox"
@@ -118,7 +118,7 @@ export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () =
           <DropdownToggle
             splitButtonItems={[
               <DropdownToggleCheckbox
-                onChange={onChange2}
+                onChange={(_, checked) => onChange2(checked)}
                 isChecked={isChecked2}
                 isInProgress={!isTimedOut2}
                 id="split-button-progress-text-checkbox"
