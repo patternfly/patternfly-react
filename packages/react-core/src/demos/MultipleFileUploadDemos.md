@@ -1,6 +1,7 @@
 ---
-id: File upload - multiple
+id: Multiple file upload
 section: components
+subsection: file-upload
 ---
 
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
