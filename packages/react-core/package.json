@@ -42,7 +42,7 @@
     "build:umd": "rollup -c --environment IS_PRODUCTION",
     "clean": "rimraf dist",
     "generate": "node scripts/copyStyles.js",
-    "subpaths": "node scripts/copySubpaths.js"
+    "subpaths": "node scripts/createSubpaths.js"
   },
   "dependencies": {
     "@patternfly/react-icons": "^5.0.0-alpha.6",
