@@ -15,7 +15,7 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the modal box. */
   className?: string;
   /** Alternate position of the modal. */
-  position?: 'top';
+  position?: 'default' | 'top';
   /** Offset from alternate position. Can be any valid CSS length/percentage. */
   positionOffset?: string;
   /** Variant of the modal. */

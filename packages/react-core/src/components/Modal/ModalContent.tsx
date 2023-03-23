@@ -62,7 +62,7 @@ export interface ModalContentProps extends OUIAProps {
   /** A callback for when the close button is clicked. */
   onClose?: () => void;
   /** Alternate position of the modal. */
-  position?: 'top';
+  position?: 'default' | 'top';
   /** Offset from alternate position. Can be any valid CSS length/percentage. */
   positionOffset?: string;
   /** Flag to show the close button in the header area of the modal. */
