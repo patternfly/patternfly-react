@@ -3,10 +3,6 @@ import {
   Avatar,
   Button,
   Page,
-  PageHeader,
-  PageHeaderTools,
-  PageHeaderToolsGroup,
-  PageHeaderToolsItem,
   PageSidebar,
   PageSection,
   PageSectionVariants,
@@ -17,7 +13,11 @@ import {
   KebabToggle,
   DropdownToggle,
   DropdownGroup as DropdownGroupDeprecated,
-  DropdownItem as DropdownItemDeprecated
+  DropdownItem as DropdownItemDeprecated,
+  PageHeader,
+  PageHeaderTools,
+  PageHeaderToolsItem,
+  PageHeaderToolsGroup
 } from '@patternfly/react-core/deprecated';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';

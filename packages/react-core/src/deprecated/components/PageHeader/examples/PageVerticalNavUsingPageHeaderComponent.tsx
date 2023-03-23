@@ -1,12 +1,14 @@
 import React from 'react';
 import {
   Page,
-  PageHeader,
-  PageHeaderTools,
   PageSidebar,
   PageSection,
   PageSectionVariants
 } from '@patternfly/react-core';
+import {
+  PageHeader,
+  PageHeaderTools
+} from '@patternfly/react-core/deprecated';
 
 export const PageVerticalNavUsingPageHeaderComponent: React.FunctionComponent = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(true);

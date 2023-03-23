@@ -1,16 +1,14 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import { formatBreakpointMods } from '../../helpers/util';
-import { PageContext } from './PageContext';
+import { formatBreakpointMods } from '../../../helpers/util';
+import { PageContext } from '../../../components/Page/PageContext';
 
-export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered in page header tools item. */
+export interface PageHeaderToolsGroupProps extends React.HTMLProps<HTMLDivElement> {
+  /** Content rendered in the page header tools group */
   children: React.ReactNode;
-  /** Additional classes added to the page header tools item. */
+  /** Additional classes added to the page header tools group. */
   className?: string;
-  /** HTML id of the PageHeaderToolsItem */
-  id?: string;
   /** Visibility at various breakpoints. */
   visibility?: {
     default?: 'hidden' | 'visible';
@@ -20,32 +18,26 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** True to make an icon button appear selected */
-  isSelected?: boolean;
 }
 
-export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemProps> = ({
+export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupProps> = ({
   children,
-  id,
   className,
   visibility,
-  isSelected,
   ...props
-}: PageHeaderToolsItemProps) => {
+}: PageHeaderToolsGroupProps) => {
   const { width, getBreakpoint } = React.useContext(PageContext);
   return (
     <div
       className={css(
-        styles.pageHeaderToolsItem,
-        isSelected && styles.modifiers.selected,
+        styles.pageHeaderToolsGroup,
         formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
         className
       )}
-      id={id}
       {...props}
     >
       {children}
     </div>
   );
 };
-PageHeaderToolsItem.displayName = 'PageHeaderToolsItem';
+PageHeaderToolsGroup.displayName = 'PageHeaderToolsGroup';

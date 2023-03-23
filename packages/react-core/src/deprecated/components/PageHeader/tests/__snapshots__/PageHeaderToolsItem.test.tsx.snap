@@ -5,6 +5,7 @@ exports[`PageHeaderToolsItem should match snapshot (auto-generated) 1`] = `
   <div
     class="pf-c-page__header-tools-item pf-m-selected string"
   >
+    children=
     <div>
       ReactNode
     </div>
