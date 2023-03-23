@@ -10,7 +10,7 @@ source: react-deprecated
 
 import { Button, Drawer, DrawerActions, DrawerCloseButton, DrawerColorVariant,
 DrawerContent, DrawerContentBody, DrawerHead, DrawerPanelContent, DrawerSection, ModalVariant, Alert, EmptyState, EmptyStateHeader, EmptyStateFooter, EmptyStateBody, EmptyStateActions, Title, Progress, Form, FormGroup, TextInput } from '@patternfly/react-core';
-import { Wizard as Wz, WizardFooter, WizardContextConsumer } from '@patternfly/react-core/dist/esm/deprecated';
+import { Wizard as Wz, WizardFooter as WF, WizardContextConsumer as WCC } from '@patternfly/react-core/dist/esm/deprecated';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
@@ -22,37 +22,37 @@ If you seek a wizard solution that allows for more composition, see the [React](
 
 ### Basic
 
-```ts file="./WizardBasic.tsx"
+```js file="./WizardBasic.tsx"
 ```
 
 ### Basic with disabled steps
 
-```ts file="./WizardBasicWithDisabledSteps.tsx"
+```js file="./WizardBasicWithDisabledSteps.tsx"
 ```
 
 ### Anchors for nav items
 
-```ts file="./WizardAnchorsForNavItems.tsx"
+```js file="./WizardAnchorsForNavItems.tsx"
 ```
 
 ### Incrementally enabled steps
 
-```ts file="./WizardIncrementallyEnabledSteps.tsx"
+```js file="./WizardIncrementallyEnabledSteps.tsx"
 ```
 
 ### Expandable steps
 
-```ts file="./WizardExpandableSteps.tsx"
+```js file="./WizardExpandableSteps.tsx"
 ```
 
 ### Finished
 
-```ts file="./WizardFinished.tsx"
+```js file="./WizardFinished.tsx"
 ```
 
 ### Enabled on form validation
 
-```ts file="./WizardEnabledOnFormValidation.tsx"
+```js file="./WizardEnabledOnFormValidation.tsx"
 ```
 
 ### Validate on button press
@@ -72,7 +72,7 @@ interface WizardContext {
 }
 ```
 
-```ts file="./WizardValidateOnButtonPress.tsx"
+```js file="./WizardValidateOnButtonPress.tsx"
 ```
 
 ### Progressive steps
@@ -80,7 +80,7 @@ interface WizardContext {
 ```js
 import React from 'react';
 import { Button, Radio, Alert } from '@patternfly/react-core';
-import { Wizard, WizardFooter, WizardContextConsumer } from '@patternfly/react-core/deprecated'
+import { Wizard as Wz, WizardFooter as WF, WizardContextConsumer as WCC } from '@patternfly/react-core/dist/esm/deprecated'
 
 class ProgressiveWizard extends React.Component {
   constructor(props) {
@@ -323,8 +323,8 @@ class ProgressiveWizard extends React.Component {
       ...(showReviewStep ? [reviewStep] : [])
     ];
     const CustomFooter = (
-      <WizardFooter>
-        <WizardContextConsumer>
+      <WF>
+        <WCC>
           {({ activeStep, goToStepByName, goToStepById, onNext, onBack, onClose }) => {
             return (
               <>
@@ -344,12 +344,12 @@ class ProgressiveWizard extends React.Component {
               </>
             );
           }}
-        </WizardContextConsumer>
-      </WizardFooter>
+        </WCC>
+      </WF>
     );
     const title = 'Progressive wizard';
     return (
-      <Wizard
+      <Wz
         navAriaLabel={`${title} steps`}
         mainAriaLabel={`${title} content`}
         onClose={this.closeWizard}
@@ -365,12 +365,12 @@ class ProgressiveWizard extends React.Component {
 
 ### Get current step
 
-```ts file="./WizardGetCurrentStep.tsx"
+```js file="./WizardGetCurrentStep.tsx"
 ```
 
 ### Wizard in modal
 
-```ts file="./WizardInModal.tsx"
+```js file="./WizardInModal.tsx"
 ```
 
 ### Wizard with drawer

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Wizard, WizardStep } from '@patternfly/react-core/deprecated';
+import { Wizard as Wz, WizardStep as WS } from '@patternfly/react-core/dist/esm/deprecated';
 
 export const WizardGetCurrentStep: React.FunctionComponent = () => {
-  const onCurrentStepChanged = ({ id }: WizardStep) => {
+  const onCurrentStepChanged = ({ id }: WS) => {
     // eslint-disable-next-line no-console
     console.log(id);
   };
@@ -20,7 +20,7 @@ export const WizardGetCurrentStep: React.FunctionComponent = () => {
   ];
   const title = 'Get current step wizard example';
   return (
-    <Wizard
+    <Wz
       navAriaLabel={`${title} steps`}
       mainAriaLabel={`${title} content`}
       onClose={closeWizard}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';
-import { Wizard, WizardStep } from '@patternfly/react-core/deprecated';
+import { Wizard as Wz, WS as WS } from '@patternfly/react-core/dist/esm/deprecated';
 interface PrevStepInfo {
   prevId?: string | number;
   prevName: React.ReactNode;
@@ -71,7 +71,7 @@ export const WizardFormValidation: React.FunctionComponent = () => {
     setAllStepsValid(isFormValid);
   };
 
-  const onNext = ({ id, name }: WizardStep, { prevId, prevName }: PrevStepInfo) => {
+  const onNext = ({ id, name }: WS, { prevId, prevName }: PrevStepInfo) => {
     // eslint-disable-next-line no-console
     console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
     if (id) {
@@ -83,13 +83,13 @@ export const WizardFormValidation: React.FunctionComponent = () => {
     }
   };
 
-  const onBack = ({ id, name }: WizardStep, { prevId, prevName }: PrevStepInfo) => {
+  const onBack = ({ id, name }: WS, { prevId, prevName }: PrevStepInfo) => {
     // eslint-disable-next-line no-console
     console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
     areAllStepsValid();
   };
 
-  const onGoToStep = ({ id, name }: WizardStep, { prevId, prevName }: PrevStepInfo) => {
+  const onGoToStep = ({ id, name }: WS, { prevId, prevName }: PrevStepInfo) => {
     // eslint-disable-next-line no-console
     console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
   };
@@ -126,7 +126,7 @@ export const WizardFormValidation: React.FunctionComponent = () => {
   ];
   const title = 'Wizard enabled on form validation example';
   return (
-    <Wizard
+    <Wz
       navAriaLabel={`${title} steps`}
       mainAriaLabel={`${title} content`}
       onClose={closeWizard}

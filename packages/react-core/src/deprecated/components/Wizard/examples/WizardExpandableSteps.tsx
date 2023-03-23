@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wizard } from '@patternfly/react-core/deprecated';
+import { Wizard as Wz } from '@patternfly/react-core/dist/esm/deprecated';
 
 export const WizardExpandableSteps: React.FunctionComponent = () => {
   const steps = [
@@ -23,7 +23,7 @@ export const WizardExpandableSteps: React.FunctionComponent = () => {
   ];
   const title = 'Expandable wizard example';
   return (
-    <Wizard
+    <Wz
       navAriaLabel={`${title} steps`}
       mainAriaLabel={`${title} content`}
       steps={steps}

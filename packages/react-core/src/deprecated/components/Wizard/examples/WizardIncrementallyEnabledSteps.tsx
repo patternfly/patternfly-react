@@ -1,10 +1,10 @@
 import React from 'react';
-import { Wizard, WizardStep } from '@patternfly/react-core/deprecated';
+import { Wizard as Wz, WizardStep as WS } from '@patternfly/react-core/dist/esm/deprecated';
 
 export const WizardIncrementallyEnabledSteps: React.FunctionComponent = () => {
   const [stepIdReached, setStepIdReached] = React.useState(1);
 
-  const onNext = ({ id }: WizardStep) => {
+  const onNext = ({ id }: WS) => {
     if (id) {
       if (typeof id === 'string') {
         const [, orderIndex] = id.split('-');
@@ -49,7 +49,7 @@ export const WizardIncrementallyEnabledSteps: React.FunctionComponent = () => {
   ];
   const title = 'Incrementally enabled wizard example';
   return (
-    <Wizard
+    <Wz
       navAriaLabel={`${title} steps`}
       mainAriaLabel={`${title} content`}
       onClose={closeWizard}

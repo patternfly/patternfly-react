@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wizard } from '@patternfly/react-core/deprecated';
+import { Wizard as Wz } from '@patternfly/react-core/dist/esm/deprecated';
 
 export const WizardBasicWithDisabledSteps: React.FunctionComponent = () => {
   const steps = [
@@ -10,5 +10,5 @@ export const WizardBasicWithDisabledSteps: React.FunctionComponent = () => {
     { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
   ];
   const title = 'Basic wizard with disabled steps example';
-  return <Wizard navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} height={400} />;
+  return <Wz navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} height={400} />;
 };

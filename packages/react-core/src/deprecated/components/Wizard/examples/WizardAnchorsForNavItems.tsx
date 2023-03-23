@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { Wizard } from '@patternfly/react-core/deprecated'
+import { Wizard as Wz } from '@patternfly/react-core/dist/esm/deprecated'
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 
@@ -39,5 +39,5 @@ export const WizardWithNavAnchors: React.FunctionComponent = () => {
     }
   ];
   const title = 'Anchor link wizard example';
-  return <Wizard navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} height={400} />;
+  return <Wz navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} height={400} />;
 };
