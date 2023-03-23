@@ -57,7 +57,7 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build:fed:packages" : "node ../../scripts/build-single-packages.js -- --packageName @patternfly/react-charts"
+    "build:fed:packages" : "node ../../scripts/build-single-packages.js --config build-single-packages.json"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.157",

@@ -35,7 +35,7 @@
   "homepage": "https://github.com/patternfly/patternfly-react/tree/main/packages/react-table#readme",
   "scripts": {
     "build:umd": "rollup -c --environment IS_PRODUCTION",
-    "build:fed:packages" : "node ../../scripts/build-single-packages.js -- --packageName @patternfly/react-table",
+    "build:fed:packages" : "node ../../scripts/build-single-packages.js --config build-single-packages.json",
     "clean": "rimraf dist",
     "subpaths": "node scripts/createSubpaths.js"
   },

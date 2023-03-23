@@ -1,0 +1,33 @@
+{
+    "packageName": "@patternfly/react-core",
+    "modules": [ 
+        {
+            "module": "components",
+            "moduleType": "esm"
+        },
+        {
+            "module": "deprecated",
+            "moduleType": "esm"
+        },
+        {
+            "module": "layouts",
+            "moduleType": "esm"
+        },
+        {
+            "module": "next",
+            "moduleType": "esm"
+        },
+        {
+            "module": "helpers",
+            "moduleType": "esm"
+        },
+        {
+            "module": "dist/js",
+            "moduleType": "cjs"
+        }
+    ],
+    "blackList": [
+        "dist/esm/deprecated/index.js",
+        "dist/esm/next/index.js"
+    ]
+}

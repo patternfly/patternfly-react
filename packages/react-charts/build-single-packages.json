@@ -1,0 +1,17 @@
+{
+    "packageName": "@patternfly/react-charts",
+    "modules": [ 
+        {
+            "module": "dist/esm",
+            "moduleType": "esm"
+        },
+        {
+            "module": "dist/js",
+            "moduleType": "cjs"
+        }
+    ],
+    "blackList": [
+        "dist/esm/deprecated/index.js",
+        "dist/esm/next/index.js"
+    ]
+}

@@ -1,31 +1,35 @@
+/* eslint-disable no-console */
 const fse = require('fs-extra');
 const glob = require('glob');
 
 const root = process.cwd();
 const packageJson = require(`${root}/package.json`);
+const configJson = require(process.argv[process.argv.indexOf('--config') + 1]);
 
-const foldersBlackList = [`${root}/dist/esm/deprecated/index.js`];
-const esmComponents = glob
-  .sync(`${root}/dist/esm/**/**/index.js`)
-  .filter((item) => !foldersBlackList.some((name) => item.includes(name)))
-  .map((name) => name.replace(/\/$/, ''));
+const foldersBlackList = configJson.blackList ? configJson.blackList : []
 
-const cjsComponents = glob
-  .sync(`${root}/dist/js/**/**/index.js`)
-  .filter((item) => !foldersBlackList.some((name) => item.includes(name)))
-  .map((name) => name.replace(/\/$/, ''));
+if (!configJson.modules && configJson.modules.length !== 0) {
+  console.log('modules are required');
+  process.exit(1);
+}
+
+const components = configJson.modules.map(module => ({
+    files: glob
+      .sync(`${root}/${module.module}/**/**/index.js`)
+      .filter((item) => !foldersBlackList.some((name) => item.includes(name)))
+      .map((name) => name.replace(/\/$/, '')),
+    moduleType: module.moduleType
+  }));
 
 async function createPackage(component, dist) {
   const cmds = [];
   const destFile = component.replace(/index.js/g, 'package.json');
   const pathAsArray = component.split('/');
   const esmRelative = `.${component.split(`${root}`)[1]}`;
-  const packageNameIndex = process.argv.indexOf('--packageName');
-  
-  let packageName = '';
-  if(packageNameIndex + 1 < process.argv.length) {
-     packageName=process.argv[packageNameIndex + 1];
-  } else {
+
+  const packageName = configJson.packageName;
+  if (!packageName) {
+    console.log("packageName is required!")
     process.exit(1);
   }
 
@@ -60,11 +64,12 @@ async function run(components, dist) {
   try {
     await generatePackages(components, dist);
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.log(error)
     process.exit(1);
   }
 }
 
-run(esmComponents, 'esm');
-run(cjsComponents, 'cjs')
+components.forEach(component => {
+  run(component.files, component.moduleType);
+});
+
