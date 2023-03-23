@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.44...@patternfly/react-table@5.0.0-alpha.45) (2023-03-23)
+
+### Features
+
+- **Table:** allow action tooltip ([#8838](https://github.com/patternfly/patternfly-react/issues/8838)) ([549e25c](https://github.com/patternfly/patternfly-react/commit/549e25c2ff81eb1a581280cd0456454800896c29))
+
 # [5.0.0-alpha.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.43...@patternfly/react-table@5.0.0-alpha.44) (2023-03-23)
 
 **Note:** Version bump only for package @patternfly/react-table
