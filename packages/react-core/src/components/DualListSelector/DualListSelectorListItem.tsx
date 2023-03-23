@@ -18,7 +18,7 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   /** Flag indicating the list item is currently selected. */
   isSelected?: boolean;
   /** Callback fired when an option is selected.  */
-  onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, id?: string) => void;
+  onOptionSelect?: (event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, id?: string) => void;
   /** ID of the option. */
   id?: string;
   /** @hide Internal field used to keep track of order of unfiltered options. */
