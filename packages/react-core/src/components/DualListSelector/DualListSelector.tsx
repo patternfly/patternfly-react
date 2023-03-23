@@ -704,7 +704,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
                     onFilterUpdate={this.onFilterUpdate}
                     searchInputAriaLabel={availableOptionsSearchAriaLabel}
                     filterOption={filterOption}
-                    onSearchInputChanged={(value, event) => onAvailableOptionsSearchInputChanged(event, value)}
+                    onSearchInputChanged={onAvailableOptionsSearchInputChanged}
                     status={availableOptionsStatusToDisplay}
                     title={availableOptionsTitle}
                     options={available}
@@ -769,7 +769,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
                     onFilterUpdate={this.onFilterUpdate}
                     searchInputAriaLabel={chosenOptionsSearchAriaLabel}
                     filterOption={filterOption}
-                    onSearchInputChanged={(value, event) => onChosenOptionsSearchInputChanged(event, value)}
+                    onSearchInputChanged={onChosenOptionsSearchInputChanged}
                     title={chosenOptionsTitle}
                     status={chosenOptionsStatusToDisplay}
                     options={chosen}

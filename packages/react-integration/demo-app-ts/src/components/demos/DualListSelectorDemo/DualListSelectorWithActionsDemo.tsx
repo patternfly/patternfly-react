@@ -23,7 +23,11 @@ interface DualListSelectorState {
 export class DualListSelectorWithActionsDemo extends React.Component<DualListSelectorProps, DualListSelectorState> {
   static displayName = 'DualListSelectorDemo';
   onSort: (panel: string) => void;
-  onListChange: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
+  onListChange: (
+    event: React.MouseEvent<HTMLElement>,
+    newAvailableOptions: React.ReactNode[],
+    newChosenOptions: React.ReactNode[]
+  ) => void;
   onToggle: (isOpen: boolean, pane: string) => void;
   filterOption: (option: React.ReactNode, input: string) => boolean;
   onOptionSelect: (e: React.MouseEvent | React.ChangeEvent) => void;
@@ -46,7 +50,7 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
 
     this.onSort = (panel: string) => {
       if (panel === 'available') {
-        this.setState(prevState => {
+        this.setState((prevState) => {
           const available = prevState.availableOptions.sort((a: any, b: any) => {
             let returnValue = 0;
             if (a.props.children > b.props.children) {
@@ -68,7 +72,7 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
       }
 
       if (panel === 'chosen') {
-        this.setState(prevState => {
+        this.setState((prevState) => {
           const chosen = prevState.chosenOptions.sort((a: any, b: any) => {
             let returnValue = 0;
             if (a.props.children > b.props.children) {
@@ -90,7 +94,7 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
       }
     };
 
-    this.onListChange = (newAvailableOptions, newChosenOptions) => {
+    this.onListChange = (_event, newAvailableOptions, newChosenOptions) => {
       this.setState({
         availableOptions: newAvailableOptions,
         chosenOptions: newChosenOptions
@@ -175,13 +179,21 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
         chosenOptionsActions={chosenOptionsActions}
         chosenOptionsSearchAriaLabel="Demo chosen options search"
         controlsAriaLabel="Demo action controls"
-        addAll={this.onListChange}
+        addAll={(newAvailableOptions, newChosenOptions) =>
+          this.onListChange(undefined, newAvailableOptions, newChosenOptions)
+        }
         addAllAriaLabel="Demo add all"
-        removeAll={this.onListChange}
+        removeAll={(newAvailableOptions, newChosenOptions) =>
+          this.onListChange(undefined, newAvailableOptions, newChosenOptions)
+        }
         removeAllAriaLabel="Demo remove all"
-        addSelected={this.onListChange}
+        addSelected={(newAvailableOptions, newChosenOptions) =>
+          this.onListChange(undefined, newAvailableOptions, newChosenOptions)
+        }
         addSelectedAriaLabel="Demo add selected"
-        removeSelected={this.onListChange}
+        removeSelected={(newAvailableOptions, newChosenOptions) =>
+          this.onListChange(undefined, newAvailableOptions, newChosenOptions)
+        }
         removeSelectedAriaLabel="Demo remove selected"
         onListChange={this.onListChange}
         filterOption={this.filterOption}
