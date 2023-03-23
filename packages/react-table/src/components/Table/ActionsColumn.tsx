@@ -5,6 +5,7 @@ import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
 import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import { IAction, IExtraData, IRowData } from './TableTypes';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 
 export interface CustomActionsToggleProps {
   onToggle: (event: React.MouseEvent) => void;
@@ -108,10 +109,11 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
         <DropdownList>
           {items
             .filter((item) => !item.isOutsideDropdown)
-            .map(({ title, itemKey, onClick, isSeparator, ...props }, key) =>
-              isSeparator ? (
-                <Divider key={itemKey || key} data-key={itemKey || key} />
-              ) : (
+            .map(({ title, itemKey, onClick, tooltip, tooltipProps, isSeparator, ...props }, key) => {
+              if (isSeparator) {
+                return <Divider key={itemKey || key} data-key={itemKey || key} />;
+              }
+              const item = (
                 <DropdownItem
                   onClick={(event) => {
                     onActionClick(event, onClick);
@@ -123,8 +125,18 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
                 >
                   {title}
                 </DropdownItem>
-              )
-            )}
+              );
+
+              if (tooltip) {
+                return (
+                  <Tooltip key={itemKey || key} content={tooltip} {...tooltipProps}>
+                    {item}
+                  </Tooltip>
+                );
+              } else {
+                return item;
+              }
+            })}
         </DropdownList>
       </Dropdown>
     </React.Fragment>
