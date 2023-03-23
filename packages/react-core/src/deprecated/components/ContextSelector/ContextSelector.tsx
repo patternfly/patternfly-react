@@ -4,10 +4,10 @@ import { css } from '@patternfly/react-styles';
 import { ContextSelectorToggle } from './ContextSelectorToggle';
 import { ContextSelectorMenuList } from './ContextSelectorMenuList';
 import { ContextSelectorContext } from './contextSelectorConstants';
-import { FocusTrap, getUniqueId } from '../../helpers';
-import { Popper } from '../../helpers/Popper/Popper';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
-import { SearchInput } from '../SearchInput';
+import { FocusTrap, getUniqueId } from '../../../helpers';
+import { Popper } from '../../../helpers/Popper/Popper';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../../helpers';
+import { SearchInput } from '../../../components/SearchInput';
 
 export interface ContextSelectorProps extends OUIAProps {
   /** content rendered inside the Context Selector */
@@ -152,7 +152,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
                 submitSearchButtonLabel={searchButtonAriaLabel}
                 placeholder={searchInputPlaceholder}
                 onChange={onSearchInputChange}
-                onSearch={(event, _value, _) => {
+                onSearch={(event: React.SyntheticEvent<HTMLButtonElement, Event>, _value: any, _: any) => {
                   onSearchButtonClick(event);
                 }}
                 value={searchInputValue}

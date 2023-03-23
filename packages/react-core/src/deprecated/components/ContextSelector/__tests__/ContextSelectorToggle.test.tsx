@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ContextSelectorToggle } from '../ContextSelectorToggle';
-import { KeyTypes } from '../../../helpers';
+import { KeyTypes } from '../../../../helpers';
 
 describe('ContextSelectorToggle', () => {
   test('Renders ContextSelectorToggle', () => {

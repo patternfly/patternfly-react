@@ -2,8 +2,8 @@ import * as React from 'react';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
-import { KeyTypes } from '../../helpers/constants';
-import { PickOptional } from '../../helpers/typeUtils';
+import { KeyTypes } from '../../../helpers/constants';
+import { PickOptional } from '../../../helpers/typeUtils';
 
 export interface ContextSelectorToggleProps {
   /** HTML ID of toggle */

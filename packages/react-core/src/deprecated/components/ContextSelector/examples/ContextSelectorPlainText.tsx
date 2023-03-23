@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
+import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core/deprecated';
 
 const items = [
   {
