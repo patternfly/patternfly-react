@@ -1,10 +1,10 @@
 import React from 'react';
-import { Wizard as Wz, WizardStep as WS } from '@patternfly/react-core/dist/esm/deprecated';
+import { Wizard as Wz, WizardStep } from '@patternfly/react-core/dist/esm/deprecated';
 
 export const WizardIncrementallyEnabledSteps: React.FunctionComponent = () => {
   const [stepIdReached, setStepIdReached] = React.useState(1);
 
-  const onNext = ({ id }: WS) => {
+  const onNext = ({ id }: WizardStep) => {
     if (id) {
       if (typeof id === 'string') {
         const [, orderIndex] = id.split('-');
