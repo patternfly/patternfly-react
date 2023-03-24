@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';
-import { Wizard as Wz, WizardStep } from '@patternfly/react-core/dist/esm/deprecated';
+import { Wizard as Wz, WizardStep } from '@patternfly/react-core/deprecated';
 interface PrevStepInfo {
   prevId?: string | number;
   prevName: React.ReactNode;

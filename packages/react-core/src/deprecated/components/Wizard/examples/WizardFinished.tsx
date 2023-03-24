@@ -9,7 +9,7 @@ import {
   Progress,
   Button
 } from '@patternfly/react-core';
-import { Wizard as Wz } from '@patternfly/react-core/dist/esm/deprecated';
+import { Wizard as Wz } from '@patternfly/react-core/deprecated';
 // eslint-disable-next-line patternfly-react/import-tokens-icons
 import { CogsIcon } from '@patternfly/react-icons';
 

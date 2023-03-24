@@ -10,7 +10,7 @@ source: react-deprecated
 
 import { Button, Drawer, DrawerActions, DrawerCloseButton, DrawerColorVariant,
 DrawerContent, DrawerContentBody, DrawerHead, DrawerPanelContent, DrawerSection, ModalVariant, Alert, EmptyState, EmptyStateHeader, EmptyStateFooter, EmptyStateBody, EmptyStateActions, Title, Progress, Form, FormGroup, TextInput } from '@patternfly/react-core';
-import { Wizard as Wz, WizardFooter as WF, WizardContextConsumer as WCC } from '@patternfly/react-core/dist/esm/deprecated';
+import { Wizard as Wz, WizardFooter as WF, WizardContextConsumer as WCC } from '@patternfly/react-core/deprecated';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
@@ -80,7 +80,7 @@ interface WizardContext {
 ```js
 import React from 'react';
 import { Button, Radio, Alert } from '@patternfly/react-core';
-import { Wizard as Wz, WizardFooter as WF, WizardContextConsumer as WCC } from '@patternfly/react-core/dist/esm/deprecated'
+import { Wizard as Wz, WizardFooter as WF, WizardContextConsumer as WCC } from '@patternfly/react-core/deprecated'
 
 class ProgressiveWizard extends React.Component {
   constructor(props) {

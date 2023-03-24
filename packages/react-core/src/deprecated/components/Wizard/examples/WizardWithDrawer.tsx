@@ -7,7 +7,7 @@ import {
   DrawerHead,
   DrawerPanelContent
 } from '@patternfly/react-core';
-import { Wizard as Wz } from '@patternfly/react-core/dist/esm/deprecated';
+import { Wizard as Wz } from '@patternfly/react-core/deprecated';
 
 export const WizardWithDrawer: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);

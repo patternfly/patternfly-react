@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wizard as Wz, WizardStep } from '@patternfly/react-core/dist/esm/deprecated';
+import { Wizard as Wz, WizardStep } from '@patternfly/react-core/deprecated';
 
 export const WizardIncrementallyEnabledSteps: React.FunctionComponent = () => {
   const [stepIdReached, setStepIdReached] = React.useState(1);

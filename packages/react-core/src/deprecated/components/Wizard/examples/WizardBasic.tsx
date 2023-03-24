@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wizard as Wz } from '@patternfly/react-core/dist/esm/deprecated';
+import { Wizard as Wz } from '@patternfly/react-core/deprecated';
 
 export const WizardBasic: React.FunctionComponent = () => {
   const steps = [
