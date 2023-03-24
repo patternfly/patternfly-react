@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.45...@patternfly/react-core@5.0.0-alpha.46) (2023-03-24)
+
+### Bug Fixes
+
+- **Modal:** updated position prop to have 'default' option ([#8855](https://github.com/patternfly/patternfly-react/issues/8855)) ([13892f0](https://github.com/patternfly/patternfly-react/commit/13892f01403aaa5f765cd8ff93748654f51b814a))
+
 # [5.0.0-alpha.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.44...@patternfly/react-core@5.0.0-alpha.45) (2023-03-23)
 
 **Note:** Version bump only for package @patternfly/react-core
