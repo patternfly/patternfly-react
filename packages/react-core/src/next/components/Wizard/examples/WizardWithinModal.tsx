@@ -14,12 +14,20 @@ export const WizardWithinModal = () => {
         showClose={false}
         aria-label="Wizard modal"
         hasNoBodyWrapper
+        onEscapePress={() => setIsModalOpen(false)}
         variant={ModalVariant.medium}
       >
         <Wizard
           height={400}
+          onClose={() => setIsModalOpen(false)}
           title="In modal wizard"
-          header={<WizardHeader title="Wizard in modal" description="Simple wizard description" />}
+          header={
+            <WizardHeader
+              onClose={() => setIsModalOpen(false)}
+              title="Wizard in modal"
+              description="Simple wizard description"
+            />
+          }
         >
           <WizardStep name="Step 1" id="in-modal-step-1">
             Step 1 content
