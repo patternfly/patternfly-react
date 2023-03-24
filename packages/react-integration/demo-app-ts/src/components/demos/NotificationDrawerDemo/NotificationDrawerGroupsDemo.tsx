@@ -1,17 +1,11 @@
 import React from 'react';
 import {
   Button,
-  Dropdown,
-  DropdownItem,
-  DropdownDirection,
-  DropdownPosition,
-  DropdownSeparator,
   EmptyState,
   EmptyStateHeader,
   EmptyStateBody,
   EmptyStateIcon,
   EmptyStateVariant,
-  KebabToggle,
   NotificationDrawer,
   NotificationDrawerProps,
   NotificationDrawerBody,
@@ -22,10 +16,17 @@ import {
   NotificationDrawerListItem,
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
-  Title,
   EmptyStateActions,
   EmptyStateFooter
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownDirection,
+  DropdownPosition,
+  DropdownSeparator,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 interface GroupsNotificationDrawerDemoState {
@@ -87,19 +88,19 @@ export class GroupsNotificationDrawerDemo extends React.Component<
   render() {
     const { isOpenMap, firstGroupExpanded, secondGroupExpanded, thirdGroupExpanded } = this.state;
     const dropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
+      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action" component="button">
         Action
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="disabled link" isDisabled>
+      <DropdownItemDeprecated key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
     return (
       <NotificationDrawer>
         <NotificationDrawerHeader count={4} onClose={this.onDrawerClose}>
-          <Dropdown
+          <DropdownDeprecated
             onSelect={this.onSelect}
             toggle={
               <KebabToggle
@@ -131,7 +132,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Unread info notification title"
                     srTitle="Info notification:"
                   >
-                    <Dropdown
+                    <DropdownDeprecated
                       position={DropdownPosition.right}
                       onSelect={this.onSelect}
                       toggle={
@@ -156,7 +157,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
                     srTitle="Danger notification:"
                   >
-                    <Dropdown
+                    <DropdownDeprecated
                       position={DropdownPosition.right}
                       onSelect={this.onSelect}
                       toggle={
@@ -182,7 +183,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Read warning notification title"
                     srTitle="Warning notification:"
                   >
-                    <Dropdown
+                    <DropdownDeprecated
                       position={DropdownPosition.right}
                       onSelect={this.onSelect}
                       toggle={
@@ -207,7 +208,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Read success notification title"
                     srTitle="Success notification:"
                   >
-                    <Dropdown
+                    <DropdownDeprecated
                       position={DropdownPosition.right}
                       direction={DropdownDirection.up}
                       onSelect={this.onSelect}
@@ -245,7 +246,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Unread info notification title"
                     srTitle="Info notification:"
                   >
-                    <Dropdown
+                    <DropdownDeprecated
                       position={DropdownPosition.right}
                       onSelect={this.onSelect}
                       toggle={
@@ -270,7 +271,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
                     srTitle="Danger notification:"
                   >
-                    <Dropdown
+                    <DropdownDeprecated
                       position={DropdownPosition.right}
                       onSelect={this.onSelect}
                       toggle={
@@ -296,7 +297,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Read warning notification title"
                     srTitle="Warning notification:"
                   >
-                    <Dropdown
+                    <DropdownDeprecated
                       position={DropdownPosition.right}
                       onSelect={this.onSelect}
                       toggle={
@@ -321,7 +322,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Read success notification title"
                     srTitle="Success notification:"
                   >
-                    <Dropdown
+                    <DropdownDeprecated
                       position={DropdownPosition.right}
                       direction={DropdownDirection.up}
                       onSelect={this.onSelect}

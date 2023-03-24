@@ -8,10 +8,11 @@ import {
   OverflowMenuGroup,
   OverflowMenuItem,
   OverflowMenuDropdownItem,
-  MenuToggle
+  MenuToggle,
+  Dropdown,
+  DropdownList
 } from '@patternfly/react-core';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/next';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 interface Repository {
@@ -92,7 +93,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
                     </OverflowMenuGroup>
                   </OverflowMenuContent>
                   <OverflowMenuControl>
-                    <DropdownNext
+                    <Dropdown
                       onSelect={() =>
                         setRepos(repos.map((r) => (r.name !== repo.name ? r : { ...r, isMenuOpen: !r.isMenuOpen })))
                       }
@@ -115,7 +116,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
                       }
                     >
                       <DropdownList>{dropdownItems}</DropdownList>
-                    </DropdownNext>
+                    </Dropdown>
                   </OverflowMenuControl>
                 </OverflowMenu>
               </Td>

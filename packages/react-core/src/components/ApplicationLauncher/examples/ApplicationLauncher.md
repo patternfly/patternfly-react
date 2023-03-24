@@ -6,6 +6,7 @@ propComponents: ['ApplicationLauncher', 'ApplicationLauncherItem', 'ApplicationL
 ouia: true
 ---
 
+import { DropdownDirection, DropdownPosition } from '@patternfly/react-core/deprecated';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import { Link } from '@reach/router';
 import pfLogoSm from './pf-logo-small.svg';
@@ -18,49 +19,59 @@ To add a tooltip, use the `tooltip` prop and optionally add more tooltip props b
 ### Basic
 
 ```ts file="./ApplicationLauncherBasic.tsx"
+
 ```
 
 ### Router link
 
 ```ts file="./ApplicationLauncherRouterLink.tsx"
+
 ```
 
 ### Disabled
 
 ```ts file="./ApplicationLauncherDisabled.tsx"
+
 ```
 
 ### Aligned right
 
 ```ts file="./ApplicationLauncherAlignRight.tsx"
+
 ```
 
 ### Aligned top
 
 ```ts file="./ApplicationLauncherAlignTop.tsx"
+
 ```
 
 ### With tooltip
 
 ```ts file="./ApplicationLauncherTooltip.tsx"
+
 ```
 
 ### With sections and icons
 
 ```ts file="./ApplicationLauncherSectionsAndIcons.tsx"
+
 ```
 
 ### With favorites and search
 
 ```ts file="./ApplicationLauncherFavoritesAndSearch.tsx"
+
 ```
 
 ### With custom icon
 
 ```ts file="./ApplicationLauncherCustomIcon.tsx"
+
 ```
 
 ### Basic with menu appended to document body
 
 ```ts file="./ApplicationLauncherDocumentBody.tsx"
+
 ```

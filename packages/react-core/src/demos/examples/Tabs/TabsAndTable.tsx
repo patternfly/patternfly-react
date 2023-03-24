@@ -11,9 +11,10 @@ import {
   DrawerActions,
   DrawerCloseButton,
   DrawerPanelBody,
+  Dropdown,
+  DropdownList,
   Flex,
   FlexItem,
-  KebabToggle,
   Label,
   LabelGroup,
   MenuToggle,
@@ -37,7 +38,7 @@ import {
   Toolbar,
   ToolbarItem,
   ToolbarContent,
-  ToolbarToggleGroup,
+  ToolbarToggleGroup
 } from '@patternfly/react-core';
 import {
   TableComposable,
@@ -50,7 +51,7 @@ import {
   ActionsColumn,
   CustomActionsToggleProps
 } from '@patternfly/react-table';
-import { Dropdown as DropdownNext, DropdownList } from '@patternfly/react-core/next';
+import { KebabToggle } from '@patternfly/react-core/deprecated';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -96,13 +97,13 @@ export const TablesAndTabs = () => {
 
   const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
   const setRepoSelected = (event: React.FormEvent<HTMLInputElement>, repo: Repository, isSelecting = true) => {
-    setSelectedRepoNames(prevSelected => {
-      const otherSelectedRepoNames = prevSelected.filter(r => r !== repo.name);
+    setSelectedRepoNames((prevSelected) => {
+      const otherSelectedRepoNames = prevSelected.filter((r) => r !== repo.name);
       return isSelecting ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
     });
     event.stopPropagation();
   };
-  const onSelectAll = (isSelecting = true) => setSelectedRepoNames(isSelecting ? repositories.map(r => r.name) : []);
+  const onSelectAll = (isSelecting = true) => setSelectedRepoNames(isSelecting ? repositories.map((r) => r.name) : []);
   const allRowsSelected = selectedRepoNames.length === repositories.length;
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
@@ -112,14 +113,14 @@ export const TablesAndTabs = () => {
   const defaultActions: IAction[] = [
     {
       title: 'Some action',
-      onClick: event => {
+      onClick: (event) => {
         event.stopPropagation();
         console.log('clicked on Some action');
       }
     },
     {
       title: <a href="https://www.patternfly.org">Link action</a>,
-      onClick: event => {
+      onClick: (event) => {
         event.stopPropagation();
         console.log('clicked on Link action');
       }
@@ -129,7 +130,7 @@ export const TablesAndTabs = () => {
     },
     {
       title: 'Third action',
-      onClick: event => {
+      onClick: (event) => {
         event.stopPropagation();
         console.log('clicked on Third action');
       }
@@ -185,9 +186,9 @@ export const TablesAndTabs = () => {
             </OverflowMenuGroup>
           </OverflowMenuContent>
           <OverflowMenuControl hasAdditionalOptions>
-            <DropdownNext
+            <Dropdown
               onSelect={() => {}}
-              toggle={toggleRef => (
+              toggle={(toggleRef) => (
                 <MenuToggle
                   ref={toggleRef}
                   aria-label="overflow menu"
@@ -201,7 +202,7 @@ export const TablesAndTabs = () => {
               isOpen={false}
             >
               <DropdownList>{[]}</DropdownList>
-            </DropdownNext>
+            </Dropdown>
           </OverflowMenuControl>
         </OverflowMenu>
       </ToolbarContent>
@@ -229,7 +230,7 @@ export const TablesAndTabs = () => {
         {repositories.map((repo, rowIndex) => (
           <Tr
             key={repo.name}
-            onRowClick={event => {
+            onRowClick={(event) => {
               if ((event?.target as HTMLInputElement).type !== 'checkbox') {
                 setRowClicked(rowClicked === repo.name ? '' : repo.name);
                 setIsExpanded(!isRowClicked(repo));
@@ -349,7 +350,7 @@ export const TablesAndTabs = () => {
                 </FlexItem>
                 <FlexItem>
                   <LabelGroup>
-                    {[1, 2, 3, 4, 5].map(labelNumber => (
+                    {[1, 2, 3, 4, 5].map((labelNumber) => (
                       <Label variant="outline" key={`label-${labelNumber}`}>{`Tag ${labelNumber}`}</Label>
                     ))}
                   </LabelGroup>

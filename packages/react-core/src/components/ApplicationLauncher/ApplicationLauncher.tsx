@@ -2,8 +2,13 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
-import { DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } from '../Dropdown';
-import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
+import {
+  DropdownDirection,
+  DropdownPosition,
+  DropdownToggle,
+  DropdownContext
+} from '../../deprecated/components/Dropdown';
+import { DropdownWithContext } from '../../deprecated/components/Dropdown/DropdownWithContext';
 import { ApplicationLauncherGroup } from './ApplicationLauncherGroup';
 import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
 import { ApplicationLauncherItem } from './ApplicationLauncherItem';
@@ -94,13 +99,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     return (
       <div key="search" className={css(styles.appLauncherMenuSearch)}>
         <ApplicationLauncherItem
-          customChild={
-            <SearchInput
-              placeholder={searchPlaceholderText}
-              onChange={onSearch}
-              {...searchProps}
-            />
-          }
+          customChild={<SearchInput placeholder={searchPlaceholderText} onChange={onSearch} {...searchProps} />}
         ></ApplicationLauncherItem>
       </div>
     );

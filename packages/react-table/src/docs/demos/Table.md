@@ -24,6 +24,14 @@ PageSectionVariants,
 TextContent,
 Text,
 Divider } from '@patternfly/react-core';
+import {
+Dropdown as DropdownDeprecated,
+DropdownItem as DropdownItemDeprecated,
+DropdownPosition,
+DropdownToggle,
+DropdownToggleCheckbox,
+KebabToggle
+} from '@patternfly/react-core/deprecated';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -47,6 +55,7 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { rows, columns } from '../examples/Data.jsx';
 
 ## Demos
@@ -56,11 +65,6 @@ import { rows, columns } from '../examples/Data.jsx';
 ```js isFullscreen
 import React from 'react';
 import {
-  Dropdown,
-  DropdownItem,
-  DropdownPosition,
-  DropdownToggle,
-  DropdownToggleCheckbox,
   PageSection,
   Pagination,
   Title,
@@ -69,6 +73,13 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownPosition,
+  DropdownToggle,
+  DropdownToggleCheckbox
+} from '@patternfly/react-core/deprecated';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
@@ -207,19 +218,19 @@ class BulkSelectTableDemo extends React.Component {
     const isChecked = allSelected ? true : someChecked;
 
     const items = [
-      <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
+      <DropdownItemDeprecated key="item-1" onClick={() => this.handleSelectClick('none')}>
         Select none (0 items)
-      </DropdownItem>,
-      <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-2" onClick={() => this.handleSelectClick('page')}>
         Select page ({this.state.perPage} items)
-      </DropdownItem>,
-      <DropdownItem key="item-3" onClick={() => this.handleSelectClick('all')}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-3" onClick={() => this.handleSelectClick('all')}>
         Select all (100 items)
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     return (
-      <Dropdown
+      <DropdownDeprecated
         onSelect={this.onDropDownSelect}
         position={DropdownPosition.left}
         toggle={
@@ -1757,11 +1768,7 @@ class LoadingStateDemo extends React.Component {
             title: (
               <Bullseye>
                 <EmptyState>
-                  <EmptyStateHeader
-                    titleText="Loading"
-                    headingLevel="h2"
-                    icon={<EmptyStateIcon icon={Spinner} />}
-                  />
+                  <EmptyStateHeader titleText="Loading" headingLevel="h2" icon={<EmptyStateIcon icon={Spinner} />} />
                 </EmptyState>
               </Bullseye>
             )

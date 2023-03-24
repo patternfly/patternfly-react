@@ -6,14 +6,8 @@
  */
 
 import * as React from 'react';
-import {
-  TooltipProps,
-  PopoverProps,
-  DropdownPosition,
-  DropdownDirection,
-  SelectOptionObject,
-  SelectProps
-} from '@patternfly/react-core';
+import { TooltipProps, PopoverProps, SelectOptionObject, SelectProps } from '@patternfly/react-core';
+import { DropdownPosition, DropdownDirection } from '@patternfly/react-core/dist/esm/deprecated/components';
 import { TableComposable } from '../../TableComposable/TableComposable';
 import { Thead } from '../../TableComposable/Thead';
 import { Tbody } from '../../TableComposable/Tbody';

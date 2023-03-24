@@ -16,12 +16,14 @@ import {
   SelectOption,
   SelectOptionObject,
   SelectVariant,
-  Dropdown,
-  DropdownItem,
-  DropdownSeparator,
-  KebabToggle,
   TextInput
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownSeparator,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
@@ -62,7 +64,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
   }
 
   toggleisOpen = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isOpen: !prevState.isOpen
     }));
   };
@@ -84,7 +86,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
   ) => {
     const selectedTarget = event.target as HTMLInputElement;
     const checked = selectedTarget.checked;
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const prevSelections = prevState.filters[type];
       return {
         filters: {
@@ -108,7 +110,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
   onDelete = (type: string | ToolbarChipGroup = '', id: ToolbarChip | string = '') => {
     if (type) {
       const lowerCaseType = typeof type === 'string' ? type.toLowerCase() : type.name.toLowerCase();
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const newState = Object.assign(prevState);
         newState.filters[lowerCaseType] = newState.filters[lowerCaseType].filter((s: string) => s !== id);
         return {
@@ -128,7 +130,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
 
   onDeleteGroup = (category: string) => {
     if (category) {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         prevState.filters[category.toLowerCase() as 'risk' | 'key' | 'status'] = [];
         return {
           filters: prevState.filters
@@ -229,21 +231,21 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     );
 
     const dropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
+      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action" component="button">
         Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="disabled action" isDisabled component="button">
         Disabled Action
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
+      <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="separated action" component="button">
         Separated Action
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const widths = {
@@ -284,7 +286,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
           </ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem>
-          <Dropdown
+          <DropdownDeprecated
             toggle={<KebabToggle onToggle={this.onKebabToggle} />}
             isOpen={kebabIsOpen}
             isPlain
@@ -421,7 +423,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
           clearAllFilters={this.onDelete}
           className="pf-m-toggle-group-container"
           clearFiltersButtonText="Clear filters"
-          numberOfFiltersText={numOfFilters => `Applied filters: ${numOfFilters}`}
+          numberOfFiltersText={(numOfFilters) => `Applied filters: ${numOfFilters}`}
         >
           <ToolbarContent>{toolbarItems}</ToolbarContent>
         </Toolbar>

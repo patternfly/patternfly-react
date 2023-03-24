@@ -14,10 +14,16 @@ propComponents:
     'DataListToggle',
     'DataListContent',
     'DataListDragButton',
-    'DataListControl',
+    'DataListControl'
   ]
 ---
 
+import {
+Dropdown as DropdownDeprecated,
+DropdownItem as DropdownItemDeprecated,
+DropdownPosition,
+KebabToggle
+} from '@patternfly/react-core/deprecated';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -28,46 +34,55 @@ import { css } from '@patternfly/react-styles';
 ### Basic
 
 ```ts file="./DataListBasic.tsx"
+
 ```
 
 ### Compact
 
 ```ts file="./DataListCompact.tsx"
+
 ```
 
 ### Checkboxes, actions and additional cells
 
 ```ts file="./DataListCheckboxes.tsx"
+
 ```
 
 ### Actions: single and multiple
 
 ```ts file="./DataListActions.tsx"
+
 ```
 
 ### Expandable
 
 ```ts file="./DataListExpandable.tsx"
+
 ```
 
 ### Mixed expandable
 
 ```ts file="./DataListMixedExpandable.tsx"
+
 ```
 
 ### Width modifiers
 
 ```ts file="./DataListWidthModifiers.tsx"
+
 ```
 
 ### Selectable rows
 
 ```ts file="./DataListSelectableRows.tsx"
+
 ```
 
 ### Controlling text
 
 ```ts file="./DataListControllingText.tsx"
+
 ```
 
 ### Draggable
@@ -77,9 +92,11 @@ Draggable data lists used to have their own HTML5-based API for drag and drop, w
 Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
 
 ```ts isBeta file="./DataListDraggable.tsx"
+
 ```
 
 ### Small grid breakpoint
 
 ```ts file="./DataListSmGridBreakpoint.tsx"
+
 ```

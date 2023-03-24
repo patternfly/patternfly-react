@@ -7,11 +7,6 @@ import {
   Button,
   ButtonVariant,
   Divider,
-  Dropdown,
-  DropdownGroup,
-  DropdownToggle,
-  DropdownItem,
-  KebabToggle,
   Masthead,
   MastheadToggle,
   MastheadMain,
@@ -23,6 +18,13 @@ import {
   ToolbarItem,
   PageToggleButton
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownGroup as DropdownGroupDeprecated,
+  DropdownToggle,
+  DropdownItem as DropdownItemDeprecated,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -96,39 +98,39 @@ export default class DashboardHeader extends React.Component {
     const { notificationBadge } = this.props;
 
     const kebabDropdownItems = [
-      <DropdownItem key="settings">
+      <DropdownItemDeprecated key="settings">
         <CogIcon /> Settings
-      </DropdownItem>,
-      <DropdownItem key="help">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="help">
         <HelpIcon /> Help
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const fullKebabItems = [
-      <DropdownGroup key="group 2">
-        <DropdownItem key="group 2 profile">My profile</DropdownItem>
-        <DropdownItem key="group 2 user" component="button">
+      <DropdownGroupDeprecated key="group 2">
+        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 user" component="button">
           User management
-        </DropdownItem>
-        <DropdownItem key="group 2 logout">Logout</DropdownItem>
-      </DropdownGroup>,
+        </DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
+      </DropdownGroupDeprecated>,
       <Divider key="divider" />,
-      <DropdownItem key="settings">
+      <DropdownItemDeprecated key="settings">
         <CogIcon /> Settings
-      </DropdownItem>,
-      <DropdownItem key="help">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="help">
         <HelpIcon /> Help
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const userDropdownItems = [
-      <DropdownGroup key="group 2">
-        <DropdownItem key="group 2 profile">My profile</DropdownItem>
-        <DropdownItem key="group 2 user" component="button">
+      <DropdownGroupDeprecated key="group 2">
+        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 user" component="button">
           User management
-        </DropdownItem>
-        <DropdownItem key="group 2 logout">Logout</DropdownItem>
-      </DropdownGroup>
+        </DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
+      </DropdownGroupDeprecated>
     ];
 
     const appLauncherItems = [
@@ -167,6 +169,7 @@ export default class DashboardHeader extends React.Component {
                   onToggle={this.onAppLauncherToggle}
                   isOpen={isAppLauncherOpen}
                   items={appLauncherItems}
+                  toggleId="dashboard-header-app-launcher"
                 />
               </ToolbarItem>
               <ToolbarItem>
@@ -177,7 +180,7 @@ export default class DashboardHeader extends React.Component {
               </ToolbarItem>
             </ToolbarGroup>
             <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-              <Dropdown
+              <DropdownDeprecated
                 isPlain
                 position="right"
                 onSelect={this.onKebabDropdownSelect}
@@ -187,7 +190,7 @@ export default class DashboardHeader extends React.Component {
               />
             </ToolbarItem>
             <ToolbarItem visibility={{ md: 'hidden' }}>
-              <Dropdown
+              <DropdownDeprecated
                 isPlain
                 position="right"
                 onSelect={this.onFullKebabSelect}
@@ -198,7 +201,7 @@ export default class DashboardHeader extends React.Component {
             </ToolbarItem>
           </ToolbarGroup>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
-            <Dropdown
+            <DropdownDeprecated
               isFullHeight
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}

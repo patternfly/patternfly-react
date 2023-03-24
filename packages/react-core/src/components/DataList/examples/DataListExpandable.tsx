@@ -7,12 +7,14 @@ import {
   DataListAction,
   DataListToggle,
   DataListContent,
-  DataListItemCells,
-  Dropdown,
-  DropdownItem,
+  DataListItemCells
+} from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
   DropdownPosition,
   KebabToggle
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/deprecated';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 
 export const DataListExpandable: React.FunctionComponent = () => {
@@ -44,7 +46,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
     setIsOpen3(!isOpen3);
   };
 
-  const toggle = id => {
+  const toggle = (id) => {
     const index = expanded.indexOf(id);
     const newExpanded =
       index >= 0 ? [...expanded.slice(0, index), ...expanded.slice(index + 1, expanded.length)] : [...expanded, id];
@@ -85,20 +87,20 @@ export const DataListExpandable: React.FunctionComponent = () => {
               aria-label="Actions"
               isPlainButtonAction
             >
-              <Dropdown
+              <DropdownDeprecated
                 isPlain
                 position={DropdownPosition.right}
                 isOpen={isOpen1}
                 onSelect={onSelect1}
                 toggle={<KebabToggle onToggle={onToggle1} />}
                 dropdownItems={[
-                  <DropdownItem key="link">Link</DropdownItem>,
-                  <DropdownItem key="action" component="button">
+                  <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+                  <DropdownItemDeprecated key="action" component="button">
                     Action
-                  </DropdownItem>,
-                  <DropdownItem key="disabled link" isDisabled>
+                  </DropdownItemDeprecated>,
+                  <DropdownItemDeprecated key="disabled link" isDisabled>
                     Disabled Link
-                  </DropdownItem>
+                  </DropdownItemDeprecated>
                 ]}
               />
             </DataListAction>
@@ -145,20 +147,20 @@ export const DataListExpandable: React.FunctionComponent = () => {
               aria-label="Actions"
               isPlainButtonAction
             >
-              <Dropdown
+              <DropdownDeprecated
                 isPlain
                 position={DropdownPosition.right}
                 isOpen={isOpen2}
                 onSelect={onSelect2}
                 toggle={<KebabToggle onToggle={onToggle2} />}
                 dropdownItems={[
-                  <DropdownItem key="link">Link</DropdownItem>,
-                  <DropdownItem key="action" component="button">
+                  <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+                  <DropdownItemDeprecated key="action" component="button">
                     Action
-                  </DropdownItem>,
-                  <DropdownItem key="disabled link" isDisabled>
+                  </DropdownItemDeprecated>,
+                  <DropdownItemDeprecated key="disabled link" isDisabled>
                     Disabled Link
-                  </DropdownItem>
+                  </DropdownItemDeprecated>
                 ]}
               />
             </DataListAction>
@@ -205,20 +207,20 @@ export const DataListExpandable: React.FunctionComponent = () => {
               aria-label="Actions"
               isPlainButtonAction
             >
-              <Dropdown
+              <DropdownDeprecated
                 isPlain
                 position={DropdownPosition.right}
                 isOpen={isOpen3}
                 onSelect={onSelect3}
                 toggle={<KebabToggle onToggle={onToggle3} />}
                 dropdownItems={[
-                  <DropdownItem key="link">Link</DropdownItem>,
-                  <DropdownItem key="action" component="button">
+                  <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+                  <DropdownItemDeprecated key="action" component="button">
                     Action
-                  </DropdownItem>,
-                  <DropdownItem key="disabled link" isDisabled>
+                  </DropdownItemDeprecated>,
+                  <DropdownItemDeprecated key="disabled link" isDisabled>
                     Disabled Link
-                  </DropdownItem>
+                  </DropdownItemDeprecated>
                 ]}
               />
             </DataListAction>

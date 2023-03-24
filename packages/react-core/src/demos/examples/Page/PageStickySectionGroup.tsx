@@ -11,13 +11,8 @@ import {
   Card,
   CardBody,
   Divider,
-  Dropdown,
-  DropdownGroup,
-  DropdownItem,
-  DropdownToggle,
   Gallery,
   GalleryItem,
-  KebabToggle,
   Masthead,
   MastheadBrand,
   MastheadContent,
@@ -39,6 +34,13 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownGroup as DropdownGroupDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownToggle,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
@@ -108,39 +110,39 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
   );
 
   const kebabDropdownItems = [
-    <DropdownItem key="settings">
+    <DropdownItemDeprecated key="settings">
       <CogIcon /> Settings
-    </DropdownItem>,
-    <DropdownItem key="help">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="help">
       <HelpIcon /> Help
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   const fullKebabDropdownItems = [
-    <DropdownGroup key="group 2">
-      <DropdownItem key="group 2 profile">My profile</DropdownItem>
-      <DropdownItem key="group 2 user" component="button">
+    <DropdownGroupDeprecated key="group 2">
+      <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
+      <DropdownItemDeprecated key="group 2 user" component="button">
         User management
-      </DropdownItem>
-      <DropdownItem key="group 2 logout">Logout</DropdownItem>
-    </DropdownGroup>,
+      </DropdownItemDeprecated>
+      <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
+    </DropdownGroupDeprecated>,
     <Divider key="divider" />,
-    <DropdownItem key="settings">
+    <DropdownItemDeprecated key="settings">
       <CogIcon /> Settings
-    </DropdownItem>,
-    <DropdownItem key="help">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="help">
       <HelpIcon /> Help
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   const userDropdownItems = [
-    <DropdownGroup key="group 2">
-      <DropdownItem key="group 2 profile">My profile</DropdownItem>
-      <DropdownItem key="group 2 user" component="button">
+    <DropdownGroupDeprecated key="group 2">
+      <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
+      <DropdownItemDeprecated key="group 2 user" component="button">
         User management
-      </DropdownItem>
-      <DropdownItem key="group 2 logout">Logout</DropdownItem>
-    </DropdownGroup>
+      </DropdownItemDeprecated>
+      <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
+    </DropdownGroupDeprecated>
   ];
 
   const appLauncherItems = [
@@ -170,6 +172,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
                 onToggle={onAppLauncherToggle}
                 isOpen={isAppLauncherOpen}
                 items={appLauncherItems}
+                toggleId="dashboard-header-app-launcher"
               />
             </ToolbarItem>
             <ToolbarItem>
@@ -180,7 +183,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
             </ToolbarItem>
           </ToolbarGroup>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-            <Dropdown
+            <DropdownDeprecated
               isPlain
               position="right"
               onSelect={onKebabDropdownSelect}
@@ -190,7 +193,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
             />
           </ToolbarItem>
           <ToolbarItem visibility={{ md: 'hidden' }}>
-            <Dropdown
+            <DropdownDeprecated
               isPlain
               position="right"
               onSelect={onFullKebabDropdownSelect}
@@ -201,7 +204,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
           </ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
-          <Dropdown
+          <DropdownDeprecated
             isFullHeight
             onSelect={onDropdownSelect}
             isOpen={isDropdownOpen}

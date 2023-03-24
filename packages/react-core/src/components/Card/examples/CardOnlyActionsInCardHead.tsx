@@ -1,14 +1,11 @@
 import React from 'react';
+import { Checkbox, Card, CardHeader, CardBody } from '@patternfly/react-core';
 import {
-  Checkbox,
-  Dropdown,
-  DropdownItem,
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
   DropdownSeparator,
-  KebabToggle,
-  Card,
-  CardHeader,
-  CardBody
-} from '@patternfly/react-core';
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 
 export const CardOnlyActionsInCardHead: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
@@ -22,26 +19,26 @@ export const CardOnlyActionsInCardHead: React.FunctionComponent = () => {
   };
 
   const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
+    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="action" component="button">
       Action
-    </DropdownItem>,
-    <DropdownItem key="disabled link" isDisabled>
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled link" isDisabled>
       Disabled Link
-    </DropdownItem>,
-    <DropdownItem key="disabled action" isDisabled component="button">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
       Disabled Action
-    </DropdownItem>,
+    </DropdownItemDeprecated>,
     <DropdownSeparator key="separator" />,
-    <DropdownItem key="separated link">Separated Link</DropdownItem>,
-    <DropdownItem key="separated action" component="button">
+    <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="separated action" component="button">
       Separated Action
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   const headerActions = (
     <>
-      <Dropdown
+      <DropdownDeprecated
         onSelect={onSelect}
         toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
         isOpen={isOpen}
@@ -61,7 +58,7 @@ export const CardOnlyActionsInCardHead: React.FunctionComponent = () => {
 
   return (
     <Card>
-      <CardHeader actions={{actions: headerActions}}/>
+      <CardHeader actions={{ actions: headerActions }} />
       <CardBody>This is the card body. There are only actions in the card head.</CardBody>
     </Card>
   );

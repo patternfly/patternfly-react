@@ -6,6 +6,11 @@ propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent'
 ouia: true
 ---
 
+import {
+Dropdown as DropdownDeprecated,
+DropdownItem as DropdownItemDeprecated,
+BadgeToggle
+} from '@patternfly/react-core/deprecated';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
@@ -28,6 +33,7 @@ A menu may contain multiple variations of `<MenuItem>` components. The following
 - Use the `isPlain` property to remove the outer box shadow and style the menu plainly instead.
 
 ```ts file="MenuBasic.tsx"
+
 ```
 
 ### Danger menu item
@@ -35,6 +41,7 @@ A menu may contain multiple variations of `<MenuItem>` components. The following
 To indicate that a `<MenuItem>` is connected to a potentially destructive action, use the `isDanger` property. The "Delete" item in the following example demonstrates how danger items look.
 
 ```ts file="MenuDangerMenuItem.tsx"
+
 ```
 
 ### With icons
@@ -42,6 +49,7 @@ To indicate that a `<MenuItem>` is connected to a potentially destructive action
 Use the `icon` property to add a familiar icon before a `<MenuItem>` to accelerate text label recognition.
 
 ```ts file="MenuWithIcons.tsx"
+
 ```
 
 ### With actions
@@ -53,6 +61,7 @@ To trigger an action when any menu action icon is selected, pass a callback to t
 To trigger an action when a specific item's action icon is selected, pass in the `onClick` property to that `<MenuItemAction>`. The following example logs "clicked on code icon" to the console when the "code" icon is selected.
 
 ```ts file="MenuWithActions.tsx"
+
 ```
 
 ### With links
@@ -60,6 +69,7 @@ To trigger an action when a specific item's action icon is selected, pass in the
 Use the `to` property to add a link to a `<MenuItem>` that directs users to a new page when the item is selected. Use the `isExternalLink` property when linking to external resources. This will annotate a menu item link with an external link icon when they navigate to the link or hover over it.
 
 ```ts file="MenuWithLinks.tsx"
+
 ```
 
 ### With descriptions
@@ -67,6 +77,7 @@ Use the `to` property to add a link to a `<MenuItem>` that directs users to a ne
 Use the `description` property to add short descriptive text below any menu item that needs additional context.
 
 ```ts file="MenuWithDescription.tsx"
+
 ```
 
 ### Item checkbox
@@ -74,6 +85,7 @@ Use the `description` property to add short descriptive text below any menu item
 Use the `hasCheck` property to add a checkbox to a `<MenuItem>`. Use the `isSelected` property to indicate when a `<MenuItem>` is selected.
 
 ```ts file="./MenuWithCheckbox.tsx" isBeta
+
 ```
 
 ### Menu footer
@@ -81,6 +93,7 @@ Use the `hasCheck` property to add a checkbox to a `<MenuItem>`. Use the `isSele
 Add a `<MenuFooter>` that contains separate, but related actions at the bottom of a menu.
 
 ```ts file="MenuWithFooter.tsx"
+
 ```
 
 ### Separated items
@@ -88,6 +101,7 @@ Add a `<MenuFooter>` that contains separate, but related actions at the bottom o
 Use a [divider](/components/divider) to visually separate `<MenuContent>`. Use the `component` property to specify the type of divider component to use.
 
 ```ts file="MenuWithSeparators.tsx"
+
 ```
 
 ### Titled groups of items
@@ -95,6 +109,7 @@ Use a [divider](/components/divider) to visually separate `<MenuContent>`. Use t
 Add a `<MenuGroup>` to organize `<MenuContent>` and use the `label` property to title a group of menu items. Use the `labelHeadingLevel` property to assign a heading level to the menu group label.
 
 ```ts file="MenuWithTitledGroups.tsx"
+
 ```
 
 ### With favorites
@@ -102,6 +117,7 @@ Add a `<MenuGroup>` to organize `<MenuContent>` and use the `label` property to 
 The following menu example allows users to favorite menu items, an action that duplicates a menu item and places it in a separate group at the top of the menu. The `isFavorited` property identifies items that a user has favorited.
 
 ```ts file="MenuWithFavorites.tsx"
+
 ```
 
 ### Filtering with search input
@@ -109,6 +125,7 @@ The following menu example allows users to favorite menu items, an action that d
 A [search input](/components/search-input) component can be placed within `<MenuInput>` to render a search input at the top of the menu. In the following example, the `onChange` property of the text input is passed a callback that filters menu items as a user types.
 
 ```ts file="MenuFilteringWithSearchInput.tsx"
+
 ```
 
 ### Option single select menu
@@ -118,6 +135,7 @@ The following example demonstrates a single option select menu that persists a s
 You must also use the `role` property on the `<Menu>` with a value of `"listbox"` when using a non-checkbox select menu.
 
 ```ts file="MenuOptionSingleSelect.tsx"
+
 ```
 
 ### Option multi select menu
@@ -127,6 +145,7 @@ To persist multiple selections that a user makes, use a multiple option select m
 Similar to a single select menu, you must also pass `role="listbox"` to the `<Menu>`.
 
 ```ts file="MenuOptionMultiSelect.tsx"
+
 ```
 
 ### Scrollable menus
@@ -134,6 +153,7 @@ Similar to a single select menu, you must also pass `role="listbox"` to the `<Me
 Use the `isScrollable` property to make a long `<Menu>` scrollable and visually condensed.
 
 ```ts file="MenuScrollable.tsx"
+
 ```
 
 ### Scrollable menu with custom height
@@ -141,6 +161,7 @@ Use the `isScrollable` property to make a long `<Menu>` scrollable and visually 
 Adjust the visual size of a scrollable menu by using the `menuHeight` property within `<MenuContent>`. This example adjusts the height to 200px.
 
 ```ts file="MenuScrollableCustomMenuHeight.tsx"
+
 ```
 
 ### With view more
@@ -150,6 +171,7 @@ If you want to initially render only a certain number of menu items within a lar
 In this example, 3 additional menu items are revealed each time the "view more" option is selected, with a loading icon simulating a network call to fetch more items. After all items are visible, the "view more" link disappears.
 
 ```ts file="MenuWithViewMore.tsx"
+
 ```
 
 ### With drilldown
@@ -163,6 +185,7 @@ Use a drilldown menu to contain different levels of menu items. When a parent me
 - To account for updated heights as menus drill in and out of use, use the `onGetMenuHeight` property. When starting from a drilled-in state, the `onGetMenuHeight` property must define the height of the root menu.
 
 ```ts file="./MenuWithDrilldown.tsx" isBeta
+
 ```
 
 ### Initially drilled-in menu
@@ -170,6 +193,7 @@ Use a drilldown menu to contain different levels of menu items. When a parent me
 To render an initially drilled-in menu, the `drilldownItemPath`, `drilledInMenus`, and `activeMenu` properties must be set to default values.
 
 ```ts file="./MenuWithDrilldownInitialState.tsx" isBeta
+
 ```
 
 ### With drilldown - submenu functions
@@ -177,6 +201,7 @@ To render an initially drilled-in menu, the `drilldownItemPath`, `drilledInMenus
 For added flexibility with large menus, you may create a menu by passing a function to `drilldownMenu`. This approach allows you to create menu items dynamically, rather than creating everything up front.
 
 ```ts file="./MenuWithDrilldownSubmenuFunctions.tsx" isBeta
+
 ```
 
 ### With drilldown breadcrumbs
@@ -186,9 +211,11 @@ Use [breadcrumbs](/components/breadcrumb) when a drilldown menu has more than 2 
 To control the height of a menu, use the `maxMenuHeight` property. Selecting the "Set max menu height" checkbox in the following example sets the menu height to "100px" and makes the menu scrollable.
 
 ```ts file="MenuWithDrilldownBreadcrumbs.tsx" isBeta
+
 ```
 
 ### With drilldown and inline filter
 
 ```ts file="MenuFilterDrilldown.tsx"
+
 ```

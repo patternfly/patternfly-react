@@ -4,6 +4,14 @@ section: components
 ---
 
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import {
+Dropdown as DropdownDeprecated,
+DropdownItem as DropdownItemDeprecated,
+DropdownToggle,
+DropdownToggleAction,
+DropdownPosition,
+DropdownSeparator
+} from '@patternfly/react-core/deprecated';
 
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
@@ -27,12 +35,6 @@ import {
   Badge,
   Button,
   Checkbox,
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
-  DropdownToggleAction,
-  DropdownPosition,
-  DropdownSeparator,
   SearchInput,
   Select,
   SelectOption,
@@ -40,6 +42,14 @@ import {
   PageSectionVariants,
   Tooltip
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownToggle,
+  DropdownToggleAction,
+  DropdownPosition,
+  DropdownSeparator
+} from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
@@ -118,13 +128,13 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onOptionSelect = event => {
+    this.onOptionSelect = (event) => {
       this.setState({
         optionExpanded: !this.state.optionExpanded
       });
     };
 
-    this.onOptionSelectMobile = event => {
+    this.onOptionSelectMobile = (event) => {
       this.setState({
         optionExpandedMobile: !this.state.optionExpandedMobile
       });
@@ -142,13 +152,13 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onExternalSelect = event => {
+    this.onExternalSelect = (event) => {
       this.setState({
         externalExpanded: !this.state.externalExpanded
       });
     };
 
-    this.onExternalSelectMobile = event => {
+    this.onExternalSelectMobile = (event) => {
       this.setState({
         externalExpandedMobile: !this.state.externalExpandedMobile
       });
@@ -166,27 +176,27 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onDownloadSelect = event => {
+    this.onDownloadSelect = (event) => {
       this.setState({
         downloadExpanded: !this.state.downloadExpanded
       });
     };
 
-    this.onDownloadSelectMobile = event => {
+    this.onDownloadSelectMobile = (event) => {
       this.setState({
         downloadExpandedMobile: !this.state.downloadExpandedMobile
       });
     };
 
-    this.onExternalClick = event => {
+    this.onExternalClick = (event) => {
       window.alert('Open external logs!');
     };
 
-    this.onDownloadClick = event => {
+    this.onDownloadClick = (event) => {
       window.alert('Action!');
     };
 
-    this.pauseOrStart = event => {
+    this.pauseOrStart = (event) => {
       this.setState({
         isPaused: !this.state.isPaused
       });
@@ -200,7 +210,7 @@ class ConsoleLogViewerToolbar extends React.Component {
       this.setState({ secondSwitchChecked });
     };
 
-    this.onClearLogs = event => {
+    this.onClearLogs = (event) => {
       this.setState({
         optionExpanded: false
       });
@@ -214,7 +224,7 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onSearchClear = event => {
+    this.onSearchClear = (event) => {
       this.setState({
         searchValue: '',
         searchResultsCount: 0,
@@ -222,8 +232,8 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onSearchNext = event => {
-      this.setState(prevState => {
+    this.onSearchNext = (event) => {
+      this.setState((prevState) => {
         const newCurrentResult = prevState.currentSearchResult + 1;
         return {
           currentSearchResult:
@@ -232,8 +242,8 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onSearchPrevious = event => {
-      this.setState(prevState => {
+    this.onSearchPrevious = (event) => {
+      this.setState((prevState) => {
         const newCurrentResult = prevState.currentSearchResult - 1;
         return {
           currentSearchResult: newCurrentResult > 0 ? newCurrentResult : 1
@@ -276,28 +286,28 @@ class ConsoleLogViewerToolbar extends React.Component {
     } = this.state;
 
     const externalDropdownItems = [
-      <DropdownItem key="action-1" component="button" onClick={this.onExternalClick}>
+      <DropdownItemDeprecated key="action-1" component="button" onClick={this.onExternalClick}>
         External logs
-      </DropdownItem>,
-      <DropdownItem key="action-2" component="button" onClick={this.onExternalClick}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action-2" component="button" onClick={this.onExternalClick}>
         External logs
-      </DropdownItem>,
-      <DropdownItem key="action-3" component="button" onClick={this.onExternalClick}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action-3" component="button" onClick={this.onExternalClick}>
         External logs
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const downloadDropdownItems = [
-      <DropdownItem key="action-4" component="button" onClick={this.onDownloadClick}>
+      <DropdownItemDeprecated key="action-4" component="button" onClick={this.onDownloadClick}>
         Current container logs
-      </DropdownItem>,
-      <DropdownItem key="action-5" component="button" onClick={this.onDownloadClick}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action-5" component="button" onClick={this.onDownloadClick}>
         All container logs
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const optionDropdownItems = [
-      <DropdownItem key="switch-1">
+      <DropdownItemDeprecated key="switch-1">
         <Checkbox
           label="Display timestamp"
           isChecked={firstSwitchChecked}
@@ -305,8 +315,8 @@ class ConsoleLogViewerToolbar extends React.Component {
           id="switchMobileCheckbox1"
           name="check1"
         />
-      </DropdownItem>,
-      <DropdownItem key="switch-2">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="switch-2">
         <Checkbox
           label="Wrap lines"
           isChecked={secondSwitchChecked}
@@ -314,11 +324,11 @@ class ConsoleLogViewerToolbar extends React.Component {
           id="switchMobileCheckbox2"
           name="check2"
         />
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="clear-log" onClick={this.onClearLogs}>
+      <DropdownItemDeprecated key="clear-log" onClick={this.onClearLogs}>
         Clear logs
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const selectDropdownContent = (
@@ -378,7 +388,7 @@ class ConsoleLogViewerToolbar extends React.Component {
           />
         </ToolbarItem>
         <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
-          <Dropdown
+          <DropdownDeprecated
             toggle={
               <DropdownToggle id="option-toggle-desktop" onToggle={this.onOptionToggle} icon={<CogIcon />}>
                 Options
@@ -413,7 +423,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         </ToolbarItem>
         <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
           <Tooltip position="top" content={<div>Options</div>}>
-            <Dropdown
+            <DropdownDeprecated
               toggle={
                 <DropdownToggle
                   aria-label="Options"
@@ -447,7 +457,7 @@ class ConsoleLogViewerToolbar extends React.Component {
     const rightAlignedItemsDesktop = (
       <React.Fragment>
         <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
-          <Dropdown
+          <DropdownDeprecated
             onSelect={this.onExternalSelect}
             toggle={
               <DropdownToggle id="external-toggle" onToggle={this.onExternalToggle}>
@@ -459,7 +469,7 @@ class ConsoleLogViewerToolbar extends React.Component {
           />
         </ToolbarItem>
         <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
-          <Dropdown
+          <DropdownDeprecated
             onSelect={this.onDownloadSelect}
             toggle={
               <DropdownToggle id="download-toggle" onToggle={this.onDownloadToggle}>
@@ -477,7 +487,7 @@ class ConsoleLogViewerToolbar extends React.Component {
       <React.Fragment>
         <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
           <Tooltip position="top" content={<div>External logs</div>}>
-            <Dropdown
+            <DropdownDeprecated
               onSelect={this.onExternalSelectMobile}
               toggle={
                 <DropdownToggle
@@ -494,7 +504,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         </ToolbarItem>
         <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
           <Tooltip position="top" content={<div>Download</div>}>
-            <Dropdown
+            <DropdownDeprecated
               onSelect={this.onDownloadSelectMobile}
               toggle={
                 <DropdownToggle

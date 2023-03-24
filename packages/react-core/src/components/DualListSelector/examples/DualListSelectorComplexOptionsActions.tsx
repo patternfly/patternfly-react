@@ -1,13 +1,10 @@
 import React from 'react';
+import { Button, ButtonVariant, Checkbox, DualListSelector } from '@patternfly/react-core';
 import {
-  Button,
-  ButtonVariant,
-  Checkbox,
-  Dropdown,
-  DropdownItem,
-  DualListSelector,
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
   KebabToggle
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/deprecated';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 
 export const DualListSelectorComplexOptionsActions: React.FunctionComponent = () => {
@@ -58,13 +55,13 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
     (option as React.ReactElement).props.children.includes(input);
 
   const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
+    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="action" component="button">
       Action
-    </DropdownItem>,
-    <DropdownItem key="secondAction" component="button">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="secondAction" component="button">
       Second Action
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   const availableOptionsActions = [
@@ -77,7 +74,7 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
     >
       <PficonSortCommonAscIcon />
     </Button>,
-    <Dropdown
+    <DropdownDeprecated
       toggle={
         <KebabToggle
           isDisabled={isDisabled}
@@ -102,7 +99,7 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
     >
       <PficonSortCommonAscIcon />
     </Button>,
-    <Dropdown
+    <DropdownDeprecated
       toggle={
         <KebabToggle
           isDisabled={isDisabled}

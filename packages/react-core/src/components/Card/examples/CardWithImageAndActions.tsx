@@ -1,17 +1,11 @@
 import React from 'react';
+import { Brand, Card, CardHeader, CardTitle, CardBody, CardFooter, Checkbox } from '@patternfly/react-core';
 import {
-  Brand,
-  Card,
-  CardHeader,
-  CardTitle,
-  CardBody,
-  CardFooter,
-  Checkbox,
-  Dropdown,
-  DropdownItem,
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
   DropdownSeparator,
   KebabToggle
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/deprecated';
 import pfLogo from './pfLogo.svg';
 
 export const CardWithImageAndActions: React.FunctionComponent = () => {
@@ -30,26 +24,26 @@ export const CardWithImageAndActions: React.FunctionComponent = () => {
   };
 
   const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
+    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="action" component="button">
       Action
-    </DropdownItem>,
-    <DropdownItem key="disabled link" isDisabled>
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled link" isDisabled>
       Disabled Link
-    </DropdownItem>,
-    <DropdownItem key="disabled action" isDisabled component="button">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
       Disabled Action
-    </DropdownItem>,
+    </DropdownItemDeprecated>,
     <DropdownSeparator key="separator" />,
-    <DropdownItem key="separated link">Separated Link</DropdownItem>,
-    <DropdownItem key="separated action" component="button">
+    <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="separated action" component="button">
       Separated Action
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   const headerActions = (
     <>
-      <Dropdown
+      <DropdownDeprecated
         onSelect={onSelect}
         toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
         isOpen={isOpen}
@@ -70,7 +64,7 @@ export const CardWithImageAndActions: React.FunctionComponent = () => {
   return (
     <>
       <Card>
-        <CardHeader actions={{actions: headerActions, hasNoOffset}}>
+        <CardHeader actions={{ actions: headerActions, hasNoOffset }}>
           <Brand src={pfLogo} alt="PatternFly logo" style={{ width: '300px' }} />
         </CardHeader>
         <CardTitle>Title</CardTitle>

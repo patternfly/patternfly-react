@@ -1,11 +1,5 @@
 import React from 'react';
 import {
-  Dropdown,
-  DropdownItem,
-  DropdownPosition,
-  DropdownDirection,
-  DropdownSeparator,
-  KebabToggle,
   NotificationDrawer,
   NotificationDrawerBody,
   NotificationDrawerHeader,
@@ -14,6 +8,14 @@ import {
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownPosition,
+  DropdownDirection,
+  DropdownSeparator,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 
 export const NotificationDrawerBasic: React.FunctionComponent = () => {
   const [isOpenMap, setIsOpenMap] = React.useState(new Array(7).fill(false));
@@ -34,19 +36,19 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
   const [isOpen0, isOpen1, isOpen2, isOpen3, isOpen4, isOpen5, isOpen6] = isOpenMap;
 
   const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
+    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="action" component="button">
       Action
-    </DropdownItem>,
+    </DropdownItemDeprecated>,
     <DropdownSeparator key="separator" />,
-    <DropdownItem key="disabled link" isDisabled>
+    <DropdownItemDeprecated key="disabled link" isDisabled>
       Disabled link
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
   return (
     <NotificationDrawer>
       <NotificationDrawerHeader count={3} onClose={onDrawerClose}>
-        <Dropdown
+        <DropdownDeprecated
           onSelect={onSelect}
           toggle={<KebabToggle onToggle={onToggle(0)} id="basic-kebab-toggle" />}
           isOpen={isOpen0}
@@ -64,7 +66,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               title="Unread info notification title"
               srTitle="Info notification:"
             >
-              <Dropdown
+              <DropdownDeprecated
                 position={DropdownPosition.right}
                 onSelect={onSelect}
                 toggle={<KebabToggle onToggle={onToggle(1)} id="basic-toggle-id-1" />}
@@ -84,7 +86,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
               srTitle="Danger notification:"
             >
-              <Dropdown
+              <DropdownDeprecated
                 position={DropdownPosition.right}
                 onSelect={onSelect}
                 toggle={<KebabToggle onToggle={onToggle(2)} id="basic-toggle-id-2" />}
@@ -106,7 +108,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               title="Unread danger notification title. This is a long title to show how the title will be truncated if it is long and will be shown in a single line."
               srTitle="Danger notification:"
             >
-              <Dropdown
+              <DropdownDeprecated
                 position={DropdownPosition.right}
                 onSelect={onSelect}
                 toggle={<KebabToggle onToggle={onToggle(3)} id="basic-toggle-id-3" />}
@@ -127,7 +129,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               title="Read warning notification title"
               srTitle="Warning notification:"
             >
-              <Dropdown
+              <DropdownDeprecated
                 position={DropdownPosition.right}
                 onSelect={onSelect}
                 toggle={<KebabToggle onToggle={onToggle(4)} id="basic-toggle-id-4" />}
@@ -147,7 +149,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               title="Read success notification title"
               srTitle="Success notification:"
             >
-              <Dropdown
+              <DropdownDeprecated
                 position={DropdownPosition.right}
                 direction={DropdownDirection.up}
                 onSelect={onSelect}
@@ -164,7 +166,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
           </NotificationDrawerListItem>
           <NotificationDrawerListItem isRead>
             <NotificationDrawerListItemHeader title="Read (default) notification title" srTitle="notification:">
-              <Dropdown
+              <DropdownDeprecated
                 position={DropdownPosition.right}
                 onSelect={onSelect}
                 toggle={<KebabToggle onToggle={onToggle(6)} id="basic-toggle-id-6" />}

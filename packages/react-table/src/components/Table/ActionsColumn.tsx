@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core/dist/esm/next/components';
+import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
 import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
@@ -115,7 +115,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
               }
               const item = (
                 <DropdownItem
-                  onClick={(event) => {
+                  onClick={(event: any) => {
                     onActionClick(event, onClick);
                     onToggle();
                   }}
