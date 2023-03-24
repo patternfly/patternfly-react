@@ -13,7 +13,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const ComposableTableCompoundExpandable: React.FunctionComponent = () => {
+export const TableCompoundExpandable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'siemur/test-space', branches: 10, prs: 4, workspaces: 4, lastCommit: '20 minutes' },
@@ -52,7 +52,7 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
   ): TdProps['compoundExpand'] => ({
     isExpanded: expandedCells[repo.name] === columnKey,
     onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey),
-    expandId: 'composable-compound-expandable-example',
+    expandId: 'compound-expandable-example',
     rowIndex,
     columnIndex
   });

@@ -10,7 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const ComposableTableStripedMultipleTbody: React.FunctionComponent = () => {
+export const TableStripedMultipleTbody: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories1: Repository[] = [
     {

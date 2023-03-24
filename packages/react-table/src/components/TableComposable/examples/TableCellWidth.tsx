@@ -9,7 +9,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const ComposableTableHoverable: React.FunctionComponent = () => {
+export const TableCellWidth: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
@@ -25,33 +25,27 @@ export const ComposableTableHoverable: React.FunctionComponent = () => {
     lastCommit: 'Last commit'
   };
 
-  // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
-  // This is to prevent state from being based on row order index in case we later add sorting.
-  const [selectedRepoName, setSelectedRepoName] = React.useState('');
-
   return (
-    <TableComposable aria-label="Hoverable table">
+    <TableComposable aria-label="Cell widths">
       <Thead>
         <Tr>
-          <Th>{columnNames.name}</Th>
-          <Th>{columnNames.branches}</Th>
-          <Th>{columnNames.prs}</Th>
-          <Th>{columnNames.workspaces}</Th>
-          <Th>{columnNames.lastCommit}</Th>
+          <Th width={15}>{columnNames.name}</Th>
+          <Th width={15}>{columnNames.branches}</Th>
+          <Th width={40} visibility={['hiddenOnMd', 'visibleOnLg']}>
+            {columnNames.prs}
+          </Th>
+          <Th width={15}>{columnNames.workspaces}</Th>
+          <Th width={15}>{columnNames.lastCommit}</Th>
         </Tr>
       </Thead>
       <Tbody>
         {repositories.map(repo => (
-          <Tr
-            key={repo.name}
-            onRowClick={() => setSelectedRepoName(repo.name)}
-            isSelectable
-            isHoverable
-            isRowSelected={selectedRepoName === repo.name}
-          >
+          <Tr key={repo.name}>
             <Td dataLabel={columnNames.name}>{repo.name}</Td>
             <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
-            <Td dataLabel={columnNames.prs}>{repo.prs}</Td>
+            <Td dataLabel={columnNames.prs} visibility={['hiddenOnMd', 'visibleOnLg']}>
+              {repo.prs}
+            </Td>
             <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
             <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
           </Tr>

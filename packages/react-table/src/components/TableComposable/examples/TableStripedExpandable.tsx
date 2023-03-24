@@ -16,8 +16,7 @@ interface Repository {
   };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const ComposableTableExpandable: React.FunctionComponent = () => {
+export const TableStripedExpandable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five' },
@@ -36,11 +35,7 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
       prs: 'b',
       workspaces: 'four',
       lastCommit: 'five',
-      details: {
-        detailFormat: 1,
-        detail1:
-          'Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. '
-      }
+      details: { detailFormat: 1, detail1: 'single cell - fullWidth' }
     },
     {
       name: 'parent 3',
@@ -113,11 +108,16 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
         label="Compact"
         isChecked={isExampleCompact}
         onChange={(_event, checked) => setIsExampleCompact(checked)}
-        aria-label="toggle compact variation"
-        id="toggle-compact"
-        name="toggle-compact"
+        aria-label="toggle striped compact variation"
+        id="toggle-compact-striped"
+        name="toggle-compact-striped"
       />
-      <TableComposable aria-label="Expandable table" variant={isExampleCompact ? 'compact' : undefined}>
+      <TableComposable
+        aria-label="Expandable table"
+        variant={isExampleCompact ? 'compact' : undefined}
+        isStriped
+        isExpandable
+      >
         <Thead>
           <Tr>
             <Th />
@@ -141,14 +141,14 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
             childIsFullWidth = [1, 3].includes(detailFormat);
             childHasNoPadding = [2, 3].includes(detailFormat);
             if (detail1 && !detail2 && !detail3) {
-              detail1Colspan = !childIsFullWidth ? numColumns : numColumns + 1; // Account for toggle column
+              detail1Colspan = childIsFullWidth ? numColumns : numColumns + 1; // Account for toggle column
             } else if (detail1 && detail2 && !detail3) {
               detail1Colspan = 2;
-              detail2Colspan = !childIsFullWidth ? 3 : 4;
+              detail2Colspan = childIsFullWidth ? 3 : 4;
             } else if (detail1 && detail2 && detail3) {
               detail1Colspan = 2;
               detail2Colspan = 2;
-              detail3Colspan = !childIsFullWidth ? 1 : 2;
+              detail3Colspan = childIsFullWidth ? 1 : 2;
             }
           }
           return (
@@ -160,8 +160,7 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
                       ? {
                           rowIndex,
                           isExpanded: isRepoExpanded(repo),
-                          onToggle: () => setRepoExpanded(repo, !isRepoExpanded(repo)),
-                          expandId: 'composable-expandable-example'
+                          onToggle: () => setRepoExpanded(repo, !isRepoExpanded(repo))
                         }
                       : undefined
                   }

@@ -36,7 +36,7 @@ propComponents:
 ouia: true
 ---
 
-# Table Composable
+# Table
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
 
@@ -58,9 +58,9 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-## TableComposable examples
+## Table examples
 
-The `TableComposable` component differs from the regular `Table` component, in that it allows you to compose the table by nesting the relevant `Thead`, `Tbody`, `Tr`, `Th` and `Td` components within it. For a less declarative and more implicit approach, use the `Table` component instead.
+This `TableComposable` component differs from the deprecated `Table` component, in that it allows you to compose the table by nesting the relevant `Thead`, `Tbody`, `Tr`, `Th` and `Td` components within it. For a less declarative and more implicit approach, use the `Table` component instead.
 
 Some general notes:
 
@@ -68,13 +68,12 @@ Some general notes:
 - If you want a table caption, simply place a `<Caption>My caption</Caption>` as the first child within a `TableComposable`.
 - You can set the `TableComposable` variant to `compact`
 
-### Composable: Basic
+### Basic
 
-```ts file="ComposableTableBasic.tsx"
-
+```ts file="TableBasic.tsx"
 ```
 
-### Composable: Custom row wrapper, header tooltips & popovers
+### Custom row wrapper, header tooltips & popovers
 
 - If you add the `noWrap` prop to `Thead`, it won't wrap it if there is no space
 - You can add the `textCenter` prop to `Th` or `Td` to center the contents
@@ -82,11 +81,10 @@ Some general notes:
 
 To add a header tooltip or popover to `Th`, pass a `ThInfoType` object via the `info` prop.
 
-```ts file="ComposableTableMisc.tsx"
-
+```ts file="TableMisc.tsx"
 ```
 
-### Composable: Sortable & wrapping headers
+### Sortable & wrapping headers
 
 To make a column sortable, pass a `ThSortType` object via the `sort` prop on a column's `Th`.
 
@@ -104,19 +102,17 @@ type OnSort = (
 
 The built in display for sorting is not fully responsive, as the column headers will be displayed per row when the screen size is small. To see a full page demo of a responsive sortable table, utilizing a toolbar item to control sorting for small screens, view the `Sortable - responsive` demo in the `React demos` tab.
 
-```ts file="ComposableTableSortable.tsx"
-
+```ts file="TableSortable.tsx"
 ```
 
-### Composable: Sortable - custom control
+### Sortable - custom control
 
 Sorting a table may also be controlled manually with a toolbar control. To see a full page demo of a responsive table, view the `Sortable - responsive` demo in the `React demos` tab.
 
-```ts file="ComposableTableSortableCustom.tsx"
-
+```ts file="TableSortableCustom.tsx"
 ```
 
-### Composable: Selectable with checkbox
+### Selectable with checkbox
 
 To make a row selectable, the table needs a selection column.
 The selection column is just another column, but with selection specific props added.
@@ -143,27 +139,24 @@ type OnSelect = (
 **Note:** This example has a `shift + select` feature where holding shift while
 checking checkboxes will check intermediate rows' checkboxes.
 
-```ts file="ComposableTableSelectable.tsx"
-
+```ts file="TableSelectable.tsx"
 ```
 
-### Composable: Selectable radio input
+### Selectable radio input
 
 Similarly to the selectable example above, the radio buttons use the first column. The first header cell is empty, and each body row's first cell has radio button props.
 
-```ts file="ComposableTableSelectableRadio.tsx"
-
+```ts file="TableSelectableRadio.tsx"
 ```
 
-### Composable: Row click handler, hoverable & selected rows
+### Row click handler, hoverable & selected rows
 
 This selectable rows feature is intended for use when a table is used to present a list of objects in a Primary-detail view.
 
-```ts file="ComposableTableHoverable.tsx"
-
+```ts file="TableHoverable.tsx"
 ```
 
-### Composable: Actions
+### Actions
 
 This example demonstrates adding actions as the last column. The header's last cell is an empty cell, and each body row's last cell is an action cell.
 
@@ -171,19 +164,17 @@ To make a cell an action cell, render an `ActionsColumn` component inside a row'
 
 If actions menus are getting clipped by other items on the page, such as sticky columns or rows, the `ActionsColumn` can be passed a `menuAppendTo` prop to adjust where the actions menu is appended.
 
-```ts file="ComposableTableActions.tsx"
-
+```ts file="TableActions.tsx"
 ```
 
-### Composable: Actions Overflow
+### Actions Overflow
 
 Useing an `OverflowMenu` in the actions column, allowing the actions to condense into a dropdown if necessary for space.
 
-```ts file="ComposableTableActionsOverflow.tsx"
-
+```ts file="TableActionsOverflow.tsx"
 ```
 
-### Composable: Expandable
+### Expandable
 
 To make a parent/child row pair expandable:
 
@@ -205,11 +196,10 @@ type OnCollapse = (
 
 Note: Table column widths will respond automatically when toggling expanded rows. To retain column widths between expanded and collapsed states, column header and/or data cell widths must be set.
 
-```ts file="ComposableTableExpandable.tsx"
-
+```ts file="TableExpandable.tsx"
 ```
 
-### Composable: Compound expandable
+### Compound expandable
 
 To make a parent/child row pair compound expandable:
 
@@ -230,35 +220,30 @@ export type OnExpand = (
 ) => void;
 ```
 
-```ts file="ComposableTableCompoundExpandable.tsx"
-
+```ts file="TableCompoundExpandable.tsx"
 ```
 
-### Composable: Cell width, breakpoint modifiers
+### Cell width, breakpoint modifiers
 
-```ts file="ComposableTableCellWidth.tsx"
-
+```ts file="TableCellWidth.tsx"
 ```
 
-### Composable: Controlling text
+### Controlling text
 
-```ts file="ComposableTableControllingText.tsx"
-
+```ts file="TableControllingText.tsx"
 ```
 
-### Composable: Modifiers with table text
+### Modifiers with table text
 
-```ts file="ComposableTableTextModifiers.tsx"
-
+```ts file="TableTextModifiers.tsx"
 ```
 
-### Composable: Empty state
+### Empty state
 
-```ts file="ComposableTableEmptyState.tsx"
-
+```ts file="TableEmptyState.tsx"
 ```
 
-### Composable: Favoritable (implemented with sortable)
+### Favoritable (implemented with sortable)
 
 To make a row favoritable, the table needs a favoritable column.
 Pass a `TdFavoritesType` object via the `favorites` prop on each rows's first `Td` in the favoritable column.
@@ -277,11 +262,10 @@ type OnFavorite = (
 
 To make a favoritable column sortable, pass a `ThSortType` object to the favoritable column's `Th` with `isFavorites` set to true.
 
-```ts file="ComposableTableFavoritable.tsx"
-
+```ts file="TableFavoritable.tsx"
 ```
 
-### Composable: Tree table
+### Tree table
 
 To enable a tree table:
 
@@ -311,11 +295,10 @@ Note: If this table is going to be tested using axe-core, the tests will flag th
 aria-posinset, and aria-setsize as violations. This is an intentional choice at this time so that
 the voice over technologies will recognize the flat table structure as a tree.
 
-```ts file="ComposableTableTree.tsx"
-
+```ts file="TableTree.tsx"
 ```
 
-### Composable: Draggable row table
+### Draggable row table
 
 To make a row draggable:
 
@@ -325,11 +308,10 @@ To make a row draggable:
 4. While the user is dragging a row, the `pf-m-drag-over` class needs to be applied to `TableComposable`.
 5. The draggable `Td` in each row needs a `TdDraggableType` object passed to its `draggable` prop.
 
-```ts isBeta file="ComposableTableDraggable.tsx"
-
+```ts isBeta file="TableDraggable.tsx"
 ```
 
-## Sticky table modifiers
+### Sticky table modifiers
 
 To make certain columns and the header sticky, the table must be wrapped in a combination of `OuterScrollContainer` and `InnerScrollContainer`. For sticky columns, only `InnerScrollContainer` is required. For sticky headers, and sticky headers with sticky columns, both containers are required to ensure the sticky behavior behaves correctly.
 
@@ -341,31 +323,28 @@ There are a few ways this can be handled:
 - Use the `menuAppendTo` prop in non-composable react components with menus to append the menu to an element outside of the table (e.g., the table's parent element) so that the menu has a higher stacking context than - and can appear on top of - sticky headers/columns as well as appear outside of any scrollable content in the table.
 - In the case where the menu is outside of the table (e.g., above the table in a toolbar, or below the table and the menu expands up), assign the entire table a lower `z-index` than the `z-index` of the menu. This creates a lower stacking context for the entire table compared to the menu, while preserving the stacking context of the elements inside of the table.
 
-### Composable: Sticky column
+### Sticky column
 
 To make a column sticky, wrap `TableComposable` with `InnerScrollContainer` and add the following properties to the `Th` or `Td` that should be sticky: `isStickyColumn` and `hasRightBorder`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property. To set the minimum width of the sticky column, use the `stickyMinWidth` property.
 
-```ts file="ComposableTableStickyColumn.tsx"
-
+```ts file="TableStickyColumn.tsx"
 ```
 
-### Composable: Multiple sticky columns
+### Multiple sticky columns
 
 To make multiple columns sticky, wrap `TableComposable` with `InnerScrollContainer` and add `isStickyColumn` to all columns that should be sticky. The rightmost column should also have the `hasRightBorder` property, and each sticky column after the first must define a `stickyLeftOffset` property that equals the combined width of the previous sticky columns - set by `stickyMinWidth`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property.
 
-```ts file="ComposableTableMultipleStickyColumns.tsx"
-
+```ts file="TableMultipleStickyColumns.tsx"
 ```
 
-### Composable: Sticky columns and header
+### Sticky columns and header
 
 To maintain proper sticky behavior across sticky columns and header, `TableComposable` must be wrapped with `OuterScrollContainer` and `InnerScrollContainer`.
 
-```ts file="ComposableTableStickyColumnsAndHeader.tsx"
-
+```ts file="TableStickyColumnsAndHeader.tsx"
 ```
 
-## Nested column headers
+### Nested column headers
 
 To make a nested column header:
 
@@ -378,60 +357,48 @@ The first `Tr` represents the top level of columns, and each must pass either `r
 
 The second `Tr` represents the second level of sub columns. The `Th` in this row each should pass `isSubHeader`, and the last sub column of a column should also pass `hasRightBorder`.
 
-### Composable: Nested column headers
-
-```ts file="ComposableTableNestedHeaders.tsx"
-
+```ts file="TableNestedHeaders.tsx"
 ```
 
-### Composable: Nested column headers and expandable rows
+### Nested column headers and expandable rows
 
-```ts file="ComposableTableNestedExpandable.tsx"
-
+```ts file="TableNestedExpandable.tsx"
 ```
 
-### Composable: Expandable with nested table
+### Expandable with nested table
 
-```ts file="ComposableTableNestedTableExpandable.tsx"
-
+```ts file="TableNestedTableExpandable.tsx"
 ```
 
-### Composable: Nested sticky header
+### Nested sticky header
 
-```ts file="ComposableTableNestedStickyHeader.tsx"
-
+```ts file="TableNestedStickyHeader.tsx"
 ```
 
-## Striped
-
-### Composable: Striped
+### Striped
 
 To apply striping to a basic table, add the `isStriped` property to `TableComposable`.
 
-```ts file="ComposableTableStriped.tsx"
-
+```ts file="TableStriped.tsx"
 ```
 
-### Composable: Striped expandable
+### Striped expandable
 
 To apply striping to an expandable table, add the `isStriped` and `isExpandable` properties to `TableComposable`.
 
-```ts file="ComposableTableStripedExpandable.tsx"
-
+```ts file="TableStripedExpandable.tsx"
 ```
 
-### Composable: Striped multiple tobdy
+### Striped multiple tobdy
 
 When there are multiple `Tbody` components within a table, a more granular application of striping may be controlled by adding either the `isEvenStriped` or `isOddStriped` properties to `Tbody`. These properties will stripe even or odd rows within that `Tbody` respectively.
 
-```ts file="ComposableTableStripedMultipleTbody.tsx"
-
+```ts file="TableStripedMultipleTbody.tsx"
 ```
 
-### Composable: Striped tr
+### Striped tr
 
 To manually control striping, add the `isStriped` property to each desired `Tr`. This replaces adding the `isStriped` property to `TableComposable`.
 
-```ts file="ComposableTableStripedTr.tsx"
-
+```ts file="TableStripedTr.tsx"
 ```

@@ -3,18 +3,18 @@ import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-tab
 
 interface Repository {
   name: string;
-  branches: string;
-  prs: string;
+  branches: string | null;
+  prs: string | null;
   workspaces: string;
   lastCommit: string;
 }
 
-export const ComposableTableSelectableRadio: React.FunctionComponent = () => {
+export const TableHoverable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
-    { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five' },
-    { name: 'a', branches: 'two', prs: 'k', workspaces: 'four', lastCommit: 'five' },
-    { name: 'p', branches: 'two', prs: 'b', workspaces: 'four', lastCommit: 'five' }
+    { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
+    { name: 'one - 2', branches: null, prs: null, workspaces: 'four - 2', lastCommit: 'five - 2' },
+    { name: 'one - 3', branches: 'two - 3', prs: 'three - 3', workspaces: 'four - 3', lastCommit: 'five - 3' }
   ];
 
   const columnNames = {
@@ -25,17 +25,14 @@ export const ComposableTableSelectableRadio: React.FunctionComponent = () => {
     lastCommit: 'Last commit'
   };
 
-  const isRepoSelectable = (repo: Repository) => repo.name !== 'a'; // Arbitrary logic for this example
-
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
-  const [selectedRepoName, setSelectedRepoName] = React.useState<string | null>(null);
+  const [selectedRepoName, setSelectedRepoName] = React.useState('');
 
   return (
-    <TableComposable aria-label="Selectable table">
+    <TableComposable aria-label="Hoverable table">
       <Thead>
         <Tr>
-          <Th />
           <Th>{columnNames.name}</Th>
           <Th>{columnNames.branches}</Th>
           <Th>{columnNames.prs}</Th>
@@ -44,17 +41,14 @@ export const ComposableTableSelectableRadio: React.FunctionComponent = () => {
         </Tr>
       </Thead>
       <Tbody>
-        {repositories.map((repo, rowIndex) => (
-          <Tr key={repo.name}>
-            <Td
-              select={{
-                rowIndex,
-                onSelect: () => setSelectedRepoName(repo.name),
-                isSelected: selectedRepoName === repo.name,
-                disable: !isRepoSelectable(repo),
-                variant: 'radio'
-              }}
-            />
+        {repositories.map(repo => (
+          <Tr
+            key={repo.name}
+            onRowClick={() => setSelectedRepoName(repo.name)}
+            isSelectable
+            isHoverable
+            isRowSelected={selectedRepoName === repo.name}
+          >
             <Td dataLabel={columnNames.name}>{repo.name}</Td>
             <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
             <Td dataLabel={columnNames.prs}>{repo.prs}</Td>

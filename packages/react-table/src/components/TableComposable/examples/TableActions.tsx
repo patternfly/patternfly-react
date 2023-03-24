@@ -25,7 +25,7 @@ interface Repository {
 
 type ExampleType = 'defaultToggle' | 'customToggle';
 
-export const ComposableTableActions: React.FunctionComponent = () => {
+export const TableActions: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
@@ -44,7 +44,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
     singleAction: 'Single action'
   };
 
-  // This state is just for the ToggleGroup in this example and isn't necessary for TableComposable usage.
+  // This state is just for the ToggleGroup in this example and isn't necessary for Table usage.
   const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('defaultToggle');
   const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (_isSelected, event) => {
     const id = event.currentTarget.id;

@@ -13,7 +13,7 @@ interface Fact {
   detail7: string;
 }
 
-export const ComposableTableStickyColumn: React.FunctionComponent = () => {
+export const TableStickyColumn: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const facts: Fact[] = Array.from({ length: 9 }, (_, index) => ({
     name: `Fact ${index + 1}`,
