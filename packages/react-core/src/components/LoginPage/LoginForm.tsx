@@ -7,6 +7,7 @@ import { ValidatedOptions } from '../../helpers/constants';
 import { InputGroup } from '../InputGroup';
 import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon';
 import EyeIcon from '@patternfly/react-icons/dist/esm/icons/eye-icon';
+import { HelperText, HelperTextItem } from '../HelperText';
 
 export interface LoginFormProps extends Omit<React.HTMLProps<HTMLFormElement>, 'ref'> {
   /** Flag to indicate if the first dropdown item should not gain initial focus */
@@ -96,9 +97,15 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
 
   return (
     <Form className={className} {...props}>
-      <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText} icon={helperTextIcon}>
-        {helperText}
-      </FormHelperText>
+      {!showHelperText && (
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant={!isValidUsername || !isValidPassword ? 'error' : 'default'} icon={helperTextIcon}>
+              {helperText}
+            </HelperTextItem>
+          </HelperText>
+        </FormHelperText>
+      )}
       <FormGroup label={usernameLabel} isRequired fieldId="pf-login-username-id">
         <TextInput
           autoFocus={!noAutoFocus}
