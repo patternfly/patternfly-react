@@ -54,7 +54,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Modal handles pressing of the escape key and closes the modal. If you want to handle
    * this yourself you can use this callback function. */
   onEscapePress?: (event: KeyboardEvent) => void;
-  /** Alternate position of the modal. */
+  /** Position of the modal. By default a modal will be positioned vertically and horizontally centered. */
   position?: 'default' | 'top';
   /** Offset from alternate position. Can be any valid CSS length/percentage. */
   positionOffset?: string;
