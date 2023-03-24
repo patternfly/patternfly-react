@@ -3,6 +3,76 @@ id: Release notes
 section: developer-resources
 ---
 
+## 2023.02 release notes (2023-03-24)
+- [@patternfly/react-catalog-view-extension@4.96.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.96.0)
+- [@patternfly/react-charts@6.94.19](https://www.npmjs.com/package/@patternfly/react-charts/v/6.94.19)
+- [@patternfly/react-code-editor@4.82.113](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.82.113)
+- [@patternfly/react-console@4.95.5](https://www.npmjs.com/package/@patternfly/react-console/v/4.95.5)
+- [@patternfly/react-core@4.276.8](https://www.npmjs.com/package/@patternfly/react-core/v/4.276.8)
+- [@patternfly/react-icons@4.93.6](https://www.npmjs.com/package/@patternfly/react-icons/v/4.93.6)
+- [@patternfly/react-inline-edit-extension@4.86.122](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.86.122)
+- [@patternfly/react-log-viewer@4.87.100](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.87.100)
+- [@patternfly/react-styles@4.92.6](https://www.npmjs.com/package/@patternfly/react-styles/v/4.92.6)
+- [@patternfly/react-table@4.113.0](https://www.npmjs.com/package/@patternfly/react-table/v/4.113.0)
+- [@patternfly/react-tokens@4.94.6](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.94.6)
+- [@patternfly/react-topology@4.91.40](https://www.npmjs.com/package/@patternfly/react-topology/v/4.91.40)
+- [@patternfly/react-virtualized-extension@4.88.115](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.88.115)
+- [@patternfly/quickstarts@2.4.0](https://www.npmjs.com/package/@patternfly/quickstarts/v/2.4.0)
+
+### Components
+- **Date picker:**
+  - Fixed errors in demos ([#8760](https://github.com/patternfly/patternfly-react/pull/8760))
+- **Time picker:**
+  - Called onChange when pressing enter ([#8765](https://github.com/patternfly/patternfly-react/pull/8765))
+
+### Access console extension
+- Resolved dependency warnings ([#22](https://github.com/patternfly/react-console/pull/22))
+- Sort dependencies into proper categories ([#30](https://github.com/patternfly/react-console/pull/30))
+- Converted examples to full-screen ([#20](https://github.com/patternfly/react-console/pull/20))
+- Fixed docs by updating react-styles path in markdown import ([#16](https://github.com/patternfly/react-console/pull/16))
+- Resolved warnings being flagged by the linter ([#26](https://github.com/patternfly/react-console/pull/26))
+- Updated tsconfig to match files from pf-react ([#28](https://github.com/patternfly/react-console/pull/28))
+
+### Catalog view extension
+- Hardend configuration ([#34](https://github.com/patternfly/react-catalog-view/pull/34))
+- Updated markdown content and source link ([#31](https://github.com/patternfly/react-catalog-view/pull/31))
+- Updated package repository details ([#28](https://github.com/patternfly/react-catalog-view/pull/28))
+
+### Charts
+- Back ported label IDs ([#8743](https://github.com/patternfly/patternfly-react/pull/8743))
+
+### Quick starts
+- Dry ran publishing prerelease using github actions ([#232](https://github.com/patternfly/patternfly-quickstarts/pull/232))
+- Ran more more dry runs of publishing prerelease ([#233](https://github.com/patternfly/patternfly-quickstarts/pull/233))
+- Updated accordion for section support ([#226](https://github.com/patternfly/patternfly-quickstarts/pull/226))
+- Allowed special asciidoc attributes in titles ([#225](https://github.com/patternfly/patternfly-quickstarts/pull/225))
+- Made PatternFly.org quick starts content edits ([#205](https://github.com/patternfly/patternfly-quickstarts/pull/205))
+- Updated release yml config ([#234](https://github.com/patternfly/patternfly-quickstarts/pull/234))
+
+### Table
+- Imported from dist/esm like we do in react-core ([#8708](https://github.com/patternfly/patternfly-react/pull/8708))
+- Added right sticky column support ([#8714](https://github.com/patternfly/patternfly-react/pull/8714))
+
+### Topology
+- Added anchors demo and documentation ([#8679](https://github.com/patternfly/patternfly-react/pull/8679))
+- Added context menu demo and documentation ([#8683](https://github.com/patternfly/patternfly-react/pull/8683))
+- Added drag and drop demo ([#8796](https://github.com/patternfly/patternfly-react/pull/8796))
+- Added layouts demo and documentation ([#8680](https://github.com/patternfly/patternfly-react/pull/8680))
+- Added props tables to topology documentation ([#8705](https://github.com/patternfly/patternfly-react/pull/8705))
+- Added sidebar demo and documentation ([#8652](https://github.com/patternfly/patternfly-react/pull/8652))
+- Added toolbar demo ([#8668](https://github.com/patternfly/patternfly-react/pull/8668))
+- Added control bar demo and documentation ([#8644](https://github.com/patternfly/patternfly-react/pull/8644))
+- Allowed tooltip customization on `TaskNode` ([#8782](https://github.com/patternfly/patternfly-react/pull/8782))
+- Fixed build errors in context menus demo ([#8738](https://github.com/patternfly/patternfly-react/pull/8738))
+- Added topology pipeline tasks demo ([#8713](https://github.com/patternfly/patternfly-react/pull/8713))
+- Split up topology demos, ran a11y tests ([#8645](https://github.com/patternfly/patternfly-react/pull/8645))
+- Updated section to top-level navigation item ([#8586](https://github.com/patternfly/patternfly-react/pull/8586))
+- Set topology demo order ([#8681](https://github.com/patternfly/patternfly-react/pull/8681))
+- Fixed Cola animation makes page crash on layout change ([#8761](https://github.com/patternfly/patternfly-react/pull/8761))
+
+### Virtualized extension
+- Disabled release dry run mode ([#1](https://github.com/patternfly/react-virtualized-extension/pull/1))
+
 ## 2023.01 release notes (2023-02-02)
 - [@patternfly/react-catalog-view-extension@4.95.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.95.1)
 - [@patternfly/react-charts@6.94.18](https://www.npmjs.com/package/@patternfly/react-charts/v/6.94.18)
