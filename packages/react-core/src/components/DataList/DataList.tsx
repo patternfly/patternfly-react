@@ -1,17 +1,16 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import stylesGrid from '@patternfly/react-styles/css/components/DataList/data-list-grid';
 import { PickOptional } from '../../helpers/typeUtils';
 
 const gridBreakpointClasses = {
-  none: stylesGrid.modifiers.gridNone,
+  none: styles.modifiers.gridNone,
   always: 'pf-m-grid', // Placeholder per https://github.com/patternfly/patternfly-react/issues/4965#issuecomment-704984236
-  sm: stylesGrid.modifiers.gridSm,
-  md: stylesGrid.modifiers.gridMd,
-  lg: stylesGrid.modifiers.gridLg,
-  xl: stylesGrid.modifiers.gridXl,
-  '2xl': stylesGrid.modifiers.grid_2xl
+  sm: styles.modifiers.gridSm,
+  md: styles.modifiers.gridMd,
+  lg: styles.modifiers.gridLg,
+  xl: styles.modifiers.gridXl,
+  '2xl': styles.modifiers.grid_2xl
 };
 
 export enum DataListWrapModifier {
