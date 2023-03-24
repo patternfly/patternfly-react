@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { TextInput } from '../TextInput/TextInput';
-import { Button } from '../Button/Button';
-import { Select, SelectOption } from '../Select';
+import { TextInput } from '../TextInput';
+import { Button } from '../Button';
+import { Select, SelectList, SelectOption } from '../Select';
+import { MenuToggle, MenuToggleElement } from '../MenuToggle';
 import { InputGroup } from '../InputGroup';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -263,13 +264,21 @@ export const CalendarMonth = ({
               Month
             </span>
             <Select
-              // Max width with "September"
-              width="140px"
+              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  onClick={()=>setIsSelectOpen(!isSelectOpen)}
+                  isExpanded={isSelectOpen}
+                  style={{width: "140px"} as React.CSSProperties }
+                >
+                  {monthFormatted}
+                </MenuToggle>
+              )}
               aria-labelledby={hiddenMonthId}
               isOpen={isSelectOpen}
-              onToggle={() => {
-                setIsSelectOpen(!isSelectOpen);
-                onSelectToggle(!isSelectOpen);
+              onOpenChange={(isOpen) => {
+                setIsSelectOpen(isOpen);
+                onSelectToggle(isOpen);
               }}
               onSelect={(ev, monthNum) => {
                 // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
@@ -285,14 +294,15 @@ export const CalendarMonth = ({
                   onMonthChange(ev, newDate);
                 }, 0);
               }}
-              variant="single"
-              selections={monthFormatted}
+              selected={monthFormatted}
             >
-              {longMonths.map((longMonth, index) => (
-                <SelectOption key={index} value={index} isSelected={longMonth === monthFormatted}>
-                  {longMonth}
-                </SelectOption>
-              ))}
+              <SelectList>
+                {longMonths.map((longMonth, index) => (
+                  <SelectOption key={index} itemId={index} isSelected={longMonth === monthFormatted}>
+                    {longMonth}
+                  </SelectOption>
+                ))}
+              </SelectList>
             </Select>
           </div>
           <div className={styles.calendarMonthHeaderYear}>

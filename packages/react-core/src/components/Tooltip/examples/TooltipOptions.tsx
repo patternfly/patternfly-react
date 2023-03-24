@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Tooltip, Checkbox, Select, SelectOption, TextInput, TooltipPosition } from '@patternfly/react-core';
+import { Button, Tooltip, Checkbox, Select, SelectList, SelectOption, MenuToggle, MenuToggleElement, TextInput, TooltipPosition } from '@patternfly/react-core';
 
 export const TooltipOptions: React.FunctionComponent = () => {
   const [trigger, setTrigger] = React.useState(['mouseenter', 'focus']);
@@ -96,28 +96,43 @@ export const TooltipOptions: React.FunctionComponent = () => {
         <div style={{ border: '1px solid' }}>
           position (will flip if enableFlip is true). The 'auto' position requires enableFlip to be set to true.
           <Select
-            onToggle={() => setPositionSelectOpen(!positionSelectOpen)}
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={()=>setPositionSelectOpen(!positionSelectOpen)}
+                isExpanded={positionSelectOpen}
+                style={
+                  {
+                    width: '200px'
+                  } as React.CSSProperties
+                }
+              >
+                {position}
+              </MenuToggle>
+            )}
+            onOpenChange={setPositionSelectOpen}
             onSelect={(_event, selection) => {
               setPosition(selection.toString() as TooltipPosition);
               setPositionSelectOpen(false);
             }}
             isOpen={positionSelectOpen}
-            selections={position}
-            menuAppendTo={() => document.body}
+            selected={position}
           >
-            <SelectOption value={TooltipPosition.auto} />
-            <SelectOption value={TooltipPosition.top} />
-            <SelectOption value={TooltipPosition.bottom} />
-            <SelectOption value={TooltipPosition.left} />
-            <SelectOption value={TooltipPosition.right} />
-            <SelectOption value={TooltipPosition.topStart} />
-            <SelectOption value={TooltipPosition.topEnd} />
-            <SelectOption value={TooltipPosition.bottomStart} />
-            <SelectOption value={TooltipPosition.bottomEnd} />
-            <SelectOption value={TooltipPosition.leftStart} />
-            <SelectOption value={TooltipPosition.leftEnd} />
-            <SelectOption value={TooltipPosition.rightStart} />
-            <SelectOption value={TooltipPosition.rightEnd} />
+            <SelectList>
+              <SelectOption itemId={TooltipPosition.auto}>{TooltipPosition.auto}</SelectOption>
+              <SelectOption itemId={TooltipPosition.top}>{TooltipPosition.top}</SelectOption>
+              <SelectOption itemId={TooltipPosition.bottom}>{TooltipPosition.bottom}</SelectOption>
+              <SelectOption itemId={TooltipPosition.left}>{TooltipPosition.left}</SelectOption>
+              <SelectOption itemId={TooltipPosition.right}>{TooltipPosition.right}</SelectOption>
+              <SelectOption itemId={TooltipPosition.topStart}>{TooltipPosition.topStart}</SelectOption>
+              <SelectOption itemId={TooltipPosition.topEnd}>{TooltipPosition.topEnd}</SelectOption>
+              <SelectOption itemId={TooltipPosition.bottomStart}>{TooltipPosition.bottomStart}</SelectOption>
+              <SelectOption itemId={TooltipPosition.bottomEnd}>{TooltipPosition.bottomEnd}</SelectOption>
+              <SelectOption itemId={TooltipPosition.leftStart}>{TooltipPosition.leftStart}</SelectOption>
+              <SelectOption itemId={TooltipPosition.leftEnd}>{TooltipPosition.leftEnd}</SelectOption>
+              <SelectOption itemId={TooltipPosition.rightStart}>{TooltipPosition.rightStart}</SelectOption>
+              <SelectOption itemId={TooltipPosition.rightEnd}>{TooltipPosition.rightEnd}</SelectOption>
+            </SelectList>
           </Select>
         </div>
         <div style={{ border: '1px solid' }}>
@@ -157,17 +172,32 @@ export const TooltipOptions: React.FunctionComponent = () => {
           starting position. The second option ensures that there are 3 escape positions for every possible starting
           position (default). This setting is ignored if position prop is set to 'auto'.
           <Select
-            onToggle={() => setFlipSelectOpen(!flipSelectOpen)}
+            onOpenChange={setFlipSelectOpen}
             onSelect={(_event, selection) => {
-              setFlipBehavior(selection.toString());
+              setFlipBehavior(selection as string);
               setFlipSelectOpen(false);
             }}
             isOpen={flipSelectOpen}
-            selections={flipBehavior}
-            menuAppendTo={() => document.body}
+            selected={flipBehavior}
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={()=>setFlipSelectOpen(!flipSelectOpen)}
+                isExpanded={flipSelectOpen}
+                style={
+                  {
+                    width: '450px'
+                  } as React.CSSProperties
+                }
+              >
+                {flipBehavior}
+              </MenuToggle>
+            )}
           >
-            <SelectOption value="flip" />
-            <SelectOption value="clockwise">['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']</SelectOption>
+            <SelectList>
+              <SelectOption itemId="flip">flip</SelectOption>
+              <SelectOption itemId="clockwise">['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']</SelectOption>
+            </SelectList>
           </Select>
         </div>
       </div>

@@ -7,15 +7,17 @@ import {
   DropdownPosition,
   DropdownToggle,
   Flex,
-  Select,
-  SelectOption,
-  SelectVariant,
   Split,
   SplitItem,
   TextInput,
   ToolbarItem,
   Tooltip
 } from '@patternfly/react-core';
+import {
+  Select,
+  SelectOption,
+  SelectVariant
+} from '@patternfly/react-core/deprecated';
 import '@patternfly/react-styles/css/components/Topology/topology-components.css';
 import { DefaultEdgeOptions, DefaultNodeOptions, GeneratorEdgeOptions, GeneratorNodeOptions } from './data/generator';
 import {

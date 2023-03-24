@@ -14,15 +14,16 @@ import {
   Card,
   Flex,
   FlexItem,
+  MenuToggle,
+  MenuToggleElement,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem,
   Pagination,
+  PageSection,
   Select,
-  SelectVariant,
-  SelectOption,
-  PageSection
+  SelectOption
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -95,22 +96,25 @@ export const CompoundExpandable = () => {
         <ToolbarItem>
           <Select
             id="select-example"
-            variant={SelectVariant.single}
             aria-label="Select Input"
-            placeholderText={
-              <>
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={() => setIsSelectOpen(!isSelectOpen)}
+                isExpanded={isSelectOpen}
+              >
                 <FilterIcon /> Status
-              </>
-            }
+              </MenuToggle>
+            )}
             isOpen={isSelectOpen}
-            onToggle={() => setIsSelectOpen(!isSelectOpen)}
+            onOpenChange={isOpen => setIsSelectOpen(isOpen)}
             onSelect={() => setIsSelectOpen(!isSelectOpen)}
           >
             {[
-              <SelectOption key={0} value="Debug" />,
-              <SelectOption key={1} value="Info" />,
-              <SelectOption key={2} value="Warn" />,
-              <SelectOption key={3} value="Error" />
+              <SelectOption key={0} itemId="Debug">Debug</SelectOption>,
+              <SelectOption key={1} itemId="Info">Info</SelectOption>,
+              <SelectOption key={2} itemId="Warn">Warn</SelectOption>,
+              <SelectOption key={3} itemId="Error">Error</SelectOption>
             ]}
           </Select>
         </ToolbarItem>

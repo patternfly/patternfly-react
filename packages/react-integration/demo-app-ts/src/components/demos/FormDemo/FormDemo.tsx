@@ -8,15 +8,17 @@ import {
   TextInput,
   Checkbox,
   Popover,
-  Select,
-  SelectOption,
-  SelectOptionObject,
-  SelectVariant,
   ValidatedOptions,
   HelperText,
   HelperTextItem,
   FormHelperText
 } from '@patternfly/react-core';
+import {
+  Select,
+  SelectOption,
+  SelectOptionObject,
+  SelectVariant,
+} from '@patternfly/react-core/deprecated';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 

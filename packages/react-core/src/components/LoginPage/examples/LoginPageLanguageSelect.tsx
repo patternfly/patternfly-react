@@ -8,9 +8,11 @@ import {
   LoginPage,
   ListItem,
   ListVariant,
+  MenuToggle,
+  MenuToggleElement,
   Select,
-  SelectOption,
-  SelectOptionObject
+  SelectList,
+  SelectOption
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
@@ -22,7 +24,7 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
   const [isValidPassword, setIsValidPassword] = React.useState(true);
   const [isRememberMeChecked, setIsRememberMeChecked] = React.useState(false);
   const [isHeaderUtilsOpen, setIsHeaderUtilsOpen] = React.useState(false);
-  const [selectedHeaderUtils, setSelectedHeaderUtils] = React.useState<string | SelectOptionObject>('English');
+  const [selectedHeaderUtils, setSelectedHeaderUtils] = React.useState('English');
 
   /** i18n object is used to simulate i18n integration of native language translation */
   const i18n = {
@@ -35,23 +37,21 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
     Bengali: 'বাংলা'
   };
 
-  const headerUtilsOptions = [
-    <SelectOption key={0} value={i18n.English} />,
-    <SelectOption key={1} value={i18n.Mandarin} />,
-    <SelectOption key={2} value={i18n.Hindi} />,
-    <SelectOption key={3} value={i18n.Spanish} />,
-    <SelectOption key={4} value={i18n.Portuguese} />,
-    <SelectOption key={5} value={i18n.Arabic} />,
-    <SelectOption key={6} value={i18n.Bengali} />
-  ];
-
-  const onHeaderUtilsToggle = (_event: any, isExpanded: boolean) => {
-    setIsHeaderUtilsOpen(isExpanded);
-  };
+  const headerUtilsOptions = (
+    <SelectList>
+      <SelectOption key={0} itemId={i18n.English}>{i18n.English}</SelectOption>
+      <SelectOption key={1} itemId={i18n.Mandarin}>{i18n.Mandarin}</SelectOption>
+      <SelectOption key={2} itemId={i18n.Hindi}>{i18n.Hindi}</SelectOption>
+      <SelectOption key={3} itemId={i18n.Spanish}>{i18n.Spanish}</SelectOption>
+      <SelectOption key={4} itemId={i18n.Portuguese}>{i18n.Portuguese}</SelectOption>
+      <SelectOption key={5} itemId={i18n.Arabic}>{i18n.Arabic}</SelectOption>
+      <SelectOption key={6} itemId={i18n.Bengali}>{i18n.Bengali}</SelectOption>
+    </SelectList>
+  );
 
   const onHeaderUtilsSelect = (
     _event: React.MouseEvent<Element, MouseEvent> | React.ChangeEvent<Element>,
-    value: string | SelectOptionObject
+    value: string
   ) => {
     setSelectedHeaderUtils(value);
     setIsHeaderUtilsOpen(false);
@@ -60,9 +60,18 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
   const headerUtils = (
     <Select
       aria-label="Select Language"
-      onToggle={onHeaderUtilsToggle}
+      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+        <MenuToggle
+          ref={toggleRef}
+          onClick={() => setIsHeaderUtilsOpen(!isHeaderUtilsOpen)}
+          isExpanded={isHeaderUtilsOpen}
+        >
+          {selectedHeaderUtils}
+        </MenuToggle>
+      )}
       onSelect={onHeaderUtilsSelect}
-      selections={selectedHeaderUtils}
+      onOpenChange={isOpen => setIsHeaderUtilsOpen(isOpen)}
+      selected={selectedHeaderUtils}
       isOpen={isHeaderUtilsOpen}
     >
       {headerUtilsOptions}

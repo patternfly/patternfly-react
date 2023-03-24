@@ -1,62 +1,57 @@
 import React from 'react';
-import { SelectOptionObject, Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
-import { Button, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import {
+  Button,
+  MenuToggle,
+  MenuToggleElement,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem,
+  Select,
+  SelectList,
+  SelectOption
+} from '@patternfly/react-core';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 
 export const ToolbarGroups: React.FunctionComponent = () => {
-  const firstOptions = [
-    { value: 'Filter 1', disabled: false, isPlaceholder: true },
-    { value: 'A', disabled: false },
-    { value: 'B', disabled: false },
-    { value: 'C', disabled: false }
-  ];
-
-  const secondOptions = [
-    { value: 'Filter 2', disabled: false, isPlaceholder: true },
-    { value: '1', disabled: false },
-    { value: '2', disabled: false },
-    { value: '3', disabled: false }
-  ];
-
-  const thirdOptions = [
-    { value: 'Filter 3', disabled: false, isPlaceholder: true },
-    { value: 'I', disabled: false },
-    { value: 'II', disabled: false },
-    { value: 'III', disabled: false }
-  ];
+  const firstOptions = ['A', 'B', 'C'];
+  const secondOptions = ['1', '2', '3'];
+  const thirdOptions = ['I', 'II', 'III'];
 
   const [firstIsExpanded, setFirstIsExpanded] = React.useState(false);
-  const [firstSelected, setFirstSelected] = React.useState<string | SelectOptionObject>();
+  const [firstSelected, setFirstSelected] = React.useState('');
   const [secondIsExpanded, setSecondIsExpanded] = React.useState(false);
-  const [secondSelected, setSecondSelected] = React.useState<string | SelectOptionObject>();
+  const [secondSelected, setSecondSelected] = React.useState('');
   const [thirdIsExpanded, setThirdIsExpanded] = React.useState(false);
-  const [thirdSelected, setThirdSelected] = React.useState<string | SelectOptionObject>();
+  const [thirdSelected, setThirdSelected] = React.useState('');
 
-  const onFirstToggle = (_event: any, isExpanded: boolean) => {
-    setFirstIsExpanded(isExpanded);
+  const onToggle = (filterName: string) => {
+    switch (filterName) {
+      case "first":
+        setFirstIsExpanded(!firstIsExpanded);
+        break;
+      case "second":
+        setSecondIsExpanded(!secondIsExpanded);
+        break;
+      case "third":
+        setThirdIsExpanded(!thirdIsExpanded);
+        break;
+    }
   };
 
-  const onFirstSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  const onFirstSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, selection: string) => {
     setFirstSelected(selection);
     setFirstIsExpanded(false);
   };
 
-  const onSecondToggle = (_event: any, isExpanded: boolean) => {
-    setSecondIsExpanded(isExpanded);
-  };
-
-  const onSecondSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  const onSecondSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, selection: string) => {
     setSecondSelected(selection);
     setSecondIsExpanded(false);
   };
 
-  const onThirdToggle = (_event: any, isExpanded: boolean) => {
-    setThirdIsExpanded(isExpanded);
-  };
-
-  const onThirdSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  const onThirdSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, selection: string) => {
     setThirdSelected(selection);
     setThirdIsExpanded(false);
   };
@@ -65,44 +60,86 @@ export const ToolbarGroups: React.FunctionComponent = () => {
     <React.Fragment>
       <ToolbarItem>
         <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={onFirstToggle}
+          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            <MenuToggle
+              ref={toggleRef}
+              onClick={() => onToggle("first")}
+              isExpanded={firstIsExpanded}
+              style={
+                {
+                  width: '88px'
+                } as React.CSSProperties
+              }
+            >
+              {firstSelected || 'First'}
+            </MenuToggle>
+          )}
           onSelect={onFirstSelect}
-          selections={firstSelected}
+          onOpenChange={isOpen => setFirstIsExpanded(isOpen)}
+          selected={firstSelected}
           isOpen={firstIsExpanded}
         >
-          {firstOptions.map((option, index) => (
-            <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-          ))}
+          <SelectList>
+            {firstOptions.map((option, index) => (
+              <SelectOption key={index} itemId={option}>{option}</SelectOption>
+            ))}
+          </SelectList>
         </Select>
       </ToolbarItem>
       <ToolbarItem>
         <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={onSecondToggle}
+          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            <MenuToggle
+              ref={toggleRef}
+              onClick={() => onToggle("second")}
+              isExpanded={secondIsExpanded}
+              style={
+                {
+                  width: '120px'
+                } as React.CSSProperties
+              }
+            >
+              {secondSelected || 'Second'}
+            </MenuToggle>
+          )}
           onSelect={onSecondSelect}
-          selections={secondSelected}
+          selected={secondSelected}
+          onOpenChange={isOpen => setSecondIsExpanded(isOpen)}
           isOpen={secondIsExpanded}
         >
-          {secondOptions.map((option, index) => (
-            <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-          ))}
+          <SelectList>
+            {secondOptions.map((option, index) => (
+              <SelectOption key={index} itemId={option}>{option}</SelectOption>
+            ))}
+          </SelectList>
         </Select>
       </ToolbarItem>
       <ToolbarItem>
         <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={onThirdToggle}
+          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            <MenuToggle
+              ref={toggleRef}
+              onClick={() => onToggle("third")}
+              isExpanded={thirdIsExpanded}
+              style={
+                {
+                  width: '96px'
+                } as React.CSSProperties
+              }
+            >
+              {thirdSelected || 'Third'}
+            </MenuToggle>
+          )}
           onSelect={onThirdSelect}
-          selections={thirdSelected}
+          selected={thirdSelected}
+          onOpenChange={isOpen => setThirdIsExpanded(isOpen)}
           isOpen={thirdIsExpanded}
         >
-          {thirdOptions.map((option, index) => (
-            <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-          ))}
+          <SelectList>
+            {thirdOptions.map((option, index) => (
+              <SelectOption key={index} itemId={option}>{option}</SelectOption>
+            ))}
+          </SelectList>
         </Select>
       </ToolbarItem>
     </React.Fragment>

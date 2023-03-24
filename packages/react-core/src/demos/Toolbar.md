@@ -30,16 +30,22 @@ This is an example of toolbar usage in log viewer.
 
 ```js isFullscreen
 import React from 'react';
-import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem, ToolbarToggleGroup } from '@patternfly/react-core';
 import {
   Badge,
   Button,
   Checkbox,
+  MenuToggle,
   SearchInput,
   Select,
+  SelectList,
   SelectOption,
   PageSection,
   PageSectionVariants,
+  Toolbar,
+  ToolbarContent, 
+  ToolbarGroup, 
+  ToolbarItem, 
+  ToolbarToggleGroup,
   Tooltip
 } from '@patternfly/react-core';
 import {
@@ -90,15 +96,19 @@ class ConsoleLogViewerToolbar extends React.Component {
       mobileView: window.innerWidth >= 1450 ? false : true
     };
 
-    this.onContainerToggle = (_event, isExpanded) => {
-      this.setState({
-        containerExpanded: isExpanded
+    this.onContainerToggle = () => {
+      this.setState(prevState => {
+        return {
+          containerExpanded: !prevState.containerExpanded
+        }
       });
     };
 
-    this.onContainerToggleMobile = (_event, isExpanded) => {
-      this.setState({
-        containerExpandedMobile: isExpanded
+    this.onContainerToggleMobile = () => {
+      this.setState(prevState => {
+        return {
+          containerExpandedMobile: !prevState.containerExpandedMobile
+        }
       });
     };
 
@@ -332,19 +342,19 @@ class ConsoleLogViewerToolbar extends React.Component {
     ];
 
     const selectDropdownContent = (
-      <React.Fragment>
+      <SelectList>
         {Object.entries(this.firstOptions).map(([value, { type }]) => (
           <SelectOption
             key={value}
-            value={value}
+            hasCheckbox
+            itemId={value}
             isSelected={containerSelected === value}
-            isChecked={containerSelected === value}
           >
             <Badge key={value}>{type}</Badge>
             {` ${value}`}
           </SelectOption>
         ))}
-      </React.Fragment>
+      </SelectList>
     );
 
     const selectToggleContent = ({ showText }) => {
@@ -379,13 +389,23 @@ class ConsoleLogViewerToolbar extends React.Component {
       <React.Fragment>
         <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
           <Select
-            onToggle={this.onContainerToggle}
+            toggle={(toggleRef) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={this.onContainerToggle}
+                isExpanded={containerExpanded}
+                style={{ width: '250px' }}
+              >
+                {selectToggleContent({ showText: true })}
+              </MenuToggle>
+            )}
             onSelect={this.onContainerSelect}
-            selections={containerSelected}
+            onOpenChange={(isOpen) => this.setState({ containerExpanded: isOpen })}
+            selected={containerSelected}
             isOpen={containerExpanded}
-            customContent={selectDropdownContent}
-            placeholderText={selectToggleContent({ showText: true })}
-          />
+          >
+            {selectDropdownContent}
+          </Select>
         </ToolbarItem>
         <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
           <DropdownDeprecated
@@ -412,13 +432,23 @@ class ConsoleLogViewerToolbar extends React.Component {
         <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
           <Tooltip position="top" content={<div>Select container</div>}>
             <Select
-              onToggle={this.onContainerToggleMobile}
+              role="menu"
+              toggle={(toggleRef) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  onClick={this.onContainerToggleMobile}
+                  isExpanded={containerExpandedMobile}
+                >
+                  {selectToggleContent({ showText: false })}
+                </MenuToggle>
+              )}
               onSelect={this.onContainerSelectMobile}
-              selections={containerSelected}
+              onOpenChange={(isOpen) => this.setState({ containerExpandedMobile: isOpen })}
+              selected={containerSelected}
               isOpen={containerExpandedMobile}
-              customContent={selectDropdownContent}
-              placeholderText={selectToggleContent({ showText: false })}
-            />
+            >
+              {selectDropdownContent}
+              </Select>
           </Tooltip>
         </ToolbarItem>
         <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>

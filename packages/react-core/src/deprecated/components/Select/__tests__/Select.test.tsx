@@ -7,7 +7,7 @@ import { Select } from '../Select';
 import { SelectOption, SelectOptionObject } from '../SelectOption';
 import { SelectGroup } from '../SelectGroup';
 import { SelectVariant, SelectDirection } from '../selectConstants';
-import { KeyTypes } from '../../../helpers';
+import { KeyTypes } from '../../../../helpers';
 
 class User implements SelectOptionObject {
   private firstName: string;

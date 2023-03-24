@@ -39,6 +39,7 @@ This demonstrates how you can assemble a full page view that contains a grid of 
 ```js isFullscreen
 import React from 'react';
 import {
+  Badge,
   Bullseye,
   Button,
   Card,
@@ -63,16 +64,16 @@ import {
   PageSection,
   PageSectionVariants,
   Pagination,
-  Select,
-  SelectOption,
-  SelectVariant,
   TextContent,
   Text,
   Title,
   Toolbar,
   ToolbarItem,
   ToolbarFilter,
-  ToolbarContent
+  ToolbarContent,
+  Select,
+  SelectList,
+  SelectOption
 } from '@patternfly/react-core';
 import {
   Dropdown as DropdownDeprecated,
@@ -131,9 +132,9 @@ class CardViewBasic extends React.Component {
       return selected === total;
     };
 
-    this.onToolbarDropdownToggle = (_event, isLowerToolbarDropdownOpen) => {
+    this.onToolbarDropdownToggle = () => {
       this.setState((prevState) => ({
-        isLowerToolbarDropdownOpen
+        isLowerToolbarDropdownOpen: !prevState.isLowerToolbarDropdownOpen
       }));
     };
 
@@ -462,29 +463,44 @@ class CardViewBasic extends React.Component {
   buildFilterDropdown() {
     const { isLowerToolbarDropdownOpen, filters } = this.state;
 
-    const filterDropdownItems = [
-      <SelectOption key="patternfly" value="PatternFly" />,
-      <SelectOption key="activemq" value="ActiveMQ" />,
-      <SelectOption key="apachespark" value="Apache Spark" />,
-      <SelectOption key="avro" value="Avro" />,
-      <SelectOption key="azureservices" value="Azure Services" />,
-      <SelectOption key="crypto" value="Crypto" />,
-      <SelectOption key="dropbox" value="DropBox" />,
-      <SelectOption key="jbossdatagrid" value="JBoss Data Grid" />,
-      <SelectOption key="rest" value="REST" />,
-      <SelectOption key="swagger" value="SWAGGER" />
-    ];
+    const filterDropdownItems = (
+      <SelectList>
+        <SelectOption hasCheckbox key="patternfly" itemId="PatternFly" isSelected={filters.products.includes("PatternFly")}>PatternFly</SelectOption>
+        <SelectOption hasCheckbox key="activemq" itemId="ActiveMQ" isSelected={filters.products.includes("ActiveMQ")}>ActiveMQ</SelectOption>
+        <SelectOption hasCheckbox key="apachespark" itemId="Apache Spark" isSelected={filters.products.includes("Apache Spark")}>Apache Spark</SelectOption>
+        <SelectOption hasCheckbox key="avro" itemId="Avro" isSelected={filters.products.includes("Avro")}>Avro</SelectOption>
+        <SelectOption hasCheckbox key="azureservices" itemId="Azure Services" isSelected={filters.products.includes("Azure Services")}>Azure Services</SelectOption>
+        <SelectOption hasCheckbox key="crypto" itemId="Crypto" isSelected={filters.products.includes("Crypto")}>Crypto</SelectOption>
+        <SelectOption hasCheckbox key="dropbox" itemId="DropBox" isSelected={filters.products.includes("DropBox")}>DropBox</SelectOption>
+        <SelectOption hasCheckbox key="jbossdatagrid" itemId="JBoss Data Grid" isSelected={filters.products.includes("JBoss Data Grid")}>JBoss Data Grid</SelectOption>
+        <SelectOption hasCheckbox key="rest" itemId="REST" isSelected={filters.products.includes("REST")}>REST</SelectOption>
+        <SelectOption hasCheckbox key="swagger" itemId="SWAGGER" isSelected={filters.products.includes("SWAGGER")}>SWAGGER</SelectOption>
+      </SelectList>
+    );
 
     return (
       <ToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
         <Select
-          variant={SelectVariant.checkbox}
           aria-label="Products"
-          onToggle={this.onToolbarDropdownToggle}
+          role="menu"
+          toggle={(toggleRef) => (
+            <MenuToggle
+              ref={toggleRef}
+              onClick={this.onToolbarDropdownToggle}
+              isExpanded={isLowerToolbarDropdownOpen}
+            >
+              Filter by creator name
+              {filters.products.length > 0 && <Badge isRead>{filters.products.length}</Badge>}
+            </MenuToggle>
+          )}
           onSelect={this.onNameSelect}
-          selections={filters.products}
-          isExpanded={isLowerToolbarDropdownOpen}
-          placeholderText="Creator"
+          onOpenChange={(isOpen) => {
+            this.setState(() => ({
+              isLowerToolbarDropdownOpen: isOpen
+            }));
+          }}
+          selected={filters.products}
+          isOpen={isLowerToolbarDropdownOpen}
         >
           {filterDropdownItems}
         </Select>

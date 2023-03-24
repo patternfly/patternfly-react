@@ -1,6 +1,5 @@
 import React from 'react';
-import { Select, SelectOption, SelectList } from '@patternfly/react-core/next';
-import { MenuToggle, MenuToggleElement } from '@patternfly/react-core';
+import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
 
 export const SelectBasic: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);

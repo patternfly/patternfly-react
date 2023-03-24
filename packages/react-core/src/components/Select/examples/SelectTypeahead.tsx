@@ -1,6 +1,9 @@
 import React from 'react';
-import { Select, SelectOption, SelectList, SelectOptionProps } from '@patternfly/react-core/next';
 import {
+  Select,
+  SelectOption,
+  SelectList,
+  SelectOptionProps,
   MenuToggle,
   MenuToggleElement,
   TextInputGroup,

@@ -6,10 +6,13 @@ import {
   ToolbarFilter,
   ToolbarToggleGroup,
   ToolbarGroup,
+  Badge,
   Button,
+  MenuToggle,
+  MenuToggleElement,
   Select,
-  SelectOption,
-  SelectVariant
+  SelectList,
+  SelectOption
 } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
@@ -57,18 +60,71 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
     }
   };
 
-  const statusMenuItems = [
-    <SelectOption key="statusNew" value="New" />,
-    <SelectOption key="statusPending" value="Pending" />,
-    <SelectOption key="statusRunning" value="Running" />,
-    <SelectOption key="statusCancelled" value="Cancelled" />
-  ];
+  const statusMenuItems = (
+    <SelectList>
+      <SelectOption
+        hasCheckbox
+        key="statusNew"
+        itemId="New"
+        isSelected={filters.status.includes("New")}
+      >
+        New
+      </SelectOption>
+      <SelectOption
+        hasCheckbox
+        key="statusPending"
+        itemId="Pending"
+        isSelected={filters.status.includes("Pending")}
+      >
+        Pending
+      </SelectOption>
+      <SelectOption
+        hasCheckbox
+        key="statusRunning"
+        itemId="Running"
+        isSelected={filters.status.includes("Running")}
+      >
+        Running
+      </SelectOption>
+      <SelectOption
+        hasCheckbox
+        key="statusCancelled"
+        itemId="Cancelled"
+        isSelected={filters.status.includes("Cancelled")}
+      >
+        Cancelled
+      </SelectOption>
+    </SelectList>
+  );
 
-  const riskMenuItems = [
-    <SelectOption key="riskLow" value="Low" />,
-    <SelectOption key="riskMedium" value="Medium" />,
-    <SelectOption key="riskHigh" value="High" />
-  ];
+  const riskMenuItems = (
+    <SelectList>
+      <SelectOption
+        hasCheckbox
+        key="riskLow"
+        itemId="Low"
+        isSelected={filters.risk.includes("Low")}
+      >
+        Low
+      </SelectOption>
+      <SelectOption
+        hasCheckbox
+        key="riskMedium"
+        itemId="Medium"
+        isSelected={filters.risk.includes("Medium")}
+      >
+        Medium
+      </SelectOption>
+      <SelectOption
+        hasCheckbox
+        key="riskHigh"
+        itemId="High"
+        isSelected={filters.risk.includes("High")}
+      >
+        High
+      </SelectOption>
+    </SelectList>
+  );
 
   const toggleGroupItems = (
     <React.Fragment>
@@ -80,13 +136,27 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
           categoryName="Status"
         >
           <Select
-            variant={SelectVariant.checkbox}
             aria-label="Status"
-            onToggle={(_event: any, isExpanded: boolean) => setStatusIsExpanded(isExpanded)}
-            onSelect={(event, selection) => onSelect('Status', event, selection as string)}
-            selections={filters.status}
+            role="menu"
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={() => setStatusIsExpanded(!statusIsExpanded)}
+                isExpanded={statusIsExpanded}
+                style={
+                  {
+                    width: '140px'
+                  } as React.CSSProperties
+                }
+              >
+                Status
+                {filters.status.length > 0 && <Badge isRead>{filters.status.length}</Badge>}
+              </MenuToggle>
+            )}
+            onSelect={(event, selection) => onSelect("Status", event, selection as string)}
+            selected={filters.status}
             isOpen={statusIsExpanded}
-            placeholderText="Status"
+            onOpenChange={isOpen => setStatusIsExpanded(isOpen)}
           >
             {statusMenuItems}
           </Select>
@@ -98,13 +168,27 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
           categoryName="Risk"
         >
           <Select
-            variant={SelectVariant.checkbox}
             aria-label="Risk"
-            onToggle={(_event: any, isExpanded: boolean) => setRiskIsExpanded(isExpanded)}
-            onSelect={(event, selection) => onSelect('Risk', event, selection as string)}
-            selections={filters.risk}
+            role="menu"
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={() => setRiskIsExpanded(!riskIsExpanded)}
+                isExpanded={riskIsExpanded}
+                style={
+                  {
+                    width: '140px'
+                  } as React.CSSProperties
+                }
+              >
+                Risk
+                {filters.risk.length > 0 && <Badge isRead>{filters.risk.length}</Badge>}
+              </MenuToggle>
+            )}
+            onSelect={(event, selection) => onSelect("Risk", event, selection as string)}
+            selected={filters.risk}
             isOpen={riskIsExpanded}
-            placeholderText="Risk"
+            onOpenChange={isOpen => setRiskIsExpanded(isOpen)}
           >
             {riskMenuItems}
           </Select>

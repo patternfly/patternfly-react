@@ -2,15 +2,16 @@ import React from 'react';
 import {
   Button,
   Card,
+  MenuToggle,
+  MenuToggleElement,
+  Pagination,
+  PageSection,
+  Select,
+  SelectOptionm,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
-  ToolbarItem,
-  Pagination,
-  Select,
-  SelectVariant,
-  SelectOption,
-  PageSection
+  ToolbarItem
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
@@ -54,22 +55,25 @@ export const CompactTable = () => {
         <ToolbarItem>
           <Select
             id="select-example"
-            variant={SelectVariant.single}
             aria-label="Select Input"
-            placeholderText={
-              <>
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={() => setIsSelectOpen(!isSelectOpen)}
+                isExpanded={isSelectOpen}
+              >
                 <FilterIcon /> Status
-              </>
-            }
+              </MenuToggle>
+            )}
             isOpen={isSelectOpen}
-            onToggle={() => setIsSelectOpen(!isSelectOpen)}
+            onOpenChange={isOpen => setIsSelectOpen(isOpen)}
             onSelect={() => setIsSelectOpen(!isSelectOpen)}
           >
             {[
-              <SelectOption key={0} value="Debug" />,
-              <SelectOption key={1} value="Info" />,
-              <SelectOption key={2} value="Warn" />,
-              <SelectOption key={3} value="Error" />
+              <SelectOption key={0} itemId="Debug">Debug</SelectOption>,
+              <SelectOption key={1} itemId="Info">Info</SelectOption>,
+              <SelectOption key={2} itemId="Warn">Warn</SelectOption>,
+              <SelectOption key={3} itemId="Error">Error</SelectOption>
             ]}
           </Select>
         </ToolbarItem>

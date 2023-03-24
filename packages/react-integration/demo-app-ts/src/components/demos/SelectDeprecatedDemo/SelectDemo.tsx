@@ -1,18 +1,20 @@
 import {
   Button,
-  Select,
-  SelectOption,
-  SelectVariant,
   Stack,
   StackItem,
   Title,
-  SelectOptionObject,
   Checkbox,
-  SelectDirection,
   Form,
-  Divider,
-  SelectGroup
+  Divider
 } from '@patternfly/react-core';
+import {
+  Select,
+  SelectOption,
+  SelectVariant,
+  SelectOptionObject,
+  SelectDirection,
+  SelectGroup
+} from '@patternfly/react-core/deprecated';
 import React, { Component } from 'react';
 import CartArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/cart-arrow-down-icon';
 import { State } from '../../../common/State';

@@ -11,6 +11,7 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarItem,
+  MenuToggle,
   Modal,
   OverflowMenu,
   OverflowMenuGroup,
@@ -20,9 +21,7 @@ import {
   Pagination,
   PaginationVariant,
   Text,
-  TextContent,
-  Select,
-  SelectVariant
+  TextContent
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -390,32 +389,11 @@ export const ColumnManagementAction = () => {
           <ToolbarItem variant="overflow-menu">
             <OverflowMenu breakpoint="md">
               <OverflowMenuItem>
-                <Select
-                  id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-                  variant={SelectVariant.single}
-                  aria-label="Select Input"
-                  aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-                  placeholderText={
-                    <>
-                      <FilterIcon /> Name
-                    </>
-                  }
-                />
+                <MenuToggle><FilterIcon /> Name</MenuToggle>
               </OverflowMenuItem>
-              {/* <OverflowMenuItem> TODO: replace with select after #8073
-                <OptionsMenu
-                  id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
-                  isPlain
-                  menuItems={[]}
-                  toggle={
-                    <OptionsMenuToggle
-                      toggleTemplate={<SortAmountDownIcon aria-hidden="true" />}
-                      aria-label="Sort by"
-                      hideCaret
-                    />
-                  }
-                />
-              </OverflowMenuItem> */}
+              <OverflowMenuItem>
+                <MenuToggle variant="plain" aria-label="Sort columns"><SortAmountDownIcon aria-hidden="true" /></MenuToggle>
+              </OverflowMenuItem>
               <OverflowMenuGroup groupType="button" isPersistent>
                 <OverflowMenuItem>
                   <Button variant="primary">Action</Button>

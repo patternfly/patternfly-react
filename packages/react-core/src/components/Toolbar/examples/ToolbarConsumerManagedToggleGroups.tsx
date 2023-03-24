@@ -1,85 +1,53 @@
 import React from 'react';
 import {
+  MenuToggle,
+  MenuToggleElement,
   Toolbar,
   ToolbarItem,
   ToolbarContent,
   ToolbarToggleGroup,
   ToolbarGroup,
-  SelectOptionObject
+  SearchInput,
+  Select,
+  SelectList,
+  SelectOption
 } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant, SearchInput } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [inputValue, setInputValue] = React.useState('');
   const [statusIsExpanded, setStatusIsExpanded] = React.useState(false);
-  const [statusSelected, setStatusSelected] = React.useState<string | SelectOptionObject>();
+  const [statusSelected, setStatusSelected] = React.useState('');
   const [riskIsExpanded, setRiskIsExpanded] = React.useState(false);
-  const [riskSelected, setRiskSelected] = React.useState<string | SelectOptionObject>();
+  const [riskSelected, setRiskSelected] = React.useState('');
 
   const toggleIsExpanded = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const statusOptions = [
-    { value: 'Status', disabled: false, isPlaceholder: true },
-    { value: 'New', disabled: false },
-    { value: 'Pending', disabled: false },
-    { value: 'Running', disabled: false },
-    { value: 'Cancelled', disabled: false }
-  ];
-
-  const riskOptions = [
-    { value: 'Risk', disabled: false, isPlaceholder: true },
-    { value: 'Low', disabled: false },
-    { value: 'Medium', disabled: false },
-    { value: 'High', disabled: false }
-  ];
+  const statusOptions = ['New', 'Pending', 'Running', 'Cancelled'];
+  const riskOptions = ['Risk', 'Low', 'Medium', 'High'];
 
   const onInputChange = (newValue: string) => {
     setInputValue(newValue);
   };
 
-  const onStatusToggle = (_event: any, isExpanded: boolean) => {
-    setStatusIsExpanded(isExpanded);
+  const onStatusToggle = () => {
+    setStatusIsExpanded(!statusIsExpanded);
   };
 
-  const onStatusSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
-    selection: string | SelectOptionObject,
-    isPlaceholder: boolean | undefined
-  ) => {
-    if (isPlaceholder) {
-      clearStatusSelection();
-    }
+  const onStatusSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, selection: string) => {
     setStatusSelected(selection);
     setStatusIsExpanded(false);
   };
 
-  const clearStatusSelection = () => {
-    setStatusSelected(undefined);
-    setStatusIsExpanded(false);
+  const onRiskToggle = () => {
+    setRiskIsExpanded(!riskIsExpanded);
   };
 
-  const onRiskToggle = (_event: any, isExpanded: boolean) => {
-    setRiskIsExpanded(isExpanded);
-  };
-
-  const onRiskSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
-    selection: string | SelectOptionObject,
-    isPlaceholder: boolean | undefined
-  ) => {
-    if (isPlaceholder) {
-      clearRiskSelection();
-    }
+  const onRiskSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, selection: string) => {
     setRiskSelected(selection);
-    setRiskIsExpanded(false);
-  };
-
-  const clearRiskSelection = () => {
-    setRiskSelected(undefined);
     setRiskIsExpanded(false);
   };
 
@@ -98,30 +66,58 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
       <ToolbarGroup variant="filter-group">
         <ToolbarItem>
           <Select
-            variant={SelectVariant.single}
-            aria-label="Select Input"
-            onToggle={onStatusToggle}
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={() => onStatusToggle()}
+                isExpanded={statusIsExpanded}
+                style={
+                  {
+                    width: '150px'
+                  } as React.CSSProperties
+                }
+              >
+                {statusSelected || 'Status'}
+              </MenuToggle>
+            )}
             onSelect={onStatusSelect}
-            selections={statusSelected}
+            onOpenChange={isOpen => setStatusIsExpanded(isOpen)}
+            selected={statusSelected}
             isOpen={statusIsExpanded}
           >
-            {statusOptions.map((option, index) => (
-              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-            ))}
+            <SelectList>
+              {statusOptions.map((option, index) => (
+                <SelectOption key={index} itemId={option}>{option}</SelectOption>
+              ))}
+            </SelectList>
           </Select>
         </ToolbarItem>
         <ToolbarItem>
           <Select
-            variant={SelectVariant.single}
-            aria-label="Select Input"
-            onToggle={onRiskToggle}
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={() => onRiskToggle()}
+                isExpanded={riskIsExpanded}
+                style={
+                  {
+                    width: '120px'
+                  } as React.CSSProperties
+                }
+              >
+                {riskSelected || 'Risk'}
+              </MenuToggle>
+            )}
             onSelect={onRiskSelect}
-            selections={riskSelected}
+            selected={riskSelected}
             isOpen={riskIsExpanded}
+            onOpenChange={isOpen => setRiskIsExpanded(isOpen)}
           >
-            {riskOptions.map((option, index) => (
-              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-            ))}
+            <SelectList>
+              {riskOptions.map((option, index) => (
+                <SelectOption key={index} itemId={option}>{option}</SelectOption>
+              ))}
+            </SelectList>
           </Select>
         </ToolbarItem>
       </ToolbarGroup>

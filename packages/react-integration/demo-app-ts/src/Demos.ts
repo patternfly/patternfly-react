@@ -314,57 +314,57 @@ export const Demos: DemoInterface[] = [
   },
   {
     id: 'select-demo',
-    name: 'Select Demo',
+    name: 'Select Deprecated Demo',
     componentType: Examples.SelectDemo
   },
   {
     id: 'select-demo-filtering',
-    name: 'Select Demo with Filtering',
+    name: 'Select Deprecated Demo with Filtering',
     componentType: Examples.FilteringSelectDemo
   },
   {
     id: 'select-demo-filtering-live-updates',
-    name: 'Select Demo with Filtering and Live Items Updates',
+    name: 'Select Deprecated Demo with Filtering and Live Items Updates',
     componentType: Examples.FilteringSelectLiveUpdateDemo
   },
   {
     id: 'select-favorites-demo',
-    name: 'Select Favorites Demo',
+    name: 'Select Deprecated Favorites Demo',
     componentType: Examples.SelectFavoritesDemo
   },
   {
     id: 'select-in-modal-demo',
-    name: 'Select in modal demo',
+    name: 'Select Deprecated in modal demo',
     componentType: Examples.SelectInModal
   },
   {
     id: 'select-typeahead-footer-filtering-demo',
-    name: 'Select Footer filtering Demo',
+    name: 'Select Deprecated Footer filtering Demo',
     componentType: Examples.SelectFooterFilteringDemo
   },
   {
     id: 'select-typeahead-footer-demo',
-    name: 'Select Typeahead Footer Demo',
+    name: 'Select Deprecated Typeahead Footer Demo',
     componentType: Examples.SelectTypeaheadFooterDemo
   },
   {
     id: 'select-validated-demo',
-    name: 'Select Validated Demo',
+    name: 'Select Deprecated Validated Demo',
     componentType: Examples.SelectValidatedDemo
   },
   {
     id: 'select-view-more-demo',
-    name: 'Select View More Demo',
+    name: 'Select Deprecated View More Demo',
     componentType: Examples.SelectViewMoreDemo
   },
   {
     id: 'select-view-more-grouped-demo',
-    name: 'Select View More Grouped Demo',
+    name: 'Select Deprecated View More Grouped Demo',
     componentType: Examples.SelectViewMoreGroupedDemo
   },
   {
     id: 'select-view-more-typeahead-grouped-demo',
-    name: 'Select View More Typeahead Grouped Demo',
+    name: 'Select Deprecated View More Typeahead Grouped Demo',
     componentType: Examples.SelectViewMoreTypeaheadGroupedDemo
   },
   {

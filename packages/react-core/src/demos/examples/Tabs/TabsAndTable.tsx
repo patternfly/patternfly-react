@@ -27,8 +27,6 @@ import {
   PageSectionVariants,
   Progress,
   ProgressSize,
-  Select,
-  SelectVariant,
   Tabs,
   Tab,
   TabContent,
@@ -58,6 +56,7 @@ import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 interface Repository {
   name: string;
@@ -152,28 +151,12 @@ export const TablesAndTabs = () => {
       <ToolbarContent>
         <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
           <ToolbarItem>
-            <Select
-              onToggle={() => {}}
-              variant={SelectVariant.single}
-              aria-label="Select Input"
-              placeholderText="Name"
-            />
+            <MenuToggle>Name</MenuToggle>
           </ToolbarItem>
         </ToolbarToggleGroup>
-        {/* <ToolbarItem> TODO: replace with select after #8073 goes in
-          <OptionsMenu
-            id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
-            isPlain
-            menuItems={[]}
-            toggle={
-              <OptionsMenuToggle
-                toggleTemplate={<SortAmountDownIcon aria-hidden="true" />}
-                aria-label="Sort"
-                hideCaret
-              />
-            }
-          />
-        </ToolbarItem> */}
+        <ToolbarItem>
+          <MenuToggle variant="plain" aria-label="Sort columns"><SortAmountDownIcon aria-hidden="true" /></MenuToggle>
+        </ToolbarItem>
         <OverflowMenu breakpoint="md">
           <OverflowMenuContent className="pf-u-display-none pf-u-display-block-on-lg">
             <OverflowMenuGroup groupType="button" isPersistent>

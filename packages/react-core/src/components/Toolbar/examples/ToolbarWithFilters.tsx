@@ -6,9 +6,15 @@ import {
   ToolbarFilter,
   ToolbarToggleGroup,
   ToolbarGroup,
-  SelectOptionObject
+  Badge,
+  Button,
+  MenuToggle,
+  MenuToggleElement,
+  SearchInput,
+  Select,
+  SelectList,
+  SelectOption
 } from '@patternfly/react-core';
-import { Button, Select, SelectOption, SelectVariant, SearchInput } from '@patternfly/react-core';
 import {
   Dropdown as DropdownDeprecated,
   DropdownItem as DropdownItemDeprecated,
@@ -38,7 +44,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
   const onSelect = (
     type: string,
     event: React.MouseEvent | React.ChangeEvent,
-    selection: string | SelectOptionObject
+    selection: string
   ) => {
     const checked = (event.target as HTMLInputElement).checked;
     setFilters((prev) => {
@@ -50,11 +56,11 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
     });
   };
 
-  const onStatusSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  const onStatusSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string) => {
     onSelect('status', event, selection);
   };
 
-  const onRiskSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  const onRiskSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string) => {
     onSelect('risk', event, selection);
   };
 
@@ -76,30 +82,83 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
     }
   };
 
-  const onStatusToggle = (_event: any, isExpanded: boolean) => {
-    setStatusIsExpanded(isExpanded);
+  const onStatusToggle = () => {
+    setStatusIsExpanded(!statusIsExpanded);
   };
 
-  const onRiskToggle = (_event: any, isExpanded: boolean) => {
-    setRiskIsExpanded(isExpanded);
+  const onRiskToggle = () => {
+    setRiskIsExpanded(!statusIsExpanded);
   };
 
   const onKebabToggle = (_event: any, isOpen: boolean) => {
     setKebabIsOpen(isOpen);
   };
 
-  const statusMenuItems = [
-    <SelectOption key="statusNew" value="New" />,
-    <SelectOption key="statusPending" value="Pending" />,
-    <SelectOption key="statusRunning" value="Running" />,
-    <SelectOption key="statusCancelled" value="Cancelled" />
-  ];
+  const statusMenuItems = (
+    <SelectList>
+      <SelectOption
+        hasCheckbox
+        key="statusNew"
+        itemId="New"
+        isSelected={filters.status.includes("New")}
+      >
+        New
+      </SelectOption>
+      <SelectOption
+        hasCheckbox
+        key="statusPending"
+        itemId="Pending"
+        isSelected={filters.status.includes("Pending")}
+      >
+        Pending
+      </SelectOption>
+      <SelectOption
+        hasCheckbox
+        key="statusRunning"
+        itemId="Running"
+        isSelected={filters.status.includes("Running")}
+      >
+        Running
+      </SelectOption>
+      <SelectOption
+        hasCheckbox
+        key="statusCancelled"
+        itemId="Cancelled"
+        isSelected={filters.status.includes("Cancelled")}
+      >
+        Cancelled
+      </SelectOption>
+    </SelectList>
+  );
 
-  const riskMenuItems = [
-    <SelectOption key="riskLow" value="Low" />,
-    <SelectOption key="riskMedium" value="Medium" />,
-    <SelectOption key="riskHigh" value="High" />
-  ];
+  const riskMenuItems = (
+    <SelectList>
+      <SelectOption
+        hasCheckbox
+        key="riskLow"
+        itemId="Low"
+        isSelected={filters.risk.includes("Low")}
+      >
+        Low
+      </SelectOption>
+      <SelectOption
+        hasCheckbox
+        key="riskMedium"
+        itemId="Medium"
+        isSelected={filters.risk.includes("Medium")}
+      >
+        Medium
+      </SelectOption>
+      <SelectOption
+        hasCheckbox
+        key="riskHigh"
+        itemId="High"
+        isSelected={filters.risk.includes("High")}
+      >
+        High
+      </SelectOption>
+    </SelectList>
+  );
 
   const toggleGroupItems = (
     <React.Fragment>
@@ -121,13 +180,27 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           categoryName="Status"
         >
           <Select
-            variant={SelectVariant.checkbox}
             aria-label="Status"
-            onToggle={onStatusToggle}
+            role="menu"
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={onStatusToggle}
+                isExpanded={statusIsExpanded}
+                style={
+                  {
+                    width: '140px'
+                  } as React.CSSProperties
+                }
+              >
+                Status
+                {filters.status.length > 0 && <Badge isRead>{filters.status.length}</Badge>}
+              </MenuToggle>
+            )}
             onSelect={onStatusSelect}
-            selections={filters.status}
+            selected={filters.status}
             isOpen={statusIsExpanded}
-            placeholderText="Status"
+            onOpenChange={isOpen => setStatusIsExpanded(isOpen)}
           >
             {statusMenuItems}
           </Select>
@@ -138,13 +211,27 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           categoryName="Risk"
         >
           <Select
-            variant={SelectVariant.checkbox}
             aria-label="Risk"
-            onToggle={onRiskToggle}
+            role="menu"
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={onRiskToggle}
+                isExpanded={riskIsExpanded}
+                style={
+                  {
+                    width: '140px'
+                  } as React.CSSProperties
+                }
+              >
+                Risk
+                {filters.risk.length > 0 && <Badge isRead>{filters.risk.length}</Badge>}
+              </MenuToggle>
+            )}
             onSelect={onRiskSelect}
-            selections={filters.risk}
+            selected={filters.risk}
             isOpen={riskIsExpanded}
-            placeholderText="Risk"
+            onOpenChange={isOpen => setRiskIsExpanded(isOpen)}
           >
             {riskMenuItems}
           </Select>
