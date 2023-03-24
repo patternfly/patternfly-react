@@ -35,7 +35,7 @@ export interface DatePickerProps
   /** How to format the date in the text input. */
   dateParse?: (value: string) => Date;
   /** Helper text to display alongside the date picker. */
-  helperText?: React.ReactNode | string;
+  helperText?: React.ReactNode;
   /** Additional props for the text input. */
   inputProps?: TextInputProps;
   /** Flag indicating the date picker is disabled. */
