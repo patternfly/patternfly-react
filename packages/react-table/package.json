@@ -36,7 +36,7 @@
   "scripts": {
     "build:umd": "rollup -c --environment IS_PRODUCTION",
     "clean": "rimraf dist",
-    "subpaths": "node scripts/copySubpaths.js"
+    "subpaths": "node scripts/createSubpaths.js"
   },
   "dependencies": {
     "@patternfly/react-core": "^5.0.0-alpha.45",
