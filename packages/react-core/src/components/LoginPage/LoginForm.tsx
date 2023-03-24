@@ -97,7 +97,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
 
   return (
     <Form className={className} {...props}>
-      {!showHelperText && (
+      {showHelperText && (
         <FormHelperText>
           <HelperText>
             <HelperTextItem variant={!isValidUsername || !isValidPassword ? 'error' : 'default'} icon={helperTextIcon}>
