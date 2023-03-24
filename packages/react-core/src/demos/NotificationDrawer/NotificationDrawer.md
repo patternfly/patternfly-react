@@ -238,7 +238,7 @@ class BasicNotificationDrawer extends React.Component {
       </DropdownGroup>
     ];
     const headerToolbar = (
-      <Toolbar>
+      <Toolbar isFullHeight>
         <ToolbarContent>
           <ToolbarGroup spaceItems={{ default: 'spacerNone' }} align={{ default: 'alignRight' }}>
             <ToolbarGroup variant="icon-button-group">
@@ -293,6 +293,7 @@ class BasicNotificationDrawer extends React.Component {
                   position="right"
                   onSelect={this.onDropdownSelect}
                   isOpen={isDropdownOpen}
+                  isFullHeight
                   toggle={
                     <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
                       John Smith
@@ -832,7 +833,7 @@ class GroupedNotificationDrawer extends React.Component {
       </DropdownGroup>
     ];
     const headerToolbar = (
-      <Toolbar>
+      <Toolbar isFullHeight>
         <ToolbarContent>
           <ToolbarGroup spaceItems={{ default: 'spacerNone' }} align={{ default: 'alignRight' }}>
             <ToolbarGroup variant="icon-button-group">
@@ -887,6 +888,7 @@ class GroupedNotificationDrawer extends React.Component {
                   position="right"
                   onSelect={this.onDropdownSelect}
                   isOpen={isDropdownOpen}
+                  isFullHeight
                   toggle={
                     <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
                       John Smith

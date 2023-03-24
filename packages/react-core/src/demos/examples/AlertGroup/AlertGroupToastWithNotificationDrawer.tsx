@@ -27,7 +27,8 @@ import {
   Alert,
   AlertProps,
   AlertGroup,
-  AlertActionCloseButton
+  AlertActionCloseButton,
+  ToolbarItem,
 } from '@patternfly/react-core';
 
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
@@ -206,11 +207,13 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
   const alertButtonStyle = { marginRight: '8px', marginTop: '8px' };
 
   const notificationBadge = (
-    <NotificationBadge
-      variant={getNotificationBadgeVariant()}
-      onClick={onNotificationBadgeClick}
-      aria-label="Notifications"
-    ></NotificationBadge>
+    <ToolbarItem>
+      <NotificationBadge
+        variant={getNotificationBadgeVariant()}
+        onClick={onNotificationBadgeClick}
+        aria-label="Notifications"
+      ></NotificationBadge>
+    </ToolbarItem>
   );
 
   const notificationDrawerActions = [
