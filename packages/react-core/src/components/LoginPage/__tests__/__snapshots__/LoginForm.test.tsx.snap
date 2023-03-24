@@ -6,9 +6,6 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
     class="pf-c-form"
     novalidate=""
   >
-    <p
-      class="pf-c-form__helper-text pf-m-hidden"
-    />
     <div
       class="pf-c-form__group"
     >
@@ -150,9 +147,6 @@ exports[`LoginForm LoginForm with show password 1`] = `
     class="pf-c-form"
     novalidate=""
   >
-    <p
-      class="pf-c-form__helper-text pf-m-hidden"
-    />
     <div
       class="pf-c-form__group"
     >
@@ -294,9 +288,6 @@ exports[`LoginForm should render Login form 1`] = `
     class="pf-c-form"
     novalidate=""
   >
-    <p
-      class="pf-c-form__helper-text pf-m-hidden"
-    />
     <div
       class="pf-c-form__group"
     >
