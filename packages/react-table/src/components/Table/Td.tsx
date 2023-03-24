@@ -120,7 +120,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         rowIndex: select.rowIndex,
         rowData: {
           selected: select.isSelected,
-          disableSelection: select?.disable,
+          disableSelection: select?.isDisabled,
           props: select?.props
         },
         column: {
