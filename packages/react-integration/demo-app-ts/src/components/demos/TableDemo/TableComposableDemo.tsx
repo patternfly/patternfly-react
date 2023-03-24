@@ -312,7 +312,7 @@ export const TableComposableDemo = () => {
                   rowIndex,
                   onSelect,
                   isSelected: selected[rowIndex],
-                  disable: rowIndex === 1
+                  isDisabled: rowIndex === 1
                 }}
               />
               {row.map((cell, cellIndex) => {
@@ -362,7 +362,7 @@ export const TableComposableDemo = () => {
                   rowIndex,
                   onSelect,
                   isSelected: selected === rowIndex,
-                  disable: rowIndex === 1,
+                  isDisabled: rowIndex === 1,
                   variant: 'radio'
                 }}
               />
