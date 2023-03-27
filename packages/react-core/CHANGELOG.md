@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.49 (2023-03-27)
+
+### Bug Fixes
+
+- **Progress:** prevented empty elements from rendering ([#8809](https://github.com/patternfly/patternfly-react/issues/8809)) ([8bf06c4](https://github.com/patternfly/patternfly-react/commit/8bf06c45e01518ff3f96954a23bf864c1ed81172))
+
 # 5.0.0-alpha.48 (2023-03-24)
 
 ### Features
