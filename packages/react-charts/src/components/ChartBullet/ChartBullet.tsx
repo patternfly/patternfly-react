@@ -10,9 +10,14 @@ import {
   getPrimarySegmentedMeasureWidth,
   getQualitativeRangeBarWidth
 } from './utils/chart-bullet-size';
-import { getBulletDomain } from './utils/chart-bullet-domain';
-import { getBulletThemeWithLegendColorScale } from './utils/chart-bullet-theme';
-import { ChartAxis } from '../ChartAxis';
+import { ChartAxis } from '../ChartAxis/ChartAxis';
+import { ChartBulletTitle } from './ChartBulletTitle';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartLegend } from '../ChartLegend/ChartLegend';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
+import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
+import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
 import { ChartBulletComparativeErrorMeasure } from './ChartBulletComparativeErrorMeasure';
 import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 import { ChartBulletComparativeWarningMeasure } from './ChartBulletComparativeWarningMeasure';
@@ -20,17 +25,10 @@ import { ChartBulletGroupTitle } from './ChartBulletGroupTitle';
 import { ChartBulletPrimaryDotMeasure } from './ChartBulletPrimaryDotMeasure';
 import { ChartBulletPrimarySegmentedMeasure } from './ChartBulletPrimarySegmentedMeasure';
 import { ChartBulletQualitativeRange } from './ChartBulletQualitativeRange';
-import { ChartBulletTitle } from './ChartBulletTitle';
-import { ChartContainer } from '../ChartContainer';
-import { ChartLegend } from '../ChartLegend';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
-import { ChartTooltip } from '../ChartTooltip';
-import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
+import { getBulletDomain } from './utils/chart-bullet-domain';
+import { getBulletThemeWithLegendColorScale } from './utils/chart-bullet-theme';
 import { getPaddingForSide } from "../ChartUtils/chart-padding";
 import { useEffect } from "react";
-
-
 
 /**
  * ChartBullet renders a dataset as a bullet chart.

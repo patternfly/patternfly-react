@@ -1,3 +1,4 @@
+import { ChartThemeDefinition } from './ChartTheme';
 import { AxisTheme } from './themes/components/axis-theme';
 import { BaseTheme } from './themes/base-theme';
 import {
@@ -12,10 +13,9 @@ import {
   BulletQualitativeRangeTheme
 } from './themes/components/bullet-theme';
 import { DonutTheme } from './themes/components/donut-theme';
-import { ThresholdTheme } from './themes/components/threshold-theme';
 import { DonutThresholdDynamicTheme, DonutThresholdStaticTheme } from './themes/components/donut-threshold-theme';
 import { DonutUtilizationDynamicTheme, DonutUtilizationStaticTheme } from './themes/components/donut-utilization-theme';
-import { ChartThemeDefinition } from './ChartTheme';
+import { ThresholdTheme } from './themes/components/threshold-theme';
 
 /**
  * Axis theme

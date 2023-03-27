@@ -18,12 +18,12 @@ import {
 } from 'victory-core';
 import { SliceProps, VictoryPie, VictorySliceLabelPositionType } from 'victory-pie';
 import { getDonutTheme } from '../ChartUtils/chart-theme-types';
-import { ChartContainer } from '../ChartContainer';
-import { ChartLabel } from '../ChartLabel';
-import { ChartPie, ChartPieProps } from '../ChartPie';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
 import { ChartDonutStyles } from '../ChartTheme/ChartStyles';
 import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPieLabelX, getPieLabelY } from '../ChartUtils/chart-label';
 

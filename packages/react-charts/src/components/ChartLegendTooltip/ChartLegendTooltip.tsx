@@ -9,11 +9,11 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip } from 'victory-tooltip';
-import { ChartCursorTooltip, ChartCursorTooltipProps } from '../ChartCursorTooltip';
+import { ChartCursorTooltip, ChartCursorTooltipProps } from '../ChartCursorTooltip/ChartCursorTooltip';
 import { ChartLegendTooltipContent } from './ChartLegendTooltipContent';
-import { ChartThemeDefinition } from '../ChartTheme';
 import { ChartLegendTooltipStyles } from '../ChartTheme/ChartStyles';
-import { ChartTooltip } from '../ChartTooltip';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
 import {
   getLegendTooltipDataProps,
   getLegendTooltipSize,

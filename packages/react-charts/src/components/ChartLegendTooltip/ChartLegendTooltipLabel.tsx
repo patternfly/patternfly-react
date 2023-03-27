@@ -11,7 +11,7 @@ import {
   VictoryLabel,
   VictoryLabelProps
 } from 'victory-core';
-import { ChartLabel } from '../ChartLabel';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartLegendTooltipStyles } from '../ChartTheme/ChartStyles';
 
 /**

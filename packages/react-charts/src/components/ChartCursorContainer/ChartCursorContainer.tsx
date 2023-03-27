@@ -9,8 +9,8 @@ import {
   VictoryCursorContainer,
   VictoryCursorContainerProps
 } from 'victory-cursor-container';
-import { ChartLabel } from '../ChartLabel';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 import { getClassName } from '../ChartUtils/chart-helpers';
 
@@ -23,7 +23,7 @@ import { getClassName } from '../ChartUtils/chart-helpers';
  */
 export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
   /**
-   * he children prop specifies the child or children that will be rendered within the container. It will be set by
+   * The children prop specifies the child or children that will be rendered within the container. It will be set by
    * whatever Victory component is rendering the container.
    *
    * Note: This prop should not be set manually.

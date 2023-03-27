@@ -3,8 +3,8 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
 import { VictoryBar } from 'victory-bar';
 import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
-import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getBulletComparativeWarningMeasureTheme } from '../ChartUtils/chart-theme-types';
 
 /**

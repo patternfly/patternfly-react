@@ -17,10 +17,10 @@ import {
   VictoryLegendOrientationType,
   VictoryLegendTTargetType
 } from 'victory-legend';
-import { ChartContainer } from '../ChartContainer';
-import { ChartLabel } from '../ChartLabel';
-import { ChartPoint } from '../ChartPoint';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartPoint } from '../ChartPoint/ChartPoint';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 
 /**

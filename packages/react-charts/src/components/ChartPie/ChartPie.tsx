@@ -23,15 +23,15 @@ import {
   VictorySliceLabelPositionType,
   VictorySliceTTargetType
 } from 'victory-pie';
-import { ChartContainer } from '../ChartContainer';
-import { ChartLegend } from '../ChartLegend';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartLegend } from '../ChartLegend/ChartLegend';
 import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
-import { ChartTooltip } from '../ChartTooltip';
-import { getTheme } from "../ChartUtils/chart-theme";
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
 import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
 import { getPaddingForSide } from "../ChartUtils/chart-padding";
 import { getPatternDefs, useDefaultPatternProps, } from "../ChartUtils/chart-patterns";
+import { getTheme } from "../ChartUtils/chart-theme";
 import { useEffect } from 'react';
 
 /**

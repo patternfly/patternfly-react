@@ -18,10 +18,10 @@ import {
 } from 'victory-core';
 import { SliceProps, VictoryPie } from 'victory-pie';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { ChartContainer } from '../ChartContainer';
-import { ChartDonut, ChartDonutProps } from '../ChartDonut';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartDonut, ChartDonutProps } from '../ChartDonut/ChartDonut';
 import { ChartDonutStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme } from '../ChartUtils/chart-theme-types';
 

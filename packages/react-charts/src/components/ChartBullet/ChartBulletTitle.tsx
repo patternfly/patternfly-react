@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { PaddingProps, StringOrNumberOrCallback } from 'victory-core';
-import { ChartContainer } from '../ChartContainer';
-import { ChartLabel } from '../ChartLabel';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartCommonStyles, ChartBulletStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getBulletLabelX, getBulletLabelY } from '../ChartUtils/chart-label';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getBulletTheme } from '../ChartUtils/chart-theme-types';

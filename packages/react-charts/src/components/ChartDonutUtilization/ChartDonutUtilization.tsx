@@ -18,10 +18,10 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { SliceProps, VictoryPie, VictorySliceLabelPositionType } from 'victory-pie';
-import { ChartContainer } from '../ChartContainer';
-import { ChartDonut, ChartDonutProps } from '../ChartDonut';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartDonut, ChartDonutProps } from '../ChartDonut/ChartDonut';
 import { ChartCommonStyles, ChartDonutUtilizationStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme-types';
 
 /**

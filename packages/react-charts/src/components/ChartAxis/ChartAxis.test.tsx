@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { Chart } from '../Chart';
+import { Chart } from '../Chart/Chart';
+import { ChartGroup } from '../ChartGroup/ChartGroup';
+import { ChartLine } from '../ChartLine/ChartLine';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartAxis } from './ChartAxis';
-import { ChartGroup } from '../ChartGroup';
-import { ChartLine } from '../ChartLine';
-import { ChartLabel } from '../ChartLabel';
 
 Object.values([true, false]).forEach(() => {
   test('ChartAxis', () => {

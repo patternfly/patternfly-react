@@ -20,9 +20,9 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryScatter, VictoryScatterProps, VictoryScatterTTargetType } from 'victory-scatter';
-import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartScatterStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 
 /**

@@ -1,6 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import {
   ChartAxisTheme,
   ChartBulletComparativeErrorMeasureTheme,

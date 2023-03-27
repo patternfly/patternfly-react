@@ -20,8 +20,8 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryBar, VictoryBarAlignmentType, VictoryBarProps, VictoryBarTTargetType } from 'victory-bar';
-import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 
 /**

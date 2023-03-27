@@ -19,14 +19,14 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryGroup, VictoryGroupProps, VictoryGroupTTargetType } from 'victory-group';
-import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getClassName } from '../ChartUtils/chart-helpers';
 import {
   useDefaultPatternProps,
   getPatternDefs,
   renderChildrenWithPatterns
 } from '../ChartUtils/chart-patterns';
-import { getClassName } from '../ChartUtils/chart-helpers';
 import { getTheme } from '../ChartUtils/chart-theme';
 
 /**

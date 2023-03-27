@@ -1,9 +1,9 @@
 import defaults from 'lodash/defaults';
 import { Helpers, PaddingProps, TextSize } from 'victory-core';
 import { VictoryLegend } from 'victory-legend';
-import { ChartLegendProps } from '../ChartLegend';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartLegendProps } from '../ChartLegend/ChartLegend';
 import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getPieOrigin } from './chart-origin';
 import * as React from 'react';
 

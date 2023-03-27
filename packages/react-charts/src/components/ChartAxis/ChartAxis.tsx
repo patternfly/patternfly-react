@@ -15,11 +15,11 @@ import {
   LabelProps
 } from 'victory-core';
 import { VictoryAxis, VictoryAxisProps, VictoryAxisTTargetType } from 'victory-axis';
-import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 import { getAxisTheme } from '../ChartUtils/chart-theme-types';
-import { ChartLabel } from '../ChartLabel';
 
 /**
  * ChartAxis renders a single axis which can be used on its own or composed with Chart.

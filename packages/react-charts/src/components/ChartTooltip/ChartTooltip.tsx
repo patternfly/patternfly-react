@@ -9,8 +9,8 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip, VictoryTooltipProps } from 'victory-tooltip';
-import { ChartLabel } from '../ChartLabel';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 
 /**

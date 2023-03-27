@@ -9,8 +9,8 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip } from 'victory-tooltip';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { ChartTooltip, ChartTooltipProps } from '../ChartTooltip';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartTooltip, ChartTooltipProps } from '../ChartTooltip/ChartTooltip';
 import { getCursorTooltipCenterOffset, getCursorTooltipPoniterOrientation } from '../ChartUtils/chart-tooltip';
 import { getTheme } from '../ChartUtils/chart-theme';
 import { ChartCursorFlyout } from './ChartCursorFlyout';

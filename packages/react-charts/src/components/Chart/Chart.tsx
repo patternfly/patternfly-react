@@ -20,17 +20,17 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { AxesType, VictoryChart, VictoryChartProps } from 'victory-chart';
-import { ChartContainer } from '../ChartContainer';
-import { ChartLegend } from '../ChartLegend';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartLegend } from '../ChartLegend/ChartLegend';
 import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getClassName } from "../ChartUtils/chart-helpers";
-import { useEffect } from "react";
 import { getLabelTextSize } from "../ChartUtils/chart-label";
 import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
 import { getPaddingForSide } from "../ChartUtils/chart-padding";
 import { getPatternDefs, mergePatternData, useDefaultPatternProps } from "../ChartUtils/chart-patterns";
 import { getChartTheme } from "../ChartUtils/chart-theme-types";
+import { useEffect } from "react";
 
 /**
  * Chart is a wrapper component that reconciles the domain for all its children, controls the layout of the chart,
