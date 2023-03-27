@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  ApplicationLauncher,
-  ApplicationLauncherItem,
   Avatar,
   Brand,
   Breadcrumb,
@@ -52,7 +50,6 @@ export const PageStickySectionGroupUsingPageHeader: React.FunctionComponent = ()
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
-  const [isAppLauncherOpen, setIsAppLauncherOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(1);
 
   const onNavSelect = (selectedItem: NavOnSelectProps) => {
@@ -81,14 +78,6 @@ export const PageStickySectionGroupUsingPageHeader: React.FunctionComponent = ()
 
   const onFullKebabDropdownSelect = () => {
     setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen);
-  };
-
-  const onAppLauncherToggle = (_event: any, isOpen: boolean) => {
-    setIsAppLauncherOpen(isOpen);
-  };
-
-  const onAppLauncherSelect = () => {
-    setIsAppLauncherOpen(!isAppLauncherOpen);
   };
 
   const dashboardBreadcrumb = (
@@ -138,15 +127,6 @@ export const PageStickySectionGroupUsingPageHeader: React.FunctionComponent = ()
     </DropdownGroupDeprecated>
   ];
 
-  const appLauncherItems = [
-    <ApplicationLauncherItem key="application_1a" href="#">
-      Application 1 (anchor link)
-    </ApplicationLauncherItem>,
-    <ApplicationLauncherItem key="application_2a" component="button" onClick={() => alert('Clicked item 2')}>
-      Application 2 (button with onClick)
-    </ApplicationLauncherItem>
-  ];
-
   const pageNav = (
     <Nav onSelect={onNavSelect}>
       <NavList>
@@ -182,15 +162,6 @@ export const PageStickySectionGroupUsingPageHeader: React.FunctionComponent = ()
           <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} />
         </PageHeaderToolsItem>
         <PageHeaderToolsGroup visibility={{ default: 'hidden', lg: 'visible' }}>
-          <PageHeaderToolsItem visibility={{ default: 'hidden', md: 'hidden', lg: 'visible' }}>
-            <ApplicationLauncher
-              onSelect={onAppLauncherSelect}
-              onToggle={onAppLauncherToggle}
-              isOpen={isAppLauncherOpen}
-              items={appLauncherItems}
-              toggleId="dashboard-header-app-launcher"
-            />
-          </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
           </PageHeaderToolsItem>

@@ -1,6 +1,5 @@
 import React from 'react';
-import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
-import { DropdownPosition } from '@patternfly/react-core/deprecated';
+import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core/deprecated';
 
 const appLauncherItems: React.ReactElement[] = [
   <ApplicationLauncherItem key="application_1a" href="#">
@@ -14,20 +13,19 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherItem>
 ];
 
-export const ApplicationLauncherAlignRight: React.FunctionComponent = () => {
+export const ApplicationLauncherDocumentBody: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => setIsOpen(isOpen);
-  const onSelect = (_event: any) => setIsOpen((prevIsOpen) => !prevIsOpen);
+  const onSelect = (_event: any) => setIsOpen(prevIsOpen => !prevIsOpen);
 
   return (
     <ApplicationLauncher
+      menuAppendTo={() => document.body}
       onSelect={onSelect}
       onToggle={onToggle}
       isOpen={isOpen}
       items={appLauncherItems}
-      position={DropdownPosition.right}
-      style={{ marginLeft: 'calc(100% - 46px)' }}
     />
   );
 };

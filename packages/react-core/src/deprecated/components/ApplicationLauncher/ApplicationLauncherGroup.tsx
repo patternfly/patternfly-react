@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DropdownGroup, DropdownGroupProps } from '../../deprecated/components/Dropdown';
+import { DropdownGroup, DropdownGroupProps } from '../Dropdown';
 
 export const ApplicationLauncherGroup: React.FunctionComponent<DropdownGroupProps> = ({
   children,

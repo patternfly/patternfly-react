@@ -7,14 +7,14 @@ import {
   DropdownPosition,
   DropdownToggle,
   DropdownContext
-} from '../../deprecated/components/Dropdown';
-import { DropdownWithContext } from '../../deprecated/components/Dropdown/DropdownWithContext';
+} from '../Dropdown';
+import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 import { ApplicationLauncherGroup } from './ApplicationLauncherGroup';
 import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
 import { ApplicationLauncherItem } from './ApplicationLauncherItem';
 import { ApplicationLauncherContext } from './ApplicationLauncherContext';
-import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
-import { SearchInput } from '../SearchInput';
+import { createRenderableFavorites, extendItemsWithFavorite } from '../../../helpers/favorites';
+import { SearchInput } from '../../../components/SearchInput';
 
 export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional element css classes */

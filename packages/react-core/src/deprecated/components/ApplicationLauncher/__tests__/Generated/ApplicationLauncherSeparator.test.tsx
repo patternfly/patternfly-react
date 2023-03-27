@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import { ApplicationLauncherSeparator } from '../../ApplicationLauncherSeparator';
-import { DropdownArrowContext } from '../../../../deprecated/components/Dropdown/dropdownConstants';
+import { DropdownArrowContext } from '../../../Dropdown/dropdownConstants';
 
 describe('ApplicationLauncherSeparator', () => {
   it('should match snapshot', () => {

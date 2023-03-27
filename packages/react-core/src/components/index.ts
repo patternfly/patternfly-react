@@ -4,7 +4,6 @@ export * from './Accordion';
 export * from './ActionList';
 export * from './Alert';
 export * from './AlertGroup';
-export * from './ApplicationLauncher';
 export * from './Avatar';
 export * from './BackToTop';
 export * from './Backdrop';

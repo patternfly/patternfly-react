@@ -7,6 +7,7 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import {
@@ -16,6 +17,8 @@ DropdownItem as DropdownItemDeprecated,
 DropdownToggle,
 KebabToggle
 } from '@patternfly/react-core/deprecated';
+import pfIcon from './Card/pf-logo-small.svg';
+import { Link } from '@reach/router';
 
 ## Demos
 

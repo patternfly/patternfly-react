@@ -3,8 +3,7 @@ import { render } from '@testing-library/react';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import { ApplicationLauncher } from '../ApplicationLauncher';
 import { ApplicationLauncherItem } from '../ApplicationLauncherItem';
-
-import { DropdownPosition, DropdownDirection } from '../../../deprecated/components/Dropdown/dropdownConstants';
+import { DropdownPosition, DropdownDirection } from '../../Dropdown/dropdownConstants';
 import { ApplicationLauncherSeparator } from '../ApplicationLauncherSeparator';
 
 const dropdownItems = [
