@@ -4,7 +4,7 @@ const glob = require('glob');
 
 const root = process.cwd();
 const packageJson = require(`${root}/package.json`);
-const configJson = require(process.argv[process.argv.indexOf('--config') + 1]);
+const configJson = require(`${root}/${process.argv[process.argv.indexOf('--config') + 1]}`);
 
 const foldersBlackList = configJson.blackList ? configJson.blackList : []
 
