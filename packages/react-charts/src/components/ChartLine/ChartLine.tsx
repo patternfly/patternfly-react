@@ -24,11 +24,6 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 
-export enum ChartLineSortOrder {
-  ascending = 'ascending',
-  descending = 'descending'
-}
-
 /**
  * ChartLine renders a dataset as a single line path. Since ChartLine renders only a single element to represent a
  * dataset rather than individual elements for each data point, some of its behavior is different from other Victory

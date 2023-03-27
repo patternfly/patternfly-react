@@ -24,30 +24,15 @@ import {
   VictorySliceTTargetType
 } from 'victory-pie';
 import { ChartContainer } from '../ChartContainer';
-import { ChartLegend, ChartLegendOrientation } from '../ChartLegend';
-import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartLegend } from '../ChartLegend';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 import { ChartTooltip } from '../ChartTooltip';
 import { getTheme } from "../ChartUtils/chart-theme";
 import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
 import { getPaddingForSide } from "../ChartUtils/chart-padding";
 import { getPatternDefs, useDefaultPatternProps, } from "../ChartUtils/chart-patterns";
 import { useEffect } from 'react';
-
-export enum ChartPieLabelPosition {
-  centroid = 'centroid',
-  endAngle = 'endAngle',
-  startAngle = 'startAngle'
-}
-
-export enum ChartPieLegendPosition {
-  bottom = 'bottom',
-  right = 'right'
-}
-
-export enum ChartPieSortOrder {
-  ascending = 'ascending',
-  descending = 'descending'
-}
 
 /**
  * ChartPie renders a dataset as a pie chart.
@@ -514,7 +499,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
-  legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
+  legendPosition = ChartCommonStyles.legend.position,
   name,
   patternScale,
   patternUnshiftIndex,
@@ -532,7 +517,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   ) : (
     undefined
   ),
-  legendOrientation = theme.legend.orientation as ChartLegendOrientation,
+  legendOrientation = theme.legend.orientation as any,
   height = theme.pie.height,
   width = theme.pie.width,
   ...rest

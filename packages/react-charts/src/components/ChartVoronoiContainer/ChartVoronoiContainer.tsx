@@ -7,11 +7,6 @@ import { ChartTooltip } from '../ChartTooltip';
 import { getTheme } from '../ChartUtils/chart-theme';
 import { getClassName } from '../ChartUtils/chart-helpers';
 
-export enum ChartVoronoiDimension {
-  x = 'x',
-  y = 'y'
-}
-
 /**
  * ChartVoronoiContainer adds the ability to associate a mouse position with the data point(s) closest to it. When this
  * container is added to a chart, changes in mouse position will add the active prop to data and label components

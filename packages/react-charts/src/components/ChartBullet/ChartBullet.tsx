@@ -22,7 +22,7 @@ import { ChartBulletPrimarySegmentedMeasure } from './ChartBulletPrimarySegmente
 import { ChartBulletQualitativeRange } from './ChartBulletQualitativeRange';
 import { ChartBulletTitle } from './ChartBulletTitle';
 import { ChartContainer } from '../ChartContainer';
-import {ChartLegend, ChartLegendPosition} from '../ChartLegend';
+import { ChartLegend } from '../ChartLegend';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
 import { ChartTooltip } from '../ChartTooltip';
@@ -763,7 +763,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     let dy = 0;
 
     // Adjust for padding
-    if (legendPosition === ChartLegendPosition.bottom) {
+    if (legendPosition === 'bottom') {
       if (horizontal) {
         dy = defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25;
       } else if (title) {
@@ -771,7 +771,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       } else {
         dy = -defaultPadding.bottom;
       }
-    } else if (legendPosition === ChartLegendPosition.bottomLeft) {
+    } else if (legendPosition === 'bottom-left') {
       if (horizontal) {
         dy = defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25;
       } else if (title) {

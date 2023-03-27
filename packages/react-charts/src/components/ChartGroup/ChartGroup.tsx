@@ -29,11 +29,6 @@ import {
 import { getClassName } from '../ChartUtils/chart-helpers';
 import { getTheme } from '../ChartUtils/chart-theme';
 
-export enum ChartGroupSortOrder {
-  ascending = 'ascending',
-  descending = 'descending'
-}
-
 /**
  * ChartGroup is a wrapper component that renders a given set of children with some shared props. ChartGroup reconciles
  * the domain and layout for all its children, and coordinates animations and shared events. ChartGroup may also be used

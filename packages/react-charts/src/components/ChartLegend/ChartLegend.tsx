@@ -23,22 +23,6 @@ import { ChartPoint } from '../ChartPoint';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 
-export enum ChartLegendOrientation {
-  horizontal = 'horizontal',
-  vertical = 'vertical'
-}
-
-export enum ChartLegendPosition {
-  bottom = 'bottom',
-  bottomLeft = 'bottom-left',
-  right = 'right'
-}
-
-export enum ChartLegendRowGutter {
-  bottom = 'bottom',
-  top = 'top'
-}
-
 /**
  * ChartLegend renders a chart legend component.
  *

@@ -2,7 +2,6 @@ import * as React from 'react';
 import { PaddingProps, StringOrNumberOrCallback } from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
-import { ChartLegendPosition } from '../ChartLegend';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { ChartCommonStyles, ChartBulletStyles } from '../ChartTheme/ChartStyles';
 import { getBulletLabelX, getBulletLabelY } from '../ChartUtils/chart-label';
@@ -131,7 +130,7 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
   ariaTitle,
   capHeight = 1.1,
   horizontal = true,
-  legendPosition = 'bottom' as ChartLegendPosition,
+  legendPosition = 'bottom',
   name,
   padding,
   standalone = true,

@@ -24,11 +24,6 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 
-export enum ChartAreaSortOrder {
-  ascending = 'ascending',
-  descending = 'descending'
-}
-
 /**
  * ChartArea renders a dataset as a single area path. Since ChartArea renders only a single element to represent a
  * dataset rather than individual elements for each data point, some of its behavior is different from other Victory

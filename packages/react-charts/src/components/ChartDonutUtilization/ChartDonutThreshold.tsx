@@ -20,37 +20,10 @@ import { SliceProps, VictoryPie } from 'victory-pie';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';
-import { ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartDonutStyles } from '../ChartTheme/ChartStyles';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme } from '../ChartUtils/chart-theme-types';
-
-export enum ChartDonutThresholdDonutOrientation {
-  left = 'left',
-  right = 'right',
-  top = 'top'
-}
-
-export enum ChartDonutThresholdLabelOrientation {
-  horizontal = 'horizontal',
-  vertical = 'vertical'
-}
-
-export enum ChartDonutThresholdLabelPosition {
-  centroid = 'centroid',
-  endAngle = 'endAngle',
-  startAngle = 'startAngle'
-}
-
-export enum ChartDonutThresholdSortOrder {
-  ascending = 'ascending',
-  descending = 'descending'
-}
-
-export enum ChartDonutThresholdSubTitlePosition {
-  bottom = 'bottom',
-  center = 'center',
-  right = 'right'
-}
 
 /**
  * ChartDonutThreshold renders a dataset as a donut threshold chart.
@@ -473,7 +446,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   padding,
   radius,
   standalone = true,
-  subTitlePosition = ChartDonutStyles.label.subTitlePosition as ChartDonutThresholdSubTitlePosition,
+  subTitlePosition = ChartDonutStyles.label.subTitlePosition,
   themeColor,
   x,
   y,
