@@ -44,7 +44,7 @@
     "@patternfly/react-styles": "^5.0.0-alpha.5",
     "@patternfly/react-tokens": "^5.0.0-alpha.5",
     "lodash": "^4.17.19",
-    "tslib": "^2.0.0"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "rimraf": "^2.6.2",

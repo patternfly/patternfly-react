@@ -50,7 +50,7 @@
     "@patternfly/react-tokens": "^5.0.0-alpha.5",
     "focus-trap": "7.4.0",
     "react-dropzone": "^14.2.3",
-    "tslib": "^2.0.0"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@patternfly/patternfly": "5.0.0-alpha.33",
