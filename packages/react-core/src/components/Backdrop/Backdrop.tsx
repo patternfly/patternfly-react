@@ -3,9 +3,9 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 
 export interface BackdropProps extends React.HTMLProps<HTMLDivElement> {
-  /** content rendered inside the backdrop */
+  /** Content rendered inside the backdrop */
   children?: React.ReactNode;
-  /** additional classes added to the button */
+  /** Additional classes added to the backdrop */
   className?: string;
 }
 
