@@ -41,7 +41,7 @@
   "scripts": {
     "build:umd": "rollup -c --environment IS_PRODUCTION",
     "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist components layouts helpers next deprecated node_modules",
     "generate": "node scripts/copyStyles.js",
     "subpaths": "node scripts/createSubpaths.js"
   },

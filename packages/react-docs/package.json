@@ -15,7 +15,7 @@
   "scripts": {
     "analyze": "yarn build:docs --analyze",
     "build:docs": "pf-docs-framework build all --legacySSL",
-    "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js",
+    "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js node_modules",
     "develop": "./startDevServer.sh",
     "start": "pf-docs-framework start",
     "serve": "pf-docs-framework serve public",

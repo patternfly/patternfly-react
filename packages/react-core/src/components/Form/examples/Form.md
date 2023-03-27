@@ -14,6 +14,8 @@ propComponents:
     'FormFieldGroupExpandable',
     'FormFieldGroupHeader',
     'FormFieldGroupHeaderTitleTextObject',
+    'FormContextProps',
+    'FormContextProviderProps',
     'Button',
     'Popover'
   ]
@@ -112,5 +114,11 @@ When using helper text inside a `FormGroup`, the `HelperText` component should b
 ### Field Groups
 
 ```ts file="./FormFieldGroups.tsx"
+
+```
+
+### Form state
+
+```ts file="./FormState.tsx" isBeta
 
 ```
