@@ -273,16 +273,7 @@ const DatePickerBase = (
           </InputGroup>
         </div>
       </Popover>
-      {helperText && React.isValidElement(helperText) && (
-        <div className={styles.datePickerHelperText}>{helperText}</div>
-      )}
-      {helperText && typeof helperText === 'string' && (
-        <div className={styles.datePickerHelperText}>
-          <HelperText>
-            <HelperTextItem>{helperText}</HelperTextItem>
-          </HelperText>
-        </div>
-      )}
+      {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
       {errorText.trim() && (
         <div className={styles.datePickerHelperText}>
           <HelperText>
