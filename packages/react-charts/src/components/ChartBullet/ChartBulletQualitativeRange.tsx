@@ -7,7 +7,7 @@ import { ChartBar } from '../ChartBar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getBulletQualitativeRangeTheme } from '../ChartUtils';
+import { getBulletQualitativeRangeTheme } from '../ChartUtils/chart-theme-types';
 
 /**
  * ChartBulletQualitativeRange renders a dataset as the qualitative range.

@@ -18,8 +18,8 @@ import {
   getLegendTooltipSize,
   getLegendTooltipVisibleData,
   getLegendTooltipVisibleText,
-  getTheme
-} from '../ChartUtils';
+} from '../ChartUtils/chart-tooltip';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * The ChartLegendTooltip is based on ChartCursorTooltip, which is intended to be used with a voronoi cursor

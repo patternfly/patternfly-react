@@ -22,7 +22,7 @@ import {
 import { VictoryLine, VictoryLineProps, VictoryLineTTargetType } from 'victory-line';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 export enum ChartLineSortOrder {
   ascending = 'ascending',

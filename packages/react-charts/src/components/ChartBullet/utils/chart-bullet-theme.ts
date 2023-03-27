@@ -6,7 +6,7 @@ import {
   getQualitativeRangeData
 } from './chart-bullet-data';
 import { ChartThemeDefinition } from '../../ChartTheme';
-import { getBulletTheme } from '../../ChartUtils';
+import { getBulletTheme } from '../../ChartUtils/chart-theme-types';
 
 interface ChartBulletThemeInterface {
   comparativeErrorMeasureData?: any[];

@@ -27,14 +27,10 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import {
-  getComputedLegend,
-  useDefaultPatternProps,
-  getPaddingForSide,
-  getPatternDefs,
-  getTheme,
-  getLegendItemsExtraHeight
-} from "../ChartUtils";
+import { getTheme } from "../ChartUtils/chart-theme";
+import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
+import { getPaddingForSide } from "../ChartUtils/chart-padding";
+import { getPatternDefs, useDefaultPatternProps, } from "../ChartUtils/chart-patterns";
 import { useEffect } from 'react';
 
 export enum ChartPieLabelPosition {

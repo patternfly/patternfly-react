@@ -22,7 +22,7 @@ import {
 import { VictoryArea, VictoryAreaProps, VictoryAreaTTargetType } from 'victory-area';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 export enum ChartAreaSortOrder {
   ascending = 'ascending',

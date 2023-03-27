@@ -17,7 +17,8 @@ import {
 import { VictoryAxis, VictoryAxisProps, VictoryAxisTTargetType } from 'victory-axis';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getAxisTheme, getTheme } from '../ChartUtils';
+import { getTheme } from '../ChartUtils/chart-theme';
+import { getAxisTheme } from '../ChartUtils/chart-theme-types';
 import { ChartLabel } from '../ChartLabel';
 
 /**

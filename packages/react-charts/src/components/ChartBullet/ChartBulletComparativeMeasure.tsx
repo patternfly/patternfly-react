@@ -7,7 +7,7 @@ import { ChartBar } from '../ChartBar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getBulletComparativeMeasureTheme } from '../ChartUtils';
+import { getBulletComparativeMeasureTheme } from '../ChartUtils/chart-theme-types';
 
 /**
  * ChartBulletComparativeMeasure renders a dataset as a comparative measure.

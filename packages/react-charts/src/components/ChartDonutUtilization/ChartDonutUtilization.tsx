@@ -21,7 +21,7 @@ import { SliceProps, VictoryPie, VictorySliceLabelPositionType } from 'victory-p
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';
 import { ChartCommonStyles, ChartThemeDefinition, ChartDonutUtilizationStyles } from '../ChartTheme';
-import { getDonutUtilizationTheme } from '../ChartUtils';
+import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme-types';
 
 export enum ChartDonutUtilizationLabelPosition {
   centroid = 'centroid',

@@ -22,12 +22,12 @@ import { VictoryGroup, VictoryGroupProps, VictoryGroupTTargetType } from 'victor
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import {
-  getClassName,
   useDefaultPatternProps,
   getPatternDefs,
-  getTheme,
   renderChildrenWithPatterns
-} from '../ChartUtils';
+} from '../ChartUtils/chart-patterns';
+import { getClassName } from '../ChartUtils/chart-helpers';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 export enum ChartGroupSortOrder {
   ascending = 'ascending',

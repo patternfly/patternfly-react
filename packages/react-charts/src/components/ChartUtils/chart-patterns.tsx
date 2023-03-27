@@ -218,13 +218,13 @@ const patterns: any = [
  * Helper function to return a pattern ID
  * @private
  */
-export const getPatternId = () => uniqueId('pf-pattern');
+const getPatternId = () => uniqueId('pf-pattern');
 
 /**
  * Helper function to return pattern defs ID
  * @private
  */
-export const getPatternDefsId = (prefix: string, index: number) => {
+const getPatternDefsId = (prefix: string, index: number) => {
   const id = `${prefix}:${index}`;
   return id;
 };
@@ -271,14 +271,14 @@ export const getPatternDefs = ({
  * Helper function to return pattern IDs to use as color scale
  * @private
  */
-export const getPatternScale = (colorScale: string[], patternId: string) =>
+const getPatternScale = (colorScale: string[], patternId: string) =>
   colorScale.map((val: any, index: number) => `url(#${getPatternDefsId(patternId, index)})`);
 
 /**
  * Helper function to return default color scale
  * @private
  */
-export const getDefaultColorScale = (colorScale: string[], themeColorScale: string[]) => {
+const getDefaultColorScale = (colorScale: string[], themeColorScale: string[]) => {
   const result: string[] = [];
   const colors = colorScale ? colorScale : themeColorScale;
 
@@ -287,10 +287,22 @@ export const getDefaultColorScale = (colorScale: string[], themeColorScale: stri
 };
 
 /**
+ * Helper function to return default pattern scale
+ * @private
+ */
+const getDefaultPatternScale = ({ colorScale, patternId, patternScale }: PatternPropsInterface) => {
+  if (patternScale) {
+    return patternScale;
+  }
+  const defaultPatternScale = getPatternScale(colorScale, patternId);
+  return defaultPatternScale && defaultPatternScale.length > 0 ? defaultPatternScale : undefined;
+};
+
+/**
  * Merge pattern IDs with `data.fill` property, used by interactive pie chart legend
  * @private
  */
-export const getDefaultData = (data: any, patternScale: string[]) => {
+export const mergePatternData = (data: any, patternScale: string[]) => {
   if (!patternScale) {
     return data;
   }
@@ -301,18 +313,6 @@ export const getDefaultData = (data: any, patternScale: string[]) => {
       ...datum
     };
   });
-};
-
-/**
- * Helper function to return default pattern scale
- * @private
- */
-export const getDefaultPatternScale = ({ colorScale, patternId, patternScale }: PatternPropsInterface) => {
-  if (patternScale) {
-    return patternScale;
-  }
-  const defaultPatternScale = getPatternScale(colorScale, patternId);
-  return defaultPatternScale && defaultPatternScale.length > 0 ? defaultPatternScale : undefined;
 };
 
 /**

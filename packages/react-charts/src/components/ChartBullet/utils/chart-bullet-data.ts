@@ -8,7 +8,7 @@ import {
   getBulletPrimaryNegativeMeasureTheme,
   getBulletPrimarySegmentedMeasureTheme,
   getBulletQualitativeRangeTheme
-} from '../../ChartUtils';
+} from '../../ChartUtils/chart-theme-types';
 
 interface ChartBulletDataInterface {
   data?: any[];

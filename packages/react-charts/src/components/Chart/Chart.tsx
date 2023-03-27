@@ -23,18 +23,13 @@ import { AxesType, VictoryChart, VictoryChartProps } from 'victory-chart';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import {
-  getChartTheme,
-  getClassName,
-  getComputedLegend,
-  getLabelTextSize,
-  getPaddingForSide,
-  getPatternDefs,
-  getDefaultData,
-  getLegendItemsExtraHeight,
-  useDefaultPatternProps,
-} from "../ChartUtils";
+import { getClassName } from "../ChartUtils/chart-helpers";
 import { useEffect } from "react";
+import { getLabelTextSize } from "../ChartUtils/chart-label";
+import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
+import { getPaddingForSide } from "../ChartUtils/chart-padding";
+import { getPatternDefs, mergePatternData, useDefaultPatternProps } from "../ChartUtils/chart-patterns";
+import { getChartTheme } from "../ChartUtils/chart-theme-types";
 
 /**
  * Chart is a wrapper component that reconciles the domain for all its children, controls the layout of the chart,
@@ -597,7 +592,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
           theme,
           ...childProps,
           ...((child as any).type.displayName === 'ChartPie' && {
-            data: getDefaultData(childProps.data, defaultPatternScale)
+            data: mergePatternData(childProps.data, defaultPatternScale)
           }) // Override child props
         });
       }

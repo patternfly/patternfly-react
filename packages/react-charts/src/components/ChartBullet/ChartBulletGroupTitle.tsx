@@ -4,12 +4,12 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
 import {
-  getBulletGroupTitleTheme,
   getLabelTextSize,
   getBulletLabelX,
-  getBulletLabelY,
-  getPaddingForSide
-} from '../ChartUtils';
+  getBulletLabelY
+} from '../ChartUtils/chart-label';
+import { getPaddingForSide } from '../ChartUtils/chart-padding';
+import { getBulletGroupTitleTheme } from '../ChartUtils/chart-theme-types';
 
 /**
  * ChartBulletGroupTitle renders a group title.

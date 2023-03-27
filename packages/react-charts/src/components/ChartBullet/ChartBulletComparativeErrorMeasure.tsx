@@ -4,7 +4,7 @@ import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } fr
 import { VictoryBar } from 'victory-bar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getBulletComparativeErrorMeasureTheme } from '../ChartUtils';
+import { getBulletComparativeErrorMeasureTheme } from '../ChartUtils/chart-theme-types';
 import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 
 /**

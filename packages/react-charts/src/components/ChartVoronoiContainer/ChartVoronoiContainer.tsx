@@ -4,7 +4,8 @@ import { OriginType } from 'victory-core';
 import { VictoryVoronoiContainer, VictoryVoronoiContainerProps } from 'victory-voronoi-container';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getClassName, getTheme } from '../ChartUtils';
+import { getTheme } from '../ChartUtils/chart-theme';
+import { getClassName } from '../ChartUtils/chart-helpers';
 
 export enum ChartVoronoiDimension {
   x = 'x',

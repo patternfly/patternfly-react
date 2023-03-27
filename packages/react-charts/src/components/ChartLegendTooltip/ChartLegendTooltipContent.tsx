@@ -11,8 +11,8 @@ import {
   getLegendTooltipSize,
   getLegendTooltipVisibleData,
   getLegendTooltipVisibleText,
-  getTheme
-} from '../ChartUtils';
+} from '../ChartUtils/chart-tooltip';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartLegendTooltipContent renders a legend tooltip component.

@@ -7,7 +7,7 @@ import {
   getBulletPrimaryDotMeasureTheme,
   getBulletPrimarySegmentedMeasureTheme,
   getBulletQualitativeRangeTheme
-} from '../../ChartUtils';
+} from '../../ChartUtils/chart-theme-types';
 
 interface ChartBulletScaleInterface {
   defaultSize: number; // The default chart size from the theme

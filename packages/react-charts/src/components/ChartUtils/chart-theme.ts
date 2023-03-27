@@ -35,7 +35,7 @@ export const getTheme = (themeColor: string): ChartThemeDefinition => {
 
 /**
  * Returns theme colors
- * @private
+ * @private use getTheme
  */
 const getThemeColors = (themeColor: string) => {
   switch (themeColor) {

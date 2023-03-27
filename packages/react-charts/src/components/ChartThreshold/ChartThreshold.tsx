@@ -23,7 +23,7 @@ import {
 import { VictoryLine, VictoryLineProps, VictoryLineTTargetType } from 'victory-line';
 import { ChartLine } from '../ChartLine';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getThresholdTheme } from '../ChartUtils';
+import { getThresholdTheme } from '../ChartUtils/chart-theme-types';
 
 /**
  * CharThreshold renders a dataset as a threshold chart.

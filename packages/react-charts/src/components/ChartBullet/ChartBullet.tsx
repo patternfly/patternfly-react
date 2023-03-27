@@ -25,8 +25,11 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getComputedLegend, getLegendItemsExtraHeight, getPaddingForSide } from "../ChartUtils";
+import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
+import { getPaddingForSide } from "../ChartUtils/chart-padding";
 import { useEffect } from "react";
+
+
 
 /**
  * ChartBullet renders a dataset as a bullet chart.

@@ -22,7 +22,7 @@ import {
 import { VictoryBar, VictoryBarAlignmentType, VictoryBarProps, VictoryBarTTargetType } from 'victory-bar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartBar renders a dataset as series of bars. ChartBar can be composed with Chart to create bar charts.

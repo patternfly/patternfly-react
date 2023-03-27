@@ -1,12 +1,3 @@
-export * from './chart-container';
-export * from './chart-domain';
-export * from './chart-helpers';
-export * from './chart-interactive-legend';
-export * from './chart-label';
-export * from './chart-legend';
-export * from './chart-origin';
-export * from './chart-padding';
-export * from './chart-patterns';
-export * from './chart-theme';
-export * from './chart-theme-types';
-export * from './chart-tooltip';
+export { createContainer } from './chart-container';
+export { getCustomTheme, getTheme } from './chart-theme';
+export { getInteractiveLegendEvents, getInteractiveLegendItemStyles } from './chart-interactive-legend';

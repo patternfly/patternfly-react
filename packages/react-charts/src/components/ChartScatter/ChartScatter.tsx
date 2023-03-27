@@ -22,7 +22,7 @@ import {
 import { VictoryScatter, VictoryScatterProps, VictoryScatterTTargetType } from 'victory-scatter';
 import { ChartContainer } from '../ChartContainer';
 import { ChartScatterStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 export enum ChartScatterSortOrder {
   ascending = 'ascending',

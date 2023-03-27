@@ -21,7 +21,8 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';
 import { ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme, getPaddingForSide } from '../ChartUtils';
+import { getPaddingForSide } from '../ChartUtils/chart-padding';
+import { getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme } from '../ChartUtils/chart-theme-types';
 
 export enum ChartDonutThresholdDonutOrientation {
   left = 'left',

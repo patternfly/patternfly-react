@@ -7,7 +7,7 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartScatter } from '../ChartScatter';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getBulletPrimaryDotMeasureTheme } from '../ChartUtils';
+import { getBulletPrimaryDotMeasureTheme } from '../ChartUtils/chart-theme-types';
 
 /**
  * ChartBulletPrimaryDotMeasure renders a dataset as the primary dot measure.

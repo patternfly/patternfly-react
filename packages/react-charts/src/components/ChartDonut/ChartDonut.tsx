@@ -22,7 +22,8 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartPie, ChartPieLegendPosition, ChartPieProps } from '../ChartPie';
 import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getPieLabelX, getPieLabelY, getPaddingForSide } from '../ChartUtils';
+import { getPaddingForSide } from '../ChartUtils/chart-padding';
+import { getPieLabelX, getPieLabelY } from '../ChartUtils/chart-label';
 
 interface ChartDonutSubTitleInterface {
   dy?: number;

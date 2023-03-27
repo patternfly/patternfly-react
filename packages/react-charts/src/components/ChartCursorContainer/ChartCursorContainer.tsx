@@ -11,7 +11,8 @@ import {
 } from 'victory-cursor-container';
 import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getClassName, getTheme } from '../ChartUtils';
+import { getTheme } from '../ChartUtils/chart-theme';
+import { getClassName } from '../ChartUtils/chart-helpers';
 
 /**
  * ChartCursorContainer adds a cursor to a chart to inspect coordinates. The cursor moves with the mouse along the
