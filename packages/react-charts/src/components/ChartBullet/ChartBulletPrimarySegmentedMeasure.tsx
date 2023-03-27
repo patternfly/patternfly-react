@@ -5,7 +5,8 @@ import { VictoryBar } from 'victory-bar';
 import { getPrimarySegmentedMeasureData } from './utils';
 import { ChartBar } from '../ChartBar';
 import { ChartContainer } from '../ChartContainer';
-import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
 import { ChartTooltip } from '../ChartTooltip';
 import { getBulletPrimaryNegativeMeasureTheme, getBulletPrimarySegmentedMeasureTheme } from '../ChartUtils/chart-theme-types';
 

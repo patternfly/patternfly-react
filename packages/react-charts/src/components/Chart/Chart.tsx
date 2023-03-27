@@ -21,8 +21,9 @@ import {
 } from 'victory-core';
 import { AxesType, VictoryChart, VictoryChartProps } from 'victory-chart';
 import { ChartContainer } from '../ChartContainer';
-import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
-import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartLegend } from '../ChartLegend';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 import { getClassName } from "../ChartUtils/chart-helpers";
 import { useEffect } from "react";
 import { getLabelTextSize } from "../ChartUtils/chart-label";
@@ -471,7 +472,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
-  legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
+  legendPosition = ChartCommonStyles.legend.position,
   name,
   padding,
   patternScale,
@@ -481,7 +482,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   // destructure last
   theme = getChartTheme(themeColor, showAxis),
   containerComponent = <ChartContainer />,
-  legendOrientation = theme.legend.orientation as ChartLegendOrientation,
+  legendOrientation = theme.legend.orientation as any,
   height = theme.chart.height,
   width = theme.chart.width,
   ...rest
@@ -549,9 +550,9 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       }
     });
 
-    if (legendPosition === ChartLegendPosition.bottom) {
+    if (legendPosition === 'bottom') {
       dy += xAxisLabelHeight + legendTitleHeight;
-    } else if (legendPosition === ChartLegendPosition.bottomLeft) {
+    } else if (legendPosition === 'bottom-left') {
       dy += xAxisLabelHeight + legendTitleHeight;
       dx = -10;
     }

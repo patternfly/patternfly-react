@@ -5,7 +5,8 @@ import { VictoryLegend } from 'victory-legend';
 import { ChartLabel } from '../ChartLabel';
 import { ChartLegend } from '../ChartLegend';
 import { ChartLegendTooltipLabel } from './ChartLegendTooltipLabel';
-import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartLegendTooltipStyles } from '../ChartTheme/ChartStyles';
 import {
   getLegendTooltipDataProps,
   getLegendTooltipSize,

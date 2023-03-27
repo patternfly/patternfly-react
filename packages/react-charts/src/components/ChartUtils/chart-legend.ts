@@ -1,8 +1,9 @@
 import defaults from 'lodash/defaults';
 import { Helpers, PaddingProps, TextSize } from 'victory-core';
 import { VictoryLegend } from 'victory-legend';
-import { ChartLegendOrientation, ChartLegendPosition, ChartLegendProps } from '../ChartLegend';
-import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartLegendProps } from '../ChartLegend';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 import { getPieOrigin } from './chart-origin';
 import * as React from 'react';
 
@@ -62,12 +63,12 @@ export const getComputedLegend = ({
   legendComponent,
   padding,
   patternScale,
-  position = ChartCommonStyles.legend.position as ChartLegendPosition,
+  position = ChartCommonStyles.legend.position,
   theme,
   width,
 
   // destructure last
-  orientation = theme.legend.orientation as ChartLegendOrientation
+  orientation = theme.legend.orientation as any
 }: ChartLegendInterface) => {
   // Get the number of legend items per row
   const legendItemsProps = legendComponent.props ? legendComponent.props : {};

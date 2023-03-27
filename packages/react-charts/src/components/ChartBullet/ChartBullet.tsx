@@ -22,8 +22,9 @@ import { ChartBulletPrimarySegmentedMeasure } from './ChartBulletPrimarySegmente
 import { ChartBulletQualitativeRange } from './ChartBulletQualitativeRange';
 import { ChartBulletTitle } from './ChartBulletTitle';
 import { ChartContainer } from '../ChartContainer';
-import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
-import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
+import {ChartLegend, ChartLegendPosition} from '../ChartLegend';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
 import { ChartTooltip } from '../ChartTooltip';
 import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
 import { getPaddingForSide } from "../ChartUtils/chart-padding";
@@ -509,7 +510,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendItemsPerRow,
-  legendPosition = 'bottom' as ChartLegendPosition,
+  legendPosition = 'bottom',
   maxDomain,
   minDomain,
   name,
@@ -563,7 +564,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     qualitativeRangeComponent,
     qualitativeRangeData
   }),
-  legendOrientation = theme.legend.orientation as ChartLegendOrientation,
+  legendOrientation = theme.legend.orientation as any,
   height = horizontal ? theme.chart.height : theme.chart.width,
   width = horizontal ? theme.chart.width : theme.chart.height,
   bulletSize = theme.chart.height

@@ -1,5 +1,5 @@
 import { ChartThemeDefinition } from '../../ChartTheme';
-import { ChartBulletStyles } from '../../ChartTheme';
+import { ChartBulletStyles } from '../../ChartTheme/ChartStyles';
 import {
   getBulletComparativeErrorMeasureTheme,
   getBulletComparativeMeasureTheme,

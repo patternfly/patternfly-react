@@ -2,7 +2,8 @@
 import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
 import { Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
 import { ChartLegendProps } from '../ChartLegend';
-import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartLegendTooltipStyles } from '../ChartTheme/ChartStyles';
 import { getLegendDimensions } from './chart-legend';
 
 import merge from 'lodash/merge';

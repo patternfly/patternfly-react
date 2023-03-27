@@ -5,7 +5,8 @@ import { VictoryBar } from 'victory-bar';
 import { getQualitativeRangeData } from './utils';
 import { ChartBar } from '../ChartBar';
 import { ChartContainer } from '../ChartContainer';
-import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
 import { ChartTooltip } from '../ChartTooltip';
 import { getBulletQualitativeRangeTheme } from '../ChartUtils/chart-theme-types';
 

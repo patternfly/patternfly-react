@@ -11,7 +11,8 @@ import {
 import { VictoryTooltip } from 'victory-tooltip';
 import { ChartCursorTooltip, ChartCursorTooltipProps } from '../ChartCursorTooltip';
 import { ChartLegendTooltipContent } from './ChartLegendTooltipContent';
-import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartLegendTooltipStyles } from '../ChartTheme/ChartStyles';
 import { ChartTooltip } from '../ChartTooltip';
 import {
   getLegendTooltipDataProps,

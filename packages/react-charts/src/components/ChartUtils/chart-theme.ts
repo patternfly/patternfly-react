@@ -8,7 +8,8 @@ import { MultiColorOrderedTheme } from '../ChartTheme/themes/colors/multi-ordere
 import { MultiColorUnorderedTheme } from '../ChartTheme/themes/colors/multi-unordered-theme';
 import { OrangeColorTheme } from '../ChartTheme/themes/colors/orange-theme';
 import { PurpleColorTheme } from '../ChartTheme/themes/colors/purple-theme';
-import { ChartBaseTheme, ChartThemeDefinition } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartBaseTheme } from '../ChartTheme/ChartThemeTypes';
 import { ChartThemeColor } from '../ChartTheme/ChartThemeColor';
 
 /**

@@ -2,7 +2,8 @@ import * as React from 'react';
 import { PaddingProps, Line, StringOrNumberOrCallback } from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
-import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
 import {
   getLabelTextSize,
   getBulletLabelX,

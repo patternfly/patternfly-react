@@ -5,7 +5,8 @@ import { VictoryScatter } from 'victory-scatter';
 import { getPrimaryDotMeasureData } from './utils';
 import { ChartContainer } from '../ChartContainer';
 import { ChartScatter } from '../ChartScatter';
-import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
 import { ChartTooltip } from '../ChartTooltip';
 import { getBulletPrimaryDotMeasureTheme } from '../ChartUtils/chart-theme-types';
 
