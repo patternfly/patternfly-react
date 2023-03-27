@@ -1,5 +1,5 @@
 {
-    "packageName": "@patternfly/react-core",
+    "packageName": "@patternfly/react-table",
     "modules": [ 
         {
             "module": "components",
