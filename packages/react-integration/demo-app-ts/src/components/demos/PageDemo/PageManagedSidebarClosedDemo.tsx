@@ -9,7 +9,7 @@ import {
 import {
   PageHeader,
   PageHeaderTools,
-} from '@patternfly/react-core/dist/esm/deprecated';
+} from '@patternfly/react-core/deprecated';
 
 export class PageManagedSidebarClosedDemo extends React.Component {
   static displayName = 'PageManagedSidebarClosedDemo';

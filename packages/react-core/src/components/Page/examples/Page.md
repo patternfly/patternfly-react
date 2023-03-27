@@ -18,7 +18,7 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import {
   PageHeader,
   PageHeaderTools
-} from '@patternfly/react-core/dist/esm/deprecated';
+} from '@patternfly/react-core/deprecated';
 import './page.css';
 
 ## Examples

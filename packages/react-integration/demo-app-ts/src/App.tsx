@@ -17,7 +17,7 @@ import {
   PageHeaderTools,
   PageHeaderToolsItem,
   PageHeaderToolsGroup
-} from '@patternfly/react-core/dist/esm/deprecated';
+} from '@patternfly/react-core/deprecated';
 import imgBrand from './assets/images/imgBrand.svg';
 import imgAvatar from './assets/images/imgAvatar.svg';
 import Demos from './Demos';
