@@ -1,6 +1,7 @@
 ---
 id: Select
 section: components
+subsection: menus
 cssPrefix: pf-c-menu
 propComponents: ['Select', SelectGroup, 'SelectOption', 'SelectList']
 beta: true

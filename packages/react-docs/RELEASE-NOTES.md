@@ -1,6 +1,6 @@
 ---
 id: Release notes
-section: developer-resources
+section: get-started
 ---
 
 ## 2023.01 release notes (2023-02-02)

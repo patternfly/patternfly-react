@@ -1,6 +1,7 @@
 ---
 id: Select
 section: components
+subsection: menus
 cssPrefix: pf-c-select
 propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject', 'SelectViewMoreObject']
 ouia: true

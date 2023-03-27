@@ -1,6 +1,6 @@
 ---
 id: Card view
-section: demos
+section: patterns
 ---
 
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';

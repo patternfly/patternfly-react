@@ -1,6 +1,7 @@
 ---
 id: Context selector
 section: components
+subsection: menus
 propComponents: ['ContextSelector', 'ContextSelectorItem', 'ContextSelectorFooter']
 
 ouia: true

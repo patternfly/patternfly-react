@@ -1,6 +1,7 @@
 ---
-id: File upload - multiple
+id: Multiple file upload
 section: components
+subsection: file-upload
 cssPrefix: pf-c-multiple-file-upload
 propComponents:
   ['MultipleFileUpload', 'MultipleFileUploadMain', 'MultipleFileUploadStatus', 'MultipleFileUploadStatusItem']
@@ -8,7 +9,7 @@ propComponents:
 
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
-File upload - multiple is able to:
+Multiple file upload is able to:
 
 - Accept one or more files via browse or drag-and-drop
 - Provide their data to you using file objects via the `onFileDrop` callback prop

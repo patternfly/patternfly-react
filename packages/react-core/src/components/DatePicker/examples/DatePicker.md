@@ -1,6 +1,7 @@
 ---
 id: Date picker
 section: components
+subsection: date-and-time
 cssPrefix: pf-c-date-picker
 propComponents: ['DatePicker', 'CalendarFormat', 'DatePickerRef']
 beta: true
