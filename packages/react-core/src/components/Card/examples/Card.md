@@ -7,14 +7,9 @@ propComponents:
 ouia: true
 ---
 
-import {
-Dropdown as DropdownDeprecated,
-DropdownItem as DropdownItemDeprecated,
-DropdownSeparator,
-KebabToggle
-} from '@patternfly/react-core/deprecated';
 import pfLogo from './pfLogo.svg';
 import pfLogoSmall from './pf-logo-small.svg';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples
 
@@ -36,14 +31,14 @@ Most modifiers can be used in combination with each other, except for `isCompact
 
 ```
 
-| Modifier     | Description                                                                          |
-| ------------ | ------------------------------------------------------------------------------------ |
-| isCompact    | Modifies the card to include compact styling. Should not be used with isLarge.       |
-| isFlat       | Modifies the card to include flat styling.                                           |
-| isRounded    | Modifies the card to include rounded border styling.                                 |
-| isLarge      | Modifies the card to be large. Should not be used with isCompact.                    |
-| isFullHeight | Modifies the card so that it fills the total available height of its container.      |
-| isPlain      | Modifies the card to include plain styling, which removes the border and background. |
+| Modifier | Description |
+| --- | --- |
+| isCompact | Modifies the card to include compact styling. Should not be used with isLarge. |
+| isFlat | Modifies the card to include flat styling. |
+| isRounded | Modifies the card to include rounded border styling. |
+| isLarge | Modifies the card to be large. Should not be used with isCompact. |
+| isFullHeight | Modifies the card so that it fills the total available height of its container. |
+| isPlain | Modifies the card to include plain styling, which removes the border and background. |
 
 ### Header images and actions
 

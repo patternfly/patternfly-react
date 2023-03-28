@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle } from '@patternfly/react-core';
+import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
 
 export const DropdownBasic: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -18,8 +18,8 @@ export const DropdownBasic: React.FunctionComponent = () => {
     <Dropdown
       isOpen={isOpen}
       onSelect={onSelect}
-      onOpenChange={(isOpen) => setIsOpen(isOpen)}
-      toggle={(toggleRef) => (
+      onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
         <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
           Dropdown
         </MenuToggle>
