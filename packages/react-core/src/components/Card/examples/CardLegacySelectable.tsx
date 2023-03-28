@@ -73,8 +73,14 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
       <Dropdown
         onSelect={onSelect}
         toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-          <MenuToggle ref={toggleRef} isExpanded={isKebabOpen} onClick={onToggle} variant="plain">
-            <EllipsisVIcon />
+          <MenuToggle
+            ref={toggleRef}
+            isExpanded={isKebabOpen}
+            onClick={onToggle}
+            variant="plain"
+            aria-label="Card legacy selectable example kebab toggle"
+          >
+            <EllipsisVIcon aria-hidden="true" />
           </MenuToggle>
         )}
         isOpen={isKebabOpen}

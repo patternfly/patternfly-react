@@ -118,8 +118,14 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                   popperProps={{ position: 'right' }}
                   onSelect={onSelect1}
                   toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                    <MenuToggle ref={toggleRef} isExpanded={isOpen1} onClick={onToggle1} variant="plain">
-                      <EllipsisVIcon />
+                    <MenuToggle
+                      ref={toggleRef}
+                      isExpanded={isOpen1}
+                      onClick={onToggle1}
+                      variant="plain"
+                      aria-label="Data list width modifiers example kebab toggle 1"
+                    >
+                      <EllipsisVIcon aria-hidden="true" />
                     </MenuToggle>
                   )}
                   isOpen={isOpen1}
@@ -193,8 +199,14 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                   popperProps={{ position: 'right' }}
                   onSelect={onSelect2}
                   toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                    <MenuToggle ref={toggleRef} isExpanded={isOpen2} onClick={onToggle2} variant="plain">
-                      <EllipsisVIcon />
+                    <MenuToggle
+                      ref={toggleRef}
+                      isExpanded={isOpen2}
+                      onClick={onToggle2}
+                      variant="plain"
+                      aria-label="Data list width modifiers example kebab toggle 2"
+                    >
+                      <EllipsisVIcon aria-hidden="true" />
                     </MenuToggle>
                   )}
                   isOpen={isOpen2}

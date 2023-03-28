@@ -51,8 +51,14 @@ export const CardTitleInHeader: React.FunctionComponent = () => {
       <Dropdown
         onSelect={onSelect}
         toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-          <MenuToggle ref={toggleRef} isExpanded={isOpen} onClick={() => setIsOpen(!isOpen)} variant="plain">
-            <EllipsisVIcon />
+          <MenuToggle
+            ref={toggleRef}
+            isExpanded={isOpen}
+            onClick={() => setIsOpen(!isOpen)}
+            variant="plain"
+            aria-label="Card title inline with images and actions example kebab toggle"
+          >
+            <EllipsisVIcon aria-hidden="true" />
           </MenuToggle>
         )}
         isOpen={isOpen}

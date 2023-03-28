@@ -79,8 +79,14 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
               popperProps={{ position: 'right' }}
               onSelect={onSelect1}
               toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                <MenuToggle ref={toggleRef} isExpanded={isOpen1} onClick={onToggle1} variant="plain">
-                  <EllipsisVIcon />
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isOpen1}
+                  onClick={onToggle1}
+                  variant="plain"
+                  aria-label="Data list with checkboxes, actions and additional cells example kebab toggle 1"
+                >
+                  <EllipsisVIcon aria-hidden="true" />
                 </MenuToggle>
               )}
               isOpen={isOpen1}
@@ -129,8 +135,14 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
               popperProps={{ position: 'right' }}
               onSelect={onSelect2}
               toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                <MenuToggle ref={toggleRef} isExpanded={isOpen2} onClick={onToggle2} variant="plain">
-                  <EllipsisVIcon />
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isOpen2}
+                  onClick={onToggle2}
+                  variant="plain"
+                  aria-label="Data list with checkboxes, actions and additional cells example kebab toggle 2"
+                >
+                  <EllipsisVIcon aria-hidden="true" />
                 </MenuToggle>
               )}
               isOpen={isOpen2}
@@ -188,8 +200,14 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
               popperProps={{ position: 'right' }}
               onSelect={onSelect3}
               toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                <MenuToggle ref={toggleRef} isExpanded={isOpen3} onClick={onToggle3} variant="plain">
-                  <EllipsisVIcon />
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isOpen3}
+                  onClick={onToggle3}
+                  variant="plain"
+                  aria-label="Data list with checkboxes, actions and additional cells example kebab toggle 3"
+                >
+                  <EllipsisVIcon aria-hidden="true" />
                 </MenuToggle>
               )}
               isOpen={isOpen3}

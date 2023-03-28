@@ -93,8 +93,14 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect1}
                 toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                  <MenuToggle ref={toggleRef} isExpanded={isOpen1} onClick={onToggle1} variant="plain">
-                    <EllipsisVIcon />
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isOpen1}
+                    onClick={onToggle1}
+                    variant="plain"
+                    aria-label="Data list mixed expandable example kebab toggle 1"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
                   </MenuToggle>
                 )}
                 isOpen={isOpen1}
@@ -118,7 +124,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
             </DataListAction>
           </DataListItemRow>
           <DataListContent
-            aria-label="First expandable content details"
+            aria-label="First mixed expandable content details"
             id="m-ex-expand1"
             isHidden={!expanded.includes('m-ex-toggle1')}
           >
@@ -165,8 +171,14 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect2}
                 toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                  <MenuToggle ref={toggleRef} isExpanded={isOpen2} onClick={onToggle2} variant="plain">
-                    <EllipsisVIcon />
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isOpen2}
+                    onClick={onToggle2}
+                    variant="plain"
+                    aria-label="Data list mixed expandable example kebab toggle 2"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
                   </MenuToggle>
                 )}
                 isOpen={isOpen2}
@@ -225,8 +237,14 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect3}
                 toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                  <MenuToggle ref={toggleRef} isExpanded={isOpen3} onClick={onToggle3} variant="plain">
-                    <EllipsisVIcon />
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isOpen3}
+                    onClick={onToggle3}
+                    variant="plain"
+                    aria-label="Data list mixed expandable example kebab toggle 3"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
                   </MenuToggle>
                 )}
                 isOpen={isOpen3}
@@ -250,7 +268,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
             </DataListAction>
           </DataListItemRow>
           <DataListContent
-            aria-label="Third expandable content details"
+            aria-label="Third mixed expandable content details"
             id="m-ex-expand3"
             isHidden={!expanded.includes('m-ex-toggle3')}
           >

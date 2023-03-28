@@ -60,8 +60,14 @@ export const CardExpandableWithIcon: React.FunctionComponent = () => {
       <Dropdown
         onSelect={onSelect}
         toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-          <MenuToggle ref={toggleRef} isExpanded={isOpen} onClick={() => setIsOpen(!isOpen)} variant="plain">
-            <EllipsisVIcon />
+          <MenuToggle
+            ref={toggleRef}
+            isExpanded={isOpen}
+            onClick={() => setIsOpen(!isOpen)}
+            variant="plain"
+            aria-label="Card expandable with icon example kebab toggle"
+          >
+            <EllipsisVIcon aria-hidden="true" />
           </MenuToggle>
         )}
         isOpen={isOpen}

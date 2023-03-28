@@ -81,8 +81,14 @@ export const DataListActions: React.FunctionComponent = () => {
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect}
                 toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                  <MenuToggle ref={toggleRef} isExpanded={isOpen} onClick={onToggle} variant="plain">
-                    <EllipsisVIcon />
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isOpen}
+                    onClick={onToggle}
+                    variant="plain"
+                    aria-label="Data list with actions example kebab toggle"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
                   </MenuToggle>
                 )}
                 isOpen={isOpen}
