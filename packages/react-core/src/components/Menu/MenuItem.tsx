@@ -46,7 +46,9 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   actions?: React.ReactNode;
   /** Description of the menu item */
   description?: React.ReactNode;
-  /** Render external link icon */
+  /** Render an external link icon on focus or hover, and set the link's
+   * "target" attribute to a value of "_blank".
+   */
   isExternalLink?: boolean;
   /** Flag indicating if the option is selected */
   isSelected?: boolean;
@@ -191,7 +193,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       if (flyoutVisible) {
         const flyoutMenu = (flyoutTarget as HTMLElement).nextElementSibling;
         const flyoutItems = Array.from(flyoutMenu.getElementsByTagName('UL')[0].children).filter(
-          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+          (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
         );
         (flyoutItems[0].firstChild as HTMLElement).focus();
       } else {
@@ -232,7 +234,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   let drill: (event: React.KeyboardEvent | React.MouseEvent) => void;
   if (direction) {
     if (direction === 'down') {
-      drill = event =>
+      drill = (event) =>
         onDrillIn &&
         onDrillIn(
           event,
@@ -243,7 +245,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           itemId
         );
     } else {
-      drill = event => onDrillOut && onDrillOut(event, parentMenu, itemId);
+      drill = (event) => onDrillOut && onDrillOut(event, parentMenu, itemId);
     }
   }
   let additionalProps = {} as any;
@@ -252,7 +254,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       href: to,
       'aria-disabled': isDisabled ? true : null,
       // prevent invalid 'disabled' attribute on <a> tags
-      disabled: null
+      disabled: null,
+      target: isExternalLink ? '_blank' : null
     };
   } else if (Component === 'button') {
     additionalProps = {
@@ -317,7 +320,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       {...props}
     >
       <GenerateId>
-        {randomId => (
+        {(randomId) => (
           <Component
             id={id}
             tabIndex={-1}
@@ -393,7 +396,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             icon="favorites"
             isFavorited={isFavorited}
             aria-label={isFavorited ? 'starred' : 'not starred'}
-            onClick={event => onActionClick(event, itemId)}
+            onClick={(event) => onActionClick(event, itemId)}
             tabIndex={-1}
             actionId="fav"
           />
