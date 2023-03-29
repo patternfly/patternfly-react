@@ -2,7 +2,7 @@ import * as React from 'react';
 import { OUIAProps, getDefaultOUIAId } from '@patternfly/react-core';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
-import { Provider } from "@patternfly/react-table/src/deprecated/components/Table/base/provider";
+import { Provider } from "@patternfly/react-table/dist/esm/deprecated/components/Table/base/provider";
 import {
   ISortBy,
   OnCollapse,
@@ -22,10 +22,7 @@ import {
 } from './TableTypes';
 import { TreeRowWrapper } from './TreeRowWrapper';
 import { CustomActionsToggleProps } from './ActionsColumn';
-import {
-  DropdownDirection,
-  DropdownPosition
-} from '@patternfly/react-core/src/deprecated/components/Dropdown/dropdownConstants';
+import { DropdownDirection, DropdownPosition } from '@patternfly/react-core/dist/esm/deprecated/components';
 import { BodyCell } from "./BodyCell";
 import { BodyWrapper } from "./BodyWrapper";
 import { HeaderCell } from "./HeaderCell";

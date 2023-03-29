@@ -22,7 +22,7 @@ import {
   OnTreeRowCollapse
 } from '../TableTypes';
 import { CustomActionsToggleProps } from '../ActionsColumn';
-import { Table, Tbody, Td, Th, Thead, Tr } from "@patternfly/react-table/src/components/Table";
+import { Table, Tbody, Td, Th, Thead, Tr } from "@patternfly/react-table";
 // Cell Type
 export interface CellType {
   property?: number | string;

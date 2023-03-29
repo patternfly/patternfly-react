@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { DropdownList } from '@patternfly/react-core/dist/esm/components/Dropdown';
-import { Dropdown, DropdownItem } from '@patternfly/react-core/src/deprecated/components/Dropdown';
+import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
 import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
