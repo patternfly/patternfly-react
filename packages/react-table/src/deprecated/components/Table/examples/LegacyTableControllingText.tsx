@@ -1,4 +1,3 @@
-import { truncate } from 'lodash';
 import React from 'react';
 import {
   cellWidth,
@@ -9,7 +8,8 @@ import {
   TableProps,
   wrappable,
   fitContent,
-  nowrap
+  nowrap,
+  truncate
 } from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 // This example has been simplified to focus on the text modifier props. In real usage,
