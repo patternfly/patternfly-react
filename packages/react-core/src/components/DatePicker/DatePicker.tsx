@@ -34,7 +34,7 @@ export interface DatePickerProps
   dateFormat?: (date: Date) => string;
   /** How to format the date in the text input. */
   dateParse?: (value: string) => Date;
-  /** Helper text to display alongside the date picker. */
+  /** Helper text to display alongside the date picker. Expects a HelperText component. */
   helperText?: React.ReactNode;
   /** Additional props for the text input. */
   inputProps?: TextInputProps;
