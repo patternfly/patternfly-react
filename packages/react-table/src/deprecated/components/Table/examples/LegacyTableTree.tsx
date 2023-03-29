@@ -2,11 +2,16 @@ import React from 'react';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
-import { TableBody } from "../Body";
-import { TableHeader } from "../Header";
-import { Table } from "../Table";
-import { IRow, OnTreeRowCollapse, OnCheckChange, OnToggleRowDetails } from "../TableTypes";
-import { treeRow } from "../utils";
+import {
+  treeRow,
+  IRow,
+  OnTreeRowCollapse,
+  OnCheckChange,
+  OnToggleRowDetails,
+  Table,
+  TableBody,
+  TableHeader
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 interface RepositoriesTreeNode {
   name: string;
@@ -88,9 +93,9 @@ export const LegacyTableTree: React.FunctionComponent = () => {
   const getDescendants = (node: RepositoriesTreeNode): RepositoriesTreeNode[] =>
     [node].concat(...(node.children ? node.children.map(getDescendants) : []));
   const areAllDescendantsSelected = (node: RepositoriesTreeNode) =>
-    getDescendants(node).every(n => selectedNodeNames.includes(n.name));
+    getDescendants(node).every((n) => selectedNodeNames.includes(n.name));
   const areSomeDescendantsSelected = (node: RepositoriesTreeNode) =>
-    getDescendants(node).some(n => selectedNodeNames.includes(n.name));
+    getDescendants(node).some((n) => selectedNodeNames.includes(n.name));
 
   const isNodeChecked = (node: RepositoriesTreeNode) => {
     if (areAllDescendantsSelected(node)) {
@@ -160,17 +165,17 @@ export const LegacyTableTree: React.FunctionComponent = () => {
   const onCollapse: OnTreeRowCollapse = (_event, rowIndex) => {
     const node = flattenedNodes[rowIndex];
     const isExpanded = expandedNodeNames.includes(node.name);
-    setExpandedNodeNames(prevExpanded => {
-      const otherExpandedNodeNames = prevExpanded.filter(name => name !== node.name);
+    setExpandedNodeNames((prevExpanded) => {
+      const otherExpandedNodeNames = prevExpanded.filter((name) => name !== node.name);
       return isExpanded ? otherExpandedNodeNames : [...otherExpandedNodeNames, node.name];
     });
   };
 
   const onCheck: OnCheckChange = (_event, isChecking, rowIndex) => {
     const node = flattenedNodes[rowIndex];
-    const nodeNamesToCheck = getDescendants(node).map(n => n.name);
-    setSelectedNodeNames(prevSelected => {
-      const otherSelectedNodeNames = prevSelected.filter(name => !nodeNamesToCheck.includes(name));
+    const nodeNamesToCheck = getDescendants(node).map((n) => n.name);
+    setSelectedNodeNames((prevSelected) => {
+      const otherSelectedNodeNames = prevSelected.filter((name) => !nodeNamesToCheck.includes(name));
       return !isChecking ? otherSelectedNodeNames : [...otherSelectedNodeNames, ...nodeNamesToCheck];
     });
   };
@@ -178,8 +183,8 @@ export const LegacyTableTree: React.FunctionComponent = () => {
   const onToggleRowDetails: OnToggleRowDetails = (_event, rowIndex) => {
     const node = flattenedNodes[rowIndex];
     const isDetailsExpanded = expandedDetailsNodeNames.includes(node.name);
-    setExpandedDetailsNodeNames(prevDetailsExpanded => {
-      const otherDetailsExpandedNodeNames = prevDetailsExpanded.filter(name => name !== node.name);
+    setExpandedDetailsNodeNames((prevDetailsExpanded) => {
+      const otherDetailsExpandedNodeNames = prevDetailsExpanded.filter((name) => name !== node.name);
       return isDetailsExpanded ? otherDetailsExpandedNodeNames : [...otherDetailsExpandedNodeNames, node.name];
     });
   };

@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { TableBody } from "../Body";
-import { TableHeader } from "../Header";
-import { TableProps, Table } from "../Table";
-import { ICell } from "../TableTypes";
-import { info, textCenter } from "../utils";
+import {
+  info,
+  textCenter,
+  ICell,
+  Table,
+  TableBody,
+  TableHeader,
+  TableProps
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 interface Repository {
   name: string;
@@ -75,7 +79,7 @@ export const LegacyTableHoverable: React.FunctionComponent = () => {
       cellTransforms: [textCenter]
     }
   ];
-  const rows: TableProps['rows'] = repositories.map(repo => {
+  const rows: TableProps['rows'] = repositories.map((repo) => {
     let cells: (string | ICell)[] = [repo.name, repo.branches || '', repo.prs || '', repo.workspaces, repo.lastCommit];
     // These rows have arbitrary differences for this example, but these could be based on some other conditions
     if (repo.name === 'one - 2') {

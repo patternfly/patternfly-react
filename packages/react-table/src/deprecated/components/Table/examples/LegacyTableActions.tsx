@@ -11,14 +11,18 @@ import {
   ToolbarContent,
   ToolbarItem
 } from '@patternfly/react-core';
-import { CustomActionsToggleProps } from "../ActionsColumn";
-import { TableBody } from "../Body";
-import { TableHeader } from "../Header";
-import { TableProps, Table } from "../Table";
-import { TableText } from "../TableText";
-import { IActions, IActionsResolver } from "../TableTypes";
-import { headerCol, fitContent } from "../utils";
-
+import {
+  CustomActionsToggleProps,
+  headerCol,
+  fitContent,
+  TableBody,
+  TableHeader,
+  TableProps,
+  Table,
+  TableText,
+  IActions,
+  IActionsResolver
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 interface Repository {
   name: string;
@@ -72,7 +76,7 @@ export const LegacyTableActions: React.FunctionComponent = () => {
     { title: '', dataLabel: 'Action', cellTransforms: [fitContent] }
   ];
 
-  const rows: TableProps['rows'] = repositories.map(repo => {
+  const rows: TableProps['rows'] = repositories.map((repo) => {
     let singleActionButton: React.ReactNode = null;
     if (repo.singleAction !== '') {
       singleActionButton = (
@@ -190,7 +194,7 @@ export const LegacyTableActions: React.FunctionComponent = () => {
         rows={rows}
         {...(propToUse === 'actions' && { actions })}
         {...(propToUse === 'actionResolver' && { actionResolver })}
-        areActionsDisabled={rowData => !!rowData.disableActions}
+        areActionsDisabled={(rowData) => !!rowData.disableActions}
         dropdownPosition="left"
         dropdownDirection="down"
         actionsToggle={useCustomToggle ? customActionsToggle : undefined}

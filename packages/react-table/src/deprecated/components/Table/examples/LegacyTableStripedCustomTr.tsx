@@ -1,8 +1,11 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { TableBody } from "../Body";
-import { TableHeader } from "../Header";
-import { TableProps, Table } from "../Table";
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableProps
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 interface Repository {
   name: string;
@@ -21,7 +24,7 @@ export const LegacyTableStripedCustomTr: React.FunctionComponent = () => {
   ];
 
   const columns: TableProps['cells'] = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows: TableProps['rows'] = repositories.map(repo => [
+  const rows: TableProps['rows'] = repositories.map((repo) => [
     repo.name,
     repo.branches || '',
     repo.prs || '',

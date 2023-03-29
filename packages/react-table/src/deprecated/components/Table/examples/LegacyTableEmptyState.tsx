@@ -11,9 +11,12 @@ import {
   EmptyStateActions
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import { TableBody } from "../Body";
-import { TableHeader } from "../Header";
-import { TableProps, Table } from "../Table";
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableProps
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 // This example has been simplified to focus on the empty state. In real usage,
 // you may want to derive your rows from typed underlying data and minimal state. See other examples.

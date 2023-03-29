@@ -1,8 +1,13 @@
 import React from 'react';
-import { TableBody } from '../Body';
-import { TableHeader } from '../Header';
-import { TableProps, Table } from '../Table';
-import { cellWidth, classNames, Visibility } from '../utils';
+import {
+  cellWidth,
+  classNames,
+  Table,
+  TableBody,
+  TableHeader,
+  TableProps,
+  Visibility
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 interface Repository {
   name: string;
   branches: string;
@@ -51,7 +56,7 @@ export const LegacyTableCellWidth: React.FunctionComponent = () => {
       transforms: [cellWidth(30)]
     }
   ];
-  const rows: TableProps['rows'] = repositories.map(repo => [
+  const rows: TableProps['rows'] = repositories.map((repo) => [
     repo.name,
     repo.branches,
     repo.prs,

@@ -1,8 +1,11 @@
 import React from 'react';
-import { TableBody } from "../Body";
-import { TableHeader } from "../Header";
-import { TableProps, Table } from "../Table";
-import { headerCol } from "../utils";
+import {
+  headerCol,
+  Table,
+  TableBody,
+  TableHeader,
+  TableProps
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 interface Repository {
   name: string;
@@ -33,7 +36,7 @@ export const LegacyTableSelectableRadio: React.FunctionComponent = () => {
     'Workspaces',
     'Last commit'
   ];
-  const rows: TableProps['rows'] = repositories.map(repo => ({
+  const rows: TableProps['rows'] = repositories.map((repo) => ({
     cells: [repo.name, repo.branches, repo.prs, repo.workspaces, repo.lastCommit],
     selected: selectedRepoName === repo.name,
     disableSelection: !isRepoSelectable(repo)

@@ -2,10 +2,13 @@ import React from 'react';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import { TableBody } from '../Body';
-import { TableHeader } from '../Header';
-import { TableProps, Table } from '../Table';
-import { compoundExpand } from '../utils';
+import {
+  compoundExpand,
+  Table,
+  TableBody,
+  TableHeader,
+  TableProps
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 interface Repository {
   name: string;
@@ -66,7 +69,7 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
     }
   ];
   const rows: TableProps['rows'] = [];
-  repositories.forEach(repo => {
+  repositories.forEach((repo) => {
     const expandedCellKey = expandedCells[repo.name];
     const isRowExpanded = !!expandedCellKey;
     rows.push({

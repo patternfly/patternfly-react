@@ -1,12 +1,13 @@
 import React from 'react';
+import { Toolbar, ToolbarContent } from '@patternfly/react-core';
 import {
-  Toolbar,
-  ToolbarContent,
-} from '@patternfly/react-core';
-import { TableBody } from "../Body";
-import { TableHeader } from "../Header";
-import { TableProps, Table } from "../Table";
-import { sortable, info } from "../utils";
+  info,
+  sortable,
+  Table,
+  TableBody,
+  TableHeader,
+  TableProps
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 interface Repository {
   name: string;
@@ -100,7 +101,7 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
       ]
     }
   ];
-  const rows: TableProps['rows'] = sortedRepositories.map(repo => [
+  const rows: TableProps['rows'] = sortedRepositories.map((repo) => [
     repo.name,
     repo.branches,
     repo.prs,

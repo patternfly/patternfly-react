@@ -1,10 +1,16 @@
-import { truncate } from "lodash";
+import { truncate } from 'lodash';
 import React from 'react';
-import { TableBody } from "../Body";
-import { TableHeader } from "../Header";
-import { TableProps, Table } from "../Table";
-import { cellWidth, breakWord, wrappable, fitContent, nowrap } from "../utils";
-
+import {
+  cellWidth,
+  breakWord,
+  Table,
+  TableBody,
+  TableHeader,
+  TableProps,
+  wrappable,
+  fitContent,
+  nowrap
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 // This example has been simplified to focus on the text modifier props. In real usage,
 // you may want to derive your rows from typed underlying data and minimal state. See other examples.

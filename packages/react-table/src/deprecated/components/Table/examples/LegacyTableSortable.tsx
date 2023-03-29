@@ -1,9 +1,14 @@
 import React from 'react';
-import { TableBody } from "../Body";
-import { TableHeader } from "../Header";
-import { TableProps, Table } from "../Table";
-import { sortable, info, wrappable, cellWidth } from "../utils";
-
+import {
+  cellWidth,
+  info,
+  sortable,
+  wrappable,
+  Table,
+  TableBody,
+  TableHeader,
+  TableProps
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 interface Repository {
   name: string;
@@ -85,7 +90,7 @@ export const LegacyTableSortable: React.FunctionComponent = () => {
       ]
     }
   ];
-  const rows: TableProps['rows'] = sortedRepositories.map(repo => [
+  const rows: TableProps['rows'] = sortedRepositories.map((repo) => [
     repo.name,
     repo.branches,
     repo.prs,

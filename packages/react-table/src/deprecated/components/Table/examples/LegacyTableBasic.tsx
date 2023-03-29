@@ -1,8 +1,11 @@
 import React from 'react';
-import { Table, TableProps } from '../Table';
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableProps
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 import { ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@patternfly/react-core';
-import { TableBody } from '../Body';
-import { TableHeader } from '../Header';
 interface Repository {
   name: string;
   branches: string;
@@ -47,7 +50,7 @@ export const LegacyTableBasic: React.FunctionComponent = () => {
   };
 
   const columns: TableProps['cells'] = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows: TableProps['rows'] = repositories.map(repo => [
+  const rows: TableProps['rows'] = repositories.map((repo) => [
     repo.name,
     repo.branches,
     repo.prs,

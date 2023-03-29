@@ -1,10 +1,14 @@
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
-import { TableBody } from "../Body";
-import { TableHeader } from "../Header";
-import { TableProps, Table } from "../Table";
-import { IRowCell, TableVariant } from "../TableTypes";
-import { expandable } from "../utils";
+import {
+  expandable,
+  IRowCell,
+  TableVariant,
+  Table,
+  TableBody,
+  TableHeader,
+  TableProps
+} from '@patternfly/react-table/dist/esm/deprecated/components/Table';
 
 interface Repository {
   name: string;
@@ -80,11 +84,11 @@ export const LegacyTableStripedExpandable: React.FunctionComponent = () => {
   // In this example, expanded rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
   // Note that this behavior is very similar to selection state.
-  const initialExpandedRepoNames = repositories.filter(repo => !!repo.details).map(repo => repo.name); // Default to all expanded
+  const initialExpandedRepoNames = repositories.filter((repo) => !!repo.details).map((repo) => repo.name); // Default to all expanded
   const [expandedRepoNames, setExpandedRepoNames] = React.useState<string[]>(initialExpandedRepoNames);
   const setRepoExpanded = (repo: Repository, isExpanding = true) =>
-    setExpandedRepoNames(prevExpanded => {
-      const otherExpandedRepoNames = prevExpanded.filter(r => r !== repo.name);
+    setExpandedRepoNames((prevExpanded) => {
+      const otherExpandedRepoNames = prevExpanded.filter((r) => r !== repo.name);
       return isExpanding ? [...otherExpandedRepoNames, repo.name] : otherExpandedRepoNames;
     });
   const isRepoExpanded = (repo: Repository) => expandedRepoNames.includes(repo.name);
@@ -106,7 +110,7 @@ export const LegacyTableStripedExpandable: React.FunctionComponent = () => {
     { title: '' /* deliberately empty */, dataLabel: 'Label for mobile view' }
   ];
   const rows: TableProps['rows'] = [];
-  repositories.forEach(repo => {
+  repositories.forEach((repo) => {
     rows.push({
       ...(repo.details ? { isOpen: isRepoExpanded(repo) } : {}),
       cells: [repo.name, repo.branches, repo.prs, repo.workspaces]
