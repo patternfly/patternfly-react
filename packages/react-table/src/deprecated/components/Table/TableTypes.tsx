@@ -7,7 +7,7 @@ import {
   DropdownDirection,
   DropdownPosition
 } from '@patternfly/react-core/src/deprecated/components/Dropdown/dropdownConstants';
-import { DropdownItemProps } from '@patternfly/react-core/src/deprecated/components/Dropdown/DropdownItem';
+import { DropdownItemProps } from '@patternfly/react-core/dist/esm/components/Dropdown';
 
 
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Th } from "@patternfly/react-table";
+import { Th } from "../../../components/Table"
 
 export interface HeaderCellProps {
   'data-label'?: string;

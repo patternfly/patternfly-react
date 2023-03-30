@@ -2,7 +2,7 @@ import * as React from 'react';
 import { OUIAProps, getDefaultOUIAId } from '@patternfly/react-core';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
-import { Provider } from "@patternfly/react-table/dist/esm/deprecated/components/Table/base/provider";
+import { Provider } from "../../components/Table/base/provider";
 import {
   ISortBy,
   OnCollapse,

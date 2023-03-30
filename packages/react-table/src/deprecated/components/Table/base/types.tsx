@@ -22,8 +22,8 @@ import {
   OnTreeRowCollapse
 } from '../TableTypes';
 import { CustomActionsToggleProps } from '../ActionsColumn';
-import { Table, Tbody, Td, Th, Thead, Tr } from "@patternfly/react-table";
-// Cell Type
+import { Th, Tr, Td, Thead, Tbody } from "../../../../components/Table"
+import { Table } from "../Table";
 export interface CellType {
   property?: number | string;
   transforms?: transformsType;

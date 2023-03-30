@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
 import { Bullseye, EmptyState, SelectProps } from '@patternfly/react-core';
-import { Td } from '@patternfly/react-table';
+import { Td } from "../../../components/Table";
 
 export interface BodyCellProps {
   'data-label'?: string;
