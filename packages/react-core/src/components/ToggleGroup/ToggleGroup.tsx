@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
-import { ToggleGroupItem } from './ToggleGroupItem';
+import { ToggleGroupItem, ToggleGroupItemProps } from './ToggleGroupItem';
 
 export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the toggle group */
@@ -24,12 +24,11 @@ export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
   'aria-label': ariaLabel,
   ...props
 }: ToggleGroupProps) => {
-  const toggleGroupItemList = React.Children.map(children, child => {
-    const childCompName = (child as any).type.name;
-    return childCompName !== ToggleGroupItem.name
+  const toggleGroupItemList = React.Children.map(children, child =>
+    !(React.isValidElement(child) && child.type === ToggleGroupItem)
       ? child
-      : React.cloneElement(child as React.ReactElement, areAllGroupsDisabled ? { isDisabled: true } : {});
-  });
+      : React.cloneElement<ToggleGroupItemProps>(child, areAllGroupsDisabled ? { isDisabled: true } : {})
+  );
 
   return (
     <div
