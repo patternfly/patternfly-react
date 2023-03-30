@@ -52,7 +52,7 @@ describe('Notification Drawer Basic Demo Test', () => {
       .should('have.class', 'pf-m-success');
     cy.get('.pf-c-notification-drawer__list-item')
       .last()
-      .should('have.class', 'pf-m-default');
+      .should('have.class', 'pf-m-custom');
   });
 
   it('Verify timestamp in list items', () => {
