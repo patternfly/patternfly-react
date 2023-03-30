@@ -24,7 +24,7 @@ copySync(join(pfDir, 'assets/fonts'), join(stylesDir, 'assets/fonts'), {
 // Copy css
 const baseCssFiles = {
   'base.css': 'patternfly-base.css',
-  'base-no-reset.css': 'patternfly-base-no-reset.css'
+  'base-no-reset.css': 'patternfly-base-no-globals.css'
 };
 
 for (const [targetCss, baseCss] of Object.entries(baseCssFiles)) {

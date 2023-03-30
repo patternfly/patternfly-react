@@ -210,7 +210,7 @@ export interface PopoverProps {
 }
 
 const alertStyle = {
-  default: styles.modifiers.default,
+  default: styles.modifiers.custom,
   info: styles.modifiers.info,
   success: styles.modifiers.success,
   warning: styles.modifiers.warning,

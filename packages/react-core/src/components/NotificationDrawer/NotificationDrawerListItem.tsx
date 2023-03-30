@@ -16,7 +16,7 @@ export interface NotificationDrawerListItemProps extends React.HTMLProps<HTMLLIE
   /**  Tab index for the list item */
   tabIndex?: number;
   /**  Variant indicates the severity level */
-  variant?: 'default' | 'success' | 'danger' | 'warning' | 'info';
+  variant?: 'custom' | 'success' | 'danger' | 'warning' | 'info';
 }
 
 export const NotificationDrawerListItem: React.FunctionComponent<NotificationDrawerListItemProps> = ({
@@ -27,7 +27,7 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onClick = (event: React.MouseEvent) => undefined as any,
   tabIndex = 0,
-  variant = 'default',
+  variant = 'custom',
   ...props
 }: NotificationDrawerListItemProps) => {
   const onKeyDown = (event: React.KeyboardEvent) => {
