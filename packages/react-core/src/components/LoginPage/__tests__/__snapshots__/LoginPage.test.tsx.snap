@@ -5,6 +5,7 @@ exports[`check loginpage example against snapshot 1`] = `
   <div
     alt="Pf-background"
     class="pf-c-background-image"
+    src="Background src"
   >
     <svg
       class="pf-c-background-image__filter"
