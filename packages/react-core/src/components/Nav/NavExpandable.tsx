@@ -29,7 +29,7 @@ export interface NavExpandableProps
   /** Identifier to use for the section aria label */
   id?: string;
   /** allow consumer to optionally override this callback and manage expand state externally. if passed will not call Nav's onToggle. */
-  onExpand?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, val: boolean) => void;
+  onExpand?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, val: boolean) => void;
   /** Additional props added to the NavExpandable <button> */
   buttonProps?: any;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -71,7 +71,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   }
 
   onExpand = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     onToggle: (
       event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
       groupId: string | number,
@@ -80,11 +80,11 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   ) => {
     const { expandedState } = this.state;
     if (this.props.onExpand) {
-      this.props.onExpand(e, !expandedState);
+      this.props.onExpand(event, !expandedState);
     } else {
       this.setState((prevState) => ({ expandedState: !prevState.expandedState }));
       const { groupId } = this.props;
-      onToggle(e, groupId, !expandedState);
+      onToggle(event, groupId, !expandedState);
     }
   };
 
@@ -129,7 +129,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
                 <button
                   className={styles.navLink}
                   id={srText ? null : this.id}
-                  onClick={(e) => this.onExpand(e, context.onToggle)}
+                  onClick={(event) => this.onExpand(event, context.onToggle)}
                   aria-expanded={expandedState}
                   tabIndex={isNavOpen ? null : -1}
                   {...buttonProps}
