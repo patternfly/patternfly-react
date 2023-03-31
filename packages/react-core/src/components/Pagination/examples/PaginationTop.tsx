@@ -26,6 +26,7 @@ export const PaginationTop: React.FunctionComponent = () => {
       onSetPage={onSetPage}
       widgetId="top-example"
       onPerPageSelect={onPerPageSelect}
+      ouiaId="PaginationTop"
     />
   );
 };

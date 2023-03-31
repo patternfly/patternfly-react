@@ -69,6 +69,7 @@ export const ContextSelectorBasic: React.FunctionComponent = () => {
       onSelect={onSelect}
       onSearchButtonClick={onSearchButtonClick}
       screenReaderLabel="Selected Project:"
+      ouiaId="BasicContextSelector"
     >
       {filteredItems.map((item, index) => {
         const [text = null, href = undefined, isDisabled] =

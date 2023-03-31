@@ -7,12 +7,12 @@ import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 
 export const ButtonVariations: React.FunctionComponent = () => (
   <React.Fragment>
-    <Button variant="primary">Primary</Button> <Button variant="secondary">Secondary</Button>{' '}
-    <Button variant="secondary" isDanger>
+    <Button variant="primary" ouiaId="Primary">Primary</Button> <Button variant="secondary" ouiaId="Secondary">Secondary</Button>{' '}
+    <Button variant="secondary" ouiaId="DangerSecondary" isDanger>
       Danger Secondary
     </Button>{' '}
-    <Button variant="tertiary">Tertiary</Button> <Button variant="danger">Danger</Button>{' '}
-    <Button variant="warning">Warning</Button>
+    <Button variant="tertiary" ouiaId="Tertiary">Tertiary</Button> <Button variant="danger" ouiaId="Danger">Danger</Button>{' '}
+    <Button variant="warning" ouiaId="Warning">Warning</Button>
     <br />
     <br />
     <Button variant="link" icon={<PlusCircleIcon />}>

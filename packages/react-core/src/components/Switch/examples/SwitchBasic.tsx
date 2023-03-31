@@ -15,6 +15,7 @@ export const SwitchBasic: React.FunctionComponent = () => {
       labelOff="Message when off"
       isChecked={isChecked}
       onChange={handleChange}
+      ouiaId="BasicSwitch"
     />
   );
 };

@@ -10,7 +10,7 @@ export const ModalBasic: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Button variant="primary" onClick={handleModalToggle}>
+      <Button variant="primary" onClick={handleModalToggle} ouiaId="ShowBasicModal">
         Show basic modal
       </Button>
       <Modal
@@ -25,6 +25,7 @@ export const ModalBasic: React.FunctionComponent = () => {
             Cancel
           </Button>
         ]}
+        ouiaId="BasicModal"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

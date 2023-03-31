@@ -19,7 +19,7 @@ export const FormSelectBasic: React.FunctionComponent = () => {
   ];
 
   return (
-    <FormSelect value={formSelectValue} onChange={onChange} aria-label="FormSelect Input">
+    <FormSelect value={formSelectValue} onChange={onChange} aria-label="FormSelect Input" ouiaId="BasicFormSelect">
       {options.map((option, index) => (
         <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
       ))}

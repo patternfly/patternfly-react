@@ -53,7 +53,8 @@ class SingleOption extends React.Component {
         id="single-option-example" 
         menuItems={menuItems} 
         isOpen={isOpen} 
-        toggle={toggle}/>
+        toggle={toggle}
+        ouiaId="OptionsMenu"/>
     );
   }
 }
