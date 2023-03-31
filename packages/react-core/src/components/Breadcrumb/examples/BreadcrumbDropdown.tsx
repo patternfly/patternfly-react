@@ -13,16 +13,13 @@ import {
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 
 const dropdownItems = [
-  <DropdownItem key="edit">
-    <AngleLeftIcon />
+  <DropdownItem icon={<AngleLeftIcon />} key="edit">
     Edit
   </DropdownItem>,
-  <DropdownItem key="action">
-    <AngleLeftIcon />
+  <DropdownItem icon={<AngleLeftIcon />} key="action">
     Deployment
   </DropdownItem>,
-  <DropdownItem key="apps">
-    <AngleLeftIcon />
+  <DropdownItem icon={<AngleLeftIcon />} key="apps">
     Applications
   </DropdownItem>
 ];

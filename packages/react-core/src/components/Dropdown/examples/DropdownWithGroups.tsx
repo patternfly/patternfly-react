@@ -49,7 +49,7 @@ export const DropdownWithGroups: React.FunctionComponent = () => {
           </DropdownItem>
         </DropdownList>
       </DropdownGroup>
-      <Divider />
+      <Divider component="li" />
       <DropdownGroup label="Group 2" labelHeadingLevel="h3">
         <DropdownList>
           <DropdownItem itemId={2} key="group2 action">

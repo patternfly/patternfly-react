@@ -1,49 +1,74 @@
 import React from 'react';
-import { Hint, HintBody, HintFooter, Button } from '@patternfly/react-core';
 import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownSeparator,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
+  Hint,
+  HintBody,
+  HintFooter,
+  Button,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  Divider,
+  MenuToggle,
+  MenuToggleElement
+} from '@patternfly/react-core';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const HintBasicWithoutTitle: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
-  const onToggle = (_event: any, isOpen: boolean) => {
-    setIsOpen(isOpen);
+  const onToggle = () => {
+    setIsOpen(!isOpen);
   };
 
   const onSelect = () => {
     setIsOpen(!isOpen);
   };
 
-  const dropdownItems = [
-    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="action" component="button">
-      Action
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="disabled link" isDisabled>
-      Disabled Link
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
-      Disabled Action
-    </DropdownItemDeprecated>,
-    <DropdownSeparator key="separator" />,
-    <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="separated action" component="button">
-      Separated Action
-    </DropdownItemDeprecated>
-  ];
   const actions = (
-    <DropdownDeprecated
-      onSelect={onSelect}
-      toggle={<KebabToggle onToggle={onToggle} id="hint-notitle-kebab-toggle" />}
+    <Dropdown
       isOpen={isOpen}
-      dropdownItems={dropdownItems}
-      position="right"
-      isPlain
-    />
+      onSelect={onSelect}
+      onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+        <MenuToggle
+          ref={toggleRef}
+          aria-label="Without title example kebab toggle"
+          variant="plain"
+          onClick={onToggle}
+          isExpanded={isOpen}
+        >
+          <EllipsisVIcon />
+        </MenuToggle>
+      )}
+    >
+      <DropdownList>
+        <DropdownItem itemId={0} key="action">
+          Action
+        </DropdownItem>
+        <DropdownItem
+          itemId={1}
+          key="link"
+          to="#default-link2"
+          // Prevent the default onClick functionality for example purposes
+          onClick={(ev: any) => ev.preventDefault()}
+        >
+          Link
+        </DropdownItem>
+        <DropdownItem itemId={2} isDisabled key="disabled action">
+          Disabled Action
+        </DropdownItem>
+        <DropdownItem itemId={3} isDisabled key="disabled link" to="#default-link4">
+          Disabled Link
+        </DropdownItem>
+        <Divider component="li" key="separator" />
+        <DropdownItem itemId={4} key="separated action">
+          Separated Action
+        </DropdownItem>
+        <DropdownItem itemId={5} key="separated link" to="#default-link6" onClick={(ev) => ev.preventDefault()}>
+          Separated Link
+        </DropdownItem>
+      </DropdownList>
+    </Dropdown>
   );
   return (
     <React.Fragment>

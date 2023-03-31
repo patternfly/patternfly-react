@@ -51,7 +51,7 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
         <DropdownItem itemId={3} isDisabled key="disabled link" to="#default-link4">
           Disabled Link
         </DropdownItem>
-        <Divider key="separator" />
+        <Divider component="li" key="separator" />
         <DropdownItem itemId={4} key="separated action">
           Separated Action
         </DropdownItem>
