@@ -282,20 +282,17 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           )}
         >
           <DropdownList>
-            <DropdownItem key="link">Link</DropdownItem>
-            <DropdownItem key="action" component="button">
-              Action
+            <DropdownItem>Action</DropdownItem>
+            <DropdownItem
+              to="#default-link2"
+              // Prevent the default onClick functionality for example purposes
+              onClick={(ev: any) => ev.preventDefault()}
+            >
+              Link
             </DropdownItem>
-            <DropdownItem key="disabled link" isDisabled>
+            <DropdownItem isDisabled>Disabled Action</DropdownItem>
+            <DropdownItem isDisabled to="#default-link4">
               Disabled Link
-            </DropdownItem>
-            <DropdownItem key="disabled action" isDisabled component="button">
-              Disabled Action
-            </DropdownItem>
-            <Divider component="li" key="separator" />
-            <DropdownItem key="separated link">Separated Link</DropdownItem>
-            <DropdownItem key="separated action" component="button">
-              Separated Action
             </DropdownItem>
           </DropdownList>
         </Dropdown>
