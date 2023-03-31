@@ -11,15 +11,6 @@ import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import {
-Dropdown as DropdownDeprecated,
-DropdownToggle,
-DropdownToggleCheckbox,
-DropdownItem as DropdownItemDeprecated,
-DropdownSeparator,
-DropdownPosition,
-KebabToggle
-} from '@patternfly/react-core/deprecated';
 
 ## Examples
 

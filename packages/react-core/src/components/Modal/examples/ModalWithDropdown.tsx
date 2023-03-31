@@ -1,11 +1,14 @@
 import React from 'react';
-import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 import {
-  Dropdown as DropdownDeprecated,
-  DropdownToggle,
-  DropdownItem as DropdownItemDeprecated
-} from '@patternfly/react-core/deprecated';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+  Modal,
+  ModalVariant,
+  Button,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  MenuToggle,
+  MenuToggleElement
+} from '@patternfly/react-core';
 
 export const ModalWithDropdown: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -16,8 +19,8 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
     setIsDropdownOpen(false);
   };
 
-  const handleDropdownToggle = (_event: any, isDropdownOpen: boolean) => {
-    setIsDropdownOpen(isDropdownOpen);
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   const onSelect = () => {
@@ -38,19 +41,6 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
       handleModalToggle(event);
     }
   };
-
-  const dropdownItems = [
-    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="action" component="button">
-      Action
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="disabled link" isDisabled>
-      Disabled Link
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
-      Disabled Action
-    </DropdownItemDeprecated>
-  ];
 
   return (
     <React.Fragment>
@@ -80,21 +70,37 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
         </div>
         <br />
         <div>
-          <DropdownDeprecated
-            onSelect={onSelect}
-            toggle={
-              <DropdownToggle
-                id="modal-dropdown-toggle"
-                onToggle={handleDropdownToggle}
-                toggleIndicator={CaretDownIcon}
-              >
-                Dropdown with a menu that can break out
-              </DropdownToggle>
-            }
+          <Dropdown
             isOpen={isDropdownOpen}
-            dropdownItems={dropdownItems}
-            menuAppendTo="parent"
-          />
+            onSelect={onSelect}
+            onOpenChange={(isOpen: boolean) => setIsDropdownOpen(isOpen)}
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle ref={toggleRef} onClick={handleDropdownToggle} isExpanded={isDropdownOpen}>
+                Dropdown
+              </MenuToggle>
+            )}
+          >
+            <DropdownList>
+              <DropdownItem itemId={0} key="action">
+                Action
+              </DropdownItem>
+              <DropdownItem
+                itemId={1}
+                key="link"
+                to="#default-link2"
+                // Prevent the default onClick functionality for example purposes
+                onClick={(ev: any) => ev.preventDefault()}
+              >
+                Link
+              </DropdownItem>
+              <DropdownItem itemId={2} isDisabled key="disabled action">
+                Disabled Action
+              </DropdownItem>
+              <DropdownItem itemId={3} isDisabled key="disabled link" to="#default-link4">
+                Disabled Link
+              </DropdownItem>
+            </DropdownList>
+          </Dropdown>
         </div>
       </Modal>
     </React.Fragment>
