@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Table, TableHeader, TableBody, TableProps, sortable, ICell, IRow, ISortBy } from '@patternfly/react-table';
+import { sortable, ICell, IRow, ISortBy } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { Checkbox } from '@patternfly/react-core';
 
 interface TableState {

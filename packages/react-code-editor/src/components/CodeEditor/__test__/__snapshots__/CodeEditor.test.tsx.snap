@@ -142,7 +142,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
         >
           <div
             class="react-monaco-editor-container"
-            data-keybinding-context="1"
+            data-keybinding-context="2"
             data-mode-id="plaintext"
             style="height: 400px;"
           >
@@ -201,6 +201,11 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
                     />
                     <div
                       aria-hidden="true"
+                      class="blockDecorations-container"
+                      role="presentation"
+                    />
+                    <div
+                      aria-hidden="true"
                       class="view-zones"
                       role="presentation"
                       style="position: absolute;"
@@ -210,7 +215,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
                       class="view-lines monaco-mouse-cursor-text"
                       data-mprt="7"
                       role="presentation"
-                      style="position: absolute; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; font-feature-settings: \\"liga\\" off, \\"calt\\" off; line-height: 19px; letter-spacing: 0px; width: 45px; height: 5px;"
+                      style="position: absolute; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; font-feature-settings: \\"liga\\" off, \\"calt\\" off; line-height: 19px; letter-spacing: 0px; width: 54px; height: 19px;"
                     >
                       <div
                         class="view-line"
@@ -256,7 +261,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
                     aria-hidden="true"
                     class="decorationsOverviewRuler"
                     height="5"
-                    style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; right: 0px; width: 14px; height: 5px;"
+                    style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; right: 0px; width: 14px; height: 5px; display: block;"
                     width="14"
                   />
                   <div
@@ -267,7 +272,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
                   >
                     <div
                       class="slider"
-                      style="position: absolute; top: 0px; left: 0px; width: 14px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 5px;"
+                      style="position: absolute; top: 0px; left: 0px; width: 14px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 20px;"
                     />
                   </div>
                 </div>
@@ -286,7 +291,6 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
                   autocorrect="off"
                   class="inputarea monaco-mouse-cursor-text"
                   data-mprt="6"
-                  readonly="true"
                   role="textbox"
                   spellcheck="false"
                   style="font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; font-feature-settings: \\"liga\\" off, \\"calt\\" off; line-height: 19px; letter-spacing: 0px; top: 0px; left: 0px; width: 1px; height: 1px;"
@@ -342,11 +346,6 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
               <div
                 class="overflowingContentWidgets"
                 data-mprt="2"
-              />
-              <div
-                aria-hidden="true"
-                class="context-view"
-                style="display: none;"
               />
             </div>
           </div>
@@ -439,6 +438,11 @@ exports[`CodeEditor matches snapshot without props 1`] = `
                   />
                   <div
                     aria-hidden="true"
+                    class="blockDecorations-container"
+                    role="presentation"
+                  />
+                  <div
+                    aria-hidden="true"
                     class="view-zones"
                     role="presentation"
                     style="position: absolute;"
@@ -448,7 +452,7 @@ exports[`CodeEditor matches snapshot without props 1`] = `
                     class="view-lines monaco-mouse-cursor-text"
                     data-mprt="7"
                     role="presentation"
-                    style="position: absolute; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; font-feature-settings: \\"liga\\" off, \\"calt\\" off; line-height: 19px; letter-spacing: 0px; width: 26px; height: 5px;"
+                    style="position: absolute; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; font-feature-settings: \\"liga\\" off, \\"calt\\" off; line-height: 19px; letter-spacing: 0px; width: 35px; height: 19px;"
                   >
                     <div
                       class="view-line"
@@ -490,7 +494,7 @@ exports[`CodeEditor matches snapshot without props 1`] = `
                   aria-hidden="true"
                   class="decorationsOverviewRuler"
                   height="5"
-                  style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; right: 0px; width: 14px; height: 5px;"
+                  style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; right: 0px; width: 14px; height: 5px; display: block;"
                   width="14"
                 />
                 <div
@@ -501,7 +505,7 @@ exports[`CodeEditor matches snapshot without props 1`] = `
                 >
                   <div
                     class="slider"
-                    style="position: absolute; top: 0px; left: 0px; width: 14px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 5px;"
+                    style="position: absolute; top: 0px; left: 0px; width: 14px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 20px;"
                   />
                 </div>
               </div>
@@ -575,11 +579,6 @@ exports[`CodeEditor matches snapshot without props 1`] = `
             <div
               class="overflowingContentWidgets"
               data-mprt="2"
-            />
-            <div
-              aria-hidden="true"
-              class="context-view"
-              style="display: none;"
             />
           </div>
         </div>

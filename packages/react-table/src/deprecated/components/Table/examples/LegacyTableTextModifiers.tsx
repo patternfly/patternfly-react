@@ -1,5 +1,6 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, cellWidth, TableText, TableProps } from '@patternfly/react-table';
+import { cellWidth, TableText } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 // This example has been simplified to focus on the text modifier props. In real usage,
 // you may want to derive your rows from typed underlying data and minimal state. See other examples.

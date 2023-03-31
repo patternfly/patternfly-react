@@ -12,7 +12,7 @@ import {
   ToolbarItem,
   Pagination
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 interface Repository {
@@ -360,7 +360,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       {toolbar}
-      <TableComposable aria-label="Selectable table">
+      <Table aria-label="Selectable table">
         <Thead>
           <Tr>
             <Th />
@@ -404,7 +404,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
             </Tr>
           ))}
         </Tbody>
-      </TableComposable>
+      </Table>
     </React.Fragment>
   );
 };

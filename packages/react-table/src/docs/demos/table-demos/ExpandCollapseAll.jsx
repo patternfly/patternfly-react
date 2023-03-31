@@ -1,5 +1,7 @@
 import React from 'react';
-import { Card, Label, PageSection, Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
+import { Card, Label, PageSection } from '@patternfly/react-core';
+import { expandable } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import { TextVariants } from '@patternfly/react-core';
 
@@ -178,7 +180,7 @@ class ExpandCollapseAllTableDemo extends React.Component {
       if (collapseAll) {
         this.setState(() => {
           return {
-            expandedServerNames: isOpen ? [...serverData.map((server) => server.name)] : [] 
+            expandedServerNames: isOpen ? [...serverData.map((server) => server.name)] : []
           };
         });
 
