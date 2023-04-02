@@ -19,7 +19,7 @@ import { ChartLegendTooltipStyles } from '../ChartTheme/ChartStyles';
  *
  * See https://github.com/FormidableLabs/victory/tree/main/packages/victory-core/src/victory-label
  */
-export interface ChartLegendLabelProps extends VictoryLabelProps {
+export interface ChartLegendTooltipLabelProps extends VictoryLabelProps {
   /**
    * The active prop specifies whether the label is active or not. The active prop is set by defaultEvents in components
    * like ChartTooltip and VictorySelectionContainer. The active prop is used when evaluating functional styles and
@@ -64,7 +64,7 @@ export interface ChartLegendLabelProps extends VictoryLabelProps {
    * Victory components can pass a datum prop to their label component. This can be used to calculate functional styles,
    * and determine child text
    */
-  datum?: {};
+  datum?: any;
   /**
    * The desc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. The more
    * descriptive this title is, the more useful it will be for people using screen readers.
@@ -232,7 +232,7 @@ export interface ChartLegendLabelProps extends VictoryLabelProps {
   y?: number;
 }
 
-export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelProps> = ({
+export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendTooltipLabelProps> = ({
   dx = 0,
   index = 0,
   legendData,
@@ -246,7 +246,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelPr
 
   // destructure last
   ...rest
-}: ChartLegendLabelProps) => {
+}: ChartLegendTooltipLabelProps) => {
   const getStyle = (styles: any) => {
     const applyDefaultStyle = (customStyle: React.CSSProperties) =>
       defaults(

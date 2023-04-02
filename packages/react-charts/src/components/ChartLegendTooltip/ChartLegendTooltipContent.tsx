@@ -42,7 +42,7 @@ export interface ChartLegendTooltipContentProps {
    * Victory components can pass a datum prop to their label component. This can be used to calculate functional styles,
    * and determine child text
    */
-  datum?: {};
+  datum?: any;
   /**
    * The dx prop defines a horizontal shift from the x coordinate.
    *
@@ -273,6 +273,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
   // Returns the label component
   const getLabelComponent = () =>
     React.cloneElement(labelComponent, {
+      datum,
       dx: maxLegendDimensions.width - minLegendDimensions.width,
       legendData: visibleLegendData,
       ...labelComponent.props
@@ -295,7 +296,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
     });
   };
 
-  // Returns the legebd component
+  // Returns the legend component
   const getLegendComponent = () =>
     React.cloneElement(legendComponent, {
       data: getLegendTooltipVisibleData({

@@ -348,7 +348,7 @@ class EmbeddedHtml extends React.Component {
     );
 
     return (
-      <div ref={this.containerRef} style={{ height: '225px', width: '650px' }}>
+      <div style={{ height: '225px', width: '650px' }}>
         <Chart
           ariaDesc="Average number of pets - possibly more information to summarize the data in the chart."
           ariaTitle="Embedded html example chart title"

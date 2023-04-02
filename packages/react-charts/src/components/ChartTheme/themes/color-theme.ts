@@ -30,7 +30,15 @@ export const ColorTheme = (props: ColorThemeInterface) => {
       }
     },
     boxplot: {
-      colorScale: COLOR_SCALE
+      colorScale: COLOR_SCALE,
+      style: {
+        q1: {
+          fill: COLOR_SCALE[0],
+        },
+        q3: {
+          fill: COLOR_SCALE[0],
+        },
+      },
     },
     candlestick: {
       colorScale: COLOR_SCALE

@@ -3,6 +3,7 @@ export * from './Chart/Chart';
 export * from './ChartArea/ChartArea';
 export * from './ChartAxis/ChartAxis';
 export * from './ChartBar/ChartBar';
+export * from './ChartBoxPlot/ChartBoxPlot';
 export * from './ChartBullet/ChartBullet';
 export * from './ChartBullet/ChartBulletComparativeErrorMeasure';
 export * from './ChartBullet/ChartBulletComparativeMeasure';

@@ -131,12 +131,12 @@ export const getLegendTooltipSize = ({
   // Find max char lengths
   let maxDataLength = 0;
   let maxTextLength = 0;
-  _text.map((name: string, index: number) => {
-    if (name) {
-      if (name.length > maxTextLength) {
-        maxTextLength = name.length;
+  _text.map((item: string, index: number) => {
+    if (item) {
+      if (item.length > maxTextLength) {
+        maxTextLength = item.length;
       }
-      const hasData = legendData && legendData[index] && legendData[index].name;
+      const hasData = legendData && legendData[index] && legendData[index].name !== undefined;
       if (hasData) {
         if (legendData[index].name.length > maxDataLength) {
           maxDataLength = legendData[index].name.length;
@@ -147,7 +147,7 @@ export const getLegendTooltipSize = ({
 
   // Set length to ensure minimum spacing between label and value
   let maxLength = maxDataLength + maxTextLength;
-  if (maxDataLength < 20) {
+  if (maxDataLength < 20 && maxLength < 30) {
     maxLength += 2;
   }
 
@@ -176,7 +176,7 @@ export const getLegendTooltipSize = ({
   // {name: "Birds        4"}
   // {name: "Mice         3"}
   const data = _text.map((label: string, index: number) => {
-    const hasData = legendData && legendData[index] && legendData[index].name;
+    const hasData = legendData && legendData[index] && legendData[index].name !== undefined;
     const spacing = hasData ? getSpacing(legendData[index].name, label) : '';
 
     return {

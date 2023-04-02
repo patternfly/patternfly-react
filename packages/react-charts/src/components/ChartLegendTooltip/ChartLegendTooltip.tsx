@@ -329,8 +329,8 @@ interface FlyoutProps {
 
 export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps> = ({
   activePoints,
-  datum,
   center = { x: 0, y: 0 },
+  datum,
   flyoutHeight,
   flyoutWidth,
   height,
