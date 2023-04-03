@@ -63,7 +63,7 @@ import { Chart, ChartAxis, ChartBoxPlot } from '@patternfly/react-charts';
 </div>
 ```
 
-### Green with bottom aligned legend
+### Labels with bottom aligned legend
 
 This demonstrates how to display labels.
 
