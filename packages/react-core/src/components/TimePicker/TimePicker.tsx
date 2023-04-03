@@ -538,7 +538,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
             </div>
           </InputGroup>
           {isInvalid && (
-            <div className={css(datePickerStyles.datePickerHelperText, datePickerStyles.modifiers.error)}>
+            <div className={css(datePickerStyles.datePickerHelperText)}>
               {!isValidFormat ? invalidFormatErrorMessage : invalidMinMaxErrorMessage}
             </div>
           )}

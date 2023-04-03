@@ -50,7 +50,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
           'li > button:not(:disabled), li > a:not(:disabled), input:not(:disabled)'
         );
         firstElement && (firstElement as HTMLElement).focus();
-        setRefFullOptions(Array.from(menuRef.current.querySelectorAll('li:not(li[role=separator])')));
+        setRefFullOptions(Array.from(menuRef.current.querySelectorAll('li:not(li[role=separator])>*:first-child')));
       }
     }, 0);
     setIsOpen(!isOpen);
@@ -265,14 +265,5 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return (
-    <Popper
-      trigger={toggle}
-      triggerRef={toggleRef}
-      popper={menu}
-      popperRef={menuRef}
-      isVisible={isOpen}
-      popperMatchesTriggerWidth={false}
-    />
-  );
+  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
 };

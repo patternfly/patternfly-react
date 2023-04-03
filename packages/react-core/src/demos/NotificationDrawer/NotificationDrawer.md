@@ -11,6 +11,16 @@ import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import {
+Dropdown as DropdownDeprecated,
+DropdownGroup as DropdownGroupDeprecated,
+DropdownPosition,
+DropdownDirection,
+DropdownToggle,
+DropdownItem as DropdownItemDeprecated,
+DropdownSeparator,
+KebabToggle
+} from '@patternfly/react-core/deprecated';
 
 ## Demos
 
@@ -30,19 +40,13 @@ import {
   BreadcrumbItem,
   Button,
   ButtonVariant,
-  Dropdown,
-  DropdownGroup,
-  DropdownPosition,
-  DropdownDirection,
-  DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
   EmptyState,
+  EmptyStateActions,
   EmptyStateBody,
   EmptyStateIcon,
-  EmptyStatePrimary,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateVariant,
-  KebabToggle,
   Nav,
   NavItem,
   NavList,
@@ -73,6 +77,16 @@ import {
   ToolbarGroup,
   ToolbarContent
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownGroup as DropdownGroupDeprecated,
+  DropdownPosition,
+  DropdownDirection,
+  DropdownToggle,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownSeparator,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -104,7 +118,7 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
 
-    this.onDropdownSelect = event => {
+    this.onDropdownSelect = (event) => {
       this.setState({
         isDropdownOpen: !this.state.isDropdownOpen
       });
@@ -116,20 +130,20 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
 
-    this.onKebabDropdownSelect = event => {
+    this.onKebabDropdownSelect = (event) => {
       this.setState({
         isKebabDropdownOpen: !this.state.isKebabDropdownOpen
       });
     };
 
-    this.onNavSelect = result => {
+    this.onNavSelect = (result) => {
       this.setState({
         activeItem: result.itemId
       });
     };
 
     this.onCloseNotificationDrawer = () => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         return {
           isDrawerExpanded: !prevState.isDrawerExpanded
         };
@@ -142,14 +156,14 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
 
-    this.onSelect = event => {
+    this.onSelect = (event) => {
       this.setState({
         isActionsMenuOpen: null
       });
     };
 
-    this.onListItemClick = id => {
-      this.setState(prevState => {
+    this.onListItemClick = (id) => {
+      this.setState((prevState) => {
         if (!prevState.isUnreadMap) return;
         prevState.isUnreadMap[id] = false;
         return {
@@ -172,7 +186,7 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
 
-    this.showNotifications = showNotifications => {
+    this.showNotifications = (showNotifications) => {
       this.setState({
         isUnreadMap: null,
         showNotifications: showNotifications
@@ -219,21 +233,21 @@ class BasicNotificationDrawer extends React.Component {
       </Nav>
     );
     const kebabDropdownItems = [
-      <DropdownItem>
+      <DropdownItemDeprecated>
         <CogIcon /> Settings
-      </DropdownItem>,
-      <DropdownItem>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated>
         <HelpIcon /> Help
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
     const userDropdownItems = [
-      <DropdownGroup key="group 2">
-        <DropdownItem key="group 2 profile">My profile</DropdownItem>
-        <DropdownItem key="group 2 user" component="button">
+      <DropdownGroupDeprecated key="group 2">
+        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 user" component="button">
           User management
-        </DropdownItem>
-        <DropdownItem key="group 2 logout">Logout</DropdownItem>
-      </DropdownGroup>
+        </DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
+      </DropdownGroupDeprecated>
     ];
     const headerToolbar = (
       <Toolbar>
@@ -275,7 +289,7 @@ class BasicNotificationDrawer extends React.Component {
                   lg: 'hidden'
                 }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
               >
-                <Dropdown
+                <DropdownDeprecated
                   isPlain
                   position="right"
                   onSelect={this.onKebabDropdownSelect}
@@ -287,7 +301,7 @@ class BasicNotificationDrawer extends React.Component {
               <ToolbarItem
                 visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
               >
-                <Dropdown
+                <DropdownDeprecated
                   position="right"
                   onSelect={this.onDropdownSelect}
                   isOpen={isDropdownOpen}
@@ -338,35 +352,35 @@ class BasicNotificationDrawer extends React.Component {
     const drawerContent = 'Panel content';
 
     const notificationDrawerActions = [
-      <DropdownItem key="markAllRead" onClick={this.markAllRead} component="button">
+      <DropdownItemDeprecated key="markAllRead" onClick={this.markAllRead} component="button">
         Mark all read
-      </DropdownItem>,
-      <DropdownItem key="clearAll" onClick={() => this.showNotifications(false)} component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="clearAll" onClick={() => this.showNotifications(false)} component="button">
         Clear all
-      </DropdownItem>,
-      <DropdownItem key="unclearLast" onClick={() => this.showNotifications(true)} component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="unclearLast" onClick={() => this.showNotifications(true)} component="button">
         Unclear last
-      </DropdownItem>,
-      <DropdownItem key="settings" component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="settings" component="button">
         Settings
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const notificationDrawerDropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
+      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action" component="button">
         Action
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="disabled link" isDisabled>
+      <DropdownItemDeprecated key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const notificationDrawer = (
       <NotificationDrawer ref={this.drawerRef}>
         <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
-          <Dropdown
+          <DropdownDeprecated
             onSelect={this.onSelect}
             toggle={
               <KebabToggle onToggle={(_event, isOpen) => this.onToggle('toggle-id-0', isOpen)} id="toggle-id-0" />
@@ -391,7 +405,7 @@ class BasicNotificationDrawer extends React.Component {
                   title="Unread info notification title"
                   srTitle="Info notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     onSelect={this.onSelect}
                     toggle={
@@ -420,7 +434,7 @@ class BasicNotificationDrawer extends React.Component {
                   title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
                   srTitle="Danger notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     onSelect={this.onSelect}
                     toggle={
@@ -450,7 +464,7 @@ class BasicNotificationDrawer extends React.Component {
                   title="Read warning notification title"
                   srTitle="Warning notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     onSelect={this.onSelect}
                     toggle={
@@ -479,7 +493,7 @@ class BasicNotificationDrawer extends React.Component {
                   title="Read success notification title"
                   srTitle="Success notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     direction={DropdownDirection.up}
                     onSelect={this.onSelect}
@@ -503,16 +517,19 @@ class BasicNotificationDrawer extends React.Component {
           )}
           {!showNotifications && (
             <EmptyState variant={EmptyStateVariant.full}>
-              <EmptyStateIcon icon={SearchIcon} />
-              <Title headingLevel="h2" size="lg">
-                No alerts found
-              </Title>
+              <EmptyStateHeader
+                headingLevel="h2"
+                titleText="No results found"
+                icon={<EmptyStateIcon icon={SearchIcon} />}
+              />
               <EmptyStateBody>
                 There are currently no alerts. There may be silenced critical alerts however.
               </EmptyStateBody>
-              <EmptyStatePrimary>
-                <Button variant="link">Action</Button>
-              </EmptyStatePrimary>
+              <EmptyStateFooter>
+                <EmptyStateActions>
+                  <Button variant="link">Action</Button>
+                </EmptyStateActions>
+              </EmptyStateFooter>
             </EmptyState>
           )}
         </NotificationDrawerBody>
@@ -564,19 +581,13 @@ import {
   BreadcrumbItem,
   Button,
   ButtonVariant,
-  Dropdown,
-  DropdownGroup,
-  DropdownPosition,
-  DropdownDirection,
-  DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
   EmptyState,
+  EmptyStateActions,
   EmptyStateBody,
   EmptyStateIcon,
-  EmptyStatePrimary,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateVariant,
-  KebabToggle,
   Nav,
   NavItem,
   NavList,
@@ -609,6 +620,16 @@ import {
   ToolbarGroup,
   ToolbarContent
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownGroup as DropdownGroupDeprecated,
+  DropdownPosition,
+  DropdownDirection,
+  DropdownToggle,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownSeparator,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
@@ -650,7 +671,7 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
 
-    this.onDropdownSelect = event => {
+    this.onDropdownSelect = (event) => {
       this.setState({
         isDropdownOpen: !this.state.isDropdownOpen
       });
@@ -662,20 +683,20 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
 
-    this.onKebabDropdownSelect = event => {
+    this.onKebabDropdownSelect = (event) => {
       this.setState({
         isKebabDropdownOpen: !this.state.isKebabDropdownOpen
       });
     };
 
-    this.onNavSelect = result => {
+    this.onNavSelect = (result) => {
       this.setState({
         activeItem: result.itemId
       });
     };
 
     this.onCloseNotificationDrawer = () => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         return {
           isDrawerExpanded: !prevState.isDrawerExpanded
         };
@@ -688,14 +709,14 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
 
-    this.onSelect = event => {
+    this.onSelect = (event) => {
       this.setState({
         isActionsMenuOpen: null
       });
     };
 
     this.onListItemClick = (groupId, id) => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         if (!prevState.isUnreadMap || !prevState.isUnreadMap[groupId]) return;
         console.log(prevState.isUnreadMap);
         prevState.isUnreadMap[groupId][id] = false;
@@ -710,7 +731,7 @@ class GroupedNotificationDrawer extends React.Component {
       return isUnreadMap && isUnreadMap[groupId] && isUnreadMap[groupId][id];
     };
 
-    this.getNumberUnread = groupId => {
+    this.getNumberUnread = (groupId) => {
       const { isUnreadMap } = this.state;
       if (isUnreadMap === null) return 0;
 
@@ -737,7 +758,7 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
 
-    this.showNotifications = showNotifications => {
+    this.showNotifications = (showNotifications) => {
       this.setState({
         isUnreadMap: null,
         showNotifications: showNotifications
@@ -808,21 +829,21 @@ class GroupedNotificationDrawer extends React.Component {
       </Nav>
     );
     const kebabDropdownItems = [
-      <DropdownItem>
+      <DropdownItemDeprecated>
         <CogIcon /> Settings
-      </DropdownItem>,
-      <DropdownItem>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated>
         <HelpIcon /> Help
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
     const userDropdownItems = [
-      <DropdownGroup key="group 2">
-        <DropdownItem key="group 2 profile">My profile</DropdownItem>
-        <DropdownItem key="group 2 user" component="button">
+      <DropdownGroupDeprecated key="group 2">
+        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 user" component="button">
           User management
-        </DropdownItem>
-        <DropdownItem key="group 2 logout">Logout</DropdownItem>
-      </DropdownGroup>
+        </DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
+      </DropdownGroupDeprecated>
     ];
     const headerToolbar = (
       <Toolbar>
@@ -864,7 +885,7 @@ class GroupedNotificationDrawer extends React.Component {
                   lg: 'hidden'
                 }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
               >
-                <Dropdown
+                <DropdownDeprecated
                   isPlain
                   position="right"
                   onSelect={this.onKebabDropdownSelect}
@@ -876,7 +897,7 @@ class GroupedNotificationDrawer extends React.Component {
               <ToolbarItem
                 visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
               >
-                <Dropdown
+                <DropdownDeprecated
                   position="right"
                   onSelect={this.onDropdownSelect}
                   isOpen={isDropdownOpen}
@@ -927,35 +948,35 @@ class GroupedNotificationDrawer extends React.Component {
     const drawerContent = 'Panel content';
 
     const notificationDrawerDropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
+      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action" component="button">
         Action
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="disabled link" isDisabled>
+      <DropdownItemDeprecated key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const notificationDrawerActions = [
-      <DropdownItem key="markAllRead" onClick={this.markAllRead} component="button">
+      <DropdownItemDeprecated key="markAllRead" onClick={this.markAllRead} component="button">
         Mark all read
-      </DropdownItem>,
-      <DropdownItem key="clearAll" onClick={() => this.showNotifications(false)} component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="clearAll" onClick={() => this.showNotifications(false)} component="button">
         Clear all
-      </DropdownItem>,
-      <DropdownItem key="unclearLast" onClick={() => this.showNotifications(true)} component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="unclearLast" onClick={() => this.showNotifications(true)} component="button">
         Unclear last
-      </DropdownItem>,
-      <DropdownItem key="settings" component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="settings" component="button">
         Settings
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const notificationDrawer = (
       <NotificationDrawer ref={this.drawerRef}>
         <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
-          <Dropdown
+          <DropdownDeprecated
             onSelect={this.onSelect}
             toggle={
               <KebabToggle onToggle={(_event, isOpen) => this.onToggle('toggle-id-0', isOpen)} id="toggle-id-0" />
@@ -987,7 +1008,7 @@ class GroupedNotificationDrawer extends React.Component {
                       title="Unread info notification title"
                       srTitle="Info notification:"
                     >
-                      <Dropdown
+                      <DropdownDeprecated
                         position={DropdownPosition.right}
                         onSelect={this.onSelect}
                         toggle={
@@ -1016,7 +1037,7 @@ class GroupedNotificationDrawer extends React.Component {
                       title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
                       srTitle="Danger notification:"
                     >
-                      <Dropdown
+                      <DropdownDeprecated
                         position={DropdownPosition.right}
                         onSelect={this.onSelect}
                         toggle={
@@ -1046,7 +1067,7 @@ class GroupedNotificationDrawer extends React.Component {
                       title="Read warning notification title"
                       srTitle="Warning notification:"
                     >
-                      <Dropdown
+                      <DropdownDeprecated
                         position={DropdownPosition.right}
                         onSelect={this.onSelect}
                         toggle={
@@ -1075,7 +1096,7 @@ class GroupedNotificationDrawer extends React.Component {
                       title="Read success notification title"
                       srTitle="Success notification:"
                     >
-                      <Dropdown
+                      <DropdownDeprecated
                         position={DropdownPosition.right}
                         direction={DropdownDirection.up}
                         onSelect={this.onSelect}
@@ -1114,7 +1135,7 @@ class GroupedNotificationDrawer extends React.Component {
                       title="Unread info notification title"
                       srTitle="Info notification:"
                     >
-                      <Dropdown
+                      <DropdownDeprecated
                         position={DropdownPosition.right}
                         onSelect={this.onSelect}
                         toggle={
@@ -1143,7 +1164,7 @@ class GroupedNotificationDrawer extends React.Component {
                       title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
                       srTitle="Danger notification:"
                     >
-                      <Dropdown
+                      <DropdownDeprecated
                         position={DropdownPosition.right}
                         onSelect={this.onSelect}
                         toggle={
@@ -1173,7 +1194,7 @@ class GroupedNotificationDrawer extends React.Component {
                       title="Read warning notification title"
                       srTitle="Warning notification:"
                     >
-                      <Dropdown
+                      <DropdownDeprecated
                         position={DropdownPosition.right}
                         onSelect={this.onSelect}
                         toggle={
@@ -1202,7 +1223,7 @@ class GroupedNotificationDrawer extends React.Component {
                       title="Read success notification title"
                       srTitle="Success notification:"
                     >
-                      <Dropdown
+                      <DropdownDeprecated
                         position={DropdownPosition.right}
                         direction={DropdownDirection.up}
                         onSelect={this.onSelect}
@@ -1232,17 +1253,20 @@ class GroupedNotificationDrawer extends React.Component {
               >
                 <NotificationDrawerList isHidden={!thirdDrawerGroupExpanded}>
                   <EmptyState variant={EmptyStateVariant.full}>
-                    <EmptyStateIcon icon={SearchIcon} />
-                    <Title headingLevel="h2" size="lg">
-                      No alerts found
-                    </Title>
+                    <EmptyStateHeader
+                      headingLevel="h2"
+                      titleText="No alerts found"
+                      icon={<EmptyStateIcon icon={SearchIcon} />}
+                    />
                     <EmptyStateBody>
                       There are currently no critical alerts firing. There may be firing alerts of other severities or
                       silenced critical alerts however.
                     </EmptyStateBody>
-                    <EmptyStatePrimary>
-                      <Button variant="link">Action</Button>
-                    </EmptyStatePrimary>
+                    <EmptyStateFooter>
+                      <EmptyStateActions>
+                        <Button variant="link">Action</Button>
+                      </EmptyStateActions>
+                    </EmptyStateFooter>
                   </EmptyState>
                 </NotificationDrawerList>
               </NotificationDrawerGroup>
@@ -1250,16 +1274,19 @@ class GroupedNotificationDrawer extends React.Component {
           )}
           {!showNotifications && (
             <EmptyState variant={EmptyStateVariant.full}>
-              <EmptyStateIcon icon={SearchIcon} />
-              <Title headingLevel="h2" size="lg">
-                No alerts found
-              </Title>
+              <EmptyStateHeader
+                headingLevel="h2"
+                titleText="No alerts found"
+                icon={<EmptyStateIcon icon={SearchIcon} />}
+              />
               <EmptyStateBody>
                 There are currently no alerts. There may be silenced critical alerts however.
               </EmptyStateBody>
-              <EmptyStatePrimary>
-                <Button variant="link">Action</Button>
-              </EmptyStatePrimary>
+              <EmptyStateFooter>
+                <EmptyStateActions>
+                  <Button variant="link">Action</Button>
+                </EmptyStateActions>
+              </EmptyStateFooter>
             </EmptyState>
           )}
         </NotificationDrawerBody>

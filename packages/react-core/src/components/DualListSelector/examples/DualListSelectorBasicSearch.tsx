@@ -10,7 +10,11 @@ export const DualListSelectorBasicSearch: React.FunctionComponent = () => {
   ]);
   const [chosenOptions, setChosenOptions] = React.useState<React.ReactNode[]>([]);
 
-  const onListChange = (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => {
+  const onListChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newAvailableOptions: React.ReactNode[],
+    newChosenOptions: React.ReactNode[]
+  ) => {
     setAvailableOptions(newAvailableOptions.sort());
     setChosenOptions(newChosenOptions.sort());
   };

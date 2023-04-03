@@ -9,14 +9,16 @@ import {
   DataListContent,
   DataListItemCells,
   DataListItemRow,
-  Dropdown,
-  DropdownItem,
-  KebabToggle,
-  DropdownPosition,
   Text,
   TextVariants,
   TextContent
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  KebabToggle,
+  DropdownPosition
+} from '@patternfly/react-core/deprecated';
 
 export const DataListWidthModifiers: React.FunctionComponent = () => {
   const [show, setShow] = React.useState(true);
@@ -112,20 +114,20 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                 aria-label="Actions"
                 isPlainButtonAction
               >
-                <Dropdown
+                <DropdownDeprecated
                   isPlain
                   position={DropdownPosition.right}
                   isOpen={isOpen1}
                   onSelect={onSelect1}
                   toggle={<KebabToggle onToggle={onToggle1} />}
                   dropdownItems={[
-                    <DropdownItem key="link">Link</DropdownItem>,
-                    <DropdownItem key="action" component="button">
+                    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+                    <DropdownItemDeprecated key="action" component="button">
                       Action
-                    </DropdownItem>,
-                    <DropdownItem key="disabled link" isDisabled>
+                    </DropdownItemDeprecated>,
+                    <DropdownItemDeprecated key="disabled link" isDisabled>
                       Disabled Link
-                    </DropdownItem>
+                    </DropdownItemDeprecated>
                   ]}
                 />
               </DataListAction>
@@ -172,20 +174,20 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                 aria-label="Actions"
                 isPlainButtonAction
               >
-                <Dropdown
+                <DropdownDeprecated
                   isPlain
                   position={DropdownPosition.right}
                   isOpen={isOpen2}
                   onSelect={onSelect2}
                   toggle={<KebabToggle onToggle={onToggle2} />}
                   dropdownItems={[
-                    <DropdownItem key="link">Link</DropdownItem>,
-                    <DropdownItem key="action" component="button">
+                    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+                    <DropdownItemDeprecated key="action" component="button">
                       Action
-                    </DropdownItem>,
-                    <DropdownItem key="disabled link" isDisabled>
+                    </DropdownItemDeprecated>,
+                    <DropdownItemDeprecated key="disabled link" isDisabled>
                       Disabled Link
-                    </DropdownItem>
+                    </DropdownItemDeprecated>
                   ]}
                 />
               </DataListAction>

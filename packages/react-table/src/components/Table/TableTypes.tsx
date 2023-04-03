@@ -1,10 +1,7 @@
-import { DropdownItemProps } from '@patternfly/react-core/next';
+import { DropdownItemProps } from '@patternfly/react-core';
 import { formatterValueType, ColumnType, RowType, RowKeyType, HeaderType } from './base';
 import { SortByDirection } from './SortColumn';
-import {
-  DropdownDirection,
-  DropdownPosition
-} from '@patternfly/react-core/dist/esm/components/Dropdown/dropdownConstants';
+import { DropdownDirection, DropdownPosition } from '@patternfly/react-core/dist/esm/deprecated/components';
 import * as React from 'react';
 import { CustomActionsToggleProps } from './ActionsColumn';
 import { ButtonProps } from '@patternfly/react-core';
@@ -157,6 +154,10 @@ export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'>, P
   itemKey?: string;
   /** Content to display in the actions menu item */
   title?: string | React.ReactNode;
+  /** Tooltip to display when hovered over the item */
+  tooltip?: React.ReactNode;
+  /** Additional props forwarded to the tooltip component */
+  tooltipProps?: any;
   /** Click handler for the actions menu item */
   onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
   /** Flag indicating this action should be placed outside the actions menu, beside the toggle */

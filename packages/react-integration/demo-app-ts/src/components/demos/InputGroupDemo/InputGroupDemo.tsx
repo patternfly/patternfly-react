@@ -12,13 +12,15 @@ import {
   InputGroupText,
   InputGroupTextVariant,
   TextInput,
-  Dropdown,
-  DropdownToggle,
-  DropdownItem,
   Popover,
   PopoverPosition,
   ValidatedOptions
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownToggle,
+  DropdownItem as DropdownItemDeprecated
+} from '@patternfly/react-core/deprecated';
 
 interface InputGroupState {
   isOpen: boolean;
@@ -40,7 +42,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
         isOpen
       });
     };
-    this.onSelect = event => {
+    this.onSelect = (event) => {
       this.setState({
         isOpen: false,
         selected: event.currentTarget.value
@@ -79,7 +81,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
         <br />
         <br />
         <InputGroup>
-          <Dropdown
+          <DropdownDeprecated
             onSelect={this.onSelect}
             toggle={
               <DropdownToggle onToggle={this.onToggle}>
@@ -88,17 +90,17 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
             }
             isOpen={this.state.isOpen}
             dropdownItems={[
-              <DropdownItem key="opt-1" value="Option 1" component="button">
+              <DropdownItemDeprecated key="opt-1" value="Option 1" component="button">
                 Option 1
-              </DropdownItem>,
-              <DropdownItem key="opt-2" value="Option 2" component="button">
+              </DropdownItemDeprecated>,
+              <DropdownItemDeprecated key="opt-2" value="Option 2" component="button">
                 Option 2
-              </DropdownItem>,
-              <DropdownItem key="opt-3" value="Option 3" component="button">
+              </DropdownItemDeprecated>,
+              <DropdownItemDeprecated key="opt-3" value="Option 3" component="button">
                 Option 3
-              </DropdownItem>
+              </DropdownItemDeprecated>
             ]}
-          ></Dropdown>
+          ></DropdownDeprecated>
           <TextInput id="textInput3" aria-label="input with dropdown and button" />
           <Button id="inputDropdownButton1" variant={ButtonVariant.control}>
             Button

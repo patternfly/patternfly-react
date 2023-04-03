@@ -170,7 +170,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         className,
         textCenter && styles.modifiers.center,
         isSubheader && styles.tableSubhead,
-        isStickyColumn && scrollStyles.tableStickyColumn,
+        isStickyColumn && scrollStyles.tableStickyCell, // TODO: further updates will be made  with issue #8829
         hasRightBorder && scrollStyles.modifiers.borderRight,
         modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],
         mergedClassName

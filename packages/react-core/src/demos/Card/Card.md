@@ -1,6 +1,6 @@
 ---
 id: Card view
-section: demos
+section: patterns
 ---
 
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
@@ -18,6 +18,17 @@ import sparkIcon from './camel-spark_200x150.png';
 import swaggerIcon from './camel-swagger-java_200x150.png';
 import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+
+import {
+Dropdown as DropdownDeprecated,
+DropdownToggle,
+DropdownItem as DropdownItemDeprecated,
+DropdownSeparator,
+DropdownPosition,
+DropdownToggleCheckbox,
+KebabToggle,
+} from '@patternfly/react-core/deprecated';
 
 ## Demos
 
@@ -36,17 +47,15 @@ import {
   CardBody,
   Checkbox,
   Dropdown,
-  DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownToggleCheckbox,
+  DropdownList,
   EmptyState,
+  EmptyStateHeader,
   EmptyStateIcon,
+  EmptyStateFooter,
   EmptyStateVariant,
-  EmptyStateSecondaryActions,
+  EmptyStateActions,
   Gallery,
-  KebabToggle,
+  MenuToggle,
   OverflowMenu,
   OverflowMenuControl,
   OverflowMenuDropdownItem,
@@ -65,6 +74,16 @@ import {
   ToolbarFilter,
   ToolbarContent
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownToggle,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownSeparator,
+  DropdownPosition,
+  DropdownToggleCheckbox,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -118,9 +137,9 @@ class CardViewBasic extends React.Component {
       }));
     };
 
-    this.onToolbarKebabDropdownToggle = (_event, isLowerToolbarKebabDropdownOpen) => {
+    this.onToolbarKebabDropdownToggle = () => {
       this.setState({
-        isLowerToolbarKebabDropdownOpen
+        isOpen: !this.state.isLowerToolbarKebabDropdownOpen
       });
     };
 
@@ -403,19 +422,19 @@ class CardViewBasic extends React.Component {
     const someChecked = anySelected ? null : false;
     const isChecked = allSelected ? true : someChecked;
     const splitButtonDropdownItems = [
-      <DropdownItem key="item-1" onClick={this.selectNone.bind(this)}>
+      <DropdownItemDeprecated key="item-1" onClick={this.selectNone.bind(this)}>
         Select none (0 items)
-      </DropdownItem>,
-      <DropdownItem key="item-2" onClick={this.selectPage.bind(this)}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-2" onClick={this.selectPage.bind(this)}>
         Select page ({this.state.perPage} items)
-      </DropdownItem>,
-      <DropdownItem key="item-3" onClick={this.selectAll.bind(this)}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-3" onClick={this.selectAll.bind(this)}>
         Select all ({this.state.totalItemCount} items)
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     return (
-      <Dropdown
+      <DropdownDeprecated
         position={DropdownPosition.left}
         onSelect={this.onSplitButtonSelect}
         toggle={
@@ -493,19 +512,23 @@ class CardViewBasic extends React.Component {
     } = this.state;
 
     const toolbarKebabDropdownItems = [
-      <OverflowMenuDropdownItem key="link">Link</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="action" component="button">
+      <OverflowMenuDropdownItem itemId={0} key="link">
+        Link
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem itemId={1} key="action" component="button">
         Action
       </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="disabled link" isDisabled>
+      <OverflowMenuDropdownItem itemId={2} key="disabled link" isDisabled>
         Disabled Link
       </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="disabled action" isDisabled component="button">
+      <OverflowMenuDropdownItem itemId={3} key="disabled action" isDisabled component="button">
         Disabled Action
       </OverflowMenuDropdownItem>,
-      <DropdownSeparator key="separator" />,
-      <OverflowMenuDropdownItem key="separated link">Separated Link</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="separated action" component="button">
+      <DropdownSeparator itemId={4} key="separator" />,
+      <OverflowMenuDropdownItem itemId={5} key="separated link">
+        Separated Link
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem itemId={6} key="separated action" component="button">
         Separated Action
       </OverflowMenuDropdownItem>
     ];
@@ -522,13 +545,21 @@ class CardViewBasic extends React.Component {
             <OverflowMenuControl hasAdditionalOptions>
               <Dropdown
                 onSelect={this.onToolbarKebabDropdownSelect}
-                toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
+                toggle={(toggleRef) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    aria-label="Toolbar kebab overflow menu"
+                    variant="plain"
+                    onClick={this.onToolbarKebabDropdownToggle}
+                    isExpanded={isLowerToolbarKebabDropdownOpen}
+                  >
+                    <EllipsisVIcon />
+                  </MenuToggle>
+                )}
                 isOpen={isLowerToolbarKebabDropdownOpen}
-                isPlain
-                dropdownItems={toolbarKebabDropdownItems}
-                isFlipEnabled
-                menuAppendTo="parent"
-              />
+              >
+                <DropdownList>{toolbarKebabDropdownItems}</DropdownList>
+              </Dropdown>
             </OverflowMenuControl>
           </OverflowMenu>
         </ToolbarItem>
@@ -558,36 +589,6 @@ class CardViewBasic extends React.Component {
       swaggerIcon
     };
 
-    const headerActions = (
-      <>
-        <Dropdown
-          isPlain
-          position="right"
-          onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
-          toggle={
-            <KebabToggle
-              onToggle={(_event, isCardKebabDropdownOpen) =>
-                this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
-              }
-            />
-          }
-          isOpen={this.state[key]}
-          dropdownItems={[
-            <DropdownItem key="trash" onClick={this.deleteItem(product)} position="right">
-              <TrashIcon />
-              Delete
-            </DropdownItem>
-          ]}
-        />
-        <Checkbox
-          checked={isChecked}
-          value={product.id}
-          isChecked={selectedItems.includes(product.id)}
-          aria-label="card checkbox example"
-          id={`check-${product.id}`}
-        />
-      </>
-    );
     return (
       <React.Fragment>
         <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
@@ -605,13 +606,16 @@ class CardViewBasic extends React.Component {
               <Card isCompact>
                 <Bullseye>
                   <EmptyState variant={EmptyStateVariant.xs}>
-                    <EmptyStateIcon icon={PlusCircleIcon} />
-                    <Title headingLevel="h2" size="md">
-                      Add a new card to your page
-                    </Title>
-                    <EmptyStateSecondaryActions>
-                      <Button variant="link">Add card</Button>
-                    </EmptyStateSecondaryActions>
+                    <EmptyStateHeader
+                      headingLevel="h2"
+                      titleText="Add a new card to your page"
+                      icon={<EmptyStateIcon icon={PlusCircleIcon} />}
+                    />
+                    <EmptyStateFooter>
+                      <EmptyStateActions>
+                        <Button variant="link">Add card</Button>
+                      </EmptyStateActions>
+                    </EmptyStateFooter>
                   </EmptyState>
                 </Bullseye>
               </Card>
@@ -626,7 +630,40 @@ class CardViewBasic extends React.Component {
                   onSelectableInputChange={() => this.onClick(product.id)}
                   isSelected={selectedItems.includes(product.id)}
                 >
-                  <CardHeader actions={{ actions: headerActions }}>
+                  <CardHeader
+                    actions={{
+                      actions: (
+                        <>
+                          <DropdownDeprecated
+                            isPlain
+                            position="right"
+                            onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
+                            toggle={
+                              <KebabToggle
+                                onToggle={(_event, isCardKebabDropdownOpen) =>
+                                  this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
+                                }
+                              />
+                            }
+                            isOpen={this.state[key]}
+                            dropdownItems={[
+                              <DropdownItemDeprecated key="trash" onClick={this.deleteItem(product)} position="right">
+                                <TrashIcon />
+                                Delete
+                              </DropdownItemDeprecated>
+                            ]}
+                          />
+                          <Checkbox
+                            checked={isChecked}
+                            value={product.id}
+                            isChecked={selectedItems.includes(product.id)}
+                            aria-label="card checkbox example"
+                            id={`check-${product.id}`}
+                          />
+                        </>
+                      )
+                    }}
+                  >
                     <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ maxWidth: '60px' }} />
                   </CardHeader>
                   <CardTitle>{product.name}</CardTitle>

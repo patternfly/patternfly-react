@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "5.0.0-alpha.30",
+  "version": "5.0.0-alpha.51",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -42,18 +42,18 @@
     "build:umd": "rollup -c --environment IS_PRODUCTION",
     "clean": "rimraf dist",
     "generate": "node scripts/copyStyles.js",
-    "subpaths": "node scripts/copySubpaths.js"
+    "subpaths": "node scripts/createSubpaths.js"
   },
   "dependencies": {
-    "@patternfly/react-icons": "^5.0.0-alpha.4",
-    "@patternfly/react-styles": "^5.0.0-alpha.4",
-    "@patternfly/react-tokens": "^5.0.0-alpha.4",
-    "focus-trap": "6.9.2",
+    "@patternfly/react-icons": "^5.0.0-alpha.8",
+    "@patternfly/react-styles": "^5.0.0-alpha.6",
+    "@patternfly/react-tokens": "^5.0.0-alpha.6",
+    "focus-trap": "7.4.0",
     "react-dropzone": "^14.2.3",
-    "tslib": "^2.0.0"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "5.0.0-alpha.24",
+    "@patternfly/patternfly": "5.0.0-alpha.37",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.2",
@@ -67,7 +67,7 @@
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
-    "react": "^16.8 || ^17 || ^18",
-    "react-dom": "^16.8 || ^17 || ^18"
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18"
   }
 }

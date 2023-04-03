@@ -1,6 +1,6 @@
 ---
 id: Password strength
-section: demos
+section: components
 ---
 
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';

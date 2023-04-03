@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
+import { Spinner } from '../Spinner';
 
 export interface IconProps extends Omit<React.HTMLProps<SVGElement>, 'size'> {
   /** Changes the color of the icon.  */
@@ -8,31 +9,27 @@ export interface IconProps extends Omit<React.HTMLProps<SVGElement>, 'size'> {
 }
 
 export interface EmptyStateIconProps extends IconProps {
-  /** Additional classes added to the EmptyState */
+  /** Additional classes added to the empty state icon */
   className?: string;
-  /** Icon component to be rendered inside the EmptyState on icon variant
-   * Usually a CheckCircleIcon, ExclamationCircleIcon, LockIcon, PlusCircleIcon, RocketIcon
-   * SearchIcon, or WrenchIcon */
-  icon?: React.ComponentType<any>;
-  /** Component to be rendered inside the EmptyState on container variant */
-  component?: React.ComponentType<any>;
-  /** Adds empty state icon variant styles  */
-  variant?: 'icon' | 'container';
+  /** Icon component to be rendered. Can also be a spinner component */
+  icon: React.ComponentType<any>;
 }
 
+const isSpinner = (icon: React.ReactElement<any>) => icon.type === Spinner;
+
 export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
-  className = '',
+  className,
   icon: IconComponent,
-  component: AnyComponent,
-  variant = 'icon',
+  color,
   ...props
 }: EmptyStateIconProps) => {
-  const classNames = css(styles.emptyStateIcon, className);
-  return variant === 'icon' ? (
-    <IconComponent className={classNames} {...props} aria-hidden="true" />
-  ) : (
-    <div className={classNames}>
-      <AnyComponent />
+  const iconIsSpinner = isSpinner(<IconComponent />);
+  return (
+    <div
+      className={css(styles.emptyStateIcon)}
+      {...(color && !iconIsSpinner && { style: { ['--pf-c-empty-state__icon--Color']: color } as React.CSSProperties })}
+    >
+      <IconComponent className={className} aria-hidden={!iconIsSpinner} {...props} />
     </div>
   );
 };

@@ -74,6 +74,7 @@ export const DualListSelectorTreeExample: React.FunctionComponent = () => {
   ]);
 
   const onListChange = (
+    event: React.MouseEvent<HTMLElement>,
     newAvailableOptions: DualListSelectorTreeItemData[],
     newChosenOptions: DualListSelectorTreeItemData[]
   ) => {

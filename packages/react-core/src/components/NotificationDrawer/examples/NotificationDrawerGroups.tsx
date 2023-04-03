@@ -1,16 +1,10 @@
 import React from 'react';
 import {
   Button,
-  Dropdown,
-  DropdownItem,
-  DropdownPosition,
-  DropdownDirection,
-  DropdownSeparator,
   EmptyState,
   EmptyStateBody,
-  EmptyStateIcon,
-  EmptyStatePrimary,
-  KebabToggle,
+  EmptyStateHeader,
+  EmptyStateFooter,
   NotificationDrawer,
   NotificationDrawerBody,
   NotificationDrawerHeader,
@@ -20,9 +14,18 @@ import {
   NotificationDrawerListItem,
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
-  Title,
-  EmptyStateVariant
+  EmptyStateVariant,
+  EmptyStateActions,
+  EmptyStateIcon
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownPosition,
+  DropdownDirection,
+  DropdownSeparator,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 export const NotificationDrawerGroups: React.FunctionComponent = () => {
@@ -58,20 +61,20 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
   };
 
   const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
+    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="action" component="button">
       Action
-    </DropdownItem>,
+    </DropdownItemDeprecated>,
     <DropdownSeparator key="separator" />,
-    <DropdownItem key="disabled link" isDisabled>
+    <DropdownItemDeprecated key="disabled link" isDisabled>
       Disabled link
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   return (
     <NotificationDrawer>
       <NotificationDrawerHeader count={4}>
-        <Dropdown
+        <DropdownDeprecated
           onSelect={onSelect}
           toggle={
             <KebabToggle
@@ -101,7 +104,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   title="Unread info notification title"
                   srTitle="Info notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     onSelect={onSelect}
                     toggle={
@@ -126,7 +129,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
                   srTitle="Danger notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     onSelect={onSelect}
                     toggle={
@@ -152,7 +155,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   title="Read warning notification title"
                   srTitle="Warning notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     onSelect={onSelect}
                     toggle={
@@ -177,7 +180,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   title="Read success notification title"
                   srTitle="Success notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     direction={DropdownDirection.up}
                     onSelect={onSelect}
@@ -212,7 +215,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   title="Unread info notification title"
                   srTitle="Info notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     onSelect={onSelect}
                     toggle={
@@ -237,7 +240,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
                   srTitle="Danger notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     onSelect={onSelect}
                     toggle={
@@ -263,7 +266,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   title="Read warning notification title"
                   srTitle="Warning notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     onSelect={onSelect}
                     toggle={
@@ -288,7 +291,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   title="Read success notification title"
                   srTitle="Success notification:"
                 >
-                  <Dropdown
+                  <DropdownDeprecated
                     position={DropdownPosition.right}
                     direction={DropdownDirection.up}
                     onSelect={onSelect}
@@ -319,17 +322,20 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
           >
             <NotificationDrawerList isHidden={!thirdGroupExpanded} aria-label="Notifications in the third group">
               <EmptyState variant={EmptyStateVariant.full}>
-                <EmptyStateIcon icon={SearchIcon} />
-                <Title headingLevel="h2" size="lg">
-                  No alerts found
-                </Title>
+                <EmptyStateHeader
+                  headingLevel="h2"
+                  titleText="No alerts found"
+                  icon={<EmptyStateIcon icon={SearchIcon} />}
+                />
                 <EmptyStateBody>
                   There are currently no critical alerts firing. There may be firing alerts of other severities or
                   silenced critical alerts however.
                 </EmptyStateBody>
-                <EmptyStatePrimary>
-                  <Button variant="link">Action</Button>
-                </EmptyStatePrimary>
+                <EmptyStateFooter>
+                  <EmptyStateActions>
+                    <Button variant="link">Action</Button>
+                  </EmptyStateActions>
+                </EmptyStateFooter>
               </EmptyState>
             </NotificationDrawerList>
           </NotificationDrawerGroup>

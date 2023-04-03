@@ -3,6 +3,106 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.35](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.34...demo-app-ts@5.0.0-alpha.35) (2023-04-03)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.34](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.33...demo-app-ts@5.0.0-alpha.34) (2023-03-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+# 5.0.0-alpha.33 (2023-03-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+# 5.0.0-alpha.32 (2023-03-24)
+
+### Features
+
+- **Dropdown:** deprecated old and promoted Next ([#8835](https://github.com/patternfly/patternfly-react/issues/8835)) ([d43cf24](https://github.com/patternfly/patternfly-react/commit/d43cf2427dc9ea1ddb2381284f05276aa2c7cdb7))
+
+# [5.0.0-alpha.31](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.30...demo-app-ts@5.0.0-alpha.31) (2023-03-24)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.30](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.29...demo-app-ts@5.0.0-alpha.30) (2023-03-24)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.29](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.28...demo-app-ts@5.0.0-alpha.29) (2023-03-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.28](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.27...demo-app-ts@5.0.0-alpha.28) (2023-03-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.27](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.26...demo-app-ts@5.0.0-alpha.27) (2023-03-22)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.26](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.25...demo-app-ts@5.0.0-alpha.26) (2023-03-21)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.25](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.24...demo-app-ts@5.0.0-alpha.25) (2023-03-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.24](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.23...demo-app-ts@5.0.0-alpha.24) (2023-03-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.23](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.22...demo-app-ts@5.0.0-alpha.23) (2023-03-18)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.22](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.21...demo-app-ts@5.0.0-alpha.22) (2023-03-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.21](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.20...demo-app-ts@5.0.0-alpha.21) (2023-03-17)
+
+### Features
+
+- **OverflowMenu:** Use next dropdown and dropdownItems ([#8359](https://github.com/patternfly/patternfly-react/issues/8359)) ([d356f4a](https://github.com/patternfly/patternfly-react/commit/d356f4a3f5853313764bd77fd6e02163b81378d7))
+
+# [5.0.0-alpha.20](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.19...demo-app-ts@5.0.0-alpha.20) (2023-03-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.19](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.18...demo-app-ts@5.0.0-alpha.19) (2023-03-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.18](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.17...demo-app-ts@5.0.0-alpha.18) (2023-03-15)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.17](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.16...demo-app-ts@5.0.0-alpha.17) (2023-03-15)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.16](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.15...demo-app-ts@5.0.0-alpha.16) (2023-03-13)
+
+- EmptyState component cleanup to match core implementation (#8737) ([40dd9ad](https://github.com/patternfly/patternfly-react/commit/40dd9ad4b2ab32887c2f72a10eb78f2c4ee5ac4b)), closes [#8737](https://github.com/patternfly/patternfly-react/issues/8737) [#8555](https://github.com/patternfly/patternfly-react/issues/8555)
+
+### BREAKING CHANGES
+
+- closes #8555, fixes #8455
+
+- docs(EmptyState): updated examples
+
+updated examples of EmptyState usage on the PatternFly web to use new API
+
+# [5.0.0-alpha.15](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.14...demo-app-ts@5.0.0-alpha.15) (2023-03-13)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [5.0.0-alpha.14](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.13...demo-app-ts@5.0.0-alpha.14) (2023-03-10)
+
+**Note:** Version bump only for package demo-app-ts
+
 # [5.0.0-alpha.13](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.12...demo-app-ts@5.0.0-alpha.13) (2023-03-09)
 
 **Note:** Version bump only for package demo-app-ts

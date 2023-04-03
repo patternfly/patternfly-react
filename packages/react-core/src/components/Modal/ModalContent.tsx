@@ -61,8 +61,8 @@ export interface ModalContentProps extends OUIAProps {
   labelId: string;
   /** A callback for when the close button is clicked. */
   onClose?: () => void;
-  /** Alternate position of the modal. */
-  position?: 'top';
+  /** Position of the modal. By default a modal will be positioned vertically and horizontally centered. */
+  position?: 'default' | 'top';
   /** Offset from alternate position. Can be any valid CSS length/percentage. */
   positionOffset?: string;
   /** Flag to show the close button in the header area of the modal. */
@@ -177,7 +177,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       className={css(
         className,
         isVariantIcon(titleIconVariant) &&
-          modalStyles.modifiers[titleIconVariant as 'success' | 'warning' | 'info' | 'danger' | 'default']
+          modalStyles.modifiers[titleIconVariant as 'success' | 'warning' | 'info' | 'danger' | 'custom']
       )}
       variant={variant}
       position={position}

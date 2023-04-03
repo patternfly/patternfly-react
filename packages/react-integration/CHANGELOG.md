@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.15...@patternfly/react-integration@5.0.0-alpha.16) (2023-04-03)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# 5.0.0-alpha.15 (2023-03-27)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# 5.0.0-alpha.14 (2023-03-24)
+
+### Features
+
+- **Dropdown:** deprecated old and promoted Next ([#8835](https://github.com/patternfly/patternfly-react/issues/8835)) ([d43cf24](https://github.com/patternfly/patternfly-react/commit/d43cf2427dc9ea1ddb2381284f05276aa2c7cdb7))
+
+# [5.0.0-alpha.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.12...@patternfly/react-integration@5.0.0-alpha.13) (2023-03-23)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# 5.0.0-alpha.12 (2023-03-23)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# 5.0.0-alpha.11 (2023-03-20)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [5.0.0-alpha.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.9...@patternfly/react-integration@5.0.0-alpha.10) (2023-03-18)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [5.0.0-alpha.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.8...@patternfly/react-integration@5.0.0-alpha.9) (2023-03-17)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# 5.0.0-alpha.8 (2023-03-17)
+
+### Features
+
+- **OverflowMenu:** Use next dropdown and dropdownItems ([#8359](https://github.com/patternfly/patternfly-react/issues/8359)) ([d356f4a](https://github.com/patternfly/patternfly-react/commit/d356f4a3f5853313764bd77fd6e02163b81378d7))
+
+# 5.0.0-alpha.7 (2023-03-13)
+
+- EmptyState component cleanup to match core implementation (#8737) ([40dd9ad](https://github.com/patternfly/patternfly-react/commit/40dd9ad4b2ab32887c2f72a10eb78f2c4ee5ac4b)), closes [#8737](https://github.com/patternfly/patternfly-react/issues/8737) [#8555](https://github.com/patternfly/patternfly-react/issues/8555)
+
+### BREAKING CHANGES
+
+- closes #8555, fixes #8455
+
+- docs(EmptyState): updated examples
+
+updated examples of EmptyState usage on the PatternFly web to use new API
+
 # 5.0.0-alpha.6 (2023-03-09)
 
 ### Features

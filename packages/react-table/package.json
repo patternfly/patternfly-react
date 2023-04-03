@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-table",
-  "version": "5.0.0-alpha.30",
+  "version": "5.0.0-alpha.52",
   "description": "This library provides a set of React table components for use with the PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -36,22 +36,22 @@
   "scripts": {
     "build:umd": "rollup -c --environment IS_PRODUCTION",
     "clean": "rimraf dist",
-    "subpaths": "node scripts/copySubpaths.js"
+    "subpaths": "node scripts/createSubpaths.js"
   },
   "dependencies": {
-    "@patternfly/react-core": "^5.0.0-alpha.30",
-    "@patternfly/react-icons": "^5.0.0-alpha.4",
-    "@patternfly/react-styles": "^5.0.0-alpha.4",
-    "@patternfly/react-tokens": "^5.0.0-alpha.4",
+    "@patternfly/react-core": "^5.0.0-alpha.51",
+    "@patternfly/react-icons": "^5.0.0-alpha.8",
+    "@patternfly/react-styles": "^5.0.0-alpha.6",
+    "@patternfly/react-tokens": "^5.0.0-alpha.6",
     "lodash": "^4.17.19",
-    "tslib": "^2.0.0"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
-    "react": "^16.8 || ^17 || ^18",
-    "react-dom": "^16.8 || ^17 || ^18"
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18"
   }
 }

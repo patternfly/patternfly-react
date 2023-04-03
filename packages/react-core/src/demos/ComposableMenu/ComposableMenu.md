@@ -1,6 +1,7 @@
 ---
-id: Composable menu
-section: demos
+id: Custom menus
+section: components
+subsection: menus
 ---
 
 import { Link } from '@reach/router';
@@ -26,7 +27,7 @@ import styles from '@patternfly/react-styles/css/components/Menu/menu';
 
 ## Demos
 
-Composable menus currently require consumer keyboard handling and use of our undocumented [popper.js](https://popper.js.org/) wrapper component called Popper. We understand this is inconvientent boilerplate and these examples will be updated to use [Dropdown](/components/dropdown) in a future release.
+Custom menus can be constructed using a composable approach by combining the [Menu](/components/menus/menu) and [Menu toggle](/components/menus/menu-toggle) components in unique ways. Composable menus currently require consumer keyboard handling and use of our undocumented [popper.js](https://popper.js.org/) wrapper component called Popper. We understand this is inconvientent boilerplate and these examples will be updated to use [Dropdown](/components/dropdown) in a future release.
 
 ### Composable simple dropdown
 

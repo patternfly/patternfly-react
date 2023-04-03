@@ -14,7 +14,7 @@ export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
    */
   screenReaderText?: string;
   /** Variant styles for the banner. */
-  variant?: 'default' | 'info' | 'danger' | 'success' | 'warning';
+  variant?: 'default' | 'blue' | 'red' | 'green' | 'gold';
 }
 
 export const Banner: React.FunctionComponent<BannerProps> = ({
@@ -28,7 +28,7 @@ export const Banner: React.FunctionComponent<BannerProps> = ({
   <div
     className={css(
       styles.banner,
-      styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
+      styles.modifiers[variant as 'green' | 'red' | 'gold' | 'blue'],
       isSticky && styles.modifiers.sticky,
       className
     )}

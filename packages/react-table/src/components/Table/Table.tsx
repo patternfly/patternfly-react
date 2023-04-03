@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { OUIAProps, getDefaultOUIAId } from '@patternfly/react-core';
-import {
-  DropdownDirection,
-  DropdownPosition
-} from '@patternfly/react-core/dist/esm/components/Dropdown/dropdownConstants';
+import { DropdownDirection, DropdownPosition } from '@patternfly/react-core/dist/esm/deprecated/components';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 import { Provider } from './base';
@@ -177,7 +174,7 @@ export class Table extends React.Component<TableProps, {}> {
       return false;
     }
     return rows.every(
-      row => this.isSelected(row) || row.disableSelection || (row.hasOwnProperty('parent') && !row.showSelect)
+      (row) => this.isSelected(row) || row.disableSelection || (row.hasOwnProperty('parent') && !row.showSelect)
     );
   };
 
@@ -185,7 +182,7 @@ export class Table extends React.Component<TableProps, {}> {
     if (rows === undefined || rows.length === 0) {
       return false;
     }
-    return rows.every(row => row.isOpen === undefined || row.isOpen);
+    return rows.every((row) => row.isOpen === undefined || row.isOpen);
   };
 
   render() {
@@ -259,7 +256,7 @@ export class Table extends React.Component<TableProps, {}> {
       onFavorite,
       canSortFavorites,
       // order of columns: Collapsible | Selectable | Favoritable
-      firstUserColumnIndex: [onCollapse, onSelect, onFavorite].filter(callback => callback).length
+      firstUserColumnIndex: [onCollapse, onSelect, onFavorite].filter((callback) => callback).length
     });
 
     const table = (

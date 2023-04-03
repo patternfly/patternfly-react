@@ -9,15 +9,16 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
-  ToolbarItem,
-  ContextSelector,
-  ContextSelectorItem,
-  Dropdown,
+  ToolbarItem
+} from '@patternfly/react-core';
+import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core/deprecated';
+import {
+  Dropdown as DropdownDeprecated,
   DropdownToggle,
   KebabToggle,
   DropdownSeparator,
-  DropdownItem
-} from '@patternfly/react-core';
+  DropdownItem as DropdownItemDeprecated
+} from '@patternfly/react-core/deprecated';
 import imgBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
@@ -91,7 +92,7 @@ export class MastheadDemo extends React.Component {
     const filtered =
       this.state.searchValue === ''
         ? this.items
-        : this.items.filter(str => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
+        : this.items.filter((str) => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
 
     this.setState({ filteredItems: filtered || [] });
   };
@@ -100,14 +101,14 @@ export class MastheadDemo extends React.Component {
     const { isOpen, isDropdownOpen, isKebabOpen, selected, searchValue, filteredItems } = this.state;
 
     const dropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
+      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action" component="button">
         Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled href="www.google.com">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="disabled link" isDisabled href="www.google.com">
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated
         key="disabled action"
         isAriaDisabled
         component="button"
@@ -115,12 +116,12 @@ export class MastheadDemo extends React.Component {
         tooltipProps={{ position: 'top' }}
       >
         Disabled Action
-      </DropdownItem>,
+      </DropdownItemDeprecated>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
+      <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="separated action" component="button">
         Separated Action
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     return (
@@ -157,7 +158,7 @@ export class MastheadDemo extends React.Component {
               </ToolbarItem>
               <ToolbarGroup align={{ default: 'alignRight' }}>
                 <ToolbarItem visibility={{ default: 'hidden', lg: 'visible' }}>
-                  <Dropdown
+                  <DropdownDeprecated
                     onSelect={this.onDropdownSelect}
                     toggle={
                       <DropdownToggle id="toggle-id" onToggle={this.onDropdownToggle} toggleIndicator={CaretDownIcon}>
@@ -170,7 +171,7 @@ export class MastheadDemo extends React.Component {
                   />
                 </ToolbarItem>
                 <ToolbarItem>
-                  <Dropdown
+                  <DropdownDeprecated
                     onSelect={this.onKebabSelect}
                     toggle={<KebabToggle onToggle={this.onKebabToggle} id="toggle-id-kebab" />}
                     isOpen={isKebabOpen}

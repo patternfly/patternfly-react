@@ -1,13 +1,10 @@
 import React from 'react';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading, BreadcrumbItemRenderArgs } from '@patternfly/react-core';
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbHeading,
-  BreadcrumbItemRenderArgs,
-  Dropdown,
+  Dropdown as DropdownDeprecated,
   BadgeToggle,
-  DropdownItem
-} from '@patternfly/react-core';
+  DropdownItem as DropdownItemDeprecated
+} from '@patternfly/react-core/deprecated';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 
 export class BreadcrumbDemo extends React.Component {
@@ -34,15 +31,15 @@ export class BreadcrumbDemo extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem key="edit" component="button" icon={<AngleLeftIcon />}>
+      <DropdownItemDeprecated key="edit" component="button" icon={<AngleLeftIcon />}>
         Edit
-      </DropdownItem>,
-      <DropdownItem key="action" component="button" icon={<AngleLeftIcon />}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action" component="button" icon={<AngleLeftIcon />}>
         Deployment
-      </DropdownItem>,
-      <DropdownItem key="apps" component="button" icon={<AngleLeftIcon />}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="apps" component="button" icon={<AngleLeftIcon />}>
         Applications
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     return (
@@ -63,7 +60,7 @@ export class BreadcrumbDemo extends React.Component {
         />
         <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
         <BreadcrumbItem isDropdown id="badge-dropdown">
-          <Dropdown
+          <DropdownDeprecated
             onSelect={this.onSelect}
             toggle={
               <BadgeToggle id="toggle-id" onToggle={this.onToggle}>

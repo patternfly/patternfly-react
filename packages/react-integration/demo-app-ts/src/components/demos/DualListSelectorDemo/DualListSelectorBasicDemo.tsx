@@ -7,7 +7,11 @@ interface DualListSelectorState {
 
 export class DualListSelectorBasicDemo extends React.Component<DualListSelectorProps, DualListSelectorState> {
   static displayName = 'DualListSelectorDemo';
-  onListChange: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
+  onListChange: (
+    event: React.MouseEvent<HTMLElement>,
+    newAvailableOptions: React.ReactNode[],
+    newChosenOptions: React.ReactNode[]
+  ) => void;
 
   constructor(props: DualListSelectorProps) {
     super(props);
@@ -16,7 +20,7 @@ export class DualListSelectorBasicDemo extends React.Component<DualListSelectorP
       chosenOptions: []
     };
 
-    this.onListChange = (newAvailableOptions, newChosenOptions) => {
+    this.onListChange = (event, newAvailableOptions, newChosenOptions) => {
       this.setState({
         availableOptions: newAvailableOptions,
         chosenOptions: newChosenOptions

@@ -1,5 +1,6 @@
 import React from 'react';
-import { ContextSelector, ContextSelectorItem, ContextSelectorFooter, Button } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core';
+import { ContextSelector, ContextSelectorItem, ContextSelectorFooter } from '@patternfly/react-core/deprecated';
 
 interface ContextSelectorState {
   isOpen: boolean;

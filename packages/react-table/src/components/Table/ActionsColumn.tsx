@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core/dist/esm/next/components';
+import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
 import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import { IAction, IExtraData, IRowData } from './TableTypes';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 
 export interface CustomActionsToggleProps {
   onToggle: (event: React.MouseEvent) => void;
@@ -37,8 +38,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   actionsToggle,
   popperProps = {
     position: 'right',
-    direction: 'down',
-    popperMatchesTriggerWidth: false
+    direction: 'down'
   },
   ...props
 }: ActionsColumnProps) => {
@@ -65,12 +65,12 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   return (
     <React.Fragment>
       {items
-        .filter(item => item.isOutsideDropdown)
+        .filter((item) => item.isOutsideDropdown)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .map(({ title, itemKey, onClick, isOutsideDropdown, ...props }, key) =>
           typeof title === 'string' ? (
             <Button
-              onClick={event => onActionClick(event, onClick)}
+              onClick={(event) => onActionClick(event, onClick)}
               {...(props as any)}
               isDisabled={isDisabled}
               key={itemKey || `outside_dropdown_${key}`}
@@ -85,8 +85,8 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
 
       <Dropdown
         isOpen={isOpen}
-        onOpenChange={isOpen => setIsOpen(isOpen)}
-        toggle={toggleRef =>
+        onOpenChange={(isOpen) => setIsOpen(isOpen)}
+        toggle={(toggleRef) =>
           actionsToggle ? (
             actionsToggle({ onToggle, isOpen, isDisabled, toggleRef })
           ) : (
@@ -108,13 +108,14 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
       >
         <DropdownList>
           {items
-            .filter(item => !item.isOutsideDropdown)
-            .map(({ title, itemKey, onClick, isSeparator, ...props }, key) =>
-              isSeparator ? (
-                <Divider key={itemKey || key} data-key={itemKey || key} />
-              ) : (
+            .filter((item) => !item.isOutsideDropdown)
+            .map(({ title, itemKey, onClick, tooltip, tooltipProps, isSeparator, ...props }, key) => {
+              if (isSeparator) {
+                return <Divider key={itemKey || key} data-key={itemKey || key} />;
+              }
+              const item = (
                 <DropdownItem
-                  onClick={event => {
+                  onClick={(event: any) => {
                     onActionClick(event, onClick);
                     onToggle();
                   }}
@@ -124,8 +125,18 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
                 >
                   {title}
                 </DropdownItem>
-              )
-            )}
+              );
+
+              if (tooltip) {
+                return (
+                  <Tooltip key={itemKey || key} content={tooltip} {...tooltipProps}>
+                    {item}
+                  </Tooltip>
+                );
+              } else {
+                return item;
+              }
+            })}
         </DropdownList>
       </Dropdown>
     </React.Fragment>

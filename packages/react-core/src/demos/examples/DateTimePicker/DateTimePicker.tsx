@@ -1,14 +1,10 @@
 import React from 'react';
+import { CalendarMonth, InputGroup, TextInput, Button, Popover } from '@patternfly/react-core';
 import {
-  Dropdown,
+  Dropdown as DropdownDeprecated,
   DropdownToggle,
-  DropdownItem,
-  CalendarMonth,
-  InputGroup,
-  TextInput,
-  Button,
-  Popover
-} from '@patternfly/react-core';
+  DropdownItem as DropdownItemDeprecated
+} from '@patternfly/react-core/deprecated';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 
@@ -47,16 +43,16 @@ export const DateTimePicker: React.FunctionComponent = () => {
     setIsTimeOpen(!isTimeOpen);
   };
 
-  const timeOptions = times.map(time => (
-    <DropdownItem key={time} component="button" value={`${time}:00`}>
+  const timeOptions = times.map((time) => (
+    <DropdownItemDeprecated key={time} component="button" value={`${time}:00`}>
       {`${time}:00`}
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ));
 
   const calendar = <CalendarMonth date={new Date(valueDate)} onChange={onSelectCalendar} />;
 
   const time = (
-    <Dropdown
+    <DropdownDeprecated
       onSelect={onSelectTime}
       toggle={
         <DropdownToggle

@@ -143,14 +143,14 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DrawerResizeDemo
   },
   {
+    id: 'dropdown-deprecated-demo',
+    name: 'Dropdown Deprecated Demo',
+    componentType: Examples.DropdownDeprecatedDemo
+  },
+  {
     id: 'dropdown-demo',
     name: 'Dropdown Demo',
     componentType: Examples.DropdownDemo
-  },
-  {
-    id: 'dropdown-next-demo',
-    name: 'Dropdown Next Demo',
-    componentType: Examples.DropdownNextDemo
   },
   {
     id: 'dual-list-selector-basic-demo',

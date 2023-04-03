@@ -1,17 +1,10 @@
 import React from 'react';
 import {
-  ApplicationLauncher,
-  ApplicationLauncherItem,
   Avatar,
   Brand,
   Button,
   ButtonVariant,
   Divider,
-  Dropdown,
-  DropdownGroup,
-  DropdownToggle,
-  DropdownItem,
-  KebabToggle,
   Masthead,
   MastheadToggle,
   MastheadMain,
@@ -21,8 +14,15 @@ import {
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem,
-  PageToggleButton
+  PageToggleButton,
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownGroup as DropdownGroupDeprecated,
+  DropdownToggle,
+  DropdownItem as DropdownItemDeprecated,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -38,7 +38,6 @@ export default class DashboardHeader extends React.Component {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
       isFullKebabDropdownOpen: false,
-      isAppLauncherOpen: false,
       activeItem: 0
     };
 
@@ -77,67 +76,46 @@ export default class DashboardHeader extends React.Component {
         isFullKebabDropdownOpen: !this.state.isFullKebabDropdownOpen
       });
     };
-
-    this.onAppLauncherToggle = (_event, isAppLauncherOpen) => {
-      this.setState({
-        isAppLauncherOpen
-      });
-    };
-
-    this.onAppLauncherSelect = () => {
-      this.setState({
-        isAppLauncherOpen: !this.state.isAppLauncherOpen
-      });
-    };
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen, isAppLauncherOpen } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen } = this.state;
     const { notificationBadge } = this.props;
 
     const kebabDropdownItems = [
-      <DropdownItem key="settings">
+      <DropdownItemDeprecated key="settings">
         <CogIcon /> Settings
-      </DropdownItem>,
-      <DropdownItem key="help">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="help">
         <HelpIcon /> Help
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const fullKebabItems = [
-      <DropdownGroup key="group 2">
-        <DropdownItem key="group 2 profile">My profile</DropdownItem>
-        <DropdownItem key="group 2 user" component="button">
+      <DropdownGroupDeprecated key="group 2">
+        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 user" component="button">
           User management
-        </DropdownItem>
-        <DropdownItem key="group 2 logout">Logout</DropdownItem>
-      </DropdownGroup>,
+        </DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
+      </DropdownGroupDeprecated>,
       <Divider key="divider" />,
-      <DropdownItem key="settings">
+      <DropdownItemDeprecated key="settings">
         <CogIcon /> Settings
-      </DropdownItem>,
-      <DropdownItem key="help">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="help">
         <HelpIcon /> Help
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const userDropdownItems = [
-      <DropdownGroup key="group 2">
-        <DropdownItem key="group 2 profile">My profile</DropdownItem>
-        <DropdownItem key="group 2 user" component="button">
+      <DropdownGroupDeprecated key="group 2">
+        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 user" component="button">
           User management
-        </DropdownItem>
-        <DropdownItem key="group 2 logout">Logout</DropdownItem>
-      </DropdownGroup>
-    ];
-
-    const appLauncherItems = [
-      <ApplicationLauncherItem key="application_1a" href="#">
-        Application 1 (anchor link)
-      </ApplicationLauncherItem>,
-      <ApplicationLauncherItem key="application_2a" component="button" onClick={() => alert('Clicked item 2')}>
-        Application 2 (button with onClick)
-      </ApplicationLauncherItem>
+        </DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
+      </DropdownGroupDeprecated>
     ];
 
     const headerToolbar = (
@@ -162,14 +140,6 @@ export default class DashboardHeader extends React.Component {
             )}
             <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
               <ToolbarItem>
-                <ApplicationLauncher
-                  onSelect={this.onAppLauncherSelect}
-                  onToggle={this.onAppLauncherToggle}
-                  isOpen={isAppLauncherOpen}
-                  items={appLauncherItems}
-                />
-              </ToolbarItem>
-              <ToolbarItem>
                 <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
               </ToolbarItem>
               <ToolbarItem>
@@ -177,7 +147,7 @@ export default class DashboardHeader extends React.Component {
               </ToolbarItem>
             </ToolbarGroup>
             <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-              <Dropdown
+              <DropdownDeprecated
                 isPlain
                 position="right"
                 onSelect={this.onKebabDropdownSelect}
@@ -187,7 +157,7 @@ export default class DashboardHeader extends React.Component {
               />
             </ToolbarItem>
             <ToolbarItem visibility={{ md: 'hidden' }}>
-              <Dropdown
+              <DropdownDeprecated
                 isPlain
                 position="right"
                 onSelect={this.onFullKebabSelect}
@@ -198,7 +168,7 @@ export default class DashboardHeader extends React.Component {
             </ToolbarItem>
           </ToolbarGroup>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
-            <Dropdown
+            <DropdownDeprecated
               isFullHeight
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}

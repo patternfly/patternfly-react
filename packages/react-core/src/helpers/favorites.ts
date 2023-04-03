@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ApplicationLauncherSeparator } from '../components/ApplicationLauncher/ApplicationLauncherSeparator';
+import { ApplicationLauncherSeparator } from '../deprecated/components/ApplicationLauncher/ApplicationLauncherSeparator';
 import { Divider } from '../components/Divider/Divider';
 
 /**

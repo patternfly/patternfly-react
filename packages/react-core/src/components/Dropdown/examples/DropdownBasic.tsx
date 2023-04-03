@@ -1,59 +1,51 @@
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
+import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle } from '@patternfly/react-core';
 
 export const DropdownBasic: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onToggle = (_event: any, isOpen: boolean) => {
-    setIsOpen(isOpen);
+  const onToggleClick = () => {
+    setIsOpen(!isOpen);
   };
 
-  const onFocus = () => {
-    const element = document.getElementById('toggle-basic');
-    element?.focus();
-  };
-
-  const onSelect = () => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+    // eslint-disable-next-line no-console
+    console.log('selected', itemId);
     setIsOpen(false);
-    onFocus();
   };
-
-  const dropdownItems = [
-    <DropdownItem key="link" tooltip="Tooltip for enabled link">
-      Link
-    </DropdownItem>,
-    <DropdownItem key="action" component="button" tooltip="Tooltip for enabled button">
-      Action
-    </DropdownItem>,
-    <DropdownItem key="disabled link" isDisabled href="www.google.com">
-      Disabled link
-    </DropdownItem>,
-    <DropdownItem
-      key="disabled action"
-      isAriaDisabled
-      component="button"
-      tooltip="Tooltip for disabled item"
-      tooltipProps={{ position: 'top' }}
-    >
-      Disabled action
-    </DropdownItem>,
-    <DropdownSeparator key="separator" />,
-    <DropdownItem key="separated link">Separated link</DropdownItem>,
-    <DropdownItem key="separated action" component="button">
-      Separated action
-    </DropdownItem>
-  ];
 
   return (
     <Dropdown
-      onSelect={onSelect}
-      toggle={
-        <DropdownToggle id="toggle-basic" onToggle={onToggle}>
-          Dropdown
-        </DropdownToggle>
-      }
       isOpen={isOpen}
-      dropdownItems={dropdownItems}
-    />
+      onSelect={onSelect}
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      toggle={(toggleRef) => (
+        <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+          Dropdown
+        </MenuToggle>
+      )}
+    >
+      <DropdownList>
+        <DropdownItem itemId={0} key="link">
+          Link
+        </DropdownItem>
+        <DropdownItem itemId={1} key="action" to="#default-link2" onClick={(ev) => ev.preventDefault()}>
+          Action
+        </DropdownItem>
+        <DropdownItem itemId={2} isDisabled key="disabled link">
+          Disabled link
+        </DropdownItem>
+        <DropdownItem itemId={3} isDisabled key="disabled action" to="#default-link4">
+          Disabled action
+        </DropdownItem>
+        <Divider key="separator" />
+        <DropdownItem itemId={4} key="separated link">
+          Separated link
+        </DropdownItem>
+        <DropdownItem itemId={5} key="separated action">
+          Separated action
+        </DropdownItem>
+      </DropdownList>
+    </Dropdown>
   );
 };

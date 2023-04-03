@@ -12,13 +12,12 @@ import {
   DrawerCloseButton,
   DrawerPanelBody,
   Dropdown,
+  DropdownList,
   Flex,
   FlexItem,
-  KebabToggle,
   Label,
   LabelGroup,
-  OptionsMenu,
-  OptionsMenuToggle,
+  MenuToggle,
   OverflowMenu,
   OverflowMenuContent,
   OverflowMenuControl,
@@ -52,12 +51,13 @@ import {
   ActionsColumn,
   CustomActionsToggleProps
 } from '@patternfly/react-table';
+import { KebabToggle } from '@patternfly/react-core/deprecated';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 interface Repository {
   name: string;
@@ -97,13 +97,13 @@ export const TablesAndTabs = () => {
 
   const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
   const setRepoSelected = (event: React.FormEvent<HTMLInputElement>, repo: Repository, isSelecting = true) => {
-    setSelectedRepoNames(prevSelected => {
-      const otherSelectedRepoNames = prevSelected.filter(r => r !== repo.name);
+    setSelectedRepoNames((prevSelected) => {
+      const otherSelectedRepoNames = prevSelected.filter((r) => r !== repo.name);
       return isSelecting ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
     });
     event.stopPropagation();
   };
-  const onSelectAll = (isSelecting = true) => setSelectedRepoNames(isSelecting ? repositories.map(r => r.name) : []);
+  const onSelectAll = (isSelecting = true) => setSelectedRepoNames(isSelecting ? repositories.map((r) => r.name) : []);
   const allRowsSelected = selectedRepoNames.length === repositories.length;
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
@@ -113,14 +113,14 @@ export const TablesAndTabs = () => {
   const defaultActions: IAction[] = [
     {
       title: 'Some action',
-      onClick: event => {
+      onClick: (event) => {
         event.stopPropagation();
         console.log('clicked on Some action');
       }
     },
     {
       title: <a href="https://www.patternfly.org">Link action</a>,
-      onClick: event => {
+      onClick: (event) => {
         event.stopPropagation();
         console.log('clicked on Link action');
       }
@@ -130,7 +130,7 @@ export const TablesAndTabs = () => {
     },
     {
       title: 'Third action',
-      onClick: event => {
+      onClick: (event) => {
         event.stopPropagation();
         console.log('clicked on Third action');
       }
@@ -140,8 +140,8 @@ export const TablesAndTabs = () => {
   const customActionsToggle = (props: CustomActionsToggleProps) => (
     <KebabToggle
       isDisabled={props.isDisabled}
-      onToggle={(event: any, value: boolean) => {
-        props.onToggle(value);
+      onToggle={(event: any) => {
+        props.onToggle(event);
         event.stopPropagation();
       }}
     />
@@ -160,7 +160,7 @@ export const TablesAndTabs = () => {
             />
           </ToolbarItem>
         </ToolbarToggleGroup>
-        <ToolbarItem>
+        {/* <ToolbarItem> TODO: replace with select after #8073 goes in
           <OptionsMenu
             id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
             isPlain
@@ -173,7 +173,7 @@ export const TablesAndTabs = () => {
               />
             }
           />
-        </ToolbarItem>
+        </ToolbarItem> */}
         <OverflowMenu breakpoint="md">
           <OverflowMenuContent className="pf-u-display-none pf-u-display-block-on-lg">
             <OverflowMenuGroup groupType="button" isPersistent>
@@ -188,11 +188,21 @@ export const TablesAndTabs = () => {
           <OverflowMenuControl hasAdditionalOptions>
             <Dropdown
               onSelect={() => {}}
-              toggle={<KebabToggle onToggle={() => {}} />}
+              toggle={(toggleRef) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  aria-label="overflow menu"
+                  variant="plain"
+                  onClick={() => {}}
+                  isExpanded={false}
+                >
+                  <EllipsisVIcon />
+                </MenuToggle>
+              )}
               isOpen={false}
-              isPlain
-              dropdownItems={[]}
-            />
+            >
+              <DropdownList>{[]}</DropdownList>
+            </Dropdown>
           </OverflowMenuControl>
         </OverflowMenu>
       </ToolbarContent>
@@ -220,7 +230,7 @@ export const TablesAndTabs = () => {
         {repositories.map((repo, rowIndex) => (
           <Tr
             key={repo.name}
-            onRowClick={event => {
+            onRowClick={(event) => {
               if ((event?.target as HTMLInputElement).type !== 'checkbox') {
                 setRowClicked(rowClicked === repo.name ? '' : repo.name);
                 setIsExpanded(!isRowClicked(repo));
@@ -340,7 +350,7 @@ export const TablesAndTabs = () => {
                 </FlexItem>
                 <FlexItem>
                   <LabelGroup>
-                    {[1, 2, 3, 4, 5].map(labelNumber => (
+                    {[1, 2, 3, 4, 5].map((labelNumber) => (
                       <Label variant="outline" key={`label-${labelNumber}`}>{`Tag ${labelNumber}`}</Label>
                     ))}
                   </LabelGroup>

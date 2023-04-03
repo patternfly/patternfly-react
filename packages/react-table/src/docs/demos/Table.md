@@ -24,6 +24,14 @@ PageSectionVariants,
 TextContent,
 Text,
 Divider } from '@patternfly/react-core';
+import {
+Dropdown as DropdownDeprecated,
+DropdownItem as DropdownItemDeprecated,
+DropdownPosition,
+DropdownToggle,
+DropdownToggleCheckbox,
+KebabToggle
+} from '@patternfly/react-core/deprecated';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -47,6 +55,7 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { rows, columns } from '../examples/Data.jsx';
 
 ## Demos
@@ -56,11 +65,6 @@ import { rows, columns } from '../examples/Data.jsx';
 ```js isFullscreen
 import React from 'react';
 import {
-  Dropdown,
-  DropdownItem,
-  DropdownPosition,
-  DropdownToggle,
-  DropdownToggleCheckbox,
   PageSection,
   Pagination,
   Title,
@@ -69,6 +73,13 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownPosition,
+  DropdownToggle,
+  DropdownToggleCheckbox
+} from '@patternfly/react-core/deprecated';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
@@ -207,19 +218,19 @@ class BulkSelectTableDemo extends React.Component {
     const isChecked = allSelected ? true : someChecked;
 
     const items = [
-      <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
+      <DropdownItemDeprecated key="item-1" onClick={() => this.handleSelectClick('none')}>
         Select none (0 items)
-      </DropdownItem>,
-      <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-2" onClick={() => this.handleSelectClick('page')}>
         Select page ({this.state.perPage} items)
-      </DropdownItem>,
-      <DropdownItem key="item-3" onClick={() => this.handleSelectClick('all')}>
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="item-3" onClick={() => this.handleSelectClick('all')}>
         Select all (100 items)
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     return (
-      <Dropdown
+      <DropdownDeprecated
         onSelect={this.onDropDownSelect}
         position={DropdownPosition.left}
         toggle={
@@ -345,8 +356,6 @@ import {
   OverflowMenu,
   OverflowMenuGroup,
   OverflowMenuItem,
-  OptionsMenu,
-  OptionsMenuToggle,
   Pagination,
   PaginationVariant,
   Text,
@@ -1005,7 +1014,7 @@ class ColumnManagementAction extends React.Component {
                   }
                 />
               </OverflowMenuItem>
-              <OverflowMenuItem>
+              {/*<OverflowMenuItem> TODO: replace with select after #8073
                 <OptionsMenu
                   id="page-layout-table-draggable-column-management-action-toolbar-top-options-menu-toggle"
                   isPlain
@@ -1018,7 +1027,7 @@ class ColumnManagementAction extends React.Component {
                     />
                   }
                 />
-              </OverflowMenuItem>
+              </OverflowMenuItem> */}
               <OverflowMenuGroup groupType="button" isPersistent>
                 <OverflowMenuItem>
                   <Button variant="primary">Action</Button>
@@ -1108,9 +1117,11 @@ import {
   SelectVariant,
   SearchInput,
   EmptyState,
-  EmptyStateIcon,
+  EmptyStateActions,
   EmptyStateBody,
-  EmptyStateSecondaryActions
+  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -1405,23 +1416,26 @@ class FilterTableDemo extends React.Component {
               title: (
                 <Bullseye>
                   <EmptyState>
-                    <EmptyStateIcon icon={SearchIcon} />
-                    <Title headingLevel="h5" size="lg">
-                      Clear all filters and try again.
-                    </Title>
+                    <EmptyStateHeader
+                      titleText="Clear all filters and try again."
+                      headingLevel="h5"
+                      icon={<EmptyStateIcon icon={SearchIcon} />}
+                    />
                     <EmptyStateBody>
                       No results match this filter criteria. Remove all filters or clear all filters to show results.
                     </EmptyStateBody>
-                    <EmptyStateSecondaryActions>
-                      <Button
-                        variant="link"
-                        onClick={() => {
-                          this.onDelete(null);
-                        }}
-                      >
-                        Clear all filters
-                      </Button>
-                    </EmptyStateSecondaryActions>
+                    <EmptyStateFooter>
+                      <EmptyStateActions>
+                        <Button
+                          variant="link"
+                          onClick={() => {
+                            this.onDelete(null);
+                          }}
+                        >
+                          Clear all filters
+                        </Button>
+                      </EmptyStateActions>
+                    </EmptyStateFooter>
                   </EmptyState>
                 </Bullseye>
               )
@@ -1666,7 +1680,7 @@ import {
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateSecondaryActions,
+  EmptyStateActions,
   PageSection,
   Title
 } from '@patternfly/react-core';
@@ -1692,16 +1706,19 @@ class EmptyStateDemo extends React.Component {
             props: { colSpan: 8 },
             title: (
               <EmptyState>
-                <EmptyStateIcon icon={SearchIcon} />
-                <Title headingLevel="h2" size="lg">
-                  No results found
-                </Title>
+                <EmptyStateHeader
+                  titleText="No results found"
+                  headingLevel="h2"
+                  icon={<EmptyStateIcon icon={SearchIcon} />}
+                />
                 <EmptyStateBody>No results match this filter criteria. Clear all filters and try again.</EmptyStateBody>
-                <EmptyStateSecondaryActions>
-                  <Button variant="link" onClick={() => {}}>
-                    Clear all filters
-                  </Button>
-                </EmptyStateSecondaryActions>
+                <EmptyStateFooter>
+                  <EmptyStateActions>
+                    <Button variant="link" onClick={() => {}}>
+                      Clear all filters
+                    </Button>
+                  </EmptyStateActions>
+                </EmptyStateFooter>
               </EmptyState>
             )
           }
@@ -1751,10 +1768,7 @@ class LoadingStateDemo extends React.Component {
             title: (
               <Bullseye>
                 <EmptyState>
-                  <EmptyStateIcon variant="container" component={Spinner} />
-                  <Title size="lg" headingLevel="h2">
-                    Loading
-                  </Title>
+                  <EmptyStateHeader titleText="Loading" headingLevel="h2" icon={<EmptyStateIcon icon={Spinner} />} />
                 </EmptyState>
               </Bullseye>
             )
@@ -1789,6 +1803,7 @@ import {
   EmptyStateIcon,
   EmptyStateBody,
   EmptyStateVariant,
+  EmptyStateHeader,
   PageSection,
   Title
 } from '@patternfly/react-core';
@@ -1812,11 +1827,12 @@ class ErrorStateDemo extends React.Component {
           {
             props: { colSpan: 8 },
             title: (
-              <EmptyState variant={EmptyStateVariant.small}>
-                <EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />
-                <Title headingLevel="h2" size="lg">
-                  Unable to connect
-                </Title>
+              <EmptyState variant={EmptyStateVariant.sm}>
+                <EmptyStateHeader
+                  titleText="Unable to connect"
+                  icon={<EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />}
+                  headingLevel="h2"
+                />
                 <EmptyStateBody>
                   There was an error retrieving data. Check your connection and reload the page.
                 </EmptyStateBody>

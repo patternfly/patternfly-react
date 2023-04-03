@@ -1,10 +1,6 @@
 import React from 'react';
 import {
   Button,
-  Dropdown,
-  DropdownItem,
-  DropdownPosition,
-  KebabToggle,
   DataList,
   DataListItem,
   DataListCell,
@@ -12,6 +8,12 @@ import {
   DataListItemCells,
   DataListAction
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownPosition,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 
 export const DataListActions: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -75,20 +77,20 @@ export const DataListActions: React.FunctionComponent = () => {
               aria-label="Actions"
               isPlainButtonAction
             >
-              <Dropdown
+              <DropdownDeprecated
                 isPlain
                 position={DropdownPosition.right}
                 isOpen={isOpen}
                 onSelect={onSelect}
                 toggle={<KebabToggle onToggle={onToggle} />}
                 dropdownItems={[
-                  <DropdownItem key="link">Link</DropdownItem>,
-                  <DropdownItem key="action" component="button">
+                  <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+                  <DropdownItemDeprecated key="action" component="button">
                     Action
-                  </DropdownItem>,
-                  <DropdownItem key="disabled link" isDisabled>
+                  </DropdownItemDeprecated>,
+                  <DropdownItemDeprecated key="disabled link" isDisabled>
                     Disabled Link
-                  </DropdownItem>
+                  </DropdownItemDeprecated>
                 ]}
               />
             </DataListAction>

@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-charts",
-  "version": "7.0.0-alpha.10",
+  "version": "7.0.0-alpha.14",
   "description": "This library provides a set of React chart components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -29,11 +29,11 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "@patternfly/react-styles": "^5.0.0-alpha.4",
-    "@patternfly/react-tokens": "^5.0.0-alpha.4",
+    "@patternfly/react-styles": "^5.0.0-alpha.6",
+    "@patternfly/react-tokens": "^5.0.0-alpha.6",
     "hoist-non-react-statics": "^3.3.0",
     "lodash": "^4.17.19",
-    "tslib": "^2.0.0",
+    "tslib": "^2.5.0",
     "victory-area": "^36.6.8",
     "victory-axis": "^36.6.8",
     "victory-bar": "^36.6.8",
@@ -52,8 +52,8 @@
     "victory-zoom-container": "^36.6.8"
   },
   "peerDependencies": {
-    "react": "^16.8 || ^17 || ^18",
-    "react-dom": "^16.8 || ^17 || ^18"
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18"
   },
   "scripts": {
     "clean": "rimraf dist"

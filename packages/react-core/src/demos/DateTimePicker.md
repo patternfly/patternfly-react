@@ -1,11 +1,17 @@
 ---
 id: Date and time picker
-section: demos
+section: components
+subsection: date-and-time
 beta: true
 ---
 
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
+import {
+Dropdown as DropdownDeprecated,
+DropdownToggle,
+DropdownItem as DropdownItemDeprecated
+} from '@patternfly/react-core/deprecated';
 
 ## Demos
 
@@ -14,4 +20,5 @@ In this demo, learn how to use a [CalendarMonth](/components/calendar-month) com
 ### Date and time picker
 
 ```ts file="./examples/DateTimePicker/DateTimePicker.tsx"
+
 ```

@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../../../components/Menu';
-import { Popper } from '../../../helpers/Popper/Popper';
+import { Popper, PopperProps } from '../../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../../helpers';
 
 export interface SelectProps extends MenuProps, OUIAProps {
@@ -22,14 +22,14 @@ export interface SelectProps extends MenuProps, OUIAProps {
   onOpenChange?: (isOpen: boolean) => void;
   /** Indicates if the select should be without the outer box-shadow */
   isPlain?: boolean;
-  /** Minimum width of the select menu */
-  minWidth?: string;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLDivElement>;
   /** z-index of the select menu */
   zIndex?: number;
   /** @beta Determines the accessible role of the select. For a checkbox select pass in "menu". */
   role?: string;
+  /** Additional properties to pass to the popper */
+  popperProps?: Partial<PopperProps>;
 }
 
 const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
@@ -41,10 +41,10 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   toggle,
   onOpenChange,
   isPlain,
-  minWidth,
   innerRef,
   zIndex = 9999,
   role = 'listbox',
+  popperProps,
   ...props
 }: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -100,11 +100,6 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       onSelect={(event, itemId) => onSelect && onSelect(event, itemId)}
       isPlain={isPlain}
       selected={selected}
-      {...(minWidth && {
-        style: {
-          '--pf-c-menu--MinWidth': minWidth
-        } as React.CSSProperties
-      })}
       {...getOUIAProps(
         Select.displayName,
         props.ouiaId !== undefined ? props.ouiaId : getDefaultOUIAId(Select.displayName),
@@ -125,6 +120,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
         appendTo={containerRef.current || undefined}
         isVisible={isOpen}
         zIndex={zIndex}
+        {...popperProps}
       />
     </div>
   );

@@ -66,8 +66,8 @@ module.exports = {
       viewportDimensions: { width: 400, height: 900 }
     },
     {
-      url: '/components/table/react-legacy',
-      label: 'legacy table content on mobile screen',
+      url: '/components/table/react-deprecated',
+      label: 'deprecated table content on mobile screen',
       viewportDimensions: { width: 400, height: 900 }
     },
     ...urls

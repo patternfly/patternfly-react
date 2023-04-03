@@ -11,10 +11,15 @@ propComponents:
     'DualListSelectorControlsWrapper',
     'DualListSelectorControl',
     'DualListSelectorTree',
-    'DualListSelectorTreeItemData',
+    'DualListSelectorTreeItemData'
   ]
 ---
 
+import {
+Dropdown as DropdownDeprecated,
+DropdownItem as DropdownItemDeprecated,
+KebabToggle
+} from '@patternfly/react-core/deprecated';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
@@ -27,26 +32,31 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 ### Basic
 
 ```ts file="./DualListSelectorBasic.tsx"
+
 ```
 
 ### Basic with tooltips
 
 ```ts file="./DualListSelectorBasicTooltips.tsx"
+
 ```
 
 ### Basic with search
 
 ```ts file="./DualListSelectorBasicSearch.tsx"
+
 ```
 
 ### Using more complex options with actions
 
 ```ts file="./DualListSelectorComplexOptionsActions.tsx"
+
 ```
 
 ### With tree
 
 ```ts file="./DualListSelectorTreeExample.tsx"
+
 ```
 
 ## Composable structure
@@ -76,6 +86,7 @@ The dual list selector can also be built in a composable manner to make customiz
 ### Composable dual list selector
 
 ```ts file="./DualListSelectorComposable.tsx"
+
 ```
 
 ### Composable with drag and drop
@@ -95,9 +106,11 @@ This example only allows reordering the contents of the "chosen" pane with drag 
 Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
 
 ```ts file="DualListSelectorComposableDragDrop.tsx"
+
 ```
 
 ### Composable with tree
 
 ```ts file="DualListSelectorComposableTree.tsx"
+
 ```

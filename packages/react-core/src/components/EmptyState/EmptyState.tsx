@@ -4,26 +4,26 @@ import styles from '@patternfly/react-styles/css/components/EmptyState/empty-sta
 
 export enum EmptyStateVariant {
   'xs' = 'xs',
-  small = 'small',
-  large = 'large',
+  sm = 'sm',
+  lg = 'lg',
   'xl' = 'xl',
   full = 'full'
 }
 
 export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
-  /** Additional classes added to the EmptyState */
+  /** Additional classes added to the empty state */
   className?: string;
-  /** Content rendered inside the EmptyState */
+  /** Content rendered inside the empty state */
   children: React.ReactNode;
-  /** Modifies EmptyState max-width */
-  variant?: 'xs' | 'small' | 'large' | 'xl' | 'full';
+  /** Modifies empty state max-width and sizes of icon, title and body */
+  variant?: 'xs' | 'sm' | 'lg' | 'xl' | 'full';
   /** Cause component to consume the available height of its container */
   isFullHeight?: boolean;
 }
 
 export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
   children,
-  className = '',
+  className,
   variant = EmptyStateVariant.full,
   isFullHeight,
   ...props
@@ -32,8 +32,8 @@ export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
     className={css(
       styles.emptyState,
       variant === 'xs' && styles.modifiers.xs,
-      variant === 'small' && styles.modifiers.sm,
-      variant === 'large' && styles.modifiers.lg,
+      variant === 'sm' && styles.modifiers.sm,
+      variant === 'lg' && styles.modifiers.lg,
       variant === 'xl' && styles.modifiers.xl,
       isFullHeight && styles.modifiers.fullHeight,
       className

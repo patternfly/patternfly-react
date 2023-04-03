@@ -261,10 +261,12 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
           )}
           ref={panel}
           onTransitionEnd={(ev) => {
-            if (!hidden && ev.nativeEvent.propertyName === 'transform') {
-              onExpand();
+            if (ev.target as HTMLElement === panel.current) {
+              if (!hidden && ev.nativeEvent.propertyName === 'transform') {
+                onExpand();
+              }
+              setIsExpandedInternal(!hidden);
             }
-            setIsExpandedInternal(!hidden);
           }}
           hidden={hidden}
           {...((defaultSize || minSize || maxSize) && {

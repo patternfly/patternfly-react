@@ -6,7 +6,8 @@ import { render } from '@testing-library/react';
 import { UserIcon } from '@patternfly/react-icons';
 import { EmptyStateIcon } from '../../EmptyStateIcon';
 // any missing imports can usually be resolved by adding them here
-import {} from '../..';
+import { Spinner } from '../../../Spinner/Spinner';
+
 it('EmptyStateIcon should match snapshot (auto-generated)', () => {
   const { asFragment } = render(
     <EmptyStateIcon
@@ -14,8 +15,6 @@ it('EmptyStateIcon should match snapshot (auto-generated)', () => {
       title={'string'}
       className={"''"}
       icon={UserIcon}
-      component={null}
-      variant={'icon'}
     />
   );
   expect(asFragment()).toMatchSnapshot();
@@ -27,9 +26,7 @@ it('EmptyStateIcon should match snapshot for variant container', () => {
       color={'string'}
       title={'string'}
       className={"''"}
-      icon={null}
-      component={() => <div>Component</div>}
-      variant={'container'}
+      icon={Spinner}
     />
   );
   expect(asFragment()).toMatchSnapshot();

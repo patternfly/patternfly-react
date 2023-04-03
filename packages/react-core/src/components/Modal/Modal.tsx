@@ -54,8 +54,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Modal handles pressing of the escape key and closes the modal. If you want to handle
    * this yourself you can use this callback function. */
   onEscapePress?: (event: KeyboardEvent) => void;
-  /** Alternate position of the modal. */
-  position?: 'top';
+  /** Position of the modal. By default a modal will be positioned vertically and horizontally centered. */
+  position?: 'default' | 'top';
   /** Offset from alternate position. Can be any valid CSS length/percentage. */
   positionOffset?: string;
   /** Flag to show the close button in the header area of the modal. */
@@ -113,7 +113,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     variant: 'default',
     hasNoBodyWrapper: false,
     appendTo: () => document.body,
-    ouiaSafe: true
+    ouiaSafe: true,
+    position: 'default'
   };
 
   constructor(props: ModalProps) {
@@ -230,6 +231,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       titleLabel,
       ouiaId,
       ouiaSafe,
+      position,
       ...props
     } = this.props;
     const { container } = this.state;
@@ -254,6 +256,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         bodyAriaRole={bodyAriaRole}
         ouiaId={ouiaId !== undefined ? ouiaId : this.state.ouiaStateId}
         ouiaSafe={ouiaSafe}
+        position={position}
       />,
       container
     ) as React.ReactElement;

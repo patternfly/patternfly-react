@@ -47,8 +47,8 @@ Install peer deps
 ```json
 "monaco-editor": "^0.21.3",
 "monaco-editor-webpack-plugin": "^2.1.0",
-"react": "^16.8 || ^17 || ^18",
-"react-dom": "^16.8 || ^17 || ^18",
+"react": "^17 || ^18",
+"react-dom": "^17 || ^18",
 "react-monaco-editor": "^0.51.0"
 ```
 
@@ -72,7 +72,7 @@ Next, replace all of the `react-script` references in your `package.json` `scrip
   }
 ```
 
-Next, create a `config-overries.js` file at the root of your project and add the following:
+Next, create a `config-overrides.js` file at the root of your project and add the following:
 
 ```javascript
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');

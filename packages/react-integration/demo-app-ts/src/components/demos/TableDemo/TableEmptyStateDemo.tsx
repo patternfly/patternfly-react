@@ -4,9 +4,11 @@ import {
   EmptyState,
   EmptyStateBody,
   EmptyStateIcon,
-  EmptyStateSecondaryActions,
-  Title,
-  Button
+  EmptyStateActions,
+  Button,
+  EmptyStateVariant,
+  EmptyStateHeader,
+  EmptyStateFooter
 } from '@patternfly/react-core';
 import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
@@ -27,24 +29,25 @@ export class EmptyStateTable extends React.Component<TableProps, { columns: (ICe
           heightAuto: true,
           props: { colSpan: '8' },
           title: (
-            <EmptyState variant="small">
-              <EmptyStateIcon icon={CubesIcon} />
-              <Title headingLevel="h5" size="lg">
-                Empty State
-              </Title>
+            <EmptyState variant={EmptyStateVariant.sm}>
+              <EmptyStateHeader titleText="Empty state" icon={<EmptyStateIcon icon={CubesIcon} />} headingLevel="h5" />
               <EmptyStateBody>
                 This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but
                 flexible enough to meet a variety of needs.
               </EmptyStateBody>
-              <Button variant="primary">Primary Action</Button>
-              <EmptyStateSecondaryActions>
-                <Button variant="link">Multiple</Button>
-                <Button variant="link">Action Buttons</Button>
-                <Button variant="link">Can</Button>
-                <Button variant="link">Go here</Button>
-                <Button variant="link">In the secondary</Button>
-                <Button variant="link">Action area</Button>
-              </EmptyStateSecondaryActions>
+              <EmptyStateFooter>
+                <EmptyStateActions>
+                  <Button variant="primary">Primary Action</Button>
+                </EmptyStateActions>
+                <EmptyStateActions>
+                  <Button variant="link">Multiple</Button>
+                  <Button variant="link">Action Buttons</Button>
+                  <Button variant="link">Can</Button>
+                  <Button variant="link">Go here</Button>
+                  <Button variant="link">In the secondary</Button>
+                  <Button variant="link">Action area</Button>
+                </EmptyStateActions>
+              </EmptyStateFooter>
             </EmptyState>
           )
         }

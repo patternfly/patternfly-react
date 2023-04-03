@@ -79,9 +79,6 @@ exports[`Matches snapshot when expanded 1`] = `
       </div>
     </div>
     <p>
-      Popper matches trigger width: false
-    </p>
-    <p>
       Append to class name: pf-c-tabs__item pf-m-overflow pf-m-current
     </p>
   </div>
@@ -166,9 +163,6 @@ exports[`Renders tabs passed via overflowingTabs when expanded in strict mode 1`
         </button>
       </div>
     </div>
-    <p>
-      Popper matches trigger width: false
-    </p>
     <p>
       Append to class name: pf-c-tabs__item pf-m-overflow
     </p>

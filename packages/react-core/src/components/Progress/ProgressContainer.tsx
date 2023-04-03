@@ -103,23 +103,26 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
 
   return (
     <React.Fragment>
-      {tooltip ? (
-        <Tooltip position={tooltipPosition} content={tooltip} isVisible>
-          {Title}
-        </Tooltip>
-      ) : (
-        Title
+      {title &&
+        (tooltip ? (
+          <Tooltip position={tooltipPosition} content={tooltip} isVisible>
+            {Title}
+          </Tooltip>
+        ) : (
+          Title
+        ))}
+      {(measureLocation !== ProgressMeasureLocation.none || StatusIcon) && (
+        <div className={css(progressStyle.progressStatus)} aria-hidden="true">
+          {(measureLocation === ProgressMeasureLocation.top || measureLocation === ProgressMeasureLocation.outside) && (
+            <span className={css(progressStyle.progressMeasure)}>{label || `${value}%`}</span>
+          )}
+          {StatusIcon && (
+            <span className={css(progressStyle.progressStatusIcon)}>
+              <StatusIcon />
+            </span>
+          )}
+        </div>
       )}
-      <div className={css(progressStyle.progressStatus)} aria-hidden="true">
-        {(measureLocation === ProgressMeasureLocation.top || measureLocation === ProgressMeasureLocation.outside) && (
-          <span className={css(progressStyle.progressMeasure)}>{label || `${value}%`}</span>
-        )}
-        {variantToIcon.hasOwnProperty(variant) && (
-          <span className={css(progressStyle.progressStatusIcon)}>
-            <StatusIcon />
-          </span>
-        )}
-      </div>
       <ProgressBar role="progressbar" progressBarAriaProps={progressBarAriaProps} value={value}>
         {measureLocation === ProgressMeasureLocation.inside && `${value}%`}
       </ProgressBar>

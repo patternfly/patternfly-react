@@ -1,6 +1,6 @@
 ---
 id: Filters
-section: demos
+section: patterns
 ---
 
 import {
@@ -20,10 +20,12 @@ ToolbarFilter,
 Badge,
 Pagination,
 EmptyState,
-EmptyStateIcon,
-Title,
 EmptyStateBody,
-EmptyStatePrimary,
+EmptyStateHeader,
+EmptyStateFooter,
+EmptyStateIcon,
+EmptyStateActions,
+Title,
 Button,
 Bullseye,
 ToolbarToggleGroup

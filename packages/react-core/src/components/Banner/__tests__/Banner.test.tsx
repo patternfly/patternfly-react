@@ -31,24 +31,24 @@ test('Renders without any modifier class when variant prop is not passed', () =>
   expect(screen.getByText('Test')).toHaveClass('pf-c-banner', { exact: true });
 });
 
-test('Renders with class name pf-m-success when "success" is passed to variant prop', () => {
-  render(<Banner variant="success">Test</Banner>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-success');
+test('Renders with class name pf-m-green when "green" is passed to variant prop', () => {
+  render(<Banner variant="green">Test</Banner>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-green');
 });
 
-test('Renders with class name pf-m-danger when "danger" is passed to variant prop', () => {
-  render(<Banner variant="danger">Test</Banner>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-danger');
+test('Renders with class name pf-m-red when "red" is passed to variant prop', () => {
+  render(<Banner variant="red">Test</Banner>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-red');
 });
 
-test('Renders with class name pf-m-warning when "warning" is passed to variant prop', () => {
-  render(<Banner variant="warning">Test</Banner>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-warning');
+test('Renders with class name pf-m-gold when "gold" is passed to variant prop', () => {
+  render(<Banner variant="gold">Test</Banner>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-gold');
 });
 
-test('Renders with class name pf-m-info when "info" is passed to variant prop', () => {
-  render(<Banner variant="info">Test</Banner>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-info');
+test('Renders with class name pf-m-blue when "blue" is passed to variant prop', () => {
+  render(<Banner variant="blue">Test</Banner>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-blue');
 });
 
 test('Does not render pf-u-screen-reader class by default', () => {

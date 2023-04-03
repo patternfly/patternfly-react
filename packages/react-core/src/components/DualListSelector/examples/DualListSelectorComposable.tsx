@@ -9,12 +9,13 @@ import {
   DualListSelectorControlsWrapper,
   DualListSelectorControl,
   SearchInput,
-  Title,
   EmptyState,
   EmptyStateVariant,
-  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateBody,
-  EmptyStatePrimary
+  EmptyStateIcon,
+  EmptyStateActions
 } from '@patternfly/react-core';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
@@ -68,11 +69,11 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
   // callback for moving all options between lists
   const moveAll = (fromAvailable: boolean) => {
     if (fromAvailable) {
-      setChosenOptions([...availableOptions.filter(option => option.isVisible), ...chosenOptions]);
-      setAvailableOptions([...availableOptions.filter(option => !option.isVisible)]);
+      setChosenOptions([...availableOptions.filter((option) => option.isVisible), ...chosenOptions]);
+      setAvailableOptions([...availableOptions.filter((option) => !option.isVisible)]);
     } else {
-      setAvailableOptions([...chosenOptions.filter(option => option.isVisible), ...availableOptions]);
-      setChosenOptions([...chosenOptions.filter(option => !option.isVisible)]);
+      setAvailableOptions([...chosenOptions.filter((option) => option.isVisible), ...availableOptions]);
+      setChosenOptions([...chosenOptions.filter((option) => !option.isVisible)]);
     }
   };
 
@@ -96,7 +97,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
   const onFilterChange = (value: string, isAvailable: boolean) => {
     isAvailable ? setAvailableFilter(value) : setChosenFilter(value);
     const toFilter = isAvailable ? [...availableOptions] : [...chosenOptions];
-    toFilter.forEach(option => {
+    toFilter.forEach((option) => {
       option.isVisible = value === '' || option.text.toLowerCase().includes(value.toLowerCase());
     });
   };
@@ -138,17 +139,16 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
   };
 
   const buildEmptyState = (isAvailable: boolean) => (
-    <EmptyState variant={EmptyStateVariant.small}>
-      <EmptyStateIcon icon={SearchIcon} />
-      <Title headingLevel="h4" size="md">
-        No results found
-      </Title>
+    <EmptyState variant={EmptyStateVariant.sm}>
+      <EmptyStateHeader headingLevel="h4" titleText="No results found" icon={<EmptyStateIcon icon={SearchIcon} />} />
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
-      <EmptyStatePrimary>
-        <Button variant="link" onClick={() => onFilterChange('', isAvailable)}>
-          Clear all filters
-        </Button>
-      </EmptyStatePrimary>
+      <EmptyStateFooter>
+        <EmptyStateActions>
+          <Button variant="link" onClick={() => onFilterChange('', isAvailable)}>
+            Clear all filters
+          </Button>
+        </EmptyStateActions>
+      </EmptyStateFooter>
     </EmptyState>
   );
 
@@ -156,17 +156,17 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
     <DualListSelector>
       <DualListSelectorPane
         title="Available"
-        status={`${availableOptions.filter(option => option.selected && option.isVisible).length} of ${
-          availableOptions.filter(option => option.isVisible).length
+        status={`${availableOptions.filter((option) => option.selected && option.isVisible).length} of ${
+          availableOptions.filter((option) => option.isVisible).length
         } options selected`}
         searchInput={buildSearchInput(true)}
         actions={[buildSort(true)]}
         listMinHeight="300px"
       >
         {availableFilter !== '' &&
-          availableOptions.filter(option => option.isVisible).length === 0 &&
+          availableOptions.filter((option) => option.isVisible).length === 0 &&
           buildEmptyState(true)}
-        {availableOptions.filter(option => option.isVisible).length > 0 && (
+        {availableOptions.filter((option) => option.isVisible).length > 0 && (
           <DualListSelectorList>
             {availableOptions.map((option, index) =>
               option.isVisible ? (
@@ -174,7 +174,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
                   key={index}
                   isSelected={option.selected}
                   id={`composable-available-option-${index}`}
-                  onOptionSelect={e => onOptionSelect(e, index, false)}
+                  onOptionSelect={(e) => onOptionSelect(e, index, false)}
                 >
                   {option.text}
                 </DualListSelectorListItem>
@@ -185,7 +185,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
       </DualListSelectorPane>
       <DualListSelectorControlsWrapper>
         <DualListSelectorControl
-          isDisabled={!availableOptions.some(option => option.selected)}
+          isDisabled={!availableOptions.some((option) => option.selected)}
           onClick={() => moveSelected(true)}
           aria-label="Add selected"
           tooltipContent="Add selected"
@@ -210,7 +210,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
         </DualListSelectorControl>
         <DualListSelectorControl
           onClick={() => moveSelected(false)}
-          isDisabled={!chosenOptions.some(option => option.selected)}
+          isDisabled={!chosenOptions.some((option) => option.selected)}
           aria-label="Remove selected"
           tooltipContent="Remove selected"
         >
@@ -219,16 +219,18 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
       </DualListSelectorControlsWrapper>
       <DualListSelectorPane
         title="Chosen"
-        status={`${chosenOptions.filter(option => option.selected && option.isVisible).length} of ${
-          chosenOptions.filter(option => option.isVisible).length
+        status={`${chosenOptions.filter((option) => option.selected && option.isVisible).length} of ${
+          chosenOptions.filter((option) => option.isVisible).length
         } options selected`}
         searchInput={buildSearchInput(false)}
         actions={[buildSort(false)]}
         isChosen
         listMinHeight="300px"
       >
-        {chosenFilter !== '' && chosenOptions.filter(option => option.isVisible).length === 0 && buildEmptyState(false)}
-        {chosenOptions.filter(option => option.isVisible).length > 0 && (
+        {chosenFilter !== '' &&
+          chosenOptions.filter((option) => option.isVisible).length === 0 &&
+          buildEmptyState(false)}
+        {chosenOptions.filter((option) => option.isVisible).length > 0 && (
           <DualListSelectorList>
             {chosenOptions.map((option, index) =>
               option.isVisible ? (
@@ -236,7 +238,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
                   key={index}
                   isSelected={option.selected}
                   id={`composable-chosen-option-${index}`}
-                  onOptionSelect={e => onOptionSelect(e, index, true)}
+                  onOptionSelect={(e) => onOptionSelect(e, index, true)}
                 >
                   {option.text}
                 </DualListSelectorListItem>

@@ -1,6 +1,7 @@
 ---
 id: Form
 section: components
+subsection: forms
 cssPrefix: pf-c-form
 propComponents:
   [

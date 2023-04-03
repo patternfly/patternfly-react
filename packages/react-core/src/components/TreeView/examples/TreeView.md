@@ -5,6 +5,11 @@ cssPrefix: pf-c-tree-view
 propComponents: ['TreeView', 'TreeViewDataItem', 'TreeViewSearch']
 ---
 
+import {
+Dropdown as DropdownDeprecated,
+DropdownItem as DropdownItemDeprecated,
+KebabToggle
+} from '@patternfly/react-core/deprecated';
 import { FolderIcon, FolderOpenIcon, EllipsisVIcon, ClipboardIcon, HamburgerIcon } from '@patternfly/react-icons';
 
 ## Examples
@@ -30,7 +35,7 @@ class DefaultTreeView extends React.Component {
       }
     };
 
-    this.onToggle = evt => {
+    this.onToggle = (evt) => {
       const { allExpanded } = this.state;
       this.setState({
         allExpanded: allExpanded !== undefined ? !allExpanded : true
@@ -298,12 +303,14 @@ class SearchTreeView extends React.Component {
       }
     };
 
-    this.onSearch = evt => {
+    this.onSearch = (evt) => {
       const input = evt.target.value;
       if (input === '') {
         this.setState({ filteredItems: this.options, isFiltered: false });
       } else {
-        const filtered = this.options.map(opt => Object.assign({}, opt)).filter(item => this.filterItems(item, input));
+        const filtered = this.options
+          .map((opt) => Object.assign({}, opt))
+          .filter((item) => this.filterItems(item, input));
         this.setState({ filteredItems: filtered, isFiltered: true });
       }
     };
@@ -316,8 +323,8 @@ class SearchTreeView extends React.Component {
       if (item.children) {
         return (
           (item.children = item.children
-            .map(opt => Object.assign({}, opt))
-            .filter(child => this.filterItems(child, input))).length > 0
+            .map((opt) => Object.assign({}, opt))
+            .filter((child) => this.filterItems(child, input))).length > 0
         );
       }
     };
@@ -483,18 +490,18 @@ class CheckboxTreeView extends React.Component {
       console.log(checked);
 
       const checkedItemTree = this.options
-        .map(opt => Object.assign({}, opt))
-        .filter(item => this.filterItems(item, treeViewItem));
+        .map((opt) => Object.assign({}, opt))
+        .filter((item) => this.filterItems(item, treeViewItem));
       const flatCheckedItems = this.flattenTree(checkedItemTree);
       console.log('flat', flatCheckedItems);
 
       this.setState(
-        prevState => ({
+        (prevState) => ({
           checkedItems: checked
             ? prevState.checkedItems.concat(
-                flatCheckedItems.filter(item => !prevState.checkedItems.some(i => i.id === item.id))
+                flatCheckedItems.filter((item) => !prevState.checkedItems.some((i) => i.id === item.id))
               )
-            : prevState.checkedItems.filter(item => !flatCheckedItems.some(i => i.id === item.id))
+            : prevState.checkedItems.filter((item) => !flatCheckedItems.some((i) => i.id === item.id))
         }),
         () => {
           console.log('Checked items: ', this.state.checkedItems);
@@ -503,15 +510,15 @@ class CheckboxTreeView extends React.Component {
     };
 
     // Helper functions
-    const isChecked = dataItem => this.state.checkedItems.some(item => item.id === dataItem.id);
-    const areAllDescendantsChecked = dataItem =>
-      dataItem.children ? dataItem.children.every(child => areAllDescendantsChecked(child)) : isChecked(dataItem);
-    const areSomeDescendantsChecked = dataItem =>
-      dataItem.children ? dataItem.children.some(child => areSomeDescendantsChecked(child)) : isChecked(dataItem);
+    const isChecked = (dataItem) => this.state.checkedItems.some((item) => item.id === dataItem.id);
+    const areAllDescendantsChecked = (dataItem) =>
+      dataItem.children ? dataItem.children.every((child) => areAllDescendantsChecked(child)) : isChecked(dataItem);
+    const areSomeDescendantsChecked = (dataItem) =>
+      dataItem.children ? dataItem.children.some((child) => areSomeDescendantsChecked(child)) : isChecked(dataItem);
 
-    this.flattenTree = tree => {
+    this.flattenTree = (tree) => {
       var result = [];
-      tree.forEach(item => {
+      tree.forEach((item) => {
         result.push(item);
         if (item.children) {
           result = result.concat(this.flattenTree(item.children));
@@ -520,7 +527,7 @@ class CheckboxTreeView extends React.Component {
       return result;
     };
 
-    this.mapTree = item => {
+    this.mapTree = (item) => {
       const hasCheck = areAllDescendantsChecked(item);
       // Reset checked properties to be updated
       item.checkProps.checked = false;
@@ -537,7 +544,7 @@ class CheckboxTreeView extends React.Component {
       if (item.children) {
         return {
           ...item,
-          children: item.children.map(child => this.mapTree(child))
+          children: item.children.map((child) => this.mapTree(child))
         };
       }
       return item;
@@ -551,15 +558,15 @@ class CheckboxTreeView extends React.Component {
       if (item.children) {
         return (
           (item.children = item.children
-            .map(opt => Object.assign({}, opt))
-            .filter(child => this.filterItems(child, checkedItem))).length > 0
+            .map((opt) => Object.assign({}, opt))
+            .filter((child) => this.filterItems(child, checkedItem))).length > 0
         );
       }
     };
   }
 
   render() {
-    const mapped = this.options.map(item => this.mapTree(item));
+    const mapped = this.options.map((item) => this.mapTree(item));
     return <TreeView data={mapped} onCheck={this.onCheck} hasCheckboxes />;
   }
 }
@@ -856,7 +863,12 @@ class CustomBadgesTreeView extends React.Component {
 
 ```js
 import React from 'react';
-import { TreeView, Button, Dropdown, DropdownItem, KebabToggle } from '@patternfly/react-core';
+import { TreeView, Button } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import HamburgerIcon from '@patternfly/react-icons/dist/esm/icons/hamburger-icon';
 
@@ -881,7 +893,7 @@ class IconTreeView extends React.Component {
       });
     };
 
-    this.onAppLaunchSelect = event => {
+    this.onAppLaunchSelect = (event) => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -891,23 +903,23 @@ class IconTreeView extends React.Component {
   render() {
     const { activeItems, isOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
+      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="action" component="button">
         Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled href="www.google.com">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="disabled link" isDisabled href="www.google.com">
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="disabled action" isDisabled component="button">
         Disabled Action
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
     const options = [
       {
         name: 'Application launcher',
         id: 'example7-AppLaunch',
         action: (
-          <Dropdown
+          <DropdownDeprecated
             onSelect={this.onAppLaunchSelect}
             toggle={<KebabToggle onToggle={this.onToggle} />}
             isOpen={isOpen}
@@ -1067,14 +1079,12 @@ import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 const CompactTreeView: React.FunctionComponent = () => {
   const options: TreeViewDataItem[] = [
     {
-      name:
-        'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
+      name: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
       title: 'apiVersion',
       id: 'example9-apiVersion'
     },
     {
-      name:
-        'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
+      name: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
       title: 'kind',
       id: 'example9-kind'
     },
@@ -1089,8 +1099,7 @@ const CompactTreeView: React.FunctionComponent = () => {
       id: 'example9-spec',
       children: [
         {
-          name:
-            'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
+          name: 'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
           title: 'minReadySeconds',
           id: 'example9-minReadySeconds'
         },
@@ -1100,20 +1109,17 @@ const CompactTreeView: React.FunctionComponent = () => {
           id: 'example9-paused'
         },
         {
-          name:
-            'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
+          name: 'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
           title: 'progressDeadlineSeconds',
           id: 'example9-progressDeadlineSeconds',
           children: [
             {
-              name:
-                'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
+              name: 'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
               title: 'revisionHistoryLimit',
               id: 'example9-revisionHistoryLimit',
               children: [
                 {
-                  name:
-                    'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
+                  name: 'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
                   title: 'matchLabels',
                   id: 'example9-matchLabels'
                 }
@@ -1137,14 +1143,12 @@ import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 const CompactNoBackgroundTreeView: React.FunctionComponent = () => {
   const options: TreeViewDataItem[] = [
     {
-      name:
-        'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
+      name: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
       title: 'apiVersion',
       id: 'example10-apiVersion'
     },
     {
-      name:
-        'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
+      name: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
       title: 'kind',
       id: 'example10-kind'
     },
@@ -1159,8 +1163,7 @@ const CompactNoBackgroundTreeView: React.FunctionComponent = () => {
       id: 'example10-spec',
       children: [
         {
-          name:
-            'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
+          name: 'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
           title: 'minReadySeconds',
           id: 'example10-minReadySeconds'
         },
@@ -1170,20 +1173,17 @@ const CompactNoBackgroundTreeView: React.FunctionComponent = () => {
           id: 'example10-paused'
         },
         {
-          name:
-            'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
+          name: 'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
           title: 'progressDeadlineSeconds',
           id: 'example10-progressDeadlineSeconds',
           children: [
             {
-              name:
-                'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
+              name: 'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
               title: 'revisionHistoryLimit',
               id: 'example10-revisionHistoryLimit',
               children: [
                 {
-                  name:
-                    'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
+                  name: 'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
                   title: 'matchLabels',
                   id: 'example10-matchLabels'
                 }
@@ -1214,13 +1214,13 @@ class MemoTreeView extends React.Component {
 
     this.onSelect = (evt, treeViewItem) => {
       let filtered = [];
-      this.options.forEach(item => this.filterItems(item, treeViewItem.id, filtered));
+      this.options.forEach((item) => this.filterItems(item, treeViewItem.id, filtered));
       this.setState({
         activeItems: filtered
       });
     };
 
-    this.onToggle = evt => {
+    this.onToggle = (evt) => {
       const { allExpanded } = this.state;
       this.setState({
         allExpanded: allExpanded !== undefined ? !allExpanded : true
@@ -1230,7 +1230,7 @@ class MemoTreeView extends React.Component {
     this.filterItems = (item, input, list) => {
       if (item.children) {
         let childContained = false;
-        item.children.forEach(child => {
+        item.children.forEach((child) => {
           if (childContained) {
             this.filterItems(child, input, list);
           } else {

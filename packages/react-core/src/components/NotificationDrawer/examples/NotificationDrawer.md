@@ -12,10 +12,18 @@ propComponents:
     'NotificationDrawerList',
     'NotificationDrawerListItem',
     'NotificationDrawerListItemBody',
-    'NotificationDrawerListItemHeader',
+    'NotificationDrawerListItemHeader'
   ]
 ---
 
+import {
+Dropdown as DropdownDeprecated,
+DropdownItem as DropdownItemDeprecated,
+DropdownPosition,
+DropdownDirection,
+DropdownSeparator,
+KebabToggle
+} from '@patternfly/react-core/deprecated';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 ## Examples
@@ -23,14 +31,17 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 ### Basic
 
 ```ts file="NotificationDrawerBasic.tsx"
+
 ```
 
 ### Groups
 
 ```ts file="NotificationDrawerGroups.tsx"
+
 ```
 
 ### Lightweight
 
 ```ts file="NotificationDrawerLightweight.tsx"
+
 ```

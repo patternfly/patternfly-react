@@ -11,8 +11,3 @@ propComponents: ['Backdrop']
 
 ```ts isFullscreen file="./BackdropBasic.tsx"
 ```
-
-### With spinner
-
-```ts isFullscreen file="./BackdropSpinner.tsx"
-```

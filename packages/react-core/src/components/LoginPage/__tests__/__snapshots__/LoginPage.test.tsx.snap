@@ -5,44 +5,14 @@ exports[`check loginpage example against snapshot 1`] = `
   <div
     alt="Pf-background"
     class="pf-c-background-image"
-    style="--pf-c-background-image--BackgroundImage: url(Background src); --pf-c-background-image--BackgroundImage-2x: url(Background src); --pf-c-background-image--BackgroundImage--sm: url(Background src); --pf-c-background-image--BackgroundImage--sm-2x: url(Background src); --pf-c-background-image--BackgroundImage--lg: url(Background src); --pf-c-background-image--Filter: url(#patternfly-background-image-filter-overlay0);"
+    src="Background src"
   >
     <svg
       class="pf-c-background-image__filter"
       height="0"
       width="0"
       xmlns="http://www.w3.org/2000/svg"
-    >
-      <filter
-        id="patternfly-background-image-filter-overlay0"
-      >
-        <fecolormatrix
-          type="matrix"
-          values="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0"
-        />
-        <fecomponenttransfer
-          color-interpolation-filters="sRGB"
-          result="duotone"
-        >
-          <fefuncr
-            tableValues="0.086274509803922 0.43921568627451"
-            type="table"
-          />
-          <fefuncg
-            tableValues="0.086274509803922 0.43921568627451"
-            type="table"
-          />
-          <fefuncb
-            tableValues="0.086274509803922 0.43921568627451"
-            type="table"
-          />
-          <fefunca
-            tableValues="0 1"
-            type="table"
-          />
-        </fecomponenttransfer>
-      </filter>
-    </svg>
+    />
   </div>
   <div
     class="pf-c-login"

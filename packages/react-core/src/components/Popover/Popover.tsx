@@ -210,7 +210,7 @@ export interface PopoverProps {
 }
 
 const alertStyle = {
-  default: styles.modifiers.default,
+  default: styles.modifiers.custom,
   info: styles.modifiers.info,
   success: styles.modifiers.success,
   warning: styles.modifiers.warning,
@@ -464,7 +464,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         triggerRef={triggerRef}
         popper={content}
         popperRef={popoverRef}
-        popperMatchesTriggerWidth={false}
+        minWidth="revert"
         appendTo={appendTo}
         isVisible={visible}
         positionModifiers={positionModifiers}

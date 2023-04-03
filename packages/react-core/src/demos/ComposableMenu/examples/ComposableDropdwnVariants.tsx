@@ -226,14 +226,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
         />
       </ToggleGroup>
       <br />
-      <Popper
-        trigger={buildToggle()}
-        triggerRef={toggleRef}
-        popper={menu}
-        popperRef={menuRef}
-        isVisible={isOpen}
-        popperMatchesTriggerWidth={['image', 'checkbox'].includes(toggleSelected)}
-      />
+      <Popper trigger={buildToggle()} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />
     </React.Fragment>
   );
 };

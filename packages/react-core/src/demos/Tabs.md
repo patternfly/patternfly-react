@@ -11,6 +11,8 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import { KebabToggle } from '@patternfly/react-core/deprecated';
 
 ## Demos
 
@@ -440,19 +442,23 @@ TabsOpenWithSecondaryTabsDemo = () => {
 ### Nested tabs
 
 ```js isFullscreen file="./examples/Tabs/NestedTabs.tsx"
+
 ```
 
 ### Nested, unindented tabs
 
 ```js isFullscreen file="./examples/Tabs/NestedUnindentedTabs.tsx"
+
 ```
 
 ### Tables and tabs
 
 ```js isFullscreen file="./examples/Tabs/TabsAndTable.tsx"
+
 ```
 
 ### Modal tabs
 
 ```js isFullscreen file="./examples/Tabs/ModalTabs.tsx"
+
 ```

@@ -12,15 +12,16 @@ import {
   Popper,
   Pagination,
   EmptyState,
-  EmptyStateIcon,
-  Title,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateBody,
-  EmptyStatePrimary,
   Button,
   Bullseye,
   Badge,
   ToolbarFilter,
-  ToolbarToggleGroup
+  ToolbarToggleGroup,
+  EmptyStateIcon,
+  EmptyStateActions
 } from '@patternfly/react-core';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -235,7 +236,6 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
         popperRef={bulkSelectMenuRef}
         appendTo={bulkSelectContainerRef.current || undefined}
         isVisible={isBulkSelectOpen}
-        popperMatchesTriggerWidth={false}
       />
     </div>
   );
@@ -494,22 +494,21 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
 
   const emptyState = (
     <EmptyState>
-      <EmptyStateIcon icon={SearchIcon} />
-      <Title size="lg" headingLevel="h4">
-        No results found
-      </Title>
+      <EmptyStateHeader headingLevel="h4" titleText="No results found" icon={<EmptyStateIcon icon={SearchIcon} />} />
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
-      <EmptyStatePrimary>
-        <Button
-          variant="link"
-          onClick={() => {
-            setStatusSelection('');
-            setLocationSelections([]);
-          }}
-        >
-          Clear all filters
-        </Button>
-      </EmptyStatePrimary>
+      <EmptyStateFooter>
+        <EmptyStateActions>
+          <Button
+            variant="link"
+            onClick={() => {
+              setStatusSelection('');
+              setLocationSelections([]);
+            }}
+          >
+            Clear all filters
+          </Button>
+        </EmptyStateActions>
+      </EmptyStateFooter>
     </EmptyState>
   );
 

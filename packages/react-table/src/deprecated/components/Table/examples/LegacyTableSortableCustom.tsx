@@ -3,14 +3,7 @@ import { TableProps, sortable, info, Table, TableBody, TableHeader } from '@patt
 import {
   Toolbar,
   ToolbarContent,
-  ToolbarItem,
-  OptionsMenu,
-  OptionsMenuItemGroup,
-  OptionsMenuItem,
-  OptionsMenuSeparator,
-  OptionsMenuToggle
 } from '@patternfly/react-core';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 interface Repository {
   name: string;
@@ -28,13 +21,13 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
     { name: 'p', branches: 'two', prs: 'b', workspaces: 'four', lastCommit: 'five' }
   ];
 
-  const columnNames = {
-    name: 'Repositories',
-    branches: 'Branches',
-    prs: 'Pull requests',
-    workspaces: 'Workspaces',
-    lastCommit: 'Last commit'
-  };
+  // const columnNames = {
+  //   name: 'Repositories',
+  //   branches: 'Branches',
+  //   prs: 'Pull requests',
+  //   workspaces: 'Workspaces',
+  //   lastCommit: 'Last commit'
+  // };
 
   // Index of the currently sorted column
   // Note: if you intend to make columns reorderable, you may instead want to use a non-numeric key
@@ -45,7 +38,7 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
   const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
 
   // Sort dropdown expansion
-  const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
+  // const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
 
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   // This example is trivial since our data objects just contain strings, but if the data was more complex
@@ -116,7 +109,7 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
     <React.Fragment>
       <Toolbar id="toolbar">
         <ToolbarContent>
-          <ToolbarItem>
+          {/* <ToolbarItem> TODO: replace with select after #8073
             <OptionsMenu
               id="options-menu-multiple-options-example"
               menuItems={[
@@ -165,7 +158,7 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
               isPlain
               isGrouped
             />
-          </ToolbarItem>
+          </ToolbarItem> */}
         </ToolbarContent>
       </Toolbar>
       <Table

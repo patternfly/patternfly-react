@@ -55,8 +55,6 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   timeoutAnimation?: number;
   /** Title of the alert.  */
   title: React.ReactNode;
-  /** @deprecated Sets the heading level to use for the alert title. Default is h4. */
-  titleHeadingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /** Sets the element to use as the alert title. Default is h4. */
   component?: keyof JSX.IntrinsicElements;
   /** Adds accessible text to the alert toggle. */
@@ -98,7 +96,6 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   actionClose,
   actionLinks,
   title,
-  titleHeadingLevel,
   component = 'h4',
   children = '',
   className = '',
@@ -126,13 +123,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   );
 
   const titleRef = React.useRef(null);
-  const TitleComponent = (titleHeadingLevel || component) as any;
-  if (titleHeadingLevel !== undefined) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      'Alert: titleHeadingLevel is deprecated, please use the newer component prop instead to set the alert title element.'
-    );
-  }
+  const TitleComponent = component as any;
 
   const divRef = React.useRef<HTMLDivElement>();
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);

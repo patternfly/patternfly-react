@@ -3,30 +3,33 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import AddressBookIcon from '@patternfly/react-icons/dist/esm/icons/address-book-icon';
+
 import { EmptyState, EmptyStateVariant } from '../EmptyState';
 import { EmptyStateBody } from '../EmptyStateBody';
-import { EmptyStateSecondaryActions } from '../EmptyStateSecondaryActions';
-import { EmptyStateIcon } from '../EmptyStateIcon';
-import { EmptyStatePrimary } from '../EmptyStatePrimary';
+import { EmptyStateActions } from '../EmptyStateActions';
 import { Button } from '../../Button';
-import { Title, TitleSizes } from '../../Title';
+import { EmptyStateHeader } from '../EmptyStateHeader';
+import { EmptyStateFooter } from '../EmptyStateFooter';
+import { EmptyStateIcon } from '../../../../dist/esm';
 
 describe('EmptyState', () => {
   test('Main', () => {
     const { asFragment } = render(
       <EmptyState>
-        <Title headingLevel="h5" size="lg">
-          HTTP Proxies
-        </Title>
+        <EmptyStateHeader titleText="HTTP Proxies" />
         <EmptyStateBody>
           Defining HTTP Proxies that exist on your network allows you to perform various actions through those proxies.
         </EmptyStateBody>
-        <Button variant="primary">New HTTP Proxy</Button>
-        <EmptyStateSecondaryActions>
-          <Button variant="link" aria-label="learn more action">
-            Learn more about this in the documentation.
-          </Button>
-        </EmptyStateSecondaryActions>
+        <EmptyStateFooter>
+          <EmptyStateActions>
+            <Button variant="primary">New HTTP Proxy</Button>
+          </EmptyStateActions>
+          <EmptyStateActions>
+            <Button variant="link" aria-label="learn more action">
+              Learn more about this in the documentation.
+            </Button>
+          </EmptyStateActions>
+        </EmptyStateFooter>
       </EmptyState>
     );
     expect(asFragment()).toMatchSnapshot();
@@ -34,10 +37,8 @@ describe('EmptyState', () => {
 
   test('Main variant large', () => {
     const { asFragment } = render(
-      <EmptyState variant={EmptyStateVariant.large}>
-        <Title headingLevel="h3" size={TitleSizes.md}>
-          EmptyState large
-        </Title>
+      <EmptyState variant={EmptyStateVariant.lg}>
+        <EmptyStateHeader titleText="EmptyState large" />
       </EmptyState>
     );
     expect(asFragment()).toMatchSnapshot();
@@ -45,10 +46,8 @@ describe('EmptyState', () => {
 
   test('Main variant small', () => {
     const { asFragment } = render(
-      <EmptyState variant={EmptyStateVariant.small}>
-        <Title headingLevel="h3" size={TitleSizes.md}>
-          EmptyState small
-        </Title>
+      <EmptyState variant={EmptyStateVariant.sm}>
+        <EmptyStateHeader titleText="EmptyState small" />
       </EmptyState>
     );
     expect(asFragment()).toMatchSnapshot();
@@ -57,9 +56,7 @@ describe('EmptyState', () => {
   test('Main variant xs', () => {
     const { asFragment } = render(
       <EmptyState variant={EmptyStateVariant.xs}>
-        <Title headingLevel="h3" size={TitleSizes.md}>
-          EmptyState small
-        </Title>
+        <EmptyStateHeader titleText="EmptyState extra small" />
       </EmptyState>
     );
     expect(asFragment()).toMatchSnapshot();
@@ -70,51 +67,47 @@ describe('EmptyState', () => {
     expect(screen.getByTestId('body-test-id')).toHaveClass('custom-empty-state-body pf-c-empty-state__body');
   });
 
-  // TODO: update this with issue #8555
-  xtest('Secondary Action', () => {
-    render(<EmptyStateSecondaryActions className="custom-empty-state-secondary" data-testid="actions-test-id" />);
-    expect(screen.getByTestId('actions-test-id')).toHaveClass(
-      'pf-c-empty-state__secondary'
-    );
-  });
-
-  test('Icon', () => {
-    render(<EmptyStateIcon icon={AddressBookIcon} data-testid="icon-test-id" />);
-    expect(screen.getByTestId('icon-test-id')).toHaveClass('pf-c-empty-state__icon');
-  });
-
-  test('Wrap icon in a div', () => {
-    const { container } = render(
-      <EmptyStateIcon
-        variant="container"
-        component={AddressBookIcon}
-        className="custom-empty-state-icon"
-        id="empty-state-icon-id"
-      />
-    );
-
-    expect(container.querySelector('div')).toHaveClass('pf-c-empty-state__icon custom-empty-state-icon');
-    expect(container.querySelector('svg')).toBeInTheDocument();
-  });
-
-  // TODO: update this with issue #8555
-  xtest('Primary div', () => {
-    render(
-      <EmptyStatePrimary data-testid="primary-test-id">
-        <Button variant="link">Link</Button>
-      </EmptyStatePrimary>
-    );
-    expect(screen.getByTestId('primary-test-id')).toHaveClass('pf-c-empty-state__primary');
+  test('Actions', () => {
+    render(<EmptyStateActions className="custom-empty-state-secondary" data-testid="actions-test-id" />);
+    expect(screen.getByTestId('actions-test-id')).toHaveClass('pf-c-empty-state__actions');
   });
 
   test('Full height', () => {
     const { asFragment } = render(
-      <EmptyState isFullHeight variant={EmptyStateVariant.large}>
-        <Title headingLevel="h3" size={TitleSizes.md}>
-          EmptyState large
-        </Title>
+      <EmptyState isFullHeight variant={EmptyStateVariant.lg}>
+        <EmptyStateHeader titleText="EmptyState large" />
       </EmptyState>
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Header with icon', () => {
+    const { asFragment } = render(<EmptyStateHeader icon={<EmptyStateIcon icon={AddressBookIcon} />} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Header with title text renders heading level 1 by default', () => {
+    render(<EmptyStateHeader titleText="Empty state" />);
+    expect(screen.getByRole('heading', { level: 1, name: 'Empty state' })).toHaveClass('pf-c-empty-state__title-text');
+  });
+
+  test('Header renders custom class passed via titleClassName', () => {
+    render(<EmptyStateHeader titleText="Empty state" titleClassName={'testTitleClassName'} />);
+    expect(screen.getByRole('heading', { level: 1, name: 'Empty state' })).toHaveClass('testTitleClassName');
+  });
+
+  test('Header renders the title as other heading levels when one is passed using headingLevel', () => {
+    render(<EmptyStateHeader titleText="Empty state" headingLevel="h3" />);
+    expect(screen.getByRole('heading', { level: 3, name: 'Empty state' })).toHaveClass('pf-c-empty-state__title-text');
+  });
+
+  test('Headers render children', () => {
+    render(<EmptyStateHeader>Title text</EmptyStateHeader>);
+    expect(screen.getByText('Title text')).toBeVisible();
+  });
+
+  test('Footer', () => {
+    render(<EmptyStateFooter className="custom-empty-state-footer" data-testid="actions-test-id" />);
+    expect(screen.getByTestId('actions-test-id')).toHaveClass('custom-empty-state-footer');
   });
 });

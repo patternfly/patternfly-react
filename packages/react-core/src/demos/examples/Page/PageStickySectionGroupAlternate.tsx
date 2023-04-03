@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  ApplicationLauncher,
-  ApplicationLauncherItem,
   Avatar,
   Brand,
   Breadcrumb,
@@ -11,13 +9,8 @@ import {
   Card,
   CardBody,
   Divider,
-  Dropdown,
-  DropdownGroup,
-  DropdownItem,
-  DropdownToggle,
   Gallery,
   GalleryItem,
-  KebabToggle,
   Masthead,
   MastheadBrand,
   MastheadContent,
@@ -41,6 +34,13 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownGroup as DropdownGroupDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownToggle,
+  KebabToggle
+} from '@patternfly/react-core/deprecated';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
@@ -59,7 +59,6 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
-  const [isAppLauncherOpen, setIsAppLauncherOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(1);
 
   const onNavSelect = (selectedItem: NavOnSelectProps) => {
@@ -90,57 +89,40 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
     setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen);
   };
 
-  const onAppLauncherToggle = (_event: any, isOpen: boolean) => {
-    setIsAppLauncherOpen(isOpen);
-  };
-
-  const onAppLauncherSelect = () => {
-    setIsAppLauncherOpen(!isAppLauncherOpen);
-  };
-
   const kebabDropdownItems = [
-    <DropdownItem key="settings">
+    <DropdownItemDeprecated key="settings">
       <CogIcon /> Settings
-    </DropdownItem>,
-    <DropdownItem key="help">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="help">
       <HelpIcon /> Help
-    </DropdownItem>
+    </DropdownItemDeprecated>
   ];
 
   const userDropdownItems = [
-    <DropdownGroup key="group 2">
-      <DropdownItem key="group 2 profile">My profile</DropdownItem>
-      <DropdownItem key="group 2 user" component="button">
+    <DropdownGroupDeprecated key="group 2">
+      <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
+      <DropdownItemDeprecated key="group 2 user" component="button">
         User management
-      </DropdownItem>
-      <DropdownItem key="group 2 logout">Logout</DropdownItem>
-    </DropdownGroup>
+      </DropdownItemDeprecated>
+      <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
+    </DropdownGroupDeprecated>
   ];
 
   const fullKebabDropdownItems = [
-    <DropdownGroup key="group 2">
-      <DropdownItem key="group 2 profile">My profile</DropdownItem>
-      <DropdownItem key="group 2 user" component="button">
+    <DropdownGroupDeprecated key="group 2">
+      <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
+      <DropdownItemDeprecated key="group 2 user" component="button">
         User management
-      </DropdownItem>
-      <DropdownItem key="group 2 logout">Logout</DropdownItem>
-    </DropdownGroup>,
+      </DropdownItemDeprecated>
+      <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
+    </DropdownGroupDeprecated>,
     <Divider key="divider" />,
-    <DropdownItem key="settings">
+    <DropdownItemDeprecated key="settings">
       <CogIcon /> Settings
-    </DropdownItem>,
-    <DropdownItem key="help">
+    </DropdownItemDeprecated>,
+    <DropdownItemDeprecated key="help">
       <HelpIcon /> Help
-    </DropdownItem>
-  ];
-
-  const appLauncherItems = [
-    <ApplicationLauncherItem key="application_1a" href="#">
-      Application 1 (anchor link)
-    </ApplicationLauncherItem>,
-    <ApplicationLauncherItem key="application_2a" component="button" onClick={() => alert('Clicked item 2')}>
-      Application 2 (button with onClick)
-    </ApplicationLauncherItem>
+    </DropdownItemDeprecated>
   ];
 
   const headerToolbar = (
@@ -155,14 +137,6 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
             <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} />
           </ToolbarItem>
           <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
-            <ToolbarItem visibility={{ default: 'hidden', md: 'hidden', lg: 'visible' }}>
-              <ApplicationLauncher
-                onSelect={onAppLauncherSelect}
-                onToggle={onAppLauncherToggle}
-                isOpen={isAppLauncherOpen}
-                items={appLauncherItems}
-              />
-            </ToolbarItem>
             <ToolbarItem>
               <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
             </ToolbarItem>
@@ -171,7 +145,7 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
             </ToolbarItem>
           </ToolbarGroup>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-            <Dropdown
+            <DropdownDeprecated
               isPlain
               position="right"
               onSelect={onKebabDropdownSelect}
@@ -181,7 +155,7 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
             />
           </ToolbarItem>
           <ToolbarItem visibility={{ md: 'hidden' }}>
-            <Dropdown
+            <DropdownDeprecated
               isPlain
               position="right"
               onSelect={onFullKebabDropdownSelect}
@@ -192,7 +166,7 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
           </ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
-          <Dropdown
+          <DropdownDeprecated
             isFullHeight
             onSelect={onDropdownSelect}
             isOpen={isDropdownOpen}

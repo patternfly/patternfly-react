@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Avatar,
   Button,
-  Dropdown,
   Page,
   PageHeader,
   PageHeaderTools,
@@ -11,12 +10,15 @@ import {
   PageSidebar,
   PageSection,
   PageSectionVariants,
-  SkipToContent,
+  SkipToContent
+} from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
   KebabToggle,
   DropdownToggle,
-  DropdownGroup,
-  DropdownItem
-} from '@patternfly/react-core';
+  DropdownGroup as DropdownGroupDeprecated,
+  DropdownItem as DropdownItemDeprecated
+} from '@patternfly/react-core/deprecated';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -76,22 +78,22 @@ export class PageDemo extends React.Component {
     };
 
     const kebabDropdownItems = [
-      <DropdownItem key="group 1 settings">
+      <DropdownItemDeprecated key="group 1 settings">
         <CogIcon /> Settings
-      </DropdownItem>,
-      <DropdownItem key="group 1 help">
+      </DropdownItemDeprecated>,
+      <DropdownItemDeprecated key="group 1 help">
         <HelpIcon /> Help
-      </DropdownItem>
+      </DropdownItemDeprecated>
     ];
 
     const userDropdownItems = [
-      <DropdownGroup key="group 2">
-        <DropdownItem key="group 2 profile">My profile</DropdownItem>
-        <DropdownItem key="group 2 user" component="button">
+      <DropdownGroupDeprecated key="group 2">
+        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 user" component="button">
           User management
-        </DropdownItem>
-        <DropdownItem key="group 2 logout">Logout</DropdownItem>
-      </DropdownGroup>
+        </DropdownItemDeprecated>
+        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
+      </DropdownGroupDeprecated>
     ];
 
     const headerTools = (
@@ -121,7 +123,7 @@ export class PageDemo extends React.Component {
             id="kebab-dropdown"
             /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
           >
-            <Dropdown
+            <DropdownDeprecated
               isPlain
               position="right"
               onSelect={this.onKebabDropdownSelect}
@@ -140,7 +142,7 @@ export class PageDemo extends React.Component {
               '2xl': 'visible'
             }} /** this user dropdown is hidden on mobile sizes */
           >
-            <Dropdown
+            <DropdownDeprecated
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}

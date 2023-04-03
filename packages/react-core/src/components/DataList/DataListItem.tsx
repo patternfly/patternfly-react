@@ -45,7 +45,7 @@ export class DataListItem extends React.Component<DataListItemProps> {
     } = this.props;
     return (
       <DataListContext.Consumer>
-        {({ isSelectable, selectedDataListItemId, updateSelectedDataListItem, selectableRow }) => {
+        {({ isSelectable, selectedDataListItemId, updateSelectedDataListItem, onSelectableRowChange }) => {
           const selectDataListItem = (event: React.MouseEvent) => {
             let target: any = event.target;
             while (event.currentTarget !== target) {
@@ -91,12 +91,12 @@ export class DataListItem extends React.Component<DataListItemProps> {
               {...(isSelectable && isSelected && { 'aria-selected': true })}
               {...props}
             >
-              {selectableRow && (
+              {onSelectableRowChange && (
                 <input
                   className="pf-screen-reader"
                   type="radio"
                   checked={isSelected}
-                  onChange={(event) => selectableRow.onChange(event, id)}
+                  onChange={(event) => onSelectableRowChange(event, id)}
                   tabIndex={-1}
                   {...selectableInputAriaProps}
                 />
