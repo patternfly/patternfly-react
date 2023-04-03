@@ -13,88 +13,87 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 ## Examples
 
+### Sticky toolbar
+
+To lock a toolbar and prevent it  from scrolling with other content, use a sticky toolbar. 
+
+In the following example, select the "is toolbar sticky" checkbox to make the toolbar sticky.
+
+```ts file="./ToolbarSticky.tsx"
+```
+
 ### Toolbar items
 
-Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
+A toolbar can contain multiple toolbar items, like filters and buttons.
+
+Note: This example does not demonstrate responsive toolbar behavior. Responsive toolbars are shown in the [examples with toggle groups and filters](/components/toolbar#examples-with-toggle-groups-and-filters).
 
 ```ts file="./ToolbarItems.tsx"
 ```
 
 ### Toolbar item spacers
 
-You may adjust the space between toolbar items to better visually organize and group items. 
+You may adjust the space between toolbar items to arrange them into groups. [Read our spacers documentation](/v4/guidelines/spacers) to learn more about using spacers.
 
-Read our spacers documentaiton to learn more about its guidelines.
-
-Items are spaced 16px apart by default. To adjust the size of the space between itemms, use the `spacer` property of each `<ToolbarItem>`. You can set the `spacer` value at multiple breakpoints, including "default", "md", "lg, "xl", and "2xl". Into each breakpoint you can pass "spacerNone", "spacerSm", "spacerMd", or "spacerLg". 
+Items are spaced “16px” apart by default. To adjust the size of the space between items, use the `spacer` property of each `<ToolbarItem>`. You can set the `spacer` value at multiple breakpoints, including "default", "md", "lg, "xl", and "2xl".  Available `spacer` values include "spacerNone", "spacerSm", "spacerMd", or "spacerLg" into each breakpoint. 
 
 ```ts file="./ToolbarSpacers.tsx"
 ```
 
 ### Toolbar items with adjusted widths
 
-You can adjust the width of toolbar items to better fit the container they are in.
+You can adjust the width of toolbar items so that they better fit the size of their container.
 
-The default width of a toolbar item is 100px. To change this width, pass different width values into the item's `widths` property. You can set the value at  multiple breakpoints, including "default", "sm", "md", "lg, "xl", and "2xl".
+The default width of a toolbar item is “100px”. To adjust an item’s width, use the `widths` property of the `<ToolbarItem>`. You can set the “px” value at multiple breakpoints, including "default", "sm", "md", "lg, "xl", and "2xl".
 
 ```ts file="./ToolbarWidths.tsx"
 ```
 
 ### With adjusted inset
 
-use the `inset` property of a `<Toolbar>`. You can set the inset value at multiple breakpoints, including "default", "md", "lg, "xl", and "2xl".
+To adjust a toolbar’s inset, use the `inset` property. You can set the inset value at multiple breakpoints, including "default", "md", "lg, "xl", and "2xl". Inset values include “insetNone”, “insetSm”, “insetMd”, “insetLg”, “insetXl”, and “inset2xl”.
 
 ```ts file="./ToolbarInsets.tsx"
 ```
 
-### Sticky toolbar
-
-To prevent a toolbar from scrolling with other content, make it sticky. This locks the toolbar and prevents it from moving as you scroll through content. 
-
-In the following example, toggle the selection fo the "is toolbar sticky" checkbox to visualize a regular and a sticky toolbar. 
-
-```ts file="./ToolbarSticky.tsx"
-```
-
 ### With groups of items
 
-You can group similar items together to create desired associations and to enable items to respond together to changes in viewport width. 
+You can group similar items together to create desired associations and to enable items to respond to changes in viewport width together. 
 
-(Note: This example does not demonstrate responsive toolbar behavior. That is handled in the examples with toggle groups and filters.)
+Note: This example does not demonstrate responsive toolbar behavior. Responsive toolbars are shown in the [examples with toggle groups and filters](/components/toolbar#examples-with-toggle-groups-and-filters).
 
 ```ts file="./ToolbarGroups.tsx"
 ```
 
 ## Examples with toggle groups and filters
 
-A toggle group can be used when you want to collapse a set of items into an overlay panel at a certain breakpoint. This allows complex toolbars with multiple items and groups of items to be responsive. A toggle group is useful for containing filter controls, for example. When the toolbar responds to adapt to a mobile viewport, the contents contained in a toggle group will collapse into an overlay panel that can be toggled by clicking the Filter icon.
+The following examples use toggle groups to allow for more responsive and complex toolbars with multiple items and groups of items. To visualize responsive toolbar behavior in the following examples, resize the browser to a smaller screen width.
+
 
 ### Component managed toggle groups
 
-
+A toggle group allows you to collapse a set of items into an overlay panel at a certain breakpoint. For example, when a toggle group contains filter controls, its contents will collapse into an overlay panel when the toolbar adapts to a change in the viewport size. The contents can be toggled by selecting the filter icon in the overlay panel.
 
 ```ts file="./ToolbarComponentManagedToggleGroups.tsx"
 ```
 
 ### Consumer managed toggle groups
 
-If the consumer would prefer to manage the expanded state of the toggle group for smaller screen widths:
+To manually create the expanded state of the toggle group for smaller screen widths:
 
-1. Add a toggleIsExpanded callback to Toolbar
-2. Pass in a boolean into the isExpanded prop to Toolbar
+1. Add a `toggleIsExpanded` callback to the toolbar
+2. Pass a boolean into the `isExpanded` property of the toolbar
 
-- Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
+Note: The toggle group is aware of the consumer provided breakpoint, the expandable content is not. If the expandable content is expanded and the screen width surpasses that of the breakpoint, the expandable content is not aware of that and will remain open. Be sure to consider and handle this in your implementation.
 
 ```ts file="./ToolbarConsumerManagedToggleGroups.tsx"
 ```
 
 ### With filters
 
-You can add a filter group to a toolbar to let users filter the content that a toolbar manages.
+You can add filters to a toolbar to let users filter the content that a toolbar manages. When a toolbar is filtered, it will expand in height to make space for a row of filter chips and a "Clear all filters" button. Upon clearing the applied filters, the toolbar will return to its default height.
 
-When a toolbar is filtered, it will expand in height to make space for a row of filter chips and a "Clear all filters" button. Upon clearing the applied filters, the toolbar will return to its default height.
-
-The ToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Pass a deleteChipGroup prop to provide both a handler and visual styling to remove all chips in a group. Then the rendering of chips will be handled responsively by the Toolbar
+The `<ToolbarFilter>` component expects applied filters and a delete chip handler to be passed in as properties. Pass in a `deleteChipGroup` property to close the entire chip group. Once close, the rendering of chips will be handled responsively by the toolbar.
 
 
 ```ts file="./ToolbarWithFilters.tsx"
@@ -102,7 +101,7 @@ The ToolbarFilter component expects a consumer managed list of applied filters a
 
 ### With custom chip group content
 
-The chip groups generated by toolbar filters may be further customized through the `customChipGroupContent` property, which will append to the filter chip groups. This property will remove the default `Clear all filters` button.
+To customize the chip groups generated by toolbar filters, use the `customChipGroupContent` property. This property will remove the default `clear all filters` button.
 
 ```ts file="./ToolbarCustomChipGroupContent.tsx"
 ```
