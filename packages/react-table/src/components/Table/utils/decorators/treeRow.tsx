@@ -3,7 +3,8 @@ import { IExtra, IFormatterValueType, OnCheckChange, OnTreeRowCollapse, OnToggle
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
-import { Button, Checkbox } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core/dist/esm/components/Button';
+import { Checkbox } from '@patternfly/react-core/dist/esm/components/Checkbox';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import EllipsisHIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-h-icon';
 
