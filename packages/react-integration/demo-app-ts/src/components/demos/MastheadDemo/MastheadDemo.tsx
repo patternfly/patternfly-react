@@ -9,10 +9,9 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
-  ToolbarItem,
-  ContextSelector,
-  ContextSelectorItem
+  ToolbarItem
 } from '@patternfly/react-core';
+import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core/deprecated';
 import {
   Dropdown as DropdownDeprecated,
   DropdownToggle,

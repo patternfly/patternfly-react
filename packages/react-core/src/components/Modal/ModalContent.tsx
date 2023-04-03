@@ -177,7 +177,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       className={css(
         className,
         isVariantIcon(titleIconVariant) &&
-          modalStyles.modifiers[titleIconVariant as 'success' | 'warning' | 'info' | 'danger' | 'default']
+          modalStyles.modifiers[titleIconVariant as 'success' | 'warning' | 'info' | 'danger' | 'custom']
       )}
       variant={variant}
       position={position}
