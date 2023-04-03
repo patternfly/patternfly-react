@@ -18,7 +18,7 @@ import {
   textCenter,
   cellActions
 } from './';
-import { DropdownPosition, DropdownDirection } from '@patternfly/react-core/dist/esm/components/Dropdown';
+import { DropdownPosition, DropdownDirection } from '@patternfly/react-core/dist/esm/deprecated/components/Dropdown';
 import {
   IAction,
   IActions,

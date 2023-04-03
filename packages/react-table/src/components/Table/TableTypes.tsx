@@ -5,7 +5,7 @@ import {
   DropdownItemProps,
   DropdownDirection,
   DropdownPosition
-} from '@patternfly/react-core/dist/esm/components/Dropdown';
+} from '@patternfly/react-core/dist/esm/deprecated/components/Dropdown';
 import * as React from 'react';
 import { CustomActionsToggleProps } from './ActionsColumn';
 
