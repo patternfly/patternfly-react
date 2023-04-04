@@ -22,7 +22,6 @@ function convertIcons(icons) {
   delete icons.history;
 
   Object.entries(renaming).forEach(([oldKey, newKey]) => {
-    debugger;
     icons[newKey] = icons[oldKey];
     delete icons[oldKey];
   });
