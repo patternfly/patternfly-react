@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as _ from 'lodash';
 import { observer } from 'mobx-react';
-import { Edge, EdgeTerminalType, NodeStatus } from '../../types';
+import { Edge, EdgeTerminalType, isNode, NodeStatus } from '../../types';
 import { ConnectDragSource, OnSelect } from '../../behavior';
-import { useHover } from '../../utils';
+import { getClosestVisibleParent, useHover } from '../../utils';
 import { Layer } from '../layers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
@@ -102,6 +102,13 @@ const DefaultEdge: React.FunctionComponent<DefaultEdgeProps> = ({
       onHideRemoveConnector && onHideRemoveConnector();
     }
   }, [hover, dragging, onShowRemoveConnector, onHideRemoveConnector]);
+
+  // If the edge connects to nodes in a collapsed group don't draw
+  const sourceParent = getClosestVisibleParent(element.getSource());
+  const targetParent = getClosestVisibleParent(element.getTarget());
+  if (isNode(sourceParent) && sourceParent.isCollapsed() && sourceParent === targetParent) {
+    return null;
+  }
 
   const groupClassName = css(
     styles.topologyEdge,

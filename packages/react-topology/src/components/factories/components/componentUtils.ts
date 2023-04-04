@@ -215,6 +215,12 @@ const graphDropTargetSpec = (
   dropHint: 'create'
 });
 
+const isChildOfGroup = (group: Node, node: Node): boolean =>
+  group
+    ?.getAllNodeChildren?.()
+    .map((n: Node) => n.getId())
+    .includes(node.getId());
+
 const groupDropTargetSpec: DropTargetSpec<
   any,
   any,
@@ -222,18 +228,20 @@ const groupDropTargetSpec: DropTargetSpec<
   any
 > = {
   accept: [NODE_DRAG_TYPE, EDGE_DRAG_TYPE, CREATE_CONNECTOR_DROP_TYPE],
-  canDrop: (item, monitor) =>
+  canDrop: (item, monitor, props) =>
     monitor.isOver({ shallow: monitor.getItemType() === CREATE_CONNECTOR_DROP_TYPE }) &&
-    (monitor.getOperation()?.type === REGROUP_OPERATION || monitor.getItemType() === CREATE_CONNECTOR_DROP_TYPE),
-  collect: monitor => ({
+    (monitor.getOperation()?.type === REGROUP_OPERATION ||
+      (monitor.getItemType() === CREATE_CONNECTOR_DROP_TYPE && !isChildOfGroup(props?.element, item))),
+  collect: (monitor, props) => ({
     droppable: monitor.isDragging() && monitor.getOperation()?.type === REGROUP_OPERATION,
     dropTarget: monitor.isOver({ shallow: monitor.getItemType() === CREATE_CONNECTOR_DROP_TYPE }),
     canDrop:
       monitor.isDragging() &&
-      (monitor.getOperation()?.type === REGROUP_OPERATION || monitor.getItemType() === CREATE_CONNECTOR_DROP_TYPE),
-    dragRegroupable: monitor.isDragging() && monitor.getItem()?.allowRegroup
-  }),
-  dropHint: 'create'
+      (monitor.getOperation()?.type === REGROUP_OPERATION ||
+        (monitor.getItemType() === CREATE_CONNECTOR_DROP_TYPE && !isChildOfGroup(props?.element, monitor?.getItem()))),
+    dragRegroupable: monitor.isDragging() && monitor.getItem()?.allowRegroup,
+    dropHint: 'create'
+  })
 };
 
 const edgeDragSourceSpec = (
