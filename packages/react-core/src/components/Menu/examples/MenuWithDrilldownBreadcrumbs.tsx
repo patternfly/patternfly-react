@@ -23,6 +23,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
   const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
@@ -115,9 +116,12 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           isOpen={isOpen}
           onOpenChange={(isOpen: boolean) => onToggle(isOpen, 'app')}
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-            <MenuToggle ref={toggleRef} onClick={() => onToggle(true, 'app')} isExpanded={isOpen} variant="plainText">
-              <Badge isRead screenReaderText="additional items">
+            <MenuToggle ref={toggleRef} onClick={() => onToggle(true, 'app')} isExpanded={isOpen} variant="plain">
+              <Badge isRead screenReaderText="additional item">
                 1
+                <span>
+                  <CaretDownIcon />
+                </span>
               </Badge>
             </MenuToggle>
           )}

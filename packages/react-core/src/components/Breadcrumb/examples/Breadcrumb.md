@@ -7,6 +7,7 @@ ouia: true
 ---
 
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 ## Examples
 
