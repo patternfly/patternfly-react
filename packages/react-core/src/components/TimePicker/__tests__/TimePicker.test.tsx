@@ -86,6 +86,28 @@ describe('TimePicker', () => {
         expects: { hour: 23, minutes: 59, seconds: null }
       });
     });
+
+    // Disabling because this test does not work on CI
+    xtest('should call onChange when pressing Enter', async () => {
+      const onChange = jest.fn();
+      const user = userEvent.setup();
+
+      render(<TimePicker onChange={onChange} aria-label="time picker" />);
+
+      // Take into account timezones when tests are ran
+      const isPM = new Date().getHours() > 12;
+
+      await user.type(screen.getByLabelText('time picker'), `11:11`);
+      await user.keyboard('[Enter]');
+      expect(onChange).toHaveBeenLastCalledWith(
+        expect.any(Object),
+        `11:11 ${isPM ? 'PM' : 'AM'}`,
+        isPM ? 23 : 11,
+        11,
+        null,
+        true
+      );
+    });
   });
 
   describe('test isInvalid', () => {

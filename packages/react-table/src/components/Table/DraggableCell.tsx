@@ -1,6 +1,6 @@
 import * as React from 'react';
 import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
-import { Button } from '@patternfly/react-core/dist/esm/components/Button/Button';
+import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 
 export interface DraggableCellProps {
   id: string;

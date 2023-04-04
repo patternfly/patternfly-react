@@ -11,7 +11,7 @@ import { Visibility, classNames } from './../Table/utils/decorators/classNames';
 import { ThInfoType, ThSelectType, ThExpandType, ThSortType, formatterValueType } from '../Table/base/types';
 import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
-import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { BaseCellProps } from './TableComposable';
 import { IFormatterValueType, IColumn } from '../Table/TableTypes';
 
@@ -46,10 +46,14 @@ export interface ThProps
   isStickyColumn?: boolean;
   /** Adds a border to the right side of the cell */
   hasRightBorder?: boolean;
+  /** Adds a border to the left side of the cell */
+  hasLeftBorder?: boolean;
   /** Minimum width for a sticky column */
   stickyMinWidth?: string;
   /** Left offset of a sticky column. This will typically be equal to the combined value set by stickyMinWidth of any sticky columns that precede the current sticky column. */
   stickyLeftOffset?: string;
+  /** Right offset of a sticky column. This will typically be equal to the combined value set by stickyMinWidth of any sticky columns that come after the current sticky column. */
+  stickyRightOffset?: string;
   /** Indicates the <th> is part of a subheader of a nested header */
   isSubheader?: boolean;
 }
@@ -73,8 +77,10 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   info: infoProps,
   isStickyColumn = false,
   hasRightBorder = false,
+  hasLeftBorder = false,
   stickyMinWidth = '120px',
   stickyLeftOffset,
+  stickyRightOffset,
   isSubheader = false,
   ...props
 }: ThProps) => {
@@ -172,6 +178,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         isSubheader && styles.tableSubhead,
         isStickyColumn && scrollStyles.tableStickyCell, // TODO: further updates will be made  with issue #8829
         hasRightBorder && scrollStyles.modifiers.borderRight,
+        hasLeftBorder && scrollStyles.modifiers.borderLeft,
         modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],
         mergedClassName
       )}
@@ -181,6 +188,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         style: {
           '--pf-c-table__sticky-column--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
           '--pf-c-table__sticky-column--Left': stickyLeftOffset ? stickyLeftOffset : undefined,
+          right: stickyRightOffset ? stickyRightOffset : 0,
           ...props.style
         } as React.CSSProperties
       })}

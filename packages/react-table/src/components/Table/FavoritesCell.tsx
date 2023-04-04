@@ -1,6 +1,6 @@
 import * as React from 'react';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
-import { Button } from '@patternfly/react-core/dist/esm/components/Button/Button';
+import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 
 export interface FavoritesCellProps {
   id?: string;

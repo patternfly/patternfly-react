@@ -14,7 +14,7 @@ import { draggable } from '../Table/utils/decorators/draggable';
 import { treeRow } from '../Table/utils/decorators/treeRow';
 import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
-import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { IFormatterValueType, IExtra } from '../Table/TableTypes';
 import {
   TdActionsType,
@@ -62,10 +62,14 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   isStickyColumn?: boolean;
   /** Adds a border to the right side of the cell */
   hasRightBorder?: boolean;
+  /** Adds a border to the left side of the cell */
+  hasLeftBorder?: boolean;
   /** Minimum width for a sticky column */
   stickyMinWidth?: string;
   /** Left offset of a sticky column. This will typically be equal to the combined value set by stickyMinWidth of any sticky columns that precede the current sticky column. */
   stickyLeftOffset?: string;
+  /** Right offset of a sticky column. This will typically be equal to the combined value set by stickyMinWidth of any sticky columns that come after the current sticky column. */
+  stickyRightOffset?: string;
 }
 
 const TdBase: React.FunctionComponent<TdProps> = ({
@@ -91,8 +95,10 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   onMouseEnter: onMouseEnterProp = () => {},
   isStickyColumn = false,
   hasRightBorder = false,
+  hasLeftBorder = false,
   stickyMinWidth = '120px',
   stickyLeftOffset,
+  stickyRightOffset,
   ...props
 }: TdProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -257,6 +263,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         noPadding && styles.modifiers.noPadding,
         isStickyColumn && scrollStyles.tableStickyCell,  // TODO: further updates will be made  with issue #8829
         hasRightBorder && scrollStyles.modifiers.borderRight,
+        hasLeftBorder && scrollStyles.modifiers.borderLeft,
         styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap' | undefined],
         draggableParams && styles.tableDraggable,
         mergedClassName
@@ -268,6 +275,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         style: {
           '--pf-c-table__sticky-column--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
           '--pf-c-table__sticky-column--Left': stickyLeftOffset ? stickyLeftOffset : undefined,
+          right: stickyRightOffset ? stickyRightOffset : 0,
           ...props.style
         } as React.CSSProperties
       })}

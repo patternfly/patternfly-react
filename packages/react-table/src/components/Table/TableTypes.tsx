@@ -1,10 +1,10 @@
-import { DropdownItemProps } from '@patternfly/react-core';
+import { ButtonProps } from '@patternfly/react-core/dist/esm/components/Button';
 import { formatterValueType, ColumnType, RowType, RowKeyType, HeaderType } from './base';
 import { SortByDirection } from './SortColumn';
-import { DropdownDirection, DropdownPosition } from '@patternfly/react-core/dist/esm/deprecated/components';
+import { DropdownItemProps } from '@patternfly/react-core/dist/esm/components/Dropdown';
+import { DropdownDirection, DropdownPosition } from '@patternfly/react-core/dist/esm/deprecated/components/Dropdown';
 import * as React from 'react';
 import { CustomActionsToggleProps } from './ActionsColumn';
-import { ButtonProps } from '@patternfly/react-core';
 
 export enum TableGridBreakpoint {
   none = '',

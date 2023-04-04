@@ -330,11 +330,39 @@ To make a column sticky, wrap `TableComposable` with `InnerScrollContainer` and 
 ```ts file="TableStickyColumn.tsx"
 ```
 
-### Multiple sticky columns
+### Multiple left-aligned sticky columns
 
-To make multiple columns sticky, wrap `TableComposable` with `InnerScrollContainer` and add `isStickyColumn` to all columns that should be sticky. The rightmost column should also have the `hasRightBorder` property, and each sticky column after the first must define a `stickyLeftOffset` property that equals the combined width of the previous sticky columns - set by `stickyMinWidth`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property.
+To make multiple left-aligned columns sticky:
+
+- wrap TableComposable with InnerScrollContainer
+- add isStickyColumn to all columns that should be sticky
+- add hasRightBorder to the rightmost sticky column
+- add stickyLeftOffset to each sticky column after the first, with a value that equals the combined width - set by stickyMindWidth - of the previous sticky columns
+
+To prevent the default text wrapping behavior and allow horizontal scrolling, all Th or Td cells should also have the modifier="nowrap" property.
+
+- wrap `TableComposable` with `InnerScrollContainer`
+- add `isStickyColumn` to all columns that should be sticky
+- add `hasRightBorder` to the rightmost sticky column
+- add `stickyLeftOffset` to each sticky column after the first, with a value that equals the combined width - set by `stickyMindWidth` - of the previous sticky columns
+
+To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property.
 
 ```ts file="TableMultipleStickyColumns.tsx"
+```
+
+### Multiple right-aligned sticky columns
+
+To make multiple right-aligned columns sticky:
+
+- wrap `TableComposable` with `InnerScrollContainer`
+- add `isStickyColumn` to all columns that should be sticky
+- add `hasLeftBorder` to the leftmost sticky column
+- add `stickyRightOffset` to each sticky column preceding the last, with a value that equals the combined width - set by `stickyMindWidth` - of the next sticky columns
+
+To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property.
+
+```ts file="TableRightStickyColumn.tsx"
 ```
 
 ### Sticky columns and header
