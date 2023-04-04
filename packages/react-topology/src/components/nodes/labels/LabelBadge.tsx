@@ -54,7 +54,7 @@ const LabelBadge = React.forwardRef<SVGRectElement, LabelBadgeProps>(
       <g className={classes} transform={`translate(${x}, ${y})`}>
         {rect}
         <text
-          fill={badgeTextColor || badgeClassName ? undefined : defaultBadgeTextColor.value}
+          fill={badgeTextColor || badgeClassName ? badgeTextColor : defaultBadgeTextColor.value}
           ref={textRef}
           x={width / 2 + paddingX}
           y={height / 2}

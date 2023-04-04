@@ -60,3 +60,10 @@
   --pf-c-page__main-section--PaddingLeft: 0;
   --pf-c-page__main-section--PaddingBottom: 0;
 }
+
+.topology-demo-badge > rect {
+  fill: var(--pf-global--palette--red-100);
+}
+.topology-demo-badge > text {
+  fill: var(--pf-global--palette--gold-100);
+}
