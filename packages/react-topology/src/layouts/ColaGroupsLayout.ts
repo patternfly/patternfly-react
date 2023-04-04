@@ -81,6 +81,11 @@ class ColaGroupsLayout extends ColaLayout implements Layout {
     });
   }
 
+  protected stopSimulation(): void {
+    super.stopSimulation();
+    this.childLayouts.forEach(layout => layout.stop());
+  }
+
   protected createLayoutNode(node: Node, nodeDistance: number, index: number) {
     return new ColaGroupsNode(node, nodeDistance, index);
   }
@@ -119,7 +124,7 @@ class ColaGroupsLayout extends ColaLayout implements Layout {
     edges: LayoutLink[],
     groups: LayoutGroup[]
   ): BaseLayout {
-    const layout = new ColaGroupsLayout(graph, this.options);
+    const layout = new ColaGroupsLayout(graph, { ...this.options, listenForChanges: false });
     layout.setupLayout(graph, nodes, edges, groups);
     return layout;
   }

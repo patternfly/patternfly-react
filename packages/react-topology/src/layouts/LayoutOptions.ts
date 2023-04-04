@@ -8,4 +8,5 @@ export interface LayoutOptions {
   allowDrag: boolean;
   layoutOnDrag: boolean;
   onSimulationEnd?: () => void;
+  listenForChanges?: boolean;
 }

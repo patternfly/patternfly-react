@@ -66,6 +66,7 @@ export class BaseLayout implements Layout {
     this.options = {
       ...LAYOUT_DEFAULTS,
       onSimulationEnd: this.onSimulationEnd,
+      listenForChanges: true,
       ...options
     };
 
@@ -174,7 +175,7 @@ export class BaseLayout implements Layout {
 
   private startListening(): void {
     const controller = this.graph.getController();
-    if (controller) {
+    if (controller && this.options.listenForChanges) {
       controller.addEventListener(ADD_CHILD_EVENT, this.handleChildAdded);
       controller.addEventListener(REMOVE_CHILD_EVENT, this.handleChildRemoved);
       controller.addEventListener(ELEMENT_VISIBILITY_CHANGE_EVENT, this.handleElementVisibilityChange);
