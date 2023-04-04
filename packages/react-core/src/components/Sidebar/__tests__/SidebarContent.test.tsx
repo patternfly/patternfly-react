@@ -27,6 +27,11 @@ test('Renders with class name pf-m-no-background when hasNoBackground prop is pa
   expect(screen.getByText('Test')).toHaveClass('pf-m-no-background');
 });
 
+test('Renders with class name pf-m-padding when hasPadding prop is passed', () => {
+  render(<SidebarContent hasPadding>Test</SidebarContent>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-padding');
+});
+
 test('Renders with inherited element props spread to the component', () => {
   render(<SidebarContent aria-label="Test label">Test</SidebarContent>);
   expect(screen.getByText('Test')).toHaveAccessibleName('Test label');

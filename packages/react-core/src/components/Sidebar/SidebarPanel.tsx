@@ -19,6 +19,8 @@ export interface SidebarPanelProps extends Omit<React.HTMLProps<HTMLDivElement>,
   variant?: 'default' | 'sticky' | 'static';
   /** Removes the background color. */
   hasNoBackground?: boolean;
+  /** Adds padding to the panel. */
+  hasPadding?: boolean;
   /** Sets the panel width at various breakpoints. Default is 250px when the orientation is split. */
   width?: {
     default?: 'default' | 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
@@ -35,6 +37,7 @@ export const SidebarPanel: React.FunctionComponent<SidebarPanelProps> = ({
   children,
   variant = 'default',
   hasNoBackground,
+  hasPadding,
   width,
   ...props
 }: SidebarPanelProps) => (
@@ -43,6 +46,7 @@ export const SidebarPanel: React.FunctionComponent<SidebarPanelProps> = ({
       styles.sidebarPanel,
       variant !== 'default' && styles.modifiers[variant],
       hasNoBackground && styles.modifiers.noBackground,
+      hasPadding && styles.modifiers.padding,
       formatBreakpointMods(width, styles),
       className
     )}

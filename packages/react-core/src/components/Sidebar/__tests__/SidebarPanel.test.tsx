@@ -37,7 +37,12 @@ test('Renders with class name pf-m-no-background when hasNoBackground prop is pa
   expect(screen.getByText('Test')).toHaveClass('pf-m-no-background');
 });
 
-['width_25', 'width_33', 'width_50', 'width_66', 'width_75', 'width_100'].forEach(widthType => {
+test('Renders with class name pf-m-padding when hasPadding prop is passed', () => {
+  render(<SidebarPanel hasPadding>Test</SidebarPanel>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-padding');
+});
+
+['width_25', 'width_33', 'width_50', 'width_66', 'width_75', 'width_100'].forEach((widthType) => {
   test(`Renders with appropriate class names when ${widthType} is passed to each breakpoint of width prop`, () => {
     render(
       <SidebarPanel
