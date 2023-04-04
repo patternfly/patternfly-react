@@ -2,7 +2,6 @@
 id: Truncate
 section: components
 propComponents: [Truncate]
-beta: true
 ---
 
 import './TruncateExamples.css';

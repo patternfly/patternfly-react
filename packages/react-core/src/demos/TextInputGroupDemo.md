@@ -1,7 +1,6 @@
 ---
 id: Text input group
 section: components
-beta: true
 ---
 
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';

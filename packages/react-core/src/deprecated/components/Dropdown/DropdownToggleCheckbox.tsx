@@ -16,7 +16,7 @@ export interface DropdownToggleCheckboxProps
   isDisabled?: boolean;
   /** Flag to show if the checkbox is checked */
   isChecked?: boolean | null;
-  /** @beta Flag to show if the checkbox is in progress */
+  /** Flag to show if the checkbox is in progress */
   isInProgress?: boolean | null;
   /** Alternate Flag to show if the checkbox is checked */
   checked?: boolean | null;
@@ -28,9 +28,9 @@ export interface DropdownToggleCheckboxProps
   id: string;
   /** Aria-label of the checkbox */
   'aria-label': string;
-  /** @beta Text describing current loading status or progress */
+  /** Text describing current loading status or progress */
   defaultProgressAriaValueText?: string;
-  /** @beta Aria-label for the default progress icon to describe what is loading */
+  /** Aria-label for the default progress icon to describe what is loading */
   defaultProgressAriaLabel?: string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;

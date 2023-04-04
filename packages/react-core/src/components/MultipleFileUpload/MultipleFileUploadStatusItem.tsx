@@ -54,7 +54,7 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   progressAriaLiveMessage?: string | ((loadPercentage: number) => string);
   /** Unique identifier for progress. Generated if not specified. */
   progressId?: string;
-  /** @beta Additional content related to the status item. */
+  /** Additional content related to the status item. */
   progressHelperText?: React.ReactNode;
 }
 

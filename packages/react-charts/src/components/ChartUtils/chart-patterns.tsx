@@ -1,7 +1,6 @@
 import * as React from 'react';
 import uniqueId from 'lodash/uniqueId';
 
-// @beta
 interface PatternPropsInterface {
   children?: any;
   colorScale?: any;

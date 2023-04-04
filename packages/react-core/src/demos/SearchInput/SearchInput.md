@@ -1,7 +1,6 @@
 ---
 id: Search input
 section: components
-beta: true
 ---
 
 import {

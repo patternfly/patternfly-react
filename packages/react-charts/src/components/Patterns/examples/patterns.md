@@ -18,7 +18,6 @@ propComponents: [
   'ChartVoronoiContainer'
 ]
 hideDarkMode: true
-beta: true
 ---
 
 import { 

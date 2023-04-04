@@ -46,17 +46,17 @@ Custom menus can be constructed using a composable approach by combining the [Me
 
 ### Composable simple checkbox select
 
-```ts isBeta file="./examples/ComposableSimpleCheckboxSelect.tsx"
+```ts file="./examples/ComposableSimpleCheckboxSelect.tsx"
 ```
 
 ### Composable typeahead select
 
-```ts isBeta file="./examples/ComposableTypeaheadSelect.tsx"
+```ts file="./examples/ComposableTypeaheadSelect.tsx"
 ```
 
 ### Composable multiple typeahead select
 
-```ts isBeta file="./examples/ComposableMultipleTypeaheadSelect.tsx"
+```ts file="./examples/ComposableMultipleTypeaheadSelect.tsx"
 ```
 
 ### Composable drilldown menu
