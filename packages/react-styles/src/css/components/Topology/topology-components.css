@@ -15,8 +15,7 @@
   --pf-topology__node__background--StrokeWidth: var(--pf-global--BorderWidth--sm);
   --pf-topology__node--m-dragging--background--StrokeWidth: var(--pf-global--BorderWidth--sm);
 
-  --pf-topology__node--m-hover--background--Stroke: unset;
-  --pf-topology__node--m-hover--label__background--Stroke: unset;
+  --pf-topology__node--m-hover--background--Stroke: var(--pf-topology__node__background--Stroke);
 
   --pf-topology__node--m-disabled--Background--Fill: var(--pf-global--BackgroundColor--200);
   --pf-topology__node--m-disabled--Background--Stroke: var(--pf-global--BorderColor--100);
@@ -56,6 +55,8 @@
 
   --pf-topology__node__label__background--Fill: var(--pf-global--BackgroundColor--100);
   --pf-topology__node__label__background--Stroke: var(--pf-global--BorderColor--100);
+
+  --pf-topology__node--m-hover--label__background--Stroke: var(--pf-topology__node__label__background--Stroke);
 
   --pf-topology__node--m-selected--node__label__background--Stroke: var(--pf-global--active-color--100);
   --pf-topology__node--m-info--node__label__background--Stroke: var(--pf-global--primary-color--light-100);
