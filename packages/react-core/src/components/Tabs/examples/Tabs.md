@@ -2,7 +2,7 @@
 id: Tabs
 section: components
 cssPrefix: pf-c-tabs
-propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon', 'horizontalOverflowObject', 'TabAction']
+propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon', 'horizontalOverflowObject']
 ouia: true
 ---
 
@@ -19,7 +19,7 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 ### Default tabs
 
-A `<Tabs>` component contains multiple `<Tab>` components that a user may navigate between.
+A `<Tabs>` component contains multiple `<Tab>` components that may be used to navigate between sets of content within a page.
 
 You can adjust a tab in the following ways: 
 
@@ -177,17 +177,25 @@ To add a content body to a `<TabContent>` component, pass a `<TabContentBody>`. 
 
 ### Children mounting on click
 
+To mount tab children (add to the DOM) when a tab is clicked, use the `mountOnEnter` property. 
+
+Note that this property does not create the tab children until the tab is clicked, so they are not preloaded into the DOM.
+
 ```ts file="./TabsChildrenMounting.tsx"
 ```
 
 ### Unmounting invisible children
 
-`unmountOnExit`
+To unmount tab children (remove from the DOM) when they are no longer visible, use the `unmountOnExit` property.
 
 ```ts file="./TabsUnmountingInvisibleChildren.tsx"
 ```
 
-### Toggled separate content
+### Toggled tab content
+
+You may control tabs from outside of the tabs component. For example, select the "Hide tab 2" button below to make "Tab item  2" invisible.
+
+The tab its content should only be mounted when the tab is visible. 
 
 ```ts file="./TabsToggledSeparateContent.tsx"
 ```
@@ -198,7 +206,7 @@ To enable closeable tabs, pass the `onClose` property to the `<Tabs>` component.
 
 Aria labels may be controlled manually by passing the `closeButtonAriaLabel` property to a `<Tab>` and the `addButtonAriaLabel` property to `<Tabs>`.
 
-```ts file="./TabsDynamic.tsx"
+```ts file="./TabsDynamic.tsx" isBeta
 ```
 
 ### With help action popover
