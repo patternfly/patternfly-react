@@ -2,7 +2,7 @@
 id: Tabs
 section: components
 cssPrefix: pf-c-tabs
-propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon', 'horizontalOverflowObject']
+propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon', 'horizontalOverflowObject', 'TabAction']
 ouia: true
 ---
 
@@ -206,7 +206,8 @@ To enable closeable tabs, pass the `onClose` property to the `<Tabs>` component.
 
 Aria labels may be controlled manually by passing the `closeButtonAriaLabel` property to a `<Tab>` and the `addButtonAriaLabel` property to `<Tabs>`.
 
-```ts file="./TabsDynamic.tsx" isBeta
+```
+```ts file="./TabsDynamic.tsx"
 ```
 
 ### With help action popover
