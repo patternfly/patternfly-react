@@ -103,7 +103,6 @@ The tooltip should also have the `id` property passed in. The value of `id` shou
 
 ### Uncontrolled tabs
 
-
 ```ts file="./TabsUncontrolled.tsx"
 ```
 
