@@ -4,11 +4,6 @@ section: components
 ---
 
 import {
-Dropdown as DropdownDeprecated,
-DropdownGroup as DropdownGroupDeprecated,
-DropdownToggle,
-DropdownItem as DropdownItemDeprecated,
-KebabToggle,
 PageHeader,
 PageHeaderTools,
 PageHeaderToolsGroup,
@@ -20,6 +15,7 @@ import DashboardHeader from '@patternfly/react-core/src/demos/examples/Dashboard
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
@@ -386,8 +382,12 @@ import {
   ButtonVariant,
   Card,
   CardBody,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
   Gallery,
   GalleryItem,
+  MenuToggle,
   Nav,
   NavItem,
   NavList,
@@ -403,17 +403,13 @@ import {
   PageHeader,
   PageHeaderTools,
   PageHeaderToolsGroup,
-  PageHeaderToolsItem,
-  Dropdown as DropdownDeprecated,
-  DropdownGroup as DropdownGroupDeprecated,
-  DropdownToggle,
-  DropdownItem as DropdownItemDeprecated,
-  KebabToggle
+  PageHeaderToolsItem
 } from '@patternfly/react-core/deprecated';
 import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -426,27 +422,27 @@ class PageLayoutHorizontalNav extends React.Component {
       activeItem: 0
     };
 
-    this.onDropdownToggle = (_event, isDropdownOpen) => {
+    this.onDropdownToggle = () => {
+      this.setState((prevState) => ({
+        isDropdownOpen: !prevState.isDropdownOpen
+      }));
+    };
+
+    this.onDropdownSelect = () => {
       this.setState({
-        isDropdownOpen
+        isDropdownOpen: false
       });
     };
 
-    this.onDropdownSelect = (event) => {
-      this.setState({
-        isDropdownOpen: !this.state.isDropdownOpen
-      });
+    this.onKebabDropdownToggle = () => {
+      this.setState((prevState) => ({
+        isKebabDropdownOpen: !prevState.isKebabDropdownOpen
+      }));
     };
 
-    this.onKebabDropdownToggle = (_event, isKebabDropdownOpen) => {
+    this.onKebabDropdownSelect = () => {
       this.setState({
-        isKebabDropdownOpen
-      });
-    };
-
-    this.onKebabDropdownSelect = (event) => {
-      this.setState({
-        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+        isKebabDropdownOpen: false
       });
     };
 
@@ -481,23 +477,23 @@ class PageLayoutHorizontalNav extends React.Component {
         </NavList>
       </Nav>
     );
-    const kebabDropdownItems = [
-      <DropdownItemDeprecated>
-        <CogIcon /> Settings
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated>
-        <HelpIcon /> Help
-      </DropdownItemDeprecated>
-    ];
-    const userDropdownItems = [
-      <DropdownGroupDeprecated key="group 2">
-        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
-        <DropdownItemDeprecated key="group 2 user" component="button">
-          User management
-        </DropdownItemDeprecated>
-        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
-      </DropdownGroupDeprecated>
-    ];
+    const kebabDropdownItems = (
+      <>
+        <DropdownItem>
+          <CogIcon /> Settings
+        </DropdownItem>
+        <DropdownItem>
+          <HelpIcon /> Help
+        </DropdownItem>
+      </>
+    );
+    const userDropdownItems = (
+      <>
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user">User management</DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </>
+    );
     const headerTools = (
       <PageHeaderTools>
         <PageHeaderToolsGroup
@@ -523,29 +519,50 @@ class PageLayoutHorizontalNav extends React.Component {
               lg: 'hidden'
             }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
           >
-            <DropdownDeprecated
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+            <Dropdown
               isOpen={isKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
+              onSelect={this.onKebabDropdownSelect}
+              onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isKebabDropdownOpen}
+                  onClick={this.onKebabDropdownToggle}
+                  variant="plain"
+                  aria-label="Settings and help"
+                >
+                  <EllipsisVIcon aria-hidden="true" />
+                </MenuToggle>
+              )}
+            >
+              <DropdownList>{kebabDropdownItems}</DropdownList>
+            </Dropdown>
           </PageHeaderToolsItem>
           <PageHeaderToolsItem
             visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
           >
-            <DropdownDeprecated
-              isPlain
-              position="right"
-              onSelect={this.onDropdownSelect}
+            <Dropdown
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
-              dropdownItems={userDropdownItems}
-            />
+              onSelect={this.onDropdownSelect}
+              onOpenChange={(isOpen) => this.setState({ isDropdownOpen: isOpen })}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isDropdownOpen}
+                  onClick={this.onDropdownToggle}
+                  icon={<Avatar src={imgAvatar} alt="" />}
+                  isFullHeight
+                >
+                  John Smith
+                </MenuToggle>
+              )}
+            >
+              <DropdownList>{userDropdownItems}</DropdownList>
+            </Dropdown>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
       </PageHeaderTools>
     );
 
@@ -750,8 +767,12 @@ import {
   ButtonVariant,
   Card,
   CardBody,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
   Gallery,
   GalleryItem,
+  MenuToggle,
   Nav,
   NavItem,
   NavList,
@@ -764,11 +785,6 @@ import {
   Text
 } from '@patternfly/react-core';
 import {
-  Dropdown as DropdownDeprecated,
-  DropdownGroup as DropdownGroupDeprecated,
-  DropdownToggle,
-  DropdownItem as DropdownItemDeprecated,
-  KebabToggle,
   PageHeader,
   PageHeaderTools,
   PageHeaderToolsItem,
@@ -778,6 +794,7 @@ import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/D
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -791,27 +808,27 @@ class HorizontalNavWithSubnav extends React.Component {
       activeSubNavItem: 7
     };
 
-    this.onDropdownToggle = (_event, isDropdownOpen) => {
+    this.onDropdownToggle = () => {
+      this.setState((prevState) => ({
+        isDropdownOpen: !prevState.isDropdownOpen
+      }));
+    };
+
+    this.onDropdownSelect = () => {
       this.setState({
-        isDropdownOpen
+        isDropdownOpen: false
       });
     };
 
-    this.onDropdownSelect = (event) => {
-      this.setState({
-        isDropdownOpen: !this.state.isDropdownOpen
-      });
+    this.onKebabDropdownToggle = () => {
+      this.setState((prevState) => ({
+        isKebabDropdownOpen: !prevState.isKebabDropdownOpen
+      }));
     };
 
-    this.onKebabDropdownToggle = (_event, isKebabDropdownOpen) => {
+    this.onKebabDropdownSelect = () => {
       this.setState({
-        isKebabDropdownOpen
-      });
-    };
-
-    this.onKebabDropdownSelect = (event) => {
-      this.setState({
-        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+        isKebabDropdownOpen: false
       });
     };
 
@@ -858,23 +875,23 @@ class HorizontalNavWithSubnav extends React.Component {
         </NavList>
       </Nav>
     );
-    const kebabDropdownItems = [
-      <DropdownItemDeprecated>
-        <CogIcon /> Settings
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated>
-        <HelpIcon /> Help
-      </DropdownItemDeprecated>
-    ];
-    const userDropdownItems = [
-      <DropdownGroupDeprecated key="group 2">
-        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
-        <DropdownItemDeprecated key="group 2 user" component="button">
-          User management
-        </DropdownItemDeprecated>
-        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
-      </DropdownGroupDeprecated>
-    ];
+    const kebabDropdownItems = (
+      <>
+        <DropdownItem>
+          <CogIcon /> Settings
+        </DropdownItem>
+        <DropdownItem>
+          <HelpIcon /> Help
+        </DropdownItem>
+      </>
+    );
+    const userDropdownItems = (
+      <>
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user">User management</DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </>
+    );
     const headerTools = (
       <PageHeaderTools>
         <PageHeaderToolsGroup
@@ -900,29 +917,50 @@ class HorizontalNavWithSubnav extends React.Component {
               lg: 'hidden'
             }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
           >
-            <DropdownDeprecated
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+            <Dropdown
               isOpen={isKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
+              onSelect={this.onKebabDropdownSelect}
+              onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isKebabDropdownOpen}
+                  onClick={this.onKebabDropdownToggle}
+                  variant="plain"
+                  aria-label="Settings and help"
+                >
+                  <EllipsisVIcon aria-hidden="true" />
+                </MenuToggle>
+              )}
+            >
+              <DropdownList>{kebabDropdownItems}</DropdownList>
+            </Dropdown>
           </PageHeaderToolsItem>
           <PageHeaderToolsItem
             visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
           >
-            <DropdownDeprecated
-              isPlain
-              position="right"
-              onSelect={this.onDropdownSelect}
+            <Dropdown
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
-              dropdownItems={userDropdownItems}
-            />
+              onSelect={this.onDropdownSelect}
+              onOpenChange={(isOpen) => this.setState({ isDropdownOpen: isOpen })}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isDropdownOpen}
+                  onClick={this.onDropdownToggle}
+                  icon={<Avatar src={imgAvatar} alt="" />}
+                  isFullHeight
+                >
+                  John Smith
+                </MenuToggle>
+              )}
+            >
+              <DropdownList>{userDropdownItems}</DropdownList>
+            </Dropdown>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
       </PageHeaderTools>
     );
 
@@ -1220,8 +1258,12 @@ import {
   ButtonVariant,
   Card,
   CardBody,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
   Gallery,
   GalleryItem,
+  MenuToggle,
   Nav,
   NavItem,
   NavList,
@@ -1235,11 +1277,6 @@ import {
   Text
 } from '@patternfly/react-core';
 import {
-  Dropdown as DropdownDeprecated,
-  DropdownGroup as DropdownGroupDeprecated,
-  DropdownToggle,
-  DropdownItem as DropdownItemDeprecated,
-  KebabToggle,
   PageHeader,
   PageHeaderTools,
   PageHeaderToolsItem,
@@ -1248,6 +1285,7 @@ import {
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -1263,27 +1301,27 @@ class PageLayoutManualNav extends React.Component {
       isNavOpenMobile: false
     };
 
-    this.onDropdownToggle = (_event, isDropdownOpen) => {
+    this.onDropdownToggle = () => {
+      this.setState((prevState) => ({
+        isDropdownOpen: !prevState.isDropdownOpen
+      }));
+    };
+
+    this.onDropdownSelect = () => {
       this.setState({
-        isDropdownOpen
+        isDropdownOpen: false
       });
     };
 
-    this.onDropdownSelect = (event) => {
-      this.setState({
-        isDropdownOpen: !this.state.isDropdownOpen
-      });
+    this.onKebabDropdownToggle = () => {
+      this.setState((prevState) => ({
+        isKebabDropdownOpen: !prevState.isKebabDropdownOpen
+      }));
     };
 
-    this.onKebabDropdownToggle = (_event, isKebabDropdownOpen) => {
+    this.onKebabDropdownSelect = () => {
       this.setState({
-        isKebabDropdownOpen
-      });
-    };
-
-    this.onKebabDropdownSelect = (event) => {
-      this.setState({
-        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+        isKebabDropdownOpen: false
       });
     };
 
@@ -1337,23 +1375,23 @@ class PageLayoutManualNav extends React.Component {
         </NavList>
       </Nav>
     );
-    const kebabDropdownItems = [
-      <DropdownItemDeprecated>
-        <CogIcon /> Settings
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated>
-        <HelpIcon /> Help
-      </DropdownItemDeprecated>
-    ];
-    const userDropdownItems = [
-      <DropdownGroupDeprecated key="group 2">
-        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
-        <DropdownItemDeprecated key="group 2 user" component="button">
-          User management
-        </DropdownItemDeprecated>
-        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
-      </DropdownGroupDeprecated>
-    ];
+    const kebabDropdownItems = (
+      <>
+        <DropdownItem>
+          <CogIcon /> Settings
+        </DropdownItem>
+        <DropdownItem>
+          <HelpIcon /> Help
+        </DropdownItem>
+      </>
+    );
+    const userDropdownItems = (
+      <>
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user">User management</DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </>
+    );
     const headerTools = (
       <PageHeaderTools>
         <PageHeaderToolsGroup
@@ -1376,33 +1414,53 @@ class PageLayoutManualNav extends React.Component {
         <PageHeaderToolsGroup>
           <PageHeaderToolsItem
             visibility={{
-              default: 'hidden',
-              breakpoint: 'lg'
+              lg: 'hidden'
             }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
           >
-            <DropdownDeprecated
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+            <Dropdown
               isOpen={isKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
+              onSelect={this.onKebabDropdownSelect}
+              onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isKebabDropdownOpen}
+                  onClick={this.onKebabDropdownToggle}
+                  variant="plain"
+                  aria-label="Settings and help"
+                >
+                  <EllipsisVIcon aria-hidden="true" />
+                </MenuToggle>
+              )}
+            >
+              <DropdownList>{kebabDropdownItems}</DropdownList>
+            </Dropdown>
           </PageHeaderToolsItem>
           <PageHeaderToolsItem
             visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
           >
-            <DropdownDeprecated
-              isPlain
-              position="right"
-              onSelect={this.onDropdownSelect}
+            <Dropdown
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
-              dropdownItems={userDropdownItems}
-            />
+              onSelect={this.onDropdownSelect}
+              onOpenChange={(isOpen) => this.setState({ isDropdownOpen: isOpen })}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isDropdownOpen}
+                  onClick={this.onDropdownToggle}
+                  icon={<Avatar src={imgAvatar} alt="" />}
+                  isFullHeight
+                >
+                  John Smith
+                </MenuToggle>
+              )}
+            >
+              <DropdownList>{userDropdownItems}</DropdownList>
+            </Dropdown>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
       </PageHeaderTools>
     );
 

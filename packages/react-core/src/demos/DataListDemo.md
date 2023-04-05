@@ -3,16 +3,10 @@ id: Data list
 section: components
 ---
 
-import {
-Dropdown as DropdownDeprecated,
-DropdownItem as DropdownItemDeprecated,
-DropdownPosition,
-KebabToggle
-} from '@patternfly/react-core/deprecated';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { css } from '@patternfly/react-styles';
 
 ## Demos
@@ -31,6 +25,10 @@ import {
   DataListToggle,
   DataListContent,
   DataListItemCells,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  MenuToggle,
   Toolbar,
   ToolbarGroup,
   ToolbarItem,
@@ -39,14 +37,9 @@ import {
   SearchInput,
   Tooltip
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownPosition,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class ExpandableDataList extends React.Component {
   constructor(props) {
@@ -78,34 +71,34 @@ class ExpandableDataList extends React.Component {
       );
     };
 
-    this.onToggle1 = (_event, isOpen1) => {
-      this.setState({ isOpen1 });
+    this.onToggle1 = () => {
+      this.setState((prevState) => ({ isOpen1: !prevState.isOpen1 }));
     };
 
-    this.onToggle2 = (_event, isOpen2) => {
-      this.setState({ isOpen2 });
+    this.onToggle2 = () => {
+      this.setState((prevState) => ({ isOpen2: !prevState.isOpen2 }));
     };
 
-    this.onToggle3 = (_event, isOpen3) => {
-      this.setState({ isOpen3 });
+    this.onToggle3 = () => {
+      this.setState((prevState) => ({ isOpen3: !prevState.isOpen3 }));
     };
 
-    this.onSelect1 = (event) => {
-      this.setState((prevState) => ({
-        isOpen1: !prevState.isOpen1
-      }));
+    this.onSelect1 = () => {
+      this.setState({
+        isOpen1: false
+      });
     };
 
-    this.onSelect2 = (event) => {
-      this.setState((prevState) => ({
-        isOpen2: !prevState.isOpen2
-      }));
+    this.onSelect2 = () => {
+      this.setState({
+        isOpen2: false
+      });
     };
 
-    this.onSelect3 = (event) => {
-      this.setState((prevState) => ({
-        isOpen3: !prevState.isOpen3
-      }));
+    this.onSelect3 = () => {
+      this.setState({
+        isOpen3: false
+      });
     };
   }
 
@@ -154,6 +147,7 @@ class ExpandableDataList extends React.Component {
   }
 
   render() {
+    const { isOpen1, isOpen2, isOpen3 } = this.state;
     const toggle = (id) => {
       const expanded = this.state.expanded;
       const index = expanded.indexOf(id);
@@ -205,22 +199,44 @@ class ExpandableDataList extends React.Component {
                 aria-label="Actions"
                 isPlainButtonAction
               >
-                <DropdownDeprecated
-                  isPlain
-                  position={DropdownPosition.right}
-                  isOpen={this.state.isOpen1}
+                <Dropdown
+                  isOpen={isOpen1}
                   onSelect={this.onSelect1}
-                  toggle={<KebabToggle onToggle={this.onToggle1} />}
-                  dropdownItems={[
-                    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-                    <DropdownItemDeprecated key="action" component="button">
+                  popperProps={{ position: 'right' }}
+                  onOpenChange={(isOpen) => this.setState({ isOpen1: isOpen })}
+                  toggle={(toggleRef) => (
+                    <MenuToggle
+                      ref={toggleRef}
+                      onClick={this.onToggle1}
+                      isExpanded={isOpen1}
+                      variant="plain"
+                      aria-label="Primary content kebab toggle"
+                    >
+                      <EllipsisVIcon aria-hidden="true" />
+                    </MenuToggle>
+                  )}
+                >
+                  <DropdownList>
+                    <DropdownItem itemId={0} key="action1">
                       Action
-                    </DropdownItemDeprecated>,
-                    <DropdownItemDeprecated key="disabled link" isDisabled>
+                    </DropdownItem>
+                    <DropdownItem
+                      itemId={1}
+                      key="link1"
+                      to="#default-link2"
+                      // Prevent the default onClick functionality for example purposes
+                      onClick={(ev) => ev.preventDefault()}
+                    >
+                      Link
+                    </DropdownItem>
+                    <DropdownItem itemId={2} isDisabled key="disabled action1">
+                      Disabled Action
+                    </DropdownItem>
+                    <DropdownItem itemId={3} isDisabled key="disabled link1" to="#default-link4">
                       Disabled Link
-                    </DropdownItemDeprecated>
-                  ]}
-                />
+                    </DropdownItem>
+                  </DropdownList>
+                </Dropdown>
               </DataListAction>
             </DataListItemRow>
             <DataListContent
@@ -265,22 +281,44 @@ class ExpandableDataList extends React.Component {
                 aria-label="Actions"
                 isPlainButtonAction
               >
-                <DropdownDeprecated
-                  isPlain
-                  position={DropdownPosition.right}
-                  isOpen={this.state.isOpen2}
+                <Dropdown
+                  isOpen={isOpen2}
                   onSelect={this.onSelect2}
-                  toggle={<KebabToggle onToggle={this.onToggle2} />}
-                  dropdownItems={[
-                    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-                    <DropdownItemDeprecated key="action" component="button">
+                  popperProps={{ position: 'right' }}
+                  onOpenChange={(isOpen) => this.setState({ isOpen2: isOpen })}
+                  toggle={(toggleRef) => (
+                    <MenuToggle
+                      ref={toggleRef}
+                      onClick={this.onToggle2}
+                      isExpanded={isOpen2}
+                      variant="plain"
+                      aria-label="Secondary content kebab toggle"
+                    >
+                      <EllipsisVIcon aria-hidden="true" />
+                    </MenuToggle>
+                  )}
+                >
+                  <DropdownList>
+                    <DropdownItem itemId={0} key="action2">
                       Action
-                    </DropdownItemDeprecated>,
-                    <DropdownItemDeprecated key="disabled link" isDisabled>
+                    </DropdownItem>
+                    <DropdownItem
+                      itemId={1}
+                      key="link2"
+                      to="#default-link2"
+                      // Prevent the default onClick functionality for example purposes
+                      onClick={(ev) => ev.preventDefault()}
+                    >
+                      Link
+                    </DropdownItem>
+                    <DropdownItem itemId={2} isDisabled key="disabled action2">
+                      Disabled Action
+                    </DropdownItem>
+                    <DropdownItem itemId={3} isDisabled key="disabled link2" to="#default-link4">
                       Disabled Link
-                    </DropdownItemDeprecated>
-                  ]}
-                />
+                    </DropdownItem>
+                  </DropdownList>
+                </Dropdown>
               </DataListAction>
             </DataListItemRow>
             <DataListContent
@@ -325,22 +363,44 @@ class ExpandableDataList extends React.Component {
                 aria-label="Actions"
                 isPlainButtonAction
               >
-                <DropdownDeprecated
-                  isPlain
-                  position={DropdownPosition.right}
-                  isOpen={this.state.isOpen3}
+                <Dropdown
+                  isOpen={isOpen3}
                   onSelect={this.onSelect3}
-                  toggle={<KebabToggle onToggle={this.onToggle3} />}
-                  dropdownItems={[
-                    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-                    <DropdownItemDeprecated key="action" component="button">
+                  popperProps={{ position: 'right' }}
+                  onOpenChange={(isOpen) => this.setState({ isOpen3: isOpen })}
+                  toggle={(toggleRef) => (
+                    <MenuToggle
+                      ref={toggleRef}
+                      onClick={this.onToggle3}
+                      isExpanded={isOpen3}
+                      variant="plain"
+                      aria-label="Tertiary content kebab toggle"
+                    >
+                      <EllipsisVIcon aria-hidden="true" />
+                    </MenuToggle>
+                  )}
+                >
+                  <DropdownList>
+                    <DropdownItem itemId={0} key="action3">
                       Action
-                    </DropdownItemDeprecated>,
-                    <DropdownItemDeprecated key="disabled link" isDisabled>
+                    </DropdownItem>
+                    <DropdownItem
+                      itemId={1}
+                      key="link3"
+                      to="#default-link2"
+                      // Prevent the default onClick functionality for example purposes
+                      onClick={(ev) => ev.preventDefault()}
+                    >
+                      Link
+                    </DropdownItem>
+                    <DropdownItem itemId={2} isDisabled key="disabled action3">
+                      Disabled Action
+                    </DropdownItem>
+                    <DropdownItem itemId={3} isDisabled key="disabled link3" to="#default-link4">
                       Disabled Link
-                    </DropdownItemDeprecated>
-                  ]}
-                />
+                    </DropdownItem>
+                  </DropdownList>
+                </Dropdown>
               </DataListAction>
             </DataListItemRow>
             <DataListContent

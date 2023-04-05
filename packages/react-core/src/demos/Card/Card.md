@@ -20,16 +20,6 @@ import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-import {
-Dropdown as DropdownDeprecated,
-DropdownToggle,
-DropdownItem as DropdownItemDeprecated,
-DropdownSeparator,
-DropdownPosition,
-DropdownToggleCheckbox,
-KebabToggle,
-} from '@patternfly/react-core/deprecated';
-
 ## Demos
 
 This demonstrates how you can assemble a full page view that contains a grid of equal sized cards that includes a toolbar for managing card grid contents.
@@ -47,7 +37,9 @@ import {
   CardTitle,
   CardBody,
   Checkbox,
+  Divider,
   Dropdown,
+  DropdownItem,
   DropdownList,
   EmptyState,
   EmptyStateHeader,
@@ -57,6 +49,7 @@ import {
   EmptyStateActions,
   Gallery,
   MenuToggle,
+  MenuToggleCheckbox,
   OverflowMenu,
   OverflowMenuControl,
   OverflowMenuDropdownItem,
@@ -75,15 +68,6 @@ import {
   SelectList,
   SelectOption
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownToggle,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownToggleCheckbox,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
@@ -150,10 +134,10 @@ class CardViewBasic extends React.Component {
       });
     };
 
-    this.onCardKebabDropdownToggle = (key, isCardKebabDropdownOpen) => {
-      this.setState({
-        [key]: isCardKebabDropdownOpen
-      });
+    this.onCardKebabDropdownToggle = (key) => {
+      this.setState((prevState) => ({
+        [key]: !prevState[key]
+      }));
     };
 
     this.onCardKebabDropdownSelect = (key, event) => {
@@ -182,15 +166,15 @@ class CardViewBasic extends React.Component {
       });
     };
 
-    this.onSplitButtonToggle = (_event, isOpen) => {
-      this.setState({
-        splitButtonDropdownIsOpen: isOpen
-      });
+    this.onSplitButtonToggle = () => {
+      this.setState((prevState) => ({
+        splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen
+      }));
     };
 
-    this.onSplitButtonSelect = (event) => {
-      this.setState((prevState, props) => {
-        return { splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen };
+    this.onSplitButtonSelect = () => {
+      this.setState({
+        splitButtonDropdownIsOpen: false
       });
     };
 
@@ -227,7 +211,6 @@ class CardViewBasic extends React.Component {
     };
 
     this.onKeyDown = (event, productId) => {
-      console.log(productId);
       if (event.target !== event.currentTarget) {
         return;
       }
@@ -422,41 +405,48 @@ class CardViewBasic extends React.Component {
     const anySelected = numSelected > 0;
     const someChecked = anySelected ? null : false;
     const isChecked = allSelected ? true : someChecked;
-    const splitButtonDropdownItems = [
-      <DropdownItemDeprecated key="item-1" onClick={this.selectNone.bind(this)}>
-        Select none (0 items)
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="item-2" onClick={this.selectPage.bind(this)}>
-        Select page ({this.state.perPage} items)
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="item-3" onClick={this.selectAll.bind(this)}>
-        Select all ({this.state.totalItemCount} items)
-      </DropdownItemDeprecated>
-    ];
-
+    const splitButtonDropdownItems = (
+      <>
+        <DropdownItem key="item-1" onClick={this.selectNone.bind(this)}>
+          Select none (0 items)
+        </DropdownItem>
+        <DropdownItem key="item-2" onClick={this.selectPage.bind(this)}>
+          Select page ({this.state.perPage} items)
+        </DropdownItem>
+        <DropdownItem key="item-3" onClick={this.selectAll.bind(this)}>
+          Select all ({this.state.totalItemCount} items)
+        </DropdownItem>
+      </>
+    );
     return (
-      <DropdownDeprecated
-        position={DropdownPosition.left}
+      <Dropdown
         onSelect={this.onSplitButtonSelect}
-        toggle={
-          <DropdownToggle
-            splitButtonItems={[
-              <DropdownToggleCheckbox
-                id="example-checkbox-2"
-                key="split-checkbox"
-                aria-label={anySelected ? 'Deselect all' : 'Select all'}
-                isChecked={areAllSelected}
-                onClick={this.splitCheckboxSelectAll.bind(this)}
-              >
-                {numSelected !== 0 && `${numSelected} selected`}
-              </DropdownToggleCheckbox>
-            ]}
-            onToggle={this.onSplitButtonToggle}
-          ></DropdownToggle>
-        }
         isOpen={splitButtonDropdownIsOpen}
-        dropdownItems={splitButtonDropdownItems}
-      />
+        onOpenChange={(isOpen) => this.setState({ splitButtonDropdownIsOpen: isOpen })}
+        toggle={(toggleRef) => (
+          <MenuToggle
+            ref={toggleRef}
+            isExpanded={splitButtonDropdownIsOpen}
+            onClick={this.onSplitButtonToggle}
+            aria-label="Select cards"
+            splitButtonOptions={{
+              items: [
+                <MenuToggleCheckbox
+                  id="split-dropdown-checkbox"
+                  key="split-dropdown-checkbox"
+                  aria-label={anySelected ? 'Deselect all cards' : 'Select all cards'}
+                  isChecked={areAllSelected}
+                  onClick={this.splitCheckboxSelectAll.bind(this)}
+                >
+                  {numSelected !== 0 && `${numSelected} selected`}
+                </MenuToggleCheckbox>
+              ]
+            }}
+          ></MenuToggle>
+        )}
+      >
+        <DropdownList>{splitButtonDropdownItems}</DropdownList>
+      </Dropdown>
     );
   }
 
@@ -540,7 +530,7 @@ class CardViewBasic extends React.Component {
       <OverflowMenuDropdownItem itemId={3} key="disabled action" isDisabled component="button">
         Disabled Action
       </OverflowMenuDropdownItem>,
-      <DropdownSeparator itemId={4} key="separator" />,
+      <Divider key="separator" />,
       <OverflowMenuDropdownItem itemId={5} key="separated link">
         Separated Link
       </OverflowMenuDropdownItem>,
@@ -573,6 +563,7 @@ class CardViewBasic extends React.Component {
                   </MenuToggle>
                 )}
                 isOpen={isLowerToolbarKebabDropdownOpen}
+                onOpenChange={(isOpen) => this.setState({ isLowerToolbarKebabDropdownOpen: isOpen })}
               >
                 <DropdownList>{toolbarKebabDropdownItems}</DropdownList>
               </Dropdown>
@@ -650,25 +641,29 @@ class CardViewBasic extends React.Component {
                     actions={{
                       actions: (
                         <>
-                          <DropdownDeprecated
-                            isPlain
-                            position="right"
-                            onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
-                            toggle={
-                              <KebabToggle
-                                onToggle={(_event, isCardKebabDropdownOpen) =>
-                                  this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
-                                }
-                              />
-                            }
+                          <Dropdown
                             isOpen={this.state[key]}
-                            dropdownItems={[
-                              <DropdownItemDeprecated key="trash" onClick={this.deleteItem(product)} position="right">
+                            onOpenChange={(isOpen) => this.setState({ [key]: isOpen })}
+                            toggle={(toggleRef) => (
+                              <MenuToggle
+                                ref={toggleRef}
+                                aria-label={`${product.name} actions`}
+                                variant="plain"
+                                onClick={() => this.onCardKebabDropdownToggle(key)}
+                                isExpanded={this.state[key]}
+                              >
+                                <EllipsisVIcon />
+                              </MenuToggle>
+                            )}
+                            popperProps={{ position: 'right' }}
+                          >
+                            <DropdownList>
+                              <DropdownItem key="trash" onClick={this.deleteItem(product)}>
                                 <TrashIcon />
                                 Delete
-                              </DropdownItemDeprecated>
-                            ]}
-                          />
+                              </DropdownItem>
+                            </DropdownList>
+                          </Dropdown>
                           <Checkbox
                             checked={isChecked}
                             value={product.id}

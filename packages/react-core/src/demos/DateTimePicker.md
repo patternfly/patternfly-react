@@ -7,11 +7,6 @@ beta: true
 
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
-import {
-Dropdown as DropdownDeprecated,
-DropdownToggle,
-DropdownItem as DropdownItemDeprecated
-} from '@patternfly/react-core/deprecated';
 
 ## Demos
 
