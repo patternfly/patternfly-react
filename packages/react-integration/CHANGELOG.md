@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.17...@patternfly/react-integration@5.0.0-alpha.18) (2023-04-05)
+
+### Features
+
+- **Page:** Deprecate PageHeader component ([#8854](https://github.com/patternfly/patternfly-react/issues/8854)) ([57b0843](https://github.com/patternfly/patternfly-react/commit/57b084310a7e822848950bcebcfbf5821fe254d5))
+
 # 5.0.0-alpha.17 (2023-04-05)
 
 **Note:** Version bump only for package @patternfly/react-integration

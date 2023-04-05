@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.54](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.53...@patternfly/react-core@5.0.0-alpha.54) (2023-04-05)
+
+### Features
+
+- **Page:** Deprecate PageHeader component ([#8854](https://github.com/patternfly/patternfly-react/issues/8854)) ([57b0843](https://github.com/patternfly/patternfly-react/commit/57b084310a7e822848950bcebcfbf5821fe254d5))
+
 # [5.0.0-alpha.53](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.52...@patternfly/react-core@5.0.0-alpha.53) (2023-04-05)
 
 **Note:** Version bump only for package @patternfly/react-core
