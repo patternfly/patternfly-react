@@ -87,6 +87,14 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   ouiaSafe?: boolean;
 }
 
+const variantStyle = {
+  default: styles.modifiers.custom,
+  info: styles.modifiers.info,
+  success: styles.modifiers.success,
+  warning: styles.modifiers.warning,
+  danger: styles.modifiers.danger
+};
+
 export const Alert: React.FunctionComponent<AlertProps> = ({
   variant = AlertVariant.default,
   isInline = false,
@@ -214,7 +222,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         isPlain && styles.modifiers.plain,
         isExpandable && styles.modifiers.expandable,
         isExpanded && styles.modifiers.expanded,
-        styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
+        variantStyle[variant],
         className
       )}
       {...ouiaProps}

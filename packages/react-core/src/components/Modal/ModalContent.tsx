@@ -85,6 +85,14 @@ export interface ModalContentProps extends OUIAProps {
   ouiaSafe?: boolean;
 }
 
+const titleIconVariantStyle = {
+  default: modalStyles.modifiers.custom,
+  info: modalStyles.modifiers.info,
+  success: modalStyles.modifiers.success,
+  warning: modalStyles.modifiers.warning,
+  danger: modalStyles.modifiers.danger
+};
+
 export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   children,
   className = '',
@@ -174,11 +182,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     <ModalBox
       id={boxId}
       style={boxStyle}
-      className={css(
-        className,
-        isVariantIcon(titleIconVariant) &&
-          modalStyles.modifiers[titleIconVariant as 'success' | 'warning' | 'info' | 'danger' | 'custom']
-      )}
+      className={css(className, isVariantIcon(titleIconVariant) && titleIconVariantStyle[titleIconVariant])}
       variant={variant}
       position={position}
       positionOffset={positionOffset}
