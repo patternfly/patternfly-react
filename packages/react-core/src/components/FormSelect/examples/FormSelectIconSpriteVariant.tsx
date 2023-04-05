@@ -1,10 +1,18 @@
 import React from 'react';
-import { Form, FormGroup, FormSelect, FormSelectOption, ValidatedOptions } from '@patternfly/react-core';
+import {
+  Form,
+  FormGroup,
+  FormHelperText,
+  FormSelect,
+  FormSelectOption,
+  HelperText,
+  HelperTextItem,
+  ValidatedOptions
+} from '@patternfly/react-core';
 
 export const FormSelectIconSpriteVariant: React.FunctionComponent = () => {
   const [formSelectValue, setFormSelectValue] = React.useState('');
   const [validated, setValidated] = React.useState<ValidatedOptions>(ValidatedOptions.default);
-  const [invalidText, setInvalidText] = React.useState('You must choose something');
   const [helperText, setHelperText] = React.useState('');
 
   const onChange = (value: string) => {
@@ -19,7 +27,7 @@ export const FormSelectIconSpriteVariant: React.FunctionComponent = () => {
     } else {
       setFormSelectValue(value);
       setValidated(ValidatedOptions.error);
-      setInvalidText('You must chose Three (thought that was obvious)');
+      setHelperText('You must chose Three (thought that was obvious)');
     }
   };
 
@@ -32,14 +40,7 @@ export const FormSelectIconSpriteVariant: React.FunctionComponent = () => {
 
   return (
     <Form>
-      <FormGroup
-        label="Selection:"
-        type="string"
-        helperText={helperText}
-        helperTextInvalid={invalidText}
-        fieldId="selection"
-        validated={validated}
-      >
+      <FormGroup label="Selection:" type="string" fieldId="selection">
         <FormSelect
           validated={validated}
           isIconSprite
@@ -51,6 +52,11 @@ export const FormSelectIconSpriteVariant: React.FunctionComponent = () => {
             <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
           ))}
         </FormSelect>
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant={validated}>{helperText}</HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
     </Form>
   );

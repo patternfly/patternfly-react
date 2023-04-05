@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileUpload, Form, FormGroup } from '@patternfly/react-core';
+import { FileUpload, Form, FormGroup, FormHelperText, HelperText, HelperTextItem } from '@patternfly/react-core';
 
 export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
@@ -35,12 +35,7 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
 
   return (
     <Form>
-      <FormGroup
-        fieldId="text-file-with-restrictions-example"
-        helperText="Upload a CSV file"
-        helperTextInvalid="Must be a CSV file no larger than 1 KB"
-        validated={isRejected ? 'error' : 'default'}
-      >
+      <FormGroup fieldId="text-file-with-restrictions-example">
         <FileUpload
           id="text-file-with-restrictions-example"
           type="text"
@@ -62,6 +57,13 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
           validated={isRejected ? 'error' : 'default'}
           browseButtonText="Upload"
         />
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant={isRejected ? 'error' : 'default'}>
+              {isRejected ? 'Must be a CSV file no larger than 1 KB' : 'Upload a CSV file'}
+            </HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
     </Form>
   );

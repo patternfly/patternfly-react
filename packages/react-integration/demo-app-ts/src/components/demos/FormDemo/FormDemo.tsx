@@ -12,7 +12,10 @@ import {
   SelectOption,
   SelectOptionObject,
   SelectVariant,
-  ValidatedOptions
+  ValidatedOptions,
+  HelperText,
+  HelperTextItem,
+  FormHelperText
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -63,13 +66,13 @@ export class FormDemo extends Component<FormProps, FormState> {
     const { selected } = this.state;
     if (selected.includes(selection.toString())) {
       this.setState(
-        prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+        (prevState) => ({ selected: prevState.selected.filter((item) => item !== selection) }),
         // eslint-disable-next-line no-console
         () => console.log('selections: ', this.state.selected)
       );
     } else {
       this.setState(
-        prevState => ({ selected: [...prevState.selected, selection.toString()] }),
+        (prevState) => ({ selected: [...prevState.selected, selection.toString()] }),
         // eslint-disable-next-line no-console
         () => console.log('selections: ', this.state.selected)
       );
@@ -124,7 +127,7 @@ export class FormDemo extends Component<FormProps, FormState> {
                 <button
                   id="helper-text-target"
                   aria-label="More info for name field"
-                  onClick={e => e.preventDefault()}
+                  onClick={(e) => e.preventDefault()}
                   aria-describedby="simple-form-name"
                   className="pf-c-form__group-label-help"
                 >
@@ -133,11 +136,7 @@ export class FormDemo extends Component<FormProps, FormState> {
               </Popover>
             }
             type="number"
-            helperText="Please write your age"
-            helperTextInvalid="Age has to be a number"
-            helperTextInvalidIcon={<ExclamationCircleIcon />}
             fieldId="age"
-            validated={isValid ? ValidatedOptions.default : ValidatedOptions.error}
           >
             <TextInput
               validated={isValid ? ValidatedOptions.default : ValidatedOptions.error}
@@ -146,6 +145,14 @@ export class FormDemo extends Component<FormProps, FormState> {
               aria-describedby="age-helper"
               onChange={this.handleTextInputChange}
             />
+            <HelperText id="age-helper">
+              <HelperTextItem
+                icon={<ExclamationCircleIcon />}
+                variant={isValid ? ValidatedOptions.default : ValidatedOptions.error}
+              >
+                {isValid ? 'Please write your age' : 'Age has to be a number'}
+              </HelperTextItem>
+            </HelperText>
           </FormGroup>
         </Form>
 
@@ -173,15 +180,7 @@ export class FormDemo extends Component<FormProps, FormState> {
             </Select>
           </FormGroup>
           <FormSection title="Title" titleElement="h4">
-            <FormGroup
-              id="formgroup-validated"
-              label="Validated Age"
-              type="number"
-              helperText="Enter age"
-              helperTextInvalid="Age must be a number"
-              fieldId="age2"
-              validated={validated}
-            >
+            <FormGroup id="formgroup-validated" label="Validated Age" type="number" fieldId="age2">
               <TextInput
                 validated={validated}
                 value={validatedValue}
@@ -189,6 +188,13 @@ export class FormDemo extends Component<FormProps, FormState> {
                 aria-describedby="age-helper-validated"
                 onChange={this.handleValidatedTextInputChange}
               />
+              <FormHelperText>
+                <HelperText id="age2-helper">
+                  <HelperTextItem variant={validated}>
+                    {validated === 'error' ? 'Age must be a number' : 'Enter age'}
+                  </HelperTextItem>
+                </HelperText>
+              </FormHelperText>
             </FormGroup>
           </FormSection>
           <FormSection>

@@ -7,20 +7,7 @@ import { FormHelperText } from '../FormHelperText';
 
 describe('FormHelperText', () => {
   test('renders with PatternFly Core styles', () => {
-    const { asFragment } = render(
-      <FormHelperText isError isHidden={false}>
-        test
-      </FormHelperText>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders with icon', () => {
-    const { asFragment } = render(
-      <FormHelperText isError isHidden={false} icon={<ExclamationCircleIcon />}>
-        test
-      </FormHelperText>
-    );
+    const { asFragment } = render(<FormHelperText>test</FormHelperText>);
     expect(asFragment()).toMatchSnapshot();
   });
 

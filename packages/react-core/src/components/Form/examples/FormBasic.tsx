@@ -1,5 +1,17 @@
 import React from 'react';
-import { Form, FormGroup, TextInput, Checkbox, Popover, ActionGroup, Button, Radio } from '@patternfly/react-core';
+import {
+  Form,
+  FormGroup,
+  TextInput,
+  Checkbox,
+  Popover,
+  ActionGroup,
+  Button,
+  Radio,
+  HelperText,
+  HelperTextItem,
+  FormHelperText
+} from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 export const FormBasic: React.FunctionComponent = () => {
@@ -54,7 +66,7 @@ export const FormBasic: React.FunctionComponent = () => {
             <button
               type="button"
               aria-label="More info for name field"
-              onClick={e => e.preventDefault()}
+              onClick={(e) => e.preventDefault()}
               aria-describedby="simple-form-name-01"
               className="pf-c-form__group-label-help"
             >
@@ -64,7 +76,6 @@ export const FormBasic: React.FunctionComponent = () => {
         }
         isRequired
         fieldId="simple-form-name-01"
-        helperText="Include your middle name if you have one."
       >
         <TextInput
           isRequired
@@ -75,6 +86,11 @@ export const FormBasic: React.FunctionComponent = () => {
           value={name}
           onChange={handleNameChange}
         />
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem>Include your middle name if you have one.</HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
       <FormGroup label="Email" isRequired fieldId="simple-form-email-01">
         <TextInput

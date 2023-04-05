@@ -20,7 +20,7 @@ describe('Form Demo Test', () => {
       .first()
       .clear()
       .type('5');
-    cy.get('.pf-c-form__helper-text').contains('Please write your age');
+    cy.get('.pf-c-helper-text').contains('Please write your age');
   });
 
   it('Verify form identifies input error', () => {
@@ -28,7 +28,7 @@ describe('Form Demo Test', () => {
       .first()
       .clear()
       .type('Something');
-    cy.get('.pf-c-form__helper-text').contains('Age has to be a number');
+    cy.get('.pf-c-helper-text').contains('Age has to be a number');
   });
 
   it('Verify section titles rendering with correct component', () => {
@@ -37,28 +37,28 @@ describe('Form Demo Test', () => {
 
   it('Verify form validates form group', () => {
     cy.get('#age-validated.pf-m-success').should('not.exist');
-    cy.get('.pf-c-form__helper-text').contains('Enter age');
+    cy.get('.pf-c-helper-text').contains('Enter age');
     // type string that is not a number so it is invalid
     cy.get('#age-validated').type('hi');
     cy.get('#age-validated').should('have.value', 'hi');
     cy.get('#age-validated').then(textinput => {
       expect(textinput.attr('aria-invalid')).to.be.equal('true');
     });
-    cy.get('.pf-c-form__helper-text.pf-m-error').contains('Age must be a number');
-    cy.get('#age2-helper.pf-m-error').should('exist');
+    cy.get('.pf-c-helper-text__item.pf-m-error').contains('Age must be a number');
+    cy.get('#age2-helper .pf-m-error').should('exist');
     // Clear text input and enter valid number
     cy.get('#age-validated')
       .clear()
       .type('34')
       .should('have.value', '34');
-    cy.get('#age2-helper.pf-m-success').should('exist');
+    cy.get('#age2-helper .pf-m-success').should('exist');
     cy.get('#age-validated.pf-m-success').should('exist');
-    cy.get('.pf-c-form__helper-text.pf-m-success').contains('Enter age');
+    cy.get('.pf-c-helper-text__item.pf-m-success').contains('Enter age');
     cy.get('#age-validated').then(textinput => {
       expect(textinput.attr('aria-invalid')).to.be.equal('false');
     });
     cy.get('#age-validated').clear();
-    cy.get('#age2-helper.pf-m-warning').should('exist');
+    cy.get('#age2-helper .pf-m-warning').should('exist');
     cy.get('#age-validated').then(textinput => {
       expect(textinput.attr('aria-invalid')).to.be.equal('false');
     });

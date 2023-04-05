@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, TextInput, FormHelperText } from '@patternfly/react-core';
+import { Form, FormGroup, TextInput, HelperText, HelperTextItem, FormHelperText } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 export const FormInvalid: React.FunctionComponent = () => {
@@ -21,19 +21,7 @@ export const FormInvalid: React.FunctionComponent = () => {
 
   return (
     <Form>
-      <FormGroup
-        label="Age"
-        type="number"
-        helperText={
-          <FormHelperText icon={<ExclamationCircleIcon />} isHidden={validated !== 'default'}>
-            Please enter your age
-          </FormHelperText>
-        }
-        helperTextInvalid="Must be a number"
-        helperTextInvalidIcon={<ExclamationCircleIcon />}
-        fieldId="age-1"
-        validated={validated}
-      >
+      <FormGroup label="Age" type="number" fieldId="age-1">
         <TextInput
           validated={validated}
           value={age}
@@ -41,6 +29,15 @@ export const FormInvalid: React.FunctionComponent = () => {
           aria-describedby="age-1-helper"
           onChange={handleAgeChange}
         />
+        {validated !== 'success' && (
+          <FormHelperText>
+            <HelperText>
+              <HelperTextItem icon={<ExclamationCircleIcon />} variant={validated}>
+                {validated === 'error' ? 'Must be a number' : 'Please enter your age'}
+              </HelperTextItem>
+            </HelperText>
+          </FormHelperText>
+        )}
       </FormGroup>
     </Form>
   );
