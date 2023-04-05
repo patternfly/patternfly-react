@@ -78,7 +78,7 @@ export interface PaginationTitles {
 }
 
 export type OnSetPage = (
-  _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+  event: React.MouseEvent | React.KeyboardEvent | MouseEvent,
   newPage: number,
   perPage?: number,
   startIdx?: number,
@@ -86,7 +86,7 @@ export type OnSetPage = (
 ) => void;
 
 export type OnPerPageSelect = (
-  _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+  event: React.MouseEvent | React.KeyboardEvent | MouseEvent,
   newPerPage: number,
   newPage: number,
   startIdx?: number,
