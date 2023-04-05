@@ -53,13 +53,13 @@ export const HeaderCellInfoWrapper: React.FunctionComponent<ColumnHelpWrapperPro
       {variant === 'tooltip' ? (
         <Tooltip content={info} {...tooltipProps}>
           <Button variant="plain" aria-label={ariaLabel || (typeof info === 'string' && info) || 'More info'}>
-            <HelpIcon noVerticalAlign />
+            <HelpIcon />
           </Button>
         </Tooltip>
       ) : (
         <Popover bodyContent={info} {...popoverProps}>
           <Button variant="plain" aria-label={ariaLabel || (typeof info === 'string' && info) || 'More info'}>
-            <HelpIcon noVerticalAlign />
+            <HelpIcon />
           </Button>
         </Popover>
       )}

@@ -10,12 +10,10 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 384 512"
-        width="1em"
       >
         <path
           d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"
@@ -99,12 +97,10 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 512 512"
-          width="1em"
         >
           <path
             d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
@@ -126,12 +122,10 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 384 512"
-        width="1em"
       >
         <path
           d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"
@@ -212,12 +206,10 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 512 512"
-          width="1em"
         >
           <path
             d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
@@ -239,12 +231,10 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 384 512"
-        width="1em"
       >
         <path
           d="M384 121.941V128H256V0h6.059a24 24 0 0 1 16.97 7.029l97.941 97.941a24.002 24.002 0 0 1 7.03 16.971zM248 160c-13.2 0-24-10.8-24-24V0H24C10.745 0 0 10.745 0 24v464c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24V160H248zm-135.455 16c26.51 0 48 21.49 48 48s-21.49 48-48 48-48-21.49-48-48 21.491-48 48-48zm208 240h-256l.485-48.485L104.545 328c4.686-4.686 11.799-4.201 16.485.485L160.545 368 264.06 264.485c4.686-4.686 12.284-4.686 16.971 0L320.545 304v112z"
@@ -327,12 +317,10 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 512 512"
-          width="1em"
         >
           <path
             d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
@@ -354,12 +342,10 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 384 512"
-        width="1em"
       >
         <path
           d="M384 121.941V128H256V0h6.059a24 24 0 0 1 16.97 7.029l97.941 97.941a24.002 24.002 0 0 1 7.03 16.971zM248 160c-13.2 0-24-10.8-24-24V0H24C10.745 0 0 10.745 0 24v464c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24V160H248zm-135.455 16c26.51 0 48 21.49 48 48s-21.49 48-48 48-48-21.49-48-48 21.491-48 48-48zm208 240h-256l.485-48.485L104.545 328c4.686-4.686 11.799-4.201 16.485.485L160.545 368 264.06 264.485c4.686-4.686 12.284-4.686 16.971 0L320.545 304v112z"
@@ -442,12 +428,10 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 512 512"
-          width="1em"
         >
           <path
             d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
@@ -469,12 +453,10 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 384 512"
-        width="1em"
       >
         <path
           d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"
@@ -528,12 +510,10 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
           >
             <svg
               aria-hidden="true"
+              class="pf-svg"
               fill="currentColor"
-              height="1em"
               role="img"
-              style="vertical-align: -0.125em;"
               viewBox="0 0 576 512"
-              width="1em"
             >
               <path
                 d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
@@ -574,12 +554,10 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 512 512"
-          width="1em"
         >
           <path
             d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
@@ -601,12 +579,10 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 384 512"
-        width="1em"
       >
         <path
           d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"
@@ -689,12 +665,10 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 512 512"
-          width="1em"
         >
           <path
             d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
@@ -716,12 +690,10 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 384 512"
-        width="1em"
       >
         <path
           d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"
@@ -802,12 +774,10 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 512 512"
-          width="1em"
         >
           <path
             d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
@@ -829,12 +799,10 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 384 512"
-        width="1em"
       >
         <path
           d="M384 121.941V128H256V0h6.059a24 24 0 0 1 16.97 7.029l97.941 97.941a24.002 24.002 0 0 1 7.03 16.971zM248 160c-13.2 0-24-10.8-24-24V0H24C10.745 0 0 10.745 0 24v464c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24V160H248zm-135.455 16c26.51 0 48 21.49 48 48s-21.49 48-48 48-48-21.49-48-48 21.491-48 48-48zm208 240h-256l.485-48.485L104.545 328c4.686-4.686 11.799-4.201 16.485.485L160.545 368 264.06 264.485c4.686-4.686 12.284-4.686 16.971 0L320.545 304v112z"
@@ -917,12 +885,10 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 512 512"
-          width="1em"
         >
           <path
             d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"

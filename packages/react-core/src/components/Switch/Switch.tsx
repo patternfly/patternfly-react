@@ -105,7 +105,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
             <span className={css(styles.switchToggle)}>
               {hasCheckIcon && (
                 <span className={css(styles.switchToggleIcon)} aria-hidden="true">
-                  <CheckIcon noVerticalAlign />
+                  <CheckIcon />
                 </span>
               )}
             </span>
@@ -127,7 +127,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
         ) : (
           <span className={css(styles.switchToggle)}>
             <div className={css(styles.switchToggleIcon)} aria-hidden="true">
-              <CheckIcon noVerticalAlign />
+              <CheckIcon />
             </div>
           </span>
         )}

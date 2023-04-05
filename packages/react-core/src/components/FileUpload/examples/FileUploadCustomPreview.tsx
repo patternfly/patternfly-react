@@ -29,7 +29,7 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
     >
       {value && (
         <div className="pf-u-m-md">
-          <FileUploadIcon size="lg" /> Custom preview here for your {value.size}-byte file named {value.name}
+          <FileUploadIcon width="2em" height="2em" /> Custom preview here for your {value.size}-byte file named {value.name}
         </div>
       )}
     </FileUpload>

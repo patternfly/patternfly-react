@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { createIcon, IconSize } from '../createIcon';
+import { createIcon } from '../createIcon';
 
 const iconDef = {
   name: 'IconName',
@@ -26,14 +26,6 @@ test('sets correct svgPath', () => {
       .getByRole('img', { hidden: true })
       .querySelector('path')
   ).toHaveAttribute('d', iconDef.svgPath);
-});
-
-test('height and width are set from size', () => {
-  render(<SVGIcon size={IconSize.sm} />);
-
-  const svg = screen.getByRole('img', { hidden: true });
-  expect(svg).toHaveAttribute('width', '1em');
-  expect(svg).toHaveAttribute('height', '1em');
 });
 
 test('aria-hidden is true if no title is specified', () => {
@@ -63,7 +55,7 @@ test('aria-labelledby matches title id', () => {
 
   const svg = screen.getByRole('img', { hidden: true });
   const labelledby = svg.getAttribute('aria-labelledby');
-  const titleId = svg.querySelector('title').getAttribute('id');
+  const titleId = svg.querySelector('title')?.getAttribute('id');
 
   expect(labelledby).toEqual(titleId);
 });
