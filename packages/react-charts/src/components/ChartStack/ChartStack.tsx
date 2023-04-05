@@ -17,9 +17,11 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryStack, VictoryStackProps, VictoryStackTTargetType } from 'victory-stack';
-import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { getClassName, useDefaultPatternProps, getTheme, renderChildrenWithPatterns } from '../ChartUtils';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getClassName } from '../ChartUtils/chart-helpers';
+import { useDefaultPatternProps, renderChildrenWithPatterns } from '../ChartUtils/chart-patterns';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartStack is a wrapper component that renders a given set of children in a stacked layout. Like other wrapper

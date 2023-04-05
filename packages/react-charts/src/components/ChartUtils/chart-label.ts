@@ -1,6 +1,7 @@
 import { Helpers, TextSize } from 'victory-core';
 import { getPieOrigin } from './chart-origin';
-import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 
 interface ChartBulletLabelInterface {
   dx?: number; // Horizontal shift from the x coordinate

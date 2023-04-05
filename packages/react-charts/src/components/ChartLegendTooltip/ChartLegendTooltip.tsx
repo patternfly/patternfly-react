@@ -9,17 +9,18 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip } from 'victory-tooltip';
-import { ChartCursorTooltip, ChartCursorTooltipProps } from '../ChartCursorTooltip';
+import { ChartCursorTooltip, ChartCursorTooltipProps } from '../ChartCursorTooltip/ChartCursorTooltip';
 import { ChartLegendTooltipContent } from './ChartLegendTooltipContent';
-import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
-import { ChartTooltip } from '../ChartTooltip';
+import { ChartLegendTooltipStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
 import {
   getLegendTooltipDataProps,
   getLegendTooltipSize,
   getLegendTooltipVisibleData,
   getLegendTooltipVisibleText,
-  getTheme
-} from '../ChartUtils';
+} from '../ChartUtils/chart-tooltip';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * The ChartLegendTooltip is based on ChartCursorTooltip, which is intended to be used with a voronoi cursor

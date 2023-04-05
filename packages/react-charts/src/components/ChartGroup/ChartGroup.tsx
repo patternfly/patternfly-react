@@ -19,20 +19,15 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryGroup, VictoryGroupProps, VictoryGroupTTargetType } from 'victory-group';
-import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getClassName } from '../ChartUtils/chart-helpers';
 import {
-  getClassName,
   useDefaultPatternProps,
   getPatternDefs,
-  getTheme,
   renderChildrenWithPatterns
-} from '../ChartUtils';
-
-export enum ChartGroupSortOrder {
-  ascending = 'ascending',
-  descending = 'descending'
-}
+} from '../ChartUtils/chart-patterns';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartGroup is a wrapper component that renders a given set of children with some shared props. ChartGroup reconciles

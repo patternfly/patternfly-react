@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { Chart } from '../Chart';
-import { ChartBar } from '../ChartBar';
+import { Chart } from '../Chart/Chart';
+import { ChartBar } from '../ChartBar/ChartBar';
 import { ChartStack } from './ChartStack';
 
 Object.values([true, false]).forEach(() => {

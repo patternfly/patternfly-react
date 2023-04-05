@@ -2,12 +2,13 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
 import { VictoryBar } from 'victory-bar';
-import { getQualitativeRangeData } from './utils';
-import { ChartBar } from '../ChartBar';
-import { ChartContainer } from '../ChartContainer';
-import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
-import { ChartTooltip } from '../ChartTooltip';
-import { getBulletQualitativeRangeTheme } from '../ChartUtils';
+import { getQualitativeRangeData } from './utils/chart-bullet-data';
+import { ChartBar } from '../ChartBar/ChartBar';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
+import { getBulletQualitativeRangeTheme } from '../ChartUtils/chart-theme-types';
 
 /**
  * ChartBulletQualitativeRange renders a dataset as the qualitative range.

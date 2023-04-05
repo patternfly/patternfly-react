@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { Chart } from '../Chart';
-import { ChartAxis } from '../ChartAxis';
-import { ChartGroup } from '../ChartGroup';
-import { ChartLine } from '../ChartLine';
-import { ChartThemeColor } from '../ChartTheme';
-import { createContainer } from '../ChartUtils';
+import { Chart } from '../Chart/Chart';
+import { ChartAxis } from '../ChartAxis/ChartAxis';
+import { ChartGroup } from '../ChartGroup/ChartGroup';
+import { ChartLine } from '../ChartLine/ChartLine';
+import { ChartThemeColor } from '../ChartTheme/ChartThemeColor';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartLegend } from '../ChartLegend/ChartLegend';
+import { createContainer } from '../ChartUtils/chart-container';
 import { ChartLegendTooltip } from './ChartLegendTooltip';
-import { ChartLabel } from '../ChartLabel';
-import { ChartLegend } from '../ChartLegend';
 
 Object.values([true, false]).forEach(() => {
   test('ChartLegendTooltip', () => {

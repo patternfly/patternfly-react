@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { ChartLegend } from '../ChartLegend/ChartLegend';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartContainer } from './ChartContainer';
-import { ChartLegend } from '../ChartLegend';
-import { ChartLabel } from '../ChartLabel';
 
 Object.values([true, false]).forEach(() => {
   test('ChartContainer', () => {

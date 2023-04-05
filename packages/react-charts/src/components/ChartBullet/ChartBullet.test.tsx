@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { ChartAxis } from '../ChartAxis/ChartAxis';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartBullet } from './ChartBullet';
-import { ChartAxis } from '../ChartAxis';
-import { ChartLabel } from '../ChartLabel';
 
 Object.values([true, false]).forEach(() => {
   test('ChartBulletQualitativeRange', () => {

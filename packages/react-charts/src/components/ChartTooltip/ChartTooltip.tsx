@@ -9,9 +9,9 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip, VictoryTooltipProps } from 'victory-tooltip';
-import { ChartLabel } from '../ChartLabel';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartTooltip renders a tooltip component with a set of default events. When ChartTooltip is used as a label component

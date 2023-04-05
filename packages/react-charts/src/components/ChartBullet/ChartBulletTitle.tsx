@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { PaddingProps, StringOrNumberOrCallback } from 'victory-core';
-import { ChartContainer } from '../ChartContainer';
-import { ChartLabel } from '../ChartLabel';
-import { ChartLegendPosition } from '../ChartLegend';
-import { ChartBulletStyles, ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getBulletTheme, getBulletLabelX, getBulletLabelY, getPaddingForSide } from '../ChartUtils';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartCommonStyles, ChartBulletStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getBulletLabelX, getBulletLabelY } from '../ChartUtils/chart-label';
+import { getPaddingForSide } from '../ChartUtils/chart-padding';
+import { getBulletTheme } from '../ChartUtils/chart-theme-types';
 
 /**
  * ChartBulletTitle renders the bullet chart title.
@@ -128,7 +130,7 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
   ariaTitle,
   capHeight = 1.1,
   horizontal = true,
-  legendPosition = 'bottom' as ChartLegendPosition,
+  legendPosition = 'bottom',
   name,
   padding,
   standalone = true,

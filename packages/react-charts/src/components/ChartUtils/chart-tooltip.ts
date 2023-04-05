@@ -1,8 +1,9 @@
 /* eslint-disable camelcase */
 import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
 import { Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
-import { ChartLegendProps } from '../ChartLegend';
-import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartLegendProps } from '../ChartLegend/ChartLegend';
+import { ChartLegendTooltipStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getLegendDimensions } from './chart-legend';
 
 import merge from 'lodash/merge';

@@ -2,14 +2,10 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { OriginType } from 'victory-core';
 import { VictoryVoronoiContainer, VictoryVoronoiContainerProps } from 'victory-voronoi-container';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { ChartTooltip } from '../ChartTooltip';
-import { getClassName, getTheme } from '../ChartUtils';
-
-export enum ChartVoronoiDimension {
-  x = 'x',
-  y = 'y'
-}
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
+import { getClassName } from '../ChartUtils/chart-helpers';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartVoronoiContainer adds the ability to associate a mouse position with the data point(s) closest to it. When this
@@ -37,7 +33,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    */
   activateLabels?: boolean;
   /**
-   * he children prop specifies the child or children that will be rendered within the container. It will be set by
+   * The children prop specifies the child or children that will be rendered within the container. It will be set by
    * whatever Victory component is rendering the container.
    *
    * Note: This prop should not be set manually.

@@ -20,14 +20,9 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryLine, VictoryLineProps, VictoryLineTTargetType } from 'victory-line';
-import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
-
-export enum ChartLineSortOrder {
-  ascending = 'ascending',
-  descending = 'descending'
-}
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartLine renders a dataset as a single line path. Since ChartLine renders only a single element to represent a

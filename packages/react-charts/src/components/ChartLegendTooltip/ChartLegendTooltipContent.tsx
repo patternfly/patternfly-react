@@ -2,17 +2,18 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { Helpers, NumberOrCallback, StringOrNumberOrCallback } from 'victory-core';
 import { VictoryLegend } from 'victory-legend';
-import { ChartLabel } from '../ChartLabel';
-import { ChartLegend } from '../ChartLegend';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartLegend } from '../ChartLegend/ChartLegend';
+import { ChartLegendTooltipStyles } from '../ChartTheme/ChartStyles';
 import { ChartLegendTooltipLabel } from './ChartLegendTooltipLabel';
-import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import {
   getLegendTooltipDataProps,
   getLegendTooltipSize,
   getLegendTooltipVisibleData,
   getLegendTooltipVisibleText,
-  getTheme
-} from '../ChartUtils';
+} from '../ChartUtils/chart-tooltip';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartLegendTooltipContent renders a legend tooltip component.

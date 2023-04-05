@@ -1,4 +1,7 @@
 import merge from 'lodash/merge';
+import { ChartThemeColor } from '../ChartTheme/ChartThemeColor';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartBaseTheme } from '../ChartTheme/ChartThemeTypes';
 import { BlueColorTheme } from '../ChartTheme/themes/colors/blue-theme';
 import { CyanColorTheme } from '../ChartTheme/themes/colors/cyan-theme';
 import { GoldColorTheme } from '../ChartTheme/themes/colors/gold-theme';
@@ -8,8 +11,6 @@ import { MultiColorOrderedTheme } from '../ChartTheme/themes/colors/multi-ordere
 import { MultiColorUnorderedTheme } from '../ChartTheme/themes/colors/multi-unordered-theme';
 import { OrangeColorTheme } from '../ChartTheme/themes/colors/orange-theme';
 import { PurpleColorTheme } from '../ChartTheme/themes/colors/purple-theme';
-import { ChartBaseTheme, ChartThemeDefinition } from '../ChartTheme';
-import { ChartThemeColor } from '../ChartTheme/ChartThemeColor';
 
 /**
  * Apply custom properties to base and color themes
@@ -35,7 +36,7 @@ export const getTheme = (themeColor: string): ChartThemeDefinition => {
 
 /**
  * Returns theme colors
- * @private
+ * @private use getTheme
  */
 const getThemeColors = (themeColor: string) => {
   switch (themeColor) {

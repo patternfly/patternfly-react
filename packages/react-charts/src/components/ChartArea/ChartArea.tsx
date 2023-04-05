@@ -20,14 +20,9 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryArea, VictoryAreaProps, VictoryAreaTTargetType } from 'victory-area';
-import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
-
-export enum ChartAreaSortOrder {
-  ascending = 'ascending',
-  descending = 'descending'
-}
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartArea renders a dataset as a single area path. Since ChartArea renders only a single element to represent a

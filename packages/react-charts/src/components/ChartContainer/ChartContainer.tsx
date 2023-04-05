@@ -1,8 +1,9 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { OriginType, VictoryContainer, VictoryContainerProps } from 'victory-core';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { getClassName, getTheme } from '../ChartUtils';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getTheme } from '../ChartUtils/chart-theme';
+import { getClassName } from '../ChartUtils/chart-helpers';
 
 /**
  * ChartContainer provides a top-level <svg> element for other Victory based components to render within. By default,
