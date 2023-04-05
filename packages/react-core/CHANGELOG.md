@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.56](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.55...@patternfly/react-core@5.0.0-alpha.56) (2023-04-05)
+
+### Bug Fixes
+
+- **Menu/Dropdown:** updated external link and focus management ([#8879](https://github.com/patternfly/patternfly-react/issues/8879)) ([cb1d683](https://github.com/patternfly/patternfly-react/commit/cb1d683a3a83c6daf0799cf82f4bb4b9b475b5b3))
+- **Wizard:** add type to nav item buttons ([#8876](https://github.com/patternfly/patternfly-react/issues/8876)) ([9440b42](https://github.com/patternfly/patternfly-react/commit/9440b4286f379cd8a0a6e5caa81fe2ba7ee345ab))
+
 # [5.0.0-alpha.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.54...@patternfly/react-core@5.0.0-alpha.55) (2023-04-05)
 
 ### Features
