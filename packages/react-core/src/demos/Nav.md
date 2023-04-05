@@ -2,14 +2,18 @@
 id: Navigation
 section: components
 ---
-
 import {
-Dropdown as DropdownDeprecated,
-DropdownGroup as DropdownGroupDeprecated,
-DropdownToggle,
-DropdownItem as DropdownItemDeprecated,
-KebabToggle
+  Dropdown as DropdownDeprecated,
+  DropdownGroup as DropdownGroupDeprecated,
+  DropdownToggle,
+  DropdownItem as DropdownItemDeprecated,
+  KebabToggle,
+  PageHeader,
+  PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem
 } from '@patternfly/react-core/deprecated';
+
 import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
@@ -372,17 +376,18 @@ import {
   NavItem,
   NavList,
   Page,
-  PageHeader,
   PageSection,
   PageSectionVariants,
   SkipToContent,
   TextContent,
-  Text,
+  Text
+} from '@patternfly/react-core';
+
+import {
+  PageHeader,
   PageHeaderTools,
   PageHeaderToolsGroup,
-  PageHeaderToolsItem
-} from '@patternfly/react-core';
-import {
+  PageHeaderToolsItem,
   Dropdown as DropdownDeprecated,
   DropdownGroup as DropdownGroupDeprecated,
   DropdownToggle,
@@ -730,23 +735,23 @@ import {
   NavItem,
   NavList,
   Page,
-  PageHeader,
   PageSection,
   PageSectionVariants,
   PageSectionTypes,
   SkipToContent,
   TextContent,
-  Text,
-  PageHeaderTools,
-  PageHeaderToolsGroup,
-  PageHeaderToolsItem
+  Text
 } from '@patternfly/react-core';
 import {
   Dropdown as DropdownDeprecated,
   DropdownGroup as DropdownGroupDeprecated,
   DropdownToggle,
   DropdownItem as DropdownItemDeprecated,
-  KebabToggle
+  KebabToggle,
+  PageHeader,
+  PageHeaderTools,
+  PageHeaderToolsItem,
+  PageHeaderToolsGroup
 } from '@patternfly/react-core/deprecated';
 import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
@@ -1196,23 +1201,23 @@ import {
   NavItem,
   NavList,
   Page,
-  PageHeader,
   PageSection,
   PageSectionVariants,
   PageSidebar,
   SkipToContent,
   TextContent,
-  Text,
-  PageHeaderTools,
-  PageHeaderToolsGroup,
-  PageHeaderToolsItem
+  Text
 } from '@patternfly/react-core';
 import {
   Dropdown as DropdownDeprecated,
   DropdownGroup as DropdownGroupDeprecated,
   DropdownToggle,
   DropdownItem as DropdownItemDeprecated,
-  KebabToggle
+  KebabToggle,
+  PageHeader,
+  PageHeaderTools,
+  PageHeaderToolsItem,
+  PageHeaderToolsGroup
 } from '@patternfly/react-core/deprecated';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -1433,8 +1438,6 @@ import {
   Nav,
   NavList,
   NavItem,
-  PageHeader,
-  PageHeaderTools,
   PageSidebar,
   PageSection,
   PageSectionVariants,
@@ -1443,6 +1446,10 @@ import {
   MenuList,
   MenuItem
 } from '@patternfly/react-core';
+import {
+  PageHeader,
+  PageHeaderTools,
+}from '@patternfly/react-core';
 import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class VerticalPage extends React.Component {
@@ -1452,7 +1459,7 @@ class VerticalPage extends React.Component {
       isNavOpen: true,
       activeItem: 0
     };
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (e, result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -1493,17 +1500,17 @@ class VerticalPage extends React.Component {
     const { activeItem } = this.state;
 
     const Sidebar = (
-      <PageSidebar
+      <PageSidebar style={{"overflow": "visible"}}
         nav={
           <Nav onSelect={this.onNavSelect}>
             <NavList>
-              <NavItem id="flyout-link1" to="#flyout-link1" itemId={0} isActive={activeItem === 0}>
+              <NavItem preventDefault id="flyout-link1" to="#flyout-link1" itemId={0} isActive={activeItem === 0}>
                 System Panel
               </NavItem>
-              <NavItem flyout={curFlyout} id="flyout-link2" to="#flyout-link2" itemId={1} isActive={activeItem === 1}>
+              <NavItem preventDefault flyout={curFlyout} id="flyout-link2" itemId={1} isActive={activeItem === 1}>
                 Settings
               </NavItem>
-              <NavItem id="flyout-link3" to="#flyout-link3" itemId={2} isActive={activeItem === 2}>
+              <NavItem preventDefault id="flyout-link3" to="#flyout-link3" itemId={2} isActive={activeItem === 2}>
                 Authentication
               </NavItem>
             </NavList>

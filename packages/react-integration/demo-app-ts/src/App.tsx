@@ -10,12 +10,14 @@ import {
   PageSidebar,
   Avatar,
   Brand,
+  Radio
+} from '@patternfly/react-core';
+import {
   PageHeader,
   PageHeaderTools,
   PageHeaderToolsItem,
-  PageHeaderToolsGroup,
-  Radio
-} from '@patternfly/react-core';
+  PageHeaderToolsGroup
+} from '@patternfly/react-core/deprecated';
 import imgBrand from './assets/images/imgBrand.svg';
 import imgAvatar from './assets/images/imgAvatar.svg';
 import Demos from './Demos';

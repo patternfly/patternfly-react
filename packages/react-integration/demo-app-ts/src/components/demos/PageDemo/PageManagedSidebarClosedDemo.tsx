@@ -1,12 +1,15 @@
 import React from 'react';
 import {
   Page,
-  PageHeader,
-  PageHeaderTools,
   PageSidebar,
   PageSection,
   PageSectionVariants
 } from '@patternfly/react-core';
+
+import {
+  PageHeader,
+  PageHeaderTools,
+} from '@patternfly/react-core/deprecated';
 
 export class PageManagedSidebarClosedDemo extends React.Component {
   static displayName = 'PageManagedSidebarClosedDemo';

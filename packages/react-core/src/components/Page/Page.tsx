@@ -19,7 +19,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the page layout */
   className?: string;
-  /** Header component (e.g. <PageHeader />) */
+  /** Header component (e.g. <Masthead />) */
   header?: React.ReactNode;
   /** Sidebar component for a side nav (e.g. <PageSidebar />) */
   sidebar?: React.ReactNode;
@@ -41,7 +41,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   mainTabIndex?: number | null;
   /**
    * If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
-   * the sidebar component or add a callback onNavToggle function into the PageHeader component
+   * the sidebar component or add a callback onNavToggle function into the Masthead component
    */
   isManagedSidebar?: boolean;
   /** Flag indicating if tertiary nav width should be limited */

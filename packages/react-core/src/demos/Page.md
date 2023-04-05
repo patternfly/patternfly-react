@@ -43,14 +43,6 @@ This demonstrates a variety of navigation patterns in the context of a full page
 
 ```
 
-### Sticky section group (using PageHeader)
-
-This demo is provided becuase PageHeader and PageHeaderTools are still in use; however, going forward Masthead and Toolbar should be used to make headers rather than PageHeader and PageHeaderTools.
-
-```ts file='./examples/Page/PageStickySectionGroupUsingPageHeader.tsx' isFullscreen
-
-```
-
 ### Sticky section breadcrumb (with breakpoints)
 
 ```ts file='./examples/Page/PageStickySectionBreadcrumb.tsx' isFullscreen

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { Page } from '../Page';
-import { PageHeader } from '../PageHeader';
+import { PageHeader } from '../../../deprecated/components/PageHeader';
 import { PageSidebar } from '../PageSidebar';
 import { PageSection } from '../PageSection';
 import { Breadcrumb, BreadcrumbItem } from '../../Breadcrumb';
