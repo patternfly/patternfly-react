@@ -31,7 +31,7 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceMD(path.join(reactCorePath, '/**/demos/**/*.md'), 'react-demos');
 
   // React-table MD
-  sourceMD(path.join(reactTablePath, '/**/TableComposable/examples/*.md'), 'react');
+  sourceMD(path.join(reactTablePath, '/components/**/examples/*.md'), 'react');
   // TODO: remove this comment from here and the same file in pf-org once deprecation work is complete
   // sourceMD(path.join(reactTablePath, '/**/Table/examples/*.md'), 'react-legacy');
   sourceMD(path.join(reactTablePath, '/deprecated/components/**/examples/*.md'), 'react-deprecated');

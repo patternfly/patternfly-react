@@ -1,5 +1,6 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, sortable, TableProps } from '@patternfly/react-table';
+import { sortable } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { Checkbox } from '@patternfly/react-core';
 
 interface Repository {

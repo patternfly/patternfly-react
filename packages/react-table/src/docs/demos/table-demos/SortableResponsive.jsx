@@ -22,7 +22,7 @@ import {
   OverflowMenuItem,
   PageSection
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { rows, columns } from '../../examples/Data.jsx';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
@@ -244,7 +244,7 @@ export const ComposableTableSortable = () => {
         >
           <Card component="div">
             {tableToolbar}
-            <TableComposable aria-label="Sortable Table">
+            <Table aria-label="Sortable Table">
               <Thead>
                 <Tr>
                   {columns.map((column, columnIndex) => {
@@ -319,7 +319,7 @@ export const ComposableTableSortable = () => {
                   </Tr>
                 ))}
               </Tbody>
-            </TableComposable>
+            </Table>
             {renderPagination('bottom', false)}
           </Card>
         </PageSection>

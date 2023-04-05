@@ -24,6 +24,7 @@ import {
   Select,
   SelectVariant
 } from '@patternfly/react-core';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import { rows, columns } from '../../examples/Data.jsx';
@@ -439,7 +440,7 @@ export const ColumnManagementAction = () => {
         <PageSection isFilled>
           <Card>
             {toolbarItems}
-            <TableComposable variant="compact" aria-label="Column Management Table">
+            <Table variant="compact" aria-label="Column Management Table">
               <Thead>
                 <Tr>
                   {managedColumns.map((column, columnIndex) => (
@@ -475,7 +476,7 @@ export const ColumnManagementAction = () => {
                   </Tr>
                 ))}
               </Tbody>
-            </TableComposable>
+            </Table>
             {renderPagination(PaginationVariant.bottom)}
             {renderModal()}
           </Card>

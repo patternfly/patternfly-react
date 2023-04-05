@@ -32,6 +32,8 @@ DropdownToggle,
 DropdownToggleCheckbox,
 KebabToggle
 } from '@patternfly/react-core/deprecated';
+import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
+
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -80,7 +82,7 @@ import {
   DropdownToggle,
   DropdownToggleCheckbox
 } from '@patternfly/react-core/deprecated';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class BulkSelectTableDemo extends React.Component {
@@ -284,7 +286,7 @@ class BulkSelectTableDemo extends React.Component {
         <PageSection isWidthLimited>
           {this.renderToolbar()}
           {!loading && (
-            <Table
+            <TableDeprecated
               aria-label="Bulk Select Table Demo"
               cells={['Title', 'Body']}
               rows={rows}
@@ -293,7 +295,7 @@ class BulkSelectTableDemo extends React.Component {
             >
               <TableHeader />
               <TableBody />
-            </Table>
+            </TableDeprecated>
           )}
 
           {loading && (
@@ -363,7 +365,7 @@ import {
   Select,
   SelectVariant
 } from '@patternfly/react-core';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
@@ -1058,7 +1060,7 @@ class ColumnManagementAction extends React.Component {
 
     return (
       <React.Fragment>
-        <Table
+        <TableDeprecated
           gridBreakPoint="grid-xl"
           header={
             <React.Fragment>
@@ -1075,7 +1077,7 @@ class ColumnManagementAction extends React.Component {
         >
           <TableHeader />
           <TableBody />
-        </Table>
+        </TableDeprecated>
         <Pagination
           isCompact
           id="page-layout-table-draggable-column-management-action-toolbar-bottom"
@@ -1125,7 +1127,7 @@ import {
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 
 class FilterTableDemo extends React.Component {
   constructor(props) {
@@ -1464,10 +1466,10 @@ class FilterTableDemo extends React.Component {
     return (
       <React.Fragment>
         {this.renderToolbar()}
-        <Table cells={columns} rows={tableRows} onSelect={onSelect} aria-label="Filterable Table Demo">
+        <TableDeprecated cells={columns} rows={tableRows} onSelect={onSelect} aria-label="Filterable Table Demo">
           <TableHeader />
           <TableBody />
-        </Table>
+        </TableDeprecated>
       </React.Fragment>
     );
   }
@@ -1494,7 +1496,7 @@ To demonstrate this, navigate to the last page of data below using the `>>` navi
 ```js
 import React from 'react';
 import { Pagination } from '@patternfly/react-core';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
@@ -1568,10 +1570,10 @@ class ComplexPaginationTableDemo extends React.Component {
     return (
       <React.Fragment>
         {this.renderPagination()}
-        <Table aria-label="Automated pagination table" cells={this.columns} rows={rows}>
+        <TableDeprecated aria-label="Automated pagination table" cells={this.columns} rows={rows}>
           <TableHeader />
           <TableBody />
-        </Table>
+        </TableDeprecated>
       </React.Fragment>
     );
   }
@@ -1589,7 +1591,7 @@ class ComplexPaginationTableDemo extends React.Component {
 ```js isFullscreen
 import React from 'react';
 import { Label, PageSection } from '@patternfly/react-core';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import { rows } from '../examples/Data.jsx';
 
 class StickyHeaderTableDemo extends React.Component {
@@ -1611,7 +1613,7 @@ class StickyHeaderTableDemo extends React.Component {
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
           <Card component="div">
-            <Table
+            <TableDeprecated
               cells={[
                 { title: 'Servers', transforms: [cellWidth(15)] },
                 { title: 'Threads', transforms: [cellWidth(10)] },
@@ -1643,7 +1645,7 @@ class StickyHeaderTableDemo extends React.Component {
             >
               <TableHeader />
               <TableBody />
-            </Table>
+            </TableDeprecated>
           </Card>
         </PageSection>
       </DashboardWrapper>
@@ -1662,7 +1664,7 @@ class StickyHeaderTableDemo extends React.Component {
 
 A toolbar may be added above a sticky table either inside or outside the `OuterScrollContainer`.
 
-```ts isFullscreen file="../../components/TableComposable/examples/TableStickyColumnsAndHeader.tsx"
+```ts isFullscreen file="../../components/Table/examples/TableStickyColumnsAndHeader.tsx"
 
 ```
 
@@ -1685,7 +1687,7 @@ import {
   Title
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class EmptyStateDemo extends React.Component {
@@ -1730,10 +1732,10 @@ class EmptyStateDemo extends React.Component {
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
           <Card component="div">
-            <Table cells={columns} rows={rows} aria-label="Empty state demo">
+            <TableDeprecated cells={columns} rows={rows} aria-label="Empty state demo">
               <TableHeader />
               <TableBody />
-            </Table>
+            </TableDeprecated>
           </Card>
         </PageSection>
       </DashboardWrapper>
@@ -1747,7 +1749,8 @@ class EmptyStateDemo extends React.Component {
 ```js isFullscreen
 import React from 'react';
 import { Bullseye, Card, EmptyState, EmptyStateIcon, Spinner, Title } from '@patternfly/react-core';
-import { PageSection, Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { PageSection } from '@patternfly/react-table';
+import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class LoadingStateDemo extends React.Component {
@@ -1781,10 +1784,10 @@ class LoadingStateDemo extends React.Component {
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
           <Card component="div">
-            <Table cells={columns} rows={rows} aria-label="Loading table demo">
+            <TableDeprecated cells={columns} rows={rows} aria-label="Loading table demo">
               <TableHeader />
               <TableBody />
-            </Table>
+            </TableDeprecated>
           </Card>
         </PageSection>
       </DashboardWrapper>
@@ -1807,7 +1810,7 @@ import {
   PageSection,
   Title
 } from '@patternfly/react-core';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
@@ -1847,10 +1850,10 @@ class ErrorStateDemo extends React.Component {
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
           <Card component="div">
-            <Table cells={columns} rows={rows} aria-label="Error table demo">
+            <TableDeprecated cells={columns} rows={rows} aria-label="Error table demo">
               <TableHeader />
               <TableBody />
-            </Table>
+            </TableDeprecated>
           </Card>
         </PageSection>
       </DashboardWrapper>

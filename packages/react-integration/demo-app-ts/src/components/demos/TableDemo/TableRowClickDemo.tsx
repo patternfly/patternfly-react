@@ -1,14 +1,11 @@
 import * as React from 'react';
 import {
-  Table,
-  TableHeader,
-  TableBody,
   IRow,
   IExtraRowData,
   IComputedData,
-  TableProps,
   ICell
 } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 interface ITableRowClickDemoState {
   rows: IRow[];

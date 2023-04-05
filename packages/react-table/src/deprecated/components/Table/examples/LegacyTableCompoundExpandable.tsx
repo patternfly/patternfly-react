@@ -1,5 +1,6 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, compoundExpand, TableProps } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
+import { compoundExpand } from '@patternfly/react-table';
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';

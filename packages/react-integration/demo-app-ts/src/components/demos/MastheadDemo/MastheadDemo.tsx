@@ -13,6 +13,8 @@ import {
 } from '@patternfly/react-core';
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core/deprecated';
 import {
+  ContextSelector,
+  ContextSelectorItem,
   Dropdown as DropdownDeprecated,
   DropdownToggle,
   KebabToggle,

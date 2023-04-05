@@ -1,14 +1,12 @@
 import * as React from 'react';
 import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableProps,
   headerCol,
   ICell,
   IRow,
   RowSelectVariant
 } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
+
 import { Checkbox, Divider, Radio } from '@patternfly/react-core';
 import '@patternfly/patternfly/utilities/Spacing/spacing.css';
 

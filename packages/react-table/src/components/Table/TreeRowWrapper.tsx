@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
 import { RowWrapperProps } from './RowWrapper';
-import { Tr } from '../TableComposable';
+import { Tr } from './Tr';
 
 export const TreeRowWrapper: React.FunctionComponent<RowWrapperProps> = ({
   className,

@@ -1,14 +1,11 @@
 import * as React from 'react';
 import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableProps,
   compoundExpand,
   IRow,
   ICell,
   IRowCell
 } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';

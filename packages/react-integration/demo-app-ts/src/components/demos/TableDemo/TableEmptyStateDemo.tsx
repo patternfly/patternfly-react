@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { Table, TableHeader, TableBody, TableProps, IRow, ICell } from '@patternfly/react-table';
+import { IRow, ICell } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
+
 import {
   EmptyState,
   EmptyStateBody,

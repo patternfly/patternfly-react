@@ -8,7 +8,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import { CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon, TimesCircleIcon, BellIcon } from '@patternfly/react-icons';
-import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
+import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import { Chart, ChartAxis, ChartGroup, ChartVoronoiContainer, ChartStack, ChartBar, ChartTooltip, ChartDonutThreshold, ChartDonutUtilization, ChartArea, ChartContainer, ChartLabel } from '@patternfly/react-charts';
 import chart_color_gold_100 from '@patternfly/react-tokens/dist/esm/chart_color_gold_100';
 import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
@@ -655,7 +655,7 @@ import {
   Popover,
   Title
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
+import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
@@ -723,7 +723,7 @@ const StatusPlain: React.FunctionComponent = () => {
       <div>
         Components of the Control Panel are responsible for maintaining and reconciling the state of the cluster.
       </div>
-      <TableComposable variant="compact">
+      <Table variant="compact">
         <Thead>
           <Tr>
             <Th />
@@ -762,7 +762,7 @@ const StatusPlain: React.FunctionComponent = () => {
             </Tbody>
           );
         })}
-      </TableComposable>
+      </Table>
     </>
   );
 

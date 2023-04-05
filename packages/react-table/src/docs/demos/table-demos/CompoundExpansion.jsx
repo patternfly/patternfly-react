@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   ActionsColumn,
-  TableComposable,
+  Table,
   Thead,
   Tr,
   Th,
@@ -51,7 +51,7 @@ export const CompoundExpandable = () => {
     };
 
     return (
-      <TableComposable borders={false} aria-label="Nested table" variant="compact">
+      <Table borders={false} aria-label="Nested table" variant="compact">
         <Thead>
           <Tr>
             <Th>{columnNames.description}</Th>
@@ -72,7 +72,7 @@ export const CompoundExpandable = () => {
             </Tr>
           ))}
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 
@@ -184,7 +184,7 @@ export const CompoundExpandable = () => {
       <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
         <Card>
           {tableToolbar}
-          <TableComposable aria-label="Compound expandable table">
+          <Table aria-label="Compound expandable table">
             <Thead>
               <Tr>
                 <Th>{columnNames.name}</Th>
@@ -260,7 +260,7 @@ export const CompoundExpandable = () => {
                 </Tbody>
               );
             })}
-          </TableComposable>
+          </Table>
           {renderPagination('bottom', false)}
         </Card>
       </PageSection>

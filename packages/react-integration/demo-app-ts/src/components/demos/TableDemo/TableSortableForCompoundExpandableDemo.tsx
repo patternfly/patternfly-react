@@ -1,16 +1,13 @@
 import * as React from 'react';
 import {
-  Table,
-  TableHeader,
-  TableBody,
   TableVariant,
   sortable,
   SortByDirection,
   ICell,
   IRow,
-  ISortBy,
-  TableProps
+  ISortBy
 } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 export interface DemoSortableTableProps {
   firstColumnRows?: string[];
