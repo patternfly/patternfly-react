@@ -332,7 +332,7 @@ To make a column sticky, wrap `Table` with `InnerScrollContainer` and add the fo
 
 To make multiple left-aligned columns sticky:
 
-- wrap TableComposable with InnerScrollContainer
+- wrap Table with InnerScrollContainer
 - add isStickyColumn to all columns that should be sticky
 - add hasRightBorder to the rightmost sticky column
 - add stickyLeftOffset to each sticky column after the first, with a value that equals the combined width - set by stickyMindWidth - of the previous sticky columns
@@ -353,7 +353,7 @@ To prevent the default text wrapping behavior and allow horizontal scrolling, al
 
 To make multiple right-aligned columns sticky:
 
-- wrap `TableComposable` with `InnerScrollContainer`
+- wrap `Table` with `InnerScrollContainer`
 - add `isStickyColumn` to all columns that should be sticky
 - add `hasLeftBorder` to the leftmost sticky column
 - add `stickyRightOffset` to each sticky column preceding the last, with a value that equals the combined width - set by `stickyMindWidth` - of the next sticky columns

@@ -1664,7 +1664,7 @@ class StickyHeaderTableDemo extends React.Component {
 
 A toolbar may be added above a sticky table either inside or outside the `OuterScrollContainer`.
 
-```ts isFullscreen file="../../components/TableComposable/examples/TableStickyColumnsAndHeader.tsx"
+```ts isFullscreen file="../../components/Table/examples/TableStickyColumnsAndHeader.tsx"
 
 ```
 
