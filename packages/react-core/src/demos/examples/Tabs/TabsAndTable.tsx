@@ -49,7 +49,6 @@ import {
   ActionsColumn,
   CustomActionsToggleProps
 } from '@patternfly/react-table';
-import { KebabToggle } from '@patternfly/react-core/deprecated';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -137,13 +136,16 @@ export const TablesAndTabs = () => {
   ];
 
   const customActionsToggle = (props: CustomActionsToggleProps) => (
-    <KebabToggle
+    <MenuToggle
       isDisabled={props.isDisabled}
-      onToggle={(event: any) => {
+      onClick={(event: any) => {
         props.onToggle(event);
         event.stopPropagation();
       }}
-    />
+      variant="plain"
+    >
+      <EllipsisVIcon />
+    </MenuToggle>
   );
 
   const toolbar = (

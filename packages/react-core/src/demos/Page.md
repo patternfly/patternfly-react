@@ -12,6 +12,7 @@ import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/ava
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import LightbulbIcon from '@patternfly/react-icons/dist/esm/icons/lightbulb-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import {
 Dropdown as DropdownDeprecated,
 DropdownGroup as DropdownGroupDeprecated,

@@ -3,15 +3,6 @@ id: Primary-detail
 section: patterns
 ---
 
-import {
-Dropdown as DropdownDeprecated,
-DropdownToggle,
-DropdownToggleCheckbox,
-DropdownItem as DropdownItemDeprecated,
-DropdownPosition,
-DropdownSeparator,
-KebabToggle
-} from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
@@ -22,7 +13,6 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import pfIcon from './Card/pf-logo-small.svg';
 import activeMQIcon from './Card/activemq-core_200x150.png';
 import avroIcon from './Card/camel-avro_200x150.png';
@@ -33,6 +23,7 @@ import sparkIcon from './Card/camel-spark_200x150.png';
 import swaggerIcon from './Card/camel-swagger-java_200x150.png';
 import azureIcon from './Card/FuseConnector_Icons_AzureServices.png';
 import restIcon from './Card/FuseConnector_Icons_REST.png';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Demos
 
@@ -88,6 +79,7 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class PrimaryDetailFullPage extends React.Component {
   constructor(props) {
@@ -167,7 +159,7 @@ class PrimaryDetailFullPage extends React.Component {
       });
     };
 
-    this.onSelectDataListItem = (id) => {
+    this.onSelectDataListItem = (_event, id) => {
       this.setState({
         selectedDataListItemId: id,
         isDrawerExpanded: true,
@@ -627,7 +619,7 @@ class PrimaryDetailContentPadding extends React.Component {
       });
     };
 
-    this.onSelectDataListItem = (id) => {
+    this.onSelectDataListItem = (_event, id) => {
       this.setState({
         selectedDataListItemId: id,
         isDrawerExpanded: true,
@@ -977,9 +969,14 @@ import {
   DrawerContentBody,
   DrawerHead,
   DrawerPanelContent,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
   Flex,
   FlexItem,
   Gallery,
+  MenuToggle,
+  MenuToggleCheckbox,
   PageSection,
   PageSectionVariants,
   Pagination,
@@ -995,15 +992,6 @@ import {
   ToolbarContent,
   ToolbarFilter
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownToggle,
-  DropdownToggleCheckbox,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownPosition,
-  DropdownSeparator,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import pfIcon from './pf-logo-small.svg';
@@ -1016,6 +1004,7 @@ import sparkIcon from './camel-spark_200x150.png';
 import swaggerIcon from './camel-swagger-java_200x150.png';
 import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class PrimaryDetailCardView extends React.Component {
   constructor(props) {
@@ -1055,15 +1044,15 @@ class PrimaryDetailCardView extends React.Component {
       });
     };
 
-    this.onToolbarKebabDropdownToggle = (_event, isLowerToolbarKebabDropdownOpen) => {
-      this.setState({
-        isLowerToolbarKebabDropdownOpen
-      });
+    this.onToolbarKebabDropdownToggle = () => {
+      this.setState((prevState) => ({
+        isLowerToolbarKebabDropdownOpen: !prevState.isLowerToolbarKebabDropdownOpen
+      }));
     };
 
-    this.onToolbarKebabDropdownSelect = (_event) => {
+    this.onToolbarKebabDropdownSelect = () => {
       this.setState({
-        isLowerToolbarKebabDropdownOpen: !this.state.isLowerToolbarKebabDropdownOpen
+        isLowerToolbarKebabDropdownOpen: false
       });
     };
 
@@ -1231,30 +1220,29 @@ class PrimaryDetailCardView extends React.Component {
       );
     };
 
-    this.onSplitButtonSelect = (_event) => {
-      this.setState((prevState, _props) => ({
-        splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen,
+    this.onSplitButtonSelect = () => {
+      this.setState((prevState) => ({
+        splitButtonDropdownIsOpen: false,
         isDrawerExpanded: false,
         activeCard: null
       }));
     };
 
-    this.onSplitButtonToggle = (_event, isOpen) => {
-      this.setState({
-        splitButtonDropdownIsOpen: isOpen
-      });
+    this.onSplitButtonToggle = () => {
+      this.setState((prevState) => ({
+        splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen
+      }));
     };
 
-    this.onCardKebabDropdownToggle = (event, key, isCardKebabDropdownOpen) => {
-      event.stopPropagation();
-      this.setState({
-        [key]: isCardKebabDropdownOpen
-      });
+    this.onCardKebabDropdownToggle = (key) => {
+      this.setState((prevState) => ({
+        [key]: !prevState[key]
+      }));
     };
 
-    this.onCardKebabDropdownSelect = (key, _event) => {
+    this.onCardKebabDropdownSelect = (key) => {
       this.setState({
-        [key]: !this.state[key]
+        [key]: false
       });
     };
 
@@ -1356,41 +1344,49 @@ class PrimaryDetailCardView extends React.Component {
     const anySelected = numSelected > 0;
     const someChecked = anySelected ? null : false;
     const isChecked = allSelected ? true : someChecked;
-    const splitButtonDropdownItems = [
-      <DropdownItemDeprecated key="item-1" onClick={this.selectNone}>
-        Select none (0 items)
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="item-2" onClick={this.selectPage}>
-        Select page ({this.state.res.length} items)
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="item-3" onClick={this.selectAll}>
-        Select all ({this.state.totalItemCount} items)
-      </DropdownItemDeprecated>
-    ];
+    const splitButtonDropdownItems = (
+      <>
+        <DropdownItem key="item-1" onClick={this.selectNone.bind(this)}>
+          Select none (0 items)
+        </DropdownItem>
+        <DropdownItem key="item-2" onClick={this.selectPage.bind(this)}>
+          Select page ({this.state.perPage} items)
+        </DropdownItem>
+        <DropdownItem key="item-3" onClick={this.selectAll.bind(this)}>
+          Select all ({this.state.totalItemCount} items)
+        </DropdownItem>
+      </>
+    );
 
     return (
-      <DropdownDeprecated
-        position={DropdownPosition.left}
+      <Dropdown
         onSelect={this.onSplitButtonSelect}
-        toggle={
-          <DropdownToggle
-            splitButtonItems={[
-              <DropdownToggleCheckbox
-                id="example-checkbox-2"
-                key="split-checkbox"
-                aria-label={anySelected ? 'Deselect all' : 'Select all'}
-                isChecked={areAllSelected}
-                onClick={this.splitCheckboxSelectAll}
-              >
-                {numSelected !== 0 && `${numSelected} selected`}
-              </DropdownToggleCheckbox>
-            ]}
-            onToggle={this.onSplitButtonToggle}
-          ></DropdownToggle>
-        }
         isOpen={splitButtonDropdownIsOpen}
-        dropdownItems={splitButtonDropdownItems}
-      />
+        onOpenChange={(isOpen) => this.setState({ splitButtonDropdownIsOpen: isOpen })}
+        toggle={(toggleRef) => (
+          <MenuToggle
+            ref={toggleRef}
+            isExpanded={splitButtonDropdownIsOpen}
+            onClick={this.onSplitButtonToggle}
+            aria-label="Select cards"
+            splitButtonOptions={{
+              items: [
+                <MenuToggleCheckbox
+                  id="split-dropdown-checkbox"
+                  key="split-dropdown-checkbox"
+                  aria-label={anySelected ? 'Deselect all cards' : 'Select all cards'}
+                  isChecked={areAllSelected}
+                  onClick={this.splitCheckboxSelectAll.bind(this)}
+                >
+                  {numSelected !== 0 && `${numSelected} selected`}
+                </MenuToggleCheckbox>
+              ]
+            }}
+          ></MenuToggle>
+        )}
+      >
+        <DropdownList>{splitButtonDropdownItems}</DropdownList>
+      </Dropdown>
     );
   }
 
@@ -1398,24 +1394,35 @@ class PrimaryDetailCardView extends React.Component {
     const { isDrawerExpanded, isChecked, selectedItems, activeCard, isLowerToolbarKebabDropdownOpen, filters, res } =
       this.state;
 
-    const toolbarKebabDropdownItems = [
-      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="action" component="button">
-        Action
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="disabled link" isDisabled>
-        Disabled Link
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="disabled action" isDisabled component="button">
-        Disabled Action
-      </DropdownItemDeprecated>,
-      <DropdownSeparator key="separator" />,
-      <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="separated action" component="button">
-        Separated Action
-      </DropdownItemDeprecated>
-    ];
-
+    const toolbarKebabDropdownItems = (
+      <>
+        <DropdownItem itemId={0} key="action">
+          Action
+        </DropdownItem>
+        <DropdownItem
+          itemId={1}
+          key="link"
+          to="#default-link2"
+          // Prevent the default onClick functionality for example purposes
+          onClick={(ev) => ev.preventDefault()}
+        >
+          Link
+        </DropdownItem>
+        <DropdownItem itemId={2} isDisabled key="disabled action">
+          Disabled Action
+        </DropdownItem>
+        <DropdownItem itemId={3} isDisabled key="disabled link" to="#default-link4">
+          Disabled Link
+        </DropdownItem>
+        <Divider component="li" key="separator" />
+        <DropdownItem itemId={4} key="separated action">
+          Separated Action
+        </DropdownItem>
+        <DropdownItem itemId={5} key="separated link" to="#default-link6" onClick={(ev) => ev.preventDefault()}>
+          Separated Link
+        </DropdownItem>
+      </>
+    );
     const toolbarItems = (
       <React.Fragment>
         <ToolbarItem>{this.buildSelectDropdown()}</ToolbarItem>
@@ -1426,15 +1433,24 @@ class PrimaryDetailCardView extends React.Component {
           <Button variant="secondary">Action</Button>
         </ToolbarItem>
         <ToolbarItem>
-          <DropdownDeprecated
+          <Dropdown
             onSelect={this.onToolbarKebabDropdownSelect}
-            toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
             isOpen={isLowerToolbarKebabDropdownOpen}
-            isPlain
-            dropdownItems={toolbarKebabDropdownItems}
-            isFlipEnabled
-            menuAppendTo="parent"
-          />
+            onOpenChange={(isOpen) => this.setState({ isLowerToolbarKebabDropdownOpen: isOpen })}
+            toggle={(toggleRef) => (
+              <MenuToggle
+                ref={toggleRef}
+                isExpanded={isLowerToolbarKebabDropdownOpen}
+                variant="plain"
+                onClick={this.onToolbarKebabDropdownToggle}
+                aria-label="Toolbar actions"
+              >
+                <EllipsisVIcon aria-hidden="true" />
+              </MenuToggle>
+            )}
+          >
+            <DropdownList>{toolbarKebabDropdownItems}</DropdownList>
+          </Dropdown>
         </ToolbarItem>
       </React.Fragment>
     );
@@ -1474,29 +1490,30 @@ class PrimaryDetailCardView extends React.Component {
               actions={{
                 actions: (
                   <>
-                    <DropdownDeprecated
-                      isPlain
-                      position="right"
-                      onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
-                      toggle={
-                        <KebabToggle
-                          onToggle={(event, isCardKebabDropdownOpen) =>
-                            this.onCardKebabDropdownToggle(event, key, isCardKebabDropdownOpen)
-                          }
-                        />
-                      }
-                      isOpen={this.state[key]}
-                      dropdownItems={[
-                        <DropdownItemDeprecated
-                          key="trash"
-                          onClick={(e) => this.deleteItem(e, product)}
-                          position="right"
+                    <Dropdown
+                      onSelect={() => this.onCardKebabDropdownSelect(key)}
+                      isOpen={this.state[key] || false}
+                      onOpenChange={(isOpen) => this.setState({ [key]: isOpen })}
+                      popperProps={{ position: 'right' }}
+                      toggle={(toggleRef) => (
+                        <MenuToggle
+                          ref={toggleRef}
+                          isExpanded={this.state[key] || false}
+                          aria-label={`${product.name} actions`}
+                          variant="plain"
+                          onClick={() => this.onCardKebabDropdownToggle(key)}
                         >
+                          <EllipsisVIcon aria-hidden="true" />
+                        </MenuToggle>
+                      )}
+                    >
+                      <DropdownList>
+                        <DropdownItem key="trash" onClick={(e) => this.deleteItem(e, product)}>
                           <TrashIcon />
                           Delete
-                        </DropdownItemDeprecated>
-                      ]}
-                    />
+                        </DropdownItem>
+                      </DropdownList>
+                    </Dropdown>
                     <Checkbox
                       checked={isChecked}
                       onClick={(event) => this.onCheckboxClick(event, product.id)}
@@ -1763,8 +1780,12 @@ import {
   DrawerHead,
   DrawerPanelBody,
   DrawerPanelContent,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
   Flex,
   FlexItem,
+  MenuToggle,
   PageSection,
   PageSectionVariants,
   Progress,
@@ -1772,13 +1793,7 @@ import {
   TextContent,
   Title
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownToggle,
-  DropdownItem as DropdownItemDeprecated
-} from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 class PrimaryDetailDataListInCard extends React.Component {
   constructor(props) {
@@ -1792,14 +1807,14 @@ class PrimaryDetailDataListInCard extends React.Component {
       isExpanded: false
     };
 
-    this.onDropdownToggle = (_event, isOpen) => {
-      this.setState({
-        isDropdownOpen: isOpen
-      });
+    this.onDropdownToggle = () => {
+      this.setState((prevState) => ({
+        isDropdownOpen: !prevState.isDropdownOpen
+      }));
     };
-    this.onDropdownSelect = (event) => {
+    this.onDropdownSelect = () => {
       this.setState({
-        isDropdownOpen: !this.state.isDropdownOpen
+        isDropdownOpen: false
       });
       this.onDropdownFocus();
     };
@@ -1807,7 +1822,7 @@ class PrimaryDetailDataListInCard extends React.Component {
       const element = document.getElementById('toggle-id');
       element.focus();
     };
-    this.onSelectDataListItem = (id) => {
+    this.onSelectDataListItem = (_event, id) => {
       this.setState({
         selectedDataListItemId: id,
         drawerPanelBodyContent: id.charAt(id.length - 1),
@@ -1861,32 +1876,26 @@ class PrimaryDetailDataListInCard extends React.Component {
       </DrawerPanelContent>
     );
 
-    const dropdownItems = [
-      <DropdownItemDeprecated key="option1">Option 1</DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="option2">Option 2</DropdownItemDeprecated>
-    ];
-
     const drawerContent = (
       <React.Fragment>
         <Toolbar id="data-list-data-toolbar" usePageInsets>
           <ToolbarContent>
             <ToolbarItem>
-              <DropdownDeprecated
+              <Dropdown
                 onSelect={this.onDropdownSelect}
-                toggle={
-                  <DropdownToggle
-                    id="data-list-toggle-id"
-                    onToggle={this.onDropdownToggle}
-                    iconComponent={CaretDownIcon}
-                  >
-                    Dropdown
-                  </DropdownToggle>
-                }
                 isOpen={isDropdownOpen}
-                dropdownItems={dropdownItems}
-                isFlipEnabled
-                menuAppendTo="parent"
-              />
+                onOpenChange={(isOpen) => this.setState({ isDropdownOpen: isOpen })}
+                toggle={(toggleRef) => (
+                  <MenuToggle ref={toggleRef} isExpanded={isDropdownOpen} onClick={this.onDropdownToggle}>
+                    Dropdown
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>
+                  <DropdownItem key="option1">Option 1</DropdownItem>
+                  <DropdownItem key="option2">Option 2</DropdownItem>
+                </DropdownList>
+              </Dropdown>
             </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
@@ -2117,7 +2126,7 @@ class PrimaryDetailInlineModifier extends React.Component {
       });
     };
 
-    this.onSelectDataListItem = (id) => {
+    this.onSelectDataListItem = (_event, id) => {
       this.setState({
         selectedDataListItemId: id,
         isDrawerExpanded: true,
