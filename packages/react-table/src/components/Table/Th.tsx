@@ -2,17 +2,8 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
-import {
-  info,
-  sortable,
-  sortableFavorites,
-  selectable,
-  collapsible,
-  cellWidth,
-  Visibility,
-  classNames
-} from './utils';
-import { ThInfoType,ThSelectType, ThExpandType, ThSortType, formatterValueType } from './base/types';
+import { info, sortable, sortableFavorites, selectable, collapsible, cellWidth, Visibility, classNames } from './utils';
+import { ThInfoType, ThSelectType, ThExpandType, ThSortType, formatterValueType } from './base/types';
 import { mergeProps } from './base/merge-props';
 import { IVisibility } from './utils/decorators/classNames';
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
@@ -180,7 +171,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         className,
         textCenter && styles.modifiers.center,
         isSubheader && styles.tableSubhead,
-        isStickyColumn && scrollStyles.tableStickyCell, // TODO: further updates will be made  with issue #8829
+        isStickyColumn && scrollStyles.tableStickyCell,
         hasRightBorder && scrollStyles.modifiers.borderRight,
         hasLeftBorder && scrollStyles.modifiers.borderLeft,
         modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],
@@ -190,9 +181,9 @@ const ThBase: React.FunctionComponent<ThProps> = ({
       {...props}
       {...(isStickyColumn && {
         style: {
-          '--pf-c-table__sticky-column--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
-          '--pf-c-table__sticky-column--Left': stickyLeftOffset ? stickyLeftOffset : undefined,
-          right: stickyRightOffset ? stickyRightOffset : 0,
+          '--pf-c-table__sticky-cell--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
+          '--pf-c-table__sticky-cell--Left': stickyLeftOffset ? stickyLeftOffset : 0,
+          '--pf-c-table__sticky-cell--Right': stickyRightOffset ? stickyRightOffset : 0,
           ...props.style
         } as React.CSSProperties
       })}

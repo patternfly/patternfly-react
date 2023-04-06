@@ -11,7 +11,8 @@ import {
   cellWidth,
   Visibility,
   classNames,
-  favoritable } from './utils';
+  favoritable
+} from './utils';
 import { draggable } from './utils/decorators/draggable';
 import { treeRow } from './utils';
 import { mergeProps } from './base/merge-props';
@@ -263,7 +264,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         isActionCell && styles.tableAction,
         textCenter && styles.modifiers.center,
         noPadding && styles.modifiers.noPadding,
-        isStickyColumn && scrollStyles.tableStickyCell,  // TODO: further updates will be made  with issue #8829
+        isStickyColumn && scrollStyles.tableStickyCell,
         hasRightBorder && scrollStyles.modifiers.borderRight,
         hasLeftBorder && scrollStyles.modifiers.borderLeft,
         styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap' | undefined],
@@ -275,9 +276,9 @@ const TdBase: React.FunctionComponent<TdProps> = ({
       {...props}
       {...(isStickyColumn && {
         style: {
-          '--pf-c-table__sticky-column--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
-          '--pf-c-table__sticky-column--Left': stickyLeftOffset ? stickyLeftOffset : undefined,
-          right: stickyRightOffset ? stickyRightOffset : 0,
+          '--pf-c-table__sticky-cell--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
+          '--pf-c-table__sticky-cell--Left': stickyLeftOffset ? stickyLeftOffset : 0,
+          '--pf-c-table__sticky-cell--Right': stickyRightOffset ? stickyRightOffset : 0,
           ...props.style
         } as React.CSSProperties
       })}
