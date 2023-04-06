@@ -20,7 +20,7 @@ export const IconStatus: React.FunctionComponent = () => (
     <Icon status="info">
       <InfoCircleIcon />
     </Icon>
-    <Icon status="custom">
+    <Icon status="default">
       <BellIcon />
     </Icon>
   </React.Fragment>
