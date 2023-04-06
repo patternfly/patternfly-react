@@ -34,7 +34,6 @@ Using PatternFly 3?  Take a look at the [PatternFly 3 React component informatio
 | **:family: Extension packages** *community supported* | 
 | &nbsp;&nbsp;[@patternfly/react-catalog-view-extension](./packages/react-catalog-view-extension/README.md) | Catalog view extension |
 | &nbsp;&nbsp;[@patternfly/react-virtualized-extension](./packages/react-virtualized-extension/README.md) | Table and list row virtualization extension |
-| &nbsp;&nbsp;[@patternfly/react-topology](./packages/react-topology/README.md) | Topology components |
 | **:x: Deprecated packages** |
 | &nbsp;&nbsp;[@patternfly/react-inline-edit-extension](./packages/react-inline-edit-extension/README.md) | Table inline edit extension |
 

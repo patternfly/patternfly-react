@@ -31,7 +31,6 @@
     "@patternfly/react-styles": "^4.92.6",
     "@patternfly/react-table": "^4.113.0",
     "@patternfly/react-tokens": "^4.94.6",
-    "@patternfly/react-topology": "^4.91.40",
     "@patternfly/react-virtualized-extension": "^4.88.115"
   },
   "devDependencies": {

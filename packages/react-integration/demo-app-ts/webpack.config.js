@@ -111,8 +111,7 @@ module.exports = (_env, argv) => {
               './src/**/*.{ts,tsx}',
               '../../../packages/react-core/src/**/*.{ts,tsx}',
               '../../../packages/react-code-editor/src/**/*.{ts,tsx}',
-              '../../../packages/react-table/src/**/*.{ts,tsx}',
-              '../../../packages/react-topology/src/**/*.{ts,tsx}'
+              '../../../packages/react-table/src/**/*.{ts,tsx}'
             ],
             options: {
               ignorePath: '../../../.eslintignore'

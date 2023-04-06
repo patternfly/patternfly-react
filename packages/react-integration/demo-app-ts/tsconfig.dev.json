@@ -8,8 +8,7 @@
     "paths": {
       "@patternfly/react-core": ["../../../react-core/src/index.ts"],
       "@patternfly/react-code-editor": ["../../../react-code-editor/src/index.ts"],
-      "@patternfly/react-table": ["../../../react-table/src/index.ts"],
-      "@patternfly/react-topology": ["../../../react-topology/src/index.ts"]
+      "@patternfly/react-table": ["../../../react-table/src/index.ts"]
     }
   },
   "memoryLimit": 4096

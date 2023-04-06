@@ -23,9 +23,6 @@
       "path": "./react-table"
     },
     {
-      "path": "./react-topology"
-    },
-    {
       "path": "./react-virtualized-extension"
     }
   ]
