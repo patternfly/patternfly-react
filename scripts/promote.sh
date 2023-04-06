@@ -11,7 +11,6 @@ packages=(
   @patternfly/react-styles
   @patternfly/react-table
   @patternfly/react-tokens
-  @patternfly/react-topology
   @patternfly/react-virtualized-extension
 )
 prereleaseTag=prerelease

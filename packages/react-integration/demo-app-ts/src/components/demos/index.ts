@@ -96,8 +96,6 @@ export * from './TextInputDemo/TextInputDemo';
 export * from './ToggleGroupDemo/ToggleGroupDemo';
 export * from './ToolbarDemo/ToolbarDemo';
 export * from './TooltipDemo/TooltipDemo';
-export * from './TopologyDemo/TopologyDemo';
-export * from './TopologyDemo/TopologyPipelineDemo';
 export * from './TreeViewDemo/TreeViewDemo';
 export * from './WizardDemo/WizardDemo';
 export * from './JumpLinksDemo/JumpLinksDemo';
