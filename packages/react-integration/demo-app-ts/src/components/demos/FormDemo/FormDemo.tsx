@@ -131,7 +131,7 @@ export class FormDemo extends Component<FormProps, FormState> {
                   aria-describedby="simple-form-name"
                   className="pf-c-form__group-label-help"
                 >
-                  <HelpIcon noVerticalAlign />
+                  <HelpIcon />
                 </button>
               </Popover>
             }

@@ -19,12 +19,10 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 352 512"
-          width="1em"
         >
           <path
             d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
@@ -72,12 +70,10 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 320 512"
-          width="1em"
         >
           <path
             d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -141,12 +137,10 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                   >
                     <svg
                       aria-hidden="true"
+                      class="pf-svg"
                       fill="currentColor"
-                      height="1em"
                       role="img"
-                      style="vertical-align: -0.125em;"
                       viewBox="0 0 256 512"
-                      width="1em"
                     >
                       <path
                         d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -294,12 +288,10 @@ exports[`Wizard Wizard should match snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 352 512"
-          width="1em"
         >
           <path
             d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
@@ -347,12 +339,10 @@ exports[`Wizard Wizard should match snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 320 512"
-          width="1em"
         >
           <path
             d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -560,12 +550,10 @@ exports[`Wizard bare wiz 1`] = `
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 320 512"
-          width="1em"
         >
           <path
             d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"

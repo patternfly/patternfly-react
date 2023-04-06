@@ -35,12 +35,10 @@ exports[`renders compact no background successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -88,12 +86,10 @@ exports[`renders compact no background successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -138,12 +134,10 @@ exports[`renders compact no background successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -190,12 +184,10 @@ exports[`renders compact no background successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -240,12 +232,10 @@ exports[`renders compact no background successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -290,12 +280,10 @@ exports[`renders compact no background successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -356,12 +344,10 @@ exports[`renders compact successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -409,12 +395,10 @@ exports[`renders compact successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -459,12 +443,10 @@ exports[`renders compact successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -511,12 +493,10 @@ exports[`renders compact successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -561,12 +541,10 @@ exports[`renders compact successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -611,12 +589,10 @@ exports[`renders compact successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -677,12 +653,10 @@ exports[`renders guides successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -726,12 +700,10 @@ exports[`renders guides successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -772,12 +744,10 @@ exports[`renders guides successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -820,12 +790,10 @@ exports[`renders guides successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -866,12 +834,10 @@ exports[`renders guides successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -912,12 +878,10 @@ exports[`renders guides successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -974,12 +938,10 @@ exports[`tree view renders active successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1023,12 +985,10 @@ exports[`tree view renders active successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1069,12 +1029,10 @@ exports[`tree view renders active successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1117,12 +1075,10 @@ exports[`tree view renders active successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1163,12 +1119,10 @@ exports[`tree view renders active successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1209,12 +1163,10 @@ exports[`tree view renders active successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1271,12 +1223,10 @@ exports[`tree view renders badges successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1329,12 +1279,10 @@ exports[`tree view renders badges successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1384,12 +1332,10 @@ exports[`tree view renders badges successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1441,12 +1387,10 @@ exports[`tree view renders badges successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1496,12 +1440,10 @@ exports[`tree view renders badges successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1551,12 +1493,10 @@ exports[`tree view renders badges successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1622,12 +1562,10 @@ exports[`tree view renders basic successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1671,12 +1609,10 @@ exports[`tree view renders basic successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1717,12 +1653,10 @@ exports[`tree view renders basic successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1765,12 +1699,10 @@ exports[`tree view renders basic successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1811,12 +1743,10 @@ exports[`tree view renders basic successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1857,12 +1787,10 @@ exports[`tree view renders basic successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1921,12 +1849,10 @@ exports[`tree view renders checkboxes successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1982,12 +1908,10 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2040,12 +1964,10 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2100,12 +2022,10 @@ exports[`tree view renders checkboxes successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2158,12 +2078,10 @@ exports[`tree view renders checkboxes successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2216,12 +2134,10 @@ exports[`tree view renders checkboxes successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2287,12 +2203,10 @@ exports[`tree view renders icons successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2305,12 +2219,10 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 <svg
                   aria-hidden="true"
+                  class="pf-svg"
                   fill="currentColor"
-                  height="1em"
                   role="img"
-                  style="vertical-align: -0.125em;"
                   viewBox="0 0 1217 1024"
-                  width="1em"
                 >
                   <path
                     d="M1199.6,520.6 C1187.8,514.9 1174.4,512 1159.3,512 L412.7,512 C288.5,512 236.7,593.1 236.7,593.1 L75.6,810.6 L150,552.2 C162,520.1 187.3,492.8 225.6,470.4 C263.9,448 304.1,448 345.8,448 L1089,448 L1089,256 C1089,256 1089,192 1025,192 L503.3,192 L470.6,130.1 C470.6,130.1 440,64 374.7,64 L65,64 C1,64 1,128 1,128 L1,960 L807.7,960 C837,960 868.9,952.166667 903.4,936.5 C937.9,920.8 964.6,901.5 983.7,879 L1196.4,593.2 C1210.2,577.7 1217,561.41 1217,549.3 C1217,537.19 1211.3,526.3 1199.6,520.6"
@@ -2353,12 +2265,10 @@ exports[`tree view renders icons successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2371,12 +2281,10 @@ exports[`tree view renders icons successfully 1`] = `
                   >
                     <svg
                       aria-hidden="true"
+                      class="pf-svg"
                       fill="currentColor"
-                      height="1em"
                       role="img"
-                      style="vertical-align: -0.125em;"
                       viewBox="0 0 512 512"
-                      width="1em"
                     >
                       <path
                         d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
@@ -2416,12 +2324,10 @@ exports[`tree view renders icons successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2434,12 +2340,10 @@ exports[`tree view renders icons successfully 1`] = `
                   >
                     <svg
                       aria-hidden="true"
+                      class="pf-svg"
                       fill="currentColor"
-                      height="1em"
                       role="img"
-                      style="vertical-align: -0.125em;"
                       viewBox="0 0 512 512"
-                      width="1em"
                     >
                       <path
                         d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
@@ -2481,12 +2385,10 @@ exports[`tree view renders icons successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2499,12 +2401,10 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 <svg
                   aria-hidden="true"
+                  class="pf-svg"
                   fill="currentColor"
-                  height="1em"
                   role="img"
-                  style="vertical-align: -0.125em;"
                   viewBox="0 0 512 512"
-                  width="1em"
                 >
                   <path
                     d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
@@ -2544,12 +2444,10 @@ exports[`tree view renders icons successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2562,12 +2460,10 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 <svg
                   aria-hidden="true"
+                  class="pf-svg"
                   fill="currentColor"
-                  height="1em"
                   role="img"
-                  style="vertical-align: -0.125em;"
                   viewBox="0 0 512 512"
-                  width="1em"
                 >
                   <path
                     d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
@@ -2607,12 +2503,10 @@ exports[`tree view renders icons successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2625,12 +2519,10 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 <svg
                   aria-hidden="true"
+                  class="pf-svg"
                   fill="currentColor"
-                  height="1em"
                   role="img"
-                  style="vertical-align: -0.125em;"
                   viewBox="0 0 512 512"
-                  width="1em"
                 >
                   <path
                     d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
@@ -2689,12 +2581,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2716,12 +2606,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
               >
                 <svg
                   aria-hidden="true"
+                  class="pf-svg"
                   fill="currentColor"
-                  height="1em"
                   role="img"
-                  style="vertical-align: -0.125em;"
                   viewBox="0 0 1217 1024"
-                  width="1em"
                 >
                   <path
                     d="M1199.6,520.6 C1187.8,514.9 1174.4,512 1159.3,512 L412.7,512 C288.5,512 236.7,593.1 236.7,593.1 L75.6,810.6 L150,552.2 C162,520.1 187.3,492.8 225.6,470.4 C263.9,448 304.1,448 345.8,448 L1089,448 L1089,256 C1089,256 1089,192 1025,192 L503.3,192 L470.6,130.1 C470.6,130.1 440,64 374.7,64 L65,64 C1,64 1,128 1,128 L1,960 L807.7,960 C837,960 868.9,952.166667 903.4,936.5 C937.9,920.8 964.6,901.5 983.7,879 L1196.4,593.2 C1210.2,577.7 1217,561.41 1217,549.3 C1217,537.19 1211.3,526.3 1199.6,520.6"
@@ -2764,12 +2652,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2810,12 +2696,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2867,12 +2751,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2910,12 +2792,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
             >
               <svg
                 aria-hidden="true"
+                class="pf-svg"
                 fill="currentColor"
-                height="1em"
                 role="img"
-                style="vertical-align: -0.125em;"
                 viewBox="0 0 512 512"
-                width="1em"
               >
                 <path
                   d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
@@ -2949,12 +2829,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2995,12 +2873,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -3079,12 +2955,10 @@ exports[`tree view renders toolbar successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -3128,12 +3002,10 @@ exports[`tree view renders toolbar successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -3174,12 +3046,10 @@ exports[`tree view renders toolbar successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class="pf-svg"
                         fill="currentColor"
-                        height="1em"
                         role="img"
-                        style="vertical-align: -0.125em;"
                         viewBox="0 0 256 512"
-                        width="1em"
                       >
                         <path
                           d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -3222,12 +3092,10 @@ exports[`tree view renders toolbar successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -3268,12 +3136,10 @@ exports[`tree view renders toolbar successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -3314,12 +3180,10 @@ exports[`tree view renders toolbar successfully 1`] = `
                 >
                   <svg
                     aria-hidden="true"
+                    class="pf-svg"
                     fill="currentColor"
-                    height="1em"
                     role="img"
-                    style="vertical-align: -0.125em;"
                     viewBox="0 0 256 512"
-                    width="1em"
                   >
                     <path
                       d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"

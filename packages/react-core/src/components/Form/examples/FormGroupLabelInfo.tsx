@@ -57,7 +57,7 @@ export const FormGroupLabelInfo: React.FunctionComponent = () => {
               aria-describedby="form-group-label-info"
               className="pf-c-form__group-label-help"
             >
-              <HelpIcon noVerticalAlign />
+              <HelpIcon />
             </button>
           </Popover>
         }
