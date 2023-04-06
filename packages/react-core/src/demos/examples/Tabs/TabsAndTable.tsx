@@ -135,7 +135,7 @@ export const TablesAndTabs = () => {
     }
   ];
 
-  const customActionsToggle = (props: CustomActionsToggleProps) => (
+  const customActionsToggle = (props: CustomActionsToggleProps, toggleName: string) => (
     <MenuToggle
       isDisabled={props.isDisabled}
       onClick={(event: any) => {
@@ -143,6 +143,7 @@ export const TablesAndTabs = () => {
         event.stopPropagation();
       }}
       variant="plain"
+      aria-label={`${toggleName} actions`}
     >
       <EllipsisVIcon />
     </MenuToggle>
@@ -264,7 +265,10 @@ export const TablesAndTabs = () => {
             </Td>
             <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
             <Td key={`${rowIndex}_5`}>
-              <ActionsColumn items={defaultActions} actionsToggle={customActionsToggle} />
+              <ActionsColumn
+                items={defaultActions}
+                actionsToggle={(props: CustomActionsToggleProps) => customActionsToggle(props, repo.name)}
+              />
             </Td>
           </Tr>
         ))}
