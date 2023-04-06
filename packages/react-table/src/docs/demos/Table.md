@@ -24,14 +24,6 @@ PageSectionVariants,
 TextContent,
 Text,
 Divider } from '@patternfly/react-core';
-import {
-Dropdown as DropdownDeprecated,
-DropdownItem as DropdownItemDeprecated,
-DropdownPosition,
-DropdownToggle,
-DropdownToggleCheckbox,
-KebabToggle
-} from '@patternfly/react-core/deprecated';
 import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
@@ -67,6 +59,11 @@ import { rows, columns } from '../examples/Data.jsx';
 ```js isFullscreen
 import React from 'react';
 import {
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  MenuToggle,
+  MenuToggleCheckbox,
   PageSection,
   Pagination,
   Title,
@@ -75,13 +72,6 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownPosition,
-  DropdownToggle,
-  DropdownToggleCheckbox
-} from '@patternfly/react-core/deprecated';
 import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
@@ -219,43 +209,50 @@ class BulkSelectTableDemo extends React.Component {
     const someChecked = anySelected ? null : false;
     const isChecked = allSelected ? true : someChecked;
 
-    const items = [
-      <DropdownItemDeprecated key="item-1" onClick={() => this.handleSelectClick('none')}>
-        Select none (0 items)
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="item-2" onClick={() => this.handleSelectClick('page')}>
-        Select page ({this.state.perPage} items)
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="item-3" onClick={() => this.handleSelectClick('all')}>
-        Select all (100 items)
-      </DropdownItemDeprecated>
-    ];
-
+    const items = (
+      <>
+        <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
+          Select none (0 items)
+        </DropdownItem>
+        <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
+          Select page ({this.state.perPage} items)
+        </DropdownItem>
+        <DropdownItem key="item-3" onClick={() => this.handleSelectClick('all')}>
+          Select all (100 items)
+        </DropdownItem>
+      </>
+    );
     return (
-      <DropdownDeprecated
+      <Dropdown
         onSelect={this.onDropDownSelect}
-        position={DropdownPosition.left}
-        toggle={
-          <DropdownToggle
-            splitButtonItems={[
-              <DropdownToggleCheckbox
-                id="example-checkbox-2"
-                key="split-checkbox"
-                aria-label={anySelected ? 'Deselect all' : 'Select all'}
-                isChecked={isChecked}
-                onClick={() => {
-                  anySelected ? this.handleSelectClick('none') : this.handleSelectClick('all');
-                }}
-              >
-                {numSelected !== 0 && `${numSelected} selected`}
-              </DropdownToggleCheckbox>
-            ]}
-            onToggle={this.onDropDownToggle}
-          ></DropdownToggle>
-        }
         isOpen={isDropDownOpen}
-        dropdownItems={items}
-      />
+        onOpenChange={(isOpen) => this.setState({ isDropDownOpen: isOpen })}
+        toggle={(toggleRef) => (
+          <MenuToggle
+            ref={toggleRef}
+            isExpanded={isDropDownOpen}
+            onClick={this.onDropDownToggle}
+            aria-label="Select cards"
+            splitButtonOptions={{
+              items: [
+                <MenuToggleCheckbox
+                  id="split-dropdown-checkbox"
+                  key="split-dropdown-checkbox"
+                  aria-label={anySelected ? 'Deselect all cards' : 'Select all cards'}
+                  isChecked={allSelected}
+                  onClick={() => {
+                    anySelected ? this.handleSelectClick('none') : this.handleSelectClick('all');
+                  }}
+                >
+                  {numSelected !== 0 && `${numSelected} selected`}
+                </MenuToggleCheckbox>
+              ]
+            }}
+          ></MenuToggle>
+        )}
+      >
+        <DropdownList>{items}</DropdownList>
+      </Dropdown>
     );
   }
 
@@ -1086,10 +1083,6 @@ import {
   ToolbarFilter,
   ToolbarToggleGroup,
   ToolbarGroup,
-  Dropdown,
-  DropdownItem,
-  DropdownPosition,
-  DropdownToggle,
   Title,
   Select,
   SelectOption,
