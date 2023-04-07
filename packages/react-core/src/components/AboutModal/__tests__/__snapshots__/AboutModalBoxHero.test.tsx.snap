@@ -4,7 +4,6 @@ exports[`test About Modal Box SHero 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-about-modal-box__hero"
-    style="--pf-c-about-modal-box__hero--sm--BackgroundImage: url(undefined);"
   />
 </DocumentFragment>
 `;

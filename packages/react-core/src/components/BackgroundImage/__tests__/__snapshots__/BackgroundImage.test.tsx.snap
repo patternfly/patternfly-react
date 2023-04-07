@@ -4,15 +4,8 @@ exports[`BackgroundImage 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-background-image"
-    src="[object Object]"
-  >
-    <svg
-      class="pf-c-background-image__filter"
-      height="0"
-      width="0"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-  </div>
+    style="--pf-c-background-image--BackgroundImage: url([object Object]);"
+  />
 </DocumentFragment>
 `;
 
@@ -20,14 +13,7 @@ exports[`allows passing in a single string as the image src 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-background-image"
-    src="/assets/images/pfbg_1200.jpg"
-  >
-    <svg
-      class="pf-c-background-image__filter"
-      height="0"
-      width="0"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-  </div>
+    style="--pf-c-background-image--BackgroundImage: url(/assets/images/pfbg_1200.jpg);"
+  />
 </DocumentFragment>
 `;

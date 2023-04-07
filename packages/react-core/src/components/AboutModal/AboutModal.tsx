@@ -8,6 +8,8 @@ import { AboutModalBoxCloseButton } from './AboutModalBoxCloseButton';
 import { AboutModalBox } from './AboutModalBox';
 import { Modal, ModalVariant } from '../Modal';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+// eslint-disable-next-line camelcase
+import c_about_modal_box_BackgroundImage from '@patternfly/react-tokens/dist/esm/c_about_modal_box_BackgroundImage';
 
 export interface AboutModalProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the about modal */
@@ -26,7 +28,7 @@ export interface AboutModalProps extends React.HTMLProps<HTMLDivElement> {
   brandImageSrc: string;
   /** The alternate text of the brand image  */
   brandImageAlt: string;
-  /** The URL of the image for the background  */
+  /** The URL or file path of the image for the background  */
   backgroundImageSrc?: string;
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts  */
   hasNoContentContainer?: boolean;
@@ -59,7 +61,10 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
 }: AboutModalProps) => {
   if (brandImageSrc && !brandImageAlt) {
     // eslint-disable-next-line no-console
-    console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified, and should not be an empty string.');
+    console.error(
+      'AboutModal:',
+      'brandImageAlt is required when a brandImageSrc is specified, and should not be an empty string.'
+    );
   }
 
   if (!productName && !ariaLabel) {
@@ -72,11 +77,11 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
   }
   return (
     <GenerateId prefix="pf-about-modal-title-">
-      {ariaLabelledBy => (
+      {(ariaLabelledBy) => (
         <Modal
           isOpen={isOpen}
           variant={ModalVariant.large}
-          {...(productName && {'aria-labelledby': ariaLabelledBy})}
+          {...(productName && { 'aria-labelledby': ariaLabelledBy })}
           aria-label={ariaLabel}
           onEscapePress={onClose}
           showClose={false}
@@ -84,15 +89,20 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
           disableFocusTrap={disableFocusTrap}
           hasNoBodyWrapper
         >
-          <AboutModalBox className={css(className)}>
+          <AboutModalBox
+            style={
+              /* eslint-disable camelcase */
+              backgroundImageSrc
+                ? { [c_about_modal_box_BackgroundImage.name as string]: `url(${backgroundImageSrc})` }
+                : {}
+              /* eslint-enable camelcase */
+            }
+            className={css(className)}
+          >
             <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
             <AboutModalBoxCloseButton aria-label={closeButtonAriaLabel} onClose={onClose} />
             {productName && <AboutModalBoxHeader id={ariaLabelledBy} productName={productName} />}
-            <AboutModalBoxContent
-              trademark={trademark}
-              hasNoContentContainer={hasNoContentContainer}
-              {...props}
-            >
+            <AboutModalBoxContent trademark={trademark} hasNoContentContainer={hasNoContentContainer} {...props}>
               {children}
             </AboutModalBoxContent>
             <AboutModalBoxHero backgroundImageSrc={backgroundImageSrc} />

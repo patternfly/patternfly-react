@@ -5,7 +5,7 @@ import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-
 import c_about_modal_box__hero_sm_BackgroundImage from '@patternfly/react-tokens/dist/esm/c_about_modal_box__hero_sm_BackgroundImage';
 
 export interface AboutModalBoxHeroProps extends React.HTMLProps<HTMLDivElement> {
-  /** Background image data or file path  */
+  /** The URL or file path of the image for the background  */
   backgroundImageSrc?: string;
 }
 
@@ -16,7 +16,7 @@ export const AboutModalBoxHero: React.FunctionComponent<AboutModalBoxHeroProps> 
   <div
     style={
       /* eslint-disable camelcase */
-      backgroundImageSrc !== ''
+      backgroundImageSrc
         ? { [c_about_modal_box__hero_sm_BackgroundImage.name as string]: `url(${backgroundImageSrc})` }
         : {}
       /* eslint-enable camelcase */
