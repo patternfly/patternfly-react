@@ -58,8 +58,8 @@ export interface TdActionsType {
   rowIndex?: number;
   /** Cell actions */
   items: IActions;
-  /** Whether to disable the actions */
-  disable?: boolean;
+  /** Whether the actions are disabled */
+  isDisabled?: boolean;
   /** Actions dropdown position */
   dropdownPosition?: DropdownPosition;
   /** Actions dropdown direction */

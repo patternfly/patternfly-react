@@ -158,7 +158,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     ? actionParamsFunc(null, {
         rowIndex: actions?.rowIndex,
         rowData: {
-          disableActions: actions?.disable
+          disableActions: actions?.isDisabled
         },
         column: {
           extraParams: {
