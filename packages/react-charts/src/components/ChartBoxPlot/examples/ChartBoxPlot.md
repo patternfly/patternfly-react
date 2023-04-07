@@ -219,7 +219,6 @@ This demonstrates how to embed HTML within a tooltip. Combining cursor and voron
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBoxPlot, ChartCursorFlyout, ChartCursorTooltip, ChartThemeColor, createContainer } from '@patternfly/react-charts';
-// import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 class EmbeddedHtml extends React.Component {
   constructor(props) {

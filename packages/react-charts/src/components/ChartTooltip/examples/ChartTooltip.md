@@ -47,7 +47,6 @@ This demonstrates how to use a voronoi container to display tooltips.
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
-// import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 <div style={{ height: '200px', width: '800px' }}>
   <Chart
@@ -298,7 +297,6 @@ This demonstrates how to embed HTML within a tooltip. Combining cursor and voron
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartCursorFlyout, ChartCursorTooltip, ChartGroup, ChartPoint, ChartThemeColor, createContainer } from '@patternfly/react-charts';
-// import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 class EmbeddedHtml extends React.Component {
   constructor(props) {
