@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-table",
-  "version": "5.0.0-alpha.60",
+  "version": "5.0.0-alpha.61",
   "description": "This library provides a set of React table components for use with the PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",

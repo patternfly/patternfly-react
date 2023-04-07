@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.61](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.60...@patternfly/react-table@5.0.0-alpha.61) (2023-04-07)
+
+### Bug Fixes
+
+- **Table:** rename TdActionsType 'disable' prop to 'isDisabled' ([#8904](https://github.com/patternfly/patternfly-react/issues/8904)) ([ad20ba3](https://github.com/patternfly/patternfly-react/commit/ad20ba30909534359d1e1756994f082de42515f5))
+
 # [5.0.0-alpha.60](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.59...@patternfly/react-table@5.0.0-alpha.60) (2023-04-07)
 
 ### Bug Fixes
