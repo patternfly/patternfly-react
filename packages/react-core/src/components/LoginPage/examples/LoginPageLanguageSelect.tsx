@@ -174,20 +174,12 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
     />
   );
 
-  const images = {
-    lg: '/assets/images/pfbg_1200.jpg',
-    sm: '/assets/images/pfbg_768.jpg',
-    sm2x: '/assets/images/pfbg_768@2x.jpg',
-    xs: '/assets/images/pfbg_576.jpg',
-    xs2x: '/assets/images/pfbg_576@2x.jpg'
-  };
-
   return (
     <LoginPage
       footerListVariants={ListVariant.inline}
       brandImgSrc={brandImg2}
       brandImgAlt="PatternFly logo"
-      backgroundImgSrc={images}
+      backgroundImgSrc="/assets/images/pfbg-icon.svg"
       footerListItems={listItem}
       textContent="This is placeholder text only. Use this area to place any information or introductory message about your application that may be relevant to users."
       loginTitle="Log in to your account"
