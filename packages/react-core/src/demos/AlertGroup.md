@@ -1,5 +1,5 @@
 ---
-id: Alert group
+id: Alert
 section: components
 ---
 
