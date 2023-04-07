@@ -7,8 +7,6 @@ import c_background_image_BackgroundImage from '@patternfly/react-tokens/dist/es
 export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElement>, 'src'> {
   /** Additional classes added to the background image. */
   className?: string;
-  /** Override svg filter to use */
-  filter?: React.ReactElement;
   /** The URL or file path of the image for the background */
   src: string;
 }
@@ -16,8 +14,6 @@ export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElemen
 export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
   className,
   src,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  filter,
   ...props
 }: BackgroundImageProps) => (
   <div
