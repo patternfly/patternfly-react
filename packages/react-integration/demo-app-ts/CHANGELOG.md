@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.43](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.42...demo-app-ts@5.0.0-alpha.43) (2023-04-07)
+
+### Bug Fixes
+
+- **Table:** rename TdSelectType 'disable' prop to 'isDisabled' ([#8861](https://github.com/patternfly/patternfly-react/issues/8861)) ([5685e0e](https://github.com/patternfly/patternfly-react/commit/5685e0eb1847f8426d27af175f980b6205763a5a))
+
 # [5.0.0-alpha.42](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.41...demo-app-ts@5.0.0-alpha.42) (2023-04-06)
 
 **Note:** Version bump only for package demo-app-ts
