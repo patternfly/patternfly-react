@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 
-import { BackgroundImage, BackgroundImageSrcMap } from '../BackgroundImage';
+import { BackgroundImage } from '../BackgroundImage';
 import { Brand } from '../Brand';
 import { List, ListVariant } from '../List';
 
@@ -22,7 +22,7 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   /** Attribute that specifies the alt text of the brand image for the login page */
   brandImgAlt?: string;
   /** Attribute that specifies the URL of the background image for the login page */
-  backgroundImgSrc?: string | BackgroundImageSrcMap;
+  backgroundImgSrc?: string;
   /** Attribute that specifies the alt text of the background image for the login page */
   backgroundImgAlt?: string;
   /** Content rendered inside of the text component of the login page */
