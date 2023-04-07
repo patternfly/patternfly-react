@@ -11,6 +11,7 @@ exports[`EmptyStateIcon should match snapshot (auto-generated) 1`] = `
       aria-labelledby="icon-title-0"
       class="''"
       fill="currentColor"
+      height="1em"
       role="img"
       style="vertical-align: -0.125em;"
       viewBox="0 0 448 512"

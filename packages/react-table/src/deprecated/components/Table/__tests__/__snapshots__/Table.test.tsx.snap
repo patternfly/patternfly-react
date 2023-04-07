@@ -43,10 +43,12 @@ exports[`Table Actions table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -158,10 +160,12 @@ exports[`Table Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -230,10 +234,12 @@ exports[`Table Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -302,10 +308,12 @@ exports[`Table Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -374,10 +382,12 @@ exports[`Table Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -446,10 +456,12 @@ exports[`Table Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -518,10 +530,12 @@ exports[`Table Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -590,10 +604,12 @@ exports[`Table Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -662,10 +678,12 @@ exports[`Table Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -734,10 +752,12 @@ exports[`Table Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -795,10 +815,12 @@ exports[`Table Cell header table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -1313,10 +1335,12 @@ exports[`Table Collapsible nested table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -1391,10 +1415,12 @@ exports[`Table Collapsible nested table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 320 512"
+                width="1em"
               >
                 <path
                   d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
@@ -1471,10 +1497,12 @@ exports[`Table Collapsible nested table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 320 512"
+                width="1em"
               >
                 <path
                   d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
@@ -1616,10 +1644,12 @@ exports[`Table Collapsible nested table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 320 512"
+                width="1em"
               >
                 <path
                   d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
@@ -1997,10 +2027,12 @@ exports[`Table Collapsible table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -2075,10 +2107,12 @@ exports[`Table Collapsible table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 320 512"
+                width="1em"
               >
                 <path
                   d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
@@ -2269,10 +2303,12 @@ exports[`Table Collapsible table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 320 512"
+                width="1em"
               >
                 <path
                   d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
@@ -3850,10 +3886,12 @@ exports[`Table Selectable table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -4480,10 +4518,12 @@ exports[`Table Selectable table with Radio 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -5202,10 +5242,12 @@ exports[`Table Simple Actions table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -5317,10 +5359,12 @@ exports[`Table Simple Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -5389,10 +5433,12 @@ exports[`Table Simple Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -5461,10 +5507,12 @@ exports[`Table Simple Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -5533,10 +5581,12 @@ exports[`Table Simple Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -5605,10 +5655,12 @@ exports[`Table Simple Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -5677,10 +5729,12 @@ exports[`Table Simple Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -5749,10 +5803,12 @@ exports[`Table Simple Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -5821,10 +5877,12 @@ exports[`Table Simple Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -5893,10 +5951,12 @@ exports[`Table Simple Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -5966,10 +6026,12 @@ exports[`Table Simple Actions table 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
+                style="vertical-align: -0.125em;"
                 viewBox="0 0 192 512"
+                width="1em"
               >
                 <path
                   d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
@@ -6027,10 +6089,12 @@ exports[`Table Table variants Breakpoint -  1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -6504,10 +6568,12 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -6981,10 +7047,12 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -7458,10 +7526,12 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -7935,10 +8005,12 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -8412,10 +8484,12 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -8889,10 +8963,12 @@ exports[`Table Table variants Size - compact 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -9534,10 +9610,12 @@ exports[`Table simple Editable table 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-svg"
                     fill="currentColor"
+                    height="1em"
                     role="img"
+                    style="vertical-align: -0.125em;"
                     viewBox="0 0 512 512"
+                    width="1em"
                   >
                     <path
                       d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
@@ -9559,10 +9637,12 @@ exports[`Table simple Editable table 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-svg"
                     fill="currentColor"
+                    height="1em"
                     role="img"
+                    style="vertical-align: -0.125em;"
                     viewBox="0 0 352 512"
+                    width="1em"
                   >
                     <path
                       d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
@@ -9585,10 +9665,12 @@ exports[`Table simple Editable table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 512 512"
+                  width="1em"
                 >
                   <path
                     d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
@@ -9742,10 +9824,12 @@ exports[`Table simple Editable table 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-svg"
                     fill="currentColor"
+                    height="1em"
                     role="img"
+                    style="vertical-align: -0.125em;"
                     viewBox="0 0 512 512"
+                    width="1em"
                   >
                     <path
                       d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
@@ -9767,10 +9851,12 @@ exports[`Table simple Editable table 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-svg"
                     fill="currentColor"
+                    height="1em"
                     role="img"
+                    style="vertical-align: -0.125em;"
                     viewBox="0 0 352 512"
+                    width="1em"
                   >
                     <path
                       d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
@@ -9793,10 +9879,12 @@ exports[`Table simple Editable table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 512 512"
+                  width="1em"
                 >
                   <path
                     d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
@@ -9855,10 +9943,12 @@ exports[`Table simple Row click table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
@@ -10332,10 +10422,12 @@ exports[`Table simple Sortable table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
+                  style="vertical-align: -0.125em;"
                   viewBox="0 0 256 512"
+                  width="1em"
                 >
                   <path
                     d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
