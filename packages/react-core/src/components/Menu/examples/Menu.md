@@ -67,7 +67,7 @@ To trigger an action when a specific item's action icon is selected, pass in the
 
 ### With links
 
-Use the `to` property to add a link to a `<MenuItem>` that directs users to a new page when the item is selected. Use the `isExternalLink` property when linking to external resources. This will annotate a menu item link with an external link icon when they navigate to the link or hover over it.
+Use the `to` property to add a link to a `<MenuItem>` that directs users to a new page when the item is selected. Use the `isExternalLink` property when linking to external resources. This will annotate a menu item link with an external link icon when they navigate to the link or hover over it, as well as add `target="_blank"` so that the link opens in a new tab or window.
 
 ```ts file="MenuWithLinks.tsx"
 

@@ -37,11 +37,6 @@ The following example shows two navigation groups, each with a `title` prop pass
 ```ts file="./NavMixed.tsx"
 ```
 
-### Horizontal (only in PageHeader)
-
-```ts file="./NavHorizontalPageHeader.tsx"
-```
-
 ### Horizontal subnav
 
 ```ts file="./NavHorizontalSubNav.tsx"

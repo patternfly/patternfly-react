@@ -1,5 +1,6 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, headerCol, TableProps } from '@patternfly/react-table';
+import { headerCol } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 interface Repository {
   name: string;

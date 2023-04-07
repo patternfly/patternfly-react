@@ -1,5 +1,5 @@
-import { ChartThemeDefinition } from '../../ChartTheme';
-import { ChartBulletStyles } from '../../ChartTheme';
+import { ChartThemeDefinition } from '../../ChartTheme/ChartTheme';
+import { ChartBulletStyles } from '../../ChartTheme/ChartStyles';
 import {
   getBulletComparativeErrorMeasureTheme,
   getBulletComparativeMeasureTheme,
@@ -7,7 +7,7 @@ import {
   getBulletPrimaryDotMeasureTheme,
   getBulletPrimarySegmentedMeasureTheme,
   getBulletQualitativeRangeTheme
-} from '../../ChartUtils';
+} from '../../ChartUtils/chart-theme-types';
 
 interface ChartBulletScaleInterface {
   defaultSize: number; // The default chart size from the theme
@@ -18,6 +18,10 @@ interface ChartBulletScaleInterface {
   width: number; // The chart width -- not SVG width
 }
 
+/**
+ * Scale dimensions
+ * @private
+ */
 const scaleDimensions = ({
   defaultSize,
   height,
@@ -36,11 +40,17 @@ const scaleDimensions = ({
   return value - (defaultSize - width) * scale;
 };
 
-// Scale bar width per the given size properties
-export const scaleBarWidth = (props: ChartBulletScaleInterface) => Math.max(scaleDimensions(props), 0);
+/**
+ * Scale bar width per the given size properties
+ * @private
+ */
+const scaleBarWidth = (props: ChartBulletScaleInterface) => Math.max(scaleDimensions(props), 0);
 
-// Scale size per the given size properties
-export const scaleSize = ({ value, ...rest }: ChartBulletScaleInterface) =>
+/**
+ * Scale size per the given size properties
+ * @private
+ */
+const scaleSize = ({ value, ...rest }: ChartBulletScaleInterface) =>
   Math.round(
     scaleDimensions({
       scale: 1 / value,
@@ -57,6 +67,11 @@ interface ChartBulletSizeInterface {
   width: number; // The chart width -- not SVG width
 }
 
+
+/**
+ * Scale size per the given size properties
+ * @private
+ */
 export const getComparativeMeasureErrorWidth = ({
   height,
   horizontal,
@@ -74,6 +89,10 @@ export const getComparativeMeasureErrorWidth = ({
     width
   });
 
+/**
+ * Returns comparative measure width
+ * @private
+ */
 export const getComparativeMeasureWidth = ({
   height,
   horizontal,
@@ -91,6 +110,10 @@ export const getComparativeMeasureWidth = ({
     width
   });
 
+/**
+ * Returns comparative measure warning width
+ * @private
+ */
 export const getComparativeMeasureWarningWidth = ({
   height,
   horizontal,
@@ -108,6 +131,10 @@ export const getComparativeMeasureWarningWidth = ({
     width
   });
 
+/**
+ * Returns primary dot measure size
+ * @private
+ */
 export const getPrimaryDotMeasureSize = ({
   height,
   horizontal,
@@ -125,6 +152,10 @@ export const getPrimaryDotMeasureSize = ({
     width
   });
 
+/**
+ * Returns primary segmented measure width
+ * @private
+ */
 export const getPrimarySegmentedMeasureWidth = ({
   height,
   horizontal,
@@ -143,6 +174,10 @@ export const getPrimarySegmentedMeasureWidth = ({
     width
   });
 
+/**
+ * Returns qualitative range bar width
+ * @private
+ */
 export const getQualitativeRangeBarWidth = ({
   height,
   horizontal,

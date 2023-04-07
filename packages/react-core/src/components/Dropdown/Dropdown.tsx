@@ -74,7 +74,9 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
       // toggle was clicked open via keyboard, focus on first menu item
       if (isOpen && toggleRef.current?.contains(event.target as Node) && event.detail === 0) {
         setTimeout(() => {
-          const firstElement = menuRef?.current?.querySelector('li button:not(:disabled),li input:not(:disabled)');
+          const firstElement = menuRef?.current?.querySelector(
+            'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
+          );
           firstElement && (firstElement as HTMLElement).focus();
         }, 0);
       }

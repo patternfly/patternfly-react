@@ -7,6 +7,7 @@ import { ValidatedOptions } from '../../helpers/constants';
 import { InputGroup } from '../InputGroup';
 import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon';
 import EyeIcon from '@patternfly/react-icons/dist/esm/icons/eye-icon';
+import { HelperText, HelperTextItem } from '../HelperText';
 
 export interface LoginFormProps extends Omit<React.HTMLProps<HTMLFormElement>, 'ref'> {
   /** Flag to indicate if the first dropdown item should not gain initial focus */
@@ -96,15 +97,16 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
 
   return (
     <Form className={className} {...props}>
-      <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText} icon={helperTextIcon}>
-        {helperText}
-      </FormHelperText>
-      <FormGroup
-        label={usernameLabel}
-        isRequired
-        validated={isValidUsername ? ValidatedOptions.default : ValidatedOptions.error}
-        fieldId="pf-login-username-id"
-      >
+      {showHelperText && (
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant={!isValidUsername || !isValidPassword ? 'error' : 'default'} icon={helperTextIcon}>
+              {helperText}
+            </HelperTextItem>
+          </HelperText>
+        </FormHelperText>
+      )}
+      <FormGroup label={usernameLabel} isRequired fieldId="pf-login-username-id">
         <TextInput
           autoFocus={!noAutoFocus}
           id="pf-login-username-id"
@@ -116,12 +118,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
           onChange={onChangeUsername}
         />
       </FormGroup>
-      <FormGroup
-        label={passwordLabel}
-        isRequired
-        validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
-        fieldId="pf-login-password-id"
-      >
+      <FormGroup label={passwordLabel} isRequired fieldId="pf-login-password-id">
         {isShowPasswordEnabled && (
           <InputGroup>
             {passwordInput}

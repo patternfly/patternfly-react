@@ -10,19 +10,7 @@ import {
   VictoryLabel,
   VictoryLabelProps
 } from 'victory-core';
-import { ChartCommonStyles } from '../ChartTheme';
-
-export enum ChartLabelDirection {
-  rtl = 'rtl',
-  ltr = 'ltr',
-  inherit = 'inherit'
-}
-
-export enum ChartLabelPlacement {
-  parallel = 'parallel',
-  perpendicular = 'perpendicular',
-  vertical = 'vertical'
-}
+import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 
 /**
  * ChartLabel renders the label components that are used across all Victory based components.

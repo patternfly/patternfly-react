@@ -3,8 +3,8 @@ import chart_container_cursor_line_Fill from '@patternfly/react-tokens/dist/esm/
 
 import * as React from 'react';
 import { ContainerType, createContainer as victoryCreateContainer } from 'victory-create-container';
-import { ChartCursorTooltip } from '../ChartCursorTooltip';
-import { ChartLabel } from '../ChartLabel';
+import { ChartCursorTooltip } from '../ChartCursorTooltip/ChartCursorTooltip';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { LineSegment } from 'victory-core';
 
 /**

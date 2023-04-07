@@ -2,9 +2,9 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
 import { VictoryBar } from 'victory-bar';
-import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { getBulletComparativeErrorMeasureTheme } from '../ChartUtils';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getBulletComparativeErrorMeasureTheme } from '../ChartUtils/chart-theme-types';
 import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 
 /**

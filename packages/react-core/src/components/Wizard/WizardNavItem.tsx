@@ -57,7 +57,8 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   }
 
   const btnProps = {
-    disabled: isDisabled
+    disabled: isDisabled,
+    type: 'button' as const
   };
 
   const linkProps = {

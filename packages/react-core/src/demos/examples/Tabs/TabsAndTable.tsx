@@ -41,7 +41,7 @@ import {
   ToolbarToggleGroup
 } from '@patternfly/react-core';
 import {
-  TableComposable,
+  Table,
   Thead,
   Tbody,
   Tr,
@@ -209,8 +209,8 @@ export const TablesAndTabs = () => {
     </Toolbar>
   );
 
-  const tableComposable = (
-    <TableComposable aria-label="`Composable` table">
+  const table = (
+    <Table aria-label="`Composable` table">
       <Thead noWrap>
         <Tr>
           <Th
@@ -284,7 +284,7 @@ export const TablesAndTabs = () => {
           </Tr>
         ))}
       </Tbody>
-    </TableComposable>
+    </Table>
   );
 
   const panelContent = (
@@ -375,7 +375,7 @@ export const TablesAndTabs = () => {
   const tabContent = (
     <Drawer isExpanded={isExpanded} isInline>
       <DrawerContent panelContent={panelContent}>
-        <DrawerContentBody>{tableComposable}</DrawerContentBody>
+        <DrawerContentBody>{table}</DrawerContentBody>
       </DrawerContent>
     </Drawer>
   );

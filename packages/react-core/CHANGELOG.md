@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.58](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.57...@patternfly/react-core@5.0.0-alpha.58) (2023-04-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.0.0-alpha.57](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.56...@patternfly/react-core@5.0.0-alpha.57) (2023-04-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.0.0-alpha.56](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.55...@patternfly/react-core@5.0.0-alpha.56) (2023-04-05)
+
+### Bug Fixes
+
+- **Menu/Dropdown:** updated external link and focus management ([#8879](https://github.com/patternfly/patternfly-react/issues/8879)) ([cb1d683](https://github.com/patternfly/patternfly-react/commit/cb1d683a3a83c6daf0799cf82f4bb4b9b475b5b3))
+- **Wizard:** add type to nav item buttons ([#8876](https://github.com/patternfly/patternfly-react/issues/8876)) ([9440b42](https://github.com/patternfly/patternfly-react/commit/9440b4286f379cd8a0a6e5caa81fe2ba7ee345ab))
+
+# [5.0.0-alpha.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.54...@patternfly/react-core@5.0.0-alpha.55) (2023-04-05)
+
+### Features
+
+- **FormGroup:** use HelperText ([#8810](https://github.com/patternfly/patternfly-react/issues/8810)) ([08f5e8c](https://github.com/patternfly/patternfly-react/commit/08f5e8cd6366228f583cabcc628cad1ed704477a))
+
+# [5.0.0-alpha.54](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.53...@patternfly/react-core@5.0.0-alpha.54) (2023-04-05)
+
+### Features
+
+- **Page:** Deprecate PageHeader component ([#8854](https://github.com/patternfly/patternfly-react/issues/8854)) ([57b0843](https://github.com/patternfly/patternfly-react/commit/57b084310a7e822848950bcebcfbf5821fe254d5))
+
+# [5.0.0-alpha.53](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.52...@patternfly/react-core@5.0.0-alpha.53) (2023-04-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.0.0-alpha.52](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.51...@patternfly/react-core@5.0.0-alpha.52) (2023-04-04)
+
+**Note:** Version bump only for package @patternfly/react-core
+
 # [5.0.0-alpha.51](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.50...@patternfly/react-core@5.0.0-alpha.51) (2023-04-03)
 
 **Note:** Version bump only for package @patternfly/react-core

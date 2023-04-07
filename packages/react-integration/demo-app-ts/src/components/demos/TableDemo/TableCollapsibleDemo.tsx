@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Table, TableHeader, TableBody, TableProps, expandable, ICell, IRow } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
+import { expandable, ICell, IRow } from '@patternfly/react-table';
 
 interface TableState {
   columns: (ICell | string)[];

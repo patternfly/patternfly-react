@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core';
+import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core/dist/esm/components/Dropdown';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
 import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
@@ -70,7 +70,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
         .map(({ title, itemKey, onClick, isOutsideDropdown, ...props }, key) =>
           typeof title === 'string' ? (
             <Button
-              onClick={(event) => onActionClick(event, onClick)}
+              onClick={(event: MouseEvent | React.MouseEvent<any, MouseEvent> | React.KeyboardEvent<Element>) => onActionClick(event, onClick)}
               {...(props as any)}
               isDisabled={isDisabled}
               key={itemKey || `outside_dropdown_${key}`}
@@ -85,8 +85,8 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
 
       <Dropdown
         isOpen={isOpen}
-        onOpenChange={(isOpen) => setIsOpen(isOpen)}
-        toggle={(toggleRef) =>
+        onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+        toggle={(toggleRef: any) =>
           actionsToggle ? (
             actionsToggle({ onToggle, isOpen, isDisabled, toggleRef })
           ) : (

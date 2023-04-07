@@ -10,9 +10,14 @@ import {
   getPrimarySegmentedMeasureWidth,
   getQualitativeRangeBarWidth
 } from './utils/chart-bullet-size';
-import { getBulletDomain } from './utils/chart-bullet-domain';
-import { getBulletThemeWithLegendColorScale } from './utils/chart-bullet-theme';
-import { ChartAxis } from '../ChartAxis';
+import { ChartAxis } from '../ChartAxis/ChartAxis';
+import { ChartBulletTitle } from './ChartBulletTitle';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartLegend } from '../ChartLegend/ChartLegend';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
+import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
+import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
 import { ChartBulletComparativeErrorMeasure } from './ChartBulletComparativeErrorMeasure';
 import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 import { ChartBulletComparativeWarningMeasure } from './ChartBulletComparativeWarningMeasure';
@@ -20,12 +25,9 @@ import { ChartBulletGroupTitle } from './ChartBulletGroupTitle';
 import { ChartBulletPrimaryDotMeasure } from './ChartBulletPrimaryDotMeasure';
 import { ChartBulletPrimarySegmentedMeasure } from './ChartBulletPrimarySegmentedMeasure';
 import { ChartBulletQualitativeRange } from './ChartBulletQualitativeRange';
-import { ChartBulletTitle } from './ChartBulletTitle';
-import { ChartContainer } from '../ChartContainer';
-import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
-import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
-import { ChartTooltip } from '../ChartTooltip';
-import { getComputedLegend, getLegendItemsExtraHeight, getPaddingForSide } from "../ChartUtils";
+import { getBulletDomain } from './utils/chart-bullet-domain';
+import { getBulletThemeWithLegendColorScale } from './utils/chart-bullet-theme';
+import { getPaddingForSide } from "../ChartUtils/chart-padding";
 import { useEffect } from "react";
 
 /**
@@ -506,7 +508,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendItemsPerRow,
-  legendPosition = 'bottom' as ChartLegendPosition,
+  legendPosition = 'bottom',
   maxDomain,
   minDomain,
   name,
@@ -560,7 +562,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     qualitativeRangeComponent,
     qualitativeRangeData
   }),
-  legendOrientation = theme.legend.orientation as ChartLegendOrientation,
+  legendOrientation = theme.legend.orientation as any,
   height = horizontal ? theme.chart.height : theme.chart.width,
   width = horizontal ? theme.chart.width : theme.chart.height,
   bulletSize = theme.chart.height
@@ -759,7 +761,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     let dy = 0;
 
     // Adjust for padding
-    if (legendPosition === ChartLegendPosition.bottom) {
+    if (legendPosition === 'bottom') {
       if (horizontal) {
         dy = defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25;
       } else if (title) {
@@ -767,7 +769,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       } else {
         dy = -defaultPadding.bottom;
       }
-    } else if (legendPosition === ChartLegendPosition.bottomLeft) {
+    } else if (legendPosition === 'bottom-left') {
       if (horizontal) {
         dy = defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25;
       } else if (title) {

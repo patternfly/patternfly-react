@@ -5,20 +5,20 @@ cssPrefix: pf-c-page
 propComponents:
   [
     'Page',
-    'PageHeader',
-    'PageHeaderTools',
-    'PageHeaderToolsGroup',
-    'PageHeaderToolsItem',
     'PageSidebar',
     'PageSection',
     'PageGroup',
     'PageBreadcrumb',
     'PageNavigation',
-    'PageToggleButton',
+    'PageToggleButton'
   ]
 ---
 
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import {
+  PageHeader,
+  PageHeaderTools
+} from '@patternfly/react-core/deprecated';
 import './page.css';
 
 ## Examples
@@ -41,13 +41,6 @@ The `isNavOpen` property helps facilitate the opening and closing of the sidebar
 ```ts file="./PageVerticalNav.tsx"
 ```
 
-### Legacy page header
-
-This example shows the legacy implementation of a page's vertical navigation. Our updated recommendation advises you to use a masthead and toolbar to make headers, rather than `<PageHeader>` and `<PageHeaderTools>` as shown in the following example.
-
-```ts file="./PageVerticalNavUsingPageHeaderComponent.tsx"
-```
-
 ### Horizontal navigation
 
 To add horizontal navigation to the top of a `<Page>`, add the navigation inside of a `<ToolbarItem>` in the `<Toolbar>` that is passed to the `<MastheadContent>` of the `<Masthead>`.
@@ -66,7 +59,7 @@ Tertiary navigation allows you to add an additional navigation menu alongside ve
 
 ### Uncontrolled navigation
 
-When the `isManagedSidebar` property is true, it manages the sidebar open/close state, removing the need to pass both `isNavOpen` into the `<PageSidebar>` and `onNavToggle` into the `<PageHeader>`.
+When the `isManagedSidebar` property is true, it manages the sidebar open/close state, removing the need to pass both `isNavOpen` into the `<PageSidebar>` and `onNavToggle` into the `<PageToggleButton>`.
 
 ```ts file="./PageUncontrolledNav.tsx"
 ```

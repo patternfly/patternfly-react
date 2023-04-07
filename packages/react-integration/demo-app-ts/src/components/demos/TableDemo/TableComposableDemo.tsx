@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-  TableComposable,
+  Table,
   Thead,
   Tbody,
   Tr,
@@ -53,7 +53,7 @@ export const TableComposableDemo = () => {
             </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
-        <TableComposable aria-label="Simple table using composable components">
+        <Table aria-label="Simple table using composable components">
           <Caption>Simple table using composable components</Caption>
           <Thead>
             <Tr>
@@ -83,7 +83,7 @@ export const TableComposableDemo = () => {
               </Tr>
             ))}
           </Tbody>
-        </TableComposable>
+        </Table>
       </>
     );
   };
@@ -100,7 +100,7 @@ export const TableComposableDemo = () => {
       console.log(`handle row click ${rowIndex}`, row);
     };
     return (
-      <TableComposable aria-label="Misc table">
+      <Table aria-label="Misc table">
         <Thead noWrap>
           <Tr>
             <Th>
@@ -179,7 +179,7 @@ export const TableComposableDemo = () => {
             );
           })}
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 
@@ -214,7 +214,7 @@ export const TableComposableDemo = () => {
       setRows(updatedRows);
     };
     return (
-      <TableComposable aria-label="Sortable Table">
+      <Table aria-label="Sortable Table">
         <Thead>
           <Tr>
             {columns.map((column, columnIndex) => {
@@ -249,7 +249,7 @@ export const TableComposableDemo = () => {
             </Tr>
           ))}
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 
@@ -287,7 +287,7 @@ export const TableComposableDemo = () => {
       setSelected(selected.map(sel => isSelected));
     };
     return (
-      <TableComposable aria-label="Selectable Table">
+      <Table aria-label="Selectable Table">
         <Thead>
           <Tr>
             <Th
@@ -326,7 +326,7 @@ export const TableComposableDemo = () => {
             </Tr>
           ))}
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 
@@ -342,7 +342,7 @@ export const TableComposableDemo = () => {
       setSelected(rowId);
     };
     return (
-      <TableComposable aria-label="Radio selectable table">
+      <Table aria-label="Radio selectable table">
         <Thead>
           <Tr>
             <Th />
@@ -377,7 +377,7 @@ export const TableComposableDemo = () => {
             </Tr>
           ))}
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 
@@ -429,7 +429,7 @@ export const TableComposableDemo = () => {
       ['5', '2', 'b', 'four', 'five']
     ];
     return (
-      <TableComposable aria-label="Actions table">
+      <Table aria-label="Actions table">
         <Thead>
           <Tr>
             <Th>{columns[0]}</Th>
@@ -467,7 +467,7 @@ export const TableComposableDemo = () => {
             );
           })}
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 
@@ -513,7 +513,7 @@ export const TableComposableDemo = () => {
             </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
-        <TableComposable
+        <Table
           aria-label="Compact Table"
           variant={choice !== 'default' ? 'compact' : null}
           borders={choice !== 'compactBorderless'}
@@ -536,7 +536,7 @@ export const TableComposableDemo = () => {
               </Tr>
             ))}
           </Tbody>
-        </TableComposable>
+        </Table>
       </React.Fragment>
     );
   };
@@ -611,7 +611,7 @@ export const TableComposableDemo = () => {
             </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
-        <TableComposable aria-label="Expandable Table" variant={compact ? 'compact' : null}>
+        <Table aria-label="Expandable Table" variant={compact ? 'compact' : null}>
           <Thead>
             <Tr>
               <Th />
@@ -697,7 +697,7 @@ export const TableComposableDemo = () => {
               </Tbody>
             );
           })}
-        </TableComposable>
+        </Table>
       </React.Fragment>
     );
   };
@@ -715,7 +715,7 @@ export const TableComposableDemo = () => {
       const rows = [firstColumnRows, ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']];
 
       return (
-        <TableComposable aria-label="Demo child table" id={id}>
+        <Table aria-label="Demo child table" id={id}>
           <Thead>
             <Tr>
               {columns.map((column, columnIndex) => (
@@ -734,7 +734,7 @@ export const TableComposableDemo = () => {
               </Tr>
             ))}
           </Tbody>
-        </TableComposable>
+        </Table>
       );
     };
     // key = row_col of the parent it corresponds to
@@ -830,7 +830,7 @@ export const TableComposableDemo = () => {
       return null;
     };
     return (
-      <TableComposable aria-label="Compound expandable table">
+      <Table aria-label="Compound expandable table">
         <Thead>
           <Tr>
             {columns.map((column, columnIndex) => (
@@ -896,7 +896,7 @@ export const TableComposableDemo = () => {
             </Tbody>
           );
         })}
-      </TableComposable>
+      </Table>
     );
   };
 
@@ -908,7 +908,7 @@ export const TableComposableDemo = () => {
       ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3']
     ];
     return (
-      <TableComposable aria-label="Cell widths">
+      <Table aria-label="Cell widths">
         <Thead>
           <Tr>
             {columns.map((column, columnIndex) => (
@@ -937,7 +937,7 @@ export const TableComposableDemo = () => {
             </Tr>
           ))}
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 
@@ -968,7 +968,7 @@ export const TableComposableDemo = () => {
       ]
     ];
     return (
-      <TableComposable aria-label="Controlling text">
+      <Table aria-label="Controlling text">
         <Thead>
           <Tr>
             <Th width={20}>{columns[0]}</Th>
@@ -995,7 +995,7 @@ export const TableComposableDemo = () => {
             </Tr>
           ))}
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 
@@ -1012,7 +1012,7 @@ export const TableComposableDemo = () => {
       ]
     ];
     return (
-      <TableComposable aria-label="Table text">
+      <Table aria-label="Table text">
         <Thead>
           <Tr>
             <Th width={30}>{columns[0]}</Th>
@@ -1030,7 +1030,7 @@ export const TableComposableDemo = () => {
             </Tr>
           ))}
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 
@@ -1071,7 +1071,7 @@ export const TableComposableDemo = () => {
       }
     };
     return (
-      <TableComposable aria-label="Favoritable table" variant={'compact'}>
+      <Table aria-label="Favoritable table" variant={'compact'}>
         <Thead>
           <Tr>
             <Th {...sortParams} />
@@ -1106,7 +1106,7 @@ export const TableComposableDemo = () => {
             </Tr>
           ))}
         </Tbody>
-      </TableComposable>
+      </Table>
     );
   };
 

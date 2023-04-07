@@ -21,9 +21,9 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryLine, VictoryLineProps, VictoryLineTTargetType } from 'victory-line';
-import { ChartLine } from '../ChartLine';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { getThresholdTheme } from '../ChartUtils';
+import { ChartLine } from '../ChartLine/ChartLine';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getThresholdTheme } from '../ChartUtils/chart-theme-types';
 
 /**
  * CharThreshold renders a dataset as a threshold chart.

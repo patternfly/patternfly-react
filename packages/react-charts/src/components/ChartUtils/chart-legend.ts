@@ -1,8 +1,9 @@
 import defaults from 'lodash/defaults';
 import { Helpers, PaddingProps, TextSize } from 'victory-core';
 import { VictoryLegend } from 'victory-legend';
-import { ChartLegendOrientation, ChartLegendPosition, ChartLegendProps } from '../ChartLegend';
-import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartLegendProps } from '../ChartLegend/ChartLegend';
+import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getPieOrigin } from './chart-origin';
 import * as React from 'react';
 
@@ -62,12 +63,12 @@ export const getComputedLegend = ({
   legendComponent,
   padding,
   patternScale,
-  position = ChartCommonStyles.legend.position as ChartLegendPosition,
+  position = ChartCommonStyles.legend.position,
   theme,
   width,
 
   // destructure last
-  orientation = theme.legend.orientation as ChartLegendOrientation
+  orientation = theme.legend.orientation as any
 }: ChartLegendInterface) => {
   // Get the number of legend items per row
   const legendItemsProps = legendComponent.props ? legendComponent.props : {};
@@ -155,7 +156,7 @@ export const getLegendDimensions = ({
  * Returns true if the legend is smaller than its container
  * @private
  */
-export const doesLegendFit = ({
+const doesLegendFit = ({
   dx = 0,
   height,
   legendPosition,
@@ -197,7 +198,7 @@ export const doesLegendFit = ({
  * Returns the number of legend items per row
  * @private
  */
-export const getLegendItemsPerRow = ({
+const getLegendItemsPerRow = ({
   dx,
   height,
   legendPosition,
@@ -268,14 +269,14 @@ export const getLegendItemsExtraHeight = ({
  * Returns x coordinate for legend
  * @private
  */
-export const getLegendX = ({ chartType, ...rest }: ChartLegendPositionInterface) =>
+const getLegendX = ({ chartType, ...rest }: ChartLegendPositionInterface) =>
   chartType === 'pie' ? getPieLegendX(rest) : getChartLegendX(rest);
 
 /**
  * Returns y coordinate for legend
  * @private
  */
-export const getLegendY = ({ chartType, ...rest }: ChartLegendPositionInterface) => {
+const getLegendY = ({ chartType, ...rest }: ChartLegendPositionInterface) => {
   switch (chartType) {
     case 'pie':
       return getPieLegendY(rest);
@@ -290,7 +291,7 @@ export const getLegendY = ({ chartType, ...rest }: ChartLegendPositionInterface)
  * Returns y coordinate for bullet legends
  * @private
  */
-export const getBulletLegendY = ({
+const getBulletLegendY = ({
   dy = 0,
   height,
   legendPosition,
@@ -331,7 +332,7 @@ export const getBulletLegendY = ({
  * Returns x coordinate for chart legends
  * @private
  */
-export const getChartLegendX = ({
+const getChartLegendX = ({
   dx = 0,
   height,
   legendData,
@@ -370,7 +371,7 @@ export const getChartLegendX = ({
  * Returns y coordinate for chart legends
  * @private
  */
-export const getChartLegendY = ({
+const getChartLegendY = ({
   dy = 0,
   height,
   legendPosition,
@@ -412,7 +413,7 @@ export const getChartLegendY = ({
  * Returns x coordinate for pie legends
  * @private
  */
-export const getPieLegendX = ({
+const getPieLegendX = ({
   dx = 0,
   height,
   legendData,
@@ -446,7 +447,7 @@ export const getPieLegendX = ({
  * Returns y coordinate for pie legends
  * @private
  */
-export const getPieLegendY = ({
+const getPieLegendY = ({
   dy = 0,
   height,
   legendPosition,
@@ -483,7 +484,8 @@ export const getPieLegendY = ({
  * Returns an approximation of longest text width based on legend styles
  * @private
  */
-export const getMaxLegendTextSize = ({ legendData, theme }: ChartLegendTextMaxSizeInterface) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const getMaxLegendTextSize = ({ legendData, theme }: ChartLegendTextMaxSizeInterface) => {
   const style: any = theme && theme.legend && theme.legend.style ? theme.legend.style.labels : undefined;
   if (!(legendData && legendData.length)) {
     return 0;

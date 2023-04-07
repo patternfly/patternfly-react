@@ -1,9 +1,17 @@
 import React from 'react';
-import { Form, FormGroup, FormSelect, FormSelectOption, ValidatedOptions } from '@patternfly/react-core';
+import {
+  Form,
+  FormGroup,
+  FormHelperText,
+  FormSelect,
+  FormSelectOption,
+  HelperText,
+  HelperTextItem,
+  ValidatedOptions
+} from '@patternfly/react-core';
 
 export const FormSelectValidated: React.FunctionComponent = () => {
   const [formValue, setFormValue] = React.useState('');
-  const [invalidText, setInvalidText] = React.useState('You must choose something');
   const [helperText, setHelperText] = React.useState('');
   const [validated, setValidated] = React.useState<ValidatedOptions>(ValidatedOptions.default);
 
@@ -24,7 +32,7 @@ export const FormSelectValidated: React.FunctionComponent = () => {
         setHelperText('You must select a value');
       } else {
         setValidated(ValidatedOptions.error);
-        setInvalidText('You must chose Three (thought that was obvious)');
+        setHelperText('You must chose Three (thought that was obvious)');
       }
     });
   };
@@ -38,14 +46,7 @@ export const FormSelectValidated: React.FunctionComponent = () => {
 
   return (
     <Form>
-      <FormGroup
-        label="Selection:"
-        type="string"
-        helperText={helperText}
-        helperTextInvalid={invalidText}
-        fieldId="selection"
-        validated={validated}
-      >
+      <FormGroup label="Selection:" type="string" fieldId="selection">
         <FormSelect
           id="selection"
           validated={validated}
@@ -63,6 +64,11 @@ export const FormSelectValidated: React.FunctionComponent = () => {
             />
           ))}
         </FormSelect>
+        <FormHelperText>
+          <HelperText>
+            <HelperTextItem variant={validated}>{helperText}</HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
     </Form>
   );

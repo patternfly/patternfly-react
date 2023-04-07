@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import { css } from '@patternfly/react-styles';
-import { Button } from '@patternfly/react-core/dist/esm/components/Button/Button';
+import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 export interface CollapseColumnProps {

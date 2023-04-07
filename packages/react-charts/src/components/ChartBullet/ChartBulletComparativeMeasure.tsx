@@ -2,12 +2,13 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
 import { VictoryBar } from 'victory-bar';
-import { getComparativeMeasureData } from './utils';
-import { ChartBar } from '../ChartBar';
-import { ChartContainer } from '../ChartContainer';
-import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
-import { ChartTooltip } from '../ChartTooltip';
-import { getBulletComparativeMeasureTheme } from '../ChartUtils';
+import { getComparativeMeasureData } from './utils/chart-bullet-data';
+import { ChartBar } from '../ChartBar/ChartBar';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
+import { getBulletComparativeMeasureTheme } from '../ChartUtils/chart-theme-types';
 
 /**
  * ChartBulletComparativeMeasure renders a dataset as a comparative measure.

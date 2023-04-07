@@ -3,7 +3,7 @@ import { TextInput } from '@patternfly/react-core/dist/esm/components/TextInput'
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
-import { EditableTextCellProps } from './base';
+import { EditableTextCellProps } from './base/types';
 
 export interface IEditableTextCell extends React.HTMLProps<HTMLDivElement> {
   /** The current value of the text input */

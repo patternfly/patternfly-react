@@ -15,14 +15,16 @@ import {
   CustomActionsToggleProps,
   fitContent,
   headerCol,
-  TableProps,
   IActions,
   IActionsResolver,
+  TableText
+} from '@patternfly/react-table';
+import {
   Table,
   TableBody,
   TableHeader,
-  TableText
-} from '@patternfly/react-table';
+  TableProps
+} from '@patternfly/react-table/deprecated';
 
 interface Repository {
   name: string;

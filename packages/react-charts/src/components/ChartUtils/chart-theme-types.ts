@@ -1,4 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
+
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import {
   ChartAxisTheme,
   ChartBulletComparativeErrorMeasureTheme,
@@ -16,8 +18,7 @@ import {
   ChartDonutThresholdDynamicTheme,
   ChartDonutThresholdStaticTheme,
   ChartThresholdTheme,
-  ChartThemeDefinition
-} from '../ChartTheme';
+} from '../ChartTheme/ChartThemeTypes';
 import { getTheme, getCustomTheme } from './chart-theme';
 
 /**

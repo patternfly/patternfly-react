@@ -12,7 +12,7 @@ import {
   SelectOption,
   PageSection
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
@@ -101,7 +101,7 @@ export const CompactTable = () => {
         <PageSection isFilled>
           <Card>
             {tableToolbar}
-            <TableComposable variant="compact" aria-label="Compact Table">
+            <Table variant="compact" aria-label="Compact Table">
               <Thead>
                 <Tr>
                   <Th key={0}>{columns[0]}</Th>
@@ -136,7 +136,7 @@ export const CompactTable = () => {
                   </Tr>
                 ))}
               </Tbody>
-            </TableComposable>
+            </Table>
             {renderPagination('bottom', false)}
           </Card>
         </PageSection>

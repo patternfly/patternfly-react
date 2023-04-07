@@ -28,12 +28,10 @@ exports[`DropdownToggle state action split button - renders primary variant 1`] 
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 320 512"
-          width="1em"
         >
           <path
             d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -66,12 +64,10 @@ exports[`DropdownToggle state active 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 320 512"
-        width="1em"
       >
         <path
           d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -103,12 +99,10 @@ exports[`DropdownToggle state button variant - plain with text 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 320 512"
-        width="1em"
       >
         <path
           d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -140,12 +134,10 @@ exports[`DropdownToggle state button variant - primary 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 320 512"
-        width="1em"
       >
         <path
           d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -177,12 +169,10 @@ exports[`DropdownToggle state button variant - secondary 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 320 512"
-        width="1em"
       >
         <path
           d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -214,12 +204,10 @@ exports[`DropdownToggle state class changes 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 320 512"
-        width="1em"
       >
         <path
           d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -251,12 +239,10 @@ exports[`DropdownToggle state focus 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 320 512"
-        width="1em"
       >
         <path
           d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -288,12 +274,10 @@ exports[`DropdownToggle state hover 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
-        height="1em"
         role="img"
-        style="vertical-align: -0.125em;"
         viewBox="0 0 320 512"
-        width="1em"
       >
         <path
           d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -332,12 +316,10 @@ exports[`DropdownToggle state split button - does not render primary variant 1`]
       >
         <svg
           aria-hidden="true"
+          class="pf-svg"
           fill="currentColor"
-          height="1em"
           role="img"
-          style="vertical-align: -0.125em;"
           viewBox="0 0 320 512"
-          width="1em"
         >
           <path
             d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"

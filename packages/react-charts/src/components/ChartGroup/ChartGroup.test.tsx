@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { ChartArea } from '../ChartArea';
+import { ChartArea } from '../ChartArea/ChartArea';
 import { ChartGroup } from './ChartGroup';
 
 Object.values([true, false]).forEach(() => {

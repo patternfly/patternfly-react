@@ -114,7 +114,7 @@ class PasswordStrengthDemo extends React.Component {
           aria-describedby="password-field"
           className="pf-c-form__group-label-help"
         >
-          <HelpIcon noVerticalAlign />
+          <HelpIcon />
         </button>
       </Popover>
     );

@@ -81,7 +81,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   aria-describedby="modal-with-form-form-name"
                   className="pf-c-form__group-label-help"
                 >
-                  <HelpIcon noVerticalAlign />
+                  <HelpIcon />
                 </button>
               </Popover>
             }
@@ -130,7 +130,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   aria-describedby="modal-with-form-form-email"
                   className="pf-c-form__group-label-help"
                 >
-                  <HelpIcon noVerticalAlign />
+                  <HelpIcon />
                 </button>
               </Popover>
             }
@@ -178,7 +178,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   aria-describedby="modal-with-form-form-address"
                   className="pf-c-form__group-label-help"
                 >
-                  <HelpIcon noVerticalAlign />
+                  <HelpIcon />
                 </button>
               </Popover>
             }

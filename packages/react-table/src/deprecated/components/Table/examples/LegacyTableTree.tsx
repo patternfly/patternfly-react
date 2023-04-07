@@ -1,14 +1,6 @@
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  treeRow,
-  IRow,
-  OnTreeRowCollapse,
-  OnCheckChange,
-  OnToggleRowDetails
-} from '@patternfly/react-table';
+import { treeRow, IRow, OnTreeRowCollapse, OnCheckChange, OnToggleRowDetails } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
@@ -110,9 +102,9 @@ export const LegacyTableTree: React.FunctionComponent = () => {
   // We index the tree nodes in the order of the table rows, for looking up by rowIndex
   const flattenedNodes: RepositoriesTreeNode[] = [];
 
-  /** 
+  /**
     Recursive function which flattens the data into an array of flattened IRow objects
-    params: 
+    params:
       - nodes - array of a single level of tree nodes
       - level - number representing how deeply nested the current row is
       - posinset - position of the row relative to this row's siblings

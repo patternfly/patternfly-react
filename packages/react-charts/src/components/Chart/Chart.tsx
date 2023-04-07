@@ -20,20 +20,16 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { AxesType, VictoryChart, VictoryChartProps } from 'victory-chart';
-import { ChartContainer } from '../ChartContainer';
-import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
-import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import {
-  getChartTheme,
-  getClassName,
-  getComputedLegend,
-  getLabelTextSize,
-  getPaddingForSide,
-  getPatternDefs,
-  getDefaultData,
-  getLegendItemsExtraHeight,
-  useDefaultPatternProps,
-} from "../ChartUtils";
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartLegend } from '../ChartLegend/ChartLegend';
+import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getClassName } from "../ChartUtils/chart-helpers";
+import { getLabelTextSize } from "../ChartUtils/chart-label";
+import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
+import { getPaddingForSide } from "../ChartUtils/chart-padding";
+import { getPatternDefs, mergePatternData, useDefaultPatternProps } from "../ChartUtils/chart-patterns";
+import { getChartTheme } from "../ChartUtils/chart-theme-types";
 import { useEffect } from "react";
 
 /**
@@ -476,7 +472,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
-  legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
+  legendPosition = ChartCommonStyles.legend.position,
   name,
   padding,
   patternScale,
@@ -486,7 +482,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   // destructure last
   theme = getChartTheme(themeColor, showAxis),
   containerComponent = <ChartContainer />,
-  legendOrientation = theme.legend.orientation as ChartLegendOrientation,
+  legendOrientation = theme.legend.orientation as any,
   height = theme.chart.height,
   width = theme.chart.width,
   ...rest
@@ -554,9 +550,9 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       }
     });
 
-    if (legendPosition === ChartLegendPosition.bottom) {
+    if (legendPosition === 'bottom') {
       dy += xAxisLabelHeight + legendTitleHeight;
-    } else if (legendPosition === ChartLegendPosition.bottomLeft) {
+    } else if (legendPosition === 'bottom-left') {
       dy += xAxisLabelHeight + legendTitleHeight;
       dx = -10;
     }
@@ -597,7 +593,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
           theme,
           ...childProps,
           ...((child as any).type.displayName === 'ChartPie' && {
-            data: getDefaultData(childProps.data, defaultPatternScale)
+            data: mergePatternData(childProps.data, defaultPatternScale)
           }) // Override child props
         });
       }

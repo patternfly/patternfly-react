@@ -2,12 +2,13 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, PaddingProps } from 'victory-core';
 import { VictoryScatter } from 'victory-scatter';
-import { getPrimaryDotMeasureData } from './utils';
-import { ChartContainer } from '../ChartContainer';
-import { ChartScatter } from '../ChartScatter';
-import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
-import { ChartTooltip } from '../ChartTooltip';
-import { getBulletPrimaryDotMeasureTheme } from '../ChartUtils';
+import { getPrimaryDotMeasureData } from './utils/chart-bullet-data';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartScatter } from '../ChartScatter/ChartScatter';
+import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
+import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
+import { getBulletPrimaryDotMeasureTheme } from '../ChartUtils/chart-theme-types';
 
 /**
  * ChartBulletPrimaryDotMeasure renders a dataset as the primary dot measure.

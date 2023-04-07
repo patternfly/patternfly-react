@@ -20,14 +20,10 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryScatter, VictoryScatterProps, VictoryScatterTTargetType } from 'victory-scatter';
-import { ChartContainer } from '../ChartContainer';
-import { ChartScatterStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
-
-export enum ChartScatterSortOrder {
-  ascending = 'ascending',
-  descending = 'descending'
-}
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartScatterStyles } from '../ChartTheme/ChartStyles';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartScatter renders a dataset as a series of points. ChartScatter can be composed with Chart to create scatter plots.

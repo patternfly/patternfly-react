@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ChartDomain, getDomains } from '../../ChartUtils';
+import { ChartDomain, getDomains } from '../../ChartUtils/chart-domain';
 
 interface ChartBulletDomainInterface {
   comparativeErrorMeasureComponent?: React.ReactElement<any>;
@@ -16,7 +16,10 @@ interface ChartBulletDomainInterface {
   qualitativeRangeData?: any[];
 }
 
-// Returns the bullet chart's min and max domain for comparative / primary measures and qualitative range data
+/**
+ * Returns the bullet chart's min and max domain for comparative / primary measures and qualitative range data
+ * @private
+ */
 export const getBulletDomain = ({
   comparativeErrorMeasureComponent,
   comparativeErrorMeasureData,

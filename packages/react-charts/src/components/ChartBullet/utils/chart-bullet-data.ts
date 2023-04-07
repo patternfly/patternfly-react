@@ -1,5 +1,5 @@
 import { Data, DataGetterPropType } from 'victory-core';
-import { ChartThemeDefinition } from '../../ChartTheme';
+import { ChartThemeDefinition } from '../../ChartTheme/ChartTheme';
 import {
   getBulletComparativeErrorMeasureTheme,
   getBulletComparativeMeasureTheme,
@@ -8,7 +8,7 @@ import {
   getBulletPrimaryNegativeMeasureTheme,
   getBulletPrimarySegmentedMeasureTheme,
   getBulletQualitativeRangeTheme
-} from '../../ChartUtils';
+} from '../../ChartUtils/chart-theme-types';
 
 interface ChartBulletDataInterface {
   data?: any[];
@@ -20,6 +20,10 @@ interface ChartBulletDataInterface {
   y0?: DataGetterPropType;
 }
 
+/**
+ * Returns comparative measure data
+ * @private
+ */
 export const getComparativeMeasureData = ({
   data,
   themeColor,
@@ -48,6 +52,10 @@ export const getComparativeMeasureData = ({
   return computedData;
 };
 
+/**
+ * Returns comparative error measure data
+ * @private
+ */
 export const getComparativeErrorMeasureData = ({
   data,
   themeColor,
@@ -63,6 +71,10 @@ export const getComparativeErrorMeasureData = ({
     y
   });
 
+/**
+ * Returns comparative warning data
+ * @private
+ */
 export const getComparativeWarningMeasureData = ({
   data,
   themeColor,
@@ -78,6 +90,10 @@ export const getComparativeWarningMeasureData = ({
     y
   });
 
+/**
+ * Returns primary dot measure data
+ * @private
+ */
 export const getPrimaryDotMeasureData = ({
   data,
   invert,
@@ -97,6 +113,10 @@ export const getPrimaryDotMeasureData = ({
     y0
   });
 
+/**
+ * Returns primary segment measure data
+ * @private
+ */
 export const getPrimarySegmentedMeasureData = ({
   data,
   invert,
@@ -160,6 +180,10 @@ export const getPrimarySegmentedMeasureData = ({
   return [...negativeComputedData, ...positiveComputedData];
 };
 
+/**
+ * Returns qualitative range data
+ * @private
+ */
 export const getQualitativeRangeData = ({
   data,
   invert,

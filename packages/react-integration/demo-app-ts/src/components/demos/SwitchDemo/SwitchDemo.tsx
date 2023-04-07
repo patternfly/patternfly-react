@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Button } from '@patternfly/react-core';
-import { Table, TableBody, TableHeader } from '@patternfly/react-table';
+import { Table, TableBody, TableHeader } from '@patternfly/react-table/deprecated';
 
 interface SwitchState {
   simple: {

@@ -17,27 +17,11 @@ import {
   VictoryLegendOrientationType,
   VictoryLegendTTargetType
 } from 'victory-legend';
-import { ChartContainer } from '../ChartContainer';
-import { ChartLabel } from '../ChartLabel';
-import { ChartPoint } from '../ChartPoint';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
-
-export enum ChartLegendOrientation {
-  horizontal = 'horizontal',
-  vertical = 'vertical'
-}
-
-export enum ChartLegendPosition {
-  bottom = 'bottom',
-  bottomLeft = 'bottom-left',
-  right = 'right'
-}
-
-export enum ChartLegendRowGutter {
-  bottom = 'bottom',
-  top = 'top'
-}
+import { ChartContainer } from '../ChartContainer/ChartContainer';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartPoint } from '../ChartPoint/ChartPoint';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartLegend renders a chart legend component.

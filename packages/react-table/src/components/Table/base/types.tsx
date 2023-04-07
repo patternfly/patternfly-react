@@ -6,14 +6,16 @@
  */
 
 import * as React from 'react';
-import { TooltipProps, PopoverProps, SelectOptionObject, SelectProps } from '@patternfly/react-core';
-import { DropdownPosition, DropdownDirection } from '@patternfly/react-core/dist/esm/deprecated/components';
-import { TableComposable } from '../../TableComposable/TableComposable';
-import { Thead } from '../../TableComposable/Thead';
-import { Tbody } from '../../TableComposable/Tbody';
-import { Tr } from '../../TableComposable/Tr';
-import { Th } from '../../TableComposable/Th';
-import { Td } from '../../TableComposable/Td';
+import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
+import { PopoverProps } from '@patternfly/react-core/dist/esm/components/Popover';
+import { DropdownPosition, DropdownDirection } from '@patternfly/react-core/dist/esm/deprecated/components/Dropdown';
+import { SelectProps, SelectOptionObject } from '@patternfly/react-core/dist/esm/components/Select';
+import { Table } from '../Table';
+import { Thead } from '../Thead';
+import { Tbody } from '../Tbody';
+import { Tr } from '../Tr';
+import { Th } from '../Th';
+import { Td } from '../Td';
 import {
   IActions,
   ISortBy,
@@ -200,7 +202,7 @@ export interface RowType {
 // Table Defaults
 export const TableDefaults = {
   renderers: {
-    table: TableComposable,
+    table: Table,
     header: {
       wrapper: Thead,
       row: Tr,
