@@ -45,8 +45,8 @@ export interface TdSelectType {
   onSelect?: OnSelect;
   /** Whether the cell is selected */
   isSelected: boolean;
-  /** Whether to disable the selection */
-  disable?: boolean;
+  /** Whether the selection is disabled */
+  isDisabled?: boolean;
   /** The row index */
   rowIndex: number;
   /** Additional props forwarded to select rowData */

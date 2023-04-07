@@ -51,7 +51,7 @@ export const TableSelectableRadio: React.FunctionComponent = () => {
                 rowIndex,
                 onSelect: () => setSelectedRepoName(repo.name),
                 isSelected: selectedRepoName === repo.name,
-                disable: !isRepoSelectable(repo),
+                isDisabled: !isRepoSelectable(repo),
                 variant: 'radio'
               }}
             />

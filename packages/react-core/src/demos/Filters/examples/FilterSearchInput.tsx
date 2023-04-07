@@ -317,7 +317,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
                     rowIndex,
                     onSelect: (_event, isSelecting) => onSelectRepo(repo, rowIndex, isSelecting),
                     isSelected: isRepoSelected(repo),
-                    disable: !isRepoSelectable(repo)
+                    isDisabled: !isRepoSelectable(repo)
                   }}
                 />
                 <Td dataLabel={columnNames.name} modifier="truncate">
