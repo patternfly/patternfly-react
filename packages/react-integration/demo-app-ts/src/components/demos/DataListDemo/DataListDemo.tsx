@@ -7,14 +7,13 @@ import {
   DataListItemCells,
   DataListCell,
   DataListAction,
-  DataListWrapModifier
+  DataListWrapModifier,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  MenuToggle
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownPosition,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 interface DataListState {
   selectedDataListItemId: string;
@@ -35,14 +34,16 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
     this.setState({ selectedDataListItemId: id });
   };
 
-  onToggle = (_event: any, isOpen: boolean) => {
-    this.setState({ isOpen });
-  };
-
-  onSelect = () => {
+  onToggle = () => {
     this.setState((prevState) => ({
       isOpen: !prevState.isOpen
     }));
+  };
+
+  onSelect = () => {
+    this.setState({
+      isOpen: false
+    });
   };
 
   render() {
@@ -70,23 +71,25 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
               aria-label="Actions"
               isPlainButtonAction
             >
-              <DropdownDeprecated
-                isPlain
-                position={DropdownPosition.right}
+              <Dropdown
+                id="dropdown"
                 isOpen={this.state.isOpen}
                 onSelect={this.onSelect}
-                toggle={<KebabToggle id="toggle-id" onToggle={this.onToggle} />}
-                dropdownItems={[
-                  <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-                  <DropdownItemDeprecated key="action" component="button">
-                    Action
-                  </DropdownItemDeprecated>,
-                  <DropdownItemDeprecated key="disabled link" isDisabled>
+                onOpenChange={(isOpen) => this.setState({ isOpen })}
+                toggle={(toggleRef) => (
+                  <MenuToggle variant="plain" ref={toggleRef} isExpanded={this.state.isOpen} onClick={this.onToggle}>
+                    <EllipsisVIcon />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>
+                  <DropdownItem key="link">Link</DropdownItem>
+                  <DropdownItem key="action">Action</DropdownItem>
+                  <DropdownItem key="disabled link" isDisabled>
                     Disabled Link
-                  </DropdownItemDeprecated>
-                ]}
-                id="dropdown"
-              />
+                  </DropdownItem>
+                </DropdownList>
+              </Dropdown>
             </DataListAction>
           </DataListItemRow>
         </DataListItem>

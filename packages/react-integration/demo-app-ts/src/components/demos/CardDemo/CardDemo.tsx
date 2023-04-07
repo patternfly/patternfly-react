@@ -7,14 +7,15 @@ import {
   CardFooter,
   CardExpandableContent,
   Checkbox,
-  Brand
+  Brand,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  MenuToggle
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 const pfLogo = './images/pfLogo.svg';
+
 interface CardDemoState {
   selected: string;
   isExpanded: boolean;
@@ -54,15 +55,15 @@ export class CardDemo extends React.Component {
     });
   };
 
-  onToggle = (_event: any, isOpen: boolean) => {
+  onToggle = () => {
     this.setState({
-      isOpen
+      isOpen: !this.state.isOpen
     });
   };
 
   onSelect = () => {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: false
     });
   };
 
@@ -75,32 +76,33 @@ export class CardDemo extends React.Component {
 
   render() {
     const dropdownItems = [
-      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="action" component="button">
-        Action
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="disabled link" isDisabled>
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action">Action</DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="disabled action" isDisabled component="button">
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled>
         Disabled Action
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="separated action" component="button">
-        Separated Action
-      </DropdownItemDeprecated>
+      </DropdownItem>,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action">Separated Action</DropdownItem>
     ];
 
     const actions = (
       <>
-        <DropdownDeprecated
+        <Dropdown
           onSelect={this.onSelect}
-          toggle={<KebabToggle onToggle={this.onToggle} />}
           isOpen={this.state.isOpen}
-          isPlain
-          dropdownItems={dropdownItems}
-          position={'right'}
-        />
+          onOpenChange={(isOpen) => this.setState({ isOpen })}
+          popperProps={{ position: 'right' }}
+          toggle={(toggleRef) => (
+            <MenuToggle variant="plain" ref={toggleRef} isExpanded={this.state.isOpen} onClick={this.onToggle}>
+              <EllipsisVIcon />
+            </MenuToggle>
+          )}
+        >
+          <DropdownList>{dropdownItems}</DropdownList>
+        </Dropdown>
         <Checkbox
           isChecked={this.state.check1}
           onChange={this.onClick}

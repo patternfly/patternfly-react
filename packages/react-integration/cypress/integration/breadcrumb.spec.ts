@@ -13,7 +13,7 @@ describe('Breadcrumb Demo Test', () => {
   });
 
   it('Verify dropdown breadcrumb item', () => {
-    cy.get('#badge-dropdown div').should('have.class', 'pf-c-dropdown');
+    cy.get('#badge-dropdown button').should('have.class', 'pf-c-menu-toggle');
   });
 
   it('Verify default section home content', () => {

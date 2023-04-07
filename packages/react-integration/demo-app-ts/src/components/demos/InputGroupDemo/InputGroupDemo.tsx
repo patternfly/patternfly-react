@@ -14,13 +14,12 @@ import {
   TextInput,
   Popover,
   PopoverPosition,
-  ValidatedOptions
+  ValidatedOptions,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  MenuToggle
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownToggle,
-  DropdownItem as DropdownItemDeprecated
-} from '@patternfly/react-core/deprecated';
 
 interface InputGroupState {
   isOpen: boolean;
@@ -29,7 +28,7 @@ interface InputGroupState {
 
 export class InputGroupDemo extends React.Component<{}, InputGroupState> {
   static displayName = 'InputGroupDemo';
-  onToggle: (event: any, isOpen: boolean) => void;
+  onToggle: () => void;
   onSelect: (event: any) => void;
   constructor(props: {}) {
     super(props);
@@ -37,10 +36,10 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
       isOpen: false,
       selected: ''
     };
-    this.onToggle = (_event, isOpen) => {
-      this.setState({
-        isOpen
-      });
+    this.onToggle = () => {
+      this.setState((prevState) => ({
+        isOpen: !prevState.isOpen
+      }));
     };
     this.onSelect = (event) => {
       this.setState({
@@ -81,26 +80,22 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
         <br />
         <br />
         <InputGroup>
-          <DropdownDeprecated
+          <Dropdown
             onSelect={this.onSelect}
-            toggle={
-              <DropdownToggle onToggle={this.onToggle}>
-                {this.state.selected ? this.state.selected : 'Dropdown'}
-              </DropdownToggle>
-            }
             isOpen={this.state.isOpen}
-            dropdownItems={[
-              <DropdownItemDeprecated key="opt-1" value="Option 1" component="button">
-                Option 1
-              </DropdownItemDeprecated>,
-              <DropdownItemDeprecated key="opt-2" value="Option 2" component="button">
-                Option 2
-              </DropdownItemDeprecated>,
-              <DropdownItemDeprecated key="opt-3" value="Option 3" component="button">
-                Option 3
-              </DropdownItemDeprecated>
-            ]}
-          ></DropdownDeprecated>
+            onOpenChange={(isOpen) => this.setState({ isOpen })}
+            toggle={(toggleRef) => (
+              <MenuToggle ref={toggleRef} onClick={this.onToggle} isExpanded={this.state.isOpen}>
+                {this.state.selected ? this.state.selected : 'Dropdown'}
+              </MenuToggle>
+            )}
+          >
+            <DropdownList>
+              <DropdownItem key="opt-1">Option 1</DropdownItem>
+              <DropdownItem key="opt-2">Option 2</DropdownItem>
+              <DropdownItem key="opt-3">Option 3</DropdownItem>
+            </DropdownList>
+          </Dropdown>
           <TextInput id="textInput3" aria-label="input with dropdown and button" />
           <Button id="inputDropdownButton1" variant={ButtonVariant.control}>
             Button
