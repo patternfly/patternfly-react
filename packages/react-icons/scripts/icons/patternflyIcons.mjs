@@ -18,7 +18,7 @@ const renaming = {
 /**
  * @param {object} icons Icons like { screen: { "width": 1024, "height": 1024, "svgPathData": "" } }
  */
-export function convertIcons(icons) {
+function convertIcons(icons) {
   delete icons.history;
 
   Object.entries(renaming).forEach(([oldKey, newKey]) => {
@@ -29,3 +29,5 @@ export function convertIcons(icons) {
   return icons;
 }
 
+const patternflyIcons = convertIcons(pfIcons)
+export default patternflyIcons;

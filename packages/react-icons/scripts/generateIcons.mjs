@@ -1,5 +1,5 @@
 import faIcons from './icons/fontawesomeIcons.js';
-import { pfIcons } from '@patternfly/patternfly/icons/pf-icons.mjs';
+import patternflyIcons from './icons/patternflyIcons.mjs';
 import customIcons from './icons/customIcons.js';
 
 /**
@@ -8,7 +8,7 @@ import customIcons from './icons/customIcons.js';
 export function generateIcons() {
   return {
     ...faIcons,
-    ...pfIcons,
+    ...patternflyIcons,
     ...customIcons
   };
 }
