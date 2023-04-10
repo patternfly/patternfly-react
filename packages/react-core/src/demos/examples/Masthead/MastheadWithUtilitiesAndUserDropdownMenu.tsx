@@ -38,7 +38,7 @@ import {
   ToolbarGroup,
   ToolbarItem,
   MenuGroup,
-  MenuInput,
+  MenuSearchInput,
   SearchInput,
   Tooltip
 } from '@patternfly/react-core';
@@ -332,9 +332,9 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
   const menu = (
     // eslint-disable-next-line no-console
     <Menu ref={menuRef} onActionClick={onFavorite} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
-      <MenuInput>
+      <MenuSearchInput>
         <SearchInput aria-label="Filter menu items" type="search" onChange={(_event, value) => onTextChange(value)} />
-      </MenuInput>
+      </MenuSearchInput>
       <Divider />
       <MenuContent>
         {filteredFavorites.length > 0 && (
