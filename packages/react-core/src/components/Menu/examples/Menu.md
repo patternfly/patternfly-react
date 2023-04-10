@@ -3,7 +3,7 @@ id: Menu
 section: components
 subsection: menus
 cssPrefix: pf-c-menu
-propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent', 'MenuInput', 'MenuGroup']
+propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent', 'MenuSearch', 'MenuSearchInput', 'MenuGroup']
 ouia: true
 ---
 
@@ -123,7 +123,7 @@ The following menu example allows users to favorite menu items, an action that d
 
 ### Filtering with search input
 
-A [search input](/components/search-input) component can be placed within `<MenuInput>` to render a search input at the top of the menu. In the following example, the `onChange` property of the text input is passed a callback that filters menu items as a user types.
+A [search input](/components/search-input) component can be placed within `<MenuSearch>` and `<MenuSearchInput>` to render a search input at the top of the menu. In the following example, the `onChange` property of the text input is passed a callback that filters menu items as a user types.
 
 ```ts file="MenuFilteringWithSearchInput.tsx"
 

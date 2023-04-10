@@ -6,7 +6,8 @@ import {
   MenuList,
   MenuItem,
   MenuGroup,
-  MenuInput,
+  MenuSearch,
+  MenuSearchInput,
   Popper,
   Tooltip,
   Divider,
@@ -248,9 +249,11 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
   const menu = (
     // eslint-disable-next-line no-console
     <Menu ref={menuRef} onActionClick={onFavorite} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
-      <MenuInput>
-        <SearchInput aria-label="Filter menu items" type="search" onChange={(_event, value) => onTextChange(value)} />
-      </MenuInput>
+      <MenuSearch>
+        <MenuSearchInput>
+          <SearchInput aria-label="Filter menu items" type="search" onChange={(_event, value) => onTextChange(value)} />
+        </MenuSearchInput>
+      </MenuSearch>
       <Divider />
       <MenuContent>
         {filteredFavorites.length > 0 && (

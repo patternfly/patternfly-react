@@ -12,7 +12,8 @@ import {
   ToggleGroup,
   ToggleGroupItem,
   Avatar,
-  MenuInput
+  MenuSearch,
+  MenuSearchInput
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
@@ -126,7 +127,9 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
   const menu =
     toggleSelected === 'image' ? (
       <Menu ref={menuRef} id="dropdown-menu" onSelect={onSelect}>
-        <MenuInput>Unselectable text displayed at the top of the menu</MenuInput>
+        <MenuSearch>
+          <MenuSearchInput>Unselectable text displayed at the top of the menu</MenuSearchInput>
+        </MenuSearch>
         <Divider />
         <MenuContent>
           <MenuItem

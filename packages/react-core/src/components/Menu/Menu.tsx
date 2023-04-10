@@ -18,13 +18,6 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   selected?: any | any[];
   /** Callback called when an MenuItems's action button is clicked. You can also specify it within a MenuItemAction. */
   onActionClick?: (event?: any, itemId?: any, actionId?: any) => void;
-  /** Search input of menu */
-  hasSearchInput?: boolean;
-  /** A callback for when the input value changes. */
-  onSearchInputChange?: (
-    event: React.FormEvent<HTMLInputElement> | React.SyntheticEvent<HTMLButtonElement>,
-    value: string
-  ) => void;
   /** @beta Indicates if menu contains a flyout menu */
   containsFlyout?: boolean;
   /** @beta Indicating that the menu should have nav flyout styling */
@@ -72,7 +65,6 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
 }
 
 export interface MenuState {
-  searchInputValue: string | null;
   ouiaStateId: string;
   transitionMoveTarget: HTMLElement;
   flyoutRef: React.Ref<HTMLLIElement> | null;
@@ -103,7 +95,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
 
   state: MenuState = {
     ouiaStateId: getDefaultOUIAId(Menu.displayName),
-    searchInputValue: '',
     transitionMoveTarget: null,
     flyoutRef: null,
     disableHover: false,
@@ -174,7 +165,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       }
 
       const nextTarget = nextMenuChildren.filter(
-        el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+        (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
       )[0].firstChild;
 
       (nextTarget as HTMLElement).focus();
@@ -216,7 +207,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           if (activeElement.nextElementSibling && activeElement.nextElementSibling.classList.contains('pf-c-menu')) {
             const childItems = Array.from(
               activeElement.nextElementSibling.getElementsByTagName('UL')[0].children
-            ).filter(el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider')));
+            ).filter((el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider')));
 
             (activeElement as HTMLElement).tabIndex = -1;
             (childItems[0].firstChild as HTMLElement).tabIndex = 0;
@@ -234,13 +225,13 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     if (isDrilldown) {
       return this.activeMenu
         ? Array.from(this.activeMenu.getElementsByTagName('UL')[0].children).filter(
-            el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+            (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
           )
         : [];
     } else {
       return this.menuRef.current
         ? Array.from(this.menuRef.current.getElementsByTagName('LI')).filter(
-            el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+            (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
           )
         : [];
     }
@@ -293,7 +284,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           onDrillOut,
           onGetMenuHeight,
           flyoutRef: this.state.flyoutRef,
-          setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
+          setFlyoutRef: (flyoutRef) => this.setState({ flyoutRef }),
           disableHover: this.state.disableHover,
           role
         }}
@@ -306,11 +297,11 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             isActiveElement={(element: Element) =>
               document.activeElement.closest('li') === element || // if element is a basic MenuItem
               document.activeElement.parentElement === element ||
-              document.activeElement.closest('.pf-c-menu__search') === element || // if element is a MenuInput
+              document.activeElement.closest('.pf-c-menu__search') === element || // if element is a MenuSearch
               (document.activeElement.closest('ol') && document.activeElement.closest('ol').firstChild === element)
             }
             getFocusableElement={(navigableElement: Element) =>
-              (navigableElement.tagName === 'DIV' && navigableElement.querySelector('input')) || // for MenuInput
+              (navigableElement.tagName === 'DIV' && navigableElement.querySelector('input')) || // for MenuSearchInput
               ((navigableElement.firstChild as Element).tagName === 'LABEL' &&
                 navigableElement.querySelector('input')) || // for MenuItem checkboxes
               (navigableElement.firstChild as Element)
