@@ -20,6 +20,7 @@ import {
   isWithinMinMax,
   getSeconds
 } from './TimePickerUtils';
+import { HelperText, HelperTextItem } from '../HelperText';
 
 export interface TimePickerProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
@@ -242,7 +243,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   }
 
   updateFocusedIndex = (increment: number) => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const maxIndex = this.getOptions().length - 1;
       let nextIndex =
         prevState.focusedIndex !== null ? prevState.focusedIndex + increment : prevState.scrollIndex + increment;
@@ -267,9 +268,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   scrollToIndex = (index: number) => {
-    this.getOptions()[index].closest(`.${menuStyles.menuContent}`).scrollTop = this.getOptions()[
-      this.getIndexToScroll(index)
-    ].offsetTop;
+    this.getOptions()[index].closest(`.${menuStyles.menuContent}`).scrollTop =
+      this.getOptions()[this.getIndexToScroll(index)].offsetTop;
   };
 
   focusSelection = (index: number) => {
@@ -308,7 +308,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     ) {
       time = `${time}${new Date().getHours() > 11 ? pmSuffix : amSuffix}`;
     }
-    let scrollIndex = this.getOptions().findIndex(option => option.textContent === time);
+    let scrollIndex = this.getOptions().findIndex((option) => option.textContent === time);
 
     // if we found an exact match, scroll to match and return index of match for focus
     if (scrollIndex !== -1) {
@@ -325,7 +325,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         }
       }
       time = `${splitTime[0]}${delimiter}00${amPm}`;
-      scrollIndex = this.getOptions().findIndex(option => option.textContent === time);
+      scrollIndex = this.getOptions().findIndex((option) => option.textContent === time);
       if (scrollIndex !== -1) {
         this.scrollToIndex(scrollIndex);
       }
@@ -372,7 +372,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
   onToggle = (isOpen: boolean) => {
     // on close, parse and validate input
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const { timeRegex, isInvalid, timeState } = prevState;
       const { delimiter, is24Hour, includeSeconds, onChange } = this.props;
       const time = parseTime(timeState, timeRegex, delimiter, !is24Hour, includeSeconds);
@@ -551,7 +551,11 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
           </InputGroup>
           {isInvalid && (
             <div className={css(datePickerStyles.datePickerHelperText)}>
-              {!isValidFormat ? invalidFormatErrorMessage : invalidMinMaxErrorMessage}
+              <HelperText>
+                <HelperTextItem variant="error">
+                  {!isValidFormat ? invalidFormatErrorMessage : invalidMinMaxErrorMessage}
+                </HelperTextItem>
+              </HelperText>
             </div>
           )}
         </div>

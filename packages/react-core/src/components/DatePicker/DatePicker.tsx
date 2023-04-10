@@ -10,6 +10,7 @@ import { CalendarMonth, CalendarFormat } from '../CalendarMonth';
 import { useImperativeHandle } from 'react';
 import { KeyTypes } from '../../helpers';
 import { isValidDate } from '../../helpers/datetimeUtils';
+import { HelperText, HelperTextItem } from '../HelperText';
 
 /** The main date picker component. */
 
@@ -33,7 +34,7 @@ export interface DatePickerProps
   dateFormat?: (date: Date) => string;
   /** How to format the date in the text input. */
   dateParse?: (value: string) => Date;
-  /** Helper text to display alongside the date picker. */
+  /** Helper text to display alongside the date picker. Expects a HelperText component. */
   helperText?: React.ReactNode;
   /** Additional props for the text input. */
   inputProps?: TextInputProps;
@@ -273,7 +274,13 @@ const DatePickerBase = (
         </div>
       </Popover>
       {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
-      {errorText.trim() && <div className={css(styles.datePickerHelperText)}>{errorText}</div>}
+      {errorText.trim() && (
+        <div className={styles.datePickerHelperText}>
+          <HelperText>
+            <HelperTextItem variant="error">{errorText}</HelperTextItem>
+          </HelperText>
+        </div>
+      )}
     </div>
   );
 };
