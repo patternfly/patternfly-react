@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.60 (2023-04-10)
+
+### Bug Fixes
+
+- **demo:** fixed MastheadWithUtilitiesAndUserDropdownMenu demo ([#8935](https://github.com/patternfly/patternfly-react/issues/8935)) ([6f4c84e](https://github.com/patternfly/patternfly-react/commit/6f4c84e1cbde432311310cb28935e3a2258debda))
+
+### Features
+
+- **Datepicker, Timepicker:** use HelperText ([#8833](https://github.com/patternfly/patternfly-react/issues/8833)) ([114de80](https://github.com/patternfly/patternfly-react/commit/114de80ec1d6889992258045f0bd26ccc0cddfbc))
+- **Menu:** match css structure ([#8820](https://github.com/patternfly/patternfly-react/issues/8820)) ([9b64ccf](https://github.com/patternfly/patternfly-react/commit/9b64ccfc525580aefd05b9468eb43c0c3dea3fd3))
+
 # [5.0.0-alpha.59](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.58...@patternfly/react-core@5.0.0-alpha.59) (2023-04-07)
 
 ### Bug Fixes

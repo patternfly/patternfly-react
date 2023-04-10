@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.44 (2023-04-10)
+
+### Features
+
+- **Menu:** match css structure ([#8820](https://github.com/patternfly/patternfly-react/issues/8820)) ([9b64ccf](https://github.com/patternfly/patternfly-react/commit/9b64ccfc525580aefd05b9468eb43c0c3dea3fd3))
+
 # [5.0.0-alpha.43](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.42...demo-app-ts@5.0.0-alpha.43) (2023-04-07)
 
 ### Bug Fixes

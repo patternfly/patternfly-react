@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.22 (2023-04-10)
+
+### Features
+
+- **Menu:** match css structure ([#8820](https://github.com/patternfly/patternfly-react/issues/8820)) ([9b64ccf](https://github.com/patternfly/patternfly-react/commit/9b64ccfc525580aefd05b9468eb43c0c3dea3fd3))
+
 # [5.0.0-alpha.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.20...@patternfly/react-integration@5.0.0-alpha.21) (2023-04-07)
 
 ### Bug Fixes
