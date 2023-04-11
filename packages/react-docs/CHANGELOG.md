@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.70](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.69...@patternfly/react-docs@6.0.0-alpha.70) (2023-04-11)
+
+### Bug Fixes
+
+- **docs-framework:** add back props tables and fix errors ([#8937](https://github.com/patternfly/patternfly-react/issues/8937)) ([43e8ec4](https://github.com/patternfly/patternfly-react/commit/43e8ec47c3d805dbd3d21f92930830a1ecb11578))
+
 # [6.0.0-alpha.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.68...@patternfly/react-docs@6.0.0-alpha.69) (2023-04-11)
 
 **Note:** Version bump only for package @patternfly/react-docs
