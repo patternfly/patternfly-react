@@ -33,7 +33,7 @@
     "@patternfly/react-tokens": "^5.0.0-alpha.6"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^2.0.0-alpha.14",
+    "@patternfly/documentation-framework": "^2.0.0-alpha.18",
     "@patternfly/patternfly-a11y": "4.3.1",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2"
