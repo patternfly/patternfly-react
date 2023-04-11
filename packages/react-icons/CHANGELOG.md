@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.10 (2023-04-11)
+
+### Bug Fixes
+
+- **icons:** fixed pficons naming overrides ([#8932](https://github.com/patternfly/patternfly-react/issues/8932)) ([1c9c9cb](https://github.com/patternfly/patternfly-react/commit/1c9c9cb7909a26d3bc4ad340d0656c0ec31d9e58))
+
 # 5.0.0-alpha.9 (2023-04-06)
 
 **Note:** Version bump only for package @patternfly/react-icons
