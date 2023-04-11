@@ -362,8 +362,7 @@ import {
   PaginationVariant,
   Text,
   TextContent,
-  Select,
-  SelectVariant
+  MenuToggle
 } from '@patternfly/react-core';
 import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -1003,33 +1002,11 @@ class ColumnManagementAction extends React.Component {
           <ToolbarItem variant="overflow-menu">
             <OverflowMenu breakpoint="md">
               <OverflowMenuItem isPersistent>
-                <Select
-                  id="page-layout-table-draggable-column-management-action-toolbar-top-select-checkbox-toggle"
-                  variant={SelectVariant.single}
-                  onToggle={() => {}}
-                  aria-label="Select Input"
-                  aria-labelledby="page-layout-table-draggable-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-                  placeholderText={
-                    <>
-                      <FilterIcon /> Name
-                    </>
-                  }
-                />
+                <MenuToggle><FilterIcon /> Name</MenuToggle>
               </OverflowMenuItem>
-              {/*<OverflowMenuItem> TODO: replace with select after #8073
-                <OptionsMenu
-                  id="page-layout-table-draggable-column-management-action-toolbar-top-options-menu-toggle"
-                  isPlain
-                  menuItems={[]}
-                  toggle={
-                    <OptionsMenuToggle
-                      toggleTemplate={<SortAmountDownIcon aria-hidden="true" />}
-                      aria-label="Sort by"
-                      hideCaret
-                    />
-                  }
-                />
-              </OverflowMenuItem> */}
+              <OverflowMenuItem> 
+                <MenuToggle variant="plain" aria-label="Sort columns"><SortAmountDownIcon aria-hidden="true" /></MenuToggle>
+              </OverflowMenuItem>
               <OverflowMenuGroup groupType="button" isPersistent>
                 <OverflowMenuItem>
                   <Button variant="primary">Action</Button>
@@ -1116,7 +1093,6 @@ import {
   Title,
   Select,
   SelectOption,
-  SelectVariant,
   SearchInput,
   EmptyState,
   EmptyStateActions,
@@ -1184,22 +1160,22 @@ class FilterTableDemo extends React.Component {
       }
     };
 
-    this.onCategoryToggle = (isOpen) => {
+    this.onCategoryToggle = () => {
       this.setState({
-        isCategoryDropdownOpen: isOpen
+        isCategoryDropdownOpen: !this.state.isCategoryDropdownOpen
       });
     };
 
     this.onCategorySelect = (event) => {
       this.setState({
         currentCategory: event.target.innerText,
-        isCategoryDropdownOpen: !this.state.isCategoryDropdownOpen
+        isCategoryDropdownOpen: false
       });
     };
 
-    this.onFilterToggle = (isOpen) => {
+    this.onFilterToggle = () => {
       this.setState({
-        isFilterDropdownOpen: isOpen
+        isFilterDropdownOpen: !this.state.isFilterDropdownOpen
       });
     };
 
@@ -1237,7 +1213,8 @@ class FilterTableDemo extends React.Component {
           filters: {
             ...prevState.filters,
             status: checked ? [...prevSelections, selection] : prevSelections.filter((value) => value !== selection)
-          }
+          },
+          isFilterDropdownOpen: false
         };
       });
     };
@@ -1266,7 +1243,8 @@ class FilterTableDemo extends React.Component {
           filters: {
             ...prevState.filters,
             ['location']: [selection]
-          }
+          },
+          isFilterDropdownOpen: false
         };
       });
       this.onFilterSelect();
@@ -1277,21 +1255,33 @@ class FilterTableDemo extends React.Component {
     const { isCategoryDropdownOpen, currentCategory } = this.state;
 
     const categoryMenuItems = [
-      <SelectOption key="cat1" value="Location" />,
-      <SelectOption key="cat2" value="Name" />,
-      <SelectOption key="cat3" value="Status" />
+      <SelectOption key="cat1" itemId="Location">Location</SelectOption>,
+      <SelectOption key="cat2" itemId="Name">Name</SelectOption>,
+      <SelectOption key="cat3" itemId="Status">Status</SelectOption>
     ];
 
     return (
       <ToolbarItem>
         <Select
           onSelect={this.onCategorySelect}
-          selections={currentCategory}
-          position={DropdownPosition.left}
-          onToggle={this.onCategoryToggle}
+          selected={currentCategory}
+          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            <MenuToggle
+              ref={toggleRef}
+              onClick={this.onCategoryToggle}
+              isExpanded={isCategoryDropdownOpen}
+              icon={<FilterIcon />}
+              style={
+                {
+                  width: '100%',
+                  verticalAlign: 'text-bottom'
+                } as React.CSSProperties
+              }
+            >
+              {currentCategory}
+            </MenuToggle>
+          )}
           isOpen={isCategoryDropdownOpen}
-          toggleIcon={<FilterIcon />}
-          style={{ width: '100%' }}
         >
           {categoryMenuItems}
         </Select>
@@ -1303,19 +1293,54 @@ class FilterTableDemo extends React.Component {
     const { currentCategory, isFilterDropdownOpen, inputValue, filters } = this.state;
 
     const locationMenuItems = [
-      <SelectOption key="raleigh" value="Raleigh" />,
-      <SelectOption key="westford" value="Westford" />,
-      <SelectOption key="boston" value="Boston" />,
-      <SelectOption key="brno" value="Brno" />,
-      <SelectOption key="bangalore" value="Bangalore" />
+      <SelectOption key="raleigh" itemId="Raleigh">Raleigh</SelectOption>,
+      <SelectOption key="westford" itemId="Westford">Westford</SelectOption>,
+      <SelectOption key="boston" itemId="Boston">Boston</SelectOption>,
+      <SelectOption key="brno" itemId="Brno">Brno</SelectOption>,
+      <SelectOption key="bangalore" itemId="Bangalore">Bangalore</SelectOption>
     ];
 
     const statusMenuItems = [
-      <SelectOption key="statusRunning" value="Running" />,
-      <SelectOption key="statusStopped" value="Stopped" />,
-      <SelectOption key="statusDown" value="Down" />,
-      <SelectOption key="statusDegraded" value="Degraded" />,
-      <SelectOption key="statusMaint" value="Needs Maintainence" />
+      <SelectOption 
+        hasCheckbox 
+        key="statusRunning" 
+        itemId="Running" 
+        isSelected={filters.status.includes("Running")}
+      >
+        Running
+      </SelectOption>,
+      <SelectOption 
+        hasCheckbox 
+        key="statusStopped" 
+        itemId="Stopped"
+        isSelected={filters.status.includes("Stopped")}
+      >
+        Stopped
+      </SelectOption>,
+      <SelectOption 
+        hasCheckbox 
+        key="statusDown" 
+        itemId="Down"
+        isSelected={filters.status.includes("Down")}
+      >
+        Down
+      </SelectOption>,
+      <SelectOption 
+        hasCheckbox 
+        key="statusDegraded" 
+        itemId="Degraded"
+        isSelected={filters.status.includes("Degraded")}
+      >
+        Degraded
+      </SelectOption>,
+      <SelectOption 
+        hasCheckbox 
+        key="statusMaint" 
+        itemId="Needs Maintainence"
+        isSelected={filters.status.includes("Needs Maintainence")}
+      >
+        Needs Maintainence
+      </SelectOption>
     ];
 
     return (
@@ -1328,11 +1353,25 @@ class FilterTableDemo extends React.Component {
         >
           <Select
             aria-label="Location"
-            onToggle={this.onFilterToggle}
             onSelect={this.onLocationSelect}
-            selections={filters.location[0]}
+            selected={filters.location[0]}
             isOpen={isFilterDropdownOpen}
-            placeholderText="Any"
+            minWidth="100px"
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={this.onFilterToggle}
+                isExpanded={isFilterDropdownOpen}
+                style={
+                  {
+                    width: '100%',
+                    verticalAlign: 'text-bottom'
+                  } as React.CSSProperties
+                }
+              >
+                {filters.location[0] || `Any`}
+              </MenuToggle>
+            )}
           >
             {locationMenuItems}
           </Select>
@@ -1361,13 +1400,28 @@ class FilterTableDemo extends React.Component {
           showToolbarItem={currentCategory === 'Status'}
         >
           <Select
-            variant={SelectVariant.checkbox}
             aria-label="Status"
-            onToggle={this.onFilterToggle}
-            onSelect={this.onStatusSelect}
-            selections={filters.status}
             isOpen={isFilterDropdownOpen}
-            placeholderText="Filter by status"
+            minWidth="100px"
+            onSelect={this.onStatusSelect}
+            selected={filters.status}
+            minWidth="200px"
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={this.onFilterToggle}
+                isExpanded={isFilterDropdownOpen}
+                style={
+                  {
+                    width: '100%',
+                    verticalAlign: 'text-bottom'
+                  } as React.CSSProperties
+                }
+              >
+                Filter by status
+                {filters.status.length > 0 && <Badge isRead>{filters.status.length}</Badge>}
+              </MenuToggle>
+            )}
           >
             {statusMenuItems}
           </Select>
@@ -1382,7 +1436,13 @@ class FilterTableDemo extends React.Component {
       <Toolbar id="toolbar-with-chip-groups" clearAllFilters={this.onDelete} collapseListedFiltersBreakpoint="xl">
         <ToolbarContent>
           <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
-            <ToolbarGroup variant="filter-group">
+            <ToolbarGroup 
+              variant="filter-group"
+              style={{
+                lineHeight: '22px',
+                alignItems: 'center'
+              } as React.CSSProperties}
+            >
               {this.buildCategoryDropdown()}
               {this.buildFilterDropdown()}
             </ToolbarGroup>

@@ -4,10 +4,10 @@ import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import { SelectOptionObject, SelectOption } from './SelectOption';
 import { SelectConsumer, SelectPosition, SelectVariant, SelectContextInterface } from './selectConstants';
-import { PickOptional } from '../../helpers/typeUtils';
+import { PickOptional } from '../../../helpers/typeUtils';
 
 import { SelectGroup } from './SelectGroup';
-import { Divider } from '../Divider/Divider';
+import { Divider } from '../../../components/Divider/Divider';
 
 export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'checked' | 'selected' | 'ref'> {
   /** Content rendered inside the SelectMenu */

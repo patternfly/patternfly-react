@@ -3,7 +3,15 @@ import { Table, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-tabl
 import {
   Toolbar,
   ToolbarContent,
+  ToolbarItem,
+  Select,
+  SelectGroup,
+  SelectList,
+  SelectOption,
+  MenuToggle,
+  MenuToggleElement
 } from '@patternfly/react-core';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 interface Repository {
   name: string;
@@ -28,6 +36,8 @@ export const TableSortableCustom: React.FunctionComponent = () => {
     workspaces: 'Workspaces',
     lastCommit: 'Last commit'
   };
+
+  const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
 
   // Index of the currently sorted column
   // Note: if you intend to make columns reorderable, you may instead want to use a non-numeric key
@@ -78,7 +88,7 @@ export const TableSortableCustom: React.FunctionComponent = () => {
     },
     onSort: (_event, index, direction) => {
       setActiveSortIndex(index);
-      setActiveSortDirection(direction);
+      setActiveSortDirection(direction as 'desc' | 'asc');
     },
     columnIndex
   });
@@ -87,56 +97,63 @@ export const TableSortableCustom: React.FunctionComponent = () => {
     <React.Fragment>
       <Toolbar id="toolbar">
         <ToolbarContent>
-          {/* <ToolbarItem> TODO: replace with select after #8073
-            <OptionsMenu
-              id="options-menu-multiple-options-example"
-              menuItems={[
-                <OptionsMenuItemGroup key="first group" aria-label="Sort column">
-                  {Object.values(columnNames).map((columnName, columnIndex) => (
-                    <OptionsMenuItem
-                      key={columnName}
+          <ToolbarItem>
+            <Select
+              isOpen={isSortDropdownOpen}
+              selected={[activeSortDirection, activeSortIndex]}
+              onOpenChange={isOpen => setIsSortDropdownOpen(isOpen)}
+              onSelect={(event, itemId) => {
+                if (itemId === 'asc' || itemId === 'desc') {
+                  setActiveSortDirection(itemId as 'desc' | 'asc');
+                } else {
+                  setActiveSortIndex(itemId as number);
+                  setActiveSortDirection(activeSortDirection !== null ? activeSortDirection : 'asc');                }
+              }}
+              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  onClick={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
+                  isExpanded={isSortDropdownOpen}
+                  variant="plain"
+                  aria-label="Sort columns"
+                >
+                  <SortAmountDownIcon />
+                </MenuToggle>
+              )}
+            >
+              <SelectGroup label="Sort column">
+                <SelectList>
+                  {Object.values(columnNames).map((column, columnIndex) => (
+                    <SelectOption
+                      key={column}
+                      itemId={columnIndex}
                       isSelected={activeSortIndex === columnIndex}
-                      onSelect={() => {
-                        setActiveSortIndex(columnIndex);
-                        setActiveSortDirection(activeSortDirection !== null ? activeSortDirection : 'asc');
-                      }}
                     >
-                      {columnName}
-                    </OptionsMenuItem>
+                      {column}
+                    </SelectOption>
                   ))}
-                </OptionsMenuItemGroup>,
-                <OptionsMenuSeparator key="separator" />,
-                <OptionsMenuItemGroup key="second group" aria-label="Sort direction">
-                  <OptionsMenuItem
-                    onSelect={() => setActiveSortDirection('asc')}
+                </SelectList>
+              </SelectGroup>
+              <SelectGroup label="Sort direction">
+                <SelectList>
+                  <SelectOption
                     isSelected={activeSortDirection === 'asc'}
-                    id="ascending"
+                    itemId="asc"
                     key="ascending"
                   >
                     Ascending
-                  </OptionsMenuItem>
-                  <OptionsMenuItem
-                    onSelect={() => setActiveSortDirection('desc')}
+                  </SelectOption>
+                  <SelectOption
                     isSelected={activeSortDirection === 'desc'}
-                    id="descending"
+                    itemId="desc"
                     key="descending"
                   >
                     Descending
-                  </OptionsMenuItem>
-                </OptionsMenuItemGroup>
-              ]}
-              isOpen={isSortDropdownOpen}
-              toggle={
-                <OptionsMenuToggle
-                  hideCaret
-                  onToggle={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
-                  toggleTemplate={<SortAmountDownIcon />}
-                />
-              }
-              isPlain
-              isGrouped
-            />
-          </ToolbarItem> */}
+                  </SelectOption>
+                </SelectList>
+              </SelectGroup>
+            </Select>
+          </ToolbarItem>
         </ToolbarContent>
       </Toolbar>
       <Table aria-label="Sortable table custom toolbar">

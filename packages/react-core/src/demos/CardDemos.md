@@ -1254,7 +1254,10 @@ import {
   StackItem,
   Divider,
   Select,
-  SelectOption
+  SelectList,
+  SelectOption,
+  MenuToggle,
+  MenuToggleElement
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import { Chart, ChartStack, ChartBar, ChartTooltip } from '@patternfly/react-charts';
@@ -1266,21 +1269,32 @@ import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_r
 const UtilizationCard3: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const selectItems = [
-    <SelectOption value="Last hour" key="option1" />,
-    <SelectOption value="Last 6 hours" key="option2" />,
-    <SelectOption value="Last 24 hours" key="option3" />,
-    <SelectOption value="Last 7 days" key="option4" />
-  ];
+  const selectItems = (
+    <SelectList>
+      <SelectOption key="option1" itemId="Last hour">Last hour</SelectOption>
+      <SelectOption key="option2" itemId="Last 6 hours">Last 6 hours</SelectOption>
+      <SelectOption key="option3" itemId="Last 24 hours">Last 24 hours</SelectOption>
+      <SelectOption key="option4" itemId="Last 7 days">Last 7 days</SelectOption>
+    </SelectList>
+  );
+  
+  const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
+    <MenuToggle
+      ref={toggleRef}
+      onClick={() => setIsOpen(!isOpen)}
+      isExpanded={isOpen}
+      variant="plainText"
+    >
+      Filter
+    </MenuToggle>
+  );
 
   const headerActions = (
     <Select
       onSelect={() => setIsOpen(!isOpen)}
-      onToggle={() => setIsOpen(!isOpen)}
+      onOpenChange={setIsOpen}
       isOpen={isOpen}
-      placeholderText="Filter"
-      position="right"
-      isPlain
+      toggle={toggle}
     >
       {selectItems}
     </Select>
@@ -1454,7 +1468,6 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
   </GalleryItem>
 </Gallery>;
 ```
-
 ### Nested cards
 
 ```js
@@ -2523,28 +2536,42 @@ import {
   FlexItem,
   Divider,
   Select,
-  SelectOption
+  SelectList,
+  SelectOption,
+  MenuToggle,
+  MenuToggleElement
 } from '@patternfly/react-core';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 const TrendCard1: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const selectItems = [
-    <SelectOption value="Last hour" key="option1" />,
-    <SelectOption value="Last 6 hours" key="option2" />,
-    <SelectOption value="Last 24 hours" key="option3" />,
-    <SelectOption value="Last 7 days" key="option4" />
-  ];
+  const selectItems = (
+    <SelectList>
+      <SelectOption key="option1" itemId="Last hour">Last hour</SelectOption>
+      <SelectOption key="option2" itemId="Last 6 hours">Last 6 hours</SelectOption>
+      <SelectOption key="option3" itemId="Last 24 hours">Last 24 hours</SelectOption>
+      <SelectOption key="option4" itemId="Last 7 days">Last 7 days</SelectOption>
+    </SelectList>
+  );
+
+  const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
+    <MenuToggle
+      ref={toggleRef}
+      onClick={() => setIsOpen(!isOpen)}
+      isExpanded={isOpen}
+      variant="plainText"
+    >
+      Filter
+    </MenuToggle>
+  );
 
   const headerActions = (
     <Select
       onSelect={() => setIsOpen(!isOpen)}
-      onToggle={() => setIsOpen(!isOpen)}
-      placeholderText="Filter"
+      onOpenChange={setIsOpen}
       isOpen={isOpen}
-      position="right"
-      isPlain
+      toggle={toggle}
     >
       {selectItems}
     </Select>
@@ -2701,8 +2728,10 @@ import {
   DescriptionListTerm,
   DescriptionListDescription,
   Select,
+  SelectList,
   SelectOption,
-  Divider
+  Divider,
+  MenuToggle
 } from '@patternfly/react-core';
 
 CardLogViewDemo = () => {
@@ -2716,21 +2745,32 @@ CardLogViewDemo = () => {
     setIsOpen(isOpen);
   };
 
-  const selectItems = [
-    <SelectOption value="Most recent" key="option1" />,
-    <SelectOption value="Last 6 hours" key="option2" />,
-    <SelectOption value="Last 24 hours" key="option3" />,
-    <SelectOption value="Last 7 days" key="option4" />
-  ];
+  const selectItems = (
+    <SelectList>
+      <SelectOption key="option1" itemId="Last hour">Last hour</SelectOption>
+      <SelectOption key="option2" itemId="Last 6 hours">Last 6 hours</SelectOption>
+      <SelectOption key="option3" itemId="Last 24 hours">Last 24 hours</SelectOption>
+      <SelectOption key="option4" itemId="Last 7 days">Last 7 days</SelectOption>
+    </SelectList>
+  );
+
+  const toggle = (toggleRef) => (
+    <MenuToggle
+      ref={toggleRef}
+      onClick={() => setIsOpen(!isOpen)}
+      isExpanded={isOpen}
+      variant="plainText"
+    >
+      Filter
+    </MenuToggle>
+  );
 
   const headerActions = (
     <Select
-      onSelect={onActionSelect}
-      onToggle={onActionToggle}
-      placeholderText="Most recent"
+      onSelect={() => setIsOpen(!isOpen)}
+      onOpenChange={setIsOpen}
       isOpen={isOpen}
-      position="right"
-      isPlain
+      toggle={toggle}
     >
       {selectItems}
     </Select>
@@ -2819,8 +2859,10 @@ import {
   DescriptionListDescription,
   Spinner,
   Select,
+  SelectList,
   SelectOption,
-  Divider
+  Divider,
+  MenuToggle
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
@@ -2836,20 +2878,31 @@ CardEventViewDemo = () => {
     setIsOpen(isOpen);
   };
 
-  const selectItems = [
-    <SelectOption value="Success" key="option1" />,
-    <SelectOption value="Error" key="option2" />,
-    <SelectOption value="Warning" key="option3" />
-  ];
+  const selectItems = (
+    <SelectList>
+      <SelectOption itemId="Success" key="option1">Success</SelectOption>
+      <SelectOption itemId="Error" key="option2">Error</SelectOption>
+      <SelectOption itemId="Warning" key="option3">Error</SelectOption>
+    </SelectList>
+  );
+
+  const toggle = (toggleRef) => (
+    <MenuToggle
+      ref={toggleRef}
+      onClick={() => setIsOpen(!isOpen)}
+      isExpanded={isOpen}
+      variant="plainText"
+    >
+      Status
+    </MenuToggle>
+  );
 
   const headerActions = (
     <Select
-      onSelect={onActionSelect}
-      onToggle={onActionToggle}
-      placeholderText="Status"
+      onSelect={() => setIsOpen(!isOpen)}
+      onOpenChange={setIsOpen}
       isOpen={isOpen}
-      position="right"
-      isPlain
+      toggle={toggle}
     >
       {selectItems}
     </Select>

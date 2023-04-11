@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { MenuListProps, MenuList } from '../../../components/Menu';
+import { MenuListProps, MenuList } from '../Menu';
 
 export interface SelectListProps extends MenuListProps {
   /** Anything which can be rendered in a select list */

@@ -62,7 +62,6 @@ Often, it makes sense to group sets of like items to create desired associations
 ```ts file="./ToolbarGroups.tsx"
 
 ```
-
 ## Examples with toggle groups and filters
 
 A toggle group can be used when you want to collapse a set of items into an overlay panel at a certain breakpoint. This allows complex toolbars with multiple items and groups of items to be responsive. A toggle group is useful for containing filter controls, for example. When the toolbar responds to adapt to a mobile viewport, the contents contained in a toggle group will collapse into an overlay panel that can be toggled by clicking the Filter icon.

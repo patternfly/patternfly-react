@@ -9,7 +9,10 @@ import * as React from 'react';
 import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { PopoverProps } from '@patternfly/react-core/dist/esm/components/Popover';
 import { DropdownPosition, DropdownDirection } from '@patternfly/react-core/dist/esm/deprecated/components/Dropdown';
-import { SelectProps, SelectOptionObject } from '@patternfly/react-core/dist/esm/components/Select';
+import {
+  SelectOptionObject,
+  SelectProps
+} from '@patternfly/react-core/dist/esm/deprecated/components/Select';
 import { Table } from '../Table';
 import { Thead } from '../Thead';
 import { Tbody } from '../Tbody';

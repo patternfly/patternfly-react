@@ -1,36 +1,24 @@
-import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Select/select';
+import React from 'react';
 import { css } from '@patternfly/react-styles';
+import { MenuGroupProps, MenuGroup } from '../Menu';
 
-import { SelectConsumer, SelectVariant } from './selectConstants';
-
-export interface SelectGroupProps extends React.HTMLProps<HTMLDivElement> {
-  /** Checkboxes within group. Must be React.ReactElement<SelectOptionProps>[] */
-  children?: React.ReactNode;
-  /** Additional classes added to the CheckboxSelectGroup control */
+export interface SelectGroupProps extends Omit<MenuGroupProps, 'ref'> {
+  /** Anything which can be rendered in a select group */
+  children: React.ReactNode;
+  /** Classes applied to root element of select group */
   className?: string;
-  /** Group label */
+  /** Label of the select group */
   label?: string;
-  /** ID for title label */
-  titleId?: string;
 }
 
 export const SelectGroup: React.FunctionComponent<SelectGroupProps> = ({
-  children = [],
-  className = '',
-  label = '',
-  titleId = '',
+  children,
+  className,
+  label,
   ...props
 }: SelectGroupProps) => (
-  <SelectConsumer>
-    {({ variant }) => (
-      <div {...props} className={css(styles.selectMenuGroup, className)}>
-        <div className={css(styles.selectMenuGroupTitle)} id={titleId} aria-hidden>
-          {label}
-        </div>
-        {variant === SelectVariant.checkbox ? children : <ul role="listbox">{children}</ul>}
-      </div>
-    )}
-  </SelectConsumer>
+  <MenuGroup className={css(className)} label={label} {...props}>
+    {children}
+  </MenuGroup>
 );
 SelectGroup.displayName = 'SelectGroup';

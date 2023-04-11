@@ -7,20 +7,18 @@ import {
   Flex,
   FlexItem,
   MenuToggle,
+  MenuToggleElement,
+  PageSection,
+  Pagination,
+  SelectOption,
+  SelectList,
+  SelectGroup,
+  Text,
+  TextContent,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
-  ToolbarItem,
-  Pagination,
-  Text,
-  TextContent,
-  OverflowMenu,
-  OverflowMenuContent,
-  OverflowMenuControl,
-  OverflowMenuDropdownItem,
-  OverflowMenuGroup,
-  OverflowMenuItem,
-  PageSection
+  ToolbarItem
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { rows, columns } from '../../examples/Data.jsx';
@@ -29,6 +27,7 @@ import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
@@ -125,89 +124,96 @@ export const ComposableTableSortable = () => {
   const tableToolbar = (
     <Toolbar id="sortable-toolbar">
       <ToolbarContent>
-        {/* <ToolbarItem visibility={{ md: 'hidden' }}> TODO: replace with select after #8073
-          <OptionsMenu
-            id="options-menu-multiple-options-example"
-            menuItems={[
-              <OptionsMenuItemGroup key="first group" aria-label="Sort column">
+        <ToolbarItem visibility={{ md: 'hidden' }}>
+          <Select
+            isOpen={isSortDropdownOpen}
+            selected={[activeSortDirection, activeSortIndex]}
+            onOpenChange={isOpen => setIsSortDropdownOpen(isOpen)}
+            onSelect={(event, itemId) => {
+              if (itemId === 'asc' || itemId === 'desc') {
+                onSort(event, activeSortIndex, itemId);
+              } else {
+                onSort(event, itemId, activeSortDirection !== 'none' ? activeSortDirection : 'asc');
+              }
+            }}
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
+                isExpanded={isSortDropdownOpen}
+                variant="plain"
+              >
+                <SortAmountDownIcon />
+              </MenuToggle>
+            )}
+          >
+            <SelectGroup label="Sort column">
+              <SelectList>
                 {columns.map((column, columnIndex) => (
-                  <OptionsMenuItem
+                  <SelectOption
                     key={column}
+                    itemId={columnIndex}
                     isSelected={activeSortIndex === columnIndex}
-                    onSelect={evt =>
-                      onSort(evt, columnIndex, activeSortDirection !== 'none' ? activeSortDirection : 'asc')
-                    }
                   >
                     {column}
-                  </OptionsMenuItem>
+                  </SelectOption>
                 ))}
-              </OptionsMenuItemGroup>,
-              <OptionsMenuSeparator key="separator" />,
-              <OptionsMenuItemGroup key="second group" aria-label="Sort direction">
-                <OptionsMenuItem
-                  onSelect={evt => onSort(evt, activeSortIndex, 'asc')}
+              </SelectList>
+            </SelectGroup>
+            <SelectGroup label="Sort direction">
+              <SelectList>
+                <SelectOption
                   isSelected={activeSortDirection === 'asc'}
-                  id="ascending"
+                  itemId="asc"
                   key="ascending"
                 >
                   Ascending
-                </OptionsMenuItem>
-                <OptionsMenuItem
-                  onSelect={evt => onSort(evt, activeSortIndex, 'desc')}
+                </SelectOption>
+                <SelectOption
                   isSelected={activeSortDirection === 'desc'}
-                  id="descending"
+                  itemId="desc"
                   key="descending"
                 >
                   Descending
-                </OptionsMenuItem>
-              </OptionsMenuItemGroup>
-            ]}
-            isOpen={isSortDropdownOpen}
-            toggle={
-              <OptionsMenuToggle
-                hideCaret
-                onToggle={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
-                toggleTemplate={<SortAmountDownIcon />}
-              />
-            }
-            isPlain
-            isGrouped
-            menuAppendTo="parent"
-            isFlipEnabled
-          />
-        </ToolbarItem> */}
-        <OverflowMenu breakpoint="lg">
-          <OverflowMenuContent isPersistent>
-            <OverflowMenuGroup isPersistent groupType="button">
-              <OverflowMenuItem>
-                <Button variant="primary">Create instance</Button>
-              </OverflowMenuItem>
-              <OverflowMenuItem>
-                <Button variant="secondary">Action</Button>
-              </OverflowMenuItem>
-            </OverflowMenuGroup>
-          </OverflowMenuContent>
-          <OverflowMenuControl hasAdditionalOptions>
-            <Dropdown
-              onSelect={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
-              onOpenChange={(isKebabDropdownOpen) => setIsKebabDropdownOpen(isKebabDropdownOpen)}
-              toggle={(toggleRef) => (
-                <MenuToggle
-                  ref={toggleRef}
-                  aria-label="overflow menu"
-                  variant="plain"
-                  onClick={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
-                  isExpanded={false}
-                >
-                  <EllipsisVIcon />
-                </MenuToggle>
-              )}
-              isOpen={isKebabDropdownOpen}
-            >
-              <DropdownList>{kebabDropdownItems}</DropdownList>
-            </Dropdown>
-          </OverflowMenuControl>
-        </OverflowMenu>
+                </SelectOption>
+              </SelectList>
+            </SelectGroup>
+          </Select>
+        </ToolbarItem>
+        <ToolbarItem>
+          <OverflowMenu breakpoint="lg">
+            <OverflowMenuContent isPersistent>
+              <OverflowMenuGroup isPersistent groupType="button">
+                <OverflowMenuItem>
+                  <Button variant="primary">Create instance</Button>
+                </OverflowMenuItem>
+                <OverflowMenuItem>
+                  <Button variant="secondary">Action</Button>
+                </OverflowMenuItem>
+              </OverflowMenuGroup>
+            </OverflowMenuContent>
+            <OverflowMenuControl hasAdditionalOptions>
+              <Dropdown
+                onSelect={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
+                onOpenChange={(isKebabDropdownOpen) => setIsKebabDropdownOpen(isKebabDropdownOpen)}
+                toggle={(toggleRef) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    aria-label="overflow menu"
+                    variant="plain"
+                    onClick={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
+                    isExpanded={false}
+                  >
+                    <EllipsisVIcon />
+                  </MenuToggle>
+                )}
+                isOpen={isKebabDropdownOpen}
+              >
+                <DropdownList>{kebabDropdownItems}</DropdownList>
+              </Dropdown>
+            </OverflowMenuControl>
+          </OverflowMenu>
+        </ToolbarItem>
         <ToolbarGroup variant="icon-button-group">
           <ToolbarItem>
             <Button aria-label="Edit" variant="plain" icon={<EditIcon />} />

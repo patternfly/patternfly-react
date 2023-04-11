@@ -20,6 +20,14 @@ import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import { SelectOption as SelectOptionDeprecated } from '@patternfly/react-core/deprecated';
+import { 
+  Select as NewSelect,
+  SelectGroup as NewSelectGroup,
+  SelectList  as NewSelectList,
+  SelectOption as NewSelectOption,
+} from '@patternfly/react-core/dist/esm/components/Select';
+
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -292,7 +300,7 @@ Example:
 
 ```js
 import React from 'react';
-import { SelectOption } from '@patternfly/react-core';
+import { SelectOption as SelectOptionDeprecated } from '@patternfly/react-core/deprecated';
 import {
   Table,
   TableHeader,
@@ -389,14 +397,14 @@ class EditableRowsTable extends React.Component {
                   onSelect={this.onSelect}
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => (
-                    <SelectOption
+                    <SelectOptionDeprecated
                       key={index}
                       value={option.value}
                       id={'uniqueIdRow1Cell4Option' + index}
                       isPlaceholder={option.isPlaceholder}
                     />
                   ))}
-                  onToggle={isOpen => {
+                  onToggle={(event, isOpen) => {
                     this.onToggle(isOpen, rowIndex, cellIndex);
                   }}
                   selections={props.selected}
@@ -486,7 +494,7 @@ class EditableRowsTable extends React.Component {
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => {
                     return (
-                      <SelectOption
+                      <SelectOptionDeprecated
                         key={index}
                         value={option.value}
                         id={'uniqueIdRow2Cell4Option' + index}
@@ -494,7 +502,7 @@ class EditableRowsTable extends React.Component {
                       />
                     );
                   })}
-                  onToggle={isOpen => {
+                  onToggle={(event, isOpen) => {
                     this.onToggle(isOpen, rowIndex, cellIndex);
                   }}
                   selections={props.selected}
@@ -606,14 +614,14 @@ class EditableRowsTable extends React.Component {
                   clearSelection={this.clearSelection}
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => (
-                    <SelectOption
+                    <SelectOptionDeprecated
                       key={index}
                       value={option.value}
                       id={'uniqueIdRow3Cell4Option' + index}
                       isPlaceholder={option.isPlaceholder}
                     />
                   ))}
-                  onToggle={isOpen => {
+                  onToggle={(event, isOpen) => {
                     this.onToggle(isOpen, rowIndex, cellIndex);
                   }}
                   selections={props.selected}
@@ -684,6 +692,7 @@ class EditableRowsTable extends React.Component {
         }
 
         let newSelected = Array.from(newCellProps.selected);
+        let newSelectOpen = false;
 
         switch (newCellProps.editableSelectProps.variant) {
           case 'typeaheadmulti':
@@ -693,6 +702,7 @@ class EditableRowsTable extends React.Component {
             } else {
               newSelected = newSelected.filter(el => el !== newValue);
             }
+            newSelectOpen = true;
             break;
           }
           default: {
@@ -702,6 +712,7 @@ class EditableRowsTable extends React.Component {
 
         newCellProps.editableValue = newSelected;
         newCellProps.selected = newSelected;
+        newCellProps.isSelectOpen = newSelectOpen;
       }
 
       this.setState({
@@ -720,6 +731,7 @@ class EditableRowsTable extends React.Component {
     };
 
     this.onToggle = (isOpen, rowIndex, cellIndex) => {
+      console.log("isOpen", isOpen);
       let newRows = Array.from(this.state.rows);
       newRows[rowIndex].cells[cellIndex].props.isSelectOpen = isOpen;
       this.setState({

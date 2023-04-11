@@ -1,4 +1,5 @@
-import { Select, SelectOption, SelectOptionObject, SelectGroup, SelectVariant, Checkbox } from '@patternfly/react-core';
+import { Checkbox } from '@patternfly/react-core';
+import { Select, SelectOption, SelectOptionObject, SelectGroup, SelectVariant } from '@patternfly/react-core/deprecated';
 import React, { Component } from 'react';
 
 /* eslint-disable no-console */

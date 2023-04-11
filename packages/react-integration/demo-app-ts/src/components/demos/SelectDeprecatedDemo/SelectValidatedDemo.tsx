@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Select, SelectOption, SelectVariant, StackItem, Title, ValidatedOptions } from '@patternfly/react-core';
+import {  StackItem, Title, ValidatedOptions } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
 /* eslint-disable no-console */
 export interface SelectValidatedDemoState {

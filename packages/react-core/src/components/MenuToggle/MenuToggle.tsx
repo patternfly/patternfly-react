@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-togg
 import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { BadgeProps } from '../Badge';
+import { Icon } from '../Icon';
 
 export type MenuToggleElement = HTMLDivElement | HTMLButtonElement;
 
@@ -85,7 +86,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
 
     const content = (
       <>
-        {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
+        {icon && <span className={css(styles.menuToggleIcon)}><Icon>{icon}</Icon></span>}
         {isTypeahead ? children : <span className={css(styles.menuToggleText)}>{children}</span>}
         {React.isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}
         {isTypeahead ? (

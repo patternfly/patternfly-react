@@ -3,15 +3,15 @@ import {
   Button,
   ButtonVariant,
   Select,
+  SelectList,
   SelectOption,
-  SelectOptionObject,
-  SelectVariant,
   Pagination,
   Dropdown,
   DropdownItem,
   DropdownList,
   Divider,
   MenuToggle,
+  MenuToggleElement,
   OverflowMenu,
   OverflowMenuContent,
   OverflowMenuControl,
@@ -34,24 +34,14 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 export const ToolbarStacked: React.FunctionComponent = () => {
   // toggle group - three option menus with labels, two icon buttons, Kebab menu - right aligned
   // pagination - right aligned
-  const resourceOptions = [
-    { value: 'All resources', disabled: false },
-    { value: 'Deployment', disabled: false },
-    { value: 'Pod', disabled: false }
-  ];
-
-  const statusOptions = [
-    { value: 'Running', disabled: false },
-    { value: 'New', disabled: false },
-    { value: 'Pending', disabled: false },
-    { value: 'Cancelled', disabled: false }
-  ];
+  const resourceOptions = ['All resources', 'Deployment', 'Pod'];
+  const statusOptions = ['New', 'Pending', 'Running', 'Cancelled'];
 
   const [kebabIsOpen, setKebabIsOpen] = React.useState(false);
   const [resourceIsExpanded, setResourceIsExpanded] = React.useState(false);
-  const [resourceSelected, setResourceSelected] = React.useState<string | SelectOptionObject>();
+  const [resourceSelected, setResourceSelected] = React.useState('');
   const [statusIsExpanded, setStatusIsExpanded] = React.useState(false);
-  const [statusSelected, setStatusSelected] = React.useState<string | SelectOptionObject>();
+  const [statusSelected, setStatusSelected] = React.useState('');
   const [splitButtonDropdownIsOpen, setSplitButtonDropdownIsOpen] = React.useState(false);
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(20);
@@ -60,25 +50,24 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     setKebabIsOpen(!kebabIsOpen);
   };
 
-  const onResourceToggle = (_event: any, isExpanded: boolean) => {
-    setResourceIsExpanded(isExpanded);
+  const onResourceToggle = () => {
+    setResourceIsExpanded(!resourceIsExpanded);
   };
 
-  const onResourceSelect = (_event: React.ChangeEvent | React.MouseEvent, selection: string | SelectOptionObject) => {
+  const onResourceSelect = (_event: React.ChangeEvent | React.MouseEvent, selection: string) => {
     setResourceSelected(selection);
     setResourceIsExpanded(false);
   };
 
-  const onResourceSelectDropdown = (event: React.MouseEvent<Element, MouseEvent> | undefined) => {
-    setResourceSelected(event?.target);
+  const onResourceSelectDropdown = () => {
     setResourceIsExpanded(false);
   };
 
-  const onStatusToggle = (_event: any, isExpanded: boolean) => {
-    setStatusIsExpanded(isExpanded);
+  const onStatusToggle = () => {
+    setStatusIsExpanded(!statusIsExpanded);
   };
 
-  const onStatusSelect = (_event: React.ChangeEvent | React.MouseEvent, selection: string | SelectOptionObject) => {
+  const onStatusSelect = (_event: React.ChangeEvent | React.MouseEvent, selection: string) => {
     setStatusSelected(selection);
     setStatusIsExpanded(false);
   };
@@ -142,17 +131,31 @@ export const ToolbarStacked: React.FunctionComponent = () => {
       </ToolbarItem>
       <ToolbarItem>
         <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={onResourceToggle}
+          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            <MenuToggle
+              ref={toggleRef}
+              onClick={() => onResourceToggle()}
+              isExpanded={resourceIsExpanded}
+              style={
+                {
+                  width: '150px'
+                } as React.CSSProperties
+              }
+            >
+              {resourceSelected || 'Resource'}
+            </MenuToggle>
+          )}
           onSelect={onResourceSelect}
-          selections={resourceSelected}
+          selected={resourceSelected}
+          onOpenChange={isOpen => setResourceIsExpanded(isOpen)}
           isOpen={resourceIsExpanded}
           aria-labelledby="stacked-example-resource-select"
         >
-          {resourceOptions.map((option, index) => (
-            <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-          ))}
+          <SelectList>
+            {resourceOptions.map((option, index) => (
+              <SelectOption key={index} itemId={option}>{option}</SelectOption>
+            ))}
+          </SelectList>
         </Select>
       </ToolbarItem>
       <ToolbarItem variant="label" id="stacked-example-status-select">
@@ -160,17 +163,30 @@ export const ToolbarStacked: React.FunctionComponent = () => {
       </ToolbarItem>
       <ToolbarItem>
         <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={onStatusToggle}
+          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            <MenuToggle
+              ref={toggleRef}
+              onClick={() => onStatusToggle()}
+              isExpanded={statusIsExpanded}
+              style={
+                {
+                  width: '150px'
+                } as React.CSSProperties
+              }
+            >
+              {statusSelected || 'Status'}
+            </MenuToggle>
+          )}
           onSelect={onStatusSelect}
-          selections={statusSelected}
+          onOpenChange={isOpen => setStatusIsExpanded(isOpen)}
+          selected={statusSelected}
           isOpen={statusIsExpanded}
-          aria-labelledby="stacked-example-status-select"
         >
-          {statusOptions.map((option, index) => (
-            <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-          ))}
+          <SelectList>
+            {statusOptions.map((option, index) => (
+              <SelectOption key={index} itemId={option}>{option}</SelectOption>
+            ))}
+          </SelectList>
         </Select>
       </ToolbarItem>
     </React.Fragment>
@@ -198,6 +214,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
               <OverflowMenuControl hasAdditionalOptions>
                 <Dropdown
                   onSelect={onResourceSelectDropdown}
+                  onOpenChange={(isOpen) => setKebabIsOpen(isOpen)}
                   toggle={(toggleRef) => (
                     <MenuToggle
                       ref={toggleRef}

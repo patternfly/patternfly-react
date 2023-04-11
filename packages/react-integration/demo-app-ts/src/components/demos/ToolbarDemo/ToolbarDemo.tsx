@@ -12,13 +12,13 @@ import {
   ToolbarGroup,
   ToolbarProps,
   InputGroup,
+  TextInput
+} from '@patternfly/react-core';
+import {
   Select,
   SelectOption,
   SelectOptionObject,
   SelectVariant,
-  TextInput
-} from '@patternfly/react-core';
-import {
   Dropdown as DropdownDeprecated,
   DropdownItem as DropdownItemDeprecated,
   DropdownSeparator,

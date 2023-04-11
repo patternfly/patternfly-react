@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import {
+  StackItem,
+  Title
+} from '@patternfly/react-core';
+import {
   Select,
   SelectGroup,
   SelectOption,
   SelectOptionObject,
-  SelectVariant,
-  StackItem,
-  Title
-} from '@patternfly/react-core';
+  SelectVariant
+} from '@patternfly/react-core/deprecated';
 
 /* eslint-disable no-console */
 export interface SelectViewMoreGroupedDemoState {

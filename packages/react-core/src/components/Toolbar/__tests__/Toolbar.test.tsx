@@ -8,8 +8,7 @@ import { ToolbarItem } from '../ToolbarItem';
 import { ToolbarContent } from '../ToolbarContent';
 import { ToolbarFilter } from '../ToolbarFilter';
 import { ToolbarGroup } from '../ToolbarGroup';
-import { Select, SelectVariant, SelectOption } from '../../Select';
-import { Button } from '../../Button';
+import { Button } from '../../Button/Button';
 
 describe('Toolbar', () => {
   it('should render inset', () => {
@@ -59,13 +58,6 @@ describe('Toolbar', () => {
   });
 
   it('should render with custom chip content', () => {
-    const statusMenuItems = [
-      <SelectOption key="statusNew" value="New" />,
-      <SelectOption key="statusPending" value="Pending" />,
-      <SelectOption key="statusRunning" value="Running" />,
-      <SelectOption key="statusCancelled" value="Cancelled" />
-    ];
-
     const items = (
       <React.Fragment>
         <ToolbarToggleGroup toggleIcon={<React.Fragment />} breakpoint="xl">
@@ -76,17 +68,7 @@ describe('Toolbar', () => {
               deleteChipGroup={category => {}}
               categoryName="Status"
             >
-              <Select
-                variant={SelectVariant.checkbox}
-                aria-label="Status"
-                onToggle={(isExpanded: boolean) => {}}
-                onSelect={(event, selection) => {}}
-                selections={['New', 'Pending']}
-                isOpen={true}
-                placeholderText="Status"
-              >
-                {statusMenuItems}
-              </Select>
+              test content
             </ToolbarFilter>
           </ToolbarGroup>
         </ToolbarToggleGroup>
@@ -119,9 +101,9 @@ describe('Toolbar', () => {
       </Toolbar>
     );
 
+    expect(asFragment()).toMatchSnapshot();
     // Expecting 2 matches for text because the buttons also exist in hidden expandable content for mobile view
     expect(screen.getAllByRole('button', { name: 'Save filters' }).length).toBe(2);
     expect(screen.getAllByRole('button', { name: 'Clear all filters' }).length).toBe(2);
-    expect(asFragment()).toMatchSnapshot();
   });
 });

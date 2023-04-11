@@ -1,4 +1,4 @@
-import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core/deprecated';
 import React, { Component } from 'react';
 
 /* eslint-disable no-console */
