@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.63](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.62...@patternfly/react-core@5.0.0-alpha.63) (2023-04-11)
+
+### Features
+
+- **Select:** Deprecated old select and promoted select next ([#8825](https://github.com/patternfly/patternfly-react/issues/8825)) ([6fd4eeb](https://github.com/patternfly/patternfly-react/commit/6fd4eeb85fbe88ab427737138470226f38442318))
+
 # [5.0.0-alpha.62](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.61...@patternfly/react-core@5.0.0-alpha.62) (2023-04-11)
 
 **Note:** Version bump only for package @patternfly/react-core
