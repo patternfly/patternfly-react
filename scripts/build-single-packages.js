@@ -5,7 +5,7 @@ const glob = require('glob');
 const root = process.cwd();
 const packageJson = require(`${root}/package.json`);
 
-if (!(!process.argv.includes('--config')  && process.argv.indexOf('--config') + 1 === process.argv.length)) {
+if (!(process.argv.includes('--config')  && process.argv.indexOf('--config') + 1 < process.argv.length)) {
   console.log('--config is required followed by the config file name');
   process.exit(1);
 }
