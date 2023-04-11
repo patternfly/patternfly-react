@@ -15,9 +15,12 @@ import {
   TextInput,
   HelperText,
   HelperTextItem,
-  FormHelperText
+  FormHelperText,
+  Wizard,
+  WizardStep,
+  WizardFooterWrapper,
+  useWizardContext
 } from '@patternfly/react-core';
-import { Wizard, WizardStep, WizardFooterWrapper, useWizardContext } from '@patternfly/react-core/next';
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
 
 interface ValidationProgressProps {
@@ -29,7 +32,7 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
 
   const tick = React.useCallback(() => {
     if (percentValidated < 100) {
-      setPercentValidated((prevValue) => prevValue + 20);
+      setPercentValidated(prevValue => prevValue + 20);
     }
   }, [percentValidated]);
 
@@ -180,7 +183,7 @@ export const WizardValidateOnButtonPress: React.FunctionComponent = () => {
         )}
         <SampleForm
           value={ageValue}
-          setValue={(value) => setAgeValue(value)}
+          setValue={value => setAgeValue(value)}
           isValid={!hasErrorOnSubmit || isFirstStepValid}
           setIsValid={setIsFirstStepValid}
         />

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Checkbox } from '@patternfly/react-core';
-import { Wizard, WizardStep } from '@patternfly/react-core';
+import { Checkbox, Wizard, WizardStep } from '@patternfly/react-core';
 
 interface SomeContextProps {
   isToggleStepChecked: boolean;
