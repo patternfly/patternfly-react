@@ -13,7 +13,7 @@ import {
   Alert,
   EmptyStateIcon
 } from '@patternfly/react-core';
-import { Wizard as Wz, WizardFooter as WF, WizardContextConsumer as WCC } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated, WizardFooter as WizardFooterDeprecated, WizardContextConsumer as WizardContextConsumerDeprecated } from '@patternfly/react-core/deprecated';
 
 // eslint-disable-next-line patternfly-react/import-tokens-icons
 import { CogsIcon } from '@patternfly/react-icons';
@@ -159,8 +159,8 @@ export const WizardValidateButtonPress: React.FunctionComponent = () => {
   ];
 
   const CustomFooter = (
-    <WF>
-      <WCC>
+    <WizardFooterDeprecated>
+      <WizardContextConsumerDeprecated>
         {({ activeStep, goToStepByName, onNext, onBack, onClose }) => {
           if (activeStep.name !== 'Final Step') {
             return (
@@ -189,13 +189,13 @@ export const WizardValidateButtonPress: React.FunctionComponent = () => {
             </>
           );
         }}
-      </WCC>
-    </WF>
+      </WizardContextConsumerDeprecated>
+    </WizardFooterDeprecated>
   );
 
   const title = 'Validate on button press wizard example';
   return (
-    <Wz
+    <WizardDeprecated
       navAriaLabel={`${title} steps`}
       mainAriaLabel={`${title} content`}
       onClose={closeWizard}

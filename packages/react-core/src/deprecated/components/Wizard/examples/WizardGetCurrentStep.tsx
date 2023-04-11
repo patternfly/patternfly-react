@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wizard as Wz, WizardStep } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated, WizardStep } from '@patternfly/react-core/deprecated';
 
 export const WizardGetCurrentStep: React.FunctionComponent = () => {
   const onCurrentStepChanged = ({ id }: WizardStep) => {
@@ -20,7 +20,7 @@ export const WizardGetCurrentStep: React.FunctionComponent = () => {
   ];
   const title = 'Get current step wizard example';
   return (
-    <Wz
+    <WizardDeprecated
       navAriaLabel={`${title} steps`}
       mainAriaLabel={`${title} content`}
       onClose={closeWizard}

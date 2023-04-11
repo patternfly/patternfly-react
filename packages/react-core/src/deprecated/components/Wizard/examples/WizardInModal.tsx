@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { Wizard as Wz } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
 export const WizardInModal: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -20,7 +20,7 @@ export const WizardInModal: React.FunctionComponent = () => {
       <Button variant="primary" onClick={handleModalToggle}>
         Show Modal
       </Button>
-      <Wz
+      <WizardDeprecated
         title={title}
         description="Simple Wizard Description"
         descriptionComponent="div"

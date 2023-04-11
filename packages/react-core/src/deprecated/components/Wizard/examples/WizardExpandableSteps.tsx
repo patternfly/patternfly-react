@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wizard as Wz } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
 export const WizardExpandableSteps: React.FunctionComponent = () => {
   const steps = [
@@ -23,7 +23,7 @@ export const WizardExpandableSteps: React.FunctionComponent = () => {
   ];
   const title = 'Expandable wizard example';
   return (
-    <Wz
+    <WizardDeprecated
       navAriaLabel={`${title} steps`}
       mainAriaLabel={`${title} content`}
       steps={steps}

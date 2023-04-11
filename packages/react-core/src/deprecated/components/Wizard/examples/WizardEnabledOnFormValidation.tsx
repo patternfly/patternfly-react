@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';
-import { Wizard as Wz, WizardStep } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated, WizardStep } from '@patternfly/react-core/deprecated';
 interface PrevStepInfo {
   prevId?: string | number;
   prevName: React.ReactNode;
@@ -126,7 +126,7 @@ export const WizardFormValidation: React.FunctionComponent = () => {
   ];
   const title = 'Wizard enabled on form validation example';
   return (
-    <Wz
+    <WizardDeprecated
       navAriaLabel={`${title} steps`}
       mainAriaLabel={`${title} content`}
       onClose={closeWizard}

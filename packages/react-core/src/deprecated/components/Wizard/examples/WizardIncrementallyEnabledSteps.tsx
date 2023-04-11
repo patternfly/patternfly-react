@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wizard as Wz, WizardStep } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated, WizardStep } from '@patternfly/react-core/deprecated';
 
 export const WizardIncrementallyEnabledSteps: React.FunctionComponent = () => {
   const [stepIdReached, setStepIdReached] = React.useState(1);
@@ -49,7 +49,7 @@ export const WizardIncrementallyEnabledSteps: React.FunctionComponent = () => {
   ];
   const title = 'Incrementally enabled wizard example';
   return (
-    <Wz
+    <WizardDeprecated
       navAriaLabel={`${title} steps`}
       mainAriaLabel={`${title} content`}
       onClose={closeWizard}

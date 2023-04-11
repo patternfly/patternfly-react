@@ -9,7 +9,7 @@ import {
   Progress,
   Button
 } from '@patternfly/react-core';
-import { Wizard as Wz } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 // eslint-disable-next-line patternfly-react/import-tokens-icons
 import { CogsIcon } from '@patternfly/react-icons';
 
@@ -83,7 +83,7 @@ export const WizardFinished: React.FunctionComponent = () => {
   ];
   const title = 'Finished wizard example';
   return (
-    <Wz
+    <WizardDeprecated
       navAriaLabel={`${title} steps`}
       mainAriaLabel={`${title} content`}
       onClose={closeWizard}

@@ -7,7 +7,7 @@ source: react-deprecated-demos
 import imgBrand from './imgBrand.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-import { Wizard as Wz } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
 ## Demos
 
@@ -27,7 +27,7 @@ import {
   Modal,
   ModalVariant
 } from '@patternfly/react-core';
-import { Wizard as Wz } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class BasicWizardDemo extends React.Component {
@@ -91,7 +91,7 @@ class BasicWizardDemo extends React.Component {
           aria-describedby="wiz-modal-demo-description"
           aria-labelledby="wiz-modal-demo-title"
         >
-          <Wz
+          <WizardDeprecated
             navAriaLabel={`${title} steps`}
             mainAriaLabel={`${title} content`}
             titleId="wiz-modal-demo-title"
@@ -121,7 +121,7 @@ import {
   Modal,
   ModalVariant
 } from '@patternfly/react-core';
-import { Wizard as Wz } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
 class WizardModalWithDrawerDemo extends React.Component {
   constructor(props) {
@@ -287,7 +287,7 @@ class WizardModalWithDrawerDemo extends React.Component {
         aria-describedby="wiz-modal-demo-description"
         aria-labelledby="wiz-modal-demo-title"
       >
-        <Wz
+        <WizardDeprecated
           navAriaLabel={`${title} steps`}
           hasDrawer
           isDrawerExpanded={isDrawerExpanded}
@@ -321,7 +321,7 @@ import {
   Text,
   TextContent
 } from '@patternfly/react-core';
-import { Wizard as Wz } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
 class WizardModalWithDrawerDemo extends React.Component {
   constructor(props) {
@@ -538,7 +538,7 @@ class WizardModalWithDrawerDemo extends React.Component {
         aria-describedby="wiz-modal-demo-description"
         aria-labelledby="wiz-modal-demo-title"
       >
-        <Wz
+        <WizardDeprecated
           navAriaLabel={`${title} steps`}
           hasDrawer
           isDrawerExpanded={isDrawerExpanded}
@@ -569,7 +569,7 @@ import {
   PageSectionTypes,
   PageSectionVariants
 } from '@patternfly/react-core';
-import { Wizard as Wz } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 import imgBrand from './imgBrand.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
@@ -617,7 +617,7 @@ class FullPageWizard extends React.Component {
       <React.Fragment>
         <DashboardWrapper hasPageTemplateTitle>
           <PageSection type={PageSectionTypes.wizard} variant={PageSectionVariants.light}>
-            <Wz navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} />
+            <WizardDeprecated navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} />
           </PageSection>
         </DashboardWrapper>
       </React.Fragment>
@@ -658,7 +658,7 @@ import {
   MastheadMain,
   MastheadBrand
 } from '@patternfly/react-core';
-import { Wizard as Wz } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 import imgBrand from './imgBrand.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
@@ -878,7 +878,7 @@ class FullPageWizard extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection type={PageSectionTypes.wizard} variant={PageSectionVariants.light}>
-            <Wz
+            <WizardDeprecated
               hasDrawer
               isDrawerExpanded={isDrawerExpanded}
               onExpandDrawer={this.onExpand}
@@ -926,7 +926,7 @@ import {
   MastheadMain,
   MastheadBrand
 } from '@patternfly/react-core';
-import { Wizard as Wz } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 import imgBrand from './imgBrand.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
@@ -1196,7 +1196,7 @@ class FullPageWizard extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection type={PageSectionTypes.wizard} variant={PageSectionVariants.light}>
-            <Wz
+            <WizardDeprecated
               hasDrawer
               isDrawerExpanded={isDrawerExpanded}
               onExpandDrawer={this.onExpand}
