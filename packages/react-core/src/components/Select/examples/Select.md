@@ -120,6 +120,7 @@ class SingleSelectInput extends React.Component {
           aria-labelledby={titleId}
           isDisabled={isDisabled}
           direction={direction}
+          ouiaId="SingleSelect"
         >
           {this.options}
         </Select>

@@ -24,6 +24,7 @@ export const DropdownBasic: React.FunctionComponent = () => {
           Dropdown
         </MenuToggle>
       )}
+      ouiaId="BasicDropdown"
     >
       <DropdownList>
         <DropdownItem itemId={0} key="link">

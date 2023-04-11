@@ -79,7 +79,7 @@ export const TableSortable: React.FunctionComponent = () => {
 
   // In this example, we wrap all but the 1st column and make the 1st and 3rd columns sortable just to demonstrate.
   return (
-    <Table aria-label="Sortable table">
+    <Table aria-label="Sortable table" ouiaId="SortableTable">
       <Thead>
         <Tr>
           <Th sort={getSortParams(0)}>{columnNames.name}</Th>

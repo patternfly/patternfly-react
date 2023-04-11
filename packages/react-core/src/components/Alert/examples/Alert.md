@@ -32,11 +32,11 @@ import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
 <React.Fragment>
-  <Alert title="Default alert title" />
-  <Alert variant="info" title="Info alert title" />
-  <Alert variant="success" title="Success alert title" />
-  <Alert variant="warning" title="Warning alert title" />
-  <Alert variant="danger" title="Danger alert title" />
+  <Alert title="Default alert title" ouiaId="DefaultAlert" />
+  <Alert variant="info" title="Info alert title" ouiaId="InfoAlert" />
+  <Alert variant="success" title="Success alert title" ouiaId="SuccessAlert" />
+  <Alert variant="warning" title="Warning alert title" ouiaId="WarningAlert" />
+  <Alert variant="danger" title="Danger alert title" ouiaId="DangerAlert" />
 </React.Fragment>
 ```
 
