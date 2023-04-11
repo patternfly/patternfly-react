@@ -18,7 +18,6 @@ propComponents:
     'WizardParentStep',
     'WizardSubStep',
   ]
-beta: true
 ---
 
 import {
@@ -50,8 +49,6 @@ WizardHeader
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
-
-PatternFly has two implementations of a `Wizard`. This newer `Wizard` takes a more explicit and declarative approach compared to the older implementation, which can be found under the [React deprecated](/components/wizard/react-deprecated) tab.
 
 ## Examples
 
