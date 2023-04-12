@@ -1,5 +1,6 @@
 import { CommonStyles } from './styles/common-styles';
 import { BulletStyles } from './styles/bullet-styles';
+import { BoxPlotTooltipStyles } from './styles/box-plot-tooltip-styles';
 import { DonutStyles } from './styles/donut-styles';
 import { DonutUtilizationStyles } from './styles/donut-utilization-styles';
 import { LegendTooltipStyles } from './styles/legend-tooltip-styles';
@@ -16,6 +17,12 @@ export const ChartCommonStyles = CommonStyles;
  * @private
  */
 export const ChartBulletStyles = BulletStyles;
+
+/**
+ * Legend tooltip styles
+ * @private
+ */
+export const ChartBoxPlotTooltipStyles = BoxPlotTooltipStyles;
 
 /**
  * Donut styles

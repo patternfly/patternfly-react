@@ -1,0 +1,996 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChartBar 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-chart"
+    style="height: 100%; width: 100%; pointer-events: none; position: relative;"
+  >
+    <svg
+      height="300"
+      role="img"
+      style="pointer-events: all; width: 100%; height: 100%;"
+      viewBox="0 0 450 300"
+      width="450"
+    >
+      <g
+        role="presentation"
+      >
+        <rect
+          height="55.55555555555554"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="40"
+          y="138.88888888888889"
+        />
+        <rect
+          height="33.33333333333334"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="390"
+          y="183.33333333333334"
+        />
+        <rect
+          height="66.66666666666666"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="40"
+          y="72.22222222222223"
+        />
+        <rect
+          height="44.44444444444446"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="390"
+          y="138.88888888888889"
+        />
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="50"
+            x2="50"
+            y1="72.22222222222223"
+            y2="50"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="40"
+            x2="60"
+            y1="50"
+            y2="50"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="400"
+            x2="400"
+            y1="138.88888888888889"
+            y2="105.55555555555554"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="390"
+            x2="410"
+            y1="105.55555555555554"
+            y2="105.55555555555554"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="50"
+            x2="50"
+            y1="194.44444444444443"
+            y2="216.66666666666669"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="40"
+            x2="60"
+            y1="216.66666666666669"
+            y2="216.66666666666669"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="400"
+            x2="400"
+            y1="216.66666666666669"
+            y2="250"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="390"
+            x2="410"
+            y1="250"
+            y2="250"
+          />
+        </g>
+        <line
+          role="presentation"
+          shape-rendering="auto"
+          style="stroke: var(--pf-chart-boxplot--median--stroke--Color, #151515); padding: 8px; stroke-width: 1;"
+          vector-effect="non-scaling-stroke"
+          x1="40"
+          x2="60"
+          y1="138.88888888888889"
+          y2="138.88888888888889"
+        />
+        <line
+          role="presentation"
+          shape-rendering="auto"
+          style="stroke: var(--pf-chart-boxplot--median--stroke--Color, #151515); padding: 8px; stroke-width: 1;"
+          vector-effect="non-scaling-stroke"
+          x1="390"
+          x2="410"
+          y1="183.33333333333334"
+          y2="183.33333333333334"
+        />
+      </g>
+    </svg>
+    <div
+      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+    >
+      <svg
+        height="300"
+        style="overflow: visible; width: 100%; height: 100%;"
+        viewBox="0 0 450 300"
+        width="450"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ChartBar 2`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-chart"
+    style="height: 100%; width: 100%; pointer-events: none; position: relative;"
+  >
+    <svg
+      height="300"
+      role="img"
+      style="pointer-events: all; width: 100%; height: 100%;"
+      viewBox="0 0 450 300"
+      width="450"
+    >
+      <g
+        role="presentation"
+      >
+        <rect
+          height="55.55555555555554"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="40"
+          y="138.88888888888889"
+        />
+        <rect
+          height="33.33333333333334"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="390"
+          y="183.33333333333334"
+        />
+        <rect
+          height="66.66666666666666"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="40"
+          y="72.22222222222223"
+        />
+        <rect
+          height="44.44444444444446"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="390"
+          y="138.88888888888889"
+        />
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="50"
+            x2="50"
+            y1="72.22222222222223"
+            y2="50"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="40"
+            x2="60"
+            y1="50"
+            y2="50"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="400"
+            x2="400"
+            y1="138.88888888888889"
+            y2="105.55555555555554"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="390"
+            x2="410"
+            y1="105.55555555555554"
+            y2="105.55555555555554"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="50"
+            x2="50"
+            y1="194.44444444444443"
+            y2="216.66666666666669"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="40"
+            x2="60"
+            y1="216.66666666666669"
+            y2="216.66666666666669"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="400"
+            x2="400"
+            y1="216.66666666666669"
+            y2="250"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="390"
+            x2="410"
+            y1="250"
+            y2="250"
+          />
+        </g>
+        <line
+          role="presentation"
+          shape-rendering="auto"
+          style="stroke: var(--pf-chart-boxplot--median--stroke--Color, #151515); padding: 8px; stroke-width: 1;"
+          vector-effect="non-scaling-stroke"
+          x1="40"
+          x2="60"
+          y1="138.88888888888889"
+          y2="138.88888888888889"
+        />
+        <line
+          role="presentation"
+          shape-rendering="auto"
+          style="stroke: var(--pf-chart-boxplot--median--stroke--Color, #151515); padding: 8px; stroke-width: 1;"
+          vector-effect="non-scaling-stroke"
+          x1="390"
+          x2="410"
+          y1="183.33333333333334"
+          y2="183.33333333333334"
+        />
+      </g>
+    </svg>
+    <div
+      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+    >
+      <svg
+        height="300"
+        style="overflow: visible; width: 100%; height: 100%;"
+        viewBox="0 0 450 300"
+        width="450"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders component data 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-chart"
+    style="height: 100%; width: 100%; user-select: none; pointer-events: none; position: relative;"
+  >
+    <svg
+      height="200"
+      role="img"
+      style="pointer-events: all; width: 100%; height: 100%;"
+      viewBox="0 0 300 200"
+      width="300"
+    >
+      <g
+        role="presentation"
+      >
+        <rect
+          height="8.333333333333314"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="70"
+          y="133.33333333333334"
+        />
+        <rect
+          height="30.55555555555557"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="118.33333333333331"
+          y="100"
+        />
+        <rect
+          height="13.888888888888886"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="166.66666666666666"
+          y="100"
+        />
+        <rect
+          height="8.333333333333314"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="214.99999999999997"
+          y="133.33333333333334"
+        />
+        <rect
+          height="11.111111111111128"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="70"
+          y="122.22222222222221"
+        />
+        <rect
+          height="33.33333333333334"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="118.33333333333331"
+          y="66.66666666666666"
+        />
+        <rect
+          height="11.111111111111114"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="166.66666666666666"
+          y="88.88888888888889"
+        />
+        <rect
+          height="22.22222222222223"
+          role="presentation"
+          shape-rendering="auto"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px;"
+          vector-effect="non-scaling-stroke"
+          width="20"
+          x="214.99999999999997"
+          y="111.11111111111111"
+        />
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="80"
+            x2="80"
+            y1="122.22222222222221"
+            y2="105.55555555555557"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="70"
+            x2="90"
+            y1="105.55555555555557"
+            y2="105.55555555555557"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="128.33333333333331"
+            x2="128.33333333333331"
+            y1="66.66666666666666"
+            y2="50"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="118.33333333333331"
+            x2="138.33333333333331"
+            y1="50"
+            y2="50"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="176.66666666666666"
+            x2="176.66666666666666"
+            y1="88.88888888888889"
+            y2="72.22222222222223"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="166.66666666666666"
+            x2="186.66666666666666"
+            y1="72.22222222222223"
+            y2="72.22222222222223"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="224.99999999999997"
+            x2="224.99999999999997"
+            y1="111.11111111111111"
+            y2="61.111111111111114"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--max--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="214.99999999999997"
+            x2="234.99999999999997"
+            y1="61.111111111111114"
+            y2="61.111111111111114"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="80"
+            x2="80"
+            y1="141.66666666666666"
+            y2="150"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="70"
+            x2="90"
+            y1="150"
+            y2="150"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="128.33333333333331"
+            x2="128.33333333333331"
+            y1="130.55555555555557"
+            y2="138.88888888888886"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="118.33333333333331"
+            x2="138.33333333333331"
+            y1="138.88888888888886"
+            y2="138.88888888888886"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="176.66666666666666"
+            x2="176.66666666666666"
+            y1="113.88888888888889"
+            y2="138.88888888888886"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="166.66666666666666"
+            x2="186.66666666666666"
+            y1="138.88888888888886"
+            y2="138.88888888888886"
+          />
+        </g>
+        <g>
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="224.99999999999997"
+            x2="224.99999999999997"
+            y1="141.66666666666666"
+            y2="150"
+          />
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="padding: 8px; stroke: var(--pf-chart-boxplot--min--stroke--Color, #151515); stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="214.99999999999997"
+            x2="234.99999999999997"
+            y1="150"
+            y2="150"
+          />
+        </g>
+        <line
+          role="presentation"
+          shape-rendering="auto"
+          style="stroke: var(--pf-chart-boxplot--median--stroke--Color, #151515); padding: 8px; stroke-width: 1;"
+          vector-effect="non-scaling-stroke"
+          x1="70"
+          x2="90"
+          y1="133.33333333333334"
+          y2="133.33333333333334"
+        />
+        <line
+          role="presentation"
+          shape-rendering="auto"
+          style="stroke: var(--pf-chart-boxplot--median--stroke--Color, #151515); padding: 8px; stroke-width: 1;"
+          vector-effect="non-scaling-stroke"
+          x1="118.33333333333331"
+          x2="138.33333333333331"
+          y1="100"
+          y2="100"
+        />
+        <line
+          role="presentation"
+          shape-rendering="auto"
+          style="stroke: var(--pf-chart-boxplot--median--stroke--Color, #151515); padding: 8px; stroke-width: 1;"
+          vector-effect="non-scaling-stroke"
+          x1="166.66666666666666"
+          x2="186.66666666666666"
+          y1="100"
+          y2="100"
+        />
+        <line
+          role="presentation"
+          shape-rendering="auto"
+          style="stroke: var(--pf-chart-boxplot--median--stroke--Color, #151515); padding: 8px; stroke-width: 1;"
+          vector-effect="non-scaling-stroke"
+          x1="214.99999999999997"
+          x2="234.99999999999997"
+          y1="133.33333333333334"
+          y2="133.33333333333334"
+        />
+      </g>
+      <g
+        role="presentation"
+      >
+        <line
+          role="presentation"
+          shape-rendering="auto"
+          style="stroke: var(--pf-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          vector-effect="non-scaling-stroke"
+          x1="50"
+          x2="250"
+          y1="150"
+          y2="150"
+        />
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="80"
+            x2="80"
+            y1="150"
+            y2="155"
+          />
+          <text
+            direction="inherit"
+            dx="0"
+            id="chart-axis-1-tickLabels-0"
+            x="80"
+            y="176.97"
+          >
+            <tspan
+              dx="0"
+              dy="0"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              text-anchor="middle"
+              x="80"
+            >
+              2015
+            </tspan>
+          </text>
+        </g>
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="128.33333333333331"
+            x2="128.33333333333331"
+            y1="150"
+            y2="155"
+          />
+          <text
+            direction="inherit"
+            dx="0"
+            id="chart-axis-1-tickLabels-1"
+            x="128.33333333333331"
+            y="176.97"
+          >
+            <tspan
+              dx="0"
+              dy="0"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              text-anchor="middle"
+              x="128.33333333333331"
+            >
+              2016
+            </tspan>
+          </text>
+        </g>
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="176.66666666666666"
+            x2="176.66666666666666"
+            y1="150"
+            y2="155"
+          />
+          <text
+            direction="inherit"
+            dx="0"
+            id="chart-axis-1-tickLabels-2"
+            x="176.66666666666666"
+            y="176.97"
+          >
+            <tspan
+              dx="0"
+              dy="0"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              text-anchor="middle"
+              x="176.66666666666666"
+            >
+              2017
+            </tspan>
+          </text>
+        </g>
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="224.99999999999997"
+            x2="224.99999999999997"
+            y1="150"
+            y2="155"
+          />
+          <text
+            direction="inherit"
+            dx="0"
+            id="chart-axis-1-tickLabels-3"
+            x="224.99999999999997"
+            y="176.97"
+          >
+            <tspan
+              dx="0"
+              dy="0"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              text-anchor="middle"
+              x="224.99999999999997"
+            >
+              2018
+            </tspan>
+          </text>
+        </g>
+      </g>
+      <g
+        role="presentation"
+      >
+        <line
+          role="presentation"
+          shape-rendering="auto"
+          style="stroke: var(--pf-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          vector-effect="non-scaling-stroke"
+          x1="50"
+          x2="50"
+          y1="50"
+          y2="150"
+        />
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="50"
+            x2="45"
+            y1="138.88888888888886"
+            y2="138.88888888888886"
+          />
+          <text
+            direction="inherit"
+            dx="0"
+            id="chart-axis-2-tickLabels-0"
+            x="35"
+            y="143.85888888888886"
+          >
+            <tspan
+              dx="0"
+              dy="0"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              text-anchor="end"
+              x="35"
+            >
+              2
+            </tspan>
+          </text>
+        </g>
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="50"
+            x2="45"
+            y1="116.66666666666669"
+            y2="116.66666666666669"
+          />
+          <text
+            direction="inherit"
+            dx="0"
+            id="chart-axis-2-tickLabels-1"
+            x="35"
+            y="121.63666666666668"
+          >
+            <tspan
+              dx="0"
+              dy="0"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              text-anchor="end"
+              x="35"
+            >
+              4
+            </tspan>
+          </text>
+        </g>
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="50"
+            x2="45"
+            y1="94.44444444444443"
+            y2="94.44444444444443"
+          />
+          <text
+            direction="inherit"
+            dx="0"
+            id="chart-axis-2-tickLabels-2"
+            x="35"
+            y="99.41444444444443"
+          >
+            <tspan
+              dx="0"
+              dy="0"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              text-anchor="end"
+              x="35"
+            >
+              6
+            </tspan>
+          </text>
+        </g>
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="50"
+            x2="45"
+            y1="72.22222222222223"
+            y2="72.22222222222223"
+          />
+          <text
+            direction="inherit"
+            dx="0"
+            id="chart-axis-2-tickLabels-3"
+            x="35"
+            y="77.19222222222223"
+          >
+            <tspan
+              dx="0"
+              dy="0"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              text-anchor="end"
+              x="35"
+            >
+              8
+            </tspan>
+          </text>
+        </g>
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shape-rendering="auto"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            vector-effect="non-scaling-stroke"
+            x1="50"
+            x2="45"
+            y1="50"
+            y2="50"
+          />
+          <text
+            direction="inherit"
+            dx="0"
+            id="chart-axis-2-tickLabels-4"
+            x="35"
+            y="54.97"
+          >
+            <tspan
+              dx="0"
+              dy="0"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              text-anchor="end"
+              x="35"
+            >
+              10
+            </tspan>
+          </text>
+        </g>
+      </g>
+    </svg>
+    <div
+      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+    >
+      <svg
+        height="200"
+        style="overflow: visible; width: 100%; height: 100%;"
+        viewBox="0 0 300 200"
+        width="300"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
