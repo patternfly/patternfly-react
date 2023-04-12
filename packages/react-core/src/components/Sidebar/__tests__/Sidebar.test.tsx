@@ -36,6 +36,11 @@ test('Renders with class name pf-m-no-background when hasNoBackground prop is pa
   expect(screen.getByText('Test').parentElement).toHaveClass('pf-m-no-background');
 });
 
+test('Renders with class name pf-m-border when hasBorder prop is passed', () => {
+  render(<Sidebar hasBorder>Test</Sidebar>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-border');
+});
+
 test('Renders with class name pf-m-stack when "stack" is passed to orientation prop', () => {
   render(<Sidebar orientation="stack">Test</Sidebar>);
   expect(screen.getByText('Test').parentElement).toHaveClass('pf-m-stack');

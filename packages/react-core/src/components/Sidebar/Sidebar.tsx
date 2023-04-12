@@ -12,6 +12,8 @@ export interface SidebarProps extends React.HTMLProps<HTMLDivElement> {
   hasGutter?: boolean;
   /** Removes the background color. */
   hasNoBackground?: boolean;
+  /** Adds a border between the panel and content. */
+  hasBorder?: boolean;
 }
 
 export const Sidebar: React.FunctionComponent<SidebarProps> = ({
@@ -21,6 +23,7 @@ export const Sidebar: React.FunctionComponent<SidebarProps> = ({
   isPanelRight = false,
   hasGutter,
   hasNoBackground,
+  hasBorder,
   ...props
 }: SidebarProps) => (
   <div
@@ -34,7 +37,7 @@ export const Sidebar: React.FunctionComponent<SidebarProps> = ({
     )}
     {...props}
   >
-    <div className={styles.sidebarMain}>{children}</div>
+    <div className={css(styles.sidebarMain, hasBorder && styles.modifiers.border)}>{children}</div>
   </div>
 );
 Sidebar.displayName = 'Sidebar';

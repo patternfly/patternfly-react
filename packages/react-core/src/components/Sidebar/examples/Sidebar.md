@@ -32,3 +32,15 @@ A `tabIndex` should be added to the `Sidebar` when there is scrollable content i
 A `tabIndex` should be added to the `Sidebar` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
 ```ts file="./SidebarResponsivePanel.tsx"
 ```
+
+### Border
+```ts file="./SidebarBorder.tsx"
+```
+
+### Padding on panel
+```ts file="./SidebarPaddingPanel.tsx"
+```
+
+### Padding on content
+```ts file="./SidebarPaddingContent.tsx"
+```
