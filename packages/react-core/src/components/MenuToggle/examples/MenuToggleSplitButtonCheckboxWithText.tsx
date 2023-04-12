@@ -4,22 +4,6 @@ import { MenuToggleCheckbox, MenuToggle } from '@patternfly/react-core';
 export const MenuToggleSplitButtonCheckboxWithText: React.FunctionComponent = () => (
   <React.Fragment>
     <MenuToggle
-      isDisabled
-      splitButtonOptions={{
-        items: [
-          <MenuToggleCheckbox
-            id="split-button-checkbox-with-text-disabled-example"
-            key="split-checkbox-with-text-disabled"
-            aria-label="Select all"
-            isDisabled
-          >
-            10 selected
-          </MenuToggleCheckbox>
-        ]
-      }}
-      aria-label="Menu toggle with checkbox split button and text"
-    />{' '}
-    <MenuToggle
       splitButtonOptions={{
         items: [
           <MenuToggleCheckbox
@@ -34,19 +18,34 @@ export const MenuToggleSplitButtonCheckboxWithText: React.FunctionComponent = ()
       aria-label="Menu toggle with checkbox split button and text"
     />{' '}
     <MenuToggle
-      isExpanded
+      variant="primary"
       splitButtonOptions={{
         items: [
           <MenuToggleCheckbox
-            id="split-button-checkbox-with-text-expanded-example"
-            key="split-checkbox-with-text-expanded"
+            id="split-button-checkbox-primary-example"
+            key="split-checkbox-primary"
             aria-label="Select all"
           >
             10 selected
           </MenuToggleCheckbox>
         ]
       }}
-      aria-label="Menu toggle with checkbox split button and text"
+      aria-label="Primary menu toggle with checkbox split button"
+    />{' '}
+    <MenuToggle
+      variant="secondary"
+      splitButtonOptions={{
+        items: [
+          <MenuToggleCheckbox
+            id="split-button-checkbox-secondary-example"
+            key="split-checkbox-secondary"
+            aria-label="Select all"
+          >
+            10 selected
+          </MenuToggleCheckbox>
+        ]
+      }}
+      aria-label="Secondary menu toggle with checkbox split button"
     />
   </React.Fragment>
 );
