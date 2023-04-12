@@ -2,7 +2,6 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { AboutModalBoxContent } from './AboutModalBoxContent';
 import { AboutModalBoxHeader } from './AboutModalBoxHeader';
-import { AboutModalBoxHero } from './AboutModalBoxHero';
 import { AboutModalBoxBrand } from './AboutModalBoxBrand';
 import { AboutModalBoxCloseButton } from './AboutModalBoxCloseButton';
 import { AboutModalBox } from './AboutModalBox';
@@ -105,7 +104,6 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
             <AboutModalBoxContent trademark={trademark} hasNoContentContainer={hasNoContentContainer} {...props}>
               {children}
             </AboutModalBoxContent>
-            <AboutModalBoxHero backgroundImageSrc={backgroundImageSrc} />
           </AboutModalBox>
         </Modal>
       )}
