@@ -15,7 +15,7 @@ const updatePaths = (filePath, subPathName) => {
   }
 };
 
-['next', 'deprecated', 'components', 'layouts', 'helpers'].forEach((subPathName) => {
+['deprecated', 'components', 'layouts', 'helpers'].forEach((subPathName) => {
   const distPath = resolve(__dirname, `../dist/esm/${subPathName}`);
   const distFileNames = readdirSync(distPath);
   const distIndexFileNames = distFileNames.filter((fileName) => isIndex(fileName));
