@@ -2,16 +2,17 @@
 id: Navigation
 section: components
 ---
+
 import {
-  Dropdown as DropdownDeprecated,
-  DropdownGroup as DropdownGroupDeprecated,
-  DropdownToggle,
-  DropdownItem as DropdownItemDeprecated,
-  KebabToggle,
-  PageHeader,
-  PageHeaderTools,
-  PageHeaderToolsGroup,
-  PageHeaderToolsItem
+Dropdown as DropdownDeprecated,
+DropdownGroup as DropdownGroupDeprecated,
+DropdownToggle,
+DropdownItem as DropdownItemDeprecated,
+KebabToggle,
+PageHeader,
+PageHeaderTools,
+PageHeaderToolsGroup,
+PageHeaderToolsItem
 } from '@patternfly/react-core/deprecated';
 
 import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
@@ -41,6 +42,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   SkipToContent,
   TextContent,
   Text
@@ -87,7 +89,11 @@ class PageLayoutDefaultNav extends React.Component {
       </Nav>
     );
 
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = (
+      <PageSidebar>
+        <PageSidebarBody>{PageNav}</PageSidebarBody>
+      </PageSidebar>
+    );
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
@@ -140,6 +146,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   SkipToContent,
   TextContent,
   Text
@@ -199,7 +206,11 @@ class PageLayoutGroupsNav extends React.Component {
       </Nav>
     );
 
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = (
+      <PageSidebar>
+        <PageSidebarBody>{PageNav}</PageSidebarBody>
+      </PageSidebar>
+    );
     const pageId = 'main-content-page-layout-group-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
@@ -249,6 +260,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   SkipToContent,
   TextContent,
   Text
@@ -318,7 +330,11 @@ class PageLayoutExpandableNav extends React.Component {
       </Nav>
     );
 
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = (
+      <PageSidebar>
+        <PageSidebarBody>{PageNav}</PageSidebarBody>
+      </PageSidebar>
+    );
     const pageId = 'main-content-page-layout-expandable-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
@@ -591,6 +607,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   SkipToContent,
   TextContent,
   Text
@@ -644,7 +661,11 @@ class VerticalNavWithSubnav extends React.Component {
       </Nav>
     );
 
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = (
+      <PageSidebar>
+        <PageSidebarBody>{PageNav}</PageSidebarBody>
+      </PageSidebar>
+    );
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
@@ -995,7 +1016,6 @@ import {
   Page,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   SkipToContent,
   TextContent,
   Text
@@ -1099,6 +1119,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   SkipToContent,
   TextContent,
   Text
@@ -1144,7 +1165,11 @@ class PageLayoutLightNav extends React.Component {
       </Nav>
     );
 
-    const Sidebar = <PageSidebar nav={PageNav} theme="light" />;
+    const Sidebar = (
+      <PageSidebar theme="light">
+        <PageSidebarBody>{PageNav}</PageSidebarBody>
+      </PageSidebar>
+    );
     const pageId = 'main-content-page-layout-simple-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
@@ -1204,6 +1229,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   SkipToContent,
   TextContent,
   Text
@@ -1389,7 +1415,11 @@ class PageLayoutManualNav extends React.Component {
         isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop}
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop} />;
+    const Sidebar = (
+      <PageSidebar isSidebarOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop}>
+        <PageSidebarBody>{PageNav}</PageSidebarBody>
+      </PageSidebar>
+    );
     const pageId = 'main-content-page-layout-manual-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
@@ -1439,6 +1469,7 @@ import {
   NavList,
   NavItem,
   PageSidebar,
+  PageSidebarBody,
   PageSection,
   PageSectionVariants,
   Menu,
@@ -1446,10 +1477,7 @@ import {
   MenuList,
   MenuItem
 } from '@patternfly/react-core';
-import {
-  PageHeader,
-  PageHeaderTools,
-}from '@patternfly/react-core';
+import { PageHeader, PageHeaderTools } from '@patternfly/react-core';
 import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class VerticalPage extends React.Component {
@@ -1500,8 +1528,8 @@ class VerticalPage extends React.Component {
     const { activeItem } = this.state;
 
     const Sidebar = (
-      <PageSidebar style={{"overflow": "visible"}}
-        nav={
+      <PageSidebar style={{ overflow: 'visible' }}>
+        <PageSidebarBody>
           <Nav onSelect={this.onNavSelect}>
             <NavList>
               <NavItem preventDefault id="flyout-link1" to="#flyout-link1" itemId={0} isActive={activeItem === 0}>
@@ -1515,8 +1543,8 @@ class VerticalPage extends React.Component {
               </NavItem>
             </NavList>
           </Nav>
-        }
-      />
+        </PageSidebarBody>
+      </PageSidebar>
     );
 
     return (

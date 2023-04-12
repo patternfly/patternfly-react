@@ -125,13 +125,13 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
             {...props}
           >
             <PageSidebarContext.Consumer>
-              {({ isNavOpen }) => (
+              {({ isSidebarOpen }) => (
                 <button
                   className={styles.navLink}
                   id={srText ? null : this.id}
                   onClick={(event) => this.onExpand(event, context.onToggle)}
                   aria-expanded={expandedState}
-                  tabIndex={isNavOpen ? null : -1}
+                  tabIndex={isSidebarOpen ? null : -1}
                   {...buttonProps}
                 >
                   {title}

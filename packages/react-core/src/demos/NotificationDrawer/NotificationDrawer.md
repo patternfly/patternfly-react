@@ -62,6 +62,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   SkipToContent,
   TextContent,
   Text,
@@ -335,7 +336,11 @@ class BasicNotificationDrawer extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = (
+      <PageSidebar>
+        <PageSidebarBody>{PageNav}</PageSidebarBody>
+      </PageSidebar>
+    );
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
@@ -606,6 +611,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   SkipToContent,
   Title,
   TextContent,
@@ -932,7 +938,11 @@ class GroupedNotificationDrawer extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = (
+      <PageSidebar>
+        <PageSidebarBody>{PageNav}</PageSidebarBody>
+      </PageSidebar>
+    );
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 

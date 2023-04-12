@@ -59,9 +59,13 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   }
   return (
     <PageContextConsumer>
-      {({ isManagedSidebar, onNavToggle: managedOnNavToggle, isNavOpen: managedIsNavOpen }: PageContextProps) => {
-        const navToggle = isManagedSidebar ? managedOnNavToggle : onNavToggle;
-        const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
+      {({
+        isManagedSidebar,
+        onSidebarToggle: managedOnSidebarToggle,
+        isSidebarOpen: managedIsSidebarOpen
+      }: PageContextProps) => {
+        const navToggle = isManagedSidebar ? managedOnSidebarToggle : onNavToggle;
+        const navOpen = isManagedSidebar ? managedIsSidebarOpen : isNavOpen;
 
         return (
           <header role={role} className={css(styles.pageHeader, className)} {...props}>

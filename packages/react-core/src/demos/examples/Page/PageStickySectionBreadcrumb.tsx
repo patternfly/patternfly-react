@@ -23,6 +23,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   PageToggleButton,
   SkipToContent,
   Text,
@@ -30,7 +31,7 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
-  ToolbarItem,
+  ToolbarItem
 } from '@patternfly/react-core';
 import {
   Dropdown as DropdownDeprecated,
@@ -236,7 +237,11 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
     </Nav>
   );
 
-  const sidebar = <PageSidebar nav={pageNav} />;
+  const sidebar = (
+    <PageSidebar>
+      <PageSidebarBody>{pageNav}</PageSidebarBody>
+    </PageSidebar>
+  );
 
   const mainContainerId = 'main-content';
 

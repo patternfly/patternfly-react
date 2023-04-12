@@ -40,8 +40,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   /** tabIndex to use for the [role="main"] element, null to unset it */
   mainTabIndex?: number | null;
   /**
-   * If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
-   * the sidebar component or add a callback onNavToggle function into the Masthead component
+   * If true, manages the sidebar open/close state and there is no need to pass the isSidebarOpen boolean into
+   * the sidebar component or add a callback onSidebarToggle function into the Masthead component
    */
   isManagedSidebar?: boolean;
   /** Flag indicating if tertiary nav width should be limited */
@@ -51,7 +51,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    */
   defaultManagedSidebarIsOpen?: boolean;
   /**
-   * Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px
+   * Can add callback to be notified when resize occurs, for example to set the sidebar isSidebarOpen prop to false for a width < 768px
    * Returns object { mobileView: boolean, windowSize: number }
    */
   onPageResize?: ((object: any) => void) | null;
@@ -88,8 +88,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export interface PageState {
-  desktopIsNavOpen: boolean;
-  mobileIsNavOpen: boolean;
+  desktopIsSidebarOpen: boolean;
+  mobileIsSidebarOpen: boolean;
   mobileView: boolean;
   width: number;
   height: number;
@@ -117,8 +117,8 @@ export class Page extends React.Component<PageProps, PageState> {
     const { isManagedSidebar, defaultManagedSidebarIsOpen } = props;
     const managedSidebarOpen = !isManagedSidebar ? true : defaultManagedSidebarIsOpen;
     this.state = {
-      desktopIsNavOpen: managedSidebarOpen,
-      mobileIsNavOpen: false,
+      desktopIsSidebarOpen: managedSidebarOpen,
+      mobileIsSidebarOpen: false,
       mobileView: false,
       width: null,
       height: null
@@ -188,20 +188,20 @@ export class Page extends React.Component<PageProps, PageState> {
   handleResize = debounce(this.resize, 250);
 
   handleMainClick = () => {
-    if (this.isMobile() && this.state.mobileIsNavOpen && this.mainRef.current) {
-      this.setState({ mobileIsNavOpen: false });
+    if (this.isMobile() && this.state.mobileIsSidebarOpen && this.mainRef.current) {
+      this.setState({ mobileIsSidebarOpen: false });
     }
   };
 
-  onNavToggleMobile = () => {
-    this.setState(prevState => ({
-      mobileIsNavOpen: !prevState.mobileIsNavOpen
+  onSidebarToggleMobile = () => {
+    this.setState((prevState) => ({
+      mobileIsSidebarOpen: !prevState.mobileIsSidebarOpen
     }));
   };
 
-  onNavToggleDesktop = () => {
-    this.setState(prevState => ({
-      desktopIsNavOpen: !prevState.desktopIsNavOpen
+  onSidebarToggleDesktop = () => {
+    this.setState((prevState) => ({
+      desktopIsSidebarOpen: !prevState.desktopIsSidebarOpen
     }));
   };
 
@@ -237,12 +237,12 @@ export class Page extends React.Component<PageProps, PageState> {
       breadcrumbProps,
       ...rest
     } = this.props;
-    const { mobileView, mobileIsNavOpen, desktopIsNavOpen, width, height } = this.state;
+    const { mobileView, mobileIsSidebarOpen, desktopIsSidebarOpen, width, height } = this.state;
 
     const context = {
       isManagedSidebar,
-      onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop,
-      isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen,
+      onSidebarToggle: mobileView ? this.onSidebarToggleMobile : this.onSidebarToggleDesktop,
+      isSidebarOpen: mobileView ? mobileIsSidebarOpen : desktopIsSidebarOpen,
       width,
       height,
       getBreakpoint,

@@ -28,6 +28,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   PageToggleButton,
   Popper,
   SkipToContent,
@@ -148,7 +149,6 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       window.removeEventListener('click', handleClickOutside);
     };
   }, [isOpen, menuRef]);
-
 
   const toggle = (
     <MenuToggle
@@ -396,7 +396,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
     </DropdownGroupDeprecated>
   ];
-  
+
   const headerToolbar = (
     <Toolbar id="toolbar" isFullHeight isStatic>
       <ToolbarContent>
@@ -410,7 +410,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
           </ToolbarItem>
           <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
             <ToolbarItem visibility={{ default: 'hidden', md: 'hidden', lg: 'visible' }}>
-            <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />
+              <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />
             </ToolbarItem>
             <ToolbarItem>
               <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
@@ -502,7 +502,11 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     </Nav>
   );
 
-  const sidebar = <PageSidebar nav={pageNav} />;
+  const sidebar = (
+    <PageSidebar>
+      <PageSidebarBody>{pageNav}</PageSidebarBody>
+    </PageSidebar>
+  );
 
   const mainContainerId = 'main-content-page-layout-tertiary-nav';
 

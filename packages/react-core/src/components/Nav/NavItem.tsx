@@ -59,7 +59,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   ...props
 }: NavItemProps) => {
   const { flyoutRef, setFlyoutRef, navRef } = React.useContext(NavContext);
-  const { isNavOpen } = React.useContext(PageSidebarContext);
+  const { isSidebarOpen } = React.useContext(PageSidebarContext);
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const [isHovered, setIsHovered] = React.useState(false);
   const ref = React.useRef<HTMLLIElement>();
@@ -166,7 +166,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     'aria-expanded': flyoutVisible
   };
 
-  const tabIndex = isNavOpen ? null : -1;
+  const tabIndex = isSidebarOpen ? null : -1;
 
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;

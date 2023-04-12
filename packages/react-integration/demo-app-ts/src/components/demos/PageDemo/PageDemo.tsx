@@ -4,6 +4,7 @@ import {
   Button,
   Page,
   PageSidebar,
+  PageSidebarBody,
   PageSection,
   PageSectionVariants,
   SkipToContent
@@ -171,7 +172,11 @@ export class PageDemo extends React.Component {
     );
     const pageId = 'page-demo-page-id';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
-    const Sidebar = <PageSidebar id="page-demo-sidebar" nav="Navigation" isNavOpen={isNavOpen} />;
+    const Sidebar = (
+      <PageSidebar id="page-demo-sidebar" isSidebarOpen={isNavOpen}>
+        <PageSidebarBody>Navigation</PageSidebarBody>
+      </PageSidebar>
+    );
 
     return (
       <Page

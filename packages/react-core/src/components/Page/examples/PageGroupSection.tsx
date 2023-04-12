@@ -7,6 +7,7 @@ import {
   MastheadBrand,
   MastheadContent,
   PageSidebar,
+  PageSidebarBody,
   PageSection,
   PageGroup,
   PageBreadcrumb,
@@ -25,10 +26,10 @@ import {
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 export const PageGroupSection: React.FunctionComponent = () => {
-  const [isNavOpen, setIsNavOpen] = React.useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
 
-  const onNavToggle = () => {
-    setIsNavOpen(!isNavOpen);
+  const onSidebarToggle = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   const headerToolbar = (
@@ -45,8 +46,8 @@ export const PageGroupSection: React.FunctionComponent = () => {
         <PageToggleButton
           variant="plain"
           aria-label="Global navigation"
-          isNavOpen={isNavOpen}
-          onNavToggle={onNavToggle}
+          isSidebarOpen={isSidebarOpen}
+          onSidebarToggle={onSidebarToggle}
           id="group-section-nav-toggle"
         >
           <BarsIcon />
@@ -61,7 +62,11 @@ export const PageGroupSection: React.FunctionComponent = () => {
     </Masthead>
   );
 
-  const sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="group-section-sidebar" />;
+  const sidebar = (
+    <PageSidebar isSidebarOpen={isSidebarOpen} id="group-section-sidebar">
+      <PageSidebarBody>Navigation</PageSidebarBody>
+    </PageSidebar>
+  );
 
   return (
     <Page header={header} sidebar={sidebar}>
