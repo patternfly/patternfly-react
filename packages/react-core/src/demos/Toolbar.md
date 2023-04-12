@@ -41,8 +41,7 @@ import {
   Dropdown,
   DropdownItem,
   DropdownList,
-  Divider,
-  MenuToggle
+  Divider
 } from '@patternfly/react-core';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 

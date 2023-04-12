@@ -149,7 +149,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
               <MenuToggle
                 ref={toggleRef}
                 onClick={onStatusToggle}
-                isExpanded={statusIsExpanded}
+                isExpanded={isStatusExpanded}
                 style={
                   {
                     width: '140px'
