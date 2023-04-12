@@ -8,7 +8,12 @@ import {
   Form,
   FormContextProvider,
   FormGroup,
+  FormHelperText,
+  HelperText,
+  HelperTextItem,
+  MenuToggle,
   Select,
+  SelectList,
   SelectOption,
   TextArea,
   TextInput
@@ -20,17 +25,10 @@ export const FormState = () => {
   const [formStateExpanded, setFormStateExpanded] = React.useState(false);
 
   return (
-    <FormContextProvider initialValues={{ 'select-id': 'option-1' }}>
+    <FormContextProvider initialValues={{ 'select-id': 'Option 1' }}>
       {({ setValue, getValue, setError, values, errors }) => (
         <Form>
-          <FormGroup
-            label="Input value"
-            helperTextInvalid={errors['input-id']}
-            helperTextInvalidIcon={<ExclamationCircleIcon />}
-            fieldId="input-id"
-            validated={errors['input-id'] ? 'error' : 'default'}
-            isRequired
-          >
+          <FormGroup label="Input value" fieldId="input-id" isRequired>
             <TextInput
               id="input-id"
               onChange={(value) => {
@@ -40,6 +38,16 @@ export const FormState = () => {
               value={getValue('input-id')}
               validated={errors['input-id'] ? 'error' : 'default'}
             />
+            <FormHelperText>
+              <HelperText>
+                <HelperTextItem
+                  variant={errors['input-id'] ? 'error' : 'default'}
+                  {...(errors['input-id'] && { icon: <ExclamationCircleIcon /> })}
+                >
+                  {errors['input-id']}
+                </HelperTextItem>
+              </HelperText>
+            </FormHelperText>
           </FormGroup>
 
           <TextArea
@@ -51,17 +59,33 @@ export const FormState = () => {
 
           <Select
             id="select-id"
+            selected={getValue('select-id')}
             isOpen={isSelectOpen}
-            onToggle={(_, isOpen) => setIsSelectOpen(isOpen)}
-            onSelect={(_, value) => {
-              setValue('select-id', value.toString());
+            toggle={(toggleRef) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={(isOpen) => setIsSelectOpen(isOpen)}
+                isExpanded={isSelectOpen}
+                style={
+                  {
+                    width: '200px'
+                  } as React.CSSProperties
+                }
+              >
+                {getValue('select-id')}
+              </MenuToggle>
+            )}
+            onOpenChange={(isOpen) => setIsSelectOpen(isOpen)}
+            onSelect={(_, itemId) => {
+              setValue('select-id', itemId as string);
               setIsSelectOpen(false);
             }}
-            selections={getValue('select-id')}
           >
-            <SelectOption value="option-1">Option 1</SelectOption>
-            <SelectOption value="option-2">Option 2</SelectOption>
-            <SelectOption value="option-3">Option 3</SelectOption>
+            <SelectList>
+              <SelectOption itemId="Option 1">Option 1</SelectOption>
+              <SelectOption itemId="Option 2">Option 2</SelectOption>
+              <SelectOption itemId="Option 3">Option 3</SelectOption>
+            </SelectList>
           </Select>
 
           <ActionGroup>
