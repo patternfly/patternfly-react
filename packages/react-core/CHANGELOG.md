@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.65](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.64...@patternfly/react-core@5.0.0-alpha.65) (2023-04-12)
+
+### Features
+
+- **Sidebar:** add border and padding ([#8918](https://github.com/patternfly/patternfly-react/issues/8918)) ([4bc165c](https://github.com/patternfly/patternfly-react/commit/4bc165cbefcd188a136e7a578df82794a25043c3))
+
 # 5.0.0-alpha.64 (2023-04-12)
 
 **Note:** Version bump only for package @patternfly/react-core
