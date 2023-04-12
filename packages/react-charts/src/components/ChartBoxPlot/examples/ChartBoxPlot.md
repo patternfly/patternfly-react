@@ -13,7 +13,7 @@ hideDarkMode: true
 beta: true
 ---
 
-import { Chart, ChartAxis, ChartBoxPlot, ChartBoxPlotTooltip, ChartCursorFlyout, ChartCursorTooltip, ChartLegendTooltip, ChartThemeColor, ChartThreshold, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBoxPlot, ChartCursorFlyout, ChartCursorTooltip, ChartLegendTooltip, ChartThemeColor, ChartThreshold, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 

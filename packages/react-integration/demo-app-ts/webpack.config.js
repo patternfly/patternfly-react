@@ -94,9 +94,8 @@ module.exports = (_env, argv) => {
         : {
             '@patternfly/react-core$': path.resolve(__dirname, '../../../packages/react-core/src/index'),
             '@patternfly/react-code-editor$': path.resolve(__dirname, '../../../packages/react-code-editor/src/index'),
-            '@patternfly/react-table$': path.resolve(__dirname, '../../../packages/react-table/src/index'),
-            '@patternfly/react-topology$': path.resolve(__dirname, '../../../packages/react-topology/src/index')
-          }
+            '@patternfly/react-table$': path.resolve(__dirname, '../../../packages/react-table/src/index')
+      }
     },
     plugins: [
       new MiniCssExtractPlugin(
@@ -119,8 +118,7 @@ module.exports = (_env, argv) => {
               './src/**/*.{ts,tsx}',
               '../../../packages/react-core/src/**/*.{ts,tsx}',
               '../../../packages/react-code-editor/src/**/*.{ts,tsx}',
-              '../../../packages/react-table/src/**/*.{ts,tsx}',
-              '../../../packages/react-topology/src/**/*.{ts,tsx}'
+              '../../../packages/react-table/src/**/*.{ts,tsx}'
             ],
             options: {
               ignorePath: '../../../.eslintignore'

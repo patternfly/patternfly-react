@@ -26,17 +26,16 @@ Using PatternFly 3?  Take a look at the [PatternFly 3 React component informatio
 | &nbsp;&nbsp;[@patternfly/react-icons](./packages/react-icons/README.md) | Icon components |
 | &nbsp;&nbsp;[@patternfly/react-styles](./packages/react-styles/README.md) | PatternFly CSS styles |
 | &nbsp;&nbsp;[@patternfly/react-tokens](./packages/react-tokens/README.md) | PatternFly CSS variable tokens |
-| **:yellow_heart: Extension packages** *UXD supported* |
+| **:yellow_heart: Extension packages** |
 | &nbsp;&nbsp;[@patternfly/react-log-viewer](https://github.com/patternfly/react-log-viewer/README.md) | Virtualized log viewer component |
+| &nbsp;&nbsp;[@patternfly/react-catalog-view-extension](https://github.com/patternfly/react-catalog-view/README.md) | Catalog view extension |
+| &nbsp;&nbsp;[@patternfly/react-topology](https://github.com/patternfly/react-topology/README.md) | Topology components |
 | **:open_file_folder: Supporting packages** |
 | &nbsp;&nbsp;[@patternfly/react-docs](./packages/react-docs/README.md) | Gatsby documentation site for components |
 | &nbsp;&nbsp;[@patternfly/react-integration](./packages/react-integration/README.md) | Cypress integration tests |
-| **:family: Extension packages** *community supported* | 
-| &nbsp;&nbsp;[@patternfly/react-catalog-view-extension](./packages/react-catalog-view-extension/README.md) | Catalog view extension |
-| &nbsp;&nbsp;[@patternfly/react-virtualized-extension](./packages/react-virtualized-extension/README.md) | Table and list row virtualization extension |
-| &nbsp;&nbsp;[@patternfly/react-topology](./packages/react-topology/README.md) | Topology components |
 | **:x: Deprecated packages** |
 | &nbsp;&nbsp;[@patternfly/react-inline-edit-extension](./packages/react-inline-edit-extension/README.md) | Table inline edit extension |
+| &nbsp;&nbsp;[@patternfly/react-virtualized-extension](https://github.com/patternfly/react-virtualized-extension/README.md) | Table and list row virtualization extension |
 
 ### Setup
 
