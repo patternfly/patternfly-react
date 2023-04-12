@@ -1,14 +1,9 @@
 import React from 'react';
 import {
   Button,
-  Divider,
   Dropdown,
   DropdownList,
   DropdownItem,
-  Select,
-  SelectOption,
-  SelectVariant,
-  SearchInput,
   Toolbar,
   ToolbarItem,
   ToolbarContent,
@@ -16,7 +11,6 @@ import {
   ToolbarToggleGroup,
   ToolbarGroup,
   Badge,
-  Button,
   MenuToggle,
   MenuToggleElement,
   SearchInput,
@@ -44,11 +38,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
     setInputValue(newValue);
   };
 
-  const onSelect = (
-    type: string,
-    event: React.MouseEvent | React.ChangeEvent,
-    selection: string
-  ) => {
+  const onSelect = (type: string, event: React.MouseEvent | React.ChangeEvent, selection: string) => {
     const checked = (event.target as HTMLInputElement).checked;
     setFilters((prev) => {
       const prevSelections = prev[type];
@@ -91,6 +81,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
 
   const onRiskToggle = () => {
     setIsRiskExpanded(!isRiskExpanded);
+  };
 
   const onKebabToggle = () => {
     setIsKebabOpen(!isKebabOpen);
@@ -98,35 +89,20 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
 
   const statusMenuItems = (
     <SelectList>
-      <SelectOption
-        hasCheckbox
-        key="statusNew"
-        itemId="New"
-        isSelected={filters.status.includes("New")}
-      >
+      <SelectOption hasCheckbox key="statusNew" itemId="New" isSelected={filters.status.includes('New')}>
         New
       </SelectOption>
-      <SelectOption
-        hasCheckbox
-        key="statusPending"
-        itemId="Pending"
-        isSelected={filters.status.includes("Pending")}
-      >
+      <SelectOption hasCheckbox key="statusPending" itemId="Pending" isSelected={filters.status.includes('Pending')}>
         Pending
       </SelectOption>
-      <SelectOption
-        hasCheckbox
-        key="statusRunning"
-        itemId="Running"
-        isSelected={filters.status.includes("Running")}
-      >
+      <SelectOption hasCheckbox key="statusRunning" itemId="Running" isSelected={filters.status.includes('Running')}>
         Running
       </SelectOption>
       <SelectOption
         hasCheckbox
         key="statusCancelled"
         itemId="Cancelled"
-        isSelected={filters.status.includes("Cancelled")}
+        isSelected={filters.status.includes('Cancelled')}
       >
         Cancelled
       </SelectOption>
@@ -135,28 +111,13 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
 
   const riskMenuItems = (
     <SelectList>
-      <SelectOption
-        hasCheckbox
-        key="riskLow"
-        itemId="Low"
-        isSelected={filters.risk.includes("Low")}
-      >
+      <SelectOption hasCheckbox key="riskLow" itemId="Low" isSelected={filters.risk.includes('Low')}>
         Low
       </SelectOption>
-      <SelectOption
-        hasCheckbox
-        key="riskMedium"
-        itemId="Medium"
-        isSelected={filters.risk.includes("Medium")}
-      >
+      <SelectOption hasCheckbox key="riskMedium" itemId="Medium" isSelected={filters.risk.includes('Medium')}>
         Medium
       </SelectOption>
-      <SelectOption
-        hasCheckbox
-        key="riskHigh"
-        itemId="High"
-        isSelected={filters.risk.includes("High")}
-      >
+      <SelectOption hasCheckbox key="riskHigh" itemId="High" isSelected={filters.risk.includes('High')}>
         High
       </SelectOption>
     </SelectList>
@@ -202,7 +163,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
             onSelect={onStatusSelect}
             selected={filters.status}
             isOpen={isStatusExpanded}
-            onOpenChange={isOpen => setIsStatusExpanded(isOpen)}
+            onOpenChange={(isOpen) => setIsStatusExpanded(isOpen)}
           >
             {statusMenuItems}
           </Select>
@@ -233,7 +194,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
             onSelect={onRiskSelect}
             selected={filters.risk}
             isOpen={isRiskExpanded}
-            onOpenChange={isOpen => setIsRiskExpanded(isOpen)}
+            onOpenChange={(isOpen) => setIsRiskExpanded(isOpen)}
           >
             {riskMenuItems}
           </Select>
