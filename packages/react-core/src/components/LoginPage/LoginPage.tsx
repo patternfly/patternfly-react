@@ -23,8 +23,6 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   brandImgAlt?: string;
   /** Attribute that specifies the URL of the background image for the login page */
   backgroundImgSrc?: string;
-  /** Attribute that specifies the alt text of the background image for the login page */
-  backgroundImgAlt?: string;
   /** Content rendered inside of the text component of the login page */
   textContent?: string;
   /** Items rendered inside of the footer list component of the login page */
@@ -53,7 +51,6 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
   brandImgSrc = '',
   brandImgAlt = '',
   backgroundImgSrc = '',
-  backgroundImgAlt = '',
   footerListItems = null,
   textContent = '',
   footerListVariants,
@@ -81,7 +78,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
 
   return (
     <React.Fragment>
-      {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} alt={backgroundImgAlt} />}
+      {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} />}
       <Login header={Header} footer={Footer} className={css(className)} {...props}>
         <LoginMainHeader title={loginTitle} subtitle={loginSubtitle} headerUtilities={headerUtilities} />
         <LoginMainBody>{children}</LoginMainBody>

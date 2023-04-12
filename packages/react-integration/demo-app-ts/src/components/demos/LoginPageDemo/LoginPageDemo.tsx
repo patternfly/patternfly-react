@@ -148,7 +148,6 @@ export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         brandImgSrc={brandImg}
         brandImgAlt="PatternFly logo"
         backgroundImgSrc={pfbg_icon}
-        backgroundImgAlt="Images"
         footerListItems={listItems}
         textContent="This is placeholder text only. Use this area to place any information or introductory message about your
         application that may be relevant to users."

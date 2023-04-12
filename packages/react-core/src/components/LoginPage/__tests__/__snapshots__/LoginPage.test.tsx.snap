@@ -3,7 +3,6 @@
 exports[`check loginpage example against snapshot 1`] = `
 <DocumentFragment>
   <div
-    alt="Pf-background"
     class="pf-c-background-image"
     style="--pf-c-background-image--BackgroundImage: url(Background src);"
   />

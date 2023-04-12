@@ -17,7 +17,6 @@ test('check loginpage example against snapshot', () => {
       brandImgSrc="Brand src"
       brandImgAlt="Pf-logo"
       backgroundImgSrc="Background src"
-      backgroundImgAlt="Pf-background"
       footerListItems="English"
       textContent="This is placeholder text only."
       loginTitle="Log into your account"
