@@ -1,6 +1,6 @@
 import React from 'react';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
-import { InputGroup, InputGroupText, InputGroupTextVariant, TextInput, ValidatedOptions } from '@patternfly/react-core';
+import { InputGroup, InputGroupText, TextInput, ValidatedOptions } from '@patternfly/react-core';
 
 export const InputGroupBasic: React.FunctionComponent = () => (
   <React.Fragment>
@@ -23,7 +23,7 @@ export const InputGroupBasic: React.FunctionComponent = () => (
     <br />
     <InputGroup>
       <TextInput name="textInput-basic-3" id="textInput-basic-3" type="text" aria-label="percentage" />
-      <InputGroupText id="plain-example" variant={InputGroupTextVariant.plain}>
+      <InputGroupText id="plain-example">
         %
       </InputGroupText>
     </InputGroup>
