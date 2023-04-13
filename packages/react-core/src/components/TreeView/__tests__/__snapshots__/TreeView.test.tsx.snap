@@ -2219,7 +2219,7 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg undefined"
+                  class="pf-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 576 512"
@@ -2281,7 +2281,7 @@ exports[`tree view renders icons successfully 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-svg undefined"
+                      class="pf-svg"
                       fill="currentColor"
                       role="img"
                       viewBox="0 0 512 512"
@@ -2340,7 +2340,7 @@ exports[`tree view renders icons successfully 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-svg undefined"
+                      class="pf-svg"
                       fill="currentColor"
                       role="img"
                       viewBox="0 0 512 512"
@@ -2401,7 +2401,7 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg undefined"
+                  class="pf-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 512 512"
@@ -2460,7 +2460,7 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg undefined"
+                  class="pf-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 512 512"
@@ -2519,7 +2519,7 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg undefined"
+                  class="pf-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 512 512"
@@ -2606,7 +2606,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg undefined"
+                  class="pf-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 576 512"
@@ -2792,7 +2792,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg undefined"
+                class="pf-svg"
                 fill="currentColor"
                 role="img"
                 viewBox="0 0 512 512"

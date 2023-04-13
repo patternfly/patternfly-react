@@ -103,7 +103,7 @@ exports[`HelperText icon helper text renders properly 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-svg undefined"
+          class="pf-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"
