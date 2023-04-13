@@ -10,7 +10,7 @@
             "type": "cjs"
         }
     ],
-    "blackList": [
+    "exclude": [
         "dist/esm/deprecated/index.js",
         "dist/esm/next/index.js"
     ]

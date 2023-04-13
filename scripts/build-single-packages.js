@@ -12,7 +12,7 @@ if (!(process.argv.includes('--config')  && process.argv.indexOf('--config') + 1
 
 const configJson = require(`${root}/${process.argv[process.argv.indexOf('--config') + 1]}`);
 
-const foldersBlackList = configJson.blackList ? configJson.blackList : []
+const foldersexclude = configJson.exclude ? configJson.exclude : []
 
 if (!configJson.modules || configJson.modules.length === 0) {
   console.log('modules are required');
@@ -22,7 +22,7 @@ if (!configJson.modules || configJson.modules.length === 0) {
 const components = configJson.modules.map(module => ({
     files: glob
       .sync(`${root}/${module.module}/**/**/index.js`)
-      .filter((item) => !foldersBlackList.some((name) => item.includes(name)))
+      .filter((item) => !foldersexclude.some((name) => item.includes(name)))
       .map((name) => name.replace(/\/$/, '')),
     type: module.type
   }));
