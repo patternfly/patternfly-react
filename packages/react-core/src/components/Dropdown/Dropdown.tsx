@@ -52,7 +52,6 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
   const ouiaProps = useOUIAProps(Dropdown.displayName, ouiaId, ouiaSafe);
 
   const menuRef = (innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
@@ -106,23 +105,21 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
       isPlain={isPlain}
       isScrollable={isScrollable}
       {...props}
+      {...ouiaProps}
     >
       <MenuContent>{children}</MenuContent>
     </Menu>
   );
   return (
-    <div ref={containerRef} {...ouiaProps}>
-      <Popper
-        trigger={toggle(toggleRef)}
-        triggerRef={toggleRef}
-        popper={menu}
-        popperRef={menuRef}
-        appendTo={containerRef.current || undefined}
-        isVisible={isOpen}
-        zIndex={zIndex}
-        {...popperProps}
-      />
-    </div>
+    <Popper
+      trigger={toggle(toggleRef)}
+      triggerRef={toggleRef}
+      popper={menu}
+      popperRef={menuRef}
+      isVisible={isOpen}
+      zIndex={zIndex}
+      {...popperProps}
+    />
   );
 };
 

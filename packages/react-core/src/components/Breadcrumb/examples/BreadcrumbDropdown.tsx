@@ -46,7 +46,7 @@ export const BreadcrumbDropdown: React.FunctionComponent = () => {
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
             <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen} variant="plain">
               <Badge isRead screenReaderText="additional items">
-                {dropdownItems.length}
+                {dropdownItems.length}{' '}
                 <span>
                   <CaretDownIcon />
                 </span>

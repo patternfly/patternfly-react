@@ -118,7 +118,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
             <MenuToggle ref={toggleRef} onClick={() => onToggle(true, 'app')} isExpanded={isOpen} variant="plain">
               <Badge isRead screenReaderText="additional item">
-                1
+                1{' '}
                 <span>
                   <CaretDownIcon />
                 </span>
