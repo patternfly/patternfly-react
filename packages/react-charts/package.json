@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-charts",
-  "version": "7.0.0-alpha.17",
+  "version": "7.0.0-alpha.18",
   "description": "This library provides a set of React chart components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -58,7 +58,7 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build:single:packages" : "node ../../scripts/build-single-packages.js --config single-packages.config.json"
+    "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.157",

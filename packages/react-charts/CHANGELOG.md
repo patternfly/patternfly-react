@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.0.0-alpha.18 (2023-04-13)
+
+### Features
+
+- **infrastructure:** Added ability import components directly to support fed modules tree-shaking of shared packages. ([#8832](https://github.com/patternfly/patternfly-react/issues/8832)) ([16c15bf](https://github.com/patternfly/patternfly-react/commit/16c15bf09c1df7cc581336a7a3047dc8b11f8be0))
+
 # 7.0.0-alpha.17 (2023-04-12)
 
 **Note:** Version bump only for package @patternfly/react-charts

@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "5.0.0-alpha.65",
+  "version": "5.0.0-alpha.66",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -40,7 +40,7 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
     "build:umd": "rollup -c --environment IS_PRODUCTION",
-    "build:single:packages" : "node ../../scripts/build-single-packages.js --config single-packages.config.json",
+    "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json",
     "clean": "rimraf dist",
     "generate": "node scripts/copyStyles.js",
     "subpaths": "node scripts/createSubpaths.js"
