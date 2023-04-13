@@ -150,7 +150,7 @@ class PasswordStrengthDemo extends React.Component {
             value={password}
             onChange={this.handlePasswordInput}
           />
-          <FormHelperText isHidden={false} component="div">
+          <FormHelperText component="div">
             <HelperText component="ul" aria-live="polite" id="password-field-helper">
               <HelperTextItem isDynamic variant={ruleLength} component="li">
                 Must be at least 14 characters
