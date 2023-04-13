@@ -10,7 +10,7 @@ exports[`renders basic icon successfully 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-svg undefined"
         fill="currentColor"
         role="img"
         viewBox="0 0 512 512"
@@ -34,7 +34,7 @@ exports[`renders progress icon successfully 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-svg undefined"
         fill="currentColor"
         role="img"
         viewBox="0 0 512 512"
@@ -49,7 +49,7 @@ exports[`renders progress icon successfully 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-svg undefined"
         fill="currentColor"
         role="img"
         viewBox="0 0 512 512"

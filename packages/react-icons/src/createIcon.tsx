@@ -34,13 +34,14 @@ export function createIcon({
 
     render() {
       const { title, className, ...props } = this.props;
+      const classes = className ? `pf-svg ${className}` : "pf-svg";
 
       const hasTitle = Boolean(title);
       const viewBox = [xOffset, yOffset, width, height].join(' ');
 
       return (
         <svg
-          className={`pf-svg ${className}`}
+          className={classes}
           viewBox={viewBox}
           fill="currentColor"
           aria-labelledby={hasTitle ? this.id : null}
