@@ -3,15 +3,15 @@
     "modules": [ 
         {
             "module": "components",
-            "moduleType": "esm"
+            "type": "esm"
         },
         {
             "module": "deprecated",
-            "moduleType": "esm"
+            "type": "esm"
         },
         {
             "module": "dist/js",
-            "moduleType": "cjs"
+            "type": "cjs"
         }
     ],
     "blackList": [

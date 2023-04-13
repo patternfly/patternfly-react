@@ -24,7 +24,7 @@ const components = configJson.modules.map(module => ({
       .sync(`${root}/${module.module}/**/**/index.js`)
       .filter((item) => !foldersBlackList.some((name) => item.includes(name)))
       .map((name) => name.replace(/\/$/, '')),
-    moduleType: module.moduleType
+    type: module.type
   }));
 
 async function createPackage(component, dist) {
@@ -76,6 +76,6 @@ async function run(components, dist) {
 }
 
 components.forEach(component => {
-  run(component.files, component.moduleType);
+  run(component.files, component.type);
 });
 

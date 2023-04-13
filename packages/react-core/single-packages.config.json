@@ -3,11 +3,11 @@
     "modules": [ 
         {
             "module": "dist/esm",
-            "moduleType": "esm"
+            "type": "esm"
         },
         {
             "module": "dist/js",
-            "moduleType": "cjs"
+            "type": "cjs"
         }
     ],
     "blackList": []
