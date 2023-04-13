@@ -21,7 +21,7 @@ if (!configJson.modules || configJson.modules.length === 0) {
 
 const components = configJson.modules.map(module => ({
     files: glob
-      .sync(`${root}/${module.module}/**/**/index.js`)
+      .sync(`${root}/${module.name}/**/**/index.js`)
       .filter((item) => !foldersexclude.some((name) => item.includes(name)))
       .map((name) => name.replace(/\/$/, '')),
     type: module.type

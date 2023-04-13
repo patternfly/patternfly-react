@@ -2,15 +2,15 @@
     "packageName": "@patternfly/react-table",
     "modules": [ 
         {
-            "module": "components",
+            "name": "components",
             "type": "esm"
         },
         {
-            "module": "deprecated",
+            "name": "deprecated",
             "type": "esm"
         },
         {
-            "module": "dist/js",
+            "name": "dist/js",
             "type": "cjs"
         }
     ],

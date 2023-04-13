@@ -2,11 +2,11 @@
     "packageName": "@patternfly/react-charts",
     "modules": [ 
         {
-            "module": "dist/esm",
+            "name": "dist/esm",
             "type": "esm"
         },
         {
-            "module": "dist/js",
+            "name": "dist/js",
             "type": "cjs"
         }
     ],
