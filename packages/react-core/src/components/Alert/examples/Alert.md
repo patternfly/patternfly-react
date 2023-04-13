@@ -13,9 +13,9 @@ import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
 import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
 import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 
-## Examples 
+## Alert examples 
 
-### Variant examples
+### Variants
 
 PatternFly supports several alert variants for different scenarios. Each variant has an associated status icon, background, and alert title coded to communicate the severity of an alert. Use the `variant` property to apply the following styling options. If no `variant` is specified, then the variant will be set to "default".
 
@@ -365,7 +365,7 @@ This example shows how an alert could be triggered by an asynchronous event in t
 ```ts file="AlertAsyncLiveRegion.tsx"
 ```
 
-## Alert Group
+## Alert group examples
 
 An alert group stacks and positions 2 or more alerts in a live region, either in a layer over the main content of a page or inline with the page content. Alert groups should always rank alerts by age, stacking new alerts on top of old ones as they surface.
 
