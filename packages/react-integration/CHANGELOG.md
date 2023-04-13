@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.24 (2023-04-13)
+
+### Bug Fixes
+
+- general clean up ([#8944](https://github.com/patternfly/patternfly-react/issues/8944)) ([7a6ea59](https://github.com/patternfly/patternfly-react/commit/7a6ea59c7b029cd5ffe22117fa81706c28feadfe))
+
 # 5.0.0-alpha.23 (2023-04-11)
 
 ### Features
