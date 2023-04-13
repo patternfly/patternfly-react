@@ -57,7 +57,8 @@
     "react-dom": "^17 || ^18"
   },
   "scripts": {
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "build:single:packages" : "node ../../scripts/build-single-packages.js --config single-packages.config.json"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.157",

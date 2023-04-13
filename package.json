@@ -67,7 +67,7 @@
     "typescript": "^4.7.4"
   },
   "scripts": {
-    "build": "yarn clean && yarn build:generate && yarn build:esm && yarn build:subpaths && yarn build:cjs",
+    "build": "yarn clean && yarn build:generate && yarn build:esm && yarn build:subpaths && yarn build:cjs && yarn build:single:packages",
     "build:cjs": "tsc --build --verbose packages/tsconfig.cjs.json",
     "build:esm": "tsc --build --verbose packages/tsconfig.json",
     "build:integration": "lerna run build:demo-app --stream",
@@ -75,6 +75,7 @@
     "build:generate": "lerna run generate --parallel --stream",
     "build:subpaths": "lerna run subpaths --parallel --stream",
     "build:umd": "lerna run build:umd --parallel --stream",
+    "build:single:packages": "lerna run build:single:packages",
     "clean": "yarn clean:build && lerna run clean --parallel",
     "clean:build": "rimraf .cache .eslintcache coverage",
     "generate": "yarn plop",

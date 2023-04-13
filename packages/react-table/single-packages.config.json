@@ -1,0 +1,21 @@
+{
+    "packageName": "@patternfly/react-table",
+    "modules": [ 
+        {
+            "name": "components",
+            "type": "esm"
+        },
+        {
+            "name": "deprecated",
+            "type": "esm"
+        },
+        {
+            "name": "dist/js",
+            "type": "cjs"
+        }
+    ],
+    "exclude": [
+        "dist/esm/deprecated/index.js",
+        "dist/esm/next/index.js"
+    ]
+}

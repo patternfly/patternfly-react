@@ -1,0 +1,14 @@
+{
+    "packageName": "@patternfly/react-core",
+    "modules": [ 
+        {
+            "name": "dist/esm",
+            "type": "esm"
+        },
+        {
+            "name": "dist/js",
+            "type": "cjs"
+        }
+    ],
+    "exclude": []
+}
