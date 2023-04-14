@@ -59,9 +59,13 @@ export const DateTimePicker: React.FunctionComponent = () => {
       isOpen={isTimeOpen}
       onOpenChange={(isOpen: boolean) => setIsTimeOpen(isOpen)}
       toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-        <MenuToggle ref={toggleRef} onClick={onToggleTime} isExpanded={isTimeOpen} aria-label="Time picker">
-          <OutlinedClockIcon aria-hidden="true" />
-        </MenuToggle>
+        <MenuToggle
+          ref={toggleRef}
+          onClick={onToggleTime}
+          isExpanded={isTimeOpen}
+          aria-label="Time picker"
+          icon={<OutlinedClockIcon aria-hidden="true" />}
+        />
       )}
     >
       <DropdownList>{timeOptions}</DropdownList>
