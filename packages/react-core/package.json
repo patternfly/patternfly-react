@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "5.0.0-alpha.68",
+  "version": "5.0.0-alpha.69",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.68...@patternfly/react-core@5.0.0-alpha.69) (2023-04-14)
+
+### Bug Fixes
+
+- **data-grid:** remove css duplication of data-list-grid.css ([#8864](https://github.com/patternfly/patternfly-react/issues/8864)) ([5651222](https://github.com/patternfly/patternfly-react/commit/5651222a2b43ec7c79b076394c3268d6cc28628f)), closes [#8858](https://github.com/patternfly/patternfly-react/issues/8858)
+
+### Features
+
+- **DropdownItem:** add missing props to prop table ([#8946](https://github.com/patternfly/patternfly-react/issues/8946)) ([9f33889](https://github.com/patternfly/patternfly-react/commit/9f338892e8415118bcb6c1abc1c7f0ec8f642f07))
+
 # [5.0.0-alpha.68](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.67...@patternfly/react-core@5.0.0-alpha.68) (2023-04-13)
 
 ### Bug Fixes
