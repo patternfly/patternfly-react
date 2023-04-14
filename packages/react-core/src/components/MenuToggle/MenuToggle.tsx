@@ -3,7 +3,6 @@ import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-togg
 import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { BadgeProps } from '../Badge';
-import { Icon } from '../Icon';
 
 export type MenuToggleElement = HTMLDivElement | HTMLButtonElement;
 
@@ -38,7 +37,9 @@ export interface MenuToggleProps
   splitButtonOptions?: SplitButtonOptions;
   /** Variant styles of the menu toggle */
   variant?: 'default' | 'plain' | 'primary' | 'plainText' | 'secondary' | 'typeahead';
-  /** Optional icon rendered inside the toggle, before the children content */
+  /** Optional icon or image rendered inside the toggle, before the children content. It is
+   * recommended to wrap most basic icons in our icon component.
+   */
   icon?: React.ReactNode;
   /** Optional badge rendered inside the toggle, after the children content */
   badge?: BadgeProps | React.ReactNode;
@@ -86,7 +87,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
 
     const content = (
       <>
-        {icon && <span className={css(styles.menuToggleIcon)}><Icon>{icon}</Icon></span>}
+        {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
         {isTypeahead ? children : <span className={css(styles.menuToggleText)}>{children}</span>}
         {React.isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}
         {isTypeahead ? (
