@@ -50,7 +50,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Flag to show the modal. */
   isOpen?: boolean;
   /** A callback for when the close button is clicked. */
-  onClose?: () => void;
+  onClose?: (event: KeyboardEvent | React.MouseEvent) => void;
   /** Modal handles pressing of the escape key and closes the modal. If you want to handle
    * this yourself you can use this callback function. */
   onEscapePress?: (event: KeyboardEvent) => void;
@@ -135,7 +135,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   handleEscKeyClick = (event: KeyboardEvent): void => {
     const { onEscapePress } = this.props;
     if (event.key === KeyTypes.Escape && this.props.isOpen) {
-      onEscapePress ? onEscapePress(event) : this.props.onClose?.();
+      onEscapePress ? onEscapePress(event) : this.props.onClose?.(event);
     }
   };
 

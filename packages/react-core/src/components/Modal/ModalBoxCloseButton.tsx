@@ -9,7 +9,7 @@ export interface ModalBoxCloseButtonProps extends OUIAProps {
   /** Additional classes added to the close button. */
   className?: string;
   /** A callback for when the close button is clicked. */
-  onClose?: () => void;
+  onClose?: (event: KeyboardEvent | React.MouseEvent) => void;
   /** Value to set the data-ouia-component-id.*/
   ouiaId?: number | string;
 }
@@ -23,7 +23,7 @@ export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonPro
   <div className={css(styles.modalBoxClose, className)}>
     <Button
       variant="plain"
-      onClick={onClose}
+      onClick={(event) => onClose(event)}
       aria-label="Close"
       {...(ouiaId && { ouiaId: `${ouiaId}-${ModalBoxCloseButton.displayName}` })}
       {...props}
