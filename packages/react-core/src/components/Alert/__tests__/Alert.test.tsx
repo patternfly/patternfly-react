@@ -45,15 +45,15 @@ test('Renders with class pf-c-alert on the containing div', () => {
 
 test('Renders with class pf-c-alert__title on the div containing the title', () => {
   render(<Alert title="Some title">Some alert</Alert>);
-  expect(screen.getByRole('heading', { name: 'Default alert: Some title' })).toHaveClass('pf-c-alert__title');
+  expect(screen.getByRole('heading', { name: 'Custom alert: Some title' })).toHaveClass('pf-c-alert__title');
 });
 
-test('Renders with default hidden text of "Default alert:"', () => {
+test('Renders with Custom hidden text of "Custom alert:"', () => {
   render(<Alert title="Some title">Some alert</Alert>);
-  expect(screen.getByText('Default alert:')).toBeInTheDocument();
+  expect(screen.getByText('Custom alert:')).toBeInTheDocument();
 });
 
-['success', 'danger', 'warning', 'info'].forEach(variant => {
+['success', 'danger', 'warning', 'info'].forEach((variant) => {
   test(`Does not render with class pf-m-${variant} by default`, () => {
     render(
       <Alert title="Some title" data-testid="Alert-test-id">
@@ -176,7 +176,7 @@ test('Renders the title', () => {
 test('Renders the title as an h4 by default', () => {
   render(<Alert title="Some title">Some alert</Alert>);
 
-  expect(screen.getByRole('heading', { level: 4, name: 'Default alert: Some title' })).toBeVisible();
+  expect(screen.getByRole('heading', { level: 4, name: 'Custom alert: Some title' })).toBeVisible();
 });
 
 test('Renders the title as other heading levels when one is passed using component', () => {
@@ -186,7 +186,7 @@ test('Renders the title as other heading levels when one is passed using compone
     </Alert>
   );
 
-  expect(screen.getByRole('heading', { level: 1, name: 'Default alert: Some title' })).toBeVisible();
+  expect(screen.getByRole('heading', { level: 1, name: 'Custom alert: Some title' })).toBeVisible();
 });
 
 test('Renders the element passed via the actionClose prop', () => {
@@ -378,7 +378,7 @@ test('Removes the alert after a custom time when timeout is passed with a number
 
 test('Does not remove the alert on timeout if the user is focused on the alert', async () => {
   const user = userEvent.setup({
-    advanceTimers: delay => jest.advanceTimersByTime(delay)
+    advanceTimers: (delay) => jest.advanceTimersByTime(delay)
   });
   jest.useFakeTimers();
 
@@ -402,7 +402,7 @@ test('Does not remove the alert on timeout if the user is focused on the alert',
 
 test('Does not remove the alert on timeout if the user is hovered over the alert', async () => {
   const user = userEvent.setup({
-    advanceTimers: delay => jest.advanceTimersByTime(delay)
+    advanceTimers: (delay) => jest.advanceTimersByTime(delay)
   });
   jest.useFakeTimers();
 
@@ -426,7 +426,7 @@ test('Does not remove the alert on timeout if the user is hovered over the alert
 
 test('Removes the alert after the user removes focus from the alert and 3000ms have passed', async () => {
   const user = userEvent.setup({
-    advanceTimers: delay => jest.advanceTimersByTime(delay)
+    advanceTimers: (delay) => jest.advanceTimersByTime(delay)
   });
   jest.useFakeTimers();
 
@@ -459,7 +459,7 @@ test('Removes the alert after the user removes focus from the alert and 3000ms h
 
 test('Removes the alert after the user removes hover from the alert and 3000ms have passed', async () => {
   const user = userEvent.setup({
-    advanceTimers: delay => jest.advanceTimersByTime(delay)
+    advanceTimers: (delay) => jest.advanceTimersByTime(delay)
   });
   jest.useFakeTimers();
 
@@ -492,7 +492,7 @@ test('Removes the alert after the user removes hover from the alert and 3000ms h
 
 test('Removes the alert after the user removes hover from the alert and timeoutAnimation time has passed', async () => {
   const user = userEvent.setup({
-    advanceTimers: delay => jest.advanceTimersByTime(delay)
+    advanceTimers: (delay) => jest.advanceTimersByTime(delay)
   });
   jest.useFakeTimers();
 

@@ -109,16 +109,16 @@ test('check icon without size', () => {
   expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
 });
 
-Object.values(['default', 'info', 'success', 'warning', 'danger']).forEach((status) => {
+Object.values(['custom', 'info', 'success', 'warning', 'danger']).forEach((status) => {
   test(`sets status modifier successfully - ${status}`, () => {
     render(
-      <Icon status={status as 'default' | 'info' | 'success' | 'warning' | 'danger'} title={`${status}-icon`}>
+      <Icon status={status as 'custom' | 'info' | 'success' | 'warning' | 'danger'} title={`${status}-icon`}>
         <CheckIcon />
       </Icon>
     );
     const iconContent = screen.getByTitle(`${status}-icon`).querySelector('.pf-c-icon__content');
 
-    expect(iconContent).toHaveClass(status === 'default' ? `pf-m-custom` : `pf-m-${status}`);
+    expect(iconContent).toHaveClass(`pf-m-${status}`);
   });
 });
 

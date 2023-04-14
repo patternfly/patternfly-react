@@ -23,7 +23,7 @@ export interface ModalBoxTitleProps {
   title: React.ReactNode;
   /** Optional alert icon (or other) to show before the title. When the predefined alert types
    * are used the default styling will be automatically applied. */
-  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | React.ComponentType<any>;
   /** Optional title label text for screen readers. */
   titleLabel?: string;
 }
@@ -44,7 +44,7 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
     danger: <ExclamationCircleIcon />,
     warning: <ExclamationTriangleIcon />,
     info: <InfoCircleIcon />,
-    default: <BellIcon />
+    custom: <BellIcon />
   };
   const CustomIcon = !isVariantIcon(titleIconVariant) && titleIconVariant;
 
