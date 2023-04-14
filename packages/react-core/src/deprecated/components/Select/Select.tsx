@@ -1154,7 +1154,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           <div key="inline-filter" className={css(styles.selectMenuSearch)}>
             <input
               key="inline-filter-input"
-              type="search"
               className={css(formStyles.formControl, formStyles.modifiers.search)}
               onChange={this.onChange}
               placeholder={inlineFilterPlaceholderText}

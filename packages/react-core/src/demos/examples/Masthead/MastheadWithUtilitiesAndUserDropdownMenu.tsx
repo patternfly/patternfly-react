@@ -333,7 +333,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     // eslint-disable-next-line no-console
     <Menu ref={menuRef} onActionClick={onFavorite} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
       <MenuSearchInput>
-        <SearchInput aria-label="Filter menu items" type="search" onChange={(_event, value) => onTextChange(value)} />
+        <SearchInput aria-label="Filter menu items" onChange={(_event, value) => onTextChange(value)} />
       </MenuSearchInput>
       <Divider />
       <MenuContent>

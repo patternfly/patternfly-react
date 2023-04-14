@@ -118,8 +118,8 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
     </MenuToggle>
   );
 
-  const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: string) => {
-    setSelected(itemId);
+  const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: string | number) => {
+    setSelected(itemId.toString());
     setIsOpen(!isOpen);
   };
 
@@ -153,7 +153,6 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
           <InputGroup>
             <SearchInput
               value={searchInputValue}
-              type="search"
               placeholder="Search"
               onChange={(_event, value) => onSearchInputChange(value)}
               onKeyPress={onEnterPressed}

@@ -263,7 +263,6 @@ export class MenuDemo extends Component {
               <SearchInput
                 value={input}
                 aria-label="filterable-example-with-text-input"
-                type="search"
                 onChange={(_event, value) => this.handleTextInputChange(value, 'input')}
               />
             </MenuSearchInput>

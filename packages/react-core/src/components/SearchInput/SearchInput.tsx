@@ -70,19 +70,6 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   hasWordsAttrLabel?: React.ReactNode;
   /** A suggestion for autocompleting. */
   hint?: string;
-  /** Type of the input */
-  type?:
-    | 'text'
-    | 'date'
-    | 'datetime-local'
-    | 'email'
-    | 'month'
-    | 'number'
-    | 'password'
-    | 'search'
-    | 'tel'
-    | 'time'
-    | 'url';
   /** @hide A reference object to attach to the input box. */
   innerRef?: React.RefObject<any>;
   /** A flag for controlling the open state of a custom advanced search implementation. */
@@ -162,7 +149,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   isDisabled = false,
   appendTo,
   zIndex = 9999,
-  type = 'text',
   name,
   ...props
 }: SearchInputProps) => {
@@ -305,7 +291,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         aria-label={ariaLabel}
         onKeyDown={onEnter}
         onChange={onChangeHandler}
-        type={type}
         name={name}
       />
       {renderUtilities && (

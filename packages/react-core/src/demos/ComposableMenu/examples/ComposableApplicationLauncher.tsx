@@ -251,7 +251,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
     <Menu ref={menuRef} onActionClick={onFavorite} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
       <MenuSearch>
         <MenuSearchInput>
-          <SearchInput aria-label="Filter menu items" type="search" onChange={(_event, value) => onTextChange(value)} />
+          <SearchInput aria-label="Filter menu items" onChange={(_event, value) => onTextChange(value)} />
         </MenuSearchInput>
       </MenuSearch>
       <Divider />

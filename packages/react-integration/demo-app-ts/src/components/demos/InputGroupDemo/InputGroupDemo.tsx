@@ -145,7 +145,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
         <br />
         <br />
         <InputGroup>
-          <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />
+          <TextInput name="textInput11" id="textInput11" aria-label="search input example" />
           <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
@@ -153,7 +153,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
         <br />
         <br />
         <InputGroup>
-          <TextInput name="textInput10" id="textInput10" type="search" aria-label="input example with popover" />
+          <TextInput name="textInput10" id="textInput10" aria-label="input example with popover" />
           <Popover
             aria-label="popover example"
             position={PopoverPosition.top}

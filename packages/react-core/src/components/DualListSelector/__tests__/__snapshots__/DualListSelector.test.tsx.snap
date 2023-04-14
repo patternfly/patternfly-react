@@ -1130,7 +1130,7 @@ exports[`DualListSelector with search inputs 1`] = `
                 <input
                   aria-label="Available search input"
                   class="pf-c-text-input-group__text-input"
-                  type="search"
+                  type="text"
                   value=""
                 />
               </span>
@@ -1375,7 +1375,7 @@ exports[`DualListSelector with search inputs 1`] = `
                 <input
                   aria-label="Chosen search input"
                   class="pf-c-text-input-group__text-input"
-                  type="search"
+                  type="text"
                   value=""
                 />
               </span>
