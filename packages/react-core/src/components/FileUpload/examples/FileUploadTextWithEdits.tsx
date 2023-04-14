@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
+import { DropEvent } from 'react-dropzone';
 
 export const TextFileWithEditsAllowed: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
@@ -14,7 +15,7 @@ export const TextFileWithEditsAllowed: React.FunctionComponent = () => {
     setValue(value);
   };
 
-  const handleDataChange = (value: string) => {
+  const handleDataChange = (_event: DropEvent, value: string) => {
     setValue(value);
   };
 
@@ -23,11 +24,11 @@ export const TextFileWithEditsAllowed: React.FunctionComponent = () => {
     setValue('');
   };
 
-  const handleFileReadStarted = (_fileHandle: File) => {
+  const handleFileReadStarted = (_event: DropEvent, _fileHandle: File) => {
     setIsLoading(true);
   };
 
-  const handleFileReadFinished = (_fileHandle: File) => {
+  const handleFileReadFinished = (_event: DropEvent, _fileHandle: File) => {
     setIsLoading(false);
   };
 

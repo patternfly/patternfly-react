@@ -68,13 +68,13 @@ export interface FileUploadProps
   /** Clear button was clicked. */
   onClearClick?: React.MouseEventHandler<HTMLButtonElement>;
   /** On data changed - if type='text' or type='dataURL' and file was loaded it will call this method */
-  onDataChange?: (data: string) => void;
+  onDataChange?: (event: DropEvent, data: string) => void;
   /** A callback for when the FileReader API fails. */
-  onReadFailed?: (error: DOMException, fileHandle: File) => void;
+  onReadFailed?: (event: DropEvent, error: DOMException, fileHandle: File) => void;
   /** A callback for when a selected file finishes loading. */
-  onReadFinished?: (fileHandle: File) => void;
+  onReadFinished?: (event: DropEvent, fileHandle: File) => void;
   /** A callback for when a selected file starts loading. */
-  onReadStarted?: (fileHandle: File) => void;
+  onReadStarted?: (event: DropEvent, fileHandle: File) => void;
   /** Text area text changed. */
   onTextChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, text: string) => void;
 }
@@ -102,16 +102,16 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
       onFileInputChange?.(event, fileHandle);
 
       if (type === fileReaderType.text || type === fileReaderType.dataURL) {
-        onReadStarted(fileHandle);
+        onReadStarted(event, fileHandle);
         readFile(fileHandle, type as fileReaderType)
           .then(data => {
-            onReadFinished(fileHandle);
-            onDataChange?.(data as string);
+            onReadFinished(event, fileHandle);
+            onDataChange?.(event, data as string);
           })
           .catch((error: DOMException) => {
-            onReadFailed(error, fileHandle);
-            onReadFinished(fileHandle);
-            onDataChange?.('');
+            onReadFailed(event, error, fileHandle);
+            onReadFinished(event, fileHandle);
+            onDataChange?.(event, '');
           });
       }
     }
