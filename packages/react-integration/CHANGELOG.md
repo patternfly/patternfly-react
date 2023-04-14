@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.25 (2023-04-14)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
 # 5.0.0-alpha.24 (2023-04-13)
 
 ### Bug Fixes

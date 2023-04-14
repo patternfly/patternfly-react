@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.77](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.76...@patternfly/react-docs@6.0.0-alpha.77) (2023-04-14)
+
+### Features
+
+- **FormContext:** Add context for Form to manage input state ([#8716](https://github.com/patternfly/patternfly-react/issues/8716)) ([45d2c7a](https://github.com/patternfly/patternfly-react/commit/45d2c7a160a6089241e54508086e541ee81455be))
+
 # [6.0.0-alpha.76](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.75...@patternfly/react-docs@6.0.0-alpha.76) (2023-04-14)
 
 **Note:** Version bump only for package @patternfly/react-docs

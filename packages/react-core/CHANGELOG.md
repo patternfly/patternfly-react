@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.70](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.69...@patternfly/react-core@5.0.0-alpha.70) (2023-04-14)
+
+### Features
+
+- **FormContext:** Add context for Form to manage input state ([#8716](https://github.com/patternfly/patternfly-react/issues/8716)) ([45d2c7a](https://github.com/patternfly/patternfly-react/commit/45d2c7a160a6089241e54508086e541ee81455be))
+
 # [5.0.0-alpha.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.68...@patternfly/react-core@5.0.0-alpha.69) (2023-04-14)
 
 ### Bug Fixes
