@@ -43,6 +43,18 @@ The `isSidebarOpen` property helps facilitate the opening and closing of the sid
 
 ```
 
+### Multiple sidebar body
+
+You can have multiple `<PageSidebarBody>` components inside the `<PageSidebar>` for more customization. You can modify the `<PageSidebarBody>` further by passing the following properties:
+
+- `usePageInsets` will modify the component's insets to match page insets
+- `isFilled={true}` will cause the component to grow to fill the available vertical space
+- `isFilled={false}` will cause the component to **not** grow to fill the available vertical space
+
+```ts file="./PageMultipleSidebarBody.tsx"
+
+```
+
 ### Horizontal navigation
 
 To add horizontal navigation to the top of a `<Page>`, add the navigation inside of a `<ToolbarItem>` in the `<Toolbar>` that is passed to the `<MastheadContent>` of the `<Masthead>`.
