@@ -3,17 +3,9 @@
 exports[`check loginpage example against snapshot 1`] = `
 <DocumentFragment>
   <div
-    alt="Pf-background"
     class="pf-c-background-image"
-    src="Background src"
-  >
-    <svg
-      class="pf-c-background-image__filter"
-      height="0"
-      width="0"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-  </div>
+    style="--pf-c-background-image--BackgroundImage: url(Background src);"
+  />
   <div
     class="pf-c-login"
   >

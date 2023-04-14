@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 
-import { BackgroundImage, BackgroundImageSrcMap } from '../BackgroundImage';
+import { BackgroundImage } from '../BackgroundImage';
 import { Brand } from '../Brand';
 import { List, ListVariant } from '../List';
 
@@ -22,9 +22,7 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   /** Attribute that specifies the alt text of the brand image for the login page */
   brandImgAlt?: string;
   /** Attribute that specifies the URL of the background image for the login page */
-  backgroundImgSrc?: string | BackgroundImageSrcMap;
-  /** Attribute that specifies the alt text of the background image for the login page */
-  backgroundImgAlt?: string;
+  backgroundImgSrc?: string;
   /** Content rendered inside of the text component of the login page */
   textContent?: string;
   /** Items rendered inside of the footer list component of the login page */
@@ -53,7 +51,6 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
   brandImgSrc = '',
   brandImgAlt = '',
   backgroundImgSrc = '',
-  backgroundImgAlt = '',
   footerListItems = null,
   textContent = '',
   footerListVariants,
@@ -81,7 +78,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
 
   return (
     <React.Fragment>
-      {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} alt={backgroundImgAlt} />}
+      {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} />}
       <Login header={Header} footer={Footer} className={css(className)} {...props}>
         <LoginMainHeader title={loginTitle} subtitle={loginSubtitle} headerUtilities={headerUtilities} />
         <LoginMainBody>{children}</LoginMainBody>

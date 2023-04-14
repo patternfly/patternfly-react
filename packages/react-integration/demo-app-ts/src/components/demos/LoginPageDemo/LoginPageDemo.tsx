@@ -1,11 +1,7 @@
 import * as React from 'react';
 /* eslint-disable camelcase */
 const brandImg = require('./images/brandImgColor.svg') as string;
-const pfbg_1200 = require('./images/pfbg_1200.jpg');
-const pfbg_768 = require('./images/pfbg_768.jpg');
-const pfbg_768_2x = require('./images/pfbg_768@2x.jpg');
-const pfbg_576 = require('./images/pfbg_576.jpg');
-const pfbg_576_2x = require('./images/pfbg_576@2x.jpg');
+const pfbg_icon = require('./images/pfbg-icon.svg') as string;
 
 import {
   LoginFooterItem,
@@ -17,18 +13,6 @@ import {
   ListVariant
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-
-/**
- * Note: When using background-filter.svg, you must also include #image_overlay as the fragment identifier
- */
-
-const images = {
-  lg: pfbg_1200,
-  sm: pfbg_768,
-  sm2x: pfbg_768_2x,
-  xs: pfbg_576,
-  xs2x: pfbg_576_2x
-};
 
 export interface LoginPageDemoState {
   showHelperText: boolean;
@@ -163,8 +147,7 @@ export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         footerListVariants={ListVariant.inline}
         brandImgSrc={brandImg}
         brandImgAlt="PatternFly logo"
-        backgroundImgSrc={images}
-        backgroundImgAlt="Images"
+        backgroundImgSrc={pfbg_icon}
         footerListItems={listItems}
         textContent="This is placeholder text only. Use this area to place any information or introductory message about your
         application that may be relevant to users."
