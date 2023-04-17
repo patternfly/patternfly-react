@@ -28,7 +28,7 @@ export interface RadioProps
   /** Name for group of radios */
   name: string;
   /** A callback for when the radio selection changes. */
-  onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
   /** Aria label for the radio. */
   'aria-label'?: string;
   /** Description text of the radio. */
@@ -62,7 +62,7 @@ export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> 
   }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-    this.props.onChange(event.currentTarget.checked, event);
+    this.props.onChange(event, event.currentTarget.checked);
   };
 
   render() {

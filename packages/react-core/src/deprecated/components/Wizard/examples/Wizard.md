@@ -227,7 +227,7 @@ class ProgressiveWizard extends React.Component {
           <Radio
             value="Create"
             isChecked={getStartedStepRadio === 'Create'}
-            onChange={(_, event) => this.setState({ getStartedStepRadio: event.currentTarget.value })}
+            onChange={(event) => this.setState({ getStartedStepRadio: event.currentTarget.value })}
             label="Create a new thing"
             name="radio-step-start"
             id="radio-step-start-1"
@@ -235,7 +235,7 @@ class ProgressiveWizard extends React.Component {
           <Radio
             value="Update"
             isChecked={getStartedStepRadio === 'Update'}
-            onChange={(_, event) => this.setState({ getStartedStepRadio: event.currentTarget.value })}
+            onChange={(event) => this.setState({ getStartedStepRadio: event.currentTarget.value })}
             label="Update an existing thing"
             name="radio-step-start"
             id="radio-step-start-2"
@@ -250,7 +250,7 @@ class ProgressiveWizard extends React.Component {
           <Radio
             value="Quick"
             isChecked={createStepRadio === 'Quick'}
-            onChange={(_, event) => this.setState({ createStepRadio: event.currentTarget.value })}
+            onChange={(event) => this.setState({ createStepRadio: event.currentTarget.value })}
             label="Quick create"
             name="radio-step-create"
             id="radio-step-create-1"
@@ -258,7 +258,7 @@ class ProgressiveWizard extends React.Component {
           <Radio
             value="Custom"
             isChecked={createStepRadio === 'Custom'}
-            onChange={(_, event) => this.setState({ createStepRadio: event.currentTarget.value })}
+            onChange={(event) => this.setState({ createStepRadio: event.currentTarget.value })}
             label="Custom create"
             name="radio-step-create"
             id="radio-step-create-2"
@@ -273,7 +273,7 @@ class ProgressiveWizard extends React.Component {
           <Radio
             value="Quick"
             isChecked={updateStepRadio === 'Quick'}
-            onChange={(_, event) => this.setState({ updateStepRadio: event.currentTarget.value })}
+            onChange={(event) => this.setState({ updateStepRadio: event.currentTarget.value })}
             label="Quick update"
             name="radio-step-update"
             id="radio-step-update-1"
@@ -281,7 +281,7 @@ class ProgressiveWizard extends React.Component {
           <Radio
             value="Custom"
             isChecked={updateStepRadio === 'Custom'}
-            onChange={(_, event) => this.setState({ updateStepRadio: event.currentTarget.value })}
+            onChange={(event) => this.setState({ updateStepRadio: event.currentTarget.value })}
             label="Custom update"
             name="radio-step-update"
             id="radio-step-update-2"

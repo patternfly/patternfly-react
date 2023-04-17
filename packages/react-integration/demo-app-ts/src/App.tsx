@@ -98,7 +98,7 @@ class App extends React.Component<{}, AppState> {
               label={`Light theme`}
               name="light-theme"
               isChecked={!isDarkTheme}
-              onChange={checked => checked && this.onThemeSelect(false)}
+              onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => checked && this.onThemeSelect(false)}
             />
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
@@ -108,7 +108,7 @@ class App extends React.Component<{}, AppState> {
               aria-label="Dark theme"
               name="dark-theme"
               isChecked={isDarkTheme}
-              onChange={checked => checked && this.onThemeSelect(true)}
+              onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => checked && this.onThemeSelect(true)}
             />
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
