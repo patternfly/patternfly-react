@@ -21,7 +21,7 @@ PatternFly supports several alert variants for different scenarios. Each variant
 
 | Variant | Description |
 |---|---|
-| Custom | Use for generic messages that should have a custom color set by the associated css variable |
+| Custom | Use for generic messages that should have a custom color set by the associated CSS variable. Should be used when the message has no associated severity. |
 | Info | Use for general informational messages |
 | Success | Use to indicate that a task or process has been completed successfully |
 | Warning | Use to indicate that a non-critical error has occurred|

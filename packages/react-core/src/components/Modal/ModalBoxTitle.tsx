@@ -12,7 +12,7 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import { useIsomorphicLayoutEffect } from '../../helpers';
 
 export const isVariantIcon = (icon: any): icon is string =>
-  ['success', 'danger', 'warning', 'info', 'default'].includes(icon as string);
+  ['success', 'danger', 'warning', 'info', 'custom'].includes(icon as string);
 
 export interface ModalBoxTitleProps {
   /** Additional classes added to the modal box title. */
