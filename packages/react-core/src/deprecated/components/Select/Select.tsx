@@ -119,7 +119,7 @@ export interface SelectProps
   /** Label for the favorites group */
   favoritesLabel?: string;
   /** Enables favorites. Callback called when a select options's favorite button is clicked */
-  onFavorite?: (itemId: string, isFavorite: boolean) => void;
+  onFavorite?: (event: React.MouseEvent | React.KeyboardEvent, itemId: string, isFavorite: boolean) => void;
   /** Callback for selection behavior */
   onSelect?: (
     event: React.MouseEvent | React.ChangeEvent,
@@ -133,11 +133,11 @@ export interface SelectProps
   /** Callback for typeahead clear button */
   onClear?: (event: React.MouseEvent) => void;
   /** Optional callback for custom filtering */
-  onFilter?: (e: React.ChangeEvent<HTMLInputElement> | null, value: string) => React.ReactElement[] | undefined;
+  onFilter?: (event: React.ChangeEvent<HTMLInputElement> | null, value: string) => React.ReactElement[] | undefined;
   /** Optional callback for newly created options */
-  onCreateOption?: (newOptionValue: string) => void;
+  onCreateOption?: (event: React.MouseEvent | React.ChangeEvent, newOptionValue: string) => void;
   /** Optional event handler called each time the value in the typeahead input changes. */
-  onTypeaheadInputChanged?: (value: string) => void;
+  onTypeaheadInputChanged?: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
   /** Variant of rendered Select */
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Width of the select container as a number of px or string percentage */
@@ -419,7 +419,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
 
     if (this.props.onTypeaheadInputChanged) {
-      this.props.onTypeaheadInputChanged(e.target.value.toString());
+      this.props.onTypeaheadInputChanged(e, e.target.value.toString());
     }
 
     this.setState({
@@ -551,7 +551,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           <SelectOption
             key={`create ${newValue}`}
             value={newOptionValue}
-            onClick={() => onCreateOption && onCreateOption(newValue)}
+            onClick={(event) => onCreateOption && onCreateOption(event, newValue)}
           >
             {createText} "{newValue}"
           </SelectOption>

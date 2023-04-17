@@ -205,11 +205,11 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       <button
         className={css(styles.selectMenuItem, styles.modifiers.action, styles.modifiers.favoriteAction)}
         aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
-        onClick={() => {
-          onFavorite(generatedId.replace('favorite-', ''), isFavorite);
+        onClick={(event) => {
+          onFavorite(event, generatedId.replace('favorite-', ''), isFavorite);
         }}
         onKeyDown={event => {
-          this.onKeyDown(event, 1, () => onFavorite(generatedId.replace('favorite-', ''), isFavorite));
+          this.onKeyDown(event, 1, () => onFavorite(event, generatedId.replace('favorite-', ''), isFavorite));
         }}
         ref={this.favoriteRef}
       >
@@ -245,7 +245,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       onClose: () => void,
       variant: string,
       inputIdPrefix: string,
-      onFavorite: (itemId: string, isFavorite: boolean) => void,
+      onFavorite: (event: React.MouseEvent | React.KeyboardEvent, itemId: string, isFavorite: boolean) => void,
       shouldResetOnSelect: boolean
     ) => {
       if (variant !== SelectVariant.checkbox && isLoading && isGrouped) {

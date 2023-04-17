@@ -158,7 +158,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
     }
   };
 
-  onFavorite = (itemId: string, isFavorite: boolean) => {
+  onFavorite = (_event: React.MouseEvent | React.KeyboardEvent, itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
         favorites: this.state.favorites.filter(id => id !== itemId)
@@ -172,7 +172,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
     }
   };
 
-  onFavoriteGrouped = (itemId: string, isFavorite: boolean) => {
+  onFavoriteGrouped = (_event: React.MouseEvent | React.KeyboardEvent, itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
         favoritesGrouped: this.state.favoritesGrouped.filter(id => id !== itemId)
@@ -186,7 +186,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
     }
   };
 
-  onFavoriteTypeahead = (itemId: string, isFavorite: boolean) => {
+  onFavoriteTypeahead = (_event: React.MouseEvent | React.KeyboardEvent, itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
         typeaheadfavorites: this.state.typeaheadfavorites.filter(id => id !== itemId)
@@ -200,7 +200,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
     }
   };
 
-  onFavoriteTypeaheadMulti = (itemId: string, isFavorite: boolean) => {
+  onFavoriteTypeaheadMulti = (_event: React.MouseEvent | React.KeyboardEvent, itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
         typeaheadMultifavorites: this.state.typeaheadMultifavorites.filter(id => id !== itemId)

@@ -616,7 +616,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  typeaheadCreateNew = (newValue: string) => {
+  typeaheadCreateNew = (_event: React.MouseEvent | React.ChangeEvent, newValue: string) => {
     this.setState({
       typeaheadOptions: [...this.state.typeaheadOptions, { value: newValue, disabled: false }]
     });

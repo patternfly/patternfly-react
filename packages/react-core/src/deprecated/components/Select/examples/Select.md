@@ -369,7 +369,7 @@ class FavoritesSelect extends React.Component {
       });
     };
 
-    this.onFavorite = (itemId, isFavorite) => {
+    this.onFavorite = (_event, itemId, isFavorite) => {
       if (isFavorite) {
         this.setState({
           favorites: this.state.favorites.filter(id => id !== itemId)
@@ -1798,7 +1798,7 @@ class TypeaheadSelectInput extends React.Component {
       }
     };
 
-    this.onCreateOption = newValue => {
+    this.onCreateOption = (_event, newValue) => {
       this.setState({
         options: [...this.state.options, { value: newValue }]
       });
@@ -2016,7 +2016,7 @@ class GroupedTypeaheadSelectInput extends React.Component {
       }
     };
 
-    this.onCreateOption = newValue => {
+    this.onCreateOption = (_event, newValue) => {
       this.setState({
         newOptions: [...this.state.newOptions, <SelectOption key={newValue} value={newValue} />]
       });
@@ -2214,7 +2214,7 @@ class MultiTypeaheadSelectInput extends React.Component {
       resetOnSelect: true
     };
 
-    this.onCreateOption = newValue => {
+    this.onCreateOption = (_event, newValue) => {
       this.setState({
         options: [...this.state.options, { value: newValue }]
       });

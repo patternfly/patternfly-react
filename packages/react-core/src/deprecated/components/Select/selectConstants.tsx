@@ -8,7 +8,7 @@ export interface SelectContextInterface {
     isPlaceholder?: boolean
   ) => void;
   onClose: () => void;
-  onFavorite: (itemId: string, isFavorite: boolean) => void;
+  onFavorite: (event: React.MouseEvent | React.KeyboardEvent, itemId: string, isFavorite: boolean) => void;
   variant: string;
   inputIdPrefix: string;
   shouldResetOnSelect: boolean;
