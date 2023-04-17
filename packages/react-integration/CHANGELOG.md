@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.25...@patternfly/react-integration@5.0.0-alpha.26) (2023-04-17)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
 # 5.0.0-alpha.25 (2023-04-14)
 
 **Note:** Version bump only for package @patternfly/react-integration
