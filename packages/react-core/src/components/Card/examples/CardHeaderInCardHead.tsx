@@ -39,7 +39,8 @@ export const CardTitleInHeader: React.FunctionComponent = () => {
       <DropdownItem key="disabled link" isDisabled to="#" onClick={(event: any) => event.preventDefault()}>
         Disabled Link
       </DropdownItem>
-      <Divider component="li" key="separator" />,<DropdownItem key="separated action">Separated Action</DropdownItem>
+      <Divider component="li" key="separator" />
+      <DropdownItem key="separated action">Separated Action</DropdownItem>
       <DropdownItem key="separated link" to="#" onClick={(event: any) => event.preventDefault()}>
         Separated Link
       </DropdownItem>
