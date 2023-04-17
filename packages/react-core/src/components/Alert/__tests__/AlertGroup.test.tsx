@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Alert } from '../../Alert';
-import { AlertGroup } from '../../AlertGroup';
+import { AlertGroup } from '../../Alert';
 import { AlertActionCloseButton } from '../../../components/Alert/AlertActionCloseButton';
 
 describe('AlertGroup', () => {
