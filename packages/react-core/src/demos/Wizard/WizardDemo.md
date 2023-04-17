@@ -1,7 +1,7 @@
 ---
 id: Wizard
 section: components
-source: react-deprecated-demos
+source: react-demos
 ---
 
 import imgBrand from './imgBrand.svg';
