@@ -1,56 +1,50 @@
-import * as React from 'react';
+import React from 'react';
+
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
-import { WizardDrawerWrapper } from './WizardDrawerWrapper';
-import { Drawer, DrawerContent } from '../Drawer';
-import { WizardStep } from './Wizard';
+import { WizardContext } from './WizardContext';
 import { debounce } from '../../helpers/util';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 
+/**
+ * Used as a wrapper for WizardStep content, where the wrapping element is customizable.
+ */
+
 export interface WizardBodyProps {
   /** Anything that can be rendered in the Wizard body */
-  children: any;
-  /** Set to true to remove the default body padding */
-  hasNoBodyPadding: boolean;
-  /** Adds an accessible name to the wizard body when the body content overflows and renders
+  children: React.ReactNode | React.ReactNode[];
+  /** Flag to remove the default body padding */
+  hasNoPadding?: boolean;
+  /** Adds an accessible name to the wrapper element when the content overflows and renders
    * a scrollbar.
    */
   'aria-label'?: string;
-  /** Adds an accessible name to the wizard body by passing the the id of one or more elements.
-   * The aria-labelledby will only be applied when the body content overflows and renders a scrollbar.
+  /** Adds an accessible name to the wrapper element by passing the the id of one or more elements.
+   * The aria-labelledby will only be applied when the content overflows and renders a scrollbar.
    */
-  'aria-labelledby': string;
-  /** Component used as the primary content container */
-  mainComponent?: React.ElementType;
-  /** The currently active WizardStep */
-  activeStep: WizardStep;
-  hasDrawer?: boolean;
-  /** Flag indicating the wizard drawer is expanded */
-  isDrawerExpanded?: boolean;
-  /** Callback function for when the drawer is toggled */
-  onExpandDrawer?: () => void;
+  'aria-labelledby'?: string;
+  /** Component used as the wrapping content container */
+  component?: React.ElementType;
 }
 
-export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
+export const WizardBody = ({
   children,
-  hasNoBodyPadding = false,
+  hasNoPadding = false,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
-  mainComponent = 'div',
-  hasDrawer,
-  isDrawerExpanded,
-  onExpandDrawer,
-  activeStep
+  component = 'div'
 }: WizardBodyProps) => {
-  const MainComponent = mainComponent;
   const [hasScrollbar, setHasScrollbar] = React.useState(false);
   const [previousWidth, setPreviousWidth] = React.useState<number | undefined>(undefined);
-  const wizardBodyRef = React.useRef(null);
+  const wrapperRef = React.useRef(null);
+  const WrapperComponent = component;
+  const { activeStep } = React.useContext(WizardContext);
+  const defaultAriaLabel = ariaLabel || `${activeStep?.name} content`;
 
   React.useEffect(() => {
     const resize = () => {
-      if (wizardBodyRef?.current) {
-        const { offsetWidth, offsetHeight, scrollHeight } = wizardBodyRef.current;
+      if (wrapperRef?.current) {
+        const { offsetWidth, offsetHeight, scrollHeight } = wrapperRef.current;
 
         if (previousWidth !== offsetWidth) {
           setPreviousWidth(offsetWidth);
@@ -62,12 +56,12 @@ export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
     const handleResizeWithDelay = debounce(resize, 250);
     let observer = () => {};
 
-    if (wizardBodyRef?.current) {
-      observer = getResizeObserver(wizardBodyRef.current, handleResizeWithDelay);
-      const { offsetHeight, scrollHeight } = wizardBodyRef.current;
+    if (wrapperRef?.current) {
+      observer = getResizeObserver(wrapperRef.current, handleResizeWithDelay);
+      const { offsetHeight, scrollHeight } = wrapperRef.current;
 
       setHasScrollbar(offsetHeight < scrollHeight);
-      setPreviousWidth((wizardBodyRef.current as HTMLElement).offsetWidth);
+      setPreviousWidth((wrapperRef.current as HTMLElement).offsetWidth);
     }
 
     return () => {
@@ -76,23 +70,15 @@ export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
   }, []);
 
   return (
-    <MainComponent
-      {...(mainComponent === 'div' && hasScrollbar && { role: 'region' })}
-      {...(hasScrollbar && { 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy, tabIndex: 0 })}
-      ref={wizardBodyRef}
+    <WrapperComponent
+      ref={wrapperRef}
+      {...(component === 'div' && hasScrollbar && { role: 'region' })}
+      {...(hasScrollbar && { 'aria-label': defaultAriaLabel, 'aria-labelledby': ariaLabelledBy, tabIndex: 0 })}
       className={css(styles.wizardMain)}
     >
-      <WizardDrawerWrapper
-        hasDrawer={hasDrawer && activeStep.drawerPanelContent}
-        wrapper={(children: React.ReactNode) => (
-          <Drawer isInline isExpanded={isDrawerExpanded} onExpand={onExpandDrawer}>
-            <DrawerContent panelContent={activeStep.drawerPanelContent}>{children}</DrawerContent>
-          </Drawer>
-        )}
-      >
-        <div className={css(styles.wizardMainBody, hasNoBodyPadding && styles.modifiers.noPadding)}>{children}</div>
-      </WizardDrawerWrapper>
-    </MainComponent>
+      <div className={css(styles.wizardMainBody, hasNoPadding && styles.modifiers.noPadding)}>{children}</div>
+    </WrapperComponent>
   );
 };
+
 WizardBody.displayName = 'WizardBody';

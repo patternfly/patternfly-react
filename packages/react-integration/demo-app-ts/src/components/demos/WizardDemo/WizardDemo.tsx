@@ -1,4 +1,5 @@
-import { Button, Wizard, WizardStep } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core';
+import { Wizard, WizardStep } from '@patternfly/react-core/deprecated'
 import React from 'react';
 
 interface WizardDemoState {

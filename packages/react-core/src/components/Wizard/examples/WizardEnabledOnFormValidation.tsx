@@ -1,37 +1,23 @@
 import React from 'react';
-import {
-  Form,
-  FormGroup,
-  FormHelperText,
-  HelperText,
-  HelperTextItem,
-  TextInput,
-  Wizard,
-  WizardStep
-} from '@patternfly/react-core';
-interface PrevStepInfo {
-  prevId?: string | number;
-  prevName: React.ReactNode;
+
+import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextInput, Wizard, WizardStep } from '@patternfly/react-core';
+
+interface SampleFormProps {
+  value: string;
+  isValid: boolean;
+  setValue: (value: string) => void;
+  setIsValid: (isValid: boolean) => void;
 }
 
-interface sampleFormProps {
-  formValue: string;
-  isFormValid: boolean;
-  onChange?: (isValid: boolean, value: string) => void;
-}
-
-const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormProps) => {
-  const [value, setValue] = React.useState(props.formValue);
-  const [isValid, setIsValid] = React.useState(props.isFormValid);
+const SampleForm: React.FunctionComponent<SampleFormProps> = ({ value, isValid, setValue, setIsValid }) => {
+  const validated = isValid ? 'default' : 'error';
 
   const handleTextInputChange = (value: string) => {
-    const valid = /^\d+$/.test(value);
-    setValue(value);
-    setIsValid(valid);
-    props.onChange && props.onChange(valid, value);
-  };
+    const isValid = /^\d+$/.test(value);
 
-  const validated = isValid ? 'default' : 'error';
+    setValue(value);
+    setIsValid(isValid);
+  };
 
   return (
     <Form>
@@ -39,7 +25,7 @@ const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormP
         <TextInput
           validated={validated}
           value={value}
-          id="age-input"
+          id="age"
           aria-describedby="age-helper"
           onChange={handleTextInputChange}
         />
@@ -55,94 +41,43 @@ const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormP
   );
 };
 
-export const WizardFormValidation: React.FunctionComponent = () => {
-  const [isFormValid, setIsFormValid] = React.useState(false);
-  const [formValue, setFormValue] = React.useState('Thirty');
-  const [allStepsValid, setAllStepsValid] = React.useState(false);
-  const [stepIdReached, setStepIdReached] = React.useState(1);
+export const WizardEnabledOnFormValidation: React.FunctionComponent = () => {
+  const [ageValue, setAgeValue] = React.useState('Thirty');
+  const [isSubAFormValid, setIsSubAFormValid] = React.useState(false);
 
-  React.useEffect(() => {
-    setAllStepsValid(isFormValid);
-  }, [isFormValid, stepIdReached]);
+  const onSave = () => alert(`Wow, you look a lot younger than ${ageValue}.`);
 
-  const closeWizard = () => {
-    // eslint-disable-next-line no-console
-    console.log('close wizard');
-  };
-
-  const onFormChange = (isValid: boolean, value: string) => {
-    setIsFormValid(isValid);
-    setFormValue(value);
-  };
-
-  const areAllStepsValid = () => {
-    setAllStepsValid(isFormValid);
-  };
-
-  const onNext = ({ id, name }: WizardStep, { prevId, prevName }: PrevStepInfo) => {
-    // eslint-disable-next-line no-console
-    console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
-    if (id) {
-      if (typeof id === 'string') {
-        const [, orderIndex] = id.split('-');
-        id = parseInt(orderIndex);
-      }
-      setStepIdReached(stepIdReached < id ? id : stepIdReached);
-    }
-  };
-
-  const onBack = ({ id, name }: WizardStep, { prevId, prevName }: PrevStepInfo) => {
-    // eslint-disable-next-line no-console
-    console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
-    areAllStepsValid();
-  };
-
-  const onGoToStep = ({ id, name }: WizardStep, { prevId, prevName }: PrevStepInfo) => {
-    // eslint-disable-next-line no-console
-    console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
-  };
-
-  const steps = [
-    { id: 'validated-1', name: 'Information', component: <p>Step 1 content</p> },
-    {
-      name: 'Configuration',
-      steps: [
-        {
-          id: 'validated-2',
-          name: 'Substep A with validation',
-          component: <SampleForm formValue={formValue} isFormValid={isFormValid} onChange={onFormChange} />,
-          enableNext: isFormValid,
-          canJumpTo: stepIdReached >= 2
-        },
-        { id: 'validated-3', name: 'Substep B', component: <p>Substep B</p>, canJumpTo: stepIdReached >= 3 }
-      ]
-    },
-    {
-      id: 'validated-4',
-      name: 'Additional',
-      component: <p>Step 3 content</p>,
-      enableNext: allStepsValid,
-      canJumpTo: stepIdReached >= 4
-    },
-    {
-      id: 'validated-5',
-      name: 'Review',
-      component: <p>Step 4 content</p>,
-      nextButtonText: 'Finish',
-      canJumpTo: stepIdReached >= 5
-    }
-  ];
-  const title = 'Wizard enabled on form validation example';
   return (
-    <Wizard
-      navAriaLabel={`${title} steps`}
-      mainAriaLabel={`${title} content`}
-      onClose={closeWizard}
-      steps={steps}
-      onNext={onNext}
-      onBack={onBack}
-      onGoToStep={onGoToStep}
-      height={400}
-    />
+    <Wizard isVisitRequired height={400} title="Enabled on form validation wizard" onSave={onSave}>
+      <WizardStep name="Information" id="form-valid-info">
+        Information content
+      </WizardStep>
+      <WizardStep
+        name="Configuration"
+        id="form-valid-config"
+        steps={[
+          <WizardStep
+            name="Substep A with validation"
+            id="form-valid-sub-a"
+            key="form-valid-sub-a"
+            footer={{ isNextDisabled: !isSubAFormValid }}
+          >
+            <SampleForm
+              value={ageValue}
+              setValue={setAgeValue}
+              isValid={isSubAFormValid}
+              setIsValid={setIsSubAFormValid}
+            />
+          </WizardStep>,
+          <WizardStep name="Substep B" id="form-valid-sub-b" key="form-valid-sub-b">
+            Substep B content
+          </WizardStep>
+        ]}
+      />
+      <WizardStep name="Additional" id="form-valid-additional">
+        Additional step content
+      </WizardStep>
+      <WizardStep name="Review" id="form-valid-review" footer={{ nextButtonText: 'Submit form' }}></WizardStep>
+    </Wizard>
   );
 };

@@ -1,70 +1,87 @@
 import * as React from 'react';
+
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import { useOUIAProps, OUIAProps } from '../../helpers';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+
+import { OUIAProps, useOUIAProps } from '../../helpers';
+import { WizardNavItemStatus } from './types';
 
 export interface WizardNavItemProps extends OUIAProps {
   /** Can nest a WizardNav component for substeps */
   children?: React.ReactNode;
-  /** The content to display in the nav item */
+  /** The content to display in the navigation item */
   content?: React.ReactNode;
-  /** Whether the nav item is the currently active item */
+  /** Whether the navigation item is the currently active item */
   isCurrent?: boolean;
-  /** Whether the nav item is disabled */
+  /** Whether the navigation item is disabled */
   isDisabled?: boolean;
-  /** The step passed into the onNavItemClick callback */
-  step: number;
-  /** Callback for when the nav item is clicked */
-  onNavItemClick?: (step: number) => any;
+  /** Whether the navigation item has been visited */
+  isVisited?: boolean;
+  /** The step index passed into the onNavItemClick callback */
+  stepIndex: number;
+  /** Callback for when the navigation item is clicked */
+  onClick?: (event: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>, index: number) => any;
   /** Component used to render WizardNavItem */
-  navItemComponent?: 'button' | 'a';
+  component?: 'button' | 'a';
   /** An optional url to use for when using an anchor component */
   href?: string;
+  /** Where to display the linked URL when using an anchor component */
+  target?: React.HTMLAttributeAnchorTarget;
   /** Flag indicating that this NavItem has child steps and is expandable */
   isExpandable?: boolean;
-  /** The id for the nav item */
+  /** The id for the navigation item */
   id?: string | number;
+  /** Used to determine the icon displayed next to content. Default has no icon. */
+  status?: 'default' | 'error';
 }
 
-export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
+export const WizardNavItem = ({
   children = null,
   content = '',
   isCurrent = false,
   isDisabled = false,
-  step,
-  onNavItemClick = () => undefined,
-  navItemComponent = 'button',
-  href = null,
+  isVisited = false,
+  stepIndex,
+  onClick,
+  component: NavItemComponent = 'button',
+  href,
   isExpandable = false,
   id,
+  status = 'default',
+  target,
   ouiaId,
-  ouiaSafe = true,
-  ...rest
+  ouiaSafe = true
 }: WizardNavItemProps) => {
-  const ouiaProps = useOUIAProps(WizardNavItem.displayName, ouiaId, ouiaSafe);
-  const NavItemComponent = navItemComponent;
-
   const [isExpanded, setIsExpanded] = React.useState(false);
+  const ouiaProps = useOUIAProps(WizardNavItem.displayName, ouiaId, ouiaSafe);
 
   React.useEffect(() => {
     setIsExpanded(isCurrent);
   }, [isCurrent]);
 
-  if (navItemComponent === 'a' && !href && process.env.NODE_ENV !== 'production') {
+  if (NavItemComponent === 'a' && !href && process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line no-console
     console.error('WizardNavItem: When using an anchor, please provide an href');
   }
 
-  const btnProps = {
-    disabled: isDisabled,
-    type: 'button' as const
-  };
+  const ariaLabel = React.useMemo(() => {
+    if (status === WizardNavItemStatus.Error || (isVisited && !isCurrent)) {
+      let label = content.toString();
 
-  const linkProps = {
-    tabIndex: isDisabled ? -1 : undefined,
-    href
-  };
+      if (status === WizardNavItemStatus.Error) {
+        label += `, ${status}`;
+      }
+
+      // No need to signify step is visited if current
+      if (isVisited && !isCurrent) {
+        label += ', visited';
+      }
+
+      return label;
+    }
+  }, [content, isCurrent, isVisited, status]);
 
   return (
     <li
@@ -75,10 +92,14 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
       )}
     >
       <NavItemComponent
-        {...rest}
-        {...(navItemComponent === 'a' ? { ...linkProps } : { ...btnProps })}
+        {...(NavItemComponent === 'a'
+          ? { tabIndex: isDisabled ? -1 : undefined, href, target }
+          : { disabled: isDisabled })}
         {...(id && { id: id.toString() })}
-        onClick={() => (isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onNavItemClick(step))}
+        onClick={e => {
+          e.stopPropagation();
+          isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onClick?.(e, stepIndex);
+        }}
         className={css(
           styles.wizardNavLink,
           isCurrent && styles.modifiers.current,
@@ -87,6 +108,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
         aria-disabled={isDisabled ? true : null}
         aria-current={isCurrent && !children ? 'step' : false}
         {...(isExpandable && { 'aria-expanded': isExpanded })}
+        {...(ariaLabel && { 'aria-label': ariaLabel })}
         {...ouiaProps}
       >
         {isExpandable ? (
@@ -94,16 +116,25 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
             <span className={css(styles.wizardNavLinkText)}>{content}</span>
             <span className={css(styles.wizardNavLinkToggle)}>
               <span className={css(styles.wizardNavLinkToggleIcon)}>
-                <AngleRightIcon />
+                <AngleRightIcon aria-label={`${isCurrent ? 'Collapse' : 'Expand'} step icon`} />
               </span>
             </span>
           </>
         ) : (
-          content
+          <>
+            {content}
+            {/* TODO, patternfly/patternfly#5142 */}
+            {status === WizardNavItemStatus.Error && (
+              <span style={{ marginLeft: 'var(--pf-global--spacer--sm)' }}>
+                <ExclamationCircleIcon color="var(--pf-global--danger-color--100)" />
+              </span>
+            )}
+          </>
         )}
       </NavItemComponent>
       {children}
     </li>
   );
 };
+
 WizardNavItem.displayName = 'WizardNavItem';
