@@ -26,7 +26,7 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
     setIsOpen(!isOpen);
   };
 
-  const onChange = (value: number) => {
+  const onChange = (_event: any, value: number) => {
     setContainerWidth(value);
   };
 

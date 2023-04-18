@@ -16,14 +16,19 @@ export const SliderDisabled: React.FunctionComponent = () => {
   ];
 
   const displayValue = () => {
-    const step = steps.find(step => step.value === value);
+    const step = steps.find((step) => step.value === value);
     return step ? step.label : 0;
   };
 
   return (
     <>
       <Text component={TextVariants.h3}>Slider value is: {displayValue()}</Text>
-      <Slider isDisabled value={value} onChange={setValue} customSteps={steps} />
+      <Slider
+        isDisabled
+        value={value}
+        onChange={(_event, value) => typeof value === 'number' && setValue(value)}
+        customSteps={steps}
+      />
     </>
   );
 };

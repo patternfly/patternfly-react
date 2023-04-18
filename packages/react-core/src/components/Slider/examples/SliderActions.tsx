@@ -11,11 +11,12 @@ export const SliderActions: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = React.useState(50);
   const [isDisabled, setIsDisabled] = React.useState(false);
 
-  const onChange1 = (value: number) => {
+  const onChange1 = (_event: any, value: number) => {
     setValue1(Math.floor(Number(value)));
   };
 
   const onChange2 = (
+    _event: any,
     value: number,
     inputValue: number,
     setLocalInputValue: React.Dispatch<React.SetStateAction<number>>

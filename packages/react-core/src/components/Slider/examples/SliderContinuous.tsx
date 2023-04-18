@@ -16,11 +16,15 @@ export const SliderContinuous: React.FunctionComponent = () => {
         style={{ marginBottom: 20 }}
       />
       <Text component={TextVariants.h3}>Slider Value is: {value}</Text>
-      <Slider hasTooltipOverThumb={hasTooltipOverThumb} value={value} onChange={setValue} />
+      <Slider
+        hasTooltipOverThumb={hasTooltipOverThumb}
+        value={value}
+        onChange={(_event, value) => typeof value === 'number' && setValue(value)}
+      />
       <br />
       <Text component={TextVariants.h3}>Slider value is: {valueCustom}</Text>
       <Slider
-        onChange={setValueCustom}
+        onChange={(_event, value) => typeof value === 'number' && setValueCustom(value)}
         value={valueCustom}
         areCustomStepsContinuous
         hasTooltipOverThumb={hasTooltipOverThumb}

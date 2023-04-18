@@ -6,6 +6,7 @@ export const SliderThumbValueInput: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = React.useState(50);
 
   const onChange = (
+    _event: any,
     value: number,
     inputValue: number,
     setLocalInputValue: React.Dispatch<React.SetStateAction<number>>
