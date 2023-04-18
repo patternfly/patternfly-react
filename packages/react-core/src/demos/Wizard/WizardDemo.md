@@ -25,18 +25,20 @@ import {
   NavList,
   PageSection,
   Modal,
-  ModalVariant
+  ModalVariant,
+  Wizard,
+  WizardHeader,
+  WizardStep
 } from '@patternfly/react-core';
-import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
-class BasicWizardDemo extends React.Component {
+class WizardInModalDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       activeItem: 0
     };
-    this.onNavSelect = result => {
+    this.onNavSelect = (result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -45,28 +47,6 @@ class BasicWizardDemo extends React.Component {
   render() {
     const { activeItem } = this.state;
 
-    const steps = [
-      { id: 0, name: 'Information', component: <p>Step 1 content</p> },
-      {
-        id: 1,
-        name: 'Configuration',
-        steps: [
-          {
-            id: 2,
-            name: 'Substep A',
-            component: <p>Configuration substep A</p>
-          },
-          {
-            id: 3,
-            name: 'Substep B',
-            component: <p>Configuration substep B</p>
-          }
-        ],
-        component: <p>Step 2 content</p>
-      },
-      { id: 4, name: 'Additional', component: <p>Step 3 content</p> },
-      { id: 5, name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
-    ];
     const title = 'Basic wizard';
     return (
       <React.Fragment>
@@ -91,16 +71,32 @@ class BasicWizardDemo extends React.Component {
           aria-describedby="wiz-modal-demo-description"
           aria-labelledby="wiz-modal-demo-title"
         >
-          <WizardDeprecated
-            navAriaLabel={`${title} steps`}
-            mainAriaLabel={`${title} content`}
-            titleId="wiz-modal-demo-title"
-            descriptionId="wiz-modal-demo-description"
-            title="Simple wizard in modal"
-            description="Simple wizard description"
-            steps={steps}
+          <Wizard
+            header={<WizardHeader title="Wizard in modal" description="Simple wizard description" />}
             height={400}
-          />
+          >
+            <WizardStep name="Information" id="wizard-step-1">
+              <p>Step 1 content</p>
+            </WizardStep>
+            <WizardStep
+              name="Configuration"
+              id="wizard-step-2"
+              steps={[
+                <WizardStep name="Substep A" id="wizard-step-2a" key="wizard-step-2a">
+                  <p>Configuration substep A</p>
+                </WizardStep>,
+                <WizardStep name="Substep B" id="wizard-step-2b" key="wizard-step-2b">
+                  <p>Configuration substep B</p>
+                </WizardStep>
+              ]}
+            />
+            <WizardStep name="Additional" id="wizard-step-3">
+              <p>Step 3 content</p>
+            </WizardStep>
+            <WizardStep name="Review" d="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
+              <p>Review step content</p>
+            </WizardStep>
+          </Wizard>
         </Modal>
       </React.Fragment>
     );
@@ -114,14 +110,18 @@ class BasicWizardDemo extends React.Component {
 import React from 'react';
 import {
   Button,
+  Drawer,
   DrawerActions,
   DrawerCloseButton,
+  DrawerContent,
   DrawerPanelContent,
   DrawerHead,
   Modal,
-  ModalVariant
+  ModalVariant,
+  Wizard,
+  WizardHeader,
+  WizardStep
 } from '@patternfly/react-core';
-import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
 class WizardModalWithDrawerDemo extends React.Component {
   constructor(props) {
@@ -151,131 +151,30 @@ class WizardModalWithDrawerDemo extends React.Component {
   render() {
     const { isDrawerExpanded } = this.state;
 
-    const informationPanelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            Information panel content
-          </span>
-          <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick} />
-          </DrawerActions>
-        </DrawerHead>
-      </DrawerPanelContent>
-    );
-
-    const configSubstepAPanelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            Configuration substep A content
-          </span>
-          <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick} />
-          </DrawerActions>
-        </DrawerHead>
-      </DrawerPanelContent>
-    );
-
-    const configSubstepBPanelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            Configuration substep B content
-          </span>
-          <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick} />
-          </DrawerActions>
-        </DrawerHead>
-      </DrawerPanelContent>
-    );
-
-    const additionalPanelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            Additional panel content
-          </span>
-          <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick} />
-          </DrawerActions>
-        </DrawerHead>
-      </DrawerPanelContent>
-    );
-
-    const reviewPanelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            Review panel content
-          </span>
-          <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick} />
-          </DrawerActions>
-        </DrawerHead>
-      </DrawerPanelContent>
-    );
-
-    const drawerToggleButton = (
-      <Button className="pf-u-float-right pf-u-ml-md" isInline variant="link" onClick={this.onOpenClick}>
-        Open drawer
-      </Button>
-    );
-
-    const steps = [
-      {
-        id: 0,
-        name: 'Information',
-        component: <p>Step 1 content</p>,
-        drawerPanelContent: informationPanelContent,
-        drawerToggleButton: drawerToggleButton
-      },
-      {
-        id: 1,
-        name: 'Configuration',
-        steps: [
-          {
-            id: 2,
-            name: 'Substep A',
-            component: <p>Configuration substep A</p>,
-            drawerPanelContent: configSubstepAPanelContent,
-            drawerToggleButton: drawerToggleButton
-          },
-          {
-            id: 3,
-            name: 'Substep B',
-            component: <p>Configuration substep B</p>,
-            drawerPanelContent: configSubstepBPanelContent,
-            drawerToggleButton: drawerToggleButton
+    const createStepContentWithDrawer = (stepName) => (
+      <Drawer isInline isExpanded={isDrawerExpanded} onExpand={this.onExpand}>
+        <DrawerContent
+          panelContent={
+            <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
+              <DrawerHead>
+                <span tabIndex={isDrawerExpanded ? 0 : -1} ref={this.drawerRef}>
+                  Drawer content: {stepName}
+                </span>
+                <DrawerActions>
+                  <DrawerCloseButton onClick={this.onCloseClick} />
+                </DrawerActions>
+              </DrawerHead>
+            </DrawerPanelContent>
           }
-        ]
-      },
-      {
-        id: 4,
-        name: 'Additional',
-        component: <p>Step 3 content</p>,
-        drawerPanelContent: additionalPanelContent,
-        drawerToggleButton: drawerToggleButton
-      },
-      {
-        id: 5,
-        name: 'Review',
-        component: <p>Review step content</p>,
-        drawerPanelContent: reviewPanelContent,
-        drawerToggleButton: drawerToggleButton,
-        nextButtonText: 'Finish'
-      }
-    ];
-    const title = 'Wizard modal with Drawer';
-
-    const panelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            drawer-panel
-          </span>
-        </DrawerHead>
-      </DrawerPanelContent>
+        >
+          {!isDrawerExpanded && (
+            <Button isInline variant="link" onClick={this.onOpenClick}>
+              Open drawer
+            </Button>
+          )}
+          <div>{stepName} content</div>
+        </DrawerContent>
+      </Drawer>
     );
 
     return (
@@ -287,19 +186,32 @@ class WizardModalWithDrawerDemo extends React.Component {
         aria-describedby="wiz-modal-demo-description"
         aria-labelledby="wiz-modal-demo-title"
       >
-        <WizardDeprecated
-          navAriaLabel={`${title} steps`}
-          hasDrawer
-          isDrawerExpanded={isDrawerExpanded}
-          onExpandDrawer={this.onExpand}
-          mainAriaLabel={`${title} content`}
-          titleId="wiz-modal-demo-title"
-          descriptionId="wiz-modal-demo-description"
-          title="Simple wizard in modal"
-          description="Simple wizard description"
-          steps={steps}
+        <Wizard
+          header={<WizardHeader title="Wizard in modal with drawer" description="Simple wizard description" />}
           height={400}
-        />
+        >
+          <WizardStep body={null} name="Information" id="wizard-step-1">
+            {createStepContentWithDrawer('Information step')}
+          </WizardStep>
+          <WizardStep
+            name="Configuration"
+            id="wizard-step-2"
+            steps={[
+              <WizardStep name="Substep A" id="wizard-step-2a" key="wizard-step-2a">
+                {createStepContentWithDrawer('Configuration substep A')}
+              </WizardStep>,
+              <WizardStep name="Substep B" id="wizard-step-2b" key="wizard-step-2b">
+                {createStepContentWithDrawer('Configuration substep B')}
+              </WizardStep>
+            ]}
+          />
+          <WizardStep name="Additional" id="wizard-step-3">
+            {createStepContentWithDrawer('Additional step')}
+          </WizardStep>
+          <WizardStep name="Review" d="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
+            {createStepContentWithDrawer('Review step')}
+          </WizardStep>
+        </Wizard>
       </Modal>
     );
   }
@@ -312,18 +224,22 @@ class WizardModalWithDrawerDemo extends React.Component {
 import React from 'react';
 import {
   Button,
+  Drawer,
   DrawerActions,
   DrawerCloseButton,
+  DrawerContent,
   DrawerPanelContent,
   DrawerHead,
   Modal,
   ModalVariant,
   Text,
-  TextContent
+  TextContent,
+  Wizard,
+  WizardHeader,
+  WizardStep
 } from '@patternfly/react-core';
-import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
-class WizardModalWithDrawerDemo extends React.Component {
+class WizardModalWithDrawerInfoStepDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -351,84 +267,24 @@ class WizardModalWithDrawerDemo extends React.Component {
   render() {
     const { isDrawerExpanded } = this.state;
 
-    const informationPanelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            Information panel content
-          </span>
-          <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick} />
-          </DrawerActions>
-        </DrawerHead>
-      </DrawerPanelContent>
-    );
-
-    const configSubstepAPanelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            Configuration substep A content
-          </span>
-          <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick} />
-          </DrawerActions>
-        </DrawerHead>
-      </DrawerPanelContent>
-    );
-
-    const configSubstepBPanelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            Configuration substep B content
-          </span>
-          <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick} />
-          </DrawerActions>
-        </DrawerHead>
-      </DrawerPanelContent>
-    );
-
-    const additionalPanelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            Additional panel content
-          </span>
-          <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick} />
-          </DrawerActions>
-        </DrawerHead>
-      </DrawerPanelContent>
-    );
-
-    const reviewPanelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            Review panel content
-          </span>
-          <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick} />
-          </DrawerActions>
-        </DrawerHead>
-      </DrawerPanelContent>
-    );
-
-    const drawerToggleButton = (
-      <Button className="pf-u-float-right pf-u-ml-md" isInline variant="link" onClick={this.onOpenClick}>
-        Open drawer
-      </Button>
-    );
-
-    const steps = [
-      {
-        id: 0,
-        name: 'Information',
-        component: (
+    const createStepContentWithDrawer = (stepName) => (
+      <Drawer isInline isExpanded={isDrawerExpanded} onExpand={this.onExpand}>
+        <DrawerContent
+          panelContent={
+            <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
+              <DrawerHead>
+                <span tabIndex={isDrawerExpanded ? 0 : -1} ref={this.drawerRef}>
+                  Drawer content: {stepName}
+                </span>
+                <DrawerActions>
+                  <DrawerCloseButton onClick={this.onCloseClick} />
+                </DrawerActions>
+              </DrawerHead>
+            </DrawerPanelContent>
+          }
+        >
           <TextContent>
-            <Text component={TextVariants.h1}>Information step content</Text>
+            <Text component={TextVariants.h1}>{stepName} content</Text>
             <p>
               Wizard description goes here. If you need more assistance,{' '}
               <Button isInline variant="link" onClick={this.onOpenClick}>
@@ -437,96 +293,8 @@ class WizardModalWithDrawerDemo extends React.Component {
               in the side drawer.{' '}
             </p>
           </TextContent>
-        ),
-        drawerPanelContent: informationPanelContent
-      },
-      {
-        id: 1,
-        name: 'Configuration',
-        steps: [
-          {
-            id: 2,
-            name: 'Substep A',
-            component: (
-              <TextContent>
-                <Text component={TextVariants.h1}>Configuration substep A content</Text>
-                <p>
-                  Wizard description goes here. If you need more assistance,
-                  <Button isInline variant="link" onClick={this.onOpenClick}>
-                    see more information
-                  </Button>
-                  in the side drawer.
-                </p>
-              </TextContent>
-            ),
-            drawerPanelContent: configSubstepAPanelContent
-          },
-          {
-            id: 3,
-            name: 'Substep B',
-            component: (
-              <TextContent>
-                <Text component={TextVariants.h1}>Configuration substep B content</Text>
-                <p>
-                  Wizard description goes here. If you need more assistance,
-                  <Button isInline variant="link" onClick={this.onOpenClick}>
-                    see more information
-                  </Button>
-                  in the side drawer.
-                </p>
-              </TextContent>
-            ),
-            drawerPanelContent: configSubstepBPanelContent
-          }
-        ]
-      },
-      {
-        id: 4,
-        name: 'Additional',
-        component: (
-          <TextContent>
-            <Text component={TextVariants.h1}>Additional step content</Text>
-            <p>
-              Wizard description goes here. If you need more assistance,
-              <Button isInline variant="link" onClick={this.onOpenClick}>
-                see more information
-              </Button>
-              in the side drawer.
-            </p>
-          </TextContent>
-        ),
-        drawerPanelContent: additionalPanelContent
-      },
-      {
-        id: 5,
-        name: 'Review',
-        component: (
-          <TextContent>
-            <Text component={TextVariants.h1}>Review step content</Text>
-            <p>
-              Wizard description goes here. If you need more assistance,
-              <Button isInline variant="link" onClick={this.onOpenClick}>
-                see more information
-              </Button>
-              in the side drawer.
-            </p>
-          </TextContent>
-        ),
-        nextButtonText: 'Finish',
-        drawerPanelContent: reviewPanelContent
-      }
-    ];
-
-    const title = 'Wizard modal with Drawer';
-
-    const panelContent = (
-      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
-        <DrawerHead>
-          <span tabIndex={0} ref={this.drawerRef}>
-            drawer-panel
-          </span>
-        </DrawerHead>
-      </DrawerPanelContent>
+        </DrawerContent>
+      </Drawer>
     );
 
     return (
@@ -538,19 +306,34 @@ class WizardModalWithDrawerDemo extends React.Component {
         aria-describedby="wiz-modal-demo-description"
         aria-labelledby="wiz-modal-demo-title"
       >
-        <WizardDeprecated
-          navAriaLabel={`${title} steps`}
-          hasDrawer
-          isDrawerExpanded={isDrawerExpanded}
-          onExpandDrawer={this.onExpand}
-          mainAriaLabel={`${title} content`}
-          titleId="wiz-modal-demo-title"
-          descriptionId="wiz-modal-demo-description"
-          title="Simple wizard in modal"
-          description="Simple wizard description"
-          steps={steps}
+        <Wizard
+          header={
+            <WizardHeader title="Wizard in modal with drawer and info step" description="Simple wizard description" />
+          }
           height={400}
-        />
+        >
+          <WizardStep body={null} name="Information" id="wizard-step-1">
+            {createStepContentWithDrawer('Information step')}
+          </WizardStep>
+          <WizardStep
+            name="Configuration"
+            id="wizard-step-2"
+            steps={[
+              <WizardStep name="Substep A" id="wizard-step-2a" key="wizard-step-2a">
+                {createStepContentWithDrawer('Configuration substep A')}
+              </WizardStep>,
+              <WizardStep name="Substep B" id="wizard-step-2b" key="wizard-step-2b">
+                {createStepContentWithDrawer('Configuration substep B')}
+              </WizardStep>
+            ]}
+          />
+          <WizardStep name="Additional" id="wizard-step-3">
+            {createStepContentWithDrawer('Additional step')}
+          </WizardStep>
+          <WizardStep name="Review" d="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
+            {createStepContentWithDrawer('Review step')}
+          </WizardStep>
+        </Wizard>
       </Modal>
     );
   }
@@ -561,14 +344,7 @@ class WizardModalWithDrawerDemo extends React.Component {
 
 ```js isFullscreen
 import React from 'react';
-import {
-  Nav,
-  NavItem,
-  NavList,
-  PageSection,
-  PageSectionTypes,
-  PageSectionVariants
-} from '@patternfly/react-core';
+import { Nav, NavItem, NavList, PageSection, PageSectionTypes, PageSectionVariants } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 import imgBrand from './imgBrand.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
@@ -580,7 +356,7 @@ class FullPageWizard extends React.Component {
     this.state = {
       activeItem: 0
     };
-    this.onNavSelect = result => {
+    this.onNavSelect = (result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -687,7 +463,7 @@ class FullPageWizard extends React.Component {
         isDrawerExpanded: false
       });
     };
-    this.onNavSelect = result => {
+    this.onNavSelect = (result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -955,7 +731,7 @@ class FullPageWizard extends React.Component {
         isDrawerExpanded: false
       });
     };
-    this.onNavSelect = result => {
+    this.onNavSelect = (result) => {
       this.setState({
         activeItem: result.itemId
       });
