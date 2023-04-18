@@ -233,6 +233,8 @@ export type OnExpand = (
 
 ### Modifiers with table text
 
+If the "wrapModifier" property is set to "truncate", it's needed to ensure that the corresponding tooltip can be opened using both keyboard and screen reader. Since this particular Td element is generic and doesn't have any predefined decorators, the focus management required to trigger the tooltip needs to be handled manually by defining and manipulating the requisite props.
+
 ```ts file="TableTextModifiers.tsx"
 ```
 
