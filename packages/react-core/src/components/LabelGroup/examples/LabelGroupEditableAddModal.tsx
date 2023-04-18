@@ -104,7 +104,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
     setIsEditable(false);
   };
 
-  const handleModalToggle = () => {
+  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setModalOpen(!isModalOpen);
   };
 

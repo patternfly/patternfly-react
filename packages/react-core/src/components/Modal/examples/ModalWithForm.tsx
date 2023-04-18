@@ -8,7 +8,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
   const [emailValue, setEmailValue] = React.useState('');
   const [addressValue, setAddressValue] = React.useState('');
 
-  const handleModalToggle = () => {
+  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setModalOpen(!isModalOpen);
   };
 

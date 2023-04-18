@@ -4,7 +4,7 @@ import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 export const ModalMedium: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  const handleModalToggle = () => {
+  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 

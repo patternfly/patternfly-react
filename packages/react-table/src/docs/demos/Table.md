@@ -716,7 +716,7 @@ class ColumnManagementAction extends React.Component {
         [target.name]: value
       });
     };
-    this.handleModalToggle = () => {
+    this.handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
       this.setState(({ isModalOpen }) => ({
         isModalOpen: !isModalOpen
       }));

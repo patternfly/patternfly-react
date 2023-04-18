@@ -5,7 +5,7 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 export const ModalWithHelp: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  const handleModalToggle = () => {
+  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 

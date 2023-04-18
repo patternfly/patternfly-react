@@ -6,7 +6,7 @@ export const SimpleModal = () => {
   const [isTimePickerOpen, setIsTimePickerOpen] = React.useState(false);
   const dateRef = React.useRef(null);
 
-  const handleModalToggle = () => {
+  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 
@@ -16,7 +16,7 @@ export const SimpleModal = () => {
     } else if (isTimePickerOpen) {
       setIsTimePickerOpen(false);
     } else {
-      handleModalToggle();
+      handleModalToggle(event);
     }
   };
 

@@ -34,7 +34,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     customEscapePressed: false
   };
 
-  handleModalToggle = () => {
+  handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     this.setState(({ isModalOpen }) => ({
       isModalOpen: !isModalOpen
     }));
