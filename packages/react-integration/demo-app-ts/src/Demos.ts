@@ -511,6 +511,11 @@ export const Demos: DemoInterface[] = [
     id: 'wizard-demo',
     name: 'Wizard Demo',
     componentType: Examples.WizardDemo
+  },
+  {
+    id: 'wizard-deprecated-demo',
+    name: 'Wizard Deprecated Demo',
+    componentType: Examples.WizardDeprecatedDemo
   }
 ];
 
