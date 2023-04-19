@@ -19,7 +19,7 @@ export const ToolbarItems: React.FunctionComponent = () => {
   );
 
   return (
-    <Toolbar id="toolbar-items">
+    <Toolbar id="toolbar-items-example">
       <ToolbarContent>{items}</ToolbarContent>
     </Toolbar>
   );
