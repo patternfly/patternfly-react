@@ -11,7 +11,7 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
 
-  const handleModalToggle = () => {
+  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);
     setIsDropdownOpen(false);
   };
@@ -30,12 +30,12 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
     (element as HTMLElement).focus();
   };
 
-  const onEscapePress = () => {
+  const onEscapePress = (event: KeyboardEvent) => {
     if (isDropdownOpen) {
       setIsDropdownOpen(!isDropdownOpen);
       onFocus();
     } else {
-      handleModalToggle();
+      handleModalToggle(event);
     }
   };
 

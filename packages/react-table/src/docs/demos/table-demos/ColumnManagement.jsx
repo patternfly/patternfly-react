@@ -176,7 +176,7 @@ export const ColumnManagementAction = () => {
     setCheckedState(updatedCheckedState);
   };
 
-  const handleModalToggle = () => {
+  const handleModalToggle = (_event) => {
     setIsModalOpen(!isModalOpen);
   };
 

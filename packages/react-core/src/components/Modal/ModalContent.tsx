@@ -60,7 +60,7 @@ export interface ModalContentProps extends OUIAProps {
   /** Id of the modal box title. */
   labelId: string;
   /** A callback for when the close button is clicked. */
-  onClose?: () => void;
+  onClose?: (event: KeyboardEvent | React.MouseEvent) => void;
   /** Position of the modal. By default a modal will be positioned vertically and horizontally centered. */
   position?: 'default' | 'top';
   /** Offset from alternate position. Can be any valid CSS length/percentage. */
@@ -187,7 +187,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       aria-describedby={ariaDescribedby || (hasNoBodyWrapper ? null : descriptorId)}
       {...getOUIAProps(ModalContent.displayName, ouiaId, ouiaSafe)}
     >
-      {showClose && <ModalBoxCloseButton onClose={onClose} ouiaId={ouiaId} />}
+      {showClose && <ModalBoxCloseButton onClose={(event) => onClose(event)} ouiaId={ouiaId} />}
       {modalBoxHeader}
       {modalBody}
       {modalBoxFooter}

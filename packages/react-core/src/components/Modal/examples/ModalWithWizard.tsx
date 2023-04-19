@@ -4,7 +4,11 @@ import { Modal, ModalVariant, Button, Wizard, WizardHeader, WizardStep } from '@
 export const ModalWithWizard: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  const handleModalToggle = () => {
+  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+    setIsModalOpen((prevIsModalOpen) => !prevIsModalOpen);
+  };
+
+  const handleWizardToggle = () => {
     setIsModalOpen((prevIsModalOpen) => !prevIsModalOpen);
   };
 
@@ -35,17 +39,17 @@ export const ModalWithWizard: React.FunctionComponent = () => {
               title="Wizard modal"
               titleId="modal-wizard-label"
               description="This is a wizard inside of a modal."
-              onClose={handleModalToggle}
+              onClose={handleWizardToggle}
               closeButtonAriaLabel="Close wizard"
             />
           }
-          onClose={handleModalToggle}
+          onClose={handleWizardToggle}
         >
           {numberedSteps}
           <WizardStep
             name="Review"
             id="with-wizard-review-step"
-            footer={{ nextButtonText: 'Finish', onNext: handleModalToggle }}
+            footer={{ nextButtonText: 'Finish', onNext: handleWizardToggle }}
           >
             Review step
           </WizardStep>

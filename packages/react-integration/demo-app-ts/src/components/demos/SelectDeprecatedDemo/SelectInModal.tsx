@@ -18,16 +18,16 @@ export const SelectInModal = () => {
   const [isTimePickerOpen, setIsTimePickerOpen] = React.useState(false);
   const [selection, setSelection] = React.useState(null);
 
-  const handleModalToggle = () => {
+  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
-  const onEscapePress = () => {
+  const onEscapePress = (event: KeyboardEvent) => {
     if (isSelectOpen) {
       setIsSelectOpen(false);
     } else if (isTimePickerOpen) {
       setIsTimePickerOpen(false);
     } else {
-      handleModalToggle();
+      handleModalToggle(event);
     }
   };
 
