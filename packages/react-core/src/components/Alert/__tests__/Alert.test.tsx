@@ -45,12 +45,12 @@ test('Renders with class pf-c-alert on the containing div', () => {
 
 test('Renders with class pf-c-alert__title on the div containing the title', () => {
   render(<Alert title="Some title">Some alert</Alert>);
-  expect(screen.getByRole('heading', { name: 'Default alert: Some title' })).toHaveClass('pf-c-alert__title');
+  expect(screen.getByRole('heading', { name: 'Custom alert: Some title' })).toHaveClass('pf-c-alert__title');
 });
 
-test('Renders with default hidden text of "Default alert:"', () => {
+test('Renders with default hidden text of "Custom alert:"', () => {
   render(<Alert title="Some title">Some alert</Alert>);
-  expect(screen.getByText('Default alert:')).toBeInTheDocument();
+  expect(screen.getByText('Custom alert:')).toBeInTheDocument();
 });
 
 ['success', 'danger', 'warning', 'info'].forEach(variant => {
@@ -62,7 +62,9 @@ test('Renders with default hidden text of "Default alert:"', () => {
     );
     expect(screen.getByTestId('Alert-test-id')).not.toHaveClass(`pf-m-${variant}`);
   });
+});
 
+['success', 'danger', 'warning', 'info', 'custom'].forEach(variant => {
   test(`Renders with class pf-m-${variant} when variant = ${variant}`, () => {
     render(
       <Alert variant={`${variant as AlertVariant}`} title="Some title" data-testid="Alert-test-id">
@@ -176,7 +178,7 @@ test('Renders the title', () => {
 test('Renders the title as an h4 by default', () => {
   render(<Alert title="Some title">Some alert</Alert>);
 
-  expect(screen.getByRole('heading', { level: 4, name: 'Default alert: Some title' })).toBeVisible();
+  expect(screen.getByRole('heading', { level: 4, name: 'Custom alert: Some title' })).toBeVisible();
 });
 
 test('Renders the title as other heading levels when one is passed using component', () => {
@@ -186,7 +188,7 @@ test('Renders the title as other heading levels when one is passed using compone
     </Alert>
   );
 
-  expect(screen.getByRole('heading', { level: 1, name: 'Default alert: Some title' })).toBeVisible();
+  expect(screen.getByRole('heading', { level: 1, name: 'Custom alert: Some title' })).toBeVisible();
 });
 
 test('Renders the element passed via the actionClose prop', () => {

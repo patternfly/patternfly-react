@@ -12,7 +12,7 @@ export const variantIcons = {
   danger: ExclamationCircleIcon,
   warning: ExclamationTriangleIcon,
   info: InfoCircleIcon,
-  default: BellIcon
+  custom: BellIcon
 };
 
 export interface AlertIconProps extends React.HTMLProps<HTMLDivElement> {
@@ -21,7 +21,7 @@ export interface AlertIconProps extends React.HTMLProps<HTMLDivElement> {
   /** A custom icon. If not set the icon is set according to the variant. */
   customIcon?: React.ReactNode;
   /** Variant of the alert icon. */
-  variant: 'success' | 'danger' | 'warning' | 'info' | 'default';
+  variant: 'success' | 'danger' | 'warning' | 'info' | 'custom';
 }
 
 export const AlertIcon = ({ variant, customIcon, className = '', ...props }: AlertIconProps) => {
