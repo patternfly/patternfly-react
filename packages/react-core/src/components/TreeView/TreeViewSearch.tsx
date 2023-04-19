@@ -35,6 +35,7 @@ export const TreeViewSearch: React.FunctionComponent<TreeViewSearchProps> = ({
       id={id}
       name={name}
       aria-label={ariaLabel}
+      type="search"
       {...props}
     />
   </div>

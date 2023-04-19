@@ -1197,6 +1197,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
           <input
             autocomplete="off"
             class="pf-c-form-control pf-m-search"
+            type="search"
           />
         </div>
         <hr

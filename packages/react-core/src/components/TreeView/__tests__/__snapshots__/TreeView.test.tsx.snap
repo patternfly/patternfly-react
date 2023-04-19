@@ -2908,6 +2908,7 @@ exports[`tree view renders search successfully 1`] = `
       class="pf-c-form-control pf-m-search"
       id="input-search"
       name="search-input"
+      type="search"
     />
   </div>
 </DocumentFragment>

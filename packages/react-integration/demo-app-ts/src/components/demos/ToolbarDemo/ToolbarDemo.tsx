@@ -184,6 +184,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
             <TextInput
               name="textInput2"
               id="textInput2"
+              type="search"
               aria-label="search input example"
               onChange={this.onInputChange}
               value={inputValue}
