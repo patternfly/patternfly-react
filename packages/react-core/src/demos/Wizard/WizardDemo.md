@@ -72,7 +72,15 @@ class WizardInModalDemo extends React.Component {
           aria-labelledby="wiz-modal-demo-title"
         >
           <Wizard
-            header={<WizardHeader title="Wizard in modal" description="Simple wizard description" />}
+            header={
+              <WizardHeader
+                title="Wizard in modal"
+                titleId="wiz-modal-demo-title"
+                description="Simple wizard description"
+                descriptionId="wiz-modal-demo-description"
+                closeButtonAriaLabel="Close wizard"
+              />
+            }
             height={400}
           >
             <WizardStep name="Information" id="wizard-step-1">
@@ -187,7 +195,15 @@ class WizardModalWithDrawerDemo extends React.Component {
         aria-labelledby="wiz-modal-demo-title"
       >
         <Wizard
-          header={<WizardHeader title="Wizard in modal with drawer" description="Simple wizard description" />}
+          header={
+            <WizardHeader
+              closeButtonAriaLabel="Close wizard"
+              title="Wizard in modal with drawer"
+              titleId="wiz-modal-demo-title"
+              description="Simple wizard description"
+              descriptionId="wiz-modal-demo-description"
+            />
+          }
           height={400}
         >
           <WizardStep body={null} name="Information" id="wizard-step-1">
@@ -308,7 +324,13 @@ class WizardModalWithDrawerInfoStepDemo extends React.Component {
       >
         <Wizard
           header={
-            <WizardHeader title="Wizard in modal with drawer and info step" description="Simple wizard description" />
+            <WizardHeader
+              closeButtonAriaLabel="Close wizard"
+              title="Wizard in modal with drawer and info step"
+              titleId="wiz-modal-demo-title"
+              description="Simple wizard description"
+              descriptionId="wiz-modal-demo-description"
+            />
           }
           height={400}
         >
