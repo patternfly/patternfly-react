@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.73](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.72...@patternfly/react-core@5.0.0-alpha.73) (2023-04-19)
+
+### Features
+
+- **Modal:** added event to onClose ([#8956](https://github.com/patternfly/patternfly-react/issues/8956)) ([7bc88b4](https://github.com/patternfly/patternfly-react/commit/7bc88b4dc18ed374c755752a2cc246d36c22dcc4))
+
 # [5.0.0-alpha.72](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.71...@patternfly/react-core@5.0.0-alpha.72) (2023-04-17)
 
 **Note:** Version bump only for package @patternfly/react-core

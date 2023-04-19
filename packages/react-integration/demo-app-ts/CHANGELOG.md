@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.57](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.56...demo-app-ts@5.0.0-alpha.57) (2023-04-19)
+
+### Features
+
+- **Modal:** added event to onClose ([#8956](https://github.com/patternfly/patternfly-react/issues/8956)) ([7bc88b4](https://github.com/patternfly/patternfly-react/commit/7bc88b4dc18ed374c755752a2cc246d36c22dcc4))
+
 # [5.0.0-alpha.56](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.55...demo-app-ts@5.0.0-alpha.56) (2023-04-17)
 
 **Note:** Version bump only for package demo-app-ts
