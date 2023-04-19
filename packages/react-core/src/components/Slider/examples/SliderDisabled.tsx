@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider, Text, TextVariants } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent, Text, TextVariants } from '@patternfly/react-core';
 
 export const SliderDisabled: React.FunctionComponent = () => {
   const [value, setValue] = React.useState(50);
@@ -26,7 +26,7 @@ export const SliderDisabled: React.FunctionComponent = () => {
       <Slider
         isDisabled
         value={value}
-        onChange={(_event, value) => typeof value === 'number' && setValue(value)}
+        onChange={(_event: SliderOnChangeEvent, value: number) => setValue(value)}
         customSteps={steps}
       />
     </>

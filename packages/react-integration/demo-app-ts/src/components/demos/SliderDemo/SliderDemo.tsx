@@ -1,4 +1,4 @@
-import { Slider } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export interface SliderDemoState {
@@ -54,11 +54,11 @@ export class SliderDemo extends Component<SliderDemoState> {
     { value: 100, label: '100%' }
   ];
 
-  onChangeDiscreteNoLInearMinMax = (_event: any, value: number) => {
+  onChangeDiscreteNoLInearMinMax = (_event: SliderOnChangeEvent, value: number) => {
     this.setState({ valueDiscreteMinMax: value });
   };
 
-  onChangeDiscrete = (_event: any, value: number, inputValue: number) => {
+  onChangeDiscrete = (_event: SliderOnChangeEvent, value: number, inputValue: number) => {
     let newValue;
     let newInputValue;
 
@@ -96,7 +96,7 @@ export class SliderDemo extends Component<SliderDemoState> {
     });
   };
 
-  onChangePercent = (_event: any, value: number, inputValue: number) => {
+  onChangePercent = (_event: SliderOnChangeEvent, value: number, inputValue: number) => {
     let newValue;
     let newInputValue;
 
@@ -135,7 +135,7 @@ export class SliderDemo extends Component<SliderDemoState> {
     });
   };
 
-  onChangeContinuous = (_event: any, value: number) => {
+  onChangeContinuous = (_event: SliderOnChangeEvent, value: number) => {
     const newValue = Math.floor(value);
     this.setState({
       inputValueContinuous: newValue,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
 
 export const SliderValueInput: React.FunctionComponent = () => {
   const [valueDiscrete, setValueDiscrete] = React.useState(62.5);
@@ -29,7 +29,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
   ];
 
   const onChangeDiscrete = (
-    _event: any,
+    _event: SliderOnChangeEvent,
     value: number,
     inputValue: number,
     setLocalInputValue: React.Dispatch<React.SetStateAction<number>>
@@ -78,7 +78,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
   };
 
   const onChangePercent = (
-    _event: any,
+    _event: SliderOnChangeEvent,
     value: number,
     inputValue: number,
     setLocalInputValue: React.Dispatch<React.SetStateAction<number>>
@@ -129,7 +129,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
   };
 
   const onChangeContinuous = (
-    _event: any,
+    _event: SliderOnChangeEvent,
     value: number,
     inputValue: number,
     setLocalInputValue: React.Dispatch<React.SetStateAction<number>>

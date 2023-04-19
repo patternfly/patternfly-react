@@ -19,6 +19,13 @@ export interface SliderStepObject {
   value: number;
 }
 
+export type SliderOnChangeEvent =
+  | React.MouseEvent
+  | React.KeyboardEvent
+  | React.FormEvent<HTMLInputElement>
+  | React.TouchEvent
+  | React.FocusEvent<HTMLInputElement>;
+
 /** The main slider component. */
 export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Flag indicating if the slider is discrete for custom steps. This will cause the slider
@@ -55,12 +62,7 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   min?: number;
   /** Value change callback. This is called when the slider value changes. */
   onChange?: (
-    event:
-      | React.MouseEvent
-      | React.KeyboardEvent
-      | React.FormEvent<HTMLInputElement>
-      | React.TouchEvent
-      | React.FocusEvent<HTMLInputElement>,
+    event: SliderOnChangeEvent,
     value: number,
     inputValue?: number,
     setLocalInputValue?: React.Dispatch<React.SetStateAction<number>>
