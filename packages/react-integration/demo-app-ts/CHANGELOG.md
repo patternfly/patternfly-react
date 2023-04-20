@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.58](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.57...demo-app-ts@5.0.0-alpha.58) (2023-04-20)
+
+### Bug Fixes
+
+- **Radio:** updated param order for onChange ([#8965](https://github.com/patternfly/patternfly-react/issues/8965)) ([f32e4ab](https://github.com/patternfly/patternfly-react/commit/f32e4abac9ed1b49a3d98f733a81111dbfb47074))
+
 # [5.0.0-alpha.57](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.56...demo-app-ts@5.0.0-alpha.57) (2023-04-19)
 
 ### Features

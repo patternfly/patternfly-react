@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.27...@patternfly/react-integration@5.0.0-alpha.28) (2023-04-20)
+
+### Bug Fixes
+
+- **Radio:** updated param order for onChange ([#8965](https://github.com/patternfly/patternfly-react/issues/8965)) ([f32e4ab](https://github.com/patternfly/patternfly-react/commit/f32e4abac9ed1b49a3d98f733a81111dbfb47074))
+
 # 5.0.0-alpha.27 (2023-04-19)
 
 ### Features
