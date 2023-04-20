@@ -79,7 +79,7 @@ describe('Radio', () => {
     render(<Radio id="check" {...props} aria-label="check" name="check" />);
 
     await user.click(screen.getByRole('radio'));
-    expect(props.onChange).toHaveBeenCalledWith(true, expect.any(Object));
+    expect(props.onChange).toHaveBeenCalledWith(expect.any(Object), true);
   });
 
   test('Radio description', () => {
