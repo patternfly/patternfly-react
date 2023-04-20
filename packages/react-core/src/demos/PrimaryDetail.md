@@ -205,6 +205,7 @@ class PrimaryDetailFullPage extends React.Component {
             <TextInput
               name="full-page-data-toolbar-input1"
               id="full-page-data-toolbar-input1"
+              type="search"
               aria-label="search input example"
               onChange={this.onInputChange}
               value={inputValue}
@@ -664,6 +665,7 @@ class PrimaryDetailContentPadding extends React.Component {
             <TextInput
               name="content-padding-data-toolbar-input1"
               id="content-padding-data-toolbar-input1"
+              type="search"
               aria-label="search input example"
               onChange={this.onInputChange}
               value={inputValue}
@@ -2153,6 +2155,7 @@ class PrimaryDetailInlineModifier extends React.Component {
             <TextInput
               name="inline-modifier-input"
               id="inline-modifier-input"
+              type="search"
               aria-label="search input example"
               onChange={this.onInputChange}
               value={inputValue}
