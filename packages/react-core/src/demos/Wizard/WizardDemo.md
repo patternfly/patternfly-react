@@ -7,7 +7,6 @@ source: react-demos
 import imgBrand from './imgBrand.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
 ## Demos
 
@@ -20,9 +19,6 @@ import {
   CardBody,
   Gallery,
   GalleryItem,
-  Nav,
-  NavItem,
-  NavList,
   PageSection,
   Modal,
   ModalVariant,
@@ -35,19 +31,9 @@ import DashboardWrapper from '@patternfly/react-core/src/demos/examples/Dashboar
 class WizardInModalDemo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      activeItem: 0
-    };
-    this.onNavSelect = (result) => {
-      this.setState({
-        activeItem: result.itemId
-      });
-    };
   }
-  render() {
-    const { activeItem } = this.state;
 
-    const title = 'Basic wizard';
+  render() {
     return (
       <React.Fragment>
         <DashboardWrapper hasPageTemplateTitle>
@@ -101,7 +87,7 @@ class WizardInModalDemo extends React.Component {
             <WizardStep name="Additional" id="wizard-step-3">
               <p>Step 3 content</p>
             </WizardStep>
-            <WizardStep name="Review" d="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
+            <WizardStep name="Review" id="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
               <p>Review step content</p>
             </WizardStep>
           </Wizard>
@@ -224,7 +210,7 @@ class WizardModalWithDrawerDemo extends React.Component {
           <WizardStep body={null} name="Additional" id="wizard-step-3">
             {createStepContentWithDrawer('Additional step')}
           </WizardStep>
-          <WizardStep body={null} name="Review" d="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
+          <WizardStep body={null} name="Review" id="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
             {createStepContentWithDrawer('Review step')}
           </WizardStep>
         </Wizard>
@@ -352,7 +338,7 @@ class WizardModalWithDrawerInfoStepDemo extends React.Component {
           <WizardStep body={null} name="Additional" id="wizard-step-3">
             {createStepContentWithDrawer('Additional step')}
           </WizardStep>
-          <WizardStep body={null} name="Review" d="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
+          <WizardStep body={null} name="Review" id="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
             {createStepContentWithDrawer('Review step')}
           </WizardStep>
         </Wizard>
@@ -366,35 +352,14 @@ class WizardModalWithDrawerInfoStepDemo extends React.Component {
 
 ```js isFullscreen
 import React from 'react';
-import {
-  Nav,
-  NavItem,
-  NavList,
-  PageSection,
-  PageSectionTypes,
-  PageSectionVariants,
-  Wizard,
-  WizardStep
-} from '@patternfly/react-core';
-import imgBrand from './imgBrand.svg';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import { PageSection, PageSectionTypes, PageSectionVariants, Wizard, WizardStep } from '@patternfly/react-core';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class WizardFullPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      activeItem: 0
-    };
-    this.onNavSelect = (result) => {
-      this.setState({
-        activeItem: result.itemId
-      });
-    };
   }
   render() {
-    const { activeItem } = this.state;
-
     return (
       <React.Fragment>
         <DashboardWrapper hasPageTemplateTitle>
@@ -418,7 +383,7 @@ class WizardFullPage extends React.Component {
               <WizardStep name="Additional" id="wizard-step-3">
                 <p>Step 3 content</p>
               </WizardStep>
-              <WizardStep name="Review" d="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
+              <WizardStep name="Review" id="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
                 <p>Review step content</p>
               </WizardStep>
             </Wizard>
@@ -453,11 +418,9 @@ import {
   PageSectionTypes,
   PageSectionVariants,
   PageSidebar,
-  Progress,
   SkipToContent,
   Text,
   TextContent,
-  Title,
   Masthead,
   PageToggleButton,
   MastheadToggle,
@@ -613,7 +576,7 @@ class WizardFullPageWithDrawerDemo extends React.Component {
               <WizardStep body={null} name="Additional" id="wizard-step-3">
                 {createStepContentWithDrawer('Additional step')}
               </WizardStep>
-              <WizardStep body={null} name="Review" d="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
+              <WizardStep body={null} name="Review" id="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
                 {createStepContentWithDrawer('Review step')}
               </WizardStep>
             </Wizard>
@@ -648,11 +611,9 @@ import {
   PageSectionTypes,
   PageSectionVariants,
   PageSidebar,
-  Progress,
   SkipToContent,
   Text,
   TextContent,
-  Title,
   Masthead,
   PageToggleButton,
   MastheadToggle,
@@ -812,7 +773,7 @@ class WizardFullPageWithDrawerInfoStepDemo extends React.Component {
               <WizardStep body={null} name="Additional" id="wizard-step-3">
                 {createStepContentWithDrawer('Additional step')}
               </WizardStep>
-              <WizardStep body={null} name="Review" d="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
+              <WizardStep body={null} name="Review" id="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
                 {createStepContentWithDrawer('Review step')}
               </WizardStep>
             </Wizard>
