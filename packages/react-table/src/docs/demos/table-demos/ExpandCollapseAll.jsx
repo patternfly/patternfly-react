@@ -1,20 +1,11 @@
 import React from 'react';
 import { Card, Label, PageSection } from '@patternfly/react-core';
 import { expandable } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
+import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import { TextVariants } from '@patternfly/react-core';
 
-const expandableColumns = [
-  {
-    title: 'Servers',
-    cellFormatters: [expandable]
-  },
-  'Threads',
-  'Applications',
-  'Workspaces',
-  'Status'
-];
+const expandableColumns = ['Servers', 'Threads', 'Applications', 'Workspaces', 'Status'];
 
 const serverData = [
   {
@@ -22,7 +13,7 @@ const serverData = [
     threads: 18,
     applications: 42,
     workspaces: 7,
-    status: { title: <Label color="orange">Stopped</Label> },
+    status: { title: <Label color="green">Running</Label> },
     details: (
       <TextContent>
         <Text component={TextVariants.p}>
@@ -121,101 +112,88 @@ const serverData = [
 
 const initialExpandedServerNames = ['US-Node 2']; // Default to expanded
 
-class ExpandCollapseAllTableDemo extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isChecked: false,
-      selectedRows: 0,
-      expandedRows: 0,
-      expandCollapseToggle: 'expand',
-      collapseAllAriaLabel: 'Expand all',
-      expandedServerNames: initialExpandedServerNames
-    };
-  }
+const ExpandCollapseAllTableDemo = () => {
+  const [areAllExpanded, setAreAllExpanded] = React.useState(false);
+  const [collapseAllAriaLabel, setCollapseAllAriaLabel] = React.useState('Expand all');
+  const [expandedServerNames, setExpandedServerNames] = React.useState(initialExpandedServerNames);
 
-  setServerExpanded = (server, isExpanding) => {
-    this.setState(() => {
-      const otherExpandedServerNames = this.state.expandedServerNames.filter(r => r !== server.name);
-      return {
-        expandedServerNames: isExpanding ? [...otherExpandedServerNames, server.name] : otherExpandedServerNames
-      };
-    });
+  const setServerExpanded = (server, isExpanding) => {
+    const otherExpandedServerNames = expandedServerNames.filter((r) => r !== server.name);
+    setExpandedServerNames(isExpanding ? [...otherExpandedServerNames, server.name] : otherExpandedServerNames);
   };
 
-  render() {
-    const { collapseAllAriaLabel } = this.state;
+  const isServerExpanded = (server) => {
+    return expandedServerNames.includes(server.name);
+  };
+  // We want to be able to reference the original data object based on row index. But because an expanded
+  // row takes up two row indexes, servers[rowIndex] will not be accurate like it would in a normal table.
+  // One solution to this is to create an array of data objects indexed by the displayed row index.
 
-    const isServerExpanded = server => this.state.expandedServerNames.includes(server.name);
-    // We want to be able to reference the original data object based on row index. But because an expanded
-    // row takes up two row indexes, servers[rowIndex] will not be accurate like it would in a normal table.
-    // One solution to this is to create an array of data objects indexed by the displayed row index.
-    const serversByRowIndex = [];
+  const onCollapseAll = (_event, _rowIndex, isOpen) => {
+    setExpandedServerNames(isOpen ? [...serverData.map((server) => server.name)] : []);
+    setAreAllExpanded(!isOpen);
+    setCollapseAllAriaLabel(areAllExpanded ? 'Expand all' : 'Collapse all');
+  };
+  return (
+    <React.Fragment>
+      <DashboardWrapper hasPageTemplateTitle>
+        <PageSection
+          padding={{
+            default: 'noPadding',
+            xl: 'padding'
+          }}
+        >
+          <Card component="div">
+            <Table aria-label="Collapsible table">
+              <Thead>
+                <Tr>
+                  <Th
+                    expand={{
+                      areAllExpanded: areAllExpanded,
+                      collapseAllAriaLabel: collapseAllAriaLabel,
+                      onToggle: onCollapseAll
+                    }}
+                  ></Th>
+                  {expandableColumns.map((column) => (
+                    <Th key={column}>{column}</Th>
+                  ))}
+                </Tr>
+              </Thead>
 
-    const rows = [];
-    serverData.forEach(server => {
-      rows.push({
-        ...{ isOpen: isServerExpanded(server) },
-        cells: [server.name, server.threads, server.applications, server.workspaces, server.status]
-      });
-      serversByRowIndex.push(server);
-      if (server.details) {
-        const cells = [];
-
-        cells.push({
-          title: server.details
-        });
-
-        rows.push({
-          parent: rows.length - 1,
-          cells
-        });
-        serversByRowIndex.push(null);
-      }
-    });
-
-    const onCollapse = (_e, rowIndex, isOpen) => {
-      const collapseAll = rowIndex === undefined;
-
-      if (collapseAll) {
-        this.setState(() => {
-          return {
-            expandedServerNames: isOpen ? [...serverData.map((server) => server.name)] : []
-          };
-        });
-
-      }
-      else if (serversByRowIndex[rowIndex]) {
-        this.setServerExpanded(serversByRowIndex[rowIndex], isOpen);
-      }
-    }
-
-    return (
-      <React.Fragment>
-        <DashboardWrapper hasPageTemplateTitle>
-          <PageSection
-            padding={{
-              default: 'noPadding',
-              xl: 'padding'
-            }}
-          >
-            <Card component="div">
-              <Table
-                aria-label="Collapsible table"
-                onCollapse={onCollapse}
-                rows={rows}
-                cells={expandableColumns}
-                canCollapseAll={true}
-                collapseAllAriaLabel={collapseAllAriaLabel}
-                expandId="expand-collapse-all-demo"
-              >
-                <TableHeader />
-                <TableBody />
-              </Table>
-            </Card>
-          </PageSection>
-        </DashboardWrapper>
-      </React.Fragment>
-    );
-  }
-}
+              {serverData.map((server, serverIndex) => (
+                <Tbody key={server.name} isExpanded={isServerExpanded(server)}>
+                  <Tr>
+                    <Td
+                      expand={
+                        server.details
+                          ? {
+                              rowIndex: serverIndex,
+                              isExpanded: isServerExpanded(server),
+                              onToggle: () => setServerExpanded(server, !isServerExpanded(server))
+                            }
+                          : undefined
+                      }
+                    >
+                      <ExpandableRowContent>{server.details}</ExpandableRowContent>
+                    </Td>
+                    <Td>{server?.name}</Td>
+                    <Td>{server?.threads}</Td>
+                    <Td>{server?.applications}</Td>
+                    <Td>{server?.workspaces}</Td>
+                    <Td>{server?.status?.title}</Td>
+                  </Tr>
+                  <Tr isExpanded={isServerExpanded(server)}>
+                    <Td></Td>
+                    <Td colSpan={expandableColumns.length}>
+                      <ExpandableRowContent>{server?.details}</ExpandableRowContent>
+                    </Td>
+                  </Tr>
+                </Tbody>
+              ))}
+            </Table>
+          </Card>
+        </PageSection>
+      </DashboardWrapper>
+    </React.Fragment>
+  );
+};
