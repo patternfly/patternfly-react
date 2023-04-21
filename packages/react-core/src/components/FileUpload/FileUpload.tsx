@@ -99,9 +99,8 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   const onDropAccepted = (acceptedFiles: File[], event: DropEvent) => {
     if (acceptedFiles.length > 0) {
       const fileHandle = acceptedFiles[0];
-      if (event.type === 'drop') {
-        onFileInputChange?.(event, fileHandle);
-      }
+      onFileInputChange?.(event, fileHandle);
+
       if (type === fileReaderType.text || type === fileReaderType.dataURL) {
         onReadStarted(fileHandle);
         readFile(fileHandle, type as fileReaderType)
@@ -129,6 +128,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   };
 
   const { getRootProps, getInputProps, isDragActive, open, inputRef } = useDropzone({
+    noClick: true,
     multiple: false,
     ...dropzoneProps,
     onDropAccepted,
