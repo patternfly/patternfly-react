@@ -1,5 +1,5 @@
 ---
-id: Label group
+id: Label
 section: components
 ---
 
