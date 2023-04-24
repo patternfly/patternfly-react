@@ -4,7 +4,7 @@ import { ExpandableSection, ExpandableSectionVariant } from '@patternfly/react-c
 export const ExpandableSectionTruncateExpansion: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
-  const onToggle = (isExpanded: boolean) => {
+  const onToggle = (_event: React.MouseEvent, isExpanded: boolean) => {
     setIsExpanded(isExpanded);
   };
 

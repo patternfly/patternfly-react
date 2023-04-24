@@ -5,11 +5,11 @@ export const ExpandableSectionTruncateDemo: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [isResizableExpanded, setIsResizableExpanded] = React.useState(false);
 
-  const onToggle = (isExpanded: boolean) => {
+  const onToggle = (_event: React.MouseEvent, isExpanded: boolean) => {
     setIsExpanded(isExpanded);
   };
 
-  const onResizableToggle = (isResizableExpanded: boolean) => {
+  const onResizableToggle = (_event: React.MouseEvent, isResizableExpanded: boolean) => {
     setIsResizableExpanded(isResizableExpanded);
   };
 

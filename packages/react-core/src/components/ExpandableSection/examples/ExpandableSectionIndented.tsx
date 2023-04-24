@@ -4,7 +4,7 @@ import { ExpandableSection } from '@patternfly/react-core';
 export const ExpandableSectionIndented: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
-  const onToggle = (isExpanded: boolean) => {
+  const onToggle = (_event: React.MouseEvent, isExpanded: boolean) => {
     setIsExpanded(isExpanded);
   };
 
