@@ -15,7 +15,7 @@ export const FormSelectIconSpriteVariant: React.FunctionComponent = () => {
   const [validated, setValidated] = React.useState<ValidatedOptions>(ValidatedOptions.default);
   const [helperText, setHelperText] = React.useState('');
 
-  const onChange = (value: string) => {
+  const onChange = (_event: React.FormEvent<HTMLSelectElement>, value: string) => {
     if (value === '3') {
       setFormSelectValue(value);
       setValidated(ValidatedOptions.success);
