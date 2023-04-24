@@ -19,11 +19,11 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
   const [isValidPassword, setIsValidPassword] = React.useState(true);
   const [isRememberMeChecked, setIsRememberMeChecked] = React.useState(false);
 
-  const handleUsernameChange = (value: string) => {
+  const handleUsernameChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setUsername(value);
   };
 
-  const handlePasswordChange = (value: string) => {
+  const handlePasswordChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setPassword(value);
   };
 

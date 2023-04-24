@@ -34,11 +34,11 @@ export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElemen
     isRememberMeChecked: false
   };
 
-  handleUsernameChange = (value: string) => {
+  handleUsernameChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     this.setState({ usernameValue: value });
   };
 
-  handlePasswordChange = (passwordValue: string) => {
+  handlePasswordChange = (_event: React.FormEvent<HTMLInputElement>, passwordValue: string) => {
     this.setState({ passwordValue });
   };
 

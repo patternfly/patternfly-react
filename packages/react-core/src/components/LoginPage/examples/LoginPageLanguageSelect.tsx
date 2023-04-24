@@ -39,13 +39,27 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
 
   const headerUtilsOptions = (
     <SelectList>
-      <SelectOption key={0} itemId={i18n.English}>{i18n.English}</SelectOption>
-      <SelectOption key={1} itemId={i18n.Mandarin}>{i18n.Mandarin}</SelectOption>
-      <SelectOption key={2} itemId={i18n.Hindi}>{i18n.Hindi}</SelectOption>
-      <SelectOption key={3} itemId={i18n.Spanish}>{i18n.Spanish}</SelectOption>
-      <SelectOption key={4} itemId={i18n.Portuguese}>{i18n.Portuguese}</SelectOption>
-      <SelectOption key={5} itemId={i18n.Arabic}>{i18n.Arabic}</SelectOption>
-      <SelectOption key={6} itemId={i18n.Bengali}>{i18n.Bengali}</SelectOption>
+      <SelectOption key={0} itemId={i18n.English}>
+        {i18n.English}
+      </SelectOption>
+      <SelectOption key={1} itemId={i18n.Mandarin}>
+        {i18n.Mandarin}
+      </SelectOption>
+      <SelectOption key={2} itemId={i18n.Hindi}>
+        {i18n.Hindi}
+      </SelectOption>
+      <SelectOption key={3} itemId={i18n.Spanish}>
+        {i18n.Spanish}
+      </SelectOption>
+      <SelectOption key={4} itemId={i18n.Portuguese}>
+        {i18n.Portuguese}
+      </SelectOption>
+      <SelectOption key={5} itemId={i18n.Arabic}>
+        {i18n.Arabic}
+      </SelectOption>
+      <SelectOption key={6} itemId={i18n.Bengali}>
+        {i18n.Bengali}
+      </SelectOption>
     </SelectList>
   );
 
@@ -70,7 +84,7 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
         </MenuToggle>
       )}
       onSelect={onHeaderUtilsSelect}
-      onOpenChange={isOpen => setIsHeaderUtilsOpen(isOpen)}
+      onOpenChange={(isOpen) => setIsHeaderUtilsOpen(isOpen)}
       selected={selectedHeaderUtils}
       isOpen={isHeaderUtilsOpen}
     >
@@ -78,11 +92,11 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
     </Select>
   );
 
-  const handleUsernameChange = (value: string) => {
+  const handleUsernameChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setUsername(value);
   };
 
-  const handlePasswordChange = (value: string) => {
+  const handlePasswordChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setPassword(value);
   };
 

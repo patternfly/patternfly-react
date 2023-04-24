@@ -25,7 +25,7 @@ export interface LoginFormProps extends Omit<React.HTMLProps<HTMLFormElement>, '
   /** Value for the username */
   usernameValue?: string;
   /** Function that handles the onChange event for the username */
-  onChangeUsername?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  onChangeUsername?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** Flag indicating if the username is valid */
   isValidUsername?: boolean;
   /** Label for the password input field */
@@ -33,7 +33,7 @@ export interface LoginFormProps extends Omit<React.HTMLProps<HTMLFormElement>, '
   /** Value for the password */
   passwordValue?: string;
   /** Function that handles the onChange event for the password */
-  onChangePassword?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  onChangePassword?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** Flag indicating if the password is valid */
   isValidPassword?: boolean;
   /** Flag indicating if the user can toggle hiding the password */
@@ -53,7 +53,7 @@ export interface LoginFormProps extends Omit<React.HTMLProps<HTMLFormElement>, '
   /** Flag indicating if the remember me checkbox is checked. */
   isRememberMeChecked?: boolean;
   /** Function that handles the onChange event for the remember me checkbox */
-  onChangeRememberMe?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
+  onChangeRememberMe?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
 }
 
 export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
@@ -91,7 +91,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
       name="pf-login-password-id"
       validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
       value={passwordValue}
-      onChange={(event, value) => onChangePassword(value, event)}
+      onChange={onChangePassword}
     />
   );
 
@@ -115,7 +115,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
           type="text"
           name="pf-login-username-id"
           value={usernameValue}
-          onChange={(event, value) => onChangeUsername(value, event)}
+          onChange={onChangeUsername}
         />
       </FormGroup>
       <FormGroup label={passwordLabel} isRequired fieldId="pf-login-password-id">
@@ -139,7 +139,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
             id="pf-login-remember-me-id"
             label={rememberMeLabel}
             isChecked={isRememberMeChecked}
-            onChange={(event, checked) => onChangeRememberMe(checked, event)}
+            onChange={onChangeRememberMe}
           />
         </FormGroup>
       )}
