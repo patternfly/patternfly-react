@@ -1,6 +1,7 @@
-import { Button } from '@patternfly/react-core';
-import { Wizard, WizardStep } from '@patternfly/react-core/deprecated'
 import React from 'react';
+import { Button, Modal, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 
 interface WizardDemoState {
   isOpen: boolean;
@@ -28,114 +29,144 @@ export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>,
   }
 
   render() {
-    const steps: WizardStep[] = [
-      { name: 'A', component: <p>Step 1</p> },
-      {
-        name: 'B',
-        steps: [
-          {
-            name: 'B-1',
-            component: <p>Step 2</p>,
-            enableNext: true
-          },
-          {
-            name: 'B-2',
-            component: <p>Step 3</p>,
-            enableNext: false,
-            canJumpTo: false
-          }
-        ]
-      },
-      { name: 'C', component: <p>Step 4</p> },
-      { name: 'D', component: <p>Step 5</p> }
-    ];
-    const stepsWithAnchorLinks: WizardStep[] = [
-      {
-        name: 'Read about PF3',
-        component: <p>Step 1</p>,
-        stepNavItemProps: { navItemComponent: 'a', href: 'https://www.patternfly.org/v3/', target: '_blank' }
-      },
-      {
-        name: 'Read about PF4',
-        component: <p>Step 2</p>,
-        stepNavItemProps: { navItemComponent: 'a', href: 'https://www.patternfly.org/v4/', target: '_blank' }
-      },
-      {
-        name: 'Review',
-        component: <p>Step 3</p>,
-        stepNavItemProps: { navItemComponent: 'button', href: 'hhttps://www.patternfly.org/v4/' }
-      }
-    ];
+    const { isOpen, isOpenWithRole } = this.state;
 
-    const stepsOnOverflow: WizardStep[] = [
-      {
-        name: 'Step without overflow',
-        component: <p>Step 1</p>
-      },
-      {
-        name: 'Step with overflow',
-        component: (
-          <div style={{ height: '800px' }}>
-            <p>Step 2</p>
-            <button onClick={this.handleRoleWizardToggle}>Open wizard in modal</button>
-          </div>
-        )
-      }
-    ];
     return (
       <React.Fragment>
         <Button id="launchWiz" variant="primary" onClick={this.handleModalToggle}>
           Show Modal
         </Button>
-        <Wizard
-          title="Simple Wizard"
-          description="Simple Wizard Description"
-          steps={steps}
-          startAtStep={1}
-          id="modalWizId"
-          onClose={this.handleModalToggle}
-          isOpen={this.state.isOpen}
-          width={710}
-        />
-        <Wizard
-          title="Wizard title"
-          description="Description here"
-          id="inPageWizId"
-          hideClose
-          steps={steps}
-          startAtStep={1}
-          height={500}
-          isNavExpandable
-        />
-        <Wizard
-          title="Wizard with anchor"
-          description="This wizard uses anchor tags for the nav item elements"
-          id="inPageWizWithAnchorsId"
-          hideClose
-          steps={stepsWithAnchorLinks}
-          startAtStep={1}
-          height={500}
-        />
-        <Wizard
-          title="Wizard with focusable content on overflow"
-          description="This wizard has content that is focusable only when the content causes an overflow"
-          id="wizard-focusable-overflow"
-          steps={stepsOnOverflow}
-          startAtStep={1}
-          height={500}
-          mainAriaLabel="Step content"
-        />
-        <Wizard
-          title="Wizard with role"
-          description="This wizard has a body that has a role of region only when content overflows and when the wizard is not in a modal."
-          id="wizard-correct-role"
-          steps={stepsOnOverflow}
-          startAtStep={1}
-          height={500}
-          mainAriaLabel="Step content"
-          onClose={this.handleRoleWizardToggle}
-          {...(this.state.isOpenWithRole && { isOpen: true })}
-        />
+        <Modal isOpen={isOpen} showClose={false} hasNoBodyWrapper onEscapePress={this.handleModalToggle}>
+          <Wizard
+            id="modalWizId"
+            width={710}
+            onClose={this.handleModalToggle}
+            header={
+              <WizardHeader
+                onClose={this.handleModalToggle}
+                title="Simple Modal Wizard"
+                description="Simple Wizard Description"
+              />
+            }
+          >
+            <WizardStep name="A" id="wizard-step-a">
+              <p>Step 1</p>
+            </WizardStep>
+            <WizardStep
+              name="B"
+              id="wizard-step-b"
+              steps={[
+                <WizardStep name="B-1" id="wizard-step-b1" key="wizard-step-b1">
+                  <p>Step 2</p>
+                </WizardStep>,
+                <WizardStep name="B-2" id="wizard-step-b2" key="wizard-step-b2">
+                  <p>Step 3</p>
+                </WizardStep>
+              ]}
+            />
+            <WizardStep name="C" id="wizard-step-c">
+              <p>Step 4</p>
+            </WizardStep>
+            <WizardStep name="D" id="wizard-step-d">
+              <p>Step 5</p>
+            </WizardStep>
+          </Wizard>
+        </Modal>
+        <Wizard id="inPageWizId" height={500}>
+          <WizardStep name="A" id="wizard-step-a">
+            <p>Step 1</p>
+          </WizardStep>
+          <WizardStep
+            name="B"
+            id="wizard-step-b"
+            steps={[
+              <WizardStep name="B-1" id="wizard-step-b1" key="wizard-step-b1">
+                <p>Step 2</p>
+              </WizardStep>,
+              <WizardStep name="B-2" id="wizard-step-b2" key="wizard-step-b2">
+                <p>Step 3</p>
+              </WizardStep>
+            ]}
+          />
+          <WizardStep name="C" id="wizard-step-c">
+            <p>Step 4</p>
+          </WizardStep>
+          <WizardStep name="D" id="wizard-step-d">
+            <p>Step 5</p>
+          </WizardStep>
+        </Wizard>
+        <Wizard id="inPageWizWithAnchorsId" height={500}>
+          <WizardStep
+            name={
+              <>
+                <ExternalLinkAltIcon /> Read about PF3
+              </>
+            }
+            id="wizard-anchor-pf3"
+            navItem={{ component: 'a', href: 'https://www.patternfly.org/v3', target: '_blank' }}
+          >
+            <p>Step 1</p>
+          </WizardStep>
+          <WizardStep
+            name={
+              <>
+                <ExternalLinkAltIcon /> Read about PF4
+              </>
+            }
+            id="wizard-anchor-pf4"
+            navItem={{ component: 'a', href: 'https://www.patternfly.org/v4', target: '_blank' }}
+          >
+            <p>Step 2</p>
+          </WizardStep>
+          <WizardStep
+            name={
+              <>
+                <SlackHashIcon /> Join us on Slack
+              </>
+            }
+            id="wizard-anchor-slack"
+            navItem={{ component: 'a', href: 'https://patternfly.slack.com', target: '_blank' }}
+          >
+            <p>Step 3</p>
+          </WizardStep>
+        </Wizard>
+        <Wizard id="inPageWizWithOverflow" height={500}>
+          <WizardStep name="Step without overflow" id="wizard-overflow-without">
+            <p>Step 1</p>
+          </WizardStep>
+          <WizardStep name="Step with overflow" id="wizard-overflow-with">
+            <div style={{ height: '800px' }}>
+              <p>Step 2</p>
+            </div>
+          </WizardStep>
+        </Wizard>
+        <Button id="launchWizOverflow" variant="primary" onClick={this.handleRoleWizardToggle}>
+          Show Modal with Overflow
+        </Button>
+        <Modal isOpen={isOpenWithRole} showClose={false} hasNoBodyWrapper onEscapePress={this.handleRoleWizardToggle}>
+          <Wizard
+            id="inModalWizWithOverflow"
+            height={400}
+            width={710}
+            onClose={this.handleRoleWizardToggle}
+            header={
+              <WizardHeader
+                onClose={this.handleRoleWizardToggle}
+                title="Modal Wizard with Overflow"
+                description="Simple Wizard Description"
+              />
+            }
+          >
+            <WizardStep body={{ component: 'main' }} name="Step without overflow" id="wizard-overflow-without">
+              <p>Step 1</p>
+            </WizardStep>
+            <WizardStep body={{ component: 'main' }} name="Step with overflow" id="wizard-overflow-with">
+              <div style={{ height: '800px' }}>
+                <p>Step 2</p>
+              </div>
+            </WizardStep>
+          </Wizard>
+        </Modal>
       </React.Fragment>
     );
   }
