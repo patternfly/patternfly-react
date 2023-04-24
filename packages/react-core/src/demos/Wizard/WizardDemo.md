@@ -458,7 +458,7 @@ class WizardFullPageWithDrawerDemo extends React.Component {
         isDrawerExpanded: false
       });
     };
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -656,7 +656,7 @@ class WizardFullPageWithDrawerInfoStepDemo extends React.Component {
         isDrawerExpanded: false
       });
     };
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });

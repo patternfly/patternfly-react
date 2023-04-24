@@ -5,7 +5,10 @@ export const NavMixed: React.FunctionComponent = () => {
   const [activeGroup, setActiveGroup] = React.useState('');
   const [activeItem, setActiveItem] = React.useState('ungrouped_item-1');
 
-  const onSelect = (result: { itemId: number | string; groupId: number | string | null }) => {
+  const onSelect = (
+    _event: React.FormEvent<HTMLInputElement>,
+    result: { itemId: number | string; groupId: number | string | null }
+  ) => {
     setActiveGroup(result.groupId as string);
     setActiveItem(result.itemId as string);
   };

@@ -13,6 +13,7 @@ import './nav.css';
 ### Default
 
 ```ts file="./NavDefault.tsx"
+
 ```
 
 ### Grouped
@@ -20,31 +21,37 @@ import './nav.css';
 The following example shows two navigation groups, each with a `title` prop passed into the nav group component. To keep nav groups accessible an `aria-label` must be passed in if the `title` prop is not passed in.
 
 ```ts file="./NavGrouped.tsx"
+
 ```
 
 ### Expandable
 
 ```ts file="./NavExpandable.tsx"
+
 ```
 
 ### Expandable third level
 
 ```ts file="./NavExpandableThirdLevel.tsx"
+
 ```
 
 ### Mixed
 
 ```ts file="./NavMixed.tsx"
+
 ```
 
 ### Horizontal subnav
 
 ```ts file="./NavHorizontalSubNav.tsx"
+
 ```
 
 ### Legacy tertiary
 
 ```ts file="./NavLegacyTertiary.tsx"
+
 ```
 
 ### Flyout
@@ -52,9 +59,11 @@ The following example shows two navigation groups, each with a `title` prop pass
 A flyout should be a `Menu` component. Press `space` or `right arrow` to open a flyout using the keyboard, use the arrow keys to navigate between flyout items, and press `escape` or `left arrow` to close a flyout.
 
 ```ts file="./NavFlyout.tsx" isBeta
+
 ```
 
 ### Drilldown
 
 ```ts isBeta file="./NavDrilldown.tsx"
+
 ```

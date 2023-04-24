@@ -53,7 +53,6 @@ interface NavOnSelectProps {
   groupId: number | string;
   itemId: number | string;
   to: string;
-  event: React.FormEvent<HTMLInputElement>;
 }
 
 export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
@@ -62,7 +61,7 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(1);
 
-  const onNavSelect = (selectedItem: NavOnSelectProps) => {
+  const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
   };
 
