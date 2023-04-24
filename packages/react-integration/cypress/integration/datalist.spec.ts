@@ -4,8 +4,8 @@ describe('Data List Demo Test', () => {
   });
 
   it('Verify rows selectable', () => {
-    cy.get('#row1.pf-m-selectable').should('exist');
-    cy.get('#row2.pf-m-selectable').should('exist');
+    cy.get('#row1.pf-m-clickable').should('exist');
+    cy.get('#row2.pf-m-clickable').should('exist');
 
     cy.get('#row1.pf-m-selected').should('not.exist');
     cy.get('#row2.pf-m-selected').should('not.exist');
