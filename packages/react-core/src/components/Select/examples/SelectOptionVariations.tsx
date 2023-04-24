@@ -1,15 +1,8 @@
 import React from 'react';
-import {
-  Select,
-  SelectOption,
-  SelectList,
-  SelectGroup,
-  MenuToggle,
-  MenuToggleElement,
-  Divider
-} from '@patternfly/react-core';
+import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
-export const SelectGrouped: React.FunctionComponent = () => {
+export const SelectOptionVariations: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('Select a value');
   const menuRef = React.useRef<HTMLDivElement>(null);
@@ -48,7 +41,7 @@ export const SelectGrouped: React.FunctionComponent = () => {
 
   return (
     <Select
-      id="single-grouped-select"
+      id="option-variations-select"
       ref={menuRef}
       isOpen={isOpen}
       selected={selected}
@@ -56,21 +49,22 @@ export const SelectGrouped: React.FunctionComponent = () => {
       onOpenChange={(isOpen) => setIsOpen(isOpen)}
       toggle={toggle}
     >
-      <SelectGroup label="Group 1">
-        <SelectList>
-          <SelectOption itemId="Option 1">Option 1</SelectOption>
-          <SelectOption itemId="Option 2">Option 2</SelectOption>
-          <SelectOption itemId="Option 3">Option 3</SelectOption>
-        </SelectList>
-      </SelectGroup>
-      <Divider />
-      <SelectGroup label="Group 2">
-        <SelectList>
-          <SelectOption itemId="Option 4">Option 4</SelectOption>
-          <SelectOption itemId="Option 5">Option 5</SelectOption>
-          <SelectOption itemId="Option 6">Option 6</SelectOption>
-        </SelectList>
-      </SelectGroup>
+      <SelectList>
+        <SelectOption itemId="Basic option">Basic option</SelectOption>
+        <SelectOption itemId="Option with description" description="This is a description">
+          Option with description
+        </SelectOption>
+        <SelectOption itemId="Option with link" isExternalLink>
+          Option with link
+        </SelectOption>
+        <SelectOption itemId="Option with icon" icon={<BellIcon />}>
+          Option with icon
+        </SelectOption>
+        <SelectOption itemId="Disabled option" isDisabled>
+          Disabled option
+        </SelectOption>
+        <SelectOption itemId="See Menu for additional variations!">See Menu for additional variations!</SelectOption>
+      </SelectList>
     </Select>
   );
 };
