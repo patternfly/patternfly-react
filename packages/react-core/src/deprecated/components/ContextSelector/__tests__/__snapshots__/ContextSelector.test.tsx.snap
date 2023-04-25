@@ -111,7 +111,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
                     aria-label="Search input"
                     class="pf-c-text-input-group__text-input"
                     placeholder="Search"
-                    type="search"
+                    type="text"
                     value=""
                   />
                 </span>
@@ -274,7 +274,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
                     aria-label="Search input"
                     class="pf-c-text-input-group__text-input"
                     placeholder="Search"
-                    type="search"
+                    type="text"
                     value=""
                   />
                 </span>

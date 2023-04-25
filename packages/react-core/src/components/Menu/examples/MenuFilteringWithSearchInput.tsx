@@ -48,7 +48,6 @@ export const MenuFilteringWithSearchInput: React.FunctionComponent = () => {
           <SearchInput
             value={input}
             aria-label="Filter menu items"
-            type="search"
             onChange={(_event, value) => handleTextInputChange(value)}
           />
         </MenuSearchInput>

@@ -172,7 +172,6 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
                   }
                   isDisabled={isDisabled}
                   aria-label={searchInputAriaLabel}
-                  type="search"
                 />
               )}
             </div>
