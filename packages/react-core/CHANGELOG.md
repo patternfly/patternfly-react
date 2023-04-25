@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.76](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.75...@patternfly/react-core@5.0.0-alpha.76) (2023-04-25)
+
+### Features
+
+- **FileUpload:** added event to onTextChange ([#8955](https://github.com/patternfly/patternfly-react/issues/8955)) ([3dcc493](https://github.com/patternfly/patternfly-react/commit/3dcc493ffc8d9f78c4e5f43a3925e9ee1ef25ae6))
+
 # [5.0.0-alpha.75](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.74...@patternfly/react-core@5.0.0-alpha.75) (2023-04-24)
 
 **Note:** Version bump only for package @patternfly/react-core
