@@ -27,7 +27,7 @@ A chip group is a collection of chips that can be grouped by category and used t
 ```ts file='./ChipGroupWithCategories.tsx'
 ```
 
-### With removable categories
+### Chip groups with removable categories
 
 ```ts file='./ChipGroupRemovableCategories.tsx'
 ```
