@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.84](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.83...@patternfly/react-docs@6.0.0-alpha.84) (2023-04-25)
+
+### Bug Fixes
+
+- bump dependencies and remove ssl option ([#8984](https://github.com/patternfly/patternfly-react/issues/8984)) ([f8f77d2](https://github.com/patternfly/patternfly-react/commit/f8f77d232b386ad8676af609273d9adff5a5feae))
+
 # [6.0.0-alpha.83](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.82...@patternfly/react-docs@6.0.0-alpha.83) (2023-04-25)
 
 **Note:** Version bump only for package @patternfly/react-docs

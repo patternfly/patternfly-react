@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.77](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.76...@patternfly/react-core@5.0.0-alpha.77) (2023-04-25)
+
+### Bug Fixes
+
+- bump dependencies and remove ssl option ([#8984](https://github.com/patternfly/patternfly-react/issues/8984)) ([f8f77d2](https://github.com/patternfly/patternfly-react/commit/f8f77d232b386ad8676af609273d9adff5a5feae))
+
 # [5.0.0-alpha.76](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.75...@patternfly/react-core@5.0.0-alpha.76) (2023-04-25)
 
 ### Features
