@@ -14,16 +14,16 @@
   "license": "MIT",
   "scripts": {
     "analyze": "yarn build:docs --analyze",
-    "build:docs": "pf-docs-framework build all --legacySSL",
+    "build:docs": "pf-docs-framework build all",
     "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js node_modules",
-    "develop": "./startDevServer.sh",
+    "develop": "yarn start",
     "start": "pf-docs-framework start",
     "serve": "pf-docs-framework serve public",
     "screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
   "dependencies": {
-    "@patternfly/patternfly": "5.0.0-alpha.37",
+    "@patternfly/patternfly": "5.0.0-alpha.41",
     "@patternfly/react-charts": "^7.0.0-alpha.19",
     "@patternfly/react-code-editor": "^5.0.0-alpha.77",
     "@patternfly/react-core": "^5.0.0-alpha.76",
@@ -33,7 +33,7 @@
     "@patternfly/react-tokens": "^5.0.0-alpha.6"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^2.0.0-alpha.18",
+    "@patternfly/documentation-framework": "^2.0.0-alpha.25",
     "@patternfly/patternfly-a11y": "4.3.1",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2"

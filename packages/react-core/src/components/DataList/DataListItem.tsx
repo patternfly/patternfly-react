@@ -82,7 +82,7 @@ export class DataListItem extends React.Component<DataListItemProps> {
               className={css(
                 styles.dataListItem,
                 isExpanded && styles.modifiers.expanded,
-                isSelectable && styles.modifiers.selectable,
+                isSelectable && styles.modifiers.clickable,
                 selectedDataListItemId && isSelected && styles.modifiers.selected,
                 className
               )}

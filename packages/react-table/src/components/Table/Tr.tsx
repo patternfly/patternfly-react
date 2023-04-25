@@ -96,7 +96,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
           isExpanded !== undefined && styles.tableExpandableRow,
           isExpanded && styles.modifiers.expanded,
           isEditable && inlineStyles.modifiers.inlineEditable,
-          isHoverable && styles.modifiers.hoverable,
+          isHoverable && styles.modifiers.clickable,
           isRowSelected && styles.modifiers.selected,
           isStriped && styles.modifiers.striped,
           isBorderRow && styles.modifiers.borderRow,
