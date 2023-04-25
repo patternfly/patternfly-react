@@ -8,7 +8,7 @@ ouia: true
 
 ## Chip examples
 
-### Variants
+### Chip variants
 Chips can be removable or read-only. The Overflow chip is a special chip that is used to expand or collapse the content of a chip group.
 
 ```ts file='./ChipDefault.tsx'
