@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
-import { NavContext } from './Nav';
+import { NavContext, NavSelectClickHandler } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
@@ -25,12 +25,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   /** If true prevents the default anchor link action to occur. Set to true if you want to handle navigation yourself. */
   preventDefault?: boolean;
   /** Callback for item click */
-  onClick?: (
-    event: React.FormEvent<HTMLInputElement>,
-    itemId: number | string,
-    groupId: number | string,
-    to: string
-  ) => void;
+  onClick?: NavSelectClickHandler;
   /** Component used to render NavItems if  React.isValidElement(children) is false */
   component?: React.ReactNode;
   /** Flyout of a nav item. This should be a Menu component. Should not be used if the to prop is defined. */

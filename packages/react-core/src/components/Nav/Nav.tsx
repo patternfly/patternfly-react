@@ -52,12 +52,7 @@ export interface NavContextProps {
     itemId: number | string,
     to: string,
     preventDefault: boolean,
-    onClick: (
-      event: React.FormEvent<HTMLInputElement>,
-      itemId: number | string,
-      groupId: number | string,
-      to: string
-    ) => void
+    onClick: NavSelectClickHandler
   ) => void;
   onToggle?: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) => void;
   updateIsScrollable?: (isScrollable: boolean) => void;
@@ -96,12 +91,7 @@ export class Nav extends React.Component<
     itemId: number | string,
     to: string,
     preventDefault: boolean,
-    onClick: (
-      event: React.FormEvent<HTMLInputElement>,
-      itemId: number | string,
-      groupId: number | string,
-      to: string
-    ) => void
+    onClick: NavSelectClickHandler
   ) {
     if (preventDefault) {
       event.preventDefault();

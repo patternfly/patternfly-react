@@ -67,3 +67,18 @@ A flyout should be a `Menu` component. Press `space` or `right arrow` to open a 
 ```ts isBeta file="./NavDrilldown.tsx"
 
 ```
+
+## Types
+
+### NavSelectClickHandler
+
+The NavItem `onClick` prop accepts the `NavSelectClickHandler` type, which is made up of the following argument and return types:
+
+```noLive
+(
+  event: React.FormEvent<HTMLInputElement>,
+  itemId: number | string,
+  groupId: number | string,
+  to: string
+) => void;
+```
