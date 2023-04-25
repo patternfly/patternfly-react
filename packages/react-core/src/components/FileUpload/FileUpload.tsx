@@ -76,7 +76,7 @@ export interface FileUploadProps
   /** A callback for when a selected file starts loading. */
   onReadStarted?: (fileHandle: File) => void;
   /** Text area text changed. */
-  onTextChange?: (text: string) => void;
+  onTextChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, text: string) => void;
 }
 
 export const FileUpload: React.FunctionComponent<FileUploadProps> = ({

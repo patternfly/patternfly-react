@@ -11,7 +11,11 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
     setFilename(file.name);
   };
 
-  const handleTextOrDataChange = (value: string) => {
+  const handleTextChange = (_event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => {
+    setValue(value);
+  };
+
+  const handleDataChange = (value: string) => {
     setValue(value);
   };
 
@@ -43,8 +47,8 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
           filename={filename}
           filenamePlaceholder="Drag and drop a file or upload one"
           onFileInputChange={handleFileInputChange}
-          onDataChange={handleTextOrDataChange}
-          onTextChange={handleTextOrDataChange}
+          onDataChange={handleDataChange}
+          onTextChange={handleTextChange}
           onReadStarted={handleFileReadStarted}
           onReadFinished={handleFileReadFinished}
           onClearClick={handleClear}
