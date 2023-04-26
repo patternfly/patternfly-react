@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.80](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.79...@patternfly/react-table@5.0.0-alpha.80) (2023-04-26)
+
+### Bug Fixes
+
+- **Table:** update sticky css props ([#8928](https://github.com/patternfly/patternfly-react/issues/8928)) ([79bc2ac](https://github.com/patternfly/patternfly-react/commit/79bc2ac03f8c7b17e752017142a851d1237bb139))
+
 # [5.0.0-alpha.79](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.78...@patternfly/react-table@5.0.0-alpha.79) (2023-04-25)
 
 ### Bug Fixes
