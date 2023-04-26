@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/LabelGroup/label-gro
 import labelStyles from '@patternfly/react-styles/css/components/Label/label';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
-import { Label } from '../Label';
+import { Label } from './Label';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import { fillTemplate } from '../../helpers';
