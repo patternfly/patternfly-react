@@ -22,7 +22,7 @@ export const AlertPopover: React.FunctionComponent = () => {
       <div>
         <span style={{ paddingRight: '10px' }}>Alert variant:</span>
         <select aria-label="Popover alert type" onChange={(event) => setAlertSeverityVariant(event.target.value)}>
-          <option value="default">default</option>
+          <option value="custom">custom</option>
           <option value="info">info</option>
           <option value="success">success</option>
           <option value="warning">warning</option>
