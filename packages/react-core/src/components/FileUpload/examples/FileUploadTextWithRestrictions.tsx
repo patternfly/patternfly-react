@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileUpload, Form, FormGroup, FormHelperText, HelperText, HelperTextItem } from '@patternfly/react-core';
+import { DropEvent } from 'react-dropzone';
 
 export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
@@ -15,7 +16,7 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
     setValue(value);
   };
 
-  const handleDataChange = (value: string) => {
+  const handleDataChange = (_event: DropEvent, value: string) => {
     setValue(value);
   };
 
@@ -29,11 +30,11 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
     setIsRejected(true);
   };
 
-  const handleFileReadStarted = (_fileHandle: File) => {
+  const handleFileReadStarted = (_event: DropEvent, _fileHandle: File) => {
     setIsLoading(true);
   };
 
-  const handleFileReadFinished = (_fileHandle: File) => {
+  const handleFileReadFinished = (_event: DropEvent, _fileHandle: File) => {
     setIsLoading(false);
   };
 
