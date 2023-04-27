@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.82](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.81...@patternfly/react-core@5.0.0-alpha.82) (2023-04-27)
+
+### Bug Fixes
+
+- **FormSelect:** updated order of onChange params ([#8998](https://github.com/patternfly/patternfly-react/issues/8998)) ([9a25bea](https://github.com/patternfly/patternfly-react/commit/9a25bea9818bb66019061a13443d6242f2e631f3))
+
 # [5.0.0-alpha.81](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.80...@patternfly/react-core@5.0.0-alpha.81) (2023-04-27)
 
 ### Features
