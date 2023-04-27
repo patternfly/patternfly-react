@@ -1173,7 +1173,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-c-select__toggle-arrow"
+          class="pf-svg pf-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -1644,7 +1644,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-c-select__toggle-arrow"
+          class="pf-svg pf-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -1696,7 +1696,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-c-select__toggle-arrow"
+          class="pf-svg pf-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -1920,7 +1920,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-c-select__toggle-arrow"
+          class="pf-svg pf-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -2061,7 +2061,7 @@ exports[`typeahead select renders closed successfully 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-c-select__toggle-arrow"
+          class="pf-svg pf-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -2112,7 +2112,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-c-select__toggle-arrow"
+          class="pf-svg pf-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -2221,7 +2221,7 @@ exports[`typeahead select renders selected successfully 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-c-select__toggle-arrow"
+          class="pf-svg pf-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"

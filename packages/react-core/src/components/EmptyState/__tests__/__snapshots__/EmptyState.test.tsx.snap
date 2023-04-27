@@ -36,6 +36,7 @@ exports[`EmptyState Header with icon 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="pf-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 448 512"

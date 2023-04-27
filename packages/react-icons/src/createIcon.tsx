@@ -11,6 +11,7 @@ export interface IconDefinition {
 
 export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'ref'> {
   title?: string;
+  className?: string;
 }
 
 let currentId = 0;
@@ -32,14 +33,15 @@ export function createIcon({
     id = `icon-title-${currentId++}`;
 
     render() {
-      const { title, ...props } = this.props;
+      const { title, className, ...props } = this.props;
+      const classes = className ? `pf-svg ${className}` : "pf-svg";
 
       const hasTitle = Boolean(title);
       const viewBox = [xOffset, yOffset, width, height].join(' ');
 
       return (
         <svg
-          className="pf-svg"
+          className={classes}
           viewBox={viewBox}
           fill="currentColor"
           aria-labelledby={hasTitle ? this.id : null}

@@ -9,7 +9,7 @@ exports[`EmptyStateIcon should match snapshot (auto-generated) 1`] = `
     <svg
       aria-hidden="true"
       aria-labelledby="icon-title-0"
-      class="''"
+      class="pf-svg ''"
       fill="currentColor"
       role="img"
       viewBox="0 0 448 512"
