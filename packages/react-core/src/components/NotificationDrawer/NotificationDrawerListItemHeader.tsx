@@ -18,7 +18,7 @@ export const variantIcons = {
   danger: ExclamationCircleIcon,
   warning: ExclamationTriangleIcon,
   info: InfoCircleIcon,
-  default: BellIcon
+  custom: BellIcon
 };
 
 export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<HTMLDivElement> {
@@ -33,7 +33,7 @@ export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<H
   /**  Notification drawer list item title */
   title: string;
   /**  Variant indicates the severity level */
-  variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
+  variant?: 'success' | 'danger' | 'warning' | 'info' | 'custom';
   /** Truncate title to number of lines */
   truncateTitle?: number;
   /** Position of the tooltip which is displayed if text is truncated */
@@ -62,7 +62,7 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
   icon = null,
   srTitle,
   title,
-  variant = 'default',
+  variant = 'custom',
   truncateTitle = 0,
   tooltipPosition,
   headingLevel: HeadingLevel = 'h2',

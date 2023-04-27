@@ -40,7 +40,7 @@ test('sets additional custom class successfully', () => {
   expect(iconContainer).toHaveClass('test');
 });
 
-Object.values(['sm', 'md', 'lg', 'xl']).forEach(size => {
+Object.values(['sm', 'md', 'lg', 'xl']).forEach((size) => {
   test(`sets icon size modifier successfully - ${size}`, () => {
     render(
       <Icon iconSize={size as 'sm' | 'md' | 'lg' | 'xl'} title={`content-${size}-icon`}>
@@ -60,10 +60,10 @@ test('check icon without iconSize', () => {
     </Icon>
   );
   const iconContainer = screen.getByTitle('no-icon-size').querySelector('.pf-c-icon__content');
-  expect(Array.from(iconContainer?.classList || []).some(c => /pf-m-*/.test(c))); // Check no modifier classes have been added
+  expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
 });
 
-Object.values(['sm', 'md', 'lg', 'xl']).forEach(size => {
+Object.values(['sm', 'md', 'lg', 'xl']).forEach((size) => {
   test(`sets progress icon size modifier successfully - ${size}`, () => {
     render(
       <Icon isInProgress progressIconSize={size as 'sm' | 'md' | 'lg' | 'xl'} title={`progress-content-${size}-icon`}>
@@ -83,10 +83,10 @@ test('check icon without progress icon size', () => {
     </Icon>
   );
   const iconContainer = screen.getByTitle('no-progress-icon-size').querySelector('.pf-c-icon__progress');
-  expect(Array.from(iconContainer?.classList || []).some(c => /pf-m-*/.test(c))); // Check no modifier classes have been added
+  expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
 });
 
-Object.values(['sm', 'md', 'lg', 'xl']).forEach(size => {
+Object.values(['sm', 'md', 'lg', 'xl']).forEach((size) => {
   test(`sets size modifier successfully - ${size}`, () => {
     render(
       <Icon size={size as 'sm' | 'md' | 'lg' | 'xl'} title={`${size}-icon`}>
@@ -106,10 +106,10 @@ test('check icon without size', () => {
     </Icon>
   );
   const iconContainer = screen.getByTitle('no-size');
-  expect(Array.from(iconContainer?.classList || []).some(c => /pf-m-*/.test(c))); // Check no modifier classes have been added
+  expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
 });
 
-Object.values(['custom', 'info', 'success', 'warning', 'danger']).forEach(status => {
+Object.values(['custom', 'info', 'success', 'warning', 'danger']).forEach((status) => {
   test(`sets status modifier successfully - ${status}`, () => {
     render(
       <Icon status={status as 'custom' | 'info' | 'success' | 'warning' | 'danger'} title={`${status}-icon`}>
@@ -129,7 +129,7 @@ test('check icon without status', () => {
     </Icon>
   );
   const iconContent = screen.getByTitle('no-status').querySelector('.pf-c-icon__content');
-  expect(Array.from(iconContent?.classList || []).some(c => /pf-m-*/.test(c))); // Check no modifier classes have been added
+  expect(Array.from(iconContent?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
 });
 
 test('sets isInline successfully', () => {
@@ -150,7 +150,7 @@ test('check icon without isInline', () => {
     </Icon>
   );
   const iconContainer = screen.getByTitle('no-inline');
-  expect(Array.from(iconContainer?.classList || []).some(c => /pf-m-*/.test(c))); // Check no modifier classes have been added
+  expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
 });
 
 test('sets isInProgress successfully', () => {
@@ -173,7 +173,7 @@ test('check icon without isInProgress', () => {
     </Icon>
   );
   const iconContainer = screen.getByTitle('no-in-progress');
-  expect(Array.from(iconContainer?.classList || []).some(c => /pf-m-*/.test(c))); // Check no modifier classes have been added
+  expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
 });
 
 test('sets default progres aria-label successfully', () => {

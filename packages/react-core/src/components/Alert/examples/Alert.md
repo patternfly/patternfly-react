@@ -17,11 +17,11 @@ import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 
 ### Alert variants
 
-PatternFly supports several alert variants for different scenarios. Each variant has an associated status icon, background, and alert title coded to communicate the severity of an alert. Use the `variant` property to apply the following styling options. If no `variant` is specified, then the variant will be set to "default".
+PatternFly supports several alert variants for different scenarios. Each variant has an associated status icon, background, and alert title coded to communicate the severity of an alert. Use the `variant` property to apply the following styling options. If no `variant` is specified, then the variant will be set to "custom".
 
 | Variant | Description |
 |---|---|
-| Default | Use for generic messages with no associated severity |
+| Custom | Use for generic messages that should have a custom color set by the associated CSS variable. Should be used when the message has no associated severity. |
 | Info | Use for general informational messages |
 | Success | Use to indicate that a task or process has been completed successfully |
 | Warning | Use to indicate that a non-critical error has occurred|
@@ -32,7 +32,7 @@ import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
 <React.Fragment>
-  <Alert title="Default alert title" ouiaId="DefaultAlert" />
+  <Alert title="Custom alert title" ouiaId="CustomAlert" />
   <Alert variant="info" title="Info alert title" ouiaId="InfoAlert" />
   <Alert variant="success" title="Success alert title" ouiaId="SuccessAlert" />
   <Alert variant="warning" title="Warning alert title" ouiaId="WarningAlert" />
@@ -229,7 +229,7 @@ Use inline alerts to display an alert inline with content. All alert variants ma
 import React from 'react';
 import { Alert } from '@patternfly/react-core';
 <React.Fragment>
-  <Alert variant="default" isInline title="Default inline alert title" />
+  <Alert variant="custom" isInline title="Custom inline alert title" />
   <Alert variant="info" isInline title="Info inline alert title" />
   <Alert variant="success" isInline title="Success inline alert title" />
   <Alert variant="warning" isInline title="Warning inline alert title" />
@@ -294,7 +294,7 @@ Use the `isPlain` property to make any inline alert plain. Plain styling removes
 import React from 'react';
 import { Alert } from '@patternfly/react-core';
 <React.Fragment>
-  <Alert variant="default" isInline isPlain title="Default inline alert title" />
+  <Alert variant="custom" isInline isPlain title="Custom inline alert title" />
   <Alert variant="info" isInline isPlain title="Info inline alert title" />
   <Alert variant="success" isInline isPlain title="Success inline alert title" />
   <Alert variant="warning" isInline isPlain title="Warning inline alert title" />

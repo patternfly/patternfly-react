@@ -45,7 +45,7 @@ export interface PopoverProps {
   /** Severity variants for an alert popover. This modifies the color of the header to
    * match the severity.
    */
-  alertSeverityVariant?: 'default' | 'info' | 'warning' | 'success' | 'danger';
+  alertSeverityVariant?: 'custom' | 'info' | 'warning' | 'success' | 'danger';
   /** The duration of the CSS fade transition animation. */
   animationDuration?: number;
   /** The element to append the popover to. Defaults to "inline". */
@@ -210,7 +210,7 @@ export interface PopoverProps {
 }
 
 const alertStyle = {
-  default: styles.modifiers.custom,
+  custom: styles.modifiers.custom,
   info: styles.modifiers.info,
   success: styles.modifiers.success,
   warning: styles.modifiers.warning,

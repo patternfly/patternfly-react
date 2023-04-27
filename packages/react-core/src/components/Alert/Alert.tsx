@@ -15,7 +15,7 @@ export enum AlertVariant {
   danger = 'danger',
   warning = 'warning',
   info = 'info',
-  default = 'default'
+  custom = 'custom'
 }
 
 /** The main alert component. */
@@ -78,7 +78,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   /** Truncate title to number of lines. */
   truncateTitle?: number;
   /** Adds alert variant styles.  */
-  variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
+  variant?: 'success' | 'danger' | 'warning' | 'info' | 'custom';
   /** Variant label text for screen readers. */
   variantLabel?: string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -88,7 +88,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
 }
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
-  variant = AlertVariant.default,
+  variant = AlertVariant.custom,
   isInline = false,
   isPlain = false,
   isLiveRegion = false,
@@ -214,7 +214,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         isPlain && styles.modifiers.plain,
         isExpandable && styles.modifiers.expandable,
         isExpanded && styles.modifiers.expanded,
-        styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
+        styles.modifiers[variant],
         className
       )}
       {...ouiaProps}

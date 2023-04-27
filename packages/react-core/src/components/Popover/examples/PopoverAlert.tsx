@@ -10,7 +10,7 @@ export const AlertPopover: React.FunctionComponent = () => {
   const [alertSeverityVariant, setAlertSeverityVariant] = React.useState('default');
 
   const alertIcons = {
-    default: <BellIcon />,
+    custom: <BellIcon />,
     info: <InfoCircleIcon />,
     success: <CheckCircleIcon />,
     warning: <ExclamationTriangleIcon />,
@@ -21,8 +21,8 @@ export const AlertPopover: React.FunctionComponent = () => {
     <>
       <div>
         <span style={{ paddingRight: '10px' }}>Alert variant:</span>
-        <select aria-label="Popover alert type" onChange={event => setAlertSeverityVariant(event.target.value)}>
-          <option value="default">default</option>
+        <select aria-label="Popover alert type" onChange={(event) => setAlertSeverityVariant(event.target.value)}>
+          <option value="custom">custom</option>
           <option value="info">info</option>
           <option value="success">success</option>
           <option value="warning">warning</option>
@@ -32,7 +32,7 @@ export const AlertPopover: React.FunctionComponent = () => {
       <div style={{ margin: '50px' }}>
         <Popover
           aria-label="Alert popover"
-          alertSeverityVariant={alertSeverityVariant as 'default' | 'info' | 'warning' | 'success' | 'danger'}
+          alertSeverityVariant={alertSeverityVariant as 'custom' | 'info' | 'warning' | 'success' | 'danger'}
           headerContent="Default popover title"
           headerIcon={alertIcons[alertSeverityVariant]}
           headerComponent="h1"

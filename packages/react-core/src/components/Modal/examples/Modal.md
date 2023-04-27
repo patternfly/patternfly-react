@@ -102,7 +102,7 @@ To exclusively present information in a modal, remove the `header` and/or `foote
 
 ### Title icon
 
-To add an icon before a modal’s title, use the `titleIconVariant`, which can be set to one of the predefined variants -- "success", "danger", "warning", "info", and "default" -- or to an imported custom icon. The following example uses a "warning" variant.
+To add an icon before a modal’s title, use the `titleIconVariant`, which can be set to one of the predefined variants -- "success", "danger", "warning", "info", and "custom" -- or to an imported custom icon. The following example uses a "warning" variant.
 
 ```ts file="./ModalTitleIcon.tsx"
 

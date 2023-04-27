@@ -31,9 +31,9 @@ test('ModalBoxTitle danger variant', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('ModalBoxTitle default variant', () => {
+test('ModalBoxTitle custom variant', () => {
   const { asFragment } = render(
-    <ModalBoxTitle title="Test Modal Box warning" id="boxId" titleIconVariant="default">
+    <ModalBoxTitle title="Test Modal Box warning" id="boxId" titleIconVariant="custom">
       content
     </ModalBoxTitle>
   );

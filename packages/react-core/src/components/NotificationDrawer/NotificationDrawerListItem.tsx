@@ -47,7 +47,7 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
         className
       )}
       tabIndex={tabIndex}
-      onClick={e => onClick(e)}
+      onClick={(e) => onClick(e)}
       onKeyDown={onKeyDown}
     >
       {children}
