@@ -19,7 +19,7 @@ export const FormSelectValidated: React.FunctionComponent = () => {
     setTimeout(callback, 2000);
   };
 
-  const onChange = (value: string) => {
+  const onChange = (_event: React.FormEvent<HTMLSelectElement>, value: string) => {
     setFormValue(value);
     setValidated(ValidatedOptions.default);
     setHelperText('Validating...');

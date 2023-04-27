@@ -186,6 +186,6 @@ describe('FormSelect', () => {
     await user.selectOptions(screen.getByLabelText('Some label'), 'Mr');
 
     expect(myMock).toHaveBeenCalled();
-    expect(myMock.mock.calls[0][0]).toEqual('mr');
+    expect(myMock.mock.calls[0][1]).toEqual('mr');
   });
 });

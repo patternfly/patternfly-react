@@ -33,7 +33,7 @@ export const FormHorizontal: React.FunctionComponent = () => {
     setExperience(experience);
   };
 
-  const handleOptionChange = (value: string, _event: React.FormEvent<HTMLSelectElement>) => {
+  const handleOptionChange = (_event: React.FormEvent<HTMLSelectElement>, value: string) => {
     setOption(value);
   };
 

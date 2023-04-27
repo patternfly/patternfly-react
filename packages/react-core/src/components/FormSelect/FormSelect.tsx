@@ -30,7 +30,7 @@ export interface FormSelectProps
   /** Optional callback for updating when selection gets focus */
   onFocus?: (event: React.FormEvent<HTMLSelectElement>) => void;
   /** Optional callback for updating when selection changes */
-  onChange?: (value: string, event: React.FormEvent<HTMLSelectElement>) => void;
+  onChange?: (event: React.FormEvent<HTMLSelectElement>, value: string) => void;
   /** Custom flag to show that the FormSelect requires an associated id or aria-label. */
   'aria-label'?: string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -66,22 +66,12 @@ export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: 
   };
 
   handleChange = (event: any) => {
-    this.props.onChange(event.currentTarget.value, event);
+    this.props.onChange(event, event.currentTarget.value);
   };
 
   render() {
-    const {
-      children,
-      className,
-      value,
-      validated,
-      isDisabled,
-      isRequired,
-      isIconSprite,
-      ouiaId,
-      ouiaSafe,
-      ...props
-    } = this.props;
+    const { children, className, value, validated, isDisabled, isRequired, isIconSprite, ouiaId, ouiaSafe, ...props } =
+      this.props;
     /* find selected option and get placeholder flag */
     const selectedOption = React.Children.toArray(children).find((option: any) => option.props.value === value) as any;
     const isSelectedPlaceholder = selectedOption && selectedOption.props.isPlaceholder;
