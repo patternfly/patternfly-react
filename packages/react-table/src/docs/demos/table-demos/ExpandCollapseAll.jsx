@@ -120,6 +120,7 @@ const ExpandCollapseAllTableDemo = () => {
   const setServerExpanded = (server, isExpanding) => {
     const otherExpandedServerNames = expandedServerNames.filter((r) => r !== server.name);
     setExpandedServerNames(isExpanding ? [...otherExpandedServerNames, server.name] : otherExpandedServerNames);
+    setAreAllExpanded(expandedServerNames.length == serverData.length);
   };
 
   const isServerExpanded = (server) => {
