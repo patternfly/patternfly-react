@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.12 (2023-04-27)
+
+### Bug Fixes
+
+- **createIcon:** Spread className to svg to fix broken images ([#8954](https://github.com/patternfly/patternfly-react/issues/8954)) ([8073115](https://github.com/patternfly/patternfly-react/commit/80731151f6d91299330f580262cb7e0d2ee670b8))
+
 # 5.0.0-alpha.11 (2023-04-25)
 
 ### Bug Fixes

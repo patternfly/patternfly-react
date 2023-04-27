@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.80](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.79...@patternfly/react-core@5.0.0-alpha.80) (2023-04-27)
+
+### Bug Fixes
+
+- **createIcon:** Spread className to svg to fix broken images ([#8954](https://github.com/patternfly/patternfly-react/issues/8954)) ([8073115](https://github.com/patternfly/patternfly-react/commit/80731151f6d91299330f580262cb7e0d2ee670b8))
+
+### Features
+
+- **Alert, Icon, Modal, NotificationDrawer:** use custom CSS for default ([#8924](https://github.com/patternfly/patternfly-react/issues/8924)) ([b9d33a8](https://github.com/patternfly/patternfly-react/commit/b9d33a89e927ddb95c1328061744bdc91bb91c72))
+
 # [5.0.0-alpha.79](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.78...@patternfly/react-core@5.0.0-alpha.79) (2023-04-27)
 
 ### Bug Fixes
