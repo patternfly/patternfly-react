@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.65](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.64...demo-app-ts@5.0.0-alpha.65) (2023-04-27)
+
+### Features
+
+- **ExpandableSection:** Add event to onToggle ([#8991](https://github.com/patternfly/patternfly-react/issues/8991)) ([29c781c](https://github.com/patternfly/patternfly-react/commit/29c781c5a4105d565ba316197e20c7bf1588eb04))
+- **FileUpload:** added event params to callbacks ([#8960](https://github.com/patternfly/patternfly-react/issues/8960)) ([10f0316](https://github.com/patternfly/patternfly-react/commit/10f0316f2ceca984a2277d568c62d39aa5ff9833))
+
 # [5.0.0-alpha.64](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.63...demo-app-ts@5.0.0-alpha.64) (2023-04-27)
 
 **Note:** Version bump only for package demo-app-ts
