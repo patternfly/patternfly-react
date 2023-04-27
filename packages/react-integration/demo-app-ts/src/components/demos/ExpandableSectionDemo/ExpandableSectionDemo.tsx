@@ -19,9 +19,9 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
     window.scrollTo(0, 0);
   }
 
-  onToggle = (isOpen: boolean) => this.setState({ isExpanded: isOpen });
+  onToggle = (_event: React.MouseEvent, isOpen: boolean) => this.setState({ isExpanded: isOpen });
   onToggleDetached = (isOpen: boolean) => this.setState({ isDetachedExpanded: isOpen });
-  onToggleDisclosure = (isOpen: boolean) => this.setState({ isDisclosureExpanded: isOpen });
+  onToggleDisclosure = (_event: React.MouseEvent, isOpen: boolean) => this.setState({ isDisclosureExpanded: isOpen });
 
   render() {
     const { isExpanded, isDetachedExpanded, isDisclosureExpanded } = this.state;

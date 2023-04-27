@@ -38,7 +38,7 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   /** Callback function to toggle the expandable section. Detached expandable sections should
    * use the onToggle property of the expandable section toggle sub-component.
    */
-  onToggle?: (isExpanded: boolean) => void;
+  onToggle?: (event: React.MouseEvent, isExpanded: boolean) => void;
   /** React node that appears in the attached toggle in place of the toggleText property. */
   toggleContent?: React.ReactNode;
   /** Text that appears in the attached toggle. */
@@ -96,7 +96,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     toggleTextExpanded: '',
     toggleTextCollapsed: '',
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    onToggle: (isExpanded): void => undefined,
+    onToggle: (event, isExpanded): void => undefined,
     isActive: false,
     isDetached: false,
     displaySize: 'default',
@@ -202,8 +202,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     // uncontrolled
     if (isExpanded === undefined) {
       propOrStateIsExpanded = this.state.isExpanded;
-      onToggle = isOpen => {
-        this.setState({ isExpanded: isOpen }, () => onToggleProp(this.state.isExpanded));
+      onToggle = (event, isOpen) => {
+        this.setState({ isExpanded: isOpen }, () => onToggleProp(event, this.state.isExpanded));
       };
     }
 
@@ -219,7 +219,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
         className={css(styles.expandableSectionToggle)}
         type="button"
         aria-expanded={propOrStateIsExpanded}
-        onClick={() => onToggle(!propOrStateIsExpanded)}
+        onClick={(event) => onToggle(event, !propOrStateIsExpanded)}
       >
         {variant !== ExpandableSectionVariant.truncate && (
           <span className={css(styles.expandableSectionToggleIcon)}>
