@@ -3,11 +3,16 @@ import { css } from '@patternfly/react-styles';
 import { MenuItemProps, MenuItem } from '../Menu';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
+/**
+ * See the MenuItem section of the Menu documentation for additional props that may be passed.
+ */
 export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps {
   /** Anything which can be rendered in a dropdown item */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown item */
   className?: string;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
   /** Description of the dropdown item */
   description?: React.ReactNode;
   /** Render item as disabled option */
@@ -22,7 +27,7 @@ export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps
   ouiaSafe?: boolean;
 }
 
-export const DropdownItem: React.FunctionComponent<MenuItemProps> = ({
+const DropdownItemBase: React.FunctionComponent<MenuItemProps> = ({
   children,
   className,
   description,
@@ -31,11 +36,13 @@ export const DropdownItem: React.FunctionComponent<MenuItemProps> = ({
   onClick,
   ouiaId,
   ouiaSafe,
+  innerRef,
   ...props
 }: DropdownItemProps) => {
   const ouiaProps = useOUIAProps(DropdownItem.displayName, ouiaId, ouiaSafe);
   return (
     <MenuItem
+      ref={innerRef}
       className={css(className)}
       description={description}
       isDisabled={isDisabled}
@@ -48,4 +55,8 @@ export const DropdownItem: React.FunctionComponent<MenuItemProps> = ({
     </MenuItem>
   );
 };
+export const DropdownItem = React.forwardRef((props: DropdownItemProps, ref: React.Ref<any>) => (
+  <DropdownItemBase {...props} innerRef={ref} />
+));
+
 DropdownItem.displayName = 'DropdownItem';

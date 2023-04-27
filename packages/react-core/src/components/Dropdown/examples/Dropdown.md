@@ -3,7 +3,7 @@ id: Dropdown
 section: components
 subsection: menus
 cssPrefix: pf-c-menu
-propComponents: ['Dropdown', DropdownGroup, 'DropdownItem', 'DropdownList', 'MenuToggle']
+propComponents: ['Dropdown', DropdownGroup, 'DropdownItem', 'DropdownList', 'MenuToggle', 'DropdownPopperProps']
 ---
 
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';

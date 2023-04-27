@@ -8,10 +8,15 @@ export const DropdownWithDescriptions: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+  const onSelect = (
+    _event: React.MouseEvent<Element, MouseEvent> | undefined,
+    itemId: string | number | undefined,
+    toggleRef: React.RefObject<any>
+  ) => {
     // eslint-disable-next-line no-console
     console.log('selected', itemId);
     setIsOpen(false);
+    toggleRef?.current.focus();
   };
 
   return (
