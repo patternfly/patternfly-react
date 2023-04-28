@@ -582,6 +582,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
           aria-describedby={this.descriptionId}
           showClose={false}
           hasNoBodyWrapper
+          appendTo={this.props.appendTo}
         >
           {wizard}
         </Modal>
