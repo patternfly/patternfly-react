@@ -7,12 +7,8 @@ exports[`PageSidebar should match snapshot (auto-generated) 1`] = `
     class="pf-c-page__sidebar pf-m-expanded ''"
     id="page-sidebar"
   >
-    <div
-      class="pf-c-page__sidebar-body"
-    >
-      <div>
-        ReactNode
-      </div>
+    <div>
+      ReactNode
     </div>
   </div>
 </DocumentFragment>

@@ -418,6 +418,7 @@ import {
   PageSectionTypes,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   SkipToContent,
   Text,
   TextContent,
@@ -500,7 +501,11 @@ class WizardFullPageWithDrawerDemo extends React.Component {
         </MastheadMain>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = (
+      <PageSidebar>
+        <PageSidebarBody>{PageNav}</PageSidebarBody>
+      </PageSidebar>
+    );
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
     const PageBreadcrumb = (
@@ -611,6 +616,7 @@ import {
   PageSectionTypes,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   SkipToContent,
   Text,
   TextContent,
@@ -693,7 +699,11 @@ class WizardFullPageWithDrawerInfoStepDemo extends React.Component {
         </MastheadMain>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = (
+      <PageSidebar>
+        <PageSidebarBody>{PageNav}</PageSidebarBody>
+      </PageSidebar>
+    );
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
     const PageBreadcrumb = (

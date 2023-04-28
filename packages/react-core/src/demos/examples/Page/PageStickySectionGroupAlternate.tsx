@@ -25,6 +25,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  PageSidebarBody,
   PageToggleButton,
   SkipToContent,
   Text,
@@ -227,7 +228,11 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
     </Nav>
   );
 
-  const sidebar = <PageSidebar nav={pageNav} />;
+  const sidebar = (
+    <PageSidebar>
+      <PageSidebarBody>{pageNav}</PageSidebarBody>
+    </PageSidebar>
+  );
 
   const mainContainerId = 'main-content';
 

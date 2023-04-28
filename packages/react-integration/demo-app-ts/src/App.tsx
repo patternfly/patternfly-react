@@ -8,6 +8,7 @@ import {
   PageSection,
   SkipToContent,
   PageSidebar,
+  PageSidebarBody,
   Avatar,
   Brand,
   Radio
@@ -53,10 +54,10 @@ class App extends React.Component<{}, AppState> {
   };
 
   private getPages = () => {
-    const defaultDemo = Demos.find(demo => demo.isDefault);
+    const defaultDemo = Demos.find((demo) => demo.isDefault);
     return (
       <Switch>
-        {Demos.map(demo => (
+        {Demos.map((demo) => (
           <Route
             path={`/${demo.id}-nav-link`}
             render={() => (
@@ -98,7 +99,9 @@ class App extends React.Component<{}, AppState> {
               label={`Light theme`}
               name="light-theme"
               isChecked={!isDarkTheme}
-              onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => checked && this.onThemeSelect(false)}
+              onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) =>
+                checked && this.onThemeSelect(false)
+              }
             />
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
@@ -108,7 +111,9 @@ class App extends React.Component<{}, AppState> {
               aria-label="Dark theme"
               name="dark-theme"
               isChecked={isDarkTheme}
-              onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => checked && this.onThemeSelect(true)}
+              onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) =>
+                checked && this.onThemeSelect(true)
+              }
             />
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
@@ -140,7 +145,11 @@ class App extends React.Component<{}, AppState> {
       </Nav>
     );
 
-    const AppSidebar = <PageSidebar isNavOpen={isNavOpen} nav={nav} />;
+    const AppSidebar = (
+      <PageSidebar isSidebarOpen={isNavOpen}>
+        <PageSidebarBody>{nav}</PageSidebarBody>
+      </PageSidebar>
+    );
 
     return (
       <Router>

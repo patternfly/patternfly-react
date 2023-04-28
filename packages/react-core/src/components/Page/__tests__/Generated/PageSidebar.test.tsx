@@ -9,7 +9,9 @@ import {} from '../..';
 
 it('PageSidebar should match snapshot (auto-generated)', () => {
   const { asFragment } = render(
-    <PageSidebar className={"''"} nav={<div>ReactNode</div>} isManagedSidebar={true} isNavOpen={true} theme={'dark'} />
+    <PageSidebar className={"''"} isManagedSidebar={true} isSidebarOpen={true} theme={'dark'}>
+      <div>ReactNode</div>
+    </PageSidebar>
   );
   expect(asFragment()).toMatchSnapshot();
 });

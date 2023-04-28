@@ -6,15 +6,15 @@ import { PageContextConsumer } from './PageContext';
 export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the page sidebar */
   className?: string;
-  /** Component to render the side navigation (e.g. <Nav /> */
-  nav?: React.ReactNode;
+  /** Content rendered inside the page sidebar (e.g. <PageSidebarBody /> */
+  children?: React.ReactNode;
   /**
-   * If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
-   * the sidebar component or add a callback onNavToggle function into the PageHeader component
+   * If true, manages the sidebar open/close state and there is no need to pass the isSidebarOpen boolean into
+   * the sidebar component or add a callback onSidebarToggle function into the PageHeader component
    */
   isManagedSidebar?: boolean;
-  /** Programmatically manage if the side nav is shown, if isManagedSidebar is set to true in the Page component, this prop is managed */
-  isNavOpen?: boolean;
+  /** Programmatically manage if the sidebar is shown, if isManagedSidebar is set to true in the Page component, this prop is managed */
+  isSidebarOpen?: boolean;
   /** Indicates the color scheme of the sidebar */
   theme?: 'dark' | 'light';
   /** Sidebar id */
@@ -22,24 +22,24 @@ export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export interface PageSidebarContextProps {
-  isNavOpen: boolean;
+  isSidebarOpen: boolean;
 }
 export const pageSidebarContextDefaults: PageSidebarContextProps = {
-  isNavOpen: true
+  isSidebarOpen: true
 };
 export const PageSidebarContext = React.createContext<Partial<PageSidebarContextProps>>(pageSidebarContextDefaults);
 
 export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
   className = '',
-  nav,
-  isNavOpen = true,
+  children,
+  isSidebarOpen = true,
   theme = 'dark',
   id = 'page-sidebar',
   ...props
 }: PageSidebarProps) => (
   <PageContextConsumer>
-    {({ isManagedSidebar, isNavOpen: managedIsNavOpen }: PageSidebarProps) => {
-      const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
+    {({ isManagedSidebar, isSidebarOpen: managedIsNavOpen }: PageSidebarProps) => {
+      const sidebarOpen = isManagedSidebar ? managedIsNavOpen : isSidebarOpen;
 
       return (
         <div
@@ -47,16 +47,14 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
           className={css(
             styles.pageSidebar,
             theme === 'light' && styles.modifiers.light,
-            navOpen && styles.modifiers.expanded,
-            !navOpen && styles.modifiers.collapsed,
+            sidebarOpen && styles.modifiers.expanded,
+            !sidebarOpen && styles.modifiers.collapsed,
             className
           )}
-          aria-hidden={!navOpen}
+          aria-hidden={!sidebarOpen}
           {...props}
         >
-          <div className={css(styles.pageSidebarBody)}>
-            <PageSidebarContext.Provider value={{ isNavOpen: navOpen }}>{nav}</PageSidebarContext.Provider>
-          </div>
+          <PageSidebarContext.Provider value={{ isSidebarOpen: sidebarOpen }}>{children}</PageSidebarContext.Provider>
         </div>
       );
     }}

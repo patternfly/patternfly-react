@@ -7,6 +7,7 @@ import {
   MastheadBrand,
   MastheadContent,
   PageSidebar,
+  PageSidebarBody,
   PageSection,
   PageSectionVariants,
   PageToggleButton,
@@ -41,7 +42,11 @@ export const PageUncontrolledNav: React.FunctionComponent = () => {
     </Masthead>
   );
 
-  const sidebar = <PageSidebar nav="Navigation" id="uncontrolled-sidebar" />;
+  const sidebar = (
+    <PageSidebar id="uncontrolled-sidebar">
+      <PageSidebarBody>Navigation</PageSidebarBody>
+    </PageSidebar>
+  );
 
   return (
     <Page isManagedSidebar header={header} sidebar={sidebar}>

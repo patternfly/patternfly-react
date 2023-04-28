@@ -3,6 +3,7 @@ import React from 'react';
 import {
   Page,
   PageSidebar,
+  PageSidebarBody,
   Nav,
   MenuContent,
   MenuItem,
@@ -76,26 +77,26 @@ export const NavDrilldown: React.FunctionComponent = () => {
     toItemId: string,
     itemId: string
   ) => {
-    setMenuDrilledIn(prevMenuDrilledIn => [...prevMenuDrilledIn, fromItemId]);
-    setDrilldownPath(prevDrilldownPath => [...prevDrilldownPath, itemId]);
+    setMenuDrilledIn((prevMenuDrilledIn) => [...prevMenuDrilledIn, fromItemId]);
+    setDrilldownPath((prevDrilldownPath) => [...prevDrilldownPath, itemId]);
     setActiveMenuId(toItemId);
   };
 
   const onDrillOut = (_event: React.KeyboardEvent | React.MouseEvent, toItemId: string, _itemId: string) => {
-    setMenuDrilledIn(prevMenuDrilledIn => prevMenuDrilledIn.slice(0, prevMenuDrilledIn.length - 1));
-    setDrilldownPath(prevDrilldownPath => prevDrilldownPath.slice(0, prevDrilldownPath.length - 1));
+    setMenuDrilledIn((prevMenuDrilledIn) => prevMenuDrilledIn.slice(0, prevMenuDrilledIn.length - 1));
+    setDrilldownPath((prevDrilldownPath) => prevDrilldownPath.slice(0, prevDrilldownPath.length - 1));
     setActiveMenuId(toItemId);
   };
 
   const onGetMenuHeight = (menuId: string, height: number) => {
     if (!menuHeights[menuId] && menuId !== 'rootMenu') {
-      setMenuHeights(prevMenuHeights => ({ ...prevMenuHeights, [menuId]: height }));
+      setMenuHeights((prevMenuHeights) => ({ ...prevMenuHeights, [menuId]: height }));
     }
   };
 
   const sidebar = (
-    <PageSidebar
-      nav={
+    <PageSidebar>
+      <PageSidebarBody>
         <Nav>
           <Menu
             id="rootMenu"
@@ -122,8 +123,8 @@ export const NavDrilldown: React.FunctionComponent = () => {
             </MenuContent>
           </Menu>
         </Nav>
-      }
-    />
+      </PageSidebarBody>
+    </PageSidebar>
   );
 
   return (

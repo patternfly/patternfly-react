@@ -6,32 +6,36 @@ import { PageContextConsumer, PageContextProps } from './PageContext';
 export interface PageToggleButtonProps extends ButtonProps {
   /** Content of the page toggle button */
   children?: React.ReactNode;
-  /** True if the side nav is shown  */
-  isNavOpen?: boolean;
-  /** Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */
-  onNavToggle?: () => void;
+  /** True if the sidebar is shown  */
+  isSidebarOpen?: boolean;
+  /** Callback function to handle the sidebar toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */
+  onSidebarToggle?: () => void;
   /** Button id */
   id?: string;
 }
 
 export const PageToggleButton: React.FunctionComponent<PageToggleButtonProps> = ({
   children,
-  isNavOpen = true,
-  onNavToggle = () => undefined as any,
+  isSidebarOpen = true,
+  onSidebarToggle = () => undefined as any,
   id = 'nav-toggle',
   ...props
 }: PageToggleButtonProps) => (
   <PageContextConsumer>
-    {({ isManagedSidebar, onNavToggle: managedOnNavToggle, isNavOpen: managedIsNavOpen }: PageContextProps) => {
-      const navToggle = isManagedSidebar ? managedOnNavToggle : onNavToggle;
-      const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
+    {({
+      isManagedSidebar,
+      onSidebarToggle: managedOnSidebarToggle,
+      isSidebarOpen: managedIsSidebarOpen
+    }: PageContextProps) => {
+      const sidebarToggle = isManagedSidebar ? managedOnSidebarToggle : onSidebarToggle;
+      const sidebarOpen = isManagedSidebar ? managedIsSidebarOpen : isSidebarOpen;
 
       return (
         <Button
           id={id}
-          onClick={navToggle}
+          onClick={sidebarToggle}
           aria-label="Side navigation toggle"
-          aria-expanded={navOpen ? 'true' : 'false'}
+          aria-expanded={sidebarOpen ? 'true' : 'false'}
           variant={ButtonVariant.plain}
           {...props}
         >

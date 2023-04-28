@@ -1,52 +1,58 @@
 import React from 'react';
 import {
   Page,
+  Masthead,
+  MastheadToggle,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
   PageSidebar,
+  PageSidebarBody,
   PageSection,
-  PageSectionVariants
+  PageSectionVariants,
+  PageToggleButton,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem
 } from '@patternfly/react-core';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
-import {
-  PageHeader,
-  PageHeaderTools,
-} from '@patternfly/react-core/deprecated';
+export const PageManagedSidebarClosedDemo: React.FunctionComponent = () => {
+  const headerToolbar = (
+    <Toolbar id="uncontrolled-toolbar">
+      <ToolbarContent>
+        <ToolbarItem>header-tools | Avatar</ToolbarItem>
+      </ToolbarContent>
+    </Toolbar>
+  );
 
-export class PageManagedSidebarClosedDemo extends React.Component {
-  static displayName = 'PageManagedSidebarClosedDemo';
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
+  const header = (
+    <Masthead>
+      <MastheadToggle>
+        <PageToggleButton variant="plain" aria-label="Global navigation" id="uncontrolled-nav-toggle">
+          <BarsIcon />
+        </PageToggleButton>
+      </MastheadToggle>
+      <MastheadMain>
+        <MastheadBrand component="div">Logo that's a div</MastheadBrand>
+      </MastheadMain>
+      <MastheadContent>{headerToolbar}</MastheadContent>
+    </Masthead>
+  );
 
-  render() {
-    const logoProps = {
-      href: 'https://patternfly.org',
-      // eslint-disable-next-line no-console
-      onClick: () => console.log('clicked logo'),
-      target: '_blank'
-    };
-    const Header = (
-      <PageHeader
-        logo="Logo that's a <div>"
-        logoProps={logoProps}
-        headerTools={<PageHeaderTools>PageHeaderTools | Avatar</PageHeaderTools>}
-        showNavToggle
-        logoComponent={'div'}
-      />
-    );
-    const Sidebar = <PageSidebar nav="Navigation" />;
+  const sidebar = (
+    <PageSidebar id="uncontrolled-sidebar">
+      <PageSidebarBody>Navigation</PageSidebarBody>
+    </PageSidebar>
+  );
 
-    return (
-      <Page
-        id="page-managed-sidebar-closed-demo"
-        header={Header}
-        sidebar={Sidebar}
-        isManagedSidebar
-        defaultManagedSidebarIsOpen={false}
-      >
-        <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
-        <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
-        <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
-      </Page>
-    );
-  }
-}
+  return (
+    <Page id="page-managed-sidebar-closed-demo" isManagedSidebar header={header} sidebar={sidebar}>
+      <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
+      <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
+      <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
+    </Page>
+  );
+};
+
+PageManagedSidebarClosedDemo.displayName = 'PageManagedSidebarClosedDemo';

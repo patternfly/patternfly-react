@@ -8,6 +8,7 @@ import {
   Page,
   PageSection,
   PageSidebar,
+  PageSidebarBody,
   SkipToContent,
   Text,
   TextContent
@@ -41,7 +42,7 @@ export default class DashboardWrapper extends React.Component {
       activeItem: 1
     };
 
-    this.onNavSelect = result => {
+    this.onNavSelect = (result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -92,7 +93,11 @@ export default class DashboardWrapper extends React.Component {
       </Nav>
     );
 
-    const _sidebar = <PageSidebar nav={PageNav} isNavOpen={sidebarNavOpen || false} />;
+    const _sidebar = (
+      <PageSidebar isSidebarOpen={sidebarNavOpen || false}>
+        <PageSidebarBody>{PageNav}</PageSidebarBody>
+      </PageSidebar>
+    );
     const PageSkipToContent = (
       <SkipToContent href={`#${mainContainerId ? mainContainerId : 'main-content-page-layout-default-nav'}`}>
         Skip to content

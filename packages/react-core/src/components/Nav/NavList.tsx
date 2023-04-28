@@ -108,7 +108,7 @@ export class NavList extends React.Component<NavListProps> {
       <NavContext.Consumer>
         {({ isHorizontal }) => (
           <PageSidebarContext.Consumer>
-            {({ isNavOpen }) => (
+            {({ isSidebarOpen }) => (
               <React.Fragment>
                 {isHorizontal && (
                   <button
@@ -116,7 +116,7 @@ export class NavList extends React.Component<NavListProps> {
                     aria-label={ariaLeftScroll}
                     onClick={this.scrollLeft}
                     disabled={scrollViewAtStart}
-                    tabIndex={isNavOpen ? null : -1}
+                    tabIndex={isSidebarOpen ? null : -1}
                   >
                     <AngleLeftIcon />
                   </button>
@@ -136,7 +136,7 @@ export class NavList extends React.Component<NavListProps> {
                     aria-label={ariaRightScroll}
                     onClick={this.scrollRight}
                     disabled={scrollViewAtEnd}
-                    tabIndex={isNavOpen ? null : -1}
+                    tabIndex={isSidebarOpen ? null : -1}
                   >
                     <AngleRightIcon />
                   </button>

@@ -17,7 +17,7 @@ import {
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
-export const PageMainSectionPadding: React.FunctionComponent = () => {
+export const PageMultipleSidebarBody: React.FunctionComponent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
 
   const onSidebarToggle = () => {
@@ -25,7 +25,7 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
   };
 
   const headerToolbar = (
-    <Toolbar id="main-padding-toolbar">
+    <Toolbar id="multiple-sidebar-body-toolbar">
       <ToolbarContent>
         <ToolbarItem>header-tools</ToolbarItem>
       </ToolbarContent>
@@ -40,7 +40,7 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
           aria-label="Global navigation"
           isSidebarOpen={isSidebarOpen}
           onSidebarToggle={onSidebarToggle}
-          id="main-padding-nav-toggle"
+          id="multiple-sidebar-body-nav-toggle"
         >
           <BarsIcon />
         </PageToggleButton>
@@ -55,21 +55,20 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
   );
 
   const sidebar = (
-    <PageSidebar isSidebarOpen={isSidebarOpen} id="main-padding-sidebar">
-      <PageSidebarBody>Navigation</PageSidebarBody>
+    <PageSidebar isSidebarOpen={isSidebarOpen} id="multiple-sidebar-body-sidebar">
+      <PageSidebarBody usePageInsets>First sidebar body (with insets)</PageSidebarBody>
+      <PageSidebarBody isFilled={true}>Second sidebar body (with fill)</PageSidebarBody>
+      <PageSidebarBody isFilled={false} usePageInsets>
+        Third sidebar body (with insets and no fill)
+      </PageSidebarBody>
     </PageSidebar>
   );
 
   return (
     <Page header={header} sidebar={sidebar}>
-      <PageSection>Section with default padding</PageSection>
-      <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
-        Section with no padding
-      </PageSection>
-      <PageSection padding={{ default: 'noPadding', md: 'padding' }}>Section with padding on medium</PageSection>
-      <PageSection variant={PageSectionVariants.light} padding={{ md: 'noPadding' }}>
-        Section with no padding on medium
-      </PageSection>
+      <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
+      <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
+      <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
     </Page>
   );
 };

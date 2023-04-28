@@ -1,14 +1,6 @@
 import React from 'react';
-import {
-  Page,
-  PageSidebar,
-  PageSection,
-  PageSectionVariants
-} from '@patternfly/react-core';
-import {
-  PageHeader,
-  PageHeaderTools
-} from '@patternfly/react-core/deprecated';
+import { Page, PageSidebar, PageSidebarBody, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import { PageHeader as PageHeaderDeprecated, PageHeaderTools } from '@patternfly/react-core/deprecated';
 
 export const PageVerticalNavUsingPageHeaderComponent: React.FunctionComponent = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(true);
@@ -23,7 +15,7 @@ export const PageVerticalNavUsingPageHeaderComponent: React.FunctionComponent = 
   };
 
   const header = (
-    <PageHeader
+    <PageHeaderDeprecated
       logo="Logo"
       logoProps={logoProps}
       headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
@@ -34,7 +26,11 @@ export const PageVerticalNavUsingPageHeaderComponent: React.FunctionComponent = 
     />
   );
 
-  const sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="vertical-pageheader-sidebar" />;
+  const sidebar = (
+    <PageSidebar isSidebarOpen={isNavOpen} id="vertical-pageheader-sidebar">
+      <PageSidebarBody>Navigation</PageSidebarBody>
+    </PageSidebar>
+  );
 
   return (
     <Page header={header} sidebar={sidebar}>
