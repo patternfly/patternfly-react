@@ -1305,7 +1305,7 @@ class PageLayoutManualNav extends React.Component {
       });
     };
 
-    this.onPageResize = ({ mobileView, windowSize }) => {
+    this.onPageResize = (_event, { mobileView, windowSize }) => {
       this.setState({
         isMobileView: mobileView
       });
@@ -1428,7 +1428,7 @@ class PageLayoutManualNav extends React.Component {
         <Page
           header={Header}
           sidebar={Sidebar}
-          onPageResize={this.onPageResize}
+          onPageResize={(event) => this.onPageResize(event)}
           skipToContent={PageSkipToContent}
           mainContainerId={pageId}
         >
