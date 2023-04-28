@@ -29,7 +29,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
     setIsOpenMap(new Array(7).fill(false));
   };
 
-  const onDrawerClose = () => {
+  const onDrawerClose = (_event: React.MouseEvent<Element, MouseEvent> | KeyboardEvent) => {
     setIsOpenMap(new Array(7).fill(false));
   };
 
@@ -47,7 +47,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
   ];
   return (
     <NotificationDrawer>
-      <NotificationDrawerHeader count={3} onClose={onDrawerClose}>
+      <NotificationDrawerHeader count={3} onClose={(event) => onDrawerClose(event)}>
         <DropdownDeprecated
           onSelect={onSelect}
           toggle={<KebabToggle onToggle={onToggle(0)} id="basic-kebab-toggle" />}

@@ -43,13 +43,13 @@ export const NotificationDrawerLightweight: React.FunctionComponent = () => {
     setFirstGroupExpanded(false);
   };
 
-  const onDrawerClose = () => {
+  const onDrawerClose = (_event: KeyboardEvent | React.MouseEvent<Element, MouseEvent>) => {
     // do something cool in a callback
   };
 
   return (
     <NotificationDrawer>
-      <NotificationDrawerHeader onClose={onDrawerClose} />
+      <NotificationDrawerHeader onClose={(event) => onDrawerClose(event)} />
       <NotificationDrawerBody>
         <NotificationDrawerGroupList>
           <NotificationDrawerGroup

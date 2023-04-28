@@ -35,7 +35,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
       isOpen: new Array(6).fill(false)
     };
   }
-  onDrawerClose = () => {
+  onDrawerClose = (_event: KeyboardEvent | React.MouseEvent<Element, MouseEvent>) => {
     this.setState({
       isDrawerOpen: false
     });
@@ -63,7 +63,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
     ];
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader count={2} onClose={this.onDrawerClose}>
+        <NotificationDrawerHeader count={2} onClose={(event) => this.onDrawerClose(event)}>
           <DropdownDeprecated
             onSelect={this.onSelect}
             toggle={<KebabToggle onToggle={this.onToggle(0)} id="toggle-id-0" />}

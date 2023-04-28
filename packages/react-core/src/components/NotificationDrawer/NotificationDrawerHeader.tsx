@@ -19,7 +19,7 @@ export interface NotificationDrawerHeaderProps extends React.HTMLProps<HTMLDivEl
   /**  Notification drawer heading custom text which can be used instead of providing count/unreadText */
   customText?: string;
   /**  Callback for when close button is clicked */
-  onClose?: () => void;
+  onClose?: (event: KeyboardEvent | React.MouseEvent) => void;
   /**  Notification drawer heading title */
   title?: string;
   /**  Notification drawer heading unread text used in combination with a count */
@@ -49,7 +49,7 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
         {children}
         {onClose && (
           <div>
-            <Button variant={ButtonVariant.plain} aria-label={closeButtonAriaLabel} onClick={onClose}>
+            <Button variant={ButtonVariant.plain} aria-label={closeButtonAriaLabel} onClick={(event) => onClose(event)}>
               <TimesIcon aria-hidden="true" />
             </Button>
           </div>

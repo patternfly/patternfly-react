@@ -238,7 +238,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
 
   const notificationDrawer = (
     <NotificationDrawer>
-      <NotificationDrawerHeader count={getUnreadNotificationsNumber()} onClose={() => setDrawerExpanded(false)}>
+      <NotificationDrawerHeader count={getUnreadNotificationsNumber()} onClose={(_event) => setDrawerExpanded(false)}>
         <DropdownDeprecated
           onSelect={onDropdownSelect}
           toggle={
