@@ -51,6 +51,8 @@ You can have multiple `<PageSidebarBody>` components inside the `<PageSidebar>` 
 - `isFilled={true}` will cause the component to grow to fill the available vertical space
 - `isFilled={false}` will cause the component to **not** grow to fill the available vertical space
 
+By default, the last `<PageSidebarBody>` will grow to fill the available vertical space. This can be changed by passing `isFilled={false}` as demonstrated in the following example.
+
 ```ts file="./PageMultipleSidebarBody.tsx"
 
 ```
