@@ -1749,7 +1749,7 @@ import {
   EmptyStateHeader,
   EmptyStateFooter,
   EmptyStateActions,
-  PageSection,
+  PageSection
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
@@ -1858,7 +1858,7 @@ import {
   EmptyStateIcon,
   EmptyStateBody,
   EmptyStateHeader,
-  PageSection,
+  PageSection
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
