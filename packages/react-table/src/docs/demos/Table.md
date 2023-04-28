@@ -1739,17 +1739,17 @@ import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import {
   Bullseye,
+  Button,
   Card,
-  PageSection,
   DashboardWrapper,
   EmptyState,
   EmptyStateVariant,
   EmptyStateIcon,
   EmptyStateBody,
-  Button,
   EmptyStateHeader,
   EmptyStateFooter,
-  EmptyStateActions
+  EmptyStateActions,
+  PageSection,
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
@@ -1803,12 +1803,12 @@ import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import {
   Bullseye,
   Card,
-  PageSection,
   DashboardWrapper,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
   EmptyStateHeader,
+  PageSection,
   Spinner
 } from '@patternfly/react-core';
 
@@ -1852,13 +1852,13 @@ import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import {
   Bullseye,
   Card,
-  PageSection,
   DashboardWrapper,
   EmptyState,
   EmptyStateVariant,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateHeader
+  EmptyStateHeader,
+  PageSection,
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
