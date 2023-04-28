@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.67](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.66...demo-app-ts@5.0.0-alpha.67) (2023-04-28)
+
+### Features
+
+- **PageSidebar:** added SidebarBody component ([#8942](https://github.com/patternfly/patternfly-react/issues/8942)) ([67827a8](https://github.com/patternfly/patternfly-react/commit/67827a8753c41ed01c4e2d535751eff8736b261d))
+
 # [5.0.0-alpha.66](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.65...demo-app-ts@5.0.0-alpha.66) (2023-04-27)
 
 **Note:** Version bump only for package demo-app-ts

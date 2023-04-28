@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.33 (2023-04-28)
+
+### Features
+
+- **PageSidebar:** added SidebarBody component ([#8942](https://github.com/patternfly/patternfly-react/issues/8942)) ([67827a8](https://github.com/patternfly/patternfly-react/commit/67827a8753c41ed01c4e2d535751eff8736b261d))
+
 # 5.0.0-alpha.32 (2023-04-27)
 
 ### Features
