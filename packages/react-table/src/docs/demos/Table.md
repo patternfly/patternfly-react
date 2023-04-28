@@ -1808,9 +1808,9 @@ import {
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateHeader
+  EmptyStateHeader,
+  Spinner
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 export const LoadingStateDemo: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
@@ -1860,7 +1860,7 @@ import {
   EmptyStateBody,
   EmptyStateHeader
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 export const ErrorStateDemo: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
