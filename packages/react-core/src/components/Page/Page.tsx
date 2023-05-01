@@ -30,7 +30,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   /** Flag indicating if breadcrumb width should be limited */
   isBreadcrumbWidthLimited?: boolean;
   /** Callback when notification drawer panel is finished expanding. */
-  onNotificationDrawerExpand?: (event: KeyboardEvent | React.MouseEvent) => void;
+  onNotificationDrawerExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
   /** Skip to content component for the page */
   skipToContent?: React.ReactElement;
   /** Sets the value for role on the <main> element */
