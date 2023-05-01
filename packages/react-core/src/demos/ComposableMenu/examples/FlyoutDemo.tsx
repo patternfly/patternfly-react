@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
+import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, MenuContainer } from '@patternfly/react-core';
 
 /* eslint-disable no-console */
 const onSelect = (event: React.MouseEvent | undefined, itemId: string | number | undefined) =>
@@ -30,37 +30,10 @@ const FlyoutMenu: React.FunctionComponent<FlyoutMenuProps> = ({ depth, children 
   </Menu>
 );
 
-export const ComposableFlyout: React.FunctionComponent = () => {
+export const FlyoutDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
-
-  const handleMenuKeys = (event: KeyboardEvent) => {
-    if (!isOpen) {
-      return;
-    }
-    if (menuRef.current?.contains(event.target as Node) || toggleRef.current?.contains(event.target as Node)) {
-      if (event.key === 'Escape' || event.key === 'Tab') {
-        setIsOpen(!isOpen);
-        toggleRef.current?.focus();
-      }
-    }
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
-      setIsOpen(false);
-    }
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('keydown', handleMenuKeys);
-    window.addEventListener('click', handleClickOutside);
-    return () => {
-      window.removeEventListener('keydown', handleMenuKeys);
-      window.removeEventListener('click', handleClickOutside);
-    };
-  }, [isOpen, menuRef]);
 
   let curFlyout = <FlyoutMenu depth={1} />;
   for (let i = 2; i < 14; i++) {
@@ -79,7 +52,7 @@ export const ComposableFlyout: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <MenuToggle onClick={onToggleClick} isExpanded={isOpen}>
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
       {isOpen ? 'Expanded' : 'Collapsed'}
     </MenuToggle>
   );
@@ -100,5 +73,14 @@ export const ComposableFlyout: React.FunctionComponent = () => {
     </Menu>
   );
 
-  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
+  return (
+    <MenuContainer
+      isOpen={isOpen}
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      menu={menu}
+      menuRef={menuRef}
+      toggle={toggle}
+      toggleRef={toggleRef}
+    />
+  );
 };

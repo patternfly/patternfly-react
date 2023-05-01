@@ -43,7 +43,7 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   /** Function callback called when user selects item. */
   onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => void;
   /** Callback to allow the dropdown component to change the open state of the menu.
-   * Triggered by clicking outside of the menu, or by pressing either tab or escape. */
+   * Triggered by clicking outside of the menu, or by pressing either tab or escape (or specificed in onOpenChangeKeys). */
   onOpenChange?: (isOpen: boolean) => void;
   /** Indicates if the menu should be without the outer box-shadow. */
   isPlain?: boolean;
@@ -59,6 +59,8 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   zIndex?: number;
   /** Additional properties to pass to the Popper */
   popperProps?: DropdownPopperProps;
+  /** Keys that trigger onOpenChange, defaults to tab and escape. */
+  onOpenChangeKeys?: string[];
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({
@@ -76,6 +78,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   ouiaSafe = true,
   zIndex = 9999,
   popperProps,
+  onOpenChangeKeys = ['Escape', 'Tab'],
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -96,8 +99,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
         onOpenChange &&
         (menuRef.current?.contains(event.target as Node) || toggleRef.current?.contains(event.target as Node))
       ) {
-        if (event.key === 'Escape' || event.key === 'Tab') {
-          event.preventDefault();
+        if (onOpenChangeKeys.includes(event.key)) {
           onOpenChange(false);
           toggleRef.current?.focus();
         }
@@ -130,7 +132,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
       window.removeEventListener('keydown', handleMenuKeys);
       window.removeEventListener('click', handleClick);
     };
-  }, [isOpen, menuRef, toggleRef, onOpenChange]);
+  }, [isOpen, menuRef, toggleRef, onOpenChange, onOpenChangeKeys]);
 
   const menu = (
     <Menu

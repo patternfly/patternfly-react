@@ -27,92 +27,56 @@ import styles from '@patternfly/react-styles/css/components/Menu/menu';
 
 ## Demos
 
-Custom menus can be constructed using a composable approach by combining the [Menu](/components/menus/menu) and [Menu toggle](/components/menus/menu-toggle) components in unique ways. Composable menus currently require consumer keyboard handling and use of our undocumented [popper.js](https://popper.js.org/) wrapper component called Popper. We understand this is inconvientent boilerplate and these examples will be updated to use [Dropdown](/components/dropdown) in a future release.
+Custom menus can be constructed using a composable approach by combining the [Menu](/components/menus/menu) and [Menu toggle](/components/menus/menu-toggle) components in unique ways. [Dropdown](/components/menus/dropdown), [Select](/components/menus/select), or [MenuContainer](/components/menus/menu#menucontainer) may be used in combination with menu components to handle basic keyboard inputs, or menu components may be connected manually through our undocumented internal [popper.js](https://popper.js.org/) wrapper component called Popper.
 
-### Composable simple dropdown
+### Actions menu
 
-```ts file="./examples/ComposableSimpleDropdown.tsx"
-
-```
-
-### Composable actions menu
-
-```ts file="./examples/ComposableActionsMenu.tsx"
+```ts file="./examples/ActionsMenuDemo.tsx"
 
 ```
 
-### Composable simple select
+### Favorites menu
 
-```ts file="./examples/ComposableSimpleSelect.tsx"
-
-```
-
-### Composable simple checkbox select
-
-```ts file="./examples/ComposableSimpleCheckboxSelect.tsx"
+```ts file="./examples/FavoritesDemo.tsx"
 
 ```
 
-### Composable typeahead select
+### Drilldown menu
 
-```ts file="./examples/ComposableTypeaheadSelect.tsx"
-
-```
-
-### Composable multiple typeahead select
-
-```ts file="./examples/ComposableMultipleTypeaheadSelect.tsx"
+```ts isBeta file="./examples/DrilldownMenuDemo.tsx"
 
 ```
 
-### Composable drilldown menu
-
-```ts isBeta file="./examples/ComposableDrilldownMenu.tsx"
-
-```
-
-### Composable tree view menu
+### Tree view menu
 
 When rendering a menu-like element that does not contain MenuItem components, [Panel](/components/panel) allows more flexible control and customization.
 
-```ts file="./examples/ComposableTreeViewMenu.tsx"
+```ts file="./examples/TreeViewMenuDemo.tsx"
 
 ```
 
-### Composable flyout
+### Flyout menu
 
 The flyout will automatically position to the left or top if it would otherwise go outside the window. The menu must be placed in a container outside the main content like Popper, [Popover](/components/popover) or [Tooltip](/components/tooltip) since it may go over the side nav.
 
-```ts isBeta file="./examples/ComposableFlyout.tsx"
+```ts isBeta file="./examples/FlyoutDemo.tsx"
 
 ```
 
-### Composable application launcher
+### Application launcher
 
-```ts file="./examples/ComposableApplicationLauncher.tsx"
-
-```
-
-### Composable context selector
-
-```ts file="./examples/ComposableContextSelector.tsx"
+```ts file="./examples/ApplicationLauncherDemo.tsx"
 
 ```
 
-### Composable options menu variants
+### Context selector
 
-```ts file="./examples/ComposableOptionsMenuVariants.tsx"
-
-```
-
-### Composable dropdown variants
-
-```ts file="./examples/ComposableDropdwnVariants.tsx"
+```ts file="./examples/ContextSelectorDemo.tsx"
 
 ```
 
-### Composable date select
+### Date select
 
-```ts file="./examples/ComposableDateSelect.tsx"
+```ts file="./examples/DateSelectDemo.tsx"
 
 ```

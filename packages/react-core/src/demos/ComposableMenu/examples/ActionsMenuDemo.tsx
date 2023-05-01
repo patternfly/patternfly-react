@@ -1,39 +1,21 @@
 import React from 'react';
-import { MenuToggle, Menu, MenuList, MenuItem, MenuGroup, MenuItemAction, Popper } from '@patternfly/react-core';
+import {
+  MenuToggle,
+  MenuItemAction,
+  Dropdown,
+  DropdownGroup,
+  DropdownList,
+  DropdownItem
+} from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
-export const ComposableActionsMenu: React.FunctionComponent = () => {
+export const ActionsMenuDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
   const menuRef = React.useRef<HTMLDivElement>(null);
-
-  const handleMenuKeys = (event: KeyboardEvent) => {
-    if (isOpen && menuRef.current?.contains(event.target as Node)) {
-      if (event.key === 'Escape' || event.key === 'Tab') {
-        setIsOpen(!isOpen);
-        toggleRef.current?.focus();
-      }
-    }
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
-      setIsOpen(false);
-    }
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('keydown', handleMenuKeys);
-    window.addEventListener('click', handleClickOutside);
-    return () => {
-      window.removeEventListener('keydown', handleMenuKeys);
-      window.removeEventListener('click', handleClickOutside);
-    };
-  }, [isOpen, menuRef]);
 
   const onSelect = (event: React.MouseEvent | undefined, itemId: string | number | undefined) => {
     if (typeof itemId === 'string' || typeof itemId === 'undefined') {
@@ -48,7 +30,7 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
   };
 
   const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation(); // Stop handleClickOutside from handling
+    ev.stopPropagation();
     setTimeout(() => {
       if (menuRef.current) {
         const firstElement = menuRef.current.querySelector('li > button:not(:disabled), li > a:not(:disabled)');
@@ -58,21 +40,23 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggle = (
-    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
-      {isOpen ? 'Expanded' : 'Collapsed'}
-    </MenuToggle>
-  );
-  const menu = (
-    <Menu
+  return (
+    <Dropdown
+      isOpen={isOpen}
       ref={menuRef}
+      toggle={(toggleRef) => (
+        <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+          {isOpen ? 'Expanded' : 'Collapsed'}
+        </MenuToggle>
+      )}
       // eslint-disable-next-line no-console
       onActionClick={(event, itemId, actionId) => console.log(`clicked on ${itemId} - ${actionId}`)}
       onSelect={onSelect}
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
     >
-      <MenuGroup label="Actions">
-        <MenuList>
-          <MenuItem
+      <DropdownGroup label="Actions">
+        <DropdownList>
+          <DropdownItem
             isSelected={selectedItems.includes(0)}
             actions={
               <MenuItemAction
@@ -87,8 +71,8 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
             itemId={0}
           >
             Item 1
-          </MenuItem>
-          <MenuItem
+          </DropdownItem>
+          <DropdownItem
             isDisabled
             isSelected={selectedItems.includes(1)}
             actions={<MenuItemAction icon={<BellIcon aria-hidden />} actionId="alert" aria-label="Alert" />}
@@ -96,26 +80,24 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
             itemId={1}
           >
             Item 2
-          </MenuItem>
-          <MenuItem
+          </DropdownItem>
+          <DropdownItem
             isSelected={selectedItems.includes(2)}
             actions={<MenuItemAction icon={<ClipboardIcon aria-hidden />} actionId="copy" aria-label="Copy" />}
             itemId={2}
           >
             Item 3
-          </MenuItem>
-          <MenuItem
+          </DropdownItem>
+          <DropdownItem
             isSelected={selectedItems.includes(3)}
             actions={<MenuItemAction icon={<BarsIcon aria-hidden />} actionId="expand" aria-label="Expand" />}
             description="This is a description"
             itemId={3}
           >
             Item 4
-          </MenuItem>
-        </MenuList>
-      </MenuGroup>
-    </Menu>
+          </DropdownItem>
+        </DropdownList>
+      </DropdownGroup>
+    </Dropdown>
   );
-
-  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
 };
