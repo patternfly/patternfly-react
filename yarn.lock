@@ -3921,9 +3921,9 @@
     astring "^1.7.5"
 
 "@patternfly/documentation-framework@^2.0.0-alpha.25":
-  version "2.0.0-alpha.25"
-  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-2.0.0-alpha.25.tgz#283fccf5e5e3a2e281fcf44bf929f1ab63ed32f4"
-  integrity sha512-4+wJ3a41xTddaEgI8SySCj2ETcUQbKqaFG1FGoilWG7EutxUHJGozEM3FdF4O8VXQD7vV5AU751S/LHrEKyyjw==
+  version "2.0.0-alpha.31"
+  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-2.0.0-alpha.31.tgz#4e242d0e03a5911f6a96657b8f18e26a12fca1dc"
+  integrity sha512-Pr/avUGc+Ie50F27WUH3NNBSBvcOC0AfU+u0u0Gis3Fpu6jc33sHRy8q/CqnnoKstCc4L4ydfF6qOO/h51Z4FA==
   dependencies:
     "@babel/core" "7.18.2"
     "@babel/plugin-proposal-class-properties" "7.17.12"
@@ -3961,6 +3961,7 @@
     mini-css-extract-plugin "2.7.5"
     monaco-editor "0.34.1"
     monaco-editor-webpack-plugin "7.0.1"
+    null-loader "4.0.1"
     parse-entities "2.0.0"
     path-browserify "1.0.1"
     postcss "7.0.32"
@@ -14352,6 +14353,14 @@ nth-check@^2.0.1:
   integrity sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==
   dependencies:
     boolbase "^1.0.0"
+
+null-loader@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/null-loader/-/null-loader-4.0.1.tgz#8e63bd3a2dd3c64236a4679428632edd0a6dbc6a"
+  integrity sha512-pxqVbi4U6N26lq+LmgIbB5XATP0VdZKOG25DhHi8btMmJJefGArFyDg1yc4U3hWCJbMqSrw0qyrz1UQX+qYXqg==
+  dependencies:
+    loader-utils "^2.0.0"
+    schema-utils "^3.0.0"
 
 num2fraction@^1.2.2:
   version "1.2.2"
