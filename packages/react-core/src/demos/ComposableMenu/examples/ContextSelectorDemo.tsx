@@ -77,8 +77,6 @@ export const ContextSelectorDemo: React.FunctionComponent = () => {
     if (typeof itemId === 'number' || typeof itemId === 'undefined') {
       return;
     }
-
-  const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: string | number) => {
     setSelected(itemId.toString());
     setIsOpen(!isOpen);
   };
