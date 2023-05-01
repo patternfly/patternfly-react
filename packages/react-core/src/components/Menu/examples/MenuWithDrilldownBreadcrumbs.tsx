@@ -156,9 +156,12 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           isOpen={isOpen}
           onOpenChange={(isOpen: boolean) => onToggle(isOpen, 'label')}
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-            <MenuToggle ref={toggleRef} onClick={() => onToggle(true, 'label')} isExpanded={isOpen} variant="plainText">
-              <Badge isRead screenReaderText="additional items">
-                1
+            <MenuToggle ref={toggleRef} onClick={() => onToggle(true, 'label')} isExpanded={isOpen} variant="plain">
+              <Badge isRead screenReaderText="additional item">
+                1{' '}
+                <span>
+                  <CaretDownIcon />
+                </span>
               </Badge>
             </MenuToggle>
           )}
@@ -205,14 +208,12 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           isOpen={isOpen}
           onOpenChange={(isOpen: boolean) => onToggle(isOpen, 'pause-app')}
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-            <MenuToggle
-              ref={toggleRef}
-              onClick={() => onToggle(true, 'pause-app')}
-              isExpanded={isOpen}
-              variant="plainText"
-            >
-              <Badge isRead screenReaderText="additional items">
-                1
+            <MenuToggle ref={toggleRef} onClick={() => onToggle(true, 'pause-app')} isExpanded={isOpen} variant="plain">
+              <Badge isRead screenReaderText="additional item">
+                1{' '}
+                <span>
+                  <CaretDownIcon />
+                </span>
               </Badge>
             </MenuToggle>
           )}
@@ -251,10 +252,13 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               ref={toggleRef}
               onClick={() => onToggle(true, 'pause-label')}
               isExpanded={isOpen}
-              variant="plainText"
+              variant="plain"
             >
-              <Badge isRead screenReaderText="additional items">
-                1
+              <Badge isRead screenReaderText="additional item">
+                1{' '}
+                <span>
+                  <CaretDownIcon />
+                </span>
               </Badge>
             </MenuToggle>
           )}

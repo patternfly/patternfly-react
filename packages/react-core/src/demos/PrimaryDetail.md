@@ -3,6 +3,7 @@ id: Primary-detail
 section: patterns
 ---
 
+import { Select as SelectDeprecated, SelectOption as SelectOptionDeprecated, SelectVariant } from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
@@ -60,9 +61,6 @@ import {
   PageSection,
   PageSectionVariants,
   Progress,
-  Select,
-  SelectOption,
-  SelectVariant,
   Stack,
   StackItem,
   Text,
@@ -70,6 +68,11 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
+import {
+  Select as SelectDeprecated,
+  SelectOption as SelectOptionDeprecated,
+  SelectVariant
+} from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -209,7 +212,7 @@ class PrimaryDetailFullPage extends React.Component {
         </ToolbarItem>
         <ToolbarGroup variant="filter-group">
           <ToolbarItem>
-            <Select
+            <SelectDeprecated
               variant={SelectVariant.single}
               aria-label="Select Input"
               onToggle={this.onStatusToggle}
@@ -218,12 +221,12 @@ class PrimaryDetailFullPage extends React.Component {
               isExpanded={statusIsExpanded}
             >
               {this.statusOptions.map((option, index) => (
-                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+                <SelectOptionDeprecated isDisabled={option.disabled} key={index} value={option.value} />
               ))}
-            </Select>
+            </SelectDeprecated>
           </ToolbarItem>
           <ToolbarItem>
-            <Select
+            <SelectDeprecated
               variant={SelectVariant.single}
               aria-label="Select Input"
               onToggle={this.onRiskToggle}
@@ -232,9 +235,9 @@ class PrimaryDetailFullPage extends React.Component {
               isExpanded={riskIsExpanded}
             >
               {this.riskOptions.map((option, index) => (
-                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+                <SelectOptionDeprecated isDisabled={option.disabled} key={index} value={option.value} />
               ))}
-            </Select>
+            </SelectDeprecated>
           </ToolbarItem>
         </ToolbarGroup>
       </React.Fragment>
@@ -521,9 +524,6 @@ import {
   PageSection,
   PageSectionVariants,
   Progress,
-  Select,
-  SelectOption,
-  SelectVariant,
   Stack,
   StackItem,
   Text,
@@ -531,6 +531,11 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
+import {
+  Select as SelectDeprecated,
+  SelectOption as SelectOptionDeprecated,
+  SelectVariant
+} from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -669,7 +674,7 @@ class PrimaryDetailContentPadding extends React.Component {
         </ToolbarItem>
         <ToolbarGroup variant="filter-group">
           <ToolbarItem>
-            <Select
+            <SelectDeprecated
               variant={SelectVariant.single}
               aria-label="Select Input"
               onToggle={this.onStatusToggle}
@@ -678,12 +683,12 @@ class PrimaryDetailContentPadding extends React.Component {
               isExpanded={statusIsExpanded}
             >
               {this.statusOptions.map((option, index) => (
-                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+                <SelectOptionDeprecated isDisabled={option.disabled} key={index} value={option.value} />
               ))}
-            </Select>
+            </SelectDeprecated>
           </ToolbarItem>
           <ToolbarItem>
-            <Select
+            <SelectDeprecated
               variant={SelectVariant.single}
               aria-label="Select Input"
               onToggle={this.onRiskToggle}
@@ -692,9 +697,9 @@ class PrimaryDetailContentPadding extends React.Component {
               isExpanded={riskIsExpanded}
             >
               {this.riskOptions.map((option, index) => (
-                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+                <SelectOptionDeprecated isDisabled={option.disabled} key={index} value={option.value} />
               ))}
-            </Select>
+            </SelectDeprecated>
           </ToolbarItem>
         </ToolbarGroup>
       </React.Fragment>
@@ -983,7 +988,6 @@ import {
   Progress,
   Select,
   SelectOption,
-  SelectVariant,
   TextContent,
   Text,
   Title,
@@ -1302,39 +1306,6 @@ class PrimaryDetailCardView extends React.Component {
 
   componentDidMount() {
     this.fetch(this.state.page, this.state.perPage);
-  }
-
-  buildFilterDropdown() {
-    const { isLowerToolbarDropdownOpen, filters } = this.state;
-
-    const filterDropdownItems = [
-      <SelectOption key="patternfly" value="Patternfly" />,
-      <SelectOption key="activemq" value="ActiveMQ" />,
-      <SelectOption key="apachespark" value="Apache Spark" />,
-      <SelectOption key="avro" value="Avro" />,
-      <SelectOption key="azureservices" value="Azure Services" />,
-      <SelectOption key="crypto" value="Crypto" />,
-      <SelectOption key="dropbox" value="DropBox" />,
-      <SelectOption key="jbossdatagrid" value="JBoss Data Grid" />,
-      <SelectOption key="rest" value="REST" />,
-      <SelectOption key="swagger" value="SWAGGER" />
-    ];
-
-    return (
-      <ToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
-        <Select
-          variant={SelectVariant.checkbox}
-          aria-label="Products"
-          onToggle={this.onToolbarDropdownToggle}
-          onSelect={this.onNameSelect}
-          selections={filters.products}
-          isExpanded={isLowerToolbarDropdownOpen}
-          placeholderText="Creator"
-        >
-          {filterDropdownItems}
-        </Select>
-      </ToolbarFilter>
-    );
   }
 
   buildSelectDropdown() {
@@ -2028,9 +1999,6 @@ import {
   PageSection,
   PageSectionVariants,
   Progress,
-  Select,
-  SelectOption,
-  SelectVariant,
   Stack,
   StackItem,
   Text,
@@ -2038,6 +2006,11 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
+import {
+  Select as SelectDeprecated,
+  SelectOption as SelectOptionDeprecated,
+  SelectVariant
+} from '@patternfly/react-core/deprecated';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -2176,7 +2149,7 @@ class PrimaryDetailInlineModifier extends React.Component {
         </ToolbarItem>
         <ToolbarGroup variant="filter-group">
           <ToolbarItem>
-            <Select
+            <SelectDeprecated
               variant={SelectVariant.single}
               aria-label="Select Input"
               onToggle={this.onStatusToggle}
@@ -2185,12 +2158,12 @@ class PrimaryDetailInlineModifier extends React.Component {
               isExpanded={statusIsExpanded}
             >
               {this.statusOptions.map((option, index) => (
-                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+                <SelectOptionDeprecated isDisabled={option.disabled} key={index} value={option.value} />
               ))}
-            </Select>
+            </SelectDeprecated>
           </ToolbarItem>
           <ToolbarItem>
-            <Select
+            <SelectDeprecated
               variant={SelectVariant.single}
               aria-label="Select Input"
               onToggle={this.onRiskToggle}
@@ -2199,9 +2172,9 @@ class PrimaryDetailInlineModifier extends React.Component {
               isExpanded={riskIsExpanded}
             >
               {this.riskOptions.map((option, index) => (
-                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+                <SelectOptionDeprecated isDisabled={option.disabled} key={index} value={option.value} />
               ))}
-            </Select>
+            </SelectDeprecated>
           </ToolbarItem>
         </ToolbarGroup>
       </React.Fragment>
