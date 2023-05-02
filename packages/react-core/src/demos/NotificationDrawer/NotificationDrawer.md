@@ -143,7 +143,7 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
 
-    this.onCloseNotificationDrawer = () => {
+    this.onCloseNotificationDrawer = (_event) => {
       this.setState((prevState) => {
         return {
           isDrawerExpanded: !prevState.isDrawerExpanded
@@ -258,7 +258,7 @@ class BasicNotificationDrawer extends React.Component {
               <ToolbarItem visibility={{ default: 'visible' }} isSelected={isDrawerExpanded}>
                 <NotificationBadge
                   variant={this.getNumberUnread() === 0 ? 'read' : 'unread'}
-                  onClick={this.onCloseNotificationDrawer}
+                  onClick={(event) => this.onCloseNotificationDrawer(event)}
                   aria-label="Notifications"
                   isExpanded={isDrawerExpanded}
                 >
@@ -385,7 +385,7 @@ class BasicNotificationDrawer extends React.Component {
 
     const notificationDrawer = (
       <NotificationDrawer ref={this.drawerRef}>
-        <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
+        <NotificationDrawerHeader count={this.getNumberUnread()} onClose={(event) => this.onCloseNotificationDrawer(event)}>
           <DropdownDeprecated
             onSelect={this.onSelect}
             toggle={
@@ -702,7 +702,7 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
 
-    this.onCloseNotificationDrawer = () => {
+    this.onCloseNotificationDrawer = (_event) => {
       this.setState((prevState) => {
         return {
           isDrawerExpanded: !prevState.isDrawerExpanded
@@ -860,7 +860,7 @@ class GroupedNotificationDrawer extends React.Component {
               <ToolbarItem visibility={{ default: 'visible' }} isSelected={isDrawerExpanded}>
                 <NotificationBadge
                   variant={this.getNumberUnread() === 0 ? 'read' : 'unread'}
-                  onClick={this.onCloseNotificationDrawer}
+                  onClick={(event) => this.onCloseNotificationDrawer(event)}
                   aria-label="Notifications"
                   isExpanded={isDrawerExpanded}
                 >
@@ -987,7 +987,7 @@ class GroupedNotificationDrawer extends React.Component {
 
     const notificationDrawer = (
       <NotificationDrawer ref={this.drawerRef}>
-        <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
+        <NotificationDrawerHeader count={this.getNumberUnread()} onClose={(event) => this.onCloseNotificationDrawer(event)}>
           <DropdownDeprecated
             onSelect={this.onSelect}
             toggle={

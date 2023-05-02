@@ -53,7 +53,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
     };
   }
 
-  onDrawerClose = () => {
+  onDrawerClose = (_event: KeyboardEvent | React.MouseEvent<Element, MouseEvent>) => {
     this.setState({
       isDrawerOpen: false
     });
@@ -99,7 +99,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
     ];
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader count={4} onClose={this.onDrawerClose}>
+        <NotificationDrawerHeader count={4} onClose={(event) => this.onDrawerClose(event)}>
           <DropdownDeprecated
             onSelect={this.onSelect}
             toggle={
