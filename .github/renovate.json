@@ -12,6 +12,7 @@
         "@patternfly/patternfly",
         "@patternfly/patternfly-a11y",
         "@patternfly/documentation-framework",
+<<<<<<< HEAD
         "@rollup/*",
         "@testing-library/jest-dom",
         "@testing-library/user-event",
@@ -36,6 +37,10 @@
         "shx",
         "surge",
         "ts-patch"
+=======
+        "@testing-library/jest-dom",
+        "lint-staged"
+>>>>>>> updated @testing-library/jest-dom
       ],
       "enabled": false
     },
