@@ -767,7 +767,7 @@ exports[`renders axis and component children 1`] = `
             d="M50,138.88888888888886L83.33333333333334,127.77777777777779L116.66666666666667,94.44444444444443L150,116.66666666666669"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--100, #06c); width: 3px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--100, #06c); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -791,7 +791,7 @@ exports[`renders axis and component children 1`] = `
             d="M50,127.77777777777779L83.33333333333334,138.88888888888886L116.66666666666667,72.22222222222223L150,105.55555555555557"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); width: 3px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -815,7 +815,7 @@ exports[`renders axis and component children 1`] = `
             d="M50,116.66666666666669L83.33333333333334,105.55555555555557L116.66666666666667,50L150,94.44444444444443"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); width: 3px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -839,7 +839,7 @@ exports[`renders axis and component children 1`] = `
             d="M50,116.66666666666669L83.33333333333334,116.66666666666669L116.66666666666667,61.111111111111114L150,72.22222222222223"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--400, #519de9); width: 3px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--400, #519de9); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
           />
         </g>
       </g>

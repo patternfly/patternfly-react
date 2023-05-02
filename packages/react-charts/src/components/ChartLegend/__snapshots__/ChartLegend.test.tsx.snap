@@ -14,12 +14,12 @@ exports[`ChartLegend 1`] = `
       width="450"
     >
       <rect
-        height="30.904999999999998"
+        height="14"
         role="presentation"
         shape-rendering="auto"
         style="fill: none;"
         vector-effect="non-scaling-stroke"
-        width="175.23125"
+        width="79.2"
         x="0"
         y="0"
       />
@@ -34,7 +34,7 @@ exports[`ChartLegend 1`] = `
         style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c);"
       />
       <path
-        d="M 95.05925, 18.872
+        d="M 48.728, 18.872
       h9.744
       v-9.744
       h-9.744
@@ -64,7 +64,7 @@ exports[`ChartLegend 1`] = `
         direction="inherit"
         dx="0"
         id="test2"
-        x="116.73125"
+        x="70.39999999999999"
         y="18.97"
       >
         <tspan
@@ -72,7 +72,7 @@ exports[`ChartLegend 1`] = `
           dy="0"
           style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
           text-anchor="start"
-          x="116.73125"
+          x="70.39999999999999"
         >
           Series 2
         </tspan>
@@ -106,12 +106,12 @@ exports[`ChartLegend 2`] = `
       width="450"
     >
       <rect
-        height="30.904999999999998"
+        height="14"
         role="presentation"
         shape-rendering="auto"
         style="fill: none;"
         vector-effect="non-scaling-stroke"
-        width="175.23125"
+        width="79.2"
         x="0"
         y="0"
       />
@@ -126,7 +126,7 @@ exports[`ChartLegend 2`] = `
         style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c);"
       />
       <path
-        d="M 95.05925, 18.872
+        d="M 48.728, 18.872
       h9.744
       v-9.744
       h-9.744
@@ -156,7 +156,7 @@ exports[`ChartLegend 2`] = `
         direction="inherit"
         dx="0"
         id="test2"
-        x="116.73125"
+        x="70.39999999999999"
         y="18.97"
       >
         <tspan
@@ -164,7 +164,7 @@ exports[`ChartLegend 2`] = `
           dy="0"
           style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
           text-anchor="start"
-          x="116.73125"
+          x="70.39999999999999"
         >
           Series 2
         </tspan>
@@ -198,17 +198,17 @@ exports[`renders component data 1`] = `
       width="200"
     >
       <rect
-        height="51.809999999999995"
+        height="18"
         role="presentation"
         shape-rendering="auto"
         style="fill: none;"
         vector-effect="non-scaling-stroke"
-        width="155.35312500000003"
+        width="79.2"
         x="0"
         y="0"
       />
       <path
-        d="M 9.128, 39.777
+        d="M 9.128, 22.872
       h9.744
       v-9.744
       h-9.744
@@ -218,7 +218,7 @@ exports[`renders component data 1`] = `
         style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c);"
       />
       <path
-        d="M 77.90925, 39.777
+        d="M 48.728, 22.872
       h9.744
       v-9.744
       h-9.744
@@ -249,7 +249,7 @@ exports[`renders component data 1`] = `
         dx="0"
         id="test4"
         x="30.8"
-        y="39.875"
+        y="22.97"
       >
         <tspan
           dx="0"
@@ -265,15 +265,15 @@ exports[`renders component data 1`] = `
         direction="inherit"
         dx="0"
         id="test4"
-        x="99.58125"
-        y="39.875"
+        x="70.39999999999999"
+        y="22.97"
       >
         <tspan
           dx="0"
           dy="0"
           style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
           text-anchor="start"
-          x="99.58125"
+          x="70.39999999999999"
         >
           Dogs
         </tspan>

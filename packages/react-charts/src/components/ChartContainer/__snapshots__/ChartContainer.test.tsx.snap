@@ -59,17 +59,17 @@ exports[`renders container via ChartLegend 1`] = `
     >
       <g>
         <rect
-          height="51.809999999999995"
+          height="18"
           role="presentation"
           shape-rendering="auto"
           style="fill: none;"
           vector-effect="non-scaling-stroke"
-          width="155.35312500000003"
+          width="79.2"
           x="0"
           y="0"
         />
         <path
-          d="M 9.128, 39.777
+          d="M 9.128, 22.872
       h9.744
       v-9.744
       h-9.744
@@ -79,7 +79,7 @@ exports[`renders container via ChartLegend 1`] = `
           style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c);"
         />
         <path
-          d="M 77.90925, 39.777
+          d="M 48.728, 22.872
       h9.744
       v-9.744
       h-9.744
@@ -110,7 +110,7 @@ exports[`renders container via ChartLegend 1`] = `
           dx="0"
           id="test"
           x="30.8"
-          y="39.875"
+          y="22.97"
         >
           <tspan
             dx="0"
@@ -126,15 +126,15 @@ exports[`renders container via ChartLegend 1`] = `
           direction="inherit"
           dx="0"
           id="test"
-          x="99.58125"
-          y="39.875"
+          x="70.39999999999999"
+          y="22.97"
         >
           <tspan
             dx="0"
             dy="0"
             style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
             text-anchor="start"
-            x="99.58125"
+            x="70.39999999999999"
           >
             Dogs
           </tspan>

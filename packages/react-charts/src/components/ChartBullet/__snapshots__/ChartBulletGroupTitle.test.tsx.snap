@@ -98,8 +98,8 @@ exports[`renders component data 1`] = `
         vector-effect="non-scaling-stroke"
         x1="0"
         x2="450"
-        y1="103.81"
-        y2="103.81"
+        y1="70"
+        y2="70"
       />
     </svg>
     <div
