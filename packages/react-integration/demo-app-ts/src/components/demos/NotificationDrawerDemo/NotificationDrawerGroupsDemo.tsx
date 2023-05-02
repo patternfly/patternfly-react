@@ -101,6 +101,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
           <Dropdown
             onSelect={this.onSelect}
             isOpen={isOpenMap['toggle-id-0'] || false}
+            onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
             id="notification-0"
             popperProps={{ position: 'right' }}
             toggle={(toggleRef) => (
@@ -138,6 +139,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     <Dropdown
                       onSelect={this.onSelect}
                       isOpen={isOpenMap['toggle-id-5'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-5"
                       popperProps={{ position: 'right' }}
                       toggle={(toggleRef) => (
@@ -168,6 +170,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     <Dropdown
                       onSelect={this.onSelect}
                       isOpen={isOpenMap['toggle-id-6'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-6"
                       popperProps={{ position: 'right' }}
                       toggle={(toggleRef) => (
@@ -199,6 +202,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     <Dropdown
                       onSelect={this.onSelect}
                       isOpen={isOpenMap['toggle-id-7'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-7"
                       popperProps={{ position: 'right' }}
                       toggle={(toggleRef) => (
@@ -229,6 +233,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     <Dropdown
                       onSelect={this.onSelect}
                       isOpen={isOpenMap['toggle-id-8'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-8"
                       popperProps={{ position: 'right' }}
                       toggle={(toggleRef) => (
@@ -271,6 +276,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     <Dropdown
                       onSelect={this.onSelect}
                       isOpen={isOpenMap['toggle-id-9'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-9"
                       popperProps={{ position: 'right' }}
                       toggle={(toggleRef) => (
@@ -301,6 +307,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     <Dropdown
                       onSelect={this.onSelect}
                       isOpen={isOpenMap['toggle-id-10'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-10"
                       popperProps={{ position: 'right' }}
                       toggle={(toggleRef) => (
@@ -332,6 +339,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     <Dropdown
                       onSelect={this.onSelect}
                       isOpen={isOpenMap['toggle-id-11'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-11"
                       popperProps={{ position: 'right' }}
                       toggle={(toggleRef) => (
@@ -362,6 +370,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     <Dropdown
                       onSelect={this.onSelect}
                       isOpen={isOpenMap['toggle-id-12'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-12"
                       popperProps={{ position: 'right' }}
                       toggle={(toggleRef) => (

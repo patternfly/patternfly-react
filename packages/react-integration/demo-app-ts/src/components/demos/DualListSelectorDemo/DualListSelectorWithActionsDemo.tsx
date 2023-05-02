@@ -137,10 +137,11 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
       <Dropdown
         key="availableDropdown"
         isOpen={this.state.isAvailableKebabOpen}
+        onOpenChange={(isOpen) => this.setState({ isAvailableKebabOpen: isOpen })}
         toggle={(toggleRef) => (
           <MenuToggle
             variant="plain"
-            id="toggle-id-6"
+            id="available-dropdown-toggle"
             ref={toggleRef}
             isExpanded={this.state.isAvailableKebabOpen}
             onClick={() => this.onToggle('available')}
@@ -164,11 +165,12 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
       </Button>,
       <Dropdown
         isOpen={this.state.isChosenKebabOpen}
+        onOpenChange={(isOpen) => this.setState({ isChosenKebabOpen: isOpen })}
         key="chosenDropdown"
         toggle={(toggleRef) => (
           <MenuToggle
             variant="plain"
-            id="toggle-id-6"
+            id="chosen-dropdown-toggle"
             ref={toggleRef}
             isExpanded={this.state.isChosenKebabOpen}
             onClick={() => this.onToggle('chosen')}

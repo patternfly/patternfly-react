@@ -64,6 +64,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
           <Dropdown
             onSelect={this.onSelect}
             isOpen={isOpen[0]}
+            onOpenChange={(_isOpen) => this.setState({ isOpen: new Array(6).fill(false) })}
             id="notification-0"
             popperProps={{ position: 'right' }}
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
@@ -94,6 +95,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 <Dropdown
                   onSelect={this.onSelect}
                   isOpen={isOpen[1]}
+                  onOpenChange={(_isOpen) => this.setState({ isOpen: new Array(6).fill(false) })}
                   id="notification-1"
                   popperProps={{ position: 'right' }}
                   toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
@@ -124,6 +126,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 <Dropdown
                   onSelect={this.onSelect}
                   isOpen={isOpen[2]}
+                  onOpenChange={(_isOpen) => this.setState({ isOpen: new Array(6).fill(false) })}
                   id="notification-2"
                   popperProps={{ position: 'right' }}
                   toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
@@ -155,6 +158,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 <Dropdown
                   onSelect={this.onSelect}
                   isOpen={isOpen[3]}
+                  onOpenChange={(_isOpen) => this.setState({ isOpen: new Array(6).fill(false) })}
                   id="notification-3"
                   popperProps={{ position: 'right' }}
                   toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
@@ -188,6 +192,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 <Dropdown
                   onSelect={this.onSelect}
                   isOpen={isOpen[4]}
+                  onOpenChange={(_isOpen) => this.setState({ isOpen: new Array(6).fill(false) })}
                   id="notification-4"
                   popperProps={{ position: 'right' }}
                   toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
@@ -214,6 +219,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 <Dropdown
                   onSelect={this.onSelect}
                   isOpen={isOpen[5]}
+                  onOpenChange={(_isOpen) => this.setState({ isOpen: new Array(6).fill(false) })}
                   id="notification-5"
                   popperProps={{ position: 'right' }}
                   toggle={(toggleRef: React.Ref<MenuToggleElement>) => (

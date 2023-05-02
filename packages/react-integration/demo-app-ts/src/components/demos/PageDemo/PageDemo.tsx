@@ -125,6 +125,7 @@ export class PageDemo extends React.Component {
             <Dropdown
               onSelect={this.onKebabDropdownSelect}
               isOpen={isKebabDropdownOpen}
+              onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
               popperProps={{ position: 'right' }}
               toggle={(toggleRef) => (
                 <MenuToggle
@@ -153,6 +154,7 @@ export class PageDemo extends React.Component {
             <Dropdown
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
+              onOpenChange={(isOpen) => this.setState({ isDropdownOpen: isOpen })}
               popperProps={{ position: 'right' }}
               toggle={(toggleRef) => (
                 <MenuToggle ref={toggleRef} onClick={this.onDropdownToggle} isExpanded={isDropdownOpen}>

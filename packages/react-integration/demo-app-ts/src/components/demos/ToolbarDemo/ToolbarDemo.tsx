@@ -281,6 +281,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
         <ToolbarItem>
           <Dropdown
             isOpen={kebabIsOpen}
+            onOpenChange={(isOpen) => this.setState({ kebabIsOpen: isOpen })}
             toggle={(toggleRef) => (
               <MenuToggle variant="plain" ref={toggleRef} onClick={this.onKebabToggle} isExpanded={kebabIsOpen}>
                 <EllipsisVIcon />
