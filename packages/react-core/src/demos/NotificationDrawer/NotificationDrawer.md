@@ -194,7 +194,7 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
 
-    this.focusDrawer = () => {
+    this.focusDrawer = (_event) => {
       const firstTabbableItem = this.drawerRef.current.querySelector('a, button');
       firstTabbableItem.focus();
     };
@@ -549,7 +549,7 @@ class BasicNotificationDrawer extends React.Component {
           sidebar={Sidebar}
           isManagedSidebar
           notificationDrawer={notificationDrawer}
-          onNotificationDrawerExpand={this.focusDrawer}
+          onNotificationDrawerExpand={(event) => this.focusDrawer(event)}
           isNotificationDrawerExpanded={isDrawerExpanded}
           skipToContent={PageSkipToContent}
           breadcrumb={PageBreadcrumb}
@@ -790,7 +790,7 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
 
-    this.focusDrawer = () => {
+    this.focusDrawer = (_event) => {
       // Prevent the NotificationDrawer from receiving focus if a drawer group item is opened
       if (!document.activeElement.closest(`.${this.drawerRef.current.className}`)) {
         const firstTabbableItem = this.drawerRef.current.querySelector('a, button');
@@ -1313,7 +1313,7 @@ class GroupedNotificationDrawer extends React.Component {
           isManagedSidebar
           notificationDrawer={notificationDrawer}
           isNotificationDrawerExpanded={isDrawerExpanded}
-          onNotificationDrawerExpand={this.focusDrawer}
+          onNotificationDrawerExpand={(event) => this.focusDrawer(event)}
           skipToContent={PageSkipToContent}
           breadcrumb={PageBreadcrumb}
           mainContainerId={pageId}

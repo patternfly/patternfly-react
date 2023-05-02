@@ -30,7 +30,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   /** Flag indicating if breadcrumb width should be limited */
   isBreadcrumbWidthLimited?: boolean;
   /** Callback when notification drawer panel is finished expanding. */
-  onNotificationDrawerExpand?: () => void;
+  onNotificationDrawerExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
   /** Skip to content component for the page */
   skipToContent?: React.ReactElement;
   /** Sets the value for role on the <main> element */
@@ -54,7 +54,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * Can add callback to be notified when resize occurs, for example to set the sidebar isSidebarOpen prop to false for a width < 768px
    * Returns object { mobileView: boolean, windowSize: number }
    */
-  onPageResize?: ((object: any) => void) | null;
+  onPageResize?: ((event: MouseEvent | TouchEvent | React.KeyboardEvent, object: any) => void) | null;
   /**
    * The page resize observer uses the breakpoints returned from this function when adding the pf-m-breakpoint-[default|sm|md|lg|xl|2xl] class
    * You can override the default getBreakpoint function to return breakpoints at different sizes than the default
@@ -163,11 +163,11 @@ export class Page extends React.Component<PageProps, PageState> {
     // eslint-disable-next-line radix
     this.getWindowWidth() < Number.parseInt(globalBreakpointXl.value, 10);
 
-  resize = () => {
+  resize = (_event?: MouseEvent | TouchEvent | React.KeyboardEvent<Element>) => {
     const { onPageResize } = this.props;
     const mobileView = this.isMobile();
     if (onPageResize) {
-      onPageResize({ mobileView, windowSize: this.getWindowWidth() });
+      onPageResize(_event, { mobileView, windowSize: this.getWindowWidth() });
     }
     if (mobileView !== this.state.mobileView) {
       this.setState({ mobileView });
@@ -324,7 +324,7 @@ export class Page extends React.Component<PageProps, PageState> {
           {sidebar}
           {notificationDrawer && (
             <div className={css(styles.pageDrawer)}>
-              <Drawer isExpanded={isNotificationDrawerExpanded} onExpand={onNotificationDrawerExpand}>
+              <Drawer isExpanded={isNotificationDrawerExpanded} onExpand={(event) => onNotificationDrawerExpand(event)}>
                 <DrawerContent panelContent={panelContent}>
                   <DrawerContentBody>{main}</DrawerContentBody>
                 </DrawerContent>

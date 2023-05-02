@@ -21,13 +21,13 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   /** Position of the drawer panel */
   position?: 'left' | 'right' | 'bottom';
   /** Callback when drawer panel is expanded after waiting 250ms for animation to complete. */
-  onExpand?: () => void;
+  onExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
 }
 
 export interface DrawerContextProps {
   isExpanded: boolean;
   isStatic: boolean;
-  onExpand?: () => void;
+  onExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
   position?: string;
   drawerRef?: React.RefObject<HTMLDivElement>;
   drawerContentRef?: React.RefObject<HTMLDivElement>;
