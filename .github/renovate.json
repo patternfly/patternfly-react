@@ -22,7 +22,9 @@
         "@patternfly/patternfly-a11y",
         "@patternfly/documentation-framework",
         "@testing-library/jest-dom",
-        "lint-staged"
+        "@types/jest",
+        "lint-staged",
+        "prettier"
       ],
       "enabled": false
     },
@@ -43,7 +45,9 @@
         "@patternfly/patternfly-a11y",
         "@patternfly/documentation-framework",
         "@testing-library/jest-dom",
-        "lint-staged"
+        "@types/jest",
+        "lint-staged",
+        "prettier"
       ]
     },
     {
