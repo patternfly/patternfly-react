@@ -25,6 +25,7 @@
         "@types/jest",
         "@typescript-eslint/eslint-plugin",
         "@typescript-eslint/parser",
+        "eslint",
         "lint-staged",
         "prettier"
       ],
@@ -50,6 +51,7 @@
         "@types/jest",
         "@typescript-eslint/eslint-plugin",
         "@typescript-eslint/parser",
+        "eslint",
         "lint-staged",
         "prettier"
       ]
