@@ -1,5 +1,5 @@
 ---
-id: Date range picker
+id: Date picker
 section: components
 subsection: date-and-time
 beta: true
