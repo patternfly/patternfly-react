@@ -7,17 +7,41 @@
     {
       "packagePatterns": ["*"],
       "excludePackagePatterns": [
+        "@babel/core",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-decorators",
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-optional-chaining",
+        "@babel/plugin-proposal-private-methods",
+        "@babel/plugin-proposal-private-property-in-object",
+        "@babel/preset-env",
+        "@babel/preset-react",
+        "@babel/preset-typescript",
+        "@octokit/rest",
         "@patternfly/patternfly",
         "@patternfly/patternfly-a11y",
-        "@patternfly/documentation-framework"
+        "@patternfly/documentation-framework",
+        "lint-staged"
       ],
       "enabled": false
     },
     {
       "datasources": ["npm"],
       "packageNames": [
+        "@babel/core",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-decorators",
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-optional-chaining",
+        "@babel/plugin-proposal-private-methods",
+        "@babel/plugin-proposal-private-property-in-object",
+        "@babel/preset-env",
+        "@babel/preset-react",
+        "@babel/preset-typescript",
+        "@octokit/rest",
         "@patternfly/patternfly-a11y",
-        "@patternfly/documentation-framework"
+        "@patternfly/documentation-framework",
+        "lint-staged"
       ]
     },
     {
