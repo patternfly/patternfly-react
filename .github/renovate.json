@@ -23,6 +23,8 @@
         "@patternfly/documentation-framework",
         "@testing-library/jest-dom",
         "@types/jest",
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
         "lint-staged",
         "prettier"
       ],
@@ -46,6 +48,8 @@
         "@patternfly/documentation-framework",
         "@testing-library/jest-dom",
         "@types/jest",
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
         "lint-staged",
         "prettier"
       ]
