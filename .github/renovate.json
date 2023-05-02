@@ -21,6 +21,7 @@
         "@patternfly/patternfly",
         "@patternfly/patternfly-a11y",
         "@patternfly/documentation-framework",
+        "@testing-library/jest-dom",
         "lint-staged"
       ],
       "enabled": false
@@ -41,6 +42,7 @@
         "@octokit/rest",
         "@patternfly/patternfly-a11y",
         "@patternfly/documentation-framework",
+        "@testing-library/jest-dom",
         "lint-staged"
       ]
     },
