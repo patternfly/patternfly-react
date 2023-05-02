@@ -8,7 +8,7 @@ propComponents: ['Label', 'LabelGroup']
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import { Link } from '@reach/router';
 
-## Label examples
+## Examples
 
 ### Filled
 
@@ -39,43 +39,44 @@ You can also customize any Label's close button aria-label as this example shows
 ```ts file="LabelEditable.tsx" isBeta
 ```
 
-## Label group examples
 
-Use a label group when you have multiple labels to display at once. Label groups can be oriented either horizontally or vertically and can optionally be named and be dismissable. You may also make the label group editable to allow users to edit an existing label or add a new label.
-
-### Basic
+### Basic label group
+Use a label group when you have multiple labels to display at once. 
 
 ```ts file="LabelGroupBasic.tsx"
 ```
 
-### Overflow
+### Label group with overflow
+An overflow label can be added to the end of a group to save space when the number of labels exceeds some threshold. Click the overflow label to expand and collapse the group.
 
 ```ts file="LabelGroupOverflow.tsx"
 ```
 
-### Category
+### Label group with categories
+Use a category name to organize a set of labels
 
 ```ts file="LabelGroupCategory.tsx"
 ```
 
-### Category removable
+### Label group with removable categories
 
 ```ts file="LabelGroupCategoryRemovable.tsx"
 ```
 
-### Vertical category overflow removable
+### Vertical label group
+Labels in a group can also be stacked vertically. This example shows a verical label group with a category name and overflow.
 
 ```ts file="LabelGroupVerticalCategoryOverflowRemovable.tsx"
 ```
 
-### Editable labels
+### Editable label group
 
 ```ts isBeta file="LabelGroupEditableLabels.tsx"
 ```
 
-### Editable labels with add button
+### Editable label group with add button
 
-For additional documentation that showcases adding a new label, see [label group demos](/components/label/react-demos).
+The contents of a label group can be modified by removing labels or adding new ones using the Add button. For additional documentation that showcases adding a new label, see [label group demos](/components/label/react-demos).
 
 ```ts isBeta file="LabelGroupEditableAdd.tsx"
 ```
