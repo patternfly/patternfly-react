@@ -206,7 +206,6 @@ To enable closeable tabs, pass the `onClose` property to the `<Tabs>` component.
 
 Aria labels may be controlled manually by passing the `closeButtonAriaLabel` property to a `<Tab>` and the `addButtonAriaLabel` property to `<Tabs>`.
 
-```
 ```ts file="./TabsDynamic.tsx"
 ```
 
