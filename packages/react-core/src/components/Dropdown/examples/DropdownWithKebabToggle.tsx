@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle } from '@patternfly/react-core';
+import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const DropdownWithKebab: React.FunctionComponent = () => {
@@ -19,8 +19,8 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
     <Dropdown
       isOpen={isOpen}
       onSelect={onSelect}
-      onOpenChange={(isOpen) => setIsOpen(isOpen)}
-      toggle={(toggleRef) => (
+      onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
         <MenuToggle
           ref={toggleRef}
           aria-label="kebab dropdown toggle"
@@ -33,24 +33,30 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
       )}
     >
       <DropdownList>
-        <DropdownItem itemId={0} key="link">
-          Link
-        </DropdownItem>
-        <DropdownItem itemId={1} key="action" to="#default-link2" onClick={(ev) => ev.preventDefault()}>
+        <DropdownItem itemId={0} key="action">
           Action
         </DropdownItem>
-        <DropdownItem itemId={2} isDisabled key="disabled link">
-          Disabled link
+        <DropdownItem
+          itemId={1}
+          key="link"
+          to="#default-link2"
+          // Prevent the default onClick functionality for example purposes
+          onClick={(ev: any) => ev.preventDefault()}
+        >
+          Link
         </DropdownItem>
-        <DropdownItem itemId={3} isDisabled key="disabled action" to="#default-link4">
-          Disabled action
+        <DropdownItem itemId={2} isDisabled key="disabled action">
+          Disabled Action
         </DropdownItem>
-        <Divider key="separator" />
-        <DropdownItem itemId={4} key="separated link">
-          Separated link
+        <DropdownItem itemId={3} isDisabled key="disabled link" to="#default-link4">
+          Disabled Link
         </DropdownItem>
-        <DropdownItem itemId={5} key="separated action">
-          Separated action
+        <Divider component="li" key="separator" />
+        <DropdownItem itemId={4} key="separated action">
+          Separated Action
+        </DropdownItem>
+        <DropdownItem itemId={5} key="separated link" to="#default-link6" onClick={(ev) => ev.preventDefault()}>
+          Separated Link
         </DropdownItem>
       </DropdownList>
     </Dropdown>

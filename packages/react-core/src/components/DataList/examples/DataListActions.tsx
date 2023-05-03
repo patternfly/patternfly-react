@@ -6,21 +6,21 @@ import {
   DataListCell,
   DataListItemRow,
   DataListItemCells,
-  DataListAction
+  DataListAction,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  MenuToggle,
+  MenuToggleElement
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownPosition,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const DataListActions: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isDeleted, setIsDeleted] = React.useState(false);
 
-  const onToggle = (_event: any, isOpen: boolean) => {
-    setIsOpen(isOpen);
+  const onToggle = () => {
+    setIsOpen(!isOpen);
   };
 
   const onSelect = () => {
@@ -77,22 +77,38 @@ export const DataListActions: React.FunctionComponent = () => {
               aria-label="Actions"
               isPlainButtonAction
             >
-              <DropdownDeprecated
-                isPlain
-                position={DropdownPosition.right}
-                isOpen={isOpen}
+              <Dropdown
+                popperProps={{ position: 'right' }}
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle} />}
-                dropdownItems={[
-                  <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-                  <DropdownItemDeprecated key="action" component="button">
-                    Action
-                  </DropdownItemDeprecated>,
-                  <DropdownItemDeprecated key="disabled link" isDisabled>
+                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isOpen}
+                    onClick={onToggle}
+                    variant="plain"
+                    aria-label="Data list with actions example kebab toggle"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+                isOpen={isOpen}
+                onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+              >
+                <DropdownList>
+                  <DropdownItem key="action">Action</DropdownItem>
+                  {/* Prevent default onClick functionality for example
+                  purposes */}
+                  <DropdownItem key="link" to="#" onClick={(event: any) => event.preventDefault()}>
+                    Link
+                  </DropdownItem>
+                  <DropdownItem key="disabled action" isDisabled>
+                    Disabled Action
+                  </DropdownItem>
+                  <DropdownItem key="disabled link" isDisabled to="#" onClick={(event: any) => event.preventDefault()}>
                     Disabled Link
-                  </DropdownItemDeprecated>
-                ]}
-              />
+                  </DropdownItem>
+                </DropdownList>
+              </Dropdown>
             </DataListAction>
           </DataListItemRow>
         </DataListItem>

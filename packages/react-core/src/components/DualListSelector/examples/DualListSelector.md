@@ -15,17 +15,13 @@ propComponents:
   ]
 ---
 
-import {
-Dropdown as DropdownDeprecated,
-DropdownItem as DropdownItemDeprecated,
-KebabToggle
-} from '@patternfly/react-core/deprecated';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples
 

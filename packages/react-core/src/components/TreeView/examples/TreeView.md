@@ -5,11 +5,6 @@ cssPrefix: pf-c-tree-view
 propComponents: ['TreeView', 'TreeViewDataItem', 'TreeViewSearch']
 ---
 
-import {
-Dropdown as DropdownDeprecated,
-DropdownItem as DropdownItemDeprecated,
-KebabToggle
-} from '@patternfly/react-core/deprecated';
 import { FolderIcon, FolderOpenIcon, EllipsisVIcon, ClipboardIcon, HamburgerIcon } from '@patternfly/react-icons';
 
 ## Examples
@@ -863,14 +858,18 @@ class CustomBadgesTreeView extends React.Component {
 
 ```js
 import React from 'react';
-import { TreeView, Button } from '@patternfly/react-core';
 import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
+  TreeView,
+  Button,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  MenuToggle,
+  MenuToggleElement
+} from '@patternfly/react-core';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import HamburgerIcon from '@patternfly/react-icons/dist/esm/icons/hamburger-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class IconTreeView extends React.Component {
   constructor(props) {
@@ -887,13 +886,13 @@ class IconTreeView extends React.Component {
       }
     };
 
-    this.onToggle = (_event, isOpen) => {
+    this.onToggle = () => {
       this.setState({
-        isOpen
+        isOpen: !this.state.isOpen
       });
     };
 
-    this.onAppLaunchSelect = (event) => {
+    this.onAppLaunchSelect = () => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -902,30 +901,43 @@ class IconTreeView extends React.Component {
 
   render() {
     const { activeItems, isOpen } = this.state;
-    const dropdownItems = [
-      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="action" component="button">
-        Action
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="disabled link" isDisabled href="www.google.com">
-        Disabled Link
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="disabled action" isDisabled component="button">
-        Disabled Action
-      </DropdownItemDeprecated>
-    ];
+
     const options = [
       {
         name: 'Application launcher',
         id: 'example7-AppLaunch',
         action: (
-          <DropdownDeprecated
+          <Dropdown
             onSelect={this.onAppLaunchSelect}
-            toggle={<KebabToggle onToggle={this.onToggle} />}
             isOpen={isOpen}
-            isPlain
-            dropdownItems={dropdownItems}
-          />
+            onOpenChange={(isOpen) => this.setState({ isOpen })}
+            toggle={(toggleRef) => (
+              <MenuToggle
+                ref={toggleRef}
+                isExpanded={isOpen}
+                onClick={this.onToggle}
+                variant="plain"
+                aria-label="Tree view with actions example kebab toggle"
+              >
+                <EllipsisVIcon aria-hidden="true" />
+              </MenuToggle>
+            )}
+          >
+            <DropdownList>
+              <DropdownItem>Action</DropdownItem>
+              <DropdownItem
+                to="#default-link2"
+                // Prevent the default onClick functionality for example purposes
+                onClick={(ev) => ev.preventDefault()}
+              >
+                Link
+              </DropdownItem>
+              <DropdownItem isDisabled>Disabled Action</DropdownItem>
+              <DropdownItem isDisabled to="#default-link4">
+                Disabled Link
+              </DropdownItem>
+            </DropdownList>
+          </Dropdown>
         ),
         children: [
           {

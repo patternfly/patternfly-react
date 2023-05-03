@@ -6,11 +6,6 @@ propComponents: ['Modal']
 ouia: true
 ---
 
-import {
-Dropdown as DropdownDeprecated,
-DropdownToggle,
-DropdownItem as DropdownItemDeprecated
-} from '@patternfly/react-core/deprecated';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';

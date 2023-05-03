@@ -1,11 +1,17 @@
 import React from 'react';
-import { Button, ButtonVariant, Checkbox, DualListSelector } from '@patternfly/react-core';
 import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
+  Button,
+  ButtonVariant,
+  Checkbox,
+  DualListSelector,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  MenuToggle,
+  MenuToggleElement
+} from '@patternfly/react-core';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const DualListSelectorComplexOptionsActions: React.FunctionComponent = () => {
   const [availableOptions, setAvailableOptions] = React.useState<React.ReactNode[]>([
@@ -43,26 +49,16 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
     }
   };
 
-  const onToggle = (isOpen: boolean, pane: string) => {
+  const onToggle = (pane: string) => {
     if (pane === 'available') {
-      setIsAvailableKebabOpen(isOpen);
+      setIsAvailableKebabOpen(!isAvailableKebabOpen);
     } else {
-      setIsChosenKebabOpen(isOpen);
+      setIsChosenKebabOpen(!isChosenKebabOpen);
     }
   };
 
   const filterOption = (option: React.ReactNode, input: string) =>
     (option as React.ReactElement).props.children.includes(input);
-
-  const dropdownItems = [
-    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="action" component="button">
-      Action
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="secondAction" component="button">
-      Second Action
-    </DropdownItemDeprecated>
-  ];
 
   const availableOptionsActions = [
     <Button
@@ -74,19 +70,33 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
     >
       <PficonSortCommonAscIcon />
     </Button>,
-    <DropdownDeprecated
-      toggle={
-        <KebabToggle
+    <Dropdown
+      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+        <MenuToggle
+          ref={toggleRef}
           isDisabled={isDisabled}
-          onToggle={(_event: any, isOpen: boolean) => onToggle(isOpen, 'available')}
+          isExpanded={isAvailableKebabOpen}
+          onClick={() => onToggle('available')}
+          variant="plain"
           id="complex-available-toggle"
-        />
-      }
+          aria-label="Complex actions example available kebab toggle"
+        >
+          <EllipsisVIcon aria-hidden="true" />
+        </MenuToggle>
+      )}
       isOpen={isAvailableKebabOpen}
-      isPlain
-      dropdownItems={dropdownItems}
+      onOpenChange={(isOpen: boolean) => setIsAvailableKebabOpen(isOpen)}
+      onSelect={() => setIsAvailableKebabOpen(false)}
       key="availableDropdown"
-    />
+    >
+      <DropdownList>
+        <DropdownItem key="available action">Action</DropdownItem>
+        {/* Prevent default onClick functionality for example purposes */}
+        <DropdownItem key="available link" to="#" onClick={(event: any) => event.preventDefault()}>
+          Link
+        </DropdownItem>
+      </DropdownList>
+    </Dropdown>
   ];
 
   const chosenOptionsActions = [
@@ -99,19 +109,33 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
     >
       <PficonSortCommonAscIcon />
     </Button>,
-    <DropdownDeprecated
-      toggle={
-        <KebabToggle
+    <Dropdown
+      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+        <MenuToggle
+          ref={toggleRef}
           isDisabled={isDisabled}
-          onToggle={(_event: any, isOpen: boolean) => onToggle(isOpen, 'chosen')}
+          isExpanded={isChosenKebabOpen}
+          variant="plain"
+          onClick={() => onToggle('chosen')}
           id="complex-chosen-toggle"
-        />
-      }
+          aria-label="Complex actions example chosen kebab toggle"
+        >
+          <EllipsisVIcon aria-hidden="true" />
+        </MenuToggle>
+      )}
       isOpen={isChosenKebabOpen}
-      isPlain
-      dropdownItems={dropdownItems}
+      onOpenChange={(isOpen) => setIsChosenKebabOpen(isOpen)}
+      onSelect={() => setIsChosenKebabOpen(false)}
       key="chosenDropdown"
-    />
+    >
+      <DropdownList>
+        <DropdownItem key="chosen action">Action</DropdownItem>
+        {/* Prevent default onClick functionality for example purposes */}
+        <DropdownItem key="chosen link" to="#" onClick={(event: any) => event.preventDefault()}>
+          Link
+        </DropdownItem>
+      </DropdownList>
+    </Dropdown>
   ];
 
   return (

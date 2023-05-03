@@ -11,6 +11,7 @@ import {
   DropdownList,
   Divider,
   MenuToggle,
+  MenuToggleCheckbox,
   MenuToggleElement,
   OverflowMenu,
   OverflowMenuContent,
@@ -22,12 +23,6 @@ import {
   ToolbarToggleGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownToggle,
-  DropdownToggleCheckbox,
-  DropdownItem as DropdownItemDeprecated
-} from '@patternfly/react-core/deprecated';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -42,7 +37,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
   const [resourceSelected, setResourceSelected] = React.useState('');
   const [statusIsExpanded, setStatusIsExpanded] = React.useState(false);
   const [statusSelected, setStatusSelected] = React.useState('');
-  const [splitButtonDropdownIsOpen, setSplitButtonDropdownIsOpen] = React.useState(false);
+  const [isSplitButtonDropdownOpen, setIsSplitButtonDropdownOpen] = React.useState(false);
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(20);
 
@@ -85,44 +80,52 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     setPerPage(perPage);
   };
 
-  const onSplitButtonToggle = (_event: any, isOpen: boolean) => {
-    setSplitButtonDropdownIsOpen(isOpen);
+  const onSplitButtonToggle = () => {
+    setIsSplitButtonDropdownOpen(!isSplitButtonDropdownOpen);
   };
 
   const onSplitButtonSelect = () => {
-    setSplitButtonDropdownIsOpen(!splitButtonDropdownIsOpen);
+    setIsSplitButtonDropdownOpen(!isSplitButtonDropdownOpen);
   };
 
-  const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
-      Action
-    </DropdownItem>,
-    <DropdownItem key="disabled link" isDisabled>
-      Disabled Link
-    </DropdownItem>,
-    <DropdownItem key="disabled action" isDisabled component="button">
-      Disabled Action
-    </DropdownItem>,
-    <Divider key="separator" />,
-    <DropdownItem key="separated link">Separated Link</DropdownItem>,
-    <DropdownItem key="separated action" component="button">
-      Separated Action
-    </DropdownItem>
-  ];
-
-  const splitButtonDropdownItems = [
-    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="action" component="button">
-      Action
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="disabled link" isDisabled>
-      Disabled Link
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
-      Disabled Action
-    </DropdownItemDeprecated>
-  ];
+  const dropdownItems = (
+    <>
+      <DropdownItem>Action</DropdownItem>
+      <DropdownItem
+        to="#default-link2"
+        // Prevent the default onClick functionality for example purposes
+        onClick={(ev: any) => ev.preventDefault()}
+      >
+        Link
+      </DropdownItem>
+      <DropdownItem isDisabled>Disabled Action</DropdownItem>
+      <DropdownItem isDisabled to="#default-link4">
+        Disabled Link
+      </DropdownItem>
+    </>
+  );
+  const splitButtonDropdownItems = (
+    <>
+      <DropdownItem itemId={0} key="action">
+        Action
+      </DropdownItem>
+      <DropdownItem
+        itemId={1}
+        key="link"
+        to="#default-link2"
+        // Prevent the default onClick functionality for example purposes
+        onClick={(ev: any) => ev.preventDefault()}
+      >
+        Link
+      </DropdownItem>
+      <DropdownItem itemId={2} isDisabled key="disabled action">
+        Disabled Action
+      </DropdownItem>
+      <DropdownItem itemId={3} isDisabled key="disabled link" to="#default-link4">
+        Disabled Link
+      </DropdownItem>
+    </>
+  );
 
   const toggleGroupItems = (
     <React.Fragment>
@@ -147,13 +150,15 @@ export const ToolbarStacked: React.FunctionComponent = () => {
           )}
           onSelect={onResourceSelect}
           selected={resourceSelected}
-          onOpenChange={isOpen => setResourceIsExpanded(isOpen)}
+          onOpenChange={(isOpen) => setResourceIsExpanded(isOpen)}
           isOpen={resourceIsExpanded}
           aria-labelledby="stacked-example-resource-select"
         >
           <SelectList>
             {resourceOptions.map((option, index) => (
-              <SelectOption key={index} itemId={option}>{option}</SelectOption>
+              <SelectOption key={index} itemId={option}>
+                {option}
+              </SelectOption>
             ))}
           </SelectList>
         </Select>
@@ -178,13 +183,15 @@ export const ToolbarStacked: React.FunctionComponent = () => {
             </MenuToggle>
           )}
           onSelect={onStatusSelect}
-          onOpenChange={isOpen => setStatusIsExpanded(isOpen)}
+          onOpenChange={(isOpen) => setStatusIsExpanded(isOpen)}
           selected={statusSelected}
           isOpen={statusIsExpanded}
         >
           <SelectList>
             {statusOptions.map((option, index) => (
-              <SelectOption key={index} itemId={option}>{option}</SelectOption>
+              <SelectOption key={index} itemId={option}>
+                {option}
+              </SelectOption>
             ))}
           </SelectList>
         </Select>
@@ -214,8 +221,8 @@ export const ToolbarStacked: React.FunctionComponent = () => {
               <OverflowMenuControl hasAdditionalOptions>
                 <Dropdown
                   onSelect={onResourceSelectDropdown}
-                  onOpenChange={(isOpen) => setKebabIsOpen(isOpen)}
-                  toggle={(toggleRef) => (
+                  onOpenChange={(isOpen: boolean) => setKebabIsOpen(isOpen)}
+                  toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
                     <MenuToggle
                       ref={toggleRef}
                       aria-label="Kebab overflow menu"
@@ -243,20 +250,30 @@ export const ToolbarStacked: React.FunctionComponent = () => {
       <Toolbar>
         <ToolbarContent>
           <ToolbarItem variant="bulk-select">
-            <DropdownDeprecated
+            <Dropdown
               onSelect={onSplitButtonSelect}
-              toggle={
-                <DropdownToggle
-                  id="stacked-example-toggle"
-                  splitButtonItems={[
-                    <DropdownToggleCheckbox id="example-checkbox-1" key="split-checkbox" aria-label="Select all" />
-                  ]}
-                  onToggle={onSplitButtonToggle}
+              isOpen={isSplitButtonDropdownOpen}
+              onOpenChange={(isOpen: boolean) => setIsSplitButtonDropdownOpen(isOpen)}
+              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isSplitButtonDropdownOpen}
+                  onClick={onSplitButtonToggle}
+                  aria-label="Toolbar stacked example split toggle"
+                  splitButtonOptions={{
+                    items: [
+                      <MenuToggleCheckbox
+                        key="toolbar-stacked-split-button-checkbox-1"
+                        id="toolbar-stacked-split-button-checkbox-1"
+                        aria-label="Select all"
+                      />
+                    ]
+                  }}
                 />
-              }
-              isOpen={splitButtonDropdownIsOpen}
-              dropdownItems={splitButtonDropdownItems}
-            />
+              )}
+            >
+              <DropdownList>{splitButtonDropdownItems}</DropdownList>
+            </Dropdown>
           </ToolbarItem>
           <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
             <Pagination

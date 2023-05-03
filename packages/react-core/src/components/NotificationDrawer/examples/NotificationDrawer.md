@@ -16,15 +16,8 @@ propComponents:
   ]
 ---
 
-import {
-Dropdown as DropdownDeprecated,
-DropdownItem as DropdownItemDeprecated,
-DropdownPosition,
-DropdownDirection,
-DropdownSeparator,
-KebabToggle
-} from '@patternfly/react-core/deprecated';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples
 

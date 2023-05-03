@@ -6,14 +6,15 @@ import {
   CardBody,
   CardFooter,
   CardExpandableContent,
-  Checkbox
+  Checkbox,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  Divider,
+  MenuToggle,
+  MenuToggleElement
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownSeparator,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const CardExpandable: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
@@ -39,34 +40,46 @@ export const CardExpandable: React.FunctionComponent = () => {
     setIsToggleRightAligned(!isToggleRightAligned);
   };
 
-  const dropdownItems = [
-    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="action" component="button">
-      Action
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="disabled link" isDisabled>
-      Disabled Link
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
-      Disabled Action
-    </DropdownItemDeprecated>,
-    <DropdownSeparator key="separator" />,
-    <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="separated action" component="button">
-      Separated Action
-    </DropdownItemDeprecated>
-  ];
-
+  const dropdownItems = (
+    <>
+      <DropdownItem key="action">Action</DropdownItem>
+      {/* Prevent default onClick functionality for example purposes */}
+      <DropdownItem key="link" to="#" onClick={(event: any) => event.preventDefault()}>
+        Link
+      </DropdownItem>
+      <DropdownItem key="disabled action" isDisabled>
+        Disabled Action
+      </DropdownItem>
+      <DropdownItem key="disabled link" isDisabled to="#" onClick={(event: any) => event.preventDefault()}>
+        Disabled Link
+      </DropdownItem>
+      <Divider component="li" key="separator" />
+      <DropdownItem key="separated action">Separated Action</DropdownItem>
+      <DropdownItem key="separated link" to="#" onClick={(event: any) => event.preventDefault()}>
+        Separated Link
+      </DropdownItem>
+    </>
+  );
   const headerActions = (
     <>
-      <DropdownDeprecated
+      <Dropdown
         onSelect={onSelect}
-        toggle={<KebabToggle onToggle={(_event: any, isOpen: boolean) => setIsOpen(isOpen)} />}
+        toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          <MenuToggle
+            ref={toggleRef}
+            isExpanded={isOpen}
+            onClick={() => setIsOpen(!isOpen)}
+            variant="plain"
+            aria-label="Card expandable example kebab toggle"
+          >
+            <EllipsisVIcon aria-hidden="true" />
+          </MenuToggle>
+        )}
         isOpen={isOpen}
-        isPlain
-        dropdownItems={dropdownItems}
-        position={'right'}
-      />
+        onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+      >
+        <DropdownList>{dropdownItems}</DropdownList>
+      </Dropdown>
       <Checkbox
         isChecked={isChecked}
         onChange={(_event, checked) => onClick(checked)}

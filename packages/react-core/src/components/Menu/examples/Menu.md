@@ -7,11 +7,6 @@ propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent'
 ouia: true
 ---
 
-import {
-Dropdown as DropdownDeprecated,
-DropdownItem as DropdownItemDeprecated,
-BadgeToggle
-} from '@patternfly/react-core/deprecated';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
@@ -21,6 +16,7 @@ import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 ## Examples
 

@@ -5,29 +5,28 @@ import {
   Button,
   ButtonVariant,
   Divider,
+  Dropdown,
+  DropdownGroup,
+  DropdownItem,
+  DropdownList,
   Masthead,
   MastheadToggle,
   MastheadMain,
   MastheadBrand,
   MastheadContent,
+  MenuToggle,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem,
-  PageToggleButton,
+  PageToggleButton
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownGroup as DropdownGroupDeprecated,
-  DropdownToggle,
-  DropdownItem as DropdownItemDeprecated,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfColorLogo from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
 
@@ -41,39 +40,39 @@ export default class DashboardHeader extends React.Component {
       activeItem: 0
     };
 
-    this.onDropdownToggle = (_event, isDropdownOpen) => {
-      this.setState({
-        isDropdownOpen
-      });
+    this.onDropdownToggle = () => {
+      this.setState((prevState) => ({
+        isDropdownOpen: !prevState.isDropdownOpen
+      }));
     };
 
     this.onDropdownSelect = () => {
       this.setState({
-        isDropdownOpen: !this.state.isDropdownOpen
+        isDropdownOpen: false
       });
     };
 
-    this.onKebabDropdownToggle = (_event, isKebabDropdownOpen) => {
-      this.setState({
-        isKebabDropdownOpen
-      });
+    this.onKebabDropdownToggle = () => {
+      this.setState((prevState) => ({
+        isKebabDropdownOpen: !prevState.isKebabDropdownOpen
+      }));
     };
 
     this.onKebabDropdownSelect = () => {
       this.setState({
-        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+        isKebabDropdownOpen: false
       });
     };
 
-    this.onFullKebabToggle = (_event, isFullKebabDropdownOpen) => {
-      this.setState({
-        isFullKebabDropdownOpen
-      });
+    this.onFullKebabToggle = () => {
+      this.setState((prevState) => ({
+        isFullKebabDropdownOpen: !prevState.isFullKebabDropdownOpen
+      }));
     };
 
     this.onFullKebabSelect = () => {
       this.setState({
-        isFullKebabDropdownOpen: !this.state.isFullKebabDropdownOpen
+        isFullKebabDropdownOpen: false
       });
     };
   }
@@ -82,41 +81,23 @@ export default class DashboardHeader extends React.Component {
     const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen } = this.state;
     const { notificationBadge } = this.props;
 
-    const kebabDropdownItems = [
-      <DropdownItemDeprecated key="settings">
-        <CogIcon /> Settings
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="help">
-        <HelpIcon /> Help
-      </DropdownItemDeprecated>
-    ];
-
-    const fullKebabItems = [
-      <DropdownGroupDeprecated key="group 2">
-        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
-        <DropdownItemDeprecated key="group 2 user" component="button">
-          User management
-        </DropdownItemDeprecated>
-        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
-      </DropdownGroupDeprecated>,
-      <Divider key="divider" />,
-      <DropdownItemDeprecated key="settings">
-        <CogIcon /> Settings
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="help">
-        <HelpIcon /> Help
-      </DropdownItemDeprecated>
-    ];
-
-    const userDropdownItems = [
-      <DropdownGroupDeprecated key="group 2">
-        <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
-        <DropdownItemDeprecated key="group 2 user" component="button">
-          User management
-        </DropdownItemDeprecated>
-        <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
-      </DropdownGroupDeprecated>
-    ];
+    const kebabDropdownItems = (
+      <>
+        <DropdownItem>
+          <CogIcon /> Settings
+        </DropdownItem>
+        <DropdownItem>
+          <HelpIcon /> Help
+        </DropdownItem>
+      </>
+    );
+    const userDropdownItems = (
+      <>
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user">User management</DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </>
+    );
 
     const headerToolbar = (
       <Toolbar id="toolbar" isFullHeight isStatic>
@@ -147,38 +128,72 @@ export default class DashboardHeader extends React.Component {
               </ToolbarItem>
             </ToolbarGroup>
             <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-              <DropdownDeprecated
-                isPlain
-                position="right"
-                onSelect={this.onKebabDropdownSelect}
-                toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+              <Dropdown
                 isOpen={isKebabDropdownOpen}
-                dropdownItems={kebabDropdownItems}
-              />
+                onSelect={this.onKebabDropdownSelect}
+                onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isKebabDropdownOpen}
+                    onClick={this.onKebabDropdownToggle}
+                    variant="plain"
+                    aria-label="Settings and help"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>{kebabDropdownItems}</DropdownList>
+              </Dropdown>
             </ToolbarItem>
             <ToolbarItem visibility={{ md: 'hidden' }}>
-              <DropdownDeprecated
-                isPlain
-                position="right"
-                onSelect={this.onFullKebabSelect}
-                toggle={<KebabToggle onToggle={this.onFullKebabToggle} />}
+              <Dropdown
                 isOpen={isFullKebabDropdownOpen}
-                dropdownItems={fullKebabItems}
-              />
+                onSelect={this.onFullKebabSelect}
+                onOpenChange={(isOpen) => this.setState({ isFullKebabDropdownOpen: isOpen })}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isFullKebabDropdownOpen}
+                    onClick={this.onFullKebabToggle}
+                    variant="plain"
+                    aria-label="Toolbar menu"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownGroup key="group 2" aria-label="User actions">
+                  <DropdownList>{userDropdownItems}</DropdownList>
+                </DropdownGroup>
+                <Divider />
+                <DropdownList>{kebabDropdownItems}</DropdownList>
+              </Dropdown>
             </ToolbarItem>
           </ToolbarGroup>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
-            <DropdownDeprecated
-              isFullHeight
-              onSelect={this.onDropdownSelect}
+            <Dropdown
               isOpen={isDropdownOpen}
-              toggle={
-                <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
+              onSelect={this.onDropdownSelect}
+              onOpenChange={(isOpen) => this.setState({ isDropdownOpen: isOpen })}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isDropdownOpen}
+                  onClick={this.onDropdownToggle}
+                  icon={<Avatar src={imgAvatar} alt="" />}
+                  isFullHeight
+                >
                   Ned Username
-                </DropdownToggle>
-              }
-              dropdownItems={userDropdownItems}
-            />
+                </MenuToggle>
+              )}
+            >
+              <DropdownList>{userDropdownItems}</DropdownList>
+            </Dropdown>
           </ToolbarItem>
         </ToolbarContent>
       </Toolbar>

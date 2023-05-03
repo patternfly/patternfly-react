@@ -5,11 +5,6 @@ cssPrefix: null
 propComponents: ['InputGroup', 'InputGroupText']
 ---
 
-import {
-Dropdown as DropdownDeprecated,
-DropdownToggle,
-DropdownItem as DropdownItemDeprecated
-} from '@patternfly/react-core/deprecated';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
 import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
 import CalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/calendar-alt-icon';

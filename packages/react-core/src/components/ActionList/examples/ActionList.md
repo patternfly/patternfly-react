@@ -7,12 +7,7 @@ propComponents: ['ActionList', 'ActionListGroup', 'ActionListItem']
 
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
-import {
-Dropdown as DropdownDeprecated,
-DropdownItem as DropdownItemDeprecated,
-DropdownSeparator,
-KebabToggle
-} from '@patternfly/react-core/deprecated';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples
 

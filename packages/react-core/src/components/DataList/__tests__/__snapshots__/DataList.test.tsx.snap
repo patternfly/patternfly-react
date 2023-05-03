@@ -129,32 +129,99 @@ exports[`DataList DataListAction dropdown 1`] = `
     <div
       class="pf-c-data-list__action"
     >
+      <button
+        aria-expanded="false"
+        class="pf-c-menu-toggle"
+        type="button"
+      >
+        <span
+          class="pf-c-menu-toggle__text"
+        />
+        <span
+          class="pf-c-menu-toggle__controls"
+        >
+          <span
+            class="pf-c-menu-toggle__toggle-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="pf-svg"
+              fill="currentColor"
+              role="img"
+              viewBox="0 0 320 512"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </span>
+      </button>
       <div
-        class="pf-c-dropdown pf-m-align-right"
+        class="pf-c-menu"
         data-ouia-component-id="OUIA-Generated-Dropdown-1"
         data-ouia-component-type="PF4/Dropdown"
         data-ouia-safe="true"
+        style="position: absolute; left: 0px; top: 0px; z-index: 9999;"
       >
-        <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          aria-label="Actions"
-          class="pf-c-dropdown__toggle pf-m-plain"
-          id="pf-dropdown-toggle-id-0"
-          type="button"
+        <div
+          class="pf-c-menu__content"
         >
-          <svg
-            aria-hidden="true"
-            class="pf-svg"
-            fill="currentColor"
-            role="img"
-            viewBox="0 0 192 512"
+          <ul
+            class="pf-c-menu__list"
+            role="menu"
           >
-            <path
-              d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-            />
-          </svg>
-        </button>
+            <li
+              class="pf-c-menu__list-item"
+              data-ouia-component-id="OUIA-Generated-DropdownItem-1"
+              data-ouia-component-type="PF4/DropdownItem"
+              data-ouia-safe="true"
+              role="none"
+            >
+              <button
+                class="pf-c-menu__item"
+                role="menuitem"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="pf-c-menu__item-main"
+                >
+                  <span
+                    class="pf-c-menu__item-text"
+                  >
+                    action-1
+                  </span>
+                </span>
+              </button>
+            </li>
+            ,
+            <li
+              class="pf-c-menu__list-item"
+              data-ouia-component-id="OUIA-Generated-DropdownItem-2"
+              data-ouia-component-type="PF4/DropdownItem"
+              data-ouia-safe="true"
+              role="none"
+            >
+              <button
+                class="pf-c-menu__item"
+                role="menuitem"
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  class="pf-c-menu__item-main"
+                >
+                  <span
+                    class="pf-c-menu__item-text"
+                  >
+                    action-2
+                  </span>
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

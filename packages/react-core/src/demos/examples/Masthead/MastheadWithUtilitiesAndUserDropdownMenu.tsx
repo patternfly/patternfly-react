@@ -9,6 +9,10 @@ import {
   Card,
   CardBody,
   Divider,
+  Dropdown,
+  DropdownGroup,
+  DropdownItem,
+  DropdownList,
   Gallery,
   GalleryItem,
   Masthead,
@@ -21,6 +25,7 @@ import {
   MenuList,
   MenuItem,
   MenuToggle,
+  MenuToggleElement,
   Nav,
   NavItem,
   NavList,
@@ -43,15 +48,9 @@ import {
   SearchInput,
   Tooltip
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownGroup as DropdownGroupDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownToggle,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
 import { Link } from '@reach/router';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -84,24 +83,24 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
   };
 
-  const onDropdownToggle = (_event: any, isOpen: boolean) => {
-    setIsDropdownOpen(isOpen);
+  const onDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   const onDropdownSelect = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const onKebabDropdownToggle = (_event: any, isOpen: boolean) => {
-    setIsKebabDropdownOpen(isOpen);
+  const onKebabDropdownToggle = () => {
+    setIsKebabDropdownOpen(!isKebabDropdownOpen);
   };
 
   const onKebabDropdownSelect = () => {
     setIsKebabDropdownOpen(!isKebabDropdownOpen);
   };
 
-  const onFullKebabDropdownToggle = (_event: any, isOpen: boolean) => {
-    setIsFullKebabDropdownOpen(isOpen);
+  const onFullKebabDropdownToggle = () => {
+    setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen);
   };
 
   const onFullKebabDropdownSelect = () => {
@@ -361,40 +360,22 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     </Breadcrumb>
   );
 
-  const kebabDropdownItems = [
-    <DropdownItemDeprecated key="settings">
-      <CogIcon /> Settings
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="help">
-      <HelpIcon /> Help
-    </DropdownItemDeprecated>
-  ];
-
-  const fullKebabDropdownItems = [
-    <DropdownGroupDeprecated key="group 2">
-      <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
-      <DropdownItemDeprecated key="group 2 user" component="button">
-        User management
-      </DropdownItemDeprecated>
-      <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
-    </DropdownGroupDeprecated>,
-    <Divider key="divider" />,
-    <DropdownItemDeprecated key="settings">
-      <CogIcon /> Settings
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="help">
-      <HelpIcon /> Help
-    </DropdownItemDeprecated>
-  ];
-
+  const kebabDropdownItems = (
+    <>
+      <DropdownItem key="settings">
+        <CogIcon /> Settings
+      </DropdownItem>
+      <DropdownItem key="help">
+        <HelpIcon /> Help
+      </DropdownItem>
+    </>
+  );
   const userDropdownItems = [
-    <DropdownGroupDeprecated key="group 2">
-      <DropdownItemDeprecated key="group 2 profile">My profile</DropdownItemDeprecated>
-      <DropdownItemDeprecated key="group 2 user" component="button">
-        User management
-      </DropdownItemDeprecated>
-      <DropdownItemDeprecated key="group 2 logout">Logout</DropdownItemDeprecated>
-    </DropdownGroupDeprecated>
+    <>
+      <DropdownItem key="group 2 profile">My profile</DropdownItem>
+      <DropdownItem key="group 2 user">User management</DropdownItem>
+      <DropdownItem key="group 2 logout">Logout</DropdownItem>
+    </>
   ];
 
   const headerToolbar = (
@@ -420,38 +401,72 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
             </ToolbarItem>
           </ToolbarGroup>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-            <DropdownDeprecated
-              isPlain
-              position="right"
-              onSelect={onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={onKebabDropdownToggle} />}
+            <Dropdown
               isOpen={isKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
+              onSelect={onKebabDropdownSelect}
+              onOpenChange={(isOpen: boolean) => setIsKebabDropdownOpen(isOpen)}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  onClick={onKebabDropdownToggle}
+                  isExpanded={isKebabDropdownOpen}
+                  variant="plain"
+                  aria-label="Settings and help"
+                >
+                  <EllipsisVIcon aria-hidden="true" />
+                </MenuToggle>
+              )}
+            >
+              <DropdownList>{kebabDropdownItems}</DropdownList>
+            </Dropdown>
           </ToolbarItem>
           <ToolbarItem visibility={{ md: 'hidden' }}>
-            <DropdownDeprecated
-              isPlain
-              position="right"
-              onSelect={onFullKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={onFullKebabDropdownToggle} />}
+            <Dropdown
               isOpen={isFullKebabDropdownOpen}
-              dropdownItems={fullKebabDropdownItems}
-            />
+              onSelect={onFullKebabDropdownSelect}
+              onOpenChange={(isOpen: boolean) => setIsFullKebabDropdownOpen(isOpen)}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  onClick={onFullKebabDropdownToggle}
+                  isExpanded={isFullKebabDropdownOpen}
+                  variant="plain"
+                  aria-label="Toolbar menu"
+                >
+                  <EllipsisVIcon aria-hidden="true" />
+                </MenuToggle>
+              )}
+            >
+              <DropdownGroup key="group 2" aria-label="User actions">
+                <DropdownList>{userDropdownItems}</DropdownList>
+              </DropdownGroup>
+              <Divider />
+              <DropdownList>{kebabDropdownItems}</DropdownList>
+            </Dropdown>
           </ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
-          <DropdownDeprecated
-            isFullHeight
-            onSelect={onDropdownSelect}
+          <Dropdown
             isOpen={isDropdownOpen}
-            toggle={
-              <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={onDropdownToggle}>
+            onSelect={onDropdownSelect}
+            onOpenChange={(isOpen: boolean) => setIsDropdownOpen(isOpen)}
+            popperProps={{ position: 'right' }}
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle
+                ref={toggleRef}
+                onClick={onDropdownToggle}
+                isFullHeight
+                isExpanded={isDropdownOpen}
+                icon={<Avatar src={imgAvatar} alt="" />}
+              >
                 Ned Username
-              </DropdownToggle>
-            }
-            dropdownItems={userDropdownItems}
-          />
+              </MenuToggle>
+            )}
+          >
+            <DropdownList>{userDropdownItems}</DropdownList>
+          </Dropdown>
         </ToolbarItem>
       </ToolbarContent>
     </Toolbar>

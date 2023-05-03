@@ -17,17 +17,15 @@ import {
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
   EmptyStateActions,
-  EmptyStateFooter
+  EmptyStateFooter,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  MenuToggle,
+  Divider
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownDirection,
-  DropdownPosition,
-  DropdownSeparator,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 interface GroupsNotificationDrawerDemoState {
   isDrawerOpen: boolean;
@@ -46,7 +44,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
     super(props);
     this.state = {
       isDrawerOpen: false,
-      isOpenMap: null,
+      isOpenMap: {},
       firstGroupExpanded: false,
       secondGroupExpanded: true,
       thirdGroupExpanded: false
@@ -59,14 +57,14 @@ export class GroupsNotificationDrawerDemo extends React.Component<
     });
   };
 
-  onToggle = (id: string, isOpen: boolean) => {
-    this.setState({
-      isOpenMap: { [id]: isOpen }
-    });
+  onToggle = (id: string) => {
+    this.setState((prevState) => ({
+      isOpenMap: { [id]: !prevState.isOpenMap[id] }
+    }));
   };
   onSelect = () => {
     this.setState({
-      isOpenMap: null
+      isOpenMap: {}
     });
   };
   toggleFirstDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
@@ -88,32 +86,38 @@ export class GroupsNotificationDrawerDemo extends React.Component<
   render() {
     const { isOpenMap, firstGroupExpanded, secondGroupExpanded, thirdGroupExpanded } = this.state;
     const dropdownItems = [
-      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="action" component="button">
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
         Action
-      </DropdownItemDeprecated>,
-      <DropdownSeparator key="separator" />,
-      <DropdownItemDeprecated key="disabled link" isDisabled>
+      </DropdownItem>,
+      <Divider component="li" key="separator" />,
+      <DropdownItem key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItemDeprecated>
+      </DropdownItem>
     ];
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader count={4} onClose={(event) => this.onDrawerClose(event)}>
-          <DropdownDeprecated
+        <NotificationDrawerHeader count={4} onClose={this.onDrawerClose}>
+          <Dropdown
             onSelect={this.onSelect}
-            toggle={
-              <KebabToggle
-                onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-0', isOpen)}
-                id="toggle-id-0"
-              />
-            }
-            isOpen={isOpenMap && isOpenMap['toggle-id-0']}
-            isPlain
-            dropdownItems={dropdownItems}
+            isOpen={isOpenMap['toggle-id-0'] || false}
+            onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
             id="notification-0"
-            position={DropdownPosition.right}
-          />
+            popperProps={{ position: 'right' }}
+            toggle={(toggleRef) => (
+              <MenuToggle
+                ref={toggleRef}
+                id="toggle-id-0"
+                variant="plain"
+                onClick={() => this.onToggle('toggle-id-0')}
+                isExpanded={isOpenMap['toggle-id-0'] || false}
+              >
+                <EllipsisVIcon aria-hidden="true" />
+              </MenuToggle>
+            )}
+          >
+            <DropdownList>{dropdownItems}</DropdownList>
+          </Dropdown>
         </NotificationDrawerHeader>
         <NotificationDrawerBody>
           <NotificationDrawerGroupList>
@@ -132,20 +136,26 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Unread info notification title"
                     srTitle="Info notification:"
                   >
-                    <DropdownDeprecated
-                      position={DropdownPosition.right}
+                    <Dropdown
                       onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle
-                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-5', isOpen)}
-                          id="toggle-id-5"
-                        />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-5']}
-                      isPlain
-                      dropdownItems={dropdownItems}
+                      isOpen={isOpenMap['toggle-id-5'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-5"
-                    />
+                      popperProps={{ position: 'right' }}
+                      toggle={(toggleRef) => (
+                        <MenuToggle
+                          ref={toggleRef}
+                          id="toggle-id-5"
+                          variant="plain"
+                          onClick={() => this.onToggle('toggle-id-5')}
+                          isExpanded={isOpenMap['toggle-id-5'] || false}
+                        >
+                          <EllipsisVIcon aria-hidden="true" />
+                        </MenuToggle>
+                      )}
+                    >
+                      <DropdownList>{dropdownItems}</DropdownList>
+                    </Dropdown>
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="5 minutes ago">
                     This is an info notification description.
@@ -157,20 +167,26 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
                     srTitle="Danger notification:"
                   >
-                    <DropdownDeprecated
-                      position={DropdownPosition.right}
+                    <Dropdown
                       onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle
-                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-6', isOpen)}
-                          id="toggle-id-6"
-                        />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-6']}
-                      isPlain
-                      dropdownItems={dropdownItems}
+                      isOpen={isOpenMap['toggle-id-6'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-6"
-                    />
+                      popperProps={{ position: 'right' }}
+                      toggle={(toggleRef) => (
+                        <MenuToggle
+                          ref={toggleRef}
+                          id="toggle-id-6"
+                          variant="plain"
+                          onClick={() => this.onToggle('toggle-id-6')}
+                          isExpanded={isOpenMap['toggle-id-6'] || false}
+                        >
+                          <EllipsisVIcon aria-hidden="true" />
+                        </MenuToggle>
+                      )}
+                    >
+                      <DropdownList>{dropdownItems}</DropdownList>
+                    </Dropdown>
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="10 minutes ago">
                     This is a danger notification description. This is a long description to show how the title will
@@ -183,20 +199,26 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Read warning notification title"
                     srTitle="Warning notification:"
                   >
-                    <DropdownDeprecated
-                      position={DropdownPosition.right}
+                    <Dropdown
                       onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle
-                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-7', isOpen)}
-                          id="toggle-id-7"
-                        />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-7']}
-                      isPlain
-                      dropdownItems={dropdownItems}
+                      isOpen={isOpenMap['toggle-id-7'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-7"
-                    />
+                      popperProps={{ position: 'right' }}
+                      toggle={(toggleRef) => (
+                        <MenuToggle
+                          ref={toggleRef}
+                          id="toggle-id-7"
+                          variant="plain"
+                          onClick={() => this.onToggle('toggle-id-7')}
+                          isExpanded={isOpenMap['toggle-id-7'] || false}
+                        >
+                          <EllipsisVIcon aria-hidden="true" />
+                        </MenuToggle>
+                      )}
+                    >
+                      <DropdownList>{dropdownItems}</DropdownList>
+                    </Dropdown>
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="20 minutes ago">
                     This is a warning notification description.
@@ -208,21 +230,26 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Read success notification title"
                     srTitle="Success notification:"
                   >
-                    <DropdownDeprecated
-                      position={DropdownPosition.right}
-                      direction={DropdownDirection.up}
+                    <Dropdown
                       onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle
-                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-8', isOpen)}
-                          id="toggle-id-8"
-                        />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-8']}
-                      isPlain
-                      dropdownItems={dropdownItems}
+                      isOpen={isOpenMap['toggle-id-8'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-8"
-                    />
+                      popperProps={{ position: 'right' }}
+                      toggle={(toggleRef) => (
+                        <MenuToggle
+                          ref={toggleRef}
+                          id="toggle-id-8"
+                          variant="plain"
+                          onClick={() => this.onToggle('toggle-id-8')}
+                          isExpanded={isOpenMap['toggle-id-8'] || false}
+                        >
+                          <EllipsisVIcon aria-hidden="true" />
+                        </MenuToggle>
+                      )}
+                    >
+                      <DropdownList>{dropdownItems}</DropdownList>
+                    </Dropdown>
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="30 minutes ago">
                     This is a success notification description.
@@ -246,20 +273,26 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Unread info notification title"
                     srTitle="Info notification:"
                   >
-                    <DropdownDeprecated
-                      position={DropdownPosition.right}
+                    <Dropdown
                       onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle
-                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-9', isOpen)}
-                          id="toggle-id-9"
-                        />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-9']}
-                      isPlain
-                      dropdownItems={dropdownItems}
+                      isOpen={isOpenMap['toggle-id-9'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-9"
-                    />
+                      popperProps={{ position: 'right' }}
+                      toggle={(toggleRef) => (
+                        <MenuToggle
+                          ref={toggleRef}
+                          id="toggle-id-9"
+                          variant="plain"
+                          onClick={() => this.onToggle('toggle-id-9')}
+                          isExpanded={isOpenMap['toggle-id-9'] || false}
+                        >
+                          <EllipsisVIcon aria-hidden="true" />
+                        </MenuToggle>
+                      )}
+                    >
+                      <DropdownList>{dropdownItems}</DropdownList>
+                    </Dropdown>
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="5 minutes ago">
                     This is an info notification description.
@@ -271,20 +304,26 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
                     srTitle="Danger notification:"
                   >
-                    <DropdownDeprecated
-                      position={DropdownPosition.right}
+                    <Dropdown
                       onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle
-                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-10', isOpen)}
-                          id="toggle-id-10"
-                        />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-10']}
-                      isPlain
-                      dropdownItems={dropdownItems}
+                      isOpen={isOpenMap['toggle-id-10'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-10"
-                    />
+                      popperProps={{ position: 'right' }}
+                      toggle={(toggleRef) => (
+                        <MenuToggle
+                          ref={toggleRef}
+                          id="toggle-id-10"
+                          variant="plain"
+                          onClick={() => this.onToggle('toggle-id-10')}
+                          isExpanded={isOpenMap['toggle-id-10'] || false}
+                        >
+                          <EllipsisVIcon aria-hidden="true" />
+                        </MenuToggle>
+                      )}
+                    >
+                      <DropdownList>{dropdownItems}</DropdownList>
+                    </Dropdown>
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="10 minutes ago">
                     This is a danger notification description. This is a long description to show how the title will
@@ -297,20 +336,26 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Read warning notification title"
                     srTitle="Warning notification:"
                   >
-                    <DropdownDeprecated
-                      position={DropdownPosition.right}
+                    <Dropdown
                       onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle
-                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-11', isOpen)}
-                          id="toggle-id-11"
-                        />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-11']}
-                      isPlain
-                      dropdownItems={dropdownItems}
+                      isOpen={isOpenMap['toggle-id-11'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-11"
-                    />
+                      popperProps={{ position: 'right' }}
+                      toggle={(toggleRef) => (
+                        <MenuToggle
+                          ref={toggleRef}
+                          id="toggle-id-11"
+                          variant="plain"
+                          onClick={() => this.onToggle('toggle-id-11')}
+                          isExpanded={isOpenMap['toggle-id-11'] || false}
+                        >
+                          <EllipsisVIcon aria-hidden="true" />
+                        </MenuToggle>
+                      )}
+                    >
+                      <DropdownList>{dropdownItems}</DropdownList>
+                    </Dropdown>
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="20 minutes ago">
                     This is a warning notification description.
@@ -322,21 +367,26 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     title="Read success notification title"
                     srTitle="Success notification:"
                   >
-                    <DropdownDeprecated
-                      position={DropdownPosition.right}
-                      direction={DropdownDirection.up}
+                    <Dropdown
                       onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle
-                          onToggle={(_event: any, isOpen: boolean) => this.onToggle('toggle-id-12', isOpen)}
-                          id="toggle-id-12"
-                        />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-12']}
-                      isPlain
-                      dropdownItems={dropdownItems}
+                      isOpen={isOpenMap['toggle-id-12'] || false}
+                      onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
                       id="notification-12"
-                    />
+                      popperProps={{ position: 'right' }}
+                      toggle={(toggleRef) => (
+                        <MenuToggle
+                          ref={toggleRef}
+                          id="toggle-id-12"
+                          variant="plain"
+                          onClick={() => this.onToggle('toggle-id-12')}
+                          isExpanded={isOpenMap['toggle-id-12'] || false}
+                        >
+                          <EllipsisVIcon aria-hidden="true" />
+                        </MenuToggle>
+                      )}
+                    >
+                      <DropdownList>{dropdownItems}</DropdownList>
+                    </Dropdown>
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="30 minutes ago">
                     This is a success notification description.

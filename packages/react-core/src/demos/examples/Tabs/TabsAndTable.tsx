@@ -49,7 +49,6 @@ import {
   ActionsColumn,
   CustomActionsToggleProps
 } from '@patternfly/react-table';
-import { KebabToggle } from '@patternfly/react-core/deprecated';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -136,14 +135,18 @@ export const TablesAndTabs = () => {
     }
   ];
 
-  const customActionsToggle = (props: CustomActionsToggleProps) => (
-    <KebabToggle
+  const customActionsToggle = (props: CustomActionsToggleProps, toggleName: string) => (
+    <MenuToggle
       isDisabled={props.isDisabled}
-      onToggle={(event: any) => {
+      onClick={(event: any) => {
         props.onToggle(event);
         event.stopPropagation();
       }}
-    />
+      variant="plain"
+      aria-label={`${toggleName} actions`}
+    >
+      <EllipsisVIcon />
+    </MenuToggle>
   );
 
   const toolbar = (
@@ -262,7 +265,10 @@ export const TablesAndTabs = () => {
             </Td>
             <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
             <Td key={`${rowIndex}_5`}>
-              <ActionsColumn items={defaultActions} actionsToggle={customActionsToggle} />
+              <ActionsColumn
+                items={defaultActions}
+                actionsToggle={(props: CustomActionsToggleProps) => customActionsToggle(props, repo.name)}
+              />
             </Td>
           </Tr>
         ))}

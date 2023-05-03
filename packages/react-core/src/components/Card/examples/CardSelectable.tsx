@@ -1,11 +1,17 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardBody } from '@patternfly/react-core';
 import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownSeparator,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
+  Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  MenuToggle,
+  MenuToggleElement,
+  Divider
+} from '@patternfly/react-core';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const CardSelectable: React.FunctionComponent = () => {
   const [selected, setSelected] = React.useState<string>('');
@@ -32,47 +38,57 @@ export const CardSelectable: React.FunctionComponent = () => {
     setSelected(newSelected);
   };
 
-  const onToggle = (
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
-    isOpen: boolean
-  ) => {
-    event.stopPropagation();
-    setIsKebabOpen(isOpen);
+  const onToggle = (event: React.MouseEvent | undefined) => {
+    event?.stopPropagation();
+    setIsKebabOpen(!isKebabOpen);
   };
 
-  const onSelect = (event: React.SyntheticEvent<HTMLDivElement> | undefined) => {
+  const onSelect = (event: React.MouseEvent | undefined) => {
     event?.stopPropagation();
     setIsKebabOpen(false);
   };
 
-  const dropdownItems = [
-    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="action" component="button">
-      Action
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="disabled link" isDisabled>
-      Disabled Link
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="disabled action" isDisabled component="button">
-      Disabled Action
-    </DropdownItemDeprecated>,
-    <DropdownSeparator key="separator" />,
-    <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="separated action" component="button">
-      Separated Action
-    </DropdownItemDeprecated>
-  ];
+  const dropdownItems = (
+    <>
+      <DropdownItem key="action">Action</DropdownItem>
+      {/* Prevent default onClick functionality for example purposes */}
+      <DropdownItem key="link" to="#" onClick={(event: any) => event.preventDefault()}>
+        Link
+      </DropdownItem>
+      <DropdownItem key="disabled action" isDisabled>
+        Disabled Action
+      </DropdownItem>
+      <DropdownItem key="disabled link" isDisabled to="#" onClick={(event: any) => event.preventDefault()}>
+        Disabled Link
+      </DropdownItem>
+      <Divider component="li" key="separator" />
+      <DropdownItem key="separated action">Separated Action</DropdownItem>
+      <DropdownItem key="separated link" to="#" onClick={(event: any) => event.preventDefault()}>
+        Separated Link
+      </DropdownItem>
+    </>
+  );
 
   const headerActions = (
     <>
-      <DropdownDeprecated
+      <Dropdown
         onSelect={onSelect}
-        toggle={<KebabToggle onToggle={onToggle} />}
+        toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          <MenuToggle
+            ref={toggleRef}
+            isExpanded={isKebabOpen}
+            onClick={onToggle}
+            variant="plain"
+            aria-label="Card selectable example kebab toggle"
+          >
+            <EllipsisVIcon aria-hidden="true" />
+          </MenuToggle>
+        )}
         isOpen={isKebabOpen}
-        isPlain
-        dropdownItems={dropdownItems}
-        position={'right'}
-      />
+        onOpenChange={(isOpen: boolean) => setIsKebabOpen(isOpen)}
+      >
+        <DropdownList>{dropdownItems}</DropdownList>
+      </Dropdown>
     </>
   );
 

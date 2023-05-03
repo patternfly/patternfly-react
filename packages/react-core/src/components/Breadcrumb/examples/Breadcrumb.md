@@ -6,12 +6,8 @@ propComponents: ['Breadcrumb', 'BreadcrumbItem', 'BreadcrumbHeading']
 ouia: true
 ---
 
-import {
-Dropdown as DropdownDeprecated,
-BadgeToggle,
-DropdownItem as DropdownItemDeprecated
-} from '@patternfly/react-core/deprecated';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 ## Examples
 

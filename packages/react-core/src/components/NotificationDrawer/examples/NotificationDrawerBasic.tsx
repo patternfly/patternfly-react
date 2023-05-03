@@ -6,22 +6,20 @@ import {
   NotificationDrawerList,
   NotificationDrawerListItem,
   NotificationDrawerListItemBody,
-  NotificationDrawerListItemHeader
+  NotificationDrawerListItemHeader,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  MenuToggle,
+  MenuToggleElement
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownPosition,
-  DropdownDirection,
-  DropdownSeparator,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const NotificationDrawerBasic: React.FunctionComponent = () => {
   const [isOpenMap, setIsOpenMap] = React.useState(new Array(7).fill(false));
 
-  const onToggle = (index: number) => (_event: any, isOpen: boolean) => {
-    const newState = [...isOpenMap.slice(0, index), isOpen, ...isOpenMap.slice(index + 1)];
+  const onToggle = (index: number) => () => {
+    const newState = [...isOpenMap.slice(0, index), !isOpenMap[index], ...isOpenMap.slice(index + 1)];
     setIsOpenMap(newState);
   };
 
@@ -34,29 +32,45 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
   };
 
   const [isOpen0, isOpen1, isOpen2, isOpen3, isOpen4, isOpen5, isOpen6] = isOpenMap;
+  const dropdownItems = (
+    <>
+      <DropdownItem>Action</DropdownItem>
+      <DropdownItem
+        to="#default-link2"
+        // Prevent the default onClick functionality for example purposes
+        onClick={(ev: any) => ev.preventDefault()}
+      >
+        Link
+      </DropdownItem>
+      <DropdownItem isDisabled>Disabled Action</DropdownItem>
+      <DropdownItem isDisabled to="#default-link4">
+        Disabled Link
+      </DropdownItem>
+    </>
+  );
 
-  const dropdownItems = [
-    <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="action" component="button">
-      Action
-    </DropdownItemDeprecated>,
-    <DropdownSeparator key="separator" />,
-    <DropdownItemDeprecated key="disabled link" isDisabled>
-      Disabled link
-    </DropdownItemDeprecated>
-  ];
   return (
     <NotificationDrawer>
-      <NotificationDrawerHeader count={3} onClose={(event) => onDrawerClose(event)}>
-        <DropdownDeprecated
+      <NotificationDrawerHeader count={3} onClose={onDrawerClose}>
+        <Dropdown
           onSelect={onSelect}
-          toggle={<KebabToggle onToggle={onToggle(0)} id="basic-kebab-toggle" />}
           isOpen={isOpen0}
-          isPlain
-          dropdownItems={dropdownItems}
-          id="basic-notification-0"
-          position={DropdownPosition.right}
-        />
+          onOpenChange={() => setIsOpenMap(new Array(7).fill(false))}
+          popperProps={{ position: 'right' }}
+          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            <MenuToggle
+              ref={toggleRef}
+              isExpanded={isOpen0}
+              onClick={onToggle(0)}
+              variant="plain"
+              aria-label={`Basic example header kebab toggle`}
+            >
+              <EllipsisVIcon aria-hidden="true" />
+            </MenuToggle>
+          )}
+        >
+          <DropdownList>{dropdownItems}</DropdownList>
+        </Dropdown>
       </NotificationDrawerHeader>
       <NotificationDrawerBody>
         <NotificationDrawerList aria-label="Notifications in the basic example">
@@ -66,15 +80,25 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               title="Unread info notification title"
               srTitle="Info notification:"
             >
-              <DropdownDeprecated
-                position={DropdownPosition.right}
+              <Dropdown
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(1)} id="basic-toggle-id-1" />}
                 isOpen={isOpen1}
-                isPlain
-                dropdownItems={dropdownItems}
-                id="basic-notification-1"
-              />
+                onOpenChange={() => setIsOpenMap(new Array(7).fill(false))}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isOpen0}
+                    onClick={onToggle(1)}
+                    variant="plain"
+                    aria-label={`Basic example notification 1 kebab toggle`}
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>{dropdownItems}</DropdownList>
+              </Dropdown>
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="5 minutes ago">
               This is an info notification description.
@@ -86,15 +110,25 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
               srTitle="Danger notification:"
             >
-              <DropdownDeprecated
-                position={DropdownPosition.right}
+              <Dropdown
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(2)} id="basic-toggle-id-2" />}
                 isOpen={isOpen2}
-                isPlain
-                dropdownItems={dropdownItems}
-                id="basic-notification-2"
-              />
+                onOpenChange={() => setIsOpenMap(new Array(7).fill(false))}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isOpen2}
+                    onClick={onToggle(2)}
+                    variant="plain"
+                    aria-label={`Basic example notification 2 kebab toggle`}
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>{dropdownItems}</DropdownList>
+              </Dropdown>
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="10 minutes ago">
               This is a danger notification description. This is a long description to show how the title will wrap if
@@ -108,15 +142,25 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               title="Unread danger notification title. This is a long title to show how the title will be truncated if it is long and will be shown in a single line."
               srTitle="Danger notification:"
             >
-              <DropdownDeprecated
-                position={DropdownPosition.right}
+              <Dropdown
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(3)} id="basic-toggle-id-3" />}
                 isOpen={isOpen3}
-                isPlain
-                dropdownItems={dropdownItems}
-                id="basic-notification-3"
-              />
+                onOpenChange={() => setIsOpenMap(new Array(7).fill(false))}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isOpen3}
+                    onClick={onToggle(3)}
+                    variant="plain"
+                    aria-label={`Basic example notification 3 kebab toggle`}
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>{dropdownItems}</DropdownList>
+              </Dropdown>
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="10 minutes ago">
               This is a danger notification description. This is a long description to show how the title will wrap if
@@ -129,15 +173,25 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               title="Read warning notification title"
               srTitle="Warning notification:"
             >
-              <DropdownDeprecated
-                position={DropdownPosition.right}
+              <Dropdown
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(4)} id="basic-toggle-id-4" />}
                 isOpen={isOpen4}
-                isPlain
-                dropdownItems={dropdownItems}
-                id="basic-notification-4"
-              />
+                onOpenChange={() => setIsOpenMap(new Array(7).fill(false))}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isOpen4}
+                    onClick={onToggle(4)}
+                    variant="plain"
+                    aria-label={`Basic example notification 4 kebab toggle`}
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>{dropdownItems}</DropdownList>
+              </Dropdown>
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="20 minutes ago">
               This is a warning notification description.
@@ -149,16 +203,25 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               title="Read success notification title"
               srTitle="Success notification:"
             >
-              <DropdownDeprecated
-                position={DropdownPosition.right}
-                direction={DropdownDirection.up}
+              <Dropdown
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(5)} id="basic-toggle-id-5" />}
                 isOpen={isOpen5}
-                isPlain
-                dropdownItems={dropdownItems}
-                id="basic-notification-5"
-              />
+                onOpenChange={() => setIsOpenMap(new Array(7).fill(false))}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isOpen5}
+                    onClick={onToggle(5)}
+                    variant="plain"
+                    aria-label={`Basic example notification 5 kebab toggle`}
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>{dropdownItems}</DropdownList>
+              </Dropdown>
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="30 minutes ago">
               This is a success notification description.
@@ -166,15 +229,25 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
           </NotificationDrawerListItem>
           <NotificationDrawerListItem isRead>
             <NotificationDrawerListItemHeader title="Read (default) notification title" srTitle="notification:">
-              <DropdownDeprecated
-                position={DropdownPosition.right}
+              <Dropdown
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(6)} id="basic-toggle-id-6" />}
                 isOpen={isOpen6}
-                isPlain
-                dropdownItems={dropdownItems}
-                id="basic-notification-6"
-              />
+                onOpenChange={() => setIsOpenMap(new Array(7).fill(false))}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isOpen6}
+                    onClick={onToggle(6)}
+                    variant="plain"
+                    aria-label={`Basic example notification 6 kebab toggle`}
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>{dropdownItems}</DropdownList>
+              </Dropdown>
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="35 minutes ago">
               This is a default notification description.

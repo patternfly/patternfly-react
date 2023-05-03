@@ -12,23 +12,20 @@ import {
   ToolbarGroup,
   ToolbarProps,
   InputGroup,
-  TextInput
+  TextInput,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  MenuToggle,
+  Divider
 } from '@patternfly/react-core';
-import {
-  Select,
-  SelectOption,
-  SelectOptionObject,
-  SelectVariant,
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  DropdownSeparator,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
+import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core/deprecated';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 interface Filter {
   risk: string[];
@@ -151,10 +148,10 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     });
   };
 
-  onKebabToggle = (_event: any, isOpen: boolean) => {
-    this.setState({
-      kebabIsOpen: isOpen
-    });
+  onKebabToggle = () => {
+    this.setState((prevState) => ({
+      kebabIsOpen: !prevState.kebabIsOpen
+    }));
   };
 
   componentDidMount() {
@@ -231,21 +228,17 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     );
 
     const dropdownItems = [
-      <DropdownItemDeprecated key="link">Link</DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="action" component="button">
-        Action
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="disabled link" isDisabled>
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action">Action</DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="disabled action" isDisabled component="button">
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled>
         Disabled Action
-      </DropdownItemDeprecated>,
-      <DropdownSeparator key="separator" />,
-      <DropdownItemDeprecated key="separated link">Separated Link</DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="separated action" component="button">
-        Separated Action
-      </DropdownItemDeprecated>
+      </DropdownItem>,
+      <Divider component="li" key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action">Separated Action</DropdownItem>
     ];
 
     const widths = {
@@ -286,12 +279,17 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
           </ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem>
-          <DropdownDeprecated
-            toggle={<KebabToggle onToggle={this.onKebabToggle} />}
+          <Dropdown
             isOpen={kebabIsOpen}
-            isPlain
-            dropdownItems={dropdownItems}
-          />
+            onOpenChange={(isOpen) => this.setState({ kebabIsOpen: isOpen })}
+            toggle={(toggleRef) => (
+              <MenuToggle variant="plain" ref={toggleRef} onClick={this.onKebabToggle} isExpanded={kebabIsOpen}>
+                <EllipsisVIcon />
+              </MenuToggle>
+            )}
+          >
+            <DropdownList>{dropdownItems}</DropdownList>
+          </Dropdown>
         </ToolbarItem>
       </React.Fragment>
     );

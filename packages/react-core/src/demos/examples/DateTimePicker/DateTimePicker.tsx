@@ -1,10 +1,16 @@
 import React from 'react';
-import { CalendarMonth, InputGroup, TextInput, Button, Popover } from '@patternfly/react-core';
 import {
-  Dropdown as DropdownDeprecated,
-  DropdownToggle,
-  DropdownItem as DropdownItemDeprecated
-} from '@patternfly/react-core/deprecated';
+  CalendarMonth,
+  InputGroup,
+  TextInput,
+  Button,
+  Popover,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  MenuToggle,
+  MenuToggleElement
+} from '@patternfly/react-core';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 
@@ -23,7 +29,7 @@ export const DateTimePicker: React.FunctionComponent = () => {
     setIsTimeOpen(false);
   };
 
-  const onToggleTime = (_event: any, _value: boolean) => {
+  const onToggleTime = () => {
     setIsTimeOpen(!isTimeOpen);
     setIsCalendarOpen(false);
   };
@@ -38,35 +44,32 @@ export const DateTimePicker: React.FunctionComponent = () => {
     }
   };
 
-  const onSelectTime = (ev: React.SyntheticEvent<HTMLDivElement>) => {
-    setValueTime(ev.currentTarget.textContent);
+  const onSelectTime = (ev: React.MouseEvent<Element, MouseEvent> | undefined) => {
+    setValueTime(ev?.currentTarget?.textContent as string);
     setIsTimeOpen(!isTimeOpen);
   };
 
-  const timeOptions = times.map((time) => (
-    <DropdownItemDeprecated key={time} component="button" value={`${time}:00`}>
-      {`${time}:00`}
-    </DropdownItemDeprecated>
-  ));
+  const timeOptions = times.map((time) => <DropdownItem key={time}>{`${time}:00`}</DropdownItem>);
 
   const calendar = <CalendarMonth date={new Date(valueDate)} onChange={onSelectCalendar} />;
 
   const time = (
-    <DropdownDeprecated
+    <Dropdown
       onSelect={onSelectTime}
-      toggle={
-        <DropdownToggle
-          aria-label="Toggle the time picker menu"
-          toggleIndicator={null}
-          onToggle={onToggleTime}
-          style={{ padding: '6px 16px' }}
-        >
-          <OutlinedClockIcon />
-        </DropdownToggle>
-      }
       isOpen={isTimeOpen}
-      dropdownItems={timeOptions}
-    />
+      onOpenChange={(isOpen: boolean) => setIsTimeOpen(isOpen)}
+      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+        <MenuToggle
+          ref={toggleRef}
+          onClick={onToggleTime}
+          isExpanded={isTimeOpen}
+          aria-label="Time picker"
+          icon={<OutlinedClockIcon aria-hidden="true" />}
+        />
+      )}
+    >
+      <DropdownList>{timeOptions}</DropdownList>
+    </Dropdown>
   );
 
   const calendarButton = (

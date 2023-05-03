@@ -67,16 +67,46 @@ import { MenuToggle, Badge } from '@patternfly/react-core';
 
 To add a recognizable icon to a menu toggle, use the `icon` property. The following example adds a `CogIcon` to the  toggle.
 
+For most basic icons, it is recommended to wrap it inside our [icon component](/components/icon).
+
 ```ts
 import React from 'react';
-import { MenuToggle } from '@patternfly/react-core';
+import { MenuToggle, Icon } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 <React.Fragment>
-  <MenuToggle icon={<CogIcon />} variant="primary">Icon</MenuToggle>{' '}
-  <MenuToggle icon={<CogIcon />} variant="secondary">Icon</MenuToggle>{' '}
-  <MenuToggle icon={<CogIcon />} variant="secondary" isDisabled>Icon</MenuToggle>
-</React.Fragment>
+  <MenuToggle
+    icon={
+      <Icon>
+        <CogIcon />
+      </Icon>
+    }
+    variant="primary"
+  >
+    Icon
+  </MenuToggle>{' '}
+  <MenuToggle
+    icon={
+      <Icon>
+        <CogIcon />
+      </Icon>
+    }
+    variant="secondary"
+  >
+    Icon
+  </MenuToggle>{' '}
+  <MenuToggle
+    icon={
+      <Icon>
+        <CogIcon />
+      </Icon>
+    }
+    variant="secondary"
+    isDisabled
+  >
+    Icon
+  </MenuToggle>
+</React.Fragment>;
 ```
 
 ### With avatar and text

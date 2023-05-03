@@ -12,7 +12,8 @@ import { DataListItemCells } from '../DataListItemCells';
 import { DataListItemRow } from '../DataListItemRow';
 import { DataListContent } from '../DataListContent';
 import { Button } from '../../Button';
-import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../../../deprecated/components/Dropdown';
+import { Dropdown, DropdownList, DropdownItem } from '../../Dropdown';
+import { MenuToggle } from '../../MenuToggle';
 
 describe('DataList', () => {
   test('List default', () => {
@@ -276,19 +277,17 @@ describe('DataList', () => {
   test('DataListAction dropdown', () => {
     const { asFragment } = render(
       <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action" isPlainButtonAction>
-        <Dropdown
-          isPlain
-          position={DropdownPosition.right}
-          toggle={<KebabToggle />}
-          dropdownItems={[
-            <DropdownItem component="button" onClick={jest.fn()} key="action-1">
+        <Dropdown toggle={(toggleRef) => <MenuToggle ref={toggleRef} />}>
+          <DropdownList>
+            <DropdownItem onClick={jest.fn()} key="action-1">
               action-1
-            </DropdownItem>,
-            <DropdownItem component="button" onClick={jest.fn()} key="action-2">
+            </DropdownItem>
+            ,
+            <DropdownItem onClick={jest.fn()} key="action-2">
               action-2
             </DropdownItem>
-          ]}
-        />
+          </DropdownList>
+        </Dropdown>
       </DataListAction>
     );
     expect(asFragment()).toMatchSnapshot();

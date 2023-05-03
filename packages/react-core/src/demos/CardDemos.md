@@ -3,7 +3,7 @@ id: Card
 section: components
 ---
 
-import { Dropdown as DropdownDeprecated, DropdownItem as DropdownItemDeprecated, KebabToggle } from '@patternfly/react-core/deprecated';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
@@ -36,16 +36,16 @@ import {
   Flex,
   List,
   ListItem,
-  Button
+  Button,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  MenuToggle
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  KebabToggle
-} from '@patternfly/react-core/deprecated';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class CardGridDemo extends React.Component {
   constructor(props) {
@@ -58,45 +58,51 @@ class CardGridDemo extends React.Component {
       });
     };
 
-    this.onActionToggle = (_event, isDropdownOpen) => {
-      this.setState({
-        isDropdownOpen
-      });
+    this.onActionToggle = () => {
+      this.setState((prevState) => ({
+        isDropdownOpen: !prevState.isDropdownOpen
+      }));
     };
 
-    this.onActionSelect = (event) => {
+    this.onActionSelect = () => {
       this.setState({
-        isDropdownOpen: !this.state.isDropdownOpen
+        isDropdownOpen: false
       });
     };
   }
 
   render() {
     const { isCardExpanded, isDropdownOpen } = this.state;
-    const dropdownItems = [
-      <DropdownItemDeprecated key="action1" component="button">
-        Action 1
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="action2" component="button">
-        Action 2
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="disabled action3" isDisabled component="button">
-        Disabled Action 3
-      </DropdownItemDeprecated>,
-      <DropdownItemDeprecated key="action4" component="button">
-        Action 4
-      </DropdownItemDeprecated>
-    ];
-
+    const dropdownItems = (
+      <>
+        <DropdownItem key="action1">Action 1</DropdownItem>
+        <DropdownItem key="action2">Action 2</DropdownItem>
+        <DropdownItem key="disabled action3" isDisabled>
+          Disabled Action 3
+        </DropdownItem>
+        <DropdownItem key="action4">Action 4</DropdownItem>
+      </>
+    );
     const headerActions = (
-      <DropdownDeprecated
+      <Dropdown
         onSelect={this.onActionSelect}
-        toggle={<KebabToggle onToggle={this.onActionToggle} />}
         isOpen={isDropdownOpen}
-        isPlain
-        dropdownItems={dropdownItems}
-        position="right"
-      />
+        popperProps={{ position: 'right' }}
+        onOpenChange={(isOpen) => this.setState({ isDropdownOpen: isOpen })}
+        toggle={(toggleRef) => (
+          <MenuToggle
+            ref={toggleRef}
+            isExpanded={isDropdownOpen}
+            onClick={this.onActionToggle}
+            variant="plain"
+            aria-label="Horizontal card grid demo kebab toggle"
+          >
+            <EllipsisVIcon aria-hidden="true" />
+          </MenuToggle>
+        )}
+      >
+        <DropdownList>{dropdownItems}</DropdownList>
+      </Dropdown>
     );
 
     return (

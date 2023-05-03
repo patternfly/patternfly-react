@@ -25,15 +25,14 @@ import {
   AlertGroup,
   AlertActionCloseButton,
   ToolbarItem,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  MenuToggle,
+  MenuToggleElement
 } from '@patternfly/react-core';
-import {
-  Dropdown as DropdownDeprecated,
-  DropdownItem as DropdownItemDeprecated,
-  KebabToggle,
-  DropdownPosition
-} from '@patternfly/react-core/deprecated';
-
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '../DashboardWrapper';
 import DashboardHeader from '../DashboardHeader';
 
@@ -146,8 +145,8 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
     setDrawerExpanded(!isDrawerExpanded);
   };
 
-  const onDropdownToggle = (id: React.Key, isActive: boolean) => {
-    if (isActive) {
+  const onDropdownToggle = (id: React.Key) => {
+    if (id && openDropdownKey !== id) {
       setOpenDropdownKey(id);
       return;
     }
@@ -218,46 +217,53 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
     </ToolbarItem>
   );
 
-  const notificationDrawerActions = [
-    <DropdownItemDeprecated key="markAllRead" onClick={markAllNotificationsRead} component="button">
-      Mark all read
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="clearAll" onClick={removeAllNotifications} component="button">
-      Clear all
-    </DropdownItemDeprecated>
-  ];
-
+  const notificationDrawerActions = (
+    <>
+      <DropdownItem key="markAllRead" onClick={markAllNotificationsRead}>
+        Mark all read
+      </DropdownItem>
+      <DropdownItem key="clearAll" onClick={removeAllNotifications}>
+        Clear all
+      </DropdownItem>
+    </>
+  );
   const notificationDrawerDropdownItems = (key: React.Key) => [
-    <DropdownItemDeprecated key="markRead" component="button" onClick={() => markNotificationRead(key)}>
+    <DropdownItem key={`markRead-${key}`} onClick={() => markNotificationRead(key)}>
       Mark as read
-    </DropdownItemDeprecated>,
-    <DropdownItemDeprecated key="action" component="button" onClick={() => removeNotification(key)}>
+    </DropdownItem>,
+    <DropdownItem key={`clear-${key}`} onClick={() => removeNotification(key)}>
       Clear
-    </DropdownItemDeprecated>
+    </DropdownItem>
   ];
 
   const notificationDrawer = (
     <NotificationDrawer>
       <NotificationDrawerHeader count={getUnreadNotificationsNumber()} onClose={(_event) => setDrawerExpanded(false)}>
-        <DropdownDeprecated
-          onSelect={onDropdownSelect}
-          toggle={
-            <KebabToggle
-              onToggle={(_event: any, isActive: boolean) => onDropdownToggle('dropdown-toggle-id-0', isActive)}
-              id="dropdown-toggle-id-0"
-            />
-          }
-          isOpen={openDropdownKey === 'dropdown-toggle-id-0'}
-          isPlain
-          dropdownItems={notificationDrawerActions}
+        <Dropdown
           id="notification-drawer-0"
-          position={DropdownPosition.right}
-        />
+          isOpen={openDropdownKey === 'dropdown-toggle-id-0'}
+          onSelect={onDropdownSelect}
+          popperProps={{ position: 'right' }}
+          onOpenChange={(isOpen: boolean) => !isOpen && setOpenDropdownKey(null)}
+          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            <MenuToggle
+              ref={toggleRef}
+              isExpanded={openDropdownKey === 'dropdown-toggle-id-0'}
+              variant="plain"
+              onClick={() => onDropdownToggle('dropdown-toggle-id-0')}
+              aria-label="Notification drawer actions"
+            >
+              <EllipsisVIcon aria-hidden="true" />
+            </MenuToggle>
+          )}
+        >
+          <DropdownList>{notificationDrawerActions}</DropdownList>
+        </Dropdown>
       </NotificationDrawerHeader>
       <NotificationDrawerBody>
         {notifications.length !== 0 && (
           <NotificationDrawerList>
-            {notifications.map(({ key, variant, title, srTitle, description, timestamp }) => (
+            {notifications.map(({ key, variant, title, srTitle, description, timestamp }, index) => (
               <NotificationDrawerListItem
                 key={key}
                 variant={variant}
@@ -265,20 +271,26 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
                 onClick={() => markNotificationRead(key)}
               >
                 <NotificationDrawerListItemHeader variant={variant} title={title} srTitle={srTitle}>
-                  <DropdownDeprecated
-                    position={DropdownPosition.right}
-                    onSelect={onDropdownSelect}
-                    toggle={
-                      <KebabToggle
-                        onToggle={(_event: any, isActive: boolean) => onDropdownToggle(key, isActive)}
-                        id={key.toString()}
-                      />
-                    }
-                    isOpen={openDropdownKey === key}
-                    isPlain
-                    dropdownItems={notificationDrawerDropdownItems(key)}
+                  <Dropdown
                     id={key.toString()}
-                  />
+                    isOpen={openDropdownKey === key}
+                    onSelect={onDropdownSelect}
+                    popperProps={{ position: 'right' }}
+                    onOpenChange={(isOpen: boolean) => !isOpen && setOpenDropdownKey(null)}
+                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                      <MenuToggle
+                        ref={toggleRef}
+                        isExpanded={openDropdownKey === key}
+                        variant="plain"
+                        onClick={() => onDropdownToggle(key)}
+                        aria-label={`Notification ${index + 1} actions`}
+                      >
+                        <EllipsisVIcon aria-hidden="true" />
+                      </MenuToggle>
+                    )}
+                  >
+                    <DropdownList>{notificationDrawerDropdownItems(key)}</DropdownList>
+                  </Dropdown>
                 </NotificationDrawerListItemHeader>
                 <NotificationDrawerListItemBody timestamp={timestamp}> {description} </NotificationDrawerListItemBody>
               </NotificationDrawerListItem>
