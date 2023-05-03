@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.35 (2023-05-03)
+
+### Bug Fixes
+
+- **Slider:** added event param to onChange ([#8970](https://github.com/patternfly/patternfly-react/issues/8970)) ([222e8f9](https://github.com/patternfly/patternfly-react/commit/222e8f9241008f1cc65639cbfdc5f47a5615af76))
+
 # [5.0.0-alpha.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.33...@patternfly/react-integration@5.0.0-alpha.34) (2023-05-02)
 
 **Note:** Version bump only for package @patternfly/react-integration
