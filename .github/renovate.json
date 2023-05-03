@@ -21,7 +21,6 @@
         "@typescript-eslint/eslint-plugin",
         "@typescript-eslint/parser",
         "eslint",
-<<<<<<< HEAD
         "eslint-plugin-prettier",
         "eslint-plugin-react",
         "focus-trap",
@@ -36,14 +35,8 @@
         "rollup-plugin-terser",
         "shx",
         "surge",
-        "ts-patch"
-=======
-        "fs-extra",
-        "lint-staged",
-        "prettier",
-        "rollup",
+        "ts-patch",
         "shx"
->>>>>>> chore(deps): update minor deps in packages
       ],
       "enabled": false
     },
