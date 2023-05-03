@@ -1,4 +1,4 @@
-import { Slider } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export interface SliderDemoState {
@@ -54,16 +54,16 @@ export class SliderDemo extends Component<SliderDemoState> {
     { value: 100, label: '100%' }
   ];
 
-  onChangeDiscreteNoLInearMinMax = (value: number) => {
+  onChangeDiscreteNoLInearMinMax = (_event: SliderOnChangeEvent, value: number) => {
     this.setState({ valueDiscreteMinMax: value });
   };
 
-  onChangeDiscrete = (value: number, inputValue: number) => {
+  onChangeDiscrete = (_event: SliderOnChangeEvent, value: number, inputValue: number) => {
     let newValue;
     let newInputValue;
 
     if (!inputValue) {
-      const step = this.stepsDiscrete.find(step => step.value === value);
+      const step = this.stepsDiscrete.find((step) => step.value === value);
       newInputValue = step ? step.label : 0;
       newInputValue = Number(newInputValue);
       newValue = value;
@@ -73,7 +73,7 @@ export class SliderDemo extends Component<SliderDemoState> {
         newValue = Number(this.stepsDiscrete[this.stepsDiscrete.length - 1].value);
         newInputValue = maxValue;
       } else {
-        const stepIndex = this.stepsDiscrete.findIndex(step => Number(step.label) >= inputValue);
+        const stepIndex = this.stepsDiscrete.findIndex((step) => Number(step.label) >= inputValue);
         if (Number(this.stepsDiscrete[stepIndex].label) === inputValue) {
           newValue = this.stepsDiscrete[stepIndex].value;
         } else {
@@ -96,12 +96,12 @@ export class SliderDemo extends Component<SliderDemoState> {
     });
   };
 
-  onChangePercent = (value: number, inputValue: number) => {
+  onChangePercent = (_event: SliderOnChangeEvent, value: number, inputValue: number) => {
     let newValue;
     let newInputValue;
 
     if (!inputValue) {
-      const step = this.stepsPercent.find(step => step.value === value);
+      const step = this.stepsPercent.find((step) => step.value === value);
       newInputValue = step ? step.label.slice(0, -1) : 0;
       newInputValue = Number(newInputValue);
       newValue = value;
@@ -111,7 +111,7 @@ export class SliderDemo extends Component<SliderDemoState> {
         newValue = Number(this.stepsPercent[this.stepsPercent.length - 1].value);
         newInputValue = maxValue;
       } else {
-        const stepIndex = this.stepsPercent.findIndex(step => Number(step.label.slice(0, -1)) >= inputValue);
+        const stepIndex = this.stepsPercent.findIndex((step) => Number(step.label.slice(0, -1)) >= inputValue);
         if (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) === inputValue) {
           newValue = this.stepsPercent[stepIndex].value;
         } else {
@@ -135,7 +135,7 @@ export class SliderDemo extends Component<SliderDemoState> {
     });
   };
 
-  onChangeContinuous = (value: number) => {
+  onChangeContinuous = (_event: SliderOnChangeEvent, value: number) => {
     const newValue = Math.floor(value);
     this.setState({
       inputValueContinuous: newValue,

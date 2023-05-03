@@ -19,6 +19,13 @@ export interface SliderStepObject {
   value: number;
 }
 
+export type SliderOnChangeEvent =
+  | React.MouseEvent
+  | React.KeyboardEvent
+  | React.FormEvent<HTMLInputElement>
+  | React.TouchEvent
+  | React.FocusEvent<HTMLInputElement>;
+
 /** The main slider component. */
 export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Flag indicating if the slider is discrete for custom steps. This will cause the slider
@@ -55,6 +62,7 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   min?: number;
   /** Value change callback. This is called when the slider value changes. */
   onChange?: (
+    event: SliderOnChangeEvent,
     value: number,
     inputValue?: number,
     setLocalInputValue?: React.Dispatch<React.SetStateAction<number>>
@@ -131,7 +139,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (event.key === 'Enter') {
       event.preventDefault();
       if (onChange) {
-        onChange(localValue, localInputValue, setLocalInputValue);
+        onChange(event, localValue, localInputValue, setLocalInputValue);
       }
     }
   };
@@ -144,9 +152,9 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     thumbRef.current.focus();
   };
 
-  const onBlur = () => {
+  const onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     if (onChange) {
-      onChange(localValue, localInputValue, setLocalInputValue);
+      onChange(event, localValue, localInputValue, setLocalInputValue);
     }
   };
 
@@ -196,7 +204,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       thumbRef.current.style.setProperty('--pf-c-slider--value', `${snapValue}%`);
       setValue(snapValue);
       if (onChange) {
-        onChange(snapValue);
+        onChange(e, snapValue);
       }
     }
   };
@@ -260,9 +268,9 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     // Call onchange callback
     if (onChange) {
       if (snapValue !== undefined) {
-        onChange(snapValue);
+        onChange(e, snapValue);
       } else {
-        onChange(newValue);
+        onChange(e, newValue);
       }
     }
   };
@@ -302,7 +310,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       thumbRef.current.style.setProperty('--pf-c-slider--value', `${newValue}%`);
       setValue(newValue);
       if (onChange) {
-        onChange(newValue);
+        onChange(e, newValue);
       }
     }
   };

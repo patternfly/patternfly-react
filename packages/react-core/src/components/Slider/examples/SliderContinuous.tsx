@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, Slider, Text, TextVariants } from '@patternfly/react-core';
+import { Checkbox, Slider, SliderOnChangeEvent, Text, TextVariants } from '@patternfly/react-core';
 
 export const SliderContinuous: React.FunctionComponent = () => {
   const [hasTooltipOverThumb, setHasTooltipOverThumb] = React.useState(false);
@@ -12,15 +12,19 @@ export const SliderContinuous: React.FunctionComponent = () => {
         id="thumb-has-tooltip"
         label="hasTooltipOverThumb"
         isChecked={hasTooltipOverThumb}
-        onChange={(_event, checked) => setHasTooltipOverThumb(checked)}
+        onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => setHasTooltipOverThumb(checked)}
         style={{ marginBottom: 20 }}
       />
       <Text component={TextVariants.h3}>Slider Value is: {value}</Text>
-      <Slider hasTooltipOverThumb={hasTooltipOverThumb} value={value} onChange={setValue} />
+      <Slider
+        hasTooltipOverThumb={hasTooltipOverThumb}
+        value={value}
+        onChange={(_event: SliderOnChangeEvent, value: number) => setValue(value)}
+      />
       <br />
       <Text component={TextVariants.h3}>Slider value is: {valueCustom}</Text>
       <Slider
-        onChange={setValueCustom}
+        onChange={(_event: SliderOnChangeEvent, value: number) => setValueCustom(value)}
         value={valueCustom}
         areCustomStepsContinuous
         hasTooltipOverThumb={hasTooltipOverThumb}

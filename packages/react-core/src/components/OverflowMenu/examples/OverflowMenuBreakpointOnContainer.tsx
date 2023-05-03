@@ -8,6 +8,7 @@ import {
   OverflowMenuDropdownItem,
   MenuToggle,
   Slider,
+  SliderOnChangeEvent,
   Dropdown,
   DropdownList
 } from '@patternfly/react-core';
@@ -26,7 +27,7 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
     setIsOpen(!isOpen);
   };
 
-  const onChange = (value: number) => {
+  const onChange = (_event: SliderOnChangeEvent, value: number) => {
     setContainerWidth(value);
   };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
 
 export const SliderValueInput: React.FunctionComponent = () => {
   const [valueDiscrete, setValueDiscrete] = React.useState(62.5);
@@ -29,6 +29,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
   ];
 
   const onChangeDiscrete = (
+    _event: SliderOnChangeEvent,
     value: number,
     inputValue: number,
     setLocalInputValue: React.Dispatch<React.SetStateAction<number>>
@@ -37,7 +38,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
     let newInputValue;
 
     if (inputValue === undefined) {
-      const step = stepsDiscrete.find(step => step.value === value);
+      const step = stepsDiscrete.find((step) => step.value === value);
       newInputValue = step ? step.label : 0;
       newInputValue = Number(newInputValue);
       newValue = value;
@@ -54,7 +55,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
           newInputValue = minValue;
           setLocalInputValue(minValue);
         } else {
-          const stepIndex = stepsDiscrete.findIndex(step => Number(step.label) >= inputValue);
+          const stepIndex = stepsDiscrete.findIndex((step) => Number(step.label) >= inputValue);
           if (Number(stepsDiscrete[stepIndex].label) === inputValue) {
             newValue = stepsDiscrete[stepIndex].value;
             newInputValue = inputValue;
@@ -77,6 +78,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
   };
 
   const onChangePercent = (
+    _event: SliderOnChangeEvent,
     value: number,
     inputValue: number,
     setLocalInputValue: React.Dispatch<React.SetStateAction<number>>
@@ -85,7 +87,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
     let newInputValue;
 
     if (inputValue === undefined) {
-      const step = stepsPercent.find(step => step.value === value);
+      const step = stepsPercent.find((step) => step.value === value);
       newInputValue = step ? step.label.slice(0, -1) : 0;
       newInputValue = Number(newInputValue);
       newValue = value;
@@ -101,7 +103,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
           newValue = minValue;
           setLocalInputValue(minValue);
         } else {
-          const stepIndex = stepsPercent.findIndex(step => Number(step.label.slice(0, -1)) >= inputValue);
+          const stepIndex = stepsPercent.findIndex((step) => Number(step.label.slice(0, -1)) >= inputValue);
           if (Number(stepsPercent[stepIndex].label.slice(0, -1)) === inputValue) {
             newValue = stepsPercent[stepIndex].value;
             newInputValue = inputValue;
@@ -127,6 +129,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
   };
 
   const onChangeContinuous = (
+    _event: SliderOnChangeEvent,
     value: number,
     inputValue: number,
     setLocalInputValue: React.Dispatch<React.SetStateAction<number>>

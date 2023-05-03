@@ -1,11 +1,12 @@
 import React from 'react';
-import { Slider } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
 
 export const SliderThumbValueInput: React.FunctionComponent = () => {
   const [value, setValue] = React.useState(50);
   const [inputValue, setInputValue] = React.useState(50);
 
   const onChange = (
+    _event: SliderOnChangeEvent,
     value: number,
     inputValue: number,
     setLocalInputValue: React.Dispatch<React.SetStateAction<number>>

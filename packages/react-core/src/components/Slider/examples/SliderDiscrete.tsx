@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider, Text, TextVariants } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent, Text, TextVariants } from '@patternfly/react-core';
 
 export const SliderDiscrete: React.FunctionComponent = () => {
   const initialValues = {
@@ -53,7 +53,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
       <Text component={TextVariants.h3}>Slider value is: {numValue.value1}</Text>
       <Slider
         value={initialValues.value1}
-        onChange={(value: number) => handleChange(value, 'value1')}
+        onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value1')}
         customSteps={steps}
       />
       <br />
@@ -61,7 +61,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
       <Text component={TextVariants.small}>(min = 0, max = 200, step = 50) </Text>
       <Slider
         value={initialValues.value2}
-        onChange={(value: number) => handleChange(value, 'value2')}
+        onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value2')}
         max={200}
         step={50}
         showTicks
@@ -71,7 +71,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
       <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries not shown) </Text>
       <Slider
         value={initialValues.value3}
-        onChange={(value: number) => handleChange(value, 'value3')}
+        onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value3')}
         min={-25}
         max={75}
         step={10}
@@ -83,7 +83,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
       <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries shown) </Text>
       <Slider
         value={initialValues.value4}
-        onChange={(value: number) => handleChange(value, 'value4')}
+        onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value4')}
         min={-25}
         max={75}
         step={10}
@@ -94,7 +94,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
       <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries shown, ticks not shown) </Text>
       <Slider
         value={initialValues.value5}
-        onChange={(value: number) => handleChange(value, 'value5')}
+        onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value5')}
         min={-25}
         max={75}
         step={10}
@@ -107,7 +107,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         showTicks
         max={5}
         customSteps={stepsDiscreteWithMax}
-        onChange={(value: number) => handleChange(value, 'value6')}
+        onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value6')}
       />
       <br />
       <Text component={TextVariants.h3}>Slider value is: {Math.floor(numValue.value7)}</Text>
@@ -116,7 +116,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         value={initialValues.value7}
         showTicks
         customSteps={stepsDiscreteNoLinearWithMaxMin}
-        onChange={(value: number) => handleChange(value, 'value7')}
+        onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value7')}
         min={12}
         max={86}
       />
