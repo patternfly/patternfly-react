@@ -12,13 +12,17 @@
         "@patternfly/patternfly",
         "@patternfly/patternfly-a11y",
         "@patternfly/documentation-framework",
+        "@rollup/*",
         "@testing-library/jest-dom",
         "@types/jest",
         "@typescript-eslint/eslint-plugin",
         "@typescript-eslint/parser",
         "eslint",
+        "fs-extra",
         "lint-staged",
-        "prettier"
+        "prettier",
+        "rollup",
+        "shx"
       ],
       "enabled": false
     },
@@ -29,13 +33,17 @@
         "@octokit/rest",
         "@patternfly/patternfly-a11y",
         "@patternfly/documentation-framework",
+        "@rollup/*",
         "@testing-library/jest-dom",
         "@types/jest",
         "@typescript-eslint/eslint-plugin",
         "@typescript-eslint/parser",
         "eslint",
+        "fs-extra",
         "lint-staged",
-        "prettier"
+        "prettier",
+        "rollup",
+        "shx"
       ]
     },
     {
