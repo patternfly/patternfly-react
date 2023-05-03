@@ -483,7 +483,7 @@ exports[`renders component data 1`] = `
             d="M80,150L128.33333333333331,137.5L176.66666666666666,100L224.99999999999997,125"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--100, #06c); width: 6px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--100, #06c); pointer-events: stroke; width: 6px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -507,7 +507,7 @@ exports[`renders component data 1`] = `
             d="M80,137.5L128.33333333333331,150L176.66666666666666,75L224.99999999999997,112.5"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); width: 6px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); pointer-events: stroke; width: 6px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -531,7 +531,7 @@ exports[`renders component data 1`] = `
             d="M80,125L128.33333333333331,112.5L176.66666666666666,50L224.99999999999997,100"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); width: 6px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); pointer-events: stroke; width: 6px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -555,7 +555,7 @@ exports[`renders component data 1`] = `
             d="M80,125L128.33333333333331,125L176.66666666666666,62.5L224.99999999999997,75"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--400, #519de9); width: 6px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--400, #519de9); pointer-events: stroke; width: 6px; opacity: 1; stroke-width: 2;"
           />
         </g>
       </g>
