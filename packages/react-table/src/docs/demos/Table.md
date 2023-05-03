@@ -1736,188 +1736,167 @@ These examples demonstrate the use of an [Empty State component](/components/emp
 
 ```js isFullscreen
 import React from 'react';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import {
+  Bullseye,
   Button,
   Card,
+  DashboardWrapper,
   EmptyState,
+  EmptyStateVariant,
   EmptyStateIcon,
   EmptyStateBody,
+  EmptyStateHeader,
+  EmptyStateFooter,
   EmptyStateActions,
-  PageSection,
-  Title
+  PageSection
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
-class EmptyStateDemo extends React.Component {
-  render() {
-    const columns = [
-      { title: 'Repositories' },
-      { title: 'Branches' },
-      { title: 'Pull requests' },
-      { title: 'Workspaces' },
-      { title: 'Last commit' }
-    ];
-
-    const rows = [
-      {
-        heightAuto: true,
-        cells: [
-          {
-            props: { colSpan: 8 },
-            title: (
-              <EmptyState>
-                <EmptyStateHeader
-                  titleText="No results found"
-                  headingLevel="h2"
-                  icon={<EmptyStateIcon icon={SearchIcon} />}
-                />
-                <EmptyStateBody>No results match this filter criteria. Clear all filters and try again.</EmptyStateBody>
-                <EmptyStateFooter>
-                  <EmptyStateActions>
-                    <Button variant="link" onClick={() => {}}>
-                      Clear all filters
-                    </Button>
-                  </EmptyStateActions>
-                </EmptyStateFooter>
-              </EmptyState>
-            )
-          }
-        ]
-      }
-    ];
-
-    return (
-      <DashboardWrapper hasPageTemplateTitle>
-        <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
-          <Card component="div">
-            <TableDeprecated cells={columns} rows={rows} aria-label="Empty state demo">
-              <TableHeader />
-              <TableBody />
-            </TableDeprecated>
-          </Card>
-        </PageSection>
-      </DashboardWrapper>
-    );
-  }
-}
+export const TableEmptyState: React.FunctionComponent = () => (
+  <DashboardWrapper hasPageTemplateTitle>
+    <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+      <Card component="div">
+        <Table aria-label="Empty state table">
+          <Thead>
+            <Tr>
+              <Th>Repositories</Th>
+              <Th>Branches</Th>
+              <Th>Pull requests</Th>
+              <Th>Workspaces</Th>
+              <Th>Last commit</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td colSpan={8}>
+                <Bullseye>
+                  <EmptyState variant={EmptyStateVariant.sm}>
+                    <EmptyStateHeader
+                      icon={<EmptyStateIcon icon={SearchIcon} />}
+                      titleText="No results found"
+                      headingLevel="h2"
+                    />
+                    <EmptyStateBody>No results match this filter criteria. Clear all filters and try again.</EmptyStateBody>
+                    <EmptyStateFooter>
+                      <EmptyStateActions>
+                        <Button variant="link">Clear all filters</Button>
+                      </EmptyStateActions>
+                    </EmptyStateFooter>
+                  </EmptyState>
+                </Bullseye>
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </Card>
+    </PageSection>
+  </DashboardWrapper>
+);
 ```
 
 ### Loading
 
 ```js isFullscreen
 import React from 'react';
-import { Bullseye, Card, EmptyState, EmptyStateIcon, Spinner, Title } from '@patternfly/react-core';
-import { PageSection } from '@patternfly/react-table';
-import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import {
+  Bullseye,
+  Card,
+  DashboardWrapper,
+  EmptyState,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateHeader,
+  PageSection,
+  Spinner
+} from '@patternfly/react-core';
 
-class LoadingStateDemo extends React.Component {
-  render() {
-    const columns = [
-      { title: 'Repositories' },
-      { title: 'Branches' },
-      { title: 'Pull requests' },
-      { title: 'Workspaces' },
-      { title: 'Last commit' }
-    ];
-    const rows = [
-      {
-        heightAuto: true,
-        cells: [
-          {
-            props: { colSpan: 8 },
-            title: (
-              <Bullseye>
-                <EmptyState>
-                  <EmptyStateHeader titleText="Loading" headingLevel="h2" icon={<EmptyStateIcon icon={Spinner} />} />
-                </EmptyState>
-              </Bullseye>
-            )
-          }
-        ]
-      }
-    ];
-
-    return (
-      <DashboardWrapper hasPageTemplateTitle>
-        <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
-          <Card component="div">
-            <TableDeprecated cells={columns} rows={rows} aria-label="Loading table demo">
-              <TableHeader />
-              <TableBody />
-            </TableDeprecated>
-          </Card>
-        </PageSection>
-      </DashboardWrapper>
-    );
-  }
-}
+export const LoadingStateDemo: React.FunctionComponent = () => (
+  <DashboardWrapper hasPageTemplateTitle>
+    <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+      <Card component="div">
+        <Table aria-label="Loading table demo">
+          <Thead>
+            <Tr>
+              <Th>Repositories</Th>
+              <Th>Branches</Th>
+              <Th>Pull requests</Th>
+              <Th>Workspaces</Th>
+              <Th>Last commit</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td colSpan={8}>
+                <Bullseye>
+                  <EmptyState>
+                    <EmptyStateHeader titleText="Loading" headingLevel="h2" icon={<EmptyStateIcon icon={Spinner} />} />
+                  </EmptyState>
+                </Bullseye>
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </Card>
+    </PageSection>
+  </DashboardWrapper>
+);
 ```
 
 ### Error
 
 ```js isFullscreen
 import React from 'react';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import {
+  Bullseye,
   Card,
+  DashboardWrapper,
   EmptyState,
+  EmptyStateVariant,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateVariant,
   EmptyStateHeader,
-  PageSection,
-  Title
+  PageSection
 } from '@patternfly/react-core';
-import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
-class ErrorStateDemo extends React.Component {
-  render() {
-    const columns = [
-      { title: 'Repositories' },
-      { title: 'Branches' },
-      { title: 'Pull requests' },
-      { title: 'Workspaces' },
-      { title: 'Last commit' }
-    ];
-    const rows = [
-      {
-        heightAuto: true,
-        cells: [
-          {
-            props: { colSpan: 8 },
-            title: (
-              <EmptyState variant={EmptyStateVariant.sm}>
-                <EmptyStateHeader
-                  titleText="Unable to connect"
-                  icon={<EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />}
-                  headingLevel="h2"
-                />
-                <EmptyStateBody>
-                  There was an error retrieving data. Check your connection and reload the page.
-                </EmptyStateBody>
-              </EmptyState>
-            )
-          }
-        ]
-      }
-    ];
-
-    return (
-      <DashboardWrapper hasPageTemplateTitle>
-        <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
-          <Card component="div">
-            <TableDeprecated cells={columns} rows={rows} aria-label="Error table demo">
-              <TableHeader />
-              <TableBody />
-            </TableDeprecated>
-          </Card>
-        </PageSection>
-      </DashboardWrapper>
-    );
-  }
-}
+export const ErrorStateDemo: React.FunctionComponent = () => (
+  <DashboardWrapper hasPageTemplateTitle>
+    <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+      <Card component="div">
+        <Table aria-label="Loading table demo">
+          <Thead>
+            <Tr>
+              <Th>Repositories</Th>
+              <Th>Branches</Th>
+              <Th>Pull requests</Th>
+              <Th>Workspaces</Th>
+              <Th>Last commit</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td colSpan={8}>
+                <Bullseye>
+                  <EmptyState variant={EmptyStateVariant.sm}>
+                    <EmptyStateHeader
+                      titleText="Unable to connect"
+                      icon={<EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />}
+                      headingLevel="h2"
+                    />
+                    <EmptyStateBody>
+                      There was an error retrieving data. Check your connection and reload the page.
+                    </EmptyStateBody>
+                  </EmptyState>
+                </Bullseye>
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </Card>
+    </PageSection>
+  </DashboardWrapper>
+);
 ```
