@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.0.0-alpha.21 (2023-05-03)
+
+### Features
+
+- **charts:** Victory package update ([#9021](https://github.com/patternfly/patternfly-react/issues/9021)) ([805fb87](https://github.com/patternfly/patternfly-react/commit/805fb87698f427f66d167d303f87c033ac7c6c25))
+
 # 7.0.0-alpha.20 (2023-04-25)
 
 **Note:** Version bump only for package @patternfly/react-charts
