@@ -50,4 +50,18 @@ The "Show as horizontal" checkbox can be used to easily toggle the `isHorizontal
 The "Demonstrate error reporting by forcing uploads to fail" checkbox shows how our `progressHelperText` prop can be used to provide status messages to users, such as when a file fails to upload. While this checkbox is checked it will cause any file uploaded to automatically fail the file reading process, and helper text will be dynamically rendered which informs the user of that error.
 
 ```ts file="./MultipleFileUploadBasic.tsx"
+
 ```
+
+## Types
+
+Multiple file upload uses both the `DropEvent` and `DropzoneOptions` types from react-dropzone. The `DropEvent` type is a union comprised of the following types:
+
+```noLive
+ React.DragEvent<HTMLElement>
+ | React.ChangeEvent<HTMLInputElement>
+ | DragEvent
+ | Event
+```
+
+`DropzoneOptions` is comprised of additional props with their own types. For more information on using `DropzoneOptions` visit [react-dropzone props and methods](https://react-dropzone.js.org/#src).

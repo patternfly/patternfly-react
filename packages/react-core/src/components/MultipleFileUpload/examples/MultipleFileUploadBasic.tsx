@@ -8,6 +8,7 @@ import {
   HelperText,
   HelperTextItem
 } from '@patternfly/react-core';
+import { DropEvent } from 'react-dropzone';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
 interface readFile {
@@ -68,7 +69,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   };
 
   // callback that will be called by the react dropzone with the newly dropped file objects
-  const handleFileDrop = (droppedFiles: File[]) => {
+  const handleFileDrop = (_event: DropEvent, droppedFiles: File[]) => {
     // identify what, if any, files are re-uploads of already uploaded files
     const currentFileNames = currentFiles.map((file) => file.name);
     const reUploads = droppedFiles.filter((droppedFile) => currentFileNames.includes(droppedFile.name));
