@@ -103,6 +103,9 @@ The tooltip should also have the `id` property passed in. The value of `id` shou
 
 ### Uncontrolled tabs
 
+To allow the `<Tabs>` component to manage setting the active tab and displaying correct content itself, use uncontrolled tabs, as shown in the following example. 
+
+
 ```ts file="./TabsUncontrolled.tsx"
 ```
 
@@ -113,14 +116,14 @@ To adjust the inset of tabs and visually separate them more, use the `inset` pro
 ```ts file="./TabsInset.tsx"
 ```
 
-### Page Insets
+### With page insets
 
-`usePageInsets` property
+To adjust the left padding of tabs, use the `usePageInsets` property. This property aligns the tabs padding with the default padding of the page section, which makes it easier to align tabs with page section content.
 
 ```ts file="./TabsPageInsets.tsx"
 ```
 
-### Icons and text
+### With icons and text
 
 You can render different content in the `title` property of a tab to add icons and text. 
 
