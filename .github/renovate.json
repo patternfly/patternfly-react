@@ -7,17 +7,35 @@
     {
       "packagePatterns": ["*"],
       "excludePackagePatterns": [
+        "@babel/*",
+        "@octokit/rest",
         "@patternfly/patternfly",
         "@patternfly/patternfly-a11y",
-        "@patternfly/documentation-framework"
+        "@patternfly/documentation-framework",
+        "@testing-library/jest-dom",
+        "@types/jest",
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
+        "eslint",
+        "lint-staged",
+        "prettier"
       ],
       "enabled": false
     },
     {
       "datasources": ["npm"],
-      "packageNames": [
+      "packagePatterns": [
+        "@babel/*",
+        "@octokit/rest",
         "@patternfly/patternfly-a11y",
-        "@patternfly/documentation-framework"
+        "@patternfly/documentation-framework",
+        "@testing-library/jest-dom",
+        "@types/jest",
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
+        "eslint",
+        "lint-staged",
+        "prettier"
       ]
     },
     {
