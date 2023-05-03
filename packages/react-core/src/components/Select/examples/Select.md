@@ -12,7 +12,7 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ## Examples
 
-`Select` builds off of the Menu component suite to wrap commonly used properties and functions for a select menu. See the [Menu documentation](/components/menus/menu) for a full list of properties that may be passed through Select to further customize the select menu, or the [custom menu examples](/components/menus/custom-menus) for additional examples of fully functional menus.
+`Select` builds off of the Menu component suite to wrap commonly used properties and functions for a select menu. See the [Menu documentation](/components/menus/menu) for a full list of properties that may be passed through `Select` to further customize the select menu, or the [custom menu examples](/components/menus/custom-menus) for additional examples of fully functional menus.
 
 ### Single
 
