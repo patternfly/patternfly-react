@@ -26,6 +26,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('');
   const [inputValue, setInputValue] = React.useState<string>('');
+  const [filterValue, setFilterValue] = React.useState<string>('');
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
@@ -38,14 +39,14 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
     let newSelectOptions: SelectOptionProps[] = initialSelectOptions;
 
     // Filter menu items based on the text input value when one exists
-    if (inputValue) {
+    if (filterValue) {
       newSelectOptions = initialSelectOptions.filter((menuItem) =>
-        String(menuItem.children).toLowerCase().includes(inputValue.toLowerCase())
+        String(menuItem.children).toLowerCase().includes(filterValue.toLowerCase())
       );
 
       // When no options are found after filtering, display creation option
       if (!newSelectOptions.length) {
-        newSelectOptions = [{ isDisabled: false, children: `Create new option "${inputValue}"`, itemId: 'create' }];
+        newSelectOptions = [{ isDisabled: false, children: `Create new option "${filterValue}"`, itemId: 'create' }];
       }
 
       // Open the menu when the input value changes and the new value is not empty
@@ -57,7 +58,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
     setSelectOptions(newSelectOptions);
     setActiveItem(null);
     setFocusedItemIndex(null);
-  }, [inputValue, onCreation]);
+  }, [filterValue, onCreation]);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -68,15 +69,17 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
 
     if (itemId) {
       if (itemId === 'create') {
-        if (!initialSelectOptions.some((item) => item.itemId === inputValue)) {
-          initialSelectOptions = [...initialSelectOptions, { itemId: inputValue, children: inputValue }];
+        if (!initialSelectOptions.some((item) => item.itemId === filterValue)) {
+          initialSelectOptions = [...initialSelectOptions, { itemId: filterValue, children: filterValue }];
         }
-        setSelected(inputValue);
+        setSelected(filterValue);
         setOnCreation(!onCreation);
+        setFilterValue('');
       } else {
         // eslint-disable-next-line no-console
         console.log('selected', itemId);
         setInputValue(itemId as string);
+        setFilterValue('');
         setSelected(itemId as string);
       }
     }
@@ -88,6 +91,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
+    setFilterValue(value);
   };
 
   const handleMenuArrowKeys = (key: string) => {
@@ -126,14 +130,16 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
     switch (event.key) {
       // Select the first available option
       case 'Enter':
-        if (!isOpen) {
-          setIsOpen((prevIsOpen) => !prevIsOpen);
-        } else if (isOpen) {
+        if (isOpen) {
           onSelect(undefined, focusedItem.itemId as string);
           setIsOpen((prevIsOpen) => !prevIsOpen);
           setFocusedItemIndex(null);
           setActiveItem(null);
         }
+
+        setIsOpen((prevIsOpen) => !prevIsOpen);
+        setFocusedItemIndex(null);
+        setActiveItem(null);
 
         break;
       case 'Tab':
@@ -174,6 +180,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
               onClick={() => {
                 setSelected('');
                 setInputValue('');
+                setFilterValue('');
                 textInputRef?.current?.focus();
               }}
               aria-label="Clear input value"

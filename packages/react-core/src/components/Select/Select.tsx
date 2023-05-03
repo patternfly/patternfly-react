@@ -5,9 +5,9 @@ import { Popper, PopperProps } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface SelectPopperProps extends PopperProps {
-  /** popper direction */
+  /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
   direction?: 'up' | 'down';
-  /** popper position */
+  /** Horizontal position of the popper */
   position?: 'right' | 'left' | 'center';
   /** Custom width of the popper. If the value is "trigger", it will set the width to the select toggle's width */
   width?: string | 'trigger';
@@ -41,8 +41,10 @@ export interface SelectProps extends MenuProps, OUIAProps {
     toggleRef?: React.RefObject<any>
   ) => void;
   /** Callback to allow the select component to change the open state of the menu.
-   * Triggered by clicking outside of the menu, or by pressing either tab or escape. */
+   * Triggered by clicking outside of the menu, or by pressing either tab or escape (or specificed in onOpenChangeKeys). */
   onOpenChange?: (isOpen: boolean) => void;
+  /** Keys that trigger onOpenChange, defaults to tab and escape. */
+  onOpenChangeKeys?: string[];
   /** Indicates if the select should be without the outer box-shadow */
   isPlain?: boolean;
   /** @hide Forwarded ref */
@@ -63,6 +65,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   selected,
   toggle,
   onOpenChange,
+  onOpenChangeKeys = ['Escape', 'Tab'],
   isPlain,
   innerRef,
   zIndex = 9999,
@@ -83,7 +86,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
         onOpenChange &&
         (menuRef.current?.contains(event.target as Node) || toggleRef.current?.contains(event.target as Node))
       ) {
-        if (event.key === 'Escape' || event.key === 'Tab') {
+        if (onOpenChangeKeys.includes(event.key)) {
           event.preventDefault();
           onOpenChange(false);
           toggleRef.current?.focus();
@@ -115,7 +118,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       window.removeEventListener('keydown', handleMenuKeys);
       window.removeEventListener('click', handleClick);
     };
-  }, [isOpen, menuRef, onOpenChange]);
+  }, [isOpen, menuRef, onOpenChange, onOpenChangeKeys]);
 
   const menu = (
     <Menu

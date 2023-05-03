@@ -179,6 +179,7 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
 
   return (
     <Select
+      role="menu"
       id="multi-typeahead-checkbox-select"
       ref={menuRef}
       isOpen={isOpen}
@@ -187,7 +188,7 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
       onOpenChange={() => setIsOpen(false)}
       toggle={toggle}
     >
-      <SelectList isAriaMultiselectable id="select-multi-typeahead-checkbox-listbox">
+      <SelectList id="select-multi-typeahead-checkbox-listbox">
         {selectOptions.map((option, index) => (
           <SelectOption
             {...(!option.isDisabled && { hasCheckbox: true })}

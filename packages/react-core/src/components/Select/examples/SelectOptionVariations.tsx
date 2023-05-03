@@ -54,7 +54,13 @@ export const SelectOptionVariations: React.FunctionComponent = () => {
         <SelectOption itemId="Option with description" description="This is a description">
           Option with description
         </SelectOption>
-        <SelectOption itemId="Option with link" isExternalLink>
+        <SelectOption
+          to="#"
+          // Prevent default clicking functionality for example purposes only
+          onClick={(event) => event.preventDefault()}
+          itemId="Option with link"
+          isExternalLink
+        >
           Option with link
         </SelectOption>
         <SelectOption itemId="Option with icon" icon={<BellIcon />}>

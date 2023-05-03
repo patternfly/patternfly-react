@@ -26,6 +26,7 @@ export const SelectBasic: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('');
   const [inputValue, setInputValue] = React.useState<string>('');
+  const [filterValue, setFilterValue] = React.useState<string>('');
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
@@ -37,17 +38,15 @@ export const SelectBasic: React.FunctionComponent = () => {
     let newSelectOptions: SelectOptionProps[] = initialSelectOptions;
 
     // Filter menu items based on the text input value when one exists
-    if (inputValue) {
-      newSelectOptions = initialSelectOptions.filter(menuItem =>
-        String(menuItem.children)
-          .toLowerCase()
-          .includes(inputValue.toLowerCase())
+    if (filterValue) {
+      newSelectOptions = initialSelectOptions.filter((menuItem) =>
+        String(menuItem.children).toLowerCase().includes(filterValue.toLowerCase())
       );
 
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
         newSelectOptions = [
-          { isDisabled: false, children: `No results found for "${inputValue}"`, itemId: 'no results' }
+          { isDisabled: false, children: `No results found for "${filterValue}"`, itemId: 'no results' }
         ];
       }
 
@@ -60,7 +59,7 @@ export const SelectBasic: React.FunctionComponent = () => {
     setSelectOptions(newSelectOptions);
     setActiveItem(null);
     setFocusedItemIndex(null);
-  }, [inputValue]);
+  }, [filterValue]);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -72,6 +71,7 @@ export const SelectBasic: React.FunctionComponent = () => {
 
     if (itemId && itemId !== 'no results') {
       setInputValue(itemId as string);
+      setFilterValue('');
       setSelected(itemId as string);
     }
     setIsOpen(false);
@@ -81,6 +81,7 @@ export const SelectBasic: React.FunctionComponent = () => {
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
+    setFilterValue(value);
   };
 
   const handleMenuArrowKeys = (key: string) => {
@@ -106,13 +107,13 @@ export const SelectBasic: React.FunctionComponent = () => {
       }
 
       setFocusedItemIndex(indexToFocus);
-      const focusedItem = selectOptions.filter(option => !option.isDisabled)[indexToFocus];
+      const focusedItem = selectOptions.filter((option) => !option.isDisabled)[indexToFocus];
       setActiveItem(`select-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
     }
   };
 
   const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const enabledMenuItems = selectOptions.filter(option => !option.isDisabled);
+    const enabledMenuItems = selectOptions.filter((option) => !option.isDisabled);
     const [firstMenuItem] = enabledMenuItems;
     const focusedItem = focusedItemIndex ? enabledMenuItems[focusedItemIndex] : firstMenuItem;
 
@@ -121,10 +122,11 @@ export const SelectBasic: React.FunctionComponent = () => {
       case 'Enter':
         if (isOpen && focusedItem.itemId !== 'no results') {
           setInputValue(String(focusedItem.children));
+          setFilterValue('');
           setSelected(String(focusedItem.children));
         }
 
-        setIsOpen(prevIsOpen => !prevIsOpen);
+        setIsOpen((prevIsOpen) => !prevIsOpen);
         setFocusedItemIndex(null);
         setActiveItem(null);
 
@@ -167,6 +169,7 @@ export const SelectBasic: React.FunctionComponent = () => {
               onClick={() => {
                 setSelected('');
                 setInputValue('');
+                setFilterValue('');
                 textInputRef?.current?.focus();
               }}
               aria-label="Clear input value"

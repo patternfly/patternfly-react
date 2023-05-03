@@ -116,9 +116,3 @@ The flyout will automatically position to the left or top if it would otherwise 
 ```ts file="./examples/ComposableDateSelect.tsx"
 
 ```
-
-### Select with footer
-
-```ts file="./examples/MenuWithFooter.tsx"
-
-```

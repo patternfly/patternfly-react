@@ -12,6 +12,8 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ## Examples
 
+`Select` builds off of the Menu component suite to wrap commonly used properties and functions for a select menu. See the [Menu documentation](/components/menus/menu) for a full list of properties that may be passed through Select to further customize the select menu, or the [custom menu examples](/components/menus/custom-menus) for additional examples of fully functional menus.
+
 ### Single
 
 ```ts file="./SelectBasic.tsx"
@@ -19,6 +21,8 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 ```
 
 ### Option variations
+
+Showcases different option variants and customizations that are commonly used in a select menu. For a more complete list, see the [Menu documentation](/components/menus/menu).
 
 ```ts file="./SelectOptionVariations.tsx"
 
@@ -69,5 +73,11 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 ### View more
 
 ```ts file="./SelectViewMore.tsx"
+
+```
+
+### Footer
+
+```ts file="./SelectFooter.tsx"
 
 ```
