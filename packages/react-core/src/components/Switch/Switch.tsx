@@ -28,7 +28,7 @@ export interface SwitchProps
   hasCheckIcon?: boolean;
   /** Flag to show if the switch is disabled. */
   isDisabled?: boolean;
-  /** A callback for when the switch selection changes. (isChecked, event) => {} */
+  /** A callback for when the switch selection changes. (event, isChecked) => {} */
   onChange?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
   /** Adds accessible text to the switch, and should describe the isChecked="true" state. When label is defined, aria-label should be set to the text string that is visible when isChecked is true. */
   'aria-label'?: string;
