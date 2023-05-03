@@ -47,7 +47,7 @@
     "babel-jest": "^27.2.5",
     "concurrently": "^7.6.0",
     "eslint": "^8.39.0",
-    "eslint-plugin-markdown": "^1.0.0",
+    "eslint-plugin-markdown": "^3.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "fs-extra": "^6.0.1",
