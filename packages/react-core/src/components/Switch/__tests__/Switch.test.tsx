@@ -81,7 +81,7 @@ describe('Switch', () => {
     render(<Switch id="onChange-switch" {...props} aria-label="Switch label" />);
 
     await user.click(screen.getByLabelText('Switch label'));
-    expect(props.onChange).toHaveBeenCalledWith(true, expect.any(Object));
+    expect(props.onChange).toHaveBeenCalledWith(expect.any(Object), true);
   });
 
   test('should throw console error when no aria-label or label is given', () => {
