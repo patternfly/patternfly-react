@@ -5,9 +5,9 @@ import { Popper, PopperProps } from '../../helpers/Popper/Popper';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export interface DropdownPopperProps extends PopperProps {
-  /** popper direction */
+  /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
   direction?: 'up' | 'down';
-  /** popper position */
+  /** Horizontal position of the popper */
   position?: 'right' | 'left' | 'center';
   /** Custom width of the popper. If the value is "trigger", it will set the width to the dropdown toggle's width */
   width?: string | 'trigger';
