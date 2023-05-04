@@ -679,7 +679,7 @@ class EditableRowsTable extends React.Component {
       });
     };
 
-    this.onSelect = (newValue, evt, rowIndex, cellIndex, isPlaceholder) => {
+    this.onSelect = (_event, newValue, rowIndex, cellIndex, isPlaceholder) => {
       const newRows = Array.from(this.state.rows);
       const newCellProps = newRows[rowIndex].cells[cellIndex].props;
 
@@ -720,7 +720,7 @@ class EditableRowsTable extends React.Component {
       });
     };
 
-    this.clearSelection = (rowIndex, cellIndex) => {
+    this.clearSelection = (_event, rowIndex, cellIndex) => {
       const newRows = Array.from(this.state.rows);
       const newCellProps = newRows[rowIndex].cells[cellIndex].props;
       newCellProps.editableValue = [];
