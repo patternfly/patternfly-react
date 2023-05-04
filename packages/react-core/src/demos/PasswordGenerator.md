@@ -54,7 +54,7 @@ const PasswordGenerator: React.FunctionComponent = () => {
     };
   }, [isAutocompleteOpen, searchInputRef.current]);
 
-  const onChange = (newValue: string) => {
+  const onChange = (_event: React.FormEvent<HTMLInputElement>, newValue: string) => {
     if (searchInputRef && searchInputRef.current && searchInputRef.current.contains(document.activeElement)) {
       setIsAutocompleteOpen(true);
     } else {
