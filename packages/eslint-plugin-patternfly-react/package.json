@@ -27,7 +27,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-jsx": "^5.0.0",
-    "eslint-config-standard-react": "^6.0.0",
+    "eslint-config-standard-react": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jest": "^27.0.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",

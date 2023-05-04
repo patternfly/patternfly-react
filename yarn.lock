@@ -8861,12 +8861,10 @@ eslint-config-standard-jsx@^5.0.0:
   resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-5.0.0.tgz#4abfac554f38668e0078c664569e7b2384e5d2aa"
   integrity sha512-rLToPAEqLMPBfWnYTu6xRhm2OWziS2n40QFqJ8jAM8NSVzeVKTa3nclhsU4DpPJQRY60F34Oo1wi/71PN/eITg==
 
-eslint-config-standard-react@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard-react/-/eslint-config-standard-react-6.0.0.tgz#d366d6c3c092426fd3ae794a4ca0b3cb131f2964"
-  integrity sha512-YWlqfvREbH1r6SaRTgFOq+VE3f8/ZQypkfnpDpSmZjztEjxnzznm4xeE2/mDQRx77Okhd/pKHXNZLMsSneJH8A==
-  dependencies:
-    eslint-config-standard-jsx "^5.0.0"
+eslint-config-standard-react@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard-react/-/eslint-config-standard-react-13.0.0.tgz#dcc85bc3210dac858bc94ac53d024a5488ce5568"
+  integrity sha512-HrVPGj8UncHfV+BsdJTuJpVsomn6AIrke3Af2Fh4XFvQQDU+iO6N2ZL+UsC+scExft4fU3uf7fJwj7PKWnXJDA==
 
 eslint-config-standard@^11.0.0:
   version "11.0.0"
