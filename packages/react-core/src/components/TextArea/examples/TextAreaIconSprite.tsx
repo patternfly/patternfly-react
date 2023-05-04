@@ -12,7 +12,7 @@ export const TextAreaIconSprite: React.FunctionComponent = () => {
         validated={'success'}
         isIconSprite
         type="text"
-        onChange={value => setSuccess(value)}
+        onChange={(_event, value) => setSuccess(value)}
         value={success}
         aria-label="success icon sprite text area example"
       />
@@ -22,7 +22,7 @@ export const TextAreaIconSprite: React.FunctionComponent = () => {
         validated={'warning'}
         isIconSprite
         type="text"
-        onChange={value => setWarning(value)}
+        onChange={(_event, value) => setWarning(value)}
         value={warning}
         aria-label="warning icon sprite text area example"
       />
@@ -32,7 +32,7 @@ export const TextAreaIconSprite: React.FunctionComponent = () => {
         validated={'error'}
         isIconSprite
         type="text"
-        onChange={value => setError(value)}
+        onChange={(_event, value) => setError(value)}
         value={error}
         aria-label="error icon sprite text area example"
       />

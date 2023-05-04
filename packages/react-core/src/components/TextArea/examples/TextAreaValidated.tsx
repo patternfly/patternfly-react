@@ -33,7 +33,7 @@ export const TextAreaValidated: React.FunctionComponent = () => {
       <FormGroup label="Comments:" type="string" fieldId="selection">
         <TextArea
           value={value}
-          onChange={(value) => handleTextAreaChange(value)}
+          onChange={(_event, value) => handleTextAreaChange(value)}
           isRequired
           validated={validated}
           aria-label="invalid text area example"

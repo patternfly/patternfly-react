@@ -29,7 +29,7 @@ export const FormHorizontal: React.FunctionComponent = () => {
     setEmail(email);
   };
 
-  const handleExperienceChange = (experience: string) => {
+  const handleExperienceChange = (_event, experience: string) => {
     setExperience(experience);
   };
 

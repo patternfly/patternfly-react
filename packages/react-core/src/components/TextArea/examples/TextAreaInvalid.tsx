@@ -6,7 +6,7 @@ export const TextAreaInvalid: React.FunctionComponent = () => {
   return (
     <TextArea
       value={value}
-      onChange={value => setValue(value)}
+      onChange={(_event, value) => setValue(value)}
       isRequired
       validated={'error'}
       aria-label="invalid text area example"

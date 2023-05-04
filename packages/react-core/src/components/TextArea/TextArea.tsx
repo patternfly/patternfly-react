@@ -39,7 +39,7 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   /** Value of the text area. */
   value?: string | number;
   /** A callback for when the text area value changes. */
-  onChange?: (value: string, event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => void;
   /** Sets the orientation to limit the resize to */
   resizeOrientation?: 'horizontal' | 'vertical' | 'both';
   /** Custom flag to show that the text area requires an associated id or aria-label. */
@@ -99,7 +99,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
       this.setAutoHeight(field);
     }
     if (this.props.onChange) {
-      this.props.onChange(field.value, event);
+      this.props.onChange(event, field.value);
     }
   };
 

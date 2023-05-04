@@ -53,7 +53,7 @@ export const FormState = () => {
           <TextArea
             id="textarea-id"
             aria-label="Form state TextArea"
-            onChange={(value) => setValue('textarea-id', value)}
+            onChange={(_event, value) => setValue('textarea-id', value)}
             value={getValue('textarea-id')}
           />
 

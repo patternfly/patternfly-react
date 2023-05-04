@@ -6,7 +6,7 @@ export const TextAreaAutoResizing: React.FunctionComponent = () => {
   return (
     <TextArea
       value={value}
-      onChange={value => setValue(value)}
+      onChange={(_event, value) => setValue(value)}
       aria-label="auto resizing text area example"
       autoResize
     />
