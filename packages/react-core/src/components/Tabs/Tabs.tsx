@@ -104,7 +104,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** Aria-label for the expandable toggle */
   toggleAriaLabel?: string;
   /** Callback function to toggle the expandable tabs. */
-  onToggle?: (isExpanded: boolean) => void;
+  onToggle?: (event: React.MouseEvent, isExpanded: boolean) => void;
   /** @beta Flag which places overflowing tabs into a menu triggered by the last tab. Additionally an object can be passed with custom settings for the overflow tab. */
   isOverflowHorizontal?: boolean | HorizontalOverflowObject;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -184,7 +184,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     ouiaSafe: true,
     variant: 'default',
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    onToggle: (isExpanded): void => undefined
+    onToggle: (_event: React.MouseEvent, _isExpanded: boolean): void => undefined
   };
 
   handleTabClick(
@@ -421,11 +421,11 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
 
     const isExpandedLocal = defaultIsExpanded !== undefined ? uncontrolledIsExpandedLocal : isExpanded;
     /*  Uncontrolled expandable tabs */
-    const toggleTabs = (newValue: boolean) => {
+    const toggleTabs = (event: React.MouseEvent, newValue: boolean) => {
       if (isExpanded === undefined) {
         this.setState({ uncontrolledIsExpandedLocal: newValue });
       } else {
-        onToggle(newValue);
+        onToggle(event, newValue);
       }
     };
 
@@ -472,7 +472,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                 <div className={css(styles.tabsToggle)}>
                   <div className={css(styles.tabsToggleButton)}>
                     <Button
-                      onClick={() => toggleTabs(!isExpandedLocal)}
+                      onClick={(event) => toggleTabs(event, !isExpandedLocal)}
                       variant="plain"
                       aria-label={toggleAriaLabel}
                       aria-expanded={isExpandedLocal}
