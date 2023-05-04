@@ -19,7 +19,7 @@ export interface ToggleGroupItemProps extends Omit<React.HTMLProps<HTMLDivElemen
   /** Optional id for the button within the toggle group item */
   buttonId?: string;
   /** A callback for when the toggle group item selection changes. */
-  onChange?: (selected: boolean, event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => void;
+  onChange?: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent, selected: boolean) => void;
 }
 
 export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
@@ -34,7 +34,7 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
   ...props
 }: ToggleGroupItemProps) => {
   const handleChange = (event: any): void => {
-    onChange(!isSelected, event);
+    onChange(event, !isSelected);
   };
 
   if (!ariaLabel && icon && !text) {

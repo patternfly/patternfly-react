@@ -48,7 +48,7 @@ describe('ToggleGroup', () => {
     );
 
     await user.click(screen.getByRole('button'));
-    expect(props.onChange).toHaveBeenCalledWith(true, expect.any(Object));
+    expect(props.onChange).toHaveBeenCalledWith(expect.any(Object), true);
   });
 
   test('isCompact', () => {
