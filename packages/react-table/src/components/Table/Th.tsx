@@ -51,8 +51,6 @@ export interface ThProps
   stickyRightOffset?: string;
   /** Indicates the <th> is part of a subheader of a nested header */
   isSubheader?: boolean;
-
-  focusable?: boolean;
 }
 
 const ThBase: React.FunctionComponent<ThProps> = ({
@@ -79,7 +77,6 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   stickyLeftOffset,
   stickyRightOffset,
   isSubheader = false,
-  focusable = true,
   ...props
 }: ThProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -174,7 +171,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
 
   const cell = (
     <MergedComponent
-      tabIndex={sort || select || !focusable || !truncated ? -1 : 0}
+      tabIndex={sort || select || !truncated ? -1 : 0}
       onFocus={tooltip !== null ? onMouseEnter : onMouseEnterProp}
       onBlur={() => setShowTooltip(false)}
       data-label={dataLabel}

@@ -31,7 +31,7 @@ export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   tooltipProps?: Omit<TooltipProps, 'content'>;
   /** callback used to create the tooltip if text is truncated */
   onMouseEnter?: (event: any) => void;
-
+  /** Determines if the TableText is focused by parent component */
   focused?: boolean;
 }
 
