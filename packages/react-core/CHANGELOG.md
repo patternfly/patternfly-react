@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.89 (2023-05-04)
+
+### Bug Fixes
+
+- **Nav:** updated onSelect and onToggle param order ([#8997](https://github.com/patternfly/patternfly-react/issues/8997)) ([70a0f64](https://github.com/patternfly/patternfly-react/commit/70a0f6410b1021fae99aa55adbef54f6536cf342))
+- **SearchInput demos:** add event ([#8999](https://github.com/patternfly/patternfly-react/issues/8999)) ([27b3474](https://github.com/patternfly/patternfly-react/commit/27b347477c0b396d123d8d64a0676a7827ba1b71))
+
 # [5.0.0-alpha.88](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.87...@patternfly/react-core@5.0.0-alpha.88) (2023-05-03)
 
 **Note:** Version bump only for package @patternfly/react-core

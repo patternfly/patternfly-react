@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.37 (2023-05-04)
+
+### Bug Fixes
+
+- **Nav:** updated onSelect and onToggle param order ([#8997](https://github.com/patternfly/patternfly-react/issues/8997)) ([70a0f64](https://github.com/patternfly/patternfly-react/commit/70a0f6410b1021fae99aa55adbef54f6536cf342))
+
 # 5.0.0-alpha.36 (2023-05-03)
 
 **Note:** Version bump only for package @patternfly/react-integration
