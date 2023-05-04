@@ -8,7 +8,7 @@ describe('Slider Demo Test', () => {
     cy.get('#discrete-slider').should(
       'have.attr',
       'style',
-      '--pf-c-slider--value:62.5%; --pf-c-slider__value--c-form-control--width-chars:1;'
+      '--pf-c-slider--value: 62.5%; --pf-c-slider__value--c-form-control--width-chars: 1;'
     );
   });
 
@@ -30,7 +30,7 @@ describe('Slider Demo Test', () => {
     cy.get('#discrete-slider-input-label').should(
       'have.attr',
       'style',
-      '--pf-c-slider--value:50%; --pf-c-slider__value--c-form-control--width-chars:2;'
+      '--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 2;'
     );
   });
 
@@ -39,7 +39,7 @@ describe('Slider Demo Test', () => {
     cy.get('#continuous-slider').should(
       'have.attr',
       'style',
-      '--pf-c-slider--value:50%; --pf-c-slider__value--c-form-control--width-chars:2;'
+      '--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 2;'
     );
   });
 });

@@ -7,7 +7,7 @@ describe('Data Toolbar Demo Test', () => {
     cy.get('#width-item').should(
       'have.attr',
       'style',
-      '--pf-c-toolbar__item--Width:100px; --pf-c-toolbar__item--Width-on-sm:80px; --pf-c-toolbar__item--Width-on-md:150px; --pf-c-toolbar__item--Width-on-lg:200px; --pf-c-toolbar__item--Width-on-xl:250px; --pf-c-toolbar__item--Width-on-2xl:300px;'
+      '--pf-c-toolbar__item--Width: 100px; --pf-c-toolbar__item--Width-on-sm: 80px; --pf-c-toolbar__item--Width-on-md: 150px; --pf-c-toolbar__item--Width-on-lg: 200px; --pf-c-toolbar__item--Width-on-xl: 250px; --pf-c-toolbar__item--Width-on-2xl: 300px;'
     );
   });
 
@@ -90,18 +90,14 @@ describe('Data Toolbar Demo Test', () => {
     });
 
     xit('Verify expandable content expanded', () => {
-      cy.get('#demo-toggle-group .pf-c-toolbar__toggle button')
-        .last()
-        .click();
+      cy.get('#demo-toggle-group .pf-c-toolbar__toggle button').last().click();
       cy.get('.pf-c-toolbar__expandable-content').should('have.class', 'pf-m-expanded');
       cy.get('.pf-c-toolbar__expandable-content').should('be.visible');
       cy.get('.pf-m-chip-container').should('be.visible');
       cy.get('.pf-c-toolbar__item .pf-c-button').should('be.visible');
       cy.get('.pf-c-toolbar__item .pf-c-chip-group__close').should('be.visible');
       cy.get('.pf-c-toolbar__item .pf-c-button').contains('Clear filters');
-      cy.get('#demo-toggle-group .pf-c-toolbar__toggle button')
-        .last()
-        .click();
+      cy.get('#demo-toggle-group .pf-c-toolbar__toggle button').last().click();
       cy.get('.pf-c-toolbar__expandable-content').should('not.have.class', 'pf-m-expanded');
       cy.get('.pf-c-toolbar__expandable-content').should('not.be.visible');
       cy.get('.pf-m-chip-container').should('not.be.visible');

@@ -4121,10 +4121,10 @@
     puppeteer-cluster "^0.23.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@5.0.0-alpha.41":
-  version "5.0.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.0.0-alpha.41.tgz#a8aec56f77e72c8ab9cdb2cf7db08fd32f73feca"
-  integrity sha512-kJ9xU3wXUMyLjVDGJD7L6OVDsVjAJQWy/MZDvDa2sl/PIYUJoF49tvelvmTb3RJ50kwISwnVfXr34ukW25j3vw==
+"@patternfly/patternfly@5.0.0-alpha.44":
+  version "5.0.0-alpha.44"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.0.0-alpha.44.tgz#e51ba9be1fbec4f1ff550789bc742002b5b8c7a7"
+  integrity sha512-0JY9edCMtKKvdyRSnLsJy1taa1Uua0S9qJ8O5/PP4iJmpePL6/fbPU/eHJ09T57CcZmXjx0xhYy7vfpHhKsJoA==
 
 "@phenomnomnominal/tsquery@4.1.1":
   version "4.1.1"
