@@ -17,7 +17,7 @@ test('Textarea input passes value and event to onChange handler', async () => {
 
   await user.type(screen.getByRole('textbox'), 'a');
 
-  expect(props.onChange).toHaveBeenCalledWith('a', expect.any(Object));
+  expect(props.onChange).toHaveBeenCalledWith(expect.any(Object), 'a');
 });
 
 test('Renders simple text input', () => {
