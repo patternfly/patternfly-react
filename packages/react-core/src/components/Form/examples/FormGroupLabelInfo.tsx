@@ -13,7 +13,7 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 export const FormGroupLabelInfo: React.FunctionComponent = () => {
   const [name, setName] = React.useState('');
 
-  const handleNameChange = (name: string, _event: React.FormEvent<HTMLInputElement>) => {
+  const handleNameChange = (_event, name: string) => {
     setName(name);
   };
 

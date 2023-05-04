@@ -4,7 +4,7 @@ import { Form, FormGroup, FormHelperText, TextInput, HelperText, HelperTextItem 
 export const HelperTextStaticVariantStaticText: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
 
-  const handleInputChange = (inputValue: string) => {
+  const handleInputChange = (_event, inputValue: string) => {
     setValue(inputValue);
   };
 

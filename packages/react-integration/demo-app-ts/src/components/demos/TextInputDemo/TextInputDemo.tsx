@@ -13,11 +13,11 @@ export class TextInputDemo extends Component {
 
   ref = React.createRef<HTMLInputElement>();
 
-  handleTextInputChange = (value: string) => {
+  handleTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     this.setState({ value });
   };
 
-  handleValidatedTextInputChange = (value: string) => {
+  handleValidatedTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     // If the text input contains less than 5 characters, set validated to error. If empty set to warning.
     let validated = ValidatedOptions.default;
     if (value.length === 0) {
@@ -28,11 +28,11 @@ export class TextInputDemo extends Component {
     this.setState({ validatedTextInputValue: value, validated });
   };
 
-  handleLeftTruncatedTextInputChange = (leftTruncatedTextInputValue: string) => {
+  handleLeftTruncatedTextInputChange = (_event: React.FormEvent<HTMLInputElement>, leftTruncatedTextInputValue: string) => {
     this.setState({ leftTruncatedTextInputValue });
   };
 
-  handleTextUsingRefInputChange = (selectTextUsingRefValue: string) => {
+  handleTextUsingRefInputChange = (_event: React.FormEvent<HTMLInputElement>, selectTextUsingRefValue: string) => {
     this.setState({ selectTextUsingRefValue });
   };
 

@@ -140,7 +140,7 @@ const DatePickerBase = (
     setErrorText(validators.map((validator) => validator(date)).join('\n') || '');
   };
 
-  const onTextInput = (value: string, event: React.FormEvent<HTMLInputElement>) => {
+  const onTextInput = (event: React.FormEvent<HTMLInputElement>, value: string) => {
     setValue(value);
     setErrorText('');
     const newValueDate = dateParse(value);

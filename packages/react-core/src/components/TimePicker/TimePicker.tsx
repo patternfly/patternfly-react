@@ -406,7 +406,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     const { delimiter, is24Hour, includeSeconds, setIsOpen } = this.props;
     const time = parseTime(e.target.textContent, timeRegex, delimiter, !is24Hour, includeSeconds);
     if (time !== timeState) {
-      this.onInputChange(time, e);
+      this.onInputChange(e, time);
     }
 
     this.inputRef.current.focus();
@@ -424,7 +424,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     e.stopPropagation();
   };
 
-  onInputChange = (newTime: string, event: React.FormEvent<HTMLInputElement>) => {
+  onInputChange = (event: React.FormEvent<HTMLInputElement>, newTime: string) => {
     const { onChange } = this.props;
     const { timeRegex } = this.state;
     if (onChange) {

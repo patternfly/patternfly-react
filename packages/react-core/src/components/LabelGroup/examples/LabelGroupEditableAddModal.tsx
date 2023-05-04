@@ -276,7 +276,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
               id="create-label-form-label-text"
               name="create-label-form-label-text"
               value={labelText}
-              onChange={setLabelText}
+              onChange={(_event: React.FormEvent<HTMLInputElement>, value: string) => setLabelText(value)}
               ref={labelInputRef}
             />
           </FormGroup>

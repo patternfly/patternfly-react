@@ -18,7 +18,7 @@ describe('TextInput', () => {
     render(<TextInputBase {...props} value="" aria-label="test input" />);
 
     await user.type(screen.getByLabelText('test input'), 'a');
-    expect(props.onChange).toHaveBeenCalledWith('a', expect.any(Object));
+    expect(props.onChange).toHaveBeenCalledWith(expect.any(Object), 'a');
   });
 
   test('simple text input', () => {

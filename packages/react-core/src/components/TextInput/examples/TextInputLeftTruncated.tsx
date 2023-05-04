@@ -10,7 +10,7 @@ export const LeftTruncatedTextInput: React.FunctionComponent = () => {
       isLeftTruncated
       value={value}
       type="text"
-      onChange={value => setValue(value)}
+      onChange={(_event, value) => setValue(value)}
       aria-label="left-truncated text input example"
     />
   );

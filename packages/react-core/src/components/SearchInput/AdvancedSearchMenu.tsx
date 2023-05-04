@@ -172,7 +172,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
               type="text"
               id={`${queryAttr}_${index}`}
               value={getValue(queryAttr)}
-              onChange={(value, evt) => handleValueChange(queryAttr, value, evt)}
+              onChange={(evt, value) => handleValueChange(queryAttr, value, evt)}
             />
           </FormGroup>
         );
@@ -183,7 +183,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
               type="text"
               id={`${queryAttr}_${index}`}
               value={getValue(queryAttr)}
-              onChange={(value, evt) => handleValueChange(queryAttr, value, evt)}
+              onChange={(evt, value) => handleValueChange(queryAttr, value, evt)}
             />
           </FormGroup>
         );
@@ -197,7 +197,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
               type="text"
               id={randomId}
               value={getValue('haswords')}
-              onChange={(value, evt) => handleValueChange('haswords', value, evt)}
+              onChange={(evt, value) => handleValueChange('haswords', value, evt)}
             />
           </FormGroup>
         )}

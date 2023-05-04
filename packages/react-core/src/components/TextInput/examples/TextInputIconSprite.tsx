@@ -15,7 +15,7 @@ export const TextInputIconSprite: React.FunctionComponent = () => {
         validated={'success'}
         isIconSprite
         type="text"
-        onChange={value => setSuccess(value)}
+        onChange={(_event, value) => setSuccess(value)}
         aria-label="success icon sprite text input example"
       />
       <br />
@@ -25,7 +25,7 @@ export const TextInputIconSprite: React.FunctionComponent = () => {
         validated={'warning'}
         isIconSprite
         type="text"
-        onChange={value => setWarning(value)}
+        onChange={(_event, value) => setWarning(value)}
         aria-label="warning icon sprite text input example"
       />
       <br />
@@ -35,7 +35,7 @@ export const TextInputIconSprite: React.FunctionComponent = () => {
         validated={'error'}
         isIconSprite
         type="text"
-        onChange={value => setError(value)}
+        onChange={(_event, value) => setError(value)}
         aria-label="error icon sprite text input example"
       />
       <br />
@@ -45,7 +45,7 @@ export const TextInputIconSprite: React.FunctionComponent = () => {
         isIconSprite
         type="text"
         iconVariant="calendar"
-        onChange={value => setCalendar(value)}
+        onChange={(_event, value) => setCalendar(value)}
         aria-label="calendar icon sprite text input example"
       />
       <br />
@@ -55,7 +55,7 @@ export const TextInputIconSprite: React.FunctionComponent = () => {
         isIconSprite
         type="text"
         iconVariant="clock"
-        onChange={value => setClock(value)}
+        onChange={(_event, value) => setClock(value)}
         aria-label="clock icon sprite text input example"
       />
     </>

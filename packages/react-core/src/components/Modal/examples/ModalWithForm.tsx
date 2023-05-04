@@ -12,14 +12,14 @@ export const ModalWithForm: React.FunctionComponent = () => {
     setModalOpen(!isModalOpen);
   };
 
-  const handleNameInputChange = (value: string) => {
+  const handleNameInputChange = (_event, value: string) => {
     setNameValue(value);
   };
 
-  const handleEmailInputChange = (value: string) => {
+  const handleEmailInputChange = (_event, value: string) => {
     setEmailValue(value);
   };
-  const handleAddressInputChange = (value: string) => {
+  const handleAddressInputChange = (_event, value: string) => {
     setAddressValue(value);
   };
 

@@ -91,7 +91,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
       name="pf-login-password-id"
       validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
       value={passwordValue}
-      onChange={onChangePassword}
+      onChange={(event, value) => onChangePassword(value, event)}
     />
   );
 
@@ -115,7 +115,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
           type="text"
           name="pf-login-username-id"
           value={usernameValue}
-          onChange={onChangeUsername}
+          onChange={(event, value) => onChangeUsername(value, event)}
         />
       </FormGroup>
       <FormGroup label={passwordLabel} isRequired fieldId="pf-login-password-id">

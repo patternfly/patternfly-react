@@ -44,7 +44,7 @@ export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
         value={props.editableValue !== undefined ? props.editableValue : value}
         validated={props.isValid !== false ? 'default' : 'error'}
         type="text"
-        onChange={(newValue, event) => {
+        onChange={(event, newValue) => {
           handleTextInputChange(newValue, event, rowIndex, cellIndex);
         }}
         aria-label={inputAriaLabel}

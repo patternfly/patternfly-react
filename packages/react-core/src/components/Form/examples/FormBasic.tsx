@@ -19,15 +19,15 @@ export const FormBasic: React.FunctionComponent = () => {
   const [email, setEmail] = React.useState('');
   const [phone, setPhone] = React.useState('');
 
-  const handleNameChange = (name: string) => {
+  const handleNameChange = (_event, name: string) => {
     setName(name);
   };
 
-  const handleEmailChange = (email: string) => {
+  const handleEmailChange = (_event, email: string) => {
     setEmail(email);
   };
 
-  const handlePhoneChange = (phone: string) => {
+  const handlePhoneChange = (_event, phone: string) => {
     setPhone(phone);
   };
 
