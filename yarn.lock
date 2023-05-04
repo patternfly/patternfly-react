@@ -8994,10 +8994,10 @@ eslint-plugin-react@^7.32.2, eslint-plugin-react@^7.7.0:
     semver "^6.3.0"
     string.prototype.matchall "^4.0.8"
 
-eslint-plugin-rulesdir@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-rulesdir/-/eslint-plugin-rulesdir-0.1.0.tgz#ad144d7e98464fda82963eff3fab331aecb2bf08"
-  integrity sha512-HdZ8XhTY8QkOxXX4X++lyWJdOeJ9ATkWQ6Rp+PVq9jk8Km2LTTOgbFXqIIqACl3TPVXBhxP5hU51ddT93wKvdA==
+eslint-plugin-rulesdir@^0.2.0:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-rulesdir/-/eslint-plugin-rulesdir-0.2.2.tgz#84756ec39cd8503b1fe8af6a02a5da361e2bd076"
+  integrity sha512-qhBtmrWgehAIQeMDJ+Q+PnOz1DWUZMPeVrI0wE9NZtnpIMFUfh3aPKFYt2saeMSemZRrvUtjWfYwepsC8X+mjQ==
 
 eslint-plugin-standard@^3.0.1:
   version "3.1.0"
