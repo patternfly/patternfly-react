@@ -8,7 +8,6 @@ exports[`LoginMainFooterLinksItem className is added to the root element 1`] = `
     <a
       class="pf-v5-c-login__main-footer-links-item-link"
       href=""
-      target=""
     />
   </li>
 </DocumentFragment>
@@ -36,7 +35,6 @@ exports[`LoginMainFooterLinksItem with custom node 1`] = `
     <a
       class="pf-v5-c-login__main-footer-links-item-link"
       href=""
-      target=""
     >
       <div>
         My custom node
