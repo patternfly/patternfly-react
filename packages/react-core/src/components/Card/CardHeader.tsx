@@ -6,6 +6,7 @@ import { CardHeaderMain } from './CardHeaderMain';
 import { CardActions } from './CardActions';
 import { Button } from '../Button';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import { Radio } from '../Radio';
 
 export interface CardHeaderActionsObject {
   /** Actions of the card header */
@@ -14,6 +15,8 @@ export interface CardHeaderActionsObject {
   hasNoOffset?: boolean;
   /** Additional classes added to the actions wrapper */
   className?: string;
+  /* Action to call when clickable card is clicked */
+  onClickAction?: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
@@ -44,7 +47,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   ...props
 }: CardHeaderProps) => (
   <CardContext.Consumer>
-    {({ cardId }) => {
+    {({ cardId, isClickable }) => {
       const cardHeaderToggle = (
         <div className={css(styles.cardHeaderToggle)}>
           <Button
@@ -69,7 +72,26 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           {...props}
         >
           {onExpand && !isToggleRightAligned && cardHeaderToggle}
-          {actions && <CardActions className={actions?.className} hasNoOffset={actions?.hasNoOffset}> {actions.actions} </CardActions>}
+          {isClickable && (
+            <CardActions hasNoOffset={actions?.hasNoOffset}>
+              <div className={css(styles.cardSelectableActions)}>
+                <Radio
+                  label={<span className={css(styles.radioLabel)}></span>}
+                  className={css(styles.radioInput)}
+                  hidden
+                  onChange={(event, checked) => checked && actions.onClickAction(event)}
+                  id="radio"
+                  name="radio"
+                />
+              </div>
+            </CardActions>
+          )}
+          {actions && (
+            <CardActions className={actions?.className} hasNoOffset={actions?.hasNoOffset}>
+              {' '}
+              {actions.actions}{' '}
+            </CardActions>
+          )}
           {children && <CardHeaderMain>{children}</CardHeaderMain>}
           {onExpand && isToggleRightAligned && cardHeaderToggle}
         </div>

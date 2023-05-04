@@ -20,6 +20,8 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isSelectableRaised?: boolean;
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
+  /** Modifies the card to include clickable styling */
+  isClickable?: boolean;
   /** Modifies a raised selectable card to have disabled styling */
   isDisabledRaised?: boolean;
   /** Modifies the card to include flat styling */
@@ -50,6 +52,7 @@ interface CardContextProps {
   cardId: string;
   registerTitleId: (id: string) => void;
   isExpanded: boolean;
+  isClickable: boolean;
 }
 
 interface AriaProps {
@@ -60,7 +63,8 @@ interface AriaProps {
 export const CardContext = React.createContext<Partial<CardContextProps>>({
   cardId: '',
   registerTitleId: () => {},
-  isExpanded: false
+  isExpanded: false,
+  isClickable: false
 });
 
 export const Card: React.FunctionComponent<CardProps> = ({
@@ -70,6 +74,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   component = 'div',
   isCompact = false,
   isSelectable = false,
+  isClickable = false,
   isSelectableRaised = false,
   isSelected = false,
   isDisabledRaised = false,
@@ -104,9 +109,18 @@ export const Card: React.FunctionComponent<CardProps> = ({
     if (isSelectableRaised) {
       return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
     }
+    if (isSelectable && isClickable) {
+      return css(styles.modifiers.selectable, styles.modifiers.clickable, isSelected && styles.modifiers.selected);
+    }
+
     if (isSelectable) {
       return css(styles.modifiers.selectable, isSelected && styles.modifiers.selected);
     }
+
+    if (isClickable) {
+      return css(styles.modifiers.clickable, isSelected && styles.modifiers.selected);
+    }
+
     return '';
   };
 
@@ -136,7 +150,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
       value={{
         cardId: id,
         registerTitleId,
-        isExpanded
+        isExpanded,
+        isClickable
       }}
     >
       {hasSelectableInput && (
@@ -146,7 +161,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
           {...ariaProps}
           type="checkbox"
           checked={isSelected}
-          onChange={event => onSelectableInputChange(event, id)}
+          onChange={(event) => onSelectableInputChange(event, id)}
           disabled={isDisabledRaised}
           tabIndex={-1}
         />
