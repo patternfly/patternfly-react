@@ -63,7 +63,6 @@ interface NavOnSelectProps {
   groupId: number | string;
   itemId: number | string;
   to: string;
-  event: React.FormEvent<HTMLInputElement>;
 }
 
 export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent = () => {
@@ -79,7 +78,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
   const menuRef = React.useRef<HTMLDivElement>(null);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
 
-  const onNavSelect = (selectedItem: NavOnSelectProps) => {
+  const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
   };
 

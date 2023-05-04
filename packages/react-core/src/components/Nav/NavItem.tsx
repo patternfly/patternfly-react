@@ -49,7 +49,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   groupId = null as string,
   itemId = null as string,
   preventDefault = false,
-  onClick = null as NavSelectClickHandler,
+  onClick,
   component = 'a',
   flyout,
   onShowFlyout,

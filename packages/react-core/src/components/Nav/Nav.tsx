@@ -4,12 +4,11 @@ import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export type NavSelectClickHandler = (
-  e: React.FormEvent<HTMLInputElement>,
+  event: React.FormEvent<HTMLInputElement>,
   itemId: number | string,
   groupId: number | string,
   to: string
 ) => void;
-
 export interface NavProps
   extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'onSelect'>,
     OUIAProps {
@@ -18,18 +17,22 @@ export interface NavProps
   /** Additional classes added to the container */
   className?: string;
   /** Callback for updating when item selection changes */
-  onSelect?: (selectedItem: {
-    groupId: number | string;
-    itemId: number | string;
-    to: string;
-    event: React.FormEvent<HTMLInputElement>;
-  }) => void;
+  onSelect?: (
+    event: React.FormEvent<HTMLInputElement>,
+    selectedItem: {
+      groupId: number | string;
+      itemId: number | string;
+      to: string;
+    }
+  ) => void;
   /** Callback for when a list is expanded or collapsed */
-  onToggle?: (toggledItem: {
-    groupId: number | string;
-    isExpanded: boolean;
-    event: React.MouseEvent<HTMLButtonElement>;
-  }) => void;
+  onToggle?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    toggledItem: {
+      groupId: number | string;
+      isExpanded: boolean;
+    }
+  ) => void;
   /** Accessible label for the nav when there are multiple navs on the page */
   'aria-label'?: string;
   /** Indicates which theme color to use */
@@ -49,12 +52,7 @@ export interface NavContextProps {
     itemId: number | string,
     to: string,
     preventDefault: boolean,
-    onClick: (
-      e: React.FormEvent<HTMLInputElement>,
-      itemId: number | string,
-      groupId: number | string,
-      to: string
-    ) => void
+    onClick: NavSelectClickHandler
   ) => void;
   onToggle?: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) => void;
   updateIsScrollable?: (isScrollable: boolean) => void;
@@ -99,7 +97,7 @@ export class Nav extends React.Component<
       event.preventDefault();
     }
 
-    this.props.onSelect({ groupId, itemId, event, to });
+    this.props.onSelect(event, { groupId, itemId, to });
 
     if (onClick) {
       onClick(event, itemId, groupId, to);
@@ -108,8 +106,7 @@ export class Nav extends React.Component<
 
   // Callback from NavExpandable
   onToggle(event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, toggleValue: boolean) {
-    this.props.onToggle({
-      event,
+    this.props.onToggle(event, {
       groupId,
       isExpanded: toggleValue
     });
@@ -153,7 +150,7 @@ export class Nav extends React.Component<
           updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
           isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant),
           flyoutRef: this.state.flyoutRef,
-          setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
+          setFlyoutRef: (flyoutRef) => this.setState({ flyoutRef }),
           navRef: this.navRef
         }}
       >

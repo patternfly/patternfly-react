@@ -37,7 +37,7 @@ class App extends React.Component<{}, AppState> {
     isDarkTheme: false
   };
 
-  private onNavSelect = (selectedItem: { itemId: number | string }) => {
+  private onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: { itemId: number | string }) => {
     this.setState({ activeItem: selectedItem.itemId });
   };
 

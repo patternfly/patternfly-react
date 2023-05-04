@@ -53,7 +53,7 @@ class PageLayoutDefaultNav extends React.Component {
       activeItem: 0
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -156,7 +156,7 @@ class PageLayoutGroupsNav extends React.Component {
       activeItem: 'grp-1_itm-1'
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -272,7 +272,7 @@ class PageLayoutExpandableNav extends React.Component {
       activeItem: 'grp-1_itm-1'
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId,
         activeGroup: result.groupId
@@ -446,7 +446,7 @@ class PageLayoutHorizontalNav extends React.Component {
       });
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -640,13 +640,13 @@ class VerticalNavWithSubnav extends React.Component {
       activeSubNavItem: 7
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });
     };
 
-    this.onSubNavSelect = (result) => {
+    this.onSubNavSelect = (_event, result) => {
       this.setState({
         activeSubNavItem: result.itemId
       });
@@ -832,13 +832,13 @@ class HorizontalNavWithSubnav extends React.Component {
       });
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });
     };
 
-    this.onSubNavSelect = (result) => {
+    this.onSubNavSelect = (_event, result) => {
       this.setState({
         activeSubNavItem: result.itemId
       });
@@ -1068,7 +1068,7 @@ class PageLayoutTertiaryNav extends React.Component {
       activeItem: 0
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -1171,7 +1171,7 @@ class PageLayoutLightNav extends React.Component {
       activeItem: 0
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -1325,7 +1325,7 @@ class PageLayoutManualNav extends React.Component {
       });
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -1545,7 +1545,7 @@ class VerticalPage extends React.Component {
       isNavOpen: true,
       activeItem: 0
     };
-    this.onNavSelect = (e, result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });

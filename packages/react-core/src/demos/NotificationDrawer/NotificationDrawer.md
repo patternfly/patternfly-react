@@ -124,7 +124,7 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });
@@ -739,7 +739,7 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });

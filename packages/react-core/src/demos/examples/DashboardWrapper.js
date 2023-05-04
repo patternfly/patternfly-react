@@ -42,7 +42,7 @@ export default class DashboardWrapper extends React.Component {
       activeItem: 1
     };
 
-    this.onNavSelect = (result) => {
+    this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
       });

@@ -4,7 +4,7 @@ import { Nav, NavItem, NavGroup } from '@patternfly/react-core';
 export const NavGrouped: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState('group-1_item-1');
 
-  const onSelect = (result: { itemId: number | string }) => {
+  const onSelect = (_event: React.FormEvent<HTMLInputElement>, result: { itemId: number | string }) => {
     setActiveItem(result.itemId as string);
   };
 

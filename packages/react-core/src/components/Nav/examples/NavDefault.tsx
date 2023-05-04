@@ -4,7 +4,7 @@ import { Nav, NavItem, NavList } from '@patternfly/react-core';
 export const NavDefault: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState(0);
 
-  const onSelect = (result: { itemId: number | string }) => {
+  const onSelect = (_event: React.FormEvent<HTMLInputElement>, result: { itemId: number | string }) => {
     setActiveItem(result.itemId as number);
   };
 

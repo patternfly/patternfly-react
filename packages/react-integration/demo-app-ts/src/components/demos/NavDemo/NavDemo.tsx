@@ -19,7 +19,6 @@ interface SelectedItem {
   groupId: number | string;
   itemId: number | string;
   to: string;
-  event: React.FormEvent<HTMLInputElement>;
 }
 
 export class NavDemo extends Component {
@@ -43,11 +42,11 @@ export class NavDemo extends Component {
     window.scrollTo(0, 0);
   }
 
-  onDefaultSelect = (result: SelectedItem) => {
+  onDefaultSelect = (_event: React.FormEvent<HTMLInputElement>, result: SelectedItem) => {
     this.setState({ defaultActiveItem: result.itemId });
   };
 
-  onFlyoutSelect = (result: SelectedItem) => {
+  onFlyoutSelect = (_event: React.FormEvent<HTMLInputElement>, result: SelectedItem) => {
     this.setState({ flyoutActiveItem: result.itemId });
   };
 
@@ -109,7 +108,7 @@ export class NavDemo extends Component {
     );
   }
 
-  onExpandableSelect = (result: SelectedItem) => {
+  onExpandableSelect = (_event: React.FormEvent<HTMLInputElement>, result: SelectedItem) => {
     this.setState({
       expandableActiveGroup: result.groupId,
       expandableActiveItem: result.itemId
@@ -245,7 +244,7 @@ export class NavDemo extends Component {
     );
   }
 
-  onHorizontalSelect = (result: SelectedItem) => {
+  onHorizontalSelect = (_event: React.FormEvent<HTMLInputElement>, result: SelectedItem) => {
     this.setState({ horizontalActiveItem: result.itemId });
   };
 
@@ -301,7 +300,7 @@ export class NavDemo extends Component {
       </StackItem>
     );
   }
-  onTertiarySelect = (result: SelectedItem) => {
+  onTertiarySelect = (_event: React.FormEvent<HTMLInputElement>, result: SelectedItem) => {
     this.setState({ tertiaryActiveItem: result.itemId });
   };
 
