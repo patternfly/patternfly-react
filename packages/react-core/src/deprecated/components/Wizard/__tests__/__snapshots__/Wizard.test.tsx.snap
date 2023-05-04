@@ -38,6 +38,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
       >
         <h2
           class="pf-c-wizard__title-text"
+          id="pf-wizard-title-1"
         >
           Wizard title
         </h2>
@@ -310,6 +311,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
       >
         <h2
           class="pf-c-wizard__title-text"
+          id="pf-wizard-title-0"
         >
           Wizard title
         </h2>

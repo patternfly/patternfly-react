@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../../../components/Button';
-import { Title } from '../../../components/Title';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export interface WizardHeaderProps {
@@ -43,7 +42,7 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
       </div>
     )}
     <div className={css(styles.wizardTitle)}>
-      <h2 className={css(styles.wizardTitleText)}>{title || <>&nbsp;</>}</h2>
+      <h2 className={css(styles.wizardTitleText)} id={titleId}>{title || <>&nbsp;</>}</h2>
     </div>
     {description && (
       <Component className={css(styles.wizardDescription)} id={descriptionId}>
