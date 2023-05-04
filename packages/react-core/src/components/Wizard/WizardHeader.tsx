@@ -36,14 +36,15 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
 }: WizardHeaderProps) => (
   <div className={css(styles.wizardHeader)}>
     {!isCloseHidden && (
-      <Button variant="plain" className={css(styles.wizardClose)} aria-label={closeButtonAriaLabel} onClick={onClose}>
-        <TimesIcon aria-hidden="true" />
-      </Button>
+      <div className={css(styles.wizardClose)}>
+        <Button variant="plain" aria-label={closeButtonAriaLabel} onClick={onClose}>
+          <TimesIcon aria-hidden="true" />
+        </Button>
+      </div>
     )}
-
-    <Title headingLevel="h2" size="3xl" className={css(styles.wizardTitle)} aria-label={title} id={titleId}>
-      {title || <>&nbsp;</>}
-    </Title>
+    <div className={css(styles.wizardTitle)}>
+      <h2 className={css(styles.wizardTitleText)}>{title || <>&nbsp;</>}</h2>
+    </div>
 
     {description && (
       <Component className={css(styles.wizardDescription)} id={descriptionId}>

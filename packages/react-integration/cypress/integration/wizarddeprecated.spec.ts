@@ -13,7 +13,7 @@ describe('Wizard Deprecated Demo Test', () => {
   it('Verify wizard in modal sends focus to the new content', () => {
     cy.get('#launchWiz').click();
     cy.get('#modalWizId.pf-v5-c-wizard').should('exist');
-    cy.focused().should('have.class', 'pf-v5-c-wizard__close');
+    cy.focused().should('have.class', 'pf-v5-c-button');
     cy.focused().click();
   });
 
@@ -38,6 +38,6 @@ describe('Wizard Deprecated Demo Test', () => {
     cy.get('#wizard-correct-role .pf-v5-c-wizard__main button').click();
     // Within a modal, wizard body uses the <main> element and should not have a role applied
     cy.get('#wizard-correct-role .pf-v5-c-wizard__main').should('not.have.attr', 'role');
-    cy.get('#wizard-correct-role .pf-v5-c-wizard__close').click();
+    cy.get('#wizard-correct-role .pf-v5-c-wizard__close button').click();
   });
 });
