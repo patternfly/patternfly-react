@@ -1,6 +1,5 @@
 {
   "plugins": [
-    "markdown",
     "react",
     "patternfly-react"
   ],
@@ -26,5 +25,6 @@
     "react/jsx-uses-vars": "error",
     "react/no-unknown-property": 2,
     "react/jsx-no-undef": 2
-  }
+  },
+  "extends": "plugin:markdown/recommended"
 }
