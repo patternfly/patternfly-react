@@ -29,7 +29,7 @@
     "eslint-config-standard-jsx": "^5.0.0",
     "eslint-config-standard-react": "^6.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-jest": "^27.0.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^4.0.0",
