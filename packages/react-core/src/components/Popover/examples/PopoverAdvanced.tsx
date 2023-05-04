@@ -14,11 +14,11 @@ export const PopoverAdvanced: React.FunctionComponent = () => {
     setShow(checked);
   };
 
-  const shouldClose = () => {
+  const shouldClose = (_event, _fn) => {
     setShow(false);
   };
 
-  const shouldOpen = () => {
+  const shouldOpen = (_event, _fn) => {
     setShow(true);
   };
 
