@@ -4032,7 +4032,7 @@
     acorn-static-class-features "^1.0.0"
     astring "^1.7.5"
 
-"@patternfly/documentation-framework@^2.0.0-alpha.25":
+"@patternfly/documentation-framework@^2.0.0-alpha.33":
   version "2.0.0-alpha.33"
   resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-2.0.0-alpha.33.tgz#18525e1fa85a8ad5fdad06d003d377eec665089e"
   integrity sha512-84UOsYiGM8vJNJNRzGqaQeE1f4inFZeVGDs13XarhU+dzTeC3NdIAyfXXn8k87cpXjd20odSffTS4L7CLox38w==
@@ -4121,10 +4121,10 @@
     puppeteer-cluster "^0.23.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@5.0.0-alpha.44":
-  version "5.0.0-alpha.44"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.0.0-alpha.44.tgz#e51ba9be1fbec4f1ff550789bc742002b5b8c7a7"
-  integrity sha512-0JY9edCMtKKvdyRSnLsJy1taa1Uua0S9qJ8O5/PP4iJmpePL6/fbPU/eHJ09T57CcZmXjx0xhYy7vfpHhKsJoA==
+"@patternfly/patternfly@5.0.0-alpha.45":
+  version "5.0.0-alpha.45"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.0.0-alpha.45.tgz#b84c8462f10cd7b10ef5d45d70c78d343bfa6525"
+  integrity sha512-Q8ZT5L84If/8PYqiyJY9Lx6HWJDLEtvmNFoncx4xBVxo4iUB3YZkhQlCJrRlW8VFUOFKMMiUymEIh+TgVkHDgA==
 
 "@phenomnomnominal/tsquery@4.1.1":
   version "4.1.1"
