@@ -52,17 +52,19 @@ describe('Notification Drawer Groups Demo Test', () => {
   });
 
   // Accessibility test
-  // TODO: Remove skip once issues with new Dropdown keyboard handling are resolved
-  it.skip('Verify keyboard events happen correctly', () => {
+  it('Verify keyboard events happen correctly', () => {
     // Verify the list header toggle button keyboard interactivity opens/closes dropdown menu
     // press Enter on toggle button, check whether the dropdown menu exsit and whether it focuses on the first item
     // then press Tab on toggle button, check whether the dropdown menu is closed
     cy.get('#toggle-id-0').then((toggleButton: JQuery<HTMLButtonElement>) => {
-      cy.wrap(toggleButton).trigger('keydown', { key: 'Enter' });
-      cy.get('#notification-0').find('.pf-v5-c-dropdown__menu.pf-m-align-right').should('exist');
-      cy.get('#notification-0').find('.pf-v5-c-dropdown__menu-item').first().should('be.focused');
-      cy.wrap(toggleButton).trigger('keydown', { key: 'Tab' });
-      cy.get('#notification-0').find('.pf-v5-c-dropdown__menu.pf-m-align-right').should('not.exist');
+      cy.wrap(toggleButton).type('{enter}', {waitForAnimations:true});
+      cy.get('#notification-0')
+        .find('.pf-v5-c-menu')
+        .should('exist');
+      cy.wrap(toggleButton).type('{esc}', {waitForAnimations:true});
+      cy.get('#notification-0')
+        .find('.pf-v5-c-menu')
+        .should('not.exist');
     });
     // Verify the group header keyboard interactivity opens/closes the whole group
     // check whether the whole group is expanded, then press Enter on the group header and check whether the whole group is closed
@@ -71,15 +73,14 @@ describe('Notification Drawer Groups Demo Test', () => {
     cy.get('.pf-v5-c-notification-drawer__group').first().should('not.have.class', 'pf-m-expanded');
     // Verify the list item header toggle button keyboard interactivity opens/closes dropdown menu
     cy.get('#toggle-id-9').then((toggleButton: JQuery<HTMLButtonElement>) => {
-      cy.wrap(toggleButton).trigger('keydown', { key: 'Enter' });
-      cy.get('#notification-9').find('.pf-v5-c-dropdown__menu.pf-m-align-right').should('exist');
+      cy.wrap(toggleButton).type('{enter}', {waitForAnimations:true});
       cy.get('#notification-9')
-        .find('.pf-v5-c-dropdown__menu.pf-m-align-right')
-        .first()
-        .find('.pf-v5-c-dropdown__menu-item')
-        .should('be.focused');
-      cy.wrap(toggleButton).trigger('keydown', { key: 'Tab' });
-      cy.get('#notification-9').find('.pf-v5-c-dropdown__menu.pf-m-align-right').should('not.exist');
+        .find('.pf-v5-c-menu')
+        .should('exist');
+      cy.wrap(toggleButton).type('{esc}', {waitForAnimations:true});
+      cy.get('#notification-9')
+        .find('.pf-v5-c-menu')
+        .should('not.exist');
     });
   });
 

@@ -67,7 +67,8 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
   }
 
   handleKeys = (event: KeyboardEvent) => {
-    if (!this.treeRef.current.contains(event.target as HTMLElement)) {
+    if (!this.treeRef.current.contains(event.target as HTMLElement) ||
+      !(event.target as HTMLElement).classList.contains('pf-c-tree-view__node')) {
       return;
     }
     const activeElement = document.activeElement;
