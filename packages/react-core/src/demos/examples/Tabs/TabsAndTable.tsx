@@ -158,10 +158,12 @@ export const TablesAndTabs = () => {
           </ToolbarItem>
         </ToolbarToggleGroup>
         <ToolbarItem>
-          <MenuToggle variant="plain" aria-label="Sort columns"><SortAmountDownIcon aria-hidden="true" /></MenuToggle>
+          <MenuToggle variant="plain" aria-label="Sort columns">
+            <SortAmountDownIcon aria-hidden="true" />
+          </MenuToggle>
         </ToolbarItem>
         <OverflowMenu breakpoint="md">
-          <OverflowMenuContent className="pf-u-display-none pf-u-display-block-on-lg">
+          <OverflowMenuContent className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">
             <OverflowMenuGroup groupType="button" isPersistent>
               <OverflowMenuItem isPersistent>
                 <Button variant="primary">Generate</Button>

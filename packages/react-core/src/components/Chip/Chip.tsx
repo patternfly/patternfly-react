@@ -79,7 +79,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
   }
 
   setChipStyle = () => ({
-    '--pf-c-chip__text--MaxWidth': this.props.textMaxWidth
+    '--pf-v5-c-chip__text--MaxWidth': this.props.textMaxWidth
   });
 
   renderOverflowChip = () => {
@@ -157,7 +157,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
             <Button
               onClick={onClick}
               variant="plain"
-              aria-label={closeBtnAriaLabel}  
+              aria-label={closeBtnAriaLabel}
               id={`remove_${id}`}
               aria-labelledby={`remove_${id} ${id}`}
               ouiaId={ouiaId || closeBtnAriaLabel}
@@ -186,7 +186,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     const { isOverflowChip } = this.props;
     return (
       <GenerateId>
-        {randomId => (isOverflowChip ? this.renderOverflowChip() : this.renderChip(this.props.id || randomId))}
+        {(randomId) => (isOverflowChip ? this.renderOverflowChip() : this.renderChip(this.props.id || randomId))}
       </GenerateId>
     );
   }

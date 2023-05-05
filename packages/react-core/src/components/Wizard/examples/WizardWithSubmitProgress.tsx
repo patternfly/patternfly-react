@@ -35,7 +35,7 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
   }, [tick]);
 
   return (
-    <div className="pf-l-bullseye">
+    <div className="pf-v5-l-bullseye">
       <EmptyState variant="lg">
         <EmptyStateHeader
           headingLevel="h4"

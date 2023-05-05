@@ -67,7 +67,7 @@ export const PageCenteredSection: React.FunctionComponent = () => {
         <Card>
           <CardBody>
             When a width limited page section is wider than the value of
-            <code>--pf-c-page--section--m-limit-width--MaxWidth</code>, the section will be centered in the main
+            <code>--pf-v5-c-page--section--m-limit-width--MaxWidth</code>, the section will be centered in the main
             section.
             <br />
             <br />

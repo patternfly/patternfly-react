@@ -27,7 +27,7 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
   ...props
 }: SkeletonProps) => {
   const fontHeightClassName = fontSize
-    ? Object.values(styles.modifiers).find(key => key === `pf-m-text-${fontSize}`)
+    ? Object.values(styles.modifiers).find((key) => key === `pf-m-text-${fontSize}`)
     : undefined;
 
   return (
@@ -42,13 +42,13 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
       )}
       {...((width || height) && {
         style: {
-          '--pf-c-skeleton--Width': width ? width : undefined,
-          '--pf-c-skeleton--Height': height ? height : undefined,
+          '--pf-v5-c-skeleton--Width': width ? width : undefined,
+          '--pf-v5-c-skeleton--Height': height ? height : undefined,
           ...props.style
         } as React.CSSProperties
       })}
     >
-      <span className="pf-u-screen-reader">{screenreaderText}</span>
+      <span className="pf-v5-u-screen-reader">{screenreaderText}</span>
     </div>
   );
 };

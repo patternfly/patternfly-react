@@ -19,7 +19,7 @@ export const PanelMain: React.FunctionComponent<PanelMainProps> = ({
 }: PanelMainProps) => (
   <div
     className={css(styles.panelMain, className)}
-    style={{ '--pf-c-panel__main--MaxHeight': maxHeight } as React.CSSProperties}
+    style={{ '--pf-v5-c-panel__main--MaxHeight': maxHeight } as React.CSSProperties}
     {...props}
   >
     {children}

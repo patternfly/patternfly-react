@@ -95,7 +95,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   if (widths) {
     Object.entries(widths || {}).map(
       ([breakpoint, value]) =>
-        (widthStyles[`--pf-c-toolbar__item--Width${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] = value)
+        (widthStyles[`--pf-v5-c-toolbar__item--Width${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] = value)
     );
   }
 

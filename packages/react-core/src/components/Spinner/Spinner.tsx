@@ -42,7 +42,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
     role="progressbar"
     aria-valuetext={ariaValueText}
     viewBox="0 0 100 100"
-    {...(diameter && { style: { ['--pf-c-spinner--diameter']: diameter } as React.CSSProperties })}
+    {...(diameter && { style: { ['--pf-v5-c-spinner--diameter']: diameter } as React.CSSProperties })}
     {...(ariaLabel && { 'aria-label': ariaLabel })}
     {...(ariaLabelledBy && { 'aria-labelledBy': ariaLabelledBy })}
     {...(!ariaLabel && !ariaLabelledBy && { 'aria-label': 'Contents' })}

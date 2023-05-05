@@ -44,7 +44,7 @@ export const DrawerStatic: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Button className="pf-u-hidden-on-md" aria-expanded={isExpanded} onClick={onClick}>
+      <Button className="pf-v5-u-hidden-on-md" aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
       <Drawer isStatic isExpanded={isExpanded} onExpand={onExpand}>

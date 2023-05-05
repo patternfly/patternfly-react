@@ -201,7 +201,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
             id={`${id}-list`}
             isDisabled={isDisabled}
             {...(listMinHeight && {
-              style: { '--pf-c-dual-list-selector__menu--MinHeight': listMinHeight } as React.CSSProperties
+              style: { '--pf-v5-c-dual-list-selector__menu--MinHeight': listMinHeight } as React.CSSProperties
             })}
           >
             {children}
@@ -212,7 +212,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
             aria-labelledby={`${id}-status`}
             id={`${id}-list`}
             {...(listMinHeight && {
-              style: { '--pf-c-dual-list-selector__menu--MinHeight': listMinHeight } as React.CSSProperties
+              style: { '--pf-v5-c-dual-list-selector__menu--MinHeight': listMinHeight } as React.CSSProperties
             })}
           >
             {options.length > 0 ? (

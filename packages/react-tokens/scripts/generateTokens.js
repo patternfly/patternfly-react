@@ -6,7 +6,7 @@ const { readFileSync } = require('fs');
 const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
 
 // Helpers
-const formatCustomPropertyName = key => key.replace('--pf-', '').replace(/-+/g, '_');
+const formatCustomPropertyName = (key) => key.replace('--pf-v5-', '').replace(/-+/g, '_');
 
 const getRegexMatches = (string, regex) => {
   const res = {};
@@ -17,18 +17,18 @@ const getRegexMatches = (string, regex) => {
   return res;
 };
 
-const getDeclarations = cssAst =>
+const getDeclarations = (cssAst) =>
   cssAst.stylesheet.rules
     .filter(
-      node =>
+      (node) =>
         node.type === 'rule' &&
-        !node.selectors.includes('.pf-t-dark') &&
-        (!node.selectors || !node.selectors.some(item => item.includes('.pf-theme-dark'))) // exclude dark theme blocks since dark theme variable values override default token values
+        !node.selectors.includes('.pf-v5-t-dark') &&
+        (!node.selectors || !node.selectors.some((item) => item.includes('.pf-v5-theme-dark'))) // exclude dark theme blocks since dark theme variable values override default token values
     )
-    .map(node => node.declarations.filter(decl => decl.type === 'declaration'))
+    .map((node) => node.declarations.filter((decl) => decl.type === 'declaration'))
     .reduce((acc, val) => acc.concat(val), []); // flatten
 
-const formatFilePathToName = filePath => {
+const formatFilePathToName = (filePath) => {
   // const filePathArr = filePath.split('/');
   let prefix = '';
   if (filePath.includes('components/')) {
@@ -39,14 +39,14 @@ const formatFilePathToName = filePath => {
   return `${prefix}${basename(filePath, '.css').replace(/-+/g, '_')}`;
 };
 
-const getLocalVarsMap = cssFiles => {
+const getLocalVarsMap = (cssFiles) => {
   const res = {};
 
-  cssFiles.forEach(filePath => {
+  cssFiles.forEach((filePath) => {
     const cssAst = parse(readFileSync(filePath, 'utf8'));
 
     getDeclarations(cssAst).forEach(({ property, value, parent }) => {
-      if (property.startsWith('--pf')) {
+      if (property.startsWith('--pf-v5')) {
         res[property] = {
           ...res[property],
           [parent.selectors[0]]: value
@@ -65,10 +65,10 @@ const getLocalVarsMap = cssFiles => {
  *   c_about_modal_box: {
  *     ".pf-c-about-modal-box" : {
  *       "global_Color_100": {
- *         "name": "--pf-global--Color--100",
+ *         "name": "--pf-v5-global--Color--100",
  *         "value": "#fff",
  *         "values": [
- *           "--pf-global--Color--light-100",
+ *           "--pf-v5-global--Color--light-100",
  *           "$pf-global--Color--light-100",
  *           "$pf-color-white",
  *           "#fff"
@@ -90,7 +90,8 @@ function generateTokens() {
     .sort((a, b) => (a.split(sep).length < b.split(sep).length ? 1 : -1));
 
   // various lookup tables to resolve variables
-  const variables = readFileSync(require.resolve('@patternfly/patternfly/base/_variables.scss'), 'utf8');
+  let variables = readFileSync(require.resolve('@patternfly/patternfly/base/_variables.scss'), 'utf8');
+  variables = variables.replaceAll('#{$pf-global}', 'pf-v5-global');
   const cssGlobalsToScssVarsMap = getRegexMatches(variables, /(--pf-.*):\s*(?:#{)?(\$?pf-[\w- _]+)}?;/g);
 
   // contains default values and mappings to colors.scss for color values
@@ -110,7 +111,7 @@ function generateTokens() {
   );
 
   cssGlobalVariablesAst.stylesheet.rules = cssGlobalVariablesAst.stylesheet.rules.filter(
-    node => !node.selectors || !node.selectors.some(item => item.includes('.pf-theme-dark'))
+    (node) => !node.selectors || !node.selectors.some((item) => item.includes('.pf-v5-theme-dark'))
   );
 
   const cssGlobalVariablesMap = getRegexMatches(stringify(cssGlobalVariablesAst), /(--pf-[\w-]*):\s*([\w -_]+);/g);
@@ -122,7 +123,7 @@ function generateTokens() {
 
   const getComputedCSSVarValue = (value, selector, varMap) =>
     value.replace(/var\(([\w-]*)(,.*)?\)/g, (full, m1, m2) => {
-      if (m1.startsWith('--pf-global')) {
+      if (m1.startsWith('--pf-v5-global')) {
         if (varMap[m1]) {
           return varMap[m1] + (m2 || '');
         } else {
@@ -135,8 +136,8 @@ function generateTokens() {
       }
     });
 
-  const getComputedScssVarValue = value =>
-    value.replace(/\$pf[^,)\s*/]*/g, match => {
+  const getComputedScssVarValue = (value) =>
+    value.replace(/\$pf[^,)\s*/]*/g, (match) => {
       if (combinedScssVarsColorsMap[match]) {
         return combinedScssVarsColorsMap[match];
       } else {
@@ -175,13 +176,13 @@ function generateTokens() {
       varsMap.push(finalValue);
     }
     // all values should not be boxed by var()
-    return varsMap.map(variable => variable.replace(/var\(([\w-]*)\)/g, (_, match) => match));
+    return varsMap.map((variable) => variable.replace(/var\(([\w-]*)\)/g, (_, match) => match));
   };
 
   // pre-populate the localVarsMap so we can lookup local variables within or across files, e.g. if we have the declaration:
-  // --pf-c-chip-group--MarginBottom: calc(var(--pf-c-chip-group--c-chip--MarginBottom) * -1);
+  // --pf-v5-c-chip-group--MarginBottom: calc(var(--pf-v5-c-chip-group--c-chip--MarginBottom) * -1);
   // then we need to find:
-  // --pf-c-chip-group--c-chip--MarginBottom: var(--pf-global--spacer--xs);
+  // --pf-v5-c-chip-group--c-chip--MarginBottom: var(--pf-v5-global--spacer--xs);
   const localVarsMap = getLocalVarsMap(cssFiles);
 
   const getFromLocalVarsMap = (match, selector) => {
@@ -225,7 +226,7 @@ function generateTokens() {
   };
 
   const fileTokens = {};
-  cssFiles.forEach(filePath => {
+  cssFiles.forEach((filePath) => {
     const cssAst = parse(readFileSync(filePath, 'utf8'));
     // key is the formatted file name, e.g. c_about_modal_box
     const key = formatFilePathToName(filePath);

@@ -34,7 +34,7 @@ export const Banner: React.FunctionComponent<BannerProps> = ({
     )}
     {...props}
   >
-    {screenReaderText && <span className="pf-u-screen-reader">{screenReaderText}</span>}
+    {screenReaderText && <span className="pf-v5-u-screen-reader">{screenReaderText}</span>}
     {children}
   </div>
 );

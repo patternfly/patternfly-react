@@ -108,7 +108,7 @@ export const NestedTabs: React.FunctionComponent = () => {
         </Card>
       </GridItem>
       <GridItem xl={4} md={6}>
-        <Flex direction={{ default: 'column' }} className="pf-u-h-100">
+        <Flex direction={{ default: 'column' }} className="pf-v5-u-h-100">
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>

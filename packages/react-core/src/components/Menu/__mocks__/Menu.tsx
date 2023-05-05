@@ -7,6 +7,6 @@ export const Menu = ({ className, isPlain, isScrollable, style, onSelect, ...pro
     <div onClick={onSelect}>{'Mock item'}</div>
     <p>{`isPlain: ${isPlain}`}</p>
     <p>{`isScrollable: ${isScrollable}`}</p>
-    <p>{`minWidth: ${style?.['--pf-c-menu--MinWidth']}`}</p>
+    <p>{`minWidth: ${style?.['--pf-v5-c-menu--MinWidth']}`}</p>
   </>
 );

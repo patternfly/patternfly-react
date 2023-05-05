@@ -30,7 +30,7 @@ const FormBase: React.FunctionComponent<FormProps> = ({
     noValidate
     {...(maxWidth && {
       style: {
-        '--pf-c-form--m-limit-width--MaxWidth': maxWidth,
+        '--pf-v5-c-form--m-limit-width--MaxWidth': maxWidth,
         ...props.style
       } as React.CSSProperties
     })}

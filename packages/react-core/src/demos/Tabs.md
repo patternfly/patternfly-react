@@ -67,7 +67,7 @@ TabsOpenDemo = () => {
   const tabContent = (
     <Flex direction={{ default: 'column' }}>
       <FlexItem spacer={{ default: 'spacerLg' }}>
-        <Title headingLevel="h2" size="lg" className="pf-u-mt-sm" id="open-tabs-example-tabs-list-details-title">
+        <Title headingLevel="h2" size="lg" className="pf-v5-u-mt-sm" id="open-tabs-example-tabs-list-details-title">
           Pod details
         </Title>
       </FlexItem>
@@ -263,7 +263,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
   const tabContent = (
     <Flex direction={{ default: 'column' }}>
       <FlexItem spacer={{ default: 'spacerLg' }}>
-        <Title headingLevel="h2" size="lg" className="pf-u-mt-sm" id="open-tabs-example-tabs-list-details-title">
+        <Title headingLevel="h2" size="lg" className="pf-v5-u-mt-sm" id="open-tabs-example-tabs-list-details-title">
           Pod details
         </Title>
       </FlexItem>

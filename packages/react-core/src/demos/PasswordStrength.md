@@ -41,12 +41,12 @@ class PasswordStrengthDemo extends React.Component {
       passStrength: { variant: 'error', icon: <ExclamationCircleIcon />, text: 'Weak' }
     };
 
-    this.handlePasswordInput = password => {
+    this.handlePasswordInput = (password) => {
       this.setState({ password });
       this.validate(password);
     };
 
-    this.validate = password => {
+    this.validate = (password) => {
       if (password === '') {
         this.setState({
           ruleLength: 'indeterminate',
@@ -110,9 +110,9 @@ class PasswordStrengthDemo extends React.Component {
         <button
           type="button"
           aria-label="More info for name field"
-          onClick={e => e.preventDefault()}
+          onClick={(e) => e.preventDefault()}
           aria-describedby="password-field"
-          className="pf-c-form__group-label-help"
+          className="pf-v5-c-form__group-label-help"
         >
           <HelpIcon />
         </button>

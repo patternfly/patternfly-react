@@ -108,7 +108,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
       className={css(styles.numberInput, validated !== 'default' && styles.modifiers.status, className)}
       {...(widthChars && {
         style: {
-          '--pf-c-number-input--c-form-control--width-chars': widthChars,
+          '--pf-v5-c-number-input--c-form-control--width-chars': widthChars,
           ...props.style
         } as React.CSSProperties
       })}
@@ -120,7 +120,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           variant="control"
           aria-label={minusBtnAriaLabel}
           isDisabled={isDisabled || value <= min}
-          onClick={evt => onMinus(evt, inputName)}
+          onClick={(evt) => onMinus(evt, inputName)}
           {...minusBtnProps}
         >
           <span className={css(styles.numberInputIcon)}>
@@ -144,7 +144,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           variant="control"
           aria-label={plusBtnAriaLabel}
           isDisabled={isDisabled || value >= max}
-          onClick={evt => onPlus(evt, inputName)}
+          onClick={(evt) => onPlus(evt, inputName)}
           {...plusBtnProps}
         >
           <span className={css(styles.numberInputIcon)}>

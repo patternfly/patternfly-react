@@ -35,12 +35,12 @@ class BannerDemo extends React.Component {
               justifyContent={{ default: 'justifyContentCenter', lg: 'justifyContentSpaceBetween' }}
               flexWrap={{ default: 'nowrap' }}
             >
-              <div className="pf-u-display-none pf-u-display-block-on-lg">Localhost</div>
-              <div className="pf-u-display-none pf-u-display-block-on-lg">
+              <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Localhost</div>
+              <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">
                 This message is sticky to the top of the page.
               </div>
-              <div className="pf-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
-              <div className="pf-u-display-none pf-u-display-block-on-lg">Ned Username</div>
+              <div className="pf-v5-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
+              <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Ned Username</div>
             </Flex>
           </Banner>
           <PageSection variant={PageSectionVariants.light}>
@@ -105,12 +105,12 @@ class BannerDemo extends React.Component {
                 justifyContent={{ default: 'justifyContentCenter', lg: 'justifyContentSpaceBetween' }}
                 flexWrap={{ default: 'nowrap' }}
               >
-                <div className="pf-u-display-none pf-u-display-block-on-lg">Localhost</div>
-                <div className="pf-u-display-none pf-u-display-block-on-lg">
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Localhost</div>
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">
                   This message is sticky to the top of the page.
                 </div>
-                <div className="pf-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
-                <div className="pf-u-display-none pf-u-display-block-on-lg">Ned Username</div>
+                <div className="pf-v5-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Ned Username</div>
               </Flex>
             </Banner>
           </FlexItem>
@@ -144,12 +144,12 @@ class BannerDemo extends React.Component {
                 justifyContent={{ default: 'justifyContentCenter', lg: 'justifyContentSpaceBetween' }}
                 flexWrap={{ default: 'nowrap' }}
               >
-                <div className="pf-u-display-none pf-u-display-block-on-lg">Localhost</div>
-                <div className="pf-u-display-none pf-u-display-block-on-lg">
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Localhost</div>
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">
                   This message is sticky to the bottom of the page.
                 </div>
-                <div className="pf-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
-                <div className="pf-u-display-none pf-u-display-block-on-lg">Ned Username</div>
+                <div className="pf-v5-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Ned Username</div>
               </Flex>
             </Banner>
           </FlexItem>

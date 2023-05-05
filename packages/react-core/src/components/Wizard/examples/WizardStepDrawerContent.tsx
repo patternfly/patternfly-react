@@ -39,13 +39,13 @@ const StepContentWithDrawer: React.FunctionComponent = () => {
         }
       >
         <Flex
-          className="pf-c-wizard__main-body"
+          className="pf-v5-c-wizard__main-body"
           direction={{ default: 'column' }}
           spaceItems={{ default: 'spaceItemsLg' }}
           height="100%"
         >
           {!isDrawerExpanded && (
-            <Button isInline variant="link" onClick={() => setIsDrawerExpanded(prevExpanded => !prevExpanded)}>
+            <Button isInline variant="link" onClick={() => setIsDrawerExpanded((prevExpanded) => !prevExpanded)}>
               Open drawer
             </Button>
           )}

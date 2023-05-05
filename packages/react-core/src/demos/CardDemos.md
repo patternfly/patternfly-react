@@ -332,7 +332,7 @@ import {
 
 CardDetailsDemo = () => {
   return (
-    <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '260px' }}>
+    <Gallery hasGutter style={{ '--pf-v5-l-gallery--GridTemplateColumns--min': '260px' }}>
       <Card>
         <CardTitle>
           <Title headingLevel="h4" size="xl">
@@ -439,7 +439,7 @@ const cardData = {
       title: '5 Clusters',
       content: [
         {
-          icon: <CheckCircleIcon color="var(--pf-global--success-color--100)" />
+          icon: <CheckCircleIcon color="var(--pf-v5-global--success-color--100)" />
         }
       ],
       layout: 'icon'
@@ -448,7 +448,7 @@ const cardData = {
       title: '15 Clusters',
       content: [
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />
+          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />
         }
       ],
       layout: 'icon'
@@ -457,7 +457,7 @@ const cardData = {
       title: '3 Clusters',
       content: [
         {
-          icon: <TimesCircleIcon color="var(--pf-global--danger-color--100)" />
+          icon: <TimesCircleIcon color="var(--pf-v5-global--danger-color--100)" />
         }
       ],
       layout: 'icon'
@@ -468,11 +468,11 @@ const cardData = {
       title: '10 Hosts',
       content: [
         {
-          icon: <ExclamationCircleIcon color="var(--pf-global--success-color--100)" />,
+          icon: <ExclamationCircleIcon color="var(--pf-v5-global--success-color--100)" />,
           count: 2
         },
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />,
+          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />,
           count: 1
         }
       ],
@@ -482,11 +482,11 @@ const cardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon color="var(--pf-global--success-color--100)" />,
+          icon: <CheckCircleIcon color="var(--pf-v5-global--success-color--100)" />,
           count: 5
         },
         {
-          icon: <TimesCircleIcon color="var(--pf-global--danger-color--100)" />,
+          icon: <TimesCircleIcon color="var(--pf-v5-global--danger-color--100)" />,
           count: 12
         }
       ],
@@ -496,11 +496,11 @@ const cardData = {
       title: '12 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />,
+          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />,
           count: 3
         },
         {
-          icon: <TimesCircleIcon color="var(--pf-global--danger-color--100)" />,
+          icon: <TimesCircleIcon color="var(--pf-v5-global--danger-color--100)" />,
           count: 7
         }
       ],
@@ -512,12 +512,12 @@ const cardData = {
       title: '13 Hosts',
       content: [
         {
-          icon: <TimesCircleIcon color="var(--pf-global--danger-color--100)" />,
+          icon: <TimesCircleIcon color="var(--pf-v5-global--danger-color--100)" />,
           status: '2 errors',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />,
+          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />,
           status: '1 warning',
           subtitle: 'subtitle'
         }
@@ -528,12 +528,12 @@ const cardData = {
       title: '3 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon color="var(--pf-global--success-color--100)" />,
+          icon: <CheckCircleIcon color="var(--pf-v5-global--success-color--100)" />,
           status: '2 successes',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />,
+          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />,
           status: '3 warnings',
           subtitle: 'subtitle'
         }
@@ -544,12 +544,12 @@ const cardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />,
+          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />,
           status: '7 warnings',
           subtitle: 'subtitle'
         },
         {
-          icon: <TimesCircleIcon color="var(--pf-global--danger-color--100)" />,
+          icon: <TimesCircleIcon color="var(--pf-v5-global--danger-color--100)" />,
           status: '1 error',
           subtitle: 'subtitle'
         }
@@ -620,7 +620,7 @@ const AggregateStatusCards: React.FunctionComponent = () => {
         }
         return (
           <GridItem key={groupIndex}>
-            <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': galleryWidth } as any}>
+            <Gallery hasGutter style={{ '--pf-v5-l-gallery--GridTemplateColumns--min': galleryWidth } as any}>
               {cardData[cardGroup].map(({ title, content, layout }, cardIndex) => (
                 <Card style={{ textAlign: cardAlign }} key={`${groupIndex}${cardIndex}`} component="div">
                   <CardTitle style={{ textAlign: titleAlign }}>{title}</CardTitle>
@@ -778,7 +778,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon color="var(--pf-global--success-color--100)" />
+              <CheckCircleIcon color="var(--pf-v5-global--success-color--100)" />
             </FlexItem>
             <FlexItem>
               <span>Cluster</span>
@@ -788,7 +788,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon color="var(--pf-global--danger-color--100)" />
+              <ExclamationCircleIcon color="var(--pf-v5-global--danger-color--100)" />
             </FlexItem>
             <FlexItem>
               <Popover headerContent="Control Panel Status" bodyContent={popoverBodyContent} minWidth="400px">
@@ -802,14 +802,14 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon color="var(--pf-global--danger-color--100)" />
+              <ExclamationCircleIcon color="var(--pf-v5-global--danger-color--100)" />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
                 <a href="#">Operators</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: 'var(--pf-global--Color--200)' }}>1 degraded</span>
+                <span style={{ color: 'var(--pf-v5-global--Color--200)' }}>1 degraded</span>
               </FlexItem>
             </Flex>
           </Flex>
@@ -817,14 +817,14 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon color="var(--pf-global--success-color--100)" />
+              <CheckCircleIcon color="var(--pf-v5-global--success-color--100)" />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
                 <a href="#">Image Vulnerabilities</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: 'var(--pf-global--Color--200)' }}>0 vulnerabilities</span>
+                <span style={{ color: 'var(--pf-v5-global--Color--200)' }}>0 vulnerabilities</span>
               </FlexItem>
             </Flex>
           </Flex>
@@ -1277,31 +1277,29 @@ const UtilizationCard3: React.FunctionComponent = () => {
 
   const selectItems = (
     <SelectList>
-      <SelectOption key="option1" itemId="Last hour">Last hour</SelectOption>
-      <SelectOption key="option2" itemId="Last 6 hours">Last 6 hours</SelectOption>
-      <SelectOption key="option3" itemId="Last 24 hours">Last 24 hours</SelectOption>
-      <SelectOption key="option4" itemId="Last 7 days">Last 7 days</SelectOption>
+      <SelectOption key="option1" itemId="Last hour">
+        Last hour
+      </SelectOption>
+      <SelectOption key="option2" itemId="Last 6 hours">
+        Last 6 hours
+      </SelectOption>
+      <SelectOption key="option3" itemId="Last 24 hours">
+        Last 24 hours
+      </SelectOption>
+      <SelectOption key="option4" itemId="Last 7 days">
+        Last 7 days
+      </SelectOption>
     </SelectList>
   );
-  
+
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
-    <MenuToggle
-      ref={toggleRef}
-      onClick={() => setIsOpen(!isOpen)}
-      isExpanded={isOpen}
-      variant="plainText"
-    >
+    <MenuToggle ref={toggleRef} onClick={() => setIsOpen(!isOpen)} isExpanded={isOpen} variant="plainText">
       Filter
     </MenuToggle>
   );
 
   const headerActions = (
-    <Select
-      onSelect={() => setIsOpen(!isOpen)}
-      onOpenChange={setIsOpen}
-      isOpen={isOpen}
-      toggle={toggle}
-    >
+    <Select onSelect={() => setIsOpen(!isOpen)} onOpenChange={setIsOpen} isOpen={isOpen} toggle={toggle}>
       {selectItems}
     </Select>
   );
@@ -1315,7 +1313,10 @@ const UtilizationCard3: React.FunctionComponent = () => {
       <Gallery hasGutter minWidths={{ default: '360px' }}>
         <GalleryItem>
           <Card id="utilization-card-3-card" component="div">
-            <CardHeader className="pf-u-align-items-flex-start" actions={{ actions: headerActions, hasNoOffset: true }}>
+            <CardHeader
+              className="pf-v5-u-align-items-flex-start"
+              actions={{ actions: headerActions, hasNoOffset: true }}
+            >
               <CardTitle>
                 <Title headingLevel="h4" size="lg" style={{ paddingTop: '3px' }}>
                   Recommendations
@@ -1328,7 +1329,7 @@ const UtilizationCard3: React.FunctionComponent = () => {
                   <span>System</span>
                 </FlexItem>
                 <Flex>
-                  <ExclamationCircleIcon className="pf-u-danger-color-100" aria-hidden />
+                  <ExclamationCircleIcon className="pf-v5-u-danger-color-100" aria-hidden />
                   <a href="#">25 incidents detected</a>
                 </Flex>
                 <FlexItem>
@@ -1474,6 +1475,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
   </GalleryItem>
 </Gallery>;
 ```
+
 ### Nested cards
 
 ```js
@@ -1532,7 +1534,7 @@ CardNestedDemo = () => {
             }}
           >
             <CardTitle id="nested-cards-toggle-group-1-title">
-              <span className="pf-u-font-weight-light">CPU 1</span>
+              <span className="pf-v5-u-font-weight-light">CPU 1</span>
             </CardTitle>
           </CardHeader>
           <CardExpandableContent>
@@ -1541,7 +1543,7 @@ CardNestedDemo = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1550,7 +1552,7 @@ CardNestedDemo = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -1607,11 +1609,11 @@ CardNestedDemo = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-u-hidden-on-md" />
+                <Divider className="pf-v5-u-hidden-on-md" />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1620,7 +1622,7 @@ CardNestedDemo = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -1693,7 +1695,7 @@ CardNestedDemo = () => {
             }}
           >
             <CardTitle id="nested-cards-toggle-group-2-title">
-              <span className="pf-u-font-weight-light">CPU 2</span>
+              <span className="pf-v5-u-font-weight-light">CPU 2</span>
             </CardTitle>
           </CardHeader>
           <CardExpandableContent>
@@ -1702,7 +1704,7 @@ CardNestedDemo = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1711,7 +1713,7 @@ CardNestedDemo = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -1768,11 +1770,11 @@ CardNestedDemo = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-u-hidden-on-md" />
+                <Divider className="pf-v5-u-hidden-on-md" />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1781,7 +1783,7 @@ CardNestedDemo = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -1854,7 +1856,7 @@ CardNestedDemo = () => {
             }}
           >
             <CardTitle id="nested-cards-toggle-group-3-title">
-              <span className="pf-u-font-weight-light">CPU 3</span>
+              <span className="pf-v5-u-font-weight-light">CPU 3</span>
             </CardTitle>
           </CardHeader>
           <CardExpandableContent>
@@ -1863,7 +1865,7 @@ CardNestedDemo = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1872,7 +1874,7 @@ CardNestedDemo = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -1929,11 +1931,11 @@ CardNestedDemo = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-u-hidden-on-md" />
+                <Divider className="pf-v5-u-hidden-on-md" />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1942,7 +1944,7 @@ CardNestedDemo = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2064,7 +2066,7 @@ const AccordionCard: React.FunctionComponent = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2073,7 +2075,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2130,11 +2132,11 @@ const AccordionCard: React.FunctionComponent = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-u-hidden-on-md" />
+                <Divider className="pf-v5-u-hidden-on-md" />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2143,7 +2145,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2222,7 +2224,7 @@ const AccordionCard: React.FunctionComponent = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2231,7 +2233,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2288,11 +2290,11 @@ const AccordionCard: React.FunctionComponent = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-u-hidden-on-md" />
+                <Divider className="pf-v5-u-hidden-on-md" />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2301,7 +2303,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2380,7 +2382,7 @@ const AccordionCard: React.FunctionComponent = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2389,7 +2391,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2446,11 +2448,11 @@ const AccordionCard: React.FunctionComponent = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-u-hidden-on-md" />
+                <Divider className="pf-v5-u-hidden-on-md" />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-u-h-100-on-md"
+                      className="pf-v5-u-h-100-on-md"
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2459,7 +2461,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-u-hidden-on-md"
+                        className="pf-v5-u-hidden-on-md"
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2554,31 +2556,29 @@ const TrendCard1: React.FunctionComponent = () => {
 
   const selectItems = (
     <SelectList>
-      <SelectOption key="option1" itemId="Last hour">Last hour</SelectOption>
-      <SelectOption key="option2" itemId="Last 6 hours">Last 6 hours</SelectOption>
-      <SelectOption key="option3" itemId="Last 24 hours">Last 24 hours</SelectOption>
-      <SelectOption key="option4" itemId="Last 7 days">Last 7 days</SelectOption>
+      <SelectOption key="option1" itemId="Last hour">
+        Last hour
+      </SelectOption>
+      <SelectOption key="option2" itemId="Last 6 hours">
+        Last 6 hours
+      </SelectOption>
+      <SelectOption key="option3" itemId="Last 24 hours">
+        Last 24 hours
+      </SelectOption>
+      <SelectOption key="option4" itemId="Last 7 days">
+        Last 7 days
+      </SelectOption>
     </SelectList>
   );
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
-    <MenuToggle
-      ref={toggleRef}
-      onClick={() => setIsOpen(!isOpen)}
-      isExpanded={isOpen}
-      variant="plainText"
-    >
+    <MenuToggle ref={toggleRef} onClick={() => setIsOpen(!isOpen)} isExpanded={isOpen} variant="plainText">
       Filter
     </MenuToggle>
   );
 
   const headerActions = (
-    <Select
-      onSelect={() => setIsOpen(!isOpen)}
-      onOpenChange={setIsOpen}
-      isOpen={isOpen}
-      toggle={toggle}
-    >
+    <Select onSelect={() => setIsOpen(!isOpen)} onOpenChange={setIsOpen} isOpen={isOpen} toggle={toggle}>
       {selectItems}
     </Select>
   );
@@ -2602,7 +2602,7 @@ const TrendCard1: React.FunctionComponent = () => {
                   </CardTitle>
                 </FlexItem>
                 <FlexItem>
-                  <span className="pf-u-color-200">Workload</span>
+                  <span className="pf-v5-u-color-200">Workload</span>
                 </FlexItem>
               </Flex>
             </CardHeader>
@@ -2671,7 +2671,7 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContaine
                 </CardTitle>
               </FlexItem>
               <FlexItem>
-                <span className="pf-u-color-200">Storage capacity</span>
+                <span className="pf-v5-u-color-200">Storage capacity</span>
               </FlexItem>
             </Flex>
           </FlexItem>
@@ -2753,31 +2753,29 @@ CardLogViewDemo = () => {
 
   const selectItems = (
     <SelectList>
-      <SelectOption key="option1" itemId="Last hour">Last hour</SelectOption>
-      <SelectOption key="option2" itemId="Last 6 hours">Last 6 hours</SelectOption>
-      <SelectOption key="option3" itemId="Last 24 hours">Last 24 hours</SelectOption>
-      <SelectOption key="option4" itemId="Last 7 days">Last 7 days</SelectOption>
+      <SelectOption key="option1" itemId="Last hour">
+        Last hour
+      </SelectOption>
+      <SelectOption key="option2" itemId="Last 6 hours">
+        Last 6 hours
+      </SelectOption>
+      <SelectOption key="option3" itemId="Last 24 hours">
+        Last 24 hours
+      </SelectOption>
+      <SelectOption key="option4" itemId="Last 7 days">
+        Last 7 days
+      </SelectOption>
     </SelectList>
   );
 
   const toggle = (toggleRef) => (
-    <MenuToggle
-      ref={toggleRef}
-      onClick={() => setIsOpen(!isOpen)}
-      isExpanded={isOpen}
-      variant="plainText"
-    >
+    <MenuToggle ref={toggleRef} onClick={() => setIsOpen(!isOpen)} isExpanded={isOpen} variant="plainText">
       Filter
     </MenuToggle>
   );
 
   const headerActions = (
-    <Select
-      onSelect={() => setIsOpen(!isOpen)}
-      onOpenChange={setIsOpen}
-      isOpen={isOpen}
-      toggle={toggle}
-    >
+    <Select onSelect={() => setIsOpen(!isOpen)} onOpenChange={setIsOpen} isOpen={isOpen} toggle={toggle}>
       {selectItems}
     </Select>
   );
@@ -2788,9 +2786,12 @@ CardLogViewDemo = () => {
       <code>baseline</code> alignment.
       <br />
       <br />
-      <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '360px' }}>
+      <Gallery hasGutter style={{ '--pf-v5-l-gallery--GridTemplateColumns--min': '360px' }}>
         <Card id="card-log-view-example">
-          <CardHeader className="pf-u-align-items-flex-start" actions={{ actions: headerActions, hasNoOffset: true }}>
+          <CardHeader
+            className="pf-v5-u-align-items-flex-start"
+            actions={{ actions: headerActions, hasNoOffset: true }}
+          >
             <CardTitle>
               <Title headingLevel="h4" size="xl" style={{ paddingTop: '3px' }}>
                 Activity
@@ -2806,7 +2807,7 @@ CardLogViewDemo = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</time>
+                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 11:02 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -2815,21 +2816,21 @@ CardLogViewDemo = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</time>
+                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 11:13 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Pulling image</DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</time>
+                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 10:59 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Created container</DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</time>
+                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 10:45 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>
@@ -2886,30 +2887,26 @@ CardEventViewDemo = () => {
 
   const selectItems = (
     <SelectList>
-      <SelectOption itemId="Success" key="option1">Success</SelectOption>
-      <SelectOption itemId="Error" key="option2">Error</SelectOption>
-      <SelectOption itemId="Warning" key="option3">Error</SelectOption>
+      <SelectOption itemId="Success" key="option1">
+        Success
+      </SelectOption>
+      <SelectOption itemId="Error" key="option2">
+        Error
+      </SelectOption>
+      <SelectOption itemId="Warning" key="option3">
+        Error
+      </SelectOption>
     </SelectList>
   );
 
   const toggle = (toggleRef) => (
-    <MenuToggle
-      ref={toggleRef}
-      onClick={() => setIsOpen(!isOpen)}
-      isExpanded={isOpen}
-      variant="plainText"
-    >
+    <MenuToggle ref={toggleRef} onClick={() => setIsOpen(!isOpen)} isExpanded={isOpen} variant="plainText">
       Status
     </MenuToggle>
   );
 
   const headerActions = (
-    <Select
-      onSelect={() => setIsOpen(!isOpen)}
-      onOpenChange={setIsOpen}
-      isOpen={isOpen}
-      toggle={toggle}
-    >
+    <Select onSelect={() => setIsOpen(!isOpen)} onOpenChange={setIsOpen} isOpen={isOpen} toggle={toggle}>
       {selectItems}
     </Select>
   );
@@ -2919,9 +2916,12 @@ CardEventViewDemo = () => {
       <code>baseline</code> alignment.
       <br />
       <br />
-      <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '360px' }}>
+      <Gallery hasGutter style={{ '--pf-v5-l-gallery--GridTemplateColumns--min': '360px' }}>
         <Card id="card-events-view-example">
-          <CardHeader className="pf-u-align-items-flex-start" actions={{ actions: headerActions, hasNoOffset: true }}>
+          <CardHeader
+            className="pf-v5-u-align-items-flex-start"
+            actions={{ actions: headerActions, hasNoOffset: true }}
+          >
             <CardTitle>
               <Title headingLevel="h4" size="xl" style={{ paddingTop: '3px' }}>
                 Events
@@ -2934,7 +2934,7 @@ CardEventViewDemo = () => {
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <ExclamationCircleIcon className="pf-u-danger-color-100" aria-hidden="true" />
+                      <ExclamationCircleIcon className="pf-v5-u-danger-color-100" aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Readiness probe failed</span>
@@ -2946,14 +2946,14 @@ CardEventViewDemo = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</time>
+                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 11:02 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
+                      <CheckCircleIcon className="pf-v5-u-success-color-100" aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Successful assignment</span>
@@ -2964,7 +2964,7 @@ CardEventViewDemo = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</time>
+                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 11:13 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -2980,14 +2980,14 @@ CardEventViewDemo = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</time>
+                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 10:59 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
+                      <CheckCircleIcon className="pf-v5-u-success-color-100" aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Created container</span>
@@ -2996,7 +2996,7 @@ CardEventViewDemo = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</time>
+                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 10:45 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>

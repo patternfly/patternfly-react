@@ -110,7 +110,7 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
               <Tr isExpanded={isRowExpanded}>
                 <Td dataLabel={columnNames[expandedCellKey]} noPadding colSpan={6}>
                   <ExpandableRowContent>
-                    <div className="pf-u-m-md">
+                    <div className="pf-v5-u-m-md">
                       Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem
                       ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum
                       sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit

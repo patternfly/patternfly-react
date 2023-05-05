@@ -28,8 +28,9 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
       browseButtonText="Upload"
     >
       {value && (
-        <div className="pf-u-m-md">
-          <FileUploadIcon width="2em" height="2em" /> Custom preview here for your {value.size}-byte file named {value.name}
+        <div className="pf-v5-u-m-md">
+          <FileUploadIcon width="2em" height="2em" /> Custom preview here for your {value.size}-byte file named{' '}
+          {value.name}
         </div>
       )}
     </FileUpload>

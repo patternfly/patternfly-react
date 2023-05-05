@@ -20,7 +20,7 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
   }
 
   normalButton: ButtonProps = {
-    className: 'pf-u-m-sm',
+    className: 'pf-v5-u-m-sm',
     component: 'button',
     onClick: () => {
       window.location.href = 'https://github.com/patternfly/patternfly-react';
@@ -28,7 +28,7 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
   };
 
   linkButton: ButtonProps = {
-    className: 'pf-u-m-sm',
+    className: 'pf-v5-u-m-sm',
     component: 'button',
     icon: <PlusCircleIcon />,
     onKeyPress: () => {
@@ -38,7 +38,7 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
   };
 
   linkAsButton: ButtonProps = {
-    className: 'pf-u-m-sm',
+    className: 'pf-v5-u-m-sm',
     component: 'a',
     href: 'https://github.com/patternfly/patternfly-react',
     icon: <ExternalLinkAltIcon />,
@@ -58,13 +58,13 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
   };
 
   incrementCounter = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       counter: prevState.counter + 1
     }));
   };
 
   decrementCounter = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       counter: prevState.counter - 1
     }));
   };
@@ -149,7 +149,7 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
           Aria-disabled link button with custom list of prevented events {this.state.counter}
         </Button>
 
-        <hr className="pf-u-m-md" />
+        <hr className="pf-v5-u-m-md" />
         <Button {...this.linkButton} id="link-btn-1">
           Link button
         </Button>
@@ -168,11 +168,11 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         <Button {...this.linkButton} id="link-btn-5" tabIndex={-1}>
           Button with tabindex set to -1
         </Button>
-        <Button {...this.linkButton} id="link-btn-6" component={props => <Link {...props} to="#" />}>
+        <Button {...this.linkButton} id="link-btn-6" component={(props) => <Link {...props} to="#" />}>
           Router link button
         </Button>
 
-        <hr className="pf-u-m-md" />
+        <hr className="pf-v5-u-m-md" />
         <Button {...this.linkAsButton} id="link-as-btn-1">
           Link as button
         </Button>
@@ -194,7 +194,7 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
           </Button>
         </Tooltip>
 
-        <hr className="pf-u-m-md" />
+        <hr className="pf-v5-u-m-md" />
         <Button {...this.spanLink} id="span-link-btn-1">
           Span wrapping link
         </Button>
@@ -202,18 +202,18 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         <Button isDisabled {...this.spanLink} id="span-link-btn-2">
           Disabled span wrapping link
         </Button>
-        <hr className="pf-u-m-md" />
+        <hr className="pf-v5-u-m-md" />
         <div id="tabstop-test" tabIndex={0}>
-          <Button className="pf-u-m-sm" id="tabstop-test-01">
+          <Button className="pf-v5-u-m-sm" id="tabstop-test-01">
             First tab stop
           </Button>
-          <Button className="pf-u-m-sm" id="tabstop-test-02">
+          <Button className="pf-v5-u-m-sm" id="tabstop-test-02">
             Second tab stop
           </Button>
-          <Button className="pf-u-m-sm" id="tabstop-test-03">
+          <Button className="pf-v5-u-m-sm" id="tabstop-test-03">
             Third tab stop
           </Button>
-          <Button className="pf-u-m-sm" id="tabstop-test-04">
+          <Button className="pf-v5-u-m-sm" id="tabstop-test-04">
             Fourth tab stop
           </Button>
         </div>

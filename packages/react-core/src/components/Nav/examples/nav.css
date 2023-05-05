@@ -8,7 +8,7 @@
 #ws-react-c-navigation-horizontal-subnav,
 #ws-react-c-navigation-flyout,
 #ws-react-c-navigation-drilldown {
-  background-color: var(--pf-global--BackgroundColor--dark-300);
+  background-color: var(--pf-v5-global--BackgroundColor--dark-300);
 }
 
 #ws-react-c-navigation-flyout,

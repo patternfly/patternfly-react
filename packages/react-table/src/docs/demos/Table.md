@@ -296,7 +296,7 @@ class BulkSelectTableDemo extends React.Component {
           )}
 
           {loading && (
-            <div className="pf-l-bullseye">
+            <div className="pf-v5-l-bullseye">
               <Title headingLevel="h2" size="3xl">
                 Please wait while loading data
               </Title>
@@ -999,10 +999,14 @@ class ColumnManagementAction extends React.Component {
           <ToolbarItem variant="overflow-menu">
             <OverflowMenu breakpoint="md">
               <OverflowMenuItem isPersistent>
-                <MenuToggle><FilterIcon /> Name</MenuToggle>
+                <MenuToggle>
+                  <FilterIcon /> Name
+                </MenuToggle>
               </OverflowMenuItem>
-              <OverflowMenuItem> 
-                <MenuToggle variant="plain" aria-label="Sort columns"><SortAmountDownIcon aria-hidden="true" /></MenuToggle>
+              <OverflowMenuItem>
+                <MenuToggle variant="plain" aria-label="Sort columns">
+                  <SortAmountDownIcon aria-hidden="true" />
+                </MenuToggle>
               </OverflowMenuItem>
               <OverflowMenuGroup groupType="button" isPersistent>
                 <OverflowMenuItem>
@@ -1294,41 +1298,41 @@ class FilterTableDemo extends React.Component {
     ];
 
     const statusMenuItems = [
-      <SelectOption 
-        hasCheckbox 
-        key="statusRunning" 
-        itemId="Running" 
+      <SelectOption
+        hasCheckbox
+        key="statusRunning"
+        itemId="Running"
         isSelected={filters.status.includes("Running")}
       >
         Running
       </SelectOption>,
-      <SelectOption 
-        hasCheckbox 
-        key="statusStopped" 
+      <SelectOption
+        hasCheckbox
+        key="statusStopped"
         itemId="Stopped"
         isSelected={filters.status.includes("Stopped")}
       >
         Stopped
       </SelectOption>,
-      <SelectOption 
-        hasCheckbox 
-        key="statusDown" 
+      <SelectOption
+        hasCheckbox
+        key="statusDown"
         itemId="Down"
         isSelected={filters.status.includes("Down")}
       >
         Down
       </SelectOption>,
-      <SelectOption 
-        hasCheckbox 
-        key="statusDegraded" 
+      <SelectOption
+        hasCheckbox
+        key="statusDegraded"
         itemId="Degraded"
         isSelected={filters.status.includes("Degraded")}
       >
         Degraded
       </SelectOption>,
-      <SelectOption 
-        hasCheckbox 
-        key="statusMaint" 
+      <SelectOption
+        hasCheckbox
+        key="statusMaint"
         itemId="Needs Maintainence"
         isSelected={filters.status.includes("Needs Maintainence")}
       >
@@ -1429,7 +1433,7 @@ class FilterTableDemo extends React.Component {
       <Toolbar id="toolbar-with-chip-groups" clearAllFilters={this.onDelete} collapseListedFiltersBreakpoint="xl">
         <ToolbarContent>
           <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
-            <ToolbarGroup 
+            <ToolbarGroup
               variant="filter-group"
               style={{
                 lineHeight: '22px',
@@ -1770,7 +1774,9 @@ export const TableEmptyState: React.FunctionComponent = () => (
                       titleText="No results found"
                       headingLevel="h2"
                     />
-                    <EmptyStateBody>No results match this filter criteria. Clear all filters and try again.</EmptyStateBody>
+                    <EmptyStateBody>
+                      No results match this filter criteria. Clear all filters and try again.
+                    </EmptyStateBody>
                     <EmptyStateFooter>
                       <EmptyStateActions>
                         <Button variant="link">Clear all filters</Button>

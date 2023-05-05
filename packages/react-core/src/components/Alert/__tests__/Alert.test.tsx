@@ -578,7 +578,7 @@ test('Renders titles with the expected truncation styling when truncateTitle is 
   const title = screen.getByRole('heading');
 
   expect(title).toHaveClass('pf-m-truncate');
-  expect(title).toHaveAttribute('style', '--pf-c-alert__title--max-lines: 3;');
+  expect(title).toHaveAttribute('style', '--pf-v5-c-alert__title--max-lines: 3;');
 });
 
 test('Passes customIcon value to AlertIcon', () => {

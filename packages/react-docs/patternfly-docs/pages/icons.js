@@ -21,7 +21,7 @@ const iconsPage = () => {
     fontSize: labelFontSize.var
   };
 
-  const getLabel = label => {
+  const getLabel = (label) => {
     let res = '';
     label = label.replace(/[iI]con/g, '');
     for (let i = 0; i < label.length; i++) {

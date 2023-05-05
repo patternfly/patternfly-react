@@ -26,7 +26,7 @@ export const SliderStep: React.FunctionComponent<SliderStepProps> = ({
   isActive = false,
   ...props
 }: SliderStepProps) => {
-  const style = { '--pf-c-slider__step--Left': `${value}%` } as React.CSSProperties;
+  const style = { '--pf-v5-c-slider__step--Left': `${value}%` } as React.CSSProperties;
   return (
     <div className={css(styles.sliderStep, isActive && styles.modifiers.active, className)} style={style} {...props}>
       {!isTickHidden && <div className={css(styles.sliderStepTick)} />}

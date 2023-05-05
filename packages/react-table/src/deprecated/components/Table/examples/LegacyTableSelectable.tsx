@@ -29,12 +29,12 @@ export const LegacyTableSelectable: React.FunctionComponent = () => {
   // This is to prevent state from being based on row order index in case we later add sorting.
   const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
   const setRepoSelected = (repo: Repository, isSelecting = true) =>
-    setSelectedRepoNames(prevSelected => {
-      const otherSelectedRepoNames = prevSelected.filter(r => r !== repo.name);
+    setSelectedRepoNames((prevSelected) => {
+      const otherSelectedRepoNames = prevSelected.filter((r) => r !== repo.name);
       return isSelecting && isRepoSelectable(repo) ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
     });
   const selectAllRepos = (isSelecting = true) =>
-    setSelectedRepoNames(isSelecting ? selectableRepos.map(r => r.name) : []);
+    setSelectedRepoNames(isSelecting ? selectableRepos.map((r) => r.name) : []);
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
   const [canSelectAll, setCanSelectAll] = React.useState(true);
@@ -51,7 +51,7 @@ export const LegacyTableSelectable: React.FunctionComponent = () => {
         numberSelected > 0
           ? Array.from(new Array(numberSelected + 1), (_x, i) => i + recentSelectedRowIndex)
           : Array.from(new Array(Math.abs(numberSelected) + 1), (_x, i) => i + rowIndex);
-      intermediateIndexes.forEach(index => setRepoSelected(repositories[index], isSelecting));
+      intermediateIndexes.forEach((index) => setRepoSelected(repositories[index], isSelecting));
     } else {
       setRepoSelected(repo, isSelecting);
     }
@@ -86,7 +86,7 @@ export const LegacyTableSelectable: React.FunctionComponent = () => {
     'Workspaces',
     'Last commit'
   ];
-  const rows: TableProps['rows'] = repositories.map(repo => ({
+  const rows: TableProps['rows'] = repositories.map((repo) => ({
     cells: [repo.name, repo.branches, repo.prs, repo.workspaces, repo.lastCommit],
     selected: isRepoSelected(repo),
     disableSelection: !isRepoSelectable(repo)
@@ -96,7 +96,7 @@ export const LegacyTableSelectable: React.FunctionComponent = () => {
     <div>
       <Checkbox
         label="Can select all"
-        className="pf-u-mb-lg"
+        className="pf-v5-u-mb-lg"
         isChecked={canSelectAll}
         onChange={(_event, checked) => setCanSelectAll(checked)}
         aria-label="toggle select all checkbox"

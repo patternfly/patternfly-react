@@ -92,8 +92,8 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
         <button
           className={css(styles.notificationDrawerGroupToggle)}
           aria-expanded={isExpanded}
-          onClick={e => onExpand(e, !isExpanded)}
-          onKeyDown={e => {
+          onClick={(e) => onExpand(e, !isExpanded)}
+          onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
               onExpand(e, !isExpanded);
@@ -111,7 +111,7 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
             <Badge isRead={isRead}>{count}</Badge>
           </div>
 
-          <span className="pf-c-notification-drawer__group-toggle-icon">
+          <span className="pf-v5-c-notification-drawer__group-toggle-icon">
             <AngleRightIcon />
           </span>
         </button>
