@@ -36,7 +36,7 @@
     "@patternfly/documentation-framework": "^2.0.0-alpha.25",
     "@patternfly/patternfly-a11y": "4.3.1",
     "rimraf": "^2.6.3",
-    "shx": "^0.3.2"
+    "shx": "^0.3.4"
   },
   "keywords": [
     "gatsby"
