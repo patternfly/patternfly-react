@@ -147,11 +147,11 @@ Similarly to the selectable example above, the radio buttons use the first colum
 ```ts file="TableSelectableRadio.tsx"
 ```
 
-### Row click handler, hoverable & selected rows
+### Row click handler, clickable rows
 
 This selectable rows feature is intended for use when a table is used to present a list of objects in a Primary-detail view.
 
-```ts file="TableHoverable.tsx"
+```ts file="TableClickable.tsx"
 ```
 
 ### Actions

@@ -205,11 +205,11 @@ To disable selection for a row, set `disableSelection: true` on the row definiti
 ```ts file="LegacyTableSelectableRadio.tsx"
 ```
 
-### Hoverable rows, selectable rows, and header cell tooltips/popovers
+### Clickable rows, selectable rows, and header cell tooltips/popovers
 
 This selectable rows feature is intended for use when a table is used to present a list of objects in a Primary-detail view.
 
-```ts file="LegacyTableHoverable.tsx"
+```ts file="LegacyTableClickable.tsx"
 ```
 
 ### Actions and first cell in body rows as th

@@ -9,7 +9,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const TableHoverable: React.FunctionComponent = () => {
+export const TableClickable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
@@ -30,7 +30,7 @@ export const TableHoverable: React.FunctionComponent = () => {
   const [selectedRepoName, setSelectedRepoName] = React.useState('');
 
   return (
-    <Table aria-label="Hoverable table">
+    <Table aria-label="Clickable table">
       <Thead>
         <Tr>
           <Th>{columnNames.name}</Th>
@@ -46,7 +46,7 @@ export const TableHoverable: React.FunctionComponent = () => {
             key={repo.name}
             onRowClick={() => setSelectedRepoName(repo.name)}
             isSelectable
-            isHoverable
+            isClickable
             isRowSelected={selectedRepoName === repo.name}
           >
             <Td dataLabel={columnNames.name}>{repo.name}</Td>

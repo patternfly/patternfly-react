@@ -14,7 +14,7 @@ import {
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const DataListSelectableRows: React.FunctionComponent = () => {
+export const DataListClickableRows: React.FunctionComponent = () => {
   const [isOpen1, setIsOpen1] = React.useState(false);
   const [isOpen2, setIsOpen2] = React.useState(false);
   const [selectedDataListItemId, setSelectedDataListItemId] = React.useState('');
@@ -46,24 +46,24 @@ export const DataListSelectableRows: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <DataList
-        aria-label="selectable data list example"
+        aria-label="clickable data list example"
         selectedDataListItemId={selectedDataListItemId}
         onSelectDataListItem={onSelectDataListItem}
         onSelectableRowChange={handleInputChange}
       >
-        <DataListItem aria-labelledby="selectable-action-item1" id="item1">
+        <DataListItem aria-labelledby="clickable-action-item1" id="item1">
           <DataListItemRow>
             <DataListItemCells
               dataListCells={[
                 <DataListCell key="primary content">
-                  <span id="selectable-action-item1">Single actionable Primary content</span>
+                  <span id="clickable-action-item1">Single actionable Primary content</span>
                 </DataListCell>,
                 <DataListCell key="secondary content">Single actionable Secondary content</DataListCell>
               ]}
             />
             <DataListAction
-              aria-labelledby="selectable-action-item1 selectable-action-action1"
-              id="selectable-action-action1"
+              aria-labelledby="clickable-action-item1 clickable-action-action1"
+              id="clickable-action-action1"
               aria-label="Actions"
               isPlainButtonAction
             >
@@ -76,7 +76,7 @@ export const DataListSelectableRows: React.FunctionComponent = () => {
                     isExpanded={isOpen1}
                     onClick={onToggle1}
                     variant="plain"
-                    aria-label="Data list selectable rows example kebab toggle 1"
+                    aria-label="Data list clickable rows example kebab toggle 1"
                   >
                     <EllipsisVIcon aria-hidden="true" />
                   </MenuToggle>
@@ -102,19 +102,19 @@ export const DataListSelectableRows: React.FunctionComponent = () => {
             </DataListAction>
           </DataListItemRow>
         </DataListItem>
-        <DataListItem aria-labelledby="selectable-actions-item2" id="item2">
+        <DataListItem aria-labelledby="clickable-actions-item2" id="item2">
           <DataListItemRow>
             <DataListItemCells
               dataListCells={[
                 <DataListCell key="primary content">
-                  <span id="selectable-actions-item2">Selectable actions Primary content</span>
+                  <span id="clickable-actions-item2">clickable actions Primary content</span>
                 </DataListCell>,
-                <DataListCell key="secondary content">Selectable actions Secondary content</DataListCell>
+                <DataListCell key="secondary content">clickable actions Secondary content</DataListCell>
               ]}
             />
             <DataListAction
-              aria-labelledby="selectable-actions-item2 selectable-actions-action2"
-              id="selectable-actions-action2"
+              aria-labelledby="clickable-actions-item2 clickable-actions-action2"
+              id="clickable-actions-action2"
               aria-label="Actions"
               isPlainButtonAction
             >
@@ -127,7 +127,7 @@ export const DataListSelectableRows: React.FunctionComponent = () => {
                     isExpanded={isOpen2}
                     onClick={onToggle2}
                     variant="plain"
-                    aria-label="Data list selectable rows example kebab toggle 2"
+                    aria-label="Data list clickable rows example kebab toggle 2"
                   >
                     <EllipsisVIcon aria-hidden="true" />
                   </MenuToggle>

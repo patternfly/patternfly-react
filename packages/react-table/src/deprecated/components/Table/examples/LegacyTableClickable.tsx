@@ -11,7 +11,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const LegacyTableHoverable: React.FunctionComponent = () => {
+export const LegacyTableClickable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     {
@@ -98,7 +98,7 @@ export const LegacyTableHoverable: React.FunctionComponent = () => {
     }
     return {
       cells,
-      isHoverable: true,
+      isClickable: true,
       isRowSelected: selectedRepoName === repo.name
     };
   });
