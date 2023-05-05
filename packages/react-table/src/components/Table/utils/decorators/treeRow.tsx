@@ -41,7 +41,7 @@ export const treeRow =
     };
     return {
       component: 'th',
-      className: 'pf-c-table__tree-view-title-cell',
+      className: 'pf-v5-c-table__tree-view-title-cell',
       children:
         level !== undefined ? (
           <div className={css(stylesTreeView.tableTreeViewMain)}>
