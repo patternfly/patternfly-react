@@ -3,19 +3,19 @@
 exports[`With popover opened 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-date-picker"
-    style="--pf-c-date-picker__input--c-form-control--width-chars: 10;"
+    class="pf-v5-c-date-picker"
+    style="--pf-v5-c-date-picker__input--c-form-control--width-chars: 10;"
   >
     <div
-      class="pf-c-date-picker__input"
+      class="pf-v5-c-date-picker__input"
     >
       <div
-        class="pf-c-input-group"
+        class="pf-v5-c-input-group"
       >
         <input
           aria-invalid="false"
           aria-label="Date picker"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           data-ouia-component-id="OUIA-Generated-TextInputBase-4"
           data-ouia-component-type="PF4/TextInput"
           data-ouia-safe="true"
@@ -25,12 +25,12 @@ exports[`With popover opened 1`] = `
         />
         <button
           aria-label="Toggle date picker"
-          class="pf-c-button pf-m-control"
+          class="pf-v5-c-button pf-m-control"
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -46,33 +46,33 @@ exports[`With popover opened 1`] = `
       aria-describedby="popover-unique_id_mock-body"
       aria-label=""
       aria-modal="true"
-      class="pf-c-popover pf-m-no-padding pf-m-width-auto pf-m-top"
+      class="pf-v5-c-popover pf-m-no-padding pf-m-width-auto pf-m-top"
       role="dialog"
       style="opacity: 1; transition: opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11); position: absolute; left: 0px; top: 0px; z-index: 9999;"
     >
       <div
-        class="pf-c-popover__arrow"
+        class="pf-v5-c-popover__arrow"
       />
       <div
-        class="pf-c-popover__content"
+        class="pf-v5-c-popover__content"
       >
         <div
-          class="pf-c-popover__body"
+          class="pf-v5-c-popover__body"
           id="popover-unique_id_mock-body"
         >
           <div
-            class="pf-c-calendar-month"
+            class="pf-v5-c-calendar-month"
           >
             <div
-              class="pf-c-calendar-month__header"
+              class="pf-v5-c-calendar-month__header"
             >
               <div
-                class="pf-c-calendar-month__header-nav-control pf-m-prev-month"
+                class="pf-v5-c-calendar-month__header-nav-control pf-m-prev-month"
               >
                 <button
                   aria-disabled="false"
                   aria-label="Previous month"
-                  class="pf-c-button pf-m-plain"
+                  class="pf-v5-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-1"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
@@ -80,7 +80,7 @@ exports[`With popover opened 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-svg"
+                    class="pf-v5-svg"
                     fill="currentColor"
                     role="img"
                     viewBox="0 0 256 512"
@@ -92,10 +92,10 @@ exports[`With popover opened 1`] = `
                 </button>
               </div>
               <div
-                class="pf-c-input-group"
+                class="pf-v5-c-input-group"
               >
                 <div
-                  class="pf-c-calendar-month__header-month"
+                  class="pf-v5-c-calendar-month__header-month"
                 >
                   <span
                     hidden=""
@@ -106,24 +106,24 @@ exports[`With popover opened 1`] = `
                   <div>
                     <button
                       aria-expanded="false"
-                      class="pf-c-menu-toggle"
+                      class="pf-v5-c-menu-toggle"
                       style="width: 140px;"
                       type="button"
                     >
                       <span
-                        class="pf-c-menu-toggle__text"
+                        class="pf-v5-c-menu-toggle__text"
                       >
                         December
                       </span>
                       <span
-                        class="pf-c-menu-toggle__controls"
+                        class="pf-v5-c-menu-toggle__controls"
                       >
                         <span
-                          class="pf-c-menu-toggle__toggle-icon"
+                          class="pf-v5-c-menu-toggle__toggle-icon"
                         >
                           <svg
                             aria-hidden="true"
-                            class="pf-svg"
+                            class="pf-v5-svg"
                             fill="currentColor"
                             role="img"
                             viewBox="0 0 320 512"
@@ -138,12 +138,12 @@ exports[`With popover opened 1`] = `
                   </div>
                 </div>
                 <div
-                  class="pf-c-calendar-month__header-year"
+                  class="pf-v5-c-calendar-month__header-year"
                 >
                   <input
                     aria-invalid="false"
                     aria-label="Select year"
-                    class="pf-c-form-control"
+                    class="pf-v5-c-form-control"
                     data-ouia-component-id="OUIA-Generated-TextInputBase-5"
                     data-ouia-component-type="PF4/TextInput"
                     data-ouia-safe="true"
@@ -153,12 +153,12 @@ exports[`With popover opened 1`] = `
                 </div>
               </div>
               <div
-                class="pf-c-calendar-month__header-nav-control pf-m-next-month"
+                class="pf-v5-c-calendar-month__header-nav-control pf-m-next-month"
               >
                 <button
                   aria-disabled="false"
                   aria-label="Next month"
-                  class="pf-c-button pf-m-plain"
+                  class="pf-v5-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-2"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
@@ -166,7 +166,7 @@ exports[`With popover opened 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-svg"
+                    class="pf-v5-svg"
                     fill="currentColor"
                     role="img"
                     viewBox="0 0 256 512"
@@ -179,14 +179,14 @@ exports[`With popover opened 1`] = `
               </div>
             </div>
             <table
-              class="pf-c-calendar-month__calendar"
+              class="pf-v5-c-calendar-month__calendar"
             >
               <thead
-                class="pf-c-calendar-month__days"
+                class="pf-v5-c-calendar-month__days"
               >
                 <tr>
                   <th
-                    class="pf-c-calendar-month__day"
+                    class="pf-v5-c-calendar-month__day"
                     scope="col"
                   >
                     <span
@@ -201,7 +201,7 @@ exports[`With popover opened 1`] = `
                     </span>
                   </th>
                   <th
-                    class="pf-c-calendar-month__day"
+                    class="pf-v5-c-calendar-month__day"
                     scope="col"
                   >
                     <span
@@ -216,7 +216,7 @@ exports[`With popover opened 1`] = `
                     </span>
                   </th>
                   <th
-                    class="pf-c-calendar-month__day"
+                    class="pf-v5-c-calendar-month__day"
                     scope="col"
                   >
                     <span
@@ -231,7 +231,7 @@ exports[`With popover opened 1`] = `
                     </span>
                   </th>
                   <th
-                    class="pf-c-calendar-month__day"
+                    class="pf-v5-c-calendar-month__day"
                     scope="col"
                   >
                     <span
@@ -246,7 +246,7 @@ exports[`With popover opened 1`] = `
                     </span>
                   </th>
                   <th
-                    class="pf-c-calendar-month__day"
+                    class="pf-v5-c-calendar-month__day"
                     scope="col"
                   >
                     <span
@@ -261,7 +261,7 @@ exports[`With popover opened 1`] = `
                     </span>
                   </th>
                   <th
-                    class="pf-c-calendar-month__day"
+                    class="pf-v5-c-calendar-month__day"
                     scope="col"
                   >
                     <span
@@ -276,7 +276,7 @@ exports[`With popover opened 1`] = `
                     </span>
                   </th>
                   <th
-                    class="pf-c-calendar-month__day"
+                    class="pf-v5-c-calendar-month__day"
                     scope="col"
                   >
                     <span
@@ -294,14 +294,14 @@ exports[`With popover opened 1`] = `
               </thead>
               <tbody>
                 <tr
-                  class="pf-c-calendar-month__dates-row"
+                  class="pf-v5-c-calendar-month__dates-row"
                 >
                   <td
-                    class="pf-c-calendar-month__dates-cell pf-m-adjacent-month"
+                    class="pf-v5-c-calendar-month__dates-cell pf-m-adjacent-month"
                   >
                     <button
                       aria-label="30 November 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -309,11 +309,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="1 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -321,11 +321,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="2 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -333,11 +333,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="3 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -345,11 +345,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="4 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -357,11 +357,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="5 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -369,11 +369,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="6 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -382,14 +382,14 @@ exports[`With popover opened 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="pf-c-calendar-month__dates-row"
+                  class="pf-v5-c-calendar-month__dates-row"
                 >
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="7 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -397,11 +397,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="8 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -409,11 +409,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="9 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -421,11 +421,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="10 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -433,11 +433,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="11 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -445,11 +445,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="12 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -457,11 +457,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="13 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -470,14 +470,14 @@ exports[`With popover opened 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="pf-c-calendar-month__dates-row"
+                  class="pf-v5-c-calendar-month__dates-row"
                 >
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="14 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -485,11 +485,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="15 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -497,11 +497,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="16 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -509,11 +509,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="17 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -521,11 +521,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="18 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -533,11 +533,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="19 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -545,11 +545,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="20 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -558,14 +558,14 @@ exports[`With popover opened 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="pf-c-calendar-month__dates-row"
+                  class="pf-v5-c-calendar-month__dates-row"
                 >
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="21 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -573,11 +573,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="22 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -585,11 +585,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="23 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -597,11 +597,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="24 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -609,11 +609,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="25 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -621,11 +621,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="26 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -633,11 +633,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="27 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -646,14 +646,14 @@ exports[`With popover opened 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="pf-c-calendar-month__dates-row"
+                  class="pf-v5-c-calendar-month__dates-row"
                 >
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="28 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -661,11 +661,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="29 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -673,11 +673,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="30 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -685,11 +685,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
                       aria-label="31 December 1969"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="0"
                       type="button"
                     >
@@ -697,11 +697,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell pf-m-adjacent-month"
+                    class="pf-v5-c-calendar-month__dates-cell pf-m-adjacent-month"
                   >
                     <button
                       aria-label="1 January 1970"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -709,11 +709,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell pf-m-adjacent-month"
+                    class="pf-v5-c-calendar-month__dates-cell pf-m-adjacent-month"
                   >
                     <button
                       aria-label="2 January 1970"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -721,11 +721,11 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-c-calendar-month__dates-cell pf-m-adjacent-month"
+                    class="pf-v5-c-calendar-month__dates-cell pf-m-adjacent-month"
                   >
                     <button
                       aria-label="3 January 1970"
-                      class="pf-c-calendar-month__date"
+                      class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
@@ -746,19 +746,19 @@ exports[`With popover opened 1`] = `
 exports[`disabled date picker 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-date-picker"
-    style="--pf-c-date-picker__input--c-form-control--width-chars: 10;"
+    class="pf-v5-c-date-picker"
+    style="--pf-v5-c-date-picker__input--c-form-control--width-chars: 10;"
   >
     <div
-      class="pf-c-date-picker__input"
+      class="pf-v5-c-date-picker__input"
     >
       <div
-        class="pf-c-input-group"
+        class="pf-v5-c-input-group"
       >
         <input
           aria-invalid="false"
           aria-label="disabled date picker"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           data-ouia-component-id="OUIA-Generated-TextInputBase-1"
           data-ouia-component-type="PF4/TextInput"
           data-ouia-safe="true"
@@ -769,13 +769,13 @@ exports[`disabled date picker 1`] = `
         />
         <button
           aria-label="Toggle date picker"
-          class="pf-c-button pf-m-control"
+          class="pf-v5-c-button pf-m-control"
           disabled=""
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"

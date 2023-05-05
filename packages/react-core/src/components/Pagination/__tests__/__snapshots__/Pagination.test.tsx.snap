@@ -3,15 +3,15 @@
 exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination pf-m-inset-2xl pf-m-inset-2xl-on-sm pf-m-inset-2xl-on-md pf-m-inset-2xl-on-lg pf-m-inset-2xl-on-xl pf-m-inset-2xl-on-2xl"
+    class="pf-v5-c-pagination pf-m-inset-2xl pf-m-inset-2xl-on-sm pf-m-inset-2xl-on-md pf-m-inset-2xl-on-lg pf-m-inset-2xl-on-xl pf-m-inset-2xl-on-2xl"
     data-ouia-component-id="OUIA-Generated-Pagination-top-44"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         1 - 10
@@ -26,12 +26,12 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             1 - 10
@@ -43,14 +43,14 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -65,15 +65,15 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-179"
           data-ouia-component-type="PF4/Button"
@@ -83,7 +83,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -95,12 +95,12 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-180"
           data-ouia-component-type="PF4/Button"
@@ -110,7 +110,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -122,11 +122,11 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="2"
           min="1"
           type="number"
@@ -134,12 +134,12 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         />
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-181"
           data-ouia-component-type="PF4/Button"
@@ -148,7 +148,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -160,12 +160,12 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-182"
           data-ouia-component-type="PF4/Button"
@@ -174,7 +174,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -194,15 +194,15 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
 exports[`Pagination API verify insetLg inset breakpoints 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination pf-m-inset-lg pf-m-inset-lg-on-sm pf-m-inset-lg-on-md pf-m-inset-lg-on-lg pf-m-inset-lg-on-xl pf-m-inset-lg-on-2xl"
+    class="pf-v5-c-pagination pf-m-inset-lg pf-m-inset-lg-on-sm pf-m-inset-lg-on-md pf-m-inset-lg-on-lg pf-m-inset-lg-on-xl pf-m-inset-lg-on-2xl"
     data-ouia-component-id="OUIA-Generated-Pagination-top-42"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         1 - 10
@@ -217,12 +217,12 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             1 - 10
@@ -234,14 +234,14 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -256,15 +256,15 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-171"
           data-ouia-component-type="PF4/Button"
@@ -274,7 +274,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -286,12 +286,12 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-172"
           data-ouia-component-type="PF4/Button"
@@ -301,7 +301,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -313,11 +313,11 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="2"
           min="1"
           type="number"
@@ -325,12 +325,12 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         />
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-173"
           data-ouia-component-type="PF4/Button"
@@ -339,7 +339,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -351,12 +351,12 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-174"
           data-ouia-component-type="PF4/Button"
@@ -365,7 +365,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -385,15 +385,15 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
 exports[`Pagination API verify insetMd inset breakpoints 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination pf-m-inset-md pf-m-inset-md-on-sm pf-m-inset-md-on-md pf-m-inset-md-on-lg pf-m-inset-md-on-xl pf-m-inset-md-on-2xl"
+    class="pf-v5-c-pagination pf-m-inset-md pf-m-inset-md-on-sm pf-m-inset-md-on-md pf-m-inset-md-on-lg pf-m-inset-md-on-xl pf-m-inset-md-on-2xl"
     data-ouia-component-id="OUIA-Generated-Pagination-top-41"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         1 - 10
@@ -408,12 +408,12 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             1 - 10
@@ -425,14 +425,14 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -447,15 +447,15 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-167"
           data-ouia-component-type="PF4/Button"
@@ -465,7 +465,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -477,12 +477,12 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-168"
           data-ouia-component-type="PF4/Button"
@@ -492,7 +492,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -504,11 +504,11 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="2"
           min="1"
           type="number"
@@ -516,12 +516,12 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         />
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-169"
           data-ouia-component-type="PF4/Button"
@@ -530,7 +530,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -542,12 +542,12 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-170"
           data-ouia-component-type="PF4/Button"
@@ -556,7 +556,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -576,15 +576,15 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
 exports[`Pagination API verify insetNone inset breakpoints 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination pf-m-inset-none pf-m-inset-none-on-sm pf-m-inset-none-on-md pf-m-inset-none-on-lg pf-m-inset-none-on-xl pf-m-inset-none-on-2xl"
+    class="pf-v5-c-pagination pf-m-inset-none pf-m-inset-none-on-sm pf-m-inset-none-on-md pf-m-inset-none-on-lg pf-m-inset-none-on-xl pf-m-inset-none-on-2xl"
     data-ouia-component-id="OUIA-Generated-Pagination-top-39"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         1 - 10
@@ -599,12 +599,12 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             1 - 10
@@ -616,14 +616,14 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -638,15 +638,15 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-159"
           data-ouia-component-type="PF4/Button"
@@ -656,7 +656,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -668,12 +668,12 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-160"
           data-ouia-component-type="PF4/Button"
@@ -683,7 +683,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -695,11 +695,11 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="2"
           min="1"
           type="number"
@@ -707,12 +707,12 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         />
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-161"
           data-ouia-component-type="PF4/Button"
@@ -721,7 +721,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -733,12 +733,12 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-162"
           data-ouia-component-type="PF4/Button"
@@ -747,7 +747,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -767,15 +767,15 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
 exports[`Pagination API verify insetSm inset breakpoints 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination pf-m-inset-sm pf-m-inset-sm-on-sm pf-m-inset-sm-on-md pf-m-inset-sm-on-lg pf-m-inset-sm-on-xl pf-m-inset-sm-on-2xl"
+    class="pf-v5-c-pagination pf-m-inset-sm pf-m-inset-sm-on-sm pf-m-inset-sm-on-md pf-m-inset-sm-on-lg pf-m-inset-sm-on-xl pf-m-inset-sm-on-2xl"
     data-ouia-component-id="OUIA-Generated-Pagination-top-40"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         1 - 10
@@ -790,12 +790,12 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             1 - 10
@@ -807,14 +807,14 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -829,15 +829,15 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-163"
           data-ouia-component-type="PF4/Button"
@@ -847,7 +847,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -859,12 +859,12 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-164"
           data-ouia-component-type="PF4/Button"
@@ -874,7 +874,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -886,11 +886,11 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="2"
           min="1"
           type="number"
@@ -898,12 +898,12 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         />
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-165"
           data-ouia-component-type="PF4/Button"
@@ -912,7 +912,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -924,12 +924,12 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-166"
           data-ouia-component-type="PF4/Button"
@@ -938,7 +938,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -958,15 +958,15 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
 exports[`Pagination API verify insetXl inset breakpoints 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination pf-m-inset-xl pf-m-inset-xl-on-sm pf-m-inset-xl-on-md pf-m-inset-xl-on-lg pf-m-inset-xl-on-xl pf-m-inset-xl-on-2xl"
+    class="pf-v5-c-pagination pf-m-inset-xl pf-m-inset-xl-on-sm pf-m-inset-xl-on-md pf-m-inset-xl-on-lg pf-m-inset-xl-on-xl pf-m-inset-xl-on-2xl"
     data-ouia-component-id="OUIA-Generated-Pagination-top-43"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         1 - 10
@@ -981,12 +981,12 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             1 - 10
@@ -998,14 +998,14 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -1020,15 +1020,15 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-175"
           data-ouia-component-type="PF4/Button"
@@ -1038,7 +1038,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -1050,12 +1050,12 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-176"
           data-ouia-component-type="PF4/Button"
@@ -1065,7 +1065,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -1077,11 +1077,11 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="2"
           min="1"
           type="number"
@@ -1089,12 +1089,12 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         />
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-177"
           data-ouia-component-type="PF4/Button"
@@ -1103,7 +1103,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -1115,12 +1115,12 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-178"
           data-ouia-component-type="PF4/Button"
@@ -1129,7 +1129,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -1149,15 +1149,15 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
 exports[`Pagination component render custom pagination toggle 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination"
+    class="pf-v5-c-pagination"
     data-ouia-component-id="OUIA-Generated-Pagination-top-12"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       -9 - 10 - 40 - 
     </div>
@@ -1165,24 +1165,24 @@ exports[`Pagination component render custom pagination toggle 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           -9 - 10 - 40 - 
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -1197,15 +1197,15 @@ exports[`Pagination component render custom pagination toggle 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-51"
           data-ouia-component-type="PF4/Button"
@@ -1215,7 +1215,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -1227,12 +1227,12 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-52"
           data-ouia-component-type="PF4/Button"
@@ -1242,7 +1242,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -1254,11 +1254,11 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="4"
           min="1"
           type="number"
@@ -1271,12 +1271,12 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-53"
           data-ouia-component-type="PF4/Button"
@@ -1285,7 +1285,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -1297,12 +1297,12 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-54"
           data-ouia-component-type="PF4/Button"
@@ -1311,7 +1311,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -1330,15 +1330,15 @@ exports[`Pagination component render custom pagination toggle 1`] = `
 exports[`Pagination component render custom perPageOptions 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination"
+    class="pf-v5-c-pagination"
     data-ouia-component-id="OUIA-Generated-Pagination-top-8"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         -9 - 10
@@ -1353,12 +1353,12 @@ exports[`Pagination component render custom perPageOptions 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             -9 - 10
@@ -1370,14 +1370,14 @@ exports[`Pagination component render custom perPageOptions 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -1392,15 +1392,15 @@ exports[`Pagination component render custom perPageOptions 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-35"
           data-ouia-component-type="PF4/Button"
@@ -1410,7 +1410,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -1422,12 +1422,12 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-36"
           data-ouia-component-type="PF4/Button"
@@ -1437,7 +1437,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -1449,11 +1449,11 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="4"
           min="1"
           type="number"
@@ -1466,12 +1466,12 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-37"
           data-ouia-component-type="PF4/Button"
@@ -1480,7 +1480,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -1492,12 +1492,12 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-38"
           data-ouia-component-type="PF4/Button"
@@ -1506,7 +1506,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -1525,15 +1525,15 @@ exports[`Pagination component render custom perPageOptions 1`] = `
 exports[`Pagination component render custom start end 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination"
+    class="pf-v5-c-pagination"
     data-ouia-component-id="OUIA-Generated-Pagination-top-10"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         -9 - 10
@@ -1548,12 +1548,12 @@ exports[`Pagination component render custom start end 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             5 - 15
@@ -1565,14 +1565,14 @@ exports[`Pagination component render custom start end 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -1587,15 +1587,15 @@ exports[`Pagination component render custom start end 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-43"
           data-ouia-component-type="PF4/Button"
@@ -1604,7 +1604,7 @@ exports[`Pagination component render custom start end 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -1616,12 +1616,12 @@ exports[`Pagination component render custom start end 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-44"
           data-ouia-component-type="PF4/Button"
@@ -1630,7 +1630,7 @@ exports[`Pagination component render custom start end 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -1642,11 +1642,11 @@ exports[`Pagination component render custom start end 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="4"
           min="1"
           type="number"
@@ -1659,12 +1659,12 @@ exports[`Pagination component render custom start end 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-45"
           data-ouia-component-type="PF4/Button"
@@ -1673,7 +1673,7 @@ exports[`Pagination component render custom start end 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -1685,12 +1685,12 @@ exports[`Pagination component render custom start end 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-46"
           data-ouia-component-type="PF4/Button"
@@ -1699,7 +1699,7 @@ exports[`Pagination component render custom start end 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -1718,15 +1718,15 @@ exports[`Pagination component render custom start end 1`] = `
 exports[`Pagination component render empty per page options 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination"
+    class="pf-v5-c-pagination"
     data-ouia-component-id="OUIA-Generated-Pagination-top-9"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         -9 - 10
@@ -1739,15 +1739,15 @@ exports[`Pagination component render empty per page options 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-39"
           data-ouia-component-type="PF4/Button"
@@ -1757,7 +1757,7 @@ exports[`Pagination component render empty per page options 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -1769,12 +1769,12 @@ exports[`Pagination component render empty per page options 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-40"
           data-ouia-component-type="PF4/Button"
@@ -1784,7 +1784,7 @@ exports[`Pagination component render empty per page options 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -1796,11 +1796,11 @@ exports[`Pagination component render empty per page options 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="4"
           min="1"
           type="number"
@@ -1813,12 +1813,12 @@ exports[`Pagination component render empty per page options 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-41"
           data-ouia-component-type="PF4/Button"
@@ -1827,7 +1827,7 @@ exports[`Pagination component render empty per page options 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -1839,12 +1839,12 @@ exports[`Pagination component render empty per page options 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-42"
           data-ouia-component-type="PF4/Button"
@@ -1853,7 +1853,7 @@ exports[`Pagination component render empty per page options 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -1872,15 +1872,15 @@ exports[`Pagination component render empty per page options 1`] = `
 exports[`Pagination component render last page 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination"
+    class="pf-v5-c-pagination"
     data-ouia-component-id="OUIA-Generated-Pagination-top-7"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         11 - 20
@@ -1895,12 +1895,12 @@ exports[`Pagination component render last page 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             11 - 20
@@ -1912,14 +1912,14 @@ exports[`Pagination component render last page 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -1934,15 +1934,15 @@ exports[`Pagination component render last page 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-31"
           data-ouia-component-type="PF4/Button"
@@ -1951,7 +1951,7 @@ exports[`Pagination component render last page 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -1963,12 +1963,12 @@ exports[`Pagination component render last page 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-32"
           data-ouia-component-type="PF4/Button"
@@ -1977,7 +1977,7 @@ exports[`Pagination component render last page 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -1989,11 +1989,11 @@ exports[`Pagination component render last page 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="2"
           min="1"
           type="number"
@@ -2006,12 +2006,12 @@ exports[`Pagination component render last page 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-33"
           data-ouia-component-type="PF4/Button"
@@ -2021,7 +2021,7 @@ exports[`Pagination component render last page 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -2033,12 +2033,12 @@ exports[`Pagination component render last page 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="true"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-34"
           data-ouia-component-type="PF4/Button"
@@ -2048,7 +2048,7 @@ exports[`Pagination component render last page 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -2067,15 +2067,15 @@ exports[`Pagination component render last page 1`] = `
 exports[`Pagination component render limited number of pages 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination"
+    class="pf-v5-c-pagination"
     data-ouia-component-id="OUIA-Generated-Pagination-top-5"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         -19 - 20
@@ -2090,12 +2090,12 @@ exports[`Pagination component render limited number of pages 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             -19 - 20
@@ -2107,14 +2107,14 @@ exports[`Pagination component render limited number of pages 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -2129,15 +2129,15 @@ exports[`Pagination component render limited number of pages 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-23"
           data-ouia-component-type="PF4/Button"
@@ -2147,7 +2147,7 @@ exports[`Pagination component render limited number of pages 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -2159,12 +2159,12 @@ exports[`Pagination component render limited number of pages 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-24"
           data-ouia-component-type="PF4/Button"
@@ -2174,7 +2174,7 @@ exports[`Pagination component render limited number of pages 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -2186,11 +2186,11 @@ exports[`Pagination component render limited number of pages 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           disabled=""
           max="1"
           min="1"
@@ -2204,12 +2204,12 @@ exports[`Pagination component render limited number of pages 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-25"
           data-ouia-component-type="PF4/Button"
@@ -2219,7 +2219,7 @@ exports[`Pagination component render limited number of pages 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -2231,12 +2231,12 @@ exports[`Pagination component render limited number of pages 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="true"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-26"
           data-ouia-component-type="PF4/Button"
@@ -2246,7 +2246,7 @@ exports[`Pagination component render limited number of pages 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -2265,23 +2265,23 @@ exports[`Pagination component render limited number of pages 1`] = `
 exports[`Pagination component render should render correctly bottom 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination pf-m-bottom"
+    class="pf-v5-c-pagination pf-m-bottom"
     data-ouia-component-id="OUIA-Generated-Pagination-bottom-1"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-bottom-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div>
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-bottom-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             -9 - 10
@@ -2293,14 +2293,14 @@ exports[`Pagination component render should render correctly bottom 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -2315,15 +2315,15 @@ exports[`Pagination component render should render correctly bottom 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-5"
           data-ouia-component-type="PF4/Button"
@@ -2333,7 +2333,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -2345,12 +2345,12 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-6"
           data-ouia-component-type="PF4/Button"
@@ -2360,7 +2360,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -2372,11 +2372,11 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="2"
           min="1"
           type="number"
@@ -2389,12 +2389,12 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-7"
           data-ouia-component-type="PF4/Button"
@@ -2403,7 +2403,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -2415,12 +2415,12 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-8"
           data-ouia-component-type="PF4/Button"
@@ -2429,7 +2429,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -2448,23 +2448,23 @@ exports[`Pagination component render should render correctly bottom 1`] = `
 exports[`Pagination component render should render correctly bottom sticky 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination pf-m-bottom pf-m-sticky"
+    class="pf-v5-c-pagination pf-m-bottom pf-m-sticky"
     data-ouia-component-id="OUIA-Generated-Pagination-bottom-2"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-bottom-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div>
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-bottom-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             -9 - 10
@@ -2476,14 +2476,14 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -2498,15 +2498,15 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-15"
           data-ouia-component-type="PF4/Button"
@@ -2516,7 +2516,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -2528,12 +2528,12 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-16"
           data-ouia-component-type="PF4/Button"
@@ -2543,7 +2543,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -2555,11 +2555,11 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="2"
           min="1"
           type="number"
@@ -2572,12 +2572,12 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-17"
           data-ouia-component-type="PF4/Button"
@@ -2586,7 +2586,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -2598,12 +2598,12 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-18"
           data-ouia-component-type="PF4/Button"
@@ -2612,7 +2612,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -2631,15 +2631,15 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
 exports[`Pagination component render should render correctly compact 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination pf-m-compact"
+    class="pf-v5-c-pagination pf-m-compact"
     data-ouia-component-id="OUIA-Generated-Pagination-top-2"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         -9 - 10
@@ -2654,12 +2654,12 @@ exports[`Pagination component render should render correctly compact 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             -9 - 10
@@ -2671,14 +2671,14 @@ exports[`Pagination component render should render correctly compact 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -2693,15 +2693,15 @@ exports[`Pagination component render should render correctly compact 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-9"
           data-ouia-component-type="PF4/Button"
@@ -2711,7 +2711,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -2723,12 +2723,12 @@ exports[`Pagination component render should render correctly compact 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-10"
           data-ouia-component-type="PF4/Button"
@@ -2737,7 +2737,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -2756,15 +2756,15 @@ exports[`Pagination component render should render correctly compact 1`] = `
 exports[`Pagination component render should render correctly disabled 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination"
+    class="pf-v5-c-pagination"
     data-ouia-component-id="OUIA-Generated-Pagination-top-4"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         -9 - 10
@@ -2779,13 +2779,13 @@ exports[`Pagination component render should render correctly disabled 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text pf-m-disabled"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text pf-m-disabled"
         disabled=""
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             -9 - 10
@@ -2797,14 +2797,14 @@ exports[`Pagination component render should render correctly disabled 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -2819,15 +2819,15 @@ exports[`Pagination component render should render correctly disabled 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-19"
           data-ouia-component-type="PF4/Button"
@@ -2837,7 +2837,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -2849,12 +2849,12 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-20"
           data-ouia-component-type="PF4/Button"
@@ -2864,7 +2864,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -2876,11 +2876,11 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           disabled=""
           max="2"
           min="1"
@@ -2894,12 +2894,12 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-21"
           data-ouia-component-type="PF4/Button"
@@ -2909,7 +2909,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -2921,12 +2921,12 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="true"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-22"
           data-ouia-component-type="PF4/Button"
@@ -2936,7 +2936,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -2955,15 +2955,15 @@ exports[`Pagination component render should render correctly disabled 1`] = `
 exports[`Pagination component render should render correctly sticky 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination pf-m-sticky"
+    class="pf-v5-c-pagination pf-m-sticky"
     data-ouia-component-id="OUIA-Generated-Pagination-top-3"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         -9 - 10
@@ -2978,12 +2978,12 @@ exports[`Pagination component render should render correctly sticky 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             -9 - 10
@@ -2995,14 +2995,14 @@ exports[`Pagination component render should render correctly sticky 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -3017,15 +3017,15 @@ exports[`Pagination component render should render correctly sticky 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-11"
           data-ouia-component-type="PF4/Button"
@@ -3035,7 +3035,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -3047,12 +3047,12 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-12"
           data-ouia-component-type="PF4/Button"
@@ -3062,7 +3062,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -3074,11 +3074,11 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="2"
           min="1"
           type="number"
@@ -3091,12 +3091,12 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-13"
           data-ouia-component-type="PF4/Button"
@@ -3105,7 +3105,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -3117,12 +3117,12 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-14"
           data-ouia-component-type="PF4/Button"
@@ -3131,7 +3131,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -3150,15 +3150,15 @@ exports[`Pagination component render should render correctly sticky 1`] = `
 exports[`Pagination component render should render correctly top 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination"
+    class="pf-v5-c-pagination"
     data-ouia-component-id="OUIA-Generated-Pagination-top-1"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         -9 - 10
@@ -3173,12 +3173,12 @@ exports[`Pagination component render should render correctly top 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             -9 - 10
@@ -3190,14 +3190,14 @@ exports[`Pagination component render should render correctly top 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -3212,15 +3212,15 @@ exports[`Pagination component render should render correctly top 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-1"
           data-ouia-component-type="PF4/Button"
@@ -3230,7 +3230,7 @@ exports[`Pagination component render should render correctly top 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -3242,12 +3242,12 @@ exports[`Pagination component render should render correctly top 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-2"
           data-ouia-component-type="PF4/Button"
@@ -3257,7 +3257,7 @@ exports[`Pagination component render should render correctly top 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -3269,11 +3269,11 @@ exports[`Pagination component render should render correctly top 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="2"
           min="1"
           type="number"
@@ -3286,12 +3286,12 @@ exports[`Pagination component render should render correctly top 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-3"
           data-ouia-component-type="PF4/Button"
@@ -3300,7 +3300,7 @@ exports[`Pagination component render should render correctly top 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -3312,12 +3312,12 @@ exports[`Pagination component render should render correctly top 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-4"
           data-ouia-component-type="PF4/Button"
@@ -3326,7 +3326,7 @@ exports[`Pagination component render should render correctly top 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -3345,15 +3345,15 @@ exports[`Pagination component render should render correctly top 1`] = `
 exports[`Pagination component render titles 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination"
+    class="pf-v5-c-pagination"
     data-ouia-component-id="OUIA-Generated-Pagination-top-11"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         -9 - 10
@@ -3368,12 +3368,12 @@ exports[`Pagination component render titles 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             -9 - 10
@@ -3385,14 +3385,14 @@ exports[`Pagination component render titles 1`] = `
            values
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -3407,15 +3407,15 @@ exports[`Pagination component render titles 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-47"
           data-ouia-component-type="PF4/Button"
@@ -3425,7 +3425,7 @@ exports[`Pagination component render titles 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -3437,12 +3437,12 @@ exports[`Pagination component render titles 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-48"
           data-ouia-component-type="PF4/Button"
@@ -3452,7 +3452,7 @@ exports[`Pagination component render titles 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -3464,11 +3464,11 @@ exports[`Pagination component render titles 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="4"
           min="1"
           type="number"
@@ -3481,12 +3481,12 @@ exports[`Pagination component render titles 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-49"
           data-ouia-component-type="PF4/Button"
@@ -3495,7 +3495,7 @@ exports[`Pagination component render titles 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -3507,12 +3507,12 @@ exports[`Pagination component render titles 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-50"
           data-ouia-component-type="PF4/Button"
@@ -3521,7 +3521,7 @@ exports[`Pagination component render titles 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -3540,15 +3540,15 @@ exports[`Pagination component render titles 1`] = `
 exports[`Pagination component render up drop direction 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination"
+    class="pf-v5-c-pagination"
     data-ouia-component-id="OUIA-Generated-Pagination-top-13"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         -9 - 10
@@ -3563,12 +3563,12 @@ exports[`Pagination component render up drop direction 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             -9 - 10
@@ -3580,14 +3580,14 @@ exports[`Pagination component render up drop direction 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -3602,15 +3602,15 @@ exports[`Pagination component render up drop direction 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-55"
           data-ouia-component-type="PF4/Button"
@@ -3620,7 +3620,7 @@ exports[`Pagination component render up drop direction 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -3632,12 +3632,12 @@ exports[`Pagination component render up drop direction 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-56"
           data-ouia-component-type="PF4/Button"
@@ -3647,7 +3647,7 @@ exports[`Pagination component render up drop direction 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -3659,11 +3659,11 @@ exports[`Pagination component render up drop direction 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           max="4"
           min="1"
           type="number"
@@ -3676,12 +3676,12 @@ exports[`Pagination component render up drop direction 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-57"
           data-ouia-component-type="PF4/Button"
@@ -3690,7 +3690,7 @@ exports[`Pagination component render up drop direction 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -3702,12 +3702,12 @@ exports[`Pagination component render up drop direction 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-58"
           data-ouia-component-type="PF4/Button"
@@ -3716,7 +3716,7 @@ exports[`Pagination component render up drop direction 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -3735,15 +3735,15 @@ exports[`Pagination component render up drop direction 1`] = `
 exports[`Pagination component render zero results 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-pagination"
+    class="pf-v5-c-pagination"
     data-ouia-component-id="OUIA-Generated-Pagination-top-6"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
     id="options-menu-top-pagination"
-    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+    style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-c-pagination__total-items"
+      class="pf-v5-c-pagination__total-items"
     >
       <b>
         0 - 0
@@ -3758,12 +3758,12 @@ exports[`Pagination component render zero results 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        class="pf-c-menu-toggle pf-m-plain pf-m-text"
+        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
         id="options-menu-top-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         >
           <b>
             0 - 0
@@ -3775,14 +3775,14 @@ exports[`Pagination component render zero results 1`] = `
            
         </span>
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -3797,15 +3797,15 @@ exports[`Pagination component render zero results 1`] = `
     </div>
     <nav
       aria-label="Pagination"
-      class="pf-c-pagination__nav"
+      class="pf-v5-c-pagination__nav"
     >
       <div
-        class="pf-c-pagination__nav-control pf-m-first"
+        class="pf-v5-c-pagination__nav-control pf-m-first"
       >
         <button
           aria-disabled="true"
           aria-label="Go to first page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-27"
           data-ouia-component-type="PF4/Button"
@@ -3815,7 +3815,7 @@ exports[`Pagination component render zero results 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"
@@ -3827,12 +3827,12 @@ exports[`Pagination component render zero results 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to previous page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-28"
           data-ouia-component-type="PF4/Button"
@@ -3842,7 +3842,7 @@ exports[`Pagination component render zero results 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -3854,11 +3854,11 @@ exports[`Pagination component render zero results 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-page-select"
+        class="pf-v5-c-pagination__nav-page-select"
       >
         <input
           aria-label="Current page"
-          class="pf-c-form-control"
+          class="pf-v5-c-form-control"
           disabled=""
           max="0"
           min="1"
@@ -3872,12 +3872,12 @@ exports[`Pagination component render zero results 1`] = `
         </span>
       </div>
       <div
-        class="pf-c-pagination__nav-control"
+        class="pf-v5-c-pagination__nav-control"
       >
         <button
           aria-disabled="true"
           aria-label="Go to next page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-29"
           data-ouia-component-type="PF4/Button"
@@ -3887,7 +3887,7 @@ exports[`Pagination component render zero results 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -3899,12 +3899,12 @@ exports[`Pagination component render zero results 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-pagination__nav-control pf-m-last"
+        class="pf-v5-c-pagination__nav-control pf-m-last"
       >
         <button
           aria-disabled="true"
           aria-label="Go to last page"
-          class="pf-c-button pf-m-plain pf-m-disabled"
+          class="pf-v5-c-button pf-m-plain pf-m-disabled"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-30"
           data-ouia-component-type="PF4/Button"
@@ -3914,7 +3914,7 @@ exports[`Pagination component render zero results 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 448 512"

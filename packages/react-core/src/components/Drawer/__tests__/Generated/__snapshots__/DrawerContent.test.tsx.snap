@@ -3,10 +3,10 @@
 exports[`DrawerContent should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-drawer__main"
+    class="pf-v5-c-drawer__main"
   >
     <div
-      class="pf-c-drawer__content ''"
+      class="pf-v5-c-drawer__content ''"
     >
       <div>
         ReactNode

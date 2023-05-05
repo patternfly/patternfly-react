@@ -5,17 +5,17 @@ exports[`Matches the snapshot 1`] = `
   <h3>
     <button
       aria-expanded="false"
-      class="pf-c-accordion__toggle"
+      class="pf-v5-c-accordion__toggle"
       id="accordion-toggle"
       type="button"
     >
       <span
-        class="pf-c-accordion__toggle-text"
+        class="pf-v5-c-accordion__toggle-text"
       >
         Test
       </span>
       <span
-        class="pf-c-accordion__toggle-icon"
+        class="pf-v5-c-accordion__toggle-icon"
       >
         Icon mock
       </span>

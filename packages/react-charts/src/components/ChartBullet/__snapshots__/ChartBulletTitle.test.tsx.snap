@@ -77,7 +77,7 @@ exports[`renders component data 1`] = `
         <tspan
           dx="0"
           dy="0"
-          style="fill: var(--pf-chart-bullet--label--title--Fill, #151515); font-size: 18px; text-anchor: end; font-family: var(--pf-chart-global--FontFamily, \\"RedHatText\\", helvetica, arial, sans-serif); letter-spacing: var(--pf-chart-global--letter-spacing, normal); stroke: transparent;"
+          style="fill: var(--pf-v5-chart-bullet--label--title--Fill, #151515); font-size: 18px; text-anchor: end; font-family: var(--pf-v5-chart-global--FontFamily, \\"RedHatText\\", helvetica, arial, sans-serif); letter-spacing: var(--pf-v5-chart-global--letter-spacing, normal); stroke: transparent;"
           text-anchor="end"
           x="36"
         >
@@ -86,7 +86,7 @@ exports[`renders component data 1`] = `
         <tspan
           dx="0"
           dy="13.8"
-          style="fill: var(--pf-chart-bullet--label--subtitle--Fill, #b8bbbe); font-size: 14px; text-anchor: end; font-family: var(--pf-chart-global--FontFamily, \\"RedHatText\\", helvetica, arial, sans-serif); letter-spacing: var(--pf-chart-global--letter-spacing, normal); stroke: transparent;"
+          style="fill: var(--pf-v5-chart-bullet--label--subtitle--Fill, #b8bbbe); font-size: 14px; text-anchor: end; font-family: var(--pf-v5-chart-global--FontFamily, \\"RedHatText\\", helvetica, arial, sans-serif); letter-spacing: var(--pf-v5-chart-global--letter-spacing, normal); stroke: transparent;"
           text-anchor="end"
           x="36"
         >

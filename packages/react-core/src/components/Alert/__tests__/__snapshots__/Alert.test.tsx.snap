@@ -6,7 +6,7 @@ exports[`Matches snapshot 1`] = `
     aria-atomic="false"
     aria-label="Toast alert label"
     aria-live="polite"
-    class="pf-c-alert pf-m-custom"
+    class="pf-v5-c-alert pf-m-custom"
     data-ouia-component-id="ouia-id"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe="true"
@@ -20,17 +20,17 @@ exports[`Matches snapshot 1`] = `
       </p>
     </div>
     <h4
-      class="pf-c-alert__title"
+      class="pf-v5-c-alert__title"
     >
       <span
-        class="pf-u-screen-reader"
+        class="pf-v5-u-screen-reader"
       >
         Custom alert:
       </span>
       Some title
     </h4>
     <div
-      class="pf-c-alert__description"
+      class="pf-v5-c-alert__description"
     >
       Some toast alert
     </div>

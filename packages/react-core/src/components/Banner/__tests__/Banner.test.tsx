@@ -18,7 +18,7 @@ test('Renders children', () => {
 
 test('Renders with class name pf-c-banner', () => {
   render(<Banner>Test</Banner>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-banner');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-banner');
 });
 
 test('Renders with custom class name when className prop is provided', () => {
@@ -28,7 +28,7 @@ test('Renders with custom class name when className prop is provided', () => {
 
 test('Renders without any modifier class when variant prop is not passed', () => {
   render(<Banner>Test</Banner>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-banner', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-banner', { exact: true });
 });
 
 test('Renders with class name pf-m-green when "green" is passed to variant prop', () => {

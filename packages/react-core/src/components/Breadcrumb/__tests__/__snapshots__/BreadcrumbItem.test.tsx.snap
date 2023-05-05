@@ -3,7 +3,7 @@
 exports[`BreadcrumbItem component should render active breadcrumbItem 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-breadcrumb__item"
+    class="pf-v5-c-breadcrumb__item"
   >
     Item
   </li>
@@ -13,7 +13,7 @@ exports[`BreadcrumbItem component should render active breadcrumbItem 1`] = `
 exports[`BreadcrumbItem component should render breadcrumbItem with className 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-breadcrumb__item Class"
+    class="pf-v5-c-breadcrumb__item Class"
   >
     Item
   </li>
@@ -23,7 +23,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with className 1`
 exports[`BreadcrumbItem component should render breadcrumbItem with component 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-breadcrumb__item"
+    class="pf-v5-c-breadcrumb__item"
   >
     Stuff
   </li>
@@ -33,7 +33,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with component 1`
 exports[`BreadcrumbItem component should render breadcrumbItem with custom element 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-breadcrumb__item"
+    class="pf-v5-c-breadcrumb__item"
   >
     <h1>
       Header
@@ -45,7 +45,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with custom eleme
 exports[`BreadcrumbItem component should render breadcrumbItem with id 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-breadcrumb__item"
+    class="pf-v5-c-breadcrumb__item"
     id="Item 1"
   >
     Item
@@ -56,7 +56,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with id 1`] = `
 exports[`BreadcrumbItem component should render breadcrumbItem with target 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-breadcrumb__item"
+    class="pf-v5-c-breadcrumb__item"
   >
     Item
   </li>
@@ -66,7 +66,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with target 1`] =
 exports[`BreadcrumbItem component should render default breadcrumbItem 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-breadcrumb__item"
+    class="pf-v5-c-breadcrumb__item"
   >
     Item
   </li>
@@ -76,10 +76,10 @@ exports[`BreadcrumbItem component should render default breadcrumbItem 1`] = `
 exports[`BreadcrumbItem component should render link breadcrumbItem 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-breadcrumb__item"
+    class="pf-v5-c-breadcrumb__item"
   >
     <a
-      class="pf-c-breadcrumb__link"
+      class="pf-v5-c-breadcrumb__link"
       href="/somewhere"
     >
       Item

@@ -4,7 +4,7 @@ exports[`AboutModalBox Test 1`] = `
 <DocumentFragment>
   <div
     aria-labelledby="id"
-    class="pf-c-about-modal-box"
+    class="pf-v5-c-about-modal-box"
   >
     This is a AboutModalBox
   </div>

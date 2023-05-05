@@ -89,14 +89,14 @@ test('Renders the button as aria-expanded when isExpanded = true', () => {
 });
 
 test('Renders with an aria label composed with the title provided via a context and variantLabel provided via prop', () => {
-    render(
-      <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
-        <AlertToggleExpandButton variantLabel='variantLabelProp'/>
-      </AlertContext.Provider>
-    );
-  
-    expect(screen.getByRole('button')).toHaveAccessibleName('Toggle variantLabelProp alert: title');
-  });
+  render(
+    <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
+      <AlertToggleExpandButton variantLabel="variantLabelProp" />
+    </AlertContext.Provider>
+  );
+
+  expect(screen.getByRole('button')).toHaveAccessibleName('Toggle variantLabelProp alert: title');
+});
 
 test('Renders a Button with variant: ButtonVariant.plain', () => {
   render(
@@ -115,18 +115,18 @@ test('Renders with the toggle icon inside class pf-c-alert__toggle-icon', () => 
     </AlertContext.Provider>
   );
 
-  expect(screen.getByText('Icon mock')).toHaveClass('pf-c-alert__toggle-icon');
+  expect(screen.getByText('Icon mock')).toHaveClass('pf-v5-c-alert__toggle-icon');
 });
 
 test('Renders with inherited element props spread to the component', () => {
-    render(
-      <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
-        <AlertToggleExpandButton aria-labelledby="labelling-id" />
-      </AlertContext.Provider>
-    );
-  
-    expect(screen.getByRole('button')).toHaveAccessibleName('Test label');
-  });
+  render(
+    <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
+      <AlertToggleExpandButton aria-labelledby="labelling-id" />
+    </AlertContext.Provider>
+  );
+
+  expect(screen.getByRole('button')).toHaveAccessibleName('Test label');
+});
 
 test('Matches snapshot', () => {
   const { asFragment } = render(

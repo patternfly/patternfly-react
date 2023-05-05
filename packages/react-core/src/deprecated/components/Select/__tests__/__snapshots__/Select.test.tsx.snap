@@ -3,7 +3,7 @@
 exports[`Select renders select groups successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -13,23 +13,23 @@ exports[`Select renders select groups successfully 1`] = `
       aria-haspopup="listbox"
       aria-label="Options menu"
       aria-labelledby=" pf-select-toggle-id-4"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="pf-select-toggle-id-4"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         />
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -41,14 +41,14 @@ exports[`Select renders select groups successfully 1`] = `
       </span>
     </button>
     <div
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
     >
       <div
-        class="pf-c-select__menu-group"
+        class="pf-v5-c-select__menu-group"
       >
         <div
           aria-hidden="true"
-          class="pf-c-select__menu-group-title"
+          class="pf-v5-c-select__menu-group-title"
           id="group-1"
         >
           group 1
@@ -57,12 +57,12 @@ exports[`Select renders select groups successfully 1`] = `
           role="listbox"
         >
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-1"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item"
+              class="pf-v5-c-select__menu-item"
               role="option"
               type="button"
             >
@@ -70,12 +70,12 @@ exports[`Select renders select groups successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-2"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item"
+              class="pf-v5-c-select__menu-item"
               role="option"
               type="button"
             >
@@ -83,12 +83,12 @@ exports[`Select renders select groups successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-3"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item"
+              class="pf-v5-c-select__menu-item"
               role="option"
               type="button"
             >
@@ -96,12 +96,12 @@ exports[`Select renders select groups successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-4"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item"
+              class="pf-v5-c-select__menu-item"
               role="option"
               type="button"
             >
@@ -111,11 +111,11 @@ exports[`Select renders select groups successfully 1`] = `
         </ul>
       </div>
       <div
-        class="pf-c-select__menu-group"
+        class="pf-v5-c-select__menu-group"
       >
         <div
           aria-hidden="true"
-          class="pf-c-select__menu-group-title"
+          class="pf-v5-c-select__menu-group-title"
           id="group-2"
         >
           group 2
@@ -124,12 +124,12 @@ exports[`Select renders select groups successfully 1`] = `
           role="listbox"
         >
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-1"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item"
+              class="pf-v5-c-select__menu-item"
               role="option"
               type="button"
             >
@@ -137,12 +137,12 @@ exports[`Select renders select groups successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-2"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item"
+              class="pf-v5-c-select__menu-item"
               role="option"
               type="button"
             >
@@ -150,12 +150,12 @@ exports[`Select renders select groups successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-3"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item"
+              class="pf-v5-c-select__menu-item"
               role="option"
               type="button"
             >
@@ -163,12 +163,12 @@ exports[`Select renders select groups successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-4"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item"
+              class="pf-v5-c-select__menu-item"
               role="option"
               type="button"
             >
@@ -185,7 +185,7 @@ exports[`Select renders select groups successfully 1`] = `
 exports[`Select renders up direction successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-top"
+    class="pf-v5-c-select pf-m-top"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -195,25 +195,25 @@ exports[`Select renders up direction successfully 1`] = `
       aria-haspopup="listbox"
       aria-label="Options menu"
       aria-labelledby=" select-up"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="select-up"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         >
           Mr
         </span>
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -231,7 +231,7 @@ exports[`Select renders up direction successfully 1`] = `
 exports[`Select single select renders closed successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select"
+    class="pf-v5-c-select"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -241,25 +241,25 @@ exports[`Select single select renders closed successfully 1`] = `
       aria-haspopup="listbox"
       aria-label="Options menu"
       aria-labelledby=" single-select-closed"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="single-select-closed"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         >
           Mr
         </span>
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -277,7 +277,7 @@ exports[`Select single select renders closed successfully 1`] = `
 exports[`Select single select renders disabled successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select"
+    class="pf-v5-c-select"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -287,26 +287,26 @@ exports[`Select single select renders disabled successfully 1`] = `
       aria-haspopup="listbox"
       aria-label="Options menu"
       aria-labelledby=" single-select-disabled"
-      class="pf-c-select__toggle pf-m-disabled"
+      class="pf-v5-c-select__toggle pf-m-disabled"
       disabled=""
       id="single-select-disabled"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         >
           Mr
         </span>
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -324,7 +324,7 @@ exports[`Select single select renders disabled successfully 1`] = `
 exports[`Select single select renders expanded in strict mode successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -334,25 +334,25 @@ exports[`Select single select renders expanded in strict mode successfully 1`] =
       aria-haspopup="listbox"
       aria-label="Options menu"
       aria-labelledby=" pf-select-toggle-id-1"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="pf-select-toggle-id-1"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         >
           Mr
         </span>
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -365,16 +365,16 @@ exports[`Select single select renders expanded in strict mode successfully 1`] =
     </button>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
       role="listbox"
     >
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-1"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -382,12 +382,12 @@ exports[`Select single select renders expanded in strict mode successfully 1`] =
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-2"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -395,12 +395,12 @@ exports[`Select single select renders expanded in strict mode successfully 1`] =
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-3"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -408,12 +408,12 @@ exports[`Select single select renders expanded in strict mode successfully 1`] =
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-4"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -428,7 +428,7 @@ exports[`Select single select renders expanded in strict mode successfully 1`] =
 exports[`Select single select renders expanded successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -438,25 +438,25 @@ exports[`Select single select renders expanded successfully 1`] = `
       aria-haspopup="listbox"
       aria-label="Options menu"
       aria-labelledby=" pf-select-toggle-id-0"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="pf-select-toggle-id-0"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         >
           Mr
         </span>
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -469,16 +469,16 @@ exports[`Select single select renders expanded successfully 1`] = `
     </button>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
       role="listbox"
     >
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-1"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -486,12 +486,12 @@ exports[`Select single select renders expanded successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-2"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -499,12 +499,12 @@ exports[`Select single select renders expanded successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-3"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -512,12 +512,12 @@ exports[`Select single select renders expanded successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-4"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -532,7 +532,7 @@ exports[`Select single select renders expanded successfully 1`] = `
 exports[`Select single select renders expanded successfully with custom objects 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -542,25 +542,25 @@ exports[`Select single select renders expanded successfully with custom objects 
       aria-haspopup="listbox"
       aria-label="Options menu"
       aria-labelledby=" pf-select-toggle-id-3"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="pf-select-toggle-id-3"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         >
           Mr: User One
         </span>
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -573,16 +573,16 @@ exports[`Select single select renders expanded successfully with custom objects 
     </button>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
       role="listbox"
     >
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-1"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -590,12 +590,12 @@ exports[`Select single select renders expanded successfully with custom objects 
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-2"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -603,12 +603,12 @@ exports[`Select single select renders expanded successfully with custom objects 
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-3"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -623,7 +623,7 @@ exports[`Select single select renders expanded successfully with custom objects 
 exports[`checkbox select renders checkbox select groups successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -632,23 +632,23 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       aria-expanded="true"
       aria-label="Options menu"
       aria-labelledby=" pf-select-toggle-id-8"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="pf-select-toggle-id-8"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         />
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -660,74 +660,74 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       </span>
     </button>
     <div
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
     >
       <div
-        class="pf-c-select__menu-group"
+        class="pf-v5-c-select__menu-group"
       >
         <div
           aria-hidden="true"
-          class="pf-c-select__menu-group-title"
+          class="pf-v5-c-select__menu-group-title"
           id="group-1"
         >
           group 1
         </div>
         <fieldset
           aria-labelledby="group-1"
-          class="pf-c-select__menu-fieldset"
+          class="pf-v5-c-select__menu-fieldset"
         >
           <label
-            class="pf-c-check pf-c-select__menu-item"
+            class="pf-v5-c-check pf-v5-c-select__menu-item"
           >
             <input
-              class="pf-c-check__input"
+              class="pf-v5-c-check__input"
               id="pf-random-id-16-Mr"
               type="checkbox"
             />
             <span
-              class="pf-c-check__label"
+              class="pf-v5-c-check__label"
             >
               Mr
             </span>
           </label>
           <label
-            class="pf-c-check pf-c-select__menu-item"
+            class="pf-v5-c-check pf-v5-c-select__menu-item"
           >
             <input
-              class="pf-c-check__input"
+              class="pf-v5-c-check__input"
               id="pf-random-id-16-Mrs"
               type="checkbox"
             />
             <span
-              class="pf-c-check__label"
+              class="pf-v5-c-check__label"
             >
               Mrs
             </span>
           </label>
           <label
-            class="pf-c-check pf-c-select__menu-item"
+            class="pf-v5-c-check pf-v5-c-select__menu-item"
           >
             <input
-              class="pf-c-check__input"
+              class="pf-v5-c-check__input"
               id="pf-random-id-16-Ms"
               type="checkbox"
             />
             <span
-              class="pf-c-check__label"
+              class="pf-v5-c-check__label"
             >
               Ms
             </span>
           </label>
           <label
-            class="pf-c-check pf-c-select__menu-item"
+            class="pf-v5-c-check pf-v5-c-select__menu-item"
           >
             <input
-              class="pf-c-check__input"
+              class="pf-v5-c-check__input"
               id="pf-random-id-16-Other"
               type="checkbox"
             />
             <span
-              class="pf-c-check__label"
+              class="pf-v5-c-check__label"
             >
               Other
             </span>
@@ -735,71 +735,71 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         </fieldset>
       </div>
       <div
-        class="pf-c-select__menu-group"
+        class="pf-v5-c-select__menu-group"
       >
         <div
           aria-hidden="true"
-          class="pf-c-select__menu-group-title"
+          class="pf-v5-c-select__menu-group-title"
           id="group-2"
         >
           group 2
         </div>
         <fieldset
           aria-labelledby="group-2"
-          class="pf-c-select__menu-fieldset"
+          class="pf-v5-c-select__menu-fieldset"
         >
           <label
-            class="pf-c-check pf-c-select__menu-item"
+            class="pf-v5-c-check pf-v5-c-select__menu-item"
           >
             <input
-              class="pf-c-check__input"
+              class="pf-v5-c-check__input"
               id="pf-random-id-16-Mr"
               type="checkbox"
             />
             <span
-              class="pf-c-check__label"
+              class="pf-v5-c-check__label"
             >
               Mr
             </span>
           </label>
           <label
-            class="pf-c-check pf-c-select__menu-item"
+            class="pf-v5-c-check pf-v5-c-select__menu-item"
           >
             <input
-              class="pf-c-check__input"
+              class="pf-v5-c-check__input"
               id="pf-random-id-16-Mrs"
               type="checkbox"
             />
             <span
-              class="pf-c-check__label"
+              class="pf-v5-c-check__label"
             >
               Mrs
             </span>
           </label>
           <label
-            class="pf-c-check pf-c-select__menu-item"
+            class="pf-v5-c-check pf-v5-c-select__menu-item"
           >
             <input
-              class="pf-c-check__input"
+              class="pf-v5-c-check__input"
               id="pf-random-id-16-Ms"
               type="checkbox"
             />
             <span
-              class="pf-c-check__label"
+              class="pf-v5-c-check__label"
             >
               Ms
             </span>
           </label>
           <label
-            class="pf-c-check pf-c-select__menu-item"
+            class="pf-v5-c-check pf-v5-c-select__menu-item"
           >
             <input
-              class="pf-c-check__input"
+              class="pf-v5-c-check__input"
               id="pf-random-id-16-Other"
               type="checkbox"
             />
             <span
-              class="pf-c-check__label"
+              class="pf-v5-c-check__label"
             >
               Other
             </span>
@@ -814,7 +814,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 exports[`checkbox select renders checkbox select selections properly 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select"
+    class="pf-v5-c-select"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -823,32 +823,32 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
       aria-expanded="false"
       aria-label="Options menu"
       aria-labelledby=" checkbox-select-selections"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="checkbox-select-selections"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         />
         <div
-          class="pf-c-select__toggle-badge"
+          class="pf-v5-c-select__toggle-badge"
         >
           <span
-            class="pf-c-badge pf-m-read"
+            class="pf-v5-c-badge pf-m-read"
           >
             1
           </span>
         </div>
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -866,7 +866,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
 exports[`checkbox select renders checkbox select selections properly when isCheckboxSelectionBadgeHidden is true 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select"
+    class="pf-v5-c-select"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -875,23 +875,23 @@ exports[`checkbox select renders checkbox select selections properly when isChec
       aria-expanded="false"
       aria-label="Options menu"
       aria-labelledby=" checkbox-select-hidden-badge"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="checkbox-select-hidden-badge"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         />
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -909,7 +909,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
 exports[`checkbox select renders closed successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select"
+    class="pf-v5-c-select"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -918,23 +918,23 @@ exports[`checkbox select renders closed successfully 1`] = `
       aria-expanded="false"
       aria-label="Options menu"
       aria-labelledby=" checkbox-select-closed"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="checkbox-select-closed"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         />
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -952,7 +952,7 @@ exports[`checkbox select renders closed successfully 1`] = `
 exports[`checkbox select renders expanded successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -961,23 +961,23 @@ exports[`checkbox select renders expanded successfully 1`] = `
       aria-expanded="true"
       aria-label="Options menu"
       aria-labelledby=" pf-select-toggle-id-6"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="pf-select-toggle-id-6"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         />
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -990,61 +990,61 @@ exports[`checkbox select renders expanded successfully 1`] = `
     </button>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
       role="listbox"
     >
       <label
-        class="pf-c-check pf-c-select__menu-item"
+        class="pf-v5-c-check pf-v5-c-select__menu-item"
       >
         <input
-          class="pf-c-check__input"
+          class="pf-v5-c-check__input"
           id="pf-random-id-13-Mr"
           type="checkbox"
         />
         <span
-          class="pf-c-check__label"
+          class="pf-v5-c-check__label"
         >
           Mr
         </span>
       </label>
       <label
-        class="pf-c-check pf-c-select__menu-item"
+        class="pf-v5-c-check pf-v5-c-select__menu-item"
       >
         <input
-          class="pf-c-check__input"
+          class="pf-v5-c-check__input"
           id="pf-random-id-13-Mrs"
           type="checkbox"
         />
         <span
-          class="pf-c-check__label"
+          class="pf-v5-c-check__label"
         >
           Mrs
         </span>
       </label>
       <label
-        class="pf-c-check pf-c-select__menu-item"
+        class="pf-v5-c-check pf-v5-c-select__menu-item"
       >
         <input
-          class="pf-c-check__input"
+          class="pf-v5-c-check__input"
           id="pf-random-id-13-Ms"
           type="checkbox"
         />
         <span
-          class="pf-c-check__label"
+          class="pf-v5-c-check__label"
         >
           Ms
         </span>
       </label>
       <label
-        class="pf-c-check pf-c-select__menu-item"
+        class="pf-v5-c-check pf-v5-c-select__menu-item"
       >
         <input
-          class="pf-c-check__input"
+          class="pf-v5-c-check__input"
           id="pf-random-id-13-Other"
           type="checkbox"
         />
         <span
-          class="pf-c-check__label"
+          class="pf-v5-c-check__label"
         >
           Other
         </span>
@@ -1057,7 +1057,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
 exports[`checkbox select renders expanded successfully with custom objects 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -1066,23 +1066,23 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       aria-expanded="true"
       aria-label="Options menu"
       aria-labelledby=" pf-select-toggle-id-7"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="pf-select-toggle-id-7"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         />
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -1095,47 +1095,47 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
     </button>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
       role="listbox"
     >
       <label
-        class="pf-c-check pf-c-select__menu-item"
+        class="pf-v5-c-check pf-v5-c-select__menu-item"
       >
         <input
-          class="pf-c-check__input"
+          class="pf-v5-c-check__input"
           id="pf-random-id-15-Mr: User One"
           type="checkbox"
         />
         <span
-          class="pf-c-check__label"
+          class="pf-v5-c-check__label"
         >
           Mr: User One
         </span>
       </label>
       <label
-        class="pf-c-check pf-c-select__menu-item"
+        class="pf-v5-c-check pf-v5-c-select__menu-item"
       >
         <input
-          class="pf-c-check__input"
+          class="pf-v5-c-check__input"
           id="pf-random-id-15-Mrs: New User"
           type="checkbox"
         />
         <span
-          class="pf-c-check__label"
+          class="pf-v5-c-check__label"
         >
           Mrs: New User
         </span>
       </label>
       <label
-        class="pf-c-check pf-c-select__menu-item"
+        class="pf-v5-c-check pf-v5-c-select__menu-item"
       >
         <input
-          class="pf-c-check__input"
+          class="pf-v5-c-check__input"
           id="pf-random-id-15-Ms: Test Three"
           type="checkbox"
         />
         <span
-          class="pf-c-check__label"
+          class="pf-v5-c-check__label"
         >
           Ms: Test Three
         </span>
@@ -1148,32 +1148,32 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
 exports[`checkbox select renders expanded with filtering successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
     <div
-      class="pf-c-select__toggle pf-m-typeahead"
+      class="pf-v5-c-select__toggle pf-m-typeahead"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         />
       </div>
       <button
         aria-expanded="true"
         aria-label="Options menu"
         aria-labelledby=" checkbox-select-expanded-filtered"
-        class="pf-c-button pf-c-select__toggle-button pf-m-plain"
+        class="pf-v5-c-button pf-v5-c-select__toggle-button pf-m-plain"
         id="checkbox-select-expanded-filtered"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg pf-c-select__toggle-arrow"
+          class="pf-v5-svg pf-v5-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -1185,76 +1185,76 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
       </button>
     </div>
     <div
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
     >
       <fieldset
         aria-label=""
-        class="pf-c-form__fieldset"
+        class="pf-v5-c-form__fieldset"
       >
         <div
-          class="pf-c-select__menu-search"
+          class="pf-v5-c-select__menu-search"
         >
           <input
             autocomplete="off"
-            class="pf-c-form-control pf-m-search"
+            class="pf-v5-c-form-control pf-m-search"
             type="search"
           />
         </div>
         <hr
-          class="pf-c-divider"
+          class="pf-v5-c-divider"
         />
         <label
-          class="pf-c-check pf-c-select__menu-item"
+          class="pf-v5-c-check pf-v5-c-select__menu-item"
         >
           <input
-            class="pf-c-check__input"
+            class="pf-v5-c-check__input"
             id="pf-random-id-14-Mr"
             type="checkbox"
           />
           <span
-            class="pf-c-check__label"
+            class="pf-v5-c-check__label"
           >
             Mr
           </span>
         </label>
         <label
-          class="pf-c-check pf-c-select__menu-item"
+          class="pf-v5-c-check pf-v5-c-select__menu-item"
         >
           <input
-            class="pf-c-check__input"
+            class="pf-v5-c-check__input"
             id="pf-random-id-14-Mrs"
             type="checkbox"
           />
           <span
-            class="pf-c-check__label"
+            class="pf-v5-c-check__label"
           >
             Mrs
           </span>
         </label>
         <label
-          class="pf-c-check pf-c-select__menu-item"
+          class="pf-v5-c-check pf-v5-c-select__menu-item"
         >
           <input
-            class="pf-c-check__input"
+            class="pf-v5-c-check__input"
             id="pf-random-id-14-Ms"
             type="checkbox"
           />
           <span
-            class="pf-c-check__label"
+            class="pf-v5-c-check__label"
           >
             Ms
           </span>
         </label>
         <label
-          class="pf-c-check pf-c-select__menu-item"
+          class="pf-v5-c-check pf-v5-c-select__menu-item"
         >
           <input
-            class="pf-c-check__input"
+            class="pf-v5-c-check__input"
             id="pf-random-id-14-Other"
             type="checkbox"
           />
           <span
-            class="pf-c-check__label"
+            class="pf-v5-c-check__label"
           >
             Other
           </span>
@@ -1268,7 +1268,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
 exports[`renders select with favorites successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
@@ -1278,23 +1278,23 @@ exports[`renders select with favorites successfully 1`] = `
       aria-haspopup="listbox"
       aria-label="Options menu"
       aria-labelledby=" pf-select-toggle-id-5"
-      class="pf-c-select__toggle"
+      class="pf-v5-c-select__toggle"
       id="pf-select-toggle-id-5"
       type="button"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <span
-          class="pf-c-select__toggle-text"
+          class="pf-v5-c-select__toggle-text"
         />
       </div>
       <span
-        class="pf-c-select__toggle-arrow"
+        class="pf-v5-c-select__toggle-arrow"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -1306,14 +1306,14 @@ exports[`renders select with favorites successfully 1`] = `
       </span>
     </button>
     <div
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
     >
       <div
-        class="pf-c-select__menu-group"
+        class="pf-v5-c-select__menu-group"
       >
         <div
           aria-hidden="true"
-          class="pf-c-select__menu-group-title"
+          class="pf-v5-c-select__menu-group-title"
           id="group-1"
         >
           group 1
@@ -1322,12 +1322,12 @@ exports[`renders select with favorites successfully 1`] = `
           role="listbox"
         >
           <li
-            class="pf-c-select__menu-wrapper pf-m-favorite"
+            class="pf-v5-c-select__menu-wrapper pf-m-favorite"
             id="option-1"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item pf-m-link"
+              class="pf-v5-c-select__menu-item pf-m-link"
               role="option"
               type="button"
             >
@@ -1335,14 +1335,14 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
             <button
               aria-label="starred"
-              class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+              class="pf-v5-c-select__menu-item pf-m-action pf-m-favorite-action"
             >
               <span
-                class="pf-c-select__menu-item-action-icon"
+                class="pf-v5-c-select__menu-item-action-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
+                  class="pf-v5-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 576 512"
@@ -1355,12 +1355,12 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-2"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item pf-m-link"
+              class="pf-v5-c-select__menu-item pf-m-link"
               role="option"
               type="button"
             >
@@ -1368,14 +1368,14 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
             <button
               aria-label="not starred"
-              class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+              class="pf-v5-c-select__menu-item pf-m-action pf-m-favorite-action"
             >
               <span
-                class="pf-c-select__menu-item-action-icon"
+                class="pf-v5-c-select__menu-item-action-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
+                  class="pf-v5-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 576 512"
@@ -1388,12 +1388,12 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-2"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item pf-m-link"
+              class="pf-v5-c-select__menu-item pf-m-link"
               role="option"
               type="button"
             >
@@ -1401,14 +1401,14 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
             <button
               aria-label="not starred"
-              class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+              class="pf-v5-c-select__menu-item pf-m-action pf-m-favorite-action"
             >
               <span
-                class="pf-c-select__menu-item-action-icon"
+                class="pf-v5-c-select__menu-item-action-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
+                  class="pf-v5-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 576 512"
@@ -1421,12 +1421,12 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-4"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item pf-m-link"
+              class="pf-v5-c-select__menu-item pf-m-link"
               role="option"
               type="button"
             >
@@ -1434,14 +1434,14 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
             <button
               aria-label="not starred"
-              class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+              class="pf-v5-c-select__menu-item pf-m-action pf-m-favorite-action"
             >
               <span
-                class="pf-c-select__menu-item-action-icon"
+                class="pf-v5-c-select__menu-item-action-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
+                  class="pf-v5-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 576 512"
@@ -1456,11 +1456,11 @@ exports[`renders select with favorites successfully 1`] = `
         </ul>
       </div>
       <div
-        class="pf-c-select__menu-group"
+        class="pf-v5-c-select__menu-group"
       >
         <div
           aria-hidden="true"
-          class="pf-c-select__menu-group-title"
+          class="pf-v5-c-select__menu-group-title"
           id="group-2"
         >
           group 2
@@ -1469,12 +1469,12 @@ exports[`renders select with favorites successfully 1`] = `
           role="listbox"
         >
           <li
-            class="pf-c-select__menu-wrapper pf-m-favorite"
+            class="pf-v5-c-select__menu-wrapper pf-m-favorite"
             id="option-1"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item pf-m-link"
+              class="pf-v5-c-select__menu-item pf-m-link"
               role="option"
               type="button"
             >
@@ -1482,14 +1482,14 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
             <button
               aria-label="starred"
-              class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+              class="pf-v5-c-select__menu-item pf-m-action pf-m-favorite-action"
             >
               <span
-                class="pf-c-select__menu-item-action-icon"
+                class="pf-v5-c-select__menu-item-action-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
+                  class="pf-v5-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 576 512"
@@ -1502,12 +1502,12 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-2"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item pf-m-link"
+              class="pf-v5-c-select__menu-item pf-m-link"
               role="option"
               type="button"
             >
@@ -1515,14 +1515,14 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
             <button
               aria-label="not starred"
-              class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+              class="pf-v5-c-select__menu-item pf-m-action pf-m-favorite-action"
             >
               <span
-                class="pf-c-select__menu-item-action-icon"
+                class="pf-v5-c-select__menu-item-action-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
+                  class="pf-v5-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 576 512"
@@ -1535,12 +1535,12 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-2"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item pf-m-link"
+              class="pf-v5-c-select__menu-item pf-m-link"
               role="option"
               type="button"
             >
@@ -1548,14 +1548,14 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
             <button
               aria-label="not starred"
-              class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+              class="pf-v5-c-select__menu-item pf-m-action pf-m-favorite-action"
             >
               <span
-                class="pf-c-select__menu-item-action-icon"
+                class="pf-v5-c-select__menu-item-action-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
+                  class="pf-v5-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 576 512"
@@ -1568,12 +1568,12 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-select__menu-wrapper"
+            class="pf-v5-c-select__menu-wrapper"
             id="option-4"
             role="presentation"
           >
             <button
-              class="pf-c-select__menu-item pf-m-link"
+              class="pf-v5-c-select__menu-item pf-m-link"
               role="option"
               type="button"
             >
@@ -1581,14 +1581,14 @@ exports[`renders select with favorites successfully 1`] = `
             </button>
             <button
               aria-label="not starred"
-              class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+              class="pf-v5-c-select__menu-item pf-m-action pf-m-favorite-action"
             >
               <span
-                class="pf-c-select__menu-item-action-icon"
+                class="pf-v5-c-select__menu-item-action-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-svg"
+                  class="pf-v5-svg"
                   fill="currentColor"
                   role="img"
                   viewBox="0 0 576 512"
@@ -1610,22 +1610,22 @@ exports[`renders select with favorites successfully 1`] = `
 exports[`typeahead multi select renders closed successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select"
+    class="pf-v5-c-select"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
     <div
-      class="pf-c-select__toggle pf-m-typeahead"
+      class="pf-v5-c-select__toggle pf-m-typeahead"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <input
           aria-invalid="false"
           aria-label=""
           autocomplete="off"
-          class="pf-c-form-control pf-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
           id="typeahead-multi-select-closed-select-multi-typeahead-typeahead"
           placeholder=""
           type="text"
@@ -1637,14 +1637,14 @@ exports[`typeahead multi select renders closed successfully 1`] = `
         aria-haspopup="listbox"
         aria-label="Options menu"
         aria-labelledby=" typeahead-multi-select-closed"
-        class="pf-c-button pf-c-select__toggle-button pf-m-plain"
+        class="pf-v5-c-button pf-v5-c-select__toggle-button pf-m-plain"
         id="typeahead-multi-select-closed"
         tabindex="-1"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg pf-c-select__toggle-arrow"
+          class="pf-v5-svg pf-v5-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -1662,22 +1662,22 @@ exports[`typeahead multi select renders closed successfully 1`] = `
 exports[`typeahead multi select renders expanded successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
     <div
-      class="pf-c-select__toggle pf-m-typeahead"
+      class="pf-v5-c-select__toggle pf-m-typeahead"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <input
           aria-invalid="false"
           aria-label=""
           autocomplete="off"
-          class="pf-c-form-control pf-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
           id="pf-select-toggle-id-19-select-multi-typeahead-typeahead"
           placeholder=""
           type="text"
@@ -1689,14 +1689,14 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         aria-haspopup="listbox"
         aria-label="Options menu"
         aria-labelledby=" pf-select-toggle-id-19"
-        class="pf-c-button pf-c-select__toggle-button pf-m-plain"
+        class="pf-v5-c-button pf-v5-c-select__toggle-button pf-m-plain"
         id="pf-select-toggle-id-19"
         tabindex="-1"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg pf-c-select__toggle-arrow"
+          class="pf-v5-svg pf-v5-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -1709,16 +1709,16 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
     </div>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
       role="listbox"
     >
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-1"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -1726,12 +1726,12 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-2"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -1739,12 +1739,12 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-3"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -1752,12 +1752,12 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-4"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -1772,59 +1772,59 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
 exports[`typeahead multi select renders selected successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
     <div
-      class="pf-c-select__toggle pf-m-typeahead"
+      class="pf-v5-c-select__toggle pf-m-typeahead"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <div
           aria-label="Chip group category"
-          class="pf-c-chip-group"
+          class="pf-v5-c-chip-group"
           data-ouia-component-type="PF4/ChipGroup"
           data-ouia-safe="true"
           role="group"
         >
           <div
-            class="pf-c-chip-group__main"
+            class="pf-v5-c-chip-group__main"
           >
             <ul
               aria-label="Chip group category"
-              class="pf-c-chip-group__list"
+              class="pf-v5-c-chip-group__list"
               role="list"
             >
               <li
-                class="pf-c-chip-group__list-item"
+                class="pf-v5-c-chip-group__list-item"
               >
                 <div
-                  class="pf-c-chip"
+                  class="pf-v5-c-chip"
                   data-ouia-component-id="OUIA-Generated-Chip-1"
                   data-ouia-component-type="PF4/Chip"
                   data-ouia-safe="true"
                 >
                   <span
-                    class="pf-c-chip__content"
+                    class="pf-v5-c-chip__content"
                   >
                     <span
-                      class="pf-c-chip__text"
+                      class="pf-v5-c-chip__text"
                       id="pf-random-id-25"
                     >
                       Mr
                     </span>
                   </span>
                   <span
-                    class="pf-c-chip__actions"
+                    class="pf-v5-c-chip__actions"
                   >
                     <button
                       aria-disabled="false"
                       aria-label="Remove"
                       aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
-                      class="pf-c-button pf-m-plain"
+                      class="pf-v5-c-button pf-m-plain"
                       data-ouia-component-id="Remove"
                       data-ouia-component-type="PF4/Button"
                       data-ouia-safe="true"
@@ -1833,7 +1833,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        class="pf-svg"
+                        class="pf-v5-svg"
                         fill="currentColor"
                         role="img"
                         viewBox="0 0 352 512"
@@ -1847,32 +1847,32 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </div>
               </li>
               <li
-                class="pf-c-chip-group__list-item"
+                class="pf-v5-c-chip-group__list-item"
               >
                 <div
-                  class="pf-c-chip"
+                  class="pf-v5-c-chip"
                   data-ouia-component-id="OUIA-Generated-Chip-2"
                   data-ouia-component-type="PF4/Chip"
                   data-ouia-safe="true"
                 >
                   <span
-                    class="pf-c-chip__content"
+                    class="pf-v5-c-chip__content"
                   >
                     <span
-                      class="pf-c-chip__text"
+                      class="pf-v5-c-chip__text"
                       id="pf-random-id-26"
                     >
                       Mrs
                     </span>
                   </span>
                   <span
-                    class="pf-c-chip__actions"
+                    class="pf-v5-c-chip__actions"
                   >
                     <button
                       aria-disabled="false"
                       aria-label="Remove"
                       aria-labelledby="remove_pf-random-id-26 pf-random-id-26"
-                      class="pf-c-button pf-m-plain"
+                      class="pf-v5-c-button pf-m-plain"
                       data-ouia-component-id="Remove"
                       data-ouia-component-type="PF4/Button"
                       data-ouia-safe="true"
@@ -1881,7 +1881,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        class="pf-svg"
+                        class="pf-v5-svg"
                         fill="currentColor"
                         role="img"
                         viewBox="0 0 352 512"
@@ -1901,7 +1901,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           aria-invalid="false"
           aria-label=""
           autocomplete="off"
-          class="pf-c-form-control pf-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
           id="typeahead-multi-select-selected-select-multi-typeahead-typeahead"
           placeholder=""
           type="text"
@@ -1913,14 +1913,14 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         aria-haspopup="listbox"
         aria-label="Options menu"
         aria-labelledby=" typeahead-multi-select-selected"
-        class="pf-c-button pf-c-select__toggle-button pf-m-plain"
+        class="pf-v5-c-button pf-v5-c-select__toggle-button pf-m-plain"
         id="typeahead-multi-select-selected"
         tabindex="-1"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg pf-c-select__toggle-arrow"
+          class="pf-v5-svg pf-v5-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -1933,27 +1933,27 @@ exports[`typeahead multi select renders selected successfully 1`] = `
     </div>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
       role="listbox"
     >
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-1"
         role="presentation"
       >
         <button
           aria-selected="true"
-          class="pf-c-select__menu-item pf-m-selected"
+          class="pf-v5-c-select__menu-item pf-m-selected"
           role="option"
           type="button"
         >
           Mr
           <span
-            class="pf-c-select__menu-item-icon"
+            class="pf-v5-c-select__menu-item-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 512 512"
@@ -1966,23 +1966,23 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-2"
         role="presentation"
       >
         <button
           aria-selected="true"
-          class="pf-c-select__menu-item pf-m-selected"
+          class="pf-v5-c-select__menu-item pf-m-selected"
           role="option"
           type="button"
         >
           Mrs
           <span
-            class="pf-c-select__menu-item-icon"
+            class="pf-v5-c-select__menu-item-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 512 512"
@@ -1995,12 +1995,12 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-3"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -2008,12 +2008,12 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-4"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -2028,21 +2028,21 @@ exports[`typeahead multi select renders selected successfully 1`] = `
 exports[`typeahead select renders closed successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select"
+    class="pf-v5-c-select"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
     <div
-      class="pf-c-select__toggle pf-m-typeahead"
+      class="pf-v5-c-select__toggle pf-m-typeahead"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <input
           aria-label=""
           autocomplete="off"
-          class="pf-c-form-control pf-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
           id="typeahead-select-closed-select-typeahead"
           placeholder=""
           type="text"
@@ -2054,14 +2054,14 @@ exports[`typeahead select renders closed successfully 1`] = `
         aria-haspopup="listbox"
         aria-label="Options menu"
         aria-labelledby=" typeahead-select-closed"
-        class="pf-c-button pf-c-select__toggle-button pf-m-plain"
+        class="pf-v5-c-button pf-v5-c-select__toggle-button pf-m-plain"
         id="typeahead-select-closed"
         tabindex="-1"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg pf-c-select__toggle-arrow"
+          class="pf-v5-svg pf-v5-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -2079,21 +2079,21 @@ exports[`typeahead select renders closed successfully 1`] = `
 exports[`typeahead select renders expanded successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
     <div
-      class="pf-c-select__toggle pf-m-typeahead"
+      class="pf-v5-c-select__toggle pf-m-typeahead"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <input
           aria-label=""
           autocomplete="off"
-          class="pf-c-form-control pf-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
           id="pf-select-toggle-id-9-select-typeahead"
           placeholder=""
           type="text"
@@ -2105,14 +2105,14 @@ exports[`typeahead select renders expanded successfully 1`] = `
         aria-haspopup="listbox"
         aria-label="Options menu"
         aria-labelledby=" pf-select-toggle-id-9"
-        class="pf-c-button pf-c-select__toggle-button pf-m-plain"
+        class="pf-v5-c-button pf-v5-c-select__toggle-button pf-m-plain"
         id="pf-select-toggle-id-9"
         tabindex="-1"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg pf-c-select__toggle-arrow"
+          class="pf-v5-svg pf-v5-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -2125,16 +2125,16 @@ exports[`typeahead select renders expanded successfully 1`] = `
     </div>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
       role="listbox"
     >
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-1"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -2142,12 +2142,12 @@ exports[`typeahead select renders expanded successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-2"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -2155,12 +2155,12 @@ exports[`typeahead select renders expanded successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-3"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -2168,12 +2168,12 @@ exports[`typeahead select renders expanded successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-4"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -2188,21 +2188,21 @@ exports[`typeahead select renders expanded successfully 1`] = `
 exports[`typeahead select renders selected successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select pf-m-expanded"
+    class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
     <div
-      class="pf-c-select__toggle pf-m-typeahead"
+      class="pf-v5-c-select__toggle pf-m-typeahead"
     >
       <div
-        class="pf-c-select__toggle-wrapper"
+        class="pf-v5-c-select__toggle-wrapper"
       >
         <input
           aria-label=""
           autocomplete="off"
-          class="pf-c-form-control pf-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
           id="pf-select-toggle-id-10-select-typeahead"
           placeholder=""
           type="text"
@@ -2214,14 +2214,14 @@ exports[`typeahead select renders selected successfully 1`] = `
         aria-haspopup="listbox"
         aria-label="Options menu"
         aria-labelledby=" pf-select-toggle-id-10"
-        class="pf-c-button pf-c-select__toggle-button pf-m-plain"
+        class="pf-v5-c-button pf-v5-c-select__toggle-button pf-m-plain"
         id="pf-select-toggle-id-10"
         tabindex="-1"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg pf-c-select__toggle-arrow"
+          class="pf-v5-svg pf-v5-c-select__toggle-arrow"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -2234,27 +2234,27 @@ exports[`typeahead select renders selected successfully 1`] = `
     </div>
     <ul
       aria-label=""
-      class="pf-c-select__menu"
+      class="pf-v5-c-select__menu"
       role="listbox"
     >
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-1"
         role="presentation"
       >
         <button
           aria-selected="true"
-          class="pf-c-select__menu-item pf-m-selected"
+          class="pf-v5-c-select__menu-item pf-m-selected"
           role="option"
           type="button"
         >
           Mr
           <span
-            class="pf-c-select__menu-item-icon"
+            class="pf-v5-c-select__menu-item-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 512 512"
@@ -2267,12 +2267,12 @@ exports[`typeahead select renders selected successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-2"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -2280,12 +2280,12 @@ exports[`typeahead select renders selected successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-3"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >
@@ -2293,12 +2293,12 @@ exports[`typeahead select renders selected successfully 1`] = `
         </button>
       </li>
       <li
-        class="pf-c-select__menu-wrapper"
+        class="pf-v5-c-select__menu-wrapper"
         id="option-4"
         role="presentation"
       >
         <button
-          class="pf-c-select__menu-item"
+          class="pf-v5-c-select__menu-item"
           role="option"
           type="button"
         >

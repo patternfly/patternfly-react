@@ -3,7 +3,7 @@
 exports[`OptionsMenuItemGroup should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-options-menu__group"
+    class="pf-v5-c-options-menu__group"
     role="none"
   >
     <ul

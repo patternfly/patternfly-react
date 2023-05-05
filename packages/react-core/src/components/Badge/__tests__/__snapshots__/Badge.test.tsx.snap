@@ -3,7 +3,7 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-badge pf-m-unread"
+    class="pf-v5-c-badge pf-m-unread"
   >
     Test
   </span>

@@ -5,26 +5,26 @@ exports[`WizardToggle should match snapshot (auto-generated) 1`] = `
   <button
     aria-expanded="true"
     aria-label="'Wizard Toggle'"
-    class="pf-c-wizard__toggle pf-m-expanded"
+    class="pf-v5-c-wizard__toggle pf-m-expanded"
   >
     <span
-      class="pf-c-wizard__toggle-list"
+      class="pf-v5-c-wizard__toggle-list"
     >
       <span
-        class="pf-c-wizard__toggle-list-item"
+        class="pf-v5-c-wizard__toggle-list-item"
       >
         <span
-          class="pf-c-wizard__toggle-num"
+          class="pf-v5-c-wizard__toggle-num"
         />
          
       </span>
     </span>
     <span
-      class="pf-c-wizard__toggle-icon"
+      class="pf-v5-c-wizard__toggle-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 320 512"
@@ -36,16 +36,16 @@ exports[`WizardToggle should match snapshot (auto-generated) 1`] = `
     </span>
   </button>
   <div
-    class="pf-c-wizard__outer-wrap"
+    class="pf-v5-c-wizard__outer-wrap"
   >
     <div
-      class="pf-c-wizard__inner-wrap"
+      class="pf-v5-c-wizard__inner-wrap"
     >
       <div
-        class="pf-c-wizard__main"
+        class="pf-v5-c-wizard__main"
       >
         <div
-          class="pf-c-wizard__main-body"
+          class="pf-v5-c-wizard__main-body"
         />
       </div>
     </div>

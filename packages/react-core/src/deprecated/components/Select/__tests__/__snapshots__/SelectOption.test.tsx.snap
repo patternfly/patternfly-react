@@ -3,12 +3,12 @@
 exports[`SelectOption checked renders with checked successfully 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-select__menu-wrapper"
+    class="pf-v5-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      class="pf-c-select__menu-item"
+      class="pf-v5-c-select__menu-item"
       data-testid="test-id"
       role="option"
       type="button"
@@ -22,12 +22,12 @@ exports[`SelectOption checked renders with checked successfully 1`] = `
 exports[`SelectOption disabled renders disabled successfully 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-select__menu-wrapper"
+    class="pf-v5-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      class="pf-c-select__menu-item pf-m-disabled"
+      class="pf-v5-c-select__menu-item pf-m-disabled"
       data-testid="test-id"
       role="option"
       type="button"
@@ -41,24 +41,24 @@ exports[`SelectOption disabled renders disabled successfully 1`] = `
 exports[`SelectOption is selected renders selected successfully 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-select__menu-wrapper"
+    class="pf-v5-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
       aria-selected="true"
-      class="pf-c-select__menu-item pf-m-selected"
+      class="pf-v5-c-select__menu-item pf-m-selected"
       data-testid="test-id"
       role="option"
       type="button"
     >
       test
       <span
-        class="pf-c-select__menu-item-icon"
+        class="pf-v5-c-select__menu-item-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"
@@ -76,12 +76,12 @@ exports[`SelectOption is selected renders selected successfully 1`] = `
 exports[`SelectOption renders custom component 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-select__menu-wrapper"
+    class="pf-v5-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <div
-      class="pf-c-select__menu-item"
+      class="pf-v5-c-select__menu-item"
       role="option"
       type="button"
     >
@@ -96,12 +96,12 @@ exports[`SelectOption renders custom component 1`] = `
 exports[`SelectOption renders with custom display and custom user object successfully 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-select__menu-wrapper"
+    class="pf-v5-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      class="pf-c-select__menu-item"
+      class="pf-v5-c-select__menu-item"
       role="option"
       type="button"
     >
@@ -116,12 +116,12 @@ exports[`SelectOption renders with custom display and custom user object success
 exports[`SelectOption renders with custom display successfully 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-select__menu-wrapper"
+    class="pf-v5-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      class="pf-c-select__menu-item"
+      class="pf-v5-c-select__menu-item"
       role="option"
       type="button"
     >
@@ -136,12 +136,12 @@ exports[`SelectOption renders with custom display successfully 1`] = `
 exports[`SelectOption renders with custom user object successfully 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-select__menu-wrapper"
+    class="pf-v5-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      class="pf-c-select__menu-item"
+      class="pf-v5-c-select__menu-item"
       data-testid="test-id"
       role="option"
       type="button"
@@ -155,23 +155,23 @@ exports[`SelectOption renders with custom user object successfully 1`] = `
 exports[`SelectOption renders with description successfully 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-select__menu-wrapper"
+    class="pf-v5-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      class="pf-c-select__menu-item pf-m-description"
+      class="pf-v5-c-select__menu-item pf-m-description"
       data-testid="test-id"
       role="option"
       type="button"
     >
       <span
-        class="pf-c-select__menu-item-main"
+        class="pf-v5-c-select__menu-item-main"
       >
         test
       </span>
       <span
-        class="pf-c-select__menu-item-description"
+        class="pf-v5-c-select__menu-item-description"
       >
         This is a description
       </span>
@@ -183,26 +183,26 @@ exports[`SelectOption renders with description successfully 1`] = `
 exports[`SelectOption renders with item count successfully 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-select__menu-wrapper"
+    class="pf-v5-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      class="pf-c-select__menu-item"
+      class="pf-v5-c-select__menu-item"
       data-testid="test-id"
       role="option"
       type="button"
     >
       <span
-        class="pf-c-select__menu-item-row"
+        class="pf-v5-c-select__menu-item-row"
       >
         <span
-          class="pf-c-select__menu-item-text"
+          class="pf-v5-c-select__menu-item-text"
         >
           test
         </span>
         <span
-          class="pf-c-select__menu-item-count"
+          class="pf-v5-c-select__menu-item-count"
         >
           3
         </span>
@@ -215,12 +215,12 @@ exports[`SelectOption renders with item count successfully 1`] = `
 exports[`SelectOption renders with value parameter successfully 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-select__menu-wrapper"
+    class="pf-v5-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      class="pf-c-select__menu-item"
+      class="pf-v5-c-select__menu-item"
       data-testid="test-id"
       role="option"
       type="button"

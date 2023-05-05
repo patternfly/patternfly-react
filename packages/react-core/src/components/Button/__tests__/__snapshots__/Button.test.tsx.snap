@@ -4,7 +4,7 @@ exports[`Button aria-disabled is set to true and tabIndex to -1 if component is 
 <DocumentFragment>
   <a
     aria-disabled="true"
-    class="pf-c-button pf-m-primary pf-m-disabled"
+    class="pf-v5-c-button pf-m-primary pf-m-disabled"
     data-ouia-component-id="OUIA-Generated-Button-primary-12"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -20,7 +20,7 @@ exports[`Button control button 1`] = `
   <button
     aria-disabled="false"
     aria-label="control"
-    class="pf-c-button pf-m-control"
+    class="pf-v5-c-button pf-m-control"
     data-ouia-component-id="OUIA-Generated-Button-control-1"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -36,7 +36,7 @@ exports[`Button danger button 1`] = `
   <button
     aria-disabled="false"
     aria-label="danger"
-    class="pf-c-button pf-m-danger"
+    class="pf-v5-c-button pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Button-danger-1"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -51,7 +51,7 @@ exports[`Button isAriaDisabled button 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="true"
-    class="pf-c-button pf-m-primary pf-m-aria-disabled"
+    class="pf-v5-c-button pf-m-primary pf-m-aria-disabled"
     data-ouia-component-id="OUIA-Generated-Button-primary-5"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -66,7 +66,7 @@ exports[`Button isAriaDisabled link button 1`] = `
 <DocumentFragment>
   <a
     aria-disabled="true"
-    class="pf-c-button pf-m-primary pf-m-aria-disabled"
+    class="pf-v5-c-button pf-m-primary pf-m-aria-disabled"
     data-ouia-component-id="OUIA-Generated-Button-primary-6"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -80,7 +80,7 @@ exports[`Button isBlock 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
-    class="pf-c-button pf-m-primary pf-m-block"
+    class="pf-v5-c-button pf-m-primary pf-m-block"
     data-ouia-component-id="OUIA-Generated-Button-primary-3"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -95,7 +95,7 @@ exports[`Button isDanger link 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
-    class="pf-c-button pf-m-link pf-m-danger"
+    class="pf-v5-c-button pf-m-link pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Button-link-3"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -110,7 +110,7 @@ exports[`Button isDanger secondary 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
-    class="pf-c-button pf-m-secondary pf-m-danger"
+    class="pf-v5-c-button pf-m-secondary pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Button-secondary-2"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -125,7 +125,7 @@ exports[`Button isDisabled 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="true"
-    class="pf-c-button pf-m-primary pf-m-disabled"
+    class="pf-v5-c-button pf-m-primary pf-m-disabled"
     data-ouia-component-id="OUIA-Generated-Button-primary-4"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -141,7 +141,7 @@ exports[`Button isInline 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
-    class="pf-c-button pf-m-link pf-m-inline"
+    class="pf-v5-c-button pf-m-link pf-m-inline"
     data-ouia-component-id="OUIA-Generated-Button-link-4"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -156,24 +156,24 @@ exports[`Button isLoading 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
-    class="pf-c-button pf-m-primary pf-m-progress pf-m-in-progress"
+    class="pf-v5-c-button pf-m-primary pf-m-progress pf-m-in-progress"
     data-ouia-component-id="OUIA-Generated-Button-primary-9"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
     type="button"
   >
     <span
-      class="pf-c-button__progress"
+      class="pf-v5-c-button__progress"
     >
       <svg
         aria-label="Contents"
         aria-valuetext="Loading"
-        class="pf-c-spinner pf-m-md"
+        class="pf-v5-c-spinner pf-m-md"
         role="progressbar"
         viewBox="0 0 100 100"
       >
         <circle
-          class="pf-c-spinner__path"
+          class="pf-v5-c-spinner__path"
           cx="50"
           cy="50"
           fill="none"
@@ -191,24 +191,24 @@ exports[`Button isLoading icon only 1`] = `
   <button
     aria-disabled="false"
     aria-label="Upload"
-    class="pf-c-button pf-m-plain pf-m-in-progress"
+    class="pf-v5-c-button pf-m-plain pf-m-in-progress"
     data-ouia-component-id="OUIA-Generated-Button-plain-2"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
     type="button"
   >
     <span
-      class="pf-c-button__progress"
+      class="pf-v5-c-button__progress"
     >
       <svg
         aria-label="Contents"
         aria-valuetext="Loading"
-        class="pf-c-spinner pf-m-md"
+        class="pf-v5-c-spinner pf-m-md"
         role="progressbar"
         viewBox="0 0 100 100"
       >
         <circle
-          class="pf-c-spinner__path"
+          class="pf-v5-c-spinner__path"
           cx="50"
           cy="50"
           fill="none"
@@ -228,24 +228,24 @@ exports[`Button isLoading inline link 1`] = `
   <button
     aria-disabled="false"
     aria-label="Loading"
-    class="pf-c-button pf-m-link pf-m-inline pf-m-progress pf-m-in-progress"
+    class="pf-v5-c-button pf-m-link pf-m-inline pf-m-progress pf-m-in-progress"
     data-ouia-component-id="OUIA-Generated-Button-link-5"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
     type="button"
   >
     <span
-      class="pf-c-button__progress"
+      class="pf-v5-c-button__progress"
     >
       <svg
         aria-label="Contents"
         aria-valuetext="Loading"
-        class="pf-c-spinner pf-m-inline"
+        class="pf-v5-c-spinner pf-m-inline"
         role="progressbar"
         viewBox="0 0 100 100"
       >
         <circle
-          class="pf-c-spinner__path"
+          class="pf-v5-c-spinner__path"
           cx="50"
           cy="50"
           fill="none"
@@ -263,7 +263,7 @@ exports[`Button link button 1`] = `
   <button
     aria-disabled="false"
     aria-label="link"
-    class="pf-c-button pf-m-link"
+    class="pf-v5-c-button pf-m-link"
     data-ouia-component-id="OUIA-Generated-Button-link-1"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -278,18 +278,18 @@ exports[`Button link with icon 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
-    class="pf-c-button pf-m-link"
+    class="pf-v5-c-button pf-m-link"
     data-ouia-component-id="OUIA-Generated-Button-link-2"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
     type="button"
   >
     <span
-      class="pf-c-button__icon pf-m-start"
+      class="pf-v5-c-button__icon pf-m-start"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 576 512"
@@ -309,7 +309,7 @@ exports[`Button plain button 1`] = `
   <button
     aria-disabled="false"
     aria-label="plain"
-    class="pf-c-button pf-m-plain"
+    class="pf-v5-c-button pf-m-plain"
     data-ouia-component-id="OUIA-Generated-Button-plain-1"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -325,7 +325,7 @@ exports[`Button primary button 1`] = `
   <button
     aria-disabled="false"
     aria-label="primary"
-    class="pf-c-button pf-m-primary"
+    class="pf-v5-c-button pf-m-primary"
     data-ouia-component-id="OUIA-Generated-Button-primary-1"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -341,7 +341,7 @@ exports[`Button secondary button 1`] = `
   <button
     aria-disabled="false"
     aria-label="secondary"
-    class="pf-c-button pf-m-secondary"
+    class="pf-v5-c-button pf-m-secondary"
     data-ouia-component-id="OUIA-Generated-Button-secondary-1"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -356,7 +356,7 @@ exports[`Button size large 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
-    class="pf-c-button pf-m-primary pf-m-display-lg"
+    class="pf-v5-c-button pf-m-primary pf-m-display-lg"
     data-ouia-component-id="OUIA-Generated-Button-primary-8"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -371,7 +371,7 @@ exports[`Button size small 1`] = `
 <DocumentFragment>
   <button
     aria-disabled="false"
-    class="pf-c-button pf-m-primary pf-m-small"
+    class="pf-v5-c-button pf-m-primary pf-m-small"
     data-ouia-component-id="OUIA-Generated-Button-primary-7"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -387,7 +387,7 @@ exports[`Button tertiary button 1`] = `
   <button
     aria-disabled="false"
     aria-label="tertiary"
-    class="pf-c-button pf-m-tertiary"
+    class="pf-v5-c-button pf-m-tertiary"
     data-ouia-component-id="OUIA-Generated-Button-tertiary-1"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
@@ -403,7 +403,7 @@ exports[`Button warning button 1`] = `
   <button
     aria-disabled="false"
     aria-label="warning"
-    class="pf-c-button pf-m-warning"
+    class="pf-v5-c-button pf-m-warning"
     data-ouia-component-id="OUIA-Generated-Button-warning-1"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"

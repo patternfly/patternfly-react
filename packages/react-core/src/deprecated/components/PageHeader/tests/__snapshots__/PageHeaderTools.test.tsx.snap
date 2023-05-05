@@ -3,7 +3,7 @@
 exports[`PageHeaderTools should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__header-tools string"
+    class="pf-v5-c-page__header-tools string"
   >
     <div>
       ReactNode

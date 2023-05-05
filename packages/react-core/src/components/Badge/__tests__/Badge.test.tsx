@@ -18,7 +18,7 @@ test('Renders children', () => {
 
 test('Renders with class name pf-c-badge', () => {
   render(<Badge>Test</Badge>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-badge');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-badge');
 });
 
 test('Renders with class name pf-m-unread by default', () => {

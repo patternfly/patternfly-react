@@ -4,7 +4,7 @@ exports[`Dropdown toggle 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-dropdown__toggle"
+    class="pf-v5-c-dropdown__toggle"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
     data-ouia-component-type="PF4/DropdownToggle"
     data-ouia-safe="true"
@@ -21,7 +21,7 @@ exports[`Dropdown toggle 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 320 512"
@@ -40,13 +40,13 @@ exports[`Kebab toggle 1`] = `
   <button
     aria-expanded="false"
     aria-label="Actions"
-    class="pf-c-dropdown__toggle"
+    class="pf-v5-c-dropdown__toggle"
     id="Dropdown Toggle"
     type="button"
   >
     <svg
       aria-hidden="true"
-      class="pf-svg"
+      class="pf-v5-svg"
       fill="currentColor"
       role="img"
       viewBox="0 0 192 512"

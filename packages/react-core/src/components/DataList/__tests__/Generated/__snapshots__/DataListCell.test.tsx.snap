@@ -3,7 +3,7 @@
 exports[`DataListCell should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-data-list__cell ''"
+    class="pf-v5-c-data-list__cell ''"
   >
     ReactNode
   </div>

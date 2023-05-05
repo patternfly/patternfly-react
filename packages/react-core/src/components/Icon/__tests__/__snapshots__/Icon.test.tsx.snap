@@ -3,14 +3,14 @@
 exports[`renders basic icon successfully 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-icon"
+    class="pf-v5-c-icon"
   >
     <span
-      class="pf-c-icon__content"
+      class="pf-v5-c-icon__content"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 512 512"
@@ -27,14 +27,14 @@ exports[`renders basic icon successfully 1`] = `
 exports[`renders progress icon successfully 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-icon pf-m-in-progress"
+    class="pf-v5-c-icon pf-m-in-progress"
   >
     <span
-      class="pf-c-icon__content"
+      class="pf-v5-c-icon__content"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 512 512"
@@ -45,11 +45,11 @@ exports[`renders progress icon successfully 1`] = `
       </svg>
     </span>
     <span
-      class="pf-c-icon__progress"
+      class="pf-v5-c-icon__progress"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 512 512"
@@ -66,10 +66,10 @@ exports[`renders progress icon successfully 1`] = `
 exports[`renders without children 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-icon"
+    class="pf-v5-c-icon"
   >
     <span
-      class="pf-c-icon__content"
+      class="pf-v5-c-icon__content"
     />
   </span>
 </DocumentFragment>

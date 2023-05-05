@@ -4,21 +4,21 @@ exports[`Check expandable form field group example against snapshot 1`] = `
 <DocumentFragment>
   <div
     aria-labelledby="title-text-id2"
-    class="pf-c-form__field-group pf-m-expanded"
+    class="pf-v5-c-form__field-group pf-m-expanded"
     role="group"
   >
     <div
-      class="pf-c-form__field-group-toggle"
+      class="pf-v5-c-form__field-group-toggle"
     >
       <div
-        class="pf-c-form__field-group-toggle-button"
+        class="pf-v5-c-form__field-group-toggle-button"
       >
         <button
           aria-disabled="false"
           aria-expanded="true"
           aria-label="toggle"
           aria-labelledby="title-text-id2 form-field-group-toggle0"
-          class="pf-c-button pf-m-plain"
+          class="pf-v5-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-1"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
@@ -26,11 +26,11 @@ exports[`Check expandable form field group example against snapshot 1`] = `
           type="button"
         >
           <span
-            class="pf-c-form__field-group-toggle-icon"
+            class="pf-v5-c-form__field-group-toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 256 512"
@@ -44,33 +44,33 @@ exports[`Check expandable form field group example against snapshot 1`] = `
       </div>
     </div>
     <div
-      class="pf-c-form__field-group-header"
+      class="pf-v5-c-form__field-group-header"
     >
       <div
-        class="pf-c-form__field-group-header-main"
+        class="pf-v5-c-form__field-group-header-main"
       >
         <div
-          class="pf-c-form__field-group-header-title"
+          class="pf-v5-c-form__field-group-header-title"
         >
           <div
-            class="pf-c-form__field-group-header-title-text"
+            class="pf-v5-c-form__field-group-header-title-text"
             id="title-text-id2"
           >
             Field group 4 (non-expandable)
           </div>
         </div>
         <div
-          class="pf-c-form__field-group-header-description"
+          class="pf-v5-c-form__field-group-header-description"
         >
           Field group 4 description text.
         </div>
       </div>
       <div
-        class="pf-c-form__field-group-header-actions"
+        class="pf-v5-c-form__field-group-header-actions"
       >
         <button
           aria-disabled="false"
-          class="pf-c-button pf-m-primary"
+          class="pf-v5-c-button pf-m-primary"
           data-ouia-component-id="OUIA-Generated-Button-primary-2"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
@@ -79,7 +79,7 @@ exports[`Check expandable form field group example against snapshot 1`] = `
       </div>
     </div>
     <div
-      class="pf-c-form__field-group-body"
+      class="pf-v5-c-form__field-group-body"
     />
   </div>
 </DocumentFragment>
@@ -89,37 +89,37 @@ exports[`Check form field group example against snapshot 1`] = `
 <DocumentFragment>
   <div
     aria-labelledby="title-text-id1"
-    class="pf-c-form__field-group"
+    class="pf-v5-c-form__field-group"
     role="group"
   >
     <div
-      class="pf-c-form__field-group-header"
+      class="pf-v5-c-form__field-group-header"
     >
       <div
-        class="pf-c-form__field-group-header-main"
+        class="pf-v5-c-form__field-group-header-main"
       >
         <div
-          class="pf-c-form__field-group-header-title"
+          class="pf-v5-c-form__field-group-header-title"
         >
           <div
-            class="pf-c-form__field-group-header-title-text"
+            class="pf-v5-c-form__field-group-header-title-text"
             id="title-text-id1"
           >
             Field group 4 (non-expandable)
           </div>
         </div>
         <div
-          class="pf-c-form__field-group-header-description"
+          class="pf-v5-c-form__field-group-header-description"
         >
           Field group 4 description text.
         </div>
       </div>
       <div
-        class="pf-c-form__field-group-header-actions"
+        class="pf-v5-c-form__field-group-header-actions"
       >
         <button
           aria-disabled="false"
-          class="pf-c-button pf-m-primary"
+          class="pf-v5-c-button pf-m-primary"
           data-ouia-component-id="OUIA-Generated-Button-primary-1"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
@@ -128,7 +128,7 @@ exports[`Check form field group example against snapshot 1`] = `
       </div>
     </div>
     <div
-      class="pf-c-form__field-group-body"
+      class="pf-v5-c-form__field-group-body"
     />
   </div>
 </DocumentFragment>

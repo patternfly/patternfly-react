@@ -18,7 +18,7 @@ test('Renders BackToTop', () => {
 test('Renders with the default class', () => {
   render(<BackToTop />);
 
-  expect(screen.getByRole(`button`).parentElement).toHaveClass('pf-c-back-to-top');
+  expect(screen.getByRole(`button`).parentElement).toHaveClass('pf-v5-c-back-to-top');
 });
 
 test('BackToTop is not yet visible', () => {

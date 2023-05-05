@@ -3,17 +3,17 @@
 exports[`ClipboardCopy should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-clipboard-copy string"
+    class="pf-v5-c-clipboard-copy string"
     data-ouia-component-type="PF4/ClipboardCopy"
     data-ouia-safe="true"
   >
     <div
-      class="pf-c-clipboard-copy__group"
+      class="pf-v5-c-clipboard-copy__group"
     >
       <input
         aria-invalid="false"
         aria-label="'Copyable input'"
-        class="pf-c-form-control"
+        class="pf-v5-c-form-control"
         data-ouia-component-id="OUIA-Generated-TextInputBase-1"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
@@ -25,7 +25,7 @@ exports[`ClipboardCopy should match snapshot (auto-generated) 1`] = `
         aria-disabled="false"
         aria-label="'Copy to clipboard'"
         aria-labelledby="copy-button-0 text-input-0"
-        class="pf-c-button pf-m-control"
+        class="pf-v5-c-button pf-m-control"
         data-ouia-component-id="OUIA-Generated-Button-control-1"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
@@ -34,7 +34,7 @@ exports[`ClipboardCopy should match snapshot (auto-generated) 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 448 512"

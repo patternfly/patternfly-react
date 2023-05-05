@@ -25,7 +25,7 @@ describe('TextInputGroupMain', () => {
 
     const inputGroupMain = screen.getByText('Test');
 
-    expect(inputGroupMain).toHaveClass('pf-c-text-input-group__main');
+    expect(inputGroupMain).toHaveClass('pf-v5-c-text-input-group__main');
   });
 
   it('does not render with class pf-m-icon when an icon prop is not passed', () => {
@@ -57,7 +57,7 @@ describe('TextInputGroupMain', () => {
 
     const inputGroupText = screen.getByRole('textbox').parentNode;
 
-    expect(inputGroupText).toHaveClass('pf-c-text-input-group__text');
+    expect(inputGroupText).toHaveClass('pf-v5-c-text-input-group__text');
   });
 
   it('renders the input with class pf-c-text-input-group__text-input', () => {
@@ -65,7 +65,7 @@ describe('TextInputGroupMain', () => {
 
     const input = screen.getByRole('textbox');
 
-    expect(input).toHaveClass('pf-c-text-input-group__text-input');
+    expect(input).toHaveClass('pf-v5-c-text-input-group__text-input');
   });
 
   it('does not render the icon when it is not passed', () => {
@@ -191,7 +191,7 @@ describe('TextInputGroupMain', () => {
     const hintInput = screen.getByRole('textbox', { hidden: true });
 
     expect(hintInput).toHaveClass('pf-m-hint');
-    expect(hintInput).toHaveClass('pf-c-text-input-group__text-input');
+    expect(hintInput).toHaveClass('pf-v5-c-text-input-group__text-input');
   });
 
   it('renders the hint input as disabled', () => {
@@ -285,7 +285,7 @@ describe('TextInputGroupMain', () => {
     expect(onBlurMock).not.toHaveBeenCalled();
   });
 
-  it('calls the onBlur callback when the input loses focus', async() => {
+  it('calls the onBlur callback when the input loses focus', async () => {
     const onBlurMock = jest.fn();
     const user = userEvent.setup();
 

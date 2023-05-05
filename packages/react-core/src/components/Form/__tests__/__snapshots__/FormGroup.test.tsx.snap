@@ -3,17 +3,17 @@
 exports[`FormGroup should render correctly when label is not a string with Children = Array 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-form__group"
+    class="pf-v5-c-form__group"
   >
     <div
-      class="pf-c-form__group-label"
+      class="pf-v5-c-form__group-label"
     >
       <label
-        class="pf-c-form__label"
+        class="pf-v5-c-form__label"
         for="id"
       >
         <span
-          class="pf-c-form__label-text"
+          class="pf-v5-c-form__label-text"
         >
           <div>
             label
@@ -23,7 +23,7 @@ exports[`FormGroup should render correctly when label is not a string with Child
        
     </div>
     <div
-      class="pf-c-form__group-control"
+      class="pf-v5-c-form__group-control"
     >
       <input
         aria-label="label"
@@ -40,17 +40,17 @@ exports[`FormGroup should render correctly when label is not a string with Child
 exports[`FormGroup should render default form group variant 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-form__group"
+    class="pf-v5-c-form__group"
   >
     <div
-      class="pf-c-form__group-label"
+      class="pf-v5-c-form__group-label"
     >
       <label
-        class="pf-c-form__label"
+        class="pf-v5-c-form__label"
         for="label-id"
       >
         <span
-          class="pf-c-form__label-text"
+          class="pf-v5-c-form__label-text"
         >
           label
         </span>
@@ -58,7 +58,7 @@ exports[`FormGroup should render default form group variant 1`] = `
        
     </div>
     <div
-      class="pf-c-form__group-control"
+      class="pf-v5-c-form__group-control"
     >
       <input
         id="label-id"
@@ -71,17 +71,17 @@ exports[`FormGroup should render default form group variant 1`] = `
 exports[`FormGroup should render form group variant with node label 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-form__group"
+    class="pf-v5-c-form__group"
   >
     <div
-      class="pf-c-form__group-label"
+      class="pf-v5-c-form__group-label"
     >
       <label
-        class="pf-c-form__label"
+        class="pf-v5-c-form__label"
         for="id"
       >
         <span
-          class="pf-c-form__label-text"
+          class="pf-v5-c-form__label-text"
         >
           <h1>
             Header
@@ -91,7 +91,7 @@ exports[`FormGroup should render form group variant with node label 1`] = `
        
     </div>
     <div
-      class="pf-c-form__group-control"
+      class="pf-v5-c-form__group-control"
     >
       <input
         aria-label="input"
@@ -104,23 +104,23 @@ exports[`FormGroup should render form group variant with node label 1`] = `
 exports[`FormGroup should render form group variant with required label 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-form__group"
+    class="pf-v5-c-form__group"
   >
     <div
-      class="pf-c-form__group-label"
+      class="pf-v5-c-form__group-label"
     >
       <label
-        class="pf-c-form__label"
+        class="pf-v5-c-form__label"
         for="label-id"
       >
         <span
-          class="pf-c-form__label-text"
+          class="pf-v5-c-form__label-text"
         >
           label
         </span>
         <span
           aria-hidden="true"
-          class="pf-c-form__label-required"
+          class="pf-v5-c-form__label-required"
         >
            *
         </span>
@@ -128,7 +128,7 @@ exports[`FormGroup should render form group variant with required label 1`] = `
        
     </div>
     <div
-      class="pf-c-form__group-control"
+      class="pf-v5-c-form__group-control"
     >
       <input
         id="label-id"
@@ -141,10 +141,10 @@ exports[`FormGroup should render form group variant with required label 1`] = `
 exports[`FormGroup should render form group variant without label 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-form__group"
+    class="pf-v5-c-form__group"
   >
     <div
-      class="pf-c-form__group-control"
+      class="pf-v5-c-form__group-control"
     >
       <input
         aria-label="input"
@@ -157,20 +157,20 @@ exports[`FormGroup should render form group variant without label 1`] = `
 exports[`FormGroup should render form group with additonal label info 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-form__group"
+    class="pf-v5-c-form__group"
   >
     <div
-      class="pf-c-form__group-label pf-m-info"
+      class="pf-v5-c-form__group-label pf-m-info"
     >
       <div
-        class="pf-c-form__group-label-main"
+        class="pf-v5-c-form__group-label-main"
       >
         <label
-          class="pf-c-form__label"
+          class="pf-v5-c-form__label"
           for="id"
         >
           <span
-            class="pf-c-form__label-text"
+            class="pf-v5-c-form__label-text"
           >
             <h1>
               Header
@@ -180,13 +180,13 @@ exports[`FormGroup should render form group with additonal label info 1`] = `
          
       </div>
       <div
-        class="pf-c-form__group-label-info"
+        class="pf-v5-c-form__group-label-info"
       >
         more info
       </div>
     </div>
     <div
-      class="pf-c-form__group-control"
+      class="pf-v5-c-form__group-control"
     >
       <input
         aria-label="input"
@@ -199,21 +199,21 @@ exports[`FormGroup should render form group with additonal label info 1`] = `
 exports[`FormGroup should render horizontal form group variant 1`] = `
 <DocumentFragment>
   <form
-    class="pf-c-form pf-m-horizontal"
+    class="pf-v5-c-form pf-m-horizontal"
     novalidate=""
   >
     <div
-      class="pf-c-form__group"
+      class="pf-v5-c-form__group"
     >
       <div
-        class="pf-c-form__group-label"
+        class="pf-v5-c-form__group-label"
       >
         <label
-          class="pf-c-form__label"
+          class="pf-v5-c-form__label"
           for="label-id"
         >
           <span
-            class="pf-c-form__label-text"
+            class="pf-v5-c-form__label-text"
           >
             label
           </span>
@@ -221,7 +221,7 @@ exports[`FormGroup should render horizontal form group variant 1`] = `
          
       </div>
       <div
-        class="pf-c-form__group-control"
+        class="pf-v5-c-form__group-control"
       >
         <input
           id="label-id"
@@ -235,21 +235,21 @@ exports[`FormGroup should render horizontal form group variant 1`] = `
 exports[`FormGroup should render stacked horizontal form group variant 1`] = `
 <DocumentFragment>
   <form
-    class="pf-c-form pf-m-horizontal"
+    class="pf-v5-c-form pf-m-horizontal"
     novalidate=""
   >
     <div
-      class="pf-c-form__group"
+      class="pf-v5-c-form__group"
     >
       <div
-        class="pf-c-form__group-label"
+        class="pf-v5-c-form__group-label"
       >
         <label
-          class="pf-c-form__label"
+          class="pf-v5-c-form__label"
           for="label-id"
         >
           <span
-            class="pf-c-form__label-text"
+            class="pf-v5-c-form__label-text"
           >
             label
           </span>
@@ -257,7 +257,7 @@ exports[`FormGroup should render stacked horizontal form group variant 1`] = `
          
       </div>
       <div
-        class="pf-c-form__group-control pf-m-stack"
+        class="pf-v5-c-form__group-control pf-m-stack"
       >
         <input
           id="label-id"

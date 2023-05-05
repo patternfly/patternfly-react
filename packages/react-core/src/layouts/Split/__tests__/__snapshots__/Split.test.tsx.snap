@@ -3,10 +3,10 @@
 exports[`Gutter 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-split pf-m-gutter"
+    class="pf-v5-l-split pf-m-gutter"
   >
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
@@ -17,75 +17,75 @@ exports[`Gutter 1`] = `
 exports[`Wrappable 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-split pf-m-wrap"
+    class="pf-v5-l-split pf-m-wrap"
   >
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic Content
     </div>
@@ -96,10 +96,10 @@ exports[`Wrappable 1`] = `
 exports[`isFilled 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-split"
+    class="pf-v5-l-split"
   >
     <div
-      class="pf-l-split__item pf-m-fill"
+      class="pf-v5-l-split__item pf-m-fill"
     >
       Main content
     </div>
@@ -110,10 +110,10 @@ exports[`isFilled 1`] = `
 exports[`isFilled defaults to false 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-split"
+    class="pf-v5-l-split"
   >
     <div
-      class="pf-l-split__item"
+      class="pf-v5-l-split__item"
     >
       Basic content
     </div>

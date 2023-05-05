@@ -3,7 +3,7 @@
 exports[`PopoverFooter should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <footer
-    class="pf-c-popover__footer ''"
+    class="pf-v5-c-popover__footer ''"
   >
     <div>
       ReactNode

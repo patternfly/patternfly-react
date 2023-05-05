@@ -29,7 +29,7 @@ test('Renders with inherited element props spread to the component', () => {
   render(<ActionListItem aria-label="Test label">Test</ActionListItem>);
 
   expect(screen.getByText('Test')).toHaveAccessibleName('Test label');
-})
+});
 
 test('Matches the snapshot', () => {
   const { asFragment } = render(<ActionListItem>test</ActionListItem>);

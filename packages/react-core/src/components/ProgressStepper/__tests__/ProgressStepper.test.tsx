@@ -18,12 +18,12 @@ test('Renders children', () => {
 
 test('Renders with only class name pf-c-progress-stepper by default', () => {
   render(<ProgressStepper>Test</ProgressStepper>);
-  expect(screen.getByRole('list')).toHaveClass('pf-c-progress-stepper', { exact: true });
+  expect(screen.getByRole('list')).toHaveClass('pf-v5-c-progress-stepper', { exact: true });
 });
 
 test('Renders with class name pf-c-progress-stepper', () => {
   render(<ProgressStepper>Test</ProgressStepper>);
-  expect(screen.getByRole('list')).toHaveClass('pf-c-progress-stepper');
+  expect(screen.getByRole('list')).toHaveClass('pf-v5-c-progress-stepper');
 });
 
 test('Renders with custom class name when className prop is provided', () => {

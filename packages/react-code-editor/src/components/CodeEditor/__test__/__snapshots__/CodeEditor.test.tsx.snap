@@ -3,7 +3,7 @@
 exports[`CodeEditor matches snapshot with all props 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-code-editor pf-m-read-only"
+    class="pf-v5-c-code-editor pf-m-read-only"
   >
     <div
       class="pf-c-file-upload false false"
@@ -11,10 +11,10 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
       tabindex="0"
     >
       <div
-        class="pf-c-code-editor__header"
+        class="pf-v5-c-code-editor__header"
       >
         <div
-          class="pf-c-code-editor__controls"
+          class="pf-v5-c-code-editor__controls"
         >
           <div
             style="display: contents;"
@@ -22,7 +22,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
             <button
               aria-disabled="false"
               aria-label="Copy code to clipboard"
-              class="pf-c-button pf-m-control"
+              class="pf-v5-c-button pf-m-control"
               data-ouia-component-id="OUIA-Generated-Button-control-1"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe="true"
@@ -30,7 +30,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
+                class="pf-v5-svg"
                 fill="currentColor"
                 role="img"
                 viewBox="0 0 448 512"
@@ -47,7 +47,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
             <button
               aria-disabled="false"
               aria-label="Upload code"
-              class="pf-c-button pf-m-control"
+              class="pf-v5-c-button pf-m-control"
               data-ouia-component-id="OUIA-Generated-Button-control-2"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe="true"
@@ -55,7 +55,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
+                class="pf-v5-svg"
                 fill="currentColor"
                 role="img"
                 viewBox="0 0 512 512"
@@ -72,7 +72,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
             <button
               aria-disabled="false"
               aria-label="Download code"
-              class="pf-c-button pf-m-control"
+              class="pf-v5-c-button pf-m-control"
               data-ouia-component-id="OUIA-Generated-Button-control-3"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe="true"
@@ -80,7 +80,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
+                class="pf-v5-svg"
                 fill="currentColor"
                 role="img"
                 viewBox="0 0 512 512"
@@ -93,17 +93,17 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
           </div>
         </div>
         <div
-          class="pf-c-code-editor__header-main"
+          class="pf-v5-c-code-editor__header-main"
         />
         <div
-          class="pf-c-code-editor__tab"
+          class="pf-v5-c-code-editor__tab"
         >
           <span
-            class="pf-c-code-editor__tab-icon"
+            class="pf-v5-c-code-editor__tab-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 640 512"
@@ -114,14 +114,14 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
             </svg>
           </span>
           <span
-            class="pf-c-code-editor__tab-text"
+            class="pf-v5-c-code-editor__tab-text"
           >
             JAVASCRIPT
           </span>
         </div>
       </div>
       <div
-        class="pf-c-code-editor__main"
+        class="pf-v5-c-code-editor__main"
       >
         <input
           style="display: none;"
@@ -129,7 +129,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
           type="file"
         />
         <div
-          class="pf-c-code-editor__code"
+          class="pf-v5-c-code-editor__code"
           tabindex="0"
         >
           <div
@@ -351,23 +351,23 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
 exports[`CodeEditor matches snapshot without props 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-code-editor"
+    class="pf-v5-c-code-editor"
   >
     <div
-      class="pf-c-code-editor__header"
+      class="pf-v5-c-code-editor__header"
     >
       <div
-        class="pf-c-code-editor__controls"
+        class="pf-v5-c-code-editor__controls"
       />
       <div
-        class="pf-c-code-editor__header-main"
+        class="pf-v5-c-code-editor__header-main"
       />
     </div>
     <div
-      class="pf-c-code-editor__main"
+      class="pf-v5-c-code-editor__main"
     >
       <div
-        class="pf-c-code-editor__code"
+        class="pf-v5-c-code-editor__code"
         tabindex="0"
       >
         <div

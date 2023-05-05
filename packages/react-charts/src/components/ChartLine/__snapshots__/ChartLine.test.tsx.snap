@@ -34,7 +34,7 @@ exports[`ChartLine 1`] = `
           d="M50,250L57,246L64,242L71,238L78,234L85,230L92,226L99,222L106,218L113,214.00000000000003L120,210L126.99999999999999,206L134,202L141,198L148,194L155,190L162,185.99999999999997L169,181.99999999999997L176.00000000000003,177.99999999999997L183.00000000000003,173.99999999999997L190.00000000000003,169.99999999999997L197.00000000000003,165.99999999999997L204.00000000000006,161.99999999999997L211.00000000000006,157.99999999999994L218.00000000000006,153.99999999999994L225.00000000000006,149.99999999999997L232.00000000000006,145.99999999999997L239.00000000000006,141.99999999999997L246.00000000000006,137.99999999999997L253.00000000000009,133.99999999999997L260.00000000000006,129.99999999999994L267.00000000000006,125.99999999999996L274.0000000000001,121.99999999999996L281.0000000000001,117.99999999999996L288.0000000000001,113.99999999999994L295.0000000000001,109.99999999999994L302.0000000000001,105.99999999999994L309.0000000000001,101.99999999999993L316.0000000000001,97.99999999999993L323.00000000000017,93.99999999999993L330.00000000000017,89.99999999999993L337.00000000000017,85.99999999999991L344.00000000000017,81.99999999999991L351.00000000000017,77.99999999999991L358.00000000000017,73.99999999999991L365.00000000000017,69.9999999999999L372.00000000000017,65.9999999999999L379.0000000000002,61.9999999999999L386.0000000000002,57.9999999999999L393.0000000000002,53.99999999999989L400,50"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-line--data--Fill, transparent); stroke: var(--pf-chart-theme--blue--ColorScale--100, #06c); pointer-events: stroke; opacity: 1; stroke-width: 2;"
+          style="fill: var(--pf-v5-chart-line--data--Fill, transparent); stroke: var(--pf-v5-chart-theme--blue--ColorScale--100, #06c); pointer-events: stroke; opacity: 1; stroke-width: 2;"
         />
       </g>
     </svg>
@@ -86,7 +86,7 @@ exports[`ChartLine 2`] = `
           d="M50,250L57,246L64,242L71,238L78,234L85,230L92,226L99,222L106,218L113,214.00000000000003L120,210L126.99999999999999,206L134,202L141,198L148,194L155,190L162,185.99999999999997L169,181.99999999999997L176.00000000000003,177.99999999999997L183.00000000000003,173.99999999999997L190.00000000000003,169.99999999999997L197.00000000000003,165.99999999999997L204.00000000000006,161.99999999999997L211.00000000000006,157.99999999999994L218.00000000000006,153.99999999999994L225.00000000000006,149.99999999999997L232.00000000000006,145.99999999999997L239.00000000000006,141.99999999999997L246.00000000000006,137.99999999999997L253.00000000000009,133.99999999999997L260.00000000000006,129.99999999999994L267.00000000000006,125.99999999999996L274.0000000000001,121.99999999999996L281.0000000000001,117.99999999999996L288.0000000000001,113.99999999999994L295.0000000000001,109.99999999999994L302.0000000000001,105.99999999999994L309.0000000000001,101.99999999999993L316.0000000000001,97.99999999999993L323.00000000000017,93.99999999999993L330.00000000000017,89.99999999999993L337.00000000000017,85.99999999999991L344.00000000000017,81.99999999999991L351.00000000000017,77.99999999999991L358.00000000000017,73.99999999999991L365.00000000000017,69.9999999999999L372.00000000000017,65.9999999999999L379.0000000000002,61.9999999999999L386.0000000000002,57.9999999999999L393.0000000000002,53.99999999999989L400,50"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-line--data--Fill, transparent); stroke: var(--pf-chart-theme--blue--ColorScale--100, #06c); pointer-events: stroke; opacity: 1; stroke-width: 2;"
+          style="fill: var(--pf-v5-chart-line--data--Fill, transparent); stroke: var(--pf-v5-chart-theme--blue--ColorScale--100, #06c); pointer-events: stroke; opacity: 1; stroke-width: 2;"
         />
       </g>
     </svg>
@@ -139,7 +139,7 @@ exports[`renders component data 1`] = `
             d="M50,138.88888888888886L83.33333333333334,127.77777777777779L116.66666666666667,94.44444444444443L150,116.66666666666669"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--100, #06c); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-v5-chart-theme--blue--ColorScale--100, #06c); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -163,7 +163,7 @@ exports[`renders component data 1`] = `
             d="M50,127.77777777777779L83.33333333333334,138.88888888888886L116.66666666666667,72.22222222222223L150,105.55555555555557"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-v5-chart-theme--blue--ColorScale--200, #8bc1f7); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -187,7 +187,7 @@ exports[`renders component data 1`] = `
             d="M50,116.66666666666669L83.33333333333334,105.55555555555557L116.66666666666667,50L150,94.44444444444443"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-v5-chart-theme--blue--ColorScale--300, #002f5d); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -211,7 +211,7 @@ exports[`renders component data 1`] = `
             d="M50,116.66666666666669L83.33333333333334,116.66666666666669L116.66666666666667,61.111111111111114L150,72.22222222222223"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-theme--blue--ColorScale--400, #519de9); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-v5-chart-theme--blue--ColorScale--400, #519de9); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
           />
         </g>
       </g>
@@ -221,7 +221,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          style="stroke: var(--pf-v5-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="150"
@@ -234,7 +234,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v5-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="50"
@@ -251,7 +251,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="50"
             >
@@ -265,7 +265,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v5-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="66.66666666666667"
             x2="66.66666666666667"
@@ -282,7 +282,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="66.66666666666667"
             >
@@ -296,7 +296,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v5-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="83.33333333333334"
             x2="83.33333333333334"
@@ -313,7 +313,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="83.33333333333334"
             >
@@ -327,7 +327,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v5-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="100"
             x2="100"
@@ -344,7 +344,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="100"
             >
@@ -358,7 +358,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v5-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="116.66666666666667"
             x2="116.66666666666667"
@@ -375,7 +375,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="116.66666666666667"
             >
@@ -389,7 +389,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v5-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="133.33333333333334"
             x2="133.33333333333334"
@@ -406,7 +406,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="133.33333333333334"
             >
@@ -420,7 +420,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v5-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="150"
             x2="150"
@@ -437,7 +437,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="150"
             >
@@ -452,7 +452,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          style="stroke: var(--pf-v5-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="50"
@@ -465,7 +465,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v5-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -482,7 +482,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -496,7 +496,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v5-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -513,7 +513,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -527,7 +527,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v5-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -544,7 +544,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -558,7 +558,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v5-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-v5-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -575,7 +575,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >

@@ -176,7 +176,7 @@ describe('DataList', () => {
         test
       </DataListItem>
     );
-    expect(screen.getByRole('listitem')).toHaveClass('pf-c-data-list__item pf-m-expanded');
+    expect(screen.getByRole('listitem')).toHaveClass('pf-v5-c-data-list__item pf-m-expanded');
   });
 
   test('Item', () => {
@@ -233,8 +233,8 @@ describe('DataList', () => {
       const dataListCell = screen.getByTestId(testId);
 
       testCase.class === ''
-        ? expect(dataListCell).toHaveClass('pf-c-data-list__cell')
-        : expect(dataListCell).toHaveClass(`pf-c-data-list__cell ${testCase.class}`);
+        ? expect(dataListCell).toHaveClass('pf-v5-c-data-list__cell')
+        : expect(dataListCell).toHaveClass(`pf-v5-c-data-list__cell ${testCase.class}`);
     });
   });
 
@@ -256,8 +256,8 @@ describe('DataList', () => {
       const dataListCell = screen.getByTestId(testId);
 
       testCase.class === ''
-        ? expect(dataListCell).toHaveClass('pf-c-data-list__cell')
-        : expect(dataListCell).toHaveClass(`pf-c-data-list__cell ${testCase.class}`);
+        ? expect(dataListCell).toHaveClass('pf-v5-c-data-list__cell')
+        : expect(dataListCell).toHaveClass(`pf-v5-c-data-list__cell ${testCase.class}`);
     });
   });
 

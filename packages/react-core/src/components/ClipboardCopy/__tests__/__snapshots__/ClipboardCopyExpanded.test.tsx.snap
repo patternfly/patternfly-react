@@ -3,7 +3,7 @@
 exports[`expanded code content render 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-clipboard-copy__expandable-content class-1"
+    class="pf-v5-c-clipboard-copy__expandable-content class-1"
     contenteditable="true"
     id="id-1"
   >
@@ -20,7 +20,7 @@ exports[`expanded code content render 1`] = `
 exports[`expanded content render 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-clipboard-copy__expandable-content class-1"
+    class="pf-v5-c-clipboard-copy__expandable-content class-1"
     contenteditable="true"
     id="id-1"
   >

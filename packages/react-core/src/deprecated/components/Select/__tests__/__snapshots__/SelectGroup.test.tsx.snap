@@ -3,11 +3,11 @@
 exports[`SelectGroup renders with children successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-select__menu-group"
+    class="pf-v5-c-select__menu-group"
   >
     <div
       aria-hidden="true"
-      class="pf-c-select__menu-group-title"
+      class="pf-v5-c-select__menu-group-title"
       id=""
     >
       test

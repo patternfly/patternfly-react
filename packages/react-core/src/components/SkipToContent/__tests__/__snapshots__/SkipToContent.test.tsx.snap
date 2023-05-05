@@ -3,11 +3,11 @@
 exports[`Verify Skip To Content 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-skip-to-content"
+    class="pf-v5-c-skip-to-content"
   >
     <a
       aria-disabled="false"
-      class="pf-c-button pf-m-primary"
+      class="pf-v5-c-button pf-m-primary"
       data-ouia-component-id="OUIA-Generated-Button-primary-1"
       data-ouia-component-type="PF4/Button"
       data-ouia-safe="true"

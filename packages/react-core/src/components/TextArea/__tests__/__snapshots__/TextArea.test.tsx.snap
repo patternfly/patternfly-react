@@ -5,10 +5,10 @@ exports[`Matches the snapshot 1`] = `
   <textarea
     aria-invalid="false"
     aria-label="test textarea"
-    class="pf-c-form-control custom class"
+    class="pf-v5-c-form-control custom class"
     disabled=""
     required=""
-    style="--pf-c-form-control--textarea--Height: 6px;"
+    style="--pf-v5-c-form-control--textarea--Height: 6px;"
   />
 </DocumentFragment>
 `;

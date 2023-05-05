@@ -3,10 +3,10 @@
 exports[`EmptyState Full height 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-empty-state pf-m-lg pf-m-full-height"
+    class="pf-v5-c-empty-state pf-m-lg pf-m-full-height"
   >
     <div
-      class="pf-c-empty-state__content"
+      class="pf-v5-c-empty-state__content"
     >
       <div
         class="pf-c-empty-state__header"
@@ -15,7 +15,7 @@ exports[`EmptyState Full height 1`] = `
           class="pf-c-empty-state__title"
         >
           <h1
-            class="pf-c-empty-state__title-text"
+            class="pf-v5-c-empty-state__title-text"
           >
             EmptyState large
           </h1>
@@ -32,11 +32,11 @@ exports[`EmptyState Header with icon 1`] = `
     class="pf-c-empty-state__header"
   >
     <div
-      class="pf-c-empty-state__icon"
+      class="pf-v5-c-empty-state__icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 448 512"
@@ -53,10 +53,10 @@ exports[`EmptyState Header with icon 1`] = `
 exports[`EmptyState Main 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-empty-state"
+    class="pf-v5-c-empty-state"
   >
     <div
-      class="pf-c-empty-state__content"
+      class="pf-v5-c-empty-state__content"
     >
       <div
         class="pf-c-empty-state__header"
@@ -65,26 +65,26 @@ exports[`EmptyState Main 1`] = `
           class="pf-c-empty-state__title"
         >
           <h1
-            class="pf-c-empty-state__title-text"
+            class="pf-v5-c-empty-state__title-text"
           >
             HTTP Proxies
           </h1>
         </div>
       </div>
       <div
-        class="pf-c-empty-state__body"
+        class="pf-v5-c-empty-state__body"
       >
         Defining HTTP Proxies that exist on your network allows you to perform various actions through those proxies.
       </div>
       <div
-        class="pf-c-empty-state__footer"
+        class="pf-v5-c-empty-state__footer"
       >
         <div
-          class="pf-c-empty-state__actions"
+          class="pf-v5-c-empty-state__actions"
         >
           <button
             aria-disabled="false"
-            class="pf-c-button pf-m-primary"
+            class="pf-v5-c-button pf-m-primary"
             data-ouia-component-id="OUIA-Generated-Button-primary-1"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe="true"
@@ -94,12 +94,12 @@ exports[`EmptyState Main 1`] = `
           </button>
         </div>
         <div
-          class="pf-c-empty-state__actions"
+          class="pf-v5-c-empty-state__actions"
         >
           <button
             aria-disabled="false"
             aria-label="learn more action"
-            class="pf-c-button pf-m-link"
+            class="pf-v5-c-button pf-m-link"
             data-ouia-component-id="OUIA-Generated-Button-link-1"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe="true"
@@ -117,10 +117,10 @@ exports[`EmptyState Main 1`] = `
 exports[`EmptyState Main variant large 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-empty-state pf-m-lg"
+    class="pf-v5-c-empty-state pf-m-lg"
   >
     <div
-      class="pf-c-empty-state__content"
+      class="pf-v5-c-empty-state__content"
     >
       <div
         class="pf-c-empty-state__header"
@@ -129,7 +129,7 @@ exports[`EmptyState Main variant large 1`] = `
           class="pf-c-empty-state__title"
         >
           <h1
-            class="pf-c-empty-state__title-text"
+            class="pf-v5-c-empty-state__title-text"
           >
             EmptyState large
           </h1>
@@ -143,10 +143,10 @@ exports[`EmptyState Main variant large 1`] = `
 exports[`EmptyState Main variant small 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-empty-state pf-m-sm"
+    class="pf-v5-c-empty-state pf-m-sm"
   >
     <div
-      class="pf-c-empty-state__content"
+      class="pf-v5-c-empty-state__content"
     >
       <div
         class="pf-c-empty-state__header"
@@ -155,7 +155,7 @@ exports[`EmptyState Main variant small 1`] = `
           class="pf-c-empty-state__title"
         >
           <h1
-            class="pf-c-empty-state__title-text"
+            class="pf-v5-c-empty-state__title-text"
           >
             EmptyState small
           </h1>
@@ -169,10 +169,10 @@ exports[`EmptyState Main variant small 1`] = `
 exports[`EmptyState Main variant xs 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-empty-state pf-m-xs"
+    class="pf-v5-c-empty-state pf-m-xs"
   >
     <div
-      class="pf-c-empty-state__content"
+      class="pf-v5-c-empty-state__content"
     >
       <div
         class="pf-c-empty-state__header"
@@ -181,7 +181,7 @@ exports[`EmptyState Main variant xs 1`] = `
           class="pf-c-empty-state__title"
         >
           <h1
-            class="pf-c-empty-state__title-text"
+            class="pf-v5-c-empty-state__title-text"
           >
             EmptyState extra small
           </h1>

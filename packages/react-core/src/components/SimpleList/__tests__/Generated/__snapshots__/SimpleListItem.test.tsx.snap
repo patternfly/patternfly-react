@@ -6,7 +6,7 @@ exports[`SimpleListItem should match snapshot (auto-generated) 1`] = `
     class="''"
   >
     <button
-      class="pf-c-simple-list__item-link ''"
+      class="pf-v5-c-simple-list__item-link ''"
       type="button"
     >
       ReactNode

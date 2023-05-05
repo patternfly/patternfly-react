@@ -3,10 +3,10 @@
 exports[`matches hint snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-hint"
+    class="pf-v5-c-hint"
   >
     <div
-      class="pf-c-hint__actions"
+      class="pf-v5-c-hint__actions"
     />
   </div>
 </DocumentFragment>

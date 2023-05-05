@@ -3,7 +3,7 @@
 exports[`page group Verify basic render 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__main-group"
+    class="pf-v5-c-page__main-group"
   >
     test
   </div>
@@ -13,7 +13,7 @@ exports[`page group Verify basic render 1`] = `
 exports[`page group Verify bottom shadow 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__main-group pf-m-shadow-bottom"
+    class="pf-v5-c-page__main-group pf-m-shadow-bottom"
   >
     test
   </div>
@@ -23,7 +23,7 @@ exports[`page group Verify bottom shadow 1`] = `
 exports[`page group Verify bottom sticky 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__main-group pf-m-sticky-bottom"
+    class="pf-v5-c-page__main-group pf-m-sticky-bottom"
   >
     test
   </div>
@@ -33,7 +33,7 @@ exports[`page group Verify bottom sticky 1`] = `
 exports[`page group Verify overflow scroll 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__main-group pf-m-overflow-scroll"
+    class="pf-v5-c-page__main-group pf-m-overflow-scroll"
     role="region"
     tabindex="0"
   >
@@ -45,7 +45,7 @@ exports[`page group Verify overflow scroll 1`] = `
 exports[`page group Verify top shadow 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__main-group pf-m-shadow-top"
+    class="pf-v5-c-page__main-group pf-m-shadow-top"
   >
     test
   </div>
@@ -55,7 +55,7 @@ exports[`page group Verify top shadow 1`] = `
 exports[`page group Verify top sticky 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__main-group pf-m-sticky-top"
+    class="pf-v5-c-page__main-group pf-m-sticky-top"
   >
     test
   </div>

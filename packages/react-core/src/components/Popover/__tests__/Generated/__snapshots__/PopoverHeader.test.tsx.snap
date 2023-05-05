@@ -3,14 +3,14 @@
 exports[`PopoverHeader should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-popover__header"
+    class="pf-v5-c-popover__header"
   >
     <div
-      class="pf-c-popover__title"
+      class="pf-v5-c-popover__title"
       id="string"
     >
       <h6
-        class="pf-c-popover__title-text"
+        class="pf-v5-c-popover__title-text"
       >
         <div>
           ReactNode

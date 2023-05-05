@@ -3,10 +3,9 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-panel"
+    class="pf-v5-c-panel"
   >
     Test
   </div>
 </DocumentFragment>
 `;
-

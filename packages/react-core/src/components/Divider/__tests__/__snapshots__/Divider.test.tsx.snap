@@ -3,7 +3,7 @@
 exports[`divider using div 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-divider"
+    class="pf-v5-c-divider"
     role="separator"
   />
 </DocumentFragment>
@@ -12,7 +12,7 @@ exports[`divider using div 1`] = `
 exports[`divider using hr 1`] = `
 <DocumentFragment>
   <hr
-    class="pf-c-divider"
+    class="pf-v5-c-divider"
   />
 </DocumentFragment>
 `;
@@ -20,7 +20,7 @@ exports[`divider using hr 1`] = `
 exports[`divider using li 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-divider"
+    class="pf-v5-c-divider"
     role="separator"
   />
 </DocumentFragment>
@@ -29,7 +29,7 @@ exports[`divider using li 1`] = `
 exports[`vertical divider 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-flex"
+    class="pf-v5-l-flex"
   >
     <div
       class=""
@@ -37,7 +37,7 @@ exports[`vertical divider 1`] = `
       first item
     </div>
     <hr
-      class="pf-c-divider pf-m-vertical"
+      class="pf-v5-c-divider pf-m-vertical"
     />
     <div
       class=""

@@ -69,7 +69,7 @@ test('Text area is not read only by default', () => {
 
 test('Renders text area with default class name only', () => {
   render(<TextArea aria-label="validated textarea" />);
-  expect(screen.getByRole('textbox')).toHaveClass('pf-c-form-control', { exact: true });
+  expect(screen.getByRole('textbox')).toHaveClass('pf-v5-c-form-control', { exact: true });
 });
 
 test('Renders validated text area with success className', () => {

@@ -74,12 +74,12 @@ exports[`InternalDropdownItem dropdown items description a 1`] = `
       role="none"
     >
       <div
-        class="pf-c-dropdown__menu-item-main"
+        class="pf-v5-c-dropdown__menu-item-main"
       >
         Something
       </div>
       <div
-        class="pf-c-dropdown__menu-item-description"
+        class="pf-v5-c-dropdown__menu-item-description"
       >
         Something's link description
       </div>
@@ -99,12 +99,12 @@ exports[`InternalDropdownItem dropdown items description button 1`] = `
       type="button"
     >
       <div
-        class="pf-c-dropdown__menu-item-main"
+        class="pf-v5-c-dropdown__menu-item-main"
       >
         Something
       </div>
       <div
-        class="pf-c-dropdown__menu-item-description"
+        class="pf-v5-c-dropdown__menu-item-description"
       >
         Something's button description
       </div>

@@ -5,12 +5,12 @@ exports[`extra large spinner 1`] = `
   <svg
     aria-label="Contents"
     aria-valuetext="Loading..."
-    class="pf-c-spinner pf-m-xl"
+    class="pf-v5-c-spinner pf-m-xl"
     role="progressbar"
     viewBox="0 0 100 100"
   >
     <circle
-      class="pf-c-spinner__path"
+      class="pf-v5-c-spinner__path"
       cx="50"
       cy="50"
       fill="none"
@@ -25,12 +25,12 @@ exports[`large spinner 1`] = `
   <svg
     aria-label="Contents"
     aria-valuetext="Loading..."
-    class="pf-c-spinner pf-m-lg"
+    class="pf-v5-c-spinner pf-m-lg"
     role="progressbar"
     viewBox="0 0 100 100"
   >
     <circle
-      class="pf-c-spinner__path"
+      class="pf-v5-c-spinner__path"
       cx="50"
       cy="50"
       fill="none"
@@ -45,12 +45,12 @@ exports[`medium spinner 1`] = `
   <svg
     aria-label="Contents"
     aria-valuetext="Loading..."
-    class="pf-c-spinner pf-m-md"
+    class="pf-v5-c-spinner pf-m-md"
     role="progressbar"
     viewBox="0 0 100 100"
   >
     <circle
-      class="pf-c-spinner__path"
+      class="pf-v5-c-spinner__path"
       cx="50"
       cy="50"
       fill="none"
@@ -65,12 +65,12 @@ exports[`simple spinner 1`] = `
   <svg
     aria-label="Contents"
     aria-valuetext="Loading..."
-    class="pf-c-spinner pf-m-xl"
+    class="pf-v5-c-spinner pf-m-xl"
     role="progressbar"
     viewBox="0 0 100 100"
   >
     <circle
-      class="pf-c-spinner__path"
+      class="pf-v5-c-spinner__path"
       cx="50"
       cy="50"
       fill="none"
@@ -85,12 +85,12 @@ exports[`small spinner 1`] = `
   <svg
     aria-label="Contents"
     aria-valuetext="Loading..."
-    class="pf-c-spinner pf-m-sm"
+    class="pf-v5-c-spinner pf-m-sm"
     role="progressbar"
     viewBox="0 0 100 100"
   >
     <circle
-      class="pf-c-spinner__path"
+      class="pf-v5-c-spinner__path"
       cx="50"
       cy="50"
       fill="none"

@@ -3,23 +3,23 @@
 exports[`OverflowMenuDropdownItem should match snapshot 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-menu__list-item"
+    class="pf-v5-c-menu__list-item"
     data-ouia-component-id="OUIA-Generated-DropdownItem-1"
     data-ouia-component-type="PF4/DropdownItem"
     data-ouia-safe="true"
     role="none"
   >
     <button
-      class="pf-c-menu__item"
+      class="pf-v5-c-menu__item"
       role="menuitem"
       tabindex="-1"
       type="button"
     >
       <span
-        class="pf-c-menu__item-main"
+        class="pf-v5-c-menu__item-main"
       >
         <span
-          class="pf-c-menu__item-text"
+          class="pf-v5-c-menu__item-text"
         >
           any
         </span>

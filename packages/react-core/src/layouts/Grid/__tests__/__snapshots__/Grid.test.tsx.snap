@@ -3,10 +3,10 @@
 exports[`alternative component 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-l-grid"
+    class="pf-v5-l-grid"
   >
     <li
-      class="pf-l-grid__item"
+      class="pf-v5-l-grid__item"
     >
       Test
     </li>
@@ -17,7 +17,7 @@ exports[`alternative component 1`] = `
 exports[`gutter 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid pf-m-gutter"
+    class="pf-v5-l-grid pf-m-gutter"
   />
 </DocumentFragment>
 `;

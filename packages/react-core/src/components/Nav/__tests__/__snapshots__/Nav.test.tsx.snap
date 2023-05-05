@@ -4,62 +4,62 @@ exports[`Nav Dark Nav List 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Global"
-    class="pf-c-nav test=nav-class"
+    class="pf-v5-c-nav test=nav-class"
     data-ouia-component-id="OUIA-Generated-Nav-4"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <ul
-      class="pf-c-nav__list test-nav-list-class"
+      class="pf-v5-c-nav__list test-nav-list-class"
       role="list"
     >
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-13"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link1"
         >
           Link 1
         </a>
       </li>
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-14"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link2"
         >
           Link 2
         </a>
       </li>
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-15"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link3"
         >
           Link 3
         </a>
       </li>
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-16"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link4"
         >
           Link 4
@@ -74,62 +74,62 @@ exports[`Nav Default Nav List - Trigger item active update 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Global"
-    class="pf-c-nav"
+    class="pf-v5-c-nav"
     data-ouia-component-id="OUIA-Generated-Nav-5"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <ul
-      class="pf-c-nav__list"
+      class="pf-v5-c-nav__list"
       role="list"
     >
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-17"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link1"
         >
           Link 1
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-18"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link2"
         >
           Link 2
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-19"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link3"
         >
           Link 3
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-20"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link4"
         >
           Link 4
@@ -144,62 +144,62 @@ exports[`Nav Default Nav List 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Global"
-    class="pf-c-nav test-nav-class"
+    class="pf-v5-c-nav test-nav-class"
     data-ouia-component-id="OUIA-Generated-Nav-1"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <ul
-      class="pf-c-nav__list test-nav-list-class"
+      class="pf-v5-c-nav__list test-nav-list-class"
       role="list"
     >
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-1"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link1"
         >
           Link 1
         </a>
       </li>
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-2"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link2"
         >
           Link 2
         </a>
       </li>
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-3"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link3"
         >
           Link 3
         </a>
       </li>
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-4"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link4"
         >
           Link 4
@@ -214,36 +214,36 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Global"
-    class="pf-c-nav"
+    class="pf-v5-c-nav"
     data-ouia-component-id="OUIA-Generated-Nav-1"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <ul
-      class="pf-c-nav__list"
+      class="pf-v5-c-nav__list"
       role="list"
     >
       <li
-        class="pf-c-nav__item pf-m-expandable expandable-group"
+        class="pf-v5-c-nav__item pf-m-expandable expandable-group"
         data-ouia-component-id="OUIA-Generated-NavExpandable-1"
         data-ouia-component-type="PF4/NavExpandable"
         data-ouia-safe="true"
       >
         <button
           aria-expanded="false"
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           id="grp-1"
         >
           Section 1
           <span
-            class="pf-c-nav__toggle"
+            class="pf-v5-c-nav__toggle"
           >
             <span
-              class="pf-c-nav__toggle-icon"
+              class="pf-v5-c-nav__toggle-icon"
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
+                class="pf-v5-svg"
                 fill="currentColor"
                 role="img"
                 viewBox="0 0 256 512"
@@ -257,60 +257,60 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
         </button>
         <section
           aria-labelledby="grp-1"
-          class="pf-c-nav__subnav"
+          class="pf-v5-c-nav__subnav"
           hidden=""
         >
           <ul
-            class="pf-c-nav__list"
+            class="pf-v5-c-nav__list"
             role="list"
           >
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-1"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link1"
               >
                 Link 1
               </a>
             </li>
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-2"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link2"
               >
                 Link 2
               </a>
             </li>
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-3"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link3"
               >
                 Link 3
               </a>
             </li>
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-4"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link4"
               >
                 Link 4
@@ -328,36 +328,36 @@ exports[`Nav Expandable Nav List 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Global"
-    class="pf-c-nav"
+    class="pf-v5-c-nav"
     data-ouia-component-id="OUIA-Generated-Nav-6"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <ul
-      class="pf-c-nav__list"
+      class="pf-v5-c-nav__list"
       role="list"
     >
       <li
-        class="pf-c-nav__item pf-m-expandable"
+        class="pf-v5-c-nav__item pf-m-expandable"
         data-ouia-component-id="OUIA-Generated-NavExpandable-1"
         data-ouia-component-type="PF4/NavExpandable"
         data-ouia-safe="true"
       >
         <button
           aria-expanded="false"
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           id="grp-1"
         >
           Section 1
           <span
-            class="pf-c-nav__toggle"
+            class="pf-v5-c-nav__toggle"
           >
             <span
-              class="pf-c-nav__toggle-icon"
+              class="pf-v5-c-nav__toggle-icon"
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
+                class="pf-v5-svg"
                 fill="currentColor"
                 role="img"
                 viewBox="0 0 256 512"
@@ -371,60 +371,60 @@ exports[`Nav Expandable Nav List 1`] = `
         </button>
         <section
           aria-labelledby="grp-1"
-          class="pf-c-nav__subnav"
+          class="pf-v5-c-nav__subnav"
           hidden=""
         >
           <ul
-            class="pf-c-nav__list"
+            class="pf-v5-c-nav__list"
             role="list"
           >
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-21"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link1"
               >
                 Link 1
               </a>
             </li>
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-22"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link2"
               >
                 Link 2
               </a>
             </li>
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-23"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link3"
               >
                 Link 3
               </a>
             </li>
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-24"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link4"
               >
                 Link 4
@@ -442,35 +442,35 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Test"
-    class="pf-c-nav"
+    class="pf-v5-c-nav"
     data-ouia-component-id="OUIA-Generated-Nav-8"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <ul
-      class="pf-c-nav__list"
+      class="pf-v5-c-nav__list"
       role="list"
     >
       <li
-        class="pf-c-nav__item pf-m-expandable"
+        class="pf-v5-c-nav__item pf-m-expandable"
         data-ouia-component-id="OUIA-Generated-NavExpandable-3"
         data-ouia-component-type="PF4/NavExpandable"
         data-ouia-safe="true"
       >
         <button
           aria-expanded="false"
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
         >
           Section 1
           <span
-            class="pf-c-nav__toggle"
+            class="pf-v5-c-nav__toggle"
           >
             <span
-              class="pf-c-nav__toggle-icon"
+              class="pf-v5-c-nav__toggle-icon"
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
+                class="pf-v5-svg"
                 fill="currentColor"
                 role="img"
                 viewBox="0 0 256 512"
@@ -484,66 +484,66 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
         </button>
         <section
           aria-labelledby="grp-1"
-          class="pf-c-nav__subnav"
+          class="pf-v5-c-nav__subnav"
           hidden=""
         >
           <h2
-            class="pf-u-screen-reader"
+            class="pf-v5-u-screen-reader"
             id="grp-1"
           >
             Section 1 - Example sub-navigation
           </h2>
           <ul
-            class="pf-c-nav__list"
+            class="pf-v5-c-nav__list"
             role="list"
           >
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-29"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link1"
               >
                 Link 1
               </a>
             </li>
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-30"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link2"
               >
                 Link 2
               </a>
             </li>
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-31"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link3"
               >
                 Link 3
               </a>
             </li>
             <li
-              class="pf-c-nav__item"
+              class="pf-v5-c-nav__item"
               data-ouia-component-id="OUIA-Generated-NavItem-32"
               data-ouia-component-type="PF4/NavItem"
               data-ouia-safe="true"
             >
               <a
-                class="pf-c-nav__link"
+                class="pf-v5-c-nav__link"
                 href="#link4"
               >
                 Link 4
@@ -561,19 +561,19 @@ exports[`Nav Horizontal Nav List 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Global"
-    class="pf-c-nav pf-m-horizontal"
+    class="pf-v5-c-nav pf-m-horizontal"
     data-ouia-component-id="OUIA-Generated-Nav-horizontal-1"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <button
       aria-label="Scroll left"
-      class="pf-c-nav__scroll-button"
+      class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 256 512"
@@ -584,56 +584,56 @@ exports[`Nav Horizontal Nav List 1`] = `
       </svg>
     </button>
     <ul
-      class="pf-c-nav__list"
+      class="pf-v5-c-nav__list"
       role="list"
     >
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-41"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link1"
         >
           Link 1
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-42"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link2"
         >
           Link 2
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-43"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link3"
         >
           Link 3
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-44"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link4"
         >
           Link 4
@@ -642,12 +642,12 @@ exports[`Nav Horizontal Nav List 1`] = `
     </ul>
     <button
       aria-label="Scroll right"
-      class="pf-c-nav__scroll-button"
+      class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 256 512"
@@ -665,19 +665,19 @@ exports[`Nav Horizontal SubNav List 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Local"
-    class="pf-c-nav pf-m-horizontal-subnav"
+    class="pf-v5-c-nav pf-m-horizontal-subnav"
     data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-1"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <button
       aria-label="Scroll left"
-      class="pf-c-nav__scroll-button"
+      class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 256 512"
@@ -688,56 +688,56 @@ exports[`Nav Horizontal SubNav List 1`] = `
       </svg>
     </button>
     <ul
-      class="pf-c-nav__list"
+      class="pf-v5-c-nav__list"
       role="list"
     >
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-45"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link1"
         >
           Link 1
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-46"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link2"
         >
           Link 2
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-47"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link3"
         >
           Link 3
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-48"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link4"
         >
           Link 4
@@ -746,12 +746,12 @@ exports[`Nav Horizontal SubNav List 1`] = `
     </ul>
     <button
       aria-label="Scroll right"
-      class="pf-c-nav__scroll-button"
+      class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 256 512"
@@ -769,76 +769,76 @@ exports[`Nav Nav Grouped List 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Global"
-    class="pf-c-nav"
+    class="pf-v5-c-nav"
     data-ouia-component-id="OUIA-Generated-Nav-9"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <section
       aria-labelledby="grp-1"
-      class="pf-c-nav__section"
+      class="pf-v5-c-nav__section"
     >
       <h2
-        class="pf-c-nav__section-title"
+        class="pf-v5-c-nav__section-title"
         id="grp-1"
       >
         Section 1
       </h2>
       <ul
-        class="pf-c-nav__list"
+        class="pf-v5-c-nav__list"
         role="list"
       >
         <ul
-          class="pf-c-nav__list"
+          class="pf-v5-c-nav__list"
           role="list"
         >
           <li
-            class="pf-c-nav__item"
+            class="pf-v5-c-nav__item"
             data-ouia-component-id="OUIA-Generated-NavItem-33"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe="true"
           >
             <a
-              class="pf-c-nav__link"
+              class="pf-v5-c-nav__link"
               href="#link1"
             >
               Link 1
             </a>
           </li>
           <li
-            class="pf-c-nav__item"
+            class="pf-v5-c-nav__item"
             data-ouia-component-id="OUIA-Generated-NavItem-34"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe="true"
           >
             <a
-              class="pf-c-nav__link"
+              class="pf-v5-c-nav__link"
               href="#link2"
             >
               Link 2
             </a>
           </li>
           <li
-            class="pf-c-nav__item"
+            class="pf-v5-c-nav__item"
             data-ouia-component-id="OUIA-Generated-NavItem-35"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe="true"
           >
             <a
-              class="pf-c-nav__link"
+              class="pf-v5-c-nav__link"
               href="#link3"
             >
               Link 3
             </a>
           </li>
           <li
-            class="pf-c-nav__item"
+            class="pf-v5-c-nav__item"
             data-ouia-component-id="OUIA-Generated-NavItem-36"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe="true"
           >
             <a
-              class="pf-c-nav__link"
+              class="pf-v5-c-nav__link"
               href="#link4"
             >
               Link 4
@@ -849,69 +849,69 @@ exports[`Nav Nav Grouped List 1`] = `
     </section>
     <section
       aria-labelledby="grp-2"
-      class="pf-c-nav__section"
+      class="pf-v5-c-nav__section"
     >
       <h2
-        class="pf-c-nav__section-title"
+        class="pf-v5-c-nav__section-title"
         id="grp-2"
       >
         Section 2
       </h2>
       <ul
-        class="pf-c-nav__list"
+        class="pf-v5-c-nav__list"
         role="list"
       >
         <ul
-          class="pf-c-nav__list"
+          class="pf-v5-c-nav__list"
           role="list"
         >
           <li
-            class="pf-c-nav__item"
+            class="pf-v5-c-nav__item"
             data-ouia-component-id="OUIA-Generated-NavItem-37"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe="true"
           >
             <a
-              class="pf-c-nav__link"
+              class="pf-v5-c-nav__link"
               href="#link1"
             >
               Link 1
             </a>
           </li>
           <li
-            class="pf-c-nav__item"
+            class="pf-v5-c-nav__item"
             data-ouia-component-id="OUIA-Generated-NavItem-38"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe="true"
           >
             <a
-              class="pf-c-nav__link"
+              class="pf-v5-c-nav__link"
               href="#link2"
             >
               Link 2
             </a>
           </li>
           <li
-            class="pf-c-nav__item"
+            class="pf-v5-c-nav__item"
             data-ouia-component-id="OUIA-Generated-NavItem-39"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe="true"
           >
             <a
-              class="pf-c-nav__link"
+              class="pf-v5-c-nav__link"
               href="#link3"
             >
               Link 3
             </a>
           </li>
           <li
-            class="pf-c-nav__item"
+            class="pf-v5-c-nav__item"
             data-ouia-component-id="OUIA-Generated-NavItem-40"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe="true"
           >
             <a
-              class="pf-c-nav__link"
+              class="pf-v5-c-nav__link"
               href="#link4"
             >
               Link 4
@@ -928,19 +928,19 @@ exports[`Nav Nav List with custom item nodes 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Local"
-    class="pf-c-nav pf-m-horizontal pf-m-tertiary"
+    class="pf-v5-c-nav pf-m-horizontal pf-m-tertiary"
     data-ouia-component-id="OUIA-Generated-Nav-tertiary-2"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <button
       aria-label="Scroll left"
-      class="pf-c-nav__scroll-button"
+      class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 256 512"
@@ -951,17 +951,17 @@ exports[`Nav Nav List with custom item nodes 1`] = `
       </svg>
     </button>
     <ul
-      class="pf-c-nav__list"
+      class="pf-v5-c-nav__list"
       role="list"
     >
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-53"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <div
-          class="pf-c-nav__link my-custom-node"
+          class="pf-v5-c-nav__link my-custom-node"
         >
           My custom node
         </div>
@@ -969,12 +969,12 @@ exports[`Nav Nav List with custom item nodes 1`] = `
     </ul>
     <button
       aria-label="Scroll right"
-      class="pf-c-nav__scroll-button"
+      class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 256 512"
@@ -992,19 +992,19 @@ exports[`Nav Nav List with flyout 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Local"
-    class="pf-c-nav pf-m-horizontal pf-m-tertiary"
+    class="pf-v5-c-nav pf-m-horizontal pf-m-tertiary"
     data-ouia-component-id="OUIA-Generated-Nav-tertiary-3"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <button
       aria-label="Scroll left"
-      class="pf-c-nav__scroll-button"
+      class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 256 512"
@@ -1015,28 +1015,28 @@ exports[`Nav Nav List with flyout 1`] = `
       </svg>
     </button>
     <ul
-      class="pf-c-nav__list"
+      class="pf-v5-c-nav__list"
       role="list"
     >
       <li
-        class="pf-c-nav__item pf-m-flyout test-nav-item-class"
+        class="pf-v5-c-nav__item pf-m-flyout test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-54"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <div
-          class="pf-c-nav__link my-custom-node"
+          class="pf-v5-c-nav__link my-custom-node"
         >
           My custom node
           <span
-            class="pf-c-nav__toggle"
+            class="pf-v5-c-nav__toggle"
           >
             <span
-              class="pf-c-nav__toggle-icon"
+              class="pf-v5-c-nav__toggle-icon"
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
+                class="pf-v5-svg"
                 fill="currentColor"
                 role="img"
                 viewBox="0 0 256 512"
@@ -1052,12 +1052,12 @@ exports[`Nav Nav List with flyout 1`] = `
     </ul>
     <button
       aria-label="Scroll right"
-      class="pf-c-nav__scroll-button"
+      class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 256 512"
@@ -1086,62 +1086,62 @@ exports[`Nav Renders nav list in strict mode 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Global"
-    class="pf-c-nav test-nav-class"
+    class="pf-v5-c-nav test-nav-class"
     data-ouia-component-id="OUIA-Generated-Nav-3"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <ul
-      class="pf-c-nav__list test-nav-list-class"
+      class="pf-v5-c-nav__list test-nav-list-class"
       role="list"
     >
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-6"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link1"
         >
           Link 1
         </a>
       </li>
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-8"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link2"
         >
           Link 2
         </a>
       </li>
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-10"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link3"
         >
           Link 3
         </a>
       </li>
       <li
-        class="pf-c-nav__item test-nav-item-class"
+        class="pf-v5-c-nav__item test-nav-item-class"
         data-ouia-component-id="OUIA-Generated-NavItem-12"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link test-nav-item-class"
+          class="pf-v5-c-nav__link test-nav-item-class"
           href="#link4"
         >
           Link 4
@@ -1156,19 +1156,19 @@ exports[`Nav Tertiary Nav List 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Local"
-    class="pf-c-nav pf-m-horizontal pf-m-tertiary"
+    class="pf-v5-c-nav pf-m-horizontal pf-m-tertiary"
     data-ouia-component-id="OUIA-Generated-Nav-tertiary-1"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe="true"
   >
     <button
       aria-label="Scroll left"
-      class="pf-c-nav__scroll-button"
+      class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 256 512"
@@ -1179,56 +1179,56 @@ exports[`Nav Tertiary Nav List 1`] = `
       </svg>
     </button>
     <ul
-      class="pf-c-nav__list"
+      class="pf-v5-c-nav__list"
       role="list"
     >
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-49"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link1"
         >
           Link 1
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-50"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link2"
         >
           Link 2
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-51"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link3"
         >
           Link 3
         </a>
       </li>
       <li
-        class="pf-c-nav__item"
+        class="pf-v5-c-nav__item"
         data-ouia-component-id="OUIA-Generated-NavItem-52"
         data-ouia-component-type="PF4/NavItem"
         data-ouia-safe="true"
       >
         <a
-          class="pf-c-nav__link"
+          class="pf-v5-c-nav__link"
           href="#link4"
         >
           Link 4
@@ -1237,12 +1237,12 @@ exports[`Nav Tertiary Nav List 1`] = `
     </ul>
     <button
       aria-label="Scroll right"
-      class="pf-c-nav__scroll-button"
+      class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 256 512"

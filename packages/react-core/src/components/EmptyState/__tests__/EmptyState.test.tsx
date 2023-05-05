@@ -64,12 +64,12 @@ describe('EmptyState', () => {
 
   test('Body', () => {
     render(<EmptyStateBody className="custom-empty-state-body" data-testid="body-test-id" />);
-    expect(screen.getByTestId('body-test-id')).toHaveClass('custom-empty-state-body pf-c-empty-state__body');
+    expect(screen.getByTestId('body-test-id')).toHaveClass('pf-v5-c-empty-state__body custom-empty-state-body');
   });
 
   test('Actions', () => {
     render(<EmptyStateActions className="custom-empty-state-secondary" data-testid="actions-test-id" />);
-    expect(screen.getByTestId('actions-test-id')).toHaveClass('pf-c-empty-state__actions');
+    expect(screen.getByTestId('actions-test-id')).toHaveClass('pf-v5-c-empty-state__actions');
   });
 
   test('Full height', () => {
@@ -88,7 +88,9 @@ describe('EmptyState', () => {
 
   test('Header with title text renders heading level 1 by default', () => {
     render(<EmptyStateHeader titleText="Empty state" />);
-    expect(screen.getByRole('heading', { level: 1, name: 'Empty state' })).toHaveClass('pf-c-empty-state__title-text');
+    expect(screen.getByRole('heading', { level: 1, name: 'Empty state' })).toHaveClass(
+      'pf-v5-c-empty-state__title-text'
+    );
   });
 
   test('Header renders custom class passed via titleClassName', () => {
@@ -98,7 +100,9 @@ describe('EmptyState', () => {
 
   test('Header renders the title as other heading levels when one is passed using headingLevel', () => {
     render(<EmptyStateHeader titleText="Empty state" headingLevel="h3" />);
-    expect(screen.getByRole('heading', { level: 3, name: 'Empty state' })).toHaveClass('pf-c-empty-state__title-text');
+    expect(screen.getByRole('heading', { level: 3, name: 'Empty state' })).toHaveClass(
+      'pf-v5-c-empty-state__title-text'
+    );
   });
 
   test('Headers render children', () => {

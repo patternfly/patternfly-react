@@ -3,7 +3,7 @@
 exports[`TextInputGroupUtilities matches the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-text-input-group__utilities"
+    class="pf-v5-c-text-input-group__utilities"
   >
     <button>
       Test

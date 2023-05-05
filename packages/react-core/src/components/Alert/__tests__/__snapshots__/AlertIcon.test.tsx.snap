@@ -3,7 +3,7 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-alert__icon"
+    class="pf-v5-c-alert__icon"
   >
     Bell icon mock
   </div>

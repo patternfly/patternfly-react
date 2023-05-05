@@ -18,12 +18,12 @@ test('Renders children', () => {
 
 test('Renders with the class pf-c-panel__main', () => {
   render(<PanelMain>Test</PanelMain>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-panel__main');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__main');
 });
 
 test('Renders with only the class pf-c-panel__main by default', () => {
   render(<PanelMain>Test</PanelMain>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-panel__main', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__main', { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {

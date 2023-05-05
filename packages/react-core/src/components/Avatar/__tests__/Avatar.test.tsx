@@ -13,7 +13,7 @@ test('Renders simple avatar', () => {
 
 test('Renders without any modifier class when border and size props are not passed', () => {
   render(<Avatar alt="avatar" />);
-  expect(screen.getByRole('img')).toHaveClass('pf-c-avatar', { exact: true });
+  expect(screen.getByRole('img')).toHaveClass('pf-v5-c-avatar', { exact: true });
 });
 
 test('Renders with class name pf-m-light when "light" is passed as border prop', () => {

@@ -10,7 +10,7 @@ Object {
   >
     
   </SelectColumn>,
-  "className": "pf-c-table__check",
+  "className": "pf-v5-c-table__check",
   "component": "td",
   "isVisible": true,
 }
@@ -26,6 +26,6 @@ Object {
   >
     
   </SortColumn>,
-  "className": "pf-c-table__sort pf-m-selected",
+  "className": "pf-v5-c-table__sort pf-m-selected",
 }
 `;

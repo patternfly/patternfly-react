@@ -7,7 +7,7 @@ exports[`Matches the snapshot 1`] = `
   >
     <svg
       aria-hidden="true"
-      class="pf-svg"
+      class="pf-v5-svg"
       fill="currentColor"
       role="img"
       viewBox="0 0 352 512"

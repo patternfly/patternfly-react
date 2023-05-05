@@ -44,10 +44,9 @@ test('Renders with correct datetime attribute with current date by default', () 
   // we want an ISO value without the ms to expect as the datetime value.
   const isoDateWithoutMS = new Date().toISOString().split('.')[0];
 
-  expect(screen.getByText(new Date().toLocaleString(), { normalizer: getDefaultNormalizer({ collapseWhitespace: false }) })).toHaveAttribute(
-    'datetime',
-    expect.stringMatching(isoDateWithoutMS)
-  );
+  expect(
+    screen.getByText(new Date().toLocaleString(), { normalizer: getDefaultNormalizer({ collapseWhitespace: false }) })
+  ).toHaveAttribute('datetime', expect.stringMatching(isoDateWithoutMS));
 });
 
 test('Renders passed in date with default formatting', () => {
@@ -145,7 +144,7 @@ test('Renders with 12 hour time for a 24 hour locale when is12Hour is passed', (
 test('Renders with pf-c-timestamp by default', () => {
   render(<Timestamp date={new Date(2022, 0, 1)} />);
 
-  expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-c-timestamp');
+  expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-v5-c-timestamp');
 });
 
 test('Renders with pf-c-timestamp__text by default', () => {

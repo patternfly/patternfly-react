@@ -3,10 +3,10 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-sidebar"
+    class="pf-v5-c-sidebar"
   >
     <div
-      class="pf-c-sidebar__main"
+      class="pf-v5-c-sidebar__main"
     >
       Test
     </div>

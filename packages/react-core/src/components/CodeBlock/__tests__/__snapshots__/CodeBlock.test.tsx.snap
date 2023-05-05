@@ -3,10 +3,10 @@
 exports[`CodeBlock renders successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-code-block"
+    class="pf-v5-c-code-block"
   >
     <div
-      class="pf-c-code-block__content"
+      class="pf-v5-c-code-block__content"
     >
       test text
     </div>
@@ -17,13 +17,13 @@ exports[`CodeBlock renders successfully 1`] = `
 exports[`CodeBlock with components renders successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-code-block"
+    class="pf-v5-c-code-block"
   >
     <div
-      class="pf-c-code-block__header"
+      class="pf-v5-c-code-block__header"
     >
       <div
-        class="pf-c-code-block__actions"
+        class="pf-v5-c-code-block__actions"
       >
         <div
           class="pf-c-code-block__actions-item"
@@ -33,13 +33,13 @@ exports[`CodeBlock with components renders successfully 1`] = `
       </div>
     </div>
     <div
-      class="pf-c-code-block__content"
+      class="pf-v5-c-code-block__content"
     >
       <pre
-        class="pf-c-code-block__pre"
+        class="pf-v5-c-code-block__pre"
       >
         <code
-          class="pf-c-code-block__code"
+          class="pf-v5-c-code-block__code"
         >
           inside pre/code tags
         </code>
@@ -63,10 +63,10 @@ exports[`CodeBlockAction renders successfully 1`] = `
 exports[`CodeBlockCode renders successfully 1`] = `
 <DocumentFragment>
   <pre
-    class="pf-c-code-block__pre"
+    class="pf-v5-c-code-block__pre"
   >
     <code
-      class="pf-c-code-block__code"
+      class="pf-v5-c-code-block__code"
     >
       action
     </code>

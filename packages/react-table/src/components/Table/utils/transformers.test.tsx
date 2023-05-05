@@ -65,7 +65,7 @@ const testCellActions = async ({
     actions = actionResolver(rowData, extraData);
   }
 
-  expect(returnedData).toMatchObject({ className: 'pf-c-table__action' });
+  expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__action' });
 
   if (!actions || actions.length === 0) {
     expect(returnedData.children).toBeUndefined();
@@ -86,7 +86,7 @@ describe('Transformer functions', () => {
         extraParams: { onSelect }
       };
       const returnedData = selectable('', { column, rowData: {} } as IExtra);
-      expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
+      expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__check' });
 
       const user = userEvent.setup();
 
@@ -103,7 +103,7 @@ describe('Transformer functions', () => {
         extraParams: { onSelect }
       };
       const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: true } } as IExtra);
-      expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
+      expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__check' });
       const user = userEvent.setup();
 
       render(returnedData.children as React.ReactElement<any>);
@@ -128,7 +128,7 @@ describe('Transformer functions', () => {
       const onSort = jest.fn();
       const column = { extraParams: { sortBy: {}, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 });
-      expect(returnedData).toMatchObject({ className: 'pf-c-table__sort' });
+      expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__sort' });
 
       const user = userEvent.setup();
 
@@ -154,7 +154,7 @@ describe('Transformer functions', () => {
       const onSort = jest.fn();
       const column = { extraParams: { sortBy: { index: 0, direction: 'desc' }, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 } as IExtra);
-      expect(returnedData).toMatchObject({ className: 'pf-c-table__sort pf-m-selected' });
+      expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__sort pf-m-selected' });
 
       const user = userEvent.setup();
 
@@ -226,7 +226,7 @@ describe('Transformer functions', () => {
       extraParams: { onCollapse }
     };
     const returnedData = collapsible('', { rowIndex: 0, rowData, column });
-    expect(returnedData).toMatchObject({ className: 'pf-c-table__toggle' });
+    expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__toggle' });
 
     const user = userEvent.setup();
 
@@ -332,7 +332,7 @@ describe('Transformer functions', () => {
       extraParams: { onRowEdit }
     };
     const returned = editable('test', { rowIndex: 0, column });
-    expect(returned).toMatchObject({ className: 'pf-c-table__inline-edit-action' });
+    expect(returned).toMatchObject({ className: 'pf-v5-c-table__inline-edit-action' });
   });
 
   describe('visibility classNames', () => {

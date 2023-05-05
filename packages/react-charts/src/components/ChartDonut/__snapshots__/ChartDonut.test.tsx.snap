@@ -18,35 +18,35 @@ exports[`ChartDonut 1`] = `
           d="M1.1182570896040502,-94.99341819874444A95,95,0,0,1,60.203957590455154,-73.48798194566699L54.41842631991018,-66.59305426892888A86,86,0,0,0,1.1182570896040516,-85.99272935011163Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--100, #06c); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
           d="M61.91722684939433,-72.05037834238375A95,95,0,0,1,82.82584189723372,46.52827005181304L75.03101670275841,42.027925627496636A86,86,0,0,0,56.13169557884936,-65.15545066564565Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--200, #8bc1f7); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
           d="M81.70758480762967,48.46514814693137A95,95,0,0,1,-81.70758480762966,48.465148146931405L-73.91275961315432,43.96480372261502A86,86,0,0,0,73.91275961315435,43.96480372261497Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--300, #002f5d); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
           d="M-82.82584189723369,46.528270051813095A95,95,0,0,1,-93.74443803302738,-15.394165708861626L-84.88048987244326,-13.831212492549462A86,86,0,0,0,-75.0310167027584,42.02792562749668Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--400, #519de9); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--400, #519de9); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
           d="M-93.35607142148164,-17.596702212267488A95,95,0,0,1,-1.118257089604104,-94.99341819874444L-1.1182570896040813,-85.99272935011163A86,86,0,0,0,-84.49212326089753,-16.033748995955364Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--500, #004b95); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--500, #004b95); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
       </g>
@@ -83,35 +83,35 @@ exports[`ChartDonut 2`] = `
           d="M1.1182570896040502,-94.99341819874444A95,95,0,0,1,60.203957590455154,-73.48798194566699L54.41842631991018,-66.59305426892888A86,86,0,0,0,1.1182570896040516,-85.99272935011163Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--100, #06c); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
           d="M61.91722684939433,-72.05037834238375A95,95,0,0,1,82.82584189723372,46.52827005181304L75.03101670275841,42.027925627496636A86,86,0,0,0,56.13169557884936,-65.15545066564565Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--200, #8bc1f7); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
           d="M81.70758480762967,48.46514814693137A95,95,0,0,1,-81.70758480762966,48.465148146931405L-73.91275961315432,43.96480372261502A86,86,0,0,0,73.91275961315435,43.96480372261497Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--300, #002f5d); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
           d="M-82.82584189723369,46.528270051813095A95,95,0,0,1,-93.74443803302738,-15.394165708861626L-84.88048987244326,-13.831212492549462A86,86,0,0,0,-75.0310167027584,42.02792562749668Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--400, #519de9); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--400, #519de9); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
           d="M-93.35607142148164,-17.596702212267488A95,95,0,0,1,-1.118257089604104,-94.99341819874444L-1.1182570896040813,-85.99272935011163A86,86,0,0,0,-84.49212326089753,-16.033748995955364Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--500, #004b95); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--500, #004b95); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
       </g>
@@ -148,21 +148,21 @@ exports[`renders component data 1`] = `
           d="M0.9334130156923648,-79.99455444055012A80,80,0,0,1,65.26560040477878,46.26447237139683L57.983888959835994,40.97399932998254A71,71,0,0,0,0.9334130156923663,-70.99386410206263Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--100, #06c); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(100, 100)"
         />
         <path
           d="M64.16830759493514,47.77476635632862A80,80,0,1,1,-47.774766356328655,-64.16830759493511L-42.48429331491433,-56.886596149992364A71,71,0,1,0,56.88659614999237,42.48429331491432Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--200, #8bc1f7); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(100, 100)"
         />
         <path
           d="M-46.26447237139682,-65.26560040477878A80,80,0,0,1,-0.9334130156924101,-79.99455444055012L-0.9334130156923751,-70.99386410206263A71,71,0,0,0,-40.97399932998255,-57.98388895983599Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--300, #002f5d); padding: 8px; stroke: var(--pf-v5-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(100, 100)"
         />
       </g>

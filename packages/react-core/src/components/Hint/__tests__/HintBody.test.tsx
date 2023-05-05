@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import { HintBody } from "../HintBody";
+import { HintBody } from '../HintBody';
 
 test('renders without children', () => {
   render(<HintBody data-testid="HintBody"></HintBody>);
-  
+
   expect(screen.getByTestId('HintBody')).toBeVisible();
 });
 
@@ -21,7 +21,7 @@ test('renders with class pf-c-hint__body', () => {
 
   const body = screen.getByText('Hint Body Test');
 
-  expect(body).toHaveClass('pf-c-hint__body');
+  expect(body).toHaveClass('pf-v5-c-hint__body');
 });
 
 test('renders with custom class names provided via prop', () => {
@@ -33,9 +33,7 @@ test('renders with custom class names provided via prop', () => {
 });
 
 test('renders with inherited element props spread to the component', () => {
-  render(
-    <HintBody aria-label="labelling-id">Test</HintBody>
-  );
+  render(<HintBody aria-label="labelling-id">Test</HintBody>);
 
   expect(screen.getByText('Test')).toHaveAccessibleName('labelling-id');
 });

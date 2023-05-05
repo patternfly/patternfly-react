@@ -13,26 +13,15 @@ jest.mock('../../Tooltip', () => ({
 }));
 
 test('renders with class pf-c-truncate', () => {
-  render(
-    <Truncate
-      content={''}
-      aria-label='test-id'
-    />
-  );
+  render(<Truncate content={''} aria-label="test-id" />);
 
   const test = screen.getByLabelText('test-id');
 
-  expect(test).toHaveClass('pf-c-truncate');
+  expect(test).toHaveClass('pf-v5-c-truncate');
 });
 
 test('renders with custom class name passed via prop', () => {
-  render(
-    <Truncate
-      content={''}
-      aria-label='test-id'
-      className='custom-classname'
-    />
-  );
+  render(<Truncate content={''} aria-label="test-id" className="custom-classname" />);
 
   const test = screen.getByLabelText('test-id');
 
@@ -40,12 +29,7 @@ test('renders with custom class name passed via prop', () => {
 });
 
 test('renders truncate with empty content', () => {
-  render(
-    <Truncate
-      content={''}
-      aria-label='test-id'
-    />
-  );
+  render(<Truncate content={''} aria-label="test-id" />);
 
   const test = screen.getByLabelText('test-id');
 
@@ -53,12 +37,7 @@ test('renders truncate with empty content', () => {
 });
 
 test('renders truncate with content', () => {
-  render(
-    <Truncate
-      content={'Test'}
-      aria-label='test-id'
-    />
-  );
+  render(<Truncate content={'Test'} aria-label="test-id" />);
 
   const test = screen.getByLabelText('test-id');
 
@@ -66,16 +45,12 @@ test('renders truncate with content', () => {
 });
 
 test('only renders pf-c-truncate__start with default position', () => {
-  render(
-    <Truncate
-      content={'Testing truncate content'}
-    />
-  );
+  render(<Truncate content={'Testing truncate content'} />);
 
   const start = screen.getByText('Testing truncate content');
 
-  expect(start).toHaveClass('pf-c-truncate__start');
-  expect(start).not.toHaveClass('pf-c-truncate__end');
+  expect(start).toHaveClass('pf-v5-c-truncate__start');
+  expect(start).not.toHaveClass('pf-v5-c-truncate__end');
 });
 
 test('renders default truncation', () => {
@@ -105,11 +80,11 @@ test('renders middle truncation', () => {
 
   const start = screen.getByText('Vestibulum interdum risus et enim faucibus, sit amet molestie est ac');
 
-  expect(start).toHaveClass('pf-c-truncate__start');
+  expect(start).toHaveClass('pf-v5-c-truncate__start');
 
   const end = screen.getByText('cumsan.');
 
-  expect(end).toHaveClass('pf-c-truncate__end');
+  expect(end).toHaveClass('pf-v5-c-truncate__end');
 });
 
 test('renders different content when trailingNumChars is passed with middle truncate', () => {
@@ -117,39 +92,29 @@ test('renders different content when trailingNumChars is passed with middle trun
     <Truncate
       content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
       trailingNumChars={3}
-      position='middle'
+      position="middle"
     />
   );
 
   const start = screen.getByText('Vestibulum interdum risus et enim faucibus, sit amet molestie est accums');
 
-  expect(start).toHaveClass('pf-c-truncate__start');
+  expect(start).toHaveClass('pf-v5-c-truncate__start');
 
   const end = screen.getByText('an.');
 
-  expect(end).toHaveClass('pf-c-truncate__end');
+  expect(end).toHaveClass('pf-v5-c-truncate__end');
 });
 
 test('renders tooltip position', () => {
-  render(
-    <Truncate
-      content={''}
-      tooltipPosition='top'
-    />
-  );
+  render(<Truncate content={''} tooltipPosition="top" />);
 
   const input = screen.getByText('position: top');
-  
+
   expect(input).toBeVisible();
 });
 
 test('renders tooltip content', () => {
-  render(
-    <Truncate
-      content={'Another Tooltip'}
-      tooltipPosition='top'
-    />
-  );
+  render(<Truncate content={'Another Tooltip'} tooltipPosition="top" />);
 
   const input = screen.getByText('Test Another Tooltip');
 
@@ -157,13 +122,7 @@ test('renders tooltip content', () => {
 });
 
 test('renders with inherited element props spread to the component', () => {
-  render(
-    <Truncate
-      content={'Test'}
-      data-testid="test-id"
-      aria-label="labelling-id"
-    />
-  );
+  render(<Truncate content={'Test'} data-testid="test-id" aria-label="labelling-id" />);
 
   expect(screen.getByTestId('test-id')).toHaveAccessibleName('labelling-id');
 });

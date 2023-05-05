@@ -76,7 +76,7 @@ exports[`renders container via ChartLegend 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c);"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--100, #06c);"
         />
         <path
           d="M 48.728, 22.872
@@ -86,7 +86,7 @@ exports[`renders container via ChartLegend 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7);"
+          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--200, #8bc1f7);"
         />
         <text
           direction="inherit"
@@ -98,7 +98,7 @@ exports[`renders container via ChartLegend 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 2px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
+            style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 2px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-global--label--Fill, #151515);"
             text-anchor="start"
             x="2"
           >
@@ -115,7 +115,7 @@ exports[`renders container via ChartLegend 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
+            style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-global--label--Fill, #151515);"
             text-anchor="start"
             x="30.8"
           >
@@ -132,7 +132,7 @@ exports[`renders container via ChartLegend 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
+            style="font-family: \\"RedHatText\\",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v5-chart-global--label--stroke, transparent); fill: var(--pf-v5-chart-global--label--Fill, #151515);"
             text-anchor="start"
             x="70.39999999999999"
           >

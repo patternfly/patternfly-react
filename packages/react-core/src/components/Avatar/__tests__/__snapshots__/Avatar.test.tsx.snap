@@ -5,7 +5,7 @@ exports[`Matches the snapshot 1`] = `
   <img
     alt="avatar"
     aria-label="Avatar test"
-    class="pf-c-avatar test-class"
+    class="pf-v5-c-avatar test-class"
     src="test.png"
   />
 </DocumentFragment>

@@ -143,7 +143,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     if (
       !current ||
       (current !== (event.target as HTMLElement).closest('.pf-c-menu') &&
-        !Array.from(current.getElementsByClassName('pf-c-menu')).includes(
+        !Array.from(current.getElementsByClassName('pf-v5-c-menu')).includes(
           (event.target as HTMLElement).closest('.pf-c-menu')
         ))
     ) {

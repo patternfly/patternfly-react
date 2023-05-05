@@ -4,7 +4,7 @@ exports[`PageSidebar should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
-    class="pf-c-page__sidebar pf-m-expanded ''"
+    class="pf-v5-c-page__sidebar pf-m-expanded ''"
     id="page-sidebar"
   >
     <div>

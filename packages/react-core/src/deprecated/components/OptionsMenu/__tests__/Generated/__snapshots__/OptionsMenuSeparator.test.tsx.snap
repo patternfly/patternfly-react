@@ -3,7 +3,7 @@
 exports[`OptionsMenuSeparator should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-divider ''"
+    class="pf-v5-c-divider ''"
     role="separator"
   />
 </DocumentFragment>

@@ -4,13 +4,13 @@ exports[`Breadcrumb component should render breadcrumb with aria-label 1`] = `
 <DocumentFragment>
   <nav
     aria-label="custom label"
-    class="pf-c-breadcrumb"
+    class="pf-v5-c-breadcrumb"
     data-ouia-component-id="OUIA-Generated-Breadcrumb-3"
     data-ouia-component-type="PF4/Breadcrumb"
     data-ouia-safe="true"
   >
     <ol
-      class="pf-c-breadcrumb__list"
+      class="pf-v5-c-breadcrumb__list"
       role="list"
     />
   </nav>
@@ -21,20 +21,20 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Breadcrumb"
-    class="pf-c-breadcrumb"
+    class="pf-v5-c-breadcrumb"
     data-ouia-component-id="OUIA-Generated-Breadcrumb-4"
     data-ouia-component-type="PF4/Breadcrumb"
     data-ouia-safe="true"
   >
     <ol
-      class="pf-c-breadcrumb__list"
+      class="pf-v5-c-breadcrumb__list"
       role="list"
     >
       <li
-        class="pf-c-breadcrumb__item"
+        class="pf-v5-c-breadcrumb__item"
       >
         <a
-          class="pf-c-breadcrumb__link"
+          class="pf-v5-c-breadcrumb__link"
           href="#"
         >
           Item 1
@@ -42,14 +42,14 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
       </li>
        
       <li
-        class="pf-c-breadcrumb__item"
+        class="pf-v5-c-breadcrumb__item"
       >
         <span
-          class="pf-c-breadcrumb__item-divider"
+          class="pf-v5-c-breadcrumb__item-divider"
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -60,7 +60,7 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
           </svg>
         </span>
         <a
-          class="pf-c-breadcrumb__link"
+          class="pf-v5-c-breadcrumb__link"
           href="#"
         >
           Item 1
@@ -75,13 +75,13 @@ exports[`Breadcrumb component should render breadcrumb with className 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Breadcrumb"
-    class="pf-c-breadcrumb className"
+    class="pf-v5-c-breadcrumb className"
     data-ouia-component-id="OUIA-Generated-Breadcrumb-2"
     data-ouia-component-type="PF4/Breadcrumb"
     data-ouia-safe="true"
   >
     <ol
-      class="pf-c-breadcrumb__list"
+      class="pf-v5-c-breadcrumb__list"
       role="list"
     />
   </nav>
@@ -92,13 +92,13 @@ exports[`Breadcrumb component should render default breadcrumb 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Breadcrumb"
-    class="pf-c-breadcrumb"
+    class="pf-v5-c-breadcrumb"
     data-ouia-component-id="OUIA-Generated-Breadcrumb-1"
     data-ouia-component-type="PF4/Breadcrumb"
     data-ouia-safe="true"
   >
     <ol
-      class="pf-c-breadcrumb__list"
+      class="pf-v5-c-breadcrumb__list"
       role="list"
     />
   </nav>

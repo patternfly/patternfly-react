@@ -6,12 +6,12 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      class="pf-c-menu-toggle pf-m-plain pf-m-text"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
       id="''-toggle"
       type="button"
     >
       <span
-        class="pf-c-menu-toggle__text"
+        class="pf-v5-c-menu-toggle__text"
       >
         <b>
           0 - 0
@@ -23,14 +23,14 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
          'items'
       </span>
       <span
-        class="pf-c-menu-toggle__controls"
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-c-menu-toggle__toggle-icon"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 320 512"

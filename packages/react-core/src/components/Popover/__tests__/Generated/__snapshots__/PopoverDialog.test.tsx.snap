@@ -4,7 +4,7 @@ exports[`PopoverDialog should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
     aria-modal="true"
-    class="pf-c-popover pf-m-top null"
+    class="pf-v5-c-popover pf-m-top null"
     role="dialog"
   >
     ReactNode

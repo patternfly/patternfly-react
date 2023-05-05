@@ -51,7 +51,7 @@ test('Renders the accordion toggle with class pf-c-accordion__toggle', () => {
     </AccordionContext.Provider>
   );
 
-  expect(screen.getByRole('button')).toHaveClass('pf-c-accordion__toggle');
+  expect(screen.getByRole('button')).toHaveClass('pf-v5-c-accordion__toggle');
 });
 
 test('Renders the accordion toggle with custom class names provided via prop', () => {
@@ -75,7 +75,7 @@ test('Renders with children inside class pf-c-accordion__toggle-text', () => {
     </AccordionContext.Provider>
   );
 
-  expect(screen.getByText('Test')).toHaveClass('pf-c-accordion__toggle-text');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-accordion__toggle-text');
 });
 
 test('Renders with the toggle icon inside class pf-c-accordion__toggle-icon', () => {
@@ -87,7 +87,7 @@ test('Renders with the toggle icon inside class pf-c-accordion__toggle-icon', ()
     </AccordionContext.Provider>
   );
 
-  expect(screen.getByText('Icon mock')).toHaveClass('pf-c-accordion__toggle-icon');
+  expect(screen.getByText('Icon mock')).toHaveClass('pf-v5-c-accordion__toggle-icon');
 });
 
 test('Renders with the id prop passed to the toggle', () => {

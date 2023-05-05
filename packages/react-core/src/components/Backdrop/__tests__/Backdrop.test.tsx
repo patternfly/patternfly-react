@@ -18,12 +18,12 @@ test('Renders children', () => {
 
 test('Renders with the pf-c-backdrop', () => {
   render(<Backdrop>Test</Backdrop>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-backdrop');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-backdrop');
 });
 
 test('Renders with only the class pf-c-backdrop by default', () => {
   render(<Backdrop>Test</Backdrop>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-backdrop', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-backdrop', { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {

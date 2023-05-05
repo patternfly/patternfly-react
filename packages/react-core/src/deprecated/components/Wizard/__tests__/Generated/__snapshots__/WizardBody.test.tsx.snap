@@ -3,10 +3,10 @@
 exports[`WizardBody should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-wizard__main"
+    class="pf-v5-c-wizard__main"
   >
     <div
-      class="pf-c-wizard__main-body"
+      class="pf-v5-c-wizard__main-body"
     >
       any
     </div>

@@ -3,7 +3,7 @@
 exports[`TextContent should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-content ''"
+    class="pf-v5-c-content ''"
   >
     ReactNode
   </div>

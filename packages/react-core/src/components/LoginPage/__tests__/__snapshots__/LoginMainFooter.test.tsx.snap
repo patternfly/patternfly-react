@@ -3,7 +3,7 @@
 exports[`LoginMainFooter className is added to the root element 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-login__main-footer extra-class"
+    class="pf-v5-c-login__main-footer extra-class"
   />
 </DocumentFragment>
 `;
@@ -11,7 +11,7 @@ exports[`LoginMainFooter className is added to the root element 1`] = `
 exports[`LoginMainFooter renders with PatternFly Core styles 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-login__main-footer"
+    class="pf-v5-c-login__main-footer"
   />
 </DocumentFragment>
 `;

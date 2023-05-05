@@ -18,12 +18,12 @@ test('Renders children', () => {
 
 test('Renders with only class name pf-c-sidebar by default', () => {
   render(<Sidebar>Test</Sidebar>);
-  expect(screen.getByText('Test').parentElement).toHaveClass('pf-c-sidebar', { exact: true });
+  expect(screen.getByText('Test').parentElement).toHaveClass('pf-v5-c-sidebar', { exact: true });
 });
 
 test('Renders with class name pf-c-sidebar', () => {
   render(<Sidebar>Test</Sidebar>);
-  expect(screen.getByText('Test').parentElement).toHaveClass('pf-c-sidebar');
+  expect(screen.getByText('Test').parentElement).toHaveClass('pf-v5-c-sidebar');
 });
 
 test('Renders with custom class name when className prop is provided', () => {
@@ -63,7 +63,7 @@ test('Renders with class name pf-m-gutter when hasGutter prop is passed', () => 
 
 test('Renders with class name pf-m-sidebar__main by default for child component', () => {
   render(<Sidebar>Test</Sidebar>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-sidebar__main');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-sidebar__main');
 });
 
 test('Renders with inherited element props spread to the component', () => {

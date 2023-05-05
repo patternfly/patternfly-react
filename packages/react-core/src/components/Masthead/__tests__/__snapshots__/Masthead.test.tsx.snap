@@ -3,7 +3,7 @@
 exports[`Masthead verify basic 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline-on-md"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md"
   >
     test
   </header>
@@ -13,7 +13,7 @@ exports[`Masthead verify basic 1`] = `
 exports[`Masthead verify custom class 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline-on-md custom-css"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md custom-css"
   >
     test
   </header>
@@ -23,24 +23,24 @@ exports[`Masthead verify custom class 1`] = `
 exports[`Masthead verify full structure 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline-on-md"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md"
   >
     <span
-      class="pf-c-masthead__toggle"
+      class="pf-v5-c-masthead__toggle"
     >
       Toggle
     </span>
     <div
-      class="pf-c-masthead__main"
+      class="pf-v5-c-masthead__main"
     >
       <span
-        class="pf-c-masthead__brand"
+        class="pf-v5-c-masthead__brand"
       >
         Logo
       </span>
     </div>
     <div
-      class="pf-c-masthead__content"
+      class="pf-v5-c-masthead__content"
     >
       <span>
         Content
@@ -53,7 +53,7 @@ exports[`Masthead verify full structure 1`] = `
 exports[`Masthead verify inline display breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline pf-m-display-inline-on-sm pf-m-display-inline-on-md pf-m-display-inline-on-lg pf-m-display-inline-on-xl pf-m-display-inline-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline pf-m-display-inline-on-sm pf-m-display-inline-on-md pf-m-display-inline-on-lg pf-m-display-inline-on-xl pf-m-display-inline-on-2xl"
   >
     test
   </header>
@@ -63,7 +63,7 @@ exports[`Masthead verify inline display breakpoints 1`] = `
 exports[`Masthead verify inset2xl inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline-on-md pf-m-inset-2xl pf-m-inset-2xl-on-sm pf-m-inset-2xl-on-md pf-m-inset-2xl-on-lg pf-m-inset-2xl-on-xl pf-m-inset-2xl-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-2xl pf-m-inset-2xl-on-sm pf-m-inset-2xl-on-md pf-m-inset-2xl-on-lg pf-m-inset-2xl-on-xl pf-m-inset-2xl-on-2xl"
   >
     test
   </header>
@@ -73,7 +73,7 @@ exports[`Masthead verify inset2xl inset breakpoints 1`] = `
 exports[`Masthead verify inset3xl inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline-on-md"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md"
   >
     test
   </header>
@@ -83,7 +83,7 @@ exports[`Masthead verify inset3xl inset breakpoints 1`] = `
 exports[`Masthead verify insetLg inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline-on-md pf-m-inset-lg pf-m-inset-lg-on-sm pf-m-inset-lg-on-md pf-m-inset-lg-on-lg pf-m-inset-lg-on-xl pf-m-inset-lg-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-lg pf-m-inset-lg-on-sm pf-m-inset-lg-on-md pf-m-inset-lg-on-lg pf-m-inset-lg-on-xl pf-m-inset-lg-on-2xl"
   >
     test
   </header>
@@ -93,7 +93,7 @@ exports[`Masthead verify insetLg inset breakpoints 1`] = `
 exports[`Masthead verify insetMd inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline-on-md pf-m-inset-md pf-m-inset-md-on-sm pf-m-inset-md-on-md pf-m-inset-md-on-lg pf-m-inset-md-on-xl pf-m-inset-md-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-md pf-m-inset-md-on-sm pf-m-inset-md-on-md pf-m-inset-md-on-lg pf-m-inset-md-on-xl pf-m-inset-md-on-2xl"
   >
     test
   </header>
@@ -103,7 +103,7 @@ exports[`Masthead verify insetMd inset breakpoints 1`] = `
 exports[`Masthead verify insetNone inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline-on-md pf-m-inset-none pf-m-inset-none-on-sm pf-m-inset-none-on-md pf-m-inset-none-on-lg pf-m-inset-none-on-xl pf-m-inset-none-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-none pf-m-inset-none-on-sm pf-m-inset-none-on-md pf-m-inset-none-on-lg pf-m-inset-none-on-xl pf-m-inset-none-on-2xl"
   >
     test
   </header>
@@ -113,7 +113,7 @@ exports[`Masthead verify insetNone inset breakpoints 1`] = `
 exports[`Masthead verify insetSm inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline-on-md pf-m-inset-sm pf-m-inset-sm-on-sm pf-m-inset-sm-on-md pf-m-inset-sm-on-lg pf-m-inset-sm-on-xl pf-m-inset-sm-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-sm pf-m-inset-sm-on-sm pf-m-inset-sm-on-md pf-m-inset-sm-on-lg pf-m-inset-sm-on-xl pf-m-inset-sm-on-2xl"
   >
     test
   </header>
@@ -123,7 +123,7 @@ exports[`Masthead verify insetSm inset breakpoints 1`] = `
 exports[`Masthead verify insetXl inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline-on-md pf-m-inset-xl pf-m-inset-xl-on-sm pf-m-inset-xl-on-md pf-m-inset-xl-on-lg pf-m-inset-xl-on-xl pf-m-inset-xl-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-xl pf-m-inset-xl-on-sm pf-m-inset-xl-on-md pf-m-inset-xl-on-lg pf-m-inset-xl-on-xl pf-m-inset-xl-on-2xl"
   >
     test
   </header>
@@ -133,7 +133,7 @@ exports[`Masthead verify insetXl inset breakpoints 1`] = `
 exports[`Masthead verify insetXs inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-inline-on-md"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md"
   >
     test
   </header>
@@ -143,7 +143,7 @@ exports[`Masthead verify insetXs inset breakpoints 1`] = `
 exports[`Masthead verify stack display breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-masthead pf-m-display-stack pf-m-display-stack-on-sm pf-m-display-stack-on-md pf-m-display-stack-on-lg pf-m-display-stack-on-xl pf-m-display-stack-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-stack pf-m-display-stack-on-sm pf-m-display-stack-on-md pf-m-display-stack-on-lg pf-m-display-stack-on-xl pf-m-display-stack-on-2xl"
   >
     test
   </header>
@@ -153,7 +153,7 @@ exports[`Masthead verify stack display breakpoints 1`] = `
 exports[`MastheadBrand verify anchor component with href 1`] = `
 <DocumentFragment>
   <a
-    class="pf-c-masthead__brand"
+    class="pf-v5-c-masthead__brand"
     href="#"
     tabindex="0"
   >
@@ -165,7 +165,7 @@ exports[`MastheadBrand verify anchor component with href 1`] = `
 exports[`MastheadBrand verify basic 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-masthead__brand"
+    class="pf-v5-c-masthead__brand"
   >
     test
   </span>
@@ -175,7 +175,7 @@ exports[`MastheadBrand verify basic 1`] = `
 exports[`MastheadBrand verify custom class 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-masthead__brand custom-css"
+    class="pf-v5-c-masthead__brand custom-css"
   >
     test
   </span>
@@ -185,7 +185,7 @@ exports[`MastheadBrand verify custom class 1`] = `
 exports[`MastheadBrand verify custom component 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-masthead__brand"
+    class="pf-v5-c-masthead__brand"
   >
     test
   </div>
@@ -195,7 +195,7 @@ exports[`MastheadBrand verify custom component 1`] = `
 exports[`MastheadBrand verify default component 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-masthead__brand"
+    class="pf-v5-c-masthead__brand"
   >
     test
   </span>
@@ -205,7 +205,7 @@ exports[`MastheadBrand verify default component 1`] = `
 exports[`MastheadContent verify basic 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-masthead__content"
+    class="pf-v5-c-masthead__content"
   >
     test
   </div>
@@ -215,7 +215,7 @@ exports[`MastheadContent verify basic 1`] = `
 exports[`MastheadContent verify custom class 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-masthead__content custom-css"
+    class="pf-v5-c-masthead__content custom-css"
   >
     test
   </div>
@@ -225,7 +225,7 @@ exports[`MastheadContent verify custom class 1`] = `
 exports[`MastheadMain verify basic 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-masthead__main"
+    class="pf-v5-c-masthead__main"
   >
     test
   </div>
@@ -235,7 +235,7 @@ exports[`MastheadMain verify basic 1`] = `
 exports[`MastheadMain verify custom class 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-masthead__main custom-css"
+    class="pf-v5-c-masthead__main custom-css"
   >
     test
   </div>
@@ -245,7 +245,7 @@ exports[`MastheadMain verify custom class 1`] = `
 exports[`MastheadToggle verify basic 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-masthead__toggle"
+    class="pf-v5-c-masthead__toggle"
   >
     test
   </span>
@@ -255,7 +255,7 @@ exports[`MastheadToggle verify basic 1`] = `
 exports[`MastheadToggle verify custom class 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-masthead__toggle custom-css"
+    class="pf-v5-c-masthead__toggle custom-css"
   >
     test
   </span>

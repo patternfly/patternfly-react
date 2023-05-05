@@ -52,7 +52,7 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
     if (
       !menuRef.current ||
       (menuRef.current !== (event.target as HTMLElement).closest('.pf-c-dual-list-selector__menu') &&
-        !Array.from(menuRef.current.getElementsByClassName('pf-c-dual-list-selector__menu')).includes(
+        !Array.from(menuRef.current.getElementsByClassName('pf-v5-c-dual-list-selector__menu')).includes(
           (event.target as HTMLElement).closest('.pf-c-dual-list-selector__menu')
         ))
     ) {
@@ -66,7 +66,7 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
           )
         ) as Element[])
       : (Array.from(menuRef.current.getElementsByTagName('LI')) as Element[]).filter(
-          el => !el.classList.contains('pf-m-disabled')
+          (el) => !el.classList.contains('pf-m-disabled')
         );
     const activeElement = document.activeElement;
     handleArrows(

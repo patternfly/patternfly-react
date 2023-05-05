@@ -3,10 +3,10 @@
 exports[`Flex Nested flex 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-flex"
+    class="pf-v5-l-flex"
   >
     <div
-      class="pf-l-flex"
+      class="pf-v5-l-flex"
     >
       <div
         class=""
@@ -21,7 +21,7 @@ exports[`Flex Nested flex 1`] = `
 exports[`Flex Simple flex with single item 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-flex"
+    class="pf-v5-l-flex"
   >
     <div
       class=""
@@ -35,7 +35,7 @@ exports[`Flex Simple flex with single item 1`] = `
 exports[`Flex alternative component 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-l-flex"
+    class="pf-v5-l-flex"
   >
     <li
       class=""

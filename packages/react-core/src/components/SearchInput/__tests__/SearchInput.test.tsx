@@ -30,7 +30,7 @@ describe('SearchInput', () => {
 
   test('result count', () => {
     render(<SearchInput {...props} resultsCount={3} aria-label="simple text input" data-testid="test-id" />);
-    expect(screen.getByTestId('test-id').querySelector('.pf-c-badge')).toBeInTheDocument();
+    expect(screen.getByTestId('test-id').querySelector('.pf-v5-c-badge')).toBeInTheDocument();
   });
 
   test('renders search input in strict mode', async () => {
@@ -64,8 +64,8 @@ describe('SearchInput', () => {
     render(<SearchInput {...props} resultsCount="3 / 7" aria-label="simple text input" data-testid="test-id" />);
 
     const input = screen.getByTestId('test-id');
-    expect(input.querySelector('.pf-c-text-input-group__group')).toBeInTheDocument();
-    expect(input.querySelector('.pf-c-badge')).toBeInTheDocument();
+    expect(input.querySelector('.pf-v5-c-text-input-group__group')).toBeInTheDocument();
+    expect(input.querySelector('.pf-v5-c-badge')).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Previous' }));
     expect(props.onPreviousClick).toHaveBeenCalled();

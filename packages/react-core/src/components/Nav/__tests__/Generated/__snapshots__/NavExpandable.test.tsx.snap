@@ -3,25 +3,25 @@
 exports[`NavExpandable should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-nav__item pf-m-expandable ''"
+    class="pf-v5-c-nav__item pf-m-expandable ''"
     data-ouia-component-id="OUIA-Generated-NavExpandable-1"
     data-ouia-component-type="PF4/NavExpandable"
     data-ouia-safe="true"
   >
     <button
       aria-expanded="false"
-      class="pf-c-nav__link"
+      class="pf-v5-c-nav__link"
     >
       string
       <span
-        class="pf-c-nav__toggle"
+        class="pf-v5-c-nav__toggle"
       >
         <span
-          class="pf-c-nav__toggle-icon"
+          class="pf-v5-c-nav__toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -35,17 +35,17 @@ exports[`NavExpandable should match snapshot (auto-generated) 1`] = `
     </button>
     <section
       aria-labelledby="''"
-      class="pf-c-nav__subnav"
+      class="pf-v5-c-nav__subnav"
       hidden=""
     >
       <h2
-        class="pf-u-screen-reader"
+        class="pf-v5-u-screen-reader"
         id="''"
       >
         ''
       </h2>
       <ul
-        class="pf-c-nav__list"
+        class="pf-v5-c-nav__list"
         role="list"
       />
     </section>

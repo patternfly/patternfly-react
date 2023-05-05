@@ -3,30 +3,30 @@
 exports[`Detached ExpandableSection renders successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-expandable-section pf-m-expanded pf-m-detached"
+    class="pf-v5-c-expandable-section pf-m-expanded pf-m-detached"
   >
     <div
-      class="pf-c-expandable-section__content"
+      class="pf-v5-c-expandable-section__content"
       id="test"
     >
       test
     </div>
   </div>
   <div
-    class="pf-c-expandable-section pf-m-expanded pf-m-detached"
+    class="pf-v5-c-expandable-section pf-m-expanded pf-m-detached"
   >
     <button
       aria-controls="test"
       aria-expanded="true"
-      class="pf-c-expandable-section__toggle"
+      class="pf-v5-c-expandable-section__toggle"
       type="button"
     >
       <span
-        class="pf-c-expandable-section__toggle-icon pf-m-expand-top"
+        class="pf-v5-c-expandable-section__toggle-icon pf-m-expand-top"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 256 512"
@@ -37,7 +37,7 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
         </svg>
       </span>
       <span
-        class="pf-c-expandable-section__toggle-text"
+        class="pf-v5-c-expandable-section__toggle-text"
       >
         Toggle text
       </span>
@@ -49,18 +49,18 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
 exports[`Disclosure ExpandableSection 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-expandable-section pf-m-display-lg pf-m-limit-width"
+    class="pf-v5-c-expandable-section pf-m-display-lg pf-m-limit-width"
   >
     <button
-      class="pf-c-expandable-section__toggle"
+      class="pf-v5-c-expandable-section__toggle"
       type="button"
     >
       <span
-        class="pf-c-expandable-section__toggle-icon"
+        class="pf-v5-c-expandable-section__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 256 512"
@@ -71,11 +71,11 @@ exports[`Disclosure ExpandableSection 1`] = `
         </svg>
       </span>
       <span
-        class="pf-c-expandable-section__toggle-text"
+        class="pf-v5-c-expandable-section__toggle-text"
       />
     </button>
     <div
-      class="pf-c-expandable-section__content"
+      class="pf-v5-c-expandable-section__content"
       hidden=""
       id=""
     >
@@ -88,18 +88,18 @@ exports[`Disclosure ExpandableSection 1`] = `
 exports[`ExpandableSection 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-expandable-section"
+    class="pf-v5-c-expandable-section"
   >
     <button
-      class="pf-c-expandable-section__toggle"
+      class="pf-v5-c-expandable-section__toggle"
       type="button"
     >
       <span
-        class="pf-c-expandable-section__toggle-icon"
+        class="pf-v5-c-expandable-section__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 256 512"
@@ -110,11 +110,11 @@ exports[`ExpandableSection 1`] = `
         </svg>
       </span>
       <span
-        class="pf-c-expandable-section__toggle-text"
+        class="pf-v5-c-expandable-section__toggle-text"
       />
     </button>
     <div
-      class="pf-c-expandable-section__content"
+      class="pf-v5-c-expandable-section__content"
       hidden=""
       id=""
     >
@@ -127,19 +127,19 @@ exports[`ExpandableSection 1`] = `
 exports[`Renders ExpandableSection expanded 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-expandable-section pf-m-expanded"
+    class="pf-v5-c-expandable-section pf-m-expanded"
   >
     <button
       aria-expanded="true"
-      class="pf-c-expandable-section__toggle"
+      class="pf-v5-c-expandable-section__toggle"
       type="button"
     >
       <span
-        class="pf-c-expandable-section__toggle-icon"
+        class="pf-v5-c-expandable-section__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 256 512"
@@ -150,11 +150,11 @@ exports[`Renders ExpandableSection expanded 1`] = `
         </svg>
       </span>
       <span
-        class="pf-c-expandable-section__toggle-text"
+        class="pf-v5-c-expandable-section__toggle-text"
       />
     </button>
     <div
-      class="pf-c-expandable-section__content"
+      class="pf-v5-c-expandable-section__content"
       id=""
     >
        test 
@@ -166,19 +166,19 @@ exports[`Renders ExpandableSection expanded 1`] = `
 exports[`Renders ExpandableSection indented 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-expandable-section pf-m-expanded pf-m-indented"
+    class="pf-v5-c-expandable-section pf-m-expanded pf-m-indented"
   >
     <button
       aria-expanded="true"
-      class="pf-c-expandable-section__toggle"
+      class="pf-v5-c-expandable-section__toggle"
       type="button"
     >
       <span
-        class="pf-c-expandable-section__toggle-icon"
+        class="pf-v5-c-expandable-section__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 256 512"
@@ -189,11 +189,11 @@ exports[`Renders ExpandableSection indented 1`] = `
         </svg>
       </span>
       <span
-        class="pf-c-expandable-section__toggle-text"
+        class="pf-v5-c-expandable-section__toggle-text"
       />
     </button>
     <div
-      class="pf-c-expandable-section__content"
+      class="pf-v5-c-expandable-section__content"
       id=""
     >
        test 
@@ -205,18 +205,18 @@ exports[`Renders ExpandableSection indented 1`] = `
 exports[`Renders Uncontrolled ExpandableSection 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-expandable-section"
+    class="pf-v5-c-expandable-section"
   >
     <button
-      class="pf-c-expandable-section__toggle"
+      class="pf-v5-c-expandable-section__toggle"
       type="button"
     >
       <span
-        class="pf-c-expandable-section__toggle-icon"
+        class="pf-v5-c-expandable-section__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 256 512"
@@ -227,13 +227,13 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
         </svg>
       </span>
       <span
-        class="pf-c-expandable-section__toggle-text"
+        class="pf-v5-c-expandable-section__toggle-text"
       >
         Show More
       </span>
     </button>
     <div
-      class="pf-c-expandable-section__content"
+      class="pf-v5-c-expandable-section__content"
       hidden=""
       id=""
     >

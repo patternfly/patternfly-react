@@ -7,7 +7,7 @@ exports[`Matches snapshot 1`] = `
     aria-label="Toggle variantLabel alert: title"
   >
     <span
-      class="pf-c-alert__toggle-icon"
+      class="pf-v5-c-alert__toggle-icon"
     >
       Icon mock
     </span>

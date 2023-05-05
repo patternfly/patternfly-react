@@ -3,10 +3,10 @@
 exports[`NotificationDrawerListItemBody list item body with timestamp property applied 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-notification-drawer__list-item-description"
+    class="pf-v5-c-notification-drawer__list-item-description"
   />
   <div
-    class="pf-c-notification-drawer__list-item-timestamp"
+    class="pf-v5-c-notification-drawer__list-item-timestamp"
   >
     5 minutes ago
   </div>
@@ -16,7 +16,7 @@ exports[`NotificationDrawerListItemBody list item body with timestamp property a
 exports[`NotificationDrawerListItemBody renders with PatternFly Core styles 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-notification-drawer__list-item-description"
+    class="pf-v5-c-notification-drawer__list-item-description"
   />
 </DocumentFragment>
 `;

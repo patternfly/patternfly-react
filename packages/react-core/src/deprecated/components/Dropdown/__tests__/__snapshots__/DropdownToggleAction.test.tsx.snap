@@ -5,7 +5,7 @@ exports[`isDisabled 1`] = `
   <button
     aria-disabled="true"
     aria-label="action"
-    class="pf-c-dropdown__toggle-button"
+    class="pf-v5-c-dropdown__toggle-button"
     disabled=""
     id="action"
   />
@@ -16,7 +16,7 @@ exports[`passing class 1`] = `
 <DocumentFragment>
   <button
     aria-label="action"
-    class="pf-c-dropdown__toggle-button abc"
+    class="pf-v5-c-dropdown__toggle-button abc"
     id="action"
   />
 </DocumentFragment>
@@ -26,7 +26,7 @@ exports[`renders with text 1`] = `
 <DocumentFragment>
   <button
     aria-label="action"
-    class="pf-c-dropdown__toggle-button"
+    class="pf-v5-c-dropdown__toggle-button"
     id="action"
   />
 </DocumentFragment>

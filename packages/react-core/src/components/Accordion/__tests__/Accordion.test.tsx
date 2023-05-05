@@ -37,7 +37,7 @@ test('Renders with inherited element props spread to the component', () => {
 test('Renders with class name pf-c-accordion', () => {
   render(<Accordion>Test</Accordion>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-c-accordion');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-accordion');
 });
 
 test('Renders with custom class names provided via prop', () => {

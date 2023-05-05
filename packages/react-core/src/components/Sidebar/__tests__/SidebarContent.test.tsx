@@ -9,12 +9,12 @@ test('Renders children', () => {
 
 test('Renders with only class name pf-c-sidebar__content by default', () => {
   render(<SidebarContent>Test</SidebarContent>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-sidebar__content', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-sidebar__content', { exact: true });
 });
 
 test('Renders with class name pf-c-sidebar__content', () => {
   render(<SidebarContent>Test</SidebarContent>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-sidebar__content');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-sidebar__content');
 });
 
 test('Renders with custom class name when className prop is provided', () => {
