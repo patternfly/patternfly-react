@@ -11,40 +11,28 @@ describe('Menu Test', () => {
   });
 
   it('Verify Icons Menu', () => {
-    cy.get('#menu-with-icons.pf-c-menu').should('exist');
+    cy.get('#menu-with-icons.pf-v5-c-menu').should('exist');
 
-    cy.get('.pf-c-menu__item-icon > svg')
-      .eq(0)
-      .should('have.attr', 'id', 'code-branch-icon');
+    cy.get('.pf-v5-c-menu__item-icon > svg').eq(0).should('have.attr', 'id', 'code-branch-icon');
 
-    cy.get('.pf-c-menu__item-icon > svg')
-      .eq(1)
-      .should('have.attr', 'id', 'layer-group-icon');
+    cy.get('.pf-v5-c-menu__item-icon > svg').eq(1).should('have.attr', 'id', 'layer-group-icon');
 
-    cy.get('.pf-c-menu__item-icon > svg')
-      .eq(2)
-      .should('have.attr', 'id', 'cube-icon');
+    cy.get('.pf-v5-c-menu__item-icon > svg').eq(2).should('have.attr', 'id', 'cube-icon');
   });
 
   it.skip('Verify Flyout Menu', () => {
-    cy.get('.pf-c-menu.pf-m-flyout').should('exist');
+    cy.get('.pf-v5-c-menu.pf-m-flyout').should('exist');
 
     cy.get('#edit').click();
   });
 
   it('Verify Filterable Menu', () => {
-    cy.get('#filterable-menu.pf-c-menu > div')
-      .first()
-      .should('have.class', 'pf-c-menu__search');
+    cy.get('#filterable-menu.pf-v5-c-menu > div').first().should('have.class', 'pf-v5-c-menu__search');
 
-    cy.get('.pf-c-text-input-group__text-input').type('Action 1');
+    cy.get('.pf-v5-c-text-input-group__text-input').type('Action 1');
 
-    cy.get('#filtered-items-0')
-      .last()
-      .should('contain', 'Action 1');
-    cy.get('#filtered-items-0')
-      .children()
-      .should('not.contain', 'Action 2');
+    cy.get('#filtered-items-0').last().should('contain', 'Action 1');
+    cy.get('#filtered-items-0').children().should('not.contain', 'Action 2');
   });
 
   it('Verify Menu with Links', () => {
@@ -54,9 +42,7 @@ describe('Menu Test', () => {
   });
 
   it('Verify Menu with Separator', () => {
-    cy.get('#menu-with-separators.pf-c-menu > ul > li')
-      .eq(2)
-      .should('have.attr', 'id', 'separator');
+    cy.get('#menu-with-separators.pf-v5-c-menu > ul > li').eq(2).should('have.attr', 'id', 'separator');
   });
 
   it('Verify Menu with Titled Groups', () => {
@@ -67,72 +53,53 @@ describe('Menu Test', () => {
   });
 
   it('Verify Menu with Description', () => {
-    cy.get('#description-item-1')
-      .last()
-      .should('contain', 'Description');
+    cy.get('#description-item-1').last().should('contain', 'Description');
   });
 
   it('Verify Menu with Actions', () => {
-    cy.get('#actions-list.pf-c-menu__list > li > button')
-      .last()
-      .should('have.class', 'pf-c-menu__item-action');
+    cy.get('#actions-list.pf-v5-c-menu__list > li > button').last().should('have.class', 'pf-v5-c-menu__item-action');
   });
 
   it('Verify Menu with Favorites', () => {
-    cy.get('.pf-c-menu__item-action.pf-m-favorite')
-      .first()
-      .click();
+    cy.get('.pf-v5-c-menu__item-action.pf-m-favorite').first().click();
 
-    cy.get('#favorites-menu.pf-c-menu > section')
-      .first()
-      .should('contain', 'Favorites');
+    cy.get('#favorites-menu.pf-v5-c-menu > section').first().should('contain', 'Favorites');
   });
 
   it('Verify Single Select Menu', () => {
-    cy.get('#single-select-menu.pf-c-menu').should('exist');
+    cy.get('#single-select-menu.pf-v5-c-menu').should('exist');
 
     cy.get('#single-select-item-2').click();
 
-    cy.get('#single-select-item-3')
-      .click()
-      .should('have.class', 'pf-m-selected');
+    cy.get('#single-select-item-3').click().should('have.class', 'pf-m-selected');
 
     cy.get('#single-select-item-1').should('not.have.class', 'pf-m-selected');
   });
 
   it('Verify Multi Select Menu', () => {
-    cy.get('#multi-select-menu.pf-c-menu').should('exist');
+    cy.get('#multi-select-menu.pf-v5-c-menu').should('exist');
 
     cy.get('#multi-select-item-1').should('have.class', 'pf-m-selected');
 
-    cy.get('#multi-select-item-2')
-      .click()
-      .should('have.class', 'pf-m-selected');
+    cy.get('#multi-select-item-2').click().should('have.class', 'pf-m-selected');
 
     cy.get('#multi-select-item-3').should('have.class', 'pf-m-selected');
   });
 
   it('Verify Footer Menu', () => {
-    cy.get('#menu-footer.pf-c-menu').should('exist');
+    cy.get('#menu-footer.pf-v5-c-menu').should('exist');
 
-    cy.get('#menu-footer .pf-c-menu__footer').should('exist');
+    cy.get('#menu-footer .pf-v5-c-menu__footer').should('exist');
   });
 
   it('Verify View More Menu', () => {
-    cy.get('#menu-view-more.pf-c-menu').should('exist');
+    cy.get('#menu-view-more.pf-v5-c-menu').should('exist');
 
-    cy.get('#menu-view-more .pf-c-menu__list')
-      .find('.pf-c-menu__list-item')
-      .should('have.length', 4);
+    cy.get('#menu-view-more .pf-v5-c-menu__list').find('.pf-v5-c-menu__list-item').should('have.length', 4);
 
-    cy.get('#menu-view-more .pf-c-menu__list-item')
-      .last()
-      .should('have.text', 'View more')
-      .click();
+    cy.get('#menu-view-more .pf-v5-c-menu__list-item').last().should('have.text', 'View more').click();
 
-    cy.get('#menu-view-more .pf-c-menu__list')
-      .find('.pf-c-menu__list-item')
-      .should('have.length', 7);
+    cy.get('#menu-view-more .pf-v5-c-menu__list').find('.pf-v5-c-menu__list-item').should('have.length', 7);
   });
 
   it('Navigate to drilldown demo section', () => {

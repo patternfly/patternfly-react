@@ -25,8 +25,8 @@ describe('Card Demo Test', () => {
 
   it('Verify card is expandable', () => {
     cy.get('#expand-card').should('not.have.class', 'pf-m-expanded');
-    cy.get('#expand-card .pf-c-card__header').should('have.class', 'pf-m-toggle-right');
-    cy.get('.pf-c-card__header-toggle .pf-c-button').click();
+    cy.get('#expand-card .pf-v5-c-card__header').should('have.class', 'pf-m-toggle-right');
+    cy.get('.pf-v5-c-card__header-toggle .pf-v5-c-button').click();
     cy.get('#expand-card').should('have.class', 'pf-m-expanded');
   });
 });

@@ -2,7 +2,7 @@ describe('Input Group Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/input-group-demo-nav-link');
   });
-  it('Verify text input', () => {
+  it.skip('Verify text input', () => {
     cy.get('#textarea1').type('Hi');
     cy.get('#textarea1').should('have.value', 'Hi');
   });

@@ -8,27 +8,17 @@ describe('Table Simple Actions Test', () => {
   });
 
   it('Check number of rows', () => {
-    cy.get('.pf-c-table')
-      .find('tr')
-      .should('have.length', 4);
+    cy.get('.pf-v5-c-table').find('tr').should('have.length', 4);
   });
 
   it('Check number of columns', () => {
-    cy.get('thead')
-      .find('th')
-      .should('have.length', 5);
+    cy.get('thead').find('th').should('have.length', 5);
   });
 
   it('Verify dropdown toggle', () => {
-    cy.get('td .pf-c-menu-toggle')
-      .first()
-      .should('exist');
-    cy.get('td .pf-c-menu-toggle')
-      .first()
-      .click();
-    cy.get('.pf-c-menu').should('exist');
-    cy.get('.pf-c-menu__item')
-      .first()
-      .click();
+    cy.get('td .pf-v5-c-menu-toggle').first().should('exist');
+    cy.get('td .pf-v5-c-menu-toggle').first().click();
+    cy.get('.pf-v5-c-menu').should('exist');
+    cy.get('.pf-v5-c-menu__item').first().click();
   });
 });

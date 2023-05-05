@@ -10,8 +10,8 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('displays OverflowMenuContent', () => {
-        cy.get('#simple-overflow-menu .pf-c-overflow-menu__content').should('exist');
-        cy.get('#simple-overflow-menu .pf-c-overflow-menu__control').should('not.exist');
+        cy.get('#simple-overflow-menu .pf-v5-c-overflow-menu__content').should('exist');
+        cy.get('#simple-overflow-menu .pf-v5-c-overflow-menu__control').should('not.exist');
       });
     });
 
@@ -21,24 +21,20 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('displays OverflowMenuControl', () => {
-        cy.get('#simple-overflow-menu .pf-c-overflow-menu__control').should('exist');
-        cy.get('#simple-overflow-menu .pf-c-overflow-menu__content').should('not.exist');
+        cy.get('#simple-overflow-menu .pf-v5-c-overflow-menu__control').should('exist');
+        cy.get('#simple-overflow-menu .pf-v5-c-overflow-menu__content').should('not.exist');
       });
 
       it('Verify toggle dropdown', () => {
-        cy.get('#simple-overflow-menu button').should('have.class', 'pf-c-menu-toggle');
+        cy.get('#simple-overflow-menu button').should('have.class', 'pf-v5-c-menu-toggle');
       });
 
       it('Verify dropdown menu expanded', () => {
-        cy.get('#simple-overflow-menu button')
-          .last()
-          .click({ force: true });
-        cy.get('#simple-overflow-menu .pf-c-menu-toggle').should('have.class', 'pf-m-expanded');
-        cy.get('#simple-overflow-menu .pf-c-menu').should('be.visible');
+        cy.get('#simple-overflow-menu button').last().click({ force: true });
+        cy.get('#simple-overflow-menu .pf-v5-c-menu-toggle').should('have.class', 'pf-m-expanded');
+        cy.get('#simple-overflow-menu .pf-v5-c-menu').should('be.visible');
         // close overflow menu again
-        cy.get('#simple-overflow-menu button')
-          .last()
-          .click({ force: true });
+        cy.get('#simple-overflow-menu button').last().click({ force: true });
       });
     });
   });
@@ -51,7 +47,7 @@ describe('OverflowMenu Demo Test', () => {
 
       it('displays OverflowMenuContent and OverflowMenuControl', () => {
         cy.get(
-          '#additional-options-overflow-menu .pf-c-overflow-menu__content, #additional-options-overflow-menu .pf-c-overflow-menu__control'
+          '#additional-options-overflow-menu .pf-v5-c-overflow-menu__content, #additional-options-overflow-menu .pf-v5-c-overflow-menu__control'
         ).should('be.visible');
       });
     });
@@ -62,20 +58,18 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('displays OverflowMenuControl', () => {
-        cy.get('#additional-options-overflow-menu .pf-c-overflow-menu__control').should('exist');
-        cy.get('#additional-options-overflow-menu .pf-c-overflow-menu__content').should('not.exist');
+        cy.get('#additional-options-overflow-menu .pf-v5-c-overflow-menu__control').should('exist');
+        cy.get('#additional-options-overflow-menu .pf-v5-c-overflow-menu__content').should('not.exist');
       });
 
       it('Verify toggle dropdown', () => {
-        cy.get('#additional-options-overflow-menu button').should('have.class', 'pf-c-menu-toggle');
+        cy.get('#additional-options-overflow-menu button').should('have.class', 'pf-v5-c-menu-toggle');
       });
 
       it('Verify dropdown menu expanded', () => {
-        cy.get('#additional-options-overflow-menu button')
-          .last()
-          .click({ force: true });
-        cy.get('#additional-options-overflow-menu .pf-c-menu-toggle').should('have.class', 'pf-m-expanded');
-        cy.get('#additional-options-overflow-menu .pf-c-menu').should('be.visible');
+        cy.get('#additional-options-overflow-menu button').last().click({ force: true });
+        cy.get('#additional-options-overflow-menu .pf-v5-c-menu-toggle').should('have.class', 'pf-m-expanded');
+        cy.get('#additional-options-overflow-menu .pf-v5-c-menu').should('be.visible');
       });
     });
   });
@@ -88,7 +82,7 @@ describe('OverflowMenu Demo Test', () => {
 
       it('displays OverflowMenuContent and OverflowMenuControl', () => {
         cy.get(
-          '#persist-overflow-menu .pf-c-overflow-menu__content, #persist-overflow-menu .pf-c-overflow-menu__control'
+          '#persist-overflow-menu .pf-v5-c-overflow-menu__content, #persist-overflow-menu .pf-v5-c-overflow-menu__control'
         ).should('be.visible');
       });
     });
@@ -99,23 +93,21 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('displays OverflowMenuControl and Persistent items', () => {
-        cy.get('#persist-overflow-menu .pf-c-overflow-menu__control').should('be.visible');
+        cy.get('#persist-overflow-menu .pf-v5-c-overflow-menu__control').should('be.visible');
         cy.get(
-          `#persist-overflow-menu .pf-c-overflow-menu__content .pf-c-overflow-menu__group,
-        #persist-overflow-menu .pf-c-overflow-menu__content .pf-c-overflow-menu__item`
+          `#persist-overflow-menu .pf-v5-c-overflow-menu__content .pf-v5-c-overflow-menu__group,
+        #persist-overflow-menu .pf-v5-c-overflow-menu__content .pf-v5-c-overflow-menu__item`
         ).should('be.visible');
       });
 
       it('Verify toggle dropdown', () => {
-        cy.get('#persist-overflow-menu button').should('have.class', 'pf-c-menu-toggle');
+        cy.get('#persist-overflow-menu button').should('have.class', 'pf-v5-c-menu-toggle');
       });
 
       it('Verify dropdown menu expanded', () => {
-        cy.get('#persist-overflow-menu button')
-          .last()
-          .click({ force: true });
-        cy.get('#persist-overflow-menu .pf-c-menu-toggle').should('have.class', 'pf-m-expanded');
-        cy.get('#persist-overflow-menu .pf-c-menu').should('be.visible');
+        cy.get('#persist-overflow-menu button').last().click({ force: true });
+        cy.get('#persist-overflow-menu .pf-v5-c-menu-toggle').should('have.class', 'pf-m-expanded');
+        cy.get('#persist-overflow-menu .pf-v5-c-menu').should('be.visible');
       });
     });
   });
@@ -127,8 +119,8 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('displays OverflowMenuContent', () => {
-        cy.get('#container-breakpoint-overflow-menu .pf-c-overflow-menu__content').should('exist');
-        cy.get('#container-breakpoint-overflow-menu .pf-c-overflow-menu__control').should('not.exist');
+        cy.get('#container-breakpoint-overflow-menu .pf-v5-c-overflow-menu__content').should('exist');
+        cy.get('#container-breakpoint-overflow-menu .pf-v5-c-overflow-menu__control').should('not.exist');
       });
     });
 
@@ -139,24 +131,20 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('displays OverflowMenuControl', () => {
-        cy.get('#container-breakpoint-overflow-menu .pf-c-overflow-menu__control').should('exist');
-        cy.get('#container-breakpoint-overflow-menu .pf-c-overflow-menu__content').should('not.exist');
+        cy.get('#container-breakpoint-overflow-menu .pf-v5-c-overflow-menu__control').should('exist');
+        cy.get('#container-breakpoint-overflow-menu .pf-v5-c-overflow-menu__content').should('not.exist');
       });
 
       it('Verify toggle dropdown', () => {
-        cy.get('#container-breakpoint-overflow-menu button').should('have.class', 'pf-c-menu-toggle');
+        cy.get('#container-breakpoint-overflow-menu button').should('have.class', 'pf-v5-c-menu-toggle');
       });
 
       it('Verify dropdown menu expanded', () => {
-        cy.get('#container-breakpoint-overflow-menu button')
-          .last()
-          .click({ force: true });
-        cy.get('#container-breakpoint-overflow-menu .pf-c-menu-toggle').should('have.class', 'pf-m-expanded');
-        cy.get('#container-breakpoint-overflow-menu .pf-c-menu').should('be.visible');
+        cy.get('#container-breakpoint-overflow-menu button').last().click({ force: true });
+        cy.get('#container-breakpoint-overflow-menu .pf-v5-c-menu-toggle').should('have.class', 'pf-m-expanded');
+        cy.get('#container-breakpoint-overflow-menu .pf-v5-c-menu').should('be.visible');
         // close overflow menu again
-        cy.get('#container-breakpoint-overflow-menu button')
-          .last()
-          .click({ force: true });
+        cy.get('#container-breakpoint-overflow-menu button').last().click({ force: true });
       });
     });
   });

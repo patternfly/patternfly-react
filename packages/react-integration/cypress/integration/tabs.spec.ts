@@ -11,7 +11,7 @@ describe('Tab Demo Test', () => {
 
   it('Verify tabs, tab sections, and tab navigation', () => {
     cy.get('div#unconnectedChildren')
-      .find('.pf-c-tabs__link')
+      .find('.pf-v5-c-tabs__link')
       .each((demoButton: JQuery<HTMLButtonElement>, index: number) => {
         const currentItem: number = index + 1;
         expect(demoButton.text()).to.equal(`Tab item ${currentItem}`);
@@ -66,7 +66,7 @@ describe('Tab Demo Test', () => {
 
   it("Verify scroll buttons render when all tabs can't be displayed in the window", () => {
     cy.viewport(300, 792);
-    cy.get('.pf-c-tabs__scroll-button').should('exist');
+    cy.get('.pf-v5-c-tabs__scroll-button').should('exist');
     cy.viewport(1200, 792);
   });
 });

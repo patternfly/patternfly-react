@@ -1,8 +1,8 @@
 function checkFiltering() {
-  cy.get('.pf-c-form-control').type('run');
+  cy.get('.pf-v5-c-form-control').type('run');
   cy.get('#Running').should('exist');
   cy.get('#Hewlett-Packard').should('not.exist');
-  cy.get('.pf-c-form-control').type('{backspace}{backspace}{backspace}degr');
+  cy.get('.pf-v5-c-form-control').type('{backspace}{backspace}{backspace}degr');
   cy.get('#Running').should('not.exist');
   cy.get('#Degraded').should('exist');
   cy.get('#Degraded').click();
@@ -17,15 +17,11 @@ describe('Select with Filtering Test', () => {
   it('Verify Checkbox Select with filtering chips', () => {
     cy.get('#filter-select').click();
     cy.get('#Running').click();
-    cy.get('.pf-c-select__toggle')
-      .contains('1')
-      .should('exist');
+    cy.get('.pf-v5-c-select__toggle').contains('1').should('exist');
   });
   it('Verify Checkbox Select with filtering works', () => {
     checkFiltering();
-    cy.get('.pf-c-select__toggle')
-      .contains('2')
-      .should('exist');
+    cy.get('.pf-v5-c-select__toggle').contains('2').should('exist');
   });
 
   it('Verify Single Select with filtering works', () => {

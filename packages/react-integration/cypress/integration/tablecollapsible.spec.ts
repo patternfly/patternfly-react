@@ -8,15 +8,11 @@ describe('Table Collapsible Test', () => {
   });
 
   it('Check number of rows', () => {
-    cy.get('.pf-c-table')
-      .find('tbody')
-      .should('have.length', 4);
+    cy.get('.pf-v5-c-table').find('tbody').should('have.length', 4);
   });
 
   it('Check number of columns', () => {
-    cy.get('thead')
-      .find('th')
-      .should('have.length', 6);
+    cy.get('thead').find('th').should('have.length', 6);
   });
 
   it('Test collapsible', () => {

@@ -4,7 +4,7 @@ describe('Tab Demo String Test', () => {
   });
 
   it('Verify tabs with string event keys, and tab navigation', () => {
-    cy.get('.pf-c-tabs__link').each((demoButton: JQuery<HTMLButtonElement>, index: number) => {
+    cy.get('.pf-v5-c-tabs__link').each((demoButton: JQuery<HTMLButtonElement>, index: number) => {
       const currentItem: number = index + 1;
       expect(demoButton.text()).to.equal(`Tab item ${currentItem}`);
       cy.wrap(demoButton).click();

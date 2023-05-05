@@ -4,14 +4,16 @@ describe('Nav Test', () => {
   });
 
   it('Verify Default Nav', () => {
-    cy.get('#nav-primary-default .pf-c-nav__link').each((defaultNavLink: JQuery<HTMLAnchorElement>, index: number) => {
-      const isCurrent = defaultNavLink.hasClass('pf-m-current');
-      expect(isCurrent).to.be.equal(index === 0);
-    });
+    cy.get('#nav-primary-default .pf-v5-c-nav__link').each(
+      (defaultNavLink: JQuery<HTMLAnchorElement>, index: number) => {
+        const isCurrent = defaultNavLink.hasClass('pf-m-current');
+        expect(isCurrent).to.be.equal(index === 0);
+      }
+    );
     cy.get('#default-link3').then((defaultLink3: JQuery<HTMLAnchorElement>) => {
       cy.wrap(defaultLink3).click();
       cy.url().should('eq', 'http://localhost:3000/nav-demo-nav-link#default-link3');
-      cy.get('#nav-primary-default .pf-c-nav__link').each(
+      cy.get('#nav-primary-default .pf-v5-c-nav__link').each(
         (defaultNavLink: JQuery<HTMLAnchorElement>, index: number) => {
           const isCurrent = defaultNavLink.hasClass('pf-m-current');
           expect(isCurrent).to.be.equal(index === 2);
@@ -21,7 +23,7 @@ describe('Nav Test', () => {
     cy.get('#default-no-navigate-link').then((noNavigateLink: JQuery<HTMLAnchorElement>) => {
       cy.wrap(noNavigateLink).click();
       cy.url().should('eq', 'http://localhost:3000/nav-demo-nav-link#default-link3');
-      cy.get('#nav-primary-default .pf-c-nav__link').each(
+      cy.get('#nav-primary-default .pf-v5-c-nav__link').each(
         (defaultNavLink: JQuery<HTMLAnchorElement>, index: number) => {
           const isCurrent = defaultNavLink.hasClass('pf-m-current');
           expect(isCurrent).to.be.equal(index === 4);
@@ -32,12 +34,14 @@ describe('Nav Test', () => {
 
   it('Verify Expandable Nav', () => {
     // All groups start open
-    cy.get('#nav-primary-expandable .pf-c-nav__link[id="grp-1"]').each((expandableGroup: JQuery<HTMLAnchorElement>) => {
-      expect(expandableGroup.attr('aria-expanded')).to.be.equal('true');
-    });
+    cy.get('#nav-primary-expandable .pf-v5-c-nav__link[id="grp-1"]').each(
+      (expandableGroup: JQuery<HTMLAnchorElement>) => {
+        expect(expandableGroup.attr('aria-expanded')).to.be.equal('true');
+      }
+    );
 
     // button props get spread
-    cy.get('#grp-2.pf-c-nav__link').should('have.attr', 'aria-label', 'group 2');
+    cy.get('#grp-2.pf-v5-c-nav__link').should('have.attr', 'aria-label', 'group 2');
 
     // Verify close and open of group 1
     cy.get('#grp-1').then((group1Link: JQuery<HTMLAnchorElement>) => {
@@ -88,7 +92,7 @@ describe('Nav Test', () => {
   });
 
   it('Verify Horizontal Nav', () => {
-    cy.get('#nav-primary-horizontal .pf-c-nav__link').each(
+    cy.get('#nav-primary-horizontal .pf-v5-c-nav__link').each(
       (horizontalLink: JQuery<HTMLAnchorElement>, index: number) => {
         const isCurrent = horizontalLink.hasClass('pf-m-current');
         expect(isCurrent).to.be.equal(index === 0);
@@ -96,7 +100,7 @@ describe('Nav Test', () => {
     );
     cy.get('#nav-primary-horizontal #horizontal-link2').then((horizontalLink2: JQuery<HTMLAnchorElement>) => {
       cy.wrap(horizontalLink2).click();
-      cy.get('#nav-primary-horizontal .pf-c-nav__link').each(
+      cy.get('#nav-primary-horizontal .pf-v5-c-nav__link').each(
         (horizontalNavLink: JQuery<HTMLAnchorElement>, index: number) => {
           const isCurrent = horizontalNavLink.hasClass('pf-m-current');
           expect(isCurrent).to.be.equal(index === 1);
@@ -106,13 +110,15 @@ describe('Nav Test', () => {
   });
 
   it('Verify Tertiary Nav', () => {
-    cy.get('#nav-primary-tertiary .pf-c-nav__link').each((tertiaryLink: JQuery<HTMLAnchorElement>, index: number) => {
-      const isCurrent = tertiaryLink.hasClass('pf-m-current');
-      expect(isCurrent).to.be.equal(index === 0);
-    });
+    cy.get('#nav-primary-tertiary .pf-v5-c-nav__link').each(
+      (tertiaryLink: JQuery<HTMLAnchorElement>, index: number) => {
+        const isCurrent = tertiaryLink.hasClass('pf-m-current');
+        expect(isCurrent).to.be.equal(index === 0);
+      }
+    );
     cy.get('#nav-primary-tertiary #tertiary-link2').then((tertiaryLink2: JQuery<HTMLAnchorElement>) => {
       cy.wrap(tertiaryLink2).click();
-      cy.get('#nav-primary-tertiary .pf-c-nav__link').each(
+      cy.get('#nav-primary-tertiary .pf-v5-c-nav__link').each(
         (tertiaryNavLink: JQuery<HTMLAnchorElement>, index: number) => {
           const isCurrent = tertiaryNavLink.hasClass('pf-m-current');
           expect(isCurrent).to.be.equal(index === 1);

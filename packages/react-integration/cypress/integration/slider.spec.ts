@@ -13,7 +13,7 @@ describe('Slider Demo Test', () => {
   });
 
   it('changes discrete slider value when clicked on', () => {
-    cy.get('#discrete-slider > .pf-c-slider__main > .pf-c-slider__thumb')
+    cy.get('#discrete-slider > .pf-v5-c-slider__main > .pf-v5-c-slider__thumb')
       .trigger('mousedown', { which: 1 })
       .trigger('mousemove', { clientX: 300, clientY: 300 })
       .trigger('mouseup', { force: true });
@@ -21,12 +21,12 @@ describe('Slider Demo Test', () => {
 
   it('renders the slider with input', () => {
     cy.get('#discrete-slider-input-label').should('exist');
-    cy.get('#discrete-slider-input-label > .pf-c-slider__value > .pf-c-input-group > .pf-c-form-control').should(
-      'exist'
-    );
-    cy.get('#discrete-slider-input-label > .pf-c-slider__value > .pf-c-input-group > .pf-c-input-group__text').should(
-      'exist'
-    );
+    cy.get(
+      '#discrete-slider-input-label > .pf-v5-c-slider__value > .pf-v5-c-input-group > .pf-v5-c-form-control'
+    ).should('exist');
+    cy.get(
+      '#discrete-slider-input-label > .pf-v5-c-slider__value > .pf-v5-c-input-group > .pf-v5-c-input-group__text'
+    ).should('exist');
     cy.get('#discrete-slider-input-label').should(
       'have.attr',
       'style',

@@ -10,23 +10,19 @@ describe('Tab Demo Test', () => {
     cy.get('#expandable-controlled.pf-m-expanded').should('not.exist');
     // tabs list should not exist
     cy.get('#expandable-controlled').within(() => {
-      cy.get('.pf-c-tabs__list').should('not.be.visible');
+      cy.get('.pf-v5-c-tabs__list').should('not.be.visible');
     });
-    cy.get('#expandable-controlled')
-      .find('.pf-c-tabs__toggle-icon')
-      .click();
+    cy.get('#expandable-controlled').find('.pf-v5-c-tabs__toggle-icon').click();
     cy.get('#expandable-controlled.pf-m-expanded').should('exist');
     // tabs list should exist
     cy.get('#expandable-controlled').within(() => {
-      cy.get('.pf-c-tabs__list').should('be.visible');
+      cy.get('.pf-v5-c-tabs__list').should('be.visible');
     });
-    cy.get('#expandable-controlled')
-      .find('.pf-c-tabs__toggle-icon')
-      .click();
+    cy.get('#expandable-controlled').find('.pf-v5-c-tabs__toggle-icon').click();
     cy.get('#expandable-controlled.pf-m-expanded').should('not.exist');
     // tabs list should not exist
     cy.get('#expandable-controlled').within(() => {
-      cy.get('.pf-c-tabs__list').should('not.be.visible');
+      cy.get('.pf-v5-c-tabs__list').should('not.be.visible');
     });
   });
 
@@ -35,23 +31,19 @@ describe('Tab Demo Test', () => {
     cy.get('#expandable-uncontrolled.pf-m-expanded').should('not.exist');
     // tabs list should not exist
     cy.get('#expandable-uncontrolled').within(() => {
-      cy.get('.pf-c-tabs__list').should('not.be.visible');
+      cy.get('.pf-v5-c-tabs__list').should('not.be.visible');
     });
-    cy.get('#expandable-uncontrolled')
-      .find('.pf-c-tabs__toggle-icon')
-      .click();
+    cy.get('#expandable-uncontrolled').find('.pf-v5-c-tabs__toggle-icon').click();
     cy.get('#expandable-uncontrolled.pf-m-expanded').should('exist');
     // tabs list should exist
     cy.get('#expandable-uncontrolled').within(() => {
-      cy.get('.pf-c-tabs__list').should('be.visible');
+      cy.get('.pf-v5-c-tabs__list').should('be.visible');
     });
-    cy.get('#expandable-uncontrolled')
-      .find('.pf-c-tabs__toggle-icon')
-      .click();
+    cy.get('#expandable-uncontrolled').find('.pf-v5-c-tabs__toggle-icon').click();
     cy.get('#expandable-uncontrolled.pf-m-expanded').should('not.exist');
     // tabs list should not exist
     cy.get('#expandable-uncontrolled').within(() => {
-      cy.get('.pf-c-tabs__list').should('not.be.visible');
+      cy.get('.pf-v5-c-tabs__list').should('not.be.visible');
     });
   });
 
