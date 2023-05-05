@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.38 (2023-05-05)
+
+### Bug Fixes
+
+- **deps:** updated Core for v5 versioning ([#9075](https://github.com/patternfly/patternfly-react/issues/9075)) ([3879fc7](https://github.com/patternfly/patternfly-react/commit/3879fc757aefeed80b0694365aa20d5ca856a797))
+
 # 5.0.0-alpha.37 (2023-05-04)
 
 ### Bug Fixes
