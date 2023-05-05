@@ -21,7 +21,7 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
     {help && (
       <React.Fragment>
         <div className={css(styles.modalBoxHeaderMain)}>{children}</div>
-        <div className="pf-c-modal-box__header-help">{help}</div>
+        <div className="pf-v5-c-modal-box__header-help">{help}</div>
       </React.Fragment>
     )}
     {!help && children}

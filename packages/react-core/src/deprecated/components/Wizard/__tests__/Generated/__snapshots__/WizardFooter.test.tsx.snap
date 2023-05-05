@@ -3,7 +3,7 @@
 exports[`WizardFooter should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <footer
-    class="pf-c-wizard__footer"
+    class="pf-v5-c-wizard__footer"
   >
     any
   </footer>

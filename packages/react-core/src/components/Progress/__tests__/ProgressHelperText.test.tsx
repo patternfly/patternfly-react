@@ -20,7 +20,7 @@ test('Renders children', () => {
 test('Renders with class pf-c-progress__helper-text on the div containing the helper text component', () => {
   render(<ProgressHelperText>Test</ProgressHelperText>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-c-progress__helper-text');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-progress__helper-text');
 });
 
 test('Renders with inherited element props spread to the component', () => {

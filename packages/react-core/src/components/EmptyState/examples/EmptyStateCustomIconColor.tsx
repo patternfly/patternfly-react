@@ -7,7 +7,7 @@ export const EmptyStateCustomIconColor: React.FunctionComponent = () => (
     <EmptyStateHeader
       titleText="Custom icon color"
       headingLevel="h4"
-      icon={<EmptyStateIcon icon={CheckIcon} color="var(--pf-global--success-color--100)" />}
+      icon={<EmptyStateIcon icon={CheckIcon} color="var(--pf-v5-global--success-color--100)" />}
     />
     <EmptyStateBody>
       This represents the empty state pattern in PatternFly with a custom icon color. Hopefully it's simple enough to

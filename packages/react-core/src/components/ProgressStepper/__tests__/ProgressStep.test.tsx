@@ -25,7 +25,7 @@ test('Renders children', () => {
 
 test('Renders with class pf-c-progress-stepper__step on the containing li element', () => {
   render(<ProgressStep>Test</ProgressStep>);
-  expect(screen.getByRole('listitem')).toHaveClass('pf-c-progress-stepper__step');
+  expect(screen.getByRole('listitem')).toHaveClass('pf-v5-c-progress-stepper__step');
 });
 
 test('Renders with custom class name on the containing li element when className prop is provided', () => {
@@ -33,14 +33,14 @@ test('Renders with custom class name on the containing li element when className
   expect(screen.getByRole('listitem')).toHaveClass('custom-class');
 });
 
-['default', undefined].forEach(variant => {
+['default', undefined].forEach((variant) => {
   test(`Renders with no additional classes when variant=${variant} on containing li element`, () => {
     render(<ProgressStep variant={`${variant as ProgressStepVariant}`}>Test</ProgressStep>);
-    expect(screen.getByRole('listitem')).toHaveClass('pf-c-progress-stepper__step', { exact: true });
+    expect(screen.getByRole('listitem')).toHaveClass('pf-v5-c-progress-stepper__step', { exact: true });
   });
 });
 
-['success', 'info', 'warning', 'danger'].forEach(variant => {
+['success', 'info', 'warning', 'danger'].forEach((variant) => {
   test(`Does not render with class pf-m-${variant} by default on containing li element`, () => {
     render(<ProgressStep>Test</ProgressStep>);
     expect(screen.getByRole('listitem')).not.toHaveClass(`pf-m-${variant}`);
@@ -79,7 +79,7 @@ test('Renders the element passed via the icon prop', () => {
 
 test('Renders the icon element inside span element with class pf-c-progress-stepper__step-icon', () => {
   render(<ProgressStep icon="Custom Icon">Test</ProgressStep>);
-  expect(screen.getByText('Custom Icon')).toHaveClass('pf-c-progress-stepper__step-icon');
+  expect(screen.getByText('Custom Icon')).toHaveClass('pf-v5-c-progress-stepper__step-icon');
 });
 
 test('Does not render with class pf-m-current by default on containing li element', () => {
@@ -114,12 +114,12 @@ test('Renders the element passed via the description prop', () => {
 
 test('Renders the description element inside div element with class pf-c-progress-stepper__step-description', () => {
   render(<ProgressStep description="Description">Test</ProgressStep>);
-  expect(screen.getByText('Description')).toHaveClass('pf-c-progress-stepper__step-description');
+  expect(screen.getByText('Description')).toHaveClass('pf-v5-c-progress-stepper__step-description');
 });
 
 test('Renders children inside class pf-c-progress-stepper__step-title', () => {
   render(<ProgressStep>Test</ProgressStep>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-progress-stepper__step-title');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-progress-stepper__step-title');
 });
 
 test('Renders Component element as div by default', () => {
@@ -149,7 +149,7 @@ test('Does not renders with aria-labelledBy by default on Component element', ()
 
 test('Renders with an accessible name that matches children', () => {
   render(
-    <ProgressStep popoverRender={stepRef => <div>Popover content</div>} id="test-id" titleId="title-id">
+    <ProgressStep popoverRender={(stepRef) => <div>Popover content</div>} id="test-id" titleId="title-id">
       Test
     </ProgressStep>
   );

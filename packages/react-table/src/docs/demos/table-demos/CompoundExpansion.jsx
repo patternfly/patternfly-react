@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  ActionsColumn,
-  Table,
-  Thead,
-  Tr,
-  Th,
-  Tbody,
-  Td,
-  ExpandableRowContent
-} from '@patternfly/react-table';
+import { ActionsColumn, Table, Thead, Tr, Th, Tbody, Td, ExpandableRowContent } from '@patternfly/react-table';
 import {
   Button,
   Card,
@@ -62,7 +53,7 @@ export const CompoundExpandable = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {items.map(item => (
+          {items.map((item) => (
             <Tr key={item.name}>
               <Td dataLabel={columnNames.description}>{item.description}</Td>
               <Td dataLabel={columnNames.date}>{item.date}</Td>
@@ -98,23 +89,27 @@ export const CompoundExpandable = () => {
             id="select-example"
             aria-label="Select Input"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-              <MenuToggle
-                ref={toggleRef}
-                onClick={() => setIsSelectOpen(!isSelectOpen)}
-                isExpanded={isSelectOpen}
-              >
+              <MenuToggle ref={toggleRef} onClick={() => setIsSelectOpen(!isSelectOpen)} isExpanded={isSelectOpen}>
                 <FilterIcon /> Status
               </MenuToggle>
             )}
             isOpen={isSelectOpen}
-            onOpenChange={isOpen => setIsSelectOpen(isOpen)}
+            onOpenChange={(isOpen) => setIsSelectOpen(isOpen)}
             onSelect={() => setIsSelectOpen(!isSelectOpen)}
           >
             {[
-              <SelectOption key={0} itemId="Debug">Debug</SelectOption>,
-              <SelectOption key={1} itemId="Info">Info</SelectOption>,
-              <SelectOption key={2} itemId="Warn">Warn</SelectOption>,
-              <SelectOption key={3} itemId="Error">Error</SelectOption>
+              <SelectOption key={0} itemId="Debug">
+                Debug
+              </SelectOption>,
+              <SelectOption key={1} itemId="Info">
+                Info
+              </SelectOption>,
+              <SelectOption key={2} itemId="Warn">
+                Warn
+              </SelectOption>,
+              <SelectOption key={3} itemId="Error">
+                Error
+              </SelectOption>
             ]}
           </Select>
         </ToolbarItem>
@@ -253,7 +248,7 @@ export const CompoundExpandable = () => {
                           <NestedItemsTable />
                         ) : (
                           <ExpandableRowContent>
-                            <div className="pf-u-m-md">
+                            <div className="pf-v5-u-m-md">
                               Expanded content for {repo.name}: {expandedCellKey} goes here!
                             </div>
                           </ExpandableRowContent>

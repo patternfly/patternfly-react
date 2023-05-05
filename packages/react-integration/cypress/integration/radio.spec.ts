@@ -24,16 +24,16 @@ describe('Radio Demo Test', () => {
 
   it('Verify body content', () => {
     cy.get('#not-standalone-container').within(() => {
-      cy.get('.pf-c-radio__body').contains('this is the radio body');
+      cy.get('.pf-v5-c-radio__body').contains('this is the radio body');
     });
   });
 
   it('Verify standalone radio input', () => {
     cy.get('#standalone-container').within(() => {
-      cy.get('div.pf-c-radio.pf-m-standalone').should('exist');
+      cy.get('div.pf-v5-c-radio.pf-m-standalone').should('exist');
     });
     cy.get('#not-standalone-container').within(() => {
-      cy.get('div.pf-c-radio.pf-m-standalone').should('not.exist');
+      cy.get('div.pf-v5-c-radio.pf-m-standalone').should('not.exist');
     });
   });
 });

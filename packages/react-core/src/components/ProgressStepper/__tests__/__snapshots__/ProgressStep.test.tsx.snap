@@ -3,21 +3,21 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-progress-stepper__step"
+    class="pf-v5-c-progress-stepper__step"
     role="listitem"
   >
     <div
-      class="pf-c-progress-stepper__step-connector"
+      class="pf-v5-c-progress-stepper__step-connector"
     >
       <span
-        class="pf-c-progress-stepper__step-icon"
+        class="pf-v5-c-progress-stepper__step-icon"
       />
     </div>
     <div
-      class="pf-c-progress-stepper__step-main"
+      class="pf-v5-c-progress-stepper__step-main"
     >
       <div
-        class="pf-c-progress-stepper__step-title"
+        class="pf-v5-c-progress-stepper__step-title"
       >
         Test
       </div>

@@ -3,7 +3,7 @@
 exports[`MultipleFileUploadTitleTextSeparator renders custom class names 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__title-text-separator test"
+    class="pf-v5-c-multiple-file-upload__title-text-separator test"
   >
     Foo
   </div>
@@ -13,7 +13,7 @@ exports[`MultipleFileUploadTitleTextSeparator renders custom class names 1`] = `
 exports[`MultipleFileUploadTitleTextSeparator renders with expected class names 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__title-text-separator"
+    class="pf-v5-c-multiple-file-upload__title-text-separator"
   >
     Foo
   </div>

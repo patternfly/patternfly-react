@@ -30,7 +30,7 @@ export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
   const panelContent = (
     <DrawerPanelContent>
       <DrawerHead>
-        <h3 className="pf-c-title pf-m-2xl" tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
+        <h3 className="pf-v5-c-title pf-m-2xl" tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
           drawer title{' '}
         </h3>
         <DrawerActions>

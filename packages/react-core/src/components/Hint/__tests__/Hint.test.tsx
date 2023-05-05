@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { Hint } from '../Hint';
 
 test('renders without children', () => {
-  render(<Hint data-testid='Hint' />);
+  render(<Hint data-testid="Hint" />);
 
   expect(screen.getByTestId('Hint')).toBeVisible();
 });
@@ -19,11 +19,11 @@ test('renders with class pf-c-hint', () => {
 
   const hint = screen.getByText('Test');
 
-  expect(hint).toHaveClass('pf-c-hint');
+  expect(hint).toHaveClass('pf-v5-c-hint');
 });
 
 test('renders with custom class names provided via prop', () => {
-  render(<Hint className='custom-classname'>Test</Hint>);
+  render(<Hint className="custom-classname">Test</Hint>);
 
   const hint = screen.getByText('Test');
 
@@ -41,7 +41,7 @@ test('does not render actions options when not passed', () => {
 test('renders actions options', () => {
   render(<Hint actions="actions">Test</Hint>);
 
-  const actions = screen.getByText("actions");
+  const actions = screen.getByText('actions');
 
   expect(actions).toBeVisible();
 });
@@ -51,20 +51,16 @@ test('renders with class pf-c-hint__actions if there is an action prop', () => {
 
   const hint = screen.getByText('actions');
 
-  expect(hint).toHaveClass('pf-c-hint__actions');
+  expect(hint).toHaveClass('pf-v5-c-hint__actions');
 });
 
 test('renders with inherited element props spread to the component', () => {
-  render(
-    <Hint aria-label="labelling-id">Test</Hint>
-  );
+  render(<Hint aria-label="labelling-id">Test</Hint>);
 
   expect(screen.getByText('Test')).toHaveAccessibleName('labelling-id');
 });
 
 test('matches hint snapshot', () => {
-  const { asFragment } = render(
-    <Hint />
-  );
+  const { asFragment } = render(<Hint />);
   expect(asFragment()).toMatchSnapshot();
 });

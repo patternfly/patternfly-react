@@ -3,11 +3,11 @@
 exports[`AlertIcon should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-alert__icon ''"
+    class="pf-v5-c-alert__icon ''"
   >
     <svg
       aria-hidden="true"
-      class="pf-svg"
+      class="pf-v5-svg"
       fill="currentColor"
       role="img"
       viewBox="0 0 512 512"

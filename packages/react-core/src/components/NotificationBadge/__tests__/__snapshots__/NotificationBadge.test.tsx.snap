@@ -5,18 +5,18 @@ exports[`NotificationBadge count 1`] = `
   <button
     aria-disabled="false"
     aria-expanded="false"
-    class="pf-c-button pf-m-plain"
+    class="pf-v5-c-button pf-m-plain"
     data-ouia-component-id="OUIA-Generated-Button-plain-3"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
     type="button"
   >
     <span
-      class="pf-c-notification-badge pf-m-read"
+      class="pf-v5-c-notification-badge pf-m-read"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 896 1024"
@@ -26,7 +26,7 @@ exports[`NotificationBadge count 1`] = `
         />
       </svg>
       <span
-        class="pf-c-notification-badge__count"
+        class="pf-v5-c-notification-badge__count"
       >
         3
       </span>
@@ -40,14 +40,14 @@ exports[`false NotificationBadge needs attention 1`] = `
   <button
     aria-disabled="false"
     aria-expanded="false"
-    class="pf-c-button pf-m-plain"
+    class="pf-v5-c-button pf-m-plain"
     data-ouia-component-id="OUIA-Generated-Button-plain-2"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
     type="button"
   >
     <span
-      class="pf-c-notification-badge pf-m-attention"
+      class="pf-v5-c-notification-badge pf-m-attention"
     >
       does not need attention Badge
     </span>
@@ -60,14 +60,14 @@ exports[`true NotificationBadge needs attention 1`] = `
   <button
     aria-disabled="false"
     aria-expanded="false"
-    class="pf-c-button pf-m-plain"
+    class="pf-v5-c-button pf-m-plain"
     data-ouia-component-id="OUIA-Generated-Button-plain-1"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe="true"
     type="button"
   >
     <span
-      class="pf-c-notification-badge pf-m-attention"
+      class="pf-v5-c-notification-badge pf-m-attention"
     >
       needs attention Badge
     </span>

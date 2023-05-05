@@ -3,13 +3,13 @@
 exports[`EmptyStateIcon should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-empty-state__icon"
-    style="--pf-c-empty-state__icon--Color: string;"
+    class="pf-v5-c-empty-state__icon"
+    style="--pf-v5-c-empty-state__icon--Color: string;"
   >
     <svg
       aria-hidden="true"
       aria-labelledby="icon-title-0"
-      class="pf-svg ''"
+      class="pf-v5-svg ''"
       fill="currentColor"
       role="img"
       viewBox="0 0 448 512"
@@ -30,19 +30,19 @@ exports[`EmptyStateIcon should match snapshot (auto-generated) 1`] = `
 exports[`EmptyStateIcon should match snapshot for variant container 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-empty-state__icon"
+    class="pf-v5-c-empty-state__icon"
   >
     <svg
       aria-hidden="false"
       aria-label="Contents"
       aria-valuetext="Loading..."
-      class="pf-c-spinner pf-m-xl ''"
+      class="pf-v5-c-spinner pf-m-xl ''"
       role="progressbar"
       title="string"
       viewBox="0 0 100 100"
     >
       <circle
-        class="pf-c-spinner__path"
+        class="pf-v5-c-spinner__path"
         cx="50"
         cy="50"
         fill="none"

@@ -3,14 +3,14 @@
 exports[`ProgressBar should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress__bar ''"
+    class="pf-v5-c-progress__bar ''"
   >
     <div
-      class="pf-c-progress__indicator"
+      class="pf-v5-c-progress__indicator"
       style="width: 42%;"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         ReactNode
       </span>

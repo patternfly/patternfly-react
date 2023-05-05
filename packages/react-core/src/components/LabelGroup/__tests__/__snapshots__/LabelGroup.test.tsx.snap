@@ -3,27 +3,27 @@
 exports[`LabelGroup label group compact 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-label-group"
+    class="pf-v5-c-label-group"
   >
     <div
-      class="pf-c-label-group__main"
+      class="pf-v5-c-label-group__main"
     >
       <ul
         aria-label="Label group category"
-        class="pf-c-label-group__list"
+        class="pf-v5-c-label-group__list"
         role="list"
       >
         <li
-          class="pf-c-label-group__list-item"
+          class="pf-v5-c-label-group__list-item"
         >
           <span
-            class="pf-c-label pf-m-compact"
+            class="pf-v5-c-label pf-m-compact"
           >
             <span
-              class="pf-c-label__content"
+              class="pf-v5-c-label__content"
             >
               <span
-                class="pf-c-label__text"
+                class="pf-v5-c-label__text"
               >
                 1
               </span>
@@ -31,16 +31,16 @@ exports[`LabelGroup label group compact 1`] = `
           </span>
         </li>
         <li
-          class="pf-c-label-group__list-item"
+          class="pf-v5-c-label-group__list-item"
         >
           <span
-            class="pf-c-label pf-m-compact"
+            class="pf-v5-c-label pf-m-compact"
           >
             <span
-              class="pf-c-label__content"
+              class="pf-v5-c-label__content"
             >
               <span
-                class="pf-c-label__text"
+                class="pf-v5-c-label__text"
               >
                 2
               </span>
@@ -48,16 +48,16 @@ exports[`LabelGroup label group compact 1`] = `
           </span>
         </li>
         <li
-          class="pf-c-label-group__list-item"
+          class="pf-v5-c-label-group__list-item"
         >
           <span
-            class="pf-c-label pf-m-compact"
+            class="pf-v5-c-label pf-m-compact"
           >
             <span
-              class="pf-c-label__content"
+              class="pf-v5-c-label__content"
             >
               <span
-                class="pf-c-label__text"
+                class="pf-v5-c-label__text"
               >
                 3
               </span>
@@ -65,16 +65,16 @@ exports[`LabelGroup label group compact 1`] = `
           </span>
         </li>
         <li
-          class="pf-c-label-group__list-item"
+          class="pf-v5-c-label-group__list-item"
         >
           <button
-            class="pf-c-label pf-m-overflow pf-m-compact"
+            class="pf-v5-c-label pf-m-overflow pf-m-compact"
           >
             <span
-              class="pf-c-label__content"
+              class="pf-v5-c-label__content"
             >
               <span
-                class="pf-c-label__text"
+                class="pf-v5-c-label__text"
               >
                 1 more
               </span>
@@ -90,27 +90,27 @@ exports[`LabelGroup label group compact 1`] = `
 exports[`LabelGroup label group default 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-label-group"
+    class="pf-v5-c-label-group"
   >
     <div
-      class="pf-c-label-group__main"
+      class="pf-v5-c-label-group__main"
     >
       <ul
         aria-label="Label group category"
-        class="pf-c-label-group__list"
+        class="pf-v5-c-label-group__list"
         role="list"
       >
         <li
-          class="pf-c-label-group__list-item"
+          class="pf-v5-c-label-group__list-item"
         >
           <span
-            class="pf-c-label"
+            class="pf-v5-c-label"
           >
             <span
-              class="pf-c-label__content"
+              class="pf-v5-c-label__content"
             >
               <span
-                class="pf-c-label__text"
+                class="pf-v5-c-label__text"
               >
                 1.1
               </span>
@@ -126,34 +126,34 @@ exports[`LabelGroup label group default 1`] = `
 exports[`LabelGroup label group with category 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-label-group pf-m-category"
+    class="pf-v5-c-label-group pf-m-category"
   >
     <div
-      class="pf-c-label-group__main"
+      class="pf-v5-c-label-group__main"
     >
       <span
         aria-hidden="true"
-        class="pf-c-label-group__label"
+        class="pf-v5-c-label-group__label"
         id="pf-random-id-1"
       >
         category
       </span>
       <ul
         aria-labelledby="pf-random-id-1"
-        class="pf-c-label-group__list"
+        class="pf-v5-c-label-group__list"
         role="list"
       >
         <li
-          class="pf-c-label-group__list-item"
+          class="pf-v5-c-label-group__list-item"
         >
           <span
-            class="pf-c-label"
+            class="pf-v5-c-label"
           >
             <span
-              class="pf-c-label__content"
+              class="pf-v5-c-label__content"
             >
               <span
-                class="pf-c-label__text"
+                class="pf-v5-c-label__text"
               >
                 1.1
               </span>
@@ -169,34 +169,34 @@ exports[`LabelGroup label group with category 1`] = `
 exports[`LabelGroup label group with category and tooltip 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-label-group pf-m-category"
+    class="pf-v5-c-label-group pf-m-category"
   >
     <div
-      class="pf-c-label-group__main"
+      class="pf-v5-c-label-group__main"
     >
       <span
         aria-hidden="true"
-        class="pf-c-label-group__label"
+        class="pf-v5-c-label-group__label"
         id="pf-random-id-4"
       >
         A very long category name
       </span>
       <ul
         aria-labelledby="pf-random-id-4"
-        class="pf-c-label-group__list"
+        class="pf-v5-c-label-group__list"
         role="list"
       >
         <li
-          class="pf-c-label-group__list-item"
+          class="pf-v5-c-label-group__list-item"
         >
           <span
-            class="pf-c-label"
+            class="pf-v5-c-label"
           >
             <span
-              class="pf-c-label__content"
+              class="pf-v5-c-label__content"
             >
               <span
-                class="pf-c-label__text"
+                class="pf-v5-c-label__text"
               >
                 1.1
               </span>
@@ -212,34 +212,34 @@ exports[`LabelGroup label group with category and tooltip 1`] = `
 exports[`LabelGroup label group with closable category 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-label-group pf-m-category"
+    class="pf-v5-c-label-group pf-m-category"
   >
     <div
-      class="pf-c-label-group__main"
+      class="pf-v5-c-label-group__main"
     >
       <span
         aria-hidden="true"
-        class="pf-c-label-group__label"
+        class="pf-v5-c-label-group__label"
         id="pf-random-id-2"
       >
         category
       </span>
       <ul
         aria-labelledby="pf-random-id-2"
-        class="pf-c-label-group__list"
+        class="pf-v5-c-label-group__list"
         role="list"
       >
         <li
-          class="pf-c-label-group__list-item"
+          class="pf-v5-c-label-group__list-item"
         >
           <span
-            class="pf-c-label"
+            class="pf-v5-c-label"
           >
             <span
-              class="pf-c-label__content"
+              class="pf-v5-c-label__content"
             >
               <span
-                class="pf-c-label__text"
+                class="pf-v5-c-label__text"
               >
                 1.1
               </span>
@@ -249,13 +249,13 @@ exports[`LabelGroup label group with closable category 1`] = `
       </ul>
     </div>
     <div
-      class="pf-c-label-group__close"
+      class="pf-v5-c-label-group__close"
     >
       <button
         aria-disabled="false"
         aria-label="Close label group"
         aria-labelledby="remove_group_pf-random-id-2 pf-random-id-2"
-        class="pf-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
@@ -264,7 +264,7 @@ exports[`LabelGroup label group with closable category 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"

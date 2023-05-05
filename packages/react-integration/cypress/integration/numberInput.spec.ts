@@ -27,9 +27,7 @@ describe('NumberInput Demo Test', () => {
   });
 
   it('can be manually set with input', () => {
-    cy.get('#input1')
-      .type('{selectall}')
-      .type('1');
+    cy.get('#input1').type('{selectall}').type('1');
     cy.get('#input1').should('have.value', 1);
     cy.get('#minus-button').should('not.be.disabled');
     cy.get('#plus-button').should('not.be.disabled');
@@ -42,22 +40,10 @@ describe('NumberInput Demo Test', () => {
   });
 
   it('can have different unit positions', () => {
-    cy.get('#numberInput1')
-      .children()
-      .first()
-      .should('have.class', 'pf-c-input-group');
-    cy.get('#numberInput1')
-      .children()
-      .last()
-      .should('have.class', 'pf-c-number-input__unit');
-    cy.get('#numberInput2')
-      .children()
-      .first()
-      .should('have.class', 'pf-c-number-input__unit');
-    cy.get('#numberInput2')
-      .children()
-      .last()
-      .should('have.class', 'pf-c-input-group');
+    cy.get('#numberInput1').children().first().should('have.class', 'pf-v5-c-input-group');
+    cy.get('#numberInput1').children().last().should('have.class', 'pf-v5-c-number-input__unit');
+    cy.get('#numberInput2').children().first().should('have.class', 'pf-v5-c-number-input__unit');
+    cy.get('#numberInput2').children().last().should('have.class', 'pf-v5-c-input-group');
   });
 
   it('initial undefined value can be increment with the plus button', () => {

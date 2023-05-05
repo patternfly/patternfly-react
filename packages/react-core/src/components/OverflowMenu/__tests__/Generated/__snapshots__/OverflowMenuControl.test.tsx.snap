@@ -3,7 +3,7 @@
 exports[`OverflowMenuControl should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-overflow-menu__control string"
+    class="pf-v5-c-overflow-menu__control string"
   >
      any 
   </div>

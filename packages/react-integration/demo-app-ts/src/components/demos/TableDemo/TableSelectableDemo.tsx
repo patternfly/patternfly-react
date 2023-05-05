@@ -1,10 +1,5 @@
 import * as React from 'react';
-import {
-  headerCol,
-  ICell,
-  IRow,
-  RowSelectVariant
-} from '@patternfly/react-table';
+import { headerCol, ICell, IRow, RowSelectVariant } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 import { Checkbox, Divider, Radio } from '@patternfly/react-core';
@@ -53,7 +48,7 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
   onSelect(event: React.FormEvent, isSelected: boolean, rowId: number) {
     let rows: IRow[];
     if (rowId === -1 && this.state.selectVariant) {
-      rows = this.state.rows.map(oneRow => {
+      rows = this.state.rows.map((oneRow) => {
         oneRow.selected = isSelected;
         return oneRow;
       });
@@ -93,7 +88,7 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
         <Divider />
         <Checkbox
           label="Can select all"
-          className="pf-u-mb-lg"
+          className="pf-v5-u-mb-lg"
           isChecked={canSelectAll}
           onChange={(_event, checked) => this.toggleSelect(checked)}
           aria-label="toggle select all checkbox"

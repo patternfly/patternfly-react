@@ -18,12 +18,12 @@ test('Renders children', () => {
 
 test('Renders with the class pf-c-panel__main', () => {
   render(<PanelMain>Test</PanelMain>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-panel__main');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__main');
 });
 
 test('Renders with only the class pf-c-panel__main by default', () => {
   render(<PanelMain>Test</PanelMain>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-panel__main', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__main', { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {
@@ -34,7 +34,7 @@ test('Renders with custom class name when className prop is passed', () => {
 test('Renders with custom max height name when maxHeight prop is passed', () => {
   render(<PanelMain maxHeight="100px">Test</PanelMain>);
   const styles = getComputedStyle(screen.getByText('Test'));
-  expect(styles.getPropertyValue('--pf-c-panel__main--MaxHeight')).toBe('100px');
+  expect(styles.getPropertyValue('--pf-v5-c-panel__main--MaxHeight')).toBe('100px');
 });
 
 test('Renders with the inherited element props spread to the component', () => {

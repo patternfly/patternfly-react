@@ -3,7 +3,7 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-back-to-top pf-m-hidden"
+    class="pf-v5-c-back-to-top pf-m-hidden"
   >
     <button>
       Back to top
@@ -27,7 +27,7 @@ exports[`Matches the snapshot 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 320 512"

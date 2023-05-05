@@ -6,7 +6,7 @@ exports[`OptionsMenuToggle should match snapshot (auto-generated) 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="'Options menu'"
-    class="pf-c-dropdown__toggle"
+    class="pf-v5-c-dropdown__toggle"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
     data-ouia-component-type="PF4/DropdownToggle"
     data-ouia-safe="true"
@@ -25,7 +25,7 @@ exports[`OptionsMenuToggle should match snapshot (auto-generated) 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 320 512"

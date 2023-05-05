@@ -297,7 +297,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         <TextInputGroupUtilities>
           {resultsCount && <Badge isRead>{resultsCount}</Badge>}
           {!!onNextClick && !!onPreviousClick && (
-            <div className="pf-c-text-input-group__group">
+            <div className="pf-v5-c-text-input-group__group">
               <Button
                 variant={ButtonVariant.plain}
                 aria-label={previousNavigationButtonAriaLabel}

@@ -4,12 +4,12 @@ describe('Clipboard Copy Demo Test', () => {
   });
 
   it('Verify form input', () => {
-    cy.get('input').should('have.class', 'pf-c-form-control');
+    cy.get('input').should('have.class', 'pf-v5-c-form-control');
   });
 
   it('Verify content expands', () => {
-    cy.get('.pf-c-clipboard-copy__group [id*="toggle-"]').click();
-    cy.get('.pf-c-clipboard-copy__expandable-content').should('exist');
+    cy.get('.pf-v5-c-clipboard-copy__group [id*="toggle-"]').click();
+    cy.get('.pf-v5-c-clipboard-copy__expandable-content').should('exist');
   });
 
   it('Verify inline clipboard copy', () => {

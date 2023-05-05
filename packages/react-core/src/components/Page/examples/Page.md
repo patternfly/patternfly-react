@@ -127,7 +127,7 @@ To add additional components and information to a group, you may use the followi
 
 ### Centered section
 
-By default, a page section spans the width of the page. To reduce the width of a section, use the `isWidthLimited` property. To center align width-limited page sections, use the `isCenterAligned` property. When the main content area of a page is wider than the value of a centered, width-limited page section's `--pf-c-page--section--m-limit-width--MaxWidth` custom property, the section will automatically be centered.
+By default, a page section spans the width of the page. To reduce the width of a section, use the `isWidthLimited` property. To center align width-limited page sections, use the `isCenterAligned` property. When the main content area of a page is wider than the value of a centered, width-limited page section's `--pf-v5-c-page--section--m-limit-width--MaxWidth` custom property, the section will automatically be centered.
 
 The content in this example is placed in a card to better illustrate how the section behaves when it is centered, but a card is not required to center a page section.
 

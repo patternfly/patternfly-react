@@ -3,13 +3,13 @@
 exports[`Check page vertical layout example against snapshot 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-page__header"
+    class="pf-v5-c-page__header"
   >
     <div
-      class="pf-c-page__header-brand"
+      class="pf-v5-c-page__header-brand"
     >
       <span
-        class="pf-c-page__header-brand-link"
+        class="pf-v5-c-page__header-brand-link"
       >
         Logo
       </span>
@@ -22,13 +22,13 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 exports[`Test that logoComponent with href is an anchor 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-page__header"
+    class="pf-v5-c-page__header"
   >
     <div
-      class="pf-c-page__header-brand"
+      class="pf-v5-c-page__header-brand"
     >
       <a
-        class="pf-c-page__header-brand-link"
+        class="pf-v5-c-page__header-brand-link"
         href="#"
       >
         Logo
@@ -42,13 +42,13 @@ exports[`Test that logoComponent with href is an anchor 1`] = `
 exports[`Test that passed logoComponent overrides default 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-page__header"
+    class="pf-v5-c-page__header"
   >
     <div
-      class="pf-c-page__header-brand"
+      class="pf-v5-c-page__header-brand"
     >
       <div
-        class="pf-c-page__header-brand-link"
+        class="pf-v5-c-page__header-brand-link"
       >
         Logo
       </div>

@@ -18,12 +18,12 @@ test('Renders children', () => {
 
 test('Renders with the pf-c-title', () => {
   render(<Title headingLevel="h1">Test</Title>);
-  expect(screen.getByRole('heading')).toHaveClass('pf-c-title');
+  expect(screen.getByRole('heading')).toHaveClass('pf-v5-c-title');
 });
 
 test('Renders with only the class pf-c-title and the heading level modifier class pf-m-2xl by default', () => {
   render(<Title headingLevel="h1">Test</Title>);
-  expect(screen.getByRole('heading')).toHaveClass('pf-c-title pf-m-2xl', { exact: true });
+  expect(screen.getByRole('heading')).toHaveClass('pf-v5-c-title pf-m-2xl', { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {

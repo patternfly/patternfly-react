@@ -151,7 +151,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   const onMouseMoveWhileDragging = (ev: MouseEvent, droppableItems: DroppableItem[], blankDivRect: DOMRect) => {
     // Compute each time what droppable node we are hovering over
     hoveringDroppable = null;
-    droppableItems.forEach(droppableItem => {
+    droppableItems.forEach((droppableItem) => {
       const { node, rect, isDraggingHost, draggableNodes, draggableNodesRects } = droppableItem;
       if (overlaps(ev, rect)) {
         // Add valid dropzone style
@@ -204,7 +204,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     // Iterate through sibling draggable nodes to reposition them and store correct hoveringIndex for onDrop
     hoveringIndex = null;
     if (hoveringDroppable) {
-      const { draggableNodes, draggableNodesRects } = droppableItems.find(item => item.node === hoveringDroppable);
+      const { draggableNodes, draggableNodesRects } = droppableItems.find((item) => item.node === hoveringDroppable);
       let lastTranslate = 0;
       draggableNodes.forEach((n, i) => {
         n.style.transition = 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s';
@@ -256,8 +256,8 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
         rect: cur.getBoundingClientRect(),
         isDraggingHost,
         // We don't want styles to apply to the left behind div in onMouseMoveWhileDragging
-        draggableNodes: draggableNodes.map(node => (node === dragging ? node.cloneNode(false) : node)),
-        draggableNodesRects: draggableNodes.map(node => node.getBoundingClientRect())
+        draggableNodes: draggableNodes.map((node) => (node === dragging ? node.cloneNode(false) : node)),
+        draggableNodesRects: draggableNodes.map((node) => node.getBoundingClientRect())
       };
       acc.push(droppableItem);
       return acc;
@@ -275,7 +275,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       left: rect.x,
       width: rect.width,
       height: rect.height,
-      '--pf-c-draggable--m-dragging--BackgroundColor': getInheritedBackgroundColor(dragging),
+      '--pf-v5-c-draggable--m-dragging--BackgroundColor': getInheritedBackgroundColor(dragging),
       position: 'fixed',
       zIndex: 5000
     } as any;
@@ -285,7 +285,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     startY = ev.pageY;
     startYOffset = startY - rect.y;
     setIsDragging(true);
-    mouseMoveListener = ev => onMouseMoveWhileDragging(ev as MouseEvent, droppableItems, rect);
+    mouseMoveListener = (ev) => onMouseMoveWhileDragging(ev as MouseEvent, droppableItems, rect);
     mouseUpListener = () => onMouseUpWhileDragging(droppableItems);
     document.addEventListener('mousemove', mouseMoveListener);
     document.addEventListener('mouseup', mouseUpListener);

@@ -3,7 +3,7 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-accordion__expandable-content-body"
+    class="pf-v5-c-accordion__expandable-content-body"
   >
     Test
   </div>
@@ -13,7 +13,7 @@ exports[`Matches the snapshot 1`] = `
 exports[`Renders without children 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-accordion__expandable-content-body"
+    class="pf-v5-c-accordion__expandable-content-body"
   />
 </DocumentFragment>
 `;

@@ -4,7 +4,7 @@ describe('Label Group with Category Demo Test', () => {
   });
 
   it('Verify delete button on first label group', () => {
-    const labelGroup = cy.get('.pf-c-label-group').first();
+    const labelGroup = cy.get('.pf-v5-c-label-group').first();
     const labelGroupButton = labelGroup.get('#remove_group_category-1');
     labelGroupButton.should('be.visible');
     labelGroupButton.click();
@@ -12,15 +12,15 @@ describe('Label Group with Category Demo Test', () => {
   });
 
   it('Displays Tooltip', () => {
-    cy.get('.pf-c-label-group__label')
+    cy.get('.pf-v5-c-label-group__label')
       .last()
       .then((tooltipLink: JQuery<HTMLHeadingElement>) => {
-        cy.get('.pf-c-tooltip').should('not.exist');
+        cy.get('.pf-v5-c-tooltip').should('not.exist');
         cy.wrap(tooltipLink)
           .trigger('mouseenter')
-          .get('.pf-c-tooltip')
+          .get('.pf-v5-c-tooltip')
           .should('exist')
-          .get('.pf-c-tooltip')
+          .get('.pf-v5-c-tooltip')
           .contains('Category 3 has a very long name');
       });
   });

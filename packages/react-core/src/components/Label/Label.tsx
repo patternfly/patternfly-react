@@ -184,21 +184,17 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 
   const defaultButton = (
     <Button
-        type="button"
-        variant="plain"
-        onClick={onClose}
-        aria-label={closeBtnAriaLabel || `Close ${children}`}
-        {...closeBtnProps}
-      >
-        <TimesIcon />
+      type="button"
+      variant="plain"
+      onClick={onClose}
+      aria-label={closeBtnAriaLabel || `Close ${children}`}
+      {...closeBtnProps}
+    >
+      <TimesIcon />
     </Button>
   );
 
-  const button = (
-      <span className={css(styles.labelActions)}>
-          {closeBtn || defaultButton}
-      </span>
-  );
+  const button = <span className={css(styles.labelActions)}>{closeBtn || defaultButton}</span>;
   const textRef = React.createRef<any>();
   // ref to apply tooltip when rendered is used
   const componentRef = React.useRef();
@@ -217,9 +213,10 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         className={css(styles.labelText)}
         {...(textMaxWidth && {
           style: {
-            '--pf-c-label__text--MaxWidth': textMaxWidth,
+            '--pf-v5-c-label__text--MaxWidth': textMaxWidth
           } as React.CSSProperties
-        })}>
+        })}
+      >
         {children}
       </span>
     </React.Fragment>

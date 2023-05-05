@@ -252,8 +252,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   } = merged;
 
   const treeTableTitleCell =
-    (className && className.includes('pf-c-table__tree-view-title-cell')) ||
-    (mergedClassName && mergedClassName.includes('pf-c-table__tree-view-title-cell'));
+    (className && className.includes('pf-v5-c-table__tree-view-title-cell')) ||
+    (mergedClassName && mergedClassName.includes('pf-v5-c-table__tree-view-title-cell'));
 
   const cell = (
     <MergedComponent
@@ -276,9 +276,9 @@ const TdBase: React.FunctionComponent<TdProps> = ({
       {...props}
       {...(isStickyColumn && {
         style: {
-          '--pf-c-table__sticky-cell--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
-          '--pf-c-table__sticky-cell--Left': stickyLeftOffset ? stickyLeftOffset : 0,
-          '--pf-c-table__sticky-cell--Right': stickyRightOffset ? stickyRightOffset : 0,
+          '--pf-v5-c-table__sticky-cell--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
+          '--pf-v5-c-table__sticky-cell--Left': stickyLeftOffset ? stickyLeftOffset : 0,
+          '--pf-v5-c-table__sticky-cell--Right': stickyRightOffset ? stickyRightOffset : 0,
           ...props.style
         } as React.CSSProperties
       })}

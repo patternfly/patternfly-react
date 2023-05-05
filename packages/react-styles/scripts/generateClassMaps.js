@@ -14,7 +14,7 @@ function getCSSClasses(cssString) {
  * @param {string} className - Class name
  */
 function formatClassName(className) {
-  return camelcase(className.replace(/pf-((c|l|m|u|is|has)-)?/g, ''));
+  return camelcase(className.replace(/pf-(v5-)?((c|l|m|u|is|has)-)?/g, ''));
 }
 
 /**
@@ -31,7 +31,7 @@ function getClassMaps(cssString) {
   const res = {};
   const distinctClasses = new Set(getCSSClasses(cssString));
 
-  distinctClasses.forEach(className => {
+  distinctClasses.forEach((className) => {
     const key = formatClassName(className);
     const value = className.replace('.', '').trim();
     if (isModifier(className)) {
@@ -45,7 +45,7 @@ function getClassMaps(cssString) {
   const ordered = {};
   Object.keys(res)
     .sort()
-    .forEach(key => (ordered[key] = res[key]));
+    .forEach((key) => (ordered[key] = res[key]));
 
   return ordered;
 }
@@ -66,8 +66,8 @@ function generateClassMaps() {
   const res = {};
   patternflyCSSFiles
     .concat(srcCSSFiles)
-    .map(file => path.resolve(file)) // Normalize path for Windows
-    .forEach(file => {
+    .map((file) => path.resolve(file)) // Normalize path for Windows
+    .forEach((file) => {
       res[file] = getClassMaps(fs.readFileSync(file, 'utf8'));
     });
 

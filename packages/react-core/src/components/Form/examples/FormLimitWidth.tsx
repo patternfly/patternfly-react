@@ -68,7 +68,7 @@ export const FormLimitWidth: React.FunctionComponent = () => {
               aria-label="More info for name field"
               onClick={(e) => e.preventDefault()}
               aria-describedby="simple-form-name-02"
-              className="pf-c-form__group-label-help"
+              className="pf-v5-c-form__group-label-help"
             >
               <HelpIcon />
             </button>

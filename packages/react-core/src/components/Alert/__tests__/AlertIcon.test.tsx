@@ -68,7 +68,7 @@ test('Renders with the passed custom icon when one is passed rather than the ico
 test('Renders the icon inside class pf-c-alert__icon', () => {
   render(<AlertIcon variant="custom" />);
 
-  expect(screen.getByText('Bell icon mock')).toHaveClass('pf-c-alert__icon');
+  expect(screen.getByText('Bell icon mock')).toHaveClass('pf-v5-c-alert__icon');
 });
 
 test('Renders with inherited element props spread to the component', () => {

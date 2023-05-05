@@ -3,7 +3,7 @@
 exports[`DataList Cell default 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-data-list__cell"
+    class="pf-v5-c-data-list__cell"
   >
     Secondary
   </div>
@@ -13,16 +13,16 @@ exports[`DataList Cell default 1`] = `
 exports[`DataList Cells 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-data-list__item-content"
+    class="pf-v5-c-data-list__item-content"
   >
     <div
-      class="pf-c-data-list__cell data-list-custom"
+      class="pf-v5-c-data-list__cell data-list-custom"
       id="primary-item"
     >
       Primary Id
     </div>
     <div
-      class="pf-c-data-list__cell data-list-custom"
+      class="pf-v5-c-data-list__cell data-list-custom"
       id="primary-item"
     >
       Primary Id 2
@@ -35,7 +35,7 @@ exports[`DataList DataList variants Breakpoint - 2xl 1`] = `
 <DocumentFragment>
   <ul
     aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-2xl"
+    class="pf-v5-c-data-list pf-m-grid-2xl"
     role="list"
   />
 </DocumentFragment>
@@ -45,7 +45,7 @@ exports[`DataList DataList variants Breakpoint - always 1`] = `
 <DocumentFragment>
   <ul
     aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid"
+    class="pf-v5-c-data-list pf-m-grid"
     role="list"
   />
 </DocumentFragment>
@@ -55,7 +55,7 @@ exports[`DataList DataList variants Breakpoint - lg 1`] = `
 <DocumentFragment>
   <ul
     aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-lg"
+    class="pf-v5-c-data-list pf-m-grid-lg"
     role="list"
   />
 </DocumentFragment>
@@ -65,7 +65,7 @@ exports[`DataList DataList variants Breakpoint - md 1`] = `
 <DocumentFragment>
   <ul
     aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-md"
+    class="pf-v5-c-data-list pf-m-grid-md"
     role="list"
   />
 </DocumentFragment>
@@ -75,7 +75,7 @@ exports[`DataList DataList variants Breakpoint - none 1`] = `
 <DocumentFragment>
   <ul
     aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-none"
+    class="pf-v5-c-data-list pf-m-grid-none"
     role="list"
   />
 </DocumentFragment>
@@ -85,7 +85,7 @@ exports[`DataList DataList variants Breakpoint - sm 1`] = `
 <DocumentFragment>
   <ul
     aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-sm"
+    class="pf-v5-c-data-list pf-m-grid-sm"
     role="list"
   />
 </DocumentFragment>
@@ -95,7 +95,7 @@ exports[`DataList DataList variants Breakpoint - xl 1`] = `
 <DocumentFragment>
   <ul
     aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-xl"
+    class="pf-v5-c-data-list pf-m-grid-xl"
     role="list"
   />
 </DocumentFragment>
@@ -104,11 +104,11 @@ exports[`DataList DataList variants Breakpoint - xl 1`] = `
 exports[`DataList DataListAction button 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-data-list__item-action"
+    class="pf-v5-c-data-list__item-action"
   >
     <button
       aria-disabled="false"
-      class="pf-c-button pf-m-primary"
+      class="pf-v5-c-button pf-m-primary"
       data-ouia-component-id="OUIA-Generated-Button-primary-1"
       data-ouia-component-type="PF4/Button"
       data-ouia-safe="true"
@@ -124,28 +124,28 @@ exports[`DataList DataListAction button 1`] = `
 exports[`DataList DataListAction dropdown 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-data-list__item-action"
+    class="pf-v5-c-data-list__item-action"
   >
     <div
-      class="pf-c-data-list__action"
+      class="pf-v5-c-data-list__action"
     >
       <button
         aria-expanded="false"
-        class="pf-c-menu-toggle"
+        class="pf-v5-c-menu-toggle"
         type="button"
       >
         <span
-          class="pf-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__text"
         />
         <span
-          class="pf-c-menu-toggle__controls"
+          class="pf-v5-c-menu-toggle__controls"
         >
           <span
-            class="pf-c-menu-toggle__toggle-icon"
+            class="pf-v5-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-svg"
+              class="pf-v5-svg"
               fill="currentColor"
               role="img"
               viewBox="0 0 320 512"
@@ -158,37 +158,37 @@ exports[`DataList DataListAction dropdown 1`] = `
         </span>
       </button>
       <div
-        class="pf-c-menu"
+        class="pf-v5-c-menu"
         data-ouia-component-id="OUIA-Generated-Dropdown-1"
         data-ouia-component-type="PF4/Dropdown"
         data-ouia-safe="true"
         style="position: absolute; left: 0px; top: 0px; z-index: 9999;"
       >
         <div
-          class="pf-c-menu__content"
+          class="pf-v5-c-menu__content"
         >
           <ul
-            class="pf-c-menu__list"
+            class="pf-v5-c-menu__list"
             role="menu"
           >
             <li
-              class="pf-c-menu__list-item"
+              class="pf-v5-c-menu__list-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-1"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
               role="none"
             >
               <button
-                class="pf-c-menu__item"
+                class="pf-v5-c-menu__item"
                 role="menuitem"
                 tabindex="0"
                 type="button"
               >
                 <span
-                  class="pf-c-menu__item-main"
+                  class="pf-v5-c-menu__item-main"
                 >
                   <span
-                    class="pf-c-menu__item-text"
+                    class="pf-v5-c-menu__item-text"
                   >
                     action-1
                   </span>
@@ -197,23 +197,23 @@ exports[`DataList DataListAction dropdown 1`] = `
             </li>
             ,
             <li
-              class="pf-c-menu__list-item"
+              class="pf-v5-c-menu__list-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-2"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
               role="none"
             >
               <button
-                class="pf-c-menu__item"
+                class="pf-v5-c-menu__item"
                 role="menuitem"
                 tabindex="-1"
                 type="button"
               >
                 <span
-                  class="pf-c-menu__item-main"
+                  class="pf-v5-c-menu__item-main"
                 >
                   <span
-                    class="pf-c-menu__item-text"
+                    class="pf-v5-c-menu__item-text"
                   >
                     action-2
                   </span>
@@ -232,11 +232,11 @@ exports[`DataList DataListContent 1`] = `
 <DocumentFragment>
   <section
     aria-label="Primary Content Details"
-    class="pf-c-data-list__expandable-content"
+    class="pf-v5-c-data-list__expandable-content"
     id=""
   >
     <div
-      class="pf-c-data-list__expandable-content-body"
+      class="pf-v5-c-data-list__expandable-content-body"
     >
        test
     </div>
@@ -248,12 +248,12 @@ exports[`DataList DataListContent hasNoPadding 1`] = `
 <DocumentFragment>
   <section
     aria-label="Primary Content Details"
-    class="pf-c-data-list__expandable-content"
+    class="pf-v5-c-data-list__expandable-content"
     hidden=""
     id=""
   >
     <div
-      class="pf-c-data-list__expandable-content-body pf-m-no-padding"
+      class="pf-v5-c-data-list__expandable-content-body pf-m-no-padding"
     >
       test
     </div>
@@ -265,7 +265,7 @@ exports[`DataList Item 1`] = `
 <DocumentFragment>
   <li
     aria-labelledby="item-1"
-    class="pf-c-data-list__item data-list-item-custom"
+    class="pf-v5-c-data-list__item data-list-item-custom"
     id=""
   />
 </DocumentFragment>
@@ -275,7 +275,7 @@ exports[`DataList Item default 1`] = `
 <DocumentFragment>
   <li
     aria-labelledby="item-1"
-    class="pf-c-data-list__item"
+    class="pf-v5-c-data-list__item"
     id=""
   />
 </DocumentFragment>
@@ -285,7 +285,7 @@ exports[`DataList List 1`] = `
 <DocumentFragment>
   <ul
     aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-md data-list-custom"
+    class="pf-v5-c-data-list pf-m-grid-md data-list-custom"
     role="list"
   />
 </DocumentFragment>
@@ -295,7 +295,7 @@ exports[`DataList List compact 1`] = `
 <DocumentFragment>
   <ul
     aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-compact pf-m-grid-md"
+    class="pf-v5-c-data-list pf-m-compact pf-m-grid-md"
     role="list"
   />
 </DocumentFragment>
@@ -305,7 +305,7 @@ exports[`DataList List default 1`] = `
 <DocumentFragment>
   <ul
     aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-md"
+    class="pf-v5-c-data-list pf-m-grid-md"
     role="list"
   />
 </DocumentFragment>
@@ -315,7 +315,7 @@ exports[`DataList List draggable 1`] = `
 <DocumentFragment>
   <ul
     aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-compact pf-m-grid-md"
+    class="pf-v5-c-data-list pf-m-compact pf-m-grid-md"
     role="list"
   />
 </DocumentFragment>
@@ -324,7 +324,7 @@ exports[`DataList List draggable 1`] = `
 exports[`DataList item row default 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-data-list__item-row"
+    class="pf-v5-c-data-list__item-row"
   />
 </DocumentFragment>
 `;

@@ -11,7 +11,7 @@ describe('Tab Uncontrolled Demo Test', () => {
 
   it('Verify tabs, tab sections, and tab navigation', () => {
     cy.get('div#unconnectedChildren')
-      .find('.pf-c-tabs__link')
+      .find('.pf-v5-c-tabs__link')
       .each((demoButton: JQuery<HTMLButtonElement>, index: number) => {
         const currentItem: number = index + 1;
         expect(demoButton.text()).to.equal(`Tab item ${currentItem}`);

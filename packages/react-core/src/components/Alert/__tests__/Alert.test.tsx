@@ -40,12 +40,12 @@ test('Renders with class pf-c-alert on the containing div', () => {
       Some alert
     </Alert>
   );
-  expect(screen.getByTestId('Alert-test-id')).toHaveClass('pf-c-alert');
+  expect(screen.getByTestId('Alert-test-id')).toHaveClass('pf-v5-c-alert');
 });
 
 test('Renders with class pf-c-alert__title on the div containing the title', () => {
   render(<Alert title="Some title">Some alert</Alert>);
-  expect(screen.getByRole('heading', { name: 'Custom alert: Some title' })).toHaveClass('pf-c-alert__title');
+  expect(screen.getByRole('heading', { name: 'Custom alert: Some title' })).toHaveClass('pf-v5-c-alert__title');
 });
 
 test('Renders with Custom hidden text of "Custom alert:"', () => {
@@ -206,7 +206,7 @@ test('Renders the actionClose element inside pf-c-alert__action', () => {
     </Alert>
   );
 
-  expect(screen.getByText('Action close')).toHaveClass('pf-c-alert__action');
+  expect(screen.getByText('Action close')).toHaveClass('pf-v5-c-alert__action');
 });
 
 test('Provides the actionClose element access to the title via a context', () => {
@@ -246,7 +246,7 @@ test('Renders the actionLinks element inside pf-c-alert__action-group', () => {
     </Alert>
   );
 
-  expect(screen.getByText('Action link')).toHaveClass('pf-c-alert__action-group');
+  expect(screen.getByText('Action link')).toHaveClass('pf-v5-c-alert__action-group');
 });
 
 test('Renders children', () => {
@@ -258,7 +258,7 @@ test('Renders children', () => {
 test('Renders children inside pf-c-alert__description', () => {
   render(<Alert title="Some title">Some alert</Alert>);
 
-  expect(screen.getByText('Some alert')).toHaveClass('pf-c-alert__description');
+  expect(screen.getByText('Some alert')).toHaveClass('pf-v5-c-alert__description');
 });
 
 test('Renders with the aria label passed via prop', () => {
@@ -578,7 +578,7 @@ test('Renders titles with the expected truncation styling when truncateTitle is 
   const title = screen.getByRole('heading');
 
   expect(title).toHaveClass('pf-m-truncate');
-  expect(title).toHaveAttribute('style', '--pf-c-alert__title--max-lines: 3;');
+  expect(title).toHaveAttribute('style', '--pf-v5-c-alert__title--max-lines: 3;');
 });
 
 test('Passes customIcon value to AlertIcon', () => {
@@ -616,7 +616,7 @@ test('Renders AlertToggleExpandButton inside pf-c-alert__toggle', () => {
     </Alert>
   );
 
-  expect(screen.getByRole('button').parentElement).toHaveClass('pf-c-alert__toggle');
+  expect(screen.getByRole('button').parentElement).toHaveClass('pf-v5-c-alert__toggle');
 });
 
 test('Does not render with class pf-m-expanded when AlertToggleExpandButton has not been clicked', () => {

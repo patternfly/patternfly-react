@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/AlertGroup/alert-group';
+import styles from '@patternfly/react-styles/css/components/Alert/alert-group';
 import { AlertGroupProps } from './AlertGroup';
 import { AlertProps } from '../Alert';
 

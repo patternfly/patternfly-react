@@ -3,14 +3,14 @@
 exports[`MultipleFileUploadMain passes props to the info component as expected 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__main"
+    class="pf-v5-c-multiple-file-upload__main"
   >
     <div
-      class="pf-c-multiple-file-upload__upload"
+      class="pf-v5-c-multiple-file-upload__upload"
     >
       <button
         aria-disabled="false"
-        class="pf-c-button pf-m-secondary"
+        class="pf-v5-c-button pf-m-secondary"
         data-ouia-component-id="OUIA-Generated-Button-secondary-4"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
@@ -20,7 +20,7 @@ exports[`MultipleFileUploadMain passes props to the info component as expected 1
       </button>
     </div>
     <div
-      class="pf-c-multiple-file-upload__info"
+      class="pf-v5-c-multiple-file-upload__info"
     >
       info text
     </div>
@@ -31,33 +31,33 @@ exports[`MultipleFileUploadMain passes props to the info component as expected 1
 exports[`MultipleFileUploadMain passes props to the title as expected 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__main"
+    class="pf-v5-c-multiple-file-upload__main"
   >
     <div
-      class="pf-c-multiple-file-upload__title"
+      class="pf-v5-c-multiple-file-upload__title"
     >
       <div
-        class="pf-c-multiple-file-upload__title-icon"
+        class="pf-v5-c-multiple-file-upload__title-icon"
       >
         icon
       </div>
       <div
-        class="pf-c-multiple-file-upload__title-text"
+        class="pf-v5-c-multiple-file-upload__title-text"
       >
         title text 
         <div
-          class="pf-c-multiple-file-upload__title-text-separator"
+          class="pf-v5-c-multiple-file-upload__title-text-separator"
         >
           title test separator
         </div>
       </div>
     </div>
     <div
-      class="pf-c-multiple-file-upload__upload"
+      class="pf-v5-c-multiple-file-upload__upload"
     >
       <button
         aria-disabled="false"
-        class="pf-c-button pf-m-secondary"
+        class="pf-v5-c-button pf-m-secondary"
         data-ouia-component-id="OUIA-Generated-Button-secondary-3"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
@@ -73,14 +73,14 @@ exports[`MultipleFileUploadMain passes props to the title as expected 1`] = `
 exports[`MultipleFileUploadMain renders custom class names 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__main test"
+    class="pf-v5-c-multiple-file-upload__main test"
   >
     <div
-      class="pf-c-multiple-file-upload__upload"
+      class="pf-v5-c-multiple-file-upload__upload"
     >
       <button
         aria-disabled="false"
-        class="pf-c-button pf-m-secondary"
+        class="pf-v5-c-button pf-m-secondary"
         data-ouia-component-id="OUIA-Generated-Button-secondary-2"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
@@ -96,14 +96,14 @@ exports[`MultipleFileUploadMain renders custom class names 1`] = `
 exports[`MultipleFileUploadMain renders with expected class names 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__main"
+    class="pf-v5-c-multiple-file-upload__main"
   >
     <div
-      class="pf-c-multiple-file-upload__upload"
+      class="pf-v5-c-multiple-file-upload__upload"
     >
       <button
         aria-disabled="false"
-        class="pf-c-button pf-m-secondary"
+        class="pf-v5-c-button pf-m-secondary"
         data-ouia-component-id="OUIA-Generated-Button-secondary-1"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
@@ -119,7 +119,7 @@ exports[`MultipleFileUploadMain renders with expected class names 1`] = `
 exports[`MultipleFileUploadMain renders without the button when expected 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__main"
+    class="pf-v5-c-multiple-file-upload__main"
   />
 </DocumentFragment>
 `;

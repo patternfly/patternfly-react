@@ -141,12 +141,12 @@ export const TableComposableDemo = () => {
           {rows.map((row, rowIndex) => {
             const isOddRow = (rowIndex + 1) % 2;
             const customStyle = {
-              borderLeft: '3px solid var(--pf-global--primary-color--100)'
+              borderLeft: '3px solid var(--pf-v5-global--primary-color--100)'
             };
             return (
               <Tr
                 key={rowIndex}
-                onClick={event => onRowClick(event, rowIndex, row)}
+                onClick={(event) => onRowClick(event, rowIndex, row)}
                 className={isOddRow ? 'odd-row-class' : 'even-row-class'}
                 style={isOddRow ? customStyle : {}}
               >
@@ -262,7 +262,7 @@ export const TableComposableDemo = () => {
     ];
     const [allRowsSelected, setAllRowsSelected] = React.useState(false);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [selected, setSelected] = React.useState(rows.map(row => false));
+    const [selected, setSelected] = React.useState(rows.map((row) => false));
     const onSelect: OnSelect = (event, isSelected, rowId) => {
       setSelected(selected.map((sel, index) => (index === rowId ? isSelected : sel)));
       if (!isSelected && allRowsSelected) {
@@ -284,7 +284,7 @@ export const TableComposableDemo = () => {
     const onSelectAll: OnSelect = (event, isSelected) => {
       setAllRowsSelected(isSelected);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      setSelected(selected.map(sel => isSelected));
+      setSelected(selected.map((sel) => isSelected));
     };
     return (
       <Table aria-label="Selectable Table">

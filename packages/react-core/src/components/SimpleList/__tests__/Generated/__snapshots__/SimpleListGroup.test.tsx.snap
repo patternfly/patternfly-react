@@ -3,11 +3,11 @@
 exports[`SimpleListGroup should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-simple-list__section"
+    class="pf-v5-c-simple-list__section"
   >
     <h2
       aria-hidden="true"
-      class="pf-c-simple-list__title ''"
+      class="pf-v5-c-simple-list__title ''"
       id="''"
     />
     <ul

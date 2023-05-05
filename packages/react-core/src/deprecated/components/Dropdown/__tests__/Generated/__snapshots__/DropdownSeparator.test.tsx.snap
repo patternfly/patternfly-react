@@ -6,7 +6,7 @@ exports[`DropdownSeparator should match snapshot 1`] = `
     role="none"
   >
     <div
-      class="pf-c-divider ''"
+      class="pf-v5-c-divider ''"
       role="separator"
     />
   </li>

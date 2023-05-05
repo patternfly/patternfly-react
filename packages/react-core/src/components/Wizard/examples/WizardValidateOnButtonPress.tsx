@@ -32,7 +32,7 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
 
   const tick = React.useCallback(() => {
     if (percentValidated < 100) {
-      setPercentValidated(prevValue => prevValue + 20);
+      setPercentValidated((prevValue) => prevValue + 20);
     }
   }, [percentValidated]);
 
@@ -45,7 +45,7 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
   }, [tick]);
 
   return (
-    <div className="pf-l-bullseye">
+    <div className="pf-v5-l-bullseye">
       <EmptyState variant="lg">
         <EmptyStateHeader
           headingLevel="h4"
@@ -183,7 +183,7 @@ export const WizardValidateOnButtonPress: React.FunctionComponent = () => {
         )}
         <SampleForm
           value={ageValue}
-          setValue={value => setAgeValue(value)}
+          setValue={(value) => setAgeValue(value)}
           isValid={!hasErrorOnSubmit || isFirstStepValid}
           setIsValid={setIsFirstStepValid}
         />

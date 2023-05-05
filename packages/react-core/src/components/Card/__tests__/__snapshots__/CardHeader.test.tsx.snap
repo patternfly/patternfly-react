@@ -3,10 +3,10 @@
 exports[`CardHeader actions are rendered 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-card__header"
+    class="pf-v5-c-card__header"
   >
     <div
-      class="pf-c-card__actions"
+      class="pf-v5-c-card__actions"
     >
         
     </div>
@@ -17,25 +17,25 @@ exports[`CardHeader actions are rendered 1`] = `
 exports[`CardHeader onExpand adds the toggle button 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-card__header"
+    class="pf-v5-c-card__header"
   >
     <div
-      class="pf-c-card__header-toggle"
+      class="pf-v5-c-card__header-toggle"
     >
       <button
         aria-disabled="false"
-        class="pf-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
       >
         <span
-          class="pf-c-card__header-toggle-icon"
+          class="pf-v5-c-card__header-toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"

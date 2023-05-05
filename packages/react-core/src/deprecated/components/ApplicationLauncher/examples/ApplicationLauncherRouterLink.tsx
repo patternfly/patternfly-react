@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import { ApplicationLauncher, ApplicationLauncherItem, ApplicationLauncherContent } from '@patternfly/react-core/deprecated';
+import {
+  ApplicationLauncher,
+  ApplicationLauncherItem,
+  ApplicationLauncherContent
+} from '@patternfly/react-core/deprecated';
 import pfLogoSm from './pf-logo-small.svg';
 
 const icon: JSX.Element = <img src={pfLogoSm} />;
 
 const linkStyle: React.CSSProperties = {
-  color: 'var(--pf-c-app-launcher__menu-item--Color)',
+  color: 'var(--pf-v5-c-app-launcher__menu-item--Color)',
   textDecoration: 'none'
 };
 
@@ -44,7 +48,7 @@ export const ApplicationLauncherRouterLink: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => setIsOpen(isOpen);
-  const onSelect = (_event: any) => setIsOpen(prevIsOpen => !prevIsOpen);
+  const onSelect = (_event: any) => setIsOpen((prevIsOpen) => !prevIsOpen);
 
   return <ApplicationLauncher onSelect={onSelect} onToggle={onToggle} isOpen={isOpen} items={appLauncherItems} />;
 };

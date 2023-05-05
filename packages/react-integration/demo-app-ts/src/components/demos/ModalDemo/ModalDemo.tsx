@@ -277,7 +277,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         <Title id="customHeaderTitle" headingLevel="h1" size={TitleSizes['2xl']}>
           Custom Modal Header/Footer
         </Title>
-        <p id="customHeaderDescription" className="pf-u-pt-sm">
+        <p id="customHeaderDescription" className="pf-v5-u-pt-sm">
           Allows for custom content in the header and/or footer by passing components.
         </p>
       </React.Fragment>
@@ -286,7 +286,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     const footer = (
       <Title id="customFooterTitle" headingLevel="h4" size={TitleSizes.md}>
         <WarningTriangleIcon />
-        <span className="pf-u-pl-sm">Custom modal footer.</span>
+        <span className="pf-v5-u-pl-sm">Custom modal footer.</span>
       </Title>
     );
 

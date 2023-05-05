@@ -40,6 +40,6 @@ describe('Disabled Tab Demo Test', () => {
 
   it('Verify aria-disabled with tooltip', () => {
     cy.get(withTooltip.button).trigger('mouseover');
-    cy.get('.pf-c-tooltip').should('be.visible');
+    cy.get('.pf-v5-c-tooltip').should('be.visible');
   });
 });

@@ -3,13 +3,13 @@
 exports[`renders tab action 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-tabs__item pf-m-action"
+    class="pf-v5-c-tabs__item pf-m-action"
     role="presentation"
   >
     <button
       aria-controls="pf-tab-section-1-"
       aria-selected="false"
-      class="pf-c-tabs__link"
+      class="pf-v5-c-tabs__link"
       data-ouia-component-type="PF4/TabButton"
       data-ouia-safe="true"
       id="pf-tab-1-"
@@ -17,25 +17,25 @@ exports[`renders tab action 1`] = `
       type="button"
     >
       <span
-        class="pf-c-tabs__item-text"
+        class="pf-v5-c-tabs__item-text"
       >
         "Tab item 2"
       </span>
     </button>
     <span
-      class="pf-c-tabs__item-action"
+      class="pf-v5-c-tabs__item-action"
     >
       <button
         aria-disabled="false"
         aria-label="Tab action"
-        class="pf-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
       >
         <span
-          class="pf-c-tabs__item-action-icon"
+          class="pf-v5-c-tabs__item-action-icon"
         >
           test
         </span>
@@ -48,13 +48,13 @@ exports[`renders tab action 1`] = `
 exports[`should not render anything 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-tabs__item"
+    class="pf-v5-c-tabs__item"
     role="presentation"
   >
     <button
       aria-controls="pf-tab-section-0-"
       aria-selected="false"
-      class="pf-c-tabs__link"
+      class="pf-v5-c-tabs__link"
       data-ouia-component-type="PF4/TabButton"
       data-ouia-safe="true"
       id="pf-tab-0-"
@@ -62,7 +62,7 @@ exports[`should not render anything 1`] = `
       type="button"
     >
       <span
-        class="pf-c-tabs__item-text"
+        class="pf-v5-c-tabs__item-text"
       >
         "Tab item 1"
       </span>

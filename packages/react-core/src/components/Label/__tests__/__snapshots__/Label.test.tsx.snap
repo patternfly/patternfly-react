@@ -3,24 +3,24 @@
 exports[`Label editable label 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-editable"
+    class="pf-v5-c-label pf-m-editable"
   >
     <button
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
     </button>
     <span
-      class="pf-c-label__actions"
+      class="pf-v5-c-label__actions"
     >
       <button
         aria-disabled="false"
         aria-label="Close Something"
-        class="pf-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-3"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
@@ -28,7 +28,7 @@ exports[`Label editable label 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 352 512"
@@ -46,10 +46,10 @@ exports[`Label editable label 1`] = `
 exports[`Label editable label 2`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-editable pf-m-editable-active"
+    class="pf-v5-c-label pf-m-editable pf-m-editable-active"
   >
     <input
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
       id="editable-input"
       type="text"
       value="Something"
@@ -61,13 +61,13 @@ exports[`Label editable label 2`] = `
 exports[`Label label with additional class name 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label klass1"
+    class="pf-v5-c-label klass1"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -79,15 +79,15 @@ exports[`Label label with additional class name 1`] = `
 exports[`Label label with additional class name and props 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label class-1"
+    class="pf-v5-c-label class-1"
     data-label-name="something"
     id="label-1"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -99,13 +99,13 @@ exports[`Label label with additional class name and props 1`] = `
 exports[`Label label with blue color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-blue"
+    class="pf-v5-c-label pf-m-blue"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -117,13 +117,13 @@ exports[`Label label with blue color 1`] = `
 exports[`Label label with blue color with outline variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-blue pf-m-outline"
+    class="pf-v5-c-label pf-m-blue pf-m-outline"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -135,24 +135,24 @@ exports[`Label label with blue color with outline variant 1`] = `
 exports[`Label label with close button 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label"
+    class="pf-v5-c-label"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
     </span>
     <span
-      class="pf-c-label__actions"
+      class="pf-v5-c-label__actions"
     >
       <button
         aria-disabled="false"
         aria-label="Close Something"
-        class="pf-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
@@ -160,7 +160,7 @@ exports[`Label label with close button 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 352 512"
@@ -178,24 +178,24 @@ exports[`Label label with close button 1`] = `
 exports[`Label label with close button and outline variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-outline"
+    class="pf-v5-c-label pf-m-outline"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
     </span>
     <span
-      class="pf-c-label__actions"
+      class="pf-v5-c-label__actions"
     >
       <button
         aria-disabled="false"
         aria-label="Close Something"
-        class="pf-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-2"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
@@ -203,7 +203,7 @@ exports[`Label label with close button and outline variant 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 352 512"
@@ -221,13 +221,13 @@ exports[`Label label with close button and outline variant 1`] = `
 exports[`Label label with cyan color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-cyan"
+    class="pf-v5-c-label pf-m-cyan"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -239,13 +239,13 @@ exports[`Label label with cyan color 1`] = `
 exports[`Label label with cyan color with outline variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-cyan pf-m-outline"
+    class="pf-v5-c-label pf-m-cyan pf-m-outline"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -257,13 +257,13 @@ exports[`Label label with cyan color with outline variant 1`] = `
 exports[`Label label with green color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-green"
+    class="pf-v5-c-label pf-m-green"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -275,13 +275,13 @@ exports[`Label label with green color 1`] = `
 exports[`Label label with green color with outline variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-green pf-m-outline"
+    class="pf-v5-c-label pf-m-green pf-m-outline"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -293,13 +293,13 @@ exports[`Label label with green color with outline variant 1`] = `
 exports[`Label label with grey color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label"
+    class="pf-v5-c-label"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -311,13 +311,13 @@ exports[`Label label with grey color 1`] = `
 exports[`Label label with grey color with outline variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-outline"
+    class="pf-v5-c-label pf-m-outline"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -329,14 +329,14 @@ exports[`Label label with grey color with outline variant 1`] = `
 exports[`Label label with href 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label"
+    class="pf-v5-c-label"
   >
     <a
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
       href="#"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -348,14 +348,14 @@ exports[`Label label with href 1`] = `
 exports[`Label label with href with outline variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-outline"
+    class="pf-v5-c-label pf-m-outline"
   >
     <a
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
       href="#"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -367,13 +367,13 @@ exports[`Label label with href with outline variant 1`] = `
 exports[`Label label with orange color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-orange"
+    class="pf-v5-c-label pf-m-orange"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -385,13 +385,13 @@ exports[`Label label with orange color 1`] = `
 exports[`Label label with orange color with outline variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-orange pf-m-outline"
+    class="pf-v5-c-label pf-m-orange pf-m-outline"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -403,13 +403,13 @@ exports[`Label label with orange color with outline variant 1`] = `
 exports[`Label label with purple color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-purple"
+    class="pf-v5-c-label pf-m-purple"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -421,13 +421,13 @@ exports[`Label label with purple color 1`] = `
 exports[`Label label with purple color with outline variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-purple pf-m-outline"
+    class="pf-v5-c-label pf-m-purple pf-m-outline"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -439,13 +439,13 @@ exports[`Label label with purple color with outline variant 1`] = `
 exports[`Label label with red color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-red"
+    class="pf-v5-c-label pf-m-red"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -457,13 +457,13 @@ exports[`Label label with red color 1`] = `
 exports[`Label label with red color with outline variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-red pf-m-outline"
+    class="pf-v5-c-label pf-m-red pf-m-outline"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -475,14 +475,14 @@ exports[`Label label with red color with outline variant 1`] = `
 exports[`Label label with truncation 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label"
+    class="pf-v5-c-label"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
-        style="--pf-c-label__text--MaxWidth: 16ch;"
+        class="pf-v5-c-label__text"
+        style="--pf-v5-c-label__text--MaxWidth: 16ch;"
       >
         textMaxWidth set at 16ch on this very long label that should be truncated
       </span>
@@ -494,13 +494,13 @@ exports[`Label label with truncation 1`] = `
 exports[`Label renders 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label"
+    class="pf-v5-c-label"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -512,13 +512,13 @@ exports[`Label renders 1`] = `
 exports[`Label renders with isCompact 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-compact"
+    class="pf-v5-c-label pf-m-compact"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>
@@ -530,13 +530,13 @@ exports[`Label renders with isCompact 1`] = `
 exports[`Label renders with outline variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-label pf-m-outline"
+    class="pf-v5-c-label pf-m-outline"
   >
     <span
-      class="pf-c-label__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-c-label__text"
+        class="pf-v5-c-label__text"
       >
         Something
       </span>

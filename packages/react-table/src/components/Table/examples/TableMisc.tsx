@@ -65,7 +65,7 @@ export const TableMisc: React.FunctionComponent = () => {
         {repositories.map((repo, rowIndex) => {
           const isOddRow = (rowIndex + 1) % 2;
           const customStyle = {
-            backgroundColor: 'var(--pf-global--palette--blue-50)'
+            backgroundColor: 'var(--pf-v5-global--palette--blue-50)'
           };
           // Some arbitrary logic to demonstrate that cell styles can be based on anything
           const nameColSpan = repo.branches === null && repo.prs === null ? 3 : 1;

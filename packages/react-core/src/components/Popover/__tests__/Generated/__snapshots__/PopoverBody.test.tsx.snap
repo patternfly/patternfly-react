@@ -3,7 +3,7 @@
 exports[`PopoverBody should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-popover__body"
+    class="pf-v5-c-popover__body"
     id="string"
   >
     <div>

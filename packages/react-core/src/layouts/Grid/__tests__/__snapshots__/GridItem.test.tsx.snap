@@ -3,7 +3,7 @@
 exports[`adds lg offset classes 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-offset-1-col-on-lg"
+    class="pf-v5-l-grid__item pf-m-offset-1-col-on-lg"
   />
 </DocumentFragment>
 `;
@@ -11,7 +11,7 @@ exports[`adds lg offset classes 1`] = `
 exports[`adds lg row classes 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-1-row-on-lg"
+    class="pf-v5-l-grid__item pf-m-1-row-on-lg"
   />
 </DocumentFragment>
 `;
@@ -19,7 +19,7 @@ exports[`adds lg row classes 1`] = `
 exports[`adds lg span class 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-4-col-on-lg"
+    class="pf-v5-l-grid__item pf-m-4-col-on-lg"
   />
 </DocumentFragment>
 `;
@@ -27,7 +27,7 @@ exports[`adds lg span class 1`] = `
 exports[`adds md offset classes 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-offset-1-col-on-md"
+    class="pf-v5-l-grid__item pf-m-offset-1-col-on-md"
   />
 </DocumentFragment>
 `;
@@ -35,7 +35,7 @@ exports[`adds md offset classes 1`] = `
 exports[`adds md row classes 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-1-row-on-md"
+    class="pf-v5-l-grid__item pf-m-1-row-on-md"
   />
 </DocumentFragment>
 `;
@@ -43,7 +43,7 @@ exports[`adds md row classes 1`] = `
 exports[`adds md span class 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-4-col-on-md"
+    class="pf-v5-l-grid__item pf-m-4-col-on-md"
   />
 </DocumentFragment>
 `;
@@ -51,7 +51,7 @@ exports[`adds md span class 1`] = `
 exports[`adds offset class 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-offset-4-col"
+    class="pf-v5-l-grid__item pf-m-offset-4-col"
   />
 </DocumentFragment>
 `;
@@ -59,7 +59,7 @@ exports[`adds offset class 1`] = `
 exports[`adds row class 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-4-row"
+    class="pf-v5-l-grid__item pf-m-4-row"
   />
 </DocumentFragment>
 `;
@@ -67,7 +67,7 @@ exports[`adds row class 1`] = `
 exports[`adds sm offset classes 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-offset-1-col-on-sm"
+    class="pf-v5-l-grid__item pf-m-offset-1-col-on-sm"
   />
 </DocumentFragment>
 `;
@@ -75,7 +75,7 @@ exports[`adds sm offset classes 1`] = `
 exports[`adds sm row classes 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-1-row-on-sm"
+    class="pf-v5-l-grid__item pf-m-1-row-on-sm"
   />
 </DocumentFragment>
 `;
@@ -83,7 +83,7 @@ exports[`adds sm row classes 1`] = `
 exports[`adds sm span class 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-4-col-on-sm"
+    class="pf-v5-l-grid__item pf-m-4-col-on-sm"
   />
 </DocumentFragment>
 `;
@@ -91,7 +91,7 @@ exports[`adds sm span class 1`] = `
 exports[`adds span class 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-4-col"
+    class="pf-v5-l-grid__item pf-m-4-col"
   />
 </DocumentFragment>
 `;
@@ -99,7 +99,7 @@ exports[`adds span class 1`] = `
 exports[`adds xl offset classes 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-offset-1-col-on-xl"
+    class="pf-v5-l-grid__item pf-m-offset-1-col-on-xl"
   />
 </DocumentFragment>
 `;
@@ -107,7 +107,7 @@ exports[`adds xl offset classes 1`] = `
 exports[`adds xl row classes 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-1-row-on-xl"
+    class="pf-v5-l-grid__item pf-m-1-row-on-xl"
   />
 </DocumentFragment>
 `;
@@ -115,7 +115,7 @@ exports[`adds xl row classes 1`] = `
 exports[`adds xl span class 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-4-col-on-xl"
+    class="pf-v5-l-grid__item pf-m-4-col-on-xl"
   />
 </DocumentFragment>
 `;
@@ -123,7 +123,7 @@ exports[`adds xl span class 1`] = `
 exports[`adds xl2 offset classes 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-offset-1-col-on-2xl"
+    class="pf-v5-l-grid__item pf-m-offset-1-col-on-2xl"
   />
 </DocumentFragment>
 `;
@@ -131,7 +131,7 @@ exports[`adds xl2 offset classes 1`] = `
 exports[`adds xl2 row classes 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-1-row-on-2xl"
+    class="pf-v5-l-grid__item pf-m-1-row-on-2xl"
   />
 </DocumentFragment>
 `;
@@ -139,7 +139,7 @@ exports[`adds xl2 row classes 1`] = `
 exports[`adds xl2 span class 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-grid__item pf-m-4-col-on-2xl"
+    class="pf-v5-l-grid__item pf-m-4-col-on-2xl"
   />
 </DocumentFragment>
 `;

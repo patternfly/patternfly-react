@@ -163,7 +163,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     if (position === 'bottom') {
       panel.current.style.overflowAnchor = 'none';
     }
-    panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', newSize + 'px');
+    panel.current.style.setProperty('--pf-v5-c-drawer__panel--md--FlexBasis', newSize + 'px');
     currWidth = newSize;
     setSeparatorValue(calcValueNow());
   };
@@ -232,19 +232,19 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     if (position === 'bottom') {
       panel.current.style.overflowAnchor = 'none';
     }
-    panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', newSize + 'px');
+    panel.current.style.setProperty('--pf-v5-c-drawer__panel--md--FlexBasis', newSize + 'px');
     currWidth = newSize;
     setSeparatorValue(calcValueNow());
   };
   const boundaryCssVars: any = {};
   if (defaultSize) {
-    boundaryCssVars['--pf-c-drawer__panel--md--FlexBasis'] = defaultSize;
+    boundaryCssVars['--pf-v5-c-drawer__panel--md--FlexBasis'] = defaultSize;
   }
   if (minSize) {
-    boundaryCssVars['--pf-c-drawer__panel--md--FlexBasis--min'] = minSize;
+    boundaryCssVars['--pf-v5-c-drawer__panel--md--FlexBasis--min'] = minSize;
   }
   if (maxSize) {
-    boundaryCssVars['--pf-c-drawer__panel--md--FlexBasis--max'] = maxSize;
+    boundaryCssVars['--pf-v5-c-drawer__panel--md--FlexBasis--max'] = maxSize;
   }
   return (
     <GenerateId prefix="pf-drawer-panel-">
@@ -261,7 +261,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
           )}
           ref={panel}
           onTransitionEnd={(ev) => {
-            if (ev.target as HTMLElement === panel.current) {
+            if ((ev.target as HTMLElement) === panel.current) {
               if (!hidden && ev.nativeEvent.propertyName === 'transform') {
                 onExpand(ev);
               }

@@ -18,7 +18,7 @@ const props: AboutModalProps = {
 describe('AboutModal', () => {
   test('closes with escape', async () => {
     const user = userEvent.setup();
-    
+
     render(<AboutModal {...props} isOpen />);
 
     await user.type(screen.getByRole('dialog'), `{${KeyTypes.Escape}}`);
@@ -51,7 +51,6 @@ describe('AboutModal', () => {
       onClose: jest.fn(),
       children: 'modal content',
       trademark: 'Trademark and copyright information here'
-
     } as any;
     const myMock = jest.fn() as any;
     global.console = { error: myMock } as any;

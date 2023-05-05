@@ -10,7 +10,7 @@ export const WizardWithCustomNavItem: React.FunctionComponent = () => (
       id="custom-nav-item-second-step"
       name="Step 2"
       navItem={{
-        content: <span style={{ color: 'var(--pf-global--default-color--200)' }}>Custom item</span>
+        content: <span style={{ color: 'var(--pf-v5-global--default-color--200)' }}>Custom item</span>
       }}
     >
       Step 2 content with a custom navigation item

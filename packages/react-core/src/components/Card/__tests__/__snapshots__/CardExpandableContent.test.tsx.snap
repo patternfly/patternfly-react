@@ -3,7 +3,7 @@
 exports[`renders successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-card__expandable-content"
+    class="pf-v5-c-card__expandable-content"
   />
 </DocumentFragment>
 `;

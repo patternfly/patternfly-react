@@ -42,25 +42,29 @@ export const Brand: React.FunctionComponent<BrandProps> = ({
   style,
   ...props
 }: BrandProps) => {
-  let responsiveStyles; 
+  let responsiveStyles;
   if (children !== undefined && widths !== undefined) {
     responsiveStyles = {
-      ...setBreakpointCssVars(widths, '--pf-c-brand--Width')
+      ...setBreakpointCssVars(widths, '--pf-v5-c-brand--Width')
     };
   }
 
   if (children !== undefined && heights !== undefined) {
     responsiveStyles = {
-      ...setBreakpointCssVars(heights, '--pf-c-brand--Height')
+      ...setBreakpointCssVars(heights, '--pf-v5-c-brand--Height')
     };
   }
 
   return (
     /** the brand component currently contains no styling the 'pf-c-brand' string will be used for the className */
     children !== undefined ? (
-      <picture className={css(styles.brand, styles.modifiers.picture, className)} style={{...style, ...responsiveStyles}} {...props}>
+      <picture
+        className={css(styles.brand, styles.modifiers.picture, className)}
+        style={{ ...style, ...responsiveStyles }}
+        {...props}
+      >
         {children}
-        <img src={src} alt={alt}/>
+        <img src={src} alt={alt} />
       </picture>
     ) : (
       <img {...props} className={css(styles.brand, className)} style={style} src={src} alt={alt} />

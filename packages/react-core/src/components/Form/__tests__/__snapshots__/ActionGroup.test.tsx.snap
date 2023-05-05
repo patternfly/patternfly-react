@@ -3,13 +3,13 @@
 exports[`ActionGroup component should render default action group variant 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-form__group pf-m-action"
+    class="pf-v5-c-form__group pf-m-action"
   >
     <div
-      class="pf-c-form__group-control"
+      class="pf-v5-c-form__group-control"
     >
       <div
-        class="pf-c-form__actions"
+        class="pf-v5-c-form__actions"
       >
         <div>
           Hello
@@ -23,17 +23,17 @@ exports[`ActionGroup component should render default action group variant 1`] = 
 exports[`ActionGroup component should render horizontal form ActionGroup variant 1`] = `
 <DocumentFragment>
   <form
-    class="pf-c-form pf-m-horizontal"
+    class="pf-v5-c-form pf-m-horizontal"
     novalidate=""
   >
     <div
-      class="pf-c-form__group pf-m-action"
+      class="pf-v5-c-form__group pf-m-action"
     >
       <div
-        class="pf-c-form__group-control"
+        class="pf-v5-c-form__group-control"
       >
         <div
-          class="pf-c-form__actions"
+          class="pf-v5-c-form__actions"
         />
       </div>
     </div>

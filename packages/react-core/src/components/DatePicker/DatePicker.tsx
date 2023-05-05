@@ -118,7 +118,7 @@ const DatePickerBase = (
   const [selectOpen, setSelectOpen] = React.useState(false);
   const [pristine, setPristine] = React.useState(true);
   const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
-  const style = { '--pf-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
+  const style = { '--pf-v5-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
   const buttonRef = React.useRef<HTMLButtonElement>();
   const datePickerWrapperRef = React.useRef<HTMLDivElement>();
   const triggerRef = React.useRef<HTMLDivElement>();

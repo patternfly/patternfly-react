@@ -3,7 +3,7 @@
 exports[`optionsMenu expanded 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-options-menu pf-m-expanded"
+    class="pf-v5-c-options-menu pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-7"
     data-ouia-component-type="PF4/OptionsMenu"
     data-ouia-safe="true"
@@ -13,7 +13,7 @@ exports[`optionsMenu expanded 1`] = `
       aria-expanded="true"
       aria-haspopup="listbox"
       aria-label="Options menu"
-      class="pf-c-options-menu__toggle"
+      class="pf-v5-c-options-menu__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -21,14 +21,14 @@ exports[`optionsMenu expanded 1`] = `
       type="button"
     >
       <span
-        class="pf-c-options-menu__toggle-text"
+        class="pf-v5-c-options-menu__toggle-text"
       />
       <span
-        class="pf-c-options-menu__toggle-icon"
+        class="pf-v5-c-options-menu__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -41,16 +41,16 @@ exports[`optionsMenu expanded 1`] = `
     </button>
     <ul
       aria-labelledby="expanded-toggle"
-      class="pf-c-options-menu__menu"
+      class="pf-v5-c-options-menu__menu"
       role="menu"
     >
       <section
-        class="pf-c-options-menu__group"
+        class="pf-v5-c-options-menu__group"
         index="0"
         role="none"
       >
         <h1
-          class="pf-c-options-menu__group-title"
+          class="pf-v5-c-options-menu__group-title"
         >
           Sort order
         </h1>
@@ -65,7 +65,7 @@ exports[`optionsMenu expanded 1`] = `
           >
             <button
               aria-disabled="false"
-              class="pf-c-options-menu__menu-item"
+              class="pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-13"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -82,7 +82,7 @@ exports[`optionsMenu expanded 1`] = `
           >
             <button
               aria-disabled="false"
-              class="pf-c-options-menu__menu-item"
+              class="pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-14"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -99,7 +99,7 @@ exports[`optionsMenu expanded 1`] = `
           >
             <button
               aria-disabled="true"
-              class="pf-m-disabled pf-c-options-menu__menu-item"
+              class="pf-m-disabled pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-15"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -116,7 +116,7 @@ exports[`optionsMenu expanded 1`] = `
           >
             <button
               aria-disabled="false"
-              class="pf-c-options-menu__menu-item"
+              class="pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-16"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -130,17 +130,17 @@ exports[`optionsMenu expanded 1`] = `
         </ul>
       </section>
       <li
-        class="pf-c-divider"
+        class="pf-v5-c-divider"
         index="1"
         role="separator"
       />
       <section
-        class="pf-c-options-menu__group"
+        class="pf-v5-c-options-menu__group"
         index="2"
         role="none"
       >
         <h1
-          class="pf-c-options-menu__group-title"
+          class="pf-v5-c-options-menu__group-title"
         >
           Sort direction
         </h1>
@@ -155,7 +155,7 @@ exports[`optionsMenu expanded 1`] = `
           >
             <button
               aria-disabled="false"
-              class="pf-c-options-menu__menu-item"
+              class="pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-17"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -172,7 +172,7 @@ exports[`optionsMenu expanded 1`] = `
           >
             <button
               aria-disabled="false"
-              class="pf-c-options-menu__menu-item"
+              class="pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-18"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -184,7 +184,7 @@ exports[`optionsMenu expanded 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-divider"
+            class="pf-v5-c-divider"
             role="separator"
           />
         </ul>
@@ -197,7 +197,7 @@ exports[`optionsMenu expanded 1`] = `
 exports[`optionsMenu isDisabled 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-options-menu"
+    class="pf-v5-c-options-menu"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-10"
     data-ouia-component-type="PF4/OptionsMenu"
     data-ouia-safe="true"
@@ -207,7 +207,7 @@ exports[`optionsMenu isDisabled 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Options menu"
-      class="pf-c-options-menu__toggle"
+      class="pf-v5-c-options-menu__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-9"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -216,14 +216,14 @@ exports[`optionsMenu isDisabled 1`] = `
       type="button"
     >
       <span
-        class="pf-c-options-menu__toggle-text"
+        class="pf-v5-c-options-menu__toggle-text"
       />
       <span
-        class="pf-c-options-menu__toggle-icon"
+        class="pf-v5-c-options-menu__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -241,7 +241,7 @@ exports[`optionsMenu isDisabled 1`] = `
 exports[`optionsMenu open up 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-options-menu pf-m-top"
+    class="pf-v5-c-options-menu pf-m-top"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-5"
     data-ouia-component-type="PF4/OptionsMenu"
     data-ouia-safe="true"
@@ -251,7 +251,7 @@ exports[`optionsMenu open up 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Options menu"
-      class="pf-c-options-menu__toggle"
+      class="pf-v5-c-options-menu__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -259,14 +259,14 @@ exports[`optionsMenu open up 1`] = `
       type="button"
     >
       <span
-        class="pf-c-options-menu__toggle-text"
+        class="pf-v5-c-options-menu__toggle-text"
       />
       <span
-        class="pf-c-options-menu__toggle-icon"
+        class="pf-v5-c-options-menu__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -284,7 +284,7 @@ exports[`optionsMenu open up 1`] = `
 exports[`optionsMenu plain 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-options-menu"
+    class="pf-v5-c-options-menu"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-8"
     data-ouia-component-type="PF4/OptionsMenu"
     data-ouia-safe="true"
@@ -294,7 +294,7 @@ exports[`optionsMenu plain 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Options menu"
-      class="pf-c-options-menu__toggle pf-m-plain"
+      class="pf-v5-c-options-menu__toggle pf-m-plain"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -310,7 +310,7 @@ exports[`optionsMenu plain 1`] = `
 exports[`optionsMenu regular 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-options-menu"
+    class="pf-v5-c-options-menu"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-1"
     data-ouia-component-type="PF4/OptionsMenu"
     data-ouia-safe="true"
@@ -320,7 +320,7 @@ exports[`optionsMenu regular 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Options menu"
-      class="pf-c-options-menu__toggle"
+      class="pf-v5-c-options-menu__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -328,14 +328,14 @@ exports[`optionsMenu regular 1`] = `
       type="button"
     >
       <span
-        class="pf-c-options-menu__toggle-text"
+        class="pf-v5-c-options-menu__toggle-text"
       />
       <span
-        class="pf-c-options-menu__toggle-icon"
+        class="pf-v5-c-options-menu__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -353,7 +353,7 @@ exports[`optionsMenu regular 1`] = `
 exports[`optionsMenu renders in strict mode 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-options-menu pf-m-expanded"
+    class="pf-v5-c-options-menu pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-3"
     data-ouia-component-type="PF4/OptionsMenu"
     data-ouia-safe="true"
@@ -363,7 +363,7 @@ exports[`optionsMenu renders in strict mode 1`] = `
       aria-expanded="true"
       aria-haspopup="listbox"
       aria-label="Options menu"
-      class="pf-c-options-menu__toggle"
+      class="pf-v5-c-options-menu__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -371,14 +371,14 @@ exports[`optionsMenu renders in strict mode 1`] = `
       type="button"
     >
       <span
-        class="pf-c-options-menu__toggle-text"
+        class="pf-v5-c-options-menu__toggle-text"
       />
       <span
-        class="pf-c-options-menu__toggle-icon"
+        class="pf-v5-c-options-menu__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -391,16 +391,16 @@ exports[`optionsMenu renders in strict mode 1`] = `
     </button>
     <ul
       aria-labelledby="regular-toggle"
-      class="pf-c-options-menu__menu"
+      class="pf-v5-c-options-menu__menu"
       role="menu"
     >
       <section
-        class="pf-c-options-menu__group"
+        class="pf-v5-c-options-menu__group"
         index="0"
         role="none"
       >
         <h1
-          class="pf-c-options-menu__group-title"
+          class="pf-v5-c-options-menu__group-title"
         >
           Sort order
         </h1>
@@ -415,7 +415,7 @@ exports[`optionsMenu renders in strict mode 1`] = `
           >
             <button
               aria-disabled="false"
-              class="pf-c-options-menu__menu-item"
+              class="pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-2"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -432,7 +432,7 @@ exports[`optionsMenu renders in strict mode 1`] = `
           >
             <button
               aria-disabled="false"
-              class="pf-c-options-menu__menu-item"
+              class="pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-4"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -449,7 +449,7 @@ exports[`optionsMenu renders in strict mode 1`] = `
           >
             <button
               aria-disabled="true"
-              class="pf-m-disabled pf-c-options-menu__menu-item"
+              class="pf-m-disabled pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-6"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -466,7 +466,7 @@ exports[`optionsMenu renders in strict mode 1`] = `
           >
             <button
               aria-disabled="false"
-              class="pf-c-options-menu__menu-item"
+              class="pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-8"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -480,17 +480,17 @@ exports[`optionsMenu renders in strict mode 1`] = `
         </ul>
       </section>
       <li
-        class="pf-c-divider"
+        class="pf-v5-c-divider"
         index="1"
         role="separator"
       />
       <section
-        class="pf-c-options-menu__group"
+        class="pf-v5-c-options-menu__group"
         index="2"
         role="none"
       >
         <h1
-          class="pf-c-options-menu__group-title"
+          class="pf-v5-c-options-menu__group-title"
         >
           Sort direction
         </h1>
@@ -505,7 +505,7 @@ exports[`optionsMenu renders in strict mode 1`] = `
           >
             <button
               aria-disabled="false"
-              class="pf-c-options-menu__menu-item"
+              class="pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-10"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -522,7 +522,7 @@ exports[`optionsMenu renders in strict mode 1`] = `
           >
             <button
               aria-disabled="false"
-              class="pf-c-options-menu__menu-item"
+              class="pf-v5-c-options-menu__menu-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-12"
               data-ouia-component-type="PF4/DropdownItem"
               data-ouia-safe="true"
@@ -534,7 +534,7 @@ exports[`optionsMenu renders in strict mode 1`] = `
             </button>
           </li>
           <li
-            class="pf-c-divider"
+            class="pf-v5-c-divider"
             role="separator"
           />
         </ul>
@@ -547,7 +547,7 @@ exports[`optionsMenu renders in strict mode 1`] = `
 exports[`optionsMenu right aligned + open up 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-options-menu pf-m-top pf-m-align-right"
+    class="pf-v5-c-options-menu pf-m-top pf-m-align-right"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-6"
     data-ouia-component-type="PF4/OptionsMenu"
     data-ouia-safe="true"
@@ -557,7 +557,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Options menu"
-      class="pf-c-options-menu__toggle"
+      class="pf-v5-c-options-menu__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -565,14 +565,14 @@ exports[`optionsMenu right aligned + open up 1`] = `
       type="button"
     >
       <span
-        class="pf-c-options-menu__toggle-text"
+        class="pf-v5-c-options-menu__toggle-text"
       />
       <span
-        class="pf-c-options-menu__toggle-icon"
+        class="pf-v5-c-options-menu__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -590,7 +590,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
 exports[`optionsMenu right aligned 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-options-menu pf-m-align-right"
+    class="pf-v5-c-options-menu pf-m-align-right"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-4"
     data-ouia-component-type="PF4/OptionsMenu"
     data-ouia-safe="true"
@@ -600,7 +600,7 @@ exports[`optionsMenu right aligned 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Options menu"
-      class="pf-c-options-menu__toggle"
+      class="pf-v5-c-options-menu__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -608,14 +608,14 @@ exports[`optionsMenu right aligned 1`] = `
       type="button"
     >
       <span
-        class="pf-c-options-menu__toggle-text"
+        class="pf-v5-c-options-menu__toggle-text"
       />
       <span
-        class="pf-c-options-menu__toggle-icon"
+        class="pf-v5-c-options-menu__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -633,18 +633,18 @@ exports[`optionsMenu right aligned 1`] = `
 exports[`optionsMenu text 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-options-menu"
+    class="pf-v5-c-options-menu"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-9"
     data-ouia-component-type="PF4/OptionsMenu"
     data-ouia-safe="true"
     id="text"
   >
     <div
-      class="pf-c-options-menu__toggle pf-m-text"
+      class="pf-v5-c-options-menu__toggle pf-m-text"
       id="pf-dropdown-toggle-id-8"
     >
       <span
-        class="pf-c-options-menu__toggle-text"
+        class="pf-v5-c-options-menu__toggle-text"
       >
         Test
       </span>
@@ -652,11 +652,11 @@ exports[`optionsMenu text 1`] = `
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-label="Options menu"
-        class="pf-c-options-menu__toggle-button"
+        class="pf-v5-c-options-menu__toggle-button"
         id="text-toggle"
       >
         <span
-          class="pf-c-options-menu__toggle-button-icon"
+          class="pf-v5-c-options-menu__toggle-button-icon"
         >
           Test
         </span>

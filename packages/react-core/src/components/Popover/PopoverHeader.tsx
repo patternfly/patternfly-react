@@ -36,7 +36,7 @@ export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
       {icon && <PopoverHeaderIcon>{icon}</PopoverHeaderIcon>}
       <PopoverHeaderText headingLevel={titleHeadingLevel}>
         {alertSeverityVariant && alertSeverityScreenReaderText && (
-          <span className="pf-u-screen-reader">{alertSeverityScreenReaderText}</span>
+          <span className="pf-v5-u-screen-reader">{alertSeverityScreenReaderText}</span>
         )}
         {children}
       </PopoverHeaderText>

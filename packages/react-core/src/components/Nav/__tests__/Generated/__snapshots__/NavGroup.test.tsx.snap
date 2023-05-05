@@ -4,16 +4,16 @@ exports[`NavGroup should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <section
     aria-labelledby="string"
-    class="pf-c-nav__section ''"
+    class="pf-v5-c-nav__section ''"
   >
     <h2
-      class="pf-c-nav__section-title"
+      class="pf-v5-c-nav__section-title"
       id="string"
     >
       string
     </h2>
     <ul
-      class="pf-c-nav__list ''"
+      class="pf-v5-c-nav__list ''"
       role="list"
     >
       ReactNode

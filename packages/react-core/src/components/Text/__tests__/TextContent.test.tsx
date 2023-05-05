@@ -18,7 +18,7 @@ test('Renders children', () => {
 
 test('Renders with class name pf-c-content', () => {
   render(<TextContent>Test</TextContent>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-content', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-content', { exact: true });
 });
 
 test('Renders with custom class name when className prop is provided', () => {

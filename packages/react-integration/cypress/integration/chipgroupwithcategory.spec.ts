@@ -4,7 +4,7 @@ describe('Chip Group with Category Demo Test', () => {
   });
 
   it('Verify delete button on first chip group', () => {
-    const chipGroup = cy.get('.pf-c-chip-group').first();
+    const chipGroup = cy.get('.pf-v5-c-chip-group').first();
     const chipGroupButton = chipGroup.get('#remove_group_category-1');
     chipGroupButton.should('be.visible');
     chipGroupButton.click();
@@ -12,15 +12,15 @@ describe('Chip Group with Category Demo Test', () => {
   });
 
   it('Displays Tooltip', () => {
-    cy.get('.pf-c-chip-group__label')
+    cy.get('.pf-v5-c-chip-group__label')
       .last()
       .then((tooltipLink: JQuery<HTMLHeadingElement>) => {
-        cy.get('.pf-c-tooltip').should('not.exist');
+        cy.get('.pf-v5-c-tooltip').should('not.exist');
         cy.wrap(tooltipLink)
           .trigger('mouseenter')
-          .get('.pf-c-tooltip')
+          .get('.pf-v5-c-tooltip')
           .should('exist')
-          .get('.pf-c-tooltip')
+          .get('.pf-v5-c-tooltip')
           .contains('Category 3 has a very long name');
       });
   });

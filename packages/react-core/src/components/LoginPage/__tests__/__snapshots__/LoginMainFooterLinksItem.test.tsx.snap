@@ -3,10 +3,10 @@
 exports[`LoginMainFooterLinksItem className is added to the root element 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-login__main-footer-links-item extra-class"
+    class="pf-v5-c-login__main-footer-links-item extra-class"
   >
     <a
-      class="pf-c-login__main-footer-links-item-link"
+      class="pf-v5-c-login__main-footer-links-item-link"
       href=""
       target=""
     />
@@ -17,10 +17,10 @@ exports[`LoginMainFooterLinksItem className is added to the root element 1`] = `
 exports[`LoginMainFooterLinksItem renders with PatternFly Core styles 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-login__main-footer-links-item"
+    class="pf-v5-c-login__main-footer-links-item"
   >
     <a
-      class="pf-c-login__main-footer-links-item-link"
+      class="pf-v5-c-login__main-footer-links-item-link"
       href="#"
       target=""
     />
@@ -31,10 +31,10 @@ exports[`LoginMainFooterLinksItem renders with PatternFly Core styles 1`] = `
 exports[`LoginMainFooterLinksItem with custom node 1`] = `
 <DocumentFragment>
   <li
-    class="pf-c-login__main-footer-links-item"
+    class="pf-v5-c-login__main-footer-links-item"
   >
     <a
-      class="pf-c-login__main-footer-links-item-link"
+      class="pf-v5-c-login__main-footer-links-item-link"
       href=""
       target=""
     >

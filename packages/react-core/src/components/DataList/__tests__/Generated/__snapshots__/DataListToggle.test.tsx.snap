@@ -4,17 +4,17 @@ exports[`DataListToggle should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
     aria-labelledby="''"
-    class="pf-c-data-list__item-control ''"
+    class="pf-v5-c-data-list__item-control ''"
   >
     <div
-      class="pf-c-data-list__toggle"
+      class="pf-v5-c-data-list__toggle"
     >
       <button
         aria-controls="''"
         aria-disabled="false"
         aria-expanded="false"
         aria-label="'Details'"
-        class="pf-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
@@ -22,11 +22,11 @@ exports[`DataListToggle should match snapshot (auto-generated) 1`] = `
         type="button"
       >
         <div
-          class="pf-c-data-list__toggle-icon"
+          class="pf-v5-c-data-list__toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"

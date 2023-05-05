@@ -3,7 +3,7 @@
 exports[`Renders ContextSelectorMenuList closed 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-c-context-selector__menu-list"
+    class="pf-v5-c-context-selector__menu-list"
     hidden=""
     role="menu"
   >
@@ -11,7 +11,7 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
       role="none"
     >
       <button
-        class="pf-c-context-selector__menu-list-item"
+        class="pf-v5-c-context-selector__menu-list-item"
         role="menuitem"
       >
         My Project
@@ -21,7 +21,7 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
       role="none"
     >
       <button
-        class="pf-c-context-selector__menu-list-item"
+        class="pf-v5-c-context-selector__menu-list-item"
         role="menuitem"
       >
         OpenShift Cluster
@@ -31,7 +31,7 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
       role="none"
     >
       <button
-        class="pf-c-context-selector__menu-list-item"
+        class="pf-v5-c-context-selector__menu-list-item"
         role="menuitem"
       >
         Production Ansible
@@ -41,7 +41,7 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
       role="none"
     >
       <button
-        class="pf-c-context-selector__menu-list-item"
+        class="pf-v5-c-context-selector__menu-list-item"
         role="menuitem"
       >
         AWS
@@ -51,7 +51,7 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
       role="none"
     >
       <button
-        class="pf-c-context-selector__menu-list-item"
+        class="pf-v5-c-context-selector__menu-list-item"
         role="menuitem"
       >
         Azure
@@ -64,7 +64,7 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
 exports[`Renders ContextSelectorMenuList open 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-c-context-selector__menu-list"
+    class="pf-v5-c-context-selector__menu-list"
     hidden=""
     role="menu"
   >
@@ -72,7 +72,7 @@ exports[`Renders ContextSelectorMenuList open 1`] = `
       role="none"
     >
       <button
-        class="pf-c-context-selector__menu-list-item"
+        class="pf-v5-c-context-selector__menu-list-item"
         role="menuitem"
       >
         My Project
@@ -82,7 +82,7 @@ exports[`Renders ContextSelectorMenuList open 1`] = `
       role="none"
     >
       <button
-        class="pf-c-context-selector__menu-list-item"
+        class="pf-v5-c-context-selector__menu-list-item"
         role="menuitem"
       >
         OpenShift Cluster
@@ -92,7 +92,7 @@ exports[`Renders ContextSelectorMenuList open 1`] = `
       role="none"
     >
       <button
-        class="pf-c-context-selector__menu-list-item"
+        class="pf-v5-c-context-selector__menu-list-item"
         role="menuitem"
       >
         Production Ansible
@@ -102,7 +102,7 @@ exports[`Renders ContextSelectorMenuList open 1`] = `
       role="none"
     >
       <button
-        class="pf-c-context-selector__menu-list-item"
+        class="pf-v5-c-context-selector__menu-list-item"
         role="menuitem"
       >
         AWS
@@ -112,7 +112,7 @@ exports[`Renders ContextSelectorMenuList open 1`] = `
       role="none"
     >
       <button
-        class="pf-c-context-selector__menu-list-item"
+        class="pf-v5-c-context-selector__menu-list-item"
         role="menuitem"
       >
         Azure

@@ -3,10 +3,10 @@
 exports[`HelperText default helper text variant applies successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-helper-text__item"
+    class="pf-v5-c-helper-text__item"
   >
     <span
-      class="pf-c-helper-text__item-text"
+      class="pf-v5-c-helper-text__item-text"
     >
       default help test text
     </span>
@@ -17,18 +17,18 @@ exports[`HelperText default helper text variant applies successfully 1`] = `
 exports[`HelperText dynamic helper text renders successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-helper-text"
+    class="pf-v5-c-helper-text"
   >
     <div
-      class="pf-c-helper-text__item pf-m-dynamic"
+      class="pf-v5-c-helper-text__item pf-m-dynamic"
     >
       <span
         aria-hidden="true"
-        class="pf-c-helper-text__item-icon"
+        class="pf-v5-c-helper-text__item-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 448 512"
@@ -39,11 +39,11 @@ exports[`HelperText dynamic helper text renders successfully 1`] = `
         </svg>
       </span>
       <span
-        class="pf-c-helper-text__item-text"
+        class="pf-v5-c-helper-text__item-text"
       >
         help test text
         <span
-          class="pf-u-screen-reader"
+          class="pf-v5-u-screen-reader"
         >
           : default status;
         </span>
@@ -56,31 +56,31 @@ exports[`HelperText dynamic helper text renders successfully 1`] = `
 exports[`HelperText helper text block renders successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-helper-text"
+    class="pf-v5-c-helper-text"
   >
     <div
-      class="pf-c-helper-text__item"
+      class="pf-v5-c-helper-text__item"
     >
       <span
-        class="pf-c-helper-text__item-text"
+        class="pf-v5-c-helper-text__item-text"
       >
         help test text 1
       </span>
     </div>
     <div
-      class="pf-c-helper-text__item"
+      class="pf-v5-c-helper-text__item"
     >
       <span
-        class="pf-c-helper-text__item-text"
+        class="pf-v5-c-helper-text__item-text"
       >
         help test text 2
       </span>
     </div>
     <div
-      class="pf-c-helper-text__item"
+      class="pf-v5-c-helper-text__item"
     >
       <span
-        class="pf-c-helper-text__item-text"
+        class="pf-v5-c-helper-text__item-text"
       >
         help test text 3
       </span>
@@ -92,18 +92,18 @@ exports[`HelperText helper text block renders successfully 1`] = `
 exports[`HelperText icon helper text renders properly 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-helper-text"
+    class="pf-v5-c-helper-text"
   >
     <div
-      class="pf-c-helper-text__item"
+      class="pf-v5-c-helper-text__item"
     >
       <span
         aria-hidden="true"
-        class="pf-c-helper-text__item-icon"
+        class="pf-v5-c-helper-text__item-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"
@@ -114,7 +114,7 @@ exports[`HelperText icon helper text renders properly 1`] = `
         </svg>
       </span>
       <span
-        class="pf-c-helper-text__item-text"
+        class="pf-v5-c-helper-text__item-text"
       >
         help test text
       </span>
@@ -126,10 +126,10 @@ exports[`HelperText icon helper text renders properly 1`] = `
 exports[`HelperText indeterminate helper text variant applies successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-helper-text__item pf-m-indeterminate"
+    class="pf-v5-c-helper-text__item pf-m-indeterminate"
   >
     <span
-      class="pf-c-helper-text__item-text"
+      class="pf-v5-c-helper-text__item-text"
     >
       indeterminate help test text
     </span>
@@ -140,10 +140,10 @@ exports[`HelperText indeterminate helper text variant applies successfully 1`] =
 exports[`HelperText invalid helper text variant applies successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-helper-text__item"
+    class="pf-v5-c-helper-text__item"
   >
     <span
-      class="pf-c-helper-text__item-text"
+      class="pf-v5-c-helper-text__item-text"
     >
       invalid help test text
     </span>
@@ -154,13 +154,13 @@ exports[`HelperText invalid helper text variant applies successfully 1`] = `
 exports[`HelperText simple helper text renders successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-helper-text"
+    class="pf-v5-c-helper-text"
   >
     <div
-      class="pf-c-helper-text__item"
+      class="pf-v5-c-helper-text__item"
     >
       <span
-        class="pf-c-helper-text__item-text"
+        class="pf-v5-c-helper-text__item-text"
       >
         help test text
       </span>
@@ -172,10 +172,10 @@ exports[`HelperText simple helper text renders successfully 1`] = `
 exports[`HelperText success helper text variant applies successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-helper-text__item pf-m-success"
+    class="pf-v5-c-helper-text__item pf-m-success"
   >
     <span
-      class="pf-c-helper-text__item-text"
+      class="pf-v5-c-helper-text__item-text"
     >
       success help test text
     </span>
@@ -186,23 +186,23 @@ exports[`HelperText success helper text variant applies successfully 1`] = `
 exports[`HelperText variant comonent helper text renders properly 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-c-helper-text"
+    class="pf-v5-c-helper-text"
     role="list"
   >
     <li
-      class="pf-c-helper-text__item"
+      class="pf-v5-c-helper-text__item"
     >
       <span
-        class="pf-c-helper-text__item-text"
+        class="pf-v5-c-helper-text__item-text"
       >
         help test text 1
       </span>
     </li>
     <li
-      class="pf-c-helper-text__item"
+      class="pf-v5-c-helper-text__item"
     >
       <span
-        class="pf-c-helper-text__item-text"
+        class="pf-v5-c-helper-text__item-text"
       >
         help test text 2
       </span>
@@ -214,10 +214,10 @@ exports[`HelperText variant comonent helper text renders properly 1`] = `
 exports[`HelperText warning helper text variant applies successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-helper-text__item pf-m-warning"
+    class="pf-v5-c-helper-text__item pf-m-warning"
   >
     <span
-      class="pf-c-helper-text__item-text"
+      class="pf-v5-c-helper-text__item-text"
     >
       warning help test text
     </span>

@@ -13,12 +13,7 @@ import {
   HelperTextItem,
   FormHelperText
 } from '@patternfly/react-core';
-import {
-  Select,
-  SelectOption,
-  SelectOptionObject,
-  SelectVariant,
-} from '@patternfly/react-core/deprecated';
+import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core/deprecated';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
@@ -131,7 +126,7 @@ export class FormDemo extends Component<FormProps, FormState> {
                   aria-label="More info for name field"
                   onClick={(e) => e.preventDefault()}
                   aria-describedby="simple-form-name"
-                  className="pf-c-form__group-label-help"
+                  className="pf-v5-c-form__group-label-help"
                 >
                   <HelpIcon />
                 </button>
@@ -158,7 +153,7 @@ export class FormDemo extends Component<FormProps, FormState> {
           </FormGroup>
         </Form>
 
-        <Divider className="pf-u-my-xl" />
+        <Divider className="pf-v5-u-my-xl" />
 
         <Form id="form-demo-2">
           <FormGroup fieldId="select-state-typeahead">

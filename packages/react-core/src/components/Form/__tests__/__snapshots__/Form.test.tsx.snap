@@ -3,7 +3,7 @@
 exports[`Form component should render default form variant 1`] = `
 <DocumentFragment>
   <form
-    class="pf-c-form"
+    class="pf-v5-c-form"
     novalidate=""
   />
 </DocumentFragment>
@@ -12,7 +12,7 @@ exports[`Form component should render default form variant 1`] = `
 exports[`Form component should render form with limited width 1`] = `
 <DocumentFragment>
   <form
-    class="pf-c-form pf-m-limit-width"
+    class="pf-v5-c-form pf-m-limit-width"
     novalidate=""
   />
 </DocumentFragment>
@@ -21,7 +21,7 @@ exports[`Form component should render form with limited width 1`] = `
 exports[`Form component should render horizontal form variant 1`] = `
 <DocumentFragment>
   <form
-    class="pf-c-form pf-m-horizontal"
+    class="pf-v5-c-form pf-m-horizontal"
     novalidate=""
   />
 </DocumentFragment>

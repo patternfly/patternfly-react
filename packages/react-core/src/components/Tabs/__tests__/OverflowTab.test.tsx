@@ -78,19 +78,19 @@ test('Renders with class names pf-m-overflow and pf-c-tabs__item on the presenta
   render(<OverflowTab />);
 
   expect(screen.getByRole('presentation')).toHaveClass('pf-m-overflow');
-  expect(screen.getByRole('presentation')).toHaveClass('pf-c-tabs__item');
+  expect(screen.getByRole('presentation')).toHaveClass('pf-v5-c-tabs__item');
 });
 
 test('Renders with class pf-c-tabs__link on the tab element', () => {
   render(<OverflowTab />);
 
-  expect(screen.getByRole('tab')).toHaveClass('pf-c-tabs__link');
+  expect(screen.getByRole('tab')).toHaveClass('pf-v5-c-tabs__link');
 });
 
 test("Renders with class pf-c-tabs__link-toggle-icon on the img element's container", () => {
   render(<OverflowTab />);
 
-  expect(screen.getByRole('img', { hidden: true }).parentElement).toHaveClass('pf-c-tabs__link-toggle-icon');
+  expect(screen.getByRole('img', { hidden: true }).parentElement).toHaveClass('pf-v5-c-tabs__link-toggle-icon');
 });
 
 test('Renders with custom class names provided via prop', () => {
@@ -376,7 +376,7 @@ test('Passes Popper an appendTo value of the presentation element', async () => 
   await user.click(screen.getByRole('tab'));
 
   // This assertion relies on the structure of the Popper mock to verify the correct props are being sent to Popper
-  expect(screen.getByText('Append to class name: pf-c-tabs__item pf-m-overflow')).toBeVisible();
+  expect(screen.getByText('Append to class name: pf-v5-c-tabs__item pf-m-overflow')).toBeVisible();
 });
 
 test('Does not render an overflowing tab as a selected menu item by default', async () => {

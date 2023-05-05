@@ -102,19 +102,19 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   if (isAutoFit && autoFitMinModifier) {
     style = {
       ...style,
-      ...setBreakpointModifiers('--pf-c-description-list--GridTemplateColumns--min', autoFitMinModifier)
+      ...setBreakpointModifiers('--pf-v5-c-description-list--GridTemplateColumns--min', autoFitMinModifier)
     };
   }
   if (termWidth) {
     style = {
       ...style,
-      ...{ '--pf-c-description-list__term--width': termWidth }
+      ...{ '--pf-v5-c-description-list__term--width': termWidth }
     };
   }
   if (isHorizontal && horizontalTermWidthModifier) {
     style = {
       ...style,
-      ...setBreakpointModifiers('--pf-c-description-list--m-horizontal__term--width', horizontalTermWidthModifier)
+      ...setBreakpointModifiers('--pf-v5-c-description-list--m-horizontal__term--width', horizontalTermWidthModifier)
     };
   }
 

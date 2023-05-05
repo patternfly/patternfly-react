@@ -3,7 +3,7 @@
 exports[`alternative component 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-l-gallery"
+    class="pf-v5-l-gallery"
   >
     <li>
       Test
@@ -15,7 +15,7 @@ exports[`alternative component 1`] = `
 exports[`gutter 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-gallery pf-m-gutter"
+    class="pf-v5-l-gallery pf-m-gutter"
   />
 </DocumentFragment>
 `;
@@ -23,8 +23,8 @@ exports[`gutter 1`] = `
 exports[`gutter breakpoints 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-gallery pf-m-gutter"
-    style="--pf-l-gallery--GridTemplateColumns--min: 100%; --pf-l-gallery--GridTemplateColumns--min-on-md: 100px; --pf-l-gallery--GridTemplateColumns--min-on-xl: 300px; --pf-l-gallery--GridTemplateColumns--max-on-md: 200px; --pf-l-gallery--GridTemplateColumns--max-on-xl: 1fr;"
+    class="pf-v5-l-gallery pf-m-gutter"
+    style="--pf-v5-l-gallery--GridTemplateColumns--min: 100%; --pf-v5-l-gallery--GridTemplateColumns--min-on-md: 100px; --pf-v5-l-gallery--GridTemplateColumns--min-on-xl: 300px; --pf-v5-l-gallery--GridTemplateColumns--max-on-md: 200px; --pf-v5-l-gallery--GridTemplateColumns--max-on-xl: 1fr;"
   />
 </DocumentFragment>
 `;

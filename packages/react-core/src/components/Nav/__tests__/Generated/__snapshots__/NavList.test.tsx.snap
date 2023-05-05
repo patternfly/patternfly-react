@@ -3,7 +3,7 @@
 exports[`NavList should match snapshot 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-c-nav__list"
+    class="pf-v5-c-nav__list"
     role="list"
   >
     ReactNode

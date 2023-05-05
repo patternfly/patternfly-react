@@ -3,7 +3,7 @@
 exports[`Check page main breadcrumb section against snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-breadcrumb"
+    class="pf-v5-c-page__main-breadcrumb"
   />
 </DocumentFragment>
 `;
@@ -11,7 +11,7 @@ exports[`Check page main breadcrumb section against snapshot 1`] = `
 exports[`Check page main nav section against snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-nav"
+    class="pf-v5-c-page__main-nav"
   />
 </DocumentFragment>
 `;
@@ -19,7 +19,7 @@ exports[`Check page main nav section against snapshot 1`] = `
 exports[`Check page main subnav section against snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-subnav"
+    class="pf-v5-c-page__main-subnav"
   />
 </DocumentFragment>
 `;
@@ -27,7 +27,7 @@ exports[`Check page main subnav section against snapshot 1`] = `
 exports[`Check page main tabs section against snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-tabs"
+    class="pf-v5-c-page__main-tabs"
   />
 </DocumentFragment>
 `;
@@ -35,10 +35,10 @@ exports[`Check page main tabs section against snapshot 1`] = `
 exports[`Check page section with center alignment 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section pf-m-limit-width pf-m-align-center"
+    class="pf-v5-c-page__main-section pf-m-limit-width pf-m-align-center"
   >
     <div
-      class="pf-c-page__main-body"
+      class="pf-v5-c-page__main-body"
     />
   </section>
 </DocumentFragment>
@@ -47,7 +47,7 @@ exports[`Check page section with center alignment 1`] = `
 exports[`Check page section with fill and no padding example against snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section pf-m-no-padding pf-m-fill"
+    class="pf-v5-c-page__main-section pf-m-no-padding pf-m-fill"
   />
 </DocumentFragment>
 `;
@@ -55,7 +55,7 @@ exports[`Check page section with fill and no padding example against snapshot 1`
 exports[`Check page section with fill example against snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section pf-m-fill"
+    class="pf-v5-c-page__main-section pf-m-fill"
   />
 </DocumentFragment>
 `;
@@ -63,10 +63,10 @@ exports[`Check page section with fill example against snapshot 1`] = `
 exports[`Check page section with limited width 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section pf-m-limit-width"
+    class="pf-v5-c-page__main-section pf-m-limit-width"
   >
     <div
-      class="pf-c-page__main-body"
+      class="pf-v5-c-page__main-body"
     />
   </section>
 </DocumentFragment>
@@ -75,7 +75,7 @@ exports[`Check page section with limited width 1`] = `
 exports[`Check page section with no fill example against snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section pf-m-no-fill"
+    class="pf-v5-c-page__main-section pf-m-no-fill"
   />
 </DocumentFragment>
 `;
@@ -83,7 +83,7 @@ exports[`Check page section with no fill example against snapshot 1`] = `
 exports[`Check page section with no padding example against snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section pf-m-no-padding"
+    class="pf-v5-c-page__main-section pf-m-no-padding"
   />
 </DocumentFragment>
 `;
@@ -91,7 +91,7 @@ exports[`Check page section with no padding example against snapshot 1`] = `
 exports[`Verify page section bottom shadow 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section pf-m-shadow-bottom"
+    class="pf-v5-c-page__main-section pf-m-shadow-bottom"
   >
     test
   </section>
@@ -101,7 +101,7 @@ exports[`Verify page section bottom shadow 1`] = `
 exports[`Verify page section bottom sticky 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section pf-m-sticky-bottom"
+    class="pf-v5-c-page__main-section pf-m-sticky-bottom"
   >
     test
   </section>
@@ -111,7 +111,7 @@ exports[`Verify page section bottom sticky 1`] = `
 exports[`Verify page section overflow scroll 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section pf-m-overflow-scroll"
+    class="pf-v5-c-page__main-section pf-m-overflow-scroll"
     tabindex="0"
   >
     test
@@ -122,7 +122,7 @@ exports[`Verify page section overflow scroll 1`] = `
 exports[`Verify page section top shadow 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section pf-m-shadow-top"
+    class="pf-v5-c-page__main-section pf-m-shadow-top"
   >
     test
   </section>
@@ -132,7 +132,7 @@ exports[`Verify page section top shadow 1`] = `
 exports[`Verify page section top sticky 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-section pf-m-sticky-top"
+    class="pf-v5-c-page__main-section pf-m-sticky-top"
   >
     test
   </section>

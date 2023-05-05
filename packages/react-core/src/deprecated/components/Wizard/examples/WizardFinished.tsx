@@ -41,7 +41,7 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
   }, [percent]);
 
   return (
-    <div className="pf-l-bullseye">
+    <div className="pf-v5-l-bullseye">
       <EmptyState variant="lg">
         <EmptyStateHeader
           headingLevel="h4"

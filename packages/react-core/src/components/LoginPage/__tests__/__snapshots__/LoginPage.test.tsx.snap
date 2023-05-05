@@ -3,32 +3,32 @@
 exports[`check loginpage example against snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-background-image"
-    style="--pf-c-background-image--BackgroundImage: url(Background src);"
+    class="pf-v5-c-background-image"
+    style="--pf-v5-c-background-image--BackgroundImage: url(Background src);"
   />
   <div
-    class="pf-c-login"
+    class="pf-v5-c-login"
   >
     <div
-      class="pf-c-login__container"
+      class="pf-v5-c-login__container"
     >
       <header
-        class="pf-c-login__header"
+        class="pf-v5-c-login__header"
       >
         <img
           alt="Pf-logo"
-          class="pf-c-brand"
+          class="pf-v5-c-brand"
           src="Brand src"
         />
       </header>
       <main
-        class="pf-c-login__main"
+        class="pf-v5-c-login__main"
       >
         <header
-          class="pf-c-login__main-header"
+          class="pf-v5-c-login__main-header"
         >
           <h2
-            class="pf-c-title pf-m-3xl"
+            class="pf-v5-c-title pf-m-3xl"
             data-ouia-component-id="OUIA-Generated-Title-1"
             data-ouia-component-type="PF4/Title"
             data-ouia-safe="true"
@@ -37,19 +37,19 @@ exports[`check loginpage example against snapshot 1`] = `
           </h2>
         </header>
         <div
-          class="pf-c-login__main-body"
+          class="pf-v5-c-login__main-body"
         />
         <div
-          class="pf-c-login__main-footer"
+          class="pf-v5-c-login__main-footer"
         >
           <ul
-            class="pf-c-login__main-footer-links"
+            class="pf-v5-c-login__main-footer-links"
             role="list"
           >
             Footer
           </ul>
           <div
-            class="pf-c-login__main-footer-band"
+            class="pf-v5-c-login__main-footer-band"
           >
             Login to your account 
             <a
@@ -61,13 +61,13 @@ exports[`check loginpage example against snapshot 1`] = `
         </div>
       </main>
       <footer
-        class="pf-c-login__footer"
+        class="pf-v5-c-login__footer"
       >
         <p>
           This is placeholder text only.
         </p>
         <ul
-          class="pf-c-list pf-m-inline"
+          class="pf-v5-c-list pf-m-inline"
         >
           English
         </ul>

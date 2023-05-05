@@ -3,22 +3,22 @@
 exports[`MultipleFileUploadStatus renders custom class names 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__status test"
+    class="pf-v5-c-multiple-file-upload__status test"
   >
     <div
-      class="pf-c-expandable-section pf-m-expanded"
+      class="pf-v5-c-expandable-section pf-m-expanded"
     >
       <button
         aria-expanded="true"
-        class="pf-c-expandable-section__toggle"
+        class="pf-v5-c-expandable-section__toggle"
         type="button"
       >
         <span
-          class="pf-c-expandable-section__toggle-icon"
+          class="pf-v5-c-expandable-section__toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -29,22 +29,22 @@ exports[`MultipleFileUploadStatus renders custom class names 1`] = `
           </svg>
         </span>
         <span
-          class="pf-c-expandable-section__toggle-text"
+          class="pf-v5-c-expandable-section__toggle-text"
         >
           <div
-            class="pf-c-multiple-file-upload__status-progress"
+            class="pf-v5-c-multiple-file-upload__status-progress"
           >
             <div
-              class="pf-c-multiple-file-upload__status-progress-icon"
+              class="pf-v5-c-multiple-file-upload__status-progress-icon"
             />
             <div
-              class="pf-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
             />
           </div>
         </span>
       </button>
       <div
-        class="pf-c-expandable-section__content"
+        class="pf-v5-c-expandable-section__content"
         id=""
       >
         <ul
@@ -62,22 +62,22 @@ exports[`MultipleFileUploadStatus renders custom class names 1`] = `
 exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__status"
+    class="pf-v5-c-multiple-file-upload__status"
   >
     <div
-      class="pf-c-expandable-section pf-m-expanded"
+      class="pf-v5-c-expandable-section pf-m-expanded"
     >
       <button
         aria-expanded="true"
-        class="pf-c-expandable-section__toggle"
+        class="pf-v5-c-expandable-section__toggle"
         type="button"
       >
         <span
-          class="pf-c-expandable-section__toggle-icon"
+          class="pf-v5-c-expandable-section__toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -88,17 +88,17 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
           </svg>
         </span>
         <span
-          class="pf-c-expandable-section__toggle-text"
+          class="pf-v5-c-expandable-section__toggle-text"
         >
           <div
-            class="pf-c-multiple-file-upload__status-progress"
+            class="pf-v5-c-multiple-file-upload__status-progress"
           >
             <div
-              class="pf-c-multiple-file-upload__status-progress-icon"
+              class="pf-v5-c-multiple-file-upload__status-progress-icon"
             >
               <svg
                 aria-hidden="true"
-                class="pf-svg"
+                class="pf-v5-svg"
                 fill="currentColor"
                 role="img"
                 viewBox="0 0 1024 1024"
@@ -109,13 +109,13 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
               </svg>
             </div>
             <div
-              class="pf-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
             />
           </div>
         </span>
       </button>
       <div
-        class="pf-c-expandable-section__content"
+        class="pf-v5-c-expandable-section__content"
         id=""
       >
         <ul
@@ -133,22 +133,22 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
 exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__status"
+    class="pf-v5-c-multiple-file-upload__status"
   >
     <div
-      class="pf-c-expandable-section pf-m-expanded"
+      class="pf-v5-c-expandable-section pf-m-expanded"
     >
       <button
         aria-expanded="true"
-        class="pf-c-expandable-section__toggle"
+        class="pf-v5-c-expandable-section__toggle"
         type="button"
       >
         <span
-          class="pf-c-expandable-section__toggle-icon"
+          class="pf-v5-c-expandable-section__toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -159,16 +159,16 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
           </svg>
         </span>
         <span
-          class="pf-c-expandable-section__toggle-text"
+          class="pf-v5-c-expandable-section__toggle-text"
         >
           <div
-            class="pf-c-multiple-file-upload__status-progress"
+            class="pf-v5-c-multiple-file-upload__status-progress"
           >
             <div
-              class="pf-c-multiple-file-upload__status-progress-icon"
+              class="pf-v5-c-multiple-file-upload__status-progress-icon"
             />
             <div
-              class="pf-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
             >
               test
             </div>
@@ -176,7 +176,7 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
         </span>
       </button>
       <div
-        class="pf-c-expandable-section__content"
+        class="pf-v5-c-expandable-section__content"
         id=""
       >
         <ul
@@ -194,22 +194,22 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
 exports[`MultipleFileUploadStatus renders with expected class names 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__status"
+    class="pf-v5-c-multiple-file-upload__status"
   >
     <div
-      class="pf-c-expandable-section pf-m-expanded"
+      class="pf-v5-c-expandable-section pf-m-expanded"
     >
       <button
         aria-expanded="true"
-        class="pf-c-expandable-section__toggle"
+        class="pf-v5-c-expandable-section__toggle"
         type="button"
       >
         <span
-          class="pf-c-expandable-section__toggle-icon"
+          class="pf-v5-c-expandable-section__toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-svg"
+            class="pf-v5-svg"
             fill="currentColor"
             role="img"
             viewBox="0 0 256 512"
@@ -220,22 +220,22 @@ exports[`MultipleFileUploadStatus renders with expected class names 1`] = `
           </svg>
         </span>
         <span
-          class="pf-c-expandable-section__toggle-text"
+          class="pf-v5-c-expandable-section__toggle-text"
         >
           <div
-            class="pf-c-multiple-file-upload__status-progress"
+            class="pf-v5-c-multiple-file-upload__status-progress"
           >
             <div
-              class="pf-c-multiple-file-upload__status-progress-icon"
+              class="pf-v5-c-multiple-file-upload__status-progress-icon"
             />
             <div
-              class="pf-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
             />
           </div>
         </span>
       </button>
       <div
-        class="pf-c-expandable-section__content"
+        class="pf-v5-c-expandable-section__content"
         id=""
       >
         <ul

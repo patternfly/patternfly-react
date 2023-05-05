@@ -20,7 +20,7 @@ exports[`RowWrapper renders expanded correctly 1`] = `
   <table>
     <tbody>
       <tr
-        class="pf-c-table__expandable-row pf-m-expanded"
+        class="pf-v5-c-table__expandable-row pf-m-expanded"
         data-ouia-component-id="OUIA-Generated-TableRow-2"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"

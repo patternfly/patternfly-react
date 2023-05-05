@@ -3,10 +3,10 @@
 exports[`gutter 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-stack pf-m-gutter"
+    class="pf-v5-l-stack pf-m-gutter"
   >
     <div
-      class="pf-l-stack__item"
+      class="pf-v5-l-stack__item"
     >
       Basic content
     </div>
@@ -17,10 +17,10 @@ exports[`gutter 1`] = `
 exports[`isMain defaults to false 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-stack"
+    class="pf-v5-l-stack"
   >
     <div
-      class="pf-l-stack__item"
+      class="pf-v5-l-stack__item"
     >
       Basic content
     </div>
@@ -31,10 +31,10 @@ exports[`isMain defaults to false 1`] = `
 exports[`isMain set to true 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-stack"
+    class="pf-v5-l-stack"
   >
     <div
-      class="pf-l-stack__item pf-m-fill"
+      class="pf-v5-l-stack__item pf-m-fill"
     >
       Filled content
     </div>

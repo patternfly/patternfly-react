@@ -46,7 +46,7 @@ export const Gallery: React.FunctionComponent<GalleryProps> = ({
     Object.entries(minWidths || {}).map(
       ([breakpoint, value]) =>
         (minWidthStyles[
-          `--pf-l-gallery--GridTemplateColumns--min${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`
+          `--pf-v5-l-gallery--GridTemplateColumns--min${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`
         ] = value)
     );
   }
@@ -55,7 +55,7 @@ export const Gallery: React.FunctionComponent<GalleryProps> = ({
     Object.entries(maxWidths || {}).map(
       ([breakpoint, value]) =>
         (maxWidthStyles[
-          `--pf-l-gallery--GridTemplateColumns--max${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`
+          `--pf-v5-l-gallery--GridTemplateColumns--max${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`
         ] = value)
     );
   }

@@ -78,7 +78,7 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
 
       <span className={css(styles.helperTextItemText)}>
         {children}
-        {isDynamic && <span className="pf-u-screen-reader">: {screenReaderText};</span>}
+        {isDynamic && <span className="pf-v5-u-screen-reader">: {screenReaderText};</span>}
       </span>
     </Component>
   );

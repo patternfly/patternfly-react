@@ -4,7 +4,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Application launcher"
-    class="pf-c-app-launcher pf-m-expanded"
+    class="pf-v5-c-app-launcher pf-m-expanded"
     data-ouia-component-type="PF4/ApplicationLauncher"
     data-ouia-safe="true"
   >
@@ -12,7 +12,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
       aria-expanded="true"
       aria-haspopup="true"
       aria-label="Application launcher"
-      class="pf-c-app-launcher__toggle"
+      class="pf-v5-c-app-launcher__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -22,7 +22,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
       <span>
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"
@@ -35,7 +35,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
     </button>
     <ul
       aria-labelledby="pf-dropdown-toggle-id-6"
-      class="pf-c-app-launcher__menu"
+      class="pf-v5-c-app-launcher__menu"
       role="menu"
     >
       <li
@@ -43,7 +43,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
       >
         <a
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-14"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -58,7 +58,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
       >
         <button
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-16"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -74,7 +74,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
       >
         <a
           aria-disabled="true"
-          class="pf-m-disabled pf-c-app-launcher__menu-item"
+          class="pf-m-disabled pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-18"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -89,7 +89,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
       >
         <button
           aria-disabled="true"
-          class="pf-m-disabled pf-c-app-launcher__menu-item"
+          class="pf-m-disabled pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-20"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -104,7 +104,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
         role="none"
       >
         <div
-          class="pf-c-divider"
+          class="pf-v5-c-divider"
           role="separator"
         />
       </li>
@@ -113,7 +113,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
       >
         <a
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-22"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -128,7 +128,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
       >
         <button
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-24"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -149,7 +149,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Application launcher"
-    class="pf-c-app-launcher pf-m-expanded"
+    class="pf-v5-c-app-launcher pf-m-expanded"
     data-ouia-component-type="PF4/ApplicationLauncher"
     data-ouia-safe="true"
   >
@@ -157,7 +157,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       aria-expanded="true"
       aria-haspopup="true"
       aria-label="Application launcher"
-      class="pf-c-app-launcher__toggle"
+      class="pf-v5-c-app-launcher__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -167,7 +167,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       <span>
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           id="test-icon"
           role="img"
@@ -181,7 +181,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
     </button>
     <ul
       aria-labelledby="pf-dropdown-toggle-id-5"
-      class="pf-c-app-launcher__menu"
+      class="pf-v5-c-app-launcher__menu"
       role="menu"
     >
       <li
@@ -189,7 +189,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       >
         <a
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-7"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -204,7 +204,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       >
         <button
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-8"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -220,7 +220,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       >
         <a
           aria-disabled="true"
-          class="pf-m-disabled pf-c-app-launcher__menu-item"
+          class="pf-m-disabled pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-9"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -235,7 +235,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       >
         <button
           aria-disabled="true"
-          class="pf-m-disabled pf-c-app-launcher__menu-item"
+          class="pf-m-disabled pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-10"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -250,7 +250,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         role="none"
       >
         <div
-          class="pf-c-divider"
+          class="pf-v5-c-divider"
           role="separator"
         />
       </li>
@@ -259,7 +259,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       >
         <a
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-11"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -274,7 +274,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       >
         <button
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-12"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -294,7 +294,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Application launcher"
-    class="pf-c-app-launcher pf-m-top pf-m-align-right"
+    class="pf-v5-c-app-launcher pf-m-top pf-m-align-right"
     data-ouia-component-type="PF4/ApplicationLauncher"
     data-ouia-safe="true"
   >
@@ -302,7 +302,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Application launcher"
-      class="pf-c-app-launcher__toggle"
+      class="pf-v5-c-app-launcher__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -312,7 +312,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       <span>
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"
@@ -331,7 +331,7 @@ exports[`ApplicationLauncher dropup 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Application launcher"
-    class="pf-c-app-launcher pf-m-top"
+    class="pf-v5-c-app-launcher pf-m-top"
     data-ouia-component-type="PF4/ApplicationLauncher"
     data-ouia-safe="true"
   >
@@ -339,7 +339,7 @@ exports[`ApplicationLauncher dropup 1`] = `
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Application launcher"
-      class="pf-c-app-launcher__toggle"
+      class="pf-v5-c-app-launcher__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -349,7 +349,7 @@ exports[`ApplicationLauncher dropup 1`] = `
       <span>
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"
@@ -368,7 +368,7 @@ exports[`ApplicationLauncher expanded 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Application launcher"
-    class="pf-c-app-launcher pf-m-expanded"
+    class="pf-v5-c-app-launcher pf-m-expanded"
     data-ouia-component-type="PF4/ApplicationLauncher"
     data-ouia-safe="true"
   >
@@ -376,7 +376,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       aria-expanded="true"
       aria-haspopup="true"
       aria-label="Application launcher"
-      class="pf-c-app-launcher__toggle"
+      class="pf-v5-c-app-launcher__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -386,7 +386,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       <span>
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"
@@ -399,7 +399,7 @@ exports[`ApplicationLauncher expanded 1`] = `
     </button>
     <ul
       aria-labelledby="pf-dropdown-toggle-id-4"
-      class="pf-c-app-launcher__menu"
+      class="pf-v5-c-app-launcher__menu"
       role="menu"
     >
       <li
@@ -407,7 +407,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       >
         <a
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-1"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -422,7 +422,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       >
         <button
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-2"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -438,7 +438,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       >
         <a
           aria-disabled="true"
-          class="pf-m-disabled pf-c-app-launcher__menu-item"
+          class="pf-m-disabled pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-3"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -453,7 +453,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       >
         <button
           aria-disabled="true"
-          class="pf-m-disabled pf-c-app-launcher__menu-item"
+          class="pf-m-disabled pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-4"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -468,7 +468,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         role="none"
       >
         <div
-          class="pf-c-divider"
+          class="pf-v5-c-divider"
           role="separator"
         />
       </li>
@@ -477,7 +477,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       >
         <a
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-5"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -492,7 +492,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       >
         <button
           aria-disabled="false"
-          class="pf-c-app-launcher__menu-item"
+          class="pf-v5-c-app-launcher__menu-item"
           data-ouia-component-id="OUIA-Generated-DropdownItem-6"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
@@ -512,7 +512,7 @@ exports[`ApplicationLauncher regular 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Application launcher"
-    class="pf-c-app-launcher"
+    class="pf-v5-c-app-launcher"
     data-ouia-component-type="PF4/ApplicationLauncher"
     data-ouia-safe="true"
   >
@@ -520,7 +520,7 @@ exports[`ApplicationLauncher regular 1`] = `
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Application launcher"
-      class="pf-c-app-launcher__toggle"
+      class="pf-v5-c-app-launcher__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -530,7 +530,7 @@ exports[`ApplicationLauncher regular 1`] = `
       <span>
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"
@@ -549,7 +549,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Application launcher"
-    class="pf-c-app-launcher pf-m-align-right"
+    class="pf-v5-c-app-launcher pf-m-align-right"
     data-ouia-component-type="PF4/ApplicationLauncher"
     data-ouia-safe="true"
   >
@@ -557,7 +557,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Application launcher"
-      class="pf-c-app-launcher__toggle"
+      class="pf-v5-c-app-launcher__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe="true"
@@ -567,7 +567,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
       <span>
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"

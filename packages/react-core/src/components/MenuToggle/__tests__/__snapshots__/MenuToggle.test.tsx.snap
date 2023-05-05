@@ -4,23 +4,23 @@ exports[`menu toggle passes additional classes 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-menu-toggle test-class"
+    class="pf-v5-c-menu-toggle test-class"
     type="button"
   >
     <span
-      class="pf-c-menu-toggle__text"
+      class="pf-v5-c-menu-toggle__text"
     >
       Toggle
     </span>
     <span
-      class="pf-c-menu-toggle__controls"
+      class="pf-v5-c-menu-toggle__controls"
     >
       <span
-        class="pf-c-menu-toggle__toggle-icon"
+        class="pf-v5-c-menu-toggle__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -39,23 +39,23 @@ exports[`menu toggle renders successfully 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-menu-toggle"
+    class="pf-v5-c-menu-toggle"
     type="button"
   >
     <span
-      class="pf-c-menu-toggle__text"
+      class="pf-v5-c-menu-toggle__text"
     >
       Toggle
     </span>
     <span
-      class="pf-c-menu-toggle__controls"
+      class="pf-v5-c-menu-toggle__controls"
     >
       <span
-        class="pf-c-menu-toggle__toggle-icon"
+        class="pf-v5-c-menu-toggle__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -74,32 +74,32 @@ exports[`menu toggle shows badge 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-menu-toggle"
+    class="pf-v5-c-menu-toggle"
     type="button"
   >
     <span
-      class="pf-c-menu-toggle__text"
+      class="pf-v5-c-menu-toggle__text"
     >
       Toggle
     </span>
     <span
-      class="pf-c-menu-toggle__count"
+      class="pf-v5-c-menu-toggle__count"
     >
       <span
-        class="pf-c-badge pf-m-unread"
+        class="pf-v5-c-badge pf-m-unread"
       >
         badge
       </span>
     </span>
     <span
-      class="pf-c-menu-toggle__controls"
+      class="pf-v5-c-menu-toggle__controls"
     >
       <span
-        class="pf-c-menu-toggle__toggle-icon"
+        class="pf-v5-c-menu-toggle__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -118,15 +118,15 @@ exports[`menu toggle shows icon 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-menu-toggle"
+    class="pf-v5-c-menu-toggle"
     type="button"
   >
     <span
-      class="pf-c-menu-toggle__icon"
+      class="pf-v5-c-menu-toggle__icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 512 512"
@@ -137,19 +137,19 @@ exports[`menu toggle shows icon 1`] = `
       </svg>
     </span>
     <span
-      class="pf-c-menu-toggle__text"
+      class="pf-v5-c-menu-toggle__text"
     >
       Toggle
     </span>
     <span
-      class="pf-c-menu-toggle__controls"
+      class="pf-v5-c-menu-toggle__controls"
     >
       <span
-        class="pf-c-menu-toggle__toggle-icon"
+        class="pf-v5-c-menu-toggle__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -168,24 +168,24 @@ exports[`menu toggle shows isDisabled 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-menu-toggle pf-m-disabled"
+    class="pf-v5-c-menu-toggle pf-m-disabled"
     disabled=""
     type="button"
   >
     <span
-      class="pf-c-menu-toggle__text"
+      class="pf-v5-c-menu-toggle__text"
     >
       Toggle
     </span>
     <span
-      class="pf-c-menu-toggle__controls"
+      class="pf-v5-c-menu-toggle__controls"
     >
       <span
-        class="pf-c-menu-toggle__toggle-icon"
+        class="pf-v5-c-menu-toggle__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -204,23 +204,23 @@ exports[`menu toggle shows isExpanded 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="true"
-    class="pf-c-menu-toggle pf-m-expanded"
+    class="pf-v5-c-menu-toggle pf-m-expanded"
     type="button"
   >
     <span
-      class="pf-c-menu-toggle__text"
+      class="pf-v5-c-menu-toggle__text"
     >
       Toggle
     </span>
     <span
-      class="pf-c-menu-toggle__controls"
+      class="pf-v5-c-menu-toggle__controls"
     >
       <span
-        class="pf-c-menu-toggle__toggle-icon"
+        class="pf-v5-c-menu-toggle__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -239,12 +239,12 @@ exports[`menu toggle shows isPlain 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-menu-toggle pf-m-plain"
+    class="pf-v5-c-menu-toggle pf-m-plain"
     type="button"
   >
     <svg
       aria-hidden="true"
-      class="pf-svg"
+      class="pf-v5-svg"
       fill="currentColor"
       role="img"
       viewBox="0 0 192 512"
@@ -261,23 +261,23 @@ exports[`menu toggle shows isPrimary 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-menu-toggle pf-m-primary"
+    class="pf-v5-c-menu-toggle pf-m-primary"
     type="button"
   >
     <span
-      class="pf-c-menu-toggle__text"
+      class="pf-v5-c-menu-toggle__text"
     >
       Toggle
     </span>
     <span
-      class="pf-c-menu-toggle__controls"
+      class="pf-v5-c-menu-toggle__controls"
     >
       <span
-        class="pf-c-menu-toggle__toggle-icon"
+        class="pf-v5-c-menu-toggle__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"
@@ -296,23 +296,23 @@ exports[`menu toggle shows plain text 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-menu-toggle pf-m-plain pf-m-text"
+    class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
     type="button"
   >
     <span
-      class="pf-c-menu-toggle__text"
+      class="pf-v5-c-menu-toggle__text"
     >
       Toggle
     </span>
     <span
-      class="pf-c-menu-toggle__controls"
+      class="pf-v5-c-menu-toggle__controls"
     >
       <span
-        class="pf-c-menu-toggle__toggle-icon"
+        class="pf-v5-c-menu-toggle__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 320 512"

@@ -65,7 +65,7 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
     }
   ];
   const rows: TableProps['rows'] = [];
-  repositories.forEach(repo => {
+  repositories.forEach((repo) => {
     const expandedCellKey = expandedCells[repo.name];
     const isRowExpanded = !!expandedCellKey;
     rows.push({
@@ -117,7 +117,7 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
       cells: [
         {
           title: (
-            <div className="pf-u-m-md" id={`compound-expansion-table-${repo.name}-1`}>
+            <div className="pf-v5-u-m-md" id={`compound-expansion-table-${repo.name}-1`}>
               Expanded content for {repo.name}: Branches goes here!
             </div>
           ),
@@ -132,7 +132,7 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
       cells: [
         {
           title: (
-            <div className="pf-u-m-md" id={`compound-expansion-table-${repo.name}-2`}>
+            <div className="pf-v5-u-m-md" id={`compound-expansion-table-${repo.name}-2`}>
               Expanded content for {repo.name}: Pull requests goes here!
             </div>
           ),
@@ -147,7 +147,7 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
       cells: [
         {
           title: (
-            <div className="pf-u-m-md" id={`compound-expansion-table-${repo.name}-3`}>
+            <div className="pf-v5-u-m-md" id={`compound-expansion-table-${repo.name}-3`}>
               Expanded content for {repo.name}: Workspaces goes here!
             </div>
           ),

@@ -22,7 +22,7 @@ describe('TextInputGroup', () => {
 
     const inputGroup = screen.getByText('Test');
 
-    expect(inputGroup).toHaveClass('pf-c-text-input-group');
+    expect(inputGroup).toHaveClass('pf-v5-c-text-input-group');
   });
 
   it('renders with custom class names provided via prop', () => {

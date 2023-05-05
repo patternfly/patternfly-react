@@ -3,8 +3,8 @@
 exports[`ToolbarItem should map width breakpoints 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-toolbar__item"
-    style="--pf-c-toolbar__item--Width: 100px; --pf-c-toolbar__item--Width-on-sm: 80px; --pf-c-toolbar__item--Width-on-md: 150px; --pf-c-toolbar__item--Width-on-lg: 200px; --pf-c-toolbar__item--Width-on-xl: 250px; --pf-c-toolbar__item--Width-on-2xl: 300px;"
+    class="pf-v5-c-toolbar__item"
+    style="--pf-v5-c-toolbar__item--Width: 100px; --pf-v5-c-toolbar__item--Width-on-sm: 80px; --pf-v5-c-toolbar__item--Width-on-md: 150px; --pf-v5-c-toolbar__item--Width-on-lg: 200px; --pf-v5-c-toolbar__item--Width-on-xl: 250px; --pf-v5-c-toolbar__item--Width-on-2xl: 300px;"
   >
     Test
   </div>

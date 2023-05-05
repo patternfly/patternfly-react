@@ -90,7 +90,6 @@ describe('Checkbox', () => {
       <Checkbox component="span" label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />
     );
     const span = container.querySelector('span');
-    expect(span).toHaveClass('pf-c-check');
-   
+    expect(span).toHaveClass('pf-v5-c-check');
   });
 });

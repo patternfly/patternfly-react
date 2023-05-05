@@ -83,7 +83,7 @@ A 0 0 0 0 1, 225, 104.8
           index="0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-bullet--comparative-measure--Fill--Color, #4f5255); stroke: var(--pf-chart-bullet--comparative-measure--stroke--Color, #4f5255); padding: 8px; stroke-width: 1;"
+          style="fill: var(--pf-v5-chart-bullet--comparative-measure--Fill--Color, #4f5255); stroke: var(--pf-v5-chart-bullet--comparative-measure--stroke--Color, #4f5255); padding: 8px; stroke-width: 1;"
         />
       </g>
     </svg>

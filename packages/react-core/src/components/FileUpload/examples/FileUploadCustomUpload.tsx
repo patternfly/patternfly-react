@@ -109,7 +109,9 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
         browseButtonText="Upload"
         textAreaPlaceholder={hasPlaceholderText ? 'File preview' : ''}
       >
-        {children && <div className="pf-u-m-md">(A custom preview of the uploaded file can be passed as children)</div>}
+        {children && (
+          <div className="pf-v5-u-m-md">(A custom preview of the uploaded file can be passed as children)</div>
+        )}
       </FileUploadField>
     </div>
   );

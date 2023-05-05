@@ -77,9 +77,9 @@ export const ModalWithForm: React.FunctionComponent = () => {
                 <button
                   type="button"
                   aria-label="More info for name field"
-                  onClick={e => e.preventDefault()}
+                  onClick={(e) => e.preventDefault()}
                   aria-describedby="modal-with-form-form-name"
-                  className="pf-c-form__group-label-help"
+                  className="pf-v5-c-form__group-label-help"
                 >
                   <HelpIcon />
                 </button>
@@ -126,9 +126,9 @@ export const ModalWithForm: React.FunctionComponent = () => {
                 <button
                   type="button"
                   aria-label="More info for e-mail field"
-                  onClick={e => e.preventDefault()}
+                  onClick={(e) => e.preventDefault()}
                   aria-describedby="modal-with-form-form-email"
-                  className="pf-c-form__group-label-help"
+                  className="pf-v5-c-form__group-label-help"
                 >
                   <HelpIcon />
                 </button>
@@ -174,9 +174,9 @@ export const ModalWithForm: React.FunctionComponent = () => {
                 <button
                   type="button"
                   aria-label="More info for address field"
-                  onClick={e => e.preventDefault()}
+                  onClick={(e) => e.preventDefault()}
                   aria-describedby="modal-with-form-form-address"
-                  className="pf-c-form__group-label-help"
+                  className="pf-v5-c-form__group-label-help"
                 >
                   <HelpIcon />
                 </button>

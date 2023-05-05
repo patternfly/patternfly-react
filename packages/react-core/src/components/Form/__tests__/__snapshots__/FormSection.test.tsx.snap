@@ -3,7 +3,7 @@
 exports[`Check form section example against snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-form__section"
+    class="pf-v5-c-form__section"
     role="group"
   />
 </DocumentFragment>
@@ -13,11 +13,11 @@ exports[`Check form section example with title 1`] = `
 <DocumentFragment>
   <section
     aria-labelledby="pf-form-section-title1"
-    class="pf-c-form__section"
+    class="pf-v5-c-form__section"
     role="group"
   >
     <h4
-      class="pf-c-form__section-title"
+      class="pf-v5-c-form__section-title"
       id="pf-form-section-title1"
     >
       Title

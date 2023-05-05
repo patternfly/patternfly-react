@@ -158,14 +158,14 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {sortedConnections.map(connection => (
+          {sortedConnections.map((connection) => (
             <Tr key={connection.source.podName}>
               <Td dataLabel={columnNames.source}>{connection.source.podName}</Td>
               <Td dataLabel={columnNames.destination}>{connection.destination.podName}</Td>\
               <Td dataLabel={columnNames.datetime}>
                 <div>
                   <span>{new Date(connection.timestamp).toDateString()}</span>{' '}
-                  <span className="pf-u-color-200">{new Date(connection.timestamp).toLocaleTimeString()}</span>
+                  <span className="pf-v5-u-color-200">{new Date(connection.timestamp).toLocaleTimeString()}</span>
                 </div>
               </Td>
               <Td dataLabel={columnNames.source}>
@@ -174,7 +174,7 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
                     <span>{connection.source.port.num}</span>
                   </StackItem>
                   <StackItem>
-                    <span className="pf-u-color-200">({connection.source.port.protocol})</span>
+                    <span className="pf-v5-u-color-200">({connection.source.port.protocol})</span>
                   </StackItem>
                 </Stack>
               </Td>
@@ -184,7 +184,7 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
                     <span>{connection.destination.port.num}</span>
                   </StackItem>
                   <StackItem>
-                    <span className="pf-u-color-200">({connection.destination.port.protocol})</span>
+                    <span className="pf-v5-u-color-200">({connection.destination.port.protocol})</span>
                   </StackItem>
                 </Stack>
               </Td>

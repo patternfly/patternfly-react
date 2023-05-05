@@ -11,7 +11,7 @@ exports[`empty 1`] = `
 exports[`icon variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-toggle-group__icon"
+    class="pf-v5-c-toggle-group__icon"
   >
     ICON
   </span>
@@ -21,7 +21,7 @@ exports[`icon variant 1`] = `
 exports[`text variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-toggle-group__text"
+    class="pf-v5-c-toggle-group__text"
   >
     Test
   </span>

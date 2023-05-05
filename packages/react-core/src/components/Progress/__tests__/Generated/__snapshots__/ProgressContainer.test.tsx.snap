@@ -4,26 +4,26 @@ exports[`ProgressContainer should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
-    class="pf-c-progress__description"
+    class="pf-v5-c-progress__description"
     id="string-description"
   >
     ''
   </div>
   <div
     aria-hidden="true"
-    class="pf-c-progress__status"
+    class="pf-v5-c-progress__status"
   >
     <span
-      class="pf-c-progress__measure"
+      class="pf-v5-c-progress__measure"
     >
       42%
     </span>
     <span
-      class="pf-c-progress__status-icon"
+      class="pf-v5-c-progress__status-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 512 512"
@@ -35,15 +35,15 @@ exports[`ProgressContainer should match snapshot (auto-generated) 1`] = `
     </span>
   </div>
   <div
-    class="pf-c-progress__bar"
+    class="pf-v5-c-progress__bar"
     role="progressbar"
   >
     <div
-      class="pf-c-progress__indicator"
+      class="pf-v5-c-progress__indicator"
       style="width: 42%;"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       />
     </div>
   </div>

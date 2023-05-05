@@ -3,26 +3,26 @@
 exports[`Progress measure location inside 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-inside pf-m-lg pf-m-singleline"
+    class="pf-v5-c-progress pf-m-inside pf-m-lg pf-m-singleline"
     id="inside-progress"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     />
     <div
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         >
           33%
         </span>
@@ -35,26 +35,26 @@ exports[`Progress measure location inside 1`] = `
 exports[`Progress measure location inside and small should render large 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-inside pf-m-lg pf-m-singleline"
+    class="pf-v5-c-progress pf-m-inside pf-m-lg pf-m-singleline"
     id="large-progress"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     />
     <div
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         >
           33%
         </span>
@@ -67,22 +67,22 @@ exports[`Progress measure location inside and small should render large 1`] = `
 exports[`Progress measure location none 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="none-progress"
   >
     <div
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -93,15 +93,15 @@ exports[`Progress measure location none 1`] = `
 exports[`Progress measure location outside 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-outside pf-m-singleline"
+    class="pf-v5-c-progress pf-m-outside pf-m-singleline"
     id="outside-progress"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         33%
       </span>
@@ -110,15 +110,15 @@ exports[`Progress measure location outside 1`] = `
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -129,15 +129,15 @@ exports[`Progress measure location outside 1`] = `
 exports[`Progress measure location top 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="top-progress"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         33%
       </span>
@@ -146,15 +146,15 @@ exports[`Progress measure location top 1`] = `
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -165,15 +165,15 @@ exports[`Progress measure location top 1`] = `
 exports[`Progress size lg 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-lg pf-m-singleline"
+    class="pf-v5-c-progress pf-m-lg pf-m-singleline"
     id="lg-progress"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         33%
       </span>
@@ -182,15 +182,15 @@ exports[`Progress size lg 1`] = `
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -201,15 +201,15 @@ exports[`Progress size lg 1`] = `
 exports[`Progress size md 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="md-progress"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         33%
       </span>
@@ -218,15 +218,15 @@ exports[`Progress size md 1`] = `
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -237,15 +237,15 @@ exports[`Progress size md 1`] = `
 exports[`Progress size sm 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-sm pf-m-singleline"
+    class="pf-v5-c-progress pf-m-sm pf-m-singleline"
     id="sm-progress"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         33%
       </span>
@@ -254,15 +254,15 @@ exports[`Progress size sm 1`] = `
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -273,24 +273,24 @@ exports[`Progress size sm 1`] = `
 exports[`Progress variant danger 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-danger pf-m-singleline"
+    class="pf-v5-c-progress pf-m-danger pf-m-singleline"
     id="danger-progress"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         33%
       </span>
       <span
-        class="pf-c-progress__status-icon"
+        class="pf-v5-c-progress__status-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"
@@ -305,15 +305,15 @@ exports[`Progress variant danger 1`] = `
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -324,24 +324,24 @@ exports[`Progress variant danger 1`] = `
 exports[`Progress variant success 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-success pf-m-singleline"
+    class="pf-v5-c-progress pf-m-success pf-m-singleline"
     id="success-progress"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         33%
       </span>
       <span
-        class="pf-c-progress__status-icon"
+        class="pf-v5-c-progress__status-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 512 512"
@@ -356,15 +356,15 @@ exports[`Progress variant success 1`] = `
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -375,24 +375,24 @@ exports[`Progress variant success 1`] = `
 exports[`Progress variant warning 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-warning pf-m-singleline"
+    class="pf-v5-c-progress pf-m-warning pf-m-singleline"
     id="warning-progress"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         33%
       </span>
       <span
-        class="pf-c-progress__status-icon"
+        class="pf-v5-c-progress__status-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 576 512"
@@ -407,15 +407,15 @@ exports[`Progress variant warning 1`] = `
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -426,15 +426,15 @@ exports[`Progress variant warning 1`] = `
 exports[`Progress with aria-valuetext 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="progress-aria-valuetext"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         33%
       </span>
@@ -444,15 +444,15 @@ exports[`Progress with aria-valuetext 1`] = `
       aria-valuemin="0"
       aria-valuenow="33"
       aria-valuetext="Descriptive text here"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -463,15 +463,15 @@ exports[`Progress with aria-valuetext 1`] = `
 exports[`Simple progress 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="progress-simple-example"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         33%
       </span>
@@ -480,15 +480,15 @@ exports[`Simple progress 1`] = `
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -499,15 +499,15 @@ exports[`Simple progress 1`] = `
 exports[`additional label 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="additional-label"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         Additional label
       </span>
@@ -516,15 +516,15 @@ exports[`additional label 1`] = `
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 33%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -535,15 +535,15 @@ exports[`additional label 1`] = `
 exports[`no value specified 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="no-value"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         0%
       </span>
@@ -552,15 +552,15 @@ exports[`no value specified 1`] = `
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="0"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 0%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -571,15 +571,15 @@ exports[`no value specified 1`] = `
 exports[`value higher than maxValue 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="higher-max-value"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         100%
       </span>
@@ -588,15 +588,15 @@ exports[`value higher than maxValue 1`] = `
       aria-valuemax="60"
       aria-valuemin="0"
       aria-valuenow="77"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 100%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -607,15 +607,15 @@ exports[`value higher than maxValue 1`] = `
 exports[`value lower than minValue 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="lower-min-value"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         0%
       </span>
@@ -624,15 +624,15 @@ exports[`value lower than minValue 1`] = `
       aria-valuemax="100"
       aria-valuemin="40"
       aria-valuenow="33"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 0%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -643,15 +643,15 @@ exports[`value lower than minValue 1`] = `
 exports[`value scaled between minValue and maxValue 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="scaled-range-value"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         57%
       </span>
@@ -660,15 +660,15 @@ exports[`value scaled between minValue and maxValue 1`] = `
       aria-valuemax="80"
       aria-valuemin="10"
       aria-valuenow="50"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 57%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -679,15 +679,15 @@ exports[`value scaled between minValue and maxValue 1`] = `
 exports[`value scaled with maxValue 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="scaled-max-value"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         62%
       </span>
@@ -696,15 +696,15 @@ exports[`value scaled with maxValue 1`] = `
       aria-valuemax="80"
       aria-valuemin="0"
       aria-valuenow="50"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 62%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>
@@ -715,15 +715,15 @@ exports[`value scaled with maxValue 1`] = `
 exports[`value scaled with minValue 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-progress pf-m-singleline"
+    class="pf-v5-c-progress pf-m-singleline"
     id="scaled-min-value"
   >
     <div
       aria-hidden="true"
-      class="pf-c-progress__status"
+      class="pf-v5-c-progress__status"
     >
       <span
-        class="pf-c-progress__measure"
+        class="pf-v5-c-progress__measure"
       >
         44%
       </span>
@@ -732,15 +732,15 @@ exports[`value scaled with minValue 1`] = `
       aria-valuemax="100"
       aria-valuemin="10"
       aria-valuenow="50"
-      class="pf-c-progress__bar"
+      class="pf-v5-c-progress__bar"
       role="progressbar"
     >
       <div
-        class="pf-c-progress__indicator"
+        class="pf-v5-c-progress__indicator"
         style="width: 44%;"
       >
         <span
-          class="pf-c-progress__measure"
+          class="pf-v5-c-progress__measure"
         />
       </div>
     </div>

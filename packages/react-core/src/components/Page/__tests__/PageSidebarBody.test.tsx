@@ -21,7 +21,7 @@ test('Renders with children', () => {
 test('Renders with class pf-c-page__sidebar-body by default', () => {
   render(<PageSidebarBody>Test</PageSidebarBody>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-c-page__sidebar-body');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-page__sidebar-body');
 });
 
 test('Renders with custom class', () => {

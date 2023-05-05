@@ -3,7 +3,7 @@
 exports[`PageHeaderToolsItem should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-page__header-tools-item pf-m-selected string"
+    class="pf-v5-c-page__header-tools-item pf-m-selected string"
   >
     children=
     <div>

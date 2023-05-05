@@ -3,7 +3,7 @@
 exports[`Bullseye renders with PatternFly Core styles 1`] = `
 <DocumentFragment>
   <div
-    class="pf-l-bullseye"
+    class="pf-v5-l-bullseye"
   />
 </DocumentFragment>
 `;

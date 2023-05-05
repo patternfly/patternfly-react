@@ -6,9 +6,9 @@ describe('Select Test', () => {
   it('Verify grouped Select with view more button', () => {
     cy.clock();
     cy.get('#view-more-grouped-select').click();
-    cy.get('.pf-c-select__menu').contains('View more');
+    cy.get('.pf-v5-c-select__menu').contains('View more');
     cy.get('.pf-m-load').should('exist');
-    cy.get('button.pf-c-select__menu-item.pf-m-load').click();
+    cy.get('button.pf-v5-c-select__menu-item.pf-m-load').click();
     cy.get('.pf-m-loading').should('exist');
     cy.tick(16000);
     cy.get('.pf-m-load').should('not.exist');
@@ -19,9 +19,9 @@ describe('Select Test', () => {
   it('Verify grouped Check Select with view more button', () => {
     cy.clock();
     cy.get('#view-more-grouped-select-check').click();
-    cy.get('.pf-c-select__menu').contains('View more');
+    cy.get('.pf-v5-c-select__menu').contains('View more');
     cy.get('.pf-m-load').should('exist');
-    cy.get('button.pf-c-select__menu-item.pf-m-load').click();
+    cy.get('button.pf-v5-c-select__menu-item.pf-m-load').click();
     cy.get('.pf-m-loading').should('exist');
     cy.tick(16000);
     cy.get('.pf-m-load').should('not.exist');

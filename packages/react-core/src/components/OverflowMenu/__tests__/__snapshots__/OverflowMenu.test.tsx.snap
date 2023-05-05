@@ -3,7 +3,7 @@
 exports[`OverflowMenu basic 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-overflow-menu"
+    class="pf-v5-c-overflow-menu"
   >
     <div>
       BASIC
@@ -15,7 +15,7 @@ exports[`OverflowMenu basic 1`] = `
 exports[`OverflowMenu lg 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-overflow-menu"
+    class="pf-v5-c-overflow-menu"
   />
 </DocumentFragment>
 `;
@@ -23,7 +23,7 @@ exports[`OverflowMenu lg 1`] = `
 exports[`OverflowMenu xl 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-overflow-menu"
+    class="pf-v5-c-overflow-menu"
   />
 </DocumentFragment>
 `;

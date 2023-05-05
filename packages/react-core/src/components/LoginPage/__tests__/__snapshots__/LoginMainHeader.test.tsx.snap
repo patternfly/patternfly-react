@@ -3,7 +3,7 @@
 exports[`LoginMainHeader className is added to the root element 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-login__main-header extra-class"
+    class="pf-v5-c-login__main-header extra-class"
   />
 </DocumentFragment>
 `;
@@ -11,7 +11,7 @@ exports[`LoginMainHeader className is added to the root element 1`] = `
 exports[`LoginMainHeader renders with PatternFly Core styles 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-login__main-header"
+    class="pf-v5-c-login__main-header"
   />
 </DocumentFragment>
 `;
@@ -19,10 +19,10 @@ exports[`LoginMainHeader renders with PatternFly Core styles 1`] = `
 exports[`LoginMainHeader title and subtitle are rendered correctly 1`] = `
 <DocumentFragment>
   <header
-    class="pf-c-login__main-header"
+    class="pf-v5-c-login__main-header"
   >
     <h2
-      class="pf-c-title pf-m-3xl"
+      class="pf-v5-c-title pf-m-3xl"
       data-ouia-component-id="OUIA-Generated-Title-1"
       data-ouia-component-type="PF4/Title"
       data-ouia-safe="true"
@@ -30,7 +30,7 @@ exports[`LoginMainHeader title and subtitle are rendered correctly 1`] = `
       Log in to your account
     </h2>
     <p
-      class="pf-c-login__main-header-desc"
+      class="pf-v5-c-login__main-header-desc"
     >
       Use LDAP credentials
     </p>

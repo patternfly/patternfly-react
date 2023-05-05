@@ -3,7 +3,7 @@
 exports[`MultipleFileUploadInfo renders custom class names 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__info test"
+    class="pf-v5-c-multiple-file-upload__info test"
   >
     Foo
   </div>
@@ -13,7 +13,7 @@ exports[`MultipleFileUploadInfo renders custom class names 1`] = `
 exports[`MultipleFileUploadInfo renders with expected class names 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-multiple-file-upload__info"
+    class="pf-v5-c-multiple-file-upload__info"
   >
     Foo
   </div>

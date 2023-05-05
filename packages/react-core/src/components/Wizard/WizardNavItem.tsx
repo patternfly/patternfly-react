@@ -96,7 +96,7 @@ export const WizardNavItem = ({
           ? { tabIndex: isDisabled ? -1 : undefined, href, target }
           : { disabled: isDisabled })}
         {...(id && { id: id.toString() })}
-        onClick={e => {
+        onClick={(e) => {
           e.stopPropagation();
           isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onClick?.(e, stepIndex);
         }}
@@ -125,8 +125,8 @@ export const WizardNavItem = ({
             {content}
             {/* TODO, patternfly/patternfly#5142 */}
             {status === WizardNavItemStatus.Error && (
-              <span style={{ marginLeft: 'var(--pf-global--spacer--sm)' }}>
-                <ExclamationCircleIcon color="var(--pf-global--danger-color--100)" />
+              <span style={{ marginLeft: 'var(--pf-v5-global--spacer--sm)' }}>
+                <ExclamationCircleIcon color="var(--pf-v5-global--danger-color--100)" />
               </span>
             )}
           </>

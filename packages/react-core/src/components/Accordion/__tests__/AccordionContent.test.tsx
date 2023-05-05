@@ -92,7 +92,7 @@ test('Renders with class name pf-c-accordion__expandable-content', () => {
     </AccordionContext.Provider>
   );
 
-  expect(screen.getByRole('heading')).toHaveClass('pf-c-accordion__expandable-content');
+  expect(screen.getByRole('heading')).toHaveClass('pf-v5-c-accordion__expandable-content');
 });
 
 test('Renders with custom class names provided via prop', () => {

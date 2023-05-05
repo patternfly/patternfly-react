@@ -39,9 +39,7 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
           parseFloat(rootMenuListStyles.getPropertyValue('padding-top').replace(/px/g, '')) +
           parseFloat(rootMenuListStyles.getPropertyValue('padding-bottom').replace(/px/g, '')) +
           parseFloat(
-            getComputedStyle(rootMenuList.parentElement)
-              .getPropertyValue('border-bottom-width')
-              .replace(/px/g, '')
+            getComputedStyle(rootMenuList.parentElement).getPropertyValue('border-bottom-width').replace(/px/g, '')
           );
         clientHeight = clientHeight + rootMenuListPaddingOffset;
       }
@@ -57,11 +55,11 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
         <div
           {...rest}
           className={css(styles.menuContent, props.className)}
-          ref={el => refCallback(el, menuId, onGetMenuHeight)}
+          ref={(el) => refCallback(el, menuId, onGetMenuHeight)}
           style={
             {
-              ...(menuHeight && { '--pf-c-menu__content--Height': menuHeight }),
-              ...(maxMenuHeight && { '--pf-c-menu__content--MaxHeight': maxMenuHeight })
+              ...(menuHeight && { '--pf-v5-c-menu__content--Height': menuHeight }),
+              ...(maxMenuHeight && { '--pf-v5-c-menu__content--MaxHeight': maxMenuHeight })
             } as React.CSSProperties
           }
         >

@@ -31,7 +31,7 @@ export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualLi
     if (
       !wrapperRef.current ||
       (wrapperRef.current !== (event.target as HTMLElement).closest('.pf-c-dual-list-selector__controls') &&
-        !Array.from(wrapperRef.current.getElementsByClassName('pf-c-dual-list-selector__controls')).includes(
+        !Array.from(wrapperRef.current.getElementsByClassName('pf-v5-c-dual-list-selector__controls')).includes(
           (event.target as HTMLElement).closest('.pf-c-dual-list-selector__controls')
         ))
     ) {
@@ -40,7 +40,7 @@ export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualLi
     event.stopImmediatePropagation();
 
     const controls = (Array.from(wrapperRef.current.getElementsByTagName('BUTTON')) as Element[]).filter(
-      el => !el.classList.contains('pf-m-disabled')
+      (el) => !el.classList.contains('pf-m-disabled')
     );
     const activeElement = document.activeElement;
     handleArrows(

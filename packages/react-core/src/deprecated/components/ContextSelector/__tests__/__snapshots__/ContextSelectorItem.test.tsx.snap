@@ -6,7 +6,7 @@ exports[`Renders ContextSelectorItem 1`] = `
     role="none"
   >
     <button
-      class="pf-c-context-selector__menu-list-item"
+      class="pf-v5-c-context-selector__menu-list-item"
     >
       My Project
     </button>
@@ -20,7 +20,7 @@ exports[`Renders ContextSelectorItem disabled and hovered 1`] = `
     role="none"
   >
     <button
-      class="pf-c-context-selector__menu-list-item"
+      class="pf-v5-c-context-selector__menu-list-item"
       disabled=""
     >
       My Project

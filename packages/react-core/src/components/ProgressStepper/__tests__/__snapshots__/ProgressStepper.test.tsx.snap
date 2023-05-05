@@ -3,7 +3,7 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <ol
-    class="pf-c-progress-stepper"
+    class="pf-v5-c-progress-stepper"
     role="list"
   >
     Test

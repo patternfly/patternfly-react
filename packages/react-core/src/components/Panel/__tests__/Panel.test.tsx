@@ -22,12 +22,12 @@ test('Renders children', () => {
 
 test('Renders with the class pf-c-panel', () => {
   render(<Panel>Test</Panel>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-panel');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel');
 });
 
 test('Renders with only the class pf-c-panel by default', () => {
   render(<Panel>Test</Panel>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-panel', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel', { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {
@@ -57,7 +57,7 @@ test('Renders with ref', async () => {
   const BasicPanel = () => {
     const [lastClickWasInPanel, setLastClickWasInPanel] = React.useState(false);
 
-    const handleClick = event => {
+    const handleClick = (event) => {
       if (panelRef.current && panelRef.current.contains(event.target)) {
         setLastClickWasInPanel(true);
       } else {

@@ -3,10 +3,10 @@
 exports[`DataListCheck should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-data-list__item-control ''"
+    class="pf-v5-c-data-list__item-control ''"
   >
     <div
-      class="pf-c-data-list__check"
+      class="pf-v5-c-data-list__check"
     >
       <input
         aria-invalid="false"

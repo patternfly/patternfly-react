@@ -4,7 +4,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Pagination"
-    class="pf-c-pagination__nav ''"
+    class="pf-v5-c-pagination__nav ''"
     currpage="'Current page'"
     paginationtitle="'Pagination'"
     tofirstpage="'Go to first page'"
@@ -13,12 +13,12 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     topreviouspage="'Go to previous page'"
   >
     <div
-      class="pf-c-pagination__nav-control pf-m-first"
+      class="pf-v5-c-pagination__nav-control pf-m-first"
     >
       <button
         aria-disabled="false"
         aria-label="Go to first page"
-        class="pf-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain"
         data-action="first"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF4/Button"
@@ -27,7 +27,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 448 512"
@@ -39,12 +39,12 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       </button>
     </div>
     <div
-      class="pf-c-pagination__nav-control"
+      class="pf-v5-c-pagination__nav-control"
     >
       <button
         aria-disabled="false"
         aria-label="Go to previous page"
-        class="pf-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain"
         data-action="previous"
         data-ouia-component-id="OUIA-Generated-Button-plain-2"
         data-ouia-component-type="PF4/Button"
@@ -53,7 +53,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 256 512"
@@ -65,11 +65,11 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       </button>
     </div>
     <div
-      class="pf-c-pagination__nav-page-select"
+      class="pf-v5-c-pagination__nav-page-select"
     >
       <input
         aria-label="Current page"
-        class="pf-c-form-control"
+        class="pf-v5-c-form-control"
         max="0"
         min="0"
         type="number"
@@ -77,12 +77,12 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       />
     </div>
     <div
-      class="pf-c-pagination__nav-control"
+      class="pf-v5-c-pagination__nav-control"
     >
       <button
         aria-disabled="false"
         aria-label="Go to next page"
-        class="pf-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain"
         data-action="next"
         data-ouia-component-id="OUIA-Generated-Button-plain-3"
         data-ouia-component-type="PF4/Button"
@@ -91,7 +91,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 256 512"
@@ -103,12 +103,12 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       </button>
     </div>
     <div
-      class="pf-c-pagination__nav-control pf-m-last"
+      class="pf-v5-c-pagination__nav-control pf-m-last"
     >
       <button
         aria-disabled="false"
         aria-label="Go to last page"
-        class="pf-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain"
         data-action="last"
         data-ouia-component-id="OUIA-Generated-Button-plain-4"
         data-ouia-component-type="PF4/Button"
@@ -117,7 +117,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-svg"
+          class="pf-v5-svg"
           fill="currentColor"
           role="img"
           viewBox="0 0 448 512"

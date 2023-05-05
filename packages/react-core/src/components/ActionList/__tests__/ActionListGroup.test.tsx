@@ -16,7 +16,7 @@ test('Renders children', () => {
 test('Renders with class pf-c-action-list__group', () => {
   render(<ActionListGroup>Test</ActionListGroup>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-c-action-list__group');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-action-list__group');
 });
 
 test('Renders with custom class names provided via prop', () => {
@@ -29,7 +29,7 @@ test('Renders with inherited element props spread to the component', () => {
   render(<ActionListGroup aria-label="Test label">Test</ActionListGroup>);
 
   expect(screen.getByText('Test')).toHaveAccessibleName('Test label');
-})
+});
 
 test('Matches the snapshot', () => {
   const { asFragment } = render(<ActionListGroup>test</ActionListGroup>);

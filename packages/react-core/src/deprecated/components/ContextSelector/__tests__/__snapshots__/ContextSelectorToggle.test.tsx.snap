@@ -4,19 +4,19 @@ exports[`ContextSelectorToggle Renders ContextSelectorToggle 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-context-selector__toggle"
+    class="pf-v5-c-context-selector__toggle"
     id="toggle-id"
     type="button"
   >
     <span
-      class="pf-c-context-selector__toggle-text"
+      class="pf-v5-c-context-selector__toggle-text"
     />
     <span
-      class="pf-c-context-selector__toggle-icon"
+      class="pf-v5-c-context-selector__toggle-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 320 512"
@@ -34,19 +34,19 @@ exports[`ContextSelectorToggle Verify ESC press 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="true"
-    class="pf-c-context-selector__toggle"
+    class="pf-v5-c-context-selector__toggle"
     id="toggle-id"
     type="button"
   >
     <span
-      class="pf-c-context-selector__toggle-text"
+      class="pf-v5-c-context-selector__toggle-text"
     />
     <span
-      class="pf-c-context-selector__toggle-icon"
+      class="pf-v5-c-context-selector__toggle-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 320 512"
@@ -64,19 +64,19 @@ exports[`ContextSelectorToggle Verify ESC press with not isOpen 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-context-selector__toggle"
+    class="pf-v5-c-context-selector__toggle"
     id="toggle-id"
     type="button"
   >
     <span
-      class="pf-c-context-selector__toggle-text"
+      class="pf-v5-c-context-selector__toggle-text"
     />
     <span
-      class="pf-c-context-selector__toggle-icon"
+      class="pf-v5-c-context-selector__toggle-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 320 512"
@@ -94,19 +94,19 @@ exports[`ContextSelectorToggle Verify keydown enter  1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-context-selector__toggle"
+    class="pf-v5-c-context-selector__toggle"
     id="toggle-id"
     type="button"
   >
     <span
-      class="pf-c-context-selector__toggle-text"
+      class="pf-v5-c-context-selector__toggle-text"
     />
     <span
-      class="pf-c-context-selector__toggle-icon"
+      class="pf-v5-c-context-selector__toggle-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 320 512"
@@ -124,19 +124,19 @@ exports[`ContextSelectorToggle Verify keydown tab  1`] = `
 <DocumentFragment>
   <button
     aria-expanded="true"
-    class="pf-c-context-selector__toggle"
+    class="pf-v5-c-context-selector__toggle"
     id="toggle-id"
     type="button"
   >
     <span
-      class="pf-c-context-selector__toggle-text"
+      class="pf-v5-c-context-selector__toggle-text"
     />
     <span
-      class="pf-c-context-selector__toggle-icon"
+      class="pf-v5-c-context-selector__toggle-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 320 512"

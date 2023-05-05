@@ -4,7 +4,7 @@ exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <dl
     aria-label="this is a simple accordion"
-    class="pf-c-accordion"
+    class="pf-v5-c-accordion"
   />
 </DocumentFragment>
 `;

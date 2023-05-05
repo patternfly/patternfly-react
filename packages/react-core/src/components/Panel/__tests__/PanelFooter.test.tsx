@@ -18,12 +18,12 @@ test('Renders children', () => {
 
 test('Renders with the class pf-c-panel__footer', () => {
   render(<PanelFooter>Test</PanelFooter>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-panel__footer');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__footer');
 });
 
 test('Renders with only the class pf-c-panel__footer by default', () => {
   render(<PanelFooter>Test</PanelFooter>);
-  expect(screen.getByText('Test')).toHaveClass('pf-c-panel__footer', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__footer', { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {

@@ -3,14 +3,14 @@
 exports[`NotificationDrawerListItemHeader list item header with custom icon applied  1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-notification-drawer__list-item-header"
+    class="pf-v5-c-notification-drawer__list-item-header"
   >
     <span
-      class="pf-c-notification-drawer__list-item-header-icon"
+      class="pf-v5-c-notification-drawer__list-item-header-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 896 1024"
@@ -21,7 +21,7 @@ exports[`NotificationDrawerListItemHeader list item header with custom icon appl
       </svg>
     </span>
     <h2
-      class="pf-c-notification-drawer__list-item-header-title"
+      class="pf-v5-c-notification-drawer__list-item-header-title"
     >
       Pod quit unexpectedly
     </h2>
@@ -32,14 +32,14 @@ exports[`NotificationDrawerListItemHeader list item header with custom icon appl
 exports[`NotificationDrawerListItemHeader list item header with srTitle applied  1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-notification-drawer__list-item-header"
+    class="pf-v5-c-notification-drawer__list-item-header"
   >
     <span
-      class="pf-c-notification-drawer__list-item-header-icon"
+      class="pf-v5-c-notification-drawer__list-item-header-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 896 1024"
@@ -50,10 +50,10 @@ exports[`NotificationDrawerListItemHeader list item header with srTitle applied 
       </svg>
     </span>
     <h2
-      class="pf-c-notification-drawer__list-item-header-title"
+      class="pf-v5-c-notification-drawer__list-item-header-title"
     >
       <span
-        class="pf-u-screen-reader"
+        class="pf-v5-u-screen-reader"
       >
         screen reader title
       </span>
@@ -66,14 +66,14 @@ exports[`NotificationDrawerListItemHeader list item header with srTitle applied 
 exports[`NotificationDrawerListItemHeader list item header with variant applied  1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-notification-drawer__list-item-header"
+    class="pf-v5-c-notification-drawer__list-item-header"
   >
     <span
-      class="pf-c-notification-drawer__list-item-header-icon"
+      class="pf-v5-c-notification-drawer__list-item-header-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 512 512"
@@ -84,7 +84,7 @@ exports[`NotificationDrawerListItemHeader list item header with variant applied 
       </svg>
     </span>
     <h2
-      class="pf-c-notification-drawer__list-item-header-title"
+      class="pf-v5-c-notification-drawer__list-item-header-title"
     >
       Pod quit unexpectedly
     </h2>
@@ -95,14 +95,14 @@ exports[`NotificationDrawerListItemHeader list item header with variant applied 
 exports[`NotificationDrawerListItemHeader renders with PatternFly Core styles 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-notification-drawer__list-item-header"
+    class="pf-v5-c-notification-drawer__list-item-header"
   >
     <span
-      class="pf-c-notification-drawer__list-item-header-icon"
+      class="pf-v5-c-notification-drawer__list-item-header-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 896 1024"
@@ -113,7 +113,7 @@ exports[`NotificationDrawerListItemHeader renders with PatternFly Core styles 1`
       </svg>
     </span>
     <h2
-      class="pf-c-notification-drawer__list-item-header-title"
+      class="pf-v5-c-notification-drawer__list-item-header-title"
     >
       Pod quit unexpectedly
     </h2>
@@ -124,14 +124,14 @@ exports[`NotificationDrawerListItemHeader renders with PatternFly Core styles 1`
 exports[`NotificationDrawerListItemHeader renders with correct heading level 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-notification-drawer__list-item-header"
+    class="pf-v5-c-notification-drawer__list-item-header"
   >
     <span
-      class="pf-c-notification-drawer__list-item-header-icon"
+      class="pf-v5-c-notification-drawer__list-item-header-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 896 1024"
@@ -142,7 +142,7 @@ exports[`NotificationDrawerListItemHeader renders with correct heading level 1`]
       </svg>
     </span>
     <h3
-      class="pf-c-notification-drawer__list-item-header-title"
+      class="pf-v5-c-notification-drawer__list-item-header-title"
     >
       Pod quit unexpectedly
     </h3>

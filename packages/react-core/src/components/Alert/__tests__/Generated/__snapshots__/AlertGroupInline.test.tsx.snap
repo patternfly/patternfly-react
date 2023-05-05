@@ -3,7 +3,7 @@
 exports[`AlertGroupInline should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-c-alert-group"
+    class="pf-v5-c-alert-group"
     role="list"
   />
 </DocumentFragment>

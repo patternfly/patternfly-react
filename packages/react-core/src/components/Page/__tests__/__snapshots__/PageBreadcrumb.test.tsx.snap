@@ -3,7 +3,7 @@
 exports[`page breadcrumb Verify basic render 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-breadcrumb"
+    class="pf-v5-c-page__main-breadcrumb"
   >
     test
   </section>
@@ -13,7 +13,7 @@ exports[`page breadcrumb Verify basic render 1`] = `
 exports[`page breadcrumb Verify bottom shadow 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-breadcrumb pf-m-shadow-bottom"
+    class="pf-v5-c-page__main-breadcrumb pf-m-shadow-bottom"
   >
     test
   </section>
@@ -23,7 +23,7 @@ exports[`page breadcrumb Verify bottom shadow 1`] = `
 exports[`page breadcrumb Verify bottom sticky 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-breadcrumb pf-m-sticky-bottom"
+    class="pf-v5-c-page__main-breadcrumb pf-m-sticky-bottom"
   >
     test
   </section>
@@ -33,10 +33,10 @@ exports[`page breadcrumb Verify bottom sticky 1`] = `
 exports[`page breadcrumb Verify limited width 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-breadcrumb pf-m-limit-width"
+    class="pf-v5-c-page__main-breadcrumb pf-m-limit-width"
   >
     <div
-      class="pf-c-page__main-body"
+      class="pf-v5-c-page__main-body"
     >
       test
     </div>
@@ -47,7 +47,7 @@ exports[`page breadcrumb Verify limited width 1`] = `
 exports[`page breadcrumb Verify overflow scroll 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-breadcrumb pf-m-overflow-scroll"
+    class="pf-v5-c-page__main-breadcrumb pf-m-overflow-scroll"
     tabindex="0"
   >
     test
@@ -58,7 +58,7 @@ exports[`page breadcrumb Verify overflow scroll 1`] = `
 exports[`page breadcrumb Verify top shadow 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-breadcrumb pf-m-shadow-top"
+    class="pf-v5-c-page__main-breadcrumb pf-m-shadow-top"
   >
     test
   </section>
@@ -68,7 +68,7 @@ exports[`page breadcrumb Verify top shadow 1`] = `
 exports[`page breadcrumb Verify top sticky 1`] = `
 <DocumentFragment>
   <section
-    class="pf-c-page__main-breadcrumb pf-m-sticky-top"
+    class="pf-v5-c-page__main-breadcrumb pf-m-sticky-top"
   >
     test
   </section>

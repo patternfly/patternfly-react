@@ -3,20 +3,20 @@
 exports[`AboutModalBoxContent Test 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-about-modal-box__content"
+    class="pf-v5-c-about-modal-box__content"
     id="id"
   >
     <div
       class="pf-c-about-modal-box__body"
     >
       <div
-        class="pf-c-content"
+        class="pf-v5-c-content"
       >
         This is a AboutModalBoxContent
       </div>
     </div>
     <p
-      class="pf-c-about-modal-box__strapline"
+      class="pf-v5-c-about-modal-box__strapline"
     >
       trademark
     </p>

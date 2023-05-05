@@ -367,7 +367,7 @@ export class MenuDemo extends Component {
             id="group-3"
             label={
               <div>
-                <h1 className="pf-c-menu__group-title">Group 3</h1>
+                <h1 className="pf-v5-c-menu__group-title">Group 3</h1>
               </div>
             }
           >

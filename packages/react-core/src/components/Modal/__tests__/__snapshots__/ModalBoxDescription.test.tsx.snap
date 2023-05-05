@@ -3,7 +3,7 @@
 exports[`ModalBoxDescription Test 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-modal-box__description"
+    class="pf-v5-c-modal-box__description"
     id=""
   >
     This is a ModalBox Description

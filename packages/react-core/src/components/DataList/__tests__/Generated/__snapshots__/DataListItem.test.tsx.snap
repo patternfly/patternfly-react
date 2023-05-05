@@ -4,7 +4,7 @@ exports[`DataListItem should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <li
     aria-labelledby="string"
-    class="pf-c-data-list__item ''"
+    class="pf-v5-c-data-list__item ''"
     id="''"
   >
     <div

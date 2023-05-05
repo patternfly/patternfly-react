@@ -23,7 +23,7 @@ describe('TextInputGroupUtilities', () => {
 
     const utilities = screen.getByText('Test');
 
-    expect(utilities).toHaveClass('pf-c-text-input-group__utilities');
+    expect(utilities).toHaveClass('pf-v5-c-text-input-group__utilities');
   });
 
   it('matches the snapshot', () => {

@@ -7,17 +7,17 @@ exports[`SelectToggle state active 1`] = `
     aria-haspopup="listbox"
     aria-label=""
     aria-labelledby=""
-    class="pf-c-select__toggle pf-m-active"
+    class="pf-v5-c-select__toggle pf-m-active"
     id="Select Toggle"
     type="button"
   >
     Select
     <span
-      class="pf-c-select__toggle-arrow"
+      class="pf-v5-c-select__toggle-arrow"
     >
       <svg
         aria-hidden="true"
-        class="pf-svg"
+        class="pf-v5-svg"
         fill="currentColor"
         role="img"
         viewBox="0 0 320 512"

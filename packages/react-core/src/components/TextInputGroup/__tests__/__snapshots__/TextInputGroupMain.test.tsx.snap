@@ -3,15 +3,15 @@
 exports[`TextInputGroupMain matches the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-text-input-group__main"
+    class="pf-v5-c-text-input-group__main"
   >
     Test
     <span
-      class="pf-c-text-input-group__text"
+      class="pf-v5-c-text-input-group__text"
     >
       <input
         aria-label="Type to filter"
-        class="pf-c-text-input-group__text-input"
+        class="pf-v5-c-text-input-group__text-input"
         type="text"
         value=""
       />

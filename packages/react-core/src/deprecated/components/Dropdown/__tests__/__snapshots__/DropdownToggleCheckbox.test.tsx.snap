@@ -3,7 +3,7 @@
 exports[`DropdownToggleCheckbox 3rd state 1`] = `
 <DocumentFragment>
   <label
-    class="pf-c-dropdown__toggle-check"
+    class="pf-v5-c-dropdown__toggle-check"
     for="check"
   >
     <input
@@ -22,7 +22,7 @@ exports[`DropdownToggleCheckbox 3rd state 1`] = `
 exports[`DropdownToggleCheckbox controlled 1`] = `
 <DocumentFragment>
   <label
-    class="pf-c-dropdown__toggle-check"
+    class="pf-v5-c-dropdown__toggle-check"
     for="check"
   >
     <input
@@ -42,7 +42,7 @@ exports[`DropdownToggleCheckbox controlled 1`] = `
 exports[`DropdownToggleCheckbox isDisabled 1`] = `
 <DocumentFragment>
   <label
-    class="pf-c-dropdown__toggle-check"
+    class="pf-v5-c-dropdown__toggle-check"
     for="check"
   >
     <input
@@ -62,7 +62,7 @@ exports[`DropdownToggleCheckbox isDisabled 1`] = `
 exports[`DropdownToggleCheckbox passing HTML attribute 1`] = `
 <DocumentFragment>
   <label
-    class="pf-c-dropdown__toggle-check"
+    class="pf-v5-c-dropdown__toggle-check"
     for="check"
   >
     <input
@@ -84,7 +84,7 @@ exports[`DropdownToggleCheckbox passing HTML attribute 1`] = `
 exports[`DropdownToggleCheckbox passing class 1`] = `
 <DocumentFragment>
   <label
-    class="pf-c-dropdown__toggle-check class-123"
+    class="pf-v5-c-dropdown__toggle-check class-123"
     for="check"
   >
     <input
@@ -105,7 +105,7 @@ exports[`DropdownToggleCheckbox passing class 1`] = `
 exports[`DropdownToggleCheckbox uncontrolled 1`] = `
 <DocumentFragment>
   <label
-    class="pf-c-dropdown__toggle-check"
+    class="pf-v5-c-dropdown__toggle-check"
     for="check"
   >
     <input
@@ -124,7 +124,7 @@ exports[`DropdownToggleCheckbox uncontrolled 1`] = `
 exports[`DropdownToggleCheckbox with text 1`] = `
 <DocumentFragment>
   <label
-    class="pf-c-dropdown__toggle-check"
+    class="pf-v5-c-dropdown__toggle-check"
     for="check"
   >
     <input
@@ -139,7 +139,7 @@ exports[`DropdownToggleCheckbox with text 1`] = `
     />
     <span
       aria-hidden="true"
-      class="pf-c-dropdown__toggle-text"
+      class="pf-v5-c-dropdown__toggle-text"
       id="check-text"
     >
       Some text

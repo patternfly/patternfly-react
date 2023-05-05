@@ -36,7 +36,7 @@ export class ChipGroupWithOverflowChipEventHandler extends Component<{}, ChipGro
 
     this.deleteItem = (id: string) => {
       const copyOfChipArray = this.state.chipArray;
-      const index = copyOfChipArray.findIndex(chipObj => chipObj.name === id);
+      const index = copyOfChipArray.findIndex((chipObj) => chipObj.name === id);
 
       if (index !== -1) {
         copyOfChipArray.splice(index, 1);
@@ -60,14 +60,14 @@ export class ChipGroupWithOverflowChipEventHandler extends Component<{}, ChipGro
     return (
       <>
         <ChipGroup onOverflowChipClick={() => this.handleOverflowChipClick()}>
-          {chipArray.map(chip => (
+          {chipArray.map((chip) => (
             <Chip key={chip.name} onClick={() => this.deleteItem(chip.name)}>
               {chip.name}
             </Chip>
           ))}
         </ChipGroup>
         {this.state.shouldShowAdditionalText && (
-          <h1 className="pf-c-title pf-m-2xl pf-u-p-lg">Full results are currently expanded.</h1>
+          <h1 className="pf-v5-c-title pf-m-2xl pf-v5-u-p-lg">Full results are currently expanded.</h1>
         )}
       </>
     );

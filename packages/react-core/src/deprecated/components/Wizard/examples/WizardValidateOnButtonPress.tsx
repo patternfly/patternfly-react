@@ -13,7 +13,11 @@ import {
   Alert,
   EmptyStateIcon
 } from '@patternfly/react-core';
-import { Wizard as WizardDeprecated, WizardFooter as WizardFooterDeprecated, WizardContextConsumer as WizardContextConsumerDeprecated } from '@patternfly/react-core/deprecated';
+import {
+  Wizard as WizardDeprecated,
+  WizardFooter as WizardFooterDeprecated,
+  WizardContextConsumer as WizardContextConsumerDeprecated
+} from '@patternfly/react-core/deprecated';
 
 // eslint-disable-next-line patternfly-react/import-tokens-icons
 import { CogsIcon } from '@patternfly/react-icons';
@@ -46,7 +50,7 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
   }, [percent]);
 
   return (
-    <div className="pf-l-bullseye">
+    <div className="pf-v5-l-bullseye">
       <EmptyState variant="lg">
         <EmptyStateHeader
           headingLevel="h4"
