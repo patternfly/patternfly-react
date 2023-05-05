@@ -23,7 +23,7 @@
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
   "dependencies": {
-    "@patternfly/patternfly": "5.0.0-alpha.45",
+    "@patternfly/patternfly": "5.0.0-alpha.46",
     "@patternfly/react-charts": "^7.0.0-alpha.22",
     "@patternfly/react-code-editor": "^5.0.0-alpha.91",
     "@patternfly/react-core": "^5.0.0-alpha.90",
