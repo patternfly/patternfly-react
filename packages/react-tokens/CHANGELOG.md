@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.8 (2023-05-05)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
 # 5.0.0-alpha.7 (2023-04-25)
 
 ### Bug Fixes
