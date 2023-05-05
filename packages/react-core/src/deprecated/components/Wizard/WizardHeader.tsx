@@ -30,7 +30,7 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
   hideClose,
   closeButtonAriaLabel,
   titleId,
-  descriptionComponent: Component = 'p',
+  descriptionComponent: Component = 'div',
   descriptionId
 }: WizardHeaderProps) => (
   <div className={css(styles.wizardHeader)}>
