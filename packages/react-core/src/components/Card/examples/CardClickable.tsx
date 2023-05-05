@@ -70,13 +70,19 @@ export const CardSelectable: React.FunctionComponent = () => {
     </>
   );
 
+  const id = 'test';
+
   return (
     <React.Fragment>
       <Card id="selectable-first-card" isClickable>
         <CardHeader
           actions={{ actions: headerActions }}
-          // eslint-disable-next-line no-console
-          selectableActions={{ onClickAction: () => console.log('I got clicked') }}
+          selectableActions={{
+            // eslint-disable-next-line no-console
+            onClickAction: () => console.log(id),
+            selectableActionID: id,
+            selectableActionAriaLabel: id
+          }}
         />
         <CardTitle>First card</CardTitle>
         <CardBody>This is a clickable card.</CardBody>

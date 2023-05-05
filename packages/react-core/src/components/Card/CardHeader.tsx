@@ -8,6 +8,7 @@ import { CardSelectableActions } from './CardSelectableActions';
 import { Button } from '../Button';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { Radio } from '../Radio';
+import { Checkbox } from '../Checkbox';
 
 export interface CardHeaderActionsObject {
   /** Actions of the card header */
@@ -20,13 +21,19 @@ export interface CardHeaderActionsObject {
 
 export interface CardHeaderSelectableActionsObject {
   /** Selectable actions of the card header */
-  actions?: React.ReactNode;
+  variant?: 'single' | 'multiple';
   /** Flag indicating that the actions have no offset */
   hasNoOffset?: boolean;
   /** Additional classes added to the actions wrapper */
   className?: string;
+  /** ID passed to the action element */
+  selectableActionID: string;
+  /** Aria label passed to the action element */
+  selectableActionAriaLabel: string;
   /* Action to call when clickable card is clicked */
   onClickAction?: (event: React.FormEvent<HTMLInputElement>) => void;
+  /* Link to navigate to when clickable card is clicked */
+  to?: string;
 }
 
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
@@ -96,30 +103,54 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           {...props}
         >
           {onExpand && !isToggleRightAligned && cardHeaderToggle}
-          {isClickable && (
-            <CardActions hasNoOffset={selectableActions?.hasNoOffset}>
+          <CardActions hasNoOffset={actions?.hasNoOffset || selectableActions?.hasNoOffset}>
+            {selectableActions && (
               <CardSelectableActions>
-                <Radio
-                  label={<span className={css(styles.radioLabel)}></span>}
-                  className={css(styles.radioInput)}
-                  hidden
-                  onChange={(event, checked) => checked && selectableActions?.onClickAction?.(event)}
-                  id="radio"
-                  name="radio"
-                />
+                {isClickable && (
+                  <>
+                    <Radio
+                      className={css(styles.radioInput)}
+                      hidden
+                      aria-label={selectableActions.selectableActionAriaLabel}
+                      onChange={(event, checked) => checked && selectableActions?.onClickAction?.(event)}
+                      id={selectableActions.selectableActionID}
+                      name={selectableActions.selectableActionID}
+                    />
+                    <label className={css(styles.radioLabel)} htmlFor={selectableActions.selectableActionID}></label>
+                  </>
+                )}
+                {isSelectable &&
+                  (selectableActions?.variant && selectableActions.variant === 'single' ? (
+                    <>
+                      <Radio
+                        label={<span className={css(styles.radioLabel)}></span>}
+                        className={css(styles.radioInput)}
+                        aria-label={selectableActions.selectableActionAriaLabel}
+                        id={selectableActions.selectableActionID}
+                        name={selectableActions.selectableActionID}
+                      />
+                      <label className={css(styles.radioLabel)} htmlFor={selectableActions.selectableActionID}></label>
+                    </>
+                  ) : (
+                    <>
+                      <Checkbox
+                        className={css(styles.checkInput)}
+                        id={selectableActions.selectableActionID}
+                        name={selectableActions.selectableActionID}
+                      />
+                      <label className={css(styles.checkLabel)} htmlFor={selectableActions.selectableActionID}></label>
+                    </>
+                  ))}
               </CardSelectableActions>
-            </CardActions>
-          )}
-          {isSelectable && (
-            <CardActions hasNoOffset={selectableActions?.hasNoOffset}>
-              <CardSelectableActions>{selectableActions?.actions}</CardSelectableActions>
-            </CardActions>
-          )}
-          {actions && (
-            <CardActions className={actions?.className} hasNoOffset={actions?.hasNoOffset}>
-              {actions.actions}
-            </CardActions>
-          )}
+            )}
+
+            {actions && (
+              <CardActions className={actions?.className} hasNoOffset={actions?.hasNoOffset}>
+                {actions.actions}
+              </CardActions>
+            )}
+          </CardActions>
+
           {children && <CardHeaderMain>{children}</CardHeaderMain>}
           {onExpand && isToggleRightAligned && cardHeaderToggle}
         </div>
