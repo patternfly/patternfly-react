@@ -31,14 +31,14 @@ Most modifiers can be used in combination with each other, except for `isCompact
 
 ```
 
-| Modifier | Description |
-| --- | --- |
-| isCompact | Modifies the card to include compact styling. Should not be used with isLarge. |
-| isFlat | Modifies the card to include flat styling. |
-| isRounded | Modifies the card to include rounded border styling. |
-| isLarge | Modifies the card to be large. Should not be used with isCompact. |
-| isFullHeight | Modifies the card so that it fills the total available height of its container. |
-| isPlain | Modifies the card to include plain styling, which removes the border and background. |
+| Modifier     | Description                                                                          |
+| ------------ | ------------------------------------------------------------------------------------ |
+| isCompact    | Modifies the card to include compact styling. Should not be used with isLarge.       |
+| isFlat       | Modifies the card to include flat styling.                                           |
+| isRounded    | Modifies the card to include rounded border styling.                                 |
+| isLarge      | Modifies the card to be large. Should not be used with isCompact.                    |
+| isFullHeight | Modifies the card so that it fills the total available height of its container.      |
+| isPlain      | Modifies the card to include plain styling, which removes the border and background. |
 
 ### Header images and actions
 
@@ -147,5 +147,11 @@ Place any content that you want to be hidden within the `<CardExpandableContent>
 An image can be placed in the card header to show users an icon beside the expansion caret.
 
 ```ts file='./CardExpandableWithIcon.tsx'
+
+```
+
+### Clickable
+
+```ts file='./CardClickable.tsx'
 
 ```

@@ -53,6 +53,7 @@ interface CardContextProps {
   registerTitleId: (id: string) => void;
   isExpanded: boolean;
   isClickable: boolean;
+  isSelectable: boolean;
 }
 
 interface AriaProps {
@@ -64,7 +65,8 @@ export const CardContext = React.createContext<Partial<CardContextProps>>({
   cardId: '',
   registerTitleId: () => {},
   isExpanded: false,
-  isClickable: false
+  isClickable: false,
+  isSelectable: false
 });
 
 export const Card: React.FunctionComponent<CardProps> = ({
@@ -151,7 +153,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
         cardId: id,
         registerTitleId,
         isExpanded,
-        isClickable
+        isClickable,
+        isSelectable
       }}
     >
       {hasSelectableInput && (

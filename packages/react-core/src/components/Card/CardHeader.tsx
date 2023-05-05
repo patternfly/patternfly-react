@@ -4,6 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Card/card';
 import { CardContext } from './Card';
 import { CardHeaderMain } from './CardHeaderMain';
 import { CardActions } from './CardActions';
+import { CardSelectableActions } from './CardSelectableActions';
 import { Button } from '../Button';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { Radio } from '../Radio';
@@ -11,6 +12,15 @@ import { Radio } from '../Radio';
 export interface CardHeaderActionsObject {
   /** Actions of the card header */
   actions: React.ReactNode;
+  /** Flag indicating that the actions have no offset */
+  hasNoOffset?: boolean;
+  /** Additional classes added to the actions wrapper */
+  className?: string;
+}
+
+export interface CardHeaderSelectableActionsObject {
+  /** Selectable actions of the card header */
+  actions?: React.ReactNode;
   /** Flag indicating that the actions have no offset */
   hasNoOffset?: boolean;
   /** Additional classes added to the actions wrapper */
@@ -26,6 +36,8 @@ export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Actions of the card header */
   actions?: CardHeaderActionsObject;
+  /** Selectable actions of the card header */
+  selectableActions?: CardHeaderSelectableActionsObject;
   /** ID of the card header. */
   id?: string;
   /** Callback expandable card */
@@ -40,6 +52,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   children,
   className,
   actions,
+  selectableActions,
   id,
   onExpand,
   toggleButtonProps,
@@ -47,7 +60,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   ...props
 }: CardHeaderProps) => (
   <CardContext.Consumer>
-    {({ cardId, isClickable }) => {
+    {({ cardId, isClickable, isSelectable }) => {
       const cardHeaderToggle = (
         <div className={css(styles.cardHeaderToggle)}>
           <Button
@@ -65,6 +78,17 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
         </div>
       );
 
+      if (actions && !(isClickable && isSelectable)) {
+        if (isClickable) {
+          // eslint-disable-next-line no-console
+          console.warn('Clickable only cards should not use actions');
+        }
+        if (isSelectable) {
+          // eslint-disable-next-line no-console
+          console.warn('Selectable only cards should not use actions');
+        }
+      }
+
       return (
         <div
           className={css(styles.cardHeader, isToggleRightAligned && styles.modifiers.toggleRight, className)}
@@ -73,23 +97,27 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
         >
           {onExpand && !isToggleRightAligned && cardHeaderToggle}
           {isClickable && (
-            <CardActions hasNoOffset={actions?.hasNoOffset}>
-              <div className={css(styles.cardSelectableActions)}>
+            <CardActions hasNoOffset={selectableActions?.hasNoOffset}>
+              <CardSelectableActions>
                 <Radio
                   label={<span className={css(styles.radioLabel)}></span>}
                   className={css(styles.radioInput)}
                   hidden
-                  onChange={(event, checked) => checked && actions.onClickAction(event)}
+                  onChange={(event, checked) => checked && selectableActions?.onClickAction?.(event)}
                   id="radio"
                   name="radio"
                 />
-              </div>
+              </CardSelectableActions>
+            </CardActions>
+          )}
+          {isSelectable && (
+            <CardActions hasNoOffset={selectableActions?.hasNoOffset}>
+              <CardSelectableActions>{selectableActions?.actions}</CardSelectableActions>
             </CardActions>
           )}
           {actions && (
             <CardActions className={actions?.className} hasNoOffset={actions?.hasNoOffset}>
-              {' '}
-              {actions.actions}{' '}
+              {actions.actions}
             </CardActions>
           )}
           {children && <CardHeaderMain>{children}</CardHeaderMain>}
