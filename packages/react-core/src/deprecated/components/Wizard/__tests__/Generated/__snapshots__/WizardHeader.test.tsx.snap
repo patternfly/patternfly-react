@@ -15,14 +15,14 @@ exports[`WizardHeader should match snapshot (auto-generated) 1`] = `
         string
       </h2>
     </div>
-    <p
+    <div
       class="pf-v5-c-wizard__description"
       id="string"
-    />
-    <div>
-      ReactNode
+    >
+      <div>
+        ReactNode
+      </div>
     </div>
-    <p />
   </div>
 </DocumentFragment>
 `;
