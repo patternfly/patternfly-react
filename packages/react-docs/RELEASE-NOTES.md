@@ -19,13 +19,13 @@ section: developer-resources
 - Updated to latest patternfly-react topology (4.91.40) ([#7](https://github.com/patternfly/react-topology/pull/7))
 
 ### User feedback
-- Began initial Feedback work to remove product specific functionality ([#9](https://github.com/patternfly/react-user-feedback/pull/9))
-- Updated patternfly to latest. ([#19](https://github.com/patternfly/react-user-feedback/pull/19))
+- Began initial feedback work to remove product specific functionality ([#9](https://github.com/patternfly/react-user-feedback/pull/9))
+- Updated PatternFly to latest. ([#19](https://github.com/patternfly/react-user-feedback/pull/19))
 - Updated documentation ([#37](https://github.com/patternfly/react-user-feedback/pull/37))
 - Fixed issue with docs not building for production. ([#36](https://github.com/patternfly/react-user-feedback/pull/36))
 - Added fix for callback. ([#32](https://github.com/patternfly/react-user-feedback/pull/32))
-- Added PF Image to extension. ([#24](https://github.com/patternfly/react-user-feedback/pull/24))
-- Fixed Feedback links ([#14](https://github.com/patternfly/react-user-feedback/pull/14))
+- Added PatternFly image to extension. ([#24](https://github.com/patternfly/react-user-feedback/pull/24))
+- Fixed feedback links ([#14](https://github.com/patternfly/react-user-feedback/pull/14))
 - Updated README.md for project ([#23](https://github.com/patternfly/react-user-feedback/pull/23))
 
 ### Quick starts
