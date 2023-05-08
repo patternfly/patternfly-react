@@ -1367,7 +1367,6 @@ class FilterTableDemo extends React.Component {
             minWidth="100px"
             onSelect={this.onStatusSelect}
             selected={filters.status}
-            minWidth="200px"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
@@ -1393,7 +1392,6 @@ class FilterTableDemo extends React.Component {
   }
 
   renderToolbar() {
-    const { filters } = this.state;
     return (
       <Toolbar id="toolbar-with-chip-groups" clearAllFilters={this.onDelete} collapseListedFiltersBreakpoint="xl">
         <ToolbarContent>
