@@ -132,7 +132,6 @@ exports[`optionsMenu expanded 1`] = `
       <li
         class="pf-v5-c-divider"
         index="1"
-        role="separator"
       />
       <section
         class="pf-v5-c-options-menu__group"
@@ -482,7 +481,6 @@ exports[`optionsMenu renders in strict mode 1`] = `
       <li
         class="pf-v5-c-divider"
         index="1"
-        role="separator"
       />
       <section
         class="pf-v5-c-options-menu__group"
