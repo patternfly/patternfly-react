@@ -1,10 +1,10 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
-import { Popper, PopperProps } from '../../helpers/Popper/Popper';
+import { Popper } from '../../helpers/Popper/Popper';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface DropdownPopperProps extends PopperProps {
+export interface DropdownPopperProps {
   /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
   direction?: 'up' | 'down';
   /** Horizontal position of the popper */
