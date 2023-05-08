@@ -51,7 +51,7 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
         formatBreakpointMods(orientation, styles),
         className
       )}
-      {...(component !== 'hr' && { role: 'separator' })}
+      {...(component !== 'hr' && component !== 'li' && { role: 'separator' })}
       {...props}
     />
   );
