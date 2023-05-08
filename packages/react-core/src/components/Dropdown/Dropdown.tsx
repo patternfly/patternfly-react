@@ -59,7 +59,7 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   zIndex?: number;
   /** Additional properties to pass to the Popper */
   popperProps?: DropdownPopperProps;
-  /** Keys that trigger onOpenChange, defaults to tab and escape. Escape should always be included in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
+  /** @beta Keys that trigger onOpenChange, defaults to tab and escape. Escape should always be included in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
 }
 
