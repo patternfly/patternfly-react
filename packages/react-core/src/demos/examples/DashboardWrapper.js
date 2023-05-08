@@ -114,7 +114,7 @@ export default class DashboardWrapper extends React.Component {
         mainContainerId={mainContainerId ? mainContainerId : 'main-content-page-layout-default-nav'}
         notificationDrawer={notificationDrawer}
         isNotificationDrawerExpanded={isNotificationDrawerExpanded}
-        onPageResize={(event) => onPageResize(event)}
+        {...(typeof onPageResize === 'function' && { onPageResize: (event) => onPageResize(event) })}
         {...pageProps}
       >
         {hasPageTemplateTitle && PageTemplateTitle}
