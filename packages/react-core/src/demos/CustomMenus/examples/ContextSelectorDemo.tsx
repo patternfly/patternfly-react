@@ -60,16 +60,7 @@ export const ContextSelectorDemo: React.FunctionComponent = () => {
   const menuRef = React.useRef<HTMLDivElement>(null);
   const menuFooterBtnRef = React.useRef<HTMLButtonElement>(null);
 
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation(); // Stop handleClickOutside from handling
-    setTimeout(() => {
-      if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector(
-          'li > button:not(:disabled), li > a:not(:disabled), input:not(:disabled)'
-        );
-        firstElement && (firstElement as HTMLElement).focus();
-      }
-    }, 0);
+  const onToggleClick = () => {
     setIsOpen(!isOpen);
   };
 

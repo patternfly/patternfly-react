@@ -35,11 +35,8 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   onOpenChange,
   zIndex = 9999,
   popperProps,
-  onOpenChangeKeys = ['Escape', 'Tab'],
-  ...props
+  onOpenChangeKeys = ['Escape', 'Tab']
 }: MenuContainerProps) => {
-  const containerRef = React.useRef<HTMLDivElement>();
-
   React.useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
@@ -83,18 +80,15 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   }, [isOpen, menuRef, onOpenChange, onOpenChangeKeys, toggleRef]);
 
   return (
-    <div ref={containerRef} {...props}>
-      <Popper
-        trigger={toggle}
-        triggerRef={toggleRef}
-        popper={menu}
-        popperRef={menuRef}
-        appendTo={containerRef.current || undefined}
-        isVisible={isOpen}
-        zIndex={zIndex}
-        {...popperProps}
-      />
-    </div>
+    <Popper
+      trigger={toggle}
+      triggerRef={toggleRef}
+      popper={menu}
+      popperRef={menuRef}
+      isVisible={isOpen}
+      zIndex={zIndex}
+      {...popperProps}
+    />
   );
 };
 MenuContainer.displayName = 'MenuContainer';

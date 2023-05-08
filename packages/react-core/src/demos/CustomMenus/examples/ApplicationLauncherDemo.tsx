@@ -23,8 +23,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
   const [filteredIds, setFilteredIds] = React.useState<string[]>(['*']);
   const menuRef = React.useRef<HTMLDivElement>(null);
 
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation();
+  const onToggleClick = () => {
     setTimeout(() => {
       if (menuRef.current) {
         const firstElement = menuRef.current.querySelector(

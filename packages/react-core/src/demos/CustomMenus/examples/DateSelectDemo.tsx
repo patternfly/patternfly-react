@@ -6,14 +6,7 @@ export const DateSelectDemo: React.FunctionComponent = () => {
   const [selected, setSelected] = React.useState<number>(0);
   const menuRef = React.useRef<HTMLDivElement>();
 
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation(); // Stop handleClickOutside from handling
-    setTimeout(() => {
-      if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
-        firstElement && (firstElement as HTMLElement).focus();
-      }
-    }, 0);
+  const onToggleClick = () => {
     setIsOpen(!isOpen);
   };
 
@@ -74,7 +67,10 @@ export const DateSelectDemo: React.FunctionComponent = () => {
         </MenuToggle>
       )}
       ref={menuRef}
-      onSelect={(_ev, itemId) => setSelected(itemId as number)}
+      onSelect={(_ev, itemId) => {
+        setSelected(itemId as number);
+        setIsOpen(false);
+      }}
       selected={selected}
     >
       <SelectList>

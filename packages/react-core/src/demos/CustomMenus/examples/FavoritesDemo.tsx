@@ -6,14 +6,7 @@ export const FavoritesDemo: React.FunctionComponent = () => {
   const [favorites, setFavorites] = React.useState<string[]>([]);
   const menuRef = React.useRef<HTMLDivElement>(null);
 
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation();
-    setTimeout(() => {
-      if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
-        firstElement && (firstElement as HTMLElement).focus();
-      }
-    }, 0);
+  const onToggleClick = () => {
     setIsOpen(!isOpen);
   };
 
