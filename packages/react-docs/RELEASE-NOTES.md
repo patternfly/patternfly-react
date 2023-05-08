@@ -2,6 +2,36 @@
 id: Release notes
 section: developer-resources
 ---
+## 2023.02.1 release notes (2023-05-01)
+- [@patternfly/react-topology@4.93.5](https://www.npmjs.com/package/@patternfly/react-topology/v/4.93.5)
+- [@patternfly/react-user-feedback@1.0.9](https://www.npmjs.com/package/@patternfly/react-user-feedback/v/1.0.9)
+- [@patternfly/quickstarts@2.4.1](https://www.npmjs.com/package/@patternfly/quickstarts/v/2.4.1)
+
+### Topology
+- Added the CSS js files to the npm package ([#36](https://github.com/patternfly/react-topology/pull/36))
+- Exported css to the dist/js directory ([#38](https://github.com/patternfly/react-topology/pull/38))
+- Set dimensions on spacer nodes ([#34](https://github.com/patternfly/react-topology/pull/34))
+- Updated running and pending icon colors ([#31](https://github.com/patternfly/react-topology/pull/31))
+- Fixed ColaGroupLayout crash on add ([#21](https://github.com/patternfly/react-topology/pull/21))
+- Kept node outline on hover ([#22](https://github.com/patternfly/react-topology/pull/22))
+- Used badgeTextColor when set ([#20](https://github.com/patternfly/react-topology/pull/20))
+- Fixed display edges inside collapsed groups ([#23](https://github.com/patternfly/react-topology/pull/23))
+- Updated to latest patternfly-react topology (4.91.40) ([#7](https://github.com/patternfly/react-topology/pull/7))
+
+### User feedback
+- Began initial feedback work to remove product specific functionality ([#9](https://github.com/patternfly/react-user-feedback/pull/9))
+- Updated PatternFly to latest. ([#19](https://github.com/patternfly/react-user-feedback/pull/19))
+- Updated documentation ([#37](https://github.com/patternfly/react-user-feedback/pull/37))
+- Fixed issue with docs not building for production. ([#36](https://github.com/patternfly/react-user-feedback/pull/36))
+- Added fix for callback. ([#32](https://github.com/patternfly/react-user-feedback/pull/32))
+- Added PatternFly image to extension. ([#24](https://github.com/patternfly/react-user-feedback/pull/24))
+- Fixed feedback links ([#14](https://github.com/patternfly/react-user-feedback/pull/14))
+- Updated README.md for project ([#23](https://github.com/patternfly/react-user-feedback/pull/23))
+
+### Quick starts
+- Updated title heading level ([#240](https://github.com/patternfly/patternfly-quickstarts/pull/240))
+- Updated sourceLinks for docs ([#238](https://github.com/patternfly/patternfly-quickstarts/pull/238))
+- Fixed help topic menu - show menu when there is more than one help topic ([#236](https://github.com/patternfly/patternfly-quickstarts/pull/236))
 
 ## 2023.02 release notes (2023-03-24)
 - [@patternfly/react-catalog-view-extension@4.96.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.96.0)
