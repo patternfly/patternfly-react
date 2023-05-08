@@ -105,14 +105,15 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   ...props
 }: TdProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
+  const [truncated, setTruncated] = React.useState(false);
   const cellRef = innerRef ? innerRef : React.createRef();
-
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       !showTooltip && setShowTooltip(true);
     } else {
       showTooltip && setShowTooltip(false);
     }
+
     onMouseEnterProp(event);
   };
 
@@ -255,9 +256,19 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     (className && className.includes('pf-v5-c-table__tree-view-title-cell')) ||
     (mergedClassName && mergedClassName.includes('pf-v5-c-table__tree-view-title-cell'));
 
+  React.useEffect(() => {
+    setTruncated(
+      (cellRef as React.RefObject<HTMLElement>).current.offsetWidth <
+        (cellRef as React.RefObject<HTMLElement>).current.scrollWidth
+    );
+  }, [cellRef]);
+
   const cell = (
     <MergedComponent
+      tabIndex={(select || !truncated) && modifier !== 'truncate' ? -1 : 0}
       {...(!treeTableTitleCell && { 'data-label': dataLabel })}
+      onFocus={tooltip !== null ? onMouseEnter : onMouseEnterProp}
+      onBlur={() => setShowTooltip(false)}
       onMouseEnter={tooltip !== null ? onMouseEnter : onMouseEnterProp}
       className={css(
         className,
@@ -289,9 +300,14 @@ const TdBase: React.FunctionComponent<TdProps> = ({
 
   const canMakeDefaultTooltip = tooltip === '' ? typeof children === 'string' : true;
   return tooltip !== null && canMakeDefaultTooltip && showTooltip ? (
-    <Tooltip triggerRef={cellRef as React.RefObject<any>} content={tooltip || (tooltip === '' && children)} isVisible>
+    <>
       {cell}
-    </Tooltip>
+      <Tooltip
+        triggerRef={cellRef as React.RefObject<any>}
+        content={tooltip || (tooltip === '' && children)}
+        isVisible
+      />
+    </>
   ) : (
     cell
   );
