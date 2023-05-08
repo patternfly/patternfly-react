@@ -56,7 +56,7 @@ export const LegacyTableActions: React.FunctionComponent = () => {
 
   // This state is just for the ToggleGroup in this example and isn't necessary for Table usage.
   const [propToUse, setPropToUse] = React.useState<ExampleType>('actions');
-  const onPropToUseChange: ToggleGroupItemProps['onChange'] = (_isSelected, event) => {
+  const onPropToUseChange: ToggleGroupItemProps['onChange'] = (event, _isSelected) => {
     const id = event.currentTarget.id;
     setPropToUse(id as ExampleType);
   };

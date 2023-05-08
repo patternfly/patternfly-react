@@ -25,7 +25,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
   const menuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
 
-  const handleToggleSwitch = (selected: boolean, e: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
+  const handleToggleSwitch = (e, _selected: boolean) => {
     setToggleSelected(e.currentTarget.id);
   };
 

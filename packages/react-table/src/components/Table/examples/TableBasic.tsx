@@ -30,7 +30,7 @@ export const TableBasic: React.FunctionComponent = () => {
 
   // This state is just for the ToggleGroup in this example and isn't necessary for Table usage.
   const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('default');
-  const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (_isSelected, event) => {
+  const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (event, _isSelected) => {
     const id = event.currentTarget.id;
     setExampleChoice(id as ExampleType);
   };

@@ -3,7 +3,7 @@ import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 export const ToggleGroupDefaultSingle: React.FunctionComponent = () => {
   const [isSelected, setIsSelected] = React.useState('');
-  const handleItemClick = (isSelected: boolean, event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
+  const handleItemClick = (event, _isSelected: boolean) => {
     const id = event.currentTarget.id;
     setIsSelected(id);
   };
