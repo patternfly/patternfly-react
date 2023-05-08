@@ -169,7 +169,7 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
             name={id}
             aria-label={ariaLabel}
             value={value as string}
-            onChange={(value, event) => onTextAreaChange(event, value)}
+            onChange={onTextAreaChange}
             onClick={onTextAreaClick}
             onBlur={onTextAreaBlur}
             placeholder={textAreaPlaceholder}
