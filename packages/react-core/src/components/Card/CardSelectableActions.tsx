@@ -14,10 +14,9 @@ export interface CardActionsProps extends React.HTMLProps<HTMLDivElement> {
 export const CardSelectableActions: React.FunctionComponent<CardActionsProps> = ({
   children,
   className,
-  hasNoOffset = false,
   ...props
 }: CardActionsProps) => (
-  <div className={css(styles.cardSelectableActions, hasNoOffset && styles.modifiers.noOffset, className)} {...props}>
+  <div className={css(styles.cardSelectableActions, className)} {...props}>
     {children}
   </div>
 );
