@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.39 (2023-05-08)
+
+### Features
+
+- **Tabs:** added event to onToggle ([#9059](https://github.com/patternfly/patternfly-react/issues/9059)) ([54b7f9a](https://github.com/patternfly/patternfly-react/commit/54b7f9a8ba669a045c106284637890eda813240d))
+- **TextArea:** swapped onChange params ([#9061](https://github.com/patternfly/patternfly-react/issues/9061)) ([b48192e](https://github.com/patternfly/patternfly-react/commit/b48192edd72b790fd4c4864123f24f4e7ff8377e))
+- **ToggleGroupItem:** swapped onChange params ([#9067](https://github.com/patternfly/patternfly-react/issues/9067)) ([0959498](https://github.com/patternfly/patternfly-react/commit/09594984136cbae6a0f6d4223168dedb4e73c9b0))
+
 # 5.0.0-alpha.38 (2023-05-05)
 
 ### Bug Fixes

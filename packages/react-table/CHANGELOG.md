@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.95 (2023-05-08)
+
+### Features
+
+- **ToggleGroupItem:** swapped onChange params ([#9067](https://github.com/patternfly/patternfly-react/issues/9067)) ([0959498](https://github.com/patternfly/patternfly-react/commit/09594984136cbae6a0f6d4223168dedb4e73c9b0))
+
 # [5.0.0-alpha.94](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.93...@patternfly/react-table@5.0.0-alpha.94) (2023-05-08)
 
 **Note:** Version bump only for package @patternfly/react-table
