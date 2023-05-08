@@ -7,8 +7,12 @@ import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 export interface RadioProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>,
     OUIAProps {
-  /** Additional classes added to the radio. */
+  /** Additional classes added to the radio wrapper.  This will be a div element if
+   * isLabelWrapped is true, otherwise this will be a label element.
+   */
   className?: string;
+  /** Additional classed added to the radio input */
+  inputClassName?: string;
   /** Id of the radio. */
   id: string;
   /** Flag to show if the radio label is wrapped on small screen. */
@@ -70,6 +74,7 @@ export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> 
       'aria-label': ariaLabel,
       checked,
       className,
+      inputClassName,
       defaultChecked,
       isLabelWrapped,
       isLabelBeforeButton,
@@ -93,7 +98,7 @@ export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> 
     const inputRendered = (
       <input
         {...props}
-        className={css(styles.radioInput)}
+        className={css(styles.radioInput, inputClassName)}
         type="radio"
         onChange={this.handleChange}
         aria-invalid={!isValid}

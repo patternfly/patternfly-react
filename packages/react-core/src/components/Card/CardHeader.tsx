@@ -25,16 +25,22 @@ export interface CardHeaderSelectableActionsObject {
   variant?: 'single' | 'multiple';
   /** Flag indicating that the actions have no offset */
   hasNoOffset?: boolean;
-  /** Additional classes added to the actions wrapper */
+  /** Additional classes added to the selectable actions wrapper */
   className?: string;
-  /** ID passed to the action element */
-  selectableActionID: string;
-  /** Aria label passed to the action element */
-  selectableActionAriaLabel: string;
-  /* Action to call when clickable card is clicked */
-  onClickAction?: (event: React.FormEvent<HTMLInputElement>) => void;
-  /* Link to navigate to when clickable card is clicked */
+  /** ID passed to the selectable or clickable input */
+  selectableActionId: string;
+  /** Adds an accessible label to the selectable or clickable input */
+  selectableActionAriaLabel?: string;
+  /** Adds an accessible label to the selectable or clickable input by passing in a
+   * space separated list of id's.
+   */
+  selectableActionAriaLabelledby?: string;
+  /** Action to call when clickable card is clicked */
+  onClickAction?: (event: React.FormEvent<HTMLInputElement> | React.MouseEvent) => void;
+  /** Link to navigate to when clickable card is clicked */
   to?: string;
+  /** Name for a group of clickable or selectable cards */
+  name?: string;
 }
 
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
@@ -67,118 +73,97 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   isToggleRightAligned,
   ...props
 }: CardHeaderProps) => (
-    <CardContext.Consumer>
-      {({ cardId, isClickable, isSelectable }) => {
-        const cardHeaderToggle = (
-          <div className={css(styles.cardHeaderToggle)}>
-            <Button
-              variant="plain"
-              type="button"
-              onClick={(evt) => {
-                onExpand(evt, cardId);
-              }}
-              {...toggleButtonProps}
-            >
-              <span className={css(styles.cardHeaderToggleIcon)}>
-                <AngleRightIcon aria-hidden="true" />
-              </span>
-            </Button>
-          </div>
-        );
-
-        if (actions && !(isClickable && isSelectable)) {
-          if (isClickable) {
-            // eslint-disable-next-line no-console
-            console.warn('Clickable only cards should not use actions');
-          }
-          if (isSelectable) {
-            // eslint-disable-next-line no-console
-            console.warn('Selectable only cards should not use actions');
-          }
-        }
-
-        return (
-          <div
-            className={css(styles.cardHeader, isToggleRightAligned && styles.modifiers.toggleRight, className)}
-            id={id}
-            {...props}
+  <CardContext.Consumer>
+    {({ cardId, isClickable, isSelectable }) => {
+      const cardHeaderToggle = (
+        <div className={css(styles.cardHeaderToggle)}>
+          <Button
+            variant="plain"
+            type="button"
+            onClick={(evt) => {
+              onExpand(evt, cardId);
+            }}
+            {...toggleButtonProps}
           >
-            {onExpand && !isToggleRightAligned && cardHeaderToggle}
-            <CardActions hasNoOffset={actions?.hasNoOffset || selectableActions?.hasNoOffset}>
-              {selectableActions && (
-                <CardSelectableActions>
-                  {isClickable && isSelectable && (
-                    // todo add radio
-                    <Checkbox
-                      className={css(styles.checkInput, 'pf-screen-reader')}
-                      id={selectableActions.selectableActionID}
-                      name={selectableActions.selectableActionID}
-                    />
-                  )}
-                  {isClickable && !isSelectable && (
-                    <>
-                      <Radio
-                        className={css(styles.radioInput, 'pf-screen-reader')}
-                        label={<span className={css(styles.radioLabel)}></span>}
-                        aria-label={selectableActions.selectableActionAriaLabel}
-                        onChange={(event, checked) => checked && selectableActions?.onClickAction?.(event)}
-                        id={selectableActions.selectableActionID}
-                        name={selectableActions.selectableActionID}
-                      />
-                    </>
-                  )}
-                  {isSelectable &&
-                    !isClickable &&
-                    (selectableActions?.variant && selectableActions.variant === 'single' ? (
-                      <>
-                        <Radio
-                          label={<span className={css(styles.radioLabel)}></span>}
-                          className={css(styles.radioInput)}
-                          aria-label={selectableActions.selectableActionAriaLabel}
-                          id={selectableActions.selectableActionID}
-                          name={selectableActions.selectableActionID}
-                        />
-                        <label
-                          className={css(styles.radioLabel)}
-                          htmlFor={selectableActions.selectableActionID}
-                        ></label>
-                      </>
-                    ) : (
-                      <>
-                        <Checkbox
-                          className={css(styles.checkInput)}
-                          id={selectableActions.selectableActionID}
-                          name={selectableActions.selectableActionID}
-                        />
-                        <label
-                          className={css(styles.checkLabel)}
-                          htmlFor={selectableActions.selectableActionID}
-                        ></label>
-                      </>
-                    ))}
-                </CardSelectableActions>
-              )}
+            <span className={css(styles.cardHeaderToggleIcon)}>
+              <AngleRightIcon aria-hidden="true" />
+            </span>
+          </Button>
+        </div>
+      );
 
-              {actions && (
-                <CardActions className={actions?.className} hasNoOffset={actions?.hasNoOffset}>
-                  {actions.actions}
-                </CardActions>
-              )}
-            </CardActions>
+      if (actions && !(isClickable && isSelectable)) {
+        if (isClickable) {
+          // eslint-disable-next-line no-console
+          console.warn('Clickable only cards should not use actions');
+        }
+        if (isSelectable) {
+          // eslint-disable-next-line no-console
+          console.warn('Selectable only cards should not use actions');
+        }
+      }
 
-            {isClickable && isSelectable ? (
-              <CardHeaderMain>
-                <CardTitle>
-                  <Button variant="link"></Button>
-                </CardTitle>
-              </CardHeaderMain>
-            ) : (
-              children && <CardHeaderMain>{children}</CardHeaderMain>
-            )}
-            {onExpand && isToggleRightAligned && cardHeaderToggle}
-          </div>
+      const handleActionClick = (event: React.FormEvent<HTMLInputElement> | React.MouseEvent) => {
+        if (selectableActions?.onClickAction) {
+          selectableActions?.onClickAction(event);
+        } else if (selectableActions?.to) {
+          window.open(selectableActions?.to, '_blank');
+        }
+      };
+
+      const selectableInputProps = {
+        className: 'pf-m-standalone',
+        inputClassName: isClickable && !isSelectable && 'pf-v5-screen-reader',
+        label: <></>,
+        'aria-label': selectableActions?.selectableActionAriaLabel,
+        'aria-labelledby': selectableActions?.selectableActionAriaLabelledby,
+        id: selectableActions?.selectableActionId,
+        name: selectableActions?.name,
+        onClick: handleActionClick
+      };
+
+      const selectableInput =
+        selectableActions?.variant === 'single' || (isClickable && !isSelectable) ? (
+          <Radio {...selectableInputProps} />
+        ) : (
+          <Checkbox {...selectableInputProps} />
         );
-      }}
-    </CardContext.Consumer>
-  );
+
+      return (
+        <div
+          className={css(styles.cardHeader, isToggleRightAligned && styles.modifiers.toggleRight, className)}
+          id={id}
+          {...props}
+        >
+          {onExpand && !isToggleRightAligned && cardHeaderToggle}
+          <CardActions
+            className={actions?.className}
+            hasNoOffset={actions?.hasNoOffset || selectableActions?.hasNoOffset}
+          >
+            {actions?.actions}
+            {selectableActions && (isClickable || isSelectable) && (
+              <CardSelectableActions className={selectableActions?.className}>{selectableInput}</CardSelectableActions>
+            )}
+          </CardActions>
+
+          {isClickable && isSelectable ? (
+            <CardHeaderMain>
+              <CardTitle>
+                <Button
+                  variant="link"
+                  isInline
+                  {...(selectableActions?.onClickAction && { onClick: selectableActions?.onClickAction })}
+                  {...(selectableActions?.to && { component: 'a', href: selectableActions?.to, target: '_blank' })}
+                ></Button>
+              </CardTitle>
+            </CardHeaderMain>
+          ) : (
+            children && <CardHeaderMain>{children}</CardHeaderMain>
+          )}
+          {onExpand && isToggleRightAligned && cardHeaderToggle}
+        </div>
+      );
+    }}
+  </CardContext.Consumer>
+);
 CardHeader.displayName = 'CardHeader';
