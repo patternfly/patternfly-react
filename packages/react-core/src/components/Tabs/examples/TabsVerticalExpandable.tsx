@@ -12,7 +12,7 @@ export const TabsVerticalExpandable: React.FunctionComponent = () => {
     setActiveTabKey(tabIndex);
   };
 
-  const onToggle = (isExpanded: boolean) => {
+  const onToggle = (_event: React.MouseEvent, isExpanded: boolean) => {
     setIsExpanded(isExpanded);
   };
 

@@ -58,25 +58,25 @@ export class TabsExpandableDemo extends Component {
   };
 
   // Toggle Expandable tabs
-  private onToggleControlled = (isExpanded: boolean) => {
+  private onToggleControlled = (_event: React.MouseEvent, isExpanded: boolean) => {
     this.setState({
       isExpandedControlled: isExpanded
     });
   };
 
-  private onToggleBreakpoint1 = (isExpanded: boolean) => {
+  private onToggleBreakpoint1 = (_event: React.MouseEvent, isExpanded: boolean) => {
     this.setState({
       isExpandedBreakpoint1: isExpanded
     });
   };
 
-  private onToggleBreakpoint2 = (isExpanded: boolean) => {
+  private onToggleBreakpoint2 = (_event: React.MouseEvent, isExpanded: boolean) => {
     this.setState({
       isExpandedBreakpoint2: isExpanded
     });
   };
 
-  private onToggleBreakpoint3 = (isExpanded: boolean) => {
+  private onToggleBreakpoint3 = (_event: React.MouseEvent, isExpanded: boolean) => {
     this.setState({
       isExpandedBreakpoint3: isExpanded
     });
