@@ -6,14 +6,7 @@ export const SelectFooter: React.FunctionComponent = () => {
   const [selected, setSelected] = React.useState<string>('Select a value');
   const menuRef = React.useRef<HTMLDivElement>(null);
 
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation(); // Stop handleClickOutside from handling
-    setTimeout(() => {
-      if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button:not(:disabled), li > a:not(:disabled)');
-        firstElement && (firstElement as HTMLElement).focus();
-      }
-    }, 0);
+  const onToggleClick = () => {
     setIsOpen(!isOpen);
   };
 
