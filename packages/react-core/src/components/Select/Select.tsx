@@ -75,7 +75,6 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
 }: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
 
   const menuRef = (innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
   React.useEffect(() => {
@@ -139,18 +138,15 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
     </Menu>
   );
   return (
-    <div ref={containerRef}>
-      <Popper
-        trigger={toggle(toggleRef)}
-        triggerRef={toggleRef}
-        popper={menu}
-        popperRef={menuRef}
-        appendTo={containerRef.current || undefined}
-        isVisible={isOpen}
-        zIndex={zIndex}
-        {...popperProps}
-      />
-    </div>
+    <Popper
+      trigger={toggle(toggleRef)}
+      triggerRef={toggleRef}
+      popper={menu}
+      popperRef={menuRef}
+      isVisible={isOpen}
+      zIndex={zIndex}
+      {...popperProps}
+    />
   );
 };
 
