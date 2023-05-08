@@ -1,10 +1,10 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
-import { Popper, PopperProps } from '../../helpers/Popper/Popper';
+import { Popper } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
-export interface SelectPopperProps extends PopperProps {
+export interface SelectPopperProps {
   /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
   direction?: 'up' | 'down';
   /** Horizontal position of the popper */
@@ -43,7 +43,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   /** Callback to allow the select component to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing either tab or escape (or specificed in onOpenChangeKeys). */
   onOpenChange?: (isOpen: boolean) => void;
-  /** Keys that trigger onOpenChange, defaults to tab and escape. */
+  /** @beta Keys that trigger onOpenChange, defaults to tab and escape. */
   onOpenChangeKeys?: string[];
   /** Indicates if the select should be without the outer box-shadow */
   isPlain?: boolean;
