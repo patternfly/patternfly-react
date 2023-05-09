@@ -17,8 +17,8 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
   props: EditableSelectInputProps;
   /** Event handler which fires when user selects an option in this cell */
   onSelect: (
-    newValue: string | SelectOptionObject,
     event: React.MouseEvent | React.ChangeEvent,
+    newValue: string | SelectOptionObject,
     rowIndex: number,
     cellIndex: number,
     isPlaceholder?: boolean
@@ -34,7 +34,7 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
   /** Event handler which fires when the select toggle is toggled */
   onToggle?: (event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event, isExpanded: boolean) => void;
   /** Event handler which fires when the user clears the selections */
-  clearSelection?: (rowIndex: number, cellIndex: number, event?: React.MouseEvent) => void;
+  clearSelection?: (event: React.MouseEvent, rowIndex: number, cellIndex: number) => void;
 }
 
 export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInputCell> = ({
@@ -54,11 +54,11 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
     newValue: string | SelectOptionObject,
     isPlaceholder: boolean
   ) => {
-    onSelect(newValue, event, rowIndex, cellIndex, isPlaceholder);
+    onSelect(event, newValue, rowIndex, cellIndex, isPlaceholder);
   };
 
   const onClear = (event: React.MouseEvent) => {
-    clearSelection(rowIndex, cellIndex, event);
+    clearSelection(event, rowIndex, cellIndex);
   };
 
   const select = (
