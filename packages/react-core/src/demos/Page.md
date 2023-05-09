@@ -19,8 +19,6 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
   1. Add an onNavToggle callback to PageHeader
   2. Pass a boolean into the isNavOpen prop to PageSidebar
 
-- To make the page take up the full height, it is recommended to set the height of all ancestor elements up to the page component to `100%`
-
 ## Layouts
 
 This demonstrates a variety of navigation patterns in the context of a full page layout. These can be used as a basis for choosing the most appropriate page template for your application.
