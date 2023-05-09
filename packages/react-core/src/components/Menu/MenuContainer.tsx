@@ -13,9 +13,9 @@ export interface MenuContainerProps {
   /** Flag to indicate if menu is opened.*/
   isOpen: boolean;
   /** Callback to change the open state of the menu.
-   * Triggered by clicking outside of the menu, or by pressing either tab or escape (or keys specified in onOpenChangeKeys). */
+   * Triggered by clicking outside of the menu, or by pressing any keys specificed in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;
-  /** @beta Keys that trigger onOpenChange, defaults to tab and escape. */
+  /** @beta Keys that trigger onOpenChange, defaults to tab and escape. Escape should always be included in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
   /** z-index of the dropdown menu */
   zIndex?: number;
