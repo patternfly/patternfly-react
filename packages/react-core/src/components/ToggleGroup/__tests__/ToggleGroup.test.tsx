@@ -42,7 +42,7 @@ describe('ToggleGroup', () => {
 
   test('item passes selection and event to onChange handler', async () => {
     const user = userEvent.setup();
-    
+
     render(
       <ToggleGroupItem text="test" buttonId="toggleGroupItem" onChange={props.onChange} aria-label="onChange handler" />
     );
@@ -56,6 +56,19 @@ describe('ToggleGroup', () => {
       <ToggleGroup isCompact aria-label="Label">
         <ToggleGroupItem text="Test" />
         <ToggleGroupItem text="Test" />
+      </ToggleGroup>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should render non-ToggleGroupItem children', () => {
+    const { asFragment } = render(
+      <ToggleGroup isCompact aria-label="non-element children">
+        <ToggleGroupItem text="Test" />
+        {false && <ToggleGroupItem text="Test2" />}
+        {'Test 3'}
+        {undefined}
+        {null}
       </ToggleGroup>
     );
     expect(asFragment()).toMatchSnapshot();
