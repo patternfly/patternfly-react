@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.94](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.93...@patternfly/react-core@5.0.0-alpha.94) (2023-05-09)
+
+### Features
+
+- **Popover:** added event to onHide and onShow callback params ([#9024](https://github.com/patternfly/patternfly-react/issues/9024)) ([1cedd58](https://github.com/patternfly/patternfly-react/commit/1cedd582fe6e738178641726e925f2cc6231812b))
+- **Popover:** Swap params of shouldClose and shouldOpen ([#9054](https://github.com/patternfly/patternfly-react/issues/9054)) ([79bfcc2](https://github.com/patternfly/patternfly-react/commit/79bfcc204031e0d6f38fe637db14b444eed1ca8e))
+- **TextInput:** swapped onChange params ([#9064](https://github.com/patternfly/patternfly-react/issues/9064)) ([8735c8d](https://github.com/patternfly/patternfly-react/commit/8735c8d6260c9faf5416946d7cba4d91d33e8ff9))
+
 # 5.0.0-alpha.93 (2023-05-08)
 
 ### Bug Fixes

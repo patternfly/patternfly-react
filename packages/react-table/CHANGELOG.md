@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.96](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.95...@patternfly/react-table@5.0.0-alpha.96) (2023-05-09)
+
+### Features
+
+- **Table:** swapped param order of onSelect and clearSelection ([#9057](https://github.com/patternfly/patternfly-react/issues/9057)) ([93baf4e](https://github.com/patternfly/patternfly-react/commit/93baf4eae9e289c403cab160a75f2157e0a6f6d8))
+- **TextInput:** swapped onChange params ([#9064](https://github.com/patternfly/patternfly-react/issues/9064)) ([8735c8d](https://github.com/patternfly/patternfly-react/commit/8735c8d6260c9faf5416946d7cba4d91d33e8ff9))
+
 # 5.0.0-alpha.95 (2023-05-08)
 
 ### Features
