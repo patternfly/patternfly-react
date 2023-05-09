@@ -5,11 +5,11 @@ export const FormSections: React.FunctionComponent = () => {
   const [input1, setInput1] = React.useState('');
   const [input2, setInput2] = React.useState('');
 
-  const handleInputChange1 = (input1: string, _event: React.FormEvent<HTMLInputElement>) => {
+  const handleInputChange1 = (_event, input1: string) => {
     setInput1(input1);
   };
 
-  const handleInputChange2 = (input2: string, _event: React.FormEvent<HTMLInputElement>) => {
+  const handleInputChange2 = (_event, input2: string) => {
     setInput2(input2);
   };
 

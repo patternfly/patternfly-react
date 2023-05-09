@@ -136,7 +136,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     }));
   };
 
-  updateText = (text: string | number, event: React.FormEvent) => {
+  updateText = (event: React.FormEvent, text: string | number) => {
     this.setState({ text });
     this.props.onChange(event, text);
   };
@@ -265,7 +265,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                     isReadOnly={isReadOnly}
                     isCode={isCode}
                     id={`content-${id}`}
-                    onChange={(event, text) => this.updateText(text, event)}
+                    onChange={this.updateText}
                   >
                     {this.state.text}
                   </ClipboardCopyExpanded>

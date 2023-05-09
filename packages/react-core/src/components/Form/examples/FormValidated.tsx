@@ -9,7 +9,7 @@ export const FormValidated: React.FunctionComponent = () => {
   const [validated, setValidated] = React.useState<validate>('default');
   const [helperText, setHelperText] = React.useState('Enter your age to continue');
 
-  const handleAgeChange = (age: string, _event: React.FormEvent<HTMLInputElement>) => {
+  const handleAgeChange = (_event, age: string) => {
     setAge(age);
     setValidated('default');
     setHelperText('Validating...');

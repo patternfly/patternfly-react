@@ -36,7 +36,7 @@ export const HelperTextDynamicVariantDynamicText: React.FunctionComponent = () =
     setInputValidation({ ruleLength: lengthStatus, ruleCharacterTypes: typeStatus });
   }, [value, ruleLength, ruleCharacterTypes]);
 
-  const handleInputChange = (inputValue: string) => {
+  const handleInputChange = (_event, inputValue: string) => {
     setValue(inputValue);
   };
 

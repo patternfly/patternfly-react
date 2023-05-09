@@ -6,7 +6,7 @@ export const TextInputInvalid: React.FunctionComponent = () => {
   return (
     <TextInput
       value={value}
-      onChange={value => setValue(value)}
+      onChange={(_event, value) => setValue(value)}
       isRequired
       validated={ValidatedOptions.error}
       type="text"

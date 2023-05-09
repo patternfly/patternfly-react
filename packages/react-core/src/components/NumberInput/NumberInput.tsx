@@ -134,7 +134,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           name={inputName}
           aria-label={inputAriaLabel}
           {...(isDisabled && { isDisabled })}
-          {...(onChange && { onChange: (value, event) => onChange(event) })}
+          {...(onChange && { onChange: (event, _value) => onChange(event) })}
           onBlur={handleBlur}
           {...(!onChange && { isReadOnly: true })}
           onKeyDown={keyDownHandler}

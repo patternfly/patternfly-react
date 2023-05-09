@@ -25,6 +25,7 @@ export enum TextInputReadOnlyVariant {
   plain = 'plain'
 }
 
+
 export interface TextInputProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>,
     OUIAProps {
@@ -43,7 +44,7 @@ export interface TextInputProps
    */
   validated?: 'success' | 'warning' | 'error' | 'default';
   /** A callback for when the text input value changes. */
-  onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** Type that the text input accepts. */
   type?:
     | 'text'
@@ -118,7 +119,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     if (this.props.onChange) {
-      this.props.onChange(event.currentTarget.value, event);
+      this.props.onChange(event, event.currentTarget.value);
     }
   };
 

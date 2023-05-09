@@ -16,7 +16,7 @@ const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormP
   const [value, setValue] = React.useState(props.formValue);
   const [isValid, setIsValid] = React.useState(props.isFormValid);
 
-  const handleTextInputChange = (value: string) => {
+  const handleTextInputChange = (_event, value: string) => {
     const valid = /^\d+$/.test(value);
     setValue(value);
     setIsValid(valid);

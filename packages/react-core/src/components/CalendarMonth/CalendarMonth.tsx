@@ -310,7 +310,7 @@ export const CalendarMonth = ({
               aria-label={yearInputAriaLabel}
               type="number"
               value={yearFormatted}
-              onChange={(year: string, ev: React.FormEvent<HTMLInputElement>) => {
+              onChange={(ev: React.FormEvent<HTMLInputElement>, year: string) => {
                 const newDate = new Date(focusedDate);
                 newDate.setFullYear(+year);
                 setFocusedDate(newDate);

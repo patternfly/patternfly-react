@@ -115,7 +115,7 @@ interface SampleFormProps {
 const SampleForm: React.FunctionComponent<SampleFormProps> = ({ value, isValid, setValue, setIsValid }) => {
   const validated = isValid ? 'default' : 'error';
 
-  const handleTextInputChange = (value: string) => {
+  const handleTextInputChange = (_event, value: string) => {
     const isValid = /^\d+$/.test(value);
 
     setValue(value);

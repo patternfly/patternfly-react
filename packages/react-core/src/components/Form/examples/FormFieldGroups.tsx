@@ -38,7 +38,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
 
   const [inputValues, setInputValues] = React.useState(initialValues);
 
-  const handleChange = (value: string, event: React.FormEvent<HTMLInputElement>) => {
+  const handleChange = (event, value: string) => {
     const { name } = event.currentTarget;
     setInputValues({ ...inputValues, [name]: value });
   };

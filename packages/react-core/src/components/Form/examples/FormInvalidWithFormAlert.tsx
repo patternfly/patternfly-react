@@ -17,7 +17,7 @@ export const FormInvalidWithAlert: React.FunctionComponent = () => {
   const [age, setAge] = React.useState('Five');
   const [validated, setValidated] = React.useState<validate>('error');
 
-  const handleAgeChange = (age: string, _event: React.FormEvent<HTMLInputElement>) => {
+  const handleAgeChange = (_event, age: string) => {
     setAge(age);
     if (age === '') {
       setValidated('default');

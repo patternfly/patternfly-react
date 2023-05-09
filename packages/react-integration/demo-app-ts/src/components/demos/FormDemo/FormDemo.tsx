@@ -42,10 +42,10 @@ export class FormDemo extends Component<FormProps, FormState> {
 
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
   }
-  handleTextInputChange = (value: string) => {
+  handleTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     this.setState({ value, isValid: /^\d+$/.test(value) });
   };
-  handleValidatedTextInputChange = (value: string) => {
+  handleValidatedTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     let validated = ValidatedOptions.default;
     if (value.length === 0) {
       validated = ValidatedOptions.warning;

@@ -21,11 +21,11 @@ export const FormHorizontal: React.FunctionComponent = () => {
   const [experience, setExperience] = React.useState('');
   const [option, setOption] = React.useState('please choose');
 
-  const handleNameChange = (name: string) => {
+  const handleNameChange = (_event, name: string) => {
     setName(name);
   };
 
-  const handleEmailChange = (email: string) => {
+  const handleEmailChange = (_event, email: string) => {
     setEmail(email);
   };
 

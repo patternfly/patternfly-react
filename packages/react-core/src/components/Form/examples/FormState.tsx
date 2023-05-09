@@ -31,7 +31,7 @@ export const FormState = () => {
           <FormGroup label="Input value" fieldId="input-id" isRequired>
             <TextInput
               id="input-id"
-              onChange={(value) => {
+              onChange={(_event, value) => {
                 setValue('input-id', value);
                 setError('input-id', undefined);
               }}

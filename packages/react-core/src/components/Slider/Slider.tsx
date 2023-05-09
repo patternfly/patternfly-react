@@ -131,7 +131,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   const widthChars = React.useMemo(() => localInputValue.toString().length, [localInputValue]);
   const inputStyle = { '--pf-v5-c-slider__value--c-form-control--width-chars': widthChars } as React.CSSProperties;
 
-  const onChangeHandler = (value: string) => {
+  const onChangeHandler = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setLocalInputValue(Number(value));
   };
 

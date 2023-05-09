@@ -5,7 +5,7 @@ export const HelperTextStaticVariantDynamicText: React.FunctionComponent = () =>
   const [value, setValue] = React.useState('');
   const [inputValidation, setInputValidation] = React.useState('default');
 
-  const handleInputChange = (inputValue: string) => {
+  const handleInputChange = (_event, inputValue: string) => {
     setValue(inputValue);
   };
 

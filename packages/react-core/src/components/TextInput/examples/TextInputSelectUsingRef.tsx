@@ -9,7 +9,7 @@ export const TextInputSelectUsingRef: React.FunctionComponent = () => {
       ref={ref}
       value={value}
       onFocus={() => ref?.current?.select()}
-      onChange={value => setValue(value)}
+      onChange={(_event, value) => setValue(value)}
       aria-label="select-all"
     />
   );

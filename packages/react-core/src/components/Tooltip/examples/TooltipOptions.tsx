@@ -149,21 +149,21 @@ export const TooltipOptions: React.FunctionComponent = () => {
           <TextInput
             value={entryDelayInput}
             type="number"
-            onChange={val => setEntryDelayInput(Number(val))}
+            onChange={(_event, val) => setEntryDelayInput(Number(val))}
             aria-label="entry delay"
           />
           Exit delay (ms){' '}
           <TextInput
             value={exitDelayInput}
             type="number"
-            onChange={val => setExitDelayInput(Number(val))}
+            onChange={(_event, val) => setExitDelayInput(Number(val))}
             aria-label="exit delay"
           />
           Animation duration (ms){' '}
           <TextInput
             value={animationDuration}
             type="number"
-            onChange={val => setAnimationDuration(Number(val))}
+            onChange={(_event, val) => setAnimationDuration(Number(val))}
             aria-label="animation duration"
           />
         </div>

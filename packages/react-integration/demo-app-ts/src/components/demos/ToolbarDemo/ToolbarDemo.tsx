@@ -72,7 +72,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     }));
   };
 
-  onInputChange = (newValue: string) => {
+  onInputChange = (_event: React.FormEvent<HTMLInputElement>, newValue: string) => {
     this.setState({ inputValue: newValue });
   };
 
