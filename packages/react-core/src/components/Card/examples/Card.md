@@ -98,11 +98,21 @@ A common use case of this is to set all but one body section to `isFilled={false
 
 ```
 
+### Clickable cards
+
+```ts file='./CardClickable.tsx'
+
+```
+
 ### Selectable cards
 
-Selectable cards can only be selected one at a time, and are intended for use with [primary-detail layout](/demos/primary-detail).
-
 ```ts file='./CardSelectable.tsx'
+
+```
+
+### Single Selectable cards
+
+```ts file='./CardSingleSelectable.tsx'
 
 ```
 
@@ -147,11 +157,5 @@ Place any content that you want to be hidden within the `<CardExpandableContent>
 An image can be placed in the card header to show users an icon beside the expansion caret.
 
 ```ts file='./CardExpandableWithIcon.tsx'
-
-```
-
-### Clickable
-
-```ts file='./CardClickable.tsx'
 
 ```

@@ -41,6 +41,8 @@ export interface CardHeaderSelectableActionsObject {
   to?: string;
   /** Name for a group of clickable or selectable cards */
   name?: string;
+  /** Flag indicating that the selectableAction is disabled */
+  isDisabled?: boolean;
 }
 
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
@@ -104,10 +106,12 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
       }
 
       const handleActionClick = (event: React.FormEvent<HTMLInputElement> | React.MouseEvent) => {
-        if (selectableActions?.onClickAction) {
-          selectableActions?.onClickAction(event);
-        } else if (selectableActions?.to) {
-          window.open(selectableActions?.to, '_blank');
+        if (isClickable) {
+          if (selectableActions?.onClickAction) {
+            selectableActions?.onClickAction(event);
+          } else if (selectableActions?.to) {
+            window.open(selectableActions?.to, '_blank');
+          }
         }
       };
 
@@ -119,7 +123,8 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
         'aria-labelledby': selectableActions?.selectableActionAriaLabelledby,
         id: selectableActions?.selectableActionId,
         name: selectableActions?.name,
-        onClick: handleActionClick
+        onClick: handleActionClick,
+        isDisabled: selectableActions?.isDisabled
       };
 
       const selectableInput =
@@ -145,20 +150,10 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
               <CardSelectableActions className={selectableActions?.className}>{selectableInput}</CardSelectableActions>
             )}
           </CardActions>
-
-          {isClickable && isSelectable ? (
+          {children && (
             <CardHeaderMain>
-              <CardTitle>
-                <Button
-                  variant="link"
-                  isInline
-                  {...(selectableActions?.onClickAction && { onClick: selectableActions?.onClickAction })}
-                  {...(selectableActions?.to && { component: 'a', href: selectableActions?.to, target: '_blank' })}
-                ></Button>
-              </CardTitle>
+              <CardTitle>{children}</CardTitle>
             </CardHeaderMain>
-          ) : (
-            children && <CardHeaderMain>{children}</CardHeaderMain>
           )}
           {onExpand && isToggleRightAligned && cardHeaderToggle}
         </div>
