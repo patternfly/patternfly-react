@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.40...@patternfly/react-integration@5.0.0-alpha.41) (2023-05-09)
+
+### Features
+
+- **Switch:** make event first param for onChange prop ([#9037](https://github.com/patternfly/patternfly-react/issues/9037)) ([5dcc90f](https://github.com/patternfly/patternfly-react/commit/5dcc90f3c4608517f829b8d8fd40f659c274e393))
+
 # [5.0.0-alpha.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.0.0-alpha.39...@patternfly/react-integration@5.0.0-alpha.40) (2023-05-09)
 
 ### Features
