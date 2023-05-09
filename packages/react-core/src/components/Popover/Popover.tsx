@@ -195,12 +195,12 @@ export interface PopoverProps {
    * Callback function that is only invoked when isVisible is also controlled. Called when the
    * popover close button is clicked, the enter key was used on it, or the escape key is used.
    */
-  shouldClose?: (hideFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
+  shouldClose?: (event: MouseEvent | KeyboardEvent, hideFunction?: () => void) => void;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the
    * enter key is used on the focused trigger.
    */
-  shouldOpen?: (showFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
+  shouldOpen?: (event: MouseEvent | KeyboardEvent, showFunction?: () => void) => void;
   /** Flag indicating whether the close button should be shown. */
   showClose?: boolean;
   /** Whether to trap focus in the popover. */
@@ -341,7 +341,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (event.key === KeyTypes.Escape && visible) {
       if (triggerManually) {
-        shouldClose(hide, event);
+        shouldClose(event, hide);
       } else {
         hide(event);
       }
@@ -356,7 +356,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         return;
       }
       if (triggerManually) {
-        shouldClose(hide, event);
+        shouldClose(event, hide);
       } else {
         hide(event);
       }
@@ -365,9 +365,9 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const onTriggerClick = (event: MouseEvent) => {
     if (triggerManually) {
       if (visible) {
-        shouldClose(hide, event);
+        shouldClose(event, hide);
       } else {
-        shouldOpen(show, event);
+        shouldOpen(event, show);
       }
     } else {
       if (visible) {
@@ -385,7 +385,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const closePopover = (event: MouseEvent) => {
     event.stopPropagation();
     if (triggerManually) {
-      shouldClose(hide, event);
+      shouldClose(event, hide);
     } else {
       hide(event);
     }

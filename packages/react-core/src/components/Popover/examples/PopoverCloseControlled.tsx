@@ -9,8 +9,8 @@ export const PopoverCloseControlled: React.FunctionComponent = () => {
       <Popover
         aria-label="Popover with button in the body that can close it"
         isVisible={isVisible}
-        shouldOpen={() => setIsVisible(true)}
-        shouldClose={() => setIsVisible(false)}
+        shouldOpen={(_event, _fn) => setIsVisible(true)}
+        shouldClose={(_event, _fn) => setIsVisible(false)}
         headerContent={<div>Popover header</div>}
         bodyContent={
           <div>
