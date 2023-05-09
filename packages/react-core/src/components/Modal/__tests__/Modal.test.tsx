@@ -47,7 +47,7 @@ describe('Modal', () => {
 
   test('modal closes with escape', async () => {
     const user = userEvent.setup();
-    
+
     render(<Modal {...props} isOpen appendTo={document.body} />);
 
     await user.type(screen.getByText(props.title), `{${KeyTypes.Escape}}`);
