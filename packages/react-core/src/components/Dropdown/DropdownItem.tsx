@@ -27,7 +27,7 @@ export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps
   ouiaSafe?: boolean;
 }
 
-const DropdownItemBase: React.FunctionComponent<MenuItemProps> = ({
+const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({
   children,
   className,
   description,
@@ -42,12 +42,12 @@ const DropdownItemBase: React.FunctionComponent<MenuItemProps> = ({
   const ouiaProps = useOUIAProps(DropdownItem.displayName, ouiaId, ouiaSafe);
   return (
     <MenuItem
-      ref={innerRef}
       className={css(className)}
       description={description}
       isDisabled={isDisabled}
       itemId={itemId}
       onClick={onClick}
+      ref={innerRef}
       {...ouiaProps}
       {...props}
     >
@@ -55,7 +55,8 @@ const DropdownItemBase: React.FunctionComponent<MenuItemProps> = ({
     </MenuItem>
   );
 };
-export const DropdownItem = React.forwardRef((props: DropdownItemProps, ref: React.Ref<any>) => (
+
+export const DropdownItem = React.forwardRef((props: DropdownItemProps, ref: React.Ref<HTMLButtonElement>) => (
   <DropdownItemBase {...props} innerRef={ref} />
 ));
 

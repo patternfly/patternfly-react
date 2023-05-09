@@ -58,7 +58,7 @@ export default class DashboardWrapper extends React.Component {
       header,
       sidebar,
       sidebarNavOpen,
-      onPageResize,
+      onPageResize = () => {},
       hasNoBreadcrumb,
       notificationDrawer,
       isNotificationDrawerExpanded,

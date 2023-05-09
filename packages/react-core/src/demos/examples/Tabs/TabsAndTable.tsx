@@ -56,6 +56,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import { KeyTypes } from '../../../helpers';
 
 interface Repository {
   name: string;
@@ -135,15 +136,45 @@ export const TablesAndTabs = () => {
     }
   ];
 
+  const firstActionRef = React.useRef<HTMLButtonElement>(null);
+
+  const handleClick = (event: React.MouseEvent, ActionsToggleProps: CustomActionsToggleProps) => {
+    const { onToggle } = ActionsToggleProps;
+
+    onToggle(event);
+    event.stopPropagation();
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent, ActionsToggleProps: CustomActionsToggleProps) => {
+    const { onToggle } = ActionsToggleProps;
+    const { Enter, Space, Escape, ArrowDown, ArrowUp } = KeyTypes;
+
+    const shouldToggle = [Enter, Space, Escape].includes(event.key);
+    const shouldFocus = [ArrowDown, ArrowUp, Enter, Space].includes(event.key);
+
+    if (shouldToggle) {
+      event.preventDefault();
+      event.stopPropagation();
+      onToggle(event);
+    }
+
+    if (shouldFocus) {
+      setTimeout(() => {
+        firstActionRef.current?.focus();
+      }, 0);
+    }
+  };
+
   const customActionsToggle = (props: CustomActionsToggleProps, toggleName: string) => (
     <MenuToggle
       isDisabled={props.isDisabled}
-      onClick={(event: any) => {
-        props.onToggle(event);
-        event.stopPropagation();
-      }}
+      onClick={(event: React.MouseEvent) => handleClick(event, props)}
+      onKeyDown={(event: React.KeyboardEvent) => handleKeyDown(event, props)}
       variant="plain"
       aria-label={`${toggleName} actions`}
+      aria-haspopup="menu"
+      isExpanded={props.isOpen}
+      ref={props.toggleRef}
     >
       <EllipsisVIcon />
     </MenuToggle>
@@ -270,6 +301,7 @@ export const TablesAndTabs = () => {
               <ActionsColumn
                 items={defaultActions}
                 actionsToggle={(props: CustomActionsToggleProps) => customActionsToggle(props, repo.name)}
+                firstActionItemRef={firstActionRef}
               />
             </Td>
           </Tr>
