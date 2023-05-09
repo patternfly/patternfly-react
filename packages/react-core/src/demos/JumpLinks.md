@@ -72,7 +72,7 @@ ScrollspyH2 = () => {
           label="Vertical"
           labelOff="Horizontal"
           isChecked={isVertical}
-          onChange={check => setIsVertical(check)}
+          onChange={(_event, check) => setIsVertical(check)}
         />
       </PageSection>
       <PageSection padding={{ default: 'noPadding' }}>

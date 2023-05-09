@@ -17,7 +17,7 @@ import DashboardWrapper from '@patternfly/react-core/src/demos/examples/Dashboar
 export const Name = () => {
   const [isAlwaysVisible, setIsAlwaysVisible] = React.useState(false);
 
-  const handleChange = isChecked => {
+  const handleChange = (_event, isChecked) => {
     setIsAlwaysVisible(isChecked);
   };
 

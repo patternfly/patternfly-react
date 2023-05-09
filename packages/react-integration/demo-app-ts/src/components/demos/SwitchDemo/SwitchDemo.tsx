@@ -28,11 +28,11 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
     }
   };
 
-  handleChangeSimple = (isChecked: boolean) => {
+  handleChangeSimple = (_event: React.FormEvent<HTMLInputElement>, isChecked: boolean) => {
     this.setState({ simple: { isChecked } });
   };
 
-  handleChangeTable = (id: string) => (isChecked: boolean) => {
+  handleChangeTable = (id: string) => (_event: React.FormEvent<HTMLInputElement>, isChecked: boolean) => {
     this.setState({
       table: {
         ...this.state.table,

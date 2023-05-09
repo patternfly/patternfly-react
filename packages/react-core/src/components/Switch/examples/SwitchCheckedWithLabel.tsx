@@ -4,7 +4,7 @@ import { Switch } from '@patternfly/react-core';
 export const SwitchCheckedWithLabel: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
 
-  const handleChange = (checked: boolean, _event: React.FormEvent<HTMLInputElement>) => {
+  const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
   };
 
