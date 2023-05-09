@@ -158,7 +158,7 @@ export interface PopoverProps {
   /**
    * Lifecycle function invoked when the popover begins to transition out.
    */
-  onHide?: () => void;
+  onHide?: (event: MouseEvent | KeyboardEvent) => void;
   /**
    * Lifecycle function invoked when the popover has been mounted to the DOM.
    */
@@ -166,7 +166,7 @@ export interface PopoverProps {
   /**
    * Lifecycle function invoked when the popover begins to transition in.
    */
-  onShow?: () => void;
+  onShow?: (event: MouseEvent | KeyboardEvent) => void;
   /**
    * Lifecycle function invoked when the popover has fully transitioned in.
    */
@@ -292,8 +292,9 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       }
     }
   }, [isVisible, triggerManually]);
-  const show = (withFocusTrap?: boolean) => {
-    onShow();
+  const show = (event?: MouseEvent | KeyboardEvent, withFocusTrap?: boolean) => {
+    event && onShow(event);
+
     if (transitionTimerRef.current) {
       clearTimeout(transitionTimerRef.current);
     }
@@ -307,8 +308,8 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       onShown();
     }, 0);
   };
-  const hide = () => {
-    onHide();
+  const hide = (event?: MouseEvent | KeyboardEvent) => {
+    event && onHide(event);
     if (showTimerRef.current) {
       clearTimeout(showTimerRef.current);
     }
@@ -342,7 +343,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       if (triggerManually) {
         shouldClose(hide, event);
       } else {
-        hide();
+        hide(event);
       }
     }
   };
@@ -357,7 +358,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       if (triggerManually) {
         shouldClose(hide, event);
       } else {
-        hide();
+        hide(event);
       }
     }
   };
@@ -370,9 +371,9 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       }
     } else {
       if (visible) {
-        hide();
+        hide(event);
       } else {
-        show(true);
+        show(event, true);
       }
     }
   };
@@ -381,12 +382,12 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       setFocusTrapActive(false);
     }
   };
-  const closePopover = (event: any) => {
+  const closePopover = (event: MouseEvent) => {
     event.stopPropagation();
     if (triggerManually) {
       shouldClose(hide, event);
     } else {
-      hide();
+      hide(event);
     }
   };
   const content = (
