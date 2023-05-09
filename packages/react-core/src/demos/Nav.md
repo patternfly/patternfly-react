@@ -1486,7 +1486,7 @@ class PageLayoutManualNav extends React.Component {
         <Page
           header={Header}
           sidebar={Sidebar}
-          onPageResize={(event) => this.onPageResize(event)}
+          onPageResize={this.onPageResize}
           skipToContent={PageSkipToContent}
           mainContainerId={pageId}
         >

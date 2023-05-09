@@ -5,7 +5,7 @@ import { PageHeader as PageHeaderDeprecated, PageHeaderTools } from '@patternfly
 export const PageVerticalNavUsingPageHeaderComponent: React.FunctionComponent = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(true);
 
-  const onNavToggle = () => {
+  const onNavToggle = (_event: React.MouseEvent) => {
     setIsNavOpen(!isNavOpen);
   };
 
