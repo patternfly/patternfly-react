@@ -14,8 +14,6 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
-import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 ## Demos
 
