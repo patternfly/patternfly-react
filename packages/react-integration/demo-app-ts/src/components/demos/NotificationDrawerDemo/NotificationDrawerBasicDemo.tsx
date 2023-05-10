@@ -60,12 +60,11 @@ export class BasicNotificationDrawerDemo extends React.Component<
     ];
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader count={2} onClose={this.onDrawerClose}>
+        <NotificationDrawerHeader count={2} id="notification-0" onClose={this.onDrawerClose}>
           <Dropdown
             onSelect={this.onSelect}
             isOpen={isOpen[0]}
             onOpenChange={(_isOpen) => this.setState({ isOpen: new Array(6).fill(false) })}
-            id="notification-0"
             popperProps={{ position: 'right' }}
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
@@ -84,7 +83,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
         </NotificationDrawerHeader>
         <NotificationDrawerBody>
           <NotificationDrawerList>
-            <NotificationDrawerListItem variant="info">
+            <NotificationDrawerListItem id="notification-1" variant="info">
               <NotificationDrawerListItemHeader
                 id="info-alert-item"
                 variant="info"
@@ -96,14 +95,13 @@ export class BasicNotificationDrawerDemo extends React.Component<
                   onSelect={this.onSelect}
                   isOpen={isOpen[1]}
                   onOpenChange={(_isOpen) => this.setState({ isOpen: new Array(6).fill(false) })}
-                  id="notification-1"
                   popperProps={{ position: 'right' }}
                   toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
                     <MenuToggle
                       ref={toggleRef}
                       isExpanded={isOpen[1]}
                       onClick={() => this.onToggle(1)}
-                      id="toggle-id-0"
+                      id="toggle-id-1"
                       variant="plain"
                     >
                       <EllipsisVIcon aria-hidden="true" />
@@ -117,7 +115,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 This is an info notification description.
               </NotificationDrawerListItemBody>
             </NotificationDrawerListItem>
-            <NotificationDrawerListItem variant="danger">
+            <NotificationDrawerListItem variant="danger" id="notification-2">
               <NotificationDrawerListItemHeader
                 variant="danger"
                 title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
@@ -127,7 +125,6 @@ export class BasicNotificationDrawerDemo extends React.Component<
                   onSelect={this.onSelect}
                   isOpen={isOpen[2]}
                   onOpenChange={(_isOpen) => this.setState({ isOpen: new Array(6).fill(false) })}
-                  id="notification-2"
                   popperProps={{ position: 'right' }}
                   toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
                     <MenuToggle

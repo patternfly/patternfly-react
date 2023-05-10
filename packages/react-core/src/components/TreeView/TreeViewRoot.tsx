@@ -46,7 +46,7 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
       }
       if (this.props.hasSelectableNodes) {
         const firstTextButton = this.treeRef.current.getElementsByClassName(
-          'pf-c-tree-view__node-text'
+          'pf-v5-c-tree-view__node-text'
         )[0] as HTMLElement;
         if (firstTextButton) {
           firstTextButton.tabIndex = 0;
@@ -67,7 +67,8 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
   }
 
   handleKeys = (event: KeyboardEvent) => {
-    if (!this.treeRef.current.contains(event.target as HTMLElement)) {
+    if (!this.treeRef.current.contains(event.target as HTMLElement) ||
+      !(event.target as HTMLElement).classList.contains('pf-v5-c-tree-view__node')) {
       return;
     }
     const activeElement = document.activeElement;
@@ -94,7 +95,7 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
 
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
       const isExpandable =
-        activeElement?.firstElementChild?.firstElementChild?.classList.contains('pf-c-tree-view__node-toggle');
+        activeElement?.firstElementChild?.firstElementChild?.classList.contains('pf-v5-c-tree-view__node-toggle');
       const isExpanded = activeElement?.closest('li')?.classList.contains('pf-m-expanded');
       if (key === 'ArrowLeft') {
         if (isExpandable && isExpanded) {

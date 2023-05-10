@@ -97,12 +97,11 @@ export class GroupsNotificationDrawerDemo extends React.Component<
     ];
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader count={4} onClose={this.onDrawerClose}>
+        <NotificationDrawerHeader count={4} id="notification-0" onClose={this.onDrawerClose}>
           <Dropdown
             onSelect={this.onSelect}
             isOpen={isOpenMap['toggle-id-0'] || false}
             onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
-            id="notification-0"
             popperProps={{ position: 'right' }}
             toggle={(toggleRef) => (
               <MenuToggle
@@ -267,7 +266,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
               tooltipPosition="bottom"
             >
               <NotificationDrawerList isHidden={!secondGroupExpanded}>
-                <NotificationDrawerListItem variant="info">
+                <NotificationDrawerListItem variant="info" id="notification-9">
                   <NotificationDrawerListItemHeader
                     variant="info"
                     title="Unread info notification title"
@@ -277,7 +276,6 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                       onSelect={this.onSelect}
                       isOpen={isOpenMap['toggle-id-9'] || false}
                       onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
-                      id="notification-9"
                       popperProps={{ position: 'right' }}
                       toggle={(toggleRef) => (
                         <MenuToggle
