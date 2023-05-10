@@ -1302,10 +1302,10 @@ class FilterTableDemo extends React.Component {
       <SelectOption 
         hasCheckbox 
         key="statusMaint" 
-        itemId="Needs Maintenance"
-        isSelected={filters.status.includes("Needs Maintenance")}
+        itemId="Needs maintenance"
+        isSelected={filters.status.includes("Needs maintenance")}
       >
-        Needs Maintenance
+        Needs maintenance
       </SelectOption>
     ];
 
@@ -1493,7 +1493,7 @@ class FilterTableDemo extends React.Component {
         return <Label color="green">{labelText}</Label>;
       case 'Stopped':
         return <Label color="orange">{labelText}</Label>;
-      case 'Needs Maintenance':
+      case 'Needs maintenance':
         return <Label color="blue">{labelText}</Label>;
       case 'Down':
         return <Label color="red">{labelText}</Label>;
@@ -1671,7 +1671,7 @@ class StickyHeaderTableDemo extends React.Component {
           return <Label color="green">{labelText}</Label>;
         case 'Stopped':
           return <Label color="orange">{labelText}</Label>;
-        case 'Needs Maintenance':
+        case 'Needs maintenance':
           return <Label color="blue">{labelText}</Label>;
         case 'Down':
           return <Label color="red">{labelText}</Label>;
