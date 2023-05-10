@@ -33,7 +33,7 @@ export class PageDemo extends React.Component {
     isKebabDropdownOpen: false
   };
 
-  onNavToggle = () => {
+  onNavToggle = (_event: React.MouseEvent) => {
     this.setState({
       isNavOpen: !this.state.isNavOpen
     });

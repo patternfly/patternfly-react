@@ -41,6 +41,10 @@ class App extends React.Component<{}, AppState> {
     this.setState({ activeItem: selectedItem.itemId });
   };
 
+  private onNavToggle = (_event: React.MouseEvent) => {
+    this.setState({ isNavOpen: !this.state.isNavOpen })
+  }
+
   private onThemeSelect = (isDarkTheme: boolean) => {
     this.setState({ isDarkTheme });
     const htmlElement = document.getElementsByTagName('html')[0];
@@ -127,7 +131,7 @@ class App extends React.Component<{}, AppState> {
         headerTools={AppToolbar}
         showNavToggle
         isNavOpen={isNavOpen}
-        onNavToggle={() => this.setState({ isNavOpen: !isNavOpen })}
+        onNavToggle={this.onNavToggle}
       />
     );
 

@@ -28,7 +28,7 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Sets the value for role on the <main> element */
   role?: string;
   /** Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */
-  onNavToggle?: () => void;
+  onNavToggle?: (event: React.MouseEvent) => void;
   /** Aria Label for the nav toggle button */
   'aria-label'?: string;
 }
@@ -44,7 +44,7 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   role = undefined as string,
   showNavToggle = false,
   navToggleId = 'nav-toggle',
-  onNavToggle = () => undefined as any,
+  onNavToggle = (_event: React.MouseEvent) => undefined as any,
   'aria-label': ariaLabel = 'Global navigation',
   'aria-controls': ariaControls = null,
   ...props
