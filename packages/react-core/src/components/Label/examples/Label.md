@@ -10,27 +10,27 @@ import { Link } from '@reach/router';
 
 ## Examples
 
-### Filled
+### Filled labels
 
 ```ts file="LabelFilled.tsx"
 ```
 
-### Outline
+### Outlined labels
 
 ```ts file="LabelOutline.tsx"
 ```
 
-### Compact
+### Compact labels
 
 ```ts file="LabelCompact.tsx"
 ```
 
-### Router link
+### Label with router link
 
 ```ts file="LabelRouterLink.tsx"
 ```
 
-### Editable
+### Editable labels
 
 Click or press either enter or space to begin editing a label. After editing, click outside the label or press enter again to complete the edit. To cancel an edit, press escape. 
 
