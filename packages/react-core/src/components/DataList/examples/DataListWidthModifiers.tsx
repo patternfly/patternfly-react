@@ -45,10 +45,9 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
     display: 'block',
     width: '100%',
     padding: '.25rem .5rem',
-    color: '#004e8a',
-    backgroundColor: '#def3ff',
-    border: '1px solid rgba(0,0,0,.1)',
-    borderRadius: '4px'
+    color: 'var(--pf-v5-global--Color--100)',
+    backgroundColor: 'var(--pf-v5-global--BackgroundColor--200)',
+    border: 'var(--pf-v5-global--BorderWidth--sm) var(--pf-v5-global--BorderColor--100) solid'
   };
 
   return (
