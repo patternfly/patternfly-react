@@ -3,7 +3,16 @@ id: Card
 section: components
 cssPrefix: pf-c-card
 propComponents:
-  ['Card', 'CardHeader', 'CardHeaderActionsObject', 'CardTitle', 'CardBody', 'CardFooter', 'CardExpandableContent']
+  [
+    'Card',
+    'CardHeader',
+    'CardHeaderActionsObject',
+    'CardHeaderSelectableActionsObject',
+    'CardTitle',
+    'CardBody',
+    'CardFooter',
+    'CardExpandableContent'
+  ]
 ouia: true
 ---
 
@@ -120,11 +129,15 @@ A common use case of this is to set all but one body section to `isFilled={false
 
 The following example shows a legacy implementation of selectable cards. This example uses the `isSelectable` property instead of `isSelectableRaised`, which is the current recommendation for implementation. `isSelectable` applies selectable styling, but does not apply raised styling on hover and selection as `isSelectableRaised` does.
 
+A `tabIndex={0}` is also manually passed to allow the card to be focused and clicked via keyboard.
+
 ```ts file='./CardLegacySelectable.tsx'
 
 ```
 
-### Selectable card accessibility features
+### Legacy selectable card accessibility features
+
+Note: the following example uses deprecated properties. We recommend using the new `selectableActions` property for the `CardHeader` instead.
 
 The following cards demonstrate how the `hasSelectableInput` and `onSelectableInputChange` properties improve accessibility for selectable cards.
 
@@ -138,7 +151,7 @@ The second card does not set `hasSelectableInput` to true, so neither the input 
 
 We recommend navigating this example using a screen reader to best understand both cards.
 
-```ts file='./CardSelectableA11yHighlight.tsx'
+```ts file='./CardLegacySelectableA11yHighlight.tsx'
 
 ```
 

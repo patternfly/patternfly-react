@@ -2,44 +2,45 @@ import React from 'react';
 import { Card, CardHeader, CardTitle, CardBody } from '@patternfly/react-core';
 
 export const CardClickable: React.FunctionComponent = () => {
-  const id1 = 'clickable-card-1';
-  const id2 = 'clickable-card-2';
-  const id3 = 'clickable-card-3';
+  const id1 = 'clickable-card-input-1';
+  const id2 = 'clickable-card-input-2';
+  const id3 = 'clickable-card-input-3';
 
   return (
     <React.Fragment>
-      <Card id="clickable-first-card" isClickable>
+      <Card id="clickable-card-example-1" isClickable>
         <CardHeader
           selectableActions={{
             // eslint-disable-next-line no-console
-            onClickAction: () => console.log(id1),
+            onClickAction: () => console.log(`${id1} clicked`),
             selectableActionId: id1,
-            selectableActionAriaLabel: id1,
-            name: 'clickable-cards'
+            selectableActionAriaLabelledby: 'clickable-card-example-1',
+            name: 'clickable-card-example'
           }}
         />
         <CardTitle>First card</CardTitle>
         <CardBody>This card performs an action on click.</CardBody>
       </Card>
-      <Card id="clickable-second-card" isClickable>
+      <Card id="clickable-card-example-2" isClickable>
         <CardHeader
           selectableActions={{
             to: 'https://www.patternfly.org/',
             selectableActionId: id2,
-            selectableActionAriaLabel: id2,
-            name: 'clickable-cards'
+            selectableActionAriaLabelledby: 'clickable-card-example-2',
+            name: 'clickable-card-example'
           }}
         />
         <CardTitle>Second card</CardTitle>
         <CardBody>This card navigates to a link on click.</CardBody>
       </Card>
-      <Card id="clickable-third-card" isClickable>
+      <Card id="clickable-card-example-3" isClickable isDisabled>
         <CardHeader
           selectableActions={{
-            isDisabled: true,
+            // eslint-disable-next-line no-console
+            onClickAction: () => console.log(`${id3} clicked`),
             selectableActionId: id3,
-            selectableActionAriaLabel: id3,
-            name: 'clickable-cards'
+            selectableActionAriaLabelledby: 'clickable-card-example-3',
+            name: 'clickable-card-example'
           }}
         />
         <CardTitle>Third card</CardTitle>

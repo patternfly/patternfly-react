@@ -2,41 +2,66 @@ import React from 'react';
 import { Card, CardHeader, CardTitle, CardBody } from '@patternfly/react-core';
 
 export const SelectableCard: React.FunctionComponent = () => {
-  const id1 = 'selectable-card-1';
-  const id2 = 'selectable-card-2';
-  const id3 = 'selectable-card-3';
+  const [isChecked1, setIsChecked1] = React.useState(false);
+  const [isChecked2, setIsChecked2] = React.useState(false);
+  const [isChecked3, setIsChecked3] = React.useState(false);
+
+  const id1 = 'selectable-card-input-1';
+  const id2 = 'selectable-card-input-2';
+  const id3 = 'selectable-card-input-3';
+
+  const onChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
+    const name = event.currentTarget.name;
+
+    switch (name) {
+      case id1:
+        setIsChecked1(checked);
+        break;
+      case id2:
+        setIsChecked2(checked);
+        break;
+      case id3:
+        setIsChecked3(checked);
+        break;
+    }
+  };
 
   return (
     <React.Fragment>
-      <Card id="selectable-first-card" isSelectable>
+      <Card id="selectable-card-example-1" isSelectable>
         <CardHeader
           selectableActions={{
             selectableActionId: id1,
-            selectableActionAriaLabel: id1,
-            name: 'selectable-cards'
+            selectableActionAriaLabelledby: 'selectable-card-example-1',
+            name: id1,
+            isChecked: isChecked1,
+            onChange
           }}
         />
         <CardTitle>First card</CardTitle>
         <CardBody>This card is selectable.</CardBody>
       </Card>
-      <Card id="selectable-second-card" isSelectable>
+      <Card id="selectable-card-example-2" isSelectable>
         <CardHeader
           selectableActions={{
             selectableActionId: id2,
-            selectableActionAriaLabel: id2,
-            name: 'selectable-cards'
+            selectableActionAriaLabelledby: 'selectable-card-example-2',
+            name: id2,
+            isChecked: isChecked2,
+            onChange
           }}
         />
         <CardTitle>Second card</CardTitle>
         <CardBody>This card is selectable.</CardBody>
       </Card>
-      <Card id="selectable-third-card" isSelectable>
+      <Card id="selectable-card-example-3" isSelectable isDisabled>
         <CardHeader
           selectableActions={{
-            isDisabled: true,
             selectableActionId: id3,
-            selectableActionAriaLabel: id3,
-            name: 'selectable-cards'
+            selectableActionAriaLabelledby: 'selectable-card-example-3',
+            name: id3,
+            isChecked: isChecked3,
+            onChange
           }}
         />
         <CardTitle>Third card</CardTitle>

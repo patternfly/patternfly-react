@@ -10,6 +10,8 @@ export interface CheckboxProps
     OUIAProps {
   /** Additional classes added to the checkbox. */
   className?: string;
+  /** Additional classed added to the radio input */
+  inputClassName?: string;
   /** Flag to show if the checkbox selection is valid or invalid. */
   isValid?: boolean;
   /** Flag to show if the checkbox is disabled. */
@@ -74,6 +76,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     const {
       'aria-label': ariaLabel,
       className,
+      inputClassName,
       onChange,
       isValid,
       isDisabled,
@@ -109,14 +112,14 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
       <Component className={css(styles.check, !label && styles.modifiers.standalone, className)}>
         <input
           {...props}
-          className={css(styles.checkInput)}
+          className={css(styles.checkInput, inputClassName)}
           type="checkbox"
           onChange={this.handleChange}
           aria-invalid={!isValid}
           aria-label={ariaLabel}
           disabled={isDisabled}
           required={isRequired}
-          ref={elem => elem && (elem.indeterminate = isChecked === null)}
+          ref={(elem) => elem && (elem.indeterminate = isChecked === null)}
           {...checkedProps}
           {...getOUIAProps(Checkbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         />

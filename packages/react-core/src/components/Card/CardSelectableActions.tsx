@@ -7,8 +7,6 @@ export interface CardActionsProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the action */
   className?: string;
-  /** Flag indicating that the actions have no offset */
-  hasNoOffset?: boolean;
 }
 
 export const CardSelectableActions: React.FunctionComponent<CardActionsProps> = ({
@@ -20,4 +18,4 @@ export const CardSelectableActions: React.FunctionComponent<CardActionsProps> = 
     {children}
   </div>
 );
-CardSelectableActions.displayName = 'CardActions';
+CardSelectableActions.displayName = 'CardSelectableActions';
