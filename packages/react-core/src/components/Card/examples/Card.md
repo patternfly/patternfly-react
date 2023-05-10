@@ -109,19 +109,39 @@ A common use case of this is to set all but one body section to `isFilled={false
 
 ### Clickable cards
 
+A card can perform an action or navigate to an external link by clicking anywhere within the card.
+
+When a card is meant to be clickable only, you must avoid rendering any other interactive content within the `<Card>`.
+
 ```ts file='./CardClickable.tsx'
 
 ```
 
 ### Selectable cards
 
+A card can also be selected by clicking anywhere within the card.
+
+Similar to clickable only cards, you must avoid rendering any other interactive content within the `<Card>` when it is meant to be selectable only. Refer to our [clickable and selectable example](#clickable-and-selectable-cards) if you need a card that is both selectable and has other interactive content.
+
 ```ts file='./CardSelectable.tsx'
 
 ```
 
-### Single Selectable cards
+### Single selectable cards
+
+When a group of single selectable cards are related, you should pass the same `name` property to each card's `selectableActions` property.
 
 ```ts file='./CardSingleSelectable.tsx'
+
+```
+
+### Clickable and selectable cards
+
+A card can be selectable and have additional interactive content by passing both the `isClickable` and `isSelectable` properties to `<Card>`. The following example shows how the "clickable" functionality can be rendered anywhere within a selectable card.
+
+When passing interactive content to a clickable and selectable card that is disabled, you should also ensure the interactive content is disabled as well, if applicable.
+
+```ts file='./CardClickableSelectable.tsx'
 
 ```
 
