@@ -76,7 +76,7 @@ Labels in a group can also be stacked vertically. This example shows a verical l
 
 ### Editable label group with add button
 
-The contents of a label group can be modified by removing labels or adding new ones using the Add button. For additional documentation that showcases adding a new label, see [label group demos](/components/label/react-demos).
+The contents of a label group can be modified by removing labels or adding new ones using the add button. For additional documentation that showcases adding a new label, see [label demos](/components/label/react-demos).
 
 ```ts isBeta file="LabelGroupEditableAdd.tsx"
 ```
