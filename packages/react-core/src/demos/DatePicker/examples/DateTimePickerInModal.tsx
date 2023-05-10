@@ -1,5 +1,13 @@
 import React from 'react';
-import { DatePicker, Modal, ModalVariant, Button, TimePicker, InputGroup } from '@patternfly/react-core';
+import {
+  DatePicker,
+  Modal,
+  ModalVariant,
+  Button,
+  TimePicker,
+  InputGroup,
+  InputGroupItem
+} from '@patternfly/react-core';
 
 export const SimpleModal = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -42,8 +50,12 @@ export const SimpleModal = () => {
         ]}
       >
         <InputGroup>
-          <DatePicker ref={dateRef} appendTo={() => document.getElementById('date-time-picker-modal')} />
-          <TimePicker menuAppendTo="parent" isOpen={isTimePickerOpen} setIsOpen={setIsTimePickerOpen} />
+          <InputGroupItem>
+            <DatePicker ref={dateRef} appendTo={() => document.getElementById('date-time-picker-modal')} />
+          </InputGroupItem>
+          <InputGroupItem>
+            <TimePicker menuAppendTo="parent" isOpen={isTimePickerOpen} setIsOpen={setIsTimePickerOpen} />
+          </InputGroupItem>
         </InputGroup>
       </Modal>
     </React.Fragment>

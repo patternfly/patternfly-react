@@ -15,7 +15,7 @@ Please note that only the button can be interacted with in this example. The use
 
 ```ts
 import React from 'react';
-import { Form, FormGroup, ActionGroup, InputGroup, TextInput, Button } from '@patternfly/react-core';
+import { Form, FormGroup, ActionGroup, TextInput, Button } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
 const ProgressButton: React.FunctionComponent = () => {

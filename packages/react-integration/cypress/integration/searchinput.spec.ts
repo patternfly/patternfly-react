@@ -52,7 +52,7 @@ describe('Search Input Demo Test', () => {
 
   it('Verify advanced search and its handlers work', () => {
     cy.get('#enabled-search .pf-v5-c-panel').should('not.exist');
-    cy.get('#enabled-search .pf-v5-c-input-group > button').eq(0).click();
+    cy.get('#enabled-search .pf-v5-c-input-group .pf-v5-c-input-group__item >  button').eq(0).click();
     cy.get('#enabled-search .pf-v5-c-panel').should('be.visible');
 
     cy.get('#enabled-search .pf-v5-c-form-control').eq(0).type('test');

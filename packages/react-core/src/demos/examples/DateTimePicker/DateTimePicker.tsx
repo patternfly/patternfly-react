@@ -2,6 +2,7 @@ import React from 'react';
 import {
   CalendarMonth,
   InputGroup,
+  InputGroupItem,
   TextInput,
   Button,
   Popover,
@@ -89,15 +90,17 @@ export const DateTimePicker: React.FunctionComponent = () => {
         hasAutoWidth
       >
         <InputGroup>
-          <TextInput
-            type="text"
-            id="date-time"
-            aria-label="date and time picker demo"
-            value={valueDate + ' ' + valueTime}
-            isReadOnly
-          />
-          {calendarButton}
-          {time}
+          <InputGroupItem>
+            <TextInput
+              type="text"
+              id="date-time"
+              aria-label="date and time picker demo"
+              value={valueDate + ' ' + valueTime}
+              isReadOnly
+            />
+          </InputGroupItem>
+          <InputGroupItem>{calendarButton}</InputGroupItem>
+          <InputGroupItem>{time}</InputGroupItem>
         </InputGroup>
       </Popover>
     </div>

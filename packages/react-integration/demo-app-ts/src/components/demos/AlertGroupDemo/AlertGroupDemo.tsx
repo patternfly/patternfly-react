@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
+import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup , InputGroupItem} from '@patternfly/react-core';
 
 interface AlertDemoAlert {
   title: string;
@@ -55,12 +55,16 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
     return (
       <React.Fragment>
         <InputGroup style={{ marginBottom: '16px' }}>
-          <button onClick={startAsyncAlerts} type="button" className={btnClasses}>
-            Start Async Alerts
-          </button>
-          <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>
-            Stop Async Alerts
-          </button>
+          <InputGroupItem>
+            <button onClick={startAsyncAlerts} type="button" className={btnClasses}>
+              Start Async Alerts
+            </button>
+          </InputGroupItem>
+          <InputGroupItem>
+            <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>
+              Stop Async Alerts
+            </button>
+          </InputGroupItem>
         </InputGroup>
         <AlertGroup isToast>
           {this.state.alerts.map(({ title, variant, key }) => (

@@ -10,7 +10,7 @@ import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-ico
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import { AdvancedSearchMenu } from './AdvancedSearchMenu';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
-import { InputGroup } from '../InputGroup';
+import { InputGroup, InputGroupItem } from '../InputGroup';
 import { Popper } from '../../helpers';
 
 /** Properties for adding search attributes to an advanced search input. These properties must
@@ -344,8 +344,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
   const buildExpandableSearchInput = ({ ...searchInputProps } = {}) => (
     <InputGroup {...searchInputProps}>
-      {buildTextInputGroup()}
-      {expandableToggle}
+      <InputGroupItem>{buildTextInputGroup()} </InputGroupItem>
+      <InputGroupItem>{expandableToggle}</InputGroupItem>
     </InputGroup>
   );
 
@@ -359,31 +359,35 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
   const buildSearchTextInputGroupWithExtraButtons = ({ ...searchInputProps } = {}) => (
     <InputGroup ref={triggerRef} {...searchInputProps}>
-      {buildTextInputGroup()}
+      <InputGroupItem>{buildTextInputGroup()}</InputGroupItem>
       {(attributes.length > 0 || onToggleAdvancedSearch) && (
-        <Button
-          className={isSearchMenuOpen && 'pf-m-expanded'}
-          variant={ButtonVariant.control}
-          aria-label={openMenuButtonAriaLabel}
-          onClick={onToggle}
-          isDisabled={isDisabled}
-          aria-expanded={isSearchMenuOpen}
-        >
-          <CaretDownIcon />
-        </Button>
+        <InputGroupItem>
+          <Button
+            className={isSearchMenuOpen && 'pf-m-expanded'}
+            variant={ButtonVariant.control}
+            aria-label={openMenuButtonAriaLabel}
+            onClick={onToggle}
+            isDisabled={isDisabled}
+            aria-expanded={isSearchMenuOpen}
+          >
+            <CaretDownIcon />
+          </Button>
+        </InputGroupItem>
       )}
       {!!onSearch && (
-        <Button
-          type="submit"
-          variant={ButtonVariant.control}
-          aria-label={submitSearchButtonLabel}
-          onClick={onSearchHandler}
-          isDisabled={isDisabled}
-        >
-          <ArrowRightIcon />
-        </Button>
+        <InputGroupItem>
+          <Button
+            type="submit"
+            variant={ButtonVariant.control}
+            aria-label={submitSearchButtonLabel}
+            onClick={onSearchHandler}
+            isDisabled={isDisabled}
+          >
+            <ArrowRightIcon />
+          </Button>
+        </InputGroupItem>
       )}
-      {expandableInput && expandableToggle}
+      {expandableInput && <InputGroupItem>{expandableToggle}</InputGroupItem>}
     </InputGroup>
   );
 
@@ -394,7 +398,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   };
 
   if (!!expandableInput && !isExpanded) {
-    return <InputGroup {...searchInputProps}>{expandableToggle}</InputGroup>;
+    return <InputGroup {...searchInputProps}><InputGroupItem>{expandableToggle}</InputGroupItem></InputGroup>;
   }
 
   if (!!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch) {

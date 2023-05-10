@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Button,
   InputGroup,
+  InputGroupItem,
   TextInput,
   Dropdown,
   DropdownList,
@@ -24,32 +25,38 @@ export const InputGroupWithDropdown: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <InputGroup>
-        <Dropdown
-          isOpen={isOpen}
-          onSelect={onSelect}
-          onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-            <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen}>
-              Dropdown
-            </MenuToggle>
-          )}
-        >
-          <DropdownList>
-            <DropdownItem itemId={0} key="option1">
-              Option 1
-            </DropdownItem>
-            <DropdownItem itemId={1} key="option2">
-              Option 2
-            </DropdownItem>
-            <DropdownItem itemId={2} key="option3">
-              Option 3
-            </DropdownItem>
-          </DropdownList>
-        </Dropdown>
-        <TextInput id="textInput-with-dropdown" aria-label="input with dropdown and button" />
-        <Button id="inputDropdownButton1" variant="control">
-          Button
-        </Button>
+        <InputGroupItem>
+          <Dropdown
+            isOpen={isOpen}
+            onSelect={onSelect}
+            onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen}>
+                Dropdown
+              </MenuToggle>
+            )}
+          >
+            <DropdownList>
+              <DropdownItem itemId={0} key="option1">
+                Option 1
+              </DropdownItem>
+              <DropdownItem itemId={1} key="option2">
+                Option 2
+              </DropdownItem>
+              <DropdownItem itemId={2} key="option3">
+                Option 3
+              </DropdownItem>
+            </DropdownList>
+          </Dropdown>
+        </InputGroupItem>
+        <InputGroupItem isFill>
+          <TextInput id="textInput-with-dropdown" aria-label="input with dropdown and button" />
+        </InputGroupItem>
+        <InputGroupItem>
+          <Button id="inputDropdownButton1" variant="control">
+            Button
+          </Button>
+        </InputGroupItem>
       </InputGroup>
     </React.Fragment>
   );

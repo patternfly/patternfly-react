@@ -5,7 +5,8 @@ import {
   AlertGroup,
   AlertActionCloseButton,
   AlertVariant,
-  InputGroup
+  InputGroup,
+  InputGroupItem
 } from '@patternfly/react-core';
 
 export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
@@ -34,9 +35,11 @@ export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <InputGroup style={{ marginBottom: '16px' }}>
-        <button onClick={addAlertCollection} type="button" className={btnClasses}>
-          Add alert collection
-        </button>
+        <InputGroupItem>
+          <button onClick={addAlertCollection} type="button" className={btnClasses}>
+            Add alert collection
+          </button>
+        </InputGroupItem>
       </InputGroup>
       <AlertGroup isToast isLiveRegion>
         {alerts.map(({ title, variant, key }) => (

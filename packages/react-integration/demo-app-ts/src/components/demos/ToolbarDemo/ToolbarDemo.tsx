@@ -12,6 +12,7 @@ import {
   ToolbarGroup,
   ToolbarProps,
   InputGroup,
+  InputGroupItem,
   TextInput,
   Dropdown,
   DropdownItem,
@@ -178,17 +179,21 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
       <React.Fragment>
         <ToolbarItem id="toolbar-demo-search">
           <InputGroup>
-            <TextInput
-              name="textInput2"
-              id="textInput2"
-              type="search"
-              aria-label="search input example"
-              onChange={this.onInputChange}
-              value={inputValue}
-            />
-            <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
-              <SearchIcon />
-            </Button>
+            <InputGroupItem>
+              <TextInput
+                name="textInput2"
+                id="textInput2"
+                type="search"
+                aria-label="search input example"
+                onChange={this.onInputChange}
+                value={inputValue}
+              />
+            </InputGroupItem>
+            <InputGroupItem>
+              <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
+                <SearchIcon />
+              </Button>
+            </InputGroupItem>
           </InputGroup>
         </ToolbarItem>
         <ToolbarGroup variant="filter-group" id="toolbar-demo-filters">

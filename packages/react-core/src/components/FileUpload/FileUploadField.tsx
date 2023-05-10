@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
 import { css } from '@patternfly/react-styles';
-import { InputGroup } from '../InputGroup';
+import { InputGroup, InputGroupItem } from '../InputGroup';
 import { TextInput } from '../TextInput';
 import { Button, ButtonVariant } from '../Button';
 import { TextArea, TextAreResizeOrientation } from '../TextArea';
@@ -130,31 +130,37 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
     >
       <div className={styles.fileUploadFileSelect}>
         <InputGroup>
-          <TextInput
-            isReadOnly // Always read-only regardless of isReadOnly prop (which is just for the TextArea)
-            isDisabled={isDisabled}
-            id={`${id}-filename`}
-            name={`${id}-filename`}
-            aria-label={filenameAriaLabel}
-            placeholder={filenamePlaceholder}
-            aria-describedby={`${id}-browse-button`}
-            value={filename}
-          />
-          <Button
-            id={`${id}-browse-button`}
-            variant={ButtonVariant.control}
-            onClick={onBrowseButtonClick}
-            isDisabled={isDisabled}
-          >
-            {browseButtonText}
-          </Button>
-          <Button
-            variant={ButtonVariant.control}
-            isDisabled={isDisabled || isClearButtonDisabled}
-            onClick={onClearButtonClick}
-          >
-            {clearButtonText}
-          </Button>
+          <InputGroupItem isFill>
+            <TextInput
+              isReadOnly // Always read-only regardless of isReadOnly prop (which is just for the TextArea)
+              isDisabled={isDisabled}
+              id={`${id}-filename`}
+              name={`${id}-filename`}
+              aria-label={filenameAriaLabel}
+              placeholder={filenamePlaceholder}
+              aria-describedby={`${id}-browse-button`}
+              value={filename}
+            />
+          </InputGroupItem>
+          <InputGroupItem>
+            <Button
+              id={`${id}-browse-button`}
+              variant={ButtonVariant.control}
+              onClick={onBrowseButtonClick}
+              isDisabled={isDisabled}
+            >
+              {browseButtonText}
+            </Button>
+          </InputGroupItem>
+          <InputGroupItem>
+            <Button
+              variant={ButtonVariant.control}
+              isDisabled={isDisabled || isClearButtonDisabled}
+              onClick={onClearButtonClick}
+            >
+              {clearButtonText}
+            </Button>
+          </InputGroupItem>
         </InputGroup>
       </div>
       <div className={styles.fileUploadFileDetails}>

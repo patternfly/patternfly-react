@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/DatePicker/date-pick
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { TextInput, TextInputProps } from '../TextInput/TextInput';
 import { Popover, PopoverProps } from '../Popover/Popover';
-import { InputGroup } from '../InputGroup/InputGroup';
+import { InputGroup, InputGroupItem } from '../InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import { CalendarMonth, CalendarFormat } from '../CalendarMonth';
 import { useImperativeHandle } from 'react';
@@ -248,28 +248,32 @@ const DatePickerBase = (
       >
         <div className={styles.datePickerInput} ref={triggerRef}>
           <InputGroup>
-            <TextInput
-              isDisabled={isDisabled}
-              aria-label={ariaLabel}
-              placeholder={placeholder}
-              validated={errorText.trim() ? 'error' : 'default'}
-              value={value}
-              onChange={onTextInput}
-              onBlur={onInputBlur}
-              onKeyPress={onKeyPress}
-              {...inputProps}
-            />
-            <button
-              ref={buttonRef}
-              // TODO: Removed style follow up work with issue #8457
-              className={css(buttonStyles.button, buttonStyles.modifiers.control)}
-              aria-label={buttonAriaLabel}
-              type="button"
-              onClick={() => setPopoverOpen(!popoverOpen)}
-              disabled={isDisabled}
-            >
-              <OutlinedCalendarAltIcon />
-            </button>
+            <InputGroupItem isFill>
+              <TextInput
+                isDisabled={isDisabled}
+                aria-label={ariaLabel}
+                placeholder={placeholder}
+                validated={errorText.trim() ? 'error' : 'default'}
+                value={value}
+                onChange={onTextInput}
+                onBlur={onInputBlur}
+                onKeyPress={onKeyPress}
+                {...inputProps}
+              />
+            </InputGroupItem>
+            <InputGroupItem>
+              <button
+                ref={buttonRef}
+                // TODO: Removed style follow up work with issue #8457
+                className={css(buttonStyles.button, buttonStyles.modifiers.control)}
+                aria-label={buttonAriaLabel}
+                type="button"
+                onClick={() => setPopoverOpen(!popoverOpen)}
+                disabled={isDisabled}
+              >
+                <OutlinedCalendarAltIcon />
+              </button>
+            </InputGroupItem>
           </InputGroup>
         </div>
       </Popover>

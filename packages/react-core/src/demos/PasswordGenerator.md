@@ -15,6 +15,7 @@ import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon'
 import React from 'react';
 import {
   InputGroup,
+  InputGroupItem,
   TextInput,
   Button,
   Popper,
@@ -119,23 +120,27 @@ const PasswordGenerator: React.FunctionComponent = () => {
   const textInput = (
     <div ref={searchInputRef} id="password-input">
       <InputGroup>
-        <TextInput
-          onFocus={() => {
-            setIsAutocompleteOpen(true);
-          }}
-          isRequired
-          type={passwordHidden ? 'password' : 'text'}
-          aria-label="Password input"
-          value={password}
-          onChange={onChange}
-        />
-        <Button
-          variant="control"
-          onClick={() => setPasswordHidden(!passwordHidden)}
-          aria-label={passwordHidden ? 'Show password' : 'Hide password'}
-        >
-          {passwordHidden ? <EyeIcon /> : <EyeSlashIcon />}
-        </Button>
+        <InputGroupItem isFill>
+          <TextInput
+            onFocus={() => {
+              setIsAutocompleteOpen(true);
+            }}
+            isRequired
+            type={passwordHidden ? 'password' : 'text'}
+            aria-label="Password input"
+            value={password}
+            onChange={onChange}
+          />
+        </InputGroupItem>
+        <InputGroupItem>
+          <Button
+            variant="control"
+            onClick={() => setPasswordHidden(!passwordHidden)}
+            aria-label={passwordHidden ? 'Show password' : 'Hide password'}
+          >
+            {passwordHidden ? <EyeIcon /> : <EyeSlashIcon />}
+          </Button>
+        </InputGroupItem>
       </InputGroup>
     </div>
   );

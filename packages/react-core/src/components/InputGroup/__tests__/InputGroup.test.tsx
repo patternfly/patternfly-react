@@ -3,6 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { InputGroup } from '../InputGroup';
+import { InputGroupItem } from '../InputGroupItem';
 import { Button } from '../../Button';
 import { TextInput } from '../../TextInput';
 
@@ -12,10 +13,14 @@ describe('InputGroup', () => {
     // If Button has an id props, this should be used in aria-describedby.
     render(
       <InputGroup>
-        <TextInput value="some data" aria-label="some text" />
-        <Button variant="primary" id="button-id">
-          hello
-        </Button>
+        <InputGroupItem>
+          <TextInput value="some data" aria-label="some text" />
+        </InputGroupItem>
+        <InputGroupItem>
+          <Button variant="primary" id="button-id">
+            hello
+          </Button>
+        </InputGroupItem>
       </InputGroup>
     );
     expect(screen.getByLabelText('some text')).toHaveAttribute('aria-describedby', 'button-id');
@@ -27,10 +32,14 @@ describe('InputGroup', () => {
     // example has an empty aria-describedby to prevent that from happening.
     render(
       <InputGroup>
-        <TextInput value="some data" aria-describedby="" aria-label="some text" />
-        <Button id="button-id">
-          hello
-        </Button>
+        <InputGroupItem>
+          <TextInput value="some data" aria-describedby="" aria-label="some text" />
+        </InputGroupItem>
+        <InputGroupItem>
+          <Button id="button-id">
+            hello
+          </Button>
+        </InputGroupItem>
       </InputGroup>
     );
     expect(screen.getByLabelText('some text')).not.toHaveAttribute('aria-describedby');
@@ -42,10 +51,14 @@ describe('InputGroup', () => {
     // example has a predefined aria-describedby to prevent that from happening
     render(
       <InputGroup>
-        <TextInput value="some data" aria-describedby="myself" aria-label="some text" />
-        <Button id="button-id">
-          hello
-        </Button>
+        <InputGroupItem>
+          <TextInput value="some data" aria-describedby="myself" aria-label="some text" />
+        </InputGroupItem>
+        <InputGroupItem>
+          <Button id="button-id">
+            hello
+          </Button>
+        </InputGroupItem>
       </InputGroup>
     );
     expect(screen.getByLabelText('some text')).toHaveAttribute('aria-describedby', 'myself');

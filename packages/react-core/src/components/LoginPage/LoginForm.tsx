@@ -4,7 +4,7 @@ import { TextInput } from '../TextInput';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { ValidatedOptions } from '../../helpers/constants';
-import { InputGroup } from '../InputGroup';
+import { InputGroup, InputGroupItem } from '../InputGroup';
 import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon';
 import EyeIcon from '@patternfly/react-icons/dist/esm/icons/eye-icon';
 import { HelperText, HelperTextItem } from '../HelperText';
@@ -121,14 +121,18 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
       <FormGroup label={passwordLabel} isRequired fieldId="pf-login-password-id">
         {isShowPasswordEnabled && (
           <InputGroup>
-            {passwordInput}
-            <Button
-              variant="control"
-              onClick={() => setPasswordHidden(!passwordHidden)}
-              aria-label={passwordHidden ? showPasswordAriaLabel : hidePasswordAriaLabel}
-            >
-              {passwordHidden ? <EyeIcon /> : <EyeSlashIcon />}
-            </Button>
+            <InputGroupItem isFill>
+              {passwordInput}
+            </InputGroupItem>
+            <InputGroupItem>
+              <Button
+                variant="control"
+                onClick={() => setPasswordHidden(!passwordHidden)}
+                aria-label={passwordHidden ? showPasswordAriaLabel : hidePasswordAriaLabel}
+              >
+                {passwordHidden ? <EyeIcon /> : <EyeSlashIcon />}
+              </Button>
+            </InputGroupItem>
           </InputGroup>
         )}
         {!isShowPasswordEnabled && passwordInput}
