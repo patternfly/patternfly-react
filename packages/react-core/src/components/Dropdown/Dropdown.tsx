@@ -1,9 +1,27 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
-import { Popper, PopperProps } from '../../helpers/Popper/Popper';
+import { Popper } from '../../helpers/Popper/Popper';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
+export interface DropdownPopperProps {
+  /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
+  direction?: 'up' | 'down';
+  /** Horizontal position of the popper */
+  position?: 'right' | 'left' | 'center';
+  /** Custom width of the popper. If the value is "trigger", it will set the width to the dropdown toggle's width */
+  width?: string | 'trigger';
+  /** Minimum width of the popper. If the value is "trigger", it will set the min width to the dropdown toggle's width */
+  minWidth?: string | 'trigger';
+  /** Maximum width of the popper. If the value is "trigger", it will set the max width to the dropdown toggle's width */
+  maxWidth?: string | 'trigger';
+  /** Enable to flip the popper when it reaches the boundary */
+  enableFlip?: boolean;
+}
+
+/**
+ * See the Menu documentation for additional props that may be passed.
+ */
 export interface DropdownProps extends MenuProps, OUIAProps {
   /** Anything which can be rendered in a dropdown. */
   children?: React.ReactNode;
@@ -14,7 +32,11 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   /** Flag to indicate if menu is opened.*/
   isOpen?: boolean;
   /** Function callback called when user selects item. */
-  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => void;
+  onSelect?: (
+    event?: React.MouseEvent<Element, MouseEvent>,
+    itemId?: string | number,
+    toggleRef?: React.RefObject<any>
+  ) => void;
   /** Callback to allow the dropdown component to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing either tab or escape. */
   onOpenChange?: (isOpen: boolean) => void;
@@ -31,7 +53,7 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   /** z-index of the dropdown menu */
   zIndex?: number;
   /** Additional properties to pass to the Popper */
-  popperProps?: Partial<PopperProps>;
+  popperProps?: DropdownPopperProps;
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({
@@ -59,10 +81,12 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
       if (
-        (isOpen && onOpenChange && menuRef.current?.contains(event.target as Node)) ||
-        toggleRef.current?.contains(event.target as Node)
+        isOpen &&
+        onOpenChange &&
+        (menuRef.current?.contains(event.target as Node) || toggleRef.current?.contains(event.target as Node))
       ) {
         if (event.key === 'Escape' || event.key === 'Tab') {
+          event.preventDefault();
           onOpenChange(false);
           toggleRef.current?.focus();
         }
@@ -101,7 +125,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
     <Menu
       className={css(className)}
       ref={menuRef}
-      onSelect={(event, itemId) => onSelect && onSelect(event, itemId)}
+      onSelect={(event, itemId) => onSelect && onSelect(event, itemId, toggleRef)}
       isPlain={isPlain}
       isScrollable={isScrollable}
       {...props}

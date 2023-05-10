@@ -3,12 +3,14 @@ id: Dropdown
 section: components
 subsection: menus
 cssPrefix: pf-c-menu
-propComponents: ['Dropdown', DropdownGroup, 'DropdownItem', 'DropdownList', 'MenuToggle']
+propComponents: ['Dropdown', DropdownGroup, 'DropdownItem', 'DropdownList', 'MenuToggle', 'DropdownPopperProps']
 ---
 
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples
+
+`Dropdown` builds off of the Menu component suite to wrap commonly used properties and functions for a dropdown menu. See the [Menu documentation](/components/menus/menu) for a full list of properties that may be passed through `Dropdown` to further customize the dropdown menu, or the [custom menu examples](/components/menus/custom-menus) for additional examples of fully functional menus.
 
 ### Basic dropdowns
 
