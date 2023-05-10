@@ -1299,8 +1299,8 @@ class FilterTableDemo extends React.Component {
       >
         Degraded
       </SelectOption>,
-      <SelectOption 
-        hasCheckbox 
+      <SelectOption
+        hasCheckbox
         key="statusMaint" 
         itemId="Needs maintenance"
         isSelected={filters.status.includes("Needs maintenance")}
