@@ -1079,8 +1079,18 @@ class ColumnManagementAction extends React.Component {
 ```js isFullscreen
 import React from 'react';
 import {
+  Badge,
   Button,
   Bullseye,
+  EmptyState,
+  EmptyStateActions,
+  EmptyStateBody,
+  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
+  Label,
+  MenuToggle,
+  MenuToggleElement,
   Toolbar,
   ToolbarItem,
   ToolbarContent,
@@ -1090,17 +1100,11 @@ import {
   Title,
   Select,
   SelectOption,
-  SearchInput,
-  EmptyState,
-  EmptyStateActions,
-  EmptyStateBody,
-  EmptyStateIcon,
-  EmptyStateHeader,
-  EmptyStateFooter
+  SearchInput
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { rows, columns } from '../../examples/Data.jsx';
 
 class FilterTableDemo extends React.Component {
