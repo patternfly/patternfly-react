@@ -148,7 +148,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     <li className={css(styles.multipleFileUploadStatusItem, className)} {...props}>
       <div className={styles.multipleFileUploadStatusItemIcon}>{fileIcon || <FileIcon />}</div>
       <div className={styles.multipleFileUploadStatusItemMain}>
-        <div className="pf-screen-reader" aria-live="polite">
+        <div className="pf-v5-screen-reader" aria-live="polite">
           {progressAriaLiveMessage &&
             typeof progressAriaLiveMessage === 'function' &&
             progressAriaLiveMessage(+loadPercentage.toFixed(2))}
