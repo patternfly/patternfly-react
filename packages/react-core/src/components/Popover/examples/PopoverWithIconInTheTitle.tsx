@@ -10,6 +10,7 @@ export const PopoverWithIconInTheTitle: React.FunctionComponent = () => (
       headerIcon={<BullhornIcon />}
       bodyContent={<div>Popovers are triggered by click rather than hover.</div>}
       footerContent="Popover footer"
+      appendTo={() => document.body}
     >
       <Button>Toggle popover</Button>
     </Popover>

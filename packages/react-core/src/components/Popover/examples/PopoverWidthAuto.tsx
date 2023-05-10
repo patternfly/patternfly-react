@@ -7,6 +7,7 @@ export const PopoverWidthAuto: React.FunctionComponent = () => (
       aria-label="Popover with auto-width"
       hasAutoWidth
       bodyContent={() => <div>Removes fixed-width and allows width to be defined by contents</div>}
+      appendTo={() => document.body}
     >
       <Button>Toggle popover</Button>
     </Popover>
