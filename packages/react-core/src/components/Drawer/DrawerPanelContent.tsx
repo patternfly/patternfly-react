@@ -5,7 +5,7 @@ import { DrawerColorVariant, DrawerContext } from './Drawer';
 import { formatBreakpointMods } from '../../helpers/util';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
-export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onResize'> {
   /** Additional classes added to the drawer. */
   className?: string;
   /** ID of the drawer panel */
