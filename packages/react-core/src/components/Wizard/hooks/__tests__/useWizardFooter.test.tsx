@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import { useWizardFooter } from '../useWizardFooter';
 import * as WizardContext from '../../WizardContext';
