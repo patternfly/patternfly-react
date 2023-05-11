@@ -50,7 +50,9 @@ export const SelectFooter: React.FunctionComponent = () => {
         <SelectOption itemId="Option 3">Option 3</SelectOption>
       </SelectList>
       <MenuFooter>
-        <Button>Footer action</Button>
+        <Button variant="link" isInline>
+          Footer action
+        </Button>
       </MenuFooter>
     </Select>
   );
