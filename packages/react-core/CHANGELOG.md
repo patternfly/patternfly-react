@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.98](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.97...@patternfly/react-core@5.0.0-alpha.98) (2023-05-11)
+
+### Bug Fixes
+
+- **deps:** update dependency focus-trap to v7.4.1 ([#9104](https://github.com/patternfly/patternfly-react/issues/9104)) ([19fc30c](https://github.com/patternfly/patternfly-react/commit/19fc30cb0e0aab9d90ee2bc2f826eb1299f13ac6))
+- **Label:** updated label content to trigger tooltip on keyboard focus ([#9107](https://github.com/patternfly/patternfly-react/issues/9107)) ([892df3b](https://github.com/patternfly/patternfly-react/commit/892df3b2a9d2eea3ae36343cbc9cb66d2cece5b5))
+
 # [5.0.0-alpha.97](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.96...@patternfly/react-core@5.0.0-alpha.97) (2023-05-11)
 
 ### Bug Fixes
