@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.81](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.80...demo-app-ts@5.0.0-alpha.81) (2023-05-11)
+
+### Bug Fixes
+
+- **DataList, Table:** update hoverable reference to clickable ([#9083](https://github.com/patternfly/patternfly-react/issues/9083)) ([c03a019](https://github.com/patternfly/patternfly-react/commit/c03a01918b2d947d297ea5598cb79c607fd849e8))
+
 # [5.0.0-alpha.80](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.79...demo-app-ts@5.0.0-alpha.80) (2023-05-11)
 
 ### Bug Fixes

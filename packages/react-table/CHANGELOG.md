@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.99](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.98...@patternfly/react-table@5.0.0-alpha.99) (2023-05-11)
+
+### Bug Fixes
+
+- **DataList, Table:** update hoverable reference to clickable ([#9083](https://github.com/patternfly/patternfly-react/issues/9083)) ([c03a019](https://github.com/patternfly/patternfly-react/commit/c03a01918b2d947d297ea5598cb79c607fd849e8))
+
 # [5.0.0-alpha.98](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.97...@patternfly/react-table@5.0.0-alpha.98) (2023-05-11)
 
 ### Features
