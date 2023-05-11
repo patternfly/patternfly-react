@@ -1550,28 +1550,32 @@ To demonstrate this, navigate to the last page of data below using the `>>` navi
 - The default behavior would show the last page of results, which would only contain the last two rows (rows 11 - 12).
 - The `isLastFullPageShown` prop navigates you back to the previous page which does contain a full page of 5 rows (rows 6 - 10).
 
-```js
+```js isFullscreen
 import React from 'react';
 import { Pagination } from '@patternfly/react-core';
-import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
     super(props);
-    this.columns = [{ title: 'First column' }, { title: 'Second column' }, { title: 'Third column' }];
+    this.columns = { 
+      firstColumn: 'First column',
+      secondColumn: 'Second column',
+      thirdColumn: 'Third column'
+    },
     this.defaultRows = [
-      { cells: [{ title: 'Row 1 column 1' }, { title: 'Row 1 column 2' }, { title: 'Row 1 column 3' }] },
-      { cells: [{ title: 'Row 2 column 1' }, { title: 'Row 2 column 2' }, { title: 'Row 2 column 3' }] },
-      { cells: [{ title: 'Row 3 column 1' }, { title: 'Row 3 column 2' }, { title: 'Row 3 column 3' }] },
-      { cells: [{ title: 'Row 4 column 1' }, { title: 'Row 4 column 2' }, { title: 'Row 4 column 3' }] },
-      { cells: [{ title: 'Row 5 column 1' }, { title: 'Row 5 column 2' }, { title: 'Row 5 column 3' }] },
-      { cells: [{ title: 'Row 6 column 1' }, { title: 'Row 6 column 2' }, { title: 'Row 6 column 3' }] },
-      { cells: [{ title: 'Row 7 column 1' }, { title: 'Row 7 column 2' }, { title: 'Row 7 column 3' }] },
-      { cells: [{ title: 'Row 8 column 1' }, { title: 'Row 8 column 2' }, { title: 'Row 8 column 3' }] },
-      { cells: [{ title: 'Row 9 column 1' }, { title: 'Row 9 column 2' }, { title: 'Row 9 column 3' }] },
-      { cells: [{ title: 'Row 10 column 1' }, { title: 'Row 10 column 2' }, { title: 'Row 10 column 3' }] },
-      { cells: [{ title: 'Row 11 column 1' }, { title: 'Row 11 column 2' }, { title: 'Row 11 column 3' }] },
-      { cells: [{ title: 'Row 12 column 1' }, { title: 'Row 12 column 2' }, { title: 'Row 12 column 3' }] }
+       { firstColumn: 'Row 1 column 1', secondColumn: 'Row 1 column 2', thirdColumn: 'Row 1 column 3' },
+       { firstColumn: 'Row 2 column 1', secondColumn: 'Row 2 column 2', thirdColumn: 'Row 2 column 3' },
+       { firstColumn: 'Row 3 column 1', secondColumn: 'Row 3 column 2', thirdColumn: 'Row 3 column 3' },
+       { firstColumn: 'Row 4 column 1', secondColumn: 'Row 4 column 2', thirdColumn: 'Row 4 column 3' },
+       { firstColumn: 'Row 5 column 1', secondColumn: 'Row 5 column 2', thirdColumn: 'Row 5 column 3' },
+       { firstColumn: 'Row 6 column 1', secondColumn: 'Row 6 column 2', thirdColumn: 'Row 6 column 3' },
+       { firstColumn: 'Row 7 column 1', secondColumn: 'Row 7 column 2', thirdColumn: 'Row 7 column 3' },
+       { firstColumn: 'Row 8 column 1', secondColumn: 'Row 8 column 2', thirdColumn: 'Row 8 column 3' },
+       { firstColumn: 'Row 9 column 1', secondColumn: 'Row 9 column 2', thirdColumn: 'Row 9 column 3' },
+       { firstColumn: 'Row 10 column 1', secondColumn: 'Row 10 column 2', thirdColumn: 'Row 10 column 3' },
+       { firstColumn: 'Row 11 column 1', secondColumn: 'Row 11 column 2', thirdColumn: 'Row 11 column 3' },
+       { firstColumn: 'Row 12 column 1', secondColumn: 'Row 12 column 2', thirdColumn: 'Row 12 column 3' }
     ];
     this.defaultPerPage = 10;
     this.state = {
@@ -1623,14 +1627,29 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 
   render() {
-    const rows = this.state.rows.map((row) => ({ cells: row.cells }));
     return (
       <React.Fragment>
         {this.renderPagination()}
-        <TableDeprecated aria-label="Automated pagination table" cells={this.columns} rows={rows}>
-          <TableHeader />
-          <TableBody />
-        </TableDeprecated>
+        <Table aria-label="Automated Pagination Table Demo">
+          <Thead>
+            <Tr>
+              <Th>{this.columns.firstColumn}</Th>
+              <Th>{this.columns.secondColumn}</Th>
+              <Th>{this.columns.thirdColumn}</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {this.state.rows.map((row, rowIndex) => (
+              <Tr key={rowIndex}>
+                <>
+                  <Td dataLabel={this.columns.firstColumn}>{row.firstColumn}</Td>
+                  <Td dataLabel={this.columns.secondColumn}>{row.secondColumn}</Td>
+                  <Td dataLabel={this.columns.thirdColumn}>{row.thirdColumn}</Td>
+                </>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
       </React.Fragment>
     );
   }
