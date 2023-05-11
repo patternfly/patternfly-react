@@ -36,7 +36,6 @@ export * from './Icon';
 export * from './InputGroup';
 export * from './JumpLinks';
 export * from './Label';
-export * from './LabelGroup';
 export * from './List';
 export * from './LoginPage';
 export * from './Masthead';
