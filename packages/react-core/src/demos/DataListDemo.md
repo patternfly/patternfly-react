@@ -844,7 +844,7 @@ class DataListViewBasic extends React.Component {
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Projects</Text>
-              <Text component="p">This is a demo that showcases PatternFly DataList</Text>
+              <Text component="p">This is a demo that showcases PatternFly Data List</Text>
             </TextContent>
           </PageSection>
           <PageSection isFilled>
