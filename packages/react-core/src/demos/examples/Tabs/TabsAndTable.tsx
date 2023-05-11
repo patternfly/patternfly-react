@@ -138,14 +138,16 @@ export const TablesAndTabs = () => {
 
   const firstActionRef = React.useRef<HTMLButtonElement>(null);
 
-  const handleClick = (event: React.MouseEvent, ActionsToggleProps: CustomActionsToggleProps) => {
+  /** Handles when the user clicks on the custom action toggle, stops propagation to prevent the drawer from opening */
+  const handleActionsToggleClick = (event: React.MouseEvent, ActionsToggleProps: CustomActionsToggleProps) => {
     const { onToggle } = ActionsToggleProps;
 
     onToggle(event);
     event.stopPropagation();
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent, ActionsToggleProps: CustomActionsToggleProps) => {
+  /** Enables keyboard navigation of the custom actions toggle */
+  const handleActionsToggleKeyDown = (event: React.KeyboardEvent, ActionsToggleProps: CustomActionsToggleProps) => {
     const { onToggle } = ActionsToggleProps;
     const { Enter, Space, Escape, ArrowDown, ArrowUp } = KeyTypes;
 
@@ -168,8 +170,8 @@ export const TablesAndTabs = () => {
   const customActionsToggle = (props: CustomActionsToggleProps, toggleName: string) => (
     <MenuToggle
       isDisabled={props.isDisabled}
-      onClick={(event: React.MouseEvent) => handleClick(event, props)}
-      onKeyDown={(event: React.KeyboardEvent) => handleKeyDown(event, props)}
+      onClick={(event: React.MouseEvent) => handleActionsToggleClick(event, props)}
+      onKeyDown={(event: React.KeyboardEvent) => handleActionsToggleKeyDown(event, props)}
       variant="plain"
       aria-label={`${toggleName} actions`}
       aria-haspopup="menu"
