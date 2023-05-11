@@ -336,7 +336,7 @@ export const CalendarMonth = ({
           <tr>
             {calendar[0].map(({ date }, index) => (
               <th key={index} className={styles.calendarMonthDay} scope="col">
-                <span className="pf-screen-reader">{longWeekdayFormat(date)}</span>
+                <span className="pf-v5-screen-reader">{longWeekdayFormat(date)}</span>
                 <span aria-hidden>{weekdayFormat(date)}</span>
               </th>
             ))}

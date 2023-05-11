@@ -31,7 +31,7 @@ ProgressStepperDemo = () => {
         <br />
       </StackItem>
       <StackItem>
-        <div className="pf-screen-reader" aria-live="polite">
+        <div className="pf-v5-screen-reader" aria-live="polite">
           {`Progress value is ${currentValue}%.`}
         </div>
         <Progress value={currentValue} title="Title" />
@@ -71,7 +71,7 @@ ProgressStepperDemo = () => {
         <br />
       </StackItem>
       <StackItem>
-        <div className="pf-screen-reader" aria-live="polite">
+        <div className="pf-v5-screen-reader" aria-live="polite">
           {`Progress value is ${currentValue}%.`}
         </div>
         <Progress value={currentValue} title="Title" />

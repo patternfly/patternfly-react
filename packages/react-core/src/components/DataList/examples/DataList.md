@@ -68,9 +68,9 @@ import { css } from '@patternfly/react-styles';
 
 ```
 
-### Selectable rows
+### Clickable rows
 
-```ts file="./DataListSelectableRows.tsx"
+```ts file="./DataListClickableRows.tsx"
 
 ```
 

@@ -20,8 +20,8 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   isExpanded?: boolean;
   /** Only applicable to Tr within the Tbody: Whether the row is editable */
   isEditable?: boolean;
-  /** Flag which adds hover styles for the table row */
-  isHoverable?: boolean;
+  /** Flag which adds hover styles for the clickable table row */
+  isClickable?: boolean;
   /** Flag indicating the row is selected - adds selected styling */
   isRowSelected?: boolean;
   /** Flag indicating the row is striped */
@@ -46,7 +46,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   isExpanded,
   isEditable,
   isHidden = false,
-  isHoverable = false,
+  isClickable = false,
   isRowSelected = false,
   isStriped = false,
   isBorderRow = false,
@@ -89,21 +89,21 @@ const TrBase: React.FunctionComponent<TrProps> = ({
 
   return (
     <>
-      {isSelectable && <output className="pf-screen-reader">{ariaLabel}</output>}
+      {isSelectable && <output className="pf-v5-screen-reader">{ariaLabel}</output>}
       <tr
         className={css(
           className,
           isExpanded !== undefined && styles.tableExpandableRow,
           isExpanded && styles.modifiers.expanded,
           isEditable && inlineStyles.modifiers.inlineEditable,
-          isHoverable && styles.modifiers.clickable,
+          isClickable && styles.modifiers.clickable,
           isRowSelected && styles.modifiers.selected,
           isStriped && styles.modifiers.striped,
           isBorderRow && styles.modifiers.borderRow,
           resetOffset && styles.modifiers.firstCellOffsetReset
         )}
         hidden={rowIsHidden}
-        {...(isHoverable && { tabIndex: 0 })}
+        {...(isClickable && { tabIndex: 0 })}
         aria-label={ariaLabel}
         ref={innerRef}
         {...(onRowClick && { onClick: onRowClick, onKeyDown })}

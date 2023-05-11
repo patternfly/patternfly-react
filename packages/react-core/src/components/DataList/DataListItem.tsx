@@ -93,7 +93,7 @@ export class DataListItem extends React.Component<DataListItemProps> {
             >
               {onSelectableRowChange && (
                 <input
-                  className="pf-screen-reader"
+                  className="pf-v5-screen-reader"
                   type="radio"
                   checked={isSelected}
                   onChange={(event) => onSelectableRowChange(event, id)}
