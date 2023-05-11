@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.96](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.95...@patternfly/react-core@5.0.0-alpha.96) (2023-05-11)
+
+### Bug Fixes
+
+- **keyboard:** Notification drawer and tree view keyboard handling bug fixes ([#9071](https://github.com/patternfly/patternfly-react/issues/9071)) ([8d1ee08](https://github.com/patternfly/patternfly-react/commit/8d1ee089d6895ce2c15fcdf7fbb0d79cffe802d4))
+- **LoginForm:** updated param order ([#8996](https://github.com/patternfly/patternfly-react/issues/8996)) ([ae2b234](https://github.com/patternfly/patternfly-react/commit/ae2b234f360a0340c8d2a3f1af335b7d626f6ece))
+- **ToggleGroup:** rebuild outdated snapshots ([#9102](https://github.com/patternfly/patternfly-react/issues/9102)) ([a3519d8](https://github.com/patternfly/patternfly-react/commit/a3519d874a4c812f987964926fc0c49b481a37a5))
+
+### Features
+
+- **Dropdown:** fix focusing, add popper props ([#9005](https://github.com/patternfly/patternfly-react/issues/9005)) ([ac2d3ac](https://github.com/patternfly/patternfly-react/commit/ac2d3ac617551cedf7479f4a48f537004a774b25))
+- **misc:** dark theme docs fixes ([#9084](https://github.com/patternfly/patternfly-react/issues/9084)) ([73468f9](https://github.com/patternfly/patternfly-react/commit/73468f9ab3a2664590e90bac1b09df9eabbef4a8))
+
 # [5.0.0-alpha.95](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.94...@patternfly/react-core@5.0.0-alpha.95) (2023-05-09)
 
 ### Features

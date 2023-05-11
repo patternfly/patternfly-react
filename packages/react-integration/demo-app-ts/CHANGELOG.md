@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.80](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.79...demo-app-ts@5.0.0-alpha.80) (2023-05-11)
+
+### Bug Fixes
+
+- **keyboard:** Notification drawer and tree view keyboard handling bug fixes ([#9071](https://github.com/patternfly/patternfly-react/issues/9071)) ([8d1ee08](https://github.com/patternfly/patternfly-react/commit/8d1ee089d6895ce2c15fcdf7fbb0d79cffe802d4))
+- **LoginForm:** updated param order ([#8996](https://github.com/patternfly/patternfly-react/issues/8996)) ([ae2b234](https://github.com/patternfly/patternfly-react/commit/ae2b234f360a0340c8d2a3f1af335b7d626f6ece))
+
 # [5.0.0-alpha.79](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.78...demo-app-ts@5.0.0-alpha.79) (2023-05-09)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.98](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.97...@patternfly/react-table@5.0.0-alpha.98) (2023-05-11)
+
+### Features
+
+- **misc:** dark theme docs fixes ([#9084](https://github.com/patternfly/patternfly-react/issues/9084)) ([73468f9](https://github.com/patternfly/patternfly-react/commit/73468f9ab3a2664590e90bac1b09df9eabbef4a8))
+
 # [5.0.0-alpha.97](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.96...@patternfly/react-table@5.0.0-alpha.97) (2023-05-09)
 
 **Note:** Version bump only for package @patternfly/react-table
