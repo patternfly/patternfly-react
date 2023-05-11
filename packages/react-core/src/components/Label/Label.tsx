@@ -232,29 +232,30 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     setCurrValue(editableInputRef.current.value);
   };
 
-  let labelComponentChild = <span className={css(styles.labelContent)}>{content}</span>;
-
+  let LabelComponentChildElement = 'span';
   if (href) {
-    labelComponentChild = (
-      <a className={css(styles.labelContent)} href={href}>
-        {content}
-      </a>
-    );
+    LabelComponentChildElement = 'a';
   } else if (isEditable) {
-    labelComponentChild = (
-      <button
-        ref={editableButtonRef}
-        className={css(styles.labelContent)}
-        onClick={(e: React.MouseEvent) => {
-          setIsEditableActive(true);
-          e.stopPropagation();
-        }}
-        {...editableProps}
-      >
-        {content}
-      </button>
-    );
+    LabelComponentChildElement = 'button';
   }
+
+  const labelComponentChildProps = {
+    className: css(styles.labelContent),
+    ...(isTooltipVisible && { tabIndex: 0 }),
+    ...(href && { href }),
+    ...(isEditable && {
+      ref: editableButtonRef,
+      onClick: (e: React.MouseEvent) => {
+        setIsEditableActive(true);
+        e.stopPropagation();
+      },
+      ...editableProps
+    })
+  };
+
+  let labelComponentChild = (
+    <LabelComponentChildElement {...labelComponentChildProps}>{content}</LabelComponentChildElement>
+  );
 
   if (render) {
     labelComponentChild = (
