@@ -14,7 +14,6 @@
         "@patternfly/documentation-framework",
         "@rollup/*",
         "@testing-library/jest-dom",
-        "@testing-library/react-hooks",
         "@testing-library/user-event",
         "@types/jest",
         "@types/react",
