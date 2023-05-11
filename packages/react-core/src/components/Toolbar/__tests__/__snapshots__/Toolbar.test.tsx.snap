@@ -3,7 +3,7 @@
 exports[`Toolbar should render inset 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-toolbar pf-m-inset-none pf-m-inset-sm-on-md pf-m-inset-2xl-on-xl pf-m-inset-lg-on-2xl"
+    class="pf-v5-c-toolbar pf-m-inset-sm-on-md pf-m-inset-2xl-on-xl pf-m-inset-lg-on-2xl"
     data-ouia-component-id="OUIA-Generated-Toolbar-1"
     data-ouia-component-type="PF4/Toolbar"
     data-ouia-safe="true"
