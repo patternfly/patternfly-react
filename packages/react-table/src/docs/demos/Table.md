@@ -1076,11 +1076,21 @@ class ColumnManagementAction extends React.Component {
 
 ### Filterable
 
-```js
+```js isFullscreen
 import React from 'react';
 import {
+  Badge,
   Button,
   Bullseye,
+  EmptyState,
+  EmptyStateActions,
+  EmptyStateBody,
+  EmptyStateIcon,
+  EmptyStateHeader,
+  EmptyStateFooter,
+  Label,
+  MenuToggle,
+  MenuToggleElement,
   Toolbar,
   ToolbarItem,
   ToolbarContent,
@@ -1090,17 +1100,12 @@ import {
   Title,
   Select,
   SelectOption,
-  SearchInput,
-  EmptyState,
-  EmptyStateActions,
-  EmptyStateBody,
-  EmptyStateIcon,
-  EmptyStateHeader,
-  EmptyStateFooter
+  SearchInput
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
+import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { rows, columns } from '../../examples/Data.jsx';
 
 class FilterTableDemo extends React.Component {
   constructor(props) {
@@ -1115,27 +1120,8 @@ class FilterTableDemo extends React.Component {
       isFilterDropdownOpen: false,
       isCategoryDropdownOpen: false,
       nameInput: '',
-      columns: [
-        { title: 'Servers' },
-        { title: 'Threads' },
-        { title: 'Applications' },
-        { title: 'Workspaces' },
-        { title: 'Status' },
-        { title: 'Location' }
-      ],
-      rows: [
-        { cells: ['US-Node 1', '5', '25', '5', 'Stopped', 'Raleigh'] },
-        { cells: ['US-Node 2', '5', '30', '2', 'Down', 'Westford'] },
-        { cells: ['US-Node 3', '13', '35', '12', 'Degraded', 'Boston'] },
-        { cells: ['US-Node 4', '2', '5', '18', 'Needs Maintainence', 'Raleigh'] },
-        { cells: ['US-Node 5', '7', '30', '5', 'Running', 'Boston'] },
-        { cells: ['US-Node 6', '5', '20', '15', 'Stopped', 'Raleigh'] },
-        { cells: ['CZ-Node 1', '12', '48', '13', 'Down', 'Brno'] },
-        { cells: ['CZ-Node 2', '3', '8', '20', 'Running', 'Brno'] },
-        { cells: ['CZ-Remote-Node 1', '15', '20', '10', 'Down', 'Brno'] },
-        { cells: ['Bangalore-Node 1', '20', '30', '30', 'Running', 'Bangalore'] }
-      ],
-      inputValue: ''
+      inputValue: '',
+      rows: rows.slice(0, 10)
     };
 
     this.onDelete = (type = '', id = '') => {
@@ -1184,22 +1170,6 @@ class FilterTableDemo extends React.Component {
 
     this.onInputChange = (newValue) => {
       this.setState({ inputValue: newValue });
-    };
-
-    this.onRowSelect = (event, isSelected, rowId) => {
-      let rows;
-      if (rowId === -1) {
-        rows = this.state.rows.map((oneRow) => {
-          oneRow.selected = isSelected;
-          return oneRow;
-        });
-      } else {
-        rows = [...this.state.rows];
-        rows[rowId].selected = isSelected;
-      }
-      this.setState({
-        rows
-      });
     };
 
     this.onStatusSelect = (event, selection) => {
@@ -1291,10 +1261,9 @@ class FilterTableDemo extends React.Component {
 
     const locationMenuItems = [
       <SelectOption key="raleigh" itemId="Raleigh">Raleigh</SelectOption>,
-      <SelectOption key="westford" itemId="Westford">Westford</SelectOption>,
+      <SelectOption key="san francisco" itemId="San Francisco">San Francisco</SelectOption>,
       <SelectOption key="boston" itemId="Boston">Boston</SelectOption>,
-      <SelectOption key="brno" itemId="Brno">Brno</SelectOption>,
-      <SelectOption key="bangalore" itemId="Bangalore">Bangalore</SelectOption>
+      <SelectOption key="atlanta" itemId="Atlanta">Atlanta</SelectOption>,
     ];
 
     const statusMenuItems = [
@@ -1333,10 +1302,10 @@ class FilterTableDemo extends React.Component {
       <SelectOption
         hasCheckbox
         key="statusMaint"
-        itemId="Needs Maintainence"
-        isSelected={filters.status.includes("Needs Maintainence")}
+        itemId="Needs maintenance"
+        isSelected={filters.status.includes("Needs maintenance")}
       >
-        Needs Maintainence
+        Needs maintenance
       </SelectOption>
     ];
 
@@ -1402,7 +1371,6 @@ class FilterTableDemo extends React.Component {
             minWidth="100px"
             onSelect={this.onStatusSelect}
             selected={filters.status}
-            minWidth="200px"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
@@ -1428,7 +1396,6 @@ class FilterTableDemo extends React.Component {
   }
 
   renderToolbar() {
-    const { filters } = this.state;
     return (
       <Toolbar id="toolbar-with-chip-groups" clearAllFilters={this.onDelete} collapseListedFiltersBreakpoint="xl">
         <ToolbarContent>
@@ -1450,16 +1417,16 @@ class FilterTableDemo extends React.Component {
   }
 
   render() {
-    const { loading, rows, columns, filters } = this.state;
+    const { loading, filters, rows } = this.state;
 
     const filteredRows =
       filters.name.length > 0 || filters.location.length > 0 || filters.status.length > 0
         ? rows.filter((row) => {
             return (
               (filters.name.length === 0 ||
-                filters.name.some((name) => row.cells[0].toLowerCase().includes(name.toLowerCase()))) &&
-              (filters.location.length === 0 || filters.location.includes(row.cells[5])) &&
-              (filters.status.length === 0 || filters.status.includes(row.cells[4]))
+                filters.name.some((name) => row.name.toLowerCase().includes(name.toLowerCase()))) &&
+              (filters.location.length === 0 || filters.location.includes(row.location)) &&
+              (filters.status.length === 0 || filters.status.includes(row.status))
             );
           })
         : rows;
@@ -1519,14 +1486,59 @@ class FilterTableDemo extends React.Component {
         }
       ];
     }
-    const onSelect = loading || filteredRows.length === 0 ? null : this.onRowSelect; // To remove the select box when there are no rows
+
+  const renderLabel = labelText => {
+    switch (labelText) {
+      case 'Running':
+        return <Label color="green">{labelText}</Label>;
+      case 'Stopped':
+        return <Label color="orange">{labelText}</Label>;
+      case 'Needs maintenance':
+        return <Label color="blue">{labelText}</Label>;
+      case 'Down':
+        return <Label color="red">{labelText}</Label>;
+    }
+  };
+
     return (
       <React.Fragment>
         {this.renderToolbar()}
-        <TableDeprecated cells={columns} rows={tableRows} onSelect={onSelect} aria-label="Filterable Table Demo">
-          <TableHeader />
-          <TableBody />
-        </TableDeprecated>
+         <Table aria-label="Filterable Table Demo">
+              <Thead>
+                <Tr>
+                  <Th key={0}>{columns[0]}</Th>
+                  <Th key={1}>{columns[1]}</Th>
+                  <Th key={2}>{columns[2]}</Th>
+                  <Th key={3}>{columns[3]}</Th>
+                  <Th key={4}>{columns[4]}</Th>
+                  <Th key={5}>{columns[5]}</Th>
+                  <Th key={6}>{columns[6]}</Th>
+                  <Th key={7} width={10}>
+                    {columns[7]}
+                  </Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {filteredRows.slice(0, 10).map((row, rowIndex) => (
+                  <Tr key={rowIndex}>
+                    <>
+                      <Td dataLabel={columns[0]}>{row.name}</Td>
+                      <Td dataLabel={columns[1]}>{row.threads}</Td>
+                      <Td dataLabel={columns[2]}>{row.applications}</Td>
+                      <Td dataLabel={columns[3]}>{row.workspaces}</Td>
+                      <Td dataLabel={columns[4]}>{renderLabel(row.status)}</Td>
+                      <Td dataLabel={columns[5]}>{row.location}</Td>
+                      <Td dataLabel={columns[6]}>{row.lastModified}</Td>
+                      <Td dataLabel={columns[7]} modifier="truncate">
+                        <TableText>
+                          <a href="#">{row.url}</a>
+                        </TableText>
+                      </Td>
+                    </>
+                  </Tr>
+                ))}
+              </Tbody>
+            </Table>
       </React.Fragment>
     );
   }
@@ -1678,7 +1690,7 @@ class StickyHeaderTableDemo extends React.Component {
           return <Label color="green">{labelText}</Label>;
         case 'Stopped':
           return <Label color="orange">{labelText}</Label>;
-        case 'Needs Maintenance':
+        case 'Needs maintenance':
           return <Label color="blue">{labelText}</Label>;
         case 'Down':
           return <Label color="red">{labelText}</Label>;
