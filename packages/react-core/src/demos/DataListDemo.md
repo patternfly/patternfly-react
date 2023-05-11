@@ -3,6 +3,8 @@ id: Data list
 section: components
 ---
 
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -427,7 +429,8 @@ class ExpandableDataList extends React.Component {
   }
 }
 ```
-### Card view
+
+### Data List view
 
 ```js isFullscreen
 import React from 'react';
@@ -441,17 +444,16 @@ import {
   DataListItemCells,
   Dropdown,
   DropdownItem,
-  DropdownList,
   Flex,
   FlexItem,
   MenuToggle,
+  MenuToggleCheckbox,
   OverflowMenu,
   OverflowMenuControl,
   OverflowMenuItem,
   PageSection,
   PageSectionVariants,
   Pagination,
-  TextContent,
   Text,
   TextContent,
   TextVariants,
@@ -459,8 +461,7 @@ import {
   ToolbarItem,
   ToolbarFilter,
   ToolbarContent,
-  Select,
-  SelectList,
+  Select
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
@@ -492,8 +493,8 @@ class DataListViewBasic extends React.Component {
       activeItem: 0,
       splitButtonDropdownIsOpen: false,
       page: 1,
-      perPage: 10,
-      totalItemCount: 10
+      perPage: 5,
+      totalItemCount: 5
     };
 
     this.checkAllSelected = (selected, total) => {
@@ -649,28 +650,9 @@ class DataListViewBasic extends React.Component {
     this.setState({ selectedItems });
   }
 
-  splitCheckboxSelectAll(e) {
-    const { checked } = e.target;
-    const { isChecked, res } = this.state;
-    let collection = [];
-
-    if (checked) {
-      for (var i = 0; i <= 9; i++) collection = [...collection, i];
-    }
-
-    this.setState(
-      {
-        selectedItems: collection,
-        isChecked: isChecked,
-        areAllSelected: checked
-      },
-      this.updateSelected
-    );
-  }
-
   selectPage(e) {
     const { checked } = e.target;
-    const { isChecked, totalItemCount, perPage } = this.state;
+    const { totalItemCount, perPage } = this.state;
     let collection = [];
 
     collection = this.getAllItems();
@@ -686,9 +668,6 @@ class DataListViewBasic extends React.Component {
   }
 
   selectAll(e) {
-    const { checked } = e.target;
-    const { isChecked } = this.state;
-
     let collection = [];
     for (var i = 0; i <= 9; i++) collection = [...collection, i];
 
@@ -703,8 +682,6 @@ class DataListViewBasic extends React.Component {
   }
 
   selectNone(e) {
-    const { checked } = e.target;
-    const { isChecked, selectedItems } = this.state;
     this.setState(
       {
         selectedItems: [],
@@ -752,37 +729,7 @@ class DataListViewBasic extends React.Component {
   renderPagination() {
     const { page, perPage, totalItemCount } = this.state;
 
-    const defaultPerPageOptions = [
-      {
-        title: '1',
-        value: 1
-      },
-      {
-        title: '5',
-        value: 5
-      },
-      {
-        title: '10',
-        value: 10
-      }
-    ];
-
-    return (
-      <Pagination
-        itemCount={totalItemCount}
-        page={page}
-        perPage={perPage}
-        perPageOptions={defaultPerPageOptions}
-        onSetPage={(_evt, value) => {
-          this.fetch(value, perPage);
-        }}
-        onPerPageSelect={(_evt, value) => {
-          this.fetch(1, value);
-        }}
-        variant="top"
-        isCompact
-      />
-    );
+    return <Pagination itemCount={totalItemCount} page={page} variant="top" isCompact />;
   }
 
   buildSelectDropdown() {
@@ -791,20 +738,7 @@ class DataListViewBasic extends React.Component {
     const allSelected = areAllSelected;
     const anySelected = numSelected > 0;
     const someChecked = anySelected ? null : false;
-    const isChecked = allSelected ? true : someChecked;
-    const splitButtonDropdownItems = (
-      <>
-        <DropdownItem key="item-1" onClick={this.selectNone.bind(this)}>
-          Select none (0 items)
-        </DropdownItem>
-        <DropdownItem key="item-2" onClick={this.selectPage.bind(this)}>
-          Select page ({this.state.perPage} items)
-        </DropdownItem>
-        <DropdownItem key="item-3" onClick={this.selectAll.bind(this)}>
-          Select all ({this.state.totalItemCount} items)
-        </DropdownItem>
-      </>
-    );
+
     return (
       <Dropdown
         onSelect={this.onSplitButtonSelect}
@@ -823,7 +757,6 @@ class DataListViewBasic extends React.Component {
                   key="split-dropdown-checkbox"
                   aria-label={anySelected ? 'Deselect all cards' : 'Select all cards'}
                   isChecked={areAllSelected}
-                  onClick={this.splitCheckboxSelectAll.bind(this)}
                 >
                   {numSelected !== 0 && `${numSelected} selected`}
                 </MenuToggleCheckbox>
@@ -832,7 +765,7 @@ class DataListViewBasic extends React.Component {
           ></MenuToggle>
         )}
       >
-        <DropdownList>{splitButtonDropdownItems}</DropdownList>
+        {/*Stand in for a functioning select/dropdown*/}
       </Dropdown>
     );
   }
@@ -840,32 +773,13 @@ class DataListViewBasic extends React.Component {
   buildFilterDropdown() {
     const { isLowerToolbarDropdownOpen, filters } = this.state;
 
-    const filterDropdownItems = (
-      <SelectList>
-        <SelectOption hasCheckbox key="patternfly" itemId="PatternFly" isSelected={filters.products.includes("PatternFly")}>PatternFly</SelectOption>
-        <SelectOption hasCheckbox key="activemq" itemId="ActiveMQ" isSelected={filters.products.includes("ActiveMQ")}>ActiveMQ</SelectOption>
-        <SelectOption hasCheckbox key="apachespark" itemId="Apache Spark" isSelected={filters.products.includes("Apache Spark")}>Apache Spark</SelectOption>
-        <SelectOption hasCheckbox key="avro" itemId="Avro" isSelected={filters.products.includes("Avro")}>Avro</SelectOption>
-        <SelectOption hasCheckbox key="azureservices" itemId="Azure Services" isSelected={filters.products.includes("Azure Services")}>Azure Services</SelectOption>
-        <SelectOption hasCheckbox key="crypto" itemId="Crypto" isSelected={filters.products.includes("Crypto")}>Crypto</SelectOption>
-        <SelectOption hasCheckbox key="dropbox" itemId="DropBox" isSelected={filters.products.includes("DropBox")}>DropBox</SelectOption>
-        <SelectOption hasCheckbox key="jbossdatagrid" itemId="JBoss Data Grid" isSelected={filters.products.includes("JBoss Data Grid")}>JBoss Data Grid</SelectOption>
-        <SelectOption hasCheckbox key="rest" itemId="REST" isSelected={filters.products.includes("REST")}>REST</SelectOption>
-        <SelectOption hasCheckbox key="swagger" itemId="SWAGGER" isSelected={filters.products.includes("SWAGGER")}>SWAGGER</SelectOption>
-      </SelectList>
-    );
-
     return (
       <ToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
         <Select
           aria-label="Products"
           role="menu"
           toggle={(toggleRef) => (
-            <MenuToggle
-              ref={toggleRef}
-              onClick={this.onToolbarDropdownToggle}
-              isExpanded={isLowerToolbarDropdownOpen}
-            >
+            <MenuToggle ref={toggleRef} onClick={this.onToolbarDropdownToggle} isExpanded={isLowerToolbarDropdownOpen}>
               Filter by creator name
               {filters.products.length > 0 && <Badge isRead>{filters.products.length}</Badge>}
             </MenuToggle>
@@ -879,145 +793,14 @@ class DataListViewBasic extends React.Component {
           selected={filters.products}
           isOpen={isLowerToolbarDropdownOpen}
         >
-          {filterDropdownItems}
+          {/*Stand in for a functioning select/dropdown*/}
         </Select>
       </ToolbarFilter>
     );
   }
 
   render() {
-    const {
-      isUpperToolbarDropdownOpen,
-      isLowerToolbarDropdownOpen,
-      isUpperToolbarKebabDropdownOpen,
-      isLowerToolbarKebabDropdownOpen,
-      isCardKebabDropdownOpen,
-      splitButtonDropdownIsOpen,
-      activeItem,
-      filters,
-      res,
-      checked,
-      selectedItems,
-      areAllSelected,
-      isChecked,
-      page,
-      perPage
-    } = this.state;
-
-    const toolbarKebabDropdownItems = [
-      <OverflowMenuDropdownItem itemId={0} key="link">
-        Link
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem itemId={1} key="action" component="button">
-        Action
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem itemId={2} key="disabled link" isDisabled>
-        Disabled Link
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem itemId={3} key="disabled action" isDisabled component="button">
-        Disabled Action
-      </OverflowMenuDropdownItem>,
-      <Divider key="separator" />,
-      <OverflowMenuDropdownItem itemId={5} key="separated link">
-        Separated Link
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem itemId={6} key="separated action" component="button">
-        Separated Action
-      </OverflowMenuDropdownItem>
-    ];
-
-    const toolbarItems = (
-      <React.Fragment>
-        <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
-        <ToolbarItem breakpoint="xl">{this.buildFilterDropdown()}</ToolbarItem>
-        <ToolbarItem variant="overflow-menu">
-          <OverflowMenu breakpoint="md">
-            <OverflowMenuItem>
-              <Button variant="primary">Create a project</Button>
-            </OverflowMenuItem>
-            <OverflowMenuControl hasAdditionalOptions>
-              <Dropdown
-                onSelect={this.onToolbarKebabDropdownSelect}
-                toggle={(toggleRef) => (
-                  <MenuToggle
-                    ref={toggleRef}
-                    aria-label="Toolbar kebab overflow menu"
-                    variant="plain"
-                    onClick={this.onToolbarKebabDropdownToggle}
-                    isExpanded={isLowerToolbarKebabDropdownOpen}
-                  >
-                    <EllipsisVIcon />
-                  </MenuToggle>
-                )}
-                isOpen={isLowerToolbarKebabDropdownOpen}
-                onOpenChange={(isOpen) => this.setState({ isLowerToolbarKebabDropdownOpen: isOpen })}
-              >
-                <DropdownList>{toolbarKebabDropdownItems}</DropdownList>
-              </Dropdown>
-            </OverflowMenuControl>
-          </OverflowMenu>
-        </ToolbarItem>
-        <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
-          {this.renderPagination()}
-        </ToolbarItem>
-      </React.Fragment>
-    );
-
-    const filtered =
-      filters.products.length > 0
-        ? res.filter((card) => {
-            return filters.products.length === 0 || filters.products.includes(card.name);
-          })
-        : res;
-
-    const icons = {
-      pfIcon,
-      activeMQIcon,
-      sparkIcon,
-      avroIcon,
-      azureIcon,
-      saxonIcon,
-      dropBoxIcon,
-      infinispanIcon,
-      restIcon,
-      swaggerIcon
-    };
-
-
-    return (
-      <ToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
-        <Select
-          aria-label="Products"
-          role="menu"
-          toggle={(toggleRef) => (
-            <MenuToggle ref={toggleRef} onClick={this.onToolbarDropdownToggle} isExpanded={isLowerToolbarDropdownOpen}>
-              My Project
-              {filters.products.length > 0 && <Badge isRead>{filters.products.length}</Badge>}
-            </MenuToggle>
-          )}
-          onSelect={this.onNameSelect}
-          onOpenChange={(isOpen) => {
-            this.setState(() => ({
-              isLowerToolbarDropdownOpen: isOpen
-            }));
-          }}
-          selected={filters.products}
-          isOpen={isLowerToolbarDropdownOpen}
-        >
-          {filterDropdownItems}
-        </Select>
-      </ToolbarFilter>
-    );
-  }
-
-  render() {
-    const {
-      isLowerToolbarKebabDropdownOpen,
-
-      page
-    } = this.state;
-
-    const toolbarKebabDropdownItems = [];
+    const { isLowerToolbarKebabDropdownOpen, page } = this.state;
 
     const toolbarItems = (
       <React.Fragment>
@@ -1044,7 +827,7 @@ class DataListViewBasic extends React.Component {
                 )}
                 isOpen={isLowerToolbarKebabDropdownOpen}
               >
-                <DropdownList>{toolbarKebabDropdownItems}</DropdownList>
+                <MenuToggle></MenuToggle> {/*Stand in for a functioning select/dropdown*/}
               </Dropdown>
             </OverflowMenuControl>
           </OverflowMenu>
@@ -1061,7 +844,7 @@ class DataListViewBasic extends React.Component {
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Projects</Text>
-              <Text component="p">This is a demo that showcases PatternFly DataList.</Text>
+              <Text component="p">This is a demo that showcases PatternFly DataList</Text>
             </TextContent>
           </PageSection>
           <PageSection isFilled>
@@ -1305,17 +1088,6 @@ class DataListViewBasic extends React.Component {
                 </DataListItemRow>
               </DataListItem>
             </DataList>
-          </PageSection>
-          <PageSection isFilled={false} sticky="bottom" padding={{ default: 'noPadding' }} variant="light">
-            <Pagination
-              itemCount={this.state.totalItemCount}
-              page={page}
-              page={this.state.page}
-              perPage={this.state.perPage}
-              onPerPageSelect={this.onPerPageSelect}
-              onSetPage={this.onSetPage}
-              variant="bottom"
-            />
           </PageSection>
         </DashboardWrapper>
       </React.Fragment>
