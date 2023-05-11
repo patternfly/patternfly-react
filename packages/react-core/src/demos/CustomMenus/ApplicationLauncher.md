@@ -3,6 +3,19 @@ id: Application launcher
 section: components
 subsection: menus
 source: react-demos
+propComponents:
+  [
+    'MenuToggle',
+    'MenuSearch',
+    'MenuSearchInput',
+    'Tooltip',
+    'Divider',
+    'SearchInput',
+    'Dropdown',
+    'DropdownGroup',
+    'DropdownList',
+    'DropdownItem'
+  ]
 ---
 
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';

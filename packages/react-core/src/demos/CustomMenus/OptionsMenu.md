@@ -3,6 +3,7 @@ id: Options menu
 section: components
 subsection: menus
 source: react-demos
+propComponents: ['MenuToggle', 'Divider', 'Select', 'SelectList', 'SelectOption', 'SelectGroup']
 ---
 
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';

@@ -3,6 +3,20 @@ id: Context selector
 section: components
 subsection: menus
 source: react-demos
+propComponents:
+  [
+    'MenuToggle',
+    'MenuFooter',
+    'MenuSearch',
+    'MenuSearchInput',
+    'Divider',
+    'InputGroup',
+    'SearchInput',
+    'Dropdown',
+    'DropdownGroup',
+    'DropdownList',
+    'DropdownItem'
+  ]
 ---
 
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
