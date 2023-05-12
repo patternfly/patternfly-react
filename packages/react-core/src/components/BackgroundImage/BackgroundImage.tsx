@@ -19,9 +19,9 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
   <div
     className={css(styles.backgroundImage, className)}
     /* eslint-disable camelcase */
-    // style={{
-    //   [c_background_image_BackgroundImage.name as string]: `url(${src})`
-    // }}
+    style={{
+      //[c_background_image_BackgroundImage.name as string]: `url(${src})`
+    }}
     /* eslint-enable camelcase */
     {...props}
   ></div>
