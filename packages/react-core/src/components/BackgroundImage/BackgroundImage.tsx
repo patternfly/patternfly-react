@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/BackgroundImage/background-image';
 // eslint-disable-next-line camelcase
-import c_background_image_BackgroundImage from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage';
+// import c_background_image_BackgroundImage from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage';
 
 export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElement>, 'src'> {
   /** Additional classes added to the background image. */
@@ -19,9 +19,9 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
   <div
     className={css(styles.backgroundImage, className)}
     /* eslint-disable camelcase */
-    style={{
-      [c_background_image_BackgroundImage.name as string]: `url(${src})`
-    }}
+    // style={{
+    //   [c_background_image_BackgroundImage.name as string]: `url(${src})`
+    // }}
     /* eslint-enable camelcase */
     {...props}
   ></div>

@@ -103,7 +103,7 @@ exports[`Masthead verify insetMd inset breakpoints 1`] = `
 exports[`Masthead verify insetNone inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-v5-c-masthead pf-m-display-inline-on-md"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-none pf-m-inset-none-on-sm pf-m-inset-none-on-md pf-m-inset-none-on-lg pf-m-inset-none-on-xl pf-m-inset-none-on-2xl"
   >
     test
   </header>

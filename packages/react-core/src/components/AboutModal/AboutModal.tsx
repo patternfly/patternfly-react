@@ -8,7 +8,7 @@ import { AboutModalBox } from './AboutModalBox';
 import { Modal, ModalVariant } from '../Modal';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 // eslint-disable-next-line camelcase
-import c_about_modal_box_BackgroundImage from '@patternfly/react-tokens/dist/esm/c_about_modal_box_BackgroundImage';
+// import c_about_modal_box_BackgroundImage from '@patternfly/react-tokens/dist/esm/c_about_modal_box_BackgroundImage';
 
 export interface AboutModalProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the about modal */
@@ -89,13 +89,13 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
           hasNoBodyWrapper
         >
           <AboutModalBox
-            style={
-              /* eslint-disable camelcase */
-              backgroundImageSrc
-                ? { [c_about_modal_box_BackgroundImage.name as string]: `url(${backgroundImageSrc})` }
-                : {}
-              /* eslint-enable camelcase */
-            }
+            // style={
+            //   /* eslint-disable camelcase */
+            //   backgroundImageSrc
+            //     ? { [c_about_modal_box_BackgroundImage.name as string]: `url(${backgroundImageSrc})` }
+            //     : {}
+            //   /* eslint-enable camelcase */
+            // }
             className={css(className)}
           >
             <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
