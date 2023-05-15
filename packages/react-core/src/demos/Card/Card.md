@@ -19,6 +19,7 @@ import swaggerIcon from './camel-swagger-java_200x150.png';
 import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import { data } from './CardData.jsx';
 
 ## Demos
 
@@ -84,6 +85,7 @@ import sparkIcon from './camel-spark_200x150.png';
 import swaggerIcon from './camel-swagger-java_200x150.png';
 import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
+import { data } from './CardData.jsx';
 
 class CardViewBasic extends React.Component {
   constructor(props) {
@@ -93,7 +95,7 @@ class CardViewBasic extends React.Component {
       filters: {
         products: []
       },
-      res: [],
+      cardData: data,
       isChecked: false,
       selectedItems: [],
       areAllSelected: false,
@@ -134,7 +136,8 @@ class CardViewBasic extends React.Component {
       });
     };
 
-    this.onCardKebabDropdownToggle = (key) => {
+    this.onCardKebabDropdownToggle = (key, event) => {
+      event?.stopPropagation();
       this.setState((prevState) => ({
         [key]: !prevState[key]
       }));
@@ -149,7 +152,7 @@ class CardViewBasic extends React.Component {
     this.deleteItem = (item) => (event) => {
       const filter = (getter) => (val) => getter(val) !== item.id;
       this.setState({
-        res: this.state.res.filter(filter(({ id }) => id)),
+        cardData: this.state.cardData.filter(filter(({ id }) => id)),
         selectedItems: this.state.selectedItems.filter(filter((id) => id))
       });
     };
@@ -162,7 +165,8 @@ class CardViewBasic extends React.Component {
 
     this.onPerPageSelect = (_event, perPage) => {
       this.setState({
-        perPage
+        perPage,
+        page: 1
       });
     };
 
@@ -264,7 +268,7 @@ class CardViewBasic extends React.Component {
 
   splitCheckboxSelectAll(e) {
     const { checked } = e.target;
-    const { isChecked, res } = this.state;
+    const { isChecked, cardData } = this.state;
     let collection = [];
 
     if (checked) {
@@ -329,9 +333,9 @@ class CardViewBasic extends React.Component {
   }
 
   getAllItems() {
-    const { res } = this.state;
+    const { cardData } = this.state;
     const collection = [];
-    for (const items of res) {
+    for (const items of cardData) {
       collection.push(items.id);
     }
 
@@ -339,31 +343,19 @@ class CardViewBasic extends React.Component {
   }
 
   updateSelected() {
-    const { res, selectedItems } = this.state;
-    let rows = res.map((post) => {
+    const { cardData, selectedItems } = this.state;
+    let rows = cardData.map((post) => {
       post.selected = selectedItems.includes(post.id);
       return post;
     });
 
     this.setState({
-      res: rows
+      cardData: rows
     });
   }
 
-  fetch(page, perPage) {
-    fetch(`https://my-json-server.typicode.com/jenny-s51/cardviewdata/posts?_page=${page}&_limit=${perPage}`)
-      .then((resp) => resp.json())
-      .then((resp) => this.setState({ res: resp, perPage, page }))
-      .then(() => this.updateSelected())
-      .catch((err) => this.setState({ error: err }));
-  }
-
-  componentDidMount() {
-    this.fetch(this.state.page, this.state.perPage);
-  }
-
   renderPagination() {
-    const { page, perPage, totalItemCount } = this.state;
+    const { page, perPage, totalItemCount, cardData } = this.state;
 
     const defaultPerPageOptions = [
       {
@@ -386,12 +378,8 @@ class CardViewBasic extends React.Component {
         page={page}
         perPage={perPage}
         perPageOptions={defaultPerPageOptions}
-        onSetPage={(_evt, value) => {
-          this.fetch(value, perPage);
-        }}
-        onPerPageSelect={(_evt, value) => {
-          this.fetch(1, value);
-        }}
+        onSetPage={this.onSetPage}
+        onPerPageSelect={this.onPerPageSelect}
         variant="top"
         isCompact
       />
@@ -399,7 +387,7 @@ class CardViewBasic extends React.Component {
   }
 
   buildSelectDropdown() {
-    const { splitButtonDropdownIsOpen, selectedItems, areAllSelected } = this.state;
+    const { splitButtonDropdownIsOpen, selectedItems, areAllSelected, filters, cardData } = this.state;
     const numSelected = selectedItems.length;
     const allSelected = areAllSelected;
     const anySelected = numSelected > 0;
@@ -508,7 +496,7 @@ class CardViewBasic extends React.Component {
       splitButtonDropdownIsOpen,
       activeItem,
       filters,
-      res,
+      cardData,
       checked,
       selectedItems,
       areAllSelected,
@@ -576,13 +564,6 @@ class CardViewBasic extends React.Component {
       </React.Fragment>
     );
 
-    const filtered =
-      filters.products.length > 0
-        ? res.filter((card) => {
-            return filters.products.length === 0 || filters.products.includes(card.name);
-          })
-        : res;
-
     const icons = {
       pfIcon,
       activeMQIcon,
@@ -595,6 +576,13 @@ class CardViewBasic extends React.Component {
       restIcon,
       swaggerIcon
     };
+    
+    const filtered =
+      filters.products.length > 0
+        ? data.filter((card) => {
+            return filters.products.length === 0 || filters.products.includes(card.name);
+          })
+        : cardData.slice((page - 1) * perPage, perPage === 1 ? page * perPage : page * perPage - 1);
 
     return (
       <React.Fragment>
@@ -630,6 +618,7 @@ class CardViewBasic extends React.Component {
                 <Card
                   hasSelectableInput
                   isCompact
+                  isSelectableRaised
                   key={product.name}
                   id={product.name.replace(/ /g, '-')}
                   onKeyDown={(e) => this.onKeyDown(e, product.id)}
@@ -642,14 +631,14 @@ class CardViewBasic extends React.Component {
                       actions: (
                         <>
                           <Dropdown
-                            isOpen={this.state[key]}
+                            isOpen={this.state[key] ?? false}
                             onOpenChange={(isOpen) => this.setState({ [key]: isOpen })}
-                            toggle={(toggleRef) => (
+                            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
                               <MenuToggle
                                 ref={toggleRef}
                                 aria-label={`${product.name} actions`}
                                 variant="plain"
-                                onClick={() => this.onCardKebabDropdownToggle(key)}
+                                onClick={(e) => this.onCardKebabDropdownToggle(key, e)}
                                 isExpanded={this.state[key]}
                               >
                                 <EllipsisVIcon />
