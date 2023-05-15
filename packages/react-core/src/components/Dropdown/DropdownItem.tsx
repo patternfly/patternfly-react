@@ -56,7 +56,7 @@ const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({
   );
 };
 
-export const DropdownItem = React.forwardRef((props: DropdownItemProps, ref: React.Ref<HTMLButtonElement>) => (
+export const DropdownItem = React.forwardRef((props: DropdownItemProps, ref: React.Ref<HTMLAnchorElement | HTMLButtonElement>) => (
   <DropdownItemBase {...props} innerRef={ref} />
 ));
 
