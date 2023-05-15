@@ -181,6 +181,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [refElement, setRefElement] = React.useState<HTMLElement>(null);
   const [popperElement, setPopperElement] = React.useState<HTMLElement>(null);
+  const [popperContent, setPopperContent] = React.useState(null);
   const [ready, setReady] = React.useState(false);
   const refOrTrigger = refElement || triggerElement;
   const onDocumentClickCallback = React.useCallback(
@@ -210,6 +211,18 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       }
     }
   }, [isVisible, popperRef]);
+  React.useEffect(() => {
+    // Trigger a Popper update when content changes.
+    const observer = new MutationObserver(() => {
+      update && update();
+    });
+    popperElement && observer.observe(popperElement, { attributes: true, childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [popperElement]);
+
   const addEventListener = (listener: any, element: Document | HTMLElement, event: string, capture = false) => {
     if (listener && element) {
       element.addEventListener(event, listener, { capture });
@@ -234,12 +247,6 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click', true);
     addEventListener(onDocumentKeyDown, document, 'keydown', true);
 
-    // Trigger a Popper update when content changes.
-    const observer = new MutationObserver(() => {
-      update && update();
-    });
-    popperElement && observer.observe(popperElement, { attributes: true, childList: true, subtree: true });
-
     return () => {
       removeEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
       removeEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
@@ -252,7 +259,6 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       removeEventListener(onPopperMouseLeave, popperElement, 'mouseleave');
       onDocumentClick && removeEventListener(onDocumentClickCallback, document, 'click', true);
       removeEventListener(onDocumentKeyDown, document, 'keydown', true);
-      observer.disconnect();
     };
   }, [
     triggerElement,
@@ -359,8 +365,16 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     ]
   });
 
+  /** We want to forceUpdate only when a tooltip's content is dynamically updated.
+   * TODO: Investigate into 3rd party libraries for a less limited/specific solution
+   */
   React.useEffect(() => {
-    forceUpdate && forceUpdate();
+    const currentPopperContent = popper?.props?.children[1]?.props?.children;
+    setPopperContent(currentPopperContent);
+
+    if (currentPopperContent && popperContent && currentPopperContent !== popperContent) {
+      forceUpdate && forceUpdate();
+    }
   }, [popper]);
 
   // Returns the CSS modifier class in order to place the Popper's arrow properly
