@@ -8,7 +8,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 
 export interface CustomActionsToggleProps {
-  onToggle: (event: React.MouseEvent) => void;
+  onToggle: (event: React.MouseEvent | React.KeyboardEvent) => void;
   isOpen: boolean;
   isDisabled: boolean;
   toggleRef: React.Ref<any>;
@@ -28,6 +28,8 @@ export interface ActionsColumnProps extends Omit<React.HTMLProps<HTMLElement>, '
   popperProps?: any;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Ref to forward to the first item in the popup menu */
+  firstActionItemRef?: React.Ref<HTMLButtonElement>;
 }
 
 const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
@@ -40,6 +42,8 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
     position: 'right',
     direction: 'down'
   },
+  innerRef,
+  firstActionItemRef,
   ...props
 }: ActionsColumnProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -103,15 +107,16 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
           )
         }
         {...(rowData && rowData.actionProps)}
+        ref={innerRef}
         {...props}
         popperProps={popperProps}
       >
         <DropdownList>
           {items
             .filter((item) => !item.isOutsideDropdown)
-            .map(({ title, itemKey, onClick, tooltip, tooltipProps, isSeparator, ...props }, key) => {
+            .map(({ title, itemKey, onClick, tooltip, tooltipProps, isSeparator, ...props }, index) => {
               if (isSeparator) {
-                return <Divider key={itemKey || key} data-key={itemKey || key} />;
+                return <Divider key={itemKey || index} data-key={itemKey || index} />;
               }
               const item = (
                 <DropdownItem
@@ -120,8 +125,9 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
                     onToggle();
                   }}
                   {...props}
-                  key={itemKey || key}
-                  data-key={itemKey || key}
+                  key={itemKey || index}
+                  data-key={itemKey || index}
+                  ref={index === 0 ? firstActionItemRef : undefined}
                 >
                   {title}
                 </DropdownItem>
@@ -129,7 +135,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
 
               if (tooltip) {
                 return (
-                  <Tooltip key={itemKey || key} content={tooltip} {...tooltipProps}>
+                  <Tooltip key={itemKey || index} content={tooltip} {...tooltipProps}>
                     {item}
                   </Tooltip>
                 );
