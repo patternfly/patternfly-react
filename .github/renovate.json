@@ -34,8 +34,7 @@
         "rollup-plugin-terser",
         "shx",
         "surge",
-        "ts-patch",
-        "shx"
+        "ts-patch"
       ],
       "enabled": false
     },
