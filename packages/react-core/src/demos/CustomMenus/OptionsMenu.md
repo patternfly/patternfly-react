@@ -8,7 +8,7 @@ propComponents: ['MenuToggle', 'Divider', 'Select', 'SelectList', 'SelectOption'
 
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
-As the `OptionsMenu` component is now deprecated, an options menu may now be built using the new suite of `Menu` components. This is showcased below in the example using the new `Select` component built off of `Menu`.
+As the `<OptionsMenu>` component is now deprecated, an options menu may now be built using the new suite of menu components. This is showcased in the following example, which uses the new select component that is built off of menu.
 
 ### Options menu
 
