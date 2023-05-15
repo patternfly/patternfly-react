@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { DropEvent, DropzoneInputProps, DropzoneOptions, FileRejection, useDropzone } from 'react-dropzone';
+import { DropzoneInputProps, DropzoneOptions, FileRejection, useDropzone } from 'react-dropzone';
 import { FileUploadField, FileUploadFieldProps } from './FileUploadField';
 import { readFile, fileReaderType } from '../../helpers/fileUtils';
+import { DropEvent } from '../../helpers/typeUtils';
 import { fromEvent } from 'file-selector';
 
 export interface FileUploadProps

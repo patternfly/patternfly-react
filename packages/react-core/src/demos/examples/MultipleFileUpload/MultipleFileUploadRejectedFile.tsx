@@ -6,9 +6,9 @@ import {
   MultipleFileUploadStatus,
   MultipleFileUploadStatusItem,
   Modal,
-  Checkbox
+  Checkbox,
+  DropEvent
 } from '@patternfly/react-core';
-import { DropEvent } from 'react-dropzone';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
 interface readFile {

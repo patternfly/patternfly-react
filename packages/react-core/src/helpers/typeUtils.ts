@@ -14,3 +14,5 @@ export type PickOptional<T> = Pick<T, OptionalKeys<T>>;
 // Picks all the optional keys from interface/type T and makes them required
 // so that they cannot be accidentally omitted when providing default values
 export type PickAndRequireOptional<T> = Required<Pick<T, OptionalKeys<T>>>;
+
+export type DropEvent = React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event;

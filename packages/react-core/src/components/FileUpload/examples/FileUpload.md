@@ -71,3 +71,7 @@ Note that the `isLoading` prop is styled to position the spinner dead center abo
 
 ```ts file="./FileUploadCustomUpload.tsx"
 ```
+
+## Types
+
+File upload uses the `DropzoneOptions` type from react-dropzone. It is comprised of additional props with their own types. For more information on using `DropzoneOptions` visit [react-dropzone props and methods](https://react-dropzone.js.org/#src).
