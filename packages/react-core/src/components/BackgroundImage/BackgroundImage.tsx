@@ -13,14 +13,14 @@ export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElemen
 
 export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
   className,
-  src,
+  // src,
   ...props
 }: BackgroundImageProps) => (
   <div
     className={css(styles.backgroundImage, className)}
     /* eslint-disable camelcase */
     style={{
-      //[c_background_image_BackgroundImage.name as string]: `url(${src})`
+      // [c_background_image_BackgroundImage.name as string]: `url(${src})`
     }}
     /* eslint-enable camelcase */
     {...props}

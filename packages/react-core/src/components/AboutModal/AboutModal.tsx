@@ -48,7 +48,7 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
   onClose = (_e): any => undefined,
   productName,
   trademark,
-  backgroundImageSrc,
+  // backgroundImageSrc,
   brandImageSrc,
   brandImageAlt,
   hasNoContentContainer = false,
@@ -89,13 +89,13 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
           hasNoBodyWrapper
         >
           <AboutModalBox
-            style={
+            // style={
               /* eslint-disable camelcase */
-              backgroundImageSrc
-                ? {} //{ [c_about_modal_box_BackgroundImage.name as string]: `url(${backgroundImageSrc})` }
-                : {}
+              // backgroundImageSrc
+              //   ? { [c_about_modal_box_BackgroundImage.name as string]: `url(${backgroundImageSrc})` }
+              //   : {}
               /* eslint-enable camelcase */
-            }
+            // }
             className={css(className)}
           >
             <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
