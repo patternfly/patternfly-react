@@ -21,7 +21,7 @@ exports[`With popover opened 1`] = `
           data-ouia-safe="true"
           placeholder="YYYY-MM-DD"
           type="text"
-          value=""
+          value="2020-03-18"
         />
         <button
           aria-label="Toggle date picker"
@@ -113,7 +113,7 @@ exports[`With popover opened 1`] = `
                       <span
                         class="pf-v5-c-menu-toggle__text"
                       >
-                        December
+                        March
                       </span>
                       <span
                         class="pf-v5-c-menu-toggle__controls"
@@ -148,7 +148,7 @@ exports[`With popover opened 1`] = `
                     data-ouia-component-type="PF4/TextInput"
                     data-ouia-safe="true"
                     type="number"
-                    value="1969"
+                    value="2020"
                   />
                 </div>
               </div>
@@ -297,22 +297,10 @@ exports[`With popover opened 1`] = `
                   class="pf-v5-c-calendar-month__dates-row"
                 >
                   <td
-                    class="pf-v5-c-calendar-month__dates-cell pf-m-adjacent-month"
-                  >
-                    <button
-                      aria-label="30 November 1969"
-                      class="pf-v5-c-calendar-month__date"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      30
-                    </button>
-                  </td>
-                  <td
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="1 December 1969"
+                      aria-label="1 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -324,7 +312,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="2 December 1969"
+                      aria-label="2 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -336,7 +324,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="3 December 1969"
+                      aria-label="3 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -348,7 +336,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="4 December 1969"
+                      aria-label="4 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -360,7 +348,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="5 December 1969"
+                      aria-label="5 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -372,12 +360,24 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="6 December 1969"
+                      aria-label="6 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
                       6
+                    </button>
+                  </td>
+                  <td
+                    class="pf-v5-c-calendar-month__dates-cell"
+                  >
+                    <button
+                      aria-label="7 March 2020"
+                      class="pf-v5-c-calendar-month__date"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      7
                     </button>
                   </td>
                 </tr>
@@ -388,19 +388,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="7 December 1969"
-                      class="pf-v5-c-calendar-month__date"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      7
-                    </button>
-                  </td>
-                  <td
-                    class="pf-v5-c-calendar-month__dates-cell"
-                  >
-                    <button
-                      aria-label="8 December 1969"
+                      aria-label="8 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -412,7 +400,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="9 December 1969"
+                      aria-label="9 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -424,7 +412,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="10 December 1969"
+                      aria-label="10 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -436,7 +424,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="11 December 1969"
+                      aria-label="11 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -448,7 +436,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="12 December 1969"
+                      aria-label="12 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -460,12 +448,24 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="13 December 1969"
+                      aria-label="13 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
                       13
+                    </button>
+                  </td>
+                  <td
+                    class="pf-v5-c-calendar-month__dates-cell"
+                  >
+                    <button
+                      aria-label="14 March 2020"
+                      class="pf-v5-c-calendar-month__date"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      14
                     </button>
                   </td>
                 </tr>
@@ -476,19 +476,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="14 December 1969"
-                      class="pf-v5-c-calendar-month__date"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      14
-                    </button>
-                  </td>
-                  <td
-                    class="pf-v5-c-calendar-month__dates-cell"
-                  >
-                    <button
-                      aria-label="15 December 1969"
+                      aria-label="15 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -500,7 +488,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="16 December 1969"
+                      aria-label="16 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -512,7 +500,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="17 December 1969"
+                      aria-label="17 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -521,12 +509,12 @@ exports[`With popover opened 1`] = `
                     </button>
                   </td>
                   <td
-                    class="pf-v5-c-calendar-month__dates-cell"
+                    class="pf-v5-c-calendar-month__dates-cell pf-m-selected"
                   >
                     <button
-                      aria-label="18 December 1969"
+                      aria-label="18 March 2020"
                       class="pf-v5-c-calendar-month__date"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       18
@@ -536,7 +524,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="19 December 1969"
+                      aria-label="19 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -548,12 +536,24 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="20 December 1969"
+                      aria-label="20 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
                       20
+                    </button>
+                  </td>
+                  <td
+                    class="pf-v5-c-calendar-month__dates-cell"
+                  >
+                    <button
+                      aria-label="21 March 2020"
+                      class="pf-v5-c-calendar-month__date"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      21
                     </button>
                   </td>
                 </tr>
@@ -564,19 +564,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="21 December 1969"
-                      class="pf-v5-c-calendar-month__date"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      21
-                    </button>
-                  </td>
-                  <td
-                    class="pf-v5-c-calendar-month__dates-cell"
-                  >
-                    <button
-                      aria-label="22 December 1969"
+                      aria-label="22 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -588,7 +576,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="23 December 1969"
+                      aria-label="23 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -600,7 +588,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="24 December 1969"
+                      aria-label="24 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -612,7 +600,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="25 December 1969"
+                      aria-label="25 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -624,7 +612,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="26 December 1969"
+                      aria-label="26 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -636,12 +624,24 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="27 December 1969"
+                      aria-label="27 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
                       27
+                    </button>
+                  </td>
+                  <td
+                    class="pf-v5-c-calendar-month__dates-cell"
+                  >
+                    <button
+                      aria-label="28 March 2020"
+                      class="pf-v5-c-calendar-month__date"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      28
                     </button>
                   </td>
                 </tr>
@@ -652,19 +652,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="28 December 1969"
-                      class="pf-v5-c-calendar-month__date"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      28
-                    </button>
-                  </td>
-                  <td
-                    class="pf-v5-c-calendar-month__dates-cell"
-                  >
-                    <button
-                      aria-label="29 December 1969"
+                      aria-label="29 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -676,7 +664,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="30 December 1969"
+                      aria-label="30 March 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -688,9 +676,9 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell"
                   >
                     <button
-                      aria-label="31 December 1969"
+                      aria-label="31 March 2020"
                       class="pf-v5-c-calendar-month__date"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       31
@@ -700,7 +688,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell pf-m-adjacent-month"
                   >
                     <button
-                      aria-label="1 January 1970"
+                      aria-label="1 April 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -712,7 +700,7 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell pf-m-adjacent-month"
                   >
                     <button
-                      aria-label="2 January 1970"
+                      aria-label="2 April 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
@@ -724,12 +712,24 @@ exports[`With popover opened 1`] = `
                     class="pf-v5-c-calendar-month__dates-cell pf-m-adjacent-month"
                   >
                     <button
-                      aria-label="3 January 1970"
+                      aria-label="3 April 2020"
                       class="pf-v5-c-calendar-month__date"
                       tabindex="-1"
                       type="button"
                     >
                       3
+                    </button>
+                  </td>
+                  <td
+                    class="pf-v5-c-calendar-month__dates-cell pf-m-adjacent-month"
+                  >
+                    <button
+                      aria-label="4 April 2020"
+                      class="pf-v5-c-calendar-month__date"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      4
                     </button>
                   </td>
                 </tr>
