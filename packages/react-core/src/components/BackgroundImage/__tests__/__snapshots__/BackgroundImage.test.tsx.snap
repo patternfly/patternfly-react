@@ -4,7 +4,7 @@ exports[`BackgroundImage 1`] = `
 <DocumentFragment>
   <div
     class="pf-v5-c-background-image"
-    style="--pf-v5-c-background-image--BackgroundImage: url([object Object]);"
+    src="[object Object]"
   />
 </DocumentFragment>
 `;
@@ -13,7 +13,7 @@ exports[`allows passing in a single string as the image src 1`] = `
 <DocumentFragment>
   <div
     class="pf-v5-c-background-image"
-    style="--pf-v5-c-background-image--BackgroundImage: url(/assets/images/pfbg_1200.jpg);"
+    src="/assets/images/pfbg_1200.jpg"
   />
 </DocumentFragment>
 `;

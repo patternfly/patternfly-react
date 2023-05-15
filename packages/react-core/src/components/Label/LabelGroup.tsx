@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/LabelGroup/label-group';
+import styles from '@patternfly/react-styles/css/components/Label/label-group';
 import labelStyles from '@patternfly/react-styles/css/components/Label/label';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';

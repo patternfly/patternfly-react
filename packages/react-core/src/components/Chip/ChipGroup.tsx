@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/ChipGroup/chip-group';
+import styles from '@patternfly/react-styles/css/components/Chip/chip-group';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import { Chip } from './Chip';
