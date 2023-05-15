@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.101](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.100...@patternfly/react-table@5.0.0-alpha.101) (2023-05-15)
+
+### Bug Fixes
+
+- **Tabs:** fixed keyboard use and positioning of TabsAndTable dropdowns ([#9093](https://github.com/patternfly/patternfly-react/issues/9093)) ([7ea3a28](https://github.com/patternfly/patternfly-react/commit/7ea3a28f044717d15960b5b6adb6608bf93be76e))
+
 # [5.0.0-alpha.100](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.99...@patternfly/react-table@5.0.0-alpha.100) (2023-05-11)
 
 **Note:** Version bump only for package @patternfly/react-table
