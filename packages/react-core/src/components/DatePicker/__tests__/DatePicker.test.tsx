@@ -54,7 +54,7 @@ test('Error state can be cleared from outside', async () => {
 test('With popover opened', async () => {
   const user = userEvent.setup();
 
-  const { asFragment } = render(<DatePicker value="2020-03-18" />);
+  const { asFragment } = render(<DatePicker />);
 
   await user.click(screen.getByRole('button', { name: 'Toggle date picker' }));
   await screen.findByRole('button', { name: 'Previous month' });
