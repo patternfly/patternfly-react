@@ -119,10 +119,10 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           className: 'pf-m-standalone',
           inputClassName: isClickable && !isSelectable && 'pf-v5-screen-reader',
           label: <></>,
-          'aria-label': selectableActions?.selectableActionAriaLabel,
-          'aria-labelledby': selectableActions?.selectableActionAriaLabelledby,
-          id: selectableActions?.selectableActionId,
-          name: selectableActions?.name,
+          'aria-label': selectableActions.selectableActionAriaLabel,
+          'aria-labelledby': selectableActions.selectableActionAriaLabelledby,
+          id: selectableActions.selectableActionId,
+          name: selectableActions.name,
           isDisabled: isCardDisabled
         };
 
@@ -130,18 +130,11 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           return { ...baseProps, onClick: handleActionClick };
         }
         if (isSelectable) {
-          return { ...baseProps, onChange: selectableActions?.onChange, isChecked: selectableActions?.isChecked };
+          return { ...baseProps, onChange: selectableActions.onChange, isChecked: selectableActions.isChecked };
         }
 
         return baseProps;
       };
-
-      const selectableInput =
-        selectableActions?.variant === 'single' || (isClickable && !isSelectable) ? (
-          <Radio {...getClickableSelectableProps()} />
-        ) : (
-          <Checkbox {...getClickableSelectableProps()} />
-        );
 
       return (
         <div
@@ -150,7 +143,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           {...props}
         >
           {onExpand && !isToggleRightAligned && cardHeaderToggle}
-          {(actions || selectableActions) && (
+          {(actions || (selectableActions && (isClickable || isSelectable))) && (
             <CardActions
               className={actions?.className}
               hasNoOffset={actions?.hasNoOffset || selectableActions?.hasNoOffset}
@@ -158,7 +151,11 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
               {actions?.actions}
               {selectableActions && (isClickable || isSelectable) && (
                 <CardSelectableActions className={selectableActions?.className}>
-                  {selectableInput}
+                  {selectableActions?.variant === 'single' || (isClickable && !isSelectable) ? (
+                    <Radio {...getClickableSelectableProps()} />
+                  ) : (
+                    <Checkbox {...getClickableSelectableProps()} />
+                  )}
                 </CardSelectableActions>
               )}
             </CardActions>

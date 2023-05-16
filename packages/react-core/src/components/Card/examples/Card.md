@@ -145,17 +145,17 @@ When passing interactive content to a clickable and selectable card that is disa
 
 ```
 
-### Legacy selectable cards
+### Selectable cards (deprecated)
 
-The following example shows a legacy implementation of selectable cards. This example uses the `isSelectable` property instead of `isSelectableRaised`, which is the current recommendation for implementation. `isSelectable` applies selectable styling, but does not apply raised styling on hover and selection as `isSelectableRaised` does.
+The following example shows a deprecated implementation of selectable cards. This example uses the `isSelectable` property instead of `isSelectableRaised`, which is the current recommendation for implementation. `isSelectable` applies selectable styling, but does not apply raised styling on hover and selection as `isSelectableRaised` does.
 
 A `tabIndex={0}` is also manually passed to allow the card to be focused and clicked via keyboard.
 
-```ts file='./CardLegacySelectable.tsx'
+```ts file='./CardDeprecatedSelectable.tsx'
 
 ```
 
-### Legacy selectable card accessibility features
+### Selectable card accessibility features (deprecated)
 
 Note: the following example uses deprecated properties. We recommend using the new `selectableActions` property for the `CardHeader` instead.
 
@@ -171,7 +171,7 @@ The second card does not set `hasSelectableInput` to true, so neither the input 
 
 We recommend navigating this example using a screen reader to best understand both cards.
 
-```ts file='./CardLegacySelectableA11yHighlight.tsx'
+```ts file='./CardDeprecatedSelectableA11yHighlight.tsx'
 
 ```
 
