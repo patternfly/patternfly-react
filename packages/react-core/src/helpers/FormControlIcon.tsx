@@ -11,7 +11,7 @@ export const statusIcons = {
   warning: ExclamationTriangleIcon
 };
 
-export interface TextInputIconProps extends React.HTMLProps<HTMLDivElement> {
+export interface FormControlIconProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional class names added to the text input icon wrapper. */
   className?: string;
   /** A custom icon to render instead of a status icon. */
@@ -20,7 +20,7 @@ export interface TextInputIconProps extends React.HTMLProps<HTMLDivElement> {
   status?: 'success' | 'error' | 'warning';
 }
 
-export const TextInputIcon = ({ status, customIcon, className, ...props }: TextInputIconProps) => {
+export const FormControlIcon = ({ status, customIcon, className, ...props }: FormControlIconProps) => {
   const StatusIcon = status && statusIcons[status];
 
   return customIcon || StatusIcon ? (

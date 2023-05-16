@@ -5,7 +5,7 @@ import { ValidatedOptions } from '../../helpers/constants';
 import { trimLeft } from '../../helpers/util';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
 import { getResizeObserver } from '../../helpers/resizeObserver';
-import { TextInputIcon } from './TextInputIcon';
+import { FormControlIcon } from '../../helpers';
 
 export enum TextInputTypes {
   text = 'text',
@@ -220,8 +220,8 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
         />
         {(customIcon || hasStatusIcon) && (
           <div className={css(styles.formControlUtilities)}>
-            {customIcon && <TextInputIcon customIcon={customIcon} />}
-            {validated && <TextInputIcon status={validated as 'success' | 'error' | 'warning'} />}
+            {customIcon && <FormControlIcon customIcon={customIcon} />}
+            {validated && <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />}
           </div>
         )}
       </div>
