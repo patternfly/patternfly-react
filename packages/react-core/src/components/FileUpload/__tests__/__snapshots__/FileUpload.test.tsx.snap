@@ -69,14 +69,17 @@ exports[`simple fileupload 1`] = `
     <div
       class="pf-v5-c-file-upload__file-details"
     >
-      <textarea
-        aria-invalid="false"
-        aria-label="File upload"
+      <div
         class="pf-v5-c-form-control pf-m-resize-vertical"
-        id="simple-text-file"
-        name="simple-text-file"
-        placeholder=""
-      />
+      >
+        <textarea
+          aria-invalid="false"
+          aria-label="File upload"
+          id="simple-text-file"
+          name="simple-text-file"
+          placeholder=""
+        />
+      </div>
     </div>
     <input
       style="display: none;"

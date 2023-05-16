@@ -3,7 +3,7 @@ import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import heightToken from '@patternfly/react-tokens/dist/esm/c_form_control_textarea_Height';
 import { css } from '@patternfly/react-styles';
-import { capitalize, ValidatedOptions, canUseDOM } from '../../helpers';
+import { capitalize, ValidatedOptions, canUseDOM, FormControlIcon } from '../../helpers';
 
 export enum TextAreResizeOrientation {
   horizontal = 'horizontal',
@@ -23,12 +23,8 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   isRequired?: boolean;
   /** Flag to show if the text area is disabled. */
   isDisabled?: boolean;
-  /** @deprecated Use readOnlyVariant instead. Flag to show if the text area is read only. */
-  isReadOnly?: boolean;
   /** Read only variant. */
   readOnlyVariant?: 'default' | 'plain';
-  /** Use the external file instead of a data URI */
-  isIconSprite?: boolean;
   /** Flag to modify height based on contents. */
   autoResize?: boolean;
   /** Value to indicate if the text area is modified to show that validation state.
@@ -55,7 +51,6 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
     className: '',
     isRequired: false,
     isDisabled: false,
-    isIconSprite: false,
     validated: 'default',
     resizeOrientation: 'both',
     'aria-label': null as string
@@ -110,8 +105,6 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
       validated,
       isRequired,
       isDisabled,
-      isIconSprite,
-      isReadOnly,
       readOnlyVariant,
       resizeOrientation,
       innerRef,
@@ -122,27 +115,40 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
-    const orientation = `resize${capitalize(resizeOrientation)}` as 'resizeVertical' | 'resizeHorizontal';
+    const orientation = `resize${capitalize(resizeOrientation)}` as
+      | 'resizeVertical'
+      | 'resizeHorizontal'
+      | 'resizeBoth';
+    const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
+
     return (
-      <textarea
+      <div
         className={css(
           styles.formControl,
-          isIconSprite && styles.modifiers.iconSprite,
+          readOnlyVariant && styles.modifiers.readonly,
           readOnlyVariant === 'plain' && styles.modifiers.plain,
-          className,
-          resizeOrientation !== TextAreResizeOrientation.both && styles.modifiers[orientation],
-          validated === ValidatedOptions.success && styles.modifiers.success,
-          validated === ValidatedOptions.warning && styles.modifiers.warning
+          resizeOrientation && styles.modifiers[orientation],
+          isDisabled && styles.modifiers.disabled,
+          hasStatusIcon && styles.modifiers[validated as 'success' | 'warning' | 'error'],
+          className
         )}
-        onChange={this.handleChange}
-        {...(typeof this.props.defaultValue !== 'string' && { value })}
-        aria-invalid={validated === ValidatedOptions.error}
-        required={isRequired}
-        disabled={isDisabled || disabled}
-        readOnly={!!readOnlyVariant || isReadOnly}
-        ref={innerRef || this.inputRef}
-        {...props}
-      />
+      >
+        <textarea
+          onChange={this.handleChange}
+          {...(typeof this.props.defaultValue !== 'string' && { value })}
+          aria-invalid={validated === ValidatedOptions.error}
+          required={isRequired}
+          disabled={isDisabled || disabled}
+          readOnly={!!readOnlyVariant}
+          ref={innerRef || this.inputRef}
+          {...props}
+        />
+        {hasStatusIcon && (
+          <div className={css(styles.formControlUtilities)}>
+            <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />
+          </div>
+        )}
+      </div>
     );
   }
 }

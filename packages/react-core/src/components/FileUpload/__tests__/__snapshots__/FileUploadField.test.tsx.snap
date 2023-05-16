@@ -67,14 +67,17 @@ exports[`simple fileuploadfield 1`] = `
     <div
       class="pf-v5-c-file-upload__file-details"
     >
-      <textarea
-        aria-invalid="false"
-        aria-label="File upload"
+      <div
         class="pf-v5-c-form-control pf-m-resize-vertical"
-        id="custom-file-upload"
-        name="custom-file-upload"
-        placeholder=""
-      />
+      >
+        <textarea
+          aria-invalid="false"
+          aria-label="File upload"
+          id="custom-file-upload"
+          name="custom-file-upload"
+          placeholder=""
+        />
+      </div>
     </div>
     <p>
       A custom preview of the uploaded file can be passed as children

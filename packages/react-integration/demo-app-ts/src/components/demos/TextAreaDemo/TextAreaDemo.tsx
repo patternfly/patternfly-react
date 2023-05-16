@@ -129,7 +129,12 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
         <TextArea id="textarea6-b" value={'isDisabled text area'} aria-label="text area example 6 b" isDisabled />
         <Text>Read only text area </Text>
         <TextArea id="textarea7-a" value={'readOnly text area'} aria-label="text area example 7 a" readOnly />
-        <TextArea id="textarea7-b" value={'isReadOnly text area'} aria-label="text area example 7 b" isReadOnly />
+        <TextArea
+          id="textarea7-b"
+          value={'isReadOnly text area'}
+          aria-label="text area example 7 b"
+          readOnlyVariant="default"
+        />
         <TextArea id="autoResize" aria-label="resizable text area example" autoResize />
       </React.Fragment>
     );
