@@ -14,21 +14,24 @@ exports[`simple fileuploadfield 1`] = `
         <div
           class="pf-v5-c-input-group__item pf-m-fill"
         >
-          <input
-            aria-describedby="custom-file-upload-browse-button"
-            aria-invalid="false"
-            aria-label="Do something custom with this!"
-            class="pf-v5-c-form-control"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-            data-ouia-component-type="PF4/TextInput"
-            data-ouia-safe="true"
-            id="custom-file-upload-filename"
-            name="custom-file-upload-filename"
-            placeholder="Do something custom with this!"
-            readonly=""
-            type="text"
-            value=""
-          />
+          <div
+            class="pf-v5-c-form-control pf-m-readonly pf-m-plain pf-m-placeholder"
+          >
+            <input
+              aria-describedby="custom-file-upload-browse-button"
+              aria-invalid="false"
+              aria-label="Do something custom with this!"
+              data-ouia-component-id="OUIA-Generated-TextInputBase-1"
+              data-ouia-component-type="PF4/TextInput"
+              data-ouia-safe="true"
+              id="custom-file-upload-filename"
+              name="custom-file-upload-filename"
+              placeholder="Do something custom with this!"
+              readonly=""
+              type="text"
+              value=""
+            />
+          </div>
         </div>
         <div
           class="pf-v5-c-input-group__item"

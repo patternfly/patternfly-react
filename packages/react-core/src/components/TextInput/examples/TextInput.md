@@ -6,46 +6,55 @@ cssPrefix: pf-c-form-control
 propComponents: ['TextInput']
 ---
 
+import CalendarIcon from '@patternfly/react-icons/dist/esm/icons/calendar-icon';
+import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
+
 ## Examples
 
 ### Basic
 
 ```ts file="./TextInputBasic.tsx"
+
 ```
 
 ### Disabled
 
 ```ts file="./TextInputDisabled.tsx"
+
 ```
 
 ### Truncated on Left
 
 ```ts file="./TextInputLeftTruncated.tsx"
+
 ```
 
 ### Read only
 
 ```ts file="./TextInputReadOnly.tsx"
+
 ```
 
 ### Invalid
 
 ```ts file="./TextInputInvalid.tsx"
+
 ```
 
 ### Select text using ref
 
 ```ts file="./TextInputSelectUsingRef.tsx"
+
 ```
 
-### Icon variants
+### Custom icon
 
-```ts file="./TextInputIcon.tsx"
+```ts file="./TextInputCustomIcon.tsx"
+
 ```
 
-### Icon sprite variants
+### Custom icon and invalid
 
-**Note:** The icons for the success, invalid, calendar, etc. variations in form control elements are applied as background images to the form element. By default, the image URLs for these icons are data URIs. However, there may be cases where data URIs are not ideal, such as in an application with a content security policy that disallows data URIs for security reasons. The `isIconSprite` variation changes the icon source to an external SVG file that serves as a sprite for all of the supported icons.
+```ts file="./TextInputCustomIconInvalid.tsx"
 
-```ts file="./TextInputIconSprite.tsx"
 ```

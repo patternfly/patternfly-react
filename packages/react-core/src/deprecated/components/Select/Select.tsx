@@ -295,7 +295,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     // Move focus to top of the menu if state.focusFirstOption was updated to true and the menu does not have custom content
     if (!prevState.focusFirstOption && this.state.focusFirstOption && !this.props.customContent) {
       const firstRef = this.refCollection.find(
-        ref =>
+        (ref) =>
           // If a select option is disabled then ref[0] will be undefined, so we want to return
           // the first ref that both a) is not null and b) is not disabled.
           ref !== null && ref[0]
@@ -467,14 +467,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           this.getDisplay(child.props.value.toString(), 'text').search(input) === 0;
         typeaheadFilteredChildren =
           typeaheadInputValue.toString() !== ''
-            ? React.Children.map(children, group => {
+            ? React.Children.map(children, (group) => {
                 if (
                   React.isValidElement<React.ComponentProps<typeof SelectGroup>>(group) &&
                   group.type === SelectGroup
                 ) {
-                  const filteredGroupChildren = (React.Children.toArray(group.props.children) as React.ReactElement<
-                    SelectGroupProps
-                  >[]).filter(childFilter);
+                  const filteredGroupChildren = (
+                    React.Children.toArray(group.props.children) as React.ReactElement<SelectGroupProps>[]
+                  ).filter(childFilter);
                   if (filteredGroupChildren.length > 0) {
                     return React.cloneElement(group, {
                       titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
@@ -489,7 +489,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       } else {
         typeaheadFilteredChildren =
           typeaheadInputValue.toString() !== ''
-            ? childrenArray.filter(child => {
+            ? childrenArray.filter((child) => {
                 const valueToCheck = child.props.value;
                 // Dividers don't have value and should not be filtered
                 if (!valueToCheck) {
@@ -540,10 +540,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         const newOptionValue = isCreateSelectOptionObject
           ? ({
               toString: () => newValue,
-              compareTo: value =>
-                this.toString()
-                  .toLowerCase()
-                  .includes(value.toString().toLowerCase())
+              compareTo: (value) => this.toString().toLowerCase().includes(value.toString().toLowerCase())
             } as SelectOptionObject)
           : newValue;
 
@@ -665,8 +662,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     optionContainerRef: React.ReactNode,
     index: number
   ) => {
-    this.refCollection[index] = [(optionRef as unknown) as HTMLElement, (favoriteRef as unknown) as HTMLElement];
-    this.optionContainerRefCollection[index] = (optionContainerRef as unknown) as HTMLElement;
+    this.refCollection[index] = [optionRef as unknown as HTMLElement, favoriteRef as unknown as HTMLElement];
+    this.optionContainerRefCollection[index] = optionContainerRef as unknown as HTMLElement;
   };
 
   handleMenuKeys = (index: number, innerIndex: number, position: string) => {
@@ -698,7 +695,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       // !isLoad prevents the view more button text from appearing the typeahead input
       typeaheadInputValue = optionTextElm.textContent;
     }
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       typeaheadCurrIndex: updateCurrentIndex ? nextIndex : prevState.typeaheadCurrIndex,
       typeaheadStoredIndex: nextIndex,
       typeaheadInputValue
@@ -900,7 +897,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         this.moveFocus(nextIndex);
       } else {
         const nextIndex = this.refCollection.findIndex(
-          ref => ref !== undefined && (ref[0] === document.activeElement || ref[1] === document.activeElement)
+          (ref) => ref !== undefined && (ref[0] === document.activeElement || ref[1] === document.activeElement)
         );
         this.moveFocus(nextIndex);
       }
@@ -920,9 +917,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const item = this.props.isGrouped
       ? (React.Children.toArray(this.props.children) as React.ReactElement[])
           .reduce((acc, curr) => [...acc, ...React.Children.toArray(curr.props.children)], [])
-          .find(child => child.props.value.toString() === value.toString())
+          .find((child) => child.props.value.toString() === value.toString())
       : React.Children.toArray(this.props.children).find(
-          child =>
+          (child) =>
             (child as React.ReactElement).props.value &&
             (child as React.ReactElement).props.value.toString() === value.toString()
         );
@@ -945,7 +942,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       return '';
     } else {
       const multi: string[] = [];
-      React.Children.toArray(item.props.children).forEach(child => multi.push(this.findText(child)));
+      React.Children.toArray(item.props.children).forEach((child) => multi.push(this.findText(child)));
       return multi.join('');
     }
   };
@@ -1084,7 +1081,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
 
     if (isOpen) {
-      if (renderableItems.find(item => (item as any)?.key === 'loading') === undefined) {
+      if (renderableItems.find((item) => (item as any)?.key === 'loading') === undefined) {
         if (loadingVariant === 'spinner') {
           renderableItems.push(
             <SelectOption isLoading key="loading" value="loading">
@@ -1109,7 +1106,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const clearBtn = (
       <button
         className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
-        onClick={e => {
+        onClick={(e) => {
           this.clearSelection(e);
           onClear(e);
           e.stopPropagation();
@@ -1118,7 +1115,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         type="button"
         disabled={isDisabled}
         ref={this.clearRef}
-        onKeyDown={event => {
+        onKeyDown={(event) => {
           if (event.key === KeyTypes.Enter) {
             this.clearRef.current.click();
           }
@@ -1135,7 +1132,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       ) : (
         <ChipGroup {...chipGroupProps}>
           {selections &&
-            (selections as string[]).map(item => (
+            (selections as string[]).map((item) => (
               <Chip
                 key={item}
                 onClick={(e: React.MouseEvent) => onSelect(e, item)}
@@ -1151,14 +1148,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     if (hasInlineFilter) {
       const filterBox = (
         <React.Fragment>
-          <div key="inline-filter" className={css(styles.selectMenuSearch)}>
+          <div key="inline-filter" className={css(styles.selectMenuSearch, formStyles.formControl)}>
             <input
               key="inline-filter-input"
               type="search"
-              className={css(formStyles.formControl, formStyles.modifiers.search)}
               onChange={this.onChange}
               placeholder={inlineFilterPlaceholderText}
-              onKeyDown={event => {
+              onKeyDown={(event) => {
                 if (event.key === KeyTypes.ArrowUp) {
                   this.handleMenuKeys(0, 0, 'up');
                   event.preventDefault();
@@ -1462,7 +1458,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     return (
       <GenerateId>
-        {randomId => (
+        {(randomId) => (
           <SelectContext.Provider
             value={{
               onSelect,

@@ -10181,16 +10181,19 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <input
-                aria-invalid="false"
-                aria-label="Row 1 cell 1 content"
+              <div
                 class="pf-v5-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 1 cell 1 content"
-              />
+              >
+                <input
+                  aria-invalid="false"
+                  aria-label="Row 1 cell 1 content"
+                  data-ouia-component-id="OUIA-Generated-TextInputBase-1"
+                  data-ouia-component-type="PF4/TextInput"
+                  data-ouia-safe="true"
+                  type="text"
+                  value="Row 1 cell 1 content"
+                />
+              </div>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10211,17 +10214,20 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <input
-                aria-invalid="false"
-                aria-label="Row 1 cell 2 content"
-                class="pf-v5-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-2"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                disabled=""
-                type="text"
-                value="Row 1 cell 2, disabled content"
-              />
+              <div
+                class="pf-v5-c-form-control pf-m-disabled"
+              >
+                <input
+                  aria-invalid="false"
+                  aria-label="Row 1 cell 2 content"
+                  data-ouia-component-id="OUIA-Generated-TextInputBase-2"
+                  data-ouia-component-type="PF4/TextInput"
+                  data-ouia-safe="true"
+                  disabled=""
+                  type="text"
+                  value="Row 1 cell 2, disabled content"
+                />
+              </div>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10242,16 +10248,19 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <input
-                aria-invalid="false"
-                aria-label="Row 1 cell 3 content"
+              <div
                 class="pf-v5-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-3"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 1 cell 3 content"
-              />
+              >
+                <input
+                  aria-invalid="false"
+                  aria-label="Row 1 cell 3 content"
+                  data-ouia-component-id="OUIA-Generated-TextInputBase-3"
+                  data-ouia-component-type="PF4/TextInput"
+                  data-ouia-safe="true"
+                  type="text"
+                  value="Row 1 cell 3 content"
+                />
+              </div>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10272,16 +10281,19 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <input
-                aria-invalid="false"
-                aria-label="Row 1 cell 4 content"
+              <div
                 class="pf-v5-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-4"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 1 cell 4 content"
-              />
+              >
+                <input
+                  aria-invalid="false"
+                  aria-label="Row 1 cell 4 content"
+                  data-ouia-component-id="OUIA-Generated-TextInputBase-4"
+                  data-ouia-component-type="PF4/TextInput"
+                  data-ouia-safe="true"
+                  type="text"
+                  value="Row 1 cell 4 content"
+                />
+              </div>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10394,16 +10406,19 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <input
-                aria-invalid="false"
-                aria-label="Row 1 cell 1 content"
+              <div
                 class="pf-v5-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-5"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 2 cell 1 content"
-              />
+              >
+                <input
+                  aria-invalid="false"
+                  aria-label="Row 1 cell 1 content"
+                  data-ouia-component-id="OUIA-Generated-TextInputBase-5"
+                  data-ouia-component-type="PF4/TextInput"
+                  data-ouia-safe="true"
+                  type="text"
+                  value="Row 2 cell 1 content"
+                />
+              </div>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10424,17 +10439,20 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <input
-                aria-invalid="false"
-                aria-label="Row 2 cell 2 content"
-                class="pf-v5-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-6"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                disabled=""
-                type="text"
-                value="Row 2 cell 2, disabled content"
-              />
+              <div
+                class="pf-v5-c-form-control pf-m-disabled"
+              >
+                <input
+                  aria-invalid="false"
+                  aria-label="Row 2 cell 2 content"
+                  data-ouia-component-id="OUIA-Generated-TextInputBase-6"
+                  data-ouia-component-type="PF4/TextInput"
+                  data-ouia-safe="true"
+                  disabled=""
+                  type="text"
+                  value="Row 2 cell 2, disabled content"
+                />
+              </div>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10455,16 +10473,19 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <input
-                aria-invalid="false"
-                aria-label="Row 2 cell 3 content"
+              <div
                 class="pf-v5-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-7"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 2 cell 3 content"
-              />
+              >
+                <input
+                  aria-invalid="false"
+                  aria-label="Row 2 cell 3 content"
+                  data-ouia-component-id="OUIA-Generated-TextInputBase-7"
+                  data-ouia-component-type="PF4/TextInput"
+                  data-ouia-safe="true"
+                  type="text"
+                  value="Row 2 cell 3 content"
+                />
+              </div>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10485,16 +10506,19 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <input
-                aria-invalid="false"
-                aria-label="Row 2 cell 4 content"
+              <div
                 class="pf-v5-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-8"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 2 cell 4 content"
-              />
+              >
+                <input
+                  aria-invalid="false"
+                  aria-label="Row 2 cell 4 content"
+                  data-ouia-component-id="OUIA-Generated-TextInputBase-8"
+                  data-ouia-component-type="PF4/TextInput"
+                  data-ouia-safe="true"
+                  type="text"
+                  value="Row 2 cell 4 content"
+                />
+              </div>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"

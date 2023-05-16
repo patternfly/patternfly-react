@@ -59,12 +59,12 @@ describe('TextInput', () => {
 
   test('validated text input success', () => {
     render(<TextInput {...props} required validated={ValidatedOptions.success} aria-label="validated text input" />);
-    expect(screen.getByLabelText('validated text input')).toHaveClass('pf-m-success');
+    expect(screen.getByLabelText('validated text input').parentElement).toHaveClass('pf-m-success');
   });
 
   test('validated text input warning', () => {
     render(<TextInput {...props} required validated={ValidatedOptions.warning} aria-label="validated text input" />);
-    expect(screen.getByLabelText('validated text input')).toHaveClass('pf-m-warning');
+    expect(screen.getByLabelText('validated text input').parentElement).toHaveClass('pf-m-warning');
   });
 
   test('validated text input error', () => {

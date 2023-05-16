@@ -29,15 +29,9 @@ export const TreeViewSearch: React.FunctionComponent<TreeViewSearchProps> = ({
   ...props
 }: TreeViewSearchProps) => (
   <div className={css(styles.treeViewSearch, className)}>
-    <input
-      className={css(formStyles.formControl, formStyles.modifiers.search)}
-      onChange={onSearch}
-      id={id}
-      name={name}
-      aria-label={ariaLabel}
-      type="search"
-      {...props}
-    />
+    <div className={css(formStyles.formControl)}>
+      <input onChange={onSearch} id={id} name={name} aria-label={ariaLabel} type="search" {...props} />
+    </div>
   </div>
 );
 TreeViewSearch.displayName = 'TreeViewSearch';

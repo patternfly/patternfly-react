@@ -15,17 +15,20 @@ exports[`With popover opened 1`] = `
         <div
           class="pf-v5-c-input-group__item pf-m-fill"
         >
-          <input
-            aria-invalid="false"
-            aria-label="Date picker"
-            class="pf-v5-c-form-control"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-4"
-            data-ouia-component-type="PF4/TextInput"
-            data-ouia-safe="true"
-            placeholder="YYYY-MM-DD"
-            type="text"
-            value=""
-          />
+          <div
+            class="pf-v5-c-form-control pf-m-placeholder"
+          >
+            <input
+              aria-invalid="false"
+              aria-label="Date picker"
+              data-ouia-component-id="OUIA-Generated-TextInputBase-4"
+              data-ouia-component-type="PF4/TextInput"
+              data-ouia-safe="true"
+              placeholder="YYYY-MM-DD"
+              type="text"
+              value=""
+            />
+          </div>
         </div>
         <div
           class="pf-v5-c-input-group__item"
@@ -153,16 +156,19 @@ exports[`With popover opened 1`] = `
                   <div
                     class="pf-v5-c-calendar-month__header-year"
                   >
-                    <input
-                      aria-invalid="false"
-                      aria-label="Select year"
+                    <div
                       class="pf-v5-c-form-control"
-                      data-ouia-component-id="OUIA-Generated-TextInputBase-5"
-                      data-ouia-component-type="PF4/TextInput"
-                      data-ouia-safe="true"
-                      type="number"
-                      value="1969"
-                    />
+                    >
+                      <input
+                        aria-invalid="false"
+                        aria-label="Select year"
+                        data-ouia-component-id="OUIA-Generated-TextInputBase-5"
+                        data-ouia-component-type="PF4/TextInput"
+                        data-ouia-safe="true"
+                        type="number"
+                        value="1969"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -772,18 +778,21 @@ exports[`disabled date picker 1`] = `
         <div
           class="pf-v5-c-input-group__item pf-m-fill"
         >
-          <input
-            aria-invalid="false"
-            aria-label="disabled date picker"
-            class="pf-v5-c-form-control"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-            data-ouia-component-type="PF4/TextInput"
-            data-ouia-safe="true"
-            disabled=""
-            placeholder="YYYY-MM-DD"
-            type="text"
-            value="2020-11-20"
-          />
+          <div
+            class="pf-v5-c-form-control pf-m-disabled pf-m-placeholder"
+          >
+            <input
+              aria-invalid="false"
+              aria-label="disabled date picker"
+              data-ouia-component-id="OUIA-Generated-TextInputBase-1"
+              data-ouia-component-type="PF4/TextInput"
+              data-ouia-safe="true"
+              disabled=""
+              placeholder="YYYY-MM-DD"
+              type="text"
+              value="2020-11-20"
+            />
+          </div>
         </div>
         <div
           class="pf-v5-c-input-group__item"

@@ -56,16 +56,19 @@ exports[`slider renders continuous slider 1`] = `
     <div
       class="pf-v5-c-slider__value"
     >
-      <input
-        aria-invalid="false"
-        aria-label="Slider value input"
-        class="pf-v5-c-form-control pf-v5-c-form-control"
-        data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-        data-ouia-component-type="PF4/TextInput"
-        data-ouia-safe="true"
-        type="number"
-        value="50"
-      />
+      <div
+        class="pf-v5-c-form-control"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="Slider value input"
+          data-ouia-component-id="OUIA-Generated-TextInputBase-1"
+          data-ouia-component-type="PF4/TextInput"
+          data-ouia-safe="true"
+          type="number"
+          value="50"
+        />
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -247,16 +250,19 @@ exports[`slider renders discrete slider 1`] = `
     <div
       class="pf-v5-c-slider__value"
     >
-      <input
-        aria-invalid="false"
-        aria-label="Slider value input"
-        class="pf-v5-c-form-control pf-v5-c-form-control"
-        data-ouia-component-id="OUIA-Generated-TextInputBase-2"
-        data-ouia-component-type="PF4/TextInput"
-        data-ouia-safe="true"
-        type="number"
-        value="50"
-      />
+      <div
+        class="pf-v5-c-form-control"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="Slider value input"
+          data-ouia-component-id="OUIA-Generated-TextInputBase-2"
+          data-ouia-component-type="PF4/TextInput"
+          data-ouia-safe="true"
+          type="number"
+          value="50"
+        />
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -416,16 +422,19 @@ exports[`slider renders slider with input 1`] = `
         <div
           class="pf-v5-c-input-group__item pf-m-fill"
         >
-          <input
-            aria-invalid="false"
-            aria-label="Slider value input"
-            class="pf-v5-c-form-control pf-v5-c-form-control"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-3"
-            data-ouia-component-type="PF4/TextInput"
-            data-ouia-safe="true"
-            type="number"
-            value="50"
-          />
+          <div
+            class="pf-v5-c-form-control"
+          >
+            <input
+              aria-invalid="false"
+              aria-label="Slider value input"
+              data-ouia-component-id="OUIA-Generated-TextInputBase-3"
+              data-ouia-component-type="PF4/TextInput"
+              data-ouia-safe="true"
+              type="number"
+              value="50"
+            />
+          </div>
         </div>
         <div
           class="pf-v5-c-input-group__item pf-m-box"
@@ -492,16 +501,19 @@ exports[`slider renders slider with input above thumb 1`] = `
           <div
             class="pf-v5-c-input-group__item pf-m-fill"
           >
-            <input
-              aria-invalid="false"
-              aria-label="Slider value input"
-              class="pf-v5-c-form-control pf-v5-c-form-control"
-              data-ouia-component-id="OUIA-Generated-TextInputBase-4"
-              data-ouia-component-type="PF4/TextInput"
-              data-ouia-safe="true"
-              type="number"
-              value="50"
-            />
+            <div
+              class="pf-v5-c-form-control"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="Slider value input"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-4"
+                data-ouia-component-type="PF4/TextInput"
+                data-ouia-safe="true"
+                type="number"
+                value="50"
+              />
+            </div>
           </div>
           <div
             class="pf-v5-c-input-group__item pf-m-box"

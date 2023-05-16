@@ -2903,13 +2903,16 @@ exports[`tree view renders search successfully 1`] = `
   <div
     class="pf-v5-c-tree-view__search"
   >
-    <input
-      aria-label="Search input example"
-      class="pf-v5-c-form-control pf-m-search"
-      id="input-search"
-      name="search-input"
-      type="search"
-    />
+    <div
+      class="pf-v5-c-form-control"
+    >
+      <input
+        aria-label="Search input example"
+        id="input-search"
+        name="search-input"
+        type="search"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;
