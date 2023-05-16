@@ -1,9 +1,7 @@
 import React from 'react';
-import { Card, Label, PageSection } from '@patternfly/react-core';
-import { expandable } from '@patternfly/react-table';
+import { Card, Label, PageSection, TextVariants, Text, TextContent } from '@patternfly/react-core';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-import { TextVariants } from '@patternfly/react-core';
 
 const expandableColumns = ['Servers', 'Threads', 'Applications', 'Workspaces', 'Status'];
 
@@ -120,7 +118,7 @@ const ExpandCollapseAllTableDemo = () => {
   const setServerExpanded = (server, isExpanding) => {
     const otherExpandedServerNames = expandedServerNames.filter((r) => r !== server.name);
     setExpandedServerNames(isExpanding ? [...otherExpandedServerNames, server.name] : otherExpandedServerNames);
-    setAreAllExpanded(expandedServerNames.length == serverData.length);
+    setAreAllExpanded(expandedServerNames.length !== 0 || expandedServerNames.length === serverData.length);
   };
 
   const isServerExpanded = (server) => {
