@@ -75,3 +75,12 @@ Note that the `isLoading` prop is styled to position the spinner dead center abo
 ## Types
 
 File upload uses the `DropzoneOptions` type from react-dropzone. It is comprised of additional props with their own types. For more information on using `DropzoneOptions` visit [react-dropzone props and methods](https://react-dropzone.js.org/#src).
+
+Additionally, it calls the `onDataChange`, `onReadFailed`, `onReadFinished`, and `onReadStarted` callbacks with an event of type `DropEvent`. `DropEvent` is a union comprised of the following types:
+
+```noLive
+ React.DragEvent<HTMLElement>
+ | React.ChangeEvent<HTMLInputElement>
+ | DragEvent
+ | Event
+```
