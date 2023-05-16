@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.15 (2023-05-16)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
 # [5.0.0-alpha.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@5.0.0-alpha.13...@patternfly/react-icons@5.0.0-alpha.14) (2023-05-05)
 
 ### Bug Fixes

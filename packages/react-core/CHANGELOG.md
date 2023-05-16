@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.100](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.99...@patternfly/react-core@5.0.0-alpha.100) (2023-05-16)
+
+### Bug Fixes
+
+- **Popper:** prevented forceUpdate from firing when not necessary ([#9088](https://github.com/patternfly/patternfly-react/issues/9088)) ([a08454d](https://github.com/patternfly/patternfly-react/commit/a08454d344e83b2058eac8cf21ef3c2b270b4db8))
+
+### Reverts
+
+- Revert "chore(deps): (3) Update @testing-library/react (#9034)" (#9126) ([f86e750](https://github.com/patternfly/patternfly-react/commit/f86e750e0a05bf0ce85bb961721c44a251779de9)), closes [#9034](https://github.com/patternfly/patternfly-react/issues/9034) [#9126](https://github.com/patternfly/patternfly-react/issues/9126)
+
 # [5.0.0-alpha.99](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.98...@patternfly/react-core@5.0.0-alpha.99) (2023-05-15)
 
 ### Bug Fixes
