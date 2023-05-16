@@ -345,7 +345,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const buildExpandableSearchInput = ({ ...searchInputProps } = {}) => (
     <InputGroup {...searchInputProps}>
       <InputGroupItem isFill>{buildTextInputGroup()} </InputGroupItem>
-      <InputGroupItem>{expandableToggle}</InputGroupItem>
+      <InputGroupItem isPlain>{expandableToggle}</InputGroupItem>
     </InputGroup>
   );
 
@@ -361,7 +361,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     <InputGroup ref={triggerRef} {...searchInputProps}>
       <InputGroupItem isFill>{buildTextInputGroup()}</InputGroupItem>
       {(attributes.length > 0 || onToggleAdvancedSearch) && (
-        <InputGroupItem>
+        <InputGroupItem isPlain>
           <Button
             className={isSearchMenuOpen && 'pf-m-expanded'}
             variant={ButtonVariant.control}
@@ -375,7 +375,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         </InputGroupItem>
       )}
       {!!onSearch && (
-        <InputGroupItem>
+        <InputGroupItem isPlain>
           <Button
             type="submit"
             variant={ButtonVariant.control}
