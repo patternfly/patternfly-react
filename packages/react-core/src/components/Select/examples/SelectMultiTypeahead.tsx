@@ -31,8 +31,6 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
-
-  const menuRef = React.useRef<HTMLDivElement>(null);
   const textInputRef = React.useRef<HTMLInputElement>();
 
   React.useEffect(() => {
@@ -40,10 +38,8 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
 
     // Filter menu items based on the text input value when one exists
     if (inputValue) {
-      newSelectOptions = initialSelectOptions.filter(menuItem =>
-        String(menuItem.children)
-          .toLowerCase()
-          .includes(inputValue.toLowerCase())
+      newSelectOptions = initialSelectOptions.filter((menuItem) =>
+        String(menuItem.children).toLowerCase().includes(inputValue.toLowerCase())
       );
 
       // When no options are found after filtering, display 'No results found'
@@ -87,13 +83,13 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       }
 
       setFocusedItemIndex(indexToFocus);
-      const focusedItem = selectOptions.filter(option => !option.isDisabled)[indexToFocus];
+      const focusedItem = selectOptions.filter((option) => !option.isDisabled)[indexToFocus];
       setActiveItem(`select-multi-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
     }
   };
 
   const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const enabledMenuItems = selectOptions.filter(menuItem => !menuItem.isDisabled);
+    const enabledMenuItems = selectOptions.filter((menuItem) => !menuItem.isDisabled);
     const [firstMenuItem] = enabledMenuItems;
     const focusedItem = focusedItemIndex ? enabledMenuItems[focusedItemIndex] : firstMenuItem;
 
@@ -101,7 +97,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       // Select the first available option
       case 'Enter':
         if (!isOpen) {
-          setIsOpen(prevIsOpen => !prevIsOpen);
+          setIsOpen((prevIsOpen) => !prevIsOpen);
         } else if (isOpen && focusedItem.itemId !== 'no results') {
           onSelect(focusedItem.itemId as string);
         }
@@ -133,7 +129,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
 
     if (itemId && itemId !== 'no results') {
       setSelected(
-        selected.includes(itemId) ? selected.filter(selection => selection !== itemId) : [...selected, itemId]
+        selected.includes(itemId) ? selected.filter((selection) => selection !== itemId) : [...selected, itemId]
       );
     }
 
@@ -161,7 +157,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
             {selected.map((selection, index) => (
               <Chip
                 key={index}
-                onClick={ev => {
+                onClick={(ev) => {
                   ev.stopPropagation();
                   onSelect(selection);
                 }}
@@ -193,7 +189,6 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
   return (
     <Select
       id="multi-typeahead-select"
-      ref={menuRef}
       isOpen={isOpen}
       selected={selected}
       onSelect={(ev, selection) => onSelect(selection as string)}

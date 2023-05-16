@@ -30,8 +30,6 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
   const [placeholder, setPlaceholder] = React.useState('0 items selected');
-
-  const menuRef = React.useRef<HTMLDivElement>(null);
   const textInputRef = React.useRef<HTMLInputElement>();
 
   React.useEffect(() => {
@@ -181,7 +179,6 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
     <Select
       role="menu"
       id="multi-typeahead-checkbox-select"
-      ref={menuRef}
       isOpen={isOpen}
       selected={selected}
       onSelect={(ev, selection) => onSelect(selection as string)}

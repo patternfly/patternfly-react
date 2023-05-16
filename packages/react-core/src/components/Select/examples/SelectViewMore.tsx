@@ -43,7 +43,6 @@ export const SelectViewMore: React.FunctionComponent = () => {
   const [visibleOptions, setVisibleOptions] = React.useState(selectOptions.slice(0, numOptions));
   const activeItemRef = React.useRef<HTMLElement>(null);
   const viewMoreRef = React.useRef<HTMLLIElement>(null);
-  const menuRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     activeItemRef.current?.focus();
@@ -91,7 +90,7 @@ export const SelectViewMore: React.FunctionComponent = () => {
   const onSelect = (
     _event: React.MouseEvent<Element, MouseEvent> | undefined,
     itemId: string | number | undefined,
-    toggleRef: React.RefObject<any>
+    toggleRef: React.RefObject<any> // To further customize toggle behavior, use this optional property
   ) => {
     // eslint-disable-next-line no-console
     console.log('selected', itemId);
@@ -99,7 +98,7 @@ export const SelectViewMore: React.FunctionComponent = () => {
     if (itemId !== 'loader') {
       setSelected(itemId as string);
       setIsOpen(false);
-      toggleRef?.current.focus();
+      toggleRef?.current.focus(); // Only focus the toggle when a non-loader option is selected
     }
   };
 
@@ -121,7 +120,6 @@ export const SelectViewMore: React.FunctionComponent = () => {
   return (
     <Select
       id="single-view-more-select"
-      ref={menuRef}
       isOpen={isOpen}
       selected={selected}
       onSelect={onSelect}

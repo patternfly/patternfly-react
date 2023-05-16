@@ -4,7 +4,6 @@ import { MenuToggle, MenuFooter, Select, SelectList, SelectOption, Button } from
 export const SelectFooter: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string>('Select a value');
-  const menuRef = React.useRef<HTMLDivElement>(null);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -39,7 +38,6 @@ export const SelectFooter: React.FunctionComponent = () => {
       onOpenChange={(isOpen) => setIsOpen(isOpen)}
       onOpenChangeKeys={['Escape']}
       toggle={toggle}
-      ref={menuRef}
       id="menu-with-footer"
       onSelect={onSelect}
       selected={selected}

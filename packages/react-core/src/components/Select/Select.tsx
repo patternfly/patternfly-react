@@ -34,7 +34,9 @@ export interface SelectProps extends MenuProps, OUIAProps {
   selected?: any | any[];
   /** Renderer for a custom select toggle. Forwards a ref to the toggle. */
   toggle: (toggleRef: React.RefObject<any>) => React.ReactNode;
-  /** Function callback when user selects an option. */
+  /** Flag indicating the toggle should be focused after a selection. */
+  shouldFocusToggleOnSelect?: boolean;
+  /** Function callback when user selects an option. The toggleRef property is optional to allow customization of focus management. */
   onSelect?: (
     event?: React.MouseEvent<Element, MouseEvent>,
     itemId?: string | number,
@@ -64,6 +66,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   isOpen,
   selected,
   toggle,
+  shouldFocusToggleOnSelect = false,
   onOpenChange,
   onOpenChangeKeys = ['Escape', 'Tab'],
   isPlain,
@@ -124,7 +127,10 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       role={role}
       className={css(className)}
       ref={menuRef}
-      onSelect={(event, itemId) => onSelect && onSelect(event, itemId, toggleRef)}
+      onSelect={(event, itemId) => {
+        onSelect && onSelect(event, itemId, toggleRef);
+        shouldFocusToggleOnSelect && toggleRef.current.focus();
+      }}
       isPlain={isPlain}
       selected={selected}
       {...getOUIAProps(

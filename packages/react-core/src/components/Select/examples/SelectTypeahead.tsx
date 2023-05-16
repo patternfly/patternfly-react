@@ -30,8 +30,6 @@ export const SelectBasic: React.FunctionComponent = () => {
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
-
-  const menuRef = React.useRef<HTMLDivElement>(null);
   const textInputRef = React.useRef<HTMLInputElement>();
 
   React.useEffect(() => {
@@ -185,7 +183,6 @@ export const SelectBasic: React.FunctionComponent = () => {
   return (
     <Select
       id="typeahead-select"
-      ref={menuRef}
       isOpen={isOpen}
       selected={selected}
       onSelect={onSelect}

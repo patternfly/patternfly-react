@@ -32,8 +32,6 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
   const [onCreation, setOnCreation] = React.useState<boolean>(false); // Boolean to refresh filter state after new option is created
-
-  const menuRef = React.useRef<HTMLDivElement>(null);
   const textInputRef = React.useRef<HTMLInputElement>();
 
   React.useEffect(() => {
@@ -201,7 +199,6 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
   return (
     <Select
       id="multi-create-typeahead-select"
-      ref={menuRef}
       isOpen={isOpen}
       selected={selected}
       onSelect={(ev, selection) => onSelect(selection as string)}

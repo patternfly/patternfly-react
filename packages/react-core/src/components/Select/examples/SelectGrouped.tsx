@@ -12,23 +12,17 @@ import {
 export const SelectGrouped: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('Select a value');
-  const menuRef = React.useRef<HTMLDivElement>(null);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (
-    _event: React.MouseEvent<Element, MouseEvent> | undefined,
-    itemId: string | number | undefined,
-    toggleRef: React.RefObject<any>
-  ) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
     // eslint-disable-next-line no-console
     console.log('selected', itemId);
 
     setSelected(itemId as string);
     setIsOpen(false);
-    toggleRef?.current.focus();
   };
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
@@ -49,12 +43,12 @@ export const SelectGrouped: React.FunctionComponent = () => {
   return (
     <Select
       id="single-grouped-select"
-      ref={menuRef}
       isOpen={isOpen}
       selected={selected}
       onSelect={onSelect}
       onOpenChange={(isOpen) => setIsOpen(isOpen)}
       toggle={toggle}
+      shouldFocusToggleOnSelect
     >
       <SelectGroup label="Group 1">
         <SelectList>

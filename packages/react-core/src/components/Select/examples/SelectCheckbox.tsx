@@ -4,7 +4,6 @@ import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement, Badge 
 export const SelectCheckbox: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
-  const menuRef = React.useRef<HTMLDivElement>(null);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -15,7 +14,7 @@ export const SelectCheckbox: React.FunctionComponent = () => {
     console.log('selected', itemId);
 
     if (selectedItems.includes(itemId as number)) {
-      setSelectedItems(selectedItems.filter(id => id !== itemId));
+      setSelectedItems(selectedItems.filter((id) => id !== itemId));
     } else {
       setSelectedItems([...selectedItems, itemId as number]);
     }
@@ -41,7 +40,6 @@ export const SelectCheckbox: React.FunctionComponent = () => {
     <Select
       role="menu"
       id="checkbox-select"
-      ref={menuRef}
       isOpen={isOpen}
       selected={selectedItems}
       onSelect={onSelect}
