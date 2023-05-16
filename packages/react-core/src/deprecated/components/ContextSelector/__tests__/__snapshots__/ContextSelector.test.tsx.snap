@@ -84,7 +84,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
             class="pf-v5-c-input-group"
           >
             <div
-              class="pf-v5-c-input-group__item"
+              class="pf-v5-c-input-group__item pf-m-fill"
             >
               <div
                 class="pf-v5-c-text-input-group"
@@ -255,7 +255,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
             class="pf-v5-c-input-group"
           >
             <div
-              class="pf-v5-c-input-group__item"
+              class="pf-v5-c-input-group__item pf-m-fill"
             >
               <div
                 class="pf-v5-c-text-input-group"

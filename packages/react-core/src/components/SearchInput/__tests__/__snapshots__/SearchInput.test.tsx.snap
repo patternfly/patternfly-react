@@ -9,7 +9,7 @@ exports[`SearchInput advanced search 1`] = `
       class="pf-v5-c-input-group"
     >
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v5-c-input-group__item pf-m-fill"
       >
         <div
           class="pf-v5-c-text-input-group"
@@ -136,7 +136,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
       class="pf-v5-c-input-group"
     >
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v5-c-input-group__item pf-m-fill"
       >
         <div
           class="pf-v5-c-text-input-group"
@@ -451,7 +451,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
       class="pf-v5-c-input-group"
     >
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v5-c-input-group__item pf-m-fill"
       >
         <div
           class="pf-v5-c-text-input-group"
@@ -574,7 +574,7 @@ exports[`SearchInput search input with hint 1`] = `
     class="pf-v5-c-input-group"
   >
     <div
-      class="pf-v5-c-input-group__item"
+      class="pf-v5-c-input-group__item pf-m-fill"
     >
       <div
         class="pf-v5-c-text-input-group"
@@ -723,7 +723,7 @@ exports[`SearchInput simple search input 1`] = `
     class="pf-v5-c-input-group"
   >
     <div
-      class="pf-v5-c-input-group__item"
+      class="pf-v5-c-input-group__item pf-m-fill"
     >
       <div
         class="pf-v5-c-text-input-group"
