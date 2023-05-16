@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { DropEvent, DropzoneOptions, useDropzone } from 'react-dropzone';
+import { DropzoneOptions, useDropzone } from 'react-dropzone';
+import { DropEvent } from '../../helpers/typeUtils';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 

@@ -55,7 +55,9 @@ The "Demonstrate error reporting by forcing uploads to fail" checkbox shows how 
 
 ## Types
 
-Multiple file upload uses both the `DropEvent` and `DropzoneOptions` types from react-dropzone. The `DropEvent` type is a union comprised of the following types:
+Multiple file upload uses the `DropzoneOptions` type from react-dropzone. It is comprised of additional props with their own types. For more information on using `DropzoneOptions` visit [react-dropzone props and methods](https://react-dropzone.js.org/#src).
+
+Additionally, it calls the `onFileDrop` callback with an event of type `DropEvent`. `DropEvent` is a union comprised of the following types:
 
 ```noLive
  React.DragEvent<HTMLElement>
@@ -63,5 +65,3 @@ Multiple file upload uses both the `DropEvent` and `DropzoneOptions` types from 
  | DragEvent
  | Event
 ```
-
-`DropzoneOptions` is comprised of additional props with their own types. For more information on using `DropzoneOptions` visit [react-dropzone props and methods](https://react-dropzone.js.org/#src).
