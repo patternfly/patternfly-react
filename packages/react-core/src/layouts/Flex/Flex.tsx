@@ -136,7 +136,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spaceItems3xl'
       | 'spaceItems4xl';
   };
-  /** Whether to add a gap at various breakpoints. This will override spacers for the main axis. */
+  /** Gap between items at various breakpoints. This will override spacers for the main axis. */
   gap?: {
     default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
     sm?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
@@ -145,7 +145,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
     '2xl'?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
   };
-  /** Whether to add a gap at various breakpoints. This will override spacers for the main axis. */
+  /** Gap between rows at various breakpoints. This will override spacers for the main axis. */
   rowGap?: {
     default?:
       | 'rowGapNone'
@@ -208,7 +208,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'rowGap3xl'
       | 'rowGap4xl';
   };
-  /** Whether to add a gap at various breakpoints. This will override spacers for the main axis. */
+  /** Gap beween columns at various breakpoints. This will override spacers for the main axis. */
   columnGap?: {
     default?:
       | 'columnGapNone'

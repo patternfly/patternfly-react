@@ -7,7 +7,7 @@ propComponents: ['Flex', 'FlexItem']
 
 import './flex.css';
 
-## Flex Basics
+## Flex basics
 
 ### Basic
 
@@ -62,7 +62,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>;
 ```
 
-### Flex Spacing
+### Flex spacing
 
 ### Individually spaced
 
@@ -112,7 +112,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>;
 ```
 
-### Flex Gap
+### Flex gap spacing
 
 ### Row gap
 
