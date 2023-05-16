@@ -1,4 +1,6 @@
 import * as React from 'react';
+import styles from '@patternfly/react-styles/css/components/Table/table';
+import { css } from '@patternfly/react-styles';
 
 export interface CaptionProps {
   /** Content rendered inside the caption */
@@ -8,7 +10,7 @@ export interface CaptionProps {
 }
 
 export const Caption: React.FunctionComponent<CaptionProps> = ({ children, className, ...props }: CaptionProps) => (
-  <caption className={className} {...props}>
+  <caption className={css(styles.tableCaption, className)} {...props}>
     {children}
   </caption>
 );

@@ -271,6 +271,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
       onBlur={() => setShowTooltip(false)}
       onMouseEnter={tooltip !== null ? onMouseEnter : onMouseEnterProp}
       className={css(
+        styles.tableTd,
         className,
         isActionCell && styles.tableAction,
         textCenter && styles.modifiers.center,
