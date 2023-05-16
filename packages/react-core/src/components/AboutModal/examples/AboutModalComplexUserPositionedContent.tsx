@@ -5,7 +5,7 @@ import brandImg from './brandImg.svg';
 export const AboutModalComplexUserPositionedContent: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  const toggleModal = (_event: React.MouseEvent) => {
+  const toggleModal = (_event: React.MouseEvent<Element, MouseEvent> | KeyboardEvent | MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 
@@ -16,10 +16,11 @@ export const AboutModalComplexUserPositionedContent: React.FunctionComponent = (
       </Button>
       <AboutModal
         isOpen={isModalOpen}
-        onClose={(e: React.MouseEvent<Element, MouseEvent>) => toggleModal(e)}
+        onClose={(e: React.MouseEvent<Element, MouseEvent> | KeyboardEvent | MouseEvent) => toggleModal(e)}
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"
+        backgroundImageSrc='/assets/images/pfbg-icon.svg'
         hasNoContentContainer={true}
         productName="Product Name"
       >
