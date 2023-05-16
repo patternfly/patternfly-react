@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.86](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.85...demo-app-ts@5.0.0-alpha.86) (2023-05-16)
+
+### Bug Fixes
+
+- **FileUpload:** added DropEvent as a type exported from react-core ([#9120](https://github.com/patternfly/patternfly-react/issues/9120)) ([ce090b0](https://github.com/patternfly/patternfly-react/commit/ce090b01dc63a9d9ca88da78e62fa64eee182a0d))
+
 # [5.0.0-alpha.85](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.84...demo-app-ts@5.0.0-alpha.85) (2023-05-16)
 
 **Note:** Version bump only for package demo-app-ts

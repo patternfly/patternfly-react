@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.102](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.101...@patternfly/react-core@5.0.0-alpha.102) (2023-05-16)
+
+### Bug Fixes
+
+- **FileUpload:** added DropEvent as a type exported from react-core ([#9120](https://github.com/patternfly/patternfly-react/issues/9120)) ([ce090b0](https://github.com/patternfly/patternfly-react/commit/ce090b01dc63a9d9ca88da78e62fa64eee182a0d))
+
 # [5.0.0-alpha.101](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.100...@patternfly/react-core@5.0.0-alpha.101) (2023-05-16)
 
 **Note:** Version bump only for package @patternfly/react-core
