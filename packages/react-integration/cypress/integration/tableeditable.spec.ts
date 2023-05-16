@@ -17,7 +17,7 @@ describe('Table Simple Test', () => {
 
   it('Check edit', () => {
     cy.get(
-      '.pf-m-inline-editable > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control'
+      '.pf-m-inline-editable > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     ).type('test');
     cy.get(
       '.pf-m-inline-editable > [data-label="Dropdown col 5"] > .pf-v5-c-inline-edit__input > .pf-v5-c-select > .pf-v5-c-select__toggle > .pf-v5-c-select__toggle-button'
@@ -41,7 +41,7 @@ describe('Table Simple Test', () => {
       '.pf-v5-c-inline-edit tbody tr:nth-of-type(2) > .pf-v5-c-table__inline-edit-action .pf-v5-c-inline-edit__action.pf-m-enable-editable > .pf-v5-c-button'
     ).click();
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(2) > [data-label="Text input col 4"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control'
+      '.pf-m-inline-editable:nth-of-type(2) > [data-label="Text input col 4"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     )
       .clear()
       .type('xyz');
@@ -65,7 +65,7 @@ describe('Table Simple Test', () => {
       '.pf-v5-c-inline-edit tbody tr:nth-of-type(1) > .pf-v5-c-table__inline-edit-action .pf-v5-c-inline-edit__action.pf-m-enable-editable > .pf-v5-c-button'
     ).click();
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 4"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 4"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     )
       .clear()
       .type('foo');
@@ -85,7 +85,7 @@ describe('Table Simple Test', () => {
       '.pf-v5-c-inline-edit tbody tr:nth-of-type(1) > .pf-v5-c-table__inline-edit-action .pf-v5-c-inline-edit__action.pf-m-enable-editable > .pf-v5-c-button'
     ).click();
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 4"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 4"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     )
       .clear()
       .type('xyz');
@@ -93,7 +93,7 @@ describe('Table Simple Test', () => {
       '.pf-m-inline-editable:nth-of-type(1) > .pf-v5-c-table__inline-edit-action > .pf-v5-c-inline-edit__group > :nth-child(1) > .pf-v5-c-button'
     ).click();
     cy.get(
-      '.pf-v5-c-inline-edit tbody tr:nth-of-type(1) > [data-label="Text input col 4"] .pf-v5-c-inline-edit__input .pf-v5-c-form-control'
+      '.pf-v5-c-inline-edit tbody tr:nth-of-type(1) > [data-label="Text input col 4"] .pf-v5-c-inline-edit__input .pf-v5-c-form-control > input'
     ).should('have.attr', 'aria-invalid', 'true');
     cy.get(
       '.pf-m-inline-editable:nth-of-type(1) > .pf-v5-c-table__inline-edit-action > .pf-v5-c-inline-edit__group > :nth-child(2) > .pf-v5-c-button'
@@ -105,15 +105,15 @@ describe('Table Simple Test', () => {
       '.pf-v5-c-inline-edit tbody tr:nth-of-type(1) > .pf-v5-c-table__inline-edit-action .pf-v5-c-inline-edit__action.pf-m-enable-editable > .pf-v5-c-button'
     ).click(); // click the edit button
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     )
       .clear()
       .type('foo'); // enter foo into first field
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     ).clear();
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 4"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 4"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     )
       .clear()
       .type('xyz'); // enter xyz into last field
@@ -139,12 +139,12 @@ describe('Table Simple Test', () => {
       '.pf-v5-c-inline-edit tbody tr:nth-of-type(1) > .pf-v5-c-table__inline-edit-action .pf-v5-c-inline-edit__action.pf-m-enable-editable > .pf-v5-c-button'
     ).click(); // click the edit button
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     )
       .clear()
       .type('foo'); // enter foo into first field
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     ).clear(); // clear the third field text
     cy.get(
       '.pf-m-inline-editable:nth-of-type(1) > .pf-v5-c-table__inline-edit-action > .pf-v5-c-inline-edit__group > :nth-child(1) > .pf-v5-c-button'
@@ -156,7 +156,7 @@ describe('Table Simple Test', () => {
       '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input > .pf-m-error'
     ).should('have.text', 'This field is required, Value must be at least 7 characters'); // ensure second field receives relevant error texts
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     )
       .clear()
       .type('1234567'); // update first field to valid entry
@@ -164,7 +164,7 @@ describe('Table Simple Test', () => {
       '.pf-m-inline-editable:nth-of-type(1) > .pf-v5-c-table__inline-edit-action > .pf-v5-c-inline-edit__group > :nth-child(1) > .pf-v5-c-button'
     ).click(); // attempt to submit invalid entries
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     ).should('have.attr', 'aria-invalid', 'false'); // ensure first field releases error text
     cy.get(
       '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input > .pf-m-error'

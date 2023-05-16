@@ -4,7 +4,7 @@ describe('Clipboard Copy Demo Test', () => {
   });
 
   it('Verify form input', () => {
-    cy.get('input').should('have.class', 'pf-v5-c-form-control');
+    cy.get('.pf-v5-c-form-control > input').should('exist');
   });
 
   it('Verify content expands', () => {
