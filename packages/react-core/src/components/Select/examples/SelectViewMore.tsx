@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement, Spinner } from '@patternfly/react-core';
+import { Select, SelectOption, SelectList, MenuToggle, Spinner } from '@patternfly/react-core';
 
 export const SelectViewMore: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -43,6 +43,7 @@ export const SelectViewMore: React.FunctionComponent = () => {
   const [visibleOptions, setVisibleOptions] = React.useState(selectOptions.slice(0, numOptions));
   const activeItemRef = React.useRef<HTMLElement>(null);
   const viewMoreRef = React.useRef<HTMLLIElement>(null);
+  const toggleRef = React.useRef<HTMLButtonElement>(null);
 
   React.useEffect(() => {
     activeItemRef.current?.focus();
@@ -87,22 +88,18 @@ export const SelectViewMore: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (
-    _event: React.MouseEvent<Element, MouseEvent> | undefined,
-    itemId: string | number | undefined,
-    toggleRef: React.RefObject<any> // To further customize toggle behavior, use this optional property
-  ) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
     // eslint-disable-next-line no-console
     console.log('selected', itemId);
 
     if (itemId !== 'loader') {
       setSelected(itemId as string);
       setIsOpen(false);
-      toggleRef?.current.focus(); // Only focus the toggle when a non-loader option is selected
+      toggleRef?.current?.focus(); // Only focus the toggle when a non-loader option is selected
     }
   };
 
-  const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
+  const toggle = (
     <MenuToggle
       ref={toggleRef}
       onClick={onToggleClick}
@@ -125,6 +122,7 @@ export const SelectViewMore: React.FunctionComponent = () => {
       onSelect={onSelect}
       onOpenChange={(isOpen) => setIsOpen(isOpen)}
       toggle={toggle}
+      toggleRef={toggleRef}
     >
       <SelectList>
         {visibleOptions.map((option) => {

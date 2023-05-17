@@ -32,16 +32,14 @@ export interface SelectProps extends MenuProps, OUIAProps {
   isOpen?: boolean;
   /** Single itemId for single select menus, or array of itemIds for multi select. You can also specify isSelected on the SelectOption. */
   selected?: any | any[];
-  /** Renderer for a custom select toggle. Forwards a ref to the toggle. */
-  toggle: (toggleRef: React.RefObject<any>) => React.ReactNode;
-  /** Flag indicating the toggle should be focused after a selection. */
+  /** Select toggle. May be a direct ReactNode combined with the toggleRef property, or a renderer for a custom select toggle which forwards a ref to the toggle. */
+  toggle: React.ReactNode | ((toggleRef: React.RefObject<any>) => React.ReactNode);
+  /** Ref of the select toggle ReactNode. */
+  toggleRef?: React.RefObject<HTMLButtonElement>;
+  /** Flag indicating the toggle should be focused after a selection. If this use case is too restrictive, the optional toggleRef property with a node toggle may be used to control focus. */
   shouldFocusToggleOnSelect?: boolean;
-  /** Function callback when user selects an option. The toggleRef property is optional to allow customization of focus management. */
-  onSelect?: (
-    event?: React.MouseEvent<Element, MouseEvent>,
-    itemId?: string | number,
-    toggleRef?: React.RefObject<any>
-  ) => void;
+  /** Function callback when user selects an option. */
+  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => void;
   /** Callback to allow the select component to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing either tab or escape (or specificed in onOpenChangeKeys). */
   onOpenChange?: (isOpen: boolean) => void;
@@ -66,6 +64,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   isOpen,
   selected,
   toggle,
+  toggleRef: toggleRefProp,
   shouldFocusToggleOnSelect = false,
   onOpenChange,
   onOpenChangeKeys = ['Escape', 'Tab'],
@@ -77,9 +76,11 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   ...props
 }: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
-  const toggleRef = React.useRef<HTMLButtonElement>();
+  const localToggleRef = React.useRef<HTMLButtonElement>();
 
   const menuRef = (innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
+  const toggleRef = (toggleRefProp as React.RefObject<HTMLButtonElement>) || localToggleRef;
+
   React.useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
@@ -120,7 +121,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       window.removeEventListener('keydown', handleMenuKeys);
       window.removeEventListener('click', handleClick);
     };
-  }, [isOpen, menuRef, onOpenChange, onOpenChangeKeys]);
+  }, [isOpen, menuRef, toggleRef, onOpenChange, onOpenChangeKeys]);
 
   const menu = (
     <Menu
@@ -128,7 +129,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       className={css(className)}
       ref={menuRef}
       onSelect={(event, itemId) => {
-        onSelect && onSelect(event, itemId, toggleRef);
+        onSelect && onSelect(event, itemId);
         shouldFocusToggleOnSelect && toggleRef.current.focus();
       }}
       isPlain={isPlain}
@@ -145,7 +146,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   );
   return (
     <Popper
-      trigger={toggle(toggleRef)}
+      trigger={typeof toggle === 'function' ? toggle(toggleRef) : toggle}
       triggerRef={toggleRef}
       popper={menu}
       popperRef={menuRef}
