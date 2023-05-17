@@ -34,7 +34,7 @@ export const AlertGroupToastOverflowCapture: React.FunctionComponent = () => {
     setOverflowMessage(getOverflowMessage(newAlerts.length));
   };
 
-  const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
+  const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');
 
   const getUniqueId = () => new Date().getTime();
 

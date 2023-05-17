@@ -13,7 +13,7 @@ export const ActionListItem: React.FunctionComponent<ActionListItemProps> = ({
   className = '',
   ...props
 }: ActionListItemProps) => (
-  <div className={css('pf-c-action-list__item', className)} {...props}>
+  <div className={css('pf-v5-c-action-list__item', className)} {...props}>
     {children}
   </div>
 );

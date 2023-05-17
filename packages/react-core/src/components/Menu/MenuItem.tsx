@@ -193,7 +193,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       if (flyoutVisible) {
         const flyoutMenu = (flyoutTarget as HTMLElement).nextElementSibling;
         const flyoutItems = Array.from(flyoutMenu.getElementsByTagName('UL')[0].children).filter(
-          (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+          (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider))
         );
         (flyoutItems[0].firstChild as HTMLElement).focus();
       } else {
@@ -348,7 +348,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
               )}
               {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
               {hasCheckbox && (
-                <span className={css('pf-c-menu__item-check')}>
+                <span className={css(styles.menuItemCheck)}>
                   <Checkbox
                     id={randomId}
                     component="span"

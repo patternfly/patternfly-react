@@ -48,7 +48,7 @@ exports[`MultipleFileUploadStatus renders custom class names 1`] = `
         id=""
       >
         <ul
-          class="pf-c-multiple-file-upload__status-list"
+          class="pf-v5-c-multiple-file-upload__status-list"
           role="list"
         >
           Foo
@@ -119,7 +119,7 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
         id=""
       >
         <ul
-          class="pf-c-multiple-file-upload__status-list"
+          class="pf-v5-c-multiple-file-upload__status-list"
           role="list"
         >
           Foo
@@ -180,7 +180,7 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
         id=""
       >
         <ul
-          class="pf-c-multiple-file-upload__status-list"
+          class="pf-v5-c-multiple-file-upload__status-list"
           role="list"
         >
           Foo
@@ -239,7 +239,7 @@ exports[`MultipleFileUploadStatus renders with expected class names 1`] = `
         id=""
       >
         <ul
-          class="pf-c-multiple-file-upload__status-list"
+          class="pf-v5-c-multiple-file-upload__status-list"
           role="list"
         >
           Foo

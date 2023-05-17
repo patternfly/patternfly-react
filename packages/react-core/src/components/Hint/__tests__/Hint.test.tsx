@@ -14,7 +14,7 @@ test('renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('renders with class pf-c-hint', () => {
+test('renders with class pf-v5-c-hint', () => {
   render(<Hint>Test</Hint>);
 
   const hint = screen.getByText('Test');
@@ -46,7 +46,7 @@ test('renders actions options', () => {
   expect(actions).toBeVisible();
 });
 
-test('renders with class pf-c-hint__actions if there is an action prop', () => {
+test('renders with class pf-v5-c-hint__actions if there is an action prop', () => {
   render(<Hint actions="actions">Test</Hint>);
 
   const hint = screen.getByText('actions');

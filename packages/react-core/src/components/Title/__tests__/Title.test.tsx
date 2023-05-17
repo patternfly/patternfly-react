@@ -16,12 +16,12 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with the pf-c-title', () => {
+test('Renders with the pf-v5-c-title', () => {
   render(<Title headingLevel="h1">Test</Title>);
   expect(screen.getByRole('heading')).toHaveClass('pf-v5-c-title');
 });
 
-test('Renders with only the class pf-c-title and the heading level modifier class pf-m-2xl by default', () => {
+test('Renders with only the class pf-v5-c-title and the heading level modifier class pf-m-2xl by default', () => {
   render(<Title headingLevel="h1">Test</Title>);
   expect(screen.getByRole('heading')).toHaveClass('pf-v5-c-title pf-m-2xl', { exact: true });
 });

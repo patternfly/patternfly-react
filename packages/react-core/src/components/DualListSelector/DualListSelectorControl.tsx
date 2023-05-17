@@ -40,7 +40,7 @@ export const DualListSelectorControlBase: React.FunctionComponent<DualListSelect
   const privateRef = React.useRef(null);
   const ref = innerRef || privateRef;
   return (
-    <div className={css('pf-c-dual-list-selector__controls-item', className)} {...props}>
+    <div className={css('pf-v5-c-dual-list-selector__controls-item', className)} {...props}>
       <Button
         isDisabled={isDisabled}
         aria-disabled={isDisabled}

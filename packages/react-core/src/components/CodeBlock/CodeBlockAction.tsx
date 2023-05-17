@@ -13,7 +13,7 @@ export const CodeBlockAction: React.FunctionComponent<CodeBlockActionProps> = ({
   className,
   ...props
 }: CodeBlockActionProps) => (
-  <div className={css('pf-c-code-block__actions-item', className)} {...props}>
+  <div className={css('pf-v5-c-code-block__actions-item', className)} {...props}>
     {children}
   </div>
 );

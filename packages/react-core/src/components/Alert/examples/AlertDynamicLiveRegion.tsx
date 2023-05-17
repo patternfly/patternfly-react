@@ -10,7 +10,7 @@ interface AlertInfo {
 export const DynamicLiveRegionAlert: React.FunctionComponent = () => {
   const [alerts, setAlerts] = React.useState<AlertInfo[]>([]);
   const getUniqueId: () => number = () => new Date().getTime();
-  const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
+  const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');
 
   const addAlert = (alertInfo: AlertInfo) => {
     setAlerts(prevAlertInfo => [...prevAlertInfo, alertInfo]);

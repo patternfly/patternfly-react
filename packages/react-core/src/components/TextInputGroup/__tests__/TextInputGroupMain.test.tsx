@@ -20,7 +20,7 @@ describe('TextInputGroupMain', () => {
     expect(screen.getByText('Test')).toBeVisible();
   });
 
-  it('renders with class pf-c-text-input-group__main', () => {
+  it('renders with class pf-v5-c-text-input-group__main', () => {
     render(<TextInputGroupMain>Test</TextInputGroupMain>);
 
     const inputGroupMain = screen.getByText('Test');
@@ -52,7 +52,7 @@ describe('TextInputGroupMain', () => {
     expect(inputGroupMain).toHaveClass('custom-class');
   });
 
-  it('renders with class pf-c-text-input-group__text on the inputs parent', () => {
+  it('renders with class pf-v5-c-text-input-group__text on the inputs parent', () => {
     render(<TextInputGroupMain>Test</TextInputGroupMain>);
 
     const inputGroupText = screen.getByRole('textbox').parentNode;
@@ -60,7 +60,7 @@ describe('TextInputGroupMain', () => {
     expect(inputGroupText).toHaveClass('pf-v5-c-text-input-group__text');
   });
 
-  it('renders the input with class pf-c-text-input-group__text-input', () => {
+  it('renders the input with class pf-v5-c-text-input-group__text-input', () => {
     render(<TextInputGroupMain>Test</TextInputGroupMain>);
 
     const input = screen.getByRole('textbox');
@@ -180,7 +180,7 @@ describe('TextInputGroupMain', () => {
     expect(hintInput).toBeInTheDocument();
   });
 
-  it('renders the hint input with classes pf-c-text-input-group__text-input and pf-m-hint', () => {
+  it('renders the hint input with classes pf-v5-c-text-input-group__text-input and pf-m-hint', () => {
     // we set the type of the main input to search here so that we can accurately target the hint input
     render(
       <TextInputGroupMain hint="Test" type="search">

@@ -108,7 +108,7 @@ test('Renders a Button with variant: ButtonVariant.plain', () => {
   expect(screen.getByText('variant: plain')).toBeVisible();
 });
 
-test('Renders with the toggle icon inside class pf-c-alert__toggle-icon', () => {
+test('Renders with the toggle icon inside class pf-v5-c-alert__toggle-icon', () => {
   render(
     <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
       <AlertToggleExpandButton />

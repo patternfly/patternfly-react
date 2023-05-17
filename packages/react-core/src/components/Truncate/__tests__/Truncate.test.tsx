@@ -12,7 +12,7 @@ jest.mock('../../Tooltip', () => ({
   )
 }));
 
-test('renders with class pf-c-truncate', () => {
+test('renders with class pf-v5-c-truncate', () => {
   render(<Truncate content={''} aria-label="test-id" />);
 
   const test = screen.getByLabelText('test-id');
@@ -44,7 +44,7 @@ test('renders truncate with content', () => {
   expect(test).toHaveTextContent('Test');
 });
 
-test('only renders pf-c-truncate__start with default position', () => {
+test('only renders pf-v5-c-truncate__start with default position', () => {
   render(<Truncate content={'Testing truncate content'} />);
 
   const start = screen.getByText('Testing truncate content');

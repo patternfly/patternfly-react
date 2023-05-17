@@ -17,7 +17,7 @@ describe('TextInputGroup', () => {
     expect(screen.getByText('Test')).toBeVisible();
   });
 
-  it('renders with class pf-c-text-input-group', () => {
+  it('renders with class pf-v5-c-text-input-group', () => {
     render(<TextInputGroup>Test</TextInputGroup>);
 
     const inputGroup = screen.getByText('Test');

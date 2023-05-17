@@ -222,7 +222,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
       {...props}
     >
       <div className={styles.jumpLinksMain}>
-        <div className={css('pf-c-jump-links__header')}>
+        <div className={css('pf-v5-c-jump-links__header')}>
           {expandable && (
             <div className={styles.jumpLinksToggle}>
               <Button

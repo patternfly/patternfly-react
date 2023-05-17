@@ -20,7 +20,7 @@ export const AlertGroupToast: React.FunctionComponent = () => {
     setAlerts(prevAlerts => [...prevAlerts.filter(alert => alert.key !== key)]);
   };
 
-  const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
+  const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');
 
   const getUniqueId = () => new Date().getTime();
 

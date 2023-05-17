@@ -9,10 +9,10 @@ exports[`EmptyState Full height 1`] = `
       class="pf-v5-c-empty-state__content"
     >
       <div
-        class="pf-c-empty-state__header"
+        class="pf-v5-c-empty-state__header"
       >
         <div
-          class="pf-c-empty-state__title"
+          class="pf-v5-c-empty-state__title"
         >
           <h1
             class="pf-v5-c-empty-state__title-text"
@@ -29,7 +29,7 @@ exports[`EmptyState Full height 1`] = `
 exports[`EmptyState Header with icon 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-empty-state__header"
+    class="pf-v5-c-empty-state__header"
   >
     <div
       class="pf-v5-c-empty-state__icon"
@@ -59,10 +59,10 @@ exports[`EmptyState Main 1`] = `
       class="pf-v5-c-empty-state__content"
     >
       <div
-        class="pf-c-empty-state__header"
+        class="pf-v5-c-empty-state__header"
       >
         <div
-          class="pf-c-empty-state__title"
+          class="pf-v5-c-empty-state__title"
         >
           <h1
             class="pf-v5-c-empty-state__title-text"
@@ -123,10 +123,10 @@ exports[`EmptyState Main variant large 1`] = `
       class="pf-v5-c-empty-state__content"
     >
       <div
-        class="pf-c-empty-state__header"
+        class="pf-v5-c-empty-state__header"
       >
         <div
-          class="pf-c-empty-state__title"
+          class="pf-v5-c-empty-state__title"
         >
           <h1
             class="pf-v5-c-empty-state__title-text"
@@ -149,10 +149,10 @@ exports[`EmptyState Main variant small 1`] = `
       class="pf-v5-c-empty-state__content"
     >
       <div
-        class="pf-c-empty-state__header"
+        class="pf-v5-c-empty-state__header"
       >
         <div
-          class="pf-c-empty-state__title"
+          class="pf-v5-c-empty-state__title"
         >
           <h1
             class="pf-v5-c-empty-state__title-text"
@@ -175,10 +175,10 @@ exports[`EmptyState Main variant xs 1`] = `
       class="pf-v5-c-empty-state__content"
     >
       <div
-        class="pf-c-empty-state__header"
+        class="pf-v5-c-empty-state__header"
       >
         <div
-          class="pf-c-empty-state__title"
+          class="pf-v5-c-empty-state__title"
         >
           <h1
             class="pf-v5-c-empty-state__title-text"

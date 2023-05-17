@@ -16,12 +16,12 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with the class pf-c-panel__main', () => {
+test('Renders with the class pf-v5-c-panel__main', () => {
   render(<PanelMain>Test</PanelMain>);
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__main');
 });
 
-test('Renders with only the class pf-c-panel__main by default', () => {
+test('Renders with only the class pf-v5-c-panel__main by default', () => {
   render(<PanelMain>Test</PanelMain>);
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__main', { exact: true });
 });

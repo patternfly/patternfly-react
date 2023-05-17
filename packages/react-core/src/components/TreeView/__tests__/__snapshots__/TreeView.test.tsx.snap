@@ -6,7 +6,7 @@ exports[`renders compact no background successfully 1`] = `
     class="pf-v5-c-tree-view pf-m-compact pf-m-no-background"
   >
     <ul
-      class="pf-c-tree-view__list"
+      class="pf-v5-c-tree-view__list"
       role="tree"
     >
       <li
@@ -59,7 +59,7 @@ exports[`renders compact no background successfully 1`] = `
           </button>
         </div>
         <ul
-          class="pf-c-tree-view__list"
+          class="pf-v5-c-tree-view__list"
           role="group"
         >
           <li
@@ -315,7 +315,7 @@ exports[`renders compact successfully 1`] = `
     class="pf-v5-c-tree-view pf-m-compact"
   >
     <ul
-      class="pf-c-tree-view__list"
+      class="pf-v5-c-tree-view__list"
       role="tree"
     >
       <li
@@ -368,7 +368,7 @@ exports[`renders compact successfully 1`] = `
           </button>
         </div>
         <ul
-          class="pf-c-tree-view__list"
+          class="pf-v5-c-tree-view__list"
           role="group"
         >
           <li
@@ -624,7 +624,7 @@ exports[`renders guides successfully 1`] = `
     class="pf-v5-c-tree-view pf-m-guides"
   >
     <ul
-      class="pf-c-tree-view__list"
+      class="pf-v5-c-tree-view__list"
       role="tree"
     >
       <li
@@ -673,7 +673,7 @@ exports[`renders guides successfully 1`] = `
           </button>
         </div>
         <ul
-          class="pf-c-tree-view__list"
+          class="pf-v5-c-tree-view__list"
           role="group"
         >
           <li
@@ -909,7 +909,7 @@ exports[`tree view renders active successfully 1`] = `
     class="pf-v5-c-tree-view"
   >
     <ul
-      class="pf-c-tree-view__list"
+      class="pf-v5-c-tree-view__list"
       role="tree"
     >
       <li
@@ -958,7 +958,7 @@ exports[`tree view renders active successfully 1`] = `
           </button>
         </div>
         <ul
-          class="pf-c-tree-view__list"
+          class="pf-v5-c-tree-view__list"
           role="group"
         >
           <li
@@ -1194,7 +1194,7 @@ exports[`tree view renders badges successfully 1`] = `
     class="pf-v5-c-tree-view"
   >
     <ul
-      class="pf-c-tree-view__list"
+      class="pf-v5-c-tree-view__list"
       role="tree"
     >
       <li
@@ -1252,7 +1252,7 @@ exports[`tree view renders badges successfully 1`] = `
           </button>
         </div>
         <ul
-          class="pf-c-tree-view__list"
+          class="pf-v5-c-tree-view__list"
           role="group"
         >
           <li
@@ -1533,7 +1533,7 @@ exports[`tree view renders basic successfully 1`] = `
     class="pf-v5-c-tree-view"
   >
     <ul
-      class="pf-c-tree-view__list"
+      class="pf-v5-c-tree-view__list"
       role="tree"
     >
       <li
@@ -1582,7 +1582,7 @@ exports[`tree view renders basic successfully 1`] = `
           </button>
         </div>
         <ul
-          class="pf-c-tree-view__list"
+          class="pf-v5-c-tree-view__list"
           role="group"
         >
           <li
@@ -1818,7 +1818,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
     class="pf-v5-c-tree-view"
   >
     <ul
-      class="pf-c-tree-view__list"
+      class="pf-v5-c-tree-view__list"
       role="tree"
     >
       <li
@@ -1878,7 +1878,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
           </label>
         </div>
         <ul
-          class="pf-c-tree-view__list"
+          class="pf-v5-c-tree-view__list"
           role="group"
         >
           <li
@@ -2174,7 +2174,7 @@ exports[`tree view renders icons successfully 1`] = `
     class="pf-v5-c-tree-view"
   >
     <ul
-      class="pf-c-tree-view__list"
+      class="pf-v5-c-tree-view__list"
       role="tree"
     >
       <li
@@ -2238,7 +2238,7 @@ exports[`tree view renders icons successfully 1`] = `
           </button>
         </div>
         <ul
-          class="pf-c-tree-view__list"
+          class="pf-v5-c-tree-view__list"
           role="group"
         >
           <li
@@ -2549,7 +2549,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
     class="pf-v5-c-tree-view"
   >
     <ul
-      class="pf-c-tree-view__list"
+      class="pf-v5-c-tree-view__list"
       role="tree"
     >
       <li
@@ -2625,7 +2625,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
           </label>
         </div>
         <ul
-          class="pf-c-tree-view__list"
+          class="pf-v5-c-tree-view__list"
           role="group"
         >
           <li
@@ -2948,7 +2948,7 @@ exports[`tree view renders toolbar successfully 1`] = `
       class="pf-v5-c-divider"
     />
     <ul
-      class="pf-c-tree-view__list"
+      class="pf-v5-c-tree-view__list"
       role="tree"
     >
       <li
@@ -2997,7 +2997,7 @@ exports[`tree view renders toolbar successfully 1`] = `
           </button>
         </div>
         <ul
-          class="pf-c-tree-view__list"
+          class="pf-v5-c-tree-view__list"
           role="group"
         >
           <li

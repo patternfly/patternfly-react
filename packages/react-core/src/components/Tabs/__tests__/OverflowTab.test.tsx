@@ -74,20 +74,20 @@ test('Renders with inherited element props spread to the component', () => {
   expect(screen.getByRole('presentation')).toHaveAccessibleName('Label');
 });
 
-test('Renders with class names pf-m-overflow and pf-c-tabs__item on the presentation element', () => {
+test('Renders with class names pf-m-overflow and pf-v5-c-tabs__item on the presentation element', () => {
   render(<OverflowTab />);
 
   expect(screen.getByRole('presentation')).toHaveClass('pf-m-overflow');
   expect(screen.getByRole('presentation')).toHaveClass('pf-v5-c-tabs__item');
 });
 
-test('Renders with class pf-c-tabs__link on the tab element', () => {
+test('Renders with class pf-v5-c-tabs__link on the tab element', () => {
   render(<OverflowTab />);
 
   expect(screen.getByRole('tab')).toHaveClass('pf-v5-c-tabs__link');
 });
 
-test("Renders with class pf-c-tabs__link-toggle-icon on the img element's container", () => {
+test("Renders with class pf-v5-c-tabs__link-toggle-icon on the img element's container", () => {
   render(<OverflowTab />);
 
   expect(screen.getByRole('img', { hidden: true }).parentElement).toHaveClass('pf-v5-c-tabs__link-toggle-icon');

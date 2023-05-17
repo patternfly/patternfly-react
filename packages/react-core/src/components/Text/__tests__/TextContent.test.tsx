@@ -16,7 +16,7 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class name pf-c-content', () => {
+test('Renders with class name pf-v5-c-content', () => {
   render(<TextContent>Test</TextContent>);
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-content', { exact: true });
 });

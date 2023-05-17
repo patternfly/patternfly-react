@@ -18,7 +18,7 @@ describe('TextInputGroupUtilities', () => {
     expect(screen.getByRole('button', { name: 'Test' })).toBeVisible();
   });
 
-  it('renders with class pf-c-text-input-group__utilities', () => {
+  it('renders with class pf-v5-c-text-input-group__utilities', () => {
     render(<TextInputGroupUtilities>Test</TextInputGroupUtilities>);
 
     const utilities = screen.getByText('Test');
