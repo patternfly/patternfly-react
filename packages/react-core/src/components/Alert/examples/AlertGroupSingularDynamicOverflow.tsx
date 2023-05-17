@@ -5,7 +5,8 @@ import {
   AlertGroup,
   AlertActionCloseButton,
   AlertVariant,
-  InputGroup
+  InputGroup,
+  InputGroupItem
 } from '@patternfly/react-core';
 
 export const AlertGroupSingularDynamicOverflow: React.FunctionComponent = () => {
@@ -57,15 +58,21 @@ export const AlertGroupSingularDynamicOverflow: React.FunctionComponent = () => 
   return (
     <React.Fragment>
       <InputGroup style={{ marginBottom: '16px' }}>
-        <button onClick={addSuccessAlert} type="button" className={btnClasses}>
-          Add single success alert
-        </button>
-        <button onClick={addDangerAlert} type="button" className={btnClasses}>
-          Add single danger alert
-        </button>
-        <button onClick={addInfoAlert} type="button" className={btnClasses}>
-          Add single info alert
-        </button>
+        <InputGroupItem>
+          <button onClick={addSuccessAlert} type="button" className={btnClasses}>
+            Add single success alert
+          </button>
+        </InputGroupItem>
+        <InputGroupItem>
+          <button onClick={addDangerAlert} type="button" className={btnClasses}>
+            Add single danger alert
+          </button>
+        </InputGroupItem>
+        <InputGroupItem>
+          <button onClick={addInfoAlert} type="button" className={btnClasses}>
+            Add single info alert
+          </button>
+        </InputGroupItem>
       </InputGroup>
       <AlertGroup isLiveRegion onOverflowClick={onOverflowClick} overflowMessage={overflowMessage}>
         {alerts.slice(0, maxDisplayed).map(({ key, variant, title }) => (

@@ -3,7 +3,7 @@ import { TextInput } from '../TextInput';
 import { Button } from '../Button';
 import { Select, SelectList, SelectOption } from '../Select';
 import { MenuToggle, MenuToggleElement } from '../MenuToggle';
-import { InputGroup } from '../InputGroup';
+import { InputGroup, InputGroupItem } from '../InputGroup';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { css } from '@patternfly/react-styles';
@@ -259,67 +259,71 @@ export const CalendarMonth = ({
           </Button>
         </div>
         <InputGroup>
-          <div className={styles.calendarMonthHeaderMonth}>
-            <span id={hiddenMonthId} hidden>
-              Month
-            </span>
-            <Select
-              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                <MenuToggle
-                  ref={toggleRef}
-                  onClick={()=>setIsSelectOpen(!isSelectOpen)}
-                  isExpanded={isSelectOpen}
-                  style={{width: "140px"} as React.CSSProperties }
-                >
-                  {monthFormatted}
-                </MenuToggle>
-              )}
-              aria-labelledby={hiddenMonthId}
-              isOpen={isSelectOpen}
-              onOpenChange={(isOpen) => {
-                setIsSelectOpen(isOpen);
-                onSelectToggle(isOpen);
-              }}
-              onSelect={(ev, monthNum) => {
-                // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
-                // to see the SelectOption as a child so it doesn't close the Popover.
-                setTimeout(() => {
-                  setIsSelectOpen(false);
-                  onSelectToggle(false);
+          <InputGroupItem isFill>
+            <div className={styles.calendarMonthHeaderMonth}>
+              <span id={hiddenMonthId} hidden>
+                Month
+              </span>
+              <Select
+                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    onClick={() => setIsSelectOpen(!isSelectOpen)}
+                    isExpanded={isSelectOpen}
+                    style={{ width: '140px' } as React.CSSProperties}
+                  >
+                    {monthFormatted}
+                  </MenuToggle>
+                )}
+                aria-labelledby={hiddenMonthId}
+                isOpen={isSelectOpen}
+                onOpenChange={(isOpen) => {
+                  setIsSelectOpen(isOpen);
+                  onSelectToggle(isOpen);
+                }}
+                onSelect={(ev, monthNum) => {
+                  // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
+                  // to see the SelectOption as a child so it doesn't close the Popover.
+                  setTimeout(() => {
+                    setIsSelectOpen(false);
+                    onSelectToggle(false);
+                    const newDate = new Date(focusedDate);
+                    newDate.setMonth(Number(monthNum as string));
+                    setFocusedDate(newDate);
+                    setHoveredDate(newDate);
+                    setShouldFocus(false);
+                    onMonthChange(ev, newDate);
+                  }, 0);
+                }}
+                selected={monthFormatted}
+              >
+                <SelectList>
+                  {longMonths.map((longMonth, index) => (
+                    <SelectOption key={index} itemId={index} isSelected={longMonth === monthFormatted}>
+                      {longMonth}
+                    </SelectOption>
+                  ))}
+                </SelectList>
+              </Select>
+            </div>
+          </InputGroupItem>
+          <InputGroupItem>
+            <div className={styles.calendarMonthHeaderYear}>
+              <TextInput
+                aria-label={yearInputAriaLabel}
+                type="number"
+                value={yearFormatted}
+                onChange={(ev: React.FormEvent<HTMLInputElement>, year: string) => {
                   const newDate = new Date(focusedDate);
-                  newDate.setMonth(Number(monthNum as string));
+                  newDate.setFullYear(+year);
                   setFocusedDate(newDate);
                   setHoveredDate(newDate);
                   setShouldFocus(false);
                   onMonthChange(ev, newDate);
-                }, 0);
-              }}
-              selected={monthFormatted}
-            >
-              <SelectList>
-                {longMonths.map((longMonth, index) => (
-                  <SelectOption key={index} itemId={index} isSelected={longMonth === monthFormatted}>
-                    {longMonth}
-                  </SelectOption>
-                ))}
-              </SelectList>
-            </Select>
-          </div>
-          <div className={styles.calendarMonthHeaderYear}>
-            <TextInput
-              aria-label={yearInputAriaLabel}
-              type="number"
-              value={yearFormatted}
-              onChange={(ev: React.FormEvent<HTMLInputElement>, year: string) => {
-                const newDate = new Date(focusedDate);
-                newDate.setFullYear(+year);
-                setFocusedDate(newDate);
-                setHoveredDate(newDate);
-                setShouldFocus(false);
-                onMonthChange(ev, newDate);
-              }}
-            />
-          </div>
+                }}
+              />
+            </div>
+          </InputGroupItem>
         </InputGroup>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.nextMonth)}>
           <Button

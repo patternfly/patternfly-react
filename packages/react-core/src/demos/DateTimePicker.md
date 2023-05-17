@@ -21,16 +21,7 @@ In this demo, learn how to use a [CalendarMonth](/components/calendar-month) com
 ### Date and time range picker
 
 ```js
-import {
-  Flex,
-  FlexItem,
-  InputGroup,
-  DatePicker,
-  isValidDate,
-  TimePicker,
-  yyyyMMddFormat,
-  updateDateTime
-} from '@patternfly/react-core';
+import { Flex, FlexItem, InputGroup, InputGroupItem, DatePicker, isValidDate, TimePicker, yyyyMMddFormat, updateDateTime } from '@patternfly/react-core';
 
 DateTimeRangePicker = () => {
   const [from, setFrom] = React.useState();
@@ -84,26 +75,34 @@ DateTimeRangePicker = () => {
     <Flex direction={{ default: 'column', lg: 'row' }}>
       <FlexItem>
         <InputGroup>
-          <DatePicker onChange={onFromDateChange} aria-label="Start date" placeholder="YYYY-MM-DD" />
-          <TimePicker aria-label="Start time" style={{ width: '150px' }} onChange={onFromTimeChange} />
+          <InputGroupItem>
+            <DatePicker onChange={onFromDateChange} aria-label="Start date" placeholder="YYYY-MM-DD" />
+          </InputGroupItem>
+          <InputGroupItem>
+            <TimePicker aria-label="Start time" style={{ width: '150px' }} onChange={onFromTimeChange} />
+          </InputGroupItem>
         </InputGroup>
       </FlexItem>
       <FlexItem>to</FlexItem>
       <FlexItem>
         <InputGroup>
-          <DatePicker
-            value={isValidDate(to) ? yyyyMMddFormat(to) : to}
-            onChange={onToDateChange}
-            isDisabled={!isValidDate(from)}
-            rangeStart={from}
-            validators={[toValidator]}
-            aria-label="End date"
-            placeholder="YYYY-MM-DD"
-          />
-          <TimePicker style={{ width: '150px' }} onChange={onToTimeChange} isDisabled={!isValidDate(from)} />
+          <InputGroupItem>
+            <DatePicker
+              value={isValidDate(to) ? yyyyMMddFormat(to) : to}
+              onChange={onToDateChange}
+              isDisabled={!isValidDate(from)}
+              rangeStart={from}
+              validators={[toValidator]}
+              aria-label="End date"
+              placeholder="YYYY-MM-DD"
+            />
+          </InputGroupItem>
+          <InputGroupItem>
+            <TimePicker style={{ width: '150px' }} onChange={onToTimeChange} isDisabled={!isValidDate(from)} />
+          </InputGroupItem>
         </InputGroup>
       </FlexItem>
     </Flex>
   );
-};
+}
 ```

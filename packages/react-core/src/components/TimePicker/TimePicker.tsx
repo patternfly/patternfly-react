@@ -6,7 +6,7 @@ import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
 import { getUniqueId } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
-import { InputGroup } from '../InputGroup';
+import { InputGroup, InputGroupItem } from '../InputGroup';
 import { TextInput, TextInputProps } from '../TextInput';
 import { KeyTypes } from '../../helpers/constants';
 import {
@@ -535,19 +535,21 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       <div ref={this.baseComponentRef} className={css(datePickerStyles.datePicker, className)}>
         <div className={css(datePickerStyles.datePickerInput)} style={style} {...props}>
           <InputGroup>
-            <div id={randomId}>
-              <div ref={this.toggleRef} style={{ paddingLeft: '0' }}>
-                <Popper
-                  appendTo={calculatedAppendTo}
-                  trigger={textInput}
-                  triggerRef={this.inputRef}
-                  popper={menuContainer}
-                  popperRef={this.menuRef}
-                  isVisible={isTimeOptionsOpen}
-                  zIndex={zIndex}
-                />
+            <InputGroupItem>
+              <div id={randomId}>
+                <div ref={this.toggleRef} style={{ paddingLeft: '0' }}>
+                  <Popper
+                    appendTo={calculatedAppendTo}
+                    trigger={textInput}
+                    triggerRef={this.inputRef}
+                    popper={menuContainer}
+                    popperRef={this.menuRef}
+                    isVisible={isTimeOptionsOpen}
+                    zIndex={zIndex}
+                  />
+                </div>
               </div>
-            </div>
+            </InputGroupItem>
           </InputGroup>
           {isInvalid && (
             <div className={css(datePickerStyles.datePickerHelperText)}>

@@ -58,6 +58,7 @@ import {
   Flex,
   FlexItem,
   InputGroup,
+  InputGroupItem,
   PageSection,
   PageSectionVariants,
   Progress,
@@ -197,17 +198,21 @@ class PrimaryDetailFullPage extends React.Component {
       <React.Fragment>
         <ToolbarItem>
           <InputGroup>
-            <TextInput
-              name="full-page-data-toolbar-input1"
-              id="full-page-data-toolbar-input1"
-              type="search"
-              aria-label="search input example"
-              onChange={this.onInputChange}
-              value={inputValue}
-            />
-            <Button variant={ButtonVariant.control} aria-label="search button for search input">
-              <SearchIcon />
-            </Button>
+            <InputGroupItem isFill>
+              <TextInput
+                name="full-page-data-toolbar-input1"
+                id="full-page-data-toolbar-input1"
+                type="search"
+                aria-label="search input example"
+                onChange={this.onInputChange}
+                value={inputValue}
+              />
+            </InputGroupItem>
+            <InputGroupItem>
+              <Button variant={ButtonVariant.control} aria-label="search button for search input">
+                <SearchIcon />
+              </Button>
+            </InputGroupItem>
           </InputGroup>
         </ToolbarItem>
         <ToolbarGroup variant="filter-group">
@@ -521,6 +526,7 @@ import {
   Flex,
   FlexItem,
   InputGroup,
+  InputGroupItem,
   PageSection,
   PageSectionVariants,
   Progress,
@@ -659,17 +665,21 @@ class PrimaryDetailContentPadding extends React.Component {
       <React.Fragment>
         <ToolbarItem>
           <InputGroup>
-            <TextInput
-              name="content-padding-data-toolbar-input1"
-              id="content-padding-data-toolbar-input1"
-              type="search"
-              aria-label="search input example"
-              onChange={this.onInputChange}
-              value={inputValue}
-            />
-            <Button variant={ButtonVariant.control} aria-label="search button for search input">
-              <SearchIcon />
-            </Button>
+            <InputGroupItem isFill>
+              <TextInput
+                name="content-padding-data-toolbar-input1"
+                id="content-padding-data-toolbar-input1"
+                type="search"
+                aria-label="search input example"
+                onChange={this.onInputChange}
+                value={inputValue}
+              />
+            </InputGroupItem>
+            <InputGroupItem>
+              <Button variant={ButtonVariant.control} aria-label="search button for search input">
+                <SearchIcon />
+              </Button>
+            </InputGroupItem>
           </InputGroup>
         </ToolbarItem>
         <ToolbarGroup variant="filter-group">
@@ -1996,6 +2006,7 @@ import {
   Flex,
   FlexItem,
   InputGroup,
+  InputGroupItem,
   PageSection,
   PageSectionVariants,
   Progress,
@@ -2134,17 +2145,21 @@ class PrimaryDetailInlineModifier extends React.Component {
       <React.Fragment>
         <ToolbarItem>
           <InputGroup>
-            <TextInput
-              name="inline-modifier-input"
-              id="inline-modifier-input"
-              type="search"
-              aria-label="search input example"
-              onChange={this.onInputChange}
-              value={inputValue}
-            />
-            <Button variant={ButtonVariant.control} aria-label="search button for search input">
-              <SearchIcon />
-            </Button>
+            <InputGroupItem isFill>
+              <TextInput
+                name="inline-modifier-input"
+                id="inline-modifier-input"
+                type="search"
+                aria-label="search input example"
+                onChange={this.onInputChange}
+                value={inputValue}
+              />
+            </InputGroupItem>
+            <InputGroupItem>
+              <Button variant={ButtonVariant.control} aria-label="search button for search input">
+                <SearchIcon />
+              </Button>
+            </InputGroupItem>
           </InputGroup>
         </ToolbarItem>
         <ToolbarGroup variant="filter-group">

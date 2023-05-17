@@ -11,6 +11,7 @@ import {
   Popper,
   Divider,
   InputGroup,
+  InputGroupItem,
   Button,
   ButtonVariant,
   SearchInput
@@ -151,21 +152,25 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
       <MenuSearch>
         <MenuSearchInput>
           <InputGroup>
-            <SearchInput
-              value={searchInputValue}
-              placeholder="Search"
-              onChange={(_event, value) => onSearchInputChange(value)}
-              onKeyPress={onEnterPressed}
-              aria-labelledby="pf-context-selector-search-button-id-1"
-            />
-            <Button
-              variant={ButtonVariant.control}
-              aria-label="Search menu items"
-              id="pf-context-selector-search-button-id-1"
-              onClick={onSearchButtonClick}
-            >
-              <SearchIcon aria-hidden="true" />
-            </Button>
+            <InputGroupItem isFill>
+              <SearchInput
+                value={searchInputValue}
+                placeholder="Search"
+                onChange={(_event, value) => onSearchInputChange(value)}
+                onKeyPress={onEnterPressed}
+                aria-labelledby="pf-context-selector-search-button-id-1"
+              />
+            </InputGroupItem>
+            <InputGroupItem>
+              <Button
+                variant={ButtonVariant.control}
+                aria-label="Search menu items"
+                id="pf-context-selector-search-button-id-1"
+                onClick={onSearchButtonClick}
+              >
+                <SearchIcon aria-hidden="true" />
+              </Button>
+            </InputGroupItem>
           </InputGroup>
         </MenuSearchInput>
       </MenuSearch>

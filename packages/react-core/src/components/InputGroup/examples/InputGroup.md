@@ -2,7 +2,7 @@
 id: Input group
 section: components
 cssPrefix: null
-propComponents: ['InputGroup', 'InputGroupText']
+propComponents: ['InputGroup', 'InputGroupItem', 'InputGroupText']
 ---
 
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
@@ -32,6 +32,7 @@ import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-
 
 ### With popover
 
+using `appendTo` with ref to the `InputGroup` for the Popover so that the popover width will depend on the whole input group
 ```ts file ='./InputGroupWithPopover.tsx'
 
 ```

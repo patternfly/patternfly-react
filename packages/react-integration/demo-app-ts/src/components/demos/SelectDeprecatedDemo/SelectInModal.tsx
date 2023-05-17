@@ -4,7 +4,8 @@ import {
   ModalVariant,
   Button,
   TimePicker,
-  InputGroup
+  InputGroup,
+  InputGroupItem
 } from '@patternfly/react-core';
 import {
   Select,
@@ -48,6 +49,7 @@ export const SelectInModal = () => {
     setSelection(newSelection);
   };
 
+  const inputGroupRef1 = React.useRef(null);
   return (
     <React.Fragment>
       <Button id="modal-for-select-in-modal" variant="primary" onClick={handleModalToggle}>
@@ -69,33 +71,37 @@ export const SelectInModal = () => {
           </Button>
         ]}
       >
-        <InputGroup>
-          <Select
-            placeholderText="Select an option"
-            aria-label="Select Input with descriptions"
-            onToggle={onSelectToggle}
-            onSelect={onSelect}
-            selections={selection}
-            isOpen={isSelectOpen}
-            menuAppendTo="parent"
-            toggleId="select-in-modal-select"
-          >
-            {options.map((option, index) => (
-              <SelectOption
-                isDisabled={option.disabled}
-                key={index}
-                value={option.value}
-                isPlaceholder={option.isPlaceholder}
-                description="This is a description"
-              />
-            ))}
-          </Select>
-          <TimePicker
-            id="select-in-modal-time-picker"
-            isOpen={isTimePickerOpen}
-            setIsOpen={setIsTimePickerOpen}
-            menuAppendTo="parent"
-          />
+        <InputGroup ref={inputGroupRef1}>
+          <InputGroupItem isFill>
+            <Select
+              placeholderText="Select an option"
+              aria-label="Select Input with descriptions"
+              onToggle={onSelectToggle}
+              onSelect={onSelect}
+              selections={selection}
+              isOpen={isSelectOpen}
+              menuAppendTo={() => inputGroupRef1.current}
+              toggleId="select-in-modal-select"
+            >
+              {options.map((option, index) => (
+                <SelectOption
+                  isDisabled={option.disabled}
+                  key={index}
+                  value={option.value}
+                  isPlaceholder={option.isPlaceholder}
+                  description="This is a description"
+                />
+              ))}
+            </Select>
+          </InputGroupItem>
+          <InputGroupItem>
+            <TimePicker
+              id="select-in-modal-time-picker"
+              isOpen={isTimePickerOpen}
+              setIsOpen={setIsTimePickerOpen}
+              menuAppendTo={() => inputGroupRef1.current}
+            />
+          </InputGroupItem>
         </InputGroup>
       </Modal>
     </React.Fragment>

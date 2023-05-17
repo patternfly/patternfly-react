@@ -1,31 +1,50 @@
 import React from 'react';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
-import { InputGroup, InputGroupText, InputGroupTextVariant, TextInput, ValidatedOptions } from '@patternfly/react-core';
+import {
+  InputGroup,
+  InputGroupText,
+  InputGroupItem,
+  InputGroupTextVariant,
+  TextInput,
+  ValidatedOptions
+} from '@patternfly/react-core';
 
 export const InputGroupBasic: React.FunctionComponent = () => (
   <React.Fragment>
     <InputGroup>
-      <TextInput id="textInput-basic-1" type="email" aria-label="email input field" />
-      <InputGroupText id="email-example">@example.com</InputGroupText>
+      <InputGroupItem isFill>
+        <TextInput id="textInput-basic-1" type="email" aria-label="email input field" />
+      </InputGroupItem>
+      <InputGroupItem isBox>
+        <InputGroupText id="email-example">@example.com</InputGroupText>
+      </InputGroupItem>
     </InputGroup>
     <br />
     <InputGroup>
-      <InputGroupText id="username">
-        <AtIcon />
-      </InputGroupText>
-      <TextInput
-        validated={ValidatedOptions.error}
-        id="textInput-basic-2"
-        type="email"
-        aria-label="Error state username example"
-      />
+      <InputGroupItem isBox>
+        <InputGroupText id="username">
+          <AtIcon />
+        </InputGroupText>
+      </InputGroupItem>
+      <InputGroupItem isFill>
+        <TextInput
+          validated={ValidatedOptions.error}
+          id="textInput-basic-2"
+          type="email"
+          aria-label="Error state username example"
+        />
+      </InputGroupItem>
     </InputGroup>
     <br />
     <InputGroup>
-      <TextInput name="textInput-basic-3" id="textInput-basic-3" type="text" aria-label="percentage" />
-      <InputGroupText id="plain-example" variant={InputGroupTextVariant.plain}>
-        %
-      </InputGroupText>
+      <InputGroupItem isFill>
+        <TextInput name="textInput-basic-3" id="textInput-basic-3" type="text" aria-label="percentage" />
+      </InputGroupItem>
+      <InputGroupItem isPlain isBox>
+        <InputGroupText id="plain-example" variant={InputGroupTextVariant.plain}>
+          %
+        </InputGroupText>
+      </InputGroupItem>
     </InputGroup>
   </React.Fragment>
 );

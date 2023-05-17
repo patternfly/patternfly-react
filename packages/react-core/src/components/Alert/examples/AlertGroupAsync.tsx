@@ -6,6 +6,7 @@ import {
   AlertActionCloseButton,
   AlertVariant,
   InputGroup,
+  InputGroupItem,
   useInterval
 } from '@patternfly/react-core';
 
@@ -45,12 +46,16 @@ export const AlertGroupAsync: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <InputGroup style={{ marginBottom: '16px' }}>
-        <button onClick={startAsyncAlerts} type="button" className={btnClasses}>
-          Start async alerts
-        </button>
-        <button onClick={stopAsyncAlerts} type="button" className={btnClasses}>
-          Stop async alerts
-        </button>
+        <InputGroupItem>
+          <button onClick={startAsyncAlerts} type="button" className={btnClasses}>
+            Start async alerts
+          </button>
+        </InputGroupItem>
+        <InputGroupItem>
+          <button onClick={stopAsyncAlerts} type="button" className={btnClasses}>
+            Stop async alerts
+          </button>
+        </InputGroupItem>
       </InputGroup>
       <AlertGroup isToast isLiveRegion aria-live="assertive">
         {alerts.map(({ title, variant, key }) => (
