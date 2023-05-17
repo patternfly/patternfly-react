@@ -26,16 +26,16 @@ describe('Dual List Selector With Actions Demo Test', () => {
       'dual-list-selector-demo-available-pane-status'
     );
 
-    cy.get('.pf-v5-cal-list-selector__controls-item button').eq(1).should('have.attr', 'aria-label', 'Demo add all');
-    cy.get('.pf-v5-cal-list-selector__controls-item button')
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(1).should('have.attr', 'aria-label', 'Demo add all');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button')
       .eq(0)
       .should('have.attr', 'aria-label', 'Demo add selected')
       .and('have.attr', 'disabled');
-    cy.get('.pf-v5-cal-list-selector__controls-item button')
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button')
       .eq(3)
       .should('have.attr', 'aria-label', 'Demo remove selected')
       .and('have.attr', 'disabled');
-    cy.get('.pf-v5-cal-list-selector__controls-item button')
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button')
       .eq(2)
       .should('have.attr', 'aria-label', 'Demo remove all')
       .and('have.attr', 'disabled');
@@ -61,11 +61,11 @@ describe('Dual List Selector With Actions Demo Test', () => {
   });
 
   it('Verify selecting and choosing options', () => {
-    cy.get('.pf-v5-cal-list-selector__controls-item').eq(0).click();
+    cy.get('.pf-v5-c-dual-list-selector__controls-item').eq(0).click();
     cy.get('.pf-v5-c-dual-list-selector__list').eq(0).find('li').should('have.length', 3);
     cy.get('.pf-v5-c-dual-list-selector__list').eq(1).find('li').should('have.length', 1);
     cy.get('.pf-v5-c-dual-list-selector__list-item').eq(1).click();
-    cy.get('.pf-v5-cal-list-selector__controls-item').eq(0).click();
+    cy.get('.pf-v5-c-dual-list-selector__controls-item').eq(0).click();
 
     cy.get('.pf-m-available .pf-v5-c-dual-list-selector__status-text').contains('2 available');
     cy.get('.pf-m-chosen .pf-v5-c-dual-list-selector__status-text').contains('2 chosen');
@@ -75,7 +75,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
   });
 
   it('Verify removing all options', () => {
-    cy.get('.pf-v5-cal-list-selector__controls-item').eq(2).click();
+    cy.get('.pf-v5-c-dual-list-selector__controls-item').eq(2).click();
     cy.get('.pf-v5-c-dual-list-selector__list').eq(0).find('li').should('have.length', 4);
     cy.get('.pf-v5-c-dual-list-selector__list').eq(1).find('li').should('have.length', 0);
     cy.get('.pf-m-available .pf-v5-c-dual-list-selector__status-text').contains('4 available');
@@ -83,7 +83,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
   });
 
   it('Verify choosing all options', () => {
-    cy.get('.pf-v5-cal-list-selector__controls-item').eq(1).click();
+    cy.get('.pf-v5-c-dual-list-selector__controls-item').eq(1).click();
     cy.get('.pf-v5-c-dual-list-selector__list').eq(0).find('li').should('have.length', 0);
     cy.get('.pf-v5-c-dual-list-selector__list').eq(1).find('li').should('have.length', 4);
     cy.get('.pf-m-available .pf-v5-c-dual-list-selector__status-text').contains('0 available');
@@ -106,7 +106,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
     cy.get('.pf-v5-c-dual-list-selector__tools-filter input')
       .eq(1)
       .type('{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}');
-    cy.get('.pf-v5-cal-list-selector__controls-item').eq(2).click();
+    cy.get('.pf-v5-c-dual-list-selector__controls-item').eq(2).click();
     cy.get('.pf-v5-c-dual-list-selector__list').eq(0).find('li').should('have.length', 4);
     cy.get('.pf-v5-c-dual-list-selector__list').eq(1).find('li').should('have.length', 0);
   });
@@ -119,7 +119,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
 
   xit('Verify adding all filtered options', () => {
     cy.get('.pf-v5-c-dual-list-selector__list').eq(0).find('li').should('have.length', 1);
-    cy.get('.pf-v5-cal-list-selector__controls-item').eq(1).click();
+    cy.get('.pf-v5-c-dual-list-selector__controls-item').eq(1).click();
     cy.get('.pf-v5-c-dual-list-selector__list').eq(0).find('li').should('have.length', 0);
     cy.get('.pf-v5-c-dual-list-selector__list').eq(1).find('li').should('have.length', 1);
     cy.get('.pf-v5-c-dual-list-selector__tools-filter input')

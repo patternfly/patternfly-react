@@ -44,7 +44,7 @@ describe('Select Test', () => {
 
   it.skip('Verify Description Select', () => {
     cy.get('#single-select-with-descriptions').click();
-    cy.get('.pf-v5-clect__menu-footer').should('exist');
+    cy.get('.pf-v5-c-select__menu-footer').should('exist');
     cy.get('#Miss > .pf-v5-c-select__menu-item > .pf-v5-c-select__menu-item-description').click();
     cy.get('#single-select-with-descriptions').contains('Miss').should('exist');
   });
