@@ -71,7 +71,7 @@ exports[`SearchInput advanced search 1`] = `
         </div>
       </div>
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v5-c-input-group__item pf-m-plain"
       >
         <button
           aria-disabled="false"
@@ -97,7 +97,7 @@ exports[`SearchInput advanced search 1`] = `
         </button>
       </div>
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v5-c-input-group__item pf-m-plain"
       >
         <button
           aria-disabled="false"
@@ -198,7 +198,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
         </div>
       </div>
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v5-c-input-group__item pf-m-plain"
       >
         <button
           aria-disabled="false"
@@ -224,7 +224,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
         </button>
       </div>
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v5-c-input-group__item pf-m-plain"
       >
         <button
           aria-disabled="false"
@@ -513,7 +513,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
         </div>
       </div>
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v5-c-input-group__item pf-m-plain"
       >
         <button
           aria-disabled="false"
@@ -539,7 +539,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
         </button>
       </div>
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v5-c-input-group__item pf-m-plain"
       >
         <button
           aria-disabled="false"
@@ -689,7 +689,7 @@ exports[`SearchInput search input with hint 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-input-group__item"
+      class="pf-v5-c-input-group__item pf-m-plain"
     >
       <button
         aria-disabled="false"
@@ -831,7 +831,7 @@ exports[`SearchInput simple search input 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-input-group__item"
+      class="pf-v5-c-input-group__item pf-m-plain"
     >
       <button
         aria-disabled="false"

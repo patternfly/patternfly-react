@@ -122,7 +122,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
               </div>
             </div>
             <div
-              class="pf-v5-c-input-group__item"
+              class="pf-v5-c-input-group__item pf-m-plain"
             >
               <button
                 aria-disabled="false"
@@ -293,7 +293,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
               </div>
             </div>
             <div
-              class="pf-v5-c-input-group__item"
+              class="pf-v5-c-input-group__item pf-m-plain"
             >
               <button
                 aria-disabled="false"
