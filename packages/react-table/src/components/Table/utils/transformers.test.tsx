@@ -73,7 +73,7 @@ const testCellActions = async ({
     const { container } = render(returnedData.children as React.ReactElement<any>);
     await user.click(screen.getAllByRole('button')[0]);
     await waitFor(() =>
-      expect(container.querySelectorAll('.pf-c-dropdown__menu li button')).toHaveLength(expectDisabled ? 0 : 1)
+      expect(container.querySelectorAll('.pf-v5-c-dropdown__menu li button')).toHaveLength(expectDisabled ? 0 : 1)
     );
   }
 };

@@ -605,7 +605,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               }
               {<div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
               {!!shortcutsPopoverProps.bodyContent && (
-                <div className="pf-c-code-editor__keyboard-shortcuts">
+                <div className="pf-v5-c-code-editor__keyboard-shortcuts">
                   <Popover {...shortcutsPopoverProps}>
                     <Button variant={ButtonVariant.link} icon={<HelpIcon />}>
                       {shortcutsPopoverButtonText}
@@ -647,7 +647,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                   {...getRootProps({
                     onClick: (event) => event.preventDefault() // Prevents clicking TextArea from opening file dialog
                   })}
-                  className={`pf-c-file-upload ${isDragActive && 'pf-m-drag-hover'} ${isLoading && 'pf-m-loading'}`}
+                  className={`pf-v5-c-file-upload ${isDragActive && 'pf-m-drag-hover'} ${isLoading && 'pf-m-loading'}`}
                 >
                   {editorHeader}
                   <div className={css(styles.codeEditorMain)}>

@@ -13,7 +13,7 @@ export const ApplicationLauncherText: React.FunctionComponent<ApplicationLaunche
   children,
   ...props
 }: ApplicationLauncherTextProps) => (
-  <span className={css('pf-c-app-launcher__menu-item-text', className)} {...props}>
+  <span className={css('pf-v5-c-app-launcher__menu-item-text', className)} {...props}>
     {children}
   </span>
 );

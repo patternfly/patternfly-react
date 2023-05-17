@@ -36,7 +36,7 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
       this.setState({ alerts: [...this.state.alerts, ...incomingAlerts] });
     };
     const getUniqueId = () => new Date().getTime();
-    const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
+    const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');
     this.removeAlert = (key: React.ReactText) => {
       this.setState({ alerts: [...this.state.alerts.filter((el: AlertDemoAlert) => el.key !== key)] });
     };
