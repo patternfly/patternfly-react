@@ -138,16 +138,17 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** Gap between items at various breakpoints. This will override spacers for the main axis. */
   gap?: {
-    default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
-    sm?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
-    md?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
-    lg?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
-    xl?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
-    '2xl'?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+    default?: 'gap' | 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+    sm?: 'gap' | 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+    md?: 'gap' | 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+    lg?: 'gap' | 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+    xl?: 'gap' | 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+    '2xl'?: 'gap' | 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
   };
   /** Gap between rows at various breakpoints. This will override spacers for the main axis. */
   rowGap?: {
     default?:
+      | 'rowGap'
       | 'rowGapNone'
       | 'rowGapXs'
       | 'rowGapSm'
@@ -158,6 +159,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'rowGap3xl'
       | 'rowGap4xl';
     sm?:
+      | 'rowGap'
       | 'rowGapNone'
       | 'rowGapXs'
       | 'rowGapSm'
@@ -168,6 +170,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'rowGap3xl'
       | 'rowGap4xl';
     md?:
+      | 'rowGap'
       | 'rowGapNone'
       | 'rowGapXs'
       | 'rowGapSm'
@@ -178,6 +181,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'rowGap3xl'
       | 'rowGap4xl';
     lg?:
+      | 'rowGap'
       | 'rowGapNone'
       | 'rowGapXs'
       | 'rowGapSm'
@@ -188,6 +192,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'rowGap3xl'
       | 'rowGap4xl';
     xl?:
+      | 'rowGap'
       | 'rowGapNone'
       | 'rowGapXs'
       | 'rowGapSm'
@@ -198,6 +203,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'rowGap3xl'
       | 'rowGap4xl';
     '2xl'?:
+      | 'rowGap'
       | 'rowGapNone'
       | 'rowGapXs'
       | 'rowGapSm'
@@ -211,6 +217,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   /** Gap beween columns at various breakpoints. This will override spacers for the main axis. */
   columnGap?: {
     default?:
+      | 'columnGap'
       | 'columnGapNone'
       | 'columnGapXs'
       | 'columnGapSm'
@@ -221,6 +228,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'columnGap3xl'
       | 'columnGap4xl';
     sm?:
+      | 'columnGap'
       | 'columnGapNone'
       | 'columnGapXs'
       | 'columnGapSm'
@@ -231,6 +239,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'columnGap3xl'
       | 'columnGap4xl';
     md?:
+      | 'columnGap'
       | 'columnGapNone'
       | 'columnGapXs'
       | 'columnGapSm'
@@ -241,6 +250,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'columnGap3xl'
       | 'columnGap4xl';
     lg?:
+      | 'columnGap'
       | 'columnGapNone'
       | 'columnGapXs'
       | 'columnGapSm'
@@ -251,6 +261,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'columnGap3xl'
       | 'columnGap4xl';
     xl?:
+      | 'columnGap'
       | 'columnGapNone'
       | 'columnGapXs'
       | 'columnGapSm'
@@ -261,6 +272,7 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'columnGap3xl'
       | 'columnGap4xl';
     '2xl'?:
+      | 'columnGap'
       | 'columnGapNone'
       | 'columnGapXs'
       | 'columnGapSm'
