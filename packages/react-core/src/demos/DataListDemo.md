@@ -478,252 +478,10 @@ class DataListViewBasic extends React.Component {
     super(props);
 
     this.state = {
-      filters: {
-        products: []
-      },
-      res: [],
-      isChecked: false,
-      selectedItems: [],
-      areAllSelected: false,
-      isUpperToolbarDropdownOpen: false,
-      isUpperToolbarKebabDropdownOpen: false,
-      isLowerToolbarDropdownOpen: false,
-      isLowerToolbarKebabDropdownOpen: false,
-      isCardKebabDropdownOpen: false,
-      activeItem: 0,
-      splitButtonDropdownIsOpen: false,
       page: 1,
       perPage: 5,
       totalItemCount: 5
     };
-
-    this.checkAllSelected = (selected, total) => {
-      if (selected && selected < total) {
-        return null;
-      }
-      return selected === total;
-    };
-
-    this.onToolbarDropdownToggle = () => {
-      this.setState((prevState) => ({
-        isLowerToolbarDropdownOpen: !prevState.isLowerToolbarDropdownOpen
-      }));
-    };
-
-    this.onToolbarKebabDropdownToggle = () => {
-      this.setState({
-        isOpen: !this.state.isLowerToolbarKebabDropdownOpen
-      });
-    };
-
-    this.onToolbarKebabDropdownSelect = (event) => {
-      this.setState({
-        isLowerToolbarKebabDropdownOpen: !this.state.isLowerToolbarKebabDropdownOpen
-      });
-    };
-
-    this.onCardKebabDropdownToggle = (key) => {
-      this.setState((prevState) => ({
-        [key]: !prevState[key]
-      }));
-    };
-
-    this.onCardKebabDropdownSelect = (key, event) => {
-      this.setState({
-        [key]: !this.state[key]
-      });
-    };
-
-    this.deleteItem = (item) => (event) => {
-      const filter = (getter) => (val) => getter(val) !== item.id;
-      this.setState({
-        res: this.state.res.filter(filter(({ id }) => id)),
-        selectedItems: this.state.selectedItems.filter(filter((id) => id))
-      });
-    };
-
-    this.onSetPage = (_event, pageNumber) => {
-      this.setState({
-        page: pageNumber
-      });
-    };
-
-    this.onPerPageSelect = (_event, perPage) => {
-      this.setState({
-        perPage
-      });
-    };
-
-    this.onSplitButtonToggle = () => {
-      this.setState((prevState) => ({
-        splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen
-      }));
-    };
-
-    this.onSplitButtonSelect = () => {
-      this.setState({
-        splitButtonDropdownIsOpen: false
-      });
-    };
-
-    this.onNameSelect = (event, selection) => {
-      const checked = event.target.checked;
-      this.setState((prevState) => {
-        const prevSelections = prevState.filters['products'];
-        return {
-          filters: {
-            ...prevState.filters,
-            ['products']: checked
-              ? [...prevSelections, selection]
-              : prevSelections.filter((value) => value !== selection)
-          }
-        };
-      });
-    };
-
-    this.onDelete = (type = '', id = '') => {
-      if (type) {
-        this.setState((prevState) => {
-          prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter((s) => s !== id);
-          return {
-            filters: prevState.filters
-          };
-        });
-      } else {
-        this.setState({
-          filters: {
-            products: []
-          }
-        });
-      }
-    };
-
-    this.onKeyDown = (event, productId) => {
-      if (event.target !== event.currentTarget) {
-        return;
-      }
-      if ([' ', 'Enter'].includes(event.key)) {
-        event.preventDefault();
-        this.setState((prevState) => {
-          return prevState.selectedItems.includes(productId * 1)
-            ? {
-                selectedItems: [...prevState.selectedItems.filter((id) => productId * 1 != id)],
-                areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
-              }
-            : {
-                selectedItems: [...prevState.selectedItems, productId * 1],
-                areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount)
-              };
-        });
-      }
-    };
-
-    this.onClick = (productId) => {
-      this.setState((prevState) => {
-        return prevState.selectedItems.includes(productId * 1)
-          ? {
-              selectedItems: [...prevState.selectedItems.filter((id) => productId * 1 != id)],
-              areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
-            }
-          : {
-              selectedItems: [...prevState.selectedItems, productId * 1],
-              areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount)
-            };
-      });
-    };
-  }
-
-  selectedItems(e) {
-    const { value, checked } = e.target;
-    let { selectedItems } = this.state;
-
-    if (checked) {
-      selectedItems = [...selectedItems, value];
-    } else {
-      selectedItems = selectedItems.filter((el) => el !== value);
-      if (this.state.areAllSelected) {
-        this.setState({
-          areAllSelected: !this.state.areAllSelected
-        });
-      }
-    }
-    this.setState({ selectedItems });
-  }
-
-  selectPage(e) {
-    const { checked } = e.target;
-    const { totalItemCount, perPage } = this.state;
-    let collection = [];
-
-    collection = this.getAllItems();
-
-    this.setState(
-      {
-        selectedItems: collection,
-        isChecked: checked,
-        areAllSelected: totalItemCount === perPage ? true : false
-      },
-      this.updateSelected
-    );
-  }
-
-  selectAll(e) {
-    let collection = [];
-    for (var i = 0; i <= 9; i++) collection = [...collection, i];
-
-    this.setState(
-      {
-        selectedItems: collection,
-        isChecked: true,
-        areAllSelected: true
-      },
-      this.updateSelected
-    );
-  }
-
-  selectNone(e) {
-    this.setState(
-      {
-        selectedItems: [],
-        isChecked: false,
-        areAllSelected: false
-      },
-      this.updateSelected
-    );
-  }
-
-  getAllItems() {
-    const { res } = this.state;
-    const collection = [];
-    for (const items of res) {
-      collection.push(items.id);
-    }
-
-    return collection;
-  }
-
-  updateSelected() {
-    const { res, selectedItems } = this.state;
-    let rows = res.map((post) => {
-      post.selected = selectedItems.includes(post.id);
-      return post;
-    });
-
-    this.setState({
-      res: rows
-    });
-  }
-
-  fetch(page, perPage) {
-    fetch(`https://my-json-server.typicode.com/jenny-s51/cardviewdata/posts?_page=${page}&_limit=${perPage}`)
-      .then((resp) => resp.json())
-      .then((resp) => this.setState({ res: resp, perPage, page }))
-      .then(() => this.updateSelected())
-      .catch((err) => this.setState({ error: err }));
-  }
-
-  componentDidMount() {
-    this.fetch(this.state.page, this.state.perPage);
   }
 
   renderPagination() {
@@ -732,103 +490,29 @@ class DataListViewBasic extends React.Component {
     return <Pagination itemCount={totalItemCount} page={page} variant="top" isCompact />;
   }
 
-  buildSelectDropdown() {
-    const { splitButtonDropdownIsOpen, selectedItems, areAllSelected } = this.state;
-    const numSelected = selectedItems.length;
-    const allSelected = areAllSelected;
-    const anySelected = numSelected > 0;
-    const someChecked = anySelected ? null : false;
-
-    return (
-      <Dropdown
-        onSelect={this.onSplitButtonSelect}
-        isOpen={splitButtonDropdownIsOpen}
-        onOpenChange={(isOpen) => this.setState({ splitButtonDropdownIsOpen: isOpen })}
-        toggle={(toggleRef) => (
-          <MenuToggle
-            ref={toggleRef}
-            isExpanded={splitButtonDropdownIsOpen}
-            onClick={this.onSplitButtonToggle}
-            aria-label="Select cards"
-            splitButtonOptions={{
-              items: [
-                <MenuToggleCheckbox
-                  id="split-dropdown-checkbox"
-                  key="split-dropdown-checkbox"
-                  aria-label={anySelected ? 'Deselect all cards' : 'Select all cards'}
-                  isChecked={areAllSelected}
-                >
-                  {numSelected !== 0 && `${numSelected} selected`}
-                </MenuToggleCheckbox>
-              ]
-            }}
-          ></MenuToggle>
-        )}
-      >
-        {/*Stand in for a functioning select/dropdown*/}
-      </Dropdown>
-    );
-  }
-
-  buildFilterDropdown() {
-    const { isLowerToolbarDropdownOpen, filters } = this.state;
-
-    return (
-      <ToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
-        <Select
-          aria-label="Products"
-          role="menu"
-          toggle={(toggleRef) => (
-            <MenuToggle ref={toggleRef} onClick={this.onToolbarDropdownToggle} isExpanded={isLowerToolbarDropdownOpen}>
-              Filter by creator name
-              {filters.products.length > 0 && <Badge isRead>{filters.products.length}</Badge>}
-            </MenuToggle>
-          )}
-          onSelect={this.onNameSelect}
-          onOpenChange={(isOpen) => {
-            this.setState(() => ({
-              isLowerToolbarDropdownOpen: isOpen
-            }));
-          }}
-          selected={filters.products}
-          isOpen={isLowerToolbarDropdownOpen}
-        >
-          {/*Stand in for a functioning select/dropdown*/}
-        </Select>
-      </ToolbarFilter>
-    );
-  }
-
   render() {
-    const { isLowerToolbarKebabDropdownOpen, page } = this.state;
-
     const toolbarItems = (
       <React.Fragment>
-        <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
-        <ToolbarItem breakpoint="xl">{this.buildFilterDropdown()}</ToolbarItem>
+        <ToolbarItem variant="bulk-select">
+          <MenuToggle
+            aria-label="Select cards"
+            splitButtonOptions={{
+              items: [<MenuToggleCheckbox id="split-dropdown-checkbox" aria-label={'Select all cards'} />]
+            }}
+          ></MenuToggle>
+        </ToolbarItem>
+        <ToolbarItem breakpoint="xl">
+          <MenuToggle>Filter by creator name</MenuToggle>
+        </ToolbarItem>
         <ToolbarItem variant="overflow-menu">
           <OverflowMenu breakpoint="md">
             <OverflowMenuItem>
               <Button variant="primary">Create instance</Button>
             </OverflowMenuItem>
             <OverflowMenuControl hasAdditionalOptions>
-              <Dropdown
-                onSelect={this.onToolbarKebabDropdownSelect}
-                toggle={(toggleRef) => (
-                  <MenuToggle
-                    ref={toggleRef}
-                    aria-label="Toolbar kebab overflow menu"
-                    variant="plain"
-                    onClick={this.onToolbarKebabDropdownToggle}
-                    isExpanded={isLowerToolbarKebabDropdownOpen}
-                  >
-                    <EllipsisVIcon />
-                  </MenuToggle>
-                )}
-                isOpen={isLowerToolbarKebabDropdownOpen}
-              >
-                <MenuToggle></MenuToggle> {/*Stand in for a functioning select/dropdown*/}
-              </Dropdown>
+              <MenuToggle aria-label="Toolbar kebab overflow menu" variant="plain">
+                <EllipsisVIcon />
+              </MenuToggle>
             </OverflowMenuControl>
           </OverflowMenu>
         </ToolbarItem>
@@ -848,7 +532,7 @@ class DataListViewBasic extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection isFilled>
-            <Toolbar id="toolbar-group-types" clearAllFilters={this.onDelete}>
+            <Toolbar id="toolbar-group-types">
               <ToolbarContent>{toolbarItems}</ToolbarContent>
             </Toolbar>
             <DataList aria-label="Demo data list">
