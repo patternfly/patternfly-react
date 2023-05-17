@@ -81,7 +81,7 @@ Use the `description` property to add short descriptive text below any menu item
 
 Use the `hasCheck` property to add a checkbox to a `<MenuItem>`. Use the `isSelected` property to indicate when a `<MenuItem>` is selected.
 
-```ts file="./MenuWithCheckbox.tsx" isBeta
+```ts file="./MenuWithCheckbox.tsx"
 
 ```
 

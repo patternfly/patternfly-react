@@ -212,7 +212,6 @@ export interface ChartGroupProps extends VictoryGroupProps {
    *
    * @example hasPatterns={ true }
    * @example hasPatterns={[ true, true, false ]}
-   * @beta
    */
   hasPatterns?: boolean | boolean[];
   /**
@@ -314,7 +313,6 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
    *
    * @example patternScale={[ 'url("#pattern1")', 'url("#pattern2")', null ]}
-   * @beta
    */
   patternScale?: string[];
   /**

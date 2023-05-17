@@ -1,7 +1,6 @@
 ---
 id: Progress stepper
 section: components
-beta: true
 ---
 
 ## Demos

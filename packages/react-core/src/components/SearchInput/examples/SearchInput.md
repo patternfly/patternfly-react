@@ -3,7 +3,6 @@ id: 'Search input'
 section: components
 cssPrefix: 'pf-c-search-input'
 propComponents: ['SearchInput', 'SearchInputSearchAttribute', 'SearchInputExpandable']
-beta: true
 ---
 
 import { ExternalLinkSquareAltIcon } from '@patternfly/react-icons';

@@ -89,7 +89,7 @@ To enable horizontal overflow, use the `isOverflowHorizontal` property.
 
 In the following example, select the 'Show overflowing tab count' checkbox to add a count of overflow items to the final “more” tab.
 
-```ts file="./TabsHorizontalOverflow.tsx" isBeta
+```ts file="./TabsHorizontalOverflow.tsx"
 ```
 
 ### With tooltip react ref
@@ -218,7 +218,7 @@ You may add a help action to a tab to provide users with additional context in a
 
 To render an action beside the tab content, use the `actions` property of a `<Tab>`. Pass a popover and a `<TabsAction>` component into the `actions` property. 
 
-```ts file="./TabsHelp.tsx" isBeta
+```ts file="./TabsHelp.tsx"
 ```
 
 ### With help and close actions
@@ -227,5 +227,5 @@ To add multiple actions to a tab, create a `<TabAction>` component for each acti
 
 The following example passes in both help popover and close actions.
 
-```ts file="./TabsHelpAndClose.tsx" isBeta
+```ts file="./TabsHelpAndClose.tsx"
 ```

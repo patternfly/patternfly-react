@@ -37,11 +37,11 @@ export interface TabProps
   innerRef?: React.Ref<any>;
   /** Optional Tooltip rendered to a Tab. Should be <Tooltip> with appropriate props for proper rendering. */
   tooltip?: React.ReactElement<any>;
-  /** @beta Aria-label for the close button added by passing the onClose property to Tabs. */
+  /** Aria-label for the close button added by passing the onClose property to Tabs. */
   closeButtonAriaLabel?: string;
-  /** @beta Flag indicating the close button should be disabled */
+  /** Flag indicating the close button should be disabled */
   isCloseDisabled?: boolean;
-  /** @beta Actions rendered beside the tab content */
+  /** Actions rendered beside the tab content */
   actions?: React.ReactNode;
   /** Value to set the data-ouia-component-id for the tab button.*/
   ouiaId?: number | string;

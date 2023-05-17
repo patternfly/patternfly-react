@@ -3,7 +3,6 @@ id: Tile
 section: components
 cssPrefix: pf-c-tile
 propComponents: ['Tile']
-beta: true
 ---
 
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';

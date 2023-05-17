@@ -54,7 +54,7 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
     | 'left-end'
     | 'right-start'
     | 'right-end';
-  /** @beta Content which can be used to convey additional information about the progress component.
+  /** Content which can be used to convey additional information about the progress component.
    * We recommend the helper text component as it was designed for this purpose.
    */
   helperText?: React.ReactNode;

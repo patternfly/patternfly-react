@@ -3,7 +3,6 @@ id: Progress stepper
 section: components
 cssPrefix: pf-c-progress-stepper
 propComponents: ['ProgressStepper', 'ProgressStep']
-beta: true
 ---
 
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';

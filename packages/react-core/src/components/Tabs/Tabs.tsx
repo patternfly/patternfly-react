@@ -105,7 +105,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   toggleAriaLabel?: string;
   /** Callback function to toggle the expandable tabs. */
   onToggle?: (event: React.MouseEvent, isExpanded: boolean) => void;
-  /** @beta Flag which places overflowing tabs into a menu triggered by the last tab. Additionally an object can be passed with custom settings for the overflow tab. */
+  /** Flag which places overflowing tabs into a menu triggered by the last tab. Additionally an object can be passed with custom settings for the overflow tab. */
   isOverflowHorizontal?: boolean | HorizontalOverflowObject;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
