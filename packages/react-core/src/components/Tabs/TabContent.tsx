@@ -62,8 +62,8 @@ const TabContentBase: React.FunctionComponent<TabContentProps> = ({
             hidden={children ? null : child.props.eventKey !== activeKey}
             className={
               children
-                ? css('pf-c-tab-content', className, variantStyle[variant])
-                : css('pf-c-tab-content', child.props.className, variantStyle[variant])
+                ? css(styles.tabContent, className, variantStyle[variant])
+                : css(styles.tabContent, child.props.className, variantStyle[variant])
             }
             id={children ? id : `pf-tab-section-${child.props.eventKey}-${id}`}
             aria-label={ariaLabel}
