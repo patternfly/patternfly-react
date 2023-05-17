@@ -32,9 +32,9 @@ export interface SelectProps extends MenuProps, OUIAProps {
   isOpen?: boolean;
   /** Single itemId for single select menus, or array of itemIds for multi select. You can also specify isSelected on the SelectOption. */
   selected?: any | any[];
-  /** Select toggle. May be a direct ReactNode combined with the toggleRef property, or a renderer for a custom select toggle which forwards a ref to the toggle. */
+  /** Select toggle. The toggle should either be a renderer function which forwards the given toggle ref, or a direct ReactNode that should be passed along with the toggleRef property. */
   toggle: React.ReactNode | ((toggleRef: React.RefObject<any>) => React.ReactNode);
-  /** Ref of the select toggle ReactNode. */
+  /** Ref of the select toggle. This property should be passed when toggle is assigned a node, to enable built in basic interaction handling. */
   toggleRef?: React.RefObject<HTMLButtonElement>;
   /** Flag indicating the toggle should be focused after a selection. If this use case is too restrictive, the optional toggleRef property with a node toggle may be used to control focus. */
   shouldFocusToggleOnSelect?: boolean;
