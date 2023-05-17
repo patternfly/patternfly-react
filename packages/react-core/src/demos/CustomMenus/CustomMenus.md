@@ -25,23 +25,25 @@ import avatarImg from './examples/avatarImg.svg';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 
-## Demos
+## Examples
 
-Custom menus can be constructed using a composable approach by combining the [menu](/components/menus/menu) and [menu toggle](/components/menus/menu-toggle) components in unique ways. To handle basic keyboard inputs, [dropdown](/components/menus/dropdown), [select](/components/menus/select), or [`<MenuContainer>`](/components/menus/menu#menucontainer) components may be used in combination with menu components. Additionally, menu components may be connected to each other manually through our undocumented internal [popper.js](https://popper.js.org/) wrapper component called Popper.
+Custom menus can be constructed using a composable approach by combining the [menu](/components/menus/menu) and [menu toggle](/components/menus/menu-toggle) components in unique ways. To handle basic keyboard inputs, [dropdown](/components/menus/dropdown), [select](/components/menus/select), or [`<MenuContainer>`](/components/menus/menu#menucontainer) components may be used in combination with menu components.
 
-### Actions menu
+Additionally, menu components may be connected to each other manually through our undocumented internal [popper.js](https://popper.js.org/) wrapper component called Popper.
+
+### With actions
 
 ```ts file="./examples/ActionsMenuDemo.tsx"
 
 ```
 
-### Favorites menu
+### With favorites
 
 ```ts file="./examples/FavoritesDemo.tsx"
 
 ```
 
-### Drilldown menu
+### With drilldown
 
 ```ts isBeta file="./examples/DrilldownMenuDemo.tsx"
 
@@ -63,19 +65,19 @@ The flyout will automatically position to the left or top if it would otherwise 
 
 ```
 
-### Application launcher
+### Application launcher menu
 
 ```ts file="./examples/ApplicationLauncherDemo.tsx"
 
 ```
 
-### Context selector
+### Context selector menu
 
 ```ts file="./examples/ContextSelectorDemo.tsx"
 
 ```
 
-### Date select
+### Date select menu
 
 ```ts file="./examples/DateSelectDemo.tsx"
 

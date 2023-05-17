@@ -21,9 +21,9 @@ propComponents:
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import pfIcon from './examples/pf-logo-small.svg';
 
-As the application launcher component is now deprecated, an application launcher may now be built using the new suite of menu components. This is showcased in the following example, which uses the new dropdown component that is built off of menu.
+As the application launcher component is now deprecated, an application launcher may now be built using the new suite of menu components. This is showcased in the following demo, which uses the new [dropdown](/components/menus/dropdown) component that is built off of menu.
 
-### Application launcher
+### Application launcher menu
 
 ```ts file="./examples/ApplicationLauncherDemo.tsx"
 
