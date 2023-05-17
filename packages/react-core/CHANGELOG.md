@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.103](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.102...@patternfly/react-core@5.0.0-alpha.103) (2023-05-17)
+
+### Bug Fixes
+
+- **About Modal:** Update about modal to set backgroundimage pf5 var and updated examples ([#9134](https://github.com/patternfly/patternfly-react/issues/9134)) ([8f30a28](https://github.com/patternfly/patternfly-react/commit/8f30a28c67c8a454c718c40d8396555bbca66759))
+
 # [5.0.0-alpha.102](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.101...@patternfly/react-core@5.0.0-alpha.102) (2023-05-16)
 
 ### Bug Fixes
