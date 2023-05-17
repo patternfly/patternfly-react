@@ -4,13 +4,13 @@ exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <div
     class="pf-v5-c-form-control pf-m-resize-both pf-m-disabled custom class"
+    style="height: 6px;"
   >
     <textarea
       aria-invalid="false"
       aria-label="test textarea"
       disabled=""
       required=""
-      style="--pf-v5-c-form-control--textarea--Height: 6px;"
     />
   </div>
 </DocumentFragment>
