@@ -41,9 +41,9 @@ export interface SelectProps extends MenuProps, OUIAProps {
   /** Function callback when user selects an option. */
   onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => void;
   /** Callback to allow the select component to change the open state of the menu.
-   * Triggered by clicking outside of the menu, or by pressing either tab or escape (or specificed in onOpenChangeKeys). */
+   * Triggered by clicking outside of the menu, or by pressing any keys specificed in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;
-  /** @beta Keys that trigger onOpenChange, defaults to tab and escape. */
+  /** @beta Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
   /** Indicates if the select should be without the outer box-shadow */
   isPlain?: boolean;
