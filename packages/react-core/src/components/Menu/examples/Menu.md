@@ -13,7 +13,8 @@ propComponents:
     'MenuSearch',
     'MenuSearchInput',
     'MenuGroup',
-    'MenuContainer'
+    'MenuContainer',
+    'MenuPopperProps'
   ]
 ouia: true
 ---

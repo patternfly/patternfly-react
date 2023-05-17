@@ -45,6 +45,8 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   /** Callback to allow the dropdown component to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing any keys specificed in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;
+  /** @beta Keys that trigger onOpenChange, defaults to tab and escape. Escape should always be included in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
+  onOpenChangeKeys?: string[];
   /** Indicates if the menu should be without the outer box-shadow. */
   isPlain?: boolean;
   /** Indicates if the menu should be scrollable. */
@@ -59,8 +61,6 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   zIndex?: number;
   /** Additional properties to pass to the Popper */
   popperProps?: DropdownPopperProps;
-  /** @beta Keys that trigger onOpenChange, defaults to tab and escape. Escape should always be included in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
-  onOpenChangeKeys?: string[];
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({

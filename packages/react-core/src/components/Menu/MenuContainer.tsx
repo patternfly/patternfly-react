@@ -1,6 +1,20 @@
 import React from 'react';
-import { Popper, PopperProps } from '../../helpers/Popper/Popper';
+import { Popper } from '../../helpers/Popper/Popper';
 
+export interface MenuPopperProps {
+  /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
+  direction?: 'up' | 'down';
+  /** Horizontal position of the popper */
+  position?: 'right' | 'left' | 'center';
+  /** Custom width of the popper. If the value is "trigger", it will set the width to the dropdown toggle's width */
+  width?: string | 'trigger';
+  /** Minimum width of the popper. If the value is "trigger", it will set the min width to the dropdown toggle's width */
+  minWidth?: string | 'trigger';
+  /** Maximum width of the popper. If the value is "trigger", it will set the max width to the dropdown toggle's width */
+  maxWidth?: string | 'trigger';
+  /** Enable to flip the popper when it reaches the boundary */
+  enableFlip?: boolean;
+}
 export interface MenuContainerProps {
   /** Menu to be rendered */
   menu: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
@@ -20,7 +34,7 @@ export interface MenuContainerProps {
   /** z-index of the dropdown menu */
   zIndex?: number;
   /** Additional properties to pass to the Popper */
-  popperProps?: Partial<PopperProps>;
+  popperProps?: MenuPopperProps;
 }
 
 /**
