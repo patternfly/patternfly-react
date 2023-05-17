@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.0.0-alpha.26 (2023-05-17)
+
+### Bug Fixes
+
+- **beta:** promote components + features out of beta for v5 ([#8912](https://github.com/patternfly/patternfly-react/issues/8912)) ([34c1688](https://github.com/patternfly/patternfly-react/commit/34c16885539531434832205544f96d3ffddabb79))
+
 # 7.0.0-alpha.25 (2023-05-16)
 
 **Note:** Version bump only for package @patternfly/react-charts

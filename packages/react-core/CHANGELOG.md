@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.107](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.106...@patternfly/react-core@5.0.0-alpha.107) (2023-05-17)
+
+### Bug Fixes
+
+- **beta:** promote components + features out of beta for v5 ([#8912](https://github.com/patternfly/patternfly-react/issues/8912)) ([34c1688](https://github.com/patternfly/patternfly-react/commit/34c16885539531434832205544f96d3ffddabb79))
+
+### Features
+
+- **Flex:** add gap support ([#9122](https://github.com/patternfly/patternfly-react/issues/9122)) ([65f2b8b](https://github.com/patternfly/patternfly-react/commit/65f2b8bd27825d673c27f82a2996f607d196b417))
+
 # [5.0.0-alpha.106](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.105...@patternfly/react-core@5.0.0-alpha.106) (2023-05-17)
 
 **Note:** Version bump only for package @patternfly/react-core

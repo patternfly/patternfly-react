@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.108](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.0.0-alpha.107...@patternfly/react-code-editor@5.0.0-alpha.108) (2023-05-17)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
 # [5.0.0-alpha.107](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.0.0-alpha.106...@patternfly/react-code-editor@5.0.0-alpha.107) (2023-05-17)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
