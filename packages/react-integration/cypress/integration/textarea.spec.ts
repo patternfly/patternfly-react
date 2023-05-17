@@ -114,7 +114,7 @@ describe('Text Area Demo Test', () => {
     cy.get('#textarea7-b').should('have.value', 'isReadOnly text area');
   });
 
-  it.skip('Verify text area autoresizes', () => {
+  it('Verify text area autoresizes', () => {
     cy.get('#autoResize')
       .invoke('outerHeight')
       .then((startingHeight) => {

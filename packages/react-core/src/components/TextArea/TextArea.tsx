@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import heightToken from '@patternfly/react-tokens/dist/esm/c_form_control_textarea_Height';
 import { css } from '@patternfly/react-styles';
 import { capitalize, ValidatedOptions, canUseDOM, FormControlIcon } from '../../helpers';
 
@@ -59,7 +58,8 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
   inputRef = React.createRef<HTMLTextAreaElement>();
 
   private setAutoHeight = (field: HTMLTextAreaElement) => {
-    field.style.setProperty(heightToken.name, 'inherit');
+    const parent = field.parentElement;
+    parent.style.setProperty('height', 'inherit');
     const computed = window.getComputedStyle(field);
     // Calculate the height
     const height =
@@ -68,7 +68,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
       field.scrollHeight +
       parseInt(computed.getPropertyValue('padding-bottom')) +
       parseInt(computed.getPropertyValue('border-bottom-width'));
-    field.style.setProperty(heightToken.name, `${height}px`);
+    parent.style.setProperty('height', `${height}px`);
   };
 
   constructor(props: TextAreaProps) {
