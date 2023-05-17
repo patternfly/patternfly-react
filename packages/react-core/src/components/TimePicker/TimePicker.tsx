@@ -20,7 +20,7 @@ import {
   getSeconds
 } from './TimePickerUtils';
 import { HelperText, HelperTextItem } from '../HelperText';
-import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
+import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 export interface TimePickerProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
   /** Additional classes added to the time picker. */
@@ -507,7 +507,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         placeholder={placeholder}
         value={timeState || ''}
         type="text"
-        customIcon={<ClockIcon />}
+        customIcon={<OutlinedClockIcon />}
         onClick={this.onInputClick}
         onChange={this.onInputChange}
         autoComplete="off"
