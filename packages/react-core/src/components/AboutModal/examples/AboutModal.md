@@ -20,6 +20,3 @@ import bgImg from './patternfly-orb.svg';
 ```ts file="./AboutModalComplexUserPositionedContent.tsx"
 ```
 
-### Custom background image
-```ts file="./AboutModalCustomBackgroundImage.tsx"
-```
