@@ -25,6 +25,7 @@ import swaggerIcon from './Card/camel-swagger-java_200x150.png';
 import azureIcon from './Card/FuseConnector_Icons_AzureServices.png';
 import restIcon from './Card/FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import { data } from '@patternfly/react-core/src/demos/Card/CardData.jsx';
 
 ## Demos
 
@@ -1019,6 +1020,7 @@ import swaggerIcon from './camel-swagger-java_200x150.png';
 import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import { data } from '@patternfly/react-core/src/demos/Card/CardData.jsx';
 
 class PrimaryDetailCardView extends React.Component {
   constructor(props) {
@@ -1037,7 +1039,7 @@ class PrimaryDetailCardView extends React.Component {
       filters: {
         products: []
       },
-      res: [],
+      cardData: data,
       isUpperToolbarDropdownOpen: false,
       isUpperToolbarKebabDropdownOpen: false,
       isLowerToolbarDropdownOpen: false,
@@ -1263,9 +1265,9 @@ class PrimaryDetailCardView extends React.Component {
     this.deleteItem = (event, item) => {
       event.stopPropagation();
       const filter = (getter) => (val) => getter(val) !== item.id;
-      const filteredCards = this.state.res.filter(filter(({ id }) => id));
+      const filteredCards = this.state.cardData.filter(filter(({ id }) => id));
       this.setState({
-        res: filteredCards,
+        cardData: filteredCards,
         selectedItems: this.state.selectedItems.filter(filter((id) => id)),
         totalItemCount: this.state.totalItemCount - 1,
         isDrawerExpanded: false,
@@ -1297,25 +1299,13 @@ class PrimaryDetailCardView extends React.Component {
   }
 
   getAllItems() {
-    const { res } = this.state;
+    const { cardData } = this.state;
     const collection = [];
-    for (const items of res) {
+    for (const items of cardData) {
       collection.push(items.id);
     }
 
     return collection;
-  }
-
-  fetch(page, perPage) {
-    fetch(`https://my-json-server.typicode.com/jenny-s51/cardviewdata/posts?_page=${page}&_limit=${perPage}`)
-      .then((resp) => resp.json())
-      .then((resp) => this.setState({ res: resp, perPage, page }))
-      .then(() => this.updateSelected())
-      .catch((err) => this.setState({ error: err }));
-  }
-
-  componentDidMount() {
-    this.fetch(this.state.page, this.state.perPage);
   }
 
   buildSelectDropdown() {
@@ -1372,7 +1362,7 @@ class PrimaryDetailCardView extends React.Component {
   }
 
   render() {
-    const { isDrawerExpanded, isChecked, selectedItems, activeCard, isLowerToolbarKebabDropdownOpen, filters, res } =
+    const { isDrawerExpanded, isChecked, selectedItems, activeCard, isLowerToolbarKebabDropdownOpen, filters, cardData } =
       this.state;
 
     const toolbarKebabDropdownItems = (
@@ -1438,8 +1428,8 @@ class PrimaryDetailCardView extends React.Component {
 
     const filtered =
       filters.products.length > 0
-        ? res.filter((card) => filters.products.length === 0 || filters.products.includes(card.name))
-        : res;
+        ? cardData.filter((card) => filters.products.length === 0 || filters.products.includes(card.name))
+        : cardData;
 
     const icons = {
       pfIcon,
