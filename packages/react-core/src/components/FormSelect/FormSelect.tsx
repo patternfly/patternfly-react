@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/FormControl/form-con
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { ValidatedOptions } from '../../helpers/constants';
-import { FormControlIcon } from '../../helpers/FormControlIcon';
+import { FormControlIcon } from '../FormControl/FormControlIcon';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 

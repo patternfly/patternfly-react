@@ -2,7 +2,8 @@ import * as React from 'react';
 import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
-import { capitalize, ValidatedOptions, canUseDOM, FormControlIcon } from '../../helpers';
+import { capitalize, ValidatedOptions, canUseDOM } from '../../helpers';
+import { FormControlIcon } from '../FormControl/FormControlIcon';
 
 export enum TextAreResizeOrientation {
   horizontal = 'horizontal',

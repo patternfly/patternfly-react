@@ -23,9 +23,9 @@ export interface FormControlIconProps extends React.HTMLProps<HTMLDivElement> {
 export const FormControlIcon = ({ status, customIcon, className, ...props }: FormControlIconProps) => {
   const StatusIcon = status && statusIcons[status];
 
-  return customIcon || StatusIcon ? (
+  return (
     <div className={css(styles.formControlIcon, status && styles.modifiers.status, className)} {...props}>
       {customIcon || <StatusIcon />}
     </div>
-  ) : null;
+  );
 };
