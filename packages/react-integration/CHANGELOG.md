@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.45 (2023-05-17)
+
+### Bug Fixes
+
+- **Wizard:** update close button and title structures ([#9041](https://github.com/patternfly/patternfly-react/issues/9041)) ([2ac733b](https://github.com/patternfly/patternfly-react/commit/2ac733bfcf026bb54287f9e6509d00c988d89a92))
+
 # 5.0.0-alpha.44 (2023-05-16)
 
 ### Bug Fixes
