@@ -24,14 +24,14 @@ export const CardClickable: React.FunctionComponent = () => {
       <Card id="clickable-card-example-2" isClickable>
         <CardHeader
           selectableActions={{
-            to: 'https://www.patternfly.org/',
+            to: '#',
             selectableActionId: id2,
             selectableActionAriaLabelledby: 'clickable-card-example-2',
             name: 'clickable-card-example'
           }}
         />
         <CardTitle>Second card</CardTitle>
-        <CardBody>This card navigates to a link on click.</CardBody>
+        <CardBody>This card can navigate to a link on click.`.</CardBody>
       </Card>
       <Card id="clickable-card-example-3" isClickable isDisabled>
         <CardHeader

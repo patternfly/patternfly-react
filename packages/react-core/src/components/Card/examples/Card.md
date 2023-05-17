@@ -109,7 +109,7 @@ A common use case of this is to set all but one body section to `isFilled={false
 
 ### Clickable cards
 
-A card can perform an action or navigate to an external link by clicking anywhere within the card.
+A card can perform an action or navigate to an external link by clicking anywhere within the card. You can also pass in the `isExternalLink` property to `selectableActions` if you want a clickable card's link to open in a new tab or window.
 
 When a card is meant to be clickable only, you must avoid rendering any other interactive content within the `<Card>`.
 

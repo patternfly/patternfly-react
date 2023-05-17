@@ -40,6 +40,8 @@ export interface CardHeaderSelectableActionsObject {
   onClickAction?: (event: React.FormEvent<HTMLInputElement> | React.MouseEvent) => void;
   /** Link to navigate to when clickable card is clicked */
   to?: string;
+  /** Flag to indicate whether a clickable card's link should open in a new tab/window. */
+  isExternalLink?: boolean;
   /** Name for the input element of a clickable or selectable card. */
   name?: string;
   /** Flag indicating whether the selectable card input is checked */
@@ -109,7 +111,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           if (selectableActions?.onClickAction) {
             selectableActions.onClickAction(event);
           } else if (selectableActions?.to) {
-            window.open(selectableActions.to, '_blank');
+            window.open(selectableActions.to, selectableActions.isExternalLink ? '_blank' : '_self');
           }
         }
       };
