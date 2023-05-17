@@ -8,37 +8,41 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
     <div
       class="pf-v5-c-wizard__header"
     >
-      <button
-        aria-disabled="false"
-        aria-label="Close"
-        class="pf-v5-c-button pf-m-plain pf-v5-c-wizard__close"
-        data-ouia-component-id="OUIA-Generated-Button-plain-2"
-        data-ouia-component-type="PF4/Button"
-        data-ouia-safe="true"
-        type="button"
+      <div
+        class="pf-v5-c-wizard__close"
       >
-        <svg
-          aria-hidden="true"
-          class="pf-v5-svg"
-          fill="currentColor"
-          role="img"
-          viewBox="0 0 352 512"
+        <button
+          aria-disabled="false"
+          aria-label="Close"
+          class="pf-v5-c-button pf-m-plain"
+          data-ouia-component-id="OUIA-Generated-Button-plain-2"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          type="button"
         >
-          <path
-            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-          />
-        </svg>
-      </button>
-      <h2
-        aria-label="Wizard title"
-        class="pf-v5-c-title pf-m-3xl pf-v5-c-wizard__title"
-        data-ouia-component-id="OUIA-Generated-Title-2"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
-        id="pf-wizard-title-1"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            role="img"
+            viewBox="0 0 352 512"
+          >
+            <path
+              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-v5-c-wizard__title"
       >
-        Wizard title
-      </h2>
+        <h2
+          class="pf-v5-c-wizard__title-text"
+          id="pf-wizard-title-1"
+        >
+          Wizard title
+        </h2>
+      </div>
       <p
         class="pf-v5-c-wizard__description"
         id="pf-wizard-description-1"
@@ -277,37 +281,41 @@ exports[`Wizard Wizard should match snapshot 1`] = `
     <div
       class="pf-v5-c-wizard__header"
     >
-      <button
-        aria-disabled="false"
-        aria-label="Close"
-        class="pf-v5-c-button pf-m-plain pf-v5-c-wizard__close"
-        data-ouia-component-id="OUIA-Generated-Button-plain-1"
-        data-ouia-component-type="PF4/Button"
-        data-ouia-safe="true"
-        type="button"
+      <div
+        class="pf-v5-c-wizard__close"
       >
-        <svg
-          aria-hidden="true"
-          class="pf-v5-svg"
-          fill="currentColor"
-          role="img"
-          viewBox="0 0 352 512"
+        <button
+          aria-disabled="false"
+          aria-label="Close"
+          class="pf-v5-c-button pf-m-plain"
+          data-ouia-component-id="OUIA-Generated-Button-plain-1"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          type="button"
         >
-          <path
-            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-          />
-        </svg>
-      </button>
-      <h2
-        aria-label="Wizard title"
-        class="pf-v5-c-title pf-m-3xl pf-v5-c-wizard__title"
-        data-ouia-component-id="OUIA-Generated-Title-1"
-        data-ouia-component-type="PF4/Title"
-        data-ouia-safe="true"
-        id="pf-wizard-title-0"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            role="img"
+            viewBox="0 0 352 512"
+          >
+            <path
+              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-v5-c-wizard__title"
       >
-        Wizard title
-      </h2>
+        <h2
+          class="pf-v5-c-wizard__title-text"
+          id="pf-wizard-title-0"
+        >
+          Wizard title
+        </h2>
+      </div>
       <p
         class="pf-v5-c-wizard__description"
         id="pf-wizard-description-0"

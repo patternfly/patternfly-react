@@ -13,7 +13,7 @@ describe('Wizard Demo Test', () => {
   it('Verify wizard in modal sends focus to the new content', () => {
     cy.get('#launchWiz').click();
     cy.get('#modalWizId.pf-v5-c-wizard').should('exist');
-    cy.focused().should('have.class', 'pf-v5-c-wizard__close');
+    cy.focused().should('have.class', 'pf-v5-c-button');
     cy.focused().click();
   });
 

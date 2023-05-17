@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
-import { Title } from '../Title';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export interface WizardHeaderProps {
@@ -31,19 +30,20 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
   isCloseHidden,
   closeButtonAriaLabel,
   titleId,
-  descriptionComponent: Component = 'p',
+  descriptionComponent: Component = 'div',
   descriptionId
 }: WizardHeaderProps) => (
   <div className={css(styles.wizardHeader)}>
     {!isCloseHidden && (
-      <Button variant="plain" className={css(styles.wizardClose)} aria-label={closeButtonAriaLabel} onClick={onClose}>
-        <TimesIcon aria-hidden="true" />
-      </Button>
+      <div className={css(styles.wizardClose)}>
+        <Button variant="plain" aria-label={closeButtonAriaLabel} onClick={onClose}>
+          <TimesIcon aria-hidden="true" />
+        </Button>
+      </div>
     )}
-
-    <Title headingLevel="h2" size="3xl" className={css(styles.wizardTitle)} aria-label={title} id={titleId}>
-      {title || <>&nbsp;</>}
-    </Title>
+    <div className={css(styles.wizardTitle)}>
+      <h2 className={css(styles.wizardTitleText)} id={titleId}>{title || <>&nbsp;</>}</h2>
+    </div>
 
     {description && (
       <Component className={css(styles.wizardDescription)} id={descriptionId}>
