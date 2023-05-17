@@ -28,7 +28,9 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   /** Classes applied to root element of dropdown. */
   className?: string;
   /** Dropdown toggle. The toggle should either be a renderer function which forwards the given toggle ref, or a direct ReactNode that should be passed along with the toggleRef property. */
-  toggle: React.ReactNode | ((toggleRef: React.RefObject<any>) => React.ReactNode);
+  toggle:
+    | { toggleNode: React.ReactNode; toggleRef: React.RefObject<HTMLButtonElement> }
+    | ((toggleRef: React.RefObject<any>) => React.ReactNode);
   /** Ref of the dropdown toggle. This property should be passed when toggle is assigned a node, to enable built in basic interaction handling. */
   toggleRef?: React.RefObject<HTMLButtonElement>;
   /** Flag to indicate if menu is opened.*/
@@ -62,7 +64,6 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   onSelect,
   isOpen,
   toggle,
-  toggleRef: toggleRefProp,
   shouldFocusToggleOnSelect = false,
   onOpenChange,
   isPlain,
@@ -79,7 +80,10 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   const ouiaProps = useOUIAProps(Dropdown.displayName, ouiaId, ouiaSafe);
 
   const menuRef = (innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
-  const toggleRef = (toggleRefProp as React.RefObject<HTMLButtonElement>) || localToggleRef;
+  const toggleRef =
+    typeof toggle === 'function' || (typeof toggle !== 'function' && !toggle.toggleRef)
+      ? localToggleRef
+      : (toggle?.toggleRef as React.RefObject<HTMLButtonElement>);
 
   React.useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
@@ -143,7 +147,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   );
   return (
     <Popper
-      trigger={typeof toggle === 'function' ? toggle(toggleRef) : toggle}
+      trigger={typeof toggle === 'function' ? toggle(toggleRef) : toggle.toggleNode}
       triggerRef={toggleRef}
       popper={menu}
       popperRef={menuRef}

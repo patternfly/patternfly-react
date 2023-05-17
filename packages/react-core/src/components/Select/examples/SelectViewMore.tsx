@@ -121,8 +121,7 @@ export const SelectViewMore: React.FunctionComponent = () => {
       selected={selected}
       onSelect={onSelect}
       onOpenChange={(isOpen) => setIsOpen(isOpen)}
-      toggle={toggle}
-      toggleRef={toggleRef}
+      toggle={{ toggleNode: toggle, toggleRef }}
     >
       <SelectList>
         {visibleOptions.map((option) => {
