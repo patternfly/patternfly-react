@@ -108,39 +108,44 @@ exports[`With popover opened 1`] = `
                   <div
                     class="pf-v5-c-calendar-month__header-month"
                   >
-                    Month
-                  </span>
-                  <button
-                    aria-expanded="false"
-                    class="pf-v5-c-menu-toggle"
-                    style="width: 140px;"
-                    type="button"
-                  >
                     <span
-                      class="pf-v5-c-menu-toggle__text"
+                      hidden=""
+                      id="unique_id_mock"
                     >
-                      December
+                      Month
                     </span>
-                    <span
-                      class="pf-v5-c-menu-toggle__controls"
+                    <button
+                      aria-expanded="false"
+                      class="pf-v5-c-menu-toggle"
+                      style="width: 140px;"
+                      type="button"
                     >
                       <span
-                        class="pf-v5-c-menu-toggle__toggle-icon"
+                        class="pf-v5-c-menu-toggle__text"
                       >
-                        <svg
-                          aria-hidden="true"
-                          class="pf-v5-svg"
-                          fill="currentColor"
-                          role="img"
-                          viewBox="0 0 320 512"
-                        >
-                          <path
-                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          />
-                        </svg>
+                        December
                       </span>
-                    </span>
-                  </button>
+                      <span
+                        class="pf-v5-c-menu-toggle__controls"
+                      >
+                        <span
+                          class="pf-v5-c-menu-toggle__toggle-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="pf-v5-svg"
+                            fill="currentColor"
+                            role="img"
+                            viewBox="0 0 320 512"
+                          >
+                            <path
+                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="pf-v5-c-input-group__item"
