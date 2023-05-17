@@ -7,8 +7,10 @@ propComponents: ['Flex', 'FlexItem']
 
 import './flex.css';
 
-## Flex Basics
+## Flex basics
+
 ### Basic
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -19,10 +21,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
-</Flex>
+</Flex>;
 ```
 
 ### Nesting
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -37,10 +40,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Nested with items
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -55,11 +59,23 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <Flex>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
-### Flex Spacing
+### Spacing
+
+The flex layout provides two ways of spacing its direct children.
+
+- [Spacing system](#flex-spacing)
+  - The spacing system applies a margin between the flex layout's direct children to create space between items along the main axis only. The benefit of the spacing system is that it allows for variable spacing between direct children. Use the spacing system when individual flex items along the main axis require a different spacer than sibling items.
+- [Gap spacing](#flex-gap-spacing)
+  - Gap spacing uses flex `gap` to space the flex layout's direct children, and can be applied to space rows (`row-gap`), columns (`column-gap`), or both (`gap`). The benefit of gap spacing is that item wrapping is improved and improved item spacing that works better with CSS flex's logical layout properties. E.g., spacing in RTL layouts that rely on logical properties is improved. Use the gap system when all direct children should use the same spacer for rows, columns, or both.
+  - **Note** using `gap` along the main axis will override any other spacing applied using the spacing system.
+
+### Flex spacing
+
 ### Individually spaced
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -73,10 +89,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <FlexItem spacer={{ default: 'spacerXl' }}>Item - xl</FlexItem>
   <FlexItem spacer={{ default: 'spacer2xl' }}>Item - 2xl</FlexItem>
   <FlexItem spacer={{ default: 'spacer3xl' }}>Item - 3xl</FlexItem>
-</Flex>
+</Flex>;
 ```
 
 ### Spacing xl
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -87,10 +104,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
-</Flex>
+</Flex>;
 ```
 
 ### Spacing none
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -101,11 +119,75 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
-</Flex>
+</Flex>;
+```
+
+### Flex gap spacing
+
+### Row gap
+
+```js
+import React from 'react';
+import { Flex, FlexItem } from '@patternfly/react-core';
+
+<Flex rowGap={{ default: 'rowGap2xl' }}>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+</Flex>;
+```
+
+### Column gap
+
+```js
+import React from 'react';
+import { Flex, FlexItem } from '@patternfly/react-core';
+
+<Flex columnGap={{ default: 'columnGap2xl' }}>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+</Flex>;
+```
+
+### Gap
+
+```js
+import React from 'react';
+import { Flex, FlexItem } from '@patternfly/react-core';
+
+<Flex gap={{ default: 'gap2xl' }}>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+  <FlexItem>Flex item</FlexItem>
+</Flex>;
 ```
 
 ### Flex layout modifiers
+
 ### Default layout
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -116,10 +198,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
-</Flex>
+</Flex>;
 ```
 
 ### Inline
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -130,10 +213,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
-</Flex>
+</Flex>;
 ```
 
 ### Using canGrow
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -151,10 +235,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <Flex>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Adjusting width
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -172,10 +257,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Specifying column widths
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -193,12 +279,13 @@ import { Flex, FlexItem } from '@patternfly/react-core';
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ## Column layout modifiers
 
 ### Column layout
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -207,10 +294,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
-</Flex>
+</Flex>;
 ```
 
 ### Stacking elements
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -228,10 +316,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <Flex>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Nesting elements in columns
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -246,12 +335,13 @@ import { Flex, FlexItem } from '@patternfly/react-core';
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ## Responsive layout modifiers
 
 ### Switching between direction column and row
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -267,10 +357,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Controlling width of text
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -278,18 +369,22 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 <Flex direction={{ default: 'column', lg: 'row' }}>
   <Flex flex={{ default: 'flex_1' }}>
     <FlexItem>Flex item</FlexItem>
-    <FlexItem>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est animi modi temporibus, alias qui obcaecati ullam dolor nam, nulla magni iste rem praesentium numquam provident amet ut nesciunt harum accusamus.</FlexItem>
+    <FlexItem>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Est animi modi temporibus, alias qui obcaecati ullam
+      dolor nam, nulla magni iste rem praesentium numquam provident amet ut nesciunt harum accusamus.
+    </FlexItem>
   </Flex>
   <Flex direction={{ default: 'column' }}>
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ## Flex alignment
 
 ### Aligning right
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -300,10 +395,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <FlexItem>Flex item</FlexItem>
   <FlexItem align={{ default: 'alignRight' }}>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
-</Flex>
+</Flex>;
 ```
 
 ### Align right on single item
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -311,10 +407,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 <Flex className="example-border">
   <FlexItem align={{ default: 'alignRight' }}>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
-</Flex>
+</Flex>;
 ```
 
 ### Align right on multiple groups
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -332,10 +429,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Align adjacent content
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -351,10 +449,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Align self flex end
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -369,10 +468,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Align self center
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -387,10 +487,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Align self baseline
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -405,10 +506,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Align self stretch
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -423,12 +525,13 @@ import { Flex, FlexItem } from '@patternfly/react-core';
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ## Flex justification
 
 ### Justify content flex end
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -438,22 +541,24 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
-</Flex>
+</Flex>;
 ```
 
 ### Justify content space between
+
 ```js
 import React from 'react';
-import { Flex, FlexItem  } from '@patternfly/react-core';
+import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border" justifyContent={{ default: 'justifyContentSpaceBetween' }}>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
-</Flex>
+</Flex>;
 ```
 
 ### Justify content flex start
+
 ```js
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -462,7 +567,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
-</Flex>
+</Flex>;
 ```
 
 ## Flex item order
@@ -474,10 +579,14 @@ import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border">
-  <FlexItem spacer={{default: "spacerNone"}} order={{default: "2"}} >Item A</FlexItem>
+  <FlexItem spacer={{ default: 'spacerNone' }} order={{ default: '2' }}>
+    Item A
+  </FlexItem>
   <FlexItem>Item B</FlexItem>
-  <FlexItem spacer={{default: "spacerMd"}} order={{default: "-1"}}>Item C</FlexItem>
-</Flex>
+  <FlexItem spacer={{ default: 'spacerMd' }} order={{ default: '-1' }}>
+    Item C
+  </FlexItem>
+</Flex>;
 ```
 
 ### Responsive first last ordering
@@ -487,10 +596,16 @@ import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border">
-  <FlexItem spacer={{lg: "spacerNone"}} order={{lg: "2"}} >Item A</FlexItem>
-  <FlexItem spacer={{md: "spacerNone", lg: "spacerMd"}} order={{default: "-1", md: "1"}}>Item B</FlexItem>
-  <FlexItem spacer={{default: "spacerMd"}} order={{md: "-1"}}>Item C</FlexItem>
-</Flex>
+  <FlexItem spacer={{ lg: 'spacerNone' }} order={{ lg: '2' }}>
+    Item A
+  </FlexItem>
+  <FlexItem spacer={{ md: 'spacerNone', lg: 'spacerMd' }} order={{ default: '-1', md: '1' }}>
+    Item B
+  </FlexItem>
+  <FlexItem spacer={{ default: 'spacerMd' }} order={{ md: '-1' }}>
+    Item C
+  </FlexItem>
+</Flex>;
 ```
 
 ### Ordering
@@ -500,19 +615,25 @@ import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border">
-  <Flex spacer={{default: "spacerNone"}} order={{ lg: "1" }} className="example-border">
-    <FlexItem order={{md: "2"}} >Set 1, Item A</FlexItem>
-    <FlexItem order={{ md: "-1" }}>Set 1, Item B</FlexItem>
-    <FlexItem order={{ xl: "1" }}>Set 1, Item C</FlexItem>
-    <FlexItem spacer={{xl: "spacerNone"}} order={{ xl: "1" }}>Set 1, Item D</FlexItem>
+  <Flex spacer={{ default: 'spacerNone' }} order={{ lg: '1' }} className="example-border">
+    <FlexItem order={{ md: '2' }}>Set 1, Item A</FlexItem>
+    <FlexItem order={{ md: '-1' }}>Set 1, Item B</FlexItem>
+    <FlexItem order={{ xl: '1' }}>Set 1, Item C</FlexItem>
+    <FlexItem spacer={{ xl: 'spacerNone' }} order={{ xl: '1' }}>
+      Set 1, Item D
+    </FlexItem>
   </Flex>
-  <Flex spacer={{lg: "spacerMd"}} className="example-border">
-    <FlexItem spacer={{default: "spacerNone"}} order={{default: "3"}} >Set 2, Item A</FlexItem>
-    <FlexItem order={{ default: "1" }}>Set 2, Item B</FlexItem>
+  <Flex spacer={{ lg: 'spacerMd' }} className="example-border">
+    <FlexItem spacer={{ default: 'spacerNone' }} order={{ default: '3' }}>
+      Set 2, Item A
+    </FlexItem>
+    <FlexItem order={{ default: '1' }}>Set 2, Item B</FlexItem>
     <FlexItem>Set 2, Item C</FlexItem>
-    <FlexItem spacer={{default: "spacerMd"}} order={{ default: "2" }}>Set 2, Item D</FlexItem>
+    <FlexItem spacer={{ default: 'spacerMd' }} order={{ default: '2' }}>
+      Set 2, Item D
+    </FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Responsive ordering
@@ -522,20 +643,26 @@ import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border">
-  <Flex spacer={{default: "spacerNone"}} order={{ default: "1" }} className="example-border">
-    <FlexItem spacer={{default: "spacerNone"}} order={{default: "3"}} >Set 1, Item A</FlexItem>
-    <FlexItem order={{ default: "1" }}>Set 1, Item B</FlexItem>
+  <Flex spacer={{ default: 'spacerNone' }} order={{ default: '1' }} className="example-border">
+    <FlexItem spacer={{ default: 'spacerNone' }} order={{ default: '3' }}>
+      Set 1, Item A
+    </FlexItem>
+    <FlexItem order={{ default: '1' }}>Set 1, Item B</FlexItem>
     <FlexItem>Set 1, Item C</FlexItem>
-    <FlexItem spacer={{default: "spacerMd"}}>Set 1, Item D</FlexItem>
+    <FlexItem spacer={{ default: 'spacerMd' }}>Set 1, Item D</FlexItem>
   </Flex>
 
-  <Flex spacer={{default: "spacerMd"}} className="example-border">
-    <FlexItem spacer={{default: "spacerNone"}} order={{default: "3"}} >Set 2, Item A</FlexItem>
-    <FlexItem order={{ lg: "1" }}>Set 2, Item B</FlexItem>
+  <Flex spacer={{ default: 'spacerMd' }} className="example-border">
+    <FlexItem spacer={{ default: 'spacerNone' }} order={{ default: '3' }}>
+      Set 2, Item A
+    </FlexItem>
+    <FlexItem order={{ lg: '1' }}>Set 2, Item B</FlexItem>
     <FlexItem>Set 2, Item C</FlexItem>
-    <FlexItem spacer={{default: "spacerMd"}} order={{ default: "2" }}>Set 2, Item D</FlexItem>
+    <FlexItem spacer={{ default: 'spacerMd' }} order={{ default: '2' }}>
+      Set 2, Item D
+    </FlexItem>
   </Flex>
-</Flex>
+</Flex>;
 ```
 
 ### Alternative components
@@ -544,11 +671,11 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
-<Flex component='ul'>
-  <FlexItem component='li'>Flex item</FlexItem>
-  <FlexItem component='li'>Flex item</FlexItem>
-  <FlexItem component='li'>Flex item</FlexItem>
-  <FlexItem component='li'>Flex item</FlexItem>
-  <FlexItem component='li'>Flex item</FlexItem>
-</Flex>
+<Flex component="ul">
+  <FlexItem component="li">Flex item</FlexItem>
+  <FlexItem component="li">Flex item</FlexItem>
+  <FlexItem component="li">Flex item</FlexItem>
+  <FlexItem component="li">Flex item</FlexItem>
+  <FlexItem component="li">Flex item</FlexItem>
+</Flex>;
 ```

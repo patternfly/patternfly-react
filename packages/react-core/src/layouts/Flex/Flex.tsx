@@ -136,6 +136,141 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spaceItems3xl'
       | 'spaceItems4xl';
   };
+  /** Gap between items at various breakpoints. This will override spacers for the main axis. */
+  gap?: {
+    default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+    sm?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+    md?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+    lg?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+    xl?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+    '2xl'?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap3xl' | 'gap4xl';
+  };
+  /** Gap between rows at various breakpoints. This will override spacers for the main axis. */
+  rowGap?: {
+    default?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap2xl'
+      | 'rowGap3xl'
+      | 'rowGap4xl';
+    sm?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap2xl'
+      | 'rowGap3xl'
+      | 'rowGap4xl';
+    md?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap2xl'
+      | 'rowGap3xl'
+      | 'rowGap4xl';
+    lg?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap2xl'
+      | 'rowGap3xl'
+      | 'rowGap4xl';
+    xl?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap2xl'
+      | 'rowGap3xl'
+      | 'rowGap4xl';
+    '2xl'?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap2xl'
+      | 'rowGap3xl'
+      | 'rowGap4xl';
+  };
+  /** Gap beween columns at various breakpoints. This will override spacers for the main axis. */
+  columnGap?: {
+    default?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap2xl'
+      | 'columnGap3xl'
+      | 'columnGap4xl';
+    sm?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap2xl'
+      | 'columnGap3xl'
+      | 'columnGap4xl';
+    md?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap2xl'
+      | 'columnGap3xl'
+      | 'columnGap4xl';
+    lg?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap2xl'
+      | 'columnGap3xl'
+      | 'columnGap4xl';
+    xl?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap2xl'
+      | 'columnGap3xl'
+      | 'columnGap4xl';
+    '2xl'?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap2xl'
+      | 'columnGap3xl'
+      | 'columnGap4xl';
+  };
   /** Whether to add flex: grow at various breakpoints */
   grow?: {
     default?: 'grow';
@@ -344,6 +479,9 @@ export const Flex: React.FunctionComponent<FlexProps> = ({
   component = 'div',
   spacer,
   spaceItems,
+  gap,
+  rowGap,
+  columnGap,
   grow,
   shrink,
   flex,
@@ -380,6 +518,9 @@ export const Flex: React.FunctionComponent<FlexProps> = ({
         formatBreakpointMods(display, styles),
         formatBreakpointMods(fullWidth, styles),
         formatBreakpointMods(flexWrap, styles),
+        formatBreakpointMods(gap, styles),
+        formatBreakpointMods(rowGap, styles),
+        formatBreakpointMods(columnGap, styles),
         className
       )}
       style={
