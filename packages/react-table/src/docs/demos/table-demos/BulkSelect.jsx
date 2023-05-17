@@ -17,13 +17,13 @@ import DashboardWrapper from '@patternfly/react-core/src/demos/examples/Dashboar
 import { rows, columns } from '../../examples/Data.jsx';
 
 export const BulkSelectTableDemo = () => {
-  const [isBulkSelectOpen, setIsBulkSelectOpen] = React.useState(false);
+  const [isBulkSelectDropdownOpen, setIsBulkSelectDropdownOpen] = React.useState(false);
   const [bulkSelection, setBulkSelection] = React.useState('');
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(10);
   const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
   const [selectedRows, setSelectedRows] = React.useState([]);
-  const handleSetPage = (_evt, newPage, perPage, startIdx, endIdx) => {
+  const handleSetPage = (_evt, newPage, _perPage, startIdx, endIdx) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
   };
@@ -58,7 +58,7 @@ export const BulkSelectTableDemo = () => {
     />
   );
 
-  const buildBulkSelect = () => {
+  const buildBulkSelectDropdown = () => {
     const numSelected = selectedRows.length;
     const allSelected = numSelected === rows.length;
     const anySelected = numSelected > 0;
@@ -82,7 +82,6 @@ export const BulkSelectTableDemo = () => {
       <Dropdown
         role="menu"
         onSelect={(_ev, itemId) => {
-          console.log(itemId);
           if (itemId === "all") {
             selectAllRows(bulkSelection !== 'all');
           } else if (itemId === "page") {
@@ -92,13 +91,13 @@ export const BulkSelectTableDemo = () => {
           }
           setBulkSelection(itemId);
         }}
-        isOpen={isBulkSelectOpen}
-        onOpenChange={(isOpen) => setIsBulkSelectOpen(isOpen)}
+        isOpen={isBulkSelectDropdownOpen}
+        onOpenChange={(isOpen) => setIsBulkSelectDropdownOpen(isOpen)}
         toggle={(toggleRef) => (
           <MenuToggle
             ref={toggleRef}
-            isExpanded={isBulkSelectOpen}
-            onClick={() => setIsBulkSelectOpen(!isBulkSelectOpen)}
+            isExpanded={isBulkSelectDropdownOpen}
+            onClick={() => setIsBulkSelectDropdownOpen(!isBulkSelectDropdownOpen)}
             aria-label="Select cards"
             splitButtonOptions={{
               items: [
@@ -108,7 +107,7 @@ export const BulkSelectTableDemo = () => {
                   aria-label={anySelected ? 'Deselect all cards' : 'Select all cards'}
                   isChecked={isChecked}
                   onClick={() => {
-                    anySelected ? setBulkSelection('none') : setBulkSelection('all');
+                    anySelected ? setSelectedRows([]) : selectAllRows(bulkSelection !== 'all');
                   }}
                 >
                   {numSelected !== 0 && `${numSelected} selected`}
@@ -127,7 +126,7 @@ export const BulkSelectTableDemo = () => {
     <Toolbar>
       <ToolbarContent>
         <ToolbarGroup>
-          <ToolbarItem variant="bulk-select">{buildBulkSelect()}</ToolbarItem>
+          <ToolbarItem variant="bulk-select">{buildBulkSelectDropdown()}</ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem variant="pagination">{buildPagination('top')}</ToolbarItem>
       </ToolbarContent>
