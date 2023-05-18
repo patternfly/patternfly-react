@@ -1,6 +1,6 @@
 ---
 id: Upgrade guide
-title: PatternFly 5 Upgrade guide
+title: PatternFly 5 upgrade guide
 section: developer-resources
 ---
 
