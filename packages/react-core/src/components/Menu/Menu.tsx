@@ -301,8 +301,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
               (document.activeElement.closest('ol') && document.activeElement.closest('ol').firstChild === element)
             }
             getFocusableElement={(navigableElement: Element) =>
-              (navigableElement.tagName === 'DIV' && navigableElement.querySelector('input')) || // for MenuSearchInput
-              ((navigableElement.firstChild as Element).tagName === 'LABEL' &&
+              (navigableElement?.tagName === 'DIV' && navigableElement.querySelector('input')) || // for MenuSearchInput
+              ((navigableElement.firstChild as Element)?.tagName === 'LABEL' &&
                 navigableElement.querySelector('input')) || // for MenuItem checkboxes
               (navigableElement.firstChild as Element)
             }

@@ -5,12 +5,12 @@ import {
   PanelMain,
   PanelMainBody,
   Title,
-  Popper,
+  MenuContainer,
   TreeView,
   TreeViewDataItem
 } from '@patternfly/react-core';
 
-export const ComposableTreeViewMenu: React.FunctionComponent = () => {
+export const TreeViewMenuDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [checkedItems, setCheckedItems] = React.useState<TreeViewDataItem[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
@@ -166,55 +166,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
     );
   };
 
-  // Controls keys that should open/close the menu
-  const handleMenuKeys = (event: KeyboardEvent) => {
-    if (!isOpen) {
-      return;
-    }
-    if (menuRef.current?.contains(event.target as Node) || toggleRef.current?.contains(event.target as Node)) {
-      // The escape key when pressed while inside the menu should close the menu and refocus the toggle
-      if (event.key === 'Escape') {
-        setIsOpen(!isOpen);
-        toggleRef.current?.focus();
-      }
-
-      // The tab key when pressed while inside the menu and on the contained last tree view should close the menu and refocus the toggle
-      // Shift tab should keep the default behavior to return to a previous tree view
-      if (event.key === 'Tab' && !event.shiftKey) {
-        const treeList = menuRef.current?.querySelectorAll('.pf-c-tree-view') || [];
-        if (treeList[treeList.length - 1].contains(event.target as Node)) {
-          event.preventDefault();
-          setIsOpen(!isOpen);
-          toggleRef.current?.focus();
-        }
-      }
-    }
-  };
-
-  // Controls that a click outside the menu while the menu is open should close the menu
-  const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
-      setIsOpen(false);
-    }
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('keydown', handleMenuKeys);
-    window.addEventListener('click', handleClickOutside);
-    return () => {
-      window.removeEventListener('keydown', handleMenuKeys);
-      window.removeEventListener('click', handleClickOutside);
-    };
-  }, [isOpen, menuRef]);
-
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation(); // Stop handleClickOutside from handling
-    setTimeout(() => {
-      if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button:not(:disabled), li > a:not(:disabled)');
-        firstElement && (firstElement as HTMLElement).focus();
-      }
-    }, 0);
+  const onToggleClick = () => {
     setIsOpen(!isOpen);
   };
 
@@ -267,5 +219,16 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
       </PanelMain>
     </Panel>
   );
-  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
+
+  return (
+    <MenuContainer
+      isOpen={isOpen}
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      onOpenChangeKeys={['Escape']}
+      menu={menu}
+      menuRef={menuRef}
+      toggle={toggle}
+      toggleRef={toggleRef}
+    />
+  );
 };

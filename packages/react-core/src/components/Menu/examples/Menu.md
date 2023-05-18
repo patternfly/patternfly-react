@@ -3,7 +3,19 @@ id: Menu
 section: components
 subsection: menus
 cssPrefix: pf-c-menu
-propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent', 'MenuSearch', 'MenuSearchInput', 'MenuGroup']
+propComponents:
+  [
+    'Menu',
+    'MenuList',
+    'MenuItem',
+    'MenuItemAction',
+    'MenuContent',
+    'MenuSearch',
+    'MenuSearchInput',
+    'MenuGroup',
+    'MenuContainer',
+    'MenuPopperProps'
+  ]
 ouia: true
 ---
 

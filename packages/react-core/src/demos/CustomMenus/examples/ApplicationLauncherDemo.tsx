@@ -1,50 +1,29 @@
 import React from 'react';
 import {
   MenuToggle,
-  Menu,
-  MenuContent,
-  MenuList,
-  MenuItem,
-  MenuGroup,
   MenuSearch,
   MenuSearchInput,
-  Popper,
   Tooltip,
   Divider,
-  SearchInput
+  SearchInput,
+  Dropdown,
+  DropdownGroup,
+  DropdownList,
+  DropdownItem
 } from '@patternfly/react-core';
-import { Link } from '@reach/router';
 import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 import pfIcon from 'pf-logo-small.svg';
 
-export const ComposableApplicationLauncher: React.FunctionComponent = () => {
+const MockLink: React.FunctionComponent = ({ to, ...props }: any) => <a href={to} {...props}></a>;
+
+export const ApplicationLauncherDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [refFullOptions, setRefFullOptions] = React.useState<Element[]>();
   const [favorites, setFavorites] = React.useState<string[]>([]);
   const [filteredIds, setFilteredIds] = React.useState<string[]>(['*']);
   const menuRef = React.useRef<HTMLDivElement>(null);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
 
-  const handleMenuKeys = (event: KeyboardEvent) => {
-    if (!isOpen) {
-      return;
-    }
-    if (menuRef.current?.contains(event.target as Node) || toggleRef.current?.contains(event.target as Node)) {
-      if (event.key === 'Escape') {
-        setIsOpen(!isOpen);
-        toggleRef.current?.focus();
-      }
-    }
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
-      setIsOpen(false);
-    }
-  };
-
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation(); // Stop handleClickOutside from handling
+  const onToggleClick = () => {
     setTimeout(() => {
       if (menuRef.current) {
         const firstElement = menuRef.current.querySelector(
@@ -57,36 +36,13 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  React.useEffect(() => {
-    window.addEventListener('keydown', handleMenuKeys);
-    window.addEventListener('click', handleClickOutside);
-
-    return () => {
-      window.removeEventListener('keydown', handleMenuKeys);
-      window.removeEventListener('click', handleClickOutside);
-    };
-  }, [isOpen, menuRef]);
-
-  const toggle = (
-    <MenuToggle
-      aria-label="Toggle"
-      ref={toggleRef}
-      variant="plain"
-      onClick={onToggleClick}
-      isExpanded={isOpen}
-      style={{ width: 'auto' }}
-    >
-      <ThIcon />
-    </MenuToggle>
-  );
-
   const menuItems = [
-    <MenuGroup key="group1" label="Group 1">
-      <MenuList>
-        <MenuItem itemId="0" id="0" isFavorited={favorites.includes('0')}>
+    <DropdownGroup key="group1" label="Group 1">
+      <DropdownList>
+        <DropdownItem itemId="0" id="0" isFavorited={favorites.includes('0')}>
           Application 1
-        </MenuItem>
-        <MenuItem
+        </DropdownItem>
+        <DropdownItem
           itemId="1"
           id="1"
           isFavorited={favorites.includes('1')}
@@ -94,56 +50,56 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
           onClick={(ev) => ev.preventDefault()}
         >
           Application 2
-        </MenuItem>
-      </MenuList>
-    </MenuGroup>,
+        </DropdownItem>
+      </DropdownList>
+    </DropdownGroup>,
     <Divider key="group1-divider" />,
-    <MenuGroup key="group2" label="Group 2">
-      <MenuList>
-        <MenuItem
+    <DropdownGroup key="group2" label="Group 2">
+      <DropdownList>
+        <DropdownItem
           itemId="2"
           id="2"
           isFavorited={favorites.includes('2')}
-          component={(props) => <Link {...props} to="#router-link" />}
+          component={(props) => <MockLink {...props} to="#router-link" />}
         >
-          @reach/router Link
-        </MenuItem>
-        <MenuItem
+          Custom component (such as @reach/router Link)
+        </DropdownItem>
+        <DropdownItem
           itemId="3"
           id="3"
           isFavorited={favorites.includes('3')}
           isExternalLink
           icon={<img src={pfIcon} />}
-          component={(props) => <Link {...props} to="#router-link2" />}
+          component={(props) => <MockLink {...props} to="#router-link2" />}
         >
-          @reach/router Link with icon
-        </MenuItem>
-      </MenuList>
-    </MenuGroup>,
+          Custom component with icon
+        </DropdownItem>
+      </DropdownList>
+    </DropdownGroup>,
     <Divider key="group2-divider" />,
-    <MenuList key="other-items">
-      <MenuItem key="tooltip-app" isFavorited={favorites.includes('4')} itemId="4" id="4">
+    <DropdownList key="other-items">
+      <DropdownItem key="tooltip-app" isFavorited={favorites.includes('4')} itemId="4" id="4">
         <Tooltip content={<div>Launch Application 3</div>} position="right">
           <span>Application 3 with tooltip</span>
         </Tooltip>
-      </MenuItem>
-      <MenuItem key="disabled-app" itemId="5" id="5" isDisabled>
+      </DropdownItem>
+      <DropdownItem key="disabled-app" itemId="5" id="5" isDisabled>
         Unavailable Application
-      </MenuItem>
-    </MenuList>
+      </DropdownItem>
+    </DropdownList>
   ];
 
   const createFavorites = (favIds: string[]) => {
     const favorites: unknown[] = [];
 
     menuItems.forEach((item) => {
-      if (item.type === MenuList) {
+      if (item.type === DropdownList) {
         item.props.children.filter((child) => {
           if (favIds.includes(child.props.itemId)) {
             favorites.push(child);
           }
         });
-      } else if (item.type === MenuGroup) {
+      } else if (item.type === DropdownGroup) {
         item.props.children.props.children.filter((child) => {
           if (favIds.includes(child.props.itemId)) {
             favorites.push(child);
@@ -166,7 +122,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
     let keepDivider = false;
     const filteredCopy = items
       .map((group) => {
-        if (group.type === MenuGroup) {
+        if (group.type === DropdownGroup) {
           const filteredGroup = React.cloneElement(group, {
             children: React.cloneElement(group.props.children, {
               children: group.props.children.props.children.filter((child) => {
@@ -183,7 +139,7 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
           } else {
             keepDivider = false;
           }
-        } else if (group.type === MenuList) {
+        } else if (group.type === DropdownList) {
           const filteredGroup = React.cloneElement(group, {
             children: group.props.children.filter((child) => {
               if (filteredIds.includes(child.props.itemId)) {
@@ -243,30 +199,47 @@ export const ComposableApplicationLauncher: React.FunctionComponent = () => {
   const filteredFavorites = filterItems(createFavorites(favorites), filteredIds);
   const filteredItems = filterItems(menuItems, filteredIds);
   if (filteredItems.length === 0) {
-    filteredItems.push(<MenuItem key="no-items">No results found</MenuItem>);
+    filteredItems.push(<DropdownItem key="no-items">No results found</DropdownItem>);
   }
 
-  const menu = (
+  return (
     // eslint-disable-next-line no-console
-    <Menu ref={menuRef} onActionClick={onFavorite} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
+    <Dropdown
+      isOpen={isOpen}
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      onOpenChangeKeys={['Escape']}
+      toggle={(toggleRef) => (
+        <MenuToggle
+          aria-label="Toggle"
+          ref={toggleRef}
+          variant="plain"
+          onClick={onToggleClick}
+          isExpanded={isOpen}
+          style={{ width: 'auto' }}
+        >
+          <ThIcon />
+        </MenuToggle>
+      )}
+      ref={menuRef}
+      onActionClick={onFavorite}
+      // eslint-disable-next-line no-console
+      onSelect={(_ev, itemId) => console.log('selected', itemId)}
+    >
       <MenuSearch>
         <MenuSearchInput>
           <SearchInput aria-label="Filter menu items" onChange={(_event, value) => onTextChange(value)} />
         </MenuSearchInput>
       </MenuSearch>
       <Divider />
-      <MenuContent>
-        {filteredFavorites.length > 0 && (
-          <React.Fragment>
-            <MenuGroup key="favorites-group" label="Favorites">
-              <MenuList>{filteredFavorites}</MenuList>
-            </MenuGroup>
-            <Divider key="favorites-divider" />
-          </React.Fragment>
-        )}
-        {filteredItems}
-      </MenuContent>
-    </Menu>
+      {filteredFavorites.length > 0 && (
+        <React.Fragment>
+          <DropdownGroup key="favorites-group" label="Favorites">
+            <DropdownList>{filteredFavorites}</DropdownList>
+          </DropdownGroup>
+          <Divider key="favorites-divider" />
+        </React.Fragment>
+      )}
+      {filteredItems}
+    </Dropdown>
   );
-  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
 };

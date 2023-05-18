@@ -7,7 +7,7 @@ import {
   MenuItem,
   DrilldownMenu,
   Divider,
-  Popper
+  MenuContainer
 } from '@patternfly/react-core';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
@@ -18,7 +18,7 @@ interface MenuHeightsType {
   [id: string]: number;
 }
 
-export const ComposableDrilldownMenu: React.FunctionComponent = () => {
+export const DrilldownMenuDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [activeMenu, setActiveMenu] = React.useState<string>('rootMenu');
   const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
@@ -27,38 +27,7 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
   const toggleRef = React.useRef<HTMLButtonElement>(null);
   const menuRef = React.useRef<HTMLDivElement>(null);
 
-  const handleMenuKeys = (event: KeyboardEvent) => {
-    if (isOpen && menuRef.current?.contains(event.target as Node)) {
-      if (event.key === 'Escape' || event.key === 'Tab') {
-        setIsOpen(!isOpen);
-        toggleRef.current?.focus();
-      }
-    }
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
-      setIsOpen(false);
-    }
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('keydown', handleMenuKeys);
-    window.addEventListener('click', handleClickOutside);
-    return () => {
-      window.removeEventListener('keydown', handleMenuKeys);
-      window.removeEventListener('click', handleClickOutside);
-    };
-  }, [isOpen, menuRef]);
-
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation(); // Stop handleClickOutside from handling
-    setTimeout(() => {
-      if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button:not(:disabled), li > a:not(:disabled)');
-        firstElement && (firstElement as HTMLElement).focus();
-      }
-    }, 0);
+  const onToggleClick = () => {
     setIsOpen(!isOpen);
     setMenuDrilledIn([]);
     setDrilldownPath([]);
@@ -83,7 +52,7 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
   };
 
   const setHeight = (menuId: string, height: number) => {
-    if (!menuHeights[menuId]) {
+    if (!menuHeights[menuId] || (menuId !== 'rootMenu' && menuHeights[menuId] !== height)) {
       setMenuHeights({
         ...menuHeights,
         [menuId]: height
@@ -242,5 +211,14 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
+  return (
+    <MenuContainer
+      isOpen={isOpen}
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      menu={menu}
+      menuRef={menuRef}
+      toggle={toggle}
+      toggleRef={toggleRef}
+    />
+  );
 };

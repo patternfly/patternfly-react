@@ -1,32 +1,30 @@
 import React from 'react';
 import {
   MenuToggle,
-  Menu,
-  MenuContent,
   MenuFooter,
-  MenuList,
-  MenuItem,
   MenuSearch,
   MenuSearchInput,
-  Popper,
   Divider,
   InputGroup,
   InputGroupItem,
   Button,
   ButtonVariant,
-  SearchInput
+  SearchInput,
+  Dropdown,
+  DropdownList,
+  DropdownItem
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 interface ItemData {
   text: string;
   href?: string;
-  isDisabled?: boolean;
+  isDisabled?: boolean | undefined;
 }
 
 type ItemArrayType = (ItemData | string)[];
 
-export const ComposableContextSelector: React.FunctionComponent = () => {
+export const ContextSelectorDemo: React.FunctionComponent = () => {
   const items: ItemArrayType = [
     {
       text: 'Action'
@@ -60,66 +58,16 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
   const [filteredItems, setFilteredItems] = React.useState<ItemArrayType>(items);
   const [searchInputValue, setSearchInputValue] = React.useState<string>('');
   const menuRef = React.useRef<HTMLDivElement>(null);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
   const menuFooterBtnRef = React.useRef<HTMLButtonElement>(null);
 
-  const handleMenuKeys = (event: KeyboardEvent) => {
-    if (!isOpen) {
-      return;
-    }
-    if (menuFooterBtnRef.current?.contains(event.target as Node)) {
-      if (event.key === 'Tab') {
-        if (event.shiftKey) {
-          return;
-        }
-        setIsOpen(!isOpen);
-        toggleRef.current?.focus();
-      }
-    }
-    if (menuRef.current?.contains(event.target as Node)) {
-      if (event.key === 'Escape') {
-        setIsOpen(!isOpen);
-        toggleRef.current?.focus();
-      }
-    }
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
-      setIsOpen(false);
-    }
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('keydown', handleMenuKeys);
-    window.addEventListener('click', handleClickOutside);
-
-    return () => {
-      window.removeEventListener('keydown', handleMenuKeys);
-      window.removeEventListener('click', handleClickOutside);
-    };
-  }, [isOpen, menuRef]);
-
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation(); // Stop handleClickOutside from handling
-    setTimeout(() => {
-      if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector(
-          'li > button:not(:disabled), li > a:not(:disabled), input:not(:disabled)'
-        );
-        firstElement && (firstElement as HTMLElement).focus();
-      }
-    }, 0);
+  const onToggleClick = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggle = (
-    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
-      {selected}
-    </MenuToggle>
-  );
-
-  const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: string | number) => {
+  const onSelect = (ev: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+    if (typeof itemId === 'number' || typeof itemId === 'undefined') {
+      return;
+    }
     setSelected(itemId.toString());
     setIsOpen(!isOpen);
   };
@@ -147,8 +95,21 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
     }
   };
 
-  const menu = (
-    <Menu ref={menuRef} id="context-selector" onSelect={onSelect} isScrollable>
+  return (
+    <Dropdown
+      isOpen={isOpen}
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      onOpenChangeKeys={['Escape']}
+      toggle={(toggleRef) => (
+        <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+          {selected}
+        </MenuToggle>
+      )}
+      ref={menuRef}
+      id="context-selector"
+      onSelect={onSelect}
+      isScrollable
+    >
       <MenuSearch>
         <MenuSearchInput>
           <InputGroup>
@@ -175,25 +136,27 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
         </MenuSearchInput>
       </MenuSearch>
       <Divider />
-      <MenuContent maxMenuHeight="200px">
-        <MenuList>
-          {filteredItems.map((item, index) => {
-            const [itemText, isDisabled, href] =
-              typeof item === 'string' ? [item, null, null] : [item.text, item.isDisabled || null, item.href || null];
-            return (
-              <MenuItem itemId={itemText} key={index} isDisabled={isDisabled} to={href}>
-                {itemText}
-              </MenuItem>
-            );
-          })}
-        </MenuList>
-      </MenuContent>
+      <DropdownList>
+        {filteredItems.map((item, index) => {
+          const [itemText, isDisabled, href] =
+            typeof item === 'string' ? [item, null, null] : [item.text, item.isDisabled || null, item.href || null];
+          return (
+            <DropdownItem
+              itemId={itemText}
+              key={index}
+              isDisabled={isDisabled as boolean | undefined}
+              to={href as string | undefined}
+            >
+              {itemText}
+            </DropdownItem>
+          );
+        })}
+      </DropdownList>
       <MenuFooter>
         <Button ref={menuFooterBtnRef} variant="link" isInline>
           Action
         </Button>
       </MenuFooter>
-    </Menu>
+    </Dropdown>
   );
-  return <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />;
 };
