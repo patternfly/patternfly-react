@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.48 (2023-05-18)
+
+### Bug Fixes
+
+- **Input group:** Removed variant prop from input group text ([#9147](https://github.com/patternfly/patternfly-react/issues/9147)) ([ba354a5](https://github.com/patternfly/patternfly-react/commit/ba354a5a20ce0ac5ed22080b78d50c45b7ca7a9a))
+
 # 5.0.0-alpha.47 (2023-05-18)
 
 ### Features
