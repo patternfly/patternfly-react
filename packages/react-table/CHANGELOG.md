@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.111](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.110...@patternfly/react-table@5.0.0-alpha.111) (2023-05-18)
+
+### Features
+
+- **FormControls:** updated logic for rendering icons ([#9132](https://github.com/patternfly/patternfly-react/issues/9132)) ([9f4863f](https://github.com/patternfly/patternfly-react/commit/9f4863f3251e365142c44aace2c1aeba57ba6b3a))
+
 # [5.0.0-alpha.110](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-alpha.109...@patternfly/react-table@5.0.0-alpha.110) (2023-05-18)
 
 **Note:** Version bump only for package @patternfly/react-table
