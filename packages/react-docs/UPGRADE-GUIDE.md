@@ -1,5 +1,6 @@
 ---
-id: PatternFly 5  Upgrade guide
+id: Upgrade guide
+title: PatternFly 5 Upgrade guide
 section: developer-resources
 ---
 
@@ -100,5 +101,5 @@ Some of these changes will break your existing implementation and require you to
 
 ### Wizard 
 
-- Removed style that was breaking drawer example ([#5322]https://github.com/patternfly/patternfly/pull/5322)
+- Removed style that was breaking drawer example ([#5322](https://github.com/patternfly/patternfly/pull/5322))
 - Reordered footer buttons ([#5148](https://github.com/patternfly/patternfly/pull/5148))
