@@ -4,7 +4,6 @@ import {
   InputGroup,
   InputGroupText,
   InputGroupItem,
-  InputGroupTextVariant,
   TextInput,
   ValidatedOptions
 } from '@patternfly/react-core';
@@ -41,7 +40,7 @@ export const InputGroupBasic: React.FunctionComponent = () => (
         <TextInput name="textInput-basic-3" id="textInput-basic-3" type="text" aria-label="percentage" />
       </InputGroupItem>
       <InputGroupItem isPlain isBox>
-        <InputGroupText id="plain-example" variant={InputGroupTextVariant.plain}>
+        <InputGroupText id="plain-example">
           %
         </InputGroupText>
       </InputGroupItem>

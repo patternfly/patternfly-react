@@ -2,12 +2,12 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import { InputGroupText, InputGroupTextVariant } from '../InputGroupText';
+import { InputGroupText } from '../InputGroupText';
 
 describe('InputGroupText', () => {
   test('renders', () => {
     render(
-      <InputGroupText className="inpt-grp-text" variant={InputGroupTextVariant.plain} id="email-npt-grp">
+      <InputGroupText className="inpt-grp-text" id="email-npt-grp">
         @
       </InputGroupText>
     );
