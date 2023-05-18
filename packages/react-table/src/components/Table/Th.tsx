@@ -179,6 +179,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
       scope={component === 'th' && children ? scope : null}
       ref={cellRef}
       className={css(
+        styles.tableTh,
         className,
         textCenter && styles.modifiers.center,
         isSubheader && styles.tableSubhead,

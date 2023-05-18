@@ -25,6 +25,7 @@ const TheadBase: React.FunctionComponent<TheadProps> = ({
 }: TheadProps) => (
   <thead
     className={css(
+      styles.tableThead,
       className,
       noWrap && styles.modifiers.nowrap,
       hasNestedHeader && styles.modifiers.nestedColumnHeader

@@ -29,6 +29,7 @@ const TbodyBase: React.FunctionComponent<TbodyProps> = ({
   <tbody
     role="rowgroup"
     className={css(
+      styles.tableTbody,
       className,
       isExpanded && styles.modifiers.expanded,
       isOddStriped && styles.modifiers.striped,

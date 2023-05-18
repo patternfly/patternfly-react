@@ -92,6 +92,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
       {isSelectable && <output className="pf-v5-screen-reader">{ariaLabel}</output>}
       <tr
         className={css(
+          styles.tableTr,
           className,
           isExpanded !== undefined && styles.tableExpandableRow,
           isExpanded && styles.modifiers.expanded,
