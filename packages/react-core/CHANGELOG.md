@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.110](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.109...@patternfly/react-core@5.0.0-alpha.110) (2023-05-18)
+
+### Features
+
+- **menus:** custom menus updates ([#9014](https://github.com/patternfly/patternfly-react/issues/9014)) ([4055504](https://github.com/patternfly/patternfly-react/commit/405550494244cfbc30d1166d7ea25666885ff448))
+
 # [5.0.0-alpha.109](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.108...@patternfly/react-core@5.0.0-alpha.109) (2023-05-18)
 
 ### Features
