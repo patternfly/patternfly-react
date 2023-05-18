@@ -3,7 +3,7 @@
 exports[`TextInput default read only text input 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-form-control"
+    class="pf-v5-c-form-control pf-m-readonly"
   >
     <input
       aria-invalid="false"
@@ -22,7 +22,7 @@ exports[`TextInput default read only text input 1`] = `
 exports[`TextInput disabled text input 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-form-control"
+    class="pf-v5-c-form-control pf-m-disabled"
   >
     <input
       aria-invalid="false"
@@ -41,7 +41,7 @@ exports[`TextInput disabled text input 1`] = `
 exports[`TextInput invalid text input 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-form-control"
+    class="pf-v5-c-form-control pf-m-error"
   >
     <input
       aria-invalid="true"
@@ -53,10 +53,10 @@ exports[`TextInput invalid text input 1`] = `
       value="test input"
     />
     <div
-      class=""
+      class="pf-v5-c-form-control__utilities"
     >
       <div
-        class=""
+        class="pf-v5-c-form-control__icon pf-m-status"
       >
         <svg
           aria-hidden="true"
@@ -78,7 +78,7 @@ exports[`TextInput invalid text input 1`] = `
 exports[`TextInput plain read only text input 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-form-control pf-m-plain"
+    class="pf-v5-c-form-control pf-m-readonly pf-m-plain"
   >
     <input
       aria-invalid="false"
@@ -133,7 +133,7 @@ exports[`TextInput simple text input 1`] = `
 exports[`TextInput validated text input error 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-form-control"
+    class="pf-v5-c-form-control pf-m-error"
   >
     <input
       aria-invalid="true"
@@ -145,10 +145,10 @@ exports[`TextInput validated text input error 1`] = `
       value="test input"
     />
     <div
-      class=""
+      class="pf-v5-c-form-control__utilities"
     >
       <div
-        class=""
+        class="pf-v5-c-form-control__icon pf-m-status"
       >
         <svg
           aria-hidden="true"

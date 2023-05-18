@@ -3,7 +3,7 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-form-control custom class"
+    class="pf-v5-c-form-control pf-m-resize-both pf-m-disabled custom class"
     style="height: 6px;"
   >
     <textarea
