@@ -29,7 +29,7 @@ export interface MenuContainerProps {
   /** Callback to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing any keys specificed in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;
-  /** @beta Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
+  /** Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
   /** z-index of the dropdown menu */
   zIndex?: number;
@@ -38,7 +38,8 @@ export interface MenuContainerProps {
 }
 
 /**
- * Container that links a menu and menu toggle together, to handle basic keyboard input and control the opening and closing of a menu
+ * Container that links a menu and menu toggle together, to handle basic keyboard input and control the opening and closing of a menu.
+ * This component is currently in beta and is subject to change.
  */
 export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   menu,
