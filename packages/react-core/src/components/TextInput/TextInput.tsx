@@ -198,7 +198,6 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
           isDisabled && styles.modifiers.disabled,
           isExpanded && styles.modifiers.expanded,
           customIcon && styles.modifiers.icon,
-          placeholder && styles.modifiers.placeholder,
           hasStatusIcon && styles.modifiers[validated as 'success' | 'warning' | 'error'],
           className
         )}
