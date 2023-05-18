@@ -115,24 +115,29 @@ const ExpandCollapseAllTableDemo = () => {
   const [collapseAllAriaLabel, setCollapseAllAriaLabel] = React.useState('Expand all');
   const [expandedServerNames, setExpandedServerNames] = React.useState(initialExpandedServerNames);
 
+  React.useEffect(() => {
+    const allExpanded = expandedServerNames.length === serverData.length;
+    setAreAllExpanded(allExpanded);
+    setCollapseAllAriaLabel(allExpanded ? 'Collapse all' : 'Expand all');
+  }, [expandedServerNames]);
+
   const setServerExpanded = (server, isExpanding) => {
     const otherExpandedServerNames = expandedServerNames.filter((r) => r !== server.name);
     setExpandedServerNames(isExpanding ? [...otherExpandedServerNames, server.name] : otherExpandedServerNames);
-    setAreAllExpanded(expandedServerNames.length !== 0 || expandedServerNames.length === serverData.length);
   };
 
   const isServerExpanded = (server) => {
     return expandedServerNames.includes(server.name);
   };
+
   // We want to be able to reference the original data object based on row index. But because an expanded
   // row takes up two row indexes, servers[rowIndex] will not be accurate like it would in a normal table.
   // One solution to this is to create an array of data objects indexed by the displayed row index.
 
   const onCollapseAll = (_event, _rowIndex, isOpen) => {
     setExpandedServerNames(isOpen ? [...serverData.map((server) => server.name)] : []);
-    setAreAllExpanded(!isOpen);
-    setCollapseAllAriaLabel(areAllExpanded ? 'Expand all' : 'Collapse all');
   };
+
   return (
     <React.Fragment>
       <DashboardWrapper hasPageTemplateTitle>
@@ -148,7 +153,7 @@ const ExpandCollapseAllTableDemo = () => {
                 <Tr>
                   <Th
                     expand={{
-                      areAllExpanded: areAllExpanded,
+                      areAllExpanded: !areAllExpanded,
                       collapseAllAriaLabel: collapseAllAriaLabel,
                       onToggle: onCollapseAll
                     }}
