@@ -3,7 +3,8 @@ id: Select
 section: components
 subsection: menus
 cssPrefix: pf-c-select
-propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectList', 'MenuToggle', 'SelectPopperProps']
+propComponents:
+  ['Select', 'SelectOption', 'SelectGroup', 'SelectList', 'MenuToggle', 'SelectToggleProps', 'SelectPopperProps']
 ouia: true
 ---
 

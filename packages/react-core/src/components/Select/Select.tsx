@@ -19,6 +19,13 @@ export interface SelectPopperProps {
   enableFlip?: boolean;
 }
 
+export interface SelectToggleProps {
+  /**  Select toggle node. */
+  toggleNode: React.ReactNode;
+  /** Reference to the toggle. */
+  toggleRef: React.RefObject<HTMLButtonElement>;
+}
+
 /**
  * See the Menu documentation for additional props that may be passed.
  */
@@ -33,9 +40,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   /** Single itemId for single select menus, or array of itemIds for multi select. You can also specify isSelected on the SelectOption. */
   selected?: any | any[];
   /** Select toggle. The toggle should either be a renderer function which forwards the given toggle ref, or a direct ReactNode that should be passed along with the toggleRef property. */
-  toggle:
-    | { toggleNode: React.ReactNode; toggleRef: React.RefObject<HTMLButtonElement> }
-    | ((toggleRef: React.RefObject<any>) => React.ReactNode);
+  toggle: SelectToggleProps | ((toggleRef: React.RefObject<any>) => React.ReactNode);
   /** Flag indicating the toggle should be focused after a selection. If this use case is too restrictive, the optional toggleRef property with a node toggle may be used to control focus. */
   shouldFocusToggleOnSelect?: boolean;
   /** Function callback when user selects an option. */
