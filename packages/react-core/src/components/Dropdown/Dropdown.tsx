@@ -23,7 +23,7 @@ export interface DropdownToggleProps {
   /**  Dropdown toggle node. */
   toggleNode: React.ReactNode;
   /** Reference to the toggle. */
-  toggleRef: React.RefObject<HTMLButtonElement>;
+  toggleRef?: React.RefObject<HTMLButtonElement>;
 }
 
 /**
@@ -36,8 +36,6 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   className?: string;
   /** Dropdown toggle. The toggle should either be a renderer function which forwards the given toggle ref, or a direct ReactNode that should be passed along with the toggleRef property. */
   toggle: DropdownToggleProps | ((toggleRef: React.RefObject<any>) => React.ReactNode);
-  /** Ref of the dropdown toggle. This property should be passed when toggle is assigned a node, to enable built in basic interaction handling. */
-  toggleRef?: React.RefObject<HTMLButtonElement>;
   /** Flag to indicate if menu is opened.*/
   isOpen?: boolean;
   /** Flag indicating the toggle should be focused after a selection. If this use case is too restrictive, the optional toggleRef property with a node toggle may be used to control focus. */

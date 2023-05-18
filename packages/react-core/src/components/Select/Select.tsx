@@ -23,7 +23,7 @@ export interface SelectToggleProps {
   /**  Select toggle node. */
   toggleNode: React.ReactNode;
   /** Reference to the toggle. */
-  toggleRef: React.RefObject<HTMLButtonElement>;
+  toggleRef?: React.RefObject<HTMLButtonElement>;
 }
 
 /**
