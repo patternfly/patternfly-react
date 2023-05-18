@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.108](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.107...@patternfly/react-core@5.0.0-alpha.108) (2023-05-18)
+
+### Features
+
+- **Select:** add examples, add popper interface, fix focus ([#8992](https://github.com/patternfly/patternfly-react/issues/8992)) ([4b296dd](https://github.com/patternfly/patternfly-react/commit/4b296dda2af3d1a54c2d86d0d3311f6afd282790))
+
 # [5.0.0-alpha.107](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.106...@patternfly/react-core@5.0.0-alpha.107) (2023-05-17)
 
 ### Bug Fixes
