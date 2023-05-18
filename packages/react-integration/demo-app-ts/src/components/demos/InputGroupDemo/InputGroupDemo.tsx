@@ -10,7 +10,6 @@ import {
   TextArea,
   InputGroup,
   InputGroupText,
-  InputGroupTextVariant,
   InputGroupItem,
   TextInput,
   Popover,
@@ -217,7 +216,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
             <TextInput name="textIndex12" id="textInput12" type="text" aria-label="percentage" />
           </InputGroupItem>
           <InputGroupItem isPlain isBox>
-            <InputGroupText id="plain-example" variant={InputGroupTextVariant.plain}>
+            <InputGroupText id="plain-example">
               %
             </InputGroupText>
           </InputGroupItem>
