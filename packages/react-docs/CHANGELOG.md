@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.119](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.118...@patternfly/react-docs@6.0.0-alpha.119) (2023-05-18)
+
+### Features
+
+- **Table:** added class names for table elements ([#9133](https://github.com/patternfly/patternfly-react/issues/9133)) ([51d6d2b](https://github.com/patternfly/patternfly-react/commit/51d6d2b1a92af7bbfb0075361b375a4d881e110b))
+
 # [6.0.0-alpha.118](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.117...@patternfly/react-docs@6.0.0-alpha.118) (2023-05-18)
 
 **Note:** Version bump only for package @patternfly/react-docs

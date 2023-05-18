@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.111](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.110...@patternfly/react-core@5.0.0-alpha.111) (2023-05-18)
+
+### Features
+
+- **Table:** added class names for table elements ([#9133](https://github.com/patternfly/patternfly-react/issues/9133)) ([51d6d2b](https://github.com/patternfly/patternfly-react/commit/51d6d2b1a92af7bbfb0075361b375a4d881e110b))
+
 # [5.0.0-alpha.110](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.109...@patternfly/react-core@5.0.0-alpha.110) (2023-05-18)
 
 ### Features
