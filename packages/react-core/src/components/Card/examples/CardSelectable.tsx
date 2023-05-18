@@ -37,8 +37,9 @@ export const SelectableCard: React.FunctionComponent = () => {
             isChecked: isChecked1,
             onChange
           }}
-        />
-        <CardTitle>First card</CardTitle>
+        >
+          <CardTitle>First card</CardTitle>
+        </CardHeader>
         <CardBody>This card is selectable.</CardBody>
       </Card>
       <Card id="selectable-card-example-2" isSelectable>
@@ -50,8 +51,9 @@ export const SelectableCard: React.FunctionComponent = () => {
             isChecked: isChecked2,
             onChange
           }}
-        />
-        <CardTitle>Second card</CardTitle>
+        >
+          <CardTitle>Second card</CardTitle>
+        </CardHeader>
         <CardBody>This card is selectable.</CardBody>
       </Card>
       <Card id="selectable-card-example-3" isSelectable isDisabled>
@@ -63,8 +65,9 @@ export const SelectableCard: React.FunctionComponent = () => {
             isChecked: isChecked3,
             onChange
           }}
-        />
-        <CardTitle>Third card</CardTitle>
+        >
+          <CardTitle>Third card</CardTitle>
+        </CardHeader>
         <CardBody>This card is selectable but disabled.</CardBody>
       </Card>
     </React.Fragment>

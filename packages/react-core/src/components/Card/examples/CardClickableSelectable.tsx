@@ -42,12 +42,13 @@ export const CardClickable: React.FunctionComponent = () => {
             isChecked: isChecked1,
             onChange
           }}
-        />
-        <CardTitle>
-          <Button variant="link" isInline onClick={onClick}>
-            First card
-          </Button>
-        </CardTitle>
+        >
+          <CardTitle>
+            <Button variant="link" isInline onClick={onClick}>
+              First card
+            </Button>
+          </CardTitle>
+        </CardHeader>
         <CardBody>This card performs an action upon clicking the card title and is selectable.</CardBody>
       </Card>
       <Card id="clickable-selectable-card-example-2" isClickable isSelectable>
@@ -59,11 +60,12 @@ export const CardClickable: React.FunctionComponent = () => {
             isChecked: isChecked2,
             onChange
           }}
-        />
-        <CardTitle>Second Card</CardTitle>
+        >
+          <CardTitle>Second Card</CardTitle>
+        </CardHeader>
         <CardBody>
-          This card is selectable and has a link in the card body that navigates to
-          <Button variant="link" isInline component="a" href="https://www.patternfly.org/">
+          This card is selectable and has a link in the card body that navigates to{' '}
+          <Button variant="link" isInline component="a" href="#">
             Patternfly
           </Button>
           .
@@ -78,12 +80,13 @@ export const CardClickable: React.FunctionComponent = () => {
             isChecked: isChecked3,
             onChange
           }}
-        />
-        <CardTitle>
-          <Button isDisabled variant="link" isInline component="a" href="https://www.patternfly.org/">
-            Third card
-          </Button>
-        </CardTitle>
+        >
+          <CardTitle>
+            <Button isDisabled variant="link" isInline component="a" href="https://www.patternfly.org/">
+              Third card
+            </Button>
+          </CardTitle>
+        </CardHeader>
         <CardBody>This card is clickable and selectable, but disabled.</CardBody>
       </Card>
     </React.Fragment>

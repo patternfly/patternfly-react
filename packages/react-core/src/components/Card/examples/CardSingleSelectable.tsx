@@ -16,8 +16,9 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
             name: 'single-selectable-card-example',
             variant: 'single'
           }}
-        />
-        <CardTitle>First card</CardTitle>
+        >
+          <CardTitle>First card</CardTitle>
+        </CardHeader>
         <CardBody>This card is single selectable.</CardBody>
       </Card>
       <Card id="single-selectable-card-example-2" isSelectable>
@@ -28,8 +29,9 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
             name: 'single-selectable-card-example',
             variant: 'single'
           }}
-        />
-        <CardTitle>Second card</CardTitle>
+        >
+          <CardTitle>Second card</CardTitle>
+        </CardHeader>
         <CardBody>This card is single selectable.</CardBody>
       </Card>
       <Card id="single-selectable-card-example-3" isSelectable isDisabled>
@@ -40,8 +42,9 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
             name: 'single-selectable-card-example',
             variant: 'single'
           }}
-        />
-        <CardTitle>Third card</CardTitle>
+        >
+          <CardTitle>Third card</CardTitle>
+        </CardHeader>
         <CardBody>This card is single selectable but disabled.</CardBody>
       </Card>
     </React.Fragment>

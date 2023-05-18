@@ -17,8 +17,9 @@ export const CardClickable: React.FunctionComponent = () => {
             selectableActionAriaLabelledby: 'clickable-card-example-1',
             name: 'clickable-card-example'
           }}
-        />
-        <CardTitle>First card</CardTitle>
+        >
+          <CardTitle>First card</CardTitle>
+        </CardHeader>
         <CardBody>This card performs an action on click.</CardBody>
       </Card>
       <Card id="clickable-card-example-2" isClickable>
@@ -29,9 +30,10 @@ export const CardClickable: React.FunctionComponent = () => {
             selectableActionAriaLabelledby: 'clickable-card-example-2',
             name: 'clickable-card-example'
           }}
-        />
-        <CardTitle>Second card</CardTitle>
-        <CardBody>This card can navigate to a link on click.`.</CardBody>
+        >
+          <CardTitle>Second card</CardTitle>
+        </CardHeader>
+        <CardBody>This card can navigate to a link on click.</CardBody>
       </Card>
       <Card id="clickable-card-example-3" isClickable isDisabled>
         <CardHeader
@@ -42,8 +44,9 @@ export const CardClickable: React.FunctionComponent = () => {
             selectableActionAriaLabelledby: 'clickable-card-example-3',
             name: 'clickable-card-example'
           }}
-        />
-        <CardTitle>Third card</CardTitle>
+        >
+          <CardTitle>Third card</CardTitle>
+        </CardHeader>
         <CardBody>This card is clickable but disabled.</CardBody>
       </Card>
     </React.Fragment>
