@@ -549,17 +549,17 @@ class DataListViewBasic extends React.Component {
                             </Text>
                           </FlexItem>
                           <FlexItem>
-                            <Flex>
+                            <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                               <FlexItem>
-                                <CodeBranchIcon /> \xa0 10
+                                <CodeBranchIcon /> 10
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <CodeIcon /> \xa0 4
+                                <CodeIcon /> 4
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <CubeIcon /> \xa0 5
+                                <CubeIcon /> 5
                               </FlexItem>
-                              <FlexItem> \xa0 \xa0 Updated 2 days ago</FlexItem>
+                              <FlexItem> Updated 2 days ago</FlexItem>
                             </Flex>
                           </FlexItem>
                         </Flex>
@@ -593,28 +593,27 @@ class DataListViewBasic extends React.Component {
                             <Text component={TextVariants.small}>PatternFly elements</Text>
                           </FlexItem>
                           <FlexItem>
-                            <Flex>
+                            <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                               <FlexItem>
-                                <CodeBranchIcon /> \xa0 5
+                                <CodeBranchIcon /> 5
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <CodeIcon /> \xa0 9
+                                <CodeIcon /> 9
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <CubeIcon /> \xa0 2
+                                <CubeIcon /> 2
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <CheckCircleIcon />
-                                \xa0 11
+                                <CheckCircleIcon />
+                                11
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <ExclamationTriangleIcon /> \xa0 4
+                                <ExclamationTriangleIcon /> 4
                               </FlexItem>
                               <FlexItem>
-                                \xa0
-                                <TimesCircleIcon /> \xa0 1
+                                <TimesCircleIcon /> 1
                               </FlexItem>
-                              <FlexItem> \xa0 \xa0 Updated 2 days ago</FlexItem>
+                              <FlexItem> Updated 2 days ago</FlexItem>
                             </Flex>
                           </FlexItem>
                         </Flex>
@@ -680,18 +679,18 @@ class DataListViewBasic extends React.Component {
                             </Text>
                           </FlexItem>
                           <FlexItem>
-                            <Flex>
+                            <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                               <FlexItem>
                                 <CodeBranchIcon />
-                                \xa0 10
+                                10
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <CodeIcon /> \xa0 4
+                                <CodeIcon /> 4
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <CubeIcon /> \xa0 5
+                                <CubeIcon /> 5
                               </FlexItem>
-                              <FlexItem> \xa0 \xa0 Updated 2 days ago</FlexItem>
+                              <FlexItem> Updated 2 days ago</FlexItem>
                             </Flex>
                           </FlexItem>
                         </Flex>
@@ -725,27 +724,26 @@ class DataListViewBasic extends React.Component {
                             <Text component={TextVariants.small}>PatternFly elements</Text>
                           </FlexItem>
                           <FlexItem>
-                            <Flex>
+                            <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                               <FlexItem>
-                                <CodeBranchIcon /> \xa0 5
+                                <CodeBranchIcon />5
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <CodeIcon /> \xa0 9
+                                <CodeIcon />9
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <CubeIcon /> \xa0 2
+                                <CubeIcon /> 2
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <CheckCircleIcon />
-                                \xa0 11
+                                <CheckCircleIcon /> 11
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <ExclamationTriangleIcon /> \xa0 4
+                                <ExclamationTriangleIcon /> 4
                               </FlexItem>
                               <FlexItem>
-                                \xa0 <TimesCircleIcon /> \xa0 1
+                                <TimesCircleIcon /> 1
                               </FlexItem>
-                              <FlexItem> \xa0 \xa0 Updated 2 days ago</FlexItem>
+                              <FlexItem> Updated 2 days ago</FlexItem>
                             </Flex>
                           </FlexItem>
                         </Flex>
