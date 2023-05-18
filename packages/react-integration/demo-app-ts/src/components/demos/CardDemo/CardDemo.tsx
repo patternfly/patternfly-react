@@ -127,7 +127,7 @@ export class CardDemo extends React.Component {
           <CardFooter>Footer</CardFooter>
         </Card>
         <br></br>
-        <Card isSelectable isSelected>
+        <Card isSelectable isSelected tabIndex={0}>
           <CardTitle>Header</CardTitle>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
@@ -171,6 +171,7 @@ export class CardDemo extends React.Component {
           id="selectableCard"
           isSelectable
           isSelected={this.state.selected === 'selectableCard'}
+          tabIndex={0}
           onKeyDown={this.onKeyDown}
         >
           <CardTitle>Header</CardTitle>

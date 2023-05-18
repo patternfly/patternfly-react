@@ -16,11 +16,15 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isCompact?: boolean;
   /** Modifies the card to include selectable styling */
   isSelectable?: boolean;
-  /** Specifies the card is selectable, and applies the new raised styling on hover and select */
+  /** @deprecated Specifies the card is selectable, and applies raised styling on hover and select */
   isSelectableRaised?: boolean;
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
-  /** Modifies a raised selectable card to have disabled styling */
+  /** Modifies the card to include clickable styling */
+  isClickable?: boolean;
+  /** Modifies a clickable or selectable card to have disabled styling. */
+  isDisabled?: boolean;
+  /** @deprecated Modifies a raised selectable card to have disabled styling */
   isDisabledRaised?: boolean;
   /** Modifies the card to include flat styling */
   isFlat?: boolean;
@@ -34,11 +38,11 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isPlain?: boolean;
   /** Flag indicating if a card is expanded. Modifies the card to be expandable. */
   isExpanded?: boolean;
-  /** Flag indicating that the card should render a hidden input to make it selectable */
+  /** @deprecated Flag indicating that the card should render a hidden input to make it selectable */
   hasSelectableInput?: boolean;
-  /** Aria label to apply to the selectable input if one is rendered */
+  /** @deprecated Aria label to apply to the selectable input if one is rendered */
   selectableInputAriaLabel?: string;
-  /** Callback that executes when the selectable input is changed */
+  /** @deprecated Callback that executes when the selectable input is changed */
   onSelectableInputChange?: (event: React.FormEvent<HTMLInputElement>, labelledBy: string) => void;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
@@ -50,6 +54,9 @@ interface CardContextProps {
   cardId: string;
   registerTitleId: (id: string) => void;
   isExpanded: boolean;
+  isClickable: boolean;
+  isSelectable: boolean;
+  isDisabled: boolean;
 }
 
 interface AriaProps {
@@ -60,7 +67,10 @@ interface AriaProps {
 export const CardContext = React.createContext<Partial<CardContextProps>>({
   cardId: '',
   registerTitleId: () => {},
-  isExpanded: false
+  isExpanded: false,
+  isClickable: false,
+  isSelectable: false,
+  isDisabled: false
 });
 
 export const Card: React.FunctionComponent<CardProps> = ({
@@ -70,6 +80,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
   component = 'div',
   isCompact = false,
   isSelectable = false,
+  isClickable = false,
+  isDisabled = false,
   isSelectableRaised = false,
   isSelected = false,
   isDisabledRaised = false,
@@ -104,9 +116,18 @@ export const Card: React.FunctionComponent<CardProps> = ({
     if (isSelectableRaised) {
       return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
     }
+    if (isSelectable && isClickable) {
+      return css(styles.modifiers.selectable, styles.modifiers.clickable, isSelected && styles.modifiers.current);
+    }
+
     if (isSelectable) {
       return css(styles.modifiers.selectable, isSelected && styles.modifiers.selected);
     }
+
+    if (isClickable) {
+      return css(styles.modifiers.clickable, isSelected && styles.modifiers.selected);
+    }
+
     return '';
   };
 
@@ -136,7 +157,10 @@ export const Card: React.FunctionComponent<CardProps> = ({
       value={{
         cardId: id,
         registerTitleId,
-        isExpanded
+        isExpanded,
+        isClickable,
+        isSelectable,
+        isDisabled
       }}
     >
       {hasSelectableInput && (
@@ -146,7 +170,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
           {...ariaProps}
           type="checkbox"
           checked={isSelected}
-          onChange={event => onSelectableInputChange(event, id)}
+          onChange={(event) => onSelectableInputChange(event, id)}
           disabled={isDisabledRaised}
           tabIndex={-1}
         />
@@ -163,9 +187,10 @@ export const Card: React.FunctionComponent<CardProps> = ({
           isFullHeight && styles.modifiers.fullHeight,
           isPlain && styles.modifiers.plain,
           getSelectableModifiers(),
+          isDisabled && styles.modifiers.disabled,
           className
         )}
-        tabIndex={isSelectable || isSelectableRaised ? '0' : undefined}
+        tabIndex={isSelectableRaised ? '0' : undefined}
         {...props}
         {...ouiaProps}
       >

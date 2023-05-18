@@ -3,7 +3,16 @@ id: Card
 section: components
 cssPrefix: pf-c-card
 propComponents:
-  ['Card', 'CardHeader', 'CardHeaderActionsObject', 'CardTitle', 'CardBody', 'CardFooter', 'CardExpandableContent']
+  [
+    'Card',
+    'CardHeader',
+    'CardHeaderActionsObject',
+    'CardHeaderSelectableActionsObject',
+    'CardTitle',
+    'CardBody',
+    'CardFooter',
+    'CardExpandableContent'
+  ]
 ouia: true
 ---
 
@@ -31,14 +40,14 @@ Most modifiers can be used in combination with each other, except for `isCompact
 
 ```
 
-| Modifier | Description |
-| --- | --- |
-| isCompact | Modifies the card to include compact styling. Should not be used with isLarge. |
-| isFlat | Modifies the card to include flat styling. |
-| isRounded | Modifies the card to include rounded border styling. |
-| isLarge | Modifies the card to be large. Should not be used with isCompact. |
-| isFullHeight | Modifies the card so that it fills the total available height of its container. |
-| isPlain | Modifies the card to include plain styling, which removes the border and background. |
+| Modifier     | Description                                                                          |
+| ------------ | ------------------------------------------------------------------------------------ |
+| isCompact    | Modifies the card to include compact styling. Should not be used with isLarge.       |
+| isFlat       | Modifies the card to include flat styling.                                           |
+| isRounded    | Modifies the card to include rounded border styling.                                 |
+| isLarge      | Modifies the card to be large. Should not be used with isCompact.                    |
+| isFullHeight | Modifies the card so that it fills the total available height of its container.      |
+| isPlain      | Modifies the card to include plain styling, which removes the border and background. |
 
 ### Header images and actions
 
@@ -98,23 +107,57 @@ A common use case of this is to set all but one body section to `isFilled={false
 
 ```
 
-### Selectable cards
+### Selectable
 
-Selectable cards can only be selected one at a time, and are intended for use with [primary-detail layout](/demos/primary-detail).
+A card can be selected by clicking anywhere within the card.
+
+You must avoid rendering any other interactive content within the `<Card>` when it is meant to be selectable only. Refer to our [clickable and selectable example](#clickable-and-selectable-cards) if you need a card that is both selectable and has other interactive content.
 
 ```ts file='./CardSelectable.tsx'
 
 ```
 
-### Legacy selectable cards
+### Single selectable
 
-The following example shows a legacy implementation of selectable cards. This example uses the `isSelectable` property instead of `isSelectableRaised`, which is the current recommendation for implementation. `isSelectable` applies selectable styling, but does not apply raised styling on hover and selection as `isSelectableRaised` does.
+When a group of single selectable cards are related, you should pass the same `name` property to each card's `selectableActions` property.
 
-```ts file='./CardLegacySelectable.tsx'
+```ts file='./CardSingleSelectable.tsx'
 
 ```
 
-### Selectable card accessibility features
+### Clickable
+
+A card can perform an action or navigate to a link by clicking anywhere within the card. You can also pass in the `isExternalLink` property to `selectableActions` if you want a clickable card's link to open in a new tab or window.
+
+When a card is meant to be clickable only, you must avoid rendering any other interactive content within the `<Card>`, similar to selectable cards.
+
+```ts file='./CardClickable.tsx'
+
+```
+
+### Clickable and selectable
+
+A card can be selectable and have additional interactive content by passing both the `isClickable` and `isSelectable` properties to `<Card>`. The following example shows how the "clickable" functionality can be rendered anywhere within a selectable card.
+
+When passing interactive content to a clickable and selectable card that is disabled, you should also ensure the interactive content is disabled as well, if applicable.
+
+```ts file='./CardClickableSelectable.tsx'
+
+```
+
+### Selectable cards (deprecated)
+
+The following example shows a deprecated implementation of selectable cards. This example uses the `isSelectable` property instead of `isSelectableRaised`, which is the current recommendation for implementation. `isSelectable` applies selectable styling, but does not apply raised styling on hover and selection as `isSelectableRaised` does.
+
+A `tabIndex={0}` is also manually passed to allow the card to be focused and clicked via keyboard.
+
+```ts file='./CardDeprecatedSelectable.tsx'
+
+```
+
+### Selectable card accessibility features (deprecated)
+
+Note: the following example uses deprecated properties. We recommend using the new `selectableActions` property for the `CardHeader` instead.
 
 The following cards demonstrate how the `hasSelectableInput` and `onSelectableInputChange` properties improve accessibility for selectable cards.
 
@@ -128,7 +171,7 @@ The second card does not set `hasSelectableInput` to true, so neither the input 
 
 We recommend navigating this example using a screen reader to best understand both cards.
 
-```ts file='./CardSelectableA11yHighlight.tsx'
+```ts file='./CardDeprecatedSelectableA11yHighlight.tsx'
 
 ```
 

@@ -33,7 +33,7 @@ describe('Card', () => {
   test('allows passing in a React Component as the component', () => {
     const Component = () => <div>im a div</div>;
 
-    render(<Card component={(Component as unknown) as keyof JSX.IntrinsicElements} />);
+    render(<Card component={Component as unknown as keyof JSX.IntrinsicElements} />);
     expect(screen.getByText('im a div')).toBeInTheDocument();
   });
 
@@ -47,16 +47,18 @@ describe('Card', () => {
 
     const card = screen.getByText('selectable card');
     expect(card).toHaveClass('pf-m-selectable');
-    expect(card).toHaveAttribute('tabindex', '0');
   });
 
   test('card with isSelectable and isSelected applied ', () => {
-    render(<Card isSelectable isSelected>selected and selectable card</Card>);
+    render(
+      <Card isSelectable isSelected>
+        selected and selectable card
+      </Card>
+    );
 
     const card = screen.getByText('selected and selectable card');
     expect(card).toHaveClass('pf-m-selectable');
     expect(card).toHaveClass('pf-m-selected');
-    expect(card).toHaveAttribute('tabindex', '0');
   });
 
   test('card with only isSelected applied - not change', () => {
@@ -81,7 +83,11 @@ describe('Card', () => {
   });
 
   test('card with isSelectableRaised and isSelected applied ', () => {
-    render(<Card isSelected isSelectableRaised>raised selected card</Card>);
+    render(
+      <Card isSelected isSelectableRaised>
+        raised selected card
+      </Card>
+    );
 
     const card = screen.getByText('raised selected card');
     expect(card).toHaveClass('pf-m-selectable-raised');
@@ -154,7 +160,6 @@ describe('Card', () => {
   });
 
   test('card applies the supplied card title as the aria label of the hidden input', () => {
-
     // this component is used to mock the CardTitle's title registry behavior to keep this a pure unit test
     const MockCardTitle = ({ children }) => {
       const { registerTitleId } = React.useContext(CardContext);
@@ -179,7 +184,6 @@ describe('Card', () => {
   });
 
   test('card prioritizes selectableInputAriaLabel over card title labelling via card title', () => {
-
     // this component is used to mock the CardTitle's title registry behavior to keep this a pure unit test
     const MockCardTitle = ({ children }) => {
       const { registerTitleId } = React.useContext(CardContext);

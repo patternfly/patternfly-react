@@ -7,9 +7,7 @@ exports[`CardHeader actions are rendered 1`] = `
   >
     <div
       class="pf-v5-c-card__actions"
-    >
-        
-    </div>
+    />
   </div>
 </DocumentFragment>
 `;

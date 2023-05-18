@@ -1,129 +1,74 @@
 import React from 'react';
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardBody,
-  Dropdown,
-  DropdownList,
-  DropdownItem,
-  MenuToggle,
-  MenuToggleElement,
-  Divider
-} from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import { Card, CardHeader, CardTitle, CardBody } from '@patternfly/react-core';
 
-export const CardSelectable: React.FunctionComponent = () => {
-  const [selected, setSelected] = React.useState<string>('');
-  const [isKebabOpen, setIsKebabOpen] = React.useState<boolean>(false);
+export const SelectableCard: React.FunctionComponent = () => {
+  const [isChecked1, setIsChecked1] = React.useState(false);
+  const [isChecked2, setIsChecked2] = React.useState(false);
+  const [isChecked3, setIsChecked3] = React.useState(false);
 
-  const onKeyDown = (event: React.KeyboardEvent) => {
-    if (event.target !== event.currentTarget) {
-      return;
-    }
-    if ([' ', 'Enter'].includes(event.key)) {
-      event.preventDefault();
-      const newSelected = event.currentTarget.id === selected ? '' : event.currentTarget.id;
-      setSelected(newSelected);
+  const id1 = 'selectable-card-input-1';
+  const id2 = 'selectable-card-input-2';
+  const id3 = 'selectable-card-input-3';
+
+  const onChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
+    const name = event.currentTarget.name;
+
+    switch (name) {
+      case id1:
+        setIsChecked1(checked);
+        break;
+      case id2:
+        setIsChecked2(checked);
+        break;
+      case id3:
+        setIsChecked3(checked);
+        break;
     }
   };
-
-  const onClick = (event: React.MouseEvent) => {
-    const newSelected = event.currentTarget.id === selected ? '' : event.currentTarget.id;
-    setSelected(newSelected);
-  };
-
-  const onChange = (_event: React.FormEvent<HTMLInputElement>, labelledById: string) => {
-    const newSelected = labelledById === selected ? '' : labelledById;
-    setSelected(newSelected);
-  };
-
-  const onToggle = (event: React.MouseEvent | undefined) => {
-    event?.stopPropagation();
-    setIsKebabOpen(!isKebabOpen);
-  };
-
-  const onSelect = (event: React.MouseEvent | undefined) => {
-    event?.stopPropagation();
-    setIsKebabOpen(false);
-  };
-
-  const dropdownItems = (
-    <>
-      <DropdownItem key="action">Action</DropdownItem>
-      {/* Prevent default onClick functionality for example purposes */}
-      <DropdownItem key="link" to="#" onClick={(event: any) => event.preventDefault()}>
-        Link
-      </DropdownItem>
-      <DropdownItem key="disabled action" isDisabled>
-        Disabled Action
-      </DropdownItem>
-      <DropdownItem key="disabled link" isDisabled to="#" onClick={(event: any) => event.preventDefault()}>
-        Disabled Link
-      </DropdownItem>
-      <Divider component="li" key="separator" />
-      <DropdownItem key="separated action">Separated Action</DropdownItem>
-      <DropdownItem key="separated link" to="#" onClick={(event: any) => event.preventDefault()}>
-        Separated Link
-      </DropdownItem>
-    </>
-  );
-
-  const headerActions = (
-    <>
-      <Dropdown
-        onSelect={onSelect}
-        toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-          <MenuToggle
-            ref={toggleRef}
-            isExpanded={isKebabOpen}
-            onClick={onToggle}
-            variant="plain"
-            aria-label="Card selectable example kebab toggle"
-          >
-            <EllipsisVIcon aria-hidden="true" />
-          </MenuToggle>
-        )}
-        isOpen={isKebabOpen}
-        onOpenChange={(isOpen: boolean) => setIsKebabOpen(isOpen)}
-      >
-        <DropdownList>{dropdownItems}</DropdownList>
-      </Dropdown>
-    </>
-  );
 
   return (
     <React.Fragment>
-      <Card
-        id="selectable-first-card"
-        onKeyDown={onKeyDown}
-        onClick={onClick}
-        hasSelectableInput
-        onSelectableInputChange={onChange}
-        isSelectableRaised
-        isSelected={selected === 'selectable-first-card'}
-      >
-        <CardHeader actions={{ actions: headerActions }} />
-        <CardTitle>First card</CardTitle>
-        <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
+      <Card id="selectable-card-example-1" isSelectable>
+        <CardHeader
+          selectableActions={{
+            selectableActionId: id1,
+            selectableActionAriaLabelledby: 'selectable-card-example-1',
+            name: id1,
+            isChecked: isChecked1,
+            onChange
+          }}
+        >
+          <CardTitle>First card</CardTitle>
+        </CardHeader>
+        <CardBody>This card is selectable.</CardBody>
       </Card>
-      <br />
-      <Card
-        id="selectable-second-card"
-        onKeyDown={onKeyDown}
-        onClick={onClick}
-        hasSelectableInput
-        onSelectableInputChange={onChange}
-        isSelectableRaised
-        isSelected={selected === 'selectable-second-card'}
-      >
-        <CardTitle>Second card</CardTitle>
-        <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
+      <Card id="selectable-card-example-2" isSelectable>
+        <CardHeader
+          selectableActions={{
+            selectableActionId: id2,
+            selectableActionAriaLabelledby: 'selectable-card-example-2',
+            name: id2,
+            isChecked: isChecked2,
+            onChange
+          }}
+        >
+          <CardTitle>Second card</CardTitle>
+        </CardHeader>
+        <CardBody>This card is selectable.</CardBody>
       </Card>
-      <br />
-      <Card id="selectable-third-card" isSelectableRaised isDisabledRaised hasSelectableInput>
-        <CardTitle>Third card</CardTitle>
-        <CardBody>This is a raised but disabled card.</CardBody>
+      <Card id="selectable-card-example-3" isSelectable isDisabled>
+        <CardHeader
+          selectableActions={{
+            selectableActionId: id3,
+            selectableActionAriaLabelledby: 'selectable-card-example-3',
+            name: id3,
+            isChecked: isChecked3,
+            onChange
+          }}
+        >
+          <CardTitle>Third card</CardTitle>
+        </CardHeader>
+        <CardBody>This card is selectable but disabled.</CardBody>
       </Card>
     </React.Fragment>
   );

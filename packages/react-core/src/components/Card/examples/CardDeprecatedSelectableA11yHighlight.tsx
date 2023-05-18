@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardTitle, CardBody } from '@patternfly/react-core';
 
-export const CardSelectableA11yHighlight: React.FunctionComponent = () => {
+export const CardLegacySelectableA11yHighlight: React.FunctionComponent = () => {
   const [selected, setSelected] = React.useState<string>('');
 
   const onKeyDown = (event: React.KeyboardEvent) => {
