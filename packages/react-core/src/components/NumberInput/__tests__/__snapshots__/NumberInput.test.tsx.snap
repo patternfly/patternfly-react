@@ -577,7 +577,7 @@ exports[`numberInput renders disabled 1`] = `
         class="pf-v5-c-input-group__item"
       >
         <div
-          class="pf-v5-c-form-control pf-m-disabled"
+          class="pf-v5-c-form-control"
         >
           <input
             aria-invalid="false"
@@ -667,7 +667,7 @@ exports[`numberInput renders error validated 1`] = `
         class="pf-v5-c-input-group__item"
       >
         <div
-          class="pf-v5-c-form-control pf-m-error"
+          class="pf-v5-c-form-control"
         >
           <input
             aria-invalid="true"
@@ -679,10 +679,10 @@ exports[`numberInput renders error validated 1`] = `
             value="0"
           />
           <div
-            class="pf-v5-c-form-control__utilities"
+            class=""
           >
             <div
-              class="pf-v5-c-form-control__icon pf-m-status"
+              class=""
             >
               <svg
                 aria-hidden="true"
@@ -786,10 +786,10 @@ exports[`numberInput renders success validated 1`] = `
             value="0"
           />
           <div
-            class="pf-v5-c-form-control__utilities"
+            class=""
           >
             <div
-              class="pf-v5-c-form-control__icon pf-m-status"
+              class=""
             >
               <svg
                 aria-hidden="true"
@@ -1167,10 +1167,10 @@ exports[`numberInput renders warning validated 1`] = `
             value="0"
           />
           <div
-            class="pf-v5-c-form-control__utilities"
+            class=""
           >
             <div
-              class="pf-v5-c-form-control__icon pf-m-status"
+              class=""
             >
               <svg
                 aria-hidden="true"

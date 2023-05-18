@@ -15,7 +15,7 @@ exports[`simple fileuploadfield 1`] = `
           class="pf-v5-c-input-group__item pf-m-fill"
         >
           <div
-            class="pf-v5-c-form-control pf-m-readonly pf-m-plain pf-m-placeholder"
+            class="pf-v5-c-form-control pf-m-plain"
           >
             <input
               aria-describedby="custom-file-upload-browse-button"

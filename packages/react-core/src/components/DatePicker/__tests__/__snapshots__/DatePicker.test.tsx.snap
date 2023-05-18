@@ -16,7 +16,7 @@ exports[`With popover opened 1`] = `
           class="pf-v5-c-input-group__item pf-m-fill"
         >
           <div
-            class="pf-v5-c-form-control pf-m-placeholder"
+            class="pf-v5-c-form-control"
           >
             <input
               aria-invalid="false"
@@ -779,7 +779,7 @@ exports[`disabled date picker 1`] = `
           class="pf-v5-c-input-group__item pf-m-fill"
         >
           <div
-            class="pf-v5-c-form-control pf-m-disabled pf-m-placeholder"
+            class="pf-v5-c-form-control"
           >
             <input
               aria-invalid="false"

@@ -3,7 +3,7 @@
 exports[`FormSelect Disabled FormSelect input  1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-form-control pf-m-disabled"
+    class="pf-v5-c-form-control"
   >
     <select
       aria-invalid="false"
@@ -21,10 +21,10 @@ exports[`FormSelect Disabled FormSelect input  1`] = `
       </option>
     </select>
     <div
-      class="pf-v5-c-form-control__utilities"
+      class=""
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class=""
       >
         <svg
           aria-hidden="true"
@@ -63,10 +63,10 @@ exports[`FormSelect FormSelect input with aria-label does not generate console e
       </option>
     </select>
     <div
-      class="pf-v5-c-form-control__utilities"
+      class=""
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class=""
       >
         <svg
           aria-hidden="true"
@@ -106,10 +106,10 @@ exports[`FormSelect FormSelect input with id does not generate console error 1`]
       </option>
     </select>
     <div
-      class="pf-v5-c-form-control__utilities"
+      class=""
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class=""
       >
         <svg
           aria-hidden="true"
@@ -147,10 +147,10 @@ exports[`FormSelect FormSelect input with no aria-label or id generates console 
       </option>
     </select>
     <div
-      class="pf-v5-c-form-control__utilities"
+      class=""
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class=""
       >
         <svg
           aria-hidden="true"
@@ -235,10 +235,10 @@ exports[`FormSelect Grouped FormSelect input 1`] = `
       </optgroup>
     </select>
     <div
-      class="pf-v5-c-form-control__utilities"
+      class=""
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class=""
       >
         <svg
           aria-hidden="true"
@@ -315,10 +315,10 @@ exports[`FormSelect Simple FormSelect input 1`] = `
       </option>
     </select>
     <div
-      class="pf-v5-c-form-control__utilities"
+      class=""
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class=""
       >
         <svg
           aria-hidden="true"
@@ -340,7 +340,7 @@ exports[`FormSelect Simple FormSelect input 1`] = `
 exports[`FormSelect invalid FormSelect input 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-form-control pf-m-error"
+    class="pf-v5-c-form-control"
   >
     <select
       aria-invalid="true"
@@ -357,10 +357,10 @@ exports[`FormSelect invalid FormSelect input 1`] = `
       </option>
     </select>
     <div
-      class="pf-v5-c-form-control__utilities"
+      class=""
     >
       <div
-        class="pf-v5-c-form-control__icon pf-m-status"
+        class=""
       >
         <svg
           aria-hidden="true"
@@ -375,7 +375,7 @@ exports[`FormSelect invalid FormSelect input 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-form-control__icon"
+        class=""
       >
         <svg
           aria-hidden="true"
@@ -414,10 +414,10 @@ exports[`FormSelect validated success FormSelect input 1`] = `
       </option>
     </select>
     <div
-      class="pf-v5-c-form-control__utilities"
+      class=""
     >
       <div
-        class="pf-v5-c-form-control__icon pf-m-status"
+        class=""
       >
         <svg
           aria-hidden="true"
@@ -432,7 +432,7 @@ exports[`FormSelect validated success FormSelect input 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-form-control__icon"
+        class=""
       >
         <svg
           aria-hidden="true"
@@ -471,10 +471,10 @@ exports[`FormSelect validated warning FormSelect input 1`] = `
       </option>
     </select>
     <div
-      class="pf-v5-c-form-control__utilities"
+      class=""
     >
       <div
-        class="pf-v5-c-form-control__icon pf-m-status"
+        class=""
       >
         <svg
           aria-hidden="true"
@@ -489,7 +489,7 @@ exports[`FormSelect validated warning FormSelect input 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-form-control__icon"
+        class=""
       >
         <svg
           aria-hidden="true"

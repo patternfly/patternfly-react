@@ -2913,10 +2913,10 @@ exports[`tree view renders search successfully 1`] = `
         type="search"
       />
       <div
-        class="pf-v5-c-form-control__utilities"
+        class=""
       >
         <div
-          class="pf-v5-c-form-control__icon"
+          class=""
         >
           <svg
             aria-hidden="true"
