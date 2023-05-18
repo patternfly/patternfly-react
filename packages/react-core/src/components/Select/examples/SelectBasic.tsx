@@ -1,10 +1,10 @@
 import React from 'react';
-import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
+import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement, Checkbox } from '@patternfly/react-core';
 
 export const SelectBasic: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('Select a value');
-  const menuRef = React.useRef<HTMLDivElement>(null);
+  const [isDisabled, setIsDisabled] = React.useState<boolean>(false);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -23,6 +23,7 @@ export const SelectBasic: React.FunctionComponent = () => {
       ref={toggleRef}
       onClick={onToggleClick}
       isExpanded={isOpen}
+      isDisabled={isDisabled}
       style={
         {
           width: '200px'
@@ -34,20 +35,29 @@ export const SelectBasic: React.FunctionComponent = () => {
   );
 
   return (
-    <Select
-      id="single-select"
-      ref={menuRef}
-      isOpen={isOpen}
-      selected={selected}
-      onSelect={onSelect}
-      onOpenChange={isOpen => setIsOpen(isOpen)}
-      toggle={toggle}
-    >
-      <SelectList>
-        <SelectOption itemId="Option 1">Option 1</SelectOption>
-        <SelectOption itemId="Option 2">Option 2</SelectOption>
-        <SelectOption itemId="Option 3">Option 3</SelectOption>
-      </SelectList>
-    </Select>
+    <React.Fragment>
+      <Checkbox
+        id="toggle-disabled"
+        label="isDisabled"
+        isChecked={isDisabled}
+        onChange={(_event, checked) => setIsDisabled(checked)}
+        style={{ marginBottom: 20 }}
+      />
+      <Select
+        id="single-select"
+        isOpen={isOpen}
+        selected={selected}
+        onSelect={onSelect}
+        onOpenChange={(isOpen) => setIsOpen(isOpen)}
+        toggle={toggle}
+        shouldFocusToggleOnSelect
+      >
+        <SelectList>
+          <SelectOption itemId="Option 1">Option 1</SelectOption>
+          <SelectOption itemId="Option 2">Option 2</SelectOption>
+          <SelectOption itemId="Option 3">Option 3</SelectOption>
+        </SelectList>
+      </Select>
+    </React.Fragment>
   );
 };

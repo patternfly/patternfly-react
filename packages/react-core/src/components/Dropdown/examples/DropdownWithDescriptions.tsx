@@ -8,15 +8,10 @@ export const DropdownWithDescriptions: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (
-    _event: React.MouseEvent<Element, MouseEvent> | undefined,
-    itemId: string | number | undefined,
-    toggleRef: React.RefObject<any>
-  ) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
     // eslint-disable-next-line no-console
     console.log('selected', itemId);
     setIsOpen(false);
-    toggleRef?.current.focus();
   };
 
   return (
@@ -29,6 +24,7 @@ export const DropdownWithDescriptions: React.FunctionComponent = () => {
           Dropdown
         </MenuToggle>
       )}
+      shouldFocusToggleOnSelect
     >
       <DropdownList>
         <DropdownItem itemId={0} key="action" description="This is a description">

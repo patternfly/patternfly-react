@@ -68,7 +68,7 @@ export interface PopperProps {
   position?: 'right' | 'left' | 'center';
   /** Instead of direction and position can set the placement of the popper */
   placement?: Placement;
-  /** Custsom width of the popper. If the value is "trigger", it will set the width to the trigger element's width */
+  /** Custom width of the popper. If the value is "trigger", it will set the width to the trigger element's width */
   width?: string | 'trigger';
   /** Minimum width of the popper. If the value is "trigger", it will set the min width to the trigger element's width */
   minWidth?: string | 'trigger';

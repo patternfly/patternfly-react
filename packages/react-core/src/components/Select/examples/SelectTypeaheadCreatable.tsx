@@ -13,7 +13,7 @@ import {
 } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-const initialSelectOptions: SelectOptionProps[] = [
+let initialSelectOptions: SelectOptionProps[] = [
   { itemId: 'Alabama', children: 'Alabama' },
   { itemId: 'Florida', children: 'Florida' },
   { itemId: 'New Jersey', children: 'New Jersey' },
@@ -22,7 +22,7 @@ const initialSelectOptions: SelectOptionProps[] = [
   { itemId: 'North Carolina', children: 'North Carolina' }
 ];
 
-export const SelectBasic: React.FunctionComponent = () => {
+export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('');
   const [inputValue, setInputValue] = React.useState<string>('');
@@ -30,6 +30,7 @@ export const SelectBasic: React.FunctionComponent = () => {
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
+  const [onCreation, setOnCreation] = React.useState<boolean>(false); // Boolean to refresh filter state after new option is created
   const textInputRef = React.useRef<HTMLInputElement>();
 
   React.useEffect(() => {
@@ -41,11 +42,9 @@ export const SelectBasic: React.FunctionComponent = () => {
         String(menuItem.children).toLowerCase().includes(filterValue.toLowerCase())
       );
 
-      // When no options are found after filtering, display 'No results found'
+      // When no options are found after filtering, display creation option
       if (!newSelectOptions.length) {
-        newSelectOptions = [
-          { isDisabled: false, children: `No results found for "${filterValue}"`, itemId: 'no results' }
-        ];
+        newSelectOptions = [{ isDisabled: false, children: `Create new option "${filterValue}"`, itemId: 'create' }];
       }
 
       // Open the menu when the input value changes and the new value is not empty
@@ -57,7 +56,7 @@ export const SelectBasic: React.FunctionComponent = () => {
     setSelectOptions(newSelectOptions);
     setActiveItem(null);
     setFocusedItemIndex(null);
-  }, [filterValue]);
+  }, [filterValue, onCreation]);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -65,13 +64,24 @@ export const SelectBasic: React.FunctionComponent = () => {
 
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
     // eslint-disable-next-line no-console
-    console.log('selected', itemId);
 
-    if (itemId && itemId !== 'no results') {
-      setInputValue(itemId as string);
-      setFilterValue('');
-      setSelected(itemId as string);
+    if (itemId) {
+      if (itemId === 'create') {
+        if (!initialSelectOptions.some((item) => item.itemId === filterValue)) {
+          initialSelectOptions = [...initialSelectOptions, { itemId: filterValue, children: filterValue }];
+        }
+        setSelected(filterValue);
+        setOnCreation(!onCreation);
+        setFilterValue('');
+      } else {
+        // eslint-disable-next-line no-console
+        console.log('selected', itemId);
+        setInputValue(itemId as string);
+        setFilterValue('');
+        setSelected(itemId as string);
+      }
     }
+
     setIsOpen(false);
     setFocusedItemIndex(null);
     setActiveItem(null);
@@ -106,7 +116,7 @@ export const SelectBasic: React.FunctionComponent = () => {
 
       setFocusedItemIndex(indexToFocus);
       const focusedItem = selectOptions.filter((option) => !option.isDisabled)[indexToFocus];
-      setActiveItem(`select-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
+      setActiveItem(`select-create-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
     }
   };
 
@@ -118,10 +128,11 @@ export const SelectBasic: React.FunctionComponent = () => {
     switch (event.key) {
       // Select the first available option
       case 'Enter':
-        if (isOpen && focusedItem.itemId !== 'no results') {
-          setInputValue(String(focusedItem.children));
-          setFilterValue('');
-          setSelected(String(focusedItem.children));
+        if (isOpen) {
+          onSelect(undefined, focusedItem.itemId as string);
+          setIsOpen((prevIsOpen) => !prevIsOpen);
+          setFocusedItemIndex(null);
+          setActiveItem(null);
         }
 
         setIsOpen((prevIsOpen) => !prevIsOpen);
@@ -150,14 +161,14 @@ export const SelectBasic: React.FunctionComponent = () => {
           onClick={onToggleClick}
           onChange={onTextInputChange}
           onKeyDown={onInputKeyDown}
-          id="typeahead-select-input"
+          id="create-typeahead-select-input"
           autoComplete="off"
           innerRef={textInputRef}
           placeholder="Select a state"
           {...(activeItem && { 'aria-activedescendant': activeItem })}
           role="combobox"
           isExpanded={isOpen}
-          aria-controls="select-typeahead-listbox"
+          aria-controls="select-create-typeahead-listbox"
         />
 
         <TextInputGroupUtilities>
@@ -182,7 +193,7 @@ export const SelectBasic: React.FunctionComponent = () => {
 
   return (
     <Select
-      id="typeahead-select"
+      id="create-typeahead-select"
       isOpen={isOpen}
       selected={selected}
       onSelect={onSelect}
@@ -191,7 +202,7 @@ export const SelectBasic: React.FunctionComponent = () => {
       }}
       toggle={toggle}
     >
-      <SelectList id="select-typeahead-listbox">
+      <SelectList id="select-create-typeahead-listbox">
         {selectOptions.map((option, index) => (
           <SelectOption
             key={option.itemId || option.children}

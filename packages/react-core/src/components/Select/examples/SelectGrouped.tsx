@@ -1,10 +1,17 @@
 import React from 'react';
-import { Select, SelectOption, SelectList, SelectGroup, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
+import {
+  Select,
+  SelectOption,
+  SelectList,
+  SelectGroup,
+  MenuToggle,
+  MenuToggleElement,
+  Divider
+} from '@patternfly/react-core';
 
-export const SelectBasic: React.FunctionComponent = () => {
+export const SelectGrouped: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('Select a value');
-  const menuRef = React.useRef<HTMLDivElement>(null);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -35,13 +42,13 @@ export const SelectBasic: React.FunctionComponent = () => {
 
   return (
     <Select
-      id="single-select"
-      ref={menuRef}
+      id="single-grouped-select"
       isOpen={isOpen}
       selected={selected}
       onSelect={onSelect}
-      onOpenChange={isOpen => setIsOpen(isOpen)}
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
       toggle={toggle}
+      shouldFocusToggleOnSelect
     >
       <SelectGroup label="Group 1">
         <SelectList>
@@ -50,6 +57,7 @@ export const SelectBasic: React.FunctionComponent = () => {
           <SelectOption itemId="Option 3">Option 3</SelectOption>
         </SelectList>
       </SelectGroup>
+      <Divider />
       <SelectGroup label="Group 2">
         <SelectList>
           <SelectOption itemId="Option 4">Option 4</SelectOption>
