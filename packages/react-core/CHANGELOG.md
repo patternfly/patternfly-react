@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.113](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.112...@patternfly/react-core@5.0.0-alpha.113) (2023-05-18)
+
+### Features
+
+- **Flex:** add plain gap spacing ([#9143](https://github.com/patternfly/patternfly-react/issues/9143)) ([eceb265](https://github.com/patternfly/patternfly-react/commit/eceb265a5318d4c533a4c54484311bbd9810aa7d))
+
 # [5.0.0-alpha.112](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.111...@patternfly/react-core@5.0.0-alpha.112) (2023-05-18)
 
 ### Bug Fixes
