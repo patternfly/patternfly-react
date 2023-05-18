@@ -5,6 +5,7 @@ import { ValidatedOptions } from '../../helpers/constants';
 import { trimLeft } from '../../helpers/util';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
 import { getResizeObserver } from '../../helpers/resizeObserver';
+import { FormControlIcon } from '../FormControl/FormControlIcon';
 
 export enum TextInputTypes {
   text = 'text',
@@ -25,7 +26,6 @@ export enum TextInputReadOnlyVariant {
   plain = 'plain'
 }
 
-
 export interface TextInputProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>,
     OUIAProps {
@@ -33,10 +33,11 @@ export interface TextInputProps
   className?: string;
   /** Flag to show if the text input is disabled. */
   isDisabled?: boolean;
-  /** @deprecated Use readOnlyVariant instead. Flag to show if the text input is read only. */
-  isReadOnly?: boolean;
-  /** Read only variant. */
+  /** Flag to apply expanded styling */
+  isExpanded?: boolean;
+  /** Sets the input as readonly and determines the readonly styling. */
   readOnlyVariant?: 'plain' | 'default';
+  /** Flag indicating whether the input is required */
   isRequired?: boolean;
   /** Value to indicate if the text input is modified to show that validation state.
    * If set to success, text input will be modified to indicate valid state.
@@ -60,6 +61,8 @@ export interface TextInputProps
     | 'url';
   /** Value of the text input. */
   value?: string | number;
+  /** Placeholder of the text input when there is no value */
+  placeholder?: string;
   /** Aria-label. The text input requires an associated id or aria-label. */
   'aria-label'?: string;
   /** @hide A reference object to attach to the text input box. */
@@ -70,14 +73,8 @@ export interface TextInputProps
   onFocus?: (event?: any) => void;
   /** Callback function when text input is blurred (focus leaves) */
   onBlur?: (event?: any) => void;
-  /** icon variant */
-  iconVariant?: 'calendar' | 'clock' | 'search';
-  /** Use the external file instead of a data URI */
-  isIconSprite?: boolean;
-  /** Custom icon url to set as the text input's background-image */
-  customIconUrl?: string;
-  /** Dimensions for the custom icon set as the text input's background-size */
-  customIconDimensions?: string;
+  /** Custom icon to render. If the validated prop is also passed, this will render an icon in addition to a validated icon. */
+  customIcon?: React.ReactNode;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -92,12 +89,10 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
   static displayName = 'TextInputBase';
   static defaultProps: TextInputProps = {
     'aria-label': null,
-    className: '',
     isRequired: false,
     validated: 'default' as 'success' | 'warning' | 'error' | 'default',
     isDisabled: false,
-    isReadOnly: false,
-    isIconSprite: false,
+    isExpanded: false,
     type: TextInputTypes.text,
     isLeftTruncated: false,
     onChange: (): any => undefined,
@@ -174,60 +169,61 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
       className,
       type,
       value,
+      placeholder,
       validated,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onChange,
       onFocus,
       onBlur,
       isLeftTruncated,
-      isReadOnly,
+      isExpanded,
       readOnly,
       readOnlyVariant,
       isRequired,
       isDisabled,
-      isIconSprite,
-      iconVariant,
-      customIconUrl,
-      customIconDimensions,
+      customIcon,
       ouiaId,
       ouiaSafe,
       ...props
     } = this.props;
 
-    const customIconStyle = {} as any;
-    if (customIconUrl) {
-      customIconStyle.backgroundImage = `url('${customIconUrl}')`;
-    }
-    if (customIconDimensions) {
-      customIconStyle.backgroundSize = customIconDimensions;
-    }
+    const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
 
     return (
-      <input
-        {...props}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
+      <div
         className={css(
           styles.formControl,
-          isIconSprite && styles.modifiers.iconSprite,
+          readOnlyVariant && styles.modifiers.readonly,
           readOnlyVariant === 'plain' && styles.modifiers.plain,
-          validated === ValidatedOptions.success && styles.modifiers.success,
-          validated === ValidatedOptions.warning && styles.modifiers.warning,
-          ((iconVariant && iconVariant !== 'search') || customIconUrl) && styles.modifiers.icon,
-          iconVariant && styles.modifiers[iconVariant],
+          isDisabled && styles.modifiers.disabled,
+          isExpanded && styles.modifiers.expanded,
+          customIcon && styles.modifiers.icon,
+          hasStatusIcon && styles.modifiers[validated as 'success' | 'warning' | 'error'],
           className
         )}
-        onChange={this.handleChange}
-        type={type}
-        value={this.sanitizeInputValue(value)}
-        aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
-        required={isRequired}
-        disabled={isDisabled}
-        readOnly={!!readOnlyVariant || isReadOnly || readOnly}
-        ref={innerRef || this.inputRef}
-        {...((customIconUrl || customIconDimensions) && { style: customIconStyle })}
-        {...getOUIAProps(TextInput.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
-      />
+      >
+        <input
+          {...props}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          onChange={this.handleChange}
+          type={type}
+          value={this.sanitizeInputValue(value)}
+          aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
+          required={isRequired}
+          disabled={isDisabled}
+          readOnly={!!readOnlyVariant || readOnly}
+          ref={innerRef || this.inputRef}
+          placeholder={placeholder}
+          {...getOUIAProps(TextInput.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
+        />
+        {(customIcon || hasStatusIcon) && (
+          <div className={css(styles.formControlUtilities)}>
+            {customIcon && <FormControlIcon customIcon={customIcon} />}
+            {hasStatusIcon && <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />}
+          </div>
+        )}
+      </div>
     );
   }
 

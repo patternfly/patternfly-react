@@ -1192,11 +1192,10 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         class="pf-v5-c-form__fieldset"
       >
         <div
-          class="pf-v5-c-select__menu-search"
+          class="pf-v5-c-select__menu-search pf-v5-c-form-control"
         >
           <input
             autocomplete="off"
-            class="pf-v5-c-form-control pf-m-search"
             type="search"
           />
         </div>

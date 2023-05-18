@@ -32,7 +32,7 @@ test('Renders simple text input', () => {
 test('Renders with custom class passed', () => {
   render(<TextArea aria-label="custom class textarea" className="test-class" />);
 
-  expect(screen.getByRole('textbox')).toHaveClass('test-class');
+  expect(screen.getByRole('textbox').parentElement).toHaveClass('test-class');
 });
 
 test('Renders text area with required attribute using isRequired', () => {
@@ -69,17 +69,17 @@ test('Text area is not read only by default', () => {
 
 test('Renders text area with default class name only', () => {
   render(<TextArea aria-label="validated textarea" />);
-  expect(screen.getByRole('textbox')).toHaveClass('pf-v5-c-form-control', { exact: true });
+  expect(screen.getByRole('textbox').parentElement).toHaveClass('pf-v5-c-form-control');
 });
 
 test('Renders validated text area with success className', () => {
   render(<TextArea aria-label="validated textarea" validated={ValidatedOptions.success} />);
-  expect(screen.getByRole('textbox')).toHaveClass('pf-m-success');
+  expect(screen.getByRole('textbox').parentElement).toHaveClass('pf-m-success');
 });
 
 test('Renders validated text area with warning className', () => {
   render(<TextArea aria-label="validated textarea" validated={ValidatedOptions.warning} />);
-  expect(screen.getByRole('textbox')).toHaveClass('pf-m-warning');
+  expect(screen.getByRole('textbox').parentElement).toHaveClass('pf-m-warning');
 });
 
 test('Renders invalid text area', () => {
@@ -94,12 +94,12 @@ test('Text area is not invalid by default', () => {
 
 test('Renders vertically resizable text area', () => {
   render(<TextArea aria-label="vertical resize textarea" resizeOrientation="vertical" />);
-  expect(screen.getByRole('textbox')).toHaveClass('pf-m-resize-vertical');
+  expect(screen.getByRole('textbox').parentElement).toHaveClass('pf-m-resize-vertical');
 });
 
 test('Renders horizontally resizable text area', () => {
   render(<TextArea aria-label="horizontal resize textarea" resizeOrientation="horizontal" />);
-  expect(screen.getByRole('textbox')).toHaveClass('pf-m-resize-horizontal');
+  expect(screen.getByRole('textbox').parentElement).toHaveClass('pf-m-resize-horizontal');
 });
 
 test('Throws console error when no aria-label or id is given', () => {

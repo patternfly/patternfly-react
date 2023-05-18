@@ -33,18 +33,21 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
       <div
         class="pf-v5-c-form__group-control"
       >
-        <input
-          aria-invalid="false"
+        <div
           class="pf-v5-c-form-control"
-          data-ouia-component-id="OUIA-Generated-TextInputBase-9"
-          data-ouia-component-type="PF4/TextInput"
-          data-ouia-safe="true"
-          id="pf-login-username-id"
-          name="pf-login-username-id"
-          required=""
-          type="text"
-          value=""
-        />
+        >
+          <input
+            aria-invalid="false"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-9"
+            data-ouia-component-type="PF4/TextInput"
+            data-ouia-safe="true"
+            id="pf-login-username-id"
+            name="pf-login-username-id"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
     <div
@@ -74,18 +77,21 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
       <div
         class="pf-v5-c-form__group-control"
       >
-        <input
-          aria-invalid="false"
+        <div
           class="pf-v5-c-form-control"
-          data-ouia-component-id="OUIA-Generated-TextInputBase-10"
-          data-ouia-component-type="PF4/TextInput"
-          data-ouia-safe="true"
-          id="pf-login-password-id"
-          name="pf-login-password-id"
-          required=""
-          type="password"
-          value=""
-        />
+        >
+          <input
+            aria-invalid="false"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-10"
+            data-ouia-component-type="PF4/TextInput"
+            data-ouia-safe="true"
+            id="pf-login-password-id"
+            name="pf-login-password-id"
+            required=""
+            type="password"
+            value=""
+          />
+        </div>
       </div>
     </div>
     <div
@@ -174,18 +180,21 @@ exports[`LoginForm LoginForm with show password 1`] = `
       <div
         class="pf-v5-c-form__group-control"
       >
-        <input
-          aria-invalid="false"
+        <div
           class="pf-v5-c-form-control"
-          data-ouia-component-id="OUIA-Generated-TextInputBase-11"
-          data-ouia-component-type="PF4/TextInput"
-          data-ouia-safe="true"
-          id="pf-login-username-id"
-          name="pf-login-username-id"
-          required=""
-          type="text"
-          value=""
-        />
+        >
+          <input
+            aria-invalid="false"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-11"
+            data-ouia-component-type="PF4/TextInput"
+            data-ouia-safe="true"
+            id="pf-login-username-id"
+            name="pf-login-username-id"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
     <div
@@ -221,18 +230,21 @@ exports[`LoginForm LoginForm with show password 1`] = `
           <div
             class="pf-v5-c-input-group__item pf-m-fill"
           >
-            <input
-              aria-invalid="false"
+            <div
               class="pf-v5-c-form-control"
-              data-ouia-component-id="OUIA-Generated-TextInputBase-12"
-              data-ouia-component-type="PF4/TextInput"
-              data-ouia-safe="true"
-              id="pf-login-password-id"
-              name="pf-login-password-id"
-              required=""
-              type="password"
-              value=""
-            />
+            >
+              <input
+                aria-invalid="false"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-12"
+                data-ouia-component-type="PF4/TextInput"
+                data-ouia-safe="true"
+                id="pf-login-password-id"
+                name="pf-login-password-id"
+                required=""
+                type="password"
+                value=""
+              />
+            </div>
           </div>
           <div
             class="pf-v5-c-input-group__item"
@@ -321,18 +333,21 @@ exports[`LoginForm should render Login form 1`] = `
       <div
         class="pf-v5-c-form__group-control"
       >
-        <input
-          aria-invalid="false"
+        <div
           class="pf-v5-c-form-control"
-          data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-          data-ouia-component-type="PF4/TextInput"
-          data-ouia-safe="true"
-          id="pf-login-username-id"
-          name="pf-login-username-id"
-          required=""
-          type="text"
-          value=""
-        />
+        >
+          <input
+            aria-invalid="false"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-1"
+            data-ouia-component-type="PF4/TextInput"
+            data-ouia-safe="true"
+            id="pf-login-username-id"
+            name="pf-login-username-id"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
     <div
@@ -362,18 +377,21 @@ exports[`LoginForm should render Login form 1`] = `
       <div
         class="pf-v5-c-form__group-control"
       >
-        <input
-          aria-invalid="false"
+        <div
           class="pf-v5-c-form-control"
-          data-ouia-component-id="OUIA-Generated-TextInputBase-2"
-          data-ouia-component-type="PF4/TextInput"
-          data-ouia-safe="true"
-          id="pf-login-password-id"
-          name="pf-login-password-id"
-          required=""
-          type="password"
-          value=""
-        />
+        >
+          <input
+            aria-invalid="false"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-2"
+            data-ouia-component-type="PF4/TextInput"
+            data-ouia-safe="true"
+            id="pf-login-password-id"
+            name="pf-login-password-id"
+            required=""
+            type="password"
+            value=""
+          />
+        </div>
       </div>
     </div>
     <div

@@ -96,7 +96,7 @@ export const DateTimePicker: React.FunctionComponent = () => {
               id="date-time"
               aria-label="date and time picker demo"
               value={valueDate + ' ' + valueTime}
-              isReadOnly
+              readOnlyVariant="default"
             />
           </InputGroupItem>
           <InputGroupItem>{calendarButton}</InputGroupItem>

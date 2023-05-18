@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import datePickerStyles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
-import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
 import { getUniqueId } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
@@ -21,7 +20,7 @@ import {
   getSeconds
 } from './TimePickerUtils';
 import { HelperText, HelperTextItem } from '../HelperText';
-
+import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 export interface TimePickerProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
   /** Additional classes added to the time picker. */
@@ -502,14 +501,13 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     const textInput = (
       <TextInput
         aria-haspopup="menu"
-        className={css(formStyles.formControl)}
         id={`${randomId}-input`}
         aria-label={ariaLabel}
         validated={isInvalid ? 'error' : 'default'}
         placeholder={placeholder}
         value={timeState || ''}
         type="text"
-        iconVariant="clock"
+        customIcon={<OutlinedClockIcon />}
         onClick={this.onInputClick}
         onChange={this.onInputChange}
         autoComplete="off"

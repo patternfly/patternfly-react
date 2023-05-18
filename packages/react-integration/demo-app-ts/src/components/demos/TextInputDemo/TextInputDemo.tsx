@@ -28,7 +28,10 @@ export class TextInputDemo extends Component {
     this.setState({ validatedTextInputValue: value, validated });
   };
 
-  handleLeftTruncatedTextInputChange = (_event: React.FormEvent<HTMLInputElement>, leftTruncatedTextInputValue: string) => {
+  handleLeftTruncatedTextInputChange = (
+    _event: React.FormEvent<HTMLInputElement>,
+    leftTruncatedTextInputValue: string
+  ) => {
     this.setState({ leftTruncatedTextInputValue });
   };
 
@@ -46,7 +49,7 @@ export class TextInputDemo extends Component {
   };
 
   myReadOnlyTextInputProps: TextInputProps = {
-    isReadOnly: true,
+    readOnlyVariant: 'default',
     value: 'read only text input example'
   };
 
@@ -66,7 +69,7 @@ export class TextInputDemo extends Component {
         />
         <TextInput
           id="text-read-only"
-          isReadOnly={this.myReadOnlyTextInputProps.isReadOnly}
+          readOnlyVariant={this.myReadOnlyTextInputProps.readOnlyVariant}
           value={this.myReadOnlyTextInputProps.value}
         />
         <Text>Text Input Truncated on Left Example</Text>

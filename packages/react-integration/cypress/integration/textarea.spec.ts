@@ -26,7 +26,7 @@ describe('Text Area Demo Test', () => {
     // Clear text area and verify it is invalid
     cy.get('#textarea1')
       .clear()
-      .then(textarea => {
+      .then((textarea) => {
         expect(textarea.attr('aria-invalid')).to.be.equal('true');
       });
   });
@@ -40,65 +40,62 @@ describe('Text Area Demo Test', () => {
     // Clear text area and verify it is invalid
     cy.get('#textarea2')
       .clear()
-      .then(textarea => {
+      .then((textarea) => {
         expect(textarea.attr('aria-invalid')).to.be.equal('true');
       });
   });
 
   it('Verify Text Area can has horizontally resizable attribute', () => {
-    cy.get('#textarea3.pf-m-resize-horizontal').should('exist');
+    cy.get('.pf-m-resize-horizontal > #textarea3').should('exist');
     cy.get('#textarea3').should('have.value', '');
     cy.get('#textarea3').type('testing');
     cy.get('#textarea3').should('have.value', 'testing');
     // Clear text area and verify it is invalid
     cy.get('#textarea3')
       .clear()
-      .then(textarea => {
+      .then((textarea) => {
         expect(textarea.attr('aria-invalid')).to.be.equal('true');
       });
   });
 
   it('Verify Text Area can has vertically resizable attribute', () => {
-    cy.get('#textarea4.pf-m-resize-vertical').should('exist');
+    cy.get('.pf-m-resize-vertical > #textarea4').should('exist');
     cy.get('#textarea4').should('have.value', '');
     cy.get('#textarea4').type('testing');
     cy.get('#textarea4').should('have.value', 'testing');
     // Clear text area and verify it is invalid
     cy.get('#textarea4')
       .clear()
-      .then(textarea => {
+      .then((textarea) => {
         expect(textarea.attr('aria-invalid')).to.be.equal('true');
       });
   });
 
   it('Verify Text Area can be validated using validated prop', () => {
-    cy.get('#textarea5.pf-m-success').should('not.exist');
-    cy.get('#textarea5').then(textarea => {
+    cy.get('.pf-m-success > #textarea5').should('not.exist');
+    cy.get('#textarea5').then((textarea) => {
       expect(textarea.attr('aria-invalid')).to.be.equal('false');
     });
     cy.get('#textarea5').should('have.value', '');
     // Type string value less than 5 characters so it is invalid
     cy.get('#textarea5').type('test');
     cy.get('#textarea5').should('have.value', 'test');
-    cy.get('#textarea5').then(textarea => {
+    cy.get('#textarea5').then((textarea) => {
       expect(textarea.attr('aria-invalid')).to.be.equal('true');
     });
     // Clear text area and type string longer than 5 Characters so it is valid
-    cy.get('#textarea5')
-      .clear()
-      .type('testing')
-      .should('have.value', 'testing');
-    cy.get('#textarea5.pf-m-success').should('exist');
-    cy.get('#textarea5').then(textarea => {
+    cy.get('#textarea5').clear().type('testing').should('have.value', 'testing');
+    cy.get('.pf-m-success > #textarea5').should('exist');
+    cy.get('#textarea5').then((textarea) => {
       expect(textarea.attr('aria-invalid')).to.be.equal('false');
     });
     // Clear text area and verify it is warning
     cy.get('#textarea5')
       .clear()
-      .then(textarea => {
+      .then((textarea) => {
         expect(textarea.attr('aria-invalid')).to.be.equal('false');
       });
-    cy.get('#textarea5.pf-m-warning').should('exist');
+    cy.get('.pf-m-warning > #textarea5').should('exist');
   });
 
   it('Verify Text Area can not be changed when disabled', () => {
@@ -120,11 +117,9 @@ describe('Text Area Demo Test', () => {
   it('Verify text area autoresizes', () => {
     cy.get('#autoResize')
       .invoke('outerHeight')
-      .then(startingHeight => {
+      .then((startingHeight) => {
         cy.get('#autoResize').type('0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n0');
-        cy.get('#autoResize')
-          .invoke('outerHeight')
-          .should('be.gt', startingHeight);
+        cy.get('#autoResize').invoke('outerHeight').should('be.gt', startingHeight);
       });
   });
 });

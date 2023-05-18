@@ -28,7 +28,7 @@ describe('Form Demo Test', () => {
   });
 
   it('Verify form validates form group', () => {
-    cy.get('#age-validated.pf-m-success').should('not.exist');
+    cy.get('.pf-m-success > #age-validated').should('not.exist');
     cy.get('.pf-v5-c-helper-text').contains('Enter age');
     // type string that is not a number so it is invalid
     cy.get('#age-validated').type('hi');
@@ -41,7 +41,7 @@ describe('Form Demo Test', () => {
     // Clear text input and enter valid number
     cy.get('#age-validated').clear().type('34').should('have.value', '34');
     cy.get('#age2-helper .pf-m-success').should('exist');
-    cy.get('#age-validated.pf-m-success').should('exist');
+    cy.get('.pf-m-success > #age-validated').should('exist');
     cy.get('.pf-v5-c-helper-text__item.pf-m-success').contains('Enter age');
     cy.get('#age-validated').then((textinput) => {
       expect(textinput.attr('aria-invalid')).to.be.equal('false');

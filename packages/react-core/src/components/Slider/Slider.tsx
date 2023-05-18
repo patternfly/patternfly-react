@@ -318,7 +318,6 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   const displayInput = () => {
     const textInput = (
       <TextInput
-        className={css(styles.formControl)}
         isDisabled={isDisabled}
         type="number"
         value={localInputValue}

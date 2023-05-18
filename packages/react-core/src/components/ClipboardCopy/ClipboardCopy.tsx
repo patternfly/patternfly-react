@@ -131,7 +131,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   expandContent = (_event: React.MouseEvent<Element, MouseEvent>) => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       expanded: !prevState.expanded
     }));
   };
@@ -183,7 +183,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       >
         {variant === 'inline-compact' && (
           <GenerateId prefix="">
-            {id => (
+            {(id) => (
               <React.Fragment>
                 {!isCode && (
                   <span className={css(styles.clipboardCopyText)} id={`${textIdPrefix}${id}`}>
@@ -223,7 +223,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
         )}
         {variant !== 'inline-compact' && (
           <GenerateId prefix="">
-            {id => (
+            {(id) => (
               <React.Fragment>
                 <div className={css(styles.clipboardCopyGroup)}>
                   {variant === 'expansion' && (
@@ -237,7 +237,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                     />
                   )}
                   <TextInput
-                    isReadOnly={isReadOnly || this.state.expanded}
+                    readOnlyVariant={isReadOnly || this.state.expanded ? 'default' : undefined}
                     onChange={this.updateText}
                     value={this.state.text as string | number}
                     id={`text-input-${id}`}

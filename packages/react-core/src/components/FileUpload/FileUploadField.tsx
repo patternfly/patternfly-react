@@ -132,7 +132,7 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
         <InputGroup>
           <InputGroupItem isFill>
             <TextInput
-              isReadOnly // Always read-only regardless of isReadOnly prop (which is just for the TextArea)
+              readOnlyVariant="plain" // Always read-only regardless of isReadOnly prop (which is just for the TextArea)
               isDisabled={isDisabled}
               id={`${id}-filename`}
               name={`${id}-filename`}
