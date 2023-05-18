@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.115](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.0.0-alpha.114...@patternfly/react-code-editor@5.0.0-alpha.115) (2023-05-18)
+
+### Bug Fixes
+
+- **Multiple:** update old component classnames ([#9139](https://github.com/patternfly/patternfly-react/issues/9139)) ([8fbd940](https://github.com/patternfly/patternfly-react/commit/8fbd9401cd27cb84e73722292a2765781a46a6f7))
+
 # [5.0.0-alpha.114](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.0.0-alpha.113...@patternfly/react-code-editor@5.0.0-alpha.114) (2023-05-18)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

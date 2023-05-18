@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.98](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.97...demo-app-ts@5.0.0-alpha.98) (2023-05-18)
+
+### Bug Fixes
+
+- **Multiple:** update old component classnames ([#9139](https://github.com/patternfly/patternfly-react/issues/9139)) ([8fbd940](https://github.com/patternfly/patternfly-react/commit/8fbd9401cd27cb84e73722292a2765781a46a6f7))
+
 # [5.0.0-alpha.97](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.96...demo-app-ts@5.0.0-alpha.97) (2023-05-18)
 
 **Note:** Version bump only for package demo-app-ts
