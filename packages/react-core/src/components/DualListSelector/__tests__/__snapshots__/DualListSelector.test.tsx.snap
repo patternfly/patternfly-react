@@ -13,7 +13,7 @@ exports[`DualListSelector basic 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"
@@ -103,7 +103,7 @@ exports[`DualListSelector basic 1`] = `
       tabindex="0"
     >
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -130,7 +130,7 @@ exports[`DualListSelector basic 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="false"
@@ -156,7 +156,7 @@ exports[`DualListSelector basic 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -183,7 +183,7 @@ exports[`DualListSelector basic 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -217,7 +217,7 @@ exports[`DualListSelector basic 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"
@@ -262,7 +262,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"
@@ -353,7 +353,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
       tabindex="0"
     >
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -380,7 +380,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -407,7 +407,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -434,7 +434,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -468,7 +468,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"
@@ -514,7 +514,7 @@ exports[`DualListSelector with actions 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"
@@ -615,7 +615,7 @@ exports[`DualListSelector with actions 1`] = `
       tabindex="0"
     >
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -642,7 +642,7 @@ exports[`DualListSelector with actions 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="false"
@@ -668,7 +668,7 @@ exports[`DualListSelector with actions 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="false"
@@ -694,7 +694,7 @@ exports[`DualListSelector with actions 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -728,7 +728,7 @@ exports[`DualListSelector with actions 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"
@@ -839,7 +839,7 @@ exports[`DualListSelector with custom status 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"
@@ -929,7 +929,7 @@ exports[`DualListSelector with custom status 1`] = `
       tabindex="0"
     >
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -956,7 +956,7 @@ exports[`DualListSelector with custom status 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="false"
@@ -982,7 +982,7 @@ exports[`DualListSelector with custom status 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -1009,7 +1009,7 @@ exports[`DualListSelector with custom status 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -1043,7 +1043,7 @@ exports[`DualListSelector with custom status 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"
@@ -1088,7 +1088,7 @@ exports[`DualListSelector with search inputs 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"
@@ -1219,7 +1219,7 @@ exports[`DualListSelector with search inputs 1`] = `
       tabindex="0"
     >
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -1246,7 +1246,7 @@ exports[`DualListSelector with search inputs 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="false"
@@ -1272,7 +1272,7 @@ exports[`DualListSelector with search inputs 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -1299,7 +1299,7 @@ exports[`DualListSelector with search inputs 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -1333,7 +1333,7 @@ exports[`DualListSelector with search inputs 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"
@@ -1419,7 +1419,7 @@ exports[`DualListSelector with tree 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"
@@ -1584,7 +1584,7 @@ exports[`DualListSelector with tree 1`] = `
       tabindex="0"
     >
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -1611,7 +1611,7 @@ exports[`DualListSelector with tree 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="false"
@@ -1637,7 +1637,7 @@ exports[`DualListSelector with tree 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -1664,7 +1664,7 @@ exports[`DualListSelector with tree 1`] = `
         </button>
       </div>
       <div
-        class="pf-c-dual-list-selector__controls-item"
+        class="pf-v5-c-dual-list-selector__controls-item"
       >
         <button
           aria-disabled="true"
@@ -1698,7 +1698,7 @@ exports[`DualListSelector with tree 1`] = `
         class="pf-v5-c-dual-list-selector__header"
       >
         <div
-          class="pf-c-dual-list-selector__title"
+          class="pf-v5-c-dual-list-selector__title"
         >
           <div
             class="pf-v5-c-dual-list-selector__title-text"

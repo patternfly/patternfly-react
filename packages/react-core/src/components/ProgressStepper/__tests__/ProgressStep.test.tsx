@@ -23,7 +23,7 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class pf-c-progress-stepper__step on the containing li element', () => {
+test('Renders with class pf-v5-c-progress-stepper__step on the containing li element', () => {
   render(<ProgressStep>Test</ProgressStep>);
   expect(screen.getByRole('listitem')).toHaveClass('pf-v5-c-progress-stepper__step');
 });
@@ -77,7 +77,7 @@ test('Renders the element passed via the icon prop', () => {
   expect(screen.getByText('Custom Icon')).toBeVisible();
 });
 
-test('Renders the icon element inside span element with class pf-c-progress-stepper__step-icon', () => {
+test('Renders the icon element inside span element with class pf-v5-c-progress-stepper__step-icon', () => {
   render(<ProgressStep icon="Custom Icon">Test</ProgressStep>);
   expect(screen.getByText('Custom Icon')).toHaveClass('pf-v5-c-progress-stepper__step-icon');
 });
@@ -112,12 +112,12 @@ test('Renders the element passed via the description prop', () => {
   expect(screen.getByRole('button', { name: 'Description' })).toBeVisible();
 });
 
-test('Renders the description element inside div element with class pf-c-progress-stepper__step-description', () => {
+test('Renders the description element inside div element with class pf-v5-c-progress-stepper__step-description', () => {
   render(<ProgressStep description="Description">Test</ProgressStep>);
   expect(screen.getByText('Description')).toHaveClass('pf-v5-c-progress-stepper__step-description');
 });
 
-test('Renders children inside class pf-c-progress-stepper__step-title', () => {
+test('Renders children inside class pf-v5-c-progress-stepper__step-title', () => {
   render(<ProgressStep>Test</ProgressStep>);
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-progress-stepper__step-title');
 });

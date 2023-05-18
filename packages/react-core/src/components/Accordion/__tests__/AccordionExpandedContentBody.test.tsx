@@ -19,7 +19,7 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class name pf-c-accordion__expandable-content-body', () => {
+test('Renders with class name pf-v5-c-accordion__expandable-content-body', () => {
   render(<AccordionExpandableContentBody>Test</AccordionExpandableContentBody>);
 
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-accordion__expandable-content-body');

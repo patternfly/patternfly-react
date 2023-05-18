@@ -13,10 +13,10 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class pf-c-action-list__item', () => {
+test('Renders with class pf-v5-c-action-list__item', () => {
   render(<ActionListItem>Test</ActionListItem>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-c-action-list__item');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-action-list__item');
 });
 
 test('Renders with custom class names provided via prop', () => {

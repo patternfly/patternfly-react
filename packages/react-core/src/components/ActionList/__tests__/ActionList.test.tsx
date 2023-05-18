@@ -13,7 +13,7 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class pf-c-action-list', () => {
+test('Renders with class pf-v5-c-action-list', () => {
   render(<ActionList>Test</ActionList>);
 
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-action-list');

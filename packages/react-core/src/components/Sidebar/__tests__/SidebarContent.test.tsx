@@ -7,12 +7,12 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with only class name pf-c-sidebar__content by default', () => {
+test('Renders with only class name pf-v5-c-sidebar__content by default', () => {
   render(<SidebarContent>Test</SidebarContent>);
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-sidebar__content', { exact: true });
 });
 
-test('Renders with class name pf-c-sidebar__content', () => {
+test('Renders with class name pf-v5-c-sidebar__content', () => {
   render(<SidebarContent>Test</SidebarContent>);
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-sidebar__content');
 });

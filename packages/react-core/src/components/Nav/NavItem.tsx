@@ -85,7 +85,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   };
 
   const onMouseOver = (event: React.MouseEvent) => {
-    const evtContainedInFlyout = (event.target as HTMLElement).closest('.pf-c-nav__item.pf-m-flyout');
+    const evtContainedInFlyout = (event.target as HTMLElement).closest(`.${styles.navItem}.pf-m-flyout`);
     if (hasFlyout && !flyoutVisible) {
       showFlyout(true);
     } else if (flyoutRef !== null && !evtContainedInFlyout) {
@@ -120,7 +120,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
 
     // We only want the NavItem to handle closing a flyout menu if only the first level flyout is open.
     // Otherwise, MenuItem should handle closing its flyouts
-    if ((key === 'Escape' || key === 'ArrowLeft') && popperRef?.current?.querySelectorAll('.pf-c-menu').length === 1) {
+    if ((key === 'Escape' || key === 'ArrowLeft') && popperRef?.current?.querySelectorAll(`.${styles.menu}`).length === 1) {
       if (flyoutVisible) {
         event.stopPropagation();
         event.preventDefault();
@@ -145,7 +145,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       if (flyoutVisible) {
         const flyoutItems = Array.from(
           (popperRef.current as HTMLElement).getElementsByTagName('UL')[0].children
-        ).filter((el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider')));
+        ).filter((el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider)));
         (flyoutItems[0].firstChild as HTMLElement).focus();
       } else {
         flyoutTarget.focus();

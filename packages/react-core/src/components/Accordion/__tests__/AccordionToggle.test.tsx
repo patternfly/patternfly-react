@@ -42,7 +42,7 @@ test('Renders with inherited element props spread to the component', () => {
   expect(screen.getByRole('button')).toHaveAccessibleName('Label');
 });
 
-test('Renders the accordion toggle with class pf-c-accordion__toggle', () => {
+test('Renders the accordion toggle with class pf-v5-c-accordion__toggle', () => {
   render(
     <AccordionContext.Provider value={{ ToggleContainer: 'h3' }}>
       <AccordionToggle id="accordion-toggle" aria-label="Accordion test">
@@ -66,7 +66,7 @@ test('Renders the accordion toggle with custom class names provided via prop', (
   expect(screen.getByRole('button')).toHaveClass('test-class');
 });
 
-test('Renders with children inside class pf-c-accordion__toggle-text', () => {
+test('Renders with children inside class pf-v5-c-accordion__toggle-text', () => {
   render(
     <AccordionContext.Provider value={{ ToggleContainer: 'h3' }}>
       <AccordionToggle id="accordion-toggle" aria-label="Accordion test">
@@ -78,7 +78,7 @@ test('Renders with children inside class pf-c-accordion__toggle-text', () => {
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-accordion__toggle-text');
 });
 
-test('Renders with the toggle icon inside class pf-c-accordion__toggle-icon', () => {
+test('Renders with the toggle icon inside class pf-v5-c-accordion__toggle-icon', () => {
   render(
     <AccordionContext.Provider value={{ ToggleContainer: 'h3' }}>
       <AccordionToggle id="accordion-toggle" aria-label="Accordion test">

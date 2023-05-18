@@ -135,7 +135,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
       {...(tooltip && { tabIndex: 0 })}
       {...propsWithoutDateTime}
     >
-      <time className="pf-c-timestamp__text" dateTime={dateTime || new Date(date).toISOString()}>
+      <time className="pf-v5-c-timestamp__text" dateTime={dateTime || new Date(date).toISOString()}>
         {!children ? defaultDisplay : children}
       </time>
     </span>

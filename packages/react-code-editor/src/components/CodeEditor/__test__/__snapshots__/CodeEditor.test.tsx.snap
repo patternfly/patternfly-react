@@ -6,7 +6,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
     class="pf-v5-c-code-editor pf-m-read-only"
   >
     <div
-      class="pf-c-file-upload false false"
+      class="pf-v5-c-file-upload false false"
       role="presentation"
       tabindex="0"
     >

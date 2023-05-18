@@ -28,7 +28,7 @@ const MenuGroupBase: React.FunctionComponent<MenuGroupProps> = ({
 }: MenuGroupProps) => {
   const Wrapper = typeof label === 'function' ? label : HeadingLevel;
   return (
-    <section {...props} className={css('pf-c-menu__group', className)} ref={innerRef}>
+    <section {...props} className={css(styles.menuGroup, className)} ref={innerRef}>
       <>
         {['function', 'string'].includes(typeof label) ? (
           <Wrapper className={css(styles.menuGroupTitle)} id={titleId}>

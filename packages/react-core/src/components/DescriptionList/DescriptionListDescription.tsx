@@ -15,7 +15,7 @@ export const DescriptionListDescription: React.FunctionComponent<DescriptionList
   ...props
 }: DescriptionListDescriptionProps) => (
   <dd className={css(styles.descriptionListDescription, className)} {...props}>
-    <div className={'pf-c-description-list__text'}>{children}</div>
+    <div className={css(styles.descriptionListText)}>{children}</div>
   </dd>
 );
 DescriptionListDescription.displayName = 'DescriptionListDescription';

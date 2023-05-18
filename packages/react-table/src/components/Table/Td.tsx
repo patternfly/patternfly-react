@@ -50,7 +50,7 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   draggableRow?: TdDraggableType;
   /** True to remove padding */
   noPadding?: boolean;
-  /** Applies pf-c-table__action to td */
+  /** Applies pf-v5-c-table__action to td */
   isActionCell?: boolean;
   /**
    * Tooltip to show on the body cell.

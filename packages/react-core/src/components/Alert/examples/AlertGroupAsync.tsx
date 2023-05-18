@@ -14,7 +14,7 @@ export const AlertGroupAsync: React.FunctionComponent = () => {
   const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
   const [isRunning, setIsRunning] = React.useState(false);
 
-  const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
+  const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');
 
   const getUniqueId = () => new Date().getTime();
 

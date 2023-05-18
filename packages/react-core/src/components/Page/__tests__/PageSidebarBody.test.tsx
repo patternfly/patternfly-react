@@ -18,7 +18,7 @@ test('Renders with children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class pf-c-page__sidebar-body by default', () => {
+test('Renders with class pf-v5-c-page__sidebar-body by default', () => {
   render(<PageSidebarBody>Test</PageSidebarBody>);
 
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-page__sidebar-body');

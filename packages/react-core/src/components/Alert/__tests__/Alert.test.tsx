@@ -34,7 +34,7 @@ test('Renders without children', () => {
   expect(screen.getByTestId('container').firstChild).toBeVisible();
 });
 
-test('Renders with class pf-c-alert on the containing div', () => {
+test('Renders with class pf-v5-c-alert on the containing div', () => {
   render(
     <Alert title="Some title" data-testid="Alert-test-id">
       Some alert
@@ -43,7 +43,7 @@ test('Renders with class pf-c-alert on the containing div', () => {
   expect(screen.getByTestId('Alert-test-id')).toHaveClass('pf-v5-c-alert');
 });
 
-test('Renders with class pf-c-alert__title on the div containing the title', () => {
+test('Renders with class pf-v5-c-alert__title on the div containing the title', () => {
   render(<Alert title="Some title">Some alert</Alert>);
   expect(screen.getByRole('heading', { name: 'Custom alert: Some title' })).toHaveClass('pf-v5-c-alert__title');
 });
@@ -199,7 +199,7 @@ test('Renders the element passed via the actionClose prop', () => {
   expect(screen.getByRole('button', { name: 'Action close' })).toBeVisible();
 });
 
-test('Renders the actionClose element inside pf-c-alert__action', () => {
+test('Renders the actionClose element inside pf-v5-c-alert__action', () => {
   render(
     <Alert title="Some title" actionClose="Action close">
       Some alert
@@ -239,7 +239,7 @@ test('Renders the element passed via the actionLinks prop', () => {
   expect(screen.getByRole('button', { name: 'Action link' })).toBeVisible();
 });
 
-test('Renders the actionLinks element inside pf-c-alert__action-group', () => {
+test('Renders the actionLinks element inside pf-v5-c-alert__action-group', () => {
   render(
     <Alert title="Some title" actionLinks="Action link">
       Some alert
@@ -255,7 +255,7 @@ test('Renders children', () => {
   expect(screen.getByText('Some alert')).toBeVisible();
 });
 
-test('Renders children inside pf-c-alert__description', () => {
+test('Renders children inside pf-v5-c-alert__description', () => {
   render(<Alert title="Some title">Some alert</Alert>);
 
   expect(screen.getByText('Some alert')).toHaveClass('pf-v5-c-alert__description');
@@ -609,7 +609,7 @@ test('Renders with class pf-m-expandable when isExpandable = true', () => {
   expect(screen.getByTestId('Alert-test-id')).toHaveClass('pf-m-expandable');
 });
 
-test('Renders AlertToggleExpandButton inside pf-c-alert__toggle', () => {
+test('Renders AlertToggleExpandButton inside pf-v5-c-alert__toggle', () => {
   render(
     <Alert isExpandable title="Some title">
       Some alert

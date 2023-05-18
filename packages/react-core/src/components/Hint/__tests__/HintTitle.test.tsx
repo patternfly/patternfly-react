@@ -16,7 +16,7 @@ test('renders children', () => {
   expect(screen.getByRole('button', { name: 'Test Me' })).toBeVisible();
 });
 
-test('renders with class pf-c-hint__title', () => {
+test('renders with class pf-v5-c-hint__title', () => {
   render(<HintTitle>Hint Body Test</HintTitle>);
 
   const body = screen.getByText('Hint Body Test');

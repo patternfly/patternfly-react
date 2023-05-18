@@ -51,9 +51,9 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
   const handleKeys = (event: KeyboardEvent) => {
     if (
       !menuRef.current ||
-      (menuRef.current !== (event.target as HTMLElement).closest('.pf-c-dual-list-selector__menu') &&
-        !Array.from(menuRef.current.getElementsByClassName('pf-v5-c-dual-list-selector__menu')).includes(
-          (event.target as HTMLElement).closest('.pf-c-dual-list-selector__menu')
+      (menuRef.current !== (event.target as HTMLElement).closest(`.${styles.dualListSelectorMenu}`) &&
+        !Array.from(menuRef.current.getElementsByClassName(styles.dualListSelectorMenu)).includes(
+          (event.target as HTMLElement).closest(`.${styles.dualListSelectorMenu}`)
         ))
     ) {
       return;
@@ -62,7 +62,7 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
     const validOptions = isTree
       ? (Array.from(
           menuRef.current.querySelectorAll(
-            '.pf-c-dual-list-selector__item-toggle, .pf-c-dual-list-selector__item-check > input'
+            `.${styles.dualListSelectorItemToggle}, .${styles.dualListSelectorItemCheck} > input`
           )
         ) as Element[])
       : (Array.from(menuRef.current.getElementsByTagName('LI')) as Element[]).filter(
@@ -74,14 +74,14 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
       validOptions,
       (element: Element) => activeElement.contains(element),
       (element: Element) => {
-        if (element.classList.contains('.pf-c-dual-list-selector__list-item')) {
+        if (element.classList.contains(`.${styles.dualListSelectorListItem}`)) {
           setFocusedOption(element.id);
         } else {
-          setFocusedOption(element.closest('.pf-c-dual-list-selector__list-item').id);
+          setFocusedOption(element.closest(`.${styles.dualListSelectorListItem}`).id);
         }
         return element;
       },
-      ['.pf-c-dual-list-selector__item-toggle', '.pf-c-dual-list-selector__item-check > input'],
+      [`.${styles.dualListSelectorItemToggle}`, `.${styles.dualListSelectorItemCheck} > input`],
       undefined,
       false,
       false,

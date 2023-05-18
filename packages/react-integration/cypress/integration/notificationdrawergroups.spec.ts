@@ -20,14 +20,14 @@ describe('Notification Drawer Groups Demo Test', () => {
   });
 
   it('Verify first and last list items are hidden', () => {
-    cy.get('.pf-c-notification-drawer__list').first().should('have.attr', 'hidden');
-    cy.get('.pf-c-notification-drawer__list').eq(1).should('not.have.attr', 'hidden', false);
-    cy.get('.pf-c-notification-drawer__list').last().should('have.attr', 'hidden');
+    cy.get('.pf-v5-c-notification-drawer__list').first().should('have.attr', 'hidden');
+    cy.get('.pf-v5-c-notification-drawer__list').eq(1).should('not.have.attr', 'hidden', false);
+    cy.get('.pf-v5-c-notification-drawer__list').last().should('have.attr', 'hidden');
   });
 
   it('Verify first item is expanded after click', () => {
     cy.get('.pf-v5-c-notification-drawer__group').first().click();
-    cy.get('.pf-c-notification-drawer__list').should('not.have.attr', 'hidden');
+    cy.get('.pf-v5-c-notification-drawer__list').should('not.have.attr', 'hidden');
   });
 
   it('Verify list items are hoverable', () => {

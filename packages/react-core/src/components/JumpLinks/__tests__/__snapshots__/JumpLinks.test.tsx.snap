@@ -10,7 +10,7 @@ exports[`expandable vertical with subsection 1`] = `
       class="pf-v5-c-jump-links__main"
     >
       <div
-        class="pf-c-jump-links__header"
+        class="pf-v5-c-jump-links__header"
       >
         <div
           class="pf-v5-c-jump-links__toggle"
@@ -169,7 +169,7 @@ exports[`jumplinks centered 1`] = `
       class="pf-v5-c-jump-links__main"
     >
       <div
-        class="pf-c-jump-links__header"
+        class="pf-v5-c-jump-links__header"
       />
       <ul
         class="pf-v5-c-jump-links__list"
@@ -231,7 +231,7 @@ exports[`jumplinks with label 1`] = `
       class="pf-v5-c-jump-links__main"
     >
       <div
-        class="pf-c-jump-links__header"
+        class="pf-v5-c-jump-links__header"
       >
         <div
           class="pf-v5-c-jump-links__label"
@@ -298,7 +298,7 @@ exports[`simple jumplinks 1`] = `
       class="pf-v5-c-jump-links__main"
     >
       <div
-        class="pf-c-jump-links__header"
+        class="pf-v5-c-jump-links__header"
       />
       <ul
         class="pf-v5-c-jump-links__list"
@@ -360,7 +360,7 @@ exports[`vertical with label 1`] = `
       class="pf-v5-c-jump-links__main"
     >
       <div
-        class="pf-c-jump-links__header"
+        class="pf-v5-c-jump-links__header"
       >
         <div
           class="pf-v5-c-jump-links__label"

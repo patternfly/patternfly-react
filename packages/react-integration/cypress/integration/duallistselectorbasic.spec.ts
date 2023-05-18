@@ -16,16 +16,16 @@ describe('Dual List Selector BasicDemo Test', () => {
       'Available search input'
     );
 
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(1).should('have.attr', 'aria-label', 'Add all');
-    cy.get('.pf-c-dual-list-selector__controls-item button')
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(1).should('have.attr', 'aria-label', 'Add all');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button')
       .eq(0)
       .should('have.attr', 'aria-label', 'Add selected')
       .and('have.attr', 'disabled');
-    cy.get('.pf-c-dual-list-selector__controls-item button')
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button')
       .eq(3)
       .should('have.attr', 'aria-label', 'Remove selected')
       .and('have.attr', 'disabled');
-    cy.get('.pf-c-dual-list-selector__controls-item button')
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button')
       .eq(2)
       .should('have.attr', 'aria-label', 'Remove all')
       .and('have.attr', 'disabled');
@@ -47,7 +47,7 @@ describe('Dual List Selector BasicDemo Test', () => {
   it('Verify selecting options', () => {
     cy.get('.pf-v5-c-dual-list-selector__list-item .pf-m-selected').should('not.exist');
     cy.get('.pf-v5-c-dual-list-selector__list-item').eq(0).click();
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(0).and('not.have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(0).and('not.have.attr', 'disabled');
     cy.get('.pf-v5-c-dual-list-selector__list-item .pf-m-selected').should('exist');
     cy.get('.pf-v5-c-dual-list-selector__list-item').eq(1).click();
     cy.get('.pf-m-available .pf-v5-c-dual-list-selector__status-text').contains('2 of 4 items selected');
@@ -58,20 +58,20 @@ describe('Dual List Selector BasicDemo Test', () => {
   });
 
   it('Verify selecting and choosing options', () => {
-    cy.get('.pf-c-dual-list-selector__controls-item').eq(0).click();
+    cy.get('.pf-v5-c-dual-list-selector__controls-item').eq(0).click();
     cy.get('.pf-v5-c-dual-list-selector__list').eq(0).find('li').should('have.length', 3);
     cy.get('.pf-v5-c-dual-list-selector__list').eq(1).find('li').should('have.length', 1);
     cy.get('.pf-v5-c-dual-list-selector__list-item').eq(1).click();
 
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(1).should('not.have.attr', 'disabled');
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(0).should('not.have.attr', 'disabled');
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(3).should('have.attr', 'disabled');
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(2).should('not.have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(1).should('not.have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(0).should('not.have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(3).should('have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(2).should('not.have.attr', 'disabled');
 
     cy.get('.pf-m-available .pf-v5-c-dual-list-selector__status-text').contains('1 of 3 items selected');
     cy.get('.pf-m-chosen .pf-v5-c-dual-list-selector__status-text').contains('0 of 1 items selected');
 
-    cy.get('.pf-c-dual-list-selector__controls-item').eq(0).click();
+    cy.get('.pf-v5-c-dual-list-selector__controls-item').eq(0).click();
     cy.get('.pf-v5-c-tooltip').should('exist');
     cy.get('.pf-v5-c-dual-list-selector__list').eq(0).find('li').should('have.length', 2);
     cy.get('.pf-v5-c-dual-list-selector__list').eq(1).find('li').should('have.length', 2);
@@ -81,22 +81,22 @@ describe('Dual List Selector BasicDemo Test', () => {
   });
 
   it('Verify removing all options', () => {
-    cy.get('.pf-c-dual-list-selector__controls-item').eq(2).click();
+    cy.get('.pf-v5-c-dual-list-selector__controls-item').eq(2).click();
     cy.get('.pf-v5-c-tooltip').should('exist');
     cy.get('.pf-v5-c-dual-list-selector__list').eq(0).find('li').should('have.length', 4);
     cy.get('.pf-v5-c-dual-list-selector__list').eq(1).find('li').should('have.length', 0);
   });
 
   it('Verify choosing all options', () => {
-    cy.get('.pf-c-dual-list-selector__controls-item').eq(1).click();
+    cy.get('.pf-v5-c-dual-list-selector__controls-item').eq(1).click();
     cy.get('.pf-v5-c-tooltip').should('exist');
     cy.get('.pf-v5-c-dual-list-selector__list').eq(0).find('li').should('have.length', 0);
     cy.get('.pf-v5-c-dual-list-selector__list').eq(1).find('li').should('have.length', 4);
 
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(1).should('have.attr', 'disabled');
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(0).should('have.attr', 'disabled');
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(3).should('have.attr', 'disabled');
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(2).should('not.have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(1).should('have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(0).should('have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(3).should('have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(2).should('not.have.attr', 'disabled');
 
     cy.get('.pf-m-available .pf-v5-c-dual-list-selector__status-text').contains('0 of 0 items selected');
     cy.get('.pf-m-chosen .pf-v5-c-dual-list-selector__status-text').contains('0 of 4 items selected');
@@ -112,14 +112,14 @@ describe('Dual List Selector BasicDemo Test', () => {
     cy.get('.pf-v5-c-dual-list-selector__tools-filter input')
       .eq(1)
       .type('{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}');
-    cy.get('.pf-c-dual-list-selector__controls-item').eq(2).click();
+    cy.get('.pf-v5-c-dual-list-selector__controls-item').eq(2).click();
     cy.get('.pf-v5-c-dual-list-selector__list').eq(0).find('li').should('have.length', 4);
     cy.get('.pf-v5-c-dual-list-selector__list').eq(1).find('li').should('have.length', 0);
 
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(1).should('not.have.attr', 'disabled');
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(0).should('have.attr', 'disabled');
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(3).should('have.attr', 'disabled');
-    cy.get('.pf-c-dual-list-selector__controls-item button').eq(2).should('have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(1).should('not.have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(0).should('have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(3).should('have.attr', 'disabled');
+    cy.get('.pf-v5-c-dual-list-selector__controls-item button').eq(2).should('have.attr', 'disabled');
 
     cy.get('.pf-m-available .pf-v5-c-dual-list-selector__status-text').contains('0 of 4 items selected');
     cy.get('.pf-m-chosen .pf-v5-c-dual-list-selector__status-text').contains('0 of 0 items selected');

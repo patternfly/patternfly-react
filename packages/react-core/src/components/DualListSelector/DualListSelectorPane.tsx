@@ -151,7 +151,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
     >
       {title && (
         <div className={css(styles.dualListSelectorHeader)}>
-          <div className="pf-c-dual-list-selector__title">
+          <div className="pf-v5-c-dual-list-selector__title">
             <div className={css(styles.dualListSelectorTitleText)}>{title}</div>
           </div>
         </div>

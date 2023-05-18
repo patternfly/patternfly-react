@@ -72,7 +72,7 @@ exports[`Description List Description 1`] = `
     class="pf-v5-c-description-list__description custom-description-list-description"
   >
     <div
-      class="pf-c-description-list__text"
+      class="pf-v5-c-description-list__text"
     >
       test
     </div>

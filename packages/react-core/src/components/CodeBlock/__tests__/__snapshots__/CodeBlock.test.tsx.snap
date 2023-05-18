@@ -26,7 +26,7 @@ exports[`CodeBlock with components renders successfully 1`] = `
         class="pf-v5-c-code-block__actions"
       >
         <div
-          class="pf-c-code-block__actions-item"
+          class="pf-v5-c-code-block__actions-item"
         >
           button
         </div>
@@ -53,7 +53,7 @@ exports[`CodeBlock with components renders successfully 1`] = `
 exports[`CodeBlockAction renders successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-code-block__actions-item"
+    class="pf-v5-c-code-block__actions-item"
   >
     action
   </div>

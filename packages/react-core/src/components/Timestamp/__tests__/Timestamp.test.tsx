@@ -141,16 +141,16 @@ test('Renders with 12 hour time for a 24 hour locale when is12Hour is passed', (
   expect(screen.getByText('01/02/2022, 1:00:00 pm')).toBeInTheDocument();
 });
 
-test('Renders with pf-c-timestamp by default', () => {
+test('Renders with pf-v5-c-timestamp by default', () => {
   render(<Timestamp date={new Date(2022, 0, 1)} />);
 
   expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-v5-c-timestamp');
 });
 
-test('Renders with pf-c-timestamp__text by default', () => {
+test('Renders with pf-v5-c-timestamp__text by default', () => {
   render(<Timestamp date={new Date(2022, 0, 1)} />);
 
-  expect(screen.getByText('1/1/2022, 12:00:00 AM')).toHaveClass('pf-c-timestamp__text');
+  expect(screen.getByText('1/1/2022, 12:00:00 AM')).toHaveClass('pf-v5-c-timestamp__text');
 });
 
 test('Renders with custom class names', () => {

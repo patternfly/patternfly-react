@@ -30,9 +30,9 @@ export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualLi
   const handleKeys = (event: KeyboardEvent) => {
     if (
       !wrapperRef.current ||
-      (wrapperRef.current !== (event.target as HTMLElement).closest('.pf-c-dual-list-selector__controls') &&
-        !Array.from(wrapperRef.current.getElementsByClassName('pf-v5-c-dual-list-selector__controls')).includes(
-          (event.target as HTMLElement).closest('.pf-c-dual-list-selector__controls')
+      (wrapperRef.current !== (event.target as HTMLElement).closest(`.${styles.dualListSelectorControls}`) &&
+        !Array.from(wrapperRef.current.getElementsByClassName(styles.dualListSelectorControls)).includes(
+          (event.target as HTMLElement).closest(`.${styles.dualListSelectorControls}`)
         ))
     ) {
       return;

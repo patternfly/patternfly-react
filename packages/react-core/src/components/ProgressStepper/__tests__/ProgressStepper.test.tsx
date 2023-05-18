@@ -16,12 +16,12 @@ test('Renders children', () => {
   expect(screen.getByRole('list')).toBeVisible();
 });
 
-test('Renders with only class name pf-c-progress-stepper by default', () => {
+test('Renders with only class name pf-v5-c-progress-stepper by default', () => {
   render(<ProgressStepper>Test</ProgressStepper>);
   expect(screen.getByRole('list')).toHaveClass('pf-v5-c-progress-stepper', { exact: true });
 });
 
-test('Renders with class name pf-c-progress-stepper', () => {
+test('Renders with class name pf-v5-c-progress-stepper', () => {
   render(<ProgressStepper>Test</ProgressStepper>);
   expect(screen.getByRole('list')).toHaveClass('pf-v5-c-progress-stepper');
 });

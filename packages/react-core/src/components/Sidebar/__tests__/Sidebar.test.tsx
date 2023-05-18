@@ -16,12 +16,12 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with only class name pf-c-sidebar by default', () => {
+test('Renders with only class name pf-v5-c-sidebar by default', () => {
   render(<Sidebar>Test</Sidebar>);
   expect(screen.getByText('Test').parentElement).toHaveClass('pf-v5-c-sidebar', { exact: true });
 });
 
-test('Renders with class name pf-c-sidebar', () => {
+test('Renders with class name pf-v5-c-sidebar', () => {
   render(<Sidebar>Test</Sidebar>);
   expect(screen.getByText('Test').parentElement).toHaveClass('pf-v5-c-sidebar');
 });

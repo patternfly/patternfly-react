@@ -65,7 +65,7 @@ test('Renders with the passed custom icon when one is passed rather than the ico
   expect(screen.getByText('Custom icon')).toBeVisible();
 });
 
-test('Renders the icon inside class pf-c-alert__icon', () => {
+test('Renders the icon inside class pf-v5-c-alert__icon', () => {
   render(<AlertIcon variant="custom" />);
 
   expect(screen.getByText('Bell icon mock')).toHaveClass('pf-v5-c-alert__icon');

@@ -7,7 +7,7 @@ exports[`AboutModalBoxContent Test 1`] = `
     id="id"
   >
     <div
-      class="pf-c-about-modal-box__body"
+      class="pf-v5-c-about-modal-box__body"
     >
       <div
         class="pf-v5-c-content"

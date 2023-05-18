@@ -22,7 +22,7 @@ export const NotificationDrawerList: React.FunctionComponent<NotificationDrawerL
 }: NotificationDrawerListProps) => (
   <ul
     {...props}
-    className={css('pf-c-notification-drawer__list', className)}
+    className={css('pf-v5-c-notification-drawer__list', className)}
     hidden={isHidden}
     role="list"
     aria-label={ariaLabel}

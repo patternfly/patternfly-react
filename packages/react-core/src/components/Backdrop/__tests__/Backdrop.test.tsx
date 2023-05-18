@@ -16,12 +16,12 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with the pf-c-backdrop', () => {
+test('Renders with the pf-v5-c-backdrop', () => {
   render(<Backdrop>Test</Backdrop>);
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-backdrop');
 });
 
-test('Renders with only the class pf-c-backdrop by default', () => {
+test('Renders with only the class pf-v5-c-backdrop by default', () => {
   render(<Backdrop>Test</Backdrop>);
   expect(screen.getByText('Test')).toHaveClass('pf-v5-c-backdrop', { exact: true });
 });

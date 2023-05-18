@@ -85,7 +85,7 @@ test('Renders with inherited element props spread to the component', () => {
   expect(screen.getByRole('heading')).toHaveAccessibleName('Label');
 });
 
-test('Renders with class name pf-c-accordion__expandable-content', () => {
+test('Renders with class name pf-v5-c-accordion__expandable-content', () => {
   render(
     <AccordionContext.Provider value={{ ContentContainer: 'h3' }}>
       <AccordionContent>Test</AccordionContent>

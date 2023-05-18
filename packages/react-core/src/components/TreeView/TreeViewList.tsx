@@ -24,7 +24,7 @@ export const TreeViewList: React.FunctionComponent<TreeViewListProps> = ({
         <Divider />
       </React.Fragment>
     )}
-    <ul className={css('pf-c-tree-view__list')} role={isNested ? 'group' : 'tree'} {...props}>
+    <ul className={css('pf-v5-c-tree-view__list')} role={isNested ? 'group' : 'tree'} {...props}>
       {children}
     </ul>
   </>
