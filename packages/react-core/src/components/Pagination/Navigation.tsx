@@ -113,10 +113,23 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     lastPage: number,
     onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void
   ): void {
+    const allowedKeys = [
+      'Tab',
+      'Backspace',
+      'Delete',
+      'ArrowLeft',
+      'ArrowRight',
+      'Home',
+      'End',
+      'ArrowUp',
+      'ArrowDown'
+    ];
     if (event.key === KeyTypes.Enter) {
       const inputPage = Navigation.parseInteger(this.state.userInputPage, lastPage) as number;
       onPageInput(event, Number.isNaN(inputPage) ? (page as number) : inputPage);
       this.handleNewPage(event, Number.isNaN(inputPage) ? (page as number) : inputPage);
+    } else if (!/^\d*$/.test(event.key) && !allowedKeys.includes(event.key)) {
+      event.preventDefault();
     }
   }
 
