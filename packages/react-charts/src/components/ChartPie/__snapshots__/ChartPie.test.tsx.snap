@@ -3,7 +3,7 @@
 exports[`ChartPie 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-chart"
+    class="pf-v5-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -68,7 +68,7 @@ exports[`ChartPie 1`] = `
 exports[`ChartPie 2`] = `
 <DocumentFragment>
   <div
-    class="pf-c-chart"
+    class="pf-v5-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -133,7 +133,7 @@ exports[`ChartPie 2`] = `
 exports[`renders component data 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-chart"
+    class="pf-v5-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
