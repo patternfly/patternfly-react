@@ -22,7 +22,9 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -213,7 +215,9 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -404,7 +408,9 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -595,7 +601,9 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -786,7 +794,9 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -977,7 +987,9 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -1161,7 +1173,9 @@ exports[`Pagination component render custom pagination toggle 1`] = `
     >
       -9 - 10 - 40 - 
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -1349,7 +1363,9 @@ exports[`Pagination component render custom perPageOptions 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -1544,7 +1560,9 @@ exports[`Pagination component render custom start end 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -1891,7 +1909,9 @@ exports[`Pagination component render last page 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -2086,7 +2106,9 @@ exports[`Pagination component render limited number of pages 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -2272,7 +2294,9 @@ exports[`Pagination component render should render correctly bottom 1`] = `
     id="options-menu-bottom-pagination"
     style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -2455,7 +2479,9 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
     id="options-menu-bottom-pagination"
     style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -2650,7 +2676,9 @@ exports[`Pagination component render should render correctly compact 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -2775,7 +2803,9 @@ exports[`Pagination component render should render correctly disabled 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -2974,7 +3004,9 @@ exports[`Pagination component render should render correctly sticky 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -3169,7 +3201,9 @@ exports[`Pagination component render should render correctly top 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -3364,7 +3398,9 @@ exports[`Pagination component render titles 1`] = `
       </b>
        values
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -3559,7 +3595,9 @@ exports[`Pagination component render up drop direction 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -3754,7 +3792,9 @@ exports[`Pagination component render zero results 1`] = `
       </b>
        
     </div>
-    <div>
+    <div
+      class="pf-v5-c-options-menu"
+    >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
