@@ -21,9 +21,10 @@ export const getClassName = ({ className }: ChartClassNameInterface) => {
   if (className) {
     cleanClassName = className
       .replace(/VictoryContainer/g, '')
+      .replace(/pf-v5-c-chart/g, '')
       .replace(/pf-c-chart/g, '')
       .replace(/\s+/g, ' ')
       .trim();
   }
-  return cleanClassName && cleanClassName.length ? `pf-c-chart ${cleanClassName}` : 'pf-c-chart';
+  return cleanClassName && cleanClassName.length ? `pf-v5-c-chart ${cleanClassName}` : 'pf-v5-c-chart';
 };
