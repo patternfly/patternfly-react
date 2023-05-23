@@ -24,7 +24,7 @@ exports[`FormSelect Disabled FormSelect input  1`] = `
       class="pf-v5-c-form-control__utilities"
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class="pf-v5-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
@@ -66,7 +66,7 @@ exports[`FormSelect FormSelect input with aria-label does not generate console e
       class="pf-v5-c-form-control__utilities"
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class="pf-v5-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
@@ -109,7 +109,7 @@ exports[`FormSelect FormSelect input with id does not generate console error 1`]
       class="pf-v5-c-form-control__utilities"
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class="pf-v5-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
@@ -150,7 +150,7 @@ exports[`FormSelect FormSelect input with no aria-label or id generates console 
       class="pf-v5-c-form-control__utilities"
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class="pf-v5-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
@@ -238,7 +238,7 @@ exports[`FormSelect Grouped FormSelect input 1`] = `
       class="pf-v5-c-form-control__utilities"
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class="pf-v5-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
@@ -318,7 +318,7 @@ exports[`FormSelect Simple FormSelect input 1`] = `
       class="pf-v5-c-form-control__utilities"
     >
       <div
-        class="pf-v5-c-form-control__icon"
+        class="pf-v5-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
@@ -375,7 +375,7 @@ exports[`FormSelect invalid FormSelect input 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-form-control__icon"
+        class="pf-v5-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
@@ -432,7 +432,7 @@ exports[`FormSelect validated success FormSelect input 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-form-control__icon"
+        class="pf-v5-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
@@ -489,7 +489,7 @@ exports[`FormSelect validated warning FormSelect input 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-form-control__icon"
+        class="pf-v5-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
