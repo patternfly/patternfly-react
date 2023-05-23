@@ -1620,16 +1620,19 @@ exports[`typeahead multi select renders closed successfully 1`] = `
       <div
         class="pf-v5-c-select__toggle-wrapper"
       >
-        <input
-          aria-invalid="false"
-          aria-label=""
-          autocomplete="off"
+        <div
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
-          id="typeahead-multi-select-closed-select-multi-typeahead-typeahead"
-          placeholder=""
-          type="text"
-          value=""
-        />
+        >
+          <input
+            aria-invalid="false"
+            aria-label=""
+            autocomplete="off"
+            id="typeahead-multi-select-closed-select-multi-typeahead-typeahead"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <button
         aria-expanded="false"
@@ -1672,16 +1675,19 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       <div
         class="pf-v5-c-select__toggle-wrapper"
       >
-        <input
-          aria-invalid="false"
-          aria-label=""
-          autocomplete="off"
+        <div
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
-          id="pf-select-toggle-id-19-select-multi-typeahead-typeahead"
-          placeholder=""
-          type="text"
-          value=""
-        />
+        >
+          <input
+            aria-invalid="false"
+            aria-label=""
+            autocomplete="off"
+            id="pf-select-toggle-id-19-select-multi-typeahead-typeahead"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <button
         aria-expanded="true"
@@ -1896,16 +1902,19 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             </ul>
           </div>
         </div>
-        <input
-          aria-invalid="false"
-          aria-label=""
-          autocomplete="off"
+        <div
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
-          id="typeahead-multi-select-selected-select-multi-typeahead-typeahead"
-          placeholder=""
-          type="text"
-          value=""
-        />
+        >
+          <input
+            aria-invalid="false"
+            aria-label=""
+            autocomplete="off"
+            id="typeahead-multi-select-selected-select-multi-typeahead-typeahead"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <button
         aria-expanded="true"
@@ -2038,15 +2047,18 @@ exports[`typeahead select renders closed successfully 1`] = `
       <div
         class="pf-v5-c-select__toggle-wrapper"
       >
-        <input
-          aria-label=""
-          autocomplete="off"
+        <div
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
-          id="typeahead-select-closed-select-typeahead"
-          placeholder=""
-          type="text"
-          value=""
-        />
+        >
+          <input
+            aria-label=""
+            autocomplete="off"
+            id="typeahead-select-closed-select-typeahead"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <button
         aria-expanded="false"
@@ -2089,15 +2101,18 @@ exports[`typeahead select renders expanded successfully 1`] = `
       <div
         class="pf-v5-c-select__toggle-wrapper"
       >
-        <input
-          aria-label=""
-          autocomplete="off"
+        <div
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
-          id="pf-select-toggle-id-9-select-typeahead"
-          placeholder=""
-          type="text"
-          value=""
-        />
+        >
+          <input
+            aria-label=""
+            autocomplete="off"
+            id="pf-select-toggle-id-9-select-typeahead"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <button
         aria-expanded="true"
@@ -2198,15 +2213,18 @@ exports[`typeahead select renders selected successfully 1`] = `
       <div
         class="pf-v5-c-select__toggle-wrapper"
       >
-        <input
-          aria-label=""
-          autocomplete="off"
+        <div
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
-          id="pf-select-toggle-id-10-select-typeahead"
-          placeholder=""
-          type="text"
-          value="Mr"
-        />
+        >
+          <input
+            aria-label=""
+            autocomplete="off"
+            id="pf-select-toggle-id-10-select-typeahead"
+            placeholder=""
+            type="text"
+            value="Mr"
+          />
+        </div>
       </div>
       <button
         aria-expanded="true"
