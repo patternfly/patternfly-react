@@ -1,6 +1,6 @@
 ---
 id: Grid
-cssPrefix: pf-l-grid
+cssPrefix: pf-v5-l-grid
 section: layouts
 propComponents: ['Grid', 'GridItem']
 ---

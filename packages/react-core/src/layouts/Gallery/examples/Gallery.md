@@ -1,6 +1,6 @@
 ---
 id: Gallery
-cssPrefix: pf-l-gallery
+cssPrefix: pf-v5-l-gallery
 section: layouts
 propComponents: ['Gallery', 'GalleryItem']
 ---
