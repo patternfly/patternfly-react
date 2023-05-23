@@ -10,8 +10,10 @@ export const DatePickerControlledCalendar: React.FunctionComponent = () => {
   };
   return (
     <React.Fragment>
-      <Button onClick={onClick}>Toggle calendar</Button>
       <DatePicker ref={dateRef} />
+      <br />
+      <br />
+      <Button onClick={onClick}>Toggle calendar</Button>
     </React.Fragment>
   );
 };
