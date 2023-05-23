@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.116 (2023-05-23)
+
+### Bug Fixes
+
+- **Select deprecated:** updated markup for correct styling ([#9172](https://github.com/patternfly/patternfly-react/issues/9172)) ([08e3f1e](https://github.com/patternfly/patternfly-react/commit/08e3f1e35bd32ab472309fb531c521965c62b97b))
+
 # [5.0.0-alpha.115](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.114...@patternfly/react-core@5.0.0-alpha.115) (2023-05-19)
 
 **Note:** Version bump only for package @patternfly/react-core
