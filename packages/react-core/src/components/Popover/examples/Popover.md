@@ -1,7 +1,7 @@
 ---
 id: Popover
 section: components
-cssPrefix: pf-c-popover
+cssPrefix: pf-v5-c-popover
 propComponents: ['Popover']
 ---
 

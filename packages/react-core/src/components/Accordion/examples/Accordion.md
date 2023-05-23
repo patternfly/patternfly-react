@@ -1,7 +1,7 @@
 ---
 id: Accordion
 section: components
-cssPrefix: pf-c-accordion
+cssPrefix: pf-v5-c-accordion
 propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionToggle', AccordionExpandableContentBody]
 ---
 

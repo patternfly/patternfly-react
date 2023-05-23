@@ -2,7 +2,7 @@
 id: Text area
 section: components
 subsection: forms
-cssPrefix: pf-c-form-control
+cssPrefix: pf-v5-c-form-control
 propComponents: ['TextArea']
 ---
 

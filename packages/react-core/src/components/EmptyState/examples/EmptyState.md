@@ -1,7 +1,7 @@
 ---
 id: Empty state
 section: components
-cssPrefix: pf-c-empty-state
+cssPrefix: pf-v5-c-empty-state
 propComponents: ['EmptyState', 'EmptyStateHeader', 'EmptyStateIcon', 'EmptyStateBody', 'EmptyStateFooter', 'EmptyStateActions']
 ---
 import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';

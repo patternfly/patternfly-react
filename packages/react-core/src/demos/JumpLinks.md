@@ -43,7 +43,7 @@ ScrollspyH2 = () => {
 
   // Update offset based on the masthead and jump links nav heights.
   React.useEffect(() => {
-    const masthead = document.getElementsByClassName('pf-c-masthead')[0];
+    const masthead = document.getElementsByClassName('pf-v5-c-masthead')[0];
     const offsetForPadding = 10;
 
     getResizeObserver(

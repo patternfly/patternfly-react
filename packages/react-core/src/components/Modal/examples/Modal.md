@@ -1,7 +1,7 @@
 ---
 id: Modal
 section: components
-cssPrefix: pf-c-modal-box
+cssPrefix: pf-v5-c-modal-box
 propComponents: ['Modal']
 ouia: true
 ---

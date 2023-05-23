@@ -29,7 +29,7 @@ export const JumpLinksWithDrawer = () => {
   const drawerRef = React.useRef();
 
   React.useEffect(() => {
-    const masthead = document.getElementsByClassName('pf-c-masthead')[0];
+    const masthead = document.getElementsByClassName('pf-v5-c-masthead')[0];
     const drawerToggleSection = document.getElementById('drawer-toggle');
 
     getResizeObserver(

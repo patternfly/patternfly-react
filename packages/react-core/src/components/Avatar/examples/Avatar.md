@@ -1,7 +1,7 @@
 ---
 id: Avatar
 section: components
-cssPrefix: pf-c-avatar
+cssPrefix: pf-v5-c-avatar
 propComponents: ['Avatar']
 ---
 

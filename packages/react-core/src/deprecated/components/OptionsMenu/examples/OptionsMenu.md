@@ -2,7 +2,7 @@
 id: Options menu
 section: components
 subsection: menus
-cssPrefix: pf-c-options-menu
+cssPrefix: pf-v5-c-options-menu
 propComponents: ['OptionsMenu', 'OptionsMenuItem', 'OptionsMenuSeparator', 'OptionsMenuToggle', 'OptionsMenuToggleWithText']
 ouia: true
 ---

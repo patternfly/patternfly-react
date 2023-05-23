@@ -1,7 +1,7 @@
 ---
 id: Divider
 section: components
-cssPrefix: pf-c-divider
+cssPrefix: pf-v5-c-divider
 propComponents: ['Divider']
 ---
 

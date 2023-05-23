@@ -2,7 +2,7 @@
 id: Application launcher
 section: components
 subsection: menus
-cssPrefix: pf-c-app-launcher
+cssPrefix: pf-v5-c-app-launcher
 propComponents: ['ApplicationLauncher', 'ApplicationLauncherItem', 'ApplicationLauncherContent']
 ouia: true
 ---

@@ -1,7 +1,7 @@
 ---
 id: List
 section: components
-cssPrefix: pf-c-list
+cssPrefix: pf-v5-c-list
 propComponents: ['List', 'ListItem']
 ---
 
