@@ -1,7 +1,7 @@
-.pf-c-console__vnc {
+.pf-v5-c-console__vnc {
   grid-area: main;
 }
-.pf-c-console__actions-vnc {
+.pf-v5-c-console__actions-vnc {
   grid-area: actions-extra;
   display: flex;
   flex-wrap: wrap;
