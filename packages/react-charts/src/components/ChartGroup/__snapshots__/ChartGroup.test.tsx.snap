@@ -3,7 +3,7 @@
 exports[`ChartGroup 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-chart"
+    class="pf-v5-c-chart"
     style="height: 100%; width: 100%; pointer-events: none; position: relative;"
   >
     <svg
@@ -30,7 +30,7 @@ exports[`ChartGroup 1`] = `
 exports[`ChartGroup 2`] = `
 <DocumentFragment>
   <div
-    class="pf-c-chart"
+    class="pf-v5-c-chart"
     style="height: 100%; width: 100%; pointer-events: none; position: relative;"
   >
     <svg
@@ -57,7 +57,7 @@ exports[`ChartGroup 2`] = `
 exports[`renders container children 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-chart"
+    class="pf-v5-c-chart"
     style="height: 100%; width: 100%; pointer-events: none; position: relative;"
   >
     <svg

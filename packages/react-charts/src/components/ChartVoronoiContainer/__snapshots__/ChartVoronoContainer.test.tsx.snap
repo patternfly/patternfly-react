@@ -3,7 +3,7 @@
 exports[`ChartVoronoiContainer 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-chart"
+    class="pf-v5-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -26,7 +26,7 @@ exports[`ChartVoronoiContainer 1`] = `
 exports[`ChartVoronoiContainer 2`] = `
 <DocumentFragment>
   <div
-    class="pf-c-chart"
+    class="pf-v5-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -49,7 +49,7 @@ exports[`ChartVoronoiContainer 2`] = `
 exports[`renders container via ChartGroup 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-chart"
+    class="pf-v5-c-chart"
     style="height: 100%; width: 100%; pointer-events: none; position: relative;"
   >
     <svg
