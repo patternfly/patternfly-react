@@ -16,9 +16,9 @@ export const DropdownWithGroups: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
-    console.log('selected', itemId);
+    console.log('selected', value);
     setIsOpen(false);
   };
 
@@ -36,11 +36,11 @@ export const DropdownWithGroups: React.FunctionComponent = () => {
     >
       <DropdownGroup>
         <DropdownList>
-          <DropdownItem itemId={0} key="action">
+          <DropdownItem value={0} key="action">
             Action
           </DropdownItem>
           <DropdownItem
-            itemId={1}
+            value={1}
             key="link"
             to="#default-link2"
             // Prevent the default onClick functionality for example purposes
@@ -53,10 +53,10 @@ export const DropdownWithGroups: React.FunctionComponent = () => {
       <Divider component="li" />
       <DropdownGroup label="Group 2" labelHeadingLevel="h3">
         <DropdownList>
-          <DropdownItem itemId={2} key="group2 action">
+          <DropdownItem value={2} key="group2 action">
             Group 2 action
           </DropdownItem>
-          <DropdownItem itemId={3} key="group2 link" to="#default-link4" onClick={(ev: any) => ev.preventDefault()}>
+          <DropdownItem value={3} key="group2 link" to="#default-link4" onClick={(ev: any) => ev.preventDefault()}>
             Group 2 link
           </DropdownItem>
         </DropdownList>
@@ -64,10 +64,10 @@ export const DropdownWithGroups: React.FunctionComponent = () => {
       <Divider />
       <DropdownGroup label="Group 3" labelHeadingLevel="h3">
         <DropdownList>
-          <DropdownItem itemId={4} key="group3 action">
+          <DropdownItem value={4} key="group3 action">
             Group 3 action
           </DropdownItem>
-          <DropdownItem itemId={5} key="group3 link" to="#default-link6" onClick={(ev: any) => ev.preventDefault()}>
+          <DropdownItem value={5} key="group3 link" to="#default-link6" onClick={(ev: any) => ev.preventDefault()}>
             Group 3 link
           </DropdownItem>
         </DropdownList>

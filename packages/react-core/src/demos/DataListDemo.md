@@ -217,11 +217,11 @@ class ExpandableDataList extends React.Component {
                   )}
                 >
                   <DropdownList>
-                    <DropdownItem itemId={0} key="action1">
+                    <DropdownItem value={0} key="action1">
                       Action
                     </DropdownItem>
                     <DropdownItem
-                      itemId={1}
+                      value={1}
                       key="link1"
                       to="#default-link2"
                       // Prevent the default onClick functionality for example purposes
@@ -229,10 +229,10 @@ class ExpandableDataList extends React.Component {
                     >
                       Link
                     </DropdownItem>
-                    <DropdownItem itemId={2} isDisabled key="disabled action1">
+                    <DropdownItem value={2} isDisabled key="disabled action1">
                       Disabled Action
                     </DropdownItem>
-                    <DropdownItem itemId={3} isDisabled key="disabled link1" to="#default-link4">
+                    <DropdownItem value={3} isDisabled key="disabled link1" to="#default-link4">
                       Disabled Link
                     </DropdownItem>
                   </DropdownList>
@@ -299,11 +299,11 @@ class ExpandableDataList extends React.Component {
                   )}
                 >
                   <DropdownList>
-                    <DropdownItem itemId={0} key="action2">
+                    <DropdownItem value={0} key="action2">
                       Action
                     </DropdownItem>
                     <DropdownItem
-                      itemId={1}
+                      value={1}
                       key="link2"
                       to="#default-link2"
                       // Prevent the default onClick functionality for example purposes
@@ -311,10 +311,10 @@ class ExpandableDataList extends React.Component {
                     >
                       Link
                     </DropdownItem>
-                    <DropdownItem itemId={2} isDisabled key="disabled action2">
+                    <DropdownItem value={2} isDisabled key="disabled action2">
                       Disabled Action
                     </DropdownItem>
-                    <DropdownItem itemId={3} isDisabled key="disabled link2" to="#default-link4">
+                    <DropdownItem value={3} isDisabled key="disabled link2" to="#default-link4">
                       Disabled Link
                     </DropdownItem>
                   </DropdownList>
@@ -381,11 +381,11 @@ class ExpandableDataList extends React.Component {
                   )}
                 >
                   <DropdownList>
-                    <DropdownItem itemId={0} key="action3">
+                    <DropdownItem value={0} key="action3">
                       Action
                     </DropdownItem>
                     <DropdownItem
-                      itemId={1}
+                      value={1}
                       key="link3"
                       to="#default-link2"
                       // Prevent the default onClick functionality for example purposes
@@ -393,10 +393,10 @@ class ExpandableDataList extends React.Component {
                     >
                       Link
                     </DropdownItem>
-                    <DropdownItem itemId={2} isDisabled key="disabled action3">
+                    <DropdownItem value={2} isDisabled key="disabled action3">
                       Disabled Action
                     </DropdownItem>
-                    <DropdownItem itemId={3} isDisabled key="disabled link3" to="#default-link4">
+                    <DropdownItem value={3} isDisabled key="disabled link3" to="#default-link4">
                       Disabled Link
                     </DropdownItem>
                   </DropdownList>

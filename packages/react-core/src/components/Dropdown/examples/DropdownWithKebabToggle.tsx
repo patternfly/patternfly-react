@@ -9,9 +9,9 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
-    console.log('selected', itemId);
+    console.log('selected', value);
     setIsOpen(false);
   };
 
@@ -34,11 +34,11 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
       shouldFocusToggleOnSelect
     >
       <DropdownList>
-        <DropdownItem itemId={0} key="action">
+        <DropdownItem value={0} key="action">
           Action
         </DropdownItem>
         <DropdownItem
-          itemId={1}
+          value={1}
           key="link"
           to="#default-link2"
           // Prevent the default onClick functionality for example purposes
@@ -46,17 +46,17 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
         >
           Link
         </DropdownItem>
-        <DropdownItem itemId={2} isDisabled key="disabled action">
+        <DropdownItem value={2} isDisabled key="disabled action">
           Disabled Action
         </DropdownItem>
-        <DropdownItem itemId={3} isDisabled key="disabled link" to="#default-link4">
+        <DropdownItem value={3} isDisabled key="disabled link" to="#default-link4">
           Disabled Link
         </DropdownItem>
         <Divider component="li" key="separator" />
-        <DropdownItem itemId={4} key="separated action">
+        <DropdownItem value={4} key="separated action">
           Separated Action
         </DropdownItem>
-        <DropdownItem itemId={5} key="separated link" to="#default-link6" onClick={(ev) => ev.preventDefault()}>
+        <DropdownItem value={5} key="separated link" to="#default-link6" onClick={(ev) => ev.preventDefault()}>
           Separated Link
         </DropdownItem>
       </DropdownList>

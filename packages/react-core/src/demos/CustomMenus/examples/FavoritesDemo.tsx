@@ -13,16 +13,16 @@ export const FavoritesDemo: React.FunctionComponent = () => {
   const menuItems = [
     <DropdownGroup key="group1" label="Group 1">
       <DropdownList>
-        <DropdownItem itemId="0" id="0" isFavorited={favorites.includes('0')}>
+        <DropdownItem value="0" id="0" isFavorited={favorites.includes('0')}>
           Item 1
         </DropdownItem>
-        <DropdownItem itemId="1" id="1" isFavorited={favorites.includes('1')}>
+        <DropdownItem value="1" id="1" isFavorited={favorites.includes('1')}>
           Item 2
         </DropdownItem>
-        <DropdownItem itemId="2" id="2" isFavorited={favorites.includes('2')}>
+        <DropdownItem value="2" id="2" isFavorited={favorites.includes('2')}>
           Item 3
         </DropdownItem>
-        <DropdownItem itemId="3" id="3" isFavorited={favorites.includes('3')}>
+        <DropdownItem value="3" id="3" isFavorited={favorites.includes('3')}>
           Item 4
         </DropdownItem>
       </DropdownList>
@@ -30,16 +30,16 @@ export const FavoritesDemo: React.FunctionComponent = () => {
     <Divider key="group1-divider" />,
     <DropdownGroup key="group2" label="Group 2">
       <DropdownList>
-        <DropdownItem itemId="4" id="4" isFavorited={favorites.includes('4')}>
+        <DropdownItem value="4" id="4" isFavorited={favorites.includes('4')}>
           Item 5
         </DropdownItem>
-        <DropdownItem itemId="5" id="5" isFavorited={favorites.includes('5')}>
+        <DropdownItem value="5" id="5" isFavorited={favorites.includes('5')}>
           Item 6
         </DropdownItem>
-        <DropdownItem itemId="6" id="6" isFavorited={favorites.includes('6')}>
+        <DropdownItem value="6" id="6" isFavorited={favorites.includes('6')}>
           Item 7
         </DropdownItem>
-        <DropdownItem itemId="7" id="7" isFavorited={favorites.includes('7')}>
+        <DropdownItem value="7" id="7" isFavorited={favorites.includes('7')}>
           Item 8
         </DropdownItem>
       </DropdownList>
@@ -52,18 +52,18 @@ export const FavoritesDemo: React.FunctionComponent = () => {
     menuItems.forEach((item) => {
       if (item.type === DropdownList) {
         item.props.children.filter((child) => {
-          if (favIds.includes(child.props.itemId)) {
+          if (favIds.includes(child.props.value)) {
             favorites.push(child);
           }
         });
       } else if (item.type === DropdownGroup) {
         item.props.children.props.children.filter((child) => {
-          if (favIds.includes(child.props.itemId)) {
+          if (favIds.includes(child.props.value)) {
             favorites.push(child);
           }
         });
       } else {
-        if (favIds.includes(item.props.itemId)) {
+        if (favIds.includes(item.props.value)) {
           favorites.push(item);
         }
       }
@@ -79,14 +79,14 @@ export const FavoritesDemo: React.FunctionComponent = () => {
     }
   }, [favorites]);
 
-  const onFavorite = (event: any, itemId: string, actionId: string) => {
+  const onFavorite = (event: any, value: string, actionId: string) => {
     event.stopPropagation();
     if (actionId === 'fav') {
-      const isFavorite = favorites.includes(itemId);
+      const isFavorite = favorites.includes(value);
       if (isFavorite) {
-        setFavorites(favorites.filter((fav) => fav !== itemId));
+        setFavorites(favorites.filter((fav) => fav !== value));
       } else {
-        setFavorites([...favorites, itemId]);
+        setFavorites([...favorites, value]);
       }
     }
   };
@@ -104,7 +104,7 @@ export const FavoritesDemo: React.FunctionComponent = () => {
       ref={menuRef}
       onActionClick={onFavorite}
       // eslint-disable-next-line no-console
-      onSelect={(_ev, itemId) => console.log('selected', itemId)}
+      onSelect={(_ev, value) => console.log('selected', value)}
     >
       {favorites.length > 0 && (
         <React.Fragment>

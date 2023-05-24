@@ -39,11 +39,11 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
   const menuItems = [
     <DropdownGroup key="group1" label="Group 1">
       <DropdownList>
-        <DropdownItem itemId="0" id="0" isFavorited={favorites.includes('0')}>
+        <DropdownItem value="0" id="0" isFavorited={favorites.includes('0')}>
           Application 1
         </DropdownItem>
         <DropdownItem
-          itemId="1"
+          value="1"
           id="1"
           isFavorited={favorites.includes('1')}
           to="#default-link2"
@@ -57,7 +57,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
     <DropdownGroup key="group2" label="Group 2">
       <DropdownList>
         <DropdownItem
-          itemId="2"
+          value="2"
           id="2"
           isFavorited={favorites.includes('2')}
           component={(props) => <MockLink {...props} to="#router-link" />}
@@ -65,7 +65,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
           Custom component (such as @reach/router Link)
         </DropdownItem>
         <DropdownItem
-          itemId="3"
+          value="3"
           id="3"
           isFavorited={favorites.includes('3')}
           isExternalLink
@@ -78,12 +78,12 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
     </DropdownGroup>,
     <Divider key="group2-divider" />,
     <DropdownList key="other-items">
-      <DropdownItem key="tooltip-app" isFavorited={favorites.includes('4')} itemId="4" id="4">
+      <DropdownItem key="tooltip-app" isFavorited={favorites.includes('4')} value="4" id="4">
         <Tooltip content={<div>Launch Application 3</div>} position="right">
           <span>Application 3 with tooltip</span>
         </Tooltip>
       </DropdownItem>
-      <DropdownItem key="disabled-app" itemId="5" id="5" isDisabled>
+      <DropdownItem key="disabled-app" value="5" id="5" isDisabled>
         Unavailable Application
       </DropdownItem>
     </DropdownList>
@@ -95,18 +95,18 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
     menuItems.forEach((item) => {
       if (item.type === DropdownList) {
         item.props.children.filter((child) => {
-          if (favIds.includes(child.props.itemId)) {
+          if (favIds.includes(child.props.value)) {
             favorites.push(child);
           }
         });
       } else if (item.type === DropdownGroup) {
         item.props.children.props.children.filter((child) => {
-          if (favIds.includes(child.props.itemId)) {
+          if (favIds.includes(child.props.value)) {
             favorites.push(child);
           }
         });
       } else {
-        if (favIds.includes(item.props.itemId)) {
+        if (favIds.includes(item.props.value)) {
           favorites.push(item);
         }
       }
@@ -126,7 +126,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
           const filteredGroup = React.cloneElement(group, {
             children: React.cloneElement(group.props.children, {
               children: group.props.children.props.children.filter((child) => {
-                if (filteredIds.includes(child.props.itemId)) {
+                if (filteredIds.includes(child.props.value)) {
                   return child;
                 }
               })
@@ -142,7 +142,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
         } else if (group.type === DropdownList) {
           const filteredGroup = React.cloneElement(group, {
             children: group.props.children.filter((child) => {
-              if (filteredIds.includes(child.props.itemId)) {
+              if (filteredIds.includes(child.props.value)) {
                 return child;
               }
             })
@@ -154,7 +154,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
             keepDivider = false;
           }
         } else {
-          if ((keepDivider && group.type === Divider) || filteredIds.includes(group.props.itemId)) {
+          if ((keepDivider && group.type === Divider) || filteredIds.includes(group.props.value)) {
             return group;
           }
         }
@@ -184,14 +184,14 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
     setFilteredIds(filteredIds);
   };
 
-  const onFavorite = (event: any, itemId: string, actionId: string) => {
+  const onFavorite = (event: any, value: string, actionId: string) => {
     event.stopPropagation();
     if (actionId === 'fav') {
-      const isFavorite = favorites.includes(itemId);
+      const isFavorite = favorites.includes(value);
       if (isFavorite) {
-        setFavorites(favorites.filter((fav) => fav !== itemId));
+        setFavorites(favorites.filter((fav) => fav !== value));
       } else {
-        setFavorites([...favorites, itemId]);
+        setFavorites([...favorites, value]);
       }
     }
   };
@@ -223,7 +223,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
       ref={menuRef}
       onActionClick={onFavorite}
       // eslint-disable-next-line no-console
-      onSelect={(_ev, itemId) => console.log('selected', itemId)}
+      onSelect={(_ev, value) => console.log('selected', value)}
     >
       <MenuSearch>
         <MenuSearchInput>
