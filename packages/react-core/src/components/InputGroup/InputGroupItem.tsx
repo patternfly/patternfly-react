@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/InputGroup/input-group';
 import { css } from '@patternfly/react-styles';
+import { InputGroupText } from './InputGroupText';
 
 export interface InputGroupItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the input group item. */
@@ -15,11 +16,10 @@ export interface InputGroupItemProps extends React.HTMLProps<HTMLDivElement> {
   isFill?: boolean;
   /** Flag to indicate if the input group item is disabled. */
   isDisabled?: boolean;
-
 }
 
 export const InputGroupItem: React.FunctionComponent<InputGroupItemProps> = ({
-  className = '',
+  className,
   children,
   isFill = false,
   isBox = false,
@@ -38,7 +38,7 @@ export const InputGroupItem: React.FunctionComponent<InputGroupItemProps> = ({
     )}
     {...props}
   >
-    {children}
+    {isBox ?  <InputGroupText> {children} </InputGroupText> : children}
   </div>
 );
 InputGroupItem.displayName = 'InputGroupItem';

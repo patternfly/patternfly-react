@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Slider/slider';
 import { css } from '@patternfly/react-styles';
 import { SliderStep } from './SliderStep';
-import { InputGroup, InputGroupText, InputGroupItem } from '../InputGroup';
+import { InputGroup, InputGroupItem } from '../InputGroup';
 import { TextInput } from '../TextInput';
 import { Tooltip } from '../Tooltip';
 
@@ -334,11 +334,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
         <InputGroup>
           <InputGroupItem isFill>{textInput}</InputGroupItem>
           <InputGroupItem isBox>
-            <InputGroupText
-              {...(isDisabled && { className: css(styles.modifiers.disabled) })}
-            >
-              {inputLabel}
-            </InputGroupText>
+            {inputLabel}
           </InputGroupItem>
         </InputGroup>
       );

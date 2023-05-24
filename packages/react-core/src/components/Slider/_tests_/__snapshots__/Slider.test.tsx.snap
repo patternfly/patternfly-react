@@ -442,7 +442,7 @@ exports[`slider renders slider with input 1`] = `
           <span
             class="pf-v5-c-input-group__text"
           >
-            %
+             % 
           </span>
         </div>
       </div>
@@ -521,7 +521,7 @@ exports[`slider renders slider with input above thumb 1`] = `
             <span
               class="pf-v5-c-input-group__text"
             >
-              %
+               % 
             </span>
           </div>
         </div>

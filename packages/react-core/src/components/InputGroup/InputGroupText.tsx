@@ -12,7 +12,7 @@ export interface InputGroupTextProps extends React.HTMLProps<HTMLSpanElement | H
 }
 
 export const InputGroupText: React.FunctionComponent<InputGroupTextProps> = ({
-  className = '',
+  className,
   component = 'span',
   children,
   ...props
