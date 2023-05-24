@@ -106,7 +106,7 @@ const buildCalendar = (year: number, month: number, weekStart: number, validator
       const date = new Date(firstDayOfWeek);
       week.push({
         date,
-        isValid: validators.every(validator => validator(date))
+        isValid: validators.every((validator) => validator(date))
       });
       firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 1);
     }
@@ -129,10 +129,10 @@ const today = new Date();
 export const CalendarMonth = ({
   date: dateProp,
   locale = undefined,
-  monthFormat = date => date.toLocaleDateString(locale, { month: 'long' }),
-  weekdayFormat = date => date.toLocaleDateString(locale, { weekday: 'narrow' }),
-  longWeekdayFormat = date => date.toLocaleDateString(locale, { weekday: 'long' }),
-  dayFormat = date => date.getDate(),
+  monthFormat = (date) => date.toLocaleDateString(locale, { month: 'long' }),
+  weekdayFormat = (date) => date.toLocaleDateString(locale, { weekday: 'narrow' }),
+  longWeekdayFormat = (date) => date.toLocaleDateString(locale, { weekday: 'long' }),
+  dayFormat = (date) => date.getDate(),
   weekStart = 0, // Use the American Sunday as a default
   onChange = () => {},
   validators = [() => true],
@@ -148,7 +148,9 @@ export const CalendarMonth = ({
   inlineProps,
   ...props
 }: CalendarProps) => {
-  const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(monthNum => new Date(1990, monthNum)).map(monthFormat);
+  const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    .map((monthNum) => new Date(1990, monthNum))
+    .map(monthFormat);
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   // eslint-disable-next-line prefer-const
   const [focusedDate, setFocusedDate] = React.useState(() => {
@@ -168,7 +170,7 @@ export const CalendarMonth = ({
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
   const [shouldFocus, setShouldFocus] = React.useState(false);
 
-  const isValidated = (date: Date) => validators.every(validator => validator(date));
+  const isValidated = (date: Date) => validators.every((validator) => validator(date));
   const focusedDateValidated = isValidated(focusedDate);
   useEffect(() => {
     if (isValidDate(dateProp) && !isSameDate(focusedDate, dateProp)) {
@@ -224,12 +226,10 @@ export const CalendarMonth = ({
   const nextMonth = addMonth(1);
   const focusedYear = focusedDate.getFullYear();
   const focusedMonth = focusedDate.getMonth();
-  const calendar = React.useMemo(() => buildCalendar(focusedYear, focusedMonth, weekStart, validators), [
-    focusedYear,
-    focusedMonth,
-    weekStart,
-    validators
-  ]);
+  const calendar = React.useMemo(
+    () => buildCalendar(focusedYear, focusedMonth, weekStart, validators),
+    [focusedYear, focusedMonth, weekStart, validators]
+  );
   if (!focusedDateValidated) {
     const toFocus = calendar
       .reduce((acc, cur) => [...acc, ...cur], [])
@@ -299,7 +299,7 @@ export const CalendarMonth = ({
               >
                 <SelectList>
                   {longMonths.map((longMonth, index) => (
-                    <SelectOption key={index} itemId={index} isSelected={longMonth === monthFormatted}>
+                    <SelectOption key={index} value={index} isSelected={longMonth === monthFormatted}>
                       {longMonth}
                     </SelectOption>
                   ))}

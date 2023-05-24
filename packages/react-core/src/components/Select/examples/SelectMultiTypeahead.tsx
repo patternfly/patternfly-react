@@ -16,12 +16,12 @@ import {
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 const initialSelectOptions: SelectOptionProps[] = [
-  { itemId: 'Alabama', children: 'Alabama' },
-  { itemId: 'Florida', children: 'Florida' },
-  { itemId: 'New Jersey', children: 'New Jersey' },
-  { itemId: 'New Mexico', children: 'New Mexico' },
-  { itemId: 'New York', children: 'New York' },
-  { itemId: 'North Carolina', children: 'North Carolina' }
+  { value: 'Alabama', children: 'Alabama' },
+  { value: 'Florida', children: 'Florida' },
+  { value: 'New Jersey', children: 'New Jersey' },
+  { value: 'New Mexico', children: 'New Mexico' },
+  { value: 'New York', children: 'New York' },
+  { value: 'North Carolina', children: 'North Carolina' }
 ];
 
 export const SelectMultiTypeahead: React.FunctionComponent = () => {
@@ -45,7 +45,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
         newSelectOptions = [
-          { isDisabled: false, children: `No results found for "${inputValue}"`, itemId: 'no results' }
+          { isDisabled: false, children: `No results found for "${inputValue}"`, value: 'no results' }
         ];
       }
 
@@ -84,7 +84,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
 
       setFocusedItemIndex(indexToFocus);
       const focusedItem = selectOptions.filter((option) => !option.isDisabled)[indexToFocus];
-      setActiveItem(`select-multi-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
+      setActiveItem(`select-multi-typeahead-${focusedItem.value.replace(' ', '-')}`);
     }
   };
 
@@ -98,8 +98,8 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       case 'Enter':
         if (!isOpen) {
           setIsOpen((prevIsOpen) => !prevIsOpen);
-        } else if (isOpen && focusedItem.itemId !== 'no results') {
-          onSelect(focusedItem.itemId as string);
+        } else if (isOpen && focusedItem.value !== 'no results') {
+          onSelect(focusedItem.value as string);
         }
         break;
       case 'Tab':
@@ -123,13 +123,13 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
     setInputValue(value);
   };
 
-  const onSelect = (itemId: string) => {
+  const onSelect = (value: string) => {
     // eslint-disable-next-line no-console
-    console.log('selected', itemId);
+    console.log('selected', value);
 
-    if (itemId && itemId !== 'no results') {
+    if (value && value !== 'no results') {
       setSelected(
-        selected.includes(itemId) ? selected.filter((selection) => selection !== itemId) : [...selected, itemId]
+        selected.includes(value) ? selected.filter((selection) => selection !== value) : [...selected, value]
       );
     }
 
@@ -198,10 +198,10 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       <SelectList isAriaMultiselectable id="select-multi-typeahead-listbox">
         {selectOptions.map((option, index) => (
           <SelectOption
-            key={option.itemId || option.children}
+            key={option.value || option.children}
             isFocused={focusedItemIndex === index}
             className={option.className}
-            id={`select-multi-typeahead-${option.itemId.replace(' ', '-')}`}
+            id={`select-multi-typeahead-${option.value.replace(' ', '-')}`}
             {...option}
             ref={null}
           />

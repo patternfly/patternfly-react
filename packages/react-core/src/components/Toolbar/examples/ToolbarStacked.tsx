@@ -156,7 +156,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
         >
           <SelectList>
             {resourceOptions.map((option, index) => (
-              <SelectOption key={index} itemId={option}>
+              <SelectOption key={index} value={option}>
                 {option}
               </SelectOption>
             ))}
@@ -189,7 +189,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
         >
           <SelectList>
             {statusOptions.map((option, index) => (
-              <SelectOption key={index} itemId={option}>
+              <SelectOption key={index} value={option}>
                 {option}
               </SelectOption>
             ))}

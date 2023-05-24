@@ -10,15 +10,15 @@ export const ActionsMenuDemo: React.FunctionComponent = () => {
   const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
   const menuRef = React.useRef<HTMLDivElement>(null);
 
-  const onSelect = (event: React.MouseEvent | undefined, itemId: string | number | undefined) => {
-    if (typeof itemId === 'string' || typeof itemId === 'undefined') {
+  const onSelect = (event: React.MouseEvent | undefined, value: string | number | undefined) => {
+    if (typeof value === 'string' || typeof value === 'undefined') {
       return;
     }
 
-    if (selectedItems.includes(itemId)) {
-      setSelectedItems(selectedItems.filter((id) => id !== itemId));
+    if (selectedItems.includes(value)) {
+      setSelectedItems(selectedItems.filter((id) => id !== value));
     } else {
-      setSelectedItems([...selectedItems, itemId]);
+      setSelectedItems([...selectedItems, value]);
     }
   };
 
@@ -36,7 +36,7 @@ export const ActionsMenuDemo: React.FunctionComponent = () => {
         </MenuToggle>
       )}
       // eslint-disable-next-line no-console
-      onActionClick={(event, itemId, actionId) => console.log(`clicked on ${itemId} - ${actionId}`)}
+      onActionClick={(event, value, actionId) => console.log(`clicked on ${value} - ${actionId}`)}
       onSelect={onSelect}
       onOpenChange={(isOpen) => setIsOpen(isOpen)}
     >
@@ -54,7 +54,7 @@ export const ActionsMenuDemo: React.FunctionComponent = () => {
               />
             }
             description="This is a description"
-            itemId={0}
+            value={0}
           >
             Item 1
           </SelectOption>
@@ -63,14 +63,14 @@ export const ActionsMenuDemo: React.FunctionComponent = () => {
             isSelected={selectedItems.includes(1)}
             actions={<MenuItemAction icon={<BellIcon aria-hidden />} actionId="alert" aria-label="Alert" />}
             description="This is a description"
-            itemId={1}
+            value={1}
           >
             Item 2
           </SelectOption>
           <SelectOption
             isSelected={selectedItems.includes(2)}
             actions={<MenuItemAction icon={<ClipboardIcon aria-hidden />} actionId="copy" aria-label="Copy" />}
-            itemId={2}
+            value={2}
           >
             Item 3
           </SelectOption>
@@ -78,7 +78,7 @@ export const ActionsMenuDemo: React.FunctionComponent = () => {
             isSelected={selectedItems.includes(3)}
             actions={<MenuItemAction icon={<BarsIcon aria-hidden />} actionId="expand" aria-label="Expand" />}
             description="This is a description"
-            itemId={3}
+            value={3}
           >
             Item 4
           </SelectOption>

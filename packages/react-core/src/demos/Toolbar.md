@@ -315,7 +315,7 @@ class ConsoleLogViewerToolbar extends React.Component {
     const selectDropdownContent = (
       <SelectList>
         {Object.entries(this.firstOptions).map(([value, { type }]) => (
-          <SelectOption key={value} hasCheckbox itemId={value} isSelected={containerSelected === value}>
+          <SelectOption key={value} hasCheckbox value={value} isSelected={containerSelected === value}>
             <Badge key={value}>{type}</Badge>
             {` ${value}`}
           </SelectOption>

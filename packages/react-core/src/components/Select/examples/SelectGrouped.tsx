@@ -17,11 +17,11 @@ export const SelectGrouped: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
-    console.log('selected', itemId);
+    console.log('selected', value);
 
-    setSelected(itemId as string);
+    setSelected(value as string);
     setIsOpen(false);
   };
 
@@ -52,17 +52,17 @@ export const SelectGrouped: React.FunctionComponent = () => {
     >
       <SelectGroup label="Group 1">
         <SelectList>
-          <SelectOption itemId="Option 1">Option 1</SelectOption>
-          <SelectOption itemId="Option 2">Option 2</SelectOption>
-          <SelectOption itemId="Option 3">Option 3</SelectOption>
+          <SelectOption value="Option 1">Option 1</SelectOption>
+          <SelectOption value="Option 2">Option 2</SelectOption>
+          <SelectOption value="Option 3">Option 3</SelectOption>
         </SelectList>
       </SelectGroup>
       <Divider />
       <SelectGroup label="Group 2">
         <SelectList>
-          <SelectOption itemId="Option 4">Option 4</SelectOption>
-          <SelectOption itemId="Option 5">Option 5</SelectOption>
-          <SelectOption itemId="Option 6">Option 6</SelectOption>
+          <SelectOption value="Option 4">Option 4</SelectOption>
+          <SelectOption value="Option 5">Option 5</SelectOption>
+          <SelectOption value="Option 6">Option 6</SelectOption>
         </SelectList>
       </SelectGroup>
     </Select>

@@ -29,13 +29,13 @@ export const ToolbarGroups: React.FunctionComponent = () => {
 
   const onToggle = (filterName: string) => {
     switch (filterName) {
-      case "first":
+      case 'first':
         setFirstIsExpanded(!firstIsExpanded);
         break;
-      case "second":
+      case 'second':
         setSecondIsExpanded(!secondIsExpanded);
         break;
-      case "third":
+      case 'third':
         setThirdIsExpanded(!thirdIsExpanded);
         break;
     }
@@ -63,7 +63,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
             <MenuToggle
               ref={toggleRef}
-              onClick={() => onToggle("first")}
+              onClick={() => onToggle('first')}
               isExpanded={firstIsExpanded}
               style={
                 {
@@ -75,13 +75,15 @@ export const ToolbarGroups: React.FunctionComponent = () => {
             </MenuToggle>
           )}
           onSelect={onFirstSelect}
-          onOpenChange={isOpen => setFirstIsExpanded(isOpen)}
+          onOpenChange={(isOpen) => setFirstIsExpanded(isOpen)}
           selected={firstSelected}
           isOpen={firstIsExpanded}
         >
           <SelectList>
             {firstOptions.map((option, index) => (
-              <SelectOption key={index} itemId={option}>{option}</SelectOption>
+              <SelectOption key={index} value={option}>
+                {option}
+              </SelectOption>
             ))}
           </SelectList>
         </Select>
@@ -91,7 +93,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
             <MenuToggle
               ref={toggleRef}
-              onClick={() => onToggle("second")}
+              onClick={() => onToggle('second')}
               isExpanded={secondIsExpanded}
               style={
                 {
@@ -104,12 +106,14 @@ export const ToolbarGroups: React.FunctionComponent = () => {
           )}
           onSelect={onSecondSelect}
           selected={secondSelected}
-          onOpenChange={isOpen => setSecondIsExpanded(isOpen)}
+          onOpenChange={(isOpen) => setSecondIsExpanded(isOpen)}
           isOpen={secondIsExpanded}
         >
           <SelectList>
             {secondOptions.map((option, index) => (
-              <SelectOption key={index} itemId={option}>{option}</SelectOption>
+              <SelectOption key={index} value={option}>
+                {option}
+              </SelectOption>
             ))}
           </SelectList>
         </Select>
@@ -119,7 +123,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
             <MenuToggle
               ref={toggleRef}
-              onClick={() => onToggle("third")}
+              onClick={() => onToggle('third')}
               isExpanded={thirdIsExpanded}
               style={
                 {
@@ -132,12 +136,14 @@ export const ToolbarGroups: React.FunctionComponent = () => {
           )}
           onSelect={onThirdSelect}
           selected={thirdSelected}
-          onOpenChange={isOpen => setThirdIsExpanded(isOpen)}
+          onOpenChange={(isOpen) => setThirdIsExpanded(isOpen)}
           isOpen={thirdIsExpanded}
         >
           <SelectList>
             {thirdOptions.map((option, index) => (
-              <SelectOption key={index} itemId={option}>{option}</SelectOption>
+              <SelectOption key={index} value={option}>
+                {option}
+              </SelectOption>
             ))}
           </SelectList>
         </Select>

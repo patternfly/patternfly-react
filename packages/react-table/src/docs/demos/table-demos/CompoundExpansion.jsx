@@ -98,16 +98,16 @@ export const CompoundExpandable = () => {
             onSelect={() => setIsSelectOpen(!isSelectOpen)}
           >
             {[
-              <SelectOption key={0} itemId="Debug">
+              <SelectOption key={0} value="Debug">
                 Debug
               </SelectOption>,
-              <SelectOption key={1} itemId="Info">
+              <SelectOption key={1} value="Info">
                 Info
               </SelectOption>,
-              <SelectOption key={2} itemId="Warn">
+              <SelectOption key={2} value="Warn">
                 Warn
               </SelectOption>,
-              <SelectOption key={3} itemId="Error">
+              <SelectOption key={3} value="Error">
                 Error
               </SelectOption>
             ]}

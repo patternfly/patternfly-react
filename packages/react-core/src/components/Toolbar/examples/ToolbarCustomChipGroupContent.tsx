@@ -62,35 +62,20 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
 
   const statusMenuItems = (
     <SelectList>
-      <SelectOption
-        hasCheckbox
-        key="statusNew"
-        itemId="New"
-        isSelected={filters.status.includes("New")}
-      >
+      <SelectOption hasCheckbox key="statusNew" value="New" isSelected={filters.status.includes('New')}>
         New
       </SelectOption>
-      <SelectOption
-        hasCheckbox
-        key="statusPending"
-        itemId="Pending"
-        isSelected={filters.status.includes("Pending")}
-      >
+      <SelectOption hasCheckbox key="statusPending" value="Pending" isSelected={filters.status.includes('Pending')}>
         Pending
       </SelectOption>
-      <SelectOption
-        hasCheckbox
-        key="statusRunning"
-        itemId="Running"
-        isSelected={filters.status.includes("Running")}
-      >
+      <SelectOption hasCheckbox key="statusRunning" value="Running" isSelected={filters.status.includes('Running')}>
         Running
       </SelectOption>
       <SelectOption
         hasCheckbox
         key="statusCancelled"
-        itemId="Cancelled"
-        isSelected={filters.status.includes("Cancelled")}
+        value="Cancelled"
+        isSelected={filters.status.includes('Cancelled')}
       >
         Cancelled
       </SelectOption>
@@ -99,28 +84,13 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
 
   const riskMenuItems = (
     <SelectList>
-      <SelectOption
-        hasCheckbox
-        key="riskLow"
-        itemId="Low"
-        isSelected={filters.risk.includes("Low")}
-      >
+      <SelectOption hasCheckbox key="riskLow" value="Low" isSelected={filters.risk.includes('Low')}>
         Low
       </SelectOption>
-      <SelectOption
-        hasCheckbox
-        key="riskMedium"
-        itemId="Medium"
-        isSelected={filters.risk.includes("Medium")}
-      >
+      <SelectOption hasCheckbox key="riskMedium" value="Medium" isSelected={filters.risk.includes('Medium')}>
         Medium
       </SelectOption>
-      <SelectOption
-        hasCheckbox
-        key="riskHigh"
-        itemId="High"
-        isSelected={filters.risk.includes("High")}
-      >
+      <SelectOption hasCheckbox key="riskHigh" value="High" isSelected={filters.risk.includes('High')}>
         High
       </SelectOption>
     </SelectList>
@@ -132,7 +102,7 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
         <ToolbarFilter
           chips={filters.status}
           deleteChip={(category, chip) => onDelete(category as string, chip as string)}
-          deleteChipGroup={category => onDeleteGroup(category as string)}
+          deleteChipGroup={(category) => onDeleteGroup(category as string)}
           categoryName="Status"
         >
           <Select
@@ -153,10 +123,10 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
                 {filters.status.length > 0 && <Badge isRead>{filters.status.length}</Badge>}
               </MenuToggle>
             )}
-            onSelect={(event, selection) => onSelect("Status", event, selection as string)}
+            onSelect={(event, selection) => onSelect('Status', event, selection as string)}
             selected={filters.status}
             isOpen={statusIsExpanded}
-            onOpenChange={isOpen => setStatusIsExpanded(isOpen)}
+            onOpenChange={(isOpen) => setStatusIsExpanded(isOpen)}
           >
             {statusMenuItems}
           </Select>
@@ -164,7 +134,7 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
         <ToolbarFilter
           chips={filters.risk}
           deleteChip={(category, chip) => onDelete(category as string, chip as string)}
-          deleteChipGroup={category => onDeleteGroup(category as string)}
+          deleteChipGroup={(category) => onDeleteGroup(category as string)}
           categoryName="Risk"
         >
           <Select
@@ -185,10 +155,10 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
                 {filters.risk.length > 0 && <Badge isRead>{filters.risk.length}</Badge>}
               </MenuToggle>
             )}
-            onSelect={(event, selection) => onSelect("Risk", event, selection as string)}
+            onSelect={(event, selection) => onSelect('Risk', event, selection as string)}
             selected={filters.risk}
             isOpen={riskIsExpanded}
-            onOpenChange={isOpen => setRiskIsExpanded(isOpen)}
+            onOpenChange={(isOpen) => setRiskIsExpanded(isOpen)}
           >
             {riskMenuItems}
           </Select>

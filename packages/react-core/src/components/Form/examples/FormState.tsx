@@ -76,15 +76,15 @@ export const FormState = () => {
               </MenuToggle>
             )}
             onOpenChange={(isOpen) => setIsSelectOpen(isOpen)}
-            onSelect={(_, itemId) => {
-              setValue('select-id', itemId as string);
+            onSelect={(_, value) => {
+              setValue('select-id', value as string);
               setIsSelectOpen(false);
             }}
           >
             <SelectList>
-              <SelectOption itemId="Option 1">Option 1</SelectOption>
-              <SelectOption itemId="Option 2">Option 2</SelectOption>
-              <SelectOption itemId="Option 3">Option 3</SelectOption>
+              <SelectOption value="Option 1">Option 1</SelectOption>
+              <SelectOption value="Option 2">Option 2</SelectOption>
+              <SelectOption value="Option 3">Option 3</SelectOption>
             </SelectList>
           </Select>
 

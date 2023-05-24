@@ -443,16 +443,56 @@ class CardViewBasic extends React.Component {
 
     const filterDropdownItems = (
       <SelectList>
-        <SelectOption hasCheckbox key="patternfly" itemId="PatternFly" isSelected={filters.products.includes("PatternFly")}>PatternFly</SelectOption>
-        <SelectOption hasCheckbox key="activemq" itemId="ActiveMQ" isSelected={filters.products.includes("ActiveMQ")}>ActiveMQ</SelectOption>
-        <SelectOption hasCheckbox key="apachespark" itemId="Apache Spark" isSelected={filters.products.includes("Apache Spark")}>Apache Spark</SelectOption>
-        <SelectOption hasCheckbox key="avro" itemId="Avro" isSelected={filters.products.includes("Avro")}>Avro</SelectOption>
-        <SelectOption hasCheckbox key="azureservices" itemId="Azure Services" isSelected={filters.products.includes("Azure Services")}>Azure Services</SelectOption>
-        <SelectOption hasCheckbox key="crypto" itemId="Crypto" isSelected={filters.products.includes("Crypto")}>Crypto</SelectOption>
-        <SelectOption hasCheckbox key="dropbox" itemId="DropBox" isSelected={filters.products.includes("DropBox")}>DropBox</SelectOption>
-        <SelectOption hasCheckbox key="jbossdatagrid" itemId="JBoss Data Grid" isSelected={filters.products.includes("JBoss Data Grid")}>JBoss Data Grid</SelectOption>
-        <SelectOption hasCheckbox key="rest" itemId="REST" isSelected={filters.products.includes("REST")}>REST</SelectOption>
-        <SelectOption hasCheckbox key="swagger" itemId="SWAGGER" isSelected={filters.products.includes("SWAGGER")}>SWAGGER</SelectOption>
+        <SelectOption
+          hasCheckbox
+          key="patternfly"
+          value="PatternFly"
+          isSelected={filters.products.includes('PatternFly')}
+        >
+          PatternFly
+        </SelectOption>
+        <SelectOption hasCheckbox key="activemq" value="ActiveMQ" isSelected={filters.products.includes('ActiveMQ')}>
+          ActiveMQ
+        </SelectOption>
+        <SelectOption
+          hasCheckbox
+          key="apachespark"
+          value="Apache Spark"
+          isSelected={filters.products.includes('Apache Spark')}
+        >
+          Apache Spark
+        </SelectOption>
+        <SelectOption hasCheckbox key="avro" value="Avro" isSelected={filters.products.includes('Avro')}>
+          Avro
+        </SelectOption>
+        <SelectOption
+          hasCheckbox
+          key="azureservices"
+          value="Azure Services"
+          isSelected={filters.products.includes('Azure Services')}
+        >
+          Azure Services
+        </SelectOption>
+        <SelectOption hasCheckbox key="crypto" value="Crypto" isSelected={filters.products.includes('Crypto')}>
+          Crypto
+        </SelectOption>
+        <SelectOption hasCheckbox key="dropbox" value="DropBox" isSelected={filters.products.includes('DropBox')}>
+          DropBox
+        </SelectOption>
+        <SelectOption
+          hasCheckbox
+          key="jbossdatagrid"
+          value="JBoss Data Grid"
+          isSelected={filters.products.includes('JBoss Data Grid')}
+        >
+          JBoss Data Grid
+        </SelectOption>
+        <SelectOption hasCheckbox key="rest" value="REST" isSelected={filters.products.includes('REST')}>
+          REST
+        </SelectOption>
+        <SelectOption hasCheckbox key="swagger" value="SWAGGER" isSelected={filters.products.includes('SWAGGER')}>
+          SWAGGER
+        </SelectOption>
       </SelectList>
     );
 
@@ -462,11 +502,7 @@ class CardViewBasic extends React.Component {
           aria-label="Products"
           role="menu"
           toggle={(toggleRef) => (
-            <MenuToggle
-              ref={toggleRef}
-              onClick={this.onToolbarDropdownToggle}
-              isExpanded={isLowerToolbarDropdownOpen}
-            >
+            <MenuToggle ref={toggleRef} onClick={this.onToolbarDropdownToggle} isExpanded={isLowerToolbarDropdownOpen}>
               Filter by creator name
               {filters.products.length > 0 && <Badge isRead>{filters.products.length}</Badge>}
             </MenuToggle>
@@ -576,7 +612,7 @@ class CardViewBasic extends React.Component {
       restIcon,
       swaggerIcon
     };
-    
+
     const filtered =
       filters.products.length > 0
         ? data.filter((card) => {

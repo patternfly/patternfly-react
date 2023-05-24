@@ -1277,16 +1277,16 @@ const UtilizationCard3: React.FunctionComponent = () => {
 
   const selectItems = (
     <SelectList>
-      <SelectOption key="option1" itemId="Last hour">
+      <SelectOption key="option1" value="Last hour">
         Last hour
       </SelectOption>
-      <SelectOption key="option2" itemId="Last 6 hours">
+      <SelectOption key="option2" value="Last 6 hours">
         Last 6 hours
       </SelectOption>
-      <SelectOption key="option3" itemId="Last 24 hours">
+      <SelectOption key="option3" value="Last 24 hours">
         Last 24 hours
       </SelectOption>
-      <SelectOption key="option4" itemId="Last 7 days">
+      <SelectOption key="option4" value="Last 7 days">
         Last 7 days
       </SelectOption>
     </SelectList>
@@ -2556,16 +2556,16 @@ const TrendCard1: React.FunctionComponent = () => {
 
   const selectItems = (
     <SelectList>
-      <SelectOption key="option1" itemId="Last hour">
+      <SelectOption key="option1" value="Last hour">
         Last hour
       </SelectOption>
-      <SelectOption key="option2" itemId="Last 6 hours">
+      <SelectOption key="option2" value="Last 6 hours">
         Last 6 hours
       </SelectOption>
-      <SelectOption key="option3" itemId="Last 24 hours">
+      <SelectOption key="option3" value="Last 24 hours">
         Last 24 hours
       </SelectOption>
-      <SelectOption key="option4" itemId="Last 7 days">
+      <SelectOption key="option4" value="Last 7 days">
         Last 7 days
       </SelectOption>
     </SelectList>
@@ -2753,16 +2753,16 @@ CardLogViewDemo = () => {
 
   const selectItems = (
     <SelectList>
-      <SelectOption key="option1" itemId="Last hour">
+      <SelectOption key="option1" value="Last hour">
         Last hour
       </SelectOption>
-      <SelectOption key="option2" itemId="Last 6 hours">
+      <SelectOption key="option2" value="Last 6 hours">
         Last 6 hours
       </SelectOption>
-      <SelectOption key="option3" itemId="Last 24 hours">
+      <SelectOption key="option3" value="Last 24 hours">
         Last 24 hours
       </SelectOption>
-      <SelectOption key="option4" itemId="Last 7 days">
+      <SelectOption key="option4" value="Last 7 days">
         Last 7 days
       </SelectOption>
     </SelectList>
@@ -2887,13 +2887,13 @@ CardEventViewDemo = () => {
 
   const selectItems = (
     <SelectList>
-      <SelectOption itemId="Success" key="option1">
+      <SelectOption value="Success" key="option1">
         Success
       </SelectOption>
-      <SelectOption itemId="Error" key="option2">
+      <SelectOption value="Error" key="option2">
         Error
       </SelectOption>
-      <SelectOption itemId="Warning" key="option3">
+      <SelectOption value="Warning" key="option3">
         Error
       </SelectOption>
     </SelectList>

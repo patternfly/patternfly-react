@@ -16,12 +16,12 @@ import {
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 let initialSelectOptions: SelectOptionProps[] = [
-  { itemId: 'Alabama', children: 'Alabama' },
-  { itemId: 'Florida', children: 'Florida' },
-  { itemId: 'New Jersey', children: 'New Jersey' },
-  { itemId: 'New Mexico', children: 'New Mexico' },
-  { itemId: 'New York', children: 'New York' },
-  { itemId: 'North Carolina', children: 'North Carolina' }
+  { value: 'Alabama', children: 'Alabama' },
+  { value: 'Florida', children: 'Florida' },
+  { value: 'New Jersey', children: 'New Jersey' },
+  { value: 'New Mexico', children: 'New Mexico' },
+  { value: 'New York', children: 'New York' },
+  { value: 'North Carolina', children: 'North Carolina' }
 ];
 
 export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
@@ -45,7 +45,7 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
 
       // When no options are found after filtering, display creation option
       if (!newSelectOptions.length) {
-        newSelectOptions = [{ isDisabled: false, children: `Create new option "${inputValue}"`, itemId: 'create' }];
+        newSelectOptions = [{ isDisabled: false, children: `Create new option "${inputValue}"`, value: 'create' }];
       }
 
       // Open the menu when the input value changes and the new value is not empty
@@ -83,7 +83,7 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
 
       setFocusedItemIndex(indexToFocus);
       const focusedItem = selectOptions.filter((option) => !option.isDisabled)[indexToFocus];
-      setActiveItem(`select-multi-create-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
+      setActiveItem(`select-multi-create-typeahead-${focusedItem.value.replace(' ', '-')}`);
     }
   };
 
@@ -97,8 +97,8 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
       case 'Enter':
         if (!isOpen) {
           setIsOpen((prevIsOpen) => !prevIsOpen);
-        } else if (isOpen && focusedItem.itemId !== 'no results') {
-          onSelect(focusedItem.itemId as string);
+        } else if (isOpen && focusedItem.value !== 'no results') {
+          onSelect(focusedItem.value as string);
         }
         break;
       case 'Tab':
@@ -122,11 +122,11 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
     setInputValue(value);
   };
 
-  const onSelect = (itemId: string) => {
-    if (itemId) {
-      if (itemId === 'create') {
-        if (!initialSelectOptions.some((item) => item.itemId === inputValue)) {
-          initialSelectOptions = [...initialSelectOptions, { itemId: inputValue, children: inputValue }];
+  const onSelect = (value: string) => {
+    if (value) {
+      if (value === 'create') {
+        if (!initialSelectOptions.some((item) => item.value === inputValue)) {
+          initialSelectOptions = [...initialSelectOptions, { value: inputValue, children: inputValue }];
         }
         setSelected(
           selected.includes(inputValue)
@@ -136,9 +136,9 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
         setOnCreation(!onCreation);
       } else {
         // eslint-disable-next-line no-console
-        console.log('selected', itemId);
+        console.log('selected', value);
         setSelected(
-          selected.includes(itemId) ? selected.filter((selection) => selection !== itemId) : [...selected, itemId]
+          selected.includes(value) ? selected.filter((selection) => selection !== value) : [...selected, value]
         );
       }
     }
@@ -208,10 +208,10 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
       <SelectList isAriaMultiselectable id="select-multi-create-typeahead-listbox">
         {selectOptions.map((option, index) => (
           <SelectOption
-            key={option.itemId || option.children}
+            key={option.value || option.children}
             isFocused={focusedItemIndex === index}
             className={option.className}
-            id={`select-multi-create-typeahead-${option.itemId.replace(' ', '-')}`}
+            id={`select-multi-create-typeahead-${option.value.replace(' ', '-')}`}
             {...option}
             ref={null}
           />

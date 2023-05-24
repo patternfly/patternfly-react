@@ -24,12 +24,12 @@ export const SelectFooter: React.FunctionComponent = () => {
     </MenuToggle>
   );
 
-  function onSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
-    if (typeof itemId === 'undefined') {
+  function onSelect(event: React.MouseEvent | undefined, value: string | number | undefined) {
+    if (typeof value === 'undefined') {
       return;
     }
 
-    setSelected(itemId.toString());
+    setSelected(value.toString());
   }
 
   return (
@@ -43,9 +43,9 @@ export const SelectFooter: React.FunctionComponent = () => {
       selected={selected}
     >
       <SelectList>
-        <SelectOption itemId="Option 1">Option 1</SelectOption>
-        <SelectOption itemId="Option 2">Option 2</SelectOption>
-        <SelectOption itemId="Option 3">Option 3</SelectOption>
+        <SelectOption value="Option 1">Option 1</SelectOption>
+        <SelectOption value="Option 2">Option 2</SelectOption>
+        <SelectOption value="Option 3">Option 3</SelectOption>
       </SelectList>
       <MenuFooter>
         <Button variant="link" isInline>

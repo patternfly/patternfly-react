@@ -89,19 +89,19 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
 
   const statusMenuItems = (
     <SelectList>
-      <SelectOption hasCheckbox key="statusNew" itemId="New" isSelected={filters.status.includes('New')}>
+      <SelectOption hasCheckbox key="statusNew" value="New" isSelected={filters.status.includes('New')}>
         New
       </SelectOption>
-      <SelectOption hasCheckbox key="statusPending" itemId="Pending" isSelected={filters.status.includes('Pending')}>
+      <SelectOption hasCheckbox key="statusPending" value="Pending" isSelected={filters.status.includes('Pending')}>
         Pending
       </SelectOption>
-      <SelectOption hasCheckbox key="statusRunning" itemId="Running" isSelected={filters.status.includes('Running')}>
+      <SelectOption hasCheckbox key="statusRunning" value="Running" isSelected={filters.status.includes('Running')}>
         Running
       </SelectOption>
       <SelectOption
         hasCheckbox
         key="statusCancelled"
-        itemId="Cancelled"
+        value="Cancelled"
         isSelected={filters.status.includes('Cancelled')}
       >
         Cancelled
@@ -111,13 +111,13 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
 
   const riskMenuItems = (
     <SelectList>
-      <SelectOption hasCheckbox key="riskLow" itemId="Low" isSelected={filters.risk.includes('Low')}>
+      <SelectOption hasCheckbox key="riskLow" value="Low" isSelected={filters.risk.includes('Low')}>
         Low
       </SelectOption>
-      <SelectOption hasCheckbox key="riskMedium" itemId="Medium" isSelected={filters.risk.includes('Medium')}>
+      <SelectOption hasCheckbox key="riskMedium" value="Medium" isSelected={filters.risk.includes('Medium')}>
         Medium
       </SelectOption>
-      <SelectOption hasCheckbox key="riskHigh" itemId="High" isSelected={filters.risk.includes('High')}>
+      <SelectOption hasCheckbox key="riskHigh" value="High" isSelected={filters.risk.includes('High')}>
         High
       </SelectOption>
     </SelectList>

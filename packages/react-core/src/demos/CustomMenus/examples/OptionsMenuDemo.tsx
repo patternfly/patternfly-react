@@ -22,22 +22,22 @@ export const OptionsMenuDemo: React.FunctionComponent = () => {
       ref={menuRef}
       id="options-menu"
       selected={selected}
-      onSelect={(_ev, itemId) => itemId && setSelected(itemId.toString())}
+      onSelect={(_ev, value) => value && setSelected(value.toString())}
     >
       <SelectList>
-        <SelectOption itemId="0" isSelected={selected === '0'}>
+        <SelectOption value="0" isSelected={selected === '0'}>
           Option 1
         </SelectOption>
-        <SelectOption itemId="1" isSelected={selected === '1'} isDisabled>
+        <SelectOption value="1" isSelected={selected === '1'} isDisabled>
           Disabled Option
         </SelectOption>
         <Divider key="group1-divider" />
         <SelectGroup label="Group 1">
           <SelectList>
-            <SelectOption itemId="2" isSelected={selected === '2'}>
+            <SelectOption value="2" isSelected={selected === '2'}>
               Option 1
             </SelectOption>
-            <SelectOption itemId="3" isSelected={selected === '3'}>
+            <SelectOption value="3" isSelected={selected === '3'}>
               Option 2
             </SelectOption>
           </SelectList>
@@ -45,10 +45,10 @@ export const OptionsMenuDemo: React.FunctionComponent = () => {
         <Divider key="group2-divider" />
         <SelectGroup label="Group 2">
           <SelectList>
-            <SelectOption itemId="4" isSelected={selected === '4'}>
+            <SelectOption value="4" isSelected={selected === '4'}>
               Option 1
             </SelectOption>
-            <SelectOption itemId="5" isSelected={selected === '5'}>
+            <SelectOption value="5" isSelected={selected === '5'}>
               Option 2
             </SelectOption>
           </SelectList>

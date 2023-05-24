@@ -972,9 +972,9 @@ class FilterTableDemo extends React.Component {
     const { isCategoryDropdownOpen, currentCategory } = this.state;
 
     const categoryMenuItems = [
-      <SelectOption key="cat1" itemId="Location">Location</SelectOption>,
-      <SelectOption key="cat2" itemId="Name">Name</SelectOption>,
-      <SelectOption key="cat3" itemId="Status">Status</SelectOption>
+      <SelectOption key="cat1" value="Location">Location</SelectOption>,
+      <SelectOption key="cat2" value="Name">Name</SelectOption>,
+      <SelectOption key="cat3" value="Status">Status</SelectOption>
     ];
 
     return (
@@ -1010,17 +1010,17 @@ class FilterTableDemo extends React.Component {
     const { currentCategory, isFilterDropdownOpen, inputValue, filters } = this.state;
 
     const locationMenuItems = [
-      <SelectOption key="raleigh" itemId="Raleigh">Raleigh</SelectOption>,
-      <SelectOption key="san francisco" itemId="San Francisco">San Francisco</SelectOption>,
-      <SelectOption key="boston" itemId="Boston">Boston</SelectOption>,
-      <SelectOption key="atlanta" itemId="Atlanta">Atlanta</SelectOption>,
+      <SelectOption key="raleigh" value="Raleigh">Raleigh</SelectOption>,
+      <SelectOption key="san francisco" value="San Francisco">San Francisco</SelectOption>,
+      <SelectOption key="boston" value="Boston">Boston</SelectOption>,
+      <SelectOption key="atlanta" value="Atlanta">Atlanta</SelectOption>,
     ];
 
     const statusMenuItems = [
       <SelectOption
         hasCheckbox
         key="statusRunning"
-        itemId="Running"
+        value="Running"
         isSelected={filters.status.includes("Running")}
       >
         Running
@@ -1028,7 +1028,7 @@ class FilterTableDemo extends React.Component {
       <SelectOption
         hasCheckbox
         key="statusStopped"
-        itemId="Stopped"
+        value="Stopped"
         isSelected={filters.status.includes("Stopped")}
       >
         Stopped
@@ -1036,7 +1036,7 @@ class FilterTableDemo extends React.Component {
       <SelectOption
         hasCheckbox
         key="statusDown"
-        itemId="Down"
+        value="Down"
         isSelected={filters.status.includes("Down")}
       >
         Down
@@ -1044,7 +1044,7 @@ class FilterTableDemo extends React.Component {
       <SelectOption
         hasCheckbox
         key="statusDegraded"
-        itemId="Degraded"
+        value="Degraded"
         isSelected={filters.status.includes("Degraded")}
       >
         Degraded
@@ -1052,7 +1052,7 @@ class FilterTableDemo extends React.Component {
       <SelectOption
         hasCheckbox
         key="statusMaint"
-        itemId="Needs maintenance"
+        value="Needs maintenance"
         isSelected={filters.status.includes("Needs maintenance")}
       >
         Needs maintenance
@@ -1320,25 +1320,25 @@ import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
     super(props);
-    this.columns = { 
+    (this.columns = {
       firstColumn: 'First column',
       secondColumn: 'Second column',
       thirdColumn: 'Third column'
-    },
-    this.defaultRows = [
-       { firstColumn: 'Row 1 column 1', secondColumn: 'Row 1 column 2', thirdColumn: 'Row 1 column 3' },
-       { firstColumn: 'Row 2 column 1', secondColumn: 'Row 2 column 2', thirdColumn: 'Row 2 column 3' },
-       { firstColumn: 'Row 3 column 1', secondColumn: 'Row 3 column 2', thirdColumn: 'Row 3 column 3' },
-       { firstColumn: 'Row 4 column 1', secondColumn: 'Row 4 column 2', thirdColumn: 'Row 4 column 3' },
-       { firstColumn: 'Row 5 column 1', secondColumn: 'Row 5 column 2', thirdColumn: 'Row 5 column 3' },
-       { firstColumn: 'Row 6 column 1', secondColumn: 'Row 6 column 2', thirdColumn: 'Row 6 column 3' },
-       { firstColumn: 'Row 7 column 1', secondColumn: 'Row 7 column 2', thirdColumn: 'Row 7 column 3' },
-       { firstColumn: 'Row 8 column 1', secondColumn: 'Row 8 column 2', thirdColumn: 'Row 8 column 3' },
-       { firstColumn: 'Row 9 column 1', secondColumn: 'Row 9 column 2', thirdColumn: 'Row 9 column 3' },
-       { firstColumn: 'Row 10 column 1', secondColumn: 'Row 10 column 2', thirdColumn: 'Row 10 column 3' },
-       { firstColumn: 'Row 11 column 1', secondColumn: 'Row 11 column 2', thirdColumn: 'Row 11 column 3' },
-       { firstColumn: 'Row 12 column 1', secondColumn: 'Row 12 column 2', thirdColumn: 'Row 12 column 3' }
-    ];
+    }),
+      (this.defaultRows = [
+        { firstColumn: 'Row 1 column 1', secondColumn: 'Row 1 column 2', thirdColumn: 'Row 1 column 3' },
+        { firstColumn: 'Row 2 column 1', secondColumn: 'Row 2 column 2', thirdColumn: 'Row 2 column 3' },
+        { firstColumn: 'Row 3 column 1', secondColumn: 'Row 3 column 2', thirdColumn: 'Row 3 column 3' },
+        { firstColumn: 'Row 4 column 1', secondColumn: 'Row 4 column 2', thirdColumn: 'Row 4 column 3' },
+        { firstColumn: 'Row 5 column 1', secondColumn: 'Row 5 column 2', thirdColumn: 'Row 5 column 3' },
+        { firstColumn: 'Row 6 column 1', secondColumn: 'Row 6 column 2', thirdColumn: 'Row 6 column 3' },
+        { firstColumn: 'Row 7 column 1', secondColumn: 'Row 7 column 2', thirdColumn: 'Row 7 column 3' },
+        { firstColumn: 'Row 8 column 1', secondColumn: 'Row 8 column 2', thirdColumn: 'Row 8 column 3' },
+        { firstColumn: 'Row 9 column 1', secondColumn: 'Row 9 column 2', thirdColumn: 'Row 9 column 3' },
+        { firstColumn: 'Row 10 column 1', secondColumn: 'Row 10 column 2', thirdColumn: 'Row 10 column 3' },
+        { firstColumn: 'Row 11 column 1', secondColumn: 'Row 11 column 2', thirdColumn: 'Row 11 column 3' },
+        { firstColumn: 'Row 12 column 1', secondColumn: 'Row 12 column 2', thirdColumn: 'Row 12 column 3' }
+      ]);
     this.defaultPerPage = 10;
     this.state = {
       perPage: this.defaultPerPage,
