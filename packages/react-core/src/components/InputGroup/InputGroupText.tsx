@@ -12,6 +12,8 @@ export interface InputGroupTextProps extends React.HTMLProps<HTMLSpanElement | H
   component?: React.ReactNode;
   /** Flag to to indicate if the input group item is plain. */
   isPlain?: boolean;
+  /** Flag to indicate if the input group text is disabled. */
+  isDisabled?: boolean;
 }
 
 export const InputGroupText: React.FunctionComponent<InputGroupTextProps> = ({
@@ -19,18 +21,13 @@ export const InputGroupText: React.FunctionComponent<InputGroupTextProps> = ({
   component = 'span',
   children,
   isPlain,
+  isDisabled,
   ...props
 }: InputGroupTextProps) => {
   const Component = component as any;
   return (
-    <InputGroupItem isPlain={isPlain} isBox={true}>
-      <Component
-        className={css(
-          styles.inputGroupText,
-          className
-        )}
-        {...props}
-      >
+    <InputGroupItem isPlain={isPlain} isBox isDisabled={isDisabled}>
+      <Component className={css(styles.inputGroupText, className)} {...props}>
         {children}
       </Component>
     </InputGroupItem>
