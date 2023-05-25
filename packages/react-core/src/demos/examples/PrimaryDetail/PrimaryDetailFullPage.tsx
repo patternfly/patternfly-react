@@ -50,8 +50,7 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
-interface SelectOptionType extends Omit<SelectOptionProps, 'children' | 'itemId'> {
-  value: string;
+interface SelectOptionType extends Omit<SelectOptionProps, 'children'> {
   label: string;
 }
 
@@ -78,13 +77,13 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
   const [riskSelected, setRiskSelected] = React.useState<string | number | undefined>('Risk');
   const [selectedDataListItemId, setSelectedDataListItemId] = React.useState('');
 
-  const onStatusSelect = (_event: React.MouseEvent<Element> | undefined, itemId: string | number | undefined) => {
-    setStatusSelected(itemId);
+  const onStatusSelect = (_event: React.MouseEvent<Element> | undefined, value: string | number | undefined) => {
+    setStatusSelected(value);
     setStatusIsOpen(false);
   };
 
-  const onRiskSelect = (_event: React.MouseEvent<Element> | undefined, itemId: string | number | undefined) => {
-    setRiskSelected(itemId);
+  const onRiskSelect = (_event: React.MouseEvent<Element> | undefined, value: string | number | undefined) => {
+    setRiskSelected(value);
     setRiskIsOpen(false);
   };
 
@@ -142,7 +141,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
             onSelect={onStatusSelect}
           >
             {statusOptions.map(({ label, value }) => (
-              <SelectOption key={value} itemId={value}>
+              <SelectOption key={label} value={value}>
                 {label}
               </SelectOption>
             ))}
@@ -166,7 +165,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
             onSelect={onRiskSelect}
           >
             {riskOptions.map(({ label, value }) => (
-              <SelectOption key={value} itemId={value}>
+              <SelectOption key={label} value={value}>
                 {label}
               </SelectOption>
             ))}
