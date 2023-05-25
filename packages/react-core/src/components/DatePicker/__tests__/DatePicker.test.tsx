@@ -1,9 +1,12 @@
-import { screen, render } from '@testing-library/react';
-import { DatePicker } from '../DatePicker';
 import React from 'react';
+
+import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-jest.mock('../../../helpers/util.ts')
+import { HelperText, HelperTextItem } from '../../HelperText';
+import { DatePicker } from '../DatePicker';
+
+jest.mock('../../../helpers/util.ts');
 
 test('disabled date picker', () => {
   const { asFragment } = render(<DatePicker value="2020-11-20" isDisabled aria-label="disabled date picker" />);
@@ -60,4 +63,39 @@ test('With popover opened', async () => {
   await screen.findByRole('button', { name: 'Previous month' });
 
   expect(asFragment()).toMatchSnapshot();
-})
+});
+
+test('Shows helperText instead of "Invalid date" when no error exists', () => {
+  render(
+    <DatePicker
+      helperText={
+        <HelperText>
+          <HelperTextItem>Help me</HelperTextItem>
+        </HelperText>
+      }
+    />
+  );
+
+  expect(screen.queryByText('Invalid date')).not.toBeInTheDocument();
+  expect(screen.getByText('Help me')).toBeVisible();
+});
+
+test('Shows "Invalid date" instead of helperText when an error exists', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <DatePicker
+      helperText={
+        <HelperText>
+          <HelperTextItem>Help me</HelperTextItem>
+        </HelperText>
+      }
+    />
+  );
+
+  await user.type(screen.getByRole('textbox'), 'not a date');
+  await user.click(document.body);
+
+  expect(screen.queryByText('Help me')).not.toBeInTheDocument();
+  expect(screen.getByText('Invalid date')).toBeVisible();
+});

@@ -277,12 +277,15 @@ const DatePickerBase = (
           </InputGroup>
         </div>
       </Popover>
-      {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
-      {errorText.trim() && (
+      {(errorText || helperText) && (
         <div className={styles.datePickerHelperText}>
-          <HelperText>
-            <HelperTextItem variant="error">{errorText}</HelperTextItem>
-          </HelperText>
+          {errorText ? (
+            <HelperText>
+              <HelperTextItem variant="error">{errorText}</HelperTextItem>
+            </HelperText>
+          ) : (
+            helperText
+          )}
         </div>
       )}
     </div>
