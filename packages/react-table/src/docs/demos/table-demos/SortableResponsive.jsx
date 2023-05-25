@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Button,
   Card,
@@ -21,7 +22,6 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { rows, columns } from '../../examples/Data.jsx';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
@@ -31,6 +31,8 @@ import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amou
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+
+import { rows, columns } from './sampleData';
 
 export const ComposableTableSortable = () => {
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);

@@ -1,6 +1,4 @@
-const getRandomInteger = (min, max) => (
-  Math.floor(Math.random() * (max - min + 1)) + min
-);
+const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const columns = [
   'Servers',
@@ -14,7 +12,7 @@ export const columns = [
 ];
 
 export const rows = [
-  {  
+  {
     name: 'US-Node 1',
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
@@ -24,7 +22,7 @@ export const rows = [
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node1'
   },
-  {    
+  {
     name: 'US-Node 2',
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
@@ -34,7 +32,7 @@ export const rows = [
     lastModified: '5 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node2'
   },
-  {    
+  {
     name: 'US-Node 3',
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
@@ -734,7 +732,7 @@ export const rows = [
     lastModified: '20 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node13'
   },
-  {    
+  {
     name: 'Bangalore-Node 14',
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
@@ -744,7 +742,7 @@ export const rows = [
     lastModified: '4 hours ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node14'
   },
-  {    
+  {
     name: 'Bangalore-Node 15',
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),

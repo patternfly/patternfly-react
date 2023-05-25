@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Button,
   Card,
@@ -15,10 +16,10 @@ import {
   SelectOption
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { rows, columns } from '../../examples/Data.jsx';
-
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+
+import { rows, columns } from './sampleData';
 
 export const StaticBottomPagination = () => {
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
