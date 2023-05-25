@@ -1,13 +1,7 @@
 import React from 'react';
 import { sortable, info } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import {
-  Toolbar,
-  ToolbarContent,
-  ToolbarItem,
-  MenuToggle,
-  MenuToggleElement
-} from '@patternfly/react-core';
+import { Toolbar, ToolbarContent, ToolbarItem, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
 import {
   Select as NewSelect,
   SelectGroup as NewSelectGroup,
@@ -111,7 +105,7 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
       ]
     }
   ];
-  const rows: TableProps['rows'] = sortedRepositories.map(repo => [
+  const rows: TableProps['rows'] = sortedRepositories.map((repo) => [
     repo.name,
     repo.branches,
     repo.prs,
@@ -127,13 +121,14 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
             <NewSelect
               isOpen={isSortDropdownOpen}
               selected={[activeSortDirection, activeSortIndex]}
-              onOpenChange={isOpen => setIsSortDropdownOpen(isOpen)}
-              onSelect={(event, itemId) => {
-                if (itemId === 'asc' || itemId === 'desc') {
-                  setActiveSortDirection(itemId as 'desc' | 'asc');
+              onOpenChange={(isOpen) => setIsSortDropdownOpen(isOpen)}
+              onSelect={(event, value) => {
+                if (value === 'asc' || value === 'desc') {
+                  setActiveSortDirection(value as 'desc' | 'asc');
                 } else {
-                  setActiveSortIndex(itemId as number);
-                  setActiveSortDirection(activeSortDirection !== null ? activeSortDirection : 'asc');                }
+                  setActiveSortIndex(value as number);
+                  setActiveSortDirection(activeSortDirection !== null ? activeSortDirection : 'asc');
+                }
               }}
               toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
                 <MenuToggle
@@ -150,11 +145,7 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
               <NewSelectGroup label="Sort column">
                 <NewSelectList>
                   {Object.values(columnNames).map((column, columnIndex) => (
-                    <NewSelectOption
-                      key={column}
-                      itemId={columnIndex}
-                      isSelected={activeSortIndex === columnIndex}
-                    >
+                    <NewSelectOption key={column} value={columnIndex} isSelected={activeSortIndex === columnIndex}>
                       {column}
                     </NewSelectOption>
                   ))}
@@ -162,18 +153,10 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
               </NewSelectGroup>
               <NewSelectGroup label="Sort direction">
                 <NewSelectList>
-                  <NewSelectOption
-                    isSelected={activeSortDirection === 'asc'}
-                    itemId="asc"
-                    key="ascending"
-                  >
+                  <NewSelectOption isSelected={activeSortDirection === 'asc'} value="asc" key="ascending">
                     Ascending
                   </NewSelectOption>
-                  <NewSelectOption
-                    isSelected={activeSortDirection === 'desc'}
-                    itemId="desc"
-                    key="descending"
-                  >
+                  <NewSelectOption isSelected={activeSortDirection === 'desc'} value="desc" key="descending">
                     Descending
                   </NewSelectOption>
                 </NewSelectList>

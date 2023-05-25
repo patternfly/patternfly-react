@@ -9,14 +9,14 @@ export const SelectCheckbox: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
-    console.log('selected', itemId);
+    console.log('selected', value);
 
-    if (selectedItems.includes(itemId as number)) {
-      setSelectedItems(selectedItems.filter((id) => id !== itemId));
+    if (selectedItems.includes(value as number)) {
+      setSelectedItems(selectedItems.filter((id) => id !== value));
     } else {
-      setSelectedItems([...selectedItems, itemId as number]);
+      setSelectedItems([...selectedItems, value as number]);
     }
   };
 
@@ -47,16 +47,16 @@ export const SelectCheckbox: React.FunctionComponent = () => {
       toggle={toggle}
     >
       <SelectList>
-        <SelectOption hasCheckbox itemId={0} isSelected={selectedItems.includes(0)}>
+        <SelectOption hasCheckbox value={0} isSelected={selectedItems.includes(0)}>
           Debug
         </SelectOption>
-        <SelectOption hasCheckbox itemId={1} isSelected={selectedItems.includes(1)}>
+        <SelectOption hasCheckbox value={1} isSelected={selectedItems.includes(1)}>
           Info
         </SelectOption>
-        <SelectOption hasCheckbox itemId={2} isSelected={selectedItems.includes(2)}>
+        <SelectOption hasCheckbox value={2} isSelected={selectedItems.includes(2)}>
           Warn
         </SelectOption>
-        <SelectOption hasCheckbox isDisabled itemId={4} isSelected={selectedItems.includes(4)}>
+        <SelectOption hasCheckbox isDisabled value={4} isSelected={selectedItems.includes(4)}>
           Error
         </SelectOption>
       </SelectList>

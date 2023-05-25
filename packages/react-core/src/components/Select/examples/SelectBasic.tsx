@@ -10,11 +10,11 @@ export const SelectBasic: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
-    console.log('selected', itemId);
+    console.log('selected', value);
 
-    setSelected(itemId as string);
+    setSelected(value as string);
     setIsOpen(false);
   };
 
@@ -53,9 +53,9 @@ export const SelectBasic: React.FunctionComponent = () => {
         shouldFocusToggleOnSelect
       >
         <SelectList>
-          <SelectOption itemId="Option 1">Option 1</SelectOption>
-          <SelectOption itemId="Option 2">Option 2</SelectOption>
-          <SelectOption itemId="Option 3">Option 3</SelectOption>
+          <SelectOption value="Option 1">Option 1</SelectOption>
+          <SelectOption value="Option 2">Option 2</SelectOption>
+          <SelectOption value="Option 3">Option 3</SelectOption>
         </SelectList>
       </Select>
     </React.Fragment>

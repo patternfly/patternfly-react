@@ -101,13 +101,14 @@ export const TableSortableCustom: React.FunctionComponent = () => {
             <Select
               isOpen={isSortDropdownOpen}
               selected={[activeSortDirection, activeSortIndex]}
-              onOpenChange={isOpen => setIsSortDropdownOpen(isOpen)}
-              onSelect={(event, itemId) => {
-                if (itemId === 'asc' || itemId === 'desc') {
-                  setActiveSortDirection(itemId as 'desc' | 'asc');
+              onOpenChange={(isOpen) => setIsSortDropdownOpen(isOpen)}
+              onSelect={(event, value) => {
+                if (value === 'asc' || value === 'desc') {
+                  setActiveSortDirection(value as 'desc' | 'asc');
                 } else {
-                  setActiveSortIndex(itemId as number);
-                  setActiveSortDirection(activeSortDirection !== null ? activeSortDirection : 'asc');                }
+                  setActiveSortIndex(value as number);
+                  setActiveSortDirection(activeSortDirection !== null ? activeSortDirection : 'asc');
+                }
               }}
               toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
                 <MenuToggle
@@ -124,11 +125,7 @@ export const TableSortableCustom: React.FunctionComponent = () => {
               <SelectGroup label="Sort column">
                 <SelectList>
                   {Object.values(columnNames).map((column, columnIndex) => (
-                    <SelectOption
-                      key={column}
-                      itemId={columnIndex}
-                      isSelected={activeSortIndex === columnIndex}
-                    >
+                    <SelectOption key={column} value={columnIndex} isSelected={activeSortIndex === columnIndex}>
                       {column}
                     </SelectOption>
                   ))}
@@ -136,18 +133,10 @@ export const TableSortableCustom: React.FunctionComponent = () => {
               </SelectGroup>
               <SelectGroup label="Sort direction">
                 <SelectList>
-                  <SelectOption
-                    isSelected={activeSortDirection === 'asc'}
-                    itemId="asc"
-                    key="ascending"
-                  >
+                  <SelectOption isSelected={activeSortDirection === 'asc'} value="asc" key="ascending">
                     Ascending
                   </SelectOption>
-                  <SelectOption
-                    isSelected={activeSortDirection === 'desc'}
-                    itemId="desc"
-                    key="descending"
-                  >
+                  <SelectOption isSelected={activeSortDirection === 'desc'} value="desc" key="descending">
                     Descending
                   </SelectOption>
                 </SelectList>

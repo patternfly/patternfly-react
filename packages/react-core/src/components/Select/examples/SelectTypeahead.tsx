@@ -14,12 +14,12 @@ import {
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 const initialSelectOptions: SelectOptionProps[] = [
-  { itemId: 'Alabama', children: 'Alabama' },
-  { itemId: 'Florida', children: 'Florida' },
-  { itemId: 'New Jersey', children: 'New Jersey' },
-  { itemId: 'New Mexico', children: 'New Mexico' },
-  { itemId: 'New York', children: 'New York' },
-  { itemId: 'North Carolina', children: 'North Carolina' }
+  { value: 'Alabama', children: 'Alabama' },
+  { value: 'Florida', children: 'Florida' },
+  { value: 'New Jersey', children: 'New Jersey' },
+  { value: 'New Mexico', children: 'New Mexico' },
+  { value: 'New York', children: 'New York' },
+  { value: 'North Carolina', children: 'North Carolina' }
 ];
 
 export const SelectBasic: React.FunctionComponent = () => {
@@ -44,7 +44,7 @@ export const SelectBasic: React.FunctionComponent = () => {
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
         newSelectOptions = [
-          { isDisabled: false, children: `No results found for "${filterValue}"`, itemId: 'no results' }
+          { isDisabled: false, children: `No results found for "${filterValue}"`, value: 'no results' }
         ];
       }
 
@@ -63,14 +63,14 @@ export const SelectBasic: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
-    console.log('selected', itemId);
+    console.log('selected', value);
 
-    if (itemId && itemId !== 'no results') {
-      setInputValue(itemId as string);
+    if (value && value !== 'no results') {
+      setInputValue(value as string);
       setFilterValue('');
-      setSelected(itemId as string);
+      setSelected(value as string);
     }
     setIsOpen(false);
     setFocusedItemIndex(null);
@@ -106,7 +106,7 @@ export const SelectBasic: React.FunctionComponent = () => {
 
       setFocusedItemIndex(indexToFocus);
       const focusedItem = selectOptions.filter((option) => !option.isDisabled)[indexToFocus];
-      setActiveItem(`select-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
+      setActiveItem(`select-typeahead-${focusedItem.value.replace(' ', '-')}`);
     }
   };
 
@@ -118,7 +118,7 @@ export const SelectBasic: React.FunctionComponent = () => {
     switch (event.key) {
       // Select the first available option
       case 'Enter':
-        if (isOpen && focusedItem.itemId !== 'no results') {
+        if (isOpen && focusedItem.value !== 'no results') {
           setInputValue(String(focusedItem.children));
           setFilterValue('');
           setSelected(String(focusedItem.children));
@@ -194,11 +194,11 @@ export const SelectBasic: React.FunctionComponent = () => {
       <SelectList id="select-typeahead-listbox">
         {selectOptions.map((option, index) => (
           <SelectOption
-            key={option.itemId || option.children}
+            key={option.value || option.children}
             isFocused={focusedItemIndex === index}
             className={option.className}
-            onClick={() => setSelected(option.itemId)}
-            id={`select-typeahead-${option.itemId.replace(' ', '-')}`}
+            onClick={() => setSelected(option.value)}
+            id={`select-typeahead-${option.value.replace(' ', '-')}`}
             {...option}
             ref={null}
           />

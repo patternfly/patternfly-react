@@ -18,7 +18,7 @@ export const OverflowMenuDropdownItem: React.FunctionComponent<OverflowMenuDropd
   <OverflowMenuContext.Consumer>
     {(value) =>
       (!isShared || value.isBelowBreakpoint) && (
-        <DropdownItem component="button" itemId={itemId} {...additionalProps}>
+        <DropdownItem component="button" value={itemId} {...additionalProps}>
           {children}
         </DropdownItem>
       )

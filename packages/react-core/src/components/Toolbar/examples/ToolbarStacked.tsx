@@ -106,11 +106,11 @@ export const ToolbarStacked: React.FunctionComponent = () => {
   );
   const splitButtonDropdownItems = (
     <>
-      <DropdownItem itemId={0} key="action">
+      <DropdownItem value={0} key="action">
         Action
       </DropdownItem>
       <DropdownItem
-        itemId={1}
+        value={1}
         key="link"
         to="#default-link2"
         // Prevent the default onClick functionality for example purposes
@@ -118,10 +118,10 @@ export const ToolbarStacked: React.FunctionComponent = () => {
       >
         Link
       </DropdownItem>
-      <DropdownItem itemId={2} isDisabled key="disabled action">
+      <DropdownItem value={2} isDisabled key="disabled action">
         Disabled Action
       </DropdownItem>
-      <DropdownItem itemId={3} isDisabled key="disabled link" to="#default-link4">
+      <DropdownItem value={3} isDisabled key="disabled link" to="#default-link4">
         Disabled Link
       </DropdownItem>
     </>
@@ -156,7 +156,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
         >
           <SelectList>
             {resourceOptions.map((option, index) => (
-              <SelectOption key={index} itemId={option}>
+              <SelectOption key={index} value={option}>
                 {option}
               </SelectOption>
             ))}
@@ -189,7 +189,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
         >
           <SelectList>
             {statusOptions.map((option, index) => (
-              <SelectOption key={index} itemId={option}>
+              <SelectOption key={index} value={option}>
                 {option}
               </SelectOption>
             ))}

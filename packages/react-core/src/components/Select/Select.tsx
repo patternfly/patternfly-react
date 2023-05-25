@@ -37,14 +37,14 @@ export interface SelectProps extends MenuProps, OUIAProps {
   className?: string;
   /** Flag to indicate if select is open */
   isOpen?: boolean;
-  /** Single itemId for single select menus, or array of itemIds for multi select. You can also specify isSelected on the SelectOption. */
+  /** Single select option value for single select menus, or array of select option values for multi select. You can also specify isSelected on the SelectOption. */
   selected?: any | any[];
   /** Select toggle. The toggle should either be a renderer function which forwards the given toggle ref, or a direct ReactNode that should be passed along with the toggleRef property. */
   toggle: SelectToggleProps | ((toggleRef: React.RefObject<any>) => React.ReactNode);
   /** Flag indicating the toggle should be focused after a selection. If this use case is too restrictive, the optional toggleRef property with a node toggle may be used to control focus. */
   shouldFocusToggleOnSelect?: boolean;
   /** Function callback when user selects an option. */
-  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => void;
+  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: string | number) => void;
   /** Callback to allow the select component to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing any keys specificed in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;
@@ -135,8 +135,8 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       role={role}
       className={css(className)}
       ref={menuRef}
-      onSelect={(event, itemId) => {
-        onSelect && onSelect(event, itemId);
+      onSelect={(event, value) => {
+        onSelect && onSelect(event, value);
         shouldFocusToggleOnSelect && toggleRef.current.focus();
       }}
       isPlain={isPlain}

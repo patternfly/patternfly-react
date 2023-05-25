@@ -51,7 +51,7 @@ export const StaticBottomPagination = () => {
     />
   );
 
-  const renderLabel = labelText => {
+  const renderLabel = (labelText) => {
     switch (labelText) {
       case 'Running':
         return (
@@ -88,23 +88,27 @@ export const StaticBottomPagination = () => {
             id="select-example"
             aria-label="Select Input"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-              <MenuToggle
-                ref={toggleRef}
-                onClick={() => setIsSelectOpen(!isSelectOpen)}
-                isExpanded={isSelectOpen}
-              >
+              <MenuToggle ref={toggleRef} onClick={() => setIsSelectOpen(!isSelectOpen)} isExpanded={isSelectOpen}>
                 <FilterIcon /> Status
               </MenuToggle>
             )}
             isOpen={isSelectOpen}
-            onOpenChange={isOpen => setIsSelectOpen(isOpen)}
+            onOpenChange={(isOpen) => setIsSelectOpen(isOpen)}
             onSelect={() => setIsSelectOpen(!isSelectOpen)}
           >
             {[
-              <SelectOption key={0} itemId="Debug">Debug</SelectOption>,
-              <SelectOption key={1} itemId="Info">Info</SelectOption>,
-              <SelectOption key={2} itemId="Warn">Warn</SelectOption>,
-              <SelectOption key={3} itemId="Error">Error</SelectOption>
+              <SelectOption key={0} value="Debug">
+                Debug
+              </SelectOption>,
+              <SelectOption key={1} value="Info">
+                Info
+              </SelectOption>,
+              <SelectOption key={2} value="Warn">
+                Warn
+              </SelectOption>,
+              <SelectOption key={3} value="Error">
+                Error
+              </SelectOption>
             ]}
           </Select>
         </ToolbarItem>

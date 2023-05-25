@@ -67,17 +67,17 @@ export const DateSelectDemo: React.FunctionComponent = () => {
         </MenuToggle>
       )}
       ref={menuRef}
-      onSelect={(_ev, itemId) => {
-        setSelected(itemId as number);
+      onSelect={(_ev, value) => {
+        setSelected(value as number);
         setIsOpen(false);
       }}
       selected={selected}
     >
       <SelectList>
-        <SelectOption itemId={0}>Today</SelectOption>
-        <SelectOption itemId={1}>Yesterday</SelectOption>
-        <SelectOption itemId={2}>Last 7 days</SelectOption>
-        <SelectOption itemId={3}>Last 14 days</SelectOption>
+        <SelectOption value={0}>Today</SelectOption>
+        <SelectOption value={1}>Yesterday</SelectOption>
+        <SelectOption value={2}>Last 7 days</SelectOption>
+        <SelectOption value={3}>Last 14 days</SelectOption>
       </SelectList>
     </Select>
   );

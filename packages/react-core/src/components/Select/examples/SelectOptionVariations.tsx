@@ -10,11 +10,11 @@ export const SelectOptionVariations: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
-    console.log('selected', itemId);
+    console.log('selected', value);
 
-    setSelected(itemId as string);
+    setSelected(value as string);
     setIsOpen(false);
   };
 
@@ -44,26 +44,26 @@ export const SelectOptionVariations: React.FunctionComponent = () => {
       shouldFocusToggleOnSelect
     >
       <SelectList>
-        <SelectOption itemId="Basic option">Basic option</SelectOption>
-        <SelectOption itemId="Option with description" description="This is a description">
+        <SelectOption value="Basic option">Basic option</SelectOption>
+        <SelectOption value="Option with description" description="This is a description">
           Option with description
         </SelectOption>
         <SelectOption
           to="#"
           // Prevent default clicking functionality for example purposes only
           onClick={(event) => event.preventDefault()}
-          itemId="Option with link"
+          value="Option with link"
           isExternalLink
         >
           Option with link
         </SelectOption>
-        <SelectOption itemId="Option with icon" icon={<BellIcon />}>
+        <SelectOption value="Option with icon" icon={<BellIcon />}>
           Option with icon
         </SelectOption>
-        <SelectOption itemId="Disabled option" isDisabled>
+        <SelectOption value="Disabled option" isDisabled>
           Disabled option
         </SelectOption>
-        <SelectOption itemId="See Menu for additional variations!">See Menu for additional variations!</SelectOption>
+        <SelectOption value="See Menu for additional variations!">See Menu for additional variations!</SelectOption>
       </SelectList>
     </Select>
   );

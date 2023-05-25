@@ -76,13 +76,15 @@ export const ToolbarComponentManagedToggleGroup: React.FunctionComponent = () =>
               </MenuToggle>
             )}
             onSelect={onStatusSelect}
-            onOpenChange={isOpen => setStatusIsExpanded(isOpen)}
+            onOpenChange={(isOpen) => setStatusIsExpanded(isOpen)}
             selected={statusSelected}
             isOpen={statusIsExpanded}
           >
             <SelectList>
               {statusOptions.map((option, index) => (
-                <SelectOption key={index} itemId={option}>{option}</SelectOption>
+                <SelectOption key={index} value={option}>
+                  {option}
+                </SelectOption>
               ))}
             </SelectList>
           </Select>
@@ -106,11 +108,13 @@ export const ToolbarComponentManagedToggleGroup: React.FunctionComponent = () =>
             onSelect={onRiskSelect}
             selected={riskSelected}
             isOpen={riskIsExpanded}
-            onOpenChange={isOpen => setRiskIsExpanded(isOpen)}
+            onOpenChange={(isOpen) => setRiskIsExpanded(isOpen)}
           >
             <SelectList>
               {riskOptions.map((option, index) => (
-                <SelectOption key={index} itemId={option}>{option}</SelectOption>
+                <SelectOption key={index} value={option}>
+                  {option}
+                </SelectOption>
               ))}
             </SelectList>
           </Select>

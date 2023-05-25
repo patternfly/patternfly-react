@@ -18,7 +18,7 @@ export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps
   /** Render item as disabled option */
   isDisabled?: boolean;
   /** Identifies the component in the dropdown onSelect callback */
-  itemId?: any;
+  value?: any;
   /** Callback for item click */
   onClick?: (event?: any) => void;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -32,7 +32,7 @@ const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({
   className,
   description,
   isDisabled,
-  itemId,
+  value,
   onClick,
   ouiaId,
   ouiaSafe,
@@ -45,7 +45,7 @@ const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({
       className={css(className)}
       description={description}
       isDisabled={isDisabled}
-      itemId={itemId}
+      itemId={value}
       onClick={onClick}
       ref={innerRef}
       {...ouiaProps}
@@ -56,8 +56,10 @@ const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({
   );
 };
 
-export const DropdownItem = React.forwardRef((props: DropdownItemProps, ref: React.Ref<HTMLAnchorElement | HTMLButtonElement>) => (
-  <DropdownItemBase {...props} innerRef={ref} />
-));
+export const DropdownItem = React.forwardRef(
+  (props: DropdownItemProps, ref: React.Ref<HTMLAnchorElement | HTMLButtonElement>) => (
+    <DropdownItemBase {...props} innerRef={ref} />
+  )
+);
 
 DropdownItem.displayName = 'DropdownItem';

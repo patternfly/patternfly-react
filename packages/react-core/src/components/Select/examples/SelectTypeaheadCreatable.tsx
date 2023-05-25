@@ -14,12 +14,12 @@ import {
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 let initialSelectOptions: SelectOptionProps[] = [
-  { itemId: 'Alabama', children: 'Alabama' },
-  { itemId: 'Florida', children: 'Florida' },
-  { itemId: 'New Jersey', children: 'New Jersey' },
-  { itemId: 'New Mexico', children: 'New Mexico' },
-  { itemId: 'New York', children: 'New York' },
-  { itemId: 'North Carolina', children: 'North Carolina' }
+  { value: 'Alabama', children: 'Alabama' },
+  { value: 'Florida', children: 'Florida' },
+  { value: 'New Jersey', children: 'New Jersey' },
+  { value: 'New Mexico', children: 'New Mexico' },
+  { value: 'New York', children: 'New York' },
+  { value: 'North Carolina', children: 'North Carolina' }
 ];
 
 export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
@@ -44,7 +44,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
 
       // When no options are found after filtering, display creation option
       if (!newSelectOptions.length) {
-        newSelectOptions = [{ isDisabled: false, children: `Create new option "${filterValue}"`, itemId: 'create' }];
+        newSelectOptions = [{ isDisabled: false, children: `Create new option "${filterValue}"`, value: 'create' }];
       }
 
       // Open the menu when the input value changes and the new value is not empty
@@ -62,23 +62,23 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
 
-    if (itemId) {
-      if (itemId === 'create') {
-        if (!initialSelectOptions.some((item) => item.itemId === filterValue)) {
-          initialSelectOptions = [...initialSelectOptions, { itemId: filterValue, children: filterValue }];
+    if (value) {
+      if (value === 'create') {
+        if (!initialSelectOptions.some((item) => item.value === filterValue)) {
+          initialSelectOptions = [...initialSelectOptions, { value: filterValue, children: filterValue }];
         }
         setSelected(filterValue);
         setOnCreation(!onCreation);
         setFilterValue('');
       } else {
         // eslint-disable-next-line no-console
-        console.log('selected', itemId);
-        setInputValue(itemId as string);
+        console.log('selected', value);
+        setInputValue(value as string);
         setFilterValue('');
-        setSelected(itemId as string);
+        setSelected(value as string);
       }
     }
 
@@ -116,7 +116,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
 
       setFocusedItemIndex(indexToFocus);
       const focusedItem = selectOptions.filter((option) => !option.isDisabled)[indexToFocus];
-      setActiveItem(`select-create-typeahead-${focusedItem.itemId.replace(' ', '-')}`);
+      setActiveItem(`select-create-typeahead-${focusedItem.value.replace(' ', '-')}`);
     }
   };
 
@@ -129,7 +129,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
       // Select the first available option
       case 'Enter':
         if (isOpen) {
-          onSelect(undefined, focusedItem.itemId as string);
+          onSelect(undefined, focusedItem.value as string);
           setIsOpen((prevIsOpen) => !prevIsOpen);
           setFocusedItemIndex(null);
           setActiveItem(null);
@@ -205,11 +205,11 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
       <SelectList id="select-create-typeahead-listbox">
         {selectOptions.map((option, index) => (
           <SelectOption
-            key={option.itemId || option.children}
+            key={option.value || option.children}
             isFocused={focusedItemIndex === index}
             className={option.className}
-            onClick={() => setSelected(option.itemId)}
-            id={`select-typeahead-${option.itemId.replace(' ', '-')}`}
+            onClick={() => setSelected(option.value)}
+            id={`select-typeahead-${option.value.replace(' ', '-')}`}
             {...option}
             ref={null}
           />

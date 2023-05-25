@@ -8,9 +8,9 @@ export const DropdownWithDescriptions: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: string | number | undefined) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
-    console.log('selected', itemId);
+    console.log('selected', value);
     setIsOpen(false);
   };
 
@@ -27,11 +27,11 @@ export const DropdownWithDescriptions: React.FunctionComponent = () => {
       shouldFocusToggleOnSelect
     >
       <DropdownList>
-        <DropdownItem itemId={0} key="action" description="This is a description">
+        <DropdownItem value={0} key="action" description="This is a description">
           Action
         </DropdownItem>
         <DropdownItem
-          itemId={1}
+          value={1}
           key="link"
           description="This is a very long description that describes the menu item"
           to="#default-link2"
@@ -40,10 +40,10 @@ export const DropdownWithDescriptions: React.FunctionComponent = () => {
         >
           Link
         </DropdownItem>
-        <DropdownItem itemId={2} isDisabled description="Disabled link description" key="disabled action">
+        <DropdownItem value={2} isDisabled description="Disabled link description" key="disabled action">
           Disabled action
         </DropdownItem>
-        <DropdownItem itemId={3} isDisabled description="This is a description" key="disabled link" to="#default-link4">
+        <DropdownItem value={3} isDisabled description="This is a description" key="disabled link" to="#default-link4">
           Disabled link
         </DropdownItem>
       </DropdownList>

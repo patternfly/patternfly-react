@@ -34,13 +34,12 @@ export const BulkSelectTableDemo = () => {
   };
 
   const setRowSelected = (row, isSelecting = true) =>
-    setSelectedRows(prevSelected => {
-      const otherSelectedRows = prevSelected.filter(r => r !== row.name);
+    setSelectedRows((prevSelected) => {
+      const otherSelectedRows = prevSelected.filter((r) => r !== row.name);
       return isSelecting ? [...otherSelectedRows, row.name] : otherSelectedRows;
     });
-  const selectAllRows = (isSelecting = true) =>
-    setSelectedRows(isSelecting ? rows.map(r => r.name) : []);
-  const selectPageRows = (isSelecting = true) => setSelectedRows(isSelecting ? paginatedRows.map(r => r.name) : []);
+  const selectAllRows = (isSelecting = true) => setSelectedRows(isSelecting ? rows.map((r) => r.name) : []);
+  const selectPageRows = (isSelecting = true) => setSelectedRows(isSelecting ? paginatedRows.map((r) => r.name) : []);
   const isRowSelected = (row) => selectedRows.includes(row.name);
 
   const buildPagination = (variant, isCompact) => (
@@ -67,29 +66,23 @@ export const BulkSelectTableDemo = () => {
 
     const items = (
       <>
-        <DropdownItem itemId="none">
-          Select none (0 items)
-        </DropdownItem>
-        <DropdownItem itemId="page">
-          Select page ({perPage} items)
-        </DropdownItem>
-        <DropdownItem itemId="all">
-          Select all ({rows.length} items)
-        </DropdownItem>
+        <DropdownItem value="none">Select none (0 items)</DropdownItem>
+        <DropdownItem value="page">Select page ({perPage} items)</DropdownItem>
+        <DropdownItem value="all">Select all ({rows.length} items)</DropdownItem>
       </>
     );
     return (
       <Dropdown
         role="menu"
-        onSelect={(_ev, itemId) => {
-          if (itemId === "all") {
+        onSelect={(_ev, value) => {
+          if (value === 'all') {
             selectAllRows(bulkSelection !== 'all');
-          } else if (itemId === "page") {
+          } else if (value === 'page') {
             selectPageRows(bulkSelection !== 'page');
           } else {
             setSelectedRows([]);
           }
-          setBulkSelection(itemId);
+          setBulkSelection(value);
         }}
         isOpen={isBulkSelectDropdownOpen}
         onOpenChange={(isOpen) => setIsBulkSelectDropdownOpen(isOpen)}
@@ -120,9 +113,9 @@ export const BulkSelectTableDemo = () => {
         <DropdownList>{items}</DropdownList>
       </Dropdown>
     );
-  }
+  };
 
-  const toolbar=(
+  const toolbar = (
     <Toolbar>
       <ToolbarContent>
         <ToolbarGroup>
@@ -140,7 +133,7 @@ export const BulkSelectTableDemo = () => {
         <Table aria-label="Selectable table">
           <Thead>
             <Tr>
-              <Th/>
+              <Th />
               <Th key={0}>{columns[0]}</Th>
               <Th key={1}>{columns[1]}</Th>
               <Th key={2}>{columns[2]}</Th>
@@ -169,4 +162,4 @@ export const BulkSelectTableDemo = () => {
       </PageSection>
     </DashboardWrapper>
   );
-}
+};

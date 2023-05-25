@@ -14,7 +14,7 @@ export interface SelectOptionProps extends Omit<MenuItemProps, 'ref'> {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
   /** Identifies the component in the Select onSelect callback */
-  itemId?: any;
+  value?: any;
   /** Indicates the option has a checkbox */
   hasCheckbox?: boolean;
   /** Indicates the option is disabled */
@@ -37,9 +37,10 @@ const SelectOptionBase: React.FunctionComponent<MenuItemProps> = ({
   children,
   className,
   innerRef,
+  value,
   ...props
 }: SelectOptionProps) => (
-  <MenuItem ref={innerRef} className={css(className)} {...props}>
+  <MenuItem itemId={value} ref={innerRef} className={css(className)} {...props}>
     {children}
   </MenuItem>
 );

@@ -37,13 +37,13 @@ export const InputGroupWithDropdown: React.FunctionComponent = () => {
             )}
           >
             <DropdownList>
-              <DropdownItem itemId={0} key="option1">
+              <DropdownItem value={0} key="option1">
                 Option 1
               </DropdownItem>
-              <DropdownItem itemId={1} key="option2">
+              <DropdownItem value={1} key="option2">
                 Option 2
               </DropdownItem>
-              <DropdownItem itemId={2} key="option3">
+              <DropdownItem value={2} key="option3">
                 Option 3
               </DropdownItem>
             </DropdownList>
