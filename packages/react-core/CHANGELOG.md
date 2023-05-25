@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.118](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.117...@patternfly/react-core@5.0.0-alpha.118) (2023-05-25)
+
+### Bug Fixes
+
+- **Alert:** update examples className to v5 so that custom spacing is applied ([#9186](https://github.com/patternfly/patternfly-react/issues/9186)) ([bf14dd6](https://github.com/patternfly/patternfly-react/commit/bf14dd67f20e11f8be74f76e0145ca43e6d208a6))
+
 # [5.0.0-alpha.117](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.116...@patternfly/react-core@5.0.0-alpha.117) (2023-05-25)
 
 **Note:** Version bump only for package @patternfly/react-core
