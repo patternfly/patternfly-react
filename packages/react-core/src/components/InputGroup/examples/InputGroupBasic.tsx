@@ -1,6 +1,6 @@
 import React from 'react';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
-import { InputGroup, InputGroupItem, TextInput, ValidatedOptions } from '@patternfly/react-core';
+import { InputGroup, InputGroupText, InputGroupItem, TextInput, ValidatedOptions } from '@patternfly/react-core';
 
 export const InputGroupBasic: React.FunctionComponent = () => (
   <React.Fragment>
@@ -8,13 +8,13 @@ export const InputGroupBasic: React.FunctionComponent = () => (
       <InputGroupItem isFill>
         <TextInput id="textInput-basic-1" type="email" aria-label="email input field" />
       </InputGroupItem>
-      <InputGroupItem isBox>@example.com</InputGroupItem>
+      <InputGroupText id="email-example">@example.com</InputGroupText>
     </InputGroup>
     <br />
     <InputGroup>
-      <InputGroupItem isBox>
+      <InputGroupText id="username">
         <AtIcon />
-      </InputGroupItem>
+      </InputGroupText>
       <InputGroupItem isFill>
         <TextInput
           validated={ValidatedOptions.error}
@@ -29,9 +29,9 @@ export const InputGroupBasic: React.FunctionComponent = () => (
       <InputGroupItem isFill>
         <TextInput name="textInput-basic-3" id="textInput-basic-3" type="text" aria-label="percentage" />
       </InputGroupItem>
-      <InputGroupItem isPlain isBox>
+      <InputGroupText id="plain-example" isPlain>
         %
-      </InputGroupItem>
+      </InputGroupText>
     </InputGroup>
   </React.Fragment>
 );

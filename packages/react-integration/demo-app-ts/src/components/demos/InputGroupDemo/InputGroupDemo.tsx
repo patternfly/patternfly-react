@@ -9,6 +9,7 @@ import {
   ButtonVariant,
   TextArea,
   InputGroup,
+  InputGroupText,
   InputGroupItem,
   TextInput,
   Popover,
@@ -101,8 +102,8 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
             <Dropdown
               onSelect={this.onSelect}
               isOpen={this.state.isOpen}
-              onOpenChange={(isOpen: any) => this.setState({ isOpen })}
-              toggle={(toggleRef: any) => (
+              onOpenChange={(isOpen) => this.setState({ isOpen })}
+              toggle={(toggleRef) => (
                 <MenuToggle ref={toggleRef} onClick={this.onToggle} isExpanded={this.state.isOpen}>
                   {this.state.selected ? this.state.selected : 'Dropdown'}
                 </MenuToggle>
@@ -127,15 +128,13 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
         <br />
         <br />
         <InputGroup>
-          <InputGroupItem isBox>
+          <InputGroupText>
             <DollarSignIcon />
-          </InputGroupItem>
+          </InputGroupText>
           <InputGroupItem isFill>
             <TextInput id="textInput5" type="number" aria-label="Dollar amount input example" />
           </InputGroupItem>
-          <InputGroupItem isBox>
-            .00
-          </InputGroupItem>
+          <InputGroupText>.00</InputGroupText>
         </InputGroup>
         <br />
         <br />
@@ -143,16 +142,14 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
           <InputGroupItem isFill>
             <TextInput id="textInput6" type="email" aria-label="email input field" />
           </InputGroupItem>
-          <InputGroupItem isBox>
-            @example.com
-          </InputGroupItem>
+          <InputGroupText id="email-example">@example.com</InputGroupText>
         </InputGroup>
         <br />
         <br />
         <InputGroup>
-          <InputGroupItem isBox>
+          <InputGroupText id="username" aria-label="@">
             <AtIcon />
-          </InputGroupItem>
+          </InputGroupText>
           <InputGroupItem isFill>
             <TextInput
               validated={ValidatedOptions.error}
@@ -165,9 +162,9 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
         <br />
         <br />
         <InputGroup>
-          <InputGroupItem isBox>
+          <InputGroupText component="label" htmlFor="textInput9">
             <CalendarAltIcon />
-          </InputGroupItem>
+          </InputGroupText>
           <InputGroupItem>
             <TextInput name="textInput9" id="textInput9" type="date" aria-label="Date input example" />
           </InputGroupItem>
@@ -208,9 +205,9 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
           <InputGroupItem isFill>
             <TextInput name="textIndex12" id="textInput12" type="text" aria-label="percentage" />
           </InputGroupItem>
-          <InputGroupItem isPlain isBox>
+          <InputGroupText isPlain id="plain-example">
             %
-          </InputGroupItem>
+          </InputGroupText>
         </InputGroup>
       </React.Fragment>
     );

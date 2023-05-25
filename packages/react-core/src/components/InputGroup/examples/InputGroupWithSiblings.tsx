@@ -1,6 +1,6 @@
 import React from 'react';
 import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
-import { Button, TextArea, InputGroup, InputGroupItem, TextInput } from '@patternfly/react-core';
+import { Button, TextArea, InputGroup, InputGroupText, InputGroupItem, TextInput } from '@patternfly/react-core';
 
 export const InputGroupWithSiblings: React.FunctionComponent = () => (
   <React.Fragment>
@@ -36,9 +36,9 @@ export const InputGroupWithSiblings: React.FunctionComponent = () => (
     </InputGroup>
     <br />
     <InputGroup>
-      <InputGroupItem isBox>
+      <InputGroupText>
         <DollarSignIcon />
-      </InputGroupItem>
+      </InputGroupText>
       <InputGroupItem isFill>
         <TextInput
           id="textInput-with-siblings"
@@ -47,9 +47,7 @@ export const InputGroupWithSiblings: React.FunctionComponent = () => (
           aria-label="Dollar amount input example"
         />
       </InputGroupItem>
-      <InputGroupItem isBox>
-        .00
-      </InputGroupItem>
+      <InputGroupText>.00</InputGroupText>
     </InputGroup>
   </React.Fragment>
 );
