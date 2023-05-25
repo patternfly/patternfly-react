@@ -89,7 +89,6 @@ const TrBase: React.FunctionComponent<TrProps> = ({
 
   return (
     <>
-      {isSelectable && <output className="pf-v5-screen-reader">{ariaLabel}</output>}
       <tr
         className={css(
           styles.tableTr,
