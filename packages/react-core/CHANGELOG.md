@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.119](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.118...@patternfly/react-core@5.0.0-alpha.119) (2023-05-25)
+
+### Features
+
+- **Select,Dropdown:** renamed itemId prop to value ([#9175](https://github.com/patternfly/patternfly-react/issues/9175)) ([4853518](https://github.com/patternfly/patternfly-react/commit/4853518cf09f747dfec11015dd3e5dc5a7c0ed85))
+
 # [5.0.0-alpha.118](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.117...@patternfly/react-core@5.0.0-alpha.118) (2023-05-25)
 
 ### Bug Fixes
