@@ -210,8 +210,8 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
     ofWord: 'of'
   },
   firstPage = 1,
-  page: pageProp = 0,
-  offset = 0,
+  page: pageProp = 1,
+  offset = null,
   isLastFullPageShown = false,
   itemsStart = null,
   itemsEnd = null,
@@ -245,11 +245,8 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   const dropDirection = dropDirectionProp || (variant === 'bottom' && !isStatic ? 'up' : 'down');
 
   let page = pageProp;
-  if (!page && offset) {
-    page = Math.ceil(offset / perPage);
-  }
-  if (page === 0 && !itemCount) {
-    page = 1;
+  if (offset !== null) {
+    page = Math.max(Math.ceil(offset / perPage), 1);
   }
 
   const lastPage = getLastPage();
