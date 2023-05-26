@@ -98,7 +98,9 @@ export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: 
         </select>
         <div className={css(styles.formControlUtilities)}>
           {hasStatusIcon && <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />}
-          <FormControlIcon customIcon={<CaretDownIcon />} />
+          <div className={css(styles.formControlToggleIcon)}>
+            <CaretDownIcon />
+          </div>
         </div>
       </div>
     );
