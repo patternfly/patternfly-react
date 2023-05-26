@@ -1,21 +1,20 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { BackgroundImage } from '../BackgroundImage';
-import * as React from 'react';
-import { render } from '@testing-library/react';
 
-const images = {
-  lg: '/assets/images/pfbg_1200.jpg',
-  sm: '/assets/images/pfbg_768.jpg',
-  sm2x: '/assets/images/pfbg_768@2x.jpg',
-  xs: '/assets/images/pfbg_576.jpg',
-  xs2x: '/assets/images/pfbg_576@2x.jpg'
-};
+test('has default className and src URL applied to style', () => {
+  render(<BackgroundImage src="/image/url.png" data-testid="test-id" />);
 
-test('BackgroundImage', () => {
-  const { asFragment } = render(<BackgroundImage src={images} />);
-  expect(asFragment()).toMatchSnapshot();
+  const backgroundImage = screen.getByTestId('test-id');
+  const backgroundImageStyle = backgroundImage.getAttribute('style');
+
+  expect(backgroundImage).toHaveClass('pf-v5-c-background-image');
+  expect(backgroundImageStyle).toContain('--pf-v5-c-background-image--BackgroundImage');
+  expect(backgroundImageStyle).toContain('/image/url.png');
 });
 
-test('allows passing in a single string as the image src', () => {
-  const { asFragment } = render(<BackgroundImage src={images.lg} />);
-  expect(asFragment()).toMatchSnapshot();
+test('has additional className when one is provided', () => {
+  render(<BackgroundImage src="/image/url.png" className="another-class" data-testid="test-id" />);
+
+  expect(screen.getByTestId('test-id')).toHaveClass('another-class');
 });
