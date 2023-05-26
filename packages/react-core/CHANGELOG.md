@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.120](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.119...@patternfly/react-core@5.0.0-alpha.120) (2023-05-26)
+
+### Bug Fixes
+
+- **FormSelect:** updated classname for toggle icon ([#9168](https://github.com/patternfly/patternfly-react/issues/9168)) ([07c7e5a](https://github.com/patternfly/patternfly-react/commit/07c7e5a0edc6afd86a6bfb6394dfee0a9b16ecac))
+
 # [5.0.0-alpha.119](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.118...@patternfly/react-core@5.0.0-alpha.119) (2023-05-25)
 
 ### Features
