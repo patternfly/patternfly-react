@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.122](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.121...@patternfly/react-core@5.0.0-alpha.122) (2023-05-30)
+
+### Bug Fixes
+
+- **TextInput:** swap onChange params in demos ([#9196](https://github.com/patternfly/patternfly-react/issues/9196)) ([1f77f39](https://github.com/patternfly/patternfly-react/commit/1f77f39d01606ad90a473bd09e55a3bb1df72bc9))
+
 # [5.0.0-alpha.121](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.120...@patternfly/react-core@5.0.0-alpha.121) (2023-05-30)
 
 **Note:** Version bump only for package @patternfly/react-core
