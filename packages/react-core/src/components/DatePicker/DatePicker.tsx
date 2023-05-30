@@ -72,7 +72,7 @@ export interface DatePickerRef {
    * If the eventKey parameter is set to 'Escape', that will invoke the date pickers
    * onEscapePress event to toggle the correct control appropriately.
    */
-  toggleCalendar: (isOpen?: boolean, eventKey?: string) => void;
+  toggleCalendar: (isOpen?: boolean) => void;
 }
 
 export const yyyyMMddFormat = (date: Date) =>
@@ -189,10 +189,8 @@ const DatePickerBase = (
     ref,
     () => ({
       setCalendarOpen: (isOpen: boolean) => setPopoverOpen(isOpen),
-      toggleCalendar: (setOpen?: boolean, eventKey?: string) => {
-        if (eventKey === KeyTypes.Escape && popoverOpen && !selectOpen) {
-          setPopoverOpen((prev) => (setOpen !== undefined ? setOpen : !prev));
-        }
+      toggleCalendar: (setOpen?: boolean) => {
+        setPopoverOpen((prev) => (setOpen !== undefined ? setOpen : !prev));
       },
       isCalendarOpen: popoverOpen
     }),
@@ -222,7 +220,7 @@ const DatePickerBase = (
         }
         showClose={false}
         isVisible={popoverOpen}
-        shouldClose={(event, _fn) => {
+        shouldClose={(event, hideFunction) => {
           event = event as KeyboardEvent;
           if (event.key === KeyTypes.Escape && selectOpen) {
             event.stopPropagation();
@@ -233,7 +231,12 @@ const DatePickerBase = (
           if (buttonRef.current && buttonRef.current.contains(event.target as Node)) {
             return false;
           }
-          setPopoverOpen(false);
+
+          if (popoverOpen) {
+            event.stopPropagation();
+            setPopoverOpen(false);
+            hideFunction();
+          }
           if (event.key === KeyTypes.Escape && popoverOpen) {
             event.stopPropagation();
           }
