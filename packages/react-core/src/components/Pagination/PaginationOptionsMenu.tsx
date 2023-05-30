@@ -177,9 +177,19 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
       variant="plainText"
       aria-haspopup="listbox"
     >
-      {typeof toggleTemplate === 'string' ? (
-        fillTemplate(toggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })
-      ) : (
+      {toggleTemplate &&
+        typeof toggleTemplate === 'string' &&
+        fillTemplate(toggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })}
+      {toggleTemplate &&
+        typeof toggleTemplate !== 'string' &&
+        (toggleTemplate as (props: PaginationToggleTemplateProps) => React.ReactElement)({
+          firstIndex,
+          lastIndex,
+          ofWord,
+          itemCount,
+          itemsTitle
+        })}
+      {!toggleTemplate && (
         <ToggleTemplate
           firstIndex={firstIndex}
           lastIndex={lastIndex}

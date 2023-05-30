@@ -29,7 +29,7 @@ it('PaginationOptionsMenu should match snapshot (auto-generated)', () => {
         <React.Fragment>
           <b>
             {firstIndex} - {lastIndex}
-          </b>{' '}
+          </b>Custom toggle template
           of<b>{itemCount}</b> {itemsTitle}
         </React.Fragment>
       )}
