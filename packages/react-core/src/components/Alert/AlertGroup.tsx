@@ -63,6 +63,8 @@ export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState
       onOverflowClick,
       overflowMessage,
       'aria-label': ariaLabel,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      appendTo, // dont pass down to ul
       ...props
     } = this.props;
     const alertGroup = (
