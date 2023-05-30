@@ -118,7 +118,7 @@ class PrimaryDetailFullPage extends React.Component {
       { value: 'High', disabled: false }
     ];
 
-    this.onInputChange = (newValue) => {
+    this.onInputChange = (_event, newValue) => {
       this.setState({ inputValue: newValue });
     };
 
@@ -585,7 +585,7 @@ class PrimaryDetailContentPadding extends React.Component {
       { value: 'High', disabled: false }
     ];
 
-    this.onInputChange = (newValue) => {
+    this.onInputChange = (_event, newValue) => {
       this.setState({ inputValue: newValue });
     };
 
@@ -2061,7 +2061,7 @@ class PrimaryDetailInlineModifier extends React.Component {
       { value: 'High', disabled: false }
     ];
 
-    this.onInputChange = (newValue) => {
+    this.onInputChange = (_event, newValue) => {
       this.setState({ inputValue: newValue });
     };
 

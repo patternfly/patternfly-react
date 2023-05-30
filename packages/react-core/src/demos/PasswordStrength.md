@@ -41,7 +41,7 @@ class PasswordStrengthDemo extends React.Component {
       passStrength: { variant: 'error', icon: <ExclamationCircleIcon />, text: 'Weak' }
     };
 
-    this.handlePasswordInput = (password) => {
+    this.handlePasswordInput = (_event, password) => {
       this.setState({ password });
       this.validate(password);
     };

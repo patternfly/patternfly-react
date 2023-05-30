@@ -467,7 +467,7 @@ AdvancedComposableSearchInput = () => {
                   type="text"
                   id="has-words"
                   value={hasWords}
-                  onChange={(value) => {
+                  onChange={(_event, value) => {
                     setHasWords(value);
                     setValue(value);
                   }}
