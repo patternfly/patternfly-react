@@ -4002,10 +4002,10 @@
     acorn-static-class-features "^1.0.0"
     astring "^1.7.5"
 
-"@patternfly/documentation-framework@^2.0.0-alpha.33":
-  version "2.0.0-alpha.45"
-  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-2.0.0-alpha.45.tgz#caf65f15df0243b158e1bdb742045ddf06a93e33"
-  integrity sha512-F+jFNSwnxpsGZhrr08dIKwBJA6/NtuCpZ7QZmKao4FteZyX5Et2pXBSO6VadagvHQrJwLXNg/5azEpp19kqsxA==
+"@patternfly/documentation-framework@^2.0.0-alpha.47":
+  version "2.0.0-alpha.48"
+  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-2.0.0-alpha.48.tgz#63c5070e8bef6ed6cc61feb035e1a2f3400a7cc1"
+  integrity sha512-FNodfu+YXpHLmO4a5BvdSX7Ah9aicod2kSCGM7VET2hIvxzVrsDKM3XJwSfwhZKrVJ74ntgt2gA1AC7V0JPEDw==
   dependencies:
     "@babel/core" "7.18.2"
     "@babel/plugin-proposal-class-properties" "7.17.12"
@@ -4091,10 +4091,10 @@
     puppeteer-cluster "^0.23.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@5.0.0-alpha.64":
-  version "5.0.0-alpha.64"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.0.0-alpha.64.tgz#15832ce41048d9e5d89446ce6d4edaf07f308899"
-  integrity sha512-VJOCpS/WyhjkKqoaCo3usQxoXAj90p81NDHDE3/4/xTUYb53xNNXDJ1YwkPkG0RDvs6DaS9U/hEmu1AbCa9VEw==
+"@patternfly/patternfly@5.0.0-alpha.69":
+  version "5.0.0-alpha.69"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.0.0-alpha.69.tgz#4dc366985f2a26efcd8e6186053fb8250bed5c7a"
+  integrity sha512-KF1VNkMt5l/bOcvJBS7p8If7VSbrKNnsfQv9JnFbtH/0LoyXZI1SsItnw7fB0Vb5fxr0O0qjWC1LaEa8Rd6hKw==
 
 "@phenomnomnominal/tsquery@4.1.1":
   version "4.1.1"
