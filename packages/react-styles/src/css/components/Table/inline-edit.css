@@ -1,30 +1,30 @@
 :root {
-  --pf-v5-global--palette--blue--50: #def3ff;
-  --pf-v5-global--palette--blue--200: #7dc3e8;
+  --pf-v5-global--palette--blue-50: #def3ff;
+  --pf-v5-global--palette--blue-200: #7dc3e8;
 }
 
 tr.pf-v5-c-table__editable-row:hover,
 tr.pf-v5-c-table__editable-row.pf-m-editing {
-  background: var(--pf-v5-global--palette--blue--50) !important;
+  background: var(--pf-v5-global--palette--blue-50) !important;
 }
 tr.pf-v5-c-table__editable-row:hover td,
 tr.pf-v5-c-table__editable-row.pf-m-editing td {
-  border-bottom: 1px solid var(--pf-v5-global--palette--blue--200) !important;
-  border-top: 1px solid var(--pf-v5-global--palette--blue--200) !important;
+  border-bottom: 1px solid var(--pf-v5-global--palette--blue-200) !important;
+  border-top: 1px solid var(--pf-v5-global--palette--blue-200) !important;
 }
 tr.pf-v5-c-table__editable-row:hover td:first-child,
 tr.pf-v5-c-table__editable-row.pf-m-editing td:first-child {
-  border-left: 1px solid var(--pf-v5-global--palette--blue--200) !important;
+  border-left: 1px solid var(--pf-v5-global--palette--blue-200) !important;
 }
 tr.pf-v5-c-table__editable-row:hover td:last-child,
 tr.pf-v5-c-table__editable-row.pf-m-editing td:last-child {
-  border-right: 1px solid var(--pf-v5-global--palette--blue--200) !important;
+  border-right: 1px solid var(--pf-v5-global--palette--blue-200) !important;
 }
 tr.pf-v5-c-table__editable-row.pf-m-table-editing-first-row {
-  border-top: 3px solid var(--pf-v5-global--palette--blue--200) !important;
+  border-top: 3px solid var(--pf-v5-global--palette--blue-200) !important;
 }
 tr.pf-v5-c-table__editable-row.pf-m-table-editing-last-row {
-  border-bottom: 3px solid var(--pf-v5-global--palette--blue--200) !important;
+  border-bottom: 3px solid var(--pf-v5-global--palette--blue-200) !important;
 }
 tr.pf-v5-c-table__editable-row input {
   display: block;
@@ -40,8 +40,8 @@ tr.pf-v5-c-table__editable-row input:hover {
   z-index: 1000;
   padding: 4px;
   margin: 0;
-  background: var(--pf-v5-global--palette--blue--50);
-  border: 1px solid var(--pf-v5-global--palette--blue--200);
+  background: var(--pf-v5-global--palette--blue-50);
+  border: 1px solid var(--pf-v5-global--palette--blue-200);
 }
 .pf-v5-c-table__inline-edit-buttons.pf-m-top {
   border-bottom: 0;
