@@ -50,7 +50,7 @@ import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { rows, columns } from '../examples/Data.jsx';
+import { rows, columns } from './table-demos/sampleData';
 
 ## Demos
 
@@ -855,7 +855,7 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { rows, columns } from '../../examples/Data.jsx';
+import { rows, columns } from '';
 
 class FilterTableDemo extends React.Component {
   constructor(props) {
@@ -1426,70 +1426,8 @@ class ComplexPaginationTableDemo extends React.Component {
 
 ### Sticky header
 
-```js isFullscreen
-import React from 'react';
-import { Label, PageSection } from '@patternfly/react-core';
-import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
-import { rows } from '../examples/Data.jsx';
+```js isFullscreen file="./table-demos/StickyHeader.jsx"
 
-class StickyHeaderTableDemo extends React.Component {
-  render() {
-    const renderLabel = (labelText) => {
-      switch (labelText) {
-        case 'Running':
-          return <Label color="green">{labelText}</Label>;
-        case 'Stopped':
-          return <Label color="orange">{labelText}</Label>;
-        case 'Needs maintenance':
-          return <Label color="blue">{labelText}</Label>;
-        case 'Down':
-          return <Label color="red">{labelText}</Label>;
-      }
-    };
-
-    return (
-      <DashboardWrapper hasPageTemplateTitle>
-        <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
-          <Card component="div">
-            <TableDeprecated
-              cells={[
-                { title: 'Servers', transforms: [cellWidth(15)] },
-                { title: 'Threads', transforms: [cellWidth(10)] },
-                { title: 'Applications', transforms: [cellWidth(10)] },
-                { title: 'Workspaces', transforms: [cellWidth(10)] },
-                { title: 'Status', transforms: [cellWidth(10)] },
-                { title: 'Location', transforms: [cellWidth(15)] },
-                { title: 'Last Modified', transforms: [cellWidth(15)] },
-                { title: 'URL', transforms: [cellWidth(10)] }
-              ]}
-              rows={rows.map((row) => [
-                row.name,
-                row.threads,
-                row.applications,
-                row.workspaces,
-                { title: renderLabel(row.status) },
-                row.location,
-                row.lastModified,
-                {
-                  title: (
-                    <a href="#">
-                      <TableText wrapModifier="truncate">{row.url} </TableText>
-                    </a>
-                  )
-                }
-              ])}
-              aria-label="Sticky Header Table Demo"
-              isStickyHeader
-            >
-              <TableHeader />
-              <TableBody />
-            </TableDeprecated>
-          </Card>
-        </PageSection>
-      </DashboardWrapper>
-    );
-  }
-}
 ```
 
 ### Sticky first column

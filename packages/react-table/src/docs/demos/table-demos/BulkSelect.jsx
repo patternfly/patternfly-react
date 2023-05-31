@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Dropdown,
   DropdownList,
@@ -14,7 +15,8 @@ import {
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-import { rows, columns } from '../../examples/Data.jsx';
+
+import { rows, columns } from './sampleData';
 
 export const BulkSelectTableDemo = () => {
   const [isBulkSelectDropdownOpen, setIsBulkSelectDropdownOpen] = React.useState(false);

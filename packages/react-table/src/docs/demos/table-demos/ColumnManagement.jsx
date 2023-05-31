@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+
 import {
   Button,
   DataList,
@@ -26,9 +27,10 @@ import {
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
-import { rows, columns } from '../../examples/Data.jsx';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper.js';
 import { capitalize } from '@patternfly/react-table/src/components/Table/utils/utils';
+
+import { rows, columns } from './sampleData';
 
 export const ColumnManagementAction = () => {
   const defaultColumns = columns;
@@ -389,10 +391,14 @@ export const ColumnManagementAction = () => {
           <ToolbarItem variant="overflow-menu">
             <OverflowMenu breakpoint="md">
               <OverflowMenuItem>
-                <MenuToggle><FilterIcon /> Name</MenuToggle>
+                <MenuToggle>
+                  <FilterIcon /> Name
+                </MenuToggle>
               </OverflowMenuItem>
               <OverflowMenuItem>
-                <MenuToggle variant="plain" aria-label="Sort columns"><SortAmountDownIcon aria-hidden="true" /></MenuToggle>
+                <MenuToggle variant="plain" aria-label="Sort columns">
+                  <SortAmountDownIcon aria-hidden="true" />
+                </MenuToggle>
               </OverflowMenuItem>
               <OverflowMenuGroup groupType="button" isPersistent>
                 <OverflowMenuItem>
