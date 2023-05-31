@@ -2,7 +2,7 @@
 id: Input group
 section: components
 cssPrefix: null
-propComponents: ['InputGroup', 'InputGroupItem', InputGroupText]
+propComponents: ['InputGroup', 'InputGroupItem', 'InputGroupText']
 ---
 
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
