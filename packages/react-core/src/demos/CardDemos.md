@@ -1571,9 +1571,9 @@ CardNestedDemo = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">100C</div>
-                          <div className="pf-v5-l-flex__item">50C</div>
-                          <div className="pf-v5-l-flex__item">0C</div>
+                          <FlexItem>100C</FlexItem>
+                          <FlexItem>50C</FlexItem>
+                          <FlexItem>0C</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
@@ -1641,9 +1641,9 @@ CardNestedDemo = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">3.6Ghz</div>
-                          <div className="pf-v5-l-flex__item">1.5Ghz</div>
-                          <div className="pf-v5-l-flex__item">0GHZ</div>
+                          <FlexItem>3.6Ghz</FlexItem>
+                          <FlexItem>1.5Ghz</FlexItem>
+                          <FlexItem>0GHZ</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
@@ -1732,9 +1732,9 @@ CardNestedDemo = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">100C</div>
-                          <div className="pf-v5-l-flex__item">50C</div>
-                          <div className="pf-v5-l-flex__item">0C</div>
+                          <FlexItem>100C</FlexItem>
+                          <FlexItem>50C</FlexItem>
+                          <FlexItem>0C</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
@@ -1802,9 +1802,9 @@ CardNestedDemo = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">3.6Ghz</div>
-                          <div className="pf-v5-l-flex__item">1.5Ghz</div>
-                          <div className="pf-v5-l-flex__item">0GHZ</div>
+                          <FlexItem>3.6Ghz</FlexItem>
+                          <FlexItem>1.5Ghz</FlexItem>
+                          <FlexItem>0GHZ</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
@@ -1893,9 +1893,9 @@ CardNestedDemo = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">100C</div>
-                          <div className="pf-v5-l-flex__item">50C</div>
-                          <div className="pf-v5-l-flex__item">0C</div>
+                          <FlexItem>100C</FlexItem>
+                          <FlexItem>50C</FlexItem>
+                          <FlexItem>0C</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
@@ -1963,9 +1963,9 @@ CardNestedDemo = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">3.6Ghz</div>
-                          <div className="pf-v5-l-flex__item">1.5Ghz</div>
-                          <div className="pf-v5-l-flex__item">0GHZ</div>
+                          <FlexItem>3.6Ghz</FlexItem>
+                          <FlexItem>1.5Ghz</FlexItem>
+                          <FlexItem>0GHZ</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
@@ -2094,9 +2094,9 @@ const AccordionCard: React.FunctionComponent = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">100C</div>
-                          <div className="pf-v5-l-flex__item">50C</div>
-                          <div className="pf-v5-l-flex__item">0C</div>
+                          <FlexItem>100C</FlexItem>
+                          <FlexItem>50C</FlexItem>
+                          <FlexItem>0C</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
@@ -2164,9 +2164,9 @@ const AccordionCard: React.FunctionComponent = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">3.6Ghz</div>
-                          <div className="pf-v5-l-flex__item">1.5Ghz</div>
-                          <div className="pf-v5-l-flex__item">0GHZ</div>
+                          <FlexItem>3.6Ghz</FlexItem>
+                          <FlexItem>1.5Ghz</FlexItem>
+                          <FlexItem>0GHZ</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
@@ -2252,9 +2252,9 @@ const AccordionCard: React.FunctionComponent = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">100C</div>
-                          <div className="pf-v5-l-flex__item">50C</div>
-                          <div className="pf-v5-l-flex__item">0C</div>
+                          <FlexItem>100C</FlexItem>
+                          <FlexItem>50C</FlexItem>
+                          <FlexItem>0C</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
@@ -2322,9 +2322,9 @@ const AccordionCard: React.FunctionComponent = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">3.6Ghz</div>
-                          <div className="pf-v5-l-flex__item">1.5Ghz</div>
-                          <div className="pf-v5-l-flex__item">0GHZ</div>
+                          <FlexItem>3.6Ghz</FlexItem>
+                          <FlexItem>1.5Ghz</FlexItem>
+                          <FlexItem>0GHZ</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
@@ -2410,9 +2410,9 @@ const AccordionCard: React.FunctionComponent = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">100C</div>
-                          <div className="pf-v5-l-flex__item">50C</div>
-                          <div className="pf-v5-l-flex__item">0C</div>
+                          <FlexItem>100C</FlexItem>
+                          <FlexItem>50C</FlexItem>
+                          <FlexItem>0C</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
@@ -2480,9 +2480,9 @@ const AccordionCard: React.FunctionComponent = () => {
                           spaceItems={{ default: 'spaceItemsNone' }}
                           alignItems={{ md: 'alignItemsFlexEnd' }}
                         >
-                          <div className="pf-v5-l-flex__item">3.6Ghz</div>
-                          <div className="pf-v5-l-flex__item">1.5Ghz</div>
-                          <div className="pf-v5-l-flex__item">0GHZ</div>
+                          <FlexItem>3.6Ghz</FlexItem>
+                          <FlexItem>1.5Ghz</FlexItem>
+                          <FlexItem>0GHZ</FlexItem>
                         </Flex>
                       </GridItem>
                       <GridItem span={10}>
