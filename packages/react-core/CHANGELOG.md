@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.125](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.124...@patternfly/react-core@5.0.0-alpha.125) (2023-05-31)
+
+**Note:** Version bump only for package @patternfly/react-core
+
 # [5.0.0-alpha.124](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.123...@patternfly/react-core@5.0.0-alpha.124) (2023-05-31)
 
 ### Bug Fixes
