@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.123](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.122...@patternfly/react-core@5.0.0-alpha.123) (2023-05-31)
+
+### Bug Fixes
+
+- **DatePicker:** display errorText instead of helperText when both exist ([#9195](https://github.com/patternfly/patternfly-react/issues/9195)) ([480d874](https://github.com/patternfly/patternfly-react/commit/480d87480ba0d772f35568c24b33efb4f89edc48))
+
 # [5.0.0-alpha.122](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.121...@patternfly/react-core@5.0.0-alpha.122) (2023-05-30)
 
 ### Bug Fixes
