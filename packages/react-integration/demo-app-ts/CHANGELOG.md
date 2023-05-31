@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.108](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.107...demo-app-ts@5.0.0-alpha.108) (2023-05-31)
+
+### Features
+
+- **Input group:** Simplified API ([#9176](https://github.com/patternfly/patternfly-react/issues/9176)) ([e18a351](https://github.com/patternfly/patternfly-react/commit/e18a351fac44beaf6554e76e5be9d204d6db19ce))
+
 # [5.0.0-alpha.107](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.0.0-alpha.106...demo-app-ts@5.0.0-alpha.107) (2023-05-31)
 
 **Note:** Version bump only for package demo-app-ts

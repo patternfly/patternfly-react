@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.51 (2023-05-31)
+
+### Features
+
+- **Input group:** Simplified API ([#9176](https://github.com/patternfly/patternfly-react/issues/9176)) ([e18a351](https://github.com/patternfly/patternfly-react/commit/e18a351fac44beaf6554e76e5be9d204d6db19ce))
+
 # 5.0.0-alpha.50 (2023-05-25)
 
 ### Features
