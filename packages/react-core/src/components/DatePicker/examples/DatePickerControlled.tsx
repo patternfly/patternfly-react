@@ -6,8 +6,10 @@ export const DatePickerControlled: React.FunctionComponent = () => {
   const [value, setValue] = React.useState(initialValue);
   return (
     <React.Fragment>
-      <Button onClick={() => setValue(initialValue)}>Reset date</Button>
       <DatePicker value={value} onChange={(_event, value) => setValue(value)} />
+      <br />
+      <br />
+      <Button onClick={() => setValue(initialValue)}>Reset date</Button>
     </React.Fragment>
   );
 };
