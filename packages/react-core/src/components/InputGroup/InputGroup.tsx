@@ -15,7 +15,7 @@ export interface InputGroupProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const InputGroupBase: React.FunctionComponent<InputGroupProps> = ({
-  className = '',
+  className,
   children,
   innerRef,
   ...props

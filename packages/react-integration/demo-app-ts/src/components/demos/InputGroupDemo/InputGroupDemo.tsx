@@ -128,17 +128,13 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
         <br />
         <br />
         <InputGroup>
-          <InputGroupItem>
-            <InputGroupText>
-              <DollarSignIcon />
-            </InputGroupText>
-          </InputGroupItem>
+          <InputGroupText>
+            <DollarSignIcon />
+          </InputGroupText>
           <InputGroupItem isFill>
             <TextInput id="textInput5" type="number" aria-label="Dollar amount input example" />
           </InputGroupItem>
-          <InputGroupItem>
-            <InputGroupText>.00</InputGroupText>
-          </InputGroupItem>
+          <InputGroupText>.00</InputGroupText>
         </InputGroup>
         <br />
         <br />
@@ -146,18 +142,14 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
           <InputGroupItem isFill>
             <TextInput id="textInput6" type="email" aria-label="email input field" />
           </InputGroupItem>
-          <InputGroupItem isBox>
-            <InputGroupText id="email-example">@example.com</InputGroupText>
-          </InputGroupItem>
+          <InputGroupText id="email-example">@example.com</InputGroupText>
         </InputGroup>
         <br />
         <br />
         <InputGroup>
-          <InputGroupItem isBox>
-            <InputGroupText id="username" aria-label="@">
-              <AtIcon />
-            </InputGroupText>
-          </InputGroupItem>
+          <InputGroupText id="username" aria-label="@">
+            <AtIcon />
+          </InputGroupText>
           <InputGroupItem isFill>
             <TextInput
               validated={ValidatedOptions.error}
@@ -170,11 +162,9 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
         <br />
         <br />
         <InputGroup>
-          <InputGroupItem>
-            <InputGroupText component="label" htmlFor="textInput9">
-              <CalendarAltIcon />
-            </InputGroupText>
-          </InputGroupItem>
+          <InputGroupText component="label" htmlFor="textInput9">
+            <CalendarAltIcon />
+          </InputGroupText>
           <InputGroupItem>
             <TextInput name="textInput9" id="textInput9" type="date" aria-label="Date input example" />
           </InputGroupItem>
@@ -215,11 +205,9 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
           <InputGroupItem isFill>
             <TextInput name="textIndex12" id="textInput12" type="text" aria-label="percentage" />
           </InputGroupItem>
-          <InputGroupItem isPlain isBox>
-            <InputGroupText id="plain-example">
-              %
-            </InputGroupText>
-          </InputGroupItem>
+          <InputGroupText isPlain id="plain-example">
+            %
+          </InputGroupText>
         </InputGroup>
       </React.Fragment>
     );

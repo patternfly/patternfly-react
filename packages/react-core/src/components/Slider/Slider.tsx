@@ -333,13 +333,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       return (
         <InputGroup>
           <InputGroupItem isFill>{textInput}</InputGroupItem>
-          <InputGroupItem isBox>
-            <InputGroupText
-              {...(isDisabled && { className: css(styles.modifiers.disabled) })}
-            >
-              {inputLabel}
-            </InputGroupText>
-          </InputGroupItem>
+          <InputGroupText isDisabled={isDisabled}>{inputLabel}</InputGroupText>
         </InputGroup>
       );
     } else {

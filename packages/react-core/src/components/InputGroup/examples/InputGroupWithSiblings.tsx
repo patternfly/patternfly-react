@@ -1,13 +1,6 @@
 import React from 'react';
 import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
-import {
-  Button,
-  TextArea,
-  InputGroup,
-  InputGroupText,
-  InputGroupItem,
-  TextInput,
-} from '@patternfly/react-core';
+import { Button, TextArea, InputGroup, InputGroupText, InputGroupItem, TextInput } from '@patternfly/react-core';
 
 export const InputGroupWithSiblings: React.FunctionComponent = () => (
   <React.Fragment>
@@ -18,11 +11,7 @@ export const InputGroupWithSiblings: React.FunctionComponent = () => (
         </Button>
       </InputGroupItem>
       <InputGroupItem isFill>
-        <TextArea
-          name="textarea1"
-          id="textarea1"
-          aria-label="textarea with buttons"
-        />
+        <TextArea name="textarea1" id="textarea1" aria-label="textarea with buttons" />
       </InputGroupItem>
       <InputGroupItem>
         <Button variant="control">Button</Button>
@@ -39,11 +28,7 @@ export const InputGroupWithSiblings: React.FunctionComponent = () => (
         <Button variant="control">Button</Button>
       </InputGroupItem>
       <InputGroupItem isFill>
-        <TextArea
-          name="textarea2"
-          id="textarea2"
-          aria-label="textarea with 3 buttons"
-        />
+        <TextArea name="textarea2" id="textarea2" aria-label="textarea with 3 buttons" />
       </InputGroupItem>
       <InputGroupItem>
         <Button variant="control">Button</Button>
@@ -51,11 +36,9 @@ export const InputGroupWithSiblings: React.FunctionComponent = () => (
     </InputGroup>
     <br />
     <InputGroup>
-      <InputGroupItem isBox>
-        <InputGroupText>
-          <DollarSignIcon />
-        </InputGroupText>
-      </InputGroupItem>
+      <InputGroupText>
+        <DollarSignIcon />
+      </InputGroupText>
       <InputGroupItem isFill>
         <TextInput
           id="textInput-with-siblings"
@@ -64,9 +47,7 @@ export const InputGroupWithSiblings: React.FunctionComponent = () => (
           aria-label="Dollar amount input example"
         />
       </InputGroupItem>
-      <InputGroupItem isBox>
-        <InputGroupText>.00</InputGroupText>
-      </InputGroupItem>
+      <InputGroupText>.00</InputGroupText>
     </InputGroup>
   </React.Fragment>
 );

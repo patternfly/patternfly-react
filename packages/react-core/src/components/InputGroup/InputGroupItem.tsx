@@ -15,11 +15,10 @@ export interface InputGroupItemProps extends React.HTMLProps<HTMLDivElement> {
   isFill?: boolean;
   /** Flag to indicate if the input group item is disabled. */
   isDisabled?: boolean;
-
 }
 
 export const InputGroupItem: React.FunctionComponent<InputGroupItemProps> = ({
-  className = '',
+  className,
   children,
   isFill = false,
   isBox = false,
