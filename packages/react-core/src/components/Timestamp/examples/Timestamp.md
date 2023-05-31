@@ -1,7 +1,7 @@
 ---
 id: Timestamp
 section: components
-cssPrefix: pf-c-timestamp
+cssPrefix: pf-v5-c-timestamp
 propComponents: ['Timestamp', 'TimestampTooltip']
 beta: true
 ---

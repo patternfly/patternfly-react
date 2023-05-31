@@ -1,6 +1,6 @@
 ---
 id: Level
-cssPrefix: pf-l-level
+cssPrefix: pf-v5-l-level
 section: layouts
 propComponents: ['Level', 'LevelItem']
 ---

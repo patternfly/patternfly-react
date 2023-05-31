@@ -3,10 +3,10 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="pf-c-timestamp"
+    class="pf-v5-c-timestamp"
   >
     <time
-      class="pf-c-timestamp__text"
+      class="pf-v5-c-timestamp__text"
       datetime="2022-01-01T00:00:00.000Z"
     >
       1/1/2022, 12:00:00 AM

@@ -2,7 +2,7 @@
 id: Time picker
 section: components
 subsection: date-and-time
-cssPrefix: pf-c-time-picker
+cssPrefix: pf-v5-c-time-picker
 propComponents: ['TimePicker']
 beta: true
 ---

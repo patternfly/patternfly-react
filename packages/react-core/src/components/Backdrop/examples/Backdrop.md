@@ -1,7 +1,7 @@
 ---
 id: Backdrop
 section: components
-cssPrefix: pf-c-backdrop
+cssPrefix: pf-v5-c-backdrop
 propComponents: ['Backdrop']
 ---
 

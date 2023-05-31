@@ -1,7 +1,7 @@
 ---
 id: Spinner
 section: components
-cssPrefix: pf-c-spinner
+cssPrefix: pf-v5-c-spinner
 propComponents: ['Spinner']
 ---
 

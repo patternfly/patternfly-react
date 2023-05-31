@@ -1,7 +1,7 @@
 ---
 id: Code block
 section: components
-cssPrefix: pf-c-code-block
+cssPrefix: pf-v5-c-code-block
 propComponents: ['CodeBlock', 'CodeBlockAction', 'CodeBlockCode']
 ---
 

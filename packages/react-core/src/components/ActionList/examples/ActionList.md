@@ -1,7 +1,7 @@
 ---
 id: Action list
 section: components
-cssPrefix: pf-c-action-list
+cssPrefix: pf-v5-c-action-list
 propComponents: ['ActionList', 'ActionListGroup', 'ActionListItem']
 ---
 

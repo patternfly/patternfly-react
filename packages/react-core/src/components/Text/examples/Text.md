@@ -1,7 +1,7 @@
 ---
 id: Text
 section: components
-cssPrefix: pf-c-content
+cssPrefix: pf-v5-c-content
 propComponents: ['TextContent', 'Text', 'TextList', 'TextListItem']
 ---
 

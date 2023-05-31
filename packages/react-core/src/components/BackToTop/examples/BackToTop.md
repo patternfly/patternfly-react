@@ -1,7 +1,7 @@
 ---
 id: Back to top
 section: components
-cssPrefix: pf-c-back-to-top
+cssPrefix: pf-v5-c-back-to-top
 propComponents: ['BackToTop']
 ---
 

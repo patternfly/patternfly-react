@@ -1,7 +1,7 @@
 ---
 id: Breadcrumb
 section: components
-cssPrefix: pf-c-breadcrumb
+cssPrefix: pf-v5-c-breadcrumb
 propComponents: ['Breadcrumb', 'BreadcrumbItem', 'BreadcrumbHeading']
 ouia: true
 ---

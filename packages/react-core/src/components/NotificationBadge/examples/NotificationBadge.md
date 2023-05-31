@@ -1,7 +1,7 @@
 ---
 id: Notification badge
 section: components
-cssPrefix: pf-c-notification-badge
+cssPrefix: pf-v5-c-notification-badge
 propComponents: ['NotificationBadge']
 ---
 

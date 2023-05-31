@@ -134,7 +134,7 @@ describe('Flex', () => {
             </Flex>
           );
 
-          const className = screen.getByTestId('test-id').className.replace('pf-l-flex', '').trim();
+          const className = screen.getByTestId('test-id').className.replace('pf-v5-l-flex', '').trim();
           expect(className).not.toBe("''");
           expect(className).not.toBe('');
         })

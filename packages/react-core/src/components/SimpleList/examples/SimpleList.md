@@ -1,7 +1,7 @@
 ---
 id: Simple list
 section: components
-cssPrefix: pf-c-simple-list
+cssPrefix: pf-v5-c-simple-list
 propComponents: ['SimpleList', 'SimpleListGroup', 'SimpleListItem']
 ---
 

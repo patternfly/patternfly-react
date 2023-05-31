@@ -1,7 +1,7 @@
 ---
 id: Page
 section: components
-cssPrefix: pf-c-page
+cssPrefix: pf-v5-c-page
 propComponents: ['PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem']
 ---
 

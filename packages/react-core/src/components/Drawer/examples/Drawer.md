@@ -1,6 +1,6 @@
 ---
 id: Drawer
-cssPrefix: pf-c-drawer
+cssPrefix: pf-v5-c-drawer
 propComponents:
   [
     Drawer,

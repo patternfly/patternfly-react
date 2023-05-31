@@ -1,7 +1,7 @@
 ---
 id: Tile
 section: components
-cssPrefix: pf-c-tile
+cssPrefix: pf-v5-c-tile
 propComponents: ['Tile']
 ---
 

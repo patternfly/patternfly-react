@@ -1,7 +1,7 @@
 ---
 id: Slider
 section: components
-cssPrefix: pf-c-slider
+cssPrefix: pf-v5-c-slider
 propComponents: ['Slider', 'SliderStepObject']
 ---
 

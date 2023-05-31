@@ -1,7 +1,7 @@
 ---
 id: Tooltip
 section: components
-cssPrefix: pf-c-tooltip
+cssPrefix: pf-v5-c-tooltip
 propComponents: ['Tooltip']
 ---
 

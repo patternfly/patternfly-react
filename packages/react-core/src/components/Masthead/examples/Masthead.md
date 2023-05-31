@@ -1,7 +1,7 @@
 ---
 id: Masthead
 section: components
-cssPrefix: pf-c-masthead
+cssPrefix: pf-v5-c-masthead
 propComponents: ['Masthead', 'MastheadToggle', 'MastheadMain', 'MastheadBrand', 'MastheadContent']
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: About modal
 section: components
-cssPrefix: pf-c-about-modal-box
+cssPrefix: pf-v5-c-about-modal-box
 propComponents: ['AboutModal']
 ---
 import brandImg from './brandImg.svg';

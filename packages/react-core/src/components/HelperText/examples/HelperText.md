@@ -1,7 +1,7 @@
 ---
 id: Helper text
 section: components
-cssPrefix: pf-c-helper-text
+cssPrefix: pf-v5-c-helper-text
 propComponents: ['HelperText', 'HelperTextItem']
 ---
 

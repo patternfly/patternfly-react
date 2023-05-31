@@ -1,7 +1,7 @@
 ---
 id: Number input
 section: components
-cssPrefix: pf-c-number-input
+cssPrefix: pf-v5-c-number-input
 propComponents: ['NumberInput']
 ---
 
