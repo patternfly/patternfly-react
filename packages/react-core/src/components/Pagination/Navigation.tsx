@@ -217,19 +217,20 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
         </div>
         {!isCompact && (
           <div className={styles.paginationNavPageSelect}>
-            <input
-              className={css(styles.formControl)}
-              aria-label={currPageAriaLabel}
-              type="number"
-              disabled={
-                isDisabled || (itemCount && page === firstPage && page === lastPage && itemCount >= 0) || page === 0
-              }
-              min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
-              max={lastPage}
-              value={userInputPage}
-              onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput)}
-              onChange={event => this.onChange(event, lastPage)}
-            />
+            <div className={css(styles.formControl)}>
+              <input
+                aria-label={currPageAriaLabel}
+                type="number"
+                disabled={
+                  isDisabled || (itemCount && page === firstPage && page === lastPage && itemCount >= 0) || page === 0
+                }
+                min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
+                max={lastPage}
+                value={userInputPage}
+                onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput)}
+                onChange={event => this.onChange(event, lastPage)}
+              />
+            </div>
             {(itemCount || itemCount === 0) && (
               <span aria-hidden="true">
                 {ofWord} {pagesTitle ? pluralize(lastPage, pagesTitle, pagesTitlePlural) : lastPage}
