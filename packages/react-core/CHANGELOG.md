@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.129](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.128...@patternfly/react-core@5.0.0-alpha.129) (2023-06-01)
+
+### Bug Fixes
+
+- **TimePicker:** resolved border styling on open menu ([#9214](https://github.com/patternfly/patternfly-react/issues/9214)) ([4a2b72c](https://github.com/patternfly/patternfly-react/commit/4a2b72cdf1f48294282466cd44dfbc49b5229dbc))
+
 # [5.0.0-alpha.128](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.127...@patternfly/react-core@5.0.0-alpha.128) (2023-06-01)
 
 ### Bug Fixes
