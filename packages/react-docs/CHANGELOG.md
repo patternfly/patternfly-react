@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.138](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.137...@patternfly/react-docs@6.0.0-alpha.138) (2023-06-01)
+
+### Bug Fixes
+
+- **BackgroundImage:** Added src URL back, improved unit tests, updated screenshot ([#9199](https://github.com/patternfly/patternfly-react/issues/9199)) ([1f8a35b](https://github.com/patternfly/patternfly-react/commit/1f8a35b1eeefeffa1cf137db9342bbe99da13341))
+
 # [6.0.0-alpha.137](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.0.0-alpha.136...@patternfly/react-docs@6.0.0-alpha.137) (2023-05-31)
 
 **Note:** Version bump only for package @patternfly/react-docs
