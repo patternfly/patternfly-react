@@ -3,20 +3,14 @@ id: Navigation
 section: components
 ---
 
-import {
-PageHeader,
-PageHeaderTools,
-PageHeaderToolsGroup,
-PageHeaderToolsItem
-} from '@patternfly/react-core/deprecated';
-
 import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
 
@@ -387,6 +381,10 @@ import {
   DropdownList,
   Gallery,
   GalleryItem,
+  Masthead,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
   MenuToggle,
   Nav,
   NavItem,
@@ -396,21 +394,19 @@ import {
   PageSectionVariants,
   SkipToContent,
   TextContent,
-  Text
+  Text,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem
 } from '@patternfly/react-core';
-
-import {
-  PageHeader,
-  PageHeaderTools,
-  PageHeaderToolsGroup,
-  PageHeaderToolsItem
-} from '@patternfly/react-core/deprecated';
 import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PageLayoutHorizontalNav extends React.Component {
@@ -419,6 +415,7 @@ class PageLayoutHorizontalNav extends React.Component {
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
+      isFullKebabDropdownOpen: false,
       activeItem: 0
     };
 
@@ -446,6 +443,12 @@ class PageLayoutHorizontalNav extends React.Component {
       });
     };
 
+    this.onFullKebabToggle = () => {
+      this.setState((prevState) => ({
+        isFullKebabDropdownOpen: !prevState.isFullKebabDropdownOpen
+      }));
+    };
+
     this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
@@ -454,7 +457,7 @@ class PageLayoutHorizontalNav extends React.Component {
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen, activeItem } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav" variant="horizontal">
@@ -494,54 +497,82 @@ class PageLayoutHorizontalNav extends React.Component {
         <DropdownItem key="group 2 logout">Logout</DropdownItem>
       </>
     );
-    const headerTools = (
-      <PageHeaderTools>
-        <PageHeaderToolsGroup
-          visibility={{
-            default: 'hidden',
-            lg: 'visible'
-          }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
-        >
-          <PageHeaderToolsItem>
-            <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem>
-            <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <QuestionCircleIcon />
-            </Button>
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-        <PageHeaderToolsGroup>
-          <PageHeaderToolsItem
-            visibility={{
-              lg: 'hidden'
-            }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
+    
+    const headerToolbar = (
+      <Toolbar id="toolbar" isFullHeight isStatic>
+        <ToolbarContent>
+          <ToolbarItem>
+            {PageNav}
+          </ToolbarItem>
+          <ToolbarGroup
+            variant="icon-button-group"
+            align={{ default: 'alignRight' }}
+            spacer={{ default: 'spacerNone', md: 'spacerMd' }}
           >
-            <Dropdown
-              isOpen={isKebabDropdownOpen}
-              onSelect={this.onKebabDropdownSelect}
-              onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
-              popperProps={{ position: 'right' }}
-              toggle={(toggleRef) => (
-                <MenuToggle
-                  ref={toggleRef}
-                  isExpanded={isKebabDropdownOpen}
-                  onClick={this.onKebabDropdownToggle}
-                  variant="plain"
-                  aria-label="Settings and help"
-                >
-                  <EllipsisVIcon aria-hidden="true" />
-                </MenuToggle>
-              )}
-            >
-              <DropdownList>{kebabDropdownItems}</DropdownList>
-            </Dropdown>
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem
-            visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
-          >
+            <ToolbarItem>
+              <Button
+                aria-label="Notifications"
+                variant={ButtonVariant.plain}
+                icon={<BellIcon />}
+                onClick={() => {}}
+              />
+            </ToolbarItem>
+            <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
+              <ToolbarItem>
+                <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
+              </ToolbarItem>
+              <ToolbarItem>
+                <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+              </ToolbarItem>
+            </ToolbarGroup>
+            <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
+              <Dropdown
+                isOpen={isKebabDropdownOpen}
+                onSelect={this.onKebabDropdownSelect}
+                onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isKebabDropdownOpen}
+                    onClick={this.onKebabDropdownToggle}
+                    variant="plain"
+                    aria-label="Settings and help"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>{kebabDropdownItems}</DropdownList>
+              </Dropdown>
+            </ToolbarItem>
+            <ToolbarItem visibility={{ md: 'hidden' }}>
+              <Dropdown
+                isOpen={isFullKebabDropdownOpen}
+                onSelect={this.onFullKebabSelect}
+                onOpenChange={(isOpen) => this.setState({ isFullKebabDropdownOpen: isOpen })}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isFullKebabDropdownOpen}
+                    onClick={this.onFullKebabToggle}
+                    variant="plain"
+                    aria-label="Toolbar menu"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownGroup key="group 2" aria-label="User actions">
+                  <DropdownList>{userDropdownItems}</DropdownList>
+                </DropdownGroup>
+                <Divider />
+                <DropdownList>{kebabDropdownItems}</DropdownList>
+              </Dropdown>
+            </ToolbarItem>
+          </ToolbarGroup>
+          <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
             <Dropdown
               isOpen={isDropdownOpen}
               onSelect={this.onDropdownSelect}
@@ -555,19 +586,32 @@ class PageLayoutHorizontalNav extends React.Component {
                   icon={<Avatar src={imgAvatar} alt="" />}
                   isFullHeight
                 >
-                  John Smith
+                  Ned Username
                 </MenuToggle>
               )}
             >
               <DropdownList>{userDropdownItems}</DropdownList>
             </Dropdown>
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-      </PageHeaderTools>
+          </ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
     );
-
     const Header = (
-      <PageHeader logo={<Brand src={imgBrand} alt="Patternfly Logo" />} headerTools={headerTools} topNav={PageNav} />
+      <Masthead>
+        <MastheadMain>
+          <MastheadBrand>
+            <Brand
+              widths={{ default: '180px', md: '180px', '2xl': '220px' }}
+              src={imgColorBrand}
+              alt="Fallback patternFly default logo"
+            >
+              <source media="(min-width: 768px)" srcSet={imgColorBrand} />
+              <source srcSet={imgColorBrand} />
+            </Brand>
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
     );
 
     const pageId = 'main-content-page-layout-horizontal-nav';
@@ -773,6 +817,10 @@ import {
   Gallery,
   GalleryItem,
   MenuToggle,
+  Masthead,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
   Nav,
   NavItem,
   NavList,
@@ -782,18 +830,18 @@ import {
   PageSectionTypes,
   SkipToContent,
   TextContent,
-  Text
-} from '@patternfly/react-core';
-import {
-  PageHeader,
-  PageHeaderTools,
-  PageHeaderToolsItem,
-  PageHeaderToolsGroup
-} from '@patternfly/react-core/deprecated';
+  Text,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem
+  } from '@patternfly/react-core';
 import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
@@ -804,6 +852,7 @@ class HorizontalNavWithSubnav extends React.Component {
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
+      isFullKebabDropdownOpen: false,
       activeItem: 0,
       activeSubNavItem: 7
     };
@@ -832,6 +881,12 @@ class HorizontalNavWithSubnav extends React.Component {
       });
     };
 
+    this.onFullKebabToggle = () => {
+      this.setState((prevState) => ({
+        isFullKebabDropdownOpen: !prevState.isFullKebabDropdownOpen
+      }));
+    };
+
     this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
@@ -846,7 +901,7 @@ class HorizontalNavWithSubnav extends React.Component {
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem, activeSubNavItem } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen, activeItem, activeSubNavItem } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav" variant="horizontal">
@@ -892,90 +947,8 @@ class HorizontalNavWithSubnav extends React.Component {
         <DropdownItem key="group 2 logout">Logout</DropdownItem>
       </>
     );
-    const headerTools = (
-      <PageHeaderTools>
-        <PageHeaderToolsGroup
-          visibility={{
-            default: 'hidden',
-            lg: 'visible'
-          }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
-        >
-          <PageHeaderToolsItem>
-            <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem>
-            <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <QuestionCircleIcon />
-            </Button>
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-        <PageHeaderToolsGroup>
-          <PageHeaderToolsItem
-            visibility={{
-              lg: 'hidden'
-            }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
-          >
-            <Dropdown
-              isOpen={isKebabDropdownOpen}
-              onSelect={this.onKebabDropdownSelect}
-              onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
-              popperProps={{ position: 'right' }}
-              toggle={(toggleRef) => (
-                <MenuToggle
-                  ref={toggleRef}
-                  isExpanded={isKebabDropdownOpen}
-                  onClick={this.onKebabDropdownToggle}
-                  variant="plain"
-                  aria-label="Settings and help"
-                >
-                  <EllipsisVIcon aria-hidden="true" />
-                </MenuToggle>
-              )}
-            >
-              <DropdownList>{kebabDropdownItems}</DropdownList>
-            </Dropdown>
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem
-            visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
-          >
-            <Dropdown
-              isOpen={isDropdownOpen}
-              onSelect={this.onDropdownSelect}
-              onOpenChange={(isOpen) => this.setState({ isDropdownOpen: isOpen })}
-              popperProps={{ position: 'right' }}
-              toggle={(toggleRef) => (
-                <MenuToggle
-                  ref={toggleRef}
-                  isExpanded={isDropdownOpen}
-                  onClick={this.onDropdownToggle}
-                  icon={<Avatar src={imgAvatar} alt="" />}
-                  isFullHeight
-                >
-                  John Smith
-                </MenuToggle>
-              )}
-            >
-              <DropdownList>{userDropdownItems}</DropdownList>
-            </Dropdown>
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-      </PageHeaderTools>
-    );
 
-    const Header = (
-      <PageHeader
-        logo={<Brand src={imgColorBrand} alt="Patternfly Logo" />}
-        headerTools={headerTools}
-        topNav={PageNav}
-      />
-    );
-
-    const pageId = 'main-content-page-layout-horizontal-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
-
-    const SubNav = (
+     const SubNav = (
       <Nav onSelect={this.onSubNavSelect} aria-label="Nav" variant="horizontal-subnav">
         <NavList>
           <NavItem itemId={7} isActive={activeSubNavItem === 7} to="#">
@@ -1002,6 +975,131 @@ class HorizontalNavWithSubnav extends React.Component {
         </NavList>
       </Nav>
     );
+
+    const headerToolbar = (
+      <Toolbar id="toolbar" isFullHeight isStatic>
+        <ToolbarContent>
+          <ToolbarItem>
+            {PageNav}
+          </ToolbarItem>
+          <ToolbarGroup
+            variant="icon-button-group"
+            align={{ default: 'alignRight' }}
+            spacer={{ default: 'spacerNone', md: 'spacerMd' }}
+          >
+            <ToolbarItem>
+              <Button
+                aria-label="Notifications"
+                variant={ButtonVariant.plain}
+                icon={<BellIcon />}
+                onClick={() => {}}
+              />
+            </ToolbarItem>
+            <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
+              <ToolbarItem>
+                <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
+              </ToolbarItem>
+              <ToolbarItem>
+                <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+              </ToolbarItem>
+            </ToolbarGroup>
+            <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
+              <Dropdown
+                isOpen={isKebabDropdownOpen}
+                onSelect={this.onKebabDropdownSelect}
+                onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isKebabDropdownOpen}
+                    onClick={this.onKebabDropdownToggle}
+                    variant="plain"
+                    aria-label="Settings and help"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>{kebabDropdownItems}</DropdownList>
+              </Dropdown>
+            </ToolbarItem>
+            <ToolbarItem visibility={{ md: 'hidden' }}>
+              <Dropdown
+                isOpen={isFullKebabDropdownOpen}
+                onSelect={this.onFullKebabSelect}
+                onOpenChange={(isOpen) => this.setState({ isFullKebabDropdownOpen: isOpen })}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isFullKebabDropdownOpen}
+                    onClick={this.onFullKebabToggle}
+                    variant="plain"
+                    aria-label="Toolbar menu"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownGroup key="group 2" aria-label="User actions">
+                  <DropdownList>{userDropdownItems}</DropdownList>
+                </DropdownGroup>
+                <Divider />
+                <DropdownList>{kebabDropdownItems}</DropdownList>
+              </Dropdown>
+            </ToolbarItem>
+          </ToolbarGroup>
+          <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
+            <Dropdown
+              isOpen={isDropdownOpen}
+              onSelect={this.onDropdownSelect}
+              onOpenChange={(isOpen) => this.setState({ isDropdownOpen: isOpen })}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isDropdownOpen}
+                  onClick={this.onDropdownToggle}
+                  icon={<Avatar src={imgAvatar} alt="" />}
+                  isFullHeight
+                >
+                  Ned Username
+                </MenuToggle>
+              )}
+            >
+              <DropdownList>{userDropdownItems}</DropdownList>
+            </Dropdown>
+          </ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+    const Header = (
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand>
+            <Brand
+              widths={{ default: '180px', md: '180px', '2xl': '220px' }}
+              src={imgColorBrand}
+              alt="Fallback patternFly default logo"
+            >
+              <source media="(min-width: 768px)" srcSet={imgColorBrand} />
+              <source srcSet={imgColorBrand} />
+            </Brand>
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
+    );
+
+
+    const pageId = 'main-content-page-layout-horizontal-nav';
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
     return (
       <React.Fragment>
@@ -1263,6 +1361,10 @@ import {
   DropdownList,
   Gallery,
   GalleryItem,
+  Masthead,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
   MenuToggle,
   Nav,
   NavItem,
@@ -1274,20 +1376,21 @@ import {
   PageSidebarBody,
   SkipToContent,
   TextContent,
-  Text
+  Text,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem
 } from '@patternfly/react-core';
-import {
-  PageHeader,
-  PageHeaderTools,
-  PageHeaderToolsItem,
-  PageHeaderToolsGroup
-} from '@patternfly/react-core/deprecated';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
+
 
 class PageLayoutManualNav extends React.Component {
   constructor(props) {
@@ -1295,6 +1398,7 @@ class PageLayoutManualNav extends React.Component {
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
+      isFullKebabDropdownOpen: false,
       activeItem: 0,
       isMobileView: false,
       isNavOpenDesktop: true,
@@ -1325,6 +1429,12 @@ class PageLayoutManualNav extends React.Component {
       });
     };
 
+    this.onFullKebabToggle = () => {
+      this.setState((prevState) => ({
+        isFullKebabDropdownOpen: !prevState.isFullKebabDropdownOpen
+      }));
+    };
+
     this.onNavSelect = (_event, result) => {
       this.setState({
         activeItem: result.itemId
@@ -1351,7 +1461,7 @@ class PageLayoutManualNav extends React.Component {
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem, isNavOpenDesktop, isNavOpenMobile, isMobileView } =
+    const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen, activeItem, isNavOpenDesktop, isNavOpenMobile, isMobileView } =
       this.state;
 
     const PageNav = (
@@ -1392,54 +1502,79 @@ class PageLayoutManualNav extends React.Component {
         <DropdownItem key="group 2 logout">Logout</DropdownItem>
       </>
     );
-    const headerTools = (
-      <PageHeaderTools>
-        <PageHeaderToolsGroup
-          visibility={{
-            default: 'hidden',
-            lg: 'visible'
-          }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
-        >
-          <PageHeaderToolsItem>
-            <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem>
-            <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <QuestionCircleIcon />
-            </Button>
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-        <PageHeaderToolsGroup>
-          <PageHeaderToolsItem
-            visibility={{
-              lg: 'hidden'
-            }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
+    
+     const headerToolbar = (
+      <Toolbar id="toolbar" isFullHeight isStatic>
+        <ToolbarContent>
+          <ToolbarGroup
+            variant="icon-button-group"
+            align={{ default: 'alignRight' }}
+            spacer={{ default: 'spacerNone', md: 'spacerMd' }}
           >
-            <Dropdown
-              isOpen={isKebabDropdownOpen}
-              onSelect={this.onKebabDropdownSelect}
-              onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
-              popperProps={{ position: 'right' }}
-              toggle={(toggleRef) => (
-                <MenuToggle
-                  ref={toggleRef}
-                  isExpanded={isKebabDropdownOpen}
-                  onClick={this.onKebabDropdownToggle}
-                  variant="plain"
-                  aria-label="Settings and help"
-                >
-                  <EllipsisVIcon aria-hidden="true" />
-                </MenuToggle>
-              )}
-            >
-              <DropdownList>{kebabDropdownItems}</DropdownList>
-            </Dropdown>
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem
-            visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
-          >
+            <ToolbarItem>
+              <Button
+                aria-label="Notifications"
+                variant={ButtonVariant.plain}
+                icon={<BellIcon />}
+                onClick={() => {}}
+              />
+            </ToolbarItem>
+            <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
+              <ToolbarItem>
+                <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
+              </ToolbarItem>
+              <ToolbarItem>
+                <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+              </ToolbarItem>
+            </ToolbarGroup>
+            <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
+              <Dropdown
+                isOpen={isKebabDropdownOpen}
+                onSelect={this.onKebabDropdownSelect}
+                onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isKebabDropdownOpen}
+                    onClick={this.onKebabDropdownToggle}
+                    variant="plain"
+                    aria-label="Settings and help"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>{kebabDropdownItems}</DropdownList>
+              </Dropdown>
+            </ToolbarItem>
+            <ToolbarItem visibility={{ md: 'hidden' }}>
+              <Dropdown
+                isOpen={isFullKebabDropdownOpen}
+                onSelect={this.onFullKebabSelect}
+                onOpenChange={(isOpen) => this.setState({ isFullKebabDropdownOpen: isOpen })}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isFullKebabDropdownOpen}
+                    onClick={this.onFullKebabToggle}
+                    variant="plain"
+                    aria-label="Toolbar menu"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownGroup key="group 2" aria-label="User actions">
+                  <DropdownList>{userDropdownItems}</DropdownList>
+                </DropdownGroup>
+                <Divider />
+                <DropdownList>{kebabDropdownItems}</DropdownList>
+              </Dropdown>
+            </ToolbarItem>
+          </ToolbarGroup>
+          <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
             <Dropdown
               isOpen={isDropdownOpen}
               onSelect={this.onDropdownSelect}
@@ -1453,26 +1588,39 @@ class PageLayoutManualNav extends React.Component {
                   icon={<Avatar src={imgAvatar} alt="" />}
                   isFullHeight
                 >
-                  John Smith
+                  Ned Username
                 </MenuToggle>
               )}
             >
               <DropdownList>{userDropdownItems}</DropdownList>
             </Dropdown>
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-      </PageHeaderTools>
+          </ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+    const Header = (
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand>
+            <Brand
+              widths={{ default: '180px', md: '180px', '2xl': '220px' }}
+              src={imgColorBrand}
+              alt="Fallback patternFly default logo"
+            >
+              <source media="(min-width: 768px)" srcSet={imgColorBrand} />
+              <source srcSet={imgColorBrand} />
+            </Brand>
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
     );
 
-    const Header = (
-      <PageHeader
-        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        headerTools={headerTools}
-        showNavToggle
-        onNavToggle={isMobileView ? this.onNavToggleMobile : this.onNavToggleDesktop}
-        isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop}
-      />
-    );
     const Sidebar = (
       <PageSidebar isSidebarOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop}>
         <PageSidebarBody>{PageNav}</PageSidebarBody>
@@ -1535,7 +1683,6 @@ import {
   MenuList,
   MenuItem
 } from '@patternfly/react-core';
-import { PageHeader, PageHeaderTools } from '@patternfly/react-core';
 import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class VerticalPage extends React.Component {
