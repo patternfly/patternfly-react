@@ -512,6 +512,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         onChange={this.onInputChange}
         autoComplete="off"
         isDisabled={isDisabled}
+        isExpanded={isTimeOptionsOpen}
         ref={this.inputRef}
         {...inputProps}
       />
@@ -539,7 +540,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
                   <Popper
                     appendTo={calculatedAppendTo}
                     trigger={textInput}
-                    triggerRef={this.inputRef}
+                    triggerRef={this.toggleRef}
                     popper={menuContainer}
                     popperRef={this.menuRef}
                     isVisible={isTimeOptionsOpen}
