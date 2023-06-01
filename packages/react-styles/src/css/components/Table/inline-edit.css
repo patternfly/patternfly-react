@@ -29,7 +29,7 @@ tr.pf-v5-c-table__editable-row.pf-m-table-editing-last-row {
 tr.pf-v5-c-table__editable-row input {
   display: block;
   background: var(--pf-v5-global--BackgroundColor--100);
-  border: 1px solid var(--pf-v5-global--BorderColor);
+  border: 1px solid var(--pf-v5-global--BorderColor--100);
 }
 tr.pf-v5-c-table__editable-row input:hover {
   cursor: text;
