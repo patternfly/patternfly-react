@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-alpha.18 (2023-06-01)
+
+### Bug Fixes
+
+- **react-styles:** updated class names to include versions ([#9173](https://github.com/patternfly/patternfly-react/issues/9173)) ([ae05e89](https://github.com/patternfly/patternfly-react/commit/ae05e89a361773223c3804fa352ea7eefab01c8a))
+
 # 5.0.0-alpha.17 (2023-05-31)
 
 **Note:** Version bump only for package @patternfly/react-styles
