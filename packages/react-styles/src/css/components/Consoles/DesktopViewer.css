@@ -1,4 +1,4 @@
-.pf-c-console__desktop-viewer {
+.pf-v5-c-console__desktop-viewer {
   grid-area: main;
   display: grid;
   gap: var(--pf-v5-global--spacer--md);

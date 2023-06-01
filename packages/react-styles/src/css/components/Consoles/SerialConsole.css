@@ -1,11 +1,11 @@
-.pf-c-console__serial {
+.pf-v5-c-console__serial {
   grid-area: main;
 }
-.pf-c-console__actions-serial {
+.pf-v5-c-console__actions-serial {
   grid-area: actions-extra;
   display: flex;
   justify-content: flex-end;
 }
-.pf-c-console__actions-serial > button {
+.pf-v5-c-console__actions-serial > button {
   margin-right: var(--pf-v5-global--spacer--sm);
 }
