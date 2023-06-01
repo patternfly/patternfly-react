@@ -151,7 +151,7 @@ describe('Pagination Demo Test', () => {
                 .find('.pf-v5-c-menu-toggle__text')
                 .then((toggleText) => expect(toggleText).to.have.text('401 - 500 of 523 '));
               cy.get('.pagination-options-menu-default-fullpage')
-                .find('.pf-v5-c-form-control')
+                .find('.pf-v5-c-form-control input')
                 .then((currentPage) => expect(currentPage).to.have.value('5'));
             });
           });

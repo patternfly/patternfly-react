@@ -67,14 +67,17 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     <div
       class="pf-v5-c-pagination__nav-page-select"
     >
-      <input
-        aria-label="Current page"
+      <div
         class="pf-v5-c-form-control"
-        max="0"
-        min="0"
-        type="number"
-        value="42"
-      />
+      >
+        <input
+          aria-label="Current page"
+          max="0"
+          min="0"
+          type="number"
+          value="42"
+        />
+      </div>
     </div>
     <div
       class="pf-v5-c-pagination__nav-control"

@@ -124,14 +124,17 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="2"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="2"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -315,14 +318,17 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="2"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="2"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -506,14 +512,17 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="2"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="2"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -697,14 +706,17 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="2"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="2"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -888,14 +900,17 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="2"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="2"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -1079,14 +1094,17 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="2"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="2"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -1256,14 +1274,17 @@ exports[`Pagination component render custom pagination toggle 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="4"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="4"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -1451,14 +1472,17 @@ exports[`Pagination component render custom perPageOptions 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="4"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="4"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -1644,14 +1668,17 @@ exports[`Pagination component render custom start end 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="4"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="4"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -1798,14 +1825,17 @@ exports[`Pagination component render empty per page options 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="4"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="4"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -1991,14 +2021,17 @@ exports[`Pagination component render last page 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="2"
-          min="1"
-          type="number"
-          value="2"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="2"
+            min="1"
+            type="number"
+            value="2"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -2188,15 +2221,18 @@ exports[`Pagination component render limited number of pages 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          disabled=""
-          max="1"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            disabled=""
+            max="1"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -2374,14 +2410,17 @@ exports[`Pagination component render should render correctly bottom 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="2"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="2"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -2557,14 +2596,17 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="2"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="2"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -2878,15 +2920,18 @@ exports[`Pagination component render should render correctly disabled 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          disabled=""
-          max="2"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            disabled=""
+            max="2"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -3076,14 +3121,17 @@ exports[`Pagination component render should render correctly sticky 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="2"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="2"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -3271,14 +3319,17 @@ exports[`Pagination component render should render correctly top 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="2"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="2"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -3466,14 +3517,17 @@ exports[`Pagination component render titles 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="4"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="4"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -3661,14 +3715,17 @@ exports[`Pagination component render up drop direction 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          max="4"
-          min="1"
-          type="number"
-          value="1"
-        />
+        >
+          <input
+            aria-label="Current page"
+            max="4"
+            min="1"
+            type="number"
+            value="1"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
@@ -3856,15 +3913,18 @@ exports[`Pagination component render zero results 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <input
-          aria-label="Current page"
+        <div
           class="pf-v5-c-form-control"
-          disabled=""
-          max="0"
-          min="1"
-          type="number"
-          value="0"
-        />
+        >
+          <input
+            aria-label="Current page"
+            disabled=""
+            max="0"
+            min="1"
+            type="number"
+            value="0"
+          />
+        </div>
         <span
           aria-hidden="true"
         >
