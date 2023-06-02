@@ -1,18 +1,16 @@
 ---
-id: Upgrade guide
-title: PatternFly 5 upgrade guide
-section: developer-resources
+id: Major release notes
+title: PatternFly 5 major release notes 
+section: get-started
 ---
 
-This upgrade guide details our upgrade from PatternFly v4 to v5. The following release notes detail changes made to PatternFly’s React and HTML libraries, from major releases 2023.02 to 2023.06.
+These notes outline the breaking changes that result from our latest major release of PatternFly 5. Breaking changes affect your product’s existing implementation and require you to adjust your codebase.
 
-Some of these changes will break your existing implementation and require you to upgrade your code. This guide details what was broken and how to fix it. To learn why a change was made, visit the linked GitHub pull request.
+The following notes detail the breaking changes made to PatternFly’s React library and link each change to its related pull request in GitHub. To view a list of all changes, including non-breaking changes, [refer to our 2023.06 release notes](/get-started/release-notes). 
 
-## Global
+## Global changes
 
-- React 18
 - Updated outdated dependencies ([#5377](https://github.com/patternfly/patternfly/pull/5377))
-- Code mods
 
 ## Website fixes
 
@@ -30,7 +28,7 @@ Some of these changes will break your existing implementation and require you to
 
 - Removed support for Overpass font ([#5169](https://github.com/patternfly/patternfly/pull/5169))
 
-## React core  
+## Components
 
 - Updated components using a plain checkbox or radio input to instead  use the `.pf-m-standalone` variation of the checkbox/radio instead ([#5355](https://github.com/patternfly/patternfly/pull/5355))
 - Removed `visibility` CSS across components where it was unnecessary ([#5209](https://github.com/patternfly/patternfly/pull/5209))
