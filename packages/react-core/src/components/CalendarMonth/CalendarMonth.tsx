@@ -152,19 +152,17 @@ export const CalendarMonth = ({
     .map((monthNum) => new Date(1990, monthNum))
     .map(monthFormat);
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
-  // eslint-disable-next-line prefer-const
-  const [focusedDate, setFocusedDate] = React.useState(() => {
+
+  const getInitialDate = () => {
     const initDate = new Date(dateProp);
-    if (isValidDate(initDate)) {
+    if (dateProp && isValidDate(initDate)) {
       return initDate;
     } else {
-      if (isValidDate(rangeStart)) {
-        return rangeStart;
-      } else {
-        return today;
-      }
+      return isValidDate(rangeStart) ? rangeStart : today;
     }
-  });
+  };
+  const initialDate = getInitialDate();
+  const [focusedDate, setFocusedDate] = React.useState(initialDate);
   const [hoveredDate, setHoveredDate] = React.useState(new Date(focusedDate));
   const focusRef = React.useRef<HTMLButtonElement>();
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
@@ -216,11 +214,38 @@ export const CalendarMonth = ({
     }
   };
 
-  const addMonth = (toAdd: -1 | 1) => {
+  const changeMonth = (month: number) => {
     const newDate = new Date(focusedDate);
-    newDate.setMonth(newDate.getMonth() + toAdd);
+    const desiredDay = newDate.getDate();
+    const monthDays = new Date(newDate.getFullYear(), month + 1, 0).getDate(); // Setting day 0 of the next month returns the last day of current month
+
+    if (monthDays < desiredDay) {
+      newDate.setDate(monthDays);
+    }
+
+    newDate.setMonth(month);
+
+    if (initialDate.getDate() > desiredDay && monthDays > desiredDay) {
+      newDate.setDate(initialDate.getDate());
+    }
+
     return newDate;
   };
+
+  const addMonth = (toAdd: -1 | 1) => {
+    const newMonth = (new Date(focusedDate).getMonth() + toAdd) % 12;
+    const newDate = changeMonth(newMonth);
+    if (toAdd === 1 && newMonth === 0) {
+      newDate.setFullYear(newDate.getFullYear() + 1);
+    }
+    if (toAdd === -1 && newMonth === 11) {
+      newDate.setFullYear(newDate.getFullYear() - 1);
+    }
+    return newDate;
+  };
+
+  const yearHasFebruary29th = (year: number) => new Date(year, 1, 29).getMonth() === 1;
+  const dateIsFebruary29th = (date: Date) => date.getMonth() === 1 && date.getDate() === 29;
 
   const prevMonth = addMonth(-1);
   const nextMonth = addMonth(1);
@@ -287,8 +312,7 @@ export const CalendarMonth = ({
                   setTimeout(() => {
                     setIsSelectOpen(false);
                     onSelectToggle(false);
-                    const newDate = new Date(focusedDate);
-                    newDate.setMonth(Number(monthNum as string));
+                    const newDate = changeMonth(Number(monthNum as string));
                     setFocusedDate(newDate);
                     setHoveredDate(newDate);
                     setShouldFocus(false);
@@ -315,6 +339,14 @@ export const CalendarMonth = ({
                 value={yearFormatted}
                 onChange={(ev: React.FormEvent<HTMLInputElement>, year: string) => {
                   const newDate = new Date(focusedDate);
+                  if (dateIsFebruary29th(newDate) && !yearHasFebruary29th(+year)) {
+                    newDate.setDate(28);
+                    newDate.setMonth(1);
+                  }
+                  if (dateIsFebruary29th(initialDate) && yearHasFebruary29th(+year)) {
+                    newDate.setFullYear(+year);
+                    newDate.setDate(29);
+                  }
                   newDate.setFullYear(+year);
                   setFocusedDate(newDate);
                   setHoveredDate(newDate);
