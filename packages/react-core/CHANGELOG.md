@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.132](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.131...@patternfly/react-core@5.0.0-alpha.132) (2023-06-02)
+
+### Bug Fixes
+
+- **Pagination:** default page should be 1 ([#9201](https://github.com/patternfly/patternfly-react/issues/9201)) ([27b2c14](https://github.com/patternfly/patternfly-react/commit/27b2c14cb7ec6fcf5b9fceaccb94a2476765d409))
+
 # [5.0.0-alpha.131](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-alpha.130...@patternfly/react-core@5.0.0-alpha.131) (2023-06-02)
 
 **Note:** Version bump only for package @patternfly/react-core
