@@ -155,7 +155,7 @@ export const CalendarMonth = ({
 
   const getInitialDate = () => {
     const initDate = new Date(dateProp);
-    if (dateProp && isValidDate(initDate)) {
+    if (isValidDate(initDate)) {
       return initDate;
     } else {
       return isValidDate(rangeStart) ? rangeStart : today;
