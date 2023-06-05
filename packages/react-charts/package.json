@@ -11,8 +11,7 @@
     "*.scss"
   ],
   "publishConfig": {
-    "access": "public",
-    "tag": "prerelease"
+    "access": "public"
   },
   "repository": {
     "type": "git",
