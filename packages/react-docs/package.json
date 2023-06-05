@@ -3,8 +3,7 @@
   "description": "PatternFly React Docs",
   "version": "5.103.84",
   "publishConfig": {
-    "access": "public",
-    "tag": "prerelease-v4"
+    "access": "public"
   },
   "repository": {
     "type": "git",
