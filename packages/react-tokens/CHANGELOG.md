@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.94.7 (2023-06-05)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
 ## 4.94.6 (2023-01-23)
 
 **Note:** Version bump only for package @patternfly/react-tokens
