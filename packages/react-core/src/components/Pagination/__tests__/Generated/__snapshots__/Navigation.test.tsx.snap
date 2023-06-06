@@ -67,14 +67,21 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     <div
       class="pf-v5-c-pagination__nav-page-select"
     >
-      <input
-        aria-label="Current page"
+      <div
         class="pf-v5-c-form-control"
-        max="0"
-        min="0"
-        type="number"
-        value="42"
-      />
+      >
+        <input
+          aria-invalid="false"
+          aria-label="Current page"
+          data-ouia-component-id="OUIA-Generated-TextInputBase-1"
+          data-ouia-component-type="PF4/TextInput"
+          data-ouia-safe="true"
+          max="0"
+          min="0"
+          type="number"
+          value="42"
+        />
+      </div>
     </div>
     <div
       class="pf-v5-c-pagination__nav-control"
