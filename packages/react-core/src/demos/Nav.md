@@ -1137,7 +1137,7 @@ class HorizontalNavWithSubnav extends React.Component {
 }
 ```
 
-### Legacy tertiary nav
+### Tertiary nav (deprecated)
 
 ```js isFullscreen
 import React from 'react';
@@ -1239,7 +1239,7 @@ class PageLayoutTertiaryNav extends React.Component {
 }
 ```
 
-### Legacy/Light Nav
+### Light Nav (deprecated)
 
 ```js isFullscreen
 import React from 'react';
