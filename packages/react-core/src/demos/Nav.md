@@ -501,7 +501,7 @@ class PageLayoutHorizontalNav extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar" isFullHeight isStatic>
         <ToolbarContent>
-          <ToolbarItem>
+          <ToolbarItem isOverflowContainer>
             {PageNav}
           </ToolbarItem>
           <ToolbarGroup
@@ -979,7 +979,7 @@ class HorizontalNavWithSubnav extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar" isFullHeight isStatic>
         <ToolbarContent>
-          <ToolbarItem>
+          <ToolbarItem isOverflowContainer>
             {PageNav}
           </ToolbarItem>
           <ToolbarGroup

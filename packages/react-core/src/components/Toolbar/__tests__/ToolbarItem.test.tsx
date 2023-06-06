@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ToolbarItem } from '../ToolbarItem';
 
 describe('ToolbarItem', () => {
@@ -15,5 +15,10 @@ describe('ToolbarItem', () => {
 
     const { asFragment } = render(<ToolbarItem widths={widths}>Test</ToolbarItem>);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render with pf-m-overflow-container when isOverflowContainer is set', () => {
+    render(<ToolbarItem data-testid="toolbaritem" isOverflowContainer>Test</ToolbarItem>);
+    expect(screen.getByTestId('toolbaritem')).toHaveClass('pf-m-overflow-container');
   });
 });

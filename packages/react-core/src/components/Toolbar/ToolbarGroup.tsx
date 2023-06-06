@@ -53,6 +53,8 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
   };
   /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
+  /** Flag that modifies the toolbar item to hide overflow and respond to available space. Used for horizontal navigation. */
+  isOverflowContainer?: boolean;
   /** @hide Reference to pass to this group if it has .pf-m-chip-container modifier */
   innerRef?: React.RefObject<any>;
 }
@@ -69,6 +71,7 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
       className,
       variant,
       children,
+      isOverflowContainer,
       innerRef,
       ...props
     } = this.props;
@@ -88,6 +91,7 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
               alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
               alignSelf === 'center' && styles.modifiers.alignSelfCenter,
               alignSelf === 'baseline' && styles.modifiers.alignSelfBaseline,
+              isOverflowContainer && styles.modifiers.overflowContainer,
               className
             )}
             {...props}
