@@ -6,6 +6,7 @@ import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-do
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import { Button, ButtonVariant } from '../Button';
+import { TextInput } from '../TextInput';
 import { OnSetPage } from './Pagination';
 import { pluralize, PickOptional } from '../../helpers';
 import { KeyTypes } from '../../helpers/constants';
@@ -28,7 +29,7 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   /** Label for the English word "of". */
   ofWord?: string;
   /** The number of the current page. */
-  page: React.ReactText;
+  page: string | number;
   /** The title of a page displayed beside the page number. */
   pagesTitle?: string;
   /** The title of a page displayed beside the page number (the plural form). */
@@ -102,9 +103,9 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     return inputPage;
   }
 
-  private onChange(event: React.ChangeEvent<HTMLInputElement>, lastPage: number): void {
-    const inputPage = Navigation.parseInteger(event.target.value, lastPage);
-    this.setState({ userInputPage: Number.isNaN(inputPage as number) ? event.target.value : inputPage });
+  private onChange(event: React.FormEvent<HTMLInputElement>, lastPage: number): void {
+    const inputPage = Navigation.parseInteger(event.currentTarget.value, lastPage);
+    this.setState({ userInputPage: Number.isNaN(inputPage as number) ? event.currentTarget.value : inputPage });
   }
 
   private onKeyDown(
@@ -217,20 +218,18 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
         </div>
         {!isCompact && (
           <div className={styles.paginationNavPageSelect}>
-            <div className={css(styles.formControl)}>
-              <input
-                aria-label={currPageAriaLabel}
-                type="number"
-                disabled={
-                  isDisabled || (itemCount && page === firstPage && page === lastPage && itemCount >= 0) || page === 0
-                }
-                min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
-                max={lastPage}
-                value={userInputPage}
-                onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput)}
-                onChange={event => this.onChange(event, lastPage)}
-              />
-            </div>
+            <TextInput
+              aria-label={currPageAriaLabel}
+              type="number"
+              isDisabled={
+                isDisabled || (itemCount && page === firstPage && page === lastPage && itemCount >= 0) || page === 0
+              }
+              min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
+              max={lastPage}
+              value={userInputPage}
+              onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput)}
+              onChange={event => this.onChange(event, lastPage)}
+            />
             {(itemCount || itemCount === 0) && (
               <span aria-hidden="true">
                 {ofWord} {pagesTitle ? pluralize(lastPage, pagesTitle, pagesTitlePlural) : lastPage}
