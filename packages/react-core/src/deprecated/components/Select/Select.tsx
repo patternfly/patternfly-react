@@ -1475,6 +1475,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               mainContainer
             ) : (
               <Popper
+                width="auto"
                 trigger={mainContainer}
                 triggerRef={this.parentRef}
                 popper={popperContainer}
