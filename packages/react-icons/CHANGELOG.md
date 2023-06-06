@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-prerelease.1 (2023-06-06)
+
+### Bug Fixes
+
+- **release:** dryrun publishing prereleases ([#9242](https://github.com/patternfly/patternfly-react/issues/9242)) ([e4c35f1](https://github.com/patternfly/patternfly-react/commit/e4c35f14cd57be132179e51ae2bb223600a35f0e))
+
 # 5.0.0-alpha.21 (2023-06-02)
 
 **Note:** Version bump only for package @patternfly/react-icons
