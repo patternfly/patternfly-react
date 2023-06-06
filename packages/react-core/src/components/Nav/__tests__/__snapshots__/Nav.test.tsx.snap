@@ -6,7 +6,7 @@ exports[`Nav Dark Nav List 1`] = `
     aria-label="Global"
     class="pf-v5-c-nav test=nav-class"
     data-ouia-component-id="OUIA-Generated-Nav-4"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <ul
@@ -76,7 +76,7 @@ exports[`Nav Default Nav List - Trigger item active update 1`] = `
     aria-label="Global"
     class="pf-v5-c-nav"
     data-ouia-component-id="OUIA-Generated-Nav-5"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <ul
@@ -146,7 +146,7 @@ exports[`Nav Default Nav List 1`] = `
     aria-label="Global"
     class="pf-v5-c-nav test-nav-class"
     data-ouia-component-id="OUIA-Generated-Nav-1"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <ul
@@ -216,7 +216,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
     aria-label="Global"
     class="pf-v5-c-nav"
     data-ouia-component-id="OUIA-Generated-Nav-1"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <ul
@@ -226,7 +226,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
       <li
         class="pf-v5-c-nav__item pf-m-expandable expandable-group"
         data-ouia-component-id="OUIA-Generated-NavExpandable-1"
-        data-ouia-component-type="PF4/NavExpandable"
+        data-ouia-component-type="PF5/NavExpandable"
         data-ouia-safe="true"
       >
         <button
@@ -330,7 +330,7 @@ exports[`Nav Expandable Nav List 1`] = `
     aria-label="Global"
     class="pf-v5-c-nav"
     data-ouia-component-id="OUIA-Generated-Nav-6"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <ul
@@ -340,7 +340,7 @@ exports[`Nav Expandable Nav List 1`] = `
       <li
         class="pf-v5-c-nav__item pf-m-expandable"
         data-ouia-component-id="OUIA-Generated-NavExpandable-1"
-        data-ouia-component-type="PF4/NavExpandable"
+        data-ouia-component-type="PF5/NavExpandable"
         data-ouia-safe="true"
       >
         <button
@@ -444,7 +444,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
     aria-label="Test"
     class="pf-v5-c-nav"
     data-ouia-component-id="OUIA-Generated-Nav-8"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <ul
@@ -454,7 +454,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
       <li
         class="pf-v5-c-nav__item pf-m-expandable"
         data-ouia-component-id="OUIA-Generated-NavExpandable-3"
-        data-ouia-component-type="PF4/NavExpandable"
+        data-ouia-component-type="PF5/NavExpandable"
         data-ouia-safe="true"
       >
         <button
@@ -563,7 +563,7 @@ exports[`Nav Horizontal Nav List 1`] = `
     aria-label="Global"
     class="pf-v5-c-nav pf-m-horizontal"
     data-ouia-component-id="OUIA-Generated-Nav-horizontal-1"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <button
@@ -667,7 +667,7 @@ exports[`Nav Horizontal SubNav List 1`] = `
     aria-label="Local"
     class="pf-v5-c-nav pf-m-horizontal-subnav"
     data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-1"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <button
@@ -771,7 +771,7 @@ exports[`Nav Nav Grouped List 1`] = `
     aria-label="Global"
     class="pf-v5-c-nav"
     data-ouia-component-id="OUIA-Generated-Nav-9"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <section
@@ -930,7 +930,7 @@ exports[`Nav Nav List with custom item nodes 1`] = `
     aria-label="Local"
     class="pf-v5-c-nav pf-m-horizontal pf-m-tertiary"
     data-ouia-component-id="OUIA-Generated-Nav-tertiary-2"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <button
@@ -994,7 +994,7 @@ exports[`Nav Nav List with flyout 1`] = `
     aria-label="Local"
     class="pf-v5-c-nav pf-m-horizontal pf-m-tertiary"
     data-ouia-component-id="OUIA-Generated-Nav-tertiary-3"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <button
@@ -1088,7 +1088,7 @@ exports[`Nav Renders nav list in strict mode 1`] = `
     aria-label="Global"
     class="pf-v5-c-nav test-nav-class"
     data-ouia-component-id="OUIA-Generated-Nav-3"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <ul
@@ -1158,7 +1158,7 @@ exports[`Nav Tertiary Nav List 1`] = `
     aria-label="Local"
     class="pf-v5-c-nav pf-m-horizontal pf-m-tertiary"
     data-ouia-component-id="OUIA-Generated-Nav-tertiary-1"
-    data-ouia-component-type="PF4/Nav"
+    data-ouia-component-type="PF5/Nav"
     data-ouia-safe="true"
   >
     <button

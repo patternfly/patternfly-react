@@ -5,7 +5,7 @@ exports[`ApplicationLauncher Renders in strict mode 1`] = `
   <nav
     aria-label="Application launcher"
     class="pf-v5-c-app-launcher pf-m-expanded"
-    data-ouia-component-type="PF4/ApplicationLauncher"
+    data-ouia-component-type="PF5/ApplicationLauncher"
     data-ouia-safe="true"
   >
     <button
@@ -150,7 +150,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
   <nav
     aria-label="Application launcher"
     class="pf-v5-c-app-launcher pf-m-expanded"
-    data-ouia-component-type="PF4/ApplicationLauncher"
+    data-ouia-component-type="PF5/ApplicationLauncher"
     data-ouia-safe="true"
   >
     <button
@@ -295,7 +295,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
   <nav
     aria-label="Application launcher"
     class="pf-v5-c-app-launcher pf-m-top pf-m-align-right"
-    data-ouia-component-type="PF4/ApplicationLauncher"
+    data-ouia-component-type="PF5/ApplicationLauncher"
     data-ouia-safe="true"
   >
     <button
@@ -332,7 +332,7 @@ exports[`ApplicationLauncher dropup 1`] = `
   <nav
     aria-label="Application launcher"
     class="pf-v5-c-app-launcher pf-m-top"
-    data-ouia-component-type="PF4/ApplicationLauncher"
+    data-ouia-component-type="PF5/ApplicationLauncher"
     data-ouia-safe="true"
   >
     <button
@@ -369,7 +369,7 @@ exports[`ApplicationLauncher expanded 1`] = `
   <nav
     aria-label="Application launcher"
     class="pf-v5-c-app-launcher pf-m-expanded"
-    data-ouia-component-type="PF4/ApplicationLauncher"
+    data-ouia-component-type="PF5/ApplicationLauncher"
     data-ouia-safe="true"
   >
     <button
@@ -513,7 +513,7 @@ exports[`ApplicationLauncher regular 1`] = `
   <nav
     aria-label="Application launcher"
     class="pf-v5-c-app-launcher"
-    data-ouia-component-type="PF4/ApplicationLauncher"
+    data-ouia-component-type="PF5/ApplicationLauncher"
     data-ouia-safe="true"
   >
     <button
@@ -550,7 +550,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
   <nav
     aria-label="Application launcher"
     class="pf-v5-c-app-launcher pf-m-align-right"
-    data-ouia-component-type="PF4/ApplicationLauncher"
+    data-ouia-component-type="PF5/ApplicationLauncher"
     data-ouia-safe="true"
   >
     <button

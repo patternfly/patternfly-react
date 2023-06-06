@@ -33,7 +33,7 @@ const ouiaIdByRoute: any = {};
  */
 export function getOUIAProps(componentType: string, id: OuiaId, ouiaSafe: boolean = true) {
   return {
-    'data-ouia-component-type': `PF4/${componentType}`,
+    'data-ouia-component-type': `PF5/${componentType}`,
     'data-ouia-safe': ouiaSafe,
     'data-ouia-component-id': id
   };

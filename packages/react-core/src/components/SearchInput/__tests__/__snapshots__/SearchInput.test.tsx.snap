@@ -296,7 +296,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     <input
                       aria-invalid="false"
                       data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-                      data-ouia-component-type="PF4/TextInput"
+                      data-ouia-component-type="PF5/TextInput"
                       data-ouia-safe="true"
                       id="username_0"
                       type="text"
@@ -332,7 +332,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     <input
                       aria-invalid="false"
                       data-ouia-component-id="OUIA-Generated-TextInputBase-2"
-                      data-ouia-component-type="PF4/TextInput"
+                      data-ouia-component-type="PF5/TextInput"
                       data-ouia-safe="true"
                       id="firstname_1"
                       type="text"
@@ -368,7 +368,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     <input
                       aria-invalid="false"
                       data-ouia-component-id="OUIA-Generated-TextInputBase-3"
-                      data-ouia-component-type="PF4/TextInput"
+                      data-ouia-component-type="PF5/TextInput"
                       data-ouia-safe="true"
                       id="pf-random-id-2"
                       type="text"

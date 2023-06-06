@@ -5,7 +5,7 @@ exports[`optionsMenu expanded 1`] = `
   <div
     class="pf-v5-c-options-menu pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-7"
-    data-ouia-component-type="PF4/OptionsMenu"
+    data-ouia-component-type="PF5/OptionsMenu"
     data-ouia-safe="true"
     id="expanded"
   >
@@ -199,7 +199,7 @@ exports[`optionsMenu isDisabled 1`] = `
   <div
     class="pf-v5-c-options-menu"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-10"
-    data-ouia-component-type="PF4/OptionsMenu"
+    data-ouia-component-type="PF5/OptionsMenu"
     data-ouia-safe="true"
     id="disabled"
   >
@@ -243,7 +243,7 @@ exports[`optionsMenu open up 1`] = `
   <div
     class="pf-v5-c-options-menu pf-m-top"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-5"
-    data-ouia-component-type="PF4/OptionsMenu"
+    data-ouia-component-type="PF5/OptionsMenu"
     data-ouia-safe="true"
     id="openUp"
   >
@@ -286,7 +286,7 @@ exports[`optionsMenu plain 1`] = `
   <div
     class="pf-v5-c-options-menu"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-8"
-    data-ouia-component-type="PF4/OptionsMenu"
+    data-ouia-component-type="PF5/OptionsMenu"
     data-ouia-safe="true"
     id="plain"
   >
@@ -312,7 +312,7 @@ exports[`optionsMenu regular 1`] = `
   <div
     class="pf-v5-c-options-menu"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-1"
-    data-ouia-component-type="PF4/OptionsMenu"
+    data-ouia-component-type="PF5/OptionsMenu"
     data-ouia-safe="true"
     id="regular"
   >
@@ -355,7 +355,7 @@ exports[`optionsMenu renders in strict mode 1`] = `
   <div
     class="pf-v5-c-options-menu pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-3"
-    data-ouia-component-type="PF4/OptionsMenu"
+    data-ouia-component-type="PF5/OptionsMenu"
     data-ouia-safe="true"
     id="regular"
   >
@@ -549,7 +549,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
   <div
     class="pf-v5-c-options-menu pf-m-top pf-m-align-right"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-6"
-    data-ouia-component-type="PF4/OptionsMenu"
+    data-ouia-component-type="PF5/OptionsMenu"
     data-ouia-safe="true"
     id="rightAlignedOpenUp"
   >
@@ -592,7 +592,7 @@ exports[`optionsMenu right aligned 1`] = `
   <div
     class="pf-v5-c-options-menu pf-m-align-right"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-4"
-    data-ouia-component-type="PF4/OptionsMenu"
+    data-ouia-component-type="PF5/OptionsMenu"
     data-ouia-safe="true"
     id="rightAligned"
   >
@@ -635,7 +635,7 @@ exports[`optionsMenu text 1`] = `
   <div
     class="pf-v5-c-options-menu"
     data-ouia-component-id="OUIA-Generated-OptionsMenu-9"
-    data-ouia-component-type="PF4/OptionsMenu"
+    data-ouia-component-type="PF5/OptionsMenu"
     data-ouia-safe="true"
     id="text"
   >

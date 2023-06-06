@@ -580,7 +580,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
             aria-label="Nav"
             class="pf-v5-c-nav pf-m-horizontal pf-m-tertiary"
             data-ouia-component-id="OUIA-Generated-Nav-tertiary-2"
-            data-ouia-component-type="PF4/Nav"
+            data-ouia-component-type="PF5/Nav"
             data-ouia-safe="true"
           >
             <button
@@ -759,7 +759,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
             aria-label="Nav"
             class="pf-v5-c-nav pf-m-horizontal pf-m-tertiary"
             data-ouia-component-id="OUIA-Generated-Nav-tertiary-3"
-            data-ouia-component-type="PF4/Nav"
+            data-ouia-component-type="PF5/Nav"
             data-ouia-safe="true"
           >
             <button
@@ -1034,7 +1034,7 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
           aria-label="Nav"
           class="pf-v5-c-nav pf-m-horizontal pf-m-tertiary"
           data-ouia-component-id="OUIA-Generated-Nav-tertiary-1"
-          data-ouia-component-type="PF4/Nav"
+          data-ouia-component-type="PF5/Nav"
           data-ouia-safe="true"
         >
           <button
