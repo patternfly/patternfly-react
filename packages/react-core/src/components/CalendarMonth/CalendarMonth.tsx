@@ -217,7 +217,7 @@ export const CalendarMonth = ({
   const changeMonth = (month: number) => {
     const newDate = new Date(focusedDate);
     const desiredDay = newDate.getDate();
-    const monthDays = new Date(newDate.getFullYear(), month + 1, 0).getDate(); // Setting day 0 of the next month returns the last day of current month
+    const monthDays = new Date(newDate.getFullYear(), (month + 1) % 12, 0).getDate(); // Setting day 0 of the next month returns the last day of current month
 
     if (monthDays < desiredDay) {
       newDate.setDate(monthDays);
@@ -233,7 +233,12 @@ export const CalendarMonth = ({
   };
 
   const addMonth = (toAdd: -1 | 1) => {
-    const newMonth = (new Date(focusedDate).getMonth() + toAdd) % 12;
+    let newMonth = new Date(focusedDate).getMonth() + toAdd;
+    if (newMonth === -1) {
+      newMonth = 11;
+    } else if (newMonth === 12) {
+      newMonth = 0;
+    }
     const newDate = changeMonth(newMonth);
     if (toAdd === 1 && newMonth === 0) {
       newDate.setFullYear(newDate.getFullYear() + 1);
