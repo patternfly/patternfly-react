@@ -246,7 +246,9 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
 
   let page = pageProp;
   if (offset !== null) {
-    page = Math.max(Math.ceil(offset / perPage), 1);
+    itemsStart = offset + 1;
+    page = Math.max(Math.ceil(itemsStart / perPage), 1);
+    itemsEnd = offset + perPage;
   }
 
   const lastPage = getLastPage();
