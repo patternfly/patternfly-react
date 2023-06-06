@@ -1239,7 +1239,7 @@ class PageLayoutTertiaryNav extends React.Component {
 }
 ```
 
-### Light Nav (deprecated)
+### Light nav (deprecated)
 
 ```js isFullscreen
 import React from 'react';
