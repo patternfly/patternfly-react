@@ -16,10 +16,6 @@ propComponents:
 ---
 
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import {
-PageHeader,
-PageHeaderTools
-} from '@patternfly/react-core/deprecated';
 import './page.css';
 
 ## Examples

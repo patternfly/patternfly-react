@@ -70,6 +70,8 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   id?: string;
   /** Flag indicating if the expand-all variant is expanded or not */
   isAllExpanded?: boolean;
+  /** Flag that modifies the toolbar item to hide overflow and respond to available space. Used for horizontal navigation. */
+  isOverflowContainer?: boolean;
   /** Content to be rendered inside the data toolbar item */
   children?: React.ReactNode;
 }
@@ -85,6 +87,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   id,
   children,
   isAllExpanded,
+  isOverflowContainer,
   ...props
 }: ToolbarItemProps) => {
   if (variant === ToolbarItemVariant.separator) {
@@ -116,6 +119,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
                   | 'chipGroup'
               ],
             isAllExpanded && styles.modifiers.expanded,
+            isOverflowContainer && styles.modifiers.overflowContainer,
             formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
             formatBreakpointMods(align, styles, '', getBreakpoint(width)),
             formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
