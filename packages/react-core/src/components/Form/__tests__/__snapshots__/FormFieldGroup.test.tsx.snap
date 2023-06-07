@@ -20,7 +20,7 @@ exports[`Check expandable form field group example against snapshot 1`] = `
           aria-labelledby="title-text-id2 form-field-group-toggle0"
           class="pf-v5-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-1"
-          data-ouia-component-type="PF4/Button"
+          data-ouia-component-type="PF5/Button"
           data-ouia-safe="true"
           id="form-field-group-toggle0"
           type="button"
@@ -72,7 +72,7 @@ exports[`Check expandable form field group example against snapshot 1`] = `
           aria-disabled="false"
           class="pf-v5-c-button pf-m-primary"
           data-ouia-component-id="OUIA-Generated-Button-primary-2"
-          data-ouia-component-type="PF4/Button"
+          data-ouia-component-type="PF5/Button"
           data-ouia-safe="true"
           type="button"
         />
@@ -121,7 +121,7 @@ exports[`Check form field group example against snapshot 1`] = `
           aria-disabled="false"
           class="pf-v5-c-button pf-m-primary"
           data-ouia-component-id="OUIA-Generated-Button-primary-1"
-          data-ouia-component-type="PF4/Button"
+          data-ouia-component-type="PF5/Button"
           data-ouia-safe="true"
           type="button"
         />

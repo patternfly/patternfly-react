@@ -26,7 +26,7 @@ exports[`Modal Content Test description 1`] = `
             aria-label="Close"
             class="pf-v5-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-3"
-            data-ouia-component-type="PF4/Button"
+            data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             type="button"
           >
@@ -100,7 +100,7 @@ exports[`Modal Content Test isOpen 1`] = `
             aria-label="Close"
             class="pf-v5-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-2"
-            data-ouia-component-type="PF4/Button"
+            data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             type="button"
           >
@@ -169,7 +169,7 @@ exports[`Modal Content Test only body 1`] = `
             aria-label="Close"
             class="pf-v5-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-1"
-            data-ouia-component-type="PF4/Button"
+            data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             type="button"
           >
@@ -238,7 +238,7 @@ exports[`Modal Content Test with footer 1`] = `
             aria-label="Close"
             class="pf-v5-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-4"
-            data-ouia-component-type="PF4/Button"
+            data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             type="button"
           >
@@ -312,7 +312,7 @@ exports[`Modal Content Test with onclose 1`] = `
             aria-label="Close"
             class="pf-v5-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-6"
-            data-ouia-component-type="PF4/Button"
+            data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             type="button"
           >
@@ -386,7 +386,7 @@ exports[`Modal Content test without footer 1`] = `
             aria-label="Close"
             class="pf-v5-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-5"
-            data-ouia-component-type="PF4/Button"
+            data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             type="button"
           >
@@ -455,7 +455,7 @@ exports[`Modal Test with custom footer 1`] = `
             aria-label="Close"
             class="pf-v5-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-8"
-            data-ouia-component-type="PF4/Button"
+            data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             type="button"
           >
@@ -533,7 +533,7 @@ exports[`Modal Test with custom header 1`] = `
             aria-label="Close"
             class="pf-v5-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-7"
-            data-ouia-component-type="PF4/Button"
+            data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             type="button"
           >

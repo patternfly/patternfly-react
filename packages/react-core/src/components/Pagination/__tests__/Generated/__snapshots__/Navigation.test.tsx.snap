@@ -21,7 +21,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
         class="pf-v5-c-button pf-m-plain"
         data-action="first"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
-        data-ouia-component-type="PF4/Button"
+        data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         type="button"
       >
@@ -47,7 +47,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
         class="pf-v5-c-button pf-m-plain"
         data-action="previous"
         data-ouia-component-id="OUIA-Generated-Button-plain-2"
-        data-ouia-component-type="PF4/Button"
+        data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         type="button"
       >
@@ -74,7 +74,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
           aria-invalid="false"
           aria-label="Current page"
           data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-          data-ouia-component-type="PF4/TextInput"
+          data-ouia-component-type="PF5/TextInput"
           data-ouia-safe="true"
           max="0"
           min="0"
@@ -92,7 +92,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
         class="pf-v5-c-button pf-m-plain"
         data-action="next"
         data-ouia-component-id="OUIA-Generated-Button-plain-3"
-        data-ouia-component-type="PF4/Button"
+        data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         type="button"
       >
@@ -118,7 +118,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
         class="pf-v5-c-button pf-m-plain"
         data-action="last"
         data-ouia-component-id="OUIA-Generated-Button-plain-4"
-        data-ouia-component-type="PF4/Button"
+        data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         type="button"
       >

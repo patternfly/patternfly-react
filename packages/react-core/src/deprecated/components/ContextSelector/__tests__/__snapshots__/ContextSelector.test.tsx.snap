@@ -129,7 +129,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
                 aria-label="Search menu items"
                 class="pf-v5-c-button pf-m-control"
                 data-ouia-component-id="OUIA-Generated-Button-control-1"
-                data-ouia-component-type="PF4/Button"
+                data-ouia-component-type="PF5/Button"
                 data-ouia-safe="true"
                 type="submit"
               >
@@ -300,7 +300,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
                 aria-label="Search menu items"
                 class="pf-v5-c-button pf-m-control"
                 data-ouia-component-id="OUIA-Generated-Button-control-3"
-                data-ouia-component-type="PF4/Button"
+                data-ouia-component-type="PF5/Button"
                 data-ouia-safe="true"
                 type="submit"
               >

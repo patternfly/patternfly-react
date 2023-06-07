@@ -85,7 +85,7 @@ exports[`With popover opened 1`] = `
                   aria-label="Previous month"
                   class="pf-v5-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-1"
-                  data-ouia-component-type="PF4/Button"
+                  data-ouia-component-type="PF5/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -180,7 +180,7 @@ exports[`With popover opened 1`] = `
                   aria-label="Next month"
                   class="pf-v5-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-2"
-                  data-ouia-component-type="PF4/Button"
+                  data-ouia-component-type="PF5/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
