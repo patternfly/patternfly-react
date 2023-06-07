@@ -14,10 +14,7 @@ import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
 ## Examples
 
-By default, the `appendTo` prop of the popover will append it to the parent element. However, in some cases, the popover might be too big for the parent and not fully visible. To solve this issue, users have two options:
-
-1. Add the prop `appendTo={() => document.body}` to append the popover to the document body instead of the parent element.
-2. Increase the z-index of the parent element to be higher than the z-index of the element that is hiding the popover.
+By default, the `appendTo` prop of the popover will append to the document body in order to avoid the popover content not being fully visible. Another option is to increase the z-index of the element the popover is appended to to be higher than the z-index of the element that is hiding the popover.
 
 ### Basic
 
