@@ -6,7 +6,7 @@ exports[`Table Actions table 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-32"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -764,7 +764,7 @@ exports[`Table Cell header table 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-34"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -1327,7 +1327,7 @@ exports[`Table Collapsible nested table 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-40"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -2071,7 +2071,7 @@ exports[`Table Collapsible table 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-36"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -2784,7 +2784,7 @@ exports[`Table Compound Expandable table 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-38"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -2960,7 +2960,7 @@ exports[`Table Control text table 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-46"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -3522,7 +3522,7 @@ exports[`Table Header width table 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-48"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -4084,7 +4084,7 @@ exports[`Table Selectable table 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-42"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -4782,7 +4782,7 @@ exports[`Table Selectable table with Radio 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-44"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -5472,7 +5472,7 @@ exports[`Table Selectable table with selected expandable row 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-50"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -5575,7 +5575,7 @@ exports[`Table Simple Actions table 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-30"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -6406,7 +6406,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table"
     data-ouia-component-id="OUIA-Generated-Table-16"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -6933,7 +6933,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid"
     data-ouia-component-id="OUIA-Generated-Table-18"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -7460,7 +7460,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-2xl"
     data-ouia-component-id="OUIA-Generated-Table-26"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -7987,7 +7987,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-lg"
     data-ouia-component-id="OUIA-Generated-Table-22"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -8514,7 +8514,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-20"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -9041,7 +9041,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-xl"
     data-ouia-component-id="OUIA-Generated-Table-24"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -9568,7 +9568,7 @@ exports[`Table Table variants Size - compact 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md pf-m-compact"
     data-ouia-component-id="OUIA-Generated-Table-28"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -10097,7 +10097,7 @@ exports[`Table simple Editable table 1`] = `
     <table
       class="pf-v5-c-table pf-m-grid-md"
       data-ouia-component-id="OUIA-Generated-Table-10"
-      data-ouia-component-type="PF4/Table"
+      data-ouia-component-type="PF5/Table"
       data-ouia-safe="true"
       role="grid"
     >
@@ -10623,7 +10623,7 @@ exports[`Table simple Row click table 1`] = `
     aria-label="Row click table"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-14"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -11150,7 +11150,7 @@ exports[`Table simple Sortable table 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-12"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -11677,7 +11677,7 @@ exports[`Table simple aria-label 1`] = `
     aria-label="Aria labeled"
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-8"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -12174,7 +12174,7 @@ exports[`Table simple caption 1`] = `
   <table
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-2"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -12677,7 +12677,7 @@ exports[`Table simple header 1`] = `
   <table
     class="pf-v5-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-6"
-    data-ouia-component-type="PF4/Table"
+    data-ouia-component-type="PF5/Table"
     data-ouia-safe="true"
     role="grid"
   >
