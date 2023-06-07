@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.2...@patternfly/react-core@5.0.0-prerelease.3) (2023-06-07)
+
+### Bug Fixes
+
+- **Pagination:** remove spin buttons ([#9219](https://github.com/patternfly/patternfly-react/issues/9219)) ([d53ca9d](https://github.com/patternfly/patternfly-react/commit/d53ca9d1ad31d60d19885298aa196185a4b55c83))
+
 # [5.0.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.1...@patternfly/react-core@5.0.0-prerelease.2) (2023-06-06)
 
 ### Bug Fixes
