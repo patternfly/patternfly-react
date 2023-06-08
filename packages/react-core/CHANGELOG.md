@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.3...@patternfly/react-core@5.0.0-prerelease.4) (2023-06-08)
+
+### Bug Fixes
+
+- **Nav:** updated drilldown navigation heights ([#9255](https://github.com/patternfly/patternfly-react/issues/9255)) ([e6e371d](https://github.com/patternfly/patternfly-react/commit/e6e371da62e0378f3df518c2ba438129471fd096))
+- **Popover:** reverted appendTo to document body ([#9252](https://github.com/patternfly/patternfly-react/issues/9252)) ([f2b140d](https://github.com/patternfly/patternfly-react/commit/f2b140d23b19f9d79c61223ff1ee960dea015f4d))
+
 # [5.0.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.2...@patternfly/react-core@5.0.0-prerelease.3) (2023-06-07)
 
 ### Bug Fixes
