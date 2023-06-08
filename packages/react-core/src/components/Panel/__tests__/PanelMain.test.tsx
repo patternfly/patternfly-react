@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { PanelMain } from '../PanelMain';
+import cssPanelMainMaxHeight from '@patternfly/react-tokens/dist/esm/c_panel__main_MaxHeight';
 
 test('Renders without children', () => {
   render(
@@ -34,7 +35,7 @@ test('Renders with custom class name when className prop is passed', () => {
 test('Renders with custom max height name when maxHeight prop is passed', () => {
   render(<PanelMain maxHeight="100px">Test</PanelMain>);
   const styles = getComputedStyle(screen.getByText('Test'));
-  expect(styles.getPropertyValue('--pf-v5-c-panel__main--MaxHeight')).toBe('100px');
+  expect(styles.getPropertyValue(cssPanelMainMaxHeight.name)).toBe('100px');
 });
 
 test('Renders with the inherited element props spread to the component', () => {

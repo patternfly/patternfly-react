@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { css } from '@patternfly/react-styles';
+import globalPrimaryColor100 from '@patternfly/react-tokens/dist/esm/global_primary_color_100';
 
 interface Repository {
   name: string;
@@ -30,7 +31,7 @@ export const LegacyTableMisc: React.FunctionComponent = () => {
   const customRowWrapper: TableProps['rowWrapper'] = ({ trRef, className, rowProps, row: _row, ...props }) => {
     const isOddRow = rowProps ? !!((rowProps.rowIndex + 1) % 2) : true;
     const customStyle = {
-      borderLeft: '3px solid var(--pf-v5-global--primary-color--100)'
+      borderLeft: `3px solid ${globalPrimaryColor100.var}`
     };
     return (
       <tr

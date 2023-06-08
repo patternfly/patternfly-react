@@ -2,6 +2,9 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Brand/brand';
 import { setBreakpointCssVars } from '../../helpers';
+import cssBrandHeight from '@patternfly/react-tokens/dist/esm/c_brand_Height';
+import cssBrandWidth from '@patternfly/react-tokens/dist/esm/c_brand_Width';
+
 export interface BrandProps
   extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   /** Transforms the Brand into a <picture> element from an <img> element. Container for <source> child elements. */
@@ -45,13 +48,13 @@ export const Brand: React.FunctionComponent<BrandProps> = ({
   let responsiveStyles;
   if (children !== undefined && widths !== undefined) {
     responsiveStyles = {
-      ...setBreakpointCssVars(widths, '--pf-v5-c-brand--Width')
+      ...setBreakpointCssVars(widths, cssBrandWidth.name)
     };
   }
 
   if (children !== undefined && heights !== undefined) {
     responsiveStyles = {
-      ...setBreakpointCssVars(heights, '--pf-v5-c-brand--Height')
+      ...setBreakpointCssVars(heights, cssBrandHeight.name)
     };
   }
 

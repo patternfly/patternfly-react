@@ -28,6 +28,10 @@ import {
   TdSelectType,
   TdTreeRowType
 } from './base/types';
+import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
+import cssStickyCellLeft from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Left';
+import cssStickyCellRight from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Right';
+
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
   /**
    * The column header the cell corresponds to.
@@ -288,9 +292,9 @@ const TdBase: React.FunctionComponent<TdProps> = ({
       {...props}
       {...(isStickyColumn && {
         style: {
-          '--pf-v5-c-table__sticky-cell--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
-          '--pf-v5-c-table__sticky-cell--Left': stickyLeftOffset ? stickyLeftOffset : 0,
-          '--pf-v5-c-table__sticky-cell--Right': stickyRightOffset ? stickyRightOffset : 0,
+          [cssStickyCellMinWidth.name]: stickyMinWidth ? stickyMinWidth : undefined,
+          [cssStickyCellLeft.name]: stickyLeftOffset ? stickyLeftOffset : 0,
+          [cssStickyCellRight.name]: stickyRightOffset ? stickyRightOffset : 0,
           ...props.style
         } as React.CSSProperties
       })}

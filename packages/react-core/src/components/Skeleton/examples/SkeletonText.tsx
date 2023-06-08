@@ -1,27 +1,34 @@
 import React from 'react';
 import { Skeleton } from '@patternfly/react-core';
+import globalFontSize4xl from '@patternfly/react-tokens/dist/esm/global_FontSize_4xl';
+import globalFontSize3xl from '@patternfly/react-tokens/dist/esm/global_FontSize_3xl';
+import globalFontSize2xl from '@patternfly/react-tokens/dist/esm/global_FontSize_2xl';
+import globalFontSizeXl from '@patternfly/react-tokens/dist/esm/global_FontSize_xl';
+import globalFontSizeLg from '@patternfly/react-tokens/dist/esm/global_FontSize_lg';
+import globalFontSizeMd from '@patternfly/react-tokens/dist/esm/global_FontSize_md';
+import globalFontSizeSm from '@patternfly/react-tokens/dist/esm/global_FontSize_sm';
 
 export const SkeletonText: React.FunctionComponent = () => (
   <React.Fragment>
-    --pf-v5-global--FontSize--4xl
+    {globalFontSize4xl.name}
     <Skeleton fontSize="4xl" screenreaderText="Loading font size 4xl" />
     <br />
-    --pf-v5-global--FontSize--3xl
+    {globalFontSize3xl.name}
     <Skeleton fontSize="3xl" screenreaderText="Loading font size 3xl" />
     <br />
-    --pf-v5-global--FontSize--2xl
+    {globalFontSize2xl.name}
     <Skeleton fontSize="2xl" screenreaderText="Loading font size 2xl" />
     <br />
-    --pf-v5-global--FontSize--xl
+    {globalFontSizeXl.name}
     <Skeleton fontSize="xl" screenreaderText="Loading font size xl" />
     <br />
-    --pf-v5-global--FontSize--lg
+    {globalFontSizeLg.name}
     <Skeleton fontSize="lg" screenreaderText="Loading font size lg" />
     <br />
-    --pf-v5-global--FontSize--md
+    {globalFontSizeMd.name}
     <Skeleton fontSize="md" screenreaderText="Loading font size md" />
     <br />
-    --pf-v5-global--FontSize--sm
+    {globalFontSizeSm.name}
     <Skeleton fontSize="sm" screenreaderText="Loading font size sm" />
   </React.Fragment>
 );

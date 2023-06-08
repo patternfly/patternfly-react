@@ -4,6 +4,9 @@ import { css } from '@patternfly/react-styles';
 import { DrawerColorVariant, DrawerContext } from './Drawer';
 import { formatBreakpointMods } from '../../helpers/util';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import cssPanelMdFlexBasis from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis';
+import cssPanelMdFlexBasisMin from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis_min';
+import cssPanelMdFlexBasisMax from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis_max';
 
 export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer. */
@@ -163,7 +166,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     if (position === 'bottom') {
       panel.current.style.overflowAnchor = 'none';
     }
-    panel.current.style.setProperty('--pf-v5-c-drawer__panel--md--FlexBasis', newSize + 'px');
+    panel.current.style.setProperty(cssPanelMdFlexBasis.name, newSize + 'px');
     currWidth = newSize;
     setSeparatorValue(calcValueNow());
   };
@@ -232,19 +235,19 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     if (position === 'bottom') {
       panel.current.style.overflowAnchor = 'none';
     }
-    panel.current.style.setProperty('--pf-v5-c-drawer__panel--md--FlexBasis', newSize + 'px');
+    panel.current.style.setProperty(cssPanelMdFlexBasis.name, newSize + 'px');
     currWidth = newSize;
     setSeparatorValue(calcValueNow());
   };
   const boundaryCssVars: any = {};
   if (defaultSize) {
-    boundaryCssVars['--pf-v5-c-drawer__panel--md--FlexBasis'] = defaultSize;
+    boundaryCssVars[cssPanelMdFlexBasis.name] = defaultSize;
   }
   if (minSize) {
-    boundaryCssVars['--pf-v5-c-drawer__panel--md--FlexBasis--min'] = minSize;
+    boundaryCssVars[cssPanelMdFlexBasisMin.name] = minSize;
   }
   if (maxSize) {
-    boundaryCssVars['--pf-v5-c-drawer__panel--md--FlexBasis--max'] = maxSize;
+    boundaryCssVars[cssPanelMdFlexBasisMax.name] = maxSize;
   }
   return (
     <GenerateId prefix="pf-drawer-panel-">

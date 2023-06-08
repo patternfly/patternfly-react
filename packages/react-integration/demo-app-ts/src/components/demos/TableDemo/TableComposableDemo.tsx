@@ -28,6 +28,7 @@ import {
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import globalPrimaryColor100 from '@patternfly/react-tokens/dist/esm/global_primary_color_100';
 
 export const TableComposableDemo = () => {
   const ComposableTableBasic = () => {
@@ -141,7 +142,7 @@ export const TableComposableDemo = () => {
           {rows.map((row, rowIndex) => {
             const isOddRow = (rowIndex + 1) % 2;
             const customStyle = {
-              borderLeft: '3px solid var(--pf-v5-global--primary-color--100)'
+              borderLeft: `3px solid ${globalPrimaryColor100.var}`
             };
             return (
               <Tr

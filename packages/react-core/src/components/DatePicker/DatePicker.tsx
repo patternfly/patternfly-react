@@ -11,6 +11,7 @@ import { useImperativeHandle } from 'react';
 import { KeyTypes } from '../../helpers';
 import { isValidDate } from '../../helpers/datetimeUtils';
 import { HelperText, HelperTextItem } from '../HelperText';
+import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_date_picker__input_c_form_control_width_chars';
 
 /** The main date picker component. */
 
@@ -118,7 +119,7 @@ const DatePickerBase = (
   const [selectOpen, setSelectOpen] = React.useState(false);
   const [pristine, setPristine] = React.useState(true);
   const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
-  const style = { '--pf-v5-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
+  const style = { [cssFormControlWidthChars.name]: widthChars, ...styleProps };
   const buttonRef = React.useRef<HTMLButtonElement>();
   const datePickerWrapperRef = React.useRef<HTMLDivElement>();
   const triggerRef = React.useRef<HTMLDivElement>();

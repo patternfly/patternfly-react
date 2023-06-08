@@ -6,6 +6,7 @@ import { act } from 'react-dom/test-utils';
 import { Alert, AlertVariant } from '../Alert';
 import { AlertContext } from '../AlertContext';
 import { capitalize } from '../../../helpers';
+import cssAlertTitleMaxLines from '@patternfly/react-tokens/dist/esm/c_alert__title_max_lines';
 
 jest.mock('../AlertToggleExpandButton', () => ({
   AlertToggleExpandButton: ({ isExpanded, onToggleExpand, ...props }) => (
@@ -578,7 +579,7 @@ test('Renders titles with the expected truncation styling when truncateTitle is 
   const title = screen.getByRole('heading');
 
   expect(title).toHaveClass('pf-m-truncate');
-  expect(title).toHaveAttribute('style', '--pf-v5-c-alert__title--max-lines: 3;');
+  expect(title).toHaveAttribute('style', `${cssAlertTitleMaxLines.name}: 3;`);
 });
 
 test('Passes customIcon value to AlertIcon', () => {
