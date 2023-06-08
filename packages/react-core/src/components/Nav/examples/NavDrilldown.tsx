@@ -49,7 +49,7 @@ export const NavigationDrilldown: React.FunctionComponent = () => {
   const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
   const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
   const [menuHeights, setMenuHeights] = React.useState<MenuHeights>({});
-  const [activeMenu, setActiveMenu] = React.useState('rootMenu');
+  const [activeMenu, setActiveMenu] = React.useState('nav-drilldown-rootMenu');
 
   const onDrillIn = (
     _event: React.KeyboardEvent | React.MouseEvent,
@@ -57,20 +57,23 @@ export const NavigationDrilldown: React.FunctionComponent = () => {
     toItemId: string,
     itemId: string
   ) => {
-    setMenuDrilledIn(prevMenuDrilledIn => [...prevMenuDrilledIn, fromItemId]);
-    setDrilldownPath(prevDrilldownPath => [...prevDrilldownPath, itemId]);
+    setMenuDrilledIn((prevMenuDrilledIn) => [...prevMenuDrilledIn, fromItemId]);
+    setDrilldownPath((prevDrilldownPath) => [...prevDrilldownPath, itemId]);
     setActiveMenu(toItemId);
   };
 
   const onDrillOut = (_event: React.KeyboardEvent | React.MouseEvent, toItemId: string, _itemId: string) => {
-    setMenuDrilledIn(prevMenuDrilledIn => prevMenuDrilledIn.slice(0, prevMenuDrilledIn.length - 1));
-    setDrilldownPath(prevDrilldownPath => prevDrilldownPath.slice(0, prevDrilldownPath.length - 1));
+    setMenuDrilledIn((prevMenuDrilledIn) => prevMenuDrilledIn.slice(0, prevMenuDrilledIn.length - 1));
+    setDrilldownPath((prevDrilldownPath) => prevDrilldownPath.slice(0, prevDrilldownPath.length - 1));
     setActiveMenu(toItemId);
   };
 
   const onGetMenuHeight = (menuId: string, height: number) => {
-    if (!menuHeights[menuId] && menuId !== 'rootMenu') {
-      setMenuHeights(prevMenuHeights => ({ ...prevMenuHeights, [menuId]: height }));
+    if (
+      (menuHeights[menuId] !== height && menuId !== 'nav-drilldown-rootMenu') ||
+      (!menuHeights[menuId] && menuId === 'nav-drilldown-rootMenu')
+    ) {
+      setMenuHeights((prevMenuHeights) => ({ ...prevMenuHeights, [menuId]: height }));
     }
   };
 
@@ -86,7 +89,7 @@ export const NavigationDrilldown: React.FunctionComponent = () => {
         onDrillOut={onDrillOut}
         onGetMenuHeight={onGetMenuHeight}
       >
-        <MenuContent menuHeight={`${menuHeights[activeMenu]}px`}>
+        <MenuContent menuHeight={menuHeights[activeMenu] ? `${menuHeights[activeMenu]}px` : undefined}>
           <MenuList>
             <MenuItem itemId="nav-drilldown-item-1" direction="down" description="SubMenu 1" drilldownMenu={subMenuOne}>
               Item 1
