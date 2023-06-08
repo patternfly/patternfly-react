@@ -106,7 +106,7 @@ section: components
 ```ts file="DrawerResizableOnInline.tsx"
 ```
 
-### Panel with light-200 background
+### Panel with secondary background
 
-```ts file="DrawerLightGray.tsx"
+```ts file="DrawerSecondaryBackground.tsx"
 ```
