@@ -233,7 +233,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   alertSeverityVariant,
   alertSeverityScreenReaderText,
   footerContent = null,
-  appendTo = 'inline',
+  appendTo = () => document.body,
   hideOnOutsideClick = true,
   onHide = (): void => null,
   onHidden = (): void => null,

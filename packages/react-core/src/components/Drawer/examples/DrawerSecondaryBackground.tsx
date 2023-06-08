@@ -13,13 +13,13 @@ import {
   DrawerColorVariant
 } from '@patternfly/react-core';
 
-export const DrawerLightGray: React.FunctionComponent = () => {
+export const DrawerSecondaryBackground: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
-  const [panelGray, setPanelGray] = React.useState(true);
-  const [contentGray, setContentGray] = React.useState(false);
-  const [sectionGray, setSectionGray] = React.useState(false);
+  const [panelSecondary, setPanelSecondary] = React.useState(true);
+  const [contentSecondary, setContentSecondary] = React.useState(false);
+  const [sectionSecondary, setSectionSecondary] = React.useState(false);
 
-  const drawerRef = React.useRef<HTMLDivElement>();
+  const drawerRef = React.useRef<HTMLSpanElement>(null);
 
   const onExpand = () => {
     drawerRef.current && drawerRef.current.focus();
@@ -33,20 +33,20 @@ export const DrawerLightGray: React.FunctionComponent = () => {
     setIsExpanded(false);
   };
 
-  const togglePanelGray = (checked: boolean) => {
-    setPanelGray(checked);
+  const togglePanelSecondary = (checked: boolean) => {
+    setPanelSecondary(checked);
   };
 
-  const toggleSectionGray = (checked: boolean) => {
-    setSectionGray(checked);
+  const toggleSectionSecondary = (checked: boolean) => {
+    setSectionSecondary(checked);
   };
 
-  const toggleContentGray = (checked: boolean) => {
-    setContentGray(checked);
+  const toggleContentSecondary = (checked: boolean) => {
+    setContentSecondary(checked);
   };
 
   const panelContent = (
-    <DrawerPanelContent colorVariant={panelGray ? DrawerColorVariant.light200 : DrawerColorVariant.default}>
+    <DrawerPanelContent colorVariant={panelSecondary ? DrawerColorVariant.light200 : DrawerColorVariant.default}>
       <DrawerHead>
         <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
           drawer-panel
@@ -64,39 +64,39 @@ export const DrawerLightGray: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <Checkbox
-        label="Gray panel"
-        isChecked={panelGray}
-        onChange={(_event, checked) => togglePanelGray(checked)}
-        aria-label="Gray panel checkbox"
-        id="toggle-gray-panel"
-        name="toggle-gray-panel"
+        label="Secondary panel"
+        isChecked={panelSecondary}
+        onChange={(_event, checked) => togglePanelSecondary(checked)}
+        aria-label="Secondary panel checkbox"
+        id="toggle-secondary-panel"
+        name="toggle-secondary-panel"
       />
       <Checkbox
-        label="Gray content"
-        isChecked={contentGray}
-        onChange={(_event, checked) => toggleContentGray(checked)}
-        aria-label="Gray content checkbox"
-        id="toggle-gray-content"
-        name="toggle-gray-content"
+        label="Secondary content"
+        isChecked={contentSecondary}
+        onChange={(_event, checked) => toggleContentSecondary(checked)}
+        aria-label="Secondary content checkbox"
+        id="toggle-secondary-content"
+        name="toggle-secondary-content"
       />
       <Checkbox
-        label="Gray section"
-        isChecked={sectionGray}
-        onChange={(_event, checked) => toggleSectionGray(checked)}
-        aria-label="Gray section checkbox"
-        id="toggle-gray-section"
-        name="toggle-gray-section"
+        label="Secondary section"
+        isChecked={sectionSecondary}
+        onChange={(_event, checked) => toggleSectionSecondary(checked)}
+        aria-label="Secondary section checkbox"
+        id="toggle-secondary-section"
+        name="toggle-secondary-section"
       />
       <br />
       <Button aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
       <Drawer isExpanded={isExpanded} onExpand={onExpand}>
-        <DrawerSection colorVariant={sectionGray ? DrawerColorVariant.light200 : DrawerColorVariant.default}>
+        <DrawerSection colorVariant={sectionSecondary ? DrawerColorVariant.light200 : DrawerColorVariant.default}>
           drawer-section
         </DrawerSection>
         <DrawerContent
-          colorVariant={contentGray ? DrawerColorVariant.light200 : DrawerColorVariant.default}
+          colorVariant={contentSecondary ? DrawerColorVariant.light200 : DrawerColorVariant.default}
           panelContent={panelContent}
         >
           <DrawerContentBody>{drawerContent}</DrawerContentBody>

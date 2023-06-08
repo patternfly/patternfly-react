@@ -89,7 +89,7 @@ export const NavDrilldown: React.FunctionComponent = () => {
   };
 
   const onGetMenuHeight = (menuId: string, height: number) => {
-    if (!menuHeights[menuId] && menuId !== 'rootMenu') {
+    if ((menuHeights[menuId] !== height && menuId !== 'rootMenu') || (!menuHeights[menuId] && menuId === 'rootMenu')) {
       setMenuHeights((prevMenuHeights) => ({ ...prevMenuHeights, [menuId]: height }));
     }
   };
