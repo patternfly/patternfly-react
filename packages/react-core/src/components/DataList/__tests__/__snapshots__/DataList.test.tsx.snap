@@ -110,7 +110,7 @@ exports[`DataList DataListAction button 1`] = `
       aria-disabled="false"
       class="pf-v5-c-button pf-m-primary"
       data-ouia-component-id="OUIA-Generated-Button-primary-1"
-      data-ouia-component-type="PF4/Button"
+      data-ouia-component-type="PF5/Button"
       data-ouia-safe="true"
       id="delete-item-1"
       type="button"
@@ -160,7 +160,7 @@ exports[`DataList DataListAction dropdown 1`] = `
       <div
         class="pf-v5-c-menu"
         data-ouia-component-id="OUIA-Generated-Dropdown-1"
-        data-ouia-component-type="PF4/Dropdown"
+        data-ouia-component-type="PF5/Dropdown"
         data-ouia-safe="true"
         style="position: absolute; left: 0px; top: 0px; z-index: 9999;"
       >
@@ -174,7 +174,7 @@ exports[`DataList DataListAction dropdown 1`] = `
             <li
               class="pf-v5-c-menu__list-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-1"
-              data-ouia-component-type="PF4/DropdownItem"
+              data-ouia-component-type="PF5/DropdownItem"
               data-ouia-safe="true"
               role="none"
             >
@@ -199,7 +199,7 @@ exports[`DataList DataListAction dropdown 1`] = `
             <li
               class="pf-v5-c-menu__list-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-2"
-              data-ouia-component-type="PF4/DropdownItem"
+              data-ouia-component-type="PF5/DropdownItem"
               data-ouia-safe="true"
               role="none"
             >

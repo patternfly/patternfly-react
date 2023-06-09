@@ -5,7 +5,7 @@ exports[`Chip closable 1`] = `
   <div
     class="pf-v5-c-chip my-chp-cls"
     data-ouia-component-id="OUIA-Generated-Chip-2"
-    data-ouia-component-type="PF4/Chip"
+    data-ouia-component-type="PF5/Chip"
     data-ouia-safe="true"
     id="chip_one"
   >
@@ -28,7 +28,7 @@ exports[`Chip closable 1`] = `
         aria-labelledby="remove_chip_one chip_one"
         class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="close"
-        data-ouia-component-type="PF4/Button"
+        data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         id="remove_chip_one"
         type="button"
@@ -55,7 +55,7 @@ exports[`Chip closable with tooltip 1`] = `
   <div
     class="pf-v5-c-chip my-chp-cls"
     data-ouia-component-id="OUIA-Generated-Chip-3"
-    data-ouia-component-type="PF4/Chip"
+    data-ouia-component-type="PF5/Chip"
     data-ouia-safe="true"
     id="chip_one"
   >
@@ -78,7 +78,7 @@ exports[`Chip closable with tooltip 1`] = `
         aria-labelledby="remove_chip_one chip_one"
         class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="close"
-        data-ouia-component-type="PF4/Button"
+        data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         id="remove_chip_one"
         type="button"
@@ -105,7 +105,7 @@ exports[`Chip custom max-width text 1`] = `
   <div
     class="pf-v5-c-chip my-chp-cls"
     data-ouia-component-id="OUIA-Generated-Chip-5"
-    data-ouia-component-type="PF4/Chip"
+    data-ouia-component-type="PF5/Chip"
     data-ouia-safe="true"
     style="--pf-v5-c-chip__text--MaxWidth: 100px;"
     textmaxwidth="100px"
@@ -129,7 +129,7 @@ exports[`Chip custom max-width text 1`] = `
         aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
         class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="close"
-        data-ouia-component-type="PF4/Button"
+        data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         id="remove_pf-random-id-4"
         type="button"
@@ -156,7 +156,7 @@ exports[`Chip overflow 1`] = `
   <div
     class="pf-v5-c-chip pf-m-overflow my-chp-cls"
     data-ouia-component-id="OUIA-Generated-Chip-1"
-    data-ouia-component-type="PF4/OverflowChip"
+    data-ouia-component-type="PF5/OverflowChip"
     data-ouia-safe="true"
   >
     <span
@@ -177,7 +177,7 @@ exports[`Chip readonly 1`] = `
   <div
     class="pf-v5-c-chip my-chp-cls"
     data-ouia-component-id="OUIA-Generated-Chip-4"
-    data-ouia-component-type="PF4/Chip"
+    data-ouia-component-type="PF5/Chip"
     data-ouia-safe="true"
   >
     <span
@@ -199,7 +199,7 @@ exports[`Chip with role='gridcell' 1`] = `
   <div
     class="pf-v5-c-chip my-chp-cls"
     data-ouia-component-id="OUIA-Generated-Chip-6"
-    data-ouia-component-type="PF4/Chip"
+    data-ouia-component-type="PF5/Chip"
     data-ouia-safe="true"
     role="gridcell"
   >
@@ -222,7 +222,7 @@ exports[`Chip with role='gridcell' 1`] = `
         aria-labelledby="remove_pf-random-id-5 pf-random-id-5"
         class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="close"
-        data-ouia-component-type="PF4/Button"
+        data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         id="remove_pf-random-id-5"
         type="button"

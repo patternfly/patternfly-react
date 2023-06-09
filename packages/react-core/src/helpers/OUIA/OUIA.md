@@ -31,9 +31,9 @@ You can find the complete description on the [OUIA website](https://ouia.readthe
 
 ### Usage
 
-PatternFly 4 generates a `data-ouia-component-type` attribute for selected components automatically
+PatternFly generates a `data-ouia-component-type` attribute for selected components automatically
 based on the name. For example, the `data-ouia-component-type` attribute for the
-[button component](/components/button) is `PF4/Button`. The id of the `data-ouia-component-id`
+[button component](/components/button) is `PF5/Button`. The id of the `data-ouia-component-id`
 attribute is random by default. To specify the concrete id, add an `ouiaId` prop to the
 component.
 
@@ -51,7 +51,7 @@ import { Button } from '@patternfly/react-core';
 </React.Fragment>
 ```
 
-## OUIA-compliant PatternFly 4 components
+## OUIA-compliant PatternFly 5 components
 
 ### react-core package
 

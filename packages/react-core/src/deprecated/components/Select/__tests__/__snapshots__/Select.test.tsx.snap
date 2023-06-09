@@ -5,7 +5,7 @@ exports[`Select renders select groups successfully 1`] = `
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -187,7 +187,7 @@ exports[`Select renders up direction successfully 1`] = `
   <div
     class="pf-v5-c-select pf-m-top"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -233,7 +233,7 @@ exports[`Select single select renders closed successfully 1`] = `
   <div
     class="pf-v5-c-select"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -279,7 +279,7 @@ exports[`Select single select renders disabled successfully 1`] = `
   <div
     class="pf-v5-c-select"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -326,7 +326,7 @@ exports[`Select single select renders expanded in strict mode successfully 1`] =
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -430,7 +430,7 @@ exports[`Select single select renders expanded successfully 1`] = `
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -534,7 +534,7 @@ exports[`Select single select renders expanded successfully with custom objects 
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -625,7 +625,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -816,7 +816,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
   <div
     class="pf-v5-c-select"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -868,7 +868,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
   <div
     class="pf-v5-c-select"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -911,7 +911,7 @@ exports[`checkbox select renders closed successfully 1`] = `
   <div
     class="pf-v5-c-select"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -954,7 +954,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -1059,7 +1059,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -1150,7 +1150,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <div
@@ -1269,7 +1269,7 @@ exports[`renders select with favorites successfully 1`] = `
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <button
@@ -1611,7 +1611,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   <div
     class="pf-v5-c-select"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <div
@@ -1666,7 +1666,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <div
@@ -1779,7 +1779,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <div
@@ -1791,7 +1791,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         <div
           aria-label="Chip group category"
           class="pf-v5-c-chip-group"
-          data-ouia-component-type="PF4/ChipGroup"
+          data-ouia-component-type="PF5/ChipGroup"
           data-ouia-safe="true"
           role="group"
         >
@@ -1809,7 +1809,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 <div
                   class="pf-v5-c-chip"
                   data-ouia-component-id="OUIA-Generated-Chip-1"
-                  data-ouia-component-type="PF4/Chip"
+                  data-ouia-component-type="PF5/Chip"
                   data-ouia-safe="true"
                 >
                   <span
@@ -1831,7 +1831,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
                       class="pf-v5-c-button pf-m-plain"
                       data-ouia-component-id="Remove"
-                      data-ouia-component-type="PF4/Button"
+                      data-ouia-component-type="PF5/Button"
                       data-ouia-safe="true"
                       id="remove_pf-random-id-25"
                       type="button"
@@ -1857,7 +1857,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 <div
                   class="pf-v5-c-chip"
                   data-ouia-component-id="OUIA-Generated-Chip-2"
-                  data-ouia-component-type="PF4/Chip"
+                  data-ouia-component-type="PF5/Chip"
                   data-ouia-safe="true"
                 >
                   <span
@@ -1879,7 +1879,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       aria-labelledby="remove_pf-random-id-26 pf-random-id-26"
                       class="pf-v5-c-button pf-m-plain"
                       data-ouia-component-id="Remove"
-                      data-ouia-component-type="PF4/Button"
+                      data-ouia-component-type="PF5/Button"
                       data-ouia-safe="true"
                       id="remove_pf-random-id-26"
                       type="button"
@@ -2038,7 +2038,7 @@ exports[`typeahead select renders closed successfully 1`] = `
   <div
     class="pf-v5-c-select"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <div
@@ -2092,7 +2092,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <div
@@ -2204,7 +2204,7 @@ exports[`typeahead select renders selected successfully 1`] = `
   <div
     class="pf-v5-c-select pf-m-expanded"
     data-ouia-component-id="test-id"
-    data-ouia-component-type="PF4/Select"
+    data-ouia-component-type="PF5/Select"
     data-ouia-safe="true"
   >
     <div

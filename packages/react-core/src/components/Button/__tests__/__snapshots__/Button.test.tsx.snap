@@ -6,7 +6,7 @@ exports[`Button aria-disabled is set to true and tabIndex to -1 if component is 
     aria-disabled="true"
     class="pf-v5-c-button pf-m-primary pf-m-disabled"
     data-ouia-component-id="OUIA-Generated-Button-primary-12"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     tabindex="-1"
   >
@@ -22,7 +22,7 @@ exports[`Button control button 1`] = `
     aria-label="control"
     class="pf-v5-c-button pf-m-control"
     data-ouia-component-id="OUIA-Generated-Button-control-1"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -38,7 +38,7 @@ exports[`Button danger button 1`] = `
     aria-label="danger"
     class="pf-v5-c-button pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Button-danger-1"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -53,7 +53,7 @@ exports[`Button isAriaDisabled button 1`] = `
     aria-disabled="true"
     class="pf-v5-c-button pf-m-primary pf-m-aria-disabled"
     data-ouia-component-id="OUIA-Generated-Button-primary-5"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -68,7 +68,7 @@ exports[`Button isAriaDisabled link button 1`] = `
     aria-disabled="true"
     class="pf-v5-c-button pf-m-primary pf-m-aria-disabled"
     data-ouia-component-id="OUIA-Generated-Button-primary-6"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
   >
     Disabled yet focusable button
@@ -82,7 +82,7 @@ exports[`Button isBlock 1`] = `
     aria-disabled="false"
     class="pf-v5-c-button pf-m-primary pf-m-block"
     data-ouia-component-id="OUIA-Generated-Button-primary-3"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -97,7 +97,7 @@ exports[`Button isDanger link 1`] = `
     aria-disabled="false"
     class="pf-v5-c-button pf-m-link pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Button-link-3"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -112,7 +112,7 @@ exports[`Button isDanger secondary 1`] = `
     aria-disabled="false"
     class="pf-v5-c-button pf-m-secondary pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Button-secondary-2"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -127,7 +127,7 @@ exports[`Button isDisabled 1`] = `
     aria-disabled="true"
     class="pf-v5-c-button pf-m-primary pf-m-disabled"
     data-ouia-component-id="OUIA-Generated-Button-primary-4"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     disabled=""
     type="button"
@@ -143,7 +143,7 @@ exports[`Button isInline 1`] = `
     aria-disabled="false"
     class="pf-v5-c-button pf-m-link pf-m-inline"
     data-ouia-component-id="OUIA-Generated-Button-link-4"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -158,7 +158,7 @@ exports[`Button isLoading 1`] = `
     aria-disabled="false"
     class="pf-v5-c-button pf-m-primary pf-m-progress pf-m-in-progress"
     data-ouia-component-id="OUIA-Generated-Button-primary-9"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -193,7 +193,7 @@ exports[`Button isLoading icon only 1`] = `
     aria-label="Upload"
     class="pf-v5-c-button pf-m-plain pf-m-in-progress"
     data-ouia-component-id="OUIA-Generated-Button-plain-2"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -230,7 +230,7 @@ exports[`Button isLoading inline link 1`] = `
     aria-label="Loading"
     class="pf-v5-c-button pf-m-link pf-m-inline pf-m-progress pf-m-in-progress"
     data-ouia-component-id="OUIA-Generated-Button-link-5"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -265,7 +265,7 @@ exports[`Button link button 1`] = `
     aria-label="link"
     class="pf-v5-c-button pf-m-link"
     data-ouia-component-id="OUIA-Generated-Button-link-1"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -280,7 +280,7 @@ exports[`Button link with icon 1`] = `
     aria-disabled="false"
     class="pf-v5-c-button pf-m-link"
     data-ouia-component-id="OUIA-Generated-Button-link-2"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -311,7 +311,7 @@ exports[`Button plain button 1`] = `
     aria-label="plain"
     class="pf-v5-c-button pf-m-plain"
     data-ouia-component-id="OUIA-Generated-Button-plain-1"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -327,7 +327,7 @@ exports[`Button primary button 1`] = `
     aria-label="primary"
     class="pf-v5-c-button pf-m-primary"
     data-ouia-component-id="OUIA-Generated-Button-primary-1"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -343,7 +343,7 @@ exports[`Button secondary button 1`] = `
     aria-label="secondary"
     class="pf-v5-c-button pf-m-secondary"
     data-ouia-component-id="OUIA-Generated-Button-secondary-1"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -358,7 +358,7 @@ exports[`Button size large 1`] = `
     aria-disabled="false"
     class="pf-v5-c-button pf-m-primary pf-m-display-lg"
     data-ouia-component-id="OUIA-Generated-Button-primary-8"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -373,7 +373,7 @@ exports[`Button size small 1`] = `
     aria-disabled="false"
     class="pf-v5-c-button pf-m-primary pf-m-small"
     data-ouia-component-id="OUIA-Generated-Button-primary-7"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -389,7 +389,7 @@ exports[`Button tertiary button 1`] = `
     aria-label="tertiary"
     class="pf-v5-c-button pf-m-tertiary"
     data-ouia-component-id="OUIA-Generated-Button-tertiary-1"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -405,7 +405,7 @@ exports[`Button warning button 1`] = `
     aria-label="warning"
     class="pf-v5-c-button pf-m-warning"
     data-ouia-component-id="OUIA-Generated-Button-warning-1"
-    data-ouia-component-type="PF4/Button"
+    data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
