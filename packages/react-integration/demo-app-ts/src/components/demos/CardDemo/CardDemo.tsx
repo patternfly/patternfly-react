@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Brand,
+  Button,
   Card,
   CardTitle,
   CardHeader,
@@ -8,6 +9,10 @@ import {
   CardFooter,
   CardExpandableContent,
   Checkbox,
+  Drawer,
+  DrawerContent,
+  DrawerContentBody,
+  DrawerPanelContent,
   Dropdown,
   DropdownItem,
   DropdownList,
@@ -23,6 +28,10 @@ interface CardDemoState {
   check1: boolean;
   selectableChecked1: boolean;
   selectableChecked2: boolean;
+  drawerIsExpanded: boolean;
+  selectableClickableChecked: boolean;
+  selectableClickableSelected: boolean;
+  selectaleClickableDrawerIsExpanded: boolean;
 }
 
 export class CardDemo extends React.Component {
@@ -34,7 +43,11 @@ export class CardDemo extends React.Component {
     isOpen: false,
     check1: false,
     selectableChecked1: false,
-    selectableChecked2: false
+    selectableChecked2: false,
+    drawerIsExpanded: false,
+    selectableClickableChecked: false,
+    selectableClickableSelected: false,
+    selectaleClickableDrawerIsExpanded: false
   };
 
   onKeyDown = (event: any) => {
@@ -91,8 +104,26 @@ export class CardDemo extends React.Component {
     }
   };
 
+  onSelectableClickableChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
+    this.setState({ selectableClickableChecked: checked });
+  };
+
+  onSelectableClickableClick = () => {
+    this.setState({
+      selectableClickableSelected: !this.state.selectableClickableSelected,
+      selectaleClickableDrawerIsExpanded: !this.state.selectaleClickableDrawerIsExpanded
+    });
+  };
+
   render() {
-    const { selectableChecked1, selectableChecked2 } = this.state;
+    const {
+      selectableChecked1,
+      selectableChecked2,
+      drawerIsExpanded,
+      selectableClickableChecked,
+      selectableClickableSelected,
+      selectaleClickableDrawerIsExpanded
+    } = this.state;
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action">Action</DropdownItem>,
@@ -187,7 +218,7 @@ export class CardDemo extends React.Component {
               onChange: this.onSelectableChange
             }}
           >
-            <CardTitle>First card</CardTitle>
+            <CardTitle>First selectable card</CardTitle>
           </CardHeader>
           <CardBody>This card is selectable.</CardBody>
         </Card>
@@ -201,7 +232,7 @@ export class CardDemo extends React.Component {
               onChange: this.onSelectableChange
             }}
           >
-            <CardTitle>Second card</CardTitle>
+            <CardTitle>Second selectable card</CardTitle>
           </CardHeader>
           <CardBody>This card is selectable.</CardBody>
         </Card>
@@ -215,7 +246,7 @@ export class CardDemo extends React.Component {
               variant: 'single'
             }}
           >
-            <CardTitle>First card</CardTitle>
+            <CardTitle>First single selectable card</CardTitle>
           </CardHeader>
           <CardBody>This card is single selectable.</CardBody>
         </Card>
@@ -228,10 +259,92 @@ export class CardDemo extends React.Component {
               variant: 'single'
             }}
           >
-            <CardTitle>Second card</CardTitle>
+            <CardTitle>Second single selectable card</CardTitle>
           </CardHeader>
           <CardBody>This card is single selectable.</CardBody>
         </Card>
+        <br></br>
+        <div style={{ height: '150px' }}>
+          <Drawer id="clickable-card-drawer" isExpanded={drawerIsExpanded}>
+            <DrawerContent
+              panelContent={
+                <DrawerPanelContent>
+                  <span>Clickable card drawer panel</span>
+                </DrawerPanelContent>
+              }
+            >
+              <DrawerContentBody>
+                <Card id="clickable-card-example-1" isClickable>
+                  <CardHeader
+                    selectableActions={{
+                      onClickAction: () => {
+                        this.setState({ drawerIsExpanded: !drawerIsExpanded });
+                      },
+                      selectableActionId: 'clickable-card-input-1',
+                      selectableActionAriaLabelledby: 'clickable-card-example-1',
+                      name: 'clickable-card-example-1'
+                    }}
+                  >
+                    <CardTitle>Clickable card with action</CardTitle>
+                  </CardHeader>
+                  <CardBody>This card performs an action on click.</CardBody>
+                </Card>
+              </DrawerContentBody>
+            </DrawerContent>
+          </Drawer>
+        </div>
+        <br></br>
+        <Card id="clickable-card-example-2" isClickable>
+          <CardHeader
+            selectableActions={{
+              to: '/button-demo-nav-link',
+              selectableActionId: 'clickable-card-input-2',
+              selectableActionAriaLabelledby: 'clickable-card-example-2',
+              name: 'clickable-card-example-2'
+            }}
+          >
+            <CardTitle>Clickable card with link</CardTitle>
+          </CardHeader>
+          <CardBody>This card can navigate to a link on click.</CardBody>
+        </Card>
+        <br></br>
+        <div style={{ height: '150px' }}>
+          <Drawer id="clickable-selectable-card-drawer" isExpanded={selectaleClickableDrawerIsExpanded}>
+            <DrawerContent
+              panelContent={
+                <DrawerPanelContent>
+                  <span>Clickable and selectable card drawer panel</span>
+                </DrawerPanelContent>
+              }
+            >
+              <DrawerContentBody>
+                <Card
+                  id="clickable-selectable-card-example-1"
+                  isClickable
+                  isSelectable
+                  isSelected={selectableClickableSelected}
+                >
+                  <CardHeader
+                    selectableActions={{
+                      selectableActionId: 'clickable-selectable-card-input-1',
+                      selectableActionAriaLabelledby: 'clickable-selectable-card-example-1',
+                      name: 'clickable-selectable-card-input-1',
+                      isChecked: selectableClickableChecked,
+                      onChange: this.onSelectableClickableChange
+                    }}
+                  >
+                    <CardTitle>
+                      <Button variant="link" isInline onClick={this.onSelectableClickableClick}>
+                        Clickable and selectable card
+                      </Button>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardBody>This card performs an action upon clicking the card title and is selectable.</CardBody>
+                </Card>
+              </DrawerContentBody>
+            </DrawerContent>
+          </Drawer>
+        </div>
       </React.Fragment>
     );
   }
