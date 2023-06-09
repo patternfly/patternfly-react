@@ -1,0 +1,4 @@
+{
+  "packageName": "@patternfly/react-table",
+  "paths": ["deprecated", "components"]
+}
