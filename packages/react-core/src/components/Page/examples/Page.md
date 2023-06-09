@@ -61,13 +61,13 @@ To add horizontal navigation to the top of a `<Page>`, add the navigation inside
 
 ```
 
-### Legacy tertiary navigation
+### Deprecated tertiary navigation
 
 [Horizontal sub-navigation](/components/navigation#horizontal-subnav) is now recommended instead of tertiary-level navigation.
 
 Tertiary navigation allows you to add an additional navigation menu alongside vertical or horizontal navigation. To create tertiary navigation, use the `tertiaryNav` property. The following example passes `tertiaryNav="Navigation"` into a `<Page>` component.
 
-```ts file="./PageTertiaryNav.tsx"
+```ts file="./PageTertiaryNav.tsx" isDeprecated
 
 ```
 

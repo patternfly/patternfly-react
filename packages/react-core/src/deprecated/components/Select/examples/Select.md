@@ -5,6 +5,7 @@ subsection: menus
 cssPrefix: pf-v5-c-select
 propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject', 'SelectViewMoreObject']
 ouia: true
+deprecated: true
 ---
 
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';

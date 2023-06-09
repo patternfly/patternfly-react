@@ -48,9 +48,9 @@ The following example shows two navigation groups, each with a `title` prop pass
 
 ```
 
-### Legacy tertiary
+### Deprecated tertiary
 
-```ts file="./NavLegacyTertiary.tsx"
+```ts file="./NavLegacyTertiary.tsx" isDeprecated
 
 ```
 

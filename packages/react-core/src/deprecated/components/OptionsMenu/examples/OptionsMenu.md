@@ -5,6 +5,7 @@ subsection: menus
 cssPrefix: pf-v5-c-options-menu
 propComponents: ['OptionsMenu', 'OptionsMenuItem', 'OptionsMenuSeparator', 'OptionsMenuToggle', 'OptionsMenuToggleWithText']
 ouia: true
+deprecated: true
 ---
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
