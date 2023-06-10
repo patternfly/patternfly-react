@@ -1,6 +1,6 @@
 # @patternfly/react-icons
 
-PatternFly 4 Icons as React Components.
+PatternFly Icons as React Components.
 
 ## Usage
 
@@ -10,15 +10,16 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 const closeIcon = <TimesIcon />;
 ```
 
-For a list of the available icons please refer to the [PatternFly React Docs](https://patternfly-react.surge.sh/icons/)
+For a list of the available icons please refer to the [PatternFly React Docs](https://patternfly-react-main.surge.sh/icons/)
 
-Every icon component has the following props:
+## Styling Icons
 
-| Prop  | Description                                                      | Default        |
-| ----- | ---------------------------------------------------------------- | -------------- |
-| color | Color of the icon (e.g. red, white, #c3ee)                       | 'currentColor' |
-| size  | Size of the icon. There are 4 different sizes: sm, md, lg and xl | sm             |
-| title | Label of the icon                                                | null           |
+All icons from @patternfly/react-icons have the HTML class pf-v5-svg applied and CSS styles applied via @patternfly/react-styles.
+
+If not using @patternfly/react-icons in conjunction with @patternfly/react-styles, then the following generic styles will need to be applied to the icons: `height="1em", style="vertical-align: -0.125em;" width="1em"`
+
+If using @patternfly/react-icons in conjunction with @patternfly/react-core, icons can be further styled by wrapping an icon from 
+@patternfly/react-icons in a PatternFly Icon component.
 
 ## Adding Icons
 

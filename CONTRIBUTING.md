@@ -1,8 +1,6 @@
 # Contributing to PatternFly React
 
-> ### Looking for a quick guide to PatternFly 3 React Contribution? [Go Here](https://github.com/patternfly/patternfly-react/blob/patternfly-3/packages/patternfly-react/CONTRIBUTING.md)
->
-> ### Looking for a quick guide to PatternFly 4 React Contribution? [Go Here](./packages/react-core/CONTRIBUTING.md)
+> ### Looking for a quick guide to PatternFly React Contribution? [Go Here](./packages/react-core/CONTRIBUTING.md)
 
 ## Outline
 
@@ -152,8 +150,7 @@ Follow the prompts to generate the desired component or package.
 
 Currently the following generators are provided
 
-- PatternFly 4 Component
-- PatternFly 3 Component (only available on the `patternfly-3` branch, see [this guide](https://github.com/patternfly/patternfly-react/blob/patternfly-3/packages/patternfly-react/CONTRIBUTING.md))
+- PatternFly Component
 - Package
 
 ## Guidelines and Requirements
@@ -188,7 +185,7 @@ Please ensure that all React UI components contributed meet the following guidel
   See how to write documentation in the [`react-docs` README](./packages/react-docs/README.md)
 - When destructuring or spreading expressions , use ...props as the variable name.
 
-  **Please see the [Getting Started Readme](./GETTING-STARTED.md) for additional information in getting started with building PatterFly 4 react components.**
+  **Please see the [Getting Started Readme](./GETTING-STARTED.md) for additional information in getting started with building PatterFly react components.**
 
 ### Code Contribution Guidelines
 
@@ -220,7 +217,7 @@ $ git checkout -b my-branch upstream/main
  yarn generate
 ```
 
-- When you select the option to generate a PatternFly 4 component, a structure resembling the following is generated
+- When you select the option to generate a PatternFly component, a structure resembling the following is generated
   ```text
   packages/react-core/src/[type]/[ComponentName]/
     index.js - Barrel File exporting public exports

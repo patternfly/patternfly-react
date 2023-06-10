@@ -1,6 +1,6 @@
 # @patternfly/react-charts
 
-This package provides PatternFly charting components for [PatternFly 4][patternfly-4].
+This package provides PatternFly charting components for [PatternFly][patternfly].
 
 ### Prerequisite
 
@@ -60,28 +60,12 @@ You can also find how each component is meant to be used from a design perspecti
 
 Note: All commands below assume you are on the root directory in this repository.
 
-### Install
+### Install & run locally
 
-Run to install all the dependencies
-
-```sh
-yarn && yarn bootstrap && yarn build && yarn build:docs
-```
-
-### Running
-
-To start the site locally.
+Run to install all the dependencies, build and run the site locally.
 
 ```sh
-yarn build && yarn start:pf4
-```
-
-### Building
-
-To build the site.
-
-```sh
-yarn build:docs
+yarn install && yarn start
 ```
 
 # Contributing Components
