@@ -14,6 +14,7 @@ propComponents:
     DropdownSeparator
   ]
 ouia: true
+deprecated: true
 ---
 
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
