@@ -27,8 +27,10 @@ exports[`SearchInput advanced search 1`] = `
                   aria-hidden="true"
                   class="pf-v5-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
                   viewBox="0 0 512 512"
+                  width="1em"
                 >
                   <path
                     d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
@@ -59,8 +61,10 @@ exports[`SearchInput advanced search 1`] = `
                 aria-hidden="true"
                 class="pf-v5-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
                 viewBox="0 0 352 512"
+                width="1em"
               >
                 <path
                   d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
@@ -87,8 +91,10 @@ exports[`SearchInput advanced search 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 320 512"
+            width="1em"
           >
             <path
               d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -112,8 +118,10 @@ exports[`SearchInput advanced search 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
@@ -154,8 +162,10 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                   aria-hidden="true"
                   class="pf-v5-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
                   viewBox="0 0 512 512"
+                  width="1em"
                 >
                   <path
                     d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
@@ -186,8 +196,10 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 aria-hidden="true"
                 class="pf-v5-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
                 viewBox="0 0 352 512"
+                width="1em"
               >
                 <path
                   d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
@@ -214,8 +226,10 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 320 512"
+            width="1em"
           >
             <path
               d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -239,8 +253,10 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
@@ -399,8 +415,10 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                         aria-hidden="true"
                         class="pf-v5-svg"
                         fill="currentColor"
+                        height="1em"
                         role="img"
                         viewBox="0 0 448 512"
+                        width="1em"
                       >
                         <path
                           d="M448 80v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48zm-88 16H248.029c-21.313 0-32.08 25.861-16.971 40.971l31.984 31.987L67.515 364.485c-4.686 4.686-4.686 12.284 0 16.971l31.029 31.029c4.687 4.686 12.285 4.686 16.971 0l195.526-195.526 31.988 31.991C358.058 263.977 384 253.425 384 231.979V120c0-13.255-10.745-24-24-24z"
@@ -478,8 +496,10 @@ exports[`SearchInput renders search input in strict mode 1`] = `
                   aria-hidden="true"
                   class="pf-v5-svg"
                   fill="currentColor"
+                  height="1em"
                   role="img"
                   viewBox="0 0 512 512"
+                  width="1em"
                 >
                   <path
                     d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
@@ -510,8 +530,10 @@ exports[`SearchInput renders search input in strict mode 1`] = `
                 aria-hidden="true"
                 class="pf-v5-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
                 viewBox="0 0 352 512"
+                width="1em"
               >
                 <path
                   d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
@@ -538,8 +560,10 @@ exports[`SearchInput renders search input in strict mode 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 320 512"
+            width="1em"
           >
             <path
               d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -563,8 +587,10 @@ exports[`SearchInput renders search input in strict mode 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
@@ -608,8 +634,10 @@ exports[`SearchInput search input with hint 1`] = `
                 aria-hidden="true"
                 class="pf-v5-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
                 viewBox="0 0 512 512"
+                width="1em"
               >
                 <path
                   d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
@@ -643,8 +671,10 @@ exports[`SearchInput search input with hint 1`] = `
                 aria-hidden="true"
                 class="pf-v5-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
                 viewBox="0 0 320 512"
+                width="1em"
               >
                 <path
                   d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
@@ -664,8 +694,10 @@ exports[`SearchInput search input with hint 1`] = `
                 aria-hidden="true"
                 class="pf-v5-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
                 viewBox="0 0 320 512"
+                width="1em"
               >
                 <path
                   d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
@@ -686,8 +718,10 @@ exports[`SearchInput search input with hint 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 352 512"
+              width="1em"
             >
               <path
                 d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
@@ -713,8 +747,10 @@ exports[`SearchInput search input with hint 1`] = `
           aria-hidden="true"
           class="pf-v5-svg"
           fill="currentColor"
+          height="1em"
           role="img"
           viewBox="0 0 448 512"
+          width="1em"
         >
           <path
             d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
@@ -750,8 +786,10 @@ exports[`SearchInput simple search input 1`] = `
                 aria-hidden="true"
                 class="pf-v5-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
                 viewBox="0 0 512 512"
+                width="1em"
               >
                 <path
                   d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
@@ -785,8 +823,10 @@ exports[`SearchInput simple search input 1`] = `
                 aria-hidden="true"
                 class="pf-v5-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
                 viewBox="0 0 320 512"
+                width="1em"
               >
                 <path
                   d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
@@ -806,8 +846,10 @@ exports[`SearchInput simple search input 1`] = `
                 aria-hidden="true"
                 class="pf-v5-svg"
                 fill="currentColor"
+                height="1em"
                 role="img"
                 viewBox="0 0 320 512"
+                width="1em"
               >
                 <path
                   d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
@@ -828,8 +870,10 @@ exports[`SearchInput simple search input 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 352 512"
+              width="1em"
             >
               <path
                 d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
@@ -855,8 +899,10 @@ exports[`SearchInput simple search input 1`] = `
           aria-hidden="true"
           class="pf-v5-svg"
           fill="currentColor"
+          height="1em"
           role="img"
           viewBox="0 0 448 512"
+          width="1em"
         >
           <path
             d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"

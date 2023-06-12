@@ -47,6 +47,8 @@ export function createIcon({
           aria-labelledby={hasTitle ? this.id : null}
           aria-hidden={hasTitle ? null : true}
           role="img"
+          width="1em"
+          height="1em"
           {...(props as Omit<React.SVGProps<SVGElement>, 'ref'>)} // Lie.
         >
           {hasTitle && <title id={this.id}>{title}</title>}

@@ -52,8 +52,10 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -85,8 +87,10 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -112,8 +116,10 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -157,8 +163,10 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -183,8 +191,10 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -250,8 +260,10 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -283,8 +295,10 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -310,8 +324,10 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -355,8 +371,10 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -381,8 +399,10 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -448,8 +468,10 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -481,8 +503,10 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -508,8 +532,10 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -553,8 +579,10 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -579,8 +607,10 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -646,8 +676,10 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -679,8 +711,10 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -706,8 +740,10 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -751,8 +787,10 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -777,8 +815,10 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -844,8 +884,10 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -877,8 +919,10 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -904,8 +948,10 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -949,8 +995,10 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -975,8 +1023,10 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -1042,8 +1092,10 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -1075,8 +1127,10 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -1102,8 +1156,10 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -1147,8 +1203,10 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1173,8 +1231,10 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -1226,8 +1286,10 @@ exports[`Pagination component render custom pagination toggle 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -1259,8 +1321,10 @@ exports[`Pagination component render custom pagination toggle 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -1286,8 +1350,10 @@ exports[`Pagination component render custom pagination toggle 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -1336,8 +1402,10 @@ exports[`Pagination component render custom pagination toggle 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1362,8 +1430,10 @@ exports[`Pagination component render custom pagination toggle 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -1428,8 +1498,10 @@ exports[`Pagination component render custom perPageOptions 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -1461,8 +1533,10 @@ exports[`Pagination component render custom perPageOptions 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -1488,8 +1562,10 @@ exports[`Pagination component render custom perPageOptions 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -1538,8 +1614,10 @@ exports[`Pagination component render custom perPageOptions 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1564,8 +1642,10 @@ exports[`Pagination component render custom perPageOptions 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -1630,8 +1710,10 @@ exports[`Pagination component render custom start end 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -1662,8 +1744,10 @@ exports[`Pagination component render custom start end 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -1688,8 +1772,10 @@ exports[`Pagination component render custom start end 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -1738,8 +1824,10 @@ exports[`Pagination component render custom start end 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1764,8 +1852,10 @@ exports[`Pagination component render custom start end 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -1822,8 +1912,10 @@ exports[`Pagination component render empty per page options 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -1849,8 +1941,10 @@ exports[`Pagination component render empty per page options 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -1899,8 +1993,10 @@ exports[`Pagination component render empty per page options 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -1925,8 +2021,10 @@ exports[`Pagination component render empty per page options 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -1991,8 +2089,10 @@ exports[`Pagination component render last page 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -2023,8 +2123,10 @@ exports[`Pagination component render last page 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -2049,8 +2151,10 @@ exports[`Pagination component render last page 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -2100,8 +2204,10 @@ exports[`Pagination component render last page 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2127,8 +2233,10 @@ exports[`Pagination component render last page 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -2193,8 +2301,10 @@ exports[`Pagination component render limited number of pages 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -2226,8 +2336,10 @@ exports[`Pagination component render limited number of pages 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -2253,8 +2365,10 @@ exports[`Pagination component render limited number of pages 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -2305,8 +2419,10 @@ exports[`Pagination component render limited number of pages 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2332,8 +2448,10 @@ exports[`Pagination component render limited number of pages 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -2386,8 +2504,10 @@ exports[`Pagination component render should render correctly bottom 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -2419,8 +2539,10 @@ exports[`Pagination component render should render correctly bottom 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -2446,8 +2568,10 @@ exports[`Pagination component render should render correctly bottom 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -2496,8 +2620,10 @@ exports[`Pagination component render should render correctly bottom 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2522,8 +2648,10 @@ exports[`Pagination component render should render correctly bottom 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -2576,8 +2704,10 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -2609,8 +2739,10 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -2636,8 +2768,10 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -2686,8 +2820,10 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2712,8 +2848,10 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -2778,8 +2916,10 @@ exports[`Pagination component render should render correctly compact 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -2811,8 +2951,10 @@ exports[`Pagination component render should render correctly compact 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -2837,8 +2979,10 @@ exports[`Pagination component render should render correctly compact 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -2904,8 +3048,10 @@ exports[`Pagination component render should render correctly disabled 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -2937,8 +3083,10 @@ exports[`Pagination component render should render correctly disabled 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -2964,8 +3112,10 @@ exports[`Pagination component render should render correctly disabled 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -3016,8 +3166,10 @@ exports[`Pagination component render should render correctly disabled 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -3043,8 +3195,10 @@ exports[`Pagination component render should render correctly disabled 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -3109,8 +3263,10 @@ exports[`Pagination component render should render correctly sticky 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -3142,8 +3298,10 @@ exports[`Pagination component render should render correctly sticky 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -3169,8 +3327,10 @@ exports[`Pagination component render should render correctly sticky 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -3219,8 +3379,10 @@ exports[`Pagination component render should render correctly sticky 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -3245,8 +3407,10 @@ exports[`Pagination component render should render correctly sticky 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -3311,8 +3475,10 @@ exports[`Pagination component render should render correctly top 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -3344,8 +3510,10 @@ exports[`Pagination component render should render correctly top 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -3371,8 +3539,10 @@ exports[`Pagination component render should render correctly top 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -3421,8 +3591,10 @@ exports[`Pagination component render should render correctly top 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -3447,8 +3619,10 @@ exports[`Pagination component render should render correctly top 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -3513,8 +3687,10 @@ exports[`Pagination component render titles 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -3546,8 +3722,10 @@ exports[`Pagination component render titles 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -3573,8 +3751,10 @@ exports[`Pagination component render titles 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -3623,8 +3803,10 @@ exports[`Pagination component render titles 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -3649,8 +3831,10 @@ exports[`Pagination component render titles 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -3715,8 +3899,10 @@ exports[`Pagination component render up drop direction 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -3748,8 +3934,10 @@ exports[`Pagination component render up drop direction 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -3775,8 +3963,10 @@ exports[`Pagination component render up drop direction 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -3825,8 +4015,10 @@ exports[`Pagination component render up drop direction 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -3851,8 +4043,10 @@ exports[`Pagination component render up drop direction 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
@@ -3917,8 +4111,10 @@ exports[`Pagination component render zero results 1`] = `
               aria-hidden="true"
               class="pf-v5-svg"
               fill="currentColor"
+              height="1em"
               role="img"
               viewBox="0 0 320 512"
+              width="1em"
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -3950,8 +4146,10 @@ exports[`Pagination component render zero results 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
@@ -3977,8 +4175,10 @@ exports[`Pagination component render zero results 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
@@ -4029,8 +4229,10 @@ exports[`Pagination component render zero results 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 256 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
@@ -4056,8 +4258,10 @@ exports[`Pagination component render zero results 1`] = `
             aria-hidden="true"
             class="pf-v5-svg"
             fill="currentColor"
+            height="1em"
             role="img"
             viewBox="0 0 448 512"
+            width="1em"
           >
             <path
               d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
