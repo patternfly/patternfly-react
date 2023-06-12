@@ -1,7 +1,7 @@
 ---
 id: Chip
 section: components
-cssPrefix: pf-v5-c-chip
+cssPrefix: ['pf-v5-c-chip', 'pf-v5-c-chip-group']
 propComponents: ['Chip', 'ChipGroup']
 ouia: true
 ---
