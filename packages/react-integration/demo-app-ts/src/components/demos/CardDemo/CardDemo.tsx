@@ -8,7 +8,6 @@ import {
   CardBody,
   CardFooter,
   CardExpandableContent,
-  Checkbox,
   Drawer,
   DrawerContent,
   DrawerContentBody,
@@ -25,7 +24,6 @@ interface CardDemoState {
   selected: string;
   isExpanded: boolean;
   isOpen: boolean;
-  check1: boolean;
   selectableChecked1: boolean;
   selectableChecked2: boolean;
   drawerIsExpanded: boolean;
@@ -41,7 +39,6 @@ export class CardDemo extends React.Component {
     selected: null,
     isExpanded: false,
     isOpen: false,
-    check1: false,
     selectableChecked1: false,
     selectableChecked2: false,
     drawerIsExpanded: false,
@@ -82,13 +79,6 @@ export class CardDemo extends React.Component {
     this.setState({
       isOpen: false
     });
-  };
-
-  onClick = (event: any, _checked: boolean) => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    this.setState({ [name]: value });
   };
 
   onSelectableChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
@@ -152,21 +142,14 @@ export class CardDemo extends React.Component {
         >
           <DropdownList>{dropdownItems}</DropdownList>
         </Dropdown>
-        <Checkbox
-          isChecked={this.state.check1}
-          onChange={this.onClick}
-          aria-label="card checkbox example"
-          id="check-1"
-          name="check1"
-        />
       </>
     );
 
     return (
       <React.Fragment>
-        <Card id="hasNoOffset-card">
+        <Card id="cardWithActions">
           <CardHeader actions={{ actions, hasNoOffset: true }}>
-            <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }} />
+            <Brand src={pfLogo} alt="PatternFly" style={{ height: '50px' }} />
           </CardHeader>
           <CardTitle>Header</CardTitle>
           <CardBody>Body</CardBody>

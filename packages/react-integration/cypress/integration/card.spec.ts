@@ -3,6 +3,16 @@ describe('Card Demo Test', () => {
     cy.visit('http://localhost:3000/card-demo-nav-link');
   });
 
+  it('Verify card with actions', () => {
+    cy.get('#cardWithActions .pf-v5-c-menu-toggle').then(($menuToggle) => {
+      cy.wrap($menuToggle).should('not.have.class', 'pf-m-expanded');
+      cy.wrap($menuToggle).click();
+      cy.wrap($menuToggle).should('have.class', 'pf-m-expanded');
+    });
+    cy.get('#cardWithActions .pf-v5-c-menu .pf-v5-c-menu__item').first().click();
+    cy.get('#cardWithActions .pf-v5-c-menu-toggle').should('not.have.class', 'pf-m-expanded');
+  });
+
   it('Verify that deprecated selectable card can be selected and unselected with keyboard input', () => {
     cy.get('#selectableCardDeprecated').focus();
     cy.focused().should('have.class', 'pf-m-selectable');
