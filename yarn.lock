@@ -4003,9 +4003,9 @@
     astring "^1.7.5"
 
 "@patternfly/documentation-framework@^2.0.0-alpha.47":
-  version "2.0.0-alpha.49"
-  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-2.0.0-alpha.49.tgz#827a6a2b7c81e81d1d8a5971cbf3ddf402254d0b"
-  integrity sha512-spc6X+bMp21sLNAh3vXcjz5BV31Gm/Roo8LSL+oUWoNRGie6uqwLeQx2I5QWq1YA2awWUYJwSD7smUXEcvsp2Q==
+  version "2.0.0-alpha.54"
+  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-2.0.0-alpha.54.tgz#5ffabfa0113b8619f3a98aa4cfa542767425401b"
+  integrity sha512-tOLbiqGfQWDpnM02o6mg7L5F41DJHWjm+rWZ/EKxmtkm9/ac9MaJjQIW3NPNJg8T9vSkP73kNlRcJic7D6s5og==
   dependencies:
     "@babel/core" "7.18.2"
     "@babel/plugin-proposal-class-properties" "7.17.12"
