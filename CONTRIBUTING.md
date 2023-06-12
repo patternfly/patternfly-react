@@ -26,7 +26,7 @@
 
 ## Code of Conduct
 
-This project is governed by the [Contributor Covenant version 1.4][1]. All contributors and participants
+This project is governed by the [Contributor Covenant version 2.1][1]. All contributors and participants
 agree to abide by its terms. To report violations, send an email to [patternfly@redhat.com][2].
 
 ## Issues and Project Board
@@ -330,6 +330,6 @@ The process for revoking someone's maintainer status is a discussion limited to 
 - Do not merge commits blindly. If you do not fully understand a pull request, ask existing maintainers to take a look
 - Do not merge if the build is failing. Wait until tests are green to merge.
 
-[1]: http://contributor-covenant.org/version/1/4/code-of-conduct.md
+[1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct/
 [2]: mailto:patternfly@redhat.com
 [3]: https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type
