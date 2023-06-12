@@ -9,10 +9,10 @@ import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface NavExpandableProps
-  extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>,
+  extends Omit<React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, 'title'>,
     OUIAProps {
-  /** Title shown for the expandable list */
-  title: string;
+  /** Title content shown for the expandable list */
+  title: React.ReactNode;
   /** If defined, screen readers will read this text instead of the list title */
   srText?: string;
   /** Boolean to programatically expand or collapse section */
