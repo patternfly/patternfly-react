@@ -36,8 +36,8 @@
   "scripts": {
     "build:umd": "rollup -c --environment IS_PRODUCTION",
     "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json",
-    "clean": "rimraf dist",
-    "subpaths": "node scripts/createSubpaths.js"
+    "clean": "rimraf dist components deprecated",
+    "subpaths": "node ../../scripts/exportSubpaths.js --config subpaths.config.json"
   },
   "dependencies": {
     "@patternfly/react-core": "^5.0.0-prerelease.7",

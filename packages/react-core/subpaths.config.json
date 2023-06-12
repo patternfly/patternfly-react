@@ -1,0 +1,4 @@
+{
+  "packageName": "@patternfly/react-core",
+  "paths": ["next", "deprecated", "components", "layouts", "helpers"]
+}
