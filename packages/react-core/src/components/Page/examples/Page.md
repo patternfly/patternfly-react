@@ -61,7 +61,7 @@ To add horizontal navigation to the top of a `<Page>`, add the navigation inside
 
 ```
 
-### Deprecated tertiary navigation
+### Tertiary navigation (deprecated)
 
 [Horizontal sub-navigation](/components/navigation#horizontal-subnav) is now recommended instead of tertiary-level navigation.
 

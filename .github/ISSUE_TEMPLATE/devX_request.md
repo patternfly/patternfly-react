@@ -1,6 +1,6 @@
 ---
 name: Developer experience
-about: Suggest an enhancement to the PF developer experience (DX). DX enhancements improve experience for those building UIs with PF, but have little to know end user impact.
+about: Suggest an enhancement to the developer experience (DX). DX enhancements improve experience for those building UIs with PatternFly, but have little to know end user impact.
 title: "[short description]"
 labels: DevX
 assignees: ''

@@ -10,18 +10,18 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 const closeIcon = <TimesIcon />;
 ```
 
-For a list of the available icons please refer to the [PatternFly React Docs](https://patternfly-react-main.surge.sh/icons/)
+For a list of the available icons please refer to the [PatternFly react docs](https://patternfly-react-main.surge.sh/icons/)
 
-## Styling Icons
+## Styling icons
 
 All icons from @patternfly/react-icons have the HTML class pf-v5-svg applied and CSS styles applied via @patternfly/react-styles.
 
 If not using @patternfly/react-icons in conjunction with @patternfly/react-styles, then the following generic styles will need to be applied to the icons: `height="1em", style="vertical-align: -0.125em;" width="1em"`
 
 If using @patternfly/react-icons in conjunction with @patternfly/react-core, icons can be further styled by wrapping an icon from 
-@patternfly/react-icons in a PatternFly Icon component.
+@patternfly/react-icons in a PatternFly icon component.
 
-## Adding Icons
+## Adding icons
 
 Icons for this package are generated from the `@fortawesome/free-solid-svg-icons` package. To add more to what is generated, modify the [icons.js](./build/icons.js) file in the build folder.
 
@@ -35,7 +35,7 @@ module.exports = {
 }
 ```
 
-## Tree Shaking
+## Tree shaking
 
 Ensure optimization.sideEffects is set to true within your Webpack config:
 ```JS

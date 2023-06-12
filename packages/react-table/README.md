@@ -4,7 +4,7 @@ This package provides Table PatternFly components based on [PatternFly][patternf
 
 ### Prerequisite
 
-#### Node Environment
+#### Node environment
 
 This project currently supports Node [Active LTS](https://github.com/nodejs/Release#release-schedule) releases. Please stay current with Node Active LTS when developing patternfly-react.
 
@@ -31,13 +31,13 @@ npm install @patternfly/react-table --save
 
 ## Usage
 
-It's strongly advised to use the PatternFly Base CSS in your whole project, or some components may diverge in appearance:
+It's strongly advised to use the PatternFly base CSS in your whole project, or some components may diverge in appearance:
 
 ```js
 import '@patternfly/react-core/dist/styles/base.css';
 ```
 
-#### Example Component Usage
+#### Example component usage
 
 ```js
 import { Table, Thead, Tr, Th, Td, Tbody } from '@patternfly/react-table';
@@ -85,8 +85,8 @@ This library makes use of the babel plugin from [@patternfly/react-styles](../re
 
 ### Documentation
 
-A comprehensive list of components and detailed usage of each can be found on the [PatternFly React Docs][docs] website
-You can also find how each component is meant to be used from a design perspective on the [PatternFly Core][patternfly] website.
+A comprehensive list of components and detailed usage of each can be found on the [PatternFly react docs][docs] website
+You can also find how each component is meant to be used from a design perspective on the [PatternFly core][patternfly] website.
 
 Note: All commands below assume you are on the root directory in this repository.
 

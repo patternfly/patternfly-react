@@ -48,7 +48,7 @@ The following example shows two navigation groups, each with a `title` prop pass
 
 ```
 
-### Deprecated tertiary
+### Tertiary (deprecated)
 
 ```ts file="./NavLegacyTertiary.tsx" isDeprecated
 
