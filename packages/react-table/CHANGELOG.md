@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-prerelease.7...@patternfly/react-table@5.0.0-prerelease.8) (2023-06-12)
+
+### Bug Fixes
+
+- **packaging:** export ESM and CJS modules from convenience directories ([#9260](https://github.com/patternfly/patternfly-react/issues/9260)) ([8db10fa](https://github.com/patternfly/patternfly-react/commit/8db10fabbfffd4a82f5602b1cd10340e06e8cb0a))
+
 # [5.0.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-prerelease.6...@patternfly/react-table@5.0.0-prerelease.7) (2023-06-12)
 
 ### Bug Fixes

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.7...@patternfly/react-core@5.0.0-prerelease.8) (2023-06-12)
+
+### Bug Fixes
+
+- **CalendarMonth:** switch to a correct month ([#9226](https://github.com/patternfly/patternfly-react/issues/9226)) ([8991db1](https://github.com/patternfly/patternfly-react/commit/8991db1f476c468b25db834c1a22f0f87e906d3f))
+- **packaging:** export ESM and CJS modules from convenience directories ([#9260](https://github.com/patternfly/patternfly-react/issues/9260)) ([8db10fa](https://github.com/patternfly/patternfly-react/commit/8db10fabbfffd4a82f5602b1cd10340e06e8cb0a))
+
 # [5.0.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.6...@patternfly/react-core@5.0.0-prerelease.7) (2023-06-12)
 
 ### Bug Fixes
