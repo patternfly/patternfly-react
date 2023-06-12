@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-prerelease.6...@patternfly/react-table@5.0.0-prerelease.7) (2023-06-12)
+
+### Bug Fixes
+
+- **react-icons:** Added fallback width and height attributes to icons ([#9257](https://github.com/patternfly/patternfly-react/issues/9257)) ([5c782ba](https://github.com/patternfly/patternfly-react/commit/5c782bacfdc02b907b2ca01a3a6800e2f6072b3e))
+
 # [5.0.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-prerelease.5...@patternfly/react-table@5.0.0-prerelease.6) (2023-06-09)
 
 **Note:** Version bump only for package @patternfly/react-table

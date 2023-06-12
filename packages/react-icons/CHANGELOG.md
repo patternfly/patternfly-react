@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-prerelease.3 (2023-06-12)
+
+### Bug Fixes
+
+- **react-icons:** Added fallback width and height attributes to icons ([#9257](https://github.com/patternfly/patternfly-react/issues/9257)) ([5c782ba](https://github.com/patternfly/patternfly-react/commit/5c782bacfdc02b907b2ca01a3a6800e2f6072b3e))
+
 # [5.0.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@5.0.0-prerelease.1...@patternfly/react-icons@5.0.0-prerelease.2) (2023-06-06)
 
 ### Bug Fixes
