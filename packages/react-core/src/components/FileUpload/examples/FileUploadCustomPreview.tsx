@@ -1,6 +1,7 @@
 import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
 import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-icon';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 export const CustomPreviewFileUpload: React.FunctionComponent = () => {
   const [value, setValue] = React.useState<File>();
@@ -28,7 +29,7 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
       browseButtonText="Upload"
     >
       {value && (
-        <div className="pf-v5-u-m-md">
+        <div className={spacing.mMd}>
           <FileUploadIcon width="2em" height="2em" /> Custom preview here for your {value.size}-byte file named{' '}
           {value.name}
         </div>

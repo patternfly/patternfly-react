@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import { AlertToggleExpandButton } from '../AlertToggleExpandButton';
 import { AlertContext } from '../AlertContext';
+import styles from '@patternfly/react-styles/css/components/Alert/alert';
 
 jest.mock('../../Button');
 
@@ -108,14 +109,14 @@ test('Renders a Button with variant: ButtonVariant.plain', () => {
   expect(screen.getByText('variant: plain')).toBeVisible();
 });
 
-test('Renders with the toggle icon inside class pf-v5-c-alert__toggle-icon', () => {
+test(`Renders with the toggle icon inside class ${styles.alertToggleIcon}`, () => {
   render(
     <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
       <AlertToggleExpandButton />
     </AlertContext.Provider>
   );
 
-  expect(screen.getByText('Icon mock')).toHaveClass('pf-v5-c-alert__toggle-icon');
+  expect(screen.getByText('Icon mock')).toHaveClass(styles.alertToggleIcon);
 });
 
 test('Renders with inherited element props spread to the component', () => {

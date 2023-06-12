@@ -29,6 +29,7 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 class PasswordStrengthDemo extends React.Component {
   constructor(props) {
@@ -112,7 +113,7 @@ class PasswordStrengthDemo extends React.Component {
           aria-label="More info for name field"
           onClick={(e) => e.preventDefault()}
           aria-describedby="password-field"
-          className="pf-v5-c-form__group-label-help"
+          className={formStyles.formGroupLabelHelp}
         >
           <HelpIcon />
         </button>

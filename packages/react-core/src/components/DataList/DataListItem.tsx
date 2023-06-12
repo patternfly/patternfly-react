@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { DataListContext } from './DataList';
 import { KeyTypes } from '../../helpers/constants';
 
@@ -93,7 +94,7 @@ export class DataListItem extends React.Component<DataListItemProps> {
             >
               {onSelectableRowChange && (
                 <input
-                  className="pf-v5-screen-reader"
+                  className={accessibility.screenReader}
                   type="radio"
                   checked={isSelected}
                   onChange={(event) => onSelectableRowChange(event, id)}

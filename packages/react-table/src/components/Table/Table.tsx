@@ -7,6 +7,7 @@ import { toCamel } from './utils';
 import { IVisibility } from './utils/decorators/classNames';
 import { useOUIAProps, OUIAProps, handleArrows, setTabIndex } from '@patternfly/react-core';
 import { TableGridBreakpoint, TableVariant } from './TableTypes';
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 export interface BaseCellProps {
   /** Content rendered inside the cell */
@@ -121,7 +122,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
       setTableCaption(
         <caption>
           {selectableRowCaptionText}
-          <div className="pf-v5-screen-reader">
+          <div className={accessibility.screenReader}>
             This table has selectable rows. It can be navigated by row using tab, and each row can be selected using
             space or enter.
           </div>
@@ -129,7 +130,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
       );
     } else {
       setTableCaption(
-        <caption className="pf-v5-screen-reader">
+        <caption className={accessibility.screenReader}>
           This table has selectable rows. It can be navigated by row using tab, and each row can be selected using space
           or enter.
         </caption>
@@ -156,8 +157,8 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   const handleKeys = (event: KeyboardEvent) => {
     if (
       isNested ||
-      !(tableRef && tableRef.current && tableRef.current.classList.contains('pf-m-tree-view')) || // implements roving tab-index to tree tables only
-      (tableRef && tableRef.current !== (event.target as HTMLElement).closest('.pf-v5-c-table:not(.pf-m-nested)'))
+      !(tableRef && tableRef.current && tableRef.current.classList.contains(stylesTreeView.modifiers.treeView)) || // implements roving tab-index to tree tables only
+      (tableRef && tableRef.current !== (event.target as HTMLElement).closest(`.${styles.table}:not(.pf-m-nested)`))
     ) {
       return;
     }

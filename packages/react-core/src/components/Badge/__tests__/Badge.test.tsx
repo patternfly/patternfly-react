@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Badge } from '../Badge';
+import styles from '@patternfly/react-styles/css/components/Badge/badge';
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 test('Renders without children', () => {
   render(
@@ -16,14 +18,14 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class name pf-v5-c-badge', () => {
+test(`Renders with class name ${styles.badge}`, () => {
   render(<Badge>Test</Badge>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-badge');
+  expect(screen.getByText('Test')).toHaveClass(styles.badge);
 });
 
-test('Renders with class name pf-m-unread by default', () => {
+test(`Renders with class name ${styles.modifiers.unread} by default`, () => {
   render(<Badge>Test</Badge>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-unread');
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.unread);
 });
 
 test('Renders with class name pf-m-read when isRead prop is true', () => {
@@ -31,9 +33,9 @@ test('Renders with class name pf-m-read when isRead prop is true', () => {
   expect(screen.getByText('Test')).toHaveClass('pf-m-read');
 });
 
-test('Does not render pf-v5-screen-reader class by default', () => {
+test(`Does not render ${accessibility.screenReader} class by default`, () => {
   render(<Badge>Test</Badge>);
-  expect(screen.getByText('Test')).not.toContainHTML('<span class="pf-v5-screen-reader"></span>');
+  expect(screen.getByText('Test')).not.toContainHTML(`<span class="${accessibility.screenReader}"></span>`);
 });
 
 test('Renders screenReaderText passed via prop', () => {

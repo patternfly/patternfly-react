@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/CodeBlock/code-block';
 
 export interface CodeBlockActionProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the code block action */
@@ -13,7 +14,7 @@ export const CodeBlockAction: React.FunctionComponent<CodeBlockActionProps> = ({
   className,
   ...props
 }: CodeBlockActionProps) => (
-  <div className={css('pf-v5-c-code-block__actions-item', className)} {...props}>
+  <div className={css(`${styles.codeBlockActions}-item`, className)} {...props}>
     {children}
   </div>
 );

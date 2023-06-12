@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { css } from '@patternfly/react-styles';
 import { useOUIAProps, OUIAProps } from '../../helpers';
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   /** Content rendered inside the Card */
@@ -165,7 +166,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
     >
       {hasSelectableInput && (
         <input
-          className="pf-v5-screen-reader"
+          className={accessibility.screenReader}
           id={`${id}-input`}
           {...ariaProps}
           type="checkbox"

@@ -329,10 +329,11 @@ import {
   DescriptionListDescription,
   Divider
 } from '@patternfly/react-core';
+import galleryGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 CardDetailsDemo = () => {
   return (
-    <Gallery hasGutter style={{ '--pf-v5-l-gallery--GridTemplateColumns--min': '260px' }}>
+    <Gallery hasGutter style={{ [galleryGridTemplateColumnsMin.name]: '260px' }}>
       <Card>
         <CardTitle>
           <Title headingLevel="h4" size="xl">
@@ -432,6 +433,10 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import globalSuccessColor100 from '@patternfly/react-tokens/dist/esm/global_success_color_100';
+import globalWarningColor100 from '@patternfly/react-tokens/dist/esm/global_warning_color_100';
+import globalDangerColor100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
+import gridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 const cardData = {
   iconOnly: [
@@ -439,7 +444,7 @@ const cardData = {
       title: '5 Clusters',
       content: [
         {
-          icon: <CheckCircleIcon color="var(--pf-v5-global--success-color--100)" />
+          icon: <CheckCircleIcon color={globalSuccessColor100.var} />
         }
       ],
       layout: 'icon'
@@ -448,7 +453,7 @@ const cardData = {
       title: '15 Clusters',
       content: [
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />
+          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />
         }
       ],
       layout: 'icon'
@@ -457,7 +462,7 @@ const cardData = {
       title: '3 Clusters',
       content: [
         {
-          icon: <TimesCircleIcon color="var(--pf-v5-global--danger-color--100)" />
+          icon: <TimesCircleIcon color={globalDangerColor100.var} />
         }
       ],
       layout: 'icon'
@@ -468,11 +473,11 @@ const cardData = {
       title: '10 Hosts',
       content: [
         {
-          icon: <ExclamationCircleIcon color="var(--pf-v5-global--success-color--100)" />,
+          icon: <ExclamationCircleIcon color={globalSuccessColor100.var} />,
           count: 2
         },
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />,
+          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />,
           count: 1
         }
       ],
@@ -482,11 +487,11 @@ const cardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon color="var(--pf-v5-global--success-color--100)" />,
+          icon: <CheckCircleIcon color={globalSuccessColor100.var} />,
           count: 5
         },
         {
-          icon: <TimesCircleIcon color="var(--pf-v5-global--danger-color--100)" />,
+          icon: <TimesCircleIcon color={globalDangerColor100.var} />,
           count: 12
         }
       ],
@@ -496,11 +501,11 @@ const cardData = {
       title: '12 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />,
+          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />,
           count: 3
         },
         {
-          icon: <TimesCircleIcon color="var(--pf-v5-global--danger-color--100)" />,
+          icon: <TimesCircleIcon color={globalDangerColor100.var} />,
           count: 7
         }
       ],
@@ -512,12 +517,12 @@ const cardData = {
       title: '13 Hosts',
       content: [
         {
-          icon: <TimesCircleIcon color="var(--pf-v5-global--danger-color--100)" />,
+          icon: <TimesCircleIcon color={globalDangerColor100.var} />,
           status: '2 errors',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />,
+          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />,
           status: '1 warning',
           subtitle: 'subtitle'
         }
@@ -528,12 +533,12 @@ const cardData = {
       title: '3 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon color="var(--pf-v5-global--success-color--100)" />,
+          icon: <CheckCircleIcon color={globalSuccessColor100.var} />,
           status: '2 successes',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />,
+          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />,
           status: '3 warnings',
           subtitle: 'subtitle'
         }
@@ -544,12 +549,12 @@ const cardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)" />,
+          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />,
           status: '7 warnings',
           subtitle: 'subtitle'
         },
         {
-          icon: <TimesCircleIcon color="var(--pf-v5-global--danger-color--100)" />,
+          icon: <TimesCircleIcon color={globalDangerColor100.var} />,
           status: '1 error',
           subtitle: 'subtitle'
         }
@@ -620,7 +625,7 @@ const AggregateStatusCards: React.FunctionComponent = () => {
         }
         return (
           <GridItem key={groupIndex}>
-            <Gallery hasGutter style={{ '--pf-v5-l-gallery--GridTemplateColumns--min': galleryWidth } as any}>
+            <Gallery hasGutter style={{ [gridTemplateColumnsMin.name]: galleryWidth } as any}>
               {cardData[cardGroup].map(({ title, content, layout }, cardIndex) => (
                 <Card style={{ textAlign: cardAlign }} key={`${groupIndex}${cardIndex}`} component="div">
                   <CardTitle style={{ textAlign: titleAlign }}>{title}</CardTitle>
@@ -666,6 +671,9 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import globalSuccessColor100 from '@patternfly/react-tokens/dist/esm/global_success_color_100';
+import globalDangerColor100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
+import globalColor200 from '@patternfly/react-tokens/dist/esm/global_Color_200';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StatusPlain: React.FunctionComponent = () => {
@@ -778,7 +786,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon color="var(--pf-v5-global--success-color--100)" />
+              <CheckCircleIcon color={globalSuccessColor100.var} />
             </FlexItem>
             <FlexItem>
               <span>Cluster</span>
@@ -788,7 +796,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon color="var(--pf-v5-global--danger-color--100)" />
+              <ExclamationCircleIcon color={globalDangerColor100.var} />
             </FlexItem>
             <FlexItem>
               <Popover headerContent="Control Panel Status" bodyContent={popoverBodyContent} minWidth="400px">
@@ -802,14 +810,14 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon color="var(--pf-v5-global--danger-color--100)" />
+              <ExclamationCircleIcon color={globalDangerColor100.var} />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
                 <a href="#">Operators</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: 'var(--pf-v5-global--Color--200)' }}>1 degraded</span>
+                <span style={{ color: globalColor200.var }}>1 degraded</span>
               </FlexItem>
             </Flex>
           </Flex>
@@ -817,14 +825,14 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon color="var(--pf-v5-global--success-color--100)" />
+              <CheckCircleIcon color={globalSuccessColor100.var} />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
                 <a href="#">Image Vulnerabilities</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: 'var(--pf-v5-global--Color--200)' }}>0 vulnerabilities</span>
+                <span style={{ color: globalColor200.var }}>0 vulnerabilities</span>
               </FlexItem>
             </Flex>
           </Flex>
@@ -1271,6 +1279,8 @@ import chart_color_gold_100 from '@patternfly/react-tokens/dist/esm/chart_color_
 import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
+import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
+import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
 
 const UtilizationCard3: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -1314,7 +1324,7 @@ const UtilizationCard3: React.FunctionComponent = () => {
         <GalleryItem>
           <Card id="utilization-card-3-card" component="div">
             <CardHeader
-              className="pf-v5-u-align-items-flex-start"
+              className={flexStyles.alignItemsFlexStart}
               actions={{ actions: headerActions, hasNoOffset: true }}
             >
               <CardTitle>
@@ -1329,7 +1339,7 @@ const UtilizationCard3: React.FunctionComponent = () => {
                   <span>System</span>
                 </FlexItem>
                 <Flex>
-                  <ExclamationCircleIcon className="pf-v5-u-danger-color-100" aria-hidden />
+                  <ExclamationCircleIcon className={textStyles.dangerColor_100} aria-hidden />
                   <a href="#">25 incidents detected</a>
                 </Flex>
                 <FlexItem>
@@ -1495,6 +1505,8 @@ import {
   FlexItem
 } from '@patternfly/react-core';
 import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
+import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 CardNestedDemo = () => {
   const [isCardExpanded1, onCardExpand1] = React.useState(true);
@@ -1543,7 +1555,7 @@ CardNestedDemo = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1552,7 +1564,7 @@ CardNestedDemo = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -1609,11 +1621,11 @@ CardNestedDemo = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-v5-u-hidden-on-md" />
+                <Divider className={accessibility.hiddenOnMd} />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1622,7 +1634,7 @@ CardNestedDemo = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -1704,7 +1716,7 @@ CardNestedDemo = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1713,7 +1725,7 @@ CardNestedDemo = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -1770,11 +1782,11 @@ CardNestedDemo = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-v5-u-hidden-on-md" />
+                <Divider className={accessibility.hiddenOnMd} />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1783,7 +1795,7 @@ CardNestedDemo = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -1865,7 +1877,7 @@ CardNestedDemo = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1874,7 +1886,7 @@ CardNestedDemo = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -1931,11 +1943,11 @@ CardNestedDemo = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-v5-u-hidden-on-md" />
+                <Divider className={accessibility.hiddenOnMd} />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -1944,7 +1956,7 @@ CardNestedDemo = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2032,6 +2044,8 @@ import {
   FlexItem
 } from '@patternfly/react-core';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
+import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 const AccordionCard: React.FunctionComponent = () => {
   const [openCPU, setOpenCPU] = React.useState('cpu1');
@@ -2066,7 +2080,7 @@ const AccordionCard: React.FunctionComponent = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2075,7 +2089,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2132,11 +2146,11 @@ const AccordionCard: React.FunctionComponent = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-v5-u-hidden-on-md" />
+                <Divider className={accessibility.hiddenOnMd} />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2145,7 +2159,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2224,7 +2238,7 @@ const AccordionCard: React.FunctionComponent = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2233,7 +2247,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2290,11 +2304,11 @@ const AccordionCard: React.FunctionComponent = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-v5-u-hidden-on-md" />
+                <Divider className={accessibility.hiddenOnMd} />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2303,7 +2317,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2382,7 +2396,7 @@ const AccordionCard: React.FunctionComponent = () => {
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2391,7 +2405,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Temperature</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2448,11 +2462,11 @@ const AccordionCard: React.FunctionComponent = () => {
                     </Grid>
                   </GridItem>
                 </Grid>
-                <Divider className="pf-v5-u-hidden-on-md" />
+                <Divider className={accessibility.hiddenOnMd} />
                 <Grid hasGutter>
                   <GridItem md={4}>
                     <Flex
-                      className="pf-v5-u-h-100-on-md"
+                      className={sizing.h_100OnMd}
                       direction={{ md: 'column' }}
                       spaceItems={{ md: 'spaceItemsNone' }}
                       justifyContent={{ md: 'justifyContentCenter' }}
@@ -2461,7 +2475,7 @@ const AccordionCard: React.FunctionComponent = () => {
                         <b>Speed</b>
                       </FlexItem>
                       <Divider
-                        className="pf-v5-u-hidden-on-md"
+                        className={accessibility.hiddenOnMd}
                         orientation={{
                           default: 'vertical'
                         }}
@@ -2550,6 +2564,7 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
+import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
 
 const TrendCard1: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -2602,7 +2617,7 @@ const TrendCard1: React.FunctionComponent = () => {
                   </CardTitle>
                 </FlexItem>
                 <FlexItem>
-                  <span className="pf-v5-u-color-200">Workload</span>
+                  <span className={textStyles.color_200}>Workload</span>
                 </FlexItem>
               </Flex>
             </CardHeader>
@@ -2671,7 +2686,7 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContaine
                 </CardTitle>
               </FlexItem>
               <FlexItem>
-                <span className="pf-v5-u-color-200">Storage capacity</span>
+                <span className={textStyles.color_200}>Storage capacity</span>
               </FlexItem>
             </Flex>
           </FlexItem>
@@ -2739,6 +2754,10 @@ import {
   Divider,
   MenuToggle
 } from '@patternfly/react-core';
+import { css } from '@patternfly/react-styles';
+import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
+import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
+import gridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 CardLogViewDemo = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -2786,10 +2805,10 @@ CardLogViewDemo = () => {
       <code>baseline</code> alignment.
       <br />
       <br />
-      <Gallery hasGutter style={{ '--pf-v5-l-gallery--GridTemplateColumns--min': '360px' }}>
+      <Gallery hasGutter style={{ [gridTemplateColumnsMin.name]: '360px' }}>
         <Card id="card-log-view-example">
           <CardHeader
-            className="pf-v5-u-align-items-flex-start"
+            className={flexStyles.alignItemsFlexStart}
             actions={{ actions: headerActions, hasNoOffset: true }}
           >
             <CardTitle>
@@ -2807,7 +2826,7 @@ CardLogViewDemo = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 11:02 am</time>
+                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 11:02 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -2816,21 +2835,21 @@ CardLogViewDemo = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 11:13 am</time>
+                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 11:13 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Pulling image</DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 10:59 am</time>
+                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 10:59 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Created container</DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 10:45 am</time>
+                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 10:45 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>
@@ -2873,6 +2892,9 @@ import {
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
+import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
+import gridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 CardEventViewDemo = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -2916,10 +2938,10 @@ CardEventViewDemo = () => {
       <code>baseline</code> alignment.
       <br />
       <br />
-      <Gallery hasGutter style={{ '--pf-v5-l-gallery--GridTemplateColumns--min': '360px' }}>
+      <Gallery hasGutter style={{ [gridTemplateColumnsMin.name]: '360px' }}>
         <Card id="card-events-view-example">
           <CardHeader
-            className="pf-v5-u-align-items-flex-start"
+            className={flexStyles.alignItemsFlexStart}
             actions={{ actions: headerActions, hasNoOffset: true }}
           >
             <CardTitle>
@@ -2934,7 +2956,7 @@ CardEventViewDemo = () => {
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <ExclamationCircleIcon className="pf-v5-u-danger-color-100" aria-hidden="true" />
+                      <ExclamationCircleIcon className={textStyles.dangerColor_100} aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Readiness probe failed</span>
@@ -2946,14 +2968,14 @@ CardEventViewDemo = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 11:02 am</time>
+                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 11:02 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon className="pf-v5-u-success-color-100" aria-hidden="true" />
+                      <CheckCircleIcon className={textStyles.successColor_100} aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Successful assignment</span>
@@ -2964,7 +2986,7 @@ CardEventViewDemo = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 11:13 am</time>
+                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 11:13 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -2980,14 +3002,14 @@ CardEventViewDemo = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 10:59 am</time>
+                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 10:59 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon className="pf-v5-u-success-color-100" aria-hidden="true" />
+                      <CheckCircleIcon className={textStyles.successColor_100} aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Created container</span>
@@ -2996,7 +3018,7 @@ CardEventViewDemo = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className="pf-v5-u-color-200 pf-v5-u-font-size-sm">Jun 17, 10:45 am</time>
+                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 10:45 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>

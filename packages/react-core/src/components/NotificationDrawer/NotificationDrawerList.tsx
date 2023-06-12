@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 
 export interface NotificationDrawerListProps extends React.HTMLProps<HTMLUListElement> {
   /**  Content rendered inside the notification drawer list body */
@@ -22,7 +23,7 @@ export const NotificationDrawerList: React.FunctionComponent<NotificationDrawerL
 }: NotificationDrawerListProps) => (
   <ul
     {...props}
-    className={css('pf-v5-c-notification-drawer__list', className)}
+    className={css(`${styles.notificationDrawer}__list`, className)}
     hidden={isHidden}
     role="list"
     aria-label={ariaLabel}

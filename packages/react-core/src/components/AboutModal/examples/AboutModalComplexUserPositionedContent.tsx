@@ -1,6 +1,7 @@
 import React from 'react';
 import { AboutModal, Alert, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './brandImg.svg';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 export const AboutModalComplexUserPositionedContent: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -20,16 +21,16 @@ export const AboutModalComplexUserPositionedContent: React.FunctionComponent = (
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"
-        backgroundImageSrc='/assets/images/pfbg-icon.svg'
+        backgroundImageSrc="/assets/images/pfbg-icon.svg"
         hasNoContentContainer={true}
         productName="Product Name"
       >
-        <TextContent id="test1" className="pf-v5-u-py-xl">
+        <TextContent id="test1" className={spacing.pyXl}>
           <h4>About</h4>
           <p>Content here</p>
         </TextContent>
         <Alert variant="info" title="Updates available" />
-        <TextContent id="test2" className="pf-v5-u-py-xl">
+        <TextContent id="test2" className={spacing.pyXl}>
           <TextList component="dl">
             <TextListItem component="dt">CFME Version</TextListItem>
             <TextListItem component="dd">5.5.3.4.20102789036450</TextListItem>

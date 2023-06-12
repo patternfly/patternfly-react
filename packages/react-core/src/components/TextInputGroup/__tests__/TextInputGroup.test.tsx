@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 
 import { TextInputGroup, TextInputGroupContext } from '../TextInputGroup';
 
@@ -17,12 +18,12 @@ describe('TextInputGroup', () => {
     expect(screen.getByText('Test')).toBeVisible();
   });
 
-  it('renders with class pf-v5-c-text-input-group', () => {
+  it(`renders with class ${styles.textInputGroup}`, () => {
     render(<TextInputGroup>Test</TextInputGroup>);
 
     const inputGroup = screen.getByText('Test');
 
-    expect(inputGroup).toHaveClass('pf-v5-c-text-input-group');
+    expect(inputGroup).toHaveClass(styles.textInputGroup);
   });
 
   it('renders with custom class names provided via prop', () => {

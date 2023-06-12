@@ -4,6 +4,7 @@ import { Table, Thead, Tr, Th, Tbody, Td, TdProps, ExpandableRowContent } from '
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 interface Repository {
   name: string;
@@ -110,7 +111,7 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
               <Tr isExpanded={isRowExpanded}>
                 <Td dataLabel={columnNames[expandedCellKey]} noPadding colSpan={6}>
                   <ExpandableRowContent>
-                    <div className="pf-v5-u-m-md">
+                    <div className={spacing.mMd}>
                       Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem
                       ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum
                       sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit

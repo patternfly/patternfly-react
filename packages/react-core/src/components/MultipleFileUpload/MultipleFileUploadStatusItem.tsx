@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { css } from '@patternfly/react-styles';
 import { Progress } from '../Progress';
 import { Button } from '../Button';
@@ -148,7 +149,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     <li className={css(styles.multipleFileUploadStatusItem, className)} {...props}>
       <div className={styles.multipleFileUploadStatusItemIcon}>{fileIcon || <FileIcon />}</div>
       <div className={styles.multipleFileUploadStatusItemMain}>
-        <div className="pf-v5-screen-reader" aria-live="polite">
+        <div className={accessibility.screenReader} aria-live="polite">
           {progressAriaLiveMessage &&
             typeof progressAriaLiveMessage === 'function' &&
             progressAriaLiveMessage(+loadPercentage.toFixed(2))}

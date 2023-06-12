@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Banner/banner';
 import { css } from '@patternfly/react-styles';
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the banner. */
@@ -34,7 +35,7 @@ export const Banner: React.FunctionComponent<BannerProps> = ({
     )}
     {...props}
   >
-    {screenReaderText && <span className="pf-v5-u-screen-reader">{screenReaderText}</span>}
+    {screenReaderText && <span className={accessibility.screenReader}>{screenReaderText}</span>}
     {children}
   </div>
 );

@@ -7,6 +7,7 @@ import { Alert, AlertVariant } from '../Alert';
 import { AlertContext } from '../AlertContext';
 import { capitalize } from '../../../helpers';
 import cssAlertTitleMaxLines from '@patternfly/react-tokens/dist/esm/c_alert__title_max_lines';
+import styles from '@patternfly/react-styles/css/components/Alert/alert';
 
 jest.mock('../AlertToggleExpandButton', () => ({
   AlertToggleExpandButton: ({ isExpanded, onToggleExpand, ...props }) => (
@@ -35,18 +36,18 @@ test('Renders without children', () => {
   expect(screen.getByTestId('container').firstChild).toBeVisible();
 });
 
-test('Renders with class pf-v5-c-alert on the containing div', () => {
+test(`Renders with class ${styles.alert} on the containing div`, () => {
   render(
     <Alert title="Some title" data-testid="Alert-test-id">
       Some alert
     </Alert>
   );
-  expect(screen.getByTestId('Alert-test-id')).toHaveClass('pf-v5-c-alert');
+  expect(screen.getByTestId('Alert-test-id')).toHaveClass(styles.alert);
 });
 
-test('Renders with class pf-v5-c-alert__title on the div containing the title', () => {
+test(`Renders with class ${styles.alertTitle} on the div containing the title`, () => {
   render(<Alert title="Some title">Some alert</Alert>);
-  expect(screen.getByRole('heading', { name: 'Custom alert: Some title' })).toHaveClass('pf-v5-c-alert__title');
+  expect(screen.getByRole('heading', { name: 'Custom alert: Some title' })).toHaveClass(styles.alertTitle);
 });
 
 test('Renders with Custom hidden text of "Custom alert:"', () => {
@@ -200,14 +201,14 @@ test('Renders the element passed via the actionClose prop', () => {
   expect(screen.getByRole('button', { name: 'Action close' })).toBeVisible();
 });
 
-test('Renders the actionClose element inside pf-v5-c-alert__action', () => {
+test(`Renders the actionClose element inside ${styles.alertAction}`, () => {
   render(
     <Alert title="Some title" actionClose="Action close">
       Some alert
     </Alert>
   );
 
-  expect(screen.getByText('Action close')).toHaveClass('pf-v5-c-alert__action');
+  expect(screen.getByText('Action close')).toHaveClass(styles.alertAction);
 });
 
 test('Provides the actionClose element access to the title via a context', () => {
@@ -240,14 +241,14 @@ test('Renders the element passed via the actionLinks prop', () => {
   expect(screen.getByRole('button', { name: 'Action link' })).toBeVisible();
 });
 
-test('Renders the actionLinks element inside pf-v5-c-alert__action-group', () => {
+test(`Renders the actionLinks element inside ${styles.alertActionGroup}`, () => {
   render(
     <Alert title="Some title" actionLinks="Action link">
       Some alert
     </Alert>
   );
 
-  expect(screen.getByText('Action link')).toHaveClass('pf-v5-c-alert__action-group');
+  expect(screen.getByText('Action link')).toHaveClass(styles.alertActionGroup);
 });
 
 test('Renders children', () => {
@@ -256,10 +257,10 @@ test('Renders children', () => {
   expect(screen.getByText('Some alert')).toBeVisible();
 });
 
-test('Renders children inside pf-v5-c-alert__description', () => {
+test(`Renders children inside ${styles.alertDescription}`, () => {
   render(<Alert title="Some title">Some alert</Alert>);
 
-  expect(screen.getByText('Some alert')).toHaveClass('pf-v5-c-alert__description');
+  expect(screen.getByText('Some alert')).toHaveClass(styles.alertDescription);
 });
 
 test('Renders with the aria label passed via prop', () => {
@@ -610,14 +611,14 @@ test('Renders with class pf-m-expandable when isExpandable = true', () => {
   expect(screen.getByTestId('Alert-test-id')).toHaveClass('pf-m-expandable');
 });
 
-test('Renders AlertToggleExpandButton inside pf-v5-c-alert__toggle', () => {
+test(`Renders AlertToggleExpandButton inside ${styles.alertToggle}`, () => {
   render(
     <Alert isExpandable title="Some title">
       Some alert
     </Alert>
   );
 
-  expect(screen.getByRole('button').parentElement).toHaveClass('pf-v5-c-alert__toggle');
+  expect(screen.getByRole('button').parentElement).toHaveClass(styles.alertToggle);
 });
 
 test('Does not render with class pf-m-expanded when AlertToggleExpandButton has not been clicked', () => {

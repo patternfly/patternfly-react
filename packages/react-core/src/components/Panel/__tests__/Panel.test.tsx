@@ -5,6 +5,7 @@ import { PanelMain } from '../PanelMain';
 import { PanelMainBody } from '../PanelMainBody';
 import userEvent from '@testing-library/user-event';
 import { useEffect } from 'react';
+import styles from '@patternfly/react-styles/css/components/Panel/panel';
 
 test('Renders without children', () => {
   render(
@@ -20,14 +21,14 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with the class pf-v5-c-panel', () => {
+test(`Renders with the class ${styles.panel}`, () => {
   render(<Panel>Test</Panel>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel');
+  expect(screen.getByText('Test')).toHaveClass(styles.panel);
 });
 
-test('Renders with only the class pf-v5-c-panel by default', () => {
+test(`Renders with only the class ${styles.panel} by default`, () => {
   render(<Panel>Test</Panel>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass(styles.panel, { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {
@@ -35,19 +36,19 @@ test('Renders with custom class name when className prop is passed', () => {
   expect(screen.getByText('Test')).toHaveClass('test-class');
 });
 
-test('Renders with class name pf-m-raised when variant is raised', () => {
+test(`Renders with class name ${styles.modifiers.raised} when variant is raised`, () => {
   render(<Panel variant="raised">Test</Panel>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-raised');
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.raised);
 });
 
-test('Renders with class name pf-m-bordered when variant is bordered', () => {
+test(`Renders with class name ${styles.modifiers.bordered} when variant is bordered`, () => {
   render(<Panel variant="bordered">Test</Panel>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-bordered');
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.bordered);
 });
 
-test('Renders with class name pf-m-scrollable when isScrollable is true', () => {
+test(`Renders with class name ${styles.modifiers.scrollable} when isScrollable is true`, () => {
   render(<Panel isScrollable>Test</Panel>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-scrollable');
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.scrollable);
 });
 
 test('Renders with ref', async () => {

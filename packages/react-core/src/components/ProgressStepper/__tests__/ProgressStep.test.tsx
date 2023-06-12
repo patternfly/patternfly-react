@@ -2,6 +2,7 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ProgressStep, ProgressStepVariant } from '../ProgressStep';
 import { capitalize } from '../../../helpers';
+import styles from '@patternfly/react-styles/css/components/ProgressStepper/progress-stepper';
 
 jest.mock('@patternfly/react-icons/dist/esm/icons/check-circle-icon', () => () => 'Success icon mock');
 jest.mock('@patternfly/react-icons/dist/esm/icons/resources-full-icon', () => () => 'Info icon mock');
@@ -23,9 +24,9 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class pf-v5-c-progress-stepper__step on the containing li element', () => {
+test(`Renders with class ${styles.progressStepperStep} on the containing li element`, () => {
   render(<ProgressStep>Test</ProgressStep>);
-  expect(screen.getByRole('listitem')).toHaveClass('pf-v5-c-progress-stepper__step');
+  expect(screen.getByRole('listitem')).toHaveClass(styles.progressStepperStep);
 });
 
 test('Renders with custom class name on the containing li element when className prop is provided', () => {
@@ -36,7 +37,7 @@ test('Renders with custom class name on the containing li element when className
 ['default', undefined].forEach((variant) => {
   test(`Renders with no additional classes when variant=${variant} on containing li element`, () => {
     render(<ProgressStep variant={`${variant as ProgressStepVariant}`}>Test</ProgressStep>);
-    expect(screen.getByRole('listitem')).toHaveClass('pf-v5-c-progress-stepper__step', { exact: true });
+    expect(screen.getByRole('listitem')).toHaveClass(styles.progressStepperStep, { exact: true });
   });
 });
 
@@ -77,9 +78,9 @@ test('Renders the element passed via the icon prop', () => {
   expect(screen.getByText('Custom Icon')).toBeVisible();
 });
 
-test('Renders the icon element inside span element with class pf-v5-c-progress-stepper__step-icon', () => {
+test(`Renders the icon element inside span element with class ${styles.progressStepperStepIcon}`, () => {
   render(<ProgressStep icon="Custom Icon">Test</ProgressStep>);
-  expect(screen.getByText('Custom Icon')).toHaveClass('pf-v5-c-progress-stepper__step-icon');
+  expect(screen.getByText('Custom Icon')).toHaveClass(styles.progressStepperStepIcon);
 });
 
 test('Does not render with class pf-m-current by default on containing li element', () => {
@@ -112,14 +113,14 @@ test('Renders the element passed via the description prop', () => {
   expect(screen.getByRole('button', { name: 'Description' })).toBeVisible();
 });
 
-test('Renders the description element inside div element with class pf-v5-c-progress-stepper__step-description', () => {
+test(`Renders the description element inside div element with class ${styles.progressStepperStepDescription}`, () => {
   render(<ProgressStep description="Description">Test</ProgressStep>);
-  expect(screen.getByText('Description')).toHaveClass('pf-v5-c-progress-stepper__step-description');
+  expect(screen.getByText('Description')).toHaveClass(styles.progressStepperStepDescription);
 });
 
-test('Renders children inside class pf-v5-c-progress-stepper__step-title', () => {
+test(`Renders children inside class ${styles.progressStepperStepTitle}`, () => {
   render(<ProgressStep>Test</ProgressStep>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-progress-stepper__step-title');
+  expect(screen.getByText('Test')).toHaveClass(styles.progressStepperStepTitle);
 });
 
 test('Renders Component element as div by default', () => {

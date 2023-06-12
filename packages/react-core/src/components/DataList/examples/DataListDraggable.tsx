@@ -13,6 +13,7 @@ import {
   Droppable,
   getUniqueId
 } from '@patternfly/react-core';
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 interface ItemType {
   id: string;
@@ -93,10 +94,10 @@ export const DataListDraggable: React.FunctionComponent = () => {
           ))}
         </DataList>
       </Droppable>
-      <div className="pf-v5-screen-reader" aria-live="assertive">
+      <div className={accessibility.screenReader} aria-live="assertive">
         {liveText}
       </div>
-      <div className="pf-v5-screen-reader" id={`description-${uniqueId}`}>
+      <div className={accessibility.screenReader} id={`description-${uniqueId}`}>
         Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm
         the drag, or any other key to cancel the drag operation.
       </div>

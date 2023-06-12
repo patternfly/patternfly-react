@@ -7,6 +7,8 @@ import { SearchInput } from '../SearchInput';
 import { FormGroup } from '../../Form';
 import { Button } from '../../Button';
 import { ExternalLinkSquareAltIcon } from '@patternfly/react-icons';
+import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
+import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 
 const props = {
   onChange: jest.fn(),
@@ -30,7 +32,7 @@ describe('SearchInput', () => {
 
   test('result count', () => {
     render(<SearchInput {...props} resultsCount={3} aria-label="simple text input" data-testid="test-id" />);
-    expect(screen.getByTestId('test-id').querySelector('.pf-v5-c-badge')).toBeInTheDocument();
+    expect(screen.getByTestId('test-id').querySelector(`.${badgeStyles.badge}`)).toBeInTheDocument();
   });
 
   test('renders search input in strict mode', async () => {
@@ -64,8 +66,8 @@ describe('SearchInput', () => {
     render(<SearchInput {...props} resultsCount="3 / 7" aria-label="simple text input" data-testid="test-id" />);
 
     const input = screen.getByTestId('test-id');
-    expect(input.querySelector('.pf-v5-c-text-input-group__group')).toBeInTheDocument();
-    expect(input.querySelector('.pf-v5-c-badge')).toBeInTheDocument();
+    expect(input.querySelector(`.${textInputGroupStyles.textInputGroupGroup}`)).toBeInTheDocument();
+    expect(input.querySelector(`.${badgeStyles.badge}`)).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Previous' }));
     expect(props.onPreviousClick).toHaveBeenCalled();

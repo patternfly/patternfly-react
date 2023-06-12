@@ -2,6 +2,7 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { PanelMain } from '../PanelMain';
 import cssPanelMainMaxHeight from '@patternfly/react-tokens/dist/esm/c_panel__main_MaxHeight';
+import styles from '@patternfly/react-styles/css/components/Panel/panel';
 
 test('Renders without children', () => {
   render(
@@ -17,14 +18,14 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with the class pf-v5-c-panel__main', () => {
+test(`Renders with the class ${styles.panelMain}`, () => {
   render(<PanelMain>Test</PanelMain>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__main');
+  expect(screen.getByText('Test')).toHaveClass(styles.panelMain);
 });
 
-test('Renders with only the class pf-v5-c-panel__main by default', () => {
+test(`Renders with only the class ${styles.panelMain} by default`, () => {
   render(<PanelMain>Test</PanelMain>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__main', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass(styles.panelMain, { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {

@@ -9,6 +9,7 @@ import {
   DrawerCloseButton,
   Button
 } from '@patternfly/react-core';
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 export const DrawerStatic: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
@@ -44,7 +45,7 @@ export const DrawerStatic: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Button className="pf-v5-u-hidden-on-md" aria-expanded={isExpanded} onClick={onClick}>
+      <Button className={accessibility.hiddenOnMd} aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
       <Drawer isStatic isExpanded={isExpanded} onExpand={onExpand}>

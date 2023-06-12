@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { headerCol, ICell, IRow, RowSelectVariant } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 import { Checkbox, Divider, Radio } from '@patternfly/react-core';
 import '@patternfly/patternfly/utilities/Spacing/spacing.css';
@@ -88,7 +89,7 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
         <Divider />
         <Checkbox
           label="Can select all"
-          className="pf-v5-u-mb-lg"
+          className={spacing.mbLg}
           isChecked={canSelectAll}
           onChange={(_event, checked) => this.toggleSelect(checked)}
           aria-label="toggle select all checkbox"

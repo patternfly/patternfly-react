@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { PanelHeader } from '../PanelHeader';
+import styles from '@patternfly/react-styles/css/components/Panel/panel';
 
 test('Renders without children', () => {
   render(
@@ -16,14 +17,14 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with the class pf-v5-c-panel__header', () => {
+test(`Renders with the class ${styles.panelHeader}`, () => {
   render(<PanelHeader>Test</PanelHeader>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__header');
+  expect(screen.getByText('Test')).toHaveClass(styles.panelHeader);
 });
 
-test('Renders with only the class pf-v5-c-panel__header by default', () => {
+test(`Renders with only the class ${styles.panelHeader} by default`, () => {
   render(<PanelHeader>Test</PanelHeader>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__header', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass(styles.panelHeader, { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {

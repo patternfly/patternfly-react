@@ -43,6 +43,7 @@ import {
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 TabsOpenDemo = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
@@ -67,7 +68,7 @@ TabsOpenDemo = () => {
   const tabContent = (
     <Flex direction={{ default: 'column' }}>
       <FlexItem spacer={{ default: 'spacerLg' }}>
-        <Title headingLevel="h2" size="lg" className="pf-v5-u-mt-sm" id="open-tabs-example-tabs-list-details-title">
+        <Title headingLevel="h2" size="lg" className={spacing.mtSm} id="open-tabs-example-tabs-list-details-title">
           Pod details
         </Title>
       </FlexItem>
@@ -233,6 +234,7 @@ import {
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 TabsOpenWithSecondaryTabsDemo = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
@@ -263,7 +265,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
   const tabContent = (
     <Flex direction={{ default: 'column' }}>
       <FlexItem spacer={{ default: 'spacerLg' }}>
-        <Title headingLevel="h2" size="lg" className="pf-v5-u-mt-sm" id="open-tabs-example-tabs-list-details-title">
+        <Title headingLevel="h2" size="lg" className={spacing.mtSm} id="open-tabs-example-tabs-list-details-title">
           Pod details
         </Title>
       </FlexItem>

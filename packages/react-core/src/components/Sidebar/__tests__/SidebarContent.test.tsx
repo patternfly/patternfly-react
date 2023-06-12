@@ -1,20 +1,21 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { SidebarContent } from '../SidebarContent';
+import styles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
 
 test('Renders children', () => {
   render(<SidebarContent>Test</SidebarContent>);
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with only class name pf-v5-c-sidebar__content by default', () => {
+test(`Renders with only class name ${styles.sidebarContent} by default`, () => {
   render(<SidebarContent>Test</SidebarContent>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-sidebar__content', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass(styles.sidebarContent, { exact: true });
 });
 
-test('Renders with class name pf-v5-c-sidebar__content', () => {
+test(`Renders with class name ${styles.sidebarContent}`, () => {
   render(<SidebarContent>Test</SidebarContent>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-sidebar__content');
+  expect(screen.getByText('Test')).toHaveClass(styles.sidebarContent);
 });
 
 test('Renders with custom class name when className prop is provided', () => {

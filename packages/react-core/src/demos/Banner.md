@@ -24,6 +24,8 @@ import {
   Text
 } from '@patternfly/react-core';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/utilities/Display/display';
 
 class BannerDemo extends React.Component {
   render() {
@@ -35,12 +37,12 @@ class BannerDemo extends React.Component {
               justifyContent={{ default: 'justifyContentCenter', lg: 'justifyContentSpaceBetween' }}
               flexWrap={{ default: 'nowrap' }}
             >
-              <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Localhost</div>
-              <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">
+              <div className={css(styles.displayNone, styles.displayBlockOnLg)}>Localhost</div>
+              <div className={css(styles.displayNone, styles.displayBlockOnLg)}>
                 This message is sticky to the top of the page.
               </div>
-              <div className="pf-v5-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
-              <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Ned Username</div>
+              <div className={css(styles.displayNoneOnLg)}>Drop some text on mobile, truncate if needed.</div>
+              <div className={css(styles.displayNone, styles.displayBlockOnLg)}>Ned Username</div>
             </Flex>
           </Banner>
           <PageSection variant={PageSectionVariants.light}>
@@ -88,6 +90,8 @@ import {
   Text
 } from '@patternfly/react-core';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/utilities/Display/display';
 
 class BannerDemo extends React.Component {
   render() {
@@ -105,12 +109,12 @@ class BannerDemo extends React.Component {
                 justifyContent={{ default: 'justifyContentCenter', lg: 'justifyContentSpaceBetween' }}
                 flexWrap={{ default: 'nowrap' }}
               >
-                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Localhost</div>
-                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">
+                <div className={css(styles.displayNone, styles.displayBlockOnLg)}>Localhost</div>
+                <div className={css(styles.displayNone, styles.displayBlockOnLg)}>
                   This message is sticky to the top of the page.
                 </div>
-                <div className="pf-v5-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
-                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Ned Username</div>
+                <div className={css(styles.displayNoneOnLg)}>Drop some text on mobile, truncate if needed.</div>
+                <div className={css(styles.displayNone, styles.displayBlockOnLg)}>Ned Username</div>
               </Flex>
             </Banner>
           </FlexItem>
@@ -144,12 +148,12 @@ class BannerDemo extends React.Component {
                 justifyContent={{ default: 'justifyContentCenter', lg: 'justifyContentSpaceBetween' }}
                 flexWrap={{ default: 'nowrap' }}
               >
-                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Localhost</div>
-                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">
+                <div className={css(styles.displayNone, styles.displayBlockOnLg)}>Localhost</div>
+                <div className={css(styles.displayNone, styles.displayBlockOnLg)}>
                   This message is sticky to the bottom of the page.
                 </div>
-                <div className="pf-v5-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
-                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Ned Username</div>
+                <div className={css(styles.displayNoneOnLg)}>Drop some text on mobile, truncate if needed.</div>
+                <div className={css(styles.displayNone, styles.displayBlockOnLg)}>Ned Username</div>
               </Flex>
             </Banner>
           </FlexItem>

@@ -27,10 +27,10 @@ export const EmptyStateHeader: React.FunctionComponent<EmptyStateHeaderProps> = 
   icon,
   ...props
 }: EmptyStateHeaderProps) => (
-  <div className={css('pf-v5-c-empty-state__header', className)} {...props}>
+  <div className={css(`${styles.emptyState}__header`, className)} {...props}>
     {icon}
     {(titleText || children) && (
-      <div className={css('pf-v5-c-empty-state__title')}>
+      <div className={css(`${styles.emptyState}__title`)}>
         {titleText && (
           <HeadingLevel className={css(styles.emptyStateTitleText, titleClassName)}>{titleText}</HeadingLevel>
         )}

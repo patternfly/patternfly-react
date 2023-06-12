@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/ActionList/action-list';
 
 export interface ActionListItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Children of the action list item */
@@ -13,7 +14,7 @@ export const ActionListItem: React.FunctionComponent<ActionListItemProps> = ({
   className = '',
   ...props
 }: ActionListItemProps) => (
-  <div className={css('pf-v5-c-action-list__item', className)} {...props}>
+  <div className={css(`${styles.actionList}__item`, className)} {...props}>
     {children}
   </div>
 );

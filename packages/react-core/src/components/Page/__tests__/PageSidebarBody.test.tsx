@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { PageSidebarBody } from '../PageSidebarBody';
+import styles from '@patternfly/react-styles/css/components/Page/page';
 
 test('Renders without children', () => {
   render(
@@ -18,10 +19,10 @@ test('Renders with children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class pf-v5-c-page__sidebar-body by default', () => {
+test(`Renders with class ${styles.pageSidebarBody} by default`, () => {
   render(<PageSidebarBody>Test</PageSidebarBody>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-page__sidebar-body');
+  expect(screen.getByText('Test')).toHaveClass(styles.pageSidebarBody);
 });
 
 test('Renders with custom class', () => {
@@ -30,40 +31,40 @@ test('Renders with custom class', () => {
   expect(screen.getByText('Test')).toHaveClass('tester');
 });
 
-test('Renders without pf-m-page-insets by default', () => {
+test(`Renders without ${styles.modifiers.pageInsets} by default`, () => {
   render(<PageSidebarBody>Test</PageSidebarBody>);
 
-  expect(screen.getByText('Test')).not.toHaveClass('pf-m-page-insets');
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.pageInsets);
 });
 
-test('Renders with pf-m-page-insets when usePageInsets is passed', () => {
+test(`Renders with ${styles.modifiers.pageInsets} when usePageInsets is passed`, () => {
   render(<PageSidebarBody usePageInsets>Test</PageSidebarBody>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-m-page-insets');
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.pageInsets);
 });
 
-test('Renders without pf-m-fill by default', () => {
+test(`Renders without ${styles.modifiers.fill} by default`, () => {
   render(<PageSidebarBody>Test</PageSidebarBody>);
 
-  expect(screen.getByText('Test')).not.toHaveClass('pf-m-fill');
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.fill);
 });
 
-test('Renders with pf-m-fill when isFilled={true} is passed', () => {
+test(`Renders with ${styles.modifiers.fill} when isFilled={true} is passed`, () => {
   render(<PageSidebarBody isFilled={true}>Test</PageSidebarBody>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-m-fill');
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.fill);
 });
 
-test('Renders without pf-m-no-fill by default', () => {
+test(`Renders without ${styles.modifiers.noFill} by default`, () => {
   render(<PageSidebarBody>Test</PageSidebarBody>);
 
-  expect(screen.getByText('Test')).not.toHaveClass('pf-m-no-fill');
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.noFill);
 });
 
-test('Renders with pf-m-no-fill when isFilled={false} is passed', () => {
+test(`Renders with ${styles.modifiers.noFill} when isFilled={false} is passed`, () => {
   render(<PageSidebarBody isFilled={false}>Test</PageSidebarBody>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-m-no-fill');
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.noFill);
 });
 
 test('Renders with additional props', () => {
