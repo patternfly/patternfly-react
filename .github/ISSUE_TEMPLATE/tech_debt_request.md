@@ -1,5 +1,5 @@
 ---
-name: Developer experience
+name: Tech debt
 about: Improvements to code that do not affect either user or product developers’ experiences.
 title: "[short description]"
 labels: 'Tech debt'
