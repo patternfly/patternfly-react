@@ -1,8 +1,8 @@
 ---
 name: Feature request
-about: Suggest a new feature for PatternFly
+about: Suggest a new feature for PatternFly. Features augment or impact end user experience and requires design input.
 title: "[Component] - [short description]"
-labels: feature request, needs triage
+labels: Feature
 assignees: ''
 
 ---

@@ -1,8 +1,6 @@
 # Contributing to PatternFly React
 
-> ### Looking for a quick guide to PatternFly 3 React Contribution? [Go Here](https://github.com/patternfly/patternfly-react/blob/patternfly-3/packages/patternfly-react/CONTRIBUTING.md)
->
-> ### Looking for a quick guide to PatternFly 4 React Contribution? [Go Here](./packages/react-core/CONTRIBUTING.md)
+> ### Looking for a quick guide to PatternFly React Contribution? [Go Here](./packages/react-core/CONTRIBUTING.md)
 
 ## Outline
 
@@ -26,34 +24,31 @@
   - [How do I lose maintainers status?](#how-do-i-lose-maintainers-status)
   - [Quick Tips for New Maintainers](#quick-tips-for-new-maintainers)
 
-## Code of Conduct
+## Code of conduct
 
-This project is governed by the [Contributor Covenant version 1.4][1]. All contributors and participants
+This project is governed by the [Contributor Covenant version 2.1][1]. All contributors and participants
 agree to abide by its terms. To report violations, send an email to [patternfly@redhat.com][2].
 
-## Issues and Project Board
+## Issues and project board
 
-We use issues to track work items, such as bug reports and feature requests. Issues can be found in the [issue tracker](https://github.com/patternfly/patternfly-react/issues) or [project board](https://github.com/patternfly/patternfly-react/projects/1). We use the project board to help visualize and manage status of an issue, and we use labels to help prioritize and identify issues.
+We use issues to track work items, such as bug reports and feature requests. Issues can be found in the [issue tracker](https://github.com/patternfly/patternfly-react/issues) or [project board](https://github.com/orgs/patternfly/projects/7). We use the project board to help visualize and manage status of an issue, and we use labels to help prioritize and identify issues.
 
-### Issue Labels
+### Issue labels
 
 Our issue tracker utilizes several labels to help organize and identify issues. Here's what they represent and how we use them:
 
 - `bug` - A bug is a _demonstrable problem_ that is caused by the code in the repository. Please check if the issue has already been reported before reporting a new bug.
-- `duplicate` - A duplicate signifies that another issue encapsulates or restates this issue. Duplicates will be closed and referenced as such.
-- `enhancement` - An enhancement is a feature request. Please provide as much detail as possible and consider whether your idea fits the scope and aims of this project.
+- `DevX` - Suggest an enhancement to the developer experience (DX). DX enhancements improve experience for those building UIs with PatternFly, but have little to know end user impact.
+- `Feature` - Suggest a new feature for PatternFly. Features augment or impact end user experience and requires design input.
 - `breaking change` - this issue warrants a major release and potentially changes APIs for downstream consumers.
-- `chore` - this issue improves internal tooling or build processes only.
+- `Tech debt` - Improvements to code that do not affect either user or product developers’ experiences.
 - `documentation` - this issue affects documentation only.
 - `css` - this issue affects CSS or has stylistic changes.
 - `good first issue` - Issues that are ideal for new contributors.
-- `help wanted` - Issues we need or would love help from the community to resolve.
-- `pending response` - This label indicates that the issue is awaiting reply from a contributor or a maintainer.
-- `question` - Use the question label to indicate you are having a problem with something and would like feedback from the community.
 - `wontfix` - The issue is legitimate, but it is not something the team is currently able or willing to fix or implement. Issues with this label may be revisited in the future.
 - `p1`, `p2`, `p3` - These are priority labels.
 
-### PR Labels
+### PR labels
 
 Since the components in patternfly-react are based on patternfly, we want to make sure these components stay in sync with the core patternfly components as documented on [patternfly.org](http://www.patternfly.org/pattern-library/). To help make sure component contributions are consistent with the [design documentation](http://www.patternfly.org/pattern-library/) and [html/css implementation](https://rawgit.com/patternfly/patternfly/master-dist/dist/tests/), we use the following labels during the PR review process.
 
@@ -62,30 +57,21 @@ Since the components in patternfly-react are based on patternfly, we want to mak
 - `css approved` - The issue has been reviewed and approved by a member of the css team.
 - `ux approved` - The issue has been reviewed and approved by a member of the ux team.
 
-The following labels also can be used to improve PatternFly React's [CHANGELOG.md](./CHANGELOG.md) when submitting PRs:
-
-- `bug` - this PR resolves a bug issue. Releasing will cause a patch level semantic version change.
-- `enhancement` - this PR adds a new feature and closes an `enhancement` issue. Releasing will cause a minor semantic version change.
-- `breaking change` - this PR warrants a major release and potentially changes APIs for downstream consumers. Releasing will cause a major semantic version change.
-- `chore` - this PR improves internal tooling or build processes only. These PRs do not effect release.
-- `documentation` - this PR affects documentation only. These PRs do not effect release.
-- `css` - this PR affects CSS or has minimal stylistic changes. Releasing will cause a patch level semantic version change.
-
-### Project Board Columns
+### Project board columns
 
 The project board uses the following columns to track issues:
 
 - `Backlog` - Issues that are ready to be worked and available for any contributor to take.
-- `Needs CSS/Design/Research` - Issues that require any work that would be completed outside of this repo related to css, design or research. For example some component contributions will require updates to css in the core [patternfly](https://github.com/patternfly/patternfly) repo.
-- `Assigned` - Issues that are ready to be worked and are already assigned.
+- `Needs info` - Issues that require any work that would be completed outside of this repo related to css, design or research. For example some component contributions will require updates to css in the core [patternfly](https://github.com/patternfly/patternfly) repo.
+- `Not started` - Issues that are ready to be worked and are already assigned.
 - `In Progress` - Issues that are actively being worked.
 - `PR in Review` - Issues for which a PR is open and are ready for review.
 
 Issues can be manually added to the project board from either the issue page or the project board page.
 
-## Contribution Process
+## Contribution process
 
-### Creating Issues for Bugs
+### Creating issues for bugs
 
 If you find a bug within the repo, please help us track the issue by following these steps:
 
@@ -95,7 +81,7 @@ If you find a bug within the repo, please help us track the issue by following t
     - Provide details like what component is affected, steps to reproduce, and any other information that is critical to addressing the issue
     - Assign the label “bug” to the issue
 
-### Creating Issues for New Components
+### Creating issues for new components
 
 To create an issue for adding a new component to the repo, please observe the following process:
 
@@ -103,14 +89,14 @@ To create an issue for adding a new component to the repo, please observe the fo
 2.  If the component exists in PatternFly core (meaning CSS and the pattern design exists), then create an issue with the following details:
     - Assign the label `enhancement` to the issue
     - Include the text “Component -“ in the beginning of the title if the issue captures a new component
-    - If the component is documented as a [PatternFly Library Pattern](http://www.patternfly.org/pattern-library/), include a link to it.
+    - If the component is documented as a [PatternFly library pattern](http://www.patternfly.org/pattern-library/), include a link to it.
 3.  If a component is not in PatternFly, but you feel it would be a good addition to the library, please do the following:
     - Open a new GitHub issue and tag it with the Extension label
     - Reach out on the patternfly-react channel on slack, the mailing list or the forum to see if the issue is approved as an extension
     - If it is approved, direction will be given as to which package it will go in. Generally, we are recommending most extension components go in individual packages. Several smaller common components may end up being grouped together. In the future, a generator for extension component packages will be created.
     - Extension components do not undergo the same rigorous design or coding review process as core PatternFly components. If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
 
-### Contributing Components
+### Contributing components
 
 Components that are ready to be contributed can be found on the project board in the backlog column. They are identified with the text “Component” in the issue title.
 
@@ -125,7 +111,7 @@ Once you’ve identified a component to contribute, component contributions shou
 
 If you submit a pull request, then please also contribute by reviewing other pull requests. Please remember that reviewing other contributions is just as important!
 
-### Adding Styling for your Components
+### Adding styling for your components
 
 Ideally, all the styles that are needed for the components in patternfly-react would be defined in the core [patternfly](https://github.com/patternfly/patternfly) repo. However, there may be cases where additional styles are needed to complete the patternfly-react component contribution. In the case where the styles are specific to the component implementation in the patternfly-react repo, then the styles would remain in the repo. In the case where the component does not exist yet in the core pattenrfly repo and styles are needed for the component in the patternfly-react repo, then the styles would only remain in the patternfly-react repo until the component is added to the core patternfly repo. Once the styles are available as part of core patternfly repo, it will be removed from the patternfly-react repo.
 
@@ -138,7 +124,7 @@ Inside the package directory:
 - Add a Sass file to the `sass/patternfly-react/` directory and use the file name `_<component>.scss`
 - Import the Sass file into `sass/patternfly-react/_patternfly-react.scss` using `@import "<component>";`
 
-### Using Generators
+### Using generators
 
 To make contributing components and packages easier a generator utility has been provided.
 
@@ -152,13 +138,12 @@ Follow the prompts to generate the desired component or package.
 
 Currently the following generators are provided
 
-- PatternFly 4 Component
-- PatternFly 3 Component (only available on the `patternfly-3` branch, see [this guide](https://github.com/patternfly/patternfly-react/blob/patternfly-3/packages/patternfly-react/CONTRIBUTING.md))
+- PatternFly component
 - Package
 
-## Guidelines and Requirements
+## Guidelines and requirements
 
-### React Component Requirements
+### React component requirements
 
 Please ensure that all React UI components contributed meet the following guidelines:
 
@@ -168,10 +153,10 @@ Please ensure that all React UI components contributed meet the following guidel
 - Provide associated examples for documentation in the examples directory for the component.
 - Provide a [jest snapshot test](https://facebook.github.io/jest/docs/snapshot-testing.html) to ensure your UI markup does not change unexpectedly.
 - Ensure the component's rendered design and documentation examples meet [PatternFly design standard](https://github.com/patternfly/patternfly-design).
-  **Note:** If your component does not yet have PatternFly design documentation, the PatternFly React design team will first confirm that the pattern passes the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) and then start the process for generating design documentation.
+  **Note:** If your component does not yet have PatternFly design documentation, the PatternFly React design team will first confirm that the pattern passes the [PatternFly decision tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) and then start the process for generating design documentation.
 - Ensure the code is properly formatted and there are no linting errors. PatternFly React uses custom eslint configuration based on [Javascript Standard Style](https://standardjs.com/) and [Prettier](https://github.com/prettier/prettier) for code formatting. You can automatically format your code with `yarn prettier` and run the project's linter with `yarn lint`.
 
-### Code Consistency
+### Code consistency
 
 - All files and folders under your package's `src/components` should name with PascalCase except `index.js` files
 - If you need a constant file, it should be called `{Component_Name}Constants.js` (Component_Name with PascalCase)
@@ -188,9 +173,9 @@ Please ensure that all React UI components contributed meet the following guidel
   See how to write documentation in the [`react-docs` README](./packages/react-docs/README.md)
 - When destructuring or spreading expressions , use ...props as the variable name.
 
-  **Please see the [Getting Started Readme](./GETTING-STARTED.md) for additional information in getting started with building PatterFly 4 react components.**
+  **Please see the [getting started README](./GETTING-STARTED.md) for additional information in getting started with building PatterFly react components.**
 
-### Code Contribution Guidelines
+### Code contribution guidelines
 
 Adhering to the following process is the best way to get your work included in the project:
 
@@ -213,14 +198,14 @@ git fetch upstream
 $ git checkout -b my-branch upstream/main
 ```
 
-3. Generate your Component
+3. Generate your component
 
 ```bash
 # Run the tool to Generate the component scaffolding
  yarn generate
 ```
 
-- When you select the option to generate a PatternFly 4 component, a structure resembling the following is generated
+- When you select the option to generate a PatternFly component, a structure resembling the following is generated
   ```text
   packages/react-core/src/[type]/[ComponentName]/
     index.js - Barrel File exporting public exports
@@ -259,7 +244,7 @@ $ git rebase upstream/main
 $ git push origin my-branch
 ```
 
-8.  Create a Pull Request
+8.  Create a pull request
 
 [Open a pull request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `main` branch. Please be sure to include all of the following in your PR:
 
@@ -273,7 +258,7 @@ Once your pull request has been reviewed, if all conditions above have been met 
 
 Please help in ensuring all relevant issues are closed and that any subsequent issues needed have been noted with this pull request.
 
-### Guidelines for React implementation from Core
+### Guidelines for React implementation from core
 
 - PF-React components should demonstrate all states implemented in Core without adding any new states.
 - If a new state is introduced in PF-React, it should not be accepted by the reviewer until an issue is created explaining why this example/modification is needed in Core and PF-React. Tag a UX/UI designer.
@@ -282,7 +267,7 @@ Please help in ensuring all relevant issues are closed and that any subsequent i
 - If an issue in Core will affect a component in PF-React, this issue should link to the main PF-React issue.
 - The CSS Developers and UX Designers should be tagged to review their respective PF-React issue.
 
-## Becoming a Maintainer
+## Becoming a maintainer
 
 The documentation for becoming a maintainer has been taken from [Foreman](https://theforeman.org/handbook.html#Becomingamaintainer) and adapted for the PatternFly project.
 
@@ -333,6 +318,6 @@ The process for revoking someone's maintainer status is a discussion limited to 
 - Do not merge commits blindly. If you do not fully understand a pull request, ask existing maintainers to take a look
 - Do not merge if the build is failing. Wait until tests are green to merge.
 
-[1]: http://contributor-covenant.org/version/1/4/code-of-conduct.md
+[1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct/
 [2]: mailto:patternfly@redhat.com
 [3]: https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type

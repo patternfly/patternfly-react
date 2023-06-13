@@ -10,9 +10,9 @@ const componentTypes = new Map([
   ['internal', 'internal']
 ]);
 
-function setPF4Generators(plop) {
-  plop.setGenerator('PatternFly 4 Component', {
-    description: 'Component or Layout for PatternFly 4 react-core package',
+function setPFGenerators(plop) {
+  plop.setGenerator('PatternFly Component', {
+    description: 'Component or Layout for PatternFly react-core package',
     prompts: [
       {
         type: 'input',
@@ -63,4 +63,4 @@ function setPF4Generators(plop) {
   });
 }
 
-module.exports = setPF4Generators;
+module.exports = setPFGenerators;

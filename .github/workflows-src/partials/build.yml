@@ -1,8 +1,0 @@
-build:
-  runs-on: ubuntu-latest
-  env:
-    GH_PR_NUM: ${{ github.event.number }}
-  steps:
-    %checkout%
-    %install%
-    %dist%

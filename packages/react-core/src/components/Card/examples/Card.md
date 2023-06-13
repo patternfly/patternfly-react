@@ -151,7 +151,7 @@ The following example shows a deprecated implementation of selectable cards. Thi
 
 A `tabIndex={0}` is also manually passed to allow the card to be focused and clicked via keyboard.
 
-```ts file='./CardDeprecatedSelectable.tsx'
+```ts file='./CardDeprecatedSelectable.tsx' isDeprecated
 
 ```
 
@@ -171,7 +171,7 @@ The second card does not set `hasSelectableInput` to true, so neither the input 
 
 We recommend navigating this example using a screen reader to best understand both cards.
 
-```ts file='./CardDeprecatedSelectableA11yHighlight.tsx'
+```ts file='./CardDeprecatedSelectableA11yHighlight.tsx' isDeprecated
 
 ```
 

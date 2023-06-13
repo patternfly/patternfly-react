@@ -1,7 +1,7 @@
 # PatternFly React
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-green.svg?style=for-the-badge)](https://lernajs.io/)
-[![PatternFly 4 npm badge](https://img.shields.io/npm/v/@patternfly/react-core.svg?label=PF4%20Core&style=for-the-badge)](https://www.npmjs.com/package/@patternfly/react-core)
+[![PatternFly npm badge](https://img.shields.io/npm/v/@patternfly/react-core.svg?label=PF%20Core&style=for-the-badge)](https://www.npmjs.com/package/@patternfly/react-core)
 
 This project provides a set of React components for the [PatternFly project](https://patternfly.org).  
 
@@ -39,7 +39,7 @@ Using PatternFly 3?  Take a look at the [PatternFly 3 React component informatio
 
 ### Setup
 
-Before you begin, check out this [overview of PatternFly](http://patternfly.org/v4/get-started/about) to get familiar with the basic elements of the design system.
+Before you begin, check out this [overview of PatternFly](http://patternfly.org/get-started/about) to get familiar with the basic elements of the design system.
 
 #### Install a package manager
 Install a package manager before using the PatternFly libraries.
@@ -81,7 +81,7 @@ If you want to start with your existing project, skip to [Install and configure 
     Once the library is installed, use the specific setup instructions for that library to access the components it contains.  These can be found in the readme for each [library](#patternfly-react-packages). 
 
 ### Contribution guidelines
-All React contributors must first be [PatternFly community contributors](https://www.patternfly.org/v4/contribute/about). If you're already a PatternFly community contributor, check out the [React contribution guidelines](https://github.com/patternfly/patternfly-react/tree/main/CONTRIBUTING.md) to make React contributions.
+All React contributors must first be [PatternFly community contributors](https://www.patternfly.org/contribute/about). If you're already a PatternFly community contributor, check out the [React contribution guidelines](https://github.com/patternfly/patternfly-react/tree/main/CONTRIBUTING.md) to make React contributions.
 
 ### License
 PatternFly React is licensed under the [MIT License](https://github.com/patternfly/patternfly-react/tree/main/LICENSE).

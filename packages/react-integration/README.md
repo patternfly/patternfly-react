@@ -1,8 +1,8 @@
-# Integration testing for PatternFly 4 React
+# Integration testing for PatternFly React
 
 ## Overview
 
-PatternFly 4 React provides an integration testing demo app as an environment to verify and test PatternFly 4 code changes and contributions.
+PatternFly React provides an integration testing demo app as an environment to verify and test PatternFly code changes and contributions.
 
 The demo app is written in TypeScript and includes Cypress. We use Cypress for integration testing. If you’re new to Cypress and want to learn more, you can start with their documentation.
 
@@ -12,7 +12,7 @@ The demo app is written in TypeScript and includes Cypress. We use Cypress for i
 
 All new components need to be written in TypeScript and then added to the demo application.
 
-When making a new PatternFly 4 contribution, you’ll need to write a Cypress test to verify and test functionality. You will also need to test all user facing interfaces and components.
+When making a new PatternFly contribution, you’ll need to write a Cypress test to verify and test functionality. You will also need to test all user facing interfaces and components.
 
 This README will show you how to launch the demo app and use Cypress to run your tests against it.
 

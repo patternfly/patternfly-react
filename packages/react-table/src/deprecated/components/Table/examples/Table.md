@@ -4,6 +4,7 @@ cssPrefix: pf-c-table
 section: components
 propComponents: ['Table', 'TableHeader', 'TableBody', 'ISortBy']
 ouia: true
+deprecated: true
 ---
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!

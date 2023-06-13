@@ -6,6 +6,7 @@ propComponents:
   ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle', 'WizardStep']
 ouia: true
 source: react-deprecated
+deprecated: true
 ---
 
 import { Button, Drawer, DrawerActions, DrawerCloseButton, DrawerColorVariant,

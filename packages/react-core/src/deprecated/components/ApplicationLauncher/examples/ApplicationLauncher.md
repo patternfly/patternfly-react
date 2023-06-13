@@ -5,6 +5,7 @@ subsection: menus
 cssPrefix: pf-v5-c-app-launcher
 propComponents: ['ApplicationLauncher', 'ApplicationLauncherItem', 'ApplicationLauncherContent']
 ouia: true
+deprecated: true
 ---
 
 import { DropdownDirection, DropdownPosition } from '@patternfly/react-core/deprecated';

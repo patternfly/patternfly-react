@@ -3,6 +3,7 @@ id: Page
 section: components
 cssPrefix: pf-v5-c-page
 propComponents: ['PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem']
+deprecated: true
 ---
 
 import { PageHeader as PageHeaderDeprecated, PageHeaderTools } from '@patternfly/react-core/deprecated';
