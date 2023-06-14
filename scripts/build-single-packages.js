@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const fse = require('fs-extra');
 const glob = require('glob');
+const path = require('path')
 
 const root = process.cwd();
 const packageJson = require(`${root}/package.json`);
@@ -12,26 +13,36 @@ if (!(process.argv.includes('--config')  && process.argv.indexOf('--config') + 1
 
 const configJson = require(`${root}/${process.argv[process.argv.indexOf('--config') + 1]}`);
 
-const foldersexclude = configJson.exclude ? configJson.exclude : []
+const foldersExclude = configJson.exclude ? configJson.exclude : []
 
-if (!configJson.modules || configJson.modules.length === 0) {
-  console.log('modules are required');
-  process.exit(1);
-}
-
-const components = configJson.modules.map(module => ({
+const moduleGlob = configJson.moduleGlob
+const components = {
+  // need the /*/*/ to avoid grabbing top level index files
+  /**
+   * We don't want the /index.js or /components/index.js to be have packages
+   * These files will not help with tree shaking in module federation environments
+   */
     files: glob
-      .sync(`${root}/${module.name}/**/**/index.js`)
-      .filter((item) => !foldersexclude.some((name) => item.includes(name)))
+      .sync(moduleGlob ? `${root}${moduleGlob}` : `${root}/dist/esm/*/*/**/index.js`)
+      .filter((item) => !foldersExclude.some((name) => item.includes(name)))
       .map((name) => name.replace(/\/$/, '')),
-    type: module.type
-  }));
+  }
 
-async function createPackage(component, dist) {
+
+
+async function createPackage(component) {
   const cmds = [];
-  const destFile = component.replace(/index.js/g, 'package.json');
+  let destFile = component.replace(/[^/]+\.js$/g, 'package.json').replace('/dist/esm/', '/dist/dynamic/');
+  if(component.match(/index\.js$/)) {
+    destFile = component.replace(/[^/]+\.js$/g, 'package.json').replace('/dist/esm/', '/dist/dynamic/');
+  } else {
+    destFile = component.replace(/\.js$/g, '/package.json').replace('/dist/esm/', '/dist/dynamic/');
+  }
   const pathAsArray = component.split('/');
-  const esmRelative = `.${component.split(`${root}`)[1]}`;
+  const destDir = destFile.replace(/package\.json$/, '')
+  const esmRelative = path.relative(destDir, component)
+  const cjsRelative = path.relative(destDir, component.replace('/dist/esm/', '/dist/js/'))
+  const typesRelative = path.relative(destDir, component.replace(/\.js$/, '.d.ts'))
 
   const packageName = configJson.packageName;
   if (!packageName) {
@@ -39,24 +50,26 @@ async function createPackage(component, dist) {
     process.exit(1);
   }
 
-  let componentName = pathAsArray[pathAsArray.length - 2];
+  let componentName = pathAsArray[pathAsArray.length - (component.match(/index\.js$/) ? 2 : 1)];
   if (pathAsArray.includes("next")) {
-    componentName = `${componentName.toLowerCase()}-next-${dist}`;
+    componentName = `${componentName.toLowerCase()}-next-dynamic`;
   } else if (pathAsArray.includes("deprecated")) {
-    componentName = `${componentName.toLowerCase()}-deprecated-${dist}`;
+    componentName = `${componentName.toLowerCase()}-deprecated-dynamic`;
   } else {
-    componentName = `${componentName.toLowerCase()}-${dist}`;
+    componentName = `${componentName.toLowerCase()}-dynamic`;
   }
 
   const content = {
     name: `${packageName}-${componentName}`,
-    main: 'index.js',
+    main: cjsRelative,
     module: esmRelative,
-    typings: 'index.d.ts',
+    typings: typesRelative,
     version: packageJson.version
   };
 
-  cmds.push(fse.writeJSON(destFile, content));
+  // use ensureFile to not having to create all the directories
+  fse.ensureDirSync(destDir)
+  cmds.push(fse.writeJSON(destFile, content))
 
   return Promise.all(cmds);
 }
@@ -66,16 +79,14 @@ async function generatePackages(components, dist) {
   return Promise.all(cmds);
 }
 
-async function run(components, dist) {
+async function run(components) {
   try {
-    await generatePackages(components, dist);
+    await generatePackages(components);
   } catch (error) {
     console.log(error)
     process.exit(1);
   }
 }
 
-components.forEach(component => {
-  run(component.files, component.type);
-});
+run(components.files);
 
