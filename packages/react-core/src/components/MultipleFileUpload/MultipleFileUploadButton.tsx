@@ -21,7 +21,7 @@ export const MultipleFileUploadButton: React.FunctionComponent<MultipleFileUploa
   return (
     <div className={css(styles.multipleFileUploadUpload, className)} {...props}>
       <Button variant="secondary" aria-label={ariaLabel} onClick={open}>
-        Upload
+        Browse
       </Button>
     </div>
   );
