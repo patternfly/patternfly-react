@@ -1,0 +1,5 @@
+{
+    "packageName": "@patternfly/react-icons",
+    "moduleGlob": "/dist/esm/icons/*.js",
+    "exclude": []
+}

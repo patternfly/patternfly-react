@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-prerelease.9...@patternfly/react-table@5.0.0-prerelease.10) (2023-06-15)
+
+### Bug Fixes
+
+- **release:** ensure component package.json file has correct data ([#9272](https://github.com/patternfly/patternfly-react/issues/9272)) ([6053a6f](https://github.com/patternfly/patternfly-react/commit/6053a6f9acc0b1a9856423db59523558c5abd629))
+
 # [5.0.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-prerelease.8...@patternfly/react-table@5.0.0-prerelease.9) (2023-06-13)
 
 ### Bug Fixes
