@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0-prerelease.4...@patternfly/react-charts@7.0.0-prerelease.5) (2023-06-15)
+
+### Features
+
+- **charts:** Update Victory packages to latest version ([#9276](https://github.com/patternfly/patternfly-react/issues/9276)) ([515b36f](https://github.com/patternfly/patternfly-react/commit/515b36fd4f3b1f82c6daf7625ecf0189c7f0470d))
+
 # [7.0.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0-prerelease.3...@patternfly/react-charts@7.0.0-prerelease.4) (2023-06-15)
 
 ### Bug Fixes
