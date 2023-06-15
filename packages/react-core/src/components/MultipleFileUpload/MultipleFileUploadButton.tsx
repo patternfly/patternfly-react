@@ -9,11 +9,13 @@ export interface MultipleFileUploadButtonProps extends React.HTMLProps<HTMLDivEl
   className?: string;
   /** Aria-label for the button */
   'aria-label'?: string;
+  'label'?: string;
 }
 
 export const MultipleFileUploadButton: React.FunctionComponent<MultipleFileUploadButtonProps> = ({
   className,
   'aria-label': ariaLabel,
+  label,
   ...props
 }: MultipleFileUploadButtonProps) => {
   const { open } = React.useContext(MultipleFileUploadContext);
@@ -21,7 +23,7 @@ export const MultipleFileUploadButton: React.FunctionComponent<MultipleFileUploa
   return (
     <div className={css(styles.multipleFileUploadUpload, className)} {...props}>
       <Button variant="secondary" aria-label={ariaLabel} onClick={open}>
-        Browse
+        {label}
       </Button>
     </div>
   );
