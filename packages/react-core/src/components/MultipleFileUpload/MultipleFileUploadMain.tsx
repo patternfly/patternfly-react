@@ -37,7 +37,7 @@ export const MultipleFileUploadMain: React.FunctionComponent<MultipleFileUploadM
   return (
     <div className={css(styles.multipleFileUploadMain, className)} {...props}>
       {showTitle && <MultipleFileUploadTitle icon={titleIcon} text={titleText} textSeparator={titleTextSeparator} />}
-      {isUploadButtonHidden || <MultipleFileUploadButton label="Browse"/>}
+      {isUploadButtonHidden || <MultipleFileUploadButton />}
       {!!infoText && <MultipleFileUploadInfo>{infoText}</MultipleFileUploadInfo>}
     </div>
   );
