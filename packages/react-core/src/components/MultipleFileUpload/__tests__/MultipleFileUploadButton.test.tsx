@@ -19,7 +19,7 @@ describe('MultipleFileUploadButton', () => {
   });
 
   test('renders with label applied to the button', () => {
-    const { asFragment } = render(<MultipleFileUploadButton label="test">Foo</MultipleFileUploadButton>);
+    const { asFragment } = render(<MultipleFileUploadButton browseButtonText="test">Foo</MultipleFileUploadButton>);
     expect(asFragment()).toMatchSnapshot();
   });
 });

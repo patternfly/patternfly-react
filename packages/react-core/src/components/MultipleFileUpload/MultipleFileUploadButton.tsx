@@ -10,25 +10,25 @@ export interface MultipleFileUploadButtonProps extends React.HTMLProps<HTMLDivEl
   /** Aria-label for the button */
   'aria-label'?: string;
   /** Visible text label for the button */
-  'label'?: string;
+  'browseButtonText'?: string;
 }
 
 export const MultipleFileUploadButton: React.FunctionComponent<MultipleFileUploadButtonProps> = ({
   className,
   'aria-label': ariaLabel,
-  label = "Upload",
+  browseButtonText = "Upload",
   ...props
 }: MultipleFileUploadButtonProps) => {
-  if (!ariaLabel && !label) {
+  if (!ariaLabel && !browseButtonText) {
     // eslint-disable-next-line no-console
-    console.warn("For accessibility reasons an aria-label should be specified on MultipleFileUploadButton if a label isn't");
+    console.warn("For accessibility reasons an aria-label should be specified on MultipleFileUploadButton if a browseButtonText isn't");
   }
   const { open } = React.useContext(MultipleFileUploadContext);
 
   return (
     <div className={css(styles.multipleFileUploadUpload, className)} {...props}>
       <Button variant="secondary" aria-label={ariaLabel} onClick={open}>
-        {label}
+        {browseButtonText}
       </Button>
     </div>
   );
