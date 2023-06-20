@@ -109,4 +109,25 @@ describe('Label', () => {
     expect(screen.queryByRole('button', { name: 'Something' })).toBeNull();
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('clickable label', () => {
+    const fn = jest.fn();
+
+    render(<Label onLabelClick={fn}>Click me</Label>);
+
+    expect(screen.getByRole(`button`)).toBeVisible();
+  });
+
+  test('clickable label calls passed callback on click', async () => {
+    const mockCallback = jest.fn();
+    const user = userEvent.setup();
+
+    render(<Label onLabelClick={mockCallback}>Click me</Label>);
+
+    const label = screen.getByRole('button');
+
+    await user.click(label);
+
+    expect(mockCallback).toBeCalledTimes(1);
+  });
 });

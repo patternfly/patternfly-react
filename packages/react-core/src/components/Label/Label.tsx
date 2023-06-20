@@ -59,6 +59,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   href?: string;
   /** Flag indicating if the label is an overflow label */
   isOverflowLabel?: boolean;
+  /** On click callback. If present, label will be clickable. */
+  onLabelClick?: (event: React.MouseEvent) => void;
   /** Forwards the label content and className to rendered function.  Use this prop for react router support.*/
   render?: ({
     className,
@@ -94,6 +96,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   tooltipPosition,
   icon,
   onClose,
+  onLabelClick,
   onEditCancel,
   onEditComplete,
   closeBtn,
@@ -235,7 +238,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   let LabelComponentChildElement = 'span';
   if (href) {
     LabelComponentChildElement = 'a';
-  } else if (isEditable) {
+  } else if (isEditable || onLabelClick) {
     LabelComponentChildElement = 'button';
   }
 
@@ -254,7 +257,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   };
 
   let labelComponentChild = (
-    <LabelComponentChildElement {...labelComponentChildProps}>{content}</LabelComponentChildElement>
+    <LabelComponentChildElement onClick={onLabelClick} {...labelComponentChildProps}>
+      {content}
+    </LabelComponentChildElement>
   );
 
   if (render) {
