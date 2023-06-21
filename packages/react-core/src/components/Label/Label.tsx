@@ -257,7 +257,11 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   };
 
   let labelComponentChild = (
-    <LabelComponentChildElement onClick={onLabelClick} {...labelComponentChildProps}>
+    <LabelComponentChildElement
+      type={LabelComponentChildElement === 'button' ? 'button' : undefined}
+      onClick={onLabelClick}
+      {...labelComponentChildProps}
+    >
       {content}
     </LabelComponentChildElement>
   );
