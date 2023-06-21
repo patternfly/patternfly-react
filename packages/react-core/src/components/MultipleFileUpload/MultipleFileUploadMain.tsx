@@ -22,7 +22,7 @@ export interface MultipleFileUploadMainProps extends React.HTMLProps<HTMLDivElem
   /** Flag to prevent the upload button from being rendered */
   isUploadButtonHidden?: boolean;
   /** label for the browseButtonText */
-  'browseButtonText'?: string
+  browseButtonText?: string;
 }
 
 export const MultipleFileUploadMain: React.FunctionComponent<MultipleFileUploadMainProps> = ({
