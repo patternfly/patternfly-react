@@ -1,4 +1,5 @@
 {
     "packageName": "@patternfly/react-core",
-    "exclude": []
+    "moduleGlob": ["/dist/esm/helpers/**/*.js", "/dist/esm/*/*/**/index.js"],
+    "exclude": ["/dist/esm/helpers/Popper/thirdparty"]
 }
