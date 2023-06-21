@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v5-c-tooltip__arrow"
+    data-testid="tooltipArrow"
+  />
+</DocumentFragment>
+`;
