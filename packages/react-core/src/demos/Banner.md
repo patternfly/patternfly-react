@@ -4,6 +4,8 @@ section: components
 ---
 
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/utilities/Display/display';
 
 ## Demos
 

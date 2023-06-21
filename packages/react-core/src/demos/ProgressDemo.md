@@ -3,6 +3,8 @@ id: Progress
 section: components
 ---
 
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
+
 ## Demos
 
 ### Basic

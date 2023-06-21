@@ -5,6 +5,7 @@ propComponents: [Truncate]
 ---
 
 import './TruncateExamples.css';
+import truncateStyles from '@patternfly/react-styles/css/docs/components/Truncate/examples/Truncate';
 
 ## Examples
 

@@ -14,6 +14,15 @@ import chart_color_gold_100 from '@patternfly/react-tokens/dist/esm/chart_color_
 import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
+import gridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import globalSuccessColor100 from '@patternfly/react-tokens/dist/esm/global_success_color_100';
+import globalWarningColor100 from '@patternfly/react-tokens/dist/esm/global_warning_color_100';
+import globalDangerColor100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
+import globalColor200 from '@patternfly/react-tokens/dist/esm/global_Color_200';
+import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
+import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
+import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
+import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 ## Demos
 
@@ -329,11 +338,11 @@ import {
   DescriptionListDescription,
   Divider
 } from '@patternfly/react-core';
-import galleryGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import gridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 CardDetailsDemo = () => {
   return (
-    <Gallery hasGutter style={{ [galleryGridTemplateColumnsMin.name]: '260px' }}>
+    <Gallery hasGutter style={{ [gridTemplateColumnsMin.name]: '260px' }}>
       <Card>
         <CardTitle>
           <Title headingLevel="h4" size="xl">
@@ -2670,6 +2679,7 @@ import {
   FlexItem
 } from '@patternfly/react-core';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
+import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
 
 <Gallery hasGutter minWidths={{ default: '360px' }}>
   <GalleryItem>
@@ -2754,7 +2764,6 @@ import {
   Divider,
   MenuToggle
 } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
 import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
 import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
 import gridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
@@ -2826,7 +2835,7 @@ CardLogViewDemo = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 11:02 am</time>
+                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 11:02 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -2835,21 +2844,21 @@ CardLogViewDemo = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 11:13 am</time>
+                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 11:13 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Pulling image</DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 10:59 am</time>
+                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 10:59 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Created container</DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 10:45 am</time>
+                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 10:45 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>
@@ -2968,7 +2977,7 @@ CardEventViewDemo = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 11:02 am</time>
+                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 11:02 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -2986,7 +2995,7 @@ CardEventViewDemo = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 11:13 am</time>
+                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 11:13 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -3002,7 +3011,7 @@ CardEventViewDemo = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 10:59 am</time>
+                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 10:59 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -3018,7 +3027,7 @@ CardEventViewDemo = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={css(textStyles.color_200, textStyles.fontSizeSm)}>Jun 17, 10:45 am</time>
+                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 10:45 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>
