@@ -25,6 +25,10 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   itemId?: any;
   /** Target navigation link. Should not be used if the flyout prop is defined. */
   to?: string;
+  /** Navigation link target. Only set when the to property is present. */
+  target?: string;
+  /** Navigation link relationship. Only set when the to property is present. */
+  rel?: string;
   /** Flag indicating the item has a checkbox */
   hasCheckbox?: boolean;
   /** Flag indicating whether the item is active */
@@ -113,6 +117,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   id,
   'aria-label': ariaLabel,
   tooltipProps,
+  rel,
+  target,
   ...props
 }: MenuItemProps) => {
   const {
@@ -264,7 +270,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       'aria-disabled': isDisabled || isAriaDisabled ? true : null,
       // prevent invalid 'disabled' attribute on <a> tags
       disabled: null,
-      target: isExternalLink ? '_blank' : null
+      target: isExternalLink ? '_blank' : target,
+      rel
     };
   } else if (Component === 'button') {
     additionalProps = {
@@ -428,13 +435,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       {...(hasCheckbox && { 'aria-label': ariaLabel })}
       {...props}
     >
-      {tooltipProps ? (
-        <Tooltip {...tooltipProps}>
-          {renderItem}
-        </Tooltip>
-      ) : (
-        renderItem
-      )}
+      {tooltipProps ? <Tooltip {...tooltipProps}>{renderItem}</Tooltip> : renderItem}
     </li>
   );
 };
