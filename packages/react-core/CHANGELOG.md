@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.11...@patternfly/react-core@5.0.0-prerelease.12) (2023-06-21)
+
+### Bug Fixes
+
+- **react-core:** fix dynamic helpers modules output ([#9287](https://github.com/patternfly/patternfly-react/issues/9287)) ([f766b90](https://github.com/patternfly/patternfly-react/commit/f766b90e99c74bd6ecb2468648fb2d8e310362d6))
+
 # [5.0.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.10...@patternfly/react-core@5.0.0-prerelease.11) (2023-06-15)
 
 **Note:** Version bump only for package @patternfly/react-core
