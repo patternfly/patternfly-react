@@ -2,7 +2,9 @@
 
 exports[`match snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="popper"
+  >
     <div
       class="customClass"
       data-ouia-component-id="dropdown"
@@ -35,7 +37,27 @@ exports[`match snapshot 1`] = `
   <p>
     isOpen: true
   </p>
-  <div>
+  <p>
+    enableFlip: undefined
+  </p>
+  <p>
+    placement: undefined
+  </p>
+  <p>
+    appendTo: undefined
+  </p>
+  <p>
+    distance: undefined
+  </p>
+  <p>
+    flipBehavior: undefined
+  </p>
+  <p>
+    minWidth: undefined
+  </p>
+  <div
+    data-testid="trigger"
+  >
     <button>
       Dropdown
     </button>

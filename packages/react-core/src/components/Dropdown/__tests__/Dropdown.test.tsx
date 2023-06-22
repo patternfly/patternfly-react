@@ -22,7 +22,11 @@ test('renders dropdown', () => {
 });
 
 test('passes children', () => {
-  render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
+  render(
+    <Dropdown isOpen toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
 
   expect(screen.getByText('Dropdown children')).toBeVisible();
 });
@@ -134,7 +138,7 @@ test('passes onSelect callback', async () => {
 
   const onSelect = jest.fn();
   render(
-    <Dropdown onSelect={onSelect} toggle={(toggleRef) => toggle(toggleRef)}>
+    <Dropdown isOpen onSelect={onSelect} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );
