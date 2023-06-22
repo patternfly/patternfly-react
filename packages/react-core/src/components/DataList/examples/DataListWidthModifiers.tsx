@@ -19,10 +19,10 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import globalColor100 from '@patternfly/react-tokens/global_Color_100/dist/esm/global_Color_100';
-import globalBackgroundColor200 from '@patternfly/react-tokens/global_BackgroundColor_200/dist/esm/global_BackgroundColor_200';
-import globalBorderColor100 from '@patternfly/react-tokens/global_BorderColor_100/dist/esm/global_BorderColor_100';
-import globalBorderWidthSm from '@patternfly/react-tokens/global_BorderWidth_sm/dist/esm/global_BorderWidth_sm';
+import { global_Color_100 as globalColor100 } from '@patternfly/react-tokens/dist/esm/global_Color_100';
+import { global_BackgroundColor_200 as globalBackgroundColor200 } from '@patternfly/react-tokens/dist/esm/global_BackgroundColor_200';
+import { global_BorderColor_100 as globalBorderColor100 } from '@patternfly/react-tokens/dist/esm/global_BorderColor_100';
+import { global_BorderWidth_sm as globalBorderWidthSm } from '@patternfly/react-tokens/dist/esm/global_BorderWidth_sm';
 
 export const DataListWidthModifiers: React.FunctionComponent = () => {
   const [show, setShow] = React.useState(true);

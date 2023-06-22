@@ -1,12 +1,12 @@
 import React from 'react';
 import { Skeleton } from '@patternfly/react-core';
-import globalFontSize4xl from '@patternfly/react-tokens/global_FontSize_4xl/dist/esm/global_FontSize_4xl';
-import globalFontSize3xl from '@patternfly/react-tokens/global_FontSize_3xl/dist/esm/global_FontSize_3xl';
-import globalFontSize2xl from '@patternfly/react-tokens/global_FontSize_2xl/dist/esm/global_FontSize_2xl';
-import globalFontSizeXl from '@patternfly/react-tokens/global_FontSize_xl/dist/esm/global_FontSize_xl';
-import globalFontSizeLg from '@patternfly/react-tokens/global_FontSize_lg/dist/esm/global_FontSize_lg';
-import globalFontSizeMd from '@patternfly/react-tokens/global_FontSize_md/dist/esm/global_FontSize_md';
-import globalFontSizeSm from '@patternfly/react-tokens/global_FontSize_sm/dist/esm/global_FontSize_sm';
+import { global_FontSize_4xl as globalFontSize4xl } from '@patternfly/react-tokens/dist/esm/global_FontSize_4xl';
+import { global_FontSize_3xl as globalFontSize3xl } from '@patternfly/react-tokens/dist/esm/global_FontSize_3xl';
+import { global_FontSize_2xl as globalFontSize2xl } from '@patternfly/react-tokens/dist/esm/global_FontSize_2xl';
+import { global_FontSize_xl as globalFontSizeXl } from '@patternfly/react-tokens/dist/esm/global_FontSize_xl';
+import { global_FontSize_lg as globalFontSizeLg } from '@patternfly/react-tokens/dist/esm/global_FontSize_lg';
+import { global_FontSize_md as globalFontSizeMd } from '@patternfly/react-tokens/dist/esm/global_FontSize_md';
+import { global_FontSize_sm as globalFontSizeSm } from '@patternfly/react-tokens/dist/esm/global_FontSize_sm';
 
 export const SkeletonText: React.FunctionComponent = () => (
   <React.Fragment>

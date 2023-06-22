@@ -28,7 +28,7 @@ import {
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import globalPrimaryColor100 from '@patternfly/react-tokens/global_primary_color_100/dist/esm/global_primary_color_100';
+import { global_primary_color_100 as globalPrimaryColor100 } from '@patternfly/react-tokens/dist/esm/global_primary_color_100';
 
 export const TableComposableDemo = () => {
   const ComposableTableBasic = () => {

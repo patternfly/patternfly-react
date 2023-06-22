@@ -17,7 +17,7 @@ import {
   CardBody
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-import pageSectionMLimitWidthMaxWidth from '@patternfly/react-tokens/c_page_section_m_limit_width_MaxWidth/dist/esm/c_page_section_m_limit_width_MaxWidth';
+import { c_page_section_m_limit_width_MaxWidth as pageSectionMLimitWidthMaxWidth } from '@patternfly/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
 
 export const PageCenteredSection: React.FunctionComponent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
