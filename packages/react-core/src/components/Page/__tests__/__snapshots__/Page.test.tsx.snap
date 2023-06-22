@@ -6,6 +6,7 @@ exports[`Page Check dark page against snapshot 1`] = `
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
@@ -67,6 +68,7 @@ exports[`Page Check page horizontal layout example against snapshot 1`] = `
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
@@ -127,6 +129,7 @@ exports[`Page Check page to verify breadcrumb is created - PageBreadcrumb syntax
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
@@ -291,6 +294,7 @@ exports[`Page Check page to verify breadcrumb is created 1`] = `
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
@@ -455,6 +459,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
@@ -739,6 +744,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
@@ -1030,6 +1036,7 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
@@ -1207,6 +1214,7 @@ exports[`Page Check page to verify skip to content points to main content region
     class="pf-v5-c-page my-page-class"
     data-testid="page-test-id"
     id="PageId"
+    maintag="main"
   >
     <div
       class="pf-v5-c-skip-to-content"
@@ -1386,6 +1394,7 @@ exports[`Page Check page vertical layout example against snapshot 1`] = `
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
@@ -1447,6 +1456,7 @@ exports[`Page Sticky bottom breadcrumb on all height breakpoints - PageBreadcrum
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
@@ -1611,6 +1621,7 @@ exports[`Page Verify sticky bottom breadcrumb on all height breakpoints 1`] = `
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
@@ -1775,6 +1786,7 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints - PageBread
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
@@ -1939,6 +1951,7 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints 1`] = `
     aria-label="Page layout"
     class="pf-v5-c-page my-page-class"
     id="PageId"
+    maintag="main"
   >
     <header
       class="pf-v5-c-page__header"
