@@ -6,8 +6,10 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
     class="pf-v5-c-expandable-section pf-m-expanded pf-m-detached"
   >
     <div
+      aria-labelledby="toggle-id"
       class="pf-v5-c-expandable-section__content"
       id="test"
+      role="region"
     >
       test
     </div>
@@ -19,6 +21,7 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
       aria-controls="test"
       aria-expanded="true"
       class="pf-v5-c-expandable-section__toggle"
+      id="toggle-id"
       type="button"
     >
       <span
@@ -54,7 +57,9 @@ exports[`Disclosure ExpandableSection 1`] = `
     class="pf-v5-c-expandable-section pf-m-display-lg pf-m-limit-width"
   >
     <button
+      aria-controls="expandable-section-content-1687462398031kq4o63hpath"
       class="pf-v5-c-expandable-section__toggle"
+      id="expandable-section-toggle-1687462398031mb3ri27ymdn"
       type="button"
     >
       <span
@@ -79,9 +84,11 @@ exports[`Disclosure ExpandableSection 1`] = `
       />
     </button>
     <div
+      aria-labelledby="expandable-section-toggle-1687462398031mb3ri27ymdn"
       class="pf-v5-c-expandable-section__content"
       hidden=""
-      id=""
+      id="expandable-section-content-1687462398031kq4o63hpath"
+      role="region"
     >
       test 
     </div>
@@ -95,7 +102,9 @@ exports[`ExpandableSection 1`] = `
     class="pf-v5-c-expandable-section"
   >
     <button
+      aria-controls="expandable-section-content-1687462397960cv21n48cjkm"
       class="pf-v5-c-expandable-section__toggle"
+      id="expandable-section-toggle-16874623979605rgz7pi749w"
       type="button"
     >
       <span
@@ -120,9 +129,11 @@ exports[`ExpandableSection 1`] = `
       />
     </button>
     <div
+      aria-labelledby="expandable-section-toggle-16874623979605rgz7pi749w"
       class="pf-v5-c-expandable-section__content"
       hidden=""
-      id=""
+      id="expandable-section-content-1687462397960cv21n48cjkm"
+      role="region"
     >
       test 
     </div>
@@ -136,8 +147,10 @@ exports[`Renders ExpandableSection expanded 1`] = `
     class="pf-v5-c-expandable-section pf-m-expanded"
   >
     <button
+      aria-controls="expandable-section-content-1687462397975jux9tnzdvih"
       aria-expanded="true"
       class="pf-v5-c-expandable-section__toggle"
+      id="expandable-section-toggle-16874623979754smon79ihy4"
       type="button"
     >
       <span
@@ -162,8 +175,10 @@ exports[`Renders ExpandableSection expanded 1`] = `
       />
     </button>
     <div
+      aria-labelledby="expandable-section-toggle-16874623979754smon79ihy4"
       class="pf-v5-c-expandable-section__content"
-      id=""
+      id="expandable-section-content-1687462397975jux9tnzdvih"
+      role="region"
     >
        test 
     </div>
@@ -177,8 +192,10 @@ exports[`Renders ExpandableSection indented 1`] = `
     class="pf-v5-c-expandable-section pf-m-expanded pf-m-indented"
   >
     <button
+      aria-controls="expandable-section-content-16874623980341qi9dbbdx8s"
       aria-expanded="true"
       class="pf-v5-c-expandable-section__toggle"
+      id="expandable-section-toggle-1687462398034hf2qspa0uzp"
       type="button"
     >
       <span
@@ -203,8 +220,10 @@ exports[`Renders ExpandableSection indented 1`] = `
       />
     </button>
     <div
+      aria-labelledby="expandable-section-toggle-1687462398034hf2qspa0uzp"
       class="pf-v5-c-expandable-section__content"
-      id=""
+      id="expandable-section-content-16874623980341qi9dbbdx8s"
+      role="region"
     >
        test 
     </div>
@@ -218,7 +237,9 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
     class="pf-v5-c-expandable-section"
   >
     <button
+      aria-controls="expandable-section-content-1687462398024vgs055e08u"
       class="pf-v5-c-expandable-section__toggle"
+      id="expandable-section-toggle-1687462398024wypw2pennm8"
       type="button"
     >
       <span
@@ -245,9 +266,11 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
       </span>
     </button>
     <div
+      aria-labelledby="expandable-section-toggle-1687462398024wypw2pennm8"
       class="pf-v5-c-expandable-section__content"
       hidden=""
-      id=""
+      id="expandable-section-content-1687462398024vgs055e08u"
+      role="region"
     >
        test 
     </div>

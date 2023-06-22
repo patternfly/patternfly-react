@@ -36,10 +36,10 @@ test('Renders Uncontrolled ExpandableSection', () => {
 test('Detached ExpandableSection renders successfully', () => {
   const { asFragment } = render(
     <React.Fragment>
-      <ExpandableSection {...props} isExpanded isDetached contentId="test">
+      <ExpandableSection {...props} isExpanded isDetached toggleId="toggle-id" contentId="test">
         test
       </ExpandableSection>
-      <ExpandableSectionToggle isExpanded contentId="test" direction="up">
+      <ExpandableSectionToggle isExpanded contentId="test" toggleId="toggle-id" direction="up">
         Toggle text
       </ExpandableSectionToggle>
     </React.Fragment>
@@ -90,4 +90,41 @@ test('Renders with pf-m-truncate class when variant is truncate', () => {
   );
 
   expect(screen.getByText('test').parentElement).toHaveClass('pf-m-truncate');
+});
+
+test('Renders with value passed to contentId', () => {
+  render(
+    <ExpandableSection data-testid="test-id" contentId="custom-id">
+      Test
+    </ExpandableSection>
+  );
+
+  const wrapper = screen.getByTestId('test-id');
+  const content = wrapper.querySelector('#custom-id');
+  expect(content).toBeInTheDocument();
+});
+
+test('Renders with value passed to toggleId', () => {
+  render(
+    <ExpandableSection data-testid="test-id" toggleId="custom-id">
+      Test
+    </ExpandableSection>
+  );
+
+  const wrapper = screen.getByTestId('test-id');
+  const toggle = wrapper.querySelector('#custom-id');
+  expect(toggle).toBeVisible();
+});
+
+test('Renders with ARIA attributes when contentId and toggleId are passed', () => {
+  render(
+    <ExpandableSection data-testid="test-id" toggleId="toggle-id" contentId="content-id">
+      Test
+    </ExpandableSection>
+  );
+
+  const wrapper = screen.getByTestId('test-id');
+
+  expect(wrapper).toContainHTML('aria-labelledby="toggle-id"');
+  expect(wrapper).toContainHTML('aria-controls="content-id"');
 });

@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import lineClamp from '@patternfly/react-tokens/dist/esm/c_expandable_section_m_truncate__content_LineClamp';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { PickOptional } from '../../helpers/typeUtils';
-import { debounce } from '../../helpers/util';
+import { debounce, getUniqueId } from '../../helpers/util';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export enum ExpandableSectionVariant {
@@ -23,6 +23,12 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
    * property's value should match the contenId property of the expandable section toggle sub-component.
    */
   contentId?: string;
+  /** Id of the toggle of the expandable section, which provides an accessible name to the
+   * expandable section content via the aria-labelledby attribute. When the isDetached property
+   * is also passed in, the value of this property must match the toggleId property of the
+   * expandable section toggle sub-component.
+   */
+  toggleId?: string;
   /** Display size variant. Set to "lg" for disclosure styling. */
   displaySize?: 'default' | 'lg';
   /** Forces active state. */
@@ -102,7 +108,6 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     displaySize: 'default',
     isWidthLimited: false,
     isIndented: false,
-    contentId: '',
     variant: 'default'
   };
 
@@ -191,13 +196,24 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       isWidthLimited,
       isIndented,
       contentId,
+      toggleId,
       variant,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       truncateMaxLines,
       ...props
     } = this.props;
+
+    if (isDetached && !toggleId) {
+      /* eslint-disable no-console */
+      console.warn(
+        'ExpandableSection: The toggleId value must be passed in and must match the toggleId of the ExpandableSectionToggle.'
+      );
+    }
+
     let onToggle = onToggleProp;
     let propOrStateIsExpanded = isExpanded;
+    const uniqueContentId = contentId || getUniqueId('expandable-section-content');
+    const uniqueToggleId = toggleId || getUniqueId('expandable-section-toggle');
 
     // uncontrolled
     if (isExpanded === undefined) {
@@ -219,6 +235,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
         className={css(styles.expandableSectionToggle)}
         type="button"
         aria-expanded={propOrStateIsExpanded}
+        aria-controls={uniqueContentId}
+        id={uniqueToggleId}
         onClick={(event) => onToggle(event, !propOrStateIsExpanded)}
       >
         {variant !== ExpandableSectionVariant.truncate && (
@@ -250,7 +268,9 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
           ref={this.expandableContentRef}
           className={css(styles.expandableSectionContent)}
           hidden={variant !== ExpandableSectionVariant.truncate && !propOrStateIsExpanded}
-          id={contentId}
+          id={uniqueContentId}
+          aria-labelledby={uniqueToggleId}
+          role="region"
         >
           {children}
         </div>

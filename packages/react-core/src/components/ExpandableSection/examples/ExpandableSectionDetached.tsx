@@ -8,16 +8,23 @@ export const ExpandableSectionDetached: React.FunctionComponent = () => {
     setIsExpanded(isExpanded);
   };
 
-  const contentId = 'detached-toggle-content';
+  const contentId = 'detached-expandable-section-content';
+  const toggleId = 'detached-expandable-section-toggle';
   return (
     <Stack hasGutter>
       <StackItem>
-        <ExpandableSection isExpanded={isExpanded} isDetached contentId={contentId}>
+        <ExpandableSection isExpanded={isExpanded} isDetached toggleId={toggleId} contentId={contentId}>
           This content is visible only when the component is expanded.
         </ExpandableSection>
       </StackItem>
       <StackItem>
-        <ExpandableSectionToggle isExpanded={isExpanded} onToggle={onToggle} contentId={contentId} direction="up">
+        <ExpandableSectionToggle
+          isExpanded={isExpanded}
+          onToggle={onToggle}
+          toggleId={toggleId}
+          contentId={contentId}
+          direction="up"
+        >
           {isExpanded ? 'Show less' : 'Show more'}
         </ExpandableSectionToggle>
       </StackItem>
