@@ -1,5 +1,6 @@
 import React from 'react';
 import { Skeleton } from '@patternfly/react-core';
+/* eslint-disable camelcase */
 import global_FontSize_4xl from '@patternfly/react-tokens/dist/esm/global_FontSize_4xl';
 import global_FontSize_3xl from '@patternfly/react-tokens/dist/esm/global_FontSize_3xl';
 import global_FontSize_2xl from '@patternfly/react-tokens/dist/esm/global_FontSize_2xl';

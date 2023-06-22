@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+/* eslint-disable camelcase */
 import global_BackgroundColor_150 from '@patternfly/react-tokens/dist/esm/global_BackgroundColor_150';
 
 interface Repository {

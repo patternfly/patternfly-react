@@ -19,6 +19,7 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+/* eslint-disable camelcase */
 import global_Color_100 from '@patternfly/react-tokens/dist/esm/global_Color_100';
 import global_BackgroundColor_200 from '@patternfly/react-tokens/dist/esm/global_BackgroundColor_200';
 import global_BorderColor_100 from '@patternfly/react-tokens/dist/esm/global_BorderColor_100';

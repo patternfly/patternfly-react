@@ -4,6 +4,7 @@ import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-tab
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
+/* eslint-disable camelcase */
 import global_primary_color_100 from '@patternfly/react-tokens/dist/esm/global_primary_color_100';
 
 interface ITableRowWrapperDemoState {

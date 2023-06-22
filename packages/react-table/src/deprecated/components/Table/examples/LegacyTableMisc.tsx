@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { css } from '@patternfly/react-styles';
+/* eslint-disable camelcase */
 import global_primary_color_100 from '@patternfly/react-tokens/dist/esm/global_primary_color_100';
 
 interface Repository {
