@@ -185,8 +185,10 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       {...getOUIAProps(ModalContent.displayName, ouiaId, ouiaSafe)}
       style={
         {
-          ...(width && { '--pf-v5-c-modal-box--Width': width }),
-          ...(maxWidth && { '--pf-v5-c-modal-box--MaxWidth': maxWidth })
+          ...(width && { '--pf-v5-c-modal-box--Width': typeof width !== 'number' ? width : `${width}px` }),
+          ...(maxWidth && {
+            '--pf-v5-c-modal-box--MaxWidth': typeof maxWidth !== 'number' ? maxWidth : `${maxWidth}px`
+          })
         } as React.CSSProperties
       }
     >
