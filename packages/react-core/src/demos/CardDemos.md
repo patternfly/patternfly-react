@@ -10,15 +10,15 @@ import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-
 import { CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon, TimesCircleIcon, BellIcon } from '@patternfly/react-icons';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import { Chart, ChartAxis, ChartGroup, ChartVoronoiContainer, ChartStack, ChartBar, ChartTooltip, ChartDonutThreshold, ChartDonutUtilization, ChartArea, ChartContainer, ChartLabel } from '@patternfly/react-charts';
-import { chart_color_gold_100 as chartColorGold100 } from '@patternfly/react-tokens/dist/esm/chart_color_gold_100';
-import { chart_color_gold_300 as chartColorGold300 } from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
-import { chart_color_orange_300 as chartColorOrange300 } from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
-import { chart_color_red_100 as chartColorRed100 } from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
-import { l_gallery_GridTemplateColumns_min as galleryGridTemplateColumnsMin } from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
-import { global_success_color_100 as globalSuccessColor100 } from '@patternfly/react-tokens/dist/esm/global_success_color_100';
-import { global_warning_color_100 as globalWarningColor100 } from '@patternfly/react-tokens/dist/esm/global_warning_color_100';
-import { global_danger_color_100 as globalDangerColor100 } from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
-import { global_Color_200 as globalColor200 } from '@patternfly/react-tokens/dist/esm/global_Color_200';
+import chart_color_gold_100 from '@patternfly/react-tokens/dist/esm/chart_color_gold_100';
+import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
+import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
+import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_success_color_100';
+import global_warning_color_100 from '@patternfly/react-tokens/dist/esm/global_warning_color_100';
+import global_danger_color_100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
+import global_Color_200 from '@patternfly/react-tokens/dist/esm/global_Color_200';
 import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
 import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
 import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
@@ -338,11 +338,11 @@ import {
   DescriptionListDescription,
   Divider
 } from '@patternfly/react-core';
-import { l_gallery_GridTemplateColumns_min as galleryGridTemplateColumnsMin } from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 CardDetailsDemo = () => {
   return (
-    <Gallery hasGutter style={{ [galleryGridTemplateColumnsMin.name]: '260px' }}>
+    <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: '260px' }}>
       <Card>
         <CardTitle>
           <Title headingLevel="h4" size="xl">
@@ -442,10 +442,10 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
-import { global_success_color_100 as globalSuccessColor100 } from '@patternfly/react-tokens/dist/esm/global_success_color_100';
-import { global_warning_color_100 as globalWarningColor100 } from '@patternfly/react-tokens/dist/esm/global_warning_color_100';
-import { global_danger_color_100 as globalDangerColor100 } from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
-import { l_gallery_GridTemplateColumns_min as galleryGridTemplateColumnsMin } from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_success_color_100';
+import global_warning_color_100 from '@patternfly/react-tokens/dist/esm/global_warning_color_100';
+import global_danger_color_100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
+import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 const cardData = {
   iconOnly: [
@@ -453,7 +453,7 @@ const cardData = {
       title: '5 Clusters',
       content: [
         {
-          icon: <CheckCircleIcon color={globalSuccessColor100.var} />
+          icon: <CheckCircleIcon color={global_success_color_100.var} />
         }
       ],
       layout: 'icon'
@@ -462,7 +462,7 @@ const cardData = {
       title: '15 Clusters',
       content: [
         {
-          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />
+          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />
         }
       ],
       layout: 'icon'
@@ -471,7 +471,7 @@ const cardData = {
       title: '3 Clusters',
       content: [
         {
-          icon: <TimesCircleIcon color={globalDangerColor100.var} />
+          icon: <TimesCircleIcon color={global_danger_color_100.var} />
         }
       ],
       layout: 'icon'
@@ -482,11 +482,11 @@ const cardData = {
       title: '10 Hosts',
       content: [
         {
-          icon: <ExclamationCircleIcon color={globalSuccessColor100.var} />,
+          icon: <ExclamationCircleIcon color={global_success_color_100.var} />,
           count: 2
         },
         {
-          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />,
+          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />,
           count: 1
         }
       ],
@@ -496,11 +496,11 @@ const cardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon color={globalSuccessColor100.var} />,
+          icon: <CheckCircleIcon color={global_success_color_100.var} />,
           count: 5
         },
         {
-          icon: <TimesCircleIcon color={globalDangerColor100.var} />,
+          icon: <TimesCircleIcon color={global_danger_color_100.var} />,
           count: 12
         }
       ],
@@ -510,11 +510,11 @@ const cardData = {
       title: '12 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />,
+          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />,
           count: 3
         },
         {
-          icon: <TimesCircleIcon color={globalDangerColor100.var} />,
+          icon: <TimesCircleIcon color={global_danger_color_100.var} />,
           count: 7
         }
       ],
@@ -526,12 +526,12 @@ const cardData = {
       title: '13 Hosts',
       content: [
         {
-          icon: <TimesCircleIcon color={globalDangerColor100.var} />,
+          icon: <TimesCircleIcon color={global_danger_color_100.var} />,
           status: '2 errors',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />,
+          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />,
           status: '1 warning',
           subtitle: 'subtitle'
         }
@@ -542,12 +542,12 @@ const cardData = {
       title: '3 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon color={globalSuccessColor100.var} />,
+          icon: <CheckCircleIcon color={global_success_color_100.var} />,
           status: '2 successes',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />,
+          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />,
           status: '3 warnings',
           subtitle: 'subtitle'
         }
@@ -558,12 +558,12 @@ const cardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon color={globalWarningColor100.var} />,
+          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />,
           status: '7 warnings',
           subtitle: 'subtitle'
         },
         {
-          icon: <TimesCircleIcon color={globalDangerColor100.var} />,
+          icon: <TimesCircleIcon color={global_danger_color_100.var} />,
           status: '1 error',
           subtitle: 'subtitle'
         }
@@ -634,7 +634,7 @@ const AggregateStatusCards: React.FunctionComponent = () => {
         }
         return (
           <GridItem key={groupIndex}>
-            <Gallery hasGutter style={{ [galleryGridTemplateColumnsMin.name]: galleryWidth } as any}>
+            <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: galleryWidth } as any}>
               {cardData[cardGroup].map(({ title, content, layout }, cardIndex) => (
                 <Card style={{ textAlign: cardAlign }} key={`${groupIndex}${cardIndex}`} component="div">
                   <CardTitle style={{ textAlign: titleAlign }}>{title}</CardTitle>
@@ -680,9 +680,9 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import { global_success_color_100 as globalSuccessColor100 } from '@patternfly/react-tokens/dist/esm/global_success_color_100';
-import { global_danger_color_100 as globalDangerColor100 } from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
-import { global_Color_200 as globalColor200 } from '@patternfly/react-tokens/dist/esm/global_Color_200';
+import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_success_color_100';
+import global_danger_color_100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
+import global_Color_200 from '@patternfly/react-tokens/dist/esm/global_Color_200';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StatusPlain: React.FunctionComponent = () => {
@@ -795,7 +795,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon color={globalSuccessColor100.var} />
+              <CheckCircleIcon color={global_success_color_100.var} />
             </FlexItem>
             <FlexItem>
               <span>Cluster</span>
@@ -805,7 +805,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon color={globalDangerColor100.var} />
+              <ExclamationCircleIcon color={global_danger_color_100.var} />
             </FlexItem>
             <FlexItem>
               <Popover headerContent="Control Panel Status" bodyContent={popoverBodyContent} minWidth="400px">
@@ -819,14 +819,14 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon color={globalDangerColor100.var} />
+              <ExclamationCircleIcon color={global_danger_color_100.var} />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
                 <a href="#">Operators</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: globalColor200.var }}>1 degraded</span>
+                <span style={{ color: global_Color_200.var }}>1 degraded</span>
               </FlexItem>
             </Flex>
           </Flex>
@@ -834,14 +834,14 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon color={globalSuccessColor100.var} />
+              <CheckCircleIcon color={global_success_color_100.var} />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
                 <a href="#">Image Vulnerabilities</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: globalColor200.var }}>0 vulnerabilities</span>
+                <span style={{ color: global_Color_200.var }}>0 vulnerabilities</span>
               </FlexItem>
             </Flex>
           </Flex>
@@ -1284,10 +1284,10 @@ import {
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import { Chart, ChartStack, ChartBar, ChartTooltip } from '@patternfly/react-charts';
-import { chart_color_gold_100 as chartColorGold100 } from '@patternfly/react-tokens/dist/esm/chart_color_gold_100';
-import { chart_color_gold_300 as chartColorGold300 } from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
-import { chart_color_orange_300 as chartColorOrange300 } from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
-import { chart_color_red_100 as chartColorRed100 } from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
+import chart_color_gold_100 from '@patternfly/react-tokens/dist/esm/chart_color_gold_100';
+import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
+import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
 import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
 import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
 
@@ -1357,10 +1357,10 @@ const UtilizationCard3: React.FunctionComponent = () => {
                     ariaTitle="Mock stack chart"
                     domainPadding={{ x: [30, 25] }}
                     legendData={[
-                      { name: 'Low', symbol: { fill: chartColorGold100.value } },
-                      { name: 'Important', symbol: { fill: chartColorGold300.value } },
-                      { name: 'Moderate', symbol: { fill: chartColorOrange300.value } },
-                      { name: 'Critical', symbol: { fill: chartColorRed100.value } }
+                      { name: 'Low', symbol: { fill: chart_color_gold_100.value } },
+                      { name: 'Important', symbol: { fill: chart_color_gold_300.value } },
+                      { name: 'Moderate', symbol: { fill: chart_color_orange_300.value } },
+                      { name: 'Critical', symbol: { fill: chart_color_red_100.value } }
                     ]}
                     legendPosition="bottom-left"
                     height={50}
@@ -1376,10 +1376,10 @@ const UtilizationCard3: React.FunctionComponent = () => {
                     <ChartStack
                       horizontal
                       colorScale={[
-                        chartColorGold100.value,
-                        chartColorGold300.value,
-                        chartColorOrange300.value,
-                        chartColorRed100.value
+                        chart_color_gold_100.value,
+                        chart_color_gold_300.value,
+                        chart_color_orange_300.value,
+                        chart_color_red_100.value
                       ]}
                     >
                       <ChartBar
@@ -2766,7 +2766,7 @@ import {
 } from '@patternfly/react-core';
 import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
 import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
-import { l_gallery_GridTemplateColumns_min as galleryGridTemplateColumnsMin } from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 CardLogViewDemo = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -2814,7 +2814,7 @@ CardLogViewDemo = () => {
       <code>baseline</code> alignment.
       <br />
       <br />
-      <Gallery hasGutter style={{ [galleryGridTemplateColumnsMin.name]: '360px' }}>
+      <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: '360px' }}>
         <Card id="card-log-view-example">
           <CardHeader
             className={flexStyles.alignItemsFlexStart}
@@ -2903,7 +2903,7 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclam
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
 import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
-import { l_gallery_GridTemplateColumns_min as galleryGridTemplateColumnsMin } from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 CardEventViewDemo = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -2947,7 +2947,7 @@ CardEventViewDemo = () => {
       <code>baseline</code> alignment.
       <br />
       <br />
-      <Gallery hasGutter style={{ [galleryGridTemplateColumnsMin.name]: '360px' }}>
+      <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: '360px' }}>
         <Card id="card-events-view-example">
           <CardHeader
             className={flexStyles.alignItemsFlexStart}
