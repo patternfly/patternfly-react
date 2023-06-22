@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import globalBackgroundColor150 from '@patternfly/react-tokens/dist/esm/global_BackgroundColor_150';
+import globalBackgroundColor150 from '@patternfly/react-tokens/global_BackgroundColor_150/dist/esm/global_BackgroundColor_150';
 
 interface Repository {
   name: string;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { css } from '@patternfly/react-styles';
-import globalPrimaryColor100 from '@patternfly/react-tokens/dist/esm/global_primary_color_100';
+import globalPrimaryColor100 from '@patternfly/react-tokens/global_primary_color_100/dist/esm/global_primary_color_100';
 
 interface Repository {
   name: string;
