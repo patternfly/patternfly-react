@@ -10,21 +10,12 @@ export const SelectFooter: React.FunctionComponent = () => {
   };
 
   const toggle = (toggleRef) => (
-    <MenuToggle
-      ref={toggleRef}
-      onClick={onToggleClick}
-      isExpanded={isOpen}
-      style={
-        {
-          width: '200px'
-        } as React.CSSProperties
-      }
-    >
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen} isFullWidth>
       {selected}
     </MenuToggle>
   );
 
-  function onSelect(event: React.MouseEvent | undefined, value: string | number | undefined) {
+  function onSelect(_event: React.MouseEvent | undefined, value: string | number | undefined) {
     if (typeof value === 'undefined') {
       return;
     }

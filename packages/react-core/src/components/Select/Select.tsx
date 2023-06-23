@@ -1,8 +1,11 @@
 import React from 'react';
+
 import { css } from '@patternfly/react-styles';
-import { Menu, MenuContent, MenuProps } from '../Menu';
+
 import { Popper } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { Menu, MenuContent, MenuProps } from '../Menu';
+import { MenuToggle, MenuToggleElement } from '../MenuToggle';
 
 export interface SelectPopperProps {
   /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
@@ -20,7 +23,7 @@ export interface SelectPopperProps {
 }
 
 export interface SelectToggleProps {
-  /**  Select toggle node. */
+  /** Select toggle node. */
   toggleNode: React.ReactNode;
   /** Reference to the toggle. */
   toggleRef?: React.RefObject<HTMLButtonElement>;
@@ -30,7 +33,7 @@ export interface SelectToggleProps {
  * See the Menu documentation for additional props that may be passed.
  */
 
-export interface SelectProps extends MenuProps, OUIAProps {
+export interface SelectBaseProps extends MenuProps, OUIAProps {
   /** Anything which can be rendered in a select */
   children?: React.ReactNode;
   /** Classes applied to root element of select */
@@ -62,14 +65,14 @@ export interface SelectProps extends MenuProps, OUIAProps {
   popperProps?: SelectPopperProps;
 }
 
-const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
+const SelectBase: React.FunctionComponent<SelectBaseProps> = ({
   children,
   className,
   onSelect,
   isOpen,
   selected,
   toggle,
-  shouldFocusToggleOnSelect = false,
+  shouldFocusToggleOnSelect = true,
   onOpenChange,
   onOpenChangeKeys = ['Escape', 'Tab'],
   isPlain,
@@ -78,7 +81,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   role = 'listbox',
   popperProps,
   ...props
-}: SelectProps & OUIAProps) => {
+}) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
   const localToggleRef = React.useRef<HTMLButtonElement>();
 
@@ -130,32 +133,31 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
     };
   }, [isOpen, menuRef, toggleRef, onOpenChange, onOpenChangeKeys]);
 
-  const menu = (
-    <Menu
-      role={role}
-      className={css(className)}
-      ref={menuRef}
-      onSelect={(event, value) => {
-        onSelect && onSelect(event, value);
-        shouldFocusToggleOnSelect && toggleRef.current.focus();
-      }}
-      isPlain={isPlain}
-      selected={selected}
-      {...getOUIAProps(
-        Select.displayName,
-        props.ouiaId !== undefined ? props.ouiaId : getDefaultOUIAId(Select.displayName),
-        props.ouiaSafe !== undefined ? props.ouiaSafe : true
-      )}
-      {...props}
-    >
-      <MenuContent>{children}</MenuContent>
-    </Menu>
-  );
   return (
     <Popper
       trigger={typeof toggle === 'function' ? toggle(toggleRef) : toggle.toggleNode}
       triggerRef={toggleRef}
-      popper={menu}
+      popper={
+        <Menu
+          role={role}
+          className={css(className)}
+          ref={menuRef}
+          onSelect={(event, value) => {
+            onSelect && onSelect(event, value);
+            shouldFocusToggleOnSelect && toggleRef.current.focus();
+          }}
+          isPlain={isPlain}
+          selected={selected}
+          {...getOUIAProps(
+            Select.displayName,
+            props.ouiaId !== undefined ? props.ouiaId : getDefaultOUIAId(Select.displayName),
+            props.ouiaSafe !== undefined ? props.ouiaSafe : true
+          )}
+          {...props}
+        >
+          <MenuContent>{children}</MenuContent>
+        </Menu>
+      }
       popperRef={menuRef}
       isVisible={isOpen}
       zIndex={zIndex}
@@ -164,8 +166,76 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   );
 };
 
-export const Select = React.forwardRef((props: SelectProps, ref: React.Ref<any>) => (
-  <SelectBase innerRef={ref} {...props} />
-));
+SelectBase.displayName = 'SelectBase';
+
+/**
+ * Extends SelectBaseProps
+ */
+
+export interface SelectProps extends Omit<SelectBaseProps, 'toggle'> {
+  /** Renderer for a custom select toggle. Forwards a ref to the toggle. */
+  toggle?:
+    | SelectToggleProps
+    | ((toggleRef: React.RefObject<any>, selected: any, isOpen: boolean, toggleOpen: () => void) => React.ReactNode);
+  /** Sets the default toggle component (MenuToggle) to the width of its container. Defaults to true. */
+  isFullWidth?: boolean;
+  /** Shows placeholder text until an option is selected. Has no affect when selected and onSelect are provided. */
+  placeholder?: string;
+  /** Sets isDisabled on the default toggle component (MenuToggle). */
+  isDisabled?: boolean;
+}
+
+export const Select = React.forwardRef(
+  ({ isDisabled, placeholder, children, toggle, isFullWidth = true, ...props }: SelectProps, ref: React.Ref<any>) => {
+    const [selected, setSelected] = React.useState(props.selected || placeholder);
+    const [isOpen, setIsOpen] = React.useState(props.isOpen || false);
+
+    const toggleOpen = React.useCallback(() => setIsOpen((prevIsOpen) => !prevIsOpen), []);
+
+    const onSelect = React.useCallback((_event?: React.MouseEvent<Element, MouseEvent>, itemId?: string | number) => {
+      if (itemId) {
+        setSelected(itemId.toString());
+      }
+
+      setIsOpen(false);
+    }, []);
+
+    const toggleMenu = React.useCallback(
+      (toggleRef: React.RefObject<MenuToggleElement>) => {
+        if (toggle && typeof toggle === 'function') {
+          // Pass internal selected and open state and handler for external usage
+          return toggle(toggleRef, selected, isOpen, toggleOpen);
+        }
+
+        return (
+          <MenuToggle
+            ref={toggleRef}
+            onClick={toggleOpen}
+            isExpanded={isOpen}
+            isDisabled={isDisabled}
+            isFullWidth={isFullWidth}
+          >
+            {selected}
+          </MenuToggle>
+        );
+      },
+      [isDisabled, isFullWidth, isOpen, selected, toggle, toggleOpen]
+    );
+
+    return (
+      <SelectBase
+        innerRef={ref}
+        onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+        onSelect={onSelect}
+        toggle={toggleMenu}
+        selected={selected}
+        isOpen={isOpen}
+        {...props}
+      >
+        {children}
+      </SelectBase>
+    );
+  }
+);
 
 Select.displayName = 'Select';

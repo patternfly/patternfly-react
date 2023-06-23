@@ -100,16 +100,7 @@ export const SelectViewMore: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <MenuToggle
-      ref={toggleRef}
-      onClick={onToggleClick}
-      isExpanded={isOpen}
-      style={
-        {
-          width: '200px'
-        } as React.CSSProperties
-      }
-    >
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen} isFullWidth>
       {selected}
     </MenuToggle>
   );

@@ -19,16 +19,7 @@ export const SelectOptionVariations: React.FunctionComponent = () => {
   };
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
-    <MenuToggle
-      ref={toggleRef}
-      onClick={onToggleClick}
-      isExpanded={isOpen}
-      style={
-        {
-          width: '200px'
-        } as React.CSSProperties
-      }
-    >
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen} isFullWidth>
       {selected}
     </MenuToggle>
   );
@@ -41,7 +32,6 @@ export const SelectOptionVariations: React.FunctionComponent = () => {
       onSelect={onSelect}
       onOpenChange={(isOpen) => setIsOpen(isOpen)}
       toggle={toggle}
-      shouldFocusToggleOnSelect
     >
       <SelectList>
         <SelectOption value="Basic option">Basic option</SelectOption>

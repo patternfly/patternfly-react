@@ -21,16 +21,7 @@ export const SelectCheckbox: React.FunctionComponent = () => {
   };
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
-    <MenuToggle
-      ref={toggleRef}
-      onClick={onToggleClick}
-      isExpanded={isOpen}
-      style={
-        {
-          width: '200px'
-        } as React.CSSProperties
-      }
-    >
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen} isFullWidth>
       Filter by status
       {selectedItems.length > 0 && <Badge isRead>{selectedItems.length}</Badge>}
     </MenuToggle>

@@ -57,7 +57,7 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
     setSelectOptions(newSelectOptions);
     setFocusedItemIndex(null);
     setActiveItem(null);
-  }, [inputValue, onCreation]);
+  }, [inputValue, isOpen, onCreation]);
 
   const handleMenuArrowKeys = (key: string) => {
     let indexToFocus;

@@ -4,7 +4,16 @@ section: components
 subsection: menus
 cssPrefix: pf-v5-c-select
 propComponents:
-  ['Select', 'SelectOption', 'SelectGroup', 'SelectList', 'MenuToggle', 'SelectToggleProps', 'SelectPopperProps']
+  [
+    'Select',
+    'SelectOption',
+    'SelectGroup',
+    'SelectList',
+    'MenuToggle',
+    'SelectBaseProps',
+    'SelectToggleProps',
+    'SelectPopperProps'
+  ]
 ouia: true
 ---
 
@@ -18,6 +27,12 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 ### Single
 
 ```ts file="./SelectBasic.tsx"
+
+```
+
+### Single disabled
+
+```ts file="./SelectDisabled.tsx"
 
 ```
 

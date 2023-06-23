@@ -56,7 +56,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
     setSelectOptions(newSelectOptions);
     setActiveItem(null);
     setFocusedItemIndex(null);
-  }, [filterValue, onCreation]);
+  }, [filterValue, isOpen, onCreation]);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
