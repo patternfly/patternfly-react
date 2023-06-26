@@ -189,6 +189,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                     scrollableElement.scrollTo(0, newScrollItem.offsetTop - offset);
                   }
                   newScrollItem.focus();
+                  window.history.pushState('', '', ev.currentTarget.href);
                   ev.preventDefault();
                   setActiveIndex(itemIndex);
                 }
