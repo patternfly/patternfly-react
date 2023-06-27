@@ -13,8 +13,8 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import { Link } from '@reach/router';
 import pfLogoSm from './pf-logo-small.svg';
 
-Note: Application launcher is built on Dropdown, for extended API go to [Dropdown](/documentation/react/components/menus/dropdown) documentation.
-To add a tooltip, use the `tooltip` prop and optionally add more tooltip props by using `tooltipProps`. For more tooltip information go to [Tooltip](/documentation/react/components/tooltip).
+Note: Application launcher is built on Dropdown, for extended API go to [Dropdown](/components/menus/dropdown) documentation.
+To add a tooltip, use the `tooltip` prop and optionally add more tooltip props by using `tooltipProps`. For more tooltip information go to [Tooltip](/components/tooltip).
 
 ## Examples
 
