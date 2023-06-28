@@ -1400,26 +1400,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                     isDisabled={isDisabled}
                     ref={this.inputRef}
                 />
-                {/* <div className={css(formStyles.formControl, styles.selectToggleTypeahead)}>
-                  <input
-                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id={`${selectToggleId}-select-typeahead`}
-                    aria-label={typeAheadAriaLabel}
-                    {...(typeAheadAriaDescribedby && { 'aria-describedby': typeAheadAriaDescribedby })}
-                    placeholder={placeholderText as string}
-                    value={
-                      typeaheadInputValue !== null
-                        ? typeaheadInputValue
-                        : this.getDisplay(selections[0] as string, 'text') || ''
-                    }
-                    type="text"
-                    onClick={this.onClick}
-                    onChange={this.onChange}
-                    autoComplete={inputAutoComplete}
-                    disabled={isDisabled}
-                    ref={this.inputRef}
-                  />
-                </div> */}
               </div>
               {hasOnClear && (selections[0] || typeaheadInputValue) && clearBtn}
             </React.Fragment>
