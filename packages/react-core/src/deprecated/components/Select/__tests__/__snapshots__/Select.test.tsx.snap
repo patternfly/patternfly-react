@@ -1667,7 +1667,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
         class="pf-v5-c-select__toggle-wrapper"
       >
         <div
-          class="pf-v5-c-form-control pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
             aria-invalid="false"
@@ -1727,7 +1727,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         class="pf-v5-c-select__toggle-wrapper"
       >
         <div
-          class="pf-v5-c-form-control pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
             aria-invalid="false"
@@ -1963,7 +1963,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           </div>
         </div>
         <div
-          class="pf-v5-c-form-control pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
             aria-invalid="false"
@@ -2117,7 +2117,7 @@ exports[`typeahead select renders closed successfully 1`] = `
         class="pf-v5-c-select__toggle-wrapper"
       >
         <div
-          class="pf-v5-c-form-control pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
             aria-invalid="false"
@@ -2177,7 +2177,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
         class="pf-v5-c-select__toggle-wrapper"
       >
         <div
-          class="pf-v5-c-form-control pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
             aria-invalid="false"
@@ -2295,7 +2295,7 @@ exports[`typeahead select renders selected successfully 1`] = `
         class="pf-v5-c-select__toggle-wrapper"
       >
         <div
-          class="pf-v5-c-form-control pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
+          class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
             aria-invalid="false"

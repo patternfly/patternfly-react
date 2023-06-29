@@ -1383,7 +1383,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               <div className={css(styles.selectToggleWrapper)}>
                 {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                 <TextInput 
-                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                    className={css(styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                     id={`${selectToggleId}-select-typeahead`}
                     aria-label={typeAheadAriaLabel}
@@ -1410,7 +1410,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                 {selections && Array.isArray(selections) && selections.length > 0 && selectedChips}
                 <TextInput 
-                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                    className={css(styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                     id={`${selectToggleId}-select-multi-typeahead-typeahead`}
                     aria-label={typeAheadAriaLabel}
