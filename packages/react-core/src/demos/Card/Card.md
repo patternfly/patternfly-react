@@ -652,17 +652,14 @@ class CardViewBasic extends React.Component {
               </Card>
               {filtered.map((product, key) => (
                 <Card
-                  hasSelectableInput
                   isCompact
-                  isSelectableRaised
+                  isSelectable
                   key={product.name}
                   id={product.name.replace(/ /g, '-')}
                   onKeyDown={(e) => this.onKeyDown(e, product.id)}
                   onClick={() => this.onClick(product.id)}
-                  onSelectableInputChange={() => this.onClick(product.id)}
-                  isSelected={selectedItems.includes(product.id)}
                 >
-                  <CardHeader
+                  <CardHeader selectableActions={{ isChecked: selectedItems.includes(product.id), name: `check-${product.id}` }}
                     actions={{
                       actions: (
                         <>
@@ -674,7 +671,8 @@ class CardViewBasic extends React.Component {
                                 ref={toggleRef}
                                 aria-label={`${product.name} actions`}
                                 variant="plain"
-                                onClick={(e) => this.onCardKebabDropdownToggle(key, e)}
+                                style={{ zIndex: "1" }}
+                                onClick={(e) => {this.onCardKebabDropdownToggle(key, e)}}
                                 isExpanded={this.state[key]}
                               >
                                 <EllipsisVIcon />
@@ -688,14 +686,7 @@ class CardViewBasic extends React.Component {
                                 Delete
                               </DropdownItem>
                             </DropdownList>
-                          </Dropdown>
-                          <Checkbox
-                            checked={isChecked}
-                            value={product.id}
-                            isChecked={selectedItems.includes(product.id)}
-                            aria-label="card checkbox example"
-                            id={`check-${product.id}`}
-                          />
+                          </Dropdown> 
                         </>
                       )
                     }}
