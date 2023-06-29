@@ -353,13 +353,13 @@ class EmbeddedHtml extends React.Component {
           containerComponent={
             <CursorVoronoiContainer
               cursorDimension="x"
-              labels={({ datum }) => `${datum.y}`}
+              labels={({ datum }) => `${datum.y !== null ? datum.y : 'no data'}`}
               labelComponent={
                 <ChartCursorTooltip
                   centerOffset={{x: ({ center, flyoutWidth, width, offset = flyoutWidth / 2 + 10 }) => width > center.x + flyoutWidth + 10 ? offset : -offset}}
                   flyout={<ChartCursorFlyout />}
                   flyoutHeight={110}
-                  flyoutWidth={125}
+                  flyoutWidth={({ datum }) => datum.y === null ? 160 : 125 }
                   labelComponent={<HtmlLegendContent legendData={legendData} title={(datum) => datum.x} />}
                 />
               }
@@ -390,7 +390,8 @@ class EmbeddedHtml extends React.Component {
                 { name: 'Cats', x: '2015', y: 3 },
                 { name: 'Cats', x: '2016', y: 4 },
                 { name: 'Cats', x: '2017', y: 8 },
-                { name: 'Cats', x: '2018', y: 6 }
+                { name: 'Cats', x: '2018', y: 6 },
+                { name: 'Cats', x: '2019', y: null }
               ]}
               interpolation="monotoneX"
             />

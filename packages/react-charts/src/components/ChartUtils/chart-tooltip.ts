@@ -23,6 +23,7 @@ interface ChartLegendTooltipFlyoutInterface {
   legendData: any;
   legendOrientation?: 'horizontal' | 'vertical';
   legendProps?: any;
+  minSpacing?: number;
   text?: StringOrNumberOrCallback | string[] | number[];
   theme: ChartThemeDefinition;
 }
@@ -122,6 +123,7 @@ export const getLegendTooltipSize = ({
   legendData,
   legendOrientation = 'vertical',
   legendProps,
+  minSpacing = 1,
   text = '',
   theme
 }: ChartLegendTooltipFlyoutInterface) => {
@@ -146,10 +148,7 @@ export const getLegendTooltipSize = ({
   });
 
   // Set length to ensure minimum spacing between label and value
-  let maxLength = maxDataLength + maxTextLength;
-  if (maxDataLength < 20 && maxLength < 30) {
-    maxLength += 2;
-  }
+  const maxLength = maxDataLength + maxTextLength + minSpacing;
 
   // Get spacing to help align legend labels and text values
   const spacer = 'x';

@@ -266,6 +266,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
   const minLegendDimensions = getLegendTooltipSize({
     legendData: [{ name: '' }],
     legendProps,
+    minSpacing: 0,
     theme
   });
 
