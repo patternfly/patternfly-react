@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.14...@patternfly/react-core@5.0.0-prerelease.15) (2023-06-30)
+
+### Bug Fixes
+
+- **Number Input:** Fixed the readOnly not being applied when no onchange passed ([#9318](https://github.com/patternfly/patternfly-react/issues/9318)) ([2a53e19](https://github.com/patternfly/patternfly-react/commit/2a53e19aff3e2d3c97df0859b7afa73ca639f9f0))
+
 # [5.0.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.13...@patternfly/react-core@5.0.0-prerelease.14) (2023-06-30)
 
 ### Bug Fixes
