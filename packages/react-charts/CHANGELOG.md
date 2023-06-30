@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0-prerelease.6...@patternfly/react-charts@7.0.0-prerelease.7) (2023-06-30)
+
+### Bug Fixes
+
+- **charts:** Update chart legend tooltip spacing ([#9323](https://github.com/patternfly/patternfly-react/issues/9323)) ([77e260c](https://github.com/patternfly/patternfly-react/commit/77e260c8d51b0765dea1dadbcef691bd7a51ef20))
+
 # 7.0.0-prerelease.6 (2023-06-21)
 
 **Note:** Version bump only for package @patternfly/react-charts

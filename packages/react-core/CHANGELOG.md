@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.13...@patternfly/react-core@5.0.0-prerelease.14) (2023-06-30)
+
+### Bug Fixes
+
+- **Popover:** apply minWidth ([#9321](https://github.com/patternfly/patternfly-react/issues/9321)) ([c8fbec2](https://github.com/patternfly/patternfly-react/commit/c8fbec2c431b6f4a72aa86bb976c21a4dfb93374))
+
 # [5.0.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.12...@patternfly/react-core@5.0.0-prerelease.13) (2023-06-21)
 
 **Note:** Version bump only for package @patternfly/react-core
