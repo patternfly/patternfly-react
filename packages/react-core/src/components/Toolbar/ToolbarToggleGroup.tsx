@@ -10,6 +10,10 @@ import { formatBreakpointMods, toCamel, canUseDOM } from '../../helpers/util';
 import { PageContext } from '../Page/PageContext';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
+  /** Flag indicating when toggle group is expanded for non-managed toolbar toggle groups. */
+  isExpanded?: boolean;
+  /** Callback for toggle group click event for non-managed toolbar toggle groups. */
+  onToggle?: (event: React.MouseEvent) => void;
   /** An icon to be rendered when the toggle group has collapsed down */
   toggleIcon: React.ReactNode;
   /** Controls when filters are shown and when the toggle button is hidden. */
@@ -67,6 +71,8 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
       spaceItems,
       className,
       children,
+      isExpanded,
+      onToggle,
       ...props
     } = this.props;
 
@@ -79,64 +85,73 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
       <PageContext.Consumer>
         {({ width, getBreakpoint }) => (
           <ToolbarContext.Consumer>
-            {({ isExpanded, toggleIsExpanded }) => (
-              <ToolbarContentContext.Consumer>
-                {({ expandableContentRef, expandableContentId }) => {
-                  if (expandableContentRef.current && expandableContentRef.current.classList) {
-                    if (isExpanded) {
-                      expandableContentRef.current.classList.add(styles.modifiers.expanded);
-                    } else {
-                      expandableContentRef.current.classList.remove(styles.modifiers.expanded);
+            {({ isExpanded: managedIsExpanded, toggleIsExpanded: managedOnToggle }) => {
+              const _isExpanded = isExpanded !== undefined ? isExpanded : managedIsExpanded;
+              const _onToggle = onToggle !== undefined ? onToggle : managedOnToggle;
+
+              return (
+                <ToolbarContentContext.Consumer>
+                  {({ expandableContentRef, expandableContentId }) => {
+                    if (
+                      isExpanded === undefined &&
+                      expandableContentRef.current &&
+                      expandableContentRef.current.classList
+                    ) {
+                      if (_isExpanded) {
+                        expandableContentRef.current.classList.add(styles.modifiers.expanded);
+                      } else {
+                        expandableContentRef.current.classList.remove(styles.modifiers.expanded);
+                      }
                     }
-                  }
 
-                  const breakpointMod: {
-                    md?: 'show';
-                    lg?: 'show';
-                    xl?: 'show';
-                    '2xl'?: 'show';
-                  } = {};
-                  breakpointMod[breakpoint] = 'show';
+                    const breakpointMod: {
+                      md?: 'show';
+                      lg?: 'show';
+                      xl?: 'show';
+                      '2xl'?: 'show';
+                    } = {};
+                    breakpointMod[breakpoint] = 'show';
 
-                  return (
-                    <div
-                      className={css(
-                        styles.toolbarGroup,
-                        styles.modifiers.toggleGroup,
-                        variant &&
-                          styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
-                        formatBreakpointMods(breakpointMod, styles, '', getBreakpoint(width)),
-                        formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
-                        formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
-                        formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
-                        formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
-                        className
-                      )}
-                      {...props}
-                    >
-                      <div className={css(styles.toolbarToggle)}>
-                        <Button
-                          variant="plain"
-                          onClick={toggleIsExpanded}
-                          aria-label="Show Filters"
-                          {...(isExpanded && { 'aria-expanded': true })}
-                          aria-haspopup={isExpanded && this.isContentPopup()}
-                          aria-controls={expandableContentId}
-                        >
-                          {toggleIcon}
-                        </Button>
+                    return (
+                      <div
+                        className={css(
+                          styles.toolbarGroup,
+                          styles.modifiers.toggleGroup,
+                          variant &&
+                            styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
+                          formatBreakpointMods(breakpointMod, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
+                          className
+                        )}
+                        {...props}
+                      >
+                        <div className={css(styles.toolbarToggle)}>
+                          <Button
+                            variant="plain"
+                            onClick={_onToggle}
+                            aria-label="Show Filters"
+                            {...(_isExpanded && { 'aria-expanded': true })}
+                            aria-haspopup={_isExpanded && this.isContentPopup()}
+                            aria-controls={expandableContentId}
+                          >
+                            {toggleIcon}
+                          </Button>
+                        </div>
+                        {_isExpanded
+                          ? (ReactDOM.createPortal(
+                              children,
+                              expandableContentRef.current.firstElementChild
+                            ) as React.ReactElement)
+                          : children}
                       </div>
-                      {isExpanded
-                        ? (ReactDOM.createPortal(
-                            children,
-                            expandableContentRef.current.firstElementChild
-                          ) as React.ReactElement)
-                        : children}
-                    </div>
-                  );
-                }}
-              </ToolbarContentContext.Consumer>
-            )}
+                    );
+                  }}
+                </ToolbarContentContext.Consumer>
+              );
+            }}
           </ToolbarContext.Consumer>
         )}
       </PageContext.Consumer>

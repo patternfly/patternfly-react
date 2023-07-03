@@ -40,7 +40,6 @@ class ToolbarExpandableContent extends React.Component<ToolbarExpandableContentP
       className,
       expandableContentRef,
       chipContainerRef,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isExpanded,
       clearAllFilters,
       clearFiltersButtonText,
@@ -54,7 +53,11 @@ class ToolbarExpandableContent extends React.Component<ToolbarExpandableContentP
     };
 
     return (
-      <div className={css(styles.toolbarExpandableContent, className)} ref={expandableContentRef} {...props}>
+      <div
+        className={css(styles.toolbarExpandableContent, isExpanded && styles.modifiers.expanded, className)}
+        ref={expandableContentRef}
+        {...props}
+      >
         <ToolbarGroup />
         {numberOfFilters > 0 && (
           <ToolbarGroup className={styles.modifiers.chipContainer}>

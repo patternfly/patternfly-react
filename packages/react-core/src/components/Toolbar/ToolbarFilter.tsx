@@ -21,6 +21,8 @@ export interface ToolbarChip {
 }
 
 export interface ToolbarFilterProps extends ToolbarItemProps {
+  /** Flag indicating when toolbar toggle group is expanded for non-managed toolbar toggle groups. */
+  isExpanded?: boolean;
   /** An array of strings to be displayed as chips in the expandable content */
   chips?: (string | ToolbarChip)[];
   /** Callback passed by consumer used to close the entire chip group */
@@ -90,9 +92,11 @@ class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterSta
       chipGroupCollapsedText,
       categoryName,
       showToolbarItem,
+      isExpanded,
       ...props
     } = this.props;
-    const { isExpanded, chipGroupContentRef } = this.context;
+    const { isExpanded: managedIsExpanded, chipGroupContentRef } = this.context;
+    const _isExpanded = isExpanded !== undefined ? isExpanded : managedIsExpanded;
     const categoryKey =
       typeof categoryName !== 'string' && categoryName.hasOwnProperty('key')
         ? categoryName.key
@@ -123,7 +127,7 @@ class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterSta
       </ToolbarItem>
     ) : null;
 
-    if (!isExpanded && this.state.isMounted) {
+    if (!_isExpanded && this.state.isMounted) {
       return (
         <React.Fragment>
           {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
