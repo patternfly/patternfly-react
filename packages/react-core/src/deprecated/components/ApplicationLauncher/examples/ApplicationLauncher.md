@@ -14,7 +14,7 @@ import { Link } from '@reach/router';
 import pfLogoSm from './pf-logo-small.svg';
 
 Note: Application launcher is built on dropdown, for extended API go to [dropdown](/components/menus/dropdown) documentation.
-To add a tooltip, use the `tooltip` prop and optionally add more tooltip props by using `tooltipProps`. For more tooltip information go to [Tooltip](/components/tooltip).
+To add a tooltip, use the `tooltip` prop and optionally add more tooltip props by using `tooltipProps`. For more tooltip information go to [tooltip](/components/tooltip).
 
 ## Examples
 
