@@ -202,7 +202,7 @@ export const Test: React.FunctionComponent = () => {
   );
 
   return (
-    <Toolbar id="toolbar-consumer-managed-toggle-groups" className="pf-m-toggle-group-container">
+    <Toolbar id="toolbar-multiple-toggle-groups" className="pf-m-toggle-group-container">
       <ToolbarContent isExpanded={isExpanded || isExpanded2}>
         <ToolbarToggleGroup
           isExpanded={isExpanded}
