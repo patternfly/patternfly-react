@@ -653,7 +653,9 @@ class CardViewBasic extends React.Component {
               {filtered.map((product, key) => (
                 <Card
                   isCompact
+                  isClickable
                   isSelectable
+                  isSelected={selectedItems.includes(product.id)}
                   key={product.name}
                   id={product.name.replace(/ /g, '-')}
                   onKeyDown={(e) => this.onKeyDown(e, product.id)}
@@ -671,7 +673,6 @@ class CardViewBasic extends React.Component {
                                 ref={toggleRef}
                                 aria-label={`${product.name} actions`}
                                 variant="plain"
-                                style={{ zIndex: "1" }}
                                 onClick={(e) => {this.onCardKebabDropdownToggle(key, e)}}
                                 isExpanded={this.state[key]}
                               >
