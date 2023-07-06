@@ -534,9 +534,9 @@ class PrimaryDetailCardView extends React.Component {
             id={'card-view-' + key}
             onKeyDown={this.onKeyDown}
             onClick={this.onCardClick}
-            onSelectableInputChange={this.onChange}
-            isSelected={activeCard === 'card-view-' + key}
+            isClickable
             isSelectable
+            isSelected={activeCard?.charAt(activeCard.length - 1) === key.toString()}
           >
             <CardHeader
               actions={{
@@ -553,7 +553,6 @@ class PrimaryDetailCardView extends React.Component {
                           isExpanded={this.state[key] || false}
                           aria-label={`${product.name} actions`}
                           variant="plain"
-                          style={{ zIndex: "1" }}
                           onClick={() => this.onCardKebabDropdownToggle(key)}
                         >
                           <EllipsisVIcon aria-hidden="true" />
@@ -570,7 +569,7 @@ class PrimaryDetailCardView extends React.Component {
                   </>
                 )
               }}
-              selectableActions={{ isChecked: selectedItems.includes(product.id), name: `check-${product.id}` }}
+              selectableActions={{ isChecked: selectedItems.includes(product.id), selectableActionId: `selectable-actions-item-${product.id}`, name: `check-${product.id}`, onChange: this.state.onCardClick }}
             >
               <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
             </CardHeader>
