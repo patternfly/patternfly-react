@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.16...@patternfly/react-core@5.0.0-prerelease.17) (2023-07-06)
+
+### Bug Fixes
+
+- **SelectDeprecated:** use textinput component for typeahead ([#9317](https://github.com/patternfly/patternfly-react/issues/9317)) ([4199e4a](https://github.com/patternfly/patternfly-react/commit/4199e4abcd7478c8496ac0176913eaae27f5c711))
+
 # [5.0.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.15...@patternfly/react-core@5.0.0-prerelease.16) (2023-07-06)
 
 **Note:** Version bump only for package @patternfly/react-core
