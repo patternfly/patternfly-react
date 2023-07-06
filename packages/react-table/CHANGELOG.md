@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-prerelease.18 (2023-07-06)
+
+### Bug Fixes
+
+- **TextInput,TextArea, FormSelect:** changed form control div to a span ([#9334](https://github.com/patternfly/patternfly-react/issues/9334)) ([fe561f6](https://github.com/patternfly/patternfly-react/commit/fe561f6108b716750944b26b92d93015195d0751))
+
 # [5.0.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-prerelease.16...@patternfly/react-table@5.0.0-prerelease.17) (2023-07-06)
 
 **Note:** Version bump only for package @patternfly/react-table
