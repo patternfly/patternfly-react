@@ -123,7 +123,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
 
     return (
-      <div
+      <span
         className={css(
           styles.formControl,
           readOnlyVariant && styles.modifiers.readonly,
@@ -149,7 +149,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
             <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />
           </div>
         )}
-      </div>
+      </span>
     );
   }
 }

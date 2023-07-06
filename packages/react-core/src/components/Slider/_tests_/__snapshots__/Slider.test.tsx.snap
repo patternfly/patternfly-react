@@ -56,7 +56,7 @@ exports[`slider renders continuous slider 1`] = `
     <div
       class="pf-v5-c-slider__value"
     >
-      <div
+      <span
         class="pf-v5-c-form-control"
       >
         <input
@@ -68,7 +68,7 @@ exports[`slider renders continuous slider 1`] = `
           type="number"
           value="50"
         />
-      </div>
+      </span>
     </div>
   </div>
 </DocumentFragment>
@@ -250,7 +250,7 @@ exports[`slider renders discrete slider 1`] = `
     <div
       class="pf-v5-c-slider__value"
     >
-      <div
+      <span
         class="pf-v5-c-form-control"
       >
         <input
@@ -262,7 +262,7 @@ exports[`slider renders discrete slider 1`] = `
           type="number"
           value="50"
         />
-      </div>
+      </span>
     </div>
   </div>
 </DocumentFragment>
@@ -422,7 +422,7 @@ exports[`slider renders slider with input 1`] = `
         <div
           class="pf-v5-c-input-group__item pf-m-fill"
         >
-          <div
+          <span
             class="pf-v5-c-form-control"
           >
             <input
@@ -434,7 +434,7 @@ exports[`slider renders slider with input 1`] = `
               type="number"
               value="50"
             />
-          </div>
+          </span>
         </div>
         <div
           class="pf-v5-c-input-group__item pf-m-box"
@@ -501,7 +501,7 @@ exports[`slider renders slider with input above thumb 1`] = `
           <div
             class="pf-v5-c-input-group__item pf-m-fill"
           >
-            <div
+            <span
               class="pf-v5-c-form-control"
             >
               <input
@@ -513,7 +513,7 @@ exports[`slider renders slider with input above thumb 1`] = `
                 type="number"
                 value="50"
               />
-            </div>
+            </span>
           </div>
           <div
             class="pf-v5-c-input-group__item pf-m-box"

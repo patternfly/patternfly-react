@@ -76,7 +76,7 @@ export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: 
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
 
     return (
-      <div
+      <span
         className={css(
           styles.formControl,
           isDisabled && styles.modifiers.disabled,
@@ -102,7 +102,7 @@ export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: 
             <CaretDownIcon />
           </div>
         </div>
-      </div>
+      </span>
     );
   }
 }

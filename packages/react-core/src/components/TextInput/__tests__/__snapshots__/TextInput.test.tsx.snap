@@ -2,7 +2,7 @@
 
 exports[`TextInput default read only text input 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control pf-m-readonly"
   >
     <input
@@ -15,13 +15,13 @@ exports[`TextInput default read only text input 1`] = `
       type="text"
       value="read only default"
     />
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`TextInput disabled text input 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control pf-m-disabled"
   >
     <input
@@ -34,13 +34,13 @@ exports[`TextInput disabled text input 1`] = `
       type="text"
       value=""
     />
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`TextInput invalid text input 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control pf-m-error"
   >
     <input
@@ -73,13 +73,13 @@ exports[`TextInput invalid text input 1`] = `
         </svg>
       </div>
     </div>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`TextInput plain read only text input 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control pf-m-readonly pf-m-plain"
   >
     <input
@@ -92,13 +92,13 @@ exports[`TextInput plain read only text input 1`] = `
       type="text"
       value="read only plain"
     />
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`TextInput read only text input using isReadOnly 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control"
   >
     <input
@@ -110,13 +110,13 @@ exports[`TextInput read only text input using isReadOnly 1`] = `
       type="text"
       value="read only"
     />
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`TextInput simple text input 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control"
   >
     <input
@@ -128,13 +128,13 @@ exports[`TextInput simple text input 1`] = `
       type="text"
       value="test input"
     />
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`TextInput validated text input error 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control pf-m-error"
   >
     <input
@@ -167,6 +167,6 @@ exports[`TextInput validated text input error 1`] = `
         </svg>
       </div>
     </div>
-  </div>
+  </span>
 </DocumentFragment>
 `;

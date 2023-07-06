@@ -2,7 +2,7 @@
 
 exports[`FormSelect Disabled FormSelect input  1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control pf-m-disabled"
   >
     <select
@@ -41,13 +41,13 @@ exports[`FormSelect Disabled FormSelect input  1`] = `
         </svg>
       </div>
     </div>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`FormSelect FormSelect input with aria-label does not generate console error 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control"
   >
     <select
@@ -85,13 +85,13 @@ exports[`FormSelect FormSelect input with aria-label does not generate console e
         </svg>
       </div>
     </div>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`FormSelect FormSelect input with id does not generate console error 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control"
   >
     <select
@@ -130,13 +130,13 @@ exports[`FormSelect FormSelect input with id does not generate console error 1`]
         </svg>
       </div>
     </div>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`FormSelect FormSelect input with no aria-label or id generates console error 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control"
   >
     <select
@@ -173,13 +173,13 @@ exports[`FormSelect FormSelect input with no aria-label or id generates console 
         </svg>
       </div>
     </div>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`FormSelect Grouped FormSelect input 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control"
   >
     <select
@@ -263,13 +263,13 @@ exports[`FormSelect Grouped FormSelect input 1`] = `
         </svg>
       </div>
     </div>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`FormSelect Simple FormSelect input 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control"
   >
     <select
@@ -345,13 +345,13 @@ exports[`FormSelect Simple FormSelect input 1`] = `
         </svg>
       </div>
     </div>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`FormSelect invalid FormSelect input 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control pf-m-error"
   >
     <select
@@ -406,13 +406,13 @@ exports[`FormSelect invalid FormSelect input 1`] = `
         </svg>
       </div>
     </div>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`FormSelect validated success FormSelect input 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control pf-m-success"
   >
     <select
@@ -467,13 +467,13 @@ exports[`FormSelect validated success FormSelect input 1`] = `
         </svg>
       </div>
     </div>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`FormSelect validated warning FormSelect input 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control pf-m-warning"
   >
     <select
@@ -528,6 +528,6 @@ exports[`FormSelect validated warning FormSelect input 1`] = `
         </svg>
       </div>
     </div>
-  </div>
+  </span>
 </DocumentFragment>
 `;

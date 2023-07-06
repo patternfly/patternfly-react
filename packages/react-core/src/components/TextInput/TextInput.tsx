@@ -190,7 +190,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
 
     return (
-      <div
+      <span
         className={css(
           styles.formControl,
           readOnlyVariant && styles.modifiers.readonly,
@@ -223,7 +223,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
             {hasStatusIcon && <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />}
           </div>
         )}
-      </div>
+      </span>
     );
   }
 

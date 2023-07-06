@@ -43,7 +43,7 @@ exports[`numberInput disables lower threshold 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
@@ -56,7 +56,7 @@ exports[`numberInput disables lower threshold 1`] = `
             type="number"
             value="0"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -136,7 +136,7 @@ exports[`numberInput disables upper threshold 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
@@ -149,7 +149,7 @@ exports[`numberInput disables upper threshold 1`] = `
             type="number"
             value="100"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -231,7 +231,7 @@ exports[`numberInput passes button props successfully 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
@@ -244,7 +244,7 @@ exports[`numberInput passes button props successfully 1`] = `
             type="number"
             value="5"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -325,7 +325,7 @@ exports[`numberInput passes input props successfully 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -338,7 +338,7 @@ exports[`numberInput passes input props successfully 1`] = `
             type="number"
             value="5"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -419,7 +419,7 @@ exports[`numberInput renders custom width 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
@@ -432,7 +432,7 @@ exports[`numberInput renders custom width 1`] = `
             type="number"
             value="5"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -513,7 +513,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
@@ -526,7 +526,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
             type="number"
             value="0"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -607,7 +607,7 @@ exports[`numberInput renders disabled 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly pf-m-disabled"
         >
           <input
@@ -621,7 +621,7 @@ exports[`numberInput renders disabled 1`] = `
             type="number"
             value="90"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -702,7 +702,7 @@ exports[`numberInput renders error validated 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly pf-m-error"
         >
           <input
@@ -736,7 +736,7 @@ exports[`numberInput renders error validated 1`] = `
               </svg>
             </div>
           </div>
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -816,7 +816,7 @@ exports[`numberInput renders success validated 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly pf-m-success"
         >
           <input
@@ -850,7 +850,7 @@ exports[`numberInput renders success validated 1`] = `
               </svg>
             </div>
           </div>
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -935,7 +935,7 @@ exports[`numberInput renders unit & position 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
@@ -948,7 +948,7 @@ exports[`numberInput renders unit & position 1`] = `
             type="number"
             value="5"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -1028,7 +1028,7 @@ exports[`numberInput renders unit 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
@@ -1041,7 +1041,7 @@ exports[`numberInput renders unit 1`] = `
             type="number"
             value="5"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -1126,7 +1126,7 @@ exports[`numberInput renders value 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
@@ -1139,7 +1139,7 @@ exports[`numberInput renders value 1`] = `
             type="number"
             value="90"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
@@ -1219,7 +1219,7 @@ exports[`numberInput renders warning validated 1`] = `
       <div
         class="pf-v5-c-input-group__item"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-readonly pf-m-warning"
         >
           <input
@@ -1253,7 +1253,7 @@ exports[`numberInput renders warning validated 1`] = `
               </svg>
             </div>
           </div>
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-input-group__item"
