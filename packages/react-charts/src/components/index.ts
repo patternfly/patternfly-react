@@ -37,4 +37,4 @@ export * from './ChartVoronoiContainer/ChartVoronoiContainer';
 
 export { createContainer } from './ChartUtils/chart-container';
 export { getInteractiveLegendEvents, getInteractiveLegendItemStyles } from './ChartUtils/chart-interactive-legend';
-export { getCustomTheme, getTheme } from './ChartUtils/chart-theme';
+export { getCustomTheme, getTheme, getThemeColors } from './ChartUtils/chart-theme';
