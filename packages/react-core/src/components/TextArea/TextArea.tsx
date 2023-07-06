@@ -145,9 +145,9 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
           {...props}
         />
         {hasStatusIcon && (
-          <div className={css(styles.formControlUtilities)}>
+          <span className={css(styles.formControlUtilities)}>
             <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />
-          </div>
+          </span>
         )}
       </span>
     );
