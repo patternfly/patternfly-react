@@ -1,8 +1,7 @@
 import React from 'react';
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Tooltip } from '../Tooltip';
 import userEvent from '@testing-library/user-event';
-import { act } from 'react-dom/test-utils';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 
 jest.mock('../../../helpers/Popper/Popper');
