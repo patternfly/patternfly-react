@@ -15,7 +15,7 @@ exports[`With popover opened 1`] = `
         <div
           class="pf-v5-c-input-group__item pf-m-fill"
         >
-          <div
+          <span
             class="pf-v5-c-form-control"
           >
             <input
@@ -28,7 +28,7 @@ exports[`With popover opened 1`] = `
               type="text"
               value=""
             />
-          </div>
+          </span>
         </div>
         <div
           class="pf-v5-c-input-group__item"
@@ -162,7 +162,7 @@ exports[`With popover opened 1`] = `
                   <div
                     class="pf-v5-c-calendar-month__header-year"
                   >
-                    <div
+                    <span
                       class="pf-v5-c-form-control"
                     >
                       <input
@@ -174,7 +174,7 @@ exports[`With popover opened 1`] = `
                         type="number"
                         value="1969"
                       />
-                    </div>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -786,7 +786,7 @@ exports[`disabled date picker 1`] = `
         <div
           class="pf-v5-c-input-group__item pf-m-fill"
         >
-          <div
+          <span
             class="pf-v5-c-form-control pf-m-disabled"
           >
             <input
@@ -800,7 +800,7 @@ exports[`disabled date picker 1`] = `
               type="text"
               value="2020-11-20"
             />
-          </div>
+          </span>
         </div>
         <div
           class="pf-v5-c-input-group__item"

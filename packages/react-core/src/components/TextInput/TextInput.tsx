@@ -190,7 +190,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
 
     return (
-      <div
+      <span
         className={css(
           styles.formControl,
           readOnlyVariant && styles.modifiers.readonly,
@@ -218,12 +218,12 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
           {...getOUIAProps(TextInput.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         />
         {(customIcon || hasStatusIcon) && (
-          <div className={css(styles.formControlUtilities)}>
+          <span className={css(styles.formControlUtilities)}>
             {customIcon && <FormControlIcon customIcon={customIcon} />}
             {hasStatusIcon && <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />}
-          </div>
+          </span>
         )}
-      </div>
+      </span>
     );
   }
 

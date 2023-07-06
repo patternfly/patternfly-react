@@ -306,7 +306,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 <div
                   class="pf-v5-c-form__group-control"
                 >
-                  <div
+                  <span
                     class="pf-v5-c-form-control"
                   >
                     <input
@@ -318,7 +318,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                       type="text"
                       value="player"
                     />
-                  </div>
+                  </span>
                 </div>
               </div>
               <div
@@ -342,7 +342,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 <div
                   class="pf-v5-c-form__group-control"
                 >
-                  <div
+                  <span
                     class="pf-v5-c-form-control"
                   >
                     <input
@@ -354,7 +354,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                       type="text"
                       value="john"
                     />
-                  </div>
+                  </span>
                 </div>
               </div>
               <div
@@ -378,7 +378,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 <div
                   class="pf-v5-c-form__group-control"
                 >
-                  <div
+                  <span
                     class="pf-v5-c-form-control"
                   >
                     <input
@@ -390,7 +390,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                       type="text"
                       value=""
                     />
-                  </div>
+                  </span>
                 </div>
               </div>
               <div

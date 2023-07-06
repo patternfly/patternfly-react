@@ -24,8 +24,8 @@ export const FormControlIcon = ({ status, customIcon, className, ...props }: For
   const StatusIcon = status && statusIcons[status];
 
   return (
-    <div className={css(styles.formControlIcon, status && styles.modifiers.status, className)} {...props}>
+    <span className={css(styles.formControlIcon, status && styles.modifiers.status, className)} {...props}>
       {customIcon || <StatusIcon />}
-    </div>
+    </span>
   );
 };
