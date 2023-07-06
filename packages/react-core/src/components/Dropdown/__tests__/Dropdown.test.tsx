@@ -116,7 +116,7 @@ test('passes zIndex to popper', () => {
 test('does not pass isOpen to popper by default', () => {
   render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
 
-  expect(screen.getByText('isOpen: undefined')).toBeVisible();
+  expect(screen.getByText('isVisible: undefined')).toBeVisible();
 });
 
 test('passes isOpen to popper', () => {
@@ -126,7 +126,7 @@ test('passes isOpen to popper', () => {
     </Dropdown>
   );
 
-  expect(screen.getByText('isOpen: true')).toBeVisible();
+  expect(screen.getByText('isVisible: true')).toBeVisible();
 });
 
 /* no default tests for callback props
