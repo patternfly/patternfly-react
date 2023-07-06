@@ -33,6 +33,8 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   clearFiltersButtonText?: string;
   /** Id of the parent Toolbar component */
   toolbarId?: string;
+  /** Custom expandable content for the toolbar, for non-managed multiple toolbar toggle groups. */
+  expandableContent?: React.ReactNode;
 }
 
 class ToolbarContent extends React.Component<ToolbarContentProps> {
@@ -58,6 +60,7 @@ class ToolbarContent extends React.Component<ToolbarContentProps> {
       showClearFiltersButton,
       clearFiltersButtonText,
       alignSelf,
+      expandableContent,
       ...props
     } = this.props;
 
@@ -103,15 +106,19 @@ class ToolbarContent extends React.Component<ToolbarContentProps> {
                     >
                       {children}
                     </div>
-                    <ToolbarExpandableContent
-                      id={expandableContentId}
-                      isExpanded={isExpanded}
-                      expandableContentRef={this.expandableContentRef}
-                      chipContainerRef={this.chipContainerRef}
-                      clearAllFilters={clearAllFilters || clearAllFiltersContext}
-                      showClearFiltersButton={showClearFiltersButton || showClearFiltersButtonContext}
-                      clearFiltersButtonText={clearFiltersButtonText || clearFiltersButtonContext}
-                    />
+                    {expandableContent ? (
+                      expandableContent
+                    ) : (
+                      <ToolbarExpandableContent
+                        id={expandableContentId}
+                        isExpanded={isExpanded}
+                        expandableContentRef={this.expandableContentRef}
+                        chipContainerRef={this.chipContainerRef}
+                        clearAllFilters={clearAllFilters || clearAllFiltersContext}
+                        showClearFiltersButton={showClearFiltersButton || showClearFiltersButtonContext}
+                        clearFiltersButtonText={clearFiltersButtonText || clearFiltersButtonContext}
+                      />
+                    )}
                   </ToolbarContentContext.Provider>
                 );
               }}

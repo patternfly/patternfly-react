@@ -12,33 +12,50 @@ import {
   SelectList,
   SelectOption,
   ToolbarFilter,
+  ToolbarExpandableContent,
   Badge
 } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 export const Test: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const [isExpanded2, setIsExpanded2] = React.useState(false);
+  const statusExpandableContentRef = React.useRef<HTMLDivElement>();
+  const statusChipContainerRef = React.useRef<HTMLDivElement>();
+  const riskExpandableContentRef = React.useRef<HTMLDivElement>();
+  const riskChipContainerRef = React.useRef<HTMLDivElement>();
 
+  const [isStatusGroupExpanded, setIsStatusGroupExpanded] = React.useState(false);
+  const [isRiskGroupExpanded, setIsRiskGroupExpanded] = React.useState(false);
+
+  const [isStatusMenuExpanded, setIsStatusExpanded] = React.useState(false);
+  const [isRiskMenuExpanded, setIsRiskExpanded] = React.useState(false);
   const [inputValue, setInputValue] = React.useState('');
   const [filters, setFilters] = React.useState({
     risk: ['Low'],
     status: ['New', 'Pending']
   });
 
-  const [isStatusExpanded, setIsStatusExpanded] = React.useState(false);
-  const [isRiskExpanded, setIsRiskExpanded] = React.useState(false);
+  const closeToggleGroups = () => {
+    setIsStatusGroupExpanded(false);
+    setIsRiskGroupExpanded(false);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('resize', closeToggleGroups); // Resize observer to toggle off expand groups is required to properly reformat toolbar when growing
+    return () => {
+      window.removeEventListener('resize', closeToggleGroups);
+    };
+  }, []);
 
   const onInputChange = (newValue: string) => {
     setInputValue(newValue);
   };
 
   const onStatusToggle = () => {
-    setIsStatusExpanded(!isStatusExpanded);
+    setIsStatusExpanded(!isStatusMenuExpanded);
   };
 
   const onRiskToggle = () => {
-    setIsRiskExpanded(!isRiskExpanded);
+    setIsRiskExpanded(!isRiskMenuExpanded);
   };
 
   const onSelect = (type: string, event: React.MouseEvent | React.ChangeEvent | undefined, selection: string) => {
@@ -78,43 +95,7 @@ export const Test: React.FunctionComponent = () => {
     }
   };
 
-  const statusMenuItems = (
-    <SelectList>
-      <SelectOption hasCheckbox key="statusNew" value="New" isSelected={filters.status.includes('New')}>
-        New
-      </SelectOption>
-      <SelectOption hasCheckbox key="statusPending" value="Pending" isSelected={filters.status.includes('Pending')}>
-        Pending
-      </SelectOption>
-      <SelectOption hasCheckbox key="statusRunning" value="Running" isSelected={filters.status.includes('Running')}>
-        Running
-      </SelectOption>
-      <SelectOption
-        hasCheckbox
-        key="statusCancelled"
-        value="Cancelled"
-        isSelected={filters.status.includes('Cancelled')}
-      >
-        Cancelled
-      </SelectOption>
-    </SelectList>
-  );
-
-  const riskMenuItems = (
-    <SelectList>
-      <SelectOption hasCheckbox key="riskLow" value="Low" isSelected={filters.risk.includes('Low')}>
-        Low
-      </SelectOption>
-      <SelectOption hasCheckbox key="riskMedium" value="Medium" isSelected={filters.risk.includes('Medium')}>
-        Medium
-      </SelectOption>
-      <SelectOption hasCheckbox key="riskHigh" value="High" isSelected={filters.risk.includes('High')}>
-        High
-      </SelectOption>
-    </SelectList>
-  );
-
-  const toggleGroupItems = (
+  const statusToggleGroupItems = (
     <React.Fragment>
       <ToolbarItem variant="search-filter">
         <SearchInput
@@ -132,7 +113,8 @@ export const Test: React.FunctionComponent = () => {
           deleteChip={(category, chip) => onDelete(category as string, chip as string)}
           deleteChipGroup={(category) => onDeleteGroup(category as string)}
           categoryName="Status"
-          isExpanded={isExpanded}
+          isExpanded={isStatusGroupExpanded}
+          expandableChipContainerRef={statusChipContainerRef} // Required to link the toolbar filter chip group to the custom expandable group
         >
           <Select
             aria-label="Status"
@@ -141,7 +123,7 @@ export const Test: React.FunctionComponent = () => {
               <MenuToggle
                 ref={toggleRef}
                 onClick={onStatusToggle}
-                isExpanded={isStatusExpanded}
+                isExpanded={isStatusMenuExpanded}
                 style={
                   {
                     width: '140px'
@@ -154,23 +136,52 @@ export const Test: React.FunctionComponent = () => {
             )}
             onSelect={(event, selection) => onStatusSelect(event, selection as string)}
             selected={filters.status}
-            isOpen={isStatusExpanded}
+            isOpen={isStatusMenuExpanded}
             onOpenChange={(isOpen) => setIsStatusExpanded(isOpen)}
           >
-            {statusMenuItems}
+            <SelectList>
+              <SelectOption hasCheckbox key="statusNew" value="New" isSelected={filters.status.includes('New')}>
+                New
+              </SelectOption>
+              <SelectOption
+                hasCheckbox
+                key="statusPending"
+                value="Pending"
+                isSelected={filters.status.includes('Pending')}
+              >
+                Pending
+              </SelectOption>
+              <SelectOption
+                hasCheckbox
+                key="statusRunning"
+                value="Running"
+                isSelected={filters.status.includes('Running')}
+              >
+                Running
+              </SelectOption>
+              <SelectOption
+                hasCheckbox
+                key="statusCancelled"
+                value="Cancelled"
+                isSelected={filters.status.includes('Cancelled')}
+              >
+                Cancelled
+              </SelectOption>
+            </SelectList>
           </Select>
         </ToolbarFilter>
       </ToolbarGroup>
     </React.Fragment>
   );
 
-  const toggleGroup2Items = (
+  const riskToggleGroupItems = (
     <ToolbarGroup variant="filter-group">
       <ToolbarFilter
         chips={filters.risk}
         deleteChip={(category, chip) => onDelete(category as string, chip as string)}
         categoryName="Risk"
-        isExpanded={isExpanded2}
+        isExpanded={isRiskGroupExpanded}
+        expandableChipContainerRef={riskChipContainerRef} // Required to link the toolbar filter chip group to the custom expandable group
       >
         <Select
           aria-label="Risk"
@@ -179,7 +190,7 @@ export const Test: React.FunctionComponent = () => {
             <MenuToggle
               ref={toggleRef}
               onClick={onRiskToggle}
-              isExpanded={isRiskExpanded}
+              isExpanded={isRiskMenuExpanded}
               style={
                 {
                   width: '140px'
@@ -192,33 +203,76 @@ export const Test: React.FunctionComponent = () => {
           )}
           onSelect={(event, selection) => onRiskSelect(event, selection as string)}
           selected={filters.risk}
-          isOpen={isRiskExpanded}
+          isOpen={isRiskMenuExpanded}
           onOpenChange={(isOpen) => setIsRiskExpanded(isOpen)}
         >
-          {riskMenuItems}
+          <SelectList>
+            <SelectOption hasCheckbox key="riskLow" value="Low" isSelected={filters.risk.includes('Low')}>
+              Low
+            </SelectOption>
+            <SelectOption hasCheckbox key="riskMedium" value="Medium" isSelected={filters.risk.includes('Medium')}>
+              Medium
+            </SelectOption>
+            <SelectOption hasCheckbox key="riskHigh" value="High" isSelected={filters.risk.includes('High')}>
+              High
+            </SelectOption>
+          </SelectList>
         </Select>
       </ToolbarFilter>
     </ToolbarGroup>
   );
 
+  const toggleExpandGroups = (
+    <>
+      <ToolbarExpandableContent // Expandable content group for the first toggle group
+        id={'expandable-1'}
+        isExpanded={isStatusGroupExpanded}
+        expandableContentRef={statusExpandableContentRef}
+        chipContainerRef={statusChipContainerRef}
+        showClearFiltersButton
+        clearAllFilters={() => onDeleteGroup('Status')}
+        clearFiltersButtonText="Clear status filter"
+      />
+      <ToolbarExpandableContent // Expandable content group for the second toggle group
+        id={'expandable-2'}
+        isExpanded={isRiskGroupExpanded}
+        expandableContentRef={riskExpandableContentRef}
+        chipContainerRef={riskChipContainerRef}
+        showClearFiltersButton
+        clearAllFilters={() => onDeleteGroup('Risk')}
+        clearFiltersButtonText="Clear risk filter"
+      />
+    </>
+  );
+
   return (
     <Toolbar id="toolbar-multiple-toggle-groups" className="pf-m-toggle-group-container">
-      <ToolbarContent isExpanded={isExpanded || isExpanded2}>
+      <ToolbarContent
+        expandableContent={toggleExpandGroups} // Required to bypass default expandable content div
+      >
         <ToolbarToggleGroup
-          isExpanded={isExpanded}
-          onToggle={() => setIsExpanded(!isExpanded)}
+          isExpanded={isStatusGroupExpanded} // Required to control expanded state
+          onToggle={() => {
+            setIsStatusGroupExpanded(!isStatusGroupExpanded);
+            setIsRiskGroupExpanded(false);
+          }} // Required to control expanded state
+          expandableContentRef={statusExpandableContentRef} // Required to link the toggle group to a specific expandable content group
           toggleIcon={<FilterIcon />}
           breakpoint="md"
         >
-          {toggleGroupItems}
+          {statusToggleGroupItems}
         </ToolbarToggleGroup>
         <ToolbarToggleGroup
-          isExpanded={isExpanded2}
-          onToggle={() => setIsExpanded2(!isExpanded2)}
+          isExpanded={isRiskGroupExpanded} // Required to control expanded state
+          onToggle={() => {
+            setIsRiskGroupExpanded(!isRiskGroupExpanded);
+            setIsStatusGroupExpanded(false);
+          }} // Required to control expanded state
+          expandableContentRef={riskExpandableContentRef} // Required to link the toggle group to a specific expandable content group
           toggleIcon={<FilterIcon />}
           breakpoint="xl"
         >
-          {toggleGroup2Items}
+          {riskToggleGroupItems}
         </ToolbarToggleGroup>
       </ToolbarContent>
     </Toolbar>

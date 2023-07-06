@@ -50,10 +50,13 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
     xl?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
     '2xl'?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
   };
+  /** Reference to a custom expandable content group, for non-managed multiple toolbar toggle groups. */
+  expandableContentRef?: React.RefObject<any>;
 }
 
 class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
   static displayName = 'ToolbarToggleGroup';
+
   isContentPopup = () => {
     const viewportSize = canUseDOM ? window.innerWidth : 1200;
     const lgBreakpointValue = parseInt(globalBreakpointLg.value);
@@ -72,6 +75,7 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
       className,
       children,
       isExpanded,
+      expandableContentRef,
       onToggle,
       ...props
     } = this.props;
@@ -91,16 +95,19 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
 
               return (
                 <ToolbarContentContext.Consumer>
-                  {({ expandableContentRef, expandableContentId }) => {
+                  {({ expandableContentRef: managedExpandableContentRef, expandableContentId }) => {
+                    const _contentRef =
+                      expandableContentRef !== undefined ? expandableContentRef : managedExpandableContentRef;
+
                     if (
                       isExpanded === undefined &&
-                      expandableContentRef.current &&
-                      expandableContentRef.current.classList
+                      managedExpandableContentRef.current &&
+                      managedExpandableContentRef.current.classList
                     ) {
                       if (_isExpanded) {
-                        expandableContentRef.current.classList.add(styles.modifiers.expanded);
+                        managedExpandableContentRef.current.classList.add(styles.modifiers.expanded);
                       } else {
-                        expandableContentRef.current.classList.remove(styles.modifiers.expanded);
+                        managedExpandableContentRef.current.classList.remove(styles.modifiers.expanded);
                       }
                     }
 
@@ -143,7 +150,7 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
                         {_isExpanded
                           ? (ReactDOM.createPortal(
                               children,
-                              expandableContentRef.current.firstElementChild
+                              _contentRef.current.firstElementChild
                             ) as React.ReactElement)
                           : children}
                       </div>

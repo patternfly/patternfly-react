@@ -39,6 +39,8 @@ export interface ToolbarFilterProps extends ToolbarItemProps {
   categoryName: string | ToolbarChipGroup;
   /** Flag to show the toolbar item */
   showToolbarItem?: boolean;
+  /** Reference to a chip container created with a custom expandable content group, for non-managed multiple toolbar toggle groups. */
+  expandableChipContainerRef?: React.RefObject<HTMLDivElement>;
 }
 
 interface ToolbarFilterState {
@@ -93,6 +95,7 @@ class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterSta
       categoryName,
       showToolbarItem,
       isExpanded,
+      expandableChipContainerRef,
       ...props
     } = this.props;
     const { isExpanded: managedIsExpanded, chipGroupContentRef } = this.context;
@@ -142,6 +145,9 @@ class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterSta
           <React.Fragment>
             {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
             {chipContainerRef.current && ReactDOM.createPortal(chipGroup, chipContainerRef.current)}
+            {expandableChipContainerRef &&
+              expandableChipContainerRef.current &&
+              ReactDOM.createPortal(chipGroup, expandableChipContainerRef.current)}
           </React.Fragment>
         )}
       </ToolbarContentContext.Consumer>
