@@ -1,6 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { Tooltip } from '../Tooltip';
+import userEvent from '@testing-library/user-event';
+import { act } from 'react-dom/test-utils';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 
 jest.mock('../../../helpers/Popper/Popper');
@@ -87,6 +89,54 @@ test('Renders without aria-labelledby or aria-describedby on trigger when aria="
   await screen.findByRole('tooltip');
   expect(screen.getByRole('button')).not.toHaveAccessibleName('Test content');
   expect(screen.getByRole('button')).not.toHaveAccessibleDescription('Test content');
+});
+
+test('Does not call onTooltipHidden when not passed', async () => {
+  const onTooltipHiddenMock = jest.fn();
+  const user = userEvent.setup();
+
+  const TooltipCallback = () => {
+    const [isVisible, setIsVisible] = React.useState(false);
+
+    return (
+      <Tooltip trigger="manual" isVisible={isVisible} content="Test content">
+        <button onClick={() => setIsVisible(!isVisible)}>Toggle</button>
+      </Tooltip>
+    );
+  };
+  render(<TooltipCallback />);
+
+  await user.click(screen.getByRole('button'));
+  await screen.findByRole('tooltip');
+  expect(onTooltipHiddenMock).not.toHaveBeenCalled();
+
+  await user.click(screen.getByRole('button'));
+  await screen.findByText('isVisible: false');
+  expect(onTooltipHiddenMock).not.toHaveBeenCalled();
+});
+
+test('Calls onTooltipHidden when passed', async () => {
+  const onTooltipHiddenMock = jest.fn();
+  const user = userEvent.setup();
+
+  const TooltipCallback = () => {
+    const [isVisible, setIsVisible] = React.useState(false);
+
+    return (
+      <Tooltip trigger="manual" isVisible={isVisible} onTooltipHidden={onTooltipHiddenMock} content="Test content">
+        <button onClick={() => setIsVisible(!isVisible)}>Toggle</button>
+      </Tooltip>
+    );
+  };
+  render(<TooltipCallback />);
+
+  await user.click(screen.getByRole('button'));
+  await screen.findByRole('tooltip');
+  expect(onTooltipHiddenMock).not.toHaveBeenCalled();
+
+  await user.click(screen.getByRole('button'));
+  await screen.findByText('isVisible: false');
+  expect(onTooltipHiddenMock).toHaveBeenCalled();
 });
 
 test('Does not pass isVisible to Popper by default', async () => {
