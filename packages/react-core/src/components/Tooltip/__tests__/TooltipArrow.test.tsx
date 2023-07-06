@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { render, screen } from '@testing-library/react';
-
 import { TooltipArrow } from '../TooltipArrow';
+import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 
 test('Renders without children', () => {
   render(<TooltipArrow data-testid="tooltipArrow" />);
@@ -13,7 +12,7 @@ test('Renders without children', () => {
 test('Renders with class name pf-v5-c-tooltip__arrow by default', () => {
   render(<TooltipArrow data-testid="tooltipArrow" />);
 
-  expect(screen.getByTestId('tooltipArrow')).toHaveClass('pf-v5-c-tooltip__arrow');
+  expect(screen.getByTestId('tooltipArrow')).toHaveClass(styles.tooltipArrow);
 });
 
 test('Renders with custom class names provided via prop', () => {

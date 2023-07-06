@@ -1,28 +1,15 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { Tooltip } from '../Tooltip';
+import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 
 jest.mock('../../../helpers/Popper/Popper');
-
-test('Does not render by default', () => {
-  render(<Tooltip content="Test content" />);
-
-  expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
-});
-
-test('Renders when isVisible is true', async () => {
-  render(<Tooltip isVisible content="Test content" />);
-
-  const tooltip = await screen.findByRole('tooltip');
-  expect(tooltip).toBeVisible();
-});
 
 test('Renders with class name pf-v5-c-tooltip by default', async () => {
   render(<Tooltip isVisible content="Test content" />);
 
   const tooltip = await screen.findByRole('tooltip');
-  expect(tooltip).toHaveClass('pf-v5-c-tooltip');
+  expect(tooltip).toHaveClass(styles.tooltip);
 });
 
 test('Renders with custom class names provided via prop', async () => {
@@ -59,6 +46,61 @@ test('Renders with value passed to id prop', async () => {
 
   const tooltip = await screen.findByRole('tooltip');
   expect(tooltip).toHaveAttribute('id', 'custom-id');
+});
+
+test('Renders with maxWidth styling applied when maxWidth is passed', async () => {
+  render(<Tooltip isVisible maxWidth="100px" content="Test content" />);
+
+  const tooltip = await screen.findByRole('tooltip');
+  expect(tooltip).toHaveStyle('max-width: 100px');
+});
+
+test('Renders with aria-describedby on trigger by default', async () => {
+  render(
+    <Tooltip id="trigger-with-aria" isVisible content="Test content">
+      <button>Toggle</button>
+    </Tooltip>
+  );
+
+  await screen.findByRole('tooltip');
+  expect(screen.getByRole('button')).toHaveAccessibleDescription('Test content');
+});
+
+test('Renders with aria-labelledby on trigger when aria="labelledby" is passed', async () => {
+  render(
+    <Tooltip id="trigger-with-aria" aria="labelledby" isVisible content="Test content">
+      <button>Toggle</button>
+    </Tooltip>
+  );
+
+  await screen.findByRole('tooltip');
+  expect(screen.getByRole('button')).toHaveAccessibleName('Test content');
+});
+
+test('Renders without aria-labelledby or aria-describedby on trigger when aria="none" is passed', async () => {
+  render(
+    <Tooltip id="trigger-with-aria" aria="none" isVisible content="Test content">
+      <button>Toggle</button>
+    </Tooltip>
+  );
+
+  await screen.findByRole('tooltip');
+  expect(screen.getByRole('button')).not.toHaveAccessibleName('Test content');
+  expect(screen.getByRole('button')).not.toHaveAccessibleDescription('Test content');
+});
+
+test('Does not pass isVisible to Popper by default', async () => {
+  render(<Tooltip content="Test content" />);
+
+  const contentPassedToPopper = await screen.findByText('isVisible: false');
+  expect(contentPassedToPopper).toBeVisible();
+});
+
+test('Passes isVisible to Popper', async () => {
+  render(<Tooltip isVisible content="Test content" />);
+
+  const contentPassedToPopper = await screen.findByText('isVisible: true');
+  expect(contentPassedToPopper).toBeVisible();
 });
 
 test('Passes zIndex to Popper', async () => {
@@ -110,8 +152,23 @@ test('Passes minWidth to Popper', async () => {
   expect(contentPassedToPopper).toBeVisible();
 });
 
-test('Matches snapshot', async () => {
-  render(<Tooltip id="custom-id" isVisible content="Test content" />);
+test('Matches snapshot with Popper mock', async () => {
+  render(
+    <Tooltip id="custom-id" isVisible content="Test content">
+      <button>Trigger</button>
+    </Tooltip>
+  );
+
+  await screen.findByRole('tooltip');
+  expect(screen.getByTestId('mock-wrapper')).toMatchSnapshot();
+});
+
+test('Matches snapshot with Tooltip only', async () => {
+  render(
+    <Tooltip id="custom-id" isVisible isContentLeftAligned content="Test content">
+      <button>Trigger</button>
+    </Tooltip>
+  );
 
   const tooltip = await screen.findByRole('tooltip');
   expect(tooltip).toMatchSnapshot();

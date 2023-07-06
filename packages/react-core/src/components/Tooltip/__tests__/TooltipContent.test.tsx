@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { render, screen } from '@testing-library/react';
-
 import { TooltipContent } from '../TooltipContent';
+import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 
 test('Renders with children', () => {
   render(<TooltipContent>Test content</TooltipContent>);
@@ -13,7 +12,7 @@ test('Renders with children', () => {
 test('Renders with class name pf-v5-c-tooltip__content by default', () => {
   render(<TooltipContent>Test content</TooltipContent>);
 
-  expect(screen.getByText('Test content')).toHaveClass('pf-v5-c-tooltip__content');
+  expect(screen.getByText('Test content')).toHaveClass(styles.tooltipContent);
 });
 
 test('Renders with custom class names provided via prop', () => {

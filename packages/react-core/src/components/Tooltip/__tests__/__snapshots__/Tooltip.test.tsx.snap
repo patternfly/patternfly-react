@@ -1,6 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Matches snapshot 1`] = `
+exports[`Matches snapshot with Popper mock 1`] = `
+<div
+  data-testid="mock-wrapper"
+>
+  <div
+    data-testid="popper"
+  >
+    <div
+      aria-live="off"
+      class="pf-v5-c-tooltip"
+      id="custom-id"
+      role="tooltip"
+      style="opacity: 1;"
+    >
+      <div
+        class="pf-v5-c-tooltip__arrow"
+      />
+      <div
+        class="pf-v5-c-tooltip__content"
+      >
+        Test content
+      </div>
+    </div>
+  </div>
+  <p>
+    zIndex: 9999
+  </p>
+  <p>
+    isVisible: true
+  </p>
+  <p>
+    enableFlip: true
+  </p>
+  <p>
+    placement: top
+  </p>
+  <p>
+    appendTo: () =&gt; {
+        /* istanbul ignore next */
+        cov_1bpyalqf4w().f[1]++;
+        cov_1bpyalqf4w().s[2]++;
+        return document.body;
+      }
+  </p>
+  <p>
+    distance: 15
+  </p>
+  <p>
+    flipBehavior: top,right,bottom,left,top,right,bottom
+  </p>
+  <p>
+    minWidth: revert
+  </p>
+  <button
+    aria-describedby="custom-id"
+  >
+    Trigger
+  </button>
+</div>
+`;
+
+exports[`Matches snapshot with Tooltip only 1`] = `
 <div
   aria-live="off"
   class="pf-v5-c-tooltip"
@@ -12,7 +73,7 @@ exports[`Matches snapshot 1`] = `
     class="pf-v5-c-tooltip__arrow"
   />
   <div
-    class="pf-v5-c-tooltip__content"
+    class="pf-v5-c-tooltip__content pf-m-text-align-left"
   >
     Test content
   </div>

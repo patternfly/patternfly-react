@@ -13,18 +13,18 @@ export const Popper = ({
   isVisible,
   minWidth
 }: PopperProps) => (
-  <>
+  <div data-testid="mock-wrapper">
     <div data-testid="popper">{isVisible && popper}</div>
     <p>{`zIndex: ${zIndex}`}</p>
-    <p>{`isOpen: ${isVisible}`}</p>
+    <p>{`isVisible: ${isVisible}`}</p>
     <p>{`enableFlip: ${enableFlip}`}</p>
     <p>{`placement: ${placement}`}</p>
     <p>{`appendTo: ${appendTo}`}</p>
     <p>{`distance: ${distance}`}</p>
     <p>{`flipBehavior: ${flipBehavior}`}</p>
     <p>{`minWidth: ${minWidth}`}</p>
-    <div data-testid="trigger">{trigger}</div>
-  </>
+    {trigger}
+  </div>
 );
 
 export const getOpacityTransition = () => {};
