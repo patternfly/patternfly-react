@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.0.0-prerelease.9 (2023-07-06)
+
+### Bug Fixes
+
+- **charts:** export getThemeColors ([#9338](https://github.com/patternfly/patternfly-react/issues/9338)) ([4d1f72d](https://github.com/patternfly/patternfly-react/commit/4d1f72d7668b75b3381953f615af075daf40b420))
+
 # 7.0.0-prerelease.8 (2023-07-06)
 
 **Note:** Version bump only for package @patternfly/react-charts
