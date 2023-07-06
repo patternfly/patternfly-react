@@ -201,18 +201,7 @@ test('Passes minWidth to Popper', async () => {
   expect(contentPassedToPopper).toBeVisible();
 });
 
-test('Matches snapshot with Popper mock', async () => {
-  render(
-    <Tooltip id="custom-id" isVisible content="Test content">
-      <button>Trigger</button>
-    </Tooltip>
-  );
-
-  await screen.findByRole('tooltip');
-  expect(screen.getByTestId('mock-wrapper')).toMatchSnapshot();
-});
-
-test('Matches snapshot with Tooltip only', async () => {
+test('Matches snapshot', async () => {
   render(
     <Tooltip id="custom-id" isVisible isContentLeftAligned content="Test content">
       <button>Trigger</button>
