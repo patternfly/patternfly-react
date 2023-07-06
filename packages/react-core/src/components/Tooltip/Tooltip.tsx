@@ -7,7 +7,7 @@ import { TooltipArrow } from './TooltipArrow';
 import { KeyTypes } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/esm/c_tooltip_MaxWidth';
 import { ReactElement } from 'react';
-import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
+import { Popper } from '../../helpers/Popper/Popper';
 
 export enum TooltipPosition {
   auto = 'auto',
@@ -174,29 +174,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const triggerOnClick = trigger.includes('click');
   const triggerManually = trigger === 'manual';
   const [visible, setVisible] = React.useState(false);
-  const [opacity, setOpacity] = React.useState(0);
-  const transitionTimerRef = React.useRef(null);
-  const showTimerRef = React.useRef(null);
-  const hideTimerRef = React.useRef(null);
   const popperRef = React.createRef<HTMLDivElement>();
-
-  const prevExitDelayRef = React.useRef<number>();
-
-  const clearTimeouts = (timeoutRefs: React.RefObject<any>[]) => {
-    timeoutRefs.forEach((ref) => {
-      if (ref.current) {
-        clearTimeout(ref.current);
-      }
-    });
-  };
-
-  // Cancel all timers on unmount
-  React.useEffect(
-    () => () => {
-      clearTimeouts([transitionTimerRef, hideTimerRef, showTimerRef]);
-    },
-    []
-  );
 
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (!triggerManually) {
@@ -222,36 +200,11 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     }
   }, [isVisible]);
 
-  React.useEffect(() => {
-    if (prevExitDelayRef.current < exitDelay) {
-      clearTimeouts([transitionTimerRef, hideTimerRef]);
-      hideTimerRef.current = setTimeout(() => {
-        setOpacity(0);
-        transitionTimerRef.current = setTimeout(() => {
-          setVisible(false);
-          onTooltipHidden();
-        }, animationDuration);
-      }, exitDelay);
-    }
-    prevExitDelayRef.current = exitDelay;
-  }, [exitDelay]);
-
   const show = () => {
-    clearTimeouts([transitionTimerRef, hideTimerRef]);
-    showTimerRef.current = setTimeout(() => {
-      setVisible(true);
-      setOpacity(1);
-    }, entryDelay);
+    setVisible(true);
   };
   const hide = () => {
-    clearTimeouts([showTimerRef]);
-    hideTimerRef.current = setTimeout(() => {
-      setOpacity(0);
-      transitionTimerRef.current = setTimeout(() => {
-        setVisible(false);
-        onTooltipHidden();
-      }, animationDuration);
-    }, exitDelay);
+    setVisible(false);
   };
   const positionModifiers = {
     top: styles.modifiers.top,
@@ -275,9 +228,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       role="tooltip"
       id={id}
       style={{
-        maxWidth: hasCustomMaxWidth ? maxWidth : null,
-        opacity,
-        transition: getOpacityTransition(animationDuration)
+        maxWidth: hasCustomMaxWidth ? maxWidth : null
       }}
       ref={popperRef}
       {...rest}
@@ -342,6 +293,10 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       enableFlip={enableFlip}
       zIndex={zIndex}
       flipBehavior={flipBehavior}
+      animationDuration={animationDuration}
+      entryDelay={entryDelay}
+      exitDelay={exitDelay}
+      onHidden={onTooltipHidden}
     />
   );
 };

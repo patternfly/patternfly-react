@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Placement, Modifier } from './thirdparty/popper-core';
+import { clearTimeouts } from '../util';
 import { css } from '@patternfly/react-styles';
 import '@patternfly/react-styles/css/components/Popper/Popper.css';
 
@@ -146,6 +147,30 @@ export interface PopperProps {
         | 'right-start'
         | 'right-end'
       )[];
+  /** The duration of the CSS fade transition animation. */
+  animationDuration?: number;
+  /** Delay in ms before the popper appears */
+  entryDelay?: number;
+  /** Delay in ms before the popper disappears */
+  exitDelay?: number;
+  /** Callback when popper's hide transition has finished executing */
+  onHidden?: () => void;
+  /**
+   * Lifecycle function invoked when the popper begins to transition out.
+   */
+  onHide?: () => void;
+  /**
+   * Lifecycle function invoked when the popper has been mounted to the DOM.
+   */
+  onMount?: () => void;
+  /**
+   * Lifecycle function invoked when the popper begins to transition in.
+   */
+  onShow?: () => void;
+  /**
+   * Lifecycle function invoked when the popper has fully transitioned in.
+   */
+  onShown?: () => void;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -176,22 +201,49 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   enableFlip = true,
   flipBehavior = 'flip',
   triggerRef,
-  popperRef
+  popperRef,
+  animationDuration = 0,
+  entryDelay = 0,
+  exitDelay = 0,
+  onHidden = () => {},
+  onHide = () => {},
+  onMount = () => {},
+  onShow = () => {},
+  onShown = () => {}
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [refElement, setRefElement] = React.useState<HTMLElement>(null);
   const [popperElement, setPopperElement] = React.useState<HTMLElement>(null);
   const [popperContent, setPopperContent] = React.useState(null);
   const [ready, setReady] = React.useState(false);
+  const [opacity, setOpacity] = React.useState(0);
+  const [internalIsVisible, setInternalIsVisible] = React.useState(isVisible);
+  const transitionTimerRef = React.useRef(null);
+  const showTimerRef = React.useRef(null);
+  const hideTimerRef = React.useRef(null);
+  const prevExitDelayRef = React.useRef<number>();
+
   const refOrTrigger = refElement || triggerElement;
+  const showPopper = isVisible || internalIsVisible;
+
   const onDocumentClickCallback = React.useCallback(
     (event: MouseEvent) => onDocumentClick(event, refOrTrigger, popperElement),
-    [isVisible, triggerElement, refElement, popperElement, onDocumentClick]
+    [showPopper, triggerElement, refElement, popperElement, onDocumentClick]
   );
 
   React.useEffect(() => {
     setReady(true);
+    onMount();
   }, []);
+
+  // Cancel all timers on unmount
+  React.useEffect(
+    () => () => {
+      clearTimeouts([transitionTimerRef, hideTimerRef, showTimerRef]);
+    },
+    []
+  );
+
   React.useEffect(() => {
     if (triggerRef) {
       if ((triggerRef as React.RefObject<any>).current) {
@@ -210,7 +262,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         setPopperElement(popperRef());
       }
     }
-  }, [isVisible, popperRef]);
+  }, [showPopper, popperRef]);
   React.useEffect(() => {
     // Trigger a Popper update when content changes.
     const observer = new MutationObserver(() => {
@@ -377,6 +429,48 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }
   }, [popper]);
 
+  React.useEffect(() => {
+    if (prevExitDelayRef.current < exitDelay) {
+      clearTimeouts([transitionTimerRef, hideTimerRef]);
+      hideTimerRef.current = setTimeout(() => {
+        transitionTimerRef.current = setTimeout(() => {
+          setInternalIsVisible(false);
+        }, animationDuration);
+      }, exitDelay);
+    }
+    prevExitDelayRef.current = exitDelay;
+  }, [exitDelay]);
+
+  const show = () => {
+    onShow();
+    clearTimeouts([transitionTimerRef, hideTimerRef]);
+    showTimerRef.current = setTimeout(() => {
+      setInternalIsVisible(true);
+      setOpacity(1);
+      onShown();
+    }, entryDelay);
+  };
+
+  const hide = () => {
+    onHide();
+    clearTimeouts([showTimerRef]);
+    hideTimerRef.current = setTimeout(() => {
+      setOpacity(0);
+      transitionTimerRef.current = setTimeout(() => {
+        setInternalIsVisible(false);
+        onHidden();
+      }, animationDuration);
+    }, exitDelay);
+  };
+
+  React.useEffect(() => {
+    if (isVisible) {
+      show();
+    } else {
+      hide();
+    }
+  }, [isVisible]);
+
   // Returns the CSS modifier class in order to place the Popper's arrow properly
   // Depends on the position of the Popper relative to the reference element
   const modifierFromPopperPosition = () => {
@@ -392,13 +486,16 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     style: {
       ...((popper.props && popper.props.style) || {}),
       ...popperStyles.popper,
-      zIndex
+      zIndex,
+      opacity,
+      transition: getOpacityTransition(animationDuration)
     },
     ...attributes.popper
   };
 
   const getMenuWithPopper = () => {
     const localPopper = React.cloneElement(popper, options);
+
     return popperRef ? (
       localPopper
     ) : (
@@ -425,7 +522,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         </div>
       )}
       {triggerRef && trigger && React.isValidElement(trigger) && trigger}
-      {ready && isVisible && getPopper()}
+      {ready && showPopper && getPopper()}
     </>
   );
 };
