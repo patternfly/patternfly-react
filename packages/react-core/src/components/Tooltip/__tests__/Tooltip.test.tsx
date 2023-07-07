@@ -90,7 +90,7 @@ test('Renders without aria-labelledby or aria-describedby on trigger when aria="
   expect(screen.getByRole('button')).not.toHaveAccessibleDescription('Test content');
 });
 
-test('Calls onTooltipHidden when passed', async () => {
+test('Does not call onTooltipHidden before tooltip is hidden', async () => {
   const onTooltipHiddenMock = jest.fn();
   const user = userEvent.setup();
 
@@ -108,7 +108,24 @@ test('Calls onTooltipHidden when passed', async () => {
   await user.click(screen.getByRole('button'));
   await screen.findByRole('tooltip');
   expect(onTooltipHiddenMock).not.toHaveBeenCalled();
+});
 
+test('Calls onTooltipHidden when tooltip is hidden', async () => {
+  const onTooltipHiddenMock = jest.fn();
+  const user = userEvent.setup();
+
+  const TooltipCallback = () => {
+    const [isVisible, setIsVisible] = React.useState(true);
+
+    return (
+      <Tooltip trigger="manual" isVisible={isVisible} onTooltipHidden={onTooltipHiddenMock} content="Test content">
+        <button onClick={() => setIsVisible(!isVisible)}>Toggle</button>
+      </Tooltip>
+    );
+  };
+  render(<TooltipCallback />);
+
+  await screen.findByRole('tooltip');
   await user.click(screen.getByRole('button'));
   await screen.findByText('isVisible: false');
   expect(onTooltipHiddenMock).toHaveBeenCalled();
