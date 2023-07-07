@@ -81,8 +81,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   isBreadcrumbGrouped?: boolean;
   /** Additional content of the group */
   additionalGroupedContent?: React.ReactNode;
-  /** HTML component used as main component of the page, defaults to 'main'. */
-  mainComponent?: 'main' | 'div';
+  /** Base HTML component used for the page. Defaults to 'main' */
+  component?: 'main' | 'div';
   /** Additional props of the group */
   groupProps?: PageGroupProps;
   /** Additional props of the breadcrumb */
@@ -106,7 +106,7 @@ export class Page extends React.Component<PageProps, PageState> {
     mainTabIndex: -1,
     isNotificationDrawerExpanded: false,
     onNotificationDrawerExpand: () => null,
-    mainComponent: 'main',
+    component: 'main',
     getBreakpoint,
     getVerticalBreakpoint
   };
@@ -232,7 +232,7 @@ export class Page extends React.Component<PageProps, PageState> {
       getVerticalBreakpoint,
       mainAriaLabel,
       mainTabIndex,
-      mainComponent,
+      component,
       tertiaryNav,
       isTertiaryNavGrouped,
       isBreadcrumbGrouped,
@@ -292,10 +292,10 @@ export class Page extends React.Component<PageProps, PageState> {
       </PageGroup>
     ) : null;
 
-    const MainComponent: keyof JSX.IntrinsicElements = mainComponent;
+    const Component: keyof JSX.IntrinsicElements = component;
 
     const main = (
-      <MainComponent
+      <Component
         ref={this.mainRef}
         role={role}
         id={mainContainerId}
@@ -307,7 +307,7 @@ export class Page extends React.Component<PageProps, PageState> {
         {!isTertiaryNavGrouped && nav}
         {!isBreadcrumbGrouped && crumb}
         {children}
-      </MainComponent>
+      </Component>
     );
 
     const panelContent = <DrawerPanelContent>{notificationDrawer}</DrawerPanelContent>;
