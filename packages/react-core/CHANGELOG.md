@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.18...@patternfly/react-core@5.0.0-prerelease.19) (2023-07-07)
+
+### Features
+
+- **Toolbar:** update/add alignItems + alignSelf ([#9325](https://github.com/patternfly/patternfly-react/issues/9325)) ([16dfbb6](https://github.com/patternfly/patternfly-react/commit/16dfbb6aa56b06055320a00bd2181eb749db9e05))
+
 # 5.0.0-prerelease.18 (2023-07-06)
 
 ### Bug Fixes
