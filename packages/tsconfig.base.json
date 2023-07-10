@@ -19,7 +19,7 @@
     "strictNullChecks": false,
     "isolatedModules": true,
     "plugins": [
-      { "transform": "transformer-cjs-imports" }
+      { "transform": "transformer-dynamic-imports/index.ts", "type": "raw" }
     ]
   },
   "exclude": [
