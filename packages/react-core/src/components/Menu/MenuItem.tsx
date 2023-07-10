@@ -25,9 +25,9 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   itemId?: any;
   /** Target navigation link. Should not be used if the flyout prop is defined. */
   to?: string;
-  /** Navigation link target. Only set when the to property is present. */
+  /** Navigation link target. Only set when the to property is present. If isExternalLink is also passed in, this property will be set to "_blank". */
   target?: string;
-  /** Navigation link relationship. Only set when the to property is present. If isExternalLink is also passed in, this property will be set to "_blank". */
+  /** Navigation link relationship. Only set when the to property is present. */
   rel?: string;
   /** Flag indicating the item has a checkbox */
   hasCheckbox?: boolean;
