@@ -54,7 +54,7 @@ class FocusTrapBase extends React.Component<FocusTrapProps> {
 
   componentDidUpdate(prevProps: FocusTrapProps) {
     if (prevProps.active && !this.props.active) {
-      this.focusTrap.deactivate();
+      this.deactivate();
     } else if (!prevProps.active && this.props.active) {
       this.focusTrap.activate();
     }
@@ -67,6 +67,10 @@ class FocusTrapBase extends React.Component<FocusTrapProps> {
   }
 
   componentWillUnmount() {
+    this.deactivate();
+  }
+
+  deactivate() {
     this.focusTrap.deactivate();
     if (
       this.props.focusTrapOptions.returnFocusOnDeactivate !== false &&

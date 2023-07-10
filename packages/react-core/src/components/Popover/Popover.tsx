@@ -455,6 +455,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         animationDuration={animationDuration}
         onHidden={onHidden}
         onShown={onShown}
+        onHide={() => setFocusTrapActive(false)}
       />
     </PopoverContext.Provider>
   );
