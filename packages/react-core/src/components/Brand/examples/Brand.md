@@ -22,7 +22,7 @@ import logoBase from './pf-c-brand--logo-base.jpg';
 
 ### Responsive
 
-Passing `<source>` elements as children to `Brand` will change the component from an `<img>` to a `<picture>` element. In this form, breakpoint modifiers for width and height may be passed to `Brand`. The `src` and `alt` properties should still be passed to populate the fallback `img` of the brand.
+Passing `<source>` elements as children to `Brand` will change the component from an `<img>` to a `<picture>` element. The `src` and `alt` properties should still be passed to populate the fallback `img` of the brand.
 
 ```ts file="./BrandResponsive.tsx"
 ```
