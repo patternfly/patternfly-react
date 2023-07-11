@@ -63,6 +63,7 @@ A typeahead can also be used to select multiple options from its list.
 
 ```
 
+### Typeahead with create option
 
 ```ts file="./SelectMultiTypeaheadCreatable.tsx"
 
