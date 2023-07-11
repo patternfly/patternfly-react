@@ -661,7 +661,7 @@ class CardViewBasic extends React.Component {
                   onKeyDown={(e) => this.onKeyDown(e, product.id)}
                   onClick={() => this.onClick(product.id)}
                 >
-                  <CardHeader selectableActions={{ isChecked: selectedItems.includes(product.id), selectableActionId: `selectable-actions-item-${product.id}`, name: `check-${product.id}` }}
+                  <CardHeader selectableActions={{ isChecked: selectedItems.includes(product.id), selectableActionId: `selectable-actions-item-${product.id}`, selectableActionAriaLabelledby: product.name.replace(/ /g, '-'), name: `check-${product.id}` }}
                     actions={{
                       actions: (
                         <>
