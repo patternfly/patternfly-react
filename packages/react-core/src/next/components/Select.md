@@ -12,9 +12,6 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ## Examples
-A **select** list enables users to select one or more items from a list. Use a select list when options are dynamic or variable.
-
-A newer React implementation of the select will replace the existing implementation at the next major release. The documentation for the newer implementation is under the [React next](www.patternfly.org/v4/components/select/react-next) tab, and this newer implementation can be imported from @patternfly/react-core/next.
 
 ### Single select
 Single select dropdown menus allow your users to select a single option from a list of options. To change the name of the options, alter the ‘itemId’ property.
