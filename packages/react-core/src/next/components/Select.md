@@ -69,6 +69,7 @@ A typeahead can also be used to select multiple options from its list.
 
 ```
 
+### Multiple typeahead with checkboxes
 
 ```ts file="./SelectMultiTypeaheadCheckbox.tsx"
 
