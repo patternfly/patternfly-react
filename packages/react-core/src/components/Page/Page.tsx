@@ -81,7 +81,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   isBreadcrumbGrouped?: boolean;
   /** Additional content of the group */
   additionalGroupedContent?: React.ReactNode;
-  /** Base HTML component used for the page. Defaults to 'main' */
+  /** Base HTML component used for the page. Defaults to 'main', only pass in 'div' if another 'main' element already exists. */
   component?: 'main' | 'div';
   /** Additional props of the group */
   groupProps?: PageGroupProps;
