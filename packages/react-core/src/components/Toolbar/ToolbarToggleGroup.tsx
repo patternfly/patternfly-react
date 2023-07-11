@@ -143,7 +143,6 @@ export const ToolbarToggleGroup: React.FunctionComponent<ToolbarToggleGroupProps
         trigger={popper}
         popper={expandableContent()}
         isVisible={isExpanded}
-        popperMatchesTriggerWidth={false}
       />
       { !isExpanded && children }
     </div>
