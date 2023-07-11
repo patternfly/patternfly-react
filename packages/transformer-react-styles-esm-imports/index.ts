@@ -14,7 +14,9 @@ const transformer: ts.TransformerFactory<ts.SourceFile> = (context) => (sourceFi
     if (ts.isImportDeclaration(node)) {
       const text = node.moduleSpecifier.getFullText(sourceFile);
 
-      if (/@patternfly\/react-styles\/css/.test(text)) {
+      // Only transform imports from react-styles/css
+      // Exclude anything that already has an explicit file extension
+      if (/@patternfly\/react-styles\/css/.test(text) && !/\.[a-z]{1,5}('|");?$/.test(text)) {
         return factory.updateImportDeclaration(
           node,
           node.decorators,
