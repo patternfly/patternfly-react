@@ -53,6 +53,8 @@ You can also change the name of the initial prompt under `placeholder` in `<Menu
 
 ```
 
+### Typeahead with create option
+
 ```ts file="./SelectTypeaheadCreatable.tsx"
 
 ```
