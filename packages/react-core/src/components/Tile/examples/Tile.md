@@ -13,7 +13,7 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 Keyboard interaction patterns and a11y is implemented in the Tile demos, located in the [Demo section](/components/tile/react-demos).
 
 ### Basic tile
-Basic tiles can appear in one of three states: a default state, selected state, and a disabled state. To change the state of a tile, use the properties ‘isSelected’ and ‘isDisabled’.
+Basic tiles can appear in one of three states: a default state, selected state, and a disabled state. To change the state of a tile, use the properties `isSelected` and `isDisabled`.
 ```ts file="./TileBasic.tsx"
 ```
 
