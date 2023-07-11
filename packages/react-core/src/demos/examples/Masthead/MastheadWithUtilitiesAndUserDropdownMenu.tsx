@@ -58,6 +58,7 @@ import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 interface NavOnSelectProps {
   groupId: number | string;
@@ -480,14 +481,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       </MastheadToggle>
       <MastheadMain>
         <MastheadBrand>
-          <Brand
-            widths={{ default: '180px', md: '180px', '2xl': '220px' }}
-            src="/assets/images/logo__pf--reverse--base.png"
-            alt="Fallback patternFly default logo"
-          >
-            <source media="(min-width: 768px)" srcSet="/assets/images/logo__pf--reverse-on-md.svg" />
-            <source srcSet="/assets/images/logo__pf--reverse--base.svg" />
-          </Brand>
+          <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>{headerToolbar}</MastheadContent>
