@@ -23,13 +23,13 @@ test('Renders children', () => {
 test('Renders ReactNode as children', () => {
   render(
     <AlertActionLink>
-      <a href="https://test.link.com/" target="_blank" rel="noreferrer" title="Learn more link">
-        Learn more
-      </a>
+      <div>
+        <span>Learn More</span>
+      </div>
     </AlertActionLink>
   );
 
-  expect(screen.getByRole('link')).toBeVisible();
+  expect(screen.getByText('Learn More')).toBeVisible();
 });
 
 test('Renders with custom class names provided via prop', () => {
