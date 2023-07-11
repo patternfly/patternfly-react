@@ -28,7 +28,7 @@ Icons can provide a visual cue that helps users understand what the tile is bein
 ```
 
 ### With stacked icon
-You can further customize a tile’s appearance by placing an icon above the  title. To stack your icon on top of a tile’s title, use the `isStacked`property.
+You can further customize a tile’s appearance by placing an icon above the title. To stack your icon on top of a tile’s title, use the `isStacked` property.
 ```ts file="./TileStacked.tsx"
 ```
 
