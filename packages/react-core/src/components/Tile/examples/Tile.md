@@ -33,7 +33,7 @@ You can further customize a tile’s appearance by placing an icon above the tit
 ```
 
 ### With large icons
-You can make your icons larger to help catch a user’s attention. To increase the size of an icon, use the  `isDisplayLarge` property.. 
+You can make your icons larger to help catch a user’s attention. To increase the size of an icon, use the  `isDisplayLarge` property. 
 
 Be aware that `isDisplayLarge` can only be used when  `isStacked` is also applied. 
 ```ts file="./TileStackedWithLargeIcons.tsx"
