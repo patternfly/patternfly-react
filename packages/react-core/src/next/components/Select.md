@@ -23,6 +23,12 @@ You can also add more options by adding `<SelectOption>`. You can follow the for
 
 ```
 
+### Option variations
+
+Showcases different option variants and customizations that are commonly used in a select menu. For a more complete list, see the [Menu documentation](/components/menus/menu).
+
+```ts file="./SelectOptionVariations.tsx"
+
 ### Grouped single select
 You can change a single select component to have multiple groups. To do this, you have to add the component `<SelectGroup>` and list the desired options below.
 
