@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-prerelease.20 (2023-07-11)
+
+### Bug Fixes
+
+- **brand:** allowed heights/widths to be set together and be used when no children are passed ([#9342](https://github.com/patternfly/patternfly-react/issues/9342)) ([eca7300](https://github.com/patternfly/patternfly-react/commit/eca730046501c39d3e52b840c1513844d423e31e))
+
 # [5.0.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.18...@patternfly/react-core@5.0.0-prerelease.19) (2023-07-07)
 
 ### Features
