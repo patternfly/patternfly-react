@@ -121,6 +121,21 @@ const transformer:ts.TransformerFactory<ts.SourceFile> = context => sourceFile =
         }
 
       }
+
+      // handle any uncaught esm imports
+      if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/esm/.test(node.moduleSpecifier.getText())) {
+        return factory.updateImportDeclaration(
+          node,
+          node.decorators,
+          node.modifiers,
+          node.importClause,
+          factory.createStringLiteral(
+            node.moduleSpecifier.getFullText().replace(/"/g, '').replace(/'/g, '').replace(/dist\/esm/, 'dist/js').trim(),
+            true
+          ),
+          undefined
+        )
+      }
       return ts.visitEachChild(node, visitor, context);
   
     }
