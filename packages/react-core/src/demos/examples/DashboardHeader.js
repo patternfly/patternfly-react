@@ -28,7 +28,7 @@ import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
-import pfColorLogo from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 export default class DashboardHeader extends React.Component {
   constructor(props) {
@@ -209,13 +209,10 @@ export default class DashboardHeader extends React.Component {
         <MastheadMain>
           <MastheadBrand>
             <Brand
-              widths={{ default: '180px', md: '180px', '2xl': '220px' }}
-              src={pfColorLogo}
-              alt="Fallback patternFly default logo"
-            >
-              <source media="(min-width: 768px)" srcSet={pfColorLogo} />
-              <source srcSet={pfColorLogo} />
-            </Brand>
+              src={pfLogo}
+              alt="PatternFly"
+              heights={{ default: '36px' }}
+            />
           </MastheadBrand>
         </MastheadMain>
         <MastheadContent>{headerToolbar}</MastheadContent>
