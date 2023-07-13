@@ -86,7 +86,7 @@ const transformer:ts.TransformerFactory<ts.SourceFile> = context => sourceFile =
       const { factory } = context
       // handles relative imports import {foo} from '@patternfly/react-icons'
       // the regex has extra '$ condition
-      if(ts.isImportDeclaration(node) && /@patternfly\/react-(core|icons)'$/.test(node.moduleSpecifier.getText())) {
+      if(ts.isImportDeclaration(node) && /@patternfly\/react-(core|icons|tokens)'$/.test(node.moduleSpecifier.getText())) {
         if(node.moduleSpecifier.getText().includes('react-icons')) {
           const importNames: string[] = []
           // get all named imports 
@@ -105,7 +105,7 @@ const transformer:ts.TransformerFactory<ts.SourceFile> = context => sourceFile =
       }
       
       // handle absolute icons import paths
-      if(ts.isImportDeclaration(node) && /@patternfly\/react-icons/.test(node.moduleSpecifier.getText())) {
+      if(ts.isImportDeclaration(node) && /@patternfly\/react-(icons|tokens)/.test(node.moduleSpecifier.getText())) {
         if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/esm/.test(node.moduleSpecifier.getText())) {
           return factory.updateImportDeclaration(
             node,
@@ -120,6 +120,21 @@ const transformer:ts.TransformerFactory<ts.SourceFile> = context => sourceFile =
           )
         }
 
+      }
+
+      // handle any uncaught esm imports
+      if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/esm/.test(node.moduleSpecifier.getText()) && context.getCompilerOptions().module === 1) {
+        return factory.updateImportDeclaration(
+          node,
+          node.decorators,
+          node.modifiers,
+          node.importClause,
+          factory.createStringLiteral(
+            node.moduleSpecifier.getFullText().replace(/"/g, '').replace(/'/g, '').replace(/dist\/esm/, 'dist/js').trim(),
+            true
+          ),
+          undefined
+        )
       }
       return ts.visitEachChild(node, visitor, context);
   
