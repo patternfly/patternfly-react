@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.79.4-alpha.2 (2023-07-13)
+
+**Note:** Version bump only for package transformer-dynamic-imports
+
 ## 4.79.4-alpha.1 (2023-07-10)
 
 ### Bug Fixes
