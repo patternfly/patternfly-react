@@ -123,7 +123,7 @@ const transformer:ts.TransformerFactory<ts.SourceFile> = context => sourceFile =
       }
 
       // handle any uncaught esm imports
-      if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/esm/.test(node.moduleSpecifier.getText())) {
+      if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/esm/.test(node.moduleSpecifier.getText()) && context.getCompilerOptions().module === 1) {
         return factory.updateImportDeclaration(
           node,
           node.decorators,
