@@ -64,29 +64,43 @@ function createDynamicReactCoreImports(nodeFactory: ts.NodeFactory, node: ts.Imp
   node.importClause?.namedBindings?.forEachChild(node => {
     importNames.push(node.getFullText().trim())
   })
-  importNames.forEach(nameBinding =>{
+  const groups = importNames.reduce<{[moduleGroup: string]: string[]}>((acc, nameBinding) => {
     const importPartial = findComponentModule(nameBinding)
+    if(acc[importPartial]?.length > 0) {
+      acc[importPartial].push(nameBinding)
+    } else {
+      acc[importPartial] = [nameBinding]
+    }
+    return acc
+  }, {})
+  Object.entries(groups).forEach(([importPartial, nameBindings]) => {
     const importNode = nodeFactory.createImportDeclaration(
-      undefined,
-      undefined,
+      node.decorators,
+      node.modifiers,
       nodeFactory.createImportClause(false, undefined, nodeFactory.createNamedImports(
-        [nodeFactory.createImportSpecifier(false, undefined, nodeFactory.createIdentifier(nameBinding))]
+        nameBindings.map(nameBinding => nodeFactory.createImportSpecifier(false, undefined, nodeFactory.createIdentifier(nameBinding)))
       )),
-      nodeFactory.createStringLiteral(`@patternfly/react-core/dist/dynamic/${importPartial}`)
+      nodeFactory.createStringLiteral(`@patternfly/react-core/dist/dynamic/${importPartial}`),
+      node.assertClause
       )
       importNodes.push(importNode)
   })
   return importNodes
 }
 
+const DYNAMIC_OUTPUTS = [ts.ModuleKind.ES2015, ts.ModuleKind.ES2020, ts.ModuleKind.ES2022, ts.ModuleKind.ESNext]
 
 const transformer:ts.TransformerFactory<ts.SourceFile> = context => sourceFile => {
+  const opts = context.getCompilerOptions()
+  // identify output eligible for dynamic imports
+  const isDynamic = opts.module && DYNAMIC_OUTPUTS.includes(opts.module)
+  
     /** @type { import("typescript").Visitor } */
     function visitor(node) {
       const { factory } = context
       // handles relative imports import {foo} from '@patternfly/react-icons'
       // the regex has extra '$ condition
-      if(ts.isImportDeclaration(node) && /@patternfly\/react-(core|icons|tokens)'$/.test(node.moduleSpecifier.getText())) {
+      if(isDynamic && ts.isImportDeclaration(node) && /@patternfly\/react-(core|icons|tokens)'$/.test(node.moduleSpecifier.getText())) {
         if(node.moduleSpecifier.getText().includes('react-icons')) {
           const importNames: string[] = []
           // get all named imports 
@@ -105,7 +119,7 @@ const transformer:ts.TransformerFactory<ts.SourceFile> = context => sourceFile =
       }
       
       // handle absolute icons import paths
-      if(ts.isImportDeclaration(node) && /@patternfly\/react-(icons|tokens)/.test(node.moduleSpecifier.getText())) {
+      if(isDynamic && ts.isImportDeclaration(node) && /@patternfly\/react-(icons|tokens)/.test(node.moduleSpecifier.getText())) {
         if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/esm/.test(node.moduleSpecifier.getText())) {
           return factory.updateImportDeclaration(
             node,
