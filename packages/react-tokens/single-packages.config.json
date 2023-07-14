@@ -1,5 +1,0 @@
-{
-    "packageName": "@patternfly/react-tokens",
-    "moduleGlob": "/dist/esm/*.js",
-    "exclude": []
-}
