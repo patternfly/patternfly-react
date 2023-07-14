@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@5.0.0-prerelease.7...@patternfly/react-tokens@5.0.0-prerelease.8) (2023-07-14)
+
+### Reverts
+
+- Revert "Add transformation fallback (#9353)" (#9365) ([b2cd563](https://github.com/patternfly/patternfly-react/commit/b2cd563207194c2312d5760d91e425182fba2cd1)), closes [#9353](https://github.com/patternfly/patternfly-react/issues/9353) [#9365](https://github.com/patternfly/patternfly-react/issues/9365)
+
 # 5.0.0-prerelease.7 (2023-07-13)
 
 **Note:** Version bump only for package @patternfly/react-tokens
