@@ -1,9 +1,9 @@
 {
-  "name": "transformer-dynamic-imports",
+  "name": "transformer-cjs-imports",
   "private": true,
   "version": "4.79.4-alpha.2",
   "description": "Transform CJS imports to ESM in typescript depending on module target.",
-  "main": "index.ts",
+  "main": "index.js",
   "author": "Red Hat",
   "license": "MIT",
   "peerDependencies": {
