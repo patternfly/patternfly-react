@@ -11,7 +11,7 @@ export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
     monaco.editor.getModels()[0].updateOptions({ tabSize: 5 });
   };
 
-  const onChange = value => {
+  const onChange = (value) => {
     // eslint-disable-next-line no-console
     console.log(value);
   };
@@ -41,7 +41,7 @@ export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
           <React.Fragment key={index}>
             <GridItem style={{ textAlign: 'right', marginRight: '1em' }}>
               {shortcut.keys
-                .map(key => (
+                .map((key) => (
                   <Chip key={key} isReadOnly>
                     {key}
                   </Chip>

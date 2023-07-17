@@ -51,7 +51,7 @@ export const ContextSelectorPlainText: React.FunctionComponent = () => {
     const filtered =
       searchValue === ''
         ? items
-        : items.filter(item => {
+        : items.filter((item) => {
             const str = typeof item === 'string' ? item : item.text;
             return str.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
           });

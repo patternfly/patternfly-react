@@ -3,27 +3,29 @@ import PropTypes from 'prop-types';
 import { TableContext } from '../components/Table/Table';
 import { TableHeader } from '../components/Table';
 
-export const withContext = ({ context = {}, contextType = {} }) => WrappedComponent => {
-  class WithContext extends Component {
-    getChildContext() {
-      return context;
-    }
+export const withContext =
+  ({ context = {}, contextType = {} }) =>
+  (WrappedComponent) => {
+    class WithContext extends Component {
+      getChildContext() {
+        return context;
+      }
 
-    render() {
-      return <WrappedComponent>{this.props.children}</WrappedComponent>;
+      render() {
+        return <WrappedComponent>{this.props.children}</WrappedComponent>;
+      }
     }
-  }
-  WithContext.propTypes = {
-    children: PropTypes.node
-  };
-  WithContext.defaultProps = {
-    children: null
-  };
-  WithContext.WrappedComponent = WrappedComponent;
-  WithContext.childContextTypes = contextType;
+    WithContext.propTypes = {
+      children: PropTypes.node
+    };
+    WithContext.defaultProps = {
+      children: null
+    };
+    WithContext.WrappedComponent = WrappedComponent;
+    WithContext.childContextTypes = contextType;
 
-  return WithContext;
-};
+    return WithContext;
+  };
 
 export const TableProvider = withContext({
   context: {

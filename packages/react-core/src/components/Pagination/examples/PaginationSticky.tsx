@@ -8,7 +8,7 @@ export const PaginationSticky: React.FunctionComponent = () => {
   const itemCount = 523;
 
   const onToggleSticky = () => {
-    setIsTopSticky(prev => !prev);
+    setIsTopSticky((prev) => !prev);
   };
 
   const onSetPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number) => {

@@ -84,7 +84,7 @@ export const Wizard = ({
 
   const goToNextStep = (event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
     const newStep = steps.find(
-      step => step.index > activeStepIndex && !step.isHidden && !step.isDisabled && !isWizardParentStep(step)
+      (step) => step.index > activeStepIndex && !step.isHidden && !step.isDisabled && !isWizardParentStep(step)
     );
 
     if (activeStepIndex >= steps.length || !newStep?.index) {
@@ -136,7 +136,7 @@ export const Wizard = ({
   };
 
   const goToStepById = (steps: WizardStepType[] = initialSteps, id: number | string) => {
-    const step = steps.find(step => step.id === id);
+    const step = steps.find((step) => step.id === id);
     const stepIndex = step?.index;
     const lastStepIndex = steps.length + 1;
 
@@ -146,7 +146,7 @@ export const Wizard = ({
   };
 
   const goToStepByName = (steps: WizardStepType[] = initialSteps, name: string) => {
-    const step = steps.find(step => step.name === name);
+    const step = steps.find((step) => step.name === name);
     const stepIndex = step?.index;
     const lastStepIndex = steps.length + 1;
 
@@ -212,7 +212,7 @@ const WizardInternal = ({
       steps={steps}
       activeStep={activeStep}
       isNavExpanded={isNavExpanded}
-      toggleNavExpanded={() => setIsNavExpanded(prevIsExpanded => !prevIsExpanded)}
+      toggleNavExpanded={() => setIsNavExpanded((prevIsExpanded) => !prevIsExpanded)}
     />
   );
 };

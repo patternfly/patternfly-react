@@ -41,7 +41,7 @@ export const TableClickable: React.FunctionComponent = () => {
         </Tr>
       </Thead>
       <Tbody>
-        {repositories.map(repo => (
+        {repositories.map((repo) => (
           <Tr
             key={repo.name}
             onRowClick={() => setSelectedRepoName(repo.name)}

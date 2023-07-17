@@ -27,7 +27,8 @@ import {
   IHeaderRow,
   OnFavorite,
   TreeRowWrapper,
-  CustomActionsToggleProps } from '../../../components';
+  CustomActionsToggleProps
+} from '../../../components';
 
 export interface TableProps extends OUIAProps {
   /** Adds an accessible name for the Table */
@@ -131,7 +132,7 @@ export interface TableProps extends OUIAProps {
   ouiaSafe?: boolean;
 }
 
-export class Table extends React.Component<TableProps, {}> {
+class Table extends React.Component<TableProps, {}> {
   static displayName = 'Table';
   static hasWarnBeta = false;
   static defaultProps: Partial<TableProps> = {
@@ -297,3 +298,5 @@ export class Table extends React.Component<TableProps, {}> {
     return table;
   }
 }
+
+export { Table };

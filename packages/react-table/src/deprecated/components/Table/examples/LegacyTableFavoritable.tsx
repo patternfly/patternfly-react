@@ -30,8 +30,8 @@ export const LegacyTableFavoritable: React.FunctionComponent = () => {
   // Favorite state is similar to selection state. See selectedRepoNames and associated code below.
   const [favoriteRepoNames, setFavoriteRepoNames] = React.useState<string[]>([]);
   const setRepoFavorited = (repo: Repository, isFavoriting = true) =>
-    setFavoriteRepoNames(prevFavorites => {
-      const otherFavorites = prevFavorites.filter(r => r !== repo.name);
+    setFavoriteRepoNames((prevFavorites) => {
+      const otherFavorites = prevFavorites.filter((r) => r !== repo.name);
       return isFavoriting ? [...otherFavorites, repo.name] : otherFavorites;
     });
   const isRepoFavorited = (repo: Repository) => favoriteRepoNames.includes(repo.name);
@@ -78,12 +78,12 @@ export const LegacyTableFavoritable: React.FunctionComponent = () => {
   // This is to prevent state from being based on row order index in case we later add sorting.
   const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
   const setRepoSelected = (repo: Repository, isSelecting = true) =>
-    setSelectedRepoNames(prevSelected => {
-      const otherSelectedRepoNames = prevSelected.filter(r => r !== repo.name);
+    setSelectedRepoNames((prevSelected) => {
+      const otherSelectedRepoNames = prevSelected.filter((r) => r !== repo.name);
       return isSelecting && isRepoSelectable(repo) ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
     });
   const selectAllRepos = (isSelecting = true) =>
-    setSelectedRepoNames(isSelecting ? selectableRepos.map(r => r.name) : []);
+    setSelectedRepoNames(isSelecting ? selectableRepos.map((r) => r.name) : []);
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
   const columns: TableProps['cells'] = [
@@ -93,7 +93,7 @@ export const LegacyTableFavoritable: React.FunctionComponent = () => {
     'Workspaces',
     'Last commit'
   ];
-  const rows: TableProps['rows'] = sortedRepositories.map(repo => {
+  const rows: TableProps['rows'] = sortedRepositories.map((repo) => {
     const favorited = isRepoFavorited(repo);
     return {
       favorited,

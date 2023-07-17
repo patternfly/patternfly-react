@@ -18,7 +18,7 @@ export function evaluateTransforms(
   extraParameters: ExtraParamsType = {}
 ) {
   if (process.env.NODE_ENV !== 'production') {
-    if (!transforms.every(f => typeof f === 'function')) {
+    if (!transforms.every((f) => typeof f === 'function')) {
       throw new Error("All transforms weren't functions!");
     }
   }
@@ -27,5 +27,5 @@ export function evaluateTransforms(
     return {};
   }
 
-  return mergeProps(...transforms.map(transform => transform(value, extraParameters)));
+  return mergeProps(...transforms.map((transform) => transform(value, extraParameters)));
 }

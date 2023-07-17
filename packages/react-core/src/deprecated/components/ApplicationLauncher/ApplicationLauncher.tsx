@@ -2,12 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
-import {
-  DropdownDirection,
-  DropdownPosition,
-  DropdownToggle,
-  DropdownContext
-} from '../Dropdown';
+import { DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 import { ApplicationLauncherGroup } from './ApplicationLauncherGroup';
 import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
@@ -70,7 +65,7 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   zIndex?: number;
 }
 
-export class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
+class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
   static displayName = 'ApplicationLauncher';
   static defaultProps: ApplicationLauncherProps = {
     className: '',
@@ -209,3 +204,5 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     );
   }
 }
+
+export { ApplicationLauncher };

@@ -74,7 +74,9 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
         .map(({ title, itemKey, onClick, isOutsideDropdown, ...props }, key) =>
           typeof title === 'string' ? (
             <Button
-              onClick={(event: MouseEvent | React.MouseEvent<any, MouseEvent> | React.KeyboardEvent<Element>) => onActionClick(event, onClick)}
+              onClick={(event: MouseEvent | React.MouseEvent<any, MouseEvent> | React.KeyboardEvent<Element>) =>
+                onActionClick(event, onClick)
+              }
               {...(props as any)}
               isDisabled={isDisabled}
               key={itemKey || `outside_dropdown_${key}`}

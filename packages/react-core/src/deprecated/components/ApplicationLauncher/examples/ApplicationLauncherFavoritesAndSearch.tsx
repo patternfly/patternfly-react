@@ -49,7 +49,7 @@ export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent = ()
     let updatedFavorites: string[] = [...favorites, itemId];
 
     if (isFavorite) {
-      updatedFavorites = favorites.filter(id => id !== itemId);
+      updatedFavorites = favorites.filter((id) => id !== itemId);
     }
 
     setFavorites(updatedFavorites);
@@ -78,13 +78,13 @@ export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent = ()
             return filteredGroup;
           }
         })
-        .filter(newGroup => newGroup);
+        .filter((newGroup) => newGroup);
 
       if (filteredGroups.length > 0) {
         let lastGroup = filteredGroups.pop();
 
         lastGroup = React.cloneElement(lastGroup, {
-          children: lastGroup.props.children.filter(item => item.type !== ApplicationLauncherSeparator)
+          children: lastGroup.props.children.filter((item) => item.type !== ApplicationLauncherSeparator)
         });
 
         filteredGroups.push(lastGroup);

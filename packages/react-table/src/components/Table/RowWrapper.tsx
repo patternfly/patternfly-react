@@ -26,7 +26,7 @@ export interface RowWrapperProps extends OUIAProps {
   ouiaId?: number | string;
 }
 
-export class RowWrapper extends React.Component<RowWrapperProps> {
+class RowWrapper extends React.Component<RowWrapperProps> {
   static displayName = 'RowWrapper';
   static defaultProps = {
     className: '' as string,
@@ -79,13 +79,13 @@ export class RowWrapper extends React.Component<RowWrapperProps> {
 
   handleScroll = (event: Event): void => {
     if (!this._unmounted) {
-      this.props.onScroll((event as unknown) as React.UIEvent<Element>);
+      this.props.onScroll(event as unknown as React.UIEvent<Element>);
     }
   };
 
   handleResize = (event: Event) => {
     if (!this._unmounted) {
-      this.props.onResize((event as unknown) as React.UIEvent<Element>);
+      this.props.onResize(event as unknown as React.UIEvent<Element>);
     }
   };
 
@@ -117,3 +117,5 @@ export class RowWrapper extends React.Component<RowWrapperProps> {
     );
   }
 }
+
+export { RowWrapper };

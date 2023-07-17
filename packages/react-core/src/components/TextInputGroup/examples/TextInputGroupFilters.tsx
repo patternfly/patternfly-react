@@ -33,7 +33,7 @@ export const TextInputGroupFilters: React.FunctionComponent = () => {
 
   /** callback for removing a chip from the chip selections */
   const deleteChip = (chipToDelete: string) => {
-    const newChips = currentChips.filter(chip => !Object.is(chip, chipToDelete));
+    const newChips = currentChips.filter((chip) => !Object.is(chip, chipToDelete));
     setCurrentChips(newChips);
   };
 
@@ -53,7 +53,7 @@ export const TextInputGroupFilters: React.FunctionComponent = () => {
     <TextInputGroup>
       <TextInputGroupMain icon={showSearchIcon && <SearchIcon />} value={inputValue} onChange={handleInputChange}>
         <ChipGroup>
-          {currentChips.map(currentChip => (
+          {currentChips.map((currentChip) => (
             <Chip key={currentChip} onClick={() => deleteChip(currentChip)}>
               {currentChip}
             </Chip>

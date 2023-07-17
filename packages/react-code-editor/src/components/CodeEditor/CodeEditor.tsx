@@ -230,7 +230,7 @@ interface CodeEditorState {
   copied: boolean;
 }
 
-export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
+class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
   static displayName = 'CodeEditor';
   private editor: editor.IStandaloneCodeEditor | null = null;
   private wrapperRef = React.createRef<HTMLDivElement>();
@@ -668,3 +668,5 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     );
   }
 }
+
+export { CodeEditor };

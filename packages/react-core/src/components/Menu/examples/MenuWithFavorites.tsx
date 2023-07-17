@@ -20,7 +20,7 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
     if (actionId === 'fav') {
       const isFavorite = favorites.includes(itemId);
       if (isFavorite) {
-        setFavorites(favorites.filter(fav => fav !== itemId));
+        setFavorites(favorites.filter((fav) => fav !== itemId));
       } else {
         setFavorites([...favorites, itemId]);
       }
@@ -59,8 +59,8 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
             <MenuGroup label="Favorites" labelHeadingLevel="h3">
               <MenuList>
                 {items
-                  .filter(item => favorites.includes(item.itemId))
-                  .map(item => {
+                  .filter((item) => favorites.includes(item.itemId))
+                  .map((item) => {
                     const { text, description, itemId, action, actionId } = item;
                     return (
                       <MenuItem
@@ -81,7 +81,7 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
         )}
         <MenuGroup label="All actions" labelHeadingLevel="h3">
           <MenuList>
-            {items.map(item => {
+            {items.map((item) => {
               const { text, description, itemId, action, actionId } = item;
               const isFavorited = favorites.includes(item.itemId);
               return (

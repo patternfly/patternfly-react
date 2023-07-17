@@ -40,7 +40,7 @@ export interface SwitchProps
   ouiaSafe?: boolean;
 }
 
-export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: string }> {
+class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: string }> {
   static displayName = 'Switch';
   id: string;
 
@@ -94,7 +94,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
           id={this.id}
           className={css(styles.switchInput)}
           type="checkbox"
-          onChange={event => onChange(event, event.target.checked)}
+          onChange={(event) => onChange(event, event.target.checked)}
           {...(defaultChecked !== undefined ? { defaultChecked } : { checked: isChecked })}
           disabled={isDisabled}
           aria-labelledby={!isAriaLabelledBy ? null : `${this.id}-${isChecked !== true ? 'off' : 'on'}`}
@@ -135,3 +135,5 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
     );
   }
 }
+
+export { Switch };

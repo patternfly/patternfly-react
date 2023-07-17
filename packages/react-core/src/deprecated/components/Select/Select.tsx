@@ -207,7 +207,7 @@ export interface SelectState {
   viewMoreNextIndex: number;
 }
 
-export class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
+class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
   static displayName = 'Select';
   private parentRef = React.createRef<HTMLDivElement>();
   private menuComponentRef = React.createRef<HTMLElement>();
@@ -1382,23 +1382,23 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             <React.Fragment>
               <div className={css(styles.selectToggleWrapper)}>
                 {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                <TextInput 
-                    className={css(styles.selectToggleTypeahead)}
-                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id={`${selectToggleId}-select-typeahead`}
-                    aria-label={typeAheadAriaLabel}
-                    {...(typeAheadAriaDescribedby && { 'aria-describedby': typeAheadAriaDescribedby })}
-                    placeholder={placeholderText as string}
-                    value={
-                      typeaheadInputValue !== null
-                        ? typeaheadInputValue
-                        : this.getDisplay(selections[0] as string, 'text') || ''
-                    }
-                    onChange={(event) => this.onChange(event as React.ChangeEvent<HTMLInputElement>)}
-                    onClick={this.onClick}
-                    autoComplete={inputAutoComplete}
-                    isDisabled={isDisabled}
-                    ref={this.inputRef}
+                <TextInput
+                  className={css(styles.selectToggleTypeahead)}
+                  aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
+                  id={`${selectToggleId}-select-typeahead`}
+                  aria-label={typeAheadAriaLabel}
+                  {...(typeAheadAriaDescribedby && { 'aria-describedby': typeAheadAriaDescribedby })}
+                  placeholder={placeholderText as string}
+                  value={
+                    typeaheadInputValue !== null
+                      ? typeaheadInputValue
+                      : this.getDisplay(selections[0] as string, 'text') || ''
+                  }
+                  onChange={(event) => this.onChange(event as React.ChangeEvent<HTMLInputElement>)}
+                  onClick={this.onClick}
+                  autoComplete={inputAutoComplete}
+                  isDisabled={isDisabled}
+                  ref={this.inputRef}
                 />
               </div>
               {hasOnClear && (selections[0] || typeaheadInputValue) && clearBtn}
@@ -1409,20 +1409,20 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               <div className={css(styles.selectToggleWrapper)}>
                 {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                 {selections && Array.isArray(selections) && selections.length > 0 && selectedChips}
-                <TextInput 
-                    className={css(styles.selectToggleTypeahead)}
-                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id={`${selectToggleId}-select-multi-typeahead-typeahead`}
-                    aria-label={typeAheadAriaLabel}
-                    aria-invalid={validated === ValidatedOptions.error}
-                    {...(typeAheadAriaDescribedby && { 'aria-describedby': typeAheadAriaDescribedby })}
-                    placeholder={placeholderText as string}
-                    value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
-                    onChange={(event) => this.onChange(event as React.ChangeEvent<HTMLInputElement>)}
-                    onClick={this.onClick}
-                    autoComplete={inputAutoComplete}
-                    isDisabled={isDisabled}
-                    ref={this.inputRef}
+                <TextInput
+                  className={css(styles.selectToggleTypeahead)}
+                  aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
+                  id={`${selectToggleId}-select-multi-typeahead-typeahead`}
+                  aria-label={typeAheadAriaLabel}
+                  aria-invalid={validated === ValidatedOptions.error}
+                  {...(typeAheadAriaDescribedby && { 'aria-describedby': typeAheadAriaDescribedby })}
+                  placeholder={placeholderText as string}
+                  value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
+                  onChange={(event) => this.onChange(event as React.ChangeEvent<HTMLInputElement>)}
+                  onClick={this.onClick}
+                  autoComplete={inputAutoComplete}
+                  isDisabled={isDisabled}
+                  ref={this.inputRef}
                 />
               </div>
               {hasOnClear && ((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
@@ -1489,3 +1489,5 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     );
   }
 }
+
+export { Select };

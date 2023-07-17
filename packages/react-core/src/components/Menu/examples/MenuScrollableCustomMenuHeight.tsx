@@ -33,7 +33,7 @@ export const MenuScrollableCustomMenuHeight: React.FunctionComponent = () => {
             itemId={15}
             to="#default-link2"
             // just for demo so that navigation is not triggered
-            onClick={event => event.preventDefault()}
+            onClick={(event) => event.preventDefault()}
           >
             Link
           </MenuItem>

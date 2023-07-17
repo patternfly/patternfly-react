@@ -58,7 +58,7 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   inoperableEvents?: string[];
 }
 
-export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
+class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
   static displayName = 'InternalDropdownItem';
   ref = React.createRef<HTMLLIElement>();
   additionalRef = React.createRef<any>();
@@ -288,3 +288,5 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     );
   }
 }
+
+export { InternalDropdownItem };

@@ -22,7 +22,7 @@ export const FormSection: React.FunctionComponent<FormSectionProps> = ({
   ...props
 }: FormSectionProps) => (
   <GenerateId prefix="pf-form-section-title">
-    {sectionId => (
+    {(sectionId) => (
       <section
         className={css(styles.formSection, className)}
         role="group"

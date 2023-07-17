@@ -81,7 +81,7 @@ const setLineClamp = (lines: number, element: HTMLDivElement) => {
   element.style.setProperty(lineClamp.name, lines.toString());
 };
 
-export class ExpandableSection extends React.Component<ExpandableSectionProps, ExpandableSectionState> {
+class ExpandableSection extends React.Component<ExpandableSectionProps, ExpandableSectionState> {
   static displayName = 'ExpandableSection';
   constructor(props: ExpandableSectionProps) {
     super(props);
@@ -279,3 +279,5 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     );
   }
 }
+
+export { ExpandableSection };

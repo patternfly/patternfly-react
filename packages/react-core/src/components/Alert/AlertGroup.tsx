@@ -26,7 +26,7 @@ interface AlertGroupState {
   container: HTMLElement;
 }
 
-export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState> {
+class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState> {
   static displayName = 'AlertGroup';
   state = {
     container: undefined
@@ -93,3 +93,5 @@ export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState
     return ReactDOM.createPortal(alertGroup, container);
   }
 }
+
+export { AlertGroup };

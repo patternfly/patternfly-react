@@ -91,11 +91,11 @@ export const TableStripedExpandable: React.FunctionComponent = () => {
   // In this example, expanded rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
   // Note that this behavior is very similar to selection state.
-  const initialExpandedRepoNames = repositories.filter(repo => !!repo.details).map(repo => repo.name); // Default to all expanded
+  const initialExpandedRepoNames = repositories.filter((repo) => !!repo.details).map((repo) => repo.name); // Default to all expanded
   const [expandedRepoNames, setExpandedRepoNames] = React.useState<string[]>(initialExpandedRepoNames);
   const setRepoExpanded = (repo: Repository, isExpanding = true) =>
-    setExpandedRepoNames(prevExpanded => {
-      const otherExpandedRepoNames = prevExpanded.filter(r => r !== repo.name);
+    setExpandedRepoNames((prevExpanded) => {
+      const otherExpandedRepoNames = prevExpanded.filter((r) => r !== repo.name);
       return isExpanding ? [...otherExpandedRepoNames, repo.name] : otherExpandedRepoNames;
     });
   const isRepoExpanded = (repo: Repository) => expandedRepoNames.includes(repo.name);
@@ -112,12 +112,7 @@ export const TableStripedExpandable: React.FunctionComponent = () => {
         id="toggle-compact-striped"
         name="toggle-compact-striped"
       />
-      <Table
-        aria-label="Expandable table"
-        variant={isExampleCompact ? 'compact' : undefined}
-        isStriped
-        isExpandable
-      >
+      <Table aria-label="Expandable table" variant={isExampleCompact ? 'compact' : undefined} isStriped isExpandable>
         <Thead>
           <Tr>
             <Th />

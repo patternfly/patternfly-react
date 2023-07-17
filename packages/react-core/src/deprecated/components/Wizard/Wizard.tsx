@@ -125,7 +125,7 @@ interface WizardState {
   isNavOpen: boolean;
 }
 
-export class Wizard extends React.Component<WizardProps, WizardState> {
+class Wizard extends React.Component<WizardProps, WizardState> {
   static displayName = 'Wizard';
   private static currentId = 0;
   static defaultProps: PickOptional<WizardProps> = {
@@ -552,7 +552,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
             isInPage={isOpen === undefined}
             mainAriaLabelledBy={(title || mainAriaLabelledBy) && (mainAriaLabelledBy || this.titleId)}
             isNavOpen={this.state.isNavOpen}
-            onNavToggle={isNavOpen => this.setState({ isNavOpen })}
+            onNavToggle={(isNavOpen) => this.setState({ isNavOpen })}
             nav={nav}
             steps={steps}
             activeStep={activeStep}
@@ -595,3 +595,5 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     return wizard;
   }
 }
+
+export { Wizard };

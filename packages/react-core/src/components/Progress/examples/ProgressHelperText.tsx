@@ -11,7 +11,7 @@ export const ProgressHelperText: React.FunctionComponent = () => {
   const capitalize = (input: string) => input[0].toUpperCase() + input.substring(1);
   const formatVariantName = (variant: ProgressVariant) => (variant ? capitalize(variant) : 'Default');
 
-  const variantOptions = progressVariants.map(variant => (
+  const variantOptions = progressVariants.map((variant) => (
     <Radio
       id={`progress-helper-text-${variant}-selector`}
       label={`${formatVariantName(variant)} variant`}

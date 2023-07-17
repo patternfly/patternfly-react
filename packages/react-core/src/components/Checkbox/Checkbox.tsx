@@ -48,7 +48,7 @@ interface CheckboxState {
   ouiaStateId: string;
 }
 
-export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
+class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
   static displayName = 'Checkbox';
   static defaultProps: PickOptional<CheckboxProps> = {
     className: '',
@@ -139,3 +139,5 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     );
   }
 }
+
+export { Checkbox };

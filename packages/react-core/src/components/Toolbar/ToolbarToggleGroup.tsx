@@ -48,7 +48,7 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   };
 }
 
-export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
+class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
   static displayName = 'ToolbarToggleGroup';
   isContentPopup = () => {
     const viewportSize = canUseDOM ? window.innerWidth : 1200;
@@ -143,3 +143,5 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
     );
   }
 }
+
+export { ToolbarToggleGroup };

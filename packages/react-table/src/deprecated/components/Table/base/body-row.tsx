@@ -28,7 +28,7 @@ export interface BodyRowProps {
   rowKey: string;
 }
 
-export class BodyRow extends React.Component<BodyRowProps, {}> {
+class BodyRow extends React.Component<BodyRowProps, {}> {
   static displayName = 'BodyRow';
   static defaultProps = {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -97,3 +97,5 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
     );
   }
 }
+
+export { BodyRow };

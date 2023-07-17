@@ -39,7 +39,7 @@ export interface FormSelectProps
   ouiaSafe?: boolean;
 }
 
-export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: string }> {
+class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: string }> {
   static displayName = 'FormSelect';
   constructor(props: FormSelectProps) {
     super(props);
@@ -106,3 +106,5 @@ export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: 
     );
   }
 }
+
+export { FormSelect };

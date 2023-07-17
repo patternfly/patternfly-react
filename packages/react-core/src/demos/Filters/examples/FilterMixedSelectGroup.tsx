@@ -59,7 +59,6 @@ const columnNames = {
   location: 'Location'
 };
 
-/* eslint-disable patternfly-react/no-anonymous-functions */
 export const FilterMixedSelectGroup: React.FunctionComponent = () => {
   // Set up repo filtering
   const [locationSelections, setLocationSelections] = React.useState<string[]>([]);

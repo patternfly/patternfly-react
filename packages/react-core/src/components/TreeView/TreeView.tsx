@@ -113,7 +113,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
 }: TreeViewProps) => {
   const treeViewList = (
     <TreeViewList isNested={isNested} toolbar={toolbar}>
-      {data.map(item => (
+      {data.map((item) => (
         <TreeViewListItem
           key={item.id?.toString() || item.name?.toString()}
           name={item.name}

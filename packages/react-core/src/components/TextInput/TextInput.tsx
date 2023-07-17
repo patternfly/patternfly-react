@@ -85,6 +85,7 @@ interface TextInputState {
   ouiaStateId: string;
 }
 
+// eslint-disable-next-line patternfly-react/no-anonymous-functions
 export class TextInputBase extends React.Component<TextInputProps, TextInputState> {
   static displayName = 'TextInputBase';
   static defaultProps: TextInputProps = {
@@ -234,4 +235,3 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
 export const TextInput = React.forwardRef((props: TextInputProps, ref: React.Ref<HTMLInputElement>) => (
   <TextInputBase {...props} innerRef={ref as React.MutableRefObject<any>} />
 ));
-TextInput.displayName = 'TextInput';

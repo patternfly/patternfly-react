@@ -1,16 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-import {
-  Table,
-  Thead,
-  Tr,
-  Th,
-  Tbody,
-  Td,
-  ExpandableRowContent,
-  ActionsColumn,
-  IAction
-} from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td, ExpandableRowContent, ActionsColumn, IAction } from '@patternfly/react-table';
 
 interface Repository {
   name: string;
@@ -57,7 +47,7 @@ const NestedReposTable: React.FunctionComponent = () => {
         </Tr>
       </Thead>
       <Tbody>
-        {prs.map(repo => (
+        {prs.map((repo) => (
           <Tr key={repo.name}>
             <Td dataLabel={columnNames.name}>{repo.name}</Td>
             <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
@@ -111,11 +101,11 @@ export const TableExpandable: React.FunctionComponent = () => {
   // In this example, expanded rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
   // Note that this behavior is very similar to selection state.
-  const initialExpandedRepoNames = repositories.filter(repo => !!repo.nestedComponent).map(repo => repo.name); // Default to all expanded
+  const initialExpandedRepoNames = repositories.filter((repo) => !!repo.nestedComponent).map((repo) => repo.name); // Default to all expanded
   const [expandedRepoNames, setExpandedRepoNames] = React.useState<string[]>(initialExpandedRepoNames);
   const setRepoExpanded = (repo: Repository, isExpanding = true) =>
-    setExpandedRepoNames(prevExpanded => {
-      const otherExpandedRepoNames = prevExpanded.filter(r => r !== repo.name);
+    setExpandedRepoNames((prevExpanded) => {
+      const otherExpandedRepoNames = prevExpanded.filter((r) => r !== repo.name);
       return isExpanding ? [...otherExpandedRepoNames, repo.name] : otherExpandedRepoNames;
     });
   const isRepoExpanded = (repo: Repository) => expandedRepoNames.includes(repo.name);

@@ -8,7 +8,7 @@ import { getOUIAProps, OUIAProps } from '../../../helpers';
 import { PickOptional } from '../../../helpers/typeUtils';
 import { Popper } from '../../../helpers/Popper/Popper';
 
-export class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
+class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
   static displayName = 'DropdownWithContext';
 
   openedOnEnter = false;
@@ -189,3 +189,5 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     );
   }
 }
+
+export { DropdownWithContext };

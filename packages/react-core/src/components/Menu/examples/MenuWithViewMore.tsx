@@ -15,7 +15,7 @@ export const MenuWithViewMore: React.FunctionComponent = () => {
       itemId={'view-more-1'}
       to="#default-link2"
       // just for demo so that navigation is not triggered
-      onClick={event => event.preventDefault()}
+      onClick={(event) => event.preventDefault()}
     >
       Link
     </MenuItem>,
@@ -95,7 +95,7 @@ export const MenuWithViewMore: React.FunctionComponent = () => {
     <Menu activeItemId={activeItem} onSelect={onSelect}>
       <MenuContent>
         <MenuList>
-          {visibleOptions.map(option => {
+          {visibleOptions.map((option) => {
             const props = option.props;
 
             return <MenuItem key={option.key} ref={props.itemId === activeItem ? activeItemRef : null} {...props} />;

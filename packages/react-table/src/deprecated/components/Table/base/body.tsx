@@ -6,7 +6,14 @@
  */
 import * as React from 'react';
 import isEqual from 'lodash/isEqual';
-import { RowsType, RowType, RowKeyType, RenderersTypes, createElementType, ColumnsType } from '../../../../components/Table/base/types';
+import {
+  RowsType,
+  RowType,
+  RowKeyType,
+  RenderersTypes,
+  createElementType,
+  ColumnsType
+} from '../../../../components/Table/base/types';
 import { ProviderContext } from '../../../../components/Table/base/provider';
 import { resolveRowKey } from './resolve-row-key';
 import { BodyRow } from './body-row';

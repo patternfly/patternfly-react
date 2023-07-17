@@ -39,7 +39,7 @@ export const ApplicationLauncherSectionsAndIcons: React.FunctionComponent = () =
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => setIsOpen(isOpen);
-  const onSelect = (_event: any) => setIsOpen(prevIsOpen => !prevIsOpen);
+  const onSelect = (_event: any) => setIsOpen((prevIsOpen) => !prevIsOpen);
 
   return (
     <ApplicationLauncher onSelect={onSelect} onToggle={onToggle} isOpen={isOpen} items={appLauncherItems} isGrouped />

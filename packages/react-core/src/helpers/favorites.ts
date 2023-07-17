@@ -18,13 +18,13 @@ export const createRenderableFavorites = (
 ) => {
   if (isGrouped) {
     const favoriteItems: React.ReactNode[] = [];
-    (items as React.ReactElement[]).forEach(group => {
+    (items as React.ReactElement[]).forEach((group) => {
       if (favorites.length > 0) {
         return (
           group.props.children &&
           (group.props.children as React.ReactElement[])
-            .filter(item => favorites.includes(item.props.id))
-            .map(item => {
+            .filter((item) => favorites.includes(item.props.id))
+            .map((item) => {
               if (isEnterTriggersArrowDown) {
                 return favoriteItems.push(
                   React.cloneElement(item, {
@@ -45,8 +45,8 @@ export const createRenderableFavorites = (
     return favoriteItems;
   }
   return (items as React.ReactElement[])
-    .filter(item => favorites.includes(item.props.id))
-    .map(item => React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: isEnterTriggersArrowDown }));
+    .filter((item) => favorites.includes(item.props.id))
+    .map((item) => React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: isEnterTriggersArrowDown }));
 };
 
 /**
@@ -58,24 +58,24 @@ export const createRenderableFavorites = (
  */
 export const extendItemsWithFavorite = (items: object, isGrouped: boolean, favorites: any[]) => {
   if (isGrouped) {
-    return (items as React.ReactElement[]).map(group =>
+    return (items as React.ReactElement[]).map((group) =>
       React.cloneElement(group, {
-        children: React.Children.map(group.props.children as React.ReactElement[], item => {
+        children: React.Children.map(group.props.children as React.ReactElement[], (item) => {
           if (item.type === ApplicationLauncherSeparator || item.type === Divider) {
             return item;
           }
           return React.cloneElement(item, {
             isFavorite: favorites.some(
-              favoriteId => favoriteId === item.props.id || `favorite-${favoriteId}` === item.props.id
+              (favoriteId) => favoriteId === item.props.id || `favorite-${favoriteId}` === item.props.id
             )
           });
         })
       })
     );
   }
-  return (items as React.ReactElement[]).map(item =>
+  return (items as React.ReactElement[]).map((item) =>
     React.cloneElement(item, {
-      isFavorite: favorites.some(favoriteId => favoriteId === item.props.id)
+      isFavorite: favorites.some((favoriteId) => favoriteId === item.props.id)
     })
   );
 };

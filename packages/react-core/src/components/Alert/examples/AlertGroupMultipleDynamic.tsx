@@ -13,11 +13,11 @@ export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
   const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
 
   const addAlerts = (incomingAlerts: Partial<AlertProps>[]) => {
-    setAlerts(prevAlerts => [...prevAlerts, ...incomingAlerts]);
+    setAlerts((prevAlerts) => [...prevAlerts, ...incomingAlerts]);
   };
 
   const removeAlert = (key: React.Key) => {
-    setAlerts(prevAlerts => [...prevAlerts.filter(alert => alert.key !== key)]);
+    setAlerts((prevAlerts) => [...prevAlerts.filter((alert) => alert.key !== key)]);
   };
 
   const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');

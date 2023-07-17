@@ -45,7 +45,7 @@ export interface RadioProps
   ouiaSafe?: boolean;
 }
 
-export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
+class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
   static displayName = 'Radio';
   static defaultProps: PickOptional<RadioProps> = {
     className: '',
@@ -148,3 +148,5 @@ export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> 
     );
   }
 }
+
+export { Radio };

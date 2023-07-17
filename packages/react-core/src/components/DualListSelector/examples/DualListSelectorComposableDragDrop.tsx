@@ -53,11 +53,11 @@ export const DualListSelectorComposableDragDrop: React.FunctionComponent = () =>
 
   const moveAll = (fromAvailable: boolean) => {
     if (fromAvailable) {
-      setChosenOptions([...availableOptions.filter(option => option.isVisible), ...chosenOptions]);
-      setAvailableOptions([...availableOptions.filter(option => !option.isVisible)]);
+      setChosenOptions([...availableOptions.filter((option) => option.isVisible), ...chosenOptions]);
+      setAvailableOptions([...availableOptions.filter((option) => !option.isVisible)]);
     } else {
-      setAvailableOptions([...chosenOptions.filter(option => option.isVisible), ...availableOptions]);
-      setChosenOptions([...chosenOptions.filter(option => !option.isVisible)]);
+      setAvailableOptions([...chosenOptions.filter((option) => option.isVisible), ...availableOptions]);
+      setChosenOptions([...chosenOptions.filter((option) => !option.isVisible)]);
     }
   };
 
@@ -96,8 +96,8 @@ export const DualListSelectorComposableDragDrop: React.FunctionComponent = () =>
     <DualListSelector>
       <DualListSelectorPane
         title="Available"
-        status={`${availableOptions.filter(option => option.selected && option.isVisible).length} of ${
-          availableOptions.filter(option => option.isVisible).length
+        status={`${availableOptions.filter((option) => option.selected && option.isVisible).length} of ${
+          availableOptions.filter((option) => option.isVisible).length
         } options selected`}
       >
         <DualListSelectorList>
@@ -107,7 +107,7 @@ export const DualListSelectorComposableDragDrop: React.FunctionComponent = () =>
                 key={index}
                 isSelected={option.selected}
                 id={`composable-drag-drop-available-option-${index}`}
-                onOptionSelect={e => onOptionSelect(e, index, false)}
+                onOptionSelect={(e) => onOptionSelect(e, index, false)}
               >
                 {option.text}
               </DualListSelectorListItem>
@@ -117,7 +117,7 @@ export const DualListSelectorComposableDragDrop: React.FunctionComponent = () =>
       </DualListSelectorPane>
       <DualListSelectorControlsWrapper>
         <DualListSelectorControl
-          isDisabled={!availableOptions.some(option => option.selected)}
+          isDisabled={!availableOptions.some((option) => option.selected)}
           onClick={() => moveSelected(true)}
           aria-label="Add selected"
         >
@@ -139,7 +139,7 @@ export const DualListSelectorComposableDragDrop: React.FunctionComponent = () =>
         </DualListSelectorControl>
         <DualListSelectorControl
           onClick={() => moveSelected(false)}
-          isDisabled={!chosenOptions.some(option => option.selected)}
+          isDisabled={!chosenOptions.some((option) => option.selected)}
           aria-label="Remove selected"
         >
           <AngleLeftIcon />
@@ -154,8 +154,8 @@ export const DualListSelectorComposableDragDrop: React.FunctionComponent = () =>
       >
         <DualListSelectorPane
           title="Chosen"
-          status={`${chosenOptions.filter(option => option.selected && option.isVisible).length} of ${
-            chosenOptions.filter(option => option.isVisible).length
+          status={`${chosenOptions.filter((option) => option.selected && option.isVisible).length} of ${
+            chosenOptions.filter((option) => option.isVisible).length
           } options selected`}
           isChosen
         >
@@ -167,7 +167,7 @@ export const DualListSelectorComposableDragDrop: React.FunctionComponent = () =>
                     <DualListSelectorListItem
                       isSelected={option.selected}
                       id={`composable-drag-drop-chosen-option-${index}`}
-                      onOptionSelect={e => onOptionSelect(e, index, true)}
+                      onOptionSelect={(e) => onOptionSelect(e, index, true)}
                       isDraggable
                     >
                       {option.text}

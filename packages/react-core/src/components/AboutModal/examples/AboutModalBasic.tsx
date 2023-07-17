@@ -20,7 +20,7 @@ export const AboutModalBasic: React.FunctionComponent = () => {
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"
-        backgroundImageSrc='/assets/images/pfbg-icon.svg'
+        backgroundImageSrc="/assets/images/pfbg-icon.svg"
         productName="Product Name"
       >
         <TextContent>

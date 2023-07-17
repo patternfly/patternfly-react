@@ -97,7 +97,7 @@ export interface PageState {
   height: number;
 }
 
-export class Page extends React.Component<PageProps, PageState> {
+class Page extends React.Component<PageProps, PageState> {
   static displayName = 'Page';
   static defaultProps: PageProps = {
     isManagedSidebar: false,
@@ -343,3 +343,5 @@ export class Page extends React.Component<PageProps, PageState> {
     );
   }
 }
+
+export { Page };

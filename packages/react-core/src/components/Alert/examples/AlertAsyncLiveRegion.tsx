@@ -13,7 +13,7 @@ export const AsyncLiveRegionAlert: React.FunctionComponent = () => {
   const getUniqueId: () => number = () => new Date().getTime();
 
   const addAlert = (alertInfo: AlertInfo) => {
-    setAlerts(prevAlertInfo => [...prevAlertInfo, alertInfo]);
+    setAlerts((prevAlertInfo) => [...prevAlertInfo, alertInfo]);
   };
 
   React.useEffect(() => {

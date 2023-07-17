@@ -139,7 +139,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
             {...(isDisabled && { isDisabled })}
             {...(onChange && { onChange: (event, _value) => onChange(event) })}
             onBlur={handleBlur}
-            {...(!onChange && { readOnlyVariant: "default" })}
+            {...(!onChange && { readOnlyVariant: 'default' })}
             onKeyDown={keyDownHandler}
             validated={validated}
           />

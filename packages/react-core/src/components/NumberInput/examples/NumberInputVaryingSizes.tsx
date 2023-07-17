@@ -28,7 +28,7 @@ export const NumberInputVaryingSizes: React.FunctionComponent = () => {
       <NumberInput
         value={input1Value}
         onMinus={() => onMinus(input1Value, setInput1Value)}
-        onChange={event => onChange(event, setInput1Value)}
+        onChange={(event) => onChange(event, setInput1Value)}
         onPlus={() => onPlus(input1Value, setInput1Value)}
         inputName="input1"
         inputAriaLabel="number input 1"
@@ -41,7 +41,7 @@ export const NumberInputVaryingSizes: React.FunctionComponent = () => {
       <NumberInput
         value={input2Value}
         onMinus={() => onMinus(input2Value, setInput2Value)}
-        onChange={event => onChange(event, setInput2Value)}
+        onChange={(event) => onChange(event, setInput2Value)}
         onPlus={() => onPlus(input2Value, setInput2Value)}
         inputName="input2"
         inputAriaLabel="number input 2"
@@ -54,7 +54,7 @@ export const NumberInputVaryingSizes: React.FunctionComponent = () => {
       <NumberInput
         value={input3Value}
         onMinus={() => onMinus(input3Value, setInput3Value)}
-        onChange={event => onChange(event, setInput3Value)}
+        onChange={(event) => onChange(event, setInput3Value)}
         onPlus={() => onPlus(input3Value, setInput3Value)}
         inputName="input3"
         inputAriaLabel="number input 3"
@@ -67,7 +67,7 @@ export const NumberInputVaryingSizes: React.FunctionComponent = () => {
       <NumberInput
         value={input4Value}
         onMinus={() => onMinus(input4Value, setInput4Value)}
-        onChange={event => onChange(event, setInput4Value)}
+        onChange={(event) => onChange(event, setInput4Value)}
         onPlus={() => onPlus(input4Value, setInput4Value)}
         inputName="input4"
         inputAriaLabel="number input 4"

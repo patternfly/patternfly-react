@@ -184,7 +184,7 @@ export const getLegendTooltipSize = ({
   });
 
   // Replace whitespace with spacer char for consistency in width
-  const formattedData = data.map(val => ({
+  const formattedData = data.map((val) => ({
     name: val.name.replace(/ /g, spacer)
   }));
 
@@ -231,7 +231,7 @@ export const getLegendTooltipVisibleData = ({
     let index = -1;
     for (let i = 0; i < legendData.length; i++) {
       const data = legendData[i];
-      const activePoint = activePoints ? activePoints.find(item => item.childName === data.childName) : '';
+      const activePoint = activePoints ? activePoints.find((item) => item.childName === data.childName) : '';
       if (
         !activePoint ||
         (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.var)
@@ -273,7 +273,7 @@ export const getLegendTooltipVisibleText = ({
   if (legendData) {
     let index = -1;
     for (const data of legendData) {
-      const activePoint = activePoints ? activePoints.find(item => item.childName === data.childName) : '';
+      const activePoint = activePoints ? activePoints.find((item) => item.childName === data.childName) : '';
       if (
         !activePoint ||
         (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.var)

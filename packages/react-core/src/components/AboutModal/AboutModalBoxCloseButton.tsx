@@ -12,7 +12,7 @@ export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivEl
 }
 
 export const AboutModalBoxCloseButton: React.FunctionComponent<AboutModalBoxCloseButtonProps> = ({
-  onClose = _e => undefined as any,
+  onClose = (_e) => undefined as any,
   'aria-label': ariaLabel = 'Close Dialog',
   ...props
 }: AboutModalBoxCloseButtonProps) => (

@@ -88,7 +88,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
       const reader = new FileReader();
       reader.onload = () => resolve(reader.result);
       reader.onerror = () => reject(reader.error);
-      reader.onprogress = data => {
+      reader.onprogress = (data) => {
         if (data.lengthComputable) {
           setLoadPercentage((data.loaded / data.total) * 100);
         }
@@ -103,7 +103,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     } else {
       onReadStarted(file);
       readFile(file)
-        .then(data => {
+        .then((data) => {
           setLoadResult('success');
           setLoadPercentage(100);
           onReadFinished(file);

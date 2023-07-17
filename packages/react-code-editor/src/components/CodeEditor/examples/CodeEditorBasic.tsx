@@ -8,17 +8,17 @@ export const CodeEditorBasic: React.FunctionComponent = () => {
   const [isReadOnly, setIsReadOnly] = React.useState(false);
   const [isMinimapVisible, setIsMinimapVisible] = React.useState(false);
 
-  const toggleDarkTheme = checked => {
+  const toggleDarkTheme = (checked) => {
     setIsDarkTheme(checked);
   };
 
-  const toggleLineNumbers = checked => {
+  const toggleLineNumbers = (checked) => {
     setIsLineNumbersVisible(checked);
   };
-  const toggleReadOnly = checked => {
+  const toggleReadOnly = (checked) => {
     setIsReadOnly(checked);
   };
-  const toggleMinimap = checked => {
+  const toggleMinimap = (checked) => {
     setIsMinimapVisible(checked);
   };
 
@@ -30,7 +30,7 @@ export const CodeEditorBasic: React.FunctionComponent = () => {
     monaco.editor.getModels()[0].updateOptions({ tabSize: 5 });
   };
 
-  const onChange = value => {
+  const onChange = (value) => {
     // eslint-disable-next-line no-console
     console.log(value);
   };

@@ -50,7 +50,6 @@ const columnNames = {
   location: 'Location'
 };
 
-/* eslint-disable patternfly-react/no-anonymous-functions */
 export const FilterCheckboxSelect: React.FunctionComponent = () => {
   // Set up repo filtering
   const [selections, setSelections] = React.useState<string[]>([]);

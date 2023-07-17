@@ -8,6 +8,10 @@ import { PageHeaderToolsGroup } from '../PageHeaderToolsGroup';
 import {} from '../..';
 
 it('PageHeaderToolsGroup should match snapshot (auto-generated)', () => {
-  const { asFragment } = render(<PageHeaderToolsGroup className={'string'}><div>ReactNode</div></PageHeaderToolsGroup>);
+  const { asFragment } = render(
+    <PageHeaderToolsGroup className={'string'}>
+      <div>ReactNode</div>
+    </PageHeaderToolsGroup>
+  );
   expect(asFragment()).toMatchSnapshot();
 });

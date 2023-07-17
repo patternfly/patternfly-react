@@ -12,7 +12,7 @@ export interface ClipboardCopyExpandedProps extends Omit<ClipboardCopyProps, 'on
   isCode?: boolean;
 }
 
-export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpandedProps> {
+class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpandedProps> {
   static displayName = 'ClipboardCopyExpanded';
   constructor(props: any) {
     super(props);
@@ -41,3 +41,5 @@ export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpanded
     );
   }
 }
+
+export { ClipboardCopyExpanded };

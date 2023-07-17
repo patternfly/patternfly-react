@@ -50,7 +50,7 @@ export const LegacyTableCellWidth: React.FunctionComponent = () => {
       transforms: [cellWidth(30)]
     }
   ];
-  const rows: TableProps['rows'] = repositories.map(repo => [
+  const rows: TableProps['rows'] = repositories.map((repo) => [
     repo.name,
     repo.branches,
     repo.prs,

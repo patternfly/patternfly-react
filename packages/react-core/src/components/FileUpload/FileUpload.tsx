@@ -91,7 +91,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   onReadFinished = () => {},
   onReadFailed = () => {},
   onClearClick,
-  onClick = event => event.preventDefault(),
+  onClick = (event) => event.preventDefault(),
   onTextChange,
   onDataChange,
   dropzoneProps = {},
@@ -105,7 +105,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
       if (type === fileReaderType.text || type === fileReaderType.dataURL) {
         onReadStarted(event, fileHandle);
         readFile(fileHandle, type as fileReaderType)
-          .then(data => {
+          .then((data) => {
             onReadFinished(event, fileHandle);
             onDataChange?.(event, data as string);
           })
