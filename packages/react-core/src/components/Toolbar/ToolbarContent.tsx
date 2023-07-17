@@ -3,7 +3,6 @@ import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { formatBreakpointMods } from '../../helpers/util';
-import { ToolbarExpandableContent } from './ToolbarExpandableContent';
 import { PageContext } from '../Page/PageContext';
 
 export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
@@ -33,8 +32,6 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   clearFiltersButtonText?: string;
   /** Id of the parent Toolbar component */
   toolbarId?: string;
-  /** Custom expandable content for the toolbar, for non-managed multiple toolbar toggle groups. */
-  expandableContent?: React.ReactNode;
 }
 
 class ToolbarContent extends React.Component<ToolbarContentProps> {
@@ -60,7 +57,6 @@ class ToolbarContent extends React.Component<ToolbarContentProps> {
       showClearFiltersButton,
       clearFiltersButtonText,
       alignSelf,
-      expandableContent,
       ...props
     } = this.props;
 
@@ -73,6 +69,7 @@ class ToolbarContent extends React.Component<ToolbarContentProps> {
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
               className
             )}
+            ref={this.expandableContentRef}
             {...props}
           >
             <ToolbarContext.Consumer>
@@ -80,6 +77,7 @@ class ToolbarContent extends React.Component<ToolbarContentProps> {
                 clearAllFilters: clearAllFiltersContext,
                 clearFiltersButtonText: clearFiltersButtonContext,
                 showClearFiltersButton: showClearFiltersButtonContext,
+                isExpanded: isExpandedContext,
                 toolbarId: toolbarIdContext
               }) => {
                 const expandableContentId = `${
@@ -90,7 +88,11 @@ class ToolbarContent extends React.Component<ToolbarContentProps> {
                     value={{
                       expandableContentRef: this.expandableContentRef,
                       expandableContentId,
-                      chipContainerRef: this.chipContainerRef
+                      chipContainerRef: this.chipContainerRef,
+                      isExpanded: isExpanded || isExpandedContext,
+                      clearAllFilters: clearAllFilters || clearAllFiltersContext,
+                      clearFiltersButtonText: clearFiltersButtonText || clearFiltersButtonContext,
+                      showClearFiltersButton: showClearFiltersButton || showClearFiltersButtonContext
                     }}
                   >
                     <div
@@ -106,19 +108,6 @@ class ToolbarContent extends React.Component<ToolbarContentProps> {
                     >
                       {children}
                     </div>
-                    {expandableContent ? (
-                      expandableContent
-                    ) : (
-                      <ToolbarExpandableContent
-                        id={expandableContentId}
-                        isExpanded={isExpanded}
-                        expandableContentRef={this.expandableContentRef}
-                        chipContainerRef={this.chipContainerRef}
-                        clearAllFilters={clearAllFilters || clearAllFiltersContext}
-                        showClearFiltersButton={showClearFiltersButton || showClearFiltersButtonContext}
-                        clearFiltersButtonText={clearFiltersButtonText || clearFiltersButtonContext}
-                      />
-                    )}
                   </ToolbarContentContext.Provider>
                 );
               }}

@@ -37,6 +37,7 @@ class ToolbarExpandableContent extends React.Component<ToolbarExpandableContentP
 
   render() {
     const {
+      children,
       className,
       expandableContentRef,
       chipContainerRef,
@@ -58,7 +59,7 @@ class ToolbarExpandableContent extends React.Component<ToolbarExpandableContentP
         ref={expandableContentRef}
         {...props}
       >
-        <ToolbarGroup />
+        <ToolbarGroup>{children}</ToolbarGroup>
         {numberOfFilters > 0 && (
           <ToolbarGroup className={styles.modifiers.chipContainer}>
             <ToolbarGroup ref={chipContainerRef} />

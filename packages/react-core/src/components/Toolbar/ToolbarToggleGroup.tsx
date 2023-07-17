@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarGroupProps } from './ToolbarGroup';
@@ -8,6 +7,8 @@ import { Button } from '../Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpoint_lg';
 import { formatBreakpointMods, toCamel, canUseDOM } from '../../helpers/util';
 import { PageContext } from '../Page/PageContext';
+import { ToolbarExpandableContent } from './ToolbarExpandableContent';
+import { Popper } from '../../helpers';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** Flag indicating when toggle group is expanded for non-managed toolbar toggle groups. */
@@ -50,12 +51,20 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
     xl?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
     '2xl'?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
   };
-  /** Reference to a custom expandable content group, for non-managed multiple toolbar toggle groups. */
-  expandableContentRef?: React.RefObject<any>;
+  /** Reference to a chip container group for filters inside the toolbar toggle group */
+  chipContainerRef?: React.RefObject<any>;
+  /** Optional callback for clearing all filters in the toolbar toggle group */
+  clearAllFilters?: () => void;
+  /** Flag indicating that the clear all filters button should be visible in the toolbar toggle group */
+  showClearFiltersButton?: boolean;
+  /** Text to display in the clear all filters button of the toolbar toggle group */
+  clearFiltersButtonText?: string;
 }
 
 class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
   static displayName = 'ToolbarToggleGroup';
+  toggleRef = React.createRef<HTMLButtonElement>();
+  expandableContentRef = React.createRef<HTMLDivElement>();
 
   isContentPopup = () => {
     const viewportSize = canUseDOM ? window.innerWidth : 1200;
@@ -75,8 +84,11 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
       className,
       children,
       isExpanded,
-      expandableContentRef,
       onToggle,
+      chipContainerRef,
+      clearAllFilters,
+      showClearFiltersButton,
+      clearFiltersButtonText,
       ...props
     } = this.props;
 
@@ -89,27 +101,23 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
       <PageContext.Consumer>
         {({ width, getBreakpoint }) => (
           <ToolbarContext.Consumer>
-            {({ isExpanded: managedIsExpanded, toggleIsExpanded: managedOnToggle }) => {
-              const _isExpanded = isExpanded !== undefined ? isExpanded : managedIsExpanded;
+            {({ toggleIsExpanded: managedOnToggle }) => {
               const _onToggle = onToggle !== undefined ? onToggle : managedOnToggle;
 
               return (
                 <ToolbarContentContext.Consumer>
-                  {({ expandableContentRef: managedExpandableContentRef, expandableContentId }) => {
-                    const _contentRef =
-                      expandableContentRef !== undefined ? expandableContentRef : managedExpandableContentRef;
-
-                    if (
-                      isExpanded === undefined &&
-                      managedExpandableContentRef.current &&
-                      managedExpandableContentRef.current.classList
-                    ) {
-                      if (_isExpanded) {
-                        managedExpandableContentRef.current.classList.add(styles.modifiers.expanded);
-                      } else {
-                        managedExpandableContentRef.current.classList.remove(styles.modifiers.expanded);
-                      }
-                    }
+                  {({
+                    expandableContentRef,
+                    expandableContentId,
+                    chipContainerRef: managedChipContainerRef,
+                    isExpanded: managedIsExpanded,
+                    clearAllFilters: clearAllFiltersContext,
+                    clearFiltersButtonText: clearFiltersButtonContext,
+                    showClearFiltersButton: showClearFiltersButtonContext
+                  }) => {
+                    const _isExpanded = isExpanded !== undefined ? isExpanded : managedIsExpanded;
+                    const _chipContainerRef =
+                      chipContainerRef !== undefined ? chipContainerRef : managedChipContainerRef;
 
                     const breakpointMod: {
                       md?: 'show';
@@ -118,6 +126,36 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
                       '2xl'?: 'show';
                     } = {};
                     breakpointMod[breakpoint] = 'show';
+
+                    const expandableContent = (
+                      <ToolbarExpandableContent
+                        id={expandableContentId}
+                        expandableContentRef={this.expandableContentRef}
+                        isExpanded={_isExpanded}
+                        clearAllFilters={clearAllFilters || clearAllFiltersContext}
+                        showClearFiltersButton={showClearFiltersButton || showClearFiltersButtonContext}
+                        clearFiltersButtonText={clearFiltersButtonText || clearFiltersButtonContext}
+                        chipContainerRef={_chipContainerRef}
+                      >
+                        {children}
+                      </ToolbarExpandableContent>
+                    );
+
+                    const toggleButton = (
+                      <div className={css(styles.toolbarToggle)}>
+                        <Button
+                          variant="plain"
+                          onClick={_onToggle}
+                          aria-label="Show Filters"
+                          {...(_isExpanded && { 'aria-expanded': true })}
+                          aria-haspopup={_isExpanded && this.isContentPopup()}
+                          aria-controls={expandableContentId}
+                          ref={this.toggleRef}
+                        >
+                          {toggleIcon}
+                        </Button>
+                      </div>
+                    );
 
                     return (
                       <div
@@ -135,24 +173,15 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
                         )}
                         {...props}
                       >
-                        <div className={css(styles.toolbarToggle)}>
-                          <Button
-                            variant="plain"
-                            onClick={_onToggle}
-                            aria-label="Show Filters"
-                            {...(_isExpanded && { 'aria-expanded': true })}
-                            aria-haspopup={_isExpanded && this.isContentPopup()}
-                            aria-controls={expandableContentId}
-                          >
-                            {toggleIcon}
-                          </Button>
-                        </div>
-                        {_isExpanded
-                          ? (ReactDOM.createPortal(
-                              children,
-                              _contentRef.current.firstElementChild
-                            ) as React.ReactElement)
-                          : children}
+                        <Popper
+                          appendTo={expandableContentRef.current}
+                          triggerRef={expandableContentRef}
+                          trigger={toggleButton}
+                          popper={expandableContent}
+                          popperRef={this.expandableContentRef}
+                          isVisible={_isExpanded}
+                        />
+                        {!_isExpanded && children}
                       </div>
                     );
                   }}

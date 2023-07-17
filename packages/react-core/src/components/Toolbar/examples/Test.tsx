@@ -12,15 +12,12 @@ import {
   SelectList,
   SelectOption,
   ToolbarFilter,
-  ToolbarExpandableContent,
   Badge
 } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 export const Test: React.FunctionComponent = () => {
-  const statusExpandableContentRef = React.useRef<HTMLDivElement>();
   const statusChipContainerRef = React.useRef<HTMLDivElement>();
-  const riskExpandableContentRef = React.useRef<HTMLDivElement>();
   const riskChipContainerRef = React.useRef<HTMLDivElement>();
 
   const [isStatusGroupExpanded, setIsStatusGroupExpanded] = React.useState(false);
@@ -222,43 +219,21 @@ export const Test: React.FunctionComponent = () => {
     </ToolbarGroup>
   );
 
-  const toggleExpandGroups = (
-    <>
-      <ToolbarExpandableContent // Expandable content group for the first toggle group
-        id={'expandable-1'}
-        isExpanded={isStatusGroupExpanded}
-        expandableContentRef={statusExpandableContentRef}
-        chipContainerRef={statusChipContainerRef}
-        showClearFiltersButton
-        clearAllFilters={() => onDeleteGroup('Status')}
-        clearFiltersButtonText="Clear status filter"
-      />
-      <ToolbarExpandableContent // Expandable content group for the second toggle group
-        id={'expandable-2'}
-        isExpanded={isRiskGroupExpanded}
-        expandableContentRef={riskExpandableContentRef}
-        chipContainerRef={riskChipContainerRef}
-        showClearFiltersButton
-        clearAllFilters={() => onDeleteGroup('Risk')}
-        clearFiltersButtonText="Clear risk filter"
-      />
-    </>
-  );
-
   return (
     <Toolbar id="toolbar-multiple-toggle-groups" className="pf-m-toggle-group-container">
-      <ToolbarContent
-        expandableContent={toggleExpandGroups} // Required to bypass default expandable content div
-      >
+      <ToolbarContent>
         <ToolbarToggleGroup
           isExpanded={isStatusGroupExpanded} // Required to control expanded state
           onToggle={() => {
             setIsStatusGroupExpanded(!isStatusGroupExpanded);
             setIsRiskGroupExpanded(false);
           }} // Required to control expanded state
-          expandableContentRef={statusExpandableContentRef} // Required to link the toggle group to a specific expandable content group
           toggleIcon={<FilterIcon />}
           breakpoint="md"
+          chipContainerRef={statusChipContainerRef}
+          showClearFiltersButton
+          clearAllFilters={() => onDeleteGroup('Status')}
+          clearFiltersButtonText="Clear status filter"
         >
           {statusToggleGroupItems}
         </ToolbarToggleGroup>
@@ -268,9 +243,12 @@ export const Test: React.FunctionComponent = () => {
             setIsRiskGroupExpanded(!isRiskGroupExpanded);
             setIsStatusGroupExpanded(false);
           }} // Required to control expanded state
-          expandableContentRef={riskExpandableContentRef} // Required to link the toggle group to a specific expandable content group
           toggleIcon={<FilterIcon />}
           breakpoint="xl"
+          chipContainerRef={riskChipContainerRef}
+          showClearFiltersButton
+          clearAllFilters={() => onDeleteGroup('Risk')}
+          clearFiltersButtonText={'Clear risk filter'}
         >
           {riskToggleGroupItems}
         </ToolbarToggleGroup>
