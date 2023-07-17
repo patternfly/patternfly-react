@@ -18,7 +18,6 @@ const urls = Object.keys(fullscreenRoutes)
       // so we strip the trailing string from those paths.
       const path = fullscreenRoutes[key].path;
       if (path.match(/\/patterns\/.*\/react-demos$/g)) {
-        console.log(path);
         return path.replace(/\/react-demos$/, '');
       } else {
         // some demos have been moved to the component section, so their default tab has a trailing 'react-demos'
