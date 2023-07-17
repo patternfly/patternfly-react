@@ -491,9 +491,13 @@ class DataListViewBasic extends React.Component {
           <MenuToggle
             aria-label="Select cards"
             splitButtonOptions={{
-              items: [<MenuToggleCheckbox id="split-dropdown-checkbox" aria-label={'Select all cards'} />]
+              items: [
+                <MenuToggleCheckbox 
+                  id="split-dropdown-checkbox" 
+                  key="split-dropdown-checkbox" 
+                  aria-label={'Select all cards'} />
+              ]
             }}
-            key="split-dropdown-checkbox"
           ></MenuToggle>
         </ToolbarItem>
         <ToolbarItem breakpoint="xl">
