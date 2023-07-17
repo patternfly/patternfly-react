@@ -61,7 +61,6 @@ const columnNames = {
   location: 'Location'
 };
 
-/* eslint-disable patternfly-react/no-anonymous-functions */
 export const FilterAttributeSearch: React.FunctionComponent = () => {
   // Set up repo filtering
   const [searchValue, setSearchValue] = React.useState('');

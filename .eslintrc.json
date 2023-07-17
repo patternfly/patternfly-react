@@ -106,9 +106,9 @@
             "never"
         ],
         "patternfly-react/import-tokens-icons": "error",
-        "patternfly-react/no-anonymous-functions": "off",
+        "patternfly-react/no-anonymous-functions": "error",
         "prefer-const": "error",
-        "prettier/prettier": "off",
+        "prettier/prettier": "error",
         "radix": [
             "error",
             "as-needed"

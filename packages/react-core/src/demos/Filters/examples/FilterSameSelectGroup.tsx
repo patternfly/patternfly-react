@@ -57,7 +57,6 @@ const columnNames = {
   location: 'Location'
 };
 
-/* eslint-disable patternfly-react/no-anonymous-functions */
 export const FilterSameSelectGroup: React.FunctionComponent = () => {
   // Set up repo filtering
   const [locationSelection, setLocationSelection] = React.useState('All locations');
