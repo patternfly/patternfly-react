@@ -72,6 +72,7 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
       <div
         className={css(
           styles.toolbarContent,
+          !collapseListedFilters && styles.modifiers.chipContainer,
           (numberOfFilters === 0 || isExpanded) && styles.modifiers.hidden,
           className
         )}
