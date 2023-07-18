@@ -32,7 +32,7 @@ export interface DatePickerProps
   className?: string;
   /** How to format the date in the text input. */
   dateFormat?: (date: Date) => string;
-  /** How to format the date in the text input. */
+  /** How to parse the date in the text input. */
   dateParse?: (value: string) => Date;
   /** Helper text to display alongside the date picker. Expects a HelperText component. */
   helperText?: React.ReactNode;
@@ -40,8 +40,12 @@ export interface DatePickerProps
   inputProps?: TextInputProps;
   /** Flag indicating the date picker is disabled. */
   isDisabled?: boolean;
-  /** Error message to display when the text input cannot be parsed. */
+  /** Flag indicating the date picker is required. */
+  isRequired?: boolean;
+  /** Error message to display when the text input contains a non-empty value in an invalid format. */
   invalidFormatText?: string;
+  /** Error message to display when the text input is empty and the isRequired prop is also passed in. */
+  emptyDateText?: string;
   /** Callback called every time the text input loses focus. */
   onBlur?: (event: any, value: string, date?: Date) => void;
   /** Callback called every time the text input value changes. */
@@ -88,6 +92,7 @@ const DatePickerBase = (
     dateFormat = yyyyMMddFormat,
     dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
     isDisabled = false,
+    isRequired = false,
     placeholder = 'YYYY-MM-DD',
     value: valueProp = '',
     'aria-label': ariaLabel = 'Date picker',
@@ -95,6 +100,7 @@ const DatePickerBase = (
     onChange = (): any => undefined,
     onBlur = (): any => undefined,
     invalidFormatText = 'Invalid date',
+    emptyDateText = 'Date cannot be blank',
     helperText,
     appendTo = 'inline',
     popoverProps,
@@ -153,16 +159,21 @@ const DatePickerBase = (
   };
 
   const onInputBlur = (event: any) => {
-    if (pristine) {
-      return;
-    }
     const newValueDate = dateParse(value);
-    if (isValidDate(newValueDate)) {
-      onBlur(event, value, new Date(newValueDate));
+    const dateIsValid = isValidDate(newValueDate);
+    const onBlurDateArg = dateIsValid ? new Date(newValueDate) : undefined;
+    onBlur(event, value, onBlurDateArg);
+
+    if (dateIsValid) {
       setError(newValueDate);
-    } else {
-      onBlur(event, value);
+    }
+
+    if (!dateIsValid && !pristine) {
       setErrorText(invalidFormatText);
+    }
+
+    if (!dateIsValid && pristine && isRequired) {
+      setErrorText(emptyDateText);
     }
   };
 
@@ -236,6 +247,10 @@ const DatePickerBase = (
             event.stopPropagation();
             setPopoverOpen(false);
             hideFunction();
+            // If datepicker is required and the popover is opened without the text input
+            // first receiving focus, we want to validate that the text input is not blank upon
+            // closing the popover
+            isRequired && !value && setErrorText(emptyDateText);
           }
           if (event.key === KeyTypes.Escape && popoverOpen) {
             event.stopPropagation();
@@ -254,6 +269,7 @@ const DatePickerBase = (
             <InputGroupItem isFill>
               <TextInput
                 isDisabled={isDisabled}
+                isRequired={isRequired}
                 aria-label={ariaLabel}
                 placeholder={placeholder}
                 validated={errorText.trim() ? 'error' : 'default'}
