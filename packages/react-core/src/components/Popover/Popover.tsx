@@ -204,7 +204,7 @@ export interface PopoverProps {
   /** Flag indicating whether the close button should be shown. */
   showClose?: boolean;
   /** Sets an interaction to open popover, defaults to "click" */
-  variant?: 'click' | 'hover';
+  triggerAction?: 'click' | 'hover';
   /** Whether to trap focus in the popover. */
   withFocusTrap?: boolean;
   /** The z-index of the popover. */
@@ -243,7 +243,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   onShown = (): void => null,
   onMount = (): void => null,
   zIndex = 9999,
-  variant = 'click',
+  triggerAction = 'click',
   minWidth = popoverMinWidth && popoverMinWidth.value,
   maxWidth = popoverMaxWidth && popoverMaxWidth.value,
   closeBtnAriaLabel = 'Close',
@@ -278,7 +278,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const [visible, setVisible] = React.useState(false);
   const [focusTrapActive, setFocusTrapActive] = React.useState(Boolean(propWithFocusTrap));
   const popoverRef = React.useRef(null);
-  const hideShowTime = variant === 'hover' ? animationDuration : 0;
+  const hideShowTime = triggerAction === 'hover' ? animationDuration : 0;
 
   React.useEffect(() => {
     onMount();
@@ -344,19 +344,17 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     }
   };
   const onTriggerClick = (event: MouseEvent) => {
-    if (variant === 'click') {
-      if (triggerManually) {
-        if (visible) {
-          shouldClose(event, hide);
-        } else {
-          shouldOpen(event, show);
-        }
+    if (triggerManually) {
+      if (visible) {
+        shouldClose(event, hide);
       } else {
-        if (visible) {
-          hide(event);
-        } else {
-          show(event, true);
-        }
+        shouldOpen(event, show);
+      }
+    } else {
+      if (visible) {
+        hide(event);
+      } else {
+        show(event, true);
       }
     }
   };
@@ -367,23 +365,35 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     }
   };
 
-  const onMouseEnter = (event: any) => {
-    if (variant === 'hover') {
-      if (triggerManually) {
-        shouldOpen(event as MouseEvent, show);
-      } else {
-        show(event as MouseEvent, false);
-      }
+  const onMouseEnter = (event: MouseEvent) => {
+    if (triggerManually) {
+      shouldOpen(event as MouseEvent, show);
+    } else {
+      show(event as MouseEvent, false);
     }
   };
 
-  const onMouseLeave = (event: any) => {
-    if (variant === 'hover') {
-      if (triggerManually) {
-        shouldClose(event as MouseEvent, hide);
-      } else {
-        hide(event);
-      }
+  const onMouseLeave = (event: MouseEvent) => {
+    if (triggerManually) {
+      shouldClose(event as MouseEvent, hide);
+    } else {
+      hide(event);
+    }
+  };
+
+  const onFocus = (event: FocusEvent) => {
+    if (triggerManually) {
+      shouldOpen(event as MouseEvent | KeyboardEvent, show);
+    } else {
+      show(event as MouseEvent | KeyboardEvent, false);
+    }
+  };
+
+  const onBlur = (event: FocusEvent) => {
+    if (triggerManually) {
+      shouldClose(event as MouseEvent | KeyboardEvent, hide);
+    } else {
+      hide(event as MouseEvent | KeyboardEvent);
     }
   };
 
@@ -403,6 +413,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         returnFocusOnDeactivate: true,
         clickOutsideDeactivates: true,
         tabbableOptions: { displayCheck: 'none' },
+
         fallbackFocus: () => {
           // If the popover's trigger is focused but scrolled out of view,
           // FocusTrap will throw an error when the Enter button is used on the trigger.
@@ -429,8 +440,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       aria-labelledby={headerContent ? `popover-${uniqueId}-header` : undefined}
       aria-describedby={`popover-${uniqueId}-body`}
       onMouseDown={onContentMouseDown}
-      onMouseLeave={onMouseLeave}
-      onMouseEnter={onMouseEnter}
       style={{
         minWidth: hasCustomMinWidth ? minWidth : null,
         maxWidth: hasCustomMaxWidth ? maxWidth : null
@@ -439,7 +448,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     >
       <PopoverArrow />
       <PopoverContent>
-        {showClose && variant === 'click' && (
+        {showClose && triggerAction === 'click' && (
           <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />
         )}
         {headerContent && (
@@ -475,12 +484,16 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         minWidth={minWidth}
         appendTo={appendTo}
         isVisible={visible}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
+        onMouseEnter={triggerAction === 'hover' && onMouseEnter}
+        onMouseLeave={triggerAction === 'hover' && onMouseLeave}
+        onPopperMouseEnter={triggerAction === 'hover' && onMouseEnter}
+        onPopperMouseLeave={triggerAction === 'hover' && onMouseLeave}
+        onFocus={triggerAction === 'hover' && onFocus}
+        onBlur={triggerAction === 'hover' && onBlur}
         positionModifiers={positionModifiers}
         distance={distance}
         placement={position}
-        onTriggerClick={onTriggerClick}
+        onTriggerClick={triggerAction === 'click' && onTriggerClick}
         onDocumentClick={onDocumentClick}
         onDocumentKeyDown={onDocumentKeyDown}
         enableFlip={enableFlip}
