@@ -634,7 +634,7 @@ class PrimaryDetailCardView extends React.Component {
         </PageSection>
         <PageSection isFilled padding={{ default: 'noPadding' }}>
           <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
-            <DrawerContent panelContent={panelContent} className={'pf-m-no-background'}>
+            <DrawerContent panelContent={panelContent} colorVariant="no-background">
               <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
             </DrawerContent>
           </Drawer>
