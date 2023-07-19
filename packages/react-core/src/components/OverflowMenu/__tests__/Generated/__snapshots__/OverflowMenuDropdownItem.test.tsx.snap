@@ -13,7 +13,6 @@ exports[`OverflowMenuDropdownItem should match snapshot 1`] = `
       class="pf-v5-c-menu__item"
       role="menuitem"
       tabindex="-1"
-      type="button"
     >
       <span
         class="pf-v5-c-menu__item-main"

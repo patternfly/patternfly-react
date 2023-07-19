@@ -11,16 +11,16 @@ import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import { Checkbox } from '../Checkbox';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { MenuItemAction } from './MenuItemAction';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipProps } from '../Tooltip';
 import { canUseDOM } from '../../helpers/util';
 import { useIsomorphicLayoutEffect } from '../../helpers/useIsomorphicLayout';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
-export interface tooltipPropsObject {
+export interface MenuItemTooltipPropsObject {
   /** Tooltip to display when hovered over the item */
   tooltip?: React.ReactNode;
   /** Additional tooltip props forwarded to the tooltip component */
-  tooltipProps?: any;
+  tooltipProps?: Partial<TooltipProps>;
 }
 
 export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
@@ -51,7 +51,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Render item as aria-disabled option */
   isAriaDisabled?: boolean;
   /** Props for adding a tooltip to a menu item */
-  tooltipProps?: tooltipPropsObject;
+  tooltipProps?: MenuItemTooltipPropsObject;
   /** Render item with icon */
   icon?: React.ReactNode;
   /** Render item with one or more actions */
