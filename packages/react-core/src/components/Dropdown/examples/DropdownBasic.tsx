@@ -46,11 +46,14 @@ export const DropdownBasic: React.FunctionComponent = () => {
         <DropdownItem value={3} isDisabled key="disabled link" to="#default-link4">
           Disabled Link
         </DropdownItem>
+        <DropdownItem value={4} isAriaDisabled key="aria-disabled link" to="#default-link5" tooltipProps={{tooltip: "aria-disabled link", tooltipProps:{position: "top"}}}>
+          Aria-disabled Link
+        </DropdownItem>
         <Divider component="li" key="separator" />
-        <DropdownItem value={4} key="separated action">
+        <DropdownItem value={5} key="separated action">
           Separated Action
         </DropdownItem>
-        <DropdownItem value={5} key="separated link" to="#default-link6" onClick={(ev) => ev.preventDefault()}>
+        <DropdownItem value={6} key="separated link" to="#default-link6" onClick={(ev) => ev.preventDefault()}>
           Separated Link
         </DropdownItem>
       </DropdownList>

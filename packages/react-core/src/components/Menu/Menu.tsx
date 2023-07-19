@@ -163,7 +163,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
         return;
       }
       const nextTarget = nextMenuChildren.filter(
-        (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider))
+        (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-m-aria-disabled') || el.classList.contains(styles.divider))
       )[0].firstChild;
 
       (nextTarget as HTMLElement).focus();
@@ -205,7 +205,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           if (activeElement.nextElementSibling && activeElement.nextElementSibling.classList.contains(styles.menu)) {
             const childItems = Array.from(
               activeElement.nextElementSibling.getElementsByTagName('UL')[0].children
-            ).filter((el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider)));
+            ).filter((el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-m-aria-disabled') ||  el.classList.contains(styles.divider)));
 
             (activeElement as HTMLElement).tabIndex = -1;
             (childItems[0].firstChild as HTMLElement).tabIndex = 0;

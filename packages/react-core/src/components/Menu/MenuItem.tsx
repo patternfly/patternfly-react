@@ -239,10 +239,12 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   };
 
   const onItemSelect = (event: any, onSelect: any) => {
-    // Trigger callback for Menu onSelect
-    onSelect && onSelect(event, itemId);
-    // Trigger callback for item onClick
-    onClick && onClick(event);
+    if (!isAriaDisabled) {
+      // Trigger callback for Menu onSelect
+      onSelect && onSelect(event, itemId);
+      // Trigger callback for item onClick
+      onClick && onClick(event);
+    }
   };
   const _isOnPath = (isOnPath && isOnPath) || (drilldownItemPath && drilldownItemPath.includes(itemId)) || false;
   let drill: (event: React.KeyboardEvent | React.MouseEvent) => void;
@@ -271,7 +273,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       disabled: null,
       target: isExternalLink ? '_blank' : null
     };
-  } else if (Component === 'button'  && isDisabled) {
+  } else if (Component === 'button') {
     additionalProps = {
       type: 'button',
       'aria-disabled': isAriaDisabled ? true : null
@@ -322,7 +324,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         {(randomId) => (
           <Component
             id={id}
-            {...(!isAriaDisabled && { tabIndex: -1 })}
+            tabIndex={-1}
             className={css(styles.menuItem, getIsSelected() && !hasCheckbox && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
             {...(!hasCheckbox && { disabled: isDisabled, 'aria-label': ariaLabel })}
@@ -354,6 +356,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
                     isChecked={isSelected || false}
                     onChange={(event) => onItemSelect(event, onSelect)}
                     isDisabled={isDisabled}
+                    aria-disabled={isAriaDisabled}
                   />
                 </span>
               )}
@@ -408,7 +411,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     <li
       className={css(
         styles.menuListItem,
-        (isDisabled || isAriaDisabled) && styles.modifiers.disabled,
+        isDisabled && styles.modifiers.disabled,
+        isAriaDisabled && styles.modifiers.ariaDisabled,
         _isOnPath && styles.modifiers.currentPath,
         isLoadButton && styles.modifiers.load,
         isLoading && styles.modifiers.loading,

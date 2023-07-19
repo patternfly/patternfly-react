@@ -30,8 +30,14 @@ export const MenuBasic: React.FunctionComponent = () => {
               Link
             </MenuItem>
             <MenuItem isDisabled>Disabled action</MenuItem>
-            <MenuItem isAriaDisabled to="#default-link4" tooltipProps={{tooltip: "disabled link", tooltipProps:{position: "top"}}}>
+            <MenuItem isDisabled to="#default-link4">
               Disabled link
+            </MenuItem>
+            <MenuItem isAriaDisabled tooltipProps={{tooltip: "aria-disabled action", tooltipProps:{position: "top"}}}>
+              Aria-disabled link
+            </MenuItem>
+            <MenuItem isAriaDisabled to="#default-link5" tooltipProps={{tooltip: "aria-disabled link", tooltipProps:{position: "top"}}}>
+              Aria-disabled link
             </MenuItem>
           </MenuList>
         </MenuContent>
