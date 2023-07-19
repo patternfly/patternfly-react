@@ -16,7 +16,7 @@ exports[`simple fileupload 1`] = `
           class="pf-v5-c-input-group__item pf-m-fill"
         >
           <span
-            class="pf-v5-c-form-control pf-m-readonly pf-m-plain"
+            class="pf-v5-c-form-control pf-m-readonly"
           >
             <input
               aria-describedby="simple-text-file-browse-button"
