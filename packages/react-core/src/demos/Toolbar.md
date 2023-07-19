@@ -236,7 +236,7 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onPageResize = ({ windowSize }) => {
+    this.onPageResize = (_event, { windowSize }) => {
       if (windowSize >= 1450) {
         this.setState({
           mobileView: false
