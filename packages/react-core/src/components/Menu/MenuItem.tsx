@@ -11,9 +11,17 @@ import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import { Checkbox } from '../Checkbox';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { MenuItemAction } from './MenuItemAction';
+import { Tooltip } from '../Tooltip';
 import { canUseDOM } from '../../helpers/util';
 import { useIsomorphicLayoutEffect } from '../../helpers/useIsomorphicLayout';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+
+export interface tooltipPropsObject {
+  /** Tooltip to display when hovered over the item */
+  tooltip?: React.ReactNode;
+  /** Additional tooltip props forwarded to the tooltip component */
+  tooltipProps?: any;
+}
 
 export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Content rendered inside the menu list item. */
@@ -40,6 +48,10 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   component?: React.ElementType<any> | React.ComponentType<any>;
   /** Render item as disabled option */
   isDisabled?: boolean;
+  /** Render item as aria-disabled option */
+  isAriaDisabled?: boolean;
+  /** Props for adding a tooltip to a menu item */
+  tooltipProps?: tooltipPropsObject;
   /** Render item with icon */
   icon?: React.ReactNode;
   /** Render item with one or more actions */
@@ -94,6 +106,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   onClick = () => {},
   component = 'button',
   isDisabled = false,
+  isAriaDisabled = false,
   isExternalLink = false,
   isSelected = null,
   isFocused,
@@ -106,6 +119,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   innerRef,
   id,
   'aria-label': ariaLabel,
+  tooltipProps,
   ...props
 }: MenuItemProps) => {
   const {
@@ -252,16 +266,18 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   if (Component === 'a') {
     additionalProps = {
       href: to,
-      'aria-disabled': isDisabled ? true : null,
+      'aria-disabled': isDisabled || isAriaDisabled ? true : null,
       // prevent invalid 'disabled' attribute on <a> tags
       disabled: null,
       target: isExternalLink ? '_blank' : null
     };
-  } else if (Component === 'button') {
+  } else if (Component === 'button'  && isDisabled) {
     additionalProps = {
-      type: 'button'
+      type: 'button',
+      'aria-disabled': isAriaDisabled ? true : null
     };
   }
+
   if (isOnPath) {
     additionalProps['aria-expanded'] = true;
   } else if (hasFlyout) {
@@ -300,30 +316,13 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   };
   const isSelectMenu = menuRole === 'listbox';
 
-  return (
-    <li
-      className={css(
-        styles.menuListItem,
-        isDisabled && styles.modifiers.disabled,
-        _isOnPath && styles.modifiers.currentPath,
-        isLoadButton && styles.modifiers.load,
-        isLoading && styles.modifiers.loading,
-        isFocused && styles.modifiers.focus,
-        isDanger && styles.modifiers.danger,
-        className
-      )}
-      onMouseOver={onMouseOver}
-      {...(flyoutMenu && { onKeyDown: handleFlyout })}
-      ref={ref}
-      role={!hasCheckbox ? 'none' : 'menuitem'}
-      {...(hasCheckbox && { 'aria-label': ariaLabel })}
-      {...props}
-    >
+  const renderItem = (
+    <>
       <GenerateId>
         {(randomId) => (
           <Component
             id={id}
-            tabIndex={-1}
+            {...(!isAriaDisabled && { tabIndex: -1 })}
             className={css(styles.menuItem, getIsSelected() && !hasCheckbox && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
             {...(!hasCheckbox && { disabled: isDisabled, 'aria-label': ariaLabel })}
@@ -402,6 +401,35 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           />
         )}
       </MenuItemContext.Provider>
+    </>
+  );
+
+  return (
+    <li
+      className={css(
+        styles.menuListItem,
+        (isDisabled || isAriaDisabled) && styles.modifiers.disabled,
+        _isOnPath && styles.modifiers.currentPath,
+        isLoadButton && styles.modifiers.load,
+        isLoading && styles.modifiers.loading,
+        isFocused && styles.modifiers.focus,
+        isDanger && styles.modifiers.danger,
+        className
+      )}
+      onMouseOver={onMouseOver}
+      {...(flyoutMenu && { onKeyDown: handleFlyout })}
+      ref={ref}
+      role={!hasCheckbox ? 'none' : 'menuitem'}
+      {...(hasCheckbox && { 'aria-label': ariaLabel })}
+      {...props}
+    >
+      {tooltipProps ? (
+        <Tooltip content={tooltipProps.tooltip} {...tooltipProps.tooltipProps}>
+          {renderItem}
+        </Tooltip>
+      ) : (
+        renderItem
+      )}
     </li>
   );
 };
