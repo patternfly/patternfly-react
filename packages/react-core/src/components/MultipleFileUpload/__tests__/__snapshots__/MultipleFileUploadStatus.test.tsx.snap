@@ -9,8 +9,10 @@ exports[`MultipleFileUploadStatus renders custom class names 1`] = `
       class="pf-v5-c-expandable-section pf-m-expanded"
     >
       <button
+        aria-controls="pf-expandable-section-1-content"
         aria-expanded="true"
         class="pf-v5-c-expandable-section__toggle"
+        id="pf-expandable-section-1-toggle"
         type="button"
       >
         <span
@@ -46,8 +48,10 @@ exports[`MultipleFileUploadStatus renders custom class names 1`] = `
         </span>
       </button>
       <div
+        aria-labelledby="pf-expandable-section-1-toggle"
         class="pf-v5-c-expandable-section__content"
-        id=""
+        id="pf-expandable-section-1-content"
+        role="region"
       >
         <ul
           class="pf-v5-c-multiple-file-upload__status-list"
@@ -70,8 +74,10 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
       class="pf-v5-c-expandable-section pf-m-expanded"
     >
       <button
+        aria-controls="pf-expandable-section-3-content"
         aria-expanded="true"
         class="pf-v5-c-expandable-section__toggle"
+        id="pf-expandable-section-3-toggle"
         type="button"
       >
         <span
@@ -121,8 +127,10 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
         </span>
       </button>
       <div
+        aria-labelledby="pf-expandable-section-3-toggle"
         class="pf-v5-c-expandable-section__content"
-        id=""
+        id="pf-expandable-section-3-content"
+        role="region"
       >
         <ul
           class="pf-v5-c-multiple-file-upload__status-list"
@@ -145,8 +153,10 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
       class="pf-v5-c-expandable-section pf-m-expanded"
     >
       <button
+        aria-controls="pf-expandable-section-2-content"
         aria-expanded="true"
         class="pf-v5-c-expandable-section__toggle"
+        id="pf-expandable-section-2-toggle"
         type="button"
       >
         <span
@@ -184,8 +194,10 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
         </span>
       </button>
       <div
+        aria-labelledby="pf-expandable-section-2-toggle"
         class="pf-v5-c-expandable-section__content"
-        id=""
+        id="pf-expandable-section-2-content"
+        role="region"
       >
         <ul
           class="pf-v5-c-multiple-file-upload__status-list"
@@ -208,8 +220,10 @@ exports[`MultipleFileUploadStatus renders with expected class names 1`] = `
       class="pf-v5-c-expandable-section pf-m-expanded"
     >
       <button
+        aria-controls="pf-expandable-section-0-content"
         aria-expanded="true"
         class="pf-v5-c-expandable-section__toggle"
+        id="pf-expandable-section-0-toggle"
         type="button"
       >
         <span
@@ -245,8 +259,10 @@ exports[`MultipleFileUploadStatus renders with expected class names 1`] = `
         </span>
       </button>
       <div
+        aria-labelledby="pf-expandable-section-0-toggle"
         class="pf-v5-c-expandable-section__content"
-        id=""
+        id="pf-expandable-section-0-content"
+        role="region"
       >
         <ul
           class="pf-v5-c-multiple-file-upload__status-list"
