@@ -302,6 +302,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
               (navigableElement?.tagName === 'DIV' && navigableElement.querySelector('input')) || // for MenuSearchInput
               ((navigableElement.firstChild as Element)?.tagName === 'LABEL' &&
                 navigableElement.querySelector('input')) || // for MenuItem checkboxes
+              ((navigableElement.firstChild as Element)?.tagName === 'DIV' &&
+                navigableElement.querySelector('a, button, input')) || // For aria-disabled element that is rendered inside a div with "display: contents" styling
               (navigableElement.firstChild as Element)
             }
             noHorizontalArrowHandling={

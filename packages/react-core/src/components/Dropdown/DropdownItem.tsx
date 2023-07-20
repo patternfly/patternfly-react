@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { MenuItemProps, MenuItem } from '../Menu';
+import { TooltipProps } from '../Tooltip';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 /**
@@ -17,6 +18,8 @@ export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps
   description?: React.ReactNode;
   /** Render item as disabled option */
   isDisabled?: boolean;
+  /** Render item as aria-disabled option */
+  isAriaDisabled?: boolean;
   /** Identifies the component in the dropdown onSelect callback */
   value?: any;
   /** Callback for item click */
@@ -25,6 +28,8 @@ export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** Props for adding a tooltip to a menu item */
+  tooltipProps?: TooltipProps;
 }
 
 const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({
@@ -32,11 +37,13 @@ const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({
   className,
   description,
   isDisabled,
+  isAriaDisabled,
   value,
   onClick,
   ouiaId,
   ouiaSafe,
   innerRef,
+  tooltipProps,
   ...props
 }: DropdownItemProps) => {
   const ouiaProps = useOUIAProps(DropdownItem.displayName, ouiaId, ouiaSafe);
@@ -45,8 +52,10 @@ const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({
       className={css(className)}
       description={description}
       isDisabled={isDisabled}
+      isAriaDisabled={isAriaDisabled}
       itemId={value}
       onClick={onClick}
+      tooltipProps={tooltipProps}
       ref={innerRef}
       {...ouiaProps}
       {...props}
