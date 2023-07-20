@@ -433,7 +433,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
       <Divider component="div" />
       <PageSection padding={{ default: 'noPadding' }}>
         <Drawer isExpanded={isDrawerExpanded}>
-          <DrawerContent panelContent={panelContent} className={'pf-m-no-background'}>
+          <DrawerContent panelContent={panelContent} colorVariant="no-background">
             <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>
