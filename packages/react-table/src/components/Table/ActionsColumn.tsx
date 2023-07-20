@@ -133,7 +133,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
                 </DropdownItem>
               );
 
-              if (tooltipProps.tooltip) {
+              if (tooltipProps?.tooltip) {
                 return (
                   <Tooltip key={itemKey || index} content={tooltipProps.tooltip} {...tooltipProps.tooltipProps}>
                     {item}
