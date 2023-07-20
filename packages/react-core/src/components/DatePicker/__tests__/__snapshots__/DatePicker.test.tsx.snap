@@ -218,7 +218,7 @@ exports[`With popover opened 1`] = `
                     scope="col"
                   >
                     <span
-                      class="pf-v5-screen-reader"
+                      class="pf-screen-reader"
                     >
                       Sunday
                     </span>
@@ -233,7 +233,7 @@ exports[`With popover opened 1`] = `
                     scope="col"
                   >
                     <span
-                      class="pf-v5-screen-reader"
+                      class="pf-screen-reader"
                     >
                       Monday
                     </span>
@@ -248,7 +248,7 @@ exports[`With popover opened 1`] = `
                     scope="col"
                   >
                     <span
-                      class="pf-v5-screen-reader"
+                      class="pf-screen-reader"
                     >
                       Tuesday
                     </span>
@@ -263,7 +263,7 @@ exports[`With popover opened 1`] = `
                     scope="col"
                   >
                     <span
-                      class="pf-v5-screen-reader"
+                      class="pf-screen-reader"
                     >
                       Wednesday
                     </span>
@@ -278,7 +278,7 @@ exports[`With popover opened 1`] = `
                     scope="col"
                   >
                     <span
-                      class="pf-v5-screen-reader"
+                      class="pf-screen-reader"
                     >
                       Thursday
                     </span>
@@ -293,7 +293,7 @@ exports[`With popover opened 1`] = `
                     scope="col"
                   >
                     <span
-                      class="pf-v5-screen-reader"
+                      class="pf-screen-reader"
                     >
                       Friday
                     </span>
@@ -308,7 +308,7 @@ exports[`With popover opened 1`] = `
                     scope="col"
                   >
                     <span
-                      class="pf-v5-screen-reader"
+                      class="pf-screen-reader"
                     >
                       Saturday
                     </span>

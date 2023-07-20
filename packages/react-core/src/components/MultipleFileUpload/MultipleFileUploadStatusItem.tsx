@@ -88,7 +88,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
       const reader = new FileReader();
       reader.onload = () => resolve(reader.result);
       reader.onerror = () => reject(reader.error);
-      reader.onprogress = data => {
+      reader.onprogress = (data) => {
         if (data.lengthComputable) {
           setLoadPercentage((data.loaded / data.total) * 100);
         }
@@ -103,7 +103,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     } else {
       onReadStarted(file);
       readFile(file)
-        .then(data => {
+        .then((data) => {
           setLoadResult('success');
           setLoadPercentage(100);
           onReadFinished(file);
@@ -148,7 +148,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     <li className={css(styles.multipleFileUploadStatusItem, className)} {...props}>
       <div className={styles.multipleFileUploadStatusItemIcon}>{fileIcon || <FileIcon />}</div>
       <div className={styles.multipleFileUploadStatusItemMain}>
-        <div className="pf-v5-screen-reader" aria-live="polite">
+        <div className="pf-screen-reader" aria-live="polite">
           {progressAriaLiveMessage &&
             typeof progressAriaLiveMessage === 'function' &&
             progressAriaLiveMessage(+loadPercentage.toFixed(2))}

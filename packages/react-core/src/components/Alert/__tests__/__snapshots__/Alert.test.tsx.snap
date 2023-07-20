@@ -23,7 +23,7 @@ exports[`Matches snapshot 1`] = `
       class="pf-v5-c-alert__title"
     >
       <span
-        class="pf-v5-u-screen-reader"
+        class="pf-screen-reader"
       >
         Custom alert:
       </span>

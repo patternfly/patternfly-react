@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { ApplicationLauncherIcon } from './ApplicationLauncherIcon';
 import { ApplicationLauncherText } from './ApplicationLauncherText';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
@@ -25,7 +24,7 @@ export const ApplicationLauncherContent: React.FunctionComponent<ApplicationLaun
             <span className={css(styles.appLauncherMenuItemExternalIcon)}>
               <ExternalLinkAltIcon />
             </span>
-            <span className={css(accessibleStyles.screenReader)}>(opens new window)</span>
+            <span className="pf-screen-reader">(opens new window)</span>
           </>
         )}
       </>

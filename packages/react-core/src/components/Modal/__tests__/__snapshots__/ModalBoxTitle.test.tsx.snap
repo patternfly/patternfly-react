@@ -24,7 +24,7 @@ exports[`ModalBoxTitle alert variant 1`] = `
       </svg>
     </span>
     <span
-      class="pf-v5-u-screen-reader"
+      class="pf-screen-reader"
     >
       Warning alert:
     </span>
@@ -93,7 +93,7 @@ exports[`ModalBoxTitle custom variant 1`] = `
       </svg>
     </span>
     <span
-      class="pf-v5-u-screen-reader"
+      class="pf-screen-reader"
     >
       Custom alert:
     </span>
@@ -130,7 +130,7 @@ exports[`ModalBoxTitle danger variant 1`] = `
       </svg>
     </span>
     <span
-      class="pf-v5-u-screen-reader"
+      class="pf-screen-reader"
     >
       Danger alert:
     </span>
@@ -167,7 +167,7 @@ exports[`ModalBoxTitle info variant 1`] = `
       </svg>
     </span>
     <span
-      class="pf-v5-u-screen-reader"
+      class="pf-screen-reader"
     >
       Info alert:
     </span>
@@ -204,7 +204,7 @@ exports[`ModalBoxTitle success variant 1`] = `
       </svg>
     </span>
     <span
-      class="pf-v5-u-screen-reader"
+      class="pf-screen-reader"
     >
       Success alert:
     </span>

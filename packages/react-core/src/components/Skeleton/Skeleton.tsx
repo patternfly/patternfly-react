@@ -48,7 +48,7 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
         } as React.CSSProperties
       })}
     >
-      <span className="pf-v5-u-screen-reader">{screenreaderText}</span>
+      <span className="pf-screen-reader">{screenreaderText}</span>
     </div>
   );
 };

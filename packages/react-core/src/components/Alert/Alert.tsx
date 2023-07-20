@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { AlertIcon } from './AlertIcon';
 import { capitalize, useOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
@@ -117,7 +116,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const ouiaProps = useOUIAProps(Alert.displayName, ouiaId, ouiaSafe, variant);
   const getHeadingContent = (
     <React.Fragment>
-      <span className={css(accessibleStyles.screenReader)}>{variantLabel}</span>
+      <span className="pf-screen-reader">{variantLabel}</span>
       {title}
     </React.Fragment>
   );

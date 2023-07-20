@@ -57,7 +57,7 @@ exports[`NotificationDrawerListItemHeader list item header with srTitle applied 
       class="pf-v5-c-notification-drawer__list-item-header-title"
     >
       <span
-        class="pf-v5-u-screen-reader"
+        class="pf-screen-reader"
       >
         screen reader title
       </span>

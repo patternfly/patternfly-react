@@ -7,7 +7,6 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
-import a11yStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 import maxLines from '@patternfly/react-tokens/dist/esm/c_notification_drawer__list_item_header_title_max_lines';
 
@@ -87,7 +86,7 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
       ref={titleRef}
       className={css(styles.notificationDrawerListItemHeaderTitle, truncateTitle && styles.modifiers.truncate)}
     >
-      {srTitle && <span className={css(a11yStyles.screenReader)}>{srTitle}</span>}
+      {srTitle && <span className="pf-screen-reader">{srTitle}</span>}
       {title}
     </HeadingLevel>
   );

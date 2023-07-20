@@ -27,7 +27,7 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-screen-reader"
       >
         Progress value is 0%.
       </div>
@@ -143,7 +143,7 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-screen-reader"
       >
         Progress value is 0%.
       </div>
@@ -256,7 +256,7 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-screen-reader"
       >
         test message
       </div>
@@ -371,7 +371,7 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-screen-reader"
       >
         test message 0
       </div>
@@ -486,7 +486,7 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-screen-reader"
       >
         Progress value is 42%.
       </div>
@@ -618,7 +618,7 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-screen-reader"
       >
         Progress value is 0%.
       </div>
@@ -733,7 +733,7 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-screen-reader"
       >
         Progress value is 0%.
       </div>
@@ -846,7 +846,7 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-screen-reader"
       >
         Progress value is 0%.
       </div>

@@ -165,7 +165,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
     >
       {hasSelectableInput && (
         <input
-          className="pf-v5-screen-reader"
+          className="pf-screen-reader"
           id={`${id}-input`}
           {...ariaProps}
           type="checkbox"
