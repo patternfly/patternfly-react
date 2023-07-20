@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.0.0-prerelease.24...@patternfly/react-table@5.0.0-prerelease.25) (2023-07-20)
+
+### Features
+
+- **Menu:** added support for tooltips to menu ([#9382](https://github.com/patternfly/patternfly-react/issues/9382)) ([8579096](https://github.com/patternfly/patternfly-react/commit/8579096dbc4ff48217e5e3e71923a589f60cda7f))
+
 # 5.0.0-prerelease.24 (2023-07-20)
 
 **Note:** Version bump only for package @patternfly/react-table

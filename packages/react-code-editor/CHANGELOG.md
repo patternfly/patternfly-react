@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.0.0-prerelease.24...@patternfly/react-code-editor@5.0.0-prerelease.25) (2023-07-20)
+
+### Bug Fixes
+
+- **CodeEditor:** prevent clicks in textarea from opening fileupload ([#9385](https://github.com/patternfly/patternfly-react/issues/9385)) ([959bc7e](https://github.com/patternfly/patternfly-react/commit/959bc7ef2723bc3ef57db906ded7b1854b577eee))
+
 # 5.0.0-prerelease.24 (2023-07-20)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

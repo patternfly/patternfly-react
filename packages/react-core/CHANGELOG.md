@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.24...@patternfly/react-core@5.0.0-prerelease.25) (2023-07-20)
+
+### Bug Fixes
+
+- **fileupload:** use default readonly text input instead of plain ([#9387](https://github.com/patternfly/patternfly-react/issues/9387)) ([cc8f777](https://github.com/patternfly/patternfly-react/commit/cc8f777364e65dfc883e653d36931e885b56e804))
+- **toolbar:** added chip container class to toolbar content ([#9379](https://github.com/patternfly/patternfly-react/issues/9379)) ([df21278](https://github.com/patternfly/patternfly-react/commit/df2127881a00299e8bf73dab14dfc7482598a14b))
+
+### Features
+
+- **Menu:** added support for tooltips to menu ([#9382](https://github.com/patternfly/patternfly-react/issues/9382)) ([8579096](https://github.com/patternfly/patternfly-react/commit/8579096dbc4ff48217e5e3e71923a589f60cda7f))
+
 # 5.0.0-prerelease.24 (2023-07-20)
 
 **Note:** Version bump only for package @patternfly/react-core
