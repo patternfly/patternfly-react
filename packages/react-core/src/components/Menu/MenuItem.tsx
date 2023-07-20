@@ -337,8 +337,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
                   onItemSelect(event, onSelect);
                   drill && drill(event);
                   flyoutMenu && handleFlyout(event);
-                }
-                else {
+                } else {
                   event.preventDefault();
                 }
               }
@@ -425,8 +424,12 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         isDanger && styles.modifiers.danger,
         className
       )}
-      onMouseOver={onMouseOver}
-      {...(flyoutMenu && { onKeyDown: handleFlyout })}
+      onMouseOver={() => {
+        if (!isAriaDisabled) {
+          onMouseOver();
+        }
+      }}
+      {...(flyoutMenu && !isAriaDisabled && { onKeyDown: handleFlyout })}
       ref={ref}
       role={!hasCheckbox ? 'none' : 'menuitem'}
       {...(hasCheckbox && { 'aria-label': ariaLabel })}

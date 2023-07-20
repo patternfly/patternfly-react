@@ -163,11 +163,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
         return;
       }
       const nextTarget = nextMenuChildren.filter(
-        (el) =>
-          !(
-            (el.classList.contains('pf-m-disabled') && !el.classList.contains('pf-m-aria-disabled')) ||
-            el.classList.contains(styles.divider)
-          )
+        (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider))
       )[0].firstChild;
 
       (nextTarget as HTMLElement).focus();
@@ -209,13 +205,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           if (activeElement.nextElementSibling && activeElement.nextElementSibling.classList.contains(styles.menu)) {
             const childItems = Array.from(
               activeElement.nextElementSibling.getElementsByTagName('UL')[0].children
-            ).filter(
-              (el) =>
-                !(
-                  (el.classList.contains('pf-m-disabled') && !el.classList.contains('pf-m-aria-disabled')) ||
-                  el.classList.contains(styles.divider)
-                )
-            );
+            ).filter((el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider)));
 
             (activeElement as HTMLElement).tabIndex = -1;
             (childItems[0].firstChild as HTMLElement).tabIndex = 0;
@@ -233,21 +223,13 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     if (isDrilldown) {
       return this.activeMenu
         ? Array.from(this.activeMenu.getElementsByTagName('UL')[0].children).filter(
-            (el) =>
-              !(
-                (el.classList.contains('pf-m-disabled') && !el.classList.contains('pf-m-aria-disabled')) ||
-                el.classList.contains(styles.divider)
-              )
+            (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider))
           )
         : [];
     } else {
       return this.menuRef.current
         ? Array.from(this.menuRef.current.getElementsByTagName('LI')).filter(
-            (el) =>
-              !(
-                (el.classList.contains('pf-m-disabled') && !el.classList.contains('pf-m-aria-disabled')) ||
-                el.classList.contains(styles.divider)
-              )
+            (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider))
           )
         : [];
     }
@@ -316,14 +298,13 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
               document.activeElement.closest(`.${styles.menuSearch}`) === element || // if element is a MenuSearch
               (document.activeElement.closest('ol') && document.activeElement.closest('ol').firstChild === element)
             }
-            getFocusableElement={
-              (navigableElement: Element) =>
-                (navigableElement?.tagName === 'DIV' && navigableElement.querySelector('input')) || // for MenuSearchInput
-                ((navigableElement.firstChild as Element)?.tagName === 'LABEL' &&
-                  navigableElement.querySelector('input')) || // for MenuItem checkboxes
-                ((navigableElement.firstChild as Element)?.tagName === 'DIV' &&
-                  navigableElement.querySelector('a, button')) || // For aria-disabled element that is rendered inside a div with "display: contents" styling
-                (navigableElement.firstChild as Element)
+            getFocusableElement={(navigableElement: Element) =>
+              (navigableElement?.tagName === 'DIV' && navigableElement.querySelector('input')) || // for MenuSearchInput
+              ((navigableElement.firstChild as Element)?.tagName === 'LABEL' &&
+                navigableElement.querySelector('input')) || // for MenuItem checkboxes
+              ((navigableElement.firstChild as Element)?.tagName === 'DIV' &&
+                navigableElement.querySelector('a, button, input')) || // For aria-disabled element that is rendered inside a div with "display: contents" styling
+              (navigableElement.firstChild as Element)
             }
             noHorizontalArrowHandling={
               document.activeElement &&
