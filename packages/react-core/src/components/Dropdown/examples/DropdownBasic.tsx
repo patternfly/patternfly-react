@@ -46,7 +46,7 @@ export const DropdownBasic: React.FunctionComponent = () => {
         <DropdownItem value={3} isDisabled key="disabled link" to="#default-link4">
           Disabled Link
         </DropdownItem>
-        <DropdownItem value={4} isAriaDisabled key="aria-disabled link" to="#default-link5" tooltipProps={{tooltip: "aria-disabled link", tooltipProps:{position: "top"}}}>
+        <DropdownItem value={4} isAriaDisabled key="aria-disabled link" to="#default-link5" tooltipProps={{content: "aria-disabled link", position: "top"}}>
           Aria-disabled Link
         </DropdownItem>
         <Divider component="li" key="separator" />

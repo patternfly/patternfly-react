@@ -16,13 +16,6 @@ import { canUseDOM } from '../../helpers/util';
 import { useIsomorphicLayoutEffect } from '../../helpers/useIsomorphicLayout';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
-export interface MenuItemTooltipPropsObject {
-  /** Tooltip to display when hovered over the item */
-  tooltip: React.ReactNode;
-  /** Additional tooltip props forwarded to the tooltip component */
-  tooltipProps?: Partial<TooltipProps>;
-}
-
 export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Content rendered inside the menu list item. */
   children?: React.ReactNode;
@@ -51,7 +44,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Render item as aria-disabled option */
   isAriaDisabled?: boolean;
   /** Props for adding a tooltip to a menu item */
-  tooltipProps?: MenuItemTooltipPropsObject;
+  tooltipProps?: TooltipProps;
   /** Render item with icon */
   icon?: React.ReactNode;
   /** Render item with one or more actions */
@@ -436,7 +429,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       {...props}
     >
       {tooltipProps ? (
-        <Tooltip content={tooltipProps.tooltip} {...tooltipProps.tooltipProps}>
+        <Tooltip {...tooltipProps}>
           {renderItem}
         </Tooltip>
       ) : (

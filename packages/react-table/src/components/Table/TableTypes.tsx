@@ -2,10 +2,10 @@ import { formatterValueType, ColumnType, RowType, RowKeyType, HeaderType } from 
 import { SortByDirection } from './SortColumn';
 import { DropdownItemProps } from '@patternfly/react-core/dist/esm/components/Dropdown';
 import { DropdownDirection, DropdownPosition } from '@patternfly/react-core/dist/esm/deprecated/components/Dropdown';
-import { MenuItemTooltipPropsObject } from '@patternfly/react-core/dist/esm/components/Menu';
 import * as React from 'react';
 import { CustomActionsToggleProps } from './ActionsColumn';
 import { ButtonProps } from '@patternfly/react-core/dist/esm/components/Button';
+import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
 
 export enum TableGridBreakpoint {
   none = '',
@@ -158,7 +158,7 @@ export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'>, P
   /** Render item as aria-disabled option */
   isAriaDisabled?: boolean;
   /** Props for adding a tooltip to a menu item. This is used to display tooltip when hovered over the item  */
-  tooltipProps?: MenuItemTooltipPropsObject;
+  tooltipProps?: TooltipProps;
   /** Click handler for the actions menu item */
   onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
   /** Flag indicating this action should be placed outside the actions menu, beside the toggle */

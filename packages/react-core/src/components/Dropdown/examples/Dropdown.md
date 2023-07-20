@@ -12,7 +12,7 @@ propComponents:
     'MenuToggle',
     'DropdownToggleProps',
     'DropdownPopperProps',
-    'MenuItemTooltipPropsObject'
+    'TooltipProps'
   ]
 ---
 

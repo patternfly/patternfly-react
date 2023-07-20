@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { MenuItemProps, MenuItem, MenuItemTooltipPropsObject } from '../Menu';
+import { MenuItemProps, MenuItem } from '../Menu';
+import { TooltipProps } from '../Tooltip';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 /**
@@ -28,7 +29,7 @@ export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
   /** Props for adding a tooltip to a menu item */
-  tooltipProps?: MenuItemTooltipPropsObject;
+  tooltipProps?: TooltipProps;
 }
 
 const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({

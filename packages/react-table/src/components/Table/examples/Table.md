@@ -17,7 +17,6 @@ propComponents:
     'ThSelectType',
     'TdTreeRowType',
     'ActionsColumn',
-    'IActions',
     'TdCompoundExpandType',
     'TdFavoritesType',
     'TdDraggableType',

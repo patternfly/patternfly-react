@@ -15,7 +15,7 @@ propComponents:
     'MenuGroup',
     'MenuContainer',
     'MenuPopperProps',
-    'MenuItemTooltipPropsObject'
+    'TooltipProps'
   ]
 ouia: true
 ---
