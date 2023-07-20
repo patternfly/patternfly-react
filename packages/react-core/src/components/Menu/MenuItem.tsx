@@ -333,9 +333,14 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             ref={innerRef}
             {...(!hasCheckbox && {
               onClick: (event: React.KeyboardEvent | React.MouseEvent) => {
-                onItemSelect(event, onSelect);
-                drill && drill(event);
-                flyoutMenu && handleFlyout(event);
+                if (!isAriaDisabled) {
+                  onItemSelect(event, onSelect);
+                  drill && drill(event);
+                  flyoutMenu && handleFlyout(event);
+                }
+                else {
+                  event.preventDefault();
+                }
               }
             })}
             {...(hasCheckbox && { htmlFor: randomId })}
