@@ -114,7 +114,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
         <DropdownList>
           {items
             .filter((item) => !item.isOutsideDropdown)
-            .map(({ title, itemKey, onClick, tooltip, tooltipProps, isSeparator, ...props }, index) => {
+            .map(({ title, itemKey, onClick, tooltipProps, isSeparator, ...props }, index) => {
               if (isSeparator) {
                 return <Divider key={itemKey || index} data-key={itemKey || index} />;
               }
@@ -133,9 +133,9 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
                 </DropdownItem>
               );
 
-              if (tooltip) {
+              if (tooltipProps.tooltip) {
                 return (
-                  <Tooltip key={itemKey || index} content={tooltip} {...tooltipProps}>
+                  <Tooltip key={itemKey || index} content={tooltipProps.tooltip} {...tooltipProps.tooltipProps}>
                     {item}
                   </Tooltip>
                 );

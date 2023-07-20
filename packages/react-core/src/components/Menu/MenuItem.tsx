@@ -18,7 +18,7 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
 export interface MenuItemTooltipPropsObject {
   /** Tooltip to display when hovered over the item */
-  tooltip?: React.ReactNode;
+  tooltip: React.ReactNode;
   /** Additional tooltip props forwarded to the tooltip component */
   tooltipProps?: Partial<TooltipProps>;
 }
