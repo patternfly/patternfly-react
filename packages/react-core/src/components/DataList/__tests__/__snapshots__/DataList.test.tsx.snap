@@ -184,6 +184,7 @@ exports[`DataList DataListAction dropdown 1`] = `
                 class="pf-v5-c-menu__item"
                 role="menuitem"
                 tabindex="0"
+                type="button"
               >
                 <span
                   class="pf-v5-c-menu__item-main"
@@ -208,6 +209,7 @@ exports[`DataList DataListAction dropdown 1`] = `
                 class="pf-v5-c-menu__item"
                 role="menuitem"
                 tabindex="-1"
+                type="button"
               >
                 <span
                   class="pf-v5-c-menu__item-main"
