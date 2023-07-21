@@ -16,7 +16,9 @@ propComponents: ['DatePicker', 'CalendarFormat', 'DatePickerRef']
 
 ### Required
 
-A datepicker with the `isRequired` property passed in will be invalid when the text input is empty and either the text input loses focus or the datepicker popover is closed.
+To require users to select a date before continuing, use the `isRequired` property.
+
+A required date picker will be invalid when the text input is empty and either the text input loses focus or the date picker popover is closed.
 
 The error message can be customized via the `emptyDateText` property.
 
