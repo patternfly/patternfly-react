@@ -645,7 +645,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               {isUploadEnabled || providedEmptyState ? (
                 <div
                   {...getRootProps({
-                    onClick: (event) => event.preventDefault() // Prevents clicking TextArea from opening file dialog
+                    onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
                   })}
                   className={`pf-v5-c-file-upload ${isDragActive && 'pf-m-drag-hover'} ${isLoading && 'pf-m-loading'}`}
                 >

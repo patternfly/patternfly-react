@@ -11,7 +11,8 @@ propComponents:
     'DropdownList',
     'MenuToggle',
     'DropdownToggleProps',
-    'DropdownPopperProps'
+    'DropdownPopperProps',
+    'TooltipProps'
   ]
 ---
 
