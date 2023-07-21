@@ -45,15 +45,25 @@
     "subpaths": "node ../../scripts/exportSubpaths.js --config subpaths.config.json"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@patternfly/react-icons": "^5.1.1-prerelease.0",
     "@patternfly/react-styles": "^5.1.1-prerelease.0",
     "@patternfly/react-tokens": "^5.1.1-prerelease.0",
+=======
+    "@patternfly/react-icons": "^5.0.0-prerelease.9",
+    "@patternfly/react-styles": "^5.0.0-prerelease.7",
+    "@patternfly/react-tokens": "^5.0.0-prerelease.9",
+>>>>>>> 0d5ec4fd2 (Rebase postv5 (#9393))
     "focus-trap": "7.4.3",
     "react-dropzone": "^14.2.3",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@patternfly/patternfly": "5.0.2",
+=======
+    "@patternfly/patternfly": "5.0.0-prerelease.16",
+>>>>>>> 0d5ec4fd2 (Rebase postv5 (#9393))
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-replace": "^5.0.2",
