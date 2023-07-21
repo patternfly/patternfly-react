@@ -94,20 +94,12 @@ export const TablesAndTabs = () => {
     lastCommit: 'Last commit'
   };
 
-  const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
-  const setRepoSelected = (event: React.FormEvent<HTMLInputElement>, repo: Repository, isSelecting = true) => {
-    setSelectedRepoNames((prevSelected) => {
-      const otherSelectedRepoNames = prevSelected.filter((r) => r !== repo.name);
-      return isSelecting ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
-    });
-    event.stopPropagation();
+  const [selectedRepoName, setSelectedRepoName] = React.useState<string>(repositories[0].name);
+  const isRepoSelected = (repo: Repository) => repo.name === selectedRepoName;
+  const setRepoSelected = (_event: React.FormEvent<HTMLInputElement>, repo: Repository) => {
+    setSelectedRepoName(repo.name);
+    setIsExpanded(true);
   };
-  const onSelectAll = (isSelecting = true) => setSelectedRepoNames(isSelecting ? repositories.map((r) => r.name) : []);
-  const allRowsSelected = selectedRepoNames.length === repositories.length;
-  const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
-
-  const [rowClicked, setRowClicked] = React.useState<string>('Node 1');
-  const isRowClicked = (repo: Repository) => rowClicked === repo.name;
 
   const defaultActions: IAction[] = [
     {
@@ -165,6 +157,11 @@ export const TablesAndTabs = () => {
         firstActionRef.current?.focus();
       }, 0);
     }
+  };
+
+  const handleDrawerClose = () => {
+    setIsExpanded(false);
+    setSelectedRepoName('');
   };
 
   const customActionsToggle = (props: CustomActionsToggleProps, toggleName: string) => (
@@ -234,12 +231,7 @@ export const TablesAndTabs = () => {
     <Table aria-label="`Composable` table">
       <Thead noWrap>
         <Tr>
-          <Th
-            select={{
-              onSelect: (_event, isSelecting) => onSelectAll(isSelecting),
-              isSelected: allRowsSelected
-            }}
-          />
+          <Th />
           <Th>{columnNames.name}</Th>
           <Th>{columnNames.branches}</Th>
           <Th>{columnNames.prs}</Th>
@@ -249,23 +241,14 @@ export const TablesAndTabs = () => {
       </Thead>
       <Tbody>
         {repositories.map((repo, rowIndex) => (
-          <Tr
-            key={repo.name}
-            onRowClick={(event) => {
-              if ((event?.target as HTMLInputElement).type !== 'checkbox') {
-                setRowClicked(rowClicked === repo.name ? '' : repo.name);
-                setIsExpanded(!isRowClicked(repo));
-              }
-            }}
-            isHoverable
-            isRowSelected={repo.name === rowClicked}
-          >
+          <Tr key={repo.name}>
             <Td
               key={`${rowIndex}_0`}
               select={{
                 rowIndex,
-                onSelect: (event, isSelected) => setRepoSelected(event, repo, isSelected),
-                isSelected: isRepoSelected(repo)
+                onSelect: (event) => setRepoSelected(event, repo),
+                isSelected: isRepoSelected(repo),
+                variant: 'radio'
               }}
             />
             <Td dataLabel={columnNames.name}>
@@ -316,17 +299,12 @@ export const TablesAndTabs = () => {
     <DrawerPanelContent widths={{ default: 'width_33', xl: 'width_33' }}>
       <DrawerHead>
         <DrawerActions>
-          <DrawerCloseButton
-            onClick={() => {
-              setRowClicked('');
-              setIsExpanded(false);
-            }}
-          />
+          <DrawerCloseButton onClick={handleDrawerClose} />
         </DrawerActions>
         <Flex spaceItems={{ default: 'spaceItemsSm' }} direction={{ default: 'column' }}>
           <FlexItem>
             <Title headingLevel="h2" size="lg">
-              {rowClicked}
+              {selectedRepoName}
             </Title>
           </FlexItem>
           <FlexItem>
