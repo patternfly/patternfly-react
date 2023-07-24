@@ -68,12 +68,14 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
         (canUseDOM ? window.innerWidth : 1200) < globalBreakpoints[collapseListedFiltersBreakpoint];
     }
 
+    const isHidden = numberOfFilters === 0 || isExpanded;
+
     return (
       <div
         className={css(
           styles.toolbarContent,
-          !collapseListedFilters && styles.modifiers.chipContainer,
-          (numberOfFilters === 0 || isExpanded) && styles.modifiers.hidden,
+          !isHidden && !collapseListedFilters && styles.modifiers.chipContainer,
+          isHidden && styles.modifiers.hidden,
           className
         )}
         {...((numberOfFilters === 0 || isExpanded) && { hidden: true })}
