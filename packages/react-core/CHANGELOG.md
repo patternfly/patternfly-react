@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.25...@patternfly/react-core@5.0.0-prerelease.26) (2023-07-24)
+
+### Bug Fixes
+
+- **Toolbar:** applied chip container class only if it's not hidden ([#9398](https://github.com/patternfly/patternfly-react/issues/9398)) ([87f5f24](https://github.com/patternfly/patternfly-react/commit/87f5f244b3506ba53244b4f0456783a11aaec8d8))
+
 # [5.0.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.24...@patternfly/react-core@5.0.0-prerelease.25) (2023-07-20)
 
 ### Bug Fixes
