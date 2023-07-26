@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.276.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.10...@patternfly/react-core@4.276.11) (2023-07-26)
+
+
+### Bug Fixes
+
+* **SelectToggle:** corrected removeEventListener on unmount for v4 ([#9381](https://github.com/patternfly/patternfly-react/issues/9381)) ([0cbca14](https://github.com/patternfly/patternfly-react/commit/0cbca1485c395d6387c9cd795530fbf3eae76acc))
+
+
+
+
+
 ## 4.276.10 (2023-06-05)
 
 **Note:** Version bump only for package @patternfly/react-core
