@@ -104,7 +104,7 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click', this.onDocClick);
+    document.removeEventListener('click', this.onDocClick, { capture: true });
     document.removeEventListener('touchstart', this.onDocClick);
     document.removeEventListener('keydown', this.handleGlobalKeys);
   }
