@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.26...@patternfly/react-core@5.0.0-prerelease.27) (2023-07-26)
+
+### Bug Fixes
+
+- **MultipleFileUpload:** Prevent file upload from opening incorrectly ([#9403](https://github.com/patternfly/patternfly-react/issues/9403)) ([9319d1a](https://github.com/patternfly/patternfly-react/commit/9319d1a38328cb1b3000a02b56af11e0bcf46652))
+
 # [5.0.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0-prerelease.25...@patternfly/react-core@5.0.0-prerelease.26) (2023-07-24)
 
 ### Bug Fixes
