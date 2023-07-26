@@ -81,8 +81,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   isBreadcrumbGrouped?: boolean;
   /** Additional content of the group */
   additionalGroupedContent?: React.ReactNode;
-  /** Base HTML component used for the page. Defaults to 'main', only pass in 'div' if another 'main' element already exists. */
-  component?: 'main' | 'div';
+  /** HTML component used as main component of the page. Defaults to 'main', only pass in 'div' if another 'main' element already exists. */
+  mainComponent?: 'main' | 'div';
   /** Additional props of the group */
   groupProps?: PageGroupProps;
   /** Additional props of the breadcrumb */
@@ -106,7 +106,7 @@ export class Page extends React.Component<PageProps, PageState> {
     mainTabIndex: -1,
     isNotificationDrawerExpanded: false,
     onNotificationDrawerExpand: () => null,
-    component: 'main',
+    mainComponent: 'main',
     getBreakpoint,
     getVerticalBreakpoint
   };
@@ -232,7 +232,7 @@ export class Page extends React.Component<PageProps, PageState> {
       getVerticalBreakpoint,
       mainAriaLabel,
       mainTabIndex,
-      component,
+      mainComponent,
       tertiaryNav,
       isTertiaryNavGrouped,
       isBreadcrumbGrouped,
@@ -292,7 +292,7 @@ export class Page extends React.Component<PageProps, PageState> {
       </PageGroup>
     ) : null;
 
-    const Component: keyof JSX.IntrinsicElements = component;
+    const Component: keyof JSX.IntrinsicElements = mainComponent;
 
     const main = (
       <Component
