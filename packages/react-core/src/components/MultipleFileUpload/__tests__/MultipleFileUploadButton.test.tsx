@@ -17,4 +17,9 @@ describe('MultipleFileUploadButton', () => {
     const { asFragment } = render(<MultipleFileUploadButton aria-label="test">Foo</MultipleFileUploadButton>);
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('renders with label applied to the button', () => {
+    const { asFragment } = render(<MultipleFileUploadButton browseButtonText="test">Foo</MultipleFileUploadButton>);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
