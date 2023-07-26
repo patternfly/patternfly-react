@@ -48,7 +48,7 @@ export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps
 
   const rootProps = getRootProps({
     ...props,
-    onClick: (event) => event.preventDefault() // Prevents clicking TextArea from opening file dialog
+    onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
   });
 
   return (
