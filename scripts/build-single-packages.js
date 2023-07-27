@@ -70,7 +70,8 @@ async function createPackage(component) {
     main: cjsRelative,
     module: esmRelative,
     typings: typesRelative,
-    version: packageJson.version
+    version: packageJson.version,
+    private: true
   };
 
   // use ensureFile to not having to create all the directories
