@@ -11,8 +11,7 @@
   "description": "CSS-in-JS class maps and utilities for PatternFly.",
   "author": "Red Hat",
   "publishConfig": {
-    "access": "public",
-    "tag": "alpha"
+    "access": "public"
   },
   "scripts": {
     "generate": "rimraf css && node scripts/writeClassMaps.js && node scripts/copyStyles.js",

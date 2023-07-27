@@ -21,8 +21,7 @@
     "*.scss"
   ],
   "publishConfig": {
-    "access": "public",
-    "tag": "alpha"
+    "access": "public"
   },
   "repository": {
     "type": "git",

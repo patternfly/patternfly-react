@@ -15,8 +15,7 @@
   "patternfly:src": "src/",
   "sideEffects": false,
   "publishConfig": {
-    "access": "public",
-    "tag": "alpha"
+    "access": "public"
   },
   "repository": {
     "type": "git",
