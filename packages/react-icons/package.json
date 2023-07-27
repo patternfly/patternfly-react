@@ -1,14 +1,13 @@
 {
   "name": "@patternfly/react-icons",
-  "version": "5.2.0-prerelease.0",
+  "version": "5.0.0-prerelease.9",
   "description": "PatternFly 4 Icons as React Components",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "sideEffects": false,
   "publishConfig": {
-    "access": "public",
-    "tag": "alpha"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -43,8 +42,5 @@
   "peerDependencies": {
     "react": "^17 || ^18",
     "react-dom": "^17 || ^18"
-  },
-  "dependencies": {
-    "@patternfly/patternfly": "5.0.2"
   }
 }

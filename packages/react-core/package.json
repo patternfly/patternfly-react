@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "5.2.0-prerelease.0",
+  "version": "5.0.0-prerelease.27",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -21,8 +21,7 @@
     "*.scss"
   ],
   "publishConfig": {
-    "access": "public",
-    "tag": "alpha"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -46,10 +45,9 @@
     "subpaths": "node ../../scripts/exportSubpaths.js --config subpaths.config.json"
   },
   "dependencies": {
-    "@patternfly/patternfly": "5.0.2",
-    "@patternfly/react-icons": "^5.2.0-prerelease.0",
-    "@patternfly/react-styles": "^5.2.0-prerelease.0",
-    "@patternfly/react-tokens": "^5.2.0-prerelease.0",
+    "@patternfly/react-icons": "^5.0.0-prerelease.9",
+    "@patternfly/react-styles": "^5.0.0-prerelease.7",
+    "@patternfly/react-tokens": "^5.0.0-prerelease.9",
     "focus-trap": "7.4.3",
     "react-dropzone": "^14.2.3",
     "tslib": "^2.5.0"

@@ -14,14 +14,15 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 
 if [[ ! -z "${CORE_VERSION}" ]]; then
   echo "Updating to @patternfly/patternfly: ${CORE_VERSION}"
-  npm pkg set dependencies.@patternfly/patternfly=${CORE_VERSION} --workspace @patternfly/react-core --workspace @patternfly/react-docs --workspace @patternfly/react-icons --workspace @patternfly/react-tokens --workspace @patternfly/react-styles
+  npm pkg set dependencies.@patternfly/patternfly=${CORE_VERSION} --workspace @patternfly/react-docs
+  npm pkg set devDependencies.@patternfly/patternfly=${CORE_VERSION} --workspace @patternfly/react-core --workspace @patternfly/react-styles --workspace @patternfly/react-tokens --workspace @patternfly/react-icons 
 fi
 
 # publish to npm
-yarn run lerna publish --conventional-commits --conventional-graduate --no-private --dist-tag=latest --yes
+# yarn run lerna publish --conventional-commits --conventional-graduate --no-private --dist-tag=latest --yes
 
 # dry run
-# yarn run lerna version --conventional-commits --conventional-graduate --no-private --yes --no-git-tag-version --no-push
+yarn run lerna version --conventional-commits --conventional-graduate --no-private --yes --no-git-tag-version --no-push
 
 # immediately after promote - set up repo for next prerelease
-yarn run lerna version preminor --force-publish --conventional-commits --no-private --yes --preid prerelease
+# yarn run lerna version preminor --force-publish --conventional-commits --no-private --yes --preid prerelease
