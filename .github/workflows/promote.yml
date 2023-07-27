@@ -19,7 +19,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN_REDALLEN }} # needs to be an admin token to get around branch protection
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
       - name: Install deps
         run: yarn install --frozen-lockfile
       - name: Build dist
