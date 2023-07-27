@@ -14,7 +14,8 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 
 if [[ ! -z "${CORE_VERSION}" ]]; then
   echo "Updating to @patternfly/patternfly: ${CORE_VERSION}"
-  npm pkg set dependencies.@patternfly/patternfly=${CORE_VERSION} --workspace @patternfly/react-core --workspace @patternfly/react-docs --workspace @patternfly/react-icons --workspace @patternfly/react-tokens --workspace @patternfly/react-styles
+  npm pkg set dependencies.@patternfly/patternfly=${CORE_VERSION} --workspace @patternfly/react-docs
+  npm pkg set devDependencies.@patternfly/patternfly=${CORE_VERSION} --workspace @patternfly/react-core --workspace @patternfly/react-styles --workspace @patternfly/react-tokens --workspace @patternfly/react-icons 
 fi
 
 # publish to npm
