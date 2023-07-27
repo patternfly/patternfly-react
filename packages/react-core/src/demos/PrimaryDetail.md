@@ -50,7 +50,6 @@ import {
   CardHeader,
   CardBody,
   CardTitle,
-  Checkbox,
   Divider,
   Drawer,
   DrawerActions,
@@ -72,15 +71,12 @@ import {
   PageSectionVariants,
   Pagination,
   Progress,
-  Select,
-  SelectOption,
   TextContent,
   Text,
   Title,
   Toolbar,
   ToolbarItem,
-  ToolbarContent,
-  ToolbarFilter
+  ToolbarContent
 } from '@patternfly/react-core';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
@@ -208,6 +204,20 @@ class PrimaryDetailCardView extends React.Component {
       );
     };
 
+    this.onClick = (productId) => {
+      this.setState((prevState) =>
+        prevState.selectedItems.includes(productId * 1)
+          ? {
+              selectedItems: [...prevState.selectedItems.filter((id) => productId * 1 !== id)],
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
+            }
+          : {
+              selectedItems: [...prevState.selectedItems, productId * 1],
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount)
+            }
+      );
+    };
+
     this.onCardClick = (event) => {
       if (event.currentTarget.id === this.state.activeCard) {
         this.setState({
@@ -312,7 +322,7 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     this.onSplitButtonSelect = () => {
-      this.setState((prevState) => ({
+      this.setState(() => ({
         splitButtonDropdownIsOpen: false,
         isDrawerExpanded: false,
         activeCard: null
@@ -533,7 +543,6 @@ class PrimaryDetailCardView extends React.Component {
             key={product.name}
             id={'card-view-' + key}
             onKeyDown={this.onKeyDown}
-            onClick={this.onCardClick}
             isClickable
             isSelectable
             isSelected={activeCard?.charAt(activeCard.length - 1) === key.toString()}
@@ -569,11 +578,15 @@ class PrimaryDetailCardView extends React.Component {
                   </>
                 )
               }}
-              selectableActions={{ isChecked: selectedItems.includes(product.id), selectableActionId: `selectable-actions-item-${product.id}`, selectableActionAriaLabelledby: `${'card-view-' + key}`, name: `check-${product.id}`, onChange: this.state.onCardClick }}
+              selectableActions={{ isChecked: selectedItems.includes(product.id), selectableActionId: `selectable-actions-item-${product.id}`, selectableActionAriaLabelledby: `${'card-view-' + key}`, name: `check-${product.id}`, onChange: () => this.onClick(product.id) }}
             >
               <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
             </CardHeader>
-            <CardTitle>{product.name}</CardTitle>
+            <CardTitle>
+              <Button variant="link" isInline onClick={this.onCardClick}>
+                {product.name}
+              </Button>
+            </CardTitle>
             <CardBody>{product.description}</CardBody>
           </Card>
         ))}
