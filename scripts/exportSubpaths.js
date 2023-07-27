@@ -32,7 +32,8 @@ async function createPackage(directoryName) {
     main: `../dist/js/${directoryName}/index.js`,
     module: `../dist/esm/${directoryName}/index.js`,
     typings: `../dist/esm/${directoryName}/index.d.ts`,
-    version: packageJson.version
+    version: packageJson.version,
+    private: true
   };
 
   const dirPath = path.join(root, directoryName);
