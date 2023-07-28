@@ -57,6 +57,8 @@ interface CardContextProps {
   isClickable: boolean;
   isSelectable: boolean;
   isDisabled: boolean;
+  // TODO: Remove hasSelectableInput when deprecated prop is removed
+  hasSelectableInput: boolean;
 }
 
 interface AriaProps {
@@ -160,7 +162,9 @@ export const Card: React.FunctionComponent<CardProps> = ({
         isExpanded,
         isClickable,
         isSelectable,
-        isDisabled
+        isDisabled,
+        // TODO: Remove hasSelectableInput when deprecated prop is removed
+        hasSelectableInput
       }}
     >
       {hasSelectableInput && (
