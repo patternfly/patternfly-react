@@ -190,7 +190,6 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     this.onCheckboxClick = (event, productId) => {
-      event.stopPropagation();
       this.setState((prevState) =>
         prevState.selectedItems.includes(productId * 1) || this.state.selectedItems.includes(productId * 1)
           ? {
@@ -218,8 +217,9 @@ class PrimaryDetailCardView extends React.Component {
       );
     };
 
-    this.onCardClick = (event) => {
-      if (event.currentTarget.id === this.state.activeCard) {
+    this.onCardClick = (productId) => {
+
+      if (productId === this.state.activeCard) {
         this.setState({
           isDrawerExpanded: !this.state.isDrawerExpanded,
           activeCard: null
@@ -227,10 +227,8 @@ class PrimaryDetailCardView extends React.Component {
         return;
       }
 
-      const newSelected = event.currentTarget.id;
-
       this.setState({
-        activeCard: newSelected,
+        activeCard: productId,
         isDrawerExpanded: true
       });
     };
@@ -348,7 +346,6 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     this.deleteItem = (event, item) => {
-      event.stopPropagation();
       const filter = (getter) => (val) => getter(val) !== item.id;
       const filteredCards = this.state.cardData.filter(filter(({ id }) => id));
       this.setState({
@@ -358,28 +355,6 @@ class PrimaryDetailCardView extends React.Component {
         isDrawerExpanded: false,
         activeCard: null
       });
-    };
-
-    this.onKeyDown = (event) => {
-      if (event.target !== event.currentTarget) {
-        return;
-      }
-
-      if (['Enter', ' '].includes(event.key)) {
-        if (event.currentTarget.id === this.state.activeCard) {
-          this.setState({
-            isDrawerExpanded: !this.state.isDrawerExpanded,
-            activeCard: null
-          });
-          return;
-        }
-        event.preventDefault();
-        const newSelected = event.currentTarget.id;
-        this.setState({
-          activeCard: newSelected,
-          isDrawerExpanded: true
-        });
-      }
     };
   }
 
@@ -542,10 +517,9 @@ class PrimaryDetailCardView extends React.Component {
           <Card
             key={product.name}
             id={'card-view-' + key}
-            onKeyDown={this.onKeyDown}
             isClickable
             isSelectable
-            isSelected={activeCard?.charAt(activeCard.length - 1) === key.toString()}
+            isSelected={activeCard === product.id}
           >
             <CardHeader
               actions={{
@@ -583,7 +557,7 @@ class PrimaryDetailCardView extends React.Component {
               <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
             </CardHeader>
             <CardTitle>
-              <Button variant="link" isInline onClick={this.onCardClick}>
+              <Button variant="link" isInline onClick={() => this.onCardClick(product.id)} aria-expanded={activeCard === product.id}>
                 {product.name}
               </Button>
             </CardTitle>
@@ -597,7 +571,7 @@ class PrimaryDetailCardView extends React.Component {
       <DrawerPanelContent>
         <DrawerHead>
           <Title headingLevel="h2" size="xl">
-            node-{activeCard && activeCard.charAt(activeCard.length - 1)}
+            node-{activeCard}
           </Title>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseDrawerClick} />
@@ -613,10 +587,10 @@ class PrimaryDetailCardView extends React.Component {
               </p>
             </FlexItem>
             <FlexItem>
-              <Progress value={activeCard && activeCard.charAt(activeCard.length - 1) * 10} title="Title" />
+              <Progress value={activeCard * 10} title="Title" />
             </FlexItem>
             <FlexItem>
-              <Progress value={activeCard && activeCard.charAt(activeCard.length - 1) * 5} title="Title" />
+              <Progress value={activeCard * 5} title="Title" />
             </FlexItem>
           </Flex>
         </DrawerPanelBody>

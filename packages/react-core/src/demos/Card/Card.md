@@ -132,7 +132,6 @@ class CardViewBasic extends React.Component {
     };
 
     this.onCardKebabDropdownToggle = (key, event) => {
-      event?.stopPropagation();
       this.setState((prevState) => ({
         [key]: !prevState[key]
       }));
@@ -206,26 +205,6 @@ class CardViewBasic extends React.Component {
             products: []
           }
         });
-      }
-    };
-
-    this.onKeyDown = (event, productId) => {
-      if (event.target !== event.currentTarget) {
-        return;
-      }
-      if ([' ', 'Enter'].includes(event.key)) {
-        event.preventDefault();
-        this.setState((prevState) =>
-          prevState.selectedItems.includes(productId * 1)
-            ? {
-                selectedItems: [...prevState.selectedItems.filter((id) => productId * 1 != id)],
-                areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
-              }
-            : {
-                selectedItems: [...prevState.selectedItems, productId * 1],
-                areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount)
-              }
-        );
       }
     };
 
@@ -644,7 +623,6 @@ class CardViewBasic extends React.Component {
                   isSelectable
                   key={product.name}
                   id={product.name.replace(/ /g, '-')}
-                  onKeyDown={(e) => this.onKeyDown(e, product.id)}
                 >
                   <CardHeader
                     selectableActions={{
