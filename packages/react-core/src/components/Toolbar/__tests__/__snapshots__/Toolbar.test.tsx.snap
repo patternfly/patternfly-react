@@ -44,7 +44,7 @@ exports[`Toolbar should render inset 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-toolbar__content pf-m-chip-container pf-m-hidden"
+      class="pf-v5-c-toolbar__content pf-m-hidden"
       hidden=""
     >
       <div
@@ -395,7 +395,7 @@ exports[`Toolbar should render with page inset flag 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-toolbar__content pf-m-chip-container pf-m-hidden"
+      class="pf-v5-c-toolbar__content pf-m-hidden"
       hidden=""
     >
       <div
