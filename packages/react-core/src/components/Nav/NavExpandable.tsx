@@ -144,7 +144,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
             </PageSidebarContext.Consumer>
             <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={expandedState ? null : true}>
               {srText && (
-                <h2 className="pf-screen-reader" id={this.id}>
+                <h2 className="pf-v5-screen-reader" id={this.id}>
                   {srText}
                 </h2>
               )}

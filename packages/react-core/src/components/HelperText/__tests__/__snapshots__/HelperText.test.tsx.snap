@@ -45,7 +45,7 @@ exports[`HelperText dynamic helper text renders successfully 1`] = `
       >
         help test text
         <span
-          class="pf-screen-reader"
+          class="pf-v5-screen-reader"
         >
           : default status;
         </span>

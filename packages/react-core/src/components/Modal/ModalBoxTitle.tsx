@@ -63,7 +63,7 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
           {isVariantIcon(titleIconVariant) ? variantIcons[titleIconVariant] : <CustomIcon />}
         </span>
       )}
-      {label && <span className="pf-screen-reader">{label}</span>}
+      {label && <span className="pf-v5-screen-reader">{label}</span>}
       <span className={css(modalStyles.modalBoxTitleText)}>{title}</span>
     </h1>
   );

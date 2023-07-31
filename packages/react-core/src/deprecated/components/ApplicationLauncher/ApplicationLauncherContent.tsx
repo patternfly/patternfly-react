@@ -24,7 +24,7 @@ export const ApplicationLauncherContent: React.FunctionComponent<ApplicationLaun
             <span className={css(styles.appLauncherMenuItemExternalIcon)}>
               <ExternalLinkAltIcon />
             </span>
-            <span className="pf-screen-reader">(opens new window)</span>
+            <span className="pf-v5-screen-reader">(opens new window)</span>
           </>
         )}
       </>
