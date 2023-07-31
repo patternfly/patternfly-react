@@ -213,6 +213,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     }
     target.removeEventListener('keydown', this.handleEscKeyClick, false);
     target.classList.remove(css(styles.backdropOpen));
+    this.toggleSiblingsFromScreenReaders(false);
   }
 
   render() {
