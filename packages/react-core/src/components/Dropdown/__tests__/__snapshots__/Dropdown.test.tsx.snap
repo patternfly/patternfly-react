@@ -2,40 +2,62 @@
 
 exports[`match snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="mock-wrapper"
+  >
     <div
-      class="customClass"
-      data-ouia-component-id="dropdown"
-      data-ouia-component-type="PF5/Dropdown"
-      data-ouia-safe="true"
-      data-testid="menu-mock"
+      data-testid="popper"
     >
-      <div>
+      <div
+        class="customClass"
+        data-ouia-component-id="dropdown"
+        data-ouia-component-type="PF5/Dropdown"
+        data-ouia-safe="true"
+        data-testid="menu-mock"
+      >
         <div>
-          Dropdown children
+          <div>
+            Dropdown children
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      Mock item
+      <div>
+        Mock item
+      </div>
+      <p>
+        isPlain: true
+      </p>
+      <p>
+        isScrollable: true
+      </p>
+      <p>
+        minWidth: undefined
+      </p>
     </div>
     <p>
-      isPlain: true
+      zIndex: 9999
     </p>
     <p>
-      isScrollable: true
+      isVisible: true
+    </p>
+    <p>
+      enableFlip: undefined
+    </p>
+    <p>
+      placement: undefined
+    </p>
+    <p>
+      appendTo: undefined
+    </p>
+    <p>
+      distance: undefined
+    </p>
+    <p>
+      flipBehavior: undefined
     </p>
     <p>
       minWidth: undefined
     </p>
-  </div>
-  <p>
-    zIndex: 9999
-  </p>
-  <p>
-    isOpen: true
-  </p>
-  <div>
     <button>
       Dropdown
     </button>

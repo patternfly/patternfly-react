@@ -6,8 +6,8 @@ import { Button, ButtonVariant, ButtonProps } from '../Button';
  */
 
 export interface AlertActionLinkProps extends ButtonProps {
-  /** Content rendered inside the alert action link.  */
-  children?: string;
+  /** Content rendered inside the alert action link. Interactive content such as anchor elements should not be passed in. */
+  children?: React.ReactNode;
   /** Additional classes added to the alert action link.  */
   className?: string;
 }

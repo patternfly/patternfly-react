@@ -20,6 +20,18 @@ test('Renders children', () => {
   expect(screen.getByRole('button')).toBeVisible();
 });
 
+test('Renders ReactNode as children', () => {
+  render(
+    <AlertActionLink>
+      <div>
+        <span>Learn More</span>
+      </div>
+    </AlertActionLink>
+  );
+
+  expect(screen.getByText('Learn More')).toBeVisible();
+});
+
 test('Renders with custom class names provided via prop', () => {
   render(<AlertActionLink className="custom-class">Test</AlertActionLink>);
 
