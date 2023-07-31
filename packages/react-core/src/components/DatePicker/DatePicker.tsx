@@ -50,6 +50,8 @@ export interface DatePickerProps
   isDisabled?: boolean;
   /** Error message to display when the text input contains a non-empty value in an invalid format. */
   invalidFormatText?: string;
+  /** Error message to display when the text input is empty and the isRequired prop is also passed in. */
+  emptyDateText?: string;
   /** Callback called every time the text input loses focus. */
   onBlur?: (event: any, value: string, date?: Date) => void;
   /** Callback called every time the text input value changes. */
@@ -98,6 +100,7 @@ const DatePickerBase = (
     dateFormat = yyyyMMddFormat,
     dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
     isDisabled = false,
+    isRequired = false,
     placeholder = 'YYYY-MM-DD',
     value: valueProp = '',
     'aria-label': ariaLabel = 'Date picker',
@@ -145,7 +148,9 @@ const DatePickerBase = (
     const newValueDate = dateParse(value);
     if (errorText) {
       isValidDate(newValueDate) && setError(newValueDate);
-      value === '' && setErrorText('');
+      if (value === '') {
+        isRequired ? setErrorText(emptyDateText) : setErrorText('');
+      }
     }
   }, [value]);
 
