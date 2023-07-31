@@ -7,6 +7,7 @@ module.exports = {
   hasDarkThemeSwitcher: true,
   hasDesignGuidelines: false,
   sideNavItems: [
+    { section: 'hackathon!' },
     { section: 'get-started' },
     { section: 'developer-resources' },
     { section: 'charts' },

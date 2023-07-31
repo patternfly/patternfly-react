@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
 import { css } from '@patternfly/react-styles';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import { BadgeProps } from '../Badge';
 
 export type MenuToggleElement = HTMLDivElement | HTMLButtonElement;
@@ -80,7 +80,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     const toggleControls = (
       <span className={css(styles.menuToggleControls)}>
         <span className={css(styles.menuToggleToggleIcon)}>
-          <CaretDownIcon aria-hidden />
+          <AngleDownIcon aria-hidden />
         </span>
       </span>
     );

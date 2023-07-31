@@ -4,6 +4,7 @@ import {
   BreadcrumbItem,
   Nav,
   NavItem,
+  NavGroup,
   NavList,
   Page,
   PageSection,
@@ -29,8 +30,8 @@ export const DashboardBreadcrumb = (
 export const PageTemplateTitle = (
   <PageSection variant="light">
     <TextContent>
-      <Text component="h1">Main title</Text>
-      <Text component="p">This is a full page demo.</Text>
+      <Text component="h3">Penta Hackathon Demo Page</Text>
+      <Text component="p">A showcase of our new tokens being applied to create a new theme</Text>
     </TextContent>
   </PageSection>
 );
@@ -74,27 +75,61 @@ export default class DashboardWrapper extends React.Component {
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0} to="#system-panel">
-            System panel
-          </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1} to="#policy">
-            Policy
-          </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2} to="#auth">
-            Authentication
-          </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3} to="#network">
-            Network services
-          </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4} to="#server">
-            Server
-          </NavItem>
+          <NavGroup title="Cluster">
+            <NavItem itemId={0} isActive={activeItem === 0} to="#dashboard">
+              Dashboard
+            </NavItem>
+            <NavItem itemId={1} isActive={activeItem === 1} to="#builds">
+              Builds
+            </NavItem>
+            <NavItem itemId={2} isActive={activeItem === 2} to="#compute">
+              Compute
+            </NavItem>
+            <NavItem itemId={3} isActive={activeItem === 3} to="#networking">
+              Networking
+            </NavItem>
+            <NavItem itemId={4} isActive={activeItem === 4} to="#observe">
+              Observe
+            </NavItem>
+            <NavItem itemId={5} isActive={activeItem === 5} to="#operators">
+              Operators
+            </NavItem>
+            <NavItem itemId={6} isActive={activeItem === 6} to="#applications">
+              Applications
+            </NavItem>
+            <NavItem itemId={7} isActive={activeItem === 7} to="#workloads">
+              Workloads
+            </NavItem>
+          </NavGroup>
+          <NavGroup title="Settings">
+            <NavItem itemId={0} isActive={activeItem === 0} to="#user-management">
+              User Management
+            </NavItem>
+            <NavItem itemId={1} isActive={activeItem === 1} to="#administration">
+              Administration
+            </NavItem>
+            <NavItem itemId={2} isActive={activeItem === 2} to="#import-yaml">
+              Import YAML
+            </NavItem>
+            <NavItem itemId={3} isActive={activeItem === 3} to="#help-and-support">
+              Help and Support
+            </NavItem>
+          </NavGroup>
         </NavList>
       </Nav>
     );
 
+    const SidebarHeader = (
+      <h2 className="pf-v5-c-page__sidebar-title">
+        PatternFly Navigation
+        <br />
+        Product Name
+      </h2>
+    );
+
     const _sidebar = (
       <PageSidebar isSidebarOpen={sidebarNavOpen || false}>
+        <div className="pf-v5-c-page__sidebar-header">{SidebarHeader}</div>
         <PageSidebarBody>{PageNav}</PageSidebarBody>
       </PageSidebar>
     );

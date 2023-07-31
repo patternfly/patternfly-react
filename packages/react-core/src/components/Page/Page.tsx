@@ -297,10 +297,12 @@ export class Page extends React.Component<PageProps, PageState> {
         tabIndex={mainTabIndex}
         aria-label={mainAriaLabel}
       >
+        <div className="pf-v5-c-page__main-list">
         {group}
         {!isTertiaryNavGrouped && nav}
         {!isBreadcrumbGrouped && crumb}
         {children}
+        </div>
       </main>
     );
 
@@ -313,9 +315,6 @@ export class Page extends React.Component<PageProps, PageState> {
           {...rest}
           className={css(
             styles.page,
-            width !== null && height !== null && 'pf-m-resize-observer',
-            width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
-            height !== null && `pf-m-height-breakpoint-${getVerticalBreakpoint(height)}`,
             className
           )}
         >

@@ -1,12 +1,9 @@
+/* eslint-disable no-console */
 import React from 'react';
 import {
-  Avatar,
   Brand,
-  Button,
-  ButtonVariant,
   Divider,
   Dropdown,
-  DropdownGroup,
   DropdownItem,
   DropdownList,
   Masthead,
@@ -22,13 +19,72 @@ import {
   PageToggleButton
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import EllipsisIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-h-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+
+export const ToolbarDropdown = ({ children, isPlain, toolbarItemProps }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const Toggle = (ref) => (
+    <MenuToggle
+      ref={ref}
+      isExpanded={isOpen}
+      onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
+      variant={isPlain ? 'plain' : undefined}
+    >
+      {children}
+    </MenuToggle>
+  );
+
+  return (
+    <ToolbarItem {...toolbarItemProps}>
+      <Dropdown
+        isOpen={isOpen}
+        onSelect={(_ev, value) => console.log(value, ' clicked')}
+        onOpenChange={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
+        toggle={(ref) => Toggle(ref)}
+        shouldFocusToggleOnSelect
+      >
+        <DropdownList>
+          <DropdownItem value={0} key="action">
+            Action
+          </DropdownItem>
+          <DropdownItem
+            value={1}
+            key="link"
+            to="#default-link2"
+            // Prevent the default onClick functionality for example purposes
+            onClick={(ev) => ev.preventDefault()}
+          >
+            Link
+          </DropdownItem>
+          <DropdownItem value={2} isDisabled key="disabled action">
+            Disabled Action
+          </DropdownItem>
+          <DropdownItem value={3} isDisabled key="disabled link" to="#default-link4">
+            Disabled Link
+          </DropdownItem>
+          <DropdownItem
+            value={4}
+            isAriaDisabled
+            key="aria-disabled link"
+            to="#default-link5"
+            tooltipProps={{ content: 'aria-disabled link', position: 'top' }}
+          >
+            Aria-disabled Link
+          </DropdownItem>
+          <Divider component="li" key="separator" />
+          <DropdownItem value={5} key="separated action">
+            Separated Action
+          </DropdownItem>
+          <DropdownItem value={6} key="separated link" to="#default-link6" onClick={(ev) => ev.preventDefault()}>
+            Separated Link
+          </DropdownItem>
+        </DropdownList>
+      </Dropdown>
+    </ToolbarItem>
+  );
+};
 
 export default class DashboardHeader extends React.Component {
   constructor(props) {
@@ -78,143 +134,36 @@ export default class DashboardHeader extends React.Component {
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen } = this.state;
-    const { notificationBadge } = this.props;
-
-    const kebabDropdownItems = (
-      <>
-        <DropdownItem>
-          <CogIcon /> Settings
-        </DropdownItem>
-        <DropdownItem>
-          <HelpIcon /> Help
-        </DropdownItem>
-      </>
-    );
-    const userDropdownItems = (
-      <>
-        <DropdownItem key="group 2 profile">My profile</DropdownItem>
-        <DropdownItem key="group 2 user">User management</DropdownItem>
-        <DropdownItem key="group 2 logout">Logout</DropdownItem>
-      </>
-    );
-
     const headerToolbar = (
-      <Toolbar id="toolbar" isFullHeight isStatic>
+      <Toolbar id="toolbar">
         <ToolbarContent>
-          <ToolbarGroup
-            variant="icon-button-group"
-            align={{ default: 'alignRight' }}
-            spacer={{ default: 'spacerNone', md: 'spacerMd' }}
-          >
-            {notificationBadge ? (
-              notificationBadge
-            ) : (
-              <ToolbarItem>
-                <Button
-                  aria-label="Notifications"
-                  variant={ButtonVariant.plain}
-                  icon={<BellIcon />}
-                  onClick={() => {}}
-                />
-              </ToolbarItem>
-            )}
-            <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
-              <ToolbarItem>
-                <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
-              </ToolbarItem>
-              <ToolbarItem>
-                <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
-              </ToolbarItem>
-            </ToolbarGroup>
-            <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-              <Dropdown
-                isOpen={isKebabDropdownOpen}
-                onSelect={this.onKebabDropdownSelect}
-                onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
-                popperProps={{ position: 'right' }}
-                toggle={(toggleRef) => (
-                  <MenuToggle
-                    ref={toggleRef}
-                    isExpanded={isKebabDropdownOpen}
-                    onClick={this.onKebabDropdownToggle}
-                    variant="plain"
-                    aria-label="Settings and help"
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
-                )}
-              >
-                <DropdownList>{kebabDropdownItems}</DropdownList>
-              </Dropdown>
-            </ToolbarItem>
-            <ToolbarItem visibility={{ md: 'hidden' }}>
-              <Dropdown
-                isOpen={isFullKebabDropdownOpen}
-                onSelect={this.onFullKebabSelect}
-                onOpenChange={(isOpen) => this.setState({ isFullKebabDropdownOpen: isOpen })}
-                popperProps={{ position: 'right' }}
-                toggle={(toggleRef) => (
-                  <MenuToggle
-                    ref={toggleRef}
-                    isExpanded={isFullKebabDropdownOpen}
-                    onClick={this.onFullKebabToggle}
-                    variant="plain"
-                    aria-label="Toolbar menu"
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
-                )}
-              >
-                <DropdownGroup key="group 2" aria-label="User actions">
-                  <DropdownList>{userDropdownItems}</DropdownList>
-                </DropdownGroup>
-                <Divider />
-                <DropdownList>{kebabDropdownItems}</DropdownList>
-              </Dropdown>
-            </ToolbarItem>
+          <ToolbarDropdown toolbarItemProps={{ visibility: { default: 'hidden', md: 'visible' } }}>
+            Context selector
+          </ToolbarDropdown>
+          <ToolbarGroup className="pf-m-align-right">
+            <ToolbarDropdown isPlain>
+              <EllipsisIcon />
+            </ToolbarDropdown>
+            <ToolbarDropdown>Alex dev</ToolbarDropdown>
           </ToolbarGroup>
-          <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
-            <Dropdown
-              isOpen={isDropdownOpen}
-              onSelect={this.onDropdownSelect}
-              onOpenChange={(isOpen) => this.setState({ isDropdownOpen: isOpen })}
-              popperProps={{ position: 'right' }}
-              toggle={(toggleRef) => (
-                <MenuToggle
-                  ref={toggleRef}
-                  isExpanded={isDropdownOpen}
-                  onClick={this.onDropdownToggle}
-                  icon={<Avatar src={imgAvatar} alt="" />}
-                  isFullHeight
-                >
-                  Ned Username
-                </MenuToggle>
-              )}
-            >
-              <DropdownList>{userDropdownItems}</DropdownList>
-            </Dropdown>
-          </ToolbarItem>
         </ToolbarContent>
       </Toolbar>
     );
 
     const masthead = (
-      <Masthead>
-        <MastheadToggle>
-          <PageToggleButton variant="plain" aria-label="Global navigation">
-            <BarsIcon />
-          </PageToggleButton>
-        </MastheadToggle>
-        <MastheadMain>
-          <MastheadBrand>
-            <Brand
-              src={pfLogo}
-              alt="PatternFly"
-              heights={{ default: '36px' }}
-            />
-          </MastheadBrand>
-        </MastheadMain>
+      <Masthead display={{}}>
+        <div className="pf-v5-c-masthead__logo">
+          <MastheadToggle>
+            <PageToggleButton variant="plain" aria-label="Global navigation">
+              <BarsIcon />
+            </PageToggleButton>
+          </MastheadToggle>
+          <MastheadMain>
+            <MastheadBrand>
+              <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+            </MastheadBrand>
+          </MastheadMain>
+        </div>
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
