@@ -327,7 +327,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         const isBelowBottom = itemEl.offsetTop - parentListEl.offsetTop + itemEl.clientHeight;
 
         if (isAboveTop || isBelowBottom) {
-          itemEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          itemEl.scrollIntoView({ behavior: 'auto', block: 'nearest' });
         }
       }
     }
