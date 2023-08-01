@@ -14,7 +14,7 @@ import popoverMaxWidth from '@patternfly/react-tokens/dist/esm/c_popover_MaxWidt
 import popoverMinWidth from '@patternfly/react-tokens/dist/esm/c_popover_MinWidth';
 import { ReactElement } from 'react';
 import { FocusTrap } from '../../helpers';
-import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
+import { Popper } from '../../helpers/Popper/Popper';
 import { getUniqueId } from '../../helpers/util';
 
 export enum PopoverPosition {
@@ -273,11 +273,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const uniqueId = id || getUniqueId();
   const triggerManually = isVisible !== null;
   const [visible, setVisible] = React.useState(false);
-  const [opacity, setOpacity] = React.useState(0);
   const [focusTrapActive, setFocusTrapActive] = React.useState(Boolean(propWithFocusTrap));
-  const transitionTimerRef = React.useRef(null);
-  const showTimerRef = React.useRef(null);
-  const hideTimerRef = React.useRef(null);
   const popoverRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -294,34 +290,15 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   }, [isVisible, triggerManually]);
   const show = (event?: MouseEvent | KeyboardEvent, withFocusTrap?: boolean) => {
     event && onShow(event);
-
-    if (transitionTimerRef.current) {
-      clearTimeout(transitionTimerRef.current);
-    }
-    if (hideTimerRef.current) {
-      clearTimeout(hideTimerRef.current);
-    }
-    showTimerRef.current = setTimeout(() => {
-      setVisible(true);
-      setOpacity(1);
-      propWithFocusTrap !== false && withFocusTrap && setFocusTrapActive(true);
-      onShown();
-    }, 0);
+    setVisible(true);
+    propWithFocusTrap !== false && withFocusTrap && setFocusTrapActive(true);
   };
+
   const hide = (event?: MouseEvent | KeyboardEvent) => {
     event && onHide(event);
-    if (showTimerRef.current) {
-      clearTimeout(showTimerRef.current);
-    }
-    hideTimerRef.current = setTimeout(() => {
-      setVisible(false);
-      setOpacity(0);
-      setFocusTrapActive(false);
-      transitionTimerRef.current = setTimeout(() => {
-        onHidden();
-      }, animationDuration);
-    }, 0);
+    setVisible(false);
   };
+
   const positionModifiers = {
     top: styles.modifiers.top,
     bottom: styles.modifiers.bottom,
@@ -426,9 +403,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       onMouseDown={onContentMouseDown}
       style={{
         minWidth: hasCustomMinWidth ? minWidth : null,
-        maxWidth: hasCustomMaxWidth ? maxWidth : null,
-        opacity,
-        transition: getOpacityTransition(animationDuration)
+        maxWidth: hasCustomMaxWidth ? maxWidth : null
       }}
       {...rest}
     >
@@ -477,6 +452,10 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         enableFlip={enableFlip}
         zIndex={zIndex}
         flipBehavior={flipBehavior}
+        animationDuration={animationDuration}
+        onHidden={onHidden}
+        onShown={onShown}
+        onHide={() => setFocusTrapActive(false)}
       />
     </PopoverContext.Provider>
   );

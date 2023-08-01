@@ -519,3 +519,14 @@ export const preventedEvents = (events: string[]) =>
     }),
     {}
   );
+
+/**
+ * @param {React.RefObject<any>[]} timeoutRefs - Timeout refs to clear
+ */
+export const clearTimeouts = (timeoutRefs: React.RefObject<any>[]) => {
+  timeoutRefs.forEach((ref) => {
+    if (ref.current) {
+      clearTimeout(ref.current);
+    }
+  });
+};

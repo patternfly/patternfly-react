@@ -164,7 +164,7 @@ exports[`DataList DataListAction dropdown 1`] = `
         data-ouia-component-id="OUIA-Generated-Dropdown-1"
         data-ouia-component-type="PF5/Dropdown"
         data-ouia-safe="true"
-        style="position: absolute; left: 0px; top: 0px; z-index: 9999;"
+        style="position: absolute; left: 0px; top: 0px; z-index: 9999; opacity: 0; transition: opacity 0ms cubic-bezier(.54, 1.5, .38, 1.11);"
       >
         <div
           class="pf-v5-c-menu__content"
