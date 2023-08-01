@@ -79,6 +79,8 @@ export interface ModalContentProps extends OUIAProps {
   variant?: 'small' | 'medium' | 'large' | 'default';
   /** Default width of the modal. */
   width?: number | string;
+  /** Maximum width of the modal. */
+  maxWidth?: number | string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -107,7 +109,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   variant = 'default',
   position,
   positionOffset,
-  width = -1,
+  width,
+  maxWidth,
   boxId,
   labelId,
   descriptorId,
@@ -152,7 +155,6 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       {children}
     </ModalBoxBody>
   );
-  const boxStyle = width === -1 ? {} : { width };
   const ariaLabelledbyFormatted = (): null | string => {
     if (ariaLabelledby === null) {
       return null;
@@ -173,7 +175,6 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   const modalBox = (
     <ModalBox
       id={boxId}
-      style={boxStyle}
       className={css(className, isVariantIcon(titleIconVariant) && modalStyles.modifiers[titleIconVariant])}
       variant={variant}
       position={position}
@@ -182,6 +183,14 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       aria-labelledby={ariaLabelledbyFormatted()}
       aria-describedby={ariaDescribedby || (hasNoBodyWrapper ? null : descriptorId)}
       {...getOUIAProps(ModalContent.displayName, ouiaId, ouiaSafe)}
+      style={
+        {
+          ...(width && { '--pf-v5-c-modal-box--Width': typeof width !== 'number' ? width : `${width}px` }),
+          ...(maxWidth && {
+            '--pf-v5-c-modal-box--MaxWidth': typeof maxWidth !== 'number' ? maxWidth : `${maxWidth}px`
+          })
+        } as React.CSSProperties
+      }
     >
       {showClose && <ModalBoxCloseButton onClose={(event) => onClose(event)} ouiaId={ouiaId} />}
       {modalBoxHeader}
