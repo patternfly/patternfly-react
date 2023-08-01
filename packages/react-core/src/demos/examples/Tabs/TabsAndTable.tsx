@@ -147,8 +147,6 @@ export const TablesAndTabs = () => {
     const shouldFocus = [ArrowDown, ArrowUp, Enter, Space].includes(event.key);
 
     if (shouldToggle) {
-      event.preventDefault();
-      event.stopPropagation();
       onToggle(event);
     }
 
@@ -254,7 +252,8 @@ export const TablesAndTabs = () => {
             <Td dataLabel={columnNames.name}>
               {repo.name}
               <div>
-                <a href="#">siemur/test-space</a>
+                {/** Preventing default behavior for demo purposes only */}
+                <a onClick={(event) => event.preventDefault()} href="#">siemur/test-space</a>
               </div>
             </Td>
             <Td dataLabel={columnNames.branches}>
@@ -308,7 +307,8 @@ export const TablesAndTabs = () => {
             </Title>
           </FlexItem>
           <FlexItem>
-            <a href="#">siemur/test-space</a>
+            {/** Preventing default behavior for demo purposes only */}
+            <a onClick={(event) => event.preventDefault()} href="#">siemur/test-space</a>
           </FlexItem>
         </Flex>
       </DrawerHead>
