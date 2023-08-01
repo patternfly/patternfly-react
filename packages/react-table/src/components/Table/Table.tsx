@@ -57,6 +57,8 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   isStriped?: boolean;
   /** Flag indicating this table contains expandable rows to maintain proper striping */
   isExpandable?: boolean;
+  /** Flag rows will not have the inset typically reserved for expanding/collapsing rows in a tree table. Intended for use on tree tables with no visible rows with children. */
+  isNoInset?: boolean;
   /** Collection of column spans for nested headers. Deprecated: see https://github.com/patternfly/patternfly/issues/4584 */
   nestedHeaderColumnSpans?: number[];
   /** Visible text to add alongside the hidden a11y caption for tables with selectable rows. */
@@ -91,6 +93,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   isNested = false,
   isStriped = false,
   isExpandable = false,
+  isNoInset = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   nestedHeaderColumnSpans,
   selectableRowCaptionText,
@@ -206,6 +209,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           isTreeTable && stylesTreeView.modifiers.treeView,
           isStriped && styles.modifiers.striped,
           isExpandable && styles.modifiers.expandable,
+          isNoInset && stylesTreeView.modifiers.noInset,
           isNested && 'pf-m-nested'
         )}
         ref={tableRef}
