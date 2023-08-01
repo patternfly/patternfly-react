@@ -7,10 +7,11 @@ exports[`SimpleList renders aria-labelled content 1`] = `
   >
     <ul
       aria-label="This is a simple list"
+      class="pf-v5-c-simple-list__list"
       role="list"
     >
       <li
-        class=""
+        class="pf-v5-c-simple-list__item"
       >
         <button
           class="pf-v5-c-simple-list__item-link"
@@ -20,7 +21,7 @@ exports[`SimpleList renders aria-labelled content 1`] = `
         </button>
       </li>
       <li
-        class=""
+        class="pf-v5-c-simple-list__item"
       >
         <button
           class="pf-v5-c-simple-list__item-link"
@@ -30,7 +31,7 @@ exports[`SimpleList renders aria-labelled content 1`] = `
         </button>
       </li>
       <li
-        class=""
+        class="pf-v5-c-simple-list__item"
       >
         <button
           class="pf-v5-c-simple-list__item-link"
@@ -50,10 +51,11 @@ exports[`SimpleList renders content 1`] = `
     class="pf-v5-c-simple-list"
   >
     <ul
+      class="pf-v5-c-simple-list__list"
       role="list"
     >
       <li
-        class=""
+        class="pf-v5-c-simple-list__item"
       >
         <button
           class="pf-v5-c-simple-list__item-link"
@@ -63,7 +65,7 @@ exports[`SimpleList renders content 1`] = `
         </button>
       </li>
       <li
-        class=""
+        class="pf-v5-c-simple-list__item"
       >
         <button
           class="pf-v5-c-simple-list__item-link"
@@ -73,7 +75,7 @@ exports[`SimpleList renders content 1`] = `
         </button>
       </li>
       <li
-        class=""
+        class="pf-v5-c-simple-list__item"
       >
         <button
           class="pf-v5-c-simple-list__item-link"
@@ -104,11 +106,11 @@ exports[`SimpleList renders grouped content 1`] = `
       </h2>
       <ul
         aria-labelledby=""
-        class=""
+        class="pf-v5-c-simple-list__list"
         role="list"
       >
         <li
-          class=""
+          class="pf-v5-c-simple-list__item"
         >
           <button
             class="pf-v5-c-simple-list__item-link"
@@ -118,7 +120,7 @@ exports[`SimpleList renders grouped content 1`] = `
           </button>
         </li>
         <li
-          class=""
+          class="pf-v5-c-simple-list__item"
         >
           <button
             class="pf-v5-c-simple-list__item-link"
@@ -128,7 +130,7 @@ exports[`SimpleList renders grouped content 1`] = `
           </button>
         </li>
         <li
-          class=""
+          class="pf-v5-c-simple-list__item"
         >
           <button
             class="pf-v5-c-simple-list__item-link"

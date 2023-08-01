@@ -3,7 +3,7 @@
 exports[`SimpleListItem should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <li
-    class="''"
+    class="pf-v5-c-simple-list__item ''"
   >
     <button
       class="pf-v5-c-simple-list__item-link ''"
