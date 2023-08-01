@@ -12,7 +12,7 @@ exports[`SimpleListGroup should match snapshot (auto-generated) 1`] = `
     />
     <ul
       aria-labelledby="''"
-      class="''"
+      class="pf-v5-c-simple-list__list ''"
       role="list"
     >
       ReactNode

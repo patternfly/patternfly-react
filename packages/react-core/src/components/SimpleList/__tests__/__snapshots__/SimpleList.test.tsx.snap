@@ -106,7 +106,7 @@ exports[`SimpleList renders grouped content 1`] = `
       </h2>
       <ul
         aria-labelledby=""
-        class=""
+        class="pf-v5-c-simple-list__list"
         role="list"
       >
         <li
