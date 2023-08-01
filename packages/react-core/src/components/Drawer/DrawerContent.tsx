@@ -12,7 +12,7 @@ export interface DrawerContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered in the drawer panel. */
   panelContent: React.ReactNode;
   /** Color variant of the background of the drawer panel */
-  colorVariant?: DrawerColorVariant | 'light-200' | 'default';
+  colorVariant?: DrawerColorVariant | 'light-200' | 'no-background' | 'default';
 }
 
 export const DrawerContent: React.FunctionComponent<DrawerContentProps> = ({
@@ -31,6 +31,7 @@ export const DrawerContent: React.FunctionComponent<DrawerContentProps> = ({
         className={css(
           styles.drawerContent,
           colorVariant === DrawerColorVariant.light200 && styles.modifiers.light_200,
+          colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
           className
         )}
         ref={drawerContentRef}
