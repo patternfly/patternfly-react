@@ -1,18 +1,13 @@
 #!/bin/bash
 packages=(
   @patternfly/patternfly
-  @patternfly/react-catalog-view-extension
   @patternfly/react-charts
   @patternfly/react-code-editor
   @patternfly/react-core
   @patternfly/react-icons
-  @patternfly/react-inline-edit-extension
-  @patternfly/react-log-viewer
   @patternfly/react-styles
   @patternfly/react-table
   @patternfly/react-tokens
-  @patternfly/react-topology
-  @patternfly/react-virtualized-extension
 )
 prereleaseTag=prerelease
 
