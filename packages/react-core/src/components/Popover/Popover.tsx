@@ -278,7 +278,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const [visible, setVisible] = React.useState(false);
   const [focusTrapActive, setFocusTrapActive] = React.useState(Boolean(propWithFocusTrap));
   const popoverRef = React.useRef(null);
-  const hideShowTime = triggerAction === 'hover' ? animationDuration : 0;
 
   React.useEffect(() => {
     onMount();
