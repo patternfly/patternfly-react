@@ -1,0 +1,9 @@
+.pf-v5-l-bullseye {
+  --pf-v5-l-bullseye--Padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--pf-v5-l-bullseye--Padding);
+  margin: 0;
+}

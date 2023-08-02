@@ -1,0 +1,59 @@
+.pf-v5-c-table {
+  --pf-v5-c-table__sticky-cell--MinWidth--base: 12.5rem;
+  --pf-v5-c-table__sticky-cell--MinWidth: var(--pf-v5-c-table__sticky-cell--MinWidth--base);
+  --pf-v5-c-table__sticky-cell--ZIndex: var(--pf-v5-global--ZIndex--xs);
+  --pf-v5-c-table__sticky-cell--Right: auto;
+  --pf-v5-c-table__sticky-cell--Left: auto;
+  --pf-v5-c-table__sticky-cell--BackgroundColor: var(--pf--global--background--color--primary);
+  --pf-v5-c-table__sticky-cell--m-border-right--before--BorderRightWidth: var(--pf--global--border--width);
+  --pf-v5-c-table__sticky-cell--m-border-right--before--BorderRightColor: var(--pf--global--border--color);
+  --pf-v5-c-table__sticky-cell--m-border-left--before--BorderLeftWidth: var(--pf--global--border--width);
+  --pf-v5-c-table__sticky-cell--m-border-left--before--BorderLeftColor: var(--pf--global--border--color);
+  --pf-v5-c-table__sticky-cell--m-right--Right: 0;
+  --pf-v5-c-table__sticky-cell--m-left--Left: 0;
+  --pf-v5-c-table--m-sticky-header__sticky-cell--ZIndex: calc(var(--pf-v5-c-table__sticky-cell--ZIndex) + 1);
+}
+.pf-v5-c-table .pf-v5-c-table__sticky-cell {
+  --pf-v5-c-table--cell--Overflow: visible;
+  --pf-v5-c-table--m-sticky-header--cell--ZIndex: var(--pf-v5-c-table--m-sticky-header__sticky-cell--ZIndex);
+  position: sticky;
+  right: var(--pf-v5-c-table__sticky-cell--Right);
+  left: var(--pf-v5-c-table__sticky-cell--Left);
+  z-index: var(--pf-v5-c-table__sticky-cell--ZIndex);
+  min-width: var(--pf-v5-c-table__sticky-cell--MinWidth);
+  background-color: var(--pf-v5-c-table__sticky-cell--BackgroundColor);
+  background-clip: padding-box;
+}
+.pf-v5-c-table .pf-v5-c-table__sticky-cell.pf-m-border-right::before {
+  --pf-v5-c-table--cell--m-border-right--before--BorderRightWidth: var(--pf-v5-c-table__sticky-cell--m-border-right--before--BorderRightWidth);
+  --pf-v5-c-table--cell--m-border-right--before--BorderRightColor: var(--pf-v5-c-table__sticky-cell--m-border-right--before--BorderRightColor);
+}
+.pf-v5-c-table .pf-v5-c-table__sticky-cell.pf-m-border-left::before {
+  --pf-v5-c-table--cell--m-border-left--before--BorderLeftWidth: var(--pf-v5-c-table__sticky-cell--m-border-left--before--BorderLeftWidth);
+  --pf-v5-c-table--cell--m-border-left--before--BorderLeftColor: var(--pf-v5-c-table__sticky-cell--m-border-left--before--BorderLeftColor);
+}
+.pf-v5-c-table .pf-v5-c-table__sticky-cell.pf-m-right {
+  --pf-v5-c-table__sticky-cell--Right: var(--pf-v5-c-table__sticky-cell--m-right--Right);
+}
+.pf-v5-c-table .pf-v5-c-table__sticky-cell.pf-m-left {
+  --pf-v5-c-table__sticky-cell--Left: var(--pf-v5-c-table__sticky-cell--m-left--Left);
+}
+
+.pf-v5-c-scroll-outer-wrapper {
+  --pf-v5-c-scroll-outer-wrapper--MinHeight: 25rem;
+  --pf-v5-c-scroll-outer-wrapper--MaxHeight: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  min-height: var(--pf-v5-c-scroll-outer-wrapper--MinHeight);
+  max-height: var(--pf-v5-c-scroll-outer-wrapper--MaxHeight);
+  overflow: hidden;
+}
+
+.pf-v5-c-scroll-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}

@@ -1,0 +1,13 @@
+.pf-v5-c-base-component {
+  --pf-v5-c-base-component--Color: var(--pf-v5-global--Color--dark);
+  --pf-v5-c-base-component--m-danger--BackgroundColor: var(--pf-v5-global--danger-color);
+  --pf-v5-c-base-component__element--FontSize: var(--pf-v5-global--FontSize--2xl);
+  color: var(--pf-v5-c-base-component--Color);
+}
+.pf-v5-c-base-component.pf-m-danger {
+  background-color: var(--pf-v5-c-base-component--m-danger--BackgroundColor);
+}
+
+.pf-v5-c-base-component__element {
+  font-size: var(--pf-v5-c-base-component__element--FontSize);
+}

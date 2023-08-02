@@ -1,0 +1,12 @@
+.pf-v5-c-skip-to-content {
+  --pf-v5-c-skip-to-content--Top: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-skip-to-content--ZIndex: var(--pf-v5-global--ZIndex--2xl);
+  --pf-v5-c-skip-to-content--focus--Left: var(--pf-v5-global--spacer--md);
+  position: absolute;
+  top: var(--pf-v5-c-skip-to-content--Top);
+  left: -300%;
+  z-index: var(--pf-v5-c-skip-to-content--ZIndex);
+}
+.pf-v5-c-skip-to-content:focus-within {
+  left: var(--pf-v5-c-skip-to-content--focus--Left);
+}
