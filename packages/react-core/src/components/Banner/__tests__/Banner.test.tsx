@@ -51,9 +51,9 @@ test('Renders with class name pf-m-blue when "blue" is passed to variant prop', 
   expect(screen.getByText('Test')).toHaveClass('pf-m-blue');
 });
 
-test('Does not render pf-v5-u-screen-reader class by default', () => {
+test('Does not render pf-v5-screen-reader class by default', () => {
   render(<Banner>Test</Banner>);
-  expect(screen.getByText('Test')).not.toContainHTML('<span class="pf-v5-u-screen-reader"></span>');
+  expect(screen.getByText('Test')).not.toContainHTML('<span class="pf-v5-screen-reader"></span>');
 });
 
 test('Renders screenReaderText passed via prop', () => {
