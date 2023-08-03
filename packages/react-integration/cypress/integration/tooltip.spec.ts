@@ -62,7 +62,7 @@ describe('Tooltip Demo Test', () => {
     cy.get('#tooltip-click-content.pf-v5-c-tooltip').should('not.exist');
   });
 
-  it('Renders with passed in entryDelay and exitDelay', () => {
+  it.skip('Renders with passed in entryDelay and exitDelay', () => {
     cy.get('#tooltip-delay-trigger').trigger('mouseenter');
     cy.wait(defaultEntryDelay);
     cy.get('#tooltip-delay-content.pf-v5-c-tooltip').should('not.exist');

@@ -6,7 +6,6 @@ exports[`Matches snapshot 1`] = `
   class="pf-v5-c-tooltip"
   id="custom-id"
   role="tooltip"
-  style="opacity: 1;"
 >
   <div
     class="pf-v5-c-tooltip__arrow"

@@ -203,6 +203,8 @@ export interface PopoverProps {
   shouldOpen?: (event: MouseEvent | KeyboardEvent, showFunction?: () => void) => void;
   /** Flag indicating whether the close button should be shown. */
   showClose?: boolean;
+  /** Sets an interaction to open popover, defaults to "click" */
+  triggerAction?: 'click' | 'hover';
   /** Whether to trap focus in the popover. */
   withFocusTrap?: boolean;
   /** The z-index of the popover. */
@@ -241,6 +243,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   onShown = (): void => null,
   onMount = (): void => null,
   zIndex = 9999,
+  triggerAction = 'click',
   minWidth = popoverMinWidth && popoverMinWidth.value,
   maxWidth = popoverMaxWidth && popoverMaxWidth.value,
   closeBtnAriaLabel = 'Close',
@@ -354,11 +357,45 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       }
     }
   };
+
   const onContentMouseDown = () => {
     if (focusTrapActive) {
       setFocusTrapActive(false);
     }
   };
+
+  const onMouseEnter = (event: MouseEvent) => {
+    if (triggerManually) {
+      shouldOpen(event as MouseEvent, show);
+    } else {
+      show(event as MouseEvent, false);
+    }
+  };
+
+  const onMouseLeave = (event: MouseEvent) => {
+    if (triggerManually) {
+      shouldClose(event as MouseEvent, hide);
+    } else {
+      hide(event);
+    }
+  };
+
+  const onFocus = (event: FocusEvent) => {
+    if (triggerManually) {
+      shouldOpen(event as MouseEvent | KeyboardEvent, show);
+    } else {
+      show(event as MouseEvent | KeyboardEvent, false);
+    }
+  };
+
+  const onBlur = (event: FocusEvent) => {
+    if (triggerManually) {
+      shouldClose(event as MouseEvent | KeyboardEvent, hide);
+    } else {
+      hide(event as MouseEvent | KeyboardEvent);
+    }
+  };
+
   const closePopover = (event: MouseEvent) => {
     event.stopPropagation();
     if (triggerManually) {
@@ -375,6 +412,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         returnFocusOnDeactivate: true,
         clickOutsideDeactivates: true,
         tabbableOptions: { displayCheck: 'none' },
+
         fallbackFocus: () => {
           // If the popover's trigger is focused but scrolled out of view,
           // FocusTrap will throw an error when the Enter button is used on the trigger.
@@ -409,7 +447,9 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     >
       <PopoverArrow />
       <PopoverContent>
-        {showClose && <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />}
+        {showClose && triggerAction === 'click' && (
+          <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />
+        )}
         {headerContent && (
           <PopoverHeader
             id={`popover-${uniqueId}-header`}
@@ -443,10 +483,16 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         minWidth={minWidth}
         appendTo={appendTo}
         isVisible={visible}
+        onMouseEnter={triggerAction === 'hover' && onMouseEnter}
+        onMouseLeave={triggerAction === 'hover' && onMouseLeave}
+        onPopperMouseEnter={triggerAction === 'hover' && onMouseEnter}
+        onPopperMouseLeave={triggerAction === 'hover' && onMouseLeave}
+        onFocus={triggerAction === 'hover' && onFocus}
+        onBlur={triggerAction === 'hover' && onBlur}
         positionModifiers={positionModifiers}
         distance={distance}
         placement={position}
-        onTriggerClick={onTriggerClick}
+        onTriggerClick={triggerAction === 'click' && onTriggerClick}
         onDocumentClick={onDocumentClick}
         onDocumentKeyDown={onDocumentKeyDown}
         enableFlip={enableFlip}

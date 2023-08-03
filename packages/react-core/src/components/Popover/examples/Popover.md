@@ -19,11 +19,19 @@ By default, the `appendTo` prop of the popover will append to the document body 
 ### Basic
 
 ```ts file="./PopoverBasic.tsx"
+
+```
+
+### Hoverable
+
+```ts file="./PopoverHover.tsx"
+
 ```
 
 ### Close popover from content (controlled)
 
 ```ts file="./PopoverCloseControlled.tsx"
+
 ```
 
 ### Close popover from content (uncontrolled)
@@ -31,11 +39,13 @@ By default, the `appendTo` prop of the popover will append to the document body 
 Note: If you use the isVisible prop, either refer to the example above or if you want to use the hide callback from the content then be sure to keep isVisible in-sync.
 
 ```ts file="./PopoverCloseUncontrolled.tsx"
+
 ```
 
 ### Without header/footer/close and no padding
 
 ```ts file="./PopoverWithoutHeaderFooterCloseNoPadding.tsx"
+
 ```
 
 ### Width auto
@@ -43,33 +53,39 @@ Note: If you use the isVisible prop, either refer to the example above or if you
 Here the popover goes over the navigation, so the prop `appendTo` is set to the documents body.
 
 ```ts file="./PopoverWidthAuto.tsx"
+
 ```
 
 ### Popover react ref
 
 ```ts file="./PopoverReactRef.tsx"
+
 ```
 
 ### Popover selector ref
 
 ```ts file="./PopoverSelectorRef.tsx"
+
 ```
 
 ### Advanced
 
 ```ts file="./PopoverAdvanced.tsx"
+
 ```
 
 ### Popover with icon in the title
 
 Here the popover goes over the navigation, so the prop `appendTo` is set to the documents body.
 
-```ts file="./PopoverWithIconInTheTitle.tsx" 
+```ts file="./PopoverWithIconInTheTitle.tsx"
+
 ```
 
 ### Alert popover
 
 Here the popover goes over the navigation, so the prop `appendTo` is set to the documents body.
 
-```ts file="./PopoverAlert.tsx" 
+```ts file="./PopoverAlert.tsx"
+
 ```
