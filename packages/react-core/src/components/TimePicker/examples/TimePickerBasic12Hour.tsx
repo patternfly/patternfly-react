@@ -2,7 +2,7 @@
 import React from 'react';
 import { TimePicker } from '@patternfly/react-core';
 
-export const Basic12Hour: React.FunctionComponent = () => {
+export const TimePickerBasic12Hour: React.FunctionComponent = () => {
   const onChange = (
     _event: React.FormEvent<HTMLInputElement>,
     time: string,
