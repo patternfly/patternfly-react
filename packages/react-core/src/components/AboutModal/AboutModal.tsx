@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import AboutModalBoxBackgroundImage from '@patternfly/react-tokens/dist/esm/c_about_modal_box_BackgroundImage';
+import backgroundImage from '@patternfly/react-tokens/dist/esm/c_about_modal_box_BackgroundImage';
 import { AboutModalBoxContent } from './AboutModalBoxContent';
 import { AboutModalBoxHeader } from './AboutModalBoxHeader';
 import { AboutModalBoxBrand } from './AboutModalBoxBrand';
@@ -90,7 +90,7 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
           <AboutModalBox
             style={
               backgroundImageSrc
-                ? { [AboutModalBoxBackgroundImage.name]: `url(${backgroundImageSrc})` } as React.CSSProperties
+                ? { [backgroundImage.name]: `url(${backgroundImageSrc})` } as React.CSSProperties
                 : {}
             }
             className={css(className)}
