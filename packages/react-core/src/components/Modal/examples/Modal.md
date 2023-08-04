@@ -144,3 +144,11 @@ To submit the form from a button in the modal's footer (outside of the `<Form>`)
 ```ts file="ModalWithForm.tsx"
 
 ```
+
+### Custom focus
+
+Use the `elementToFocus` property to customize which element inside the Modal receives focus when initially opened.
+
+```ts file="./ModalCustomFocus.tsx"
+
+```
