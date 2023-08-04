@@ -7,7 +7,7 @@ import {
   DropdownItem,
   DropdownSeparator
 } from '@patternfly/react-core/deprecated';
-import avatarImg from '../../../../components/Avatar/examples/avatarImg.svg';
+import avatarImg from '../../../../components/assets/avatarImg.svg';
 
 export const DropdownImageAndText: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);

@@ -10,7 +10,7 @@ import './MenuToggle.css'
 
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 ## Examples
@@ -118,7 +118,7 @@ This can be used alongside a text label that provides more context for the image
 ```ts
 import React from 'react';
 import { MenuToggle, Avatar } from '@patternfly/react-core';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
 <React.Fragment>
   <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />}>Ned Username</MenuToggle>{' '}

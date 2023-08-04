@@ -13,7 +13,7 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import pfLogoSmall from './pf-logo-small.svg';
+import pfLogoSmall from '../../assets/pf-c-brand--logo-on-sm.svg';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const CardExpandableWithIcon: React.FunctionComponent = () => {

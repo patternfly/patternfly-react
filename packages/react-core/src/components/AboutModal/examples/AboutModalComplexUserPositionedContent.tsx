@@ -1,6 +1,6 @@
 import React from 'react';
 import { AboutModal, Alert, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
-import brandImg from './brandImg.svg';
+import brandImg from '../../assets/brandImg.svg';
 
 export const AboutModalComplexUserPositionedContent: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
