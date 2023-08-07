@@ -43,6 +43,24 @@ describe('Drawer Demo Test', () => {
 
   it('Verify that focus gets sent to drawer', () => {
     cy.get('#toggleButton').click();
-    cy.wrap(() => cy.focused().contains('drawer-panel'), { timeout: 1000 });
+    cy.wrap(() => cy.focused().contains('drawer-panel in demo with onExpand'), { timeout: 1000 });
+  });
+
+  it('Verify focus is automatically handled with focus trap enabled', () => {
+    cy.get('#toggleFocusTrapButton').click();
+    // Wait for transition animation to end
+    cy.wait(500);
+    cy.get('#focusTrap-panelContent .pf-v5-c-button.pf-m-plain').should('have.focus');
+    cy.get('#focusTrap-panelContent .pf-v5-c-button.pf-m-plain').click();
+    // Wait for transition animation to end
+    cy.wait(500);
+    cy.get('#toggleFocusTrapButton').should('have.focus');
+  });
+
+  it('Verify focus can be customized with focus trap enabled', () => {
+    cy.get('#toggleCustomFocusButton').click();
+    // Wait for transition animation to end
+    cy.wait(500);
+    cy.get('#customFocus-panelContent').should('have.focus');
   });
 });
