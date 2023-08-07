@@ -23,7 +23,6 @@
         "eslint",
         "eslint-plugin-prettier",
         "eslint-plugin-react",
-        "focus-trap",
         "fs-extra",
         "lint-staged",
         "mutation-observer",
@@ -40,8 +39,10 @@
       "enabled": false
     },
     {
-      "datasources": ["npm"],
-      "packagePatterns": [
+      "groupName": "devDependencies",
+      "matchDatasources": ["npm"],
+      "automerge": true,
+      "matchPackagePatterns": [
         "@babel/*",
         "@octokit/rest",
         "@patternfly/patternfly-a11y",
@@ -74,10 +75,18 @@
       ]
     },
     {
-      "datasources": ["npm"],
-      "packageNames": [
+      "matchDatasources": ["npm"],
+      "matchPackageNames": [
+        "focus-trap",
+        "react-dropzone"
+      ]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchPackageNames": [
         "@patternfly/patternfly"
       ],
+      "automerge": true,
       "followTag": "prerelease"
     }
   ]
