@@ -210,23 +210,25 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
       <SelectOption key="switch-2" hasCheckbox isSelected={secondSwitchChecked} onClick={handleSecondSwitchChange}>
         Wrap lines
       </SelectOption>
+    </>
+  );
+
+  const selectDropdownContent = (
+    <>
+      <SelectList>
+        {Object.entries(firstOptions).map(([value, { type }]) => (
+          <SelectOption key={value} hasCheckbox value={value} isSelected={containerSelected === value}>
+            <Badge key={value}>{type}</Badge>
+            {` ${value}`}
+          </SelectOption>
+        ))}
+      </SelectList>
       <MenuFooter key="clear-log" onClick={onClearLogs}>
         <Button variant="link" isInline>
           Clear logs
         </Button>
       </MenuFooter>
     </>
-  );
-
-  const selectDropdownContent = (
-    <SelectList>
-      {Object.entries(firstOptions).map(([value, { type }]) => (
-        <SelectOption key={value} hasCheckbox value={value} isSelected={containerSelected === value}>
-          <Badge key={value}>{type}</Badge>
-          {` ${value}`}
-        </SelectOption>
-      ))}
-    </SelectList>
   );
 
   const selectToggleContent = ({ showText }: { showText: boolean }) => {
@@ -273,6 +275,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
           )}
           onSelect={onContainerSelect}
           onOpenChange={(isOpen) => setContainerExpanded(isOpen)}
+          onOpenChangeKeys={['Escape']}
           selected={containerSelected}
           isOpen={containerExpanded}
         >
@@ -282,6 +285,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
       <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
         <Select
           isOpen={optionExpanded}
+          role="menu"
           onOpenChange={(isOpen) => setOptionExpanded(isOpen)}
           onSelect={onOptionSelect}
           toggle={(toggleRef) => (
