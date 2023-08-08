@@ -3,7 +3,7 @@ id: Date picker
 section: components
 subsection: date-and-time
 cssPrefix: pf-v5-c-date-picker
-propComponents: ['DatePicker', 'CalendarFormat', 'DatePickerRef']
+propComponents: ['DatePicker', 'CalendarFormat', 'DatePickerRef', 'DatePickerRequiredObject']
 ---
 
 ## Examples
@@ -16,11 +16,11 @@ propComponents: ['DatePicker', 'CalendarFormat', 'DatePickerRef']
 
 ### Required
 
-To require users to select a date before continuing, use the `isRequired` property.
+To require users to select a date before continuing, use the `requiredDateOptions.isRequired` property.
 
 A required date picker will be invalid when the text input is empty and either the text input loses focus or the date picker popover is closed.
 
-The error message can be customized via the `emptyDateText` property.
+The error message can be customized via the `requiredDateOptions.emptyDateText` property.
 
 ```ts file="./DatePickerRequired.tsx"
 

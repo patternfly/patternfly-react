@@ -100,7 +100,7 @@ test('Shows "Invalid date" instead of helperText when text input contains invali
   expect(screen.getByText('Invalid date')).toBeVisible();
 });
 
-test('Does not render text input as invalid when isRequired is false', async () => {
+test('Does not render text input as invalid when requiredDateOptions.isRequired is false', async () => {
   const user = userEvent.setup();
 
   render(<DatePicker />);
@@ -111,7 +111,7 @@ test('Does not render text input as invalid when isRequired is false', async () 
   expect(screen.getByRole('textbox')).not.toHaveAttribute('aria-invalid', 'true');
 });
 
-test('Does not render emptyDateText when isRequired is false', async () => {
+test('Does not render emptyDateText when requiredDateOptions.isRequired is false', async () => {
   const user = userEvent.setup();
 
   render(<DatePicker />);
@@ -122,10 +122,10 @@ test('Does not render emptyDateText when isRequired is false', async () => {
   expect(screen.queryByText('Date cannot be blank')).not.toBeInTheDocument;
 });
 
-test('Renders text input as invalid on blur when isRequired is false', async () => {
+test('Renders text input as invalid on blur when requiredDateOptions.isRequired is true', async () => {
   const user = userEvent.setup();
 
-  render(<DatePicker isRequired />);
+  render(<DatePicker requiredDateOptions={{ isRequired: true }} />);
 
   await user.click(screen.getByRole('textbox'));
   await user.click(document.body);
@@ -133,10 +133,10 @@ test('Renders text input as invalid on blur when isRequired is false', async () 
   expect(screen.getByRole('textbox')).toHaveAttribute('aria-invalid', 'true');
 });
 
-test('Renders default emptyDateText on blur when isRequired is passed', async () => {
+test('Renders default emptyDateText on blur when requiredDateOptions.isRequired is true', async () => {
   const user = userEvent.setup();
 
-  render(<DatePicker isRequired />);
+  render(<DatePicker requiredDateOptions={{ isRequired: true }} />);
 
   await user.click(screen.getByRole('textbox'));
   await user.click(document.body);
@@ -144,10 +144,10 @@ test('Renders default emptyDateText on blur when isRequired is passed', async ()
   expect(screen.getByText('Date cannot be blank')).toBeInTheDocument();
 });
 
-test('Renders custom emptyDateText when isRequired is true', async () => {
+test('Renders custom emptyDateText when requiredDateOptions.isRequired is true', async () => {
   const user = userEvent.setup();
 
-  render(<DatePicker emptyDateText="Required in test" isRequired />);
+  render(<DatePicker requiredDateOptions={{ isRequired: true, emptyDateText: 'Required in test' }} />);
 
   await user.click(screen.getByRole('textbox'));
   await user.click(document.body);
@@ -155,12 +155,12 @@ test('Renders custom emptyDateText when isRequired is true', async () => {
   expect(screen.getByText('Required in test')).toBeInTheDocument();
 });
 
-test('Shows emptyDateText instead of helperText when text input is empty and isRequired is true', async () => {
+test('Shows emptyDateText instead of helperText when text input is empty and requiredDateOptions.isRequired is true', async () => {
   const user = userEvent.setup();
 
   render(
     <DatePicker
-      isRequired
+      requiredDateOptions={{ isRequired: true }}
       helperText={
         <HelperText>
           <HelperTextItem>Help me</HelperTextItem>
@@ -176,10 +176,10 @@ test('Shows emptyDateText instead of helperText when text input is empty and isR
   expect(screen.getByText('Date cannot be blank')).toBeVisible();
 });
 
-test('Renders text input as invalid when isRequired is false and popover is closed without selection', async () => {
+test('Renders text input as invalid when requiredDateOptions.isRequired is true and popover is closed without selection', async () => {
   const user = userEvent.setup();
 
-  render(<DatePicker isRequired />);
+  render(<DatePicker requiredDateOptions={{ isRequired: true }} />);
 
   await user.click(screen.getByRole('button', { name: 'Toggle date picker' }));
   await user.click(document.body);

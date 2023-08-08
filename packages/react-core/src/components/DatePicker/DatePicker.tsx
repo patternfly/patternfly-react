@@ -12,6 +12,14 @@ import { KeyTypes } from '../../helpers';
 import { isValidDate } from '../../helpers/datetimeUtils';
 import { HelperText, HelperTextItem } from '../HelperText';
 
+/** Props that customize the requirement of a date */
+export interface DatePickerRequiredObject {
+  /** Flag indicating the date is required. */
+  isRequired?: boolean;
+  /** Error message to display when the text input is empty and the isRequired prop is also passed in. */
+  emptyDateText?: string;
+}
+
 /** The main date picker component. */
 
 export interface DatePickerProps
@@ -40,12 +48,8 @@ export interface DatePickerProps
   inputProps?: TextInputProps;
   /** Flag indicating the date picker is disabled. */
   isDisabled?: boolean;
-  /** Flag indicating the date picker is required. */
-  isRequired?: boolean;
   /** Error message to display when the text input contains a non-empty value in an invalid format. */
   invalidFormatText?: string;
-  /** Error message to display when the text input is empty and the isRequired prop is also passed in. */
-  emptyDateText?: string;
   /** Callback called every time the text input loses focus. */
   onBlur?: (event: any, value: string, date?: Date) => void;
   /** Callback called every time the text input value changes. */
@@ -54,6 +58,8 @@ export interface DatePickerProps
   placeholder?: string;
   /** Props to pass to the popover that contains the calendar month component. */
   popoverProps?: Partial<Omit<PopoverProps, 'appendTo'>>;
+  /** Options to customize the requirement of a date */
+  requiredDateOptions?: DatePickerRequiredObject;
   /** Functions that returns an error message if a date is invalid. */
   validators?: ((date: Date) => string)[];
   /** Value of the text input. */
@@ -92,7 +98,6 @@ const DatePickerBase = (
     dateFormat = yyyyMMddFormat,
     dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
     isDisabled = false,
-    isRequired = false,
     placeholder = 'YYYY-MM-DD',
     value: valueProp = '',
     'aria-label': ariaLabel = 'Date picker',
@@ -100,7 +105,7 @@ const DatePickerBase = (
     onChange = (): any => undefined,
     onBlur = (): any => undefined,
     invalidFormatText = 'Invalid date',
-    emptyDateText = 'Date cannot be blank',
+    requiredDateOptions,
     helperText,
     appendTo = 'inline',
     popoverProps,
@@ -128,6 +133,7 @@ const DatePickerBase = (
   const buttonRef = React.useRef<HTMLButtonElement>();
   const datePickerWrapperRef = React.useRef<HTMLDivElement>();
   const triggerRef = React.useRef<HTMLDivElement>();
+  const emptyDateText = requiredDateOptions?.emptyDateText || 'Date cannot be blank';
 
   React.useEffect(() => {
     setValue(valueProp);
@@ -172,7 +178,7 @@ const DatePickerBase = (
       setErrorText(invalidFormatText);
     }
 
-    if (!dateIsValid && pristine && isRequired) {
+    if (!dateIsValid && pristine && requiredDateOptions?.isRequired) {
       setErrorText(emptyDateText);
     }
   };
@@ -250,7 +256,7 @@ const DatePickerBase = (
             // If datepicker is required and the popover is opened without the text input
             // first receiving focus, we want to validate that the text input is not blank upon
             // closing the popover
-            isRequired && !value && setErrorText(emptyDateText);
+            requiredDateOptions?.isRequired && !value && setErrorText(emptyDateText);
           }
           if (event.key === KeyTypes.Escape && popoverOpen) {
             event.stopPropagation();
@@ -269,7 +275,7 @@ const DatePickerBase = (
             <InputGroupItem isFill>
               <TextInput
                 isDisabled={isDisabled}
-                isRequired={isRequired}
+                isRequired={requiredDateOptions?.isRequired}
                 aria-label={ariaLabel}
                 placeholder={placeholder}
                 validated={errorText.trim() ? 'error' : 'default'}
