@@ -48,12 +48,8 @@ describe('Drawer Demo Test', () => {
 
   it('Verify focus is automatically handled with focus trap enabled', () => {
     cy.get('#toggleFocusTrapButton').click();
-    // Wait for transition animation to end
-    cy.wait(500);
     cy.get('#focusTrap-panelContent .pf-v5-c-button.pf-m-plain').should('have.focus');
     cy.get('#focusTrap-panelContent .pf-v5-c-button.pf-m-plain').click();
-    // Wait for transition animation to end
-    cy.wait(500);
     cy.get('#toggleFocusTrapButton').should('have.focus');
   });
 
