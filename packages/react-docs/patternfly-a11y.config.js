@@ -22,12 +22,12 @@ const urls = Object.keys(fullscreenRoutes)
       } else {
         // some demos have been moved to the component section, so their default tab has a trailing 'react-demos'
         if (path.match(/\/components\/.*\/react-demos$/g)){
-          if (path.includes('/application-launcher/') |
-            path.includes('/context-selector/') |
-            path.includes('/date-and-time-picker/') |
-            path.includes('/password-generator/') |
-            path.includes('/password-strength/') |
-            path.includes('/custom-menus/') |
+          if (path.includes('/application-launcher/') ||
+            path.includes('/context-selector/') ||
+            path.includes('/date-and-time-picker/') ||
+            path.includes('/password-generator/') ||
+            path.includes('/password-strength/') ||
+            path.includes('/custom-menus/') ||
             path.includes('/options-menu/')) {
             return path.replace(/\/react-demos$/, '');
           }
