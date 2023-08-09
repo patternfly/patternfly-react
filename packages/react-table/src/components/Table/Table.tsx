@@ -164,7 +164,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
     const activeElement = document.activeElement;
     const key = event.key;
     const rows = (Array.from(tableRef.current.querySelectorAll('tbody tr')) as Element[]).filter(
-      el => !el.classList.contains('pf-m-disabled') && !(el as HTMLElement).hidden
+      (el) => !el.classList.contains('pf-m-disabled') && !(el as HTMLElement).hidden
     );
     if (key === 'Space' || key === 'Enter') {
       (activeElement as HTMLElement).click();

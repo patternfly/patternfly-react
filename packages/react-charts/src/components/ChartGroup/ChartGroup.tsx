@@ -22,11 +22,7 @@ import { VictoryGroup, VictoryGroupProps, VictoryGroupTTargetType } from 'victor
 import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getClassName } from '../ChartUtils/chart-helpers';
-import {
-  useDefaultPatternProps,
-  getPatternDefs,
-  renderChildrenWithPatterns
-} from '../ChartUtils/chart-patterns';
+import { useDefaultPatternProps, getPatternDefs, renderChildrenWithPatterns } from '../ChartUtils/chart-patterns';
 import { getTheme } from '../ChartUtils/chart-theme';
 
 /**

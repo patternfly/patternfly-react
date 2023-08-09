@@ -1,5 +1,5 @@
 import React from 'react';
-import { DropdownPosition } from '@patternfly/react-core/deprecated'
+import { DropdownPosition } from '@patternfly/react-core/deprecated';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core/deprecated';
 
 const appLauncherItems: React.ReactElement[] = [

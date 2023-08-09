@@ -51,7 +51,7 @@ const buttonVariantStyles = {
   secondary: styles.modifiers.secondary
 };
 
-export class Toggle extends React.Component<ToggleProps> {
+class Toggle extends React.Component<ToggleProps> {
   static displayName = 'Toggle';
   private buttonRef = React.createRef<HTMLButtonElement>();
 
@@ -179,3 +179,5 @@ export class Toggle extends React.Component<ToggleProps> {
     );
   }
 }
+
+export { Toggle };

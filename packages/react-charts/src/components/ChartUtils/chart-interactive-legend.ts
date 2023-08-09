@@ -29,7 +29,7 @@ const getChildNames = ({ chartNames, omitIndex }: ChartInteractiveLegendExtInter
   chartNames.forEach((chartName: any, index: number) => {
     if (index !== omitIndex) {
       if (Array.isArray(chartName)) {
-        chartName.forEach(name => result.push(name));
+        chartName.forEach((name) => result.push(name));
       } else {
         result.push(chartName);
       }

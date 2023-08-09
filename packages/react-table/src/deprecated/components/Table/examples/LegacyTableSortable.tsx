@@ -82,7 +82,7 @@ export const LegacyTableSortable: React.FunctionComponent = () => {
       ]
     }
   ];
-  const rows: TableProps['rows'] = sortedRepositories.map(repo => [
+  const rows: TableProps['rows'] = sortedRepositories.map((repo) => [
     repo.name,
     repo.branches,
     repo.prs,

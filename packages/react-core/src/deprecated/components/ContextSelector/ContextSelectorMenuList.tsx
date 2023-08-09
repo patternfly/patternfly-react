@@ -13,7 +13,7 @@ export interface ContextSelectorMenuListProps {
   'aria-label'?: string;
 }
 
-export class ContextSelectorMenuList extends React.Component<ContextSelectorMenuListProps> {
+class ContextSelectorMenuList extends React.Component<ContextSelectorMenuListProps> {
   static displayName = 'ContextSelectorMenuList';
   static defaultProps: ContextSelectorMenuListProps = {
     children: null as React.ReactNode,
@@ -47,3 +47,5 @@ export class ContextSelectorMenuList extends React.Component<ContextSelectorMenu
     );
   };
 }
+
+export { ContextSelectorMenuList };

@@ -48,7 +48,7 @@ export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGr
     >
       {isExpandable && (
         <GenerateId prefix="form-field-group-toggle">
-          {id => (
+          {(id) => (
             <FormFieldGroupToggle
               onToggle={onToggle}
               isExpanded={isExpanded}

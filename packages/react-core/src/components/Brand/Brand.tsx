@@ -68,7 +68,13 @@ export const Brand: React.FunctionComponent<BrandProps> = ({
         <img src={src} alt={alt} />
       </picture>
     ) : (
-      <img {...props} className={css(styles.brand, className)} style={{ ...style, ...responsiveStyles }} src={src} alt={alt} />
+      <img
+        {...props}
+        className={css(styles.brand, className)}
+        style={{ ...style, ...responsiveStyles }}
+        src={src}
+        alt={alt}
+      />
     )
   );
 };

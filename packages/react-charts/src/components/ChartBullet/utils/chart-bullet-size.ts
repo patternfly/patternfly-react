@@ -67,7 +67,6 @@ interface ChartBulletSizeInterface {
   width: number; // The chart width -- not SVG width
 }
 
-
 /**
  * Scale size per the given size properties
  * @private

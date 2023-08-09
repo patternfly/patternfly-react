@@ -50,7 +50,7 @@ interface ChipState {
   ouiaStateId: string;
 }
 
-export class Chip extends React.Component<ChipProps, ChipState> {
+class Chip extends React.Component<ChipProps, ChipState> {
   static displayName = 'Chip';
   constructor(props: ChipProps) {
     super(props);
@@ -191,3 +191,5 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     );
   }
 }
+
+export { Chip };

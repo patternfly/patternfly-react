@@ -83,7 +83,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   ouiaSafe?: boolean;
 }
 
-export class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopyState> {
+class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopyState> {
   static displayName = 'ClipboardCopy';
   timer = null as number;
   constructor(props: ClipboardCopyProps) {
@@ -278,3 +278,5 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     );
   };
 }
+
+export { ClipboardCopy };

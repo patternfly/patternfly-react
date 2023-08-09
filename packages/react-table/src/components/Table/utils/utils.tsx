@@ -37,12 +37,12 @@ export const isRowExpanded = (row: IRow, rows: IRow[]) => {
 };
 
 export const getErrorTextByValidator = (validatorName: string, validators: IValidatorDef[]) => {
-  const result = validators.filter(validator => validator.name === validatorName);
+  const result = validators.filter((validator) => validator.name === validatorName);
   return result[0].errorText;
 };
 
 export const cancelCellEdits = (row: IRow) => {
-  (row.cells as IRowCell[]).forEach(cell => {
+  (row.cells as IRowCell[]).forEach((cell) => {
     delete cell.props.errorText;
     delete cell.props.editableValue;
     cell.props.isValid = true;
@@ -65,7 +65,7 @@ export const validateCellEdits = (
 ) => {
   row.isValid = Object.keys(validationErrors).length ? false : true;
 
-  (row.cells as IRowCell[]).forEach(cell => {
+  (row.cells as IRowCell[]).forEach((cell) => {
     delete cell.props.errorText;
 
     const hasValue = cell.props.value !== undefined && cell.props.value !== null;
@@ -74,8 +74,8 @@ export const validateCellEdits = (
     if (cell.props && hasValue && hasEditableValue) {
       if (type === 'save') {
         const errorMsg = Object.keys(validationErrors)
-          .filter(validatorName => validationErrors[validatorName].includes(cell.props.name))
-          .map(validatorName => getErrorTextByValidator(validatorName, row.rowEditValidationRules));
+          .filter((validatorName) => validationErrors[validatorName].includes(cell.props.name))
+          .map((validatorName) => getErrorTextByValidator(validatorName, row.rowEditValidationRules));
 
         if (errorMsg.length) {
           cell.props.errorText = cell.props.name ? errorMsg.join(', ') : missingPropErrorTxt;
@@ -94,7 +94,7 @@ export const validateCellEdits = (
 };
 
 export const applyCellEdits = (row: IRow, type: RowEditType) => {
-  (row.cells as IRowCell[]).forEach(cell => {
+  (row.cells as IRowCell[]).forEach((cell) => {
     delete cell.props.errorText;
     const hasValue = cell.props.value !== undefined && cell.props.value !== null;
     const hasEditableValue = cell.props.editableValue !== undefined && cell.props.editableValue !== null;
@@ -119,11 +119,7 @@ export const applyCellEdits = (row: IRow, type: RowEditType) => {
   return row;
 };
 
-const camelize = (s: string) =>
-  s
-    .toUpperCase()
-    .replace('-', '')
-    .replace('_', '');
+const camelize = (s: string) => s.toUpperCase().replace('-', '').replace('_', '');
 export const toCamel = (s: string) => s.replace(/([-_][a-z])/gi, camelize);
 
 /**

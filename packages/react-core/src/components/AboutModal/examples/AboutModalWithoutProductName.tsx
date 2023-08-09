@@ -20,7 +20,7 @@ export const AboutModalWithoutProductName: React.FunctionComponent = () => {
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"
-        backgroundImageSrc='/assets/images/pfbg-icon.svg'
+        backgroundImageSrc="/assets/images/pfbg-icon.svg"
         aria-label="No product name about modal"
       >
         <TextContent>

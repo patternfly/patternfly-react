@@ -71,7 +71,7 @@ export interface ContextSelectorProps extends OUIAProps {
   menuAriaLabel?: string;
 }
 
-export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
+class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
   static displayName = 'ContextSelector';
   static defaultProps: ContextSelectorProps = {
     children: null as React.ReactNode,
@@ -227,3 +227,5 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     );
   }
 }
+
+export { ContextSelector };

@@ -253,7 +253,9 @@ export const TablesAndTabs = () => {
               {repo.name}
               <div>
                 {/** Preventing default behavior for demo purposes only */}
-                <a onClick={(event) => event.preventDefault()} href="#">siemur/test-space</a>
+                <a onClick={(event) => event.preventDefault()} href="#">
+                  siemur/test-space
+                </a>
               </div>
             </Td>
             <Td dataLabel={columnNames.branches}>
@@ -308,7 +310,9 @@ export const TablesAndTabs = () => {
           </FlexItem>
           <FlexItem>
             {/** Preventing default behavior for demo purposes only */}
-            <a onClick={(event) => event.preventDefault()} href="#">siemur/test-space</a>
+            <a onClick={(event) => event.preventDefault()} href="#">
+              siemur/test-space
+            </a>
           </FlexItem>
         </Flex>
       </DrawerHead>

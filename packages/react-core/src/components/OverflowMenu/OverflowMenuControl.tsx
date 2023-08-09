@@ -19,7 +19,7 @@ export const OverflowMenuControl: React.FunctionComponent<OverflowMenuControlPro
   ...props
 }: OverflowMenuControlProps) => (
   <OverflowMenuContext.Consumer>
-    {value =>
+    {(value) =>
       (value.isBelowBreakpoint || hasAdditionalOptions) && (
         <div className={css(styles.overflowMenuControl, className)} {...props}>
           {' '}

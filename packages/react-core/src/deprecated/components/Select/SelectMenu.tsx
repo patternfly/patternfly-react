@@ -118,7 +118,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
 
     if (Array.isArray(options)) {
       if (isSelectOptionObject) {
-        return options.some(option => (option as SelectOptionObject).compareTo(valueToCheck));
+        return options.some((option) => (option as SelectOptionObject).compareTo(valueToCheck));
       } else {
         return options.includes(valueToCheck);
       }
@@ -265,7 +265,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
   }
 
   render() {
-    return <SelectConsumer>{context => this.renderSelectMenu(context)}</SelectConsumer>;
+    return <SelectConsumer>{(context) => this.renderSelectMenu(context)}</SelectConsumer>;
   }
 }
 

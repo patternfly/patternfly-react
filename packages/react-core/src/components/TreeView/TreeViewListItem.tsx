@@ -135,9 +135,9 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     <span className={css(styles.treeViewNodeCheck)}>
       <input
         type="checkbox"
-        onChange={evt => onCheck && onCheck(evt, itemData, parentItem)}
-        onClick={evt => evt.stopPropagation()}
-        ref={elem => elem && (elem.indeterminate = checkProps.checked === null)}
+        onChange={(evt) => onCheck && onCheck(evt, itemData, parentItem)}
+        onClick={(evt) => evt.stopPropagation()}
+        ref={(elem) => elem && (elem.indeterminate = checkProps.checked === null)}
         {...checkProps}
         checked={checkProps.checked === null ? false : checkProps.checked}
         id={randomId}
@@ -192,7 +192,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     >
       <div className={css(styles.treeViewContent)}>
         <GenerateId prefix={isSelectable ? 'selectable-id' : 'checkbox-id'}>
-          {randomId => (
+          {(randomId) => (
             <Component
               className={css(
                 styles.treeViewNode,
@@ -200,7 +200,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                 (!children || isSelectable) &&
                   activeItems &&
                   activeItems.length > 0 &&
-                  activeItems.some(item => compareItems && item && compareItems(item, itemData))
+                  activeItems.some((item) => compareItems && item && compareItems(item, itemData))
                   ? styles.modifiers.current
                   : ''
               )}
@@ -241,13 +241,13 @@ export const TreeViewListItem = React.memo(TreeViewListItemBase, (prevProps, nex
     prevProps.activeItems &&
     prevProps.activeItems.length > 0 &&
     prevProps.activeItems.some(
-      item => prevProps.compareItems && item && prevProps.compareItems(item, prevProps.itemData)
+      (item) => prevProps.compareItems && item && prevProps.compareItems(item, prevProps.itemData)
     );
   const nextIncludes =
     nextProps.activeItems &&
     nextProps.activeItems.length > 0 &&
     nextProps.activeItems.some(
-      item => nextProps.compareItems && item && nextProps.compareItems(item, nextProps.itemData)
+      (item) => nextProps.compareItems && item && nextProps.compareItems(item, nextProps.itemData)
     );
 
   if (prevIncludes || nextIncludes) {

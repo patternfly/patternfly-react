@@ -134,7 +134,7 @@ interface DualListSelectorState {
   chosenTreeFilteredOptions: string[];
 }
 
-export class DualListSelector extends React.Component<DualListSelectorProps, DualListSelectorState> {
+class DualListSelector extends React.Component<DualListSelectorProps, DualListSelectorState> {
   static displayName = 'DualListSelector';
   private addAllButtonRef = React.createRef<HTMLButtonElement>();
   private addSelectedButtonRef = React.createRef<HTMLButtonElement>();
@@ -791,3 +791,5 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     );
   }
 }
+
+export { DualListSelector };

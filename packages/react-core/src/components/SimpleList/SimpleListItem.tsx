@@ -26,7 +26,7 @@ export interface SimpleListItemProps {
   href?: string;
 }
 
-export class SimpleListItem extends React.Component<SimpleListItemProps> {
+class SimpleListItem extends React.Component<SimpleListItemProps> {
   static displayName = 'SimpleListItem';
   ref = React.createRef<any>();
   static defaultProps: SimpleListItemProps = {
@@ -96,3 +96,5 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
     );
   }
 }
+
+export { SimpleListItem };

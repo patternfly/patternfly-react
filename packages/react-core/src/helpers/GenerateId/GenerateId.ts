@@ -22,7 +22,7 @@ interface GenerateIdProps {
   children(id: string): React.ReactNode;
 }
 
-export class GenerateId extends React.Component<GenerateIdProps, {}> {
+class GenerateId extends React.Component<GenerateIdProps, {}> {
   static displayName = 'GenerateId';
   static defaultProps = {
     prefix: 'pf-random-id-'
@@ -33,3 +33,5 @@ export class GenerateId extends React.Component<GenerateIdProps, {}> {
     return this.props.children(this.id);
   }
 }
+
+export { GenerateId };

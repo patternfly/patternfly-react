@@ -44,7 +44,7 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   innerRef?: React.RefObject<any>;
 }
 
-export class TextAreaBase extends React.Component<TextAreaProps> {
+class TextAreaBase extends React.Component<TextAreaProps> {
   static displayName = 'TextArea';
   static defaultProps: TextAreaProps = {
     innerRef: React.createRef<HTMLTextAreaElement>(),

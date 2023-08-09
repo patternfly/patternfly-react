@@ -25,7 +25,7 @@ export const MenuBasic: React.FunctionComponent = () => {
               itemId={1}
               to="#default-link2"
               // just for demo so that navigation is not triggered
-              onClick={event => event.preventDefault()}
+              onClick={(event) => event.preventDefault()}
             >
               Link
             </MenuItem>
@@ -33,10 +33,14 @@ export const MenuBasic: React.FunctionComponent = () => {
             <MenuItem isDisabled to="#default-link4">
               Disabled link
             </MenuItem>
-            <MenuItem isAriaDisabled tooltipProps={{content: "aria-disabled action", position: "top"}}>
+            <MenuItem isAriaDisabled tooltipProps={{ content: 'aria-disabled action', position: 'top' }}>
               Aria-disabled action
             </MenuItem>
-            <MenuItem isAriaDisabled to="#default-link5" tooltipProps={{content: "aria-disabled link", position: "top"}}>
+            <MenuItem
+              isAriaDisabled
+              to="#default-link5"
+              tooltipProps={{ content: 'aria-disabled link', position: 'top' }}
+            >
               Aria-disabled link
             </MenuItem>
           </MenuList>

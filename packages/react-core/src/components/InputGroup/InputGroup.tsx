@@ -38,14 +38,14 @@ export const InputGroupBase: React.FunctionComponent<InputGroupProps> = ({
     });
     return childId;
   };
-  const formCtrls = [FormSelect, TextArea, TextInput].map(comp => comp.displayName);
+  const formCtrls = [FormSelect, TextArea, TextInput].map((comp) => comp.displayName);
   const idItem = getIdItem() as React.ReactElement<{ id: string }>;
   const ref = React.useRef(null);
   const inputGroupRef = innerRef || ref;
 
   const childrenWithId = React.Children.map(children, (child: any) => {
     if (child?.type.displayName === 'InputGroupItem') {
-      const newChildren = React.Children.map(child.props.children, _child => {
+      const newChildren = React.Children.map(child.props.children, (_child) => {
         if (!_child.props) {
           return _child;
         }
@@ -78,6 +78,7 @@ export const InputGroupBase: React.FunctionComponent<InputGroupProps> = ({
     </div>
   );
 };
+InputGroupBase.displayName = 'InputGroupBase';
 
 export const InputGroup = React.forwardRef((props: InputGroupProps, ref: React.Ref<HTMLDivElement>) => (
   <InputGroupBase innerRef={ref} {...props} />

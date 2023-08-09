@@ -20,7 +20,7 @@ export const AboutModalComplexUserPositionedContent: React.FunctionComponent = (
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"
-        backgroundImageSrc='/assets/images/pfbg-icon.svg'
+        backgroundImageSrc="/assets/images/pfbg-icon.svg"
         hasNoContentContainer={true}
         productName="Product Name"
       >

@@ -14,7 +14,7 @@ interface SourceType {
 interface DestinationType extends SourceType {}
 
 const getItems = (count: number, startIndex: number) =>
-  Array.from({ length: count }, (_, idx) => idx + startIndex).map(idx => ({
+  Array.from({ length: count }, (_, idx) => idx + startIndex).map((idx) => ({
     id: `item-${idx}`,
     content: `item ${idx} `.repeat(idx === 4 ? 20 : 1)
   }));

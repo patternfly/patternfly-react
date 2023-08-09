@@ -208,11 +208,7 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
       </MastheadToggle>
       <MastheadMain>
         <MastheadBrand>
-        <Brand
-            src={pfLogo}
-            alt="PatternFly"
-            heights={{ default: '36px' }}
-          />
+          <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>{headerToolbar}</MastheadContent>

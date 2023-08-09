@@ -136,7 +136,7 @@ interface TabsState {
   overflowingTabCount: number;
 }
 
-export class Tabs extends React.Component<TabsProps, TabsState> {
+class Tabs extends React.Component<TabsProps, TabsState> {
   static displayName = 'Tabs';
   tabList = React.createRef<HTMLUListElement>();
   leftScrollButtonRef = React.createRef<HTMLButtonElement>();
@@ -208,7 +208,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       React.Children.toArray(this.props.children)
         .filter((child): child is TabElement => React.isValidElement(child))
         .filter(({ props }) => props.tabContentRef && props.tabContentRef.current)
-        .forEach(child => (child.props.tabContentRef.current.hidden = true));
+        .forEach((child) => (child.props.tabContentRef.current.hidden = true));
       // most recently selected tabContent
       if (tabContentRef.current) {
         tabContentRef.current.hidden = false;
@@ -223,7 +223,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
 
   countOverflowingElements = (container: HTMLUListElement) => {
     const elements = Array.from(container.children);
-    return elements.filter(element => !isElementInView(container, element as HTMLElement, false)).length;
+    return elements.filter((element) => !isElementInView(container, element as HTMLElement, false)).length;
   };
 
   handleScrollButtons = () => {
@@ -468,7 +468,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         >
           {expandable && isVertical && (
             <GenerateId>
-              {randomId => (
+              {(randomId) => (
                 <div className={css(styles.tabsToggle)}>
                   <div className={css(styles.tabsToggleButton)}>
                     <Button
@@ -532,12 +532,12 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         </Component>
         {filteredChildren
           .filter(
-            child =>
+            (child) =>
               child.props.children &&
               !(unmountOnExit && child.props.eventKey !== localActiveKey) &&
               !(mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
           )
-          .map(child => (
+          .map((child) => (
             <TabContent
               key={child.props.eventKey}
               activeKey={localActiveKey}
@@ -550,3 +550,5 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     );
   }
 }
+
+export { Tabs };

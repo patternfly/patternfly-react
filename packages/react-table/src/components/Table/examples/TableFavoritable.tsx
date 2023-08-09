@@ -36,8 +36,8 @@ export const TableFavoritable: React.FunctionComponent = () => {
   // Favorite state is similar to selection state, see Selectable with checkbox.
   const [favoriteRepoNames, setFavoriteRepoNames] = React.useState<string[]>([]);
   const setRepoFavorited = (repo: Repository, isFavoriting = true) =>
-    setFavoriteRepoNames(prevFavorites => {
-      const otherFavorites = prevFavorites.filter(r => r !== repo.name);
+    setFavoriteRepoNames((prevFavorites) => {
+      const otherFavorites = prevFavorites.filter((r) => r !== repo.name);
       return isFavoriting ? [...otherFavorites, repo.name] : otherFavorites;
     });
   const isRepoFavorited = (repo: Repository) => favoriteRepoNames.includes(repo.name);
@@ -47,10 +47,10 @@ export const TableFavoritable: React.FunctionComponent = () => {
   // For more complex sorting, see Sortable.
   // Note: We also memoize the sortable values with useCallback to prevent rows jumping around when you change
   // the favorites while sorting on that column. Only updating the sort state will reorder the rows.
-  const getSortableRowValues = React.useCallback((repo: Repository): boolean[] => [isRepoFavorited(repo)], [
-    activeSortIndex,
-    activeSortDirection
-  ]);
+  const getSortableRowValues = React.useCallback(
+    (repo: Repository): boolean[] => [isRepoFavorited(repo)],
+    [activeSortIndex, activeSortDirection]
+  );
 
   // Note that we perform the sort as part of the component's render logic and not in onSort.
   // We shouldn't store the list of data in state because we don't want to have to sync that with props.

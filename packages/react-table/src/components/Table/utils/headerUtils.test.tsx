@@ -12,9 +12,9 @@ describe('headerUtils', () => {
       expect(collapsibleTransfroms[0].extraParams.onCollapse).toBeDefined();
       expect(collapsibleTransfroms[0].header.transforms).toHaveLength(2);
       expect(collapsibleTransfroms[1].cell.transforms).toHaveLength(3);
-      expect(collapsibleTransfroms[1].cell.transforms.find(transform => transform.name === 'parentId')).toBeDefined();
+      expect(collapsibleTransfroms[1].cell.transforms.find((transform) => transform.name === 'parentId')).toBeDefined();
       expect(
-        collapsibleTransfroms[1].cell.transforms.find(transform => transform.name === 'expandedRowFormatter')
+        collapsibleTransfroms[1].cell.transforms.find((transform) => transform.name === 'expandedRowFormatter')
       ).toBeDefined();
     });
 
@@ -101,8 +101,8 @@ describe('headerUtils', () => {
           ],
           {}
         );
-        expect(result[0].header.formatters.find(formatter => formatter.name === 'testFunc')).toBeDefined();
-        expect(result[0].header.transforms.find(transform => transform.name === 'testFunc')).toBeDefined();
+        expect(result[0].header.formatters.find((formatter) => formatter.name === 'testFunc')).toBeDefined();
+        expect(result[0].header.transforms.find((transform) => transform.name === 'testFunc')).toBeDefined();
       });
 
       test('custom functions in header', () => {
@@ -119,8 +119,8 @@ describe('headerUtils', () => {
           ],
           {}
         );
-        expect(result[0].header.formatters.find(formatter => formatter.name === 'testFunc')).toBeDefined();
-        expect(result[0].header.transforms.find(transform => transform.name === 'testFunc')).toBeDefined();
+        expect(result[0].header.formatters.find((formatter) => formatter.name === 'testFunc')).toBeDefined();
+        expect(result[0].header.transforms.find((transform) => transform.name === 'testFunc')).toBeDefined();
       });
     });
 
@@ -151,8 +151,8 @@ describe('headerUtils', () => {
           ],
           {}
         );
-        expect(result[0].cell.formatters.find(formatter => formatter.name === 'testFunc')).toBeDefined();
-        expect(result[0].cell.transforms.find(transform => transform.name === 'testFunc')).toBeDefined();
+        expect(result[0].cell.formatters.find((formatter) => formatter.name === 'testFunc')).toBeDefined();
+        expect(result[0].cell.transforms.find((transform) => transform.name === 'testFunc')).toBeDefined();
       });
 
       test('custom functions in header', () => {
@@ -169,8 +169,8 @@ describe('headerUtils', () => {
           ],
           {}
         );
-        expect(result[0].cell.formatters.find(formatter => formatter.name === 'testFunc')).toBeDefined();
-        expect(result[0].cell.transforms.find(transform => transform.name === 'testFunc')).toBeDefined();
+        expect(result[0].cell.formatters.find((formatter) => formatter.name === 'testFunc')).toBeDefined();
+        expect(result[0].cell.transforms.find((transform) => transform.name === 'testFunc')).toBeDefined();
       });
 
       describe('custom dataLabel', () => {

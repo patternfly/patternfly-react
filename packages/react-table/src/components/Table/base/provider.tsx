@@ -20,7 +20,7 @@ export const ProviderContext = React.createContext({
   renderers: null as RenderersTypes['renderers']
 });
 
-export class Provider extends React.Component<ProviderProps, {}> {
+class Provider extends React.Component<ProviderProps, {}> {
   static displayName = 'Provider';
   static defaultProps = {
     renderers: TableDefaults.renderers
@@ -55,3 +55,5 @@ export class Provider extends React.Component<ProviderProps, {}> {
     );
   }
 }
+
+export { Provider };

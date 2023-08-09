@@ -36,7 +36,7 @@ interface SimpleListContextProps {
 
 export const SimpleListContext = React.createContext<Partial<SimpleListContextProps>>({});
 
-export class SimpleList extends React.Component<SimpleListProps, SimpleListState> {
+class SimpleList extends React.Component<SimpleListProps, SimpleListState> {
   static displayName = 'SimpleList';
   state = {
     currentRef: null as React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>
@@ -86,3 +86,5 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
     );
   }
 }
+
+export { SimpleList };

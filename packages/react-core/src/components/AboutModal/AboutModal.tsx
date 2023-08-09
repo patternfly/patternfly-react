@@ -90,7 +90,7 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
           <AboutModalBox
             style={
               backgroundImageSrc
-                ? { [backgroundImage.name]: `url(${backgroundImageSrc})` } as React.CSSProperties
+                ? ({ [backgroundImage.name]: `url(${backgroundImageSrc})` } as React.CSSProperties)
                 : {}
             }
             className={css(className)}

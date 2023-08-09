@@ -8,7 +8,7 @@ export const ToggleGroupCompact: React.FunctionComponent = () => {
   });
   const handleItemClick = (event, isSelected: boolean) => {
     const id = event.currentTarget.id;
-    setIsSelected(prevIsSelected => ({ ...prevIsSelected, [id]: isSelected }));
+    setIsSelected((prevIsSelected) => ({ ...prevIsSelected, [id]: isSelected }));
   };
   return (
     <ToggleGroup isCompact aria-label="Compact variant toggle group">

@@ -105,7 +105,7 @@ export const getDomain = ({ data, maxDomain, minDomain, x, y }: DomainInterface)
  */
 export const getDomains = ({ maxDomain, minDomain, sources }: SourcesInterface): ChartDomain => {
   const domains: ChartDomain[] = [];
-  sources.forEach(source => {
+  sources.forEach((source) => {
     const { data: compData = source.data } = source.component ? source.component.props : undefined;
     const domain = getDomain({
       data: compData,

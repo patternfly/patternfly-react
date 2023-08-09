@@ -30,7 +30,7 @@ export const WizardNavInternal = ({ nav, isVisitRequired, isProgressive, isNavEx
   return (
     <WizardNav {...wizardNavProps}>
       {steps.map((step, stepIndex) => {
-        const hasVisitedNextStep = steps.some(step => step.index > stepIndex + 1 && step.isVisited);
+        const hasVisitedNextStep = steps.some((step) => step.index > stepIndex + 1 && step.isVisited);
         const isStepDisabled = step.isDisabled || (isVisitRequired && !step.isVisited && !hasVisitedNextStep);
         const customStepNavItem = isCustomWizardNavItem(step.navItem) && (
           <React.Fragment key={step.id}>
@@ -43,8 +43,8 @@ export const WizardNavInternal = ({ nav, isVisitRequired, isProgressive, isNavEx
           let hasActiveChild = false;
 
           const subNavItems = step.subStepIds?.map((subStepId, subStepIndex) => {
-            const subStep = steps.find(step => step.id === subStepId);
-            const hasVisitedNextStep = steps.some(step => step.index > subStep.index && step.isVisited);
+            const subStep = steps.find((step) => step.id === subStepId);
+            const hasVisitedNextStep = steps.some((step) => step.index > subStep.index && step.isVisited);
             const isSubStepDisabled =
               subStep.isDisabled || (isVisitRequired && !subStep.isVisited && !hasVisitedNextStep);
             const customSubStepNavItem = isCustomWizardNavItem(subStep.navItem) && (
@@ -90,7 +90,7 @@ export const WizardNavInternal = ({ nav, isVisitRequired, isProgressive, isNavEx
             }
           });
           const hasEnabledChildren = React.Children.toArray(subNavItems).some(
-            child => React.isValidElement(child) && !child.props.isDisabled
+            (child) => React.isValidElement(child) && !child.props.isDisabled
           );
 
           if (!isProgressive || (isProgressive && step.index <= activeStep.index)) {

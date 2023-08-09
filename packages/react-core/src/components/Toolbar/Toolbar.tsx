@@ -67,7 +67,7 @@ interface FilterInfo {
   [key: string]: number;
 }
 
-export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
+class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   static displayName = 'Toolbar';
   chipGroupContentRef = React.createRef<HTMLDivElement>();
   staticFilterInfo = {};
@@ -81,7 +81,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   isToggleManaged = () => !(this.props.isExpanded || !!this.props.toggleIsExpanded);
 
   toggleIsExpanded = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isManagedToggleExpanded: !prevState.isManagedToggleExpanded
     }));
   };
@@ -200,7 +200,9 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     return this.props.id ? (
       this.renderToolbar(this.props.id)
     ) : (
-      <GenerateId>{randomId => this.renderToolbar(randomId)}</GenerateId>
+      <GenerateId>{(randomId) => this.renderToolbar(randomId)}</GenerateId>
     );
   }
 }
+
+export { Toolbar };

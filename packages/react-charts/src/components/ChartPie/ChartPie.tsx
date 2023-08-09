@@ -28,10 +28,10 @@ import { ChartLegend } from '../ChartLegend/ChartLegend';
 import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
-import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
-import { getPaddingForSide } from "../ChartUtils/chart-padding";
-import { getPatternDefs, useDefaultPatternProps, } from "../ChartUtils/chart-patterns";
-import { getTheme } from "../ChartUtils/chart-theme";
+import { getComputedLegend, getLegendItemsExtraHeight } from '../ChartUtils/chart-legend';
+import { getPaddingForSide } from '../ChartUtils/chart-padding';
+import { getPatternDefs, useDefaultPatternProps } from '../ChartUtils/chart-patterns';
+import { getTheme } from '../ChartUtils/chart-theme';
 import { useEffect } from 'react';
 
 /**
@@ -512,9 +512,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   theme = getTheme(themeColor),
   labelComponent = allowTooltip ? (
     <ChartTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} />
-  ) : (
-    undefined
-  ),
+  ) : undefined,
   legendOrientation = theme.legend.orientation as any,
   height = theme.pie.height,
   width = theme.pie.width,

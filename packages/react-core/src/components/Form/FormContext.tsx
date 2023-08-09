@@ -125,5 +125,6 @@ export const FormContextProvider: React.FC<FormContextProviderProps> = ({ initia
     </FormContext.Provider>
   );
 };
+FormContextProvider.displayName = 'FormContextProvider';
 
 export const useFormContext = () => React.useContext(FormContext);

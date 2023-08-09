@@ -48,7 +48,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   helperText?: React.ReactNode;
 }
 
-export class Progress extends React.Component<ProgressProps> {
+class Progress extends React.Component<ProgressProps> {
   static displayName = 'Progress';
   static defaultProps: ProgressProps = {
     className: '',
@@ -148,3 +148,5 @@ export class Progress extends React.Component<ProgressProps> {
     );
   }
 }
+
+export { Progress };

@@ -24,7 +24,7 @@ export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
   'aria-label': ariaLabel,
   ...props
 }: ToggleGroupProps) => {
-  const toggleGroupItemList = React.Children.map(children, child =>
+  const toggleGroupItemList = React.Children.map(children, (child) =>
     !(React.isValidElement(child) && child.type === ToggleGroupItem)
       ? child
       : React.cloneElement<ToggleGroupItemProps>(child, areAllGroupsDisabled ? { isDisabled: true } : {})

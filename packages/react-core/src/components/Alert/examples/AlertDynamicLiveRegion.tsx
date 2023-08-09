@@ -13,7 +13,7 @@ export const DynamicLiveRegionAlert: React.FunctionComponent = () => {
   const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');
 
   const addAlert = (alertInfo: AlertInfo) => {
-    setAlerts(prevAlertInfo => [...prevAlertInfo, alertInfo]);
+    setAlerts((prevAlertInfo) => [...prevAlertInfo, alertInfo]);
   };
 
   const addSuccessAlert = () => {

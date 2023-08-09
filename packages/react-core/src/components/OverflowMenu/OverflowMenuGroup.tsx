@@ -22,7 +22,7 @@ export const OverflowMenuGroup: React.FunctionComponent<OverflowMenuGroupProps> 
   ...props
 }: OverflowMenuGroupProps) => (
   <OverflowMenuContext.Consumer>
-    {value =>
+    {(value) =>
       (isPersistent || !value.isBelowBreakpoint) && (
         <div
           className={css(

@@ -67,7 +67,7 @@ interface LabelGroupState {
   isTooltipVisible: boolean;
 }
 
-export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState> {
+class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState> {
   static displayName = 'LabelGroup';
   constructor(props: LabelGroupProps) {
     super(props);
@@ -105,7 +105,7 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
   }
 
   toggleCollapse = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isOpen: !prevState.isOpen,
       isTooltipVisible: Boolean(
         this.headingRef.current && this.headingRef.current.offsetWidth < this.headingRef.current.scrollWidth
@@ -232,7 +232,9 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
     };
 
     return numChildren === 0 && addLabelControl === undefined ? null : (
-      <GenerateId>{randomId => renderLabelGroup(this.props.id || randomId)}</GenerateId>
+      <GenerateId>{(randomId) => renderLabelGroup(this.props.id || randomId)}</GenerateId>
     );
   }
 }
+
+export { LabelGroup };

@@ -59,7 +59,7 @@ interface ChipGroupState {
   isTooltipVisible: boolean;
 }
 
-export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
+class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
   static displayName = 'ChipGroup';
   constructor(props: ChipGroupProps) {
     super(props);
@@ -94,7 +94,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
   }
 
   toggleCollapse = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isOpen: !prevState.isOpen,
       isTooltipVisible: Boolean(
         this.headingRef.current && this.headingRef.current.offsetWidth < this.headingRef.current.scrollWidth
@@ -175,7 +175,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
                 <li className={css(styles.chipGroupListItem)}>
                   <Chip
                     isOverflowChip
-                    onClick={event => {
+                    onClick={(event) => {
                       this.toggleCollapse();
                       onOverflowChipClick(event);
                     }}
@@ -205,6 +205,10 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
       );
     };
 
-    return numChildren === 0 ? null : <GenerateId>{randomId => renderChipGroup(this.props.id || randomId)}</GenerateId>;
+    return numChildren === 0 ? null : (
+      <GenerateId>{(randomId) => renderChipGroup(this.props.id || randomId)}</GenerateId>
+    );
   }
 }
+
+export { ChipGroup };

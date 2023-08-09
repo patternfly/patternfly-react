@@ -10,5 +10,7 @@ export const WizardBasicWithDisabledSteps: React.FunctionComponent = () => {
     { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
   ];
   const title = 'Basic wizard with disabled steps example';
-  return <WizardDeprecated navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} height={400} />;
+  return (
+    <WizardDeprecated navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} height={400} />
+  );
 };

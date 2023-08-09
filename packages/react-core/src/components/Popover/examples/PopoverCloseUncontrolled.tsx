@@ -6,7 +6,7 @@ export const PopoverCloseUncontrolled: React.FunctionComponent = () => (
     <Popover
       aria-label="Uncontrolled popover with button in the body that can close it"
       headerContent={<div>Popover header</div>}
-      bodyContent={hide => (
+      bodyContent={(hide) => (
         <div>
           <div>
             All the content props (headerContent, bodyContent, footerContent) can take a function which the popover

@@ -33,18 +33,18 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
   <React.Fragment>
     <div className={css(inlineStyles.inlineEditGroup, inlineStyles.modifiers.iconGroup, 'pf-m-action-group')}>
       <div className={css(inlineStyles.inlineEditAction)}>
-        <Button aria-label={saveAriaLabel} {...props} onClick={e => onClick(e, 'save')} variant="plain">
+        <Button aria-label={saveAriaLabel} {...props} onClick={(e) => onClick(e, 'save')} variant="plain">
           <CheckIcon />
         </Button>
       </div>
       <div className={css(inlineStyles.inlineEditAction)}>
-        <Button aria-label={cancelAriaLabel} {...props} onClick={e => onClick(e, 'cancel')} variant="plain">
+        <Button aria-label={cancelAriaLabel} {...props} onClick={(e) => onClick(e, 'cancel')} variant="plain">
           <TimesIcon />
         </Button>
       </div>
     </div>
     <div className={css(inlineStyles.inlineEditAction, inlineStyles.modifiers.enableEditable)}>
-      <Button aria-label={editAriaLabel} {...props} onClick={e => onClick(e, 'edit')} variant="plain">
+      <Button aria-label={editAriaLabel} {...props} onClick={(e) => onClick(e, 'edit')} variant="plain">
         <PencilAltIcon />
       </Button>
     </div>

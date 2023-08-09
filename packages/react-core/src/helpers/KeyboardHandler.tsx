@@ -46,8 +46,8 @@ export interface KeyboardHandlerProps {
 export const handleArrows = (
   event: KeyboardEvent,
   navigableElements: Element[],
-  isActiveElement: (element: Element) => boolean = element => document.activeElement.contains(element),
-  getFocusableElement: (element: Element) => Element = element => element,
+  isActiveElement: (element: Element) => boolean = (element) => document.activeElement.contains(element),
+  getFocusableElement: (element: Element) => Element = (element) => element,
   validSiblingTags: string[] = ['A', 'BUTTON', 'INPUT'],
   noVerticalArrowHandling: boolean = false,
   noHorizontalArrowHandling: boolean = false,
@@ -170,7 +170,7 @@ export const setTabIndex = (options: HTMLElement[]) => {
   }
 };
 
-export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
+class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
   static displayName = 'KeyboardHandler';
   static defaultProps: KeyboardHandlerProps = {
     containerRef: null,
@@ -274,3 +274,5 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
     return null as React.ReactNode;
   }
 }
+
+export { KeyboardHandler };

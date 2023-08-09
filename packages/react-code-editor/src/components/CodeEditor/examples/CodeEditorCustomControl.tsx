@@ -5,11 +5,11 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 export const CodeEditorCustomControl: React.FunctionComponent = () => {
   const [code, setCode] = React.useState('');
 
-  const onChange = code => {
+  const onChange = (code) => {
     setCode(code);
   };
 
-  const onExecuteCode = code => {
+  const onExecuteCode = (code) => {
     // eslint-disable-next-line no-console
     console.log(code);
   };

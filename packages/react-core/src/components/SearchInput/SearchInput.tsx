@@ -398,7 +398,11 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   };
 
   if (!!expandableInput && !isExpanded) {
-    return <InputGroup {...searchInputProps}><InputGroupItem>{expandableToggle}</InputGroupItem></InputGroup>;
+    return (
+      <InputGroup {...searchInputProps}>
+        <InputGroupItem>{expandableToggle}</InputGroupItem>
+      </InputGroup>
+    );
   }
 
   if (!!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch) {

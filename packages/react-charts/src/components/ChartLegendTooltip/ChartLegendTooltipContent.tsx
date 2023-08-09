@@ -11,7 +11,7 @@ import {
   getLegendTooltipDataProps,
   getLegendTooltipSize,
   getLegendTooltipVisibleData,
-  getLegendTooltipVisibleText,
+  getLegendTooltipVisibleText
 } from '../ChartUtils/chart-tooltip';
 import { getTheme } from '../ChartUtils/chart-theme';
 

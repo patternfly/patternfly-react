@@ -51,7 +51,7 @@ export const DataListContext = React.createContext<Partial<DataListContextProps>
   isSelectable: false
 });
 
-export class DataList extends React.Component<DataListProps> {
+class DataList extends React.Component<DataListProps> {
   static displayName = 'DataList';
   static defaultProps: PickOptional<DataListProps> = {
     children: null,
@@ -115,3 +115,5 @@ export class DataList extends React.Component<DataListProps> {
     );
   }
 }
+
+export { DataList };

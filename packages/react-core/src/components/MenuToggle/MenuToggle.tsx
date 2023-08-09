@@ -47,7 +47,7 @@ export interface MenuToggleProps
   innerRef?: React.Ref<MenuToggleElement>;
 }
 
-export class MenuToggleBase extends React.Component<MenuToggleProps> {
+class MenuToggleBase extends React.Component<MenuToggleProps> {
   displayName = 'MenuToggleBase';
   static defaultProps: MenuToggleProps = {
     className: '',

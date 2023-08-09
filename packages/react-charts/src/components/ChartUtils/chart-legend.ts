@@ -492,7 +492,7 @@ const getMaxLegendTextSize = ({ legendData, theme }: ChartLegendTextMaxSizeInter
   }
 
   let result = '';
-  legendData.forEach(data => {
+  legendData.forEach((data) => {
     if (data.name && data.name.length > result.length) {
       result = data.name;
     }

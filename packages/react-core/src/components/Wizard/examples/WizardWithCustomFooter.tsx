@@ -1,6 +1,16 @@
 import React from 'react';
 
-import { Button, Flex, FlexItem, Spinner, useWizardContext, Wizard, WizardFooter, WizardFooterWrapper, WizardStep } from '@patternfly/react-core';
+import {
+  Button,
+  Flex,
+  FlexItem,
+  Spinner,
+  useWizardContext,
+  Wizard,
+  WizardFooter,
+  WizardFooterWrapper,
+  WizardStep
+} from '@patternfly/react-core';
 
 const CustomWizardFooter = () => {
   const { activeStep, goToNextStep, goToPrevStep, close } = useWizardContext();
@@ -22,7 +32,7 @@ const CustomStepTwoFooter = () => {
 
   async function onNext() {
     setIsLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     setIsLoading(false);
 
     goToNextStep();
@@ -70,7 +80,7 @@ export const WizardWithCustomFooter: React.FunctionComponent = () => {
   async function onSubmit(): Promise<void> {
     setIsSubmitting(true);
 
-    await new Promise(resolve => setTimeout(resolve, 5000));
+    await new Promise((resolve) => setTimeout(resolve, 5000));
 
     setIsSubmitting(false);
   }

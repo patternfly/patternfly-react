@@ -8,7 +8,10 @@ import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
-import { getBulletPrimaryNegativeMeasureTheme, getBulletPrimarySegmentedMeasureTheme } from '../ChartUtils/chart-theme-types';
+import {
+  getBulletPrimaryNegativeMeasureTheme,
+  getBulletPrimarySegmentedMeasureTheme
+} from '../ChartUtils/chart-theme-types';
 
 /**
  * ChartBulletPrimarySegmentedMeasure renders a dataset as the primary segmented measure.

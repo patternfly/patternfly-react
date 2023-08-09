@@ -72,7 +72,7 @@ export const LegacyTableClickable: React.FunctionComponent = () => {
       cellTransforms: [textCenter]
     }
   ];
-  const rows: TableProps['rows'] = repositories.map(repo => {
+  const rows: TableProps['rows'] = repositories.map((repo) => {
     let cells: (string | ICell)[] = [repo.name, repo.branches || '', repo.prs || '', repo.workspaces, repo.lastCommit];
     // These rows have arbitrary differences for this example, but these could be based on some other conditions
     if (repo.name === 'one - 2') {

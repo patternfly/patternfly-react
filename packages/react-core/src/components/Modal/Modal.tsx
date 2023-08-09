@@ -92,7 +92,7 @@ interface ModalState {
   ouiaStateId: string;
 }
 
-export class Modal extends React.Component<ModalProps, ModalState> {
+class Modal extends React.Component<ModalProps, ModalState> {
   static displayName = 'Modal';
   static currentId = 0;
   boxId = '';
@@ -265,3 +265,5 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     ) as React.ReactElement;
   }
 }
+
+export { Modal };

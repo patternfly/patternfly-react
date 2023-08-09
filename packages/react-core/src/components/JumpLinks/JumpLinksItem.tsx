@@ -29,8 +29,8 @@ export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
   ...props
 }: JumpLinksItemProps) => {
   const childrenArr = React.Children.toArray(children) as any[];
-  const sublists = childrenArr.filter(child => child.type === JumpLinksList);
-  children = childrenArr.filter(child => child.type !== JumpLinksList);
+  const sublists = childrenArr.filter((child) => child.type === JumpLinksList);
+  children = childrenArr.filter((child) => child.type !== JumpLinksList);
 
   return (
     <li

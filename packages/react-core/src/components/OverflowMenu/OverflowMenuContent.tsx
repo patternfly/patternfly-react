@@ -18,7 +18,7 @@ export const OverflowMenuContent: React.FunctionComponent<OverflowMenuContentPro
   isPersistent
 }: OverflowMenuContentProps) => (
   <OverflowMenuContext.Consumer>
-    {value =>
+    {(value) =>
       (!value.isBelowBreakpoint || isPersistent) && (
         <div className={css(styles.overflowMenuContent, className)}>{children}</div>
       )

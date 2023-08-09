@@ -191,7 +191,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
     });
     formGroups.push(
       <GenerateId key={'hasWords'}>
-        {randomId => (
+        {(randomId) => (
           <FormGroup label={hasWordsAttrLabel} fieldId={randomId}>
             <TextInput
               type="text"

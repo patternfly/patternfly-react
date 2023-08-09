@@ -24,12 +24,12 @@ export const AlertGroupToastOverflowCapture: React.FunctionComponent = () => {
   };
 
   const addAlert = (title: string, variant: AlertProps['variant'], key: React.Key) => {
-    setAlerts(prevAlerts => [...prevAlerts, { title, variant, key }]);
+    setAlerts((prevAlerts) => [...prevAlerts, { title, variant, key }]);
     setOverflowMessage(getOverflowMessage(alerts.length + 1));
   };
 
   const removeAlert = (key: React.Key) => {
-    const newAlerts = alerts.filter(alert => alert.key !== key);
+    const newAlerts = alerts.filter((alert) => alert.key !== key);
     setAlerts(newAlerts);
     setOverflowMessage(getOverflowMessage(newAlerts.length));
   };

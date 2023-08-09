@@ -39,7 +39,7 @@ export const TableCellWidth: React.FunctionComponent = () => {
         </Tr>
       </Thead>
       <Tbody>
-        {repositories.map(repo => (
+        {repositories.map((repo) => (
           <Tr key={repo.name}>
             <Td dataLabel={columnNames.name}>{repo.name}</Td>
             <Td dataLabel={columnNames.branches}>{repo.branches}</Td>

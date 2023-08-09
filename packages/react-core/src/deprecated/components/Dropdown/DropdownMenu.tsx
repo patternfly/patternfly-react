@@ -41,7 +41,7 @@ export interface DropdownMenuItem extends React.HTMLAttributes<any> {
   ref: HTMLElement;
 }
 
-export class DropdownMenu extends React.Component<DropdownMenuProps> {
+class DropdownMenu extends React.Component<DropdownMenuProps> {
   static displayName = 'DropdownMenu';
   context!: React.ContextType<typeof DropdownContext>;
   refsCollection = [] as HTMLElement[][];
@@ -250,3 +250,5 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
 }
 
 DropdownMenu.contextType = DropdownContext;
+
+export { DropdownMenu };

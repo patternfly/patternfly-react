@@ -42,7 +42,9 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
       </div>
     )}
     <div className={css(styles.wizardTitle)}>
-      <h2 className={css(styles.wizardTitleText)} id={titleId}>{title || <>&nbsp;</>}</h2>
+      <h2 className={css(styles.wizardTitleText)} id={titleId}>
+        {title || <>&nbsp;</>}
+      </h2>
     </div>
 
     {description && (

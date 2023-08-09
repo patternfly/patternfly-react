@@ -121,9 +121,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
       <FormGroup label={passwordLabel} isRequired fieldId="pf-login-password-id">
         {isShowPasswordEnabled && (
           <InputGroup>
-            <InputGroupItem isFill>
-              {passwordInput}
-            </InputGroupItem>
+            <InputGroupItem isFill>{passwordInput}</InputGroupItem>
             <InputGroupItem>
               <Button
                 variant="control"
