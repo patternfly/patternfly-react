@@ -37,6 +37,10 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   description?: React.ReactNode;
   /** Flag to disable focus trap. */
   disableFocusTrap?: boolean;
+  /** The element to focus when the modal opens. By default the first
+   * focusable element will receive focus.
+   */
+  elementToFocus?: HTMLElement | SVGElement | string;
   /** Custom footer. */
   footer?: React.ReactNode;
   /** Flag indicating if modal content should be placed in a modal box body wrapper. */
@@ -235,6 +239,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
       ouiaId,
       ouiaSafe,
       position,
+      elementToFocus,
       ...props
     } = this.props;
     const { container } = this.state;
@@ -260,6 +265,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         ouiaId={ouiaId !== undefined ? ouiaId : this.state.ouiaStateId}
         ouiaSafe={ouiaSafe}
         position={position}
+        elementToFocus={elementToFocus}
       />,
       container
     ) as React.ReactElement;

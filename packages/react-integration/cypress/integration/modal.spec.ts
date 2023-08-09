@@ -83,4 +83,16 @@ describe('Modal Test', () => {
     cy.get('body').type('{esc}');
     cy.get('.pf-v5-c-modal-box').should('not.exist');
   });
+
+  it('Verify first focusable element receives focus by default', () => {
+    cy.get('#showDefaultModalButton').click();
+    cy.get('.pf-v5-c-modal-box__close > .pf-v5-c-button.pf-m-plain').should('have.focus');
+    cy.get('.pf-v5-c-modal-box__close > .pf-v5-c-button.pf-m-plain').click();
+  });
+
+  it('Verify custom element receives focus', () => {
+    cy.get('#showCustomFocusModalButton').click();
+    cy.get('#modal-custom-focus-confirm-button').should('have.focus');
+    cy.get('#modal-custom-focus-cancel-button').click();
+  });
 });
