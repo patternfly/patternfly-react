@@ -55,6 +55,8 @@ export interface TreeViewListItemProps {
    * from toggling.
    */
   onSelect?: (event: React.MouseEvent, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
+  /** Callback for toggling a node with children. */
+  onCollapse?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Parent item of tree view item. */
   parentItem?: TreeViewDataItem;
   /** Title of a tree view item. */
@@ -74,6 +76,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   defaultExpanded = false,
   children = null,
   onSelect,
+  onCollapse,
   onCheck,
   hasCheckbox = false,
   checkProps = {
@@ -117,6 +120,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       className={css(styles.treeViewNodeToggle)}
       onClick={(evt: React.MouseEvent) => {
         if (isSelectable || hasCheckbox) {
+          onCollapse && onCollapse(evt, itemData, parentItem);
           setIsExpanded(!internalIsExpanded);
         }
         if (isSelectable) {
@@ -135,9 +139,9 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     <span className={css(styles.treeViewNodeCheck)}>
       <input
         type="checkbox"
-        onChange={evt => onCheck && onCheck(evt, itemData, parentItem)}
-        onClick={evt => evt.stopPropagation()}
-        ref={elem => elem && (elem.indeterminate = checkProps.checked === null)}
+        onChange={(evt) => onCheck && onCheck(evt, itemData, parentItem)}
+        onClick={(evt) => evt.stopPropagation()}
+        ref={(elem) => elem && (elem.indeterminate = checkProps.checked === null)}
         {...checkProps}
         checked={checkProps.checked === null ? false : checkProps.checked}
         id={randomId}
@@ -192,7 +196,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     >
       <div className={css(styles.treeViewContent)}>
         <GenerateId prefix={isSelectable ? 'selectable-id' : 'checkbox-id'}>
-          {randomId => (
+          {(randomId) => (
             <Component
               className={css(
                 styles.treeViewNode,
@@ -200,7 +204,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                 (!children || isSelectable) &&
                   activeItems &&
                   activeItems.length > 0 &&
-                  activeItems.some(item => compareItems && item && compareItems(item, itemData))
+                  activeItems.some((item) => compareItems && item && compareItems(item, itemData))
                   ? styles.modifiers.current
                   : ''
               )}
@@ -208,6 +212,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                 if (!hasCheckbox) {
                   onSelect && onSelect(evt, itemData, parentItem);
                   if (!isSelectable && children && evt.isDefaultPrevented() !== true) {
+                    onCollapse && onCollapse(evt, itemData, parentItem);
                     setIsExpanded(!internalIsExpanded);
                   }
                 }
@@ -241,13 +246,13 @@ export const TreeViewListItem = React.memo(TreeViewListItemBase, (prevProps, nex
     prevProps.activeItems &&
     prevProps.activeItems.length > 0 &&
     prevProps.activeItems.some(
-      item => prevProps.compareItems && item && prevProps.compareItems(item, prevProps.itemData)
+      (item) => prevProps.compareItems && item && prevProps.compareItems(item, prevProps.itemData)
     );
   const nextIncludes =
     nextProps.activeItems &&
     nextProps.activeItems.length > 0 &&
     nextProps.activeItems.some(
-      item => nextProps.compareItems && item && nextProps.compareItems(item, nextProps.itemData)
+      (item) => nextProps.compareItems && item && nextProps.compareItems(item, nextProps.itemData)
     );
 
   if (prevIncludes || nextIncludes) {
@@ -262,6 +267,7 @@ export const TreeViewListItem = React.memo(TreeViewListItemBase, (prevProps, nex
     prevProps.defaultExpanded !== nextProps.defaultExpanded ||
     prevProps.onSelect !== nextProps.onSelect ||
     prevProps.onCheck !== nextProps.onCheck ||
+    prevProps.onCollapse !== nextProps.onCollapse ||
     prevProps.hasCheckbox !== nextProps.hasCheckbox ||
     prevProps.checkProps !== nextProps.checkProps ||
     prevProps.hasBadge !== nextProps.hasBadge ||
