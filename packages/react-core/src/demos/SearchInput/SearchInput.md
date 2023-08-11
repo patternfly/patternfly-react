@@ -492,7 +492,7 @@ AdvancedComposableSearchInput = () => {
                       id="datePicker"
                       style={{ width: '100%' }}
                       value={date}
-                      onChange={setDate}
+                      onChange={(_e, newValue) => setDate(newValue)}
                       appendTo={() => document.querySelector('#datePicker')}
                     />
                   </FormGroup>
