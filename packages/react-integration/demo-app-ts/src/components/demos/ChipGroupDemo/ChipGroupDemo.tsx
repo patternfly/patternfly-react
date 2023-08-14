@@ -29,7 +29,7 @@ export class ChipGroupDemo extends Component<{}, BadgeChipState> {
     };
     this.deleteItem = (id: string) => {
       const copyOfbadgeChipArray = this.state.badgeChipArray;
-      const index = copyOfbadgeChipArray.findIndex(chipObj => chipObj.name === id);
+      const index = copyOfbadgeChipArray.findIndex((chipObj) => chipObj.name === id);
 
       if (index !== -1) {
         copyOfbadgeChipArray.splice(index, 1);
@@ -46,10 +46,14 @@ export class ChipGroupDemo extends Component<{}, BadgeChipState> {
     const { badgeChipArray } = this.state;
     return (
       <ChipGroup id="demo-chip-group">
-        {badgeChipArray.map(chip => (
-          <Chip id={`chip-${chip.name}`} key={chip.name} onClick={() => this.deleteItem(chip.name)}>
+        {badgeChipArray.map((chip) => (
+          <Chip
+            id={`chip-${chip.name}`}
+            key={chip.name}
+            onClick={() => this.deleteItem(chip.name)}
+            badge={<Badge isRead={chip.isRead}>{chip.count}</Badge>}
+          >
             {chip.name}
-            <Badge isRead={chip.isRead}>{chip.count}</Badge>
           </Chip>
         ))}
       </ChipGroup>
