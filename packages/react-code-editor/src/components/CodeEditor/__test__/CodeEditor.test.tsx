@@ -18,7 +18,7 @@ Object.defineProperty(window, 'matchMedia', {
 
 describe('CodeEditor', () => {
   beforeAll(() => {
-    window.HTMLCanvasElement.prototype.getContext = () => ({}) as any;
+    window.HTMLCanvasElement.prototype.getContext = () => ({} as any);
   });
 
   test('matches snapshot without props', () => {
