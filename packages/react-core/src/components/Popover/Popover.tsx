@@ -420,7 +420,8 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         // FocusTrap's initialFocus can accept false as a value to prevent initial focus.
         // We want to prevent this in case false is ever passed in.
         initialFocus: elementToFocus || undefined,
-        checkCanFocusTrap: (containers) => new Promise((resolve) => {
+        checkCanFocusTrap: (containers) =>
+          new Promise((resolve) => {
             const interval = setInterval(() => {
               if (containers.every((container) => getComputedStyle(container).visibility !== 'hidden')) {
                 resolve();
