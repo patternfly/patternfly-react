@@ -217,14 +217,13 @@ const DatePickerBase = (
 
   const createFocusSelectorString = (modifierClass: string) =>
     `.${calendarMonthStyles.calendarMonthDatesCell}.${modifierClass} .${calendarMonthStyles.calendarMonthDate}`;
-  const focusSelectors = `${createFocusSelectorString(
-    calendarMonthStyles.modifiers.selected
-  )}, ${createFocusSelectorString(calendarMonthStyles.modifiers.current)}`;
+  const focusSelectorForSelectedDate = createFocusSelectorString(calendarMonthStyles.modifiers.selected);
+  const focusSelectorForUnselectedDate = createFocusSelectorString(calendarMonthStyles.modifiers.current);
 
   return (
     <div className={css(styles.datePicker, className)} ref={datePickerWrapperRef} style={style} {...props}>
       <Popover
-        elementToFocus={focusSelectors}
+        elementToFocus={valueDate ? focusSelectorForSelectedDate : focusSelectorForUnselectedDate}
         position="bottom"
         bodyContent={
           <CalendarMonth
