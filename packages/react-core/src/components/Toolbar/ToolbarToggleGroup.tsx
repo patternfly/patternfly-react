@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarGroupProps } from './ToolbarGroup';
@@ -8,7 +9,6 @@ import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpo
 import { formatBreakpointMods, toCamel, canUseDOM } from '../../helpers/util';
 import { PageContext } from '../Page/PageContext';
 import { ToolbarExpandableContent } from './ToolbarExpandableContent';
-import { Popper } from '../../helpers';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** Flag indicating when toggle group is expanded for non-managed toolbar toggle groups. */
@@ -173,14 +173,8 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
                         )}
                         {...props}
                       >
-                        <Popper
-                          appendTo={expandableContentRef.current}
-                          triggerRef={expandableContentRef}
-                          trigger={toggleButton}
-                          popper={expandableContent}
-                          popperRef={this.expandableContentRef}
-                          isVisible={_isExpanded}
-                        />
+                        {toggleButton}
+                        {_isExpanded && ReactDOM.createPortal(expandableContent, expandableContentRef.current)}
                         {!_isExpanded && children}
                       </div>
                     );
