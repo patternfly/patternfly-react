@@ -1,7 +1,6 @@
 import * as React from 'react';
 import modalStyles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { css } from '@patternfly/react-styles';
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { capitalize } from '../../helpers';
 import { Tooltip } from '../Tooltip';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
@@ -64,7 +63,7 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
           {isVariantIcon(titleIconVariant) ? variantIcons[titleIconVariant] : <CustomIcon />}
         </span>
       )}
-      {label && <span className={css(accessibleStyles.screenReader)}>{label}</span>}
+      {label && <span className="pf-v5-screen-reader">{label}</span>}
       <span className={css(modalStyles.modalBoxTitleText)}>{title}</span>
     </h1>
   );

@@ -494,7 +494,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
           hidden=""
         >
           <h2
-            class="pf-v5-u-screen-reader"
+            class="pf-v5-screen-reader"
             id="grp-1"
           >
             Section 1 - Example sub-navigation

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
-import a11yStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { getUniqueId } from '../../helpers/util';
@@ -145,7 +144,7 @@ class NavExpandable extends React.Component<NavExpandableProps, NavExpandableSta
             </PageSidebarContext.Consumer>
             <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={expandedState ? null : true}>
               {srText && (
-                <h2 className={css(a11yStyles.screenReader)} id={this.id}>
+                <h2 className="pf-v5-screen-reader" id={this.id}>
                   {srText}
                 </h2>
               )}
