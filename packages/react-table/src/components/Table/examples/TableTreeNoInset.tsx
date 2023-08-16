@@ -1,8 +1,6 @@
 import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, TreeRowWrapper, TdProps } from '@patternfly/react-table';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 interface RepositoriesTreeNode {
   name: string;
@@ -45,9 +43,7 @@ export const TableTreeNoInset: React.FunctionComponent = () => {
   };
 
   const [selectedNodeNames, setSelectedNodeNames] = React.useState<string[]>([]);
-  const isNodeChecked = (node: RepositoriesTreeNode) => {
-    return selectedNodeNames.includes(node.name)
-  };
+  const isNodeChecked = (node: RepositoriesTreeNode) => selectedNodeNames.includes(node.name);
 
   /**
    Recursive function which flattens the data into an array of flattened TreeRowWrapper components
@@ -69,7 +65,7 @@ export const TableTreeNoInset: React.FunctionComponent = () => {
       return [];
     }
     const isChecked = isNodeChecked(node);
-    let icon = <LeafIcon />;
+    const icon = <LeafIcon />;
 
     const treeRow: TdProps['treeRow'] = {
       onCollapse: () => {},
@@ -87,7 +83,7 @@ export const TableTreeNoInset: React.FunctionComponent = () => {
         'aria-posinset': posinset,
         'aria-setsize': node.children ? node.children.length : 0,
         isChecked,
-        checkboxId: `checkbox_id_${node.name.toLowerCase().replace(/\s+/g, '_')}`,
+        checkboxId: `flat_checkbox_id_${node.name.toLowerCase().replace(/\s+/g, '_')}`,
         icon
       }
     };
