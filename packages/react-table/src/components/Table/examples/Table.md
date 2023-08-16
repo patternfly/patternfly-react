@@ -297,6 +297,13 @@ the voice over technologies will recognize the flat table structure as a tree.
 ```ts file="TableTree.tsx"
 ```
 
+### Flat tree table with no inset
+
+To remove the inset used to leave space for the expand/collapse toggle in a flat tree table, use the `hasNoInset` prop on the `Table` component.
+
+```ts file="TableTreeNoInset.tsx"
+```
+
 ### Draggable row table
 
 To make a row draggable:
