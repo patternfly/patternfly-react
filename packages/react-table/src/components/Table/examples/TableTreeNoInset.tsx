@@ -71,8 +71,8 @@ export const TableTreeNoInset: React.FunctionComponent = () => {
       onCollapse: () => {},
       onToggleRowDetails: () => {},
       onCheckChange: (_event, isChecking) => {
-        setSelectedNodeNames(prevSelected => {
-          const otherSelectedNodeNames = prevSelected.filter(name => name === node.name);
+        setSelectedNodeNames((prevSelected) => {
+          const otherSelectedNodeNames = prevSelected.filter((name) => name === node.name);
           return !isChecking ? otherSelectedNodeNames : [...otherSelectedNodeNames, node.name];
         });
       },
@@ -89,9 +89,7 @@ export const TableTreeNoInset: React.FunctionComponent = () => {
     };
 
     const childRows =
-      node.children && node.children.length
-        ? renderRows(node.children, level + 1, 1, rowIndex + 1, isHidden)
-        : [];
+      node.children && node.children.length ? renderRows(node.children, level + 1, 1, rowIndex + 1, isHidden) : [];
 
     return [
       <TreeRowWrapper key={node.name} row={{ props: treeRow.props }}>

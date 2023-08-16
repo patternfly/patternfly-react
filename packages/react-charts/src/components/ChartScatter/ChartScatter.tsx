@@ -456,7 +456,7 @@ export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
 
   // bubbleProperty is only considered if the size prop is undefined, therefore set
   // default size function only if bubbleProperty is not set.
-  if (typeof rest.size === "undefined" && typeof rest.bubbleProperty === "undefined") {
+  if (typeof rest.size === 'undefined' && typeof rest.bubbleProperty === 'undefined') {
     rest.size = ({ active }) => (active ? ChartScatterStyles.activeSize : ChartScatterStyles.size);
   }
 
