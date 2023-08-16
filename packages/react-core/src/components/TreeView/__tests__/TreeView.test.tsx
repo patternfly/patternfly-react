@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { TreeView } from '../TreeView';
 import { Button } from '@patternfly/react-core';
 import { FolderIcon, FolderOpenIcon } from '@patternfly/react-icons';
@@ -146,6 +146,37 @@ describe('tree view', () => {
   test('renders basic successfully', () => {
     const { asFragment } = render(<TreeView data={options} onSelect={jest.fn()} />);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('calls onExpand and onCollapse appropriately', () => {
+    const onExpand = jest.fn();
+    const onCollapse = jest.fn();
+    const { asFragment } = render(
+      <TreeView data={options} onSelect={jest.fn()} onExpand={onExpand} onCollapse={onCollapse} />
+    );
+    expect(onExpand).not.toHaveBeenCalled();
+    expect(onCollapse).not.toHaveBeenCalled();
+    expect(screen.queryByText('Application 3')).toBeNull();
+    expect(screen.getByText('Cost Management')).toBeInTheDocument();
+    fireEvent(
+      screen.getByText('Cost Management'),
+      new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true
+      })
+    );
+    expect(onExpand).toHaveBeenCalled();
+    expect(onCollapse).not.toHaveBeenCalled();
+    expect(screen.getByText('Application 3')).toBeInTheDocument();
+    fireEvent(
+      screen.getByText('Cost Management'),
+      new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true
+      })
+    );
+    expect(onCollapse).toHaveBeenCalled();
+    expect(screen.queryByText('Application 3')).toBeNull();
   });
 
   test('renders active successfully', () => {
