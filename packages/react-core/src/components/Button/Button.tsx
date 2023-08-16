@@ -158,7 +158,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         isActive && styles.modifiers.active,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
         isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
-        isLoading !== null && children !== null && styles.modifiers.progress,
+        isLoading !== null && variant !== ButtonVariant.plain && styles.modifiers.progress,
         isLoading && styles.modifiers.inProgress,
         size === ButtonSize.sm && styles.modifiers.small,
         size === ButtonSize.lg && styles.modifiers.displayLg,
