@@ -59,17 +59,14 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 export const BasicNotificationDrawer: React.FunctionComponent = () => {
-  const drawerRef = React.useRef(null);
+  const drawerRef = React.useRef<HTMLElement | null>(null);
 
   const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState<boolean>(false);
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState<boolean>(false);
 
   interface UnreadMap {
-    ['notification-1']?: boolean | undefined;
-    ['notification-2']?: boolean | undefined;
-    ['notification-3']?: boolean | undefined;
-    ['notification-4']?: boolean | undefined;
+    [notificationId: string]: boolean;
   }
 
   const [activeItem, setActiveItem] = React.useState<number | string>(0);
@@ -83,20 +80,10 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
   const [shouldShowNotifications, setShouldShowNotifications] = React.useState<boolean>(true);
 
   interface ActionsMenu {
-    ['toggle-id-0']: boolean;
-    ['toggle-id-1']: boolean;
-    ['toggle-id-2']: boolean;
-    ['toggle-id-3']: boolean;
-    ['toggle-id-4']: boolean;
+    [toggleId: string]: boolean;
   }
 
-  const [isActionsMenuOpen, setIsActionsMenuOpen] = React.useState<ActionsMenu>({
-    'toggle-id-0': false,
-    'toggle-id-1': false,
-    'toggle-id-2': false,
-    'toggle-id-3': false,
-    'toggle-id-4': false
-  });
+  const [isActionsMenuOpen, setIsActionsMenuOpen] = React.useState<ActionsMenu | {}>({});
 
   const onNavSelect = (
     _event: React.FormEvent<HTMLInputElement>,
@@ -113,36 +100,24 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
   const onKebabDropdownSelect = () => setIsKebabDropdownOpen(false);
   const onCloseNotificationDrawer = (_event: any) => setIsDrawerExpanded((prevState) => !prevState);
 
-  const onToggle = (id: 'toggle-id-0' | 'toggle-id-1' | 'toggle-id-2' | 'toggle-id-3' | 'toggle-id-4') => {
-    setIsActionsMenuOpen((prevState) => ({
-      ...prevState,
-      [id]: !prevState[id]
-    }));
+  const onToggle = (id: string) => {
+    setIsActionsMenuOpen({ [id]: !isActionsMenuOpen[id] });
   };
 
-  const closeActionMenu = () =>
-    setIsActionsMenuOpen({
-      'toggle-id-0': false,
-      'toggle-id-1': false,
-      'toggle-id-2': false,
-      'toggle-id-3': false,
-      'toggle-id-4': false
-    });
+  const closeActionsMenu = () => setIsActionsMenuOpen({});
 
-  const onSelect = () => closeActionMenu();
-
-  const onListItemClick = (id: 'notification-1' | 'notification-2' | 'notification-3' | 'notification-4') => {
-    if (isUnreadMap === null) {
+  const onListItemClick = (id: string) => {
+    if (!isUnreadMap) {
       return;
     }
-    setIsUnreadMap((prevState) => ({ ...prevState, [id]: false }));
+    setIsUnreadMap({ ...isUnreadMap, [id]: false });
   };
 
-  const getNumberUnread = () => {
-    if (isUnreadMap === null) {
+  const getNumberUnread: () => number = () => {
+    if (!isUnreadMap) {
       return 0;
     }
-    Object.values(isUnreadMap).reduce((count, value) => count + (value ? 1 : 0), 0);
+    return Object.values(isUnreadMap).reduce((count, value) => count + (value ? 1 : 0), 0);
   };
 
   const markAllRead = () => setIsUnreadMap(null);
@@ -156,8 +131,11 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
     if (drawerRef.current === null) {
       return;
     }
-    const firstTabbableItem = drawerRef.current.querySelector('a, button');
-    firstTabbableItem.focus();
+    const firstTabbableItem = drawerRef.current.querySelector('a, button') as
+      | HTMLAnchorElement
+      | HTMLButtonElement
+      | null;
+    firstTabbableItem?.focus();
   };
 
   const PageNav = (
@@ -356,10 +334,10 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
     <NotificationDrawer ref={drawerRef}>
       <NotificationDrawerHeader count={getNumberUnread()} onClose={onCloseNotificationDrawer}>
         <Dropdown
-          onSelect={onSelect}
+          onSelect={closeActionsMenu}
           isOpen={isActionsMenuOpen['toggle-id-0'] || false}
           id="notification-0"
-          onOpenChange={(isOpen: boolean) => !isOpen && closeActionMenu()}
+          onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
           popperProps={{ position: 'right' }}
           toggle={(toggleRef: React.RefObject<any>) => (
             <MenuToggle
@@ -391,10 +369,10 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
                 srTitle="Info notification:"
               >
                 <Dropdown
-                  onSelect={onSelect}
+                  onSelect={closeActionsMenu}
                   isOpen={isActionsMenuOpen['toggle-id-1'] || false}
                   id="notification-1"
-                  onOpenChange={(isOpen: boolean) => !isOpen && closeActionMenu()}
+                  onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                   popperProps={{ position: 'right' }}
                   toggle={(toggleRef: React.RefObject<any>) => (
                     <MenuToggle
@@ -427,10 +405,10 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
                 srTitle="Danger notification:"
               >
                 <Dropdown
-                  onSelect={onSelect}
+                  onSelect={closeActionsMenu}
                   isOpen={isActionsMenuOpen['toggle-id-2'] || false}
                   id="notification-2"
-                  onOpenChange={(isOpen: boolean) => !isOpen && closeActionMenu()}
+                  onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                   popperProps={{ position: 'right' }}
                   toggle={(toggleRef: React.RefObject<any>) => (
                     <MenuToggle
@@ -464,10 +442,10 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
                 srTitle="Warning notification:"
               >
                 <Dropdown
-                  onSelect={onSelect}
+                  onSelect={closeActionsMenu}
                   isOpen={isActionsMenuOpen['toggle-id-3'] || false}
                   id="notification-3"
-                  onOpenChange={(isOpen: boolean) => !isOpen && closeActionMenu()}
+                  onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                   popperProps={{ position: 'right' }}
                   toggle={(toggleRef: React.RefObject<any>) => (
                     <MenuToggle
@@ -500,10 +478,10 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
                 srTitle="Success notification:"
               >
                 <Dropdown
-                  onSelect={onSelect}
+                  onSelect={closeActionsMenu}
                   isOpen={isActionsMenuOpen['toggle-id-4'] || false}
                   id="notification-4"
-                  onOpenChange={(isOpen: boolean) => !isOpen && closeActionMenu()}
+                  onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                   popperProps={{ position: 'right' }}
                   toggle={(toggleRef: React.RefObject<any>) => (
                     <MenuToggle
@@ -531,7 +509,7 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
           <EmptyState variant={EmptyStateVariant.full}>
             <EmptyStateHeader
               headingLevel="h2"
-              titleText="No results found"
+              titleText="No alerts found"
               icon={<EmptyStateIcon icon={SearchIcon} />}
             />
             <EmptyStateBody>
