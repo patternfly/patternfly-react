@@ -7,10 +7,18 @@ import {
   DropdownList,
   Flex,
   FlexItem,
+  Label,
   MenuToggle,
   MenuToggleElement,
+  OverflowMenu,
+  OverflowMenuContent,
+  OverflowMenuControl,
+  OverflowMenuDropdownItem,
+  OverflowMenuGroup,
+  OverflowMenuItem,
   PageSection,
   Pagination,
+  Select,
   SelectOption,
   SelectList,
   SelectGroup,
@@ -89,7 +97,7 @@ export const ComposableTableSortable = () => {
     setPerPage(newPerPage);
   };
 
-  renderPagination = (variant) => (
+  const renderPagination = (variant) => (
     <Pagination
       isCompact
       itemCount={rows.length}

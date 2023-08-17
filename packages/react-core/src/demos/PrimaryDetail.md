@@ -31,7 +31,6 @@ import DashboardWrapper from './examples/DashboardWrapper';
 ### Primary-detail full page
 
 ```js file="./examples/PrimaryDetail/PrimaryDetailFullPage.tsx" isFullscreen
-
 ```
 
 ### Primary-detail content padding
@@ -554,7 +553,7 @@ class PrimaryDetailCardView extends React.Component {
               }}
               selectableActions={{ isChecked: selectedItems.includes(product.id), selectableActionId: `selectable-actions-item-${product.id}`, selectableActionAriaLabelledby: `${'card-view-' + key}`, name: `check-${product.id}`, onChange: () => this.onClick(product.id) }}
             >
-              <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
+              <img src={require(icons[product.icon])} alt={`${product.name} icon`} style={{ height: '50px' }} />
             </CardHeader>
             <CardTitle>
               <Button variant="link" isInline onClick={() => this.onCardClick(product.id)} aria-expanded={activeCard === product.id}>

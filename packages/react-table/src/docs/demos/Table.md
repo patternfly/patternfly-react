@@ -855,7 +855,7 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { rows, columns } from '';
+import { rows, columns } from './sampleData';
 
 class FilterTableDemo extends React.Component {
   constructor(props) {
