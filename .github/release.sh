@@ -17,13 +17,10 @@ echo "Doing a release..."
 LOG=$(git log --format="%s" -1 | grep -Poe "#\d+")
 PR_NUM=${LOG:1}
 
-# yarn run lerna publish --conventional-commits --conventional-prerelease --dist-tag=prerelease --yes --no-private 2>&1 | tee lerna-output.txt
+# yarn run lerna publish --conventional-commits --conventional-prerelease --preid=prerelease --dist-tag=prerelease --yes --no-private 2>&1 | tee lerna-output.txt
 
-# dry run
-yarn run lerna version --conventional-commits --conventional-prerelease --no-private --yes --no-git-tag-version --no-push
-
-# use lerna command below for dry run - no-private should possibly be added
-# yarn run lerna version --conventional-commits --conventional-prerelease --yes --no-git-tag-version --no-push
+# use lerna command below for dry run
+yarn run lerna version --conventional-commits --conventional-prerelease --preid=prerelease --no-private --yes --no-git-tag-version --no-push | tee lerna-output.txt
 
 if grep -i "Successfully published" lerna-output.txt; # Leave a Github comment
 then
