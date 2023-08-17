@@ -20,7 +20,7 @@ PR_NUM=${LOG:1}
 # yarn run lerna publish --conventional-commits --conventional-prerelease --preid=prerelease --dist-tag=prerelease --yes --no-private 2>&1 | tee lerna-output.txt
 
 # use lerna command below for dry run
-yarn run lerna version --conventional-prerelease --preid=prerelease --no-private --yes --no-git-tag-version --no-push | tee lerna-output.txt
+yarn run lerna version prerelease --conventional-prerelease --preid=prerelease --no-private --yes --no-git-tag-version --no-push | tee lerna-output.txt
 
 if grep -i "Successfully published" lerna-output.txt; # Leave a Github comment
 then
