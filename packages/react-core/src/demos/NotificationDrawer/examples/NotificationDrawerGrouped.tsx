@@ -129,7 +129,8 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
     }
   };
 
-  const isUnread = (groupId: string, id: string) => isUnreadMap && isUnreadMap[groupId] && isUnreadMap[groupId][id];
+  const isUnread = (groupId: string, id: string) =>
+    isUnreadMap && isUnreadMap[groupId] !== null && isUnreadMap[groupId][id];
 
   const getNumberUnread = (groupId: string | null) => {
     if (!isUnreadMap) {
@@ -270,7 +271,7 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
                 onSelect={onKebabDropdownSelect}
                 onOpenChange={setIsKebabDropdownOpen}
                 popperProps={{ position: 'right' }}
-                toggle={(toggleRef) => (
+                toggle={(toggleRef: React.RefObject<any>) => (
                   <MenuToggle
                     ref={toggleRef}
                     isExpanded={isKebabDropdownOpen}
@@ -293,7 +294,7 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
                 onSelect={onDropdownSelect}
                 onOpenChange={setIsDropdownOpen}
                 popperProps={{ position: 'right' }}
-                toggle={(toggleRef) => (
+                toggle={(toggleRef: React.RefObject<any>) => (
                   <MenuToggle
                     ref={toggleRef}
                     isExpanded={isDropdownOpen}
@@ -368,7 +369,7 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
         key="link"
         to="#"
         // Prevent default onClick behavior for demo purposes
-        onClick={(ev) => ev.preventDefault()}
+        onClick={(ev: { preventDefault: () => any }) => ev.preventDefault()}
       >
         Link
       </DropdownItem>
@@ -387,9 +388,9 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
           onSelect={closeActionsMenu}
           isOpen={isActionsMenuOpen['toggle-id-0'] || false}
           id="notification-0"
-          onOpenChange={(isOpen) => !isOpen && closeActionsMenu()}
+          onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
           popperProps={{ position: 'right' }}
-          toggle={(toggleRef) => (
+          toggle={(toggleRef: React.RefObject<any>) => (
             <MenuToggle
               ref={toggleRef}
               id="toggle-id-0"
@@ -429,9 +430,9 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
                       onSelect={closeActionsMenu}
                       isOpen={isActionsMenuOpen['toggle-id-5'] || false}
                       id="notification-5"
-                      onOpenChange={(isOpen) => !isOpen && closeActionsMenu()}
+                      onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                       popperProps={{ position: 'right' }}
-                      toggle={(toggleRef) => (
+                      toggle={(toggleRef: React.RefObject<any>) => (
                         <MenuToggle
                           ref={toggleRef}
                           id="toggle-id-5"
@@ -465,9 +466,9 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
                       onSelect={closeActionsMenu}
                       isOpen={isActionsMenuOpen['toggle-id-6'] || false}
                       id="notification-6"
-                      onOpenChange={(isOpen) => !isOpen && closeActionsMenu()}
+                      onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                       popperProps={{ position: 'right' }}
-                      toggle={(toggleRef) => (
+                      toggle={(toggleRef: React.RefObject<any>) => (
                         <MenuToggle
                           ref={toggleRef}
                           id="toggle-id-6"
@@ -502,9 +503,9 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
                       onSelect={closeActionsMenu}
                       isOpen={isActionsMenuOpen['toggle-id-7'] || false}
                       id="notification-7"
-                      onOpenChange={(isOpen) => !isOpen && closeActionsMenu()}
+                      onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                       popperProps={{ position: 'right' }}
-                      toggle={(toggleRef) => (
+                      toggle={(toggleRef: React.RefObject<any>) => (
                         <MenuToggle
                           ref={toggleRef}
                           id="toggle-id-7"
@@ -538,9 +539,9 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
                       onSelect={closeActionsMenu}
                       isOpen={isActionsMenuOpen['toggle-id-8'] || false}
                       id="notification-8"
-                      onOpenChange={(isOpen) => !isOpen && closeActionsMenu()}
+                      onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                       popperProps={{ position: 'right' }}
-                      toggle={(toggleRef) => (
+                      toggle={(toggleRef: React.RefObject<any>) => (
                         <MenuToggle
                           ref={toggleRef}
                           id="toggle-id-8"
@@ -583,9 +584,9 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
                       onSelect={closeActionsMenu}
                       isOpen={isActionsMenuOpen['toggle-id-9'] || false}
                       id="notification-9"
-                      onOpenChange={(isOpen) => !isOpen && closeActionsMenu()}
+                      onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                       popperProps={{ position: 'right' }}
-                      toggle={(toggleRef) => (
+                      toggle={(toggleRef: React.RefObject<any>) => (
                         <MenuToggle
                           ref={toggleRef}
                           id="toggle-id-9"
@@ -619,9 +620,9 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
                       onSelect={closeActionsMenu}
                       isOpen={isActionsMenuOpen['toggle-id-10'] || false}
                       id="notification-10"
-                      onOpenChange={(isOpen) => !isOpen && closeActionsMenu()}
+                      onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                       popperProps={{ position: 'right' }}
-                      toggle={(toggleRef) => (
+                      toggle={(toggleRef: React.RefObject<any>) => (
                         <MenuToggle
                           ref={toggleRef}
                           id="toggle-id-10"
@@ -656,9 +657,9 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
                       onSelect={closeActionsMenu}
                       isOpen={isActionsMenuOpen['toggle-id-11'] || false}
                       id="notification-11"
-                      onOpenChange={(isOpen) => !isOpen && closeActionsMenu()}
+                      onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                       popperProps={{ position: 'right' }}
-                      toggle={(toggleRef) => (
+                      toggle={(toggleRef: React.RefObject<any>) => (
                         <MenuToggle
                           ref={toggleRef}
                           id="toggle-id-11"
@@ -692,9 +693,9 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
                       onSelect={closeActionsMenu}
                       isOpen={isActionsMenuOpen['toggle-id-12'] || false}
                       id="notification-12"
-                      onOpenChange={(isOpen) => !isOpen && closeActionsMenu()}
+                      onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                       popperProps={{ position: 'right' }}
-                      toggle={(toggleRef) => (
+                      toggle={(toggleRef: React.RefObject<any>) => (
                         <MenuToggle
                           ref={toggleRef}
                           id="toggle-id-12"
@@ -772,7 +773,9 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
         isManagedSidebar
         notificationDrawer={notificationDrawer}
         isNotificationDrawerExpanded={isDrawerExpanded}
-        onNotificationDrawerExpand={(event) => focusDrawer(event)}
+        onNotificationDrawerExpand={(
+          event: React.MouseEvent<Element, MouseEvent> | KeyboardEvent | React.TransitionEvent<Element>
+        ) => focusDrawer(event)}
         skipToContent={PageSkipToContent}
         breadcrumb={PageBreadcrumb}
         mainContainerId={pageId}
