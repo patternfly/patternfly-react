@@ -100,7 +100,6 @@ const DatePickerBase = (
     dateFormat = yyyyMMddFormat,
     dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
     isDisabled = false,
-    isRequired = false,
     placeholder = 'YYYY-MM-DD',
     value: valueProp = '',
     'aria-label': ariaLabel = 'Date picker',
@@ -131,11 +130,13 @@ const DatePickerBase = (
   const [popoverOpen, setPopoverOpen] = React.useState(false);
   const [selectOpen, setSelectOpen] = React.useState(false);
   const [pristine, setPristine] = React.useState(true);
+  const [textInputFocused, setTextInputFocused] = React.useState(false);
   const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
   const style = { '--pf-v5-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
   const buttonRef = React.useRef<HTMLButtonElement>();
   const datePickerWrapperRef = React.useRef<HTMLDivElement>();
   const triggerRef = React.useRef<HTMLDivElement>();
+  const dateIsRequired = requiredDateOptions?.isRequired || false;
   const emptyDateText = requiredDateOptions?.emptyDateText || 'Date cannot be blank';
 
   React.useEffect(() => {
@@ -148,9 +149,9 @@ const DatePickerBase = (
     const newValueDate = dateParse(value);
     if (errorText) {
       isValidDate(newValueDate) && setError(newValueDate);
-      if (value === '') {
-        isRequired ? setErrorText(emptyDateText) : setErrorText('');
-      }
+    }
+    if (value === '' && !pristine && !textInputFocused) {
+      dateIsRequired ? setErrorText(emptyDateText) : setErrorText('');
     }
   }, [value]);
 
@@ -171,6 +172,7 @@ const DatePickerBase = (
   };
 
   const onInputBlur = (event: any) => {
+    setTextInputFocused(false);
     const newValueDate = dateParse(value);
     const dateIsValid = isValidDate(newValueDate);
     const onBlurDateArg = dateIsValid ? new Date(newValueDate) : undefined;
@@ -288,6 +290,7 @@ const DatePickerBase = (
                 value={value}
                 onChange={onTextInput}
                 onBlur={onInputBlur}
+                onFocus={() => setTextInputFocused(true)}
                 onKeyPress={onKeyPress}
                 {...inputProps}
               />
