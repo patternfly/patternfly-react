@@ -123,7 +123,7 @@ export const HorizontalNavWithSubnav: React.FunctionComponent = () => {
   );
 
   const SubNav = (
-    <Nav onSelect={onSubNavSelect} aria-label="Nav" variant="horizontal-subnav">
+    <Nav onSelect={onSubNavSelect} aria-label="Subnav" variant="horizontal-subnav">
       <NavList>
         <NavItem itemId={7} isActive={activeSubNavItem === 7} to="#">
           Horizontal subnav item 1

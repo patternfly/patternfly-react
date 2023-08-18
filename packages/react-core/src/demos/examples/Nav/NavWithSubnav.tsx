@@ -73,7 +73,7 @@ export const VerticalNavWithSubnav: React.FunctionComponent = () => {
   const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
   const SubNav = (
-    <Nav onSelect={onSubNavSelect} aria-label="Nav" variant="horizontal-subnav">
+    <Nav onSelect={onSubNavSelect} aria-label="Subnav" variant="horizontal-subnav">
       <NavList>
         <NavItem itemId={7} isActive={activeSubNavItem === 7} to="#">
           Horizontal subnav item 1
