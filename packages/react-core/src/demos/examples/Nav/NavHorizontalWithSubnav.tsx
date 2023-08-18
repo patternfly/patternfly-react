@@ -46,9 +46,9 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 export const HorizontalNavWithSubnav: React.FunctionComponent = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState<boolean>(false);
-  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState<boolean>(false);
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState<string | number>(0);
   const [activeSubNavItem, setActiveSubNavItem] = React.useState<string | number>(7);
 
