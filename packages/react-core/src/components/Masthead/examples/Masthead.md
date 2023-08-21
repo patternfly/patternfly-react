@@ -7,7 +7,7 @@ propComponents: ['Masthead', 'MastheadToggle', 'MastheadMain', 'MastheadBrand', 
 
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import { Link } from '@reach/router';
-import pfIcon from './pf-logo.svg';
+import pfIcon from '../../assets/pf-logo.svg';
 
 `Masthead` should contain the following components to maintain proper layout and formatting: `MastheadToggle`, `MastheadMain`, and `MastheadContent`.
 
@@ -213,7 +213,7 @@ import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button, Brand } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import { Link } from '@reach/router';
-import pfIcon from './pf-logo.svg';
+import pfIcon from '../../assets/pf-logo.svg';
 
 <Masthead id="icon-router-link">
   <MastheadToggle>

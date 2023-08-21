@@ -1,5 +1,5 @@
 import React from 'react';
-import brandImg2 from './brandImgColor2.svg';
+import brandImg2 from '../../assets/brandImgColor2.svg';
 import {
   LoginFooterItem,
   LoginForm,

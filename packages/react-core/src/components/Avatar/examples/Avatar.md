@@ -5,8 +5,8 @@ cssPrefix: pf-v5-c-avatar
 propComponents: ['Avatar']
 ---
 
-import avatarImg from './avatarImg.svg';
-import avatarImgDark from './avatarImgDark.svg';
+import avatarImg from '../../assets/avatarImg.svg';
+import avatarImgDark from '../../assets/avatarImgDark.svg';
 import './example.css';
 
 ## Examples
@@ -16,7 +16,7 @@ import './example.css';
 ```ts
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
-import avatarImg from './avatarImg.svg';
+import avatarImg from '../../assets/avatarImg.svg';
 
 <Avatar src={avatarImg} alt="avatar" />;
 ```
@@ -26,7 +26,7 @@ import avatarImg from './avatarImg.svg';
 ```ts
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
-import avatarImg from './avatarImg.svg';
+import avatarImg from '../../assets/avatarImg.svg';
 
 <React.Fragment>
   Small
@@ -52,7 +52,7 @@ import avatarImg from './avatarImg.svg';
 ```ts
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
-import avatarImg from './img_avatar.svg';
+import avatarImg from '../../assets/avatarImg.svg';
 
 <Avatar src={avatarImg} alt="avatar" border="light" />;
 ```
@@ -62,7 +62,7 @@ import avatarImg from './img_avatar.svg';
 ```ts
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
-import avatarImgDark from './img_avatar-dark.svg';
+import avatarImgDark from '../../assets/avatarImgDark.svg';
 
 <Avatar src={avatarImgDark} alt="avatar" border="dark" />;
 ```

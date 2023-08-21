@@ -56,8 +56,8 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
-import pfIcon from './pf-logo-small.svg';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+import pfIcon from '@patternfly/react-core/src/demos/assets/pf-logo-small.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 interface NavOnSelectProps {
