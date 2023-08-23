@@ -78,6 +78,10 @@ export interface PopoverProps {
   closeBtnAriaLabel?: string;
   /** Distance of the popover to its target. Defaults to 25. */
   distance?: number;
+  /** The element to focus when the popover becomes visible. By default the first
+   * focusable element will receive focus.
+   */
+  elementToFocus?: HTMLElement | SVGElement | string;
   /**
    * If true, tries to keep the popover in view by flipping it if necessary.
    * If the position is set to 'auto', this prop is ignored.
@@ -269,6 +273,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   triggerRef,
   hasNoPadding = false,
   hasAutoWidth = false,
+  elementToFocus,
   ...rest
 }: PopoverProps) => {
   // could make this a prop in the future (true | false | 'toggle')
@@ -285,7 +290,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   React.useEffect(() => {
     if (triggerManually) {
       if (isVisible) {
-        show();
+        show(undefined, true);
       } else {
         hide();
       }
@@ -404,6 +409,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       hide(event);
     }
   };
+
   const content = (
     <FocusTrap
       ref={popoverRef}
@@ -411,6 +417,18 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       focusTrapOptions={{
         returnFocusOnDeactivate: true,
         clickOutsideDeactivates: true,
+        // FocusTrap's initialFocus can accept false as a value to prevent initial focus.
+        // We want to prevent this in case false is ever passed in.
+        initialFocus: elementToFocus || undefined,
+        checkCanFocusTrap: (containers) =>
+          new Promise((resolve) => {
+            const interval = setInterval(() => {
+              if (containers.every((container) => getComputedStyle(container).visibility !== 'hidden')) {
+                resolve();
+                clearInterval(interval);
+              }
+            }, 10);
+          }),
         tabbableOptions: { displayCheck: 'none' },
 
         fallbackFocus: () => {

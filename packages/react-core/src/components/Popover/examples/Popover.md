@@ -89,3 +89,11 @@ Here the popover goes over the navigation, so the prop `appendTo` is set to the 
 ```ts file="./PopoverAlert.tsx"
 
 ```
+
+### Custom focus
+
+Use the `elementToFocus` property to customize which element inside the Popover receives focus when opened.
+
+```ts file="./PopoverCustomFocus.tsx"
+
+```
