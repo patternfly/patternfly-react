@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.276.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.11...@patternfly/react-core@4.276.12) (2023-08-23)
+
+
+### Bug Fixes
+
+* **DatePicker:** updated v4 onBlur logic ([#9491](https://github.com/patternfly/patternfly-react/issues/9491)) ([24beea4](https://github.com/patternfly/patternfly-react/commit/24beea49a385c5aae34c0a575bc19438a4052065))
+
+
+
+
+
 ## [4.276.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.10...@patternfly/react-core@4.276.11) (2023-07-26)
 
 
