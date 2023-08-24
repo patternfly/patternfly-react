@@ -6,7 +6,11 @@ export const DatePickerControlled: React.FunctionComponent = () => {
   const [value, setValue] = React.useState(initialValue);
   return (
     <React.Fragment>
-      <DatePicker value={value} onChange={(_event, value) => setValue(value)} />
+      <DatePicker
+        requiredDateOptions={{ isRequired: true, emptyDateText: 'Date is required' }}
+        value={value}
+        onChange={(_event, value) => setValue(value)}
+      />
       <br />
       <br />
       <Flex>
