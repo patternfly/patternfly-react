@@ -45,19 +45,20 @@ export const NavWithSubnav: React.FunctionComponent = () => {
   const PageNav = (
     <Nav onSelect={onNavSelect} aria-label="Nav">
       <NavList>
-        <NavItem itemId={0} isActive={activeItem === 0} to="#">
+        {/* Preventing default click behavior on each NavItem for demo purposes only */}
+        <NavItem preventDefault itemId={0} isActive={activeItem === 0} to="#">
           System Panel
         </NavItem>
-        <NavItem itemId={1} isActive={activeItem === 1} to="#">
+        <NavItem preventDefault itemId={1} isActive={activeItem === 1} to="#">
           Policy
         </NavItem>
-        <NavItem itemId={2} isActive={activeItem === 2} to="#">
+        <NavItem preventDefault itemId={2} isActive={activeItem === 2} to="#">
           Authentication
         </NavItem>
-        <NavItem itemId={3} isActive={activeItem === 3} to="#">
+        <NavItem preventDefault itemId={3} isActive={activeItem === 3} to="#">
           Network Services
         </NavItem>
-        <NavItem itemId={4} isActive={activeItem === 4} to="#">
+        <NavItem preventDefault itemId={4} isActive={activeItem === 4} to="#">
           Server
         </NavItem>
       </NavList>
@@ -75,25 +76,25 @@ export const NavWithSubnav: React.FunctionComponent = () => {
   const SubNav = (
     <Nav onSelect={onSubNavSelect} aria-label="Subnav" variant="horizontal-subnav">
       <NavList>
-        <NavItem itemId={7} isActive={activeSubNavItem === 7} to="#">
+        <NavItem preventDefault itemId={7} isActive={activeSubNavItem === 7} to="#">
           Horizontal subnav item 1
         </NavItem>
-        <NavItem itemId={8} isActive={activeSubNavItem === 8} to="#">
+        <NavItem preventDefault itemId={8} isActive={activeSubNavItem === 8} to="#">
           Horizontal subnav item 2
         </NavItem>
-        <NavItem itemId={9} isActive={activeSubNavItem === 9} to="#">
+        <NavItem preventDefault itemId={9} isActive={activeSubNavItem === 9} to="#">
           Horizontal subnav item 3
         </NavItem>
-        <NavItem itemId={10} isActive={activeSubNavItem === 10} to="#">
+        <NavItem preventDefault itemId={10} isActive={activeSubNavItem === 10} to="#">
           Horizontal subnav item 4
         </NavItem>
-        <NavItem itemId={11} isActive={activeSubNavItem === 11} to="#">
+        <NavItem preventDefault itemId={11} isActive={activeSubNavItem === 11} to="#">
           Horizontal subnav item 5
         </NavItem>
-        <NavItem itemId={12} isActive={activeSubNavItem === 12} to="#">
+        <NavItem preventDefault itemId={12} isActive={activeSubNavItem === 12} to="#">
           Horizontal subnav item 6
         </NavItem>
-        <NavItem itemId={13} isActive={activeSubNavItem === 13} to="#">
+        <NavItem preventDefault itemId={13} isActive={activeSubNavItem === 13} to="#">
           Horizontal subnav item 7
         </NavItem>
       </NavList>

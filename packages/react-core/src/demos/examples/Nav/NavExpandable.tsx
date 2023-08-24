@@ -40,38 +40,39 @@ export const NavExpandableDemo: React.FunctionComponent = () => {
     <Nav onSelect={onNavSelect} aria-label="Nav">
       <NavList>
         <NavExpandable title="System Panel" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
-          <NavItem groupId="grp-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'} to="#">
+          {/* Preventing default click behavior on each NavItem for demo purposes only */}
+          <NavItem preventDefault groupId="grp-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'} to="#">
             Overview
           </NavItem>
-          <NavItem groupId="grp-1" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'} to="#">
+          <NavItem preventDefault groupId="grp-1" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'} to="#">
             Resource usage
           </NavItem>
-          <NavItem groupId="grp-1" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'} to="#">
+          <NavItem preventDefault groupId="grp-1" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'} to="#">
             Hypervisors
           </NavItem>
-          <NavItem groupId="grp-1" itemId="grp-1_itm-4" isActive={activeItem === 'grp-1_itm-4'} to="#">
+          <NavItem preventDefault groupId="grp-1" itemId="grp-1_itm-4" isActive={activeItem === 'grp-1_itm-4'} to="#">
             Instances
           </NavItem>
-          <NavItem groupId="grp-1" itemId="grp-1_itm-5" isActive={activeItem === 'grp-1_itm-5'} to="#">
+          <NavItem preventDefault groupId="grp-1" itemId="grp-1_itm-5" isActive={activeItem === 'grp-1_itm-5'} to="#">
             Volumes
           </NavItem>
-          <NavItem groupId="grp-1" itemId="grp-1_itm-6" isActive={activeItem === 'grp-1_itm-6'} to="#">
+          <NavItem preventDefault groupId="grp-1" itemId="grp-1_itm-6" isActive={activeItem === 'grp-1_itm-6'} to="#">
             Network
           </NavItem>
         </NavExpandable>
         <NavExpandable title="Policy" groupId="grp-2" isActive={activeGroup === 'grp-2'}>
-          <NavItem groupId="grp-2" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'} to="#">
+          <NavItem preventDefault groupId="grp-2" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'} to="#">
             Subnav link 1
           </NavItem>
-          <NavItem groupId="grp-2" itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'} to="#">
+          <NavItem preventDefault groupId="grp-2" itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'} to="#">
             Subnav link 2
           </NavItem>
         </NavExpandable>
         <NavExpandable title="Authentication" groupId="grp-3" isActive={activeGroup === 'grp-3'}>
-          <NavItem groupId="grp-3" itemId="grp-3_itm-1" isActive={activeItem === 'grp-3_itm-1'} to="#">
+          <NavItem preventDefault groupId="grp-3" itemId="grp-3_itm-1" isActive={activeItem === 'grp-3_itm-1'} to="#">
             Subnav link 1
           </NavItem>
-          <NavItem groupId="grp-3" itemId="grp-3_itm-2" isActive={activeItem === 'grp-3_itm-2'} to="#">
+          <NavItem preventDefault groupId="grp-3" itemId="grp-3_itm-2" isActive={activeItem === 'grp-3_itm-2'} to="#">
             Subnav link 2
           </NavItem>
         </NavExpandable>

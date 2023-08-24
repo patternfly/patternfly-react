@@ -66,19 +66,20 @@ export const NavHorizontal: React.FunctionComponent = () => {
   const PageNav = (
     <Nav onSelect={onNavSelect} aria-label="Nav" variant="horizontal">
       <NavList>
-        <NavItem itemId={0} isActive={activeItem === 0} to="#">
+        {/* Preventing default click behavior on each NavItem for demo purposes only */}
+        <NavItem preventDefault itemId={0} isActive={activeItem === 0} to="#">
           System Panel
         </NavItem>
-        <NavItem itemId={1} isActive={activeItem === 1} to="#">
+        <NavItem preventDefault itemId={1} isActive={activeItem === 1} to="#">
           Policy
         </NavItem>
-        <NavItem itemId={2} isActive={activeItem === 2} to="#">
+        <NavItem preventDefault itemId={2} isActive={activeItem === 2} to="#">
           Authentication
         </NavItem>
-        <NavItem itemId={3} isActive={activeItem === 3} to="#">
+        <NavItem preventDefault itemId={3} isActive={activeItem === 3} to="#">
           Network Services
         </NavItem>
-        <NavItem itemId={4} isActive={activeItem === 4} to="#">
+        <NavItem preventDefault itemId={4} isActive={activeItem === 4} to="#">
           Server
         </NavItem>
       </NavList>

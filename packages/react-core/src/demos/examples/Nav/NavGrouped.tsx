@@ -29,33 +29,34 @@ export const NavGrouped: React.FunctionComponent = () => {
   const PageNav = (
     <Nav onSelect={onNavSelect} aria-label="Nav">
       <NavGroup title="System Panel">
-        <NavItem itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'} to="#">
+        {/* Preventing default click behavior on each NavItem for demo purposes only */}
+        <NavItem preventDefault itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'} to="#">
           Overview
         </NavItem>
-        <NavItem itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'} to="#">
+        <NavItem preventDefault itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'} to="#">
           Resource Usage
         </NavItem>
-        <NavItem itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'} to="#">
+        <NavItem preventDefault itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'} to="#">
           Hypervisors
         </NavItem>
-        <NavItem itemId="grp-1_itm-4" isActive={activeItem === 'grp-1_itm-4'} to="#">
+        <NavItem preventDefault itemId="grp-1_itm-4" isActive={activeItem === 'grp-1_itm-4'} to="#">
           Instances
         </NavItem>
-        <NavItem itemId="grp-1_itm-5" isActive={activeItem === 'grp-1_itm-5'} to="#">
+        <NavItem preventDefault itemId="grp-1_itm-5" isActive={activeItem === 'grp-1_itm-5'} to="#">
           Volumes
         </NavItem>
-        <NavItem itemId="grp-1_itm-6" isActive={activeItem === 'grp-1_itm-6'} to="#">
+        <NavItem preventDefault itemId="grp-1_itm-6" isActive={activeItem === 'grp-1_itm-6'} to="#">
           Network
         </NavItem>
       </NavGroup>
       <NavGroup title="Policy">
-        <NavItem itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'} to="#">
+        <NavItem preventDefault itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'} to="#">
           Hosts
         </NavItem>
-        <NavItem itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'} to="#">
+        <NavItem preventDefault itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'} to="#">
           Virtual Machines
         </NavItem>
-        <NavItem itemId="grp-2_itm-3" isActive={activeItem === 'grp-2_itm-3'} to="#">
+        <NavItem preventDefault itemId="grp-2_itm-3" isActive={activeItem === 'grp-2_itm-3'} to="#">
           Storage
         </NavItem>
       </NavGroup>

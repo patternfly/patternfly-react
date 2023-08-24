@@ -61,6 +61,7 @@ export const NavFlyout: React.FunctionComponent = () => {
       <PageSidebarBody>
         <Nav onSelect={onNavSelect}>
           <NavList>
+            {/* Preventing default click behavior on each NavItem for demo purposes only */}
             <NavItem preventDefault id="flyout-link1" to="#flyout-link1" itemId={0} isActive={activeItem === 0}>
               System Panel
             </NavItem>
