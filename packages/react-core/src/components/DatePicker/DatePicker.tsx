@@ -50,8 +50,6 @@ export interface DatePickerProps
   isDisabled?: boolean;
   /** Error message to display when the text input contains a non-empty value in an invalid format. */
   invalidFormatText?: string;
-  /** Error message to display when the text input is empty and the isRequired prop is also passed in. */
-  emptyDateText?: string;
   /** Callback called every time the text input loses focus. */
   onBlur?: (event: any, value: string, date?: Date) => void;
   /** Callback called every time the text input value changes. */
