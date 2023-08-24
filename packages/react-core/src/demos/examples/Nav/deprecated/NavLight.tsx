@@ -18,7 +18,7 @@ import {
 } from '@patternfly/react-core';
 import DashboardHeader from '../../DashboardHeader';
 
-export const PageLayoutLightNav: React.FunctionComponent = () => {
+export const NavLight: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState<string | number>(0);
 
   const onNavSelect = (

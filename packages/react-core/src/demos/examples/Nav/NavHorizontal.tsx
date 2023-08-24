@@ -41,7 +41,7 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
-export const PageLayoutHorizontalNav: React.FunctionComponent = () => {
+export const NavHorizontal: React.FunctionComponent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);

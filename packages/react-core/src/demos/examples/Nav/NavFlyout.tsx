@@ -15,7 +15,7 @@ import {
 } from '@patternfly/react-core';
 import DashboardHeader from '../DashboardHeader';
 
-export const VerticalPage: React.FunctionComponent = () => {
+export const NavFlyout: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState<number | string>(0);
 
   const onNavSelect = (

@@ -17,7 +17,7 @@ import {
 import { DashboardBreadcrumb } from '../../DashboardWrapper';
 import DashboardHeader from '../../DashboardHeader';
 
-export const PageLayoutTertiaryNav: React.FunctionComponent = () => {
+export const NavTertiary: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState<string | number>(0);
 
   const onNavSelect = (

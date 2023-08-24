@@ -20,7 +20,7 @@ import {
 import { DashboardBreadcrumb } from '../DashboardWrapper';
 import DashboardHeader from '../DashboardHeader';
 
-export const VerticalNavWithSubnav: React.FunctionComponent = () => {
+export const NavWithSubnav: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState<string | number>(0);
   const [activeSubNavItem, setActiveSubNavItem] = React.useState<string | number>(7);
 

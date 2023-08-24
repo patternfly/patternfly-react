@@ -20,7 +20,7 @@ import {
 import { DashboardBreadcrumb } from '../DashboardWrapper';
 import DashboardHeader from '../DashboardHeader';
 
-export const PageLayoutExpandableNav: React.FunctionComponent = () => {
+export const NavExpandableDemo: React.FunctionComponent = () => {
   const [activeGroup, setActiveGroup] = React.useState<string | number>('grp-1');
   const [activeItem, setActiveItem] = React.useState<string | number>('grp-1_itm-1');
 
