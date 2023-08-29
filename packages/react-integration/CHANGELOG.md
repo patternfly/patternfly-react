@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.1...@patternfly/react-integration@5.1.1-prerelease.2) (2023-08-29)
+
+### Bug Fixes
+
+- turn on dry run to test removing --no-private [skip-a11y] ([#9549](https://github.com/patternfly/patternfly-react/issues/9549)) ([bf35bf9](https://github.com/patternfly/patternfly-react/commit/bf35bf94244e4f02d1186fb54cc52645f2040a73))
+
 ## 5.1.1-prerelease.1 (2023-08-29)
 
 ### Bug Fixes
