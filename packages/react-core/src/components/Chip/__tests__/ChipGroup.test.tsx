@@ -13,7 +13,7 @@ test('chip group default', () => {
     </ChipGroup>
   );
 
-  expect(screen.getByRole('group')).toHaveClass('');
+  expect(screen.getByRole('group')).toHaveClass('pf-v5-c-chip-group');
 });
 
 test('chip group with category', () => {
