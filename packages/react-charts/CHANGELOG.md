@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 7.1.1-prerelease.1 (2023-08-29)
+
+### Bug Fixes
+
+- **Charts, Table:** Fixed lit erros in chasrt and table ([#9507](https://github.com/patternfly/patternfly-react/issues/9507)) ([f68e4ba](https://github.com/patternfly/patternfly-react/commit/f68e4ba2ca557be928940a7297819b9b9037c41d))
+- **ChartScatter:** consider bubbleProperty if it is set ([#9282](https://github.com/patternfly/patternfly-react/issues/9282)) ([6020af4](https://github.com/patternfly/patternfly-react/commit/6020af4a90dfecff42d4de9ee71650fb9db4c45a)), closes [/github.com/FormidableLabs/victory/blob/bbc1e2a39448d7fb6724f916afacf5f6eab7d1b3/packages/victory-scatter/src/helper-methods.tsx#L35-L43](https://github.com//github.com/FormidableLabs/victory/blob/bbc1e2a39448d7fb6724f916afacf5f6eab7d1b3/packages/victory-scatter/src/helper-methods.tsx/issues/L35-L43)
+
+# 5.0.0 (2023-07-27)
+
 # [7.1.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0...@patternfly/react-charts@7.1.0-prerelease.0) (2023-07-27)
 
 **Note:** Version bump only for package @patternfly/react-charts

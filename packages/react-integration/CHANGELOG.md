@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.1-prerelease.1 (2023-08-29)
+
+### Bug Fixes
+
+- bump lerna version ([#9523](https://github.com/patternfly/patternfly-react/issues/9523)) ([386c2b3](https://github.com/patternfly/patternfly-react/commit/386c2b38c7d05529329f13c604d72082cf51fcf1))
+- **Chip:** Added prop to render a badge in the chip after the text ([#9493](https://github.com/patternfly/patternfly-react/issues/9493)) ([ee6d853](https://github.com/patternfly/patternfly-react/commit/ee6d853b5f92d0a2114d7b73a76cdc1a5dd3a96d))
+- **DatePicker:** error not showing on date reset by button ([#9267](https://github.com/patternfly/patternfly-react/issues/9267)) ([4fccdaf](https://github.com/patternfly/patternfly-react/commit/4fccdaf8d260ef60165837e7d493febabf53e145)), closes [#9373](https://github.com/patternfly/patternfly-react/issues/9373)
+
+### Features
+
+- **Modal:** added ability to customize initial focus ([#9453](https://github.com/patternfly/patternfly-react/issues/9453)) ([4f4c1d0](https://github.com/patternfly/patternfly-react/commit/4f4c1d0aacb1c16012e66d78345a4486081566d1))
+- **Modal:** use css vars to set width, add maxWidth ([#9300](https://github.com/patternfly/patternfly-react/issues/9300)) ([fed8205](https://github.com/patternfly/patternfly-react/commit/fed820515c57ceed60975bd52118c23c8a1382c8))
+
+# 5.0.0 (2023-07-27)
+
 # 5.0.0-prerelease.3 (2023-07-12)
 
 **Note:** Version bump only for package @patternfly/react-integration
