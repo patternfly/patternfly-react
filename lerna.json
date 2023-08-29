@@ -25,15 +25,6 @@
   },
   "version": "independent",
   "allowBranch": ["main", "v5"],
-  "packages": [
-    "packages/eslint-plugin-patternfly-react", 
-    "packages/react-charts", 
-    "packages/react-code-editor", 
-    "packages/react-core", 
-    "packages/react-docs", 
-    "packages/react-icons", 
-    "packages/react-styles", 
-    "packages/react-table", 
-    "packages/react-tokens"],
+  "packages": ["packages/*"],
   "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }
