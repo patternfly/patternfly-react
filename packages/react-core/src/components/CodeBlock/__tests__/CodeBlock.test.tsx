@@ -4,25 +4,18 @@ import { CodeBlock } from '../CodeBlock';
 import { CodeBlockAction } from '../CodeBlockAction';
 import { CodeBlockCode } from '../CodeBlockCode';
 
-test('CodeBlock renders without children', () => {
-  render(<CodeBlock data-testid="code-block" />);
-
-  expect(screen.getByTestId('code-block')).toBeVisible();
-});
-
-test('CodeBlock renders with children', () => {
+test('CodeBlock renders', () => {
     render(<CodeBlock>test text</CodeBlock>);
     expect(screen.getByText('test text')).toBeVisible();
   });
 
+test('CodeBlock content renders with class pf-v5-c-code-block__content by default', () => {
+  render(<CodeBlock>Test</CodeBlock>);
 
-test('Renders with class pf-v5-c-code-block by default', () => {
-  render(<CodeBlock data-testid="code-block">Test</CodeBlock>);
-
-  expect(screen.getByTestId('code-block')).toHaveClass('pf-v5-c-code-block');
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-code-block__content');
 });
 
-test('Renders with custom class', () => {
+test('CodeBlock renders with custom class', () => {
   render(<CodeBlock data-testid="code-block" className="tester">Test</CodeBlock>);
 
   expect(screen.getByTestId('code-block')).toHaveClass('tester');
