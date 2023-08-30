@@ -95,4 +95,12 @@ describe('Modal Test', () => {
     cy.get('#modal-custom-focus-confirm-button').should('have.focus');
     cy.get('#modal-custom-focus-cancel-button').click();
   });
+
+  it("Verify the same id doesn't appear multiple times", () => {
+    cy.get('#showDescriptionModalButton').click();
+
+    cy.get('body').find('div#test-modal-id').should('have.length', 1);
+
+    cy.get('.pf-v5-c-modal-box__close > .pf-v5-c-button.pf-m-plain').click();
+  });
 });
