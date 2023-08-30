@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.3...@patternfly/react-integration@5.1.1-prerelease.4) (2023-08-30)
+
+### Bug Fixes
+
+- add private=true to react-integration package.json [skip-a11y] ([196a21c](https://github.com/patternfly/patternfly-react/commit/196a21cd0c0160fbab42bf6c006ad3ed30c4117c))
+
 ## [5.1.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.2...@patternfly/react-integration@5.1.1-prerelease.3) (2023-08-30)
 
 ### Bug Fixes
