@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.2...@patternfly/react-integration@5.1.1-prerelease.3) (2023-08-30)
+
+### Bug Fixes
+
+- try and get react-integration bumping correctly [skip-a11y] ([#9554](https://github.com/patternfly/patternfly-react/issues/9554)) ([7124af5](https://github.com/patternfly/patternfly-react/commit/7124af580994aeab735de23966c6be0fb789683e))
+
 ## [5.1.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.1...@patternfly/react-integration@5.1.1-prerelease.2) (2023-08-29)
 
 ### Bug Fixes
