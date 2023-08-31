@@ -231,4 +231,17 @@ describe('numberInput', () => {
 
     expect(consoleSpy).not.toHaveBeenCalled();
   });
+
+  test('input is read only if onChange not passed ', () => {
+    render(<NumberInput inputAriaLabel="readonly input" value={5}/>);
+    const input = screen.getByLabelText('readonly input');
+    expect(input).toHaveAttribute('readOnly');
+  });
+
+  test('input is not read only if onChange passed ', () => {
+    const onChangeMock = jest.fn();
+    render(<NumberInput inputAriaLabel="not readonly input" value={5} onChange={onChangeMock}/>);
+    const input = screen.getByLabelText('not readonly input');
+    expect(input).not.toHaveAttribute('readOnly');
+  });
 });

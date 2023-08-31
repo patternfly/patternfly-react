@@ -16,7 +16,7 @@ export const WizardWithCustomNav: React.FunctionComponent = () => {
     goToStepByIndex: (index: number) => void
   ) => (
     <WizardNav isExpanded={isExpanded}>
-      {steps.map(step => (
+      {steps.map((step) => (
         <WizardNavItem
           key={step.id}
           id={step.id}

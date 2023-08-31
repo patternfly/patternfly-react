@@ -20,7 +20,7 @@ export interface TreeViewRootProps {
   hasSelectableNodes?: boolean;
 }
 
-export class TreeViewRoot extends React.Component<TreeViewRootProps> {
+class TreeViewRoot extends React.Component<TreeViewRootProps> {
   displayName = 'TreeViewRoot';
   private treeRef = React.createRef<HTMLDivElement>();
 
@@ -203,3 +203,5 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     );
   }
 }
+
+export { TreeViewRoot };

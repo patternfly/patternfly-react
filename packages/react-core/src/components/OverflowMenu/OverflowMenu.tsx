@@ -22,7 +22,7 @@ export interface OverflowMenuState extends React.HTMLProps<HTMLDivElement> {
   breakpointRef: HTMLElement;
 }
 
-export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMenuState> {
+class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMenuState> {
   static displayName = 'OverflowMenu';
   constructor(props: OverflowMenuProps) {
     super(props);
@@ -100,3 +100,5 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
 }
 
 OverflowMenu.contextType = OverflowMenuContext;
+
+export { OverflowMenu };

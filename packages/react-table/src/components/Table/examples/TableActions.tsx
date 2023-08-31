@@ -121,7 +121,7 @@ export const TableActions: React.FunctionComponent = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {repositories.map(repo => {
+          {repositories.map((repo) => {
             // Arbitrary logic to determine which rows get which actions in this example
             let rowActions: IAction[] | null = defaultActions(repo);
             if (repo.name === 'a') {

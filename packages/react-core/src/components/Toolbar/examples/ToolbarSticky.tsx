@@ -5,7 +5,7 @@ export const ToolbarSticky: React.FunctionComponent = () => {
   const [isSticky, setIsSticky] = React.useState(true);
   const [showEvenOnly, setShowEvenOnly] = React.useState(true);
   const array = Array.from(Array(30), (_, x) => x); // create array of numbers from 1-30 for demo purposes
-  const numbers = showEvenOnly ? array.filter(number => number % 2 === 0) : array;
+  const numbers = showEvenOnly ? array.filter((number) => number % 2 === 0) : array;
 
   return (
     <React.Fragment>
@@ -26,12 +26,17 @@ export const ToolbarSticky: React.FunctionComponent = () => {
           </ToolbarContent>
         </Toolbar>
         <ul>
-          {numbers.map(number => (
+          {numbers.map((number) => (
             <li key={number}>{`item ${number}`}</li>
           ))}
         </ul>
       </div>
-      <Checkbox label="Is toolbar sticky" isChecked={isSticky} onChange={(_event, checked) => setIsSticky(checked)} id="isStickyCheckbox" />
+      <Checkbox
+        label="Is toolbar sticky"
+        isChecked={isSticky}
+        onChange={(_event, checked) => setIsSticky(checked)}
+        id="isStickyCheckbox"
+      />
     </React.Fragment>
   );
 };

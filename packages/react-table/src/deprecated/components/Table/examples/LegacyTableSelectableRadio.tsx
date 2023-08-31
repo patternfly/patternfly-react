@@ -31,7 +31,7 @@ export const LegacyTableSelectableRadio: React.FunctionComponent = () => {
     'Workspaces',
     'Last commit'
   ];
-  const rows: TableProps['rows'] = repositories.map(repo => ({
+  const rows: TableProps['rows'] = repositories.map((repo) => ({
     cells: [repo.name, repo.branches, repo.prs, repo.workspaces, repo.lastCommit],
     selected: selectedRepoName === repo.name,
     disableSelection: !isRepoSelectable(repo)

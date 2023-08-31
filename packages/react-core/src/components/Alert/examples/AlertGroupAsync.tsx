@@ -20,7 +20,7 @@ export const AlertGroupAsync: React.FunctionComponent = () => {
   const getUniqueId = () => new Date().getTime();
 
   const addAlert = () => {
-    setAlerts(prevAlerts => [
+    setAlerts((prevAlerts) => [
       ...prevAlerts,
       {
         title: `Async notification ${prevAlerts.length + 1} was added to the queue.`,
@@ -31,7 +31,7 @@ export const AlertGroupAsync: React.FunctionComponent = () => {
   };
 
   const removeAlert = (key: React.Key) => {
-    setAlerts(prevAlerts => [...prevAlerts.filter(alert => alert.key !== key)]);
+    setAlerts((prevAlerts) => [...prevAlerts.filter((alert) => alert.key !== key)]);
   };
 
   const startAsyncAlerts = () => {

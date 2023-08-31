@@ -5,7 +5,7 @@ import {
   ApplicationLauncherItem,
   ApplicationLauncherContent
 } from '@patternfly/react-core/deprecated';
-import pfLogoSm from './pf-logo-small.svg';
+import pfLogoSm from '@patternfly/react-core/src/demos/assets/pf-logo-small.svg';
 /* eslint-disable camelcase */
 import c_app_launcher__menu_item_Color from '@patternfly/react-tokens/dist/esm/c_app_launcher__menu_item_Color';
 

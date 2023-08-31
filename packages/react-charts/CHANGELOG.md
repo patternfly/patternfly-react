@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 7.1.1-prerelease.1 (2023-08-29)
+
+### Bug Fixes
+
+- **Charts, Table:** Fixed lit erros in chasrt and table ([#9507](https://github.com/patternfly/patternfly-react/issues/9507)) ([f68e4ba](https://github.com/patternfly/patternfly-react/commit/f68e4ba2ca557be928940a7297819b9b9037c41d))
+- **ChartScatter:** consider bubbleProperty if it is set ([#9282](https://github.com/patternfly/patternfly-react/issues/9282)) ([6020af4](https://github.com/patternfly/patternfly-react/commit/6020af4a90dfecff42d4de9ee71650fb9db4c45a)), closes [/github.com/FormidableLabs/victory/blob/bbc1e2a39448d7fb6724f916afacf5f6eab7d1b3/packages/victory-scatter/src/helper-methods.tsx#L35-L43](https://github.com//github.com/FormidableLabs/victory/blob/bbc1e2a39448d7fb6724f916afacf5f6eab7d1b3/packages/victory-scatter/src/helper-methods.tsx/issues/L35-L43)
+
+# 5.0.0 (2023-07-27)
+
+# [7.1.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0...@patternfly/react-charts@7.1.0-prerelease.0) (2023-07-27)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.0.0 (2023-07-27)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.0.0-prerelease.12 (2023-07-20)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [7.0.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0-prerelease.10...@patternfly/react-charts@7.0.0-prerelease.11) (2023-07-14)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.0.0-prerelease.10 (2023-07-13)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.0.0-prerelease.9 (2023-07-06)
+
+### Bug Fixes
+
+- **charts:** export getThemeColors ([#9338](https://github.com/patternfly/patternfly-react/issues/9338)) ([4d1f72d](https://github.com/patternfly/patternfly-react/commit/4d1f72d7668b75b3381953f615af075daf40b420))
+
+# 7.0.0-prerelease.8 (2023-07-06)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [7.0.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0-prerelease.6...@patternfly/react-charts@7.0.0-prerelease.7) (2023-06-30)
+
+### Bug Fixes
+
+- **charts:** Update chart legend tooltip spacing ([#9323](https://github.com/patternfly/patternfly-react/issues/9323)) ([77e260c](https://github.com/patternfly/patternfly-react/commit/77e260c8d51b0765dea1dadbcef691bd7a51ef20))
+
+# 7.0.0-prerelease.6 (2023-06-21)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
 # [7.0.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.0.0-prerelease.4...@patternfly/react-charts@7.0.0-prerelease.5) (2023-06-15)
 
 ### Features

@@ -8,13 +8,13 @@ export const CardWithModifiers: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <div style={{ marginBottom: '12px' }}>
-        {mods.map(mod => (
+        {mods.map((mod) => (
           <Checkbox
             id={mod}
             key={mod}
             label={mod}
             isChecked={modifiers[mod]}
-            onChange={(_event, checked) =>  {
+            onChange={(_event, checked) => {
               modifiers[mod] = checked;
               setModifiers({ ...modifiers });
             }}

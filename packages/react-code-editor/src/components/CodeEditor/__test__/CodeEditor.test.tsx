@@ -4,7 +4,7 @@ import { CodeEditor, Language } from '../CodeEditor';
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: jest.fn().mockImplementation(query => ({
+  value: jest.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,
@@ -12,13 +12,13 @@ Object.defineProperty(window, 'matchMedia', {
     removeListener: jest.fn(), // Deprecated
     addEventListener: jest.fn(),
     removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
+    dispatchEvent: jest.fn()
+  }))
 });
 
 describe('CodeEditor', () => {
   beforeAll(() => {
-    window.HTMLCanvasElement.prototype.getContext = () => ({} as any);
+    window.HTMLCanvasElement.prototype.getContext = () => ({}) as any;
   });
 
   test('matches snapshot without props', () => {

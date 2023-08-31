@@ -36,6 +36,10 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   value?: string | number;
   /** A callback for when the text area value changes. */
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => void;
+  /** Callback function when text area is focused */
+  onFocus?: (event?: React.FocusEvent<HTMLTextAreaElement>) => void;
+  /** Callback function when text area is blurred (focus leaves) */
+  onBlur?: (event?: React.FocusEvent<HTMLTextAreaElement>) => void;
   /** Sets the orientation to limit the resize to */
   resizeOrientation?: 'horizontal' | 'vertical' | 'both';
   /** Custom flag to show that the text area requires an associated id or aria-label. */
@@ -44,7 +48,7 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   innerRef?: React.RefObject<any>;
 }
 
-export class TextAreaBase extends React.Component<TextAreaProps> {
+class TextAreaBase extends React.Component<TextAreaProps> {
   static displayName = 'TextArea';
   static defaultProps: TextAreaProps = {
     innerRef: React.createRef<HTMLTextAreaElement>(),
@@ -114,6 +118,8 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
       autoResize,
       onChange,
       /* eslint-enable @typescript-eslint/no-unused-vars */
+      onBlur,
+      onFocus,
       ...props
     } = this.props;
     const orientation = `resize${capitalize(resizeOrientation)}` as
@@ -123,7 +129,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
 
     return (
-      <div
+      <span
         className={css(
           styles.formControl,
           readOnlyVariant && styles.modifiers.readonly,
@@ -136,6 +142,8 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
       >
         <textarea
           onChange={this.handleChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
           {...(typeof this.props.defaultValue !== 'string' && { value })}
           aria-invalid={validated === ValidatedOptions.error}
           required={isRequired}
@@ -145,11 +153,11 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
           {...props}
         />
         {hasStatusIcon && (
-          <div className={css(styles.formControlUtilities)}>
+          <span className={css(styles.formControlUtilities)}>
             <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />
-          </div>
+          </span>
         )}
-      </div>
+      </span>
     );
   }
 }

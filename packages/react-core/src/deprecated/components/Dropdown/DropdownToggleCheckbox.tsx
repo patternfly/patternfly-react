@@ -38,7 +38,7 @@ export interface DropdownToggleCheckboxProps
   ouiaSafe?: boolean;
 }
 
-export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckboxProps, { ouiaStateId: string }> {
+class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckboxProps, { ouiaStateId: string }> {
   static displayName = 'DropdownToggleCheckbox';
   static defaultProps: PickOptional<DropdownToggleCheckboxProps> = {
     className: '',
@@ -127,3 +127,4 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
     );
   }
 }
+export { DropdownToggleCheckbox };

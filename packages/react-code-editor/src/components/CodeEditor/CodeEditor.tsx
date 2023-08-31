@@ -231,7 +231,7 @@ interface CodeEditorState {
   copied: boolean;
 }
 
-export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
+class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
   static displayName = 'CodeEditor';
   private editor: editor.IStandaloneCodeEditor | null = null;
   private wrapperRef = React.createRef<HTMLDivElement>();
@@ -646,7 +646,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               {isUploadEnabled || providedEmptyState ? (
                 <div
                   {...getRootProps({
-                    onClick: (event) => event.preventDefault() // Prevents clicking TextArea from opening file dialog
+                    onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
                   })}
                   className={`${fileUploadStyles.fileUpload} ${isDragActive && fileUploadStyles.modifiers.dragHover} ${
                     isLoading && fileUploadStyles.modifiers.loading
@@ -671,3 +671,5 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     );
   }
 }
+
+export { CodeEditor };

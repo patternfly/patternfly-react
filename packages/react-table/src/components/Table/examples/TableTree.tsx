@@ -93,7 +93,7 @@ export const TableTree: React.FunctionComponent = () => {
       return [node];
     } else {
       let children: RepositoriesTreeNode[] = [];
-      node.children.forEach(child => {
+      node.children.forEach((child) => {
         children = [...children, ...getDescendants(child)];
       });
       return children;
@@ -101,9 +101,9 @@ export const TableTree: React.FunctionComponent = () => {
   };
 
   const areAllDescendantsSelected = (node: RepositoriesTreeNode) =>
-    getDescendants(node).every(n => selectedNodeNames.includes(n.name));
+    getDescendants(node).every((n) => selectedNodeNames.includes(n.name));
   const areSomeDescendantsSelected = (node: RepositoriesTreeNode) =>
-    getDescendants(node).some(n => selectedNodeNames.includes(n.name));
+    getDescendants(node).some((n) => selectedNodeNames.includes(n.name));
 
   const isNodeChecked = (node: RepositoriesTreeNode) => {
     if (areAllDescendantsSelected(node)) {
@@ -144,19 +144,19 @@ export const TableTree: React.FunctionComponent = () => {
 
     const treeRow: TdProps['treeRow'] = {
       onCollapse: () =>
-        setExpandedNodeNames(prevExpanded => {
-          const otherExpandedNodeNames = prevExpanded.filter(name => name !== node.name);
+        setExpandedNodeNames((prevExpanded) => {
+          const otherExpandedNodeNames = prevExpanded.filter((name) => name !== node.name);
           return isExpanded ? otherExpandedNodeNames : [...otherExpandedNodeNames, node.name];
         }),
       onToggleRowDetails: () =>
-        setExpandedDetailsNodeNames(prevDetailsExpanded => {
-          const otherDetailsExpandedNodeNames = prevDetailsExpanded.filter(name => name !== node.name);
+        setExpandedDetailsNodeNames((prevDetailsExpanded) => {
+          const otherDetailsExpandedNodeNames = prevDetailsExpanded.filter((name) => name !== node.name);
           return isDetailsExpanded ? otherDetailsExpandedNodeNames : [...otherDetailsExpandedNodeNames, node.name];
         }),
       onCheckChange: (_event, isChecking) => {
-        const nodeNamesToCheck = getDescendants(node).map(n => n.name);
-        setSelectedNodeNames(prevSelected => {
-          const otherSelectedNodeNames = prevSelected.filter(name => !nodeNamesToCheck.includes(name));
+        const nodeNamesToCheck = getDescendants(node).map((n) => n.name);
+        setSelectedNodeNames((prevSelected) => {
+          const otherSelectedNodeNames = prevSelected.filter((name) => !nodeNamesToCheck.includes(name));
           return !isChecking ? otherSelectedNodeNames : [...otherSelectedNodeNames, ...nodeNamesToCheck];
         });
       },

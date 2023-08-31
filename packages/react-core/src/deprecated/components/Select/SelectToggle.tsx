@@ -104,7 +104,7 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click', this.onDocClick);
+    document.removeEventListener('click', this.onDocClick, { capture: true });
     document.removeEventListener('touchstart', this.onDocClick);
     document.removeEventListener('keydown', this.handleGlobalKeys);
   }
@@ -124,17 +124,8 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
   };
 
   handleGlobalKeys = (event: KeyboardEvent) => {
-    const {
-      parentRef,
-      menuRef,
-      hasFooter,
-      footerRef,
-      isOpen,
-      variant,
-      onToggle,
-      onClose,
-      moveFocusToLastMenuItem
-    } = this.props;
+    const { parentRef, menuRef, hasFooter, footerRef, isOpen, variant, onToggle, onClose, moveFocusToLastMenuItem } =
+      this.props;
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
@@ -307,7 +298,7 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
             aria-label={ariaLabel}
             onBlur={onBlur}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            onClick={event => {
+            onClick={(event) => {
               onToggle(event, !isOpen);
               if (isOpen) {
                 onClose();
@@ -334,7 +325,7 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
             )}
             onBlur={onBlur}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            onClick={event => {
+            onClick={(event) => {
               if (!isDisabled) {
                 onToggle(event, !isOpen);
                 if (isOpen) {
@@ -350,7 +341,7 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
               type={type}
               className={css(buttonStyles.button, styles.selectToggleButton, styles.modifiers.plain)}
               aria-label={ariaLabel}
-              onClick={event => {
+              onClick={(event) => {
                 onToggle(event, !isOpen);
                 if (isOpen) {
                   onClose();

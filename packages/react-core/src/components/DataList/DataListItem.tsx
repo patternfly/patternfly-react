@@ -24,7 +24,7 @@ export interface DataListItemChildProps {
   rowid: string;
 }
 
-export class DataListItem extends React.Component<DataListItemProps> {
+class DataListItem extends React.Component<DataListItemProps> {
   static displayName = 'DataListItem';
   static defaultProps: DataListItemProps = {
     isExpanded: false,
@@ -116,3 +116,5 @@ export class DataListItem extends React.Component<DataListItemProps> {
     );
   }
 }
+
+export { DataListItem };

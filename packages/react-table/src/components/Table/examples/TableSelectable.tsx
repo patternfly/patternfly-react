@@ -35,12 +35,12 @@ export const TableSelectable: React.FunctionComponent = () => {
   // This is to prevent state from being based on row order index in case we later add sorting.
   const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
   const setRepoSelected = (repo: Repository, isSelecting = true) =>
-    setSelectedRepoNames(prevSelected => {
-      const otherSelectedRepoNames = prevSelected.filter(r => r !== repo.name);
+    setSelectedRepoNames((prevSelected) => {
+      const otherSelectedRepoNames = prevSelected.filter((r) => r !== repo.name);
       return isSelecting && isRepoSelectable(repo) ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
     });
   const selectAllRepos = (isSelecting = true) =>
-    setSelectedRepoNames(isSelecting ? selectableRepos.map(r => r.name) : []);
+    setSelectedRepoNames(isSelecting ? selectableRepos.map((r) => r.name) : []);
   const areAllReposSelected = selectedRepoNames.length === selectableRepos.length;
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
@@ -56,7 +56,7 @@ export const TableSelectable: React.FunctionComponent = () => {
         numberSelected > 0
           ? Array.from(new Array(numberSelected + 1), (_x, i) => i + recentSelectedRowIndex)
           : Array.from(new Array(Math.abs(numberSelected) + 1), (_x, i) => i + rowIndex);
-      intermediateIndexes.forEach(index => setRepoSelected(repositories[index], isSelecting));
+      intermediateIndexes.forEach((index) => setRepoSelected(repositories[index], isSelecting));
     } else {
       setRepoSelected(repo, isSelecting);
     }

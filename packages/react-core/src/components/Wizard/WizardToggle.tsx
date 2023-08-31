@@ -42,8 +42,8 @@ export const WizardToggle = ({
   'aria-label': ariaLabel = 'Wizard toggle'
 }: WizardToggleProps) => {
   const isActiveSubStep = isWizardSubStep(activeStep);
-  const parentStep = isActiveSubStep && steps.find(step => step.id === activeStep.parentId);
-  const nonSubSteps = steps.filter(step => !isWizardSubStep(step));
+  const parentStep = isActiveSubStep && steps.find((step) => step.id === activeStep.parentId);
+  const nonSubSteps = steps.filter((step) => !isWizardSubStep(step));
   const wizardToggleIndex = nonSubSteps.indexOf(parentStep || activeStep) + 1;
 
   const handleKeyClicks = React.useCallback(
@@ -65,7 +65,7 @@ export const WizardToggle = ({
     };
   }, [handleKeyClicks]);
 
-  const bodyContent = steps.map(step => {
+  const bodyContent = steps.map((step) => {
     const props: WizardStepProps = step.component?.props || {};
     const { children, body, ...propsWithoutChildren } = props;
 

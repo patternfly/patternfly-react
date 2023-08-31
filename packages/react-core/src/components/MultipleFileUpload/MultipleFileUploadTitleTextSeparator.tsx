@@ -9,11 +9,9 @@ export interface MultipleFileUploadTitleTextSeparatorProps extends React.HTMLPro
   className?: string;
 }
 
-export const MultipleFileUploadTitleTextSeparator: React.FunctionComponent<MultipleFileUploadTitleTextSeparatorProps> = ({
-  className,
-  children,
-  ...props
-}: MultipleFileUploadTitleTextSeparatorProps) => (
+export const MultipleFileUploadTitleTextSeparator: React.FunctionComponent<
+  MultipleFileUploadTitleTextSeparatorProps
+> = ({ className, children, ...props }: MultipleFileUploadTitleTextSeparatorProps) => (
   <div className={css(styles.multipleFileUploadTitleTextSeparator, className)} {...props}>
     {children}
   </div>

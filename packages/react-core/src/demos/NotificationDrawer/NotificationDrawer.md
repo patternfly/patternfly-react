@@ -9,9 +9,9 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 ## Demos
 
@@ -80,9 +80,9 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 class BasicNotificationDrawer extends React.Component {
   constructor(props) {
@@ -335,7 +335,7 @@ class BasicNotificationDrawer extends React.Component {
         </MastheadToggle>
         <MastheadMain>
           <MastheadBrand>
-            <Brand src={imgBrand} alt="Patternfly logo" />
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
           </MastheadBrand>
         </MastheadMain>
         <MastheadContent>{headerToolbar}</MastheadContent>
@@ -686,8 +686,8 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 class GroupedNotificationDrawer extends React.Component {
   constructor(props) {
@@ -993,7 +993,7 @@ class GroupedNotificationDrawer extends React.Component {
         </MastheadToggle>
         <MastheadMain>
           <MastheadBrand>
-            <Brand src={imgBrand} alt="Patternfly logo" />
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
           </MastheadBrand>
         </MastheadMain>
         <MastheadContent>{headerToolbar}</MastheadContent>

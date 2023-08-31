@@ -64,7 +64,7 @@ export interface NavContextProps {
 export const navContextDefaults = {};
 export const NavContext = React.createContext<NavContextProps>(navContextDefaults);
 
-export class Nav extends React.Component<
+class Nav extends React.Component<
   NavProps,
   { isScrollable: boolean; ouiaStateId: string; flyoutRef: React.Ref<HTMLLIElement> | null }
 > {
@@ -175,3 +175,5 @@ export class Nav extends React.Component<
     );
   }
 }
+
+export { Nav };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
-import brandImg from './brandImg.svg';
+import brandImg from '../../assets/brandImg.svg';
 
 export const AboutModalWithoutProductName: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -20,7 +20,7 @@ export const AboutModalWithoutProductName: React.FunctionComponent = () => {
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"
-        backgroundImageSrc='/assets/images/pfbg-icon.svg'
+        backgroundImageSrc="/assets/images/pfbg-icon.svg"
         aria-label="No product name about modal"
       >
         <TextContent>

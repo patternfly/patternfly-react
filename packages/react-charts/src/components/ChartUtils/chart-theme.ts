@@ -36,9 +36,9 @@ export const getTheme = (themeColor: string): ChartThemeDefinition => {
 
 /**
  * Returns theme colors
- * @private use getTheme
+ * @public
  */
-const getThemeColors = (themeColor: string) => {
+export const getThemeColors = (themeColor: string) => {
   switch (themeColor) {
     case ChartThemeColor.blue:
       return BlueColorTheme;

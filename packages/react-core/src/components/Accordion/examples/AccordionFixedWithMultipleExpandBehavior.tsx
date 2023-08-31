@@ -4,7 +4,7 @@ import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@pa
 export const AccordionFixedWithMultipleExpandBehavior: React.FunctionComponent = () => {
   const [expanded, setExpanded] = React.useState(['ex2-toggle4']);
 
-  const toggle = id => {
+  const toggle = (id) => {
     const index = expanded.indexOf(id);
     const newExpanded: string[] =
       index >= 0 ? [...expanded.slice(0, index), ...expanded.slice(index + 1, expanded.length)] : [...expanded, id];

@@ -26,10 +26,7 @@ export const makeTimeOptions = (
       }
     }
     hour = hour12 ? hour.toString() : hour.toString().padStart(2, '0');
-    const minutes = iter
-      .getMinutes()
-      .toString()
-      .padStart(2, '0');
+    const minutes = iter.getMinutes().toString().padStart(2, '0');
     const timeOption = `${hour}${delimiter}${minutes}${hour12 ? suffix : ''}`;
     // time option is valid if within min/max constraints
     if (isWithinMinMax(minTime, maxTime, timeOption, delimiter, includeSeconds)) {

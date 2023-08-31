@@ -74,7 +74,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   isGrouped?: boolean;
 }
 
-export class SelectOption extends React.Component<SelectOptionProps> {
+class SelectOption extends React.Component<SelectOptionProps> {
   static displayName = 'SelectOption';
   private ref = React.createRef<any>();
   private liRef = React.createRef<any>();
@@ -208,7 +208,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
         onClick={() => {
           onFavorite(generatedId.replace('favorite-', ''), isFavorite);
         }}
-        onKeyDown={event => {
+        onKeyDown={(event) => {
           this.onKeyDown(event, 1, () => onFavorite(generatedId.replace('favorite-', ''), isFavorite));
         }}
         ref={this.favoriteRef}
@@ -408,7 +408,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
               id={inputId || `${inputIdPrefix}-${value.toString()}`}
               className={css(checkStyles.checkInput)}
               type="checkbox"
-              onChange={event => {
+              onChange={(event) => {
                 if (!isDisabled) {
                   onClick(event);
                   onSelect(event, value);
@@ -459,3 +459,5 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     );
   }
 }
+
+export { SelectOption };

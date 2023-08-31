@@ -8,7 +8,7 @@ export const MenuWithCheckbox: React.FunctionComponent = () => {
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number;
     if (selectedItems.includes(item)) {
-      setSelectedItems(selectedItems.filter(id => id !== item));
+      setSelectedItems(selectedItems.filter((id) => id !== item));
     } else {
       setSelectedItems([...selectedItems, item]);
     }

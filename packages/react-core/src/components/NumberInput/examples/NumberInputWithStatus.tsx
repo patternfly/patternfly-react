@@ -26,7 +26,7 @@ export const NumberInputWithStatus: React.FunctionComponent = () => {
     validate(value);
   };
 
-  const validate = newVal => {
+  const validate = (newVal) => {
     const diff = Math.abs(5 - newVal);
     if (diff > 3) {
       setValidated(ValidatedOptions.error);

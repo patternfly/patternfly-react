@@ -37,6 +37,10 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   description?: React.ReactNode;
   /** Flag to disable focus trap. */
   disableFocusTrap?: boolean;
+  /** The element to focus when the modal opens. By default the first
+   * focusable element will receive focus.
+   */
+  elementToFocus?: HTMLElement | SVGElement | string;
   /** Custom footer. */
   footer?: React.ReactNode;
   /** Flag indicating if modal content should be placed in a modal box body wrapper. */
@@ -72,6 +76,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   variant?: 'small' | 'medium' | 'large' | 'default';
   /** Default width of the modal. */
   width?: number | string;
+  /** Maximum width of the modal. */
+  maxWidth?: number | string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -90,7 +96,7 @@ interface ModalState {
   ouiaStateId: string;
 }
 
-export class Modal extends React.Component<ModalProps, ModalState> {
+class Modal extends React.Component<ModalProps, ModalState> {
   static displayName = 'Modal';
   static currentId = 0;
   boxId = '';
@@ -213,6 +219,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     }
     target.removeEventListener('keydown', this.handleEscKeyClick, false);
     target.classList.remove(css(styles.backdropOpen));
+    this.toggleSiblingsFromScreenReaders(false);
   }
 
   render() {
@@ -232,6 +239,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       ouiaId,
       ouiaSafe,
       position,
+      elementToFocus,
       ...props
     } = this.props;
     const { container } = this.state;
@@ -257,8 +265,11 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         ouiaId={ouiaId !== undefined ? ouiaId : this.state.ouiaStateId}
         ouiaSafe={ouiaSafe}
         position={position}
+        elementToFocus={elementToFocus}
       />,
       container
     ) as React.ReactElement;
   }
 }
+
+export { Modal };

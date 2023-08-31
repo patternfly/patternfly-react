@@ -99,13 +99,7 @@ const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
   }
 
   return {
-    property:
-      (typeof title === 'string' &&
-        title
-          .toLowerCase()
-          .trim()
-          .replace(/\s/g, '-')) ||
-      `column-${key}`,
+    property: (typeof title === 'string' && title.toLowerCase().trim().replace(/\s/g, '-')) || `column-${key}`,
     extraParams: extra,
     data: column.data,
     header: generateHeader(column, title),

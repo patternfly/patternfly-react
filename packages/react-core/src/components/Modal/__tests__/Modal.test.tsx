@@ -19,6 +19,26 @@ const props = {
   children: 'modal content'
 };
 
+const target = document.createElement('div');
+
+const ModalWithSiblings = () => {
+  const [isOpen, setIsOpen] = React.useState(true);
+  const [isModalMounted, setIsModalMounted] = React.useState(true);
+  const modalProps = { ...props, isOpen, appendTo: target, onClose: () => setIsOpen(false) };
+
+  return (
+    <>
+      <aside>Aside sibling</aside>
+      <article>Section sibling</article>
+      {isModalMounted && (
+        <Modal {...modalProps}>
+          <button onClick={() => setIsModalMounted(false)}>Unmount Modal</button>
+        </Modal>
+      )}
+    </>
+  );
+};
+
 describe('Modal', () => {
   test('Modal creates a container element once for div', () => {
     render(<Modal {...props} />);
@@ -27,7 +47,7 @@ describe('Modal', () => {
 
   test('modal closes with escape', async () => {
     const user = userEvent.setup();
-    
+
     render(<Modal {...props} isOpen appendTo={document.body} />);
 
     await user.type(screen.getByText(props.title), `{${KeyTypes.Escape}}`);
@@ -89,6 +109,51 @@ describe('Modal', () => {
     expect(consoleErrorMock).toHaveBeenCalled();
   });
 
+  test('modal adds aria-hidden attribute to its siblings when open', () => {
+    render(<ModalWithSiblings />, { container: document.body.appendChild(target) });
+
+    const asideSibling = screen.getByRole('complementary', { hidden: true });
+    const articleSibling = screen.getByRole('article', { hidden: true });
+
+    expect(asideSibling).toHaveAttribute('aria-hidden');
+    expect(articleSibling).toHaveAttribute('aria-hidden');
+  });
+
+  test('modal removes the aria-hidden attribute from its siblings when closed', async () => {
+    const user = userEvent.setup();
+
+    render(<ModalWithSiblings />, { container: document.body.appendChild(target) });
+
+    const asideSibling = screen.getByRole('complementary', { hidden: true });
+    const articleSibling = screen.getByRole('article', { hidden: true });
+    const closeButton = screen.getByRole('button', { name: 'Close' });
+
+    expect(articleSibling).toHaveAttribute('aria-hidden');
+    expect(asideSibling).toHaveAttribute('aria-hidden');
+
+    await user.click(closeButton);
+
+    expect(articleSibling).not.toHaveAttribute('aria-hidden');
+    expect(asideSibling).not.toHaveAttribute('aria-hidden');
+  });
+
+  test('modal removes the aria-hidden attribute from its siblings when unmounted', async () => {
+    const user = userEvent.setup();
+
+    render(<ModalWithSiblings />, { container: document.body.appendChild(target) });
+
+    const asideSibling = screen.getByRole('complementary', { hidden: true });
+    const articleSibling = screen.getByRole('article', { hidden: true });
+    const unmountButton = screen.getByRole('button', { name: 'Unmount Modal' });
+
+    expect(asideSibling).toHaveAttribute('aria-hidden');
+    expect(articleSibling).toHaveAttribute('aria-hidden');
+
+    await user.click(unmountButton);
+
+    expect(asideSibling).not.toHaveAttribute('aria-hidden');
+    expect(articleSibling).not.toHaveAttribute('aria-hidden');
+  });
   test('The modalBoxBody has no aria-label when bodyAriaLabel is not passed', () => {
     const props = {
       isOpen: true

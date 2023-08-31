@@ -1666,19 +1666,22 @@ exports[`typeahead multi select renders closed successfully 1`] = `
       <div
         class="pf-v5-c-select__toggle-wrapper"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
             aria-invalid="false"
             aria-label=""
             autocomplete="off"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-6"
+            data-ouia-component-type="PF5/TextInput"
+            data-ouia-safe="true"
             id="typeahead-multi-select-closed-select-multi-typeahead-typeahead"
             placeholder=""
             type="text"
             value=""
           />
-        </div>
+        </span>
       </div>
       <button
         aria-expanded="false"
@@ -1723,19 +1726,22 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       <div
         class="pf-v5-c-select__toggle-wrapper"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
             aria-invalid="false"
             aria-label=""
             autocomplete="off"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-7"
+            data-ouia-component-type="PF5/TextInput"
+            data-ouia-safe="true"
             id="pf-select-toggle-id-19-select-multi-typeahead-typeahead"
             placeholder=""
             type="text"
             value=""
           />
-        </div>
+        </span>
       </div>
       <button
         aria-expanded="true"
@@ -1956,19 +1962,22 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             </ul>
           </div>
         </div>
-        <div
+        <span
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
             aria-invalid="false"
             aria-label=""
             autocomplete="off"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-8"
+            data-ouia-component-type="PF5/TextInput"
+            data-ouia-safe="true"
             id="typeahead-multi-select-selected-select-multi-typeahead-typeahead"
             placeholder=""
             type="text"
             value=""
           />
-        </div>
+        </span>
       </div>
       <button
         aria-expanded="true"
@@ -2107,18 +2116,22 @@ exports[`typeahead select renders closed successfully 1`] = `
       <div
         class="pf-v5-c-select__toggle-wrapper"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
+            aria-invalid="false"
             aria-label=""
             autocomplete="off"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-2"
+            data-ouia-component-type="PF5/TextInput"
+            data-ouia-safe="true"
             id="typeahead-select-closed-select-typeahead"
             placeholder=""
             type="text"
             value=""
           />
-        </div>
+        </span>
       </div>
       <button
         aria-expanded="false"
@@ -2163,18 +2176,22 @@ exports[`typeahead select renders expanded successfully 1`] = `
       <div
         class="pf-v5-c-select__toggle-wrapper"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
+            aria-invalid="false"
             aria-label=""
             autocomplete="off"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-3"
+            data-ouia-component-type="PF5/TextInput"
+            data-ouia-safe="true"
             id="pf-select-toggle-id-9-select-typeahead"
             placeholder=""
             type="text"
             value=""
           />
-        </div>
+        </span>
       </div>
       <button
         aria-expanded="true"
@@ -2277,18 +2294,22 @@ exports[`typeahead select renders selected successfully 1`] = `
       <div
         class="pf-v5-c-select__toggle-wrapper"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
+            aria-invalid="false"
             aria-label=""
             autocomplete="off"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-4"
+            data-ouia-component-type="PF5/TextInput"
+            data-ouia-safe="true"
             id="pf-select-toggle-id-10-select-typeahead"
             placeholder=""
             type="text"
             value="Mr"
           />
-        </div>
+        </span>
       </div>
       <button
         aria-expanded="true"

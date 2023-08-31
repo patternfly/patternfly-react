@@ -138,7 +138,7 @@ const AlertTimeout: React.FunctionComponent = () => {
 
 An alert can contain additional, hidden information that is made visible when users click a caret icon. This information can be expanded and collapsed each time the icon is clicked.
 
-It is not recommended to use an expandable alert with a `timeout` in a toast [alert group](/components/alert-group) because the alert could timeout before users have time to interact with and view the entire alert. 
+It is not recommended to use an expandable alert with a `timeout` in a [toast alert group](/components/alert#toast-alert-group) because the alert could timeout before users have time to interact with and view the entire alert. 
 
 See the [toast alert considerations](/components/alert/accessibility#toast-alerts) section of the alert accessibility documentation to understand the accessibility risks associated with using toast alerts.
 
@@ -355,7 +355,7 @@ import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
 
 ### Dynamic live region alerts
 
-Alerts that are asynchronously appended into dynamic [alert groups](/components/alert-group) via the `isLiveRegion` property will be announced to assistive technology the moment the change happens, following the strategy used for `aria-atomic`, which defaults to false. This means only changes of type "addition" will be announced.
+Alerts that are asynchronously appended into dynamic [alert groups](/components/alert/#alert-group-examples) via the `isLiveRegion` property will be announced to assistive technology the moment the change happens, following the strategy used for `aria-atomic`, which defaults to false. This means only changes of type "addition" will be announced.
 
 ```ts file="AlertDynamicLiveRegion.tsx"
 ```
@@ -380,7 +380,7 @@ Alert groups can be one of the following variants:
 | Toast | Toast alert groups contain alerts that typically appear in response to an asynchronous event or user action. These groups are positioned on top of other content at the top right of the page.|
 | Dynamic | Dynamic alert groups contain alerts that typically appear in response to a user action, and are seen within the normal page content flow.|  
 
-Dynamic alerts that are generated after the page initially loads must be appended to either a toast or dynamic `AlertGroup`, both of which must use the `isLiveRegion` property. New alerts appended to a toast or dynamic group will be announced by assistive technologies the moment the change happens. For information about customizing this announcement, read the [aria-atomic and aria-relevant](/components/alert-group/accessibility#aria-atomic-and-aria-relevant) section of the alert group accessibility documentation.
+Dynamic alerts that are generated after the page initially loads must be appended to either a toast or dynamic `AlertGroup`, both of which must use the `isLiveRegion` property. New alerts appended to a toast or dynamic group will be announced by assistive technologies the moment the change happens. For information about customizing this announcement, read the [aria-atomic and aria-relevant](/components/alert/accessibility#aria-atomic-and-aria-relevant) section of the alert accessibility documentation.
 
 ### Static inline alert group
 
@@ -415,7 +415,7 @@ Users navigating via keyboard or another assistive technology will need a way to
 
 The following example shows how alerts can be triggered by an asynchronous event in the application. You can customize how an alert will be announced to assistive technology by adjusting the value of the `aria-live` property. Click the "start async" alert button below and then click the buttons in the above toast examples to demonstrate how asynchronous events add alerts to a group. Click the "stop async alerts" button to halt this behavior.
 
-See the [alert group accessibility tab](/components/alert-group/accessibility) for more information on customizing this behavior.
+See the [alert accessibility tab](/components/alert/accessibility) for more information on customizing this behavior.
 
 ```ts file="./AlertGroupAsync.tsx"
 ```

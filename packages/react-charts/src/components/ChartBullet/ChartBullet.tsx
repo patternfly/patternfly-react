@@ -17,7 +17,7 @@ import { ChartLegend } from '../ChartLegend/ChartLegend';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
 import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
-import { getComputedLegend, getLegendItemsExtraHeight } from "../ChartUtils/chart-legend";
+import { getComputedLegend, getLegendItemsExtraHeight } from '../ChartUtils/chart-legend';
 import { ChartBulletComparativeErrorMeasure } from './ChartBulletComparativeErrorMeasure';
 import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 import { ChartBulletComparativeWarningMeasure } from './ChartBulletComparativeWarningMeasure';
@@ -27,8 +27,8 @@ import { ChartBulletPrimarySegmentedMeasure } from './ChartBulletPrimarySegmente
 import { ChartBulletQualitativeRange } from './ChartBulletQualitativeRange';
 import { getBulletDomain } from './utils/chart-bullet-domain';
 import { getBulletThemeWithLegendColorScale } from './utils/chart-bullet-theme';
-import { getPaddingForSide } from "../ChartUtils/chart-padding";
-import { useEffect } from "react";
+import { getPaddingForSide } from '../ChartUtils/chart-padding';
+import { useEffect } from 'react';
 
 /**
  * ChartBullet renders a dataset as a bullet chart.

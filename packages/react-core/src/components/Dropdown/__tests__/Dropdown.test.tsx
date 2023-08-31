@@ -22,7 +22,11 @@ test('renders dropdown', () => {
 });
 
 test('passes children', () => {
-  render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
+  render(
+    <Dropdown isOpen toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
 
   expect(screen.getByText('Dropdown children')).toBeVisible();
 });
@@ -112,7 +116,7 @@ test('passes zIndex to popper', () => {
 test('does not pass isOpen to popper by default', () => {
   render(<Dropdown toggle={(toggleRef) => toggle(toggleRef)}>{dropdownChildren}</Dropdown>);
 
-  expect(screen.getByText('isOpen: undefined')).toBeVisible();
+  expect(screen.getByText('isVisible: undefined')).toBeVisible();
 });
 
 test('passes isOpen to popper', () => {
@@ -122,7 +126,7 @@ test('passes isOpen to popper', () => {
     </Dropdown>
   );
 
-  expect(screen.getByText('isOpen: true')).toBeVisible();
+  expect(screen.getByText('isVisible: true')).toBeVisible();
 });
 
 /* no default tests for callback props
@@ -134,7 +138,7 @@ test('passes onSelect callback', async () => {
 
   const onSelect = jest.fn();
   render(
-    <Dropdown onSelect={onSelect} toggle={(toggleRef) => toggle(toggleRef)}>
+    <Dropdown isOpen onSelect={onSelect} toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
     </Dropdown>
   );

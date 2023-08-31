@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.79.4-alpha.3 (2023-07-14)
+
+### Reverts
+
+- Revert "fix(build): transform icons and react core dependencies imports (#9298)" (#9366) ([c20ead4](https://github.com/patternfly/patternfly-react/commit/c20ead454a368b4ba03983af416c5ab6194eadf1)), closes [#9298](https://github.com/patternfly/patternfly-react/issues/9298) [#9366](https://github.com/patternfly/patternfly-react/issues/9366)
+
+## 4.79.4-alpha.2 (2023-07-13)
+
+**Note:** Version bump only for package transformer-dynamic-imports
+
+## 4.79.4-alpha.1 (2023-07-10)
+
+### Bug Fixes
+
+- **build:** transform icons and react core dependencies imports ([#9298](https://github.com/patternfly/patternfly-react/issues/9298)) ([5c2ad35](https://github.com/patternfly/patternfly-react/commit/5c2ad3559c61c97aac74ba97102c73eeefe4a53f))
+
 ## 4.79.4-alpha.0 (2023-06-13)
 
 ### Bug Fixes

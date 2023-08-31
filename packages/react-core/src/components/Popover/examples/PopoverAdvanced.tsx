@@ -28,11 +28,11 @@ export const PopoverAdvanced: React.FunctionComponent = () => {
         <span style={{ paddingRight: '10px' }}>Popover position</span>
         <select
           aria-label="Popover position"
-          onChange={event => {
+          onChange={(event) => {
             setPosition(event.target.value as PopoverPosition);
           }}
         >
-          {Object.values(PopoverPosition).map(position => (
+          {Object.values(PopoverPosition).map((position) => (
             <option key={position} value={position}>
               {position}
             </option>

@@ -110,7 +110,7 @@ export const ComposableTableRightStickyColumn: React.FunctionComponent = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {sortedFacts.map(fact => (
+          {sortedFacts.map((fact) => (
             <Tr key={fact.name}>
               <Th modifier="nowrap">{fact.name}</Th>
               <Td modifier="nowrap" dataLabel={columnNames.state}>

@@ -71,7 +71,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     <div
       class="pf-v5-c-pagination__nav-page-select"
     >
-      <div
+      <span
         class="pf-v5-c-form-control"
       >
         <input
@@ -85,7 +85,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
           type="number"
           value="42"
         />
-      </div>
+      </span>
     </div>
     <div
       class="pf-v5-c-pagination__nav-control"

@@ -74,7 +74,10 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
     [initialSteps, currentSteps]
   );
 
-  const activeStep = React.useMemo(() => steps.find(step => step.index === activeStepIndex), [activeStepIndex, steps]);
+  const activeStep = React.useMemo(
+    () => steps.find((step) => step.index === activeStepIndex),
+    [activeStepIndex, steps]
+  );
 
   const close = React.useCallback(() => onClose?.(null), [onClose]);
   const goToNextStep = React.useCallback(() => onNext(null, steps), [onNext, steps]);
@@ -103,12 +106,12 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
     );
   }, [currentFooter, initialFooter, activeStep, goToNextStep, goToPrevStep, close]);
 
-  const getStep = React.useCallback((stepId: string | number) => steps.find(step => step.id === stepId), [steps]);
+  const getStep = React.useCallback((stepId: string | number) => steps.find((step) => step.id === stepId), [steps]);
 
   const setStep = React.useCallback(
     (step: Pick<WizardStepType, 'id'> & Partial<WizardStepType>) =>
-      setCurrentSteps(prevSteps =>
-        prevSteps.map(prevStep => {
+      setCurrentSteps((prevSteps) =>
+        prevSteps.map((prevStep) => {
           if (prevStep.id === step.id) {
             return { ...prevStep, ...step };
           }
@@ -131,12 +134,12 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
         goToNextStep,
         goToPrevStep,
         setFooter: setCurrentFooter,
-        goToStepById: React.useCallback(id => goToStepById(steps, id), [goToStepById, steps]),
-        goToStepByName: React.useCallback(name => goToStepByName(steps, name), [goToStepByName, steps]),
-        goToStepByIndex: React.useCallback((index: number) => goToStepByIndex(null, steps, index), [
-          goToStepByIndex,
-          steps
-        ])
+        goToStepById: React.useCallback((id) => goToStepById(steps, id), [goToStepById, steps]),
+        goToStepByName: React.useCallback((name) => goToStepByName(steps, name), [goToStepByName, steps]),
+        goToStepByIndex: React.useCallback(
+          (index: number) => goToStepByIndex(null, steps, index),
+          [goToStepByIndex, steps]
+        )
       }}
     >
       {children}

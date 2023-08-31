@@ -33,7 +33,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
       <div
         class="pf-v5-c-form__group-control"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -47,7 +47,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
             type="text"
             value=""
           />
-        </div>
+        </span>
       </div>
     </div>
     <div
@@ -77,7 +77,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
       <div
         class="pf-v5-c-form__group-control"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -91,7 +91,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
             type="password"
             value=""
           />
-        </div>
+        </span>
       </div>
     </div>
     <div
@@ -180,7 +180,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
       <div
         class="pf-v5-c-form__group-control"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -194,7 +194,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
             type="text"
             value=""
           />
-        </div>
+        </span>
       </div>
     </div>
     <div
@@ -230,7 +230,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
           <div
             class="pf-v5-c-input-group__item pf-m-fill"
           >
-            <div
+            <span
               class="pf-v5-c-form-control"
             >
               <input
@@ -244,7 +244,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
                 type="password"
                 value=""
               />
-            </div>
+            </span>
           </div>
           <div
             class="pf-v5-c-input-group__item"
@@ -335,7 +335,7 @@ exports[`LoginForm should render Login form 1`] = `
       <div
         class="pf-v5-c-form__group-control"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -349,7 +349,7 @@ exports[`LoginForm should render Login form 1`] = `
             type="text"
             value=""
           />
-        </div>
+        </span>
       </div>
     </div>
     <div
@@ -379,7 +379,7 @@ exports[`LoginForm should render Login form 1`] = `
       <div
         class="pf-v5-c-form__group-control"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -393,7 +393,7 @@ exports[`LoginForm should render Login form 1`] = `
             type="password"
             value=""
           />
-        </div>
+        </span>
       </div>
     </div>
     <div

@@ -35,7 +35,7 @@ export const LegacyTableStriped: React.FunctionComponent = () => {
   ];
 
   const columns: TableProps['cells'] = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows: TableProps['rows'] = repositories.map(repo => [
+  const rows: TableProps['rows'] = repositories.map((repo) => [
     repo.name,
     repo.branches,
     repo.prs,

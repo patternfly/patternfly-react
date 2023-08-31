@@ -74,7 +74,7 @@ export const TableStripedMultipleTbody: React.FunctionComponent = () => {
         </Tr>
       </Thead>
       <Tbody isOddStriped>
-        {repositories1.map(repo => (
+        {repositories1.map((repo) => (
           <Tr key={repo.name}>
             <Td dataLabel={columnNames.name}>
               {repo.description ? (
@@ -95,7 +95,7 @@ export const TableStripedMultipleTbody: React.FunctionComponent = () => {
         ))}
       </Tbody>
       <Tbody isEvenStriped>
-        {repositories2.map(repo => (
+        {repositories2.map((repo) => (
           <Tr key={repo.name}>
             <Td dataLabel={columnNames.name}>
               {repo.description ? (

@@ -94,7 +94,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
           onClick={
             isDisabled
               ? undefined
-              : evt => {
+              : (evt) => {
                   onOptionCheck && onOptionCheck(evt, !isChecked, itemData);
                   setFocusedOption(id);
                 }
@@ -104,7 +104,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
             {children && (
               <div
                 className={css(styles.dualListSelectorItemToggle)}
-                onClick={e => {
+                onClick={(e) => {
                   if (children) {
                     setIsExpanded(!isExpanded);
                   }
@@ -138,7 +138,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
                     e.preventDefault();
                   }
                 }}
-                ref={elem => elem && (elem.indeterminate = isChecked === null)}
+                ref={(elem) => elem && (elem.indeterminate = isChecked === null)}
                 checked={isChecked || false}
                 tabIndex={-1}
                 {...checkProps}

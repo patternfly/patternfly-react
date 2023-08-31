@@ -130,7 +130,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -144,7 +144,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -338,7 +338,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -352,7 +352,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -546,7 +546,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -560,7 +560,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -754,7 +754,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -768,7 +768,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -962,7 +962,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -976,7 +976,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -1170,7 +1170,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -1184,7 +1184,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
       </div>
       <div
         class="pf-v5-c-pagination__nav-control"
@@ -1364,7 +1364,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -1378,7 +1378,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -1576,7 +1576,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -1590,7 +1590,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -1786,7 +1786,7 @@ exports[`Pagination component render custom start end 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -1800,7 +1800,7 @@ exports[`Pagination component render custom start end 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -1955,7 +1955,7 @@ exports[`Pagination component render empty per page options 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -1969,7 +1969,7 @@ exports[`Pagination component render empty per page options 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -2165,7 +2165,7 @@ exports[`Pagination component render last page 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -2179,7 +2179,7 @@ exports[`Pagination component render last page 1`] = `
             type="number"
             value="2"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -2379,7 +2379,7 @@ exports[`Pagination component render limited number of pages 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-disabled"
         >
           <input
@@ -2394,7 +2394,7 @@ exports[`Pagination component render limited number of pages 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -2582,7 +2582,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -2596,7 +2596,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -2782,7 +2782,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -2796,7 +2796,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -3126,7 +3126,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-disabled"
         >
           <input
@@ -3141,7 +3141,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -3341,7 +3341,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -3355,7 +3355,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -3553,7 +3553,7 @@ exports[`Pagination component render should render correctly top 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -3567,7 +3567,7 @@ exports[`Pagination component render should render correctly top 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -3765,7 +3765,7 @@ exports[`Pagination component render titles 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -3779,7 +3779,7 @@ exports[`Pagination component render titles 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -3977,7 +3977,7 @@ exports[`Pagination component render up drop direction 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control"
         >
           <input
@@ -3991,7 +3991,7 @@ exports[`Pagination component render up drop direction 1`] = `
             type="number"
             value="1"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >
@@ -4189,7 +4189,7 @@ exports[`Pagination component render zero results 1`] = `
       <div
         class="pf-v5-c-pagination__nav-page-select"
       >
-        <div
+        <span
           class="pf-v5-c-form-control pf-m-disabled"
         >
           <input
@@ -4204,7 +4204,7 @@ exports[`Pagination component render zero results 1`] = `
             type="number"
             value="0"
           />
-        </div>
+        </span>
         <span
           aria-hidden="true"
         >

@@ -7,7 +7,7 @@ export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
 
   const deleteItem = (id: string, group: string[]) => {
     const copyOfChips = [...group];
-    const filteredCopy = copyOfChips.filter(chip => chip !== id);
+    const filteredCopy = copyOfChips.filter((chip) => chip !== id);
 
     if (group === chipGroup1) {
       setChipGroup1(filteredCopy);
@@ -27,7 +27,7 @@ export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <ChipGroup categoryName="Category one" isClosable onClick={() => deleteCategory(chipGroup1)}>
-        {chipGroup1.map(currentChip => (
+        {chipGroup1.map((currentChip) => (
           <Chip key={currentChip} onClick={() => deleteItem(currentChip, chipGroup1)}>
             {currentChip}
           </Chip>
@@ -35,7 +35,7 @@ export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
       </ChipGroup>
       <br /> <br />
       <ChipGroup categoryName="Category two has a very long name" isClosable onClick={() => deleteCategory(chipGroup2)}>
-        {chipGroup2.map(currentChip => (
+        {chipGroup2.map((currentChip) => (
           <Chip key={currentChip} onClick={() => deleteItem(currentChip, chipGroup2)}>
             {currentChip}
           </Chip>

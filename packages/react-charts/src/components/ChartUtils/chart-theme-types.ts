@@ -17,7 +17,7 @@ import {
   ChartDonutUtilizationStaticTheme,
   ChartDonutThresholdDynamicTheme,
   ChartDonutThresholdStaticTheme,
-  ChartThresholdTheme,
+  ChartThresholdTheme
 } from '../ChartTheme/ChartThemeTypes';
 import { getTheme, getCustomTheme } from './chart-theme';
 

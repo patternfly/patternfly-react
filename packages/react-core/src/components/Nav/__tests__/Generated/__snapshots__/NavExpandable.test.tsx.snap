@@ -41,7 +41,7 @@ exports[`NavExpandable should match snapshot (auto-generated) 1`] = `
       hidden=""
     >
       <h2
-        class="pf-v5-u-screen-reader"
+        class="pf-v5-screen-reader"
         id="''"
       >
         ''

@@ -14,11 +14,11 @@ export const AlertGroupSingularDynamic: React.FunctionComponent = () => {
   const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
 
   const addAlert = (title: string, variant: AlertProps['variant'], key: React.Key) => {
-    setAlerts(prevAlerts => [...prevAlerts, { title, variant, key }]);
+    setAlerts((prevAlerts) => [...prevAlerts, { title, variant, key }]);
   };
 
   const removeAlert = (key: React.Key) => {
-    setAlerts(prevAlerts => [...prevAlerts.filter(alert => alert.key !== key)]);
+    setAlerts((prevAlerts) => [...prevAlerts.filter((alert) => alert.key !== key)]);
   };
 
   const btnClasses = [styles.button, styles.modifiers.secondary].join(' ');

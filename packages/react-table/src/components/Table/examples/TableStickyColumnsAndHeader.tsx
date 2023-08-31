@@ -126,7 +126,7 @@ export const TableStickyColumnsAndHeader: React.FunctionComponent = () => {
               </Tr>
             </Thead>
             <Tbody>
-              {sortedFacts.map(fact => (
+              {sortedFacts.map((fact) => (
                 <Tr key={fact.name}>
                   <Th isStickyColumn modifier="truncate">
                     {fact.name}

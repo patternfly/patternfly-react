@@ -32,9 +32,9 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
     '2xl'?: 'alignRight' | 'alignLeft';
   };
   /** Vertical alignment of children */
-  alignItems?: 'center' | 'baseline' | 'default';
+  alignItems?: 'start' | 'center' | 'baseline' | 'default';
   /** Vertical alignment */
-  alignSelf?: 'center' | 'baseline' | 'default';
+  alignSelf?: 'start' | 'center' | 'baseline' | 'default';
   /** Spacers at various breakpoints. */
   spacer?: {
     default?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
@@ -87,8 +87,10 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
               formatBreakpointMods(align, styles, '', getBreakpoint(width)),
               formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
               formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
+              alignItems === 'start' && styles.modifiers.alignItemsStart,
               alignItems === 'center' && styles.modifiers.alignItemsCenter,
               alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
+              alignSelf === 'start' && styles.modifiers.alignSelfStart,
               alignSelf === 'center' && styles.modifiers.alignSelfCenter,
               alignSelf === 'baseline' && styles.modifiers.alignSelfBaseline,
               isOverflowContainer && styles.modifiers.overflowContainer,

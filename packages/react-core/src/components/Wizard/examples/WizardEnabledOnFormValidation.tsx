@@ -1,6 +1,15 @@
 import React from 'react';
 
-import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextInput, Wizard, WizardStep } from '@patternfly/react-core';
+import {
+  Form,
+  FormGroup,
+  FormHelperText,
+  HelperText,
+  HelperTextItem,
+  TextInput,
+  Wizard,
+  WizardStep
+} from '@patternfly/react-core';
 
 interface SampleFormProps {
   value: string;

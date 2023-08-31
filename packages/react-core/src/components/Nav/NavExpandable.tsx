@@ -40,7 +40,7 @@ interface NavExpandableState {
   ouiaStateId: string;
 }
 
-export class NavExpandable extends React.Component<NavExpandableProps, NavExpandableState> {
+class NavExpandable extends React.Component<NavExpandableProps, NavExpandableState> {
   static displayName = 'NavExpandable';
   static defaultProps: PickOptional<NavExpandableProps> = {
     srText: '',
@@ -158,3 +158,5 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     );
   }
 }
+
+export { NavExpandable };

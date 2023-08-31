@@ -39,7 +39,7 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
     '2xl'?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
   };
   /** Color variant of the background of the drawer panel */
-  colorVariant?: DrawerColorVariant | 'light-200' | 'default';
+  colorVariant?: DrawerColorVariant | 'light-200' | 'no-background' | 'default';
 }
 let isResizing: boolean = null;
 let newSize: number = 0;
@@ -260,6 +260,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
             hasNoBorder && styles.modifiers.noBorder,
             formatBreakpointMods(widths, styles),
             colorVariant === DrawerColorVariant.light200 && styles.modifiers.light_200,
+            colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
             className
           )}
           ref={panel}

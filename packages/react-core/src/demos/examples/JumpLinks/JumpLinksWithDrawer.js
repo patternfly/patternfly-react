@@ -78,7 +78,7 @@ export const JumpLinksWithDrawer = () => {
                     offset={offsetHeight}
                     expandable={{ default: 'expandable', md: 'nonExpandable' }}
                   >
-                    {headings.map(heading => (
+                    {headings.map((heading) => (
                       <JumpLinksItem key={heading} href={`#jump-links-drawer-jump-links-${heading.toLowerCase()}`}>
                         {`${heading} section`}
                         <JumpLinksList></JumpLinksList>
@@ -93,7 +93,7 @@ export const JumpLinksWithDrawer = () => {
                 </PageSection>
                 <PageSection variant={PageSectionVariants.light}>
                   <TextContent>
-                    {headings.map(heading => (
+                    {headings.map((heading) => (
                       <div key={heading} style={{ maxWidth: '800px', marginBottom: '32px' }}>
                         <h2 id={`jump-links-drawer-jump-links-${heading.toLowerCase()}`} tabIndex={-1}>
                           {`${heading} section`}

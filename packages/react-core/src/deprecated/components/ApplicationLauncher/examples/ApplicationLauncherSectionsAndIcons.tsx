@@ -5,7 +5,7 @@ import {
   ApplicationLauncherGroup,
   ApplicationLauncherSeparator
 } from '@patternfly/react-core/deprecated';
-import pfLogoSm from './pf-logo-small.svg';
+import pfLogoSm from '@patternfly/react-core/src/demos/assets/pf-logo-small.svg';
 
 const icon = <img src={pfLogoSm} />;
 
@@ -39,7 +39,7 @@ export const ApplicationLauncherSectionsAndIcons: React.FunctionComponent = () =
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => setIsOpen(isOpen);
-  const onSelect = (_event: any) => setIsOpen(prevIsOpen => !prevIsOpen);
+  const onSelect = (_event: any) => setIsOpen((prevIsOpen) => !prevIsOpen);
 
   return (
     <ApplicationLauncher onSelect={onSelect} onToggle={onToggle} isOpen={isOpen} items={appLauncherItems} isGrouped />

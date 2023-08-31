@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.1-prerelease.1 (2023-08-29)
+
+### Bug Fixes
+
+- **deps:** update dependency eslint-config-prettier to v9 ([#9464](https://github.com/patternfly/patternfly-react/issues/9464)) ([9a43090](https://github.com/patternfly/patternfly-react/commit/9a430903fb38694db3f08e9029002b9ca246d906))
+- **deps:** update dependency eslint-plugin-prettier to v5 ([#9458](https://github.com/patternfly/patternfly-react/issues/9458)) ([6c0646b](https://github.com/patternfly/patternfly-react/commit/6c0646b2bb337e1b089321addc100c25e623f08e))
+- **deps:** update dependency eslint-plugin-prettier to v5 ([#9473](https://github.com/patternfly/patternfly-react/issues/9473)) ([507fb64](https://github.com/patternfly/patternfly-react/commit/507fb6403e43fee098b08a26ed536c0d78452d01))
+
+### Reverts
+
+- Revert "fix(deps): update dependency eslint-plugin-prettier to v5 (#9458)" (#9472) ([c797be9](https://github.com/patternfly/patternfly-react/commit/c797be94af1a1cc885df7a53567bb659030ed16c)), closes [#9458](https://github.com/patternfly/patternfly-react/issues/9458) [#9472](https://github.com/patternfly/patternfly-react/issues/9472)
+
+# 5.0.0 (2023-07-27)
+
+# [5.1.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@5.0.0...eslint-plugin-patternfly-react@5.1.0-prerelease.0) (2023-07-27)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+# 5.0.0 (2023-07-27)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
 # 5.0.0-prerelease.2 (2023-06-13)
 
 ### Bug Fixes

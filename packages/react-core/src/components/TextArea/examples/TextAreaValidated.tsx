@@ -5,8 +5,12 @@ export const TextAreaValidated: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
   const [validated, setValidated] = React.useState<'default' | 'error' | 'warning' | 'success' | undefined>('default');
   const [helperText, setHelperText] = React.useState('Share your thoughts.');
+  const timerRef = React.useRef<number | null>(null);
   const simulateNetworkCall = (callback: Function) => {
-    setTimeout(callback, 2000);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    timerRef.current = setTimeout(callback, 2000);
   };
 
   const handleTextAreaChange = (value: string) => {

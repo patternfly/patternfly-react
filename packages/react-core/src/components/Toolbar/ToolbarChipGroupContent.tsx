@@ -33,7 +33,7 @@ export interface ToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivEle
   customChipGroupContent?: React.ReactNode;
 }
 
-export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentProps> {
+class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentProps> {
   static displayName = 'ToolbarChipGroupContent';
   static defaultProps: PickOptional<ToolbarChipGroupContentProps> = {
     clearFiltersButtonText: 'Clear all filters',
@@ -68,11 +68,14 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
         (canUseDOM ? window.innerWidth : 1200) < globalBreakpoints[collapseListedFiltersBreakpoint];
     }
 
+    const isHidden = numberOfFilters === 0 || isExpanded;
+
     return (
       <div
         className={css(
           styles.toolbarContent,
-          (numberOfFilters === 0 || isExpanded) && styles.modifiers.hidden,
+          !isHidden && !collapseListedFilters && styles.modifiers.chipContainer,
+          isHidden && styles.modifiers.hidden,
           className
         )}
         {...((numberOfFilters === 0 || isExpanded) && { hidden: true })}
@@ -101,3 +104,5 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
     );
   }
 }
+
+export { ToolbarChipGroupContent };

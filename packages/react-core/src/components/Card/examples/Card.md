@@ -16,8 +16,8 @@ propComponents:
 ouia: true
 ---
 
-import pfLogo from './pfLogo.svg';
-import pfLogoSmall from './pf-logo-small.svg';
+import pfLogo from '../../assets/pfLogo.svg';
+import pfLogoSmall from '../../assets/pf-c-brand--logo-on-sm.svg';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples

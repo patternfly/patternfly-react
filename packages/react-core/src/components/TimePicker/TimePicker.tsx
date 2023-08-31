@@ -95,7 +95,7 @@ interface TimePickerState {
   maxTimeState: string;
 }
 
-export class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
+class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
   static displayName = 'TimePicker';
   private baseComponentRef = React.createRef<any>();
   private toggleRef = React.createRef<HTMLDivElement>();
@@ -566,3 +566,5 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     );
   }
 }
+
+export { TimePicker };

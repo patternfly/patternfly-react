@@ -15,17 +15,23 @@ const configJson = require(`${root}/${process.argv[process.argv.indexOf('--confi
 
 const foldersExclude = configJson.exclude ? configJson.exclude : []
 
-const moduleGlob = configJson.moduleGlob
+let moduleGlob = configJson.moduleGlob
+if(moduleGlob && !Array.isArray(moduleGlob)) {
+  moduleGlob = [moduleGlob]
+} else if (!moduleGlob) {
+  moduleGlob = ['/dist/esm/*/*/**/index.js']
+}
 const components = {
   // need the /*/*/ to avoid grabbing top level index files
   /**
    * We don't want the /index.js or /components/index.js to be have packages
    * These files will not help with tree shaking in module federation environments
    */
-    files: glob
-      .sync(moduleGlob ? `${root}${moduleGlob}` : `${root}/dist/esm/*/*/**/index.js`)
+    files: moduleGlob.map(pattern => glob
+      .sync(`${root}${pattern}`)
       .filter((item) => !foldersExclude.some((name) => item.includes(name)))
-      .map((name) => name.replace(/\/$/, '')),
+      .map((name) => name.replace(/\/$/, '')))
+      .flat(),
   }
 
 
@@ -64,7 +70,8 @@ async function createPackage(component) {
     main: cjsRelative,
     module: esmRelative,
     typings: typesRelative,
-    version: packageJson.version
+    version: packageJson.version,
+    private: true
   };
 
   // use ensureFile to not having to create all the directories

@@ -17,8 +17,9 @@ export interface DropdownToggleActionProps {
   'aria-label'?: string;
 }
 
-export class DropdownToggleAction extends React.Component<DropdownToggleActionProps> {
+class DropdownToggleAction extends React.Component<DropdownToggleActionProps> {
   static displayName = 'DropdownToggleAction';
+
   static defaultProps: DropdownToggleActionProps = {
     className: '',
     isDisabled: false,
@@ -41,3 +42,5 @@ export class DropdownToggleAction extends React.Component<DropdownToggleActionPr
     );
   }
 }
+
+export { DropdownToggleAction };

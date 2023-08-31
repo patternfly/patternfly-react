@@ -14,7 +14,7 @@ import popoverMaxWidth from '@patternfly/react-tokens/dist/esm/c_popover_MaxWidt
 import popoverMinWidth from '@patternfly/react-tokens/dist/esm/c_popover_MinWidth';
 import { ReactElement } from 'react';
 import { FocusTrap } from '../../helpers';
-import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
+import { Popper } from '../../helpers/Popper/Popper';
 import { getUniqueId } from '../../helpers/util';
 
 export enum PopoverPosition {
@@ -78,6 +78,10 @@ export interface PopoverProps {
   closeBtnAriaLabel?: string;
   /** Distance of the popover to its target. Defaults to 25. */
   distance?: number;
+  /** The element to focus when the popover becomes visible. By default the first
+   * focusable element will receive focus.
+   */
+  elementToFocus?: HTMLElement | SVGElement | string;
   /**
    * If true, tries to keep the popover in view by flipping it if necessary.
    * If the position is set to 'auto', this prop is ignored.
@@ -203,6 +207,8 @@ export interface PopoverProps {
   shouldOpen?: (event: MouseEvent | KeyboardEvent, showFunction?: () => void) => void;
   /** Flag indicating whether the close button should be shown. */
   showClose?: boolean;
+  /** Sets an interaction to open popover, defaults to "click" */
+  triggerAction?: 'click' | 'hover';
   /** Whether to trap focus in the popover. */
   withFocusTrap?: boolean;
   /** The z-index of the popover. */
@@ -241,6 +247,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   onShown = (): void => null,
   onMount = (): void => null,
   zIndex = 9999,
+  triggerAction = 'click',
   minWidth = popoverMinWidth && popoverMinWidth.value,
   maxWidth = popoverMaxWidth && popoverMaxWidth.value,
   closeBtnAriaLabel = 'Close',
@@ -266,6 +273,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   triggerRef,
   hasNoPadding = false,
   hasAutoWidth = false,
+  elementToFocus,
   ...rest
 }: PopoverProps) => {
   // could make this a prop in the future (true | false | 'toggle')
@@ -273,11 +281,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const uniqueId = id || getUniqueId();
   const triggerManually = isVisible !== null;
   const [visible, setVisible] = React.useState(false);
-  const [opacity, setOpacity] = React.useState(0);
   const [focusTrapActive, setFocusTrapActive] = React.useState(Boolean(propWithFocusTrap));
-  const transitionTimerRef = React.useRef(null);
-  const showTimerRef = React.useRef(null);
-  const hideTimerRef = React.useRef(null);
   const popoverRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -286,7 +290,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   React.useEffect(() => {
     if (triggerManually) {
       if (isVisible) {
-        show();
+        show(undefined, true);
       } else {
         hide();
       }
@@ -294,34 +298,15 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   }, [isVisible, triggerManually]);
   const show = (event?: MouseEvent | KeyboardEvent, withFocusTrap?: boolean) => {
     event && onShow(event);
-
-    if (transitionTimerRef.current) {
-      clearTimeout(transitionTimerRef.current);
-    }
-    if (hideTimerRef.current) {
-      clearTimeout(hideTimerRef.current);
-    }
-    showTimerRef.current = setTimeout(() => {
-      setVisible(true);
-      setOpacity(1);
-      propWithFocusTrap !== false && withFocusTrap && setFocusTrapActive(true);
-      onShown();
-    }, 0);
+    setVisible(true);
+    propWithFocusTrap !== false && withFocusTrap && setFocusTrapActive(true);
   };
+
   const hide = (event?: MouseEvent | KeyboardEvent) => {
     event && onHide(event);
-    if (showTimerRef.current) {
-      clearTimeout(showTimerRef.current);
-    }
-    hideTimerRef.current = setTimeout(() => {
-      setVisible(false);
-      setOpacity(0);
-      setFocusTrapActive(false);
-      transitionTimerRef.current = setTimeout(() => {
-        onHidden();
-      }, animationDuration);
-    }, 0);
+    setVisible(false);
   };
+
   const positionModifiers = {
     top: styles.modifiers.top,
     bottom: styles.modifiers.bottom,
@@ -377,11 +362,45 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       }
     }
   };
+
   const onContentMouseDown = () => {
     if (focusTrapActive) {
       setFocusTrapActive(false);
     }
   };
+
+  const onMouseEnter = (event: MouseEvent) => {
+    if (triggerManually) {
+      shouldOpen(event as MouseEvent, show);
+    } else {
+      show(event as MouseEvent, false);
+    }
+  };
+
+  const onMouseLeave = (event: MouseEvent) => {
+    if (triggerManually) {
+      shouldClose(event as MouseEvent, hide);
+    } else {
+      hide(event);
+    }
+  };
+
+  const onFocus = (event: FocusEvent) => {
+    if (triggerManually) {
+      shouldOpen(event as MouseEvent | KeyboardEvent, show);
+    } else {
+      show(event as MouseEvent | KeyboardEvent, false);
+    }
+  };
+
+  const onBlur = (event: FocusEvent) => {
+    if (triggerManually) {
+      shouldClose(event as MouseEvent | KeyboardEvent, hide);
+    } else {
+      hide(event as MouseEvent | KeyboardEvent);
+    }
+  };
+
   const closePopover = (event: MouseEvent) => {
     event.stopPropagation();
     if (triggerManually) {
@@ -390,6 +409,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       hide(event);
     }
   };
+
   const content = (
     <FocusTrap
       ref={popoverRef}
@@ -397,7 +417,20 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       focusTrapOptions={{
         returnFocusOnDeactivate: true,
         clickOutsideDeactivates: true,
+        // FocusTrap's initialFocus can accept false as a value to prevent initial focus.
+        // We want to prevent this in case false is ever passed in.
+        initialFocus: elementToFocus || undefined,
+        checkCanFocusTrap: (containers) =>
+          new Promise((resolve) => {
+            const interval = setInterval(() => {
+              if (containers.every((container) => getComputedStyle(container).visibility !== 'hidden')) {
+                resolve();
+                clearInterval(interval);
+              }
+            }, 10);
+          }),
         tabbableOptions: { displayCheck: 'none' },
+
         fallbackFocus: () => {
           // If the popover's trigger is focused but scrolled out of view,
           // FocusTrap will throw an error when the Enter button is used on the trigger.
@@ -426,15 +459,15 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       onMouseDown={onContentMouseDown}
       style={{
         minWidth: hasCustomMinWidth ? minWidth : null,
-        maxWidth: hasCustomMaxWidth ? maxWidth : null,
-        opacity,
-        transition: getOpacityTransition(animationDuration)
+        maxWidth: hasCustomMaxWidth ? maxWidth : null
       }}
       {...rest}
     >
       <PopoverArrow />
       <PopoverContent>
-        {showClose && <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />}
+        {showClose && triggerAction === 'click' && (
+          <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />
+        )}
         {headerContent && (
           <PopoverHeader
             id={`popover-${uniqueId}-header`}
@@ -465,18 +498,28 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         triggerRef={triggerRef}
         popper={content}
         popperRef={popoverRef}
-        minWidth="revert"
+        minWidth={minWidth}
         appendTo={appendTo}
         isVisible={visible}
+        onMouseEnter={triggerAction === 'hover' && onMouseEnter}
+        onMouseLeave={triggerAction === 'hover' && onMouseLeave}
+        onPopperMouseEnter={triggerAction === 'hover' && onMouseEnter}
+        onPopperMouseLeave={triggerAction === 'hover' && onMouseLeave}
+        onFocus={triggerAction === 'hover' && onFocus}
+        onBlur={triggerAction === 'hover' && onBlur}
         positionModifiers={positionModifiers}
         distance={distance}
         placement={position}
-        onTriggerClick={onTriggerClick}
+        onTriggerClick={triggerAction === 'click' && onTriggerClick}
         onDocumentClick={onDocumentClick}
         onDocumentKeyDown={onDocumentKeyDown}
         enableFlip={enableFlip}
         zIndex={zIndex}
         flipBehavior={flipBehavior}
+        animationDuration={animationDuration}
+        onHidden={onHidden}
+        onShown={onShown}
+        onHide={() => setFocusTrapActive(false)}
       />
     </PopoverContext.Provider>
   );

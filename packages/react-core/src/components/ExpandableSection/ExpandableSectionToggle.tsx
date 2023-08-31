@@ -16,6 +16,10 @@ export interface ExpandableSectionToggleProps extends React.HTMLProps<HTMLDivEle
    * property should match the contentId property of the main expandable section component.
    */
   contentId?: string;
+  /** Id of the toggle. The value passed into this property should match the aria-labelledby
+   * property of the main expandable section component.
+   */
+  toggleId?: string;
   /** Direction the toggle arrow should point when the expandable section is expanded. */
   direction?: 'up' | 'down';
   /** @beta Flag to determine toggle styling when the expandable content is truncated. */
@@ -32,6 +36,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
   isExpanded = false,
   onToggle,
   contentId,
+  toggleId,
   direction = 'down',
   hasTruncatedContent = false,
   ...props
@@ -52,6 +57,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
       aria-expanded={isExpanded}
       aria-controls={contentId}
       onClick={() => onToggle(!isExpanded)}
+      id={toggleId}
     >
       {!hasTruncatedContent && (
         <span

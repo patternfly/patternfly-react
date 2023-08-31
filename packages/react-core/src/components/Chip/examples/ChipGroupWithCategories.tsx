@@ -12,13 +12,13 @@ export const ChipGroupWithCategories: React.FunctionComponent = () => {
 
   const deleteItem = (id: string) => {
     const copyOfChips = [...chips];
-    const filteredCopy = copyOfChips.filter(chip => chip !== id);
+    const filteredCopy = copyOfChips.filter((chip) => chip !== id);
     setChips(filteredCopy);
   };
 
   return (
     <ChipGroup categoryName="Category one">
-      {chips.map(currentChip => (
+      {chips.map((currentChip) => (
         <Chip key={currentChip} onClick={() => deleteItem(currentChip)}>
           {currentChip}
         </Chip>

@@ -130,6 +130,13 @@ exports[`SearchInput advanced search 1`] = `
         </button>
       </div>
     </div>
+    <div
+      class=""
+      data-popper-escaped="true"
+      data-popper-placement="bottom-start"
+      data-popper-reference-hidden="true"
+      style="position: absolute; left: 0px; top: 0px; z-index: 9999; opacity: 1; transition: opacity 0ms cubic-bezier(.54, 1.5, .38, 1.11); min-width: 0px; transform: translate(0px, 0px);"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -270,7 +277,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
       data-popper-escaped="true"
       data-popper-placement="bottom-start"
       data-popper-reference-hidden="true"
-      style="position: absolute; top: 0px; left: 0px; transform: translate(0px, 0px); min-width: 0px; z-index: 9999;"
+      style="position: absolute; top: 0px; left: 0px; transform: translate(0px, 0px); min-width: 0px; z-index: 9999; opacity: 1; transition: opacity 0ms cubic-bezier(.54, 1.5, .38, 1.11);"
     >
       <div
         class="pf-v5-c-panel pf-m-raised"
@@ -306,7 +313,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 <div
                   class="pf-v5-c-form__group-control"
                 >
-                  <div
+                  <span
                     class="pf-v5-c-form-control"
                   >
                     <input
@@ -318,7 +325,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                       type="text"
                       value="player"
                     />
-                  </div>
+                  </span>
                 </div>
               </div>
               <div
@@ -342,7 +349,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 <div
                   class="pf-v5-c-form__group-control"
                 >
-                  <div
+                  <span
                     class="pf-v5-c-form-control"
                   >
                     <input
@@ -354,7 +361,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                       type="text"
                       value="john"
                     />
-                  </div>
+                  </span>
                 </div>
               </div>
               <div
@@ -378,7 +385,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 <div
                   class="pf-v5-c-form__group-control"
                 >
-                  <div
+                  <span
                     class="pf-v5-c-form-control"
                   >
                     <input
@@ -390,7 +397,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                       type="text"
                       value=""
                     />
-                  </div>
+                  </span>
                 </div>
               </div>
               <div
@@ -599,6 +606,13 @@ exports[`SearchInput renders search input in strict mode 1`] = `
         </button>
       </div>
     </div>
+    <div
+      class=""
+      data-popper-escaped="true"
+      data-popper-placement="bottom-start"
+      data-popper-reference-hidden="true"
+      style="position: absolute; left: 0px; top: 0px; z-index: 9999; opacity: 1; transition: opacity 0ms cubic-bezier(.54, 1.5, .38, 1.11); min-width: 0px; transform: translate(0px, 0px);"
+    />
   </div>
 </DocumentFragment>
 `;

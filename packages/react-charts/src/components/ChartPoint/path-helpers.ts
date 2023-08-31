@@ -104,7 +104,7 @@ export const PathHelpers: PathHelpersInterface = {
   star: (x: number, y: number, size: number) => {
     const baseSize = 1.35 * size;
     const angle = Math.PI / 5;
-    const starCoords = [...Array(10).keys()].map(index => {
+    const starCoords = [...Array(10).keys()].map((index) => {
       const length = index % 2 === 0 ? baseSize : baseSize / 2;
       return `${length * Math.sin(angle * (index + 1)) + x},
         ${length * Math.cos(angle * (index + 1)) + y}`;

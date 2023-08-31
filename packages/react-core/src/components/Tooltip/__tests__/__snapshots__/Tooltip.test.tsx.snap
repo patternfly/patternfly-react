@@ -1,17 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`tooltip renders 1`] = `
-<DocumentFragment>
-  <div>
-    Toggle tooltip
+exports[`Matches snapshot 1`] = `
+<div
+  aria-live="off"
+  class="pf-v5-c-tooltip"
+  id="custom-id"
+  role="tooltip"
+>
+  <div
+    class="pf-v5-c-tooltip__arrow"
+  />
+  <div
+    class="pf-v5-c-tooltip__content pf-m-text-align-left"
+  >
+    Test content
   </div>
-</DocumentFragment>
-`;
-
-exports[`tooltip renders in strict mode 1`] = `
-<DocumentFragment>
-  <div>
-    Toggle tooltip
-  </div>
-</DocumentFragment>
+</div>
 `;

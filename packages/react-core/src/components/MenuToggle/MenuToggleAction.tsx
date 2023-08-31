@@ -15,7 +15,7 @@ export interface MenuToggleActionProps {
   id?: string;
 }
 
-export class MenuToggleAction extends React.Component<MenuToggleActionProps> {
+class MenuToggleAction extends React.Component<MenuToggleActionProps> {
   static displayName = 'MenuToggleAction';
   static defaultProps: MenuToggleActionProps = {
     className: '',
@@ -40,3 +40,5 @@ export class MenuToggleAction extends React.Component<MenuToggleActionProps> {
     );
   }
 }
+
+export { MenuToggleAction };

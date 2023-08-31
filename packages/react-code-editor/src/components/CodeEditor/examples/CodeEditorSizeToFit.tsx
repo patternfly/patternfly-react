@@ -10,7 +10,7 @@ export const CodeEditorSizeToFit: React.FunctionComponent = () => {
     monaco.editor.getModels()[0].updateOptions({ tabSize: 5 });
   };
 
-  const onChange = value => {
+  const onChange = (value) => {
     // eslint-disable-next-line no-console
     console.log(value);
   };

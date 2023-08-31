@@ -1,5 +1,13 @@
 import React from 'react';
-import { FileUpload, Form, FormGroup, FormHelperText, HelperText, HelperTextItem, DropEvent } from '@patternfly/react-core';
+import {
+  FileUpload,
+  Form,
+  FormGroup,
+  FormHelperText,
+  HelperText,
+  HelperTextItem,
+  DropEvent
+} from '@patternfly/react-core';
 
 export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');

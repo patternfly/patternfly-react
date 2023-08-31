@@ -1,5 +1,11 @@
 import React from 'react';
-import { MenuToggle, TextInputGroup, TextInputGroupMain, TextInputGroupUtilities, Button } from '@patternfly/react-core';
+import {
+  MenuToggle,
+  TextInputGroup,
+  TextInputGroupMain,
+  TextInputGroupUtilities,
+  Button
+} from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export const MenuToggleTypeahead: React.FunctionComponent = () => {
@@ -10,10 +16,7 @@ export const MenuToggleTypeahead: React.FunctionComponent = () => {
   };
 
   return (
-    <MenuToggle
-      variant="typeahead"
-      isFullWidth
-    >
+    <MenuToggle variant="typeahead" isFullWidth>
       <TextInputGroup isPlain>
         <TextInputGroupMain
           value={inputValue}
@@ -32,4 +35,4 @@ export const MenuToggleTypeahead: React.FunctionComponent = () => {
       </TextInputGroup>
     </MenuToggle>
   );
-}
+};

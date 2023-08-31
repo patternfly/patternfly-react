@@ -48,8 +48,10 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'alignRight' | 'alignLeft';
     '2xl'?: 'alignRight' | 'alignLeft';
   };
+  /** Vertical alignment of children */
+  alignItems?: 'start' | 'center' | 'baseline' | 'default';
   /** Vertical alignment */
-  alignSelf?: 'center' | 'baseline' | 'default';
+  alignSelf?: 'start' | 'center' | 'baseline' | 'default';
   /** Spacers at various breakpoints. */
   spacer?: {
     default?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
@@ -85,6 +87,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   widths,
   align,
   alignSelf,
+  alignItems,
   id,
   children,
   isAllExpanded,
@@ -124,6 +127,10 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
             formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
             formatBreakpointMods(align, styles, '', getBreakpoint(width)),
             formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
+            alignItems === 'start' && styles.modifiers.alignItemsStart,
+            alignItems === 'center' && styles.modifiers.alignItemsCenter,
+            alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
+            alignSelf === 'start' && styles.modifiers.alignSelfStart,
             alignSelf === 'center' && styles.modifiers.alignSelfCenter,
             alignSelf === 'baseline' && styles.modifiers.alignSelfBaseline,
             className

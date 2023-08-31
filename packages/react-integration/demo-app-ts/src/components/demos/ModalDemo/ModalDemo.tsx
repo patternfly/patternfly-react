@@ -16,6 +16,7 @@ interface ModalDemoState {
   isModalCustomEscapeOpen: boolean;
   isModalAlertVariantOpen: boolean;
   customEscapePressed: boolean;
+  isCustomFocusModalOpen: boolean;
 }
 
 export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
@@ -32,7 +33,8 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     isNoHeaderModalOpen: false,
     isModalCustomEscapeOpen: false,
     isModalAlertVariantOpen: false,
-    customEscapePressed: false
+    customEscapePressed: false,
+    isCustomFocusModalOpen: false
   };
 
   handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
@@ -100,6 +102,12 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     this.setState(({ isModalAlertVariantOpen }) => ({
       isModalAlertVariantOpen: !isModalAlertVariantOpen,
       customEscapePressed
+    }));
+  };
+
+  handleCustomFocusModalToggle = () => {
+    this.setState(({ isCustomFocusModalOpen }) => ({
+      isCustomFocusModalOpen: !isCustomFocusModalOpen
     }));
   };
 
@@ -427,6 +435,43 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     );
   }
 
+  renderCustomFocusModal() {
+    const { isCustomFocusModalOpen } = this.state;
+
+    return (
+      <Modal
+        elementToFocus="#modal-custom-focus-confirm-button"
+        title="Modal with custom focus"
+        isOpen={isCustomFocusModalOpen}
+        onClose={this.handleCustomFocusModalToggle}
+        actions={[
+          <Button
+            id="modal-custom-focus-confirm-button"
+            key="confirm"
+            variant="primary"
+            onClick={this.handleCustomFocusModalToggle}
+          >
+            Confirm
+          </Button>,
+          <Button
+            id="modal-custom-focus-cancel-button"
+            key="cancel"
+            variant="link"
+            onClick={this.handleCustomFocusModalToggle}
+          >
+            Cancel
+          </Button>
+        ]}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </Modal>
+    );
+  }
+
   render() {
     const buttonStyle = {
       marginRight: 20,
@@ -506,6 +551,14 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
           <Button style={buttonStyle} variant="primary" onClick={this.handleHelpModalToggle} id="showHelpModalButton">
             Show Help Modal
           </Button>
+          <Button
+            style={buttonStyle}
+            variant="primary"
+            onClick={this.handleCustomFocusModalToggle}
+            id="showCustomFocusModalButton"
+          >
+            Show Custom Focus Modal
+          </Button>
         </div>
         {this.renderModal()}
         {this.renderSmallModal()}
@@ -518,6 +571,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         {this.renderModalWithCustomEscape()}
         {this.renderModalWithAlertVariant()}
         {this.renderHelpModal()}
+        {this.renderCustomFocusModal()}
       </React.Fragment>
     );
   }

@@ -23,6 +23,7 @@ interface ChartLegendTooltipFlyoutInterface {
   legendData: any;
   legendOrientation?: 'horizontal' | 'vertical';
   legendProps?: any;
+  minSpacing?: number;
   text?: StringOrNumberOrCallback | string[] | number[];
   theme: ChartThemeDefinition;
 }
@@ -122,6 +123,7 @@ export const getLegendTooltipSize = ({
   legendData,
   legendOrientation = 'vertical',
   legendProps,
+  minSpacing = 1,
   text = '',
   theme
 }: ChartLegendTooltipFlyoutInterface) => {
@@ -146,10 +148,7 @@ export const getLegendTooltipSize = ({
   });
 
   // Set length to ensure minimum spacing between label and value
-  let maxLength = maxDataLength + maxTextLength;
-  if (maxDataLength < 20 && maxLength < 30) {
-    maxLength += 2;
-  }
+  const maxLength = maxDataLength + maxTextLength + minSpacing;
 
   // Get spacing to help align legend labels and text values
   const spacer = 'x';
@@ -185,7 +184,7 @@ export const getLegendTooltipSize = ({
   });
 
   // Replace whitespace with spacer char for consistency in width
-  const formattedData = data.map(val => ({
+  const formattedData = data.map((val) => ({
     name: val.name.replace(/ /g, spacer)
   }));
 
@@ -232,7 +231,7 @@ export const getLegendTooltipVisibleData = ({
     let index = -1;
     for (let i = 0; i < legendData.length; i++) {
       const data = legendData[i];
-      const activePoint = activePoints ? activePoints.find(item => item.childName === data.childName) : '';
+      const activePoint = activePoints ? activePoints.find((item) => item.childName === data.childName) : '';
       if (
         !activePoint ||
         (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.var)
@@ -274,7 +273,7 @@ export const getLegendTooltipVisibleText = ({
   if (legendData) {
     let index = -1;
     for (const data of legendData) {
-      const activePoint = activePoints ? activePoints.find(item => item.childName === data.childName) : '';
+      const activePoint = activePoints ? activePoints.find((item) => item.childName === data.childName) : '';
       if (
         !activePoint ||
         (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.var)

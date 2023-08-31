@@ -81,6 +81,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   isBreadcrumbGrouped?: boolean;
   /** Additional content of the group */
   additionalGroupedContent?: React.ReactNode;
+  /** HTML component used as main component of the page. Defaults to 'main', only pass in 'div' if another 'main' element already exists. */
+  mainComponent?: 'main' | 'div';
   /** Additional props of the group */
   groupProps?: PageGroupProps;
   /** Additional props of the breadcrumb */
@@ -95,7 +97,7 @@ export interface PageState {
   height: number;
 }
 
-export class Page extends React.Component<PageProps, PageState> {
+class Page extends React.Component<PageProps, PageState> {
   static displayName = 'Page';
   static defaultProps: PageProps = {
     isManagedSidebar: false,
@@ -104,6 +106,7 @@ export class Page extends React.Component<PageProps, PageState> {
     mainTabIndex: -1,
     isNotificationDrawerExpanded: false,
     onNotificationDrawerExpand: () => null,
+    mainComponent: 'main',
     getBreakpoint,
     getVerticalBreakpoint
   };
@@ -229,6 +232,7 @@ export class Page extends React.Component<PageProps, PageState> {
       getVerticalBreakpoint,
       mainAriaLabel,
       mainTabIndex,
+      mainComponent,
       tertiaryNav,
       isTertiaryNavGrouped,
       isBreadcrumbGrouped,
@@ -288,8 +292,10 @@ export class Page extends React.Component<PageProps, PageState> {
       </PageGroup>
     ) : null;
 
+    const Component: keyof JSX.IntrinsicElements = mainComponent;
+
     const main = (
-      <main
+      <Component
         ref={this.mainRef}
         role={role}
         id={mainContainerId}
@@ -301,7 +307,7 @@ export class Page extends React.Component<PageProps, PageState> {
         {!isTertiaryNavGrouped && nav}
         {!isBreadcrumbGrouped && crumb}
         {children}
-      </main>
+      </Component>
     );
 
     const panelContent = <DrawerPanelContent>{notificationDrawer}</DrawerPanelContent>;
@@ -337,3 +343,5 @@ export class Page extends React.Component<PageProps, PageState> {
     );
   }
 }
+
+export { Page };

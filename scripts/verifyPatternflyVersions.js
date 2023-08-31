@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const semver = require('semver');
-const Project = require('@lerna/project');
+const { detectProjects } = require("lerna/utils");
 
 // '@patternfly/patternfly': {'4.0.4': ['@patternfly/react-styles', ...]},
 // '@patternfly/react-core': {'^4.0.3': ['@patternfly/react-docs', ...]]
@@ -27,9 +27,9 @@ function setDependency(dependencies, package, version) {
 }
 
 async function verifyPatternflyVersions() {
-  const packages = await Project.getPackages();
-
-  packages.forEach((package) => {
+  const { projectGraph, projectFileMap } = await detectProjects();
+  Object.values(projectGraph.nodes).forEach((node) => {
+    const package = node.package;
     accumulateDependencies(package.name, { [package.name]: `^${package.version}` });
     accumulateDependencies(package.name, package.dependencies);
     accumulateDependencies(package.name, package.devDependencies);
@@ -57,12 +57,12 @@ async function verifyPatternflyVersions() {
         .forEach((mismatchedPackages) => {
           console.log(`Writing ${dep}@${highestVersion}:`);
           mismatchedPackages
-            .map((package) => packages.find((p) => p.name === package))
+            .map((package) => projectGraph.nodes[package])
             .forEach((package) => {
-              console.log(package.manifestLocation);
-              setDependency(package.dependencies, dep, highestVersion);
-              setDependency(package.devDependencies, dep, highestVersion);
-              package.serialize();
+              console.log(package.package.manifestLocation);
+              setDependency(package.package.dependencies, dep, highestVersion);
+              setDependency(package.package.devDependencies, dep, highestVersion);
+              package.package.serialize();
             });
         });
     });

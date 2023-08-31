@@ -10,7 +10,7 @@ exports[`ClipboardCopy should match snapshot (auto-generated) 1`] = `
     <div
       class="pf-v5-c-clipboard-copy__group"
     >
-      <div
+      <span
         class="pf-v5-c-form-control"
       >
         <input
@@ -23,7 +23,7 @@ exports[`ClipboardCopy should match snapshot (auto-generated) 1`] = `
           type="text"
           value="[object Object]"
         />
-      </div>
+      </span>
       <button
         aria-disabled="false"
         aria-label="'Copy to clipboard'"

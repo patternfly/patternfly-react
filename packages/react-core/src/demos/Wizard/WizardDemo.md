@@ -4,7 +4,7 @@ section: components
 source: react-demos
 ---
 
-import imgBrand from './imgBrand.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
@@ -430,7 +430,7 @@ import {
   Wizard,
   WizardStep
 } from '@patternfly/react-core';
-import imgBrand from './imgBrand.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 class WizardFullPageWithDrawerDemo extends React.Component {
@@ -496,7 +496,7 @@ class WizardFullPageWithDrawerDemo extends React.Component {
         </MastheadToggle>
         <MastheadMain>
           <MastheadBrand>
-            <Brand src={imgBrand} alt="Patternfly logo" />
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
           </MastheadBrand>
         </MastheadMain>
       </Masthead>
@@ -628,7 +628,7 @@ import {
   Wizard,
   WizardStep
 } from '@patternfly/react-core';
-import imgBrand from './imgBrand.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 class WizardFullPageWithDrawerInfoStepDemo extends React.Component {
@@ -694,7 +694,7 @@ class WizardFullPageWithDrawerInfoStepDemo extends React.Component {
         </MastheadToggle>
         <MastheadMain>
           <MastheadBrand>
-            <Brand src={imgBrand} alt="Patternfly logo" />
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
           </MastheadBrand>
         </MastheadMain>
       </Masthead>

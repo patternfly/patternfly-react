@@ -7,7 +7,7 @@ propComponents: ['Masthead', 'MastheadToggle', 'MastheadMain', 'MastheadBrand', 
 
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import { Link } from '@reach/router';
-import pfIcon from './pf-logo-small.svg';
+import pfIcon from '../../assets/pf-logo.svg';
 
 `Masthead` should contain the following components to maintain proper layout and formatting: `MastheadToggle`, `MastheadMain`, and `MastheadContent`.
 
@@ -210,10 +210,10 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 ```ts
 import React from 'react';
-import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
+import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button, Brand } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import { Link } from '@reach/router';
-import pfIcon from './pf-logo-small.svg';
+import pfIcon from '../../assets/pf-logo.svg';
 
 <Masthead id="icon-router-link">
   <MastheadToggle>
@@ -223,7 +223,7 @@ import pfIcon from './pf-logo-small.svg';
   </MastheadToggle>
   <MastheadMain>
     <MastheadBrand component={props => <Link {...props} to="#" />}>
-      <img src={pfIcon} alt="Patterfly Logo" />
+      <Brand src={pfIcon} alt="PatternFly" heights={{ default: '36px' }} />
     </MastheadBrand>
   </MastheadMain>
   <MastheadContent>

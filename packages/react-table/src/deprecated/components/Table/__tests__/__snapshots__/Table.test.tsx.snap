@@ -10257,7 +10257,7 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <div
+              <span
                 class="pf-v5-c-form-control"
               >
                 <input
@@ -10269,7 +10269,7 @@ exports[`Table simple Editable table 1`] = `
                   type="text"
                   value="Row 1 cell 1 content"
                 />
-              </div>
+              </span>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10290,7 +10290,7 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <div
+              <span
                 class="pf-v5-c-form-control pf-m-disabled"
               >
                 <input
@@ -10303,7 +10303,7 @@ exports[`Table simple Editable table 1`] = `
                   type="text"
                   value="Row 1 cell 2, disabled content"
                 />
-              </div>
+              </span>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10324,7 +10324,7 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <div
+              <span
                 class="pf-v5-c-form-control"
               >
                 <input
@@ -10336,7 +10336,7 @@ exports[`Table simple Editable table 1`] = `
                   type="text"
                   value="Row 1 cell 3 content"
                 />
-              </div>
+              </span>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10357,7 +10357,7 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <div
+              <span
                 class="pf-v5-c-form-control"
               >
                 <input
@@ -10369,7 +10369,7 @@ exports[`Table simple Editable table 1`] = `
                   type="text"
                   value="Row 1 cell 4 content"
                 />
-              </div>
+              </span>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10488,7 +10488,7 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <div
+              <span
                 class="pf-v5-c-form-control"
               >
                 <input
@@ -10500,7 +10500,7 @@ exports[`Table simple Editable table 1`] = `
                   type="text"
                   value="Row 2 cell 1 content"
                 />
-              </div>
+              </span>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10521,7 +10521,7 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <div
+              <span
                 class="pf-v5-c-form-control pf-m-disabled"
               >
                 <input
@@ -10534,7 +10534,7 @@ exports[`Table simple Editable table 1`] = `
                   type="text"
                   value="Row 2 cell 2, disabled content"
                 />
-              </div>
+              </span>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10555,7 +10555,7 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <div
+              <span
                 class="pf-v5-c-form-control"
               >
                 <input
@@ -10567,7 +10567,7 @@ exports[`Table simple Editable table 1`] = `
                   type="text"
                   value="Row 2 cell 3 content"
                 />
-              </div>
+              </span>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"
@@ -10588,7 +10588,7 @@ exports[`Table simple Editable table 1`] = `
             <div
               class="pf-v5-c-inline-edit__input"
             >
-              <div
+              <span
                 class="pf-v5-c-form-control"
               >
                 <input
@@ -10600,7 +10600,7 @@ exports[`Table simple Editable table 1`] = `
                   type="text"
                   value="Row 2 cell 4 content"
                 />
-              </div>
+              </span>
               <div
                 aria-live="polite"
                 class="pf-v5-c-form__helper-text pf-m-error"

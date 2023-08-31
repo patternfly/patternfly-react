@@ -74,7 +74,9 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
         .map(({ title, itemKey, onClick, isOutsideDropdown, ...props }, key) =>
           typeof title === 'string' ? (
             <Button
-              onClick={(event: MouseEvent | React.MouseEvent<any, MouseEvent> | React.KeyboardEvent<Element>) => onActionClick(event, onClick)}
+              onClick={(event: MouseEvent | React.MouseEvent<any, MouseEvent> | React.KeyboardEvent<Element>) =>
+                onActionClick(event, onClick)
+              }
               {...(props as any)}
               isDisabled={isDisabled}
               key={itemKey || `outside_dropdown_${key}`}
@@ -114,7 +116,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
         <DropdownList>
           {items
             .filter((item) => !item.isOutsideDropdown)
-            .map(({ title, itemKey, onClick, tooltip, tooltipProps, isSeparator, ...props }, index) => {
+            .map(({ title, itemKey, onClick, tooltipProps, isSeparator, ...props }, index) => {
               if (isSeparator) {
                 return <Divider key={itemKey || index} data-key={itemKey || index} />;
               }
@@ -133,9 +135,9 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
                 </DropdownItem>
               );
 
-              if (tooltip) {
+              if (tooltipProps?.content) {
                 return (
-                  <Tooltip key={itemKey || index} content={tooltip} {...tooltipProps}>
+                  <Tooltip key={itemKey || index} {...tooltipProps}>
                     {item}
                   </Tooltip>
                 );

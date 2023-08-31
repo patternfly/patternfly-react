@@ -6,8 +6,10 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
     class="pf-v5-c-expandable-section pf-m-expanded pf-m-detached"
   >
     <div
+      aria-labelledby="toggle-id"
       class="pf-v5-c-expandable-section__content"
-      id="test"
+      id="content-id"
+      role="region"
     >
       test
     </div>
@@ -16,9 +18,10 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
     class="pf-v5-c-expandable-section pf-m-expanded pf-m-detached"
   >
     <button
-      aria-controls="test"
+      aria-controls="content-id"
       aria-expanded="true"
       class="pf-v5-c-expandable-section__toggle"
+      id="toggle-id"
       type="button"
     >
       <span
@@ -54,7 +57,9 @@ exports[`Disclosure ExpandableSection 1`] = `
     class="pf-v5-c-expandable-section pf-m-display-lg pf-m-limit-width"
   >
     <button
+      aria-controls="content-id"
       class="pf-v5-c-expandable-section__toggle"
+      id="toggle-id"
       type="button"
     >
       <span
@@ -79,9 +84,11 @@ exports[`Disclosure ExpandableSection 1`] = `
       />
     </button>
     <div
+      aria-labelledby="toggle-id"
       class="pf-v5-c-expandable-section__content"
       hidden=""
-      id=""
+      id="content-id"
+      role="region"
     >
       test 
     </div>
@@ -95,7 +102,9 @@ exports[`ExpandableSection 1`] = `
     class="pf-v5-c-expandable-section"
   >
     <button
+      aria-controls="content-id"
       class="pf-v5-c-expandable-section__toggle"
+      id="toggle-id"
       type="button"
     >
       <span
@@ -120,9 +129,11 @@ exports[`ExpandableSection 1`] = `
       />
     </button>
     <div
+      aria-labelledby="toggle-id"
       class="pf-v5-c-expandable-section__content"
       hidden=""
-      id=""
+      id="content-id"
+      role="region"
     >
       test 
     </div>
@@ -136,8 +147,10 @@ exports[`Renders ExpandableSection expanded 1`] = `
     class="pf-v5-c-expandable-section pf-m-expanded"
   >
     <button
+      aria-controls="content-id"
       aria-expanded="true"
       class="pf-v5-c-expandable-section__toggle"
+      id="toggle-id"
       type="button"
     >
       <span
@@ -162,8 +175,10 @@ exports[`Renders ExpandableSection expanded 1`] = `
       />
     </button>
     <div
+      aria-labelledby="toggle-id"
       class="pf-v5-c-expandable-section__content"
-      id=""
+      id="content-id"
+      role="region"
     >
        test 
     </div>
@@ -177,8 +192,10 @@ exports[`Renders ExpandableSection indented 1`] = `
     class="pf-v5-c-expandable-section pf-m-expanded pf-m-indented"
   >
     <button
+      aria-controls="content-id"
       aria-expanded="true"
       class="pf-v5-c-expandable-section__toggle"
+      id="toggle-id"
       type="button"
     >
       <span
@@ -203,8 +220,10 @@ exports[`Renders ExpandableSection indented 1`] = `
       />
     </button>
     <div
+      aria-labelledby="toggle-id"
       class="pf-v5-c-expandable-section__content"
-      id=""
+      id="content-id"
+      role="region"
     >
        test 
     </div>
@@ -218,7 +237,9 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
     class="pf-v5-c-expandable-section"
   >
     <button
+      aria-controls="content-id"
       class="pf-v5-c-expandable-section__toggle"
+      id="toggle-id"
       type="button"
     >
       <span
@@ -245,9 +266,11 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
       </span>
     </button>
     <div
+      aria-labelledby="toggle-id"
       class="pf-v5-c-expandable-section__content"
       hidden=""
-      id=""
+      id="content-id"
+      role="region"
     >
        test 
     </div>

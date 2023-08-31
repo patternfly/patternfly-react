@@ -43,7 +43,7 @@ interface ToolbarFilterState {
   isMounted: boolean;
 }
 
-export class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterState> {
+class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterState> {
   static displayName = 'ToolbarFilter';
   static contextType = ToolbarContext;
   context!: React.ContextType<typeof ToolbarContext>;
@@ -108,7 +108,7 @@ export class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFi
           collapsedText={chipGroupCollapsedText}
           expandedText={chipGroupExpandedText}
         >
-          {chips.map(chip =>
+          {chips.map((chip) =>
             typeof chip === 'string' ? (
               <Chip key={chip} onClick={() => deleteChip(categoryKey, chip)}>
                 {chip}
@@ -144,3 +144,5 @@ export class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFi
     );
   }
 }
+
+export { ToolbarFilter };

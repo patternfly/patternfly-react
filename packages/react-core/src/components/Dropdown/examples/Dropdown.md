@@ -11,7 +11,8 @@ propComponents:
     'DropdownList',
     'MenuToggle',
     'DropdownToggleProps',
-    'DropdownPopperProps'
+    'DropdownPopperProps',
+    'TooltipProps'
   ]
 ---
 
@@ -25,7 +26,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 Basic dropdowns present users with a menu of items upon clicking a dropdown toggle.
 
-A `<Dropdown>` uses a [menu toggle](/components/menu-toggle), which is passed to the `toggle` property, as well as a `<DropdownList>` with multiple `<DropdownItem>` components. To allow a dropdown to change the open state of the menu, pass the `isOpen` property into the `onOpenChange` callback.
+A `<Dropdown>` uses a [menu toggle](/components/menus/menu-toggle), which is passed to the `toggle` property, as well as a `<DropdownList>` with multiple `<DropdownItem>` components. To allow a dropdown to change the open state of the menu, pass the `isOpen` property into the `onOpenChange` callback.
 
 The following example shows a few different states of dropdown items. As shown in this example, dropdown items may:
 

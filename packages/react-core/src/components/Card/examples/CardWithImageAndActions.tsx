@@ -15,7 +15,7 @@ import {
   Divider
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import pfLogo from './pfLogo.svg';
+import pfLogo from '../../assets/pfLogo.svg';
 
 export const CardWithImageAndActions: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);

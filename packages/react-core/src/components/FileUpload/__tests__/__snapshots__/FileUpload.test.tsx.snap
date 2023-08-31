@@ -15,8 +15,8 @@ exports[`simple fileupload 1`] = `
         <div
           class="pf-v5-c-input-group__item pf-m-fill"
         >
-          <div
-            class="pf-v5-c-form-control pf-m-readonly pf-m-plain"
+          <span
+            class="pf-v5-c-form-control pf-m-readonly"
           >
             <input
               aria-describedby="simple-text-file-browse-button"
@@ -32,7 +32,7 @@ exports[`simple fileupload 1`] = `
               type="text"
               value=""
             />
-          </div>
+          </span>
         </div>
         <div
           class="pf-v5-c-input-group__item"
@@ -69,7 +69,7 @@ exports[`simple fileupload 1`] = `
     <div
       class="pf-v5-c-file-upload__file-details"
     >
-      <div
+      <span
         class="pf-v5-c-form-control pf-m-resize-vertical"
       >
         <textarea
@@ -79,7 +79,7 @@ exports[`simple fileupload 1`] = `
           name="simple-text-file"
           placeholder=""
         />
-      </div>
+      </span>
     </div>
     <input
       style="display: none;"

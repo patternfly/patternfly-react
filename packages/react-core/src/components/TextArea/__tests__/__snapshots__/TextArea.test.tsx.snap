@@ -2,7 +2,7 @@
 
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-v5-c-form-control pf-m-resize-both pf-m-disabled custom class"
     style="height: 6px;"
   >
@@ -12,6 +12,6 @@ exports[`Matches the snapshot 1`] = `
       disabled=""
       required=""
     />
-  </div>
+  </span>
 </DocumentFragment>
 `;

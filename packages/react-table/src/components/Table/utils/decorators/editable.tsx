@@ -15,7 +15,7 @@ export const editable: ITransform = (label: IFormatterValueType, { rowIndex, row
       validationErrors =
         rowData.rowEditValidationRules &&
         rowData.rowEditValidationRules.reduce((acc, rule) => {
-          const invalidCells = (rowData.cells as IRowCell[]).filter(cellData => {
+          const invalidCells = (rowData.cells as IRowCell[]).filter((cellData) => {
             const testValue =
               cellData.props.editableValue === '' ? '' : cellData.props.editableValue || cellData.props.value;
 
@@ -45,7 +45,7 @@ export const editable: ITransform = (label: IFormatterValueType, { rowIndex, row
           });
 
           if (invalidCells.length) {
-            acc[rule.name] = invalidCells.map(cell => cell.props.name);
+            acc[rule.name] = invalidCells.map((cell) => cell.props.name);
           }
           return acc;
         }, {} as RowErrors);

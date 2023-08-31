@@ -36,7 +36,7 @@ interface SimpleListContextProps {
 
 export const SimpleListContext = React.createContext<Partial<SimpleListContextProps>>({});
 
-export class SimpleList extends React.Component<SimpleListProps, SimpleListState> {
+class SimpleList extends React.Component<SimpleListProps, SimpleListState> {
   static displayName = 'SimpleList';
   state = {
     currentRef: null as React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>
@@ -77,7 +77,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
         <div className={css(styles.simpleList, className)} {...props}>
           {isGrouped && children}
           {!isGrouped && (
-            <ul role="list" aria-label={ariaLabel}>
+            <ul className={css('pf-v5-c-simple-list__list')} role="list" aria-label={ariaLabel}>
               {children}
             </ul>
           )}
@@ -86,3 +86,5 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
     );
   }
 }
+
+export { SimpleList };

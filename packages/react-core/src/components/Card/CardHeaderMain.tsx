@@ -14,7 +14,7 @@ export const CardHeaderMain: React.FunctionComponent<CardHeaderMainProps> = ({
   className,
   ...props
 }: CardHeaderMainProps) => (
-  <div className={css(styles.cardHeaderMain ,className)} {...props}>
+  <div className={css(styles.cardHeaderMain, className)} {...props}>
     {children}
   </div>
 );

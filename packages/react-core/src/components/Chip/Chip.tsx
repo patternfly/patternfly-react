@@ -9,6 +9,8 @@ import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import cssChipTextMaxWidth from '@patternfly/react-tokens/dist/esm/c_chip__text_MaxWidth';
 
 export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
+  /** Badge to add to the chip. The badge will be rendered after the chip text. */
+  badge?: React.ReactNode;
   /** Content rendered inside the chip text */
   children?: React.ReactNode;
   /** Aria Label for close button */
@@ -51,7 +53,7 @@ interface ChipState {
   ouiaStateId: string;
 }
 
-export class Chip extends React.Component<ChipProps, ChipState> {
+class Chip extends React.Component<ChipProps, ChipState> {
   static displayName = 'Chip';
   constructor(props: ChipProps) {
     super(props);
@@ -85,6 +87,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
 
   renderOverflowChip = () => {
     const {
+      badge,
       children,
       className,
       onClick,
@@ -117,6 +120,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
       >
         <span className={css(styles.chipContent)}>
           <span className={css(styles.chipText)}>{children}</span>
+          {badge && badge}
         </span>
       </Component>
     );
@@ -124,6 +128,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
 
   renderInnerChip(id: string) {
     const {
+      badge,
       children,
       className,
       onClick,
@@ -152,6 +157,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
           <span ref={this.span} className={css(styles.chipText)} id={id}>
             {children}
           </span>
+          {badge && badge}
         </span>
         {!isReadOnly && (
           <span className={css(styles.chipActions)}>
@@ -192,3 +198,5 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     );
   }
 }
+
+export { Chip };

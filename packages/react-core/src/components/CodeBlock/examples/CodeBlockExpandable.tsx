@@ -14,7 +14,7 @@ export const ExpandableCodeBlock: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
 
-  const onToggle = isExpanded => {
+  const onToggle = (isExpanded) => {
     setIsExpanded(isExpanded);
   };
 
@@ -50,7 +50,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
           id="expandable-copy-button"
           textId="code-content"
           aria-label="Copy to clipboard"
-          onClick={e => onClick(e, copyBlock)}
+          onClick={(e) => onClick(e, copyBlock)}
           exitDelay={copied ? 1500 : 600}
           maxWidth="110px"
           variant="plain"

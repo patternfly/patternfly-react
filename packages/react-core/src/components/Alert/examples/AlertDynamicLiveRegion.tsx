@@ -14,7 +14,7 @@ export const DynamicLiveRegionAlert: React.FunctionComponent = () => {
   const btnClasses = [styles.button, styles.modifiers.secondary].join(' ');
 
   const addAlert = (alertInfo: AlertInfo) => {
-    setAlerts(prevAlertInfo => [...prevAlertInfo, alertInfo]);
+    setAlerts((prevAlertInfo) => [...prevAlertInfo, alertInfo]);
   };
 
   const addSuccessAlert = () => {

@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Table,
-  Thead,
-  Tr,
-  Th,
-  Tbody,
-  Td,
-  InnerScrollContainer,
-  ExpandableRowContent
-} from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ExpandableRowContent } from '@patternfly/react-table';
 import { Button } from '@patternfly/react-core';
 
 interface Team {
@@ -62,8 +53,8 @@ export const TableNestedExpandable: React.FunctionComponent = () => {
   // Note that this behavior is very similar to selection state.
   const [expandedTeamNames, setExpandedTeamNames] = React.useState<string[]>([]);
   const setTeamExpanded = (team: Team, isExpanding = true) =>
-    setExpandedTeamNames(prevExpanded => {
-      const otherExpandedTeamNames = prevExpanded.filter(t => t !== team.name);
+    setExpandedTeamNames((prevExpanded) => {
+      const otherExpandedTeamNames = prevExpanded.filter((t) => t !== team.name);
       return isExpanding ? [...otherExpandedTeamNames, team.name] : otherExpandedTeamNames;
     });
   const isTeamExpanded = (team: Team) => expandedTeamNames.includes(team.name);

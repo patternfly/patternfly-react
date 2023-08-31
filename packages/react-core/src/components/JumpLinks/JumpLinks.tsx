@@ -114,11 +114,15 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
     const scrollPosition = Math.ceil(scrollableElement.scrollTop + offset);
     window.requestAnimationFrame(() => {
       let newScrollItems = scrollItems;
-      // Items might have rendered after this component. Do a quick refresh.
-      if (!newScrollItems[0] || newScrollItems.includes(null)) {
+      // Items might have rendered after this component or offsetTop values may need
+      // to be updated. Do a quick refresh.
+      const requiresRefresh =
+        newScrollItems.every((e) => !e?.offsetTop) || !newScrollItems[0] || newScrollItems.includes(null);
+      if (requiresRefresh) {
         newScrollItems = getScrollItems(children, []);
         setScrollItems(newScrollItems);
       }
+
       const scrollElements = newScrollItems
         .map((e, index) => ({
           y: e ? e.offsetTop : null,
@@ -189,6 +193,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                     scrollableElement.scrollTo(0, newScrollItem.offsetTop - offset);
                   }
                   newScrollItem.focus();
+                  window.history.pushState('', '', ev.currentTarget.href);
                   ev.preventDefault();
                   setActiveIndex(itemIndex);
                 }

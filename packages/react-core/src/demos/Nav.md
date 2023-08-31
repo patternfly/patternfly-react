@@ -11,8 +11,8 @@ import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
-import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 ## Demos
 
@@ -406,8 +406,8 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 class PageLayoutHorizontalNav extends React.Component {
   constructor(props) {
@@ -497,25 +497,18 @@ class PageLayoutHorizontalNav extends React.Component {
         <DropdownItem key="group 2 logout">Logout</DropdownItem>
       </>
     );
-    
+
     const headerToolbar = (
       <Toolbar id="toolbar" isFullHeight isStatic>
         <ToolbarContent>
-          <ToolbarItem isOverflowContainer>
-            {PageNav}
-          </ToolbarItem>
+          <ToolbarItem isOverflowContainer>{PageNav}</ToolbarItem>
           <ToolbarGroup
             variant="icon-button-group"
             align={{ default: 'alignRight' }}
             spacer={{ default: 'spacerNone', md: 'spacerMd' }}
           >
             <ToolbarItem>
-              <Button
-                aria-label="Notifications"
-                variant={ButtonVariant.plain}
-                icon={<BellIcon />}
-                onClick={() => {}}
-              />
+              <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} onClick={() => {}} />
             </ToolbarItem>
             <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
               <ToolbarItem>
@@ -600,14 +593,7 @@ class PageLayoutHorizontalNav extends React.Component {
       <Masthead>
         <MastheadMain>
           <MastheadBrand>
-            <Brand
-              widths={{ default: '180px', md: '180px', '2xl': '220px' }}
-              src={imgColorBrand}
-              alt="Fallback patternFly default logo"
-            >
-              <source media="(min-width: 768px)" srcSet={imgColorBrand} />
-              <source srcSet={imgColorBrand} />
-            </Brand>
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
           </MastheadBrand>
         </MastheadMain>
         <MastheadContent>{headerToolbar}</MastheadContent>
@@ -835,7 +821,7 @@ import {
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem
-  } from '@patternfly/react-core';
+} from '@patternfly/react-core';
 import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -843,8 +829,8 @@ import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 class HorizontalNavWithSubnav extends React.Component {
   constructor(props) {
@@ -948,7 +934,7 @@ class HorizontalNavWithSubnav extends React.Component {
       </>
     );
 
-     const SubNav = (
+    const SubNav = (
       <Nav onSelect={this.onSubNavSelect} aria-label="Nav" variant="horizontal-subnav">
         <NavList>
           <NavItem itemId={7} isActive={activeSubNavItem === 7} to="#">
@@ -979,21 +965,14 @@ class HorizontalNavWithSubnav extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar" isFullHeight isStatic>
         <ToolbarContent>
-          <ToolbarItem isOverflowContainer>
-            {PageNav}
-          </ToolbarItem>
+          <ToolbarItem isOverflowContainer>{PageNav}</ToolbarItem>
           <ToolbarGroup
             variant="icon-button-group"
             align={{ default: 'alignRight' }}
             spacer={{ default: 'spacerNone', md: 'spacerMd' }}
           >
             <ToolbarItem>
-              <Button
-                aria-label="Notifications"
-                variant={ButtonVariant.plain}
-                icon={<BellIcon />}
-                onClick={() => {}}
-              />
+              <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} onClick={() => {}} />
             </ToolbarItem>
             <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
               <ToolbarItem>
@@ -1083,20 +1062,12 @@ class HorizontalNavWithSubnav extends React.Component {
         </MastheadToggle>
         <MastheadMain>
           <MastheadBrand>
-            <Brand
-              widths={{ default: '180px', md: '180px', '2xl': '220px' }}
-              src={imgColorBrand}
-              alt="Fallback patternFly default logo"
-            >
-              <source media="(min-width: 768px)" srcSet={imgColorBrand} />
-              <source srcSet={imgColorBrand} />
-            </Brand>
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
           </MastheadBrand>
         </MastheadMain>
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-
 
     const pageId = 'main-content-page-layout-horizontal-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
@@ -1388,9 +1359,8 @@ import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
-import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
-
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 class PageLayoutManualNav extends React.Component {
   constructor(props) {
@@ -1461,8 +1431,15 @@ class PageLayoutManualNav extends React.Component {
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen, activeItem, isNavOpenDesktop, isNavOpenMobile, isMobileView } =
-      this.state;
+    const {
+      isDropdownOpen,
+      isKebabDropdownOpen,
+      isFullKebabDropdownOpen,
+      activeItem,
+      isNavOpenDesktop,
+      isNavOpenMobile,
+      isMobileView
+    } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
@@ -1502,8 +1479,8 @@ class PageLayoutManualNav extends React.Component {
         <DropdownItem key="group 2 logout">Logout</DropdownItem>
       </>
     );
-    
-     const headerToolbar = (
+
+    const headerToolbar = (
       <Toolbar id="toolbar" isFullHeight isStatic>
         <ToolbarContent>
           <ToolbarGroup
@@ -1512,12 +1489,7 @@ class PageLayoutManualNav extends React.Component {
             spacer={{ default: 'spacerNone', md: 'spacerMd' }}
           >
             <ToolbarItem>
-              <Button
-                aria-label="Notifications"
-                variant={ButtonVariant.plain}
-                icon={<BellIcon />}
-                onClick={() => {}}
-              />
+              <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} onClick={() => {}} />
             </ToolbarItem>
             <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
               <ToolbarItem>
@@ -1607,14 +1579,7 @@ class PageLayoutManualNav extends React.Component {
         </MastheadToggle>
         <MastheadMain>
           <MastheadBrand>
-            <Brand
-              widths={{ default: '180px', md: '180px', '2xl': '220px' }}
-              src={imgColorBrand}
-              alt="Fallback patternFly default logo"
-            >
-              <source media="(min-width: 768px)" srcSet={imgColorBrand} />
-              <source srcSet={imgColorBrand} />
-            </Brand>
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
           </MastheadBrand>
         </MastheadMain>
         <MastheadContent>{headerToolbar}</MastheadContent>

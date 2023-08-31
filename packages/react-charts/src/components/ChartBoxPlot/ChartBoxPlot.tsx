@@ -16,7 +16,8 @@ import {
   SortOrderPropType,
   StringOrNumberOrCallback,
   StringOrNumberOrList,
-  VictoryStyleInterface, OrientationTypes
+  VictoryStyleInterface,
+  OrientationTypes
 } from 'victory-core';
 import {
   VictoryBoxPlot,

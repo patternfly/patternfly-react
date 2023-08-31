@@ -30,7 +30,7 @@ export interface ContextSelectorToggleProps {
   isText?: boolean;
 }
 
-export class ContextSelectorToggle extends React.Component<ContextSelectorToggleProps> {
+class ContextSelectorToggle extends React.Component<ContextSelectorToggleProps> {
   static displayName = 'ContextSelectorToggle';
   static defaultProps: PickOptional<ContextSelectorToggleProps> = {
     className: '',
@@ -116,7 +116,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
           className
         )}
         type="button"
-        onClick={event => onToggle(event, !isOpen)}
+        onClick={(event) => onToggle(event, !isOpen)}
         aria-expanded={isOpen}
         onKeyDown={this.onKeyDown}
       >
@@ -128,3 +128,5 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
     );
   }
 }
+
+export { ContextSelectorToggle };

@@ -20,7 +20,7 @@ export interface ContextSelectorItemProps {
   href?: string;
 }
 
-export class ContextSelectorItem extends React.Component<ContextSelectorItemProps> {
+class ContextSelectorItem extends React.Component<ContextSelectorItemProps> {
   static displayName = 'ContextSelectorItem';
   static defaultProps: ContextSelectorItemProps = {
     children: null as React.ReactNode,
@@ -55,7 +55,7 @@ export class ContextSelectorItem extends React.Component<ContextSelectorItemProp
                 className
               )}
               ref={this.ref}
-              onClick={event => {
+              onClick={(event) => {
                 if (!isDisabled) {
                   onClick(event);
                   onSelect(event, children);
@@ -74,3 +74,5 @@ export class ContextSelectorItem extends React.Component<ContextSelectorItemProp
     );
   }
 }
+
+export { ContextSelectorItem };

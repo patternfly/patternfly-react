@@ -57,3 +57,22 @@ exports[`MultipleFileUploadButton renders with expected class names 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`MultipleFileUploadButton renders with label applied to the button 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v5-c-multiple-file-upload__upload"
+  >
+    <button
+      aria-disabled="false"
+      class="pf-v5-c-button pf-m-secondary"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-4"
+      data-ouia-component-type="PF5/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      test
+    </button>
+  </div>
+</DocumentFragment>
+`;

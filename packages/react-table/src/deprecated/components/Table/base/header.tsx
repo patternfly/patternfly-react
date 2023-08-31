@@ -5,12 +5,7 @@
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
 import * as React from 'react';
-import {
-  createElementType,
-  RowsType,
-  ColumnsType,
-  RenderersTypes
-} from '../../../../components/Table/base/types';
+import { createElementType, RowsType, ColumnsType, RenderersTypes } from '../../../../components/Table/base/types';
 import { ProviderContext } from '../../../../components/Table/base/provider';
 
 import { HeaderRow } from './header-row';

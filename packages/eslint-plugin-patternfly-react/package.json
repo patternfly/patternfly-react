@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-patternfly-react",
-  "version": "5.0.0-prerelease.2",
+  "version": "5.1.1-prerelease.1",
   "private": false,
   "main": "./lib/index.js",
   "license": "MIT",
@@ -24,7 +24,7 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.19.1",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-config-standard-jsx": "^11.0.0",
     "eslint-config-standard-react": "^13.0.0",
@@ -32,7 +32,7 @@
     "eslint-plugin-jest": "^27.0.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-react-hooks": "^4.1.2",

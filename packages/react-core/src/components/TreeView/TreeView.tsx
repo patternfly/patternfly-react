@@ -76,6 +76,10 @@ export interface TreeViewProps {
   onCheck?: (event: React.ChangeEvent<HTMLInputElement>, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Callback for item selection. */
   onSelect?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
+  /** Callback for expanding a node with children. */
+  onExpand?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
+  /** Callback for collapsing a node with children. */
+  onCollapse?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Internal. Parent item of a tree view list item. */
   parentItem?: TreeViewDataItem;
   /** Toolbar to display above the tree view. */
@@ -104,6 +108,8 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   parentItem,
   onSelect,
   onCheck,
+  onExpand,
+  onCollapse,
   toolbar,
   activeItems,
   compareItems = (item, itemToCheck) => item.id === itemToCheck.id,
@@ -113,7 +119,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
 }: TreeViewProps) => {
   const treeViewList = (
     <TreeViewList isNested={isNested} toolbar={toolbar}>
-      {data.map(item => (
+      {data.map((item) => (
         <TreeViewListItem
           key={item.id?.toString() || item.name?.toString()}
           name={item.name}
@@ -124,6 +130,8 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
           onSelect={onSelect}
           onCheck={onCheck}
+          onExpand={onExpand}
+          onCollapse={onCollapse}
           hasCheckbox={item.hasCheckbox !== undefined ? item.hasCheckbox : hasCheckboxes}
           checkProps={item.checkProps}
           hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}
@@ -153,6 +161,8 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
                 defaultAllExpanded={defaultAllExpanded}
                 onSelect={onSelect}
                 onCheck={onCheck}
+                onExpand={onExpand}
+                onCollapse={onCollapse}
                 activeItems={activeItems}
                 icon={icon}
                 expandedIcon={expandedIcon}

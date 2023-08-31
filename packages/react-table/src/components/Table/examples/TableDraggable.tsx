@@ -11,7 +11,7 @@ export const TableDraggable: React.FunctionComponent = () => {
 
   const bodyRef = React.useRef<HTMLTableSectionElement>();
 
-  const onDragStart: TrProps['onDragStart'] = evt => {
+  const onDragStart: TrProps['onDragStart'] = (evt) => {
     evt.dataTransfer.effectAllowed = 'move';
     evt.dataTransfer.setData('text/plain', evt.currentTarget.id);
     const draggedItemId = evt.currentTarget.id;
@@ -37,20 +37,20 @@ export const TableDraggable: React.FunctionComponent = () => {
   const move = (itemOrder: string[]) => {
     const ulNode = bodyRef.current;
     const nodes = Array.from(ulNode.children);
-    if (nodes.map(node => node.id).every((id, i) => id === itemOrder[i])) {
+    if (nodes.map((node) => node.id).every((id, i) => id === itemOrder[i])) {
       return;
     }
     while (ulNode.firstChild) {
       ulNode.removeChild(ulNode.lastChild);
     }
 
-    itemOrder.forEach(id => {
-      ulNode.appendChild(nodes.find(n => n.id === id));
+    itemOrder.forEach((id) => {
+      ulNode.appendChild(nodes.find((n) => n.id === id));
     });
   };
 
   const onDragCancel = () => {
-    Array.from(bodyRef.current.children).forEach(el => {
+    Array.from(bodyRef.current.children).forEach((el) => {
       el.classList.remove(styles.modifiers.ghostRow);
       el.setAttribute('aria-pressed', 'false');
     });
@@ -59,7 +59,7 @@ export const TableDraggable: React.FunctionComponent = () => {
     setIsDragging(false);
   };
 
-  const onDragLeave: TbodyProps['onDragLeave'] = evt => {
+  const onDragLeave: TbodyProps['onDragLeave'] = (evt) => {
     if (!isValidDrop(evt)) {
       move(itemOrder);
       setDraggingToItemIndex(null);
@@ -76,7 +76,7 @@ export const TableDraggable: React.FunctionComponent = () => {
     );
   };
 
-  const onDrop: TrProps['onDrop'] = evt => {
+  const onDrop: TrProps['onDrop'] = (evt) => {
     if (isValidDrop(evt)) {
       setItemOrder(tempItemOrder);
     } else {
@@ -84,7 +84,7 @@ export const TableDraggable: React.FunctionComponent = () => {
     }
   };
 
-  const onDragOver: TbodyProps['onDragOver'] = evt => {
+  const onDragOver: TbodyProps['onDragOver'] = (evt) => {
     evt.preventDefault();
 
     const curListItem = (evt.target as HTMLTableSectionElement).closest('tr');
@@ -92,7 +92,7 @@ export const TableDraggable: React.FunctionComponent = () => {
       return null;
     } else {
       const dragId = curListItem.id;
-      const newDraggingToItemIndex = Array.from(bodyRef.current.children).findIndex(item => item.id === dragId);
+      const newDraggingToItemIndex = Array.from(bodyRef.current.children).findIndex((item) => item.id === dragId);
       if (newDraggingToItemIndex !== draggingToItemIndex) {
         const tempItemOrder = moveItem([...itemOrder], draggedItemId, newDraggingToItemIndex);
         move(tempItemOrder);
@@ -102,7 +102,7 @@ export const TableDraggable: React.FunctionComponent = () => {
     }
   };
 
-  const onDragEnd: TrProps['onDragEnd'] = evt => {
+  const onDragEnd: TrProps['onDragEnd'] = (evt) => {
     const target = evt.target as HTMLTableRowElement;
     target.classList.remove(styles.modifiers.ghostRow);
     target.setAttribute('aria-pressed', 'false');

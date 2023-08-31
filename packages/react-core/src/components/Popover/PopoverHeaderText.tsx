@@ -20,8 +20,9 @@ export const PopoverHeaderText: React.FunctionComponent<PopoverHeaderTextProps> 
   const HeadingLevel = headingLevel;
 
   return (
-  <HeadingLevel className={css(styles.popoverTitleText, className)} {...props}>
-    {children}
-  </HeadingLevel>);
+    <HeadingLevel className={css(styles.popoverTitleText, className)} {...props}>
+      {children}
+    </HeadingLevel>
+  );
 };
 PopoverHeaderText.displayName = 'PopoverHeaderText';

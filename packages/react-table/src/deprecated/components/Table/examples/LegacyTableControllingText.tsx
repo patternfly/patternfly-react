@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  cellWidth,
-  truncate,
-  breakWord,
-  wrappable,
-  fitContent,
-  nowrap
-} from '@patternfly/react-table';
+import { cellWidth, truncate, breakWord, wrappable, fitContent, nowrap } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 // This example has been simplified to focus on the text modifier props. In real usage,

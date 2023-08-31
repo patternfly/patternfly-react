@@ -70,7 +70,7 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
   ...props
 }: DualListSelectorTreeProps) => {
   const dataToRender = typeof data === 'function' ? data() : data;
-  const tree = dataToRender.map(item => (
+  const tree = dataToRender.map((item) => (
     <DualListSelectorTreeItem
       key={item.id}
       text={item.text}
