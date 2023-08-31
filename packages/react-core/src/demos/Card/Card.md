@@ -5,19 +5,18 @@ section: patterns
 
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
-import pfIcon from './pf-logo-small.svg';
-import activeMQIcon from './activemq-core_200x150.png';
-import avroIcon from './camel-avro_200x150.png';
-import dropBoxIcon from './camel-dropbox_200x150.png';
-import infinispanIcon from './camel-infinispan_200x150.png';
-import saxonIcon from './camel-saxon_200x150.png';
-import sparkIcon from './camel-spark_200x150.png';
-import swaggerIcon from './camel-swagger-java_200x150.png';
-import azureIcon from './FuseConnector_Icons_AzureServices.png';
-import restIcon from './FuseConnector_Icons_REST.png';
+import pfIcon from '../assets/pf-logo-small.svg';
+import activeMQIcon from '../assets/activemq-core_200x150.png';
+import avroIcon from '../assets/camel-avro_200x150.png';
+import dropBoxIcon from '../assets/camel-dropbox_200x150.png';
+import infinispanIcon from '../assets/camel-infinispan_200x150.png';
+import saxonIcon from '../assets/camel-saxon_200x150.png';
+import sparkIcon from '../assets/camel-spark_200x150.png';
+import swaggerIcon from '../assets/camel-swagger-java_200x150.png';
+import azureIcon from '../assets/FuseConnector_Icons_AzureServices.png';
+import restIcon from '../assets/FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { data } from './CardData.jsx';
 
@@ -37,7 +36,6 @@ import {
   CardHeader,
   CardTitle,
   CardBody,
-  Checkbox,
   Divider,
   Dropdown,
   DropdownItem,
@@ -60,7 +58,6 @@ import {
   Pagination,
   TextContent,
   Text,
-  Title,
   Toolbar,
   ToolbarItem,
   ToolbarFilter,
@@ -71,20 +68,18 @@ import {
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
-import pfIcon from './pf-logo-small.svg';
-import activeMQIcon from './activemq-core_200x150.png';
-import avroIcon from './camel-avro_200x150.png';
-import dropBoxIcon from './camel-dropbox_200x150.png';
-import infinispanIcon from './camel-infinispan_200x150.png';
-import saxonIcon from './camel-saxon_200x150.png';
-import sparkIcon from './camel-spark_200x150.png';
-import swaggerIcon from './camel-swagger-java_200x150.png';
-import azureIcon from './FuseConnector_Icons_AzureServices.png';
-import restIcon from './FuseConnector_Icons_REST.png';
+import pfIcon from '../assets/pf-logo-small.svg';
+import activeMQIcon from '../assets/activemq-core_200x150.png';
+import avroIcon from '../assets/camel-avro_200x150.png';
+import dropBoxIcon from '../assets/camel-dropbox_200x150.png';
+import infinispanIcon from '../assets/camel-infinispan_200x150.png';
+import saxonIcon from '../assets/camel-saxon_200x150.png';
+import sparkIcon from '../assets/camel-spark_200x150.png';
+import swaggerIcon from '../assets/camel-swagger-java_200x150.png';
+import azureIcon from '../assets/FuseConnector_Icons_AzureServices.png';
+import restIcon from '../assets/FuseConnector_Icons_REST.png';
 import { data } from './CardData.jsx';
 
 class CardViewBasic extends React.Component {
@@ -137,19 +132,18 @@ class CardViewBasic extends React.Component {
     };
 
     this.onCardKebabDropdownToggle = (key, event) => {
-      event?.stopPropagation();
       this.setState((prevState) => ({
         [key]: !prevState[key]
       }));
     };
 
-    this.onCardKebabDropdownSelect = (key, event) => {
+    this.onCardKebabDropdownSelect = (key) => {
       this.setState({
         [key]: !this.state[key]
       });
     };
 
-    this.deleteItem = (item) => (event) => {
+    this.deleteItem = (item) => () => {
       const filter = (getter) => (val) => getter(val) !== item.id;
       this.setState({
         cardData: this.state.cardData.filter(filter(({ id }) => id)),
@@ -185,7 +179,7 @@ class CardViewBasic extends React.Component {
     this.onNameSelect = (event, selection) => {
       const checked = event.target.checked;
       this.setState((prevState) => {
-        const prevSelections = prevState.filters['products'];
+        const prevSelections = prevState.filters.products;
         return {
           filters: {
             ...prevState.filters,
@@ -214,29 +208,9 @@ class CardViewBasic extends React.Component {
       }
     };
 
-    this.onKeyDown = (event, productId) => {
-      if (event.target !== event.currentTarget) {
-        return;
-      }
-      if ([' ', 'Enter'].includes(event.key)) {
-        event.preventDefault();
-        this.setState((prevState) => {
-          return prevState.selectedItems.includes(productId * 1)
-            ? {
-                selectedItems: [...prevState.selectedItems.filter((id) => productId * 1 != id)],
-                areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
-              }
-            : {
-                selectedItems: [...prevState.selectedItems, productId * 1],
-                areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount)
-              };
-        });
-      }
-    };
-
     this.onClick = (productId) => {
-      this.setState((prevState) => {
-        return prevState.selectedItems.includes(productId * 1)
+      this.setState((prevState) =>
+        prevState.selectedItems.includes(productId * 1)
           ? {
               selectedItems: [...prevState.selectedItems.filter((id) => productId * 1 != id)],
               areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
@@ -244,8 +218,8 @@ class CardViewBasic extends React.Component {
           : {
               selectedItems: [...prevState.selectedItems, productId * 1],
               areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount)
-            };
-      });
+            }
+      );
     };
   }
 
@@ -268,17 +242,19 @@ class CardViewBasic extends React.Component {
 
   splitCheckboxSelectAll(e) {
     const { checked } = e.target;
-    const { isChecked, cardData } = this.state;
+    const { isChecked } = this.state;
     let collection = [];
 
     if (checked) {
-      for (var i = 0; i <= 9; i++) collection = [...collection, i];
+      for (let i = 0; i <= 9; i++) {
+        collection = [...collection, i];
+      }
     }
 
     this.setState(
       {
         selectedItems: collection,
-        isChecked: isChecked,
+        isChecked,
         areAllSelected: checked
       },
       this.updateSelected
@@ -287,7 +263,7 @@ class CardViewBasic extends React.Component {
 
   selectPage(e) {
     const { checked } = e.target;
-    const { isChecked, totalItemCount, perPage } = this.state;
+    const { totalItemCount, perPage } = this.state;
     let collection = [];
 
     collection = this.getAllItems();
@@ -302,12 +278,12 @@ class CardViewBasic extends React.Component {
     );
   }
 
-  selectAll(e) {
-    const { checked } = e.target;
-    const { isChecked } = this.state;
+  selectAll() {
 
     let collection = [];
-    for (var i = 0; i <= 9; i++) collection = [...collection, i];
+    for (let i = 0; i <= 9; i++) {
+      collection = [...collection, i];
+    }
 
     this.setState(
       {
@@ -319,9 +295,7 @@ class CardViewBasic extends React.Component {
     );
   }
 
-  selectNone(e) {
-    const { checked } = e.target;
-    const { isChecked, selectedItems } = this.state;
+  selectNone() {
     this.setState(
       {
         selectedItems: [],
@@ -344,7 +318,7 @@ class CardViewBasic extends React.Component {
 
   updateSelected() {
     const { cardData, selectedItems } = this.state;
-    let rows = cardData.map((post) => {
+    const rows = cardData.map((post) => {
       post.selected = selectedItems.includes(post.id);
       return post;
     });
@@ -355,7 +329,7 @@ class CardViewBasic extends React.Component {
   }
 
   renderPagination() {
-    const { page, perPage, totalItemCount, cardData } = this.state;
+    const { page, perPage, totalItemCount } = this.state;
 
     const defaultPerPageOptions = [
       {
@@ -387,7 +361,7 @@ class CardViewBasic extends React.Component {
   }
 
   buildSelectDropdown() {
-    const { splitButtonDropdownIsOpen, selectedItems, areAllSelected, filters, cardData } = this.state;
+    const { splitButtonDropdownIsOpen, selectedItems, areAllSelected } = this.state;
     const numSelected = selectedItems.length;
     const allSelected = areAllSelected;
     const anySelected = numSelected > 0;
@@ -524,19 +498,13 @@ class CardViewBasic extends React.Component {
 
   render() {
     const {
-      isUpperToolbarDropdownOpen,
-      isLowerToolbarDropdownOpen,
-      isUpperToolbarKebabDropdownOpen,
       isLowerToolbarKebabDropdownOpen,
-      isCardKebabDropdownOpen,
-      splitButtonDropdownIsOpen,
-      activeItem,
       filters,
       cardData,
-      checked,
       selectedItems,
-      areAllSelected,
-      isChecked,
+      totalItemCount,
+      onPerPageSelect,
+      onSetPage,
       page,
       perPage
     } = this.state;
@@ -615,9 +583,7 @@ class CardViewBasic extends React.Component {
 
     const filtered =
       filters.products.length > 0
-        ? data.filter((card) => {
-            return filters.products.length === 0 || filters.products.includes(card.name);
-          })
+        ? data.filter((card) => filters.products.length === 0 || filters.products.includes(card.name))
         : cardData.slice((page - 1) * perPage, perPage === 1 ? page * perPage : page * perPage - 1);
 
     return (
@@ -652,17 +618,20 @@ class CardViewBasic extends React.Component {
               </Card>
               {filtered.map((product, key) => (
                 <Card
-                  hasSelectableInput
                   isCompact
-                  isSelectableRaised
+                  isClickable
+                  isSelectable
                   key={product.name}
                   id={product.name.replace(/ /g, '-')}
-                  onKeyDown={(e) => this.onKeyDown(e, product.id)}
-                  onClick={() => this.onClick(product.id)}
-                  onSelectableInputChange={() => this.onClick(product.id)}
-                  isSelected={selectedItems.includes(product.id)}
                 >
                   <CardHeader
+                    selectableActions={{
+                      isChecked: selectedItems.includes(product.id),
+                      selectableActionId: `selectable-actions-item-${product.id}`,
+                      selectableActionAriaLabelledby: product.name.replace(/ /g, '-'),
+                      name: `check-${product.id}`,
+                      onChange: () => this.onClick(product.id)
+                    }}
                     actions={{
                       actions: (
                         <>
@@ -674,7 +643,9 @@ class CardViewBasic extends React.Component {
                                 ref={toggleRef}
                                 aria-label={`${product.name} actions`}
                                 variant="plain"
-                                onClick={(e) => this.onCardKebabDropdownToggle(key, e)}
+                                onClick={(e) => {
+                                  this.onCardKebabDropdownToggle(key, e);
+                                }}
                                 isExpanded={this.state[key]}
                               >
                                 <EllipsisVIcon />
@@ -689,13 +660,6 @@ class CardViewBasic extends React.Component {
                               </DropdownItem>
                             </DropdownList>
                           </Dropdown>
-                          <Checkbox
-                            checked={isChecked}
-                            value={product.id}
-                            isChecked={selectedItems.includes(product.id)}
-                            aria-label="card checkbox example"
-                            id={`check-${product.id}`}
-                          />
                         </>
                       )
                     }}
@@ -710,12 +674,11 @@ class CardViewBasic extends React.Component {
           </PageSection>
           <PageSection isFilled={false} sticky="bottom" padding={{ default: 'noPadding' }} variant="light">
             <Pagination
-              itemCount={this.state.totalItemCount}
+              itemCount={totalItemCount}
               page={page}
-              page={this.state.page}
-              perPage={this.state.perPage}
-              onPerPageSelect={this.onPerPageSelect}
-              onSetPage={this.onSetPage}
+              perPage={perPage}
+              onPerPageSelect={onPerPageSelect}
+              onSetPage={onSetPage}
               variant="bottom"
             />
           </PageSection>

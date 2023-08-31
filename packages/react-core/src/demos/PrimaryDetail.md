@@ -12,16 +12,16 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
-import pfIcon from './Card/pf-logo-small.svg';
-import activeMQIcon from './Card/activemq-core_200x150.png';
-import avroIcon from './Card/camel-avro_200x150.png';
-import dropBoxIcon from './Card/camel-dropbox_200x150.png';
-import infinispanIcon from './Card/camel-infinispan_200x150.png';
-import saxonIcon from './Card/camel-saxon_200x150.png';
-import sparkIcon from './Card/camel-spark_200x150.png';
-import swaggerIcon from './Card/camel-swagger-java_200x150.png';
-import azureIcon from './Card/FuseConnector_Icons_AzureServices.png';
-import restIcon from './Card/FuseConnector_Icons_REST.png';
+import pfIcon from './assets/pf-logo-small.svg';
+import activeMQIcon from './assets/activemq-core_200x150.png';
+import avroIcon from './assets/camel-avro_200x150.png';
+import dropBoxIcon from './assets/camel-dropbox_200x150.png';
+import infinispanIcon from './assets/camel-infinispan_200x150.png';
+import saxonIcon from './assets/camel-saxon_200x150.png';
+import sparkIcon from './assets/camel-spark_200x150.png';
+import swaggerIcon from './assets/camel-swagger-java_200x150.png';
+import azureIcon from './assets/FuseConnector_Icons_AzureServices.png';
+import restIcon from './assets/FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { data } from '@patternfly/react-core/src/demos/Card/CardData.jsx';
 import DashboardWrapper from './examples/DashboardWrapper';
@@ -50,7 +50,6 @@ import {
   CardHeader,
   CardBody,
   CardTitle,
-  Checkbox,
   Divider,
   Drawer,
   DrawerActions,
@@ -72,28 +71,25 @@ import {
   PageSectionVariants,
   Pagination,
   Progress,
-  Select,
-  SelectOption,
   TextContent,
   Text,
   Title,
   Toolbar,
   ToolbarItem,
-  ToolbarContent,
-  ToolbarFilter
+  ToolbarContent
 } from '@patternfly/react-core';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
-import pfIcon from './pf-logo-small.svg';
-import activeMQIcon from './activemq-core_200x150.png';
-import avroIcon from './camel-avro_200x150.png';
-import dropBoxIcon from './camel-dropbox_200x150.png';
-import infinispanIcon from './camel-infinispan_200x150.png';
-import saxonIcon from './camel-saxon_200x150.png';
-import sparkIcon from './camel-spark_200x150.png';
-import swaggerIcon from './camel-swagger-java_200x150.png';
-import azureIcon from './FuseConnector_Icons_AzureServices.png';
-import restIcon from './FuseConnector_Icons_REST.png';
+import pfIcon from './assets/pf-logo-small.svg';
+import activeMQIcon from './assets/activemq-core_200x150.png';
+import avroIcon from './assets/camel-avro_200x150.png';
+import dropBoxIcon from './assets/camel-dropbox_200x150.png';
+import infinispanIcon from './assets/camel-infinispan_200x150.png';
+import saxonIcon from './assets/camel-saxon_200x150.png';
+import sparkIcon from './assets/camel-spark_200x150.png';
+import swaggerIcon from './assets/camel-swagger-java_200x150.png';
+import azureIcon from './assets/FuseConnector_Icons_AzureServices.png';
+import restIcon from './assets/FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { data } from '@patternfly/react-core/src/demos/Card/CardData.jsx';
 
@@ -194,7 +190,6 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     this.onCheckboxClick = (event, productId) => {
-      event.stopPropagation();
       this.setState((prevState) =>
         prevState.selectedItems.includes(productId * 1) || this.state.selectedItems.includes(productId * 1)
           ? {
@@ -208,8 +203,23 @@ class PrimaryDetailCardView extends React.Component {
       );
     };
 
-    this.onCardClick = (event) => {
-      if (event.currentTarget.id === this.state.activeCard) {
+    this.onClick = (productId) => {
+      this.setState((prevState) =>
+        prevState.selectedItems.includes(productId * 1)
+          ? {
+              selectedItems: [...prevState.selectedItems.filter((id) => productId * 1 !== id)],
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
+            }
+          : {
+              selectedItems: [...prevState.selectedItems, productId * 1],
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount)
+            }
+      );
+    };
+
+    this.onCardClick = (productId) => {
+
+      if (productId === this.state.activeCard) {
         this.setState({
           isDrawerExpanded: !this.state.isDrawerExpanded,
           activeCard: null
@@ -217,10 +227,8 @@ class PrimaryDetailCardView extends React.Component {
         return;
       }
 
-      const newSelected = event.currentTarget.id;
-
       this.setState({
-        activeCard: newSelected,
+        activeCard: productId,
         isDrawerExpanded: true
       });
     };
@@ -312,7 +320,7 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     this.onSplitButtonSelect = () => {
-      this.setState((prevState) => ({
+      this.setState(() => ({
         splitButtonDropdownIsOpen: false,
         isDrawerExpanded: false,
         activeCard: null
@@ -338,7 +346,6 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     this.deleteItem = (event, item) => {
-      event.stopPropagation();
       const filter = (getter) => (val) => getter(val) !== item.id;
       const filteredCards = this.state.cardData.filter(filter(({ id }) => id));
       this.setState({
@@ -348,28 +355,6 @@ class PrimaryDetailCardView extends React.Component {
         isDrawerExpanded: false,
         activeCard: null
       });
-    };
-
-    this.onKeyDown = (event) => {
-      if (event.target !== event.currentTarget) {
-        return;
-      }
-
-      if (['Enter', ' '].includes(event.key)) {
-        if (event.currentTarget.id === this.state.activeCard) {
-          this.setState({
-            isDrawerExpanded: !this.state.isDrawerExpanded,
-            activeCard: null
-          });
-          return;
-        }
-        event.preventDefault();
-        const newSelected = event.currentTarget.id;
-        this.setState({
-          activeCard: newSelected,
-          isDrawerExpanded: true
-        });
-      }
     };
   }
 
@@ -532,12 +517,9 @@ class PrimaryDetailCardView extends React.Component {
           <Card
             key={product.name}
             id={'card-view-' + key}
-            onKeyDown={this.onKeyDown}
-            onClick={this.onCardClick}
-            onSelectableInputChange={this.onChange}
-            isSelectableRaised
-            isSelected={activeCard === 'card-view-' + key}
-            hasSelectableInput
+            isClickable
+            isSelectable
+            isSelected={activeCard === product.id}
           >
             <CardHeader
               actions={{
@@ -567,21 +549,18 @@ class PrimaryDetailCardView extends React.Component {
                         </DropdownItem>
                       </DropdownList>
                     </Dropdown>
-                    <Checkbox
-                      checked={isChecked}
-                      onClick={(event) => this.onCheckboxClick(event, product.id)}
-                      value={product.id}
-                      isChecked={selectedItems.includes(product.id)}
-                      aria-label="card checkbox example"
-                      id={`check-${product.id}`}
-                    />
                   </>
                 )
               }}
+              selectableActions={{ isChecked: selectedItems.includes(product.id), selectableActionId: `selectable-actions-item-${product.id}`, selectableActionAriaLabelledby: `${'card-view-' + key}`, name: `check-${product.id}`, onChange: () => this.onClick(product.id) }}
             >
               <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
             </CardHeader>
-            <CardTitle>{product.name}</CardTitle>
+            <CardTitle>
+              <Button variant="link" isInline onClick={() => this.onCardClick(product.id)} aria-expanded={activeCard === product.id}>
+                {product.name}
+              </Button>
+            </CardTitle>
             <CardBody>{product.description}</CardBody>
           </Card>
         ))}
@@ -592,7 +571,7 @@ class PrimaryDetailCardView extends React.Component {
       <DrawerPanelContent>
         <DrawerHead>
           <Title headingLevel="h2" size="xl">
-            node-{activeCard && activeCard.charAt(activeCard.length - 1)}
+            node-{activeCard}
           </Title>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseDrawerClick} />
@@ -608,10 +587,10 @@ class PrimaryDetailCardView extends React.Component {
               </p>
             </FlexItem>
             <FlexItem>
-              <Progress value={activeCard && activeCard.charAt(activeCard.length - 1) * 10} title="Title" />
+              <Progress value={activeCard * 10} title="Title" />
             </FlexItem>
             <FlexItem>
-              <Progress value={activeCard && activeCard.charAt(activeCard.length - 1) * 5} title="Title" />
+              <Progress value={activeCard * 5} title="Title" />
             </FlexItem>
           </Flex>
         </DrawerPanelBody>

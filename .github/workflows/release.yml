@@ -191,12 +191,12 @@ jobs:
         run: yarn build:docs
       - name: Upload docs
         run: node .github/upload-preview.js packages/react-docs/public
-        if: always()
       - name: a11y tests
         run: yarn serve:docs & yarn test:a11y
+        if: "!contains(github.event.head_commit.message, 'skip-a11y')"
       - name: Upload a11y results
         run: node .github/upload-preview.js packages/react-docs/coverage
-        if: always()
+        if: "!contains(github.event.head_commit.message, 'skip-a11y')"
   demo_app:
     runs-on: ubuntu-latest
     env:

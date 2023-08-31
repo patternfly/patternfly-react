@@ -1,7 +1,7 @@
 import * as React from 'react';
 /* eslint-disable camelcase */
-const brandImg = require('./images/brandImgColor.svg') as string;
-const pfbg_icon = require('./images/pfbg-icon.svg') as string;
+const brandImg = require('../../../assets/images/brandImgColor.svg') as string;
+const pfbg_icon = require('../../../assets/images/pfbg-icon.svg') as string;
 
 import {
   LoginFooterItem,

@@ -47,9 +47,12 @@ export const ChipDefault: React.FunctionComponent = () => {
       )}
       {badgechip && (
         <React.Fragment>
-          <Chip key="chip3" onClick={() => deleteItem('badgechip')}>
+          <Chip
+            key="chip3"
+            onClick={() => deleteItem('badgechip')}
+            badge={<Badge isRead={badgechip.isRead}>{badgechip.count}</Badge>}
+          >
             {badgechip.name}
-            <Badge isRead={badgechip.isRead}>{badgechip.count}</Badge>
           </Chip>
           <br /> <br />
         </React.Fragment>

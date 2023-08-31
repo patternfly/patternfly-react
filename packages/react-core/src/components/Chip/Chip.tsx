@@ -8,6 +8,8 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
+  /** Badge to add to the chip. The badge will be rendered after the chip text. */
+  badge?: React.ReactNode;
   /** Content rendered inside the chip text */
   children?: React.ReactNode;
   /** Aria Label for close button */
@@ -84,6 +86,7 @@ class Chip extends React.Component<ChipProps, ChipState> {
 
   renderOverflowChip = () => {
     const {
+      badge,
       children,
       className,
       onClick,
@@ -116,6 +119,7 @@ class Chip extends React.Component<ChipProps, ChipState> {
       >
         <span className={css(styles.chipContent)}>
           <span className={css(styles.chipText)}>{children}</span>
+          {badge && badge}
         </span>
       </Component>
     );
@@ -123,6 +127,7 @@ class Chip extends React.Component<ChipProps, ChipState> {
 
   renderInnerChip(id: string) {
     const {
+      badge,
       children,
       className,
       onClick,
@@ -151,6 +156,7 @@ class Chip extends React.Component<ChipProps, ChipState> {
           <span ref={this.span} className={css(styles.chipText)} id={id}>
             {children}
           </span>
+          {badge && badge}
         </span>
         {!isReadOnly && (
           <span className={css(styles.chipActions)}>

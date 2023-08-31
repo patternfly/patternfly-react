@@ -55,6 +55,10 @@ export interface TreeViewListItemProps {
    * from toggling.
    */
   onSelect?: (event: React.MouseEvent, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
+  /** Callback for expanding a node with children. */
+  onExpand?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
+  /** Callback for collapsing a node with children. */
+  onCollapse?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Parent item of tree view item. */
   parentItem?: TreeViewDataItem;
   /** Title of a tree view item. */
@@ -74,6 +78,8 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   defaultExpanded = false,
   children = null,
   onSelect,
+  onExpand,
+  onCollapse,
   onCheck,
   hasCheckbox = false,
   checkProps = {
@@ -117,6 +123,11 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       className={css(styles.treeViewNodeToggle)}
       onClick={(evt: React.MouseEvent) => {
         if (isSelectable || hasCheckbox) {
+          if (internalIsExpanded) {
+            onCollapse && onCollapse(evt, itemData, parentItem);
+          } else {
+            onExpand && onExpand(evt, itemData, parentItem);
+          }
           setIsExpanded(!internalIsExpanded);
         }
         if (isSelectable) {
@@ -208,6 +219,11 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                 if (!hasCheckbox) {
                   onSelect && onSelect(evt, itemData, parentItem);
                   if (!isSelectable && children && evt.isDefaultPrevented() !== true) {
+                    if (internalIsExpanded) {
+                      onCollapse && onCollapse(evt, itemData, parentItem);
+                    } else {
+                      onExpand && onExpand(evt, itemData, parentItem);
+                    }
                     setIsExpanded(!internalIsExpanded);
                   }
                 }
@@ -262,6 +278,8 @@ export const TreeViewListItem = React.memo(TreeViewListItemBase, (prevProps, nex
     prevProps.defaultExpanded !== nextProps.defaultExpanded ||
     prevProps.onSelect !== nextProps.onSelect ||
     prevProps.onCheck !== nextProps.onCheck ||
+    prevProps.onExpand !== nextProps.onExpand ||
+    prevProps.onCollapse !== nextProps.onCollapse ||
     prevProps.hasCheckbox !== nextProps.hasCheckbox ||
     prevProps.checkProps !== nextProps.checkProps ||
     prevProps.hasBadge !== nextProps.hasBadge ||

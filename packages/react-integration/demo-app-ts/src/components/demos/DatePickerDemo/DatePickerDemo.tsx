@@ -14,6 +14,12 @@ export const DatePickerDemo = () => {
 
   return (
     <>
+      <div id="date-picker-clear">
+        <DatePicker value={value} />
+        <div>
+          <button onClick={() => setValue('')}>Clear date</button>
+        </div>
+      </div>
       <div id="date-picker-validator">
         <DatePicker value={value} onChange={(event, value) => setValue(value)} validators={[rangeValidator]} />
         <div>

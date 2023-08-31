@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.3...@patternfly/react-integration@5.1.1-prerelease.4) (2023-08-30)
+
+### Bug Fixes
+
+- add private=true to react-integration package.json [skip-a11y] ([196a21c](https://github.com/patternfly/patternfly-react/commit/196a21cd0c0160fbab42bf6c006ad3ed30c4117c))
+
+## [5.1.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.2...@patternfly/react-integration@5.1.1-prerelease.3) (2023-08-30)
+
+### Bug Fixes
+
+- try and get react-integration bumping correctly [skip-a11y] ([#9554](https://github.com/patternfly/patternfly-react/issues/9554)) ([7124af5](https://github.com/patternfly/patternfly-react/commit/7124af580994aeab735de23966c6be0fb789683e))
+
+## [5.1.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.1...@patternfly/react-integration@5.1.1-prerelease.2) (2023-08-29)
+
+### Bug Fixes
+
+- turn on dry run to test removing --no-private [skip-a11y] ([#9549](https://github.com/patternfly/patternfly-react/issues/9549)) ([bf35bf9](https://github.com/patternfly/patternfly-react/commit/bf35bf94244e4f02d1186fb54cc52645f2040a73))
+
+## 5.1.1-prerelease.1 (2023-08-29)
+
+### Bug Fixes
+
+- bump lerna version ([#9523](https://github.com/patternfly/patternfly-react/issues/9523)) ([386c2b3](https://github.com/patternfly/patternfly-react/commit/386c2b38c7d05529329f13c604d72082cf51fcf1))
+- **Chip:** Added prop to render a badge in the chip after the text ([#9493](https://github.com/patternfly/patternfly-react/issues/9493)) ([ee6d853](https://github.com/patternfly/patternfly-react/commit/ee6d853b5f92d0a2114d7b73a76cdc1a5dd3a96d))
+- **DatePicker:** error not showing on date reset by button ([#9267](https://github.com/patternfly/patternfly-react/issues/9267)) ([4fccdaf](https://github.com/patternfly/patternfly-react/commit/4fccdaf8d260ef60165837e7d493febabf53e145)), closes [#9373](https://github.com/patternfly/patternfly-react/issues/9373)
+
+### Features
+
+- **Modal:** added ability to customize initial focus ([#9453](https://github.com/patternfly/patternfly-react/issues/9453)) ([4f4c1d0](https://github.com/patternfly/patternfly-react/commit/4f4c1d0aacb1c16012e66d78345a4486081566d1))
+- **Modal:** use css vars to set width, add maxWidth ([#9300](https://github.com/patternfly/patternfly-react/issues/9300)) ([fed8205](https://github.com/patternfly/patternfly-react/commit/fed820515c57ceed60975bd52118c23c8a1382c8))
+
+# 5.0.0 (2023-07-27)
+
 # 5.0.0-prerelease.3 (2023-07-12)
 
 **Note:** Version bump only for package @patternfly/react-integration

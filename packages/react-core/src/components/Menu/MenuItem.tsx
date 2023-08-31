@@ -316,6 +316,23 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       setFlyoutRef(null);
     }
   };
+
+  React.useEffect(() => {
+    if (isFocused && ref.current) {
+      const itemEl = ref.current;
+      const parentListEl = itemEl.parentElement;
+
+      if (parentListEl) {
+        const isAboveTop = itemEl.offsetTop - parentListEl.offsetTop < parentListEl.scrollTop;
+        const isBelowBottom = itemEl.offsetTop - parentListEl.offsetTop + itemEl.clientHeight;
+
+        if (isAboveTop || isBelowBottom) {
+          itemEl.scrollIntoView({ behavior: 'auto', block: 'nearest' });
+        }
+      }
+    }
+  }, [isFocused]);
+
   const isSelectMenu = menuRole === 'listbox';
 
   const renderItem = (

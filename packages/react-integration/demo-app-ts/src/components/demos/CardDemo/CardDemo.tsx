@@ -18,7 +18,7 @@ import {
   MenuToggle
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-const pfLogo = './images/pfLogo.svg';
+const pfLogo = '../../../assets/images/pfLogo.svg';
 
 interface CardDemoState {
   selected: string;
