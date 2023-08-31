@@ -9,7 +9,6 @@ import { Button } from '../Button';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { Radio } from '../Radio';
 import { Checkbox } from '../Checkbox';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 export interface CardHeaderActionsObject {
   /** Actions of the card header */
@@ -120,7 +119,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
       const getClickableSelectableProps = () => {
         const baseProps = {
           className: 'pf-m-standalone',
-          inputClassName: isClickable && !isSelectable && accessibility.screenReader,
+          inputClassName: isClickable && !isSelectable && 'pf-v5-screen-reader',
           label: <></>,
           'aria-label': selectableActions.selectableActionAriaLabel,
           'aria-labelledby': selectableActions.selectableActionAriaLabelledby,

@@ -3,8 +3,6 @@ id: Progress stepper
 section: components
 ---
 
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-
 ## Demos
 
 ### Basic
@@ -12,7 +10,6 @@ import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/
 ```js
 import React from 'react';
 import { ProgressStepper, ProgressStep, Button, Stack, StackItem } from '@patternfly/react-core';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 ProgressStepperDemo = () => {
   const [currentStep, setCurrentStep] = React.useState(0);
@@ -48,7 +45,7 @@ ProgressStepperDemo = () => {
         <br />
       </StackItem>
       <StackItem>
-        <div className={accessibility.screenReader} aria-live="polite">
+        <div className="pf-v5-screen-reader" aria-live="polite">
           {steps[currentStep] && `On ${steps[currentStep].title}.`}
           {steps[currentStep - 1] && `${steps[currentStep - 1].title} was successful.`}
         </div>

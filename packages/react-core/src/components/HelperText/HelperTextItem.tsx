@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { css } from '@patternfly/react-styles';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
@@ -79,7 +78,7 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
 
       <span className={css(styles.helperTextItemText)}>
         {children}
-        {isDynamic && <span className={accessibility.screenReader}>: {screenReaderText};</span>}
+        {isDynamic && <span className="pf-v5-screen-reader">: {screenReaderText};</span>}
       </span>
     </Component>
   );

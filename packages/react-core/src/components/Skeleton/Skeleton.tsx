@@ -3,7 +3,6 @@ import styles from '@patternfly/react-styles/css/components/Skeleton/skeleton';
 import { css } from '@patternfly/react-styles';
 import cssHeight from '@patternfly/react-tokens/dist/esm/c_skeleton_Height';
 import cssWidth from '@patternfly/react-tokens/dist/esm/c_skeleton_Width';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Skeleton */
@@ -51,7 +50,7 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
         } as React.CSSProperties
       })}
     >
-      <span className={accessibility.screenReader}>{screenreaderText}</span>
+      <span className="pf-v5-screen-reader">{screenreaderText}</span>
     </div>
   );
 };

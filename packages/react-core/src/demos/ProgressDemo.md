@@ -3,8 +3,6 @@ id: Progress
 section: components
 ---
 
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-
 ## Demos
 
 ### Basic
@@ -12,12 +10,11 @@ import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/
 ```js
 import React from 'react';
 import { Progress, Button, Stack, StackItem } from '@patternfly/react-core';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 ProgressStepperDemo = () => {
   const [currentValue, setCurrentValue] = React.useState(0);
 
-  const onProgressUpdate = nextValue => {
+  const onProgressUpdate = (nextValue) => {
     setCurrentValue(nextValue);
   };
 
@@ -34,7 +31,7 @@ ProgressStepperDemo = () => {
         <br />
       </StackItem>
       <StackItem>
-        <div className={accessibility.screenReader} aria-live="polite">
+        <div className="pf-v5-screen-reader" aria-live="polite">
           {`Progress value is ${currentValue}%.`}
         </div>
         <Progress value={currentValue} title="Title" />
@@ -51,12 +48,11 @@ Sometimes a progress bar should only show increases to progress state. In this c
 ```js
 import React from 'react';
 import { Progress, Button, Stack, StackItem } from '@patternfly/react-core';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 ProgressStepperDemo = () => {
   const [currentValue, setCurrentValue] = React.useState(0);
 
-  const onProgressUpdate = nextValue => {
+  const onProgressUpdate = (nextValue) => {
     if (nextValue > currentValue) {
       setCurrentValue(nextValue);
     }
@@ -75,7 +71,7 @@ ProgressStepperDemo = () => {
         <br />
       </StackItem>
       <StackItem>
-        <div className={accessibility.screenReader} aria-live="polite">
+        <div className="pf-v5-screen-reader" aria-live="polite">
           {`Progress value is ${currentValue}%.`}
         </div>
         <Progress value={currentValue} title="Title" />

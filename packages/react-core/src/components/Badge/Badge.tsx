@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Badge/badge';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 export interface BadgeProps extends React.HTMLProps<HTMLSpanElement> {
   /** Text announced by screen readers to indicate the current content/status of the badge. */
@@ -26,7 +25,7 @@ export const Badge: React.FunctionComponent<BadgeProps> = ({
     className={css(styles.badge, (isRead ? styles.modifiers.read : styles.modifiers.unread) as any, className)}
   >
     {children}
-    {screenReaderText && <span className={accessibility.screenReader}>{screenReaderText}</span>}
+    {screenReaderText && <span className="pf-v5-screen-reader">{screenReaderText}</span>}
   </span>
 );
 Badge.displayName = 'Badge';

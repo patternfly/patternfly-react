@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { PopoverHeaderIcon } from './PopoverHeaderIcon';
 import { PopoverHeaderText } from './PopoverHeaderText';
 
@@ -37,7 +36,7 @@ export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
       {icon && <PopoverHeaderIcon>{icon}</PopoverHeaderIcon>}
       <PopoverHeaderText headingLevel={titleHeadingLevel}>
         {alertSeverityVariant && alertSeverityScreenReaderText && (
-          <span className={accessibility.screenReader}>{alertSeverityScreenReaderText}</span>
+          <span className="pf-v5-screen-reader">{alertSeverityScreenReaderText}</span>
         )}
         {children}
       </PopoverHeaderText>

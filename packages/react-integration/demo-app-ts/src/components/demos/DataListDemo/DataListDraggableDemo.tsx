@@ -11,7 +11,6 @@ import {
   Draggable,
   Droppable
 } from '@patternfly/react-core';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 interface ItemType {
   id: string;
@@ -102,7 +101,7 @@ export class DataListDraggableDemo extends React.Component {
             ))}
           </DataList>
         </Droppable>
-        <div className={accessibility.screenReader} aria-live="assertive">
+        <div className="pf-v5-screen-reader" aria-live="assertive">
           {liveText}
         </div>
       </DragDrop>

@@ -8,7 +8,6 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { getUniqueId } from '../../helpers/util';
 import { isValidDate } from '../../helpers/datetimeUtils';
 
@@ -378,7 +377,7 @@ export const CalendarMonth = ({
           <tr>
             {calendar[0].map(({ date }, index) => (
               <th key={index} className={styles.calendarMonthDay} scope="col">
-                <span className={accessibility.screenReader}>{longWeekdayFormat(date)}</span>
+                <span className="pf-v5-screen-reader">{longWeekdayFormat(date)}</span>
                 <span aria-hidden>{weekdayFormat(date)}</span>
               </th>
             ))}
