@@ -8,7 +8,7 @@ import {
   InputGroup,
   InputGroupItem
 } from '@patternfly/react-core';
-import styles from '@patternfly/react-styles/css/components/Button/button';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 export const AlertGroupToast: React.FunctionComponent = () => {
   const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
@@ -21,7 +21,7 @@ export const AlertGroupToast: React.FunctionComponent = () => {
     setAlerts((prevAlerts) => [...prevAlerts.filter((alert) => alert.key !== key)]);
   };
 
-  const btnClasses = [styles.button, styles.modifiers.secondary].join(' ');
+  const btnClasses = [buttonStyles.button, buttonStyles.modifiers.secondary].join(' ');
 
   const getUniqueId = () => new Date().getTime();
 
