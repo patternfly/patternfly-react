@@ -58,12 +58,12 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
-export const BasicNotificationDrawer: React.FunctionComponent = () => {
+export const NotificationDrawerBasic: React.FunctionComponent = () => {
   const drawerRef = React.useRef<HTMLElement | null>(null);
 
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState<boolean>(false);
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState<boolean>(false);
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
+  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
 
   interface UnreadMap {
     [notificationId: string]: boolean;
@@ -77,7 +77,7 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
     'notification-4': false
   });
 
-  const [shouldShowNotifications, setShouldShowNotifications] = React.useState<boolean>(true);
+  const [shouldShowNotifications, setShouldShowNotifications] = React.useState(true);
 
   interface ActionsMenu {
     [toggleId: string]: boolean;

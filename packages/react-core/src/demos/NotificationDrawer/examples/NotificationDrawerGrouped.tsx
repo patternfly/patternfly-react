@@ -60,15 +60,15 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
-export const GroupedNotificationDrawer: React.FunctionComponent = () => {
+export const NotificationDrawerGrouped: React.FunctionComponent = () => {
   const drawerRef = React.useRef<HTMLElement | null>(null);
 
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState<boolean>(false);
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState<boolean>(false);
-  const [firstDrawerGroupExpanded, setFirstDrawerGroupExpanded] = React.useState<boolean>(false);
-  const [secondDrawerGroupExpanded, setSecondDrawerGroupExpanded] = React.useState<boolean>(true);
-  const [thirdDrawerGroupExpanded, setThirdDrawerGroupExpanded] = React.useState<boolean>(false);
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
+  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
+  const [firstDrawerGroupExpanded, setFirstDrawerGroupExpanded] = React.useState(false);
+  const [secondDrawerGroupExpanded, setSecondDrawerGroupExpanded] = React.useState(true);
+  const [thirdDrawerGroupExpanded, setThirdDrawerGroupExpanded] = React.useState(false);
 
   interface UnreadMap {
     [groupName: string]: {
@@ -89,7 +89,7 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
     'group-3': null
   });
 
-  const [shouldShowNotifications, setShouldShowNotifications] = React.useState<boolean>(true);
+  const [shouldShowNotifications, setShouldShowNotifications] = React.useState(true);
 
   interface ActionsMenu {
     [toggleId: string]: boolean;
@@ -369,7 +369,7 @@ export const GroupedNotificationDrawer: React.FunctionComponent = () => {
         key="link"
         to="#"
         // Prevent default onClick behavior for demo purposes
-        onClick={(ev: { preventDefault: () => any }) => ev.preventDefault()}
+        onClick={(ev: any) => ev.preventDefault()}
       >
         Link
       </DropdownItem>

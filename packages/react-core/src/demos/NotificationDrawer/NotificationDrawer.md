@@ -22,7 +22,7 @@ import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 ### Basic
 
-```js file='./examples/NotificationDrawerBasic.tsx' isFullscreen
+```ts file='./examples/NotificationDrawerBasic.tsx' isFullscreen
 
 ```
 
@@ -30,6 +30,6 @@ import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 When using the NotificationDrawerGroupList and related components, the function that is passed in to the `onNotificationDrawerExpand` prop on the Page component must also ensure the NotificationDrawer component only receives focus when it is initially opened. Otherwise any time a drawer group item is opened the NotificationDrawer component will receive focus, which would be unexpected behavior for users.
 
-```js file='./examples/NotificationDrawerGrouped.tsx' isFullscreen
+```ts file='./examples/NotificationDrawerGrouped.tsx' isFullscreen
 
 ```
