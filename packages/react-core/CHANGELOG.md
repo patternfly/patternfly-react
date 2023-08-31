@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.1-prerelease.2 (2023-08-31)
+
+### Bug Fixes
+
+- **select:** fixed deprecated menu filter styles ([#9551](https://github.com/patternfly/patternfly-react/issues/9551)) ([d10e17b](https://github.com/patternfly/patternfly-react/commit/d10e17b596c27a2c83966a1d98bfcd1a9454a881))
+
 ## 5.1.1-prerelease.1 (2023-08-29)
 
 ### Bug Fixes

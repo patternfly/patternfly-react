@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.1-prerelease.2 (2023-08-31)
+
+**Note:** Version bump only for package @patternfly/react-table
+
 ## 5.1.1-prerelease.1 (2023-08-29)
 
 ### Bug Fixes
