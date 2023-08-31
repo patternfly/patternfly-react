@@ -47,18 +47,16 @@ export const Gallery: React.FunctionComponent<GalleryProps> = ({
   if (minWidths) {
     Object.entries(minWidths || {}).map(
       ([breakpoint, value]) =>
-        (minWidthStyles[
-          `${cssGridTemplateColumnsMin.name}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`
-        ] = value)
+        (minWidthStyles[`${cssGridTemplateColumnsMin.name}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] =
+          value)
     );
   }
   const maxWidthStyles: any = {};
   if (maxWidths) {
     Object.entries(maxWidths || {}).map(
       ([breakpoint, value]) =>
-        (maxWidthStyles[
-          `${cssGridTemplateColumnsMax.name}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`
-        ] = value)
+        (maxWidthStyles[`${cssGridTemplateColumnsMax.name}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] =
+          value)
     );
   }
   const widthStyles = { ...minWidthStyles, ...maxWidthStyles };
