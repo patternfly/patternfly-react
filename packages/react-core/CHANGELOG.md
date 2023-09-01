@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.3...@patternfly/react-core@5.1.1-prerelease.4) (2023-09-01)
+
+### Features
+
+- **Drawer:** added focustrap functionality ([#9469](https://github.com/patternfly/patternfly-react/issues/9469)) ([41fedc5](https://github.com/patternfly/patternfly-react/commit/41fedc5f707127e4316866ca8b69b4b1a2abfbb7))
+
 ## [5.1.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.2...@patternfly/react-core@5.1.1-prerelease.3) (2023-09-01)
 
 **Note:** Version bump only for package @patternfly/react-core
