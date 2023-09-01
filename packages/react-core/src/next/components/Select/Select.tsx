@@ -30,6 +30,14 @@ export interface SelectProps extends MenuProps, OUIAProps {
   zIndex?: number;
   /** @beta Determines the accessible role of the select. For a checkbox select pass in "menu". */
   role?: string;
+  /** The container to append the select to. Defaults to 'inline'.
+   * If your select is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * appendTo="inline"
+   * appendTo={() => document.body}
+   * appendTo={document.getElementById('target')}
+   */
+  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
 }
 
 const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
@@ -45,6 +53,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   innerRef,
   zIndex = 9999,
   role = 'listbox',
+  appendTo = 'inline',
   ...props
 }: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -115,17 +124,19 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       <MenuContent>{children}</MenuContent>
     </Menu>
   );
-  return (
+  const popperProps = {
+    trigger: toggle(toggleRef),
+    removeFindDomNode: true,
+    popper: menu,
+    isVisible: isOpen,
+    zIndex
+  };
+  return appendTo === 'inline' ? (
     <div ref={containerRef}>
-      <Popper
-        trigger={toggle(toggleRef)}
-        removeFindDomNode
-        popper={menu}
-        appendTo={containerRef.current || undefined}
-        isVisible={isOpen}
-        zIndex={zIndex}
-      />
+      <Popper {...popperProps} appendTo={containerRef.current || undefined} />
     </div>
+  ) : (
+    <Popper {...popperProps} appendTo={appendTo} />
   );
 };
 
