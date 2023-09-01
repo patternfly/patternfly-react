@@ -39,8 +39,7 @@ import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amou
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-
-import { rows, columns } from './sampleData';
+import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
 
 export const ComposableTableSortable = () => {
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
