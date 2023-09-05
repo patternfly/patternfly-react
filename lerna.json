@@ -26,5 +26,6 @@
   },
   "version": "independent",
   "useWorkspaces": true,
-  "allowBranch": ["main", "v5", "5.0.x"]
+  "allowBranch": ["main", "v5", "5.0.x"],
+  "packages": ["packages/*", "packages/react-integration/demo-app-ts"]
 }
