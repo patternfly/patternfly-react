@@ -26,5 +26,5 @@
   },
   "version": "independent",
   "useWorkspaces": true,
-  "allowBranch": ["main", "v5"]
+  "allowBranch": ["main", "v5", "5.0.x"]
 }
