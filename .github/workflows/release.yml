@@ -3,7 +3,7 @@ name: release
 on:
   push:
     branches:
-      - main
+      - 5.0.x
 jobs:
   build:
     runs-on: ubuntu-latest
