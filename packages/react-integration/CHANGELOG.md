@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.5...@patternfly/react-integration@5.1.1-prerelease.6) (2023-09-05)
+
+### Features
+
+- **Toolbar:** allow multiple toggle groups ([#9329](https://github.com/patternfly/patternfly-react/issues/9329)) ([b1093bf](https://github.com/patternfly/patternfly-react/commit/b1093bf0ba066a56c80667d299750cf49eb0641f))
+
 ## 5.1.1-prerelease.5 (2023-09-01)
 
 ### Features
