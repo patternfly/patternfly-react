@@ -65,6 +65,7 @@ If you want to start with your existing project, skip to [Install and configure 
 
     Follow the steps outlined in the [PatternFly React Seed README](https://github.com/patternfly/patternfly-react-seed#quick-start) to install.
 
+
 #### Install and configure PatternFly React
 * Using npm, run the following command to install:
   ```
