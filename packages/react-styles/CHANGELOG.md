@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.0.1 (2023-09-06)
+
+### Bug Fixes
+
+- dry run patch release with new core versions [skip-a11y] ([d1c9973](https://github.com/patternfly/patternfly-react/commit/d1c9973d783e9cbec951936eec0b4e0c95f21191))
+
+# 5.0.0 (2023-07-27)
+
 # [5.1.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@5.0.0...@patternfly/react-styles@5.1.0-prerelease.0) (2023-07-27)
 
 **Note:** Version bump only for package @patternfly/react-styles
