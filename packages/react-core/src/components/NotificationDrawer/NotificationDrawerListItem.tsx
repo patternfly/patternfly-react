@@ -13,6 +13,8 @@ export interface NotificationDrawerListItemProps extends React.HTMLProps<HTMLLIE
   isRead?: boolean;
   /**  Callback for when a list item is clicked */
   onClick?: (event: any) => void;
+  /** Read state screen reader text */
+  readStateScreenReaderText?: string;
   /**  Tab index for the list item */
   tabIndex?: number;
   /**  Variant indicates the severity level */
@@ -26,6 +28,7 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
   isRead = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onClick = (event: React.MouseEvent) => undefined as any,
+  readStateScreenReaderText,
   tabIndex = 0,
   variant = 'custom',
   ...props
@@ -38,6 +41,14 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
       }
     }
   };
+
+  let readStateSRText;
+  if (readStateScreenReaderText) {
+    readStateSRText = readStateScreenReaderText;
+  } else {
+    readStateSRText = isRead ? 'read' : 'unread';
+  }
+
   return (
     <li
       {...props}
@@ -52,6 +63,7 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
       onClick={(e) => onClick(e)}
       onKeyDown={onKeyDown}
     >
+      <span className="pf-v5-screen-reader">{readStateSRText}</span>
       {children}
     </li>
   );
