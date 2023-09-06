@@ -31,6 +31,8 @@ import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPatternDefs, mergePatternData, useDefaultPatternProps } from '../ChartUtils/chart-patterns';
 import { getChartTheme } from '../ChartUtils/chart-theme-types';
 import { useEffect } from 'react';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartPoint } from '../ChartPoint/ChartPoint';
 
 /**
  * Chart is a wrapper component that reconciles the domain for all its children, controls the layout of the chart,
@@ -283,7 +285,11 @@ export interface ChartProps extends VictoryChartProps {
    * Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some
    * cases, the legend may not be visible until enough padding is applied.
    */
-  legendPosition?: 'bottom' | 'bottom-left' | 'right';
+  legendPosition?: 'bottom' | 'bottom-left' | 'bottom-right' | 'left' | 'right';
+  /**
+   * Text direction of the legend labels.
+   */
+  legendDirection?: 'ltr' | 'rtl';
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -471,6 +477,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position,
+  legendDirection = 'ltr',
   name,
   padding,
   patternScale,
@@ -527,6 +534,8 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
     orientation: legendOrientation,
     theme,
+    ...(legendDirection === 'rtl' && { dataComponent: <ChartPoint transform="translate(40)" /> }),
+    ...(legendDirection === 'rtl' && { labelComponent: <ChartLabel direction="rtl" dx="10" /> }),
     ...legendComponent.props
   });
 
@@ -553,6 +562,9 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     } else if (legendPosition === 'bottom-left') {
       dy += xAxisLabelHeight + legendTitleHeight;
       dx = -10;
+    } else if (legendPosition === 'bottom-right') {
+      dy += xAxisLabelHeight + legendTitleHeight;
+      dx = 10;
     }
 
     // Adjust legend position when axis is hidden

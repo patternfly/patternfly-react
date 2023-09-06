@@ -33,6 +33,8 @@ import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPatternDefs, useDefaultPatternProps } from '../ChartUtils/chart-patterns';
 import { getTheme } from '../ChartUtils/chart-theme';
 import { useEffect } from 'react';
+import { ChartPoint } from '../ChartPoint/ChartPoint';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
 
 /**
  * ChartPie renders a dataset as a pie chart.
@@ -332,7 +334,11 @@ export interface ChartPieProps extends VictoryPieProps {
    * Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some
    * cases, the legend may not be visible until enough padding is applied.
    */
-  legendPosition?: 'bottom' | 'right';
+  legendPosition?: 'bottom' | 'right' | 'left';
+  /**
+   * Text direction of the legend labels.
+   */
+  legendDirection?: 'ltr' | 'rtl';
   /**
    * The name prop is typically used to reference a component instance when defining shared events. However, this
    * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
@@ -498,16 +504,15 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position,
+  legendDirection = 'ltr',
   name,
   patternScale,
   patternUnshiftIndex,
-
   padding,
   radius,
   standalone = true,
   style,
   themeColor,
-
   // destructure last
   theme = getTheme(themeColor),
   labelComponent = allowTooltip ? (
@@ -583,6 +588,8 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     key: 'pf-chart-pie-legend',
     orientation: legendOrientation,
     theme,
+    ...(legendDirection === 'rtl' && { dataComponent: <ChartPoint transform="translate(80)" /> }),
+    ...(legendDirection === 'rtl' && { labelComponent: <ChartLabel direction="rtl" dx="50" /> }),
     ...legendComponent.props
   });
 

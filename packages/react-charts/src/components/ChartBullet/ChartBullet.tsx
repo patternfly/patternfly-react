@@ -29,6 +29,8 @@ import { getBulletDomain } from './utils/chart-bullet-domain';
 import { getBulletThemeWithLegendColorScale } from './utils/chart-bullet-theme';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { useEffect } from 'react';
+import { ChartPoint } from '../ChartPoint/ChartPoint';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
 
 /**
  * ChartBullet renders a dataset as a bullet chart.
@@ -251,7 +253,11 @@ export interface ChartBulletProps {
    * Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some
    * cases, the legend may not be visible until enough padding is applied.
    */
-  legendPosition?: 'bottom' | 'bottom-left' | 'right';
+  legendPosition?: 'bottom' | 'bottom-left' | 'bottom-right' | 'left' | 'right';
+  /**
+   * Text direction of the legend labels.
+   */
+  legendDirection?: 'ltr' | 'rtl';
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -509,6 +515,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   legendComponent = <ChartLegend />,
   legendItemsPerRow,
   legendPosition = 'bottom',
+  legendDirection = 'ltr',
   maxDomain,
   minDomain,
   name,
@@ -670,6 +677,8 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     orientation: legendOrientation,
     position: legendPosition,
     theme,
+    ...(legendDirection === 'rtl' && { dataComponent: <ChartPoint transform="translate(40)" /> }),
+    ...(legendDirection === 'rtl' && { labelComponent: <ChartLabel direction="rtl" dx="10" /> }),
     ...legendComponent.props
   });
 
@@ -778,6 +787,15 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
         dy = -defaultPadding.bottom;
       }
       dx = -10;
+    } else if (legendPosition === 'bottom-right') {
+      if (horizontal) {
+        dy = defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25;
+      } else if (title) {
+        dy = -defaultPadding.bottom + 60;
+      } else {
+        dy = -defaultPadding.bottom;
+      }
+      dx = 10;
     }
 
     return getComputedLegend({

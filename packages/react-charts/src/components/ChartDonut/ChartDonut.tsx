@@ -344,7 +344,11 @@ export interface ChartDonutProps extends ChartPieProps {
    * Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some
    * cases, the legend may not be visible until enough padding is applied.
    */
-  legendPosition?: 'bottom' | 'right';
+  legendPosition?: 'bottom' | 'right' | 'left';
+  /**
+   * Text direction of the legend labels.
+   */
+  legendDirection?: 'ltr' | 'rtl';
   /**
    * The name prop is typically used to reference a component instance when defining shared events. However, this
    * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
@@ -573,6 +577,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   containerComponent = <ChartContainer />,
   innerRadius,
   legendPosition = ChartCommonStyles.legend.position,
+  legendDirection = 'ltr',
   name,
   padAngle,
   padding,
@@ -698,6 +703,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       innerRadius={chartInnerRadius > 0 ? chartInnerRadius : 0}
       key="pf-chart-donut-pie"
       legendPosition={legendPosition}
+      legendDirection={legendDirection}
       name={name}
       padAngle={padAngle !== undefined ? padAngle : getPadAngle}
       padding={padding}
