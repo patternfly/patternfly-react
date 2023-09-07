@@ -29,7 +29,6 @@ switch(uploadFolderName) {
   case 'public':
     if (!prnum && prbranch === 'main') {
       uploadURL = 'react-staging.patternfly.org';
-      fs.writeFileSync(path.join(__dirname, '../public/CNAME'), uploadURL);
     }
     else {
       uploadURL += '.surge.sh';
