@@ -273,3 +273,8 @@ test('Calls onChange', async () => {
 
   expect(onChangeMock).toHaveBeenCalledTimes(typedText.length);
 });
+
+test('Matches snapshot', () => {
+  const { asFragment } = render(<ClipboardCopy>{children}</ClipboardCopy>);
+  expect(asFragment()).toMatchSnapshot();
+});
