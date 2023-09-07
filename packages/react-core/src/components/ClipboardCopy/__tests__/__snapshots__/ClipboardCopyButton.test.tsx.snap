@@ -3,11 +3,7 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    aria="none"
-    aria-live="polite"
     data-testid="tooltip-mock"
-    trigger="mouseenter focus click"
-    triggerref="[object Object]"
   >
     <div
       data-testid="tooltip-mock-content"
@@ -28,18 +24,12 @@ exports[`Matches snapshot 1`] = `
     <p>
       position: top
     </p>
-    <p>
-      onTooltipHidden: () =&gt; {
-        /* istanbul ignore next */
-        cov_274vctcufi().f[1]++;
-      }
-    </p>
     <button
       aria-disabled="false"
       aria-label="Copyable input"
       aria-labelledby="button-id text-id"
       class="pf-v5-c-button pf-m-control"
-      data-ouia-component-id="OUIA-Generated-Button-control-14"
+      data-ouia-component-id="OUIA-Generated-Button-control-13"
       data-ouia-component-type="PF5/Button"
       data-ouia-safe="true"
       id="button-id"

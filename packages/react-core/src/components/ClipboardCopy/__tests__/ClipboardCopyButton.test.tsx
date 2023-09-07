@@ -6,14 +6,13 @@ import { ClipboardCopyButton } from '../ClipboardCopyButton';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 jest.mock('../../Tooltip', () => ({
-  Tooltip: ({ content, children, exitDelay, entryDelay, maxWidth, position, onTooltipHidden, ...props }) => (
-    <div data-testid="tooltip-mock" {...props}>
+  Tooltip: ({ content, children, exitDelay, entryDelay, maxWidth, position }) => (
+    <div data-testid="tooltip-mock">
       <div data-testid="tooltip-mock-content">{content}</div>
       <p>{`exitDelay: ${exitDelay}`}</p>
       <p>{`entryDelay: ${entryDelay}`}</p>
       <p>{`maxWidth: ${maxWidth}`}</p>
       <p>{`position: ${position}`}</p>
-      <p>{`onTooltipHidden: ${onTooltipHidden}`}</p>
       {children}
     </div>
   )
@@ -120,11 +119,6 @@ test('Passes position to Tooltip', () => {
   render(<ClipboardCopyButton position="bottom" {...requiredProps} />);
 
   expect(screen.getByText('position: bottom')).toBeVisible();
-});
-test('Passes onTooltipHidden to Tooltip', () => {
-  render(<ClipboardCopyButton onTooltipHidden={() => {}} {...requiredProps} />);
-
-  expect(screen.getByText('onTooltipHidden: () => {}')).toBeVisible();
 });
 
 test('Matches snapshot', () => {
