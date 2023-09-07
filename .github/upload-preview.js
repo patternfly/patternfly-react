@@ -27,7 +27,13 @@ switch(uploadFolderName) {
     uploadURL += '-a11y.surge.sh';
     break;
   case 'public':
-    uploadURL += '.surge.sh';
+    if (!prnum && prbranch === 'main') {
+      uploadURL = 'react-staging.patternfly.org';
+      fs.writeFileSync(path.join(__dirname, '../public/CNAME'), uploadURL);
+    }
+    else {
+      uploadURL += '.surge.sh';
+    }
     break;
   default:
     uploadURL += `-${uploadFolderName}`;
