@@ -588,8 +588,20 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     key: 'pf-chart-pie-legend',
     orientation: legendOrientation,
     theme,
-    ...(legendDirection === 'rtl' && { dataComponent: <ChartPoint transform="translate(80)" /> }),
-    ...(legendDirection === 'rtl' && { labelComponent: <ChartLabel direction="rtl" dx="50" /> }),
+    ...(legendDirection === 'rtl' && {
+      dataComponent: legendComponent.props.dataComponent ? (
+        React.cloneElement(legendComponent.props.dataComponent, { transform: 'translate(80)' })
+      ) : (
+        <ChartPoint transform="translate(80)" />
+      )
+    }),
+    ...(legendDirection === 'rtl' && {
+      labelComponent: legendComponent.props.labelComponent ? (
+        React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: '50' })
+      ) : (
+        <ChartLabel direction="rtl" dx="50" />
+      )
+    }),
     ...legendComponent.props
   });
 

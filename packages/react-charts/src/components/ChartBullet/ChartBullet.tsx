@@ -677,8 +677,20 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     orientation: legendOrientation,
     position: legendPosition,
     theme,
-    ...(legendDirection === 'rtl' && { dataComponent: <ChartPoint transform="translate(40)" /> }),
-    ...(legendDirection === 'rtl' && { labelComponent: <ChartLabel direction="rtl" dx="10" /> }),
+    ...(legendDirection === 'rtl' && {
+      dataComponent: legendComponent.props.dataComponent ? (
+        React.cloneElement(legendComponent.props.dataComponent, { transform: 'translate(40)' })
+      ) : (
+        <ChartPoint transform="translate(40)" />
+      )
+    }),
+    ...(legendDirection === 'rtl' && {
+      labelComponent: legendComponent.props.labelComponent ? (
+        React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: '10' })
+      ) : (
+        <ChartLabel direction="rtl" dx="10" />
+      )
+    }),
     ...legendComponent.props
   });
 
