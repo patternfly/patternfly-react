@@ -75,7 +75,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   onChange?: (event: React.FormEvent, text?: string | number) => void;
   /** The text which is copied. */
   children: React.ReactNode;
-  /** Additional actions for inline clipboard copy. Should be wrapped with ClipboardCopyAction. */
+  /** Additional actions for inline-compact clipboard copy. Should be wrapped with ClipboardCopyAction. */
   additionalActions?: React.ReactNode;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
