@@ -43,6 +43,18 @@ export class ClipboardCopyDemo extends React.Component {
         >
           Some random text.
         </ClipboardCopy>
+        <br />
+        <br />
+        <ClipboardCopy
+          exitDelay={0}
+          entryDelay={0}
+          onCopy={() => {}}
+          id="onTooltipHidden-test"
+          hoverTip="onTooltipHidden not clicked"
+          clickTip="onTooltipHidden clicked"
+        >
+          Some random text.
+        </ClipboardCopy>
       </React.Fragment>
     );
   }

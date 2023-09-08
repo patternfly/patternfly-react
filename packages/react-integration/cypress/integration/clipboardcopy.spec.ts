@@ -17,20 +17,25 @@ describe('Clipboard Copy Demo Test', () => {
     cy.get('#inline-copy').should('have.class', 'pf-m-block');
   });
 
-  it('Verify hoverTip and clickTip render and onTooltipHidden called', () => {
+  it('Verify hoverTip and clickTip render', () => {
     cy.get('#tooltip-test .pf-v5-c-button.pf-m-control').focus();
-    // Wait for default entryDelay of 300ms
-    cy.wait(500);
     cy.get('.pf-v5-c-tooltip').should('have.text', 'Copy button not clicked');
+    // Wait for defaulty entryDelay
+    cy.wait(500);
     cy.get('#tooltip-test .pf-v5-c-button.pf-m-control').click();
     cy.get('.pf-v5-c-tooltip').should('have.text', 'Copy button clicked');
-    cy.get('#tooltip-test input').focus();
+  });
 
-    // By default onTooltipHidden is called to set internal copied state to false, which
-    // would reset the tooltip content to the hoverTip prop value
-    cy.wait(500);
-    cy.get('#tooltip-test .pf-v5-c-button.pf-m-control').focus();
-    cy.wait(500);
-    cy.get('.pf-v5-c-tooltip').should('have.text', 'Copy button not clicked');
+  it('Verify onTooltipHidden callback is called', () => {
+    cy.get('#onTooltipHidden-test .pf-v5-c-button.pf-m-control').focus();
+    cy.get('.pf-v5-c-tooltip').should('have.text', 'onTooltipHidden not clicked');
+    cy.get('#onTooltipHidden-test .pf-v5-c-button.pf-m-control').click();
+    cy.get('.pf-v5-c-tooltip').should('have.text', 'onTooltipHidden clicked');
+    cy.get('#onTooltipHidden-test input').focus();
+    cy.wait(50);
+    cy.get('#onTooltipHidden-test .pf-v5-c-button.pf-m-control').focus();
+    // By default onTooltipHidden is called within ClipboardCopy to set internal copied state,
+    // which will reset the tooltip content to the hoverTip prop value
+    cy.get('.pf-v5-c-tooltip').should('have.text', 'onTooltipHidden not clicked');
   });
 });
