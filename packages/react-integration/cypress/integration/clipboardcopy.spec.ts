@@ -32,7 +32,7 @@ describe('Clipboard Copy Demo Test', () => {
     cy.get('#onTooltipHidden-test .pf-v5-c-button.pf-m-control').click();
     cy.get('.pf-v5-c-tooltip').should('have.text', 'onTooltipHidden clicked');
     cy.get('#onTooltipHidden-test input').focus();
-    cy.wait(50);
+    cy.wait(500);
     cy.get('#onTooltipHidden-test .pf-v5-c-button.pf-m-control').focus();
     // By default onTooltipHidden is called within ClipboardCopy to set internal copied state,
     // which will reset the tooltip content to the hoverTip prop value
