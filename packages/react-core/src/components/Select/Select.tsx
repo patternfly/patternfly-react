@@ -17,6 +17,14 @@ export interface SelectPopperProps {
   maxWidth?: string | 'trigger';
   /** Enable to flip the popper when it reaches the boundary */
   enableFlip?: boolean;
+  /** The container to append the select to. Defaults to 'inline'.
+   * If your select is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * appendTo="inline"
+   * appendTo={() => document.body}
+   * appendTo={document.getElementById('target')}
+   */
+  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
 }
 
 export interface SelectToggleProps {
