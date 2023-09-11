@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders basic button 1`] = `
+<DocumentFragment>
+  <button
+    aria-disabled="false"
+    aria-label="basic button"
+    class="pf-v5-c-button pf-m-primary"
+    data-ouia-component-id="OUIA-Generated-Button-primary-27"
+    data-ouia-component-type="PF5/Button"
+    data-ouia-safe="true"
+    type="button"
+  >
+    Basic Button
+  </button>
+</DocumentFragment>
+`;
