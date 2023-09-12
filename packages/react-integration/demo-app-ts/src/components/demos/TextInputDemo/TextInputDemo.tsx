@@ -75,7 +75,7 @@ export class TextInputDemo extends Component {
         <Text>Text Input Truncated on Left Example</Text>
         <TextInput
           id="text-truncated-on-left"
-          isLeftTruncated
+          isStartTruncated
           onChange={this.handleLeftTruncatedTextInputChange}
           value={this.state.leftTruncatedTextInputValue}
         />
