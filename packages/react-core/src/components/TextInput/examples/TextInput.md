@@ -23,9 +23,9 @@ import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
 
 ```
 
-### Truncated on Left
+### Truncated at start
 
-```ts file="./TextInputLeftTruncated.tsx"
+```ts file="./TextInputStartTruncated.tsx"
 
 ```
 
