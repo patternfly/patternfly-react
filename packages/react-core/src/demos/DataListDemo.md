@@ -123,7 +123,7 @@ class ExpandableDataList extends React.Component {
                     variant="plain"
                     aria-label={this.state.allExpanded ? 'Collapse all rows' : 'Expand all rows'}
                   >
-                    <ToolbarExpandIconWrapper>
+                    <ToolbarExpandIconWrapper className="pf-v5-m-mirror-inline-rtl">
                       <AngleRightIcon />
                     </ToolbarExpandIconWrapper>
                   </Button>
