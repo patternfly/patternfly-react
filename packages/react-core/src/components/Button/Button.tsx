@@ -70,7 +70,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   type?: 'button' | 'submit' | 'reset';
   /** Adds button variant styles */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'warning' | 'link' | 'plain' | 'control';
-  /** Sets position of the icon */
+  /** Sets position of the icon. Note: "left" and "right" are deprecated. Use "start" and "end" instead */
   iconPosition?: 'start' | 'end' | 'left' | 'right';
   /** Adds accessible text to the button. */
   'aria-label'?: string;
