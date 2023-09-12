@@ -17,6 +17,7 @@ import {
   OverflowMenuGroup,
   OverflowMenuItem,
   PageSection,
+  PageSectionVariants,
   Pagination,
   Select,
   SelectOption,

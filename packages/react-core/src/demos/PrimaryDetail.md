@@ -24,7 +24,7 @@ import azureIcon from './assets/FuseConnector_Icons_AzureServices.png';
 import restIcon from './assets/FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { data } from '@patternfly/react-core/src/demos/Card/CardData.jsx';
-import DashboardWrapper from './examples/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ## Demos
 
