@@ -28,7 +28,7 @@ You can adjust a tab in the following ways:
 - To disable a tab, but keep it perceivable to assistive technology users, use the `isAriaDisabled` property. If a disabled tab has a tooltip, use this property instead of `isDisabled`.
 - To add a tooltip to an aria-disabled tab, use the `tooltip` property. 
 
-Tabs can either be styled as 'default' or 'boxed': 
+Tabs can be styled as 'default' or 'boxed': 
 
 - Default tabs do not have any borders and use a bottom line to distinguish between a selected tab, a hovered tab, and an inactive tab. 
 - Boxed tabs are outlined to emphasize the area that a tab spans. To preview boxed tabs in the following examples, select the 'isBox' checkbox, which sets the `isBox` property to true.
