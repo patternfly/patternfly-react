@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.8...@patternfly/react-core@5.1.1-prerelease.9) (2023-09-12)
+
+### Bug Fixes
+
+- **button:** added logical start/end vals to iconPosition ([#9611](https://github.com/patternfly/patternfly-react/issues/9611)) ([50b1bc3](https://github.com/patternfly/patternfly-react/commit/50b1bc361ffdcb301243f36867bc7cc6e1bb7fbf))
+
 ## 5.1.1-prerelease.8 (2023-09-12)
 
 **Note:** Version bump only for package @patternfly/react-core
