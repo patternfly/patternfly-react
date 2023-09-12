@@ -375,7 +375,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         </InputGroupItem>
       )}
       {!!onSearch && (
-        <InputGroupItem isPlain>
+        <InputGroupItem>
           <Button
             type="submit"
             variant={ButtonVariant.control}
@@ -383,7 +383,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             onClick={onSearchHandler}
             isDisabled={isDisabled}
           >
-            <ArrowRightIcon />
+            <ArrowRightIcon className="pf-v5-m-mirror-inline-rtl" />
           </Button>
         </InputGroupItem>
       )}

@@ -128,7 +128,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
               </div>
             </div>
             <div
-              class="pf-v5-c-input-group__item pf-m-plain"
+              class="pf-v5-c-input-group__item"
             >
               <button
                 aria-disabled="false"
@@ -141,7 +141,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v5-svg"
+                  class="pf-v5-svg pf-v5-m-mirror-inline-rtl"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -305,7 +305,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
               </div>
             </div>
             <div
-              class="pf-v5-c-input-group__item pf-m-plain"
+              class="pf-v5-c-input-group__item"
             >
               <button
                 aria-disabled="false"
@@ -318,7 +318,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v5-svg"
+                  class="pf-v5-svg pf-v5-m-mirror-inline-rtl"
                   fill="currentColor"
                   height="1em"
                   role="img"

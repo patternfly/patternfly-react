@@ -103,7 +103,7 @@ exports[`SearchInput advanced search 1`] = `
         </button>
       </div>
       <div
-        class="pf-v5-c-input-group__item pf-m-plain"
+        class="pf-v5-c-input-group__item"
       >
         <button
           aria-disabled="false"
@@ -116,7 +116,7 @@ exports[`SearchInput advanced search 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v5-svg pf-v5-m-mirror-inline-rtl"
             fill="currentColor"
             height="1em"
             role="img"
@@ -245,7 +245,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
         </button>
       </div>
       <div
-        class="pf-v5-c-input-group__item pf-m-plain"
+        class="pf-v5-c-input-group__item"
       >
         <button
           aria-disabled="false"
@@ -258,7 +258,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v5-svg pf-v5-m-mirror-inline-rtl"
             fill="currentColor"
             height="1em"
             role="img"
@@ -579,7 +579,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
         </button>
       </div>
       <div
-        class="pf-v5-c-input-group__item pf-m-plain"
+        class="pf-v5-c-input-group__item"
       >
         <button
           aria-disabled="false"
@@ -592,7 +592,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v5-svg pf-v5-m-mirror-inline-rtl"
             fill="currentColor"
             height="1em"
             role="img"
@@ -746,7 +746,7 @@ exports[`SearchInput search input with hint 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-input-group__item pf-m-plain"
+      class="pf-v5-c-input-group__item"
     >
       <button
         aria-disabled="false"
@@ -759,7 +759,7 @@ exports[`SearchInput search input with hint 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v5-svg pf-v5-m-mirror-inline-rtl"
           fill="currentColor"
           height="1em"
           role="img"
@@ -898,7 +898,7 @@ exports[`SearchInput simple search input 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-input-group__item pf-m-plain"
+      class="pf-v5-c-input-group__item"
     >
       <button
         aria-disabled="false"
@@ -911,7 +911,7 @@ exports[`SearchInput simple search input 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v5-svg pf-v5-m-mirror-inline-rtl"
           fill="currentColor"
           height="1em"
           role="img"
