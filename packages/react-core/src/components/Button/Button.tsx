@@ -71,7 +71,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   /** Adds button variant styles */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'warning' | 'link' | 'plain' | 'control';
   /** Sets position of the link icon */
-  iconPosition?: 'left' | 'right';
+  iconPosition?: 'left' | 'right' | 'start' | 'end';
   /** Adds accessible text to the button. */
   'aria-label'?: string;
   /** Icon for the button. Usable by all variants except for plain. */
@@ -108,7 +108,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   isInline = false,
   type = ButtonType.button,
   variant = ButtonVariant.primary,
-  iconPosition = 'left',
+  iconPosition = 'start',
   'aria-label': ariaLabel = null,
   icon = null,
   ouiaId,
@@ -183,11 +183,11 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         </span>
       )}
       {variant === ButtonVariant.plain && children === null && icon ? icon : null}
-      {variant !== ButtonVariant.plain && icon && iconPosition === 'left' && (
+      {variant !== ButtonVariant.plain && icon && (iconPosition === 'start' || iconPosition === 'left') && (
         <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>
       )}
       {children}
-      {variant !== ButtonVariant.plain && icon && iconPosition === 'right' && (
+      {variant !== ButtonVariant.plain && icon && (iconPosition === 'end' || iconPosition === 'right') && (
         <span className={css(styles.buttonIcon, styles.modifiers.end)}>{icon}</span>
       )}
       {countOptions && (
