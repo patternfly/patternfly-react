@@ -21,7 +21,6 @@ import {
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
@@ -129,7 +128,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           <DropdownList>
             <DropdownItem
               key="dropdown-start"
-              icon={<AngleLeftIcon />}
+              direction="up"
               onClick={(event: any) =>
                 drillOut(event, 'breadcrumbs-drilldownMenuStart', 'group:app_grouping_start', startRolloutBreadcrumb)
               }
@@ -169,7 +168,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           <DropdownList>
             <DropdownItem
               key="dropdown-start"
-              icon={<AngleLeftIcon />}
+              direction="up"
               onClick={(event: any) =>
                 drillOut(event, 'breadcrumbs-drilldownMenuStart', 'group:labels_start', startRolloutBreadcrumb)
               }
@@ -221,7 +220,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           <DropdownList>
             <DropdownItem
               key="dropdown-pause"
-              icon={<AngleLeftIcon />}
+              direction="up"
               onClick={(event: any) =>
                 drillOut(event, 'breadcrumbs-drilldownMenuPause', 'group:app_grouping', pauseRolloutsBreadcrumb)
               }
@@ -266,7 +265,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           <DropdownList>
             <DropdownItem
               key="dropdown-pause"
-              icon={<AngleLeftIcon />}
+              direction="up"
               onClick={(event: any) =>
                 drillOut(event, 'breadcrumbs-drilldownMenuPause', 'group:labels', pauseRolloutsBreadcrumb)
               }

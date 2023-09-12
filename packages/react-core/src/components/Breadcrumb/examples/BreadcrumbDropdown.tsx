@@ -10,17 +10,16 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 const dropdownItems = [
-  <DropdownItem icon={<AngleLeftIcon />} key="edit">
+  <DropdownItem direction="up" key="edit">
     Edit
   </DropdownItem>,
-  <DropdownItem icon={<AngleLeftIcon />} key="action">
+  <DropdownItem direction="up" key="action">
     Deployment
   </DropdownItem>,
-  <DropdownItem icon={<AngleLeftIcon />} key="apps">
+  <DropdownItem direction="up" key="apps">
     Applications
   </DropdownItem>
 ];
