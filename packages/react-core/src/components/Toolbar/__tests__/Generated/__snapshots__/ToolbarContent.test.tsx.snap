@@ -12,14 +12,6 @@ exports[`ToolbarContent should match snapshot (auto-generated) 1`] = `
         ReactNode
       </div>
     </div>
-    <div
-      class="pf-v5-c-toolbar__expandable-content"
-      id="string-expandable-content-0"
-    >
-      <div
-        class="pf-v5-c-toolbar__group"
-      />
-    </div>
   </div>
 </DocumentFragment>
 `;

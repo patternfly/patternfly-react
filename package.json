@@ -54,7 +54,7 @@
     "husky": "^4.3.0",
     "jest": "27.2.5",
     "jest-cli": "27.2.5",
-    "lerna": "^6.4.1",
+    "lerna": "^7.1.5",
     "lint-staged": "^14.0.0",
     "mutation-observer": "^1.0.3",
     "plop": "^3.1.2",

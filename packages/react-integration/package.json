@@ -1,6 +1,7 @@
 {
   "name": "@patternfly/react-integration",
-  "version": "5.1.1-prerelease.0",
+  "version": "5.1.1-prerelease.6",
+  "private": true,
   "description": "Integration testing for PF5 using demo applications",
   "main": "lib/index.js",
   "sideEffects": false,
@@ -18,9 +19,6 @@
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
-  "publishConfig": {
-    "access": "restricted"
-  },
   "scripts": {
     "build:integration:report": "cd results && junit-merge * && node ../scripts/junit2html.js",
     "clean": "rimraf cypress/videos cypress/screenshots",

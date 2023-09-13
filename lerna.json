@@ -1,5 +1,4 @@
 {
-  "lerna": "3.10.5",
   "npmClient": "yarn",
   "publishConfig": {
     "access": "public",
@@ -25,7 +24,7 @@
     }
   },
   "version": "independent",
-  "useWorkspaces": true,
-  "allowBranch": ["main", "v5"],
-  "packages": ["packages/*"]
+  "allowBranch": ["main", "v4", "5.0.x"],
+  "packages": ["packages/*", "packages/react-integration/demo-app-ts"],
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }

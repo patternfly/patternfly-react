@@ -180,11 +180,8 @@ export const CalendarMonth = ({
 
   useEffect(() => {
     // Calendar month should not be focused on page load
-    // Datepicker should place focus in calendar month when opened
     if ((shouldFocus || isDateFocused) && focusedDateValidated && focusRef.current) {
       focusRef.current.focus();
-    } else {
-      setShouldFocus(true);
     }
   }, [focusedDate, isDateFocused, focusedDateValidated, focusRef]);
 

@@ -20,7 +20,7 @@ exports[`Matches the snapshot 1`] = `
       isInline: undefined
     </p>
     <p>
-      iconPosition: right
+      iconPosition: end
     </p>
     <div
       data-testid="icon"

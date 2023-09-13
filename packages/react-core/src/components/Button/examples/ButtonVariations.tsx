@@ -30,7 +30,7 @@ export const ButtonVariations: React.FunctionComponent = () => (
     <Button variant="link" icon={<PlusCircleIcon />}>
       Link
     </Button>{' '}
-    <Button variant="link" icon={<ExternalLinkSquareAltIcon />} iconPosition="right">
+    <Button variant="link" icon={<ExternalLinkSquareAltIcon />} iconPosition="end">
       Link
     </Button>{' '}
     <Button variant="link" isInline>

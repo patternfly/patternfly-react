@@ -45,7 +45,7 @@ describe('Data Toolbar Demo Test', () => {
       it('displays toggle group contents', () => {
         cy.get('#demo-toggle-group #toolbar-demo-search').should('be.visible');
         cy.get('#demo-toggle-group #toolbar-demo-filters').should('be.visible');
-        cy.get('.pf-v5-c-toolbar__expandable-content').should('not.be.visible');
+        cy.get('.pf-v5-c-toolbar__expandable-content').should('not.exist');
       });
 
       it('displays filter chips', () => {
@@ -66,7 +66,7 @@ describe('Data Toolbar Demo Test', () => {
         cy.get('#demo-toggle-group .pf-v5-c-toolbar__toggle').should('be.visible');
         cy.get('#demo-toggle-group #toolbar-demo-search').should('not.be.visible');
         cy.get('#demo-toggle-group #toolbar-demo-filters').should('not.be.visible');
-        cy.get('.pf-v5-c-toolbar__expandable-content').should('not.be.visible');
+        cy.get('.pf-v5-c-toolbar__expandable-content').should('not.exist');
       });
 
       it('displays X filters applied message', () => {

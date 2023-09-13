@@ -56,6 +56,12 @@ The error message can be customized via the `requiredDateOptions.emptyDateText` 
 
 ```
 
+### Controlled required
+
+```ts file="./DatePickerControlledRequired.tsx"
+
+```
+
 ### Controlling the date picker calendar state
 
 ```ts file="./DatePickerControlledCalendar.tsx"

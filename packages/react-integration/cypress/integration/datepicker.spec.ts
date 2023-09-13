@@ -18,6 +18,15 @@ xit('Verify validation error can be cleared from outside', () => {
   cy.get('div.pf-m-error').should('not.exist');
 });
 
+it('Verify error can be cleared when resetting the date from outside', () => {
+  cy.get('#date-picker-clear .pf-v5-c-form-control input').click();
+  cy.focused().clear().type('something invalid');
+  cy.focused().blur();
+  cy.get('div.pf-m-error').should('exist');
+  cy.get('button').contains('Clear date').click();
+  cy.get('div.pf-m-error').should('not.exist');
+});
+
 it('Verify calendar state can be controlled', () => {
   cy.get('#date-picker-controlled .pf-v5-c-popover').should('not.exist');
   cy.get('button').contains('Toggle').click();

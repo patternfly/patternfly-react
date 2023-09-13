@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.10...@patternfly/react-core@5.1.1-prerelease.11) (2023-09-13)
+
+### Bug Fixes
+
+- **NavItem:** fix incorrect component typing ([#9579](https://github.com/patternfly/patternfly-react/issues/9579)) ([f5aced1](https://github.com/patternfly/patternfly-react/commit/f5aced18a67df0112b01654ed2a9ca37aaf0afc1))
+
+### Features
+
+- **Icon:** added prop for mirroring in RTL ([#9609](https://github.com/patternfly/patternfly-react/issues/9609)) ([dc65307](https://github.com/patternfly/patternfly-react/commit/dc65307e989185d298e5ac0acd354246784d24dc))
+
+## [5.1.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.9...@patternfly/react-core@5.1.1-prerelease.10) (2023-09-13)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [5.1.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.8...@patternfly/react-core@5.1.1-prerelease.9) (2023-09-12)
+
+### Bug Fixes
+
+- **button:** added logical start/end vals to iconPosition ([#9611](https://github.com/patternfly/patternfly-react/issues/9611)) ([50b1bc3](https://github.com/patternfly/patternfly-react/commit/50b1bc361ffdcb301243f36867bc7cc6e1bb7fbf))
+
+## 5.1.1-prerelease.8 (2023-09-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [5.1.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.6...@patternfly/react-core@5.1.1-prerelease.7) (2023-09-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [5.1.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.5...@patternfly/react-core@5.1.1-prerelease.6) (2023-09-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [5.1.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.4...@patternfly/react-core@5.1.1-prerelease.5) (2023-09-05)
+
+### Features
+
+- **Toolbar:** allow multiple toggle groups ([#9329](https://github.com/patternfly/patternfly-react/issues/9329)) ([b1093bf](https://github.com/patternfly/patternfly-react/commit/b1093bf0ba066a56c80667d299750cf49eb0641f))
+
+## [5.1.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.3...@patternfly/react-core@5.1.1-prerelease.4) (2023-09-01)
+
+### Features
+
+- **Drawer:** added focustrap functionality ([#9469](https://github.com/patternfly/patternfly-react/issues/9469)) ([41fedc5](https://github.com/patternfly/patternfly-react/commit/41fedc5f707127e4316866ca8b69b4b1a2abfbb7))
+
+## [5.1.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.2...@patternfly/react-core@5.1.1-prerelease.3) (2023-09-01)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## 5.1.1-prerelease.2 (2023-08-31)
+
+### Bug Fixes
+
+- **select:** fixed deprecated menu filter styles ([#9551](https://github.com/patternfly/patternfly-react/issues/9551)) ([d10e17b](https://github.com/patternfly/patternfly-react/commit/d10e17b596c27a2c83966a1d98bfcd1a9454a881))
+
+## 5.1.1-prerelease.1 (2023-08-29)
+
+### Bug Fixes
+
+- **Button:** Fixed incorrect styles when plain variant and isLoading is false ([#9500](https://github.com/patternfly/patternfly-react/issues/9500)) ([209b505](https://github.com/patternfly/patternfly-react/commit/209b5054309a97d7709c5753b26658d9feb585a0))
+- **Card:** updated warning logic for new clickable/selectable card ([#9418](https://github.com/patternfly/patternfly-react/issues/9418)) ([fb295fb](https://github.com/patternfly/patternfly-react/commit/fb295fbf852f26dd11024da167a96ef216b52fd0))
+- **Chip:** Added prop to render a badge in the chip after the text ([#9493](https://github.com/patternfly/patternfly-react/issues/9493)) ([ee6d853](https://github.com/patternfly/patternfly-react/commit/ee6d853b5f92d0a2114d7b73a76cdc1a5dd3a96d))
+- **DatePicker:** error not showing on date reset by button ([#9267](https://github.com/patternfly/patternfly-react/issues/9267)) ([4fccdaf](https://github.com/patternfly/patternfly-react/commit/4fccdaf8d260ef60165837e7d493febabf53e145)), closes [#9373](https://github.com/patternfly/patternfly-react/issues/9373)
+- **DatePicker:** resolved page scrolling bug ([#9401](https://github.com/patternfly/patternfly-react/issues/9401)) ([3707ffb](https://github.com/patternfly/patternfly-react/commit/3707ffb2d88eec7a7bdab25e6854dcb82ef5dc08)), closes [#9393](https://github.com/patternfly/patternfly-react/issues/9393) [#9370](https://github.com/patternfly/patternfly-react/issues/9370) [#9337](https://github.com/patternfly/patternfly-react/issues/9337)
+- **DatePicker:** updated onBlur logic for empty date ([#9373](https://github.com/patternfly/patternfly-react/issues/9373)) ([088be06](https://github.com/patternfly/patternfly-react/commit/088be06b304237187cc84fb35123a94c03bb0b17))
+- **deps:** update dependency focus-trap to v7.5.2 ([#9446](https://github.com/patternfly/patternfly-react/issues/9446)) ([472878d](https://github.com/patternfly/patternfly-react/commit/472878da428c97607953572cf7a91d0d240cce28))
+- **Menu:** focused items should scrollintoview when overflowed ([#9408](https://github.com/patternfly/patternfly-react/issues/9408)) ([388cfeb](https://github.com/patternfly/patternfly-react/commit/388cfeb1418869ed3339cc61456258937bd1ccba)), closes [#9393](https://github.com/patternfly/patternfly-react/issues/9393) [#9370](https://github.com/patternfly/patternfly-react/issues/9370) [#9337](https://github.com/patternfly/patternfly-react/issues/9337)
+- **Modal:** remove `aria-hidden` from siblings when unmounting the component (v5) ([#9110](https://github.com/patternfly/patternfly-react/issues/9110)) ([3f11b91](https://github.com/patternfly/patternfly-react/commit/3f11b91dc7ba938373a8fe62eff6d3bc4c4da39b))
+- **Popper:** fixed flicker when opening popper content ([#9339](https://github.com/patternfly/patternfly-react/issues/9339)) ([7186dae](https://github.com/patternfly/patternfly-react/commit/7186daede18d4896c4d801227a99922c9f8c0cd9))
+
+### Features
+
+- **Drawer:** add noBackground to colorVariant ([#9372](https://github.com/patternfly/patternfly-react/issues/9372)) ([2567f3c](https://github.com/patternfly/patternfly-react/commit/2567f3ce0539cd059b33f1c5a7857d71daa1355c))
+- **FocusTrap:** convert to function component ([#9297](https://github.com/patternfly/patternfly-react/issues/9297)) ([09d128f](https://github.com/patternfly/patternfly-react/commit/09d128ff090dc91c4de677d42a2b1cbb3790e2f1))
+- **misc:** update screenreader classname ([#9392](https://github.com/patternfly/patternfly-react/issues/9392)) ([3bcd263](https://github.com/patternfly/patternfly-react/commit/3bcd263f15a92d00ade60d80e8d1c6777507667e)), closes [#9393](https://github.com/patternfly/patternfly-react/issues/9393) [#9370](https://github.com/patternfly/patternfly-react/issues/9370) [#9337](https://github.com/patternfly/patternfly-react/issues/9337)
+- **Modal:** add close button arialabel prop ([#9467](https://github.com/patternfly/patternfly-react/issues/9467)) ([a644b8f](https://github.com/patternfly/patternfly-react/commit/a644b8f5ba094f9cfd734ab13b4fb7cf12ab8ce6))
+- **Modal:** added ability to customize initial focus ([#9453](https://github.com/patternfly/patternfly-react/issues/9453)) ([4f4c1d0](https://github.com/patternfly/patternfly-react/commit/4f4c1d0aacb1c16012e66d78345a4486081566d1))
+- **Modal:** use css vars to set width, add maxWidth ([#9300](https://github.com/patternfly/patternfly-react/issues/9300)) ([fed8205](https://github.com/patternfly/patternfly-react/commit/fed820515c57ceed60975bd52118c23c8a1382c8))
+- **Pagination:** add offset example ([#9232](https://github.com/patternfly/patternfly-react/issues/9232)) ([286bf8c](https://github.com/patternfly/patternfly-react/commit/286bf8ca24427f1204b075ce68e6a2677612386a))
+- **SimpleList:** add ul/li classes ([#9302](https://github.com/patternfly/patternfly-react/issues/9302)) ([f6bae61](https://github.com/patternfly/patternfly-react/commit/f6bae614660c9215936aba53c930fe82448fe942))
+- **TreeView:** onCollapse callback ([#9480](https://github.com/patternfly/patternfly-react/issues/9480)) ([849cd75](https://github.com/patternfly/patternfly-react/commit/849cd7547bab5b659131e6b6caf6fb20d3c0cfff))
+
+# 5.0.0 (2023-07-27)
+
 # [5.1.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.0.0...@patternfly/react-core@5.1.0-prerelease.0) (2023-07-27)
 
 **Note:** Version bump only for package @patternfly/react-core

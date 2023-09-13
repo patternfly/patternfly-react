@@ -65,7 +65,7 @@ describe('Toolbar', () => {
             <ToolbarFilter
               chips={['New', 'Pending']}
               deleteChip={(category, chip) => {}}
-              deleteChipGroup={category => {}}
+              deleteChipGroup={(category) => {}}
               categoryName="Status"
             >
               test content
@@ -102,8 +102,7 @@ describe('Toolbar', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
-    // Expecting 2 matches for text because the buttons also exist in hidden expandable content for mobile view
-    expect(screen.getAllByRole('button', { name: 'Save filters' }).length).toBe(2);
-    expect(screen.getAllByRole('button', { name: 'Clear all filters' }).length).toBe(2);
+    expect(screen.getAllByRole('button', { name: 'Save filters' }).length).toBe(1);
+    expect(screen.getAllByRole('button', { name: 'Clear all filters' }).length).toBe(1);
   });
 });
