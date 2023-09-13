@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
+import { Icon } from '../Icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
@@ -383,7 +384,9 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             onClick={onSearchHandler}
             isDisabled={isDisabled}
           >
-            <ArrowRightIcon className="pf-v5-m-mirror-inline-rtl" />
+            <Icon shouldMirrorRTL>
+              <ArrowRightIcon />
+            </Icon>
           </Button>
         </InputGroupItem>
       )}
