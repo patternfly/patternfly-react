@@ -35,7 +35,8 @@ import {
   ToolbarExpandIconWrapper,
   ToolbarContent,
   SearchInput,
-  Tooltip
+  Tooltip,
+  Icon
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -123,9 +124,11 @@ class ExpandableDataList extends React.Component {
                     variant="plain"
                     aria-label={this.state.allExpanded ? 'Collapse all rows' : 'Expand all rows'}
                   >
-                    <ToolbarExpandIconWrapper className="pf-v5-m-mirror-inline-rtl">
-                      <AngleRightIcon />
-                    </ToolbarExpandIconWrapper>
+                    <Icon shouldMirrorRTL>
+                      <ToolbarExpandIconWrapper>
+                        <AngleRightIcon />
+                      </ToolbarExpandIconWrapper>
+                    </Icon>
                   </Button>
                 </Tooltip>
               </ToolbarItem>
