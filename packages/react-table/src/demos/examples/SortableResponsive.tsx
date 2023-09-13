@@ -7,19 +7,10 @@ import {
   DropdownList,
   Flex,
   FlexItem,
-  Label,
   MenuToggle,
   MenuToggleElement,
-  OverflowMenu,
-  OverflowMenuContent,
-  OverflowMenuControl,
-  OverflowMenuDropdownItem,
-  OverflowMenuGroup,
-  OverflowMenuItem,
   PageSection,
-  PageSectionVariants,
   Pagination,
-  Select,
   SelectOption,
   SelectList,
   SelectGroup,
@@ -28,7 +19,17 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
-  ToolbarItem
+  ToolbarItem,
+  OverflowMenuDropdownItem,
+  PaginationVariant,
+  Label,
+  Select,
+  OverflowMenu,
+  OverflowMenuContent,
+  OverflowMenuControl,
+  OverflowMenuGroup,
+  OverflowMenuItem,
+  PageSectionVariants
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
@@ -40,13 +41,15 @@ import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amou
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
+import { rows, columns, SampleDataRow } from '@patternfly/react-table/src/demos/examples/Table/sampleData';
 
-export const ComposableTableSortable = () => {
+type Direction = 'asc' | 'desc' | 'none';
+
+export const ComposableTableSortable: React.FC = () => {
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
 
-  const sortRows = (r, sortIndex, sortDirection) => {
-    return [...r].sort((a, b) => {
+  const sortRows = (rows: SampleDataRow[], sortIndex: number, sortDirection: Direction) =>
+    [...rows].sort((a, b) => {
       let returnValue = 0;
       if (sortIndex === 0 || sortIndex === 7) {
         returnValue = 1;
@@ -62,7 +65,6 @@ export const ComposableTableSortable = () => {
       }
       return returnValue;
     });
-  };
 
   const [sortedData, setSortedData] = React.useState([...sortRows(rows, 0, 'asc')]);
   const [sortedRows, setSortedRows] = React.useState([...sortedData]);
@@ -72,11 +74,11 @@ export const ComposableTableSortable = () => {
   // index of the currently active column
   const [activeSortIndex, setActiveSortIndex] = React.useState(0);
   // sort direction of the currently active column
-  const [activeSortDirection, setActiveSortDirection] = React.useState('asc');
+  const [activeSortDirection, setActiveSortDirection] = React.useState<Direction>('asc');
   // sort dropdown expansion
   const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
 
-  const onSort = (event, index, direction) => {
+  const onSort = (_event: any, index: number, direction: Direction) => {
     setActiveSortIndex(index);
     setActiveSortDirection(direction);
 
@@ -89,15 +91,15 @@ export const ComposableTableSortable = () => {
     setSortedRows(sortedData.slice((page - 1) * perPage, page * perPage - 1));
   }, [sortedData, page, perPage]);
 
-  const handleSetPage = (_evt, newPage) => {
+  const handleSetPage = (_evt: any, newPage: number) => {
     setPage(newPage);
   };
 
-  const handlePerPageSelect = (_evt, newPerPage) => {
+  const handlePerPageSelect = (_evt: any, newPerPage: number) => {
     setPerPage(newPerPage);
   };
 
-  const renderPagination = (variant) => (
+  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant) => (
     <Pagination
       isCompact
       itemCount={rows.length}
@@ -118,7 +120,7 @@ export const ComposableTableSortable = () => {
     />
   );
 
-  const renderLabel = (labelText) => {
+  const renderLabel = (labelText: string) => {
     switch (labelText) {
       case 'Running':
         return <Label color="green">{labelText}</Label>;
@@ -138,12 +140,12 @@ export const ComposableTableSortable = () => {
           <Select
             isOpen={isSortDropdownOpen}
             selected={[activeSortDirection, activeSortIndex]}
-            onOpenChange={(isOpen) => setIsSortDropdownOpen(isOpen)}
-            onSelect={(event, value) => {
+            onOpenChange={(isOpen: boolean) => setIsSortDropdownOpen(isOpen)}
+            onSelect={(event: React.MouseEvent<Element, MouseEvent>, value: string | number) => {
               if (value === 'asc' || value === 'desc') {
                 onSort(event, activeSortIndex, value);
               } else {
-                onSort(event, value, activeSortDirection !== 'none' ? activeSortDirection : 'asc');
+                onSort(event, value as number, activeSortDirection !== 'none' ? activeSortDirection : 'asc');
               }
             }}
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
@@ -193,8 +195,8 @@ export const ComposableTableSortable = () => {
             <OverflowMenuControl hasAdditionalOptions>
               <Dropdown
                 onSelect={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
-                onOpenChange={(isKebabDropdownOpen) => setIsKebabDropdownOpen(isKebabDropdownOpen)}
-                toggle={(toggleRef) => (
+                onOpenChange={(isKebabDropdownOpen: boolean) => setIsKebabDropdownOpen(isKebabDropdownOpen)}
+                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
                   <MenuToggle
                     ref={toggleRef}
                     aria-label="overflow menu"

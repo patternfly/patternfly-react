@@ -1,17 +1,18 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    "jsx": "react",
     "rootDir": "./src",
     "outDir": "./dist/esm",
     "tsBuildInfoFile": "dist/esm.tsbuildinfo",
     "baseUrl": ".",
     "paths": {
-      "*/deprecated": ["./src/deprecated"],
+      "./deprecated": ["./src/deprecated"]
     }
   },
   "include": [
     "./src/*",
-    "./src/**/*"
+    "./src/**/*",
   ],
   "references": [
     {

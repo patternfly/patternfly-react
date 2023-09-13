@@ -3,6 +3,27 @@ import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternf
 import { Card, PageSection } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
+interface Fact {
+  name: string;
+  state: string;
+  detail1: string;
+  detail2: string;
+  detail3: string;
+  detail4: string;
+  detail5: string;
+  detail6: string;
+  detail7: string;
+  detail8: string;
+  detail9: string;
+  detail10: string;
+  detail11: string;
+  detail12: string;
+  detail13: string;
+  detail14: string;
+}
+
+type Direction = 'asc' | 'desc' | 'none';
+
 export const StickyFirstColumn = () => {
   const facts = Array.from(
     {
@@ -47,7 +68,7 @@ export const StickyFirstColumn = () => {
   };
   const [activeSortIndex, setActiveSortIndex] = React.useState(null);
   const [activeSortDirection, setActiveSortDirection] = React.useState(null);
-  const getSortableRowValues = fact => {
+  const getSortableRowValues = (fact: Fact) => {
     const {
       name,
       state,
@@ -100,12 +121,12 @@ export const StickyFirstColumn = () => {
       }
     });
   }
-  const getSortParams = columnIndex => ({
+  const getSortParams = (columnIndex: number) => ({
     sortBy: {
       index: activeSortIndex,
       direction: activeSortDirection
     },
-    onSort: (_event, index, direction) => {
+    onSort: (_event: any, index: number, direction: Direction) => {
       setActiveSortIndex(index);
       setActiveSortDirection(direction);
     },
@@ -148,7 +169,7 @@ export const StickyFirstColumn = () => {
                 </Tr>
               </Thead>
               <Tbody>
-                {sortedFacts.map(fact => (
+                {sortedFacts.map((fact) => (
                   <Tr key={fact.name}>
                     <Th isStickyColumn stickyMinWidth="100px" hasRightBorder modifier="truncate">
                       {fact.name}

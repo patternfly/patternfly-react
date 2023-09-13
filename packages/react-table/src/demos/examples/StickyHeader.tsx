@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, Label, PageSection } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td, TableText } from '@patternfly/react-table';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
+import { rows, columns } from '@patternfly/react-table/src/demos/examples/Table/sampleData';
 
 export const StickyHeader: React.FunctionComponent = () => {
   const renderLabel = (labelText: string) => {

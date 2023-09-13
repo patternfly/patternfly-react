@@ -53,10 +53,10 @@ export const TableStickyColumnsAndHeader: React.FunctionComponent = () => {
   // Index of the currently sorted column
   // Note: if you intend to make columns reorderable, you may instead want to use a non-numeric key
   // as the identifier of the sorted column. See the "Compound expandable" example.
-  const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
+  const [activeSortIndex, setActiveSortIndex] = React.useState<number | null | undefined>(null);
 
   // Sort direction of the currently sorted column
-  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
+  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null | undefined>(null);
 
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   // This example is trivial since our data objects just contain strings, but if the data was more complex
@@ -69,7 +69,7 @@ export const TableStickyColumnsAndHeader: React.FunctionComponent = () => {
   // Note that we perform the sort as part of the component's render logic and not in onSort.
   // We shouldn't store the list of data in state because we don't want to have to sync that with props.
   let sortedFacts = facts;
-  if (activeSortIndex !== null) {
+  if (activeSortIndex) {
     sortedFacts = facts.sort((a, b) => {
       const aValue = getSortableRowValues(a)[activeSortIndex];
       const bValue = getSortableRowValues(b)[activeSortIndex];
@@ -86,8 +86,8 @@ export const TableStickyColumnsAndHeader: React.FunctionComponent = () => {
 
   const getSortParams = (columnIndex: number): ThProps['sort'] => ({
     sortBy: {
-      index: activeSortIndex,
-      direction: activeSortDirection
+      index: activeSortIndex as number,
+      direction: activeSortDirection as any
     },
     onSort: (_event, index, direction) => {
       setActiveSortIndex(index);

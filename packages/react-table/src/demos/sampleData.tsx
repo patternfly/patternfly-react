@@ -1,4 +1,15 @@
-const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getRandomInteger = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+export interface SampleDataRow {
+  name: string;
+  threads: number;
+  applications: number;
+  workspaces: number;
+  status: string;
+  location: string;
+  lastModified: string;
+  url: string;
+}
 
 export const columns = [
   'Servers',
@@ -11,7 +22,7 @@ export const columns = [
   'URL'
 ];
 
-export const rows = [
+export const rows: SampleDataRow[] = [
   {
     name: 'US-Node 1',
     threads: getRandomInteger(1, 20),

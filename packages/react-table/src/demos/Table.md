@@ -25,7 +25,6 @@ TextContent,
 Text,
 Divider } from '@patternfly/react-core';
 import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
-
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -49,37 +48,36 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
+import { rows, columns } from './sampleData';
 
 ## Demos
 
 ### Bulk select
 
-```js isFullscreen file="./table-demos/BulkSelect.jsx"
-
+```js isFullscreen file="./examples/BulkSelect.tsx"
 ```
 
 ### Expand/collapse all
 
-```js isFullscreen file="./table-demos/ExpandCollapseAll.jsx"
+```js isFullscreen file="./examples/ExpandCollapseAll.tsx"
 
 ```
 
 ### Compact
 
-```js isFullscreen file="./table-demos/Compact.jsx"
+```js isFullscreen file="./examples/Compact.tsx"
 
 ```
 
 ### Compound expansion
 
-```js isFullscreen file="./table-demos/CompoundExpansion.jsx"
+```js isFullscreen file="./examples/CompoundExpansion.tsx"
 
 ```
 
 ### Column management
 
-```js isFullscreen file="./table-demos/ColumnManagement.jsx"
+```js isFullscreen file="./examples/ColumnManagement.tsx"
 
 ```
 
@@ -855,7 +853,7 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
+import { rows, columns } from './sampleData';
 
 class FilterTableDemo extends React.Component {
   constructor(props) {
@@ -1297,7 +1295,7 @@ class FilterTableDemo extends React.Component {
 
 ### Sortable - responsive
 
-```js isFullscreen file="./table-demos/SortableResponsive.jsx"
+```js isFullscreen file="./examples/SortableResponsive.tsx"
 
 ```
 
@@ -1420,19 +1418,19 @@ class ComplexPaginationTableDemo extends React.Component {
 
 ### Static bottom pagination on mobile
 
-```js isFullscreen file="table-demos/StaticBottomPagination.jsx"
+```ts isFullscreen file="./examples/StaticBottomPagination.tsx"
 
 ```
 
 ### Sticky header
 
-```js isFullscreen file="./table-demos/StickyHeader.jsx"
+```js isFullscreen file="./examples/StickyHeader.tsx"
 
 ```
 
 ### Sticky first column
 
-```js isFullscreen file="./table-demos/StickyFirstColumn.jsx"
+```js isFullscreen file="./examples/StickyFirstColumn.tsx"
 
 ```
 
@@ -1440,7 +1438,7 @@ class ComplexPaginationTableDemo extends React.Component {
 
 A toolbar may be added above a sticky table either inside or outside the `OuterScrollContainer`.
 
-```ts isFullscreen file="../../components/Table/examples/TableStickyColumnsAndHeader.tsx"
+```js isFullscreen file="../components/Table/examples/TableStickyColumnsAndHeader.tsx"
 
 ```
 
@@ -1450,172 +1448,15 @@ These examples demonstrate the use of an [Empty State component](/components/emp
 
 ### Empty
 
-```js isFullscreen
-import React from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import {
-  Bullseye,
-  Button,
-  Card,
-  EmptyState,
-  EmptyStateVariant,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateHeader,
-  EmptyStateFooter,
-  EmptyStateActions,
-  PageSection
-} from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-
-export const TableEmptyState: React.FunctionComponent = () => (
-  <DashboardWrapper hasPageTemplateTitle>
-    <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
-      <Card component="div">
-        <Table aria-label="Empty state table">
-          <Thead>
-            <Tr>
-              <Th>Repositories</Th>
-              <Th>Branches</Th>
-              <Th>Pull requests</Th>
-              <Th>Workspaces</Th>
-              <Th>Last commit</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td colSpan={8}>
-                <Bullseye>
-                  <EmptyState variant={EmptyStateVariant.sm}>
-                    <EmptyStateHeader
-                      icon={<EmptyStateIcon icon={SearchIcon} />}
-                      titleText="No results found"
-                      headingLevel="h2"
-                    />
-                    <EmptyStateBody>
-                      No results match this filter criteria. Clear all filters and try again.
-                    </EmptyStateBody>
-                    <EmptyStateFooter>
-                      <EmptyStateActions>
-                        <Button variant="link">Clear all filters</Button>
-                      </EmptyStateActions>
-                    </EmptyStateFooter>
-                  </EmptyState>
-                </Bullseye>
-              </Td>
-            </Tr>
-          </Tbody>
-        </Table>
-      </Card>
-    </PageSection>
-  </DashboardWrapper>
-);
+```js isFullscreen file="./examples/EmptyStateDefault.tsx"
 ```
 
 ### Loading
 
-```js isFullscreen
-import React from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import {
-  Bullseye,
-  Card,
-  EmptyState,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateHeader,
-  PageSection,
-  Spinner
-} from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-
-export const LoadingStateDemo: React.FunctionComponent = () => (
-  <DashboardWrapper hasPageTemplateTitle>
-    <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
-      <Card component="div">
-        <Table aria-label="Loading table demo">
-          <Thead>
-            <Tr>
-              <Th>Repositories</Th>
-              <Th>Branches</Th>
-              <Th>Pull requests</Th>
-              <Th>Workspaces</Th>
-              <Th>Last commit</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td colSpan={8}>
-                <Bullseye>
-                  <EmptyState>
-                    <EmptyStateHeader titleText="Loading" headingLevel="h2" icon={<EmptyStateIcon icon={Spinner} />} />
-                  </EmptyState>
-                </Bullseye>
-              </Td>
-            </Tr>
-          </Tbody>
-        </Table>
-      </Card>
-    </PageSection>
-  </DashboardWrapper>
-);
+```js isFullscreen file="./examples/EmptyStateLoading.tsx"
 ```
 
 ### Error
 
-```js isFullscreen
-import React from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import {
-  Bullseye,
-  Card,
-  EmptyState,
-  EmptyStateVariant,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateHeader,
-  PageSection
-} from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-
-export const ErrorStateDemo: React.FunctionComponent = () => (
-  <DashboardWrapper hasPageTemplateTitle>
-    <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
-      <Card component="div">
-        <Table aria-label="Loading table demo">
-          <Thead>
-            <Tr>
-              <Th>Repositories</Th>
-              <Th>Branches</Th>
-              <Th>Pull requests</Th>
-              <Th>Workspaces</Th>
-              <Th>Last commit</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td colSpan={8}>
-                <Bullseye>
-                  <EmptyState variant={EmptyStateVariant.sm}>
-                    <EmptyStateHeader
-                      titleText="Unable to connect"
-                      icon={<EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />}
-                      headingLevel="h2"
-                    />
-                    <EmptyStateBody>
-                      There was an error retrieving data. Check your connection and reload the page.
-                    </EmptyStateBody>
-                  </EmptyState>
-                </Bullseye>
-              </Td>
-            </Tr>
-          </Tbody>
-        </Table>
-      </Card>
-    </PageSection>
-  </DashboardWrapper>
-);
+```js isFullscreen file="./examples/EmptyStateError.tsx"
 ```
