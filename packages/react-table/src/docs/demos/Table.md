@@ -5,6 +5,7 @@ section: components
 
 import {
 Checkbox,
+DashboardWrapper,
 Label,
 PageSection,
 ToolbarExpandIconWrapper,
@@ -47,7 +48,6 @@ import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-ico
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';

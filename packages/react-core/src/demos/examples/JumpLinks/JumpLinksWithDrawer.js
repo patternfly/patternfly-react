@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Button,
+  DashboardWrapper,
   Drawer,
   DrawerPanelContent,
   DrawerContent,
@@ -19,7 +20,6 @@ import {
   TextContent,
   getResizeObserver
 } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const JumpLinksWithDrawer = () => {
   const headings = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];

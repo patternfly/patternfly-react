@@ -3,6 +3,7 @@ import React from 'react';
 import {
   Button,
   Card,
+  DashboardWrapper,
   Dropdown,
   DropdownList,
   Flex,
@@ -38,7 +39,6 @@ import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
 

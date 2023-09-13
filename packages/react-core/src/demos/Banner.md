@@ -3,8 +3,6 @@ id: Banner
 section: components
 ---
 
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-
 ## Demos
 
 ### Basic sticky banner
@@ -15,6 +13,7 @@ import {
   Banner,
   Card,
   CardBody,
+  DashboardWrapper,
   Flex,
   Gallery,
   GalleryItem,
@@ -23,7 +22,6 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class BannerDemo extends React.Component {
   render() {
@@ -78,6 +76,7 @@ import {
   Banner,
   Card,
   CardBody,
+  DashboardWrapper,
   Flex,
   FlexItem,
   Gallery,
@@ -87,7 +86,6 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class BannerDemo extends React.Component {
   render() {

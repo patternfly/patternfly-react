@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import {
   Button,
+  DashboardHeader,
+  DashboardWrapper,
   EmptyState,
   EmptyStateBody,
   EmptyStateHeader,
@@ -33,8 +35,6 @@ import {
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import DashboardWrapper from '../DashboardWrapper';
-import DashboardHeader from '../DashboardHeader';
 
 interface NotificationProps {
   title: string;

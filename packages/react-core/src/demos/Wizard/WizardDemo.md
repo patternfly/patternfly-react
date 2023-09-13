@@ -6,7 +6,6 @@ source: react-demos
 
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ## Demos
 
@@ -17,6 +16,7 @@ import React from 'react';
 import {
   Card,
   CardBody,
+  DashboardWrapper,
   Gallery,
   GalleryItem,
   PageSection,
@@ -26,7 +26,6 @@ import {
   WizardHeader,
   WizardStep
 } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class WizardInModalDemo extends React.Component {
   constructor(props) {
@@ -352,8 +351,7 @@ class WizardModalWithDrawerInfoStepDemo extends React.Component {
 
 ```js isFullscreen
 import React from 'react';
-import { PageSection, PageSectionTypes, PageSectionVariants, Wizard, WizardStep } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { DashboardWrapper, PageSection, PageSectionTypes, PageSectionVariants, Wizard, WizardStep } from '@patternfly/react-core';
 
 class WizardFullPage extends React.Component {
   constructor(props) {

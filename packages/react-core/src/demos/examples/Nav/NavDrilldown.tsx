@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  DashboardHeader,
   Page,
   PageSidebar,
   PageSidebarBody,
@@ -12,8 +13,6 @@ import {
   Menu,
   PageSection
 } from '@patternfly/react-core';
-
-import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 interface MenuHeights {
   [menuId: string]: number;

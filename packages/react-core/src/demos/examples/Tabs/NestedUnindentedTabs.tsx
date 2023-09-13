@@ -3,6 +3,7 @@ import {
   Card,
   CardHeader,
   CardBody,
+  DashboardWrapper,
   Grid,
   GridItem,
   PageSection,
@@ -17,7 +18,6 @@ import {
   TitleSizes,
   CardTitle
 } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const NestedUnindentedTabs: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(1);

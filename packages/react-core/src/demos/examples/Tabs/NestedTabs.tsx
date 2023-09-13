@@ -3,6 +3,7 @@ import {
   Card,
   CardHeader,
   CardBody,
+  DashboardWrapper,
   Grid,
   GridItem,
   PageSection,
@@ -16,7 +17,6 @@ import {
   Flex,
   FlexItem
 } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const NestedTabs: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);

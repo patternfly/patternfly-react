@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  DashboardWrapper,
   Dropdown,
   DropdownList,
   DropdownItem,
@@ -14,7 +15,6 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
 
 export const BulkSelectTableDemo = () => {
