@@ -7,13 +7,18 @@ test('renders with default className pf-v5-c-background-image', () => {
   expect(screen.getByTestId('test-id')).toHaveClass('pf-v5-c-background-image', { exact: true });
 });
 
+test('spreads additional props', () => {
+  render(<BackgroundImage src="/image/url.png" data-testid="test-id" lang="en-US" />);
+  expect(screen.getByTestId('test-id')).toHaveProperty('lang');
+});
+
 test('has src URL applied to style', () => {
   render(<BackgroundImage src="/image/url.png" data-testid="test-id" />);
 
-  const backgroundImageStyle = screen.getByTestId('test-id').getAttribute('style');
-
-  expect(backgroundImageStyle).toContain('--pf-v5-c-background-image--BackgroundImage');
-  expect(backgroundImageStyle).toContain('/image/url.png');
+  expect(screen.getByTestId('test-id')).toHaveAttribute(
+    'style',
+    '--pf-v5-c-background-image--BackgroundImage: url(/image/url.png);'
+  );
 });
 
 test('renders with custom className when one is provided', () => {
