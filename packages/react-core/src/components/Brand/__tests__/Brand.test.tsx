@@ -55,3 +55,23 @@ test('styles get spread when there are no children', () => {
   render(<Brand alt="brand no children" style={{ width: '30px' }} />);
   expect(screen.getByAltText('brand no children')).toHaveStyle(`width: 30px`);
 });
+
+test('width styles are present when passed', () => {
+  render(
+    <Brand
+      alt="brand with widths"
+      widths={{
+        default: '100px',
+        sm: '25px',
+        md: '50px',
+        lg: '100px',
+        xl: '125px',
+        '2xl': '150px'
+      }}
+    />
+  );
+  expect(screen.getByAltText('brand with widths')).toHaveAttribute(
+    'style',
+    '--pf-v5-c-brand--Width: 100px; --pf-v5-c-brand--Width-on-sm: 25px; --pf-v5-c-brand--Width-on-md: 50px; --pf-v5-c-brand--Width-on-lg: 100px; --pf-v5-c-brand--Width-on-xl: 125px; --pf-v5-c-brand--Width-on-2xl: 150px;'
+  );
+});
