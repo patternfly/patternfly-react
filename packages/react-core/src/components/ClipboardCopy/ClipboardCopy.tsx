@@ -242,6 +242,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                     value={this.state.text as string | number}
                     id={`text-input-${id}`}
                     aria-label={textAriaLabel}
+                    dir={isCode && 'ltr'}
                   />
                   <ClipboardCopyButton
                     exitDelay={exitDelay}

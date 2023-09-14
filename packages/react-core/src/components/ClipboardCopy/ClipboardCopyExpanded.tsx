@@ -36,7 +36,7 @@ class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpandedProps> 
         contentEditable={!isReadOnly}
         {...props}
       >
-        {isCode ? <pre>{children}</pre> : children}
+        {isCode ? <pre dir="ltr">{children}</pre> : children}
       </div>
     );
   }
