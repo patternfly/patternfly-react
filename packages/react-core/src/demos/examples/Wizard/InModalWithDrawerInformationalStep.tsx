@@ -18,7 +18,7 @@ import {
   DrawerColorVariant
 } from '@patternfly/react-core';
 
-const WizardModalWithDrawerInfoStepDemo: React.FC = () => {
+export const WizardModalWithDrawerInfoStepDemo: React.FC = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLSpanElement | null>(null);
 
@@ -112,5 +112,3 @@ const WizardModalWithDrawerInfoStepDemo: React.FC = () => {
     </Modal>
   );
 };
-
-export default WizardModalWithDrawerInfoStepDemo;

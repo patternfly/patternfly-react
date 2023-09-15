@@ -11,9 +11,9 @@ import {
   WizardHeader,
   WizardStep
 } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
-const WizardInModalDemo: React.FC = () => (
+export const WizardInModalDemo: React.FunctionComponent = () => (
   <>
     <DashboardWrapper hasPageTemplateTitle>
       <PageSection isWidthLimited>
@@ -73,5 +73,3 @@ const WizardInModalDemo: React.FC = () => (
     </Modal>
   </>
 );
-
-export default WizardInModalDemo;

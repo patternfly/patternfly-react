@@ -34,7 +34,7 @@ import {
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
-const WizardFullPageWithDrawerDemo: React.FC = () => {
+export const WizardFullPageWithDrawerDemo: React.FC = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
 
@@ -186,5 +186,3 @@ const WizardFullPageWithDrawerDemo: React.FC = () => {
     </React.Fragment>
   );
 };
-
-export default WizardFullPageWithDrawerDemo;
