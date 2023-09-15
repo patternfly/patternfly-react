@@ -135,7 +135,7 @@ test('Passes correct variant to button child component', () => {
 test('Passes correct iconPosition to button child component', () => {
   render(<BackToTop />);
 
-  expect(screen.getByText('iconPosition: right')).toBeVisible();
+  expect(screen.getByText('iconPosition: end')).toBeVisible();
 });
 
 test('Passes correct icon to button child component', () => {

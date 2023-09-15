@@ -27,7 +27,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   /** Callback for item click */
   onClick?: NavSelectClickHandler;
   /** Component used to render NavItems if  React.isValidElement(children) is false */
-  component?: React.ReactNode;
+  component?: React.ElementType<any> | React.ComponentType<any>;
   /** Flyout of a nav item. This should be a Menu component. Should not be used if the to prop is defined. */
   flyout?: React.ReactElement;
   /** Callback when flyout is opened or closed */

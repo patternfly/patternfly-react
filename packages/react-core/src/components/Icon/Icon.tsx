@@ -24,6 +24,10 @@ export interface IconComponentProps extends Omit<React.HTMLProps<HTMLSpanElement
   isInProgress?: boolean;
   /** Aria-label for the default progress icon */
   defaultProgressArialabel?: string;
+  /** @beta Flag indicating whether the icon passed as children should be mirrored for
+   * right to left (RTL) languages. This will not mirror the icon passed to progressIcon.
+   */
+  shouldMirrorRTL?: boolean;
 }
 
 export const Icon: React.FunctionComponent<IconComponentProps> = ({
@@ -37,6 +41,7 @@ export const Icon: React.FunctionComponent<IconComponentProps> = ({
   isInline = false,
   isInProgress = false,
   defaultProgressArialabel = 'Loading...',
+  shouldMirrorRTL = false,
   ...props
 }: IconComponentProps) => {
   const _progressIcon = progressIcon ?? <Spinner diameter="1em" aria-label={defaultProgressArialabel} />;
@@ -52,7 +57,16 @@ export const Icon: React.FunctionComponent<IconComponentProps> = ({
       )}
       {...props}
     >
-      <span className={css(styles.iconContent, styles.modifiers[iconSize], styles.modifiers[status])}>{children}</span>
+      <span
+        className={css(
+          styles.iconContent,
+          styles.modifiers[iconSize],
+          styles.modifiers[status],
+          shouldMirrorRTL && 'pf-v5-m-mirror-inline-rtl'
+        )}
+      >
+        {children}
+      </span>
       {isInProgress && (
         <span className={css(styles.iconProgress, styles.modifiers[progressIconSize], className)}>{_progressIcon}</span>
       )}

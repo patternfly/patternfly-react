@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.10...@patternfly/react-core@5.1.1-prerelease.11) (2023-09-13)
+
+### Bug Fixes
+
+- **NavItem:** fix incorrect component typing ([#9579](https://github.com/patternfly/patternfly-react/issues/9579)) ([f5aced1](https://github.com/patternfly/patternfly-react/commit/f5aced18a67df0112b01654ed2a9ca37aaf0afc1))
+
+### Features
+
+- **Icon:** added prop for mirroring in RTL ([#9609](https://github.com/patternfly/patternfly-react/issues/9609)) ([dc65307](https://github.com/patternfly/patternfly-react/commit/dc65307e989185d298e5ac0acd354246784d24dc))
+
+## [5.1.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.9...@patternfly/react-core@5.1.1-prerelease.10) (2023-09-13)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [5.1.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.8...@patternfly/react-core@5.1.1-prerelease.9) (2023-09-12)
+
+### Bug Fixes
+
+- **button:** added logical start/end vals to iconPosition ([#9611](https://github.com/patternfly/patternfly-react/issues/9611)) ([50b1bc3](https://github.com/patternfly/patternfly-react/commit/50b1bc361ffdcb301243f36867bc7cc6e1bb7fbf))
+
+## 5.1.1-prerelease.8 (2023-09-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
 ## [5.1.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.6...@patternfly/react-core@5.1.1-prerelease.7) (2023-09-07)
 
 **Note:** Version bump only for package @patternfly/react-core

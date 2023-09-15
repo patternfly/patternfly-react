@@ -82,7 +82,7 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
       onClick={handleClick}
       {...props}
     >
-      <Button variant="primary" icon={<AngleUpIcon aria-hidden="true" />} iconPosition="right">
+      <Button variant="primary" icon={<AngleUpIcon aria-hidden="true" />} iconPosition="end">
         {title}
       </Button>
     </div>

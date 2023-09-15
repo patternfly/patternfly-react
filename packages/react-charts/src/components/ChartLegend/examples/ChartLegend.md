@@ -616,13 +616,13 @@ class TooltipPieChart extends React.Component {
     super(props);
     
     // Custom legend label component
-    // Note: Tooltip wraps children with a div tag, so we add a reference to ChartLabel instead
+    // Note: Tooltip wraps children with a div tag, so we use a reference to ChartLabel instead
     this.LegendLabel = ({datum, ...rest}) => {
       const ref = React.createRef();
       return (
         <g ref={ref}>
           <ChartLabel {...rest} />
-          <Tooltip content={datum.name} enableFlip reference={ref} />
+          <Tooltip content={datum.name} enableFlip triggerRef={ref} />
         </g>
       );
     }
