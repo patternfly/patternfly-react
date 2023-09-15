@@ -46,11 +46,18 @@ export const getOpacityTransition = (animationDuration: number) =>
   `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`;
 
 export const getLanguageDirection = (targetElement: HTMLElement) => {
-  if (!targetElement) {
-    return 'ltr';
+  const defaultDirection = 'ltr';
+  let direction = defaultDirection;
+
+  if (targetElement) {
+    direction = getComputedStyle(targetElement).getPropertyValue('direction');
   }
 
-  return getComputedStyle(targetElement).getPropertyValue('direction') as 'ltr' | 'rtl';
+  if (['ltr', 'rtl'].includes(direction)) {
+    return direction as 'ltr' | 'rtl';
+  }
+
+  return defaultDirection;
 };
 
 export interface PopperProps {
