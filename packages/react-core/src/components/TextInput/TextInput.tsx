@@ -67,8 +67,10 @@ export interface TextInputProps
   'aria-label'?: string;
   /** @hide A reference object to attach to the text input box. */
   innerRef?: React.RefObject<any>;
-  /** Trim text on left */
+  /** @deprecated Use isStartTruncated instead. Trim text at start */
   isLeftTruncated?: boolean;
+  /** Trim text at start */
+  isStartTruncated?: boolean;
   /** Callback function when text input is focused */
   onFocus?: (event?: any) => void;
   /** Callback function when text input is blurred (focus leaves) */
@@ -96,6 +98,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     isExpanded: false,
     type: TextInputTypes.text,
     isLeftTruncated: false,
+    isStartTruncated: false,
     onChange: (): any => undefined,
     ouiaSafe: true
   };
@@ -120,7 +123,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
   };
 
   componentDidMount() {
-    if (this.props.isLeftTruncated) {
+    if (this.props.isLeftTruncated || this.props.isStartTruncated) {
       const inputRef = this.props.innerRef || this.inputRef;
       this.observer = getResizeObserver(inputRef.current, this.handleResize, true);
       this.handleResize();
@@ -128,7 +131,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
   }
 
   componentWillUnmount() {
-    if (this.props.isLeftTruncated) {
+    if (this.props.isLeftTruncated || this.props.isStartTruncated) {
       this.observer();
     }
   }
@@ -149,16 +152,16 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
   };
 
   onFocus = (event?: any) => {
-    const { isLeftTruncated, onFocus } = this.props;
-    if (isLeftTruncated) {
+    const { isLeftTruncated, isStartTruncated, onFocus } = this.props;
+    if (isLeftTruncated || isStartTruncated) {
       this.restoreText();
     }
     onFocus && onFocus(event);
   };
 
   onBlur = (event?: any) => {
-    const { isLeftTruncated, onBlur } = this.props;
-    if (isLeftTruncated) {
+    const { isLeftTruncated, isStartTruncated, onBlur } = this.props;
+    if (isLeftTruncated || isStartTruncated) {
       this.handleResize();
     }
     onBlur && onBlur(event);
@@ -177,6 +180,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
       onFocus,
       onBlur,
       isLeftTruncated,
+      isStartTruncated,
       isExpanded,
       readOnly,
       readOnlyVariant,

@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 import { TextInput, TextInputBase } from '../TextInput';
 import { ValidatedOptions } from '../../../helpers/constants';
+import * as ReactCoreUtils from '@patternfly/react-core/src/helpers/util';
 
 const props = {
   onChange: jest.fn(),
@@ -32,7 +33,7 @@ describe('TextInput', () => {
   });
 
   test('read only text input using isReadOnly', () => {
-    const { asFragment } = render(<TextInput isReadOnly value="read only" aria-label="read only text input" />);
+    const { asFragment } = render(<TextInput readOnlyVariant="default" value="read only" aria-label="read only text input" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -108,5 +109,19 @@ describe('TextInput', () => {
     render(<TextInput {...props} aria-labelledby="test input" />);
 
     expect(myMock).not.toHaveBeenCalled();
+  });
+
+  test('trimLeft is called when isStartTruncated is true', async () => {
+    const trimLeftFn = jest.spyOn(ReactCoreUtils, 'trimLeft').mockImplementation();
+  
+    render(<TextInput isStartTruncated aria-label="start truncated text input" />);
+    expect(trimLeftFn).toHaveBeenCalled();
+  });
+
+  test('trimLeft is called when isLeftTruncated is true', async () => {
+    const trimLeftFn = jest.spyOn(ReactCoreUtils, 'trimLeft').mockImplementation();
+  
+    render(<TextInput isLeftTruncated aria-label="start truncated text input" />);
+    expect(trimLeftFn).toHaveBeenCalled();
   });
 });
