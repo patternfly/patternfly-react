@@ -321,6 +321,20 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     'right-start': styles.modifiers.rightTop,
     'right-end': styles.modifiers.rightBottom
   };
+  const positionModifiersRTL = {
+    top: styles.modifiers.top,
+    bottom: styles.modifiers.bottom,
+    left: styles.modifiers.right,
+    right: styles.modifiers.left,
+    'top-start': styles.modifiers.topRight,
+    'top-end': styles.modifiers.topLeft,
+    'bottom-start': styles.modifiers.bottomRight,
+    'bottom-end': styles.modifiers.bottomLeft,
+    'left-start': styles.modifiers.rightTop,
+    'left-end': styles.modifiers.rightBottom,
+    'right-start': styles.modifiers.leftTop,
+    'right-end': styles.modifiers.leftBottom
+  };
   const hasCustomMinWidth = minWidth !== popoverMinWidth.value;
   const hasCustomMaxWidth = maxWidth !== popoverMaxWidth.value;
   const onDocumentKeyDown = (event: KeyboardEvent) => {
@@ -508,6 +522,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         onFocus={triggerAction === 'hover' && onFocus}
         onBlur={triggerAction === 'hover' && onBlur}
         positionModifiers={positionModifiers}
+        positionModifiersRTL={positionModifiersRTL}
         distance={distance}
         placement={position}
         onTriggerClick={triggerAction === 'click' && onTriggerClick}

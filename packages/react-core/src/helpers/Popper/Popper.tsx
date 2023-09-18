@@ -119,6 +119,29 @@ export interface PopperProps {
     rightStart?: string;
     rightEnd?: string;
   };
+  /**
+   * Map class names to positions when the popper is in RTL, for example:
+   * {
+   *   top: styles.modifiers.top,
+   *   bottom: styles.modifiers.bottom,
+   *   left: styles.modifiers.left,
+   *   right: styles.modifiers.right
+   * }
+   */
+  positionModifiersRTL?: {
+    top?: string;
+    right?: string;
+    bottom?: string;
+    left?: string;
+    topStart?: string;
+    topEnd?: string;
+    bottomStart?: string;
+    bottomEnd?: string;
+    leftStart?: string;
+    leftEnd?: string;
+    rightStart?: string;
+    rightEnd?: string;
+  };
   /** Distance of the popper to the trigger */
   distance?: number;
   /** Callback function when mouse enters trigger */
@@ -201,6 +224,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   zIndex = 9999,
   isVisible = true,
   positionModifiers,
+  positionModifiersRTL,
   distance = 0,
   onMouseEnter,
   onMouseLeave,
@@ -243,6 +267,14 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
 
   const triggerParent = ((triggerRef as React.RefObject<any>)?.current || triggerElement)?.parentElement;
   const languageDirection = getLanguageDirection(triggerParent);
+
+  const internalPositionModifiers = React.useMemo<PopperProps['positionModifiers']>(() => {
+    if (languageDirection === 'rtl' && positionModifiersRTL) {
+      return positionModifiersRTL;
+    }
+
+    return positionModifiers;
+  }, [positionModifiers, positionModifiersRTL, languageDirection]);
 
   const internalPosition = React.useMemo<'left' | 'right' | 'center'>(() => {
     const fixedPositions = { left: 'left', right: 'right', center: 'center' };
@@ -512,14 +544,14 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   // Depends on the position of the Popper relative to the reference element
   const modifierFromPopperPosition = () => {
     if (attributes && attributes.popper && attributes.popper['data-popper-placement']) {
-      const popperPlacement = attributes.popper['data-popper-placement'] as keyof typeof positionModifiers;
-      return positionModifiers[popperPlacement];
+      const popperPlacement = attributes.popper['data-popper-placement'] as keyof typeof internalPositionModifiers;
+      return internalPositionModifiers[popperPlacement];
     }
-    return positionModifiers.top;
+    return internalPositionModifiers.top;
   };
 
   const options = {
-    className: css(popper.props && popper.props.className, positionModifiers && modifierFromPopperPosition()),
+    className: css(popper.props && popper.props.className, internalPositionModifiers && modifierFromPopperPosition()),
     style: {
       ...((popper.props && popper.props.style) || {}),
       ...popperStyles.popper,

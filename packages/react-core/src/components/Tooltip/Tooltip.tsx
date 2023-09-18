@@ -220,6 +220,20 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     'right-start': styles.modifiers.rightTop,
     'right-end': styles.modifiers.rightBottom
   };
+  const positionModifiersRTL = {
+    top: styles.modifiers.top,
+    bottom: styles.modifiers.bottom,
+    left: styles.modifiers.right,
+    right: styles.modifiers.left,
+    'top-start': styles.modifiers.topRight,
+    'top-end': styles.modifiers.topLeft,
+    'bottom-start': styles.modifiers.bottomRight,
+    'bottom-end': styles.modifiers.bottomLeft,
+    'left-start': styles.modifiers.rightTop,
+    'left-end': styles.modifiers.rightBottom,
+    'right-start': styles.modifiers.leftTop,
+    'right-end': styles.modifiers.leftBottom
+  };
   const hasCustomMaxWidth = maxWidth !== tooltipMaxWidth.value;
   const content = (
     <div
@@ -279,6 +293,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       appendTo={appendTo}
       isVisible={visible}
       positionModifiers={positionModifiers}
+      positionModifiersRTL={positionModifiersRTL}
       distance={distance}
       placement={position}
       onMouseEnter={triggerOnMouseenter && show}
