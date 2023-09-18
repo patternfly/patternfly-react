@@ -217,9 +217,9 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     const mousePos = controlPosition;
     let newSize = 0;
     if (position === 'end' || position === 'right') {
-      newSize = end - mousePos;
+      newSize = isRTL ? mousePos - end : end - mousePos;
     } else if (position === 'start' || position === 'left') {
-      newSize = mousePos - start;
+      newSize = isRTL ? start - mousePos : mousePos - start;
     } else {
       newSize = bottom - mousePos;
     }
