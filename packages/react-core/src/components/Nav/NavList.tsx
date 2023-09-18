@@ -114,6 +114,10 @@ class NavList extends React.Component<NavListProps> {
     this.observer();
   }
 
+  componentDidUpdate() {
+    this.direction = getComputedStyle(this.navList.current).getPropertyValue('direction');
+  }
+
   render() {
     const { children, className, ariaLeftScroll, ariaRightScroll, ...props } = this.props;
     const { scrollViewAtStart, scrollViewAtEnd } = this.state;
