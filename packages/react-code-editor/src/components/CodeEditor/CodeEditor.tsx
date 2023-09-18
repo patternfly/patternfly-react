@@ -625,7 +625,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
           );
 
           const editor = (
-            <div className={css(styles.codeEditorCode)} ref={this.wrapperRef} tabIndex={0}>
+            <div className={css(styles.codeEditorCode)} ref={this.wrapperRef} tabIndex={0} dir="ltr">
               <MonacoEditor
                 height={height}
                 width={width}

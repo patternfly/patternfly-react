@@ -138,6 +138,7 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
         />
         <div
           class="pf-v5-c-code-editor__code"
+          dir="ltr"
           tabindex="0"
         >
           <div
@@ -376,6 +377,7 @@ exports[`CodeEditor matches snapshot without props 1`] = `
     >
       <div
         class="pf-v5-c-code-editor__code"
+        dir="ltr"
         tabindex="0"
       >
         <div
