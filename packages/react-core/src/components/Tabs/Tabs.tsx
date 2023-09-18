@@ -140,6 +140,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
   static displayName = 'Tabs';
   tabList = React.createRef<HTMLUListElement>();
   leftScrollButtonRef = React.createRef<HTMLButtonElement>();
+  private direction = 'ltr';
   constructor(props: TabsProps) {
     super(props);
     this.state = {
@@ -263,7 +264,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     }, 100);
   };
 
-  scrollLeft = () => {
+  scrollBack = () => {
     // find first Element that is fully in view on the left, then scroll to the element before it
     if (this.tabList.current) {
       const container = this.tabList.current;
@@ -278,12 +279,18 @@ class Tabs extends React.Component<TabsProps, TabsState> {
         }
       }
       if (lastElementOutOfView) {
-        container.scrollLeft -= lastElementOutOfView.scrollWidth;
+        if (this.direction === 'ltr') {
+          // LTR scrolls left to go back
+          container.scrollLeft -= lastElementOutOfView.scrollWidth;
+        } else {
+          // RTL scrolls right to go back
+          container.scrollLeft += lastElementOutOfView.scrollWidth;
+        }
       }
     }
   };
 
-  scrollRight = () => {
+  scrollForward = () => {
     // find last Element that is fully in view on the right, then scroll to the element after it
     if (this.tabList.current) {
       const container = this.tabList.current as any;
@@ -297,7 +304,13 @@ class Tabs extends React.Component<TabsProps, TabsState> {
         }
       }
       if (firstElementOutOfView) {
-        container.scrollLeft += firstElementOutOfView.scrollWidth;
+        if (this.direction === 'ltr') {
+          // LTR scrolls right to go forward
+          container.scrollLeft += firstElementOutOfView.scrollWidth;
+        } else {
+          // RTL scrolls left to go forward
+          container.scrollLeft -= firstElementOutOfView.scrollWidth;
+        }
       }
     }
   };
@@ -314,6 +327,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
       if (canUseDOM) {
         window.addEventListener('resize', this.handleScrollButtons, false);
       }
+      this.direction = getComputedStyle(this.tabList.current).getPropertyValue('direction');
       // call the handle resize function to check if scroll buttons should be shown
       this.handleScrollButtons();
     }
@@ -498,7 +512,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
               type="button"
               className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={leftScrollAriaLabel}
-              onClick={this.scrollLeft}
+              onClick={this.scrollBack}
               disabled={disableLeftScrollButton}
               aria-hidden={disableLeftScrollButton}
               ref={this.leftScrollButtonRef}
@@ -515,7 +529,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
               type="button"
               className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={rightScrollAriaLabel}
-              onClick={this.scrollRight}
+              onClick={this.scrollForward}
               disabled={disableRightScrollButton}
               aria-hidden={disableRightScrollButton}
             >
