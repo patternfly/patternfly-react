@@ -374,6 +374,8 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     } else if (prevState.enableScrollButtons && !enableScrollButtons) {
       this.setState({ showScrollButtons: false });
     }
+
+    this.direction = getComputedStyle(this.tabList.current).getPropertyValue('direction');
   }
 
   render() {
