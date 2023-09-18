@@ -436,7 +436,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       },
       {
         name: 'preventOverflow',
-        enabled: false
+        enabled: true
       },
       {
         // adds attribute [data-popper-reference-hidden] to the popper element which can be used to hide it using CSS
