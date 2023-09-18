@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.11...@patternfly/react-core@5.1.1-prerelease.12) (2023-09-18)
+
+### Bug Fixes
+
+- **search-input:** mirror search icon in rtl, fix double border ([#9602](https://github.com/patternfly/patternfly-react/issues/9602)) ([0fc551d](https://github.com/patternfly/patternfly-react/commit/0fc551dd1ae8024c1b0338eb365912d196999aed))
+
 ## [5.1.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.10...@patternfly/react-core@5.1.1-prerelease.11) (2023-09-13)
 
 ### Bug Fixes
