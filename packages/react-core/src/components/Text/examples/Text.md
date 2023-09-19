@@ -5,9 +5,11 @@ cssPrefix: pf-v5-c-content
 propComponents: ['TextContent', 'Text', 'TextList', 'TextListItem']
 ---
 
-The `Text` component provides simple, built-in styling for putting common blocks of HTML elements together. It establishes the block of content and styling within it for the elements listed in the `component` property(`h1` through `h6`, `p`, `a`, `small`, `blockquote` and `pre`), as well as the text component suite (`TextContent`, `TextList`, `TextListItem`).
+The `<Text>` component provides simple, built-in styling for putting common blocks of HTML elements together. It establishes the block of content and styling within it for the elements listed in the `component` property(`h1` through `h6`, `p`, `a`, `small`, `blockquote`, and `pre`), as well as the text component suite (`<TextContent>`, `<TextList>`, and `<TextListItem>`).
 
-Other components are not supported as children of `Text`, and may cause styling overrides or other conflicts. For example, the `List` and `Title` components are meant for more complex use cases and should not be nested inside `Text` for simple blocks - `TextList` and `Text` with the `component="h1"` property should be used instead. Instead of `Divider`, `Text` expects to contain an `hr` which it styles as a divider.
+You cannot nest other components within `<Text>`, and doing so can cause styling overrides or other conflicts. Instead, you can use the `<Text>` component's properties to achieve the same results.
+
+For example, rather than nesting the `<List>` and `<Title>` components within `<Text>`, you should pass `component="h1"` into the `<TextList>` and `<Text>` components. Similarly, when you need to add a divider , rather than passing in a separate `<Divider>` component, you should utilize the `hr` property that `<Text>` supports, which will be styled as a divider.
 
 ## Examples
 
