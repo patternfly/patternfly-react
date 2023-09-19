@@ -18,7 +18,7 @@ interface ChartLegendInterface {
   orientation?: 'horizontal' | 'vertical'; // Orientation of legend
   padding: PaddingProps; // Chart padding
   patternScale?: string[]; // Legend symbol patterns
-  position: 'bottom' | 'bottom-left' | 'bottom-right' | 'left' | 'right'; // The legend position
+  position: 'bottom' | 'bottom-left' | 'right'; // The legend position
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
   width: number; // Overall width of SVG
 }
@@ -37,7 +37,7 @@ interface ChartLegendPositionInterface {
   height?: number; // Overall height of SVG
   legendData: any[]; // The legend data used to determine width
   legendOrientation: 'horizontal' | 'vertical'; // Orientation of legend
-  legendPosition: 'bottom' | 'bottom-left' | 'bottom-right' | 'left' | 'right'; // Position of legend
+  legendPosition: 'bottom' | 'bottom-left' | 'right'; // Position of legend
   legendProps: any; // The legend props used to determine width
   padding?: PaddingProps; // Chart padding
   theme: ChartThemeDefinition; // The theme that will be applied to the chart

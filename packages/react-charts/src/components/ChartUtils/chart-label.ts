@@ -20,7 +20,7 @@ interface ChartPieLabelInterface {
   dy?: number; // Horizontal shift from the y coordinate
   height: number; // Chart height
   labelPosition?: 'bottom' | 'center' | 'right'; // Position of label
-  legendPosition?: 'bottom' | 'right' | 'left'; // Position of legend
+  legendPosition?: 'bottom' | 'right'; // Position of legend
   padding: any; // Chart padding
   width: number; // Chart width
 }
@@ -77,7 +77,6 @@ export const getPieLabelX = ({
           return origin.x + ChartCommonStyles.label.margin + dx + radius;
         case 'right':
           return origin.x + ChartCommonStyles.label.margin + dx;
-        case 'left':
         default:
           return dx;
       }
