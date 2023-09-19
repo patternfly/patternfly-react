@@ -63,9 +63,9 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   isVertical?: boolean;
   /** Disables border bottom tab styling on tabs. Defaults to false. To remove the bottom border, set this prop to true. */
   hasNoBorderBottom?: boolean;
-  /** Aria-label for the left scroll button */
+  /** Aria-label for the back scroll button */
   leftScrollAriaLabel?: string;
-  /** Aria-label for the right scroll button */
+  /** Aria-label for the forward scroll button */
   rightScrollAriaLabel?: string;
   /** Determines what tag is used around the tabs. Use "nav" to define the tabs inside a navigation region */
   component?: 'div' | 'nav';
