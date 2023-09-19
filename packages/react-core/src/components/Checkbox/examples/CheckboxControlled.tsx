@@ -49,22 +49,24 @@ export const CheckboxControlled: React.FunctionComponent = () => {
         onChange={handleChange}
         id="controlled-check-1"
         name="check1"
-      />
-      <Checkbox
-        className="nested"
-        label="Child CheckBox 1"
-        isChecked={isChecked2}
-        onChange={handleChange}
-        id="controlled-check-2"
-        name="check2"
-      />
-      <Checkbox
-        className="nested"
-        label="Child CheckBox 2"
-        isChecked={isChecked3}
-        onChange={handleChange}
-        id="controlled-check-3"
-        name="check3"
+        body={
+          <>
+            <Checkbox
+              label="Child CheckBox 1"
+              isChecked={isChecked2}
+              onChange={handleChange}
+              id="controlled-check-2"
+              name="check2"
+            />
+            <Checkbox
+              label="Child CheckBox 2"
+              isChecked={isChecked3}
+              onChange={handleChange}
+              id="controlled-check-3"
+              name="check3"
+            />
+          </>
+        }
       />
       <Checkbox
         label="Controlled CheckBox"
