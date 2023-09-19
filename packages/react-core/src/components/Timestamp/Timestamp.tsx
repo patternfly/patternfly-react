@@ -129,7 +129,9 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
     ...formatOptions,
     ...(hasTimeFormat && { timeStyle: utcTimeFormat })
   });
-  const createUTCContent = (customSuffix: string) => `${utcDateString}${customSuffix ? ' ' + customSuffix : ' UTC'}`;
+  const defaultUTCSuffix = timeFormat === 'full' ? 'Coordinated Universal Time' : 'UTC';
+  const createUTCContent = (customSuffix: string) =>
+    `${utcDateString} ${customSuffix ? customSuffix : defaultUTCSuffix}`;
 
   const defaultDisplay = shouldDisplayUTC
     ? createUTCContent(displaySuffix)
