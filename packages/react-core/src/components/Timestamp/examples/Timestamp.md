@@ -12,7 +12,10 @@ beta: true
 
 By default, a timestamp will display the current date and time based on the current locale if the `date` prop is not passed in.
 
+Passing the `shouldDisplayUTC` property will display the UTC date and time instead of the current or passed in locale.
+
 ```ts file="./TimestampDefault.tsx"
+
 ```
 
 ### Basic formats
@@ -22,6 +25,7 @@ The format of the displayed content can be customized by passing in the `dateFor
 You can also pass in the `displaySuffix` prop to display a custom suffix at the end of the displayed content. This will not override a timezone that is already displayed from the applied time format.
 
 ```ts file="./TimestampBasicFormats.tsx"
+
 ```
 
 ### Custom format
@@ -29,6 +33,7 @@ You can also pass in the `displaySuffix` prop to display a custom suffix at the 
 The format of the displayed content can be further customized by passing in the `customFormat` prop. Read [datetime format options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options) for a list of options that can be passed in.
 
 ```ts file="./TimestampCustomFormat.tsx"
+
 ```
 
 ### Default tooltip
@@ -38,6 +43,7 @@ To render a tooltip that displays the timestamp content as a UTC time, you can p
 You can customize the suffix of this default tooltip variant by passing in `suffix` to the `tooltip` prop.
 
 ```ts file="./TimestampDefaultTooltip.tsx"
+
 ```
 
 ### Custom content
@@ -47,6 +53,7 @@ To display custom content, such as a relative time or prefacing text, you can pa
 When also rendering a default tooltip with the `tooltip` prop, you can pass in the `dateFormat` and/or `timeFormat` props to customize the tooltip content without affecting the custom timestamp content.
 
 ```ts file="TimestampCustomContent.tsx"
+
 ```
 
 ### Custom tooltip
@@ -54,4 +61,5 @@ When also rendering a default tooltip with the `tooltip` prop, you can pass in t
 By passing in `variant="custom"` and `content` to the `tooltip` prop, you can display custom content within the timestamp's tooltip.
 
 ```ts file="TimestampCustomTooltip.tsx"
+
 ```
