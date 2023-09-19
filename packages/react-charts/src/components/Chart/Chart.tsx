@@ -285,9 +285,9 @@ export interface ChartProps extends VictoryChartProps {
    * Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some
    * cases, the legend may not be visible until enough padding is applied.
    */
-  legendPosition?: 'bottom' | 'bottom-left' | 'bottom-right' | 'left' | 'right';
+  legendPosition?: 'bottom' | 'bottom-left' | 'right';
   /**
-   * Text direction of the legend labels.
+   * @beta Text direction of the legend labels.
    */
   legendDirection?: 'ltr' | 'rtl';
   /**
@@ -574,9 +574,6 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     } else if (legendPosition === 'bottom-left') {
       dy += xAxisLabelHeight + legendTitleHeight;
       dx = -10;
-    } else if (legendPosition === 'bottom-right') {
-      dy += xAxisLabelHeight + legendTitleHeight;
-      dx = 10;
     }
 
     // Adjust legend position when axis is hidden

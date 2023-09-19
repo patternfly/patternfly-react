@@ -344,9 +344,9 @@ export interface ChartDonutProps extends ChartPieProps {
    * Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some
    * cases, the legend may not be visible until enough padding is applied.
    */
-  legendPosition?: 'bottom' | 'right' | 'left';
+  legendPosition?: 'bottom' | 'right';
   /**
-   * Text direction of the legend labels.
+   * @beta Text direction of the legend labels.
    */
   legendDirection?: 'ltr' | 'rtl';
   /**

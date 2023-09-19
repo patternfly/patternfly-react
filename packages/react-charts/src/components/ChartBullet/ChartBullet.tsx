@@ -253,9 +253,9 @@ export interface ChartBulletProps {
    * Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some
    * cases, the legend may not be visible until enough padding is applied.
    */
-  legendPosition?: 'bottom' | 'bottom-left' | 'bottom-right' | 'left' | 'right';
+  legendPosition?: 'bottom' | 'bottom-left' | 'right';
   /**
-   * Text direction of the legend labels.
+   * @beta Text direction of the legend labels.
    */
   legendDirection?: 'ltr' | 'rtl';
   /**
@@ -799,15 +799,6 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
         dy = -defaultPadding.bottom;
       }
       dx = -10;
-    } else if (legendPosition === 'bottom-right') {
-      if (horizontal) {
-        dy = defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25;
-      } else if (title) {
-        dy = -defaultPadding.bottom + 60;
-      } else {
-        dy = -defaultPadding.bottom;
-      }
-      dx = 10;
     }
 
     return getComputedLegend({

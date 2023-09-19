@@ -311,7 +311,6 @@ const getBulletLegendY = ({
   switch (legendPosition) {
     case 'bottom':
     case 'bottom-left':
-    case 'bottom-right':
       return chartSize.height + ChartCommonStyles.legend.margin + dy;
     case 'right': {
       // Legend height with padding
@@ -357,15 +356,12 @@ const getChartLegendX = ({
   });
 
   switch (legendPosition) {
-    case 'bottom-right':
-      return width - legendDimensions.width - right + dx;
     case 'bottom':
       return width > legendDimensions.width ? Math.round((width - legendDimensions.width) / 2) + dx : dx;
     case 'bottom-left':
       return left + dx;
     case 'right':
       return chartSize.width + ChartCommonStyles.legend.margin + left + dx;
-    case 'left':
     default:
       return dx;
   }
@@ -395,9 +391,7 @@ const getChartLegendY = ({
   switch (legendPosition) {
     case 'bottom':
     case 'bottom-left':
-    case 'bottom-right':
       return chartSize.height + ChartCommonStyles.legend.margin * 2 + top + dy;
-    case 'left':
     case 'right': {
       // Legend height with padding
       const legendDimensions = getLegendDimensions({
@@ -444,7 +438,6 @@ const getPieLegendX = ({
       return width > legendDimensions.width ? Math.round((width - legendDimensions.width) / 2) + dx : dx;
     case 'right':
       return origin.x + ChartCommonStyles.label.margin + dx + radius;
-    case 'left':
     default:
       return dx;
   }
@@ -471,7 +464,6 @@ const getPieLegendY = ({
   switch (legendPosition) {
     case 'bottom':
       return origin.y + ChartCommonStyles.legend.margin + radius + dy;
-    case 'left':
     case 'right': {
       // Legend height with padding
       const legendDimensions = getLegendDimensions({
