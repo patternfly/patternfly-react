@@ -265,6 +265,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
 
     if (!onDrag({ droppableId, index })) {
       // Consumer disallowed drag
+      droppableItems.forEach((item) => resetDroppableItem(item));
       return;
     }
 
