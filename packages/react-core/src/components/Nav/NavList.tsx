@@ -14,9 +14,9 @@ export interface NavListProps
   children?: React.ReactNode;
   /** Additional classes added to the list */
   className?: string;
-  /** Aria-label for the left scroll button */
+  /** Aria-label for the back scroll button */
   ariaLeftScroll?: string;
-  /** Aria-label for the right scroll button */
+  /** Aria-label for the forward scroll button */
   ariaRightScroll?: string;
 }
 
