@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.12...@patternfly/react-code-editor@5.1.1-prerelease.13) (2023-09-19)
+
+### Bug Fixes
+
+- **code-editor:** force element that wraps editor to be LTR ([#9626](https://github.com/patternfly/patternfly-react/issues/9626)) ([1c70d68](https://github.com/patternfly/patternfly-react/commit/1c70d6855fc5506bc2d683db91443219fa911189))
+
 ## [5.1.1-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.11...@patternfly/react-code-editor@5.1.1-prerelease.12) (2023-09-18)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

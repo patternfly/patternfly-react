@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.12...@patternfly/react-core@5.1.1-prerelease.13) (2023-09-19)
+
+### Bug Fixes
+
+- **clipboard-copy:** added rtl support ([#9629](https://github.com/patternfly/patternfly-react/issues/9629)) ([584cf2e](https://github.com/patternfly/patternfly-react/commit/584cf2e613f383260d886dfb0e64f6d72fcfac4e))
+
+### Features
+
+- **TextInput:** Added isStartTruncted prop and deprecated isLeftTruncted prop ([#9610](https://github.com/patternfly/patternfly-react/issues/9610)) ([b1aaf3c](https://github.com/patternfly/patternfly-react/commit/b1aaf3cb9d48aef7ca1a72977ca386a3f36eecad))
+
 ## [5.1.1-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.11...@patternfly/react-core@5.1.1-prerelease.12) (2023-09-18)
 
 ### Bug Fixes

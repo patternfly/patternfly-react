@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.11...demo-app-ts@5.1.1-prerelease.12) (2023-09-19)
+
+### Features
+
+- **TextInput:** Added isStartTruncted prop and deprecated isLeftTruncted prop ([#9610](https://github.com/patternfly/patternfly-react/issues/9610)) ([b1aaf3c](https://github.com/patternfly/patternfly-react/commit/b1aaf3cb9d48aef7ca1a72977ca386a3f36eecad))
+
 ## [5.1.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.10...demo-app-ts@5.1.1-prerelease.11) (2023-09-18)
 
 **Note:** Version bump only for package demo-app-ts
