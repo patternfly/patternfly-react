@@ -13,6 +13,15 @@ test('Renders with custom class name when className prop is provided', () => {
   expect(screen.getByAltText('brand')).toHaveClass('custom-class');
 });
 
+test('Renders with custom class name when className prop and children are provided', () => {
+  render(
+    <Brand alt="brand" className="custom-class">
+      <div>test</div>
+    </Brand>
+  );
+  expect(screen.getByText('test')?.parentElement).toHaveClass('custom-class');
+});
+
 test('Renders passed children', () => {
   render(
     <Brand alt="brand">
@@ -36,10 +45,35 @@ test('Renders as img when no children are present', () => {
   expect(screen.getByAltText('brand')?.tagName).toBe('IMG');
 });
 
-test('Renders with passed src prop', () => {
+test('Has correct src with passed src prop', () => {
   render(<Brand alt="brand" src="test.png" />);
   const image = screen.getByRole('img') as HTMLImageElement;
   expect(image.src).toMatch('test.png');
+});
+
+test('Has correct alt text with passed alt prop', () => {
+  render(<Brand alt="brand" src="test.png" />);
+
+  expect(screen.getByAltText('brand')).toBeTruthy();
+});
+
+test('Has correct src with passed children', () => {
+  render(
+    <Brand alt="brand" src="test.png">
+      <div>test width</div>
+    </Brand>
+  );
+  const image = screen.getByRole('img') as HTMLImageElement;
+  expect(image.src).toMatch('test.png');
+});
+
+test('Has correct alt text with passed children', () => {
+  render(
+    <Brand alt="brand" src="test.png">
+      <div>test width</div>
+    </Brand>
+  );
+  expect(screen.getByAltText('brand')).toBeTruthy();
 });
 
 test('styles get spread when there are children', () => {
