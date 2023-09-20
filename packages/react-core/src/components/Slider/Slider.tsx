@@ -46,16 +46,18 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   inputAriaLabel?: string;
   /** Text label that is place after the input field. */
   inputLabel?: string | number;
-  /** Position of the input. */
-  inputPosition?: 'aboveThumb' | 'right';
+  /** Position of the input. Note "right" is deprecated. Use "end" instead*/
+  inputPosition?: 'aboveThumb' | 'right' | 'end';
   /** Value displayed in the input field. */
   inputValue?: number;
   /** Adds disabled styling, and disables the slider and the input component if present. */
   isDisabled?: boolean;
   /** Flag to show value input field. */
   isInputVisible?: boolean;
-  /** Actions placed to the left of the slider. */
+  /** @deprecated Use startActions instead. Actions placed at the start of the slider. */
   leftActions?: React.ReactNode;
+  /** Actions placed at the start of the slider. */
+  startActions?: React.ReactNode;
   /** The maximum permitted value. */
   max?: number;
   /** The minimum permitted value. */
@@ -67,8 +69,10 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
     inputValue?: number,
     setLocalInputValue?: React.Dispatch<React.SetStateAction<number>>
   ) => void;
-  /** Actions placed to the right of the slider. */
+  /** @deprecated Use endActions instead. Actions placed to the right of the slider. */
   rightActions?: React.ReactNode;
+  /** Actions placed at the end of the slider. */
+  endActions?: React.ReactNode;
   /** Flag to indicate if boundaries should be shown for slider that does not have custom steps. */
   showBoundaries?: boolean;
   /** Flag to indicate if ticks should be shown for slider that does not have custom steps. */
@@ -95,10 +99,12 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   inputAriaLabel = 'Slider value input',
   thumbAriaLabel = 'Value',
   hasTooltipOverThumb = false,
-  inputPosition = 'right',
+  inputPosition = 'end',
   onChange,
   leftActions,
+  startActions,
   rightActions,
+  endActions,
   step = 1,
   min = 0,
   max = 100,
@@ -113,6 +119,12 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
   const [localValue, setValue] = useState(value);
   const [localInputValue, setLocalInputValue] = useState(inputValue);
+
+  let isRTL: boolean;
+
+  React.useEffect(() => {
+    isRTL = window.getComputedStyle(sliderRailRef.current).getPropertyValue('direction') === 'rtl';
+  });
 
   React.useEffect(() => {
     setValue(value);
@@ -182,7 +194,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     e.stopPropagation();
     e.preventDefault();
 
-    diff = e.clientX - thumbRef.current.getBoundingClientRect().left;
+    if (isRTL) {
+      diff = thumbRef.current.getBoundingClientRect().left - e.clientX;
+    } else {
+      diff = e.clientX - thumbRef.current.getBoundingClientRect().left;
+    }
 
     document.addEventListener('mousemove', callbackThumbMove);
     document.addEventListener('mouseup', callbackThumbUp);
@@ -191,7 +207,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   const handleTouchStart = (e: React.TouchEvent) => {
     e.stopPropagation();
 
-    diff = e.touches[0].clientX - thumbRef.current.getBoundingClientRect().left;
+    if (isRTL) {
+      diff = thumbRef.current.getBoundingClientRect().left - e.touches[0].clientX;
+    } else {
+      diff = e.touches[0].clientX - thumbRef.current.getBoundingClientRect().left;
+    }
 
     document.addEventListener('touchmove', callbackThumbMove, { passive: false });
     document.addEventListener('touchend', callbackThumbUp);
@@ -216,8 +236,13 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     }
 
     const clientPosition = e.touches && e.touches.length ? e.touches[0].clientX : e.clientX;
+    let newPosition;
 
-    let newPosition = clientPosition - diff - sliderRailRef.current.getBoundingClientRect().left;
+    if (isRTL) {
+      newPosition = sliderRailRef.current.getBoundingClientRect().right - clientPosition - diff;
+    } else {
+      newPosition = clientPosition - diff - sliderRailRef.current.getBoundingClientRect().left;
+    }
 
     const end = sliderRailRef.current.offsetWidth - thumbRef.current.offsetWidth;
 
@@ -288,21 +313,43 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (!areCustomStepsContinuous && customSteps) {
       const stepIndex = customSteps.findIndex((stepObj) => stepObj.value === localValue);
       if (key === 'ArrowRight') {
-        if (stepIndex + 1 < customSteps.length) {
-          {
-            newValue = customSteps[stepIndex + 1].value;
+        if (isRTL) {
+          if (stepIndex - 1 >= 0) {
+            newValue = customSteps[stepIndex - 1].value;
+          }
+        } else {
+          if (stepIndex + 1 < customSteps.length) {
+            {
+              newValue = customSteps[stepIndex + 1].value;
+            }
           }
         }
       } else if (key === 'ArrowLeft') {
-        if (stepIndex - 1 >= 0) {
-          newValue = customSteps[stepIndex - 1].value;
+        if (isRTL) {
+          if (stepIndex + 1 < customSteps.length) {
+            {
+              newValue = customSteps[stepIndex + 1].value;
+            }
+          }
+        } else {
+          if (stepIndex - 1 >= 0) {
+            newValue = customSteps[stepIndex - 1].value;
+          }
         }
       }
     } else {
       if (key === 'ArrowRight') {
-        newValue = localValue + step <= max ? localValue + step : max;
+        if (isRTL) {
+          newValue = localValue - step >= min ? localValue - step : min;
+        } else {
+          newValue = localValue + step <= max ? localValue + step : max;
+        }
       } else if (key === 'ArrowLeft') {
-        newValue = localValue - step >= min ? localValue - step : min;
+        if (isRTL) {
+          newValue = localValue + step <= max ? localValue + step : max;
+        } else {
+          newValue = localValue - step >= min ? localValue - step : min;
+        }
       }
     }
 
@@ -347,8 +394,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     for (let i = min; i <= max; i = i + step) {
       const stepValue = getStepValue(i, min, max);
 
-      // If we boundaries but not ticks just generate the needed steps
-      // so that we don't pullute them DOM with empty divs
+      // If boundaries but not ticks just generate the needed steps
+      // so that we don't pollute them DOM with empty divs
       if (!showTicks && showBoundaries && i !== min && i !== max) {
         continue;
       }
@@ -394,7 +441,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       style={{ ...style, ...inputStyle }}
       {...props}
     >
-      {leftActions && <div className={css(styles.sliderActions)}>{leftActions}</div>}
+      {(leftActions || startActions) && <div className={css(styles.sliderActions)}>{leftActions || startActions}</div>}
       <div className={css(styles.sliderMain)}>
         <div className={css(styles.sliderRail)} ref={sliderRailRef} onClick={!isDisabled ? onSliderRailClick : null}>
           <div className={css(styles.sliderRailTrack)} />
@@ -434,8 +481,10 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
           <div className={css(styles.sliderValue, styles.modifiers.floating)}>{displayInput()}</div>
         )}
       </div>
-      {isInputVisible && inputPosition === 'right' && <div className={css(styles.sliderValue)}>{displayInput()}</div>}
-      {rightActions && <div className={css(styles.sliderActions)}>{rightActions}</div>}
+      {isInputVisible && (inputPosition === 'right' || inputPosition === 'end') && (
+        <div className={css(styles.sliderValue)}>{displayInput()}</div>
+      )}
+      {(rightActions || endActions) && <div className={css(styles.sliderActions)}>{rightActions || endActions}</div>}
     </div>
   );
 };
