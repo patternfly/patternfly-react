@@ -10,7 +10,7 @@ import {
   Button
 } from '@patternfly/react-core';
 
-export const DrawerPanelRight: React.FunctionComponent = () => {
+export const DrawerResizableAtStart: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLDivElement>();
 
@@ -27,7 +27,7 @@ export const DrawerPanelRight: React.FunctionComponent = () => {
   };
 
   const panelContent = (
-    <DrawerPanelContent>
+    <DrawerPanelContent isResizable defaultSize={'500px'} minSize={'200px'}>
       <DrawerHead>
         <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
           drawer-panel
@@ -47,7 +47,7 @@ export const DrawerPanelRight: React.FunctionComponent = () => {
       <Button aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
-      <Drawer isExpanded={isExpanded} position="right" onExpand={onExpand}>
+      <Drawer isExpanded={isExpanded} onExpand={onExpand} position="start">
         <DrawerContent panelContent={panelContent}>
           <DrawerContentBody>{drawerContent}</DrawerContentBody>
         </DrawerContent>
