@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.13](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.12...demo-app-ts@5.1.1-prerelease.13) (2023-09-20)
+
+### Bug Fixes
+
+- **Modal:** Prevent duplicate ids within Modal ([#9555](https://github.com/patternfly/patternfly-react/issues/9555)) ([2953b78](https://github.com/patternfly/patternfly-react/commit/2953b78290b3baee6cf506303c88dfc5ab9d0329))
+
 ## [5.1.1-prerelease.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.11...demo-app-ts@5.1.1-prerelease.12) (2023-09-19)
 
 ### Features

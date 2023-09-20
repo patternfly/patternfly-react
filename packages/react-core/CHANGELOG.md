@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.13...@patternfly/react-core@5.1.1-prerelease.14) (2023-09-20)
+
+### Bug Fixes
+
+- **Modal:** Prevent duplicate ids within Modal ([#9555](https://github.com/patternfly/patternfly-react/issues/9555)) ([2953b78](https://github.com/patternfly/patternfly-react/commit/2953b78290b3baee6cf506303c88dfc5ab9d0329))
+
+### Features
+
+- **Drawer:** Added start and end to position props, updated resizing to work with RTL ([#9627](https://github.com/patternfly/patternfly-react/issues/9627)) ([e12b872](https://github.com/patternfly/patternfly-react/commit/e12b8726b9ebc2fec921b7316a270a9c09decf96))
+
 ## [5.1.1-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.12...@patternfly/react-core@5.1.1-prerelease.13) (2023-09-19)
 
 ### Bug Fixes
