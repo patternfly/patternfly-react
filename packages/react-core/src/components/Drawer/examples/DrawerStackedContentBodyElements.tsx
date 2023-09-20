@@ -8,9 +8,9 @@ import {
   DrawerActions,
   DrawerCloseButton,
   DrawerPanelBody,
-  Button
+  Button,
+  Title
 } from '@patternfly/react-core';
-import styles from '@patternfly/react-styles/css/components/Title/title';
 
 export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
@@ -31,9 +31,9 @@ export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
   const panelContent = (
     <DrawerPanelContent>
       <DrawerHead>
-        <h3 className={`${styles.title} ${styles.modifiers['2xl']}`} tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
+        <Title headingLevel="h3" size="2xl" tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
           drawer title{' '}
-        </h3>
+        </Title>
         <DrawerActions>
           <DrawerCloseButton onClick={onCloseClick} />
         </DrawerActions>
