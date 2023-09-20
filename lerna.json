@@ -24,7 +24,7 @@
     }
   },
   "version": "independent",
-  "allowBranch": ["main", "v5"],
+  "allowBranch": ["main", "v4", "5.0.x"],
   "packages": ["packages/*", "packages/react-integration/demo-app-ts"],
   "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }

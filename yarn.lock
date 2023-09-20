@@ -3778,10 +3778,10 @@
     node-addon-api "^3.2.1"
     node-gyp-build "^4.3.0"
 
-"@patternfly/ast-helpers@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@patternfly/ast-helpers/-/ast-helpers-1.1.3.tgz#e0be201e3f018f8d35221888da7178c880b135b1"
-  integrity sha512-gHj2yBmyjAX42XAGVB45ygFEuB5LK8fz2nAp/J1mUeT23Iza5vXwUJZZdrWnIvb/1/+nLan99HZqkZarcisI0w==
+"@patternfly/ast-helpers@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@patternfly/ast-helpers/-/ast-helpers-1.2.0.tgz#43d0b440803ac35005a4776e0149510b9dca6aa6"
+  integrity sha512-e/yELmpUtY7rSMjl96roC0fmr8EIp8Q8ZxfBObK+FV4o5e7G3/Q4GKikx3Pdmtw3o+RB5bfXZrOH9p2wWvRkbQ==
   dependencies:
     acorn "^8.4.1"
     acorn-class-fields "^1.0.0"
@@ -3789,10 +3789,10 @@
     acorn-static-class-features "^1.0.0"
     astring "^1.7.5"
 
-"@patternfly/documentation-framework@^5.0.13":
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-5.1.3.tgz#d794a9fada359767a101de15752ca860d39ecead"
-  integrity sha512-58iLctmjTwUIk/Mepx0cTvLgld/Zmv2+pUqN7lkWf2WGIPEmGRLHRrrF9nODqvTicbBa7xTPWDNPyTpkoSW4uA==
+"@patternfly/documentation-framework@^5.0.15":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-5.2.0.tgz#e7e73e8db78d3ed055008c89a97f3684aada2292"
+  integrity sha512-LfAQWExpVfXWE336AHpnohUcFq9F20Hcs/ke+o0dsYq8XcSwJnSE/Sp20G9t59MgSAG4YA9DzjfdZMv5Q8dTcw==
   dependencies:
     "@babel/core" "7.18.2"
     "@babel/plugin-proposal-class-properties" "7.17.12"
@@ -3802,7 +3802,7 @@
     "@babel/plugin-transform-react-jsx" "7.17.12"
     "@babel/preset-env" "7.18.2"
     "@mdx-js/util" "1.6.16"
-    "@patternfly/ast-helpers" "^1.1.3"
+    "@patternfly/ast-helpers" "^1.2.0"
     "@reach/router" "npm:@gatsbyjs/reach-router@1.3.9"
     autoprefixer "9.8.6"
     babel-loader "9.1.2"
@@ -3878,10 +3878,10 @@
     puppeteer-cluster "^0.23.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@5.1.0-prerelease.8":
-  version "5.1.0-prerelease.8"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.1.0-prerelease.8.tgz#59d31bd5018919182493bf6bce181992a04ecad2"
-  integrity sha512-gGDmWTJklS0W92EZKpsW2hFOEEX19EKEStDHYkJqVIY8SVlpS+dN940Dzm+BSRxBXGLWh9g1n8T/UZyxcZKWGg==
+"@patternfly/patternfly@5.1.0-prerelease.28":
+  version "5.1.0-prerelease.28"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.1.0-prerelease.28.tgz#8edd60e4b7537e83b8d8fa3cb8d67d8a2112794e"
+  integrity sha512-Z9PXZ1zV/OrOxeGR5gyAUK4LepU3cyUWLEH6JMp6rxljio1OujM5q54oPJBMAeQLdPyOgeFMLBh4NWu5PvojZg==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"

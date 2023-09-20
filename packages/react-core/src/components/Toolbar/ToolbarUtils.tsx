@@ -31,12 +31,17 @@ interface ToolbarContentContextProps {
   expandableContentRef: RefObject<HTMLDivElement>;
   expandableContentId: string;
   chipContainerRef: RefObject<any>;
+  isExpanded?: boolean;
+  clearAllFilters?: () => void;
+  clearFiltersButtonText?: string;
+  showClearFiltersButton?: boolean;
 }
 
 export const ToolbarContentContext = React.createContext<ToolbarContentContextProps>({
   expandableContentRef: null,
   expandableContentId: '',
-  chipContainerRef: null
+  chipContainerRef: null,
+  clearAllFilters: () => {}
 });
 
 export const globalBreakpoints = {

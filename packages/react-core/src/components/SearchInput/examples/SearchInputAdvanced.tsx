@@ -44,7 +44,7 @@ export const SearchInputAdvanced: React.FunctionComponent = () => {
         formAdditionalItems={
           useCustomFooter ? (
             <FormGroup>
-              <Button variant="link" isInline icon={<ExternalLinkSquareAltIcon />} iconPosition="right">
+              <Button variant="link" isInline icon={<ExternalLinkSquareAltIcon />} iconPosition="end">
                 Link
               </Button>
             </FormGroup>

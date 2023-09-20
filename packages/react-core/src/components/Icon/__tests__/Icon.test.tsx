@@ -195,3 +195,19 @@ test('renders progress icon successfully', () => {
   );
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('Renders with class pf-v5-m-mirror-inline-rtl on icon passed as children when shouldMirrorRTL is true', () => {
+  render(<Icon shouldMirrorRTL>Icon content</Icon>);
+
+  expect(screen.getByText('Icon content')).toHaveClass('pf-v5-m-mirror-inline-rtl');
+});
+
+test('Does not render with class pf-v5-m-mirror-inline-rtl on progressIcon when shouldMirrorRTL is true', () => {
+  render(
+    <Icon shouldMirrorRTL isInProgress progressIcon="Progress icon">
+      Icon content
+    </Icon>
+  );
+
+  expect(screen.getByText('Progress icon')).not.toHaveClass('pf-v5-m-mirror-inline-rtl');
+});

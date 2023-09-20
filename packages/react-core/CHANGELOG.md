@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.12...@patternfly/react-core@5.1.1-prerelease.13) (2023-09-19)
+
+### Bug Fixes
+
+- **clipboard-copy:** added rtl support ([#9629](https://github.com/patternfly/patternfly-react/issues/9629)) ([584cf2e](https://github.com/patternfly/patternfly-react/commit/584cf2e613f383260d886dfb0e64f6d72fcfac4e))
+
+### Features
+
+- **TextInput:** Added isStartTruncted prop and deprecated isLeftTruncted prop ([#9610](https://github.com/patternfly/patternfly-react/issues/9610)) ([b1aaf3c](https://github.com/patternfly/patternfly-react/commit/b1aaf3cb9d48aef7ca1a72977ca386a3f36eecad))
+
+## [5.1.1-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.11...@patternfly/react-core@5.1.1-prerelease.12) (2023-09-18)
+
+### Bug Fixes
+
+- **search-input:** mirror search icon in rtl, fix double border ([#9602](https://github.com/patternfly/patternfly-react/issues/9602)) ([0fc551d](https://github.com/patternfly/patternfly-react/commit/0fc551dd1ae8024c1b0338eb365912d196999aed))
+
+## [5.1.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.10...@patternfly/react-core@5.1.1-prerelease.11) (2023-09-13)
+
+### Bug Fixes
+
+- **NavItem:** fix incorrect component typing ([#9579](https://github.com/patternfly/patternfly-react/issues/9579)) ([f5aced1](https://github.com/patternfly/patternfly-react/commit/f5aced18a67df0112b01654ed2a9ca37aaf0afc1))
+
+### Features
+
+- **Icon:** added prop for mirroring in RTL ([#9609](https://github.com/patternfly/patternfly-react/issues/9609)) ([dc65307](https://github.com/patternfly/patternfly-react/commit/dc65307e989185d298e5ac0acd354246784d24dc))
+
+## [5.1.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.9...@patternfly/react-core@5.1.1-prerelease.10) (2023-09-13)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [5.1.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.8...@patternfly/react-core@5.1.1-prerelease.9) (2023-09-12)
+
+### Bug Fixes
+
+- **button:** added logical start/end vals to iconPosition ([#9611](https://github.com/patternfly/patternfly-react/issues/9611)) ([50b1bc3](https://github.com/patternfly/patternfly-react/commit/50b1bc361ffdcb301243f36867bc7cc6e1bb7fbf))
+
+## 5.1.1-prerelease.8 (2023-09-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [5.1.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.6...@patternfly/react-core@5.1.1-prerelease.7) (2023-09-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [5.1.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.5...@patternfly/react-core@5.1.1-prerelease.6) (2023-09-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [5.1.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.4...@patternfly/react-core@5.1.1-prerelease.5) (2023-09-05)
+
+### Features
+
+- **Toolbar:** allow multiple toggle groups ([#9329](https://github.com/patternfly/patternfly-react/issues/9329)) ([b1093bf](https://github.com/patternfly/patternfly-react/commit/b1093bf0ba066a56c80667d299750cf49eb0641f))
+
+## [5.1.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.3...@patternfly/react-core@5.1.1-prerelease.4) (2023-09-01)
+
+### Features
+
+- **Drawer:** added focustrap functionality ([#9469](https://github.com/patternfly/patternfly-react/issues/9469)) ([41fedc5](https://github.com/patternfly/patternfly-react/commit/41fedc5f707127e4316866ca8b69b4b1a2abfbb7))
+
+## [5.1.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.2...@patternfly/react-core@5.1.1-prerelease.3) (2023-09-01)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## 5.1.1-prerelease.2 (2023-08-31)
+
+### Bug Fixes
+
+- **select:** fixed deprecated menu filter styles ([#9551](https://github.com/patternfly/patternfly-react/issues/9551)) ([d10e17b](https://github.com/patternfly/patternfly-react/commit/d10e17b596c27a2c83966a1d98bfcd1a9454a881))
+
 ## 5.1.1-prerelease.1 (2023-08-29)
 
 ### Bug Fixes

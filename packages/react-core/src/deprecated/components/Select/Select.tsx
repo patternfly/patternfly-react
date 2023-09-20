@@ -1149,54 +1149,56 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
     if (hasInlineFilter) {
       const filterBox = (
         <React.Fragment>
-          <div key="inline-filter" className={css(styles.selectMenuSearch, formStyles.formControl)}>
-            <input
-              key="inline-filter-input"
-              type="search"
-              onChange={this.onChange}
-              placeholder={inlineFilterPlaceholderText}
-              onKeyDown={(event) => {
-                if (event.key === KeyTypes.ArrowUp) {
-                  this.handleMenuKeys(0, 0, 'up');
-                  event.preventDefault();
-                } else if (event.key === KeyTypes.ArrowDown) {
-                  this.handleMenuKeys(0, 0, 'down');
-                  event.preventDefault();
-                } else if (event.key === KeyTypes.ArrowLeft) {
-                  this.handleMenuKeys(0, 0, 'left');
-                  event.preventDefault();
-                } else if (event.key === KeyTypes.ArrowRight) {
-                  this.handleMenuKeys(0, 0, 'right');
-                  event.preventDefault();
-                } else if (event.key === KeyTypes.Tab && variant !== SelectVariant.checkbox && this.props.footer) {
-                  // tab to footer or close menu if shift key
-                  if (event.shiftKey) {
-                    this.onToggle(event, false);
-                  } else {
-                    const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
-                    if (tabbableItems.length > 0) {
-                      tabbableItems[0].focus();
-                      event.stopPropagation();
-                      event.preventDefault();
-                    } else {
-                      this.onToggle(event, false);
-                    }
-                  }
-                } else if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
-                  // More modal-like experience for checkboxes
-                  // Let SelectOption handle this
-                  if (event.shiftKey) {
+          <div key="inline-filter" className={css(styles.selectMenuSearch)}>
+            <div key="inline-filter" className={css(formStyles.formControl)}>
+              <input
+                key="inline-filter-input"
+                type="search"
+                onChange={this.onChange}
+                placeholder={inlineFilterPlaceholderText}
+                onKeyDown={(event) => {
+                  if (event.key === KeyTypes.ArrowUp) {
                     this.handleMenuKeys(0, 0, 'up');
-                  } else {
+                    event.preventDefault();
+                  } else if (event.key === KeyTypes.ArrowDown) {
                     this.handleMenuKeys(0, 0, 'down');
+                    event.preventDefault();
+                  } else if (event.key === KeyTypes.ArrowLeft) {
+                    this.handleMenuKeys(0, 0, 'left');
+                    event.preventDefault();
+                  } else if (event.key === KeyTypes.ArrowRight) {
+                    this.handleMenuKeys(0, 0, 'right');
+                    event.preventDefault();
+                  } else if (event.key === KeyTypes.Tab && variant !== SelectVariant.checkbox && this.props.footer) {
+                    // tab to footer or close menu if shift key
+                    if (event.shiftKey) {
+                      this.onToggle(event, false);
+                    } else {
+                      const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
+                      if (tabbableItems.length > 0) {
+                        tabbableItems[0].focus();
+                        event.stopPropagation();
+                        event.preventDefault();
+                      } else {
+                        this.onToggle(event, false);
+                      }
+                    }
+                  } else if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
+                    // More modal-like experience for checkboxes
+                    // Let SelectOption handle this
+                    if (event.shiftKey) {
+                      this.handleMenuKeys(0, 0, 'up');
+                    } else {
+                      this.handleMenuKeys(0, 0, 'down');
+                    }
+                    event.stopPropagation();
+                    event.preventDefault();
                   }
-                  event.stopPropagation();
-                  event.preventDefault();
-                }
-              }}
-              ref={this.filterRef}
-              autoComplete={inputAutoComplete}
-            />
+                }}
+                ref={this.filterRef}
+                autoComplete={inputAutoComplete}
+              />
+            </div>
           </div>
           <Divider key="inline-filter-divider" />
         </React.Fragment>

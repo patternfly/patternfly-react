@@ -34,14 +34,6 @@ exports[`Toolbar should render inset 1`] = `
           Test 3 
         </div>
       </div>
-      <div
-        class="pf-v5-c-toolbar__expandable-content"
-        id="toolbar-expandable-content-0"
-      >
-        <div
-          class="pf-v5-c-toolbar__group"
-        />
-      </div>
     </div>
     <div
       class="pf-v5-c-toolbar__content pf-m-hidden"
@@ -96,49 +88,6 @@ exports[`Toolbar should render with custom chip content 1`] = `
             >
               test content
             </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="pf-v5-c-toolbar__expandable-content"
-        id="toolbar-with-filter-expandable-content-3"
-      >
-        <div
-          class="pf-v5-c-toolbar__group"
-        />
-        <div
-          class="pf-v5-c-toolbar__group pf-m-chip-container"
-        >
-          <div
-            class="pf-v5-c-toolbar__group"
-          />
-          <div
-            class="pf-v5-c-toolbar__item"
-          >
-            <button
-              aria-disabled="false"
-              class="pf-v5-c-button pf-m-link pf-m-inline"
-              data-ouia-component-id="OUIA-Generated-Button-link-3"
-              data-ouia-component-type="PF5/Button"
-              data-ouia-safe="true"
-              type="button"
-            >
-              Save filters
-            </button>
-          </div>
-          <div
-            class="pf-v5-c-toolbar__item"
-          >
-            <button
-              aria-disabled="false"
-              class="pf-v5-c-button pf-m-link pf-m-inline"
-              data-ouia-component-id="OUIA-Generated-Button-link-4"
-              data-ouia-component-type="PF5/Button"
-              data-ouia-safe="true"
-              type="button"
-            >
-              Clear all filters
-            </button>
           </div>
         </div>
       </div>
@@ -384,14 +333,6 @@ exports[`Toolbar should render with page inset flag 1`] = `
         >
           Test 3 
         </div>
-      </div>
-      <div
-        class="pf-v5-c-toolbar__expandable-content"
-        id="toolbar-expandable-content-1"
-      >
-        <div
-          class="pf-v5-c-toolbar__group"
-        />
       </div>
     </div>
     <div
