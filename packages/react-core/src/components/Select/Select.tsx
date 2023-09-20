@@ -8,7 +8,7 @@ export interface SelectPopperProps {
   /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
   direction?: 'up' | 'down';
   /** Horizontal position of the popper */
-  position?: 'right' | 'left' | 'center';
+  position?: 'right' | 'left' | 'center' | 'start' | 'end';
   /** Custom width of the popper. If the value is "trigger", it will set the width to the select toggle's width */
   width?: string | 'trigger';
   /** Minimum width of the popper. If the value is "trigger", it will set the min width to the select toggle's width */
