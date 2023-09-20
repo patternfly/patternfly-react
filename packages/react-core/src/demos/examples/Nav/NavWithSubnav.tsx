@@ -127,8 +127,8 @@ export const NavWithSubnav: React.FunctionComponent = () => {
         </PageSection>
         <PageSection>
           <Gallery hasGutter>
-            {Array.apply(0, Array(10)).map((_x: any, i: React.Key | null | undefined) => (
-              <GalleryItem key={i}>
+            {Array.from({ length: 10 }, (_value: any, index: React.Key) => (
+              <GalleryItem key={index}>
                 <Card>
                   <CardBody>This is a card</CardBody>
                 </Card>
