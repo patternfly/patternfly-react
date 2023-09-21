@@ -26,7 +26,7 @@ import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getClassName } from '../ChartUtils/chart-helpers';
 import { getLabelTextSize } from '../ChartUtils/chart-label';
-import { getComputedLegend, getLegendItemsExtraHeight } from '../ChartUtils/chart-legend';
+import { getComputedLegend, getLegendItemsExtraHeight, getLegendMaxTextWidth } from '../ChartUtils/chart-legend';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPatternDefs, mergePatternData, useDefaultPatternProps } from '../ChartUtils/chart-patterns';
 import { getChartTheme } from '../ChartUtils/chart-theme-types';
@@ -529,6 +529,11 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     ...(labelComponent && { labelComponent }) // Override label component props
   });
 
+  let legendXOffset = 0;
+  if (legendDirection === 'rtl') {
+    legendXOffset = getLegendMaxTextWidth(legendData, theme);
+  }
+
   const legend = React.cloneElement(legendComponent, {
     data: legendData,
     ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
@@ -538,14 +543,14 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       dataComponent: legendComponent.props.dataComponent ? (
         React.cloneElement(legendComponent.props.dataComponent, { transform: 'translate(40)' })
       ) : (
-        <ChartPoint transform="translate(40)" />
+        <ChartPoint transform={`translate(${legendXOffset})`} />
       )
     }),
     ...(legendDirection === 'rtl' && {
       labelComponent: legendComponent.props.labelComponent ? (
         React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: '10' })
       ) : (
-        <ChartLabel direction="rtl" dx="10" />
+        <ChartLabel direction="rtl" dx={legendXOffset - 30} />
       )
     }),
     ...legendComponent.props

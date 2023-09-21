@@ -17,7 +17,7 @@ import { ChartLegend } from '../ChartLegend/ChartLegend';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
 import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
-import { getComputedLegend, getLegendItemsExtraHeight } from '../ChartUtils/chart-legend';
+import { getComputedLegend, getLegendItemsExtraHeight, getLegendMaxTextWidth } from '../ChartUtils/chart-legend';
 import { ChartBulletComparativeErrorMeasure } from './ChartBulletComparativeErrorMeasure';
 import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 import { ChartBulletComparativeWarningMeasure } from './ChartBulletComparativeWarningMeasure';
@@ -663,6 +663,20 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     ...comparativeZeroMeasureComponent.props
   });
 
+  let legendXOffset = 0;
+  if (legendDirection === 'rtl') {
+    legendXOffset = getLegendMaxTextWidth(
+      [
+        ...(primaryDotMeasureLegendData ? primaryDotMeasureLegendData : []),
+        ...(primarySegmentedMeasureLegendData ? primarySegmentedMeasureLegendData : []),
+        ...(comparativeWarningMeasureLegendData ? comparativeWarningMeasureLegendData : []),
+        ...(comparativeErrorMeasureLegendData ? comparativeErrorMeasureLegendData : []),
+        ...(qualitativeRangeLegendData ? qualitativeRangeLegendData : [])
+      ],
+      theme
+    );
+  }
+
   // Legend
   const legend = React.cloneElement(legendComponent, {
     data: [
@@ -681,14 +695,14 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       dataComponent: legendComponent.props.dataComponent ? (
         React.cloneElement(legendComponent.props.dataComponent, { transform: 'translate(40)' })
       ) : (
-        <ChartPoint transform="translate(40)" />
+        <ChartPoint transform={`translate(${legendXOffset})`} />
       )
     }),
     ...(legendDirection === 'rtl' && {
       labelComponent: legendComponent.props.labelComponent ? (
         React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: '10' })
       ) : (
-        <ChartLabel direction="rtl" dx="10" />
+        <ChartLabel direction="rtl" dx={legendXOffset - 30} />
       )
     }),
     ...legendComponent.props
