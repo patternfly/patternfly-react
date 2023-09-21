@@ -133,7 +133,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         'Editable labels cannot have onClick passed, clicking starts the label edit process. Please remove either the isEditable or onClick prop.'
       );
     }
-  }, [onLabelClick, isOverflowLabel, href, isEditable]);
+  }, [onLabelClick, href, isEditable]);
 
   const onDocMouseDown = (event: MouseEvent) => {
     if (
