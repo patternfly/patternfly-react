@@ -7,5 +7,3 @@ export * from './PageSection';
 export * from './PageNavigation';
 export * from './PageToggleButton';
 export * from './PageContext';
-export * from './DashboardHeader';
-export * from './DashboardWrapper';
