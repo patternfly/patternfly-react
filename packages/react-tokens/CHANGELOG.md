@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.1-prerelease.7 (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
 ## 5.1.1-prerelease.6 (2023-09-18)
 
 **Note:** Version bump only for package @patternfly/react-tokens
