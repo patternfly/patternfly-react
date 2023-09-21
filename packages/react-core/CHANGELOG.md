@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.14...@patternfly/react-core@5.1.1-prerelease.15) (2023-09-21)
+
+### Bug Fixes
+
+- **misc:** fixed broken CodeSandbox demos ([#9519](https://github.com/patternfly/patternfly-react/issues/9519)) ([c02dcbc](https://github.com/patternfly/patternfly-react/commit/c02dcbcfe84c6aa5f67e8fa79839913c142541b4))
+
 ## [5.1.1-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.13...@patternfly/react-core@5.1.1-prerelease.14) (2023-09-20)
 
 ### Bug Fixes
