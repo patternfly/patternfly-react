@@ -57,9 +57,9 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   closeBtnProps?: any;
   /** Href for a label that is a link. If present, the label will change to an anchor element. This should not be passed in if the onClick prop is also passed in. */
   href?: string;
-  /** Flag indicating if the label is an overflow label. This should not be passed in if the onClick prop is also passed in. */
+  /** Flag indicating if the label is an overflow label. */
   isOverflowLabel?: boolean;
-  /** Callback for when the label is clicked. This should not be passed in if the href or isOverflowLabel props are also passed in. */
+  /** Callback for when the label is clicked. This should not be passed in if the href or isEditable props are also passed in. */
   onClick?: (event: React.MouseEvent) => void;
   /** Forwards the label content and className to rendered function.  Use this prop for react router support.*/
   render?: ({
@@ -122,12 +122,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   });
 
   React.useEffect(() => {
-    if (onLabelClick && isOverflowLabel) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        'Overflow labels cannot have onClick passed, this results in invalid HTML. Please remove either the isOverflowLabel or onClick prop.'
-      );
-    } else if (onLabelClick && href) {
+    if (onLabelClick && href) {
       // eslint-disable-next-line no-console
       console.warn(
         'Link labels cannot have onClick passed, this results in invalid HTML. Please remove either the href or onClick prop.'
