@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.1.1-prerelease.17...@patternfly/react-table@5.1.1-prerelease.18) (2023-09-21)
+
+### Bug Fixes
+
+- **popper:** add start/end positioning with RTL support, update default ([#9628](https://github.com/patternfly/patternfly-react/issues/9628)) ([033e6bc](https://github.com/patternfly/patternfly-react/commit/033e6bcca19994f0dc1ead8bcd076096d045bd77))
+
 ## [5.1.1-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.1.1-prerelease.16...@patternfly/react-table@5.1.1-prerelease.17) (2023-09-21)
 
 **Note:** Version bump only for package @patternfly/react-table

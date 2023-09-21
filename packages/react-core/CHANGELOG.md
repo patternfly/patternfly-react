@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.17...@patternfly/react-core@5.1.1-prerelease.18) (2023-09-21)
+
+### Bug Fixes
+
+- **Dropdown:** Add appendTo to dropdownPopperProps interface ([#9635](https://github.com/patternfly/patternfly-react/issues/9635)) ([1bc53da](https://github.com/patternfly/patternfly-react/commit/1bc53da876b757211a237832881820ccad64bdd7))
+- **popper:** add start/end positioning with RTL support, update default ([#9628](https://github.com/patternfly/patternfly-react/issues/9628)) ([033e6bc](https://github.com/patternfly/patternfly-react/commit/033e6bcca19994f0dc1ead8bcd076096d045bd77))
+
+### Features
+
+- **Timestamp:** allowed displayed datetime to be UTC ([#9649](https://github.com/patternfly/patternfly-react/issues/9649)) ([7b3ec92](https://github.com/patternfly/patternfly-react/commit/7b3ec9275e6a8909b1e230c6e6f52d74c9c72842))
+
 ## [5.1.1-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.16...@patternfly/react-core@5.1.1-prerelease.17) (2023-09-21)
 
 ### Bug Fixes
