@@ -195,7 +195,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     e.preventDefault();
 
     if (isRTL) {
-      diff = thumbRef.current.getBoundingClientRect().left - e.clientX;
+      diff = thumbRef.current.getBoundingClientRect().right - e.clientX;
     } else {
       diff = e.clientX - thumbRef.current.getBoundingClientRect().left;
     }
@@ -208,7 +208,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     e.stopPropagation();
 
     if (isRTL) {
-      diff = thumbRef.current.getBoundingClientRect().left - e.touches[0].clientX;
+      diff = thumbRef.current.getBoundingClientRect().right - e.touches[0].clientX;
     } else {
       diff = e.touches[0].clientX - thumbRef.current.getBoundingClientRect().left;
     }
