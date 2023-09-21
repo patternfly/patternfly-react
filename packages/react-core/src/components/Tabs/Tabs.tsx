@@ -63,10 +63,14 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   isVertical?: boolean;
   /** Disables border bottom tab styling on tabs. Defaults to false. To remove the bottom border, set this prop to true. */
   hasNoBorderBottom?: boolean;
-  /** Aria-label for the left scroll button */
+  /** @deprecated Please use backScrollAriaLabel. Aria-label for the left scroll button */
   leftScrollAriaLabel?: string;
-  /** Aria-label for the right scroll button */
+  /** @deprecated Please use forwardScrollAriaLabel. Aria-label for the right scroll button */
   rightScrollAriaLabel?: string;
+  /** Aria-label for the back scroll button */
+  backScrollAriaLabel?: string;
+  /** Aria-label for the forward scroll button */
+  forwardScrollAriaLabel?: string;
   /** Determines what tag is used around the tabs. Use "nav" to define the tabs inside a navigation region */
   component?: 'div' | 'nav';
   /** Provides an accessible label for the tabs. Labels should be unique for each set of tabs that are present on a page. When component is set to nav, this prop should be defined to differentiate the tabs from other navigation regions on the page. */
@@ -127,8 +131,8 @@ interface TabsState {
    * shown and rendering must be stopped after they stop being shown to preserve CSS transitions.
    */
   renderScrollButtons: boolean;
-  disableLeftScrollButton: boolean;
-  disableRightScrollButton: boolean;
+  disableBackScrollButton: boolean;
+  disableForwardScrollButton: boolean;
   shownKeys: (string | number)[];
   uncontrolledActiveKey: number | string;
   uncontrolledIsExpandedLocal: boolean;
@@ -140,14 +144,15 @@ class Tabs extends React.Component<TabsProps, TabsState> {
   static displayName = 'Tabs';
   tabList = React.createRef<HTMLUListElement>();
   leftScrollButtonRef = React.createRef<HTMLButtonElement>();
+  private direction = 'ltr';
   constructor(props: TabsProps) {
     super(props);
     this.state = {
       enableScrollButtons: false,
       showScrollButtons: false,
       renderScrollButtons: false,
-      disableLeftScrollButton: true,
-      disableRightScrollButton: true,
+      disableBackScrollButton: true,
+      disableForwardScrollButton: true,
       shownKeys: this.props.defaultActiveKey !== undefined ? [this.props.defaultActiveKey] : [this.props.activeKey], // only for mountOnEnter case
       uncontrolledActiveKey: this.props.defaultActiveKey,
       uncontrolledIsExpandedLocal: this.props.defaultIsExpanded,
@@ -177,7 +182,9 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     isBox: false,
     hasNoBorderBottom: false,
     leftScrollAriaLabel: 'Scroll left',
+    backScrollAriaLabel: 'Scroll back',
     rightScrollAriaLabel: 'Scroll right',
+    forwardScrollAriaLabel: 'Scroll forward',
     component: TabsComponent.div,
     mountOnEnter: false,
     unmountOnExit: false,
@@ -232,8 +239,8 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     clearTimeout(this.scrollTimeout);
     this.scrollTimeout = setTimeout(() => {
       const container = this.tabList.current;
-      let disableLeftScrollButton = true;
-      let disableRightScrollButton = true;
+      let disableBackScrollButton = true;
+      let disableForwardScrollButton = true;
       let enableScrollButtons = false;
       let overflowingTabCount = 0;
 
@@ -246,8 +253,8 @@ class Tabs extends React.Component<TabsProps, TabsState> {
 
         enableScrollButtons = overflowOnLeft || overflowOnRight;
 
-        disableLeftScrollButton = !overflowOnLeft;
-        disableRightScrollButton = !overflowOnRight;
+        disableBackScrollButton = !overflowOnLeft;
+        disableForwardScrollButton = !overflowOnRight;
       }
 
       if (isOverflowHorizontal) {
@@ -256,14 +263,14 @@ class Tabs extends React.Component<TabsProps, TabsState> {
 
       this.setState({
         enableScrollButtons,
-        disableLeftScrollButton,
-        disableRightScrollButton,
+        disableBackScrollButton,
+        disableForwardScrollButton,
         overflowingTabCount
       });
     }, 100);
   };
 
-  scrollLeft = () => {
+  scrollBack = () => {
     // find first Element that is fully in view on the left, then scroll to the element before it
     if (this.tabList.current) {
       const container = this.tabList.current;
@@ -278,12 +285,18 @@ class Tabs extends React.Component<TabsProps, TabsState> {
         }
       }
       if (lastElementOutOfView) {
-        container.scrollLeft -= lastElementOutOfView.scrollWidth;
+        if (this.direction === 'ltr') {
+          // LTR scrolls left to go back
+          container.scrollLeft -= lastElementOutOfView.scrollWidth;
+        } else {
+          // RTL scrolls right to go back
+          container.scrollLeft += lastElementOutOfView.scrollWidth;
+        }
       }
     }
   };
 
-  scrollRight = () => {
+  scrollForward = () => {
     // find last Element that is fully in view on the right, then scroll to the element after it
     if (this.tabList.current) {
       const container = this.tabList.current as any;
@@ -297,7 +310,13 @@ class Tabs extends React.Component<TabsProps, TabsState> {
         }
       }
       if (firstElementOutOfView) {
-        container.scrollLeft += firstElementOutOfView.scrollWidth;
+        if (this.direction === 'ltr') {
+          // LTR scrolls right to go forward
+          container.scrollLeft += firstElementOutOfView.scrollWidth;
+        } else {
+          // RTL scrolls left to go forward
+          container.scrollLeft -= firstElementOutOfView.scrollWidth;
+        }
       }
     }
   };
@@ -314,6 +333,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
       if (canUseDOM) {
         window.addEventListener('resize', this.handleScrollButtons, false);
       }
+      this.direction = getComputedStyle(this.tabList.current).getPropertyValue('direction');
       // call the handle resize function to check if scroll buttons should be shown
       this.handleScrollButtons();
     }
@@ -360,6 +380,8 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     } else if (prevState.enableScrollButtons && !enableScrollButtons) {
       this.setState({ showScrollButtons: false });
     }
+
+    this.direction = getComputedStyle(this.tabList.current).getPropertyValue('direction');
   }
 
   render() {
@@ -376,6 +398,8 @@ class Tabs extends React.Component<TabsProps, TabsState> {
       hasNoBorderBottom,
       leftScrollAriaLabel,
       rightScrollAriaLabel,
+      backScrollAriaLabel,
+      forwardScrollAriaLabel,
       'aria-label': ariaLabel,
       component,
       ouiaId,
@@ -400,8 +424,8 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     const {
       showScrollButtons,
       renderScrollButtons,
-      disableLeftScrollButton,
-      disableRightScrollButton,
+      disableBackScrollButton,
+      disableForwardScrollButton,
       shownKeys,
       uncontrolledActiveKey,
       uncontrolledIsExpandedLocal,
@@ -497,10 +521,10 @@ class Tabs extends React.Component<TabsProps, TabsState> {
             <button
               type="button"
               className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
-              aria-label={leftScrollAriaLabel}
-              onClick={this.scrollLeft}
-              disabled={disableLeftScrollButton}
-              aria-hidden={disableLeftScrollButton}
+              aria-label={backScrollAriaLabel || leftScrollAriaLabel}
+              onClick={this.scrollBack}
+              disabled={disableBackScrollButton}
+              aria-hidden={disableBackScrollButton}
               ref={this.leftScrollButtonRef}
             >
               <AngleLeftIcon />
@@ -514,10 +538,10 @@ class Tabs extends React.Component<TabsProps, TabsState> {
             <button
               type="button"
               className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
-              aria-label={rightScrollAriaLabel}
-              onClick={this.scrollRight}
-              disabled={disableRightScrollButton}
-              aria-hidden={disableRightScrollButton}
+              aria-label={forwardScrollAriaLabel || rightScrollAriaLabel}
+              onClick={this.scrollForward}
+              disabled={disableForwardScrollButton}
+              aria-hidden={disableForwardScrollButton}
             >
               <AngleRightIcon />
             </button>
