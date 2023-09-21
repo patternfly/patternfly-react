@@ -28,7 +28,7 @@ You can adjust a tab in the following ways:
 - To disable a tab, but keep it perceivable to assistive technology users, use the `isAriaDisabled` property. If a disabled tab has a tooltip, use this property instead of `isDisabled`.
 - To add a tooltip to an aria-disabled tab, use the `tooltip` property. 
 
-Most tab variations can either be 'default' or 'boxed': 
+Tabs can be styled as 'default' or 'boxed': 
 
 - Default tabs do not have any borders and use a bottom line to distinguish between a selected tab, a hovered tab, and an inactive tab. 
 - Boxed tabs are outlined to emphasize the area that a tab spans. To preview boxed tabs in the following examples, select the 'isBox' checkbox, which sets the `isBox` property to true.
@@ -206,8 +206,6 @@ The tab its content should only be mounted when the tab is visible.
 ### Dynamic tabs
 
 To enable closeable tabs, pass the `onClose` property to the `<Tabs>` component. To enable a button that adds new tabs, pass the `onAdd` property to `<Tabs>`. 
-
-Aria labels may be controlled manually by passing the `closeButtonAriaLabel` property to a `<Tab>` and the `addButtonAriaLabel` property to `<Tabs>`.
 
 ```ts file="./TabsDynamic.tsx"
 ```
