@@ -14,10 +14,14 @@ export interface NavListProps
   children?: React.ReactNode;
   /** Additional classes added to the list */
   className?: string;
-  /** Aria-label for the back scroll button */
+  /** @deprecated Aria-label for the left scroll button */
   ariaLeftScroll?: string;
-  /** Aria-label for the forward scroll button */
+  /** @deprecated Aria-label for the right scroll button */
   ariaRightScroll?: string;
+  /** Aria-label for the back scroll button */
+  backScrollAriaLabel?: string;
+  /** Aria-label for the forward scroll button */
+  forwardScrollAriaLabel?: string;
 }
 
 class NavList extends React.Component<NavListProps> {
@@ -26,7 +30,9 @@ class NavList extends React.Component<NavListProps> {
   context!: React.ContextType<typeof NavContext>;
   static defaultProps: NavListProps = {
     ariaLeftScroll: 'Scroll left',
-    ariaRightScroll: 'Scroll right'
+    backScrollAriaLabel: 'Scroll back',
+    ariaRightScroll: 'Scroll right',
+    forwardScrollAriaLabel: 'Scroll foward'
   };
   private direction = 'ltr';
 
@@ -119,7 +125,15 @@ class NavList extends React.Component<NavListProps> {
   }
 
   render() {
-    const { children, className, ariaLeftScroll, ariaRightScroll, ...props } = this.props;
+    const {
+      children,
+      className,
+      ariaLeftScroll,
+      ariaRightScroll,
+      backScrollAriaLabel,
+      forwardScrollAriaLabel,
+      ...props
+    } = this.props;
     const { scrollViewAtStart, scrollViewAtEnd } = this.state;
 
     return (
@@ -131,7 +145,7 @@ class NavList extends React.Component<NavListProps> {
                 {isHorizontal && (
                   <button
                     className={css(styles.navScrollButton)}
-                    aria-label={ariaLeftScroll}
+                    aria-label={backScrollAriaLabel || ariaLeftScroll}
                     onClick={this.scrollBack}
                     disabled={scrollViewAtStart}
                     tabIndex={isSidebarOpen ? null : -1}
@@ -151,7 +165,7 @@ class NavList extends React.Component<NavListProps> {
                 {isHorizontal && (
                   <button
                     className={css(styles.navScrollButton)}
-                    aria-label={ariaRightScroll}
+                    aria-label={forwardScrollAriaLabel || ariaRightScroll}
                     onClick={this.scrollForward}
                     disabled={scrollViewAtEnd}
                     tabIndex={isSidebarOpen ? null : -1}
