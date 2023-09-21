@@ -14,9 +14,9 @@ export interface NavListProps
   children?: React.ReactNode;
   /** Additional classes added to the list */
   className?: string;
-  /** @deprecated Aria-label for the left scroll button */
+  /** @deprecated Please use backScrollAriaLabel. Aria-label for the left scroll button */
   ariaLeftScroll?: string;
-  /** @deprecated Aria-label for the right scroll button */
+  /** @deprecated Please use forwardScrollAriaLabel. Aria-label for the right scroll button */
   ariaRightScroll?: string;
   /** Aria-label for the back scroll button */
   backScrollAriaLabel?: string;
