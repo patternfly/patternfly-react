@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { BackgroundImage } from '../BackgroundImage';
 import styles from '@patternfly/react-styles/css/components/BackgroundImage/background-image';
 
-test('renders with default className pf-v5-c-background-image', () => {
+test(`renders with default className ${styles.backgroundImage}`, () => {
   render(<BackgroundImage src="/image/url.png" data-testid="test-id" />);
   expect(screen.getByTestId('test-id')).toHaveClass(styles.backgroundImage, { exact: true });
 });
