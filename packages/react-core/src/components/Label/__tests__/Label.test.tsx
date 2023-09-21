@@ -109,4 +109,39 @@ describe('Label', () => {
     expect(screen.queryByRole('button', { name: 'Something' })).toBeNull();
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('a button is not rendered when onClick is not passed', () => {
+    render(<Label>Click me</Label>);
+
+    expect(screen.queryByRole(`button`)).not.toBeInTheDocument();
+  });
+
+  test('a button is rendered when onClick is passed', () => {
+    const fn = jest.fn();
+
+    render(<Label onClick={fn}>Click me</Label>);
+
+    expect(screen.getByRole(`button`)).toBeVisible();
+  });
+
+  test('clickable label does not call the passed callback when it is not clicked', async () => {
+    const mockCallback = jest.fn();
+
+    render(<Label onClick={mockCallback}>Click me</Label>);
+
+    expect(mockCallback).not.toHaveBeenCalled();
+  });
+
+  test('clickable label calls passed callback on click', async () => {
+    const mockCallback = jest.fn();
+    const user = userEvent.setup();
+
+    render(<Label onClick={mockCallback}>Click me</Label>);
+
+    const label = screen.getByRole('button');
+
+    await user.click(label);
+
+    expect(mockCallback).toBeCalledTimes(1);
+  });
 });
