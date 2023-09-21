@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.16...@patternfly/react-core@5.1.1-prerelease.17) (2023-09-21)
+
+### Bug Fixes
+
+- **Slider:** Updated slider to work in RTL. ([#9655](https://github.com/patternfly/patternfly-react/issues/9655)) ([1eb77cb](https://github.com/patternfly/patternfly-react/commit/1eb77cbdf98f1d9f140933ec5baaba37b8907492))
+
 ## [5.1.1-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.15...@patternfly/react-core@5.1.1-prerelease.16) (2023-09-21)
 
 **Note:** Version bump only for package @patternfly/react-core
