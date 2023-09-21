@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.277.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.12...@patternfly/react-core@4.277.0) (2023-09-21)
+
+
+### Features
+
+* **select next:** add appendTo ([#9562](https://github.com/patternfly/patternfly-react/issues/9562)) ([9340381](https://github.com/patternfly/patternfly-react/commit/9340381a9b7add81579f1f10dce7d6c595db29fe))
+
+
+
+
+
 ## [4.276.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.11...@patternfly/react-core@4.276.12) (2023-08-23)
 
 
