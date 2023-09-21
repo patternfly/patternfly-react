@@ -65,12 +65,12 @@ export const SliderActions: React.FunctionComponent = () => {
       <Slider
         value={value1}
         onChange={onChange1}
-        leftActions={
+        startActions={
           <Button variant="plain" aria-label="Minus" onClick={onMinusClick}>
             <MinusIcon />
           </Button>
         }
-        rightActions={
+        endActions={
           <Button variant="plain" aria-label="Plus" onClick={onPlusClick}>
             <PlusIcon />
           </Button>
@@ -85,7 +85,7 @@ export const SliderActions: React.FunctionComponent = () => {
         inputLabel="%"
         isInputVisible
         isDisabled={isDisabled}
-        rightActions={buildAction(isDisabled)}
+        endActions={buildAction(isDisabled)}
       />
     </>
   );

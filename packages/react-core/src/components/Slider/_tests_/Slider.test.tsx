@@ -46,7 +46,7 @@ describe('slider', () => {
 
   test('renders slider with input', () => {
     const { asFragment } = render(
-      <Slider value={50} isInputVisible inputValue={50} inputLabel="%" inputPosition="right" />
+      <Slider value={50} isInputVisible inputValue={50} inputLabel="%" inputPosition="end" />
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -62,8 +62,8 @@ describe('slider', () => {
     const { asFragment } = render(
       <Slider
         value={50}
-        leftActions={<Button variant="plain" aria-label="Minus" />}
-        rightActions={<Button variant="plain" aria-label="Plus" />}
+        startActions={<Button variant="plain" aria-label="Minus" />}
+        endActions={<Button variant="plain" aria-label="Plus" />}
       />
     );
     expect(asFragment()).toMatchSnapshot();
