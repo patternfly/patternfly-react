@@ -55,12 +55,12 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   closeBtnAriaLabel?: string;
   /** Additional properties for the default close button. */
   closeBtnProps?: any;
-  /** Href for a label that is a link. If present, the label will change to an anchor element. */
+  /** Href for a label that is a link. If present, the label will change to an anchor element. This should not be passed in if the onClick prop is also passed in. */
   href?: string;
-  /** Flag indicating if the label is an overflow label */
+  /** Flag indicating if the label is an overflow label. This should not be passed in if the onClick prop is also passed in. */
   isOverflowLabel?: boolean;
-  /** On click callback. If present, label will be clickable. */
-  onLabelClick?: (event: React.MouseEvent) => void;
+  /** Callback for when the label is clicked. This should not be passed in if the href or isOverflowLabel props are also passed in. */
+  onClick?: (event: React.MouseEvent) => void;
   /** Forwards the label content and className to rendered function.  Use this prop for react router support.*/
   render?: ({
     className,
@@ -96,7 +96,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   tooltipPosition,
   icon,
   onClose,
-  onLabelClick,
+  onClick: onLabelClick,
   onEditCancel,
   onEditComplete,
   closeBtn,
@@ -120,6 +120,25 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       document.removeEventListener('keydown', onKeyDown);
     };
   });
+
+  React.useEffect(() => {
+    if (onLabelClick && isOverflowLabel) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'Overflow labels cannot have onClick passed, this results in invalid HTML. Please remove either the isOverflowLabel or onClick prop.'
+      );
+    } else if (onLabelClick && href) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'Link labels cannot have onClick passed, this results in invalid HTML. Please remove either the href or onClick prop.'
+      );
+    } else if (onLabelClick && isEditable) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'Editable labels cannot have onClick passed, clicking starts the label edit process. Please remove either the isEditable or onClick prop.'
+      );
+    }
+  }, [onLabelClick, isOverflowLabel, href, isEditable]);
 
   const onDocMouseDown = (event: MouseEvent) => {
     if (
@@ -238,14 +257,22 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   let LabelComponentChildElement = 'span';
   if (href) {
     LabelComponentChildElement = 'a';
-  } else if (isEditable || onLabelClick) {
+  } else if (isEditable || (onLabelClick && !isOverflowLabel)) {
     LabelComponentChildElement = 'button';
   }
+
+  const clickableLabelProps = {
+    type: 'button',
+    onClick: onLabelClick
+  };
+
+  const isButton = LabelComponentChildElement === 'button';
 
   const labelComponentChildProps = {
     className: css(styles.labelContent),
     ...(isTooltipVisible && { tabIndex: 0 }),
     ...(href && { href }),
+    ...(isButton && clickableLabelProps),
     ...(isEditable && {
       ref: editableButtonRef,
       onClick: (e: React.MouseEvent) => {
@@ -257,13 +284,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   };
 
   let labelComponentChild = (
-    <LabelComponentChildElement
-      type={LabelComponentChildElement === 'button' ? 'button' : undefined}
-      onClick={onLabelClick}
-      {...labelComponentChildProps}
-    >
-      {content}
-    </LabelComponentChildElement>
+    <LabelComponentChildElement {...labelComponentChildProps}>{content}</LabelComponentChildElement>
   );
 
   if (render) {
@@ -298,6 +319,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         isEditableActive && styles.modifiers.editableActive,
         className
       )}
+      onClick={isOverflowLabel ? onLabelClick : undefined}
     >
       {!isEditableActive && labelComponentChild}
       {!isEditableActive && onClose && button}

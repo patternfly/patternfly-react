@@ -25,10 +25,10 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" href="#outline" onClose={() => Function.prototype}>
         Grey link removable
       </Label>
-      <Label variant="outline" onLabelClick={() => logColor('grey')}>
+      <Label variant="outline" onClick={() => logColor('grey')}>
         Grey clickable
       </Label>{' '}
-      <Label variant="outline" onLabelClick={() => logColor('grey')} onClose={() => Function.prototype}>
+      <Label variant="outline" onClick={() => logColor('grey')} onClose={() => Function.prototype}>
         Grey clickable removable
       </Label>
       <Label variant="outline" icon={<InfoCircleIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
@@ -54,10 +54,10 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="blue" href="#outline" onClose={() => Function.prototype}>
         Blue link removable
       </Label>
-      <Label variant="outline" color="blue" onLabelClick={() => logColor('blue')}>
+      <Label variant="outline" color="blue" onClick={() => logColor('blue')}>
         Blue clickable
       </Label>{' '}
-      <Label variant="outline" color="blue" onLabelClick={() => logColor('blue')} onClose={() => Function.prototype}>
+      <Label variant="outline" color="blue" onClick={() => logColor('blue')} onClose={() => Function.prototype}>
         Blue clickable removable
       </Label>
       <Label
@@ -89,10 +89,10 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="green" href="#outline" onClose={() => Function.prototype}>
         Green link removable
       </Label>
-      <Label variant="outline" color="green" onLabelClick={() => logColor('green')}>
+      <Label variant="outline" color="green" onClick={() => logColor('green')}>
         Green clickable
       </Label>{' '}
-      <Label variant="outline" color="green" onLabelClick={() => logColor('green')} onClose={() => Function.prototype}>
+      <Label variant="outline" color="green" onClick={() => logColor('green')} onClose={() => Function.prototype}>
         Green clickable removable
       </Label>
       <Label
@@ -124,15 +124,10 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="orange" href="#outline" onClose={() => Function.prototype}>
         Orange link removable
       </Label>
-      <Label variant="outline" color="orange" onLabelClick={() => logColor('orange')}>
+      <Label variant="outline" color="orange" onClick={() => logColor('orange')}>
         Orange clickable
       </Label>{' '}
-      <Label
-        variant="outline"
-        color="orange"
-        onLabelClick={() => logColor('orange')}
-        onClose={() => Function.prototype}
-      >
+      <Label variant="outline" color="orange" onClick={() => logColor('orange')} onClose={() => Function.prototype}>
         Orange clickable removable
       </Label>
       <Label
@@ -164,10 +159,10 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="red" href="#outline" onClose={() => Function.prototype}>
         Red link removable
       </Label>
-      <Label variant="outline" color="red" onLabelClick={() => logColor('red')}>
+      <Label variant="outline" color="red" onClick={() => logColor('red')}>
         Red clickable
       </Label>{' '}
-      <Label variant="outline" color="red" onLabelClick={() => logColor('red')} onClose={() => Function.prototype}>
+      <Label variant="outline" color="red" onClick={() => logColor('red')} onClose={() => Function.prototype}>
         Red clickable removable
       </Label>
       <Label
@@ -199,15 +194,10 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="purple" href="#outline" onClose={() => Function.prototype}>
         Purple link removable
       </Label>
-      <Label variant="outline" color="purple" onLabelClick={() => logColor('purple')}>
+      <Label variant="outline" color="purple" onClick={() => logColor('purple')}>
         Purple clickable
       </Label>{' '}
-      <Label
-        variant="outline"
-        color="purple"
-        onLabelClick={() => logColor('purple')}
-        onClose={() => Function.prototype}
-      >
+      <Label variant="outline" color="purple" onClick={() => logColor('purple')} onClose={() => Function.prototype}>
         Purple clickable removable
       </Label>
       <Label
@@ -239,10 +229,10 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="cyan" href="#outline" onClose={() => Function.prototype}>
         Cyan link removable
       </Label>
-      <Label variant="outline" color="cyan" onLabelClick={() => logColor('cyan')}>
+      <Label variant="outline" color="cyan" onClick={() => logColor('cyan')}>
         Cyan clickable
       </Label>{' '}
-      <Label variant="outline" color="cyan" onLabelClick={() => logColor('cyan')} onClose={() => Function.prototype}>
+      <Label variant="outline" color="cyan" onClick={() => logColor('cyan')} onClose={() => Function.prototype}>
         Cyan clickable removable
       </Label>
       <Label
@@ -274,10 +264,10 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="gold" href="#outline" onClose={() => Function.prototype}>
         Gold link removable
       </Label>
-      <Label variant="outline" color="gold" onLabelClick={() => logColor('gold')}>
+      <Label variant="outline" color="gold" onClick={() => logColor('gold')}>
         Gold clickable
       </Label>{' '}
-      <Label variant="outline" color="gold" onLabelClick={() => logColor('gold')} onClose={() => Function.prototype}>
+      <Label variant="outline" color="gold" onClick={() => logColor('gold')} onClose={() => Function.prototype}>
         Gold clickable removable
       </Label>
       <Label
