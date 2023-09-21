@@ -602,7 +602,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
             data-ouia-safe="true"
           >
             <button
-              aria-label="Scroll left"
+              aria-label="Scroll back"
               class="pf-v5-c-nav__scroll-button"
               disabled=""
             >
@@ -687,7 +687,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
               </li>
             </ul>
             <button
-              aria-label="Scroll right"
+              aria-label="Scroll foward"
               class="pf-v5-c-nav__scroll-button"
               disabled=""
             >
@@ -785,7 +785,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
             data-ouia-safe="true"
           >
             <button
-              aria-label="Scroll left"
+              aria-label="Scroll back"
               class="pf-v5-c-nav__scroll-button"
               disabled=""
             >
@@ -870,7 +870,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
               </li>
             </ul>
             <button
-              aria-label="Scroll right"
+              aria-label="Scroll foward"
               class="pf-v5-c-nav__scroll-button"
               disabled=""
             >
@@ -1070,7 +1070,7 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
           data-ouia-safe="true"
         >
           <button
-            aria-label="Scroll left"
+            aria-label="Scroll back"
             class="pf-v5-c-nav__scroll-button"
             disabled=""
           >
@@ -1155,7 +1155,7 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
             </li>
           </ul>
           <button
-            aria-label="Scroll right"
+            aria-label="Scroll foward"
             class="pf-v5-c-nav__scroll-button"
             disabled=""
           >
