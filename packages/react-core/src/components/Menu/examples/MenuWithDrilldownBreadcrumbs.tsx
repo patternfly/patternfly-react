@@ -1,22 +1,23 @@
 import React from 'react';
 import {
-  Menu,
-  MenuContent,
-  MenuList,
-  MenuItem,
+  Badge,
+  Breadcrumb,
+  BreadcrumbHeading,
+  BreadcrumbItem,
+  Checkbox,
   Divider,
   DrilldownMenu,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbHeading,
-  MenuBreadcrumb,
-  Checkbox,
   Dropdown,
-  DropdownList,
   DropdownItem,
+  DropdownList,
+  Icon,
+  Menu,
+  MenuBreadcrumb,
+  MenuContent,
+  MenuItem,
+  MenuList,
   MenuToggle,
-  MenuToggleElement,
-  Badge
+  MenuToggleElement
 } from '@patternfly/react-core';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
@@ -129,7 +130,11 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           <DropdownList>
             <DropdownItem
               key="dropdown-start"
-              icon={<AngleLeftIcon />}
+              icon={
+                <Icon shouldMirrorRTL>
+                  <AngleLeftIcon />
+                </Icon>
+              }
               onClick={(event: any) =>
                 drillOut(event, 'breadcrumbs-drilldownMenuStart', 'group:app_grouping_start', startRolloutBreadcrumb)
               }
@@ -169,7 +174,11 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           <DropdownList>
             <DropdownItem
               key="dropdown-start"
-              icon={<AngleLeftIcon />}
+              icon={
+                <Icon shouldMirrorRTL>
+                  <AngleLeftIcon />
+                </Icon>
+              }
               onClick={(event: any) =>
                 drillOut(event, 'breadcrumbs-drilldownMenuStart', 'group:labels_start', startRolloutBreadcrumb)
               }
@@ -221,7 +230,11 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           <DropdownList>
             <DropdownItem
               key="dropdown-pause"
-              icon={<AngleLeftIcon />}
+              icon={
+                <Icon shouldMirrorRTL>
+                  <AngleLeftIcon />
+                </Icon>
+              }
               onClick={(event: any) =>
                 drillOut(event, 'breadcrumbs-drilldownMenuPause', 'group:app_grouping', pauseRolloutsBreadcrumb)
               }
@@ -266,7 +279,11 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
           <DropdownList>
             <DropdownItem
               key="dropdown-pause"
-              icon={<AngleLeftIcon />}
+              icon={
+                <Icon shouldMirrorRTL>
+                  <AngleLeftIcon />
+                </Icon>
+              }
               onClick={(event: any) =>
                 drillOut(event, 'breadcrumbs-drilldownMenuPause', 'group:labels', pauseRolloutsBreadcrumb)
               }
