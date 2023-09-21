@@ -12,7 +12,7 @@ import {
   DropdownItem
 } from '@patternfly/react-core';
 import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
-import pfIcon from 'pf-logo-small.svg';
+import pfIcon from '@patternfly/react-core/src/demos/Card/pf-logo-small.svg';
 
 const MockLink: React.FunctionComponent = ({ to, ...props }: any) => <a href={to} {...props}></a>;
 
