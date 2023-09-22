@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.19...@patternfly/react-core@5.1.1-prerelease.20) (2023-09-22)
+
+### Bug Fixes
+
+- **Nav:** allow RTL scrolling ([#9637](https://github.com/patternfly/patternfly-react/issues/9637)) ([faddb9c](https://github.com/patternfly/patternfly-react/commit/faddb9cf243a5d4e0ac4cebd95c56e5723f7a8f2))
+
 ## [5.1.1-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.18...@patternfly/react-core@5.1.1-prerelease.19) (2023-09-21)
 
 ### Bug Fixes
