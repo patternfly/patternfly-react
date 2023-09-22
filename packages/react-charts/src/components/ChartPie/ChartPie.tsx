@@ -595,14 +595,14 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     theme,
     ...(legendDirection === 'rtl' && {
       dataComponent: legendComponent.props.dataComponent ? (
-        React.cloneElement(legendComponent.props.dataComponent, { transform: 'translate(80)' })
+        React.cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
       ) : (
         <ChartPoint transform={`translate(${legendXOffset})`} />
       )
     }),
     ...(legendDirection === 'rtl' && {
       labelComponent: legendComponent.props.labelComponent ? (
-        React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: '50' })
+        React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
       ) : (
         <ChartLabel direction="rtl" dx={legendXOffset - 30} />
       )
