@@ -18,6 +18,7 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 interface DashboardHeaderProps {
+  /** Render custom notification badge */
   notificationBadge?: React.ReactNode;
 }
 
@@ -46,7 +47,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
   );
 
   const onDropdownToggle = () => {
-    setIsDropdownOpen((prevIsDropdownOpen) => !prevIsDropdownOpen);
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   const onDropdownSelect = () => {
@@ -54,7 +55,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
   };
 
   const onKebabDropdownToggle = () => {
-    setIsKebabDropdownOpen((prevIsKebabDropdownOpen) => !prevIsKebabDropdownOpen);
+    setIsKebabDropdownOpen(!isKebabDropdownOpen);
   };
 
   const onKebabDropdownSelect = () => {
@@ -62,7 +63,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
   };
 
   const onFullKebabToggle = () => {
-    setIsFullKebabDropdownOpen((prevIsFullKebabDropdownOpen) => !prevIsFullKebabDropdownOpen);
+    setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen);
   };
 
   const onFullKebabSelect = () => {
@@ -89,9 +90,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
               align={{ default: 'alignRight' }}
               spacer={{ default: 'spacerNone', md: 'spacerMd' }}
             >
-              {notificationBadge ? (
-                notificationBadge
-              ) : (
+              {notificationBadge ?? (
                 <ToolbarItem>
                   <Button
                     aria-label="Notifications"
