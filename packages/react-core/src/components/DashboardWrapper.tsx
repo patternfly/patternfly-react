@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
 import { Breadcrumb, BreadcrumbItem } from './Breadcrumb';
 import { Nav, NavItem, NavList } from './Nav';
-import { Page, PageSection, PageSidebar, PageSidebarBody } from './Page';
+import { Page, PageProps, PageSection, PageSidebar, PageSidebarBody } from './Page';
 import { SkipToContent } from './SkipToContent';
 import { Text, TextContent } from './Text';
 import { DashboardHeader } from './DashboardHeader';
 
-interface DashboardWrapperProps {
-  children: React.ReactNode;
-  mainContainerId?: string;
-  breadcrumb?: React.ReactNode;
-  header?: React.ReactNode;
-  sidebar?: React.ReactNode;
+interface DashboardWrapperProps extends Omit<PageProps, 'ref'> {
+  /** Programmatically manage if the sidebar nav is shown */
   sidebarNavOpen?: boolean;
-  onPageResize?: (event: MouseEvent | TouchEvent | React.KeyboardEvent<Element>, resizeObject: any) => void;
-  hasNoBreadcrumb?: boolean;
-  notificationDrawer?: React.ReactNode;
-  isNotificationDrawerExpanded?: boolean;
+  /** Flag to render sample breadcrumb if custom breadcrumb not passed */
+  hasDefaultBreadcrumb?: boolean;
+  /** Flag to render sample page title if custom title not passed */
   hasPageTemplateTitle?: boolean;
 }
 
@@ -48,12 +43,12 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
   sidebar,
   sidebarNavOpen,
   onPageResize,
-  hasNoBreadcrumb,
+  hasDefaultBreadcrumb,
   notificationDrawer,
   isNotificationDrawerExpanded,
   hasPageTemplateTitle,
   ...pageProps
-}) => {
+}: DashboardWrapperProps) => {
   const [activeItem, setActiveItem] = useState(1);
 
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, result: any) => {
@@ -61,8 +56,8 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
   };
 
   let renderedBreadcrumb;
-  if (!hasNoBreadcrumb) {
-    renderedBreadcrumb = breadcrumb !== undefined ? breadcrumb : DashboardBreadcrumb;
+  if (!hasDefaultBreadcrumb) {
+    renderedBreadcrumb = breadcrumb ?? DashboardBreadcrumb;
   }
 
   const PageNav = (
@@ -94,19 +89,19 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
   );
 
   const PageSkipToContent = (
-    <SkipToContent href={`#${mainContainerId ? mainContainerId : 'main-content-page-layout-default-nav'}`}>
+    <SkipToContent href={`#${mainContainerId ?? 'main-content-page-layout-default-nav'}`}>
       Skip to content
     </SkipToContent>
   );
 
   return (
     <Page
-      header={header !== undefined ? header : <DashboardHeader />}
-      sidebar={sidebar !== undefined ? sidebar : _sidebar}
+      header={header ?? <DashboardHeader />}
+      sidebar={sidebar ?? _sidebar}
       isManagedSidebar
       skipToContent={PageSkipToContent}
       breadcrumb={renderedBreadcrumb}
-      mainContainerId={mainContainerId ? mainContainerId : 'main-content-page-layout-default-nav'}
+      mainContainerId={mainContainerId ?? 'main-content-page-layout-default-nav'}
       notificationDrawer={notificationDrawer}
       isNotificationDrawerExpanded={isNotificationDrawerExpanded}
       {...(typeof onPageResize === 'function' && {
