@@ -17,7 +17,7 @@ import { ChartLegend } from '../ChartLegend/ChartLegend';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
 import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
-import { getComputedLegend, getLegendItemsExtraHeight } from '../ChartUtils/chart-legend';
+import { getComputedLegend, getLegendItemsExtraHeight, getLegendMaxTextWidth } from '../ChartUtils/chart-legend';
 import { ChartBulletComparativeErrorMeasure } from './ChartBulletComparativeErrorMeasure';
 import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 import { ChartBulletComparativeWarningMeasure } from './ChartBulletComparativeWarningMeasure';
@@ -29,6 +29,8 @@ import { getBulletDomain } from './utils/chart-bullet-domain';
 import { getBulletThemeWithLegendColorScale } from './utils/chart-bullet-theme';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { useEffect } from 'react';
+import { ChartPoint } from '../ChartPoint/ChartPoint';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
 
 /**
  * ChartBullet renders a dataset as a bullet chart.
@@ -252,6 +254,10 @@ export interface ChartBulletProps {
    * cases, the legend may not be visible until enough padding is applied.
    */
   legendPosition?: 'bottom' | 'bottom-left' | 'right';
+  /**
+   * @beta Text direction of the legend labels.
+   */
+  legendDirection?: 'ltr' | 'rtl';
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -509,6 +515,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   legendComponent = <ChartLegend />,
   legendItemsPerRow,
   legendPosition = 'bottom',
+  legendDirection = 'ltr',
   maxDomain,
   minDomain,
   name,
@@ -656,6 +663,20 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     ...comparativeZeroMeasureComponent.props
   });
 
+  let legendXOffset = 0;
+  if (legendDirection === 'rtl') {
+    legendXOffset = getLegendMaxTextWidth(
+      [
+        ...(primaryDotMeasureLegendData ? primaryDotMeasureLegendData : []),
+        ...(primarySegmentedMeasureLegendData ? primarySegmentedMeasureLegendData : []),
+        ...(comparativeWarningMeasureLegendData ? comparativeWarningMeasureLegendData : []),
+        ...(comparativeErrorMeasureLegendData ? comparativeErrorMeasureLegendData : []),
+        ...(qualitativeRangeLegendData ? qualitativeRangeLegendData : [])
+      ],
+      theme
+    );
+  }
+
   // Legend
   const legend = React.cloneElement(legendComponent, {
     data: [
@@ -670,6 +691,20 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     orientation: legendOrientation,
     position: legendPosition,
     theme,
+    ...(legendDirection === 'rtl' && {
+      dataComponent: legendComponent.props.dataComponent ? (
+        React.cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
+      ) : (
+        <ChartPoint transform={`translate(${legendXOffset})`} />
+      )
+    }),
+    ...(legendDirection === 'rtl' && {
+      labelComponent: legendComponent.props.labelComponent ? (
+        React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
+      ) : (
+        <ChartLabel direction="rtl" dx={legendXOffset - 30} />
+      )
+    }),
     ...legendComponent.props
   });
 
