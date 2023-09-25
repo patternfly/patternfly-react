@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.21...@patternfly/react-core@5.1.1-prerelease.22) (2023-09-25)
+
+### Bug Fixes
+
+- **Draggable:** dont disable droppable on false ondrag ([#9646](https://github.com/patternfly/patternfly-react/issues/9646)) ([8e1e08d](https://github.com/patternfly/patternfly-react/commit/8e1e08d0d0c052ff50a43b72a50724dc2053f416))
+
 ## [5.1.1-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.20...@patternfly/react-core@5.1.1-prerelease.21) (2023-09-25)
 
 ### Bug Fixes
