@@ -64,8 +64,8 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
     actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
     actionLinks={
       <React.Fragment>
-        <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
-        <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+        <AlertActionLink component="a" href="#">View details</AlertActionLink>
+        <AlertActionLink component="a" href="#">Ignore</AlertActionLink>
       </React.Fragment>
     }
   >
@@ -83,8 +83,8 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
     actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
     actionLinks={
       <React.Fragment>
-        <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
-        <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+        <AlertActionLink component="a" href="#">View details</AlertActionLink>
+        <AlertActionLink component="a" href="#">Ignore</AlertActionLink>
       </React.Fragment>
     }
   />
@@ -111,8 +111,8 @@ const AlertTimeout: React.FunctionComponent = () => {
       return [...prevAlerts,
         <Alert title="Default timeout Alert" timeout={timeout} actionLinks={
           <React.Fragment>
-            <AlertActionLink>View details</AlertActionLink>
-            <AlertActionLink>Ignore</AlertActionLink>
+            <AlertActionLink component="a" href="#">View details</AlertActionLink>
+            <AlertActionLink component="a" href="#">Ignore</AlertActionLink>
           </React.Fragment>
         }>
           This alert will dismiss after {`${timeout / 1000} seconds`}
@@ -153,8 +153,8 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
     actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
     actionLinks={
       <React.Fragment>
-        <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
-        <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+        <AlertActionLink component="a" href="#">View details</AlertActionLink>
+        <AlertActionLink component="a" href="#">Ignore</AlertActionLink>
       </React.Fragment>
     }
   >
@@ -168,8 +168,8 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
     actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
     actionLinks={
       <React.Fragment>
-        <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
-        <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+        <AlertActionLink component="a" href="#">View details</AlertActionLink>
+        <AlertActionLink component="a" href="#">Ignore</AlertActionLink>
       </React.Fragment>
     } 
   >
@@ -251,8 +251,8 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
     actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
     actionLinks={
       <React.Fragment>
-        <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
-        <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+        <AlertActionLink component="a" href="#">View details</AlertActionLink>
+        <AlertActionLink component="a" href="#">Ignore</AlertActionLink>
       </React.Fragment>
     }
   >
@@ -271,8 +271,8 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
     actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
     actionLinks={
       <React.Fragment>
-        <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
-        <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+        <AlertActionLink component="a" href="#">View details</AlertActionLink>
+        <AlertActionLink component="a" href="#">Ignore</AlertActionLink>
       </React.Fragment>
     }
   />
