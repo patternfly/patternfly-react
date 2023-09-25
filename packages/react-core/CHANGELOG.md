@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.20...@patternfly/react-core@5.1.1-prerelease.21) (2023-09-25)
+
+### Bug Fixes
+
+- **PrimaryDetail:** remove primary detail card view require statement ([#9661](https://github.com/patternfly/patternfly-react/issues/9661)) ([9ae107f](https://github.com/patternfly/patternfly-react/commit/9ae107f1f3bc6e87cf15f4f51249c1614d16ea57))
+
 ## [5.1.1-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.19...@patternfly/react-core@5.1.1-prerelease.20) (2023-09-22)
 
 ### Bug Fixes
