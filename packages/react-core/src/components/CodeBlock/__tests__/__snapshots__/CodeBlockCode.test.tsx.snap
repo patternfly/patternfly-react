@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot 1`] = `
+<DocumentFragment>
+  <pre
+    class="pf-v5-c-code-block__pre"
+  >
+    <code
+      class="pf-v5-c-code-block__code"
+    >
+      children
+    </code>
+  </pre>
+</DocumentFragment>
+`;
