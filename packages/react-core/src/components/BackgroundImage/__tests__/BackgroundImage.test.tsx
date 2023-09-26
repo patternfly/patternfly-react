@@ -14,11 +14,6 @@ test('spreads additional props', () => {
   expect(screen.getByTestId('test-id')).toHaveProperty('lang');
 });
 
-test('spreads additional props', () => {
-  render(<BackgroundImage src="/image/url.png" data-testid="test-id" lang="en-US" />);
-  expect(screen.getByTestId('test-id')).toHaveProperty('lang');
-});
-
 test('has src URL applied to style', () => {
   render(<BackgroundImage src="/image/url.png" data-testid="test-id" />);
   expect(screen.getByTestId('test-id')).toHaveAttribute('style', `${cssBackgroundImage.name}: url(/image/url.png);`);
