@@ -17,8 +17,8 @@ enum headingLevelSizeMap {
   h2 = 'xl',
   h3 = 'lg',
   h4 = 'md',
-  h5 = 'md',
-  h6 = 'md'
+  h5 = h4,
+  h6 = h5
 }
 
 type Size = 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';

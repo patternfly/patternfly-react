@@ -512,7 +512,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
           ...(name &&
-            typeof (child as any).name !== undefined && {
+            typeof (child as any).name !== 'undefined' && {
               name: `${name}-${(child as any).type.displayName}-${index}`
             }),
           invert,
