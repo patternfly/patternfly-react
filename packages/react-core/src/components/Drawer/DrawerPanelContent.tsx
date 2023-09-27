@@ -21,7 +21,7 @@ export interface DrawerPanelFocusTrapObject {
   'aria-labelledby'?: string;
 }
 
-export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onResize'> {
   /** Additional classes added to the drawer. */
   className?: string;
   /** ID of the drawer panel */
