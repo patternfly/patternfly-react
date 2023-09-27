@@ -10,7 +10,7 @@ import {
   Button
 } from '@patternfly/react-core';
 
-export const DrawerInlinePanelRight: React.FunctionComponent = () => {
+export const DrawerInlinePanelEnd: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLDivElement>();
 

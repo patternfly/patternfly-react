@@ -64,6 +64,10 @@ export interface TimestampProps extends React.HTMLProps<HTMLSpanElement> {
    * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
    */
   locale?: string;
+  /** Flag indicating whether the default content should be displayed as a UTC string
+   * instead of a local string.
+   */
+  shouldDisplayUTC?: boolean;
   /** Determines the format of the displayed time in the timestamp and UTC tooltip. Examples:
    * "Full" => 11:25:00 AM Eastern Daylight Time
    * "Long" => 11:25:00 AM EDT
@@ -84,6 +88,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   displaySuffix = '',
   is12Hour,
   locale,
+  shouldDisplayUTC,
   timeFormat,
   tooltip,
   ...props
@@ -117,7 +122,6 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
     ...formatOptions,
     ...(hasTimeFormat && { timeStyle: timeFormat })
   });
-  const defaultDisplay = `${dateAsLocaleString}${displaySuffix ? ' ' + displaySuffix : ''}`;
 
   const utcTimeFormat = timeFormat !== 'short' ? 'medium' : 'short';
   const convertToUTCString = (date: Date) => new Date(date).toUTCString().slice(0, -3);
@@ -125,8 +129,13 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
     ...formatOptions,
     ...(hasTimeFormat && { timeStyle: utcTimeFormat })
   });
-  const defaultTooltipContent = `${utcDateString}${tooltip?.suffix ? ' ' + tooltip.suffix : ' UTC'}`;
+  const defaultUTCSuffix = timeFormat === 'full' ? 'Coordinated Universal Time' : 'UTC';
+  const createUTCContent = (customSuffix: string) =>
+    `${utcDateString} ${customSuffix ? customSuffix : defaultUTCSuffix}`;
 
+  const defaultDisplay = shouldDisplayUTC
+    ? createUTCContent(displaySuffix)
+    : `${dateAsLocaleString}${displaySuffix ? ' ' + displaySuffix : ''}`;
   const { dateTime, ...propsWithoutDateTime } = props;
 
   const timestamp = (
@@ -143,7 +152,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
 
   return tooltip ? (
     <Tooltip
-      content={tooltip.variant === TimestampTooltipVariant.default ? defaultTooltipContent : tooltip.content}
+      content={tooltip.variant === TimestampTooltipVariant.default ? createUTCContent(tooltip.suffix) : tooltip.content}
       {...tooltip.tooltipProps}
     >
       {timestamp}

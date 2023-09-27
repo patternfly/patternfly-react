@@ -3,6 +3,7 @@ import React from 'react';
 import {
   Button,
   Card,
+  Label,
   MenuToggle,
   MenuToggleElement,
   Pagination,
@@ -14,11 +15,10 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-
-import { rows, columns } from './sampleData';
+import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
 
 export const CompactTable = () => {
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);

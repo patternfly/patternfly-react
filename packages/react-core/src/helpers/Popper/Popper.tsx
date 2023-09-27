@@ -45,6 +45,21 @@ const getOppositePlacement = (placement: Placement): any =>
 export const getOpacityTransition = (animationDuration: number) =>
   `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`;
 
+export const getLanguageDirection = (targetElement: HTMLElement) => {
+  const defaultDirection = 'ltr';
+  let direction = defaultDirection;
+
+  if (targetElement) {
+    direction = getComputedStyle(targetElement).getPropertyValue('direction');
+  }
+
+  if (['ltr', 'rtl'].includes(direction)) {
+    return direction as 'ltr' | 'rtl';
+  }
+
+  return defaultDirection;
+};
+
 export interface PopperProps {
   /**
    * Trigger reference element to which the popper is relatively placed to.
@@ -66,7 +81,7 @@ export interface PopperProps {
   /** popper direction */
   direction?: 'up' | 'down';
   /** popper position */
-  position?: 'right' | 'left' | 'center';
+  position?: 'right' | 'left' | 'center' | 'start' | 'end';
   /** Instead of direction and position can set the placement of the popper */
   placement?: Placement;
   /** Custom width of the popper. If the value is "trigger", it will set the width to the trigger element's width */
@@ -177,7 +192,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   trigger,
   popper,
   direction = 'down',
-  position = 'left',
+  position = 'start',
   placement,
   width,
   minWidth = 'trigger',
@@ -225,6 +240,28 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
 
   const refOrTrigger = refElement || triggerElement;
   const showPopper = isVisible || internalIsVisible;
+
+  const triggerParent = ((triggerRef as React.RefObject<any>)?.current || triggerElement)?.parentElement;
+  const languageDirection = getLanguageDirection(triggerParent);
+
+  const internalPosition = React.useMemo<'left' | 'right' | 'center'>(() => {
+    const fixedPositions = { left: 'left', right: 'right', center: 'center' };
+
+    const positionMap = {
+      ltr: {
+        start: 'left',
+        end: 'right',
+        ...fixedPositions
+      },
+      rtl: {
+        start: 'right',
+        end: 'left',
+        ...fixedPositions
+      }
+    };
+
+    return positionMap[languageDirection][position] as 'left' | 'right' | 'center';
+  }, [position, languageDirection]);
 
   const onDocumentClickCallback = React.useCallback(
     (event: MouseEvent) => onDocumentClick(event, refOrTrigger, popperElement),
@@ -333,15 +370,15 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       return placement;
     }
     let convertedPlacement = direction === 'up' ? 'top' : 'bottom';
-    if (position !== 'center') {
-      convertedPlacement = `${convertedPlacement}-${position === 'right' ? 'end' : 'start'}`;
+    if (internalPosition !== 'center') {
+      convertedPlacement = `${convertedPlacement}-${internalPosition === 'right' ? 'end' : 'start'}`;
     }
     return convertedPlacement as Placement;
   };
-  const getPlacementMemo = React.useMemo(getPlacement, [direction, position, placement]);
+  const getPlacementMemo = React.useMemo(getPlacement, [direction, internalPosition, placement]);
   const getOppositePlacementMemo = React.useMemo(
     () => getOppositePlacement(getPlacement()),
-    [direction, position, placement]
+    [direction, internalPosition, placement]
   );
 
   const widthMods: Modifier<'widthMods', {}> = React.useMemo(

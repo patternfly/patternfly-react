@@ -26,11 +26,13 @@ import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getClassName } from '../ChartUtils/chart-helpers';
 import { getLabelTextSize } from '../ChartUtils/chart-label';
-import { getComputedLegend, getLegendItemsExtraHeight } from '../ChartUtils/chart-legend';
+import { getComputedLegend, getLegendItemsExtraHeight, getLegendMaxTextWidth } from '../ChartUtils/chart-legend';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPatternDefs, mergePatternData, useDefaultPatternProps } from '../ChartUtils/chart-patterns';
 import { getChartTheme } from '../ChartUtils/chart-theme-types';
 import { useEffect } from 'react';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
+import { ChartPoint } from '../ChartPoint/ChartPoint';
 
 /**
  * Chart is a wrapper component that reconciles the domain for all its children, controls the layout of the chart,
@@ -285,6 +287,10 @@ export interface ChartProps extends VictoryChartProps {
    */
   legendPosition?: 'bottom' | 'bottom-left' | 'right';
   /**
+   * @beta Text direction of the legend labels.
+   */
+  legendDirection?: 'ltr' | 'rtl';
+  /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
    * prop is set in addition to maximumDomain, domain will be used.
@@ -471,6 +477,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position,
+  legendDirection = 'ltr',
   name,
   padding,
   patternScale,
@@ -522,11 +529,30 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     ...(labelComponent && { labelComponent }) // Override label component props
   });
 
+  let legendXOffset = 0;
+  if (legendDirection === 'rtl') {
+    legendXOffset = getLegendMaxTextWidth(legendData, theme);
+  }
+
   const legend = React.cloneElement(legendComponent, {
     data: legendData,
     ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
     orientation: legendOrientation,
     theme,
+    ...(legendDirection === 'rtl' && {
+      dataComponent: legendComponent.props.dataComponent ? (
+        React.cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
+      ) : (
+        <ChartPoint transform={`translate(${legendXOffset})`} />
+      )
+    }),
+    ...(legendDirection === 'rtl' && {
+      labelComponent: legendComponent.props.labelComponent ? (
+        React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
+      ) : (
+        <ChartLabel direction="rtl" dx={legendXOffset - 30} />
+      )
+    }),
     ...legendComponent.props
   });
 

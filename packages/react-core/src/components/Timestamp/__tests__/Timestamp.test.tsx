@@ -56,6 +56,12 @@ test('Renders passed in date with default formatting', () => {
   expect(screen.getByText('1/1/2022, 12:00:00 AM')).toBeInTheDocument();
 });
 
+test('Renders passed in date as UTC when shouldDisplayUTC is true', () => {
+  render(<Timestamp shouldDisplayUTC date={new Date(2022, 0, 1)} />);
+
+  expect(screen.getByText('1/1/2022, 5:00:00 AM UTC')).toBeInTheDocument();
+});
+
 test('Renders with correct datetime attribute when date is passed in', () => {
   const passedDate = new Date(2022, 0, 1);
   render(<Timestamp date={passedDate} />);

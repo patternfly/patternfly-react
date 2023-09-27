@@ -4,6 +4,7 @@ import { VictoryLegend } from 'victory-legend';
 import { ChartLegendProps } from '../ChartLegend/ChartLegend';
 import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { getLabelTextSize } from '../ChartUtils/chart-label';
 import { getPieOrigin } from './chart-origin';
 import * as React from 'react';
 
@@ -48,6 +49,22 @@ interface ChartLegendTextMaxSizeInterface {
   legendData: any[]; // The legend data used to determine width
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
 }
+
+/**
+ * Returns the max text length in a legend data set to calculate the x offset for right aligned legends.
+ * @private
+ */
+
+export const getLegendMaxTextWidth = (legendData: any[], theme: ChartThemeDefinition) => {
+  let legendXOffset = 0;
+  legendData.map((data: any) => {
+    const labelWidth = getLabelTextSize({ text: data.name, theme }).width;
+    if (labelWidth > legendXOffset) {
+      legendXOffset = labelWidth;
+    }
+  });
+  return legendXOffset;
+};
 
 /**
  * Returns a legend which has been positioned per the given chart properties

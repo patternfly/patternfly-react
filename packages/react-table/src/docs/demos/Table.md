@@ -50,7 +50,7 @@ import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { rows, columns } from './table-demos/sampleData';
+import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
 
 ## Demos
 
@@ -109,9 +109,10 @@ import {
   PaginationVariant,
   Text,
   TextContent,
+  TextVariants,
   MenuToggle
 } from '@patternfly/react-core';
-import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
+import { Table as TableDeprecated, TableHeader, TableBody, TableText } from '@patternfly/react-table/deprecated';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
@@ -855,7 +856,7 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { rows, columns } from '';
+import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
 
 class FilterTableDemo extends React.Component {
   constructor(props) {
@@ -1457,7 +1458,6 @@ import {
   Bullseye,
   Button,
   Card,
-  DashboardWrapper,
   EmptyState,
   EmptyStateVariant,
   EmptyStateIcon,
@@ -1468,6 +1468,7 @@ import {
   PageSection
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const TableEmptyState: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
@@ -1521,7 +1522,6 @@ import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import {
   Bullseye,
   Card,
-  DashboardWrapper,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
@@ -1529,6 +1529,7 @@ import {
   PageSection,
   Spinner
 } from '@patternfly/react-core';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const LoadingStateDemo: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
@@ -1570,7 +1571,6 @@ import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import {
   Bullseye,
   Card,
-  DashboardWrapper,
   EmptyState,
   EmptyStateVariant,
   EmptyStateIcon,
@@ -1579,6 +1579,8 @@ import {
   PageSection
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const ErrorStateDemo: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>

@@ -11,7 +11,7 @@ export const TimestampDefaultTooltip: React.FunctionComponent = () => {
       <br />
       <Timestamp
         date={currentDate}
-        tooltip={{ variant: TimestampTooltipVariant.default, suffix: 'Coordinated Universal Time' }}
+        tooltip={{ variant: TimestampTooltipVariant.default, suffix: 'Coordinated Universal Time (UTC)' }}
       />
     </>
   );

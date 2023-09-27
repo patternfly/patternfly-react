@@ -39,7 +39,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   extraData,
   actionsToggle,
   popperProps = {
-    position: 'right',
+    position: 'end',
     direction: 'down'
   },
   innerRef,

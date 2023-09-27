@@ -573,7 +573,7 @@ exports[`Nav Horizontal Nav List 1`] = `
     data-ouia-safe="true"
   >
     <button
-      aria-label="Scroll left"
+      aria-label="Scroll back"
       class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
@@ -649,7 +649,7 @@ exports[`Nav Horizontal Nav List 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll right"
+      aria-label="Scroll foward"
       class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
@@ -681,7 +681,7 @@ exports[`Nav Horizontal SubNav List 1`] = `
     data-ouia-safe="true"
   >
     <button
-      aria-label="Scroll left"
+      aria-label="Scroll back"
       class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
@@ -757,7 +757,7 @@ exports[`Nav Horizontal SubNav List 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll right"
+      aria-label="Scroll foward"
       class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
@@ -948,7 +948,7 @@ exports[`Nav Nav List with custom item nodes 1`] = `
     data-ouia-safe="true"
   >
     <button
-      aria-label="Scroll left"
+      aria-label="Scroll back"
       class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
@@ -984,7 +984,7 @@ exports[`Nav Nav List with custom item nodes 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll right"
+      aria-label="Scroll foward"
       class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
@@ -1016,7 +1016,7 @@ exports[`Nav Nav List with flyout 1`] = `
     data-ouia-safe="true"
   >
     <button
-      aria-label="Scroll left"
+      aria-label="Scroll back"
       class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
@@ -1073,7 +1073,7 @@ exports[`Nav Nav List with flyout 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll right"
+      aria-label="Scroll foward"
       class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
@@ -1186,7 +1186,7 @@ exports[`Nav Tertiary Nav List 1`] = `
     data-ouia-safe="true"
   >
     <button
-      aria-label="Scroll left"
+      aria-label="Scroll back"
       class="pf-v5-c-nav__scroll-button"
       disabled=""
     >
@@ -1262,7 +1262,7 @@ exports[`Nav Tertiary Nav List 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll right"
+      aria-label="Scroll foward"
       class="pf-v5-c-nav__scroll-button"
       disabled=""
     >

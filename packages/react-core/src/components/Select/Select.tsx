@@ -8,7 +8,7 @@ export interface SelectPopperProps {
   /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
   direction?: 'up' | 'down';
   /** Horizontal position of the popper */
-  position?: 'right' | 'left' | 'center';
+  position?: 'right' | 'left' | 'center' | 'start' | 'end';
   /** Custom width of the popper. If the value is "trigger", it will set the width to the select toggle's width */
   width?: string | 'trigger';
   /** Minimum width of the popper. If the value is "trigger", it will set the min width to the select toggle's width */
@@ -17,6 +17,14 @@ export interface SelectPopperProps {
   maxWidth?: string | 'trigger';
   /** Enable to flip the popper when it reaches the boundary */
   enableFlip?: boolean;
+  /** The container to append the select to. Defaults to 'inline'.
+   * If your select is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * appendTo="inline"
+   * appendTo={() => document.body}
+   * appendTo={document.getElementById('target')}
+   */
+  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
 }
 
 export interface SelectToggleProps {

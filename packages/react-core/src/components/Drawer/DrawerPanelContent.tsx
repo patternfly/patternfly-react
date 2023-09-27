@@ -90,8 +90,8 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const previouslyFocusedElement = React.useRef(null);
   let currWidth: number = 0;
   let panelRect: DOMRect;
-  let right: number;
-  let left: number;
+  let end: number;
+  let start: number;
   let bottom: number;
   let setInitialVals: boolean = true;
 
@@ -111,23 +111,52 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const calcValueNow = () => {
     let splitterPos;
     let drawerSize;
+    const isRTL = window.getComputedStyle(panel.current).getPropertyValue('direction') === 'rtl';
 
-    if (isInline && position === 'right') {
-      splitterPos = panel.current.getBoundingClientRect().right - splitterRef.current.getBoundingClientRect().left;
-      drawerSize = drawerRef.current.getBoundingClientRect().right - drawerRef.current.getBoundingClientRect().left;
-    } else if (isInline && position === 'left') {
-      splitterPos = splitterRef.current.getBoundingClientRect().right - panel.current.getBoundingClientRect().left;
-      drawerSize = drawerRef.current.getBoundingClientRect().right - drawerRef.current.getBoundingClientRect().left;
-    } else if (position === 'right') {
-      splitterPos =
-        drawerContentRef.current.getBoundingClientRect().right - splitterRef.current.getBoundingClientRect().left;
-      drawerSize =
-        drawerContentRef.current.getBoundingClientRect().right - drawerContentRef.current.getBoundingClientRect().left;
-    } else if (position === 'left') {
-      splitterPos =
-        splitterRef.current.getBoundingClientRect().right - drawerContentRef.current.getBoundingClientRect().left;
-      drawerSize =
-        drawerContentRef.current.getBoundingClientRect().right - drawerContentRef.current.getBoundingClientRect().left;
+    if (isInline && (position === 'end' || position === 'right')) {
+      if (isRTL) {
+        splitterPos = panel.current.getBoundingClientRect().left - splitterRef.current.getBoundingClientRect().right;
+        drawerSize = drawerRef.current.getBoundingClientRect().left - drawerRef.current.getBoundingClientRect().right;
+      } else {
+        splitterPos = panel.current.getBoundingClientRect().right - splitterRef.current.getBoundingClientRect().left;
+        drawerSize = drawerRef.current.getBoundingClientRect().right - drawerRef.current.getBoundingClientRect().left;
+      }
+    } else if (isInline && (position === 'start' || position === 'left')) {
+      if (isRTL) {
+        splitterPos = splitterRef.current.getBoundingClientRect().left - panel.current.getBoundingClientRect().right;
+        drawerSize = drawerRef.current.getBoundingClientRect().left - drawerRef.current.getBoundingClientRect().right;
+      } else {
+        splitterPos = splitterRef.current.getBoundingClientRect().right - panel.current.getBoundingClientRect().left;
+        drawerSize = drawerRef.current.getBoundingClientRect().right - drawerRef.current.getBoundingClientRect().left;
+      }
+    } else if (position === 'end' || position === 'right') {
+      if (isRTL) {
+        splitterPos =
+          drawerContentRef.current.getBoundingClientRect().left - splitterRef.current.getBoundingClientRect().right;
+        drawerSize =
+          drawerContentRef.current.getBoundingClientRect().left -
+          drawerContentRef.current.getBoundingClientRect().right;
+      } else {
+        splitterPos =
+          drawerContentRef.current.getBoundingClientRect().right - splitterRef.current.getBoundingClientRect().left;
+        drawerSize =
+          drawerContentRef.current.getBoundingClientRect().right -
+          drawerContentRef.current.getBoundingClientRect().left;
+      }
+    } else if (position === 'start' || position === 'left') {
+      if (isRTL) {
+        splitterPos =
+          splitterRef.current.getBoundingClientRect().left - drawerContentRef.current.getBoundingClientRect().right;
+        drawerSize =
+          drawerContentRef.current.getBoundingClientRect().left -
+          drawerContentRef.current.getBoundingClientRect().right;
+      } else {
+        splitterPos =
+          splitterRef.current.getBoundingClientRect().right - drawerContentRef.current.getBoundingClientRect().left;
+        drawerSize =
+          drawerContentRef.current.getBoundingClientRect().right -
+          drawerContentRef.current.getBoundingClientRect().left;
+      }
     } else if (position === 'bottom') {
       splitterPos =
         drawerContentRef.current.getBoundingClientRect().bottom - splitterRef.current.getBoundingClientRect().top;
@@ -169,6 +198,8 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   };
 
   const handleControlMove = (e: MouseEvent | TouchEvent, controlPosition: number) => {
+    const isRTL = window.getComputedStyle(panel.current).getPropertyValue('direction') === 'rtl';
+
     e.stopPropagation();
     if (!isResizing) {
       return;
@@ -176,17 +207,22 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
 
     if (setInitialVals) {
       panelRect = panel.current.getBoundingClientRect();
-      right = panelRect.right;
-      left = panelRect.left;
+      if (isRTL) {
+        start = panelRect.right;
+        end = panelRect.left;
+      } else {
+        end = panelRect.right;
+        start = panelRect.left;
+      }
       bottom = panelRect.bottom;
       setInitialVals = false;
     }
     const mousePos = controlPosition;
     let newSize = 0;
-    if (position === 'right') {
-      newSize = right - mousePos;
-    } else if (position === 'left') {
-      newSize = mousePos - left;
+    if (position === 'end' || position === 'right') {
+      newSize = isRTL ? mousePos - end : end - mousePos;
+    } else if (position === 'start' || position === 'left') {
+      newSize = isRTL ? start - mousePos : mousePos - start;
     } else {
       newSize = bottom - mousePos;
     }
@@ -228,6 +264,8 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const callbackMouseUp = React.useCallback(handleMouseup, []);
 
   const handleKeys = (e: React.KeyboardEvent) => {
+    const isRTL = window.getComputedStyle(panel.current).getPropertyValue('direction') === 'rtl';
+
     const key = e.key;
     if (
       key !== 'Escape' &&
@@ -251,9 +289,17 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     newSize = position === 'bottom' ? panelRect.height : panelRect.width;
     let delta = 0;
     if (key === 'ArrowRight') {
-      delta = position === 'left' ? increment : -increment;
+      if (isRTL) {
+        delta = position === 'left' || position === 'start' ? -increment : increment;
+      } else {
+        delta = position === 'left' || position === 'start' ? increment : -increment;
+      }
     } else if (key === 'ArrowLeft') {
-      delta = position === 'left' ? -increment : increment;
+      if (isRTL) {
+        delta = position === 'left' || position === 'start' ? increment : -increment;
+      } else {
+        delta = position === 'left' || position === 'start' ? -increment : increment;
+      }
     } else if (key === 'ArrowUp') {
       delta = increment;
     } else if (key === 'ArrowDown') {
