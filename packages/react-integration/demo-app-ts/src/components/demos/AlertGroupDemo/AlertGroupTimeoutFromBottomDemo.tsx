@@ -15,9 +15,7 @@ export const AlertGroupTimeoutFromBottomDemo: React.FunctionComponent = () => {
             <AlertActionLink component="a" href="#">
               View details
             </AlertActionLink>
-            <AlertActionLink component="a" href="#">
-              Ignore
-            </AlertActionLink>
+            <AlertActionLink onClick={() => {}}>Ignore</AlertActionLink>
           </React.Fragment>
         }
         key={`Alert no. ${count}`}
