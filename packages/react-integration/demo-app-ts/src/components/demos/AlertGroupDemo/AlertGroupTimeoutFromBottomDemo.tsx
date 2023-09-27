@@ -15,7 +15,11 @@ export const AlertGroupTimeoutFromBottomDemo: React.FunctionComponent = () => {
             <AlertActionLink component="a" href="#">
               View details
             </AlertActionLink>
-            <AlertActionLink onClick={() => {}}>Ignore</AlertActionLink>
+            <AlertActionLink // eslint-disable-next-line no-console
+              onClick={() => console.log('Clicked on Ignore')}
+            >
+              Ignore
+            </AlertActionLink>
           </React.Fragment>
         }
         key={`Alert no. ${count}`}

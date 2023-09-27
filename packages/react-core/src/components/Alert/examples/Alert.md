@@ -67,7 +67,11 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
         <AlertActionLink component="a" href="#">
           View details
         </AlertActionLink>
-        <AlertActionLink onClick={() => {}}>Ignore</AlertActionLink>
+        <AlertActionLink // eslint-disable-next-line no-console
+          onClick={() => console.log('Clicked on Ignore')}
+        >
+          Ignore
+        </AlertActionLink>
       </React.Fragment>
     }
   >
@@ -82,7 +86,8 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
   <Alert
     variant="success"
     title="Success alert title"
-    actionClose={<AlertActionCloseButton onClose={() => {}} />}
+    // eslint-disable-next-line no-console
+    actionClose={<AlertActionCloseButton onClose={() => console.log('Clicked the close button')} />}
   />
   <Alert variant="success" title="div success alert title" component="div" />
   <Alert variant="success" title="h6 Success alert title" component="h6">
@@ -117,7 +122,11 @@ const AlertTimeout: React.FunctionComponent = () => {
               <AlertActionLink component="a" href="#">
                 View details
               </AlertActionLink>
-              <AlertActionLink onClick={() => {}}>Ignore</AlertActionLink>
+              <AlertActionLink // eslint-disable-next-line no-console
+                onClick={() => console.log('Clicked on Ignore')}
+              >
+                Ignore
+              </AlertActionLink>
             </React.Fragment>
           }
           key={newAlertKey}
@@ -159,13 +168,19 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
     isExpandable
     variant="success"
     title="Success alert title"
-    actionClose={<AlertActionCloseButton onClose={() => {}} />}
+    // eslint-disable-next-line no-console
+    actionClose={<AlertActionCloseButton onClose={() => console.log('Clicked the close button')} />}
     actionLinks={
       <React.Fragment>
         <AlertActionLink component="a" href="#">
           View details
         </AlertActionLink>
-        <AlertActionLink onClick={() => {}}>Ignore</AlertActionLink>
+
+        <AlertActionLink // eslint-disable-next-line no-console
+          onClick={() => console.log('Clicked on Ignore')}
+        >
+          Ignore
+        </AlertActionLink>
       </React.Fragment>
     }
   >
@@ -176,13 +191,18 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
     isInline
     variant="success"
     title="Success alert title"
-    actionClose={<AlertActionCloseButton onClose={() => {}} />}
+    // eslint-disable-next-line no-console
+    actionClose={<AlertActionCloseButton onClose={() => console.log('Clicked the close button')} />}
     actionLinks={
       <React.Fragment>
         <AlertActionLink component="a" href="#">
           View details
         </AlertActionLink>
-        <AlertActionLink onClick={() => {}}>Ignore</AlertActionLink>
+        <AlertActionLink // eslint-disable-next-line no-console
+          onClick={() => console.log('Clicked on Ignore')}
+        >
+          Ignore
+        </AlertActionLink>
       </React.Fragment>
     }
   >
@@ -279,7 +299,11 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
         <AlertActionLink component="a" href="#">
           View details
         </AlertActionLink>
-        <AlertActionLink onClick={() => {}}>Ignore</AlertActionLink>
+        <AlertActionLink // eslint-disable-next-line no-console
+          onClick={() => console.log('Clicked on Ignore')}
+        >
+          Ignore
+        </AlertActionLink>
       </React.Fragment>
     }
   >
@@ -295,7 +319,8 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
     isInline
     variant="success"
     title="Success alert title"
-    actionClose={<AlertActionCloseButton onClose={() => {}} />}
+    // eslint-disable-next-line no-console
+    actionClose={<AlertActionCloseButton onClose={() => console.log('Clicked the close button')} />}
   />
   <Alert isInline variant="success" title="div success alert title" component="div" />
   <Alert isInline variant="success" title="h6 Success alert title" component="h6">
@@ -347,7 +372,8 @@ import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
     isLiveRegion
     variant="info"
     title="Default live region configuration"
-    actionClose={<AlertActionCloseButton onClose={() => {}} />}
+    // eslint-disable-next-line no-console
+    actionClose={<AlertActionCloseButton onClose={() => console.log('Clicked the close button')} />}
   >
     This alert uses the recommended <code>isLiveRegion</code> prop to automatically set ARIA attributes and CSS classes.
   </Alert>
@@ -357,7 +383,8 @@ import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
     aria-atomic="true"
     variant="info"
     title="Customized live region"
-    actionClose={<AlertActionCloseButton onClose={() => {}} />}
+    // eslint-disable-next-line no-console
+    actionClose={<AlertActionCloseButton onClose={() => console.log('Clicked the close button')} />}
   >
     You can alternatively omit the <code>isLiveRegion</code> prop to specify ARIA attributes and CSS manually on the
     containing element.
