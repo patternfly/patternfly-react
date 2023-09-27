@@ -13,7 +13,7 @@ export interface NotificationDrawerListItemProps extends React.HTMLProps<HTMLLIE
   isRead?: boolean;
   /**  Callback for when a list item is clicked */
   onClick?: (event: any) => void;
-  /** Read state screen reader text */
+  /**  Visually hidden text that conveys the current read state of the notification list item */
   readStateScreenReaderText?: string;
   /**  Tab index for the list item */
   tabIndex?: number;
