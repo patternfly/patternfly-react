@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Badge,
   Button,
-  DashboardWrapper,
   MenuToggle,
   SearchInput,
   Select,
@@ -21,7 +20,7 @@ import {
   DropdownList,
   MenuFooter
 } from '@patternfly/react-core';
-
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';

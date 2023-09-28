@@ -18,7 +18,6 @@ This demo expands on the previous to show the JumpLinks in a vertical layout wit
 ```js isFullscreen
 import React from 'react';
 import {
-  DashboardWrapper,
   PageSection,
   JumpLinks,
   JumpLinksItem,
@@ -32,6 +31,7 @@ import {
   TextContent,
   getResizeObserver
 } from '@patternfly/react-core';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ScrollspyH2 = () => {
   const headings = [1, 2, 3, 4, 5];

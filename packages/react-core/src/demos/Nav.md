@@ -21,8 +21,6 @@ import React from 'react';
 import {
   Card,
   CardBody,
-  DashboardBreadcrumb,
-  DashboardHeader,
   Gallery,
   GalleryItem,
   Nav,
@@ -37,6 +35,8 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { DashboardHeader } from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class PageLayoutDefaultNav extends React.Component {
   constructor(props) {
@@ -127,7 +127,6 @@ class PageLayoutDefaultNav extends React.Component {
 ```js isFullscreen
 import React from 'react';
 import {
-  DashboardHeader,
   Nav,
   NavGroup,
   NavItem,
@@ -140,6 +139,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
+import { DashboardHeader } from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class PageLayoutGroupsNav extends React.Component {
   constructor(props) {
@@ -238,8 +238,6 @@ import React from 'react';
 import {
   Card,
   CardBody,
-  DashboardBreadcrumb,
-  DashboardHeader,
   Gallery,
   GalleryItem,
   Nav,
@@ -255,6 +253,8 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { DashboardHeader } from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class PageLayoutExpandableNav extends React.Component {
   constructor(props) {
@@ -374,7 +374,6 @@ import {
   ButtonVariant,
   Card,
   CardBody,
-  DashboardBreadcrumb,
   Dropdown,
   DropdownItem,
   DropdownList,
@@ -406,6 +405,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class PageLayoutHorizontalNav extends React.Component {
   constructor(props) {
@@ -643,8 +643,6 @@ import React from 'react';
 import {
   Card,
   CardBody,
-  DashboardBreadcrumb,
-  DashboardHeader,
   Gallery,
   GalleryItem,
   Nav,
@@ -659,6 +657,8 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { DashboardHeader } from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class VerticalNavWithSubnav extends React.Component {
   constructor(props) {
@@ -795,7 +795,6 @@ import {
   ButtonVariant,
   Card,
   CardBody,
-  DashboardBreadcrumb,
   Dropdown,
   DropdownItem,
   DropdownList,
@@ -829,6 +828,7 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class HorizontalNavWithSubnav extends React.Component {
   constructor(props) {
@@ -1113,8 +1113,6 @@ import React from 'react';
 import {
   Card,
   CardBody,
-  DashboardHeader,
-  DashboardBreadcrumb,
   Gallery,
   GalleryItem,
   Nav,
@@ -1127,6 +1125,8 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { DashboardHeader } from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class PageLayoutTertiaryNav extends React.Component {
   constructor(props) {
@@ -1215,7 +1215,6 @@ import React from 'react';
 import {
   Card,
   CardBody,
-  DashboardHeader,
   Gallery,
   GalleryItem,
   Nav,
@@ -1230,6 +1229,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
+import { DashboardHeader } from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class PageLayoutLightNav extends React.Component {
   constructor(props) {
@@ -1633,7 +1633,6 @@ class PageLayoutManualNav extends React.Component {
 ```js isFullscreen
 import React from 'react';
 import {
-  DashboardHeader,
   Page,
   Nav,
   NavList,
@@ -1647,6 +1646,7 @@ import {
   MenuList,
   MenuItem
 } from '@patternfly/react-core';
+import { DashboardHeader } from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 class VerticalPage extends React.Component {
   constructor(props) {

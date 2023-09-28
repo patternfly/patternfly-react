@@ -16,7 +16,6 @@ import React from 'react';
 import {
   Card,
   CardBody,
-  DashboardWrapper,
   Gallery,
   GalleryItem,
   PageSection,
@@ -26,6 +25,7 @@ import {
   WizardHeader,
   WizardStep
 } from '@patternfly/react-core';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class WizardInModalDemo extends React.Component {
   constructor(props) {
@@ -351,7 +351,8 @@ class WizardModalWithDrawerInfoStepDemo extends React.Component {
 
 ```js isFullscreen
 import React from 'react';
-import { DashboardWrapper, PageSection, PageSectionTypes, PageSectionVariants, Wizard, WizardStep } from '@patternfly/react-core';
+import { PageSection, PageSectionTypes, PageSectionVariants, Wizard, WizardStep } from '@patternfly/react-core';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class WizardFullPage extends React.Component {
   constructor(props) {

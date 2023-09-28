@@ -1,4 +1,5 @@
 import React from 'react';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import {
   PageSection,
   TextContent,
@@ -7,7 +8,6 @@ import {
   Card,
   CardBody,
   CardTitle,
-  DashboardWrapper,
   PageSectionVariants,
   Modal,
   ModalVariant,

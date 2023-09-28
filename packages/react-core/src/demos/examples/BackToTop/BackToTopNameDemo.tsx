@@ -3,7 +3,6 @@ import {
   BackToTop,
   Card,
   CardBody,
-  DashboardWrapper,
   Gallery,
   GalleryItem,
   PageSection,
@@ -13,6 +12,7 @@ import {
   Page,
   Switch
 } from '@patternfly/react-core';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const Name = () => {
   const [isAlwaysVisible, setIsAlwaysVisible] = React.useState(false);

@@ -48,7 +48,6 @@ import {
   CardHeader,
   CardBody,
   CardTitle,
-  DashboardWrapper,
   Divider,
   Drawer,
   DrawerActions,
@@ -89,6 +88,7 @@ import swaggerIcon from './assets/camel-swagger-java_200x150.png';
 import azureIcon from './assets/FuseConnector_Icons_AzureServices.png';
 import restIcon from './assets/FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import { data } from '@patternfly/react-core/src/demos/Card/examples/CardData.jsx';
 
 class PrimaryDetailCardView extends React.Component {
@@ -639,7 +639,6 @@ import React from 'react';
 import {
   Card,
   CardBody,
-  DashboardWrapper,
   Divider,
   Drawer,
   DrawerActions,
@@ -662,6 +661,7 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class PrimaryDetailSimpleListInCard extends React.Component {
   constructor(props) {
@@ -801,7 +801,6 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarItem,
-  DashboardWrapper,
   Divider,
   Drawer,
   DrawerActions,
@@ -824,6 +823,7 @@ import {
   TextContent,
   Title
 } from '@patternfly/react-core';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class PrimaryDetailDataListInCard extends React.Component {
   constructor(props) {

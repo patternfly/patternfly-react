@@ -24,7 +24,6 @@ import {
   Badge,
   Button,
   Checkbox,
-  DashboardWrapper,
   MenuToggle,
   SearchInput,
   Select,
@@ -51,6 +50,7 @@ import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class ConsoleLogViewerToolbar extends React.Component {
   constructor(props) {

@@ -30,7 +30,6 @@ import {
   TabContentBody,
   TabTitleText,
   Title,
-  DashboardWrapper,
   DescriptionList,
   DescriptionListGroup,
   DescriptionListTerm,
@@ -42,6 +41,7 @@ import {
 } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 TabsOpenDemo = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
@@ -209,7 +209,6 @@ TabsOpenDemo = () => {
 ```js isFullscreen
 import React from 'react';
 import {
-  DashboardWrapper,
   PageSection,
   PageSectionVariants,
   PageBreadcrumb,
@@ -232,6 +231,7 @@ import {
 } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 TabsOpenWithSecondaryTabsDemo = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);

@@ -18,8 +18,6 @@ export * from './Checkbox';
 export * from './Chip';
 export * from './ClipboardCopy';
 export * from './CodeBlock';
-export * from './DashboardHeader';
-export * from './DashboardWrapper';
 export * from './DataList';
 export * from './DatePicker';
 export * from './DescriptionList';

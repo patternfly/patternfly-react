@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
-import { Breadcrumb, BreadcrumbItem } from './Breadcrumb';
-import { Nav, NavItem, NavList } from './Nav';
-import { Page, PageProps, PageSection, PageSidebar, PageSidebarBody } from './Page';
-import { SkipToContent } from './SkipToContent';
-import { Text, TextContent } from './Text';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  Nav,
+  NavItem,
+  NavList,
+  Page,
+  PageProps,
+  PageSection,
+  PageSidebar,
+  PageSidebarBody,
+  SkipToContent,
+  Text,
+  TextContent
+} from '../../components';
 import { DashboardHeader } from './DashboardHeader';
 
 interface DashboardWrapperProps extends Omit<PageProps, 'ref'> {
