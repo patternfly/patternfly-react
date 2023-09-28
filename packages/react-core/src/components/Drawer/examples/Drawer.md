@@ -26,15 +26,15 @@ section: components
 
 ```
 
-### Panel on right
+### Panel at end
 
-```ts file="./DrawerPanelRight.tsx"
+```ts file="./DrawerPanelEnd.tsx"
 
 ```
 
-### Panel on left
+### Panel at start
 
-```ts file="./DrawerPanelLeft.tsx"
+```ts file="./DrawerPanelStart.tsx"
 
 ```
 
@@ -50,15 +50,15 @@ section: components
 
 ```
 
-### Inline panel on right
+### Inline panel at end
 
-```ts file="./DrawerInlinePanelRight.tsx"
+```ts file="./DrawerInlinePanelEnd.tsx"
 
 ```
 
-### Inline panel on left
+### Inline panel at start
 
-```ts file="./DrawerInlinePanelLeft.tsx"
+```ts file="./DrawerInlinePanelStart.tsx"
 
 ```
 
@@ -100,15 +100,15 @@ section: components
 
 ```
 
-### Resizable on right
+### Resizable at end
 
-```ts file="DrawerResizableOnRight.tsx"
+```ts file="DrawerResizableAtEnd.tsx"
 
 ```
 
-### Resizable on left
+### Resizable at start
 
-```ts file="DrawerResizableOnLeft.tsx"
+```ts file="DrawerResizableAtStart.tsx"
 
 ```
 

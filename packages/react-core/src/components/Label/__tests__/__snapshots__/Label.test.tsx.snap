@@ -7,6 +7,7 @@ exports[`Label editable label 1`] = `
   >
     <button
       class="pf-v5-c-label__content"
+      type="button"
     >
       <span
         class="pf-v5-c-label__text"

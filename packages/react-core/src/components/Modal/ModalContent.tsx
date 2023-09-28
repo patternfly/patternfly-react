@@ -148,15 +148,13 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
 
   const defaultModalBodyAriaRole = bodyAriaLabel ? 'region' : undefined;
 
+  const hasNoDescription = !description && !ariaDescribedby;
+  const id = hasNoDescription ? descriptorId : undefined;
+
   const modalBody = hasNoBodyWrapper ? (
     children
   ) : (
-    <ModalBoxBody
-      aria-label={bodyAriaLabel}
-      role={bodyAriaRole || defaultModalBodyAriaRole}
-      {...props}
-      {...(!description && !ariaDescribedby && { id: descriptorId })}
-    >
+    <ModalBoxBody aria-label={bodyAriaLabel} role={bodyAriaRole || defaultModalBodyAriaRole} {...props} id={id}>
       {children}
     </ModalBoxBody>
   );

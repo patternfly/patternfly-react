@@ -338,6 +338,10 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   legendPosition?: 'bottom' | 'right';
   /**
+   * @beta Text direction of the legend labels.
+   */
+  legendDirection?: 'ltr' | 'rtl';
+  /**
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
    *
@@ -589,6 +593,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   invert = false,
   isStatic = true,
   legendPosition = ChartCommonStyles.legend.position,
+  legendDirection = 'ltr',
   padding,
   standalone = true,
   themeColor,
@@ -679,6 +684,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
       height={height}
       key="pf-chart-donut-utilization"
       legendPosition={legendPosition}
+      legendDirection={legendDirection}
       padding={padding}
       standalone={false}
       theme={getThresholdTheme()}

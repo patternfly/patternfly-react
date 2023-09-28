@@ -7,6 +7,7 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem,
+  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -14,13 +15,34 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 const dropdownItems = [
-  <DropdownItem icon={<AngleLeftIcon />} key="edit">
+  <DropdownItem
+    icon={
+      <Icon shouldMirrorRTL>
+        <AngleLeftIcon />
+      </Icon>
+    }
+    key="edit"
+  >
     Edit
   </DropdownItem>,
-  <DropdownItem icon={<AngleLeftIcon />} key="action">
+  <DropdownItem
+    icon={
+      <Icon shouldMirrorRTL>
+        <AngleLeftIcon />
+      </Icon>
+    }
+    key="action"
+  >
     Deployment
   </DropdownItem>,
-  <DropdownItem icon={<AngleLeftIcon />} key="apps">
+  <DropdownItem
+    icon={
+      <Icon shouldMirrorRTL>
+        <AngleLeftIcon />
+      </Icon>
+    }
+    key="apps"
+  >
     Applications
   </DropdownItem>
 ];

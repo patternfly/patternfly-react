@@ -18,8 +18,10 @@ interface ModalDemoState {
   isCustomFocusModalOpen: boolean;
 }
 
+// eslint-disable-next-line patternfly-react/no-anonymous-functions
 export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
   static displayName = 'ModalDemo';
+
   state = {
     isModalOpen: false,
     isModalDescriptionOpen: false,
@@ -158,6 +160,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
             Confirm
           </Button>
         ]}
+        id="test-modal-id"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

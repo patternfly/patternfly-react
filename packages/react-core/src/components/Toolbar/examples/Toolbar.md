@@ -14,12 +14,6 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 ## Examples
 
-### TEST - remove before merging
-
-```ts file="./Test.tsx"
-
-```
-
 ### Toolbar items
 
 A toolbar can contain multiple toolbar items, like filters and buttons.
