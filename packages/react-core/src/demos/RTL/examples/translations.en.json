@@ -1,0 +1,22 @@
+{ 
+  "title": "Main title",
+  "body": "This is a full page demo.",
+  "breadcrumbs": {
+    "home": "Home",
+    "category": "Category",
+    "subCategory": "Sub category"
+  },
+  "switchBtn": "Switch to Hebrew",
+  "table": {
+    "thead": {
+      "servers": "Servers",
+      "threads": "CPUs",
+      "applications": "Applications",
+      "workspaces": "Workspaces",
+      "status": "Status",
+      "location": "Location",
+      "modified": "Last modified",
+      "url": "URL"
+    }
+  }
+}

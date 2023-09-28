@@ -1,0 +1,22 @@
+{ 
+  "title": "כותרת ראשית",
+  "body": "זוהי הדגמה של עמוד שלם.",
+  "breadcrumbs": {
+    "home": "בית",
+    "category": "קטגוריה",
+    "subCategory": "קטגוריית משנה"
+  },
+  "switchBtn": "Switch to English",
+  "table": {
+    "thead": {
+      "servers": "שרתים",
+      "threads": "מעבדים",
+      "applications": "יישומים",
+      "workspaces": "חללי עבודה",
+      "status": "סטָטוּס",
+      "location": "מקום",
+      "modified": "עודכן לאחרונה",
+      "url": "כתובת אתר"
+    }
+  }
+}
