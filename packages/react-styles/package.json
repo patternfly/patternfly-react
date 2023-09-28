@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styles",
-  "version": "5.2.0-prerelease.3",
+  "version": "6.0.0-alpha.0",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -11,7 +11,8 @@
   "description": "CSS-in-JS class maps and utilities for PatternFly.",
   "author": "Red Hat",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "alpha"
   },
   "scripts": {
     "generate": "rimraf css && node scripts/writeClassMaps.js && node scripts/copyStyles.js",

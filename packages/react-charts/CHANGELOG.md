@@ -49,6 +49,16 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @patternfly/react-charts
 
+## [7.1.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.1.1-prerelease.8...@patternfly/react-charts@7.1.1-prerelease.9) (2023-09-22)
+
+### Features
+
+- **charts:** add RTL legend support ([#9570](https://github.com/patternfly/patternfly-react/issues/9570)) ([99d8d97](https://github.com/patternfly/patternfly-react/commit/99d8d975eeb2d562357cdcaa37502748d5794564))
+
+## 7.1.1-prerelease.8 (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
 ## [7.1.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.1.1-prerelease.6...@patternfly/react-charts@7.1.1-prerelease.7) (2023-09-18)
 
 **Note:** Version bump only for package @patternfly/react-charts

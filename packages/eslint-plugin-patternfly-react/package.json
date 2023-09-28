@@ -1,11 +1,12 @@
 {
   "name": "eslint-plugin-patternfly-react",
-  "version": "5.2.0-prerelease.0",
+  "version": "6.0.0-alpha.0",
   "private": false,
   "main": "./lib/index.js",
   "license": "MIT",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "alpha"
   },
   "repository": {
     "type": "git",
