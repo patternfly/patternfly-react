@@ -1,3 +1,47 @@
+import * as React from 'react';
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
+  Card,
+  DataList,
+  DataListCell,
+  DataListCheck,
+  DataListItem,
+  DataListItemCells,
+  DataListItemRow,
+  Icon,
+  Label,
+  Modal,
+  Nav,
+  NavItem,
+  NavList,
+  Page,
+  PageBreadcrumb,
+  PageSection,
+  PageSidebar,
+  PageSidebarBody,
+  Pagination,
+  PaginationVariant,
+  Text,
+  TextContent,
+  TextVariants,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem
+} from '@patternfly/react-core';
+
+import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { capitalize } from '../../../helpers';
+import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
+import translationsEn from './examples/translations.en.json';
+import translationsHe from './examples/translations.he.json';
+import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
+import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+
 export const ColumnManagementAction = () => {
   const defaultColumns = columns;
   const defaultRows = rows;
@@ -12,13 +56,13 @@ export const ColumnManagementAction = () => {
   const [perPage, setPerPage] = React.useState(10);
   const [paginatedRows, setPaginatedRows] = React.useState(rows);
 
-  //const [isRTL, setIsRTL] = React.useState(false);
+  // const [isRTL, setIsRTL] = React.useState(false);
   const [t, setT] = React.useState(translationsEn);
-  //const isRTL = React.useContext(RtlContext);
+  // const isRTL = React.useContext(RtlContext);
 
   const switchRTL = () => {
     const html = document.querySelector('html');
-    const curRTL = (html.dir !== 'rtl') ? false : true;
+    const curRTL = html.dir !== 'rtl' ? false : true;
     setT(curRTL ? translationsEn : translationsHe);
     html.dir = curRTL ? 'ltr' : 'rtl';
   };
@@ -119,7 +163,7 @@ export const ColumnManagementAction = () => {
       setFilteredColumns(filteredColumns);
       setFilteredRows(filteredRows);
     } else {
-      let updatedFilters = filters;
+      const updatedFilters = filters;
       updatedFilters.push(selectedColumn);
 
       // Only show the names of columns that were selected in the modal
@@ -170,184 +214,193 @@ export const ColumnManagementAction = () => {
     setCheckedState(Array(columns.length).fill(true));
   };
 
-  const renderModal = () => {
-    return (
-      <Modal
-        title="Manage columns"
-        isOpen={isModalOpen}
-        variant="small"
-        description={
-          <TextContent>
-            <Text component={TextVariants.p}>Selected categories will be displayed in the table.</Text>
-            <Button isInline onClick={selectAllColumns} variant="link">
-              Select all
-            </Button>
-          </TextContent>
-        }
-        onClose={handleModalToggle}
-        actions={[
-          <Button key="save" variant="primary" onClick={onSave}>
-            Save
-          </Button>,
-          <Button key="cancel" variant="secondary" onClick={handleModalToggle}>
-            Cancel
+  const renderModal = () => (
+    <Modal
+      title="Manage columns"
+      isOpen={isModalOpen}
+      variant="small"
+      description={
+        <TextContent>
+          <Text component={TextVariants.p}>Selected categories will be displayed in the table.</Text>
+          <Button isInline onClick={selectAllColumns} variant="link">
+            Select all
           </Button>
-        ]}
-      >
-        <DataList aria-label="Table column management" id="table-column-management" isCompact>
-          <DataListItem aria-labelledby="table-column-management-item1">
-            <DataListItemRow>
-              <DataListCheck
-                aria-labelledby="table-column-management-item1"
-                checked={checkedState[0]}
-                name="check1"
-                id="check1"
-                onChange={handleChange}
-              />
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell id="table-column-management-item1" key="table-column-management-item1">
-                    <label htmlFor="check1">{columns[0]}</label>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-          <DataListItem aria-labelledby="table-column-management-item2">
-            <DataListItemRow>
-              <DataListCheck
-                aria-labelledby="table-column-management-item2"
-                checked={checkedState[1]}
-                name="check2"
-                id="check2"
-                onChange={handleChange}
-              />
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell id="table-column-management-item2" key="table-column-management-item2">
-                    <label htmlFor="check2">{columns[1]}</label>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-          <DataListItem aria-labelledby="table-column-management-item3">
-            <DataListItemRow>
-              <DataListCheck
-                aria-labelledby="table-column-management-item3"
-                checked={checkedState[2]}
-                name="check3"
-                id="check3"
-                onChange={handleChange}
-              />
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell id="table-column-management-item3" key="table-column-management-item3">
-                    <label htmlFor="check3">{columns[2]}</label>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-          <DataListItem aria-labelledby="table-column-management-item4">
-            <DataListItemRow>
-              <DataListCheck
-                aria-labelledby="table-column-management-item4"
-                checked={checkedState[3]}
-                name="check4"
-                id="check4"
-                onChange={handleChange}
-              />
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell id="table-column-management-item4" key="table-column-management-item4">
-                    <label htmlFor="check4">{columns[3]}</label>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-          <DataListItem aria-labelledby="table-column-management-item4">
-            <DataListItemRow>
-              <DataListCheck
-                aria-labelledby="table-column-management-item4"
-                checked={checkedState[4]}
-                name="check5"
-                id="check5"
-                onChange={handleChange}
-              />
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell id="table-column-management-item4" key="table-column-management-item4">
-                    <label htmlFor="check5">{columns[4]}</label>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-          <DataListItem aria-labelledby="table-column-management-item5">
-            <DataListItemRow>
-              <DataListCheck
-                aria-labelledby="table-column-management-item5"
-                checked={checkedState[5]}
-                name="check6"
-                id="check6"
-                onChange={handleChange}
-              />
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell id="table-column-management-item5" key="table-column-management-item5">
-                    <label htmlFor="check6">{columns[5]}</label>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-          <DataListItem aria-labelledby="table-column-management-item6">
-            <DataListItemRow>
-              <DataListCheck
-                aria-labelledby="table-column-management-item6"
-                checked={checkedState[6]}
-                name="check7"
-                id="check7"
-                onChange={handleChange}
-              />
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell id="table-column-management-item6" key="table-column-management-item5">
-                    <label htmlFor="check7">{columns[6]}</label>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-          <DataListItem aria-labelledby="table-column-management-item5">
-            <DataListItemRow>
-              <DataListCheck
-                aria-labelledby="table-column-management-item5"
-                checked={checkedState[7]}
-                name="check8"
-                id="check8"
-                onChange={handleChange}
-              />
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell id="table-column-management-item7" key="table-column-management-item7">
-                    <label htmlFor="check8">{columns[7]}</label>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-          </DataListItem>
-        </DataList>
-      </Modal>
-    );
-  };
+        </TextContent>
+      }
+      onClose={handleModalToggle}
+      actions={[
+        <Button key="save" variant="primary" onClick={onSave}>
+          Save
+        </Button>,
+        <Button key="cancel" variant="secondary" onClick={handleModalToggle}>
+          Cancel
+        </Button>
+      ]}
+    >
+      <DataList aria-label="Table column management" id="table-column-management" isCompact>
+        <DataListItem aria-labelledby="table-column-management-item1">
+          <DataListItemRow>
+            <DataListCheck
+              aria-labelledby="table-column-management-item1"
+              checked={checkedState[0]}
+              name="check1"
+              id="check1"
+              onChange={handleChange}
+            />
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item1" key="table-column-management-item1">
+                  <label htmlFor="check1">{columns[0]}</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="table-column-management-item2">
+          <DataListItemRow>
+            <DataListCheck
+              aria-labelledby="table-column-management-item2"
+              checked={checkedState[1]}
+              name="check2"
+              id="check2"
+              onChange={handleChange}
+            />
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item2" key="table-column-management-item2">
+                  <label htmlFor="check2">{columns[1]}</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="table-column-management-item3">
+          <DataListItemRow>
+            <DataListCheck
+              aria-labelledby="table-column-management-item3"
+              checked={checkedState[2]}
+              name="check3"
+              id="check3"
+              onChange={handleChange}
+            />
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item3" key="table-column-management-item3">
+                  <label htmlFor="check3">{columns[2]}</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="table-column-management-item4">
+          <DataListItemRow>
+            <DataListCheck
+              aria-labelledby="table-column-management-item4"
+              checked={checkedState[3]}
+              name="check4"
+              id="check4"
+              onChange={handleChange}
+            />
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item4" key="table-column-management-item4">
+                  <label htmlFor="check4">{columns[3]}</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="table-column-management-item4">
+          <DataListItemRow>
+            <DataListCheck
+              aria-labelledby="table-column-management-item4"
+              checked={checkedState[4]}
+              name="check5"
+              id="check5"
+              onChange={handleChange}
+            />
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item4" key="table-column-management-item4">
+                  <label htmlFor="check5">{columns[4]}</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="table-column-management-item5">
+          <DataListItemRow>
+            <DataListCheck
+              aria-labelledby="table-column-management-item5"
+              checked={checkedState[5]}
+              name="check6"
+              id="check6"
+              onChange={handleChange}
+            />
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item5" key="table-column-management-item5">
+                  <label htmlFor="check6">{columns[5]}</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="table-column-management-item6">
+          <DataListItemRow>
+            <DataListCheck
+              aria-labelledby="table-column-management-item6"
+              checked={checkedState[6]}
+              name="check7"
+              id="check7"
+              onChange={handleChange}
+            />
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item6" key="table-column-management-item5">
+                  <label htmlFor="check7">{columns[6]}</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="table-column-management-item5">
+          <DataListItemRow>
+            <DataListCheck
+              aria-labelledby="table-column-management-item5"
+              checked={checkedState[7]}
+              name="check8"
+              id="check8"
+              onChange={handleChange}
+            />
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item7" key="table-column-management-item7">
+                  <label htmlFor="check8">{columns[7]}</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+      </DataList>
+    </Modal>
+  );
 
   const renderLabel = (labelText) => {
     switch (labelText) {
       case 'Running':
-        return <Label color="green" icon={<Icon shouldMirrorRTL><WalkingIcon /></Icon>}>{labelText}</Label>;
+        return (
+          <Label
+            color="green"
+            icon={
+              <Icon shouldMirrorRTL>
+                <WalkingIcon />
+              </Icon>
+            }
+          >
+            {labelText}
+          </Label>
+        );
       case 'Stopped':
         return <Label color="orange">{labelText}</Label>;
       case 'Needs Maintenance':
@@ -363,11 +416,19 @@ export const ColumnManagementAction = () => {
         <ToolbarContent>
           <ToolbarGroup variant="button-group">
             <ToolbarItem>
-              <Button variant="primary" icon={<Icon shouldMirrorRTL><AlignRightIcon /></Icon>} iconPosition="end" onClick={switchRTL}>
+              <Button
+                variant="primary"
+                icon={
+                  <Icon shouldMirrorRTL>
+                    <AlignRightIcon />
+                  </Icon>
+                }
+                iconPosition="end"
+                onClick={switchRTL}
+              >
                 {t.switchBtn}
               </Button>
-            <ToolbarItem>
-            </ToolbarItem>
+              <ToolbarItem></ToolbarItem>
               <Button variant="secondary" onClick={handleModalToggle}>
                 Manage columns
               </Button>
@@ -416,7 +477,9 @@ export const ColumnManagementAction = () => {
 
   return (
     <React.Fragment>
-      <DashboardWrapper hasNoBreadcrumb>
+      <Page
+        sidebar={sidebar}
+      >
         <PageBreadcrumb>
           <Breadcrumb>
             <BreadcrumbItem>{t.breadcrumbs.home}</BreadcrumbItem>
@@ -429,9 +492,7 @@ export const ColumnManagementAction = () => {
         <PageSection variant="light">
           <TextContent>
             <Text component={TextVariants.h1}>{t.title}</Text>
-            <Text component={TextVariants.p}>
-              {t.body}
-            </Text>
+            <Text component={TextVariants.p}>{t.body}</Text>
           </TextContent>
         </PageSection>
         <PageSection>
@@ -478,7 +539,7 @@ export const ColumnManagementAction = () => {
             {renderModal()}
           </Card>
         </PageSection>
-      </DashboardWrapper>
+      </Page>
     </React.Fragment>
   );
 };
