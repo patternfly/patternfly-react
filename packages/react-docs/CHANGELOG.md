@@ -47,6 +47,42 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @patternfly/react-docs
 
+## [6.1.1-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.1.1-prerelease.22...@patternfly/react-docs@6.1.1-prerelease.23) (2023-09-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [6.1.1-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.1.1-prerelease.21...@patternfly/react-docs@6.1.1-prerelease.22) (2023-09-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [6.1.1-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.1.1-prerelease.20...@patternfly/react-docs@6.1.1-prerelease.21) (2023-09-22)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [6.1.1-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.1.1-prerelease.19...@patternfly/react-docs@6.1.1-prerelease.20) (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [6.1.1-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.1.1-prerelease.18...@patternfly/react-docs@6.1.1-prerelease.19) (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [6.1.1-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.1.1-prerelease.17...@patternfly/react-docs@6.1.1-prerelease.18) (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [6.1.1-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.1.1-prerelease.16...@patternfly/react-docs@6.1.1-prerelease.17) (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [6.1.1-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.1.1-prerelease.15...@patternfly/react-docs@6.1.1-prerelease.16) (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [6.1.1-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.1.1-prerelease.14...@patternfly/react-docs@6.1.1-prerelease.15) (2023-09-20)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 ## [6.1.1-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.1.1-prerelease.13...@patternfly/react-docs@6.1.1-prerelease.14) (2023-09-19)
 
 **Note:** Version bump only for package @patternfly/react-docs
