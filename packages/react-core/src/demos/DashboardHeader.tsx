@@ -20,7 +20,7 @@ import {
   ToolbarGroup,
   ToolbarItem,
   PageToggleButton
-} from '../../components';
+} from '../components';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';

@@ -13,7 +13,7 @@ import {
   SkipToContent,
   Text,
   TextContent
-} from '../../components';
+} from '../components';
 import { DashboardHeader } from './DashboardHeader';
 
 interface DashboardWrapperProps extends Omit<PageProps, 'ref'> {

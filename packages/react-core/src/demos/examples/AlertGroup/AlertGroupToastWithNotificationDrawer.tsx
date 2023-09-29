@@ -33,8 +33,8 @@ import {
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { DashboardHeader } from '@patternfly/react-core/src/demos/examples/DashboardHeader';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { DashboardHeader } from '@patternfly/react-core/src/demos/DashboardHeader';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
 interface NotificationProps {
   title: string;

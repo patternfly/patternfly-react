@@ -1,1 +1,2 @@
-export * from './examples';
+export * from './DashboardHeader';
+export * from './DashboardWrapper';
