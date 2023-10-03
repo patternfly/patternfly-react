@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 7.1.1-prerelease.10 (2023-10-03)
+
+### Bug Fixes
+
+- whitespace changes to trigger prereleases ([#9702](https://github.com/patternfly/patternfly-react/issues/9702)) ([741c248](https://github.com/patternfly/patternfly-react/commit/741c24825b503e116c77cf304aa3e4e3a9ff7841))
+
 ## [7.1.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.1.1-prerelease.8...@patternfly/react-charts@7.1.1-prerelease.9) (2023-09-22)
 
 ### Features

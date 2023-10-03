@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.1-prerelease.23 (2023-10-03)
+
+### Bug Fixes
+
+- whitespace changes to trigger prereleases ([#9702](https://github.com/patternfly/patternfly-react/issues/9702)) ([741c248](https://github.com/patternfly/patternfly-react/commit/741c24825b503e116c77cf304aa3e4e3a9ff7841))
+
 ## [5.1.1-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.1.1-prerelease.21...@patternfly/react-table@5.1.1-prerelease.22) (2023-09-25)
 
 **Note:** Version bump only for package @patternfly/react-table
