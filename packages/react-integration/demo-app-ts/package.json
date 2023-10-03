@@ -1,11 +1,7 @@
 {
   "name": "demo-app-ts",
   "private": true,
-<<<<<<< main
   "version": "5.1.1-prerelease.22",
-=======
-  "version": "5.1.1-alpha.0",
->>>>>>> chore(release): releasing packages [ci skip]
   "scripts": {
     "build:demo-app": "webpack --mode production",
     "start:demo-app": "webpack-dev-server",
