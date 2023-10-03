@@ -215,6 +215,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
           type={type}
           value={this.sanitizeInputValue(value)}
           aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
+          aria-expanded={isExpanded}
           required={isRequired}
           disabled={isDisabled}
           readOnly={!!readOnlyVariant || readOnly}

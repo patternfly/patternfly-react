@@ -124,4 +124,11 @@ describe('TextInput', () => {
     render(<TextInput isLeftTruncated aria-label="start truncated text input" />);
     expect(trimLeftFn).toHaveBeenCalled();
   });
+
+  test('has aria-expanded set to true when isExpanded is true', () => {
+    render(<TextInput isExpanded aria-label="isExpanded"/>);
+
+    const input = screen.getByLabelText('isExpanded');
+    expect(input).toHaveAttribute('aria-expanded', 'true');
+  });
 });

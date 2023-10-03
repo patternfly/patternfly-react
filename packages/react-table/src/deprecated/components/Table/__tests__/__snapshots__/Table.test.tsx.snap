@@ -10261,6 +10261,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v5-c-form-control"
               >
                 <input
+                  aria-expanded="false"
                   aria-invalid="false"
                   aria-label="Row 1 cell 1 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-1"
@@ -10294,6 +10295,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v5-c-form-control pf-m-disabled"
               >
                 <input
+                  aria-expanded="false"
                   aria-invalid="false"
                   aria-label="Row 1 cell 2 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-2"
@@ -10328,6 +10330,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v5-c-form-control"
               >
                 <input
+                  aria-expanded="false"
                   aria-invalid="false"
                   aria-label="Row 1 cell 3 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-3"
@@ -10361,6 +10364,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v5-c-form-control"
               >
                 <input
+                  aria-expanded="false"
                   aria-invalid="false"
                   aria-label="Row 1 cell 4 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-4"
@@ -10492,6 +10496,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v5-c-form-control"
               >
                 <input
+                  aria-expanded="false"
                   aria-invalid="false"
                   aria-label="Row 1 cell 1 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-5"
@@ -10525,6 +10530,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v5-c-form-control pf-m-disabled"
               >
                 <input
+                  aria-expanded="false"
                   aria-invalid="false"
                   aria-label="Row 2 cell 2 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-6"
@@ -10559,6 +10565,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v5-c-form-control"
               >
                 <input
+                  aria-expanded="false"
                   aria-invalid="false"
                   aria-label="Row 2 cell 3 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-7"
@@ -10592,6 +10599,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v5-c-form-control"
               >
                 <input
+                  aria-expanded="false"
                   aria-invalid="false"
                   aria-label="Row 2 cell 4 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-8"

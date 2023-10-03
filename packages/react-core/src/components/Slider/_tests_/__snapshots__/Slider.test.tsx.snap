@@ -60,6 +60,7 @@ exports[`slider renders continuous slider 1`] = `
         class="pf-v5-c-form-control"
       >
         <input
+          aria-expanded="false"
           aria-invalid="false"
           aria-label="Slider value input"
           data-ouia-component-id="OUIA-Generated-TextInputBase-1"
@@ -254,6 +255,7 @@ exports[`slider renders discrete slider 1`] = `
         class="pf-v5-c-form-control"
       >
         <input
+          aria-expanded="false"
           aria-invalid="false"
           aria-label="Slider value input"
           data-ouia-component-id="OUIA-Generated-TextInputBase-2"
@@ -426,6 +428,7 @@ exports[`slider renders slider with input 1`] = `
             class="pf-v5-c-form-control"
           >
             <input
+              aria-expanded="false"
               aria-invalid="false"
               aria-label="Slider value input"
               data-ouia-component-id="OUIA-Generated-TextInputBase-3"
@@ -516,6 +519,7 @@ exports[`slider renders slider with input above thumb 1`] = `
               class="pf-v5-c-form-control"
             >
               <input
+                aria-expanded="false"
                 aria-invalid="false"
                 aria-label="Slider value input"
                 data-ouia-component-id="OUIA-Generated-TextInputBase-4"

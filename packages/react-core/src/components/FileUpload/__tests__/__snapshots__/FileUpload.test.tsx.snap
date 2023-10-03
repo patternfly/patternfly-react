@@ -20,6 +20,7 @@ exports[`simple fileupload 1`] = `
           >
             <input
               aria-describedby="simple-text-file-browse-button"
+              aria-expanded="false"
               aria-invalid="false"
               aria-label="Drag a file here or browse to upload"
               data-ouia-component-id="OUIA-Generated-TextInputBase-1"

@@ -75,6 +75,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
         class="pf-v5-c-form-control"
       >
         <input
+          aria-expanded="false"
           aria-invalid="false"
           aria-label="Current page"
           data-ouia-component-id="OUIA-Generated-TextInputBase-1"

@@ -19,6 +19,7 @@ exports[`With popover opened 1`] = `
             class="pf-v5-c-form-control"
           >
             <input
+              aria-expanded="false"
               aria-invalid="false"
               aria-label="Date picker"
               data-ouia-component-id="OUIA-Generated-TextInputBase-4"
@@ -169,6 +170,7 @@ exports[`With popover opened 1`] = `
                       class="pf-v5-c-form-control"
                     >
                       <input
+                        aria-expanded="false"
                         aria-invalid="false"
                         aria-label="Select year"
                         data-ouia-component-id="OUIA-Generated-TextInputBase-5"
@@ -793,6 +795,7 @@ exports[`disabled date picker 1`] = `
             class="pf-v5-c-form-control pf-m-disabled"
           >
             <input
+              aria-expanded="false"
               aria-invalid="false"
               aria-label="disabled date picker"
               data-ouia-component-id="OUIA-Generated-TextInputBase-1"

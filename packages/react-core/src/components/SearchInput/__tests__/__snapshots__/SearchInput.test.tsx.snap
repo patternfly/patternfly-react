@@ -333,6 +333,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     class="pf-v5-c-form-control"
                   >
                     <input
+                      aria-expanded="false"
                       aria-invalid="false"
                       data-ouia-component-id="OUIA-Generated-TextInputBase-1"
                       data-ouia-component-type="PF5/TextInput"
@@ -369,6 +370,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     class="pf-v5-c-form-control"
                   >
                     <input
+                      aria-expanded="false"
                       aria-invalid="false"
                       data-ouia-component-id="OUIA-Generated-TextInputBase-2"
                       data-ouia-component-type="PF5/TextInput"
@@ -405,6 +407,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     class="pf-v5-c-form-control"
                   >
                     <input
+                      aria-expanded="false"
                       aria-invalid="false"
                       data-ouia-component-id="OUIA-Generated-TextInputBase-3"
                       data-ouia-component-type="PF5/TextInput"
