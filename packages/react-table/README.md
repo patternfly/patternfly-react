@@ -2,7 +2,7 @@
 
 This package provides Table PatternFly components based on [PatternFly][patternfly]
 
-### Prerequisite
+### Prerequisite 
 
 #### Node environment
 

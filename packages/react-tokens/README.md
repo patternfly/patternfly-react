@@ -1,6 +1,6 @@
 # @patternfly/react-tokens
 
-## Installation
+## Installation 
 
 ```bash
 yarn add @patternfly/react-tokens
