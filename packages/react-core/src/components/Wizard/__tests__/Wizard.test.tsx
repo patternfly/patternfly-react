@@ -58,6 +58,27 @@ test('renders default footer with custom props', () => {
   expect(screen.getByRole('button', { name: 'Leave now!' })).toBeVisible();
 });
 
+test('can add props to default footer buttons', () => {
+  render(
+    <Wizard
+      footer={{
+        nextButtonProps: { id: 'next-button', className: 'custom-class' },
+        backButtonProps: { id: 'back-button' },
+        cancelButtonProps: { id: 'cancel-button' }
+      }}
+    >
+      <WizardStep id="test-step" name="Test step" />
+    </Wizard>
+  );
+
+  const nextButton = screen.getByRole('button', { name: 'Next' });
+
+  expect(nextButton).toHaveProperty('id', 'next-button');
+  expect(nextButton).toHaveClass('custom-class');
+  expect(screen.getByRole('button', { name: 'Back' })).toHaveProperty('id', 'back-button');
+  expect(screen.getByRole('button', { name: 'Cancel' })).toHaveProperty('id', 'cancel-button');
+});
+
 test('renders custom footer', () => {
   render(
     <Wizard footer={<>Some footer</>}>
