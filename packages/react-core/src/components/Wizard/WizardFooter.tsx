@@ -73,7 +73,7 @@ const InternalWizardFooter = ({
         variant={ButtonVariant.secondary}
         onClick={onBack}
         isDisabled={isBackDisabled}
-        {...footerButtonsProps.backButtonProps}
+        {...footerButtonsProps?.backButtonProps}
       >
         {backButtonText}
       </Button>
@@ -84,14 +84,14 @@ const InternalWizardFooter = ({
       type="submit"
       onClick={onNext}
       isDisabled={isNextDisabled}
-      {...footerButtonsProps.nextButtonProps}
+      {...footerButtonsProps?.nextButtonProps}
     >
       {nextButtonText}
     </Button>
 
     {!isCancelHidden && (
       <div className={styles.wizardFooterCancel}>
-        <Button variant={ButtonVariant.link} onClick={onClose} {...footerButtonsProps.cancelButtonProps}>
+        <Button variant={ButtonVariant.link} onClick={onClose} {...footerButtonsProps?.cancelButtonProps}>
           {cancelButtonText}
         </Button>
       </div>
