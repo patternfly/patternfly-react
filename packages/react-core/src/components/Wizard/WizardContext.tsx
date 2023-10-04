@@ -1,6 +1,12 @@
 import React from 'react';
 
-import { isCustomWizardFooter, isWizardSubStep, WizardStepType, WizardFooterType } from './types';
+import {
+  isCustomWizardFooter,
+  isWizardSubStep,
+  WizardStepType,
+  WizardFooterType,
+  WizardFooterButtonsProps
+} from './types';
 import { WizardFooter, WizardFooterProps } from './WizardFooter';
 
 export interface WizardContextProps {
@@ -47,6 +53,7 @@ export interface WizardContextProviderProps {
     steps: WizardStepType[],
     index: number
   ): void;
+  footerButtonsProps?: WizardFooterButtonsProps;
 }
 
 export const WizardContextProvider: React.FunctionComponent<WizardContextProviderProps> = ({
@@ -59,7 +66,8 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   onClose,
   goToStepById,
   goToStepByName,
-  goToStepByIndex
+  goToStepByIndex,
+  footerButtonsProps
 }) => {
   const [currentSteps, setCurrentSteps] = React.useState<WizardStepType[]>(initialSteps);
   const [currentFooter, setCurrentFooter] = React.useState<WizardFooterType>();
@@ -101,6 +109,7 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
         onBack={goToPrevStep}
         onClose={close}
         isBackDisabled={activeStep?.index === 1 || (isWizardSubStep(activeStep) && activeStep?.index === 2)}
+        footerButtonsProps={footerButtonsProps}
         {...wizardFooter}
       />
     );
