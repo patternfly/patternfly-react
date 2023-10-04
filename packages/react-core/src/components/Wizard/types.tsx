@@ -1,6 +1,5 @@
 import React from 'react';
 import { WizardNavProps, WizardNavItemProps, WizardFooterProps } from '.';
-import { ButtonProps } from '../Button';
 
 /** Type used to define 'basic' steps, or in other words, steps that are neither parents or children of parents. */
 export interface WizardBasicStep {
@@ -57,18 +56,6 @@ export enum WizardStepChangeScope {
 export type WizardFooterType = Partial<WizardFooterProps> | CustomWizardFooterFunction | React.ReactElement;
 export type WizardNavType = Partial<WizardNavProps> | CustomWizardNavFunction | React.ReactElement;
 export type WizardNavItemType = Partial<WizardNavItemProps> | CustomWizardNavItemFunction | React.ReactElement;
-
-type FooterButtonProps = Omit<ButtonProps, 'children' | 'variant' | 'onClick'>;
-
-/** Interface for adding properties to footer buttons. */
-export interface WizardFooterButtonsProps {
-  /** Additional props for the Next button. */
-  nextButtonProps?: Omit<FooterButtonProps, 'isDisabled' | 'type'>;
-  /** Additional props for the Back button. */
-  backButtonProps?: Omit<FooterButtonProps, 'isDisabled'>;
-  /** Additional props for the Cancel button. */
-  cancelButtonProps?: FooterButtonProps;
-}
 
 /** Callback for the Wizard's 'nav' property. Returns element which replaces the Wizard's default navigation. */
 export type CustomWizardNavFunction = (

@@ -8,7 +8,6 @@ import {
   WizardStepType,
   isCustomWizardNav,
   WizardFooterType,
-  WizardFooterButtonsProps,
   WizardNavType,
   WizardStepChangeScope
 } from './types';
@@ -54,8 +53,6 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   onSave?: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
   /** Callback function to close the wizard */
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  /** Interface for adding properties to footer buttons. */
-  footerButtonsProps?: WizardFooterButtonsProps;
 }
 
 export const Wizard = ({
@@ -72,7 +69,6 @@ export const Wizard = ({
   onStepChange,
   onSave,
   onClose,
-  footerButtonsProps,
   ...wrapperProps
 }: WizardProps) => {
   const [activeStepIndex, setActiveStepIndex] = React.useState(startIndex);
@@ -170,7 +166,6 @@ export const Wizard = ({
       goToStepById={goToStepById}
       goToStepByName={goToStepByName}
       goToStepByIndex={goToStepByIndex}
-      footerButtonsProps={footerButtonsProps}
     >
       <div
         className={css(styles.wizard, className)}

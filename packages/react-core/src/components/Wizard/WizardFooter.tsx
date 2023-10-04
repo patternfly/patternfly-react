@@ -3,12 +3,14 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
-import { Button, ButtonVariant } from '../Button';
-import { isCustomWizardFooter, WizardFooterButtonsProps, WizardStepType } from './types';
+import { Button, ButtonProps, ButtonVariant } from '../Button';
+import { isCustomWizardFooter, WizardStepType } from './types';
 
 /**
  * Hosts the standard structure of a footer with ties to the active step so that text for buttons can vary from step to step.
  */
+
+type FooterButtonProps = Omit<ButtonProps, 'children' | 'variant' | 'onClick'>;
 
 export interface WizardFooterProps {
   /** The active step */
@@ -33,8 +35,12 @@ export interface WizardFooterProps {
   isBackHidden?: boolean;
   /** Flag to hide the cancel button */
   isCancelHidden?: boolean;
-  /** Interface for adding properties to footer buttons. */
-  footerButtonsProps?: WizardFooterButtonsProps;
+  /** Additional props for the Next button. */
+  nextButtonProps?: Omit<FooterButtonProps, 'isDisabled' | 'type'>;
+  /** Additional props for the Back button. */
+  backButtonProps?: Omit<FooterButtonProps, 'isDisabled'>;
+  /** Additional props for the Cancel button. */
+  cancelButtonProps?: FooterButtonProps;
 }
 
 /**
@@ -65,16 +71,13 @@ const InternalWizardFooter = ({
   nextButtonText = 'Next',
   backButtonText = 'Back',
   cancelButtonText = 'Cancel',
-  footerButtonsProps
+  nextButtonProps,
+  backButtonProps,
+  cancelButtonProps
 }: Omit<WizardFooterProps, 'activeStep'>) => (
   <WizardFooterWrapper>
     {!isBackHidden && (
-      <Button
-        variant={ButtonVariant.secondary}
-        onClick={onBack}
-        isDisabled={isBackDisabled}
-        {...footerButtonsProps?.backButtonProps}
-      >
+      <Button variant={ButtonVariant.secondary} onClick={onBack} isDisabled={isBackDisabled} {...backButtonProps}>
         {backButtonText}
       </Button>
     )}
@@ -84,14 +87,14 @@ const InternalWizardFooter = ({
       type="submit"
       onClick={onNext}
       isDisabled={isNextDisabled}
-      {...footerButtonsProps?.nextButtonProps}
+      {...nextButtonProps}
     >
       {nextButtonText}
     </Button>
 
     {!isCancelHidden && (
       <div className={styles.wizardFooterCancel}>
-        <Button variant={ButtonVariant.link} onClick={onClose} {...footerButtonsProps?.cancelButtonProps}>
+        <Button variant={ButtonVariant.link} onClick={onClose} {...cancelButtonProps}>
           {cancelButtonText}
         </Button>
       </div>
