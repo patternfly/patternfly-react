@@ -25,6 +25,11 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 ```ts file="./ClipboardCopyExpanded.tsx"
 ```
 
+### Expanded with alternate title
+
+```ts file="./ClipboardCopyExpandedWithAltTitle.tsx"
+```
+
 ### Read only expanded
 
 ```ts file="./ClipboardCopyReadOnlyExpanded.tsx"
