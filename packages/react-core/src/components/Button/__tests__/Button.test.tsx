@@ -5,145 +5,203 @@ import { render, screen } from '@testing-library/react';
 import CartArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/cart-arrow-down-icon';
 import { Button, ButtonVariant } from '../Button';
 
-describe('Button', () => {
-  Object.values(ButtonVariant).forEach(variant => {
-    test(`${variant} button`, () => {
-      const { asFragment } = render(
-        <Button variant={variant} aria-label={variant}>
-          {variant} Button
-        </Button>
-      );
-      expect(asFragment()).toMatchSnapshot();
+Object.values(ButtonVariant).forEach((variant) => {
+  if (variant !== 'primary') {
+    test(`Does not render with class pf-m-${variant} by default`, () => {
+      render(<Button>Not {variant} Button</Button>);
+      expect(screen.getByRole('button')).not.toHaveClass(`pf-m-${variant}`);
     });
+  }
+
+  test(`Renders with class pf-m-${variant} when variant=${variant}`, () => {
+    render(<Button variant={variant}>{variant} Button</Button>);
+    expect(screen.getByRole('button')).toHaveClass(`pf-m-${variant}`);
   });
+});
 
-  test('it adds an aria-label to plain buttons', () => {
-    const label = 'aria-label test';
-    render(<Button aria-label={label} />);
+test('Renders without children', () => {
+  render(
+    <div data-testid="container">
+      <Button />
+    </div>
+  );
 
-    expect(screen.getByLabelText(label)).toBeTruthy();
-  });
+  expect(screen.getByTestId('container').firstChild).toBeVisible();
+});
 
-  test('link with icon', () => {
-    const { asFragment } = render(
-      <Button variant={ButtonVariant.link} icon={<CartArrowDownIcon />}>
-        Block Button
-      </Button>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with class pf-v5-c-button by default', () => {
+  render(<Button>Button</Button>);
+  expect(screen.getByRole('button')).toHaveClass('pf-v5-c-button');
+});
 
-  test('isBlock', () => {
-    const { asFragment } = render(<Button isBlock>Block Button</Button>);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with class pf-m-primary by default', () => {
+  render(<Button>Button</Button>);
+  expect(screen.getByText('Button')).toHaveClass('pf-m-primary');
+});
 
-  test('isDisabled', () => {
-    const { asFragment } = render(<Button isDisabled>Disabled Button</Button>);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with custom class', () => {
+  render(<Button className="custom-class">CSS Button</Button>);
+  expect(screen.getByRole('button')).toHaveClass('custom-class');
+});
 
-  test('isDanger secondary', () => {
-    const { asFragment } = render(
-      <Button variant="secondary" isDanger>
-        Disabled Button
-      </Button>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with an aria-label', () => {
+  const label = 'aria-label test';
+  render(<Button aria-label={label} />);
 
-  test('isDanger link', () => {
-    const { asFragment } = render(
-      <Button variant="link" isDanger>
-        Disabled Button
-      </Button>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByLabelText(label)).toHaveAccessibleName('aria-label test');
+});
 
-  test('isAriaDisabled button', () => {
-    const { asFragment } = render(<Button isAriaDisabled>Disabled yet focusable button</Button>);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with class pf-m-block when isBlock = true', () => {
+  render(<Button isBlock>Block Button</Button>);
+  expect(screen.getByRole('button')).toHaveClass('pf-m-block');
+});
 
-  test('isAriaDisabled link button', () => {
-    const { asFragment } = render(
-      <Button isAriaDisabled component="a">
-        Disabled yet focusable button
-      </Button>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with class pf-m-active when isActive = true', () => {
+  render(<Button isActive>Active Button</Button>);
+  expect(screen.getByRole('button')).toHaveClass('pf-m-active');
+});
 
-  test('isInline', () => {
-    const { asFragment } = render(
-      <Button variant={ButtonVariant.link} isInline>
-        Hovered Button
-      </Button>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with class pf-m-disabled when isDisabled = true', () => {
+  render(<Button isDisabled>Disabled Button</Button>);
+  expect(screen.getByRole('button')).toHaveClass('pf-m-disabled');
+});
 
-  test('size small', () => {
-    const { asFragment } = render(<Button size="sm">Small Button</Button>);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with class pf-m-aria-disabled when isAriaDisabled = true', () => {
+  render(<Button isAriaDisabled>Disabled yet focusable button</Button>);
+  expect(screen.getByRole('button')).toHaveClass('pf-m-aria-disabled');
+});
 
-  test('size large', () => {
-    const { asFragment } = render(<Button size="lg">Large Button</Button>);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Does not disable button when isDisabled = true and component = a', () => {
+  render(
+    <Button isDisabled component="a">
+      Disabled yet focusable button
+    </Button>
+  );
+  expect(screen.getByText('Disabled yet focusable button')).not.toHaveProperty('disabled');
+});
 
-  test('isLoading', () => {
-    const { asFragment } = render(
-      <Button isLoading spinnerAriaValueText="Loading">
-        Loading Button
-      </Button>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with class pf-m-danger when isDanger = true and variant = secondary', () => {
+  render(
+    <Button variant="secondary" isDanger>
+      Danger Button
+    </Button>
+  );
+  expect(screen.getByRole('button')).toHaveClass('pf-m-danger', 'pf-m-secondary');
+});
 
-  test('isLoading inline link', () => {
-    const { asFragment } = render(
-      <Button variant="link" isInline isLoading aria-label="Loading" spinnerAriaValueText="Loading">
-        Loading Button
-      </Button>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with class pf-m-danger when isDanger = true and variant = link', () => {
+  render(
+    <Button variant="link" isDanger>
+      Danger Button
+    </Button>
+  );
+  expect(screen.getByRole('button')).toHaveClass('pf-m-danger', 'pf-m-link');
+});
 
-  test('isLoading icon only', () => {
-    const { asFragment } = render(
-      <Button variant="plain" isLoading aria-label="Upload" spinnerAriaValueText="Loading" icon={<div>ICON</div>} />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Does not render with class pf-m-danger when isDanger = true and variant != secondary or link', () => {
+  render(
+    <Button variant="primary" isDanger>
+      Danger Button
+    </Button>
+  );
+  expect(screen.getByRole('button')).not.toHaveClass('pf-m-danger');
+});
 
-  test('allows passing in a string as the component', () => {
-    const component = 'a';
-    render(<Button component={component}>anchor button</Button>);
+test('Does not render with class pf-m-danger when isDanger = true and variant = tertiary', () => {
+  render(
+    <Button variant="tertiary" isDanger>
+      Danger Button
+    </Button>
+  );
+  expect(screen.getByRole('button')).not.toHaveClass('pf-m-danger');
+});
 
-    expect(screen.getByText('anchor button')).toBeInTheDocument();
-  });
+test('Does not render with class pf-m-danger when isDanger = true and variant = control', () => {
+  render(
+    <Button variant="control" isDanger>
+      Danger Button
+    </Button>
+  );
+  expect(screen.getByRole('button')).not.toHaveClass('pf-m-danger');
+});
 
-  test('allows passing in a React Component as the component', () => {
-    const Component = () => <div>im a div</div>;
-    render(<Button component={Component} />);
+test('Renders with class pf-m-inline when isInline = true and variant = link', () => {
+  render(
+    <Button variant={ButtonVariant.link} isInline>
+      Hovered Button
+    </Button>
+  );
+  expect(screen.getByRole('button')).toHaveClass('pf-m-inline');
+});
 
-    expect(screen.getByText('im a div')).toBeInTheDocument();
-  });
+test('Renders with class pf-m-small when size = sm', () => {
+  render(<Button size="sm">Small Button</Button>);
+  expect(screen.getByRole('button')).toHaveClass('pf-m-small');
+});
 
-  test('aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled', () => {
-    const { asFragment } = render(
-      <Button component="a" isDisabled>
-        Disabled Anchor Button
-      </Button>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with class pf-m-display-lg when size = lg', () => {
+  render(<Button size="lg">Large Button</Button>);
+  expect(screen.getByRole('button')).toHaveClass('pf-m-display-lg');
+});
 
-  test('setting tab index through props', () => {
-    render(<Button tabIndex={0}>TabIndex 0 Button</Button>);
-    expect(screen.getByRole('button')).toHaveAttribute('tabindex', '0');
-  });
+test('Renders with class pf-m-in-progress when isLoading = true', () => {
+  render(
+    <Button isLoading spinnerAriaValueText="Loading">
+      Loading Button
+    </Button>
+  );
+  expect(screen.getByRole('button')).toHaveClass('pf-m-in-progress');
+});
+
+test('Renders with class pf-m-progress when isLoading is defined and isLoading = false', () => {
+  render(
+    <Button isLoading={false} spinnerAriaValueText="Loading">
+      Loading Button
+    </Button>
+  );
+  expect(screen.getByRole('button')).toHaveClass('pf-m-progress');
+});
+
+test('Renders without class pf-m-progress when isLoading = false and variant = plain', () => {
+  render(
+    <Button variant="plain" isInline isLoading={false} aria-label="Loading" spinnerAriaValueText="Loading">
+      Loading Button
+    </Button>
+  );
+  expect(screen.getByRole('button')).not.toHaveClass('pf-m-progress');
+});
+
+test('Renders custom icon with class pf-m-in-progress when isLoading = true and icon is present', () => {
+  render(
+    <Button variant="plain" isLoading aria-label="Upload" spinnerAriaValueText="Loading" icon={<div>ICON</div>} />
+  );
+
+  expect(screen.getByText('ICON')).toBeVisible();
+  expect(screen.getByText('ICON').parentElement).toHaveClass('pf-m-in-progress');
+});
+
+test('Renders as custom component when component is passed', () => {
+  const component = 'a';
+  render(<Button component={component}>anchor button</Button>);
+
+  expect(screen.getByText('anchor button').tagName).toBe('A');
+});
+
+test('aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled', () => {
+  render(
+    <Button component="a" isDisabled>
+      Disabled Anchor Button
+    </Button>
+  );
+  expect(screen.getByText('Disabled Anchor Button')).toHaveAttribute('tabindex', '-1');
+});
+
+test('setting tab index through props', () => {
+  render(<Button tabIndex={0}>TabIndex 0 Button</Button>);
+  expect(screen.getByRole('button')).toHaveAttribute('tabindex', '0');
+});
+
+test(`Renders basic button`, () => {
+  const { asFragment } = render(<Button aria-label="basic button">Basic Button</Button>);
+  expect(asFragment()).toMatchSnapshot();
 });
