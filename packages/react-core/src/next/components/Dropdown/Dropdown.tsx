@@ -32,6 +32,14 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   ouiaSafe?: boolean;
   /** z-index of the dropdown menu */
   zIndex?: number;
+  /** The container to append the dropdown to. Defaults to 'inline'.
+   * If your dropdown is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * appendTo="inline"
+   * appendTo={() => document.body}
+   * appendTo={document.getElementById('target')}
+   */
+  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({
@@ -48,6 +56,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   ouiaId,
   ouiaSafe = true,
   zIndex = 9999,
+  appendTo = 'inline',
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -109,21 +118,24 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
         } as React.CSSProperties
       })}
       {...props}
+      {...ouiaProps}
     >
       <MenuContent>{children}</MenuContent>
     </Menu>
   );
-  return (
-    <div ref={containerRef} {...ouiaProps}>
-      <Popper
-        trigger={toggle(toggleRef)}
-        removeFindDomNode
-        popper={menu}
-        appendTo={containerRef.current || undefined}
-        isVisible={isOpen}
-        zIndex={zIndex}
-      />
+  const popperProps = {
+    trigger: toggle(toggleRef),
+    removeFindDomNode: true,
+    popper: menu,
+    isVisible: isOpen,
+    zIndex
+  };
+  return appendTo === 'inline' ? (
+    <div ref={containerRef}>
+      <Popper {...popperProps} appendTo={containerRef.current || undefined} />
     </div>
+  ) : (
+    <Popper {...popperProps} appendTo={appendTo} />
   );
 };
 
