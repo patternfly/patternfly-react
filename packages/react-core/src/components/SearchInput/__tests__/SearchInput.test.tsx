@@ -250,3 +250,11 @@ test('toggleAriaLabel is applied to the expandable toggle', () => {
 
   expect(screen.getByRole('button')).toHaveAccessibleName('Test label');
 });
+
+test('Utilities are rendered when areUtilitiesDisplayed is set', () => {
+  render(
+    <SearchInput {...props} areUtilitiesDisplayed resetButtonLabel='test-util-display'/>
+  );
+  expect(screen.getByAltText('test-util-display')).toBeInTheDocument();
+});
+
