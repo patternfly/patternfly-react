@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.278.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.277.0...@patternfly/react-core@4.278.0) (2023-10-06)
+
+
+### Features
+
+* **Dropdown next:** able to append the menu to any DOM element ([#9652](https://github.com/patternfly/patternfly-react/issues/9652)) ([a238182](https://github.com/patternfly/patternfly-react/commit/a238182e5454947c9303161a602346712288d14b))
+
+
+
+
+
 # [4.277.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.276.12...@patternfly/react-core@4.277.0) (2023-09-21)
 
 
