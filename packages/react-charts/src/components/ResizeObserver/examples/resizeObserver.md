@@ -161,6 +161,24 @@ class MultiColorChart extends React.Component {
         this.setState({ width: this.containerRef.current.clientWidth });
       }
     };
+    this.handleLegendAllowWrap = (extraHeight) => {
+      if (extraHeight !== this.state.extraHeight) {
+        this.setState({ extraHeight });
+      }
+    }
+    this.getHeight = (baseHeight) => {
+      const { extraHeight } = this.state;
+      return baseHeight + extraHeight;
+    };
+    this.getPadding = () => {
+      const { extraHeight } = this.state;
+      return {
+        bottom: 100 + extraHeight, // Adjusted to accomodate legend
+        left: 50,
+        right: 50,
+        top: 50,
+      };
+    };
   }
 
   componentDidMount() {
@@ -174,11 +192,11 @@ class MultiColorChart extends React.Component {
 
   render() {
     const { width } = this.state;
-    const itemsPerRow = width > 650 ? 4 : 2;
+    const height = this.getHeight(250);
 
     return (
       <div ref={this.containerRef}>
-        <div style={{ height: '250px' }}>
+        <div style={{ height: height + 'px' }}>
           <Chart
             ariaDesc="Average number of pets"
             ariaTitle="Area chart example"
@@ -188,32 +206,27 @@ class MultiColorChart extends React.Component {
                 constrainToVisibleArea
               />
             }
+            legendAllowWrap={this.handleLegendAllowWrap}
             legendPosition="bottom-left"
             legendComponent={
               <ChartLegend
                 data={[
                   { name: 'Cats' },
-                  { name: 'Birds' },
                   {
                     name: 'Cats Threshold',
                     symbol: { fill: chart_color_blue_300.var, type: 'threshold' }
                   },
+                  { name: 'Birds' },
                   {
                     name: 'Birds Threshold',
                     symbol: { fill: chart_color_orange_300.var, type: 'threshold' }
                   }
                 ]}
-                itemsPerRow={itemsPerRow}
               />
             }
-            height={250}
+            height={height}
             name="chart2"
-            padding={{
-              bottom: 100, // Adjusted to accomodate legend
-              left: 50,
-              right: 50,
-              top: 50
-            }}
+            padding={this.getPadding()}
             maxDomain={{ y: 9 }}
             themeColor={ChartThemeColor.multiUnordered}
             width={width}
