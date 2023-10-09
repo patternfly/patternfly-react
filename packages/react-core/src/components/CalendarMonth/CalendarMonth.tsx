@@ -188,7 +188,7 @@ export const CalendarMonth = ({
   const onMonthClick = (ev: React.MouseEvent, newDate: Date) => {
     setFocusedDate(newDate);
     setHoveredDate(newDate);
-    setShouldFocus(true);
+    setShouldFocus(false);
     onMonthChange(ev, newDate);
   };
 
@@ -305,7 +305,7 @@ export const CalendarMonth = ({
                     const newDate = changeMonth(Number(monthNum as string));
                     setFocusedDate(newDate);
                     setHoveredDate(newDate);
-                    setShouldFocus(true);
+                    setShouldFocus(false);
                     onMonthChange(ev, newDate);
                   }, 0);
                 }}
@@ -331,7 +331,7 @@ export const CalendarMonth = ({
                   const newDate = changeYear(Number(year));
                   setFocusedDate(newDate);
                   setHoveredDate(newDate);
-                  setShouldFocus(true);
+                  setShouldFocus(false);
                   onMonthChange(ev, newDate);
                 }}
               />
