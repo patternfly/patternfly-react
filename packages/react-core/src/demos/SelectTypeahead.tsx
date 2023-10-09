@@ -1,8 +1,8 @@
 import React from 'react';
-import { Select, SelectOption, SelectList, SelectOptionProps } from '.';
-import { MenuToggle, MenuToggleElement } from '../MenuToggle';
-import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
-import { Button } from '../Button';
+import { Select, SelectOption, SelectList, SelectOptionProps } from '../components/Select';
+import { MenuToggle, MenuToggleElement } from '../components/MenuToggle';
+import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../components/TextInputGroup';
+import { Button } from '../components/Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export const SelectTypeahead: React.FunctionComponent<any> = ({

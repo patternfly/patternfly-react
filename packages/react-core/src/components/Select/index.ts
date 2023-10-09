@@ -2,4 +2,4 @@ export * from './Select';
 export * from './SelectGroup';
 export * from './SelectList';
 export * from './SelectOption';
-export * from './SelectTypeahead';
+export * from '../../demos/SelectTypeahead';
