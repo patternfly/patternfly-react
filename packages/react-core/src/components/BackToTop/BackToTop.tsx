@@ -34,12 +34,14 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
   const [scrollElement, setScrollElement] = React.useState(null);
 
   const toggleVisible = () => {
-    const scrolled = scrollElement.scrollY ? scrollElement.scrollY : scrollElement.scrollTop;
-    if (!isAlwaysVisible) {
-      if (scrolled > 400) {
-        setVisible(true);
-      } else {
-        setVisible(false);
+    if (scrollElement) {
+      const scrolled = scrollElement.scrollY ? scrollElement.scrollY : scrollElement.scrollTop;
+      if (!isAlwaysVisible) {
+        if (scrolled > 400) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
       }
     }
   };
