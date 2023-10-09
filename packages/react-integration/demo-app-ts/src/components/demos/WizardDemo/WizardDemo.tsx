@@ -8,7 +8,7 @@ interface WizardDemoState {
   isOpenWithRole: boolean;
 }
 
-export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, WizardDemoState> {
+class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, WizardDemoState> {
   static displayName = 'WizardDemo';
   state = {
     isOpen: false,
@@ -72,6 +72,8 @@ export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>,
             </WizardStep>
           </Wizard>
         </Modal>
+        <br />
+        <br />
         <Wizard id="inPageWizId" height={500}>
           <WizardStep name="A" id="wizard-step-a">
             <p>Step 1</p>
@@ -95,6 +97,8 @@ export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>,
             <p>Step 5</p>
           </WizardStep>
         </Wizard>
+        <br />
+        <br />
         <Wizard id="inPageWizWithAnchorsId" height={500}>
           <WizardStep
             name={
@@ -130,16 +134,20 @@ export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>,
             <p>Step 3</p>
           </WizardStep>
         </Wizard>
+        <br />
+        <br />
         <Wizard id="inPageWizWithOverflow" height={500}>
-          <WizardStep name="Step without overflow" id="wizard-overflow-without">
+          <WizardStep id="inPage-overflow-step-1" name="Step without overflow">
             <p>Step 1</p>
           </WizardStep>
-          <WizardStep name="Step with overflow" id="wizard-overflow-with">
+          <WizardStep id="inPage-overflow-step-2" name="Step with overflow">
             <div style={{ height: '800px' }}>
               <p>Step 2</p>
             </div>
           </WizardStep>
         </Wizard>
+        <br />
+        <br />
         <Button id="launchWizOverflow" variant="primary" onClick={this.handleRoleWizardToggle}>
           Show Modal with Overflow
         </Button>
@@ -157,10 +165,106 @@ export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>,
               />
             }
           >
-            <WizardStep body={{ component: 'main' }} name="Step without overflow" id="wizard-overflow-without">
+            <WizardStep id="modal-overflow-step-1" body={{ component: 'main' }} name="Step without overflow">
               <p>Step 1</p>
             </WizardStep>
-            <WizardStep body={{ component: 'main' }} name="Step with overflow" id="wizard-overflow-with">
+            <WizardStep id="modal-overflow-step-2" body={{ component: 'main' }} name="Step with overflow">
+              <div style={{ height: '200px' }}>
+                <>
+                  <p>
+                    The content of this step overflows and creates a scrollbar, which causes a tabindex of "0", a role
+                    of "region", and an aria-label or aria-labelledby to be applied.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum in neque nec pharetra.
+                    Duis lacinia vel sapien ut imperdiet. Nunc ultrices mollis dictum. Duis tempus, massa nec tincidunt
+                    tempor, enim ex porttitor odio, eu facilisis dolor tortor id sapien. Etiam sit amet molestie lacus.
+                    Nulla facilisi. Duis eget finibus ipsum. Quisque dictum enim sed sodales porta. Curabitur eget orci
+                    eu risus posuere pulvinar id nec turpis. Morbi mattis orci vel posuere tincidunt. Fusce bibendum et
+                    libero a auctor.
+                  </p>
+                  <p>
+                    Proin elementum commodo sodales. Quisque eget libero mattis, ornare augue at, egestas nisi. Mauris
+                    ultrices orci fringilla pretium mattis. Aliquam erat volutpat. Sed pharetra condimentum dui, nec
+                    bibendum ante. Vestibulum sollicitudin, sem accumsan pharetra molestie, purus turpis lacinia lorem,
+                    commodo sodales quam lectus a urna. Nam gravida, felis a lacinia varius, ex ipsum ultrices orci, non
+                    egestas diam velit in mi. Ut sit amet commodo orci. Duis sed diam odio. Duis mi metus, dignissim in
+                    odio nec, ornare aliquet libero. Sed luctus elit nibh. Quisque et felis diam. Integer ac metus
+                    dolor.
+                  </p>
+                </>
+                <>
+                  <p>
+                    The content of this step overflows and creates a scrollbar, which causes a tabindex of "0", a role
+                    of "region", and an aria-label or aria-labelledby to be applied.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum in neque nec pharetra.
+                    Duis lacinia vel sapien ut imperdiet. Nunc ultrices mollis dictum. Duis tempus, massa nec tincidunt
+                    tempor, enim ex porttitor odio, eu facilisis dolor tortor id sapien. Etiam sit amet molestie lacus.
+                    Nulla facilisi. Duis eget finibus ipsum. Quisque dictum enim sed sodales porta. Curabitur eget orci
+                    eu risus posuere pulvinar id nec turpis. Morbi mattis orci vel posuere tincidunt. Fusce bibendum et
+                    libero a auctor.
+                  </p>
+                  <p>
+                    Proin elementum commodo sodales. Quisque eget libero mattis, ornare augue at, egestas nisi. Mauris
+                    ultrices orci fringilla pretium mattis. Aliquam erat volutpat. Sed pharetra condimentum dui, nec
+                    bibendum ante. Vestibulum sollicitudin, sem accumsan pharetra molestie, purus turpis lacinia lorem,
+                    commodo sodales quam lectus a urna. Nam gravida, felis a lacinia varius, ex ipsum ultrices orci, non
+                    egestas diam velit in mi. Ut sit amet commodo orci. Duis sed diam odio. Duis mi metus, dignissim in
+                    odio nec, ornare aliquet libero. Sed luctus elit nibh. Quisque et felis diam. Integer ac metus
+                    dolor.
+                  </p>
+                </>
+                <>
+                  <p>
+                    The content of this step overflows and creates a scrollbar, which causes a tabindex of "0", a role
+                    of "region", and an aria-label or aria-labelledby to be applied.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum in neque nec pharetra.
+                    Duis lacinia vel sapien ut imperdiet. Nunc ultrices mollis dictum. Duis tempus, massa nec tincidunt
+                    tempor, enim ex porttitor odio, eu facilisis dolor tortor id sapien. Etiam sit amet molestie lacus.
+                    Nulla facilisi. Duis eget finibus ipsum. Quisque dictum enim sed sodales porta. Curabitur eget orci
+                    eu risus posuere pulvinar id nec turpis. Morbi mattis orci vel posuere tincidunt. Fusce bibendum et
+                    libero a auctor.
+                  </p>
+                  <p>
+                    Proin elementum commodo sodales. Quisque eget libero mattis, ornare augue at, egestas nisi. Mauris
+                    ultrices orci fringilla pretium mattis. Aliquam erat volutpat. Sed pharetra condimentum dui, nec
+                    bibendum ante. Vestibulum sollicitudin, sem accumsan pharetra molestie, purus turpis lacinia lorem,
+                    commodo sodales quam lectus a urna. Nam gravida, felis a lacinia varius, ex ipsum ultrices orci, non
+                    egestas diam velit in mi. Ut sit amet commodo orci. Duis sed diam odio. Duis mi metus, dignissim in
+                    odio nec, ornare aliquet libero. Sed luctus elit nibh. Quisque et felis diam. Integer ac metus
+                    dolor.
+                  </p>
+                </>
+                <>
+                  <p>
+                    The content of this step overflows and creates a scrollbar, which causes a tabindex of "0", a role
+                    of "region", and an aria-label or aria-labelledby to be applied.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum in neque nec pharetra.
+                    Duis lacinia vel sapien ut imperdiet. Nunc ultrices mollis dictum. Duis tempus, massa nec tincidunt
+                    tempor, enim ex porttitor odio, eu facilisis dolor tortor id sapien. Etiam sit amet molestie lacus.
+                    Nulla facilisi. Duis eget finibus ipsum. Quisque dictum enim sed sodales porta. Curabitur eget orci
+                    eu risus posuere pulvinar id nec turpis. Morbi mattis orci vel posuere tincidunt. Fusce bibendum et
+                    libero a auctor.
+                  </p>
+                  <p>
+                    Proin elementum commodo sodales. Quisque eget libero mattis, ornare augue at, egestas nisi. Mauris
+                    ultrices orci fringilla pretium mattis. Aliquam erat volutpat. Sed pharetra condimentum dui, nec
+                    bibendum ante. Vestibulum sollicitudin, sem accumsan pharetra molestie, purus turpis lacinia lorem,
+                    commodo sodales quam lectus a urna. Nam gravida, felis a lacinia varius, ex ipsum ultrices orci, non
+                    egestas diam velit in mi. Ut sit amet commodo orci. Duis sed diam odio. Duis mi metus, dignissim in
+                    odio nec, ornare aliquet libero. Sed luctus elit nibh. Quisque et felis diam. Integer ac metus
+                    dolor.
+                  </p>
+                </>
+              </div>
+            </WizardStep>
+            <WizardStep id="modal-overflow-step-3" body={{ component: 'div' }} name="Div step with overflow">
               <div style={{ height: '200px' }}>
                 <>
                   <p>
@@ -262,3 +366,5 @@ export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>,
     );
   }
 }
+
+export { WizardDemo };
