@@ -30,6 +30,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   footer?: WizardFooterType;
   /** Wizard navigation */
   nav?: WizardNavType;
+  /** Aria-label for the Nav */
+  navAriaLabel?: string;
   /** The initial index the wizard is to start on (1 or higher). Defaults to 1. */
   startIndex?: number;
   /** Additional classes spread to the wizard */
@@ -63,6 +65,7 @@ export const Wizard = ({
   className,
   header,
   nav,
+  navAriaLabel,
   startIndex = 1,
   isVisitRequired = false,
   isProgressive = false,
@@ -176,7 +179,12 @@ export const Wizard = ({
         {...wrapperProps}
       >
         {header}
-        <WizardInternal nav={nav} isVisitRequired={isVisitRequired} isProgressive={isProgressive} />
+        <WizardInternal
+          nav={nav}
+          navAriaLabel={navAriaLabel}
+          isVisitRequired={isVisitRequired}
+          isProgressive={isProgressive}
+        />
       </div>
     </WizardContextProvider>
   );
@@ -184,9 +192,10 @@ export const Wizard = ({
 
 const WizardInternal = ({
   nav,
+  navAriaLabel,
   isVisitRequired,
   isProgressive
-}: Pick<WizardProps, 'nav' | 'isVisitRequired' | 'isProgressive'>) => {
+}: Pick<WizardProps, 'nav' | 'navAriaLabel' | 'isVisitRequired' | 'isProgressive'>) => {
   const { activeStep, steps, footer, goToStepByIndex } = useWizardContext();
   const [isNavExpanded, setIsNavExpanded] = React.useState(false);
 
@@ -198,12 +207,13 @@ const WizardInternal = ({
     return (
       <WizardNavInternal
         nav={nav}
+        navAriaLabel={navAriaLabel}
         isNavExpanded={isNavExpanded}
         isVisitRequired={isVisitRequired}
         isProgressive={isProgressive}
       />
     );
-  }, [activeStep, isVisitRequired, isProgressive, goToStepByIndex, isNavExpanded, nav, steps]);
+  }, [activeStep, isVisitRequired, isProgressive, goToStepByIndex, isNavExpanded, nav, navAriaLabel, steps]);
 
   return (
     <WizardToggle
