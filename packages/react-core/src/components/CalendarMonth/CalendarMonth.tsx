@@ -213,14 +213,8 @@ export const CalendarMonth = ({
 
   const changeYear = (newYear: number) => changeMonth(focusedDate.getMonth(), newYear);
 
-  const changeMonth = (newMonth: number, newYear?: number) => {
-    const year = newYear ?? focusedDate.getFullYear();
-    const daysInNewMonth = new Date(year, (newMonth + 1) % 12, 0).getDate(); // Setting day 0 of the next month returns the last day of current month
-    const desiredDay = initialDate.getDate();
-    const day = desiredDay <= daysInNewMonth ? desiredDay : daysInNewMonth;
-
-    return new Date(year, newMonth, day);
-  };
+  const changeMonth = (newMonth: number, newYear?: number) =>
+    new Date(newYear ?? focusedDate.getFullYear(), newMonth, 1);
 
   const addMonth = (toAdd: -1 | 1) => {
     let newMonth = focusedDate.getMonth() + toAdd;
@@ -332,6 +326,7 @@ export const CalendarMonth = ({
                   setFocusedDate(newDate);
                   setHoveredDate(newDate);
                   setShouldFocus(false);
+                  focusRef.current.blur(); // will unfocus a date when changing year via up/down arrows
                   onMonthChange(ev, newDate);
                 }}
               />
