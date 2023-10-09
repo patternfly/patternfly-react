@@ -255,6 +255,6 @@ test('Utilities are rendered when areUtilitiesDisplayed is set', () => {
   render(
     <SearchInput {...props} areUtilitiesDisplayed resetButtonLabel='test-util-display'/>
   );
-  expect(screen.getByAltText('test-util-display')).toBeInTheDocument();
+  expect(screen.getByLabelText('test-util-display')).toBeVisible();
 });
 
