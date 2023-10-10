@@ -59,7 +59,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
   /** An accessible label for the search input. */
   'aria-label'?: string;
-  /** Flag to indicate utilities should be displayed */
+  /** Flag to indicate utilities should be displayed. By default if this prop is undefined or false, utilities will only be displayed when the search input has a value. */
+
   areUtilitiesDisplayed?: boolean;
   /** Array of attribute values used for dynamically generated advanced search. */
   attributes?: string[] | SearchInputSearchAttribute[];
