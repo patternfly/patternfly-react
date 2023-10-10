@@ -3802,10 +3802,10 @@
     node-addon-api "^3.2.1"
     node-gyp-build "^4.3.0"
 
-"@patternfly/ast-helpers@^1.2.17":
-  version "1.2.17"
-  resolved "https://registry.yarnpkg.com/@patternfly/ast-helpers/-/ast-helpers-1.2.17.tgz#34f9ccd529c8d8bd54ad23e75d07ae437b875d28"
-  integrity sha512-39svBpahHBsnJ2Lb9yQ+YW/q032tbbOxAAq93VQ4A3OPEnhPFD/BdX9GgQk/ZvagXNcQgXeH859JDWmtm65lHg==
+"@patternfly/ast-helpers@^1.2.18":
+  version "1.2.18"
+  resolved "https://registry.yarnpkg.com/@patternfly/ast-helpers/-/ast-helpers-1.2.18.tgz#47dacc488091b286c96fe5baaf21040f05b06ce7"
+  integrity sha512-fmkFDEW5Ysfpyyhvhb9ZRnf//XGlP0LGDCeKf2ap8fbxa02XKfNrzj0+k4L2yQXpeFloGK8TGtNkK4dCnJ8+Sw==
   dependencies:
     acorn "^8.4.1"
     acorn-class-fields "^1.0.0"
@@ -3814,9 +3814,9 @@
     astring "^1.7.5"
 
 "@patternfly/documentation-framework@^5.0.15":
-  version "5.2.17"
-  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-5.2.17.tgz#e9ceea42c376b744e13db85cdca8050a5748e25c"
-  integrity sha512-4LdRmXGuPTLUb0UITi2QRZ6WqMWMzQeGUX0L0kN44LvYzRAZ331EYQOx0j2lMLwwfY08VUszvZ9YSq2QjtbAWg==
+  version "5.2.18"
+  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-5.2.18.tgz#f15f2c6e28aee48475c52c617a6c1827d9127ef9"
+  integrity sha512-zT5JWSqnLqwVFJwKku8cQd9xWMKZWcGMI8NdiVkycvvYFU2Jh+Iv34uiN2+8o43vmN4D+ban2dSJQ4W8+jYvsQ==
   dependencies:
     "@babel/core" "7.18.2"
     "@babel/plugin-proposal-class-properties" "7.17.12"
@@ -3826,7 +3826,7 @@
     "@babel/plugin-transform-react-jsx" "7.17.12"
     "@babel/preset-env" "7.18.2"
     "@mdx-js/util" "1.6.16"
-    "@patternfly/ast-helpers" "^1.2.17"
+    "@patternfly/ast-helpers" "^1.2.18"
     "@reach/router" "npm:@gatsbyjs/reach-router@1.3.9"
     autoprefixer "9.8.6"
     babel-loader "9.1.2"
@@ -4483,9 +4483,9 @@
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
 "@types/react-dom@^18", "@types/react-dom@^18.0.0":
-  version "18.2.11"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.11.tgz#4332c315544698a0875dfdb6e320dda59e1b3d58"
-  integrity sha512-zq6Dy0EiCuF9pWFW6I6k6W2LdpUixLE4P6XjXU1QHLfak3GPACQfLwEuHzY5pOYa4hzj1d0GxX/P141aFjZsyg==
+  version "18.2.12"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.12.tgz#58479c463d1e0b7f1ee7cd80e09186189f9ec32d"
+  integrity sha512-QWZuiA/7J/hPIGocXreCRbx7wyoeet9ooxfbSA+zbIWqyQEE7GMtRn4A37BdYyksnN+/NDnWgfxZH9UVGDw1hg==
   dependencies:
     "@types/react" "*"
 
@@ -4514,9 +4514,9 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^18":
-  version "18.2.26"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.26.tgz#3bc3f33b804cbfd7d0bda6e8a014cb6ee4be74b9"
-  integrity sha512-ZaMtQo/fasHwMSRTED+u4Cjnkl0uuqEFJ2rKF0DQXji1v24DaNdSe9am4ldiDKFD/MpzbyS8UEOceh1/Oiw89g==
+  version "18.2.27"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.27.tgz#746e52b06f3ccd5d7a724fd53769b70792601440"
+  integrity sha512-Wfv7B7FZiR2r3MIqbAlXoY1+tXm4bOqfz4oRr+nyXdBqapDBZ0l/IGcSlAfvxIHEEJjkPU0MYAc/BlFPOcrgLw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
