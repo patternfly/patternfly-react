@@ -6,17 +6,45 @@
     "category": "קטגוריה",
     "subCategory": "קטגוריית משנה"
   },
+  "nav": {
+    "systemPanel": "פאנל מערכת",
+    "policy": "מְדִינִיוּת",
+    "authentication": "אימות",
+    "networkServices": "שירותי רשת",
+    "server": "שרת"
+  },
   "switchBtn": "Switch to English",
   "table": {
-    "thead": {
+    "columns": {
       "servers": "שרתים",
-      "threads": "מעבדים",
-      "applications": "יישומים",
-      "workspaces": "חללי עבודה",
       "status": "סטָטוּס",
       "location": "מקום",
       "modified": "עודכן לאחרונה",
       "url": "כתובת אתר"
+    },
+    "rows": {
+      "node": "נקודת קצה",
+      "status": {
+        "stopped": "עצר",
+        "running": "רץ",
+        "down": "מטה",
+        "needsMaintenance": "זקוק לתחזוקה"
+      },
+      "locations": {
+        "raleigh": "Raleigh",
+        "boston": "Boston",
+        "atlanta": "Atlanta",
+        "sanFrancisco": "San Francisco"
+      },
+      "lastModified": {
+        "oneHr": "לפני שעה",
+        "threeHrs": "לפני 3 שעות",
+        "fiveHrs": "לפני 5 שעות",
+        "sevenMins": "לפני 7 דקות",
+        "fortyTwoMins": "לפני 42 דקות",
+        "twoDays": "לפני יומיים",
+        "oneMonth": "לפני חודש"
+      }
     }
   }
 }
