@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.3...@patternfly/react-core@5.2.0-prerelease.4) (2023-10-10)
+
+### Features
+
+- **Wizard:** Add prop for nav aria label ([#9730](https://github.com/patternfly/patternfly-react/issues/9730)) ([e4fd534](https://github.com/patternfly/patternfly-react/commit/e4fd5345845060dac8dfc9cc1cacaeca5cca3444))
+
 # [5.2.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.2...@patternfly/react-core@5.2.0-prerelease.3) (2023-10-10)
 
 **Note:** Version bump only for package @patternfly/react-core
