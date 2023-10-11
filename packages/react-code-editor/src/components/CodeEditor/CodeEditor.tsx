@@ -527,18 +527,20 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                   headingLevel="h4"
                 />
                 <EmptyStateBody>{emptyStateBody}</EmptyStateBody>
-                <EmptyStateFooter>
-                  <EmptyStateActions>
-                    <Button variant="primary" onClick={open}>
-                      {emptyStateButton}
-                    </Button>
-                  </EmptyStateActions>
-                  <EmptyStateActions>
-                    <Button variant="link" onClick={this.toggleEmptyState}>
-                      {emptyStateLink}
-                    </Button>
-                  </EmptyStateActions>
-                </EmptyStateFooter>
+                {!isReadOnly && (
+                  <EmptyStateFooter>
+                    <EmptyStateActions>
+                      <Button variant="primary" onClick={open}>
+                        {emptyStateButton}
+                      </Button>
+                    </EmptyStateActions>
+                    <EmptyStateActions>
+                      <Button variant="link" onClick={this.toggleEmptyState}>
+                        {emptyStateLink}
+                      </Button>
+                    </EmptyStateActions>
+                  </EmptyStateFooter>
+                )}
               </EmptyState>
             ) : (
               <EmptyState variant={EmptyStateVariant.sm}>
@@ -547,13 +549,15 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                   icon={<EmptyStateIcon icon={CodeIcon} />}
                   headingLevel="h4"
                 />
-                <EmptyStateFooter>
-                  <EmptyStateActions>
-                    <Button variant="primary" onClick={this.toggleEmptyState}>
-                      {emptyStateLink}
-                    </Button>
-                  </EmptyStateActions>
-                </EmptyStateFooter>
+                {!isReadOnly && (
+                  <EmptyStateFooter>
+                    <EmptyStateActions>
+                      <Button variant="primary" onClick={this.toggleEmptyState}>
+                        {emptyStateLink}
+                      </Button>
+                    </EmptyStateActions>
+                  </EmptyStateFooter>
+                )}
               </EmptyState>
             ));
 

@@ -3,7 +3,6 @@ id: Jump links
 section: components
 ---
 
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
 
 ## Demos
@@ -34,7 +33,7 @@ import {
   TextContent,
   getResizeObserver
 } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
 
 ScrollspyH2 = () => {

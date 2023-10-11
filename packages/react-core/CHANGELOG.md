@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.4...@patternfly/react-core@5.2.0-prerelease.5) (2023-10-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.3...@patternfly/react-core@5.2.0-prerelease.4) (2023-10-10)
+
+### Features
+
+- **Wizard:** Add prop for nav aria label ([#9730](https://github.com/patternfly/patternfly-react/issues/9730)) ([e4fd534](https://github.com/patternfly/patternfly-react/commit/e4fd5345845060dac8dfc9cc1cacaeca5cca3444))
+
+# [5.2.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.2...@patternfly/react-core@5.2.0-prerelease.3) (2023-10-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# 5.2.0-prerelease.2 (2023-10-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.0...@patternfly/react-core@5.2.0-prerelease.1) (2023-10-09)
+
+### Bug Fixes
+
+- **BackToTop:** fix null exception on load ([#9665](https://github.com/patternfly/patternfly-react/issues/9665)) ([d02b802](https://github.com/patternfly/patternfly-react/commit/d02b802e6a22fde48b00bca98550cefe6ec88603))
+
+# [5.2.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1...@patternfly/react-core@5.2.0-prerelease.0) (2023-10-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [5.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.23...@patternfly/react-core@5.1.1) (2023-10-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## 5.1.1-prerelease.23 (2023-10-03)
+
+### Bug Fixes
+
+- whitespace changes to trigger prereleases ([#9702](https://github.com/patternfly/patternfly-react/issues/9702)) ([741c248](https://github.com/patternfly/patternfly-react/commit/741c24825b503e116c77cf304aa3e4e3a9ff7841))
+
 ## [5.1.1-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.1.1-prerelease.21...@patternfly/react-core@5.1.1-prerelease.22) (2023-09-25)
 
 ### Bug Fixes

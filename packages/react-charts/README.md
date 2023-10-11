@@ -4,7 +4,7 @@ This package provides PatternFly charting components for [PatternFly][patternfly
 
 ### Prerequisite
 
-#### Node Environment
+#### Node Environment 
 
 This project currently supports Node [Active LTS](https://github.com/nodejs/Release#release-schedule) releases. Please stay current with Node Active LTS when developing patternfly-react.
 
@@ -89,4 +89,4 @@ yarn test packages/react-charts
 ```
 
 [patternfly-4]: https://github.com/patternfly/patternfly
-[docs]: https://patternfly-react.surge.sh/
+[docs]: https://react-staging.patternfly.org/

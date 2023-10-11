@@ -3,7 +3,6 @@ id: Banner
 section: components
 ---
 
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/utilities/Display/display';
 
@@ -25,7 +24,8 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/utilities/Display/display';
 
@@ -91,7 +91,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/utilities/Display/display';
 

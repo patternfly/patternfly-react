@@ -2,7 +2,7 @@
 
 This package provides Table PatternFly components based on [PatternFly][patternfly]
 
-### Prerequisite
+### Prerequisite 
 
 #### Node environment
 
@@ -107,4 +107,4 @@ yarn test packages/react-table
 ```
 
 [patternfly]: https://github.com/patternfly/patternfly
-[docs]: https://patternfly-react-main.surge.sh
+[docs]: https://react-staging.patternfly.org/

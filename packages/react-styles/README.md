@@ -2,7 +2,7 @@
 
 Library that provides CSS-in-JS capabilities 
 
-#### Example
+#### Example 
 
 ```jsx
 import { css } from '@patternfly/react-styles';

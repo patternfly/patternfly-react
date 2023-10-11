@@ -1,30 +1,35 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { CodeBlock } from '../CodeBlock';
-import { CodeBlockAction } from '../CodeBlockAction';
-import { CodeBlockCode } from '../CodeBlockCode';
+import styles from '@patternfly/react-styles/css/components/CodeBlock/code-block';
 
-test('CodeBlock renders successfully', () => {
-  const { asFragment } = render(<CodeBlock>test text</CodeBlock>);
-  expect(asFragment()).toMatchSnapshot();
+test('CodeBlock renders', () => {
+  render(<CodeBlock>test text</CodeBlock>);
+  expect(screen.getByText('test text')).toBeVisible();
 });
 
-test('CodeBlockAction renders successfully', () => {
-  const { asFragment } = render(<CodeBlockAction>action</CodeBlockAction>);
-  expect(asFragment()).toMatchSnapshot();
+test(`CodeBlock content renders with class ${styles.codeBlockContent} by default`, () => {
+  render(<CodeBlock>Test</CodeBlock>);
+
+  expect(screen.getByText('Test')).toHaveClass(styles.codeBlockContent);
 });
 
-test('CodeBlockCode renders successfully', () => {
-  const { asFragment } = render(<CodeBlockCode>action</CodeBlockCode>);
-  expect(asFragment()).toMatchSnapshot();
-});
-
-test('CodeBlock with components renders successfully', () => {
-  const { asFragment } = render(
-    <CodeBlock actions={<CodeBlockAction>button</CodeBlockAction>}>
-      <CodeBlockCode>inside pre/code tags</CodeBlockCode>
-      test outer text
+test('CodeBlock renders with custom class', () => {
+  render(
+    <CodeBlock data-testid="code-block" className="tester">
+      Test
     </CodeBlock>
   );
+
+  expect(screen.getByTestId('code-block')).toHaveClass('tester');
+});
+
+test('Renders when actions are passed to CodeBlock', () => {
+  render(<CodeBlock actions={<div>actions</div>} />);
+  expect(screen.getByText('actions')).toBeVisible();
+});
+
+test('Matches the snapshot', () => {
+  const { asFragment } = render(<CodeBlock actions={<div>actions</div>}>children</CodeBlock>);
   expect(asFragment()).toMatchSnapshot();
 });

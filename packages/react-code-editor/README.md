@@ -2,7 +2,7 @@
 
 This package provides a PatternFly wrapper for the Monaco code editor
 
-### Prerequisite
+### Prerequisite 
 
 #### Node Environment
 

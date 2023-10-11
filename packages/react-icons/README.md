@@ -2,7 +2,7 @@
 
 PatternFly Icons as React Components.
 
-## Usage
+## Usage 
 
 ```jsx
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
@@ -10,7 +10,7 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 const closeIcon = <TimesIcon />;
 ```
 
-For a list of the available icons please refer to the [PatternFly react docs](https://patternfly-react-main.surge.sh/icons/)
+For a list of the available icons please refer to the [PatternFly react docs](https://react-staging.patternfly.org/icons)
 
 ## Styling icons
 

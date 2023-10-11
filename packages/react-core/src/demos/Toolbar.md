@@ -3,7 +3,6 @@ id: Toolbar
 section: components
 ---
 
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
@@ -43,8 +42,6 @@ import {
   DropdownList,
   Divider
 } from '@patternfly/react-core';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
@@ -53,6 +50,7 @@ import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
 class ConsoleLogViewerToolbar extends React.Component {
   constructor(props) {
