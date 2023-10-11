@@ -16,55 +16,55 @@ import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 ### Default nav
 
-```ts file='./examples/Nav/NavDefault.tsx' isFullscreen
+```js file='./examples/Nav/NavDefault.tsx' isFullscreen
 ```
 
 ### Grouped nav
 
-```ts file='./examples/Nav/NavGrouped.tsx' isFullscreen
+```js file='./examples/Nav/NavGrouped.tsx' isFullscreen
 ```
 
 ### Expandable nav
 
-```ts file='./examples/Nav/NavExpandable.tsx' isFullscreen
+```js file='./examples/Nav/NavExpandable.tsx' isFullscreen
 ```
 
 ### Horizontal nav
 
-```ts file='./examples/Nav/NavHorizontal.tsx' isFullscreen
+```js file='./examples/Nav/NavHorizontal.tsx' isFullscreen
 ```
 
 ### Horizontal subnav
 
-```ts file='./examples/Nav/NavWithSubnav.tsx' isFullscreen
+```js file='./examples/Nav/NavWithSubnav.tsx' isFullscreen
 ```
 
 ### Horizontal nav with horizontal subnav
 
-```ts file='./examples/Nav/NavHorizontalWithSubnav.tsx' isFullscreen
+```js file='./examples/Nav/NavHorizontalWithSubnav.tsx' isFullscreen
 ```
 
 ### Tertiary nav (deprecated)
 
-```ts file='./examples/Nav/deprecated/NavTertiary.tsx' isFullscreen
+```js file='./examples/Nav/deprecated/NavTertiary.tsx' isFullscreen
 ```
 
 ### Light nav (deprecated)
 
-```ts file='./examples/Nav/deprecated/NavLight.tsx' isFullscreen
+```js file='./examples/Nav/deprecated/NavLight.tsx' isFullscreen
 ```
 
 ### Manual nav
 
-```ts file='./examples/Nav/NavManual.tsx' isFullscreen
+```js file='./examples/Nav/NavManual.tsx' isFullscreen
 ```
 
 ### Flyout nav
 
-```ts file='./examples/Nav/NavFlyout.tsx' isFullscreen
+```js file='./examples/Nav/NavFlyout.tsx' isFullscreen
 ```
 
 ### Drilldown nav
 
-```ts isBeta isFullscreen file="./examples/Nav/NavDrilldown.tsx"
+```js isBeta isFullscreen file="./examples/Nav/NavDrilldown.tsx"
 ```
