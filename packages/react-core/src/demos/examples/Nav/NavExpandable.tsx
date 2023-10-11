@@ -17,8 +17,8 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import { DashboardBreadcrumb } from '../DashboardWrapper';
-import DashboardHeader from '../DashboardHeader';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardHeader } from '@patternfly/react-core/src/demos/DashboardHeader';
 
 export const NavExpandableDemo: React.FunctionComponent = () => {
   const [activeGroup, setActiveGroup] = React.useState<string | number>('grp-1');

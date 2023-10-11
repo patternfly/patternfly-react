@@ -14,8 +14,8 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import { DashboardBreadcrumb } from '../../DashboardWrapper';
-import DashboardHeader from '../../DashboardHeader';
+import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardHeader } from '@patternfly/react-core/src/demos/DashboardHeader';
 
 export const NavTertiary: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState<string | number>(0);

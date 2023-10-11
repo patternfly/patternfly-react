@@ -27,6 +27,7 @@ function getNavLayer(menuId: string): number {
     case 'subMenu-2':
       return 3;
   }
+  return 1;
 }
 
 const subMenuTwo: JSX.Element = (
