@@ -78,7 +78,7 @@ test('Renders with inherited element props spread to the component', () => {
 test(`Renders with class names pf-m-overflow and ${styles.tabsItem} on the presentation element`, () => {
   render(<OverflowTab />);
 
-  expect(screen.getByRole('presentation')).toHaveClass('pf-m-overflow');
+  expect(screen.getByRole('presentation')).toHaveClass(styles.modifiers.overflow);
   expect(screen.getByRole('presentation')).toHaveClass(styles.tabsItem);
 });
 
@@ -377,7 +377,7 @@ test('Passes Popper an appendTo value of the presentation element', async () => 
   await user.click(screen.getByRole('tab'));
 
   // This assertion relies on the structure of the Popper mock to verify the correct props are being sent to Popper
-  expect(screen.getByText(`Append to class name: ${styles.tabsItem} pf-m-overflow`)).toBeVisible();
+  expect(screen.getByText(`Append to class name: ${styles.tabsItem} ${styles.modifiers.overflow}`)).toBeVisible();
 });
 
 test('Does not render an overflowing tab as a selected menu item by default', async () => {

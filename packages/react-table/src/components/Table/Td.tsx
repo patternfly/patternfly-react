@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
-import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
+import treeViewStyles from '@patternfly/react-styles/css/components/Table/table-tree-view';
 import { BaseCellProps } from './Table';
 import {
   cellActions,
@@ -258,8 +258,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   } = merged;
 
   const treeTableTitleCell =
-    (className && className.includes(stylesTreeView.tableTreeViewTitleCell)) ||
-    (mergedClassName && mergedClassName.includes(stylesTreeView.tableTreeViewTitleCell));
+    (className && className.includes(treeViewStyles.tableTreeViewTitleCell)) ||
+    (mergedClassName && mergedClassName.includes(treeViewStyles.tableTreeViewTitleCell));
 
   React.useEffect(() => {
     setTruncated(

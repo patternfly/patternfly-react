@@ -11,7 +11,7 @@ import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-ico
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import styles from '@patternfly/react-styles/css/components/Form/form';
+import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 ## Examples
 

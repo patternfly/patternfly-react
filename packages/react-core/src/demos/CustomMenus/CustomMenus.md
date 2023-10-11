@@ -24,7 +24,7 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import avatarImg from '../assets/avatarImg.svg';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
-import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
+import text from '@patternfly/react-styles/css/utilities/Text/text';
 
 ## Examples
 

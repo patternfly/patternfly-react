@@ -19,8 +19,8 @@ import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_s
 import global_warning_color_100 from '@patternfly/react-tokens/dist/esm/global_warning_color_100';
 import global_danger_color_100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
 import global_Color_200 from '@patternfly/react-tokens/dist/esm/global_Color_200';
-import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
-import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
+import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
+import text from '@patternfly/react-styles/css/utilities/Text/text';
 import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
 import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
@@ -1288,8 +1288,8 @@ import chart_color_gold_100 from '@patternfly/react-tokens/dist/esm/chart_color_
 import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
-import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
-import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
+import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
+import text from '@patternfly/react-styles/css/utilities/Text/text';
 
 const UtilizationCard3: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -1333,7 +1333,7 @@ const UtilizationCard3: React.FunctionComponent = () => {
         <GalleryItem>
           <Card id="utilization-card-3-card" component="div">
             <CardHeader
-              className={flexStyles.alignItemsFlexStart}
+              className={flex.alignItemsFlexStart}
               actions={{ actions: headerActions, hasNoOffset: true }}
             >
               <CardTitle>
@@ -1348,7 +1348,7 @@ const UtilizationCard3: React.FunctionComponent = () => {
                   <span>System</span>
                 </FlexItem>
                 <Flex>
-                  <ExclamationCircleIcon className={textStyles.dangerColor_100} aria-hidden />
+                  <ExclamationCircleIcon className={text.dangerColor_100} aria-hidden />
                   <a href="#">25 incidents detected</a>
                 </Flex>
                 <FlexItem>
@@ -2573,7 +2573,7 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
-import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
+import text from '@patternfly/react-styles/css/utilities/Text/text';
 
 const TrendCard1: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -2626,7 +2626,7 @@ const TrendCard1: React.FunctionComponent = () => {
                   </CardTitle>
                 </FlexItem>
                 <FlexItem>
-                  <span className={textStyles.color_200}>Workload</span>
+                  <span className={text.color_200}>Workload</span>
                 </FlexItem>
               </Flex>
             </CardHeader>
@@ -2679,7 +2679,7 @@ import {
   FlexItem
 } from '@patternfly/react-core';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
-import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
+import text from '@patternfly/react-styles/css/utilities/Text/text';
 
 <Gallery hasGutter minWidths={{ default: '360px' }}>
   <GalleryItem>
@@ -2696,7 +2696,7 @@ import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
                 </CardTitle>
               </FlexItem>
               <FlexItem>
-                <span className={textStyles.color_200}>Storage capacity</span>
+                <span className={text.color_200}>Storage capacity</span>
               </FlexItem>
             </Flex>
           </FlexItem>
@@ -2764,8 +2764,8 @@ import {
   Divider,
   MenuToggle
 } from '@patternfly/react-core';
-import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
-import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
+import text from '@patternfly/react-styles/css/utilities/Text/text';
+import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
 import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 CardLogViewDemo = () => {
@@ -2817,7 +2817,7 @@ CardLogViewDemo = () => {
       <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: '360px' }}>
         <Card id="card-log-view-example">
           <CardHeader
-            className={flexStyles.alignItemsFlexStart}
+            className={flex.alignItemsFlexStart}
             actions={{ actions: headerActions, hasNoOffset: true }}
           >
             <CardTitle>
@@ -2835,7 +2835,7 @@ CardLogViewDemo = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 11:02 am</time>
+                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 11:02 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -2844,21 +2844,21 @@ CardLogViewDemo = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 11:13 am</time>
+                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 11:13 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Pulling image</DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 10:59 am</time>
+                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 10:59 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Created container</DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 10:45 am</time>
+                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 10:45 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>
@@ -2901,8 +2901,8 @@ import {
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import flexStyles from '@patternfly/react-styles/css/utilities/Flex/flex';
-import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
+import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
+import text from '@patternfly/react-styles/css/utilities/Text/text';
 import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 CardEventViewDemo = () => {
@@ -2950,7 +2950,7 @@ CardEventViewDemo = () => {
       <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: '360px' }}>
         <Card id="card-events-view-example">
           <CardHeader
-            className={flexStyles.alignItemsFlexStart}
+            className={flex.alignItemsFlexStart}
             actions={{ actions: headerActions, hasNoOffset: true }}
           >
             <CardTitle>
@@ -2965,7 +2965,7 @@ CardEventViewDemo = () => {
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <ExclamationCircleIcon className={textStyles.dangerColor_100} aria-hidden="true" />
+                      <ExclamationCircleIcon className={text.dangerColor_100} aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Readiness probe failed</span>
@@ -2977,14 +2977,14 @@ CardEventViewDemo = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 11:02 am</time>
+                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 11:02 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon className={textStyles.successColor_100} aria-hidden="true" />
+                      <CheckCircleIcon className={text.successColor_100} aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Successful assignment</span>
@@ -2995,7 +2995,7 @@ CardEventViewDemo = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 11:13 am</time>
+                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 11:13 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -3011,14 +3011,14 @@ CardEventViewDemo = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 10:59 am</time>
+                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 10:59 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon className={textStyles.successColor_100} aria-hidden="true" />
+                      <CheckCircleIcon className={text.successColor_100} aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Created container</span>
@@ -3027,7 +3027,7 @@ CardEventViewDemo = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${textStyles.color_200} ${textStyles.fontSizeSm}`}>Jun 17, 10:45 am</time>
+                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 10:45 am</time>
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>

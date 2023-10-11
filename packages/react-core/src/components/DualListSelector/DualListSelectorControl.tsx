@@ -41,7 +41,7 @@ export const DualListSelectorControlBase: React.FunctionComponent<DualListSelect
   const privateRef = React.useRef(null);
   const ref = innerRef || privateRef;
   return (
-    <div className={css(`${styles.dualListSelectorControls}-item`, className)} {...props}>
+    <div className={css(styles.dualListSelectorControlsItem, className)} {...props}>
       <Button
         isDisabled={isDisabled}
         aria-disabled={isDisabled}

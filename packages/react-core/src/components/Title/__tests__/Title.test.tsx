@@ -22,9 +22,9 @@ test(`Renders with the ${styles.title}`, () => {
   expect(screen.getByRole('heading')).toHaveClass(styles.title);
 });
 
-test(`Renders with only the class ${styles.title} and the heading level modifier class pf-m-2xl by default`, () => {
+test(`Renders with only the class ${styles.title} and the heading level modifier class ${styles.modifiers['2xl']} by default`, () => {
   render(<Title headingLevel="h1">Test</Title>);
-  expect(screen.getByRole('heading')).toHaveClass(`${styles.title} pf-m-2xl`, { exact: true });
+  expect(screen.getByRole('heading')).toHaveClass(`${styles.title} ${styles.modifiers['2xl']}`, { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {

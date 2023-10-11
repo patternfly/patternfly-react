@@ -1,3 +1,4 @@
+/* eslint-disable patternfly-react/no-anonymous-functions */
 import React from 'react';
 import {
   Alert,
@@ -8,7 +9,7 @@ import {
   InputGroupItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Button/button';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 interface AlertDemoAlert {
   title: string;
@@ -45,7 +46,7 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
       this.setState({ alerts: [...this.state.alerts, ...incomingAlerts] });
     };
     const getUniqueId = () => new Date().getTime();
-    const btnClasses = css(styles.button, styles.modifiers.secondary);
+    const btnClasses = css(buttonStyles.button, buttonStyles.modifiers.secondary);
     this.removeAlert = (key: React.ReactText) => {
       this.setState({ alerts: [...this.state.alerts.filter((el: AlertDemoAlert) => el.key !== key)] });
     };
@@ -90,3 +91,5 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
     );
   }
 }
+
+AlertGroupDemo.displayName = 'AlertGroupDemo';

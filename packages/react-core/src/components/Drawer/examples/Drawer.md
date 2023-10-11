@@ -18,7 +18,6 @@ propComponents:
 section: components
 ---
 
-import styles from '@patternfly/react-styles/css/components/Title/title';
 import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 ## Examples

@@ -5,7 +5,6 @@ propComponents: [Truncate]
 ---
 
 import './TruncateExamples.css';
-import truncateStyles from '@patternfly/react-styles/css/docs/components/Truncate/examples/Truncate';
 
 ## Examples
 
@@ -13,8 +12,8 @@ import truncateStyles from '@patternfly/react-styles/css/docs/components/Truncat
 ```js
 import React from 'react';
 import { Truncate } from '@patternfly/react-core';
-import truncateStyles from '@patternfly/react-styles/css/docs/components/Truncate/examples/Truncate';
-<div className={truncateStyles.truncateExample}>
+
+<div className="truncate-example-resize">
   <Truncate
     content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
   />
@@ -22,12 +21,11 @@ import truncateStyles from '@patternfly/react-styles/css/docs/components/Truncat
 ```
 
 ### Middle
-
 ```js
 import React from 'react';
 import { Truncate } from '@patternfly/react-core';
-import truncateStyles from '@patternfly/react-styles/css/docs/components/Truncate/examples/Truncate';
-<div className={truncateStyles.truncateExample}>
+
+<div className="truncate-example-resize">
   <Truncate
     content={'redhat_logo_black_and_white_reversed_simple_with_fedora_container.zip'}
     trailingNumChars={10}
@@ -40,8 +38,8 @@ import truncateStyles from '@patternfly/react-styles/css/docs/components/Truncat
 ```js
 import React from 'react';
 import { Truncate } from '@patternfly/react-core';
-import truncateStyles from '@patternfly/react-styles/css/docs/components/Truncate/examples/Truncate';
-<div className={truncateStyles.truncateExample}>
+
+<div className="truncate-example-resize">
   <Truncate
     content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
     position={'start'}
@@ -53,8 +51,8 @@ import truncateStyles from '@patternfly/react-styles/css/docs/components/Truncat
 ```js
 import React from 'react';
 import { Truncate } from '@patternfly/react-core';
-import truncateStyles from '@patternfly/react-styles/css/docs/components/Truncate/examples/Truncate';
-<div className={truncateStyles.truncateExample}>
+
+<div className="truncate-example-resize">
   <Truncate
     content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
     tooltipPosition={'bottom'}

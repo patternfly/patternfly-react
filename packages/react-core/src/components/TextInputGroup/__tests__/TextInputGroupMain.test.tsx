@@ -181,7 +181,7 @@ describe('TextInputGroupMain', () => {
     expect(hintInput).toBeInTheDocument();
   });
 
-  it(`renders the hint input with classes ${styles.textInputGroupTextInput} and pf-m-hint`, () => {
+  it(`renders the hint input with classes ${styles.textInputGroupTextInput} and ${styles.modifiers.hint}`, () => {
     // we set the type of the main input to search here so that we can accurately target the hint input
     render(
       <TextInputGroupMain hint="Test" type="search">
@@ -191,7 +191,7 @@ describe('TextInputGroupMain', () => {
 
     const hintInput = screen.getByRole('textbox', { hidden: true });
 
-    expect(hintInput).toHaveClass('pf-m-hint');
+    expect(hintInput).toHaveClass(styles.modifiers.hint);
     expect(hintInput).toHaveClass(styles.textInputGroupTextInput);
   });
 

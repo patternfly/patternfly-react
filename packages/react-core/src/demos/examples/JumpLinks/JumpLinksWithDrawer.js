@@ -20,7 +20,7 @@ import {
   getResizeObserver
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-import styles from '@patternfly/react-styles/css/components/Masthead/masthead';
+import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
 
 export const JumpLinksWithDrawer = () => {
   const headings = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];
@@ -30,7 +30,7 @@ export const JumpLinksWithDrawer = () => {
   const drawerRef = React.useRef();
 
   React.useEffect(() => {
-    const masthead = document.getElementsByClassName(styles.masthead)[0];
+    const masthead = document.getElementsByClassName(mastheadStyles.masthead)[0];
     const drawerToggleSection = document.getElementById('drawer-toggle');
 
     getResizeObserver(
