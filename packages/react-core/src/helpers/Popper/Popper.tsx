@@ -289,7 +289,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         setRefElement(triggerRef());
       }
     }
-  }, [triggerRef]);
+  }, [triggerRef, trigger]);
   React.useEffect(() => {
     // When the popperRef is defined or the popper visibility changes, ensure the popper element is up to date
     if (popperRef) {
