@@ -2,7 +2,7 @@
 id: RTL
 section: patterns
 ---
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+
 import translationsEn from "./examples/translations.en.json";
 import translationsHe from "./examples/translations.he.json";
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
@@ -18,4 +18,5 @@ This demonstrates how the UI adapts to the writing mode of the page.
 ### Table column management
 
 ```js file="./examples/TableColumnManagement.jsx" isFullscreen
+
 ```

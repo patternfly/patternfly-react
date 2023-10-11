@@ -37,65 +37,91 @@ import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 export const ColumnManagementAction = () => {
-  const [t, setT] = React.useState(translationsEn);
+  const [translation, setTranslation] = React.useState(translationsEn);
+  const [page, setPage] = React.useState(1);
+  const [perPage, setPerPage] = React.useState(10);
 
   const columns = [
-    t.table.columns.servers,
-    t.table.columns.status,
-    t.table.columns.location,
-    t.table.columns.modified,
-    t.table.columns.url,
+    translation.table.columns.servers,
+    translation.table.columns.status,
+    translation.table.columns.location,
+    translation.table.columns.modified,
+    translation.table.columns.url
   ];
   const numRows = 25;
   const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-  const tableRows = () => {
+  const createRows = () => {
     const rows = [];
     for (let i = 0; i < numRows; i++) {
-      const num = (i + 1);
-      rowObj = {
-        name: t.table.rows.node + num,
-        status: [t.table.rows.status.stopped, t.table.rows.status.running, t.table.rows.status.down, t.table.rows.status.needsMaintenance][getRandomInteger(0, 3)],
-        location: [t.table.rows.locations.raleigh, t.table.rows.locations.boston, t.table.rows.locations.atlanta, t.table.rows.locations.sanFrancisco][getRandomInteger(0, 3)],
-        lastModified: [t.table.rows.lastModified.oneHr, t.table.rows.lastModified.threeHrs, t.table.rows.lastModified.fiveHrs, t.table.rows.lastModified.sevenMins, t.table.rows.lastModified.fortyTwoMins, t.table.rows.lastModified.twoDays, t.table.rows.lastModified.oneMonth][getRandomInteger(0, 6)],
+      const num = i + 1;
+      const rowObj = {
+        name: translation.table.rows.node + num,
+        status: [
+          translation.table.rows.status.stopped,
+          translation.table.rows.status.running,
+          translation.table.rows.status.down,
+          translation.table.rows.status.needsMaintenance
+        ][getRandomInteger(0, 3)],
+        location: [
+          translation.table.rows.locations.raleigh,
+          translation.table.rows.locations.boston,
+          translation.table.rows.locations.atlanta,
+          translation.table.rows.locations.sanFrancisco
+        ][getRandomInteger(0, 3)],
+        lastModified: [
+          translation.table.rows.lastModified.oneHr,
+          translation.table.rows.lastModified.threeHrs,
+          translation.table.rows.lastModified.fiveHrs,
+          translation.table.rows.lastModified.sevenMins,
+          translation.table.rows.lastModified.fortyTwoMins,
+          translation.table.rows.lastModified.twoDays,
+          translation.table.rows.lastModified.oneMonth
+        ][getRandomInteger(0, 6)],
         url: 'http://www.redhat.com/en/office-locations/node' + num
       };
       rows.push(rowObj);
     }
+
     return rows;
-  }
+  };
 
-  const defaultRows = tableRows();
-  const [managedRows, setManagedRows] = React.useState(defaultRows);
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
-  const [paginatedRows, setPaginatedRows] = React.useState(tableRows());
-  const [isDirRTL, setDirRTL] = React.useState(false);
+  const rows = createRows();
+  const [managedRows, setManagedRows] = React.useState(rows);
+  const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
+  const [isDirRTL, setIsDirRTL] = React.useState(false);
 
-  const switchRTL = () => {
-    setDirRTL((prevState) => !prevState);
-    setManagedRows(tableRows());
+  const switchTranslation = () => {
+    setIsDirRTL((prevIsDirRTL) => !prevIsDirRTL);
+    setTranslation((prevTranslation) => (prevTranslation === translationsEn ? translationsHe : translationsEn));
   };
 
   React.useEffect(() => {
+    const newRows = createRows();
+    setManagedRows(newRows);
+    setPaginatedRows(newRows.slice((page - 1) * perPage, page * perPage));
+  }, [translation]);
+
+  React.useEffect(() => {
     const html = document.querySelector('html');
-    setT(isDirRTL ? translationsHe : translationsEn);
     html.dir = isDirRTL ? 'rtl' : 'ltr';
   }, [isDirRTL]);
 
   // Pagination logic
-  const handleSetPage = (_evt, newPage) => {
+
+  const handleSetPage = (_evt, newPage, _perPage, startIdx, endIdx) => {
+    setPaginatedRows(managedRows.slice(startIdx, endIdx));
     setPage(newPage);
   };
 
-  const handlePerPageSelect = (_evt, newPerPage) => {
+  const handlePerPageSelect = (_evt, newPerPage, _newPage, startIdx, endIdx) => {
+    setPaginatedRows(managedRows.slice(startIdx, endIdx));
     setPerPage(newPerPage);
   };
 
   const renderPagination = (variant, isCompact) => (
     <Pagination
       isCompact={isCompact}
-      itemCount={tableRows().length}
+      itemCount={managedRows.length}
       page={page}
       perPage={perPage}
       onSetPage={handleSetPage}
@@ -119,31 +145,29 @@ export const ColumnManagementAction = () => {
     }
   };
 
-  const navItems = {
-    systemPanel: {
-      url: '#system-panel'
-    },
-    policy: {
-      url: '#policy'
-    },
-    authentication: {
-      url: '#authentication'
-    },
-    networkServices: {
-      url: '#network-services'
-    },
-    server: {
-      url: 'sub-category'
-    }
-  };
-
-  React.useEffect(() => {
-    setPaginatedRows(managedRows.slice((page - 1) * perPage, page * perPage - 1));
-  }, [managedRows, page, perPage]);
+  // Commented out for linting
+  // const navItems = {
+  //   systemPanel: {
+  //     url: '#system-panel'
+  //   },
+  //   policy: {
+  //     url: '#policy'
+  //   },
+  //   authentication: {
+  //     url: '#authentication'
+  //   },
+  //   networkServices: {
+  //     url: '#network-services'
+  //   },
+  //   server: {
+  //     url: 'sub-category'
+  //   }
+  // };
 
   const renderLabel = (labelText) => {
     switch (labelText) {
       case 'Running':
+      case 'רץ':
         return (
           <Label
             color="green"
@@ -153,15 +177,30 @@ export const ColumnManagementAction = () => {
               </Icon>
             }
           >
-            {t.table.rows.status.running}
+            {translation.table.rows.status.running}
           </Label>
         );
       case 'Stopped':
-        return <Label icon={<i className="fas fa-octagon"></i>} color="red">{t.table.rows.status.stopped}</Label>;
+      case 'עצר':
+        return (
+          <Label icon={<i className="fas fa-octagon"></i>} color="red">
+            {translation.table.rows.status.stopped}
+          </Label>
+        );
       case 'Needs maintenance':
-        return <Label icon={<ToolsIcon />} color="blue">{t.table.rows.status.needsMaintenance}</Label>;
+      case 'זקוק לתחזוקה':
+        return (
+          <Label icon={<ToolsIcon />} color="blue">
+            {translation.table.rows.status.needsMaintenance}
+          </Label>
+        );
       case 'Down':
-        return <Label icon={<ClockIcon />} color="orange">{t.table.rows.status.down}</Label>;
+      case 'מטה':
+        return (
+          <Label icon={<ClockIcon />} color="orange">
+            {translation.table.rows.status.down}
+          </Label>
+        );
     }
   };
 
@@ -179,9 +218,9 @@ export const ColumnManagementAction = () => {
                   </Icon>
                 }
                 iconPosition="end"
-                onClick={switchRTL}
+                onClick={switchTranslation}
               >
-                {t.switchBtn}
+                {translation.switchBtn}
               </Button>
               <ToolbarItem></ToolbarItem>
               <Button variant="secondary">Some other action</Button>
@@ -204,19 +243,19 @@ export const ColumnManagementAction = () => {
     <Nav>
       <NavList>
         <NavItem itemId={0} isActive to="#system-panel">
-          {t.nav.systemPanel}
+          {translation.nav.systemPanel}
         </NavItem>
         <NavItem itemId={1} to="#policy">
-          {t.nav.policy}
+          {translation.nav.policy}
         </NavItem>
         <NavItem itemId={2} to="#auth">
-          {t.nav.authentication}
+          {translation.nav.authentication}
         </NavItem>
         <NavItem itemId={3} to="#network">
-          {t.nav.networkServices}
+          {translation.nav.networkServices}
         </NavItem>
         <NavItem itemId={4} to="#server">
-          {t.nav.server}
+          {translation.nav.server}
         </NavItem>
       </NavList>
     </Nav>
@@ -235,7 +274,7 @@ export const ColumnManagementAction = () => {
           <Breadcrumb>
             {Object.keys(breadcrumbItems).map((key, idx, arr) => (
               <BreadcrumbItem key={idx} isActive={arr.length - 1 === idx} to={`${breadcrumbItems[key].url}`}>
-                {t.breadcrumbs[key]}
+                {translation.breadcrumbs[key]}
                 {breadcrumbItems.length}
               </BreadcrumbItem>
             ))}
@@ -243,8 +282,8 @@ export const ColumnManagementAction = () => {
         </PageBreadcrumb>
         <PageSection variant="light">
           <TextContent>
-            <Text component={TextVariants.h1}>{t.title}</Text>
-            <Text component={TextVariants.p}>{t.body}</Text>
+            <Text component={TextVariants.h1}>{translation.title}</Text>
+            <Text component={TextVariants.p}>{translation.body}</Text>
           </TextContent>
         </PageSection>
         <PageSection>
@@ -268,7 +307,7 @@ export const ColumnManagementAction = () => {
                             <Td key={key} width={15} dataLabel="Status">
                               {renderLabel(value)}
                             </Td>
-                          )
+                          );
                         } else if (key === 'url') {
                           return (
                             <Td key={key} dataLabel="URL" modifier="truncate">
@@ -276,16 +315,13 @@ export const ColumnManagementAction = () => {
                                 <a href="#">{row.url}</a>
                               </TableText>
                             </Td>
-                          )
+                          );
                         } else {
                           return (
-                            <Td
-                              key={key}
-                              dataLabel={key === 'lastModified' ? 'Last modified' : capitalize(key)}
-                            >
+                            <Td key={key} dataLabel={key === 'lastModified' ? 'Last modified' : capitalize(key)}>
                               {value}
                             </Td>
-                          )
+                          );
                         }
                       })}
                     </>
