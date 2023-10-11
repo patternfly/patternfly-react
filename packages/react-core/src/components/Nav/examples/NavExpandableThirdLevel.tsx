@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Label, Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
 
 export const NavExpandableThirdLevel: React.FunctionComponent = () => {
   const [activeGroup, setActiveGroup] = React.useState('nav-expand3rd-group-1');
@@ -62,12 +62,7 @@ export const NavExpandableThirdLevel: React.FunctionComponent = () => {
           </NavItem>
         </NavExpandable>
         <NavExpandable
-          title={
-            <Flex spaceItems={{ default: 'spaceItemsSm' }} alignItems={{ default: 'alignItemsCenter' }}>
-              <span>Expandable section title 2</span>
-              <Label isCompact color="blue">New</Label>
-            </Flex>
-          }
+          title={'Expandable section title 2'}
           groupId="nav-expand3rd-group-2"
           isActive={activeGroup === 'nav-expand3rd-group-2'}
           isExpanded

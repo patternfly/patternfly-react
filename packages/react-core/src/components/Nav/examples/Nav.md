@@ -7,6 +7,9 @@ ouia: true
 ---
 
 import './nav.css';
+import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
+import  UserIcon  from '@patternfly/react-icons/dist/esm/icons/user-icon';
+
 
 ## Examples
 
@@ -65,6 +68,12 @@ A flyout should be a `Menu` component. Press `space` or `right arrow` to open a 
 ### Drilldown
 
 ```ts isBeta file="./NavDrilldown.tsx"
+
+```
+
+### Link text
+
+```ts file="./NavExpandableLinkText.tsx"
 
 ```
 

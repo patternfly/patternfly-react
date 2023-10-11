@@ -126,14 +126,14 @@ class NavExpandable extends React.Component<NavExpandableProps, NavExpandableSta
             <PageSidebarContext.Consumer>
               {({ isSidebarOpen }) => (
                 <button
-                  className={styles.navLink}
+                  className={css(styles.navLink)}
                   id={srText ? null : this.id}
                   onClick={(event) => this.onExpand(event, context.onToggle)}
                   aria-expanded={expandedState}
                   tabIndex={isSidebarOpen ? null : -1}
                   {...buttonProps}
                 >
-                  {title}
+                  {typeof title !== 'string' ? <span className={css(`${styles.nav}__link-text`)}>{title}</span> : title}
                   <span className={css(styles.navToggle)}>
                     <span className={css(styles.navToggleIcon)}>
                       <AngleRightIcon aria-hidden="true" />
