@@ -188,7 +188,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         {...(hasFlyout && { ...ariaFlyoutProps })}
         {...props}
       >
-        {typeof children !== 'string' ? <span className={css(`${styles.nav}__link-text`)}>{children}</span> : children}
+        {children}
         {flyout && flyoutButton}
       </Component>
     );
