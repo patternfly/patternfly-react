@@ -73,7 +73,7 @@ A flyout should be a `Menu` component. Press `space` or `right arrow` to open a 
 
 ### Link text
 
-```ts file="./NavLinkText.tsx"
+```ts isBeta file="./NavLinkText.tsx"
 
 ```
 

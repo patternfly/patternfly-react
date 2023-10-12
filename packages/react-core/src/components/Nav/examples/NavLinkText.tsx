@@ -32,6 +32,7 @@ export const NavLinkText: React.FunctionComponent = () => {
           to="#link-text-link-1"
           itemId="link-text-1-item-1"
           isActive={activeItem === 'link-text-1-item-1'}
+          hasNavLinkWrapper
         >
           Link 1
           <ArrowRightIcon />
