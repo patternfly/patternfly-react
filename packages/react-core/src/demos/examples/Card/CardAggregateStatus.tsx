@@ -214,7 +214,7 @@ export const CardAggregateStatus: React.FunctionComponent = () => {
   return (
     <Grid hasGutter>
       {Object.keys(cardData).map((cardGroup, groupIndex) => {
-        let galleryWidth: string;
+        let galleryWidth: string = '';
         let cardAlign: string;
         let titleAlign: string;
         if (cardGroup === 'withSubtitle') {
@@ -226,7 +226,10 @@ export const CardAggregateStatus: React.FunctionComponent = () => {
         }
         return (
           <GridItem key={groupIndex}>
-            <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: galleryWidth } as any}>
+            <Gallery
+              hasGutter
+              style={{ [l_gallery_GridTemplateColumns_min.name]: galleryWidth } as React.CSSProperties}
+            >
               {cardData[cardGroup].map(({ title, content, layout }, cardIndex: number) => (
                 <Card
                   style={{ textAlign: cardAlign } as React.CSSProperties}

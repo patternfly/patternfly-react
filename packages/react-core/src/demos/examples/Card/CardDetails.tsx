@@ -16,7 +16,7 @@ import {
 import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 export const CardDetailsDemo: React.FunctionComponent = () => (
-  <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: '260px' }}>
+  <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: '260px' } as React.CSSProperties}>
     <Card>
       <CardTitle>
         <Title headingLevel="h4" size="xl">

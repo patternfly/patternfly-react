@@ -61,7 +61,7 @@ export const CardEventsView: React.FunctionComponent = () => {
       <code>baseline</code> alignment.
       <br />
       <br />
-      <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: '360px' }}>
+      <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: '360px' } as React.CSSProperties}>
         <Card id="card-events-view-example">
           <CardHeader className={flex.alignItemsFlexStart} actions={{ actions: headerActions, hasNoOffset: true }}>
             <CardTitle>
