@@ -17,6 +17,7 @@ import {
   FlexItem
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
 
 export const NestedTabs: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
@@ -108,7 +109,7 @@ export const NestedTabs: React.FunctionComponent = () => {
         </Card>
       </GridItem>
       <GridItem xl={4} md={6}>
-        <Flex direction={{ default: 'column' }} className="pf-v5-u-h-100">
+        <Flex direction={{ default: 'column' }} className={sizing.h_100}>
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>

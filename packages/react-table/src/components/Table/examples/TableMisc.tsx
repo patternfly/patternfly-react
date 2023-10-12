@@ -1,5 +1,7 @@
 import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+/* eslint-disable camelcase */
+import global_BackgroundColor_150 from '@patternfly/react-tokens/dist/esm/global_BackgroundColor_150';
 
 interface Repository {
   name: string;
@@ -65,7 +67,7 @@ export const TableMisc: React.FunctionComponent = () => {
         {repositories.map((repo, rowIndex) => {
           const isOddRow = (rowIndex + 1) % 2;
           const customStyle = {
-            backgroundColor: 'var(--pf-v5-global--BackgroundColor--150)'
+            backgroundColor: global_BackgroundColor_150.var
           };
           // Some arbitrary logic to demonstrate that cell styles can be based on anything
           const nameColSpan = repo.branches === null && repo.prs === null ? 3 : 1;

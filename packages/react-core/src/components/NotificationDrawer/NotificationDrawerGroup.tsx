@@ -111,7 +111,7 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
             <Badge isRead={isRead}>{count}</Badge>
           </div>
 
-          <span className="pf-v5-c-notification-drawer__group-toggle-icon">
+          <span className={styles.notificationDrawerGroupToggleIcon}>
             <AngleRightIcon />
           </span>
         </button>

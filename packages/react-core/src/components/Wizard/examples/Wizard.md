@@ -49,6 +49,8 @@ WizardHeader
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
+import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 
 ## Examples
 

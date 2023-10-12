@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 
 import { Accordion } from '../Accordion';
 import { AccordionContext } from '../AccordionContext';
+import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 
 test('Renders without children', () => {
   render(<Accordion data-testid="accordion" />);
@@ -34,10 +35,10 @@ test('Renders with inherited element props spread to the component', () => {
   expect(screen.getByText('Test')).toHaveAccessibleName('Label');
 });
 
-test('Renders with class name pf-v5-c-accordion', () => {
+test(`Renders with class name ${styles.accordion}`, () => {
   render(<Accordion>Test</Accordion>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-accordion');
+  expect(screen.getByText('Test')).toHaveClass(styles.accordion);
 });
 
 test('Renders with custom class names provided via prop', () => {

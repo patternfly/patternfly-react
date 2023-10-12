@@ -1,5 +1,6 @@
 import React from 'react';
 import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 interface AlertInfo {
   title: string;
@@ -10,7 +11,7 @@ interface AlertInfo {
 export const DynamicLiveRegionAlert: React.FunctionComponent = () => {
   const [alerts, setAlerts] = React.useState<AlertInfo[]>([]);
   const getUniqueId: () => number = () => new Date().getTime();
-  const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');
+  const btnClasses = [buttonStyles.button, buttonStyles.modifiers.secondary].join(' ');
 
   const addAlert = (alertInfo: AlertInfo) => {
     setAlerts((prevAlertInfo) => [...prevAlertInfo, alertInfo]);

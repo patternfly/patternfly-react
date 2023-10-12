@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 import { Spinner } from '../Spinner';
+import cssIconColor from '@patternfly/react-tokens/dist/esm/c_empty_state__icon_Color';
 
 export interface IconProps extends Omit<React.HTMLProps<SVGElement>, 'size'> {
   /** Changes the color of the icon.  */
@@ -27,8 +28,7 @@ export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
   return (
     <div
       className={css(styles.emptyStateIcon)}
-      {...(color &&
-        !iconIsSpinner && { style: { ['--pf-v5-c-empty-state__icon--Color']: color } as React.CSSProperties })}
+      {...(color && !iconIsSpinner && { style: { [cssIconColor.name]: color } as React.CSSProperties })}
     >
       <IconComponent className={className} aria-hidden={!iconIsSpinner} {...props} />
     </div>

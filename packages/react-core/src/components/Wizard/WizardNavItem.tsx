@@ -7,6 +7,8 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclam
 
 import { OUIAProps, useOUIAProps } from '../../helpers';
 import { WizardNavItemStatus } from './types';
+import globalSpacerSm from '@patternfly/react-tokens/dist/esm/global_spacer_sm';
+import globalDangerColor100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
 
 export interface WizardNavItemProps extends OUIAProps {
   /** Can nest a WizardNav component for substeps */
@@ -125,8 +127,8 @@ export const WizardNavItem = ({
             {content}
             {/* TODO, patternfly/patternfly#5142 */}
             {status === WizardNavItemStatus.Error && (
-              <span style={{ marginLeft: 'var(--pf-v5-global--spacer--sm)' }}>
-                <ExclamationCircleIcon color="var(--pf-v5-global--danger-color--100)" />
+              <span style={{ marginLeft: globalSpacerSm.var }}>
+                <ExclamationCircleIcon color={globalDangerColor100.var} />
               </span>
             )}
           </>

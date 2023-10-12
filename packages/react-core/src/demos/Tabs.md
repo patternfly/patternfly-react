@@ -11,6 +11,7 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 ## Demos
 
@@ -41,7 +42,9 @@ import {
 } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+
 
 TabsOpenDemo = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
@@ -66,7 +69,7 @@ TabsOpenDemo = () => {
   const tabContent = (
     <Flex direction={{ default: 'column' }}>
       <FlexItem spacer={{ default: 'spacerLg' }}>
-        <Title headingLevel="h2" size="lg" className="pf-v5-u-mt-sm" id="open-tabs-example-tabs-list-details-title">
+        <Title headingLevel="h2" size="lg" className={spacing.mtSm} id="open-tabs-example-tabs-list-details-title">
           Pod details
         </Title>
       </FlexItem>
@@ -231,6 +234,7 @@ import {
 } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
 TabsOpenWithSecondaryTabsDemo = () => {
@@ -262,7 +266,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
   const tabContent = (
     <Flex direction={{ default: 'column' }}>
       <FlexItem spacer={{ default: 'spacerLg' }}>
-        <Title headingLevel="h2" size="lg" className="pf-v5-u-mt-sm" id="open-tabs-example-tabs-list-details-title">
+        <Title headingLevel="h2" size="lg" className={spacing.mtSm} id="open-tabs-example-tabs-list-details-title">
           Pod details
         </Title>
       </FlexItem>

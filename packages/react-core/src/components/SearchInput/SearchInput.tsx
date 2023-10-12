@@ -13,6 +13,7 @@ import { AdvancedSearchMenu } from './AdvancedSearchMenu';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import { Popper } from '../../helpers';
+import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 
 /** Properties for adding search attributes to an advanced search input. These properties must
  * be passed in as an object within an array to the search input component's attribute properrty.
@@ -298,7 +299,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         <TextInputGroupUtilities>
           {resultsCount && <Badge isRead>{resultsCount}</Badge>}
           {!!onNextClick && !!onPreviousClick && (
-            <div className="pf-v5-c-text-input-group__group">
+            <div className={textInputGroupStyles.textInputGroupGroup}>
               <Button
                 variant={ButtonVariant.plain}
                 aria-label={previousNavigationButtonAriaLabel}

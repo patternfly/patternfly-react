@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Avatar } from '../Avatar';
+import styles from '@patternfly/react-styles/css/components/Avatar/avatar';
 
 test('Renders simple avatar', () => {
   render(
@@ -13,7 +14,7 @@ test('Renders simple avatar', () => {
 
 test('Renders without any modifier class when border and size props are not passed', () => {
   render(<Avatar alt="avatar" />);
-  expect(screen.getByRole('img')).toHaveClass('pf-v5-c-avatar', { exact: true });
+  expect(screen.getByRole('img')).toHaveClass(styles.avatar, { exact: true });
 });
 
 test('Renders with class name pf-m-light when "light" is passed as border prop', () => {

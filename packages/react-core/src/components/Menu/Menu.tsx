@@ -1,5 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
+import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
+import dropdownStyles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import { MenuContext } from './MenuContext';
@@ -177,7 +179,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
 
     if (
       (event.target as HTMLElement).closest(`.${styles.menu}`) !== this.activeMenu &&
-      !(event.target as HTMLElement).classList.contains('pf-v5-c-breadcrumb__link')
+      !(event.target as HTMLElement).classList.contains(breadcrumbStyles.breadcrumbLink)
     ) {
       this.activeMenu = (event.target as HTMLElement).closest(`.${styles.menu}`);
       this.setState({ disableHover: true });
@@ -190,8 +192,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     const parentMenu = this.activeMenu;
     const key = event.key;
     const isFromBreadcrumb =
-      activeElement.classList.contains('pf-v5-c-breadcrumb__link') ||
-      activeElement.classList.contains('pf-v5-c-dropdown__toggle');
+      activeElement.classList.contains(breadcrumbStyles.breadcrumbLink) ||
+      activeElement.classList.contains(dropdownStyles.dropdownToggle);
 
     if (key === ' ' || key === 'Enter') {
       event.preventDefault();
@@ -308,8 +310,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             }
             noHorizontalArrowHandling={
               document.activeElement &&
-              (document.activeElement.classList.contains('pf-v5-c-breadcrumb__link') ||
-                document.activeElement.classList.contains('pf-v5-c-dropdown__toggle'))
+              (document.activeElement.classList.contains(breadcrumbStyles.breadcrumbLink) ||
+                document.activeElement.classList.contains(dropdownStyles.dropdownToggle))
             }
             noEnterHandling
             noSpaceHandling

@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Checkbox } from '../Checkbox';
+import styles from '@patternfly/react-styles/css/components/Check/check';
 
 describe('Checkbox', () => {
   test('controlled', () => {
@@ -90,6 +91,6 @@ describe('Checkbox', () => {
       <Checkbox component="span" label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />
     );
     const span = container.querySelector('span');
-    expect(span).toHaveClass('pf-v5-c-check');
+    expect(span).toHaveClass(styles.check);
   });
 });

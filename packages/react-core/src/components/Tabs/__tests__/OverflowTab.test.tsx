@@ -4,6 +4,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import { OverflowTab } from '../OverflowTab';
 import { TabsContext } from '../TabsContext';
+import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 
 jest.mock('../../../helpers', () => ({
   Popper: ({ trigger, popper, isVisible, appendTo }) => (
@@ -74,23 +75,23 @@ test('Renders with inherited element props spread to the component', () => {
   expect(screen.getByRole('presentation')).toHaveAccessibleName('Label');
 });
 
-test('Renders with class names pf-m-overflow and pf-v5-c-tabs__item on the presentation element', () => {
+test(`Renders with class names pf-m-overflow and ${styles.tabsItem} on the presentation element`, () => {
   render(<OverflowTab />);
 
-  expect(screen.getByRole('presentation')).toHaveClass('pf-m-overflow');
-  expect(screen.getByRole('presentation')).toHaveClass('pf-v5-c-tabs__item');
+  expect(screen.getByRole('presentation')).toHaveClass(styles.modifiers.overflow);
+  expect(screen.getByRole('presentation')).toHaveClass(styles.tabsItem);
 });
 
-test('Renders with class pf-v5-c-tabs__link on the tab element', () => {
+test(`Renders with class ${styles.tabsLink} on the tab element`, () => {
   render(<OverflowTab />);
 
-  expect(screen.getByRole('tab')).toHaveClass('pf-v5-c-tabs__link');
+  expect(screen.getByRole('tab')).toHaveClass(styles.tabsLink);
 });
 
-test("Renders with class pf-v5-c-tabs__link-toggle-icon on the img element's container", () => {
+test(`Renders with class ${styles.tabsLinkToggleIcon} on the img element's container`, () => {
   render(<OverflowTab />);
 
-  expect(screen.getByRole('img', { hidden: true }).parentElement).toHaveClass('pf-v5-c-tabs__link-toggle-icon');
+  expect(screen.getByRole('img', { hidden: true }).parentElement).toHaveClass(styles.tabsLinkToggleIcon);
 });
 
 test('Renders with custom class names provided via prop', () => {
@@ -376,7 +377,7 @@ test('Passes Popper an appendTo value of the presentation element', async () => 
   await user.click(screen.getByRole('tab'));
 
   // This assertion relies on the structure of the Popper mock to verify the correct props are being sent to Popper
-  expect(screen.getByText('Append to class name: pf-v5-c-tabs__item pf-m-overflow')).toBeVisible();
+  expect(screen.getByText(`Append to class name: ${styles.tabsItem} ${styles.modifiers.overflow}`)).toBeVisible();
 });
 
 test('Does not render an overflowing tab as a selected menu item by default', async () => {
