@@ -18,5 +18,5 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 This is an example of toolbar usage in log viewer.
 
-```ts file="./examples/Toolbar/ConsoleLogViewerToolbar.tsx" isFullscreen
+```js file="./examples/Toolbar/ConsoleLogViewerToolbar.tsx" isFullscreen
 ```
