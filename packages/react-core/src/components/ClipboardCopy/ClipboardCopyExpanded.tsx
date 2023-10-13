@@ -6,7 +6,6 @@ import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ClipboardCopyExpandedProps extends Omit<ClipboardCopyProps, 'onChange'> {
   className?: string;
-  children: React.ReactNode;
   onChange?: (e: React.FormEvent<HTMLDivElement>, text: string) => void;
   isReadOnly?: boolean;
   isCode?: boolean;

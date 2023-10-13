@@ -26,7 +26,7 @@ export interface ClipboardCopyState {
   copied: boolean;
 }
 
-export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'>, OUIAProps {
+export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'children'>, OUIAProps {
   /** Additional classes added to the clipboard copy container. */
   className?: string;
   /** Tooltip message to display when hover the copy button */
@@ -268,7 +268,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                     id={`content-${id}`}
                     onChange={this.updateText}
                   >
-                    {this.state.text}
+                    {this.state.text as string}
                   </ClipboardCopyExpanded>
                 )}
               </React.Fragment>
