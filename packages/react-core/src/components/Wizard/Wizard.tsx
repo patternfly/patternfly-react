@@ -11,7 +11,7 @@ import {
   WizardNavType,
   WizardStepChangeScope
 } from './types';
-import { buildSteps } from './utils';
+import { buildSteps, isStepEnabled } from './utils';
 import { useWizardContext, WizardContextProvider } from './WizardContext';
 import { WizardToggle } from './WizardToggle';
 import { WizardNavInternal } from './WizardNavInternal';
@@ -23,7 +23,7 @@ import { WizardNavInternal } from './WizardNavInternal';
 
 export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** Step components */
-  children: React.ReactNode | React.ReactNode[];
+  children: React.ReactNode;
   /** Wizard header */
   header?: React.ReactNode;
   /** Wizard footer */
@@ -86,35 +86,23 @@ export const Wizard = ({
   }, [startIndex]);
 
   const goToNextStep = (event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
-    const newStep = steps.find(
-      (step) => step.index > activeStepIndex && !step.isHidden && !step.isDisabled && !isWizardParentStep(step)
-    );
+    const newStep = steps.find((step) => step.index > activeStepIndex && isStepEnabled(steps, step));
 
     if (activeStepIndex >= steps.length || !newStep?.index) {
       return onSave ? onSave(event) : onClose?.(event);
     }
 
-    const currStep = isWizardParentStep(steps[activeStepIndex]) ? steps[activeStepIndex + 1] : steps[activeStepIndex];
-    const prevStep = steps[activeStepIndex - 1];
-
     setActiveStepIndex(newStep?.index);
-    onStepChange?.(event, currStep, prevStep, WizardStepChangeScope.Next);
+    onStepChange?.(event, newStep, steps[activeStepIndex - 1], WizardStepChangeScope.Next);
   };
 
   const goToPrevStep = (event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
     const newStep = [...steps]
       .reverse()
-      .find(
-        (step: WizardStepType) =>
-          step.index < activeStepIndex && !step.isHidden && !step.isDisabled && !isWizardParentStep(step)
-      );
-    const currStep = isWizardParentStep(steps[activeStepIndex - 2])
-      ? steps[activeStepIndex - 3]
-      : steps[activeStepIndex - 2];
-    const prevStep = steps[activeStepIndex - 1];
+      .find((step: WizardStepType) => step.index < activeStepIndex && isStepEnabled(steps, step));
 
     setActiveStepIndex(newStep?.index);
-    onStepChange?.(event, currStep, prevStep, WizardStepChangeScope.Back);
+    onStepChange?.(event, newStep, steps[activeStepIndex - 1], WizardStepChangeScope.Back);
   };
 
   const goToStepByIndex = (
