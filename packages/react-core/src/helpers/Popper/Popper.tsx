@@ -458,7 +458,9 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
    * TODO: Investigate into 3rd party libraries for a less limited/specific solution
    */
   React.useEffect(() => {
-    const currentPopperContent = popper?.props?.children[1]?.props?.children;
+    // currentPopperContent = {tooltip children} || {dropdown children}
+    const currentPopperContent =
+      popper?.props?.children[1]?.props?.children || popper?.props?.children?.props?.children;
     setPopperContent(currentPopperContent);
 
     if (currentPopperContent && popperContent && currentPopperContent !== popperContent) {
