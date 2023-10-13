@@ -24,7 +24,9 @@ import styles from '@patternfly/react-styles/css/components/Chip/chip';
       </Chip>
     );
 
-    expect(screen.getByTestId('container')).toHaveClass(styles.chip);
+    // Only a non-overflow chip will have exactly the class "pf-v5-c-chip", we test for
+    // additional classes on overflow chips elsewhere in the suite
+    expect(screen.getByTestId('container')).toHaveClass(styles.chip, { exact: !isOverflowChip });
   });
 
   test(`Renders with class ${styles.chipContent} around the ${chipType} content`, () => {
@@ -34,13 +36,13 @@ import styles from '@patternfly/react-styles/css/components/Chip/chip';
       </Chip>
     );
 
-    expect(screen.getByTestId('container').firstChild).toHaveClass(styles.chipContent);
+    expect(screen.getByTestId('container').firstChild).toHaveClass(styles.chipContent, { exact: true });
   });
 
   test(`Renders ${chipType} children with class ${styles.chipText}`, () => {
     render(<Chip isOverflowChip={isOverflowChip}>Chip text</Chip>);
 
-    expect(screen.getByText('Chip text')).toHaveClass(styles.chipText);
+    expect(screen.getByText('Chip text')).toHaveClass(styles.chipText, { exact: true });
   });
 
   test(`Renders with custom class on the ${chipType} container element`, () => {
@@ -75,12 +77,12 @@ import styles from '@patternfly/react-styles/css/components/Chip/chip';
 
   test(`Renders with custom container on ${chipType} when component prop is passed`, () => {
     render(
-      <Chip component="button" isOverflowChip={isOverflowChip} data-testid="container">
+      <Chip component="li" isOverflowChip={isOverflowChip}>
         Chip text
       </Chip>
     );
 
-    expect(screen.getByTestId('container').tagName).toBe('BUTTON');
+    expect(screen.getByRole('listitem')).toBeVisible();
   });
 
   test(`Renders maxWidth css var in style attribute when textMaxWidth is passed for ${chipType}`, () => {
@@ -129,16 +131,13 @@ test(`Renders actions container with class ${styles.chipActions} when isReadOnly
 test(`Renders aria-labelledby on action close button by default`, () => {
   render(<Chip>Chip text</Chip>);
 
-  expect(screen.getByRole('button')).toHaveAttribute(
-    'aria-labelledby',
-    expect.stringMatching(/remove_pf-random-id-\d+ pf-random-id-\d+/)
-  );
+  expect(screen.getByRole('button')).toHaveAccessibleName('close Chip text');
 });
 
 test(`Renders aria-labelledby on action close button with custom id passed`, () => {
   render(<Chip id="custom-id">Chip text</Chip>);
 
-  expect(screen.getByRole('button')).toHaveAttribute('aria-labelledby', 'remove_custom-id custom-id');
+  expect(screen.getByRole('button')).toHaveAccessibleName('close Chip text');
 });
 
 test(`Renders concatenated aria-label on action close button by default`, () => {
@@ -182,26 +181,6 @@ test(`Renders with class ${styles.modifiers.overflow} when isOverflowChip is tru
   expect(screen.getByTestId('container')).toHaveClass(styles.modifiers.overflow);
 });
 
-test(`Does not render with type attribute when isOverflowChip is true and component is not button`, () => {
-  render(
-    <Chip component="span" isOverflowChip data-testid="container">
-      Chip text
-    </Chip>
-  );
-
-  expect(screen.getByTestId('container')).not.toHaveAttribute('type');
-});
-
-test(`Renders with type attribute when isOverflowChip is true and component is button`, () => {
-  render(
-    <Chip component="button" isOverflowChip data-testid="container">
-      Chip text
-    </Chip>
-  );
-
-  expect(screen.getByTestId('container')).toHaveAttribute('type', 'button');
-});
-
 test(`Calls onClick when close button action is clicked for default chip`, async () => {
   const user = userEvent.setup();
   const onClickMock = jest.fn();
@@ -211,6 +190,22 @@ test(`Calls onClick when close button action is clicked for default chip`, async
   await user.click(screen.getByRole('button', { name: 'close Chip text' }));
 
   expect(onClickMock).toHaveBeenCalledTimes(1);
+});
+
+test(`Does not call onClick when close button action is not clicked for default chip`, async () => {
+  const user = userEvent.setup();
+  const onClickMock = jest.fn();
+
+  render(
+    <>
+      <Chip onClick={onClickMock}>Chip text</Chip>
+      <button>Test clicker</button>
+    </>
+  );
+
+  await user.click(screen.getByRole('button', { name: 'Test clicker' }));
+
+  expect(onClickMock).not.toHaveBeenCalledTimes(1);
 });
 
 test(`Calls onClick when chip is clicked for overflow chip`, async () => {
@@ -228,7 +223,25 @@ test(`Calls onClick when chip is clicked for overflow chip`, async () => {
   expect(onClickMock).toHaveBeenCalledTimes(1);
 });
 
+test(`Does not call onClick when chip is not clicked for overflow chip`, async () => {
+  const user = userEvent.setup();
+  const onClickMock = jest.fn();
+
+  render(
+    <>
+      <Chip isOverflowChip component="button" onClick={onClickMock}>
+        Chip text
+      </Chip>
+      <button>Test clicker</button>
+    </>
+  );
+
+  await user.click(screen.getByRole('button', { name: 'Test clicker' }));
+
+  expect(onClickMock).not.toHaveBeenCalledTimes(1);
+});
+
 test('Matches snapshot', () => {
-  const { asFragment } = render(<Chip>Chip text</Chip>);
+  const { asFragment } = render(<Chip id="snapshot-test">Chip text</Chip>);
   expect(asFragment()).toMatchSnapshot();
 });
