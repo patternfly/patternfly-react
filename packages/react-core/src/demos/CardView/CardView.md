@@ -16,7 +16,7 @@ import swaggerIcon from '../assets/camel-swagger-java_200x150.png';
 import azureIcon from '../assets/FuseConnector_Icons_AzureServices.png';
 import restIcon from '../assets/FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { data } from '@patternfly/react-core/src/demos/Card/examples/CardData.jsx';
+import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
 
 ## Demos
 
