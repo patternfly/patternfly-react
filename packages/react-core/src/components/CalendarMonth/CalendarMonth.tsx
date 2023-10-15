@@ -326,7 +326,7 @@ export const CalendarMonth = ({
                   setFocusedDate(newDate);
                   setHoveredDate(newDate);
                   setShouldFocus(false);
-                  focusRef.current.blur(); // will unfocus a date when changing year via up/down arrows
+                  focusRef.current?.blur(); // will unfocus a date when changing year via up/down arrows
                   onMonthChange(ev, newDate);
                 }}
               />
