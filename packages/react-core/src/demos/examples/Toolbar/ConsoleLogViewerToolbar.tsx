@@ -143,6 +143,12 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
     console.log('Logs cleared!');
   };
 
+  const onClearLogsMobile = () => {
+    setOptionExpandedMobile(false);
+    // eslint-disable-next-line no-console
+    console.log('Logs cleared!');
+  };
+
   const onSearchChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setSearchValue(value);
     setSearchResultsCount(3);
@@ -169,7 +175,10 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
     });
   };
 
-  const onPageResize = (_event: React.SyntheticEvent, { windowSize }: { windowSize: number }) => {
+  const onPageResize = (
+    _event: MouseEvent | TouchEvent | React.KeyboardEvent<Element>,
+    { windowSize }: { windowSize: number }
+  ) => {
     if (windowSize >= 1450) {
       setMobileView(false);
     } else {
@@ -210,23 +219,28 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
       <SelectOption key="switch-2" hasCheckbox isSelected={secondSwitchChecked} onClick={handleSecondSwitchChange}>
         Wrap lines
       </SelectOption>
-      <MenuFooter key="clear-log" onClick={onClearLogs}>
-        <Button variant="link" isInline>
-          Clear logs
-        </Button>
-      </MenuFooter>
     </>
   );
 
   const selectDropdownContent = (
-    <SelectList>
-      {Object.entries(firstOptions).map(([value, { type }]) => (
-        <SelectOption key={value} hasCheckbox value={value} isSelected={containerSelected === value}>
-          <Badge key={value}>{type}</Badge>
-          {` ${value}`}
-        </SelectOption>
-      ))}
-    </SelectList>
+    <>
+      <SelectList>
+        {Object.entries(firstOptions).map(([value, { type }]) => (
+          <SelectOption key={value} hasCheckbox value={value} isSelected={containerSelected === value}>
+            <Badge key={value}>{type}</Badge>
+            {` ${value}`}
+          </SelectOption>
+        ))}
+      </SelectList>
+    </>
+  );
+
+  const clearLogsFooter = (type: string) => (
+    <MenuFooter key="clear-log" onClick={type === 'mobile' ? onClearLogsMobile : onClearLogs}>
+      <Button variant="link" isInline>
+        Clear logs
+      </Button>
+    </MenuFooter>
   );
 
   const selectToggleContent = ({ showText }: { showText: boolean }) => {
@@ -261,6 +275,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
     <React.Fragment>
       <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
         <Select
+          role="menu"
           toggle={(toggleRef) => (
             <MenuToggle
               ref={toggleRef}
@@ -282,7 +297,9 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
       <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
         <Select
           isOpen={optionExpanded}
+          role="menu"
           onOpenChange={(isOpen) => setOptionExpanded(isOpen)}
+          onOpenChangeKeys={['Escape']}
           onSelect={onOptionSelect}
           toggle={(toggleRef) => (
             <MenuToggle ref={toggleRef} isExpanded={optionExpanded} onClick={onOptionToggle} icon={<CogIcon />}>
@@ -291,6 +308,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
           )}
         >
           <SelectList>{optionSelectItems}</SelectList>
+          {clearLogsFooter('desktop')}
         </Select>
       </ToolbarItem>
       <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
@@ -325,8 +343,10 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
       <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
         <Tooltip position="top" content={<div>Options</div>}>
           <Select
+            role="menu"
             isOpen={optionExpandedMobile}
             onOpenChange={(isOpen) => setOptionExpandedMobile(isOpen)}
+            onOpenChangeKeys={['Escape']}
             onSelect={onOptionSelectMobile}
             toggle={(toggleRef) => (
               <MenuToggle
@@ -339,6 +359,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
             )}
           >
             <SelectList>{optionSelectItems}</SelectList>
+            {clearLogsFooter('mobile')}
           </Select>
         </Tooltip>
       </ToolbarItem>
