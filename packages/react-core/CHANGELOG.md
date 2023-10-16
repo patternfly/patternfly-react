@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.9...@patternfly/react-core@5.2.0-prerelease.10) (2023-10-16)
+
+### Bug Fixes
+
+- **popper:** update trigger element when content changes ([#9738](https://github.com/patternfly/patternfly-react/issues/9738)) ([202c40c](https://github.com/patternfly/patternfly-react/commit/202c40cde291f0b0f090e9a8fe9a6b790a94aedd))
+
 # [5.2.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.8...@patternfly/react-core@5.2.0-prerelease.9) (2023-10-16)
 
 **Note:** Version bump only for package @patternfly/react-core
