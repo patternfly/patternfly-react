@@ -7,6 +7,7 @@ import {
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
+  Flex,
   Modal,
   ModalVariant,
   Wizard,
@@ -15,7 +16,7 @@ import {
   DrawerColorVariant
 } from '@patternfly/react-core';
 
-export const WizardModalWithDrawerDemo: React.FC = () => {
+export const WizardModalWithDrawerDemo: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLSpanElement | null>(null);
 
@@ -49,12 +50,19 @@ export const WizardModalWithDrawerDemo: React.FC = () => {
           </DrawerPanelContent>
         }
       >
-        {!isDrawerExpanded && (
-          <Button isInline variant="link" onClick={onOpenClick}>
-            Open drawer
-          </Button>
-        )}
-        <div>{stepName} content</div>
+        <Flex
+          className="pf-v5-c-wizard__main-body"
+          direction={{ default: 'column' }}
+          spaceItems={{ default: 'spaceItemsLg' }}
+          height="100%"
+        >
+          {!isDrawerExpanded && (
+            <Button isInline variant="link" onClick={onOpenClick}>
+              Open drawer
+            </Button>
+          )}
+          <div>{stepName} content</div>
+        </Flex>
       </DrawerContent>
     </Drawer>
   );

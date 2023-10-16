@@ -10,6 +10,7 @@ import {
   DrawerContent,
   DrawerPanelContent,
   DrawerHead,
+  Flex,
   Nav,
   NavItem,
   NavList,
@@ -34,7 +35,7 @@ import {
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
-export const WizardFullPageWithDrawerDemo: React.FC = () => {
+export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
 
@@ -131,12 +132,19 @@ export const WizardFullPageWithDrawerDemo: React.FC = () => {
           </DrawerPanelContent>
         }
       >
-        {!isDrawerExpanded && (
-          <Button isInline variant="link" onClick={onOpenClick}>
-            Open drawer
-          </Button>
-        )}
-        <div>{stepName} content</div>
+        <Flex
+          className="pf-v5-c-wizard__main-body"
+          direction={{ default: 'column' }}
+          spaceItems={{ default: 'spaceItemsLg' }}
+          height="100%"
+        >
+          {!isDrawerExpanded && (
+            <Button isInline variant="link" onClick={onOpenClick}>
+              Open drawer
+            </Button>
+          )}
+          <div>{stepName} content</div>
+        </Flex>
       </DrawerContent>
     </Drawer>
   );

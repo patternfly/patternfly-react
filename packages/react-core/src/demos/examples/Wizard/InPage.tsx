@@ -2,7 +2,7 @@ import React from 'react';
 import { PageSection, PageSectionTypes, PageSectionVariants, Wizard, WizardStep } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
-export const WizardFullPage: React.FC = () => (
+export const WizardFullPage: React.FunctionComponent = () => (
   <React.Fragment>
     <DashboardWrapper hasPageTemplateTitle>
       <PageSection type={PageSectionTypes.wizard} variant={PageSectionVariants.light}>

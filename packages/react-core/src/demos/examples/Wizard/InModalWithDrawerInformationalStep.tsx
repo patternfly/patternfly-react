@@ -7,6 +7,7 @@ import {
   DrawerContent,
   DrawerPanelContent,
   DrawerHead,
+  Flex,
   Modal,
   ModalVariant,
   Text,
@@ -18,7 +19,7 @@ import {
   DrawerColorVariant
 } from '@patternfly/react-core';
 
-export const WizardModalWithDrawerInfoStepDemo: React.FC = () => {
+export const WizardModalWithDrawerInfoStepDemo: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLSpanElement | null>(null);
 
@@ -52,16 +53,23 @@ export const WizardModalWithDrawerInfoStepDemo: React.FC = () => {
           </DrawerPanelContent>
         }
       >
-        <TextContent>
-          <Text component={TextVariants.h1}>{stepName} content</Text>
-          <p>
-            Wizard description goes here. If you need more assistance,{' '}
-            <Button isInline variant="link" onClick={onOpenClick}>
-              see more information
-            </Button>{' '}
-            in the side drawer.{' '}
-          </p>
-        </TextContent>
+        <Flex
+          className="pf-v5-c-wizard__main-body"
+          direction={{ default: 'column' }}
+          spaceItems={{ default: 'spaceItemsLg' }}
+          height="100%"
+        >
+          <TextContent>
+            <Text component={TextVariants.h1}>{stepName} content</Text>
+            <p>
+              Wizard description goes here. If you need more assistance,{' '}
+              <Button isInline variant="link" onClick={onOpenClick}>
+                see more information
+              </Button>{' '}
+              in the side drawer.{' '}
+            </p>
+          </TextContent>
+        </Flex>
       </DrawerContent>
     </Drawer>
   );

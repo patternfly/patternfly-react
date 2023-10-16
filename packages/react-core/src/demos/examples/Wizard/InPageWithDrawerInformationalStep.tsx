@@ -5,10 +5,13 @@ import {
   BreadcrumbItem,
   Button,
   Drawer,
+  DrawerActions,
   DrawerCloseButton,
+  DrawerColorVariant,
   DrawerContent,
   DrawerHead,
   DrawerPanelContent,
+  Flex,
   Nav,
   NavItem,
   NavList,
@@ -32,7 +35,7 @@ import {
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
-export const WizardFullPageWithDrawerInfoStepDemo: React.FC = () => {
+export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
 
@@ -118,26 +121,35 @@ export const WizardFullPageWithDrawerInfoStepDemo: React.FC = () => {
     <Drawer isInline isExpanded={isDrawerExpanded} onExpand={onExpand}>
       <DrawerContent
         panelContent={
-          <DrawerPanelContent widths={{ default: 'width_33' }}>
+          <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
             <DrawerHead>
               <span tabIndex={isDrawerExpanded ? 0 : -1} ref={drawerRef}>
                 Drawer content: {stepName}
               </span>
-              <DrawerCloseButton onClick={onCloseClick} />
+              <DrawerActions>
+                <DrawerCloseButton onClick={onCloseClick} />
+              </DrawerActions>
             </DrawerHead>
           </DrawerPanelContent>
         }
       >
-        <TextContent>
-          <Text>{stepName} content</Text>
-          <p>
-            Wizard description goes here. If you need more assistance,{' '}
-            <Button isInline variant="link" onClick={onOpenClick}>
-              see more information
-            </Button>{' '}
-            in the side drawer.{' '}
-          </p>
-        </TextContent>
+        <Flex
+          className="pf-v5-c-wizard__main-body"
+          direction={{ default: 'column' }}
+          spaceItems={{ default: 'spaceItemsLg' }}
+          height="100%"
+        >
+          <TextContent>
+            <Text>{stepName} content</Text>
+            <p>
+              Wizard description goes here. If you need more assistance,{' '}
+              <Button isInline variant="link" onClick={onOpenClick}>
+                see more information
+              </Button>{' '}
+              in the side drawer.{' '}
+            </p>
+          </TextContent>
+        </Flex>
       </DrawerContent>
     </Drawer>
   );
