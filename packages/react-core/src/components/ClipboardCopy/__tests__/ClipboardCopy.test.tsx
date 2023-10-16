@@ -31,7 +31,7 @@ const testId = 'clipboard-copy';
 test(`Renders with class ${styles.clipboardCopy} by default`, () => {
   render(<ClipboardCopy data-testid={testId}>{children}</ClipboardCopy>);
 
-  expect(screen.getByTestId(testId)).toHaveClass(styles.clipboardCopy);
+  expect(screen.getByTestId(testId)).toHaveClass(styles.clipboardCopy, { exact: true });
 });
 
 test(`Renders with custom class when className is passed`, () => {

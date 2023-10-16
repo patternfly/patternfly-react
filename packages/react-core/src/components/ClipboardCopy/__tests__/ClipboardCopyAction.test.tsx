@@ -16,7 +16,7 @@ test('Renders without children', () => {
 test(`Renders with class ${styles.clipboardCopyActionsItem} by default`, () => {
   render(<ClipboardCopyAction>Action text</ClipboardCopyAction>);
 
-  expect(screen.getByText('Action text')).toHaveClass(styles.clipboardCopyActionsItem);
+  expect(screen.getByText('Action text')).toHaveClass(styles.clipboardCopyActionsItem, { exact: true });
 });
 
 test(`Renders with custom class when className is passed`, () => {
