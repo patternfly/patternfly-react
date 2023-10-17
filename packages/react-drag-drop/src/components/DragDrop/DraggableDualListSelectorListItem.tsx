@@ -4,7 +4,7 @@ import { CSS } from '@dnd-kit/utilities';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { DragButton } from './DragButton';
-import { DualListSelectorListContext } from '@patternfly/react-core';
+import { DualListSelectorListContext } from '@patternfly/react-core/dist/esm/components/DualListSelector';
 
 export interface DraggableObject {
   id?: string;

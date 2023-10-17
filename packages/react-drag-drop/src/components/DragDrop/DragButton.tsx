@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import dragButtonStyles from '@patternfly/react-styles/css/components/DataList/data-list';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
 
 export interface DragButtonProps extends React.HTMLProps<HTMLButtonElement> {
@@ -13,7 +14,7 @@ export interface DragButtonProps extends React.HTMLProps<HTMLButtonElement> {
 }
 
 export const DragButton: React.FunctionComponent<DragButtonProps> = ({ className, ...props }: DragButtonProps) => (
-  <button className={css(className, 'pf-c-button', 'pf-m-plain')} aria-label="Drag button" {...props}>
+  <button className={css(className, buttonStyles.button, buttonStyles.modifiers.plain)} aria-label="Drag button" {...props}>
     <span className={css(dragButtonStyles.dataListItemDraggableIcon)}>
       <GripVerticalIcon />
     </span>

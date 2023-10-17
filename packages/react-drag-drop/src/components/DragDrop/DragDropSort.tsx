@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { css } from '@patternfly/react-styles';
 import {
   DndContext,
   closestCenter,
@@ -21,6 +22,8 @@ import { Draggable } from './Draggable';
 import { DragButton } from './DragButton';
 import { DraggableDataListItem } from './DraggableDataListItem';
 import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
+import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
+import flexStyles from '@patternfly/react-styles/css/layouts/Flex/flex';
 
 export type DragDropSortDragEndEvent = DragEndEvent;
 export type DragDropSortDragStartEvent = DragStartEvent;
@@ -116,9 +119,9 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
         }
       })}
       <DragOverlay>
-        <div className="pf-c-draggable pf-m-dragging pf-l-flex">
-          <span className="pf-l-flex__item">{variant !== 'default' && <DragButton />}</span>
-          <span className="pf-l-flex__item">{activeId ? getItemById(activeId).content : null}</span>
+        <div className={css(styles.draggable, styles.modifiers.dragging, flexStyles.flex)}>
+          <span className={css(`${flexStyles.flex}_item`)}>{variant !== 'default' && <DragButton />}</span>
+          <span className={css(`${flexStyles.flex}_item`)}>{activeId ? getItemById(activeId).content : null}</span>
         </div>
       </DragOverlay>
     </SortableContext>
@@ -134,10 +137,10 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
     >
       {children && React.cloneElement(children, {
         children: renderedChildren,
-        className: `pf-c-droppable ${dragging ? 'pf-m-dragging' : ''}`
+        className: `${styles.droppable} ${dragging ? styles.modifiers.dragging : ''}`
       })}
       {!children && (
-        <div className={`pf-c-droppable ${dragging ? 'pf-m-dragging' : ''}`}>
+        <div className={`${styles.droppable} ${dragging ? styles.modifiers.dragging : ''}`}>
           {renderedChildren}
         </div>
       )}

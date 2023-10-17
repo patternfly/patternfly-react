@@ -7,6 +7,7 @@ propComponents: [
   DraggableObject
 ]
 hideNavItem: true
+beta: true
 ---
 Note: DragDrop lives in its own package at @patternfly/react-drag-drop!'
 
