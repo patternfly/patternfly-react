@@ -15,16 +15,17 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import HandPaperIcon from '@patternfly/react-icons/dist/esm/icons/hand-paper-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
-import './examples/TableColumnManagement.css';
+import './examples/PaginatedTable.css';
 
 ## Demos
 
 This demonstrates how the UI adapts to the writing mode of the page.
 
-### Table column management
+### Paginated table
 
-```js file="./examples/TableColumnManagement.jsx" isFullscreen
+```js file="./examples/PaginatedTable.jsx" isFullscreen
 
 ```

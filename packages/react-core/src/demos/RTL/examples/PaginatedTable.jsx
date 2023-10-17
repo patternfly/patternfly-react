@@ -38,10 +38,11 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
-  ToolbarItem
+  ToolbarItem,
+  Truncate
 } from '@patternfly/react-core';
 
-import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { capitalize } from '../../../helpers';
 import translationsEn from './examples/translations.en.json';
 import translationsHe from './examples/translations.he.json';
@@ -55,9 +56,10 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import HandPaperIcon from '@patternfly/react-icons/dist/esm/icons/hand-paper-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
-export const ColumnManagementAction = () => {
+export const PaginatedTableAction = () => {
   const [translation, setTranslation] = React.useState(translationsEn);
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(10);
@@ -69,6 +71,7 @@ export const ColumnManagementAction = () => {
     translation.table.columns.modified,
     translation.table.columns.url
   ];
+
   const numRows = 25;
   const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
   const createRows = () => {
@@ -196,7 +199,14 @@ export const ColumnManagementAction = () => {
       case 'Stopped':
       case 'עצר':
         return (
-          <Label icon={<i className="fas fa-octagon"></i>} color="red">
+          <Label
+            icon={
+              <Icon shouldMirrorRTL>
+                <HandPaperIcon />
+              </Icon>
+            }
+            color="red"
+          >
             {translation.table.rows.status.stopped}
           </Label>
         );
@@ -219,7 +229,7 @@ export const ColumnManagementAction = () => {
 
   const toolbarItems = (
     <React.Fragment>
-      <Toolbar id="rtl-table-column-management">
+      <Toolbar id="rtl-paginated-table">
         <ToolbarContent>
           <ToolbarItem>
             <Button
@@ -275,12 +285,8 @@ export const ColumnManagementAction = () => {
 
   const kebabDropdownItems = (
     <>
-      <DropdownItem>
-        <CogIcon /> {translation.kebabDropdown.settings}
-      </DropdownItem>
-      <DropdownItem>
-        <HelpIcon /> {translation.kebabDropdown.help}
-      </DropdownItem>
+      <DropdownItem icon={<CogIcon />}>{translation.kebabDropdown.settings}</DropdownItem>
+      <DropdownItem icon={<HelpIcon />}>{translation.kebabDropdown.help}</DropdownItem>
     </>
   );
 
@@ -429,7 +435,7 @@ export const ColumnManagementAction = () => {
 
   return (
     <React.Fragment>
-      <Page sidebar={sidebar} header={masthead}>
+      <Page sidebar={sidebar} header={masthead} isManagedSidebar>
         <PageBreadcrumb>
           <Breadcrumb aria-label={translation.breadcrumbs.ariaLabel || undefined}>
             {Object.keys(breadcrumbItems).map((key, idx, arr) => (
@@ -472,10 +478,10 @@ export const ColumnManagementAction = () => {
                           return (
                             // Passing dir="rtl" forces truncation at the start of the URL,
                             // resulting in the unique portion being visible regardless of language
-                            <Td key={key} dataLabel="URL" modifier="truncate" dir="rtl">
-                              <TableText>
-                                <a href="#">{row.url}</a>
-                              </TableText>
+                            <Td key={key} dataLabel="URL" width={15}>
+                              <a href="#">
+                                <Truncate content={row.url} position={isDirRTL ? 'end' : 'start'} />
+                              </a>
                             </Td>
                           );
                         } else {
