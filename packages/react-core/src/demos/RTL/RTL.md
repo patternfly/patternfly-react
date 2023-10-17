@@ -9,7 +9,15 @@ import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-i
 import ToolsIcon from '@patternfly/react-icons/dist/esm/icons/tools-icon';
 import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
 import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+
+import './examples/TableColumnManagement.css';
 
 ## Demos
 

@@ -1,10 +1,22 @@
 { 
   "title": "כותרת ראשית",
+  "username": "פלוני אלמוני",
+  "brandLanguage": "עִברִית",
   "body": "זוהי הדגמה של עמוד שלם.",
   "breadcrumbs": {
     "home": "בית",
     "category": "קטגוריה",
     "subCategory": "קטגוריית משנה"
+  },
+  "pagination": {
+    "ofWord": "שֶׁל",
+    "items": "פריטים",
+    "perPageSuffix": "לכל עמוד",
+    "toNextPageAriaLabel": "עבור לדף הבא",
+    "toPreviousPageAriaLabel": "תחזור לדף הקודם",
+    "toFirstPageAriaLabel": "עבור לעמוד הראשון",
+    "toLastPageAriaLabel": "עבור לדף האחרון",
+    "currentPage": "העמוד הנוכחי"
   },
   "nav": {
     "systemPanel": "פאנל מערכת",

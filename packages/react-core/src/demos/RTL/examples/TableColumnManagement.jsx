@@ -10,7 +10,6 @@ import {
   Nav,
   NavItem,
   NavList,
-  Page,
   PageBreadcrumb,
   PageSection,
   PageSidebar,
@@ -34,7 +33,9 @@ import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-i
 import ToolsIcon from '@patternfly/react-icons/dist/esm/icons/tools-icon';
 import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
 import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 export const ColumnManagementAction = () => {
   const [translation, setTranslation] = React.useState(translationsEn);
@@ -128,7 +129,15 @@ export const ColumnManagementAction = () => {
       onPerPageSelect={handlePerPageSelect}
       variant={variant}
       titles={{
-        paginationAriaLabel: `${variant} pagination`
+        paginationAriaLabel: `${variant} pagination`,
+        ofWord: translation.pagination?.ofWord,
+        items: translation.pagination?.items,
+        perPageSuffix: translation.pagination?.perPageSuffix,
+        toNextPageAriaLabel: translation.pagination?.toNextPageAriaLabel,
+        toPreviousPageAriaLabel: translation.pagination?.toPreviousPageAriaLabel,
+        toFirstPageAriaLabel: translation.pagination?.toFirstPageAriaLabel,
+        toLastPageAriaLabel: translation.pagination?.perPageSuffix,
+        currentPage: translation.pagination?.currentPage
       }}
     />
   );
@@ -144,25 +153,6 @@ export const ColumnManagementAction = () => {
       url: 'sub-category'
     }
   };
-
-  // Commented out for linting
-  // const navItems = {
-  //   systemPanel: {
-  //     url: '#system-panel'
-  //   },
-  //   policy: {
-  //     url: '#policy'
-  //   },
-  //   authentication: {
-  //     url: '#authentication'
-  //   },
-  //   networkServices: {
-  //     url: '#network-services'
-  //   },
-  //   server: {
-  //     url: 'sub-category'
-  //   }
-  // };
 
   const renderLabel = (labelText) => {
     switch (labelText) {
@@ -208,31 +198,20 @@ export const ColumnManagementAction = () => {
     <React.Fragment>
       <Toolbar id="rtl-table-column-management">
         <ToolbarContent>
-          <ToolbarGroup variant="button-group">
-            <ToolbarItem>
-              <Button
-                variant="primary"
-                icon={
-                  <Icon shouldMirrorRTL>
-                    <AlignRightIcon />
-                  </Icon>
-                }
-                iconPosition="end"
-                onClick={switchTranslation}
-              >
-                {translation.switchBtn}
-              </Button>
-              <ToolbarItem></ToolbarItem>
-              <Button variant="secondary">Some other action</Button>
-            </ToolbarItem>
-          </ToolbarGroup>
-          <ToolbarGroup variant="icon-button-group">
-            <ToolbarItem>
-              <Button variant="plain" aria-label="Sort columns">
-                <SortAmountDownIcon aria-hidden="true" />
-              </Button>
-            </ToolbarItem>
-          </ToolbarGroup>
+          <ToolbarItem>
+            <Button
+              variant="primary"
+              icon={
+                <Icon shouldMirrorRTL>
+                  <AlignRightIcon />
+                </Icon>
+              }
+              iconPosition="end"
+              onClick={switchTranslation}
+            >
+              {translation.switchBtn}
+            </Button>
+          </ToolbarItem>
           <ToolbarItem variant="pagination">{renderPagination(PaginationVariant.top)}</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
@@ -267,9 +246,161 @@ export const ColumnManagementAction = () => {
     </PageSidebar>
   );
 
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
+
+  const kebabDropdownItems = (
+    <>
+      <DropdownItem>
+        <CogIcon /> Settings
+      </DropdownItem>
+      <DropdownItem>
+        <HelpIcon /> Help
+      </DropdownItem>
+    </>
+  );
+
+  const userDropdownItems = (
+    <>
+      <DropdownItem key="group 2 profile">My profile</DropdownItem>
+      <DropdownItem key="group 2 user">User management</DropdownItem>
+      <DropdownItem key="group 2 logout">Logout</DropdownItem>
+    </>
+  );
+
+  const onDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const onDropdownSelect = () => {
+    setIsDropdownOpen(false);
+  };
+
+  const onKebabDropdownToggle = () => {
+    setIsKebabDropdownOpen(!isKebabDropdownOpen);
+  };
+
+  const onKebabDropdownSelect = () => {
+    setIsKebabDropdownOpen(false);
+  };
+
+  const onFullKebabToggle = () => {
+    setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen);
+  };
+
+  const onFullKebabSelect = () => {
+    setIsFullKebabDropdownOpen(false);
+  };
+
+  const masthead = (
+    <Masthead>
+    <MastheadToggle>
+      <PageToggleButton variant="plain" aria-label="Global navigation">
+        <BarsIcon />
+      </PageToggleButton>
+    </MastheadToggle>
+    <MastheadMain>
+      <MastheadBrand dir="ltr">
+        <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+        {translation.brandLanguage && (
+          <span className="brand-language">{translation.brandLanguage}</span>
+        )}
+      </MastheadBrand>
+    </MastheadMain>
+    <MastheadContent>
+      <Toolbar id="toolbar" isFullHeight isStatic>
+        <ToolbarContent>
+          <ToolbarGroup
+            variant="icon-button-group"
+            align={{ default: 'alignRight' }}
+            spacer={{ default: 'spacerNone', md: 'spacerMd' }}
+          >
+            <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
+              <ToolbarItem>
+                <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
+              </ToolbarItem>
+              <ToolbarItem>
+                <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+              </ToolbarItem>
+            </ToolbarGroup>
+            <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
+              <Dropdown
+                isOpen={isKebabDropdownOpen}
+                onSelect={onKebabDropdownSelect}
+                onOpenChange={setIsKebabDropdownOpen}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef: React.RefObject<any>) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isKebabDropdownOpen}
+                    onClick={onKebabDropdownToggle}
+                    variant="plain"
+                    aria-label="Settings and help"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownList>{kebabDropdownItems}</DropdownList>
+              </Dropdown>
+            </ToolbarItem>
+            <ToolbarItem visibility={{ md: 'hidden' }}>
+              <Dropdown
+                isOpen={isFullKebabDropdownOpen}
+                onSelect={onFullKebabSelect}
+                onOpenChange={setIsFullKebabDropdownOpen}
+                popperProps={{ position: 'right' }}
+                toggle={(toggleRef: React.RefObject<any>) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    isExpanded={isFullKebabDropdownOpen}
+                    onClick={onFullKebabToggle}
+                    variant="plain"
+                    aria-label="Toolbar menu"
+                  >
+                    <EllipsisVIcon aria-hidden="true" />
+                  </MenuToggle>
+                )}
+              >
+                <DropdownGroup key="group 2" aria-label="User actions">
+                  <DropdownList>{userDropdownItems}</DropdownList>
+                </DropdownGroup>
+                <Divider />
+                <DropdownList>{kebabDropdownItems}</DropdownList>
+              </Dropdown>
+            </ToolbarItem>
+          </ToolbarGroup>
+          <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
+            <Dropdown
+              isOpen={isDropdownOpen}
+              onSelect={onDropdownSelect}
+              onOpenChange={setIsDropdownOpen}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef: React.RefObject<any>) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  isExpanded={isDropdownOpen}
+                  onClick={onDropdownToggle}
+                  icon={<Avatar src={imgAvatar} alt="" />}
+                  isFullHeight
+                >
+                  {translation.username}
+                </MenuToggle>
+              )}
+            >
+              <DropdownList>{userDropdownItems}</DropdownList>
+            </Dropdown>
+          </ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    </MastheadContent>
+  </Masthead>
+  );
+
   return (
     <React.Fragment>
-      <Page sidebar={sidebar}>
+      <Page sidebar={sidebar} header={masthead}>
         <PageBreadcrumb>
           <Breadcrumb>
             {Object.keys(breadcrumbItems).map((key, idx, arr) => (

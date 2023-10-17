@@ -1,5 +1,6 @@
-{ 
+{
   "title": "Main title",
+  "username": "John Doe",
   "body": "This is a full page demo.",
   "breadcrumbs": {
     "home": "Home",
