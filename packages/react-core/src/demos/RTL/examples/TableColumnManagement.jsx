@@ -1,19 +1,35 @@
 import * as React from 'react';
 
 import {
+  Avatar,
+  Brand,
   Breadcrumb,
   BreadcrumbItem,
   Button,
+  ButtonVariant,
   Card,
+  Divider,
+  Dropdown,
+  DropdownGroup,
+  DropdownItem,
+  DropdownList,
   Icon,
   Label,
+  Masthead,
+  MastheadBrand,
+  MastheadContent,
+  MastheadMain,
+  MastheadToggle,
+  MenuToggle,
   Nav,
   NavItem,
   NavList,
+  Page,
   PageBreadcrumb,
   PageSection,
   PageSidebar,
   PageSidebarBody,
+  PageToggleButton,
   Pagination,
   PaginationVariant,
   Text,
@@ -36,6 +52,10 @@ import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
 export const ColumnManagementAction = () => {
   const [translation, setTranslation] = React.useState(translationsEn);
@@ -119,28 +139,31 @@ export const ColumnManagementAction = () => {
     setPerPage(newPerPage);
   };
 
-  const renderPagination = (variant, isCompact) => (
-    <Pagination
-      isCompact={isCompact}
-      itemCount={managedRows.length}
-      page={page}
-      perPage={perPage}
-      onSetPage={handleSetPage}
-      onPerPageSelect={handlePerPageSelect}
-      variant={variant}
-      titles={{
-        paginationAriaLabel: `${variant} pagination`,
-        ofWord: translation.pagination?.ofWord,
-        items: translation.pagination?.items,
-        perPageSuffix: translation.pagination?.perPageSuffix,
-        toNextPageAriaLabel: translation.pagination?.toNextPageAriaLabel,
-        toPreviousPageAriaLabel: translation.pagination?.toPreviousPageAriaLabel,
-        toFirstPageAriaLabel: translation.pagination?.toFirstPageAriaLabel,
-        toLastPageAriaLabel: translation.pagination?.perPageSuffix,
-        currentPage: translation.pagination?.currentPage
-      }}
-    />
-  );
+  const renderPagination = (variant) => {
+    const { pagination } = translation;
+
+    return (
+      <Pagination
+        itemCount={managedRows.length}
+        page={page}
+        perPage={perPage}
+        onSetPage={handleSetPage}
+        onPerPageSelect={handlePerPageSelect}
+        variant={variant}
+        titles={{
+          paginationAriaLabel: pagination?.[`${variant}VariantAriaLabel`] || `${variant} pagination`,
+          ofWord: pagination?.ofWord,
+          items: pagination?.items,
+          perPageSuffix: pagination?.perPageSuffix,
+          toNextPageAriaLabel: pagination?.toNextPageAriaLabel,
+          toPreviousPageAriaLabel: pagination?.toPreviousPageAriaLabel,
+          toFirstPageAriaLabel: pagination?.toFirstPageAriaLabel,
+          toLastPageAriaLabel: pagination?.perPageSuffix,
+          currPageAriaLabel: pagination?.currPageAriaLabel
+        }}
+      />
+    );
+  };
 
   const breadcrumbItems = {
     home: {
@@ -219,7 +242,7 @@ export const ColumnManagementAction = () => {
   );
 
   const pageNav = (
-    <Nav>
+    <Nav aria-label={translation.nav.ariaLabel || undefined}>
       <NavList>
         <NavItem itemId={0} isActive to="#system-panel">
           {translation.nav.systemPanel}
@@ -253,19 +276,19 @@ export const ColumnManagementAction = () => {
   const kebabDropdownItems = (
     <>
       <DropdownItem>
-        <CogIcon /> Settings
+        <CogIcon /> {translation.kebabDropdown.settings}
       </DropdownItem>
       <DropdownItem>
-        <HelpIcon /> Help
+        <HelpIcon /> {translation.kebabDropdown.help}
       </DropdownItem>
     </>
   );
 
   const userDropdownItems = (
     <>
-      <DropdownItem key="group 2 profile">My profile</DropdownItem>
-      <DropdownItem key="group 2 user">User management</DropdownItem>
-      <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      <DropdownItem key="group 2 profile">{translation.userDropdown.myProfile}</DropdownItem>
+      <DropdownItem key="group 2 user">{translation.userDropdown.userManagement}</DropdownItem>
+      <DropdownItem key="group 2 logout">{translation.userDropdown.logout}</DropdownItem>
     </>
   );
 
@@ -295,114 +318,120 @@ export const ColumnManagementAction = () => {
 
   const masthead = (
     <Masthead>
-    <MastheadToggle>
-      <PageToggleButton variant="plain" aria-label="Global navigation">
-        <BarsIcon />
-      </PageToggleButton>
-    </MastheadToggle>
-    <MastheadMain>
-      <MastheadBrand dir="ltr">
-        <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
-        {translation.brandLanguage && (
-          <span className="brand-language">{translation.brandLanguage}</span>
-        )}
-      </MastheadBrand>
-    </MastheadMain>
-    <MastheadContent>
-      <Toolbar id="toolbar" isFullHeight isStatic>
-        <ToolbarContent>
-          <ToolbarGroup
-            variant="icon-button-group"
-            align={{ default: 'alignRight' }}
-            spacer={{ default: 'spacerNone', md: 'spacerMd' }}
-          >
-            <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
-              <ToolbarItem>
-                <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
+      <MastheadToggle>
+        <PageToggleButton variant="plain" aria-label={translation.mastheadToggleAriaLabel}>
+          <BarsIcon />
+        </PageToggleButton>
+      </MastheadToggle>
+      <MastheadMain>
+        <MastheadBrand dir="ltr">
+          <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          {translation.brandLanguage && <span className="brand-language">{translation.brandLanguage}</span>}
+        </MastheadBrand>
+      </MastheadMain>
+      <MastheadContent>
+        <Toolbar id="toolbar" isFullHeight isStatic>
+          <ToolbarContent>
+            <ToolbarGroup
+              variant="icon-button-group"
+              align={{ default: 'alignRight' }}
+              spacer={{ default: 'spacerNone', md: 'spacerMd' }}
+            >
+              <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
+                <ToolbarItem>
+                  <Button
+                    aria-label={translation.kebabDropdown.settings}
+                    variant={ButtonVariant.plain}
+                    icon={<CogIcon />}
+                  />
+                </ToolbarItem>
+                <ToolbarItem>
+                  <Button
+                    aria-label={translation.kebabDropdown.help}
+                    variant={ButtonVariant.plain}
+                    icon={<QuestionCircleIcon />}
+                  />
+                </ToolbarItem>
+              </ToolbarGroup>
+              <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
+                <Dropdown
+                  isOpen={isKebabDropdownOpen}
+                  onSelect={onKebabDropdownSelect}
+                  onOpenChange={setIsKebabDropdownOpen}
+                  popperProps={{ position: 'right' }}
+                  toggle={(toggleRef) => (
+                    <MenuToggle
+                      ref={toggleRef}
+                      isExpanded={isKebabDropdownOpen}
+                      onClick={onKebabDropdownToggle}
+                      variant="plain"
+                      aria-label={translation.kebabDropdown.settingsAndHelp}
+                    >
+                      <EllipsisVIcon aria-hidden="true" />
+                    </MenuToggle>
+                  )}
+                >
+                  <DropdownList>{kebabDropdownItems}</DropdownList>
+                </Dropdown>
               </ToolbarItem>
-              <ToolbarItem>
-                <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+              <ToolbarItem visibility={{ md: 'hidden' }}>
+                <Dropdown
+                  isOpen={isFullKebabDropdownOpen}
+                  onSelect={onFullKebabSelect}
+                  onOpenChange={setIsFullKebabDropdownOpen}
+                  popperProps={{ position: 'right' }}
+                  toggle={(toggleRef) => (
+                    <MenuToggle
+                      ref={toggleRef}
+                      isExpanded={isFullKebabDropdownOpen}
+                      onClick={onFullKebabToggle}
+                      variant="plain"
+                      aria-label={translation.kebabAndUserDropdown.toolbarMenuAriaLabel}
+                    >
+                      <EllipsisVIcon aria-hidden="true" />
+                    </MenuToggle>
+                  )}
+                >
+                  <DropdownGroup key="group 2" aria-label={translation.kebabAndUserDropdown.groupAriaLabel}>
+                    <DropdownList>{userDropdownItems}</DropdownList>
+                  </DropdownGroup>
+                  <Divider />
+                  <DropdownList>{kebabDropdownItems}</DropdownList>
+                </Dropdown>
               </ToolbarItem>
             </ToolbarGroup>
-            <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
+            <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
               <Dropdown
-                isOpen={isKebabDropdownOpen}
-                onSelect={onKebabDropdownSelect}
-                onOpenChange={setIsKebabDropdownOpen}
+                isOpen={isDropdownOpen}
+                onSelect={onDropdownSelect}
+                onOpenChange={setIsDropdownOpen}
                 popperProps={{ position: 'right' }}
-                toggle={(toggleRef: React.RefObject<any>) => (
+                toggle={(toggleRef) => (
                   <MenuToggle
                     ref={toggleRef}
-                    isExpanded={isKebabDropdownOpen}
-                    onClick={onKebabDropdownToggle}
-                    variant="plain"
-                    aria-label="Settings and help"
+                    isExpanded={isDropdownOpen}
+                    onClick={onDropdownToggle}
+                    icon={<Avatar src={imgAvatar} alt="" />}
+                    isFullHeight
                   >
-                    <EllipsisVIcon aria-hidden="true" />
+                    {translation.username}
                   </MenuToggle>
                 )}
               >
-                <DropdownList>{kebabDropdownItems}</DropdownList>
+                <DropdownList>{userDropdownItems}</DropdownList>
               </Dropdown>
             </ToolbarItem>
-            <ToolbarItem visibility={{ md: 'hidden' }}>
-              <Dropdown
-                isOpen={isFullKebabDropdownOpen}
-                onSelect={onFullKebabSelect}
-                onOpenChange={setIsFullKebabDropdownOpen}
-                popperProps={{ position: 'right' }}
-                toggle={(toggleRef: React.RefObject<any>) => (
-                  <MenuToggle
-                    ref={toggleRef}
-                    isExpanded={isFullKebabDropdownOpen}
-                    onClick={onFullKebabToggle}
-                    variant="plain"
-                    aria-label="Toolbar menu"
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
-                )}
-              >
-                <DropdownGroup key="group 2" aria-label="User actions">
-                  <DropdownList>{userDropdownItems}</DropdownList>
-                </DropdownGroup>
-                <Divider />
-                <DropdownList>{kebabDropdownItems}</DropdownList>
-              </Dropdown>
-            </ToolbarItem>
-          </ToolbarGroup>
-          <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
-            <Dropdown
-              isOpen={isDropdownOpen}
-              onSelect={onDropdownSelect}
-              onOpenChange={setIsDropdownOpen}
-              popperProps={{ position: 'right' }}
-              toggle={(toggleRef: React.RefObject<any>) => (
-                <MenuToggle
-                  ref={toggleRef}
-                  isExpanded={isDropdownOpen}
-                  onClick={onDropdownToggle}
-                  icon={<Avatar src={imgAvatar} alt="" />}
-                  isFullHeight
-                >
-                  {translation.username}
-                </MenuToggle>
-              )}
-            >
-              <DropdownList>{userDropdownItems}</DropdownList>
-            </Dropdown>
-          </ToolbarItem>
-        </ToolbarContent>
-      </Toolbar>
-    </MastheadContent>
-  </Masthead>
+          </ToolbarContent>
+        </Toolbar>
+      </MastheadContent>
+    </Masthead>
   );
 
   return (
     <React.Fragment>
       <Page sidebar={sidebar} header={masthead}>
         <PageBreadcrumb>
-          <Breadcrumb>
+          <Breadcrumb aria-label={translation.breadcrumbs.ariaLabel || undefined}>
             {Object.keys(breadcrumbItems).map((key, idx, arr) => (
               <BreadcrumbItem key={idx} isActive={arr.length - 1 === idx} to={`${breadcrumbItems[key].url}`}>
                 {translation.breadcrumbs[key]}
@@ -420,7 +449,7 @@ export const ColumnManagementAction = () => {
         <PageSection>
           <Card>
             {toolbarItems}
-            <Table variant="compact" aria-label="Column Management Table">
+            <Table variant="compact" aria-label={translation.table.ariaLabel}>
               <Thead>
                 <Tr>
                   {columns.map((column, columnIndex) => (

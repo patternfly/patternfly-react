@@ -2,6 +2,21 @@
   "title": "Main title",
   "username": "John Doe",
   "body": "This is a full page demo.",
+  "mastheadToggleAriaLabel": "Global navigation",
+  "kebabDropdown": {
+    "settings": "Settings",
+    "help": "Help",
+    "settingsAndHelp": "Settings and help"
+  },
+  "userDropdown": {
+    "myProfile": "My profile",
+    "userManagement": "User management",
+    "logout": "Logout"
+  },
+  "kebabAndUserDropdown": {
+    "toolbarMenuAriaLabel": "Toolbar menu",
+    "groupAriaLabel": "User actions"
+  },
   "breadcrumbs": {
     "home": "Home",
     "category": "Category",
@@ -16,6 +31,7 @@
   },
   "switchBtn": "Switch to Hebrew",
   "table": {
+    "ariaLabel": "Right to left demo table",
     "columns": {
       "servers": "Servers",
       "status": "Status",

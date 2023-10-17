@@ -1,12 +1,28 @@
-{ 
+{
   "title": "כותרת ראשית",
   "username": "פלוני אלמוני",
   "brandLanguage": "עִברִית",
   "body": "זוהי הדגמה של עמוד שלם.",
+  "mastheadToggleAriaLabel": "ניווט גלובלי",
+  "kebabDropdown": {
+    "settings": "הגדרות",
+    "help": "עֶזרָה",
+    "settingsAndHelp": "הגדרות ועזרה"
+  },
+  "userDropdown": {
+    "myProfile": "הפרופיל שלי",
+    "userManagement": "ניהול משתמשים",
+    "logout": "להתנתק"
+  },
+  "kebabAndUserDropdown": {
+    "toolbarMenuAriaLabel": "תפריט סרגל הכלים",
+    "groupAriaLabel": "פעולות משתמש"
+  },
   "breadcrumbs": {
     "home": "בית",
     "category": "קטגוריה",
-    "subCategory": "קטגוריית משנה"
+    "subCategory": "קטגוריית משנה",
+    "ariaLabel": "פירורי לחם"
   },
   "pagination": {
     "ofWord": "שֶׁל",
@@ -16,17 +32,21 @@
     "toPreviousPageAriaLabel": "תחזור לדף הקודם",
     "toFirstPageAriaLabel": "עבור לעמוד הראשון",
     "toLastPageAriaLabel": "עבור לדף האחרון",
-    "currentPage": "העמוד הנוכחי"
+    "currPageAriaLabel": "העמוד הנוכחי",
+    "topVariantAriaLabel": "עימוד עליון",
+    "bottomVariantAriaLabel": "עימוד תחתון"
   },
   "nav": {
     "systemPanel": "פאנל מערכת",
     "policy": "מְדִינִיוּת",
     "authentication": "אימות",
     "networkServices": "שירותי רשת",
-    "server": "שרת"
+    "server": "שרת",
+    "ariaLabel": "גלוֹבָּלִי"
   },
   "switchBtn": "Switch to English",
   "table": {
+    "ariaLabel": "טבלת הדגמה מימין לשמאל",
     "columns": {
       "servers": "שרתים",
       "status": "סטָטוּס",
