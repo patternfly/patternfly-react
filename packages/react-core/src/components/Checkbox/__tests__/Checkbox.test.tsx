@@ -6,91 +6,239 @@ import userEvent from '@testing-library/user-event';
 import { Checkbox } from '../Checkbox';
 import styles from '@patternfly/react-styles/css/components/Check/check';
 
-describe('Checkbox', () => {
-  test('controlled', () => {
-    const { asFragment } = render(<Checkbox isChecked id="check" aria-label="check" />);
-    expect(asFragment()).toMatchSnapshot();
+test(`Renders with only the class ${styles.checkInput} on the check by default`, () => {
+  render(<Checkbox id="test-id" />);
+
+  expect(screen.getByRole('checkbox')).toHaveClass(styles.checkInput, { exact: true });
+});
+
+test(`Renders with only the classes ${styles.check} and ${styles.modifiers.standalone} on the check wrapper by default`, () => {
+  render(<Checkbox id="test-id" />);
+
+  expect(screen.getByRole('checkbox').parentElement).toHaveClass(`${styles.check} ${styles.modifiers.standalone}`, {
+    exact: true
   });
+});
 
-  test('controlled - 3rd state', () => {
-    const { asFragment } = render(<Checkbox isChecked={null} id="check" aria-label="check" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with additional classes passed via className', () => {
+  render(<Checkbox id="test-id" className="test-class" />);
 
-  test('uncontrolled', () => {
-    const { asFragment } = render(<Checkbox id="check" aria-label="check" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByRole('checkbox').parentElement).toHaveClass('test-class');
+});
 
-  test('isDisabled', () => {
-    const { asFragment } = render(<Checkbox id="check" isDisabled aria-label="check" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with additional classes passed via inputClassName', () => {
+  render(<Checkbox id="test-id" inputClassName="test-class" />);
 
-  test('label is string', () => {
-    const { asFragment } = render(<Checkbox label="Label" id="check" isChecked aria-label="check" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByRole('checkbox')).toHaveClass('test-class');
+});
 
-  test('label is function', () => {
-    const functionLabel = () => <h1>Header</h1>;
-    const { asFragment } = render(<Checkbox label={functionLabel()} id="check" isChecked aria-label="check" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Does not set the checkbox as invalid by default', () => {
+  render(<Checkbox id="test-id" />);
 
-  test('label is node', () => {
-    const { asFragment } = render(<Checkbox label={<h1>Header</h1>} id="check" isChecked aria-label="check" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByRole('checkbox')).toBeValid();
+});
 
-  test('passing class', () => {
-    const { asFragment } = render(
-      <Checkbox label="label" className="class-123" id="check" isChecked aria-label="check" />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Sets the checkbox as invalid when isValid is false', () => {
+  render(<Checkbox id="test-id" isValid={false} />);
 
-  test('passing HTML attribute', () => {
-    const { asFragment } = render(
-      <Checkbox label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByRole('checkbox')).toBeInvalid();
+});
 
-  test('passing description', () => {
-    render(<Checkbox id="check" label="checkbox" description="Text description..." />);
-    expect(screen.getByText('Text description...')).toBeInTheDocument();
-  });
+test('Does not set the checkbox as disabled by default', () => {
+  render(<Checkbox id="test-id" />);
 
-  test('passing body', () => {
-    render(<Checkbox id="check" label="checkbox" body="This is where custom content goes." />);
+  expect(screen.getByRole('checkbox')).not.toBeDisabled();
+});
 
-    expect(screen.getByText('This is where custom content goes.')).toBeInTheDocument();
-  });
+test(`Sets the checkbox as disabled when isDisabled is passed`, () => {
+  render(<Checkbox id="test-id" isDisabled />);
 
-  test('checkbox onChange handler called when component is clicked', async () => {
-    const onChangeHandler = jest.fn();
-    const user = userEvent.setup();
+  expect(screen.getByRole('checkbox')).toBeDisabled();
+});
 
-    render(<Checkbox id="check" onChange={onChangeHandler} aria-label="check" isChecked={false} />);
+test('Does not set the checkbox as required by default', () => {
+  render(<Checkbox id="test-id" />);
 
-    await user.click(screen.getByLabelText('check'));
-    expect(onChangeHandler).toHaveBeenCalled();
-  });
+  expect(screen.getByRole('checkbox')).not.toBeRequired();
+});
 
-  test('should throw console error when no id is given', () => {
-    const myMock = jest.fn();
-    global.console = { ...global.console, error: myMock };
+test(`Sets the checkbox as required when isRequired is passed`, () => {
+  render(<Checkbox id="test-id" isRequired />);
 
-    render(<Checkbox id={undefined} />);
-    expect(myMock).toHaveBeenCalled();
-  });
+  expect(screen.getByRole('checkbox')).toBeRequired();
+});
 
-  test('renders component wrapper as span', () => {
-    const { container } = render(
-      <Checkbox component="span" label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />
-    );
-    const span = container.querySelector('span');
-    expect(span).toHaveClass(styles.check);
-  });
+test('Does not set the checkbox as checked by default', () => {
+  render(<Checkbox id="test-id" />);
+
+  expect(screen.getByRole('checkbox')).not.toBeChecked();
+});
+
+test(`Sets the checkbox as checked when isChecked is passed`, () => {
+  render(<Checkbox id="test-id" isChecked />);
+
+  expect(screen.getByRole('checkbox')).toBeChecked();
+});
+
+test(`Sets the checkbox as checked when checked is passed`, () => {
+  render(<Checkbox id="test-id" checked />);
+
+  expect(screen.getByRole('checkbox')).toBeChecked();
+});
+
+test(`Calls onChange when the checkbox is clicked`, async () => {
+  const user = userEvent.setup();
+  const onChange = jest.fn();
+  render(<Checkbox id="test-id" onChange={onChange} />);
+
+  await user.click(screen.getByRole('checkbox'));
+
+  expect(onChange).toHaveBeenCalledTimes(1);
+});
+
+test('Does not call onChange when the checkbox is not clicked', () => {
+  const onChange = jest.fn();
+  render(<Checkbox id="test-id" onChange={onChange} />);
+
+  expect(onChange).not.toHaveBeenCalled();
+});
+
+test(`Calls onChange with the event and the checked value when the checkbox is clicked`, async () => {
+  const user = userEvent.setup();
+  const onChange = jest.fn();
+  render(<Checkbox id="test-id" onChange={onChange} />);
+
+  await user.click(screen.getByRole('checkbox'));
+
+  expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ type: 'change' }), true);
+});
+
+test(`Calls onChange with the event and the checked value when the checkbox is clicked and isChecked is passed`, async () => {
+  const user = userEvent.setup();
+  const onChange = jest.fn();
+  render(<Checkbox id="test-id" isChecked onChange={onChange} />);
+
+  await user.click(screen.getByRole('checkbox'));
+
+  expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ type: 'change' }), false);
+});
+
+test('Does not render a label by default', () => {
+  render(<Checkbox id="test-id" />);
+
+  expect(screen.queryByLabelText('test label')).not.toBeInTheDocument();
+});
+
+test('Renders a label when label is passed', () => {
+  render(<Checkbox id="test-id" label="test label" />);
+
+  expect(screen.queryByLabelText('test label')).toBeVisible();
+});
+
+test('Associates the label with the checkbox', () => {
+  render(<Checkbox id="test-id" label="test label" />);
+
+  expect(screen.getByRole('checkbox')).toHaveAccessibleName('test label');
+});
+
+test('Does not render an asterisk when a label is passed by isRequired is not', () => {
+  render(<Checkbox id="test-id" label="test label" />);
+
+  expect(screen.queryByText('*')).not.toBeInTheDocument();
+});
+
+test('Renders an asterisk when isRequired and a label are passed', () => {
+  render(<Checkbox id="test-id" isRequired label="test label" />);
+
+  expect(screen.getByText('*')).toBeVisible();
+});
+
+test(`Wraps the required asterisk in the ${styles.checkLabelRequired} className`, () => {
+  render(<Checkbox id="test-id" isRequired label="test label" />);
+
+  expect(screen.getByText('*')).toHaveClass(styles.checkLabelRequired, { exact: true });
+});
+
+test('Renders with the provided id', () => {
+  render(<Checkbox id="test-id" />);
+
+  expect(screen.getByRole('checkbox')).toHaveAttribute('id', 'test-id');
+});
+
+test('Does not render an aria-label by default', () => {
+  render(<Checkbox id="test-id" />);
+
+  expect(screen.getByRole('checkbox')).not.toHaveAttribute('aria-label');
+});
+
+test('Sets the name to the passed aria-label', () => {
+  render(<Checkbox id="test-id" aria-label="test aria-label" />);
+
+  expect(screen.getByRole('checkbox')).toHaveAccessibleName('test aria-label');
+});
+
+test('Does not render a description by default', () => {
+  render(<Checkbox id="test-id" />);
+
+  expect(screen.queryByText('test description')).not.toBeInTheDocument();
+});
+
+test('Renders a description when description is passed', () => {
+  render(<Checkbox id="test-id" description="test description" />);
+
+  expect(screen.getByText('test description')).toBeVisible();
+});
+
+test(`Renders the passed description with the ${styles.checkDescription} className`, () => {
+  render(<Checkbox id="test-id" description="test description" />);
+
+  expect(screen.getByText('test description')).toHaveClass(styles.checkDescription, { exact: true });
+});
+
+test('Does not render a body by default', () => {
+  render(<Checkbox id="test-id" />);
+
+  expect(screen.queryByText('test body')).not.toBeInTheDocument();
+});
+
+test('Renders a body when body is passed', () => {
+  render(<Checkbox id="test-id" body="test body" />);
+
+  expect(screen.getByText('test body')).toBeVisible();
+});
+
+test(`Renders the passed body with the ${styles.checkBody} className`, () => {
+  render(<Checkbox id="test-id" body="test body" />);
+
+  expect(screen.getByText('test body')).toHaveClass(styles.checkBody, { exact: true });
+});
+
+test('Renders the check wrapper as a div by default', () => {
+  render(<Checkbox id="test-id" />);
+
+  expect(screen.getByRole('checkbox').parentElement).toHaveProperty('nodeName', 'DIV');
+});
+
+test('Renders with the provided component', () => {
+  render(<Checkbox id="test-id" component="span" />);
+
+  expect(screen.getByRole('checkbox').parentElement).toHaveProperty('nodeName', 'SPAN');
+});
+
+test(`Spreads additional props`, () => {
+  render(<Checkbox id="test-id" data-testid="test-id" />);
+
+  expect(screen.getByTestId('test-id')).toBeInTheDocument();
+});
+
+test(`Sets the checkbox as checked by default when defaultChecked is passed`, () => {
+  render(<Checkbox id="test-id" defaultChecked />);
+
+  expect(screen.getByRole('checkbox')).toBeChecked();
+});
+
+test('Matches snapshot', () => {
+  const { asFragment } = render(<Checkbox id="test-id" ouiaId="ouia-id" />);
+
+  expect(asFragment()).toMatchSnapshot();
 });
