@@ -470,7 +470,9 @@ export const ColumnManagementAction = () => {
                           );
                         } else if (key === 'url') {
                           return (
-                            <Td key={key} dataLabel="URL" modifier="truncate">
+                            // Passing dir="rtl" forces truncation at the start of the URL,
+                            // resulting in the unique portion being visible regardless of language
+                            <Td key={key} dataLabel="URL" modifier="truncate" dir="rtl">
                               <TableText>
                                 <a href="#">{row.url}</a>
                               </TableText>
