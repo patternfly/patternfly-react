@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.10...@patternfly/react-core@5.2.0-prerelease.11) (2023-10-17)
+
+### Features
+
+- **Search input:** Added a prop to display utilities ([#9729](https://github.com/patternfly/patternfly-react/issues/9729)) ([107c7a6](https://github.com/patternfly/patternfly-react/commit/107c7a60a7eef000a44cbb5b336fbf951f251b63))
+
 # [5.2.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.9...@patternfly/react-core@5.2.0-prerelease.10) (2023-10-16)
 
 ### Bug Fixes
