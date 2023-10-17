@@ -47,7 +47,6 @@ exports[`numberInput disables lower threshold 1`] = `
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-7"
@@ -141,7 +140,6 @@ exports[`numberInput disables upper threshold 1`] = `
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-8"
@@ -237,7 +235,6 @@ exports[`numberInput passes button props successfully 1`] = `
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-13"
@@ -332,7 +329,6 @@ exports[`numberInput passes input props successfully 1`] = `
           class="pf-v5-c-form-control"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-12"
@@ -427,7 +423,6 @@ exports[`numberInput renders custom width 1`] = `
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-11"
@@ -522,7 +517,6 @@ exports[`numberInput renders defaults & extra props 1`] = `
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-1"
@@ -617,7 +611,6 @@ exports[`numberInput renders disabled 1`] = `
           class="pf-v5-c-form-control pf-m-readonly pf-m-disabled"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-6"
@@ -713,7 +706,6 @@ exports[`numberInput renders error validated 1`] = `
           class="pf-v5-c-form-control pf-m-readonly pf-m-error"
         >
           <input
-            aria-expanded="false"
             aria-invalid="true"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-3"
@@ -828,7 +820,6 @@ exports[`numberInput renders success validated 1`] = `
           class="pf-v5-c-form-control pf-m-readonly pf-m-success"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-2"
@@ -948,7 +939,6 @@ exports[`numberInput renders unit & position 1`] = `
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-10"
@@ -1042,7 +1032,6 @@ exports[`numberInput renders unit 1`] = `
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-9"
@@ -1141,7 +1130,6 @@ exports[`numberInput renders value 1`] = `
           class="pf-v5-c-form-control pf-m-readonly"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-5"
@@ -1235,7 +1223,6 @@ exports[`numberInput renders warning validated 1`] = `
           class="pf-v5-c-form-control pf-m-readonly pf-m-warning"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label="Input"
             data-ouia-component-id="OUIA-Generated-TextInputBase-4"

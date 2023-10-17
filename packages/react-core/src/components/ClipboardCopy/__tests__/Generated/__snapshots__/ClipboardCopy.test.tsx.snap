@@ -14,7 +14,6 @@ exports[`ClipboardCopy should match snapshot (auto-generated) 1`] = `
         class="pf-v5-c-form-control"
       >
         <input
-          aria-expanded="false"
           aria-invalid="false"
           aria-label="'Copyable input'"
           data-ouia-component-id="OUIA-Generated-TextInputBase-1"

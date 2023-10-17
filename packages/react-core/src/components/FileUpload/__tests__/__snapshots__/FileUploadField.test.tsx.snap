@@ -19,7 +19,6 @@ exports[`simple fileuploadfield 1`] = `
           >
             <input
               aria-describedby="custom-file-upload-browse-button"
-              aria-expanded="false"
               aria-invalid="false"
               aria-label="Do something custom with this!"
               data-ouia-component-id="OUIA-Generated-TextInputBase-1"

@@ -125,10 +125,12 @@ describe('TextInput', () => {
     expect(trimLeftFn).toHaveBeenCalled();
   });
 
-  test('has aria-expanded set to true when isExpanded is true', () => {
-    render(<TextInput isExpanded aria-label="isExpanded"/>);
+  test('has aria-expanded set to true when ariaProps.isExpanded is true', () => {
+    render(<TextInput expandedProps={{isExpanded: true, ariaControls: 'test'}}  aria-label="isExpanded"/>);
 
     const input = screen.getByLabelText('isExpanded');
     expect(input).toHaveAttribute('aria-expanded', 'true');
+    expect(input).toHaveAttribute('role', 'combobox');
+    expect(input).toHaveAttribute('aria-controls', 'test');
   });
 });

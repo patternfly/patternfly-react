@@ -1674,7 +1674,6 @@ exports[`typeahead multi select renders closed successfully 1`] = `
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label=""
             autocomplete="off"
@@ -1735,7 +1734,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label=""
             autocomplete="off"
@@ -1972,7 +1970,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label=""
             autocomplete="off"
@@ -2127,7 +2124,6 @@ exports[`typeahead select renders closed successfully 1`] = `
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label=""
             autocomplete="off"
@@ -2188,7 +2184,6 @@ exports[`typeahead select renders expanded successfully 1`] = `
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label=""
             autocomplete="off"
@@ -2307,7 +2302,6 @@ exports[`typeahead select renders selected successfully 1`] = `
           class="pf-v5-c-form-control pf-v5-c-select__toggle-typeahead"
         >
           <input
-            aria-expanded="false"
             aria-invalid="false"
             aria-label=""
             autocomplete="off"

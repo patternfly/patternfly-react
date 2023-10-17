@@ -26,6 +26,11 @@ export enum TextInputReadOnlyVariant {
   plain = 'plain'
 }
 
+interface TextinputExpandedObj {
+  isExpanded: boolean;
+  ariaControls: string;
+}
+
 export interface TextInputProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>,
     OUIAProps {
@@ -33,8 +38,10 @@ export interface TextInputProps
   className?: string;
   /** Flag to show if the text input is disabled. */
   isDisabled?: boolean;
-  /** Flag to apply expanded styling */
+  /** @deprecated Flag to apply expanded styling */
   isExpanded?: boolean;
+  /** Prop to apply expanded styling to the text input and link it toe the element it is controlling. This should be used when the input controls a menu and tha menu is expanded. */
+  expandedProps?: TextinputExpandedObj;
   /** Sets the input as readonly and determines the readonly styling. */
   readOnlyVariant?: 'plain' | 'default';
   /** Flag indicating whether the input is required */
@@ -182,6 +189,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
       isLeftTruncated,
       isStartTruncated,
       isExpanded,
+      expandedProps,
       readOnly,
       readOnlyVariant,
       isRequired,
@@ -193,6 +201,9 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     } = this.props;
 
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
+    const ariaExpandedProps = expandedProps?.isExpanded
+      ? { 'aria-expanded': expandedProps?.isExpanded, 'aria-controls': expandedProps?.ariaControls, role: 'combobox' }
+      : {};
 
     return (
       <span
@@ -201,7 +212,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
           readOnlyVariant && styles.modifiers.readonly,
           readOnlyVariant === 'plain' && styles.modifiers.plain,
           isDisabled && styles.modifiers.disabled,
-          isExpanded && styles.modifiers.expanded,
+          (isExpanded || expandedProps?.isExpanded) && styles.modifiers.expanded,
           customIcon && styles.modifiers.icon,
           hasStatusIcon && styles.modifiers[validated as 'success' | 'warning' | 'error'],
           className
@@ -215,7 +226,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
           type={type}
           value={this.sanitizeInputValue(value)}
           aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
-          aria-expanded={isExpanded}
+          {...(expandedProps?.isExpanded && { ...ariaExpandedProps })}
           required={isRequired}
           disabled={isDisabled}
           readOnly={!!readOnlyVariant || readOnly}

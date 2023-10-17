@@ -6,7 +6,6 @@ exports[`TextInput default read only text input 1`] = `
     class="pf-v5-c-form-control pf-m-readonly"
   >
     <input
-      aria-expanded="false"
       aria-invalid="false"
       aria-label="default read only text input"
       data-ouia-component-id="OUIA-Generated-TextInputBase-5"
@@ -26,7 +25,6 @@ exports[`TextInput disabled text input 1`] = `
     class="pf-v5-c-form-control pf-m-disabled"
   >
     <input
-      aria-expanded="false"
       aria-invalid="false"
       aria-label="disabled text input"
       data-ouia-component-id="OUIA-Generated-TextInputBase-3"
@@ -46,7 +44,6 @@ exports[`TextInput invalid text input 1`] = `
     class="pf-v5-c-form-control pf-m-error"
   >
     <input
-      aria-expanded="false"
       aria-invalid="true"
       aria-label="invalid text input"
       data-ouia-component-id="OUIA-Generated-TextInputBase-7"
@@ -86,7 +83,6 @@ exports[`TextInput plain read only text input 1`] = `
     class="pf-v5-c-form-control pf-m-readonly pf-m-plain"
   >
     <input
-      aria-expanded="false"
       aria-invalid="false"
       aria-label="plain read only text input"
       data-ouia-component-id="OUIA-Generated-TextInputBase-6"
@@ -106,7 +102,6 @@ exports[`TextInput read only text input using isReadOnly 1`] = `
     class="pf-v5-c-form-control pf-m-readonly"
   >
     <input
-      aria-expanded="false"
       aria-invalid="false"
       aria-label="read only text input"
       data-ouia-component-id="OUIA-Generated-TextInputBase-4"
@@ -126,7 +121,6 @@ exports[`TextInput simple text input 1`] = `
     class="pf-v5-c-form-control"
   >
     <input
-      aria-expanded="false"
       aria-invalid="false"
       aria-label="simple text input"
       data-ouia-component-id="OUIA-Generated-TextInputBase-2"
@@ -145,7 +139,6 @@ exports[`TextInput validated text input error 1`] = `
     class="pf-v5-c-form-control pf-m-error"
   >
     <input
-      aria-expanded="false"
       aria-invalid="true"
       aria-label="validated text input"
       data-ouia-component-id="OUIA-Generated-TextInputBase-10"
