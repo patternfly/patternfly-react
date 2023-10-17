@@ -59,6 +59,9 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
   /** An accessible label for the search input. */
   'aria-label'?: string;
+  /** Flag to indicate utilities should be displayed. By default if this prop is undefined or false, utilities will only be displayed when the search input has a value. */
+
+  areUtilitiesDisplayed?: boolean;
   /** Array of attribute values used for dynamically generated advanced search. */
   attributes?: string[] | SearchInputSearchAttribute[];
   /** Additional classes added to the search input. */
@@ -152,6 +155,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   appendTo,
   zIndex = 9999,
   name,
+  areUtilitiesDisplayed,
   ...props
 }: SearchInputProps) => {
   const [isSearchMenuOpen, setIsSearchMenuOpen] = React.useState(false);
@@ -295,7 +299,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         onChange={onChangeHandler}
         name={name}
       />
-      {renderUtilities && (
+      {(renderUtilities || areUtilitiesDisplayed) && (
         <TextInputGroupUtilities>
           {resultsCount && <Badge isRead>{resultsCount}</Badge>}
           {!!onNextClick && !!onPreviousClick && (
