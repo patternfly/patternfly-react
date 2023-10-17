@@ -11,7 +11,7 @@
   "userDropdown": {
     "myProfile": "My profile",
     "userManagement": "User management",
-    "logout": "Logout"
+    "logout": "Log out"
   },
   "kebabAndUserDropdown": {
     "toolbarMenuAriaLabel": "Toolbar menu",
