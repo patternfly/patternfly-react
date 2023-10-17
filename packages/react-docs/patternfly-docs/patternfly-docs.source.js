@@ -44,7 +44,7 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceMD(path.join(reactCodeEditorPath, '/**/examples/*.md'), 'react');
 
   // Drag drop MD
-  sourceMD(path.join(reactDragDropPath, '/**/examples/*.md'), 'react');
+  sourceMD(path.join(reactDragDropPath, '/**/examples/*.md'), 'react-next');
 
   // OUIA MD
   sourceMD(path.join(reactCorePath, 'helpers/OUIA/OUIA.md'), 'react');
