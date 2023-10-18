@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.11...@patternfly/react-core@5.2.0-prerelease.12) (2023-10-18)
+
+### Bug Fixes
+
+- **CalendarMonth:** does not skip a month on arrow click ([#9722](https://github.com/patternfly/patternfly-react/issues/9722)) ([b09dd69](https://github.com/patternfly/patternfly-react/commit/b09dd69a44d44a3f66ff8f1ea8124d41679b857f))
+- **popper:** menu content update ([#9747](https://github.com/patternfly/patternfly-react/issues/9747)) ([e6a6846](https://github.com/patternfly/patternfly-react/commit/e6a684685f8ebe87a10aa8468ea4e0383e81c082))
+
 # [5.2.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.10...@patternfly/react-core@5.2.0-prerelease.11) (2023-10-17)
 
 ### Features
