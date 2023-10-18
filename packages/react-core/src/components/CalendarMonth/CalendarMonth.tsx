@@ -154,9 +154,10 @@ export const CalendarMonth = ({
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
 
   const getInitialDate = () => {
-    if (dateProp && isValidDate(dateProp)) {
+    if (isValidDate(dateProp)) {
       return dateProp;
-    } else if (rangeStart && isValidDate(rangeStart)) {
+    }
+    if (isValidDate(rangeStart)) {
       return rangeStart;
     }
     return today;
