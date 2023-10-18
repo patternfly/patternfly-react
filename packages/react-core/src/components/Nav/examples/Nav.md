@@ -8,8 +8,7 @@ ouia: true
 
 import './nav.css';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
-import  UserIcon  from '@patternfly/react-icons/dist/esm/icons/user-icon';
-
+import UserIcon from '@patternfly/react-icons/dist/esm/icons/user-icon';
 
 ## Examples
 

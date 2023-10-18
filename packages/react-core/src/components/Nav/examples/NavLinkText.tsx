@@ -40,7 +40,7 @@ export const NavLinkText: React.FunctionComponent = () => {
         <NavExpandable
           title={
             <>
-              Link 2<small>(small text)</small>
+              Link 2 <small>(small text)</small>
             </>
           }
           groupId="link-text-group-1"
@@ -54,6 +54,7 @@ export const NavLinkText: React.FunctionComponent = () => {
             groupId="link-text-group-1"
             itemId="link-text-group-1_item-1"
             isActive={activeItem === 'link-text-group-1_item-1'}
+            hasNavLinkWrapper
           >
             <UserIcon />
             Subnav link 1
@@ -65,6 +66,7 @@ export const NavLinkText: React.FunctionComponent = () => {
             groupId="link-text-group-1"
             itemId="link-text-group-1_item-2"
             isActive={activeItem === 'link-text-group-1_item-2'}
+            hasNavLinkWrapper
           >
             <UserIcon />
             Subnav link 2
@@ -73,7 +75,7 @@ export const NavLinkText: React.FunctionComponent = () => {
         <NavExpandable
           title={
             <>
-              Link 3<strong>(strong text)</strong>
+              Link 3 <strong>(strong text)</strong>
             </>
           }
           groupId="link-text-group-2"
