@@ -30,12 +30,14 @@ import global_BackgroundColor_100 from '@patternfly/react-tokens/dist/esm/global
 - `name`: The CSS custom property name.
 - `value`: The default value for the custom property.
 - `var`: The property name wrapped in `var()`.
+- `darkThemeValue`: The default value for the custom property in dark theme.
 
 ```js
 import global_BackgroundColor_100 from '@patternfly/react-tokens/dist/esm/global_-background-color_100';
 
 global_BackgroundColor_100.name === '--pf-v5-global--BackgroundColor--100'; // true
 global_BackgroundColor_100.value === '#fff'; // true
+global_BackgroundColor_100.darkThemeValue === '#1b1d21'; // true
 global_BackgroundColor_100.var === 'var(--pf-v5-global--BackgroundColor--100)'; // true
 ```
 

@@ -28,6 +28,19 @@ const getDeclarations = (cssAst) =>
     .map((node) => node.declarations.filter((decl) => decl.type === 'declaration'))
     .reduce((acc, val) => acc.concat(val), []); // flatten
 
+const getDeclarationsDarkTheme = (cssAst) =>
+  cssAst.stylesheet.rules
+    .filter(
+      (node) =>
+        node.type === 'rule' &&
+        !(
+          !node.selectors.includes('.pf-v5-t-dark') &&
+          (!node.selectors || !node.selectors.some((item) => item.includes('.pf-v5-theme-dark')))
+        )
+    )
+    .map((node) => node.declarations.filter((decl) => decl.type === 'declaration'))
+    .reduce((acc, val) => acc.concat(val), []); // flatten
+
 const formatFilePathToName = (filePath) => {
   // const filePathArr = filePath.split('/');
   let prefix = '';
@@ -230,6 +243,9 @@ function generateTokens() {
     const cssAst = parse(readFileSync(filePath, 'utf8'));
     // key is the formatted file name, e.g. c_about_modal_box
     const key = formatFilePathToName(filePath);
+    const darkThemeDeclarations = getDeclarationsDarkTheme(cssAst).filter(({ property }) =>
+      property.startsWith('--pf')
+    );
 
     getDeclarations(cssAst)
       .filter(({ property }) => property.startsWith('--pf'))
@@ -241,6 +257,10 @@ function generateTokens() {
           name: property,
           value: varsMap[varsMap.length - 1]
         };
+        const darkThemeProperty = darkThemeDeclarations.find(({ property: darkProperty }) => darkProperty === property);
+        if (darkThemeProperty) {
+          propertyObj.darkThemeValue = darkThemeProperty.value;
+        }
         if (varsMap.length > 1) {
           propertyObj.values = varsMap;
         }
