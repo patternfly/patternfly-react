@@ -4,6 +4,15 @@ import userEvent from '@testing-library/user-event';
 import { Chip } from '../Chip';
 import styles from '@patternfly/react-styles/css/components/Chip/chip';
 
+jest.mock('../../Tooltip', () => ({
+  Tooltip: ({ content, position }) => (
+    <div data-testid="tooltip-mock">
+      <p>{`content: ${content}`}</p>
+      <p>{`position: ${position}`}</p>
+    </div>
+  )
+}));
+
 ['default chip', 'overflow chip'].forEach((chipType) => {
   const isOverflowChip = chipType === 'overflow chip';
 
@@ -241,7 +250,27 @@ test(`Does not call onClick when chip is not clicked for overflow chip`, async (
   expect(onClickMock).not.toHaveBeenCalledTimes(1);
 });
 
+test('Passes position to Tooltip', () => {
+  Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 500 });
+  render(<Chip tooltipPosition="bottom">Test chip text</Chip>);
+
+  expect(screen.getByText('position: bottom')).toBeVisible();
+  Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 0 });
+});
+
+test('Passes content to Tooltip', () => {
+  Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 500 });
+  render(<Chip>Test chip text</Chip>);
+
+  expect(screen.getByText(`content: Test chip text`)).toBeVisible();
+  Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 0 });
+});
+
 test('Matches snapshot', () => {
-  const { asFragment } = render(<Chip id="snapshot-test">Chip text</Chip>);
+  const { asFragment } = render(
+    <Chip id="snapshot-test" ouiaId="snapshot-test">
+      Chip text
+    </Chip>
+  );
   expect(asFragment()).toMatchSnapshot();
 });
