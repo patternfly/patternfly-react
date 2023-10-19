@@ -6,13 +6,14 @@ import { ClipboardCopyButton } from '../ClipboardCopyButton';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 jest.mock('../../Tooltip', () => ({
-  Tooltip: ({ content, children, exitDelay, entryDelay, maxWidth, position }) => (
+  Tooltip: ({ content, children, exitDelay, entryDelay, maxWidth, position, onTooltipHidden }) => (
     <div data-testid="tooltip-mock">
       <div data-testid="tooltip-mock-content">{content}</div>
       <p>{`exitDelay: ${exitDelay}`}</p>
       <p>{`entryDelay: ${entryDelay}`}</p>
       <p>{`maxWidth: ${maxWidth}`}</p>
       <p>{`position: ${position}`}</p>
+      <a onClick={onTooltipHidden}>onTooltipHidden clicker</a>
       {children}
     </div>
   )
@@ -24,6 +25,12 @@ const requiredProps = {
   id: 'button-id',
   textId: 'text-id'
 };
+
+// Must be kept as first test to avoid Button's ouiaId updating in snapshots
+test('Matches snapshot', () => {
+  const { asFragment } = render(<ClipboardCopyButton {...requiredProps} />);
+  expect(asFragment()).toMatchSnapshot();
+});
 
 test('Renders with passed id prop', () => {
   render(<ClipboardCopyButton {...requiredProps} />);
@@ -39,7 +46,7 @@ test('Renders with aria-labelledby with passed id and textId prop values', () =>
     </>
   );
 
-  expect(screen.getByRole('button')).toHaveAttribute('aria-labelledby', 'button-id text-id');
+  expect(screen.getByRole('button')).toHaveAccessibleName('Copyable input Copyable text');
 });
 
 test('Renders with concatenated aria-label by default', () => {
@@ -82,13 +89,27 @@ test('Passes variant to Button when variant is passed', () => {
   expect(screen.getByRole('button')).toHaveClass(buttonStyles.modifiers.plain);
 });
 
-test('Calls onClick when passed', async () => {
+test('Calls onClick when ClipboardCopyButton is clicked', async () => {
   const user = userEvent.setup();
 
   render(<ClipboardCopyButton {...requiredProps} />);
 
   await user.click(screen.getByRole('button'));
   expect(requiredProps.onClick).toHaveBeenCalledTimes(1);
+});
+
+test('Does not call onClick when ClipboardCopyButton is not clicked', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <>
+      <ClipboardCopyButton {...requiredProps} />
+      <button>Test clicker</button>
+    </>
+  );
+
+  await user.click(screen.getByRole('button', { name: 'Test clicker' }));
+  expect(requiredProps.onClick).not.toHaveBeenCalled();
 });
 
 test('Passes children to Tooltip content', () => {
@@ -121,7 +142,13 @@ test('Passes position to Tooltip', () => {
   expect(screen.getByText('position: bottom')).toBeVisible();
 });
 
-test('Matches snapshot', () => {
-  const { asFragment } = render(<ClipboardCopyButton {...requiredProps} />);
-  expect(asFragment()).toMatchSnapshot();
+test('Passes onTooltipHidden to Tooltip', async () => {
+  const user = userEvent.setup();
+  const onTooltipHiddenMock = jest.fn();
+
+  render(<ClipboardCopyButton onTooltipHidden={onTooltipHiddenMock} {...requiredProps} />);
+
+  await user.click(screen.getByText('onTooltipHidden clicker'));
+
+  expect(onTooltipHiddenMock).toHaveBeenCalled();
 });

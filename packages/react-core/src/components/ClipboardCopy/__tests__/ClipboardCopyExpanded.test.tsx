@@ -48,7 +48,7 @@ test('Calls onChange when expanded content is typed in', async () => {
 
   await user.type(screen.getByText('Expanded content'), 's');
 
-  expect(onChangeMock).toHaveBeenCalled();
+  expect(onChangeMock).toHaveBeenCalledTimes(1);
 });
 
 test('Does not call onChange when expanded content is not typed in', async () => {

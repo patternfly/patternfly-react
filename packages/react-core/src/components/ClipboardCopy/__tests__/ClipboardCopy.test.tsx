@@ -5,7 +5,7 @@ import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipbo
 import userEvent from '@testing-library/user-event';
 
 jest.mock('../ClipboardCopyButton', () => ({
-  ClipboardCopyButton: ({ 'aria-label': ariaLabel, children, entryDelay, exitDelay, maxWidth, position }) => (
+  ClipboardCopyButton: ({ 'aria-label': ariaLabel, children, entryDelay, exitDelay, maxWidth, position, onClick }) => (
     <div data-testid="clipboardCopyButton-mock">
       <p>{`exitDelay: ${exitDelay}`}</p>
       <p>{`entryDelay: ${entryDelay}`}</p>
@@ -13,6 +13,7 @@ jest.mock('../ClipboardCopyButton', () => ({
       <p>{`position: ${position}`}</p>
       <p>{`button-ariaLabel: ${ariaLabel}`}</p>
       <div>{`children: ${children}`}</div>
+      <button onClick={onClick}>Test CCB clicker</button>
     </div>
   )
 }));
@@ -176,6 +177,15 @@ test('Passes hoverTip to ClipboardCopyButton when variant is inline-compact', ()
   expect(screen.getByText('children: hover tip')).toBeVisible();
 });
 
+test('Passes clickTip when ClipboardCopyButton clicked', async () => {
+  const user = userEvent.setup();
+  render(<ClipboardCopy clickTip="click tip">{children}</ClipboardCopy>);
+
+  await user.click(screen.getByRole('button', { name: 'Test CCB clicker' }));
+
+  expect(screen.getByText('children: click tip')).toBeVisible();
+});
+
 test('Passes entryDelay to ClipboardCopyButton by default', () => {
   render(<ClipboardCopy entryDelay={100}>{children}</ClipboardCopy>);
 
@@ -250,6 +260,12 @@ test('Passes toggleAriaLabel to ClipboardCopyToggle when variant is expansion', 
   expect(screen.getByText('toggle-ariaLabel: toggle label')).toBeVisible();
 });
 
+test('Does not set textinput to readonly when isReadOnly is not passed', () => {
+  render(<ClipboardCopy>{children}</ClipboardCopy>);
+
+  expect(screen.getByRole('textbox')).not.toHaveAttribute('readonly');
+});
+
 test('Passes isReadOnly to TextInput', () => {
   render(<ClipboardCopy isReadOnly>{children}</ClipboardCopy>);
 
@@ -262,7 +278,7 @@ test('Passes textAriaLabel to TextInput', () => {
   expect(screen.getByRole('textbox')).toHaveAccessibleName('text label');
 });
 
-test('Calls onChange', async () => {
+test('Calls onChange when ClipboardCopy textinput is typed in', async () => {
   const onChangeMock = jest.fn();
   const user = userEvent.setup();
   const typedText = 'stuff';
@@ -274,7 +290,55 @@ test('Calls onChange', async () => {
   expect(onChangeMock).toHaveBeenCalledTimes(typedText.length);
 });
 
+test('Does not call onChange when ClipboardCopy textinput is not typed in', async () => {
+  const onChangeMock = jest.fn();
+  const user = userEvent.setup();
+  const typedText = 'stuff';
+
+  render(
+    <>
+      <ClipboardCopy onChange={onChangeMock}>{children}</ClipboardCopy>
+      <input aria-label="native input" />
+    </>
+  );
+
+  await user.type(screen.getByRole('textbox', { name: 'native input' }), typedText);
+
+  expect(onChangeMock).not.toHaveBeenCalled();
+});
+
+test('Calls onCopy when ClipboardCopyButton is clicked', async () => {
+  const onCopyMock = jest.fn();
+  const user = userEvent.setup();
+
+  render(<ClipboardCopy onCopy={onCopyMock}>{children}</ClipboardCopy>);
+
+  await user.click(screen.getByRole('button', { name: 'Test CCB clicker' }));
+
+  expect(onCopyMock).toHaveBeenCalledTimes(1);
+});
+
+test('Does not call onCopy when ClipboardCopyButton is not clicked', async () => {
+  const onCopyMock = jest.fn();
+  const user = userEvent.setup();
+
+  render(
+    <>
+      <ClipboardCopy onCopy={onCopyMock}>{children}</ClipboardCopy>
+      <button>Test native clicker</button>
+    </>
+  );
+
+  await user.click(screen.getByRole('button', { name: 'Test native clicker' }));
+
+  expect(onCopyMock).not.toHaveBeenCalled();
+});
+
 test('Matches snapshot', () => {
-  const { asFragment } = render(<ClipboardCopy>{children}</ClipboardCopy>);
+  const { asFragment } = render(
+    <ClipboardCopy id="snapshot" ouiaId="snapshot">
+      {children}
+    </ClipboardCopy>
+  );
   expect(asFragment()).toMatchSnapshot();
 });

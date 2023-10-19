@@ -69,7 +69,7 @@ test('Calls onClick when clipboard toggle is clicked', async () => {
   render(<ClipboardCopyToggle {...requiredProps} />);
 
   await user.click(screen.getByRole('button'));
-  expect(onClickMock).toHaveBeenCalled();
+  expect(onClickMock).toHaveBeenCalledTimes(1);
 });
 
 test('Does not call onClick when clipboard toggle is not clicked', async () => {
