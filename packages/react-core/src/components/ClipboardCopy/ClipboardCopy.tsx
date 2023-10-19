@@ -10,7 +10,7 @@ import { ClipboardCopyToggle } from './ClipboardCopyToggle';
 import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
+export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: string) => {
   navigator.clipboard.writeText(text.toString());
 };
 
@@ -21,7 +21,7 @@ export enum ClipboardCopyVariant {
 }
 
 export interface ClipboardCopyState {
-  text: string | number;
+  text: string;
   expanded: boolean;
   copied: boolean;
 }
@@ -70,9 +70,9 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** Delay in ms before the tooltip appears. */
   entryDelay?: number;
   /** A function that is triggered on clicking the copy button. */
-  onCopy?: (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => void;
+  onCopy?: (event: React.ClipboardEvent<HTMLDivElement>, text?: string) => void;
   /** A function that is triggered on changing the text. */
-  onChange?: (event: React.FormEvent, text?: string | number) => void;
+  onChange?: (event: React.FormEvent, text?: string) => void;
   /** The text which is copied. */
   children: string;
   /** Additional actions for inline clipboard copy. Should be wrapped with ClipboardCopyAction. */
@@ -89,9 +89,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
   constructor(props: ClipboardCopyProps) {
     super(props);
     this.state = {
-      text: Array.isArray(this.props.children)
-        ? this.props.children.join('')
-        : (this.props.children as string | number),
+      text: Array.isArray(this.props.children) ? this.props.children.join('') : (this.props.children as string),
       expanded: this.props.isExpanded,
       copied: false
     };
@@ -119,7 +117,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   componentDidUpdate = (prevProps: ClipboardCopyProps, prevState: ClipboardCopyState) => {
     if (prevProps.children !== this.props.children) {
-      this.setState({ text: this.props.children as string | number });
+      this.setState({ text: this.props.children as string });
     }
   };
 
@@ -136,7 +134,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
     }));
   };
 
-  updateText = (event: React.FormEvent, text: string | number) => {
+  updateText = (event: React.FormEvent, text: string) => {
     this.setState({ text });
     this.props.onChange(event, text);
   };
@@ -239,7 +237,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                   <TextInput
                     readOnlyVariant={isReadOnly || this.state.expanded ? 'default' : undefined}
                     onChange={this.updateText}
-                    value={this.state.text as string | number}
+                    value={this.state.text}
                     id={`text-input-${id}`}
                     aria-label={textAriaLabel}
                     {...(isCode && { dir: 'ltr' })}
@@ -268,7 +266,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                     id={`content-${id}`}
                     onChange={this.updateText}
                   >
-                    {this.state.text as string}
+                    {this.state.text}
                   </ClipboardCopyExpanded>
                 )}
               </React.Fragment>
