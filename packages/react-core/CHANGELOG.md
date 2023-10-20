@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.12...@patternfly/react-core@5.2.0-prerelease.13) (2023-10-20)
+
+### Bug Fixes
+
+- **InputGroup:** don't add aria-describedby automatically ([#9670](https://github.com/patternfly/patternfly-react/issues/9670)) ([a0e4655](https://github.com/patternfly/patternfly-react/commit/a0e465553641e86e08408387dec172160c67b2f8))
+
 # [5.2.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.11...@patternfly/react-core@5.2.0-prerelease.12) (2023-10-18)
 
 ### Bug Fixes
