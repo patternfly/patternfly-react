@@ -41,7 +41,7 @@ import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amou
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { rows, columns, SampleDataRow } from '@patternfly/react-table/src/demos/examples/Table/sampleData';
+import { rows, columns, SampleDataRow } from '@patternfly/react-table/src/demos/sampleData';
 
 type Direction = 'asc' | 'desc' | 'none';
 

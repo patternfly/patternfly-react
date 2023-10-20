@@ -30,7 +30,7 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 import { capitalize } from '@patternfly/react-table/src/components/Table/utils/utils';
-import { rows, columns } from '@patternfly/react-table/src/demos/examples/Table/sampleData';
+import { rows, columns } from '@patternfly/react-table/src/demos/sampleData';
 
 export const ColumnManagementAction: React.FC = () => {
   const defaultColumns = columns;

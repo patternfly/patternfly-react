@@ -48,7 +48,8 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { rows, columns } from './sampleData';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { rows, columns } from '@patternfly/react-table/src/demos/sampleData';
 
 ## Demos
 
