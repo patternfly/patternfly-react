@@ -50,6 +50,7 @@ import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 ## Demos
 

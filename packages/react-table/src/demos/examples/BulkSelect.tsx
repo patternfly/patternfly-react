@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import {
   Dropdown,
@@ -20,12 +20,12 @@ import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/d
 import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
 export const BulkSelectTableDemo: React.FunctionComponent = () => {
-  const [isBulkSelectDropdownOpen, setIsBulkSelectDropdownOpen] = useState<boolean>(false);
-  const [bulkSelection, setBulkSelection] = useState<string | number>('');
-  const [page, setPage] = useState<number>(1);
-  const [perPage, setPerPage] = useState<number>(10);
-  const [paginatedRows, setPaginatedRows] = useState(rows.slice(0, 10));
-  const [selectedRows, setSelectedRows] = useState<string[]>([]);
+  const [isBulkSelectDropdownOpen, setIsBulkSelectDropdownOpen] = React.useState<boolean>(false);
+  const [bulkSelection, setBulkSelection] = React.useState<string | number>('');
+  const [page, setPage] = React.useState<number>(1);
+  const [perPage, setPerPage] = React.useState<number>(10);
+  const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
+  const [selectedRows, setSelectedRows] = React.useState<string[]>([]);
 
   const handleSetPage = (
     _evt: MouseEvent | React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>,

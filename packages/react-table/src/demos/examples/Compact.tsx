@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Button,
   Card,
@@ -21,10 +21,10 @@ import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData
 import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
 export const CompactTable: React.FC = () => {
-  const [isSelectOpen, setIsSelectOpen] = useState<boolean>(false);
-  const [page, setPage] = useState<number>(1);
-  const [perPage, setPerPage] = useState<number>(10);
-  const [paginatedRows, setPaginatedRows] = useState(rows.slice(0, 10));
+  const [isSelectOpen, setIsSelectOpen] = React.useState<boolean>(false);
+  const [page, setPage] = React.useState<number>(1);
+  const [perPage, setPerPage] = React.useState<number>(10);
+  const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
 
   const handleSetPage = (_evt: any, newPage: number, startIdx: number, endIdx: number) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));

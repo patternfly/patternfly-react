@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import {
   Button,
@@ -36,16 +36,16 @@ export const ColumnManagementAction: React.FC = () => {
   const defaultColumns = columns;
   const defaultRows = rows;
 
-  const [filters, setFilters] = useState<string[]>([]);
-  const [filteredColumns, setFilteredColumns] = useState<string[]>([]);
-  const [filteredRows, setFilteredRows] = useState<any[]>([]);
-  const [managedColumns, setManagedColumns] = useState<string[]>(defaultColumns);
-  const [managedRows, setManagedRows] = useState<any[]>(defaultRows);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [checkedState, setCheckedState] = useState<boolean[]>(Array(columns.length).fill(true));
-  const [page, setPage] = useState<number>(1);
-  const [perPage, setPerPage] = useState<number>(10);
-  const [paginatedRows, setPaginatedRows] = useState<any[]>(rows);
+  const [filters, setFilters] = React.useState<string[]>([]);
+  const [filteredColumns, setFilteredColumns] = React.useState<string[]>([]);
+  const [filteredRows, setFilteredRows] = React.useState<any[]>([]);
+  const [managedColumns, setManagedColumns] = React.useState<string[]>(defaultColumns);
+  const [managedRows, setManagedRows] = React.useState<any[]>(defaultRows);
+  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+  const [checkedState, setCheckedState] = React.useState<boolean[]>(Array(columns.length).fill(true));
+  const [page, setPage] = React.useState<number>(1);
+  const [perPage, setPerPage] = React.useState<number>(10);
+  const [paginatedRows, setPaginatedRows] = React.useState<any[]>(rows);
 
   const matchCheckboxNameToColumn = (name: string): string => {
     switch (name) {
@@ -123,7 +123,7 @@ export const ColumnManagementAction: React.FC = () => {
     />
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     setPaginatedRows(managedRows.slice((page - 1) * perPage, page * perPage - 1));
   }, [managedRows, page, perPage]);
 
