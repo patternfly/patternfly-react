@@ -9,7 +9,7 @@ import {
   PageSection,
   Spinner
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
 export const EmptyStateLoadingDemo: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>

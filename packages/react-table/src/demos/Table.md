@@ -48,8 +48,8 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-import { rows, columns } from '@patternfly/react-table/src/demos/sampleData';
+import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
+import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
 ## Demos
 
@@ -854,7 +854,7 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { rows, columns } from '@patternfly/react-table/src/demos/sampleData';
+import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
 class FilterTableDemo extends React.Component {
   constructor(props) {

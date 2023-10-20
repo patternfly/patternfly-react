@@ -18,8 +18,8 @@ import {
 } from '@patternfly/react-core';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-import { rows, columns } from '@patternfly/react-table/src/demos/sampleData';
+import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
+import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
 export const StaticBottomPagination: React.FC = () => {
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);

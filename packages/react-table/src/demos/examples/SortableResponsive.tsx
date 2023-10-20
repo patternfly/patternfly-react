@@ -39,9 +39,9 @@ import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { rows, columns, SampleDataRow } from '@patternfly/react-table/src/demos/sampleData';
+import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
 type Direction = 'asc' | 'desc' | 'none';
 

@@ -12,7 +12,7 @@ import {
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
 export const ErrorStateDemo: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
