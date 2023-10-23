@@ -62,7 +62,7 @@ export const NavExpandableThirdLevel: React.FunctionComponent = () => {
           </NavItem>
         </NavExpandable>
         <NavExpandable
-          title="Expandable section title 2"
+          title={'Expandable section title 2'}
           groupId="nav-expand3rd-group-2"
           isActive={activeGroup === 'nav-expand3rd-group-2'}
           isExpanded
