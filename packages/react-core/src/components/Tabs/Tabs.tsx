@@ -6,7 +6,7 @@ import { PickOptional } from '../../helpers/typeUtils';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
-import { getUniqueId, isElementInView, formatBreakpointMods } from '../../helpers/util';
+import { getUniqueId, isElementInView, formatBreakpointMods, getLanguageDirection } from '../../helpers/util';
 import { TabContent } from './TabContent';
 import { TabProps } from './Tab';
 import { TabsContextProvider } from './TabsContext';
@@ -333,7 +333,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
       if (canUseDOM) {
         window.addEventListener('resize', this.handleScrollButtons, false);
       }
-      this.direction = getComputedStyle(this.tabList.current).getPropertyValue('direction');
+      this.direction = getLanguageDirection(this.tabList.current);
       // call the handle resize function to check if scroll buttons should be shown
       this.handleScrollButtons();
     }
@@ -381,7 +381,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
       this.setState({ showScrollButtons: false });
     }
 
-    this.direction = getComputedStyle(this.tabList.current).getPropertyValue('direction');
+    this.direction = getLanguageDirection(this.tabList.current);
   }
 
   render() {

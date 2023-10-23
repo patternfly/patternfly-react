@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import { isElementInView } from '../../helpers/util';
+import { getLanguageDirection, isElementInView } from '../../helpers/util';
 import { NavContext } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { getResizeObserver } from '../../helpers/resizeObserver';
@@ -112,7 +112,7 @@ class NavList extends React.Component<NavListProps> {
 
   componentDidMount() {
     this.observer = getResizeObserver(this.navList.current, this.handleScrollButtons, true);
-    this.direction = getComputedStyle(this.navList.current).getPropertyValue('direction');
+    this.direction = getLanguageDirection(this.navList.current);
     this.handleScrollButtons();
   }
 
@@ -121,7 +121,7 @@ class NavList extends React.Component<NavListProps> {
   }
 
   componentDidUpdate() {
-    this.direction = getComputedStyle(this.navList.current).getPropertyValue('direction');
+    this.direction = getLanguageDirection(this.navList.current);
   }
 
   render() {
