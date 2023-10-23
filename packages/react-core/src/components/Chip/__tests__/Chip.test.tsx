@@ -214,7 +214,7 @@ test(`Does not call onClick when close button action is not clicked for default 
 
   await user.click(screen.getByRole('button', { name: 'Test clicker' }));
 
-  expect(onClickMock).not.toHaveBeenCalledTimes(1);
+  expect(onClickMock).not.toHaveBeenCalled();
 });
 
 test(`Calls onClick when chip is clicked for overflow chip`, async () => {
@@ -247,7 +247,7 @@ test(`Does not call onClick when chip is not clicked for overflow chip`, async (
 
   await user.click(screen.getByRole('button', { name: 'Test clicker' }));
 
-  expect(onClickMock).not.toHaveBeenCalledTimes(1);
+  expect(onClickMock).not.toHaveBeenCalled();
 });
 
 test('Passes position to Tooltip', () => {
