@@ -141,7 +141,7 @@ test('Associates the label with the checkbox', () => {
   expect(screen.getByRole('checkbox')).toHaveAccessibleName('test label');
 });
 
-test('Does not render an asterisk when a label is passed by isRequired is not', () => {
+test('Does not render an asterisk when a label is passed but isRequired is not', () => {
   render(<Checkbox id="test-id" label="test label" />);
 
   expect(screen.queryByText('*')).not.toBeInTheDocument();
