@@ -28,7 +28,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node1'
@@ -38,7 +38,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '5 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node2'
@@ -48,7 +48,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '20 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node3'
@@ -58,7 +58,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '10 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node4'
@@ -68,7 +68,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '15 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node5'
@@ -78,7 +78,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '4 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node6'
@@ -88,7 +88,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '10 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node7'
@@ -98,7 +98,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '8 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node8'
@@ -108,7 +108,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '1 hour ago',
     url: 'http://www.redhat.com/en/office-locations/US-node9'
@@ -118,7 +118,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node10'
@@ -128,7 +128,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '55 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node11'
@@ -138,7 +138,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '1 hour ago',
     url: 'http://www.redhat.com/en/office-locations/US-node12'
@@ -148,7 +148,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '20 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node13'
@@ -158,7 +158,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '4 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node14'
@@ -168,7 +168,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '10 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node15'
@@ -178,7 +178,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '5 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node16'
@@ -188,7 +188,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '5 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node17'
@@ -198,7 +198,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '10 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node18'
@@ -208,7 +208,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '30 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node19'
@@ -218,7 +218,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '3 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node20'
@@ -228,7 +228,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '15 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node21'
@@ -238,7 +238,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node22'
@@ -248,7 +248,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node23'
@@ -258,7 +258,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '40 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/US-node24'
@@ -268,7 +268,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '1 hour ago',
     url: 'http://www.redhat.com/en/office-locations/US-node25'
@@ -278,7 +278,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Raleigh', 'Boston', 'Atlanta', 'San Francisco'][getRandomInteger(0, 3)],
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/US-node26'
@@ -288,7 +288,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '7 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node1'
@@ -298,7 +298,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '50 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node2'
@@ -308,7 +308,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '10 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node3'
@@ -318,7 +318,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '3 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node4'
@@ -328,7 +328,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node5'
@@ -338,7 +338,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node6'
@@ -348,7 +348,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '25 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node7'
@@ -358,7 +358,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '1 hour ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node8'
@@ -368,7 +368,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '15 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node9'
@@ -378,7 +378,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '3 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node10'
@@ -388,7 +388,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '30 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node11'
@@ -398,7 +398,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '5 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node12'
@@ -408,7 +408,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '45 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node13'
@@ -418,7 +418,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node14'
@@ -428,7 +428,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '10 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-node15'
@@ -438,7 +438,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '20 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-Remote-node1'
@@ -448,7 +448,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '15 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-Remote-node2'
@@ -458,7 +458,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-Remote-node3'
@@ -468,7 +468,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '1 hour ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-Remote-node4'
@@ -478,7 +478,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '30 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-Remote-node5'
@@ -488,7 +488,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-Remote-node6'
@@ -498,7 +498,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '45 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node7'
@@ -508,7 +508,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '6 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node8'
@@ -518,7 +518,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '50 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node9'
@@ -528,7 +528,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '3 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node10'
@@ -538,7 +538,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node11'
@@ -548,7 +548,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '20 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node12'
@@ -558,7 +558,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '5 hours ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node13'
@@ -568,7 +568,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '30 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node14'
@@ -578,7 +578,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '1 hour ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node15'
@@ -588,7 +588,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '1 hour ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node16'
@@ -598,7 +598,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '25 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node17'
@@ -608,7 +608,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: ['Brno', 'Prague'][getRandomInteger(0, 1)],
     lastModified: '20 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/CZ-remote-node18'
@@ -618,7 +618,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '25 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node1'
@@ -628,7 +628,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node2'
@@ -638,7 +638,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '10 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node3'
@@ -648,7 +648,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '50 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node4'
@@ -658,7 +658,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '3 hours ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node5'
@@ -668,7 +668,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node6'
@@ -678,7 +678,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '5 hours ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node7'
@@ -688,7 +688,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '30 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node8'
@@ -698,7 +698,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '20 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node9'
@@ -708,7 +708,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '1 hour ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node10'
@@ -718,7 +718,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '40 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node11'
@@ -728,7 +728,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '1 hour ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node12'
@@ -738,7 +738,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '20 minutes ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node13'
@@ -748,7 +748,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '4 hours ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node14'
@@ -758,7 +758,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '2 hours ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node15'
@@ -768,7 +768,7 @@ export const rows: SampleDataRow[] = [
     threads: getRandomInteger(1, 20),
     applications: getRandomInteger(1, 50),
     workspaces: getRandomInteger(1, 30),
-    status: ['Stopped', 'Running', 'Down', 'Needs Maintenance'][getRandomInteger(0, 3)],
+    status: ['Stopped', 'Running', 'Down', 'Needs maintenance'][getRandomInteger(0, 3)],
     location: 'Bangalore',
     lastModified: '3 hours ago',
     url: 'http://www.redhat.com/en/office-locations/Bangalore-node16'
