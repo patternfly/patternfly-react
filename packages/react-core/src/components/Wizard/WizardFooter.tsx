@@ -6,11 +6,11 @@ import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { Button, ButtonProps, ButtonVariant } from '../Button';
 import { isCustomWizardFooter, WizardStepType } from './types';
 
+type FooterButtonProps = Omit<ButtonProps, 'children' | 'variant' | 'onClick'>;
+
 /**
  * Hosts the standard structure of a footer with ties to the active step so that text for buttons can vary from step to step.
  */
-
-type FooterButtonProps = Omit<ButtonProps, 'children' | 'variant' | 'onClick'>;
 
 export interface WizardFooterProps {
   /** The active step */
