@@ -56,6 +56,12 @@ test(`Sets the checkbox as disabled when isDisabled is passed`, () => {
   expect(screen.getByRole('checkbox')).toBeDisabled();
 });
 
+test('Sets the label as disabled when isDisabled and label are passed', () => {
+  render(<Checkbox id="test-id" isDisabled label="test label" />);
+
+  expect(screen.getByLabelText('test label')).toBeDisabled();
+});
+
 test('Does not set the checkbox as required by default', () => {
   render(<Checkbox id="test-id" />);
 
@@ -132,7 +138,7 @@ test('Does not render a label by default', () => {
 test('Renders a label when label is passed', () => {
   render(<Checkbox id="test-id" label="test label" />);
 
-  expect(screen.queryByLabelText('test label')).toBeVisible();
+  expect(screen.getByLabelText('test label')).toBeVisible();
 });
 
 test('Associates the label with the checkbox', () => {
@@ -216,13 +222,13 @@ test(`Renders the passed body with the ${styles.checkBody} className`, () => {
 test('Renders the check wrapper as a div by default', () => {
   render(<Checkbox id="test-id" />);
 
-  expect(screen.getByRole('checkbox').parentElement).toHaveProperty('nodeName', 'DIV');
+  expect(screen.getByRole('checkbox').parentElement?.tagName).toBe('DIV');
 });
 
 test('Renders with the provided component', () => {
   render(<Checkbox id="test-id" component="span" />);
 
-  expect(screen.getByRole('checkbox').parentElement).toHaveProperty('nodeName', 'SPAN');
+  expect(screen.getByRole('checkbox').parentElement?.tagName).toBe('SPAN');
 });
 
 test(`Spreads additional props`, () => {
