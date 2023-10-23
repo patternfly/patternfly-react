@@ -132,7 +132,7 @@ test(`Calls onChange with the event and the checked value when the checkbox is c
 test('Does not render a label by default', () => {
   render(<Checkbox id="test-id" />);
 
-  expect(screen.queryByLabelText('test label')).not.toBeInTheDocument();
+  expect(screen.queryByLabelText(/\w+/)).not.toBeInTheDocument();
 });
 
 test('Renders a label when label is passed', () => {
@@ -186,7 +186,7 @@ test('Sets the name to the passed aria-label', () => {
 test('Does not render a description by default', () => {
   render(<Checkbox id="test-id" />);
 
-  expect(screen.queryByText('test description')).not.toBeInTheDocument();
+  expect(screen.queryByText(/\w+/)).not.toBeInTheDocument();
 });
 
 test('Renders a description when description is passed', () => {
@@ -204,7 +204,7 @@ test(`Renders the passed description with the ${styles.checkDescription} classNa
 test('Does not render a body by default', () => {
   render(<Checkbox id="test-id" />);
 
-  expect(screen.queryByText('test body')).not.toBeInTheDocument();
+  expect(screen.queryByText(/\w+/)).not.toBeInTheDocument();
 });
 
 test('Renders a body when body is passed', () => {
