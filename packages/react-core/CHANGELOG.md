@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.13...@patternfly/react-core@5.2.0-prerelease.14) (2023-10-23)
+
+### Features
+
+- **Nav:** Updated to add wrapper for nav link text ([#9740](https://github.com/patternfly/patternfly-react/issues/9740)) ([32655ae](https://github.com/patternfly/patternfly-react/commit/32655aec8635e6704c0f93ab5ef2ea16ddddacd0))
+
 # [5.2.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.12...@patternfly/react-core@5.2.0-prerelease.13) (2023-10-20)
 
 ### Bug Fixes
