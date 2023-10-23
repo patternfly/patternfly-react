@@ -26,8 +26,10 @@ export enum TextInputReadOnlyVariant {
   plain = 'plain'
 }
 
-interface TextinputExpandedObj {
+export interface TextInputExpandedObj {
+  /** Flag to apply expanded styling. */
   isExpanded: boolean;
+  /** Id of the element that the text input is controlling expansion of. */
   ariaControls: string;
 }
 
@@ -38,10 +40,10 @@ export interface TextInputProps
   className?: string;
   /** Flag to show if the text input is disabled. */
   isDisabled?: boolean;
-  /** @deprecated Flag to apply expanded styling */
+  /** @deprecated Flag to apply expanded styling. expandedProps should now be used instead. */
   isExpanded?: boolean;
-  /** Prop to apply expanded styling to the text input and link it toe the element it is controlling. This should be used when the input controls a menu and tha menu is expanded. */
-  expandedProps?: TextinputExpandedObj;
+  /** Prop to apply expanded styling to the text input and link it to the element it is controlling. This should be used when the input controls a menu and that menu is expandable. */
+  expandedProps?: TextInputExpandedObj;
   /** Sets the input as readonly and determines the readonly styling. */
   readOnlyVariant?: 'plain' | 'default';
   /** Flag indicating whether the input is required */
@@ -201,7 +203,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     } = this.props;
 
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
-    const ariaExpandedProps = expandedProps?.isExpanded
+    const ariaExpandedProps = expandedProps
       ? { 'aria-expanded': expandedProps?.isExpanded, 'aria-controls': expandedProps?.ariaControls, role: 'combobox' }
       : {};
 
@@ -226,7 +228,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
           type={type}
           value={this.sanitizeInputValue(value)}
           aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
-          {...(expandedProps?.isExpanded && { ...ariaExpandedProps })}
+          {...ariaExpandedProps}
           required={isRequired}
           disabled={isDisabled}
           readOnly={!!readOnlyVariant || readOnly}
