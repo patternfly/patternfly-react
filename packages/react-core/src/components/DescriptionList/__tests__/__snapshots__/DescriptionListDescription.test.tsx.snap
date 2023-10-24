@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders to match snapshot 1`] = `
+<DocumentFragment>
+  <dd
+    class="pf-v5-c-description-list__description"
+  >
+    <div
+      class="pf-v5-c-description-list__text"
+    >
+      test
+    </div>
+  </dd>
+</DocumentFragment>
+`;
