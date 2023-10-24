@@ -4,34 +4,6 @@ exports[`Renders to match snapshot 1`] = `
 <DocumentFragment>
   <div
     class="pf-v5-c-helper-text"
-  >
-    <div
-      class="pf-v5-c-helper-text__item"
-    >
-      <span
-        class="pf-v5-c-helper-text__item-text"
-      >
-        help test text
-      </span>
-    </div>
-    <div
-      class="pf-v5-c-helper-text__item"
-    >
-      <span
-        class="pf-v5-c-helper-text__item-text"
-      >
-        help test text 2
-      </span>
-    </div>
-    <div
-      class="pf-v5-c-helper-text__item"
-    >
-      <span
-        class="pf-v5-c-helper-text__item-text"
-      >
-        help test text 3
-      </span>
-    </div>
-  </div>
+  />
 </DocumentFragment>
 `;
