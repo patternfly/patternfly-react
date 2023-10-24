@@ -186,7 +186,7 @@ export interface PopperProps {
    * Lifecycle function invoked when the popper has fully transitioned in.
    */
   onShown?: () => void;
-  /** Enable to prevent the popper from overflowing its container and becoming partially obscured. */
+  /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
   preventOverflow?: boolean;
 }
 
