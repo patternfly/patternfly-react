@@ -24,7 +24,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/Dashboar
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
-export const CompoundExpandable: React.FC = () => {
+export const TableCompoundExpansion: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
 

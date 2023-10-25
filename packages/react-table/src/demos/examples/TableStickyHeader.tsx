@@ -5,7 +5,7 @@ import { Table, Thead, Tr, Th, Tbody, Td, TableText } from '@patternfly/react-ta
 import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
-export const StickyHeader: React.FunctionComponent = () => {
+export const TableStickyHeader: React.FunctionComponent = () => {
   const renderLabel = (labelText: string) => {
     switch (labelText) {
       case 'Running':

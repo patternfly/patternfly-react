@@ -28,7 +28,7 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
-export const FilterTableDemo: React.FunctionComponent = () => {
+export const TableFilterable: React.FunctionComponent = () => {
   const [filters, setFilters] = React.useState<Record<string, string[]>>({ location: [], name: [], status: [] });
   const [currentCategory, setCurrentCategory] = React.useState('Status');
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = React.useState(false);

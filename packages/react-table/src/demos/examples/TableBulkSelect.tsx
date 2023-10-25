@@ -19,32 +19,20 @@ import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/demos/sampleData';
 import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
-export const BulkSelectTableDemo: React.FunctionComponent = () => {
+export const TableBulkSelect: React.FunctionComponent = () => {
   const [isBulkSelectDropdownOpen, setIsBulkSelectDropdownOpen] = React.useState<boolean>(false);
-  const [bulkSelection, setBulkSelection] = React.useState<string | number>('');
+  const [bulkSelection, setBulkSelection] = React.useState<string>('');
   const [page, setPage] = React.useState<number>(1);
   const [perPage, setPerPage] = React.useState<number>(10);
   const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
   const [selectedRows, setSelectedRows] = React.useState<string[]>([]);
 
-  const handleSetPage = (
-    _evt: MouseEvent | React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>,
-    newPage: number,
-    _perPage: number,
-    startIdx: number,
-    endIdx: number
-  ) => {
-    setPaginatedRows(rows.slice(startIdx, endIdx));
+  const handleSetPage = (_evt, newPage, _perPage, startIdx, endIdx) => {
+    setPaginatedRows(rows?.slice(startIdx, endIdx));
     setPage(newPage);
   };
 
-  const handlePerPageSelect = (
-    _evt: MouseEvent | React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>,
-    newPerPage: number,
-    newPage: number,
-    startIdx: number,
-    endIdx: number
-  ) => {
+  const handlePerPageSelect = (_evt, newPerPage, newPage, startIdx, endIdx) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
     setPerPage(newPerPage);
@@ -95,7 +83,7 @@ export const BulkSelectTableDemo: React.FunctionComponent = () => {
     return (
       <Dropdown
         role="menu"
-        onSelect={(_ev: React.MouseEvent<Element, MouseEvent>, value: string | number) => {
+        onSelect={(_event, value) => {
           if (value === 'all') {
             selectAllRows(bulkSelection !== 'all');
           } else if (value === 'page') {
@@ -103,7 +91,7 @@ export const BulkSelectTableDemo: React.FunctionComponent = () => {
           } else {
             setSelectedRows([]);
           }
-          setBulkSelection(value);
+          setBulkSelection(value as string);
         }}
         isOpen={isBulkSelectDropdownOpen}
         onOpenChange={(isOpen: boolean) => setIsBulkSelectDropdownOpen(isOpen)}

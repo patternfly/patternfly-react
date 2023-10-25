@@ -119,7 +119,7 @@ const serverData: Server[] = [
 
 const initialExpandedServerNames = ['US-Node 2']; // Default to expanded
 
-export const ExpandCollapseAllTableDemo: React.FC = () => {
+export const TableExpandCollapseAll: React.FunctionComponent = () => {
   const [areAllExpanded, setAreAllExpanded] = React.useState(false);
   const [collapseAllAriaLabel, setCollapseAllAriaLabel] = React.useState('Expand all');
   const [expandedServerNames, setExpandedServerNames] = React.useState(initialExpandedServerNames);

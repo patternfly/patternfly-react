@@ -4,14 +4,17 @@ import {
   Bullseye,
   Card,
   EmptyState,
+  EmptyStateVariant,
   EmptyStateIcon,
+  EmptyStateBody,
   EmptyStateHeader,
-  PageSection,
-  Spinner
+  PageSection
 } from '@patternfly/react-core';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
 import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
-export const EmptyStateLoadingDemo: React.FunctionComponent = () => (
+export const TableEmptyStateError: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
     <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
       <Card component="div">
@@ -29,8 +32,15 @@ export const EmptyStateLoadingDemo: React.FunctionComponent = () => (
             <Tr>
               <Td colSpan={8}>
                 <Bullseye>
-                  <EmptyState>
-                    <EmptyStateHeader titleText="Loading" headingLevel="h2" icon={<EmptyStateIcon icon={Spinner} />} />
+                  <EmptyState variant={EmptyStateVariant.sm}>
+                    <EmptyStateHeader
+                      titleText="Unable to connect"
+                      icon={<EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />}
+                      headingLevel="h2"
+                    />
+                    <EmptyStateBody>
+                      There was an error retrieving data. Check your connection and reload the page.
+                    </EmptyStateBody>
                   </EmptyState>
                 </Bullseye>
               </Td>

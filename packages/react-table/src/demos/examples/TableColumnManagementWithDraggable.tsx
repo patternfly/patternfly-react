@@ -47,7 +47,7 @@ interface RowType {
   )[];
 }
 
-export const ColumnManagementAction: React.FunctionComponent = () => {
+export const TableColumnManagementWithDraggable: React.FunctionComponent = () => {
   const actions = [
     {
       title: <a href="#">Link</a>

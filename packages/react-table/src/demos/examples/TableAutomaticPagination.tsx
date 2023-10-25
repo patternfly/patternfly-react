@@ -2,7 +2,7 @@ import React from 'react';
 import { Pagination } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
-export const AutomaticPaginationTableDemo: React.FunctionComponent = () => {
+export const TableAutomaticPagination: React.FunctionComponent = () => {
   const columns = {
     firstColumn: 'First column',
     secondColumn: 'Second column',
@@ -29,7 +29,7 @@ export const AutomaticPaginationTableDemo: React.FunctionComponent = () => {
   const [page, setPage] = React.useState(1);
   const [rows, setRows] = React.useState(defaultRows.slice(0, defaultPerPage));
 
-  const handleSetPage = (_evt, newPage, perPage, startIdx, endIdx) => {
+  const handleSetPage = (_evt, newPage, _perPage, startIdx, endIdx) => {
     setPage(newPage);
     setRows(defaultRows.slice(startIdx, endIdx));
   };

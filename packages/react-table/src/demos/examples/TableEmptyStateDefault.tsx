@@ -16,7 +16,7 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
-export const EmptyStateDefaultDemo: React.FunctionComponent = () => (
+export const TableEmptyStateDefault: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
     <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
       <Card component="div">

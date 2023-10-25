@@ -21,16 +21,16 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
-export const StaticBottomPagination: React.FC = () => {
+export const TableStaticBottomPagination: React.FunctionComponent = () => {
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(10);
   const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
-  const handleSetPage = (_evt: any, newPage: number, perPage: number, startIdx: number, endIdx: number) => {
+  const handleSetPage = (_evt, newPage, _perPage, startIdx, endIdx) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
   };
-  const handlePerPageSelect = (_evt: any, newPerPage: number, newPage: number, startIdx: number, endIdx: number) => {
+  const handlePerPageSelect = (_evt, newPerPage, newPage, startIdx, endIdx) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
     setPerPage(newPerPage);

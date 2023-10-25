@@ -43,9 +43,9 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/Dashboar
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
-type Direction = 'asc' | 'desc' | 'none';
+type Direction = 'asc' | 'desc' | undefined;
 
-export const ComposableTableSortable: React.FC = () => {
+export const TableSortableResponsive: React.FunctionComponent = () => {
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
 
   const sortRows = (rows: SampleDataRow[], sortIndex: number, sortDirection: Direction) =>
@@ -99,9 +99,9 @@ export const ComposableTableSortable: React.FC = () => {
     setPerPage(newPerPage);
   };
 
-  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant) => (
+  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant, isCompact: boolean) => (
     <Pagination
-      isCompact
+      isCompact={isCompact}
       itemCount={rows.length}
       page={page}
       perPage={perPage}
@@ -141,11 +141,11 @@ export const ComposableTableSortable: React.FC = () => {
             isOpen={isSortDropdownOpen}
             selected={[activeSortDirection, activeSortIndex]}
             onOpenChange={(isOpen: boolean) => setIsSortDropdownOpen(isOpen)}
-            onSelect={(event: React.MouseEvent<Element, MouseEvent>, value: string | number) => {
+            onSelect={(event, value) => {
               if (value === 'asc' || value === 'desc') {
                 onSort(event, activeSortIndex, value);
               } else {
-                onSort(event, value as number, activeSortDirection !== 'none' ? activeSortDirection : 'asc');
+                onSort(event, value as number, activeSortDirection ?? 'asc');
               }
             }}
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (

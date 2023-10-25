@@ -22,9 +22,7 @@ interface Fact {
   detail14: string;
 }
 
-type Direction = 'asc' | 'desc' | 'none';
-
-export const StickyFirstColumn = () => {
+export const TableStickyFirstColumn = () => {
   const facts = Array.from(
     {
       length: 9
@@ -66,8 +64,8 @@ export const StickyFirstColumn = () => {
     header15: 'Header 15',
     header16: 'Header 16'
   };
-  const [activeSortIndex, setActiveSortIndex] = React.useState(null);
-  const [activeSortDirection, setActiveSortDirection] = React.useState(null);
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  const [activeSortDirection, setActiveSortDirection] = React.useState();
   const getSortableRowValues = (fact: Fact) => {
     const {
       name,
@@ -126,7 +124,7 @@ export const StickyFirstColumn = () => {
       index: activeSortIndex,
       direction: activeSortDirection
     },
-    onSort: (_event: any, index: number, direction: Direction) => {
+    onSort: (_event, index, direction) => {
       setActiveSortIndex(index);
       setActiveSortDirection(direction);
     },

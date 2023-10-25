@@ -30,17 +30,17 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 import { capitalize } from '@patternfly/react-table/src/components/Table/utils/utils';
-import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
+import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
-export const ColumnManagementAction: React.FC = () => {
+export const TableColumnManagement: React.FunctionComponent = () => {
   const defaultColumns = columns;
   const defaultRows = rows;
 
   const [filters, setFilters] = React.useState<string[]>([]);
   const [filteredColumns, setFilteredColumns] = React.useState<string[]>([]);
-  const [filteredRows, setFilteredRows] = React.useState<any[]>([]);
+  const [filteredRows, setFilteredRows] = React.useState<SampleDataRow[]>([]);
   const [managedColumns, setManagedColumns] = React.useState<string[]>(defaultColumns);
-  const [managedRows, setManagedRows] = React.useState<any[]>(defaultRows);
+  const [managedRows, setManagedRows] = React.useState<SampleDataRow[]>(defaultRows);
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
   const [checkedState, setCheckedState] = React.useState<boolean[]>(Array(columns.length).fill(true));
   const [page, setPage] = React.useState<number>(1);
@@ -108,7 +108,7 @@ export const ColumnManagementAction: React.FC = () => {
     setPerPage(newPerPage);
   };
 
-  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant, isCompact: boolean) => (
+  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant, isCompact?: boolean) => (
     <Pagination
       isCompact={isCompact}
       itemCount={rows.length}
@@ -425,7 +425,7 @@ export const ColumnManagementAction: React.FC = () => {
               </OverflowMenuGroup>
             </OverflowMenu>
           </ToolbarItem>
-          <ToolbarItem variant="pagination">{renderPagination(PaginationVariant.top)}</ToolbarItem>
+          <ToolbarItem variant="pagination">{renderPagination('top')}</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
     </React.Fragment>
@@ -467,7 +467,7 @@ export const ColumnManagementAction: React.FC = () => {
                             width={key === 'name' ? 15 : 10}
                             dataLabel={key === 'lastModified' ? 'Last modified' : capitalize(key)}
                           >
-                            {value}
+                            {value as string}
                           </Td>
                         )
                       )}
@@ -476,7 +476,7 @@ export const ColumnManagementAction: React.FC = () => {
                 ))}
               </Tbody>
             </Table>
-            {renderPagination(PaginationVariant.bottom)}
+            {renderPagination('bottom')}
             {renderModal()}
           </Card>
         </PageSection>

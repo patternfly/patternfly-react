@@ -20,18 +20,18 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
-export const CompactTable: React.FC = () => {
+export const TableCompact: React.FunctionComponent = () => {
   const [isSelectOpen, setIsSelectOpen] = React.useState<boolean>(false);
   const [page, setPage] = React.useState<number>(1);
   const [perPage, setPerPage] = React.useState<number>(10);
   const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
 
-  const handleSetPage = (_evt: any, newPage: number, startIdx: number, endIdx: number) => {
+  const handleSetPage = (_evt, newPage, _perPage, startIdx, endIdx) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
   };
 
-  const handlePerPageSelect = (_evt: any, newPerPage: number, newPage: number, startIdx: number, endIdx: number) => {
+  const handlePerPageSelect = (_evt, newPerPage, newPage, startIdx, endIdx) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
     setPerPage(newPerPage);
