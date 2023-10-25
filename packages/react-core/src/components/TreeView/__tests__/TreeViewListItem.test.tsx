@@ -443,7 +443,7 @@ describe('compareItems callback', () => {
   test('Not called by default', () => {
     render(<TreeViewListItem {...requiredProps}>Content</TreeViewListItem>);
 
-    expect(compareItemsMock).not.toBeCalled();
+    expect(compareItemsMock).not.toHaveBeenCalled();
   });
 
   test('Called when isSelectable and activeItems are passed', () => {
@@ -459,7 +459,7 @@ describe('compareItems callback', () => {
       </TreeViewListItem>
     );
 
-    expect(compareItemsMock).toBeCalledTimes(1);
+    expect(compareItemsMock).toHaveBeenCalledTimes(1);
     expect(compareItemsMock).toHaveBeenCalledWith(
       expect.objectContaining(activeItems[0]),
       expect.objectContaining(itemData)
@@ -478,7 +478,7 @@ describe('compareItems callback', () => {
       </TreeViewListItem>
     );
 
-    expect(compareItemsMock).not.toBeCalled();
+    expect(compareItemsMock).not.toHaveBeenCalled();
   });
 
   test('Called when children and activeItems are passed', () => {
@@ -491,7 +491,7 @@ describe('compareItems callback', () => {
       />
     );
 
-    expect(compareItemsMock).toBeCalledTimes(1);
+    expect(compareItemsMock).toHaveBeenCalledTimes(1);
     expect(compareItemsMock).toHaveBeenCalledWith(
       expect.objectContaining(activeItems[0]),
       expect.objectContaining(itemData)
@@ -507,7 +507,7 @@ test('Does not call onCheck by default', async () => {
 
   await user.click(screen.getByRole('checkbox'));
 
-  expect(onCheckMock).not.toBeCalled();
+  expect(onCheckMock).not.toHaveBeenCalled();
 });
 
 test('Calls onCheck callback when checkbox is clicked', async () => {
@@ -518,7 +518,7 @@ test('Calls onCheck callback when checkbox is clicked', async () => {
 
   await user.click(screen.getByRole('checkbox'));
 
-  expect(onCheckMock).toBeCalledTimes(1);
+  expect(onCheckMock).toHaveBeenCalledTimes(1);
   expect(onCheckMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
 });
 
@@ -530,7 +530,7 @@ test('Does not call onSelect by default', async () => {
 
   await user.click(screen.getByRole('button'));
 
-  expect(onSelectMock).not.toBeCalled();
+  expect(onSelectMock).not.toHaveBeenCalled();
 });
 
 test(`Calls onSelect when ${styles.treeViewNode} is clicked`, async () => {
@@ -541,7 +541,7 @@ test(`Calls onSelect when ${styles.treeViewNode} is clicked`, async () => {
 
   await user.click(screen.getByRole('button'));
 
-  expect(onSelectMock).toBeCalledTimes(1);
+  expect(onSelectMock).toHaveBeenCalledTimes(1);
   expect(onSelectMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
 });
 
@@ -554,7 +554,7 @@ test('Does not call onSelect when hasCheckbox is passed', async () => {
   const treeViewNode = screen.getByRole('treeitem').querySelector(`.${styles.treeViewNode}`);
   await user.click(treeViewNode as Element);
 
-  expect(onSelectMock).not.toBeCalled();
+  expect(onSelectMock).not.toHaveBeenCalled();
 });
 
 test('Does not call onExpand by default', async () => {
@@ -565,7 +565,7 @@ test('Does not call onExpand by default', async () => {
 
   await user.click(screen.getByRole('button'));
 
-  expect(onExpandMock).not.toBeCalled();
+  expect(onExpandMock).not.toHaveBeenCalled();
 });
 
 test(`Calls onExpand when ${styles.treeViewNode} is collapsed and clicked`, async () => {
@@ -580,7 +580,7 @@ test(`Calls onExpand when ${styles.treeViewNode} is collapsed and clicked`, asyn
 
   await user.click(screen.getByRole('button'));
 
-  expect(onExpandMock).toBeCalledTimes(1);
+  expect(onExpandMock).toHaveBeenCalledTimes(1);
   expect(onExpandMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
 });
 
@@ -597,7 +597,7 @@ test(`Calls onExpand when ${styles.treeViewNodeToggle} is clicked and isSelectab
   const toggle = screen.getByText(requiredProps.name).previousElementSibling;
   await user.click(toggle as Element);
 
-  expect(onExpandMock).toBeCalledTimes(1);
+  expect(onExpandMock).toHaveBeenCalledTimes(1);
   expect(onExpandMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
 });
 
@@ -614,7 +614,7 @@ test(`Calls onExpand when ${styles.treeViewNodeToggle} is clicked and hasCheckbo
   const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
   await user.click(toggle as Element);
 
-  expect(onExpandMock).toBeCalledTimes(1);
+  expect(onExpandMock).toHaveBeenCalledTimes(1);
   expect(onExpandMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
 });
 
@@ -630,7 +630,7 @@ test('Does not call onCollapse by default', async () => {
 
   await user.click(screen.getByRole('button'));
 
-  expect(onCollapseMock).not.toBeCalled();
+  expect(onCollapseMock).not.toHaveBeenCalled();
 });
 
 test(`Calls onCollapse when ${styles.treeViewNode} is expanded and clicked`, async () => {
@@ -645,7 +645,7 @@ test(`Calls onCollapse when ${styles.treeViewNode} is expanded and clicked`, asy
 
   await user.click(screen.getByRole('button'));
 
-  expect(onCollapseMock).toBeCalledTimes(1);
+  expect(onCollapseMock).toHaveBeenCalledTimes(1);
   expect(onCollapseMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
 });
 
@@ -662,7 +662,7 @@ test(`Calls onCollapse when ${styles.treeViewNodeToggle} is clicked and isSelect
   const toggle = screen.getByText(requiredProps.name).previousElementSibling;
   await user.click(toggle as Element);
 
-  expect(onCollapseMock).toBeCalledTimes(1);
+  expect(onCollapseMock).toHaveBeenCalledTimes(1);
   expect(onCollapseMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
 });
 
@@ -679,8 +679,20 @@ test(`Calls onCollapse when ${styles.treeViewNodeToggle} is clicked and hasCheck
   const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
   await user.click(toggle as Element);
 
-  expect(onCollapseMock).toBeCalledTimes(1);
+  expect(onCollapseMock).toHaveBeenCalledTimes(1);
   expect(onCollapseMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
+});
+
+test(`Does not render ${styles.treeViewAction} element by default`, () => {
+  render(<TreeViewListItem {...requiredProps} />);
+
+  expect(screen.getByRole('treeitem').querySelector(`.${styles.treeViewAction}`)).not.toBeInTheDocument();
+});
+
+test(`Renders action with ${styles.treeViewAction} class when action is passed`, () => {
+  render(<TreeViewListItem action="Action content" {...requiredProps} />);
+
+  expect(screen.getByText('Action content')).toHaveClass(styles.treeViewAction);
 });
 
 test('Matches snapshot without children', () => {
