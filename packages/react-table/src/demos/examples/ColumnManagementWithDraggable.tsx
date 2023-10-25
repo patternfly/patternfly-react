@@ -9,9 +9,6 @@ import {
   DataListItemRow,
   DataListCell,
   DataListItemCells,
-  DragDrop,
-  Draggable,
-  Droppable,
   Toolbar,
   ToolbarContent,
   ToolbarItem,
@@ -324,16 +321,7 @@ export const ColumnManagementAction: React.FunctionComponent = () => {
   const [check3, setCheck3] = React.useState(true);
   const [check4, setCheck4] = React.useState(true);
   const [check5, setCheck5] = React.useState(true);
-  const [liveText, setLiveText] = React.useState('');
-  const id = '';
   const canSelectAll = true;
-
-  const reorder = (list: string[], startIndex: number, endIndex: number) => {
-    const result = list;
-    const [removed] = result.splice(startIndex, 1);
-    result.splice(endIndex, 0, removed);
-    return result;
-  };
 
   const matchCheckboxNameToColumn = (name) => {
     switch (name) {
@@ -434,41 +422,15 @@ export const ColumnManagementAction: React.FunctionComponent = () => {
   };
 
   const onSelect = (event, isSelected, rowId) => {
-    let updatedRows;
+    let rows;
     if (rowId === -1) {
-      updatedRows = updatedRows.map((oneRow) => {
+      rows = rows.map((oneRow) => {
         oneRow.selected = isSelected;
         return oneRow;
       });
     } else {
-      updatedRows = [...updatedRows];
-      updatedRows[rowId] = { ...rows[rowId], selected: isSelected };
-    }
-    setRows(updatedRows);
-  };
-
-  const onDrag = (source) => {
-    setLiveText(`Started dragging ${columns[source.index]}`);
-    // Return true to allow drag
-    return true;
-  };
-
-  const onDragMove = (source, dest) => {
-    const newText = dest ? `Move ${columns[source.index]} to ${columns[dest.index]}` : 'Invalid drop zone';
-    if (newText !== liveText) {
-      setLiveText(newText);
-    }
-  };
-
-  const onDrop = (source, dest) => {
-    if (dest) {
-      const newItems = reorder(columns, source.index, dest.index);
-      setColumns(newItems);
-
-      setLiveText('Dragging finished.');
-      return true; // Signal that this is a valid drop and not to animate the item returning home.
-    } else {
-      setLiveText('Dragging cancelled. List unchanged.');
+      rows = [...rows];
+      rows[rowId] = { ...rows[rowId], selected: isSelected };
     }
   };
 
@@ -495,164 +457,143 @@ export const ColumnManagementAction: React.FunctionComponent = () => {
         </Button>
       ]}
     >
-      <DragDrop onDrag={onDrag} onDragMove={onDragMove} onDrop={onDrop}>
-        <Droppable hasNoWrapper>
-          <DataList aria-label="draggable data list example" isCompact>
-            <Draggable key={id} hasNoWrapper>
-              <DataListItem aria-labelledby="table-column-management-item1" id="data1" ref={React.createRef()}>
-                <DataListItemRow>
-                  <DataListControl>
-                    <DataListDragButton
-                      aria-label="Reorder"
-                      aria-labelledby={`table-column-management-item1`}
-                      aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                      aria-pressed="false"
-                    />
-                    <DataListCheck
-                      aria-labelledby={`table-column-management-item1`}
-                      checked={check1}
-                      name="check1"
-                      id="check1"
-                      onChange={handleChange}
-                      otherControls
-                    />
-                  </DataListControl>
-                  <DataListItemCells
-                    dataListCells={[
-                      <DataListCell key={id}>
-                        <span id={`draggable-${id}`}>Repositories</span>
-                      </DataListCell>
-                    ]}
-                  />
-                </DataListItemRow>
-              </DataListItem>
-            </Draggable>
-            <Draggable>
-              <DataListItem aria-labelledby="table-column-management-item2" id="data2" ref={React.createRef()}>
-                <DataListItemRow>
-                  <DataListControl>
-                    <DataListDragButton
-                      aria-label="Reorder"
-                      aria-labelledby={`table-column-management-item2`}
-                      aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                      aria-pressed="false"
-                    />
-                    <DataListCheck
-                      aria-labelledby={`table-column-management-item2`}
-                      checked={check2}
-                      name="check2"
-                      id="check2"
-                      onChange={handleChange}
-                      otherControls
-                    />
-                  </DataListControl>
-                  <DataListItemCells
-                    dataListCells={[
-                      <DataListCell key={id}>
-                        <span id={`draggable-${id}`}>Branches</span>
-                      </DataListCell>
-                    ]}
-                  />
-                </DataListItemRow>
-              </DataListItem>
-            </Draggable>
-            <Draggable>
-              <DataListItem aria-labelledby="table-column-management-item3" id="data3" ref={React.createRef()}>
-                <DataListItemRow>
-                  <DataListControl>
-                    <DataListDragButton
-                      aria-label="Reorder"
-                      aria-labelledby={`table-column-management-item3`}
-                      aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                      aria-pressed="false"
-                    />
-                    <DataListCheck
-                      aria-labelledby={`table-column-management-item3`}
-                      checked={check3}
-                      name="check3"
-                      id="check3"
-                      onChange={handleChange}
-                      otherControls
-                    />
-                  </DataListControl>
-                  <DataListItemCells
-                    dataListCells={[
-                      <DataListCell key={id}>
-                        <span id={`draggable-${id}`}>Pull requests</span>
-                      </DataListCell>
-                    ]}
-                  />
-                </DataListItemRow>
-              </DataListItem>
-            </Draggable>
-            <Draggable>
-              <DataListItem aria-labelledby="table-column-management-item4" id="data4" ref={React.createRef()}>
-                <DataListItemRow>
-                  <DataListControl>
-                    <DataListDragButton
-                      aria-label="Reorder"
-                      aria-labelledby={`table-column-management-item4`}
-                      aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                      aria-pressed="false"
-                    />
-                    <DataListCheck
-                      aria-labelledby={`table-column-management-item4`}
-                      checked={check4}
-                      name="check4"
-                      id="check4"
-                      onChange={handleChange}
-                      otherControls
-                    />
-                  </DataListControl>
-                  <DataListItemCells
-                    dataListCells={[
-                      <DataListCell key={id}>
-                        <span id={`draggable-${id}`}>Workspaces</span>
-                      </DataListCell>
-                    ]}
-                  />
-                </DataListItemRow>
-              </DataListItem>
-            </Draggable>
-            <Draggable>
-              <DataListItem aria-labelledby="table-column-management-item5" id="data5" ref={React.createRef()}>
-                <DataListItemRow>
-                  <DataListControl>
-                    <DataListDragButton
-                      aria-label="Reorder"
-                      aria-labelledby={`table-column-management-item5`}
-                      aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                      aria-pressed="false"
-                    />
-                    <DataListCheck
-                      aria-labelledby={`table-column-management-item5`}
-                      checked={check5}
-                      name="check5"
-                      id="check5"
-                      onChange={handleChange}
-                      otherControls
-                    />
-                  </DataListControl>
-                  <DataListItemCells
-                    dataListCells={[
-                      <DataListCell key={id}>
-                        <span id={`draggable-${id}`}>Last commit</span>
-                      </DataListCell>
-                    ]}
-                  />
-                </DataListItemRow>
-              </DataListItem>
-            </Draggable>
-          </DataList>
-        </Droppable>
-        <div className="pf-v5-screen-reader" aria-live="assertive">
-          {liveText}
-        </div>
-        <div className="pf-v5-screen-reader" id={`description-${id}`}>
-          Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm
-          the drag, or any other key to cancel the drag operation.
-        </div>
-      </DragDrop>
+      <DataList aria-label="Table column management" id="table-column-management" isCompact>
+        <DataListItem aria-labelledby="table-column-management-item1" id="data1">
+          <DataListItemRow>
+            <DataListControl>
+              <DataListDragButton
+                aria-label="Reorder"
+                aria-labelledby="table-column-management-item1"
+                aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                aria-pressed="false"
+              />
+              <DataListCheck
+                aria-labelledby="table-column-management-item1"
+                checked={check1}
+                name="check1"
+                id="check1"
+                onChange={handleChange}
+                otherControls
+              />
+            </DataListControl>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item1" key="table-column-management-item1">
+                  <label htmlFor="check1">Repositories</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="table-column-management-item2" id="data2">
+          <DataListItemRow>
+            <DataListControl>
+              <DataListDragButton
+                aria-label="Reorder"
+                aria-labelledby="table-column-management-item2"
+                aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                aria-pressed="false"
+              />
+              <DataListCheck
+                aria-labelledby="table-column-management-item2"
+                checked={check2}
+                name="check2"
+                id="check2"
+                onChange={handleChange}
+                otherControls
+              />
+            </DataListControl>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item2" key="table-column-management-item2">
+                  <label htmlFor="check2">Branches</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="table-column-management-item3" id="data3">
+          <DataListItemRow>
+            <DataListControl>
+              <DataListDragButton
+                aria-label="Reorder"
+                aria-labelledby="table-column-management-item3"
+                aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                aria-pressed="false"
+              />
+              <DataListCheck
+                aria-labelledby="table-column-management-item3"
+                checked={check3}
+                name="check3"
+                id="check3"
+                onChange={handleChange}
+                otherControls
+              />
+            </DataListControl>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item3" key="table-column-management-item3">
+                  <label htmlFor="check3">Pull requests</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="table-column-management-item4" id="data4">
+          <DataListItemRow>
+            <DataListControl>
+              <DataListDragButton
+                aria-label="Reorder"
+                aria-labelledby="table-column-management-item4"
+                aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                aria-pressed="false"
+              />
+              <DataListCheck
+                aria-labelledby="table-column-management-item4"
+                checked={check4}
+                name="check4"
+                id="check4"
+                onChange={handleChange}
+                otherControls
+              />
+            </DataListControl>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item4" key="table-column-management-item4">
+                  <label htmlFor="check4">Workspaces</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="table-column-management-item5" id="data5">
+          <DataListItemRow>
+            <DataListControl>
+              <DataListDragButton
+                aria-label="Reorder"
+                aria-labelledby="table-column-management-item5"
+                aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                aria-pressed="false"
+              />
+              <DataListCheck
+                aria-labelledby="table-column-management-item5"
+                checked={check5}
+                name="check5"
+                id="check5"
+                onChange={handleChange}
+                otherControls
+              />
+            </DataListControl>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell id="table-column-management-item5" key="table-column-management-item5">
+                  <label htmlFor="check5">Last commit</label>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+      </DataList>
     </Modal>
   );
 
