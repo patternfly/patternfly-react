@@ -56,6 +56,33 @@ test('chip group with category', () => {
   expect(screen.getByText('category')).toBeVisible();
 });
 
+test('chip group with category renders with class pf-m-category', () => {
+  render(
+    <ChipGroup categoryName="category">
+      <Chip>1.1</Chip>
+    </ChipGroup>
+  );
+  expect(screen.getByRole('group')).toHaveClass(`${styles.chipGroup} pf-m-category`);
+});
+
+test('chip group has aria-labelledby attribute', () => {
+  render(
+    <ChipGroup categoryName="category">
+      <Chip>1.1</Chip>
+    </ChipGroup>
+  );
+  expect(screen.getByRole('group')).toHaveAttribute('aria-labelledby', expect.stringContaining(`pf-random-id`));
+});
+
+test('chip group has aria-labelledby attribute set to ID value', () => {
+  render(
+    <ChipGroup categoryName="category" id="chip-group-id">
+      <Chip>1.1</Chip>
+    </ChipGroup>
+  );
+  expect(screen.getByRole('group')).toHaveAttribute('aria-labelledby', 'chip-group-id');
+});
+
 test('chip group expands', async () => {
   const user = userEvent.setup();
   const chips = ['Chip one', 'Really long chip that goes on and on', 'Chip three', 'Chip four', 'Chip five'];
@@ -63,15 +90,13 @@ test('chip group expands', async () => {
   render(
     <ChipGroup aria-label="test">
       {chips.map((currentChip) => (
-        <Chip key={currentChip}>
-          {currentChip}
-        </Chip>
+        <Chip key={currentChip}>{currentChip}</Chip>
       ))}
     </ChipGroup>
   );
 
   await user.click(screen.getByText('2 more'));
-  expect(screen.getByText('chip five')).toBeVisible();
+  expect(screen.getByText('Chip five')).toBeVisible();
 });
 
 test('chip group with closable category', () => {
@@ -80,7 +105,16 @@ test('chip group with closable category', () => {
       <Chip>1.1</Chip>
     </ChipGroup>
   );
-  expect(screen.getByLabelText('Close chip group').closest('div')).toHaveClass(styles.chipGroupClose);
+  expect(screen.getByRole('group').lastChild).toHaveClass(styles.chipGroupClose);
+});
+
+test('chip group with closeBtnAriaLabel', () => {
+  render(
+    <ChipGroup categoryName="category">
+      <Chip closeBtnAriaLabel="close button aria label">1.1</Chip>
+    </ChipGroup>
+  );
+  expect(screen.getByLabelText('close button aria label')).toBeInTheDocument();
 });
 
 test('chip group onClick', async () => {
@@ -103,11 +137,14 @@ test('chip group onOverflowChipClick', async () => {
 
   render(
     <ChipGroup categoryName="category" onOverflowChipClick={onOverflowChipClick}>
-      <Chip>1.1</Chip>
+      <Chip>1</Chip>
+      <Chip>2</Chip>
+      <Chip>3</Chip>
+      <Chip>4</Chip>
     </ChipGroup>
   );
 
-  await user.click(screen.getByLabelText('Close chip group'));
+  await user.click(screen.getByText('1 more'));
   expect(onOverflowChipClick).toHaveBeenCalled();
 });
 
@@ -130,22 +167,130 @@ test('chip group expanded', async () => {
   expect(screen.getByText('Show Less')).toBeInTheDocument();
 });
 
+test('overflow chip does not render by default when < 4 children are passed', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <ChipGroup>
+      <Chip>1</Chip>
+      <Chip>2</Chip>
+      <Chip>3</Chip>
+    </ChipGroup>
+  );
+
+  expect(screen.queryByText('1 more')).not.toBeInTheDocument();
+});
+
+test('overflow chip collapsed by default', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <ChipGroup>
+      <Chip>1</Chip>
+      <Chip>2</Chip>
+      <Chip>3</Chip>
+      <Chip>4</Chip>
+    </ChipGroup>
+  );
+
+  const moreText = screen.getByText('1 more');
+  expect(moreText).toBeInTheDocument();
+});
+
+test('overflow chip renders with the default numChips prop value of 3', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <ChipGroup>
+      <Chip>1</Chip>
+      <Chip>2</Chip>
+      <Chip>3</Chip>
+      <Chip>4</Chip>
+    </ChipGroup>
+  );
+
+  const moreText = screen.getByText('1 more');
+  expect(moreText).toBeInTheDocument();
+
+  await user.click(moreText);
+  expect(screen.getByText('Show Less')).toBeInTheDocument();
+});
+
+test('overflow chip renders with numChips prop value of 2', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <ChipGroup numChips={2}>
+      <Chip>1</Chip>
+      <Chip>2</Chip>
+      <Chip>3</Chip>
+    </ChipGroup>
+  );
+
+  const moreText = screen.getByText('1 more');
+  expect(moreText).toBeInTheDocument();
+
+  await user.click(moreText);
+  expect(screen.getByText('Show Less')).toBeInTheDocument();
+});
+
+test('clicking the overflow chip causes the text to update with the default props', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <ChipGroup>
+      <Chip>1</Chip>
+      <Chip>2</Chip>
+      <Chip>3</Chip>
+      <Chip>4</Chip>
+    </ChipGroup>
+  );
+
+  const moreText = screen.getByText('1 more');
+
+  await user.click(moreText);
+  expect(screen.getByText('Show Less')).toBeInTheDocument();
+});
+
+test('passing in the expandedText and collapsedText props work', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <ChipGroup expandedText="Collapse" collapsedText="Expand">
+      <Chip>1</Chip>
+      <Chip>2</Chip>
+      <Chip>3</Chip>
+      <Chip>4</Chip>
+    </ChipGroup>
+  );
+
+  const moreText = screen.getByText('Expand');
+  expect(moreText).toBeInTheDocument();
+
+  await user.click(moreText);
+  expect(screen.getByText('Collapse')).toBeInTheDocument();
+});
+
+test('passing defaultIsOpen of true causes the chip group to be expanded by default', async () => {
+  render(
+    <ChipGroup defaultIsOpen>
+      <Chip>1</Chip>
+      <Chip>2</Chip>
+      <Chip>3</Chip>
+      <Chip>4</Chip>
+    </ChipGroup>
+  );
+
+  expect(screen.getByText('Show Less')).toBeInTheDocument();
+});
+
 test('chip group will not render if no children passed', () => {
   render(<ChipGroup />);
   expect(screen.queryByRole('group')).toBeNull();
 });
 
-test('chip group with category and tooltip', () => {
-  render(
-    <ChipGroup categoryName="A very long category name">
-      <Chip>1.1</Chip>
-    </ChipGroup>
-  );
-  expect(screen.getByText('A very long category name')).toBeVisible();
-});
-
 test('chip group renders to match snapshot', () => {
-  const { asFragment } = render(<ChipGroup aria-label="test chip group" />);
-  expect(screen.getByLabelText('test chip group')).toBeInTheDocument();
+  const { asFragment } = render(<ChipGroup>chips</ChipGroup>);
+  expect(screen.getByRole('group')).toBeInTheDocument();
   expect(asFragment()).toMatchSnapshot();
 });
