@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Divider } from '../Divider';
+import styles from '@patternfly/react-styles/css/components/Divider/divider';
 
-test('Renders with only the class pf-v5-c-divider by default', () => {
-  render(<Divider data-testid="divider" />);
-  expect(screen.getByTestId('divider')).toHaveClass('pf-v5-c-divider', { exact: true });
+test(`Renders with only the class name ${styles.divider} by default`, () => {
+  render(<Divider />);
+  expect(screen.getByRole('separator')).toHaveClass(styles.divider, { exact: true });
 });
 
 test('Renders with horizontal rule by default', () => {
@@ -12,22 +13,12 @@ test('Renders with horizontal rule by default', () => {
   expect(screen.getByRole('separator')).toContainHTML('<hr class="pf-v5-c-divider" />');
 });
 
-test('Renders with vertical divider', () => {
-  render(<Divider orientation={{ default: 'vertical' }} />);
-  expect(screen.getByRole('separator')).toHaveClass('pf-m-vertical');
-});
-
-test('Renders with li', () => {
+test('Renders with element passed to component prop', () => {
   render(<Divider component="li" />);
-  expect(screen.getByRole('separator')).toContainHTML('<li class="pf-v5-c-divider" role="separator" />');
+  expect(screen.getByRole('separator')?.tagName).toBe('LI');
 });
 
-test('Renders with div', () => {
-  render(<Divider component="div" />);
-  expect(screen.getByRole('separator')).toContainHTML('<div class="pf-v5-c-divider" role="separator" />');
-});
-
-test('Test default orientation', () => {
+test('Test default orientation (vertical divider)', () => {
   render(<Divider orientation={{ default: 'vertical' }} />);
   expect(screen.getByRole('separator')).toHaveClass('pf-m-vertical');
 });
@@ -62,34 +53,54 @@ test('Test default inset', () => {
   expect(screen.getByRole('separator')).toHaveClass('pf-m-inset-none');
 });
 
-test('Test sm inset', () => {
-  render(<Divider inset={{ sm: 'insetSm' }} />);
-  expect(screen.getByRole('separator')).toHaveClass('pf-m-inset-sm-on-sm');
-});
+test(`Test all insets`, () => {
+  const insetValues = Object.values([
+    'insetNone',
+    'insetXs',
+    'insetSm',
+    'insetMd',
+    'insetLg',
+    'insetXl',
+    'inset2xl',
+    'inset3xl'
+  ] as ['insetNone', 'insetXs', 'insetSm', 'insetMd', 'insetLg', 'insetXl', 'inset2xl', 'inset3xl']);
+  
+  insetValues.forEach((insetValue) => {
 
-test('Test md inset', () => {
-  render(<Divider inset={{ md: 'insetMd' }} />);
-  expect(screen.getByRole('separator')).toHaveClass('pf-m-inset-md-on-md');
-});
+    const modifiers = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'];
 
-test('Test lg inset', () => {
-  render(<Divider inset={{ lg: 'insetLg' }} />);
-  expect(screen.getByRole('separator')).toHaveClass('pf-m-inset-lg-on-lg');
-});
+    const classValue = modifiers.forEach((modifier, index) => {
+      const smClass = `pf-m-inset-${modifier}-on-sm`;
+      const mdClass = `pf-m-inset-${modifier}-on-md`;
+      const lgClass = `pf-m-inset-${modifier}-on-lg`;
+      const xlClass = `pf-m-inset-${modifier}-on-xl`;
+      const xl2Class = `pf-m-inset-${modifier}-on-2xl`;
+    });
 
-test('Test xl inset', () => {
-  render(<Divider inset={{ xl: 'insetXl' }} />);
-  expect(screen.getByRole('separator')).toHaveClass('pf-m-inset-xl-on-xl');
-});
+    render(
+      <Divider
+        inset={{
+          default: insetValue,
+          sm: insetValue,
+          md: insetValue,
+          lg: insetValue,
+          xl: insetValue,
+          '2xl': insetValue
+        }}
+      />
+    );
+  });
+  const modifiers = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'];
 
-test('Test 2xl inset', () => {
-  render(<Divider inset={{ '2xl': 'inset2xl' }} />);
-  expect(screen.getByRole('separator')).toHaveClass('pf-m-inset-2xl-on-2xl');
-});
+  const classValue = modifiers.forEach((modifier, index) => {
+    const smClass = `pf-m-inset-${modifier}-on-sm`;
+    const mdClass = `pf-m-inset-${modifier}-on-md`;
+    const lgClass = `pf-m-inset-${modifier}-on-lg`;
+    const xlClass = `pf-m-inset-${modifier}-on-xl`;
+    const xl2Class = `pf-m-inset-${modifier}-on-2xl`;
 
-test('Test 3xl on 2xl inset', () => {
-  render(<Divider inset={{ '2xl': 'inset3xl' }} />);
-  expect(screen.getByRole('separator')).toHaveClass('pf-m-inset-3xl-on-2xl');
+    expect(screen.getAllByRole('separator')[index]).toHaveClass(smClass, mdClass, lgClass, xlClass, xl2Class);
+  });
 });
 
 test('Matches the snapshot', () => {
