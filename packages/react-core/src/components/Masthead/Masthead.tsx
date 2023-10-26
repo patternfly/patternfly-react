@@ -9,8 +9,6 @@ export interface MastheadProps extends React.DetailedHTMLProps<React.HTMLProps<H
   children?: React.ReactNode;
   /** Additional classes added to the masthead */
   className?: string;
-  /** Background theme color of the masthead */
-  backgroundColor?: 'dark' | 'light' | 'light200';
   /** Display type at various breakpoints */
   display?: {
     default?: 'inline' | 'stack';
@@ -34,7 +32,6 @@ export interface MastheadProps extends React.DetailedHTMLProps<React.HTMLProps<H
 export const Masthead: React.FunctionComponent<MastheadProps> = ({
   children,
   className,
-  backgroundColor = 'dark',
   display = {
     md: 'inline'
   },
@@ -48,8 +45,6 @@ export const Masthead: React.FunctionComponent<MastheadProps> = ({
         styles.masthead,
         formatBreakpointMods(display, styles, 'display-', getBreakpoint(width)),
         formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
-        backgroundColor === 'light' && styles.modifiers.light,
-        backgroundColor === 'light200' && styles.modifiers.light_200,
         className
       )}
       {...props}
