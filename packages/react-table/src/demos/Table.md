@@ -56,46 +56,46 @@ import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 ### Bulk select
 
-```js isFullscreen file="./examples/BulkSelect.tsx"
+```js isFullscreen file="./examples/TableBulkSelect.tsx"
 ```
 
 ### Expand/collapse all
 
-```js isFullscreen file="./examples/ExpandCollapseAll.tsx"
+```js isFullscreen file="./examples/TableExpandCollapseAll.tsx"
 
 ```
 
 ### Compact
 
-```js isFullscreen file="./examples/Compact.tsx"
+```js isFullscreen file="./examples/TableCompact.tsx"
 
 ```
 
 ### Compound expansion
 
-```js isFullscreen file="./examples/CompoundExpansion.tsx"
+```js isFullscreen file="./examples/TableCompoundExpansion.tsx"
 
 ```
 
 ### Column management
 
-```js isFullscreen file="./examples/ColumnManagement.tsx"
+```js isFullscreen file="./examples/TableColumnManagement.tsx"
 
 ```
 
 ### Column management with draggable
 
-```js isFullscreen file="./examples/ColumnManagementWithDraggable.tsx"
+```js isFullscreen file="./examples/TableColumnManagementWithDraggable.tsx"
 ```
 
 ### Filterable
 
-```js isFullscreen file="./examples/Filterable.tsx"
+```js isFullscreen file="./examples/TableFilterable.tsx"
 ```
 
 ### Sortable - responsive
 
-```js isFullscreen file="./examples/SortableResponsive.tsx"
+```js isFullscreen file="./examples/TableSortableResponsive.tsx"
 
 ```
 
@@ -110,24 +110,24 @@ To demonstrate this, navigate to the last page of data below using the `>>` navi
 - The default behavior would show the last page of results, which would only contain the last two rows (rows 11 - 12).
 - The `isLastFullPageShown` prop navigates you back to the previous page which does contain a full page of 5 rows (rows 6 - 10).
 
-```js isFullscreen file="./examples/AutomaticPagination.tsx"
+```js isFullscreen file="./examples/TableAutomaticPagination.tsx"
 ```
 
 ### Static bottom pagination on mobile
 
-```ts isFullscreen file="./examples/StaticBottomPagination.tsx"
+```ts isFullscreen file="./examples/TableStaticBottomPagination.tsx"
 
 ```
 
 ### Sticky header
 
-```js isFullscreen file="./examples/StickyHeader.tsx"
+```js isFullscreen file="./examples/TableStickyHeader.tsx"
 
 ```
 
 ### Sticky first column
 
-```js isFullscreen file="./examples/StickyFirstColumn.tsx"
+```js isFullscreen file="./examples/TableStickyFirstColumn.tsx"
 
 ```
 
@@ -145,15 +145,15 @@ These examples demonstrate the use of an [Empty State component](/components/emp
 
 ### Empty
 
-```js isFullscreen file="./examples/EmptyStateDefault.tsx"
+```js isFullscreen file="./examples/TableEmptyStateDefault.tsx"
 ```
 
 ### Loading
 
-```js isFullscreen file="./examples/EmptyStateLoading.tsx"
+```js isFullscreen file="./examples/TableEmptyStateLoading.tsx"
 ```
 
 ### Error
 
-```js isFullscreen file="./examples/EmptyStateError.tsx"
+```js isFullscreen file="./examples/TableEmptyStateError.tsx"
 ```
