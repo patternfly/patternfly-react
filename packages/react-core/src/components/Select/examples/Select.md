@@ -92,7 +92,7 @@ When more items than the allowed limit are selected, overflowing items will be h
 
 ### Multiple typeahead with create option
 
-When a multiple typeahead offers users a create option, each item that a user creates will be selected and place a chip for each item into the select toggle.
+When a multiple typeahead offers users a create option, each item that a user creates will be selected. A chip will be placed in the select toggle for each item that is created and selected.
 
 ```ts file="./SelectMultiTypeaheadCreatable.tsx"
 
