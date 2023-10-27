@@ -115,6 +115,7 @@ test('chip group with closeBtnAriaLabel', () => {
     </ChipGroup>
   );
   expect(screen.getByLabelText('close button aria label')).toBeInTheDocument();
+  expect(screen.getByLabelText('close button aria label')).toHaveAccessibleName("close button aria label category");
 });
 
 test('chip group onClick', async () => {
