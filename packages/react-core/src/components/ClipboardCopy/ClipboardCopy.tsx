@@ -47,6 +47,8 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   isBlock?: boolean;
   /** Adds Clipboard Copy variant styles. */
   variant?: typeof ClipboardCopyVariant | 'inline' | 'expansion' | 'inline-compact';
+  /** Replaces the textinput text, useful for expansion variant when you want to provide a summary of the text that will be copied. Will force isReadOnly on the textInput part. */
+  title?: string;
   /** Copy button tooltip position. */
   position?:
     | TooltipPosition
@@ -104,6 +106,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
     isExpanded: false,
     isCode: false,
     variant: 'inline',
+    title: '',
     position: TooltipPosition.top,
     maxWidth: '150px',
     exitDelay: 1500,
@@ -160,6 +163,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
       toggleAriaLabel,
       variant,
       position,
+      title,
       className,
       additionalActions,
       ouiaId,
@@ -169,6 +173,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
     const textIdPrefix = 'text-input-';
     const toggleIdPrefix = 'toggle-';
     const contentIdPrefix = 'content-';
+
     return (
       <div
         className={css(
@@ -237,9 +242,9 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                     />
                   )}
                   <TextInput
-                    readOnlyVariant={isReadOnly || this.state.expanded ? 'default' : undefined}
+                    readOnlyVariant={isReadOnly || title || this.state.expanded ? 'default' : undefined}
                     onChange={this.updateText}
-                    value={this.state.text as string | number}
+                    value={title || (this.state.text as string | number)}
                     id={`text-input-${id}`}
                     aria-label={textAriaLabel}
                     {...(isCode && { dir: 'ltr' })}
