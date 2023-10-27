@@ -5,6 +5,7 @@ import { Placement, Modifier } from './thirdparty/popper-core';
 import { clearTimeouts } from '../util';
 import { css } from '@patternfly/react-styles';
 import '@patternfly/react-styles/css/components/Popper/Popper.css';
+import { getLanguageDirection } from '../util';
 
 const hash = {
   left: 'right',
@@ -44,21 +45,6 @@ const getOppositePlacement = (placement: Placement): any =>
 
 export const getOpacityTransition = (animationDuration: number) =>
   `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`;
-
-export const getLanguageDirection = (targetElement: HTMLElement) => {
-  const defaultDirection = 'ltr';
-  let direction = defaultDirection;
-
-  if (targetElement) {
-    direction = getComputedStyle(targetElement).getPropertyValue('direction');
-  }
-
-  if (['ltr', 'rtl'].includes(direction)) {
-    return direction as 'ltr' | 'rtl';
-  }
-
-  return defaultDirection;
-};
 
 export interface PopperProps {
   /**

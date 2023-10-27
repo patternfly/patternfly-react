@@ -8,6 +8,7 @@ import { TextInput } from '../TextInput';
 import { Tooltip } from '../Tooltip';
 import cssSliderValue from '@patternfly/react-tokens/dist/esm/c_slider_value';
 import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_slider__value_c_form_control_width_chars';
+import { getLanguageDirection } from '../../helpers/util';
 
 /** Properties for creating custom steps in a slider. These properties should be passed in as
  * an object within an array to the slider component's customSteps property.
@@ -125,7 +126,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   let isRTL: boolean;
 
   React.useEffect(() => {
-    isRTL = window.getComputedStyle(sliderRailRef.current).getPropertyValue('direction') === 'rtl';
+    isRTL = getLanguageDirection(sliderRailRef.current) === 'rtl';
   });
 
   React.useEffect(() => {
