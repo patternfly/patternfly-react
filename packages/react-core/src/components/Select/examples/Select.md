@@ -91,6 +91,7 @@ When more items than the allowed limit are selected, overflowing items will be h
 ```
 
 ### Multiple typeahead with create option
+If the text that is entered into a typeahead doesn't match a menu item, users can choose to create a new option that matches the text input. Selecting the "create" option will also select the new item, which will appear as a chip in the toggle. 
 
 ```ts file="./SelectMultiTypeaheadCreatable.tsx"
 
