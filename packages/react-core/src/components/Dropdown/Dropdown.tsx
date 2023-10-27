@@ -19,6 +19,8 @@ export interface DropdownPopperProps {
   enableFlip?: boolean;
   /** The container to append the popper to. Defaults to 'inline'. */
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
+  /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
+  preventOverflow?: boolean;
 }
 
 export interface DropdownToggleProps {

@@ -186,6 +186,8 @@ export interface PopperProps {
    * Lifecycle function invoked when the popper has fully transitioned in.
    */
   onShown?: () => void;
+  /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
+  preventOverflow?: boolean;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -224,7 +226,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   onHide = () => {},
   onMount = () => {},
   onShow = () => {},
-  onShown = () => {}
+  onShown = () => {},
+  preventOverflow = false
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [refElement, setRefElement] = React.useState<HTMLElement>(null);
@@ -436,7 +439,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       },
       {
         name: 'preventOverflow',
-        enabled: false
+        enabled: preventOverflow
       },
       {
         // adds attribute [data-popper-reference-hidden] to the popper element which can be used to hide it using CSS
