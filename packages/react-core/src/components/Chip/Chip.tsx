@@ -140,12 +140,13 @@ class Chip extends React.Component<ChipProps, ChipState> {
       tooltipPosition,
       component,
       ouiaId,
+      textMaxWidth,
       ...props
     } = this.props;
     const Component = component as any;
     return (
       <Component
-        {...(this.props.textMaxWidth && {
+        {...(textMaxWidth && {
           style: this.setChipStyle()
         })}
         className={css(styles.chip, className)}
