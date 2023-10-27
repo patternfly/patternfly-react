@@ -62,7 +62,7 @@ test('chip group with category renders with class pf-m-category', () => {
       <Chip>1.1</Chip>
     </ChipGroup>
   );
-  expect(screen.getByRole('group')).toHaveClass(`${styles.chipGroup} pf-m-category`);
+  expect(screen.getByRole('group')).toHaveClass(`${styles.modifiers.category}`);
 });
 
 test('chip group has aria-labelledby attribute', () => {
@@ -110,8 +110,8 @@ test('chip group with closable category', () => {
 
 test('chip group with closeBtnAriaLabel', () => {
   render(
-    <ChipGroup categoryName="category">
-      <Chip closeBtnAriaLabel="close button aria label">1.1</Chip>
+    <ChipGroup closeBtnAriaLabel="close button aria label" isClosable categoryName="category">
+      <Chip>1.1</Chip>
     </ChipGroup>
   );
   expect(screen.getByLabelText('close button aria label')).toBeInTheDocument();
@@ -128,7 +128,7 @@ test('chip group onClick', async () => {
   );
 
   await user.click(screen.getByLabelText('Close chip group'));
-  expect(onClose).toHaveBeenCalled();
+  expect(onClose).toHaveBeenCalledTimes(1);
 });
 
 test('chip group onOverflowChipClick', async () => {
