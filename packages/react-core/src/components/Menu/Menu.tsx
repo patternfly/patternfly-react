@@ -311,7 +311,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             noHorizontalArrowHandling={
               document.activeElement &&
               (document.activeElement.classList.contains(breadcrumbStyles.breadcrumbLink) ||
-                document.activeElement.classList.contains(dropdownStyles.dropdownToggle))
+                document.activeElement.classList.contains(dropdownStyles.dropdownToggle) ||
+                document.activeElement.tagName === 'INPUT')
             }
             noEnterHandling
             noSpaceHandling
