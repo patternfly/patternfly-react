@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.16...@patternfly/react-core@5.2.0-prerelease.17) (2023-10-27)
+
+### Bug Fixes
+
+- **Menu:** allow caret to move in input under Menu on left/right arrow press ([#9751](https://github.com/patternfly/patternfly-react/issues/9751)) ([9ac5ff9](https://github.com/patternfly/patternfly-react/commit/9ac5ff917e62c0c3d0dfd065b01f77b274ef9546))
+- **popper:** improve flip behavior in RTL ([#9640](https://github.com/patternfly/patternfly-react/issues/9640)) ([22bd847](https://github.com/patternfly/patternfly-react/commit/22bd847eb7b7a87704479839ea883ad211cd80bf))
+
 # [5.2.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.15...@patternfly/react-core@5.2.0-prerelease.16) (2023-10-27)
 
 **Note:** Version bump only for package @patternfly/react-core
