@@ -124,6 +124,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
         }
       }}
       {...((hasCheck || isSelectable) && { 'aria-labelledby': `label-${randomId}` })}
+      {...(ToggleComponent === 'button' && { type: 'button' })}
       tabIndex={-1}
     >
       <span className={css(styles.treeViewNodeToggleIcon)}>
@@ -156,7 +157,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       <>
         {isCompact && title && <span className={css(styles.treeViewNodeTitle)}>{title}</span>}
         {isSelectable ? (
-          <button tabIndex={-1} className={css(styles.treeViewNodeText)}>
+          <button tabIndex={-1} className={css(styles.treeViewNodeText)} type="button">
             {name}
           </button>
         ) : (
@@ -214,6 +215,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
               }}
               {...(hasCheck && { htmlFor: randomId })}
               {...((hasCheck || (isSelectable && children)) && { id: `label-${randomId}` })}
+              {...(Component === 'button' && { type: 'button' })}
             >
               <span className={css(styles.treeViewNodeContainer)}>
                 {children && renderToggle(randomId)}
