@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@5.2.0-prerelease.4...@patternfly/react-icons@5.2.0-prerelease.5) (2023-10-27)
+
+### Bug Fixes
+
+- **react-icons:** rename custom icons ([#9759](https://github.com/patternfly/patternfly-react/issues/9759)) ([a7a36e9](https://github.com/patternfly/patternfly-react/commit/a7a36e9df0898d9e5ef663d322bbed24a761027d))
+
 # 5.2.0-prerelease.4 (2023-10-26)
 
 **Note:** Version bump only for package @patternfly/react-icons
