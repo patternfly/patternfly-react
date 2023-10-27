@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.17...@patternfly/react-core@5.2.0-prerelease.18) (2023-10-27)
+
+### Bug Fixes
+
+- **ExpandableSection:** truncate variant shows toggle button if content length changes ([#9758](https://github.com/patternfly/patternfly-react/issues/9758)) ([e7b5818](https://github.com/patternfly/patternfly-react/commit/e7b581803265fef52d0d57b06eb64cbb342ffcb2))
+
 # [5.2.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.16...@patternfly/react-core@5.2.0-prerelease.17) (2023-10-27)
 
 ### Bug Fixes
