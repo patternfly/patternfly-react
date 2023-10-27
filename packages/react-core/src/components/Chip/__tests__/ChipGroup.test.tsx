@@ -145,7 +145,7 @@ test('chip group onOverflowChipClick', async () => {
   );
 
   await user.click(screen.getByText('1 more'));
-  expect(onOverflowChipClick).toHaveBeenCalled();
+  expect(onOverflowChipClick).toHaveBeenCalledTimes(1);
 });
 
 test('chip group expanded', async () => {
