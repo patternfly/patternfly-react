@@ -3,10 +3,8 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
-import { Button, ButtonProps, ButtonVariant } from '../Button';
-import { isCustomWizardFooter, WizardStepType } from './types';
-
-type FooterButtonProps = Omit<ButtonProps, 'children' | 'variant' | 'onClick'>;
+import { Button, ButtonVariant } from '../Button';
+import { isCustomWizardFooter, WizardFooterButtonProps, WizardStepType } from './types';
 
 /**
  * Hosts the standard structure of a footer with ties to the active step so that text for buttons can vary from step to step.
@@ -36,11 +34,11 @@ export interface WizardFooterProps {
   /** Flag to hide the cancel button */
   isCancelHidden?: boolean;
   /** Additional props for the Next button. */
-  nextButtonProps?: Omit<FooterButtonProps, 'isDisabled' | 'type'>;
+  nextButtonProps?: Omit<WizardFooterButtonProps, 'isDisabled' | 'type'>;
   /** Additional props for the Back button. */
-  backButtonProps?: Omit<FooterButtonProps, 'isDisabled'>;
+  backButtonProps?: Omit<WizardFooterButtonProps, 'isDisabled'>;
   /** Additional props for the Cancel button. */
-  cancelButtonProps?: FooterButtonProps;
+  cancelButtonProps?: WizardFooterButtonProps;
 }
 
 /**
