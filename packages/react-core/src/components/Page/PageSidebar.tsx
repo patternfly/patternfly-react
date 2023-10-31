@@ -15,8 +15,6 @@ export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
   isManagedSidebar?: boolean;
   /** Programmatically manage if the sidebar is shown, if isManagedSidebar is set to true in the Page component, this prop is managed */
   isSidebarOpen?: boolean;
-  /** Indicates the color scheme of the sidebar */
-  theme?: 'dark' | 'light';
   /** Sidebar id */
   id?: string;
 }
@@ -33,7 +31,6 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
   className = '',
   children,
   isSidebarOpen = true,
-  theme = 'dark',
   id = 'page-sidebar',
   ...props
 }: PageSidebarProps) => (
@@ -46,7 +43,6 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
           id={id}
           className={css(
             styles.pageSidebar,
-            theme === 'light' && styles.modifiers.light,
             sidebarOpen && styles.modifiers.expanded,
             !sidebarOpen && styles.modifiers.collapsed,
             className

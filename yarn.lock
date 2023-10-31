@@ -3909,10 +3909,10 @@
     puppeteer-cluster "^0.23.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@6.0.0-alpha.10":
-  version "6.0.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-6.0.0-alpha.10.tgz#000908bbe91e5cbfb9eaa6443f736e04a81fa733"
-  integrity sha512-iZjLH4J0WYlgq9BUs7kQAJTQv0qfkr7+LRq39GEGOVvw7fmEZ6nhTaagXFgOSPziavNoGjg/iy4Nb6SPaPtPIA==
+"@patternfly/patternfly@6.0.0-alpha.12":
+  version "6.0.0-alpha.12"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-6.0.0-alpha.12.tgz#99ac69ae0a41b43cf1a78a109facae935001f2d1"
+  integrity sha512-8oUTBLXmdzVidxWvkXS2fCUYi4vmbgDBCdFmur8i4T4ssa+qH+0NZLN4kCPfVkgNY7RVcL6ISs1GIP6du6UacQ==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"

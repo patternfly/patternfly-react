@@ -26,7 +26,7 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the section */
   className?: string;
   /** Section background color variant */
-  variant?: 'default' | 'light' | 'dark' | 'darker';
+  variant?: 'default';
   /** Section type variant */
   type?: 'default' | 'nav' | 'subnav' | 'breadcrumb' | 'tabs' | 'wizard';
   /** Enables the page section to fill the available vertical space */
@@ -77,10 +77,7 @@ const variantType = {
 };
 
 const variantStyle = {
-  [PageSectionVariants.default]: '',
-  [PageSectionVariants.light]: styles.modifiers.light,
-  [PageSectionVariants.dark]: styles.modifiers.dark_200,
-  [PageSectionVariants.darker]: styles.modifiers.dark_100
+  [PageSectionVariants.default]: ''
 };
 
 export const PageSection: React.FunctionComponent<PageSectionProps> = ({
