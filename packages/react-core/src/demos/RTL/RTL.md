@@ -1,5 +1,5 @@
 ---
-id: RTL
+id: Right-to-left
 section: patterns
 ---
 

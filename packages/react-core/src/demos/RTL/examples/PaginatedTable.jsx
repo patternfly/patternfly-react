@@ -43,7 +43,6 @@ import {
 } from '@patternfly/react-core';
 
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { capitalize } from '../../../helpers';
 import translationsEn from './examples/translations.en.json';
 import translationsHe from './examples/translations.he.json';
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
@@ -113,6 +112,8 @@ export const PaginatedTableAction = () => {
   const [managedRows, setManagedRows] = React.useState(rows);
   const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
   const [isDirRTL, setIsDirRTL] = React.useState(false);
+
+  const capitalize = (input) => input[0].toUpperCase() + input.substring(1);
 
   const switchTranslation = () => {
     setIsDirRTL((prevIsDirRTL) => !prevIsDirRTL);
