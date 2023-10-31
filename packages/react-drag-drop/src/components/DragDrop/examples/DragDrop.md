@@ -2,13 +2,11 @@
 id: Drag and drop
 section: components
 cssPrefix: pf-c-drag-drop
-propComponents: [
-  DragDropSort,
-  DraggableObject
-]
+propComponents: [DragDropSort, DraggableObject]
 hideNavItem: true
 beta: true
 ---
+
 Note: DragDrop lives in its own package at @patternfly/react-drag-drop!'
 
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
@@ -20,13 +18,17 @@ import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pfic
 import { DragDropSort, DraggableObject } from '@patternfly/react-drag-drop';
 
 ## Sorting examples
+
 ### Basic drag and drop sorting
+
 ```ts isBeta file="./BasicSorting.tsx"
+
 ```
 
 ### Basic drag and drop sorting with drag button
 
 ```ts isBeta file="./BasicSortingWithDragButton.tsx"
+
 ```
 
 ### Drag and drop sortable data list
@@ -36,6 +38,7 @@ Draggable data lists used to have their own HTML5-based API for drag and drop, w
 Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
 
 ```ts isBeta file="./DataListDraggable.tsx"
+
 ```
 
 ### Drag and drop sortable dual list selector
@@ -55,4 +58,5 @@ This example only allows reordering the contents of the "chosen" pane with drag 
 Note: Keyboard accessibility and screen reader accessibility for the `DragDropSort` component are still in development.
 
 ```ts file="./DualListSelectorDraggable.tsx"
+
 ```

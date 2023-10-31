@@ -3,13 +3,9 @@ import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
+import dragStyles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DragButton } from './DragButton';
 import { DualListSelectorListContext } from '@patternfly/react-core/dist/esm/components/DualListSelector';
-
-export interface DraggableObject {
-  id?: string;
-  content?: React.ReactNode;
-}
 
 export interface DraggableDualListSelectorListItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside DragDrop */
@@ -41,8 +37,9 @@ export const DraggableDualListSelectorListItem: React.FunctionComponent<Draggabl
   onOptionSelect,
   ...props
 }: DraggableDualListSelectorListItemProps) => {
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
-    id
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id,
+    animateLayoutChanges: () => false
   });
 
   const { setFocusedOption } = React.useContext(DualListSelectorListContext);
@@ -54,7 +51,12 @@ export const DraggableDualListSelectorListItem: React.FunctionComponent<Draggabl
 
   return (
     <li
-      className={css(styles.dualListSelectorListItem, className)}
+      className={css(
+        styles.dualListSelectorListItem,
+        isDragging && dragStyles.droppable,
+        isDragging && dragStyles.modifiers.dragging,
+        className
+      )}
       key={orderIndex}
       id={id}
       role="presentation"

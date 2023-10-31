@@ -19,11 +19,9 @@ import {
   verticalListSortingStrategy
 } from '@dnd-kit/sortable';
 import { Draggable } from './Draggable';
-import { DragButton } from './DragButton';
 import { DraggableDataListItem } from './DraggableDataListItem';
 import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
-import flexStyles from '@patternfly/react-styles/css/layouts/Flex/flex';
 
 export type DragDropSortDragEndEvent = DragEndEvent;
 export type DragDropSortDragStartEvent = DragStartEvent;
@@ -65,11 +63,11 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
   ...props
 }: DragDropSortProps) => {
   const [activeId, setActiveId] = React.useState<string>(null);
-  const [dragging, setDragging] = React.useState(false);
+  // const [dragging, setDragging] = React.useState(false);
 
-  const itemIds = React.useMemo(() => (items ? Array.from(items, item => item.id as string) : []), [items]);
+  const itemIds = React.useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
 
-  const getItemById = (id: string): DraggableObject => items.find(item => item.id === id);
+  const getItemById = (id: string): DraggableObject => items.find((item) => item.id === id);
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -83,19 +81,63 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
     const oldIndex = itemIds.indexOf(active.id as string);
     const newIndex = itemIds.indexOf(over.id as string);
     const newItems = arrayMove(items, oldIndex, newIndex);
-    setDragging(false);
+    // setDragging(false);
     onDrop(event, newItems, oldIndex, newIndex);
     return newItems;
   };
 
   const handleDragStart = (event: DragStartEvent) => {
     setActiveId(event.active.id as string);
-    setDragging(true);
+    // setDragging(true);
     onDrag(event, itemIds.indexOf(event.active.id as string));
   };
 
+  const getDragOverlay = () => {
+    if (!activeId) {
+      return;
+    }
+    const item = getItemById(activeId);
+
+    let content;
+    switch (variant) {
+      case 'DualListSelectorList':
+        content = (
+          <DraggableDualListSelectorListItem key={item.id} id={item.id} {...item.props}>
+            {item.content}
+          </DraggableDualListSelectorListItem>
+        );
+        break;
+      case 'DataList':
+        content = (
+          <DraggableDataListItem key={item.id} id={item.id} {...item.props}>
+            {item.content}
+          </DraggableDataListItem>
+        );
+        break;
+      default:
+        content = (
+          <Draggable useDragButton={variant === 'defaultWithHandle'} key={item.id} id={item.id} {...item.props}>
+            {item.content}
+          </Draggable>
+        );
+    }
+
+    return (
+      <div
+        className={css(styles.draggable, styles.modifiers.dragging)}
+        style={
+          {
+            '--pf-v5-c-draggable--m-dragging--BackgroundColor': 'var(--pf-v5-global--BackgroundColor--100)'
+          } as React.CSSProperties
+        }
+      >
+        {content}
+      </div>
+    );
+  };
+
   const renderedChildren = (
-    <SortableContext items={itemIds} strategy={verticalListSortingStrategy}>
+    <SortableContext items={itemIds} strategy={verticalListSortingStrategy} id="droppable">
       {items.map((item: DraggableObject) => {
         switch (variant) {
           case 'DualListSelectorList':
@@ -118,12 +160,7 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
             );
         }
       })}
-      <DragOverlay>
-        <div className={css(styles.draggable, styles.modifiers.dragging, flexStyles.flex)}>
-          <span className={css(`${flexStyles.flex}_item`)}>{variant !== 'default' && <DragButton />}</span>
-          <span className={css(`${flexStyles.flex}_item`)}>{activeId ? getItemById(activeId).content : null}</span>
-        </div>
-      </DragOverlay>
+      <DragOverlay>{activeId && getDragOverlay()}</DragOverlay>
     </SortableContext>
   );
 
@@ -135,15 +172,11 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
       onDragStart={handleDragStart}
       {...props}
     >
-      {children && React.cloneElement(children, {
-        children: renderedChildren,
-        className: `${styles.droppable} ${dragging ? styles.modifiers.dragging : ''}`
-      })}
-      {!children && (
-        <div className={`${styles.droppable} ${dragging ? styles.modifiers.dragging : ''}`}>
-          {renderedChildren}
-        </div>
-      )}
+      {children &&
+        React.cloneElement(children, {
+          children: renderedChildren
+        })}
+      {!children && <div>{renderedChildren}</div>}
     </DndContext>
   );
 };

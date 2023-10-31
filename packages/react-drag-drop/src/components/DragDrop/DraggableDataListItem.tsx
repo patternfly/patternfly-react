@@ -3,6 +3,7 @@ import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import dragStyles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DragButton } from './DragButton';
 import { DataListItemRow, DataListControl } from '@patternfly/react-core';
 
@@ -28,7 +29,7 @@ export const DraggableDataListItem: React.FunctionComponent<DraggableDataListIte
   className,
   ...props
 }: DraggableDataListItemProps) => {
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id
   });
 
@@ -38,7 +39,18 @@ export const DraggableDataListItem: React.FunctionComponent<DraggableDataListIte
   };
 
   return (
-    <li id={id} className={css(styles.dataListItem, className)} {...props} ref={setNodeRef} style={style}>
+    <li
+      id={id}
+      className={css(
+        styles.dataListItem,
+        isDragging && dragStyles.droppable,
+        isDragging && dragStyles.modifiers.dragging,
+        className
+      )}
+      {...props}
+      ref={setNodeRef}
+      style={style}
+    >
       <DataListItemRow>
         <DataListControl>
           <DragButton className={css(styles.dataListItemDraggableButton)} {...attributes} {...listeners} />

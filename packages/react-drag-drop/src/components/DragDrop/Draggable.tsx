@@ -25,7 +25,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   useDragButton = false,
   ...props
 }: DraggableProps) => {
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id
   });
 
@@ -35,16 +35,18 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   };
 
   return useDragButton ? (
-    <div className={css(styles.draggable, className)} ref={setNodeRef} style={style} {...props}>
-      <DragButton
-        {...attributes}
-        {...listeners}
-      />
+    <div
+      className={css(isDragging && styles.droppable, isDragging && styles.modifiers.dragging, className)}
+      ref={setNodeRef}
+      style={style}
+      {...props}
+    >
+      <DragButton {...attributes} {...listeners} />
       {children}
     </div>
   ) : (
     <div
-      className={css(styles.draggable, className)}
+      className={css(isDragging && styles.droppable, isDragging && styles.modifiers.dragging, className)}
       ref={setNodeRef}
       style={style}
       {...listeners}
