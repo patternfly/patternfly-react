@@ -46,21 +46,6 @@ const getOppositePlacement = (placement: Placement): any =>
 export const getOpacityTransition = (animationDuration: number) =>
   `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`;
 
-export const getLanguageDirection = (targetElement: HTMLElement) => {
-  const defaultDirection = 'ltr';
-  let direction = defaultDirection;
-
-  if (targetElement) {
-    direction = getComputedStyle(targetElement).getPropertyValue('direction');
-  }
-
-  if (['ltr', 'rtl'].includes(direction)) {
-    return direction as 'ltr' | 'rtl';
-  }
-
-  return defaultDirection;
-};
-
 export interface PopperProps {
   /**
    * Trigger reference element to which the popper is relatively placed to.
