@@ -15,8 +15,6 @@ describe('Page Demo Test', () => {
       cy.get('#page-demo-header').should('not.have.attr', 'role');
       cy.get('#page-demo-page-id').should('not.have.attr', 'role');
       cy.get('div[class="pf-v5-c-page__header-brand-link"]').invoke('text').should('eq', "Logo that's a <div>");
-      cy.get('.pf-v5-c-page__main-section.pf-m-dark-100').should('exist');
-      cy.get('.pf-v5-c-page__main-section.pf-m-dark-200').should('exist');
       cy.get('.pf-v5-c-page__main-section.pf-m-light').should('exist');
       cy.get('.pf-v5-c-page__main-section.pf-m-no-padding').should('exist');
       cy.get('.pf-v5-c-page__main-section.pf-m-no-padding-on-md').should('exist');

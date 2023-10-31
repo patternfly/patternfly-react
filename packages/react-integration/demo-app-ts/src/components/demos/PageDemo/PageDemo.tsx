@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Avatar,
   Button,
@@ -6,7 +6,6 @@ import {
   PageSidebar,
   PageSidebarBody,
   PageSection,
-  PageSectionVariants,
   SkipToContent,
   Dropdown,
   DropdownItem,
@@ -25,7 +24,7 @@ import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-
 import imgAvatar from '@patternfly/react-integration/demo-app-ts/src/assets/images/imgAvatar.svg';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export class PageDemo extends React.Component {
+export class PageDemo extends Component {
   static displayName = 'PageDemo';
   state = {
     isNavOpen: true,
@@ -125,9 +124,9 @@ export class PageDemo extends React.Component {
             <Dropdown
               onSelect={this.onKebabDropdownSelect}
               isOpen={isKebabDropdownOpen}
-              onOpenChange={(isOpen) => this.setState({ isKebabDropdownOpen: isOpen })}
+              onOpenChange={(isOpen: any) => this.setState({ isKebabDropdownOpen: isOpen })}
               popperProps={{ position: 'right' }}
-              toggle={(toggleRef) => (
+              toggle={(toggleRef: any) => (
                 <MenuToggle
                   variant="plain"
                   ref={toggleRef}
@@ -154,9 +153,9 @@ export class PageDemo extends React.Component {
             <Dropdown
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              onOpenChange={(isOpen) => this.setState({ isDropdownOpen: isOpen })}
+              onOpenChange={(isOpen: any) => this.setState({ isDropdownOpen: isOpen })}
               popperProps={{ position: 'right' }}
-              toggle={(toggleRef) => (
+              toggle={(toggleRef: any) => (
                 <MenuToggle ref={toggleRef} onClick={this.onDropdownToggle} isExpanded={isDropdownOpen}>
                   John Smith
                 </MenuToggle>
@@ -201,11 +200,9 @@ export class PageDemo extends React.Component {
         skipToContent={PageSkipToContent}
         mainAriaLabel="page demo"
       >
-        <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
-        <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
-        <PageSection variant={PageSectionVariants.light} isWidthLimited>
-          Section with light background
-        </PageSection>
+        <PageSection>Section 1</PageSection>
+        <PageSection>Section 2</PageSection>
+        <PageSection>Section 3</PageSection>
         <PageSection
           padding={{
             default: 'noPadding',
@@ -215,9 +212,7 @@ export class PageDemo extends React.Component {
         >
           Section with padding only on medium/large
         </PageSection>
-        <PageSection variant={PageSectionVariants.light} padding={{ md: 'noPadding' }}>
-          Section with no padding on medium
-        </PageSection>
+        <PageSection padding={{ md: 'noPadding' }}>Section with no padding on medium</PageSection>
       </Page>
     );
   }

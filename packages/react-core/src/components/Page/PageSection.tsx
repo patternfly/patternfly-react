@@ -5,10 +5,7 @@ import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from './PageContext';
 
 export enum PageSectionVariants {
-  default = 'default',
-  light = 'light',
-  dark = 'dark',
-  darker = 'darker'
+  default = 'default'
 }
 
 export enum PageSectionTypes {

@@ -6,7 +6,6 @@ import {
   Gallery,
   GalleryItem,
   PageSection,
-  PageSectionVariants,
   TextContent,
   Text,
   Page
@@ -14,7 +13,7 @@ import {
 
 export const BackToTopDemo = () => (
   <Page>
-    <PageSection variant={PageSectionVariants.light}>
+    <PageSection>
       <TextContent>
         <Text component="h1">Main title</Text>
         <Text component="p">

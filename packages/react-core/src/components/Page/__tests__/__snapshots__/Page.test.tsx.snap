@@ -42,17 +42,17 @@ exports[`Page Check dark page against snapshot 1`] = `
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -102,17 +102,17 @@ exports[`Page Check page horizontal layout example against snapshot 1`] = `
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -266,17 +266,17 @@ exports[`Page Check page to verify breadcrumb is created - PageBreadcrumb syntax
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -430,17 +430,17 @@ exports[`Page Check page to verify breadcrumb is created 1`] = `
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -714,17 +714,17 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -1005,17 +1005,17 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -1181,17 +1181,17 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -1361,17 +1361,17 @@ exports[`Page Check page to verify skip to content points to main content region
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -1422,17 +1422,17 @@ exports[`Page Check page vertical layout example against snapshot 1`] = `
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -1586,17 +1586,17 @@ exports[`Page Sticky bottom breadcrumb on all height breakpoints - PageBreadcrum
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -1750,17 +1750,17 @@ exports[`Page Verify sticky bottom breadcrumb on all height breakpoints 1`] = `
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -1914,17 +1914,17 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints - PageBread
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>
@@ -2078,17 +2078,17 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints 1`] = `
         Section with default background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v5-c-page__main-section"
       >
         Section with light background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-200"
+        class="pf-v5-c-page__main-section"
       >
         Section with dark background
       </section>
       <section
-        class="pf-v5-c-page__main-section pf-m-dark-100"
+        class="pf-v5-c-page__main-section"
       >
         Section with darker background
       </section>

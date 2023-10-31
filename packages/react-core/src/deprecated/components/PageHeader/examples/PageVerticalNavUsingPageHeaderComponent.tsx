@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, PageSidebar, PageSidebarBody, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import { Page, PageSidebar, PageSidebarBody, PageSection } from '@patternfly/react-core';
 import { PageHeader as PageHeaderDeprecated, PageHeaderTools } from '@patternfly/react-core/deprecated';
 
 export const PageVerticalNavUsingPageHeaderComponent: React.FunctionComponent = () => {
@@ -34,9 +34,9 @@ export const PageVerticalNavUsingPageHeaderComponent: React.FunctionComponent = 
 
   return (
     <Page header={header} sidebar={sidebar}>
-      <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
-      <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
-      <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
+      <PageSection>Section 1</PageSection>
+      <PageSection>Section 2</PageSection>
+      <PageSection>Section 3</PageSection>
     </Page>
   );
 };

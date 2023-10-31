@@ -27,7 +27,6 @@ import {
   NavList,
   Page,
   PageSection,
-  PageSectionVariants,
   PageSidebar,
   PageSidebarBody,
   PageToggleButton,
@@ -270,7 +269,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
         }
       }}
     >
-      <PageSection variant={PageSectionVariants.light} isWidthLimited>
+      <PageSection isWidthLimited>
         <TextContent>
           <Text component="h1">Main title</Text>
           <Text component="p">This is a full page demo.</Text>

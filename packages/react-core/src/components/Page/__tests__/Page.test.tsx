@@ -44,7 +44,7 @@ describe('Page', () => {
   test('Check dark page against snapshot', () => {
     const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" onNavToggle={() => undefined} />;
     const Sidebar = (
-      <PageSidebar isSidebarOpen theme="dark">
+      <PageSidebar isSidebarOpen>
         <PageSidebarBody>Navigation</PageSidebarBody>
       </PageSidebar>
     );

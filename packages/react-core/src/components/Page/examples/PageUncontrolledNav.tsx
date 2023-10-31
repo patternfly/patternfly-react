@@ -9,7 +9,6 @@ import {
   PageSidebar,
   PageSidebarBody,
   PageSection,
-  PageSectionVariants,
   PageToggleButton,
   Toolbar,
   ToolbarContent,
@@ -50,9 +49,9 @@ export const PageUncontrolledNav: React.FunctionComponent = () => {
 
   return (
     <Page isManagedSidebar header={header} sidebar={sidebar}>
-      <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
-      <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
-      <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
+      <PageSection>Section 1</PageSection>
+      <PageSection>Section 2</PageSection>
+      <PageSection>Section 3</PageSection>
     </Page>
   );
 };

@@ -9,7 +9,7 @@ import {} from '../..';
 
 it('PageSidebar should match snapshot (auto-generated)', () => {
   const { asFragment } = render(
-    <PageSidebar className={"''"} isManagedSidebar={true} isSidebarOpen={true} theme={'dark'}>
+    <PageSidebar className={"''"} isManagedSidebar={true} isSidebarOpen={true}>
       <div>ReactNode</div>
     </PageSidebar>
   );

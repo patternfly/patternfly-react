@@ -9,7 +9,6 @@ import {
   PageSidebar,
   PageSidebarBody,
   PageSection,
-  PageSectionVariants,
   PageToggleButton,
   Toolbar,
   ToolbarContent,
@@ -48,9 +47,7 @@ export const PageManagedSidebarClosedDemo: React.FunctionComponent = () => {
 
   return (
     <Page id="page-managed-sidebar-closed-demo" isManagedSidebar header={header} sidebar={sidebar}>
-      <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
-      <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
-      <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
+      <PageSection>Section </PageSection>
     </Page>
   );
 };

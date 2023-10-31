@@ -12,7 +12,6 @@ import {
   PageGroup,
   PageBreadcrumb,
   PageNavigation,
-  PageSectionVariants,
   PageToggleButton,
   Breadcrumb,
   BreadcrumbItem,
@@ -102,10 +101,10 @@ export const PageGroupSection: React.FunctionComponent = () => {
             </BreadcrumbItem>
           </Breadcrumb>
         </PageBreadcrumb>
-        <PageSection variant={PageSectionVariants.light}>Grouped section</PageSection>
+        <PageSection>Grouped section</PageSection>
       </PageGroup>
-      <PageSection variant={PageSectionVariants.dark}>Section 1</PageSection>
-      <PageSection variant={PageSectionVariants.dark}>Section 2</PageSection>
+      <PageSection>Section 1</PageSection>
+      <PageSection>Section 2</PageSection>
     </Page>
   );
 };

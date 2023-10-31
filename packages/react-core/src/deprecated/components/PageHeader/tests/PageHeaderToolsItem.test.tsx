@@ -9,9 +9,7 @@ import {} from '../..';
 
 it('PageHeaderToolsItem should match snapshot (auto-generated)', () => {
   const { asFragment } = render(
-    <PageHeaderToolsItem className={'string'} isSelected={true}>
-      children={<div>ReactNode</div>}
-    </PageHeaderToolsItem>
+    <PageHeaderToolsItem className={'string'}>children={<div>ReactNode</div>}</PageHeaderToolsItem>
   );
   expect(asFragment()).toMatchSnapshot();
 });
