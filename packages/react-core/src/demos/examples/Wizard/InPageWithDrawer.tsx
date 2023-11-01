@@ -17,7 +17,6 @@ import {
   Page,
   PageSection,
   PageSectionTypes,
-  PageSectionVariants,
   PageSidebar,
   PageSidebarBody,
   SkipToContent,
@@ -159,13 +158,13 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
         breadcrumb={PageBreadcrumb}
         mainContainerId={pageId}
       >
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">A demo of a wizard in a page.</Text>
           </TextContent>
         </PageSection>
-        <PageSection type={PageSectionTypes.wizard} variant={PageSectionVariants.light}>
+        <PageSection type={PageSectionTypes.wizard}>
           <Wizard>
             <WizardStep body={null} name="Information" id="wizard-step-1">
               {createStepContentWithDrawer('Information step')}

@@ -9,7 +9,6 @@ import {
   NavList,
   Page,
   PageSection,
-  PageSectionVariants,
   PageSidebar,
   PageSidebarBody,
   SkipToContent,
@@ -72,7 +71,7 @@ export const NavDefault: React.FunctionComponent = () => {
         breadcrumb={DashboardBreadcrumb}
         mainContainerId={pageId}
       >
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">

@@ -37,7 +37,7 @@ export const DashboardBreadcrumb = (
 );
 
 const PageTemplateTitle = (
-  <PageSection variant="light">
+  <PageSection>
     <TextContent>
       <Text component="h1">Main title</Text>
       <Text component="p">This is a full page demo.</Text>

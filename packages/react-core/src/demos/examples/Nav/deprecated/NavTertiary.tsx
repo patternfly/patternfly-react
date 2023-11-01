@@ -9,7 +9,6 @@ import {
   NavList,
   Page,
   PageSection,
-  PageSectionVariants,
   SkipToContent,
   TextContent,
   Text
@@ -66,7 +65,7 @@ export const NavTertiary: React.FunctionComponent = () => {
         skipToContent={PageSkipToContent}
         mainContainerId={pageId}
       >
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">

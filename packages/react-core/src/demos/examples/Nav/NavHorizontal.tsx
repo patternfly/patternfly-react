@@ -23,7 +23,6 @@ import {
   NavList,
   Page,
   PageSection,
-  PageSectionVariants,
   SkipToContent,
   TextContent,
   Text,
@@ -211,7 +210,7 @@ export const NavHorizontal: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <Page header={Header} skipToContent={PageSkipToContent} breadcrumb={DashboardBreadcrumb} mainContainerId={pageId}>
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">
