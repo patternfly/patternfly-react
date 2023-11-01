@@ -10,6 +10,8 @@ import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
+import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 ## Examples
 

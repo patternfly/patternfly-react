@@ -8,6 +8,7 @@ import {
   InputGroup,
   InputGroupItem
 } from '@patternfly/react-core';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
   const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
@@ -20,7 +21,7 @@ export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
     setAlerts((prevAlerts) => [...prevAlerts.filter((alert) => alert.key !== key)]);
   };
 
-  const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');
+  const btnClasses = [buttonStyles.button, buttonStyles.modifiers.secondary].join(' ');
 
   const getUniqueId = () => String.fromCharCode(65 + Math.floor(Math.random() * 26)) + Date.now();
 

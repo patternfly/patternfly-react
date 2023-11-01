@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
+import treeViewStyles from '@patternfly/react-styles/css/components/Table/table-tree-view';
 import { BaseCellProps } from './Table';
 import {
   cellActions,
@@ -28,6 +29,10 @@ import {
   TdSelectType,
   TdTreeRowType
 } from './base/types';
+import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
+import cssStickyCellLeft from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Left';
+import cssStickyCellRight from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Right';
+
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
   /**
    * The column header the cell corresponds to.
@@ -253,8 +258,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   } = merged;
 
   const treeTableTitleCell =
-    (className && className.includes('pf-v5-c-table__tree-view-title-cell')) ||
-    (mergedClassName && mergedClassName.includes('pf-v5-c-table__tree-view-title-cell'));
+    (className && className.includes(treeViewStyles.tableTreeViewTitleCell)) ||
+    (mergedClassName && mergedClassName.includes(treeViewStyles.tableTreeViewTitleCell));
 
   React.useEffect(() => {
     setTruncated(
@@ -288,9 +293,9 @@ const TdBase: React.FunctionComponent<TdProps> = ({
       {...props}
       {...(isStickyColumn && {
         style: {
-          '--pf-v5-c-table__sticky-cell--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
-          '--pf-v5-c-table__sticky-cell--Left': stickyLeftOffset ? stickyLeftOffset : 0,
-          '--pf-v5-c-table__sticky-cell--Right': stickyRightOffset ? stickyRightOffset : 0,
+          [cssStickyCellMinWidth.name]: stickyMinWidth ? stickyMinWidth : undefined,
+          [cssStickyCellLeft.name]: stickyLeftOffset ? stickyLeftOffset : 0,
+          [cssStickyCellRight.name]: stickyRightOffset ? stickyRightOffset : 0,
           ...props.style
         } as React.CSSProperties
       })}

@@ -3,6 +3,7 @@ const commonjs = require('@rollup/plugin-commonjs');
 const scss = require('rollup-plugin-scss');
 const replace = require('@rollup/plugin-replace');
 const { terser } = require('rollup-plugin-terser');
+const svg = require('rollup-plugin-svg');
 
 const isProduction = process.env.IS_PRODUCTION;
 let exitCode = 0;
@@ -38,6 +39,7 @@ module.exports = ({ packageName, name }) => ({
     nodeResolve(),
     commonjs(),
     scss(),
+    svg(),
     isProduction && terser(),
     circularFailPlugin()
   ],

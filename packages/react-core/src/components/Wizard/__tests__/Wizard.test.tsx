@@ -99,6 +99,18 @@ test('renders default nav with custom props', () => {
   expect(screen.getByRole('button', { name: 'Test step 2' })).toHaveAttribute('disabled');
 });
 
+test('renders nav aria label', () => {
+
+  render(
+    <Wizard navAriaLabel="custom nav aria-label">
+      <WizardStep id="test-step" name="Test step" />
+    </Wizard>
+  );
+  const navElement = screen.getByLabelText('custom nav aria-label');
+
+  expect(navElement).toHaveAttribute('aria-label');
+});
+
 test('renders custom nav', () => {
   const customNav = () => <nav>Some custom nav</nav>;
 

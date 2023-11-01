@@ -2,6 +2,8 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { MenuContext } from './MenuContext';
+import cssHeight from '@patternfly/react-tokens/dist/esm/c_menu__content_Height';
+import cssMaxHeight from '@patternfly/react-tokens/dist/esm/c_menu__content_MaxHeight';
 
 export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
   /** Items within group */
@@ -58,8 +60,8 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
           ref={(el) => refCallback(el, menuId, onGetMenuHeight)}
           style={
             {
-              ...(menuHeight && { '--pf-v5-c-menu__content--Height': menuHeight }),
-              ...(maxMenuHeight && { '--pf-v5-c-menu__content--MaxHeight': maxMenuHeight })
+              ...(menuHeight && { [cssHeight.name]: menuHeight }),
+              ...(maxMenuHeight && { [cssMaxHeight.name]: maxMenuHeight })
             } as React.CSSProperties
           }
         >

@@ -6,6 +6,9 @@ import { SliderStep } from './SliderStep';
 import { InputGroup, InputGroupText, InputGroupItem } from '../InputGroup';
 import { TextInput } from '../TextInput';
 import { Tooltip } from '../Tooltip';
+import cssSliderValue from '@patternfly/react-tokens/dist/esm/c_slider_value';
+import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_slider__value_c_form_control_width_chars';
+import { getLanguageDirection } from '../../helpers/util';
 
 /** Properties for creating custom steps in a slider. These properties should be passed in as
  * an object within an array to the slider component's customSteps property.
@@ -123,7 +126,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   let isRTL: boolean;
 
   React.useEffect(() => {
-    isRTL = window.getComputedStyle(sliderRailRef.current).getPropertyValue('direction') === 'rtl';
+    isRTL = getLanguageDirection(sliderRailRef.current) === 'rtl';
   });
 
   React.useEffect(() => {
@@ -139,9 +142,9 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
   // calculate style value percentage
   const stylePercent = ((localValue - min) * 100) / (max - min);
-  const style = { '--pf-v5-c-slider--value': `${stylePercent}%` } as React.CSSProperties;
+  const style = { [cssSliderValue.name]: `${stylePercent}%` } as React.CSSProperties;
   const widthChars = React.useMemo(() => localInputValue.toString().length, [localInputValue]);
-  const inputStyle = { '--pf-v5-c-slider__value--c-form-control--width-chars': widthChars } as React.CSSProperties;
+  const inputStyle = { [cssFormControlWidthChars.name]: widthChars } as React.CSSProperties;
 
   const onChangeHandler = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setLocalInputValue(Number(value));
@@ -221,7 +224,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   const onSliderRailClick = (e: any) => {
     handleThumbMove(e);
     if (snapValue && !areCustomStepsContinuous) {
-      thumbRef.current.style.setProperty('--pf-v5-c-slider--value', `${snapValue}%`);
+      thumbRef.current.style.setProperty(cssSliderValue.name, `${snapValue}%`);
       setValue(snapValue);
       if (onChange) {
         onChange(e, snapValue);
@@ -258,7 +261,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
     const newPercentage = getPercentage(newPosition, end);
 
-    thumbRef.current.style.setProperty('--pf-v5-c-slider--value', `${newPercentage}%`);
+    thumbRef.current.style.setProperty(cssSliderValue.name, `${newPercentage}%`);
     // convert percentage to value
     const newValue = Math.round(((newPercentage * (max - min)) / 100 + min) * 100) / 100;
     setValue(newValue);
@@ -266,7 +269,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (!customSteps) {
       // snap to new value if not custom steps
       snapValue = Math.round((Math.round((newValue - min) / step) * step + min) * 100) / 100;
-      thumbRef.current.style.setProperty('--pf-v5-c-slider--value', `${snapValue}%`);
+      thumbRef.current.style.setProperty(cssSliderValue.name, `${snapValue}%`);
       setValue(snapValue);
     }
 
@@ -354,7 +357,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     }
 
     if (newValue !== localValue) {
-      thumbRef.current.style.setProperty('--pf-v5-c-slider--value', `${newValue}%`);
+      thumbRef.current.style.setProperty(cssSliderValue.name, `${newValue}%`);
       setValue(newValue);
       if (onChange) {
         onChange(e, newValue);

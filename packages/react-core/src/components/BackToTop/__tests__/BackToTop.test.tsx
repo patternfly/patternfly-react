@@ -2,6 +2,7 @@ import React, { RefObject } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { BackToTop } from '../BackToTop';
 import userEvent from '@testing-library/user-event';
+import styles from '@patternfly/react-styles/css/components/BackToTop/back-to-top';
 
 jest.mock('../../Button');
 
@@ -18,7 +19,7 @@ test('Renders BackToTop', () => {
 test('Renders with the default class', () => {
   render(<BackToTop />);
 
-  expect(screen.getByRole(`button`).parentElement).toHaveClass('pf-v5-c-back-to-top');
+  expect(screen.getByRole(`button`).parentElement).toHaveClass(styles.backToTop);
 });
 
 test('BackToTop is not yet visible', () => {

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Banner } from '../Banner';
+import styles from '@patternfly/react-styles/css/components/Banner/banner';
 
 test('Renders without children', () => {
   render(
@@ -16,9 +17,9 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class name pf-v5-c-banner', () => {
+test(`Renders with class name ${styles.banner}`, () => {
   render(<Banner>Test</Banner>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-banner');
+  expect(screen.getByText('Test')).toHaveClass(styles.banner);
 });
 
 test('Renders with custom class name when className prop is provided', () => {
@@ -28,7 +29,7 @@ test('Renders with custom class name when className prop is provided', () => {
 
 test('Renders without any modifier class when variant prop is not passed', () => {
   render(<Banner>Test</Banner>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-banner', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass(styles.banner, { exact: true });
 });
 
 test('Renders with class name pf-m-green when "green" is passed to variant prop', () => {

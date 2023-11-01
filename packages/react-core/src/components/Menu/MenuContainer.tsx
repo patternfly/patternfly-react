@@ -14,6 +14,8 @@ export interface MenuPopperProps {
   maxWidth?: string | 'trigger';
   /** Enable to flip the popper when it reaches the boundary */
   enableFlip?: boolean;
+  /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
+  preventOverflow?: boolean;
 }
 export interface MenuContainerProps {
   /** Menu to be rendered */

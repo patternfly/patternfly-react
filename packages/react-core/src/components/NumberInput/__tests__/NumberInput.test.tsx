@@ -69,7 +69,6 @@ describe('numberInput', () => {
       <NumberInput
         value={5}
         onMinus={jest.fn()}
-        inputProps={{ 'aria-describedby': '' }}
         minusBtnProps={{ id: 'minus-id' }}
         onPlus={jest.fn()}
         plusBtnProps={{ id: 'plus-id' }}

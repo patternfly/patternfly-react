@@ -23,8 +23,6 @@ export const CodeEditorBasic: React.FunctionComponent = () => {
   };
 
   const onEditorDidMount = (editor, monaco) => {
-    // eslint-disable-next-line no-console
-    console.log(editor.getValue());
     editor.layout();
     editor.focus();
     monaco.editor.getModels()[0].updateOptions({ tabSize: 5 });

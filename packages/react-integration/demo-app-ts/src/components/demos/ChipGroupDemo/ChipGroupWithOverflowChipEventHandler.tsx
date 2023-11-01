@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Chip, ChipGroup } from '@patternfly/react-core';
+import { css } from '@patternfly/react-styles';
+import titleStyles from '@patternfly/react-styles/css/components/Title/title';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 interface ChipGroupWithOverflowChipEventHandlerState {
   chipArray: {
@@ -67,7 +70,9 @@ export class ChipGroupWithOverflowChipEventHandler extends Component<{}, ChipGro
           ))}
         </ChipGroup>
         {this.state.shouldShowAdditionalText && (
-          <h1 className="pf-v5-c-title pf-m-2xl pf-v5-u-p-lg">Full results are currently expanded.</h1>
+          <h1 className={css(titleStyles.title, titleStyles.modifiers['2xl'], spacing.pLg)}>
+            Full results are currently expanded.
+          </h1>
         )}
       </>
     );

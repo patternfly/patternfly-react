@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { PanelFooter } from '../PanelFooter';
+import styles from '@patternfly/react-styles/css/components/Panel/panel';
 
 test('Renders without children', () => {
   render(
@@ -16,14 +17,14 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with the class pf-v5-c-panel__footer', () => {
+test(`Renders with the class ${styles.panelFooter}`, () => {
   render(<PanelFooter>Test</PanelFooter>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__footer');
+  expect(screen.getByText('Test')).toHaveClass(styles.panelFooter);
 });
 
-test('Renders with only the class pf-v5-c-panel__footer by default', () => {
+test(`Renders with only the class ${styles.panelFooter} by default`, () => {
   render(<PanelFooter>Test</PanelFooter>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__footer', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass(styles.panelFooter, { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {
