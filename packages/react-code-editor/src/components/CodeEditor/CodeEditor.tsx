@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
-import fileUploadStyles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
 import {
   Button,
   ButtonVariant,
@@ -527,20 +526,18 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                   headingLevel="h4"
                 />
                 <EmptyStateBody>{emptyStateBody}</EmptyStateBody>
-                {!isReadOnly && (
-                  <EmptyStateFooter>
-                    <EmptyStateActions>
-                      <Button variant="primary" onClick={open}>
-                        {emptyStateButton}
-                      </Button>
-                    </EmptyStateActions>
-                    <EmptyStateActions>
-                      <Button variant="link" onClick={this.toggleEmptyState}>
-                        {emptyStateLink}
-                      </Button>
-                    </EmptyStateActions>
-                  </EmptyStateFooter>
-                )}
+                <EmptyStateFooter>
+                  <EmptyStateActions>
+                    <Button variant="primary" onClick={open}>
+                      {emptyStateButton}
+                    </Button>
+                  </EmptyStateActions>
+                  <EmptyStateActions>
+                    <Button variant="link" onClick={this.toggleEmptyState}>
+                      {emptyStateLink}
+                    </Button>
+                  </EmptyStateActions>
+                </EmptyStateFooter>
               </EmptyState>
             ) : (
               <EmptyState variant={EmptyStateVariant.sm}>
@@ -549,15 +546,13 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                   icon={<EmptyStateIcon icon={CodeIcon} />}
                   headingLevel="h4"
                 />
-                {!isReadOnly && (
-                  <EmptyStateFooter>
-                    <EmptyStateActions>
-                      <Button variant="primary" onClick={this.toggleEmptyState}>
-                        {emptyStateLink}
-                      </Button>
-                    </EmptyStateActions>
-                  </EmptyStateFooter>
-                )}
+                <EmptyStateFooter>
+                  <EmptyStateActions>
+                    <Button variant="primary" onClick={this.toggleEmptyState}>
+                      {emptyStateLink}
+                    </Button>
+                  </EmptyStateActions>
+                </EmptyStateFooter>
               </EmptyState>
             ));
 
@@ -610,7 +605,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
               }
               {<div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
               {!!shortcutsPopoverProps.bodyContent && (
-                <div className={`${styles.codeEditor}__keyboard-shortcuts`}>
+                <div className="pf-v5-c-code-editor__keyboard-shortcuts">
                   <Popover {...shortcutsPopoverProps}>
                     <Button variant={ButtonVariant.link} icon={<HelpIcon />}>
                       {shortcutsPopoverButtonText}
@@ -652,9 +647,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                   {...getRootProps({
                     onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
                   })}
-                  className={`${fileUploadStyles.fileUpload} ${isDragActive && fileUploadStyles.modifiers.dragHover} ${
-                    isLoading && fileUploadStyles.modifiers.loading
-                  }`}
+                  className={`pf-v5-c-file-upload ${isDragActive && 'pf-m-drag-hover'} ${isLoading && 'pf-m-loading'}`}
                 >
                   {editorHeader}
                   <div className={css(styles.codeEditorMain)}>

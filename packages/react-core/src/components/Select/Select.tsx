@@ -25,8 +25,6 @@ export interface SelectPopperProps {
    * appendTo={document.getElementById('target')}
    */
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
-  /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
-  preventOverflow?: boolean;
 }
 
 export interface SelectToggleProps {

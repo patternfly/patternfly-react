@@ -3,7 +3,7 @@ id: Jump links
 section: components
 ---
 
-import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ## Demos
 
@@ -33,8 +33,7 @@ import {
   TextContent,
   getResizeObserver
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ScrollspyH2 = () => {
   const headings = [1, 2, 3, 4, 5];
@@ -44,7 +43,7 @@ ScrollspyH2 = () => {
 
   // Update offset based on the masthead and jump links nav heights.
   React.useEffect(() => {
-    const masthead = document.getElementsByClassName(mastheadStyles.masthead)[0];
+    const masthead = document.getElementsByClassName('pf-v5-c-masthead')[0];
     const offsetForPadding = 10;
 
     getResizeObserver(

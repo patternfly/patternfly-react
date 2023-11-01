@@ -85,7 +85,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
 
   const overflowTab = (
     <li
-      className={css(styles.tabsItem, styles.modifiers.overflow, selectedTab && styles.modifiers.current, className)}
+      className={css(styles.tabsItem, 'pf-m-overflow', selectedTab && styles.modifiers.current, className)}
       role="presentation"
       ref={overflowLIRef}
       {...props}

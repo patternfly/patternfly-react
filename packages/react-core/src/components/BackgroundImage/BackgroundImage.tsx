@@ -2,7 +2,6 @@ import React from 'react';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/BackgroundImage/background-image';
-import cssBackgroundImage from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage';
 
 export interface BackgroundImageProps extends React.HTMLProps<HTMLDivElement> {
   /** The URL or file path of the image for the background */
@@ -20,7 +19,7 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
     className={css(styles.backgroundImage, className)}
     style={
       {
-        [cssBackgroundImage.name]: `url(${src})`
+        '--pf-v5-c-background-image--BackgroundImage': `url(${src})`
       } as React.CSSProperties
     }
     {...props}

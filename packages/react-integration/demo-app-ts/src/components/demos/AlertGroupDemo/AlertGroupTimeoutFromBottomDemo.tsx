@@ -6,20 +6,14 @@ export const AlertGroupTimeoutFromBottomDemo: React.FunctionComponent = () => {
   const [count, setCount] = React.useState(0);
   const onClick = () => {
     const timeout = 3000;
-    setAlerts((prevAlerts) => [
+    setAlerts(prevAlerts => [
       <Alert
         title={`Alert no. ${count}`}
         timeout={timeout}
         actionLinks={
           <React.Fragment>
-            <AlertActionLink component="a" href="#">
-              View details
-            </AlertActionLink>
-            <AlertActionLink // eslint-disable-next-line no-console
-              onClick={() => console.log('Clicked on Ignore')}
-            >
-              Ignore
-            </AlertActionLink>
+            <AlertActionLink>View details</AlertActionLink>
+            <AlertActionLink>Ignore</AlertActionLink>
           </React.Fragment>
         }
         key={`Alert no. ${count}`}

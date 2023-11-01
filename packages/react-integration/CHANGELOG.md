@@ -15,38 +15,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 - **Modal:** Prevent duplicate ids within Modal ([#9555](https://github.com/patternfly/patternfly-react/issues/9555)) ([2953b78](https://github.com/patternfly/patternfly-react/commit/2953b78290b3baee6cf506303c88dfc5ab9d0329))
 
-## 5.1.1-prerelease.14 (2023-10-30)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-## 5.1.1-prerelease.13 (2023-10-27)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-## [5.1.1-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.11...@patternfly/react-integration@5.1.1-prerelease.12) (2023-10-16)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-## 5.1.1-prerelease.11 (2023-10-12)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-## [5.1.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.9...@patternfly/react-integration@5.1.1-prerelease.10) (2023-10-09)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-## 5.1.1-prerelease.9 (2023-10-09)
-
-### Bug Fixes
-
-- **build:** Fixed version mismatch issue ([#9716](https://github.com/patternfly/patternfly-react/issues/9716)) ([58ea584](https://github.com/patternfly/patternfly-react/commit/58ea5840e7a291531d45e40b0c5d1d0cdc8093c8))
-
-## [5.1.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.7...@patternfly/react-integration@5.1.1-prerelease.8) (2023-09-20)
-
-### Bug Fixes
-
-- **Modal:** Prevent duplicate ids within Modal ([#9555](https://github.com/patternfly/patternfly-react/issues/9555)) ([2953b78](https://github.com/patternfly/patternfly-react/commit/2953b78290b3baee6cf506303c88dfc5ab9d0329))
-
 ## 5.1.1-prerelease.7 (2023-09-19)
 
 ### Features

@@ -1,8 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Skeleton/skeleton';
 import { css } from '@patternfly/react-styles';
-import cssHeight from '@patternfly/react-tokens/dist/esm/c_skeleton_Height';
-import cssWidth from '@patternfly/react-tokens/dist/esm/c_skeleton_Width';
 
 export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Skeleton */
@@ -44,8 +42,8 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
       )}
       {...((width || height) && {
         style: {
-          [cssWidth.name]: width ? width : undefined,
-          [cssHeight.name]: height ? height : undefined,
+          '--pf-v5-c-skeleton--Width': width ? width : undefined,
+          '--pf-v5-c-skeleton--Height': height ? height : undefined,
           ...props.style
         } as React.CSSProperties
       })}

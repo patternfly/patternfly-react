@@ -2,7 +2,6 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Tooltip } from '../Tooltip';
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 
 /** Renders an individual control button for moving selected options between each
  * dual list selector pane.
@@ -41,7 +40,7 @@ export const DualListSelectorControlBase: React.FunctionComponent<DualListSelect
   const privateRef = React.useRef(null);
   const ref = innerRef || privateRef;
   return (
-    <div className={css(styles.dualListSelectorControlsItem, className)} {...props}>
+    <div className={css('pf-v5-c-dual-list-selector__controls-item', className)} {...props}>
       <Button
         isDisabled={isDisabled}
         aria-disabled={isDisabled}

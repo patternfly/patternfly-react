@@ -54,9 +54,6 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
-import global_BackgroundColor_150 from '@patternfly/react-tokens/dist/esm/global_BackgroundColor_150';
 
 ## Table examples
 

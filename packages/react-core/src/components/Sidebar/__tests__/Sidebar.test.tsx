@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Sidebar } from '../Sidebar';
-import styles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
 
 test('Renders without children', () => {
   render(
@@ -17,14 +16,14 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test(`Renders with only class name ${styles.sidebar} by default`, () => {
+test('Renders with only class name pf-v5-c-sidebar by default', () => {
   render(<Sidebar>Test</Sidebar>);
-  expect(screen.getByText('Test').parentElement).toHaveClass(styles.sidebar, { exact: true });
+  expect(screen.getByText('Test').parentElement).toHaveClass('pf-v5-c-sidebar', { exact: true });
 });
 
-test(`Renders with class name ${styles.sidebar}`, () => {
+test('Renders with class name pf-v5-c-sidebar', () => {
   render(<Sidebar>Test</Sidebar>);
-  expect(screen.getByText('Test').parentElement).toHaveClass(styles.sidebar);
+  expect(screen.getByText('Test').parentElement).toHaveClass('pf-v5-c-sidebar');
 });
 
 test('Renders with custom class name when className prop is provided', () => {
@@ -62,9 +61,9 @@ test('Renders with class name pf-m-gutter when hasGutter prop is passed', () => 
   expect(screen.getByText('Test').parentElement).toHaveClass('pf-m-gutter');
 });
 
-test(`Renders with class name ${styles.sidebarMain} by default for child component`, () => {
+test('Renders with class name pf-m-sidebar__main by default for child component', () => {
   render(<Sidebar>Test</Sidebar>);
-  expect(screen.getByText('Test')).toHaveClass(styles.sidebarMain);
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-sidebar__main');
 });
 
 test('Renders with inherited element props spread to the component', () => {

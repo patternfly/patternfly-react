@@ -5,7 +5,6 @@ import { compoundExpand } from '@patternfly/react-table';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 interface Repository {
   name: string;
@@ -118,7 +117,7 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
       cells: [
         {
           title: (
-            <div className={spacing.mMd} id={`compound-expansion-table-${repo.name}-1`}>
+            <div className="pf-v5-u-m-md" id={`compound-expansion-table-${repo.name}-1`}>
               Expanded content for {repo.name}: Branches goes here!
             </div>
           ),
@@ -133,7 +132,7 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
       cells: [
         {
           title: (
-            <div className={spacing.mMd} id={`compound-expansion-table-${repo.name}-2`}>
+            <div className="pf-v5-u-m-md" id={`compound-expansion-table-${repo.name}-2`}>
               Expanded content for {repo.name}: Pull requests goes here!
             </div>
           ),
@@ -148,7 +147,7 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
       cells: [
         {
           title: (
-            <div className={spacing.mMd} id={`compound-expansion-table-${repo.name}-3`}>
+            <div className="pf-v5-u-m-md" id={`compound-expansion-table-${repo.name}-3`}>
               Expanded content for {repo.name}: Workspaces goes here!
             </div>
           ),

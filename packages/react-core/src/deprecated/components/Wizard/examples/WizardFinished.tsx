@@ -12,7 +12,6 @@ import {
 import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 // eslint-disable-next-line patternfly-react/import-tokens-icons
 import { CogsIcon } from '@patternfly/react-icons';
-import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 
 interface finishedProps {
   onClose: () => void;
@@ -42,7 +41,7 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
   }, [percent]);
 
   return (
-    <div className={layout.bullseye}>
+    <div className="pf-v5-l-bullseye">
       <EmptyState variant="lg">
         <EmptyStateHeader
           headingLevel="h4"

@@ -7,7 +7,6 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 ## Demos
 

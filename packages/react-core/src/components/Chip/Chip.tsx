@@ -6,7 +6,6 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import styles from '@patternfly/react-styles/css/components/Chip/chip';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
-import cssChipTextMaxWidth from '@patternfly/react-tokens/dist/esm/c_chip__text_MaxWidth';
 
 export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Badge to add to the chip. The badge will be rendered after the chip text. */
@@ -82,7 +81,7 @@ class Chip extends React.Component<ChipProps, ChipState> {
   }
 
   setChipStyle = () => ({
-    [cssChipTextMaxWidth.name]: this.props.textMaxWidth
+    '--pf-v5-c-chip__text--MaxWidth': this.props.textMaxWidth
   });
 
   renderOverflowChip = () => {
@@ -140,13 +139,12 @@ class Chip extends React.Component<ChipProps, ChipState> {
       tooltipPosition,
       component,
       ouiaId,
-      textMaxWidth,
       ...props
     } = this.props;
     const Component = component as any;
     return (
       <Component
-        {...(textMaxWidth && {
+        {...(this.props.textMaxWidth && {
           style: this.setChipStyle()
         })}
         className={css(styles.chip, className)}

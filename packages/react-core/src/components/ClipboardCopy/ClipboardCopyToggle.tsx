@@ -28,7 +28,7 @@ export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyTogglePro
     onClick={onClick}
     id={id}
     aria-labelledby={`${id} ${textId}`}
-    aria-controls={contentId}
+    aria-controls={`${id} ${contentId}`}
     aria-expanded={isExpanded}
     {...props}
   >

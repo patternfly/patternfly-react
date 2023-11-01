@@ -57,7 +57,6 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   children,
   variant = 'control',
   onTooltipHidden = () => {},
-  className,
   ...props
 }: ClipboardCopyButtonProps) => {
   const triggerRef = React.createRef<HTMLButtonElement>();
@@ -80,7 +79,6 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
         variant={variant}
         onClick={onClick}
         aria-label={ariaLabel}
-        className={className}
         id={id}
         aria-labelledby={`${id} ${textId}`}
         {...props}

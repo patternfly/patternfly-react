@@ -32,7 +32,7 @@ PatternFly supports several button styling variants to be used in different scen
 | Warning | Warning buttons may be used for actions that change an important setting or behavior, but not in a destructive or irreversible way. |
 | Link | Links are labeled, but have no background or border. Use for actions that require less emphasis, actions that navigate users to another page within the same window, and/or actions that navigate to external pages in a new window. Links may be placed inline with text using the `isInline` property.|
 | Plain | Plain buttons have no styling and are intended to be labeled with icons. |
-| Control | Control buttons can be labeled with text or icons. Primarily intended to be paired with other controls in an [input group](/components/input-group). |
+| Control | Control buttons can be labeled with text or icons. Primarily intended to be paired with other controls in an [input group](https://www.patternfly.org/v4/components/input-group). | 
 
 ### Disabled buttons
 

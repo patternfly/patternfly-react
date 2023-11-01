@@ -1,7 +1,6 @@
 import React from 'react';
 import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 interface ModalDemoState {
   isModalOpen: boolean;
@@ -289,7 +288,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         <Title id="customHeaderTitle" headingLevel="h1" size={TitleSizes['2xl']}>
           Custom Modal Header/Footer
         </Title>
-        <p id="customHeaderDescription" className={spacing.ptSm}>
+        <p id="customHeaderDescription" className="pf-v5-u-pt-sm">
           Allows for custom content in the header and/or footer by passing components.
         </p>
       </React.Fragment>
@@ -298,7 +297,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     const footer = (
       <Title id="customFooterTitle" headingLevel="h4" size={TitleSizes.md}>
         <WarningTriangleIcon />
-        <span className={spacing.plSm}>Custom modal footer.</span>
+        <span className="pf-v5-u-pl-sm">Custom modal footer.</span>
       </Title>
     );
 

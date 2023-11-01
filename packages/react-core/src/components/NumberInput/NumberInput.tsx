@@ -7,7 +7,6 @@ import { InputGroup, InputGroupItem } from '../InputGroup';
 import { Button, ButtonProps } from '../Button';
 import { KeyTypes, ValidatedOptions } from '../../helpers';
 import { TextInput } from '../TextInput';
-import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_number_input_c_form_control_width_chars';
 
 export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   /** Value of the number input */
@@ -109,7 +108,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
       className={css(styles.numberInput, validated !== 'default' && styles.modifiers.status, className)}
       {...(widthChars && {
         style: {
-          [cssFormControlWidthChars.name]: widthChars,
+          '--pf-v5-c-number-input--c-form-control--width-chars': widthChars,
           ...props.style
         } as React.CSSProperties
       })}

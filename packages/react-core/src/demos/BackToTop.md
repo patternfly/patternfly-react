@@ -3,6 +3,8 @@ id: Back to top
 section: components
 ---
 
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+
 ## Demos
 
 ### Using name selector

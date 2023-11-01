@@ -62,8 +62,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   const updateCurrentFiles = (files: File[]) => {
     if (fileUploadShouldFail) {
       const corruptedFiles = files.map((file) => ({ ...file, lastModified: 'foo' as unknown as number }));
-      // eslint-disable-next-line
-      setCurrentFiles((prevFiles) => [...prevFiles, ...corruptedFiles as any]);
+      setCurrentFiles((prevFiles) => [...prevFiles, ...corruptedFiles]);
     } else {
       setCurrentFiles((prevFiles) => [...prevFiles, ...files]);
     }

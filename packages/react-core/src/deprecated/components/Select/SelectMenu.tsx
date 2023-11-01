@@ -214,7 +214,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     const variantProps = {
       ref: innerRef,
       className: css(
-        !footer ? styles.selectMenu : `${styles.selectMenu}-list`,
+        !footer ? styles.selectMenu : 'pf-v5-c-select__menu-list',
         position === SelectPosition.right && styles.modifiers.alignRight,
         className
       ),

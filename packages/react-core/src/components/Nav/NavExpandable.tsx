@@ -9,10 +9,10 @@ import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface NavExpandableProps
-  extends Omit<React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, 'title'>,
+  extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>,
     OUIAProps {
-  /** Title content shown for the expandable list */
-  title: React.ReactNode;
+  /** Title shown for the expandable list */
+  title: string;
   /** If defined, screen readers will read this text instead of the list title */
   srText?: string;
   /** Boolean to programatically expand or collapse section */
@@ -126,14 +126,14 @@ class NavExpandable extends React.Component<NavExpandableProps, NavExpandableSta
             <PageSidebarContext.Consumer>
               {({ isSidebarOpen }) => (
                 <button
-                  className={css(styles.navLink)}
+                  className={styles.navLink}
                   id={srText ? null : this.id}
                   onClick={(event) => this.onExpand(event, context.onToggle)}
                   aria-expanded={expandedState}
                   tabIndex={isSidebarOpen ? null : -1}
                   {...buttonProps}
                 >
-                  {typeof title !== 'string' ? <span className={css(`${styles.nav}__link-text`)}>{title}</span> : title}
+                  {title}
                   <span className={css(styles.navToggle)}>
                     <span className={css(styles.navToggleIcon)}>
                       <AngleRightIcon aria-hidden="true" />

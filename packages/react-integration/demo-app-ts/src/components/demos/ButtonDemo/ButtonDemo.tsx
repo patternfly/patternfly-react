@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, ButtonProps, ButtonSize, Tooltip } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import '@patternfly/react-styles/css/utilities/Spacing/spacing.css';
 import { Link } from 'react-router-dom';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 const href = 'https://www.google.com';
 
 interface ButtonDemoState {
   counter: number;
 }
-export class ButtonDemo extends Component<ButtonProps, ButtonDemoState> {
+export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
   static displayName = 'ButtonDemo';
   constructor(props: ButtonProps) {
     super(props);
@@ -21,7 +20,7 @@ export class ButtonDemo extends Component<ButtonProps, ButtonDemoState> {
   }
 
   normalButton: ButtonProps = {
-    className: spacing.mSm,
+    className: 'pf-v5-u-m-sm',
     component: 'button',
     onClick: () => {
       window.location.href = 'https://github.com/patternfly/patternfly-react';
@@ -29,7 +28,7 @@ export class ButtonDemo extends Component<ButtonProps, ButtonDemoState> {
   };
 
   linkButton: ButtonProps = {
-    className: spacing.mSm,
+    className: 'pf-v5-u-m-sm',
     component: 'button',
     icon: <PlusCircleIcon />,
     onKeyPress: () => {
@@ -39,7 +38,7 @@ export class ButtonDemo extends Component<ButtonProps, ButtonDemoState> {
   };
 
   linkAsButton: ButtonProps = {
-    className: spacing.mSm,
+    className: 'pf-v5-u-m-sm',
     component: 'a',
     href: 'https://github.com/patternfly/patternfly-react',
     icon: <ExternalLinkAltIcon />,
@@ -150,7 +149,7 @@ export class ButtonDemo extends Component<ButtonProps, ButtonDemoState> {
           Aria-disabled link button with custom list of prevented events {this.state.counter}
         </Button>
 
-        <hr className={spacing.mMd} />
+        <hr className="pf-v5-u-m-md" />
         <Button {...this.linkButton} id="link-btn-1">
           Link button
         </Button>
@@ -173,7 +172,7 @@ export class ButtonDemo extends Component<ButtonProps, ButtonDemoState> {
           Router link button
         </Button>
 
-        <hr className={spacing.mMd} />
+        <hr className="pf-v5-u-m-md" />
         <Button {...this.linkAsButton} id="link-as-btn-1">
           Link as button
         </Button>
@@ -195,7 +194,7 @@ export class ButtonDemo extends Component<ButtonProps, ButtonDemoState> {
           </Button>
         </Tooltip>
 
-        <hr className={spacing.mMd} />
+        <hr className="pf-v5-u-m-md" />
         <Button {...this.spanLink} id="span-link-btn-1">
           Span wrapping link
         </Button>
@@ -203,18 +202,18 @@ export class ButtonDemo extends Component<ButtonProps, ButtonDemoState> {
         <Button isDisabled {...this.spanLink} id="span-link-btn-2">
           Disabled span wrapping link
         </Button>
-        <hr className={spacing.mMd} />
+        <hr className="pf-v5-u-m-md" />
         <div id="tabstop-test" tabIndex={0}>
-          <Button className={spacing.mSm} id="tabstop-test-01">
+          <Button className="pf-v5-u-m-sm" id="tabstop-test-01">
             First tab stop
           </Button>
-          <Button className={spacing.mSm} id="tabstop-test-02">
+          <Button className="pf-v5-u-m-sm" id="tabstop-test-02">
             Second tab stop
           </Button>
-          <Button className={spacing.mSm} id="tabstop-test-03">
+          <Button className="pf-v5-u-m-sm" id="tabstop-test-03">
             Third tab stop
           </Button>
-          <Button className={spacing.mSm} id="tabstop-test-04">
+          <Button className="pf-v5-u-m-sm" id="tabstop-test-04">
             Fourth tab stop
           </Button>
         </div>

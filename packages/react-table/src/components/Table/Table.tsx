@@ -159,8 +159,8 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   const handleKeys = (event: KeyboardEvent) => {
     if (
       isNested ||
-      !(tableRef && tableRef.current && tableRef.current.classList.contains(stylesTreeView.modifiers.treeView)) || // implements roving tab-index to tree tables only
-      (tableRef && tableRef.current !== (event.target as HTMLElement).closest(`.${styles.table}:not(.pf-m-nested)`))
+      !(tableRef && tableRef.current && tableRef.current.classList.contains('pf-m-tree-view')) || // implements roving tab-index to tree tables only
+      (tableRef && tableRef.current !== (event.target as HTMLElement).closest('.pf-v5-c-table:not(.pf-m-nested)'))
     ) {
       return;
     }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Truncate } from '../Truncate';
-import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 
 jest.mock('../../Tooltip', () => ({
   Tooltip: ({ content, position, children, ...props }) => (
@@ -13,12 +12,12 @@ jest.mock('../../Tooltip', () => ({
   )
 }));
 
-test(`renders with class ${styles.truncate}`, () => {
+test('renders with class pf-v5-c-truncate', () => {
   render(<Truncate content={''} aria-label="test-id" />);
 
   const test = screen.getByLabelText('test-id');
 
-  expect(test).toHaveClass(styles.truncate);
+  expect(test).toHaveClass('pf-v5-c-truncate');
 });
 
 test('renders with custom class name passed via prop', () => {
@@ -45,13 +44,13 @@ test('renders truncate with content', () => {
   expect(test).toHaveTextContent('Test');
 });
 
-test(`only renders ${styles.truncateStart} with default position`, () => {
+test('only renders pf-v5-c-truncate__start with default position', () => {
   render(<Truncate content={'Testing truncate content'} />);
 
   const start = screen.getByText('Testing truncate content');
 
-  expect(start).toHaveClass(styles.truncateStart);
-  expect(start).not.toHaveClass(styles.truncateEnd);
+  expect(start).toHaveClass('pf-v5-c-truncate__start');
+  expect(start).not.toHaveClass('pf-v5-c-truncate__end');
 });
 
 test('renders default truncation', () => {
@@ -81,11 +80,11 @@ test('renders middle truncation', () => {
 
   const start = screen.getByText('Vestibulum interdum risus et enim faucibus, sit amet molestie est ac');
 
-  expect(start).toHaveClass(styles.truncateStart);
+  expect(start).toHaveClass('pf-v5-c-truncate__start');
 
   const end = screen.getByText('cumsan.');
 
-  expect(end).toHaveClass(styles.truncateEnd);
+  expect(end).toHaveClass('pf-v5-c-truncate__end');
 });
 
 test('renders different content when trailingNumChars is passed with middle truncate', () => {
@@ -99,11 +98,11 @@ test('renders different content when trailingNumChars is passed with middle trun
 
   const start = screen.getByText('Vestibulum interdum risus et enim faucibus, sit amet molestie est accums');
 
-  expect(start).toHaveClass(styles.truncateStart);
+  expect(start).toHaveClass('pf-v5-c-truncate__start');
 
   const end = screen.getByText('an.');
 
-  expect(end).toHaveClass(styles.truncateEnd);
+  expect(end).toHaveClass('pf-v5-c-truncate__end');
 });
 
 test('renders tooltip position', () => {

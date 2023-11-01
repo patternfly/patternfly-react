@@ -1,15 +1,5 @@
-/* eslint-disable patternfly-react/no-anonymous-functions */
 import React from 'react';
-import {
-  Alert,
-  AlertGroup,
-  AlertVariant,
-  AlertActionCloseButton,
-  InputGroup,
-  InputGroupItem
-} from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
+import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup , InputGroupItem} from '@patternfly/react-core';
 
 interface AlertDemoAlert {
   title: string;
@@ -46,7 +36,7 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
       this.setState({ alerts: [...this.state.alerts, ...incomingAlerts] });
     };
     const getUniqueId = () => new Date().getTime();
-    const btnClasses = css(buttonStyles.button, buttonStyles.modifiers.secondary);
+    const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');
     this.removeAlert = (key: React.ReactText) => {
       this.setState({ alerts: [...this.state.alerts.filter((el: AlertDemoAlert) => el.key !== key)] });
     };
@@ -91,5 +81,3 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
     );
   }
 }
-
-AlertGroupDemo.displayName = 'AlertGroupDemo';

@@ -16,8 +16,6 @@ import {
 import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core/deprecated';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import styles from '@patternfly/react-styles/css/components/Form/form';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 export interface FormState {
   value: string;
@@ -128,7 +126,7 @@ export class FormDemo extends Component<FormProps, FormState> {
                   aria-label="More info for name field"
                   onClick={(e) => e.preventDefault()}
                   aria-describedby="simple-form-name"
-                  className={styles.formGroupLabelHelp}
+                  className="pf-v5-c-form__group-label-help"
                 >
                   <HelpIcon />
                 </button>
@@ -155,7 +153,7 @@ export class FormDemo extends Component<FormProps, FormState> {
           </FormGroup>
         </Form>
 
-        <Divider className={spacing.myXl} />
+        <Divider className="pf-v5-u-my-xl" />
 
         <Form id="form-demo-2">
           <FormGroup fieldId="select-state-typeahead">

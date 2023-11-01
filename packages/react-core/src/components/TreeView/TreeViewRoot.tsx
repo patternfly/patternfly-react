@@ -32,7 +32,9 @@ class TreeViewRoot extends React.Component<TreeViewRootProps> {
       );
     }
     if (this.props.hasCheckboxes || this.props.hasSelectableNodes) {
-      const firstToggle = this.treeRef.current.getElementsByClassName(styles.treeViewNodeToggle)[0] as HTMLElement;
+      const firstToggle = this.treeRef.current.getElementsByClassName(
+        'pf-v5-c-tree-view__node-toggle'
+      )[0] as HTMLElement;
       if (firstToggle) {
         firstToggle.tabIndex = 0;
       }
@@ -43,13 +45,15 @@ class TreeViewRoot extends React.Component<TreeViewRootProps> {
         }
       }
       if (this.props.hasSelectableNodes) {
-        const firstTextButton = this.treeRef.current.getElementsByClassName(styles.treeViewNodeText)[0] as HTMLElement;
+        const firstTextButton = this.treeRef.current.getElementsByClassName(
+          'pf-v5-c-tree-view__node-text'
+        )[0] as HTMLElement;
         if (firstTextButton) {
           firstTextButton.tabIndex = 0;
         }
       }
     } else {
-      (this.treeRef.current?.getElementsByClassName(styles.treeViewNode)[0] as HTMLElement).tabIndex = 0;
+      (this.treeRef.current?.getElementsByClassName('pf-v5-c-tree-view__node')[0] as HTMLElement).tabIndex = 0;
     }
   }
 
@@ -65,13 +69,13 @@ class TreeViewRoot extends React.Component<TreeViewRootProps> {
   handleKeys = (event: KeyboardEvent) => {
     if (
       !this.treeRef.current.contains(event.target as HTMLElement) ||
-      !(event.target as HTMLElement).classList.contains(styles.treeViewNode)
+      !(event.target as HTMLElement).classList.contains('pf-v5-c-tree-view__node')
     ) {
       return;
     }
     const activeElement = document.activeElement;
     const key = event.key;
-    const treeItems = Array.from(this.treeRef.current?.getElementsByClassName(styles.treeViewNode)).filter(
+    const treeItems = Array.from(this.treeRef.current?.getElementsByClassName('pf-v5-c-tree-view__node')).filter(
       (el) => !el.classList.contains('pf-m-disabled')
     );
 
@@ -93,7 +97,7 @@ class TreeViewRoot extends React.Component<TreeViewRootProps> {
 
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
       const isExpandable = activeElement?.firstElementChild?.firstElementChild?.classList.contains(
-        styles.treeViewNodeToggle
+        'pf-v5-c-tree-view__node-toggle'
       );
       const isExpanded = activeElement?.closest('li')?.classList.contains('pf-m-expanded');
       if (key === 'ArrowLeft') {
@@ -138,7 +142,7 @@ class TreeViewRoot extends React.Component<TreeViewRootProps> {
       event.preventDefault();
     }
 
-    const treeNodes = Array.from(this.treeRef.current?.getElementsByClassName(styles.treeViewNode));
+    const treeNodes = Array.from(this.treeRef.current?.getElementsByClassName('pf-v5-c-tree-view__node'));
 
     handleArrows(
       event,

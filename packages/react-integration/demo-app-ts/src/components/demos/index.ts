@@ -9,7 +9,6 @@ export * from './BackToTopDemo/BackToTopDemo';
 export * from './BreadcrumbDemo/BreadcrumbDemo';
 export * from './ButtonDemo/ButtonDemo';
 export * from './CardDemo/CardDemo';
-export * from './ChipDemo/ChipDemo';
 export * from './ChipGroupDemo/ChipGroupDefaultIsOpenDemo';
 export * from './ChipGroupDemo/ChipGroupDemo';
 export * from './ChipGroupDemo/ChipGroupWithCategoryDemo';

@@ -522,25 +522,3 @@ export const clearTimeouts = (timeoutRefs: React.RefObject<any>[]) => {
     }
   });
 };
-
-/**
- * Helper function to get the language direction of a given element, useful for figuring out if left-to-right
- * or right-to-left specific logic should be applied.
- *
- * @param {HTMLElement} targetElement  - Element the helper will get the language direction of
- * @param {'ltr' | 'rtl'} defaultDirection - Language direction to assume if one can't be determined, defaults to 'ltr'
- * @returns {'ltr' | 'rtl'} - The language direction of the target element
- */
-export const getLanguageDirection = (targetElement: HTMLElement, defaultDirection: 'ltr' | 'rtl' = 'ltr') => {
-  if (!targetElement) {
-    return defaultDirection;
-  }
-
-  const computedDirection = getComputedStyle(targetElement).getPropertyValue('direction');
-
-  if (['ltr', 'rtl'].includes(computedDirection)) {
-    return computedDirection as 'ltr' | 'rtl';
-  }
-
-  return defaultDirection;
-};

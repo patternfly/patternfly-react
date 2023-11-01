@@ -28,7 +28,7 @@ import {
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper.js';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper.js';
 import { capitalize } from '@patternfly/react-table/src/components/Table/utils/utils';
 import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
 
